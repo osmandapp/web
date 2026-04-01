@@ -1,6 +1,6 @@
 ---
-source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
-sidebar_position: 14
+source-hash: 6eba2390ad96e6adb371907334b58bd9527dd60a372e7da21b4fc6be530e6c15
+sidebar_position: 16
 title: Topografie
 ---
 
@@ -143,6 +143,10 @@ Für [**Höhenlinien**](#contour-lines) müssen Sie festlegen, in welchen [Einhe
 
 ## Höhenlinien {#contour-lines}
 
+:::tip Kauf
+Höhenlinien sind eine [kostenpflichtige Funktion](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ Bei Verwendung der [Karten-Rendering-Engine](../personal/global-settings.md#map-
 
 
 ## Gelände {#terrain}
+
+:::tip Kauf
+Gelände ist eine [kostenpflichtige Funktion](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,17 +263,30 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 
 <TabItem value="android" label="Android">
 
-![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwählen:
+
+- Aus einer [vordefinierten Liste](#default-color-scheme).
+- Aus Farbpalettendateien, die Sie auf Ihrem Computer erstellt haben. Benutzerdefinierte Dateien können mit dem [Import/Export-Werkzeug](../personal/import-export.md) zu OsmAnd hinzugefügt werden.
+- Aus Paletten, die direkt in der App erstellt oder bearbeitet wurden.
+
+Benutzerdefinierte Paletten basieren auf Gradientenbereichen, wobei jede Farbe einem spezifischen Wert der Geländedaten wie *Höhe* oder *Neigung* entspricht. 
+Sie können:
+
+- Wertstufen definieren (Höhenstufen oder Neigungsprozentsätze);
+- Farben jeder Stufe zuweisen;
+- Stufen hinzufügen oder entfernen, um den Gradienten anzupassen.
+
+**Hinweis:** Schummerung verwendet einen festen Schattierungsalgorithmus und unterstützt keine benutzerdefinierten Gradientenpaletten.
+
+Für erweiterte Palettenanpassung mit Palettendateien siehe den Artikel [Farbschemata](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwählen:
 
@@ -274,6 +295,9 @@ Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwäh
 
 Sie können [diese Paletten bearbeiten](../personal/color-palette-schemes.md#palette-modify), um das Aussehen von Karten und Routen zu personalisieren.
 
+</TabItem>
+
+</Tabs>
 
 ### Sichtbarkeit {#visibility}
 
@@ -318,6 +342,60 @@ Die Haupteinstellungen für *Kartentypen anzeigen oder ausblenden* befinden sich
 
 - Gehen Sie zu [Aktion hinzufügen](../widgets/quick-action.md#custom-buttons): *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Aktion hinzufügen → Karte konfigurieren*.
 - Fügen Sie eine oder mehrere QA-Schaltflächen hinzu, um die Sichtbarkeit einer bestimmten Topografieebene zu ändern.
+
+
+## 3D-Gebäude {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-Gebäude* 
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_1_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2_new.png) 
+
+Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstelle von flachen Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert und verwenden Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. 3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können.  
+
+Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
+
+Diese Option ist nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellung** und **Leistung**.
+
+### Darstellung {#appearance}
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_color.png)
+
+Die **Darstellung** steuert, wie 3D-Gebäude auf der Karte aussehen. Sie umfasst zwei Einstellungen: Farbe und Sichtbarkeit. 
+
+**Farbe** ermöglicht es Ihnen, die Gebäudefarbe zu ändern. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen.
+- **Kartenstil** — verwendet die Standard-Gebäudefarbe aus dem derzeit ausgewählten Kartenstil.
+- **Benutzerdefiniert** — ermöglicht es Ihnen, eine benutzerdefinierte Gebäudefarbe separat für Tag-/Nachtmodus festzulegen.
+
+:::tip Kauf
+Die Farbanpassung von 3D-Gebäuden ist eine [kostenpflichtige Funktion](../purchases/index.md).  
+:::
+
+Wenn benutzerdefinierte Farben nicht gekauft wurden, sehen Sie einen leeren Zustand mit einer kurzen Beschreibung und einem Button „Erwerben“. Wenn Benutzerdefiniert verfügbar ist, können Sie zwischen Tag und Nacht wechseln, eine Farbe aus der Palette auswählen (oder Alle Farben öffnen) und dann auf Anwenden tippen.
+
+**Sichtbarkeit** steuert die Opazität (Transparenz) von 3D-Gebäuden. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz festzulegen. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Antippen von Sichtbarkeit öffnet ebenfalls einen separaten Vorschirm mit dem Schieberegler.
+
+Auf den Vorschirmen (Farbe / Sichtbarkeit) können Sie über die App-Leiste „Auf Standard zurücksetzen“, um den Standardwert wiederherzustellen.
+
+### Leistung {#performance}
+
+Die **Leistung** steuert, wie 3D-Gebäude gerendert werden. Sie umfasst zwei Einstellungen: Detailgrad und Sichtweite.
+
+**Detailgrad** bestimmt die Komplexität der 3D-Gebäudengeometrie:
+- Niedrig (Standard) — einfachere Geometrie.
+- Hoch — detailliertere Geometrie.
+
+**Sichtweite** steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
+- Nah (Standard) — rendert Gebäude näher bei Ihnen.
+- Fern — rendert Gebäude aus größerer Entfernung.
+
+Beide Leistungseinstellungen verwenden einen Zweipositionsschalter direkt im 3D-Gebäude-Einstellungsbildschirm.
+
+**Hinweis:** Die Verwendung von *Hohem Detail* und *Fern-Sichtweite* verbessert das visuelle Erscheinungsbild, kann jedoch die Leistung beeinträchtigen und den Akkuverbrauch erhöhen.
 
 
 ## 3D-Relief {#3d-relief}

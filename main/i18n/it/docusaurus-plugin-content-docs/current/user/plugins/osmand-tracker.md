@@ -1,6 +1,6 @@
 ---
-source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
-sidebar_position: 11
+source-hash: c18b1cbd4a3355bf921f99ff1e1def88f8dbdf889803fd76e18173c7c599fcfe
+sidebar_position: 12
 title:  OsmAnd Tracker
 ---
 
@@ -58,7 +58,7 @@ Puoi installare OsmAnd Online GPS Tracker:
 
 ## Impostazioni del plugin {#plugin-settings}
 
-Ci sono diverse impostazioni per gestire la frequenza di condivisione delle posizione e controllare la visualizzazione delle posizioni che ti vengono inviate.
+Ci sono diverse impostazioni per gestire la frequenza di condivisione delle posizione e controllare la visualizzazione delle posizione che ti vengono inviate.
 
 Per aprire il menu *Impostazioni*:  
 
@@ -167,7 +167,7 @@ Permette di tracciare la distanza, la velocità e l'angolo di movimento dei tuoi
 
 ## Schermata Cronologia {#timeline-screen}
 
-Questa è la terza scheda dell'applicazione. Qui puoi selezionare un giorno per visualizzare la cronologia delle posizione condivise con te. Selezionando un giorno vengono visualizzati i contatti che hanno mostrato la loro posizione quel giorno.  
+Questa è la terza scheda dell'applicazione. Qui puoi selezionare un giorno per visualizzare la cronologia delle posizioni condivise con te. Selezionando un giorno vengono visualizzati i contatti che hanno mostrato la loro posizione quel giorno.  
 
 Il monitoraggio ti permette di raccogliere informazioni in background quando i tuoi contatti le condividono. Per fare ciò, devi abilitarlo.
 

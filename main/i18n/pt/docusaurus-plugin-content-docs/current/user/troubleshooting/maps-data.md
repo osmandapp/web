@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title: Mapas e Dados
 ---
@@ -116,6 +116,30 @@ Para resolver o problema de renderização lenta do mapa, especialmente ao usar 
 6. **Use apenas mapas offline.** Mapas online, especialmente quando não baixados com antecedência, podem atrasar o carregamento do mapa. Mude para usar apenas mapas offline para um desempenho mais suave.
 
 Essas alterações devem reduzir o tempo necessário para renderizar mapas, especialmente durante a navegação. Para opções de configuração mais detalhadas, consulte o [Guia de Configurações do Mapa](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+
+### O que significa “Atualizações gratuitas (emergência)”? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Emergency Access Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Emergency Access iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Atualizações de mapa de emergência** podem ser ativadas para certas regiões durante situações de crise ou emergência. Nesses casos, os mapas estão temporariamente disponíveis com atualizações gratuitas e mais frequentes.
+
+Quando este recurso está ativo, a tela de download de mapa pode exibir a mensagem *Free updates (emergency) / Free downloads*.
+
+Isso significa que o mapa pode receber atualizações mais frequentemente do que os mapas padrão, às vezes uma ou várias vezes por dia, dependendo da situação.
 
 
 ## Linhas de Contorno {#contour-lines}

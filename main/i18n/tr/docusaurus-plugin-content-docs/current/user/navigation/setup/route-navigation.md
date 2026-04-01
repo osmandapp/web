@@ -1,5 +1,5 @@
 ---
-source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
+source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
 sidebar_position: 1
 title: Rota Hazırlığı
 ---
@@ -37,7 +37,7 @@ OsmAnd'daki **Rota hazırlığı** özelliği, [sürüş](./../routing/car-based
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon ekranı iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Navigasyon ekranı iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Navigasyon ekranı iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Navigasyon ekranı iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -293,7 +293,7 @@ Bu menüde, varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon ekranı iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Navigasyon ekranı iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -473,7 +473,7 @@ Bir rota oluşturmak için tüm **gerekli haritaların** indirilmiş ve aynı ya
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon iOS oluşturulurken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Navigasyon iOS oluşturulurken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

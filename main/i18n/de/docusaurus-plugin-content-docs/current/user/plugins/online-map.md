@@ -1,6 +1,6 @@
 ---
-source-hash: 3e42829208c8917b36961ec73fb21e320c1dcf70572f1c674c9c940e72223a0e
-sidebar_position: 8
+source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+sidebar_position: 9
 title:  Online Maps
 ---
 
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Übersicht {#overview}
 
-OsmAnd Online-Karten sind eine umfangreiche Ergänzung zur bereits in der Anwendung vorhandenen OpenStreetMap-Datenbank. Mit diesem Plugin können Sie Ihrer Karte Ebenen mit Informationen aus einer anderen Quelle hinzufügen, angefangen bei der Satelliten- oder Wanderroutenansicht bis hin zu sehr spezifischen Daten, wie z. B. dem Standort von Hydranten. Sie können auch die Hauptquelle der Karte von Vektorkarten auf Online-Kacheln ändern.
+OsmAnd Online-Karten sind eine umfangreiche Ergänzung zur bereits in der Anwendung vorhandenen OpenStreetMap-Datenbank. Mit diesem Plugin können Sie Ihrer Karte Ebenen mit Informationen aus einer anderen Quelle hinzufügen, angefangen bei der Satelliten- oder Wanderroutenansicht bis hin zu sehr spezifischen Daten, wie z. B. dem Standort von Feuerhydranten. Sie können auch die Hauptquelle der Karte von Vektorkarten auf Online-Kacheln ändern.
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
@@ -25,7 +25,7 @@ Die Möglichkeit, Online-Karten zu verwenden, ist in der iOS-Version von OsmAnd 
 
 1. [Aktivieren](../plugins/index.md#enable--disable) Sie das **Online Maps**-Plugin im *Hauptmenü → Plugins → Online Maps*.
 2. Nehmen Sie die erforderlichen Einstellungen im Abschnitt [Kartenquelle](../map/raster-maps.md#layers) des Menüs "Karte konfigurieren" vor.
-3. Stellen Sie die Karten *Kartenquelle*, *Überlagerung* und *Untergrundkarte* ein. Wählen Sie Ihren bevorzugten Satellitenkartenanbieter.
+3. Stellen Sie die *Kartenquelle*, *Überlagerung* und *Untergrundkarte* ein. Wählen Sie Ihren bevorzugten Satellitenkartenanbieter.
 4. Laden Sie die ausgewählte [Online-Karte](#how-to-prepare-raster-maps) bei Bedarf herunter.
 
 
@@ -69,7 +69,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_s
 ## Wie man Rasterkarten vorbereitet {#how-to-prepare-raster-maps}
 
 :::info
-Den Hauptartikel zur Vorbereitung von Karten [lesen Sie hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Hauptartikel zur Vorbereitung von Karten [lesen Sie hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
 Obwohl das Plugin *Online Maps* heißt, können Sie die Karten auch ohne Internetverbindung verwenden. Sie müssen nur die Teile der Karten (oft Kacheln genannt) speichern, um sie später zu verwenden. Laden Sie dazu ein spezielles [Map Creator Tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter, das vom OsmAnd-Team entwickelt wurde.

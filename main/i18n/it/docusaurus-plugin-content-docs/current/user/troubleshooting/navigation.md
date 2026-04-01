@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  Navigazione
 ---
@@ -86,14 +86,18 @@ Per individuare problemi con percorsi errati o non ottimali, si prega di aprire 
 
 ## Informazioni stradali {#road-information}
 
-### OsmAnd mostra solo alcuni autovelox {#osmand-only-shows-some-speed-cams}
+### Perché alcuni avvisi di autovelox potrebbero non essere attivati {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 A causa dei geodati presi dal progetto OpenStreetMap, esistono attualmente due metodi con cui gli autovelox sono integrati nei dati grezzi di OSM:
 
-- Un punto (chiamato "nodo" nella terminologia OSM) di una via è etichettato con "highway=speed_camera", vedi wiki OSM su [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Un punto (chiamato "nodo" nella terminologia OSM) di una via è etichettato con `highway=speed_camera`, vedi wiki OSM su [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - Un gruppo di elementi di dati OSM sono uniti in una cosiddetta "relazione" che contiene più elementi di un singolo nodo per descrivere la direzione coperta dall'autovelox. Vedi [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Attualmente, OsmAnd può utilizzare solo gli elementi che consistono in un singolo nodo. L'analisi delle relazioni sarà implementata in una versione futura.
+OsmAnd supporta entrambi i metodi. Gli avvisi di autovelox possono essere attivati per le telecamere mappate con `highway=speed_camera` così come per le telecamere definite tramite una relazione `enforcement`.
+
+Se un nodo di autovelox è posizionato direttamente sulla strada, il tag `highway=speed_camera` è sufficiente per far rilevare a OsmAnd la telecamera e visualizzare gli avvisi.
+
+Se la telecamera è mappata accanto alla strada anziché su di essa, deve essere collegata alla strada utilizzando una relazione `enforcement`. Altrimenti, OsmAnd potrebbe non associare la telecamera alla strada e l'avviso non verrà attivato.
 
 
 ## Navigazione vocale {#voice-navigation}

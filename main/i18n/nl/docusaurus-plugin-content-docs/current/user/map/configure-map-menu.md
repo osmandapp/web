@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Configure Map
 ---
@@ -23,7 +23,7 @@ Het menu **Kaart configureren** is een belangrijk item in het *Hoofdmenu* van Os
 
 Sectie **Weergeven**:  
 
-![Kaart configureren android](@site/static/img/map/configure_map_show1_andr.png)  ![Kaart configureren android](@site/static/img/map/configure_map_show2_andr.png)  
+![Kaart configureren android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Kaart configureren android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Sectie **Topografie**:  
 
@@ -43,7 +43,7 @@ Secties **Routes en Kaartweergave**:
 
 Sectie **Weergeven op kaart**:  
 
-![Kaart configureren android](@site/static/img/map/configure_map_show1_ios.png)  
+![Kaart configureren android](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Sectie **Topografie**:  
 
@@ -100,7 +100,7 @@ Het **<Translate android="true" ids="configure_map"/>** menu is verdeeld in twee
    - [Tracks](../map/tracks/index.md) - geeft geïmporteerde, geplande of opgenomen tracks weer over de kaart.
    - [Beeldmateriaal op straatniveau](../plugins/mapillary.md#map-layer) - geeft punten weer met beschikbaar beeldmateriaal op straatniveau.
    - [Reisgidsen](../plan-route/travel-guides.md) - geeft reisgidsen weer op de kaart.
-   - [Wikipedia](../plugins/wikipedia.md) - markeert Wikipedia-artikelen die aan de kaart zijn gekoppeld.
+   - [Populaire plaatsen](../map/popular_places.md) - markeert populaire plaatsen op basis van Wikipedia-artikelen en toont ze op de kaart.
    - [OSM-bewerking](../plugins/osm-editing.md#osm-editing-layer) - geeft OpenStreetMap-bewerkingen, notities en hulplagen gerelateerd aan kaartenmapping weer.
    - [Andere plugin-lagen](../plugins/index.md#configure-plugin) - veel plugins voegen hun lagen toe met extra informatie.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
+source-hash: 402ce29cb8352ebd02df5230b886dc88937640fd48f18229a66ec9689b4e036c
 sidebar_position: 2
 ---
 
@@ -35,6 +35,12 @@ Dans OsmAnd, les fichiers GPX organisent les données de manière hiérarchique 
   - `<trkseg>` - des segments de la trace, qui sont ensuite divisés en `<trkpt>` (points de trace).
 - `<rte>` - représente les itinéraires, y compris les points de cheminement et les points clés.
 - `<wpt>` - représente les points de cheminement individuels.
+
+#### Comportement d'importation GPX {#gpx-import-behavior}
+
+Lors de l'importation d'un fichier GPX, OsmAnd crée un seul objet de trace basé sur le fichier :
+- Le nom de la trace importée est dérivé du nom du fichier GPX. L'élément `<name>` à l'intérieur de `<trk>` n'est pas utilisé comme nom principal de la trace lors de l'importation.
+- Si un fichier GPX contient plusieurs éléments `<trk>`, OsmAnd les importe en tant que segments de la même trace. Dans ce cas, les valeurs `<name>` peuvent être utilisées comme étiquettes pour les segments correspondants au sein de la trace.
 
 
 ## Personnalisation de la trace {#track-customization}

@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Carte
 title: Carte globale sur le site web
@@ -67,9 +67,10 @@ Le menu Configurer la carte vous permet de gérer les paramètres d'affichage de
 - [Superposition de POI...](#poi-overlay). Permet de choisir et d'afficher les catégories de POI nécessaires sur la carte.
 - [Favoris](#favorites). Active ou désactive l'affichage des favoris sur la carte.
 - [Traces](#tracks). Contient les traces GPX visibles sur la carte.  
+- [Arrêts de transport](#transport-stops). Active ou désactive l'affichage des arrêts de transport public sur la carte. 
 - [Terrain](#terrain). Active ou désactive le schéma de couleurs du terrain sur la carte.
 
-![Menu POI](@site/static/img/web/configure_map_web.png)
+![Menu Superpositions POI](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Superposition de POI {#poi-overlay}
@@ -90,7 +91,7 @@ Dans le panneau de détails du POI, des actions rapides sont disponibles à part
 - *Itinéraire depuis* — définit le POI sélectionné comme point de départ et ouvre le panneau Itinéraire pour que vous puissiez choisir une destination et un profil.
 - *Navigation* — définit le POI sélectionné comme point de destination pour la navigation.
 
-![Menu POI](@site/static/img/web/poi_categories.png) ![Menu POI](@site/static/img/web/poi_photo_new.png)
+![Menu Superpositions POI](@site/static/img/web/poi_categories.png) ![Menu Superpositions POI](@site/static/img/web/poi_photo_new.png)
 
 
 ### Favoris {#favorites}
@@ -116,6 +117,33 @@ Chaque trace a un **Menu contextuel** (accessible via le bouton ⋮) avec les co
 
 ![Menu Configurer la carte Traces](@site/static/img/web/configure_map_track.png)
 
+### Arrêts de transport {#transport-stops}
+
+L'option **Arrêts de transport** vous permet d'afficher les arrêts de transport public directement sur la carte. Lorsque activée, les marqueurs d'arrêt apparaissent sur la carte, représentant les emplacements où s'arrêtent les itinéraires de transport public. La sélection d'un arrêt de transport ouvre un panneau contextuel avec des informations sur cet arrêt et les itinéraires de transport qui y passent. Le panneau d'arrêt contient plusieurs sections.
+
+**1. Informations sur l'arrêt**
+
+La section supérieure affiche les informations de base sur l'arrêt sélectionné, y compris son nom et son emplacement. Des boutons d'action rapide permettent de : *Ajouter l'arrêt aux favoris, Partager un lien vers l'arrêt, Démarrer la navigation depuis l'arrêt, Définir l'arrêt comme destination*.
+
+**2. Itinéraires**
+
+La section Itinéraires liste tous les itinéraires de transport public qui passent par l'arrêt sélectionné. Chaque élément affiche : le type de transport, le numéro de l'itinéraire et le nom de l'itinéraire.
+
+La sélection d'un itinéraire ouvre un panneau de détails sur l'itinéraire montrant des informations supplémentaires sur cet itinéraire, y compris le nombre d'arrêts et l'intervalle moyen entre les véhicules (lorsqu'il est disponible).
+
+Le panneau de détails de l'itinéraire affiche également la liste complète des arrêts le long de l'itinéraire. L'arrêt actuellement sélectionné est mis en évidence, et vous pouvez sélectionner un autre arrêt pour voir son emplacement sur la carte. Les arrêts avant l'arrêt sélectionné peuvent être repliés en un seul élément (par exemple « 15 arrêts avant »).
+
+Des boutons de navigation permettent de se déplacer entre les arrêts le long de l'itinéraire en utilisant les contrôles *Précédent* et *Suivant*. Lorsqu'un arrêt est sélectionné, son emplacement est mis en évidence sur la carte. L'itinéraire sélectionné et ses arrêts sont également affichés sur la carte pour aider à visualiser la direction de l'itinéraire.
+
+**3. Filtre par type de transport**
+
+Un filtre par type de transport permet de filtrer les itinéraires affichés dans la liste. Par défaut, le filtre est défini sur *Tous* et affiche tous les itinéraires disponibles. Vous pouvez sélectionner un type de transport spécifique (par exemple Bus, Tram ou Métro) pour n'afficher que les itinéraires de ce type. Le filtre se réinitialise sur *Tous* chaque fois que le panneau d'arrêt est ouvert.
+
+**4. Itinéraires à proximité**
+
+La section Itinéraires à proximité peut afficher des itinéraires supplémentaires situés près de l'arrêt sélectionné. Cela vous aide à découvrir rapidement des options de transport alternatives dans la zone environnante.
+
+![Arrêts de transport](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terrain {#terrain}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favoriler
 title: Favoriler
@@ -24,14 +24,15 @@ Web Planlayıcı'daki Favoriler, harita üzerinde önemli yerleri doğrudan kayd
 
 ## Favorileri Yönet {#manage-favorites}
 
-![OsmAnd Web bulut Favoriler düzenle](@site/static/img/web/favorites_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
 [**OsmAnd Pro**](../personal/osmand-cloud.md#login) kaydı yaptıktan ve [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) için, Web Planlayıcı'daki Favorileriniz klasörlere organize edilir. Her klasör, kaydedilen yerleri gruplar ve Favoriler menüsünden kullanılabilir bir dizi eylem sağlar. 
 Aşağıdaki eylemler kullanılabilir:
 
 - *Haritada göster* - seçilen klasördeki favori noktaları haritada göster.
+- *Klasörü sabitle* - bir klasörü Favoriler listesinin üst kısmına hızlı erişim için sabitleyin. Sabitlenmiş klasörler diğer klasörlerden ayrılır. Bir klasörü üst bölümden kaldırmak için *Klasörü sabitlenmeyi kaldır* seçin. Kişisel klasör varsayılan olarak sabitlenmiştir.
 - *Yeniden adlandır* - favori klasörünün adı ve açıklaması.
-- *Paylaş* - paylaşım seçeneklerini açar. Bu klasöre kimin erişebileceğini seçebilirsiniz:
+- *Paylaş* - paylaşım seçeneklerini açar. Bu klasöre kimin erişebileceğini seçebilirsiniz.
 - *İndir* - seçilen favori klasörünü indir.
 - *Sil* - seçilen favori klasörünü sil.
 
@@ -53,7 +54,7 @@ Erişim yapılandırması sırasında aşağıdaki iletişim kutuları görüneb
 - *Erişimi değiştir*. Klasörü Özel'e geçirirken görüntülenir. İletişim kutusu, değişikliği onaylamadan önce tüm mevcut kullanıcı erişiminin iptal edileceğini uyarır.
 - *Erişim istekleri*. Bekleyen listesinde kullanıcıları yönetirken görüntülenir; erişim isteklerinin onaylanmasına veya reddedilmesine olanak tanır.
 
-![OsmAnd Web bulut Favoriler paylaş](@site/static/img/web/favorites_share.png) ![OsmAnd Web bulut Favoriler paylaş](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
 
 
 ## Favori Detayları {#favorites-details} 
@@ -62,20 +63,20 @@ Bir favoriyi seçmek, **Detaylar** panelini açar. Bu panel, harita üzerinde bi
 
 Detaylar görünümü, seçilen yerle ilişkili bilgileri sağlar ve o belirli favori için mevcut verilere bağlıdır. En azından haritadaki konumu ve coğrafi koordinatlarını içerir. OpenStreetMap nesnelerine veya zenginleştirilmiş kaynaklara bağlı yerler için, ek meta veriler gösterilebilir; örneğin isimler, kategoriler, tanımlayıcılar veya referans bağlantıları (örneğin, Wikipedia veya Wikidata bağlantıları). 
 
-![Web Favori Detayları](@site/static/img/web/favorites_details.png)
+![Web Favorites Details](@site/static/img/web/favorites_details.png)
 
 
 ## Favori Eylemleri {#favorites-actions}
 
 ### Favori Ekle / Düzenle {#add--edit-favorite}
 
-Yeni bir favori nokta [eklemek](../personal/favorites.md#manage-favorites) için ekrana sağ tıklayın. 
+[Yeni bir favori nokta eklemek](../personal/favorites.md#manage-favorites) için ekrana sağ tıklayın. 
 
 Mevcut bir favoriyi düzenlemek için, favori noktasına harita üzerinde doğrudan tıklayın veya bir favoriler klasöründen seçin. Bu, Detaylar panelini açar; burada Düzenle eylemi kullanılabilir. Düzenleme ayrıca Favoriler listesindeki favorinin yanındaki üç nokta menüsünden (⋮) başlatılabilir.
 
 Düzenleme arayüzü, favorinin ana özelliklerini değiştirmenize olanak tanır; örneğin adı, simgesi, rengi ve açıklaması. Düzen ve mevcut alanlar, [OsmAnd mobil uygulamasındaki](../personal/favorites.md#create) düzenleme deneyimiyle tutarlıdır; platformlar arasında tanıdık bir iş akışı sağlar.
 
-![OsmAnd Web Favori ekle](@site/static/img/web/web_favorites_add.png)
+![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
 
 ### Diğer Eylemler {#other-actions}

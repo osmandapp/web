@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Konfiguruj mapę
 ---
@@ -23,7 +23,7 @@ Menu **Konfiguruj mapę** jest ważnym elementem *Menu głównego* OsmAnd, w kt�
 
 Sekcja **Pokaż**:  
 
-![Konfiguruj mapę android](@site/static/img/map/configure_map_show1_andr.png)  ![Konfiguruj mapę android](@site/static/img/map/configure_map_show2_andr.png)  
+![Konfiguruj mapę android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Konfiguruj mapę android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Sekcja **Topografia**:  
 
@@ -43,7 +43,7 @@ Sekcje **Trasy i renderowanie mapy**:
 
 Sekcja **Pokaż na mapie**:  
 
-![Konfiguruj mapę iOS](@site/static/img/map/configure_map_show1_ios.png)  
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Sekcja **Topografia**:  
 
@@ -100,13 +100,14 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
    - [Trasy](../map/tracks/index.md) - wyświetla zaimportowane, zaplanowane lub nagrane trasy na mapie.
    - [Zdjęcia na poziomie ulicy](../plugins/mapillary.md#map-layer) - wyświetla punkty z dostępnymi zdjęciami na poziomie ulicy.
    - [Przewodniki turystyczne](../plan-route/travel-guides.md) - wyświetla przewodniki turystyczne na mapie.
+   - [Popularne miejsca](../map/popular_places.md) - podświetla popularne miejsca na podstawie artykułów z Wikipedii i wyświetla je na mapie.
    - [Wikipedia](../plugins/wikipedia.md) - podświetla artykuły z Wikipedii powiązane z mapą.
    - [Edycja OSM](../plugins/osm-editing.md#osm-editing-layer) - wyświetla edycje OpenStreetMap, notatki i warstwy pomocnicze związane z mapowaniem.
    - [Inne warstwy wtyczek](../plugins/index.md#configure-plugin) - wiele wtyczek dodaje swoje warstwy z dodatkowymi informacjami.
 
 ## Parametry stylu mapy {#map-style-parameters}
 
-Ustawienia stylu mapy zależą od wyświetlanego głównego stylu mapy. Więcej na ten temat można przeczytać w artykule [Style map](../map/vector-maps).
+Ustawienia stylu mapy zależą od głównego stylu mapy wyświetlanego. Więcej informacji na ten temat można przeczytać w artykule [Style map](../map/vector-maps).
 
    - [Styl mapy](../map/vector-maps.md#map-styles) - obejmuje OsmAnd (Miasto), Topo, Nautyczny i inne.
    - [Tryb mapy](../map/vector-maps.md#map-mode) - pozwala wybrać widok mapy i nawigację w zależności od pory dnia.
@@ -125,4 +126,4 @@ Dla każdego wybranego profilu w systemie Android można zmienić kolejność el
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
-![Elementy menu Konfiguruj mapę](@site/static/img/settings/configure-screen-ui-customization.png)
+![Elementy menu Konfiguruj mapę ](@site/static/img/settings/configure-screen-ui-customization.png)

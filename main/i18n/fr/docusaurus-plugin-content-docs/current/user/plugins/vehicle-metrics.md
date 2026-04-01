@@ -1,6 +1,6 @@
 ---
-source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
-sidebar_position: 16
+source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+sidebar_position: 18
 title:  Métriques du véhicule
 ---
 
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::info Fonctionnalité payante
-Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l[**OsmAnd Pro**] <ProFeature />. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.
+:::info Fonctionnalité Pro
+Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l[**OsmAnd Pro**] <ProFeature />. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles pour OsmAnd gratuit.
 :::
 
 Le **plugin Métriques du véhicule** permet de surveiller en temps réel les données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, l'efficacité du carburant et la vitesse, ce qui permet une maintenance préventive et un dépannage proactifs du véhicule.  
@@ -53,10 +53,10 @@ Pour utiliser les données d'un scanner OBD-II :
 4. [Connectez](#pair-odb-ii-scanner) le scanner OBD-II au port de votre véhicule.
 5. [Configurez](#scanner-settings) les **paramètres du scanner**.
 6. [Ajoutez](#widgets) des **widgets Métriques du véhicule** pour afficher les données à l'écran (facultatif).
-7. [Utilisez](#trip-recording) le **plugin Enregistrement de trajet** pour enregistrer les données du véhicule.
+7. [Utilisez](#trip-recording)le **plugin Enregistrement de trajet** pour enregistrer les données du véhicule.
 
 
-### Appairer le scanner ODB-II {#pair-odb-ii-scanner}
+### Appairer le scanner OBD-II {#pair-odb-ii-scanner}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -207,7 +207,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 | | |
 |--|--|
-|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget.png)|
+|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 | | |
 |--|--|
-|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 
@@ -248,5 +248,5 @@ Le widget sélectionne automatiquement le format approprié en fonction des unit
 ## Articles connexes {#related-articles}
 
 - [Interagir avec la carte](../../user/map/interact-with-map.md)
-- [Paramètres généraux](../../user/personal/global-settings.md)
+- [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles (Styles de carte)](../../user/map/vector-maps.md)

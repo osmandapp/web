@@ -1,5 +1,5 @@
 ---
-source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
 sidebar_position: 11
 title:  Itinéraires
 ---
@@ -105,7 +105,7 @@ Pour activer les sites d'escalade sur la carte, allez dans : *Menu → Configure
 
 ![Itinéraires sur la carte - randonnée alpine](@site/static/img/map/map-routes-alpine-hiking.png)
 
-Certains segments de chemin peuvent faire partie de nombreux itinéraires, mais ils peuvent être colorés individuellement pour représenter la difficulté du segment dans les zones montagneuses. Actuellement, OsmAnd prend en charge les classifications italienne et suisse, et chacune a une liste spécifique d'exigences en matière d'équipement pour accéder à ce segment.  
+Certains segments de route peuvent faire partie de nombreux itinéraires, mais ils peuvent être colorés individuellement pour représenter la difficulté du segment dans les zones montagneuses. Actuellement, OsmAnd prend en charge les classifications italienne et suisse, et chacune a une liste spécifique d'exigences en matière d'équipement pour accéder à ce segment.  
 
 1. [Échelle SAC](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [Échelle CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
@@ -253,13 +253,13 @@ Dans le **menu contextuel**, vous pouvez :
 
 <TabItem value="android" label="Android">
 
-![Infos sur l'itinéraire](@site/static/img/map/route_info_1_andr.png)
+![Infos sur l'itinéraire](@site/static/img/map/route_info_1_andr_new.png) ![Infos sur l'itinéraire](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Infos sur l'itinéraire](@site/static/img/map/route_info_1_ios.png)
+![Infos sur l'itinéraire](@site/static/img/map/route_info_1_ios_new.png) ![Infos sur l'itinéraire](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -276,6 +276,11 @@ Les informations suivantes seront visibles dans le menu contextuel :
 
 Pour afficher le graphique du dénivelé, de la pente ou les détails de l'altitude pour un itinéraire sélectionné, appuyez simplement sur l'une des valeurs suivantes dans le menu contextuel : **Distance**, **Montée**, **Descente** ou **Altitude**.
 
+Vous pouvez également ouvrir l'onglet *Trace* et passer à la vue *Altitude* pour voir le graphique complet du dénivelé de l'itinéraire.
+
+**Note :** Les données de dénivelé sont générées automatiquement et peuvent légèrement différer en fonction des données disponibles.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -290,7 +295,8 @@ Pour afficher le graphique du dénivelé, de la pente ou les détails de l'altit
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### Enregistrer comme une trace {#save-as-a-track}
 

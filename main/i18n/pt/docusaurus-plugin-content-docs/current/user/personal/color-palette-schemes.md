@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title: Esquemas de Cores
 ---
@@ -71,6 +71,8 @@ Vá para: *Menu → Mapas e Recursos → Local → Cores*
 
 Os arquivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definem 3 [visualizações de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Relevo Sombreado, Inclinação* e *Altitude*. Para cada tipo, você pode ter várias paletas, por exemplo, *inclinação de avalanche* é fornecida por padrão. Veja o artigo [Topografia](../plugins/topography.md#default-color-scheme) para mais detalhes.
 
+No Android, as paletas para esquemas de cores de *Inclinação* e *Altitude* também podem ser criadas ou editadas diretamente no aplicativo usando o [editor de Paleta de Cores](../plugins/topography.md#modify-color-scheme). Este é um recurso pago <ProFeature />.
+
 ### Trilhas e Rotas {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ As visualizações de gradiente de linha usam arquivos de paleta (`route_<type_n
 
 - Para [Rotas](../navigation/guidance/map-during-navigation.md#color): *Velocidade (`route_speed_default.txt`), Inclinação (`route_slope_default.txt`)* e *Elevação (Altitude) (`route_elevation_default.txt`)*.
 - Para [Trilhas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidade, Inclinação, Velocidade Máxima (`route_maxspeed_default.txt`)* e *Elevação (Altitude)*, ou informações de *sensores externos*.
+
+No Android, as paletas também podem ser criadas ou editadas diretamente no aplicativo usando o [editor de Paleta de Cores](../map/tracks/appearance.md#color-palette-editor). Este é um recurso pago <ProFeature />.
 
 ### Favoritos e Pontos de Referência {#favorites-waypoints}
 
@@ -162,7 +166,7 @@ Se você precisar alterar um arquivo de paleta existente dentro do OsmAnd (em ve
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Ações de Perfis Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Ações de Exportar Perfis Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -170,7 +174,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Ações de Perfis Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Ações de Perfis Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Ações de Exportar Perfis iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Ações de Exportar Perfis iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -205,7 +209,7 @@ A legenda é gerada automaticamente com base na paleta selecionada e mostra os p
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Adicionar ação → <Translate ios="true" ids="configure_map"/> → Alterar esquema de cores do terreno*
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Adicionar ação → <Translate ios="true" ids="configure_map"/> → Alterar esquema de cores do Terreno*
 
 ![Esquema de Cores](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Esquema de Cores](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
 
@@ -213,7 +217,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Adicionar ação → <Translate ios="true" ids="configure_map"/> → Alterar esquema de cores do terreno*
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Adicionar ação → <Translate ios="true" ids="configure_map"/> → Alterar esquema de cores do Terreno*
 
 ![Paleta de cores](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Paleta de cores](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
 

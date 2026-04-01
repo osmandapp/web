@@ -1,5 +1,5 @@
 ---
-source-hash: 6e3da3a892310ea06863788deeb421519395989e63957965d0a7324d251adb07
+source-hash: d92d4278c9c42171043846b2adf1a7a54cdcf0a3004b025b84507367d39e6a6e
 sidebar_position: 5
 ---
 
@@ -29,7 +29,7 @@ Le build beta di iOS (TestFlight) vengono solitamente fornite settimanalmente (d
 ## Novità {#whats-new}
 
 - Modalità Ultima Salita / Ultima Discesa per i **[widget di registrazione del viaggio](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, con passaggio tra ascesa/discesa totale e ultima.
-- **[Widget Distanza](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** aggiornato con modalità per distanza totale, ultima distanza in salita e ultima distanza in discesa.
+- **[Widget Distanza](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** aggiornato con modalità per distanza totale, ultima distanza in salita/discesa.
 - **[Widget Velocità Massima](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** che mostra la velocità massima per l'intero viaggio o per l'ultima sezione in salita/discesa.
 - **[Widget Pendenza Media](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** che mostra la pendenza media dell'ultima ascesa o discesa.
 - Azione rapida *Mostra traccia sulla mappa* aggiunta al gruppo di widget di registrazione del viaggio.
@@ -37,7 +37,7 @@ Le build beta di iOS (TestFlight) vengono solitamente fornite settimanalmente (d
 - Widget grafico dell'elevazione per la navigazione, che visualizza un profilo compatto lungo i percorsi o le tracce GPX.
 - Livello **[Luoghi popolari](https://osmand.net/docs/user/map/popular_places/)** aggiornato con selezione della fonte POI e anteprime immagine opzionali sulla mappa.
 - Nuova sezione Esplora nella Ricerca con “Luoghi popolari nelle vicinanze” e stati offline/senza dati migliorati.
-- Risultati di ricerca POI migliorati con visualizzazione coerente della città, layout raffinato, miniature opzionali e nomi alternativi più chiari.
+- Risultati di ricerca POI migliorati con visualizzazione coerente della città, layout raffinato e miniature opzionali.
 - Impostazioni di aspetto predefinite per le cartelle di tracce, che consentono alle nuove tracce di ereditare uno stile di cartella unificato.
 
 

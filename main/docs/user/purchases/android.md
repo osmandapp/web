@@ -130,7 +130,9 @@ The table below details the features included in both the free and paid packages
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popular Places (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage — Travel guides](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Astronomy plugin](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Observation Planning](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Interactive AR Mode](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Offline Sky Map](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -173,7 +175,7 @@ The **Pro** subscription currently has the following features:
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
 | [Elevation correction (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/topography.md#download-maps) required for chosen region). |
 | [Modify Color Scheme](../../user/plugins/topography.md#modify-color-scheme) | Allows you to customize the map appearance by selecting or importing color palettes. You can edit built-in schemes or use your own palette files to personalize map and route colors. |
-| [Creating custom palettes](../../user/map/tracks/appearance.md#gradient-palettes) | Allows you to create and edit gradient palettes for track coloring using Relative or Fixed values. You can define color steps, assign values, and customize how data (such as speed or altitude) is displayed along the track. |
+| [Creating custom palettes](../../user/map/tracks/appearance.md#color-palette-editor) | Allows you to create and edit gradient palettes for track coloring using Relative or Fixed values. You can define color steps, assign values, and customize how data (such as speed or altitude) is displayed along the track. |
 | [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Allows organizing tracks in Smart Folders using advanced grouping parameters such as date & time, distance, duration, speed, altitude & elevation, and sensor data. These options enable more detailed track categorization and flexible analysis. |
 
 

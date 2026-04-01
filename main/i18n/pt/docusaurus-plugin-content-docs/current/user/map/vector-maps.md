@@ -1,5 +1,5 @@
 ---
-source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
+source-hash: 0b9fec9a92cbab58480cefaa92e29f493c2277360a9b9044570e4cc41a94d83d
 sidebar_position: 5
 title:  Mapas Vetoriais
 ---
@@ -109,7 +109,7 @@ Definições especiais para estradas, onde pode alterar as cores para correspond
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. O alto contraste das estradas.  
 ![Estilo de estrada do mapa de alto contraste](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pálido**. Cores menos contrastantes das estradas.  
-![Estilo de estrada do mapa com contorno em negrito](@site/static/img/map/map-road-style-pale.png)
+![Estilo de estrada do mapa pálido](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contorno em negrito para estradas.  
 ![Estilo de estrada do mapa com contorno em negrito](@site/static/img/map/map-road-style-bold-outline.png)
@@ -161,7 +161,7 @@ Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 - **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Mostra contornos de profundidade do mar. Precisa de instalar o [plugin Náutico](../plugins/nautical-charts) e transferir mapas Náuticos.  
     ![Parâmetro do mapa - Contornos de profundidade](@site/static/img/map/map-parameter-depth-contours.png)
 
-- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Mostra quadro verde e etiquetas "NR" para [território de reserva natural](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Realça áreas protegidas com uma borda verde e etiqueta "NR" para zonas de conservação da vida selvagem.  
+- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. Mostra borda verde e etiquetas "NR" para [território de reserva natural](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Realça áreas protegidas com uma borda verde e etiqueta "NR" para zonas de conservação da vida selvagem.  
 
     &nbsp;&nbsp;&nbsp;![Parâmetro do mapa - Reserva natural](@site/static/img/map/nature-reserve.png)
 
@@ -363,6 +363,30 @@ As linhas de contorno no OsmAnd são exibidas como linhas de elevação em mapas
 
 As linhas de contorno são compatíveis com todos os estilos de mapa e podem ser personalizadas através do [menu Linhas de contorno](../plugins/topography.md#contour-lines). Para mais detalhes, visite o artigo [plugin de Topografia](../plugins/topography.md).
 
+### Terreno {#terrain}
+
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+
+A opção Terreno permite personalizar três funcionalidades, como Hillshade, Slope e Altitude. Para mais detalhes, consulte o artigo [Topografia](../plugins/topography.md#terrain).
+
+### Edifícios 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+
+![Edifícios 3D](@site/static/img/map/3d_buildings_1_new_2.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_2.png) 
+
+A funcionalidade **Edifícios 3D** exibe edifícios como modelos volumétricos 3D em vez de formas planas. Os edifícios são gerados a partir de [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
+
+Esta opção está disponível apenas quando o plugin de Topografia está ativado. Consulte o artigo [plugin de Topografia](../plugins/topography.md#3d-buildings) para obter detalhes.
+
+### Relevo 3D {#3d-relief}
+
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+A funcionalidade Relevo 3D produz um relevo elevado e fornece uma representação tridimensional da paisagem. O Relevo 3D funciona offline e pode ser utilizado com [mapas vetoriais do OsmAnd](../map/vector-maps.md) ou quaisquer [mapas raster](../map/raster-maps.md#layers) como uma [Fonte de Mapa](../map/raster-maps.md#main) ou como uma [Subjacência/Sobreposição](../map/raster-maps.md#overlay). Mais informações detalhadas estão disponíveis [aqui](../plugins/topography.md#3d-relief).
+
 ### * Profundidade Náutica {#-nautical-depth}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -389,52 +413,15 @@ As linhas de contorno de profundidade náutica representam áreas de igual profu
 
 Para mais detalhes sobre a visualização de mapa Náutico, visite a [página do plugin de Mapa Náutico](../plugins/nautical-charts).
 
-### Edifícios 3D {#3d-buildings}
+### Vista do Globo {#globe-view}
 
 <InfoAndroidOnly/> 
 
-![Edifícios 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_2.png) 
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
-A funcionalidade **Edifícios 3D** exibe edifícios como modelos volumétricos 3D em vez de formas planas. Os edifícios são gerados a partir de [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando informações de altura de etiquetas como `height` e `building:levels` quando disponíveis. Os edifícios 3D são mostrados apenas em níveis de zoom mais elevados (vista da cidade/rua), onde edifícios individuais podem ser exibidos.  
-Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
-Utilize o interruptor principal para ativar ou desativar a renderização 3D de edifícios. Para ver edifícios em 3D, incline o mapa colocando dois dedos no ecrã e deslizando para cima.
+![Vista do Globo](@site/static/img/map/globe_view_1.png) ![Vista do Globo](@site/static/img/map/globe_view_2.png)
 
-Atualmente, esta opção está disponível apenas quando o [plugin de desenvolvimento do OsmAnd](../plugins/development.md) está ativado.  
-Ir para: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
-
-As definições de edifícios 3D estão divididas em dois grupos: **Aparência** e **Desempenho**.
-
-**Aparência: Cor**. Controla a cor dos edifícios 3D. Quando toca em Cor, o OsmAnd abre um ecrã de pré-visualização separado onde pode ver o mapa enquanto ajusta a definição.
-- **Estilo de mapa** — utiliza a cor predefinida de edifícios do estilo de mapa atualmente selecionado.
-- **Personalizado** — permite definir uma cor personalizada para edifícios separadamente para o modo Dia / Noite.
-
-:::tip Purchase
-A Personalização de Cor de Edifícios 3D é uma [funcionalidade paga](../purchases/index.md).  
-:::
-
-Se as cores personalizadas não forem compradas, verá um estado vazio com uma descrição curta e um botão Obter. Se o Personalizado estiver disponível, pode alternar entre Dia e Noite, escolher uma cor da paleta (ou abrir Todas as cores) e, em seguida, tocar em Aplicar.
-
-**Aparência: Visibilidade**. Controla a opacidade (transparência) dos edifícios 3D. Utilize o slider para definir a visibilidade como uma percentagem. Valores mais baixos tornam os edifícios mais transparentes e ajudam as estradas/etiquetas a permanecerem legíveis. Valores mais altos tornam os edifícios mais sólidos e visualmente dominantes. Tocar em Visibilidade também abre um ecrã de pré-visualização separado com o slider.
-
-Nos ecrãs de pré-visualização (Cor / Visibilidade), pode utilizar Repor para o predefinido na barra da aplicação para restaurar o valor predefinido.
-
-**Desempenho: Nível de detalhe**. Controla o quão detalhada é a geometria do edifício 3D:
-- Baixo (predefinido) — geometria mais simples.
-- Alto — geometria mais detalhada.
-
-**Desempenho: Distância de visualização**. Controla quão longe da câmara os edifícios 3D são renderizados:
-- Perto (predefinido) — renderiza edifícios mais próximos de si.
-- Longe — renderiza edifícios a uma distância maior.
-
-Ambas as opções de desempenho utilizam um interruptor de duas posições diretamente no ecrã de definições de edifícios 3D.
-
-<!--
-## Map Legend {#map-legend}
-
-The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
-
-The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
--->
+A **Vista do Globo** permite exibir o mapa como uma Terra esférica em vez de uma projeção plana. Este modo altera a geometria da superfície do mapa e adapta a interação do mapa à navegação esférica. Para mais informações, consulte a secção [Vista do Globo](../map/interact-with-map.md#globe-view) no artigo Interagir com o Mapa.
 
 
 ## Definições Adicionais {#additional-settings}
@@ -515,20 +502,6 @@ Por predefinição, a aplicação utiliza o formato de coordenadas selecionado e
 
 [Ação rápida](../widgets/quick-action.md#overview): Também pode adicionar um atalho rápido *Mostrar/Ocultar Grelha de Coordenadas* ao grupo [Configurar Mapa](../widgets/quick-action.md#configure-map) para acesso rápido.
 
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->
 
 ## Rotas {#routes}
 

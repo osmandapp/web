@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  تهيئة الخريطة
 ---
@@ -23,7 +23,7 @@ import Translate from '@site/src/components/Translate.js';
 
 قسم **إظهار**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configure map android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 قسم **التضاريس**:  
 
@@ -43,7 +43,7 @@ import Translate from '@site/src/components/Translate.js';
 
 قسم **عرض على الخريطة**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_ios.png)  
+![Configure map android](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 قسم **التضاريس**:  
 
@@ -100,7 +100,7 @@ import Translate from '@site/src/components/Translate.js';
    - [المسارات](../map/tracks/index.md) - تعرض المسارات المستوردة أو المخططة أو المسجلة فوق الخريطة.
    - [صور مستوى الشارع](../plugins/mapillary.md#map-layer) - تعرض النقاط التي تتوفر بها صور على مستوى الشارع.
    - [أدلة السفر](../plan-route/travel-guides.md) - تعرض أدلة السفر على الخريطة.
-   - [ويكيبيديا](../plugins/wikipedia.md) - تبرز مقالات ويكيبيديا المرتبطة بالخريطة.
+   - [الأماكن الشائعة](../map/popular_places.md) - تبرز الأماكن الشائعة بناءً على مقالات ويكيبيديا وعرضها على الخريطة.
    - [تحرير OSM](../plugins/osm-editing.md#osm-editing-layer) - يعرض تعديلات OpenStreetMap، والملاحظات، وطبقات المساعدة المتعلقة بالرسم على الخرائط.
    - [طبقات الإضافات الأخرى](../plugins/index.md#configure-plugin) - تضيف العديد من الإضافات طبقاتها الخاصة بمعلومات إضافية.
 

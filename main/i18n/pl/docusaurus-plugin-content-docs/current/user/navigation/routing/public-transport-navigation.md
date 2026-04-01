@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Wyznaczanie tras transportem publicznym
 ---
@@ -142,19 +142,29 @@ Interfejs użytkownika wyświetla alternatywne trasy jako kolorowe odznaki z ich
 
 ## Wydajność i wyniki {#performance-and-results}
 
-**Profil transportu publicznego -> Ustawienia -> Ustawienia nawigacji -> Parametry trasy**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Maksymalna liczba zmian transportu**.
+<TabItem value="android" label="Android">
 
-Wydajność i zużycie pamięci routera transportu publicznego zależy od głębokości wyszukiwania.
+![Maksymalna liczba zmian transportu](@site/static/img/navigation/public/maximum_number_android.png) 
 
-Najważniejszym parametrem wpływającym na tę głębokość jest **Maksymalna liczba zmian transportu**.
+</TabItem>
 
-Używamy wartości **2** jako domyślnej, co wydaje się optymalne dla nowoczesnych sieci transportu publicznego.
+<TabItem value="ios" label="iOS">  
 
-Jeśli napotkasz niską wydajność lub błędy braku pamięci, spróbuj zmniejszyć tę wartość.
+![Maksymalna liczba zmian transportu](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Jeśli jesteś w małym mieście lub podróżujesz krótkimi trasami, wartość **1** może działać lepiej.
+</TabItem>
+
+</Tabs>
+
+Przejdź do: *<Translate android="true" ids="shared_string_settings"/>* *→ Profil transportu publicznego →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Maksymalna liczba zmian transportu*
+
+Wydajność i zużycie pamięci routera transportu publicznego zależy od głębokości wyszukiwania. Najważniejszym parametrem wpływającym na tę głębokość jest **Maksymalna liczba zmian transportu**.
+
+Ten parametr wpływa również bezpośrednio na dostępność i jakość tras. Jeśli wartość jest ustawiona zbyt nisko (na przykład 0), OsmAnd może nie znaleźć odpowiednich tras lub zasugerować nieoptymalne opcje, nawet gdy istnieją lepsze trasy z przesiadkami.
+
+Używamy wartości **2** jako domyślnej, co wydaje się optymalne dla nowoczesnych sieci transportu publicznego. Jeśli napotkasz niską wydajność lub błędy braku pamięci, spróbuj zmniejszyć tę wartość. Jeśli jesteś w małym mieście lub podróżujesz krótkimi trasami, wartość **1** może działać lepiej.
 <!--
 There are two more parameters that help you choose the best routes.
 

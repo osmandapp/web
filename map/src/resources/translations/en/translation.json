@@ -6034,5 +6034,8 @@
     "shared_string_interval": "Interval",
     "transport_stops": "stops",
     "shared_string_previous": "Previous",
-    "shared_string_next": "Next"
+    "shared_string_next": "Next",
+    "shared_string_overview": "Overview",
+    "shared_string_gpx_track": "Track",
+    "shared_string_gpx_points": "Points"
 }

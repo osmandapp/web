@@ -1,5 +1,5 @@
 ---
-source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
+source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
 sidebar_position: 5
 title:  Vectorkaarten 
 ---
@@ -363,6 +363,30 @@ Hoogtelijnen in OsmAnd worden weergegeven als hoogtelijnen op vectorkaarten. Om 
 
 Hoogtelijnen zijn compatibel met alle kaartstijlen en kunnen worden aangepast via het [Hoogtelijnen-menu](../plugins/topography.md#contour-lines). Voor meer details, bezoek het [Topografie-plugin](../plugins/topography.md) artikel.
 
+### Terrein {#terrain}
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+
+De Terrein-optie stelt u in staat om drie functies aan te passen zoals Hillshade, Helling en Hoogte. Voor meer details, raadpleeg het [Topografie](../plugins/topography.md#terrain) artikel.
+
+### 3D Gebouwen {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D gebouwen*  
+
+![3D Gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D Gebouwen](@site/static/img/map/3d_buildings_2.png) 
+
+**3D Gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
+
+Deze optie is alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld. Zie het [Topografie-plugin](../plugins/topography.md#3d-buildings) artikel voor details.
+
+### 3D Relief {#3d-relief}
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+De 3D Relief-functie produceert een verhoogd reliëf en biedt een driedimensionale weergave van het landschap. 3D Relief werkt offline en kan worden gebruikt met [OsmAnd vectorkaarten](../map/vector-maps.md) of andere [rasterkaarten](../map/raster-maps.md#layers) als een [Kaartbron](../map/raster-maps.md#main) of als een [Onderlaag/Bovenlaag](../map/raster-maps.md#overlay). Meer gedetailleerde informatie is beschikbaar [hier](../plugins/topography.md#3d-relief).
+
 ### * Nautische diepte {#-nautical-depth}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -389,44 +413,23 @@ Nautische dieptecontouren vertegenwoordigen gebieden met gelijke diepte en helpe
 
 Voor meer details over de Nautische kaartweergave, bezoek de [Nautische Kaart-plugin pagina](../plugins/nautical-charts).
 
-### 3D Gebouwen {#3d-buildings}
+### Wereldbolweergave {#globe-view}
 
 <InfoAndroidOnly/> 
 
-![3D Gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D Gebouwen](@site/static/img/map/3d_buildings_2.png) 
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Wereldbolweergave*
 
-De functie **3D Gebouwen** geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. 3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven.  
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D gebouwen*  
-Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. Om gebouwen in 3D te bekijken, kantel de kaart door twee vingers op het scherm te plaatsen en omhoog te vegen.
+![Wereldbolweergave](@site/static/img/map/globe_view_1.png) ![Wereldbolweergave](@site/static/img/map/globe_view_2.png)
 
-Momenteel is deze optie alleen beschikbaar wanneer de [OsmAnd-ontwikkelingsplugin](../plugins/development.md) is ingeschakeld.  
-Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+**Wereldbolweergave** stelt u in staat om de kaart weer te geven als een bolvormige aarde in plaats van een platte projectie. Deze modus verandert de geometrie van het kaaroppervlak en past de kaartinteractie aan op bolvormige navigatie. Voor meer informatie, zie de [Wereldbolweergave-sectie](../map/interact-with-map.md#globe-view) in het Omgaan met kaart artikel.
 
-De instellingen voor 3D-gebouwen zijn verdeeld in twee groepen: **Uiterlijk** en **Prestaties**.
+<!--
+## Map Legend {#map-legend}
 
-**Uiterlijk: Kleur**. Dit stuurt de kleur van 3D-gebouwen aan. Wanneer u op Kleur tikt, opent OsmAnd een apart voorbeeldscherm waarin u de kaart kunt zien terwijl u de instelling aanpast.
-- **Kaartstijl** — gebruikt de standaard gebouwkleur uit de momenteel geselecteerde kaartstijl.
-- **Aangepast** — laat u een aangepaste gebouwkleur instellen voor Dag / Nacht-modus.
+The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
 
-:::tip Aankoop
-KleurAanpassing van 3D Gebouwen is een [betaalde functie](../purchases/index.md).  
-:::
-
-Als aangepaste kleuren niet zijn gekocht, ziet u een lege toestand met een korte beschrijving en een Knop Ophalen. Als Aangepast beschikbaar is, kunt u schakelen tussen Dag en Nacht, een kleur kiezen uit het palet (of Alle kleuren openen), en vervolgens Toepassen tikken.
-
-**Uiterlijk: Zichtbaarheid**. Dit stuurt de dekking (transparantie) van 3D-gebouwen aan. Gebruik de schuifregelaar om de zichtbaarheid als percentage in te stellen. Lagere waarden maken gebouwen transparanter en helpen wegen/labels leesbaar te houden. Hogere waarden maken gebouwen solider en visueel dominant. Tikken op Zichtbaarheid opent ook een apart voorbeeldscherm met de schuifregelaar.
-
-Op de voorbeeldschermen (Kleur / Zichtbaarheid) kunt u Reset naar standaard gebruiken vanuit de app-balk om de standaardwaarde te herstellen.
-
-**Prestaties: Detailniveau**. Dit stuurt aan hoe gedetailleerd de 3D-gebouwgeometrie is:
-- Laag (standaard) — eenvoudigere geometrie.
-- Hoog — meer gedetailleerde geometrie.
-
-**Prestaties: Bezichtigingsafstand**. Dit stuurt aan hoe ver van de camera 3D-gebouwen worden weergegeven:
-- Dichtbij (standaard) — geeft gebouwen dichterbij weer.
-- Ver — geeft gebouwen vanaf een grotere afstand weer.
-
-Beide prestatie-opties gebruiken een tweepositieschakelaar direct op het 3D-gebouweninstelscherm.
+The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
+-->
 
 
 ## Aanvullende Instellingen {#additional-settings}
@@ -481,7 +484,7 @@ Ga naar: *Menu → Kaart configureren → Tonen → Coördinatenraster*
 
 <TabItem value="ios" label="iOS">  
 
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+![Coördinatenraster menu](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
@@ -507,6 +510,21 @@ U kunt de volgende opties configureren:
 Standaard gebruikt de app het coördinaatformaat dat is geselecteerd in [Algemene instellingen](../personal/profiles.md#units--formats), maar u kunt het direct in dit menu wijzigen.
 
 [Snelle actie](../widgets/quick-action.md#overview): U kunt ook een snelle schakelaar *Coördinatenraster tonen/verbergen* toevoegen aan de groep [Kaart configureren](../widgets/quick-action.md#configure-map) voor snelle toegang.
+
+<!--
+| | | |
+|--------|--------|--------|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
+-->
 
 ## Routes {#routes}
 

@@ -1,6 +1,6 @@
 ---
-source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
-sidebar_position: 3
+source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+sidebar_position: 4
 title:  Notes audio/vidéo
 ---
 
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Vos enregistrements audio et vidéo peuvent être utiles à l'avenir, comme des souvenirs des endroits que vous avez visités. Ils sont disponibles dans le menu [Mes endroits](../personal/myplaces.md) et sont visibles lorsque le plugin Notes audio/vidéo est activé.
+Vos enregistrements audio et vidéo peuvent être utiles à l'avenir, comme des souvenirs des endroits où vous êtes allé. Ils sont disponibles dans le menu [Mes endroits](../personal/myplaces.md) et sont visibles lorsque le plugin Notes audio/vidéo est activé.
 
 Le plugin Notes audio/vidéo étend les fonctionnalités d'OsmAnd en vous permettant de créer vos propres notes dans divers formats, tels que des photos, des vidéos ou de l'audio, et de les associer à leur emplacement géographique ou à votre position actuelle. Vous ne pouvez effectuer des enregistrements que lorsque le plugin est activé, en utilisant le [widget Notes audio/vidéo](../widgets/info-widgets.md#audiovideo-notes-widget) et/ou le [menu contextuel de la carte](../map/map-context-menu.md#-audiovideo-note). Les données reçues sont automatiquement sauvegardées dans [Mes endroits](../personal/myplaces.md), d'où elles peuvent être gérées et partagées facilement.
 
@@ -423,9 +423,9 @@ Si vous visualisez le fichier GPX de la trace ajoutée avec un point de cheminem
 
 Le plugin <Translate android="true" ids="audionotes_plugin_name"/> génère des fichiers audio/vidéo/photo au format suivant :
 
-    `{LIENCOURT_EMPLACEMENT}_Description.{avi,mp3,jpg}`
+    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
 
-où `LIENCOURT_EMPLACEMENT` spécifie la latitude et la longitude de l'emplacement auquel le fichier est lié. Le `LIENCOURT_EMPLACEMENT` est encodé, conformément à la spécification du [Lien court](https://wiki.openstreetmap.org/wiki/Shortlink).
+où `SHORTLINK_LOCATION` spécifie la latitude et la longitude de l'emplacement auquel le fichier est lié. Le `SHORTLINK_LOCATION` est encodé, conformément à la spécification du [Lien court](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Exporter vers JOSM {#export-to-josm}

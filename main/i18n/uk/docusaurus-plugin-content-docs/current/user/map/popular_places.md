@@ -1,5 +1,5 @@
 ---
-source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
+source-hash: 004b4b8d94eaf093dcc696c34a008dc61bd0e4e803c5402b096e6f3105ac6e4d
 sidebar_position: 8
 title: Популярні місця
 ---
@@ -60,21 +60,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Як користуватися {#how-to-use}
 
-<InfoAndroidOnly/>
-
 Функція **Популярні місця** включає як підібраний список визначних пам'яток поблизу, так і шар POI на основі Вікіпедії на мапі.
 
 Існує два основних способи доступу до цієї функції:
 
 - **Безкоштовна версія**  
   Доступ через [Пошук](#explore-in-search) для перегляду найближчих місць у вигляді списку.  
-  *<Translate android="true" ids="android_button_seq"/>*. Перейдіть до: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/> only*. Перейдіть до: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
   
   Цей список Дослідження показує місця Вікіпедії/Wikidata, ранжовані за популярністю, поблизу вас, і працює онлайн. Він відображає до 50 місць. Оскільки результати Дослідження/Вікіпедії ранжуються за рейтингом, порядок у цих результатах може відрізнятися від звичайного пошуку POI.
 
 - **Платні версії** *(Maps+ and OsmAnd Pro)*  
   Увімкніть візуальний шар у [Налаштуваннях мапи](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/>*. Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> & IOS*. Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   У цьому режимі популярні POI з'являються безпосередньо на мапі з мініатюрами для попереднього перегляду та вмістом з Вікіпедії.
 
@@ -118,15 +116,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Увімкнути шар {#enable-layer}
 
-<InfoAndroidOnly/>
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>**. Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
 ![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map"/> → Popular places (Wikipedia)*
+
+![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -210,7 +214,7 @@ In the Map Context menu How to access:
 <TabItem value="android" label="Android">  
 
 ![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
@@ -223,7 +227,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-**Меню галереї** може відображати до **100 зображень**, пов'язаних з обраною точкою інтересу. Щоб переглянути ці зображення, натисніть **Показати все** (Android) / **Переглянути все** (iOS). Ви можете перегортати всі доступні фотографії. Коротке натискання на фотографію відкриває детальний перегляд, що показує: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*. 
+**Меню галереї** може відображати до **100 зображень**, пов'язаних з обраною точкою інтересу. Щоб переглянути ці зображення, натисніть **Показати все** (Android) / **Переглянути все** (iOS). Ви можете перегортати всі доступні фотографії. Коротке натискання на фотографію відкриває детальний перегляд, що показує: *Опис (до двох рядків, лише Android)*, *Назва*, *Дата додавання*, *Автор*, *Ліцензія*.
 
 На iOS, iPadOS та macOS ви можете переглядати фотографії за допомогою клавіш клавіатури (←/→ для переміщення між зображеннями, Enter/Space для відкриття).
 
@@ -233,7 +237,9 @@ In the Map Context menu How to access:
   Поділіться вибраним зображенням за допомогою будь-якого сумісного додатка, встановленого на вашому пристрої (наприклад, месенджери, електронна пошта або соціальні мережі). Спільний вміст включає зображення та посилання на його джерело (за наявності).
 
 - **Деталі**  
-  Відкрийте детальний перегляд, що показує метадані про зображення, включаючи: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*, *Джерело* та *Пряме посилання*
+  Відкрийте детальний перегляд, що показує метадані про зображення, включаючи: *Опис (повний текст, лише Android)*, *Назва*, *Дата додавання*, *Автор*, *Ліцензія*, *Джерело* та *Пряме посилання*
+
+  **Примітка:** Мова опису залежить від мови інтерфейсу додатка. Якщо опис обраною мовою недоступний, OsmAnd показує англійську версію або першу доступну перекладену версію.
 
 - **Відкрити в браузері**  
   Запустіть сторінку джерела зображення (зазвичай на [Wikimedia Commons](https://commons.wikimedia.org/)) у вашому браузері за замовчуванням. Це дозволяє переглянути повне зображення, інформацію про ліцензування та пов'язаний вміст.

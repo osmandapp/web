@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title: Interagir com o Mapa
 ---
@@ -217,6 +217,8 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 A Visualização em Globo está atualmente disponível apenas quando:
 - O [plugin de Desenvolvimento](../plugins/development.md) está ativado.  
 Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- O [plugin de Topografia](../plugins/topography.md) está ativado.  
+Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - O [Motor de renderização do mapa](../personal/global-settings.md#map-rendering-engine) está definido para a Versão 2 (OpenGL).  
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 

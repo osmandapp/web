@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title: Renk Şemaları
 ---
@@ -71,6 +71,8 @@ Renk paleti verileri [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#lo
 
 Arazi dosyaları (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) 3 [arazi görselleştirmesi](../plugins/topography.md#hillshade-slope-and-altitude-layers) tanımlar: *Tepe Gölgesi, Eğim* ve *Rakım*. Her tür için birden fazla paletiniz olabilir, örneğin, *çığ eğimi* varsayılan olarak sağlanır. Daha fazla detay için [Topografya](../plugins/topography.md#default-color-scheme) makalesine bakın.
 
+Android'da, *Eğim* ve *Rakım* renk şemaları için paletler ayrıca [Renk Paleti düzenleyicisi](../plugins/topography.md#modify-color-scheme) kullanılarak doğrudan uygulamada oluşturulabilir veya düzenlenebilir. Bu, ücretli bir özelliktir <ProFeature />.
+
 ### İzler ve Rotalar {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ Arazi dosyaları (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name
 
 - [Rotalar](../navigation/guidance/map-during-navigation.md#color) için: *Hız (`route_speed_default.txt`), Eğim (`route_slope_default.txt`)* ve *Yükseklik (Rakım) (`route_elevation_default.txt`)*.
 - [GPX İzleri](../map/tracks/appearance#track-colors-in-gpx-files) için: *Hız, Eğim, Maksimum Hız (`route_maxspeed_default.txt`)* ve *Yükseklik (Rakım)* veya *Dış sensörlerden gelen bilgiler*.
+
+Android'da, paletler ayrıca [Renk Paleti düzenleyicisi](../map/tracks/appearance.md#color-palette-editor) kullanılarak doğrudan uygulamada oluşturulabilir veya düzenlenebilir. Bu, ücretli bir özelliktir <ProFeature />.
 
 ### Favoriler ve Yol Noktaları {#favorites-waypoints}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Ekran mapy podczas nawigacji
 ---
@@ -191,15 +191,15 @@ Możesz wybrać wygląd linii trasy według stylu lub ręcznie wybrać kolor, sz
 
 ### Kolor {#color}
 
-Ustawienie **Kolor** zmienia odcienie kolorów linii trasy. Ich ogólny kolor zmienia się w zależności od wybranego typu z kolekcji OsmAnd i zgodnie z **Legendą mapy**. Alternatywnie, ich kolor staje się dowolnym kolorem i przezroczystością ustawioną ręcznie.
+Ustawienie **Kolor** zmienia odcienie kolorów linii trasy. Ich ogólny kolor zmienia się w zależności od wybranego typu z kolekcji OsmAnd i zgodnie z **Legendą mapy**. Alternatywnie, ich kolor staje się dowolnym kolorem i przezroczystością ustawionym ręcznie.
 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Używane z domyślnymi kolorami. Pełny opis kolorów znajduje się w [Domyślne style mapy](../../map/map-styles.md#default-map-styles).  
     ![styl mapy](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Niestandardowy***. Pozwala wybrać linię w dowolnym preferowanym kolorze i przezroczystości. Możesz wybrać różne ustawienia dla mapy dziennej i osobno dla mapy nocnej.  
-    ![niestandardowy](@site/static/img/navigation/route/custom.png)   ![niestandardowy](@site/static/img/navigation/route/custom_ios.png)
+- ***Niestandardowy***. Pozwala wybrać linię w dowolnym preferowanym kolorze i przezroczystości. Możesz wybrać różne ustawienia dla mapy dziennej i osobno dla mapy nocnej. Paleta kolorów obejmuje kolory szybkiego dostępu, opcję dodania niestandardowego koloru (*+*), oraz pełną listę dostępnych kolorów (*Wszystkie kolory*).            
+    ![niestandardowy](@site/static/img/navigation/route/custom_new.png)   ![niestandardowy](@site/static/img/navigation/route/custom_ios_new.png)
 
-- ***<Translate android="true" id="altitude"/>***. Pokazuje wysokość punktu trasy jako gradient **zielono-żółto-czerwony**. **Zielony** oznacza najniższy punkt trasy, **żółty** oznacza średnią wysokość punktu, a **czerwony** najwyższą. Jeśli różnica wysokości trasy jest mniejsza niż 100 metrów, gradient jest stosowany częściowo lub nie jest stosowany, na przykład dla prostego wzniesienia od 100 metrów do 150 metrów - gradient będzie **zielono-żółty**. Należy pamiętać, że kolor nie reprezentuje bezwzględnej wartości wysokości.  
+- ***<Translate android="true" id="altitude"/>***. Pokazuje wysokość punktu trasy jako gradient **zielono-żółto-czerwony**. **Zielony** oznacza najniższy punkt trasy, **żółty** oznacza średnią wysokość punktu, a **czerwony** najwyższą. Jeśli różnica wysokości trasy jest < 100 metrów, gradient jest stosowany częściowo lub nie jest stosowany, na przykład dla prostego wzniesienia od 100 metrów do 150 metrów - gradient będzie **zielono-żółty**. Należy pamiętać, że kolor nie reprezentuje bezwzględnej wartości wysokości.  
     ![Wysokość](@site/static/img/navigation/route/Altitude_rl.png)
 
 - ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. Linia trasy jest pokolorowana różnymi kolorami w zależności od profilu wysokościowego trasy. Szczegółowy opis znajduje się w artykule *Wtyczka Rzeźba terenu*, sekcja [Nachylenie](../../plugins/topography.md#hillshade-slope-and-altitude-layers).  
@@ -231,7 +231,7 @@ Możesz dostosować szerokość linii trasy, aby dopasować ją do drogi lub śc
 - ***<Translate android="true" id="map_widget_renderer"/>***. Jest używany z domyślną szerokością ustawioną przez OsmAnd. Pełny opis można znaleźć w artykule *[Style map](../../map/map-styles.md)*.  
     ![styl mapy](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Szerokości Cienka, Średnia i Gruba***. Możesz wybrać szerokość linii, aby dopasować ją do szerokości drogi lub mocniej podkreślić linię trasy na mapie.  
+- ***Szerokości Cienka, Średnia i Pogrubiona***. Możesz wybrać szerokość linii, aby dopasować ją do szerokości drogi lub mocniej podkreślić linię trasy na mapie.  
     ![szerokość](@site/static/img/navigation/route/width_med.png)
 
 - ***Niestandardowa***. Pozwala wyświetlić linię o wymaganej szerokości. Użyj suwaka, aby wybrać szerokość.  
@@ -243,7 +243,7 @@ Możesz dostosować szerokość linii trasy, aby dopasować ją do drogi lub śc
 Ustawienie Strzałki skrętów pozwala wybrać, czy strzałki skrętów mają być wyświetlane na linii trasy.  
 
 - ***Na mapie***  
-    ![Wysokość](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![strzałki_skrętu_ios_mapa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Wysokość](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![strzałki_skrętu_ios_na_mapie](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***W aplikacji***  
     ![Wysokość](@site/static/img/navigation/route/turn_arr.png)   ![strzałki_skrętu_ios](@site/static/img/navigation/route/turn_arr_ios.png)

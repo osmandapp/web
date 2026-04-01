@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title:  Buscar todo
 ---
@@ -12,14 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Resumen {#overview}
 
-**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar la Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI), o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La búsqueda en el [Historial](#search-history) guarda las búsquedas anteriores para un acceso rápido a los lugares encontrados previamente. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
+**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI), o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La pestaña [Explorar](#search-explore) resalta lugares populares cercanos y proporciona acceso rápido a ubicaciones visitadas recientemente. La [Historial](#search-history-ios) de búsqueda guarda las búsquedas pasadas. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
 
 
 ## Cómo usar {#how-to-use}
@@ -28,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Lista de PDI de búsqueda Android](@site/static/img/search/poi_list_android.png)
+![Lista de PDI de búsqueda Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -89,13 +90,17 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Ordenar resultados de búsqueda {#sorting-search-results}
 
-OsmAnd ordena automáticamente los resultados de la búsqueda según tres criterios principales:
+OsmAnd ordena automáticamente los resultados de la búsqueda según varios criterios:
 
 1. **Coincidencia de consultas** — Los resultados que contienen coincidencias exactas o parciales con las palabras que introdujo se muestran más arriba.
 
-2. **Tipo de objeto** - Al ordenar por nombre, las ciudades y calles tienen prioridad sobre los PDI al mostrar los resultados.
+2. **Relevancia** — Los objetos cuyos nombres coinciden estrechamente con la consulta de búsqueda suelen mostrarse más arriba en los resultados.
 
-3. **Distancia** - Cuando los resultados tienen criterios de coincidencia y tipos de objeto similares, los resultados más cercanos a la ubicación actual del usuario se muestran primero.
+3. **Tipo de objeto** — Dependiendo de la consulta, los resultados pueden incluir diferentes tipos de objetos como ciudades, calles, direcciones o PDI.
+
+4. **Distancia** — Cuando los resultados tienen criterios de coincidencia y tipos de objeto similares, los resultados más cercanos a la ubicación actual del usuario se muestran primero.
+
+5. **Importancia** — Los lugares emblemáticos conocidos o lugares referenciados con frecuencia pueden aparecer más arriba en los resultados cuando coinciden estrechamente con la consulta de búsqueda.
 
 ***Por ejemplo***, una consulta de búsqueda *oficina de correos* mostrará primero las oficinas de correos más cercanas, incluso si hay otros elementos con nombres similares a una distancia mayor.  
 
@@ -148,13 +153,13 @@ OsmAnd ha integrado los [**datos TIGER**](../../technical/algorithms/trace-addre
 
 <TabItem value="android" label="Android">
 
-![Buscar PDI Android](@site/static/img/search/poi_overlay_android.png)
+![Buscar PDI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Buscar PDI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Buscar PDI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -171,7 +176,7 @@ OsmAnd le permite buscar puntos que se muestran en un mapa en la pantalla de su 
 
 ### Buscar cerca {#search-nearby}
 
-![Búsqueda Android](@site/static/img/search/search_all_near_location_andr.png)
+![Búsqueda Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 Puede utilizar la búsqueda en las proximidades de una ubicación específica. Para ello, seleccione el punto requerido [de la lista en el menú de búsqueda](#full-text-search) o selecciónelo directamente en el mapa. En el [menú contextual del mapa](../map/map-context-menu.md#actions), seleccione *Acciones → Buscar cerca*.
 
@@ -182,7 +187,7 @@ Puede utilizar la búsqueda en las proximidades de una ubicación específica. P
 
 <TabItem value="android" label="Android">
 
-![Búsqueda Android](@site/static/img/search/search_address_2_andr.png)
+![Búsqueda Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -197,25 +202,23 @@ Puede utilizar la búsqueda en las proximidades de una ubicación específica. P
 La **Búsqueda de dirección** utiliza datos de OpenStreetMap. Este tipo de búsqueda le permite encontrar la ubicación y la dirección a una dirección específica a partir de una lista ya ordenada. Lea más en el artículo [Búsqueda de dirección](./search-address.md).
 
 
-## Historial de búsqueda {#search-history}
+## Búsqueda Explorar {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Búsqueda Explorar](@site/static/img/search/explore_search_android.png)
 
-![Búsqueda en el historial](@site/static/img/search/history_search_android.png)
+La pestaña **Explorar** en la herramienta de Búsqueda le ayuda a descubrir rápidamente lugares cerca de su ubicación actual y acceder a elementos abiertos recientemente. Contiene dos secciones principales:  
+- Lugares populares cercanos – una lista desplazable de lugares emblemáticos y atracciones conocidas cerca de su ubicación. Cada elemento puede incluir el nombre del lugar, su categoría, distancia y dirección, y una imagen de vista previa si está disponible. Toque *Mostrar todo* para abrir la lista completa o *Mostrar en el mapa* para mostrar estos lugares en el mapa.
+- Visitados recientemente – una lista de lugares, tracks u otros objetos que ha abierto recientemente. Esto le permite regresar rápidamente a ubicaciones vistas anteriormente.
 
-</TabItem>
+Para más detalles, consulte [aquí](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Historial de búsqueda (iOS) {#search-history-ios}
 
 ![Búsqueda en el historial](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
-Puede utilizar el **Historial de búsqueda** para buscar de nuevo lugares, direcciones o lugares visitados con frecuencia encontrados anteriormente sin volver a introducir la consulta. Se pueden encontrar más detalles en el artículo [Historial de búsqueda](./search-history.md).
+Puede usar el **Historial de búsqueda** para buscar de nuevo lugares, direcciones o lugares visitados con frecuencia encontrados anteriormente sin volver a introducir la consulta. Se pueden encontrar más detalles en el artículo [Historial de búsqueda](./search-history.md).
 
 
 ## Búsqueda de PDI {#search-poi}
@@ -224,7 +227,7 @@ Puede utilizar el **Historial de búsqueda** para buscar de nuevo lugares, direc
 
 <TabItem value="android" label="Android">
 
-![Buscar PDI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Buscar PDI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -274,3 +277,4 @@ La búsqueda de coordenadas proporciona una ubicación precisa. Puede introducir
 - [Historial de búsqueda](./search-history.md)
 - [Búsqueda de PDI](./search-poi.md)
 - [Búsqueda de coordenadas](./search-coordinates.md)
+- [Lugares populares](../map/popular_places.md)

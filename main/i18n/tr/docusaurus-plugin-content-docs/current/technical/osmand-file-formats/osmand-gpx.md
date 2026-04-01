@@ -1,5 +1,5 @@
 ---
-source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
+source-hash: 402ce29cb8352ebd02df5230b886dc88937640fd48f18229a66ec9689b4e036c
 sidebar_position: 2
 ---
 
@@ -35,6 +35,12 @@ OsmAnd'daki GPX dosyaları, verileri hiyerarşik olarak aşağıdaki öğelere g
   - `<trkseg>` - daha sonra `<trkpt>` (iz noktaları) olarak ayrılan iz segmentleri.
 - `<rte>` - ara noktalar ve anahtar noktalar dahil olmak üzere rotaları temsil eder.
 - `<wpt>` - bireysel ara noktaları temsil eder.
+
+#### GPX İçe Aktarma Davranışı
+
+Bir GPX dosyasını içe aktarırken, OsmAnd dosyaya dayalı olarak tek bir iz nesnesi oluşturur:
+- İçe aktarılan izin adı, GPX dosya adından türetilir. `<trk>` içindeki `<name>` öğesi içe aktarma sırasında birincil iz adı olarak kullanılmaz.
+- Bir GPX dosyası birden fazla `<trk>` öğesi içeriyorsa, OsmAnd bunları aynı izin segmentleri olarak içe aktarır. Bu durumda, `<name>` değerleri iz içindeki ilgili segmentler için etiketler olarak kullanılabilir.
 
 
 ## İz Özelleştirme {#track-customization}

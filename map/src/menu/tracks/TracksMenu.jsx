@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import CloudTrackGroup from './CloudTrackGroup';
 import isEmpty from 'lodash-es/isEmpty';
-import { Box, LinearProgress, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import { DEFAULT_GROUP_NAME, updateLoadingTracks } from '../../manager/track/TracksManager';
@@ -120,7 +120,6 @@ export default function TracksMenu() {
                     setSortFiles={setSortFiles}
                 />
             )}
-            {ctx.smartFoldersLoading && <LinearProgress id={'se-smart-folders-progress'} />}
             {ctx.gpxLoading ? (
                 <Loading />
             ) : (

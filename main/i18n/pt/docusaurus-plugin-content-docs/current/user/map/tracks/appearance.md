@@ -1,5 +1,5 @@
 ---
-source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
+source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
@@ -71,6 +71,41 @@ No iOS, a **lista de Coloração** abre como um menu de contexto. Os itens podem
 
 Para mais detalhes sobre a personalização da aparência da linha da rota, consulte [Tela do mapa durante a navegação](../../navigation/guidance/map-during-navigation.md#color) e sobre a seleção e criação de uma cor personalizada, consulte [Esquemas de cores](../../personal/color-palette-schemes.md#tracks-routes).
 
+### Editor de Paleta de Cores {#color-palette-editor}
+
+<InfoAndroidOnly/> 
+
+![Editor de Paletas de Cores](@site/static/img/map/gradient_palettes_1.png) ![Editor de Paletas de Cores ](@site/static/img/map/gradient_palettes_2.png) 
+
+Ao colorir uma trilha por Velocidade, Altitude ou Inclinação, você pode usar paletas próprias para definir como as cores são aplicadas ao longo da trilha.
+
+A tela *Todas as cores* exibe as paletas disponíveis. Toque no menu de três pontos ao lado de uma paleta para:
+- Renomear.
+- Editar.
+- Duplicar.
+- Remover. A remoção de uma paleta requer confirmação.
+
+Toque no botão + na tela Todas as cores. Dois tipos de paletas estão disponíveis:
+- **Relativa** — as cores escalam automaticamente com base nos valores mínimo e máximo da trilha.
+- **Valores Fixos** — as cores são atribuídas a números absolutos específicos (por exemplo, 50 km/h). Os valores podem ser editados manualmente. As unidades seguem as [configurações do sistema](../../personal/profiles.md#units--formats). A escala de cores não é redimensionada automaticamente quando aplicada a diferentes trilhas.
+
+:::info Recurso Pro
+Criar paletas personalizadas é um recurso pago do [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
+Para saber mais sobre esquemas de paleta de cores como formato de dados e seu uso em trilhas e rotas, consulte o artigo [Esquemas de paleta de cores](../../personal/color-palette-schemes.md#tracks-routes).
+
+Ao criar ou editar uma paleta, a tela do editor inclui:
+- Uma pré-visualização da escala de cores no topo da tela.
+- Botões de valores selecionáveis abaixo da escala de cores (por exemplo, 50, 100, 150, Sem dados).
+- Um botão + para adicionar um novo passo.
+- Um campo Valor.
+- Opções de seleção de cor. Para mais informações sobre arquivos de paleta.
+- Uma opção Remover passo para o valor selecionado.
+- Um botão Salvar.
+
+Use o ícone de desfazer na barra do aplicativo para reverter a última ação. Toque em Fechar para sair do editor. Se alterações foram feitas, uma caixa de diálogo de confirmação aparece antes de fechar.
+
 
 ### Largura {#width}
 
@@ -121,7 +156,7 @@ Adiciona **marcadores de seta** ao longo da trilha para indicar a direção do m
 
 ![Menu de Aparência da Trilha ícones de início e fim Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Permite selecionar se deseja mostrar os **ícones de início e fim** para os segmentos da trilha.
+Permite selecionar se deseja mostrar os **ícones de início e fim** para os segmentos da trilha. Para trilhas com um grande número de segmentos, esses ícones podem ser desativados automaticamente para melhorar o desempenho de renderização do mapa. Nesse caso, você pode ativá-los manualmente, se necessário.
 
 ### Juntar Lacunas {#join-gaps}
 

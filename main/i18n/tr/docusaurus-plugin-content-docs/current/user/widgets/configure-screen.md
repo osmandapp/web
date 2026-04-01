@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -333,10 +333,18 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
     - Netliği artırır ve önemli veriler için alanı en üst düzeye çıkarır.
     - Özellikle aynı **satırda** birçok widget görüntülerken kullanışlıdır.
 
-3. **Widget metin etiketlerini gizleme**:
+3. **Widget metin etiketi görünürlüğü**
 
-    - Kompakt düzenlerde sayısal bilgileri tamamen görünür tutmak için metin etiketlerini otomatik olarak gizler.
-    - Alan sınırlı olduğunda temiz ve okunabilir bir widget düzenini korumaya yardımcı olur.   
+    - Metin etiketi görünürlüğü widget boyutuna ve panel konumuna bağlıdır. Orta ve Büyük boyutlarda etiketler her zaman görüntülenir.
+    - Küçük boyutta, etiketler Sol ve Sağ panellerde gösterilmez. Üst ve Alt panellerde, etiket sağ tarafta konumlandırıldığında sayısal değerleri tamamen görünür tutmak için otomatik olarak gizlenebilir.
+    - Metin etiketlerini açma/kapama için ayrı bir seçenek yoktur.
+
+<!--
+3. **Hiding widget text labels**:
+
+    - Automatically hides text labels to keep numeric information fully visible in compact layouts.
+    - Helps maintain a clean and readable widget arrangement when space is limited.  
+--> 
 
 4. **Farklı satırlar için bireysel boyut** (*tüm paneller için*):
 
@@ -464,6 +472,8 @@ Harita ekranı düzeni ayarlarını Ekranı Yapılandır menüsünden açabilirs
 
 ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_single.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_separate.png)
 
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Harita Ekranı Düzeni*
+
 OsmAnd, harita ekranı için iki düzen modu destekler:
 - **Tek düzen** – tüm ekran yönelimleri için aynı widget düzenini kullanır. Bu seçenek varsayılan olarak seçilidir.
 - **Ayrı düzenler** – Portre ve Yatay yönelimler için farklı widget düzenleri yapılandırmanıza olanak tanır.
@@ -488,7 +498,9 @@ Yalnızca widget listesi kopyalanır ve işlem aynı profil içinde uygulanır.
 
 ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_wide.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_compact.png)
 
-**Paneller düzeni** ayarı, üst ve alt widget panellerinin nasıl görüntüleneceğini kontrol eder. Bu seçenek yalnızca Ayrı düzenler etkinleştirildiğinde kullanılabilir.
+**Paneller düzeni** ayarı, üst ve alt widget panellerinin nasıl görüntüleneceğini kontrol eder. 
+
+**Not:** Bu seçenek yalnızca [Ayrı düzenler](#single-and-separate-layouts) etkinleştirildiğinde kullanılabilir.
 
 İki mod arasında seçim yapabilirsiniz:
 - **Geniş** – üst ve alt paneller ekranın tam genişliğini kaplar.

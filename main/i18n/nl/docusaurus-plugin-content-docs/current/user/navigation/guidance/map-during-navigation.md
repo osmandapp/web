@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Kaartscherm tijdens navigatie
 ---
@@ -196,8 +196,8 @@ De instelling **Kleur** verandert de kleurtinten van de routelijnen. Hun algehel
 - ***<Translate android="true" id="map_widget_renderer"/>***. Gebruikt met de standaardkleuren. Voor een volledige beschrijving van de kleuren, ga naar [Standaard kaartstijlen](../../map/map-styles.md#default-map-styles).  
     ![Kaartstijl](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Aangepast***. Hiermee kunt u een lijn selecteren in elke gewenste kleur en transparantie. U kunt verschillende instellingen selecteren voor de dagkaart en afzonderlijk voor de nachtkaart.  
-    ![Aangepast](@site/static/img/navigation/route/custom.png)   ![Aangepast](@site/static/img/navigation/route/custom_ios.png)
+- ***Aangepast***. Hiermee kunt u een lijn selecteren in elke gewenste kleur en transparantie. U kunt verschillende instellingen selecteren voor de dagkaart en afzonderlijk voor de nachtkaart. Het kleurpalet omvat sneltoegankelijke kleuren, een optie om een aangepaste kleur toe te voegen (*+*), en een volledige lijst van beschikbare kleuren (*Alle kleuren*).            
+    ![Aangepast](@site/static/img/navigation/route/custom_new.png)   ![Aangepast](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Het toont de hoogte van het routepunt als een **groen-geel-rood** verloop. **Groen** geeft het laagste punt van de route aan, **geel** geeft de gemiddelde hoogte van het punt aan, en **rood** is het hoogste. Als het hoogteverschil van de route < 100 meter is, wordt het verloop gedeeltelijk of niet toegepast, bijvoorbeeld voor een eenvoudige klim van 100 meter naar 150 meter - het verloop zal **groen-geel** zijn. Merk op dat de kleur niet de absolute waarde van de hoogte vertegenwoordigt.  
     ![Hoogte](@site/static/img/navigation/route/Altitude_rl.png)

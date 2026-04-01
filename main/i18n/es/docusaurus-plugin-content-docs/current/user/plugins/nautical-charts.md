@@ -1,6 +1,6 @@
 ---
-source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
-sidebar_position: 7
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
 title:  Vista de mapa náutico
 ---
 
@@ -44,7 +44,7 @@ Los mapas náuticos son importantes para los navegantes profesionales y los afic
 </Tabs>
 
 
-### Por qué es importante el tema náutico {#why-the-nautical-theme-matters}
+### Por qué importa el tema náutico {#why-the-nautical-theme-matters}
 
 Todos los navegantes profesionales están obligados a llevar mapas náuticos oficiales en sus barcos. Estos mapas son publicados por agencias autorizadas y son bastante caros. Las agencias invierten mucho en mantener los mapas actualizados. Publican actualizaciones periódicas de los mapas, pero como se necesita tiempo para verificar la información y procesar las actualizaciones, los mapas náuticos nunca están completamente al día.
 

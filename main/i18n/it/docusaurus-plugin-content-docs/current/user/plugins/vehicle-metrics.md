@@ -1,6 +1,6 @@
 ---
-source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
-sidebar_position: 16
+source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+sidebar_position: 18
 title:  Metriche veicolo
 ---
 
@@ -207,7 +207,7 @@ Questi tag facilitano l'identificazione e l'utilizzo di dati specifici del veico
 
 | | |
 |--|--|
-|![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget.png)|
+|![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ Questi tag facilitano l'identificazione e l'utilizzo di dati specifici del veico
 
 | | |
 |--|--|
-|![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

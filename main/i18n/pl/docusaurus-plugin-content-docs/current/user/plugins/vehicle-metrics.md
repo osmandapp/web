@@ -1,5 +1,5 @@
 ---
-source-hash: fb9d0a1b3bb3e0499cac10a7bbb3d9f3635bd3a78cfbb6a9020ece0a88d07a13
+source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
 sidebar_position: 18
 title:  Metryki pojazdu
 ---
@@ -207,7 +207,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 | | |
 |--|--|
-|![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget.png)|
+|![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 | | |
 |--|--|
-|![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Ustawienia OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

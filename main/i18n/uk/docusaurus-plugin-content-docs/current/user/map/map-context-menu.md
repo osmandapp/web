@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Контекстне меню карти
 ---
@@ -197,7 +197,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Альтернативні назви iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Альтернативні назви iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Альтернативні назви iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Альтернативні назви iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="ios" label="iOS">
 
-![Інформація про полігон iOS](@site/static/img/map/polygon_information_ios.png)
+![Інформація про полігон iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -362,7 +362,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/online_photo_ios.png)
+![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -504,15 +504,13 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-| Версії до Android 14 | 14+ Android |
-|:------------|:---------------|
-| ![Дія Поділитися Android](@site/static/img/map/action_share_1_andr.png) | ![Дія Поділитися Android](@site/static/img/map/action_share_2_andr.png) |
+![Дія Поділитися Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Поділитися iOS](@site/static/img/map/action_share_1_ios.png)
+![Дія Поділитися iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Доступні опції для поширення місцезнаходження:
 
 - ***Надіслати***. Надсилає текст через додатки, доступні на вашому пристрої. Включає всю інформацію про місцезнаходження: назву Мого місцезнаходження або назву вибраного POI, адресу, координати та геолокацію у вигляді посилання.
+- ***Копіювати посилання***. Копіює посилання на вибране місцезнаходження в буфер обміну.  
+Приклад: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Копіювати***. Копіює всю інформацію про місцезнаходження (назву Мого місцезнаходження або назву вибраного POI, адресу, координати та геолокацію у вигляді посилання) в буфер обміну.  
 - ***Копіювати адресу***. Копіює лише інформацію про адресу в буфер обміну.
 - ***Копіювати назву POI***. Копіює лише назву POI або адресу, якщо назви немає, в буфер обміну.

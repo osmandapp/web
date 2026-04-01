@@ -1,6 +1,6 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  Benutzerdefiniertes Paket
 ---
 
@@ -29,7 +29,7 @@ In der OsmAnd-Anwendung können Sie viele Anpassungen erstellen und diese in ein
 
 ![Benutzerdefiniertes Paket](@site/static/img/plugins/custom/1.jpg)
 
-Die `.osf`-*Datei* ist eine umbenannte `.zip`-*Datei*, die `.json`-Dateien und Ordner enthält. Als Beispiel können Sie unsere vorbereiteten Dateien von [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) oder ein fertiges Plugin über diesen [Link](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe) herunterladen.  
+Die `.osf`-*Datei* ist eine umbenannte .`.zip`-*Datei*, die `.json`-Dateien und Ordner enthält. Als Beispiel können Sie unsere vorbereiteten Dateien von [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) oder ein fertiges Plugin über diesen [Link](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe) herunterladen.  
 
 Sie können `.json`-Dateien mit der *items.json*-Datei von OsmAnd ändern, die Befehle zum Importieren von `.json`-Dateien, `.obf`-Dateien, Symbolen und mehr enthält.
 
@@ -277,7 +277,7 @@ Möglicherweise müssen Sie Folgendes lesen:
 
 ## Importtypen {#import-types}
 
-Es gibt viele Importtypen für die *items.JSON*-Datei von OsmAnd. Alle Typen finden Sie [hier](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), und dieser Artikel beschreibt nur einige davon.
+Es gibt viele Importtypen für die OsmAnd *items.JSON*-Datei. Alle Typen finden Sie [hier](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), und dieser Artikel beschreibt nur einige davon.
 
 ### Plugin-Beschreibung {#plugin-description}
 
@@ -288,14 +288,14 @@ Zuerst erstellen Sie Ihr Plugin und fügen es zu *items.JSON* hinzu. Der erste I
 
 ### Plugin-Bilder {#plugin-images}
 
-Um Ihre Plugin-Symbolbilder in OsmAnd zu importieren, erstellen Sie einen Ordner (in unserem Beispiel der Ordner *"res"*), in dem die Bilddateien gespeichert werden. Der Name dieses Typs ist **"RESOURCES"**.  
+Um Ihre Plugin-Symbolbilder in OsmAnd zu importieren, erstellen Sie einen Ordner (in unserem Beispiel der Ordner *"res ”*), in dem die Bilddateien gespeichert werden. Der Name dieses Typs ist **"RESOURCES"**.  
 
    ![Benutzerdefiniertes Paket](@site/static/img/plugins/custom/4.jpg)
 
 
 ### Profile {#profiles}
 
-Mit dem Typ **"PROFILE"** können Sie ein Navigationsprofil für Ihr Plugin hinzufügen. Alle Informationen zu Ihrem Navigationsprofil erhalten Sie in der exportierten JSON-Datei, in der Sie nachlesen können, welche *items.JSON*-Typen hinzugefügt wurden (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES”* oder andere).
+Mit dem Typ **"PROFILE ”** können Sie ein Navigationsprofil für Ihr Plugin hinzufügen. Alle Informationen zu Ihrem Navigationsprofil erhalten Sie in der exportierten JSON-Datei, in der Sie nachlesen können, welche *items.JSON*-Typen hinzugefügt wurden (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* oder andere).
 HINWEIS: Beginnen Sie mit der Erstellung eines Navigationsprofils mit allen Parametern. Exportieren Sie dazu Navigationsprofile und kopieren Sie die erforderlichen Elemente aus der *profiles.osf* (items.JSON)-Datei der Navigation in die *PLUGIN.osf* (items.JSON)-Datei.  
 
    ![Benutzerdefiniertes Paket](@site/static/img/plugins/custom/6.jpg)

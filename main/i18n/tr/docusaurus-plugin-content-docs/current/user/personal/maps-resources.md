@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -55,7 +55,7 @@ OsmAnd iki tür harita ile çalışır: [Vektör haritaları](../map/vector-maps
 
 <TabItem value="ios" label="iOS">
 
-![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -82,6 +82,8 @@ Aylık harita güncellemelerinin başka bir harita indirmesi olarak kabul edildi
 - [Wikipedia](../plugins/wikipedia.md). Coğrafi konumlu [Wikipedia](https://wikipedia.org/) makaleleriyle dönüm noktaları veya yerler hakkında ek bilgiler içeren vektör haritası.
 - [Wikivoyage](../plan-route/travel-guides.md). Kullanıcılara değerli bilgiler, öneriler ve ipuçları sunan sanal seyahat rehberleriyle vektör haritaları sağlar.
 - [Hava durumu tahmini](../plugins/weather.md). Kolay rota planlaması için harita üzerinde hava durumu bilgileri.
+
+Aktif bir abonelik olmadan, bu harita türleri İndir yerine bir *Satın Al* düğmesi gösterir. *Satın Al*'a dokunarak abonelik ekranını açın ve bir plan seçin.
 
 
 ## İndirilenler Menüsü {#downloads-menu}
@@ -171,7 +173,7 @@ Daha fazla bilgi için [**Özel paket**](../plugins/custom) makalesine bakın.
 
 <TabItem value="ios" label="iOS">
 
-![Genel iOS harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_ios.png) ![Seçimi kaldır menüsü IOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
+![Genel iOS harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_ios.png) ![Seçimi kaldır menüsü iOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 

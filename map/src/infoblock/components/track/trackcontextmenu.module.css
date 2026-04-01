@@ -1,3 +1,29 @@
+.trackContextMenuShell {
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.collapsibleHeader {
+    flex-shrink: 0;
+    overflow: hidden;
+    max-height: 250px;
+    transition: max-height 200ms ease-out;
+}
+
+.collapsibleHeaderHidden {
+    max-height: 0;
+}
+
+.trackTabsColumn {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 .nameBlock {
     display: flex !important;
     padding: 0 16px 12px 16px !important;
@@ -8,7 +34,7 @@
 .trackName {
     overflow: hidden !important;
     color: var(--text-primary) !important;
-    font-feature-settings: 'liga' off !important;
+    font-feature-settings: 'liga' 0 !important;
     text-overflow: ellipsis !important;
     font-size: 24px !important;
     font-style: normal !important;
@@ -35,4 +61,17 @@
 
 .trackIconBox svg {
     fill: var(--svg-icon-color) !important;
+}
+
+.compactHeaderToolbar :global(.MuiTypography-root) {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    letter-spacing: 0.18px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }

@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -333,10 +333,11 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
     - Migliora la chiarezza e massimizza lo spazio per i dati importanti.
     - Particolarmente utile quando si visualizzano molti widget sulla stessa **riga**.
 
-3. **Nascondere le etichette di testo dei widget**:
+3. **Visibilità delle etichette di testo dei widget**
 
-    - Nasconde automaticamente le etichette di testo per mantenere le informazioni numeriche completamente visibili in layout compatti.
-    - Aiuta a mantenere un arrangiamento di widget pulito e leggibile quando lo spazio è limitato.   
+    - La visibilità delle etichette di testo dipende dalla dimensione del widget e dalla posizione del pannello. Nelle dimensioni Medie e Grandi, le etichette sono sempre visualizzate.
+    - Nella dimensione Piccola, le etichette non vengono mostrate nei pannelli Sinistro e Destro. Nei pannelli Superiore e Inferiore, l'etichetta potrebbe essere nascosta automaticamente (quando posizionata sul lato destro) per mantenere i valori numerici completamente visibili.
+    - Non esiste un'opzione separata per attivare o disattivare le etichette di testo.
 
 4. **Dimensione individuale per righe diverse** (*per tutti i pannelli*):
 
@@ -464,6 +465,8 @@ L'impostazione **Layout schermata mappa** consente di controllare come i pannell
 
 ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_single.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_separate.png)
 
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Layout schermata mappa*
+
 OsmAnd supporta due modalità di layout per la schermata della mappa:
 - **Layout singolo** – utilizza lo stesso layout dei widget per tutte le orientamenti dello schermo. Questa opzione è selezionata per impostazione predefinita.
 - **Layout separati** – consente di configurare layout dei widget diversi per orientamenti Portrait e Landscape.
@@ -488,7 +491,9 @@ Viene copiato solo l'elenco dei widget e l'operazione si applica all'interno del
 
 ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_wide.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_compact.png)
 
-L'impostazione **Layout pannelli** controlla come i pannelli widget superiore e inferiore sono visualizzati. Questa opzione è disponibile solo quando Layout separati è abilitato.
+L'impostazione **Layout pannelli** controlla come i pannelli widget superiore e inferiore sono visualizzati. 
+
+**Nota:** Questa opzione è disponibile solo quando [Layout separati](#single-and-separate-layouts) è abilitato.
 
 È possibile scegliere tra due modalità:
 - **Largo** – i pannelli superiore e inferiore si estendono per l'intera larghezza dello schermo.

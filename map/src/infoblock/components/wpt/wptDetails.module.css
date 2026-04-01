@@ -70,8 +70,37 @@
 .directionIcon {
     width: 16px !important;
     height: 16px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    position: relative;
+    top: 0;
+    transform-origin: 50% 50%;
+    transform-box: view-box;
     flex-shrink: 0 !important;
     margin-right: 5px !important;
+}
+.wptAddressClickable {
+    cursor: pointer !important;
+}
+.locationInfoLoader {
+    margin-left: 16px !important;
+}
+.trackLocationInfoLoader {
+    margin-left: 2px !important;
+}
+.dotInfoIcon {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 2px !important;
+    vertical-align: text-bottom !important;
+    fill: #b3b3b3 !important;
+}
+.locationInfoIcon {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 4px 0 2px !important;
+    vertical-align: text-bottom !important;
+    fill: var(--svg-icon-color) !important;
 }
 
 .placeDistance {

@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Routering openbaar vervoer
 ---
@@ -64,7 +64,7 @@ Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [
 
 </Tabs>
 
-**2.** OsmAnd biedt routeopties met wandeltijden en routes met het openbaar vervoer met route-informatie: tijd, afstand, overstappen en openbare routes. U moet door het navigatiescherm scrollen om de gewenste optie te selecteren.  
+**2.** OsmAnd biedt routeopties met wandeltijden en routes met het openbaar vervoer met route-informatie: tijd, afstand, overstap en openbare routes. U moet door het navigatiescherm scrollen om de gewenste optie te selecteren.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -128,7 +128,7 @@ U kunt goed samengestelde routes voor het openbaar vervoer doorzoeken volgens uw
 - Treinen te vermijden
 - Trams te vermijden
 - Veerboten te vermijden
-- Deeltaxi's te vermijden
+- Deeltaxi te vermijden
 
 Standaard zoekt OsmAnd naar routes die alle ondersteunde typen openbaar vervoer omvatten.
 
@@ -142,19 +142,29 @@ De gebruikersinterface toont alternatieve routes als gekleurde badges met hun re
 
 ## Prestaties en resultaten {#performance-and-results}
 
-**Openbaar vervoer profiel -> Instellingen -> Navigatie-instellingen -> Routeparameters**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Maximum aantal vervoerswisselingen**.
+<TabItem value="android" label="Android">
 
-De prestaties en het geheugengebruik van de router voor openbaar vervoer hangen af van de zoekdiepte.
+![Maximale aantal vervoerswisselingen](@site/static/img/navigation/public/maximum_number_android.png) 
 
-De belangrijkste parameter die deze diepte beïnvloedt, is het **Maximum aantal vervoerswisselingen**.
+</TabItem>
 
-We gebruiken **2** als standaardwaarde, wat optimaal lijkt voor moderne netwerken voor openbaar vervoer.
+<TabItem value="ios" label="iOS">  
 
-Als u te maken krijgt met lage prestaties of geheugenfouten, probeer dan deze waarde te verlagen.
+![Maximale aantal vervoerswisselingen](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Als u in een kleine stad bent of korte routes aflegt, kan een waarde van **1** beter werken.
+</TabItem>
+
+</Tabs>
+
+Ga naar: *<Translate android="true" ids="shared_string_settings"/>* *→ Openbaar vervoer profiel →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Maximale aantal vervoerswisselingen*
+
+De prestaties en het geheugengebruik van de router voor openbaar vervoer hangen af van de zoekdiepte. De belangrijkste parameter die deze diepte beïnvloedt, is het **Maximale aantal vervoerswisselingen**.
+
+Deze parameter beïnvloedt ook direct de beschikbaarheid en kwaliteit van routes. Als de waarde te laag is ingesteld (bijvoorbeeld 0), kan OsmAnd mogelijk geen geschikte routes vinden of suboptimale opties voorstellen, zelfs als er betere routes met overstappen bestaan.
+
+We gebruiken **2** als standaardwaarde, wat optimaal lijkt voor moderne netwerken voor openbaar vervoer. Als u te maken krijgt met lage prestaties of geheugenfouten, probeer dan deze waarde te verlagen. Als u in een kleine stad bent of korte routes aflegt, kan een waarde van **1** beter werken.
 <!--
 There are two more parameters that help you choose the best routes.
 

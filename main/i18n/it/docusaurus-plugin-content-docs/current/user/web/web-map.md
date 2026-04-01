@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Mappa
 title: Mappa Globale sul Sito Web
@@ -66,10 +66,11 @@ Il menu Configura Mappa consente di gestire le impostazioni di visualizzazione d
 
 - [Sovrapposizione POI...](#poi-overlay). Consente di scegliere e mostrare le categorie di POI necessarie sulla mappa.
 - [Preferiti](#favorites). Attiva o disattiva la visualizzazione dei preferiti sulla mappa.
-- [Tracce](#tracks). Contiene le tracce GPX visibili sulla mappa.  
+- [Tracce](#tracks). Contiene le tracce GPX visibili sulla mappa.
+- [Fermate di trasporto](#transport-stops). Attiva o disattiva la visualizzazione delle fermate di trasporto pubblico sulla mappa. 
 - [Terreno](#terrain). Abilita o disabilita la combinazione di colori del terreno sulla mappa.
 
-![POIs menu](@site/static/img/web/configure_map_web.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Sovrapposizione POI {#poi-overlay}
@@ -116,6 +117,33 @@ Ogni traccia ha un **Menu Contestuale** (accessibile tramite il pulsante ⋮) co
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
+### Fermate di trasporto {#transport-stops}
+
+L'opzione **Fermate di trasporto** consente di visualizzare le fermate di trasporto pubblico direttamente sulla mappa. Quando abilitata, i marker delle fermate appaiono sulla mappa, rappresentando le posizioni in cui si fermano le rotte di trasporto pubblico. Selezionando una fermata di trasporto si apre un pannello contestuale con informazioni su quella fermata e le rotte di trasporto che vi passano. Il pannello della fermata contiene diverse sezioni.
+
+**1. Informazioni sulla fermata**
+
+La sezione superiore mostra informazioni di base sulla fermata selezionata, inclusi nome e posizione. I pulsanti di azione rapida consentono di: *Aggiungere la fermata ai Preferiti, Condividere un link alla fermata, Iniziare la navigazione dalla fermata, Impostare la fermata come destinazione*.
+
+**2. Rotte**
+
+La sezione Rotte elenca tutte le rotte di trasporto pubblico che passano attraverso la fermata selezionata. Ogni elemento mostra: il tipo di trasporto, il numero della rotta e il nome della rotta.
+
+Selezionando una rotta si apre un pannello di dettagli della rotta che mostra informazioni aggiuntive su quella rotta, inclusi il numero di fermate e l'intervallo medio tra i veicoli (quando disponibile).
+
+Il pannello di dettagli della rotta mostra anche l'elenco completo delle fermate lungo la rotta. La fermata attualmente selezionata è evidenziata e puoi selezionarne un'altra per visualizzarne la posizione sulla mappa. Le fermate prima della fermata selezionata potrebbero essere collassate in un singolo elemento (ad esempio “15 fermate prima”).
+
+I pulsanti di navigazione consentono di spostarsi tra le fermate lungo la rotta utilizzando i controlli *Precedente* e *Successivo*. Quando una fermata è selezionata, la sua posizione è evidenziata sulla mappa. La rotta selezionata e le sue fermate sono anche visualizzate sulla mappa per aiutare a visualizzare la direzione della rotta.
+
+**3. Filtro per tipo di trasporto**
+
+Un filtro per tipo di trasporto consente di filtrare le rotte mostrate nell'elenco. Per impostazione predefinita, il filtro è impostato su *Tutte* e mostra tutte le rotte disponibili. Puoi selezionare un tipo di trasporto specifico (ad esempio Autobus, Tram o Metropolitana) per mostrare solo le rotte di quel tipo. Il filtro si resetta su *Tutte* ogni volta che il pannello della fermata viene aperto.
+
+**4. Rotte vicine**
+
+La sezione Rotte vicine potrebbe mostrare rotte aggiuntive situate vicino alla fermata selezionata. Questo ti aiuta a scoprire rapidamente opzioni di trasporto alternative nell'area circostante.
+
+![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terreno {#terrain}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title:  Mit der Karte interagieren
 ---
@@ -30,7 +30,7 @@ Gesten sind unerlässlich, um einfach und intuitiv auf der Karte zu navigieren.
 |:------------|:-------------|
 | **Verschieben** | Tippen und halten Sie die Karte mit **einem** Finger, dann ziehen Sie, um sich zu bewegen. |
 | **Wischen** | Wischen Sie mit **einem** Finger über die Karte. |
-| **Vergrößern** | Doppeltippen Sie mit **einem** Finger auf die Karte. <br/> Doppeltippen Sie mit **einem** Finger und wischen Sie nach unten. <br/> Ziehen Sie mit **zwei** Fingern auf, um zu vergrößern. |
+| **Vergrößern** | Doppeltippen Sie mit **einem** Finger auf die Karte. <br/> Doppeltippen Sie mit **einem** Finger und wischen Sie nach unten. <br/> Ziehen Sie mit **zwei** Fingern auseinander, um zu vergrößern. |
 | **Verkleinern**| Doppeltippen Sie mit **zwei** Fingern. <br/> Doppeltippen Sie mit **einem** Finger und wischen Sie nach oben. <br/> Ziehen Sie mit **zwei** Fingern zusammen, um zu verkleinern. |
 | **Drehen** | Tippen Sie mit **zwei** Fingern auf die Karte und drehen Sie Ihre Finger in einer kreisförmigen Bewegung. |
 | **Neigen (3D)** | Tippen Sie mit **zwei** Fingern und bewegen Sie sie nach oben oder unten. <br/> Nur mit der [Karten-Rendering-Engine](../personal/global-settings.md#map-rendering-engine) Version 2 (OpenGL) verfügbar. |
@@ -221,6 +221,8 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,s
 Die Globusansicht ist derzeit nur verfügbar, wenn:
 - Das [Development-Plugin](../plugins/development.md) aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- Das [Topographie-Plugin](../plugins/topography.md) aktiviert ist.  
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - Die [Karten-Rendering-Engine](../personal/global-settings.md#map-rendering-engine) auf Version 2 (OpenGL) eingestellt ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 
@@ -231,7 +233,7 @@ Die Interaktion in der Nähe des Horizonts kann begrenzt sein, um unbeabsichtigt
 
 ## Externe Eingabegeräte {#external-input-devices}
 
-Tasten externer Eingabegeräte bieten eine bequeme und effiziente Möglichkeit, mit der Karte und der Benutzeroberfläche der OsmAnd-Anwendung zu interagieren. Sie befinden sich auf externen Geräten wie **Bluetooth- oder anderen Tastaturtypen**, **spezialisierten Tasten an Fahrzeugnavigationsgeräten** oder [WunderLINQ](https://blackboxembedded.com/)- und [Parrot](https://www.parrot.com/en)-Controllern (*nur Android*).  
+Tasten externer Eingabegeräte bieten eine bequeme und effiziente Möglichkeit, mit der Karte und der Benutzeroberfläche der OsmAnd-Anwendung zu interagieren.  Sie befinden sich auf externen Geräten wie **Bluetooth- oder anderen Tastaturtypen**, **spezialisierten Tasten an Fahrzeugnavigationsgeräten** oder [WunderLINQ](https://blackboxembedded.com/)- und [Parrot](https://www.parrot.com/en)-Controllern (*nur Android*).  
 
 Eine der Hauptfunktionen von Tasten auf externen Eingabegeräten ist das Vergrößern und Verkleinern der Karte. Sie ermöglichen es auch, auf der Karte zu navigieren und ihre Ausrichtung zu ändern, ohne auf den Bildschirm tippen und gestikulieren zu müssen. Tasten auf externen Eingabegeräten unterstützen viele weitere Funktionen, wie das Öffnen des *Hauptmenüs* und das Auslösen von *Schnellaktionen*. Benutzer können auch Tastenzuweisungen für unterstützte Geräte (Tastatur, WunderLINQ und benutzerdefinierte externe Controller) anpassen.
 
@@ -386,6 +388,6 @@ Sie können mehrere unnötige Aktionen mit der **Bearbeiten-Schaltfläche** (*bl
 - [Vektorkarten (Kartenstile)](./vector-maps.md)
 - [Rasterkarten (Online / Offline)](./raster-maps.md)
 - [Punkte auf der Karte](./point-layers-on-map.md)
-- [Tracks und Routen](./tracks/index.md)
-- [Tracks-Kontextmenü](./tracks/track-context-menu.md)
+- [Spuren und Routen](./tracks/index.md)
+- [Spuren-Kontextmenü](./tracks/track-context-menu.md)
 - [Öffentlicher Verkehr](./public-transport.md)

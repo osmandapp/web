@@ -1,5 +1,5 @@
 ---
-source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+source-hash: db5100e593e959bddd7c050a00a3702808a3d2eb1673ab3d7afe8c6151f814cc
 sidebar_position: 16
 title: Topografia
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão geral {#overview}
 
-:::info Recurso pago
+:::tip Compra
 O plugin Topografia é um [recurso pago](../purchases/index.md).  
 :::
 
@@ -57,7 +57,7 @@ O plugin Topografia fornece acesso aos seguintes tipos de mapa:
 
 ### Licença para dados DEM usados pelo OsmAnd para detecção de terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de latitude sul) foram obtidos a partir de medições realizadas como parte da *Shuttle Radar Topography Mission (SRTM)*. Ela utilizou o *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, a principal ferramenta de imagem no *Earth Observation System da NASA*.  
+Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de latitude sul) foram obtidos de medições realizadas como parte da *Shuttle Radar Topography Mission (SRTM)*. Ele utilizou o *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, a principal ferramenta de imagem no *Earth Observation System da NASA*.  
 Para informações completas, consulte a [Licença](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -143,6 +143,10 @@ Para [**Curvas de Nível**](#contour-lines), você precisa determinar em quais [
 
 ## Curvas de Nível {#contour-lines}
 
+:::tip Compra
+Curvas de nível é um [recurso pago](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ Ao usar o [motor de renderização de mapas](../personal/global-settings.md#map-
 
 
 ## Terreno {#terrain}
+
+:::tip Compra
+Terreno é um [recurso pago](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,17 +263,30 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
+
+- De uma [lista predefinida](#default-color-scheme).
+- De arquivos de paleta de cores que você criou em seu computador. Arquivos personalizados podem ser adicionados ao OsmAnd usando a [ferramenta de importação/exportação](../personal/import-export.md).
+- De paletas criadas ou editadas diretamente no aplicativo.
+
+Paletas personalizadas são baseadas em escalas de cores, onde cada cor corresponde a um valor específico de dados de terreno como *Altitude* ou *Declive*. 
+Você pode:
+
+- definir passos de valor (níveis de altitude ou porcentagens de declive);
+- atribuir cores a cada passo;
+- adicionar ou remover passos para ajustar as escalas de cores.
+
+**Nota:** Hillshade usa um algoritmo de sombreamento fixo e não suporta paletas de cores personalizadas.
+
+Para personalização avançada de paleta usando arquivos de paleta, consulte o artigo [Esquemas de Cores](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
 
@@ -274,6 +295,9 @@ O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
 
 Você pode [editar essas paletas](../personal/color-palette-schemes.md#palette-modify) para personalizar a aparência de mapas e rotas.
 
+</TabItem>
+
+</Tabs>
 
 ### Visibilidade {#visibility}
 
@@ -287,7 +311,7 @@ A função *Visibilidade* é usada para ajustar a transparência das sombras par
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-A função *Níveis de Escala* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
+A função *Níveis de Zoom* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
 
 ### Tamanho do Cache {#cache-size}
 
@@ -318,6 +342,70 @@ As principais configurações para *Mostrar ou Ocultar tipos de mapa* estão na 
 
 - Vá para [Adicionar ação](../widgets/quick-action.md#custom-buttons): *Menu → Configurar tela → Botões personalizados → Ação rápida → Adicionar ação → Configurar mapa*.
 - Adicione um ou mais botões QA para alterar a visibilidade de uma camada topográfica específica.
+
+## Edifícios 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edifícios 3D* 
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
+
+O recurso **Edifícios 3D** exibe edifícios como modelos 3D volumétricos em vez de formas planas. Os edifícios são gerados a partir de [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), usando informações de altura de tags como `height` e `building:levels` quando disponíveis. Edifícios 3D são exibidos apenas em níveis de zoom mais altos (visão da cidade/rua), onde edifícios individuais podem ser exibidos.  
+
+Use o alternador principal para ativar ou desativar a renderização 3D de edifícios. Quando ativado, a configuração também exibe o [Nível de detalhe](#performance) atual (Baixo ou Alto) sob o alternador principal. Para visualizar edifícios em 3D, incline o mapa colocando dois dedos na tela e deslizando para cima. Nesta visão, os edifícios podem cobrir parcialmente estradas ou rótulos do mapa dependendo da configuração de visibilidade.
+
+Esta opção está disponível apenas quando o plugin Topografia está ativado.  
+Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+As configurações de edifícios 3D incluem controles que afetam a aparência, o desempenho e a iluminação dos edifícios 3D.
+
+### Aparência {#appearance}
+
+![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+
+Os controles de **Aparência** determinam como os edifícios 3D aparecem no mapa. Inclui duas configurações: Cor e Visibilidade. 
+
+**Cor** permite alterar a cor do edifício. Quando você toca em Cor, o OsmAnd abre uma tela de visualização separada onde você pode ver o mapa enquanto ajusta a configuração. A tela de visualização mostra um mapa ao vivo para que você possa ver imediatamente como a cor selecionada afeta os edifícios.
+- **Estilo do mapa** — usa a cor padrão do edifício do estilo de mapa atualmente selecionado.
+- **Personalizado** — permite definir uma cor de edifício personalizada separadamente para o modo Dia / Noite.
+
+:::tip Compra
+Personalização de Cor de Edifícios 3D é um [recurso pago](../purchases/index.md).  
+:::
+
+Se as cores personalizadas não forem compradas, você verá um estado vazio com uma descrição curta e um botão Obter. Se Personalizado estiver disponível, você pode alternar entre Dia e Noite, escolher uma cor da paleta (ou abrir Todas as cores), depois tocar em Aplicar.
+
+**Visibilidade** controla a opacidade (transparência) dos edifícios 3D. Use o controle deslizante para definir a visibilidade como uma porcentagem. O controle deslizante permite valores de 10% a 100%, com 50% usado por padrão. Valores mais baixos tornam os edifícios mais transparentes e ajudam as estradas/rótulos a permanecerem legíveis. Valores mais altos tornam os edifícios mais sólidos e visualmente dominantes. Tocar em Visibilidade também abre uma tela de visualização separada com o controle deslizante.
+
+Nas telas de visualização (Cor / Visibilidade), você pode usar Redefinir para o padrão na barra do aplicativo para restaurar o valor padrão.
+
+### Desempenho {#performance}
+
+Os controles de **Desempenho** determinam como os edifícios 3D são renderizados. Inclui duas configurações: Nível de detalhe e Distância de visualização.
+
+**Nível de detalhe** determina a complexidade da geometria do edifício 3D:
+- Baixo (padrão) — geometria mais simples.
+- Alto — geometria mais detalhada.
+
+**Distância de visualização** controla quão longe da câmera os edifícios 3D são renderizados:
+- Próximo (padrão) — renderiza edifícios mais próximos de você.
+- Longe — renderiza edifícios de uma distância maior.
+
+Ambas as opções de desempenho usam um alternador de duas posições diretamente na tela de configurações de edifícios 3D.
+
+**Nota:** Usar *Alto detalhe* e *Distância de visualização longe* melhora a aparência visual, mas pode impactar o desempenho e aumentar o uso da bateria.
+
+### Sol {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+A configuração **Sol** controla a direção da iluminação usada para renderizar edifícios 3D. Afeta como a luz e as sombras aparecem nos edifícios na visão 3D. Quando você toca em Sol, o OsmAnd abre uma tela de visualização onde você pode ajustar a iluminação usando dois controles deslizantes:
+
+- Azimute — controla a direção horizontal da fonte de luz (a direção do compasso do sol).
+- Altitude — controla a altura do sol acima do horizonte.
+
+Alterar esses parâmetros modifica como as sombras caem nos edifícios e pode melhorar a percepção visual das formas dos edifícios na visão 3D. Toque em Aplicar para confirmar os parâmetros de iluminação selecionados.
 
 
 ## Relevo 3D {#3d-relief}
@@ -438,7 +526,7 @@ Quando **Hillshade** está **ativado**, uma imagem com sombras de relevo aparece
 
 O OsmAnd permite combinar vários tipos de camadas de mapa para uma exibição mais visual.
 
-- A combinação de **Curvas de Nível** e **Hillshade** é ideal para estimar visualmente e numericamente a inclinação de montanhas.
+- A combinação de **Curvas de Nível** e **Hillshade** é ideal para estimar visualmente e numericamente a inclinação das encostas das montanhas.
 - A combinação das camadas de **Curvas de Nível** e **Declive** é melhor para estimar a inclinação e encontrar pontos com a mesma altura.
 - A combinação das camadas de **Relevo 3D** e **Hillshade** permite obter uma representação mais realista e visual do terreno, relevo e detalhes da paisagem. Esta combinação é especialmente adequada para terrenos montanhosos e ondulados.
 

@@ -123,7 +123,7 @@ Go to: *Tap the track → Track tab → <Translate android="true" ids="analyze_o
 
 Go to: *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ Go to: *Tap the track → Track tab → <Translate ios="true" ids="analyze_on_ma
 
 This tool provides a detailed analysis of [track](../../map/tracks/track-context-menu.md#options) data using graphs and maps.
 
-- **Graph data (Y-axis)** displays: *Altitude*, *Slope*, *Speed*, [*External sensor data*](../../plugins/external-sensors.md), and combinations of up to two options if contained in the track data. ***Android only:*** for car tracks recorded with OBD-II data, the Y-axis additionally provides Vehicle metrics, such as engine speed, coolant temperature, and more.
+- **Graph data (Y-axis)** displays: *Altitude*, *Slope*, *Speed*, [*External sensor data*](../../plugins/external-sensors.md), and combinations of up to two options if contained in the track data. For car tracks recorded with OBD-II data, the Y-axis additionally provides Vehicle metrics, such as engine speed, coolant temperature, and more.
 - **Graph dimension (X-axis)** represents: *Distance*, *Time*, and *Time of day*.
 - **Tap/slide interaction**. Tap a graph to display information about a specific point on the track. Sliding on the graph highlights the appropriate location on the map and shows details in the information bar.
 - **Distance label**. When tapping or sliding along the graph, the tooltip also displays the exact distance along the track. The value follows the current profile unit settings (<Translate android="true" ids="km"/> or <Translate android="true" ids="mile"/>). Use it to quickly estimate how far a point is from the track start, or to calculate the distance between two positions by comparing their values.

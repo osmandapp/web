@@ -36,10 +36,10 @@ export default async function test() {
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
     await waitBy(By.className('leaflet-marker-icon'));
-    await clickBy(By.id('se-infoblock-button-save-to-cloud'));
+    await clickBy(By.id('se-local-track-actions-save-to-cloud'));
     await waitBy(By.id('se-save-track-dialog'));
     await clickBy(By.id('se-submit-save-to-cloud'));
-    await waitBy(By.id('se-panel-button-edit-track'));
+    await waitBy(By.id('se-track-actions-edit'));
     await clickBy(By.id('se-button-back'));
 
     await waitBy(By.id('se-' + trackName));

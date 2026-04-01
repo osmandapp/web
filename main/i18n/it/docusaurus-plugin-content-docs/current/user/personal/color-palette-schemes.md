@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title:  Schemi di colori
 ---
@@ -71,6 +71,8 @@ Andare su: *Menu → Maps & Resources → Local → Colors*
 
 I file del terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiscono 3 [visualizzazioni del terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Ombreggiatura, Pendenza* e *Altitudine*. Per ogni tipo si possono avere più palette, ad esempio, la *pendenza da valanga* è fornita di default. Vedere l'articolo [Topografia](../plugins/topography.md#default-color-scheme) per maggiori dettagli.
 
+Su Android, le palette per gli schemi di colori *Pendenza* e *Altitudine* possono anche essere create o modificate direttamente nell'app utilizzando l'[editor Palette di colori](../plugins/topography.md#modify-color-scheme). Si tratta di una funzionalità a pagamento <ProFeature />.
+
 ### Tracce e Percorsi {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ Le visualizzazioni a gradiente di linea utilizzano file di palette (`route_<type
 
 - Per i [Percorsi](../navigation/guidance/map-during-navigation.md#color): *Velocità (`route_speed_default.txt`), Pendenza (`route_slope_default.txt`)* e *Elevazione (Altitudine) (`route_elevation_default.txt`)*.
 - Per le [Tracce GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocità, Pendenza, Velocità Massima (`route_maxspeed_default.txt`)* e *Elevazione (Altitudine)*, o info da *sensori esterni*.
+
+Su Android, le palette possono anche essere create o modificate direttamente nell'app utilizzando l'[editor Palette di colori](../map/tracks/appearance.md#color-palette-editor). Si tratta di una funzionalità a pagamento <ProFeature />.
 
 ### Preferiti e Waypoint {#favorites-waypoints}
 

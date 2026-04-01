@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title: Widget informativi
 ---
@@ -560,7 +560,7 @@ Per aggiungere i widget Metriche veicolo alla schermata della mappa, abilita il 
 </Tabs>
 
 
-I widget appartengono al [plugin Metriche veicolo](../plugins/vehicle-metrics.md#widgets). È possibile utilizzarli per visualizzare le informazioni di uno scanner OBD-II collegato, come (*14 metriche*): **Temperatura di aspirazione**,&nbsp; **Temperatura ambiente**,&nbsp; **Temperatura del liquido di raffreddamento**,&nbsp; **Temperatura dell'olio motore**,&nbsp; **Velocità del motore** (*gratuito*),&nbsp; **Tempo di funzionamento del motore**,&nbsp; **Carico motore calcolato**,&nbsp; **Pressione del carburante**,&nbsp; **Consumo di carburante**,&nbsp; **Carburante rimanente**,&nbsp; **Livello della batteria**,&nbsp; **Tensione adattatore**,&nbsp; **Velocità del veicolo** (*gratuito*) e **Posizione dell'acceleratore**.  
+I widget appartengono al [plugin Metriche veicolo](../plugins/vehicle-metrics.md#widgets). È possibile utilizzarli per visualizzare le informazioni di uno scanner OBD-II collegato, come (*14 metriche*): **Tensione adattatore** (*solo Android*),&nbsp; **Temperatura ambiente**,&nbsp; **Tensione batteria**,&nbsp; **Carico motore calcolato**,&nbsp; **Temperatura del liquido di raffreddamento**,&nbsp; **Temperatura dell'olio motore**,&nbsp; **Tempo di funzionamento del motore**,&nbsp; **Velocità del motore** (*gratuito*),&nbsp; **Consumo di carburante**,&nbsp; **Pressione del carburante**,&nbsp; **Temperatura di aspirazione**,&nbsp; **Carburante rimanente**,&nbsp; **Posizione dell'acceleratore**, e **Velocità del veicolo** (*gratuito*).  
 
 - Per aggiungere i widget delle metriche del veicolo alla schermata della mappa, [abilita](../plugins/index.md#enable--disable) il **plugin Metriche veicolo**.
 - È possibile aggiungere widget anche se non è collegato alcuno scanner OBD-II.

@@ -1,6 +1,6 @@
 ---
-source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
-sidebar_position: 10
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
 
@@ -53,7 +53,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 <TabItem value="ios" label="iOS">  
 
-![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 - **Simula la tua posizione** (*Android* / *iOS*). [Simula](#gpx-track-simulation) la posizione e il movimento utilizzando una traccia GPX.
 - **Modalità risparmio energetico** (*Android* / *iOS*). Questa impostazione riduce [la frequenza di aggiornamento dello schermo](#map-rendering-fps-widget) di 20 fotogrammi al secondo per aiutare a risparmiare la batteria durante l'uso delle applicazioni.
 - **Usa icone di posizione 3D** (*iOS*). Permette di selezionare un'icona 3D per l'[icona La mia posizione](../personal/profiles.md#my-location-appearance).
-- **Simula dati OBD** (*Android*). Permette la simulazione dell'uso dello [scanner OBD](./vehicle-metrics.md).
-- **Informazioni di debug sulle prestazioni** (*Android*). Visualizza le prestazioni di rendering e navigazione.
+- **Simula dati OBD** (*Android* / *iOS*). Permette la simulazione dell'uso dello [scanner OBD](./vehicle-metrics.md).
+- **Informazioni di debug sulle prestazioni** (*Android* / *iOS*). Visualizza le prestazioni di rendering e navigazione.
 - **Disabilita i livelli della mappa** (*Android*). Disabilita tutti i livelli della mappa sopra la mappa vettoriale (richiede il riavvio).
 - **Buffer Logcat** (*Android*). Controlla e condividi i log dettagliati dell'app.  
 - **Mostra un messaggio toast per il tasto premuto** (*Android*). Visualizza un messaggio relativo al tasto.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Il rilevamento è la direzione della bussola dalla posizione corrente alla destinazione prevista. Influisce sulla *[registrazione della traccia](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. La direzione è la direzione della bussola dalla posizione corrente verso il nord geografico. Questa opzione è abilitata per impostazione predefinita. Influisce sulla *[registrazione della traccia](../plugins/trip-recording.md)*.
+- **Abilita MSAA** (*Android*) / **Abilita MSAA per CarPlay** (*iOS*). Abilita l'anti-aliasing multisample per rendere fluido il rendering della mappa. Migliora la qualità visiva dell'[icona La mia posizione](../personal/profiles.md#my-location-appearance) e della linea del percorso riducendo i bordi pixelati. Su Android, questa opzione influisce sul rendering della mappa sul dispositivo e durante l'uso di [Android Auto](../navigation/auto-car.md). Su iOS, si applica solo a [CarPlay](../navigation/car-play.md).
 
 
 ### Test dell'applicazione {#application-testing}

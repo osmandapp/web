@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -197,7 +197,7 @@ Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](
 
 <TabItem value="ios" label="iOS">
 
-![Nombres alternativos iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Nombres alternativos iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Nombres alternativos iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Nombres alternativos iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Características de la visualización de nombres alternativos:
 
 <TabItem value="ios" label="iOS">
 
-![Información de polígono iOS](@site/static/img/map/polygon_information_ios.png)
+![Información de polígono iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -362,7 +362,7 @@ El enlace de OpenStreetMap proporciona un enlace directo al objeto de OpenStreet
 
 <TabItem value="ios" label="iOS">  
 
-![Menú contextual de Fotos en línea iOS](@site/static/img/map/online_photo_ios.png)
+![Menú contextual de Fotos en línea iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Menú contextual de Fotos en línea iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -504,15 +504,13 @@ Lea más sobre [marcadores aquí](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Versiones hasta Android 14 | 14+ Android |
-|:------------|:---------------|
-| ![Acción Compartir Android](@site/static/img/map/action_share_1_andr.png) | ![Acción Compartir Android](@site/static/img/map/action_share_2_andr.png) |
+![Acción Compartir Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Acción Compartir iOS](@site/static/img/map/action_share_1_ios.png)
+![Acción Compartir iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ La aplicación OsmAnd le permite **<Translate android="true" ids="shared_string_
 Opciones disponibles para compartir la ubicación:
 
 - ***Enviar***. Envía texto a través de las aplicaciones disponibles en su dispositivo. Incluye toda la información sobre la ubicación: el nombre de Mi ubicación o el nombre del PDI seleccionado, la dirección, las coordenadas y la geolocalización como un enlace.
+- ***Copiar enlace***. Copia un enlace a la ubicación seleccionada al portapapeles.  
+Ejemplo: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Copiar***. Copia toda la información de la ubicación (nombre de Mi ubicación o nombre del PDI seleccionado, dirección, coordenadas y geolocalización como un enlace) al portapapeles.  
 - ***Copiar dirección***. Copia solo la información de la dirección al portapapeles.
 - ***Copiar nombre del PDI***. Copia solo el nombre del PDI o la dirección si no hay nombre al portapapeles.
@@ -557,7 +557,7 @@ Opciones disponibles para compartir la ubicación:
 
 </Tabs>
 
-Para iniciar la navegación o la planificación de la ruta, primero debe seleccionar el destino con [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). En caso de que ya tenga un punto de destino, el menú le sugerirá reemplazar el punto de destino o insertarlo como otro punto intermedio o de inicio.
+Para iniciar la navegación o la planificación de la ruta, primero debe seleccionar el destino con [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). En caso de que ya tenga un punto de destino, el menú le sugerirá reemplazar el punto de destino o insertarlo como otro punto intermedio o de inicio.
 
 También es posible seleccionar primero el destino *Desde* a través del menú contextual del mapa (<Translate android="true" ids="context_menu_item_directions_from"/>).
 

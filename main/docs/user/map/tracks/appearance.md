@@ -70,13 +70,13 @@ On IOS the **Coloring list** opens as a context menu. Items can appear in three 
 
 For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color) and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#tracks-routes).
 
-### Gradient Palettes {#gradient-palettes}
+### Color Palette Editor {#color-palette-editor}
 
 <InfoAndroidOnly/> 
 
-![Gradient Palettes](@site/static/img/map/gradient_palettes_1.png)   ![Gradient Palettes](@site/static/img/map/gradient_palettes_2.png) 
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
 
-When coloring a track by Speed, Altitude, or Slope, OsmAnd uses gradient palettes to define how colors are applied along the track.
+When coloring a track by Speed, Altitude, or Slope,  you can use own palettes to define how colors are applied along the track.
 
 The *All colors screen* displays available palettes. Tap the three-dot menu next to a palette to:
 - Rename.
@@ -86,7 +86,7 @@ The *All colors screen* displays available palettes. Tap the three-dot menu next
 
 Tap the + button on the All colors screen. Two types of palettes are available:
 - **Relative** — colors scale automatically based on the track’s minimum and maximum values.
-- **Fixed Values** — colors are assigned to specific absolute numbers (for example, 50 km/h). Values can be edited manually. Units follow the [system settings](../../personal/profiles.md#units--formats). The gradient does not rescale automatically when applied to different tracks.
+- **Fixed Values** — colors are assigned to specific absolute numbers (for example, 50 km/h). Values can be edited manually. Units follow the [system settings](../../personal/profiles.md#units--formats). The color scale does not rescale automatically when applied to different tracks.
 
 :::info Pro feature
 Creating custom palettes is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.
@@ -95,8 +95,8 @@ Creating custom palettes is an [**OsmAnd Pro**](../../purchases/index.md) paid f
 To learn more about color palette schemes as a data format and their usage in tracks and routes, see the [Color palette schemes article](../../personal/color-palette-schemes.md#tracks-routes).
 
 When creating or editing a palette, the editor screen includes:
-- A gradient preview at the top of the screen.
-- Selectable value buttons below the gradient (for example, 50, 100, 150, No data).
+- A color scale preview at the top of the screen.
+- Selectable value buttons below the color scale (for example, 50, 100, 150, No data).
 - A + button to add a new step.
 - A Value field.
 - Color selection options. For more information about palette files.
@@ -104,7 +104,6 @@ When creating or editing a palette, the editor screen includes:
 - A Save button.
 
 Use the undo icon in the app bar to revert the last action. Tap Close to exit the editor. If changes were made, a confirmation dialog appears before closing.
-
 
 
 ### Width {#width}
@@ -156,7 +155,7 @@ Adds **arrow markers** along the track to indicate movement direction.
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Allows you to select whether to show the **start and finish icons** for track segments.
+Allows you to select whether to show the **start and finish icons** for track segments. For tracks with a large number of segments, these icons may be automatically disabled to improve map rendering performance. In this case, you can enable them manually if needed.
 
 ### Join Gaps {#join-gaps}
 

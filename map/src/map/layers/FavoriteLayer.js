@@ -25,9 +25,13 @@ import { MARKER_Z_INDEX_MAIN, MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../ma
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 export function filterPointsInBounds(points, map) {
+    if (!map) return [];
+    if (!Array.isArray(points) || points.length === 0) return [];
+
     const mapBounds = map.getBounds();
 
     return points.filter((point) => {
+        if (point == null) return false;
         const pointLatLng = L.latLng(point.lat, point.lon);
         return mapBounds.contains(pointLatLng);
     });
@@ -274,6 +278,14 @@ const FavoriteLayer = () => {
                 const secLayersGroup = new L.FeatureGroup(secondaryLayers);
                 const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
                 res.addTo(map);
+                // When a hidden favorites group is opened explicitly, keep all its markers visible.
+                if (fileId === openGroupId) {
+                    [...mainLayers, ...secondaryLayers].forEach((marker) => {
+                        if (marker?._icon?.style) {
+                            marker._icon.style.display = '';
+                        }
+                    });
+                }
                 updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
                 file.markersOnMap = res;
             }

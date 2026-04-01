@@ -1,5 +1,5 @@
 ---
-source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
+source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -71,6 +71,41 @@ Sur iOS, la liste **Coloration** s'ouvre sous forme de menu contextuel. Les él�
 
 Pour plus de détails sur la personnalisation de l'apparence de la ligne d'itinéraire, consultez [Écran de la carte pendant la navigation](../../navigation/guidance/map-during-navigation.md#color) et sur la sélection et la création d'une couleur personnalisée, consultez [Schémas de couleurs](../../personal/color-palette-schemes.md#tracks-routes).
 
+### Éditeur de palettes de couleurs {#color-palette-editor}
+
+<InfoAndroidOnly/> 
+
+![Éditeur de palettes de couleurs](@site/static/img/map/gradient_palettes_1.png) ![Éditeur de palettes de couleurs ](@site/static/img/map/gradient_palettes_2.png) 
+
+Lors de la coloration d'une trace par Vitesse, Altitude ou Pente, vous pouvez utiliser vos propres palettes pour définir comment les couleurs sont appliquées le long de la trace.
+
+L'écran *Toutes les couleurs* affiche les palettes disponibles. Appuyez sur le menu à trois points à côté d'une palette pour :
+- Renommer.
+- Modifier.
+- Dupliquer.
+- Supprimer. La suppression d'une palette nécessite une confirmation.
+
+Appuyez sur le bouton + dans l'écran Toutes les couleurs. Deux types de palettes sont disponibles :
+- **Relative** — les couleurs s'adaptent automatiquement en fonction des valeurs minimales et maximales de la trace.
+- **Valeurs fixes** — les couleurs sont assignées à des nombres absolus spécifiques (par exemple, 50 km/h). Les valeurs peuvent être modifiées manuellement. Les unités suivent les [paramètres système](../../personal/profiles.md#units--formats). L'échelle de couleurs ne se redimensionne pas automatiquement lors de l'application à différentes traces.
+
+:::info Pro feature
+La création de palettes personnalisées est une fonctionnalité payante [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
+Pour en savoir plus sur les schémas de palettes de couleurs en tant que format de données et leur utilisation dans les traces et les itinéraires, consultez l'article [Schémas de palettes de couleurs](../../personal/color-palette-schemes.md#tracks-routes).
+
+Lors de la création ou de la modification d'une palette, l'écran de l'éditeur inclut :
+- Un aperçu de l'échelle de couleurs en haut de l'écran.
+- Des boutons de valeurs sélectionnables sous l'échelle de couleurs (par exemple, 50, 100, 150, Pas de données).
+- Un bouton + pour ajouter une nouvelle étape.
+- Un champ Valeur.
+- Des options de sélection de couleur. Pour plus d'informations sur les fichiers de palettes.
+- Une option Supprimer l'étape pour la valeur sélectionnée.
+- Un bouton Enregistrer.
+
+Utilisez l'icône de retour en arrière dans la barre d'application pour annuler la dernière action. Appuyez sur Fermer pour quitter l'éditeur. Si des modifications ont été apportées, une boîte de dialogue de confirmation apparaît avant la fermeture.
+
 
 ### Largeur {#width}
 
@@ -121,7 +156,7 @@ Ajoute des **marqueurs fléchés** le long de la trace pour indiquer la directio
 
 ![Menu de la trace Apparence icônes de départ et d'arrivée Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Permet de sélectionner si vous souhaitez afficher les **icônes de départ et d'arrivée** pour les segments de trace.
+Permet de sélectionner si vous souhaitez afficher les **icônes de départ et d'arrivée** pour les segments de trace. Pour les traces avec un grand nombre de segments, ces icônes peuvent être automatiquement désactivées pour améliorer les performances de rendu de la carte. Dans ce cas, vous pouvez les activer manuellement si nécessaire.
 
 ### Joindre les interruptions {#join-gaps}
 

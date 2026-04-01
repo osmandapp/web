@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -333,10 +333,18 @@ Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. 
     - Melhora a clareza e maximiza o espaço para dados importantes.
     - Especialmente útil ao exibir muitos widgets na mesma **linha**.
 
+3. **Visibilidade do rótulo de texto do widget**
+
+    - A visibilidade do rótulo de texto depende do tamanho do widget e da localização do painel. Nos tamanhos Médio e Grande, os rótulos são sempre exibidos.
+    - No tamanho Pequeno, os rótulos não são exibidos nos painéis Esquerdo e Direito. Nos painéis Superior e Inferior, o rótulo pode ser ocultado automaticamente (quando posicionado no lado direito) para manter os valores numéricos totalmente visíveis.
+    - Não há uma opção separada para ativar ou desativar os rótulos de texto.
+
+<!--
 3. **Ocultar rótulos de texto dos widgets**:
 
     - Oculta automaticamente os rótulos de texto para manter as informações numéricas totalmente visíveis em layouts compactos.
-    - Ajuda a manter um arranjo de widgets limpo e legível quando o espaço é limitado.   
+    - Ajuda a manter um arranjo de widgets limpo e legível quando o espaço é limitado.  
+--> 
 
 4. **Tamanho individual para diferentes linhas** (*para todos os painéis*):
 
@@ -433,8 +441,6 @@ O OsmAnd permite adicionar várias instâncias do mesmo widget a diferentes pain
 
 </Tabs>
 
-
-
 Você pode reorganizar ou remover widgets da tela do aplicativo usando o modo **Editar**.  
 
 ***Como mover um widget:***
@@ -464,6 +470,8 @@ Você pode abrir as configurações de Layout da tela do mapa a partir do menu C
 
 ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_single.png) ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_separate.png)
 
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Layout da Tela do Mapa*
+
 O OsmAnd suporta dois modos de layout para a tela do mapa:
 - **Layout único** – usa o mesmo layout de widgets para todas as orientações de tela. Esta opção é selecionada por padrão.
 - **Layouts separados** – permite configurar layouts de widgets diferentes para orientações Retrato e Paisagem.
@@ -488,7 +496,9 @@ Apenas a lista de widgets é copiada, e a operação se aplica dentro do mesmo p
 
 ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_wide.png) ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_compact.png)
 
-A configuração **Layout de painéis** controla como os painéis de widgets superior e inferior são exibidos. Esta opção está disponível apenas quando Layouts separados está ativado.
+A configuração **Layout de painéis** controla como os painéis de widgets superior e inferior são exibidos. 
+
+**Nota:** Esta opção está disponível apenas quando [Layouts separados](#single-and-separate-layouts) está ativado.
 
 Você pode escolher entre dois modos:
 - **Amplo** – os painéis superior e inferior se estendem pela largura total da tela.
@@ -556,13 +566,13 @@ Os **botões padrão** permitem personalizar quais botões de mapa predefinidos 
 
     - [Menu](../widgets/map-buttons.md#main-menu). Abre o menu principal do aplicativo para acessar todos os recursos.
 
-    - [Minha localização](../widgets/map-buttons.md#my-location-and-zoom). Centraliza o mapa em sua posição atual.
+    - [Minha localização](../widgets/map-buttons.md#my-position-and-zoom). Centraliza o mapa em sua posição atual.
 
-    - [Navegação](../widgets/map-buttons.md#directions). Essencial para planejar rotas e iniciar a navegação.
+    - [Navegação](../widgets/map-buttons.md#navigation). Essencial para planejar rotas e iniciar a navegação.
 
     - [Pesquisar](../widgets/map-buttons.md#search). Abre a ferramenta de pesquisa para encontrar locais.
 
-    - [Aumentar / diminuir zoom](../widgets/map-buttons.md#my-location-and-zoom). Ajusta o nível de zoom do mapa para mostrar mais ou menos detalhes.
+    - [Aumentar / diminuir zoom](../widgets/map-buttons.md#my-position-and-zoom). Ajusta o nível de zoom do mapa para mostrar mais ou menos detalhes.
 
 O **menu de três pontos** na tela de Botões Padrão contém ações como:
 
@@ -653,7 +663,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>
 
 > *Posição da localização na tela* é o nome desta configuração na versão iOS do OsmAnd.  
 
-Permite definir o posicionamento do cursor para *[Minha localização](../map/interact-with-map.md#my-location-and-zoom)* no mapa do OsmAnd. Existem três opções disponíveis:  
+Permite definir o posicionamento do cursor para *[Minha localização](../map/interact-with-map.md#my-position-and-zoom)* no mapa do OsmAnd. Existem três opções disponíveis:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. O cursor está sempre posicionado no centro da tela.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Minha localização* é colocada ligeiramente abaixo do centro da tela. Este modo permite que você veja mais informações do mapa à frente do seu movimento, o que é útil durante a navegação.

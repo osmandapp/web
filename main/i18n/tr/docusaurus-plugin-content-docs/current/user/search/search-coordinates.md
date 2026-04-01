@@ -1,8 +1,9 @@
 ---
-source-hash: f338192d8b8c1dbdc1b08667fb4caff3b45c57bc128f5f53a297f3ace1a6b7fa
+source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
 sidebar_position: 6
 title: Koordinat Arama
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,16 +14,15 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
 **OsmAnd Koordinat araması**, enlem ve boylama göre belirli bir konumu bulmanızı sağlar. Bu arama türü, bir konumu doğru bir şekilde tanımlamaya yardımcı olur. Özellikle kesin adresleri olmayan alanlar veya coğrafi çitler oluşturma veya açık alanda hassas konumlandırma gibi belirli coğrafi görevler için kullanışlıdır.
 
-OsmAnd, **Koordinat araması**nın bulunduğu *Arama aracı → [Adres arama sekmesine](../search/search-address.md)* ulaşmak için çeşitli yollar sunar.
+OsmAnd, **Koordinat araması**nın bulunduğu *Arama aracı → [Adres arama sekmesi](../search/search-address.md)* ulaşmak için çeşitli yollar sunar.
 
 - Harita uygulama ekranındaki [Arama düğmesi](../widgets/map-buttons.md#search).
 - Ana Android *Menü → Arama → Adres sekmesi → Koordinat Araması* yolunu izleyin.
-- Bir rotayı başlatmaya hazırlanırken, *Navigasyon → Hedef belirle → Arama alanı → Adres sekmesi → Koordinat Araması* üzerine dokunun.
+- Bir rotayı başlatmaya hazırlanırken, *Navigasyon → Hedef belirle → Arama alanı → Adres sekmesi → Koordinat Araması* üzerine dokunun.  
 
 
 ## Nasıl Kullanılır {#how-to-use}
@@ -46,7 +46,7 @@ OsmAnd, **Koordinat araması**nın bulunduğu *Arama aracı → [Adres arama sek
 Koordinatlar mevcut herhangi bir formatta girilebilir, ancak bulunan konum *Profili yapılandır → Genel ayarlar → Birimler ve formatlar* bölümünde belirtilen formatta görüntülenir.
 
 - Koordinat aramasını kullanmak için, her bir ilgili alana ayrı ayrı yazabilir veya daha önce kopyalanmış koordinatları arama alanına yapıştırabilir veya içine girebilirsiniz. Uygulama, uygun bir konum seçmenizi ister.
-- Koordinat Arama, belirtilen format listedeki alanla değiştirildiğinde bir koordinat formatını diğerine otomatik olarak dönüştürür.
+- Koordinat Araması, belirtilen format listedeki alanla değiştirildiğinde bir koordinat formatını diğerine otomatik olarak dönüştürür.
 - Önerilen konuma dokunun ve [harita bağlam menüsü](../map/map-context-menu.md#select-any-point-long-tap) açılır.
 - Daha fazla bilgiye buradan ulaşabilirsiniz [Coğrafi koordinatlar](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
 
@@ -62,85 +62,85 @@ Koordinatlar mevcut herhangi bir formatta girilebilir, ancak bulunan konum *Prof
 
 Arama için koordinatları girmenin birkaç yolu vardır. Her birini kullanmak için giriş kurallarına uymak çok önemlidir, aksi takdirde uygulama konumu bulamaz.
 
-1. **<Translate android="true" ids="navigate_point_format_D"/>**
+### Ondalık Koordinatlar {#decimal-coordinates}
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_degrees_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_degrees_andr.png)  
 
-    **Ondalık koordinatlar (derece)**. Bu formatta, enlem ve boylam koordinatları ondalık formatta yazılır, örneğin Amsterdam için 52.37022° enlem ve 4.89517° boylam. Bu giriş yöntemi kullanımı kolaydır ve en yaygın olanıdır. Ondalık koordinatlar formatı hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Decimal_degrees) okuyabilirsiniz.
+**<Translate android="true" ids="navigate_point_format_D"/>**. Bu formatta, enlem ve boylam koordinatları ondalık formatta yazılır, örneğin Amsterdam için 52.37022° enlem ve 4.89517° boylam. Bu giriş yöntemi kullanımı kolaydır ve en yaygın olanıdır. Ondalık koordinatlar formatı hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Decimal_degrees) okuyabilirsiniz.  
 
-    - *Giriş kuralları*. Enlem ve boylam koordinatları ondalık formatta yazılır, burada enlem -90 ila 90 arasında ve boylam -180 ila 180 arasında değişir.
-    - *En sık kullanılan*. Ondalık koordinatlar navigasyon uygulamalarında, GPS cihazlarında, web haritalarında ve diğer coğrafi konumlandırma hizmetlerinde yaygın olarak kullanılır.
+- *Giriş kuralları*. Enlem ve boylam koordinatları ondalık formatta yazılır, burada enlem -90 ila 90 arasında ve boylam -180 ila 180 arasında değişir.
+- *En sık kullanılan*. Ondalık koordinatlar navigasyon uygulamalarında, GPS cihazlarında, web haritalarında ve diğer coğrafi konumlandırma hizmetlerinde yaygın olarak kullanılır.  
 
-2. **<Translate android="true" ids="navigate_point_format_DM"/>**
+### Derece ve Dakika {#degrees-and-minutes}
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_DM_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_DM_andr.png)  
 
-    **Derece ve Dakika (DM)**. Bu formatta, enlem ve boylam koordinatları derece ve dakika kullanılarak kaydedilir. Örneğin, San Francisco için 37:46.29 enlem ve -122:25.10 boylam. Bu format daha az doğru olabilir ve girmesi daha uzun sürebilir.
-    - *Giriş kuralları*. Enlem ve boylam koordinatları derece (:) ve dakika (:) kullanan bir formatta yazılır.
-    - *En sık kullanılan*. DM formatı genellikle deniz navigasyonunda, havacılıkta, astronomide ve topografik haritalama sistemlerinde bulunur.
+**<Translate android="true" ids="navigate_point_format_DM"/>**. Bu formatta, enlem ve boylam koordinatları derece ve dakika kullanılarak kaydedilir. Örneğin, San Francisco için 37:46.29 enlem ve -122:25.10 boylam. Bu format daha az doğru olabilir ve girmesi daha uzun sürebilir.
+- *Giriş kuralları*. Enlem ve boylam koordinatları derece (:) ve dakika (:) kullanan bir formatta yazılır.
+- *En sık kullanılan*. DM formatı genellikle deniz navigasyonunda, havacılıkta, astronomide ve topografik haritalama sistemlerinde bulunur.
 
-3. **<Translate android="true" ids="navigate_point_format_DMS"/>**
+### Derece, Dakika ve Saniye {#degrees-minutes-and-seconds}
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_DMS_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_DMS_andr.png)  
 
-    **Derece, Dakika ve Saniye (DMS)**. DMS koordinat formatı, değerlerin derece, dakika ve saniye olarak verildiği coğrafi koordinatları kaydeder. Dereceler (DDD) boylam için 0 ila 180 ve enlem için 0 ila 90 arasında değerler alabilir. Pozitif değerler doğu boylamını ve kuzey enlemini, negatif değerler ise batı boylamını ve güney enlemini gösterir. Dakikalar (MM) 0 ila 59 arasında değerler alabilir. Saniyeler (SS.S) bir saniyenin ondalık kesirini temsil eder ve ayrıca 0 ila 59.9 arasında değişebilir.
-    - *Giriş kuralları*. Enlem ve boylam koordinatları derece (:), dakika (:) ve saniye (.) kullanan bir formatta yazılır.
-    - *En sık kullanılan*. DMS formatı jeodezi, navigasyon uygulamaları, kartografi, astronomi ve konum koordinatlarının daha ayrıntılı bir şekilde ifade edilmesinin gerekli olduğu diğer alanlarda yaygın olarak kullanılır.
+**<Translate android="true" ids="navigate_point_format_DMS"/>**. DMS koordinat formatı, değerlerin derece, dakika ve saniye olarak verildiği coğrafi koordinatları kaydeder. Dereceler (DDD) boylam için 0 ila 180 ve enlem için 0 ila 90 arasında değerler alabilir. Pozitif değerler doğu boylamını ve kuzey enlemini, negatif değerler ise batı boylamını ve güney enlemini gösterir. Dakikalar (MM) 0 ila 59 arasında değerler alabilir. Saniyeler (SS.S) bir saniyenin ondalık kesirini temsil eder ve ayrıca 0 ila 59.9 arasında değişebilir.
+- *Giriş kuralları*. Enlem ve boylam koordinatları derece (:), dakika (:) ve saniye (.) kullanan bir formatta yazılır.
+- *En sık kullanılan*. DMS formatı jeodezi, navigasyon uygulamaları, kartografi, astronomi ve konum koordinatlarının daha ayrıntılı bir şekilde ifade edilmesinin gerekli olduğu diğer alanlarda yaygın olarak kullanılır.
 
-4. **<Translate android="true" ids="navigate_point_format_utm"/>**
+### Evrensel Enine Merkatör Sistemi {#universal-transversal-mercator-system}
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_UTM_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_UTM_andr.png)  
 
-    **UTM (Evrensel Enine Merkatör Sistemi)**. Bu formatta, koordinatlar UTM bölgesi, Doğu ve Kuzey yönleri kullanılarak belirtilir. Örneğin, Amsterdam için koordinatlar yaklaşık olarak şu şekilde olabilir: bölge 31, Doğu yönü 581000, Kuzey yönü 5809000. UTM formatında koordinat girmek, sistem hakkında biraz bilgi gerektirebilir ve diğer formatlardan daha karmaşık olabilir, ancak iyi doğruluk sağlar ve küresel coğrafi konumlandırma standartlarını karşılar. UTM formatı hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) okuyabilirsiniz.
-    - *Giriş Kuralları*. Koordinatlar, UTM bölgesini ve Doğu ve Kuzey ofsetlerini kullanan bir formatta kaydedilir.
-    - *En sık kullanılan*. UTM formatı genellikle ölçme, haritalama ve coğrafi bilgi sistemlerinde ölçüm ve navigasyon için kullanılır.
+**<Translate android="true" ids="navigate_point_format_utm"/>**. Bu formatta, koordinatlar UTM bölgesi, Doğu ve Kuzey yönleri kullanılarak belirtilir. Örneğin, Amsterdam için koordinatlar yaklaşık olarak şu şekilde olabilir: bölge 31, Doğu yönü 581000, Kuzey yönü 5809000. UTM formatında koordinat girmek, sistem hakkında biraz bilgi gerektirebilir ve diğer formatlardan daha karmaşık olabilir, ancak iyi doğruluk sağlar ve küresel coğrafi konumlandırma standartlarını karşılar. UTM formatı hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) okuyabilirsiniz.
+- *Giriş Kuralları*. Koordinatlar, UTM bölgesini ve Doğu ve Kuzey ofsetlerini kullanan bir formatta kaydedilir.
+- *En sık kullanılan*. UTM formatı genellikle ölçme, haritalama ve coğrafi bilgi sistemlerinde ölçüm ve navigasyon için kullanılır.
 
-5. **<Translate android="true" ids="navigate_point_format_olc"/>** ((OLC) - 9F2X4WFJ+7W (Açık Konum Kodu 9m x 14m alanı temsil eder))
+### Açık Konum Kodu {#open-location-code} 
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_OLC_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_OLC_andr.png)  
 
-    **Açık Konum Kodu (OLC)**, diğer adıyla **Plus Kodu**, küresel bir konum kodlama sistemidir. Gezegendeki herhangi bir konumun enlem ve boylamını belirtmek için harf ve sayı kombinasyonudur. Amsterdam için bir OLC kodu örneği: 9F3WCVWG+FP. Bu örnekte, "9F3WCVWG" kaba bir ızgarayı gösterir ve "+FP" o alan içindeki bir konumu belirtir. Daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Open_Location_Code) okuyun.
-    - *Giriş Kuralları*.
-        - OLC kodu, "C"den "Z"ye ( "I" ve "O" hariç) harflerden ve "2"den "9"a kadar sayılardan oluşan 4 ila 14 karakterden oluşur.
-        - Kod, bir kıtayı veya alanı gösteren küresel bir önekle başlar.
-        - Bunu, noktalarla ayrılmış karakter grupları takip eder. Her grup daha dar bir alanı temsil eder.
-        - Konumu netleştirmek için, OLC kodundaki harfler ve rakamlar diğer karakterlerle tamamlanır.
-    - *En sık kullanılan*. OLC, uzak bölgeler, çöller veya okyanuslar gibi kesin adreslerin mevcut olmadığı veya belirlenmesinin zor olduğu alanlarda sıklıkla kullanılır. Ayrıca coğrafi konumlandırma, teslimat, acil servisler ve geleneksel adreslerin kullanılmadığı yerlerde kesin konumun gerekli olduğu diğer alanlarla ilgili uygulamalarda ve hizmetlerde yaygın olarak kullanılır.
+**<Translate android="true" ids="navigate_point_format_olc"/>**  ((OLC) - 9F2X4WFJ+7W (Açık Konum Kodu 9m x 14m alanı temsil eder)), diğer adıyla **Plus Kodu**, küresel bir konum kodlama sistemidir. Gezegendeki herhangi bir konumun enlem ve boylamını belirtmek için harf ve sayı kombinasyonudur. Amsterdam için bir OLC kodu örneği: 9F3WCVWG+FP. Bu örnekte, "9F3WCVWG" kaba bir ızgarayı gösterir ve "+FP" o alan içindeki bir konumu belirtir. Daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Open_Location_Code) okuyun.
+- *Giriş Kuralları*.  
+     - OLC kodu, "C"den "Z"ye ( "I" ve "O" hariç) harflerden ve "2"den "9"a kadar sayılardan oluşan 4 ila 14 karakterden oluşur.
+     - Kod, bir kıtayı veya alanı gösteren küresel bir önekle başlar.
+     - Bunu, noktalarla ayrılmış karakter grupları takip eder. Her grup daha dar bir alanı temsil eder.
+    - Konumu netleştirmek için, OLC kodundaki harfler ve rakamlar diğer karakterlerle tamamlanır.  
+- *En sık kullanılan*. OLC, uzak bölgeler, çöller veya okyanuslar gibi kesin adreslerin mevcut olmadığı veya belirlenmesinin zor olduğu alanlarda sıklıkla kullanılır. Ayrıca coğrafi konumlandırma, teslimat, acil servisler ve geleneksel adreslerin kullanılmadığı yerlerde kesin konumun gerekli olduğu diğer alanlarla ilgili uygulamalarda ve hizmetlerde yaygın olarak kullanılır.
 
-6. **<Translate android="true" ids="navigate_point_mgrs"/>**
+### Askeri Izgara Referans Sistemi {#military-grid-reference-system}
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_MGRS_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_MGRS_andr.png)  
 
-    **MGRS (Askeri Izgara Referans Sistemi)**. Bu, askeri uygulamalarda sıklıkla kullanılan bir koordinat sistemidir. UTM sistemine dayanır ve ek bir kare ızgarası ile tamamlanır. Avustralya'daki bir konum için MGRS formatındaki koordinatlara bir örnek şöyle olabilir: 55HBE1234567890. Bu örnekte, "55H" MGRS bölgesini ve "BE" konumun bulunduğu kareyi temsil eder. "123456" doğuya doğru ofseti ve "7890" o kare içindeki kuzeye doğru ofseti temsil eder. MGRS, yüksek doğruluk ve coğrafi referanslama gerektiren alanlarda yaygın olarak kullanılır. Özellikle adreslerin net veya mevcut olmadığı ortamlar, örneğin askeri operasyonlar veya uzak bölgelerdeki keşif gezileri için kullanışlıdır. MGRS formatı hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Military_Grid_Reference_System) okuyabilirsiniz.
-    - *Giriş kuralları*. Koordinatlar bir MGRS bölgesinden, bir kareden ve doğu ve kuzey ofsetlerini gösteren iki rakamdan oluşur.
-    - *En sık kullanılan*. MGRS formatı askeri navigasyon ve iletişimde yaygın olarak kullanılır ve açık hava meraklıları ve yürüyüşçüler için de faydalı olabilir.
+**<Translate android="true" ids="navigate_point_mgrs"/>**. Bu, askeri uygulamalarda sıklıkla kullanılan bir koordinat sistemidir. UTM sistemine dayanır ve ek bir kare ızgarası ile tamamlanır. Avustralya'daki bir konum için MGRS formatındaki koordinatlara bir örnek şöyle olabilir: 55HBE1234567890. Bu örnekte, "55H" MGRS bölgesini ve "BE" konumun bulunduğu kareyi temsil eder. "123456" doğuya doğru ofseti ve "7890" o kare içindeki kuzeye doğru ofseti temsil eder. MGRS, yüksek doğruluk ve coğrafi referanslama gerektiren alanlarda yaygın olarak kullanılır. Özellikle adreslerin net veya mevcut olmadığı ortamlar, örneğin askeri operasyonlar veya uzak bölgelerdeki keşif gezileri için kullanışlıdır. MGRS formatı hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Military_Grid_Reference_System) okuyabilirsiniz.  
+- *Giriş kuralları*. Koordinatlar bir MGRS bölgesinden, bir kareden ve doğu ve kuzey ofsetlerini gösteren iki rakamdan oluşur.
+- *En sık kullanılan*. MGRS formatı askeri navigasyon ve iletişimde yaygın olarak kullanılır ve açık hava meraklıları ve yürüyüşçüler için de faydalı olabilir.
 
-7. **İsviçre Izgarası** (CH1903) ve **İsviçre Izgarası** (CH1903+)
+### İsviçre Izgarası {#swiss-grid}
 
-    ![Koordinat Arama Android](@site/static/img/search/coordinates_search_Swiss_andr.png)
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
-    **İsviçre koordinat sistemi**. İsviçre Izgarası (CH1903) ve İsviçre Izgarası (CH1903+), İsviçre'de konumlandırma için yaygın olarak kullanılan koordinat sistemleridir. Her iki format da 1903'te tanıtılan ve İsviçre Uluslararası Izgarasının projeksiyonuna dayanan CH1903 sistemine dayanmaktadır. İsviçre Izgarası (CH1903) formatındaki örnek koordinatlar — Doğu: 600000; Kuzey: 200000. İsviçre Izgarası (CH1903+) formatında — Doğu: 600300; Kuzey: 200400. İsviçre Izgarası coğrafi koordinat sistemi hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Swiss_coordinate_system) okuyabilirsiniz.
-    - *Giriş kuralları*.
-        - CH1903 formatındaki koordinatlar iki bileşenden oluşur: Doğu ve Kuzey.
-        - Doğu, Luzern Ekseni (sıfır Doğu) adı verilen bir noktadan metre cinsindendir.
-        - Kuzey, ekvatordan metre cinsinden verilir.
-        - CH1903+ formatı, CH1903 ile aynı giriş kurallarını kullanır, ancak daha hassas değerlerle.
-        - CH1903+, İsviçre'deki tektonik hareketlerdeki değişikliklerin neden olduğu koordinatlardaki kaymaları hesaba katmak için düzeltmeler içerir.
-    - *En sık kullanılan*. İsviçre Izgarası (CH1903) ve İsviçre Izgarası (CH1903+) formatları İsviçre'de jeodezik ölçümler, kartografi, coğrafi bilgi sistemleri ve inşaat ve mühendislik için kullanılır. Bu formatlar, İsviçre'ye özgü yerel bir koordinat sistemi sağlar.
+**İsviçre koordinat sistemi**. İsviçre Izgarası (CH1903) ve İsviçre Izgarası (CH1903+), İsviçre'de konumlandırma için yaygın olarak kullanılan koordinat sistemleridir. Her iki format da 1903'te tanıtılan ve İsviçre Uluslararası Izgarasının projeksiyonuna dayanan CH1903 sistemine dayanmaktadır. İsviçre Izgarası (CH1903) formatındaki örnek koordinatlar — Doğu: 600000; Kuzey: 200000. İsviçre Izgarası (CH1903+) formatında — Doğu: 600300; Kuzey: 200400. İsviçre Izgarası coğrafi koordinat sistemi hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Swiss_coordinate_system) okuyabilirsiniz.  
+ - *Giriş kuralları*.  
+    - CH1903 formatındaki koordinatlar iki bileşenden oluşur: Doğu ve Kuzey.
+    - Doğu, Luzern Ekseni (sıfır Doğu) adı verilen bir noktadan metre cinsindendir.
+    - Kuzey, ekvatordan metre cinsinden verilir.
+    - CH1903+ formatı, CH1903 ile aynı giriş kurallarını kullanır, ancak daha hassas değerlerle.
+    - CH1903+, İsviçre'deki tektonik hareketlerdeki değişikliklerin neden olduğu koordinatlardaki kaymaları hesaba katmak için düzeltmeler içerir.
+- *En sık kullanılan*. İsviçre Izgarası (CH1903) ve İsviçre Izgarası (CH1903+) formatları İsviçre'de jeodezik ölçümler, kartografi, coğrafi bilgi sistemleri ve inşaat ve mühendislik için kullanılır. Bu formatlar, İsviçre'ye özgü yerel bir koordinat sistemi sağlar.
 
 
-> Her profil için ayrı ayrı farklı bir koordinat formatı ayarlayabilirsiniz. Bunu yapmak için *Genel ayarlar → [Koordinat formatı](../personal/profiles.md#units--formats)* yolunu izleyin.
+Her profil için ayrı ayrı farklı bir koordinat formatı ayarlayabilirsiniz. Bunu yapmak için *Genel ayarlar → [Koordinat formatı](../personal/profiles.md#units--formats)* yolunu izleyin.
 
 
 <!--
 
-## Sorun Giderme {#troubleshooting}
+## Troubleshooting {#troubleshooting}
 
-https://github.com/osmandapp/OsmAnd/issues/14081
+https://github.com/osmandapp/OsmAnd/issues/14081  
 
-https://github.com/osmandapp/OsmAnd/issues/16114
+https://github.com/osmandapp/OsmAnd/issues/16114  
 
-https://github.com/osmandapp/OsmAnd/issues/14081
+https://github.com/osmandapp/OsmAnd/issues/14081  
 
 -->
 
@@ -149,5 +149,7 @@ https://github.com/osmandapp/OsmAnd/issues/14081
 
 - [Tümünü Ara](./search-all.md)
 - [Adres Ara](./search-address.md)
-- [Arama Geçmişi](./search-history.md)
-- [İÇN Ara](./search-poi.md)
+- [Koordinat Girişi](../plan-route/coordinate-input.md)
+- [Harita Bağlam Menüsü](../map/map-context-menu.md)
+- [Bilgilendirici Widget'lar](../widgets/info-widgets.md)
+- [Vektör Haritalar](../map/vector-maps.md)

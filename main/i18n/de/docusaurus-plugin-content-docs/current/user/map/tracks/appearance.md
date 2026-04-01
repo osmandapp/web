@@ -1,5 +1,5 @@
 ---
-source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
+source-hash: 35d0a278e6fa783087c1faddcb0a80dc8813f98e7c4ad6bfabd7a203ebf51919
 sidebar_position: 5
 title:  Darstellung von Tracks
 ---
@@ -72,6 +72,43 @@ Auf iOS öffnet sich die **Färbungsliste** als Kontextmenü. Elemente können i
 Weitere Details zur Anpassung der Routenliniendarstellung finden Sie unter [Kartenbildschirm während der Navigation](../../navigation/guidance/map-during-navigation.md#color) und zur Auswahl und Erstellung einer benutzerdefinierten Farbe unter [Farbschemata](../../personal/color-palette-schemes.md#tracks-routes).
 
 
+### Verlaufs-Paletten {#gradient-palettes}
+
+<InfoAndroidOnly/> 
+
+![Verlaufs-Paletten](@site/static/img/map/gradient_palettes_1.png)   ![Verlaufs-Paletten](@site/static/img/map/gradient_palettes_2.png) 
+
+Beim Einfärben eines Tracks nach Geschwindigkeit, Höhe oder Steigung verwendet OsmAnd Verlaufs-Paletten, um zu definieren, wie Farben entlang des Tracks angewendet werden.
+
+Der Bildschirm *Alle Farben* zeigt die verfügbaren Paletten an. Tippen Sie auf das Drei-Punkte-Menü neben einer Palette, um:
+- Umzubenennen.
+- Zu bearbeiten.
+- Zu duplizieren.
+- Zu entfernen. Das Entfernen einer Palette erfordert eine Bestätigung.
+
+Tippen Sie auf die + Schaltfläche auf dem Bildschirm *Alle Farben*. Zwei Arten von Paletten sind verfügbar:
+- **Relativ** — Farben skalieren automatisch basierend auf den Mindest- und Höchstwerten des Tracks.
+- **Feste Werte** — Farben werden spezifischen absoluten Zahlen zugewiesen (z. B. 50 km/h). Werte können manuell bearbeitet werden. Die Einheiten folgen den [Systemeinstellungen](../../personal/profiles.md#units--formats). Der Verlauf skaliert nicht automatisch, wenn er auf verschiedene Tracks angewendet wird.
+
+:::info Pro-Funktion
+Das Erstellen benutzerdefinierter Paletten ist eine [**OsmAnd Pro**](../../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
+:::
+
+Um mehr über Farbpaletten-Schemata als Datenformat und ihre Verwendung in Tracks und Routen zu erfahren, lesen Sie den Artikel [Farbpaletten-Schemata](../../personal/color-palette-schemes.md#tracks-routes).
+
+Beim Erstellen oder Bearbeiten einer Palette umfasst der Editor-Bildschirm:
+- Eine Verlaufs-Vorschau oben auf dem Bildschirm.
+- Auswählbare Wertschaltflächen unter dem Verlauf (z. B. 50, 100, 150, Keine Daten).
+- Eine + Schaltfläche zum Hinzufügen eines neuen Schritts.
+- Ein Wertfeld.
+- Farbauswahloptionen. Für weitere Informationen über Paletten-Dateien.
+- Eine Option zum Entfernen des Schritts für den ausgewählten Wert.
+- Eine Speichern-Schaltfläche.
+
+Verwenden Sie das Rückgängig-Symbol in der App-Leiste, um die letzte Aktion rückgängig zu machen. Tippen Sie auf Schließen, um den Editor zu verlassen. Wenn Änderungen vorgenommen wurden, erscheint vor dem Schließen ein Bestätigungsdialog.
+
+
+
 ### Breite {#width}
 
 ![Track-Menü Darstellung Track-Dicke Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track-Darstellung](@site/static/img/map/track_appearance_width_andr.png)  
@@ -121,7 +158,7 @@ Fügt **Pfeilmarkierungen** entlang des Tracks hinzu, um die Bewegungsrichtung a
 
 ![Track-Menü Darstellung Start- und Ziel-Symbole Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Ermöglicht die Auswahl, ob die **Start- und Ziel-Symbole** für Track-Segmente angezeigt werden sollen.
+Ermöglicht die Auswahl, ob die **Start- und Ziel-Symbole** für Track-Segmente angezeigt werden sollen. Bei Tracks mit einer großen Anzahl von Segmenten können diese Symbole automatisch deaktiviert werden, um die Kartenrendering-Leistung zu verbessern. In diesem Fall können Sie sie manuell aktivieren, falls erforderlich.
 
 ### Lücken schließen {#join-gaps}
 
@@ -134,8 +171,8 @@ Stellt alle **Einstellungen zur Track-Darstellung** auf ihre Standardwerte zurü
 
 ## 3D-Track {#3d-track}
 
-:::info Kostenpflichtige Funktion
-**3D-Track** ist eine kostenpflichtige **OsmAnd Pro**-Funktion für [iOS](../../purchases/ios.md#pro-features) und [Android](../../purchases/android.md#pro-features) <ProFeature />.
+:::tip Käufe
+3D-Track-Visualisierung ist eine [bezahlte Funktion](../../purchases/index.md).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -333,10 +333,11 @@ Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden.
     - Verbessert die Übersichtlichkeit und maximiert den Platz für wichtige Daten.
     - Besonders nützlich, wenn viele Widgets in derselben **Zeile** angezeigt werden.
 
-3. **Ausblenden von Widget-Textbeschriftungen**:
+3. **Sichtbarkeit der Widget-Textbeschriftung**
 
-    - Blendet Textbeschriftungen automatisch aus, um numerische Informationen in kompakten Layouts vollständig sichtbar zu halten.
-    - Hilft, eine saubere und lesbare Widget-Anordnung beizubehalten, wenn der Platz begrenzt ist.   
+    - Die Sichtbarkeit der Textbeschriftungen hängt von der Widget-Größe und der Leistenposition ab. In Mittel- und Großen Größen werden Beschriftungen immer angezeigt.
+    - In Kleiner Größe werden Beschriftungen nicht in den Linken und Rechten Leisten angezeigt. In den Oberen und Unteren Leisten kann die Beschriftung automatisch ausgeblendet werden (wenn sie auf der rechten Seite positioniert ist), um numerische Werte vollständig sichtbar zu halten.
+    - Es gibt keine separate Option, um Textbeschriftungen ein- oder auszuschalten.
 
 4. **Individuelle Größe für verschiedene Zeilen** (*für alle Leisten*):
 
@@ -464,6 +465,8 @@ Sie können die Einstellungen für das Kartenbildschirm-Layout aus dem Menü "Bi
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_single.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_separate.png)
 
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Kartenbildschirm-Layout*
+
 OsmAnd unterstützt zwei Layout-Modi für den Kartenbildschirm:
 - **Einzelnes Layout** – verwendet das gleiche Widget-Layout für alle Bildschirmausrichtungen. Diese Option ist standardmäßig ausgewählt.
 - **Getrennte Layouts** – ermöglicht es Ihnen, unterschiedliche Widget-Layouts für Hoch- und Querformat zu konfigurieren.
@@ -488,7 +491,9 @@ Nur die Widget-Liste wird kopiert, und die Operation gilt innerhalb desselben Pr
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_wide.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_compact.png)
 
-Die Einstellung **Leisten-Layout** steuert, wie die oberen und unteren Widget-Leisten angezeigt werden. Diese Option ist nur verfügbar, wenn Getrennte Layouts aktiviert ist.
+Die Einstellung **Leisten-Layout** steuert, wie die oberen und unteren Widget-Leisten angezeigt werden. 
+
+**Hinweis:** Diese Option ist nur verfügbar, wenn [Getrennte Layouts](#single-and-separate-layouts) aktiviert ist.
 
 Sie können zwischen zwei Modi wählen:
 - **Breit** – die oberen und unteren Leisten erstrecken sich über die volle Breite des Bildschirms.
@@ -507,7 +512,7 @@ Das Leisten-Layout kann unabhängig für Hoch- und Querformat konfiguriert werde
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_buttons_andr.png)
+![Benutzerdefinierte Schaltflächen](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
 </TabItem>
 
@@ -515,7 +520,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appea
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
+![Benutzerdefinierte Schaltflächen](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
 </TabItem>
 
@@ -545,7 +550,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 </Tabs>
 
-1. **Standard-Schaltflächen** ermöglichen es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
+**Standard-Schaltflächen** ermöglichen es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
 
     - [3D-Modus](../widgets/map-buttons.md#3d-mode). Für iOS ist die Schaltfläche immer verfügbar. Für Android erscheint sie in der Liste und ist zur Einstellung verfügbar, wenn die Karten-Rendering-Engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) ausgewählt ist.
 
@@ -556,15 +561,15 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
     - [Menü](../widgets/map-buttons.md#main-menu). Öffnet das Hauptmenü der Anwendung für den Zugriff auf alle Funktionen.
 
-    - [Mein Standort](../widgets/map-buttons.md#my-location-and-zoom). Zentriert die Karte auf Ihre aktuelle Position.
+    - [Mein Standort](../widgets/map-buttons.md#my-position-and-zoom). Zentriert die Karte auf Ihre aktuelle Position.
 
-    - [Navigation](../widgets/map-buttons.md#directions). Unverzichtbar für die Routenplanung und den Start der Navigation.
+    - [Navigation](../widgets/map-buttons.md#navigation). Unverzichtbar für die Routenplanung und den Start der Navigation.
 
     - [Suche](../widgets/map-buttons.md#search). Öffnet das Suchwerkzeug zum Finden von Orten.
 
-    - [Vergrößern / Verkleinern](../widgets/map-buttons.md#my-location-and-zoom). Passt die Zoomstufe der Karte an, um mehr oder weniger Details anzuzeigen.
+    - [Vergrößern / Verkleinern](../widgets/map-buttons.md#my-position-and-zoom). Passt die Zoomstufe der Karte an, um mehr oder weniger Details anzuzeigen.
 
-2. Das **Drei-Punkte-Menü** auf dem Bildschirm der Standard-Schaltflächen enthält Aktionen wie:
+Das **Drei-Punkte-Menü** auf dem Bildschirm der Standard-Schaltflächen enthält Aktionen wie:
 
     - *Auf Standard zurücksetzen*. Ermöglicht es Ihnen, die Schaltflächeneinstellungen auf ihre ursprüngliche Erscheinung zurückzusetzen.
     - *Von einem anderen Profil kopieren*. Wählen Sie ein Profil aus der Liste aus, um die Sichtbarkeit und Erscheinungseinstellungen der Schaltflächen zu kopieren.
@@ -614,7 +619,7 @@ Die Funktion *Erscheinungsbild der Schaltfläche* ermöglicht es Ihnen, das Auss
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_other_andr.png)  
+![Sonstiges](@site/static/img/widgets/conf_screen_other_andr.png)  
 
 </TabItem>
 
@@ -622,7 +627,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appea
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Sonstiges*
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_other_ios.png)
+![Sonstiges](@site/static/img/widgets/conf_screen_other_ios.png)
 
 </TabItem>
 
@@ -639,13 +644,13 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 <TabItem value="android" label="Android">  
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_display_position_andr.png)  
+![Anzeigeposition](@site/static/img/widgets/conf_screen_display_position_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_display_position_ios.png)
+![Anzeigeposition](@site/static/img/widgets/conf_screen_display_position_ios.png)
 
 </TabItem>
 
@@ -653,7 +658,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 > *Standortposition auf dem Bildschirm* ist der Name dieser Einstellung in der iOS-Version von OsmAnd.  
 
-Ermöglicht es Ihnen, die Platzierung des Cursors für *[Mein Standort](../map/interact-with-map.md#my-location-and-zoom)* auf der OsmAnd-Karte festzulegen. Es stehen drei Optionen zur Verfügung:  
+Ermöglicht es Ihnen, die Platzierung des Cursors für *[Mein Standort](../map/interact-with-map.md#my-position-and-zoom)* auf der OsmAnd-Karte festzulegen. Es stehen drei Optionen zur Verfügung:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Der Cursor wird immer in der Mitte des Bildschirms positioniert.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mein Standort* wird etwas unterhalb der Bildschirmmitte platziert. Dieser Modus ermöglicht es Ihnen, mehr Karteninformationen vor Ihrer Bewegung zu sehen, was während der Navigation nützlich ist.
@@ -668,7 +673,7 @@ Ermöglicht es Ihnen, die Platzierung des Cursors für *[Mein Standort](../map/i
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
-![Widget-Seite](@site/static/img/widgets/widget_actions_andr.png)
+![Aktionen](@site/static/img/widgets/widget_actions_andr.png)
 
 </TabItem>
 
@@ -676,7 +681,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appea
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Beliebige Leiste*
 
-![Widget-Seite](@site/static/img/widgets/widget_actions_ios.png)  
+![Aktionen](@site/static/img/widgets/widget_actions_ios.png)  
 
 </TabItem>
 
@@ -722,6 +727,6 @@ Verfügbare Aktionen:
 - [Kartenschaltflächen](./map-buttons.md)
 - [Informations-Widgets](./info-widgets.md)
 - [Navigations-Widgets](./nav-widgets.md)
-- [Radiuslineal und Lineal](./radius-ruler.md)
+- [Radius-Lineal und Lineal](./radius-ruler.md)
 - [Markierungs-Widgets](./markers.md)
 - [Schnellaktion](./quick-action.md)

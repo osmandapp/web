@@ -1,5 +1,5 @@
 ---
-source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
+source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
 sidebar_position: 1
 title: Preparação de Rota
 ---
@@ -37,7 +37,7 @@ O recurso **Preparação de rota** no OsmAnd oferece orientação de navegação
 
 <TabItem value="ios" label="iOS">
 
-![Tela de navegação iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Tela de navegação iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Tela de navegação iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Tela de navegação iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -293,7 +293,7 @@ Se o registro do [Histórico de Navegação](../../personal/global-settings.md#h
 
 <TabItem value="ios" label="iOS">
 
-![Tela de navegação iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Tela de navegação iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -306,7 +306,7 @@ Uma vez selecionados os pontos de início e fim, o aplicativo criará uma rota e
 - **Pare** a navegação selecionando **Parar** (*Android*) ou **Cancelar** (*iOS*).
 
 :::note Detalhes da Rota
-Informações adicionais sobre a rota criada, como altitude, instruções passo a passo, ferramenta de análise e outras, podem ser encontradas na seção [**Detalhes**](../setup/route-details.md).
+Informações adicionais sobre a rota criada, como altitude, instruções passo a passo, ferramenta de análise e outras, podem ser encontradas na seção [**Detalhes**](./route-details.md).
 :::
 
 ### Recálculo de Rota {#route-recalculation}
@@ -473,7 +473,7 @@ Para construir uma rota, todos os **mapas necessários** precisam ser baixados e
 
 <TabItem value="ios" label="iOS">
 
-![Mensagem sem mapas ao construir navegação iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Mensagem sem mapas ao construir navegação iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

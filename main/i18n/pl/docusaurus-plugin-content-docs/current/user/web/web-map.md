@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Mapa
 title: Globalna mapa na stronie internetowej
@@ -67,9 +67,10 @@ Menu Konfiguruj mapę umożliwia zarządzanie ustawieniami wyświetlania danych 
 - [Nakładka POI...](#poi-overlay). Umożliwia wybór i wyświetlanie potrzebnych kategorii POI na mapie.
 - [Ulubione](#favorites). Przełączanie wyświetlania ulubionych na mapie.
 - [Ścieżki](#tracks). Zawiera ścieżki GPX widoczne na mapie.  
+- [Przystanki transportu](#transport-stops). Przełączanie wyświetlania przystanków transportu publicznego na mapie. 
 - [Teren](#terrain). Włącz lub wyłącz schemat kolorów terenu na mapie.
 
-![Menu POI](@site/static/img/web/configure_map_web.png)
+![Menu POI](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Nakładka POI {#poi-overlay}
@@ -116,6 +117,33 @@ Każda ścieżka ma **Menu kontekstowe** (dostępne za pomocą przycisku ⋮) z 
 
 ![Menu Konfiguruj mapę Ścieżki](@site/static/img/web/configure_map_track.png)
 
+### Przystanki transportu {#transport-stops}
+
+Opcja **Przystanki transportu** umożliwia wyświetlanie przystanków transportu publicznego bezpośrednio na mapie. Po włączeniu znaczniki przystanków pojawiają się na całej mapie, reprezentując miejsca, w których zatrzymują się trasy transportu publicznego. Wybranie przystanku transportu otwiera panel kontekstowy z informacjami o tym przystanku i trasach transportu przebiegających przez niego. Panel przystanku zawiera kilka sekcji.
+
+**1. Informacje o przystanku**
+
+Górna sekcja pokazuje podstawowe informacje o wybranym przystanku, w tym jego nazwę i lokalizację. Przyciski szybkich akcji pozwalają na: *Dodanie przystanku do Ulubionych, Udostępnienie linku do przystanku, Rozpoczęcie nawigacji z przystanku, Ustawienie przystanku jako celu*.
+
+**2. Trasy**
+
+Sekcja Trasy zawiera listę wszystkich tras transportu publicznego przebiegających przez wybrany przystanek. Każdy element wyświetla: typ transportu, numer trasy i nazwę trasy.
+
+Wybranie trasy otwiera panel szczegółów trasy pokazujący dodatkowe informacje o tej trasie, w tym liczbę przystanków i średni interwał między pojazdami (jeśli dostępne).
+
+Panel szczegółów trasy wyświetla również pełną listę przystanków wzdłuż trasy. Aktualnie wybrany przystanek jest podświetlony, a możesz wybrać inny przystanek, aby zobaczyć jego lokalizację na mapie. Przystanki przed wybranym przystankiem mogą być zwinięte w jeden element (na przykład „15 przystanków przed”).
+
+Przyciski nawigacyjne pozwalają na poruszanie się między przystankami wzdłuż trasy za pomocą kontrolek *Poprzedni* i *Następny*. Gdy przystanek jest wybrany, jego lokalizacja jest podświetlona na mapie. Wybrana trasa i jej przystanki są również wyświetlane na mapie, aby pomóc w wizualizacji kierunku trasy.
+
+**3. Filtr typu transportu**
+
+Filtr typu transportu pozwala na filtrowanie tras wyświetlanych na liście. Domyślnie filtr jest ustawiony na *Wszystkie* i wyświetla wszystkie dostępne trasy. Możesz wybrać konkretny typ transportu (na przykład Autobus, Tramwaj lub Metro), aby pokazać tylko trasy tego typu. Filtr resetuje się do *Wszystkie* za każdym razem, gdy panel przystanku jest otwierany.
+
+**4. Pobliskie trasy**
+
+Sekcja Pobliskie trasy może wyświetlać dodatkowe trasy zlokalizowane blisko wybranego przystanku. Pomaga to szybko odkryć alternatywne opcje transportu w okolicy.
+
+![Przystanki transportu](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Teren {#terrain}
 
@@ -134,7 +162,7 @@ W tej sekcji możesz:
 
 ## Ustawienia {#settings}
 
-W internetowym Planie, ustawienia *Ogólne* (Język wyświetlania, Jednostki długości, Jednostka prędkości) są dostępne dla wszystkich użytkowników, niezależnie od tego, czy jesteś zalogowany, czy nie. Po zalogowaniu się na konto OsmAnd w panelu Ustawień pojawia się dodatkowa sekcja OsmAnd Cloud. Możesz przeczytać o OsmAnd Cloud [tutaj](./web-cloud.md).
+W planerze internetowym ustawienia *Ogólne* (Język wyświetlania, Jednostki długości, Jednostka prędkości) są dostępne dla wszystkich użytkowników, niezależnie od tego, czy jesteś zalogowany, czy nie. Po zalogowaniu się na konto OsmAnd w panelu Ustawień pojawia się dodatkowa sekcja OsmAnd Cloud. Możesz przeczytać o OsmAnd Cloud [tutaj](./web-cloud.md).
 
 ### Język {#language}
 

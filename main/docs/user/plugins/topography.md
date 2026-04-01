@@ -262,17 +262,30 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+*Modify Color Scheme feature* allows you to select a color scheme:
+
+- From a [predefined list](#default-color-scheme).
+- From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
+- From palettes created or edited directly in the app.
+
+Custom palettes are based on color scales, where each color corresponds to a specific value of terrain data such as *Altitude* or *Slope*. 
+You can:
+
+- define value steps (altitude levels or slope percentages);
+- assign colors to each step;
+- add or remove steps to adjust the color scales.
+
+**Note:** Hillshade uses a fixed shading algorithm and does not support custom color palettes.
+
+For advanced palette customization using palette files, see [Color Schemes](../personal/color-palette-schemes.md#palette-modify) article.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *Modify Color Scheme feature* allows you to select a color scheme:
 
@@ -281,6 +294,9 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 You can [edit these palettes](../personal/color-palette-schemes.md#palette-modify) to personalize the appearance of maps and routes.
 
+</TabItem>
+
+</Tabs>
 
 ### Visibility {#visibility}
 
@@ -336,7 +352,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 **3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
 
-Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up. In this view, buildings may partially cover roads or map labels depending on the visibility setting.
+Use the main toggle to enable or disable 3D rendering of buildings. When enabled, the setting also displays the current [Level of detail](#performance) (Low or High) under the main toggle. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up. In this view, buildings may partially cover roads or map labels depending on the visibility setting.
 
 This option is available only when the Topography plugin is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
@@ -349,7 +365,7 @@ The 3D buildings settings are divided into two groups: **Appearance** and **Perf
 
 The **Appearance** controls how 3D buildings look on the map. It includes two settings: Color and Visibility. 
 
-**Color** lets you change the building color. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting.
+**Color** lets you change the building color. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting. The preview screen shows a live map so you can immediately see how the selected color affects the buildings.
 - **Map style** — uses the default building color from the currently selected map style.
 - **Custom** — lets you set a custom building color separately for Day / Night mode.
 
@@ -359,7 +375,7 @@ Color Customization of 3D Buildings is a [paid feature](../purchases/index.md).
 
 If Custom colors are not purchased, you’ll see an empty state with a short description and a Get button. If Custom is available, you can switch between Day and Night, pick a color from the palette (or open All colors), then tap Apply.
 
-**Visibility** controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
+**Visibility** controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. The slider allows values from 10% to 100%, with 50% used by default. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
 
 On the preview screens (Color / Visibility), you can use Reset to default from the app bar to restore the default value.
 
@@ -378,6 +394,19 @@ The **Performance** controls how 3D buildings are rendered. It includes two sett
 Both performance options use a two-position toggle right in the 3D buildings settings screen.
 
 **Note:** Using *High detail* and *Far view distance* improves visual appearance but may impact performance and increase battery usage.
+
+<!--
+### Sun {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+
+- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
+- Altitude — controls the height of the sun above the horizon.
+
+Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
 
 
 ## 3D Relief {#3d-relief}

@@ -1,7 +1,6 @@
 import {
     Box,
     Button,
-    CircularProgress,
     Collapse,
     Divider,
     IconButton,
@@ -61,6 +60,7 @@ import WptTagsProvider, {
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
@@ -96,9 +96,7 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useLocation, useNavigate } from 'react-router-dom';
-import DistanceInfo from './DistanceInfo';
-import { getDistance, getBearing } from '../../../util/Utils';
-import { getMapCenter } from '../../../map/layers/MapStateLayer';
+import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -159,7 +157,7 @@ export function getObjType(wpt, t) {
     return capitalize(getFirstSubstring(type));
 }
 
-export const ADDRESS_NOT_FOUND = 'No data';
+export const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 export const TYPE_NOT_FOUND = 'No type';
 export const EMPTY_STRING = '';
 
@@ -202,19 +200,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
         return wikidataTag ? [...otherTags, wikidataTag] : otherTags;
     }, [wpt?.tags?.res]);
-
-    const distanceInfo = useMemo(() => {
-        if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
-            return { distance: null, bearing: null };
-        }
-        const mapCenter = getMapCenter(ctx, hash);
-        if (!mapCenter) {
-            return { distance: null, bearing: null };
-        }
-        const distance = getDistance(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
-        const bearing = getBearing(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
-        return { distance, bearing };
-    }, [hash, wpt?.latlon]);
 
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
@@ -796,7 +781,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         );
     };
 
-    const WptCategory = () => {
+    const WptGroup = () => {
         return (
             <Box className={styles.wptCategory}>
                 <ListItemIcon
@@ -829,26 +814,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
         return groupStr;
     }
-
-    const WptAddress = () => {
-        return (
-            <Box className={styles.wptCategory}>
-                <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
-                    <Typography id={'se-wpt-address'} className={wptStyles.placeAddress}>
-                        {distanceInfo.distance && (
-                            <DistanceInfo
-                                distance={distanceInfo.distance}
-                                bearing={distanceInfo.bearing}
-                                isUserLocation={true}
-                            />
-                        )}
-                        {distanceInfo.distance && wpt?.address && <span className={wptStyles.placeDistance}> · </span>}
-                        {wpt.address}
-                    </Typography>
-                </ListItemText>
-            </Box>
-        );
-    };
 
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
@@ -966,20 +931,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         />
                                     )}
                                 </Box>
-                                {wpt?.category && <WptCategory />}
+                                {wpt?.category && <WptGroup />}
                                 {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
-                                {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                    <WptAddress />
-                                ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                    <CircularProgress sx={{ ml: 2 }} size={19} />
-                                ) : null}
+                                <LocationInfoLine wpt={wpt} />
                                 {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                                 {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                                 {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
                                 {wpt?.type?.isStop && <TransportStopsRoutes wpt={wpt} />}
                                 {wpt?.wikiDesc && (
                                     <>
-                                        <Divider sx={{ mt: 2 }} />
+                                        <Divider />
                                         <MenuItem className={styles.descTitle}>
                                             <ListItemText>
                                                 <Typography className={styles.descTitleText}>
@@ -1005,7 +966,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         </Button>
                                     </>
                                 )}
-                                <Divider sx={{ mt: '16px' }} />
+                                <Divider />
                                 {wpt.photos && <PhotoGallery photos={wpt.photos} />}
                                 {wpt.elo && ctx.develFeatures && (
                                     <WptTagInfo

@@ -1,6 +1,6 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  Pacchetto personalizzato
 ---
 
@@ -282,7 +282,7 @@ Esistono molti tipi di importazione per il file *items.JSON* di OsmAnd. Tutti i 
 ### Descrizione del plugin {#plugin-description}
 
 Per iniziare, si crea e si aggiunge il proprio plugin a *items.JSON*. Il primo tipo di importazione è **"PLUGIN"**.  
-   <u>NOTA</u>. È necessario creare e aggiungere questa riga per ogni tipo **"pluginId":"test.plugin"**, dove *test.plugin* è il nome del pacchetto.  
+   *<u>NOTA</u>*. È necessario creare e aggiungere questa riga per ogni tipo **"pluginId":"test.plugin"**, dove *test.plugin* è il nome del pacchetto.  
 
    ![Pacchetto personalizzato](@site/static/img/plugins/custom/2.jpg)
 
@@ -303,7 +303,7 @@ NOTA: Iniziare a creare un profilo di navigazione con tutti i parametri; a tal f
 ### Download {#downloads}
 
 È possibile aggiungere qualsiasi file come *SQLite, OBF o font* per il download utilizzando il tipo **"DOWNLOADS"**. I principali tipi di file scaricabili si trovano [qui](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   <u>NOTA</u>. Il tag **"isHidden":"true"** (per impostazione predefinita è *false*) può nascondere i dati della mappa da [Mappe e Risorse](../personal/maps-resources.md#local-menu) di OsmAnd.  In **"scope-id"** è possibile aggiungere tutte le informazioni necessarie sull'URL, il nome, la descrizione del file e altro ancora.  
+   *<u>NOTA</u>*. Il tag **"isHidden":"true"** (per impostazione predefinita è *false*) può nascondere i dati della mappa da [Mappe e Risorse](../personal/maps-resources.md#local-menu) di OsmAnd.  In **"scope-id"** è possibile aggiungere tutte le informazioni necessarie sull'URL, il nome, la descrizione del file e altro ancora.  
 
    ![Pacchetto personalizzato](@site/static/img/plugins/custom/3.jpg)
 

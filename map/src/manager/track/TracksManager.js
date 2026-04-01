@@ -130,11 +130,16 @@ function createName(ctx) {
 }
 
 export function getFileName(currentFile) {
-    let file = Object.assign('', currentFile);
-    return prepareName(file.name, file.local);
+    if (!currentFile?.name) {
+        return '';
+    }
+    return prepareName(currentFile.name, currentFile.local);
 }
 
 export function prepareName(name, local = false) {
+    if (typeof name !== 'string') {
+        return '';
+    }
     const result = name.replace(/.gpx/, '');
     if (result === '') {
         return createName();

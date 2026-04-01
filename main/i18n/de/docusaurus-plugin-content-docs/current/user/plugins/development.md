@@ -1,6 +1,6 @@
 ---
-source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
-sidebar_position: 10
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+sidebar_position: 11
 title:  OsmAnd-Entwicklung
 ---
 
@@ -53,7 +53,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 <TabItem value="ios" label="iOS">  
 
-![Entwicklungseinstellungen iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Entwicklungseinstellungen iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 - **Ihre Position simulieren** (*Android* / *iOS*). [Simulieren](#gpx-track-simulation) Sie den Standort und die Bewegung mithilfe eines GPX-Tracks.
 - **Energiesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um die Akkulaufzeit bei der Verwendung von Anwendungen zu verlängern.
 - **3D-Standortsymbole verwenden** (*iOS*). Ermöglicht die Auswahl eines 3D-Symbols für das [Symbol "Mein Standort"](../personal/profiles.md#my-location-appearance).
-- **OBD-Daten simulieren** (*Android*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
-- **Leistungs-Debug-Info** (*Android*). Zeigt die Rendering- und Navigationsleistung an.
+- **OBD-Daten simulieren** (*Android* / *iOS*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
+- **Leistungs-Debug-Info** (*Android* / *iOS*). Zeigt die Rendering- und Navigationsleistung an.
 - **Kartenebenen deaktivieren** (*Android*). Deaktiviert alle Kartenebenen über der Vektorkarte (Neustart erforderlich).
 - **Logcat-Puffer** (*Android*). Überprüfen und teilen Sie detaillierte Protokolle der App.  
 - **Toast über gedrückte Taste anzeigen** (*Android*). Zeigt eine Meldung über die Taste an.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Die Peilung ist die Kompassrichtung von Ihrer aktuellen Position zu Ihrem beabsichtigten Ziel. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Die Kursrichtung ist die Kompassrichtung von Ihrer aktuellen Position in Richtung geografisch Nord. Diese Option ist standardmäßig aktiviert. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.
+- **MSAA aktivieren** (*Android*) / **MSAA für CarPlay aktivieren** (*iOS*). Aktiviert Multisample-Anti-Aliasing, um das Karten-Rendering zu glätten. Verbessert die visuelle Qualität des [„Mein Standort“-Symbols](../personal/profiles.md#my-location-appearance) und der Routenlinie, indem pixelige Kanten reduziert werden. Auf Android wirkt sich diese Option auf das Karten-Rendering auf dem Gerät und bei der Verwendung von [Android Auto](../navigation/auto-car.md) aus. Auf iOS gilt sie nur für [CarPlay](../navigation/car-play.md).
 
 
 ### Anwendungstests {#application-testing}

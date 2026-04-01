@@ -1,7 +1,7 @@
 ---
-source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
-sidebar_position: 7
-title:  Vue Carte marine
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
+title:  Vue de la carte marine
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,10 +18,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Aperçu {#overview}
 
 :::tip Achat
-Le plugin Vue Carte marine est une [fonctionnalité payante](../purchases/index.md).  
+Le plugin Vue de la carte marine est une [fonctionnalité payante](../purchases/index.md).  
 :::
 
-La Vue Carte marine est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières qui vous aide à naviguer sur l'eau et à connaître les routes populaires, les obstacles sur votre voie navigable, les ports les plus proches, les mouillages et autres points de repère importants.  
+La Vue de la carte marine est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières qui vous aide à naviguer sur l'eau et à connaître les routes populaires, les obstacles sur votre voie navigable, les ports les plus proches, les mouillages et autres points de repère importants.  
 
 Une carte marine est une carte topographique très détaillée qui aide les skippers à naviguer un navire sur un cap choisi sur l'eau. Elle est similaire à une carte routière pour ceux qui voyagent en voiture. Souvent appelée une *'Chart'* pour des raisons historiques, c'est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières.  
 
@@ -55,7 +55,7 @@ Basées sur les données d'[OpenSeaMap](https://wiki.openstreetmap.org/wiki/Open
 
 La configuration suivante permet d'afficher la carte marine à l'écran :
 
-1. [Acheter](../plugins/index.md#purchase) et [Activer](../plugins/index.md#enable--disable) le plugin Vue Carte marine.  
+1. [Acheter](../plugins/index.md#purchase) et [Activer](../plugins/index.md#enable--disable) le plugin Vue de la carte marine.  
 2. [Télécharger](#download-nautical-maps) les cartes marines.  
 3. Définir le style de carte [Nautique](#set-nautical-map-style) pour le [profil](../personal/profiles.md) requis.
 
@@ -127,7 +127,7 @@ Lorsque vous [téléchargez](../start-with/download-maps.md) une carte marine, p
     Les paquets d'isobathes permettent de définir des zones de profondeur égale.  Ils sont destinés à visualiser les changements de relief sous la surface de l'eau. Les isobathes peuvent être téléchargées pour certaines zones, puis désactivées si vous n'en avez pas besoin.
 
 :::info Nombres de profondeur
-Tous les nombres de profondeur sur les cartes marines sont indiqués en mètres.
+Tous les nombres de profondeur sur les Cartes marines sont indiqués en mètres.
 :::
 
 
@@ -151,7 +151,7 @@ La désactivation du plugin Nautique ne supprime pas les données nautiques char
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Isobathes sur Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
+![Contours de profondeur nautiques sur Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
@@ -159,7 +159,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![Isobathes sur iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
+![Contours de profondeur sur iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
 </TabItem>
 
@@ -323,7 +323,7 @@ Les [paquets](../start-with/download-maps.md#overview) de points de profondeur s
 
 Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
-![Isobathes sur Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
+![Contours de profondeur nautiques sur Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
@@ -331,13 +331,13 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,shar
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
-![Isobathes sur iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
+![Contours de profondeur sur iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
 </TabItem>
 
 </Tabs>
 
-Lorsqu'une carte marine est affichée à l'écran, vous pouvez ajuster ce que vous voyez :
+Lorsque une carte marine est affichée à l'écran, vous pouvez ajuster ce que vous voyez :
 
 - Afficher ou masquer les *Isobathes*.
 - Définir le niveau de détail des informations sur le fond marin : [*Largeur de ligne* et *Schéma de couleurs des lignes*](../map/vector-maps.md#-nautical-depth).

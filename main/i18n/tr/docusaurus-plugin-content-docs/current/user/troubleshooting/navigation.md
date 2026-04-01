@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  Navigation
 ---
@@ -86,14 +86,18 @@ Yanlış veya optimum olmayan rotalarla ilgili sorunları takip etmek için lüt
 
 ## Yol Bilgileri {#road-information}
 
-### OsmAnd sadece bazı hız kameralarını gösteriyor {#osmand-only-shows-some-speed-cams}
+### Bazı hız kamerası uyarıları neden tetiklenmeyebilir {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 OpenStreetMap projesinden alınan coğrafi veriler nedeniyle, hız kameralarının ham OSM verilerine entegre edildiği şu anda iki yöntem vardır:
 
-- Bir yolun bir noktası (OSM terminolojisinde "düğüm" olarak adlandırılır) "highway=speed_camera" ile etiketlenir, bkz. OSM wiki'de [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Bir yolun bir noktası (OSM terminolojisinde "düğüm" olarak adlandırılır) `highway=speed_camera` ile etiketlenir, bkz. OSM wiki'de [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - Bir grup OSM veri öğesi, hız tuzağının kapsadığı yönü açıklamak için tek bir düğümden daha fazla öğe içeren "ilişki" adı verilen bir yapıda birleştirilir. Bkz. [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Şu anda OsmAnd, yalnızca tek bir düğümden oluşan öğeleri kullanabilir. İlişkilerin analizi gelecekteki bir sürümde gelecektir.
+OsmAnd her iki yöntemi de destekler. Hız kamerası uyarıları, `highway=speed_camera` ile haritalanmış kameralar için de tetiklenebilir ve `enforcement` ilişkisi ile tanımlanmış kameralar için de.
+
+Eğer bir hız kamerası düğümü doğrudan yola yerleştirilmişse, `highway=speed_camera` etiketi OsmAnd'ın bunu algılaması ve uyarıları görüntülemesi için yeterlidir.
+
+Eğer kamera yola değil de yanına haritalanmışsa, yola bağlanması için bir `enforcement` ilişkisi kullanılması gerekir. Aksi takdirde, OsmAnd kamerayı yol ile ilişkilendiremeyebilir ve uyarı tetiklenmez.
 
 
 ## Sesli Navigasyon {#voice-navigation}

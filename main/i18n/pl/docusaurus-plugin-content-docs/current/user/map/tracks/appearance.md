@@ -1,5 +1,5 @@
 ---
-source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
+source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
 sidebar_position: 5
 title:  Wygląd trasy
 ---
@@ -71,6 +71,41 @@ Na iOS lista **Kolorowania** otwiera się jako menu kontekstowe. Elementy mogą 
 
 Więcej szczegółów na temat dostosowywania wyglądu linii trasy można znaleźć w artykule [Ekran mapy podczas nawigacji](../../navigation/guidance/map-during-navigation.md#color), a na temat wybierania i tworzenia niestandardowego koloru w artykule [Schematy kolorów](../../personal/color-palette-schemes.md#tracks-routes).
 
+### Edytor palety kolorów {#color-palette-editor}
+
+<InfoAndroidOnly/> 
+
+![Edytor palet kolorów](@site/static/img/map/gradient_palettes_1.png) ![Edytor palet kolorów ](@site/static/img/map/gradient_palettes_2.png) 
+
+Podczas kolorowania trasy według prędkości, wysokości lub nachylenia możesz użyć własnych palet, aby określić, jak kolory są stosowane wzdłuż trasy.
+
+Ekran *Wszystkie kolory* wyświetla dostępne palety. Dotknij menu z trzema kropkami obok palety, aby:
+- Zmienić nazwę.
+- Edytować.
+- Duplikować.
+- Usunąć. Usunięcie palety wymaga potwierdzenia.
+
+Dotknij przycisku + na ekranie Wszystkie kolory. Dostępne są dwa typy palet:
+- **Względna** — kolory skalują się automatycznie na podstawie minimalnych i maksymalnych wartości trasy.
+- **Stałe wartości** — kolory są przypisywane do konkretnych wartości bezwzględnych (na przykład 50 km/h). Wartości można edytować ręcznie. Jednostki podążają za [ustawieniami systemowymi](../../personal/profiles.md#units--formats). Skala kolorów nie skaluje się automatycznie po zastosowaniu do różnych tras.
+
+:::info Pro feature
+Tworzenie niestandardowych palet to płatna [funkcja **OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
+Aby dowiedzieć się więcej o schematach palet kolorów jako formacie danych i ich użyciu w trasach i trasach, zobacz artykuł [Schematy palet kolorów](../../personal/color-palette-schemes.md#tracks-routes).
+
+Podczas tworzenia lub edycji palety ekran edytora zawiera:
+- Podgląd skali kolorów u góry ekranu.
+- Wybieralne przyciski wartości poniżej skali kolorów (na przykład 50, 100, 150, Brak danych).
+- Przycisk + do dodania nowego kroku.
+- Pole Wartość.
+- Opcje wyboru koloru. Więcej informacji o plikach palet.
+- Opcję Usuń krok dla wybranej wartości.
+- Przycisk Zapisz.
+
+Użyj ikony cofnij w pasku aplikacji, aby cofnąć ostatnią czynność. Dotknij Zamknij, aby wyjść z edytora. Jeśli wprowadzono zmiany, przed zamknięciem pojawi się okno dialogowe z potwierdzeniem.
+
 
 ### Szerokość {#width}
 
@@ -121,7 +156,7 @@ Dodaje **znaczniki w postaci strzałek** wzdłuż trasy, aby wskazać kierunek r
 
 ![Menu trasy Wygląd ikony startu i mety Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Pozwala wybrać, czy mają być wyświetlane **ikony startu i mety** dla segmentów trasy.
+Pozwala wybrać, czy mają być wyświetlane **ikony startu i mety** dla segmentów trasy. W przypadku tras z dużą liczbą segmentów ikony te mogą być automatycznie wyłączone w celu poprawy wydajności renderowania mapy. W takim przypadku możesz włączyć je ręcznie, jeśli jest to potrzebne.
 
 ### Połącz przerwy {#join-gaps}
 

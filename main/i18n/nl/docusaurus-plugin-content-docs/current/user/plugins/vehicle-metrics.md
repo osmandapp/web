@@ -1,6 +1,6 @@
 ---
-source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
-sidebar_position: 16
+source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+sidebar_position: 18
 title:  Voertuigstatistieken
 ---
 
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-:::info Betaalde functie
-De Voertuigstatistieken-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app <ProFeature />. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.
+:::info Pro-functie
+De Voertuigstatistieken-plugin is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.
 :::
 
 De **Voertuigstatistieken-plugin** maakt real-time monitoring van voertuiggegevens mogelijk via het [OBD-II-protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gebruikers kunnen essentiële statistieken bijhouden, zoals motorprestaties, brandstofefficiëntie en snelheid, wat proactief voertuigonderhoud en probleemoplossing mogelijk maakt.  
@@ -53,7 +53,7 @@ Om gegevens van een OBD-II-scanner te gebruiken:
 4. [Verbind](#pair-odb-ii-scanner) de OBD-II-scanner met de poort van uw voertuig.
 5. [Configureer](#scanner-settings) de **scannerinstellingen**.
 6. [Voeg](#widgets) **Voertuigstatistieken-widgets** toe om gegevens op het scherm weer te geven (optioneel).
-7. [Gebruik](#trip-recording) de **Ritregistratie-plugin** om voertuiggegevens op te nemen.
+7. [Gebruik](#trip-recording)de **Ritregistratie-plugin** om voertuiggegevens op te nemen.
 
 
 ### ODB-II-scanner koppelen {#pair-odb-ii-scanner}
@@ -119,7 +119,7 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 - **Hernoemen**. Hiermee kunt u een aangepaste naam aan de sensor toewijzen voor eenvoudigere identificatie.
 - **Vergeten**. Verwijdert de eerder gekoppelde OBD-II-sensor uit de lijst, waardoor opnieuw koppelen later nodig is.
 
-**Herconnectiegedrag:** OsmAnd probeert automatisch opnieuw verbinding te maken met de OBD-II-adapter wanneer de applicatie wordt gestart, wanneer navigatie wordt gestart, of wanneer Android Auto / CarPlay wordt gelanceerd. Als een verbinding niet beschikbaar is, tonen Voertuigstatistieken-widgets “–”. Een enkele tik op een willekeurige Voertuigstatistieken-widget zal proberen opnieuw verbinding te maken met de sensor. Als de sensor al verbonden is, schakelt de tik de weergavemodi van de widget zoals gewoonlijk.
+**Herconnectiegedrag:** OsmAnd probeert automatisch opnieuw verbinding te maken met de OBD-II-adapter wanneer de applicatie wordt gestart, wanneer navigatie wordt gestart, of wanneer Android Auto / Car Play wordt gelanceerd. Als een verbinding niet beschikbaar is, tonen Voertuigstatistieken-widgets “–”. Een enkele tik op een willekeurige Voertuigstatistieken-widget zal proberen opnieuw verbinding te maken met de sensor. Als de sensor al verbonden is, schakelt de tik de weergavemodi van de widget zoals gewoonlijk.
 
 
 ## Lijst met statistieken {#metrics-list}
@@ -207,7 +207,7 @@ Deze tags maken het gemakkelijker om specifieke voertuiggegevens te identificere
 
 | | |
 |--|--|
-|![OBD-instellingen](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD-instellingen](@site/static/img/plugins/obd/obd_widget.png)|
+|![OBD-instellingen](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![OBD-instellingen](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ Deze tags maken het gemakkelijker om specifieke voertuiggegevens te identificere
 
 | | |
 |--|--|
-|![OBD-instellingen](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD-instellingen](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![OBD-instellingen](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![OBD-instellingen](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

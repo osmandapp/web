@@ -1,19 +1,20 @@
 ---
-source-hash: c3d0a9b09980d2ae35129bbef57e43e1c4f948f2fffc6bf82f402c766a05620e
+source-hash: 0ef1b011ef054e623818ff82af981f0a0019f0499cb98be38636dc45f72ce579
 sidebar_position: 6
 ---
 
-# Web 1.02 {#web-102}
+# Web 1.03 {#web-103}
 
-Web 1.02 è l'ultima versione web di OsmAnd, che include nuove utili funzionalità e miglioramenti. Questo articolo descrive tutti i principali aggiornamenti del [Pianificatore di Percorsi Web](../user/web/index.md).
+Web 1.03 è l'ultima versione web di OsmAnd, che include nuove utili funzionalità e miglioramenti. Questo articolo descrive tutti i principali aggiornamenti del [Pianificatore Web](../user/web/index.md).
 
 
 ## Cosa c'è di nuovo {#whats-new}
 
-- Condivisione di file GPX / preferiti
-- Riprogettazione del sito web di navigazione
-- Clic sulla mappa (tessere vettoriali)
-- Analisi dei segmenti
+- Riprogettazione dell'interfaccia utente di navigazione
+- Supporto per cartelle intelligenti
+- Impostazioni di aspetto delle tracce (colore e larghezza)
+- Fermate di trasporto pubblico
+- Miglioramenti del menu contestuale POI
 
 
 - [Aggiornamenti opzionali](#optional-updates). Aggiornamenti e perfezionamenti aggiuntivi per la release.
@@ -21,16 +22,48 @@ Web 1.02 è l'ultima versione web di OsmAnd, che include nuove utili funzionalit
 
 ## Aggiornamenti opzionali {#optional-updates}
 
-- [Il menu Pianifica Percorso non si apre se il menu Preferiti è aperto.](https://github.com/osmandapp/web/issues/706)
-- [Le tracce visibili scompaiono dalla mappa quando il livello Preferiti è abilitato.](https://github.com/osmandapp/web/issues/746)
-- [La mappa si sposta sulla traccia che è stata selezionata per prima.](https://github.com/osmandapp/web/issues/728)
-- [L'elenco "visibili di recente" è tagliato](https://github.com/osmandapp/web/issues/743)
-- [Le linee delle tracce scompaiono per le tracce visibili quando si pianifica un nuovo percorso.](https://github.com/osmandapp/web/issues/745)
-- [Il pulsante per l'ordinamento delle tracce è sempre abilitato nel web.](https://github.com/osmandapp/web/issues/649)
-- [Widget Altitudine (visualizzazione/modifica traccia) - visualizzazione errata dell'indicatore di posizione sulla mappa (posizione sulla traccia).](https://github.com/osmandapp/web/issues/767)
-- [Posizione errata sulla traccia sulla mappa rispetto al diagramma di altitudine.](https://github.com/osmandapp/web/issues/727)
-- [Supporto per l'aspetto della traccia sulla mappa.](https://github.com/osmandapp/web/issues/711)
-- [La ridenominazione delle tracce non funziona correttamente.](https://github.com/osmandapp/web/issues/744)
-- [Numero errato di "Tracce in visualizzazione".](https://github.com/osmandapp/web/issues/798)
-- [Il marchio Ecco viene visualizzato come categoria, anche se non è presente sulle mappe visibili.](https://github.com/osmandapp/web/issues/807)
-- [La traccia viene creata con due tag `rte`.](https://github.com/osmandapp/OsmAnd-iOS/issues/4466)
+- [Esporta GPX come traccia semplificata](https://github.com/osmandapp/web/issues/436)
+- [Orari di apertura visualizzati nel menu contestuale POI](https://github.com/osmandapp/web/issues/1277)
+- [Cartelle preferiti pinnate](https://github.com/osmandapp/web/issues/1193)
+- [Miglioramenti dei metadati Wikimedia](https://github.com/osmandapp/OsmAnd-Issues/issues/2959)
+- [Comportamento migliorato del menu dei layer](https://github.com/osmandapp/web/issues/918)
+- [Tooltip della traccia al passaggio del mouse](https://github.com/osmandapp/web/issues/1305)
+- [Miglioramenti della ricerca per dati personali](https://github.com/osmandapp/web/issues/1065)
+- [Miglioramenti della galleria POI](https://github.com/osmandapp/OsmAnd/issues/22671)
+- [Miglioramenti della selezione dei marker](https://github.com/osmandapp/web/issues/1297)
+- [Comportamento migliorato della ricerca per categoria POI](https://github.com/osmandapp/web/issues/1126)
+- [Nascondi acquisti scaduti nella pagina account](https://github.com/osmandapp/web/issues/1328)
+
+<!--
+# Web 1.02 {#web-102}
+
+Web 1.02 is the latest web version of OsmAnd, which includes new useful features and improvements. This article describes all the main updates of the [Web Route Planner](../user/web/index.md).
+
+
+## What's new {#whats-new}
+
+- Share files GPX / favorites
+- Navigation Redesign website
+- Click on the map (vector tiles)
+- Segment analysis
+
+
+- [Optional updates](#optional-updates). Additional updates and refinements for the release.
+
+
+## Optional updates {#optional-updates}
+
+- [The Plan Route menu does not open if the Favorites menu is open.](https://github.com/osmandapp/web/issues/706)
+- [Visible tracks disappear from the map when the Favorites layer is enabled.](https://github.com/osmandapp/web/issues/746)
+- [The map moves to the track that was selected first.](https://github.com/osmandapp/web/issues/728)
+- [The "recently visible" list is cut off](https://github.com/osmandapp/web/issues/743)
+- [Track lines disappear for visible tracks when planning a new route.](https://github.com/osmandapp/web/issues/745)
+- [The button for sorting tracks is always enabled in the web.](https://github.com/osmandapp/web/issues/649)
+- [Elevation Widget (Track view/edit) - incorrect display of the position indicator on the map (position on the track).](https://github.com/osmandapp/web/issues/767)
+- [Incorrect position on the track on the map compared to the elevation diagram.](https://github.com/osmandapp/web/issues/727)
+- [Support for track appearance on the map.](https://github.com/osmandapp/web/issues/711)
+- [Renaming tracks does not work correctly.](https://github.com/osmandapp/web/issues/744)
+- [Incorrect number of "Tracks on display".](https://github.com/osmandapp/web/issues/798)
+- [The Ecco brand is displayed as a category, although it is not on the visible maps.](https://github.com/osmandapp/web/issues/807)
+- [Track is created with two `rte` tags.](https://github.com/osmandapp/OsmAnd-iOS/issues/4466)
+-->

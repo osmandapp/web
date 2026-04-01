@@ -1,6 +1,6 @@
 ---
-source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
-sidebar_position: 9
+source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+sidebar_position: 10
 title:  Modifica di OpenStreetMap
 ---
 
@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 [OpenStreetMap](https://www.openstreetmap.org/about) (OSM) è una comunità globale che mira a creare una mappa geografica dettagliata e libera del mondo e a fornire dati open-source aggiornati a ogni utente. Il plugin di modifica di OpenStreetMap consente di contribuire alla comunità.  
 
-Con OsmAnd e il plugin di modifica OSM, è possibile contribuire facilmente con le proprie informazioni a OpenStreetMap.org, ad esempio per creare o modificare [PDI](#create--modify-poi), aggiungere o commentare [note](#create--modify-osm-note) e caricare [tracce](#upload-gps-track) GPX registrate.
+Con OsmAnd e il plugin di modifica OSM, è possibile contribuire facilmente con le proprie informazioni a OpenStreetMap.org, ad esempio per creare o modificare [POI](#create--modify-poi), aggiungere o commentare [note](#create--modify-osm-note) e caricare [tracce](#upload-gps-track) GPX registrate.
 
 ## Parametri di configurazione richiesti {#required-setup-parameters}
 
@@ -59,7 +59,7 @@ Le impostazioni del plugin sono globali e si applicano a tutti i profili.
 
 - [Accedi a OpenStreetMap](#authorization). Accedere per caricare le modifiche nuove o modificate. Utilizzare il metodo sicuro *OAuth 2.0* o [accedere al sito OSM](https://www.openstreetmap.org/login). Per iOS, il pulsante per il metodo OAuth è disponibile solo per gli utenti con una versione supportata di iOS, 16.4
 - **<Translate android="true" ids="offline_edition"/>**. Se questa impostazione è abilitata, le modifiche vengono prima salvate localmente (pulsante *Salva*) e caricate su richiesta. Se l'impostazione è disabilitata, le modifiche vengono caricate immediatamente (pulsante *Carica*).
-- **<Translate android="true" ids="use_dev_url"/>** *(solo per Android)*. Consente di abilitare [dev.openstreetmap.org](https://dev.openstreetmap.org/) invece di [openstreetmap.org](http://openstreetmap.org/) per testare il caricamento di note OSM, PDI o tracce GPS. Quando è abilitato, si viene automaticamente disconnessi da OpenStreetMap.org. Questa impostazione è disponibile nell'elenco solo quando il *plugin di sviluppo OsmAnd* è abilitato.
+- **<Translate android="true" ids="use_dev_url"/>** *(solo per Android)*. Consente di abilitare [dev.openstreetmap.org](https://dev.openstreetmap.org/) invece di [openstreetmap.org](http://openstreetmap.org/) per testare il caricamento di note OSM, POI o tracce GPS. Quando è abilitato, si viene automaticamente disconnessi da OpenStreetMap.org. Questa impostazione è disponibile nell'elenco solo quando il *plugin di sviluppo OsmAnd* è abilitato.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
 - **<Translate android="true" ids="layer_osm_edits"/>**. Toccare per aprire [*Menu → I miei luoghi → Modifiche OSM*](../personal/myplaces.md). Questa scheda elenca le note OSM non modificate. Le seguenti azioni sono disponibili con la nota: *Carica*, *Mostra sulla mappa*, *Modifica nota OSM*, *Elimina*. Le note caricate o eliminate non vengono più visualizzate nell'elenco.  
 
@@ -148,12 +148,12 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_st
 ![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
-## Creare / Modificare PDI {#create--modify-poi}
+## Creare / Modificare POI {#create--modify-poi}
 
-Il plugin di modifica di OpenStreetMap consente di creare nuovi oggetti sulla mappa chiamati [punti di interesse o PDI](../map/point-layers-on-map.md#points-of-interest-pois). È possibile mappare un nuovo negozio, un punto di riferimento preferito, una panchina o un rifugio in modo che le persone possano trovarli.  
+Il plugin di modifica di OpenStreetMap consente di creare nuovi oggetti sulla mappa chiamati [punti di interesse o POI](../map/point-layers-on-map.md#points-of-interest-pois). È possibile mappare un nuovo negozio, un punto di riferimento preferito, una panchina o un rifugio in modo che le persone possano trovarli.  
 
-1. Toccare la mappa per posizionare un nuovo PDI, o toccare un PDI non ancora caricato.2. Toccare [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-2. Scegliere [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) e aggiungere il suo nome e altre informazioni come orari di apertura, sito web, ecc. Quando si seleziona un PDI non caricato, *Crea PDI* cambia in *Modifica PDI*.
+1. Toccare la mappa per posizionare un nuovo POI, o toccare un POI non ancora caricato.2. Toccare [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+2. Scegliere [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) e aggiungere il suo nome e altre informazioni come orari di apertura, sito web, ecc. Quando si seleziona un POI non caricato, *Crea POI* cambia in *Modifica POI*.
 3. A seconda dell'impostazione [Modifica offline](#settings), è possibile salvare i dati localmente o [caricarli](../map/map-context-menu#-upload-poi--osm-note).
 
 
@@ -175,26 +175,26 @@ Il plugin di modifica di OpenStreetMap consente di creare nuovi oggetti sulla ma
 
 </Tabs>
 
-È possibile aggiungere facilmente [tag](https://wiki.openstreetmap.org/wiki/Tags) OSM al PDI. Quando si inseriscono alcuni caratteri nella barra di ricerca, il programma suggerisce i possibili tag.  
+È possibile aggiungere facilmente [tag](https://wiki.openstreetmap.org/wiki/Tags) OSM al POI. Quando si inseriscono alcuni caratteri nella barra di ricerca, il programma suggerisce i possibili tag.  
 
 **Modifiche offline.**  
-È possibile visualizzare, caricare su OSM o eliminare i PDI in *I miei luoghi → Modifiche OSM*. È anche possibile esportare le modifiche ai PDI in un [file OSC](https://wiki.openstreetmap.org/wiki/OsmChange) e importarlo in [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
+È possibile visualizzare, caricare su OSM o eliminare i POI in *I miei luoghi → Modifiche OSM*. È anche possibile esportare le modifiche ai POI in un [file OSC](https://wiki.openstreetmap.org/wiki/OsmChange) e importarlo in [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
 
-### Aggiungere tipi di PDI non supportati {#add-unsupported-poi-types}
+### Aggiungere tipi di POI non supportati {#add-unsupported-poi-types}
 
-Nella scheda *Avanzate*, è possibile aggiungere tipi di PDI non supportati che possono essere utili per il proprio compito specifico. Questa opzione consente di inserire manualmente i dati dei PDI, estendendo così le funzionalità dell'applicazione.  
+Nella scheda *Avanzate*, è possibile aggiungere tipi di POI non supportati che possono essere utili per il proprio compito specifico. Questa opzione consente di inserire manualmente i dati dei POI, estendendo così le funzionalità dell'applicazione.  
 
-Un esempio di tipo di PDI non supportato che è possibile aggiungere è *amenity=freeshops*. Questo tipo può essere utile se si desidera contrassegnare negozi gratuiti o luoghi che forniscono prodotti gratuiti.
+Un esempio di tipo di POI non supportato che è possibile aggiungere è *amenity=freeshops*. Questo tipo può essere utile se si desidera contrassegnare negozi gratuiti o luoghi che forniscono prodotti gratuiti.
 
-Per aggiungere tipi di PDI non supportati, seguire questi passaggi:
+Per aggiungere tipi di POI non supportati, seguire questi passaggi:
 
 1. Aprire la scheda *Avanzate*.
-2. Toccare *Tipo di PDI*.
+2. Toccare *Tipo di POI*.
 3. Inserire la chiave *amenity* e il valore *freeshops* nei campi appropriati.
-4. Compilare il resto dei dati richiesti per questo PDI.
-5. Toccare *Aggiungi tag* per aggiungere il nuovo PDI al proprio database.
+4. Compilare il resto dei dati richiesti per questo POI.
+5. Toccare *Aggiungi tag* per aggiungere il nuovo POI al proprio database.
 
-Ricordare che quando si aggiungono tipi di PDI non supportati, è importante assicurarsi che i dati siano inseriti correttamente per garantire il corretto funzionamento dell'applicazione e la successiva elaborazione delle informazioni.
+Ricordare che quando si aggiungono tipi di POI non supportati, è importante assicurarsi che i dati siano inseriti correttamente per garantire il corretto funzionamento dell'applicazione e la successiva elaborazione delle informazioni.
 
 
 ## Creare / Modificare una nota OSM {#create--modify-osm-note}
@@ -270,7 +270,7 @@ Le tue tracce verranno aggiunte alle [tracce OSM](https://www.openstreetmap.org/
 
 Per [caricare la traccia GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), seguire i passaggi seguenti:  
 
-- Trovare la traccia richiesta nella scheda [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*](../personal/tracks/manage-tracks.md).  
+- Trovare la traccia richiesta nella scheda [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks/manage-tracks.md).  
 - Toccare il *menu a tre punti* accanto al nome della traccia e selezionare *Esporta*.
 
 **Impostazioni:**

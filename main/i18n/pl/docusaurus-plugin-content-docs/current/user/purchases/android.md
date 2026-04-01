@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -109,10 +109,11 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i rzeźba terenu) | **-** | ✔ | ✔ |
 | [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
 | [Budynki 3D — Dostosowanie kolorów](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
-| [Wizualizacja trasy 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Wizualizacja trasy 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popularne miejsca (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage offline - Przewodniki turystyczne](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręcie | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +156,8 @@ Subskrypcja **Pro** obejmuje obecnie następujące funkcje:
 | [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala dowiedzieć się, jaka jest wysokość nad poziomem morza w bieżącym środku mapy.  |
 | [Korekta wysokości (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Umożliwia obliczenie wykresu wysokości dla Twojej trasy (wymagana [mapa terenu](../plugins/topography.md#download-maps) dla wybranego regionu). |
 | [Modyfikuj schemat kolorów](../../user/plugins/topography.md#modify-color-scheme) | Pozwala na dostosowanie wyglądu mapy poprzez wybór lub import palet kolorów. Możesz edytować wbudowane schematy lub używać własnych plików palet, aby spersonalizować kolory mapy i trasy. |
+| [Tworzenie niestandardowych palet](../../user/map/tracks/appearance.md#color-palette-editor) | Umożliwia tworzenie i edytowanie palet gradientowych do kolorowania tras przy użyciu wartości Względnych lub Stałych. Możesz zdefiniować kroki kolorów, przypisać wartości i dostosować sposób wyświetlania danych (takich jak prędkość lub wysokość) wzdłuż trasy. |
+| [Inteligentne foldery – Organizacja według](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Umożliwia organizowanie tras w Inteligentnych Folderach za pomocą zaawansowanych parametrów grupowania, takich jak data i czas, dystans, czas trwania, prędkość, wysokość i elewacja oraz dane z czujników. Te opcje umożliwiają bardziej szczegółową kategoryzację tras i elastyczną analizę. |
 
 
 ## Jak kupować {#how-to-buy}

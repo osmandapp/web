@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Favoriten
 ---
@@ -163,7 +163,7 @@ Der *Persönliche Ordner* enthält spezielle Punkte wie **<Translate android="tr
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Meine Orte Favoriten Android](@site/static/img/personal/my_places_android.png)
+![Meine Orte Favoriten Android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![meine_orte_ios](@site/static/img/personal/my_places_ios.png)
+![meine_orte_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 Der Bereich **Meine Favoriten** ermöglicht Ihnen:
 
 - Nach bestimmten Favoriten oder Gruppen [suchen](#order--sorting--search).
-- [Stapeloperationen](#bulk-edit--delete) — Umbenennen, Verschieben oder Löschen mehrerer Favoriten auf einmal.
+- [Stapeloperationen](#bulk-edit--delete) — Teilen, Verschieben oder Löschen mehrerer Favoriten auf einmal.
 
 ### Reihenfolge / Sortierung / Suche {#order--sorting--search}
 
@@ -188,20 +188,23 @@ Der Bereich **Meine Favoriten** ermöglicht Ihnen:
 
 <TabItem value="android" label="Android">
 
-![Favoritenordner Android](@site/static/img/personal/favorites_folders_android.png)
+![Favoritenordner Android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Sortierung** — Favoritenordner und -punkte können mit den verfügbaren Sortieroptionen im Listenmenü sortiert werden. Die folgenden Optionen sind verfügbar: *Name A – Z*, *Name Z – A*, *Zuletzt geändert*, *Neuestes Datum zuerst*, *Ältestes Datum zuerst*. Standardmäßig werden die Elemente nach Name A – Z sortiert. Angepinnte Ordner werden immer oben in der Liste angezeigt. Sie sind visuell durch einen Trennstrich von den restlichen Ordnern getrennt. Der [persönliche Ordner](../personal/favorites.md#special-favorites-personal) ist standardmäßig angepinnt. 
+- **Suche** — Verwenden Sie die [Globale Suche](../search/search-all.md), um Favoriten nach Namen zu finden. Favoriten werden nach der Entfernung vom Kartenzentrum sortiert.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Favoritenordner iOS](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Sortierung** — Favoritenordner und -punkte werden alphabetisch sortiert, wobei der [persönliche Ordner](../personal/favorites.md#special-favorites-personal) ganz oben steht.
 - **Suche** — Verwenden Sie die [Globale Suche](../search/search-all.md), um Favoriten nach Namen zu finden. Favoriten werden nach der Entfernung vom Kartenzentrum sortiert.
 
+</TabItem>
+
+</Tabs>
 
 ### Stapelbearbeitung / Löschen {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ Der Bereich **Meine Favoriten** ermöglicht Ihnen:
 
 <TabItem value="android" label="Android">
 
-![Favoritenaktionen Android](@site/static/img/personal/favorites_actions_android.png) ![Favoritenaktion Löschen Android](@site/static/img/personal/favorites_delete_android.png)
+![Favoritenaktionen Android](@site/static/img/personal/favorites_group_actions.png) ![Favoritenaktion Löschen Android](@site/static/img/personal/favorites_actions.png)
+
+Um mehrere Favoriten oder Ordner zu verwalten, aktivieren Sie den *Auswahlmodus*. Sie können den Auswahlmodus auf zwei Arten öffnen:
+- Tippen Sie auf das *Drei-Punkte-Menü* in der oberen rechten Ecke und wählen Sie *Auswählen*.
+- Tippen Sie lange auf einen Favoritenpunkt oder Ordner.
+
+Wenn der Auswahlmodus aktiviert ist, erscheinen Kontrollkästchen neben den Elementen in der Liste. Wählen Sie die gewünschten Favoriten oder Ordner aus, indem Sie auf die Kontrollkästchen tippen. Um alle Elemente in der Liste auszuwählen, tippen Sie auf das Symbol *Alle auswählen* in der oberen rechten Ecke.
+
+Die verfügbaren Aktionen hängen vom Typ des ausgewählten Elements ab. Wenn Ordner ausgewählt sind, sind die folgenden Aktionen verfügbar:
+- **Teilen** — Exportieren Sie ausgewählte Ordner als Favorites-GPX-Datei.
+- **Löschen** — Entfernen Sie die ausgewählten Ordner.
+
+Wenn Favoritenpunkte ausgewählt sind, sind die folgenden Aktionen verfügbar:
+- **Verschieben** — Verschieben Sie ausgewählte Favoriten in einen anderen Ordner.
+- **Zu Kartenmarkierungen hinzufügen** — Fügen Sie ausgewählte Punkte zur Liste der Kartenmarkierungen hinzu.
+- **Zu Track hinzufügen** — Fügen Sie ausgewählte Punkte zu einem Track hinzu.
+- **Zur Navigation hinzufügen** — Starten Sie die Navigation zum ausgewählten Punkt.
+- **Löschen** — Entfernen Sie die ausgewählten Favoriten.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ Der Bereich **Meine Favoriten** ermöglicht Ihnen:
 
 ![Favoritenaktionen iOS](@site/static/img/personal/favorites_actions_ios.png)
 
+- Um mehrere Favoriten zu verwalten, tippen Sie auf die **Bearbeiten**-Schaltfläche (*Stift-Symbol*).
+- Wählen Sie einzelne Favoriten oder ganze Ordner für Stapeloperationen aus.
+- **Verfügbare Optionen** — *Teilen*, *In eine Favoritengruppe verschieben*, *Farbe ändern* und *Löschen*.
+
 </TabItem>
 
 </Tabs>
-
-1. Um mehrere Favoriten zu verwalten, tippen Sie auf das **Löschen**-Symbol (*Mülleimer-Symbol auf Android*) oder die **Bearbeiten**-Schaltfläche (*Stift-Symbol auf iOS*).
-2. Wählen Sie einzelne Favoriten oder ganze Ordner für Stapeloperationen aus.
-3. **Verfügbare Optionen** — *Löschen* für Android und iOS, *In eine Favoritengruppe verschieben*, *Teilen* und *Farbe ändern* für iOS.
 
 <!--
 ### Favoriten zu Kartenmarkierungen hinzufügen {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Das Antippen der &#8942;-Schaltfläche (**Android**) öffnet spezielle Funktione
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *Drei-Punkte-Menü → Standard-Erscheinungsbild ändern*
+![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Verwenden Sie das ***Drei-Punkte-Menü*** neben jedem Ordner, um Gruppen von Favoriten zu verwalten:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
+- **Ordner anpinnen** — Pinnen Sie den ausgewählten Ordner, um ihn oben in der Favoritenliste für einen schnelleren Zugriff zu halten.
+- **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Von Kartenmarkierungen entfernen** — Fügen Sie alle Favoritenpunkte aus dem Ordner zur *Liste der Kartenmarkierungen* hinzu oder entfernen Sie sie bei Bedarf zur einfachen Referenz.
+- **<Translate android="true" ids="add_to_a_track"/>** — Fügen Sie alle Favoritenpunkte aus dem ausgewählten Ordner zu einem Track hinzu. Dies öffnet den Track-Auswahlbildschirm, in dem Sie einen Track auswählen oder erstellen können.
+- **<Translate android="true" ids="shared_string_share"/>** — Teilen Sie die Favoritenpunkte im Ordner, indem Sie sie als *Favorites.gpx*-Datei exportieren, was die Übertragung oder Sicherung Ihrer Daten erleichtert.
+- **<Translate android="true" ids="shared_string_delete"/>** — Löschen Sie den ausgewählten Favoritenordner und alle darin enthaltenen Punkte dauerhaft.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *Langes Antippen des Ordners → Standard-Erscheinungsbild*
-
 ![Favoritenaktionen iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Verwenden Sie das ***lange Antippen*** des Ordners, um Gruppen von Favoriten zu verwalten:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
+- **<Translate ios="true" ids="shared_string_share"/>** — Teilen Sie die Favoritenpunkte im Ordner, indem Sie sie als *Favorites.gpx*-Datei exportieren, was die Übertragung oder Sicherung Ihrer Daten erleichtert.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Löschen Sie den ausgewählten Favoritenordner und alle darin enthaltenen Punkte dauerhaft.
 
 </TabItem>
 
 </Tabs>
-
-Verwenden Sie das ***Drei-Punkte-Menü*** (*Android*) neben jedem Ordner und ***langes Antippen*** (*iOS*) des Ordners, um Favoritengruppen zu verwalten:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** oder **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** oder **Von Kartenmarkierungen entfernen** (*nur Android*) — Fügen Sie alle Favoritenpunkte aus dem Ordner zur *Liste der Kartenmarkierungen* hinzu oder entfernen Sie sie bei Bedarf zur einfachen Referenz.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Teilen Sie die Favoritenpunkte im Ordner, indem Sie sie als *Favorites.gpx*-Datei exportieren, was die Übertragung oder Sicherung Ihrer Daten erleichtert.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Löschen Sie den ausgewählten Favoritenordner und alle darin enthaltenen Punkte dauerhaft.
-
-
 
 ### Erscheinungsbild der Gruppe ändern {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Verwenden Sie das ***Drei-Punkte-Menü*** (*Android*) neben jedem Ordner und ***
 
 <TabItem value="android" label="Android">
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Gehen Sie zu: *Drei-Punkte-Menü → Standard-Erscheinungsbild ändern*
+
+![Funktionen für Favoritenordner Android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Gehen Sie zu: *Langes Antippen Ordner → Standard-Erscheinungsbild*
 
 ![Favoritenaktionen iOS](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
@@ -329,7 +352,7 @@ OsmAnd bietet mehrere Methoden zum [Sichern](./import-export.md) und [Wiederhers
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Kostenloses Favoriten-Backup Android](@site/static/img/personal/favorites_free_backup_andr.png)
+![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_free_backup_andr.png)
 
 </TabItem>
 
@@ -337,7 +360,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Kostenloses Favoriten-Backup iOS](@site/static/img/personal/favorites_free_backup_2_ios.png)
+![Favoritenaktionen iOS](@site/static/img/personal/favorites_free_backup_2_ios.png)
 
 </TabItem>
 
@@ -360,7 +383,7 @@ Das [kostenlose Favoriten-Backup](../personal/osmand-cloud.md#osmand-start) ist 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Kauf kostenloses Favoriten-Backup Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -368,7 +391,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Kauf kostenloses Favoriten-Backup iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Favoritenaktionen iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 

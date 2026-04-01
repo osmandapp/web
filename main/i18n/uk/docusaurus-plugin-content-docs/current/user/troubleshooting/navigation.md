@@ -1,7 +1,7 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
-title:  Навігація
+title:  Navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -86,14 +86,18 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Інформація про дорогу {#road-information}
 
-### OsmAnd показує лише деякі камери контролю швидкості {#osmand-only-shows-some-speed-cams}
+### Чому деякі попередження про камери контролю швидкості можуть не спрацьовувати {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 Через геодані, взяті з проєкту OpenStreetMap, наразі існує два методи інтеграції камер контролю швидкості в необроблені дані OSM:
 
-- Точка (в термінології OSM "node") шляху позначається тегом "highway=speed_camera", див. OSM wiki за посиланням [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Точка (в термінології OSM "node") шляху позначається тегом `highway=speed_camera`, див. OSM wiki за посиланням [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - Група елементів даних OSM об'єднується в так зване "відношення" (relation), яке містить більше елементів, ніж одна точка, для опису напрямку, що охоплюється камерою контролю швидкості. Див. [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Наразі OsmAnd може використовувати лише елементи, що складаються з однієї точки. Аналіз відношень буде додано в майбутніх версіях.
+OsmAnd підтримує обидва методи. Попередження про камери контролю швидкості можуть спрацьовувати для камер, позначених `highway=speed_camera`, а також для камер, визначених через відношення `enforcement`.
+
+Якщо вузол камери контролю швидкості розміщено безпосередньо на дорозі, тег `highway=speed_camera` є достатнім для OsmAnd, щоб виявити її та відобразити попередження.
+
+Якщо камера позначена поруч із дорогою, а не на ній, її потрібно підключити до дороги за допомогою відношення `enforcement`. В іншому випадку OsmAnd може не пов'язати камеру з дорогою, і попередження не спрацює.
 
 
 ## Голосова навігація {#voice-navigation}

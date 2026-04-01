@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Dit artikel legt uit hoe u de kaart kunt aanpassen en ermee kunt interageren met behulp van verschillende knoppen en gebaren. Het behandelt hoe u de kaart kunt draaien, zoomen, de kijkhoek kunt aanpassen, en de kijkhoek van de kaart kunt wijzigen, handmatig of automatisch met het kompas, of volgens de peiling.
+Dit artikel legt uit hoe u de kaart kunt aanpassen en ermee kunt interageren met behulp van verschillende knoppen en gebaren. Het behandelt hoe u kunt roteren, zoomen, de kijkhoek kunt aanpassen, en de kijkhoek van de kaart kunt wijzigen, deze handmatig of automatisch met het kompas kunt draaien, of volgens de peiling.
 
 
 ## Kaartverplaatsing {#map-movement}
@@ -216,6 +216,8 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 Bolweergave is momenteel alleen beschikbaar wanneer:
 - De [Development plugin](../plugins/development.md) is ingeschakeld.  
 Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>* 
+- De [Topografie-plugin](../plugins/topography.md) is ingeschakeld.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - De [Kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) is ingesteld op Versie 2 (OpenGL).  
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 

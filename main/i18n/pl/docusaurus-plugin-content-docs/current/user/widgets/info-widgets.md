@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -560,7 +560,7 @@ Aby dodać widżety metryk pojazdu do ekranu mapy, włącz wtyczkę OsmAnd [Metr
 </Tabs>
 
 
-Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#widgets). Możesz ich używać do przeglądania informacji z podłączonego skanera OBD-II, takich jak (*14 metryk*): **Temperatura wlotu**,&nbsp; **Temperatura otoczenia**,&nbsp; **Temperatura płynu chłodzącego**,&nbsp; **Temperatura oleju silnikowego**,&nbsp; **Prędkość obrotowa silnika** (*bezpłatne*),&nbsp; **Czas pracy silnika**,&nbsp; **Obliczone obciążenie silnika**,&nbsp; **Ciśnienie paliwa**,&nbsp; **Zużycie paliwa**,&nbsp; **Pozostałe paliwo**,&nbsp; **Poziom baterii**,&nbsp; **Napięcie adaptera**,&nbsp; **Prędkość pojazdu** (*bezpłatne*) i **Pozycja przepustnicy**.  
+Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#widgets). Możesz ich używać do przeglądania informacji z podłączonego skanera OBD-II, takich jak (*14 metryk*): **Napięcie adaptera** (*tylko Android*),&nbsp; **Temperatura otoczenia**,&nbsp; **Napięcie baterii**,&nbsp; **Obliczone obciążenie silnika**,&nbsp; **Temperatura płynu chłodzącego**,&nbsp; **Temperatura oleju silnikowego**,&nbsp; **Czas pracy silnika**,&nbsp; **Prędkość obrotowa silnika** (*bezpłatne*),&nbsp; **Zużycie paliwa**,&nbsp; **Ciśnienie paliwa**,&nbsp; **Temperatura wlotu**,&nbsp; **Pozostałe paliwo**,&nbsp; **Pozycja przepustnicy** i **Prędkość pojazdu** (*bezpłatne*).  
 
 - Aby dodać widżety metryk pojazdu do ekranu mapy, [włącz](../plugins/index.md#enable--disable) **wtyczkę Metryki pojazdu**.
 - Możesz dodawać widżety, nawet jeśli nie jest podłączony żaden skaner OBD-II.

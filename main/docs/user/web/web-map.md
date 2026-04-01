@@ -65,10 +65,11 @@ The Configure Map menu allows you to manage the display settings for map data, s
 
 - [POI overlay...](#poi-overlay). Allows you to choose and show needed POI categories on the map.
 - [Favorites](#favorites). Toggle the display of favorites on the map.
-- [Tracks](#tracks). Contains GPX tracks visible on the map.  
+- [Tracks](#tracks). Contains GPX tracks visible on the map.
+- [Transport stops](#transport-stops). Toggle the display of public transport stops on the map. 
 - [Terrain](#terrain). Enable or disable the terrain color scheme on the map.
 
-![POIs menu](@site/static/img/web/configure_map_web.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.png)
 
 
 ### POI overlay {#poi-overlay}
@@ -115,6 +116,33 @@ Each track has a **Context Menu** (accessible via the ⋮ button) with the follo
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
+### Transport stops {#transport-stops}
+
+The **Transport stops** option allows you to display public transport stops directly on the map. When enabled, stop markers appear across the map, representing locations where public transport routes stop. Selecting a transport stop opens a context panel with information about that stop and the transport routes that pass through it. The stop panel contains several sections.
+
+**1. Stop information**
+
+The top section shows basic information about the selected stop, including its name and location. Quick action buttons allow you to: *Add the stop to Favorites, Share a link to the stop, Start navigation from the stop, Set the stop as a destination*.
+
+**2. Routes**
+
+The Routes section lists all public transport routes that pass through the selected stop. Each item displays: the transport type, the route number, and the route name.
+
+Selecting a route opens a route details panel showing additional information about that route, including the number of stops and the average interval between vehicles (when available).
+
+The route details panel also displays the full list of stops along the route. The currently selected stop is highlighted, and you can select another stop to view its location on the map. Stops before the selected stop may be collapsed into a single item (for example “15 stops before”).
+
+Navigation buttons allow you to move between stops along the route using the *Previous* and *Next* controls. When a stop is selected, its location is highlighted on the map. The selected route and its stops are also displayed on the map to help visualize the route direction.
+
+**3. Transport type filter**
+
+A transport type filter allows you to filter the routes shown in the list. By default, the filter is set to *All* and displays all available routes. You can select a specific transport type (for example Bus, Tram, or Subway) to show only routes of that type. The filter resets to *All* each time the stop panel is opened.
+
+**4. Nearby routes**
+
+The Nearby routes section may display additional routes located close to the selected stop. This helps you quickly discover alternative transport options in the surrounding area.
+
+![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terrain {#terrain}
 

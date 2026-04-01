@@ -1,5 +1,5 @@
 ---
-source-hash: 89baba1fc250f5fae8be3a075cdb603e67a8fdc5619d13653d39e5efe07cabcd
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
 sidebar_position: 11
 title:  Розробка OsmAnd
 ---
@@ -53,7 +53,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Симулювати ваше місцезнаходження** (*Android* / *iOS*). [Симулювати](#gpx-track-simulation) місцезнаходження та рух за допомогою GPX-треку.
 - **Режим економії заряду батареї** (*Android* / *iOS*). Цей параметр зменшує [частоту оновлення екрана](#map-rendering-fps-widget) на 20 кадрів на секунду, щоб допомогти заощадити заряд батареї під час використання програм.
 - **Використовувати 3D-іконки місцезнаходження** (*iOS*). Дозволяє вибрати 3D-іконку для [іконки Моє місцезнаходження](../personal/profiles.md#my-location-appearance).
-- **Симулювати дані OBD** (*Android*). Дозволяє симулювати використання [сканера OBD](./vehicle-metrics.md).
-- **Інформація про налагодження продуктивності** (*Android*). Відображає продуктивність рендерингу та навігації.
+- **Симулювати дані OBD** (*Android* / *iOS*). Дозволяє симулювати використання [сканера OBD](./vehicle-metrics.md).
+- **Інформація про налагодження продуктивності** (*Android* / *iOS*). Відображає продуктивність рендерингу та навігації.
 - **Вимкнути шари мапи** (*Android*). Вимикає всі шари мапи поверх векторної мапи (потрібне перезавантаження).
 - **Буфер Logcat** (*Android*). Перевіряйте та діліться детальними журналами програми.  
 - **Показувати спливаюче повідомлення про натиснуту клавішу** (*Android*). Відображати повідомлення про клавішу.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Азимут — це напрямок за компасом від вашого поточного місцезнаходження до пункту призначення. Впливає на *[запис треку](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Курс — це напрямок за компасом від вашого поточного місцезнаходження до істинної півночі. Ця опція увімкнена за замовчуванням. Впливає на *[запис треку](../plugins/trip-recording.md)*.
+- **Увімкнути MSAA** (*Android*) / **Увімкнути MSAA для CarPlay** (*iOS*). Увімкнює багатовибіркове згладжування для згладжування рендерингу мапи. Покращує візуальну якість [іконки Моє місцезнаходження](../personal/profiles.md#my-location-appearance) та лінії маршруту, зменшуючи пікселізовані краї. На Android ця опція впливає на рендеринг мапи на пристрої та при використанні [Android Auto](../navigation/auto-car.md). На iOS вона застосовується лише до [CarPlay](../navigation/car-play.md).
 
 
 ### Тестування програми {#application-testing}
@@ -330,7 +331,7 @@ OsmAnd надає можливість симулювати місцезнахо
 - Натисніть *<Translate android="true" ids="simulate_location_by_gpx"/>*.  
 - Виберіть трек для симуляції місцезнаходження та руху пристрою.
 - Виберіть швидкість симуляції руху.
-- Натисніть кнопку "Старт".  
+- Натисніть кнопку «Старт».  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -348,7 +349,7 @@ OsmAnd надає можливість симулювати місцезнахо
 
 </Tabs>  
 
-Після запуску симуляції ви побачите на головному екрані програми, що навігаційна позначка рухається відповідно до GPX-треку. Натисніть [кнопку "Моє місцезнаходження"](../map/interact-with-map.md#my-location-and-zoom), щоб синхронізувати *Моє місцезнаходження* (симульовану геолокацію пристрою) з центром мапи.  
+Після запуску симуляції ви побачите на головному екрані програми, що навігаційна позначка рухається відповідно до GPX-треку. Натисніть [кнопку «Моє місцезнаходження»](../map/interact-with-map.md#my-position-and-zoom), щоб синхронізувати *Моє місцезнаходження* (симульовану геолокацію пристрою) з центром мапи.  
 Щоб зупинити симуляцію руху вашого пристрою, поверніться до [налаштувань](#plugin-settings) розробки OsmAnd і натисніть **стоп** в опції **симулювати ваше місцезнаходження**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* також можна отримати доступ через **[меню Швидких дій](../widgets/quick-action.md#navigation)**.

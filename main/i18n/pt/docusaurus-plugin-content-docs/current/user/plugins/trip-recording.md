@@ -1,5 +1,5 @@
 ---
-source-hash: 7a4c572b27a72fe9f1b647eb877f540c2cdf3bec2eedcb4577e8fff99c5a07ee
+source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
 sidebar_position: 17
 title: Gravação de Viagem
 ---
@@ -297,7 +297,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 | **Métricas do Veículo** <br/> *Precisa de plugin ativado* | Dados do [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) são registrados no arquivo GPX. Exibido apenas quando o [plugin de Métricas do Veículo](../plugins/vehicle-metrics.md) está ativado.<br />*Nota*: Você pode adicionar quais métricas registrar no arquivo GPX da lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Pasta de armazenamento de trilhas** (*Android*) | Define onde, na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*, as trilhas gravadas são armazenadas. As opções incluem armazenar todas as trilhas na pasta Rec ou organizá-las por mês, como Rec/aaaa-mm. |
 | **Notificação** | Controla a exibição de uma [notificação de gravação de viagem](#notifications) do sistema na área de notificação do dispositivo que permite iniciar a gravação de viagens. |
-| **Rastreamento online** (*Android*) | Permite o rastreamento em tempo real de sua localização enviando pontos registrados para uma URL especificada. O intervalo de rastreamento determina a frequência com que os pontos são enviados, e o buffer de tempo armazena pontos quando não há conexão com a Internet.<details><summary>*Observação*</summary>Se esta opção estiver ativada e a gravação da trilha estiver em andamento, o widget Distância/Iniciar-Parar (REC) fica **verde** em vez de **vermelho**, indicando que cada ponto registrado está sendo transmitido para uma URL especificada. O campo **Endereço da Web** permite que você insira a URL usando o seguinte formato de parâmetro:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Carimbo de data/hora (tempo Unix)</li><li>`hdop={3}`: Diluição horizontal da precisão</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Velocidade</li><li>`bearing={6}`: Rumos (direção do movimento)</li><li>`eta={7}`: Tempo estimado de chegada (tempo Unix)</li><li>`etfa={8}`: Tempo estimado para o primeiro ponto intermediário ou ponto final (tempo Unix)</li><li>`eda={9}`: Distância estimada até a chegada ou um marcador (em metros)</li><li>`edfa={10}`: Distância estimada até o primeiro ponto intermediário ou ponto final (em metros)</li></ul>Você pode definir o **Intervalo de Rastreamento** para especificar a frequência com que os pontos de localização são enviados, com opções que variam de 0 segundos a 5 minutos. Além disso, o parâmetro **Buffer de Tempo** determina por quanto tempo os pontos de localização são armazenados se não houver conexão com a Internet, garantindo que os dados sejam salvos e transmitidos quando a conexão for restaurada.</details><br />O OsmAnd armazena os pontos de localização não enviados apenas na memória temporária do aplicativo enquanto o aplicativo está em execução. Isso significa que o buffer não é gravado em armazenamento permanente. Se o aplicativo for fechado, forçado a parar ou o dispositivo reiniciado, todos os pontos em buffer são perdidos.<br />A configuração de Buffer de Tempo não define por quanto tempo os pontos são mantidos na memória — ela funciona apenas como um filtro no momento do upload. Quando o OsmAnd tenta enviar pontos em buffer, cada ponto é verificado contra o limite de Buffer de Tempo. Pontos mais antigos que o limite selecionado (por exemplo, 24 horas) são removidos em vez de serem enviados. Como resultado, o buffer pode temporariamente conter pontos mais antigos que o valor de Buffer de Tempo escolhido, mas esses pontos serão descartados durante o processo de upload. |
+| **Rastreamento online** (*Android*) | Permite o rastreamento em tempo real de sua localização enviando pontos registrados para uma URL especificada. O intervalo de rastreamento determina a frequência com que os pontos são enviados, e o buffer de tempo armazena pontos quando não há conexão com a Internet.<details><summary>*Observação*</summary>Se esta opção estiver ativada e a gravação da trilha estiver em andamento, o widget Distância/Iniciar-Parar (REC) fica **verde** em vez de **vermelho**, indicando que cada ponto registrado está sendo transmitido para uma URL especificada. O campo **Endereço da Web** permite que você insira a URL usando o seguinte formato de parâmetro:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Carimbo de data/hora (tempo Unix)</li><li>`hdop={3}`: Diluição horizontal da precisão</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Velocidade</li><li>`bearing={6}`: Rumos (direção do movimento)</li><li>`eta={7}`: Tempo estimado de chegada (tempo Unix)</li><li>`etfa={8}`: Tempo estimado para o primeiro ponto intermediário ou ponto final (tempo Unix)</li><li>`eda={9}`: Distância estimada até a chegada ou um marcador (em metros)</li><li>`edfa={10}`: Distância estimada até o primeiro ponto intermediário ou ponto final (em metros)</li><li>`batproc={11}`: Nível de bateria do dispositivo (porcentagem)</li></ul>Você pode definir o **Intervalo de Rastreamento** para especificar a frequência com que os pontos de localização são enviados, com opções que variam de 0 segundos a 5 minutos. Além disso, o parâmetro **Buffer de Tempo** determina por quanto tempo os pontos de localização são armazenados se não houver conexão com a Internet, garantindo que os dados sejam salvos e transmitidos quando a conexão for restaurada.</details><br />O OsmAnd armazena os pontos de localização não enviados apenas na memória temporária do aplicativo enquanto o aplicativo está em execução. Isso significa que o buffer não é gravado em armazenamento permanente. Se o aplicativo for fechado, forçado a parar ou o dispositivo reiniciado, todos os pontos em buffer são perdidos.<br />A configuração de Buffer de Tempo não define por quanto tempo os pontos são mantidos na memória — ela funciona apenas como um filtro no momento do upload. Quando o OsmAnd tenta enviar pontos em buffer, cada ponto é verificado contra o limite de Buffer de Tempo. Pontos mais antigos que o limite selecionado (por exemplo, 24 horas) são removidos em vez de serem enviados. Como resultado, o buffer pode temporariamente conter pontos mais antigos que o valor de Buffer de Tempo escolhido, mas esses pontos serão descartados durante o processo de upload. |
 | **Trilhas** | Uma referência rápida à pasta onde as trilhas são salvas na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Redefinir configurações do plugin para o padrão** | Redefine todas as configurações de gravação de viagem para o perfil atual para seus padrões. |
 | **Copiar de outro perfil** (*Android*) | Copia as configurações de gravação de viagem de um perfil para outro. |
@@ -356,7 +356,7 @@ O distintivo do ícone do aplicativo aparece ao lado do ícone do OsmAnd quando 
 
 ## Widgets {#widgets}
 
-Os widgets permitem exibir informações chave sobre a gravação de trilhas diretamente na tela, como *Distância*, *Duração*, *Subida*, *Descida*, *Velocidade Máxima* e *Inclinação Média*. No iOS, você também pode adicionar o widget *Tempo em Movimento*.
+Os widgets permitem exibir informações chave sobre a gravação de trilhas diretamente na tela, como *Inclinação Média*, *Distância*, *Descida*, *Duração*, *Velocidade Máxima*, *Tempo em Movimento* e *Subida*. No Android, você também pode adicionar o widget *Velocidade Média*.
 
 Para começar a usar os *widgets de Gravação de Viagem*, você precisa fazer todas as seguintes configurações:
 
@@ -373,7 +373,7 @@ Para começar a usar os *widgets de Gravação de Viagem*, você precisa fazer t
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Adicionando widget Distância/Iniciar-Parar no Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
+![Adicionando widget Distância/Iniciar-Parar no Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -412,36 +412,18 @@ Para personalizar sua interface, você pode adicionar ou remover o widget de Gra
 
 Alguns widgets de Gravação de Viagem suportam múltiplos modos de exibição. Os modos permitem alternar entre valores gerais da viagem e métricas para a seção mais recente de subida ou descida da viagem gravada atualmente.
 
-Os seguintes modos podem estar disponíveis dependendo do widget.
-1. **Inclinação Média**:
-- Última descida 
-- Última subida  
-
-2. **Distância (Iniciar-Parar)**:
-- Distância total (padrão)
-- Última descida
-- Última subida
-
-3. **Descida**:
-- Total (padrão)
-- Última descida
-
-4. **Velocidade Máxima**:
-- Total (padrão)
-- Última descida
-- Última subida
-
-5. **Tempo em Movimento** (*Somente iOS*)
-- Total (padrão)
-- Última descida
-- Última subida
-
-6. **Subida**:
-- Total (padrão)
-- Última subida
+| **Widget** | **Modos disponíveis**  |
+|-------|-------------|
+| Inclinação Média | Última descida; Última subida |
+| Velocidade Média *(Somente Android)* | Média da viagem (padrão); Última descida; Última subida |
+| Distância (Iniciar-Parar) | Média da viagem (padrão); Última descida; Última subida |
+| Descida | Total (padrão); Última descida |
+| Velocidade Máxima | Total (padrão); Última descida; Última subida |
+| Tempo em Movimento | Total (padrão); Última descida; Última subida |
+| Subida | Total (padrão); Última subida |
 
 A alternância de modo depende do widget:
-- Subida / Descida / Velocidade Máxima / Inclinação Média / Tempo em Movimento — toque no widget no mapa para alternar seu modo.
+- Subida / Descida / Velocidade Máxima / Inclinação Média / Tempo em Movimento / Velocidade Média — toque no widget no mapa para alternar seu modo.
 - Distância (Iniciar-Parar) — o widget Distância suporta múltiplos modos de exibição (selecione-os nas configurações do widget), mas tocá-lo sempre abre o diálogo de Gravação de Viagem, onde você pode iniciar, parar e visualizar informações detalhadas sobre sua trilha. 
 
 Se a gravação atual ainda não contiver uma seção de subida ou descida, os widgets nos modos Última subida ou Última descida mostram 0 ou — (sem dados).
@@ -464,13 +446,15 @@ Se a gravação atual ainda não contiver uma seção de subida ou descida, os w
 |------------|
 |**Inclinação Média**. Exibe a inclinação média para a última seção de subida ou descida da viagem atual, dependendo do modo selecionado. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Velocidade Média** *(Somente Android)*. Mostra a velocidade média para a viagem gravada atualmente, ou a velocidade média durante a última seção de subida ou descida, dependendo do modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Descida**. Indica a descida total ou a seção de descida mais recente, dependendo do modo selecionado. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Duração**. Exibe o tempo total da gravação da viagem atual em horas e minutos. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Velocidade Máxima**. Mostra a velocidade máxima para a viagem gravada atualmente no modo selecionado. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Tempo em Movimento** (*Somente iOS*). Mostra o tempo em movimento para a viagem gravada atualmente, ou o tempo para a última subida e descida, dependendo do modo selecionado. |
+|**Tempo em Movimento**. Mostra o tempo em movimento para a viagem gravada atualmente, ou o tempo para a última subida e descida, dependendo do modo selecionado. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Subida**. Mostra a subida total ou a seção de subida mais recente, dependendo do modo selecionado. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|

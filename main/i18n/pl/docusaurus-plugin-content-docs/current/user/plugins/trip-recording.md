@@ -1,5 +1,5 @@
 ---
-source-hash: 7a4c572b27a72fe9f1b647eb877f540c2cdf3bec2eedcb4577e8fff99c5a07ee
+source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
 sidebar_position: 17
 title:  Nagrywanie trasy
 ---
@@ -164,7 +164,7 @@ Oto, co można na nich znaleźć:
 
 - **Wykres kluczowych informacji**:
     - ***Android***. Dla ***osi Y*** na wykresie można wybrać *do dwóch parametrów* ze wszystkich dostępnych danych, takich jak *Wysokość*, *Nachylenie*, *Prędkość* i [informacje z czujników zewnętrznych](../plugins/external-sensors.md#trip-recording). Dla ***osi X*** wybierz wyświetlanie *Dystansu*, *Czasu* lub *Pory dnia*.
-    - ***iOS***. Parametry są zorganizowane w zakładkach *Przegląd*, *Wysokość* i *Prędkość* z odpowiednimi wartościami dla osi Y i *Dystans* dla osi X.
+    - ***iOS***. Parametry są zorganizowane w zakładkach *Przegląd*, *Wysokość*, i *Prędkość* z odpowiednimi wartościami dla osi Y i *Dystans* dla osi X.
 
 - **Statystyki**. W systemie Android wyświetlany jest stały zestaw danych statystycznych niezależnie od ustawień wykresu: *Dystans*, *Czas trwania*, *W górę*, *W dół*, *Średnia prędkość*. W systemie iOS każda karta, Przegląd, Wysokość i Prędkość, ma inny zestaw danych.
 
@@ -297,7 +297,7 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 | **Metryki pojazdu** <br/> *Wymaga włączonej wtyczki* | Dane ze [skanera OBD-II](../plugins/vehicle-metrics.md#trip-recording) są zapisywane w pliku GPX. Wyświetlane tylko wtedy, gdy włączona jest [wtyczka Metryki pojazdu](../plugins/vehicle-metrics.md).<br />*Uwaga*: Możesz dodać, które metryki mają być rejestrowane w pliku GPX z listy: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Folder przechowywania tras** (*Android*) | Określa, gdzie w zakładce *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* przechowywane są zarejestrowane trasy. Opcje obejmują przechowywanie wszystkich tras w folderze Rec lub organizowanie ich według miesięcy, np. Rec/rrrr-mm. |
 | **Powiadomienie** | Kontroluje wyświetlanie powiadomienia systemowego [nagrywania trasy](#notifications) w obszarze powiadomień urządzenia, które pozwala na rozpoczęcie nagrywania podróży. |
-| **Śledzenie online** (*Android*) | Umożliwia śledzenie lokalizacji w czasie rzeczywistym poprzez wysyłanie zarejestrowanych punktów na określony adres URL. Interwał śledzenia określa, jak często wysyłane są punkty, a bufor czasowy przechowuje punkty, gdy nie ma połączenia z Internetem.<details><summary>*Uwaga*</summary>Jeśli ta opcja jest włączona, a nagrywanie trasy jest w toku, widżet Dystans/Start-Stop (REC) zmienia kolor na **zielony** zamiast **czerwonego**, wskazując, że każdy zarejestrowany punkt jest przesyłany na określony adres URL. Pole **Adres internetowy** umożliwia wprowadzenie adresu URL przy użyciu następującego formatu parametrów:<ul><li>`lat={0}`: Szerokość geograficzna</li><li>`lon={1}`: Długość geograficzna</li><li>`timestamp={2}`: Znacznik czasu (czas uniksowy)</li><li>`hdop={3}`: Horyzontalne rozmycie precyzji</li><li>`altitude={4}`: Wysokość</li><li>`speed={5}`: Prędkość</li><li>`bearing={6}`: Namiar (kierunek ruchu)</li><li>`eta={7}`: Szacowany czas przybycia (czas uniksowy)</li><li>`etfa={8}`: Szacowany czas do pierwszego punktu pośredniego lub punktu końcowego (czas uniksowy)</li><li>`eda={9}`: Szacowana odległość do przybycia lub znacznika (w metrach)</li><li>`edfa={10}`: Szacowana odległość do pierwszego punktu pośredniego lub punktu końcowego (w metrach)</li></ul>Można ustawić **Interwał śledzenia**, aby określić, jak często wysyłane są punkty lokalizacji, z opcjami od 0 sekund do 5 minut. Dodatkowo parametr **Bufor czasu** określa, jak długo punkty lokalizacji są przechowywane w przypadku braku połączenia z Internetem, zapewniając zapisanie i przesłanie danych po przywróceniu połączenia.<br />OsmAnd przechowuje niesłane punkty lokalizacji tylko w tymczasowej pamięci aplikacji podczas działania aplikacji. Oznacza to, że bufor nie jest zapisywany na stałym nośniku. Jeśli aplikacja zostanie zamknięta, wymuszona do zatrzymania lub urządzenie zrestartowane, wszystkie buforowane punkty zostaną utracone.<br />Ustawienie Bufor czasu nie określa, jak długo punkty są przechowywane w pamięci — działa tylko jako filtr w momencie przesyłania. Gdy OsmAnd próbuje wysłać buforowane punkty, każdy punkt jest sprawdzany pod kątem limitu Buforu czasu. Punkty starsze niż wybrany limit (np. 24 godziny) są usuwane zamiast być przesłane. W rezultacie bufor może tymczasowo zawierać punkty starsze niż wybrana wartość Buforu czasu, ale te punkty zostaną odrzucone podczas procesu przesyłania.</details> |
+| **Śledzenie online** (*Android*) | Umożliwia śledzenie lokalizacji w czasie rzeczywistym poprzez wysyłanie zarejestrowanych punktów na określony adres URL. Interwał śledzenia określa, jak często wysyłane są punkty, a bufor czasowy przechowuje punkty, gdy nie ma połączenia z Internetem.<details><summary>*Uwaga*</summary>Jeśli ta opcja jest włączona, a nagrywanie trasy jest w toku, widżet Dystans/Start-Stop (REC) zmienia kolor na **zielony** zamiast **czerwonego**, wskazując, że każdy zarejestrowany punkt jest przesyłany na określony adres URL. Pole **Adres internetowy** umożliwia wprowadzenie adresu URL przy użyciu następującego formatu parametrów:<ul><li>`lat={0}`: Szerokość geograficzna</li><li>`lon={1}`: Długość geograficzna</li><li>`timestamp={2}`: Znacznik czasu (czas uniksowy)</li><li>`hdop={3}`: Horyzontalne rozmycie precyzji</li><li>`altitude={4}`: Wysokość</li><li>`speed={5}`: Prędkość</li><li>`bearing={6}`: Namiar (kierunek ruchu)</li><li>`eta={7}`: Szacowany czas przybycia (czas uniksowy)</li><li>`etfa={8}`: Szacowany czas do pierwszego punktu pośredniego lub punktu końcowego (czas uniksowy)</li><li>`eda={9}`: Szacowana odległość do przybycia lub znacznika (w metrach)</li><li>`edfa={10}`: Szacowana odległość do pierwszego punktu pośredniego lub punktu końcowego (w metrach)</li><li>`batproc={11}`: Poziom baterii urządzenia (w procentach)</li></ul>Można ustawić **Interwał śledzenia**, aby określić, jak często wysyłane są punkty lokalizacji, z opcjami od 0 sekund do 5 minut. Dodatkowo parametr **Bufor czasu** określa, jak długo punkty lokalizacji są przechowywane w przypadku braku połączenia z Internetem, zapewniając zapisanie i przesłanie danych po przywróceniu połączenia.<br />OsmAnd przechowuje niesłane punkty lokalizacji tylko w tymczasowej pamięci aplikacji podczas działania aplikacji. Oznacza to, że bufor nie jest zapisywany na stałym nośniku. Jeśli aplikacja zostanie zamknięta, wymuszona do zatrzymania lub urządzenie zrestartowane, wszystkie buforowane punkty zostaną utracone.<br />Ustawienie Bufor czasu nie określa, jak długo punkty są przechowywane w pamięci — działa tylko jako filtr w momencie przesyłania. Gdy OsmAnd próbuje wysłać buforowane punkty, każdy punkt jest sprawdzany pod kątem limitu Buforu czasu. Punkty starsze niż wybrany limit (np. 24 godziny) są usuwane zamiast być przesłane. W rezultacie bufor może tymczasowo zawierać punkty starsze niż wybrana wartość Buforu czasu, ale te punkty zostaną odrzucone podczas procesu przesyłania.</details> |
 | **Trasy** | Szybkie odniesienie do folderu, w którym zapisywane są trasy w zakładce *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Zresetuj ustawienia wtyczki do domyślnych** | Resetuje wszystkie ustawienia nagrywania trasy dla bieżącego profilu do wartości domyślnych. |
 | **Kopiuj z innego profilu** (*Android*) | Kopiuje ustawienia nagrywania trasy z jednego profilu do drugiego. |
@@ -356,7 +356,7 @@ Plakietka ikony aplikacji pojawia się obok ikony OsmAnd, gdy nagrywanie trasy j
 
 ## Widżety {#widgets}
 
-Widżety pozwalają wyświetlać kluczowe informacje o nagrywaniu trasy bezpośrednio na ekranie, takie jak *Dystans*, *Czas trwania*, *W górę*, *W dół*, *Maks. prędkość* i *Średnie nachylenie*. W systemie iOS można również dodać widżet *Czas w ruchu*.
+Widżety pozwalają wyświetlać kluczowe informacje o nagrywaniu trasy bezpośrednio na ekranie, takie jak *Średnie nachylenie*, *Dystans*, *W dół*, *Czas trwania*, *Maks. prędkość*, *Czas w ruchu* i *W górę*. W systemie Android można również dodać widżet *Średnia prędkość*.
 
 Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać wszystkich następujących ustawień:
 
@@ -373,7 +373,7 @@ Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać ws
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Dodawanie widżetu Dystans/Start-Stop w systemie Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
+![Dodawanie widżetu Dystans/Start-Stop w systemie Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -412,36 +412,18 @@ Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i
 
 Niektóre widżety Nagrywanie trasy obsługują wiele trybów wyświetlania. Tryby pozwalają przełączać się między ogólnymi wartościami podróży a metrykami dla najbardziej ostatniego odcinka podjazdu lub zjazdu aktualnie nagrywanej trasy.
 
-Poniższe tryby mogą być dostępne w zależności od widżetu.
-1. **Średnie nachylenie**:
-- Ostatni zjazd 
-- Ostatni podjazd  
-
-2. **Dystans (Start-Stop)**:
-- Całkowity dystans (domyślnie)
-- Ostatni zjazd
-- Ostatni podjazd
-
-3. **W dół**:
-- Całkowity (domyślnie)
-- Ostatni zjazd
-
-4. **Maks. prędkość**:
-- Całkowity (domyślnie)
-- Ostatni zjazd
-- Ostatni podjazd
-
-5. **Czas w ruchu** (*Tylko iOS*)
-- Całkowity (domyślnie)
-- Ostatni zjazd
-- Ostatni podjazd
-
-6. **W górę**:
-- Całkowity (domyślnie)
-- Ostatni podjazd
+| **Widżet** | **Dostępne tryby**  |
+|-------|-------------|
+| Średnie nachylenie | Ostatni zjazd; Ostatni podjazd |
+| Średnia prędkość *(Tylko Android)* | Średnia podróży (domyślnie); Ostatni zjazd; Ostatni podjazd |
+| Dystans (Start-Stop) | Średnia podróży (domyślnie); Ostatni zjazd; Ostatni podjazd |
+| W dół | Całkowity (domyślnie); Ostatni zjazd |
+| Maks. prędkość | Całkowity (domyślnie); Ostatni zjazd; Ostatni podjazd |
+| Czas w ruchu | Całkowity (domyślnie); Ostatni zjazd; Ostatni podjazd |
+| W górę | Całkowity (domyślnie); Ostatni podjazd |
 
 Przełączanie trybów zależy od widżetu:
-- W górę / W dół / Maks. prędkość / Średnie nachylenie / Czas w ruchu — stuknij widżet na mapie, aby przełączyć jego tryb.
+- W górę / W dół / Maks. prędkość / Średnie nachylenie / Czas w ruchu / Średnia prędkość — stuknij widżet na mapie, aby przełączyć jego tryb.
 - Dystans (Start-Stop) — widżet Dystans obsługuje wiele trybów wyświetlania (wybierz je w ustawieniach widżetu), ale stuknięcie go zawsze otwiera okno dialogowe Nagrywanie trasy, w którym można rozpocząć, zatrzymać i wyświetlić szczegółowe informacje o trasie. 
 
 Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, widżety w trybie Ostatni podjazd lub Ostatni zjazd pokazują 0 lub — (brak danych).
@@ -464,13 +446,15 @@ Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, wid
 |------------|
 |**Średnie nachylenie**. Wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnej trasy, w zależności od wybranego trybu. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Średnia prędkość** *(Tylko Android)*. Pokazuje średnią prędkość dla aktualnie nagrywanego wyjazdu lub średnią prędkość podczas ostatniego podjazdu lub zjazdu, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Maks. prędkość**. Pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu w wybranym trybie. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Czas w ruchu** (*Tylko iOS*). Pokazuje czas w ruchu dla aktualnie nagrywanego wyjazdu lub czas dla ostatniego podjazdu i zjazdu, w zależności od wybranego trybu. |
+|**Czas w ruchu**. Pokazuje czas w ruchu dla aktualnie nagrywanego wyjazdu lub czas dla ostatniego podjazdu i zjazdu, w zależności od wybranego trybu. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_up_new.png)|

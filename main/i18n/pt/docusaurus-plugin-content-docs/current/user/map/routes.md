@@ -1,5 +1,5 @@
 ---
-source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
 sidebar_position: 11
 title: Rotas
 ---
@@ -253,13 +253,13 @@ No **menu de contexto**, você pode:
 
 <TabItem value="android" label="Android">
 
-![Informações da rota](@site/static/img/map/route_info_1_andr.png)
+![Informações da rota](@site/static/img/map/route_info_1_andr_new.png) ![Informações da rota](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Informações da rota](@site/static/img/map/route_info_1_ios.png)
+![Informações da rota](@site/static/img/map/route_info_1_ios_new.png) ![Informações da rota](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -276,21 +276,27 @@ As seguintes informações estarão visíveis no menu de contexto:
 
 Para visualizar o gráfico de elevação, inclinação ou detalhes de altitude para uma rota selecionada, basta tocar em qualquer um dos seguintes valores no menu de contexto: **Distância**, **Subida**, **Descida** ou **Altitude**.
 
+Você também pode abrir a aba *Trilha* e alternar para a visualização *Altitude* para ver o gráfico completo de elevação da rota.
+
+**Nota:** Os dados de elevação são gerados automaticamente e podem diferir ligeiramente dependendo dos dados disponíveis.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rotas no chão](@site/static/img/map/routes_osm_2.png)
+![Routes on the ground](@site/static/img/map/routes_osm_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rotas no chão](@site/static/img/map/routes_osm_ios_2.png)
+![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### Salvar como uma Trilha {#save-as-a-track}
 
@@ -349,13 +355,13 @@ Você pode personalizar se as rotas são ativadas ou desativadas usando o widget
 
 <TabItem value="android" label="Android">
 
-![Rotas no chão](@site/static/img/map/route_search.png) ![Rotas no chão](@site/static/img/map/route_search_1_new.png)
+![Busca de rotas](@site/static/img/map/route_search.png) ![Busca de rotas](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rotas no chão](@site/static/img/map/route_search_ios.png) ![Rotas no chão](@site/static/img/map/route_search_1_ios.png)
+![Busca de rotas](@site/static/img/map/route_search_ios.png) ![Busca de rotas](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
@@ -373,13 +379,13 @@ Navegue até *<Translate android="true" ids="search_button,search_categories,poi
 
 <TabItem value="android" label="Android">
 
-![Rotas no chão](@site/static/img/map/route_search_2_new.png) ![Rotas no chão](@site/static/img/map/route_search_3_new.png)
+![Busca de rotas](@site/static/img/map/route_search_2_new.png) ![Busca de rotas](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rotas no chão](@site/static/img/map/route_search_2_ios.png) ![Rotas no chão](@site/static/img/map/route_search_3_ios.png)
+![Busca de rotas](@site/static/img/map/route_search_2_ios.png) ![Busca de rotas](@site/static/img/map/route_search_3_ios.png)
 
 </TabItem>
 

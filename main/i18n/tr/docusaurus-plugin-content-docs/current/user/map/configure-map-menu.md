@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title: Haritayı Yapılandır
 ---
@@ -23,7 +23,7 @@ import Translate from '@site/src/components/Translate.js';
 
 **Göster** bölümü:  
 
-![Haritayı yapılandır android](@site/static/img/map/configure_map_show1_andr.png)  ![Haritayı yapılandır android](@site/static/img/map/configure_map_show2_andr.png)  
+![Haritayı yapılandır android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Haritayı yapılandır android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 **Topografya** bölümü:  
 
@@ -43,7 +43,7 @@ import Translate from '@site/src/components/Translate.js';
 
 **Harita üzerinde göster** bölümü:  
 
-![Haritayı yapılandır iOS](@site/static/img/map/configure_map_show1_ios.png)  
+![Haritayı yapılandır iOS](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 **Topografya** bölümü:  
 
@@ -100,7 +100,7 @@ import Translate from '@site/src/components/Translate.js';
    - [İzler](../map/tracks/index.md) - içe aktarılan, planlanan veya kaydedilen izleri harita üzerinde görüntüler.
    - [Sokak seviyesi görüntüleri](../plugins/mapillary.md#map-layer) - mevcut sokak seviyesi görüntüleri olan noktaları görüntüler.
    - [Seyahat rehberleri](../plan-route/travel-guides.md) - harita üzerinde seyahat rehberlerini görüntüler.
-   - [Wikipedia](../plugins/wikipedia.md) - haritaya bağlı Wikipedia makalelerini vurgular.
+   - [Popüler yerler](../map/popular_places.md) - Wikipedia makalelerine dayalı popüler yerleri vurgular ve haritada görüntüler.
    - [OSM düzenleme](../plugins/osm-editing.md#osm-editing-layer) - OpenStreetMap düzenlemelerini, notları ve haritalama ile ilgili yardımcı katmanları görüntüler.
    - [Diğer eklenti katmanları](../plugins/index.md#configure-plugin) - birçok eklenti ek bilgilerle kendi katmanlarını ekler.
 

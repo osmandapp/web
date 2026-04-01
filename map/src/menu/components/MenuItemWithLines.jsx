@@ -68,7 +68,6 @@ const MenuItemWithLines = forwardRef((props, ref) => {
                     <Typography
                         id={'se-' + name}
                         onClick={handleExpandClick}
-                        variant="inherit"
                         component="span"
                         sx={{ display: 'inline' }}
                         className={className ?? styles.groupName}

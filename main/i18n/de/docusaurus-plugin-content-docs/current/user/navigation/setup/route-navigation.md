@@ -1,7 +1,7 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
 sidebar_position: 1
-title:  Routenvorbereitung
+title:  Route Preparation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -37,7 +37,7 @@ Die Funktion **Routenvorbereitung** in OsmAnd bietet eine Schritt-für-Schritt-N
 
 <TabItem value="ios" label="iOS">
 
-![Navigationsbildschirm iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Navigationsbildschirm iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Navigationsbildschirm iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Navigationsbildschirm iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -65,10 +65,10 @@ Stellen Sie vor der Verwendung der Offline-Navigation sicher, dass die erforderl
 1. Öffnen Sie das [*Navigationsmenü*](#navigation-menu):
 
     - Geben Sie den [Zielpunkt](#set-target-point) an.
-    - Warten Sie, bis die Route berechnet ist. Danach können Sie zusätzliche Informationen zu Ihrer Route im Abschnitt *[Details](./route-details.md#overview)* abrufen.
+    - Warten Sie, bis die Route berechnet ist. Danach können Sie zusätzliche Informationen zu Ihrer Route im Abschnitt *[Details](../setup/route-details.md)* abrufen.
     - Sie können zwischen verschiedenen [Routing-Typen](./../routing/osmand-routing.md#routing-types) (Profilen) wechseln, um das beste Ergebnis zu erzielen.
     - Fügen Sie [Zwischenziele](#intermediate-destinations) hinzu (optional).
-    - Sie können auch den Abfahrtspunkt vom [aktuellen Standort](../../map/interact-with-map.md#my-location-and-zoom) zum gewünschten ändern.
+    - Sie können auch den Abfahrtspunkt vom [aktuellen Standort](../../map/interact-with-map.md#my-position-and-zoom) zum gewünschten ändern.
 
 2. Zusätzliche [*Navigationseinstellungen*](#settings) können je nach Ihren Zwecken verwendet werden (Sie können konfigurieren, welche Straßen vermieden oder bevorzugt werden sollen, Kraftstoff sparen oder die schnellste Route wählen usw.).
 
@@ -79,7 +79,7 @@ Stellen Sie vor der Verwendung der Offline-Navigation sicher, dass die erforderl
 
 :::note
 
-**Eine Route kann nicht erstellt werden, wenn *[Online-Karte](../../map/raster-maps.md#select-raster-maps)* als Kartenquelle ausgewählt ist.**
+**Eine Route kann nicht erstellt werden, wenn *[Online-Karte](../../map/raster-maps.md#layers)* als Kartenquelle ausgewählt ist.**
 
 :::
 
@@ -88,7 +88,7 @@ Stellen Sie vor der Verwendung der Offline-Navigation sicher, dass die erforderl
 
 Es gibt 3 Möglichkeiten, das Navigationsmenü zu erreichen:
 
-- Die [*Navigationsschaltfläche*](../../widgets/map-buttons.md#directions) auf dem Kartenbildschirm.  
+- Die [*Navigationsschaltfläche*](../../widgets/map-buttons.md#navigation) auf dem Kartenbildschirm.  
 - *Richtung nach/von* in einem [*Kartenkontextmenü*](../../map/map-context-menu.md#directions-to--from).  
 - Navigationsbereich im [*Hauptmenü*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Es gibt 3 Möglichkeiten, das Navigationsmenü zu erreichen:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Startort festlegen (Standard: [*Mein aktueller Standort*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Startort festlegen (Standard: [*Mein aktueller Standort*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Wird verwendet, um [Ihren Zielpunkt festzulegen](#set-target-point).
 - **Hinzufügen** &nbsp;&#43; - [Zwischenziele](../../widgets/nav-widgets.md#distance-to-intermediate) entlang der Route einfügen.
 - **Tauschen** &nbsp;&#8595;&#8593; - Die *Start*- und *Ziel*-Punkte umkehren.
@@ -122,7 +122,7 @@ Legen Sie Ihr Ziel im *Navigationsmenü* fest, indem Sie Folgendes verwenden:
 - Die Schaltfläche **Abbrechen** führt zurück zum Hauptbildschirm.
 - Die [Start-Schaltfläche](#start--stop-navigation) startet die Navigation, nachdem die Routenberechnung abgeschlossen ist.
   
-### Startpunkt auswählen {#select-starting-point}
+### Startpunkt auswählen {#select-start-point}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -183,13 +183,13 @@ Das Wichtigste, um die Navigation zu starten, ist die Bestimmung Ihres Ziels. De
 
 <TabItem value="android" label="Android">
 
-![Navigation Zwischenziel Android 1](@site/static/img/navigation/route/navigation_interpoints_1_andr.png) ![Navigation Zwischenziel Android 2](@site/static/img/navigation/route/navigation_interpoints_2_andr.png)
+![Navigation Zwischenziele Android 1](@site/static/img/navigation/route/navigation_interpoints_1_andr.png) ![Navigation Zwischenziele Android 2](@site/static/img/navigation/route/navigation_interpoints_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Zwischenziel iOS 1](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_1.png) ![Navigation Zwischenziel iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_2.png)
+![Navigation Zwischenziele iOS 1](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_1.png) ![Navigation Zwischenziele iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_2.png)
 
 </TabItem>
 
@@ -208,13 +208,13 @@ Wenn Sie in der Zielliste **Sortieren** (*Android*) oder **Optionen** (*iOS*) w�
 
 <TabItem value="android" label="Android">
 
-![Navigation Zwischenziel Android 3](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
+![Navigation Zwischenziele Android 3](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Zwischenziel iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
+![Navigation Zwischenziele iOS 2](@site/static/img/navigation/route/navigation_by_route_intermediate_ios_3.png)
 
 </TabItem>
 
@@ -287,13 +287,13 @@ Wenn die Aufzeichnung des [Navigationsverlaufs](../../personal/global-settings.m
 
 <TabItem value="android" label="Android">
 
-![Navigationsstartbildschirm Android](@site/static/img/navigation/route/navigation_start_andr.png)  
+![Navigationsbildschirm Start Android](@site/static/img/navigation/route/navigation_start_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigationsbildschirm iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Navigationsbildschirm iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -325,7 +325,7 @@ Diese Option ist in der Android-Version der App in der *[Benachrichtigungsliste]
 Um die Navigation fortzusetzen:
 
 - Verwenden Sie die Nachricht von OsmAnd in der Benachrichtigungsleiste.
-- Verwenden Sie das *Schnellaktionsmenü* oder den Dialog, der erscheint, wenn Sie auf die *[Navigationsschaltfläche](../../widgets/map-buttons.md#directions)* tippen (siehe Screenshot).
+- Verwenden Sie das *Schnellaktionsmenü* oder den Dialog, der erscheint, wenn Sie auf die *[Navigationsschaltfläche](../../widgets/map-buttons.md#navigation)* tippen (siehe Screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -473,7 +473,7 @@ Um eine Route zu erstellen, müssen alle **notwendigen Karten** heruntergeladen 
 
 <TabItem value="ios" label="iOS">
 
-![Meldung keine Karten beim Erstellen der Navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Meldung keine Karten beim Erstellen der Navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

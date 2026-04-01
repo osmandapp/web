@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -82,6 +82,8 @@ Veuillez noter que les mises à jour mensuelles des cartes sont considérées co
 - [Wikipédia](../plugins/wikipedia.md). Carte vectorielle avec des articles [Wikipédia](https://wikipedia.org/) géolocalisés sur des points de repère ou des informations supplémentaires sur des lieux.
 - [Wikivoyage](../plan-route/travel-guides.md). Fournit des cartes vectorielles avec des guides de voyage virtuels, offrant aux utilisateurs des informations, des recommandations et des conseils précieux.
 - [Prévisions météo](../plugins/weather.md). Informations météorologiques sur une carte pour faciliter la planification d'itinéraires.
+
+Sans abonnement actif, ces types de cartes affichent un bouton *Obtenir* au lieu de Télécharger. Appuyez sur *Obtenir* pour ouvrir l'écran d'abonnement et choisir un plan.
 
 
 ## Menu Téléchargements {#downloads-menu}

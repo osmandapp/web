@@ -1,6 +1,18 @@
 import { useContext, useEffect, useMemo, useState, useRef } from 'react';
 import AppContext, { isLocalTrack } from '../../../context/AppContext';
-import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
+import {
+    Box,
+    Button,
+    Collapse,
+    Grid,
+    Icon,
+    IconButton,
+    ListItemText,
+    MenuItem,
+    Switch,
+    Tooltip,
+    Typography,
+} from '@mui/material';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
 import PointManager from '../../../manager/PointManager';
 import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../../manager/track/TracksManager';
@@ -9,6 +21,8 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
 import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
+import { ReactComponent as EmptyIcon } from '../../../assets/icons/ic_action_track_disabled.svg';
+import styles from '../../../menu/errors/errors.module.css';
 
 // distinct component
 const WaypointGroup = ({
@@ -217,8 +231,7 @@ const WaypointRow = ({ point, index, ctx }) => {
 
 export default function WaypointsTab() {
     const ctx = useContext(AppContext);
-
-    const [openWptAlert, setOpenWptAlert] = useState(true);
+    const hasWaypoints = !!ctx.selectedGpxFile?.wpts && !isEmpty(ctx.selectedGpxFile.wpts);
 
     function deleteAllWpts() {
         confirm({
@@ -328,55 +341,63 @@ export default function WaypointsTab() {
 
     return (
         <>
-            <MenuItem id="se-waypoints-tab-content" divider sx={{ px: 1, py: 1 }}>
-                <Grid container alignItems="center">
-                    <Grid item xs={7}>
-                        {ctx.createTrack && ctx.selectedGpxFile?.wpts && !isEmpty(ctx.selectedGpxFile.wpts) && (
-                            <Button
-                                variant="contained"
-                                sx={{
-                                    backgroundColor: '#fbc73a',
-                                    fontSize: '12px',
-                                    minWidth: '20px',
-                                    padding: '3px 5px',
-                                    marginLeft: '5px',
-                                }}
-                                onClick={deleteAllWpts}
-                            >
-                                Clear all waypoints
-                            </Button>
-                        )}
+            {hasWaypoints && (
+                <MenuItem id="se-waypoints-tab-content" divider sx={{ px: 1, py: 1 }}>
+                    <Grid container alignItems="center">
+                        <Grid item xs={7}>
+                            {ctx.createTrack && (
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        backgroundColor: '#fbc73a',
+                                        fontSize: '12px',
+                                        minWidth: '20px',
+                                        padding: '3px 5px',
+                                        marginLeft: '5px',
+                                    }}
+                                    onClick={deleteAllWpts}
+                                >
+                                    Clear all waypoints
+                                </Button>
+                            )}
+                        </Grid>
+                        <Grid item xs={2} sx={{ mb: '-4px' }} onClick={switchMassVisible}>
+                            {showMass && (massVisible ? 'Hide All' : 'Show All')}
+                        </Grid>
+                        <Grid item xs={2}>
+                            {showMass && (
+                                <IconButton onClick={switchMassVisible}>
+                                    <Switch id={'se-wpt-mass-visibility-switch'} checked={massVisible} />
+                                </IconButton>
+                            )}
+                        </Grid>
+                        <Grid item xs={1}>
+                            {showMass && (
+                                <IconButton onClick={switchMassOpen}>
+                                    {massOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
+                                </IconButton>
+                            )}
+                        </Grid>
                     </Grid>
-                    <Grid item xs={2} sx={{ mb: '-4px' }} onClick={switchMassVisible}>
-                        {showMass && (massVisible ? 'Hide All' : 'Show All')}
-                    </Grid>
-                    <Grid item xs={2}>
-                        {showMass && (
-                            <IconButton onClick={switchMassVisible}>
-                                <Switch id={'se-wpt-mass-visibility-switch'} checked={massVisible} />
-                            </IconButton>
-                        )}
-                    </Grid>
-                    <Grid item xs={1}>
-                        {showMass && (
-                            <IconButton onClick={switchMassOpen}>
-                                {massOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
-                            </IconButton>
-                        )}
-                    </Grid>
-                </Grid>
-            </MenuItem>
+                </MenuItem>
+            )}
 
-            {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || isEmpty(ctx.selectedGpxFile.wpts)) && (
-                <Alert
-                    sx={{ mt: 2 }}
-                    severity="info"
-                    onClose={() => {
-                        setOpenWptAlert(false);
-                    }}
-                >
-                    Use the context menu to add a waypoint...
-                </Alert>
+            {!hasWaypoints && (
+                <Box className={styles.block} id="se-empty-waypoints-tab">
+                    <Icon className={styles.icon}>
+                        <EmptyIcon className={styles.icon} />
+                    </Icon>
+                    <Box className={styles.info}>
+                        <ListItemText disableTypography={true} className={styles.title}>
+                            No waypoints yet
+                        </ListItemText>
+                        <ListItemText disableTypography={true} className={styles.text}>
+                            {isLocalTrack(ctx)
+                                ? 'Use the context menu to add a waypoint. You can use "Plan a Route" tool to add waypoint.'
+                                : 'You can use "Plan a Route" tool to add waypoint.'}
+                        </ListItemText>
+                    </Box>
+                </Box>
             )}
             {allGroups}
         </>

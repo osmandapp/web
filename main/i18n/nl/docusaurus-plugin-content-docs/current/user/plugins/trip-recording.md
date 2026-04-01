@@ -1,6 +1,6 @@
 ---
-source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
-sidebar_position: 15
+source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+sidebar_position: 17
 title:  Ritten Registreren
 ---
 
@@ -297,7 +297,7 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 | **Voertuigmetrieken** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van een [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) worden gelogd in het GPX-bestand. Alleen weergegeven wanneer de [plug-in Voertuigmetrieken](../plugins/vehicle-metrics.md) is ingeschakeld.<br />*Opmerking*: U kunt toevoegen welke metrieken u wilt opnemen in het GPX-bestand uit de lijst: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Opslagmap voor tracks** (*Android*) | Bepaalt waar in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* opgenomen tracks worden opgeslagen. Opties zijn onder meer het opslaan van alle tracks in de map Rec of het organiseren ervan per maand, zoals Rec/jjjjj-mm. |
 | **Melding** | Regelt de weergave van een systeemmelding voor [ritregistratie](#notifications) in het meldingengebied van het apparaat, waarmee u ritten kunt starten. |
-| **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details><br />OsmAnd slaat de niet-verzonden locatiepunten alleen op in het tijdelijke geheugen van de app terwijl de applicatie draait. Dit betekent dat de buffer niet naar permanente opslag wordt geschreven. Als de app wordt gesloten, geforceerd gestopt of het apparaat herstart, gaan alle gebufferde punten verloren.<br />De instelling Tijdbuffer definieert niet hoe lang punten in het geheugen worden bewaard — het fungeert alleen als een filter op het moment van uploaden. Wanneer OsmAnd probeert gebufferde punten te verzenden, wordt elk punt gecontroleerd op de limiet van de Tijdbuffer. Punten ouder dan de geselecteerde limiet (bijv. 24 uur) worden verwijderd in plaats van geüpload. Als gevolg hiervan kan de buffer tijdelijk punten bevatten die ouder zijn dan de gekozen Tijdbuffer-waarde, maar deze punten worden weggegooid tijdens het uploadproces. |
+| **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li><li>`batproc={11}`: Batterijniveau van apparaat (percentage)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details><br />OsmAnd slaat de niet-verzonden locatiepunten alleen op in het tijdelijke geheugen van de app terwijl de applicatie draait. Dit betekent dat de buffer niet naar permanente opslag wordt geschreven. Als de app wordt gesloten, geforceerd gestopt of het apparaat herstart, gaan alle gebufferde punten verloren.<br />De instelling Tijdbuffer definieert niet hoe lang punten in het geheugen worden bewaard — het fungeert alleen als een filter op het moment van uploaden. Wanneer OsmAnd probeert gebufferde punten te verzenden, wordt elk punt gecontroleerd op de limiet van de Tijdbuffer. Punten ouder dan de geselecteerde limiet (bijv. 24 uur) worden verwijderd in plaats van geüpload. Als gevolg hiervan kan de buffer tijdelijk punten bevatten die ouder zijn dan de gekozen Tijdbuffer-waarde, maar deze punten worden weggegooid tijdens het uploadproces. |
 | **Tracks** | Een snelle verwijzing naar de map waar tracks worden opgeslagen in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Plug-ininstellingen naar standaard resetten** | Reset alle ritregistratie-instellingen voor het huidige profiel naar hun standaardwaarden. |
 | **Kopiëren van een ander profiel** (*Android*) | Kopieert de ritregistratie-instellingen van het ene profiel naar het andere. |
@@ -356,7 +356,7 @@ De app-pictogrambadge verschijnt naast het OsmAnd-pictogram wanneer de trackregi
 
 ## Widgets {#widgets}
 
-Widgets stellen u in staat om belangrijke informatie over de trackregistratie direct op het scherm weer te geven, zoals *Afstand*, *Duur*, *Stijgen*, *Dalen*, *Max Snelheid* en *Gemiddelde Helling*. Op iOS kunt u ook de *Tijd in Beweging* widget toevoegen.
+Widgets stellen u in staat om belangrijke informatie over de trackregistratie direct op het scherm weer te geven, zoals *Gemiddelde Helling*, *Afstand*, *Dalen*, *Duur*, *Max Snelheid*, *Tijd in Beweging* en *Stijgen*. Op Android kunt u ook de *Gemiddelde Snelheid* widget toevoegen.
 
 Om *widgets voor Ritten Registreren* te gaan gebruiken, moet u alle volgende instellingen doen:
 
@@ -373,7 +373,7 @@ Om *widgets voor Ritten Registreren* te gaan gebruiken, moet u alle volgende ins
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Afstand/Start-Stop widget toevoegen in Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
+![Afstand/Start-Stop widget toevoegen in Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -412,36 +412,18 @@ Om uw interface aan te passen, kunt u de widget Ritten Registreren en [andere wi
 
 Sommige widgets voor Ritten Registreren ondersteunen meerdere weergavemodi. Modi laten u schakelen tussen algemene reiswaarden en metrieken voor het meest recente stijgings- of dalingssegment van de momenteel opgenomen rit.
 
-De volgende modi kunnen beschikbaar zijn afhankelijk van de widget.
-1. **Gemiddelde Helling**:
-- Laatste daling  
-- Laatste stijging  
-
-2. **Afstand (Start-Stop)**:
-- Totale afstand (standaard)
-- Laatste daling
-- Laatste stijging
-
-3. **Dalen**:
-- Totaal (standaard)
-- Laatste daling
-
-4. **Max Snelheid**:
-- Totaal (standaard)
-- Laatste daling
-- Laatste stijging
-
-5. **Tijd in Beweging** (*Alleen iOS*)
-- Totaal (standaard)
-- Laatste daling
-- Laatste stijging
-
-6. **Stijgen**:
-- Totaal (standaard)
-- Laatste stijging
+| **Widget** | **Beschikbare modi**  |
+|-------|-------------|
+| Gemiddelde Helling | Laatste daling; Laatste stijging |
+| Gemiddelde Snelheid (*Alleen Android*) | Gemiddelde rit (standaard); Laatste daling; Laatste stijging |
+| Afstand (Start-Stop) | Gemiddelde rit (standaard); Laatste daling; Laatste stijging |
+| Dalen | Totaal (standaard); Laatste daling |
+| Max Snelheid | Totaal (standaard); Laatste daling; Laatste stijging |
+| Tijd in Beweging | Totaal (standaard); Laatste daling; Laatste stijging |
+| Stijgen | Totaal (standaard); Laatste stijging |
 
 Moduswisseling hangt af van de widget:
-- Stijgen / Dalen / Max Snelheid / Gemiddelde Helling / Tijd in Beweging — tik op de widget op de kaart om de modus te wisselen.
+- Stijgen / Dalen / Max Snelheid / Gemiddelde Helling / Tijd in Beweging / Gemiddelde Snelheid — tik op de widget op de kaart om de modus te wisselen.
 - Afstand (Start-Stop) — de Afstand-widget ondersteunt meerdere weergavemodi (selecteer ze in de widgetinstellingen), maar het tikken erop opent altijd het dialoogvenster Ritten Registreren, waar u kunt starten, stoppen en gedetailleerde informatie over uw track kunt bekijken. 
 
 Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets in Laatste stijging of Laatste daling modus 0 of — (geen gegevens).
@@ -464,13 +446,15 @@ Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets
 |------------|
 |**Gemiddelde Helling**. Toont de gemiddelde helling voor het laatste stijgings- of dalingssegment van de huidige rit, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Gemiddelde Snelheid** (*Alleen Android*). Toont de gemiddelde snelheid voor de momenteel opgenomen rit, of de gemiddelde snelheid tijdens het laatste stijgings- of dalingssegment, afhankelijk van de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Duur**. Toont de totale tijd van de huidige ritregistratie in uren en minuten. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Max Snelheid**. Toont de maximale snelheid voor de momenteel opgenomen rit in de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Tijd in Beweging** (*Alleen iOS*). Toont de tijd in beweging voor de momenteel opgenomen rit, of de tijd voor de laatste stijging en daling, afhankelijk van de geselecteerde modus. |
+|**Tijd in Beweging**. Toont de tijd in beweging voor de momenteel opgenomen rit, of de tijd voor de laatste stijging en daling, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Stijgen**. Toont de totale stijging of het laatste stijgingssegment, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|

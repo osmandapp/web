@@ -85,14 +85,18 @@ To track down issues with wrong or sub-optimum routes, please open a new posting
 
 ## Road Information {#road-information}
 
-### OsmAnd only shows some speed cams {#osmand-only-shows-some-speed-cams}
+### Why some speed camera warnings may not be triggered {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 Due to the geodata taken from the OpenStreetMap project there are by now two methods how speed cameras are integrated in the raw OSM data:
 
-- A point (called "node" in OSM terminology) of a way is tagged with "highway=speed_camera", see OSM wiki at [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- A point (called "node" in OSM terminology) of a way is tagged with `highway=speed_camera`, see OSM wiki at [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - A group of OSM data elements are joined together in a so called "relation" that contains more elements than a single node to describe the direction that is covered by the speed trap. See [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Currently, OsmAnd can only make use of the elements that consists of a single node. Analyzing of relations is to come in a future release.
+OsmAnd supports both methods. Speed camera warnings may be triggered for cameras mapped with `highway=speed_camera` as well as for cameras defined through an `enforcement` relation.
+
+If a speed camera node is placed directly on the road, the `highway=speed_camera` tag is sufficient for OsmAnd to detect it and display warnings.
+
+If the camera is mapped next to the road rather than on it, it must be connected to the road using an `enforcement` relation. Otherwise, OsmAnd may not associate the camera with the road and the warning will not be triggered.
 
 
 ## Voice Navigation {#voice-navigation}

@@ -1,5 +1,5 @@
 ---
-source-hash: a53454c8a0f9f2f19df1236a67ed3ac322f3c92ec0a7817bda579bd8c4c75a27
+source-hash: 91a31a428026d3f096ac2e5ae3c87ed7602a196858aeed773cb52ba0586c9450
 sidebar_position: 4
 ---
 
@@ -33,17 +33,17 @@ OsmAnd veröffentlicht täglich mehrere gebrauchsfertige Builds, die es Ihnen er
 
 ## Was ist neu? {#whats-new}
 
-- Neues experimentelles Starwatcher-Plugin mit einer astronomischen Überlagerung, die die Bahnen der Sonne, Planeten und Sterne auf der Karte anzeigt, mit Auswahl von Zeit und Datum sowie einem dedizierten Aktivitätsbildschirm.
-- Verbesserter **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)**-Abschnitt in den Einstellungen: Backup-Daten, Versionsverlauf und automatische Backup-Einstellungen sind nun unter einem einzigen „OsmAnd Cloud“-Block mit klareren Namen, Symbolen und Speichernutzungsinformationen gruppiert.
-- Aktualisierte **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)**-Optionen für Routen und Straßenattribute: eine klarere Legende, bessere Filter für Wander-, Radfahr- und MTB-Netzwerke sowie mehr Kontrolle darüber, welche Routentypen und Symbolüberlagerungen auf der Karte sichtbar sind.
-- Neue und überarbeitete Höhen- und Navigations-Widgets: Höhenprofile für Routen und GPX-Tracks, Auf-/Abstiegsmetriken, durchschnittliche Steigung und detailliertere Höheninformationen für Reisen und Navigation.
-- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**-Verbesserungen, einschließlich erweiterter Widget-Unterstützung und besserer OBD-II-Integration, sodass wichtige Fahrzeugmetriken wie Geschwindigkeit und kraftstoffbezogene Daten auf dem Autobildschirm leichter sichtbar sind.
-- Flexibleres Layout für Widgets und Karten-Buttons: verbesserte Platzierung im Querformat, bessere Kontrolle über Sichtbarkeit und Erscheinungsbild sowie ein Layout, das Überlappungen zwischen Widgets, Buttons und Datenfeldern reduziert.
-- Erweiterte Favoriten-Verwaltung in **[My Places](https://osmand.net/docs/user/personal/myplaces)**: leistungsstärkere Ordnerbehandlung und Mehrfachauswahl für Favoriten sowie Grundlagen für das direkte Anhängen von Medien (Fotos, Videos, Audio-Notizen) an Favoritenpunkte.
-- Intelligantere Track-Organisation und Statistiken: Smart Folders können Tracks automatisch nach Periode, Aktivität, Distanz, Geschwindigkeit, Standort und anderen Parametern gruppieren, mit klareren Zusammenfassungsstatistiken für jede Gruppe.
-- Erweiterte Routen- und Track-Analyse: neue Diagramme für Straßentyp, Oberfläche, Glätte, Steilheit, Spuren und Höchstgeschwindigkeit sowie die Option, Tracks mit einer festen Geschwindigkeitspalette zu färben.
-- Laufende Verbesserungen der Barrierefreiheitsfunktionen, einschließlich flexiblerer Audio- und haptischer Navigationshinweise sowie eines reichhaltigeren „Umschauen“-Erlebnisses für sehbehinderte Nutzer.
-- Erste Grundlagen für die Smartwatch-Integration, die die Unterstützung für das Anzeigen von Navigationsinformationen und Aufzeichnungsdaten auf tragbaren Geräten vorbereitet.
+- Neues experimentelles **[Astronomie-Plugin](https://osmand.net/docs/user/plugins/astronomy)** mit einer astronomischen Überlagerung, die die Bahnen der Sonne, Planeten und Sterne anzeigt.
+- Verbesserter **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)**-Abschnitt mit klareren Backup-, Versionsverlauf- und automatischen Backup-Einstellungen.
+- Aktualisierte **[Karte konfigurieren](https://osmand.net/docs/user/map/configure-map-menu)**-Optionen mit einer klareren Legende und verbesserten Filtern für Wander-, Radfahr- und MTB-Routen.
+- Neue und überarbeitete Höhen- und Navigations-Widgets mit Höhenprofilen, Auf-/Abstiegsmetriken und durchschnittlicher Steigung.
+- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**-Verbesserungen mit erweiterter Widget-Unterstützung und besserer OBD-II-Integration.
+- Flexibleres **[Widget- und Karten-Button-Layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, insbesondere im Querformat.
+- Erweiterte Favoriten-Verwaltung in **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
+- Intelligantere Track-Organisation mit Smart Folders und klareren Zusammenfassungsstatistiken.
+- Erweiterte Routen- und Track-Analyse.
+- Verbesserte Barrierefreiheitsfunktionen, einschließlich flexiblerer Audio- und haptischer Navigationsrückmeldungen.
+- Erste Grundlagen für die Smartwatch-Integration für Navigations- und Aufzeichnungsdaten von Reisen.
 
 
 ## Fehlerbehebungen {#bug-fixes}
@@ -53,4 +53,3 @@ OsmAnd veröffentlicht täglich mehrere gebrauchsfertige Builds, die es Ihnen er
 - Verbessertes **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**-Navigationsverhalten, einschließlich korrekter Ausfahrtsrichtungen an Kreisverkehren und ordnungsgemäßer Platzierung von Bildschirmwerkzeugen wie dem Radiuslineal.
 - Behebung mehrerer Probleme im Zusammenhang mit dem **[Accessibility](https://osmand.net/docs/user/plugins/accessibility)**-Modus, einschließlich Navigationsansagen und Interaktion mit bestimmten Kartenwerkzeugen.
 - Allgemeine Interface- und Leistungsbehebungen in der Kartenrendering, Widget-Anzeige und Konfigurationsbildschirmen.
-

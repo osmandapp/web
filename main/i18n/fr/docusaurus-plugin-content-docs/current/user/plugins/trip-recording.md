@@ -1,6 +1,6 @@
 ---
-source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
-sidebar_position: 15
+source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+sidebar_position: 17
 title:  Enregistrement de trajet
 ---
 
@@ -297,7 +297,7 @@ Avant de commencer à suivre vos trajets, vous devez configurer correctement le 
 | **Métriques du véhicule** <br/> *Nécessite l'activation du plugin* | Les données du [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) sont enregistrées dans le fichier GPX. Affiché uniquement lorsque le [plugin Métriques du véhicule](../plugins/vehicle-metrics.md) est activé.<br />*Note* : Vous pouvez ajouter les métriques à enregistrer dans le fichier GPX depuis la liste : *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Dossier de stockage des traces** (*Android*) | Définit où les traces enregistrées sont stockées dans l'onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. Les options incluent le stockage de toutes les traces dans le dossier Rec ou leur organisation par mois, comme Rec/aaaa-mm. |
 | **Notification** | Contrôle l'affichage d'une notification système d'[enregistrement de trajet](#notifications) dans la zone de notification de l'appareil qui vous permet de démarrer l'enregistrement de trajets. |
-| **Suivi en ligne** (*Android*) | Permet le suivi en temps réel de votre position en envoyant les points enregistrés à une URL spécifiée. L'intervalle de suivi détermine la fréquence d'envoi des points, et le tampon temporel stocke les points en l'absence de connexion Internet.<details><summary>*Remarque*</summary>Si cette option est activée et que l'enregistrement de la trace est en cours, le widget Distance/Démarrer-Arrêter (REC) devient **vert** au lieu de **rouge**, indiquant que chaque point enregistré est transmis à une URL spécifiée. Le champ **Adresse Web** vous permet de saisir l'URL en utilisant le format de paramètre suivant :<ul><li>`lat={0}` : Latitude</li><li>`lon={1}` : Longitude</li><li>`timestamp={2}` : Horodatage (temps Unix)</li><li>`hdop={3}` : Dilution horizontale de la précision</li><li>`altitude={4}` : Altitude</li><li>`speed={5}` : Vitesse</li><li>`bearing={6}` : Relèvement (direction du mouvement)</li><li>`eta={7}` : Heure d'arrivée estimée (temps Unix)</li><li>`etfa={8}` : Temps estimé jusqu'au premier point intermédiaire ou point d'arrivée (temps Unix)</li><li>`eda={9}` : Distance estimée jusqu'à l'arrivée ou un marqueur (en mètres)</li><li>`edfa={10}` : Distance estimée jusqu'au premier point intermédiaire ou point d'arrivée (en mètres)</li></ul>Vous pouvez définir l'**Intervalle de suivi** pour spécifier la fréquence d'envoi des points de localisation, avec des options allant de 0 seconde à 5 minutes. De plus, le paramètre **Tampon temporel** détermine la durée de stockage des points de localisation en l'absence de connexion Internet, garantissant que les données sont sauvegardées et transmises lorsque la connexion est rétablie.<br />OsmAnd stocke les points de localisation non envoyés uniquement dans la mémoire temporaire de l'application tant que l'application est en cours d'exécution. Cela signifie que le tampon n'est pas écrit dans un stockage permanent. Si l'application est fermée, arrêtée de force ou si l'appareil redémarre, tous les points tamponnés sont perdus.<br />Le paramètre Tampon temporel ne définit pas la durée pendant laquelle les points sont conservés en mémoire — il ne fonctionne que comme un filtre au moment du téléchargement. Lorsque OsmAnd tente d'envoyer les points tamponnés, chaque point est vérifié par rapport à la limite du Tampon temporel. Les points plus anciens que la limite sélectionnée (par exemple, 24 heures) sont supprimés au lieu d'être téléchargés. En conséquence, le tampon peut temporairement contenir des points plus anciens que la valeur du Tampon temporel choisie, mais ces points seront supprimés pendant le processus de téléchargement.</details> |
+| **Suivi en ligne** (*Android*) | Permet le suivi en temps réel de votre position en envoyant les points enregistrés à une URL spécifiée. L'intervalle de suivi détermine la fréquence d'envoi des points, et le tampon temporel stocke les points en l'absence de connexion Internet.<details><summary>*Remarque*</summary>Si cette option est activée et que l'enregistrement de la trace est en cours, le widget Distance/Démarrer-Arrêter (REC) devient **vert** au lieu de **rouge**, indiquant que chaque point enregistré est transmis à une URL spécifiée. Le champ **Adresse Web** vous permet de saisir l'URL en utilisant le format de paramètre suivant :<ul><li>`lat={0}` : Latitude</li><li>`lon={1}` : Longitude</li><li>`timestamp={2}` : Horodatage (temps Unix)</li><li>`hdop={3}` : Dilution horizontale de la précision</li><li>`altitude={4}` : Altitude</li><li>`speed={5}` : Vitesse</li><li>`bearing={6}` : Relèvement (direction du mouvement)</li><li>`eta={7}` : Heure d'arrivée estimée (temps Unix)</li><li>`etfa={8}` : Temps estimé jusqu'au premier point intermédiaire ou point d'arrivée (temps Unix)</li><li>`eda={9}` : Distance estimée jusqu'à l'arrivée ou un marqueur (en mètres)</li><li>`edfa={10}` : Distance estimée jusqu'au premier point intermédiaire ou point d'arrivée (en mètres)</li><li>`batproc={11}` : Niveau de batterie de l'appareil (pourcentage)</li></ul>Vous pouvez définir l'**Intervalle de suivi** pour spécifier la fréquence d'envoi des points de localisation, avec des options allant de 0 seconde à 5 minutes. De plus, le paramètre **Tampon temporel** détermine la durée de stockage des points de localisation en l'absence de connexion Internet, garantissant que les données sont sauvegardées et transmises lorsque la connexion est rétablie.<br />OsmAnd stocke les points de localisation non envoyés uniquement dans la mémoire temporaire de l'application tant que l'application est en cours d'exécution. Cela signifie que le tampon n'est pas écrit dans un stockage permanent. Si l'application est fermée, arrêtée de force ou si l'appareil redémarre, tous les points tamponnés sont perdus.<br />Le paramètre Tampon temporel ne définit pas la durée pendant laquelle les points sont conservés en mémoire — il ne fonctionne que comme un filtre au moment du téléchargement. Lorsque OsmAnd tente d'envoyer les points tamponnés, chaque point est vérifié par rapport à la limite du Tampon temporel. Les points plus anciens que la limite sélectionnée (par exemple, 24 heures) sont supprimés au lieu d'être téléchargés. En conséquence, le tampon peut temporairement contenir des points plus anciens que la valeur du Tampon temporel choisie, mais ces points seront supprimés pendant le processus de téléchargement.</details> |
 | **Traces** | Une référence rapide vers le dossier où les traces sont sauvegardées dans l'onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Réinitialiser les paramètres du plugin par défaut** | Réinitialise tous les paramètres d'enregistrement de trajet pour le profil actuel à leurs valeurs par défaut. |
 | **Copier depuis un autre profil** (*Android*) | Copie les paramètres d'enregistrement de trajet d'un profil à un autre. |
@@ -356,7 +356,7 @@ Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lor
 
 ## Widgets {#widgets}
 
-Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif*, le *Dénivelé négatif*, la *Vitesse max.* et la *Pente moyenne*. Sur iOS, vous pouvez également ajouter le widget *Temps en mouvement*.
+Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Pente moyenne*, la *Distance*, le *Dénivelé négatif*, la *Durée*, la *Vitesse max.*, le *Temps en mouvement* et le *Dénivelé positif*. Sur Android, vous pouvez également ajouter le widget *Vitesse moyenne*.
 
 Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez effectuer tous les réglages suivants :
 
@@ -373,7 +373,7 @@ Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez 
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisissez un panneau → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Ajout du widget Distance/Démarrer-Arrêter sur Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
+![Ajout du widget Distance/Démarrer-Arrêter sur Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -412,36 +412,18 @@ Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d
 
 Certains widgets d'enregistrement de trajet prennent en charge plusieurs modes d'affichage. Les modes vous permettent de basculer entre les valeurs globales du trajet et les métriques pour la section la plus récente en montée ou en descente du trajet actuellement enregistré.
 
-Les modes suivants peuvent être disponibles en fonction du widget.
-1. **Pente moyenne** :
-- Dernière descente  
-- Dernière montée  
-
-2. **Distance (Démarrer-Arrêter)** :
-- Distance totale (par défaut)
-- Dernière descente
-- Dernière montée
-
-3. **Dénivelé négatif** :
-- Total (par défaut)
-- Dernière descente
-
-4. **Vitesse max.** :
-- Total (par défaut)
-- Dernière descente
-- Dernière montée
-
-5. **Temps en mouvement** (*iOS uniquement*)
-- Total (par défaut)
-- Dernière descente
-- Dernière montée
-
-6. **Dénivelé positif** :
-- Total (par défaut)
-- Dernière montée
+| **Widget** | **Modes disponibles**  |
+|-------|-------------|
+| Pente moyenne | Dernière descente ; Dernière montée |
+| Vitesse moyenne *(Android uniquement)* | Moyenne du trajet (par défaut) ; Dernière descente ; Dernière montée |
+| Distance (Démarrer-Arrêter) | Moyenne du trajet (par défaut) ; Dernière descente ; Dernière montée |
+| Dénivelé négatif | Total (par défaut) ; Dernière descente |
+| Vitesse max. | Total (par défaut) ; Dernière descente ; Dernière montée |
+| Temps en mouvement | Total (par défaut) ; Dernière descente ; Dernière montée |
+| Dénivelé positif | Total (par défaut) ; Dernière montée |
 
 Le basculement de mode dépend du widget :
-- Dénivelé positif / Dénivelé négatif / Vitesse max. / Pente moyenne / Temps en mouvement — appuyez sur le widget sur la carte pour basculer son mode.
+- Dénivelé positif / Dénivelé négatif / Vitesse max. / Pente moyenne / Temps en mouvement / Vitesse moyenne — appuyez sur le widget sur la carte pour basculer son mode.
 - Distance (Démarrer-Arrêter) — le widget Distance prend en charge plusieurs modes d'affichage (sélectionnez-les dans les paramètres du widget), mais l'appui dessus ouvre toujours la boîte de dialogue d'enregistrement de trajet, où vous pouvez démarrer, arrêter et afficher des informations détaillées sur votre trace. 
 
 Si l'enregistrement actuel ne contient pas encore de section en montée ou en descente, les widgets en mode Dernière montée ou Dernière descente affichent 0 ou — (pas de données).
@@ -469,13 +451,15 @@ Le widget Distance prend en charge plusieurs modes d'affichage :
 |------------|
 |**Pente moyenne**. Affiche la pente moyenne pour la dernière section de montée ou de descente du trajet actuel, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Vitesse moyenne** *(Android uniquement)*. Affiche la vitesse moyenne pour le trajet enregistré actuellement, ou la vitesse moyenne pendant la dernière section de montée ou de descente, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Vitesse max.** . Affiche la vitesse maximale pour le trajet enregistré actuellement dans le mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Temps en mouvement** (*iOS uniquement*). Affiche le temps en mouvement pour le trajet enregistré actuellement, ou le temps pour la dernière montée et descente, en fonction du mode sélectionné. |
+|**Temps en mouvement**. Affiche le temps en mouvement pour le trajet enregistré actuellement, ou le temps pour la dernière montée et descente, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|

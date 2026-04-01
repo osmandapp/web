@@ -1,5 +1,5 @@
 ---
-source-hash: a53454c8a0f9f2f19df1236a67ed3ac322f3c92ec0a7817bda579bd8c4c75a27
+source-hash: 91a31a428026d3f096ac2e5ae3c87ed7602a196858aeed773cb52ba0586c9450
 sidebar_position: 4
 ---
 
@@ -33,17 +33,17 @@ OsmAnd lanza varias compilaciones listas para usar diariamente, lo que le permit
 
 ## Novedades {#whats-new}
 
-- Nuevo plugin experimental Starwatcher con una superposición astronómica que muestra las trayectorias del Sol, los planetas y las estrellas en el mapa, con selección de hora y fecha y una pantalla de actividad dedicada.
-- Sección mejorada de **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** en Configuración: los datos de respaldo, el historial de versiones y la configuración de respaldo automático ahora están agrupados en un solo bloque “OsmAnd Cloud” con nombres más claros, iconos e información de uso de almacenamiento.
-- Opciones actualizadas de **[Configurar mapa](https://osmand.net/docs/user/map/configure-map-menu)** para rutas y atributos de carretera: una leyenda más clara, mejores filtros para redes de senderismo, ciclismo y MTB, además de más control sobre qué tipos de rutas e superposiciones de iconos son visibles en el mapa.
-- Nuevos widgets de elevación y navegación rediseñados: perfiles de elevación para rutas y pistas GPX, métricas de subida/bajada, pendiente promedio y más información detallada de elevación para viajes y navegación.
-- Mejoras en **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**, incluyendo soporte extendido para widgets y mejor integración con OBD II, por lo que las métricas clave del vehículo como la velocidad y los datos relacionados con el combustible son más fáciles de ver en la pantalla del coche.
-- Diseño más flexible para widgets y botones del mapa: mejor colocación en modo horizontal, mejor control sobre la visibilidad y apariencia, y un diseño que reduce las superposiciones entre widgets, botones y campos de datos.
-- Gestión mejorada de Favoritos en **[Mis lugares](https://osmand.net/docs/user/personal/myplaces)**: manejo más potente de carpetas y multiselección para favoritos, además de los cimientos para adjuntar medios (fotos, videos, notas de audio) directamente a puntos favoritos.
-- Organización y estadísticas más inteligentes de pistas: las Carpetas Inteligentes pueden agrupar automáticamente las pistas por período, actividad, distancia, velocidad, ubicación y otros parámetros, con estadísticas de resumen más claras para cada grupo.
-- Análisis avanzado de rutas y pistas: nuevos gráficos para tipo de carretera, superficie, suavidad, pendiente, carriles y velocidad máxima, junto con una opción para colorear pistas usando una paleta de velocidad fija.
-- Mejoras continuas en las funciones de accesibilidad, incluyendo indicaciones de navegación de audio y hápticas más flexibles y una experiencia de “mirar alrededor” más rica para usuarios con discapacidad visual.
-- Trabajo inicial para la integración con relojes inteligentes, preparando el soporte para ver información de navegación y datos de grabación de viajes en dispositivos wearables.
+- Nuevo plugin experimental **[Astronomía](https://osmand.net/docs/user/plugins/astronomy)** con una superposición astronómica que muestra las trayectorias del Sol, los planetas y las estrellas.
+- Sección mejorada de **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** con configuraciones de respaldo, historial de versiones y respaldo automático más claras.
+- Opciones actualizadas de **[Configurar mapa](https://osmand.net/docs/user/map/configure-map-menu)** con una leyenda más clara y filtros mejorados para rutas de senderismo, ciclismo y MTB.
+- Nuevos widgets de elevación y navegación rediseñados con perfiles de elevación, métricas de subida/bajada y pendiente promedio.
+- Mejoras en **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** con soporte extendido para widgets e integración mejorada con OBD II.
+- Diseño más flexible de **[disposición de widgets y botones del mapa](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especialmente en modo horizontal.
+- Gestión mejorada de Favoritos en **[Mis lugares](https://osmand.net/docs/user/personal/myplaces)**.
+- Organización de pistas más inteligente con Carpetas Inteligentes y estadísticas de resumen más claras.
+- Análisis avanzado de rutas y pistas.
+- Funciones de accesibilidad mejoradas, incluidas indicaciones de navegación de audio y hápticas más flexibles.
+- Trabajo inicial para la integración con relojes inteligentes para información de navegación y datos de grabación de viajes.
 
 
 ## Corrección de errores {#bug-fixes}
@@ -53,4 +53,3 @@ OsmAnd lanza varias compilaciones listas para usar diariamente, lo que le permit
 - Comportamiento de navegación mejorado en **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**, incluyendo direcciones de salida correctas en rotondas y colocación adecuada de herramientas en pantalla como la regla de radio.
 - Corregidos varios problemas relacionados con el modo de **[Accesibilidad](https://osmand.net/docs/user/plugins/accessibility)**, incluyendo anuncios de navegación e interacción con ciertas herramientas del mapa.
 - Correcciones generales de interfaz y rendimiento en el renderizado de mapas, visualización de widgets y pantallas de configuración.
-

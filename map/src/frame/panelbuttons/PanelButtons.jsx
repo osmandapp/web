@@ -1,35 +1,17 @@
 import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/material';
-import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, Download } from '@mui/icons-material';
+import { Delete, Redo, Undo } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, {
-    isRouteTrack,
-    isLocalTrack,
-    isCloudTrack,
-    OBJECT_TYPE_FAVORITE,
-    OBJECT_TYPE_WEATHER,
-    OBJECT_TYPE_POI,
-} from '../../context/AppContext';
+import AppContext, { isLocalTrack, OBJECT_TYPE_WEATHER, OBJECT_TYPE_POI } from '../../context/AppContext';
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
-import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
-import DownloadTrackDialog from '../../dialogs/tracks/DownloadTrackDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import useUndoRedo from '../../infoblock/useUndoRedo';
-import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import RouteIcon from '@mui/icons-material/Route';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import RouteProfileSettings from '../../menu/navigation/RouteProfileSettings';
-import LoginContext from '../../context/LoginContext';
-
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
-    const ltx = useContext(LoginContext);
 
-    const [openRoutingSettings, setOpenRoutingSettings] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-    const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
@@ -38,10 +20,6 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
         !isUndoPossible || (pastStates.length === 1 && isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
     const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
     const isProfileProgress = ctx.processRouting;
-
-    useEffect(() => {
-        openRoutingSettings ? ctx.routeObject.onOpenSettings() : ctx.routeObject.onCloseSettings();
-    }, [openRoutingSettings]);
 
     useEffect(() => {
         if (clearState) {
@@ -100,7 +78,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
 
     return (
         ctx.selectedGpxFile &&
-        ctx.currentObjectType !== OBJECT_TYPE_WEATHER && (
+        isLocalTrack(ctx) && (
             <div
                 style={{
                     marginTop: getMarginTop(),
@@ -119,61 +97,6 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                         orientation={orientation}
                         color="primary"
                     >
-                        {(isCloudTrack(ctx) || isRouteTrack(ctx)) && (
-                            <>
-                                {isRouteTrack(ctx) && (
-                                    <Tooltip title="Routing profile" placement={tooltipOrientation} arrow>
-                                        <IconButton
-                                            id="se-panel-button-profile-icon"
-                                            type="button"
-                                            variant="contained"
-                                            onClick={() => setOpenRoutingSettings(true)}
-                                        >
-                                            {ctx.routeObject.getProfile()?.icon}
-                                        </IconButton>
-                                    </Tooltip>
-                                )}
-                                {isCloudTrack(ctx) && (
-                                    <Tooltip
-                                        title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
-                                        placement={tooltipOrientation}
-                                        arrow
-                                    >
-                                        <IconButton
-                                            id="se-panel-button-edit-icon"
-                                            variant="contained"
-                                            type="button"
-                                            onClick={() =>
-                                                confirm({
-                                                    ctx,
-                                                    text:
-                                                        'Open ' +
-                                                        (isCloudTrack(ctx) ? 'Cloud' : 'Route') +
-                                                        ' track in Local editor?',
-                                                    callback: () => TracksManager.handleEditCloudTrack(ctx),
-                                                })
-                                            }
-                                        >
-                                            {isCloudTrack(ctx) ? (
-                                                <Cloud fontSize="medium" color="primary" />
-                                            ) : (
-                                                <RouteIcon fontSize="medium" color="primary" />
-                                            )}
-                                        </IconButton>
-                                    </Tooltip>
-                                )}
-                                <Tooltip title="Edit locally" arrow placement={tooltipOrientation}>
-                                    <IconButton
-                                        id="se-panel-button-edit-track"
-                                        variant="contained"
-                                        type="button"
-                                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                                    >
-                                        <Create fontSize="small" />
-                                    </IconButton>
-                                </Tooltip>
-                            </>
-                        )}
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement={tooltipOrientation}>
                                 <IconButton
@@ -194,128 +117,62 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ltx.loginUser &&
-                            ltx.accountInfo?.account !== FREE_ACCOUNT &&
-                            (isLocalTrack(ctx) || isRouteTrack(ctx)) && (
-                                <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
-                                    <span style={styleSpan}>
-                                        <IconButton
-                                            id="se-panel-button-save-to-cloud"
-                                            variant="contained"
-                                            type="button"
-                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
-                                            onClick={() => {
-                                                ctx.setUpdateInfoBlock(true);
-                                                ctx.selectedGpxFile.save = true;
-                                                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                            }}
-                                        >
-                                            <CloudUpload fontSize="small" />
-                                        </IconButton>
-                                    </span>
-                                </Tooltip>
-                            )}
-                        {isLocalTrack(ctx) && (
-                            <Tooltip title="Undo" arrow placement={tooltipOrientation}>
-                                <span style={styleSpan}>
-                                    <IconButton
-                                        id="se-panel-button-undo"
-                                        variant="contained"
-                                        type="button"
-                                        disabled={isUndoDisabled}
-                                        onClick={(e) => {
-                                            undo();
-                                            setUseSavedState(true);
-                                            e.stopPropagation();
-                                        }}
-                                    >
-                                        <Undo fontSize="small" />
-                                    </IconButton>
-                                </span>
-                            </Tooltip>
-                        )}
-                        {isLocalTrack(ctx) && (
-                            <Tooltip title="Redo" arrow placement={tooltipOrientation}>
-                                <span style={styleSpan}>
-                                    <IconButton
-                                        id="se-panel-button-redo"
-                                        variant="contained"
-                                        type="button"
-                                        disabled={isRedoDisabled}
-                                        onClick={(e) => {
-                                            redo();
-                                            setUseSavedState(true);
-                                            e.stopPropagation();
-                                        }}
-                                    >
-                                        <Redo fontSize="small" />
-                                    </IconButton>
-                                </span>
-                            </Tooltip>
-                        )}
-                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER && ctx.currentObjectType !== OBJECT_TYPE_POI && (
-                            <Tooltip title="Download GPX" arrow placement={tooltipOrientation}>
-                                <span style={styleSpan}>
-                                    <IconButton
-                                        id="se-panel-button-download-gpx"
-                                        variant="contained"
-                                        type="button"
-                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
-                                        onClick={() => setOpenDownloadDialog(true)}
-                                    >
-                                        <Download fontSize="small" />
-                                    </IconButton>
-                                </span>
-                            </Tooltip>
-                        )}
-                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER &&
-                            ctx.currentObjectType !== OBJECT_TYPE_POI &&
-                            isRouteTrack(ctx) === false && (
-                                <Tooltip title="Delete" arrow placement={tooltipOrientation}>
-                                    <IconButton
-                                        id="se-panel-button-delete-track"
-                                        sx={{ mb: '1px' }}
-                                        variant="contained"
-                                        type="button"
-                                        onClick={() => setOpenDeleteDialog(true)}
-                                    >
-                                        <Delete fontSize="small" />
-                                    </IconButton>
-                                </Tooltip>
-                            )}
-                        {isRouteTrack(ctx) === false && (
-                            <Tooltip title="Close" arrow placement={tooltipOrientation}>
+                        <Tooltip title="Undo" arrow placement={tooltipOrientation}>
+                            <span style={styleSpan}>
                                 <IconButton
-                                    id="se-panel-button-close-track"
+                                    id="se-panel-button-undo"
                                     variant="contained"
                                     type="button"
-                                    onClick={() => {
-                                        doClear();
-                                        setShowInfoBlock(false);
+                                    disabled={isUndoDisabled}
+                                    onClick={(e) => {
+                                        undo();
+                                        setUseSavedState(true);
+                                        e.stopPropagation();
                                     }}
                                 >
-                                    <Close fontSize="small" />
+                                    <Undo fontSize="small" />
+                                </IconButton>
+                            </span>
+                        </Tooltip>
+                        <Tooltip title="Redo" arrow placement={tooltipOrientation}>
+                            <span style={styleSpan}>
+                                <IconButton
+                                    id="se-panel-button-redo"
+                                    variant="contained"
+                                    type="button"
+                                    disabled={isRedoDisabled}
+                                    onClick={(e) => {
+                                        redo();
+                                        setUseSavedState(true);
+                                        e.stopPropagation();
+                                    }}
+                                >
+                                    <Redo fontSize="small" />
+                                </IconButton>
+                            </span>
+                        </Tooltip>
+                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER && ctx.currentObjectType !== OBJECT_TYPE_POI && (
+                            <Tooltip title="Delete" arrow placement={tooltipOrientation}>
+                                <IconButton
+                                    id="se-panel-button-delete-track"
+                                    sx={{ mb: '1px' }}
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => setOpenDeleteDialog(true)}
+                                >
+                                    <Delete fontSize="small" />
                                 </IconButton>
                             </Tooltip>
                         )}
                     </ButtonGroup>
                 </Paper>
                 {ctx.selectedGpxFile.save && <SaveTrackDialog />}
-                {openDeleteDialog && (isLocalTrack(ctx) || isCloudTrack(ctx)) && (
+                {openDeleteDialog && (
                     <DeleteTrackDialog
                         dialogOpen={openDeleteDialog}
                         setDialogOpen={setOpenDeleteDialog}
                         setShowInfoBlock={setShowInfoBlock}
                     />
-                )}
-                {openDeleteDialog && ctx.currentObjectType === OBJECT_TYPE_FAVORITE && (
-                    <DeleteWptDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
-                )}
-                {openRoutingSettings && (
-                    <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenRoutingSettings} />
-                )}
-                {openDownloadDialog && (
-                    <DownloadTrackDialog dialogOpen={openDownloadDialog} setDialogOpen={setOpenDownloadDialog} />
                 )}
             </div>
         )

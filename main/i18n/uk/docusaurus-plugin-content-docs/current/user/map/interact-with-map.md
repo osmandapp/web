@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title:  Взаємодія з мапою
 ---
@@ -216,6 +216,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Вигляд глобуса наразі доступний лише за таких умов:
 - Увімкнено [плагін Розробка](../plugins/development.md).  
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>* 
+- Увімкнено [плагін Топографії](../plugins/topography.md).  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*  
 - [Рушій візуалізації мапи](../personal/global-settings.md#map-rendering-engine) встановлено на Версію 2 (OpenGL).  
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 

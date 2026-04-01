@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Configurar mapa
 ---
@@ -23,7 +23,7 @@ El menú **Configurar mapa** es un elemento importante en el *Menú principal* d
 
 Sección **Mostrar**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Sección **Topografía**:  
 
@@ -43,7 +43,7 @@ Secciones **Rutas y Renderizado de mapa**:
 
 Sección **Mostrar en el mapa**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_show1_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Sección **Topografía**:  
 
@@ -100,7 +100,7 @@ El menú **<Translate android="true" ids="configure_map"/>** se divide en dos ca
    - [Tracks](../map/tracks/index.md) - muestra tracks importados, planificados o grabados sobre el mapa.
    - [Imágenes a nivel de calle](../plugins/mapillary.md#map-layer) - muestra puntos con imágenes a nivel de calle disponibles.
    - [Guías de viaje](../plan-route/travel-guides.md) - muestra guías de viaje en el mapa.
-   - [Wikipedia](../plugins/wikipedia.md) - resalta artículos de Wikipedia vinculados al mapa.
+   - [Lugares populares](../map/popular_places.md) - resalta lugares populares basados en artículos de Wikipedia y los muestra en el mapa.
    - [Edición OSM](../plugins/osm-editing.md#osm-editing-layer) - muestra ediciones de OpenStreetMap, notas y capas auxiliares relacionadas con el mapeo.
    - [Otras capas de complementos](../plugins/index.md#configure-plugin) - muchos complementos añaden sus capas con información extra.
 

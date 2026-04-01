@@ -1,6 +1,6 @@
 ---
-source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
-sidebar_position: 10
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+sidebar_position: 11
 title:  Développement OsmAnd
 ---
 
@@ -53,7 +53,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 <TabItem value="ios" label="iOS">  
 
-![Paramètres de développement iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Paramètres de développement iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 - **Simuler votre position** (*Android* / *iOS*). [Simuler](#gpx-track-simulation) la position et le mouvement à l'aide d'une trace GPX.
 - **Mode d'économie de batterie** (*Android* / *iOS*). Ce paramètre réduit [le taux de rafraîchissement de l'écran](#map-rendering-fps-widget) de 20 images par seconde pour aider à économiser la batterie lors de l'utilisation des applications.
 - **Utiliser des icônes de position 3D** (*iOS*). Permet de sélectionner une icône 3D pour l'[icône Ma position](../personal/profiles.md#my-location-appearance).
-- **Simuler les données OBD** (*Android*). Permet de simuler l'utilisation du [scanner OBD](./vehicle-metrics.md).
-- **Informations de débogage des performances** (*Android*). Affiche les performances de rendu et de navigation.
+- **Simuler les données OBD** (*Android* / *iOS*). Permet de simuler l'utilisation du [scanner OBD](./vehicle-metrics.md).
+- **Informations de débogage des performances** (*Android* / *iOS*). Affiche les performances de rendu et de navigation.
 - **Désactiver les couches de carte** (*Android*). Désactive toutes les couches de carte sur la carte vectorielle (redémarrage requis).
 - **Tampon Logcat** (*Android*). Vérifiez et partagez les journaux détaillés de l'application.  
 - **Afficher un toast sur la touche pressée** (*Android*). Affiche un message sur la touche.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Le relèvement est la direction de la boussole depuis votre position actuelle jusqu'à votre destination prévue. Affecte l'*[enregistrement de trace](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Le cap est la direction de la boussole depuis votre position actuelle vers le nord vrai. Cette option est activée par défaut. Affecte l'*[enregistrement de trace](../plugins/trip-recording.md)*.
+- **Activer MSAA** (*Android*) / **Activer MSAA pour CarPlay** (*iOS*). Active l'antialiasage multisample pour lisser le rendu de la carte. Améliore la qualité visuelle de l'[icône Ma position](../personal/profiles.md#my-location-appearance) et de la ligne d'itinéraire en réduisant les bords pixélisés. Sur Android, cette option affecte le rendu de la carte sur l'appareil et lors de l'utilisation de [Android Auto](../navigation/auto-car.md). Sur iOS, elle s'applique uniquement à [CarPlay](../navigation/car-play.md).
 
 
 ### Test de l'application {#application-testing}

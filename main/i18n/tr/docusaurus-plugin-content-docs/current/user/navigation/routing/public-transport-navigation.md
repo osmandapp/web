@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title: Toplu Taşıma Yönlendirme
 ---
@@ -142,19 +142,29 @@ Kullanıcı arayüzü, Alternatif Rotaları refs'leri ile renkli rozetler olarak
 
 ## Performans ve Sonuçlar {#performance-and-results}
 
-**Toplu Taşıma profili -&gt; Ayarlar -&gt; Navigasyon ayarları -&gt; Rota parametreleri**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Maksimum ulaşım değişikliği sayısı**.
+<TabItem value="android" label="Android">
 
-Toplu Taşıma Yönlendiricisinin performansı ve bellek tüketimi, arama derinliğine bağlıdır.
+![Maksimum Ulaşım Değişikliği Sayısı](@site/static/img/navigation/public/maximum_number_android.png) 
 
-Bu derinliği etkileyen en önemli parametre **Maksimum ulaşım değişikliği sayısı**'dır.
+</TabItem>
 
-Varsayılan değer olarak **2** kullanıyoruz, bu modern toplu taşıma ağları için optimal görünüyor.
+<TabItem value="ios" label="iOS">  
 
-Düşük performans veya bellek hatası ile karşılaşırsanız, bu değeri düşürmeyi deneyin.
+![Maksimum Ulaşım Değişikliği Sayısı](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Küçük bir şehirdeyseniz veya kısa rotalarla seyahat ediyorsanız, **1** değeri daha iyi çalışabilir.
+</TabItem>
+
+</Tabs>
+
+Şuraya gidin: *<Translate android="true" ids="shared_string_settings"/>* *→ Toplu Taşıma profili →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Maksimum ulaşım değişikliği sayısı*
+
+Toplu Taşıma Yönlendiricisinin performansı ve bellek tüketimi, arama derinliğine bağlıdır. Bu derinliği etkileyen en önemli parametre **Maksimum ulaşım değişikliği sayısı**'dır.
+
+Bu parametre ayrıca rotaların kullanılabilirliğini ve kalitesini doğrudan etkiler. Değer çok düşük ayarlanırsa (örneğin, 0), OsmAnd uygun rotaları bulamayabilir veya aktarmalı daha iyi rotalar mevcutken suboptimal seçenekler önerebilir.
+
+Varsayılan değer olarak **2** kullanıyoruz, bu modern toplu taşıma ağları için optimal görünüyor. Düşük performans veya bellek hatası ile karşılaşırsanız, bu değeri düşürmeyi deneyin. Küçük bir şehirdeyseniz veya kısa rotalarla seyahat ediyorsanız, **1** değeri daha iyi çalışabilir.
 <!--
 There are two more parameters that help you choose the best routes.
 

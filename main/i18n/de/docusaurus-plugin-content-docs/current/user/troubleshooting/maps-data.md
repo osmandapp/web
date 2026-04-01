@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title:  Karten & Daten
 ---
@@ -116,6 +116,30 @@ Um das Problem des langsamen Karten-Renderings zu beheben, insbesondere bei der 
 6. **Verwenden Sie nur Offline-Karten.** Online-Karten, insbesondere wenn sie nicht im Voraus heruntergeladen wurden, können das Laden der Karte verlangsamen. Wechseln Sie zur Verwendung von nur Offline-Karten für eine reibungslosere Leistung.
 
 Diese Änderungen sollten die Zeit, die zum Rendern von Karten benötigt wird, insbesondere während der Navigation, reduzieren. Weitere detaillierte Konfigurationsoptionen finden Sie im [Leitfaden zu den Karteneinstellungen](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+
+### Was bedeutet „Kostenlose Updates (Notfall)“? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Notfallzugriff Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Notfallzugriff iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Notfall-Karten-Updates** können für bestimmte Regionen während Krisen- oder Notfallsituationen aktiviert werden. In diesen Fällen sind Karten vorübergehend mit kostenlosen und häufigeren Updates verfügbar.
+
+Wenn diese Funktion aktiv ist, kann der Bildschirm zum Herunterladen von Karten die Meldung *Kostenlose Updates (Notfall) / Kostenlose Downloads* anzeigen.
+
+Das bedeutet, dass die Karte Updates häufiger als Standardkarten erhalten kann, manchmal einmal oder mehrmals pro Tag, je nach Situation.
 
 
 ## Höhenlinien {#contour-lines}

@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  Tracks
 sidebar_position: 2
 ---
@@ -17,18 +17,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Übersicht {#overview}
-OsmAnd verfügt über viele leistungsstarke Funktionen, um verschiedene Routen auf der Karte anzuzeigen. Routen können als Teil der Navigation erstellt, über 'Route planen' angelegt, als GPX-Tracks importiert, über das 'Reiseaufzeichnungs'-Plugin aufgezeichnet oder aus OpenStreetMap-Daten durchsucht und ausgewählt werden.
+OsmAnd verfügt über viele leistungsstarke Funktionen, um verschiedene Routen auf der Karte anzuzeigen. Routen können als Teil der Navigation erstellt, über Plan Route angelegt, als GPX-Tracks importiert, über das Trip Recording-Plugin aufgezeichnet oder aus OpenStreetMap-Daten durchsucht und ausgewählt werden.
 
 
 ## Arten von Tracks {#types-of-tracks}
 
-[Tracks (GPX)](#display-tracks-on-the-map) - aufgezeichnete oder geplante Tour, die im [GPX-Format](https://de.wikipedia.org/wiki/GPS_Exchange_Format) gespeichert ist. Diese Art von Route kann aus einer externen Quelle importiert, in der Anwendung erstellt oder von Ihnen aufgezeichnet werden. GPX kann eine von 3 verschiedenen Arten von Daten oder alle davon enthalten:
+[Tracks (GPX)](#display-tracks-on-the-map) - aufgezeichnete oder geplante Tour, die im [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) gespeichert ist. Diese Art von Route kann aus einer externen Quelle importiert, in der Anwendung erstellt oder von Ihnen aufgezeichnet werden. GPX kann eine von 3 verschiedenen Arten von Daten oder alle davon enthalten:
 
-- Track als eine Linie (***Geometrie***). Die Datei hat ein ```<trkpt>```-Punkte-Array, jeder Punkt hat den Standort und optional Zeit, Geschwindigkeit, Höhe und andere Attribute. Diese Tracks werden auf der Karte als durchgezogene Linien dargestellt.
+- Track als eine Linie (***Geometry***). Die Datei hat ein ```<trkpt>```-Punkte-Array, jeder Punkt hat den Standort und optional Zeit, Geschwindigkeit, Höhe und andere Attribute. Diese Tracks werden auf der Karte als durchgezogene Linien dargestellt.
 - Track als eine Route (***Route***). Die Datei hat ein ```<rtept>```-Punkte-Array, jeder Punkt wird als Zwischenpunkt der Route beschrieben. Es hängt davon ab, wie die Punkte innerhalb einer Route verbunden werden sollen, entweder als kleine Routensegmente oder über eine gerade Linie. Diese Tracks werden auf der Karte als gestrichelte Linien dargestellt.
-- Wegpunkte (***Punkte***). Die Datei hat ```<wpt>```-Punkte mit Attributen. Wegpunkte werden als kreisförmige Punkte auf der Karte dargestellt. Sie können sie antippen, um zusätzliche Informationen zu erhalten.
+- Wegpunkte (***Points***). Die Datei hat ```<wpt>```-Punkte mit Attributen. Wegpunkte werden als kreisförmige Punkte auf der Karte dargestellt. Sie können sie antippen, um zusätzliche Informationen zu erhalten.
 
-OsmAnd kann Tracks mit 1–3 Kombinationen erstellen. [Route planen](../../plan-route/create-route.md) erstellt einen Track mit ***Geometrie*** und ***Route***, wenn Sie ihn als ***Vereinfachter Track*** speichern, wird nur die ***Geometrie*** beibehalten. [Track aufzeichnen](../../plugins/trip-recording.md#new-track-recording) erstellt nur ***Geometrie***, aber Sie können auch ***Punkte*** über das Kontextmenü hinzufügen.
+OsmAnd kann Tracks mit 1–3 Kombinationen erstellen. [Plan Route](../../plan-route/create-route.md) erstellt einen Track mit ***Geometry*** und ***Route***, wenn Sie ihn als ***Simplified Track*** speichern, wird nur die ***Geometry*** beibehalten. [Recording track](../../plugins/trip-recording.md#new-track-recording) erstellt nur ***Geometry***, aber Sie können auch ***Points*** über das Kontextmenü hinzufügen.
 
 
 ## Tracks auf der Karte anzeigen {#display-tracks-on-the-map}
@@ -116,7 +116,7 @@ Wenn Sie einen Track auf der Karte auswählen oder das [Track-Kontextmenü](./tr
 
 Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track-Menü auf Karte analysieren Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Track-Menü auf Karte analysieren Distanz Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track-Menü auf Karte analysieren Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track-Menü auf Karte analysieren Distanz Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate ios="true
 
 Dieses Werkzeug bietet eine detaillierte Analyse von [Track](../../map/tracks/track-context-menu.md#options)-Daten mithilfe von Diagrammen und Karten.
 
-- **Diagrammdaten (Y-Achse)** zeigt an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Daten externer Sensoren*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track-Daten enthalten.
+- **Diagrammdaten (Y-Achse)** zeigt an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Daten externer Sensoren*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track-Daten enthalten. ***Nur Android:*** Für Auto-Tracks, die mit OBD-II-Daten aufgezeichnet wurden, stellt die Y-Achse zusätzlich Fahrzeugmetriken bereit, wie Motordrehzahl, Kühlmitteltemperatur usw.
 - **Diagrammdimension (X-Achse)** stellt dar: *Distanz*, *Zeit* und *Tageszeit*.
 - **Tippen/Schieben-Interaktion**. Tippen Sie auf ein Diagramm, um Informationen über einen bestimmten Punkt auf dem Track anzuzeigen. Das Schieben auf dem Diagramm hebt die entsprechende Stelle auf der Karte hervor und zeigt Details in der Informationsleiste an.
 - **Distanzbeschriftung**. Beim Tippen oder Schieben entlang des Diagramms zeigt das Tooltip auch die genaue Distanz entlang des Tracks an. Der Wert folgt den Einstellungen der aktuellen Profil-Einheit (<Translate android="true" ids="km"/> oder <Translate android="true" ids="mile"/>). Verwenden Sie es, um schnell zu schätzen, wie weit ein Punkt vom Track-Start entfernt ist, oder um die Distanz zwischen zwei Positionen zu berechnen, indem Sie ihre Werte vergleichen.
@@ -157,7 +157,7 @@ Dieses Werkzeug bietet eine detaillierte Analyse von [Track](../../map/tracks/tr
 
 </Tabs>
 
-Tippen Sie auf die Schaltfläche [Mein Standort](../../map/interact-with-map.md#my-location-and-zoom), um die Kartenansicht und das Diagramm mit Ihrem Standort zu synchronisieren.
+Tippen Sie auf die Schaltfläche [My Position](../../map/interact-with-map.md#my-position-and-zoom), um die Kartenansicht und das Diagramm mit Ihrem Standort zu synchronisieren.
 
 - Der **Maßstab des Diagramms** bleibt derselbe, und die **Informationsleiste** ist auf 1/4 der linken Seite fixiert.
 - Während Sie sich bewegen, **gleitet das Diagramm** von links nach rechts und zeigt Informationen vor Ihrem Track an.
@@ -167,11 +167,11 @@ Tippen Sie auf die Schaltfläche [Mein Standort](../../map/interact-with-map.md#
 
 ## Verwandte Artikel {#related-articles}
 
-- [Erscheinungsbild von Tracks](./appearance.md)
+- [Track appearance](./appearance.md)
 - [Track-Kontextmenü](./track-context-menu.md)
-- [Navigation entlang eines Tracks](../../navigation/setup/gpx-navigation.md)
-- [Routen auf der Karte](https://docs.osmand.net/blog/routes) (Blog-Artikel)
+- [Navigate by track](../../navigation/setup/gpx-navigation.md)
+- [Routes on the map](https://docs.osmand.net/blog/routes) blog article
 - [Karte konfigurieren](../../map/configure-map-menu.md)  
-- [GPX-Tracks](../../personal/tracks/index.md)  
-- [Route planen](../../plan-route/index.md)  
-- [Reiseaufzeichnung](../../plugins/trip-recording.md)
+- [GPX tracks](../../personal/tracks/index.md)  
+- [Plan route](../../plan-route/index.md)  
+- [Trip Recording](../../plugins/trip-recording.md)

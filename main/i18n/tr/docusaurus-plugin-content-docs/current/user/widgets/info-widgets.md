@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title:  Bilgi Widget'ları
 ---
@@ -560,7 +560,7 @@ Araç Metrikleri Widget'larını harita ekranına eklemek için OsmAnd [Araç Me
 </Tabs>
 
 
-Widget'lar [Araç Metrikleri eklentisine](../plugins/vehicle-metrics.md#widgets) aittir. Bağlı bir OBD-II tarayıcısından gelen bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin (*14 metrik*): **Emme Sıcaklığı**,&nbsp; **Ortam Sıcaklığı**,&nbsp; **Soğutma Suyu Sıcaklığı**,&nbsp; **Motor Yağı Sıcaklığı**,&nbsp; **Motor Hızı** (*ücretsiz*),&nbsp; **Motor Çalışma Süresi**,&nbsp; **Hesaplanan Motor Yükü**,&nbsp; **Yakıt Basıncı**,&nbsp; **Yakıt Tüketimi**,&nbsp; **Kalan Yakıt**,&nbsp; **Pil Seviyesi**,&nbsp; **Adaptör Voltajı**,&nbsp; **Araç Hızı** (*ücretsiz*) ve **Gaz Kelebeği Konumu**.  
+Widget'lar [Araç Metrikleri eklentisine](../plugins/vehicle-metrics.md#widgets) aittir. Bağlı bir OBD-II tarayıcısından gelen bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin (*14 metrik*): **Adaptör voltajı** (*yalnızca Android*),&nbsp; **Ortam Sıcaklığı**,&nbsp; **Pil voltajı**,&nbsp; **Hesaplanan Motor Yükü**,&nbsp; **Soğutma Suyu Sıcaklığı**,&nbsp; **Motor Yağı Sıcaklığı**,&nbsp; **Motor Çalışma Süresi**,&nbsp; **Motor Hızı** (*ücretsiz*),&nbsp; **Yakıt Tüketimi**,&nbsp; **Yakıt Basıncı**,&nbsp; **Emme Sıcaklığı**,&nbsp; **Kalan Yakıt**,&nbsp; **Gaz Kelebeği Konumu** ve **Araç Hızı** (*ücretsiz*).  
 
 - Araç metrikleri widget'larını harita ekranına eklemek için **Araç Metrikleri eklentisini** [etkinleştirin](../plugins/index.md#enable--disable).
 - OBD-II tarayıcı bağlı olmasa bile widget'ları ekleyebilirsiniz.

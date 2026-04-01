@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title: Haritalar ve Veriler
 ---
@@ -12,6 +12,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
 
 ## Haritalar {#maps}
 
@@ -80,6 +81,7 @@ Güncellemeler sırasında harita verilerinizi kaybetmemek için şu çözümler
    şuraya
    - /storage/emulated/0/Android/**media**/net.osmand.
 
+
 ### Google Pixel cihazları için harita oluşturma yok {#no-maps-rendering-for-google-pixel-devices}
 
 OsmAnd 4.2 Android sürümleri için, Google Pixel cihazlarda [harita oluşturma başarısız olabilir](https://github.com/osmandapp/OsmAnd/issues/15045), kullanıcıları harita yerine boş beyaz bir ekranla bırakabilir.
@@ -88,6 +90,7 @@ Bu sorunu çözmek için OpenGL oluşturmaya geçin:
 
 - *OsmAnd menüsü → Ayarlar → OsmAnd ayarları → Harita oluşturma motoru → Sürüm 2 (OpenGL)*'ye gidin.
 - Değişiklikleri uygulamak için OsmAnd'ı yeniden başlatın.
+
 
 ### OsmAnd'da yavaş harita oluşturmayı çözme {#resolving-slow-map-rendering-in-osmand}
 
@@ -114,6 +117,31 @@ Yavaş harita oluşturma sorununu, özellikle çevrimdışı vektör haritaları
 
 Bu değişiklikler, özellikle navigasyon sırasında haritaları oluşturmak için gereken süreyi azaltmalıdır. Daha ayrıntılı yapılandırma seçenekleri için [Harita Ayarları Kılavuzu](https://osmand.net/docs/user/map/interact-with-map.md#settings)'na bakın.
 
+### “Ücretsiz güncellemeler (acil durum)” ne anlama geliyor? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Acil Durum Erişimi Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Acil Durum Erişimi iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Acil durum harita güncellemeleri**, kriz veya acil durumlar sırasında belirli bölgeler için etkinleştirilebilir. Bu durumlarda, haritalar geçici olarak ücretsiz ve daha sık güncellemelerle kullanılabilir hale gelir.
+
+Bu özellik etkin olduğunda, harita indirme ekranı *Ücretsiz güncellemeler (acil durum) / Ücretsiz indirmeler* mesajını görüntüleyebilir.
+
+Bu, haritanın standart haritalardan daha sık güncelleme alabileceği anlamına gelir, bazen günde bir veya birkaç kez, duruma bağlı olarak.
+
+
 ## Kontur Çizgileri {#contour-lines}
 
 ### Kontur çizgilerini metre yerine fit olarak görüntülemenin bir yolu var mı? {#is-there-a-way-to-display-contour-lines-in-feet-instead-of-meters}
@@ -129,6 +157,7 @@ Evet, kontur çizgileri metre yerine fit olarak görüntülenebilir. Kontur çiz
 - Uygulamayı en son sürüme güncelleyin.
 - Bozuk dosya olmadığından emin olmak için gerekli haritaları silin ve yeniden indirin.
 - Ayarları ve verileri yenilemek için OsmAnd'ı yeniden başlatın.
+
 
 ## Arama {#search}
 
@@ -147,6 +176,7 @@ Evet, kontur çizgileri metre yerine fit olarak görüntülenebilir. Kontur çiz
 - **Nominatim ile İlgili Sorun**. Ev OpenStreetMap'te mevcut olabilir ancak Nominatim (OpenStreetMap tarafından kullanılan arama motoru) aracılığıyla bulunamayabilir. Adresle ilgili sorunları nasıl düzelteceğiniz hakkında daha fazla bilgiyi [burada](https://wiki.openstreetmap.org/wiki/Addresses) bulabilirsiniz.
 
 - **OsmAnd'da Olası Sorun**. Ev Nominatim'de mevcutsa ancak OsmAnd'da hala bulunamıyorsa, sorun OsmAnd'a özgü olabilir. Daha fazla araştırma yaparak bu sorunun çözümüne katkıda bulunabilirsiniz. Daha fazla ayrıntı bu [teknik makalede](../../technical/algorithms/trace-address-search-issues.md) bulunabilir.
+
 
 ## İzler ve Noktalar {#tracks-and-points}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Favorieten
 ---
@@ -163,7 +163,7 @@ De map *Persoonlijk* bevat speciale punten zoals **<Translate android="true" ids
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Mijn plaatsen favorieten android](@site/static/img/personal/my_places_android.png)
+![Mijn plaatsen favorieten android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![mijn_plaatsen_ios](@site/static/img/personal/my_places_ios.png)
+![mijn_plaatsen_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 De sectie **Mijn Favorieten** stelt u in staat om:
 
 - [Te zoeken](#order--sorting--search) naar specifieke favorieten of groepen.
-- [Bulkoperaties](#bulk-edit--delete) — Hernoemen, verplaatsen of verwijderen van meerdere favorieten tegelijk.
+- [Bulkoperaties](#bulk-edit--delete) — Delen, verplaatsen of verwijderen van meerdere favorieten tegelijk.
 
 ### Volgorde / Sorteren / Zoeken {#order--sorting--search}
 
@@ -188,20 +188,23 @@ De sectie **Mijn Favorieten** stelt u in staat om:
 
 <TabItem value="android" label="Android">
 
-![Favorietenmappen android](@site/static/img/personal/favorites_folders_android.png)
+![Favorietenmappen android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Sorteren** — Favorietenmappen en -punten kunnen worden gesorteerd met behulp van de beschikbare sorteeropties in het lijstmenu. De volgende opties zijn beschikbaar: *Naam A – Z*, *Naam Z – A*, *Laatst gewijzigd*, *Nieuwste datum eerst*, *Oudste datum eerst*. Standaard worden items gesorteerd op Naam A – Z. Vastgezette mappen worden altijd bovenaan de lijst weergegeven. Ze zijn visueel gescheiden van de rest van de mappen door een scheidingslijn. De [Persoonlijke map](../personal/favorites.md#special-favorites-personal) is standaard vastgezet. 
+- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Favorietenmappen ios](@site/static/img/personal/favorites_folders_ios.png)
 
+- **Sorteren** — Favorietenmappen en -punten worden alfabetisch gesorteerd, met de [persoonlijke map](../personal/favorites.md#special-favorites-personal) bovenaan.
+- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart.
+
 </TabItem>
 
 </Tabs>
-
-- **Sorteren** — Mappen en punten van favorieten worden alfabetisch gesorteerd, met de [persoonlijke map](../personal/favorites.md#special-favorites-personal) bovenaan.
-- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart.
-
 
 ### Bulk Bewerken / Verwijderen {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ De sectie **Mijn Favorieten** stelt u in staat om:
 
 <TabItem value="android" label="Android">
 
-![Favorietenacties android](@site/static/img/personal/favorites_actions_android.png) ![Favorietenactie verwijderen android](@site/static/img/personal/favorites_delete_android.png)
+![Favorietenacties android](@site/static/img/personal/favorites_group_actions.png) ![Favorietenactie verwijderen android](@site/static/img/personal/favorites_actions.png)
+
+Om meerdere favorieten of mappen te beheren, activeer de *Selectiemodus*. U kunt Selectiemodus op twee manieren openen:
+- Tik op het *drie-puntmenu* in de rechterbovenhoek en kies *Selecteren*.
+- Tik lang op een favorietenpunt of map.
+
+Wanneer Selectiemodus is ingeschakeld, verschijnen er selectievakjes naast de items in de lijst. Selecteer de vereiste favorieten of mappen door op de selectievakjes te tikken. Om alle items in de lijst te selecteren, tik op het Selecteer alles-pictogram in de rechterbovenhoek.
+
+De beschikbare acties hangen af van het type geselecteerde item. Wanneer mappen zijn geselecteerd, zijn de volgende acties beschikbaar:
+- **Delen** — Exporteer geselecteerde mappen als een Favorieten GPX-bestand.
+- **Verwijderen** — Verwijder de geselecteerde mappen.
+
+Wanneer favorietenpunten zijn geselecteerd, zijn de volgende acties beschikbaar:
+- **Verplaatsen** — Verplaats geselecteerde favorieten naar een andere map.
+- **Toevoegen aan kaartmarkeringen** — Voeg geselecteerde punten toe aan de lijst met kaartmarkeringen.
+- **Toevoegen aan track** — Voeg geselecteerde punten toe aan een track.
+- **Toevoegen aan navigatie** — Start navigatie naar het geselecteerde punt.
+- **Verwijderen** — Verwijder de geselecteerde favorieten.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ De sectie **Mijn Favorieten** stelt u in staat om:
 
 ![Favorietenacties ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- Om meerdere favorieten te beheren, tikt u op de **Bewerk**-knop (*potloodpictogram*).
+- Selecteer individuele favorieten of hele mappen voor bulkoperaties.
+- **Beschikbare opties** — *Delen*, *Verplaatsen naar een Favorietengroep*, *Kleur wijzigen* en *Verwijderen*.
+
 </TabItem>
 
 </Tabs>
-
-1. Om meerdere favorieten te beheren, tikt u op het **Verwijder**-pictogram (*prullenbakpictogram op Android*) of de **Bewerk**-knop (*potloodpictogram op iOS*).
-2. Selecteer individuele favorieten of hele mappen voor bulkoperaties.
-3. **Beschikbare opties** — *Verwijderen* voor Android en iOS, *Verplaatsen naar een Favorietengroep*, *Delen* en *Kleur wijzigen* voor iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Ga naar: *Drie-puntenmenu → Standaard uiterlijk wijzigen*
+![Favorietenmap functies android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Favorietenmap functies android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
+- **Map vastzetten** — Zet de geselecteerde map vast om deze bovenaan de favorietenlijst te houden voor snellere toegang.
+- **<Translate android="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Verwijder van kaartmarkeringen** — Voeg alle favorietenpunten uit de map toe aan de *Lijst met kaartmarkeringen* of verwijder ze indien nodig voor eenvoudige referentie.
+- **<Translate android="true" ids="add_to_a_track"/>** — Voeg alle favorietenpunten uit de geselecteerde map toe aan een track. Dit opent het trackscherm waar u een track kunt kiezen of aanmaken.
+- **<Translate android="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
+- **<Translate android="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *Lang tikken op map → Standaard uiterlijk*
-
 ![Favorietenacties ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Gebruik ***lang tikken*** op de map om groepen favorieten te beheren:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
+- **<Translate ios="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
 
 </TabItem>
 
 </Tabs>
-
-Gebruik het ***Drie-puntenmenu*** (*Android*) naast elke map en ***tik lang*** (*iOS*) op de map om groepen favorieten te beheren:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** of **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** of **Verwijder van kaartmarkeringen** (*alleen Android*) — Voeg alle favorietenpunten uit de map toe aan de *Lijst met kaartmarkeringen* of verwijder ze indien nodig voor eenvoudige referentie.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
-
-
 
 ### Uiterlijk van Groep Wijzigen {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Gebruik het ***Drie-puntenmenu*** (*Android*) naast elke map en ***tik lang*** (
 
 <TabItem value="android" label="Android">
 
-![Favorietenmap functies android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Ga naar: *Drie-puntmenu → Standaard uiterlijk wijzigen*
+
+![Favorietenmap functies android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Ga naar: *Lang tikken op map → Standaard uiterlijk*
 
 ![Favorietenacties ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
@@ -425,7 +448,7 @@ U kunt uw favorieten exporteren en importeren met de speciale knoppen onderaan h
 
 </Tabs>
 
-- Tik op het **Drie-puntenmenu** (*Android*) of de **Bewerk**-knop (*potloodpictogram op iOS*) of **tik lang** op de map (*iOS*) van de geselecteerde favorietenmap.
+- Tik op het **Drie-puntmenu** (*Android*) of de **Bewerk**-knop (*potloodpictogram op iOS*) of **tik lang** op de map (*iOS*) van de geselecteerde favorietenmap.
 - Kies de **Deel**-knop om het *Favorites.gpx*-bestand naar het geheugen van uw apparaat te sturen of te delen via messaging-apps.  
 
 

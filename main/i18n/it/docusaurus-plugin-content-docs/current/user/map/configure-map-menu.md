@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Configura Mappa
 ---
@@ -23,7 +23,7 @@ Il menu **Configura mappa** è una voce importante del *Menu principale* di OsmA
 
 Sezione **Mostra**:  
 
-![Configura mappa Android](@site/static/img/map/configure_map_show1_andr.png)  ![Configura mappa Android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configura mappa Android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configura mappa Android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Sezione **Topografia**:  
 
@@ -43,7 +43,7 @@ Sezioni **Percorsi e Rendering mappa**:
 
 Sezione **Mostra sulla mappa**:  
 
-![Configura mappa iOS](@site/static/img/map/configure_map_show1_ios.png)  
+![Configura mappa iOS](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Sezione **Topografia**:  
 
@@ -100,7 +100,7 @@ Il menu **<Translate android="true" ids="configure_map"/>** è suddiviso in due 
    - [Tracce](../map/tracks/index.md) - visualizza le tracce importate, pianificate o registrate sulla mappa.
    - [Immagini a livello stradale](../plugins/mapillary.md#map-layer) - visualizza i punti con immagini a livello stradale disponibili.
    - [Guide di viaggio](../plan-route/travel-guides.md) - visualizza le guide di viaggio sulla mappa.
-   - [Wikipedia](../plugins/wikipedia.md) - evidenzia gli articoli di Wikipedia collegati alla mappa.
+   - [Luoghi popolari](../map/popular_places.md) - evidenzia i luoghi popolari basati sugli articoli di Wikipedia e li visualizza sulla mappa.
    - [Modifica OSM](../plugins/osm-editing.md#osm-editing-layer) - visualizza le modifiche OpenStreetMap, note e livelli di assistenza correlati alla mappatura.
    - [Altri livelli dei plugin](../plugins/index.md#configure-plugin) - molti plugin aggiungono i loro livelli con informazioni extra.
 
