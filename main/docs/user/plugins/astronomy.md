@@ -75,12 +75,12 @@ The Context Menu appears at the bottom of the screen and contains object informa
 
 ### Object Information {#object-information}
 
-![Object Information](@site/static/img/plugins/starwatcher/object_view.png)
+![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
 
-The top section of the Context Menu displays the object's name and classification. Below the name, the object type and its parent constellation or group are shown. For example:  
+The top section of the Context Menu displays the object's name and classification. Below the name, the object type and its parent constellation or group are shown. For example:
 - **Beta Ursae Minoris** — Star • Ursa Minor
+- **Moon** — Satellite • Earth
 - **Jupiter** — Planet • Solar system
-- **Andromeda** — Galaxy • Deep sky
 
 Quick information blocks display key observational parameters:  
 - Rise – the time when the object rises above the horizon.
@@ -91,8 +91,9 @@ Quick information blocks display key observational parameters:
 
 These values update dynamically based on the selected time and the user's location.
 
-Below the quick information blocks, the menu may also include additional information and resources about the object:  
-- Read on Wikipedia – Opens the object's Wikipedia article. If offline Wikipedia data is available, the article can be opened without an internet connection; otherwise the page opens in the browser.
+Below the quick information blocks, the menu may also include additional information and resources about the object:
+- Offline Knowledge Base – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
+- Read on Wikipedia – Opens the object's Wikipedia article in the browser.
 - Online photos – Displays available photos related to the selected celestial object.
 
 ### Actions {#actions}
@@ -140,7 +141,7 @@ The graph opens with the indicator positioned at the current system time. The lo
 
 ### Observation Schedule {#actions}
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule.png)
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
 The **Schedule** tab displays the visibility of the selected object for the current week. Each row represents one day and includes:  
 - the day of the week
