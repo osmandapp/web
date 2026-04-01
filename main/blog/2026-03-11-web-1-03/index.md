@@ -63,6 +63,12 @@ A new export option allows [downloading GPX tracks](@site/static/img/web/downloa
 
 ## Public Transport Stops {#public-transport-stops}
 
+[Public transport stops](https://osmand.net/docs/user/web/web-map#transport-stops) can now be displayed directly on the map. Stop markers indicate locations where public transport routes operate. Selecting a stop opens a context panel with key information and quick actions.
+
+The **Routes** section lists all routes serving the selected stop, including the transport type and route number. Selecting a route opens a detailed view showing the full sequence of stops, with the currently selected stop highlighted on the map.
+
+![Public Transport Stops](@site/static/img/web/web_transport_stops.png)
+
 ## POI Context Menu Improvements {#poi-context-menu-improvements}
 
 The POI context menu has been enhanced to display more useful information about locations directly on the map.
