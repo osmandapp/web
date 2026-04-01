@@ -57,6 +57,16 @@ export const LoginContextProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
+        if (!loginUser || loginUser === INIT_LOGIN_STATE) {
+            return;
+        }
+        if (accountInfo) {
+            return;
+        }
+        getAccountInfo(setAccountInfo).then();
+    }, [loginUser]);
+
+    useEffect(() => {
         if (wantDeleteAcc) {
             setLoginError('Please log in to delete your account.');
         } else {
