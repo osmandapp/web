@@ -3,11 +3,12 @@ import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, {
     getGpxFiles,
-    filterSmartFolders,
     filterRegularFolders,
     GPX_FILE_EXT,
+    INFO_FILE_EXT,
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
+    EMPTY_FILE_NAME,
 } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
@@ -118,16 +119,18 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
+                        const hasUpdateFiles = getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
-                        setSmartFoldersLoading(true);
-                        loadSmartFolders(setTracksGroups, setSmartFoldersCache)
-                            .then(() => {
-                                setSmartFoldersLoading(false);
-                            })
-                            .catch(() => {
-                                setSmartFoldersLoading(false);
-                            });
+                        if (!hasUpdateFiles) {
+                            setSmartFoldersLoading(true);
+                            loadSmartFolders(setTracksGroups, setSmartFoldersCache)
+                                .then(() => {
+                                    setSmartFoldersLoading(false);
+                                })
+                                .catch(() => {
+                                    setSmartFoldersLoading(false);
+                                });
+                        }
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -189,22 +192,31 @@ export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCac
 }
 
 async function getSmartFolders() {
-    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-filtered-smart-folders`, {});
     return response?.data || null;
 }
 
+const isFileWithDetails = (fileName) => {
+    const fileNameLC = fileName.toLowerCase();
+    return (
+        (fileNameLC.endsWith(GPX_FILE_EXT) || fileNameLC.endsWith(INFO_FILE_EXT)) &&
+        !fileNameLC.endsWith(EMPTY_FILE_NAME)
+    );
+};
+
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
-        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
+        .filter((f) => f.details?.update && f.type === GPX && isFileWithDetails(f.name))
         .map((f) => ({
             name: f.name,
             type: f.type,
-            isError: !!f.details.error,
-            time: f.details.updatetime,
+            isError: !!f.details?.error,
+            time: f.details?.updatetime,
         }));
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
     }
+    return filesToUpdate.length > 0;
 }
 
 export async function loadShareFiles(setShareWithMeFiles) {
