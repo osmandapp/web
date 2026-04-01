@@ -104,7 +104,7 @@ Below the object information, the Context Menu provides several actions for inte
 - **Direction** – Shows the direction to the object on the map, helping you orient yourself while observing the sky.
 - **Path** – Displays the object's daily trajectory across the sky, allowing you to see how it moves during the day.
 
-### Visibility Graph {#actions}
+### Visibility Graph {#visibility-graph}
 
 ![Visibility Graph](@site/static/img/plugins/starwatcher/visibility.png)
 
