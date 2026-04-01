@@ -468,7 +468,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 
