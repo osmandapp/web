@@ -192,7 +192,7 @@ export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCac
 }
 
 async function getSmartFolders() {
-    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-filtered-smart-folders`, {});
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-smart-folders`, {});
     return response?.data || null;
 }
 
@@ -210,8 +210,8 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
         .map((f) => ({
             name: f.name,
             type: f.type,
-            isError: !!f.details?.error,
-            time: f.details?.updatetime,
+            isError: !!f.details.error,
+            time: f.details.updatetime,
         }));
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
