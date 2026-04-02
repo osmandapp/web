@@ -143,7 +143,7 @@ In the Download Maps menu, there is a **World Maps** section that provides acces
 
 - **World Altitude Correction** (*Android only*). This file contains altitude corrections to compensate for planetary curvature.
 - **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
-- **All world (Weather forecast)**. Allows you to download a map with weather information.
+- **World weather map**. Allows you to download a map with weather information.
 
 
 ### Extra Maps {#extra-maps}
