@@ -21,7 +21,7 @@ import FavoriteHelper from './FavoriteHelper';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
+import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsProvider';
 import { getUniqFileId } from '../../../manager/GlobalManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 
@@ -176,9 +176,13 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         ctx.setLocalTracks([...ctx.localTracks]);
     }
 
+    // Drop web-prefixed keys, service fields (svg, idObj), and anything already stored on the favorite (name, icon, …).
     function excludeTags(tag) {
         return (
+            tag.startsWith(WEB_PREFIX) ||
             tag.startsWith(WEB_POI_PREFIX) ||
+            tag === 'svg' ||
+            tag === 'idObj' ||
             tag === 'name' ||
             tag === 'icon' ||
             tag === 'color' ||
