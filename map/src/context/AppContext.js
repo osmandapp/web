@@ -36,6 +36,7 @@ import {
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
 import { SMART_TYPE } from '../menu/share/shareConstants';
+import { findInfoFile } from '../manager/track/TrackAppearanceManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -313,7 +314,8 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
         promises.push(
             TracksManager.getTrackData(gpxfile).then(async (track) => {
                 track.name = file.name;
-                track.info = await Utils.getFileInfo(oneGpxFile);
+                const infoFile = findInfoFile(ctx, file.name);
+                track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(oneGpxFile));
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][t] = track[t];
                 });

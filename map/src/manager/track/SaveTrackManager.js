@@ -18,7 +18,7 @@ import TracksManager, {
     prepareName,
     updateMetadata,
 } from './TracksManager';
-import { syncCloudTrackInfo } from './TrackAppearanceManager';
+import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
 import {
@@ -265,7 +265,8 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         const track = await TracksManager.getTrackData(gpxfile);
                         if (track) {
                             track.name = file.name;
-                            track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
+                            const infoFile = findInfoFile(ctx, file.name);
+                            track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(newGpxFiles[file.name]));
                             Object.keys(track).forEach((t) => {
                                 newGpxFiles[file.name][t] = track[t];
                             });
@@ -437,7 +438,8 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
 
-        track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
+        const infoFile = findInfoFile(ctx, file.name);
+        track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(newGpxFiles[file.name]));
         track.name = file.name;
         Object.keys(track).forEach((t) => {
             newGpxFiles[file.name][t] = track[t];

@@ -25,6 +25,7 @@ import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressJSONToBlob } from '../../util/GzipCompression';
+import { findInfoFile } from './TrackAppearanceManager';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -1539,7 +1540,8 @@ export async function openTrackOnMap({
                 setError('Something went wrong!');
             }
         } else if (isEmptyTrack(track) === false) {
-            track.info = await Utils.getFileInfo(oneGpxFile);
+            const infoFile = findInfoFile(ctx, file.name);
+            track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(oneGpxFile));
             track.name = file.name;
             track.key = track.name;
             track.mapObj = file.mapObj;
