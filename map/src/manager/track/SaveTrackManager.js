@@ -266,7 +266,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         if (track) {
                             track.name = file.name;
                             const infoFile = findInfoFile(ctx, file.name);
-                            track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(newGpxFiles[file.name]));
+                            track.info = infoFile?.details?.data;
                             Object.keys(track).forEach((t) => {
                                 newGpxFiles[file.name][t] = track[t];
                             });
@@ -439,7 +439,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         ctx.setCurrentObjectType(type);
 
         const infoFile = findInfoFile(ctx, file.name);
-        track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(newGpxFiles[file.name]));
+        track.info = infoFile?.details?.data;
         track.name = file.name;
         Object.keys(track).forEach((t) => {
             newGpxFiles[file.name][t] = track[t];

@@ -1541,7 +1541,7 @@ export async function openTrackOnMap({
             }
         } else if (isEmptyTrack(track) === false) {
             const infoFile = findInfoFile(ctx, file.name);
-            track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(oneGpxFile));
+            track.info = infoFile?.details?.data;
             track.name = file.name;
             track.key = track.name;
             track.mapObj = file.mapObj;

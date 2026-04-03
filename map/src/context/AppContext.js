@@ -136,7 +136,7 @@ async function loadListFiles(
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
                         await Promise.all([
-                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks),
+                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks, res),
                             addOpenedFavoriteGroups(allFavorites, setUpdateMarkers, setProcessingGroups),
                         ]);
                     }
@@ -244,7 +244,7 @@ export async function loadShareFiles(setShareWithMeFiles) {
     });
 }
 
-async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
+async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, listFiles) {
     const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
@@ -314,8 +314,8 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
         promises.push(
             TracksManager.getTrackData(gpxfile).then(async (track) => {
                 track.name = file.name;
-                const infoFile = findInfoFile(ctx, file.name);
-                track.info = infoFile?.details?.data ?? (await Utils.getFileInfo(oneGpxFile));
+                const infoFile = findInfoFile({ listFiles }, file.name);
+                track.info = infoFile?.details?.data;
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][t] = track[t];
                 });
