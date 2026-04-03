@@ -205,12 +205,15 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 ### Globe View {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
 ![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
 
 **Globe View** allows you to display the map as a spherical Earth instead of a flat projection. This mode changes the geometry of the map surface and adapts map interaction to spherical navigation.  
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
 Globe View is currently available only when:
 - The [Development plugin](../plugins/development.md) is enabled.  
@@ -219,6 +222,23 @@ Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugg
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - The [Map rendering engine](../personal/global-settings.md#map-rendering-engine) is set to Version 2 (OpenGL).  
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+
+![Globe View](@site/static/img/map/globe_view_1_ios.png) ![Globe View](@site/static/img/map/globe_view_2_ios.png)
+
+**Globe View** allows you to display the map as a spherical Earth instead of a flat projection. This mode changes the geometry of the map surface and adapts map interaction to spherical navigation.  
+
+Globe View is currently available only when the [Topography plugin](../plugins/topography.md) is enabled.  
+Go to: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,srtm_plugin_name"/>*
+
+</TabItem>
+
+</Tabs>
 
 When Globe View is enabled, the map rotates as a globe. Drag gestures rotate the Earth, and zoom changes the camera distance rather than scaling a flat surface. Map elements such as tracks, markers, symbols, and 3D objects are rendered directly on the spherical surface and follow its curvature. Objects gradually disappear behind the horizon as the globe rotates.
 
