@@ -46,7 +46,7 @@ Section **Show on map**:
 
 Section **Topography**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_ios.png)  
+![Configure map android](@site/static/img/map/configure_map_topography_ios_new.png)  
 
 Section **OpenStreetMap**:  
 
