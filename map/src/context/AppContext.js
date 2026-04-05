@@ -3,11 +3,12 @@ import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, {
     getGpxFiles,
-    filterSmartFolders,
     filterRegularFolders,
     GPX_FILE_EXT,
+    INFO_FILE_EXT,
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
+    EMPTY_FILE_NAME,
 } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
@@ -35,6 +36,7 @@ import {
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
 import { SMART_TYPE } from '../menu/share/shareConstants';
+import { findInfoFile } from '../manager/track/TrackAppearanceManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -101,7 +103,8 @@ async function loadListFiles(
     setShareWithMeFiles,
     setTracksGroups,
     setSmartFoldersCache,
-    setUpdateFiles
+    setUpdateFiles,
+    setSmartFoldersLoading
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -117,14 +120,23 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
+                        const hasUpdateFiles = getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
-                        loadSmartFolders(setTracksGroups, setSmartFoldersCache);
+                        if (!hasUpdateFiles) {
+                            setSmartFoldersLoading(true);
+                            loadSmartFolders(setTracksGroups, setSmartFoldersCache)
+                                .then(() => {
+                                    setSmartFoldersLoading(false);
+                                })
+                                .catch(() => {
+                                    setSmartFoldersLoading(false);
+                                });
+                        }
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
                         await Promise.all([
-                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks),
+                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks, res),
                             addOpenedFavoriteGroups(allFavorites, setUpdateMarkers, setProcessingGroups),
                         ]);
                     }
@@ -181,13 +193,21 @@ export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCac
 }
 
 async function getSmartFolders() {
-    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-smart-folders`, {});
     return response?.data || null;
 }
 
+const isFileWithDetails = (fileName) => {
+    const fileNameLC = fileName.toLowerCase();
+    return (
+        (fileNameLC.endsWith(GPX_FILE_EXT) || fileNameLC.endsWith(INFO_FILE_EXT)) &&
+        !fileNameLC.endsWith(EMPTY_FILE_NAME)
+    );
+};
+
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
-        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
+        .filter((f) => f.details?.update && f.type === GPX && isFileWithDetails(f.name))
         .map((f) => ({
             name: f.name,
             type: f.type,
@@ -197,6 +217,7 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
     }
+    return filesToUpdate.length > 0;
 }
 
 export async function loadShareFiles(setShareWithMeFiles) {
@@ -223,7 +244,7 @@ export async function loadShareFiles(setShareWithMeFiles) {
     });
 }
 
-async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
+async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, listFiles) {
     const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
@@ -293,7 +314,8 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
         promises.push(
             TracksManager.getTrackData(gpxfile).then(async (track) => {
                 track.name = file.name;
-                track.info = await Utils.getFileInfo(oneGpxFile);
+                const infoFile = findInfoFile({ listFiles }, file.name);
+                track.info = infoFile?.details?.data;
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][t] = track[t];
                 });
@@ -383,6 +405,7 @@ export const AppContextProvider = (props) => {
     const [mapBbox, setMapBbox] = useState(null);
 
     const [gpxLoading, setGpxLoading] = useState(false);
+    const [smartFoldersLoading, setSmartFoldersLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // files
     const [listFiles, setListFiles] = useState({});
@@ -723,7 +746,14 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
-                    await loadSmartFolders(setTracksGroups, setSmartFoldersCache);
+                    setSmartFoldersLoading(true);
+                    loadSmartFolders(setTracksGroups, setSmartFoldersCache)
+                        .then(() => {
+                            setSmartFoldersLoading(false);
+                        })
+                        .catch(() => {
+                            setSmartFoldersLoading(false);
+                        });
                 }
             }
         };
@@ -749,7 +779,8 @@ export const AppContextProvider = (props) => {
                 setShareWithMeFiles,
                 setTracksGroups,
                 setSmartFoldersCache,
-                setUpdateFiles
+                setUpdateFiles,
+                setSmartFoldersLoading
             ).then(() => {
                 setGpxLoading(false);
             });
@@ -778,6 +809,8 @@ export const AppContextProvider = (props) => {
                 mutateGpxFiles,
                 gpxLoading,
                 setGpxLoading,
+                smartFoldersLoading,
+                setSmartFoldersLoading,
                 selectedGpxFile,
                 setSelectedGpxFile,
                 unverifiedGpxFile,
