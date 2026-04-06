@@ -21,12 +21,8 @@ import TracksManager, {
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
-import {
-    getFilesForUpdateDetails,
-    OBJECT_TYPE_CLOUD_TRACK,
-    OBJECT_TYPE_FAVORITE,
-    OBJECT_TYPE_LOCAL_TRACK,
-} from '../../context/AppContext';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import { getFilesForUpdateDetails } from '../LoadFileManager';
 import Utils, { sanitizedFileName } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
