@@ -16,6 +16,24 @@ export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
 export const LOCAL_STORAGE_WEATHER_FORECAST_WEEK = 'weatherForecastWeek';
 export const LOCAL_STORAGE_WEATHER_TYPE = 'weatherType';
 
+export function getSavedWeekForecast() {
+    const raw = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
+    if (!raw) return null;
+    try {
+        const weatherData = JSON.parse(raw);
+        if (
+            Array.isArray(weatherData) &&
+            weatherData.length > 0 &&
+            weatherData.every((item) => typeof item === 'object' && item !== null && 'ts' in item)
+        ) {
+            return weatherData;
+        }
+    } catch {
+        return null;
+    }
+    return null;
+}
+
 function getLayers() {
     let allLayers = {};
     allLayers[GFS_WEATHER_TYPE] = getWeatherLayers(GFS_WEATHER_TYPE);

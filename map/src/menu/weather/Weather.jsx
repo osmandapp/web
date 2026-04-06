@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import {
@@ -7,8 +7,10 @@ import {
     timeFormatter,
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
     getAlignedStep,
+    getSavedWeekForecast,
 } from '../../manager/WeatherManager';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
 import TimeSlider from './TimeSlider';
 import DayCardsCarousel from './DayCardsCarousel';
 import ForecastTable from './ForecastTable';
@@ -18,7 +20,7 @@ import WeatherHeader from './WeatherHeader';
 import Loading from '../errors/Loading';
 import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
-import { matchPath, useLocation, useOutlet } from 'react-router-dom';
+import { matchPath, Outlet, useLocation } from 'react-router-dom';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 
@@ -48,15 +50,16 @@ export default function Weather() {
 
     const [, height] = useWindowSize();
 
-    const outlet = useOutlet();
-
     const urlLocation = useLocation();
-    const location = useGeoLocation(ctx, false);
-    const currentLoc = ctx.openMenu?.latlng ?? location;
     const hash = urlLocation.hash;
-    const debouncerTimer = useRef(0);
-    const [delayedHash, setDelayedHash] = useState(hash);
-    const [loadingLocation, setLoadingLocation] = useState(false);
+    const geo = useGeoLocation(ctx, false);
+    const currentLoc = ctx.openMenu?.latlng ?? geo;
+    const { isPending, delayedHash } = useDebouncedHash({
+        hash,
+        durationMs: 1000,
+        commitHash: true,
+        blockWhen: !!ctx.openMenu?.latlng,
+    });
 
     const showForecastOutlet = !!matchPath(
         { path: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL + '*' },
@@ -67,26 +70,9 @@ export default function Weather() {
 
     const enabled = showWeatherMain || showForecastOutlet;
 
-    // debounce map move/scroll
-    useEffect(() => {
-        if (!ctx.openMenu?.latlng) {
-            setLoadingLocation(true);
-            debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
-            debouncerTimer.current = setTimeout(() => {
-                debouncerTimer.current = 0;
-                setDelayedHash(hash);
-                setLoadingLocation(false);
-            }, 1000);
-        }
-
-        return () => {
-            clearTimeout(debouncerTimer.current);
-        };
-    }, [hash]);
-
     const [weatherLoc, setWeatherLoc] = useState(null);
     const [dayForecast, setDayForecast] = useState(null);
-    const [weekForecast, setWeekForecast] = useState(null);
+    const [weekForecast, setWeekForecast] = useState(getSavedWeekForecast);
     const [headerForecast, setHeaderForecast] = useState(null);
 
     useWeatherTypeChange({ ctx, currentLoc, setDayForecast, setWeekForecast });
@@ -148,20 +134,26 @@ export default function Weather() {
         if (!showForecastOutlet) return;
 
         const params = forecastParams(urlLocation);
-        if (!params) return;
-
-        if (params.source !== ctx.weatherType) {
-            ctx.setWeatherType(params.source);
-            localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
+        if (params) {
+            if (params.source !== ctx.weatherType) {
+                ctx.setWeatherType(params.source);
+                localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
+            }
+            openWeatherForecastDetails(ctx, params.type, params.source);
+            return;
         }
 
-        openWeatherForecastDetails(ctx, params.type, params.source);
-    }, [urlLocation]);
+        const list = ctx.weatherLayers?.[ctx.weatherType];
+        if (!list?.length) return;
+        const layer = list.find((l) => l.showDetails) ?? list[0];
+
+        openWeatherForecastDetails(ctx, layer.key, ctx.weatherType);
+    }, [urlLocation, showForecastOutlet, ctx.weatherType]);
 
     return (
         <>
-            {showForecastOutlet && outlet ? (
-                outlet
+            {showForecastOutlet ? (
+                <Outlet context={{ weekForecast, setWeekForecast, weatherLoc, setWeatherLoc }} />
             ) : (
                 <Box
                     minWidth={ctx.infoBlockWidth}
@@ -177,7 +169,7 @@ export default function Weather() {
                     {dayForecast || weekForecast ? (
                         <Box sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1 }}>
                             <TopWeatherInfo
-                                loadingLocation={loadingLocation}
+                                loadingLocation={isPending}
                                 headerForecast={headerForecast}
                                 weatherLoc={weatherLoc}
                                 useWeatherDate={true}
