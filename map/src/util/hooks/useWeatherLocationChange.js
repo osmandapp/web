@@ -8,6 +8,7 @@ import {
 import { useEffect } from 'react';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
+import { BBOX_COORDS_DECIMALS, WEATHER_COORDS_DECIMALS } from '../../manager/GlobalManager';
 import { apiGet } from '../HttpApi';
 
 export const useWeatherLocationChange = ({
@@ -52,22 +53,24 @@ export const useWeatherLocationChange = ({
     }, [currentLoc, delayedHash, enabled]);
 
     function getForecastData(lat, lon) {
-        fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();
-        fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
+        Promise.allSettled([
+            fetchDayForecast({ lat, lon, ctx, setDayForecast }),
+            fetchWeekForecast({ lat, lon, ctx, setWeekForecast }),
+        ]).then(() => ctx.setForecastLoading(false));
     }
 
     const fetchAddress = async ({ point, useMapBbox = false }) => {
         const loc = {
-            lat: point.lat.toFixed(6),
-            lon: point.lng.toFixed(6),
+            lat: Number(point.lat).toFixed(WEATHER_COORDS_DECIMALS),
+            lon: Number(point.lng).toFixed(WEATHER_COORDS_DECIMALS),
         };
         let nw = null;
         let se = null;
         if (useMapBbox) {
             const bbox = ctx.mapBbox;
             if (bbox) {
-                nw = `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`;
-                se = `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`;
+                nw = `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`;
+                se = `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`;
             }
         }
 
@@ -91,8 +94,8 @@ export const useWeatherLocationChange = ({
         });
         if (response?.ok) {
             const obj = {
-                lat: response.data.location.latitude.toFixed(6),
-                lon: response.data.location.longitude.toFixed(6),
+                lat: Number(response.data.location.latitude).toFixed(WEATHER_COORDS_DECIMALS),
+                lon: Number(response.data.location.longitude).toFixed(WEATHER_COORDS_DECIMALS),
                 address: response.data.cityLocalNames,
             };
             // add address to local storage

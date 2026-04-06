@@ -1,24 +1,17 @@
-import { Box, Button, Divider, Icon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { Box, Divider, ListItemText, MenuItem, Typography } from '@mui/material';
 import WeatherHeader from './WeatherHeader';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import TopWeatherInfo from './TopWeatherInfo';
-import {
-    openWeatherForecastDetails,
-    LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
-    LOCAL_STORAGE_WEATHER_LOC,
-    ECWMF_WEATHER_TYPE,
-    PRECIP_LAYER_KEY,
-} from '../../manager/WeatherManager';
+import { openWeatherForecastDetails, ECWMF_WEATHER_TYPE, PRECIP_LAYER_KEY } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import i18n from 'i18next';
 import isEmpty from 'lodash-es/isEmpty';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import Loading from '../errors/Loading';
-import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
-import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
+import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
 import { FORECAST_TYPE_PARAM } from './Weather';
+import { useOutletContext, useLocation } from 'react-router-dom';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import ForecastGraph from './ForecastGraph';
@@ -31,55 +24,30 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
 
     const { updateQueryParam } = useUpdateQueryParam();
 
-    const [forecast, setForecast] = useState(getSavedForecast());
-    const [weatherLoc, setWeatherLoc] = useState(getWeatherLoc());
-    const currentLoc = useGeoLocation(ctx, false);
-    const hash = window.location.hash;
-    const [delayedHash, setDelayedHash] = useState(hash);
+    const { weekForecast: forecast, weatherLoc } = useOutletContext() ?? {};
+
+    const { hash } = useLocation();
+    const { isPending } = useDebouncedHash({
+        hash,
+        durationMs: 2000,
+        commitHash: false,
+    });
+
     const [isDisabledType, setIsDisabledType] = useState(false);
-    const debouncerTimer = useRef(0);
-    const [loadingLocation, setLoadingLocation] = useState(false);
 
     const DEFAULT_GRAPH_HEIGHT = 328;
-
-    useWeatherTypeChange({ ctx, currentLoc, setWeekForecast: setForecast });
-    useWeatherLocationChange({
-        ctx,
-        currentLoc,
-        delayedHash,
-        weatherLoc,
-        setWeatherLoc,
-        weekForecast: forecast,
-        setWeekForecast: setForecast,
-    });
 
     const [currentWeatherType, setCurrentWeatherType] = useState(null);
     const [currentWeatherUnits, setCurrentWeatherUnits] = useState(null);
 
-    // debounce map move/scroll
     useEffect(() => {
-        setLoadingLocation(true);
-        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
-        debouncerTimer.current = setTimeout(() => {
-            debouncerTimer.current = 0;
-            setDelayedHash(hash);
-            setLoadingLocation(false);
-        }, 2000);
-
-        return () => {
-            clearTimeout(debouncerTimer.current);
-        };
-    }, [hash]);
-
-    useEffect(() => {
-        const res = ctx.weatherLayers[ctx.weatherType].find((layer) => {
-            return layer.showDetails;
-        });
-        if (res) {
-            setCurrentWeatherType(res.key);
-            setCurrentWeatherUnits(res.units);
-        }
-    }, [ctx.weatherLayers]);
+        const list = ctx.weatherLayers?.[ctx.weatherType];
+        if (!list?.length) return;
+        const res = list.find((layer) => layer.showDetails);
+        const chosen = res ?? list[0];
+        setCurrentWeatherType(chosen.key);
+        setCurrentWeatherUnits(chosen.units);
+    }, [ctx.weatherLayers, ctx.weatherType]);
 
     useEffect(() => {
         if (currentWeatherType) {
@@ -159,29 +127,6 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
 
         return res;
     }, [forecast, ctx.weatherLayers, ctx.weatherType]);
-
-    function getWeatherLoc() {
-        if (localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC)) {
-            return JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC));
-        }
-        return null;
-    }
-
-    function getSavedForecast() {
-        if (localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK)) {
-            const weatherData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK));
-            if (
-                Array.isArray(weatherData) &&
-                weatherData.length > 0 &&
-                weatherData.every((item) => typeof item === 'object' && item !== null && 'ts' in item)
-            ) {
-                return weatherData;
-            }
-        } else {
-            console.debug('No data in local storage.');
-        }
-        return null;
-    }
 
     const ForecastButtonItem = ({ item, index }) => {
         const disabled = ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS;
@@ -268,7 +213,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         >
             <WeatherHeader setShowInfoBlock={setShowInfoBlock} isDetails={true} />
             <Box sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1 }}>
-                <TopWeatherInfo loadingLocation={loadingLocation} weatherLoc={weatherLoc} />
+                <TopWeatherInfo loadingLocation={isPending} weatherLoc={weatherLoc} />
                 {!isEmpty(forecastPreparedData) && (
                     <Box className={styles.forecastButtonBox}>
                         {ctx.weatherLayers[ctx.weatherType].map((item, index) => (

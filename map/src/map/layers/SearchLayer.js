@@ -30,7 +30,7 @@ import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
-import { showProcessingNotification } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
@@ -173,8 +173,8 @@ export default function SearchLayer() {
             params: {
                 lat: searchData.latlng.lat,
                 lon: searchData.latlng.lng,
-                northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
-                southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+                northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+                southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
                 text: searchData.query,
                 locale: i18n.language,
                 baseSearch: searchData.baseSearch,

@@ -12,9 +12,10 @@ import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 export const useWeatherTypeChange = ({ ctx, currentLoc, setDayForecast = null, setWeekForecast = null }) => {
     function getForecastData({ lat, lon }) {
         if (setDayForecast && setWeekForecast) {
-            fetchDayForecast({ lat, lon, ctx, setDayForecast }).then(() =>
-                fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false))
-            );
+            Promise.allSettled([
+                fetchDayForecast({ lat, lon, ctx, setDayForecast }),
+                fetchWeekForecast({ lat, lon, ctx, setWeekForecast }),
+            ]).then(() => ctx.setForecastLoading(false));
         } else {
             if (setDayForecast) {
                 fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();

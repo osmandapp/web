@@ -6,6 +6,7 @@ import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_clouds.sv
 import { ReactComponent as PrecipitationIcon } from '../assets/icons/ic_action_precipitation.svg';
 import styles from '../menu/weather/weather.module.css';
 import i18n from '../i18n';
+import { WEATHER_COORDS_DECIMALS } from './GlobalManager';
 import { apiGet } from '../util/HttpApi';
 
 export const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
@@ -15,6 +16,24 @@ export const LOCAL_STORAGE_WEATHER_LOC = 'weatherLoc';
 export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
 export const LOCAL_STORAGE_WEATHER_FORECAST_WEEK = 'weatherForecastWeek';
 export const LOCAL_STORAGE_WEATHER_TYPE = 'weatherType';
+
+export function getSavedWeekForecast() {
+    const raw = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
+    if (!raw) return null;
+    try {
+        const weatherData = JSON.parse(raw);
+        if (
+            Array.isArray(weatherData) &&
+            weatherData.length > 0 &&
+            weatherData.every((item) => typeof item === 'object' && item !== null && 'ts' in item)
+        ) {
+            return weatherData;
+        }
+    } catch {
+        return null;
+    }
+    return null;
+}
 
 function getLayers() {
     let allLayers = {};
@@ -182,8 +201,8 @@ export const fetchDayForecast = async ({ lat, lon, ctx, setDayForecast = null })
     const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
         apiCache: true,
         params: {
-            lat: lat,
-            lon: lon,
+            lat: Number(lat).toFixed(WEATHER_COORDS_DECIMALS),
+            lon: Number(lon).toFixed(WEATHER_COORDS_DECIMALS),
             weatherType: ctx.weatherType,
         },
         method: 'GET',
@@ -202,8 +221,8 @@ export const fetchWeekForecast = async ({ lat, lon, ctx, setWeekForecast = null 
     const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
         apiCache: true,
         params: {
-            lat: lat,
-            lon: lon,
+            lat: Number(lat).toFixed(WEATHER_COORDS_DECIMALS),
+            lon: Number(lon).toFixed(WEATHER_COORDS_DECIMALS),
             weatherType: ctx.weatherType,
             week: true,
         },

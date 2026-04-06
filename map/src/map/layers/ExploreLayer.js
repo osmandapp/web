@@ -35,7 +35,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
-import { MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
@@ -261,8 +261,8 @@ export default function ExploreLayer() {
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,
                 params: {
-                    northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
-                    southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+                    northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+                    southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
                     lang: settings?.useWikiImages ? null : i18n.language,
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },

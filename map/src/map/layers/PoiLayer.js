@@ -33,7 +33,12 @@ import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMa
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
+import {
+    BBOX_COORDS_DECIMALS,
+    MENU_INFO_OPEN_SIZE,
+    NAVIGATE_URL,
+    showProcessingNotification,
+} from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
@@ -403,10 +408,14 @@ export default function PoiLayer() {
         const { bounds, center } = visibleBboxInfo;
         const searchData = {
             categories: showPoiCategories,
-            northWest: `${bounds.getNorthWest().lat},${bounds.getNorthWest().lng}`,
-            southEast: `${bounds.getSouthEast().lat},${bounds.getSouthEast().lng}`,
-            savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
-            savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null,
+            northWest: `${Number(bounds.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bounds.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+            southEast: `${Number(bounds.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bounds.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+            savedNorthWest: savedBbox
+                ? `${Number(savedBbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(savedBbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`
+                : null,
+            savedSouthEast: savedBbox
+                ? `${Number(savedBbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(savedBbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`
+                : null,
             prevCategoriesCount: prevCategories ? prevCategories.length : 0,
             prevSearchRes: prevSearchRes,
             prevSearchCategory: prevSearchCategory,

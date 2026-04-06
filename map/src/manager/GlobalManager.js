@@ -9,6 +9,9 @@ export const HEADER_SIZE = 60;
 export const INSTALL_BANNER_SIZE = 60;
 export const GLOBAL_GRAPH_HEIGHT_SIZE = 200;
 
+export const BBOX_COORDS_DECIMALS = 5;
+export const WEATHER_COORDS_DECIMALS = 5;
+
 export const GPX = 'GPX';
 export const FAVOURITES = 'FAVOURITES';
 

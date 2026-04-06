@@ -12,6 +12,7 @@ import { apiGet } from '../../../util/HttpApi';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_16.svg';
 import { ReactComponent as DotIcon } from '../../../assets/icons/ic_action_dot_16.svg';
 import { getTrackPoints } from '../../../manager/track/TracksManager';
+import { WEATHER_COORDS_DECIMALS } from '../../../manager/GlobalManager';
 
 const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 const EMPTY_DISTANCE_INFO = { distance: null, bearing: null };
@@ -61,8 +62,8 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/get-address-by-latlon`, {
             apiCache: true,
             params: {
-                lat: Number(coords.lat).toFixed(6),
-                lon: Number(coords.lon).toFixed(6),
+                lat: Number(coords.lat).toFixed(WEATHER_COORDS_DECIMALS),
+                lon: Number(coords.lon).toFixed(WEATHER_COORDS_DECIMALS),
             },
         })
             .then((response) => {
