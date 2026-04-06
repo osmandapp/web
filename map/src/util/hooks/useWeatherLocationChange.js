@@ -52,9 +52,10 @@ export const useWeatherLocationChange = ({
     }, [currentLoc, delayedHash, enabled]);
 
     function getForecastData(lat, lon) {
-        fetchDayForecast({ lat, lon, ctx, setDayForecast }).then(() =>
-            fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false))
-        );
+        Promise.allSettled([
+            fetchDayForecast({ lat, lon, ctx, setDayForecast }),
+            fetchWeekForecast({ lat, lon, ctx, setWeekForecast }),
+        ]).then(() => ctx.setForecastLoading(false));
     }
 
     const fetchAddress = async ({ point, useMapBbox = false }) => {
