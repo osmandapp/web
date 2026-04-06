@@ -67,8 +67,8 @@ export const useWeatherLocationChange = ({
         if (useMapBbox) {
             const bbox = ctx.mapBbox;
             if (bbox) {
-                nw = `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`;
-                se = `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`;
+                nw = `${Number(bbox.getNorthWest().lat).toFixed(6)},${Number(bbox.getNorthWest().lng).toFixed(6)}`;
+                se = `${Number(bbox.getSouthEast().lat).toFixed(6)},${Number(bbox.getSouthEast().lng).toFixed(6)}`;
             }
         }
 
