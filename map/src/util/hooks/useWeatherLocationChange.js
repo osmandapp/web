@@ -8,6 +8,7 @@ import {
 import { useEffect } from 'react';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
+import { BBOX_COORDS_DECIMALS } from '../../manager/GlobalManager';
 import { apiGet } from '../HttpApi';
 
 export const useWeatherLocationChange = ({
@@ -68,8 +69,8 @@ export const useWeatherLocationChange = ({
         if (useMapBbox) {
             const bbox = ctx.mapBbox;
             if (bbox) {
-                nw = `${Number(bbox.getNorthWest().lat).toFixed(6)},${Number(bbox.getNorthWest().lng).toFixed(6)}`;
-                se = `${Number(bbox.getSouthEast().lat).toFixed(6)},${Number(bbox.getSouthEast().lng).toFixed(6)}`;
+                nw = `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`;
+                se = `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`;
             }
         }
 

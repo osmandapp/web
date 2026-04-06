@@ -13,7 +13,7 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import debounce from 'lodash-es/debounce';
-import { MENU_INFO_OPEN_SIZE, MAIN_URL_WITH_SLASH, STOP_URL } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, MENU_INFO_OPEN_SIZE, MAIN_URL_WITH_SLASH, STOP_URL } from '../../manager/GlobalManager';
 
 export const TRANSPORT_STOPS_LAYER_ID = 'transport-stops-layer';
 
@@ -404,8 +404,8 @@ const TransportStopsLayer = () => {
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-transport-stops`, {
             apiCache: true,
             params: {
-                northWest: `${bbox.getNorthWest().lat.toFixed(5)},${bbox.getNorthWest().lng.toFixed(5)}`,
-                southEast: `${bbox.getSouthEast().lat.toFixed(5)},${bbox.getSouthEast().lng.toFixed(5)}`,
+                northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+                southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
             },
             signal: controller.signal,
         });
