@@ -182,36 +182,32 @@ The [Updates](https://osmand.net/docs/user/personal/maps-resources?current-os=io
 * [**Enhanced Search Result Details**](https://osmand.net/docs/user/search/search-poi)
     POI search results have been improved with a more consistent city display, optional thumbnails, and a refined layout to help you identify locations at a glance.
 * [**Improved Trail and Route Interaction**](https://github.com/osmandapp/OsmAnd-iOS/issues/5129)
-    We’ve refined how the map handles taps on trails and hiking/cycling routes. This update ensures that selecting a route directly from the map consistently opens the correct details and highlights the entire path, fixing previous issues where the selection would fail or become unresponsive.
-* [**Interactive Fitness & Canoe Route Shields**](https://github.com/osmandapp/OsmAnd-iOS/issues/5129)
-    Route shields for specialized activities—including **fitness, running, and canoe routes**—are now fully interactive. Tapping these symbols on the map now correctly opens the route details, bringing them into alignment with the standard behavior for hiking and cycling networks.
-* [**Night Mode Consistency**](https://github.com/osmandapp/OsmAnd-iOS/issues/5105)
-    Improved the visual consistency of terrain layers (Hillshade and Slope) when using Night Mode, ensuring the map remains readable and easy on the eyes in low-light conditions.
-* [**Updated Map Legend**](https://github.com/osmandapp/OsmAnd-iOS/issues/4594)
-    Refined the visibility of road shields and symbols in the Map Legend to reflect the latest rendering scheme improvements.
-
+    We’ve refined how the map handles [taps on trails and hiking/cycling routes](https://osmand.net/docs/user/map/routes#actions-with-routes). This update ensures that selecting a route directly from the map consistently opens the correct details and highlights the entire path, fixing previous issues where the selection would fail or become unresponsive. Route shields for specialized activities—including fitness, running, and canoe routes — are now fully interactive.
+* [**"Distance by Tap" Refinement**](https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap)
+    Improved the "Distance by tap" tool to prevent the ruler from accidentally appearing or changing state while you are swiping or moving the map. The tool now correctly distinguishes between a deliberate tap to measure distance and general map navigation.
+* [**Widget Icon Visibility**](https://github.com/osmandapp/OsmAnd-iOS/issues/4902)
+    Added a new option [to show or hide icon on widgets](https://osmand.net/docs/user/widgets/configure-screen#widget-settings). This allows for a cleaner, more minimalist dashboard by displaying only data, which is especially useful for medium and large widget layouts.
 
 
 ## Bug fixes 
 
 - Fixed [ETA not updating in Navigation widgets](https://github.com/osmandapp/OsmAnd-iOS/issues/5003) while the vehicle is stationary;
-- Fixed [crash when importing Favorites or tracks from cloud providers like Dropbox](https://github.com/osmandapp/OsmAnd-iOS/issues/5129).
-- Resolved [issue where "Show on map" and appearance settings weren't inherited by track folders](https://github.com/osmandapp/OsmAnd-iOS/issues/5235).
-- Fixed [incorrect "Distance to destination" values appearing in the CarPlay dashboard](https://github.com/osmandapp/OsmAnd-iOS/issues/5242).
-- Improved [GPX recording stability to prevent data loss on app restart](https://github.com/osmandapp/OsmAnd-iOS/issues/5153).
-- Fixed [UI overlap where zoom buttons obstructed the Quick Action menu on smaller screens](https://github.com/osmandapp/OsmAnd-iOS/issues/5224).
-- Corrected [handling of relation-based POIs on multipolygons](https://github.com/osmandapp/OsmAnd-iOS/issues/5231).
-- Resolved [rendering issues with specific Multipolygon structures](https://github.com/osmandapp/OsmAnd-iOS/issues/5151).
-- Resolved [issue where the map failed to refresh after deleting a large GPX track](https://github.com/osmandapp/OsmAnd-iOS/issues/5131);
-- Fixed [incorrect elevation data display in the Track Analyzer for short recordings](https://github.com/osmandapp/OsmAnd-iOS/issues/5072);
-- Corrected [the "Center on location" behavior in CarPlay when navigating complex junctions](https://github.com/osmandapp/OsmAnd-iOS/issues/5138);
-- Fixed [long-standing UI glitch with overlapping labels in the "My Places" menu](https://github.com/osmandapp/OsmAnd-iOS/issues/2433);
-- Improved [rendering of coastal lines and water bodies at high zoom levels](https://github.com/osmandapp/OsmAnd-iOS/issues/4727);
-- Resolved [crash occurring when opening the "Trip recording" widget settings](https://github.com/osmandapp/OsmAnd-iOS/issues/5168);
-- Fixed [issue where custom map style colors were not applied to certain POI icons](https://github.com/osmandapp/OsmAnd-iOS/issues/5187);
-- Corrected [voice prompt timing for "Keep Right/Left" maneuvers in roundabouts](https://github.com/osmandapp/OsmAnd-iOS/issues/5196);
-- Fixed [visibility of "Avalanche slope" layer when used in combination with Terrain maps](https://github.com/osmandapp/OsmAnd-iOS/issues/5051);
-- Resolved [issue where the search bar would lose focus after selecting a category filter](https://github.com/osmandapp/OsmAnd-iOS/issues/2712).
+- Fixed [map behavior for trails/routes opening on the map](https://github.com/osmandapp/OsmAnd-iOS/issues/5129);
+- Fixed [wrong language displayed in Wikipedia POI details](https://github.com/osmandapp/OsmAnd-iOS/issues/5235);
+- Fixed [broken UI and corrupted X-axis scale in "Analyze on Map" for segments](https://github.com/osmandapp/OsmAnd-iOS/issues/5242);
+- Fixed [crash during navigation by track with or without "Snap to road" enabled](https://github.com/osmandapp/OsmAnd-iOS/issues/5153);
+- Fixed [Selection Pin offset when selecting a point from the "What's here" menu](https://github.com/osmandapp/OsmAnd-iOS/issues/5224);
+- Fixed [CarPlay: Next turn widget background unexpectedly turning red during navigation](https://github.com/osmandapp/OsmAnd-iOS/issues/5231);
+- Fixed [3D map view not being preserved after a route preview](https://github.com/osmandapp/OsmAnd-iOS/issues/5151);
+- Resolved [issue where Waypoint and folder icons would disappear after renaming a folder and restarting the app](https://github.com/osmandapp/OsmAnd-iOS/issues/5131);
+- Resolved [UI issue where character descenders were cropped in the Next turn widget](https://github.com/osmandapp/OsmAnd-iOS/issues/5072);
+- Resolved [issue where temporary GPX files were visible in search results](https://github.com/osmandapp/OsmAnd-iOS/issues/5138);
+- Resolved [issue where vehicle parameters did not correctly respect changes to measurement units or region settings](https://github.com/osmandapp/OsmAnd-iOS/issues/2433);
+- Fixed [**issue where tapping Favorites on the map would fail if the map was rotated**](https://github.com/osmandapp/OsmAnd-iOS/issues/5168);
+- Fixed [issue where POIs would fail to render if the OSM notes layer was enabled under poor internet connectivity](https://github.com/osmandapp/OsmAnd-iOS/issues/5187);
+- Resolved [issue where the POI context menu displayed redundant categories or tags](https://github.com/osmandapp/OsmAnd-iOS/issues/5196);
+- Fixed [issue where the customized route line color would not update until the page was refreshed](https://github.com/osmandapp/OsmAnd-iOS/issues/5051);
+- Fixed [issue where Bremen was displayed inconsistently compared to other German regions on the map](https://github.com/osmandapp/OsmAnd-iOS/issues/2712).
 
 
 
