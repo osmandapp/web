@@ -8,7 +8,14 @@ export function useDebouncedHash({ hash, durationMs, commitHash = false, blockWh
     const enabled = commitHash ? !blockWhen : true;
 
     useEffect(() => {
-        if (!enabled) return;
+        if (!enabled) {
+            if (debouncerTimer.current != null) {
+                clearTimeout(debouncerTimer.current);
+                debouncerTimer.current = null;
+            }
+            setIsPending(false);
+            return;
+        }
 
         setIsPending(true);
         if (debouncerTimer.current != null) {
