@@ -6,6 +6,14 @@ import actionFinish from '../../actions/actionFinish.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import { TEST_LOGIN2, TEST_PASSWORD2 } from '../../options.mjs';
 
+/**
+ * Test files are stored in the database under the TEST_LOGIN2 account.
+ * The files were manually synchronized from the Android app.
+ * There are 437 files, filtered into 5 Smart Folders using different criteria.
+ * The SMART_FOLDERS array contains each folder name and the expected number of files in that folder.
+ * Name of folder contains the filter name.
+ */
+
 const SMART_FOLDERS = [
     {name: '1smart f length 8646', size: 437},
     {name: '2smart f length 888', size: 286},

@@ -12,7 +12,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { fmt } from '../../util/dateFmt';
 import { SMART_TYPE } from '../share/shareConstants';
-import { populateSmartFolderFiles } from '../../manager/LoadFileManager';
+import { populateSmartFolderFiles } from '../../util/hooks/useInitialFilesLoad';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);

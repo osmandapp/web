@@ -1,4 +1,5 @@
-import { apiGet } from '../util/HttpApi';
+import { useEffect } from 'react';
+import { apiGet } from '../HttpApi';
 import TracksManager, {
     getGpxFiles,
     filterRegularFolders,
@@ -7,13 +8,14 @@ import TracksManager, {
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
     EMPTY_FILE_NAME,
-} from './track/TracksManager';
-import { addOpenedFavoriteGroups } from './FavoritesManager';
-import { getShareWithMe } from './ShareManager';
-import { FAVOURITES, GPX } from './GlobalManager';
-import { SMART_TYPE } from '../menu/share/shareConstants';
-import { findInfoFile } from './track/TrackAppearanceManager';
-import Utils from '../util/Utils';
+} from '../../manager/track/TracksManager';
+import { addOpenedFavoriteGroups } from '../../manager/FavoritesManager';
+import { getShareWithMe } from '../../manager/ShareManager';
+import { FAVOURITES, GPX } from '../../manager/GlobalManager';
+import { SMART_TYPE } from '../../menu/share/shareConstants';
+import { findInfoFile } from '../../manager/track/TrackAppearanceManager';
+import Utils from '../Utils';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
 async function getSmartFolders() {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-smart-folders`, {});
@@ -255,4 +257,46 @@ export async function loadListFiles({
             }
         }
     }
+}
+
+export function useInitialFilesLoad({
+    loginUser,
+    listFiles,
+    setListFiles,
+    gpxFiles,
+    setGpxFiles,
+    setFavorites,
+    setUpdateMarkers,
+    setProcessingGroups,
+    setVisibleTracks,
+    setShareWithMeFiles,
+    setTracksGroups,
+    setSmartFoldersCache,
+    setUpdateFiles,
+    setSmartFoldersLoading,
+    setGpxLoading,
+}) {
+    useEffect(() => {
+        if (loginUser !== INIT_LOGIN_STATE) {
+            setGpxLoading(true);
+            loadListFiles({
+                loginUser,
+                listFiles,
+                setListFiles,
+                gpxFiles,
+                setGpxFiles,
+                setFavorites,
+                setUpdateMarkers,
+                setProcessingGroups,
+                setVisibleTracks,
+                setShareWithMeFiles,
+                setTracksGroups,
+                setSmartFoldersCache,
+                setUpdateFiles,
+                setSmartFoldersLoading,
+            }).then(() => {
+                setGpxLoading(false);
+            });
+        }
+    }, [loginUser]);
 }

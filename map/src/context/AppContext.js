@@ -6,7 +6,6 @@ import { apiGet, apiPost } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
-import { INIT_LOGIN_STATE } from '../manager/LoginManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
@@ -24,7 +23,7 @@ import {
     SEARCH_RESULTS_KEY,
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
-import { loadListFiles, loadSmartFolders } from '../manager/LoadFileManager.js';
+import { useInitialFilesLoad, loadSmartFolders } from '../util/hooks/useInitialFilesLoad';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -509,29 +508,23 @@ export const AppContextProvider = (props) => {
         });
     }, [updateFiles]);
 
-    useEffect(() => {
-        if (loginUser !== INIT_LOGIN_STATE) {
-            setGpxLoading(true);
-            loadListFiles({
-                loginUser,
-                listFiles,
-                setListFiles,
-                gpxFiles,
-                setGpxFiles,
-                setFavorites,
-                setUpdateMarkers,
-                setProcessingGroups,
-                setVisibleTracks,
-                setShareWithMeFiles,
-                setTracksGroups,
-                setSmartFoldersCache,
-                setUpdateFiles,
-                setSmartFoldersLoading,
-            }).then(() => {
-                setGpxLoading(false);
-            });
-        }
-    }, [loginUser]);
+    useInitialFilesLoad({
+        loginUser,
+        listFiles,
+        setListFiles,
+        gpxFiles,
+        setGpxFiles,
+        setFavorites,
+        setUpdateMarkers,
+        setProcessingGroups,
+        setVisibleTracks,
+        setShareWithMeFiles,
+        setTracksGroups,
+        setSmartFoldersCache,
+        setUpdateFiles,
+        setSmartFoldersLoading,
+        setGpxLoading,
+    });
 
     const [openGroups, setOpenGroups] = useState([]);
 
