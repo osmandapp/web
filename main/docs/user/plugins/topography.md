@@ -358,7 +358,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_ios_new.png)
 
 </TabItem>
 
