@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export function useDebouncedHash({ hash, durationMs, commitHash = false, blockWhen = false }) {
-    const debouncerTimer = useRef(0);
+    const debouncerTimer = useRef(null);
     const [isPending, setIsPending] = useState(false);
     const [delayedHash, setDelayedHash] = useState(hash);
 
@@ -11,9 +11,12 @@ export function useDebouncedHash({ hash, durationMs, commitHash = false, blockWh
         if (!enabled) return;
 
         setIsPending(true);
-        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
+        if (debouncerTimer.current != null) {
+            clearTimeout(debouncerTimer.current);
+            debouncerTimer.current = null;
+        }
         debouncerTimer.current = setTimeout(() => {
-            debouncerTimer.current = 0;
+            debouncerTimer.current = null;
             if (commitHash) {
                 setDelayedHash(hash);
             }
@@ -21,7 +24,10 @@ export function useDebouncedHash({ hash, durationMs, commitHash = false, blockWh
         }, durationMs);
 
         return () => {
-            clearTimeout(debouncerTimer.current);
+            if (debouncerTimer.current != null) {
+                clearTimeout(debouncerTimer.current);
+                debouncerTimer.current = null;
+            }
         };
     }, [blockWhen, enabled, hash, durationMs, commitHash]);
 
