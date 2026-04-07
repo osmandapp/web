@@ -11,7 +11,7 @@ import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { SMART_TYPE } from '../share/shareConstants';
-import { populateSmartFolderFiles } from '../../context/AppContext';
+import { populateSmartFolderFiles } from '../../util/hooks/useInitialFilesLoad';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);

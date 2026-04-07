@@ -24,8 +24,8 @@ export function buildInfoPayload(gpxFile) {
     };
 }
 
-function findInfoFile(ctx, infoFileName) {
-    return ctx.listFiles?.uniqueFiles?.find((f) => f?.name === infoFileName);
+export function findInfoFile(ctx, fileName) {
+    return ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName + INFO_FILE_EXT);
 }
 
 /**
@@ -33,14 +33,15 @@ function findInfoFile(ctx, infoFileName) {
  *
  * @param {Object} ctx              App context (used to register newly created `.info` in `listFiles`)
  * @param {Object} gpxFile          Object with at least `name` and `info` (the payload to persist)
- * @param {string} infoFileName     Cloud path for the `.info` file
+ * @param {string} fileName         Cloud path for the `.info` file similar to the .gpx file
  * @param {Object|null} infoFile    Existing file entry from `listFiles` (carries `updatetimems` for update)
  * @returns {Promise<boolean>}
  */
-export async function createOrUpdateInfoFile(ctx, gpxFile, infoFileName, infoFile) {
+export async function createOrUpdateInfoFile(ctx, gpxFile, fileName, infoFile) {
     if (!gpxFile?.name) {
         return false;
     }
+    const infoFileName = fileName + INFO_FILE_EXT;
     const convertedData = new TextEncoder().encode(JSON.stringify(gpxFile.info));
     const zipped = require('pako').gzip(convertedData, { to: 'Uint8Array' });
     const blob = new Blob([zipped.buffer], { type: 'application/json' });
@@ -71,8 +72,7 @@ export async function syncCloudTrackInfo(ctx, cloudGpxName) {
     const selectedFile = ctx.selectedGpxFile;
     if (!selectedFile) return;
 
-    const infoFileName = cloudGpxName + INFO_FILE_EXT;
-    const infoFile = findInfoFile(ctx, infoFileName);
+    const infoFile = findInfoFile(ctx, cloudGpxName);
 
     if (infoFile && !selectedFile.infoChanged) return;
 
@@ -83,7 +83,7 @@ export async function syncCloudTrackInfo(ctx, cloudGpxName) {
     const success = await createOrUpdateInfoFile(
         ctx,
         { name: selectedFile?.name || cloudGpxName, info: payload },
-        infoFileName,
+        cloudGpxName,
         infoFile
     );
     if (success) {
@@ -119,15 +119,13 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
         }
 
         if (isCloudTrack(ctx)) {
-            const infoFileName = updatedGpxFile.name + INFO_FILE_EXT;
-            const infoFile = findInfoFile(ctx, infoFileName);
-
+            const infoFile = findInfoFile(ctx, updatedGpxFile.name);
             if (debouncerTimer.current) {
                 clearTimeout(debouncerTimer.current);
             }
             debouncerTimer.current = setTimeout(async () => {
                 debouncerTimer.current = null;
-                const success = await createOrUpdateInfoFile(ctx, updatedGpxFile, infoFileName, infoFile);
+                const success = await createOrUpdateInfoFile(ctx, updatedGpxFile, updatedGpxFile.name, infoFile);
                 if (success) {
                     ctx.setSelectedGpxFile((cur) => ({ ...cur, cloudRedrawWpts: true, infoChanged: false }));
                 } else {

@@ -18,15 +18,11 @@ import TracksManager, {
     prepareName,
     updateMetadata,
 } from './TracksManager';
-import { syncCloudTrackInfo } from './TrackAppearanceManager';
+import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
-import {
-    getFilesForUpdateDetails,
-    OBJECT_TYPE_CLOUD_TRACK,
-    OBJECT_TYPE_FAVORITE,
-    OBJECT_TYPE_LOCAL_TRACK,
-} from '../../context/AppContext';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import { getFilesForUpdateDetails } from '../../util/hooks/useInitialFilesLoad';
 import Utils, { sanitizedFileName } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
@@ -265,7 +261,8 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         const track = await TracksManager.getTrackData(gpxfile);
                         if (track) {
                             track.name = file.name;
-                            track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
+                            const infoFile = findInfoFile(ctx, file.name);
+                            track.info = infoFile?.details?.data;
                             Object.keys(track).forEach((t) => {
                                 newGpxFiles[file.name][t] = track[t];
                             });
@@ -437,7 +434,8 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
 
-        track.info = await Utils.getFileInfo(newGpxFiles[file.name]);
+        const infoFile = findInfoFile(ctx, file.name);
+        track.info = infoFile?.details?.data;
         track.name = file.name;
         Object.keys(track).forEach((t) => {
             newGpxFiles[file.name][t] = track[t];

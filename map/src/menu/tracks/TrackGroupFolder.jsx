@@ -19,7 +19,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
 import { SMART_TYPE } from '../share/shareConstants';
-import { populateSmartFolderFiles } from '../../context/AppContext';
+import { populateSmartFolderFiles } from '../../util/hooks/useInitialFilesLoad';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);

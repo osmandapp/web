@@ -84,18 +84,6 @@ async function getFileData(file) {
     return trackData;
 }
 
-// get .info json
-async function getFileInfo(file) {
-    let info;
-    const response = await apiGet(file.infoUrl, {});
-    if (response.ok) {
-        if (response.data?.length > 0) {
-            info = await response.json();
-        }
-    }
-    return info;
-}
-
 export const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6372.8; // for haversine use R = 6372.8 km instead of 6371 km
     const dLat = toRadians(lat2 - lat1);
@@ -378,7 +366,6 @@ export function getCurrentTimeParams() {
 
 const Utils = {
     getFileData,
-    getFileInfo,
     getDistance,
     getBearing,
     getPointsDist,
