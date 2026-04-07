@@ -44,6 +44,7 @@ The list below provides converters for various data types supported by OsmAnd, a
 
 | Type | Description | Link |
 |-- | -- | --|
+| GoogleMap To OSMAnd GPX | Creates a folder of OSMAnd style GPX files from a google my maps map (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
 | KMZ to GPX | Python script to convert *KMZ* files to *GPX* format, including icons. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
 | KML to GPX | Python script to convert *KML* files to *GPX* format with icons. Other tools available. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Tool for converting Garmin Basecamp files to OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
