@@ -17,19 +17,10 @@ import { findInfoFile } from '../../manager/track/TrackAppearanceManager';
 import Utils from '../Utils';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
-async function getSmartFolders() {
-    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-smart-folders`, {});
-    return response?.data || null;
-}
-
-const isFileWithDetails = (fileName) => {
-    const fileNameLC = fileName.toLowerCase();
-    return (
-        (fileNameLC.endsWith(GPX_FILE_EXT) || fileNameLC.endsWith(INFO_FILE_EXT)) &&
-        !fileNameLC.endsWith(EMPTY_FILE_NAME)
-    );
-};
-
+/**
+ * Filters files that need detail updates and sets them for processing.
+ * Returns true if any files need updates.
+ */
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
         .filter((f) => f.details?.update && f.type === GPX && isFileWithDetails(f.name))
@@ -45,6 +36,10 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
     return filesToUpdate.length > 0;
 }
 
+/**
+ * Loads and sets shared files (tracks and favorites) from other users.
+ * Returns array of favorite files marked as shared.
+ */
 export async function loadShareFiles(setShareWithMeFiles) {
     const tracks = await getShareWithMe({ type: GPX });
     const favorites = await getShareWithMe({ type: FAVOURITES });
@@ -69,6 +64,10 @@ export async function loadShareFiles(setShareWithMeFiles) {
     });
 }
 
+/**
+ * Fetches smart folders from the server and adds them to tracks groups.
+ * Clears the smart folders cache before loading.
+ */
 export async function loadSmartFolders(setTracksGroups, setSmartFoldersCache) {
     const res = await getSmartFolders();
     setSmartFoldersCache({});
@@ -93,6 +92,10 @@ export async function loadSmartFolders(setTracksGroups, setSmartFoldersCache) {
     });
 }
 
+/**
+ * Populates a smart folder with its actual file objects from the file list.
+ * Uses caching to avoid redundant processing. Returns the populated folder.
+ */
 export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCache, setSmartFoldersCache) {
     const filesArray = [];
     const cached = smartFoldersCache?.[smartFolder.name];
@@ -113,6 +116,98 @@ export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCac
     };
     setSmartFoldersCache((prev) => ({ ...prev, [smartFolder.name]: populated }));
     return populated;
+}
+
+/**
+ * Custom hook that handles initial loading of cloud files when user logs in.
+ * Fetches user's tracks, favorites, smart folders, and shared files.
+ * Restores previously visible tracks from localStorage.
+ * Only triggers when loginUser changes.
+ */
+export function useInitialFilesLoad({
+    loginUser,
+    listFiles,
+    setListFiles,
+    gpxFiles,
+    setGpxFiles,
+    setFavorites,
+    setUpdateMarkers,
+    setProcessingGroups,
+    setVisibleTracks,
+    setShareWithMeFiles,
+    setTracksGroups,
+    setSmartFoldersCache,
+    setUpdateFiles,
+    setSmartFoldersLoading,
+    setGpxLoading,
+}) {
+    useEffect(() => {
+        if (loginUser !== INIT_LOGIN_STATE) {
+            setGpxLoading(true);
+            
+            if (loginUser !== listFiles.loginUser) {
+                if (!loginUser) {
+                    setListFiles({});
+                    setFavorites({});
+                    setGpxLoading(false);
+                } else {
+                    apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {})
+                        .then((response) => {
+                            if (response.ok) {
+                                return response.json();
+                            }
+                            return null;
+                        })
+                        .then(async (res) => {
+                            if (res) {
+                                res.loginUser = loginUser;
+                                res.totalUniqueZipSize = 0;
+                                res.uniqueFiles.forEach((f) => {
+                                    res.totalUniqueZipSize += f.zipSize;
+                                });
+                                const hasUpdateFiles = getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
+                                setListFiles(res);
+                                if (!hasUpdateFiles) {
+                                    setSmartFoldersLoading(true);
+                                    loadSmartFolders(setTracksGroups, setSmartFoldersCache)
+                                        .then(() => {
+                                            setSmartFoldersLoading(false);
+                                        })
+                                        .catch(() => {
+                                            setSmartFoldersLoading(false);
+                                        });
+                                }
+                                const favFiles = await loadShareFiles(setShareWithMeFiles);
+                                const ownFavorites = TracksManager.getFavoriteGroups(res);
+                                const allFavorites = [...ownFavorites, ...favFiles];
+                                await Promise.all([
+                                    addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks, res),
+                                    addOpenedFavoriteGroups(allFavorites, setUpdateMarkers, setProcessingGroups),
+                                ]);
+                            }
+                        })
+                        .finally(() => {
+                            setGpxLoading(false);
+                        });
+                }
+            } else {
+                setGpxLoading(false);
+            }
+        }
+    }, [loginUser]);
+}
+
+async function getSmartFolders() {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-smart-folders`, {});
+    return response?.data || null;
+}
+
+function isFileWithDetails(fileName) {
+    const fileNameLC = fileName.toLowerCase();
+    return (
+        (fileNameLC.endsWith(GPX_FILE_EXT) || fileNameLC.endsWith(INFO_FILE_EXT)) &&
+        !fileNameLC.endsWith(EMPTY_FILE_NAME)
+    );
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, listFiles) {
@@ -201,102 +296,4 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, l
     });
 
     localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
-}
-
-export async function loadListFiles({
-    loginUser,
-    listFiles,
-    setListFiles,
-    gpxFiles,
-    setGpxFiles,
-    setFavorites,
-    setUpdateMarkers,
-    setProcessingGroups,
-    setVisibleTracks,
-    setShareWithMeFiles,
-    setTracksGroups,
-    setSmartFoldersCache,
-    setUpdateFiles,
-    setSmartFoldersLoading,
-}) {
-    if (loginUser !== listFiles.loginUser) {
-        if (!loginUser) {
-            setListFiles({});
-            setFavorites({});
-        } else {
-            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-            if (response.ok) {
-                await response.json().then(async (res) => {
-                    if (res) {
-                        res.loginUser = loginUser;
-                        res.totalUniqueZipSize = 0;
-                        res.uniqueFiles.forEach((f) => {
-                            res.totalUniqueZipSize += f.zipSize;
-                        });
-                        const hasUpdateFiles = getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
-                        setListFiles(res);
-                        if (!hasUpdateFiles) {
-                            setSmartFoldersLoading(true);
-                            loadSmartFolders(setTracksGroups, setSmartFoldersCache)
-                                .then(() => {
-                                    setSmartFoldersLoading(false);
-                                })
-                                .catch(() => {
-                                    setSmartFoldersLoading(false);
-                                });
-                        }
-                        const favFiles = await loadShareFiles(setShareWithMeFiles);
-                        const ownFavorites = TracksManager.getFavoriteGroups(res);
-                        const allFavorites = [...ownFavorites, ...favFiles];
-                        await Promise.all([
-                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks, res),
-                            addOpenedFavoriteGroups(allFavorites, setUpdateMarkers, setProcessingGroups),
-                        ]);
-                    }
-                });
-            }
-        }
-    }
-}
-
-export function useInitialFilesLoad({
-    loginUser,
-    listFiles,
-    setListFiles,
-    gpxFiles,
-    setGpxFiles,
-    setFavorites,
-    setUpdateMarkers,
-    setProcessingGroups,
-    setVisibleTracks,
-    setShareWithMeFiles,
-    setTracksGroups,
-    setSmartFoldersCache,
-    setUpdateFiles,
-    setSmartFoldersLoading,
-    setGpxLoading,
-}) {
-    useEffect(() => {
-        if (loginUser !== INIT_LOGIN_STATE) {
-            setGpxLoading(true);
-            loadListFiles({
-                loginUser,
-                listFiles,
-                setListFiles,
-                gpxFiles,
-                setGpxFiles,
-                setFavorites,
-                setUpdateMarkers,
-                setProcessingGroups,
-                setVisibleTracks,
-                setShareWithMeFiles,
-                setTracksGroups,
-                setSmartFoldersCache,
-                setUpdateFiles,
-                setSmartFoldersLoading,
-            }).then(() => {
-                setGpxLoading(false);
-            });
-        }
-    }, [loginUser]);
 }
