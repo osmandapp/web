@@ -767,25 +767,26 @@ The **Camera widgets** allow you to monitor the alignment between the OsmAnd map
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### Available RAM {#available-ram}
+#### Memory Info {#memory-info}
 
 <InfoAndroidOnly />
 
-![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
+![Memory info widgets](@site/static/img/widgets/memory_info.png)
 
-The **Available RAM** widget is a tool for monitoring your device's memory usage in relation to OsmAnd. It provides detailed data to help optimize application performance.
+The **Memory info** widget is a developer tool for monitoring how OsmAnd uses device memory. It provides information about different types of memory used by the application.
 
-- **Application RAM Available.** Displays the amount of RAM available for OsmAnd to use without causing performance issues.
+Available modes:  
+- **Used Java Heap** — Displays the amount of Java heap memory currently used by objects in the application.
+- **Allocated Java Heap** — Shows the amount of memory that the Java Virtual Machine (JVM) has currently allocated for the application.
+- **Max Java Heap Limit** — Indicates the maximum Java heap size allowed for the application by the Android system.
+- **Native Heap Allocated** — Displays the amount of memory allocated through native code (C/C++), including system libraries and NDK components.
+- **Graphics Memory** — Shows the amount of memory used for graphics resources such as OpenGL textures and buffers.
 
-- **Application RAM Usage** — Shows the current RAM consumption by OsmAnd.
-
-- **Total Application RAM** — Indicates the total memory allocated to OsmAnd, including both used and available memory.
-
-> **NOTE**. *The *total available RAM* may vary depending on background processes and other applications running on your device. These values are dynamic and offer a way to track and manage memory usage for consistent and efficient OsmAnd performance.*
+**NOTE:** Memory values may fluctuate depending on system processes, background applications, and the current activity within OsmAnd. These values are dynamic and intended primarily for debugging and performance monitoring.
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="developer_widgets"/> → *Available RAM* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="developer_widgets"/> → Memory info* |
 | By tapping | No changes |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
