@@ -9,19 +9,26 @@ import DistanceInfo from './DistanceInfo';
 import styles from '../../infoblock.module.css';
 import wptStyles from '../wpt/wptDetails.module.css';
 import { apiGet } from '../../../util/HttpApi';
+import activities from '../../../resources/activities.json';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_16.svg';
 import { ReactComponent as DotIcon } from '../../../assets/icons/ic_action_dot_16.svg';
 import { getTrackPoints } from '../../../manager/track/TracksManager';
+import { getSvgIcon, getIcon } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { DEFAULT_TAG_ICON_COLOR } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { WEATHER_COORDS_DECIMALS } from '../../../manager/GlobalManager';
 
 const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 const EMPTY_DISTANCE_INFO = { distance: null, bearing: null };
+const DEFAULT_ACTIVITY_ICON_SIZE = 16;
+const ACTIVITY_LABEL_COLOR = '#008BF8';
+const OSMAND_ACTIVITY_EXTENSION = 'osmand:activity';
 
 export default function LocationInfoLine({ wpt = null, track = null }) {
     const ctx = useContext(AppContext);
     const location = useLocation();
 
     const [trackAddress, setTrackAddress] = useState(null);
+    const [trackActivity, setTrackActivity] = useState(null);
     const [trackAddressLoading, setTrackAddressLoading] = useState(false);
 
     const coords = useMemo(() => {
@@ -48,6 +55,42 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         const bearing = getBearing(mapCenter.lat, mapCenter.lng, coords.lat, coords.lon);
         return { distance, bearing };
     }, [coords, ctx, location.hash]);
+
+    const activitiesArr = useMemo(() => activities?.groups.flatMap((group) => group.activities) ?? [], [activities]);
+
+    useEffect(() => {
+        if (!track) {
+            setTrackActivity(null);
+            return;
+        }
+
+        const activityId = track.details?.metadata?.extensions?.[OSMAND_ACTIVITY_EXTENSION];
+        if (!activityId) {
+            setTrackActivity(null);
+            return;
+        }
+
+        const activity = activitiesArr.find((act) => act.id === activityId);
+        if (!activity) {
+            setTrackActivity(null);
+            return;
+        }
+
+        (async () => {
+            if (!activity.icon_name || activity.icon_name === 'ic_sample') {
+                setTrackActivity({ label: activity.label, icon: null });
+                return;
+            }
+
+            const svgData = await getSvgIcon({ icon: activity.icon_name, ctx });
+            if (svgData) {
+                const icon = getIcon(svgData, DEFAULT_ACTIVITY_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
+                setTrackActivity({ label: activity.label, icon });
+            } else {
+                setTrackActivity({ label: activity.label, icon: null });
+            }
+        })();
+    }, [track, activitiesArr, ctx]);
 
     useEffect(() => {
         if (!track || !coords) {
@@ -136,7 +179,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         return (
             <Box className={`${styles.wptCategory} ${styles.locationInfoLineContainer}`}>
                 <ListItemText>
-                    <Typography className={wptStyles.placeAddress}>
+                    <Box className={wptStyles.placeAddress}>
                         <DistanceInfo
                             distance={distanceInfo.distance}
                             bearing={distanceInfo.bearing}
@@ -146,6 +189,21 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
                         {trackAddressLoading && !trackAddress && (
                             <CircularProgress className={wptStyles.trackLocationInfoLoader} size={13} />
                         )}
+                        {trackActivity && (
+                            <>
+                                {trackActivity.icon && (
+                                    <Box className={wptStyles.activityIcon}>{trackActivity.icon}</Box>
+                                )}
+                                <Typography
+                                    component="span"
+                                    className={wptStyles.placeDistance}
+                                    sx={{ color: ACTIVITY_LABEL_COLOR }}
+                                >
+                                    {trackActivity.label}
+                                </Typography>
+                                <DotIcon className={wptStyles.dotInfoIcon} />
+                            </>
+                        )}
                         {trackAddressText && (
                             <>
                                 <LocationIcon className={wptStyles.locationInfoIcon} />
@@ -154,7 +212,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
                                 </Typography>
                             </>
                         )}
-                    </Typography>
+                    </Box>
                 </ListItemText>
             </Box>
         );
