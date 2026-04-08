@@ -110,6 +110,10 @@
     top: 2px;
     text-indent: 0 !important;
     margin-right: 4px !important;
+    & svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
 }
 
 .activityLabel {

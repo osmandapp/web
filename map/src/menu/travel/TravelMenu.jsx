@@ -20,12 +20,7 @@ import debounce from 'lodash-es/debounce';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
 import activities from '../../resources/activities.json';
-import {
-    DEFAULT_TAG_ICON_COLOR,
-    DEFAULT_TAG_ICON_SIZE,
-    getIcon,
-    getSvgIcon,
-} from '../../infoblock/components/wpt/WptTagsProvider';
+import { getActivityIcon } from '../../infoblock/components/common/ActivityType';
 import styles from './travel.module.css';
 import CustomSelect from './CustomSelect';
 import ActivitySelect from './ActivitySelect';
@@ -264,24 +259,13 @@ export default function TravelMenu() {
 
     // Fetch icons for activities
     useEffect(() => {
-        async function getActivityIcon(activityIconName) {
-            if (!activityIconName || activityIconName === 'ic_sample') {
-                return null;
-            }
-            const svgData = await getSvgIcon({ icon: activityIconName, ctx });
-            if (!svgData) {
-                return null;
-            }
-            return getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
-        }
-
         const fetchIcons = async () => {
             const updatedActivities = await Promise.all(
                 activitiesArr.map(async (activity) => {
                     if (!activity.iconName) {
                         return activity;
                     }
-                    const icon = await getActivityIcon(activity.iconName);
+                    const icon = await getActivityIcon(activity.iconName, ctx);
                     return { ...activity, icon };
                 })
             );

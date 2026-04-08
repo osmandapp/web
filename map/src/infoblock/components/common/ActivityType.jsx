@@ -3,23 +3,28 @@ import { Box, Typography } from '@mui/material';
 import AppContext from '../../../context/AppContext';
 import activities from '../../../resources/activities.json';
 import { ReactComponent as DotIcon } from '../../../assets/icons/ic_action_dot_16.svg';
-import { getSvgIcon, getIcon, DEFAULT_TAG_ICON_COLOR } from '../wpt/WptTagsProvider';
+import { DEFAULT_TAG_ICON_COLOR, DEFAULT_TAG_ICON_SIZE, getIcon, getSvgIcon } from '../wpt/WptTagsProvider';
 import wptStyles from '../wpt/wptDetails.module.css';
 
-const DEFAULT_ACTIVITY_ICON_SIZE = 16;
 const ACTIVITIES_ARR = activities?.groups?.flatMap((group) => group.activities) ?? [];
+
+export async function getActivityIcon(activityIconName, ctx) {
+    if (!activityIconName || activityIconName === 'ic_sample') {
+        return null;
+    }
+    const svgData = await getSvgIcon({ icon: activityIconName, ctx });
+    if (!svgData) {
+        return null;
+    }
+    return getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
+}
 
 export default function ActivityType({ track }) {
     const ctx = useContext(AppContext);
     const [activity, setActivity] = useState(null);
 
     useEffect(() => {
-        if (!track) {
-            setActivity(null);
-            return;
-        }
-
-        const activityId = track.details?.metadata?.activity;
+        const activityId = track?.details?.metadata?.activity;
         if (!activityId) {
             setActivity(null);
             return;
@@ -32,20 +37,10 @@ export default function ActivityType({ track }) {
         }
 
         (async () => {
-            if (!activityData.icon_name || activityData.icon_name === 'ic_sample') {
-                setActivity({ label: activityData.label, icon: null });
-                return;
-            }
-
-            const svgData = await getSvgIcon({ icon: activityData.icon_name, ctx });
-            if (svgData) {
-                const icon = getIcon(svgData, DEFAULT_ACTIVITY_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
-                setActivity({ label: activityData.label, icon });
-            } else {
-                setActivity({ label: activityData.label, icon: null });
-            }
+            const icon = await getActivityIcon(activityData.icon_name, ctx);
+            setActivity({ label: activityData.label, icon });
         })();
-    }, [track, ctx]);
+    }, [track]);
 
     if (!activity) return null;
 

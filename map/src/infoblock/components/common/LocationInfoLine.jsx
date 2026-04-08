@@ -137,7 +137,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         return (
             <Box className={`${styles.wptCategory} ${styles.locationInfoLineContainer}`}>
                 <ListItemText>
-                    <Typography className={wptStyles.placeAddress}>
+                    <Typography component="span" className={wptStyles.placeAddress}>
                         <DistanceInfo
                             distance={distanceInfo.distance}
                             bearing={distanceInfo.bearing}

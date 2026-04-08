@@ -144,7 +144,7 @@ export function useInitialFilesLoad({
     useEffect(() => {
         if (loginUser !== INIT_LOGIN_STATE) {
             setGpxLoading(true);
-            
+
             if (loginUser !== listFiles.loginUser) {
                 if (!loginUser) {
                     setListFiles({});
