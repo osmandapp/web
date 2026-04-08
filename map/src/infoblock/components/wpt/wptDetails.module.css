@@ -108,7 +108,16 @@
     align-items: baseline !important;
     position: relative;
     top: 2px;
+    text-indent: 0 !important;
     margin-right: 4px !important;
+}
+
+.activityLabel {
+    color: #008bf8;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    margin-left: 4px !important;
 }
 
 .placeDistance {
@@ -124,4 +133,6 @@
     font-weight: 400 !important;
     line-height: 140% !important;
     display: inline-block !important;
+    padding-left: 22px !important;
+    text-indent: -22px !important;
 }
