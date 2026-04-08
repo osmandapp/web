@@ -471,6 +471,7 @@ export const AppContextProvider = (props) => {
     useEffect(() => {
         const update = async () => {
             if (updateFiles && !isEmpty(listFiles)) {
+                setSmartFoldersLoading(true);
                 const response = await apiPost(
                     `${process.env.REACT_APP_USER_API_SITE}/mapapi/refresh-list-files`,
                     updateFiles
@@ -491,7 +492,6 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
-                    setSmartFoldersLoading(true);
                     loadSmartFolders(setTracksGroups, setSmartFoldersCache)
                         .then(() => {
                             setSmartFoldersLoading(false);
