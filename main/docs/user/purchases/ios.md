@@ -98,6 +98,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
 | [Coordinates Grid — Color Customization](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D Buildings — Color Customization](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [3D track visualization](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Travel guides (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
