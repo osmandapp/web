@@ -9,14 +9,17 @@ export default function DefaultItem({
     name,
     additionalInfo = null,
     rightText = null,
+    rightSlot = null,
     revertText = false,
     onClick = null,
     maxLines = 2,
     className = '',
+    component = undefined,
 }) {
     const textSx = {
         mr: maxLines === 1 ? 7 : 0,
         ...(icon ? {} : { ml: '48px' }),
+        ...(rightSlot ? { flex: '1 1 auto', minWidth: 0 } : {}),
     };
 
     const content = revertText ? (
@@ -37,14 +40,26 @@ export default function DefaultItem({
         </>
     );
 
+    const showRightTypography = rightSlot == null && rightText != null && rightText !== '';
+    const showRightSlot = rightSlot != null;
+
     return (
-        <MenuItem id={id} className={`${styles.item} ${className}`} disableRipple onClick={onClick}>
+        <MenuItem
+            id={id}
+            className={`${styles.item} ${className}`}
+            disableRipple
+            onClick={onClick}
+            {...(component ? { component } : {})}
+        >
             {icon && <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>}
             <ListItemText sx={textSx}>{content}</ListItemText>
-            {rightText != null && rightText !== '' && (
+            {showRightTypography && (
                 <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                     <Typography className={styles.addInfo}>{rightText}</Typography>
                 </Box>
+            )}
+            {showRightSlot && (
+                <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>{rightSlot}</Box>
             )}
         </MenuItem>
     );

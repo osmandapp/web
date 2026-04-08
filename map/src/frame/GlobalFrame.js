@@ -120,6 +120,18 @@ const GlobalFrame = () => {
         }
     }, [location.search]);
 
+    // remove garmin param from url after processing it in GarminConnectManager
+    useEffect(() => {
+        const params = new URLSearchParams(globalThis.location.search);
+        if (!params.has('garmin')) {
+            return;
+        }
+        params.delete('garmin');
+        const qs = params.toString();
+        const newUrl = location.pathname + (qs ? `?${qs}` : '') + (globalThis.location.hash || '');
+        globalThis.history.replaceState(globalThis.history.state, '', newUrl);
+    }, [location.search, location.pathname]);
+
     useEffect(() => {
         if (ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
             setShowInfoBlock(false);

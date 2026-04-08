@@ -31,6 +31,7 @@ import ChangeEmailDialog from './dialogs/ChangeEmailDialog';
 import DeleteAccountDialog from './dialogs/DeleteAccountDialog';
 import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
+import ConnectedAppsSection from './ConnectedAppsSection';
 import DeveloperArea from './DeveloperArea';
 import { getStatus } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
@@ -205,7 +206,7 @@ export default function LoginMenu() {
                                     />
                                 </>
                             )}
-                            <ThickDivider mt={'0px'} mb={'0px'} />
+                            <ConnectedAppsSection />
                             <SimpleItemWithRightInfo
                                 name={t('delete_account')}
                                 icon={<DeleteIcon />}
