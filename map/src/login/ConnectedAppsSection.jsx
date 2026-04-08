@@ -48,7 +48,7 @@ export default function ConnectedAppsSection() {
 
     useEffect(() => {
         refreshGarminStatus().then();
-    }, []);
+    }, [refreshGarminStatus]);
 
     return (
         <>
