@@ -391,7 +391,7 @@ Waypoints are one of the types of points available on the map. In general, they 
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -407,6 +407,7 @@ In this *Points* tab:
 
 - [Show track points data](#display-custom-gpx-tags) and modify your track points (waypoints and route points), [delete it and add](#points--waypoints) waypoints to a track.
 - Create and modify [Group (folder) of points](#waypoint-groups).
+- Center the map on a waypoint using the pin icon in the waypoint list (*Android only*) without closing the list, allowing you to preview waypoints one by one.
 
 
 ### Add Waypoint to a Track {#add-waypoint-to-a-track}
