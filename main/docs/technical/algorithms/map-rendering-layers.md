@@ -42,10 +42,10 @@ Other layers may be instantiated in plugins.
 | DownloadedRegionsLayer            | -1 100 000   | Polygons | Shows downloaded regions          |
 | Icons (MapVectorLayer)            | -1 000 000   | Points   | Vector map, iconOrder in style with [adding 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (lines)                  | -500 000     | Lines    | Track lines             |
-| RouteLayer (chart highlight point)| -197 900     | Point    | Navigation route analysis on map  |
-| RouteLayer (chart x-axis points)  | -198 000     | Points   | Navigation route analysis on map  |
-| RouteLayer (turn arrows)          | -199 000     | Lines    | Navigation route                  |
 | RouteLayer                        | -200 000     | Lines    | Navigation route                  |
+| RouteLayer (turn arrows)          | -199 000     | Lines    | Navigation route                  |
+| RouteLayer (chart x-axis points)  | -198 000     | Points   | Navigation route analysis on map  |
+| RouteLayer (chart highlight point)| -197 900     | Point    | Navigation route analysis on map  |
 | Text (MapVectorLayer)             | 1 - 255      | Text     | Vector map, textOrder in [style](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), 100 by default                 |
 | Shields (MapVectorLayer)          | 1 - 255       | Shields  | Vector map, textOrder in style for shields, 100 by default |
 | GPX track start, finish           | 90 101       | Points   | GPXLayer                          |
