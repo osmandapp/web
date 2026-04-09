@@ -94,7 +94,7 @@ const PointsTab = ({ width }) => {
                             <ViewHeadline fontSize="small" />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" noWrap>
+                            <Typography noWrap>
                                 Point - {index + 1}
                                 <br />
                                 {point.distanceSegment === 0 ? 'start' : Math.round(point.distanceSegment) + ' m'}

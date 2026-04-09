@@ -107,7 +107,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                             </ListItemIcon>
                             <ListItemText>
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    <Typography className={styles.actionName} noWrap>
                                         {t('shared_string_show_on_map')}
                                     </Typography>
                                     <Switch
@@ -131,7 +131,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                                 {group.pinned ? <UnpinnedIcon /> : <PinnedIcon />}
                             </ListItemIcon>
                             <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                <Typography className={styles.actionName} noWrap>
                                     {group.pinned
                                         ? t('web:shared_string_unpin_folder')
                                         : t('web:shared_string_pin_folder')}
@@ -150,7 +150,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                                 <RenameIcon />
                             </ListItemIcon>
                             <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                <Typography className={styles.actionName} noWrap>
                                     {t('shared_string_rename')}
                                 </Typography>
                             </ListItemText>
@@ -167,7 +167,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                                 <ShareIcon />
                             </ListItemIcon>
                             <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                <Typography className={styles.actionName} noWrap>
                                     {t('shared_string_share')}
                                 </Typography>
                             </ListItemText>
@@ -184,7 +184,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                             <DownloadIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('shared_string_download')}
                             </Typography>
                         </ListItemText>
@@ -199,7 +199,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                             <DeleteIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {sharedFile ? t('shared_string_remove') : t('shared_string_delete')}
                             </Typography>
                         </ListItemText>

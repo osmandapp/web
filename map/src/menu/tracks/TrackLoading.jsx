@@ -10,7 +10,7 @@ export default function TrackLoading({ name }) {
                 <TrackIcon />
             </ListItemIcon>
             <ListItemText>
-                <Typography variant="inherit" className={styles.groupName} noWrap>
+                <Typography className={styles.groupName} noWrap>
                     {name}
                 </Typography>
                 <Typography variant="body2" className={styles.groupInfo} noWrap>

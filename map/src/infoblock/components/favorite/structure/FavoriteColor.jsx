@@ -10,9 +10,7 @@ export default function FavoriteColor({ favoriteColor, setFavoriteColor, default
     return (
         <>
             <ListItemText>
-                <Typography variant="inherit" noWrap>
-                    Select color
-                </Typography>
+                <Typography noWrap>Select color</Typography>
             </ListItemText>
             <Box
                 sx={{

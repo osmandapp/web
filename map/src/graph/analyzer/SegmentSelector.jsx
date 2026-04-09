@@ -81,7 +81,7 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
                             <SegmentIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit">{`${visibleCount}/${totalCount}`}</Typography>
+                            <Typography>{`${visibleCount}/${totalCount}`}</Typography>
                         </ListItemText>
                     </MenuItem>
                 )}
@@ -96,7 +96,6 @@ export default function SegmentSelector({ currentGraph, segmentVisibility, toggl
                                     <MenuItem>
                                         <ListItemText>
                                             <Typography
-                                                variant="inherit"
                                                 noWrap
                                                 sx={{
                                                     display: 'flex',

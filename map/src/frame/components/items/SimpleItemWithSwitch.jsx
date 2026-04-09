@@ -23,9 +23,7 @@ export default function SimpleItemWithSwitch({ icon, text, checked, onChange, id
                         justifyContent: 'space-between',
                     }}
                 >
-                    <Typography variant="inherit" noWrap>
-                        {text}
-                    </Typography>
+                    <Typography noWrap>{text}</Typography>
                     <Switch
                         id={id}
                         checked={checked}

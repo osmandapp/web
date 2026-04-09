@@ -143,9 +143,7 @@ export default function FavoriteIcon({
     return (
         <>
             <ListItemText>
-                <Typography variant="inherit" noWrap>
-                    Select icon
-                </Typography>
+                <Typography noWrap>Select icon</Typography>
             </ListItemText>
             <Box
                 component="div"
