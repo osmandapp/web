@@ -338,6 +338,8 @@ There are four ways to save:
 - ***Save as new track*** in the [Options menu](#options) opens a dialog where you specify the name of the track and the folder where the route will be saved.
 - ***Add changes to a track***. Attaches a created track as a [separate segment](#segments) to another existing track. Changes to a selected track *cannot be undone*.
 
+When saving, the track inherits the activity type of the routing profile used for planning. The activity is saved in the track metadata and is preserved after exporting or importing the GPX file.
+
 :::note Simplified track option
 When saving a new track, you can select the ***Simplified*** track option to make the track compatible with other third-party applications. Technically, the track will be saved without route instructions as a purely geometric track.
 :::
