@@ -6,6 +6,7 @@ import AppContext from '../../../context/AppContext';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { getBearing, getDistance } from '../../../util/Utils';
 import DistanceInfo from './DistanceInfo';
+import ActivityType from './ActivityType';
 import styles from '../../infoblock.module.css';
 import wptStyles from '../wpt/wptDetails.module.css';
 import { apiGet } from '../../../util/HttpApi';
@@ -136,7 +137,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         return (
             <Box className={`${styles.wptCategory} ${styles.locationInfoLineContainer}`}>
                 <ListItemText>
-                    <Typography className={wptStyles.placeAddress}>
+                    <Typography component="span" className={wptStyles.placeAddress}>
                         <DistanceInfo
                             distance={distanceInfo.distance}
                             bearing={distanceInfo.bearing}
@@ -146,6 +147,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
                         {trackAddressLoading && !trackAddress && (
                             <CircularProgress className={wptStyles.trackLocationInfoLoader} size={13} />
                         )}
+                        <ActivityType track={track} />
                         {trackAddressText && (
                             <>
                                 <LocationIcon className={wptStyles.locationInfoIcon} />
