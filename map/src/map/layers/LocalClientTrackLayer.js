@@ -76,7 +76,7 @@ export default function LocalClientTrackLayer() {
             ctx.processingSaveTrack || ctx.processingPoiByUrl || ctx.processingStopByUrl,
             mapSpinOptionsForVisibleBbox(map, ctx, { color: '#1976d2' })
         );
-    }, [ctx.processingSaveTrack, ctx.processingPoiByUrl, ctx.processingStopByUrl, ctx.infoBlockWidth, map]);
+    }, [ctx.processingSaveTrack, ctx.processingPoiByUrl, ctx.processingStopByUrl, ctx.infoBlockWidth]);
 
     let ctxTrack = ctx.selectedGpxFile;
 
