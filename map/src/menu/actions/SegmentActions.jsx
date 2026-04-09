@@ -67,7 +67,7 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
                             <VisibleIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('shared_string_open_track')}
                             </Typography>
                         </ListItemText>
@@ -84,7 +84,7 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
                             <ExcludeIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('web:exclude')}
                             </Typography>
                         </ListItemText>

@@ -300,7 +300,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                                 }
                             }}
                         >
-                            <Typography variant="inherit" className={styles.tagPrefix} noWrap>
+                            <Typography className={styles.tagPrefix} noWrap>
                                 {baseTag.name}
                             </Typography>
                             {baseTag.value && (

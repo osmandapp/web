@@ -9,9 +9,7 @@ export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, 
     return (
         <>
             <ListItemText>
-                <Typography variant="inherit" noWrap>
-                    Select shape
-                </Typography>
+                <Typography noWrap>Select shape</Typography>
             </ListItemText>
             <Box
                 sx={{
