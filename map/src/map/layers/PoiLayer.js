@@ -502,7 +502,7 @@ export default function PoiLayer() {
                 reqId,
                 visibleBboxInfo,
             }) => {
-                map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx, { color: '#1976d2' }));
+                map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx));
                 if (!visibleBboxInfo) {
                     map.spin(false);
                     return;

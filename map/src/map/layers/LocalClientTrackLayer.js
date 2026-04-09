@@ -74,7 +74,7 @@ export default function LocalClientTrackLayer() {
     useEffect(() => {
         map.spin(
             ctx.processingSaveTrack || ctx.processingPoiByUrl || ctx.processingStopByUrl,
-            mapSpinOptionsForVisibleBbox(map, ctx, { color: '#1976d2' })
+            mapSpinOptionsForVisibleBbox(map, ctx)
         );
     }, [ctx.processingSaveTrack, ctx.processingPoiByUrl, ctx.processingStopByUrl, ctx.infoBlockWidth]);
 

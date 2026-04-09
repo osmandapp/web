@@ -20,6 +20,8 @@ export function getMapCenter(ctx, hash) {
 
 const CENTRE_ICON_SIZE = 24;
 
+const MAP_SPIN_COLOR = '#1976d2';
+
 const TOP_PADDING = HEADER_SIZE;
 const BOTTOM_PADDING = 0;
 
@@ -41,7 +43,7 @@ export function getVisibleBboxCenterPercents(map, ctx) {
 }
 
 export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
-    return { ...options, ...getVisibleBboxCenterPercents(map, ctx) };
+    return { color: MAP_SPIN_COLOR, ...options, ...getVisibleBboxCenterPercents(map, ctx) };
 }
 
 export default function MapStateLayer() {

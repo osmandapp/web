@@ -286,7 +286,7 @@ export default function ExploreLayer() {
         } else if (openedPoiRef.current !== feature) {
             openedPoiRef.current = feature;
             ctx.setLoadingContextMenu(true);
-            map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx, { color: '#1976d2' }));
+            map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx));
             setSelectFromMap(true);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }
