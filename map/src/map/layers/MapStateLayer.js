@@ -23,6 +23,27 @@ const CENTRE_ICON_SIZE = 24;
 const TOP_PADDING = HEADER_SIZE;
 const BOTTOM_PADDING = 0;
 
+export function getVisibleBboxCenterPercents(map, ctx) {
+    if (!map?.getSize || !ctx) {
+        return { left: '50%', top: '50%' };
+    }
+    const containerSize = map.getSize();
+    if (!containerSize?.x || !containerSize?.y) {
+        return { left: '50%', top: '50%' };
+    }
+    const menuOffset = Number.parseInt(String(ctx.infoBlockWidth), 10) + MAIN_MENU_MIN_SIZE;
+    const cx = menuOffset + (containerSize.x - menuOffset) / 2;
+    const cy = TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2;
+    return {
+        left: `${(cx / containerSize.x) * 100}%`,
+        top: `${(cy / containerSize.y) * 100}%`,
+    };
+}
+
+export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
+    return { ...options, ...getVisibleBboxCenterPercents(map, ctx) };
+}
+
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();

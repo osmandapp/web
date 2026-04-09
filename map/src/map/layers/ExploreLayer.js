@@ -23,7 +23,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
-import { getVisibleBboxInfo } from './MapStateLayer';
+import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
 import { panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
@@ -286,7 +286,7 @@ export default function ExploreLayer() {
         } else if (openedPoiRef.current !== feature) {
             openedPoiRef.current = feature;
             ctx.setLoadingContextMenu(true);
-            map.spin(true, { color: '#1976d2' });
+            map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx, { color: '#1976d2' }));
             setSelectFromMap(true);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }

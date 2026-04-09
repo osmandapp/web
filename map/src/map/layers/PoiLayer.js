@@ -28,7 +28,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import { getVisibleBboxInfo } from './MapStateLayer';
+import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
@@ -502,7 +502,7 @@ export default function PoiLayer() {
                 reqId,
                 visibleBboxInfo,
             }) => {
-                map.spin(true, { color: '#1976d2' });
+                map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx, { color: '#1976d2' }));
                 if (!visibleBboxInfo) {
                     map.spin(false);
                     return;
