@@ -15,8 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 <InfoAndroidOnly/>
 
 :::info
@@ -48,15 +46,15 @@ The plugin works with both Map rendering engines but performs best in OpenGL mod
 
 ## Star Map Screen {#star-map-screen}
 
-**Go to:** *Enabled plugin → Menu → Star map* 
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
 - [**Search**](#search) — opens the Search screen where you can search for celestial objects and browse sky catalogs and categories. 
 - **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
-- **Magnitude filter** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
-- [**Configure View**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
+- **<Translate android="true" ids="magnitude_filter"/>** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
+- [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
 
 The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
 
@@ -79,30 +77,30 @@ The Context Menu appears at the bottom of the screen and contains object informa
 
 The top section of the Context Menu displays the object's name and classification. Below the name, the object type and its parent constellation or group are shown. For example:
 - **Beta Ursae Minoris** — Star • Ursa Minor
-- **Moon** — Satellite • Earth
-- **Jupiter** — Planet • Solar system
+- **<Translate android="true" ids="astro_name_moon"/>** — Satellite • Earth
+- **<Translate android="true" ids="astro_name_jupiter"/>** — Planet • Solar system
 
 Quick information blocks display key observational parameters:  
-- Rise – the time when the object rises above the horizon.
-- Set – the time when the object sets below the horizon.
-- Azimuth – the object's direction relative to north (0°–360°).
-- Altitude – the object's height above the horizon.
-- Magnitude – the brightness of the object as seen from Earth. 
+- <Translate android="true" ids="astro_rise"/> – the time when the object rises above the horizon.
+- <Translate android="true" ids="astro_set"/> – the time when the object sets below the horizon.
+- <Translate android="true" ids="shared_string_azimuth"/> – the object's direction relative to north (0°–360°).
+- <Translate android="true" ids="altitude"/> – the object's height above the horizon.
+- <Translate android="true" ids="shared_string_magnitude"/> – the brightness of the object as seen from Earth. 
 
 These values update dynamically based on the selected time and the user's location.
 
 Below the quick information blocks, the menu may also include additional information and resources about the object:
-- Offline Knowledge Base – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
-- Read on Wikipedia – Opens the object's Wikipedia article in the browser.
-- Online photos – Displays available photos related to the selected celestial object.
+- <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
+- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article in the browser.
+- <Translate android="true" ids="online_photos"/> – Displays available photos related to the selected celestial object.
 
 ### Actions {#actions}
 
 Below the object information, the Context Menu provides several actions for interacting with the selected celestial object:
-- **Save** – Adds the object to your Favorites list for quick access.
-- **Locate** – Centers the selected object on the Star map.
-- **Direction** – Shows the direction to the object on the map, helping you orient yourself while observing the sky.
-- **Path** – Displays the object's daily trajectory across the sky, allowing you to see how it moves during the day.
+- **<Translate android="true" ids="shared_string_save"/>** – Adds the object to your Favorites list for quick access.
+- **<Translate android="true" ids="astro_locate"/>** – Centers the selected object on the Star map.
+- **<Translate android="true" ids="astro_direction"/>** – Shows the direction to the object on the map, helping you orient yourself while observing the sky.
+- **<Translate android="true" ids="astro_path"/>** – Displays the object's daily trajectory across the sky, allowing you to see how it moves during the day.
 
 ### Visibility Graph {#visibility-graph}
 
@@ -133,9 +131,9 @@ The color of the object's trajectory also reflects its altitude:
 A movable indicator allows you to explore the object's position at different times. When the indicator is moved, the current time, altitude, and azimuth values are updated.
 
 Below the graph, important observation events are displayed: 
-- **Rise** – when the object rises above the horizon.
-- **Culmination** – when the object reaches its highest altitude.
-- **Set** – when the object sets below the horizon.
+- **<Translate android="true" ids="astro_rise"/>** – when the object rises above the horizon.
+- **<Translate android="true" ids="astro_culmination"/>** – when the object reaches its highest altitude.
+- **<Translate android="true" ids="astro_set"/>** – when the object sets below the horizon.
 
 The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph.
 
@@ -177,7 +175,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-**Go to:** *Enabled plugin → Menu → Star map → Camera button* 
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Camera button* 
 
 The **Astronomy** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
 
@@ -199,7 +197,7 @@ The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align
 
 ![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
 
-**Configure View** allows you to control how the Star map is displayed by enabling or disabling visual modes, objects, and rendering aids.
+**<Translate android="true" ids="astro_configure_view"/>** allows you to control how the Star map is displayed by enabling or disabling visual modes, objects, and rendering aids.
 
 To open Configure View, tap the Configure View button in the bottom-right corner of the Star map screen. The button is represented by a layer-style icon (stacked shapes), indicating display and layer settings. Configure View opens in a *Half state*, showing the main display options. Swipe the panel upwards to expand it into *Full state* and access all available settings. To close Configure View, swipe the panel downwards once to return to the Half state, swipe downwards again to close it completely, or tap anywhere on the map outside the panel. You also can tap the Close (X) button in the top-right corner of the panel.
 
@@ -209,9 +207,9 @@ To open Configure View, tap the Configure View button in the bottom-right corner
 
 This section controls the main display modes of the Star map.
 
-- **2D / 3D**. Switches between a celestial path view (2D), which shows the sky as a projected dome with object paths, and a globe-style sky view (3D) representing the celestial sphere.
-- **Map**. Enables an additional Earth map view displayed below the Star map, allowing you to relate celestial objects to your real geographic surroundings.
-- **Red filter**. Applies a red color filter to the entire screen to reduce light pollution and preserve night vision during dark-sky observations.
+- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Switches between a celestial path view (2D), which shows the sky as a projected dome with object paths, and a globe-style sky view (3D) representing the celestial sphere.
+- **<Translate android="true" ids="shared_string_map"/>**. Enables an additional Earth map view displayed below the Star map, allowing you to relate celestial objects to your real geographic surroundings.
+- **<Translate android="true" ids="red_filter"/>**. Applies a red color filter to the entire screen to reduce light pollution and preserve night vision during dark-sky observations.
 
 ### Visible Objects {#visible-objects}
 
@@ -221,12 +219,12 @@ This section lets you choose which types of celestial objects are shown on the S
 
 | Object | Description |
 |-------|-------------|
-| Solar system | Displays the Sun, Moon, and visible planets. |
-| Constellations | Shows constellation lines and patterns formed by stars. |
-| Stars | Displays individual stars visible on the Star map. |
-| Nebulas | Shows nebula objects where available. |
-| Star clusters | Displays star clusters as separate celestial objects. |
-| Deep sky | Toggles deep-sky objects such as galaxies, galaxy clusters, and black holes. |
+| <Translate android="true" ids="astro_solar_system"/> | Displays the Sun, Moon, and visible planets. |
+| <Translate android="true" ids="astro_constellations"/> | Shows constellation lines and patterns formed by stars. |
+| <Translate android="true" ids="astro_stars"/> | Displays individual stars visible on the Star map. |
+| <Translate android="true" ids="astro_nebulas"/> | Shows nebula objects where available. |
+| <Translate android="true" ids="astro_star_clusters"/> | Displays star clusters as separate celestial objects. |
+| <Translate android="true" ids="astro_deep_sky"/> | Toggles deep-sky objects such as galaxies, galaxy clusters, and black holes. |
 
 ### Personal Display Options {#personal-display-options}
 
@@ -234,9 +232,9 @@ This section lets you choose which types of celestial objects are shown on the S
 
 | Option | Description |
 |-------|-------------|
-| Direction | Shows a directional indicator to help orient your view. |
-| Daily path | Displays the daily path of selected celestial objects across the sky. |
-| Favorites | Highlights or displays objects marked as favorites. |
+| <Translate android="true" ids="astro_direction"/> | Shows a directional indicator to help orient your view. |
+| <Translate android="true" ids="astro_daily_path"/> | Displays the daily path of selected celestial objects across the sky. |
+| <Translate android="true" ids="shared_string_favorites"/> | Highlights or displays objects marked as favorites. |
 
 ### Rendering Aids {#rendering-aids}
 
@@ -244,12 +242,12 @@ This section lets you choose which types of celestial objects are shown on the S
 
 | Aid | Description |
 |-------|-------------|
-| Azimuthal grid | Adds an azimuth-based grid for horizontal sky orientation. |
-| Meridian line | Displays the meridian line crossing the sky from north to south. |
-| Equatorial grid | Shows the celestial equatorial coordinate grid. |
-| Ecliptic line | Displays the ecliptic line representing the apparent path of the Sun. |
-| Equator line | Displays the Earth's equatorial projection on the celestial sphere, helping visualize the Earth's rotation relative to the sky. |
-| Galactic line | Shows the plane of the Milky Way galaxy across the sky, indicating the main direction of the galactic disk. |
+| <Translate android="true" ids="azimuthal_grid"/> | Adds an azimuth-based grid for horizontal sky orientation. |
+| <Translate android="true" ids="meridian_line"/> | Displays the meridian line crossing the sky from north to south. |
+| <Translate android="true" ids="equatorial_grid"/> | Shows the celestial equatorial coordinate grid. |
+| <Translate android="true" ids="ecliptic_line"/> | Displays the ecliptic line representing the apparent path of the Sun. |
+| <Translate android="true" ids="equator_line"/> | Displays the Earth's equatorial projection on the celestial sphere, helping visualize the Earth's rotation relative to the sky. |
+| <Translate android="true" ids="galactic_line"/> | Shows the plane of the Milky Way galaxy across the sky, indicating the main direction of the galactic disk. |
 
 <!-- 
 ## Astronomy Settings
@@ -294,20 +292,20 @@ Tap the search bar to open the full search interface. You can refine results usi
 
 You can sort objects by:  
 - Name (A–Z or Z–A)
-- Brightest first
-- Faintest first
-- Rises soonest
-- Sets soonest
+- <Translate android="true" ids="astro_sort_brightest_first"/>
+- <Translate android="true" ids="astro_sort_faintest_first"/>
+- <Translate android="true" ids="astro_sort_rises_soonest"/>
+- <Translate android="true" ids="astro_sort_sets_soonest"/>
 
 Filters help narrow down visible objects.
 
 **Visibility**  
-- Show all — displays all objects
-- Visible now — objects currently above the horizon
-- Visible tonight — objects visible between sunset and sunrise
+- <Translate android="true" ids="astro_filter_show_all"/> — displays all objects
+- <Translate android="true" ids="astro_filter_visible_now"/> — objects currently above the horizon
+- <Translate android="true" ids="astro_filter_visible_tonight"/> — objects visible between sunset and sunrise
 
 **Additional filters**  
-- Naked eye visible — shows only objects with magnitude ≤ 6
+- <Translate android="true" ids="astro_filter_naked_eye"/> — shows only objects with magnitude ≤ 6
 
 **Categories**  
 You can filter results by object type. Selecting specific categories automatically disables the All option.
@@ -318,9 +316,9 @@ You can filter results by object type. Selecting specific categories automatical
 
 The My Data section contains objects that the user has interacted with. This section includes three lists:
 
-- Favorites — objects saved from the context menu.
-- Daily Path — objects for which the daily motion path is enabled.
-- Directions — objects with an active direction indicator on the Star map.
+- <Translate android="true" ids="shared_string_favorites"/> — objects saved from the context menu.
+- <Translate android="true" ids="astro_daily_path"/> — objects for which the daily motion path is enabled.
+- <Translate android="true" ids="astro_directions"/> — objects with an active direction indicator on the Star map.
 
 Selecting an item opens the object's context menu.
 
