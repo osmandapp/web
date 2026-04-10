@@ -37,7 +37,6 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { addLayerToMap } from '../util/MapManager';
-import { mapSpinOptionsForVisibleBbox } from './MapStateLayer';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -70,13 +69,6 @@ export default function LocalClientTrackLayer() {
     const [move, setMove] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
-
-    useEffect(() => {
-        map.spin(
-            ctx.processingSaveTrack || ctx.processingPoiByUrl || ctx.processingStopByUrl,
-            mapSpinOptionsForVisibleBbox(map, ctx)
-        );
-    }, [ctx.processingSaveTrack, ctx.processingPoiByUrl, ctx.processingStopByUrl, ctx.infoBlockWidth]);
 
     let ctxTrack = ctx.selectedGpxFile;
 

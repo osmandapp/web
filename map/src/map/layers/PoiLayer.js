@@ -211,47 +211,50 @@ export default function PoiLayer() {
 
     useEffect(() => {
         if (ctx.poiByUrl?.params) {
-            openPoiByUrl().then(async (res) => {
-                let poiLayer;
-                if (res) {
-                    if (ctx.selectedWptId?.id !== getObjIdSearch(res)) {
-                        poiLayer = await createPoiLayer({
-                            ctx,
-                            poiList: [res],
-                            globalPoiIconCache: ctx.poiIconCache,
-                            map,
-                            zoom,
-                        });
-                        if (ctx.poiByUrl.layer) {
-                            map.removeLayer(ctx.poiByUrl.layer);
-                        }
-                        map.addLayer(poiLayer);
-
-                        const markers = poiLayer.getLayers();
-                        if (markers.length > 0) {
-                            const marker = markers[0];
-                            applySelectedPin({
+            openPoiByUrl()
+                .then(async (res) => {
+                    let poiLayer;
+                    if (res) {
+                        if (ctx.selectedWptId?.id !== getObjIdSearch(res)) {
+                            poiLayer = await createPoiLayer({
                                 ctx,
+                                poiList: [res],
+                                globalPoiIconCache: ctx.poiIconCache,
                                 map,
-                                layer: marker,
-                                markerData: {
-                                    color: DEFAULT_POI_COLOR,
-                                    background: DEFAULT_POI_SHAPE,
-                                    iconHtml: marker.options.svg ?? '',
-                                },
-                                isSelection: true,
+                                zoom,
                             });
-                            panToIfNeeded(map, marker.getLatLng());
+                            if (ctx.poiByUrl.layer) {
+                                map.removeLayer(ctx.poiByUrl.layer);
+                            }
+                            map.addLayer(poiLayer);
+
+                            const markers = poiLayer.getLayers();
+                            if (markers.length > 0) {
+                                const marker = markers[0];
+                                applySelectedPin({
+                                    ctx,
+                                    map,
+                                    layer: marker,
+                                    markerData: {
+                                        color: DEFAULT_POI_COLOR,
+                                        background: DEFAULT_POI_SHAPE,
+                                        iconHtml: marker.options.svg ?? '',
+                                    },
+                                    isSelection: true,
+                                });
+                                panToIfNeeded(map, marker.getLatLng());
+                            }
                         }
                     }
-                }
-                ctx.setPoiByUrl({
-                    params: null,
-                    layer: poiLayer,
-                    open: true,
+                    ctx.setPoiByUrl({
+                        params: null,
+                        layer: poiLayer,
+                        open: true,
+                    });
+                })
+                .finally(() => {
+                    ctx.setProcessingPoiByUrl(false);
                 });
-                ctx.setProcessingPoiByUrl(false);
-            });
         } else if (ctx.poiByUrl?.layer && !ctx.poiByUrl?.open) {
             map.removeLayer(ctx.poiByUrl.layer);
             ctx.setPoiByUrl(null);
