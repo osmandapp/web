@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
-import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
@@ -25,25 +25,42 @@ const MAP_SPIN_COLOR = '#1976d2';
 const TOP_PADDING = HEADER_SIZE;
 const BOTTOM_PADDING = 0;
 
-export function getVisibleBboxCenterPercents(map, ctx) {
-    if (!map?.getSize || !ctx) {
+function centerPercentsForInfoBlockPx(map, infoBlockWidthPx) {
+    if (!map?.getSize) {
         return { left: '50%', top: '50%' };
     }
     const containerSize = map.getSize();
     if (!containerSize?.x || !containerSize?.y) {
         return { left: '50%', top: '50%' };
     }
-    const menuOffset = Number.parseInt(String(ctx.infoBlockWidth), 10) + MAIN_MENU_MIN_SIZE;
-    const cx = menuOffset + (containerSize.x - menuOffset) / 2;
-    const cy = TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2;
+    const infoColumnWidthPx = Number.isFinite(infoBlockWidthPx) ? infoBlockWidthPx : 0;
+    const leftChromeWidthPx = infoColumnWidthPx + MAIN_MENU_MIN_SIZE;
+    const centerX = leftChromeWidthPx + (containerSize.x - leftChromeWidthPx) / 2;
+    const centerY = TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2;
     return {
-        left: `${(cx / containerSize.x) * 100}%`,
-        top: `${(cy / containerSize.y) * 100}%`,
+        left: `${(centerX / containerSize.x) * 100}%`,
+        top: `${(centerY / containerSize.y) * 100}%`,
     };
 }
 
+export function getVisibleBboxCenterPercents(map, ctx) {
+    if (!ctx) {
+        return { left: '50%', top: '50%' };
+    }
+    const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10);
+    return centerPercentsForInfoBlockPx(map, infoBlockWidthPx);
+}
+
 export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
-    return { color: MAP_SPIN_COLOR, ...options, ...getVisibleBboxCenterPercents(map, ctx) };
+    const { isInfoBlockOpen, ...rest } = options;
+    const positionPercents = isInfoBlockOpen
+        ? centerPercentsForInfoBlockPx(map, MENU_INFO_OPEN_SIZE)
+        : getVisibleBboxCenterPercents(map, ctx);
+    return {
+        color: MAP_SPIN_COLOR,
+        ...rest,
+        ...positionPercents,
+    };
 }
 
 export default function MapStateLayer() {
@@ -74,6 +91,46 @@ export default function MapStateLayer() {
         map.on('resize', update);
         return () => map.off('resize', update);
     }, [zoom, move, ctx.infoBlockWidth]);
+
+    // leaflet-spin refcount guard (not the map instance): one spin(true) per busy spell, paired with one spin(false).
+    const leafletSpinPairingRef = useRef(false);
+
+    const globalMapSpinLoading = !!(ctx.processingSaveTrack || ctx.processingPoiByUrl || ctx.processingStopByUrl);
+    const spinLayoutLikeOpenInfoBlock = !!(ctx.processingPoiByUrl || ctx.processingStopByUrl);
+
+    useEffect(() => {
+        if (globalMapSpinLoading && !leafletSpinPairingRef.current) {
+            map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx, { isInfoBlockOpen: spinLayoutLikeOpenInfoBlock }));
+            leafletSpinPairingRef.current = true;
+        } else if (!globalMapSpinLoading && leafletSpinPairingRef.current) {
+            map.spin(false);
+            leafletSpinPairingRef.current = false;
+        }
+    }, [globalMapSpinLoading, spinLayoutLikeOpenInfoBlock]);
+
+    useEffect(() => {
+        return () => {
+            if (leafletSpinPairingRef.current) {
+                map.spin(false);
+                leafletSpinPairingRef.current = false;
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        const sync = () => {
+            if (globalMapSpinLoading && map._spinner?.el) {
+                const pos = mapSpinOptionsForVisibleBbox(map, ctx, {
+                    isInfoBlockOpen: spinLayoutLikeOpenInfoBlock,
+                });
+                map._spinner.el.style.left = pos.left;
+                map._spinner.el.style.top = pos.top;
+            }
+        };
+        sync();
+        map.on('resize', sync);
+        return () => map.off('resize', sync);
+    }, [globalMapSpinLoading, spinLayoutLikeOpenInfoBlock, ctx.infoBlockWidth]);
 
     if (!pathname.includes(SEARCH_RESULT_URL) || !ctx.visibleBboxInfo?.center || !centerPositionPx) {
         return null;
