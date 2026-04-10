@@ -15,7 +15,7 @@ async function fetchGarminStatus() {
 }
 
 function startGarminOAuth() {
-    globalThis.location.assign(`${process.env.REACT_APP_USER_API_SITE}/mapapi/garmin/connect/start`);
+    globalThis.location.assign('/mapapi/garmin/connect/start');
 }
 
 async function disconnectGarminPartner() {
