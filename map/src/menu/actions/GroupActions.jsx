@@ -81,7 +81,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                                 <TimeIcon />
                             </ListItemIcon>
                             <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                <Typography className={styles.actionName} noWrap>
                                     {t('web:download_as_osf')}
                                 </Typography>
                             </ListItemText>
@@ -99,7 +99,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                             <TimeIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('web:download_as_obf')}
                             </Typography>
                         </ListItemText>
@@ -116,7 +116,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                                     <RenameIcon />
                                 </ListItemIcon>
                                 <ListItemText>
-                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    <Typography className={styles.actionName} noWrap>
                                         {t('shared_string_rename')}
                                     </Typography>
                                 </ListItemText>
@@ -131,7 +131,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                                     <DeleteIcon />
                                 </ListItemIcon>
                                 <ListItemText>
-                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    <Typography className={styles.actionName} noWrap>
                                         {t('shared_string_delete')}
                                     </Typography>
                                 </ListItemText>

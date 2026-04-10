@@ -103,6 +103,27 @@
     fill: var(--svg-icon-color) !important;
 }
 
+.activityIcon {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    position: relative;
+    top: 2px;
+    text-indent: 0 !important;
+    margin-right: 4px !important;
+    & svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+.activityLabel {
+    color: #008bf8;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    margin-left: 4px !important;
+}
+
 .placeDistance {
     color: #727272;
     font-size: 14px !important;

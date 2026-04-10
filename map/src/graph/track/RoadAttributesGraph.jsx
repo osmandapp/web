@@ -170,9 +170,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
             <Divider sx={{ mt: '15px', mb: '12px' }} />
             <Grid container spacing={2}>
                 <Grid item xs={9}>
-                    <Typography variant="inherit" sx={{ color: '#666666', fontWeight: 'bold', mb: 2 }}>
-                        {name}
-                    </Typography>
+                    <Typography sx={{ color: '#666666', fontWeight: 'bold', mb: 2 }}>{name}</Typography>
                 </Grid>
                 <Grid item xs={3}>
                     <Button
@@ -218,7 +216,6 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                                             )}
                                         </Icon>
                                         <Typography
-                                            variant="inherit"
                                             sx={{
                                                 color: '#666666',
                                                 fontWeight: 'bold',
@@ -229,7 +226,6 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                                             {prepareType(type)}
                                         </Typography>
                                         <Typography
-                                            variant="inherit"
                                             sx={{
                                                 color: '#666666',
                                                 fontSize: 11,

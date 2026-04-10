@@ -36,7 +36,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                             <DownloadIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('shared_string_download')}
                             </Typography>
                         </ListItemText>
@@ -56,7 +56,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                                     <RestoreIcon />
                                 </ListItemIcon>
                                 <ListItemText>
-                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    <Typography className={styles.actionName} noWrap>
                                         {t('shared_string_restore')}
                                     </Typography>
                                 </ListItemText>
@@ -76,7 +76,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                             <DeleteIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('shared_string_delete')}
                             </Typography>
                         </ListItemText>

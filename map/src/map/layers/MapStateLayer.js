@@ -20,8 +20,31 @@ export function getMapCenter(ctx, hash) {
 
 const CENTRE_ICON_SIZE = 24;
 
-const TOP_PADDING = HEADER_SIZE + 20;
-const BOTTOM_PADDING = 50;
+const MAP_SPIN_COLOR = '#1976d2';
+
+const TOP_PADDING = HEADER_SIZE;
+const BOTTOM_PADDING = 0;
+
+export function getVisibleBboxCenterPercents(map, ctx) {
+    if (!map?.getSize || !ctx) {
+        return { left: '50%', top: '50%' };
+    }
+    const containerSize = map.getSize();
+    if (!containerSize?.x || !containerSize?.y) {
+        return { left: '50%', top: '50%' };
+    }
+    const menuOffset = Number.parseInt(String(ctx.infoBlockWidth), 10) + MAIN_MENU_MIN_SIZE;
+    const cx = menuOffset + (containerSize.x - menuOffset) / 2;
+    const cy = TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2;
+    return {
+        left: `${(cx / containerSize.x) * 100}%`,
+        top: `${(cy / containerSize.y) * 100}%`,
+    };
+}
+
+export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
+    return { color: MAP_SPIN_COLOR, ...options, ...getVisibleBboxCenterPercents(map, ctx) };
+}
 
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
@@ -65,9 +88,19 @@ export default function MapStateLayer() {
                 transform: 'translate(-50%, -50%)',
                 zIndex: 2000,
                 pointerEvents: 'none',
+                width: CENTRE_ICON_SIZE,
+                height: CENTRE_ICON_SIZE,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                lineHeight: 0,
             }}
         >
-            <CenterIcon width={CENTRE_ICON_SIZE} height={CENTRE_ICON_SIZE} />
+            <CenterIcon
+                width={CENTRE_ICON_SIZE}
+                height={CENTRE_ICON_SIZE}
+                style={{ display: 'block', flexShrink: 0 }}
+            />
         </div>
     );
 }
@@ -89,7 +122,7 @@ function calcVisibleBboxParamsPx(map, ctx) {
     if (!containerSize?.x || !containerSize.y) {
         return null;
     }
-    const menuOffset = Number.parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE + 20;
+    const menuOffset = Number.parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE;
 
     const x = menuOffset + (containerSize.x - menuOffset) / 2;
     const y = TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2;

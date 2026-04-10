@@ -107,9 +107,7 @@ export default function GeneralPanelButtons({
                         }}
                     >
                         <SvgIcon className={styles.customIconPath} component={SearchIcon} inheritViewBox />
-                        <Typography variant="inherit" className={styles.searchTitle}>
-                            Search
-                        </Typography>
+                        <Typography className={styles.searchTitle}>Search</Typography>
                     </Box>
                 </Paper>
             </div>

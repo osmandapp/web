@@ -245,7 +245,6 @@ export default function GeneralInfo({ width }) {
                     <Typography
                         ref={ref}
                         component={'span'}
-                        variant="inherit"
                         sx={{
                             maxHeight: DESC_MAX_HEIGHT,
                             maxWidth: Number(width.replace('px', '')) - 100,

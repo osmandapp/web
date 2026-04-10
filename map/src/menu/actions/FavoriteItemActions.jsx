@@ -58,7 +58,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                             <RenameIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('shared_string_edit')}
                             </Typography>
                         </ListItemText>
@@ -73,7 +73,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                             <DeleteIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 {t('shared_string_delete')}
                             </Typography>
                         </ListItemText>

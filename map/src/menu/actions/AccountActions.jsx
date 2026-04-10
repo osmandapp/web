@@ -34,7 +34,7 @@ const AccountActions = forwardRef(({ setOpenActions }, ref) => {
                             <EmailIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                            <Typography className={styles.actionName} noWrap>
                                 Change email
                             </Typography>
                         </ListItemText>

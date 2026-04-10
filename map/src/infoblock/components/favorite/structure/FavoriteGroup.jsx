@@ -45,14 +45,12 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
                     </Grid>
                     <Grid item container xs={2} sx={{ mt: -0.5 }}>
                         <ListItemText>
-                            <Typography variant="inherit" noWrap>
-                                {size}
-                            </Typography>
+                            <Typography noWrap>{size}</Typography>
                         </ListItemText>
                     </Grid>
                     <Grid item container xs={10}>
                         <ListItemText>
-                            <Typography variant="inherit" noWrap>
+                            <Typography noWrap>
                                 {group.name === '' && !ctx.addFavorite.editTrack
                                     ? FavoritesManager.DEFAULT_GROUP_NAME
                                     : group.name}
@@ -90,9 +88,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
                             </Grid>
                             <Grid item container xs={10} sx={{ mt: -1 }}>
                                 <ListItemText>
-                                    <Typography variant="inherit" noWrap>
-                                        Add new
-                                    </Typography>
+                                    <Typography noWrap>Add new</Typography>
                                 </ListItemText>
                             </Grid>
                         </Grid>
@@ -109,9 +105,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
     return (
         <>
             <ListItemText>
-                <Typography variant="inherit" noWrap>
-                    Select group
-                </Typography>
+                <Typography noWrap>Select group</Typography>
             </ListItemText>
             <Box
                 sx={{
