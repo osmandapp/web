@@ -14,6 +14,10 @@ import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexago
 import { SELECTED_ICON_SIZE, SELECTED_PIN_COLOR, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
 import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
+/** Pin SVGs use viewBox 0 0 70 70; the map anchor must be the bottom dot center (y=67), not the box bottom. */
+const PIN_VIEWBOX_SIZE = 70;
+const PIN_TIP_CENTER_Y = 67;
+
 const SHAPES = {
     circle: {
         color: CircleColor,
@@ -57,6 +61,15 @@ function prepareInnerIcon(html, iconSize) {
         const href = imageMatch[1];
         return `<img src="${href}" width="${iconSize}" height="${iconSize}" style="width:${iconSize}px;height:${iconSize}px;" />`;
     }
+
+    const trimmed = html.trim();
+    const svgOpenCount = (trimmed.match(/<svg\b/gi) ?? []).length;
+    if (svgOpenCount === 1 && trimmed.startsWith('<svg') && !trimmed.includes('<image')) {
+        const cleaned = removeShadowFromIconWpt(trimmed);
+        const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(cleaned)}`;
+        return `<img src="${dataUrl}" width="${iconSize}" height="${iconSize}" style="width:${iconSize}px;height:${iconSize}px;object-fit:contain;" alt="" />`;
+    }
+
     const withoutShadow = removeShadowFromIconWpt(html);
     return changeIconSizeWpt(withoutShadow, iconSize, iconSize);
 }
@@ -109,6 +122,6 @@ export function createLayeredPinIcon(options = {}) {
         html,
         className: '',
         iconSize: [size, size],
-        iconAnchor: iconAnchor ?? [size / 2, size - size * 0.08],
+        iconAnchor: iconAnchor ?? [size / 2, (size * PIN_TIP_CENTER_Y) / PIN_VIEWBOX_SIZE],
     });
 }
