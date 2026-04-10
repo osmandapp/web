@@ -206,7 +206,7 @@ export default function LoginMenu() {
                                     />
                                 </>
                             )}
-                            <ConnectedAppsSection />
+                            {ctx.develFeatures ? <ConnectedAppsSection /> : <ThickDivider mt={'0px'} mb={'0px'} />}
                             <SimpleItemWithRightInfo
                                 name={t('delete_account')}
                                 icon={<DeleteIcon />}
