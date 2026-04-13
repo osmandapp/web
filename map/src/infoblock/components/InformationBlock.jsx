@@ -1,4 +1,4 @@
-import { LinearProgress } from '@mui/material';
+import { Box, LinearProgress } from '@mui/material';
 import AppContext, {
     isLocalTrack,
     OBJECT_TYPE_NAVIGATION_ALONE,
@@ -35,6 +35,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { createUrlParams, encodeString } from '../../util/Utils';
 import LoginContext from '../../context/LoginContext';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import Loading from '../../menu/errors/Loading';
 
 export default function InformationBlock({
     showInfoBlock,
@@ -42,6 +43,7 @@ export default function InformationBlock({
     setClearState,
     mainMenuSize,
     setSavePrevState,
+    trackUrlOpenLoading = false,
 }) {
     const DRAWER_SIZE = 360;
 
@@ -396,7 +398,20 @@ export default function InformationBlock({
 
     return (
         <>
+            {trackUrlOpenLoading && (
+                <Box
+                    sx={{
+                        height: '100vh',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Loading />
+                </Box>
+            )}
             {showInfoBlock &&
+                !trackUrlOpenLoading &&
                 (openWptDetails ? (
                     ctx.photoGallery ? (
                         <WptPhotoList photos={ctx.photoGallery} />
