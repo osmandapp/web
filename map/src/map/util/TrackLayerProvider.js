@@ -269,28 +269,30 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
 
     addTooltipOnHover(polyline, map, coords);
 
-    if (!arrowSettings.show) return polyline;
-
     polyline.on('add', function () {
-        renderArrows({ polyline, lineWidth: width, coords, map, arrowSettings });
-
         const updateStyle = () => {
             const z = map.getZoom();
             polyline.setStyle({
                 weight: getPolylineWeight(width, z),
             });
-            renderArrows({ polyline, lineWidth: width, coords, map, arrowSettings });
+            if (arrowSettings.show) {
+                renderArrows({ polyline, lineWidth: width, coords, map, arrowSettings });
+            }
         };
 
+        updateStyle();
         map.on('zoomend moveend', updateStyle);
 
         polyline.on('redraw-arrows', updateStyle);
 
-        polyline.on('remove', () => {
+        polyline.once('remove', () => {
             map.off('zoomend moveend', updateStyle);
-            const svg = polyline._renderer?._container;
-            if (svg) {
-                svg.querySelectorAll('.arrowhead').forEach((el) => el.remove());
+            polyline.off('redraw-arrows', updateStyle);
+            if (arrowSettings.show) {
+                const svg = polyline._renderer?._container;
+                if (svg) {
+                    svg.querySelectorAll('.arrowhead').forEach((el) => el.remove());
+                }
             }
         });
     });

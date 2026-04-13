@@ -164,6 +164,7 @@ export default function MainMenu({
     const [redirectUrl, setRedirectUrl] = useState(null);
 
     const [savePrevState, setSavePrevState] = useState(false);
+    const [trackUrlOpenLoading, setTrackUrlOpenLoading] = useState(false);
 
     const menuDots = useMenuDots(ctx);
     const recentSaver = useRecentDataSaver();
@@ -257,6 +258,7 @@ export default function MainMenu({
                             fileStorage: ctx.gpxFiles,
                             setFileStorage: ctx.setGpxFiles,
                             recentSaver,
+                            setLoading: setTrackUrlOpenLoading,
                         }).then();
                     }
                 } else if (favgroup && favname && ctx.favorites?.groups) {
@@ -1038,6 +1040,7 @@ export default function MainMenu({
                     setClearState={setClearState}
                     mainMenuSize={size}
                     setSavePrevState={setSavePrevState}
+                    trackUrlOpenLoading={trackUrlOpenLoading}
                 />
                 {openCloudSettings && <CloudSettings setOpenCloudSettings={setOpenCloudSettings} />}
             </Drawer>
