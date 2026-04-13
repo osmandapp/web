@@ -85,8 +85,8 @@ The *All colors screen* displays available palettes. Tap the three-dot menu next
 - Remove. Removing a palette requires confirmation.
 
 Tap the + button on the All colors screen. Two types of palettes are available:
-- **Relative** — colors scale automatically based on the track’s minimum and maximum values.
-- **Fixed Values** — colors are assigned to specific absolute numbers (for example, 50 km/h). Values can be edited manually. Units follow the [system settings](../../personal/profiles.md#units--formats). The color scale does not rescale automatically when applied to different tracks.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — colors scale automatically based on the track’s minimum and maximum values.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — colors are assigned to specific absolute numbers (for example, 50 km/h). Values can be edited manually. Units follow the [system settings](../../personal/profiles.md#units--formats). The color scale does not rescale automatically when applied to different tracks.
 
 :::info Pro feature
 Creating custom palettes is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.

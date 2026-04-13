@@ -169,20 +169,20 @@ The newly created **Smart Folder** will automatically update its contents with t
 
 The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it to access the available actions:
 
-- **Details** — View the complete list of tracks contained in the folder.
-- **Show all tracks on the map** — Display all folder tracks on the map.  
+- **<Translate android="true" ids="shared_string_details"/>** — View the complete list of tracks contained in the folder.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Display all folder tracks on the map.  
     *NOTE: Loading many tracks may affect performance.*
-- **Rename** — Change the folder name for easier identification.
-- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
-- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
-- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
-- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Change the folder name for easier identification.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Manually update the folder's content to ensure it includes the latest tracks.
+- **<Translate android="true" ids="edit_filter"/>** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
+- **<Translate android="true" ids="shared_string_export"/>** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
+- **<Translate android="true" ids="delete_folder"/>** — Remove the Smart Folder without deleting its tracks.  
     *WARNING: This action is irreversible and will prompt a confirmation message.*
 
 You can also open the folder and tap the *three-dot menu* in the *top-right corner* to access additional actions:
 
-- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-- **Organize by** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+- **<Translate android="true" ids="organize_by"/>** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
 
 Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
 
@@ -200,17 +200,17 @@ For PRO parameters, you can preview the grouping setup (for example, open the st
 
 The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, *long tap* the folder name to access the available actions:
 
-- **Rename**— Change the folder name for easier identification.
-- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
-- **Move** — Allows you to move the folder to another existing folder or create a new one.
-- **Delete** — Remove the Smart Folder without deleting its tracks.  
+- **<Translate ios="true" ids="shared_string_rename"/>**— Change the folder name for easier identification.
+- **<Translate ios="true" ids="shared_string_export"/>** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Allows you to move the folder to another existing folder or create a new one.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Remove the Smart Folder without deleting its tracks.  
     *WARNING: This action is irreversible and will prompt a confirmation message.*
 
 You can also open the folder and tap the icon in the *top-right corner* to access additional actions:
 
-- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
-- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
+- **<Translate ios="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Manually update the folder's content to ensure it includes the latest tracks.
+- **<Translate ios="true" ids="edit_filter"/>** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
 </TabItem>
 

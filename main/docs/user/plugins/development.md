@@ -76,7 +76,7 @@ Use one of the following paths to open the plugin settings:
 - **Show toast about pressed key** (*Android*). Display a message about the key.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.
-- **Enable MSAA** (*Android*) / **Enable MSAA for CarPlay** (*iOS*). Enables multisample anti-aliasing to smooth map rendering. Improves visual quality of the [My Location icon](../personal/profiles.md#my-location-appearance) and route line by reducing pixelated edges. On Android, this option affects map rendering on the device and when using [Android Auto](../navigation/auto-car.md). On iOS, it applies to [CarPlay](../navigation/car-play.md) only.
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Enables multisample anti-aliasing to smooth map rendering. Improves visual quality of the [My Location icon](../personal/profiles.md#my-location-appearance) and route line by reducing pixelated edges. On Android, this option affects map rendering on the device and when using [Android Auto](../navigation/auto-car.md). On iOS, it applies to [CarPlay](../navigation/car-play.md) only.
 
 
 ### Application Testing {#application-testing}

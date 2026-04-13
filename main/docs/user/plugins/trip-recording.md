@@ -411,13 +411,13 @@ Some Trip Recording widgets support multiple display modes. Modes let you switch
 
 | **Widget** | **Available modes**  |
 |-------|-------------|
-| Average Slope | Last downhill; Last uphill |
-| Average Speed *(Android only)* | Trip average (default); Last downhill; Last uphill |
-| Distance (Start-Stop) | Trip average (default); Last downhill; Last uphill |
-| Downhill | Total (default); Last downhill |
-| Max Speed | Total (default); Last downhill; Last uphill |
-| Moving Time | Total (default); Last downhill; Last uphill |
-| Uphill | Total (default); Last uphill |
+| Average Slope | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Average Speed *(Android only)* | Trip average (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distance (Start-Stop) | Trip average (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Downhill | Total (default); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Max Speed | Total (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Moving Time | Total (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Uphill | Total (default); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Mode switching depends on the widget:
 - Uphill / Downhill / Max Speed / Average Slope / Moving Time / Average Speed — tap the widget on the map to switch its mode.

@@ -141,8 +141,8 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
-- **World Altitude Correction** (*Android only*). This file contains altitude corrections to compensate for planetary curvature.
-- **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Android only*). This file contains altitude corrections to compensate for planetary curvature.
+- **<Translate android="true" ids="index_item_world_basemap"/>**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
 - **World weather map**. Allows you to download a map with weather information.
 
 
@@ -435,7 +435,7 @@ The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard an
 
 Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
-The **Updates** tab may also show an **Unsupported maps** item. It appears when you have maps that are no longer supported and have been replaced by smaller regions. Tap Unsupported maps to review the list, remove outdated maps, and download the new region versions instead. On the Unsupported maps screen, you can view all unsupported maps and use Delete all to remove them at once (a confirmation prompt is shown before deletion).
+The **Updates** tab may also show an **<Translate ios="true" ids="unsupported_maps"/>** item. It appears when you have maps that are no longer supported and have been replaced by smaller regions. Tap Unsupported maps to review the list, remove outdated maps, and download the new region versions instead. On the Unsupported maps screen, you can view all unsupported maps and use Delete all to remove them at once (a confirmation prompt is shown before deletion).
 
 The **Updates** tab also includes a **Weather forecast** section. It is designed to manage your offline forecasts for selected countries:
 

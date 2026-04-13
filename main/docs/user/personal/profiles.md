@@ -446,7 +446,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary (Resting) and in motion (Navigation). Motion is detected by the operating system when the device speed is **greater than zero**.
 
-Use **Icon size** to adjust the size of the My Location position icon independently from the app’s text size. You can set different sizes for Resting and Navigation modes. The size can be adjusted from 50% to 300% (50, 75, 100, 125, 150, 200, 250, 300%). The default value is 100%. Tap Icon size to open the size settings, then use the slider or the + / – step buttons to change the value. Use **Reset to Default** to return to 100%.
+Use **<Translate ios="true" ids="icon_size"/>** to adjust the size of the My Location position icon independently from the app’s text size. You can set different sizes for Resting and Navigation modes. The size can be adjusted from 50% to 300% (50, 75, 100, 125, 150, 200, 250, 300%). The default value is 100%. Tap Icon size to open the size settings, then use the slider or the + / – step buttons to change the value. Use **<Translate ios="true" ids="reset_to_default"/>** to return to 100%.
 
 </TabItem>
 

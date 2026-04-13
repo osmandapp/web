@@ -776,17 +776,17 @@ The **Camera widgets** allow you to monitor the alignment between the OsmAnd map
 The **Memory info** widget is a developer tool for monitoring how OsmAnd uses device memory. It provides information about different types of memory used by the application.
 
 Available modes:  
-- **Used Java Heap** — Displays the amount of Java heap memory currently used by objects in the application.
-- **Allocated Java Heap** — Shows the amount of memory that the Java Virtual Machine (JVM) has currently allocated for the application.
-- **Max Java Heap Limit** — Indicates the maximum Java heap size allowed for the application by the Android system.
-- **Native Heap Allocated** — Displays the amount of memory allocated through native code (C/C++), including system libraries and NDK components.
-- **Graphics Memory** — Shows the amount of memory used for graphics resources such as OpenGL textures and buffers.
+- **<Translate android="true" ids="memory_used_settings"/>** — Displays the amount of Java heap memory currently used by objects in the application.
+- **<Translate android="true" ids="memory_allocated_settings"/>** — Shows the amount of memory that the Java Virtual Machine (JVM) has currently allocated for the application.
+- **<Translate android="true" ids="memory_limit_settings"/>** — Indicates the maximum Java heap size allowed for the application by the Android system.
+- **<Translate android="true" ids="memory_native_settings"/>** — Displays the amount of memory allocated through native code (C/C++), including system libraries and NDK components.
+- **<Translate android="true" ids="memory_graphics_settings"/>** — Shows the amount of memory used for graphics resources such as OpenGL textures and buffers.
 
 **NOTE:** Memory values may fluctuate depending on system processes, background applications, and the current activity within OsmAnd. These values are dynamic and intended primarily for debugging and performance monitoring.
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="developer_widgets"/> → Memory info* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="developer_widgets,map_widget_memory_info"/>* |
 | By tapping | No changes |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 

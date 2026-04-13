@@ -202,7 +202,7 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 <TabItem value="android" label="Android">
 
-**Android.** Go to: *Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
+**Android.** Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -213,7 +213,7 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Go to: *Menu → Configure screen → Widgets → Choose a panel → Vehicle Metrics*
+**iOS.** Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|
