@@ -271,7 +271,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Use the ***Three-dot menu*** next to each folder to manage groups of favorites:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
-- **Pin folder** — Pin the selected folder to keep it at the top of the favorites list for quicker access.
+- **<Translate android="true" ids="pin_folder"/>** — Pin the selected folder to keep it at the top of the favorites list for quicker access.
 - **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Remove from map markers** — Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
