@@ -277,10 +277,10 @@ The OsmAnd app can be opened and used to navigate in *CarPlay* on the vehicle mu
 When navigation is completed in CarPlay, OsmAnd displays a **“You have arrived”** dialog on the vehicle screen. This dialog uses the same arrival detection logic as the mobile app and provides quick access to common actions after reaching your destination.
 
 Available actions:
-- **Mark as parking location**. Saves your current position as a parking location and places a parking marker on the map.
-- **Find parking**. Opens the Search screen with the Parking category preselected to help you find nearby parking options.
-- **Recalculate route**. Builds a new route to the original destination if you want to continue navigation.
-- **Finish navigation**. Ends the current route and returns OsmAnd to the default map state.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Saves your current position as a parking location and places a parking marker on the map.
+- **<Translate ios="true" ids="find_parking"/>**. Opens the Search screen with the Parking category preselected to help you find nearby parking options.
+- **<Translate ios="true" ids="recalculate_route"/>**. Builds a new route to the original destination if you want to continue navigation.
+- **<Translate ios="true" ids="finish_navigation"/>**. Ends the current route and returns OsmAnd to the default map state.
 
 If CarPlay is disconnected while navigation is active, OsmAnd applies additional logic on the iPhone:
 - If the distance to the destination is less than 100 m, navigation is automatically finished and the default profile is restored. In this case, the “You have arrived” notification is not shown on the phone screen.
