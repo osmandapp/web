@@ -209,7 +209,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 <TabItem value="android" label="Android">  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
 
@@ -227,7 +227,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Globe View](@site/static/img/map/globe_view_1_ios.png) ![Globe View](@site/static/img/map/globe_view_2_ios_new.png)
 
