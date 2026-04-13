@@ -120,7 +120,7 @@ export default function TracksMenu() {
                     setSortFiles={setSortFiles}
                 />
             )}
-            {ctx.smartFoldersLoading && <LinearProgress id={'se-smart-folders-progress'} />}
+            {ctx.smartFoldersLoading && !ctx.gpxLoading && <LinearProgress id={'se-smart-folders-progress'} />}
             {ctx.gpxLoading ? (
                 <Loading />
             ) : (
