@@ -17,9 +17,11 @@ import { TEST_LOGIN2, TEST_PASSWORD2 } from '../../options.mjs';
 const SMART_FOLDERS = [
     {name: '1smart f length 8646', size: 437},
     {name: '2smart f length 888', size: 286},
-    {name: '3smart f date', size: 361},
+    {name: '3smart f date', size: 146},
     {name: '4smart f city', size: 0},
     {name: '5smart f width', size: 404},
+    {name: '6smart f activity car', size: 13},
+    {name: '7smart f uphill 100', size: 265},
 ];
 
 export default async function test() {
