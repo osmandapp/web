@@ -21,6 +21,9 @@ import { ReactComponent as WikipediaDownloadIcon } from '../../assets/features/i
 import { ReactComponent as BackpackIcon } from '../../assets/features/ic_action_backpack_colored_day.svg';
 import { ReactComponent as NauticalChartsIcon } from '../../assets/features/ic_action_nautical_charts_colored.svg';
 import { ReactComponent as NauticalDepthIcon } from '../../assets/features/ic_action_nautical_depth_colored_day.svg';
+import { ReactComponent as TelescopeIcon } from '../../assets/features/ic_action_telescope_colored.svg';
+import { ReactComponent as InteractiveArIcon } from '../../assets/features/ic_action_view_in_ar_colored.svg';
+import { ReactComponent as OfflineSkyMapIcon } from '../../assets/features/ic_action_sky_map_download.svg';
 
 export const features = [
     {
@@ -191,6 +194,27 @@ export const features = [
         icon: <NauticalDepthIcon />,
         category: 'Nautical',
     },
+    {
+        id: 'observation_planning',
+        name: 'web:feature_observation_planning',
+        desc: 'web:feature_observation_planning_desc',
+        icon: <TelescopeIcon />,
+        category: 'Astronomy',
+    },
+    {
+        id: 'interactive_ar_mode',
+        name: 'web:feature_interactive_ar_mode',
+        desc: 'web:feature_interactive_ar_mode_desc',
+        icon: <InteractiveArIcon />,
+        category: 'Astronomy',
+    },
+    {
+        id: 'offline_sky_map',
+        name: 'web:feature_offline_sky_map',
+        desc: 'web:feature_offline_sky_map_desc',
+        icon: <OfflineSkyMapIcon />,
+        category: 'Astronomy',
+    },
 ];
 
 export const planFeatures = {
@@ -219,6 +243,9 @@ export const planFeatures = {
         'nautical_map_view',
         'nautical_navigation',
         'nautical_depth',
+        'observation_planning',
+        'interactive_ar_mode',
+        'offline_sky_map',
     ],
     'osmand-pro': [
         'offline_navigation',
@@ -245,5 +272,8 @@ export const planFeatures = {
         'nautical_map_view',
         'nautical_navigation',
         'nautical_depth',
+        'observation_planning',
+        'interactive_ar_mode',
+        'offline_sky_map',
     ],
 };
