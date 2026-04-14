@@ -59,6 +59,20 @@ Add pin option will be added back once it becomes available again.
 ![Map Context menu](@site/static/img/web/map_context_menu_new.png)
 
 
+## Selected Object {#selected-object}
+
+When an object on the map (such as a POI, favorite, or navigation point) is selected, it is highlighted with a larger pin. Only one object can be selected at a time.
+
+If the selected object is already visible on the screen, the map does not move. If it is outside the current view, the map centers on it without changing the zoom level.
+
+The selected marker remains visible when zooming the map.
+
+Nearby markers may be hidden to make the selected object easier to see.
+
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+
+
+
 ## Configure Map Menu {#configure-map-menu}
 
 The Configure Map menu allows you to manage the display settings for map data, such as POI layers, favorites, tracks, and terrain. This menu is available after you sign in to your OsmAnd account. To open it, click the button in the **top left corner** or access it through the **Menu**.
