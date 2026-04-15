@@ -179,6 +179,7 @@
   "feature_interactive_ar_mode_desc": "Aponte seu dispositivo para o céu para identificar objetos e rastreá-los em tempo real",
   "feature_offline_sky_map": "Mapa do Céu Offline",
   "feature_offline_sky_map_desc": "Explore o cosmos em qualquer lugar com um banco de dados massivo de estrelas que não requer internet",
+  "feature_category_features": "Recursos",
   "feature_category_backup_sync": "Backup e Sincronização",
   "feature_category_pro_features": "Recursos Pro",
   "feature_category_map_download_updates": "Download de mapas e atualizações",

@@ -179,6 +179,7 @@
   "feature_interactive_ar_mode_desc": "Apunta tu dispositivo al cielo para identificar objetos y seguirlos en tiempo real",
   "feature_offline_sky_map": "Mapa estelar sin conexión",
   "feature_offline_sky_map_desc": "Explora el cosmos en cualquier lugar con una enorme base de datos de estrellas que no requiere internet",
+  "feature_category_features": "Funciones",
   "feature_category_backup_sync": "Copia de seguridad y sincronización",
   "feature_category_pro_features": "Funciones Pro",
   "feature_category_map_download_updates": "Descarga de mapas y actualizaciones",

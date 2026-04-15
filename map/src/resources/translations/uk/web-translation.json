@@ -179,6 +179,7 @@
   "feature_interactive_ar_mode_desc": "Направте свій пристрій на небо, щоб ідентифікувати об'єкти та відстежувати їх у реальному часі",
   "feature_offline_sky_map": "Офлайн-мапа неба",
   "feature_offline_sky_map_desc": "Досліджуйте космос де завгодно з масивною базою даних зірок, яка не потребує інтернету",
+  "feature_category_features": "Функції",
   "feature_category_backup_sync": "Резервне копіювання та синхронізація",
   "feature_category_pro_features": "Функції Pro",
   "feature_category_map_download_updates": "Завантаження та оновлення мап",

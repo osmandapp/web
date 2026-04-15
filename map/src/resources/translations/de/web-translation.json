@@ -179,6 +179,7 @@
   "feature_interactive_ar_mode_desc": "Richten Sie Ihr Gerät auf den Himmel, um Objekte zu identifizieren und sie in Echtzeit zu verfolgen",
   "feature_offline_sky_map": "Offline-Himmelskarte",
   "feature_offline_sky_map_desc": "Erkunden Sie das Universum überall mit einer umfangreichen Sternendatenbank, die kein Internet benötigt",
+  "feature_category_features": "Funktionen",
   "feature_category_backup_sync": "Backup & Synchronisierung",
   "feature_category_pro_features": "Pro-Funktionen",
   "feature_category_map_download_updates": "Karten-Download und -Updates",
