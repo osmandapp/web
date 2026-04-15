@@ -26,10 +26,10 @@ export default function FeaturesTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {featureCategories.map(({ title, features }) => (
-                        <React.Fragment key={title}>
+                    {featureCategories.map(({ id, title, features }) => (
+                        <React.Fragment key={id}>
                             <TableRow className={styles.categoryRow}>
-                                {title !== 'web:feature_category_features' && (
+                                {id !== 'features' && (
                                     <TableCell className={styles.categoryCell} colSpan={plans.length + 1}>
                                         {t(title)}
                                     </TableCell>

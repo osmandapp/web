@@ -27,6 +27,7 @@ import { ReactComponent as OfflineSkyMapIcon } from '../../assets/features/ic_ac
 
 export const featureCategories = [
     {
+        id: 'features',
         title: 'web:feature_category_features',
         features: [
             {
@@ -50,6 +51,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'backup_sync',
         title: 'web:feature_category_backup_sync',
         features: [
             {
@@ -67,6 +69,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'pro_features',
         title: 'web:feature_category_pro_features',
         features: [
             {
@@ -96,6 +99,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'map_download_updates',
         title: 'web:feature_category_map_download_updates',
         features: [
             {
@@ -119,6 +123,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'topography',
         title: 'web:feature_category_topography',
         features: [
             {
@@ -142,6 +147,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'vehicle_connectivity',
         title: 'web:feature_category_vehicle_connectivity',
         features: [
             {
@@ -165,6 +171,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'wikipedia_travel',
         title: 'web:feature_category_wikipedia_travel',
         features: [
             {
@@ -188,6 +195,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'nautical',
         title: 'web:feature_category_nautical',
         features: [
             {
@@ -211,6 +219,7 @@ export const featureCategories = [
         ],
     },
     {
+        id: 'astronomy',
         title: 'web:feature_category_astronomy_android_only',
         features: [
             {
