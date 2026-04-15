@@ -242,7 +242,9 @@ Tap any item in the **Local** tab to open its detailed list. At the top of this 
 - **Three-dot menu**:  
     ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
     ***Import***. Access the device's storage to import files.
-- **Sorting option**. Sort items by name, country, date, or size (availability depends on the data type).
+- **Sorting option**. Sort items by name, country, date, or size (availability depends on the data type).  
+
+For Standard maps, some items may be grouped by region. In such cases, each map entry displays both the sub-region and its parent region. The order of these names depends on the selected sorting method: when sorting by name, the sub-region is shown first, followed by the region; when sorting by country, the region is shown first, followed by the sub-region.
 
 Each item in the list offers a *three-dot menu* with options:
 
