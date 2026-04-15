@@ -23,7 +23,7 @@ import {
     SEARCH_RESULTS_KEY,
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
-import { useInitialFilesLoad, loadSmartFolders } from '../util/hooks/useInitialFilesLoad';
+import { useInitialFilesLoad, loadSmartFolders, applyRefreshedInfoFilesToGpx } from '../util/hooks/useInitialFilesLoad';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -499,6 +499,8 @@ export const AppContextProvider = (props) => {
                         .catch(() => {
                             setSmartFoldersLoading(false);
                         });
+
+                    applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelectedGpxFile, selectedGpxFile);
                 }
             }
         };
