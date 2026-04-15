@@ -23,8 +23,7 @@ import {
     SEARCH_RESULTS_KEY,
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
-import { useInitialFilesLoad, loadSmartFolders } from '../util/hooks/useInitialFilesLoad';
-import { INFO_FILE_EXT } from '../manager/track/TracksManager';
+import { useInitialFilesLoad, loadSmartFolders, applyRefreshedInfoFilesToGpx } from '../util/hooks/useInitialFilesLoad';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -109,44 +108,6 @@ function createInteractiveMap(data, type) {
     interactiveMap.key = name;
 
     return interactiveMap;
-}
-
-function applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelectedGpxFile, selectedGpxFile) {
-    const infoFilesFromRefresh = updatedData.filter((r) => r.name?.toLowerCase().endsWith(INFO_FILE_EXT));
-
-    let selectedInfoDataFromRefresh = null;
-
-    setGpxFiles((prev) => {
-        if (isEmpty(prev) || infoFilesFromRefresh.length === 0) return prev;
-        let next = null;
-        for (const [gpxName, file] of Object.entries(prev)) {
-            const infoRow = infoFilesFromRefresh.find((r) => r.name === gpxName + INFO_FILE_EXT);
-            if (!infoRow) continue;
-            const data = infoRow.details?.data ?? {};
-            next = next ?? { ...prev };
-            next[gpxName] = {
-                ...file,
-                info: { ...file.info, ...data },
-                cloudRedrawWpts: true,
-            };
-            if (gpxName === selectedGpxFile?.name && !selectedGpxFile?.infoChanged) {
-                selectedInfoDataFromRefresh = data;
-            }
-        }
-        return next ?? prev;
-    });
-
-    if (selectedInfoDataFromRefresh != null) {
-        setSelectedGpxFile((track) =>
-            !track || track.infoChanged || track.name !== selectedGpxFile?.name
-                ? track
-                : {
-                      ...track,
-                      info: { ...track.info, ...selectedInfoDataFromRefresh },
-                      cloudRedrawWpts: true,
-                  }
-        );
-    }
 }
 
 const AppContext = React.createContext();
