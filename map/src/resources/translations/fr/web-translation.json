@@ -1,5 +1,5 @@
 {
-  "download_as_osf": "Télécharger en tant que fichier OSF",
+  "download_as_osf": "Télécharger en tant que OSF",
   "download_as_obf": "Télécharger en tant que collection OBF",
   "hide_from_map": "Masquer de la carte",
   "hide_track": "Masquer la trace",
@@ -16,7 +16,7 @@
   "login_btn": "Se connecter",
   "login_desc": "Veuillez saisir l'adresse e-mail que vous avez utilisée pour créer votre compte.",
   "user_email": "E-mail",
-  "email_is_not_registered": "Cette adresse e-mail n'a pas été enregistrée sur OsmAnd Cloud.",
+  "email_is_not_registered": "Cet e-mail n'a pas été enregistré sur OsmAnd Cloud.",
   "incorrect_password": "Mot de passe incorrect.",
   "change_password": "Je n'ai pas de mot de passe ou je l'ai oublié",
   "change_reset_password": "Changer ou réinitialiser le mot de passe",
@@ -179,6 +179,15 @@
   "feature_interactive_ar_mode_desc": "Pointez votre appareil vers le ciel pour identifier les objets et les suivre en temps réel",
   "feature_offline_sky_map": "Carte du ciel hors ligne",
   "feature_offline_sky_map_desc": "Explorez le cosmos partout avec une base de données massive d'étoiles qui ne nécessite pas d'internet",
+  "feature_category_features": "Fonctionnalités",
+  "feature_category_backup_sync": "Sauvegarde et synchronisation",
+  "feature_category_pro_features": "Fonctionnalités Pro",
+  "feature_category_map_download_updates": "Téléchargement et mises à jour des cartes",
+  "feature_category_topography": "Topographie",
+  "feature_category_vehicle_connectivity": "Intégration et connectivité du véhicule",
+  "feature_category_wikipedia_travel": "Wikipédia et guides de voyage",
+  "feature_category_nautical": "Nautique",
+  "feature_category_astronomy_android_only": "Astronomie (Android uniquement)",
   "empty_login_prices_desc": "Votre achat ou abonnement doit être lié à un compte. Veuillez vous connecter si vous en avez déjà un, ou créer un nouveau compte pour continuer.",
   "no_data": "Aucune donnée",
   "shared_string_save": "Enregistrer",
@@ -219,7 +228,7 @@
   "track_analyzer_b": "Point B",
   "empty_favorites": "Vous n'avez pas de fichiers favoris",
   "empty_favorites_description": "Vous pouvez importer ou créer des fichiers favoris à l'aide de l'application OsmAnd.",
-  "weather_current": "Position actuelle",
+  "weather_current": "Emplacement actuel",
   "weather_generated": "Météo générée",
   "weather_source": "Source",
   "terrain_color_scheme": "Schéma de couleurs",
@@ -241,7 +250,7 @@
   "selected_track": "Trace sélectionnée",
   "set_start_point": "Définir le point de départ",
   "set_destination": "Définir la destination",
-  "set_via_point": "Point intermédiaire",
+  "set_via_point": "Intermédiaire",
   "navigation_tips": "Cliquez sur la carte pour définir les points <strong>Départ</strong> et <strong>Destination</strong>.",
   "previous_route_from": "De",
   "previous_route_to": "à",
@@ -297,6 +306,6 @@
   "rename_folder_already_exists": "Le dossier existe déjà.",
   "rename_item_not_found": "Le dossier ou la trace n'a pas été trouvé.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

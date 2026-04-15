@@ -78,7 +78,7 @@
   "not_available_desc": "Файл або папка більше не доступні.",
   "access_requested": "Запит на доступ надіслано",
   "access_requested_desc": "Вам потрібно дочекатися, поки власник файлу схвалить ваш запит.",
-  "access_requested_btn": "Надіслати запит на доступ",
+  "access_requested_btn": "Запитати доступ",
   "access_blocked": "У вас немає доступу до цього файлу",
   "access_blocked_desc": "Вам потрібно створити ім'я користувача для свого профілю, щоб надіслати запит на доступ до цього файлу. Воно буде видимим для власника файлу.",
   "lang_local": "Місцева",
@@ -179,6 +179,15 @@
   "feature_interactive_ar_mode_desc": "Направте свій пристрій на небо, щоб ідентифікувати об'єкти та відстежувати їх у реальному часі",
   "feature_offline_sky_map": "Офлайн-мапа неба",
   "feature_offline_sky_map_desc": "Досліджуйте космос де завгодно з масивною базою даних зірок, яка не потребує інтернету",
+  "feature_category_features": "Функції",
+  "feature_category_backup_sync": "Резервне копіювання та синхронізація",
+  "feature_category_pro_features": "Функції Pro",
+  "feature_category_map_download_updates": "Завантаження та оновлення мап",
+  "feature_category_topography": "Топографія",
+  "feature_category_vehicle_connectivity": "Інтеграція з транспортним засобом та підключення",
+  "feature_category_wikipedia_travel": "Вікіпедія та туристичні путівники",
+  "feature_category_nautical": "Морська справа",
+  "feature_category_astronomy_android_only": "Астрономія (лише Android)",
   "empty_login_prices_desc": "Ваша покупка або підписка має бути прив'язана до облікового запису. Будь ласка, увійдіть, якщо у вас вже є обліковий запис, або створіть новий, щоб продовжити.",
   "no_data": "Немає даних",
   "shared_string_save": "Зберегти",
@@ -297,6 +306,6 @@
   "rename_folder_already_exists": "Тека вже існує.",
   "rename_item_not_found": "Теку або трек не знайдено.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

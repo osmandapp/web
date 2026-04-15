@@ -179,6 +179,15 @@
   "feature_interactive_ar_mode_desc": "Aponte seu dispositivo para o céu para identificar objetos e rastreá-los em tempo real",
   "feature_offline_sky_map": "Mapa do Céu Offline",
   "feature_offline_sky_map_desc": "Explore o cosmos em qualquer lugar com um banco de dados massivo de estrelas que não requer internet",
+  "feature_category_features": "Recursos",
+  "feature_category_backup_sync": "Backup e Sincronização",
+  "feature_category_pro_features": "Recursos Pro",
+  "feature_category_map_download_updates": "Download de mapas e atualizações",
+  "feature_category_topography": "Topografia",
+  "feature_category_vehicle_connectivity": "Integração com Veículos e Conectividade",
+  "feature_category_wikipedia_travel": "Wikipedia e Guias de Viagem",
+  "feature_category_nautical": "Náutico",
+  "feature_category_astronomy_android_only": "Astronomia (apenas Android)",
   "empty_login_prices_desc": "Sua compra ou assinatura precisa ser vinculada a uma conta. Por favor, faça login se você já tiver uma, ou crie uma nova conta para prosseguir.",
   "no_data": "Sem dados",
   "shared_string_save": "Salvar",
@@ -297,6 +306,6 @@
   "rename_folder_already_exists": "Pasta já existe.",
   "rename_item_not_found": "Pasta ou trilha não foi encontrada.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

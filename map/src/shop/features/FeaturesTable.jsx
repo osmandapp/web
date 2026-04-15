@@ -1,16 +1,11 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import { features, planFeatures } from './FeaturesManager';
+import { featureCategories, planFeatures } from './FeaturesManager';
 import { ReactComponent as CheckIcon } from '../../assets/icons/ic_action_checkmark_colored_day.svg';
 import { ReactComponent as ItemNotIncludedIcon } from '../../assets/icons/ic_action_item_not_included.svg';
 import React from 'react';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import { products } from '../products/ProductManager';
-
-const grouped = features.reduce((acc, feat) => {
-    (acc[feat.category] = acc[feat.category] || []).push(feat);
-    return acc;
-}, {});
 
 export default function FeaturesTable() {
     const { t } = useTranslation();
@@ -31,16 +26,16 @@ export default function FeaturesTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {Object.entries(grouped).map(([category, feats]) => (
-                        <React.Fragment key={category}>
+                    {featureCategories.map(({ id, title, features }) => (
+                        <React.Fragment key={id}>
                             <TableRow className={styles.categoryRow}>
-                                {category !== t('features_menu_group') && (
+                                {id !== 'features' && (
                                     <TableCell className={styles.categoryCell} colSpan={plans.length + 1}>
-                                        {category}
+                                        {t(title)}
                                     </TableCell>
                                 )}
                             </TableRow>
-                            {feats.map((feat) => (
+                            {features.map((feat) => (
                                 <React.Fragment key={feat.id}>
                                     <TableRow key={feat.id} className={styles.featureRow}>
                                         <TableCell className={styles.featureCell}>

@@ -179,6 +179,15 @@
   "feature_interactive_ar_mode_desc": "Cihazınızı gökyüzüne doğrultarak nesneleri tanımlayın ve gerçek zamanlı olarak izleyin",
   "feature_offline_sky_map": "Çevrimdışı Gökyüzü Haritası",
   "feature_offline_sky_map_desc": "İnternet gerektirmeyen devasa bir yıldız veritabanıyla kozmosu her yerde keşfedin",
+  "feature_category_features": "Özellikler",
+  "feature_category_backup_sync": "Yedekleme & Senkronizasyon",
+  "feature_category_pro_features": "Pro Özellikler",
+  "feature_category_map_download_updates": "Harita indirme ve güncellemeler",
+  "feature_category_topography": "Topografi",
+  "feature_category_vehicle_connectivity": "Araç Entegrasyonu & Bağlantı",
+  "feature_category_wikipedia_travel": "Wikipedia & Seyahat rehberleri",
+  "feature_category_nautical": "Denizcilik",
+  "feature_category_astronomy_android_only": "Astronomi (Sadece Android)",
   "empty_login_prices_desc": "Satın almanız veya aboneliğiniz bir hesaba bağlanmalıdır. Zaten bir hesabınız varsa lütfen oturum açın veya devam etmek için yeni bir hesap oluşturun.",
   "no_data": "Veri yok",
   "shared_string_save": "Kaydet",
@@ -254,7 +263,7 @@
   "attach_gpx_desc": "OsmAnd, parkurunuzu yakındaki yollarla eşleştirerek gelişmiş dönüş dönüş rehberliği sağlayacaktır.",
   "attach_gpx_button": "Parkur seç",
   "upload_gpx_track": "OsmAnd Bulut'a kaydet",
-  "routing_attr_noconditionals_name": "*:şartal etiketlerini yoksay",
+  "routing_attr_noconditionals_name": "*:şartlı etiketlerini yoksay",
   "routing_attr_noglobalfile_name": "Ayrı OBF haritalarını kullan",
   "routing_attr_gpxtimestamps_name": "GPX zaman damgalarını kullan",
   "routing_type_hh_java": "HH Java",
@@ -297,6 +306,6 @@
   "rename_folder_already_exists": "Klasör zaten mevcut.",
   "rename_item_not_found": "Klasör veya parkur bulunamadı.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

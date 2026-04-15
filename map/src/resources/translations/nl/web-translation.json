@@ -179,6 +179,15 @@
   "feature_interactive_ar_mode_desc": "Richt uw apparaat op de hemel om objecten te identificeren en ze in real-time te volgen",
   "feature_offline_sky_map": "Offline hemelkaart",
   "feature_offline_sky_map_desc": "Verken het heelal overal met een enorme database van sterren die geen internet vereist",
+  "feature_category_features": "Functies",
+  "feature_category_backup_sync": "Back-up & Synchronisatie",
+  "feature_category_pro_features": "Pro-functies",
+  "feature_category_map_download_updates": "Kaartdownload en updates",
+  "feature_category_topography": "Topografie",
+  "feature_category_vehicle_connectivity": "Voertuigintegratie & Connectiviteit",
+  "feature_category_wikipedia_travel": "Wikipedia & Reisgidsen",
+  "feature_category_nautical": "Nautisch",
+  "feature_category_astronomy_android_only": "Astronomie (alleen Android)",
   "empty_login_prices_desc": "Uw aankoop of abonnement moet aan een account worden gekoppeld. Log in als u er al een hebt, of maak een nieuw account aan om verder te gaan.",
   "no_data": "Geen gegevens",
   "shared_string_save": "Opslaan",
@@ -297,6 +306,6 @@
   "rename_folder_already_exists": "Map bestaat al.",
   "rename_item_not_found": "Map of track niet gevonden.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }
