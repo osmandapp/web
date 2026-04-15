@@ -129,15 +129,21 @@ While OsmAnd allows you to download maps for all available regions, there is no 
 
 ### How to change app language {#how-to-change-app-language}
 
-The *Display language option* is used to change the language of the entire app, including pop-up prompts, internal text, messages, and more. Up to Android 12, OsmAnd allows you to customize the display language according to your preferences directly in the app. Starting from Android 13 and on iOS devices, the display language can only be changed in the system settings (see how to change per-app language preferences in [Android](https://developer.android.com/guide/topics/resources/app-languages) and [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+The *Display language option* is used to change the language of the entire app, including pop-up prompts, internal text, messages, and more. 
+
+On Android devices, OsmAnd allows you to customize the display language directly in the app on all supported versions. By default, the app uses the system language, but you can manually select a different language if needed.
+
+On Android 13 and later, OsmAnd integrates with the system per-app language mechanism, but the language can still be selected from within the app.
+
+On iOS devices, the display language can only be changed in the system settings (see how to change per-app language preferences in [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *Settings → Apps → OsmAnd → Language*
+Go to: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Display language*
 
-![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -145,14 +151,14 @@ Go to: *Settings → Apps → OsmAnd → Language*
 
 Go to: *Settings → OsmAnd Maps → Language*
 
-![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note No option to set app languages
-On some Android devices (Xiaomi with Muiu 14), there is no option to set app languages individually in system settings, so the language of OsmAnd can only be changed with the language of the whole system. You can check out the discussion on [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information.
+On some Android devices or system versions, the option to set app languages individually in system settings may be unavailable or limited (you can check out the discussion on [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information). In such cases, you can still change the app language directly in OsmAnd using the Display language setting. This is especially useful for languages that are not fully supported by the Android system.
 :::
 
 
