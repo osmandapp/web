@@ -52,7 +52,7 @@ Use one of the following paths to open the plugin settings:
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_2_new.png)
 
 </TabItem>
 
@@ -70,7 +70,8 @@ Use one of the following paths to open the plugin settings:
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.
 - **Use 3D location position icons** (*iOS*). Allows you to select a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
 - **Simulate obd data** (*Android* / *iOS*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
-- **Performance debug info** (*Android* / *iOS*). Displays rendering and navigation performance.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Displays rendering and navigation performance.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Displays tile rasterization debug information.
 - **Disable map layers** (*Android*). Disables all map layers over the vector map (restart required).
 - **Logcat buffer** (*Android*). Check and share detailed logs of the app.  
 - **Show toast about pressed key** (*Android*). Display a message about the key.
