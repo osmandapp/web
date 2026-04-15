@@ -34,9 +34,9 @@ export default function FeaturesTable() {
                     {Object.entries(grouped).map(([category, feats]) => (
                         <React.Fragment key={category}>
                             <TableRow className={styles.categoryRow}>
-                                {category !== t('features_menu_group') && (
+                                {t(category) !== t('features_menu_group') && (
                                     <TableCell className={styles.categoryCell} colSpan={plans.length + 1}>
-                                        {category}
+                                        {t(category)}
                                     </TableCell>
                                 )}
                             </TableRow>
