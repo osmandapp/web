@@ -179,6 +179,14 @@
   "feature_interactive_ar_mode_desc": "Skręć urządzeniem w stronę nieba, aby identyfikować obiekty i śledzić je w czasie rzeczywistym",
   "feature_offline_sky_map": "Mapa nieba offline",
   "feature_offline_sky_map_desc": "Eksploruj kosmos wszędzie z ogromną bazą danych gwiazd, która nie wymaga internetu",
+  "feature_category_backup_sync": "Kopia zapasowa i synchronizacja",
+  "feature_category_pro_features": "Funkcje Pro",
+  "feature_category_map_download_updates": "Pobieranie map i aktualizacje",
+  "feature_category_topography": "Topografia",
+  "feature_category_vehicle_connectivity": "Integracja z pojazdem i łączność",
+  "feature_category_wikipedia_travel": "Wikipedia i przewodniki turystyczne",
+  "feature_category_nautical": "Morskie",
+  "feature_category_astronomy_android_only": "Astronomia (tylko Android)",
   "empty_login_prices_desc": "Twój zakup lub subskrypcja musi być powiązana z kontem. Zaloguj się, jeśli już je masz, lub utwórz nowe konto, aby kontynuować.",
   "no_data": "Brak danych",
   "shared_string_save": "Zapisz",
@@ -194,7 +202,7 @@
   "shared_string_connect": "Połącz",
   "shared_string_disconnect": "Rozłącz",
   "third_party_connected": "Połączone",
-  "third_party_not_connected": "Niez połączone",
+  "third_party_not_connected": "Niepołączone",
   "active_state": "Aktywny",
   "cancelled_state": "Anulowany",
   "in_grace_period_state": "W okresie karencji",
@@ -297,6 +305,6 @@
   "rename_folder_already_exists": "Folder już istnieje.",
   "rename_item_not_found": "Folder lub ślad nie został znaleziony.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

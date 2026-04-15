@@ -128,7 +128,7 @@
   "purchase_period_year": "Jahr",
   "label_pricing": "Preise",
   "subtitle_choose_your_ideal_osmand_plan": "Wählen Sie Ihren idealen OsmAnd-Plan: Kostenlos starten, ein flexibles Abonnement wählen oder einen einmaligen Kauf tätigen",
-  "notice_fastspring_purchase_info": "Online-Käufe werden von FastSpring, einem autorisierten Wiederverkäufer, abgewickelt. Abonnements verlängern sich automatisch, sofern sie nicht vor dem Verlängerungsdatum gekündigt werden. Sie können Ihr Abonnement im <portalLink>FastSpring-Kontoverwaltungsportal</portalLink> kündigen oder verlängern.",
+  "notice_fastspring_purchase_info": "Online-Käufe werden von FastSpring, einem autorisierten Wiederverkäufer, bereitgestellt. Abonnements verlängern sich automatisch, sofern sie nicht vor dem Verlängerungsdatum gekündigt werden. Sie können Ihr Abonnement im <portalLink>FastSpring-Kontoverwaltungsportal</portalLink> kündigen oder verlängern.",
   "feature_offline_navigation_desc": "Turn-by-Turn-Sprachführung, Verkehrswarnungen und Spurführung, alles offline verfügbar",
   "feature_navigation_by_planned_tracks": "Navigation nach geplanten Tracks",
   "feature_navigation_by_planned_tracks_desc": "Folgen Sie Ihren GPX-Tracks mit Turn-by-Turn-Anweisungen oder halten Sie sich an Straßen für detaillierte Navigation und Straßeninformationen",
@@ -179,6 +179,14 @@
   "feature_interactive_ar_mode_desc": "Richten Sie Ihr Gerät auf den Himmel, um Objekte zu identifizieren und sie in Echtzeit zu verfolgen",
   "feature_offline_sky_map": "Offline-Himmelskarte",
   "feature_offline_sky_map_desc": "Erkunden Sie das Universum überall mit einer umfangreichen Sternendatenbank, die kein Internet benötigt",
+  "feature_category_backup_sync": "Backup & Synchronisierung",
+  "feature_category_pro_features": "Pro-Funktionen",
+  "feature_category_map_download_updates": "Karten-Download und -Updates",
+  "feature_category_topography": "Topografie",
+  "feature_category_vehicle_connectivity": "Fahrzeugintegration & Konnektivität",
+  "feature_category_wikipedia_travel": "Wikipedia & Reiseführer",
+  "feature_category_nautical": "Nautisch",
+  "feature_category_astronomy_android_only": "Astronomie (nur Android)",
   "empty_login_prices_desc": "Ihr Kauf oder Abonnement muss mit einem Konto verknüpft werden. Bitte melden Sie sich an, wenn Sie bereits eines haben, oder erstellen Sie ein neues Konto, um fortzufahren.",
   "no_data": "Keine Daten",
   "shared_string_save": "Speichern",
@@ -297,6 +305,6 @@
   "rename_folder_already_exists": "Ordner existiert bereits.",
   "rename_item_not_found": "Ordner oder Track wurde nicht gefunden.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

@@ -179,6 +179,14 @@
   "feature_interactive_ar_mode_desc": "وجه جهازك نحو السماء لتحديد الأجسام وتتبعها في الوقت الفعلي",
   "feature_offline_sky_map": "خريطة السماء دون اتصال بالإنترنت",
   "feature_offline_sky_map_desc": "استكشف الكون في أي مكان بقاعدة بيانات هائلة من النجوم لا تتطلب اتصالاً بالإنترنت",
+  "feature_category_backup_sync": "النسخ الاحتياطي والمزامنة",
+  "feature_category_pro_features": "الميزات الاحترافية",
+  "feature_category_map_download_updates": "تنزيل الخرائط والتحديثات",
+  "feature_category_topography": "الطبوغرافيا",
+  "feature_category_vehicle_connectivity": "تكامل المركبة والاتصال",
+  "feature_category_wikipedia_travel": "ويكيبيديا وأدلة السفر",
+  "feature_category_nautical": "البحري",
+  "feature_category_astronomy_android_only": "الفلك (أندرويد فقط)",
   "empty_login_prices_desc": "يجب ربط عملية الشراء أو الاشتراك الخاص بك بحساب. الرجاء تسجيل الدخول إذا كان لديك حساب بالفعل، أو إنشاء حساب جديد للمتابعة.",
   "no_data": "لا توجد بيانات",
   "shared_string_save": "حفظ",
@@ -297,6 +305,6 @@
   "rename_folder_already_exists": "المجلد موجود بالفعل.",
   "rename_item_not_found": "لم يتم العثور على المجلد أو المسار.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }

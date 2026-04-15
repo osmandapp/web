@@ -179,6 +179,14 @@
   "feature_interactive_ar_mode_desc": "Punta il tuo dispositivo verso il cielo per identificare oggetti e tracciarli in tempo reale",
   "feature_offline_sky_map": "Mappa celeste offline",
   "feature_offline_sky_map_desc": "Esplora il cosmo ovunque con un vasto database di stelle che non richiede internet",
+  "feature_category_backup_sync": "Backup e sincronizzazione",
+  "feature_category_pro_features": "Funzionalità Pro",
+  "feature_category_map_download_updates": "Download e aggiornamenti mappe",
+  "feature_category_topography": "Topografia",
+  "feature_category_vehicle_connectivity": "Integrazione veicolo e connettività",
+  "feature_category_wikipedia_travel": "Wikipedia e guide di viaggio",
+  "feature_category_nautical": "Nautica",
+  "feature_category_astronomy_android_only": "Astronomia (solo Android)",
   "empty_login_prices_desc": "Il tuo acquisto o abbonamento deve essere collegato a un account. Accedi se ne hai già uno, o crea un nuovo account per procedere.",
   "no_data": "Nessun dato",
   "shared_string_save": "Salva",
@@ -297,6 +305,6 @@
   "rename_folder_already_exists": "La cartella esiste già.",
   "rename_item_not_found": "Cartella o percorso non trovato.",
   "sourceHash": {
-    "message": "f312977dcbc99209b010eb545346974b6b45bff42e32f7cb43ad4bd2403d3ded"
+    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
   }
 }
