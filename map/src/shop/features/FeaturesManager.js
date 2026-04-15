@@ -199,21 +199,21 @@ export const features = [
         name: 'web:feature_observation_planning',
         desc: 'web:feature_observation_planning_desc',
         icon: <TelescopeIcon />,
-        category: 'Astronomy',
+        category: 'Astronomy (Android only)',
     },
     {
         id: 'interactive_ar_mode',
         name: 'web:feature_interactive_ar_mode',
         desc: 'web:feature_interactive_ar_mode_desc',
         icon: <InteractiveArIcon />,
-        category: 'Astronomy',
+        category: 'Astronomy (Android only)',
     },
     {
         id: 'offline_sky_map',
         name: 'web:feature_offline_sky_map',
         desc: 'web:feature_offline_sky_map_desc',
         icon: <OfflineSkyMapIcon />,
-        category: 'Astronomy',
+        category: 'Astronomy (Android only)',
     },
 ];
 
