@@ -111,6 +111,12 @@ export default function FavoriteItem({
 
     const favId = getFavoriteId(marker.layer);
 
+    useEffect(() => {
+        if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
+            setOpenActions(false);
+        }
+    }, [ctx.openedPopper]);
+
     const setHover = useCallback(
         (show) => {
             if (show) {
@@ -167,7 +173,11 @@ export default function FavoriteItem({
                             className={styles.item}
                             id={'se-fav-item-name-' + marker.name}
                             onMouseEnter={() => setHover(true)}
-                            onMouseLeave={() => setHover(false)}
+                            onMouseLeave={() => {
+                                if (!openActions) {
+                                    setHover(false);
+                                }
+                            }}
                             onClick={() => {
                                 if (share) {
                                     addShareFavoriteToMap(marker, ctx);
