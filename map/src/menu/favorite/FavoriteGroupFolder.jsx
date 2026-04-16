@@ -142,6 +142,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                     {({ index, style }) => (
                         <div style={style}>
                             <FavoriteItem
+                                insideVirtualizedList
                                 key={visibleMarkers[index].name + index}
                                 marker={visibleMarkers[index]}
                                 group={group}
