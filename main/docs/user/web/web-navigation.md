@@ -80,11 +80,11 @@ When you click Select track, the browser opens a file picker where you can choos
 
 ## Route Details {#route-details}
 
-![Web Navigation](@site/static/img/web/navigation_info.png) ![Web Navigation](@site/static/img/web/navigation_turns.png)
+![Web Navigation](@site/static/img/web/navigation_overview.png) ![Web Navigation](@site/static/img/web/navigation_turns_new.png)
 
-When a route is calculated, the panel shows a basic summary (distance, time, uphill/downhill) and a **Details** button. Use Details to open the route view with two tabs: Info and Turns.
+When a route is calculated, the panel shows a basic summary (distance, time, uphill/downhill) and a **Details** button. Use Details to open the route view with multiple tabs. The main tabs include Overview, Track, and Points. Turns tabs is available via the arrow (›) in the tab bar.
 
-Info summarizes the route and elevation data:
+Overview summarizes the route and elevation data:
 - **Points** — the number of route points used to build the route.
 - **Route** — distance and time.
 - **Uphill/Downhill** — total ascent and descent.
