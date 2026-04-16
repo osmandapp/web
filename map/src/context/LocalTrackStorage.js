@@ -1,7 +1,7 @@
 import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import indexOf from 'lodash-es/indexOf';
+import { TRACKS_DB_NAME } from '../util/appDataVersion';
 
-const DB_NAME = 'TracksDB';
 const STORE_NAME = 'local_tracks';
 
 const DEBUG = false;
@@ -9,7 +9,7 @@ const DEBUG = false;
 // create indexedDB
 function openDB() {
     return new Promise((resolve, reject) => {
-        const request = indexedDB.open(DB_NAME, 1);
+        const request = indexedDB.open(TRACKS_DB_NAME, 1);
 
         request.onupgradeneeded = function (event) {
             const db = event.target.result;

@@ -1,11 +1,12 @@
-const DB_NAME = 'OsmAndDB';
+import { FAVORITES_DB_NAME } from '../util/appDataVersion';
+
 const FAV_STORE_NAME = 'favorites';
 const SORT_STORE_NAME = 'sort';
 const DEBUG = false;
 
 function openDB() {
     return new Promise((resolve, reject) => {
-        const request = indexedDB.open(DB_NAME, 2);
+        const request = indexedDB.open(FAVORITES_DB_NAME, 2);
 
         request.onupgradeneeded = function (event) {
             const db = event.target.result;
