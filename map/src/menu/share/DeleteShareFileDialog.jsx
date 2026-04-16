@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 import { changeShareTypeFile } from '../../manager/ShareManager';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 export default function DeleteShareFileDialog({
     dialogOpen,
@@ -30,10 +30,10 @@ export default function DeleteShareFileDialog({
             <DialogTitle>{t('web:change_access')}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    {t('web:share_change_access_private_desc')}
+                    <Trans i18nKey="web:share_change_access_private_desc" components={{ strong: <strong /> }} />
                     <br />
                     <br />
-                    {t('web:share_change_access_request_desc')}
+                    <Trans i18nKey="web:share_change_access_request_desc" components={{ strong: <strong /> }} />
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
