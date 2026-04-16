@@ -250,10 +250,11 @@ export default function LocalClientTrackLayer() {
         }
         const deleteInds = [];
         // Loop through all local tracks and update their visibility on the map
-        Object.values(ctx.localTracks).forEach((track, index) => {
+        for (let index = 0; index < ctx.localTracks.length; index++) {
+            const track = ctx.localTracks[index];
             if (!track?.name) {
                 deleteInds.push(index);
-                return;
+                continue;
             }
             const currLayer = localLayers[track.name];
 
@@ -283,7 +284,7 @@ export default function LocalClientTrackLayer() {
                     updateTrackOnMap(track, currLayer.active);
                 }
             }
-        });
+        }
 
         // Remove inactive layers from the map
         for (let l in localLayers) {
@@ -787,7 +788,7 @@ export default function LocalClientTrackLayer() {
         }
         deleteOldLayers(ctxTrack?.layers, map);
 
-        let currentTrack = ctx.localTracks.find((t) => t.name === ctxTrack.name);
+        let currentTrack = ctx.localTracks.find((t) => t?.name === ctxTrack.name);
         if (currentTrack) {
             ctxTrack = currentTrack;
         }

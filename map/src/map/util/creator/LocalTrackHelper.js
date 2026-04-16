@@ -3,7 +3,7 @@ import TrackLayerProvider, { WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvide
 import { createFirstLayers } from './LocalTrackLayerHelper';
 
 export function trackWasChanged(localTracks, track) {
-    return localTracks.find((t) => t.name === track.name)?.updated;
+    return localTracks.find((t) => t?.name === track.name)?.updated;
 }
 
 export function isNewTrack(localTracks, track) {
@@ -54,6 +54,10 @@ export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
     ctx.setLocalTracks((prev) => {
         const tracks = [...prev];
         TracksManager.prepareTrack(file);
+        if (!file?.name || typeof file.name !== 'string' || file.name.trim() === '') {
+            ctx.setRoutingErrorMsg('Cannot save nameless local track.');
+            return prev;
+        }
         const trackPoints = points ?? file.points;
         const trackWpts = wpts ?? file.wpts;
         file.tracks = [{ trackPoints, trackWpts }];

@@ -1,6 +1,6 @@
 export const APP_DATA_VERSION = 3;
 export const FAVORITES_IDB_DATA_VERSION = 3;
-export const TRACKS_IDB_DATA_VERSION = 3;
+export const TRACKS_IDB_DATA_VERSION = 4;
 
 export const IDB_VERSION_APP = 'app';
 export const IDB_VERSION_FAVORITES = 'favorites';
