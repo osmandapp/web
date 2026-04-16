@@ -89,17 +89,33 @@ export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapOb
     openFavoriteObj(ctx, newSelectedGpxFile);
 }
 
-export default function FavoriteItem({ marker, group, currentLoc, share = false, smartf = null }) {
+export default function FavoriteItem({
+    marker,
+    group,
+    currentLoc,
+    share = false,
+    smartf = null,
+    insideVirtualizedList = false,
+}) {
     const ctx = useContext(AppContext);
     const [searchParams] = useSearchParams();
 
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView({
+        skip: insideVirtualizedList,
+        initialInView: true,
+    });
 
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
     const menuItemRef = useRef(null);
 
     const favId = getFavoriteId(marker.layer);
+
+    useEffect(() => {
+        if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
+            setOpenActions(false);
+        }
+    }, [ctx.openedPopper]);
 
     const setHover = useCallback(
         (show) => {
@@ -157,7 +173,11 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                             className={styles.item}
                             id={'se-fav-item-name-' + marker.name}
                             onMouseEnter={() => setHover(true)}
-                            onMouseLeave={() => setHover(false)}
+                            onMouseLeave={() => {
+                                if (!openActions) {
+                                    setHover(false);
+                                }
+                            }}
                             onClick={() => {
                                 if (share) {
                                     addShareFavoriteToMap(marker, ctx);

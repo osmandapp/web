@@ -14,10 +14,11 @@ export default function ThreeDotsButton({ name, tip, id, setOpenActions, anchorE
 
     return (
         <>
-            <Tooltip key={name} title={t(tip)} arrow placement="bottom-end">
+            <Tooltip key={name} title={t(tip)} arrow placement="bottom-end" disableFocusListener disableInteractive>
                 <IconButton
                     id={id}
                     className={styles.sortIcon}
+                    onMouseDown={(e) => e.stopPropagation()}
                     onMouseEnter={() => setHoverIconInfo(true)}
                     onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {

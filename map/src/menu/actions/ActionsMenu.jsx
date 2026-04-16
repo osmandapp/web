@@ -19,6 +19,7 @@ export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false,
                 sx={{ ml: favItems ? '-8px' : '8px', mt: favItems && '-8px' }}
                 open={open}
                 anchorEl={anchorEl?.current}
+                disableScrollLock={favItems}
                 PaperProps={{
                     style: { maxHeight: 550, overflow: 'auto' },
                 }}
