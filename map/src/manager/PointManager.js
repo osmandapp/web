@@ -4,7 +4,7 @@ import TrackLayerProvider from '../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../context/TracksRoutingCache';
 
 const deletePoint = async (index, ctx) => {
-    let currentTrack = ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name);
+    let currentTrack = ctx.localTracks.find((t) => t?.name === ctx.selectedGpxFile?.name);
     if (currentTrack && TracksManager.getEditablePoints(currentTrack).length > 2 && !ctx.createTrack?.enable) {
         await deletePointByIndex(currentTrack, index, ctx);
     } else {

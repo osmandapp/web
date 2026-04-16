@@ -59,7 +59,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
     }
 
     if (overwrite) {
-        const foundIndex = newLocalTracks?.findIndex((t) => t.name === localName);
+        const foundIndex = newLocalTracks?.findIndex((t) => t?.name === localName);
         if (foundIndex !== -1) {
             newLocalTracks[foundIndex] = track;
         } else {
@@ -172,7 +172,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
             occupied = isTrackExists(newName, folder, folderName, otherTracks);
         } else {
             //check local
-            occupied = otherTracks?.some((t) => t.name === newName);
+            occupied = otherTracks?.some((t) => t?.name === newName);
         }
         if (!occupied) {
             return newName;

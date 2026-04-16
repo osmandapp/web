@@ -203,7 +203,7 @@ function handleEditCloudTrack(ctx) {
     return new Promise((resolve) => {
         const track = { ...ctx.selectedGpxFile };
         const name = prepareName(track.name, true);
-        const localTrackNotFound = !ctx.localTracks.find((t) => t.name === name);
+        const localTrackNotFound = !ctx.localTracks.find((t) => t?.name === name);
 
         function proceed() {
             if (isRouteTrack(ctx)) {

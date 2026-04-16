@@ -1,5 +1,4 @@
 import { addDistance, NAN_MARKER, prepareLocalTrack, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
-import indexOf from 'lodash-es/indexOf';
 import { TRACKS_DB_NAME } from '../util/appDataVersion';
 
 const STORE_NAME = 'local_tracks';
@@ -111,24 +110,27 @@ export async function loadLocalTracksFromStorage(setLoading) {
 
     return new Promise((resolve) => {
         request.onsuccess = async function () {
-            for (let record of request.result) {
+            const sorted = [...request.result].sort((a, b) => Number(a.id) - Number(b.id));
+            for (const record of sorted) {
                 try {
                     const json = record.data;
-                    if (json) {
-                        fixNanEleWpt(json);
-                        localTracks[record.id] = json;
-                        DEBUG && console.log(`✅ Loaded Track ID = ${record.id}:`, json);
-                    } else {
-                        DEBUG && console.error(`⚠️ Empty track found: ${record.id}`);
-                        await deleteTrackFromDB(record.id);
+                    if (!json || typeof json.name !== 'string' || json.name.trim() === '') {
+                        DEBUG && console.error('Invalid or nameless local track skipped, old id', record.id);
+                        continue;
                     }
+                    fixNanEleWpt(json);
+                    localTracks.push(json);
+                    DEBUG && console.log('Loaded local track (old id ' + record.id + '):', json.name);
                 } catch {
-                    DEBUG && console.error(`❌ Error decompressing track: ${record.id}`);
-                    await deleteTrackFromDB(record.id);
+                    DEBUG && console.error('Error loading track', record.id);
                 }
             }
-            //localTracks = fixLocalTracks(localTracks); // fix holes
             localTracks = openVisibleTracks(localTracks); // mark visible
+            try {
+                await updateStoredLocalTracks(localTracks);
+            } catch (e) {
+                DEBUG && console.error('Failed to compact local tracks DB after load', e);
+            }
             setLoading(false);
             resolve(localTracks);
         };
@@ -163,10 +165,14 @@ export function saveTrackToLocalStorage({ ctx, track }) {
 
 async function updateStoredLocalTracks(tracks) {
     await deleteAllTracksFromDB();
-    for (let track of tracks) {
-        let res = prepareLocalTrack(track);
-        if (res) {
-            await saveTrackToDB(indexOf(tracks, track), res);
+    for (let i = 0; i < tracks.length; i++) {
+        const track = tracks[i];
+        if (!track?.name || typeof track.name !== 'string' || track.name.trim() === '') {
+            continue;
+        }
+        const res = prepareLocalTrack(track);
+        if (res?.name) {
+            await saveTrackToDB(i, res);
         }
     }
 }
@@ -266,7 +272,7 @@ function openVisibleTracks(localTracks) {
     if (savedVisible?.local) {
         for (const local of savedVisible.local) {
             for (let f of localTracks) {
-                if (f.name === local.name) {
+                if (f?.name === local.name) {
                     if (Date.now() - local.addTime < HOURS_24_MS) {
                         addDistance(f); // recalc-distance-local-visible
                         f.selected = true;
