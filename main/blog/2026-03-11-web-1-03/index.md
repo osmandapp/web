@@ -32,6 +32,7 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 - Added [Smart folders support](#smart-folders-support) for organizing tracks;
 - [Public transport stops](#public-transport-stops) are now displayed on the map to help locate nearby transit options;
 - Improved [POI context menu](#poi-context-menu-improvements) with richer information and a clearer layout;
+- [Redesigned track context menu](#track-panel-redesign);
 - Added the ability to [export GPX tracks as simplified files](#export-gpx-as-simplified-track) for easier sharing and smaller file size;
 - [Opening hours](#opening-hours) are now displayed directly in the POI context menu when available;
 - Added support for [pinned favorite folders](#pinned-favorites-folders) for quicker access to frequently used collections;
@@ -53,9 +54,15 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 
 Several improvements were introduced to make working with tracks easier and more flexible.
 
+### Track Panel Redesign {#track-panel-redesign}
+
+Redesigned [track panel and context menu](https://osmand.net/docs/user/web/web-map#tracks) with a new top action bar, quick access controls, and tab-based navigation between Overview, Track, and Points.
+
+![Web Track Context Menu](@site/static/img/web/track_context_menu_new.png)
+
 ### Export GPX as Simplified Track {#export-gpx-as-simplified-track}
 
-A new export option allows [downloading GPX tracks](@site/static/img/web/download_options.png) in a simplified format. This helps reduce file size and improves compatibility when sharing tracks with other applications or services.
+A new export option allows [downloading GPX tracks](https://osmand.net/docs/user/web/web-navigation#download-and-save) in a simplified format. This helps reduce file size and improves compatibility when sharing tracks with other applications or services.
 
 ![Web Navigation](@site/static/img/web/download_options.png)
 
