@@ -122,16 +122,25 @@ This section contains a list of your [**GPX tracks visible on the map**](../web/
 - You can toggle tracks on or off directly.  
 - Switch tracks on or off from the **Recently Visible** list.  
 
-Each track has a **Context Menu** (accessible via the ⋮ button) with the following commands:
+Each track has a menu (⋮) with the following commands:
 
 - **Hide track**: Hides the currently visible track from the map.  
 - **Make track visible**: Displays a track from the Recently Visible list on the map.  
 - **Rename**: Allows you to rename the track for easier identification.  
-- **Duplicate**: Creates a copy of the track.  
+- **Duplicate**: Creates a copy of the track.
+- **Share**: Opens the sharing screen (same as for [Favorites](../web/web-favorites.md#share)).
 - **Download**: Saves the track to your local device.  
 - **Delete**: Removes the track permanently from the list.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
+When you open a track, a panel with a top action bar is displayed. The bar shows the track name and provides quick access to actions. In addition to the three-dot menu commands, the top bar includes **Edit**. **Appearance** is currently not active.
+
+The track panel includes the following tabs:
+
+- Overview — shows general track information.
+- Track — currently not implemented.
+- Points — shows waypoints and route points grouped by type.
+
+![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Transport stops {#transport-stops}
 

@@ -26,7 +26,7 @@ After opening the Tracks Analyzer (shown as a wrench), the tool opens with a map
 
 To start the analysis, set one or two points directly on the map. Right-click on the desired location and select **Point A / Point B** from the context menu. The analyzer then searches for track segments that pass through the selected point or between the two points.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points.png)
+![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sorting and Visible Parameters {#sorting-and-visible-parameters}

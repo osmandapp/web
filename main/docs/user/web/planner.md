@@ -64,7 +64,7 @@ There are two ways to start a new route in Plan route. The first option is direc
 
 Once the route is created, add points directly on the map. Each click places the next point, and the planner builds the route between points.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route.png)
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
 
 ### Import Track {#import-track}
 
@@ -90,11 +90,11 @@ From the track panel you can also perform common file actions. You can **Save to
 
 ## Track Details Panels {#track-details-panels}
 
-The local track menu includes three panels: **Info**, **Track**, and **Waypoints**. Use them to view track information and manage route points and waypoints.
+The local track menu includes three panels: **Overview**, **Track**, and **Points**. Use them to view track information and manage route points and waypoints.
 
-### Info Panel {#info-panel}
+### Overview Panel {#overview-panel}
 
-The Info panel summarizes the selected track and shows key route and elevation data. It includes a quick overview of the route statistics, plus charts and additional track analysis based on available map data.
+The Overview panel summarizes the selected track and shows key route and elevation data. It includes a quick overview of the route statistics, plus charts and additional track analysis based on available map data.
 
 The summary section shows:
 
@@ -108,29 +108,34 @@ Below the summary, the panel provides charts:
 
 - Elevation — an elevation profile of the route.
 - Slope — a slope graph showing gradient changes along the track.
+- Speed — a speed graph along the track.
+
+You can enable or disable the following options:
+
+- Show track points — displays track points on the map.
+- Show waypoints — displays waypoints on the map.
 
 For additional track details, open the analysis sections:
 
+- Road type — breaks the track into segments by road classification.
 - Surface — shows surface types along the route based on OSM data.
 - Smoothness — shows segment smoothness based on OSM tags.
 
-Common track actions such as saving, downloading, closing, and deleting are also available in this panel.
-
-![OsmAnd Web Info Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Manage Track](@site/static/img/web/info_panel_2.png)
+![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
 
 ### Track Panel {#track-panel}
 
 The Track panel shows the list of route points used to build the track. Use it to review and edit the route structure: drag points to reorder them, remove points using the delete icon, or use Clear points to remove all points and start over.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel.png)
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
 
-### Waypoints Panel {#waypoints-panel}
+### Points Panel {#points-panel}
 
-The Waypoints panel is used to view and manage waypoints for the selected track. Waypoints can be added from the map context menu — right-click on the map and choose the option to **Add awaypoint**, then fill in the waypoint details (such as name, icon, and color) and save it.
+The Points panel is used to view and manage waypoints for the selected track. Waypoints can be added from the map context menu — right-click on the map and choose the option to **Add awaypoint**, then fill in the waypoint details (such as name, icon, and color) and save it.
 
 In the Waypoints list, you can control whether waypoints are shown on the map and remove individual waypoints when needed. To remove all waypoints from the track at once, use *Clear all waypoints*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
 
 
 ## Related Articles {#related-articles}

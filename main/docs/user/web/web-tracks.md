@@ -72,28 +72,16 @@ Click the three-dot button (⋮) to open the *Track Folder* menu. From here, you
 GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
 
 The following features are available after choosin cloud track:
+- *Information* - displaying track data.
+- *Elevation* - graph of elevation.
+- *Speed* - speed graph.
+- *Slope* - slope graph.
+- *Recalculate Elevation (Satellite)* - recalculates elevation values for the selected track and shows them on the elevation graph.
+- *Road type* - breaks the track into segments by road classification.
+- *Surface* - shows the types of track surfaces along the route.
+- *Smoothness* - displays segment smoothness based on OSM tags.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
-
-- Information screens:
-  - *Information* - displaying track data.
-  - *Elevation* - graph of elevation.
-  - *Speed* - speed graph.
-  - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.
-  - *Turns* - a generated list of approximate turn instructions based on the track geometry.
-  - *Road type* - breaks the track into segments by road classification .
-  - *Surface* - shows the types of track surfaces along the route.
-  - *Smoothness* - displays segment smoothness based on OSM tags .
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details.png)
-
-- Action buttons:
-  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
-  - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - recalculates elevation values for the selected track and shows them on the elevation graph.
-  - *Delete Track* - deletes the track.
-  - *Close track* - close the track.
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Related Articles {#related-articles}
