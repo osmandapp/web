@@ -133,7 +133,7 @@ The *Display language option* is used to change the language of the entire app, 
 
 On Android devices, OsmAnd allows you to customize the display language directly in the app on all supported versions. By default, the app uses the system language, but you can manually select a different language if needed.
 
-On Android 13 and later, OsmAnd integrates with the system per-app language mechanism, but the language can still be selected from within the app.
+On Android 13 and later, you can change the app language either in OsmAnd settings or in your device’s system settings. The selected language is synchronized between the app and the system. Some changes may require restarting the app to fully apply the selected language.
 
 On iOS devices, the display language can only be changed in the system settings (see how to change per-app language preferences in [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
@@ -158,7 +158,7 @@ Go to: *Settings → OsmAnd Maps → Language*
 </Tabs>
 
 :::note No option to set app languages
-On some Android devices or system versions, the option to set app languages individually in system settings may be unavailable or limited (you can check out the discussion on [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information). In such cases, you can still change the app language directly in OsmAnd using the Display language setting. This is especially useful for languages that are not fully supported by the Android system.
+On some Android devices or system versions, the option to set app languages individually in system settings may be unavailable or limited (you can check out the discussion on [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information). In such cases, you can still change the app language directly in OsmAnd using the Display language setting. Even if a language is not supported by your Android system, OsmAnd will still apply and preserve the selected language within the app.
 :::
 
 
