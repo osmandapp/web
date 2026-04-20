@@ -33,11 +33,6 @@ The app has two independent parts: **left menu** and **map**. They share state o
 
 Always reuse. Never create a new component if one already exists.
 
-- **Items:** `DefaultItem`, `SimpleItemWithRightInfo`, `SimpleItem`
-- **Buttons:** `PrimaryBtn`, `BlueBtn`, `GrayBtnWithBlueHover`, `BlueButtonWithIcon`, `SquareTextBtn`
-- **Layout:** `ThickDivider`, `SubTitleMenu`, `AppBarWithBtns`, `ColorBlock`, `SimpleText`
-- **Pro:** `ButtonPro` — for PRO-only features
-
 ## Translations
 
 All user-visible strings must be added to `src/resources/translations/en/web-translation.json` and called via `useTranslation`.
