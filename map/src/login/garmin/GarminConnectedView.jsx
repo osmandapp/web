@@ -29,7 +29,10 @@ export default function GarminConnectedView({ syncTimeMs, disconnecting, onDisco
 
     function handleActivitiesClick() {
         if (garminGroup) {
-            ctx.setOpenGroups((prev) => [...prev, garminGroup]);
+            ctx.setOpenGroups((prev) => {
+                const lastOpenGroup = prev[prev.length - 1];
+                return lastOpenGroup?.name === garminGroup.name ? prev : [...prev, garminGroup];
+            });
         }
         navigate(MAIN_URL_WITH_SLASH + TRACKS_URL);
     }
