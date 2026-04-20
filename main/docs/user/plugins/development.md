@@ -319,9 +319,9 @@ The table below contains information about the tilt of the camera and the distan
 |20| 66|11|30|10%|
 
 
-## Available RAM Widget {#available-ram-widget}
+## Memory Info Widget {#memory-info-widget}
 
-This widget is designed specifically for you when using OsmAnd to provide a more convenient and informative interaction with the available RAM on your device. It allows you to easily and quickly monitor the available RAM, which is especially useful when using OsmAnd for navigation. Read more about the widget in the [Information widgets](../widgets/info-widgets.md#available-ram) article.
+This widget is designed specifically for you when using OsmAnd to provide a more convenient and informative interaction with device memory usage. It allows you to easily and quickly monitor different types of memory used by the application, which is especially useful when using OsmAnd for navigation. Read more about the widget in the [Information widgets](../widgets/info-widgets.md#memory-info) article.
 
 
 ## GPX-Track Simulation {#gpx-track-simulation}
