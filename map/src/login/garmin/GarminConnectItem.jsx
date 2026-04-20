@@ -3,7 +3,7 @@ import LoginContext from '../../context/LoginContext';
 import { ReactComponent as GarminIcon } from '../../assets/icons/ic_logo_garmin_connect.svg';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import { FREE_ACCOUNT, INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import { GARMIN_URL, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
@@ -17,6 +17,7 @@ export default function GarminConnectItem() {
     const { t } = useTranslation();
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [garminLinked, setGarminLinked] = useState(false);
     const [syncTimeMs, setSyncTimeMs] = useState(null);
@@ -47,7 +48,7 @@ export default function GarminConnectItem() {
     const openPricingPage = () => window.open('/pricing#pro_features', '_blank', 'noopener,noreferrer');
 
     const openGarminPage = () =>
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + GARMIN_URL, {
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + GARMIN_URL + location.hash, {
             state: { linked: garminLinked, syncTimeMs },
         });
 
