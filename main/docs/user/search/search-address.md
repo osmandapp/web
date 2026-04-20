@@ -18,6 +18,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Address search works offline using downloaded maps. Make sure the map for the region you are searching in is installed. Results depend on the address data available in OpenStreetMap.
 
+Search results are automatically ordered by relevance and distance, so nearby and more relevant results appear higher in the list.
+
 OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
 
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#full-text-search), where you can find the *Address* tab.
@@ -82,6 +84,8 @@ You do not need to enter them in a strict order. **Example queries**:
 
 If the full address is not found, OsmAnd automatically tries simplified queries (for example by removing extra words) to improve the chances of finding the location.
 
+When a query may refer to both an address and a POI, OsmAnd automatically prioritizes the most relevant interpretation based on context, distance, and object importance.
+
 **NOTE:** Address search works only within downloaded maps. Search results are based on:
 - maps installed on your device;
 - the visible map area;
@@ -116,6 +120,8 @@ Address search in OsmAnd is tolerant to different input formats. You can try:
 - changing the order of words;
 - removing extra information;
 - searching only by street name.
+
+However, very short or general queries (for example, “Apple”) may return a mix of addresses and POIs, including a brand, street name, or locality with the same name. To improve accuracy, try adding more details such as city name, street, or POI name.
 
 The search engine also tolerates common variations in address formatting such as different word order, spelling differences, abbreviations, or house number formats. The table below shows typical search variations that may still return the same address.
 
