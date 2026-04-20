@@ -1,0 +1,44 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 16px;
+    gap: 8px;
+}
+
+.iconWrapper {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.icon {
+    width: 88px;
+    height: 88px;
+}
+
+.title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    text-align: center !important;
+}
+
+.description {
+    font-size: 14px !important;
+    color: var(--text-secondary) !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+}
+
+.connectBtn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.connectedLabel {
+    flex-shrink: 0;
+}

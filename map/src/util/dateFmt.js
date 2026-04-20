@@ -38,6 +38,13 @@ export const fmt = {
             month: '2-digit',
         }),
 
+    // "d MMMM" without year (e.g., "4 September", "4 вересня")
+    dMMMM: (d) =>
+        new Date(d).toLocaleDateString(lang(), {
+            day: 'numeric',
+            month: 'long',
+        }),
+
     // Short weekday, capitalized, without trailing dot (e.g., "Mon", "Пн")
     wkShort: (d) => normAbbr(new Date(d).toLocaleDateString(lang(), { weekday: 'short' })),
 

@@ -2,13 +2,21 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 import { featureCategories, planFeatures } from './FeaturesManager';
 import { ReactComponent as CheckIcon } from '../../assets/icons/ic_action_checkmark_colored_day.svg';
 import { ReactComponent as ItemNotIncludedIcon } from '../../assets/icons/ic_action_item_not_included.svg';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import { products } from '../products/ProductManager';
 
 export default function FeaturesTable() {
     const { t } = useTranslation();
+
+    // Scroll to the section matching the URL hash once the table is mounted.
+    // e.g. /pricing#pro_features → scrolls to the "Pro features" category row.
+    useEffect(() => {
+        const hash = globalThis.location.hash?.slice(1);
+        if (!hash) return;
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, []);
 
     const plans = products.filter((p) => p.show).map((p) => ({ key: p.id, label: t(p.name) }));
 
@@ -28,7 +36,7 @@ export default function FeaturesTable() {
                 <TableBody>
                     {featureCategories.map(({ id, title, features }) => (
                         <React.Fragment key={id}>
-                            <TableRow className={styles.categoryRow}>
+                            <TableRow id={id} className={styles.categoryRow}>
                                 {id !== 'features' && (
                                     <TableCell className={styles.categoryCell} colSpan={plans.length + 1}>
                                         {t(title)}

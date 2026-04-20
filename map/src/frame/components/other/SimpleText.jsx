@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function SimpleText({ id, text, maxLines = 2 }) {
     const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,})/;
-    const match = text.match(emailRegex);
+    const match = typeof text === 'string' ? text.match(emailRegex) : null;
 
     if (match) {
         const [email] = match;
@@ -31,7 +31,11 @@ export default function SimpleText({ id, text, maxLines = 2 }) {
     return (
         <MenuItem id={id} className={styles.item} disableRipple>
             <ListItemText>
-                <MenuItemWithLines name={text} maxLines={maxLines} />
+                {typeof text === 'string' ? (
+                    <MenuItemWithLines name={text} maxLines={maxLines} />
+                ) : (
+                    <MenuItemWithLines maxLines={maxLines}>{text}</MenuItemWithLines>
+                )}
             </ListItemText>
         </MenuItem>
     );

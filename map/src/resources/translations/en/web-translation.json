@@ -304,5 +304,18 @@
     "rename_track_not_found": "Track not found.",
     "rename_empty_folder_name": "Empty folder name.",
     "rename_folder_already_exists": "Folder already exists.",
-    "rename_item_not_found": "Folder or track was not found."
+    "rename_item_not_found": "Folder or track was not found.",
+    "garmin_sync_title": "Sync your activities",
+    "garmin_sync_description": "Connect your account to sync Garmin Connect™ activities with OsmAnd.",
+    "garmin_help": "Help",
+    "garmin_help_new_activities": "New activities will be available automatically in the Tracks → Garmin folder.",
+    "garmin_help_supported_activities": "<strong>Supported Activities:</strong> Currently, OsmAnd syncs only Hiking, Cycling, and Walking activities from your Garmin Connect™ account.",
+    "garmin_help_historic_data": "<strong>Historic data:</strong> You can sync activities from the past 30 days by enabling this option on the Garmin Connect™ authorization page. Please note that activities older than 30 days cannot be imported automatically.",
+    "garmin_activities": "Activities",
+    "garmin_last_sync": "Last sync",
+    "garmin_disconnect_confirm_title": "Disconnect Garmin Connect™?",
+    "garmin_disconnect_confirm_desc": "OsmAnd will no longer sync your activities. Your previous tracks will stay in the Garmin folder.",
+    "garmin_time_min_ago": "{{n}} min ago",
+    "garmin_time_h_ago": "{{n}} h ago",
+    "garmin_time_days_ago": "{{n}} days ago"
 }
