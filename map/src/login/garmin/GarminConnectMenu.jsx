@@ -47,7 +47,7 @@ export default function GarminConnectMenu() {
     }, [refreshStatus, location.state]);
 
     function goBack() {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL);
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.hash);
     }
 
     function handleDisconnect() {
