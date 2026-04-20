@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
+import { getAccountInfo, INIT_LOGIN_STATE, FREE_ACCOUNT } from '../manager/LoginManager';
 import { apiGet } from '../util/HttpApi';
 import useCookie from 'react-use-cookie';
 
@@ -46,6 +46,7 @@ export const LoginContextProvider = ({ children }) => {
     const [emailCookie, setEmailCookie] = useCookie('email', '');
 
     const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
+    const isProAccount = () => isLoggedIn() && accountInfo?.account !== FREE_ACCOUNT;
 
     useEffect(() => {
         syncSessionFromServer({
@@ -100,6 +101,7 @@ export const LoginContextProvider = ({ children }) => {
                 completePurchase,
                 setCompletePurchase,
                 isLoggedIn,
+                isProAccount,
             }}
         >
             {children}
