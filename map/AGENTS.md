@@ -102,6 +102,4 @@ Use `?.` whenever a value may be `null` or `undefined`. Avoid `&&`-chains for pr
 
 ## Avoid code duplication
 
-Extract shared functions into a dedicated module (e.g. `garminApi.js`) and import from both places.
-
-If data is already fetched upstream, pass it via props or React Router `navigate` state — do not fetch again downstream.
+Before writing anything — check if it already exists. Extract shared logic into modules, pass data that's already fetched instead of re-fetching it.
