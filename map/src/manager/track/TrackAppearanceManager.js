@@ -1,9 +1,11 @@
 import { apiPost } from '../../util/HttpApi';
-import { getResolvedPointsGroups, INFO_FILE_EXT } from './TracksManager';
+import { getResolvedPointsGroups, INFO_FILE_EXT, GPX_FILE_TYPE } from './TracksManager';
 import { isCloudTrack, isLocalTrack } from '../../context/AppContext';
 import isEmpty from 'lodash-es/isEmpty';
 
 const VISIBILITY_DEBOUNCE_MS = 1000;
+const GPX_FILE_SUBTYPE_FOLDER = '/tracks/';
+const FILE_SUBTYPE = 'gpx';
 
 /** Strip `points` arrays from groups and their `ext` (they are large and not needed in `.info`). */
 export function sanitizePointsGroups(pointsGroups = {}) {
@@ -15,11 +17,22 @@ export function sanitizePointsGroups(pointsGroups = {}) {
     return result;
 }
 
+/** Ensure `type`, `file`, and `subtype` are always present in the `.info` object. */
+function buildBaseInfo(gpxFileInfo, name) {
+    return {
+        type: gpxFileInfo?.type ?? GPX_FILE_TYPE,
+        file: gpxFileInfo?.file ?? GPX_FILE_SUBTYPE_FOLDER + name,
+        subtype: gpxFileInfo?.subtype ?? FILE_SUBTYPE,
+        ...gpxFileInfo,
+    };
+}
+
 /** Build the canonical `.info` payload for a track (pointsGroups + future fields). */
 export function buildInfoPayload(gpxFile) {
     const pointsGroups = getResolvedPointsGroups(gpxFile);
+    const baseInfo = buildBaseInfo(gpxFile?.info, gpxFile?.name);
     return {
-        ...gpxFile?.info,
+        ...baseInfo,
         pointsGroups: isEmpty(pointsGroups) ? {} : sanitizePointsGroups(pointsGroups),
     };
 }
@@ -105,11 +118,12 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
             updatedPointsGroups[name] = { ...group, hidden };
         });
 
+        const baseInfo = buildBaseInfo(prevFile.info, prevFile.name);
         const updatedGpxFile = {
             ...prevFile,
             infoChanged: true,
             info: {
-                ...prevFile.info,
+                ...baseInfo,
                 pointsGroups: updatedPointsGroups,
             },
         };
