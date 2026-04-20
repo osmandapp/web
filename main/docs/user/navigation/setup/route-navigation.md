@@ -71,7 +71,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 2. Additional [*Navigation settings*](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 
-3. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulated-navigation) (with this function you can test your route before actually traveling along it).
+3. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulated-navigation) (with this function you can test your route before actually traveling along it). On iOS devices in EU countries, OsmAnd can also be set as the default navigation app in system settings, allowing it to open automatically for navigation requests.
 
 4. While on the route you can [*Pause/Resume*](#pause--resume-navigation) navigation and [*Stop*](#start--stop-navigation) it.
 
