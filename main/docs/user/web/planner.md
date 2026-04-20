@@ -81,11 +81,15 @@ Each item in the list has a toggle that lets you quickly show or hide the track 
 
 ## Manage Track {#manage-track}
 
-When you create or import a route in Plan route, a vertical track panel opens. Use this panel to change the routing profile and manage the route. Click the profile control to open the **Change profile** dialog, select the profile you need (for example, Car, Bicycle, or Pedestrian), and choose how to apply it: *Next segments* applies the profile only to new parts added from this point forward, while *All segments* recalculates the entire route with the selected profile.
+When you create or import a route in Plan route, a vertical track panel opens. This panel allows you to change the routing profile and manage the route.
 
-From the track panel you can also perform common file actions. You can **Save to Cloud** to keep the route for later use, **Download GPX** to export it as a file, **Close track** to stop editing it, or **Delete track** to remove it from your local list. These actions are also available from the corresponding controls in the [Info panel](#info-panel).
+Click the profile control to open the **Change profile** dialog. Select the required profile (for example, Car, Bicycle, or Pedestrian), then choose how to apply it: *Next segments* applies the profile only to new parts added from this point forward, while *All segments* recalculates the entire route using the selected profile.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+From the track panel, you can also **Delete** the track from your local list.
+
+In the [Overview panel](#overview-panel), you can **Save to Cloud** to keep the route for later use and **Download** it as a GPX file.
+
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
 ## Track Details Panels {#track-details-panels}
