@@ -10,6 +10,7 @@ import SimpleItemWithRightInfo from '../../frame/components/items/SimpleItemWith
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { MAIN_URL_WITH_SLASH, TRACKS_URL } from '../../manager/GlobalManager';
+import { fmt } from '../../util/dateFmt';
 import { EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 
@@ -76,5 +77,5 @@ function formatTimeAgo(ms, t) {
     const diffD = Math.floor(diffH / 24);
     if (diffD <= 30) return t('web:garmin_time_days_ago', { n: diffD });
 
-    return new Date(ms).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' });
+    return fmt.dMMMM(ms);
 }
