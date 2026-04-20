@@ -29,7 +29,11 @@ export default function GarminConnectMenu() {
     const [confirmOpen, setConfirmOpen] = useState(false);
 
     const refreshStatus = useCallback(async () => {
-        if (!ltx.loginUser || ltx.loginUser === INIT_LOGIN_STATE) return;
+        if (ltx.loginUser === INIT_LOGIN_STATE) return;
+        if (!ltx.loginUser) {
+            setLoading(false);
+            return;
+        }
         setLoading(true);
         try {
             const data = await fetchGarminStatus();
