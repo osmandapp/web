@@ -31,7 +31,11 @@ export default function SimpleText({ id, text, maxLines = 2 }) {
     return (
         <MenuItem id={id} className={styles.item} disableRipple>
             <ListItemText>
-                <MenuItemWithLines name={text} maxLines={maxLines} />
+                {typeof text === 'string' ? (
+                    <MenuItemWithLines name={text} maxLines={maxLines} />
+                ) : (
+                    <MenuItemWithLines maxLines={maxLines}>{text}</MenuItemWithLines>
+                )}
             </ListItemText>
         </MenuItem>
     );
