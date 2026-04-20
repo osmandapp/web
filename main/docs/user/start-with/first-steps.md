@@ -381,6 +381,10 @@ You need to download the map before searching for an address there. Also, if you
 
 [Read more](../navigation/index.md) about navigation.
 
+**NOTE:** On iOS devices in EU countries, you can set OsmAnd as the default navigation app in system settings.  
+Go to: *Settings → Apps → Default Apps → Navigation*  
+When set, OsmAnd will open automatically for navigation requests from the system.
+
 
 ### How to record your trip {#how-to-record-your-trip}
 
