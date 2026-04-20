@@ -5,11 +5,15 @@ import styles from './pro.module.css';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
-export default function ButtonPro({ type }) {
+export default function ButtonPro({ type, onClick }) {
     const ctx = useContext(AppContext);
 
     function open() {
-        ctx.setOpenProFeatures({ type });
+        if (onClick) {
+            onClick();
+        } else {
+            ctx.setOpenProFeatures({ type });
+        }
     }
 
     return (

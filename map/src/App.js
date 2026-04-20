@@ -27,6 +27,7 @@ import {
     INFO_MENU_URL,
     SHARE_MENU_URL,
     PURCHASES_URL,
+    GARMIN_URL,
     PRICING_URL,
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
@@ -53,6 +54,7 @@ import ShareFileMenu from './menu/share/ShareFileMenu';
 import { LoginContextProvider } from './context/LoginContext';
 import PurchasesMenu from './login/purchases/PurchasesMenu';
 import PurchaseInfo from './login/purchases/PurchaseInfo';
+import GarminConnectMenu from './login/garmin/GarminConnectMenu';
 import PricingPage from './shop/PricingPage';
 import WeatherForecastDetails from './menu/weather/WeatherForecastDetails';
 import PoiCategoriesList from './menu/search/search/PoiCategoriesList';
@@ -121,6 +123,7 @@ const App = () => {
                                         <Route path={PURCHASES_URL} element={<PurchasesMenu />}>
                                             <Route path=":key" element={<PurchaseInfo />}></Route>
                                         </Route>
+                                        <Route path={GARMIN_URL} element={<GarminConnectMenu />} />
                                     </Route>
                                     <Route
                                         path={DELETE_ACCOUNT_URL}
