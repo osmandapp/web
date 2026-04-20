@@ -238,6 +238,7 @@ When you tap a **route symbol** on the map:
 
 - A **list of the nearby routes** at that location is displayed.
 - After selecting a route from the list, a [context menu](../map/tracks/track-context-menu.md) for that route opens, displaying detailed information and available actions.
+- The selected route is opened in a track view, allowing you to interact with it in the same way as with a GPX track.
 
 In the **context menu**, you can:
 
@@ -316,7 +317,7 @@ You can also open the *Track tab* and switch to the *Altitude view* to see the f
 </Tabs>  
 
 
-To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md).
+To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md), or editing [Plan a route](../plan-route/create-route.md). Saved routes behave the same as other tracks and are available in your track collection.
 
 
 ### Start Navigation {#start-navigation}
