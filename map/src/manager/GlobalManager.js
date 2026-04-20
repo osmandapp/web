@@ -43,6 +43,7 @@ export const TRACK_ANALYZER_URL = 'track-analyzer/';
 export const TRAVEL_URL = 'travel/';
 export const LOGIN_URL = 'account/';
 export const PURCHASES_URL = 'purchases/';
+export const GARMIN_URL = 'garmin/';
 export const DELETE_ACCOUNT_URL = 'delete-account/';
 export const SHARE_FILE_URL = 'share/join/:uuid';
 export const SHARE_FILE_MAIN_URL = 'share/join/';
