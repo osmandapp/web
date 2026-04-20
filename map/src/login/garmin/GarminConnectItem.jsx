@@ -5,7 +5,6 @@ import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import DefaultItem from '../../frame/components/items/DefaultItem';
-import { FREE_ACCOUNT, INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import { GARMIN_URL, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { fetchGarminStatus } from './garminApi';
 import ButtonPro from '../../frame/pro/ButtonPro';
@@ -23,10 +22,10 @@ export default function GarminConnectItem() {
     const [syncTimeMs, setSyncTimeMs] = useState(null);
     const [garminLoading, setGarminLoading] = useState(false);
 
-    const isProUser = ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE && ltx.accountInfo?.account !== FREE_ACCOUNT;
+    const isProUser = ltx.isProAccount();
 
     const refreshGarminStatus = useCallback(async () => {
-        if (!ltx.loginUser || ltx.loginUser === INIT_LOGIN_STATE) {
+        if (!ltx.isLoggedIn()) {
             return;
         }
         setGarminLoading(true);
