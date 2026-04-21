@@ -50,11 +50,13 @@ export default function Login({ dialog = false }) {
         }
     }, [tryCookie]);
 
+    const wantDeleteAcc = location.state?.wantDeleteAcc ?? false;
+
     const handleClose = () => {
         setEmailError(EMPTY_INPUT);
         setUserPassword(EMPTY_INPUT);
         closeLoginMenu(ltx);
-        if (ltx.wantDeleteAcc) {
+        if (wantDeleteAcc) {
             navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + location.search + location.hash);
         } else {
             ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));

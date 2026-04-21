@@ -91,6 +91,13 @@ export default function LoginMenu() {
         }
     }, [location.hash]);
 
+    useEffect(() => {
+        if (location.state?.wantDeleteAcc) {
+            ltx.setLoginError('Please log in to delete your account.');
+            return () => ltx.setLoginError(null);
+        }
+    }, [location.state?.wantDeleteAcc]);
+
     const handleClose = () => {
         ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
     };

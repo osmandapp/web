@@ -39,8 +39,9 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
             return true;
         } else {
             if (ltx.loginUser !== INIT_LOGIN_STATE) {
-                ltx.setWantDeleteAcc(true);
-                navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.hash);
+                navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.hash, {
+                    state: { wantDeleteAcc: true },
+                });
                 ltx.setOpenLoginMenu(true);
             }
         }
@@ -63,7 +64,6 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (setDeleteAccountFlag) {
             setDeleteAccountFlag(false);
         } else {
-            ltx.setWantDeleteAcc(false);
             navigate('/map/' + location.search + location.hash);
         }
     }
