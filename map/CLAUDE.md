@@ -35,14 +35,14 @@ Always reuse. Never create a new component if one already exists.
 
 ## Translations
 
-All user-visible strings must be added to `src/resources/translations/en/web-translation.json` and called via `useTranslation`.
+All user-visible strings must use `useTranslation`. Never hardcode display strings in JSX.
 
-```js
-const { t } = useTranslation();
-<Typography>{t('web:my_key')}</Typography>
-```
+**Key resolution order — always check in this order:**
 
-Keys use the `web:` namespace prefix. Never hardcode display strings in JSX.
+1. `src/resources/translations/en/translation.json` — shared Android/iOS keys, no namespace prefix. Use as-is: `t('shared_string_author')`.
+2. `src/resources/translations/en/web-translation.json` — web-only keys, use `web:` prefix: `t('web:my_key')`.
+
+If the key already exists in `translation.json` — use it as-is without `web:`. Only add a new key to `web-translation.json` if it does not exist in `translation.json`.
 
 ## Route constants
 
