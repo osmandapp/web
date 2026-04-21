@@ -199,6 +199,17 @@
     max-width: 880px !important;
 }
 
+.pricingTrademark {
+    color: var(--text-secondary) !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+}
+
 .pricingTableContainer {
     display: flex !important;
     width: 880px !important;
