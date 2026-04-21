@@ -119,6 +119,7 @@ export default function PricingPage() {
                     <Suspense fallback={<CircularProgress />}>
                         <FeaturesTable />
                     </Suspense>
+                    <Typography className={styles.pricingTrademark}>{t('web:notice_garmin_trademark')}</Typography>
                 </Box>
             </Box>
             <EmptyLoginDialog />

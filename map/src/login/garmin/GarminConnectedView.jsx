@@ -13,8 +13,7 @@ import { MAIN_URL_WITH_SLASH, TRACKS_URL } from '../../manager/GlobalManager';
 import { fmt } from '../../util/dateFmt';
 import { EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
-
-const GARMIN_FOLDER_NAME = 'Garmin';
+import { GARMIN_FOLDER_NAME } from './garminApi';
 
 export default function GarminConnectedView({ syncTimeMs, disconnecting, onDisconnectClick }) {
     const ctx = useContext(AppContext);

@@ -8,6 +8,7 @@ import { ReactComponent as WidgetsIcon } from '../../assets/features/ic_action_a
 import { ReactComponent as Track3dIcon } from '../../assets/features/ic_action_3dtrack_colored.svg';
 import { ReactComponent as UmbrellaIcon } from '../../assets/features/ic_action_umbrella_colored.svg';
 import { ReactComponent as MapUpdatesIcon } from '../../assets/features/ic_action_map_updates_colored_day.svg';
+import { ReactComponent as ExternalIntegrationsIcon } from '../../assets/icons/ic_action_update_colored.svg';
 import { ReactComponent as MonthlyUpdatesIcon } from '../../assets/features/ic_action_monthly_map_updates_colored_day.svg';
 import { ReactComponent as UnlimitedDownloadsIcon } from '../../assets/features/ic_action_unlimited_downloads_colored_day.svg';
 import { ReactComponent as Relief3dIcon } from '../../assets/features/ic_action_3d_relief_colored_day.svg';
@@ -65,6 +66,12 @@ export const featureCategories = [
                 name: 'web:feature_osmand_cloud_backup',
                 desc: 'web:feature_osmand_cloud_backup_desc',
                 icon: <CloudUploadIcon />,
+            },
+            {
+                id: 'external_integrations',
+                name: 'web:feature_external_integrations',
+                desc: 'web:feature_external_integrations_desc',
+                icon: <ExternalIntegrationsIcon />,
             },
         ],
     },
@@ -280,6 +287,7 @@ export const planFeatures = {
         'cross_platform',
         'settings_favorites_sync',
         'osmand_cloud_backup',
+        'external_integrations',
         'advanced_route_coloring',
         'elevation_profile',
         '3d_track_view',

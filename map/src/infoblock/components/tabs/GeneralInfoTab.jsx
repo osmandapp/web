@@ -4,13 +4,83 @@ import AppContext, { isLocalTrack } from '../../../context/AppContext';
 import GeneralInfo from '../track/GeneralInfo';
 import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import GpxGraphProvider from '../../../graph/track/GpxGraphProvider';
+import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
+import DefaultItem from '../../../frame/components/items/DefaultItem';
+import ThickDivider from '../../../frame/components/dividers/ThickDivider';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
+import { ReactComponent as UserIcon } from '../../../assets/icons/ic_action_user.svg';
+import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
+import { ReactComponent as LinkIcon } from '../../../assets/icons/ic_action_link.svg';
+import { useTranslation } from 'react-i18next';
 
 export default function GeneralInfoTab() {
     const ctx = useContext(AppContext);
 
+    const { t } = useTranslation();
+
+    const author = ctx.selectedGpxFile?.metaData?.ext?.author ?? null;
+
+    function AuthorCard({ author, t }) {
+        const hasEmail = !!author.email;
+        const hasLink = !!author.link?.href;
+
+        return (
+            <>
+                <SubTitleMenu text={t('shared_string_author')} />
+                {author.name && (
+                    <>
+                        <DefaultItem
+                            icon={<UserIcon />}
+                            name={t('shared_string_name')}
+                            additionalInfo={author.name}
+                            revertText={true}
+                        />
+                        {(hasEmail || hasLink) && <DividerWithMargin margin={'64px'} />}
+                    </>
+                )}
+                {hasEmail && (
+                    <>
+                        <DefaultItem
+                            icon={<EmailIcon />}
+                            name={t('web:shared_string_email')}
+                            additionalInfo={author.email}
+                            revertText={true}
+                            onClick={() => (globalThis.location.href = `mailto:${author.email}`)}
+                        />
+                        {hasLink && <DividerWithMargin margin={'64px'} />}
+                    </>
+                )}
+                {hasLink && (
+                    <DefaultItem
+                        icon={<LinkIcon />}
+                        name={t('web:shared_string_link')}
+                        additionalInfo={author.link.text || author.link.href}
+                        revertText={true}
+                        onClick={() => {
+                            try {
+                                const url = new URL(author.link.href);
+                                if (url.protocol === 'http:' || url.protocol === 'https:') {
+                                    window.open(author.link.href, '_blank', 'noopener,noreferrer');
+                                }
+                            } catch {
+                                // invalid URL — do nothing
+                            }
+                        }}
+                    />
+                )}
+            </>
+        );
+    }
+
     return (
         <>
             <Box>
+                {author && (
+                    <Box sx={{ mx: -3, mt: -3 }}>
+                        <AuthorCard author={author} t={t} />
+                        <ThickDivider mt={'0px'} mb={'0px'} />
+                    </Box>
+                )}
                 <GeneralInfo width={ctx.infoBlockWidth} />
                 {isLocalTrack(ctx) && (
                     <>

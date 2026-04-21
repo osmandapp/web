@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as SmartIcon } from '../../assets/icons/ic_action_folder_smart.svg';
+import { ReactComponent as GarminConnectIcon } from '../../assets/icons/ic_logo_garmin_connect.svg';
+import { GARMIN_FOLDER_NAME } from '../../login/garmin/garminApi';
 import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
@@ -31,6 +33,9 @@ export default function CloudTrackGroup({ index, group }) {
     const getFolderIcon = () => {
         if (group.type === SMART_TYPE) {
             return <SmartIcon />;
+        }
+        if (group.name === GARMIN_FOLDER_NAME) {
+            return <GarminConnectIcon />;
         }
         return <FolderIcon />;
     };
