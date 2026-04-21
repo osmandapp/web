@@ -4,8 +4,7 @@ import { isCloudTrack, isLocalTrack } from '../../context/AppContext';
 import isEmpty from 'lodash-es/isEmpty';
 
 const VISIBILITY_DEBOUNCE_MS = 1000;
-const GPX_FILE_SUBTYPE_FOLDER = '/tracks/';
-const FILE_SUBTYPE = 'gpx';
+const DATABASE_TRACK_FOLDER = '/tracks/';
 
 /** Strip `points` arrays from groups and their `ext` (they are large and not needed in `.info`). */
 export function sanitizePointsGroups(pointsGroups = {}) {
@@ -17,12 +16,11 @@ export function sanitizePointsGroups(pointsGroups = {}) {
     return result;
 }
 
-/** Ensure `type`, `file`, and `subtype` are always present in the `.info` object. */
-function buildBaseInfo(gpxFileInfo, name) {
+function buildInfo(gpxFileInfo, name) {
     return {
         type: gpxFileInfo?.type ?? GPX_FILE_TYPE,
-        file: gpxFileInfo?.file ?? GPX_FILE_SUBTYPE_FOLDER + name,
-        subtype: gpxFileInfo?.subtype ?? FILE_SUBTYPE,
+        file: gpxFileInfo?.file ?? DATABASE_TRACK_FOLDER + name,
+        subtype: gpxFileInfo?.subtype ?? GPX_FILE_TYPE.toLowerCase(),
         ...gpxFileInfo,
     };
 }
@@ -30,9 +28,9 @@ function buildBaseInfo(gpxFileInfo, name) {
 /** Build the canonical `.info` payload for a track (pointsGroups + future fields). */
 export function buildInfoPayload(gpxFile) {
     const pointsGroups = getResolvedPointsGroups(gpxFile);
-    const baseInfo = buildBaseInfo(gpxFile?.info, gpxFile?.name);
+    const info = buildInfo(gpxFile?.info, gpxFile?.name);
     return {
-        ...baseInfo,
+        ...info,
         pointsGroups: isEmpty(pointsGroups) ? {} : sanitizePointsGroups(pointsGroups),
     };
 }
@@ -118,12 +116,12 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
             updatedPointsGroups[name] = { ...group, hidden };
         });
 
-        const baseInfo = buildBaseInfo(prevFile.info, prevFile.name);
+        const info = buildInfo(prevFile.info, prevFile.name);
         const updatedGpxFile = {
             ...prevFile,
             infoChanged: true,
             info: {
-                ...baseInfo,
+                ...info,
                 pointsGroups: updatedPointsGroups,
             },
         };
