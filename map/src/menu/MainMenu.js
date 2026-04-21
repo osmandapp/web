@@ -463,7 +463,6 @@ export default function MainMenu({
     // url caching for every menu type
     useEffect(() => {
         if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
-        // cache VISIBLE_TRACKS_URL under the menu type it was opened from (sticky re-open)
         if (openVisibleTracks) {
             const source = location.state?.source;
             const sourceType =
