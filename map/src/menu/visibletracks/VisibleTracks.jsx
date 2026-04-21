@@ -230,8 +230,6 @@ export default function VisibleTracks({ source, open }) {
                                 ctx.setOpenVisibleMenu((prev) => ({
                                     ...prev,
                                     open: false,
-                                    ...(source === MENU_IDS.config && { showConfig: false }),
-                                    ...(source === MENU_IDS.tracks && { showTracks: false }),
                                 }));
 
                                 if (source === MENU_IDS.config) {

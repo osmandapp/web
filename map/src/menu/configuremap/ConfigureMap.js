@@ -172,11 +172,12 @@ export default function ConfigureMap() {
                                     className={styles.item}
                                     onClick={() => {
                                         setOpenVisibleTracks(true);
-                                        navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash);
+                                        navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash, {
+                                            state: { source: MENU_IDS.config },
+                                        });
                                         ctx.setOpenVisibleMenu((prev) => ({
                                             ...prev,
                                             open: true,
-                                            showConfig: true,
                                         }));
                                     }}
                                 >

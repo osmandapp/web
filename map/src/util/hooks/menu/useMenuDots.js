@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import {
     OBJECT_SEARCH,
     OBJECT_TRACK_ANALYZER,
@@ -13,10 +13,15 @@ import {
 } from '../../../context/AppContext';
 import { selectedForecastDetails } from '../../../menu/weather/Weather';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../store/geoRouter/profileConstants';
+import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../../manager/GlobalManager';
 
 export default function useMenuDots(ctx) {
     const [menuDots, setMenuDots] = useState({});
     const [searchParams] = useSearchParams();
+    const location = useLocation();
+
+    const onVisibleFromTracks =
+        location.pathname === MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL && location.state?.source === MENU_IDS.tracks;
 
     function setActiveMenu(type, value) {
         setMenuDots((prev) => ({ ...prev, [type]: value }));
@@ -30,9 +35,9 @@ export default function useMenuDots(ctx) {
     useEffect(() => {
         setActiveMenu(
             OBJECT_TYPE_CLOUD_TRACK,
-            ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj || ctx.openVisibleMenu?.showTracks
+            ctx.openGroups?.length > 0 || ctx.selectedCloudTrackObj || onVisibleFromTracks
         );
-    }, [ctx.openGroups, ctx.selectedCloudTrackObj, ctx.openVisibleMenu?.showTracks]);
+    }, [ctx.openGroups, ctx.selectedCloudTrackObj, onVisibleFromTracks]);
 
     useEffect(() => {
         const showDetails = selectedForecastDetails(ctx);

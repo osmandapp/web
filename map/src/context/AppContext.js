@@ -237,8 +237,6 @@ export const AppContextProvider = (props) => {
     const [visibleTracks, setVisibleTracks] = useState({});
     const [openVisibleMenu, setOpenVisibleMenu] = useState({
         open: false,
-        showTracks: false,
-        showConfig: false,
     });
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({

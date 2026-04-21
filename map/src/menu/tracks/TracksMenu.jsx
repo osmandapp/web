@@ -138,11 +138,12 @@ export default function TracksMenu() {
                                 className={styles.item}
                                 onClick={() => {
                                     setOpenVisibleTracks(true);
-                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash);
+                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash, {
+                                        state: { source: MENU_IDS.tracks },
+                                    });
                                     ctx.setOpenVisibleMenu((prev) => ({
                                         ...prev,
                                         open: true,
-                                        showTracks: true,
                                     }));
                                 }}
                             >

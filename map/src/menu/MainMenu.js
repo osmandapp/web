@@ -169,7 +169,7 @@ export default function MainMenu({
     const menuDots = useMenuDots(ctx);
     const recentSaver = useRecentDataSaver();
     const openVisibleTracks = location.pathname === MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL;
-    const aloneVisibleTracks = openVisibleTracks && !ctx.openVisibleMenu.showTracks && !ctx.openVisibleMenu.showConfig;
+    const aloneVisibleTracks = openVisibleTracks && !menuInfo;
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -463,13 +463,27 @@ export default function MainMenu({
     // url caching for every menu type
     useEffect(() => {
         if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
+        // cache VISIBLE_TRACKS_URL under the menu type it was opened from (sticky re-open)
+        if (openVisibleTracks) {
+            const source = location.state?.source;
+            const sourceType =
+                source === MENU_IDS.tracks
+                    ? OBJECT_TYPE_CLOUD_TRACK
+                    : source === MENU_IDS.config
+                      ? OBJECT_CONFIGURE_MAP
+                      : null;
+            if (sourceType) {
+                lastMenuUrlsRef.current[sourceType] = location.pathname + location.search + location.hash;
+            }
+            return;
+        }
         const menuByUrl = items.find(
             (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
         );
         if (menuByUrl) {
             lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + location.hash;
         }
-    }, [location.pathname, location.search, location.hash]);
+    }, [location.pathname, location.search, location.hash, location.state?.source]);
 
     // open menu after closing map object if any selected before
     useEffect(() => {
@@ -565,10 +579,15 @@ export default function MainMenu({
     }, [selectedType]);
 
     function openVisibleTracksPage() {
-        const openFromConfig = selectedType === OBJECT_CONFIGURE_MAP && ctx.openVisibleMenu.showConfig;
-        const openFromTracks = selectedType === OBJECT_TYPE_CLOUD_TRACK && ctx.openVisibleMenu.showTracks;
-        if (openFromConfig || openFromTracks) {
-            navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + globalThis.location.hash);
+        if (selectedType !== OBJECT_TYPE_CLOUD_TRACK && selectedType !== OBJECT_CONFIGURE_MAP) {
+            return false;
+        }
+        const savedUrl = lastMenuUrlsRef.current[selectedType];
+        if (savedUrl?.startsWith(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL)) {
+            const source = selectedType === OBJECT_TYPE_CLOUD_TRACK ? MENU_IDS.tracks : MENU_IDS.config;
+            navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + globalThis.location.hash, {
+                state: { source },
+            });
             return true;
         }
         return false;
@@ -1011,7 +1030,7 @@ export default function MainMenu({
             >
                 <Toolbar sx={{ mb: '-4px' }} />
                 {(showDeleteOutlet || showShareOutlet) && outlet}
-                {aloneVisibleTracks && <VisibleTracks />}
+                {aloneVisibleTracks && <VisibleTracks source={location.state?.source} />}
                 {!isOpenSubMenu() && (
                     <>
                         {ctx.openProFeatures ? <ProFeatures /> : isAccountOpen && outlet ? outlet : null}
