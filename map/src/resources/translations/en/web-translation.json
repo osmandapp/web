@@ -1,4 +1,6 @@
 {
+    "shared_string_email": "Email",
+    "shared_string_link": "Link",
     "download_as_osf": "Download as OSF",
     "download_as_obf": "Download as OBF collection ",
     "hide_from_map": "Hide from map",
