@@ -58,9 +58,7 @@ export default function DefaultItem({
                     <Typography className={styles.addInfo}>{rightText}</Typography>
                 </Box>
             )}
-            {showRightSlot && (
-                <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>{rightSlot}</Box>
-            )}
+            {showRightSlot && <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>{rightSlot}</Box>}
         </MenuItem>
     );
 }

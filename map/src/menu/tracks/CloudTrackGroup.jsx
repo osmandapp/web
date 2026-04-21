@@ -4,7 +4,7 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as SmartIcon } from '../../assets/icons/ic_action_folder_smart.svg';
 import { ReactComponent as GarminConnectIcon } from '../../assets/icons/ic_logo_garmin_connect.svg';
-import { GARMIN_FOLDER_NAME } from '../../login/garmin/GarminConnectedView';
+import { GARMIN_FOLDER_NAME } from '../../login/garmin/garminApi';
 import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';

@@ -45,7 +45,7 @@ export default function GeneralInfoTab() {
                             name={t('web:shared_string_email')}
                             additionalInfo={author.email}
                             revertText={true}
-                            onClick={() => window.open(`mailto:${author.email}`, '_blank')}
+                            onClick={() => (globalThis.location.href = `mailto:${author.email}`)}
                         />
                         {hasLink && <DividerWithMargin margin={'64px'} />}
                     </>
@@ -56,7 +56,16 @@ export default function GeneralInfoTab() {
                         name={t('web:shared_string_link')}
                         additionalInfo={author.link.text || author.link.href}
                         revertText={true}
-                        onClick={() => window.open(author.link.href, '_blank', 'noopener,noreferrer')}
+                        onClick={() => {
+                            try {
+                                const url = new URL(author.link.href);
+                                if (url.protocol === 'http:' || url.protocol === 'https:') {
+                                    window.open(author.link.href, '_blank', 'noopener,noreferrer');
+                                }
+                            } catch {
+                                // invalid URL — do nothing
+                            }
+                        }}
                     />
                 )}
             </>
