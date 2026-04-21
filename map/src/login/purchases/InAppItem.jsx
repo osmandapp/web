@@ -9,7 +9,7 @@ import { typeMap } from './SubscriptionItem';
 import { fmt } from '../../util/dateFmt';
 import { products } from '../../shop/products/ProductManager';
 
-export default function InAppItem({ id, onClick, name, purchaseTime }) {
+export default function InAppItem({ id, onClick, name, purchaseTime, isValid = true }) {
     const { t } = useTranslation();
 
     const purchaseDate = purchaseTime ? fmt.MMMdY(Number(purchaseTime)) : 'N/A';
@@ -35,7 +35,7 @@ export default function InAppItem({ id, onClick, name, purchaseTime }) {
                     {`${t('shared_string_purchased')}: ${purchaseDate}`}
                 </Typography>
                 <Box sx={{ mt: '6px' }}>
-                    <PurchaseStatus status={'active'} />
+                    <PurchaseStatus status={isValid ? 'active' : 'expired'} />
                 </Box>
             </ListItemText>
         </MenuItem>

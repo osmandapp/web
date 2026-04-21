@@ -206,12 +206,13 @@ export default function PurchasesMenu() {
                                             onClick={() => clickOnSubscription(index)}
                                         />
                                     ))}
-                                    {activeInApps.map(({ item, index }) => (
+                                    {activeInApps.map(({ item, index, isValid }) => (
                                         <InAppItem
                                             id={item.name}
                                             key={`active-inapp-${index}-${item.name}`}
                                             name={item.name}
                                             purchaseTime={item.purchaseTime}
+                                            isValid={isValid}
                                             onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
@@ -226,12 +227,13 @@ export default function PurchasesMenu() {
                                             onClick={() => clickOnSubscription(index)}
                                         />
                                     ))}
-                                    {inactiveInApps.map(({ item, index }) => (
+                                    {inactiveInApps.map(({ item, index, isValid }) => (
                                         <InAppItem
                                             id={item.name}
                                             key={`inactive-inapp-${index}-${item.name}`}
                                             name={item.name}
                                             purchaseTime={item.purchaseTime}
+                                            isValid={isValid}
                                             onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
