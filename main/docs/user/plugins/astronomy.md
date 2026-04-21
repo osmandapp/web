@@ -92,6 +92,7 @@ These values update dynamically based on the selected time and the user's locati
 Below the quick information blocks, the menu may also include additional information and resources about the object:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
 - <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article in the browser.
+- <Translate android="true" ids="astro_designations"/> – Shows alternative names and catalogue identifiers for the object (for example, HD, HIP, NGC). This section is available for objects that have catalog entries, such as stars and deep sky objects. If the object does not have a common name, one of these designations is used as the primary name.
 - <Translate android="true" ids="online_photos"/> – Displays available photos related to the selected celestial object.
 
 ### Actions {#actions}
@@ -104,7 +105,7 @@ Below the object information, the Context Menu provides several actions for inte
 
 ### Visibility Graph {#visibility-graph}
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility.png)
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
 
 The **Visibility** tab shows how the selected object moves across the sky during a 24-hour period.
 
@@ -128,14 +129,14 @@ The color of the object's trajectory also reflects its altitude:
 - red – close to the horizon
 - purple – below the horizon (not visible)
 
-A movable indicator allows you to explore the object's position at different times. When the indicator is moved, the current time, altitude, and azimuth values are updated.
+A movable indicator allows you to explore the object's position at different times. When the indicator is moved, the current time, altitude, and azimuth values are updated. The azimuth value also includes the corresponding compass direction (for example, 354° Az (N)).
 
 Below the graph, important observation events are displayed: 
 - **<Translate android="true" ids="astro_rise"/>** – when the object rises above the horizon.
 - **<Translate android="true" ids="astro_culmination"/>** – when the object reaches its highest altitude.
-- **<Translate android="true" ids="astro_set"/>** – when the object sets below the horizon.
+- **<Translate android="true" ids="astro_set"/>** – when the object sets below the horizon. If the object never rises or never sets, the corresponding values are hidden.
 
-The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph.
+The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name.
 
 ### Observation Schedule {#actions}
 
@@ -145,10 +146,10 @@ The **Schedule** tab displays the visibility of the selected object for the curr
 - the day of the week
 - the date
 - rise time
-- set time
+- set time. If the set time occurs on the next day, it is marked with ⁺¹
 - a small visibility graph for that day
 
-The mini graph shows when the object is visible during the day and how its altitude changes. The colored section of the bar represents the period when the object is above the horizon.
+The mini graph shows when the object is visible during the day and how its altitude changes. The colored section of the bar represents the period when the object is above the horizon. The mini graph represents the time range from 00:00 to 23:59 for the selected day.
 
 You can navigate between weeks using the arrow buttons in the Schedule header. The calendar button allows you to return to the current week.
 
@@ -312,7 +313,7 @@ You can filter results by object type. Selecting specific categories automatical
 
 ### My Data {#my-data}
 
-![My Data](@site/static/img/plugins/starwatcher/my_data.png)
+![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
 
 The My Data section contains objects that the user has interacted with. This section includes three lists:
 
@@ -324,7 +325,7 @@ Selecting an item opens the object's context menu.
 
 ### Catalogs {#catalogs}
 
-![Catalogs](@site/static/img/plugins/starwatcher/catalogs.png)
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
 The Catalogs section provides access to astronomical catalogs available in the Astronomy plugin.
 
