@@ -350,7 +350,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
+![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
