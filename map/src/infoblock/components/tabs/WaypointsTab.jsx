@@ -145,7 +145,14 @@ const WaypointRow = ({ point, index, ctx }) => {
             ...point.wpt,
             trackWpt: true,
         });
-        ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
+        ctx.setSelectedGpxFile((o) => ({
+            ...o,
+            showPoint: {
+                ...point,
+                lat: Number.parseFloat(point.wpt.lat),
+                lng: Number.parseFloat(point.wpt.lon),
+            },
+        }));
     }
 
     function pointLines(point) {
@@ -194,7 +201,13 @@ const WaypointRow = ({ point, index, ctx }) => {
     return useMemo(() => {
         const allowDelete = isLocalTrack(ctx);
         return (
-            <MenuItem key={'marker' + index} divider sx={{ px: 1, py: 1 }} onClick={() => showPoint(point)}>
+            <MenuItem
+                id={`se-wpt-row-${point.wpt.name}`}
+                key={'marker' + index}
+                divider
+                sx={{ px: 1, py: 1 }}
+                onClick={() => showPoint(point)}
+            >
                 <Grid container alignItems="center" warp="nowrap">
                     <Tooltip
                         arrow
