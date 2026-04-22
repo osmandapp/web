@@ -275,7 +275,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         const oldGroupName = useSelected ? ctx.selectedGpxFile.file.name : editWpt.group.file.name;
 
         const currentWpt = getCurrentWpt(selectedGroupName);
-        const arrWpt = useSelected ? ctx.selectedGpxFile.trackData?.wpts : ctx.favorites.mapObjs[selectedGroupId].wpts;
+        const arrWpt = useSelected ? ctx.selectedGpxFile.trackData?.wpts : ctx.favorites.mapObjs[oldGroupId].wpts;
 
         const newGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
         const oldGroup = ctx.favorites.groups.find((g) => g.id === oldGroupId);

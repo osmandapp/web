@@ -118,7 +118,11 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
                     groupList?.map((group, index) => {
                         return (
                             <ListItem key={index} component="div" disablePadding>
-                                <ListItemButton selected={selectGroup(group)} onClick={() => setFavoriteGroup(group)}>
+                                <ListItemButton
+                                    id={`se-fav-group-item-${group.name || 'favorites'}`}
+                                    selected={selectGroup(group)}
+                                    onClick={() => setFavoriteGroup(group)}
+                                >
                                     {FavoriteGroupItem(group)}
                                 </ListItemButton>
                             </ListItem>
