@@ -1,0 +1,26 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content {
+    overflow-y: auto;
+    flex: 1;
+    padding: 8px 16px 16px 16px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+}
+
+.deleteAction {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 4px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    margin-top: 8px;
+}
