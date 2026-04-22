@@ -28,7 +28,7 @@ export default async function test() {
     await actionOpenContextMenu();
     await clickBy(By.id('se-add-favorite-action'));
     await waitBy(By.id('se-add-fav-dialog'));
-    await clickBy(By.id('se-add-fav-dialog-close'));
+    await clickBy(By.id('se-close-add-wpt-panel'));
 
     // Direction from/to
     await actionOpenContextMenu();
