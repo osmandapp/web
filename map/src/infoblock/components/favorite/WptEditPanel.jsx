@@ -424,7 +424,12 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     return (
         <Box className={styles.panel}>
             {process && <LinearProgress />}
-            <HeaderWithUnderline title={title} onClose={closePanel} showBackButton={isEditMode} />
+            <HeaderWithUnderline
+                title={title}
+                onClose={closePanel}
+                showBackButton={isEditMode}
+                appBarProps={{ id: isEditMode ? 'se-back-edit-wpt-panel' : 'se-close-add-wpt-panel' }}
+            />
             <Box id={isEditMode ? 'se-edit-fav-dialog' : 'se-add-fav-dialog'} className={styles.content}>
                 <FavoriteName
                     favoriteName={favoriteName}
