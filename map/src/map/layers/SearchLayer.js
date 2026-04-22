@@ -168,27 +168,33 @@ export default function SearchLayer() {
             return;
         }
         const bbox = visible.bounds;
-        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
-            apiCache: true,
-            params: {
-                lat: searchData.latlng.lat,
-                lon: searchData.latlng.lng,
-                northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                text: searchData.query,
-                locale: i18n.language,
-                baseSearch: searchData.baseSearch,
-                ...getCurrentTimeParams(),
-            },
-        });
-        if (response?.ok) {
-            const data = await response.json();
-            ctx.setSearchResult(data);
-        } else {
-            ctx.setSearchResult(null);
+        try {
+            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
+                apiCache: true,
+                params: {
+                    lat: searchData.latlng.lat,
+                    lon: searchData.latlng.lng,
+                    northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+                    southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
+                    text: searchData.query,
+                    locale: i18n.language,
+                    baseSearch: searchData.baseSearch,
+                    ...getCurrentTimeParams(),
+                },
+            });
+            if (response?.ok) {
+                const data = await response.json();
+                ctx.setSearchResult(data);
+            } else {
+                ctx.setSearchResult(null);
+            }
+        } catch (e) {
+            if (e?.name !== 'AbortError') throw e;
+            // AbortError: search was cancelled by a newer request — ignore silently
+        } finally {
+            clearTimeout(notifyTimeout);
+            ctx.setProcessingSearch(false);
         }
-        clearTimeout(notifyTimeout);
-        ctx.setProcessingSearch(false);
     }
 
     function removeOldSearchLayer() {
