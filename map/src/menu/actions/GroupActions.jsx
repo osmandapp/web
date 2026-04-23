@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
@@ -12,6 +12,7 @@ import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../util/hooks/useInitialFilesLoad';
+import { GARMIN_FOLDER_NAME, fetchGarminStatus } from '../../login/garmin/garminApi';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
@@ -19,7 +20,14 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
     const [newCollection, setNewCollection] = useState([]);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const [garminLinked, setGarminLinked] = useState(false);
     const { t } = useTranslation();
+
+    useEffect(() => {
+        if (group.name === GARMIN_FOLDER_NAME) {
+            fetchGarminStatus().then((data) => setGarminLinked(!!data?.linked));
+        }
+    }, [group.name]);
 
     const getGroupFiles = () => {
         if (group.type === SMART_TYPE && group.files?.length === 0) {
@@ -110,6 +118,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                             <MenuItem
                                 id="se-folder-actions-rename"
                                 className={styles.action}
+                                disabled={garminLinked}
                                 onClick={() => setOpenRenameDialog(true)}
                             >
                                 <ListItemIcon className={styles.iconAction}>
@@ -125,6 +134,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                             <MenuItem
                                 id="se-folder-actions-delete"
                                 className={styles.action}
+                                disabled={garminLinked}
                                 onClick={() => setOpenDeleteDialog(true)}
                             >
                                 <ListItemIcon className={styles.iconAction}>
