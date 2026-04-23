@@ -96,6 +96,14 @@ Keep the number of props as small as possible. If a component can get data from 
 
 If a function is longer than 2 lines, add a blank line before `return`.
 
+## No unnecessary arrow function wrappers
+
+Pass functions directly instead of wrapping them in arrow functions.
+
+## No unnecessary variable aliases
+
+Do not create a local variable just to rename a context or prop value. Use the source directly.
+
 ## Optional chaining
 
 Use `?.` whenever a value may be `null` or `undefined`. Avoid `&&`-chains for property access.
