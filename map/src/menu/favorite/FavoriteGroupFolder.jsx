@@ -101,6 +101,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     useEffect(() => {
         if (!currentLoc) return;
+        if (ctx.openedPopper) return;
         if (currentLoc !== LOCATION_UNAVAILABLE) {
             // update markers location
             if (refMarkers.current.length > 0) {
@@ -138,6 +139,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                     itemCount={visibleMarkers.length}
                     itemSize={70}
                     width={ctx.infoBlockWidth}
+                    itemKey={(index) => visibleMarkers[index]?.name ?? index}
                 >
                     {({ index, style }) => (
                         <div style={style}>
