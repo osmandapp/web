@@ -132,7 +132,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     ctx.setUpdateInfoBlock(true);
                 }
                 setProcess(false);
-                closePanel({ afterSave: true });
+                closePanel();
             }
         }
         ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
@@ -250,7 +250,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             ctx.setTrackState({ ...ctx.trackState });
         }
         setProcess(false);
-        closePanel({ afterSave: true });
+        closePanel();
     }
 
     function prepareLocalTrack() {
@@ -305,7 +305,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         if (result) {
             updateFavoriteGroups({ result, selectedGroupId, oldGroupId, ctx, useSelected, favoriteName });
             setProcess(false);
-            closePanel({ afterSave: true });
+            closePanel();
         }
     }
 
@@ -341,7 +341,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         ctx.setPointContextMenu({});
 
         setProcess(false);
-        closePanel({ afterSave: true });
+        closePanel();
     }
 
     function getCurrentWpt(selectedGroupName) {
@@ -370,13 +370,22 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         return selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
     }
 
-    function closePanel({ afterSave = false } = {}) {
-        // Close InfoBlock if no selectedWpt AND (edit mode OR cancel).
-        // In add mode after save: keep open — updateGroupMarkers will set selectedWpt → WptDetails shows.
-        if (!ctx.selectedWpt && (isEditMode || !afterSave)) {
+    function closePanel() {
+        if (!isTrackWpt && (isAddMode || (isEditMode && !ctx.selectedWpt))) {
+            ctx.setCloseMapObj(true);
             setShowInfoBlock(false);
         }
-        ctx.setAddFavorite({ add: false, location: null });
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            add: false,
+            location: null,
+            editTrack: false,
+            editWpt: null,
+        }));
+        // In case of track waypoint, we need to update info block to show new/edited waypoint details
+        if (isTrackWpt) {
+            ctx.setUpdateInfoBlock(true);
+        }
     }
 
     async function updateGroupMarkers(result, selectedGroup) {
