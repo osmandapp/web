@@ -36,30 +36,30 @@ Open OsmAnd Web and tap the Search icon on the map. You can search not only by p
 
 Selecting the location opens the context panel, where you can review the position, copy the coordinates, and use quick actions to keep planning.
 
-![Web Search](./img/blog_web_search.png)
+![Web Search](./img/blog_web_search_new.png)
 
 
 ## Explore Nearby and Start Navigation
 
 With the map centered on the Los Glaciares area, tap [Explore](https://osmand.net/docs/user/web/web-search#explore). OsmAnd instantly highlights interesting places around you, turning the surrounding landscape into a collection of discoverable spots — viewpoints, lakes, glaciers, mountain ranges, and protected areas.
 
-![Web Explore](./img/blog_web_explore.png)
+![Web Explore](./img/blog_web_explore_new.png)
 
 Each place comes with useful information: a name, category, short description, and often photos. To narrow things down, you can use filters to show only what matters to you — for example, Nature & Outdoors. This makes it easy to move from a broad view of the region to a focused list of places worth adding to your journey. By the way, if you prefer exploring on the go, OsmAnd also offers a similar Explore feature in the mobile app (*Android only*) — see the step-by-step guide [here](https://osmand.net/docs/user/map/popular_places#explore-in-search).
 
-![Web Explore](./img/blog_web_filters.png)
+![Web Explore](./img/blog_web_filters_new.png)
 
 Among the many results, one destination stands out almost immediately: **Torres del Paine National Park** — this time across the border, in Chile. It’s one of Patagonia’s most iconic national parks, and a natural next step for our route.
 
 Selecting Torres del Paine opens the POI context menu, where you can save the park to your Favorites, share a direct link to it, or jump straight into route planning and navigation.
 
-![Web Explore](./img/blog_web_navigation.png)
+![Web Explore](./img/blog_web_navigation_new.png)
 
 Choose [Navigation](https://osmand.net/docs/user/web/web-navigation), and the selected park becomes your destination point. For the starting point, set **Los Glaciares National Park**. If you want to shape the journey more precisely, you can add [intermediate points](https://osmand.net/docs/user/web/web-navigation#manage-route-points) along the way — useful when you want the route to pass through specific locations, border crossings, or scenic stops.
 
 Next, select the routing profile that fits your plans. OsmAnd recalculates the route instantly, drawing a clear path between these two landmark destinations and showing distance, estimated travel time, and elevation profile.
 
-![Web Explore](./img/blog_web_route.png)
+![Web Explore](./img/blog_web_route_new.png)
 
 What once would have required multiple maps and guesswork now becomes a clear, flexible plan — ready to adapt as your adventure unfolds.
 
@@ -71,7 +71,7 @@ When a journey includes different types of terrain and transport, planning every
 
 Using the [Change profile](https://osmand.net/docs/user/web/planner#manage-track) option, you decide whether a new profile applies only to the next segments or recalculates the entire route. This makes it easy to adapt your plan as the landscape changes, without starting over.
 
-![Web Plan Route](./img/blog_web_segments.png)
+![Web Plan Route](./img/blog_web_segments_new.png)
 
 So, while classic adventures have already been written and have earned their place in history, your own Patagonia story is still ahead of you. With OsmAnd Web Explore and Plan Route, you can turn curiosity into a clear plan: find the places that inspire you, see what’s nearby, and build a route that matches the terrain and the way you travel.
 
