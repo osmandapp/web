@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title: التفاعل مع الخريطة
 ---
@@ -208,20 +208,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### عرض الكرة الأرضية {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![عرض الكرة الأرضية](@site/static/img/map/globe_view_1.png) ![عرض الكرة الأرضية](@site/static/img/map/globe_view_2.png)
 
 **عرض الكرة الأرضية** يسمح لك بعرض الخريطة ككرة أرضية كروية بدلاً من إسقاط مسطح. يغير هذا الوضع هندسة سطح الخريطة ويعدل التفاعل مع الخريطة للتنقل الكروي.  
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → عرض عالمي*
 
 عرض الكرة الأرضية متاح حاليًا فقط عندما:
 - تم تمكين [إضافة التطوير](../plugins/development.md).  
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - تم تمكين [إضافة الطبوغرافيا](../plugins/topography.md).  
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - تم تعيين [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) إلى الإصدار ٢ (OpenGL).  
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![عرض الكرة الأرضية](@site/static/img/map/globe_view_1_ios.png) ![عرض الكرة الأرضية](@site/static/img/map/globe_view_2_ios_new.png)
+
+**عرض الكرة الأرضية** يسمح لك بعرض الخريطة ككرة أرضية كروية بدلاً من إسقاط مسطح. يغير هذا الوضع هندسة سطح الخريطة ويعدل التفاعل مع الخريطة للتنقل الكروي.  
+
+</TabItem>
+
+</Tabs>
 
 عند تمكين عرض الكرة الأرضية، تدور الخريطة ككرة أرضية. تحركات السحب تدور الأرض، والتكبير يغير مسافة الكاميرا بدلاً من تكبير سطح مسطح. يتم عرض عناصر الخريطة مثل المسارات والعلامات والرموز والكائنات ثلاثية الأبعاد مباشرة على السطح الكروي وتتبع انحنائه. تختفي الكائنات تدريجيًا خلف الأفق مع دوران الكرة الأرضية.
 

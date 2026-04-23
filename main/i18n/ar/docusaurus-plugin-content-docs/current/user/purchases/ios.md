@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -101,6 +101,7 @@ import Translate from '@site/src/components/Translate.js';
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
 | [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [تخصيص ألوان المباني ثلاثية الأبعاد](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [أدلة السفر (ويكيبيديا)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

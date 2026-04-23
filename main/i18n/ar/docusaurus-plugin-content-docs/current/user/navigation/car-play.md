@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -91,7 +91,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ### ملف CarPlay الشخصي {#carplay-profile}
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
-![إعدادات الملف الشخصي الافتراضي العامة في أندرويد](@site/static/img/personal/profiles/CarPlay_ios.png)
+![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
 **ملف CarPlay الشخصي** هو ملف شخصي محدد في تطبيق OsmAnd للاستخدام المريح لنظام الصوت والفيديو في سيارتك لعرض هذه البيانات لاحقًا على هاتفك.  
 
@@ -233,7 +233,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ![شاشة CarPlay](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
-تجمع هذه الويدجت المعلوماتية بين أنواع التنبيهات مثل **معابر المشاة** و**حدود السرعة**.
+تجمع هذه الويدجت المعلومية بين أنواع التنبيهات مثل **معابر المشاة** و**حدود السرعة**.
 
 - لأنواع التنبيهات مظهر مختلف، والذي يعتمد على **<Translate android="true" ids="driving_region"/>**  ويمكن تكوينه في *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
 - في *Car Play* لا يمكن ضبط عرض التنبيهات، تحتاج إلى تكوين الويدجت في التطبيق قبل بدء الملاحة وتوصيل جهازك بالمركبة.
@@ -279,10 +279,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 عند اكتمال الملاحة في CarPlay، يعرض OsmAnd حوارًا **“لقد وصلت”** على شاشة المركبة. يستخدم هذا الحوار نفس منطق كشف الوصول كما في التطبيق المحمول ويوفر وصولاً سريعًا إلى الإجراءات الشائعة بعد الوصول إلى وجهتك.
 
 الإجراءات المتاحة:
-- **تحديد كموقع وقوف**. يحفظ موقعك الحالي كموقع وقوف ويضع علامة وقوف على الخريطة.
-- **البحث عن وقوف**. يفتح شاشة البحث مع فئة الوقوف المحددة مسبقًا لمساعدتك في العثور على خيارات وقوف قريبة.
-- **إعادة حساب المسار**. يبني مسارًا جديدًا إلى الوجهة الأصلية إذا كنت ترغب في مواصلة الملاحة.
-- **إنهاء الملاحة**. ينهي المسار الحالي ويعيد OsmAnd إلى حالة الخريطة الافتراضية.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. يحفظ موقعك الحالي كموقع وقوف ويضع علامة وقوف على الخريطة.
+- **<Translate ios="true" ids="find_parking"/>**. يفتح شاشة البحث مع فئة الوقوف المحددة مسبقًا لمساعدتك في العثور على خيارات وقوف قريبة.
+- **<Translate ios="true" ids="recalculate_route"/>**. يبني مسارًا جديدًا إلى الوجهة الأصلية إذا كنت ترغب في مواصلة الملاحة.
+- **<Translate ios="true" ids="finish_navigation"/>**. ينهي المسار الحالي ويعيد OsmAnd إلى حالة الخريطة الافتراضية.
 
 إذا تم فصل CarPlay أثناء الملاحة النشطة، يطبق OsmAnd منطقًا إضافيًا على iPhone:
 - إذا كانت المسافة إلى الوجهة أقل من ١٠٠ م، يتم إنهاء الملاحة تلقائيًا ويتم استعادة الملف الشخصي الافتراضي. في هذه الحالة، لا يتم عرض إشعار “لقد وصلت” على شاشة الهاتف.

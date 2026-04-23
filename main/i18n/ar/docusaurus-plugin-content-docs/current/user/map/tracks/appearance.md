@@ -1,5 +1,5 @@
 ---
-source-hash: 35d0a278e6fa783087c1faddcb0a80dc8813f98e7c4ad6bfabd7a203ebf51919
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title: مظهر المسار
 ---
@@ -71,13 +71,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لمزيد من التفاصيل حول تخصيص مظهر خط المسار، راجع [شاشة الخريطة أثناء الملاحة](../../navigation/guidance/map-during-navigation.md#color) وحول تحديد وإنشاء لون مخصص، راجع [أنظمة الألوان](../../personal/color-palette-schemes.md#tracks-routes).
 
-### لوحات التدرج {#gradient-palettes}
+### محرر لوحات الألوان {#color-palette-editor}
 
 <InfoAndroidOnly/> 
 
-![لوحات التدرج](@site/static/img/map/gradient_palettes_1.png)   ![لوحات التدرج](@site/static/img/map/gradient_palettes_2.png) 
+![محرر لوحات الألوان](@site/static/img/map/gradient_palettes_1.png) ![محرر لوحات الألوان](@site/static/img/map/gradient_palettes_2.png) 
 
-عند تلوين مسار حسب السرعة أو الارتفاع أو الميل، يستخدم OsmAnd لوحات تدرج لتحديد كيفية تطبيق الألوان على طول المسار.
+عند تلوين مسار حسب السرعة أو الارتفاع أو الميل، يمكنك استخدام لوحاتك الخاصة لتحديد كيفية تطبيق الألوان على طول المسار.
 
 تعرض شاشة *جميع الألوان* اللوحات المتاحة. انقر على قائمة النقاط الثلاث بجانب لوحة لـ:
 - إعادة التسمية.
@@ -86,8 +86,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - الحذف. يتطلب حذف لوحة تأكيدًا.
 
 انقر على زر + في شاشة جميع الألوان. هناك نوعان من اللوحات المتاحة:
-- **نسبي** — تتوسع الألوان تلقائيًا بناءً على القيم الدنيا والقصوى للمسار.
-- **قيم ثابتة** — يتم تعيين الألوان إلى أرقام مطلقة محددة (على سبيل المثال، ٥٠ كم/ساعة). يمكن تعديل القيم يدويًا. تتبع الوحدات [إعدادات النظام](../../personal/profiles.md#units--formats). لا يعاد توسيع التدرج تلقائيًا عند تطبيقه على مسارات مختلفة.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — تتوسع الألوان تلقائيًا بناءً على القيم الدنيا والقصوى للمسار.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — يتم تعيين الألوان إلى أرقام مطلقة محددة (على سبيل المثال، ٥٠ كم/ساعة). يمكن تعديل القيم يدويًا. تتبع الوحدات [إعدادات النظام](../../personal/profiles.md#units--formats). لا يعاد توسيع التدرج تلقائيًا عند تطبيقه على مسارات مختلفة.
 
 :::info Pro feature
 إنشاء لوحات مخصصة هو ميزة مدفوعة في [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.

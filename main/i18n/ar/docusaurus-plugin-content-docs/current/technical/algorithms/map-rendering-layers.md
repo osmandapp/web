@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -11,17 +11,18 @@ sidebar_position: 5
 
 يستخدم OsmAnd ثلاثة أنواع من الطبقات: النقطية، والرموز، وعناصر التحكم. أولاً، [يتم عرض الطبقات النقطية](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) في OpenGL، تليها [طبقات الرموز](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). يتم عرض طبقات التحكم بشكل مستقل عن OpenGL في واجهة المستخدم لأجهزة Android أو iOS، فوق الخريطة.
 
-**Android:**
+**Android:**  
 يتم إنشاء معظم الطبقات على Android في طريقة [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) من فئة `MapLayers`.
 
-يعتمد ترتيب كل طبقة على خاصية `zOrder` الخاصة بها أثناء الإنشاء ويتم تعيينها في طريقة [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) من فئة `OsmAndMapLayer`.
+يعتمد ترتيب كل طبقة على خاصية `zOrder` الخاصة بها أثناء الإنشاء ويتم تعيينها في طريقة [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) من فئة `OsmAndMapLayer`.  
 قد يتم إنشاء طبقات أخرى في المكونات الإضافية.
 
-**iOS:**
+**iOS:**  
 يتم إنشاء معظم الطبقات على iOS في طريقة [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) من `OAMapLayers`.
 
-يتم تعيين ترتيب كل طبقة مباشرة بواسطة خاصية `baseOrder` في `createLayers`.
+يتم تعيين ترتيب كل طبقة مباشرة بواسطة خاصية `baseOrder` في `createLayers`.  
 قد يتم إنشاء طبقات أخرى في المكونات الإضافية.
+
 
 ## جداول ترتيب Android {#android-order-tables}
 
@@ -42,12 +43,12 @@ sidebar_position: 5
 | DownloadedRegionsLayer            | -1 100 000   | مضلعات   | تُظهر المناطق التي تم تنزيلها                                                                            |
 | الأيقونات (MapVectorLayer)        | -1 000 000   | نقاط     | خريطة متجهة، ترتيب الأيقونات في النمط مع [إضافة 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (خطوط)                   | -500 000     | خطوط     | خطوط المسار                                                                                             |
-| RouteLayer (نقطة تمييز المخطط)    | -197 900     | نقطة     | تحليل مسار الملاحة على الخريطة                                                                           |
-| RouteLayer (نقاط محور س المخطط)   | -198 000     | نقاط     | تحليل مسار الملاحة على الخريطة                                                                           |
-| RouteLayer (أسهم الانعطاف)        | -199 000     | خطوط     | مسار الملاحة                                                                                             |
 | RouteLayer                        | -200 000     | خطوط     | مسار الملاحة                                                                                             |
+| RouteLayer (أسهم الانعطاف)        | -199 000     | خطوط     | مسار الملاحة                                                                                             |
+| RouteLayer (نقاط محور X المخطط)   | -198 000     | نقاط     | تحليل مسار الملاحة على الخريطة                                                                           |
+| RouteLayer (نقطة تمييز المخطط)    | -197 900     | نقطة     | تحليل مسار الملاحة على الخريطة                                                                           |
 | النص (MapVectorLayer)             | 1 - 255      | نص       | خريطة متجهة، ترتيب النص في [النمط](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml)، 100 افتراضيًا |
-| الدروع (MapVectorLayer)           | 1 - 255      | دروع     | خريطة متجهة، ترتيب النص في النمط للدروع، 100 افتراضيًا                                                   |
+| الدروع (MapVectorLayer)           | 1 - 255       | دروع     | خريطة متجهة، ترتيب النص في النمط للدروع، 100 افتراضيًا                                                   |
 | بداية ونهاية مسار GPX             | 90 101       | نقاط     | GPXLayer                                                                                                |
 | نقطة طريق GPX                     | 90 300       | نقاط     | GPXLayer                                                                                                |
 | GPXLayer (اسم نقطة الطريق)        | 90 300       | نص       | اسم نقاط الطريق                                                                                         |
@@ -83,9 +84,10 @@ sidebar_position: 5
 | MeasurementToolLayer       | 460 000      |                       |
 | RadiusRulerControlLayer    | 780 000      | مسطرة نصف القطر       |
 | DistanceRulerControlLayer  | 790 000      | مسطرة المسافة         |
-| MapInfoLayer               | 900 000      | الأدوات المصغرة       |
+| MapInfoLayer               | 900 000      | الودجيتس               |
 | MapControlsLayer           | 1 100 000    |                       |
 | MapQuickActionLayer        | 1 200 000    |                       |
+
 
 ## جداول ترتيب iOS {#ios-order-tables}
 

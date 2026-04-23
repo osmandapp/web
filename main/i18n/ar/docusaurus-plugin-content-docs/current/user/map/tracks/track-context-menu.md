@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -248,7 +248,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 تتيح ميزة *النشاط* في OsmAnd وضع علامات على مسارات GPX المسجلة بأنشطة محددة لمزيد من التحليل والتنظيم في المجلدات.
 
-- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). تتلقى المسارات المسجلة نوع نشاط تلقائيًا بناءً على الملف المحدد، مما يساعد في تصنيفها وترشيحها لاحقًا. يمكنك تغيير النشاط يدويًا إذا لزم الأمر.
+- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). تتلقى المسارات المسجلة ومسارات محفوظة عبر [تخطيط مسار](../../plan-route/create-route.md) نوع نشاط تلقائيًا بناءً على الملف المستخدم لإنشائها، مما يساعد في تصنيفها وترشيحها لاحقًا. يمكنك تغيير النشاط يدويًا إذا لزم الأمر.
 - [مرشح النشاط](../../personal/tracks/smart-folder.md#search-filter). يمكنك ترشيح مسارات GPX المسجلة حسب النشاط، مما يتيح لك التركيز على العثور على أنواع معينة من التسجيلات، مثل جميع مسارات ركوب الدراجات أو المشي لمسافات طويلة.
 - [إدارة أنواع الأنشطة](../../personal/tracks/manage-tracks.md#selection-mode). يمكنك تغيير نوع النشاط للمجلدات أو المسارات المحددة باستخدام وضع التحديد في علامة تبويب المسارات في قائمة أماكني.
 - **قائمة الأنشطة**. يتم تحديد فئات ومجموعات الأنشطة في موارد OsmAnd. للمطورين والمساهمين، يتم الاحتفاظ بقائمة الأنشطة بتنسيق منظم في [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)، والذي يفصل مجموعات وأنواع الأنشطة المتاحة.
@@ -392,7 +392,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة سياق المسار النقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android.png)
+![قائمة سياق المسار النقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - [عرض بيانات نقاط المسار](#display-custom-gpx-tags) وتعديل نقاط المسار الخاصة بك (نقاط الطريق ونقاط المسار)، [حذفها وإضافة](#points--waypoints) نقاط طريق إلى مسار.
 - إنشاء وتعديل [مجموعة (مجلد) من النقاط](#waypoint-groups).
+- توسيط الخريطة على نقطة طريق باستخدام أيقونة الدبوس في قائمة نقاط الطريق (*أندرويد فقط*) دون إغلاق القائمة، مما يتيح لك معاينة نقاط الطريق واحدة تلو الأخرى.
 
 
 ### إضافة نقطة طريق إلى مسار {#add-waypoint-to-a-track}
@@ -699,7 +700,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 يسمح لك هذا المرشح بتحسين إحصائيات مسارك عن طريق استبعاد البيانات غير الضرورية أو غير الصحيحة. يمكنك ترشيح نقاط المسار التي لا تتناسب مع معلمات مسارك، ونتيجة لذلك، الحصول على رسم بياني أكثر دقة وخط مسار مرئي بدون تشويه أو ضوضاء تسجيل. يمكنك إجراء تغييرات باستخدام مرشحات مثل *التنعيم*، و*السرعة*، و*الارتفاع*، و*دقة GPS*، والتي تخفي النقاط المرشحة من المسار الحالي. بالإضافة إلى ذلك، في قائمة *الإحصائيات*، يمكنك التحقق من كيفية عرض تغييراتك على الرسم البياني قبل حفظها. يمكنك أيضًا *إعادة التعيين إلى الأصل* و*حفظ كنسخة* من مسارك في هذا المرشح دون حفظ المسار الأصلي.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

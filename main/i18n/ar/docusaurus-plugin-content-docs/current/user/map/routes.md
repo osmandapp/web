@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  المسارات
 ---
@@ -239,6 +239,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - يتم عرض **قائمة بالمسارات القريبة** في ذلك الموقع.
 - بعد تحديد مسار من القائمة، تفتح [قائمة سياقية](../map/tracks/track-context-menu.md) لذلك المسار، تعرض معلومات مفصلة والإجراءات المتاحة.
+- يتم فتح المسار المحدد في عرض المسار، مما يتيح لك التفاعل معه بنفس الطريقة التي تتفاعل بها مع مسار GPX.
 
 في **القائمة السياقية**، يمكنك:
 
@@ -317,7 +318,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>  
 
 
-لحفظ المسار كملف *GPX*، انقر على زر **حفظ (تنزيل)** تحت [لوحة المعلومات](../map/tracks/track-context-menu.md#info-panel). سيؤدي هذا إلى فتح لوحة أزرار [الإجراءات السريعة](../map/tracks/track-context-menu.md#track-actions) حيث ستتمكن من الوصول إلى إجراءات المسار مثل تغيير [المظهر](./tracks/appearance.md)، أو [الملاحة](../navigation/setup/route-navigation.md)، أو تحرير [تخطيط مسار](../plan-route/create-route.md).
+لحفظ المسار كملف *GPX*، انقر على زر **حفظ (تنزيل)** تحت [لوحة المعلومات](../map/tracks/track-context-menu.md#info-panel). سيؤدي هذا إلى فتح لوحة أزرار [الإجراءات السريعة](../map/tracks/track-context-menu.md#track-actions) حيث ستتمكن من الوصول إلى إجراءات المسار مثل تغيير [المظهر](./tracks/appearance.md)، أو [الملاحة](../navigation/setup/route-navigation.md)، أو تحرير [تخطيط مسار](../plan-route/create-route.md). تتصرف المسارات المحفوظة بنفس طريقة المسارات الأخرى وتكون متاحة في مجموعة مساراتك.
 
 
 ### بدء الملاحة {#start-navigation}

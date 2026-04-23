@@ -1,5 +1,5 @@
 ---
-source-hash: f03e507400bc20695268af175cd4521086e021342f5905b49b0c9d9b09b9e7fc
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -108,12 +108,14 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
 | [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [تخصيص ألوان المباني ثلاثية الأبعاد](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [تخصيص ألوان المباني ثلاثية الأبعاد](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [الأماكن المشهورة (ويكيبيديا)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [ويكي رحلات بدون اتصال - أدلة السفر](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [ملحق علم الفلك](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [تخطيط الملاحظة](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [وضع الواقع المعزز التفاعلي](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [خريطة السماء بدون اتصال](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [الملاحة بدون اتصال وبالاتصال بالإنترنت](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
 | [بحث فوري بدون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -156,7 +158,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [ويدجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر.  |
 | [تصحيح الارتفاع (بدون اتصال)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | يسمح لك بحساب رسم بياني للارتفاع لمسارك (تتطلب [خريطة التضاريس](../plugins/topography.md#download-maps) للمنطقة المختارة). |
 | [تعديل مخطط الألوان](../../user/plugins/topography.md#modify-color-scheme) | يسمح لك بتخصيص مظهر الخريطة من خلال اختيار أو استيراد لوحات ألوان. يمكنك تحرير المخططات المدمجة أو استخدام ملفات لوحة ألوان خاصة بك لتخصيص ألوان الخريطة والمسار. |
-| [إنشاء لوحات ألوان مخصصة](../../user/map/tracks/appearance.md#gradient-palettes) | يسمح لك بإنشاء وتحرير لوحات التدرج لتلوين المسار باستخدام قيم نسبية أو ثابتة. يمكنك تحديد خطوات الألوان، وتعيين القيم، وتخصيص كيفية عرض البيانات (مثل السرعة أو الارتفاع) على طول المسار. |
+| [إنشاء لوحات ألوان مخصصة](../../user/map/tracks/appearance.md#color-palette-editor) | يسمح لك بإنشاء وتحرير لوحات التدرج لتلوين المسار باستخدام قيم نسبية أو ثابتة. يمكنك تحديد خطوات الألوان، وتعيين القيم، وتخصيص كيفية عرض البيانات (مثل السرعة أو الارتفاع) على طول المسار. |
 | [مجلدات ذكية – تنظيم حسب](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | يسمح بتنظيم المسارات في مجلدات ذكية باستخدام معايير تجميع متقدمة مثل التاريخ والوقت، والمسافة، والمدة، والسرعة، والارتفاع والارتفاع، وبيانات المستشعر. تمكن هذه الخيارات من تصنيف المسارات بشكل أكثر تفصيلاً وتحليل مرن. |
 
 

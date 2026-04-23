@@ -1,5 +1,5 @@
 ---
-source-hash: 10e2341332ad6f362f02e8ca20670f75459fd950a7fe11cc51ec340380692495
+source-hash: 74a8a7707c0d2f97d8c606769b7fafa2d86892a59f64ff3fbd3e0ff06f84c40d
 sidebar_position: 3
 title: عمليات الشراء عبر الويب
 ---
@@ -26,8 +26,8 @@ import Translate from '@site/src/components/Translate.js';
 
 | الخطة | الوصف | ملاحظات |
 |------------|------------|------------|
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **خرائط+** | **عملية شراء داخل التطبيق** أو **اشتراك** يفتح الميزات المتقدمة لتطبيق OsmAnd المجاني. | يدعم **الوصول عبر المنصات** |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح جميع [الميزات الاحترافية](#free-and-paid-features)، بما في ذلك CarPlay و 3D Relief. | يدعم **الوصول عبر المنصات** |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **خرائط+** | **عملية شراء داخل التطبيق** أو **اشتراك** يفتح الميزات المتقدمة لتطبيق OsmAnd المجاني. | يدعم **الوصول عبر المنصات** access |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح جميع [الميزات الاحترافية](#free-and-paid-features)، بما في ذلك CarPlay و 3D Relief. | يدعم **الوصول عبر المنصات** access |
 
 :::note  
 **الوصول عبر المنصات** يعني أنه يمكنك شراء OsmAnd في موقعنا أو من متجر واحد (على سبيل المثال، *App Store، Google Play، أو osmand.net*) واستخدامه على منصة أخرى عن طريق [ربط عملية الشراء بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
@@ -66,8 +66,8 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (١٢ شهرًا) | **اشتراك** (شهر واحد / ١٢ شهرًا) |**شراء لمرة واحدة** (١٥ عامًا من Pro / خرائط+ مدى الحياة) |
-| **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
-| **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+| **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
+| **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00   |
 
 
 

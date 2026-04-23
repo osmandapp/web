@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  المسارات
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![تخصيص مسارات الخريطة أندرويد](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![تخصيص مسارات الخريطة أندرويد](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![تخصيص مسارات الخريطة iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![تخصيص مسارات الخريطة iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
 
 </TabItem>
 
@@ -67,15 +67,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-!["أماكني" مع المسارات في أندرويد](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → انقر نقرة طويلة على مسار GPX المختار → إظهار على الخريطة*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
 
-![قائمة السياق لمسار في iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![نظرة عامة على قائمة سياق المسار أندرويد 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![نظرة عامة على قائمة سياق المسار iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *انقر على المسار → علامة تبويب المسار → <Translate android="true" ids="analyze_on_map"/>*  
 
-![قائمة المسار تحليل على الخريطة أندرويد](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![قائمة المسار تحليل على الخريطة مسافة أندرويد](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *انقر على المسار → علامة تبويب المسار → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![قائمة المسار تحليل على الخريطة](@site/static/img/personal/tracks/track_analyze_ios.png)  ![قائمة المسار تحليل على الخريطة ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,8 +132,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 توفر هذه الأداة تحليلاً مفصلاً لبيانات [المسار](../../map/tracks/track-context-menu.md#options) باستخدام الرسوم البيانية والخرائط.
 
-- **بيانات الرسم البياني (المحور الصادي)** تعرض: *الارتفاع*، *الميل*، *السرعة*، [*بيانات المستشعرات الخارجية*](../../plugins/external-sensors.md)، ومجموعات تصل إلى خيارين إذا كانت موجودة في بيانات المسار. ***أندرويد فقط:*** لمسارات السيارات المسجلة ببيانات OBD-II، يوفر المحور الصادي أيضًا مقاييس السيارة، مثل سرعة المحرك، ودرجة حرارة سائل التبريد، وغيرها.
-- **بعد الرسم البياني (المحور السيني)** يمثل: *المسافة*، *الوقت*، و*الوقت من اليوم*.
+- **بيانات الرسم البياني (المحور الصادي)** تعرض: *الارتفاع*، *الميل*، *السرعة*، [*بيانات المستشعرات الخارجية*](../../plugins/external-sensors.md)، ومجموعات تصل إلى خيارين إذا كانت موجودة في بيانات المسار. بالنسبة لمسارات السيارات المسجلة ببيانات OBD-II، يوفر المحور الصادي أيضًا مقاييس السيارة، مثل سرعة المحرك، ودرجة حرارة سائل التبريد، وغيرها.
+- **بُعد الرسم البياني (المحور السيني)** يمثل: *المسافة*، *الوقت*، و*الوقت من اليوم*.
 - **تفاعل النقر/التمرير**. انقر على الرسم البياني لعرض معلومات حول نقطة معينة على المسار. يؤدي التمرير على الرسم البياني إلى إبراز الموقع المناسب على الخريطة وعرض التفاصيل في شريط المعلومات.
 - **تسمية المسافة**. عند النقر أو التمرير على طول الرسم البياني، يعرض تلميح الأداة أيضًا المسافة الدقيقة على طول المسار. يتبع القيمة إعدادات وحدة الملف الشخصي الحالية (<Translate android="true" ids="km"/> أو <Translate android="true" ids="mile"/>). استخدمها لتقدير سريع لمدى بعيد نقطة عن بداية المسار، أو لحساب المسافة بين موضعين اثنين بمقارنة قيمهما.
 - **التحجيم**. استخدم [إيماءة إصبعين](../../map/interact-with-map.md#gestures) لتكبير الرسم البياني لعرض أكثر تفصيلاً.
@@ -145,13 +145,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة المسار تحليل على الخريطة 3 أندرويد](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![قائمة المسار تحليل على الخريطة 5 أندرويد](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة المسار تحليل على الخريطة](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![قائمة المسار تحليل على الخريطة ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 
