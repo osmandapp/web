@@ -1,8 +1,8 @@
-import { Box, Button, IconButton, LinearProgress, ListItemText } from '@mui/material';
+import { Box, IconButton, LinearProgress, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
-import { Add } from '@mui/icons-material';
+import { Add, Delete } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoriteName from './structure/FavoriteName';
 import FavoriteAddress from './structure/FavoriteAddress';
@@ -26,8 +26,11 @@ import { apiGet } from '../../../util/HttpApi';
 import { getUniqFileId } from '../../../manager/GlobalManager';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import PrimaryBtn from '../../../frame/components/btns/PrimaryBtn';
+import DefaultItem from '../../../frame/components/items/DefaultItem';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
+import ThickDivider from '../../../frame/components/dividers/ThickDivider';
+import ColorBlock from '../../../frame/components/other/ColorBlock';
 
 const PANEL_CONTENT_WIDTH = 320;
 
@@ -449,93 +452,94 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 }
             />
             <Box id={isEditMode ? 'se-edit-fav-dialog' : 'se-add-fav-dialog'} className={styles.content}>
-                <FavoriteName
-                    favoriteName={favoriteName}
-                    setFavoriteName={setFavoriteName}
-                    favoriteGroup={favoriteGroup}
-                    favorite={isEditMode ? editWpt : undefined}
-                    setErrorName={setErrorName}
-                    widthDialog={PANEL_CONTENT_WIDTH}
-                />
-                {!addAddress && (
-                    <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
-                        <IconButton
-                            id={'se-add-fav-add-address-btn'}
-                            sx={{ mt: -1 }}
-                            onClick={() => setAddAddress(true)}
-                        >
-                            <Add />
-                        </IconButton>
-                        Add address
-                    </ListItemText>
-                )}
-                {addAddress && (
-                    <FavoriteAddress
-                        favoriteAddress={favoriteAddress}
-                        setFavoriteAddress={setFavoriteAddress}
-                        setClose={isEditMode ? null : setAddAddress}
+                <Box className={styles.fields}>
+                    <FavoriteName
+                        favoriteName={favoriteName}
+                        setFavoriteName={setFavoriteName}
+                        favoriteGroup={favoriteGroup}
+                        favorite={isEditMode ? editWpt : undefined}
+                        setErrorName={setErrorName}
                         widthDialog={PANEL_CONTENT_WIDTH}
                     />
-                )}
-                {!addDescription && (
-                    <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
-                        <IconButton
-                            id={'se-add-fav-add-desc-btn'}
-                            sx={{ mt: -1 }}
-                            onClick={() => setAddDescription(true)}
-                        >
-                            <Add />
-                        </IconButton>
-                        Add description
-                    </ListItemText>
-                )}
-                {addDescription && (
-                    <FavoriteDescription
-                        favoriteDescription={favoriteDescription}
-                        setFavoriteDescription={setFavoriteDescription}
-                        setClose={isEditMode ? null : setAddDescription}
+                    {!addAddress && (
+                        <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
+                            <IconButton
+                                id={'se-add-fav-add-address-btn'}
+                                sx={{ mt: -1 }}
+                                onClick={() => setAddAddress(true)}
+                            >
+                                <Add />
+                            </IconButton>
+                            Add address
+                        </ListItemText>
+                    )}
+                    {addAddress && (
+                        <FavoriteAddress
+                            favoriteAddress={favoriteAddress}
+                            setFavoriteAddress={setFavoriteAddress}
+                            setClose={isEditMode ? null : setAddAddress}
+                            widthDialog={PANEL_CONTENT_WIDTH}
+                        />
+                    )}
+                    {!addDescription && (
+                        <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
+                            <IconButton
+                                id={'se-add-fav-add-desc-btn'}
+                                sx={{ mt: -1 }}
+                                onClick={() => setAddDescription(true)}
+                            >
+                                <Add />
+                            </IconButton>
+                            Add description
+                        </ListItemText>
+                    )}
+                    {addDescription && (
+                        <FavoriteDescription
+                            favoriteDescription={favoriteDescription}
+                            setFavoriteDescription={setFavoriteDescription}
+                            setClose={isEditMode ? null : setAddDescription}
+                            widthDialog={PANEL_CONTENT_WIDTH}
+                        />
+                    )}
+                    <FavoriteGroup
+                        favoriteGroup={favoriteGroup}
+                        setFavoriteGroup={setFavoriteGroup}
+                        groups={groups}
+                        defaultGroup={defaultGroup}
                         widthDialog={PANEL_CONTENT_WIDTH}
                     />
-                )}
-                <FavoriteGroup
-                    favoriteGroup={favoriteGroup}
-                    setFavoriteGroup={setFavoriteGroup}
-                    groups={groups}
-                    defaultGroup={defaultGroup}
-                    widthDialog={PANEL_CONTENT_WIDTH}
-                />
-                <FavoriteIcon
-                    favoriteIcon={favoriteIcon}
-                    setFavoriteIcon={setFavoriteIcon}
-                    currentIconCategories={currentIconCategories}
-                    favoriteIconCategories={favoriteIconCategories}
-                    selectedGpxFile={ctx.selectedGpxFile}
-                    add={!isEditMode}
-                    defaultIcon={isEditMode ? editWpt.icon : MarkerOptions.DEFAULT_WPT_ICON}
-                    widthDialog={PANEL_CONTENT_WIDTH}
-                />
-                <FavoriteColor
-                    favoriteColor={favoriteColor}
-                    setFavoriteColor={setFavoriteColor}
-                    defaultColor={isEditMode ? editWpt.color : MarkerOptions.DEFAULT_WPT_COLOR}
-                    widthDialog={PANEL_CONTENT_WIDTH}
-                />
-                <FavoriteShape
-                    color={favoriteColor}
-                    favoriteShape={favoriteShape}
-                    setFavoriteShape={setFavoriteShape}
-                    defaultBackground={isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}
-                />
-
-                {isEditMode && (
-                    <Box className={styles.deleteAction}>
-                        <Button
+                    <FavoriteIcon
+                        favoriteIcon={favoriteIcon}
+                        setFavoriteIcon={setFavoriteIcon}
+                        currentIconCategories={currentIconCategories}
+                        favoriteIconCategories={favoriteIconCategories}
+                        selectedGpxFile={ctx.selectedGpxFile}
+                        add={!isEditMode}
+                        defaultIcon={isEditMode ? editWpt.icon : MarkerOptions.DEFAULT_WPT_ICON}
+                        widthDialog={PANEL_CONTENT_WIDTH}
+                    />
+                    <FavoriteColor
+                        favoriteColor={favoriteColor}
+                        setFavoriteColor={setFavoriteColor}
+                        defaultColor={isEditMode ? editWpt.color : MarkerOptions.DEFAULT_WPT_COLOR}
+                        widthDialog={PANEL_CONTENT_WIDTH}
+                    />
+                    <FavoriteShape
+                        color={favoriteColor}
+                        favoriteShape={favoriteShape}
+                        setFavoriteShape={setFavoriteShape}
+                        defaultBackground={isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}
+                    />
+                </Box>
+                {isEditMode && !isEditTrackWpt && (
+                    <>
+                        <ThickDivider />
+                        <DefaultItem
                             id={'se-delete-fav-item'}
-                            sx={{ color: 'error.main' }}
+                            icon={<Delete sx={{ color: 'error.main' }} />}
+                            name={t('web:remove_favorite')}
                             onClick={() => setDeleteWptDialogOpen(true)}
-                        >
-                            Remove favorite
-                        </Button>
+                        />
                         {deleteWptDialogOpen && (
                             <DeleteWptDialog
                                 dialogOpen={deleteWptDialogOpen}
@@ -543,8 +547,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                                 wpt={editWpt}
                             />
                         )}
-                    </Box>
+                    </>
                 )}
+                <ColorBlock color={'#f0f0f0'} />
             </Box>
         </Box>
     );

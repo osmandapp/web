@@ -8,6 +8,11 @@
 .content {
     overflow-y: auto;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.fields {
     padding: 8px 16px 16px 16px;
 }
 
@@ -22,12 +27,4 @@
     padding: 0 12px;
     justify-content: flex-end;
     align-items: center;
-}
-
-.deleteAction {
-    display: flex;
-    justify-content: flex-start;
-    padding-top: 4px;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    margin-top: 8px;
 }
