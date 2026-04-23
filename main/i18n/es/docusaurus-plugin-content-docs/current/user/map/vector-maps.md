@@ -1,5 +1,5 @@
 ---
-source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Mapas vectoriales 
 ---
@@ -371,15 +371,29 @@ La opción de Terreno te permite personalizar tres funciones como Sombreado de c
 
 ### Edificios 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edificios 3D*  
+<TabItem value="android" label="Android"> 
 
-![Edificios 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_2.png) 
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![Edificios 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![Edificios 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-Esta opción está disponible solo cuando el complemento de Topografía está habilitado. Consulta el artículo del [complemento de Topografía](../plugins/topography.md#3d-buildings) para obtener detalles.
+En Android, esta opción está disponible solo cuando el complemento de Topografía está habilitado. Consulta el artículo del [complemento de Topografía](../plugins/topography.md#3d-buildings) para obtener detalles.
 
 ### Relieve 3D {#3d-relief}
 
@@ -415,11 +429,25 @@ Para más detalles sobre la vista de mapa náutico, visita la [página del compl
 
 ### Vista de Globo {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vista global*
+<TabItem value="android" label="Android">  
+
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vista de Globo](@site/static/img/map/globe_view_1.png) ![Vista de Globo](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vista de Globo](@site/static/img/map/globe_view_1_ios.png) ![Vista de Globo](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 La **Vista de Globo** te permite mostrar el mapa como una Tierra esférica en lugar de una proyección plana. Este modo cambia la geometría de la superficie del mapa y adapta la interacción del mapa a la navegación esférica. Para obtener más información, consulta la [sección de Vista de Globo](../map/interact-with-map.md#globe-view) en el artículo Interactuar con el mapa.
 
@@ -484,7 +512,7 @@ Ir a: *Menú → Configurar mapa → Mostrar → Cuadrícula de coordenadas*
 
 <TabItem value="ios" label="iOS">  
 
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
@@ -557,3 +585,4 @@ Una ruta es un camino predeterminado que debe seguirse para llegar a un destino 
 |**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
 |**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
 -->
+

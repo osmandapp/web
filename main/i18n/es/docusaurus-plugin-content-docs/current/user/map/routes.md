@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  Rutas
 ---
@@ -239,6 +239,7 @@ Cuando toca un **símbolo de ruta** en el mapa:
 
 - Se muestra una **lista de las rutas cercanas** en esa ubicación.
 - Después de seleccionar una ruta de la lista, se abre un [menú contextual](../map/tracks/track-context-menu.md) para esa ruta, que muestra información detallada y acciones disponibles.
+- La ruta seleccionada se abre en una vista de pista, lo que le permite interactuar con ella de la misma manera que con una pista GPX.
 
 En el **menú contextual**, puede:
 
@@ -317,7 +318,7 @@ También puede abrir la pestaña *Pista* y cambiar a la vista *Altitud* para ver
 </Tabs>  
 
 
-Para guardar la ruta como un *archivo GPX*, toque el botón **Guardar (Descargar)** en el [Panel de información](../map/tracks/track-context-menu.md#info-panel). Esto abrirá el panel de botones de [Acciones rápidas](../map/tracks/track-context-menu.md#track-actions) donde tendrá acceso a acciones de la pista como cambiar la [Apariencia](./tracks/appearance.md), [Navegación](../navigation/setup/route-navigation.md), o editar en [Planificar una ruta](../plan-route/create-route.md).
+Para guardar la ruta como un *archivo GPX*, toque el botón **Guardar (Descargar)** en el [Panel de información](../map/tracks/track-context-menu.md#info-panel). Esto abrirá el panel de botones de [Acciones rápidas](../map/tracks/track-context-menu.md#track-actions) donde tendrá acceso a acciones de la pista como cambiar la [Apariencia](./tracks/appearance.md), [Navegación](../navigation/setup/route-navigation.md), o editar en [Planificar una ruta](../plan-route/create-route.md). Las rutas guardadas se comportan de la misma manera que otras pistas y están disponibles en su colección de pistas.
 
 
 ### Iniciar Navegación {#start-navigation}
@@ -391,7 +392,7 @@ Navegue a *<Translate android="true" ids="search_button,search_categories,poi_ro
 
 </Tabs>
 
-En los resultados de búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de Filtros incluye un campo **Filtrar por nombre**; un bloque **Tipo** con *Bureau*, *Anexo postal* y *Socio postal*; y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede exponer sus propias características y valores de filtro.
+En los resultados de búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de Filtros incluye un campo **Filtrar por nombre**; un bloque **Tipo** con *Oficina*, *Anexo postal* y *Socio postal*; y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede exponer sus propias características y valores de filtro.
 
 Puede activar o desactivar filtros utilizando los interruptores, y algunas secciones incluyen *Mostrar todo* para mostrar valores adicionales.
 

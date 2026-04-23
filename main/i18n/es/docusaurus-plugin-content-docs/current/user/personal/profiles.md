@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Perfiles (Ajustes)
 ---
@@ -447,7 +447,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 Los ajustes de **Apariencia de Mi Ubicación** le permiten personalizar cómo se muestra su ubicación en el mapa, tanto cuando está parado (Reposo) como en movimiento (Navegación). El movimiento es detectado por el sistema operativo cuando la velocidad del dispositivo es **mayor que cero**.
 
-Utilice **Tamaño del icono** para ajustar el tamaño del icono de posición de Mi Ubicación de forma independiente del tamaño de texto de la aplicación. Puede establecer tamaños diferentes para los modos Reposo y Navegación. El tamaño se puede ajustar desde el 50% hasta el 300% (50, 75, 100, 125, 150, 200, 250, 300%). El valor predeterminado es 100%. Toque Tamaño del icono para abrir la configuración de tamaño, luego use el control deslizante o los botones de paso + / – para cambiar el valor. Utilice **Restablecer a los valores predeterminados** para volver al 100%.
+Utilice **<Translate ios="true" ids="icon_size"/>** para ajustar el tamaño del icono de posición de Mi Ubicación de forma independiente del tamaño de texto de la aplicación. Puede establecer tamaños diferentes para los modos Reposo y Navegación. El tamaño se puede ajustar desde el 50% hasta el 300% (50, 75, 100, 125, 150, 200, 250, 300%). El valor predeterminado es 100%. Toque <Translate ios="true" ids="icon_size"/> para abrir la configuración de tamaño, luego use el control deslizante o los botones de paso + / – para cambiar el valor. Utilice **<Translate ios="true" ids="reset_to_default"/>** para volver al 100%.
 
 </TabItem>
 

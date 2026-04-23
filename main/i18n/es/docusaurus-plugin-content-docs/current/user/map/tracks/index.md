@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  Pistas
 sidebar_position: 2
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Resumen {#overview}
-OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las rutas se pueden construir como parte de la [Navegación](../../navigation/index.md), crearse a través de [Planificar ruta](../../plan-route/index.md), importarse como pistas GPX, grabarse a través del [plugin de Grabación de viaje](../../plugins/trip-recording.md), o navegar y seleccionar a partir de los datos de OpenStreetMap.
+OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las rutas se pueden construir como parte de la [Navegación](../../navigation/index.md), crearse a través de [Planificar ruta](../../plan-route/index.md), importarse como pistas GPX, grabarse a través del [plugin de Grabación de viaje](../../plugins/trip-recording.md), o explorar y seleccionar a partir de los datos de OpenStreetMap.
 
 
 ## Tipos de Pistas {#types-of-tracks}
@@ -124,7 +124,7 @@ Ir a: *Tocar la pista → Pestaña Pista → <Translate android="true" ids="anal
 
 Ir a: *Tocar la pista → Pestaña Pista → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menú de pista analizar en el mapa](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menú de pista analizar en el mapa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Menú de pista analizar en el mapa](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menú de pista analizar en el mapa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Ir a: *Tocar la pista → Pestaña Pista → <Translate ios="true" ids="analyze_
 
 Esta herramienta proporciona un análisis detallado de los datos de la [pista](../../map/tracks/track-context-menu.md#options) utilizando gráficos y mapas.
 
-- **Datos del gráfico (eje Y)** muestra: *Altitud*, *Pendiente*, *Velocidad*, [*Datos de sensores externos*](../../plugins/external-sensors.md), y combinaciones de hasta dos opciones si están contenidas en los datos de la pista. ***Solo Android:*** para pistas de coche grabadas con datos OBD-II, el eje Y proporciona adicionalmente métricas del vehículo, como velocidad del motor, temperatura del refrigerante y más.
+- **Datos del gráfico (eje Y)** muestra: *Altitud*, *Pendiente*, *Velocidad*, [*Datos de sensores externos*](../../plugins/external-sensors.md), y combinaciones de hasta dos opciones si están contenidas en los datos de la pista. Para pistas de coche grabadas con datos OBD-II, el eje Y proporciona adicionalmente métricas del vehículo, como velocidad del motor, temperatura del refrigerante y más.
 - **Dimensión del gráfico (eje X)** representa: *Distancia*, *Tiempo* y *Hora del día*.
 - **Interacción de tocar/deslizar**. Toque un gráfico para mostrar información sobre un punto específico en la pista. Deslizar sobre el gráfico resalta la ubicación apropiada en el mapa y muestra detalles en la barra de información.
 - **Etiqueta de distancia**. Al tocar o deslizar a lo largo del gráfico, el tooltip también muestra la distancia exacta a lo largo de la pista. El valor sigue la configuración de unidades del perfil actual (<Translate android="true" ids="km"/> o <Translate android="true" ids="mile"/>). Úselo para estimar rápidamente qué tan lejos está un punto del inicio de la pista, o para calcular la distancia entre dos posiciones comparando sus valores.

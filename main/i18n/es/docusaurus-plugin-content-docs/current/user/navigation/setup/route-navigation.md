@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  Preparación de la ruta
 ---
@@ -65,14 +65,14 @@ Antes de usar la navegación sin conexión, asegúrese de que los [mapas requeri
 1. Abra el [*Menú de navegación*](#navigation-menu):
 
     - Especifique el [punto de destino](#set-target-point).
-    - Espere hasta que se calcule la ruta. Después de eso, podrá obtener información adicional sobre su ruta en *[sección de Detalles](../setup/route-details.md)*.
+    - Espere hasta que se calcule la ruta. Después de eso, podrá obtener información adicional sobre su ruta en *[sección de Detalles](./route-details.md#overview)*.
     - Puede cambiar entre diferentes [tipos de enrutamiento](./../routing/osmand-routing.md#routing-types) (perfiles) para obtener el mejor resultado.
     - Añada [destinos intermedios](#intermediate-destinations) (opcional).
     - También puede cambiar el punto de partida desde la [posición actual](../../map/interact-with-map.md#my-position-and-zoom) a la requerida.
 
 2. Se pueden usar [*Ajustes de navegación*](#settings) adicionales según sus propósitos (puede configurar qué carreteras evitar o preferir, ahorrar combustible o elegir la ruta más rápida, etc.).
 
-3. [Inicie](#start--stop-navigation) la navegación o primero [simule la navegación](#simulated-navigation) (con esta función puede probar su ruta antes de viajar realmente por ella).
+3. [Inicie](#start--stop-navigation) la navegación o primero [simule la navegación](#simulated-navigation) (con esta función puede probar su ruta antes de viajar realmente por ella). [En dispositivos iOS](https://support.apple.com/en-us/121430) en países de la UE, OsmAnd también se puede configurar como la aplicación de navegación predeterminada en la configuración del sistema, lo que permite que se abra automáticamente para solicitudes de navegación.
 
 4. Mientras está en la ruta, puede [*Pausar/Reanudar*](#pause--resume-navigation) la navegación y [*Detenerla*](#start--stop-navigation).
 

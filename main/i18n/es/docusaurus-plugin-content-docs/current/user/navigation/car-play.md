@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -278,10 +278,10 @@ La aplicación OsmAnd se puede abrir y usar para navegar en *CarPlay* en la pant
 Cuando la navegación se completa en CarPlay, OsmAnd muestra un diálogo **“Ha llegado”** en la pantalla del vehículo. Este diálogo utiliza la misma lógica de detección de llegada que la aplicación móvil y proporciona acceso rápido a acciones comunes después de llegar a su destino.
 
 Acciones disponibles:
-- **Marcar como ubicación de estacionamiento**. Guarda su posición actual como una ubicación de estacionamiento y coloca un marcador de estacionamiento en el mapa.
-- **Buscar estacionamiento**. Abre la pantalla de Búsqueda con la categoría de Estacionamiento preseleccionada para ayudarle a encontrar opciones de estacionamiento cercanas.
-- **Recalcular ruta**. Construye una nueva ruta al destino original si desea continuar la navegación.
-- **Finalizar navegación**. Termina la ruta actual y devuelve OsmAnd al estado predeterminado del mapa.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Guarda su posición actual como una ubicación de estacionamiento y coloca un marcador de estacionamiento en el mapa.
+- **<Translate ios="true" ids="find_parking"/>**. Abre la pantalla de Búsqueda con la categoría de Estacionamiento preseleccionada para ayudarle a encontrar opciones de estacionamiento cercanas.
+- **<Translate ios="true" ids="recalculate_route"/>**. Construye una nueva ruta al destino original si desea continuar la navegación.
+- **<Translate ios="true" ids="finish_navigation"/>**. Termina la ruta actual y devuelve OsmAnd al estado predeterminado del mapa.
 
 Si CarPlay se desconecta mientras la navegación está activa, OsmAnd aplica una lógica adicional en el iPhone:
 - Si la distancia al destino es menor a 100 m, la navegación se finaliza automáticamente y se restaura el perfil predeterminado. En este caso, la notificación “Ha llegado” no se muestra en la pantalla del teléfono.

@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Planificar una ruta
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visión general {#overview}
 
-La herramienta **Planificar una ruta** (*Menú → Planificar una ruta*) es una potente función de la aplicación OsmAnd que le permite [crear nuevas rutas](#create-new-route) como tracks GPX, [editar y añadir nuevos segmentos](#segments) a tracks ya guardados, [medir distancias](#distance-measurement) en el mapa y [adjuntar segmentos de track](#attach-track-to-roads) a la carretera más cercana disponible utilizando diferentes perfiles de navegación. La función está diseñada para funcionar en *modo sin conexión*.
+La herramienta **Planificar una ruta** (*Menú → Planificar una ruta*) es una potente función de la aplicación OsmAnd que le permite [crear nuevas rutas](#create-new-route) como tracks GPX, [editar y añadir nuevos segmentos](#segments) a tracks ya guardados, [medir distancias](#distance-measurement) en el mapa y [adjuntar track](#attach-track-to-roads) a la carretera más cercana disponible utilizando diferentes perfiles de navegación. La función está diseñada para funcionar en *modo sin conexión*.
 
 Una ruta consiste en un conjunto de segmentos entre puntos especificados. Los segmentos pueden ser líneas rectas o rutas adaptadas al perfil seleccionado. La ruta se puede guardar como GPX para su posterior importación, edición y [navegación](../navigation/setup/gpx-navigation.md).
 
@@ -338,6 +338,8 @@ Hay cuatro formas de guardar:
 - ***Guardar cambios*** en el [menú Opciones](#options) le permite guardar los cambios en un archivo y continuar planificando la ruta.
 - ***Guardar como nuevo track*** en el [menú Opciones](#options) abre un diálogo donde se especifica el nombre del track y la carpeta donde se guardará la ruta.
 - ***Añadir cambios a un track***. Adjunta un track creado como un [segmento separado](#segments) a otro track existente. Los cambios en un track seleccionado *no se pueden deshacer*.
+
+Al guardar, el track hereda el tipo de actividad del perfil de enrutamiento utilizado para la planificación. La actividad se guarda en los metadatos del track y se preserva después de exportar o importar el archivo GPX.
 
 :::note Opción de track simplificado
 Al guardar un nuevo track, puede seleccionar la opción de track ***Simplificado*** para que el track sea compatible con otras aplicaciones de terceros. Técnicamente, el track se guardará sin instrucciones de ruta como un track puramente geométrico.
