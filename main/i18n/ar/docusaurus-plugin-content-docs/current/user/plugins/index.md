@@ -1,5 +1,5 @@
 ---
-source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  الإضافات
 ---
@@ -84,7 +84,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |[Mapillary](#mapillary) | [طبقة الخريطة](../plugins/mapillary.md#map-layer)، [قائمة السياق](../plugins/mapillary.md#map-context-menu) ، [أداة مصغرة (Widget)](../plugins/mapillary.md#mapillary-widget)|
 |[المستشعرات الخارجية](#external-sensors) 🤖  | [أداة مصغرة (Widget)](../plugins/external-sensors.md#widgets) |
 |[مقاييس المركبة](#vehicle-metrics)  | [إعدادات مخصصة](../plugins/vehicle-metrics#scanner-settings)، [أداة مصغرة (Widget)](../plugins/vehicle-metrics#widgets) |
-|[الفلك](#astronomy)  | [شاشة](../plugins/astronomy.md#star-map-screen)، [قائمة السياق](../plugins/astronomy.md#celestial-object-info) |
+|[الفلك](#astronomy)  | [شاشة](../plugins/astronomy.md#star-map-screen)، [قائمة السياق](../plugins/astronomy.md#context-menu) |
 |[إمكانية الوصول](#accessibility) 🤖  | [إعدادات مخصصة](../plugins/accessibility.md#plugin-settings) |
 |[تطوير OsmAnd](#osmand-development) | [إعدادات مخصصة](../plugins/development.md#plugin-settings) |
 |[متتبع OsmAnd](#osmand-tracker) 🤖  | [طبقة الخريطة](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map)، [أداة مصغرة (Widget)](../plugins/osmand-tracker.md#tracker-widget)، [قائمة السياق](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |

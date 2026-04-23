@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  تسجيل الرحلة
 ---
@@ -414,13 +414,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | **الودجة** | **الأوضاع المتاحة**  |
 |-------|-------------|
-| متوسط الميل | آخر نزول؛ آخر صعود |
-| متوسط السرعة *(أندرويد فقط)* | متوسط الرحلة (افتراضي)؛ آخر نزول؛ آخر صعود |
-| المسافة (بدء-إيقاف) | متوسط الرحلة (افتراضي)؛ آخر نزول؛ آخر صعود |
-| النزول | الإجمالي (افتراضي)؛ آخر نزول |
-| السرعة القصوى | الإجمالي (افتراضي)؛ آخر نزول؛ آخر صعود |
-| وقت الحركة | الإجمالي (افتراضي)؛ آخر نزول؛ آخر صعود |
-| الصعود | الإجمالي (افتراضي)؛ آخر صعود |
+| متوسط الميل | <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
+| متوسط السرعة *(أندرويد فقط)* | متوسط الرحلة (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
+| المسافة (بدء-إيقاف) | متوسط الرحلة (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
+| النزول | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/> |
+| السرعة القصوى | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
+| وقت الحركة | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
+| الصعود | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_uphill"/> |
 
 يعتمد التبديل بين الأوضاع على الودجة:
 - الصعود / النزول / السرعة القصوى / متوسط الميل / وقت الحركة / متوسط السرعة — انقر على الودجة على الخريطة للتبديل إلى وضعها.

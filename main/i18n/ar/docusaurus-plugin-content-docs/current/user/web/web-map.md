@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: الخريطة
 title: الخريطة العالمية على الموقع الإلكتروني
@@ -40,7 +40,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لفتحها انقر بزر الماوس الأيمن في أي مكان على الخريطة. تتضمن هذه القائمة الإجراءات التالية:
 
-- **أين أنا** – للعثور بسرعة على موقعك الحالي على الخريطة. تعرض هذه الميزة أقرب العناوين إلى النقطة المحددة على الخريطة.
 - **فتح الطقس** – الوصول إلى [قائمة الطقس](../web/web-weather.md) لعرض تفاصيل الطقس.
 - **إنشاء مسار جديد** – يفتح أداة [*تخطيط مسار*](../web/web-navigation.md) مع الموقع المحدد كنقطة بداية أو وجهة.
 - **إضافة مفضلة** –  يتيح لك إنشاء وحفظ [مفضلة](../web/web-favorites.md#add--edit-favorite) في أي نقطة على الخريطة للوصول السهل إليها.
@@ -57,7 +56,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 سيتم إضافة خيار إضافة الدبوس مرة أخرى بمجرد توفره مرة أخرى.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_new.png)
+![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## الكائن المحدد {#selected-object}
+
+عند تحديد كائن على الخريطة (مثل نقطة اهتمام، أو مفضلة، أو نقطة ملاحة)، يتم تمييزه بدبوس أكبر. يمكن تحديد كائن واحد فقط في كل مرة.
+
+إذا كان الكائن المحدد مرئيًا بالفعل على الشاشة، لا يتحرك الخريطة. إذا كان خارج الرؤية الحالية، يتم توسيط الخريطة عليه دون تغيير مستوى التكبير.
+
+يظل العلامة المحددة مرئية عند تكبير الخريطة.
+
+قد تُخفى العلامات القريبة لجعل الكائن المحدد أسهل في الرؤية.
+
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## قائمة تكوين الخريطة {#configure-map-menu}
@@ -111,11 +124,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **إخفاء المسار**: يخفي المسار المرئي حاليًا من الخريطة.  
 - **جعل المسار مرئيًا**: يعرض مسارًا من قائمة المرئية مؤخرًا على الخريطة.  
 - **إعادة التسمية**: يتيح لك إعادة تسمية المسار لتسهيل التعرف عليه.  
-- **تكرار**: ينشئ نسخة من المسار.  
+- **تكرار**: ينشئ نسخة من المسار.
+- **مشاركة**: يفتح شاشة المشاركة (نفسها كما لـ [المفضلات](../web/web-favorites.md#share)).
 - **تنزيل**: يحفظ المسار على جهازك المحلي.  
 - **حذف**: يزيل المسار نهائيًا من القائمة.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
+عند فتح مسار، يتم عرض لوحة مع شريط إجراء علوي. يعرض الشريط اسم المسار ويوفر وصولاً سريعًا إلى الإجراءات. بالإضافة إلى أوامر قائمة النقاط الثلاث، يشمل الشريط العلوي **تحرير**. **المظهر** غير نشط حاليًا.
+
+تشمل لوحة المسار علامات التبويب التالية:
+
+- نظرة عامة — تعرض معلومات المسار العامة.
+- المسار — غير مُنفذ حاليًا.
+- النقاط — تعرض نقاط الطريق ونقاط المسار مجمعة حسب النوع.
+
+![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### محطات النقل {#transport-stops}
 

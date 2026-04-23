@@ -1,5 +1,5 @@
 ---
-source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
+source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
 sidebar_position: 4
 title:  تهيئة الخريطة
 ---
@@ -23,19 +23,19 @@ import Translate from '@site/src/components/Translate.js';
 
 قسم **إظهار**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_new_andr.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_show1_new_andr.png)  ![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 قسم **التضاريس**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 قسم **OpenStreetMap**:  
 
-![Configure map android](@site/static/img/map/configure_map_osm_andr.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_osm_andr.png)  
 
 أقسام **المسارات وتصيير الخريطة**:  
 
-![Configure map android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
@@ -43,27 +43,27 @@ import Translate from '@site/src/components/Translate.js';
 
 قسم **عرض على الخريطة**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_ios_new.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 قسم **التضاريس**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_ios.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_topography_ios_new.png)  
 
 قسم **OpenStreetMap**:  
 
-![Configure map android](@site/static/img/map/configure_map_osm_ios.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_osm_ios.png)  
 
 قسم **المسارات**:  
 
-![Configure map android](@site/static/img/map/configure_map_routes_new_ios.png)
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_routes_new_ios.png)
 
 أقسام **نوع الخريطة ونمط الخريطة**:  
 
-![Configure map android](@site/static/img/map/configure_map_style_ios.png)
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_style_ios.png)
 
 أقسام **التراكب/التحتية ولغة**:  
 
-![Configure map android](@site/static/img/map/configure_map_overlay_ios.png)
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -85,7 +85,7 @@ import Translate from '@site/src/components/Translate.js';
 
 - [طبقة الخريطة المتجهية](../map/vector-maps.md) - تعرض جميع معلومات الخريطة المتجهية بما في ذلك OpenStreetMap، وخطوط الكنتور، والبيانات البحرية.
 - [مصادر الخريطة النقطية](../map/raster-maps.md#layers) - تسمح باختيار خريطة الطبقة السفلية / المصدر الرئيسي / الطبقة العلوية مع مستويات الشفافية.
-- [التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers) - تعرض معلومات المنحدر / تظليل التلال، والنماذج ثلاثية الأبعاد.
+- [التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers) - تعرض معلومات المنحدر / تظليل التلال، والارتفاع ثلاثي الأبعاد.
 - [المباني ثلاثية الأبعاد](../map/vector-maps.md#3d-buildings) - تعرض نماذج المباني الحجمية على الخريطة.
 - [حدود الخرائط التي تم تنزيلها](../map/vector-maps.md#show-borders) - تعرض جميع حدود الخرائط التي تم تنزيلها على طبقة الخريطة الرئيسية.
 - [شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid) - تتحكم في رؤية شبكة الإحداثيات على الخريطة.
@@ -125,4 +125,4 @@ import Translate from '@site/src/components/Translate.js';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
-![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
+![عناصر تهيئة الخريطة ](@site/static/img/settings/configure-screen-ui-customization.png)

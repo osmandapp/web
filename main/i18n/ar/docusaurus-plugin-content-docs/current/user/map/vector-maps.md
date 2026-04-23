@@ -1,7 +1,7 @@
 ---
-source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
-title:  الخرائط المتجهة
+title:  Vector Maps 
 ---
 
 import Tabs from '@theme/Tabs';
@@ -109,10 +109,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. التباين العالي للطرق.  
 ![نمط طريق الخريطة عالي التباين](@site/static/img/map/map-road-style-high-contrast.png)
 - **باهت**. ألوان أقل تباينًا للطرق.  
-![خطوط عريضة لنمط طريق الخريطة](@site/static/img/map/map-road-style-pale.png)
+![نمط طريق الخريطة باهت](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. مخطط عريض للطرق.  
-![خطوط عريضة لنمط طريق الخريطة](@site/static/img/map/map-road-style-bold-outline.png)
+![نمط طريق الخريطة مخطط عريض](@site/static/img/map/map-road-style-bold-outline.png)
 
 ### التفاصيل {#details}
 
@@ -371,15 +371,29 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### المباني ثلاثية الأبعاد {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+<TabItem value="android" label="Android"> 
 
-![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_1_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_2.png) 
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_1_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_1_ios_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 تعرض ميزة **المباني ثلاثية الأبعاد** المباني كنماذج ثلاثية الأبعاد حجمية بدلاً من الأشكال المسطحة. يتم توليد المباني من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-هذا الخيار متاح فقط عند تمكين ملحق الطبوغرافيا. انظر مقالة [ملحق الطبوغرافيا](../plugins/topography.md#3d-buildings) للتفاصيل.
+على Android، هذا الخيار متاح فقط عند تمكين ملحق الطبوغرافيا. انظر مقالة [ملحق الطبوغرافيا](../plugins/topography.md#3d-buildings) للتفاصيل.
 
 ### الارتفاع ثلاثي الأبعاد {#3d-relief}
 
@@ -415,11 +429,25 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### عرض الكرة الأرضية {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+<TabItem value="android" label="Android">  
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![عرض الكرة الأرضية](@site/static/img/map/globe_view_1.png) ![عرض الكرة الأرضية](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![عرض الكرة الأرضية](@site/static/img/map/globe_view_1_ios.png) ![عرض الكرة الأرضية](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 يسمح **عرض الكرة الأرضية** بعرض الخريطة ككرة أرضية كروية بدلاً من الإسقاط المسطح. يغير هذا الوضع هندسة سطح الخريطة ويعدل التفاعل مع الخريطة للتنقل الكروي. لمزيد من المعلومات، انظر قسم [عرض الكرة الأرضية](../map/interact-with-map.md#globe-view) في مقالة التفاعل مع الخريطة.
 
@@ -476,7 +504,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 <TabItem value="ios" label="iOS">  
 
-![إظهار الحدود iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
+![إعدادات شبكة الإحداثيات iOS](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -534,3 +562,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 - [المسارات](../map/routes.md)
 - [استيراد / تصدير](../personal/import-export.md)
 - [مخططات لوحة الألوان](../personal/color-palette-schemes.md)
+
+<!--
+## Map Legend {#map-legend}
+
+The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
+
+The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
+-->

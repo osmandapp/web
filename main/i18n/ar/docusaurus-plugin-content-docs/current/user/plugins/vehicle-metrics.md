@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  مقاييس المركبة
 ---
@@ -203,7 +203,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-**أندرويد.** اذهب إلى: *القائمة ← تكوين الشاشة ← الودجات ← اختر لوحة ← مقاييس المركبة*
+**أندرويد.** اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** اذهب إلى: *القائمة ← تكوين الشاشة ← الودجات ← اختر لوحة ← مقاييس المركبة*
+**iOS.** اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → اختر لوحة → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

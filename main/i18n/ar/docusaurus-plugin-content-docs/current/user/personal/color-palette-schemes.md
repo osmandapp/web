@@ -1,5 +1,5 @@
 ---
-source-hash: 16b194b28666864219e1a39a0b4b4f9c7a0fcb3e58705b90bbf617b0516a74f9
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title: أنظمة الألوان
 ---
@@ -93,10 +93,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تستخدم تصورات التدرج الخطي ملفات لوحة الألوان (`route_<type_name>_<palette_name>.txt`) لتلوين مسارات GPX والطرق:
 
-- بالنسبة [للطرق](../navigation/guidance/map-during-navigation.md#color): *السرعة (`route_speed_default.txt`)، والانحدار (`route_slope_default.txt`)*، و*الارتفاع (`route_elevation_default.txt`)*.
-- بالنسبة [لمسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، والانحدار، والسرعة القصوى (`route_maxspeed_default.txt`)*، و*الارتفاع*، أو معلومات من *أجهزة استشعار خارجية*.
+- بالنسبة [للطرق](../navigation/guidance/map-during-navigation.md#color): *السرعة (`route_speed_default.txt`)، والانحدار (`route_slope_default.txt`)*، و*الارتفاع (الارتفاع) (`route_elevation_default.txt`)*.
+- بالنسبة [لمسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، والانحدار، والسرعة القصوى (`route_maxspeed_default.txt`)*، و*الارتفاع (الارتفاع)*، أو معلومات من *أجهزة استشعار خارجية*.
 
-على أندرويد، يمكن أيضًا إنشاء أو تعديل اللوحات مباشرة داخل التطبيق باستخدام [محرر لوحة التدرج](../map/tracks/appearance.md#gradient-palettes). هذه ميزة مدفوعة <ProFeature />.
+على أندرويد، يمكن أيضًا إنشاء أو تعديل اللوحات مباشرة داخل التطبيق باستخدام [محرر لوحة التدرج](../map/tracks/appearance.md#color-palette-editor). هذه ميزة مدفوعة <ProFeature />.
 
 ### المفضلات ونقاط الطريق {#favorites-waypoints}
 

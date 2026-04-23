@@ -1,5 +1,5 @@
 ---
-source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  إعداد المسار
 ---
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![شاشة الملاحة iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![شاشة الملاحة iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![شاشة الملاحة iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![شاشة الملاحة iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -72,7 +72,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. يمكن استخدام [*إعدادات الملاحة*](#settings) الإضافية حسب أغراضك (يمكنك تكوين الطرق التي يجب تجنبها أو تفضيلها، وتوفير الوقود أو اختيار أسرع مسار، إلخ).
 
-3. [ابدأ](#start--stop-navigation) الملاحة أو أولاً [قم بمحاكاة الملاحة](#simulated-navigation) (باستخدام هذه الوظيفة يمكنك اختبار مسارك قبل السفر عليه فعليًا).
+3. [ابدأ](#start--stop-navigation) الملاحة أو أولاً [قم بمحاكاة الملاحة](#simulated-navigation) (باستخدام هذه الوظيفة يمكنك اختبار مسارك قبل السفر عليه فعليًا). [على أجهزة iOS](https://support.apple.com/en-us/121430) في دول الاتحاد الأوروبي، يمكن أيضًا تعيين OsmAnd كتطبيق الملاحة الافتراضي في إعدادات النظام، مما يسمح له بالفتح تلقائيًا لطلبات الملاحة.
 
 4. أثناء وجودك على المسار، يمكنك [*إيقاف/استئناف*](#pause--resume-navigation) الملاحة و[*إيقافها*](#start--stop-navigation).
 
@@ -293,7 +293,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![شاشة الملاحة iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![شاشة الملاحة iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -303,7 +303,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **انقر على ابدأ** لبدء الملاحة.
 - [إيقاف مؤقت](#pause--resume-navigation) للملاحة عند أخذ استراحة. (*أندرويد فقط*)
-- **إيقاف** الملاحة عن طريق تحديد **إيقاف** (*أندرويد*) أو **إلغاء** (*iOS*).
+- **إيقاف** الملاحة عن طريق تحديد **إيقاف** (*أندرويد*) أو **Cansel** (*iOS*).
 
 :::note تفاصيل المسار
 يمكن العثور على معلومات إضافية حول المسار الذي تم إنشاؤه، مثل الارتفاع، وتعليمات المنعطفات، وأداة التحليل، وغيرها، في قسم [**التفاصيل**](../setup/route-details.md).
@@ -473,7 +473,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![رسالة لا توجد خرائط عند إنشاء الملاحة iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![رسالة لا توجد خرائط عند إنشاء الملاحة iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

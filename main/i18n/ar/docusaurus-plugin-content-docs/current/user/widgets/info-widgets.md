@@ -1,5 +1,5 @@
 ---
-source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
+source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
 sidebar_position: 3
 title: الأدوات الإعلامية
 ---
@@ -252,8 +252,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → Glide ratio* |
-|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → Glide ratio* |
+| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
+|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
 | بالنقر | يغير *نسبة الانزلاق إلى الهدف* أو *ارتفاع الهدف*  |
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -265,8 +265,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |:------------|:------------|
-| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → Glide ratio* |
-|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → Glide ratio* |
+| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
+|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
 | بالنقر | يغير *نسبة الانزلاق المتوسطة* أو *السرعة العمودية المتوسطة*  |
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -448,7 +448,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | | |
 |:------------|:------------|
 | تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
-|        | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Speedometer* |
+|        | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ عداد السرعة* |
 | تنسيق | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 
@@ -768,25 +768,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### الذاكرة المتاحة {#available-ram}
+#### معلومات الذاكرة {#memory-info}
 
 <InfoAndroidOnly />
 
-![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
+![Memory info widgets](@site/static/img/widgets/memory_info.png)
 
-أداة **الذاكرة المتاحة** هي أداة لمراقبة استخدام ذاكرة جهازك فيما يتعلق بـ OsmAnd. توفر بيانات مفصلة للمساعدة في تحسين أداء التطبيق.
+أداة **معلومات الذاكرة** هي أداة للمطورين لمراقبة كيفية استخدام OsmAnd لذاكرة الجهاز. توفر معلومات حول أنواع مختلفة من الذاكرة المستخدمة بواسطة التطبيق.
 
-- **الذاكرة المتاحة للتطبيق.** تعرض كمية الذاكرة المتاحة لاستخدام OsmAnd دون التسبب في مشكلات أداء.
+الأوضاع المتاحة:  
+- **<Translate android="true" ids="memory_used_settings"/>** — تعرض كمية ذاكرة كومة جافا المستخدمة حالياً بواسطة الكائنات في التطبيق.
+- **<Translate android="true" ids="memory_allocated_settings"/>** — تعرض كمية الذاكرة التي خصصتها الآلة الافتراضية جافا (JVM) حالياً للتطبيق.
+- **<Translate android="true" ids="memory_limit_settings"/>** — تشير إلى الحجم الأقصى لكومة جافا المسموح به للتطبيق بواسطة نظام أندرويد.
+- **<Translate android="true" ids="memory_native_settings"/>** — تعرض كمية الذاكرة المخصصة من خلال الكود الأصلي (C/C++)، بما في ذلك المكتبات النظامية ومكونات NDK.
+- **<Translate android="true" ids="memory_graphics_settings"/>** — تعرض كمية الذاكرة المستخدمة للموارد الرسومية مثل نسيج OpenGL والمخازن المؤقتة.
 
-- **استخدام الذاكرة للتطبيق** — تعرض الاستهلاك الحالي للذاكرة بواسطة OsmAnd.
-
-- **إجمالي الذاكرة للتطبيق** — تشير إلى إجمالي الذاكرة المخصصة لـ OsmAnd، بما في ذلك الذاكرة المستخدمة والمتاحة.
-
-> **ملاحظة**. *قد يختلف *إجمالي الذاكرة المتاحة* اعتماداً على العمليات الخلفية والتطبيقات الأخرى التي تعمل على جهازك. هذه القيم ديناميكية وتوفر طريقة لتتبع وإدارة استخدام الذاكرة لأداء OsmAnd مستقر وفعال.*
+**ملاحظة:** قد تتقلب قيم الذاكرة اعتماداً على العمليات النظامية، والتطبيقات الخلفية، والنشاط الحالي داخل OsmAnd. هذه القيم ديناميكية ومخصصة أساساً للتصحيح ومراقبة الأداء.
 
 | | |
 |:------------|:------------|
-| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="developer_widgets"/> → *Available RAM* |
+| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="developer_widgets,map_widget_memory_info"/>* |
 | بالنقر | لا تغييرات |
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
