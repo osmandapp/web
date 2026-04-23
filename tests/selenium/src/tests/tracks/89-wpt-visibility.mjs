@@ -47,13 +47,13 @@ export default async function test() {
     await assert(isOnAfter, 'Switch should be ON after click');
 
     // Get initial marker count (find all visible waypoint markers on map)
-    const initialMarkers = await getVisibleWaypointMarkers();
+    const initialMarkers = await getVisibleWaypointMarkers(9);
     const initialCount = initialMarkers.length;
     await assert(initialCount === 9, `Track should have 9 waypoints, got ${initialCount}`);
 
     // Test: Toggle first group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
-    const afterFirstHide = await getVisibleWaypointMarkers();
+    const afterFirstHide = await getVisibleWaypointMarkers(6);
     await assert(afterFirstHide.length === 6, `First group should be hidden. Expected 6, got ${afterFirstHide.length}`);
 
     // log out and log in again
@@ -64,13 +64,13 @@ export default async function test() {
     // open track
     await clickBy(By.id('se-show-menu-tracks'));
     await clickBy(By.id('se-cloud-track-' + trackName));
-    const afterReload = await getVisibleWaypointMarkers();
+    const afterReload = await getVisibleWaypointMarkers(6);
     await assert(afterReload.length === 6, `First group should be hidden. Expected 6, got ${afterReload.length}`);
     await clickBy(By.css("[testid='se-tab-points']"));
 
     // Test: Toggle second group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    const afterSecondHide = await getVisibleWaypointMarkers();
+    const afterSecondHide = await getVisibleWaypointMarkers(1);
     await assert(
         afterSecondHide.length === 1,
         `Both groups should be hidden. Expected 1, got ${afterSecondHide.length}`
@@ -89,7 +89,7 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
     await clickBy(By.id('se-cloud-track-' + trackName));
 
-    const afterFirstShow = await getVisibleWaypointMarkers();
+    const afterFirstShow = await getVisibleWaypointMarkers(4);
     await assert(
         afterFirstShow.length === 4,
         `First group should be visible again. Expected 4, got ${afterFirstShow.length}`
@@ -98,7 +98,7 @@ export default async function test() {
 
     // Test: Toggle second group visibility ON
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    const afterBothShow = await getVisibleWaypointMarkers();
+    const afterBothShow = await getVisibleWaypointMarkers(9);
     await assert(afterBothShow.length === 9, `Both groups should be visible. Expected 9, got ${afterBothShow.length}`);
 
     // Close track and cleanup
@@ -107,18 +107,30 @@ export default async function test() {
 }
 
 // Helper function to count visible waypoint markers on the map
-async function getVisibleWaypointMarkers() {
-    await actionIdleWait({ idle: 1000 });
-    // Find all waypoint markers that are visible (display !== 'none')
-    const markers = await driver.findElements(By.className('leaflet-marker-icon'));
-
-    const visibleMarkers = [];
-    for (const marker of markers) {
-        const display = await marker.getCssValue('display');
-        if (display !== 'none') {
-            visibleMarkers.push(marker);
+async function getVisibleWaypointMarkers(expectedCount = null) {
+    const countMarkers = async () => {
+        const markers = await driver.findElements(By.className('leaflet-marker-icon'));
+        const visible = [];
+        for (const marker of markers) {
+            const display = await marker.getCssValue('display');
+            if (display !== 'none') {
+                visible.push(marker);
+            }
         }
-    }
+        return visible;
+    };
 
+    await actionIdleWait({ idle: 1000 });
+
+    const TIMEOUT_VISIBLE_MARKERS_MS = 3000;
+    const deadline = Date.now() + TIMEOUT_VISIBLE_MARKERS_MS;
+    let visibleMarkers = [];
+    while (Date.now() < deadline) {
+        visibleMarkers = await countMarkers();
+        if (visibleMarkers.length === expectedCount) {
+            break;
+        }
+        await actionIdleWait({ idle: 300 });
+    }
     return visibleMarkers;
 }
