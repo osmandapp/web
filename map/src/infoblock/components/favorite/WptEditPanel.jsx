@@ -1,5 +1,6 @@
 import { Box, Button, IconButton, LinearProgress, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
 import { Add } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
@@ -24,6 +25,7 @@ import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { apiGet } from '../../../util/HttpApi';
 import { getUniqFileId } from '../../../manager/GlobalManager';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
+import PrimaryBtn from '../../../frame/components/btns/PrimaryBtn';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 
@@ -31,14 +33,20 @@ const PANEL_CONTENT_WIDTH = 320;
 
 export default function WptEditPanel({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const editWpt = ctx.addFavorite?.editWpt ?? null;
     const poi = ctx.addFavorite?.poi ?? null;
+
     const isEditMode = editWpt !== null;
-    const isPoi = !isEditMode && poi !== null;
-    const isAddTrackWpt = !isEditMode && !isPoi && !!ctx.addFavorite?.editTrack;
+    const isAddMode = !isEditMode;
+
+    const isPoi = isAddMode && poi !== null;
+
+    const isAddTrackWpt = isAddMode && !isPoi && !!ctx.addFavorite?.editTrack;
     const isEditTrackWpt = isEditMode && (editWpt.trackWpt || !!ctx.addFavorite?.editTrack);
-    const isTrackMode = isAddTrackWpt || isEditTrackWpt;
+    const isTrackWpt = isAddTrackWpt || isEditTrackWpt;
+
     const useSelected = !isEmpty(ctx.selectedGpxFile);
 
     const [favoriteName, setFavoriteName] = useState(editWpt?.name ?? '');
@@ -63,7 +71,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     useEffect(() => {
         getIconCategories().then();
-        if (!isEditMode && !isTrackMode) {
+        if (!isEditMode && !isTrackWpt) {
             const defaultGroup = ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME);
             if (defaultGroup) {
                 setFavoriteGroup(defaultGroup);
@@ -389,7 +397,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     }
 
     function groupHasSameWpt() {
-        if (isEditMode || isTrackMode) return false;
+        if (isEditMode || isTrackWpt) return false;
         const selectedGroup =
             favoriteGroup === null
                 ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)
@@ -407,7 +415,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         );
     }
 
-    const groups = isTrackMode ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
+    const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
     const defaultGroup = isAddTrackWpt
         ? DEFAULT_GROUP_NAME_POINTS_GROUPS
         : isEditMode
@@ -415,11 +423,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
           : FavoritesManager.DEFAULT_GROUP_NAME;
     const title = isEditMode
         ? isEditTrackWpt
-            ? 'Edit waypoint'
-            : 'Edit favorite'
+            ? t('web:edit_waypoint')
+            : t('web:edit_favorite')
         : isAddTrackWpt
-          ? 'Add waypoint'
-          : 'Add favorite';
+          ? t('web:add_waypoint')
+          : t('web:add_favorite');
 
     return (
         <Box className={styles.panel}>
@@ -429,6 +437,16 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 onClose={closePanel}
                 showBackButton={isEditMode}
                 appBarProps={{ id: isEditMode ? 'se-back-edit-wpt-panel' : 'se-close-add-wpt-panel' }}
+                rightContent={
+                    <Box className={styles.saveAction}>
+                        <PrimaryBtn
+                            id={isEditMode ? 'se-edit-fav-item-submit' : 'se-add-fav-btn'}
+                            text={t('web:shared_string_save')}
+                            disabled={errorName || groupHasSameWpt()}
+                            action={() => save()}
+                        />
+                    </Box>
+                }
             />
             <Box id={isEditMode ? 'se-edit-fav-dialog' : 'se-add-fav-dialog'} className={styles.content}>
                 <FavoriteName
@@ -508,15 +526,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     setFavoriteShape={setFavoriteShape}
                     defaultBackground={isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}
                 />
-                <Box className={styles.actions}>
-                    <Button
-                        id={isEditMode ? 'se-edit-fav-item-submit' : 'se-add-fav-btn'}
-                        disabled={errorName || groupHasSameWpt()}
-                        onClick={() => save()}
-                    >
-                        Save
-                    </Button>
-                </Box>
+
                 {isEditMode && (
                     <Box className={styles.deleteAction}>
                         <Button

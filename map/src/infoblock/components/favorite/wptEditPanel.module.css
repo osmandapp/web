@@ -17,6 +17,13 @@
     padding-top: 8px;
 }
 
+.saveAction {
+    display: flex;
+    padding: 0 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .deleteAction {
     display: flex;
     justify-content: flex-start;
