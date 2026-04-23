@@ -66,7 +66,7 @@ export default function GarminConnectMenu() {
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBarWithBtns id="garmin-connect" header="Garmin Connect" hasBackBtn={true} leftBtnAction={goBack} />
 
-            <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Box className={gStyles.scrollActiveBlock}>
                 {loading && <Loading />}
 
                 {!loading && !garminLinked && <GarminNotConnectedView />}
