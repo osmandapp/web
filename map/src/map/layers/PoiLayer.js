@@ -27,7 +27,6 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
-import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
@@ -189,9 +188,6 @@ export default function PoiLayer() {
     const [useLimit, setUseLimit] = useState(false);
     const [bbox, setBbox] = useState(null);
     const [prevCategories, setPrevCategories] = useState(null);
-    const [openAddDialog, setOpenAddDialog] = useState(false);
-    const [selectedPoi, setSelectedPoi] = useState(false);
-
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
@@ -705,22 +701,5 @@ export default function PoiLayer() {
         }
     }
 
-    useEffect(() => {
-        if (ctx.addFavorite.location && ctx.addFavorite.poi && !openAddDialog) {
-            setOpenAddDialog(true);
-            setSelectedPoi({ poi: ctx.addFavorite.poi, address: ctx.addFavorite.address });
-        }
-    }, [ctx.addFavorite]);
-
-    return (
-        <>
-            {selectedPoi && openAddDialog && ctx.addFavorite.location && (
-                <AddFavoriteDialog
-                    dialogOpen={openAddDialog}
-                    setDialogOpen={setOpenAddDialog}
-                    selectedPoi={selectedPoi}
-                />
-            )}
-        </>
-    );
+    return null;
 }

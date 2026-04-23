@@ -1,0 +1,30 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content {
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.fields {
+    padding: 8px 16px 16px 16px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+}
+
+.saveAction {
+    display: flex;
+    padding: 0 12px;
+    justify-content: flex-end;
+    align-items: center;
+}

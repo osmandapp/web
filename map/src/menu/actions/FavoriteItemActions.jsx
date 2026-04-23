@@ -3,7 +3,6 @@ import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography }
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
-import EditWptDialog from '../../dialogs/favorites/EditWptDialog';
 import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
 import FavoritesManager, {
     isNoValue,
@@ -19,7 +18,6 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
     const { t } = useTranslation();
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-    const [openEditDialog, setOpenEditDialog] = useState(false);
 
     const favorite = getFavorite();
 
@@ -53,7 +51,14 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
         <>
             <Box ref={ref}>
                 <Paper id="se-fav-item-actions" className={styles.actions}>
-                    <MenuItem id={'se-edit-fav-item'} className={styles.action} onClick={() => setOpenEditDialog(true)}>
+                    <MenuItem
+                        id={'se-edit-fav-item'}
+                        className={styles.action}
+                        onClick={() => {
+                            ctx.setAddFavorite((prev) => ({ ...prev, editWpt: favorite }));
+                            setOpenActions(false);
+                        }}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <RenameIcon />
                         </ListItemIcon>
@@ -88,16 +93,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                     setOpenActions={setOpenActions}
                 />
             )}
-            {openEditDialog && (
-                <EditWptDialog
-                    wpt={favorite}
-                    editFavoritesDialogOpen={openEditDialog}
-                    setEditFavoritesDialogOpen={setOpenEditDialog}
-                    deleteFavoritesDialogOpen={openDeleteDialog}
-                    setDeleteFavoritesDialogOpen={setOpenDeleteDialog}
-                    setOpenActions={setOpenActions}
-                />
-            )}
+
         </>
     );
 });

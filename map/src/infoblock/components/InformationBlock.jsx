@@ -22,6 +22,7 @@ import {
     INFO_MENU_URL,
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
+    MENU_INFO_OPEN_SIZE,
     SHARE_FILE_MAIN_URL,
     SHARE_MENU_URL,
     TRACKS_URL,
@@ -31,6 +32,7 @@ import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
+import WptEditPanel from './favorite/WptEditPanel';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createUrlParams, encodeString } from '../../util/Utils';
 import LoginContext from '../../context/LoginContext';
@@ -64,6 +66,7 @@ export default function InformationBlock({
     const [trackType, setTrackType] = useState(null);
     const [closeShareMenu, setCloseShareMenu] = useState(false);
 
+    const showWptEditPanel = !!ctx.addFavorite?.location || !!ctx.addFavorite?.editWpt;
     const showTrackContextMenu = ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem;
 
     /**
@@ -82,6 +85,13 @@ export default function InformationBlock({
             window.addEventListener('keydown', escapePointMenu);
         }
     }, [ctx.pointContextMenu]);
+
+    useEffect(() => {
+        if (showWptEditPanel) {
+            setShowInfoBlock(true);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+        }
+    }, [showWptEditPanel]);
 
     useEffect(() => {
         if (closeShareMenu) {
@@ -412,7 +422,9 @@ export default function InformationBlock({
             )}
             {showInfoBlock &&
                 !trackUrlOpenLoading &&
-                (openWptDetails ? (
+                (showWptEditPanel ? (
+                    <WptEditPanel setShowInfoBlock={setShowInfoBlock} />
+                ) : openWptDetails ? (
                     ctx.photoGallery ? (
                         <WptPhotoList photos={ctx.photoGallery} />
                     ) : (

@@ -1,7 +1,6 @@
 import styles from '../../../infoblock.module.css';
 import { Box } from '@mui/material';
 import React, { useContext, useState } from 'react';
-import EditWptDialog from '../../../../dialogs/favorites/EditWptDialog';
 import DeleteWptDialog from '../../../../dialogs/favorites/DeleteWptDialog';
 import { ReactComponent as DeleteIcon } from '../../../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as EditIcon } from '../../../../assets/icons/ic_action_edit_outlined.svg';
@@ -18,7 +17,6 @@ export default function FavoriteActionsButtons({ wpt }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [editWptDialogOpen, setEditWptDialogOpen] = useState(false);
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
     const isShare = wpt.type.isShareFav || wpt.sharedWithMe;
@@ -58,7 +56,7 @@ export default function FavoriteActionsButtons({ wpt }) {
                 {!isShare && (
                     <BlueBtn
                         action={() => {
-                            setEditWptDialogOpen(true);
+                            ctx.setAddFavorite((prev) => ({ ...prev, editWpt: wpt }));
                         }}
                         id={'se-edit-fav-item'}
                         icon={<EditIcon className={styles.wptActionButtonIcon} />}
@@ -99,15 +97,6 @@ export default function FavoriteActionsButtons({ wpt }) {
                     additionalStyle={{ flex: 1 }}
                 />
             </Box>
-            {editWptDialogOpen && (
-                <EditWptDialog
-                    wpt={wpt}
-                    editFavoritesDialogOpen={editWptDialogOpen}
-                    setEditFavoritesDialogOpen={setEditWptDialogOpen}
-                    deleteFavoritesDialogOpen={deleteWptDialogOpen}
-                    setDeleteFavoritesDialogOpen={setDeleteWptDialogOpen}
-                />
-            )}
             {deleteWptDialogOpen && (
                 <DeleteWptDialog dialogOpen={deleteWptDialogOpen} setDialogOpen={setDeleteWptDialogOpen} wpt={wpt} />
             )}

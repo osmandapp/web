@@ -103,3 +103,7 @@ Use `?.` whenever a value may be `null` or `undefined`. Avoid `&&`-chains for pr
 ## Avoid code duplication
 
 Before writing anything — check if it already exists. Extract shared logic into modules, pass data that's already fetched instead of re-fetching it.
+
+## refs — last resort
+
+Use `useRef` / `ref` only when the problem **cannot be solved any other way**. Always look for a solution via state, context, props, or derived values first. A `ref` is acceptable only when all other options are unsuitable (e.g. direct DOM node access, storing a value without triggering a re-render).

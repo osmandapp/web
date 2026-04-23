@@ -20,6 +20,7 @@ export default function ImportFavoriteDialog({ setOpenDialog, setImportFavoriteG
                     Cancel
                 </Button>
                 <Button
+                    id="se-import-fav-keep-both"
                     className={dialogStyles.button}
                     onClick={() => {
                         setImportFavoriteGroup(true);

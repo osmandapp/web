@@ -1,10 +1,9 @@
-import React, { useCallback, useContext, useEffect, useRef, useState, useMemo } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState, useMemo } from 'react';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
 import { useSearchParams } from 'react-router-dom';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
-import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
@@ -97,8 +96,6 @@ const FavoriteLayer = () => {
         const group = ctx.favorites.groups.find((g) => g.name === folderName);
         return group?.id || null;
     }, [searchParams, ctx.favorites?.groups]);
-
-    const [openAddDialog, setOpenAddDialog] = useState(false);
 
     const selectedGpxFileRef = useRef(ctx.selectedGpxFile);
     const folderNameRef = useRef(searchParams.get(FAVORITES_URL_PARAM_FOLDER));
@@ -411,10 +408,6 @@ const FavoriteLayer = () => {
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     }
 
-    useEffect(() => {
-        setOpenAddDialog((ctx.addFavorite.location && !ctx.addFavorite.poi && !openAddDialog) ?? false);
-    }, [ctx.addFavorite]);
-
     function deleteMarkers(file) {
         if (file.markers && !isEmpty(file.markers)) {
             if (map.hasLayer(file.markers)) {
@@ -436,7 +429,7 @@ const FavoriteLayer = () => {
         }
     }
 
-    return <AddFavoriteDialog dialogOpen={openAddDialog} setDialogOpen={setOpenAddDialog} />;
+    return null;
 };
 
 export default FavoriteLayer;
