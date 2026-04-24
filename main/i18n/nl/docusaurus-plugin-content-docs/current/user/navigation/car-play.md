@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -91,7 +91,7 @@ Alle categorieën voor de selectie van het **eindpunt van de route**, *[Geschied
 ### CarPlay-profiel {#carplay-profile}
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
-![Algemene Instellingen Standaardprofiel Android](@site/static/img/personal/profiles/CarPlay_ios.png)
+![Algemene instellingen Standaardprofiel Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
 Het **CarPlay-profiel** is een specifiek profiel in de OsmAnd-app voor handig gebruik van het audio- en videosysteem van uw auto voor verdere weergave van deze gegevens op uw telefoon.  
 
@@ -278,10 +278,10 @@ De OsmAnd-app kan worden geopend en gebruikt voor navigatie in *CarPlay* op het 
 Wanneer de navigatie in CarPlay is voltooid, toont OsmAnd een dialoog **“U bent gearriveerd”** op het voertuigscherm. Deze dialoog gebruikt dezelfde logica voor aankomstdetectie als de mobiele app en biedt snelle toegang tot veelvoorkomende acties na het bereiken van uw bestemming.
 
 Beschikbare acties:
-- **Markeren als parkeerlocatie**. Slaat uw huidige positie op als parkeerlocatie en plaatst een parkeermarker op de kaart.
-- **Parkeerplaats vinden**. Opent het Zoekscherm met de categorie Parkeren vooraf geselecteerd om u te helpen nabijgelegen parkeeropties te vinden.
-- **Route herberekenen**. Bouwt een nieuwe route naar de oorspronkelijke bestemming als u de navigatie wilt voortzetten.
-- **Navigatie beëindigen**. Beëindigt de huidige route en brengt OsmAnd terug naar de standaardkaartstatus.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Slaat uw huidige positie op als parkeerlocatie en plaatst een parkeermarker op de kaart.
+- **<Translate ios="true" ids="find_parking"/>**. Opent het Zoekscherm met de categorie Parkeren vooraf geselecteerd om u te helpen nabijgelegen parkeeropties te vinden.
+- **<Translate ios="true" ids="recalculate_route"/>**. Bouwt een nieuwe route naar de oorspronkelijke bestemming als u de navigatie wilt voortzetten.
+- **<Translate ios="true" ids="finish_navigation"/>**. Beëindigt de huidige route en brengt OsmAnd terug naar de standaardkaartstatus.
 
 Als CarPlay wordt losgekoppeld terwijl de navigatie actief is, past OsmAnd extra logica toe op de iPhone:
 - Als de afstand tot de bestemming minder dan 100 m is, wordt de navigatie automatisch beëindigd en wordt het standaardprofiel hersteld. In dit geval wordt de melding “U bent gearriveerd” niet weergegeven op het scherm van de telefoon.

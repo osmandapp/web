@@ -1,5 +1,5 @@
 ---
-source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -27,8 +27,8 @@ Voor Android-apparaten kunt u de **Gratis** en **Betaalde** versies van de appli
 
 |  App  | Google Play | Huawei AppGallery | Free / Paid |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Installeren](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Installeren](https://appgallery.huawei.com/#/app/C101486545) | Gratis |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Installeren](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Betaald |
+| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) | Free |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Paid |
 
 **Soorten aankopen:**
 
@@ -96,10 +96,10 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regi
 
 -->
 
-|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 Maanden) | **Abonnement** (1 Maand / 12 Maanden) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
@@ -126,12 +126,14 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografische gegevens](../plugins/topography.md#overview)<br/>(Contourlijnen en Terrein) | **-** | ✔ | ✔ |
 | [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-gebouwen — Kleuraanpassing](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D-gebouwen — Kleuraanpassing](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [3D-trackvisualisatie](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Populaire plaatsen (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage - Reisgidsen](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Astronomie-plugin](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Astronomie-plugin](../plugins/astronomy.md) — [Observatieplanning](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomie-plugin](../plugins/astronomy.md) — [Interactieve AR-modus](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomie-plugin](../plugins/astronomy.md) — [Offline hemelkaart](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Offline en online navigatie](../navigation/index.md)<br/>met stapsgewijze aanwijzingen | ✔ | ✔ | ✔ |
 | [Offline direct zoeken](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip opnemen](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -225,8 +227,8 @@ Om de aankoop te herstellen, controleer welk OsmAnd-plan u hebt gekocht.
 
 |  App  | Google Play  | Huawei AppGallery |
 | :------------- | :------------- | :------------- |
-| OsmAnd  | ✔  &nbsp;&nbsp;[Installeren](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Installeren](https://appgallery.huawei.com/#/app/C101486545) |
-| OsmAnd+  | ✔  &nbsp;&nbsp;[Installeren](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
+| OsmAnd  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) |
+| OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
 ### Abonnement / In-app herstellen {#restore-subscription--in-app}
 

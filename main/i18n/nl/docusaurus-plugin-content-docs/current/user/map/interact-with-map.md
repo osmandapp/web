@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
@@ -206,20 +206,29 @@ Het *Kaartvergrootglas* is een hulpmiddel dat de zichtbaarheid van de kaart verb
 
 ### Bolweergave {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Bolweergave](@site/static/img/map/globe_view_1.png) ![Bolweergave](@site/static/img/map/globe_view_2.png)
 
 **Bolweergave** stelt u in staat de kaart weer te geven als een bolvormige aarde in plaats van een platte projectie. Deze modus verandert de geometrie van het kaaroppervlak en past de kaartinteractie aan op bolvormige navigatie.  
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
-Bolweergave is momenteel alleen beschikbaar wanneer:
-- De [Development plugin](../plugins/development.md) is ingeschakeld.  
-Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>* 
-- De [Topografie-plugin](../plugins/topography.md) is ingeschakeld.  
-Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
-- De [Kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) is ingesteld op Versie 2 (OpenGL).  
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Bolweergave](@site/static/img/map/globe_view_1_ios.png) ![Bolweergave](@site/static/img/map/globe_view_2_ios_new.png)
+
+**Bolweergave** stelt u in staat de kaart weer te geven als een bolvormige aarde in plaats van een platte projectie. Deze modus verandert de geometrie van het kaaroppervlak en past de kaartinteractie aan op bolvormige navigatie.  
+
+</TabItem>
+
+</Tabs>
 
 Wanneer Bolweergave is ingeschakeld, draait de kaart als een bol. Sleepgebaren draaien de aarde, en zoom verandert de camerafocus in plaats van een plat oppervlak te schalen. Kaartelementen zoals sporen, markeringen, symbolen en 3D-objecten worden direct op het bolvormige oppervlak weergegeven en volgen de kromming ervan. Objecten verdwijnen geleidelijk achter de horizon naarmate de bol draait.
 

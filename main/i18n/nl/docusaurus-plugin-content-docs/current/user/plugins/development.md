@@ -1,5 +1,5 @@
 ---
-source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Testfuncties van de app zijn verzameld in de OsmAnd ontwikkelingsplugin. Gebruik ze op eigen risico.
 
-De OsmAnd ontwikkelingsplugin stelt u in staat om nieuwe functies van de app uit te proberen of om OsmAnd te configureren voor testdoeleinden: navigatieroutes simuleren, de prestaties van de schermweergave controleren, enz. De plugin is ontworpen voor *ontwikkelaars en ervaren gebruikers* en is niet vereist voor dagelijks gebruik van de applicatie.
+De OsmAnd ontwikkelingsplugin stelt u in staat om nieuwe functies van de app uit te proberen of om OsmAnd te configureren voor testdoeleinden: navigatieroutes simuleren, de prestaties van de schermweergave controleren, enz. De plugin is ontworpen voor *ontwikkelaars en ervaren gebruikers* en is niet vereist voor dagelijks gebruik van de applicatie.  
 
 
 ## Vereiste Instelparameters {#required-setup-parameters}
@@ -28,36 +28,36 @@ De OsmAnd ontwikkelingsplugin stelt u in staat om nieuwe functies van de app uit
 Om speciale functies voor ontwikkelaars en testers te activeren:
 
 1. [Schakel](../plugins/index.md#enable--disable) de OsmAnd ontwikkelingsplugin in de sectie Plugins van het *Hoofdmenu* in.
-2. Maak de nodige instellingen in het [Instellingenmenu](#plugin-settings) van de plugin.
-3. Schakel indien nodig **ontwikkelaarswidgets** in.
+2. Maak de nodige instellingen in het [Instellingenmenu](#plugin-settings) van de plugin.  
+3. Schakel indien nodig **ontwikkelaarswidgets** in.  
 
 
 ## Plugin-instellingen {#plugin-settings}
 
-:::info info
-De instellingen van de OsmAnd ontwikkelingsplugin zijn globaal en van toepassing op alle profielen.
-:::
+:::info info  
+De instellingen van de OsmAnd ontwikkelingsplugin zijn globaal en van toepassing op alle profielen.  
+:::  
 
-Gebruik een van de volgende paden om de plugin-instellingen te openen:
+Gebruik een van de volgende paden om de plugin-instellingen te openen:  
 
 - *Hoofdmenu → Plugins → OsmAnd ontwikkeling → Instellingen*.
-- *Hoofdmenu → [Algemene instellingen](../personal/global-settings.md) → Profiel → Instellingen OsmAnd ontwikkelingsplugin*.
+- *Hoofdmenu → [Algemene instellingen](../personal/global-settings.md) → Profiel → Instellingen OsmAnd ontwikkelingsplugin*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_2_new.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 
 ### Terrein {#terrain}
@@ -71,13 +71,14 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 - **Batterijbesparingsmodus** (*Android* / *iOS*). Deze instelling verlaagt [de verversingssnelheid van het scherm](#map-rendering-fps-widget) met 20 frames per seconde om de batterij te sparen tijdens het gebruik van applicaties.
 - **Gebruik 3D-locatiepositiepictogrammen** (*iOS*). Hiermee kunt u een 3D-pictogram selecteren voor het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance).
 - **Simuleer obd-gegevens** (*Android* / *iOS*). Maakt simulatie van het gebruik van een [OBD-scanner](./vehicle-metrics.md) mogelijk.
-- **Prestatie-debug-info** (*Android* / *iOS*). Toont weergave- en navigatieprestaties.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Toont weergave- en navigatieprestaties.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Toont debug-informatie over tegelrasterisatie.
 - **Kaartlagen uitschakelen** (*Android*). Schakelt alle kaartlagen over de vectorkaart uit (herstart vereist).
-- **Logcat-buffer** (*Android*). Controleer en deel gedetailleerde logboeken van de app.
+- **Logcat-buffer** (*Android*). Controleer en deel gedetailleerde logboeken van de app.  
 - **Toon toast over ingedrukte toets** (*Android*). Toon een bericht over de toets.
-- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Peiling is de kompasrichting van uw huidige positie naar uw beoogde bestemming. Beïnvloedt *[trackopname](../plugins/trip-recording.md)*.
+- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Peiling is de kompasrichting van uw huidige positie naar uw beoogde bestemming. Beïnvloedt *[trackopname](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Koers is de kompasrichting van uw huidige positie naar het ware noorden. Deze optie is standaard ingeschakeld. Beïnvloedt *[trackopname](../plugins/trip-recording.md)*.
-- **MSAA inschakelen** (*Android*) / **MSAA inschakelen voor CarPlay** (*iOS*). Schakelt multisample anti-aliasing in om de kaartweergave te verzachten. Verbetert de visuele kwaliteit van het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance) en de routelijn door pixelige randen te verminderen. Op Android beïnvloedt deze optie de kaartweergave op het apparaat en bij gebruik van [Android Auto](../navigation/auto-car.md). Op iOS is het alleen van toepassing op [CarPlay](../navigation/car-play.md).
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Schakelt multisample anti-aliasing in om de kaartweergave te verzachten. Verbetert de visuele kwaliteit van het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance) en de routelijn door pixelige randen te verminderen. Op Android beïnvloedt deze optie de kaartweergave op het apparaat en bij gebruik van [Android Auto](../navigation/auto-car.md). Op iOS is het alleen van toepassing op [CarPlay](../navigation/car-play.md).
 
 
 ### Applicatietesten {#application-testing}
@@ -85,10 +86,10 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::caution Android only
 :::
 
-- **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.
-- **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.
-- **Transparante statusbalk**. De kaart wordt zichtbaar onder de statusbalk.
-- **Toon banner gratis versie**. Toon de banner van de gratis versie, zelfs in de betaalde versie.
+- **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
+- **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.  
+- **Transparante statusbalk**. De kaart wordt zichtbaar onder de statusbalk.  
+- **Toon banner gratis versie**. Toon de banner van de gratis versie, zelfs in de betaalde versie.  
 - **Toon debug-informatie**. Toon grafische informatie over de plaatsing van elke tekst op de kaart.
 - **Sta weergave bovenaan toe**. Staat toe dat kaartteksten over elkaar heen worden weergegeven.
 
@@ -98,13 +99,13 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::caution Android only
 :::
 
-- **Veilige modus**. Voer de app uit in de (langzamere) veilige modus.
+- **Veilige modus**. Voer de app uit in de (langzamere) veilige modus.  
 
 
 ### Geheugeninstellingen {#memory-settings}
 
 :::caution Android only
-:::
+:::  
 
 - De optie **Geheugen toegewezen voor routering** stelt u in staat om de hoeveelheid geheugen te bepalen die wordt toegewezen voor het berekenen van lange routes. U kunt deze optie gebruiken als de [Standaard routering A*](../navigation/guidance/navigation-settings.md#development-settings) is geselecteerd in de *Navigatie-instellingen*.
 
@@ -117,14 +118,14 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 ### Info en Statistieken {#info-and-statistics}
 
 :::caution Android only
-:::
+:::  
 
-- **Toegewezen geheugen**. Toont het toegewezen systeemgeheugen voor de OsmAnd-applicatie.
-- **Totaal native geheugen**. Toont de totale hoeveelheid native geheugen die aan de applicatie is toegewezen, inclusief proportioneel geheugen.
-- **A-GPS-info**. Geeft aan wanneer A-GPS-gegevens voor het laatst zijn gedownload.
-- **Dag/nacht-info**. Geeft de tijden van zonsopgang en zonsondergang van vandaag aan.
-- **Energiestatistieken (gemiddeld 1 / 5 / 15 minuten)**. Toont het batterijniveau per minuut (%) en het gemiddelde energieverbruik (mAh) over intervallen van 1, 5 en 15 minuten.
-- **Weergavestatistieken (gemiddeld 1 / 5 / 15 minuten)**. Toont weergavestatistieken, inclusief FPS over de laatste 1k frames, CPU (tegels), CPU (inactieve tijd) en CPU (stand-by) gemiddelden over intervallen van 1, 5 en 15 minuten.
+- **Toegewezen geheugen**. Toont het toegewezen systeemgeheugen voor de OsmAnd-applicatie.  
+- **Totaal native geheugen**. Toont de totale hoeveelheid native geheugen die aan de applicatie is toegewezen, inclusief proportioneel geheugen.  
+- **A-GPS-info**. Geeft aan wanneer A-GPS-gegevens voor het laatst zijn gedownload.  
+- **Dag/nacht-info**.  Geeft de tijden van zonsopgang en zonsondergang van vandaag aan.  
+- **Energiestatistieken (gemiddeld 1 / 5 / 15 minuten)**. Toont het batterijniveau per minuut (%) en het gemiddelde energieverbruik (mAh) over intervallen van 1, 5 en 15 minuten.  
+- **Weergavestatistieken (gemiddeld 1 / 5 / 15 minuten)**. Toont weergavestatistieken, inclusief FPS over de laatste 1k frames, CPU (tegels), CPU (inactieve tijd) en CPU (stand-by) gemiddelden over intervallen van 1, 5 en 15 minuten.  
 
 **Knop:**
 
@@ -136,12 +137,12 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 ## Kaartweergave FPS-widget {#map-rendering-fps-widget}
 
 :::info  Important
-OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.
+OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
@@ -149,15 +150,15 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*  
 
 ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 De [FPS-widget](../widgets/info-widgets.md#map-rendering-fps) toont hoe snel de kaart en kaartelementen worden weergegeven en vernieuwd. De numerieke waarde wordt aangegeven in frames per seconde (FPS).
 
@@ -165,20 +166,20 @@ De [FPS-widget](../widgets/info-widgets.md#map-rendering-fps) toont hoe snel de 
 ## Camerapositie-widgets {#camera-position-widgets}
 
 :::info  Important
-OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.
+OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
@@ -186,32 +187,32 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-U kunt [Camerapositie-widgets](../widgets/info-widgets.md#camera-widgets) gebruiken om de OsmAnd-kaart een realistisch uiterlijk te geven en overeen te laten komen met foto's van de aarde die zowel van bovenaf als vanuit de ruimte zijn genomen.
+U kunt [Camerapositie-widgets](../widgets/info-widgets.md#camera-widgets) gebruiken om de OsmAnd-kaart een realistisch uiterlijk te geven en overeen te laten komen met foto's van de aarde die zowel van bovenaf als vanuit de ruimte zijn genomen.  
 
 
 ### Camerakanteling {#camera-tilt}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
+![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
 
 </TabItem>
 
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
-De Camerakanteling-widget geeft de helling weer tussen de centrale kijkvector van de camera (kijker) en een denkbeeldige vlakke ondergrond van de aarde. De standaardwaarde is 90 graden (geen kanteling).
+![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
 
-:::note
+</TabItem>
+
+</Tabs>  
+
+De Camerakanteling-widget geeft de helling weer tussen de centrale kijkvector van de camera (kijker) en een denkbeeldige vlakke ondergrond van de aarde. De standaardwaarde is 90 graden (geen kanteling).  
+
+:::note  
 De camerakanteling wordt gewijzigd door de camera (kijker) te bewegen terwijl het middelpunt op de kaart (waar we naar kijken) hetzelfde blijft. De afstand ernaartoe (in feite, zoom) verandert niet.
 Tegelijkertijd verandert door de denkbeeldige beweging van de kijker de afstand van de camera tot het oppervlak.
 :::
@@ -221,49 +222,49 @@ Tegelijkertijd verandert door de denkbeeldige beweging van de kijker de afstand 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
+![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
 
 </TabItem>
 
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
-De Camerahoogte-widget toont de hoogte van de camera boven het oppervlakteniveau. De camerahoogte wordt aangegeven in meters / kilometers.
+![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
+
+</TabItem>
+
+</Tabs>  
+
+De Camerahoogte-widget toont de hoogte van de camera boven het oppervlakteniveau. De camerahoogte wordt aangegeven in meters / kilometers.  
 
 
 ### Zoomniveau {#zoom-level}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
+![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
 </TabItem>
 
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
-De widget heeft twee weergaven die worden omgeschakeld door erop te tikken:
+![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+De widget heeft twee weergaven die worden omgeschakeld door erop te tikken:  
 
 - **<Translate android="true" ids="map_widget_zoom_level"/>**. Toont het huidige zoomniveau van de kaart.
-- **<Translate android="true" ids="map_widget_map_scale"/>**. Toont de huidige verhouding tussen een afstand op een kaart en de overeenkomstige afstand op aarde. Voorbeelden: "1 : 3 000", "1 : 3,3 M" "1: 340 K".
+- **<Translate android="true" ids="map_widget_map_scale"/>**. Toont de huidige verhouding tussen een afstand op een kaart en de overeenkomstige afstand op aarde. Voorbeelden: "1 : 3 000", "1 : 3,3 M" "1: 340 K".  
 
 :::note
 
-- Het initiële zoomniveau (0) is het niveau waarop het gehele aardoppervlak (de volledige kaart) op het scherm wordt weergegeven, en de grootte ervan is 256 bij 256 pixels.
+- Het initiële zoomniveau (0) is het niveau waarop het gehele aardoppervlak (de volledige kaart) op het scherm wordt weergegeven, en de grootte ervan is 256 bij 256 pixels.  
 - Elk volgend zoomniveau verkleint de denkbeeldige afstand tot de grond met ongeveer 2 keer.
 
 :::
@@ -272,35 +273,35 @@ De widget heeft twee weergaven die worden omgeschakeld door erop te tikken:
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
+![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
+![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-De widget Afstand van camera tot doel toont de afstand tussen de camera (kijker) en het midden van de kaart. Deze afstand wordt weergegeven in meters / kilometers.
+De widget Afstand van camera tot doel toont de afstand tussen de camera (kijker) en het midden van de kaart. Deze afstand wordt weergegeven in meters / kilometers.  
 
 
 ### Vergelijking met een satellietbeeld {#comparison-with-a-satellite-imagery}
 
 ![Comparison](@site/static/img/plugins/development/comparison.png)
 
-Een vergelijking van de OsmAnd-kaart en het aardoppervlak onthult de volgende patronen:
+Een vergelijking van de OsmAnd-kaart en het aardoppervlak onthult de volgende patronen:  
 
-- Maximale vervorming wordt waargenomen bij grote zooms (6-7 zoom voor camerakanteling 90 graden).
+- Maximale vervorming wordt waargenomen bij grote zooms (6-7 zoom voor camerakanteling 90 graden).  
 - Naarmate de camerakanteling afneemt (van 90 tot 10 graden), neemt de vervorming van de kaart toe.
 - Vervormingen beginnen eerder te worden waargenomen op hoge breedtegraden.
 
-De onderstaande tabel bevat informatie over de kanteling van de camera en de afstand tot het doel en het zoomniveau waarop de vervormingen van de OsmAnd-kaart zichtbaar worden. Als de camera verder van het doel af beweegt, zal de waargenomen vervorming van de OsmAnd-kaart toenemen.
+De onderstaande tabel bevat informatie over de kanteling van de camera en de afstand tot het doel en het zoomniveau waarop de vervormingen van de OsmAnd-kaart zichtbaar worden. Als de camera verder van het doel af beweegt, zal de waargenomen vervorming van de OsmAnd-kaart toenemen.  
 
-|Kanteling (90) |Breedtegraad |Max Zoom |Hoogte, km |Vervorming|
+|Kanteling (90) |Breedtegraad |Max Zoom |Hoogte, km |Vervorming|  
 |-----|-----|-----|-----|-----|
 |90|26|6|5500|5%|
 |90|50|6|2500|5%|
@@ -319,37 +320,37 @@ De onderstaande tabel bevat informatie over de kanteling van de camera en de afs
 |20| 66|11|30|10%|
 
 
-## Beschikbaar RAM-widget {#available-ram-widget}
+## Geheugeninfo-widget {#memory-info-widget}
 
-Deze widget is speciaal voor u ontworpen bij het gebruik van OsmAnd om een handigere en informatievere interactie met het beschikbare RAM op uw apparaat te bieden. Het stelt u in staat om gemakkelijk en snel het beschikbare RAM te controleren, wat vooral handig is bij het gebruik van OsmAnd voor navigatie. Lees meer over de widget in het artikel [Informatiewidgets](../widgets/info-widgets.md#available-ram).
+Deze widget is speciaal voor u ontworpen bij het gebruik van OsmAnd om een handigere en informatievere interactie met het geheugengebruik van het apparaat te bieden. Het stelt u in staat om gemakkelijk en snel verschillende soorten geheugen te controleren die door de applicatie worden gebruikt, wat vooral handig is bij het gebruik van OsmAnd voor navigatie. Lees meer over de widget in het artikel [Informatiewidgets](../widgets/info-widgets.md#memory-info).
 
 
 ## GPX-Track Simulatie {#gpx-track-simulation}
 
-OsmAnd biedt de mogelijkheid om de locatie en beweging van uw apparaat te simuleren met behulp van een GPX-track. Gebruik hiervoor de optie *<Translate android="true" ids="simulate_location_by_gpx"/>* in de [instellingen](#plugin-settings) van de OsmAnd ontwikkelingsplugin:
+OsmAnd biedt de mogelijkheid om de locatie en beweging van uw apparaat te simuleren met behulp van een GPX-track. Gebruik hiervoor de optie *<Translate android="true" ids="simulate_location_by_gpx"/>* in de [instellingen](#plugin-settings) van de OsmAnd ontwikkelingsplugin:  
 
-- Tik op *<Translate android="true" ids="simulate_location_by_gpx"/>*.
+- Tik op *<Translate android="true" ids="simulate_location_by_gpx"/>*.  
 - Selecteer een track om de locatie en beweging van het apparaat te simuleren.
 - Selecteer de snelheid van de bewegingssimulatie.
-- Tik op de Start-knop.
+- Tik op de Start-knop.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Nadat u de simulatie hebt gestart, ziet u op het hoofdscherm van de app dat de navigatiemarkering beweegt volgens de GPX-track. Tik op de [mijn positie-knop](../map/interact-with-map.md#my-position-and-zoom) om *Mijn Locatie* (gesimuleerde geolocatie van het apparaat) te synchroniseren met het midden van de kaart.
+Nadat u de simulatie hebt gestart, ziet u op het hoofdscherm van de app dat de navigatiemarkering beweegt volgens de GPX-track. Tik op de [mijn positie-knop](../map/interact-with-map.md#my-position-and-zoom) om *Mijn Locatie* (gesimuleerde geolocatie van het apparaat) te synchroniseren met het midden van de kaart.  
 Om de simulatie van de beweging van uw apparaat te stoppen, gaat u terug naar de [instellingen](#plugin-settings) van de OsmAnd ontwikkelingsplugin en tikt u op **stop** in de optie **simuleer uw positie**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* is ook toegankelijk via het **[Snelle actie-menu](../widgets/quick-action.md#navigation)**.

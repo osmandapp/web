@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -447,7 +447,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 De instellingen voor **Uiterlijk Mijn locatie** stellen u in staat om aan te passen hoe uw locatie op de kaart wordt weergegeven, zowel wanneer u stilstaat (Rustend) als in beweging (Navigatie). Beweging wordt gedetecteerd door het besturingssysteem wanneer de snelheid van het apparaat **groter is dan nul**.
 
-Gebruik **Icoonafmeting** om de grootte van het Mijn Locatie-positie-icoon onafhankelijk van de tekstgrootte van de app aan te passen. U kunt verschillende groottes instellen voor Rustend en Navigatiemodi. De grootte kan worden aangepast van 50% tot 300% (50, 75, 100, 125, 150, 200, 250, 300%). De standaardwaarde is 100%. Tik op Icoonafmeting om de grootte-instellingen te openen, gebruik vervolgens de schuifregelaar of de + / – stapsgewijze knoppen om de waarde te wijzigen. Gebruik **Herstellen naar standaard** om terug te keren naar 100%.
+Gebruik **<Translate ios="true" ids="icon_size"/>** om de grootte van het Mijn Locatie-positie-icoon onafhankelijk van de tekstgrootte van de app aan te passen. U kunt verschillende groottes instellen voor Rustend en Navigatiemodi. De grootte kan worden aangepast van 50% tot 300% (50, 75, 100, 125, 150, 200, 250, 300%). De standaardwaarde is 100%. Tik op Icoonafmeting om de grootte-instellingen te openen, gebruik vervolgens de schuifregelaar of de + / – stapsgewijze knoppen om de waarde te wijzigen. Gebruik **<Translate ios="true" ids="reset_to_default"/>** om terug te keren naar 100%.
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Vectorkaarten 
 ---
@@ -371,15 +371,29 @@ De Terrein-optie stelt u in staat om drie functies aan te passen zoals Hillshade
 
 ### 3D Gebouwen {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D gebouwen*  
+<TabItem value="android" label="Android"> 
 
-![3D Gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D Gebouwen](@site/static/img/map/3d_buildings_2.png) 
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![3D Gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D Gebouwen](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D Gebouwen](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Gebouwen](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 **3D Gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-Deze optie is alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld. Zie het [Topografie-plugin](../plugins/topography.md#3d-buildings) artikel voor details.
+Op Android is deze optie alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld. Zie het [Topografie-plugin](../plugins/topography.md#3d-buildings) artikel voor details.
 
 ### 3D Relief {#3d-relief}
 
@@ -415,11 +429,25 @@ Voor meer details over de Nautische kaartweergave, bezoek de [Nautische Kaart-pl
 
 ### Wereldbolweergave {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Wereldbolweergave*
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Wereldbolweergave](@site/static/img/map/globe_view_1.png) ![Wereldbolweergave](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Wereldbolweergave](@site/static/img/map/globe_view_1_ios.png) ![Wereldbolweergave](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 **Wereldbolweergave** stelt u in staat om de kaart weer te geven als een bolvormige aarde in plaats van een platte projectie. Deze modus verandert de geometrie van het kaaroppervlak en past de kaartinteractie aan op bolvormige navigatie. Voor meer informatie, zie de [Wereldbolweergave-sectie](../map/interact-with-map.md#globe-view) in het Omgaan met kaart artikel.
 

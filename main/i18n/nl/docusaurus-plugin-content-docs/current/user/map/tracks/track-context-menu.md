@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -246,7 +246,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 </Tabs>
 
 
-De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
+De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
 
 - [Activiteitstags voor GPX-sporen](../../plugins/trip-recording.md#recording-settings). Opgenomen sporen ontvangen automatisch een activiteitstype op basis van het geselecteerde profiel, wat helpt bij het categoriseren en filteren later. U kunt de activiteit handmatig wijzigen indien nodig.
 - [Activiteitenfilter](../../personal/tracks/smart-folder.md#search-filter). U kunt de opgenomen GPX-sporen filteren op activiteit, waardoor u zich kunt concentreren op het vinden van specifieke soorten opnames, zoals alle fiets- of wandelsporen.
@@ -392,7 +392,7 @@ Waypoints zijn een van de soorten punten die beschikbaar zijn op de kaart. Over 
 
 <TabItem value="android" label="Android">
 
-![Contextmenu spoor Punten Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Contextmenu spoor Punten Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ In dit *Punten* tabblad:
 
 - [Toon spoorpuntgegevens](#display-custom-gpx-tags) en wijzig uw spoorpunten (waypoints en routepunten), [verwijder ze en voeg](#points--waypoints) waypoints toe aan een spoor.
 - Maak en wijzig [Groep (map) van punten](#waypoint-groups).
+- Centreer de kaart op een waypoint met behulp van het pin-icoon in de waypointlijst (*alleen Android*) zonder de lijst te sluiten, waardoor u waypoints één voor één kunt bekijken.
 
 
 ### Waypoint toevoegen aan een spoor {#add-waypoint-to-a-track}

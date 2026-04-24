@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  Routevoorbereiding
 ---
@@ -72,7 +72,7 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
 
 2. Aanvullende [*Navigatie-instellingen*](#settings) kunnen worden gebruikt, afhankelijk van uw doeleinden (u kunt configureren welke wegen u wilt vermijden of verkiezen, brandstof besparen of de snelste route kiezen, enz.).
 
-3. [Start](#start--stop-navigation) de navigatie of [simuleer de navigatie](#simulated-navigation) eerst (met deze functie kunt u uw route testen voordat u er daadwerkelijk langs reist).
+3. [Start](#start--stop-navigation) de navigatie of [simuleer de navigatie](#simulated-navigation) eerst (met deze functie kunt u uw route testen voordat u er daadwerkelijk langs reist). [Op iOS-apparaten](https://support.apple.com/en-us/121430) in EU-landen kan OsmAnd ook worden ingesteld als de standaardnavigatie-app in de systeeminstellingen, waardoor het automatisch opent voor navigatieverzoeken.
 
 4. Terwijl u onderweg bent, kunt u de navigatie [*Pauzeren/Hervatten*](#pause--resume-navigation) en [*Stoppen*](#start--stop-navigation).
 

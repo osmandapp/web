@@ -1,5 +1,5 @@
 ---
-source-hash: 887e37d512e29933bbd3ee7af217024887ffcc5ac636c9ddc52e7480299a8d1b
+source-hash: 383e9a6814a4fe9dfbefeb9e426313df17c79d317898ed48ee3cdc95f7de4d54
 sidebar_position: 6
 title:  Kaartstijlen (Vector Kaarten)
 ---
@@ -34,19 +34,19 @@ OsmAnd biedt u veel kaartstijlen en datalagen die standaard passen. Dit gedeelte
 
 ### OsmAnd {#osmand}
 
-![OsmAnd kaartstijl](@site/static/img/map/map-style-osmand-with-routes.png)  
+![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)  
 
 De standaard kaartweergavestijl van OsmAnd balanceert detail en eenvoud, waardoor het ideaal is voor stedelijke en buitenverkenning. Het detailleert stedelijke kenmerken zoals straten, gebouwen en vervoersstops terwijl het visuele rommel vereenvoudigt door kaarten duidelijker te maken.  
 
-Belangrijkste voordelen omvatten routekartering, oppervlaktekwaliteit, toegangsbeperkingen, wegmarkeringen, SAC-schaal padweergaven, sportfaciliteiten en topografische details zoals hoogtelijnen.
+Belangrijkste voordelen omvatten routekartering, oppervlaktekwaliteit, toegangsbeperkingen, verkeersborden, SAC-schaal padweergaven, sportfaciliteiten en topografische details zoals hoogtelijnen.
 
 ### Touring View {#touring-view}
 
-![Touring view kaartstijl](@site/static/img/map/map-style-touring.png)
+![Touring view map style](@site/static/img/map/map-style-touring.png)
 
 Touring stijl met hoog contrast en maximaal detail. Bevat alle opties van de standaard OsmAnd stijl terwijl het zoveel mogelijk detail weergeeft, in het bijzonder wegen, paden en andere manieren van reizen. Duidelijk onderscheid van wegtypen in een *touring atlas*. Geschikt voor dag, nacht en buitengebruik.
 
-### UniRS en LightRS {#unirs-and-lightrs}
+### UniRS and LightRS {#unirs-and-lightrs}
 
 <Translate android="true" ids="unirs_render_descr"/>
 
@@ -54,59 +54,59 @@ UniRS en LightRS stijlen zijn auteursstijlen die de basis kaartinformatie weerge
 
 - **UniRS stijl**. Deze stijl is een gewijzigde versie van de standaard om het contrast te verbeteren voor voetgangers- en fietspaden. Het behoudt het klassieke Mapnik kleurschema.  
 
-    ![LightRS kaartstijl](@site/static/img/map/map-style-lightrs.png)
+    ![LightRS map style](@site/static/img/map/map-style-lightrs.png)
 
 - **LightRS stijl**. Dit is een eenvoudige rijstijl met een zachte nachtmodus. Het benadrukt wegen in een contrasterende oranje kleur, dimt secundaire kaartobjecten en toont topografische kenmerken zoals hoogtelijnen.
 
-    ![UniRS kaartstijl](@site/static/img/map/map-style-unirs.png)
+    ![UniRS map style](@site/static/img/map/map-style-unirs.png)
 
 ### Nautisch {#nautical}
 
-![Nautische kaartstijl](@site/static/img/map/map-style-nautical.png)
+![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
 Dit is een stijl voor nautische navigatie met boeien, vuurtorens, rivierroutes, zeelijnen, markeringen, havens en nautische markeringen. Lees meer in de sectie [Nautische Kaartstijl](../plugins/nautical-charts.md#nautical-map-style).
 
 ### Marine {#marine}
 
-![Marine kaartstijl](@site/static/img/map/map-style-marine.png)
+![Marine map style](@site/static/img/map/map-style-marine.png)
 
 Dit is een geavanceerde nautische kaartstijl met lichtsectoren, volledige vuurtorenkenmerken en andere gedetailleerde maritieme kenmerken voor realistische en nauwkeurige mariene navigatie. Voor meer details lees sectie [Marine Kaartstijl](../plugins/nautical-charts.md#marine-map-style).
 
-### Winter en Ski {#winter-and-ski}
+### Winter and Ski {#winter-and-ski}
 
-![Winter & Ski kaartstijl](@site/static/img/map/map-style-winter-ski.png)
+![Winter & Ski map style](@site/static/img/map/map-style-winter-ski.png)
 
-Dit is een stijl voor skisporten die de pistes, liften en langlaufpaden beschrijft, evenals het verbergen van secundaire kaartobjecten. **Winter en Ski stijl** is ontworpen om u te helpen met wintersportnavigatie.  
+Dit is een stijl voor skisporten die de pistes, liften en langlaufpaden beschrijft, evenals het verbergen van secundaire kaartobjecten. **Winter and Ski stijl** is ontworpen om u te helpen met wintersportnavigatie.  
 
 U kunt de skipistes en andere details zien zoals de moeilijkheidsgraad van de pistes en liftmarkeringen. Belangrijkste voordelen omvatten de handige weergave van pistes, liften en andere ski kenmerken. Minder van de afleidende secundaire objecten van de kaart. Lees meer in het artikel [Ski Kaarten](../plugins/ski-maps.md).
 
 ### Topo {#topo}
 
-![Topo kaartstijl](@site/static/img/map/map-style-topo.png)
+![Topo map style](@site/static/img/map/map-style-topo.png)
 
 Deze stijl is ontworpen voor wandelen, kamperen en fietsen in de natuur. Het bevat contrasterende wegen en natuurlijke kenmerken, verschillende typen paden, uitgebreide opties voor hoogtelijnen en aanvullende details. Het is leesbaar in de buitenlucht. De *Surface Integrity* instelling stelt u in staat om de kwaliteit van de weg te onderscheiden.
 
 ### OSM-carto {#osm-carto}
 
-![OSM-carto kaartstijl](@site/static/img/map/map-style-osm-carto.png)
+![OSM-carto map style](@site/static/img/map/map-style-osm-carto.png)
 
 Deze stijl imiteert de standaard [OpenStreetMap web stijl](https://www.openstreetmap.org/). De broncode van de webversie is beschikbaar op [Github](https://github.com/gravitystorm/openstreetmap-carto), OsmAnd code is beschikbaar op [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
 
-### Woestijn {#desert}
+### Desert {#desert}
 
-![Woestijn kaartstijl](@site/static/img/map/map-style-desert.png)
+![Desert map style](@site/static/img/map/map-style-desert.png)
 
 Ontworpen voor woestijnen en andere dunbevolkte gebieden, biedt het meer gedetailleerde kaartinformatie.
 
 ### Offroad {#offroad}
 
-![Offroad kaartstijl](@site/static/img/map/map-style-offroad.png)
+![Offroad map style](@site/static/img/map/map-style-offroad.png)
 
 Ontworpen voor off-road navigatie, deze stijl is gebaseerd op de [Topo](#topo) kaartindeling en werkt goed met satellietbeelden als onderlaag. Het bevat dunnere hoofdwegen om paden, tracks, fietsroutes en andere off-road paden te benadrukken, waardoor het ideaal is voor het verkennen van onverharde routes in landelijke of afgelegen gebieden.
 
-### Sneeuwscooter {#snowmobile}
+### Snowmobile {#snowmobile}
 
-![Sneeuwscooter kaartstijl](@site/static/img/map/map-style-snowmobile.png)
+![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
 
 Aangepast voor sneeuwscooter navigatie, deze stijl benadrukt sneeuwscooter-vriendelijke paden, wegen en tracks. Het benadrukt gespecialiseerde paden in besneeuwde gebieden, biedt duidelijke navigatie over besneeuwde terreinen waar standaardwegen mogelijk niet beschikbaar zijn. 
 

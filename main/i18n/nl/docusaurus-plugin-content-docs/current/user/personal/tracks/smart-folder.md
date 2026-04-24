@@ -1,7 +1,7 @@
 ---
-source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
+source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
 sidebar_position: 3
-title: Slimme Map (Filter)
+title: Smart Folder (Filter)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -170,20 +170,20 @@ De nieuw aangemaakte **Slimme Map** zal zijn inhoud automatisch bijwerken met tr
 
 De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, tikt u op het *drie-puntjes menu* ernaast om toegang te krijgen tot de beschikbare acties:
 
-- **Details** — Bekijk de volledige lijst met tracks in de map.
-- **Toon alle tracks op de kaart** — Toon alle tracks uit de map op de kaart.  
+- **<Translate android="true" ids="shared_string_details"/>** — Bekijk de volledige lijst met tracks in de map.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Toon alle tracks uit de map op de kaart.  
     *OPMERKING: Het laden van veel tracks kan de prestaties beïnvloeden.*
-- **Hernoemen** — Wijzig de naam van de map voor eenvoudigere identificatie.
-- **Vernieuwen** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
-- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
-- **Exporteren** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
-- **Map verwijderen** — Verwijder de Slimme Map zonder de tracks te verwijderen.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Wijzig de naam van de map voor eenvoudigere identificatie.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
+- **<Translate android="true" ids="edit_filter"/>** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
+- **<Translate android="true" ids="shared_string_export"/>** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
+- **<Translate android="true" ids="delete_folder"/>** — Verwijder de Slimme Map zonder de tracks te verwijderen.  
     *WAARSCHUWING: Deze actie is onomkeerbaar en zal een bevestigingsbericht vragen.*
 
 U kunt ook de map openen en op het *drie-puntjes menu* in de *rechterbovenhoek* tikken om toegang te krijgen tot extra acties:
 
-- **Selecteren** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
-- **Organiseren op** — Organiseer tracks in de Slimme Map automatisch in groepen op basis van een geselecteerde parameter. Beschikbare groeperingstypen omvatten *Algemeen*, *Datum & tijd*, *Locatie*, *Snelheid*, *Hoogte & elevatie* en *Sensorgegevens*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **<Translate android="true" ids="organize_by"/>** — Organiseer tracks in de Slimme Map automatisch in groepen op basis van een geselecteerde parameter. Beschikbare groeperingstypen omvatten *Algemeen*, *Datum & tijd*, *Locatie*, *Snelheid*, *Hoogte & elevatie* en *Sensorgegevens*. 
 
 Sommige groeperingsparameters zijn alleen beschikbaar met een OsmAnd Pro-abonnement. Gratis parameters omvatten *Activiteit*, *Jaar van aanmaak* en *Dichtstbijzijnde stad*. Alle andere parameters zijn gemarkeerd met een <ProFeature/> label.
 
@@ -201,17 +201,17 @@ Voor PRO-parameters kunt u de groeperingsinstelling previewen (bijvoorbeeld de s
 
 De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, *lang tikken* op de mapnaam om toegang te krijgen tot de beschikbare acties:
 
-- **Hernoemen** — Wijzig de naam van de map voor eenvoudigere identificatie.
-- **Exporteren** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
-- **Verplaatsen** — Hiermee kunt u de map naar een andere bestaande map verplaatsen of een nieuwe aanmaken.
-- **Verwijderen** — Verwijder de Slimme Map zonder de tracks te verwijderen.  
+- **<Translate ios="true" ids="shared_string_rename"/>** — Wijzig de naam van de map voor eenvoudigere identificatie.
+- **<Translate ios="true" ids="shared_string_export"/>** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Hiermee kunt u de map naar een andere bestaande map verplaatsen of een nieuwe aanmaken.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Verwijder de Slimme Map zonder de tracks te verwijderen.  
     *WAARSCHUWING: Deze actie is onomkeerbaar en zal een bevestigingsbericht vragen.*
 
 U kunt ook de map openen en op het icoon in de *rechterbovenhoek* tikken om toegang te krijgen tot extra acties:
 
-- **Selecteren** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
-- **Vernieuwen** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
-- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
+- **<Translate ios="true" ids="shared_string_select"/>** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
+- **<Translate ios="true" ids="edit_filter"/>** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
 
 </TabItem>
 

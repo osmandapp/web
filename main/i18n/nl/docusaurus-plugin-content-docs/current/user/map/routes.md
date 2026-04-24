@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  Routes
 ---
@@ -133,7 +133,7 @@ Sneeuwscooterpaden zijn gemapt in [OpenStreetMap](https://wiki.openstreetmap.org
 
 ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
 
-[Ruiterpaden](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) worden weergegeven als gekleurde routes met symbolen voor paardrijden.  
+[Ruiterpaden](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) worden weergegeven als kleur-geïndiceerde routes met symbolen voor paardrijden.  
 
 
 ### Wildwatersporten {#whitewater-sports}
@@ -239,6 +239,7 @@ Wanneer u op een **routesymbool** op de kaart tikt:
 
 - Een **lijst van de nabijgelegen routes** op die locatie wordt weergegeven.
 - Na het selecteren van een route uit de lijst, wordt een [contextmenu](../map/tracks/track-context-menu.md) voor die route geopend, met gedetailleerde informatie en beschikbare acties.
+- De geselecteerde route wordt geopend in een trackweergave, waardoor u ermee kunt interageren op dezelfde manier als met een GPX-track.
 
 In het **contextmenu** kunt u:
 
@@ -317,7 +318,7 @@ U kunt ook het tabblad *Track* openen en overschakelen naar de weergave *Hoogte*
 </Tabs>  
 
 
-Om de route op te slaan als een *GPX-bestand*, tikt u op de knop **Opslaan (Downloaden)** onder het [Infopaneel](../map/tracks/track-context-menu.md#info-panel). Dit opent het knoppenpaneel [Snelle acties](../map/tracks/track-context-menu.md#track-actions) waar u toegang heeft tot trackacties zoals het wijzigen van [Uiterlijk](./tracks/appearance.md), [Navigatie](../navigation/setup/route-navigation.md), of het bewerken van [Route plannen](../plan-route/create-route.md).
+Om de route op te slaan als een *GPX-bestand*, tikt u op de knop **Opslaan (Downloaden)** onder het [Infopaneel](../map/tracks/track-context-menu.md#info-panel). Dit opent het knoppenpaneel [Snelle acties](../map/tracks/track-context-menu.md#track-actions) waar u toegang heeft tot trackacties zoals het wijzigen van [Uiterlijk](./tracks/appearance.md), [Navigatie](../navigation/setup/route-navigation.md), of het bewerken van [Route plannen](../plan-route/create-route.md). Opgeslagen routes gedragen zich hetzelfde als andere tracks en zijn beschikbaar in uw trackcollectie.
 
 
 ### Navigatie starten {#start-navigation}

@@ -1,5 +1,5 @@
 ---
-source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
+source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
 sidebar_position: 1
 title:  Eerste Stappen
 ---
@@ -130,15 +130,21 @@ Hoewel OsmAnd u toestaat kaarten voor alle beschikbare regio's te downloaden, is
 
 ### Hoe de app-taal te wijzigen {#how-to-change-app-language}
 
-De optie *Weergavetaal* wordt gebruikt om de taal van de hele app te wijzigen, inclusief pop-upmeldingen, interne tekst, berichten en meer. Tot en met Android 12 kunt u in OsmAnd de weergavetaal rechtstreeks in de app aanpassen aan uw voorkeuren. Vanaf Android 13 en op iOS-apparaten kan de weergavetaal alleen worden gewijzigd in de systeeminstellingen (zie hoe u de taalvoorkeuren per app kunt wijzigen in [Android](https://developer.android.com/guide/topics/resources/app-languages) en [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+De *Weergavetaaloptie* wordt gebruikt om de taal van de hele app te wijzigen, inclusief pop-upmeldingen, interne tekst, berichten en meer. 
+
+Op Android-apparaten kunt u de weergavetaal rechtstreeks in de app aanpassen op alle ondersteunde versies. Standaard gebruikt de app de systeeltaal, maar u kunt handmatig een andere taal selecteren indien nodig.
+
+Op Android 13 en hoger kunt u de app-taal wijzigen in de OsmAnd-instellingen of in de systeeminstellingen van uw apparaat. De geselecteerde taal wordt gesynchroniseerd tussen de app en het systeem. Sommige wijzigingen vereisen mogelijk het herstarten van de app om de geselecteerde taal volledig toe te passen.
+
+Op iOS-apparaten kan de weergavetaal alleen worden gewijzigd in de systeeminstellingen (zie hoe u de taalvoorkeuren per app kunt wijzigen in [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ga naar: *Instellingen → Apps → OsmAnd → Taal*
+Ga naar: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Weergavetaal*
 
-![Algemene Instellingen Taal Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
+![Algemene Instellingen Taal Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Algemene Instellingen Taal Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -146,14 +152,14 @@ Ga naar: *Instellingen → Apps → OsmAnd → Taal*
 
 Ga naar: *Instellingen → OsmAnd Kaarten → Taal*
 
-![Algemene Instellingen Taal iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![Algemene Instellingen Taal iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Geen optie om app-talen in te stellen
-Op sommige Android-apparaten (Xiaomi met MIUI 14) is er geen optie om app-talen individueel in te stellen in de systeeminstellingen, dus de taal van OsmAnd kan alleen worden gewijzigd met de taal van het hele systeem. U kunt de discussie op [GitHub-discussie](https://github.com/osmandapp/OsmAnd/issues/16990) bekijken voor aanvullende informatie.
+Op sommige Android-apparaten of systeerversies is de optie om app-talen individueel in te stellen in de systeeminstellingen mogelijk niet beschikbaar of beperkt (u kunt de discussie op [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) bekijken voor aanvullende informatie). In dergelijke gevallen kunt u de app-taal nog steeds rechtstreeks in OsmAnd wijzigen met de Weergavetaalinstelling. Zelfs als een taal niet wordt ondersteund door uw Android-systeem, zal OsmAnd de geselecteerde taal binnen de app nog steeds toepassen en behouden.
 :::
 
 
@@ -375,6 +381,10 @@ U moet de kaart downloaden voordat u daar een adres kunt zoeken. Als uw huidige 
 </Tabs>
 
 [Lees meer](../navigation/index.md) over navigatie.
+
+**OPMERKING:** Op iOS-apparaten in EU-landen kunt u OsmAnd instellen als de standaardnavigatie-app in de systeeminstellingen.  
+Ga naar: *Instellingen → Apps → Standaardapps → Navigatie*  
+Wanneer ingesteld, opent OsmAnd automatisch voor navigatieverzoeken van het systeem.
 
 
 ### Hoe uw reis op te nemen {#how-to-record-your-trip}
@@ -665,7 +675,7 @@ OsmAnd heeft geen vereiste toestemmingen op de iOS / Android-versie.
 **Essentieel**:
 
 - **Internet**. Initiële download / update van offline kaarten. Het kan ook nodig zijn om toegang te krijgen tot online functies zoals [Beelden op straatniveau](../map/point-layers-on-map.md#-street-level-imagery), [Online foto's](../map/map-context-menu.md#online-photos) of [Online kaarten](../map/raster-maps.md).
-- **GPS** / **GSM-netwerk**. Bepaal uw locatie, volg u in een navigatiemodus en neem uw reis op (optioneel). Deze toestemming wordt gevraagd wanneer u op de [knop 'mijn locatie'](../widgets/map-buttons.md#my-location-and-zoom) klikt of wanneer u [navigatie start](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **GSM-netwerk**. Bepaal uw locatie, volg u in een navigatiemodus en neem uw reis op (optioneel). Deze toestemming wordt gevraagd wanneer u op de [knop 'mijn locatie'](../widgets/map-buttons.md#my-position-and-zoom) klikt of wanneer u [navigatie start](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Optioneel**:
 

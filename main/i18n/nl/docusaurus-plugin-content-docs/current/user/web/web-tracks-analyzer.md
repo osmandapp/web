@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -27,7 +27,7 @@ Nadat u de Tracks Analyzer hebt geopend (weergegeven als een moersleutel), opent
 
 Om de analyse te starten, stelt u één of twee punten direct in op de kaart. Klik met de rechtermuisknop op de gewenste locatie en selecteer **Punt A / Punt B** uit het contextmenu. De analyzer zoekt vervolgens naar tracksegmenten die door het geselecteerde punt gaan of tussen de twee punten.
 
-![Tracks Analyzer](@site/static/img/web/web_analyzer_select.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_points.png)
+![Tracks Analyzer](@site/static/img/web/web_analyzer_select.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sorteren en zichtbare parameters {#sorting-and-visible-parameters}
