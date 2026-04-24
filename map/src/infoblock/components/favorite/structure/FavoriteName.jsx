@@ -1,4 +1,4 @@
-import { ListItemText, TextField } from '@mui/material';
+import { Box, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../../context/AppContext';
 import { getPropsFromSearchResultItem } from '../../../../menu/search/search/SearchResultItem';
@@ -85,12 +85,11 @@ export default function FavoriteName({
     }, [ctx.selectedWpt]);
 
     return (
-        <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
+        <Box sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 id={isGroupName ? 'se-fav-group-name-input' : 'se-fav-name-input'}
                 label={t('shared_string_name')}
                 fullWidth
-                margin="dense"
                 variant="filled"
                 onChange={(e) => setFavoriteName(e.target.value)}
                 value={favoriteName}
@@ -98,6 +97,6 @@ export default function FavoriteName({
                 error={favoriteName === '' || nameAlreadyExist}
                 helperText={getErrorText(favoriteName)}
             />
-        </ListItemText>
+        </Box>
     );
 }

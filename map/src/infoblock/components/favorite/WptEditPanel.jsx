@@ -55,7 +55,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteName, setFavoriteName] = useState(editWpt?.name ?? '');
     const [favoriteAddress, setFavoriteAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [favoriteDescription, setFavoriteDescription] = useState(editWpt?.desc ?? '');
-    const [addAddress, setAddAddress] = useState(isEditMode || isPoi);
+    const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
     const [addDescription, setAddDescription] = useState(isEditMode);
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteIcon, setFavoriteIcon] = useState(
@@ -486,8 +486,8 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         <FavoriteAddress
                             favoriteAddress={favoriteAddress}
                             setFavoriteAddress={setFavoriteAddress}
-                            setClose={isEditMode ? null : setAddAddress}
                             widthDialog={PANEL_CONTENT_WIDTH}
+                            latLon={isAddMode ? latLon : null}
                         />
                     )}
                     {!addDescription && (

@@ -161,6 +161,22 @@ export const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 export const TYPE_NOT_FOUND = 'No type';
 export const EMPTY_STRING = '';
 
+export async function getAddressByLatLon(lat, lon) {
+    if (lat == null || lon == null) return null;
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
+        apiCache: true,
+        params: { lat, lon },
+    });
+    if (response?.data) {
+        return response.data
+            .replace(/ str\./g, '')
+            .replace(/ city/g, ',')
+            .replace(/ dist.*/g, '');
+    }
+
+    return null;
+}
+
 export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -639,25 +655,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return fmt.dateTimeShort(time);
     }
 
-    async function getPoiAddress(wpt) {
-        if (wpt.latlon?.lat == null || wpt.latlon?.lon == null) {
-            return null;
-        }
-        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
-            apiCache: true,
-            params: {
-                lat: wpt.latlon.lat,
-                lon: wpt.latlon.lon,
-            },
-        });
-        if (response?.data) {
-            return response.data
-                .replace(/ str\./g, '')
-                .replace(/ city/g, ',')
-                .replace(/ dist.*/g, '');
-        } else {
-            return null;
-        }
+    function getPoiAddress(wpt) {
+        return getAddressByLatLon(wpt.latlon?.lat, wpt.latlon?.lon);
     }
 
     async function getPhotos(wpt) {
