@@ -1,5 +1,5 @@
 ---
-source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
+source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
 sidebar_position: 3
 title: Cartella Smart (Filtro)
 ---
@@ -170,20 +170,20 @@ La **Cartella Smart** appena creata aggiornerà automaticamente il suo contenuto
 
 La **cartella smart** viene visualizzata con un'icona unica nell'elenco delle cartelle nella scheda Tracce. Per gestire la cartella, tocca il *menu a tre punti* accanto ad essa per accedere alle azioni disponibili:
 
-- **Dettagli** — Visualizza l'elenco completo delle tracce contenute nella cartella.
-- **Mostra tutte le tracce sulla mappa** — Visualizza tutte le tracce della cartella sulla mappa.  
+- **<Translate android="true" ids="shared_string_details"/>** — Visualizza l'elenco completo delle tracce contenute nella cartella.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Visualizza tutte le tracce della cartella sulla mappa.  
     *NOTA: il caricamento di molte tracce potrebbe influire sulle prestazioni.*
-- **Rinomina** — Cambia il nome della cartella per una più facile identificazione.
-- **Aggiorna** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
-- **Modifica filtro** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
-- **Esporta** — Esporta tutte le tracce nella Cartella Smart tramite la funzione [Importa/Esporta](../../personal/import-export.md). Verrai reindirizzato a *Menu → Impostazioni → scheda Azioni*.
-- **Elimina cartella** — Rimuovi la Cartella Smart senza eliminare le sue tracce.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Cambia il nome della cartella per una più facile identificazione.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
+- **<Translate android="true" ids="edit_filter"/>** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
+- **<Translate android="true" ids="shared_string_export"/>** — Esporta tutte le tracce nella Cartella Smart tramite la funzione [Importa/Esporta](../../personal/import-export.md). Verrai reindirizzato a *Menu → Impostazioni → scheda Azioni*.
+- **<Translate android="true" ids="delete_folder"/>** — Rimuovi la Cartella Smart senza eliminare le sue tracce.  
     *ATTENZIONE: questa azione è irreversibile e richiederà un messaggio di conferma.*
 
 Puoi anche aprire la cartella e toccare il *menu a tre punti* nell'*angolo in alto a destra* per accedere ad azioni aggiuntive:
 
-- **Seleziona** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
-- **Organizza per** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
+- **<Translate android="true" ids="organize_by"/>** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
 
 Alcuni parametri di raggruppamento sono disponibili solo con un abbonamento OsmAnd Pro. I parametri gratuiti includono *Attività*, *Anno di creazione* e *Città più vicina*. Tutti gli altri parametri sono contrassegnati con l'etichetta <ProFeature/>.
 
@@ -201,21 +201,49 @@ Per i parametri PRO, puoi visualizzare in anteprima la configurazione del raggru
 
 La **cartella smart** viene visualizzata con un'icona unica nell'elenco delle cartelle nella scheda Tracce. Per gestire la cartella, fai un *tocco lungo* sul nome della cartella per accedere alle azioni disponibili:
 
-- **Rinomina**— Cambia il nome della cartella per una più facile identificazione.
-- **Esporta** — Esporta tutte le tracce nella Cartella Smart tramite la funzione [Importa/Esporta](../../personal/import-export.md). Verrai reindirizzato a *Menu → Impostazioni → scheda Azioni*.
-- **Sposta** — Consente di spostare la cartella in un'altra cartella esistente o di crearne una nuova.
-- **Elimina** — Rimuovi la Cartella Smart senza eliminare le sue tracce.  
+- **<Translate ios="true" ids="shared_string_rename"/>**— Cambia il nome della cartella per una più facile identificazione.
+- **<Translate ios="true" ids="shared_string_export"/>** — Esporta tutte le tracce nella Cartella Smart tramite la funzione [Importa/Esporta](../../personal/import-export.md). Verrai reindirizzato a *Menu → Impostazioni → scheda Azioni*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Consente di spostare la cartella in un'altra cartella esistente o di crearne una nuova.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Rimuovi la Cartella Smart senza eliminare le sue tracce.  
     *ATTENZIONE: questa azione è irreversibile e richiederà un messaggio di conferma.*
 
 Puoi anche aprire la cartella e toccare l'icona nell'*angolo in alto a destra* per accedere ad azioni aggiuntive:
 
-- **Seleziona** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
-- **Aggiorna** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
-- **Modifica filtro** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
+- **<Translate ios="true" ids="shared_string_select"/>** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
+- **<Translate ios="true" ids="edit_filter"/>** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
 
 </TabItem>
 
 </Tabs>
+
+<!--
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
+
+***Available Actions:***
+
+- **Details** — View the complete list of tracks contained in the folder.
+
+- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
+
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
+
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
+
+- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
+
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
+
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
+
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
+
+- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
+
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+-->
 
 ## Articoli correlati {#related-articles}
 

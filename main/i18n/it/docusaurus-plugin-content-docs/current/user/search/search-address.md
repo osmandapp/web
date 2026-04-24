@@ -1,5 +1,5 @@
 ---
-source-hash: cc7b11b19f0261ab3f9cc12de149c6d268cdaa50b3a828cc60f5dd3ebe0ce868
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title:  Ricerca Indirizzo
 ---
@@ -15,9 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-La *Ricerca per Indirizzo di OsmAnd* si basa sui dati di OpenStreetMap e consente di trovare la posizione e le indicazioni per un indirizzo specifico da un elenco già ordinato, nonché di effettuare ricerche per codice postale o coordinate. Questo strumento permette di trovare gli indirizzi richiesti in pochi tocchi, riducendo i tempi di ricerca e aiutando nel caso in cui non si ricordi l'indirizzo esatto.
+*La Ricerca per Indirizzo di OsmAnd* si basa sui dati di OpenStreetMap e consente di trovare la posizione e le indicazioni per un indirizzo specifico da un elenco già ordinato, nonché di effettuare ricerche per codice postale o coordinate. Questo strumento permette di trovare gli indirizzi richiesti in pochi tocchi, riducendo i tempi di ricerca e aiutando nel caso in cui non si ricordi l'indirizzo esatto.
 
 La ricerca per indirizzo funziona offline utilizzando le mappe scaricate. Assicurati che la mappa per la regione in cui stai cercando sia installata. I risultati dipendono dai dati di indirizzo disponibili in OpenStreetMap.
+
+I risultati della ricerca sono ordinati automaticamente per rilevanza e distanza, in modo che i risultati vicini e più rilevanti appaiano in cima all'elenco.
 
 OsmAnd offre diversi modi per accedere allo strumento di *Ricerca*, dove si trova la sezione **Ricerca Indirizzo**.
 
@@ -61,6 +63,8 @@ Non è necessario inserirli in un ordine rigoroso. **Esempi di query**:
 
 Se l'indirizzo completo non viene trovato, OsmAnd tenta automaticamente query semplificate (ad esempio rimuovendo parole extra) per migliorare le possibilità di trovare la posizione.
 
+Quando una query può riferirsi sia a un indirizzo che a un PDI, OsmAnd assegna automaticamente la priorità all'interpretazione più rilevante in base al contesto, alla distanza e all'importanza dell'oggetto.
+
 **NOTA:** La ricerca per indirizzo funziona solo all'interno delle mappe scaricate. I risultati della ricerca si basano su:
 - mappe installate sul dispositivo;
 - area della mappa visibile;
@@ -72,7 +76,7 @@ Se non viene trovato nulla, OsmAnd potrebbe suggerire di aumentare il raggio di 
 
 OsmAnd supporta la ricerca di indirizzi utilizzando i dati di OpenStreetMap, ma negli Stati Uniti i risultati della ricerca di indirizzi possono essere incompleti a causa dell'uso dei [dati TIGER](https://wiki.openstreetmap.org/wiki/TIGER).  
 
-- **I dati TIGER forniscono intervalli di indirizzi, non posizioni esatte**, ciò significa che alcuni numeri civici potrebbero non essere riconosciuti.
+- **I dati TIGER forniscono intervalli di indirizzi, non posizione esatte**, ciò significa che alcuni numeri civici potrebbero non essere riconosciuti.
 - **Se un indirizzo non viene trovato**, provare a cercare *per nome della via* invece che per un numero civico specifico.
 - Utilizzare *identificatori di posizione alternativi*, come punti di riferimento vicini o codici postali, per affinare i risultati della ricerca.  
 
@@ -95,6 +99,8 @@ La ricerca per indirizzo in OsmAnd è tollerante a diversi formati di input. È 
 - cambiando l'ordine delle parole;
 - rimuovendo informazioni extra;
 - cercando solo per nome della via.
+
+Tuttavia, query molto brevi o generali (ad esempio, “Apple”) potrebbero restituire una miscela di indirizzi e PDI, inclusi un marchio, un nome di via o una località con lo stesso nome. Per migliorare l'accuratezza, prova ad aggiungere più dettagli come il nome della città, la via o il nome del PDI.
 
 Il motore di ricerca tollera anche variazioni comuni nella formattazione degli indirizzi come diversi ordini di parole, differenze di ortografia, abbreviazioni o formati di numero civico. La tabella seguente mostra variazioni di ricerca tipiche che potrebbero restituire lo stesso indirizzo.
 
@@ -156,7 +162,7 @@ Questo modo di cercare facilita la ricerca di luoghi specifici all'interno di un
 
 <TabItem value="ios" label="iOS">
 
-![Ricerca Via iOS](@site/static/img/search/address_street_search_3_ios.png) ![Ricerca Via Android](@site/static/img/search/address_street_search_4_ios.png)
+![Ricerca Via iOS](@site/static/img/search/address_street_search_3_ios.png) ![Ricerca Via iOS](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 

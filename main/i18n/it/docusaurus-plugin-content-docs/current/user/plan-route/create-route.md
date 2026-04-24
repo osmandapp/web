@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Pianifica un percorso
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una potente funzionalità dell'applicazione OsmAnd che consente di [creare nuovi percorsi](#create-new-route) come tracce GPX, [modificare e aggiungere nuovi segmenti](#segments) a tracce già salvate, [misurare le distanze](#distance-measurement) sulla mappa e [agganciare i segmenti della traccia](#attach-track-to-roads) alla strada disponibile più vicina utilizzando diversi profili di navigazione. La funzione è progettata per funzionare in *modalità offline*.
+Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una potente funzionalità dell'applicazione OsmAnd che consente di [creare nuovi percorsi](#create-new-route) come tracce GPX, [modificare e aggiungere nuovi segmenti](#segments) a tracce già salvate, [misurare le distanze](#distance-measurement) sulla mappa e [agganciare la traccia](#attach-track-to-roads) ai segmenti della strada disponibile più vicina utilizzando diversi profili di navigazione. La funzione è progettata per funzionare in *modalità offline*.
 
 Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per essere importato in seguito, modificato e utilizzato per la [navigazione](../navigation/setup/gpx-navigation.md).
 
@@ -338,6 +338,8 @@ Ci sono quattro modi per salvare:
 - ***Salva modifiche*** nel [menu Opzioni](#options) consente di salvare le modifiche in un file e di continuare a pianificare il percorso.
 - ***Salva come nuova traccia*** nel [menu Opzioni](#options) apre una finestra di dialogo in cui si specifica il nome della traccia e la cartella in cui verrà salvato il percorso.
 - ***Aggiungi modifiche a una traccia***. Collega una traccia creata come [segmento separato](#segments) a un'altra traccia esistente. Le modifiche a una traccia selezionata *non possono essere annullate*.
+
+Durante il salvataggio, la traccia eredita il tipo di attività del profilo di routing utilizzato per la pianificazione. L'attività viene salvata nei metadati della traccia e preservata dopo l'esportazione o l'importazione del file GPX.
 
 :::note Opzione traccia semplificata
 Quando si salva una nuova traccia, è possibile selezionare l'opzione traccia ***Semplificata*** per rendere la traccia compatibile con altre applicazioni di terze parti. Tecnicamente, la traccia verrà salvata senza istruzioni di percorso come una traccia puramente geometrica.

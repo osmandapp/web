@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -246,9 +246,9 @@ Questa sezione della scheda *Panoramica* visualizza i ***dati dei tag*** e ***tu
 </Tabs>
 
 
-La funzione *Attività* in OsmAnd consente di etichettare le tracce GPX registrate con attività specifiche per ulteriori analisi e organizzazione in cartelle.
+La funzione *Attività* in OsmAnd consente di etichettare le tracce GPX registrate e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) con attività specifiche per ulteriori analisi e organizzazione in cartelle.
 
-- [Tag di attività per tracce GPX](../../plugins/trip-recording.md#recording-settings). Le tracce registrate ricevono automaticamente un tipo di attività in base al profilo selezionato, il che aiuta a categorizzarle e filtrarle in seguito. È possibile modificare l'attività manualmente se necessario.
+- [Tag di attività per tracce GPX](../../plugins/trip-recording.md#recording-settings). Le tracce registrate e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) ricevono automaticamente un tipo di attività in base al profilo utilizzato per crearle. Ciò aiuta a categorizzarle e filtrarle in seguito. È possibile modificare l'attività manualmente se necessario.
 - [Filtro attività](../../personal/tracks/smart-folder.md#search-filter). È possibile filtrare le tracce GPX registrate per attività, il che consente di concentrarsi sulla ricerca di tipi specifici di registrazioni, come tutte le tracce di ciclismo o escursionismo.
 - [Gestisci tipi di attività](../../personal/tracks/manage-tracks.md#selection-mode). È possibile modificare il tipo di attività per cartelle o tracce selezionate utilizzando la modalità di selezione nella scheda Tracce del menu I miei luoghi.
 - **Elenco attività**. Le categorie e i gruppi di attività sono definiti nelle risorse di OsmAnd. Per sviluppatori e contributori, l'elenco delle attività è mantenuto in un formato strutturato su [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), che dettagli i gruppi e i tipi di attività disponibili.
@@ -392,7 +392,7 @@ I waypoint sono uno dei tipi di punti disponibili sulla mappa. In generale, poss
 
 <TabItem value="android" label="Android">
 
-![Menu contestuale traccia Punti Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Menu contestuale traccia Punti Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ In questa scheda *Punti*:
 
 - [Mostra i dati dei punti della traccia](#display-custom-gpx-tags) e modifica i punti della traccia (waypoint e punti del percorso), [eliminali e aggiungi](#points--waypoints) waypoint a una traccia.
 - Crea e modifica [Gruppo (cartella) di punti](#waypoint-groups).
+- Centra la mappa su un waypoint utilizzando l'icona della spilla nell'elenco dei waypoint (*solo Android*) senza chiudere l'elenco, consentendo di visualizzare in anteprima i waypoint uno per uno.
 
 
 ### Aggiungi Waypoint a una Traccia {#add-waypoint-to-a-track}

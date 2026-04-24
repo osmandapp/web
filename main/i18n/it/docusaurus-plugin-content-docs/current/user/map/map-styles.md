@@ -1,5 +1,5 @@
 ---
-source-hash: 887e37d512e29933bbd3ee7af217024887ffcc5ac636c9ddc52e7480299a8d1b
+source-hash: 383e9a6814a4fe9dfbefeb9e426313df17c79d317898ed48ee3cdc95f7de4d54
 sidebar_position: 6
 title:  Map Styles (Vector Maps)
 ---
@@ -19,14 +19,14 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Gli stili di mappa definiscono come i dati della mappa vettoriale vengono visualizzati in OsmAnd. Uno stile controlla l'aspetto visivo degli oggetti della mappa come strade, edifici, uso del suolo, acqua e punti di interesse, inclusi colori, pattern di linee ed etichette.
 
-OsmAnd fornisce diversi stili integrati ottimizzati per diverse attività. È possibile passare tra gli stili nel [menu Configura mappa](./configure-map-menu.md) e regolare i parametri dello stile. Gli stili di mappa vettoriale supportano il passaggio tra modalità giorno e notte.
+OsmAnd fornisce diversi stili integrati ottimizzati per diverse attività. Puoi passare tra gli stili nel [menu Configura mappa](./configure-map-menu.md) e regolare i parametri dello stile. Gli stili di mappa vettoriale supportano il passaggio tra modalità giorno e notte.
 
 Oltre agli stili integrati, OsmAnd supporta stili di mappa personalizzati. Gli stili personalizzati sono basati su regole di rendering e possono essere importati, condivisi e modificati per evidenziare le informazioni di cui hai bisogno.
 
 
 ## Stili di Mappa Predefiniti {#default-map-styles}
 
-OsmAnd offre molti stili di mappa e livelli di dati che si adattano per impostazione predefinita. Questa sezione descrive i principali per le modalità giorno e notte.
+OsmAnd ti offre molti stili di mappa e livelli di dati che si adattano per impostazione predefinita. Questa sezione descrive i principali per le modalità giorno e notte.
 
 **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
 
@@ -64,7 +64,7 @@ Gli stili UniRS e LightRS sono stili dell'autore che visualizzano le informazion
 
 ![Stile mappa Nautical](@site/static/img/map/map-style-nautical.png)
 
-Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluviali, corsie marine, segnalazioni, porti e marchi nautici. Ulteriori informazioni nella sezione [Stile Mappa Nautica](../plugins/nautical-charts.md#nautical-map-style).
+Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluviali, corsie marine, marchi, porti e marchi nautici. Ulteriori informazioni nella sezione [Stile Mappa Nautica](../plugins/nautical-charts.md#nautical-map-style).
 
 ### Marine {#marine}
 
@@ -72,13 +72,13 @@ Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluvial
 
 Questo è uno stile di mappa nautica avanzato con settori luminosi, caratteristiche complete dei fari e altre caratteristiche marittime dettagliate per una navigazione marina realistica e accurata. Per ulteriori dettagli, leggi la sezione [Stile Mappa Marine](../plugins/nautical-charts.md#marine-map-style).
 
-### Winter e Ski {#winter-and-ski}
+### Winter and Ski {#winter-and-ski}
 
 ![Stile mappa Winter & Ski](@site/static/img/map/map-style-winter-ski.png)
 
 Questo è uno stile per sport invernali che descrive le piste, gli impianti di risalita e i sentieri per lo sci di fondo, oltre a oscurare gli oggetti secondari della mappa. Lo **stile Winter and Ski** è progettato per aiutarti con la navigazione negli sport invernali.  
 
-Puoi vedere le piste da sci e altri dettagli come la difficoltà delle piste e i marcatori degli impianti di risalita. I principali benefici includono la visualizzazione comoda di piste, impianti di risalita e altre caratteristiche sciistiche. Meno oggetti secondari distraenti della mappa. Ulteriori informazioni nell'articolo [Mappe Sci](../plugins/ski-maps.md).
+Puoi vedere le piste da sci e altri dettagli come la difficoltà delle piste e i marcatori degli impianti di risalita. I principali benefici includono la visualizzazione comoda di piste, impianti di risalita e altre caratteristiche sciistiche. Meno degli oggetti secondari distraenti della mappa. Ulteriori informazioni nell'articolo [Mappe Sci](../plugins/ski-maps.md).
 
 ### Topo {#topo}
 

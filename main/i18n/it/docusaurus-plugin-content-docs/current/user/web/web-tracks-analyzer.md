@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -27,7 +27,7 @@ Dopo aver aperto il Tracks Analyzer (mostrato come una chiave inglese), lo strum
 
 Per iniziare l'analisi, imposta uno o due punti direttamente sulla mappa. Fai clic destro sulla posizione desiderata e seleziona **Punto A / Punto B** dal menu contestuale. L'analizzatore quindi cerca segmenti di traccia che passano attraverso il punto selezionato o tra i due punti.
 
-![Analizzatore di tracce](@site/static/img/web/web_analyzer_select.png) ![Analizzatore di tracce](@site/static/img/web/web_analyzer_points.png)
+![Analizzatore di tracce](@site/static/img/web/web_analyzer_select.png) ![Analizzatore di tracce](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Ordinamento e parametri visibili {#sorting-and-visible-parameters}

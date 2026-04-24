@@ -1,5 +1,5 @@
 ---
-source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
+source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -31,7 +31,7 @@ Per connetterti con altri utenti di OsmAnd, fare domande e condividere la tua es
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
 |  Facebook | Gruppo utenti LC8 Rally OsmAnd (*English*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Amici italiani di Osmand (*Italian*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Facebook | Amici italiani di OsmAnd (*Italian*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
 |  Google Groups | Osmand (*English*)  | Un gruppo in cui gli utenti condividono consigli, rispondono a domande e discutono delle funzionalità di OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussione e supporto  | La comunità Reddit per gli utenti di OsmAnd. Fai domande, condividi esperienze o mostra i tuoi stili di mappa personalizzati. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | Canale notizie OsmAnd (*English*)  | Il gruppo ufficiale di OsmAnd per annunci e aggiornamenti direttamente dagli sviluppatori. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
@@ -45,8 +45,9 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 
 | Tipo | Descrizione | Link |
 |-- | -- | --|
+| GoogleMap in GPX per OsmAnd | Crea una cartella di file GPX in stile OsmAnd da una mappa Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML in GPX per OsmAnd | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ to GPX | Script Python per convertire file *KMZ* in formato *GPX*, incluse le icone. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML to GPX | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Strumento per convertire i file di Garmin Basecamp per OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi to OsmAnd | Conversione dei formati di mappa geoPDF, geoTiff e ozi per OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX to KML | Strumento per convertire file *GPX* di OsmAnd in formato *KML*, preservando le icone. | [GitHub](https://github.com/mariush444/osmand2kml) |
@@ -87,7 +88,7 @@ Di seguito è riportato un elenco di [plugin personalizzati](../plugins/custom.m
 | Icone di posizione 3D  | Questo pacchetto aggiunge un'opzione di modello 3D per i profili (È un esempio di come aggiungere la propria icona 3D a OsmAnd). Personalizza l'aspetto tramite il menu: [*Menu OsmAnd → Impostazioni → Profilo → Aspetto del profilo → scegli la 4a-5a icona di Icona posizione*](../personal/profiles.md#profile-appearance). | [Icone di posizione 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Collezione di mappe online AnyGIS | Dati dalla [pagina web AnyGIS](https://anygis.ru/index_en). Una raccolta di varie fonti di mappe online, tra cui mappe satellitari, turistiche e storiche, tra le altre.  | [Collezione di mappe online AnyGIS](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Legenda della mappa offline | Questo pacchetto aggiunge una legenda della mappa offline (versione 1.01; 03-04-2024), accessibile tramite *Menu → I miei luoghi → Preferiti → Legenda della mappa*. La legenda della mappa è disponibile anche in [questa posizione](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Legenda della mappa offline](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸Terre e sentieri USA | Una raccolta di mappe specializzate degli Stati Uniti, convertite in formato OBF per OsmAnd, che includono<ul><li>[Terre pubbliche e aree protette USGS (PAD-US 3.0), per stato](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Sentieri e strade USFS, a livello nazionale](https://www.fs.usda.gov/visit/maps),</li><li>[Strade e sentieri BLM, a livello nazionale](https://www.blm.gov/maps),</li><li>[POI delle attività ricreative BLM, a livello nazionale](https://www.blm.gov/maps),</li><li>[Terre private (dati catastali), per alcuni stati](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Maggiori informazioni su [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸Terre e sentieri USA](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇺🇸Terre e sentieri USA | Una raccolta di mappe specializzate degli Stati Uniti, convertite in formato OBF per OsmAnd, che includono<ul><li>[USGS Public lands and protected areas (PAD-US 3.0), per stato](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[USFS Trails and Roads, a livello nazionale](https://www.fs.usda.gov/visit/maps),</li><li>[BLM Roads and Trails, a livello nazionale](https://www.blm.gov/maps),</li><li>[BLM Recreation Activity POIs, a livello nazionale](https://www.blm.gov/maps),</li><li>[Private lands (parcel data), per alcuni stati](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Maggiori informazioni su [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸Terre e sentieri USA](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
 | 🇵🇱Mappa UMP della Polonia | [UMP](https://ump.waw.pl/) copre la maggior parte della Polonia con uno sforzo di sviluppo continuo. Per molto tempo è stato usato il nome UMP-pcPL (mapą prawie całej Polski). | [🇵🇱Mappa UMP della Polonia](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Questo plugin include uno stile di mappa leggero che migliora la visibilità di strade sterrate e sentieri in OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 

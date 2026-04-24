@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Interagire con la mappa
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Questo articolo spiega come personalizzare e interagire con la mappa utilizzando vari pulsanti e gesti. Copre come ruotare, zoomare, regolare l'angolo di visualizzazione e cambiare l'angolo di visualizzazione della mappa, ruotarla manualmente o automaticamente usando la bussola, o in base all'azimut.
+Questo articolo spiega come personalizzare e interagire con la mappa utilizzando vari pulsanti e gesti. Copre come ruotare, zoomare, regolare l'angolo di visualizzazione e cambiare l'angolo di visualizzazione della mappa, ruotarla manualmente o automaticamente usando la bussola, o in base al bearing.
 
 
 ## Movimento della mappa {#map-movement}
@@ -39,7 +39,7 @@ Le animazioni di scorrimento possono essere disattivate nelle impostazioni con u
 
 ### La mia posizione e Zoom {#my-position-and-zoom}
 
-![Menu Configura schermata](@site/static/img/widgets/location_zoom_buttons.png)
+![Pulsanti posizione e zoom](@site/static/img/widgets/location_zoom_buttons.png)
 
 **La mia posizione**.  
 Il pulsante *La mia posizione* è un'icona circolare che indica se il centro della mappa è sincronizzato con la geolocalizzazione attuale del tuo dispositivo. Spesso chiamato pulsante "Dove sono?", ti aiuta a trovare rapidamente la tua posizione sulla mappa. Durante la navigazione, la mappa di solito rimane sincronizzata con la posizione del dispositivo, quindi il pulsante rimane nascosto. Tuttavia, diventa visibile se la mappa e la tua posizione non sono più sincronizzate a causa dell'interazione dell'utente. Toccando il pulsante si ricentrerà la mappa sulla tua posizione attuale, e un doppio tocco passerà alla visualizzazione 3D.
@@ -163,11 +163,11 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 Il pulsante della bussola mostra come la [mappa è orientata](#map-orientation-modes). La *freccia rossa* sulle icone, o la direzione della freccia in modalità *Direzione del movimento*, indica il Nord. [L'icona sul pulsante della bussola](../widgets/map-buttons.md#compass) indica la modalità di orientamento della mappa corrente. Il widget del pulsante della bussola offre tre [opzioni di interazione](../widgets/map-buttons.md#compass-tapping-behavior): un *tocco singolo* ruota la mappa verso il Nord, un *doppio tocco* alterna tra tutte le modalità di orientamento della mappa e un *tocco lungo* apre l'elenco delle modalità.
 
-### Ruota mappa per azimut {#rotate-map-by-bearing}
+### Ruota mappa per bearing {#rotate-map-by-bearing}
 
-Nella modalità **ruota mappa per azimut** ([Direzione del movimento](../widgets/map-buttons.md#compass)), la mappa si allinea automaticamente con la tua direzione di movimento, in modo che l'area di fronte a te sia visualizzata nella parte superiore dello schermo. Questa modalità migliora la navigazione spostando leggermente il centro della mappa verso il basso, mostrando una porzione maggiore del percorso davanti a te. Se sei fermo, la mappa rimane fissa.  
+Nella modalità **ruota mappa per bearing** ([Direzione del movimento](../widgets/map-buttons.md#compass)), la mappa si allinea automaticamente con la tua direzione di movimento, in modo che l'area di fronte a te sia visualizzata nella parte superiore dello schermo. Questa modalità migliora la navigazione spostando leggermente il centro della mappa verso il basso, mostrando una porzione maggiore del percorso davanti a te. Se sei fermo, la mappa rimane fissa.  
 
-Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Impostazioni generali → Aspetto → Orientamento mappa* o toccando due volte il [pulsante Bussola](../widgets/map-buttons.md#compass-tapping-behavior). Per maggiori dettagli sull'azimut, vedi [qui](../widgets/nav-widgets.md#bearing-widget).
+Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Impostazioni generali → Aspetto → Orientamento mappa* o toccando due volte il [pulsante Bussola](../widgets/map-buttons.md#compass-tapping-behavior). Per maggiori dettagli sul bearing, vedi [qui](../widgets/nav-widgets.md#bearing-widget).
 
 
 ## Prospettiva della mappa {#map-perspective}
@@ -195,7 +195,7 @@ Sotto l'orizzonte, si può vedere la cosiddetta *foschia* o *nebbia*. Quest'area
 L'uso della nebbia è necessario poiché la visualizzazione di oggetti remoti sulla mappa richiede notevoli risorse di calcolo e non è sempre giustificata a causa delle [distorsioni](../plugins/development.md#comparison-with-a-satellite-imagery) della mappa a piccoli angoli di visualizzazione. Quindi la distanza visibile sulla mappa di OsmAnd è attualmente limitata a 35 tasselli.  
 
 :::info
-L'inclinazione della mappa può essere modificata con un tocco lungo sullo schermo con due dita e muovendole su/giù. È anche possibile modificare l'inclinazione toccando l'icona [La mia posizione](#my-position-and-zoom) nell'angolo in basso a destra dello schermo (sono disponibili solo le posizione a 45 e 90 gradi).  
+L'inclinazione della mappa può essere modificata con un tocco lungo sullo schermo con due dita e muovendole su/giù. È anche possibile modificare l'inclinazione toccando l'icona [La mia posizione](#my-position-and-zoom) nell'angolo in basso a destra dello schermo (sono disponibili solo le posizioni a 45 e 90 gradi).  
 Non è possibile modificare l'inclinazione della telecamera quando è attivo il vecchio [motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) (versione 1).
 :::
 
@@ -205,12 +205,15 @@ La *Lente d'ingrandimento mappa* è uno strumento che migliora la visibilità de
 
 ### Vista globo {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vista globo](@site/static/img/map/globe_view_1.png) ![Vista globo](@site/static/img/map/globe_view_2.png)
 
 **Vista globo** ti permette di visualizzare la mappa come una Terra sferica invece di una proiezione piatta. Questa modalità cambia la geometria della superficie della mappa e adatta l'interazione con la mappa alla navigazione sferica.  
-Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vista globale*
 
 La Vista globo è attualmente disponibile solo quando:
 - Il [plugin Sviluppo](../plugins/development.md) è abilitato.  
@@ -219,6 +222,20 @@ Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugg
 Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - Il [Motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) è impostato su Versione 2 (OpenGL).  
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vista globo](@site/static/img/map/globe_view_1_ios.png) ![Vista globo](@site/static/img/map/globe_view_2_ios_new.png)
+
+**Vista globo** ti permette di visualizzare la mappa come una Terra sferica invece di una proiezione piatta. Questa modalità cambia la geometria della superficie della mappa e adatta l'interazione con la mappa alla navigazione sferica.  
+
+</TabItem>
+
+</Tabs>
 
 Quando la Vista globo è abilitata, la mappa ruota come un globo. I gesti di trascinamento ruotano la Terra, e lo zoom cambia la distanza della telecamera invece di scalare una superficie piatta. Gli elementi della mappa come tracce, marcatori, simboli e oggetti 3D sono resi direttamente sulla superficie sferica e seguono la sua curvatura. Gli oggetti scompaiono gradualmente dietro l'orizzonte man mano che il globo ruota.
 

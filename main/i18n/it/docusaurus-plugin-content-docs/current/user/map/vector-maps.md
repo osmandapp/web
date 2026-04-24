@@ -1,5 +1,5 @@
 ---
-source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Mappe Vettoriali 
 ---
@@ -25,7 +25,7 @@ Le mappe vettoriali rappresentano dati spaziali, come strade, edifici, punti e p
 
 Poiché i dati vettoriali non sono memorizzati come immagini fisse, il loro aspetto, inclusi colore, larghezza della linea, trasparenza o motivo, può essere facilmente modificato. Questo approccio consente un rendering efficiente, un basso utilizzo della memoria e una scalatura fluida a qualsiasi livello di zoom senza perdita di qualità.
 
-:::info nota
+:::info note
 I poligoni molto piccoli potrebbero essere semplificati o distorti durante la generazione dei dati della mappa. Gli oggetti con un'area inferiore a circa un metro quadrato potrebbero non essere visualizzati. Per una visualizzazione corretta, le piccole feature dovrebbero essere mappate come singoli nodi invece che come poligoni.
 :::
 
@@ -371,15 +371,29 @@ L'opzione Terreno consente di personalizzare tre funzionalità come Hillshade, P
 
 ### Edifici 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edifici 3D*  
+<TabItem value="android" label="Android"> 
 
-![Edifici 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_2.png) 
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![Edifici 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![Edifici 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 La funzione **Edifici 3D** visualizza gli edifici come modelli 3D volumetrici invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-Questa opzione è disponibile solo quando il plugin Topografia è abilitato. Vedere l'articolo sul [plugin Topografia](../plugins/topography.md#3d-buildings) per i dettagli.
+Su Android, questa opzione è disponibile solo quando il plugin Topografia è abilitato. Vedere l'articolo sul [plugin Topografia](../plugins/topography.md#3d-buildings) per i dettagli.
 
 ### Rilievo 3D {#3d-relief}
 
@@ -415,11 +429,25 @@ Per ulteriori dettagli sulla vista della mappa nautica, visitare la [pagina del 
 
 ### Vista Globo {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vista Globale*
+<TabItem value="android" label="Android">  
+
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vista Globo](@site/static/img/map/globe_view_1.png) ![Vista Globo](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vista Globo](@site/static/img/map/globe_view_1_ios.png) ![Vista Globo](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 **Vista Globo** consente di visualizzare la mappa come una Terra sferica invece che come una proiezione piana. Questa modalità cambia la geometria della superficie della mappa e adatta l'interazione della mappa alla navigazione sferica. Per maggiori informazioni, vedere la sezione [Vista Globo](../map/interact-with-map.md#globe-view) nell'articolo Interagire con la mappa.
 
@@ -519,5 +547,43 @@ Per impostazione predefinita, l'app utilizza il formato delle coordinate selezio
 |**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&|
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
 -->
+
+## Percorsi {#routes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Percorsi mappa - percorsi ciclabili](@site/static/img/map/map-routes-cycle-routes.png)  ![Percorsi mappa - rete escursionistica](@site/static/img/map/map-routes-hiking-network.png)
+
+Un percorso è un tracciato predefinito che deve essere seguito per raggiungere una destinazione specifica. Un percorso può essere ottimizzato per diversi tipi di viaggio, come ciclismo, escursionismo, corsa, trasporti pubblici e altri. È possibile leggere di più sui percorsi e sui loro tipi nell'articolo [Percorsi](../map/routes.md).
+
+
+## Articoli Correlati {#related-articles}
+
+- [Interagire con la Mappa](../map/interact-with-map.md)
+- [Configura Mappa](../map/configure-map-menu.md)
+- [Stili Mappa](../map/map-styles.md)
+- [Percorsi](../map/routes.md)
+- [Importa / Esporta](../personal/import-export.md)
+- [Schemi Palette Colori](../personal/color-palette-schemes.md)

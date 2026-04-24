@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  Metriche veicolo
 ---
@@ -203,7 +203,7 @@ Questi tag facilitano l'identificazione e l'utilizzo di dati specifici del veico
 
 <TabItem value="android" label="Android">
 
-**Android.** Vai su: *Menu → Configura schermata → Widget → Scegli un pannello → Metriche veicolo*
+**Android.** Vai su: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Questi tag facilitano l'identificazione e l'utilizzo di dati specifici del veico
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Vai su: *Menu → Configura schermata → Widget → Scegli un pannello → Metriche veicolo*
+**iOS.** Vai su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

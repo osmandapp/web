@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  Aspetto della traccia
 ---
@@ -61,7 +61,7 @@ Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. <a href="ht
 
 **Opzioni di colore disponibili:**
 
-- **Impostazioni gratuite**: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).   
+- Impostazioni gratuite: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).   
 - [Funzionalità Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Su iOS la **lista di Colorazione** si apre come un menu contestuale. Gli elementi possono apparire in tre stati: 
@@ -86,8 +86,8 @@ La schermata *Tutti i colori* visualizza le palette disponibili. Toccare il menu
 - Rimuovere. La rimozione di una palette richiede conferma.
 
 Toccare il pulsante + nella schermata Tutti i colori. Sono disponibili due tipi di palette:
-- **Relativa** — i colori si scalano automaticamente in base ai valori minimo e massimo della traccia.
-- **Valori Fissi** — i colori sono assegnati a numeri assoluti specifici (ad esempio, 50 km/h). I valori possono essere modificati manualmente. Le unità seguono le [impostazioni di sistema](../../personal/profiles.md#units--formats). La scala dei colori non si riscala automaticamente quando applicata a tracce diverse.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — i colori si scalano automaticamente in base ai valori minimo e massimo della traccia.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — i colori sono assegnati a numeri assoluti specifici (ad esempio, 50 km/h). I valori possono essere modificati manualmente. Le unità seguono le [impostazioni di sistema](../../personal/profiles.md#units--formats). La scala dei colori non si riscala automaticamente quando applicata a tracce diverse.
 
 :::info Funzionalità Pro
 La creazione di palette personalizzate è una funzionalità a pagamento di [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.

@@ -1,5 +1,5 @@
 ---
-source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -126,12 +126,14 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dati topografici](../plugins/topography.md#overview)<br/>(Curve di livello e Terreno) | **-** | ✔ | ✔ |
 | [Griglia coordinate — Personalizzazione colore](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [Edifici 3D — Personalizzazione colore](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [Edifici 3D — Personalizzazione colore](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Visualizzazione traccia 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Luoghi popolari (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage offline - Guide di viaggio](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Plugin Astronomia](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Pianificazione osservazioni](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Modalità AR interattiva](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Mappa del cielo offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
