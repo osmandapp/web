@@ -1,5 +1,5 @@
 ---
-source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
+source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -130,7 +130,7 @@ La pestaña **Descargar** le permite descargar varios tipos de mapas de los serv
 - **Contador de mapas** (***Versión gratuita***). Muestra cuántos mapas le quedan por descargar.
 - [Mapas adicionales](#extra-maps). Muestra los datos del mapa para el [Paquete personalizado](../plugins/custom.md).
 - **Regiones**. Lista por continente y región del mundo: *África, Antártida, Asia, Australia y Oceanía, América Central, Europa, América del Norte, Rusia y América del Sur.*
-- [Mapas del mundo](#world-maps). Una lista de mapas de todo el mundo: *Corrección de altitud mundial (solo Android)*, *Mapa general del mundo*, *Todo el mundo (Pronóstico del tiempo)*
+- [Mapas del mundo](#world-maps). Una lista de mapas de todo el mundo: *<Translate android="true" ids="index_item_world_altitude_correction"/> (solo Android)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Mapa meteorológico mundial*
 - [Mapas náuticos](../plugins/nautical-charts.md) ([*función de pago*](../purchases/index.md)). Mapas vectoriales con elevaciones como puntos o líneas.
 - [Guías de viaje (Wikivoyage)](../plan-route/travel-guides.md) ([*función de pago*](../purchases/index.md)). Mapas vectoriales con una colección de artículos en formato HTML y adicionalmente archivos GPX.
 - **Otros mapas**. Mapas que no se pueden asignar a la jerarquía de mapas actual porque no son compatibles o estarán disponibles en futuras versiones.
@@ -142,9 +142,9 @@ La pestaña **Descargar** le permite descargar varios tipos de mapas de los serv
 
 En el menú Descargar mapas, hay una sección de **Mapas del mundo** que proporciona acceso para descargar varios mapas del mundo, complementando la funcionalidad de la aplicación.  
 
-- **Corrección de altitud mundial** (*solo Android*). Este archivo contiene correcciones de altitud para compensar la curvatura planetaria.
-- **Mapa general del mundo**. Proporciona una visión general extensa de la superficie terrestre, útil para la planificación de rutas a largo plazo y la exploración casual.
-- **Todo el mundo (Pronóstico del tiempo)**. Le permite descargar un mapa con información meteorológica.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Este archivo contiene correcciones de altitud para compensar la curvatura planetaria.
+- **<Translate android="true" ids="index_item_world_basemap"/>**. Proporciona una visión general extensa de la superficie terrestre, útil para la planificación de rutas a largo plazo y la exploración casual.
+- **Mapa meteorológico mundial**. Le permite descargar un mapa con información meteorológica.
 
 
 ### Mapas adicionales {#extra-maps}
@@ -243,7 +243,9 @@ Toque cualquier elemento en la pestaña **Local** para abrir su lista detallada.
 - **Menú de tres puntos**:  
     ***Seleccionar***. Elija varios elementos para acciones como *Eliminar*, *Desactivar* o *Activar*.  
     ***Importar***. Acceda al almacenamiento del dispositivo para importar archivos.
-- **Opción de ordenación**. Ordene los elementos por nombre, país, fecha o tamaño (la disponibilidad depende del tipo de datos).
+- **Opción de ordenación**. Ordene los elementos por nombre, país, fecha o tamaño (la disponibilidad depende del tipo de datos).  
+
+Para los mapas Estándar, algunos elementos pueden estar agrupados por región. En tales casos, cada entrada de mapa muestra tanto la subregión como su región principal. El orden de estos nombres depende del método de ordenación seleccionado: al ordenar por nombre, se muestra primero la subregión, seguida de la región; al ordenar por país, se muestra primero la región, seguida de la subregión.
 
 Cada elemento de la lista ofrece un *menú de tres puntos* con opciones:
 
@@ -436,7 +438,7 @@ La pestaña **Actualizaciones** le permite actualizar los mapas y recursos de Os
 
 Use el botón *Actualizar todo* para actualizar todos los mapas simultáneamente, o actualice mapas individuales según sea necesario. Para actualizaciones por hora, verifique el estado de su suscripción a [Actualizaciones en vivo](#live-updates). Si está habilitado, la sección **Actualizaciones en vivo** aparecerá en la parte superior de la pestaña, debajo del indicador de Memoria del dispositivo.
 
-La pestaña **Actualizaciones** también puede mostrar un elemento **Mapas no compatibles**. Aparece cuando tiene mapas que ya no son compatibles y han sido reemplazados por regiones más pequeñas. Toque Mapas no compatibles para revisar la lista, eliminar mapas obsoletos y descargar las nuevas versiones de regiones en su lugar. En la pantalla de Mapas no compatibles, puede ver todos los mapas no compatibles y usar Eliminar todo para eliminarlos de una vez (se muestra un mensaje de confirmación antes de la eliminación).
+La pestaña **Actualizaciones** también puede mostrar un elemento **<Translate ios="true" ids="unsupported_maps"/>**. Aparece cuando tiene mapas que ya no son compatibles y han sido reemplazados por regiones más pequeñas. Toque Mapas no compatibles para revisar la lista, eliminar mapas obsoletos y descargar las nuevas versiones de regiones en su lugar. En la pantalla de Mapas no compatibles, puede ver todos los mapas no compatibles y usar Eliminar todo para eliminarlos de una vez (se muestra un mensaje de confirmación antes de la eliminación).
 
 La pestaña **Actualizaciones** también incluye una sección de Pronóstico del tiempo. Está diseñada para gestionar sus pronósticos sin conexión para los países seleccionados:
 
@@ -468,7 +470,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,down
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Menú de mapas OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Menú de mapas OsmAnd live editar iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Menú de mapas OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Menú de mapas OsmAnd live editar iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 

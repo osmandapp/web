@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Mapa
 title: Mapa global en el sitio web
@@ -40,7 +40,10 @@ El mapa web de OsmAnd es un mapa global basado en datos de [OpenStreetMap (OSM)]
 
 Para abrirlo, haz clic derecho en cualquier parte del mapa. Este menú incluye las siguientes acciones:
 
-- **Dónde estoy** – Encuentra rápidamente tu ubicación actual en el mapa. Esta función muestra las direcciones más cercanas al punto seleccionado en el mapa.
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Abrir tiempo** – Accede al [Menú del tiempo](../web/web-weather.md) para ver los detalles meteorológicos.
 - **Crear nueva ruta** – Abre la herramienta [*Planificar una ruta*](../web/web-navigation.md) con la ubicación seleccionada como punto de partida o de destino.
 - **Añadir Favorito** – Te permite crear y guardar un [favorito](../web/web-favorites.md#add--edit-favorite) en cualquier punto del mapa para un acceso fácil.
@@ -57,7 +60,21 @@ Para abrirlo, haz clic derecho en cualquier parte del mapa. Este menú incluye l
 Add pin option will be added back once it becomes available again.
 -->
 
-![Menú contextual del mapa](@site/static/img/web/map_context_menu_new.png)
+![Menú contextual del mapa](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Objeto seleccionado {#selected-object}
+
+Cuando se selecciona un objeto en el mapa (como un PDI, favorito o punto de navegación), se resalta con un pin más grande. Solo se puede seleccionar un objeto a la vez.
+
+Si el objeto seleccionado ya es visible en la pantalla, el mapa no se mueve. Si está fuera de la vista actual, el mapa se centra en él sin cambiar el nivel de zoom.
+
+El marcador seleccionado permanece visible al hacer zoom en el mapa.
+
+Los marcadores cercanos pueden ocultarse para hacer más fácil ver el objeto seleccionado.
+
+![Objeto seleccionado](@site/static/img/web/selected_object_favorite.png) ![Objeto seleccionado](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menú Configurar mapa {#configure-map-menu}
@@ -66,7 +83,7 @@ El menú Configurar mapa te permite gestionar los ajustes de visualización de l
 
 - [Superposición de PDI...](#poi-overlay). Te permite elegir y mostrar las categorías de PDI necesarias en el mapa.
 - [Favoritos](#favorites). Activa o desactiva la visualización de favoritos en el mapa.
-- [Tracks](#tracks). Contiene los tracks GPX visibles en el mapa.  
+- [Tracks](#tracks). Contiene los tracks GPX visibles en el mapa.
 - [Paradas de transporte](#transport-stops). Activa o desactiva la visualización de paradas de transporte público en el mapa. 
 - [Terreno](#terrain). Activa o desactiva el esquema de color del terreno en el mapa.
 
@@ -106,16 +123,25 @@ Esta sección contiene una lista de tus [**tracks GPX visibles en el mapa**](../
 - Puedes activar o desactivar los tracks directamente.  
 - Activa o desactiva los tracks desde la lista de **Visibles recientemente**.  
 
-Cada track tiene un **Menú contextual** (accesible a través del botón ⋮) con los siguientes comandos:
+Cada track tiene un menú (⋮) con los siguientes comandos:
 
 - **Ocultar track**: Oculta el track actualmente visible del mapa.  
 - **Hacer visible el track**: Muestra un track de la lista de Visibles recientemente en el mapa.  
 - **Renombrar**: Te permite renombrar el track para una identificación más fácil.
 - **Duplicar**: Crea una copia del track.
-- **Descargar**: Guarda el track en tu dispositivo local.
+- **Compartir**: Abre la pantalla de compartición (igual que para [Favoritos](../web/web-favorites.md#share)).
+- **Descargar**: Guarda el track en tu dispositivo local.  
 - **Eliminar**: Elimina el track permanentemente de la lista.
 
-![Menú Configurar mapa Tracks](@site/static/img/web/configure_map_track.png)
+Cuando abres un track, se muestra un panel con una barra de acciones superior. La barra muestra el nombre del track y proporciona acceso rápido a acciones. Además de los comandos del menú de tres puntos, la barra superior incluye **Editar**. **Apariencia** actualmente no está activa.
+
+El panel del track incluye las siguientes pestañas:
+
+- Resumen — muestra información general del track.
+- Track — actualmente no implementado.
+- Puntos — muestra waypoints y puntos de ruta agrupados por tipo.
+
+![Menú Configurar mapa Tracks](@site/static/img/web/configure_map_track_new.png) ![Menú Configurar mapa Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Paradas de transporte {#transport-stops}
 
@@ -277,3 +303,4 @@ Dependiendo de los parámetros especificados, las cadenas de URL pueden contener
 - [Tracks](./web-tracks.md)
 - [Favoritos](./web-favorites.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+-->

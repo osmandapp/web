@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -27,7 +27,7 @@ Después de abrir el Analizador de pistas (mostrado como una llave inglesa), la 
 
 Para iniciar el análisis, establece uno o dos puntos directamente en el mapa. Haz clic derecho en la ubicación deseada y selecciona **Punto A / Punto B** del menú contextual. El analizador luego busca segmentos de pistas que pasen por el punto seleccionado o entre los dos puntos.
 
-![Analizador de pistas](@site/static/img/web/web_analyzer_select.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_points.png)
+![Analizador de pistas](@site/static/img/web/web_analyzer_select.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Ordenación y parámetros visibles {#sorting-and-visible-parameters}

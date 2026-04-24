@@ -1,5 +1,5 @@
 ---
-source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topografía
 ---
@@ -346,28 +346,58 @@ La configuración principal para *Mostrar u ocultar tipos de mapa* se encuentra 
 
 ## Edificios 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edificios 3D* 
+<TabItem value="android" label="Android">  
 
-![Edificios 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_2_new.png) 
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando información de altura de etiquetas como `height` y `building:levels` cuando está disponible. Los edificios 3D solo se muestran en niveles de zoom más altos (vista de ciudad/calle), donde se pueden mostrar edificios individuales.  
+![Edificios 3D](@site/static/img/map/3d_buildings_4_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_3_new.png)
 
-Usa el interruptor principal para habilitar o deshabilitar el renderizado 3D de edificios. Para ver los edificios en 3D, inclina el mapa colocando dos dedos en la pantalla y deslizando hacia arriba. En esta vista, los edificios pueden cubrir parcialmente las carreteras o las etiquetas del mapa dependiendo de la configuración de visibilidad.
+</TabItem>
 
-Esta opción solo está disponible cuando el complemento Topografía está habilitado.  
+<TabItem value="ios" label="iOS">  
+
+Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![Edificios 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando información de altura de etiquetas como `height` y `building:levels` cuando está disponible. Si [los datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluyen pasajes a través de edificios mapeados con la etiqueta `tunnel=building_passage`, OsmAnd renderiza aberturas visibles en el modelo de edificio 3D para que las carreteras o caminos peatonales que pasan a través del edificio se muestren correctamente. 
+
+Los edificios 3D solo se muestran en niveles de zoom más altos (vista de ciudad/calle), donde se pueden mostrar edificios individuales. Cuando un POI o una ubicación seleccionada (como un pin del mapa o un destino de navegación) está dentro de un edificio, OsmAnd resalta el edificio correspondiente para facilitar su identificación en el mapa.
+
+Usa el interruptor principal para habilitar o deshabilitar el renderizado 3D de edificios. Cuando está habilitado, la configuración también muestra el [Nivel de detalle](#performance) actual (Bajo o Alto) debajo del interruptor principal (*solo Android*). Para ver los edificios en 3D, inclina el mapa colocando dos dedos en la pantalla y deslizando hacia arriba. En esta vista, los edificios pueden cubrir parcialmente las carreteras o las etiquetas del mapa dependiendo de la configuración de visibilidad.
+
+En Android, esta opción solo está disponible cuando el complemento Topografía está habilitado.  
 Ir a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
 La configuración de edificios 3D se divide en dos grupos: **Apariencia** y **Rendimiento**.
 
 ### Apariencia {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![Edificios 3D](@site/static/img/map/3d_buildings_color.png)
 
-Los controles de **Apariencia** determinan cómo se ven los edificios 3D en el mapa. Incluye dos configuraciones: Color y Visibilidad. 
+</TabItem>
 
-**Color** te permite cambiar el color del edificio. Cuando tocas Color, OsmAnd abre una pantalla de vista previa separada donde puedes ver el mapa mientras ajustas la configuración.
+<TabItem value="ios" label="iOS">  
+
+![Edificios 3D](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Los controles de **<Translate android="true" ids="shared_string_appearance"/>** determinan cómo se ven los edificios 3D en el mapa. Incluye dos configuraciones: Color y Visibilidad. 
+
+**<Translate android="true" ids="shared_string_color"/>** te permite cambiar el color del edificio. Cuando tocas Color, OsmAnd abre una pantalla de vista previa separada donde puedes ver el mapa mientras ajustas la configuración. La pantalla de vista previa muestra un mapa en vivo para que puedas ver inmediatamente cómo el color seleccionado afecta a los edificios.
 - **Estilo de mapa** — utiliza el color predeterminado del edificio del estilo de mapa seleccionado actualmente.
 - **Personalizado** — te permite establecer un color de edificio personalizado por separado para el modo Día / Noche.
 
@@ -377,19 +407,19 @@ La personalización de color de Edificios 3D es una [función de pago](../purcha
 
 Si no se han comprado colores personalizados, verás un estado vacío con una breve descripción y un botón Obtener. Si Personalizado está disponible, puedes cambiar entre Día y Noche, elegir un color de la paleta (o abrir Todos los colores), luego tocar Aplicar.
 
-**Visibilidad** controla la opacidad (transparencia) de los edificios 3D. Usa el control deslizante para establecer la visibilidad como un porcentaje. Los valores más bajos hacen que los edificios sean más transparentes y ayudan a que las carreteras/etiquetas sigan siendo legibles. Los valores más altos hacen que los edificios parezcan más sólidos y visualmente dominantes. Tocar Visibilidad también abre una pantalla de vista previa separada con el control deslizante.
+**<Translate android="true" ids="gpx_visibility_txt"/>** controla la opacidad (transparencia) de los edificios 3D. Usa el control deslizante para establecer la visibilidad como un porcentaje. El control deslizante permite valores del 10% al 100%, con un 50% utilizado por defecto. Los valores más bajos hacen que los edificios sean más transparentes y ayudan a que las carreteras/etiquetas sigan siendo legibles. Los valores más altos hacen que los edificios parezcan más sólidos y visualmente dominantes. Tocar Visibilidad también abre una pantalla de vista previa separada con el control deslizante.
 
 En las pantallas de vista previa (Color / Visibilidad), puedes usar Restablecer a predeterminado desde la barra de la aplicación para restaurar el valor predeterminado.
 
 ### Rendimiento {#performance}
 
-Los controles de **Rendimiento** determinan cómo se renderizan los edificios 3D. Incluye dos configuraciones: Nivel de detalle y Distancia de vista.
+Los controles de **<Translate android="true" ids="performance"/>** determinan cómo se renderizan los edificios 3D. Incluye dos configuraciones: Nivel de detalle y Distancia de vista.
 
-**Nivel de detalle** determina la complejidad de la geometría del edificio 3D:
+**<Translate android="true" ids="level_of_details"/>** determina la complejidad de la geometría del edificio 3D:
 - Bajo (predeterminado) — geometría más simple.
 - Alto — geometría más detallada.
 
-**Distancia de vista** controla qué tan lejos de la cámara se renderizan los edificios 3D:
+**<Translate android="true" ids="view_distance"/>** controla qué tan lejos de la cámara se renderizan los edificios 3D:
 - Cerca (predeterminado) — renderiza edificios más cerca de ti.
 - Lejos — renderiza edificios desde una distancia mayor.
 
@@ -455,7 +485,6 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 </TabItem>
 
 </Tabs>
-
 
 ### Exageración vertical {#vertical-exaggeration}
 

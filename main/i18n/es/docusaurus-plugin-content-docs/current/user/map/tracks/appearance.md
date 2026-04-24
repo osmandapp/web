@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
@@ -86,8 +86,8 @@ La pantalla *Todos los colores* muestra las paletas disponibles. Toque el menú 
 - Eliminar. Eliminar una paleta requiere confirmación.
 
 Toque el botón + en la pantalla Todos los colores. Hay dos tipos de paletas disponibles:
-- **Relativa** — los colores se escalan automáticamente en función de los valores mínimo y máximo de la pista.
-- **Valores fijos** — los colores se asignan a números absolutos específicos (por ejemplo, 50 km/h). Los valores se pueden editar manualmente. Las unidades siguen los [ajustes del sistema](../../personal/profiles.md#units--formats). La escala de colores no se reescala automáticamente al aplicarla a diferentes pistas.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — los colores se escalan automáticamente en función de los valores mínimo y máximo de la pista.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — los colores se asignan a números absolutos específicos (por ejemplo, 50 km/h). Los valores se pueden editar manualmente. Las unidades siguen los [ajustes del sistema](../../personal/profiles.md#units--formats). La escala de colores no se reescala automáticamente al aplicarla a diferentes pistas.
 
 :::info Pro feature
 Crear paletas personalizadas es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.

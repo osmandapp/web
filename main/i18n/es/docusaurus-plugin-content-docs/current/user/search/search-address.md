@@ -1,5 +1,5 @@
 ---
-source-hash: cc7b11b19f0261ab3f9cc12de149c6d268cdaa50b3a828cc60f5dd3ebe0ce868
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title:  Búsqueda de Dirección
 ---
@@ -19,11 +19,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 La búsqueda de direcciones funciona sin conexión utilizando mapas descargados. Asegúrese de que el mapa de la región en la que está buscando esté instalado. Los resultados dependen de los datos de direcciones disponibles en OpenStreetMap.
 
+Los resultados de búsqueda se ordenan automáticamente por relevancia y distancia, por lo que los resultados cercanos y más relevantes aparecen más arriba en la lista.
+
 OsmAnd proporciona varias formas de llegar a la herramienta de *Búsqueda*, donde se encuentra la sección **Búsqueda de Dirección**.
 
 - El [botón de Búsqueda](../widgets/map-buttons.md#search) siempre se muestra en el mapa, y al tocarlo le llevará a la [pantalla general](#full-text-search) de la herramienta, donde puede encontrar la pestaña *Dirección*.
 - Vaya al *Menú* principal de Android → *Búsqueda* → pestaña *Dirección*.
-- Al prepararse para iniciar una ruta, toque *Navegación* → *Establecer destino* → Campo de *Búsqueda*.
+- Al prepararse para iniciar una ruta, toque *Navegación* → *Establecer destino* → Campo de *Búsqueda*.  
 
 
 ## Búsqueda de texto completo {#full-text-search}
@@ -83,6 +85,8 @@ No necesita introducirlos en un orden estricto. **Ejemplos de consultas**:
 
 Si no se encuentra la dirección completa, OsmAnd intenta automáticamente consultas simplificadas (por ejemplo, eliminando palabras extra) para mejorar las posibilidades de encontrar la ubicación.
 
+Cuando una consulta pueda referirse tanto a una dirección como a un PDI, OsmAnd prioriza automáticamente la interpretación más relevante en función del contexto, la distancia y la importancia del objeto.
+
 **NOTA:** La búsqueda de direcciones funciona solo dentro de los mapas descargados. Los resultados de búsqueda se basan en:
 - mapas instalados en su dispositivo;
 - el área visible del mapa;
@@ -117,6 +121,8 @@ La búsqueda de direcciones en OsmAnd es tolerante a diferentes formatos de entr
 - cambiar el orden de las palabras;
 - eliminar información extra;
 - buscar solo por nombre de calle.
+
+Sin embargo, las consultas muy cortas o generales (por ejemplo, “Apple”) pueden devolver una mezcla de direcciones y PDIs, incluyendo una marca, nombre de calle o localidad con el mismo nombre. Para mejorar la precisión, intente agregar más detalles como el nombre de la ciudad, la calle o el nombre del PDI.
 
 El motor de búsqueda también tolera variaciones comunes en el formato de direcciones como diferentes órdenes de palabras, diferencias de ortografía, abreviaturas o formatos de números de casa. La tabla a continuación muestra variaciones típicas de búsqueda que pueden devolver la misma dirección.
 
@@ -160,13 +166,13 @@ These variations may still return the same address.
 
 <TabItem value="android" label="Android">
 
-![Búsqueda de Calle Android](@site/static/img/search/town_search_android.png)
+![Búsqueda de Ciudad Android](@site/static/img/search/town_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Búsqueda de Calle iOS](@site/static/img/search/town_search_ios.png)
+![Búsqueda de Ciudad iOS](@site/static/img/search/town_search_ios.png)
 
 </TabItem>
 
@@ -209,7 +215,7 @@ Esta forma de búsqueda facilita la localización de lugares específicos dentro
 
 <TabItem value="ios" label="iOS">
 
-![Búsqueda de Calle iOS](@site/static/img/search/address_street_search_3_ios.png) ![Búsqueda de Calle Android](@site/static/img/search/address_street_search_4_ios.png)
+![Búsqueda de Calle iOS](@site/static/img/search/address_street_search_3_ios.png) ![Búsqueda de Calle iOS](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 
@@ -279,7 +285,7 @@ Para más información, lea los **[datos de códigos postales del Reino Unido](h
 
 </Tabs>
 
-La [**Búsqueda por Coordenadas**](../search/search-coordinates.md) le permite especificar coordenadas geográficas, como latitud y longitud, para encontrar una ubicación específica. Proporciona ubicaciones precisas en un mapa en diferentes [formatos de coordenadas](../search/search-coordinates.md#coordinate-format) y le permite obtener información relacionada. Esta función puede ser útil cuando no se tiene una dirección o el nombre exacto de un lugar, y puede facilitar la planificación de viajes y la navegación en lugares desconocidos.
+La [**Búsqueda por Coordenadas**](../search/search-coordinates.md) le permite especificar coordenadas geográficas, como latitud y longitud, para encontrar una ubicación específica. Proporciona ubicaciones precisas en un mapa en diferentes [formatos de coordenadas](../search/search-coordinates.md#coordinate-format) y le permite obtener información relacionada. Esta función puede ser útil cuando no se tiene una dirección o el nombre exacto de un lugar, y puede facilitar la planificación de viajes y la navegación en lugares desconocidos.  
 
 
 ## Artículos Relacionados {#related-articles}

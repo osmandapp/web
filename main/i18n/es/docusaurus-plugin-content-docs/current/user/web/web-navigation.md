@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Cuando haga clic en Seleccionar pista, el navegador abre un selector de archivos
 
 ## Detalles de la ruta {#route-details}
 
-![Navegación web](@site/static/img/web/navigation_info.png) ![Navegación web](@site/static/img/web/navigation_turns.png)
+![Navegación web](@site/static/img/web/navigation_overview.png) ![Navegación web](@site/static/img/web/navigation_turns_new.png)
 
-Cuando se calcula una ruta, el panel muestra un resumen básico (distancia, tiempo, subida/bajada) y un botón **Detalles**. Utilice Detalles para abrir la vista de la ruta con dos pestañas: Info y Curvas.
+Cuando se calcula una ruta, el panel muestra un resumen básico (distancia, tiempo, subida/bajada) y un botón **Detalles**. Utilice Detalles para abrir la vista de la ruta con múltiples pestañas. Las pestañas principales incluyen Resumen, Pista y Puntos. La pestaña Curvas está disponible a través de la flecha (›) en la barra de pestañas.
 
-Info resume la ruta y los datos de elevación:
+Resumen resume la ruta y los datos de elevación:
 - **Puntos** — el número de puntos de ruta utilizados para construir la ruta.
 - **Ruta** — distancia y tiempo.
 - **Subida/Bajada** — ascenso y descenso totales.

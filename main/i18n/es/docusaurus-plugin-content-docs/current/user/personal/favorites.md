@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Favoritos
 ---
@@ -64,13 +64,13 @@ Los favoritos son parte de una capa de mapa especial, y puede [mostrarlos u ocul
 
 <TabItem value="android" label="Android">
 
-![Añadir descripción de Favorito Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Grupo de Favoritos Android](@site/static/img/personal/favorite_group_android.png)
+![Añadir descripción de Favorito Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Grupo de Favorito Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Añadir descripción de Favorito iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Grupo de Favoritos iOS](@site/static/img/personal/favorite_group_ios.png)
+![Añadir descripción de Favorito iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Grupo de Favorito iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -272,7 +272,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Use el ***Menú de tres puntos*** junto a cada carpeta para gestionar grupos de favoritos:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ocultar en el mapa** — Active esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
-- **Fijar carpeta** — Fije la carpeta seleccionada para mantenerla en la parte superior de la lista de favoritos para un acceso más rápido.
+- **<Translate android="true" ids="pin_folder"/>** — Fije la carpeta seleccionada para mantenerla en la parte superior de la lista de favoritos para un acceso más rápido.
 - **<Translate android="true" ids="shared_string_rename"/>** — Use esta opción para cambiar el nombre de la carpeta seleccionada.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalice cómo aparecen los puntos favoritos de la carpeta en el mapa cambiando sus iconos, colores o etiquetas.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Eliminar de los marcadores del mapa** — Añada todos los puntos favoritos de la carpeta a la *lista de Marcadores del mapa* o elimínelos según sea necesario para una fácil referencia.

@@ -1,5 +1,5 @@
 ---
-source-hash: 887e37d512e29933bbd3ee7af217024887ffcc5ac636c9ddc52e7480299a8d1b
+source-hash: 383e9a6814a4fe9dfbefeb9e426313df17c79d317898ed48ee3cdc95f7de4d54
 sidebar_position: 6
 title:  Map Styles (Vector Maps)
 ---
@@ -90,7 +90,7 @@ Este estilo está diseñado para senderismo, acampada y ciclismo en la naturalez
 
 ![Estilo de mapa OSM-carto](@site/static/img/map/map-style-osm-carto.png)
 
-Este estilo imita el estilo web predeterminado de [OpenStreetMap](https://www.openstreetmap.org/). El código fuente de la versión web está disponible en [Github](https://github.com/gravitystorm/openstreetmap-carto), el código de OsmAnd está disponible en [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
+Este estilo imita el [estilo web predeterminado de OpenStreetMap](https://www.openstreetmap.org/). El código fuente de la versión web está disponible en [Github](https://github.com/gravitystorm/openstreetmap-carto), el código de OsmAnd está disponible en [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
 
 ### Desierto {#desert}
 

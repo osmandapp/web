@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  Métricas del vehículo
 ---
@@ -53,7 +53,7 @@ Para usar los datos de un escáner OBD-II:
 4. [Conecte](#pair-odb-ii-scanner) el escáner OBD-II al puerto de su vehículo.
 5. [Configure](#scanner-settings) los **ajustes del escáner**.
 6. [Añada](#widgets) **widgets de Métricas del vehículo** para mostrar datos en pantalla (opcional).
-7. [Use](#trip-recording)el **plugin de Grabación de viaje** para registrar los datos del vehículo.
+7. [Use](#trip-recording) el **plugin de Grabación de viaje** para registrar los datos del vehículo.
 
 
 ### Emparejar escáner ODB-II {#pair-odb-ii-scanner}
@@ -203,7 +203,7 @@ Estas etiquetas facilitan la identificación y utilización de datos específico
 
 <TabItem value="android" label="Android">
 
-**Android.** Vaya a: *Menú → Configurar pantalla → Widgets → Elegir un panel → Métricas del vehículo*
+**Android.** Vaya a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Estas etiquetas facilitan la identificación y utilización de datos específico
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Vaya a: *Menú → Configurar pantalla → Widgets → Elegir un panel → Métricas del vehículo*
+**iOS.** Vaya a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Elegir un panel → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

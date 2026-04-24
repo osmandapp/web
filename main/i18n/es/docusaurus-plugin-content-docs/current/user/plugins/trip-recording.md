@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Grabación de viaje
 ---
@@ -195,13 +195,13 @@ Para más detalles, puede explorar el [**Menú contextual de pistas**](../map/tr
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configurar pistas del mapa en Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configurar pistas del mapa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configurar pistas del mapa en iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configurar pistas del mapa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -414,13 +414,13 @@ Algunos widgets de Grabación de viaje admiten múltiples modos de visualizació
 
 | **Widget** | **Modos disponibles**  |
 |-------|-------------|
-| Pendiente promedio | Último descenso; Último ascenso |
-| Velocidad promedio *(Solo Android)* | Promedio del viaje (predeterminado); Último descenso; Último ascenso |
-| Distancia (Iniciar-Detener) | Promedio del viaje (predeterminado); Último descenso; Último ascenso |
-| Descenso | Total (predeterminado); Último descenso |
-| Velocidad máxima | Total (predeterminado); Último descenso; Último ascenso |
-| Tiempo en movimiento | Total (predeterminado); Último descenso; Último ascenso |
-| Ascenso | Total (predeterminado); Último ascenso |
+| Pendiente promedio | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Velocidad promedio *(Solo Android)* | Promedio del viaje (predeterminado); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distancia (Iniciar-Detener) | Promedio del viaje (predeterminado); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Descenso | Total (predeterminado); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Velocidad máxima | Total (predeterminado); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Tiempo en movimiento | Total (predeterminado); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Ascenso | Total (predeterminado); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 El cambio de modo depende del widget:
 - Ascenso / Descenso / Velocidad máxima / Pendiente promedio / Tiempo en movimiento / Velocidad promedio — toque el widget en el mapa para cambiar su modo.

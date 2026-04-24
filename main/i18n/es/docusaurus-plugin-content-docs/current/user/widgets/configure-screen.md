@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -472,11 +472,11 @@ Puede abrir la configuración de Diseño de la pantalla del mapa desde el menú 
 
 ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_single.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_separate.png)
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Diseño de la pantalla del mapa*
+Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd admite dos modos de diseño para la pantalla del mapa:
-- **Diseño único** – utiliza el mismo diseño de widgets para todas las orientaciones de pantalla. Esta opción está seleccionada por defecto.
-- **Diseños separados** – le permite configurar diseños de widgets diferentes para las orientaciones Vertical y Horizontal.
+- **<Translate android="true" ids="single_layout"/>** – utiliza el mismo diseño de widgets para todas las orientaciones de pantalla. Esta opción está seleccionada por defecto.
+- **<Translate android="true" ids="separate_layouts"/>** – le permite configurar diseños de widgets diferentes para las orientaciones Vertical y Horizontal.
 
 Cuando se habilita Diseños separados, los cambios realizados en una orientación no afectan a la otra. Esto es útil si desea optimizar la pantalla del mapa de manera diferente para uso vertical y horizontal.
 
@@ -487,8 +487,8 @@ Cuando se habilita Diseños separados, los cambios realizados en una orientació
 Cuando se habilita Diseños separados, se disponen dos pestañas en la pantalla Configurar: **Vertical** y **Horizontal**. Cada pestaña representa un diseño independiente para la orientación de pantalla correspondiente. Puede cambiar entre pestañas tocándolas.
 
 Puede copiar el diseño entre orientaciones. Para acceder a estas acciones, toque el menú de tres puntos para el panel de widgets:
-- **Copiar desde Vertical** – copia la lista de widgets del diseño Vertical al diseño Horizontal.
-- **Copiar desde Horizontal** – copia la lista de widgets del diseño Horizontal al diseño Vertical.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – copia la lista de widgets del diseño Vertical al diseño Horizontal.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – copia la lista de widgets del diseño Horizontal al diseño Vertical.
 
 Solo se copia la lista de widgets, y la operación se aplica dentro del mismo perfil.
 
@@ -503,8 +503,8 @@ La configuración de **Diseño de paneles** controla cómo se muestran los panel
 **Nota:** Esta opción solo está disponible cuando se habilita [Diseños separados](#single-and-separate-layouts).
 
 Puede elegir entre dos modos:
-- **Ancho** – los paneles superior e inferior abarcan todo el ancho de la pantalla.
-- **Compacto** – los paneles superior e inferior se ajustan entre los paneles laterales y los botones del mapa.
+- **<Translate android="true" ids="panels_layout_wide"/>** – los paneles superior e inferior abarcan todo el ancho de la pantalla.
+- **<Translate android="true" ids="panels_layout_compact"/>** – los paneles superior e inferior se ajustan entre los paneles laterales y los botones del mapa.
 
 El diseño de paneles se puede configurar de manera independiente para las orientaciones Vertical y Horizontal, permitiendo una mejor adaptación a diferentes tamaños y orientaciones de pantalla.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
+source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
 sidebar_position: 3
 title: Carpeta Inteligente (Filtro)
 ---
@@ -170,20 +170,20 @@ La **Carpeta Inteligente** recién creada actualizará automáticamente su conte
 
 La **Carpeta inteligente** se muestra con un icono único en la lista de carpetas de la pestaña Pistas. Para gestionar la carpeta, pulse el *menú de tres puntos* junto a ella para acceder a las acciones disponibles:
 
-- **Detalles** — Ver la lista completa de pistas contenidas en la carpeta.
-- **Mostrar todas las pistas en el mapa** — Muestra todas las pistas de la carpeta en el mapa.  
+- **<Translate android="true" ids="shared_string_details"/>** — Ver la lista completa de pistas contenidas en la carpeta.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Muestra todas las pistas de la carpeta en el mapa.  
     *NOTA: La carga de muchas pistas puede afectar al rendimiento.*
-- **Renombrar** — Cambia el nombre de la carpeta para facilitar su identificación.
-- **Actualizar** — Actualiza manualmente el contenido de la carpeta para asegurarse de que incluye las últimas pistas.
-- **Editar filtro** — Modifica la configuración del filtro de pistas para la Carpeta Inteligente actual. Consulte [Filtro de búsqueda](#search-filter) para más detalles.
-- **Exportar** — Exporta todas las pistas de la Carpeta Inteligente a través de la función [Importar/Exportar](../../personal/import-export.md). Será redirigido a *Menú → Ajustes → pestaña Acciones*.
-- **Eliminar carpeta** — Elimina la Carpeta Inteligente sin eliminar sus pistas.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Cambia el nombre de la carpeta para facilitar su identificación.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Actualiza manualmente el contenido de la carpeta para asegurarse de que incluye las últimas pistas.
+- **<Translate android="true" ids="edit_filter"/>** — Modifica la configuración del filtro de pistas para la Carpeta Inteligente actual. Consulte [Filtro de búsqueda](#search-filter) para más detalles.
+- **<Translate android="true" ids="shared_string_export"/>** — Exporta todas las pistas de la Carpeta Inteligente a través de la función [Importar/Exportar](../../personal/import-export.md). Será redirigido a *Menú → Ajustes → pestaña Acciones*.
+- **<Translate android="true" ids="delete_folder"/>** — Elimina la Carpeta Inteligente sin eliminar sus pistas.  
     *ADVERTENCIA: Esta acción es irreversible y le pedirá un mensaje de confirmación.*
 
 También puede abrir la carpeta y pulsar el *menú de tres puntos* en la *esquina superior derecha* para acceder a acciones adicionales:
 
-- **Seleccionar** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
-- **Organizar por** — Organiza automáticamente las pistas en la Carpeta Inteligente en grupos basados en un parámetro seleccionado. Los tipos de agrupación disponibles incluyen *General*, *Fecha y hora*, *Ubicación*, *Velocidad*, *Altitud y elevación* y *Datos del sensor*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
+- **<Translate android="true" ids="organize_by"/>** — Organiza automáticamente las pistas en la Carpeta Inteligente en grupos basados en un parámetro seleccionado. Los tipos de agrupación disponibles incluyen *General*, *Fecha y hora*, *Ubicación*, *Velocidad*, *Altitud y elevación* y *Datos del sensor*. 
 
 Algunos parámetros de agrupación solo están disponibles con una suscripción a OsmAnd Pro. Los parámetros gratuitos incluyen *Actividad*, *Año de creación* y *Ciudad más cercana*. Todos los demás parámetros están marcados con una etiqueta <ProFeature/>.
 
@@ -201,17 +201,17 @@ Para parámetros PRO, puede previsualizar la configuración de agrupación (por 
 
 La **Carpeta inteligente** se muestra con un icono único en la lista de carpetas de la pestaña Pistas. Para gestionar la carpeta, realice una *pulsación larga* en el nombre de la carpeta para acceder a las acciones disponibles:
 
-- **Renombrar**— Cambia el nombre de la carpeta para facilitar su identificación.
-- **Exportar** — Exporta todas las pistas de la Carpeta Inteligente a través de la función [Importar/Exportar](../../personal/import-export.md). Será redirigido a *Menú → Ajustes → pestaña Acciones*.
-- **Mover** — Le permite mover la carpeta a otra carpeta existente o crear una nueva.
-- **Eliminar** — Elimina la Carpeta Inteligente sin eliminar sus pistas.  
+- **<Translate ios="true" ids="shared_string_rename"/>**— Cambia el nombre de la carpeta para facilitar su identificación.
+- **<Translate ios="true" ids="shared_string_export"/>** — Exporta todas las pistas de la Carpeta Inteligente a través de la función [Importar/Exportar](../../personal/import-export.md). Será redirigido a *Menú → Ajustes → pestaña Acciones*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Le permite mover la carpeta a otra carpeta existente o crear una nueva.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Elimina la Carpeta Inteligente sin eliminar sus pistas.  
     *ADVERTENCIA: Esta acción es irreversible y le pedirá un mensaje de confirmación.*
 
 También puede abrir la carpeta y pulsar el icono en la *esquina superior derecha* para acceder a acciones adicionales:
 
-- **Seleccionar** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
-- **Actualizar** — Actualiza manualmente el contenido de la carpeta para asegurarse de que incluye las últimas pistas.
-- **Editar filtro** — Modifica la configuración del filtro de pistas para la Carpeta Inteligente actual. Consulte [Filtro de búsqueda](#search-filter) para más detalles.
+- **<Translate ios="true" ids="shared_string_select"/>** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Actualiza manualmente el contenido de la carpeta para asegurarse de que incluye las últimas pistas.
+- **<Translate ios="true" ids="edit_filter"/>** — Modifica la configuración del filtro de pistas para la Carpeta Inteligente actual. Consulte [Filtro de búsqueda](#search-filter) para más detalles.
 
 </TabItem>
 

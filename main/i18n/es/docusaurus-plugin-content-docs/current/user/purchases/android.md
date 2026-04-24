@@ -1,5 +1,5 @@
 ---
-source-hash: f03e507400bc20695268af175cd4521086e021342f5905b49b0c9d9b09b9e7fc
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -108,12 +108,14 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
 | [Cuadrícula de coordenadas — Personalización de color](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [Edificios en 3D — Personalización de color](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [Edificios en 3D — Personalización de color](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Visualización de tracks en 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lugares populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage sin conexión - Guías de viaje](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Plugin de astronomía](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Plugin de astronomía](../plugins/astronomy.md) — [Planificación de observaciones](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin de astronomía](../plugins/astronomy.md) — [Modo AR interactivo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin de astronomía](../plugins/astronomy.md) — [Mapa del cielo sin conexión](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navegación con y sin conexión](../navigation/index.md)<br/>con indicaciones giro a giro | ✔ | ✔ | ✔ |
 | [Búsqueda instantánea sin conexión](../search/index.md) | ✔ | ✔ | ✔ |
 | [Grabación de viaje](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -156,7 +158,7 @@ La suscripción **Pro** tiene actualmente las siguientes características:
 | [Widgets de altitud - Elevación: Centro del mapa](../widgets/info-widgets.md#elevation-map-center) | Permite conocer la elevación del centro del mapa actual sobre el nivel del mar.  |
 | [Corrección de elevación (sin conexión)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permite calcular un gráfico de altitud para tu track (se requiere un [mapa de terreno](../plugins/topography.md#download-maps) para la región elegida). |
 | [Modificar esquema de color](../../user/plugins/topography.md#modify-color-scheme) | Te permite personalizar la apariencia del mapa seleccionando o importando paletas de colores. Puedes editar esquemas integrados o usar tus propios archivos de paleta para personalizar los colores del mapa y de la ruta. |
-| [Crear paletas personalizadas](../../user/map/tracks/appearance.md#gradient-palettes) | Te permite crear y editar paletas de gradiente para la coloración de tracks usando valores Relativos o Fijos. Puedes definir pasos de color, asignar valores y personalizar cómo se muestran los datos (como velocidad o altitud) a lo largo del track. |
+| [Creación de paletas personalizadas](../../user/map/tracks/appearance.md#color-palette-editor) | Te permite crear y editar paletas de gradiente para la coloración de tracks usando valores Relativos o Fijos. Puedes definir pasos de color, asignar valores y personalizar cómo se muestran los datos (como velocidad o altitud) a lo largo del track. |
 | [Carpetas inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar tracks en Carpetas inteligentes usando parámetros de agrupación avanzados como fecha y hora, distancia, duración, velocidad, altitud y elevación, y datos de sensores. Estas opciones permiten una categorización de tracks más detallada y un análisis flexible. |
 
 

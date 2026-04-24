@@ -1,5 +1,5 @@
 ---
-source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
+source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
 sidebar_position: 9
 sidebar_label:  Planificar Ruta
 title: Planificar Ruta en el Sitio Web
@@ -65,7 +65,7 @@ Hay dos formas de iniciar una nueva ruta en Planificar ruta. La primera opción 
 
 Una vez creada la ruta, añada puntos directamente en el mapa. Cada clic coloca el siguiente punto y el planificador construye la ruta entre los puntos.
 
-![OsmAnd Web Crear Nueva Ruta](@site/static/img/web/create_new_route.png)
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
 
 ### Importar Pista {#import-track}
 
@@ -77,25 +77,29 @@ Todas las rutas y pistas que cree o importe en Planificar ruta se añaden a la l
 
 Cada elemento de la lista tiene un interruptor que le permite mostrar u ocultar rápidamente la pista en el mapa. Seleccione una pista de la lista para abrirla en el planificador y continuar trabajando con ella. 
 
-![OsmAnd Web Crear Nueva Ruta](@site/static/img/web/local_files.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
 ## Gestionar Pista {#manage-track}
 
-Cuando cree o importe una ruta en Planificar ruta, se abre un panel de pista vertical. Utilice este panel para cambiar el perfil de enrutamiento y gestionar la ruta. Haga clic en el control de perfil para abrir el diálogo **Cambiar perfil**, seleccione el perfil que necesite (por ejemplo, Coche, Bicicleta o Peatón) y elija cómo aplicarlo: *Siguientes segmentos* aplica el perfil solo a las nuevas partes añadidas a partir de este punto, mientras que *Todos los segmentos* recalcula toda la ruta con el perfil seleccionado.
+Cuando cree o importe una ruta en Planificar ruta, se abre un panel de pista vertical. Este panel le permite cambiar el perfil de enrutamiento y gestionar la ruta.
 
-Desde el panel de pista también puede realizar acciones comunes de archivo. Puede **Guardar en la Nube** para conservar la ruta para uso posterior, **Descargar GPX** para exportarla como archivo, **Cerrar pista** para detener su edición o **Eliminar pista** para quitarla de su lista local. Estas acciones también están disponibles desde los controles correspondientes en el [Panel de Información](#info-panel).
+Haga clic en el control de perfil para abrir el diálogo **Cambiar perfil**. Seleccione el perfil requerido (por ejemplo, Coche, Bicicleta o Peatón) y elija cómo aplicarlo: *Siguientes segmentos* aplica el perfil solo a las nuevas partes añadidas a partir de este punto, mientras que *Todos los segmentos* recalcula toda la ruta con el perfil seleccionado.
 
-![OsmAnd Web Gestionar Pista](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Gestionar Pista](@site/static/img/web/change_profile.png)
+Desde el panel de pista también puede **Eliminar** la pista de su lista local.
+
+En el [Panel de Visión General](#overview-panel), puede **Guardar en la Nube** para conservar la ruta para uso posterior y **Descargar** como archivo GPX.
+
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
 ## Paneles de Detalles de Pista {#track-details-panels}
 
-El menú de pista local incluye tres paneles: **Información**, **Pista** y **Puntos de ruta**. Úselos para ver información de la pista y gestionar puntos de ruta y puntos intermedios.
+El menú de pista local incluye tres paneles: **Visión General**, **Pista** y **Puntos**. Úselos para ver información de la pista y gestionar puntos de ruta y puntos intermedios.
 
-### Panel de Información {#info-panel}
+### Panel de Visión General {#overview-panel}
 
-El Panel de Información resume la pista seleccionada y muestra datos clave de ruta y elevación. Incluye una visión general rápida de las estadísticas de la ruta, además de gráficos y análisis adicionales de la pista basados en los datos de mapa disponibles.
+El Panel de Visión General resume la pista seleccionada y muestra datos clave de ruta y elevación. Incluye una visión general rápida de las estadísticas de la ruta, además de gráficos y análisis adicionales de la pista basados en los datos de mapa disponibles.
 
 La sección de resumen muestra:
 
@@ -109,29 +113,34 @@ Debajo del resumen, el panel proporciona gráficos:
 
 - Elevación — un perfil de elevación de la ruta.
 - Pendiente — un gráfico de pendiente que muestra los cambios de gradiente a lo largo de la pista.
+- Velocidad — un gráfico de velocidad a lo largo de la pista.
+
+Puede activar o desactivar las siguientes opciones:
+
+- Mostrar puntos de pista — muestra los puntos de pista en el mapa.
+- Mostrar puntos intermedios — muestra los puntos intermedios en el mapa.
 
 Para detalles adicionales de la pista, abra las secciones de análisis:
 
+- Tipo de carretera — divide la pista en segmentos por clasificación de carretera.
 - Superficie — muestra los tipos de superficie a lo largo de la ruta basados en datos OSM.
 - Suavidad — muestra la suavidad de los segmentos basada en etiquetas OSM.
 
-Las acciones comunes de pista como guardar, descargar, cerrar y eliminar también están disponibles en este panel.
-
-![OsmAnd Web Panel de Información](@site/static/img/web/info_panel.png) ![OsmAnd Web Gestionar Pista](@site/static/img/web/info_panel_2.png)
+![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
 
 ### Panel de Pista {#track-panel}
 
 El Panel de Pista muestra la lista de puntos de ruta utilizados para construir la pista. Úselo para revisar y editar la estructura de la ruta: arrastre puntos para reordenarlos, elimine puntos utilizando el icono de eliminar o utilice Limpiar puntos para eliminar todos los puntos y empezar de nuevo.
 
-![OsmAnd Web Panel de Pista](@site/static/img/web/track_panel.png)
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
 
-### Panel de Puntos de Ruta {#waypoints-panel}
+### Panel de Puntos {#points-panel}
 
-El Panel de Puntos de Ruta se utiliza para ver y gestionar puntos de ruta para la pista seleccionada. Los puntos de ruta se pueden añadir desde el menú contextual del mapa — haga clic con el botón derecho en el mapa y elija la opción para **Añadir punto de ruta**, luego complete los detalles del punto de ruta (como nombre, icono y color) y guárdelo.
+El Panel de Puntos se utiliza para ver y gestionar puntos intermedios para la pista seleccionada. Los puntos intermedios se pueden añadir desde el menú contextual del mapa — haga clic con el botón derecho en el mapa y elija la opción para **Añadir punto intermedio**, luego complete los detalles del punto intermedio (como nombre, icono y color) y guárdelo.
 
-En la lista de Puntos de Ruta, puede controlar si los puntos de ruta se muestran en el mapa y eliminar puntos de ruta individuales cuando sea necesario. Para eliminar todos los puntos de ruta de la pista a la vez, utilice *Limpiar todos los puntos de ruta*.
+En la lista de Puntos Intermedios, puede controlar si los puntos intermedios se muestran en el mapa y eliminar puntos intermedios individuales cuando sea necesario. Para eliminar todos los puntos intermedios de la pista a la vez, utilice *Limpiar todos los puntos intermedios*.
 
-![OsmAnd Web Panel de Puntos de Ruta](@site/static/img/web/waypoints_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
 
 
 ## Artículos Relacionados {#related-articles}

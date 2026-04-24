@@ -1,5 +1,5 @@
 ---
-source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
+source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
 sidebar_position: 4
 title:  Configurar mapa
 ---
@@ -23,19 +23,19 @@ El menú **Configurar mapa** es un elemento importante en el *Menú principal* d
 
 Sección **Mostrar**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_new_andr.png)  
+![Configurar mapa Android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configurar mapa Android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Sección **Topografía**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Configurar mapa Android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Sección **OpenStreetMap**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_osm_andr.png)  
+![Configurar mapa Android](@site/static/img/map/configure_map_osm_andr.png)  
 
 Secciones **Rutas y Renderizado de mapa**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![Configurar mapa Android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
@@ -43,27 +43,27 @@ Secciones **Rutas y Renderizado de mapa**:
 
 Sección **Mostrar en el mapa**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_show1_ios_new.png)  
+![Configurar mapa iOS](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Sección **Topografía**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_topography_ios.png)  
+![Configurar mapa iOS](@site/static/img/map/configure_map_topography_ios_new.png)  
 
 Sección **OpenStreetMap**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_osm_ios.png)  
+![Configurar mapa iOS](@site/static/img/map/configure_map_osm_ios.png)  
 
 Sección **Rutas**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_routes_new_ios.png)
+![Configurar mapa iOS](@site/static/img/map/configure_map_routes_new_ios.png)
 
 Secciones **Tipo de mapa y Estilo de mapa**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_style_ios.png)
+![Configurar mapa iOS](@site/static/img/map/configure_map_style_ios.png)
 
 Secciones **Superposición/Subcapa e Idioma**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_overlay_ios.png)
+![Configurar mapa iOS](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 

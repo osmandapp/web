@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -248,7 +248,7 @@ Esta sección de la pestaña *Vista general* muestra ***datos de etiquetas*** y 
 
 La función *Actividad* en OsmAnd te permite etiquetar los tracks GPX grabados con actividades específicas para su posterior análisis y organización en carpetas.
 
-- [Etiquetas de actividad para tracks GPX](../../plugins/trip-recording.md#recording-settings). Los tracks grabados reciben automáticamente un tipo de actividad basado en el perfil seleccionado, lo que ayuda a categorizarlos y filtrarlos más tarde. Puedes cambiar la actividad manualmente si es necesario.
+- [Etiquetas de actividad para tracks GPX](../../plugins/trip-recording.md#recording-settings). Los tracks grabados y los tracks guardados mediante [Planificar una ruta](../../plan-route/create-route.md) reciben automáticamente un tipo de actividad basado en el perfil utilizado para crearlos. Esto ayuda a categorizarlos y filtrarlos más tarde. Puedes cambiar la actividad manualmente si es necesario.
 - [Filtro de actividad](../../personal/tracks/smart-folder.md#search-filter). Puedes filtrar los tracks GPX grabados por actividad, lo que te permite centrarte en encontrar tipos específicos de grabaciones, como todos los tracks de ciclismo o senderismo.
 - [Gestionar tipos de actividad](../../personal/tracks/manage-tracks.md#selection-mode). Puedes cambiar el tipo de actividad para carpetas o tracks seleccionados utilizando el modo de selección en la pestaña Tracks del menú Mis Lugares.
 - **Lista de actividades**. Las categorías y grupos de actividades se definen en los recursos de OsmAnd. Para desarrolladores y colaboradores, la lista de actividades se mantiene en un formato estructurado en [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalla los grupos y tipos de actividades disponibles.
@@ -392,7 +392,7 @@ Los waypoints son uno de los tipos de puntos disponibles en el mapa. En general,
 
 <TabItem value="android" label="Android">
 
-![Menú contextual del track Puntos en Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Menú contextual del track Puntos en Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ En esta pestaña *Puntos*:
 
 - [Mostrar datos de los puntos del track](#display-custom-gpx-tags) y modificar los puntos de tu track (waypoints y puntos de ruta), [eliminarlos y añadir](#points--waypoints) waypoints a un track.
 - Crear y modificar [Grupo (carpeta) de puntos](#waypoint-groups).
+- Centrar el mapa en un waypoint usando el icono de pin en la lista de waypoints (*solo Android*) sin cerrar la lista, lo que te permite previsualizar los waypoints uno por uno.
 
 
 ### Añadir Waypoint a un Track {#add-waypoint-to-a-track}

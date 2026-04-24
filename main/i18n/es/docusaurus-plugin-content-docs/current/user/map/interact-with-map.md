@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Interactuar con el mapa
 ---
@@ -37,25 +37,25 @@ Los gestos son esenciales para navegar por el mapa de forma fácil e intuitiva.
 
 Las animaciones de deslizamiento se pueden desactivar en los ajustes con una [opción especial](#remove-animations).
 
-### Mi ubicación y Zoom {#my-position-and-zoom}
+### Mi posición y Zoom {#my-position-and-zoom}
 
 ![Menú de configuración de pantalla](@site/static/img/widgets/location_zoom_buttons.png)
 
-**Mi ubicación**.  
-El botón *Mi ubicación* es un icono circular que indica si el centro del mapa está sincronizado con la geolocalización actual de su dispositivo. A menudo denominado el botón "¿Dónde estoy?", le ayuda a encontrar rápidamente su ubicación en el mapa. Durante la navegación, el mapa suele permanecer sincronizado con la ubicación del dispositivo, por lo que el botón permanece oculto. Sin embargo, se hace visible si el mapa y su ubicación se desincronizan debido a la interacción del usuario. Al tocar el botón se volverá a centrar el mapa en su ubicación actual, y un doble toque cambiará la vista al modo 3D.
+**Mi posición**.  
+El botón *Mi posición* es un icono circular que indica si el centro del mapa está sincronizado con la geolocalización actual de su dispositivo. A menudo denominado el botón "¿Dónde estoy?", le ayuda a encontrar rápidamente su ubicación en el mapa. Durante la navegación, el mapa suele permanecer sincronizado con la ubicación del dispositivo, por lo que el botón permanece oculto. Sin embargo, se hace visible si el mapa y su ubicación se desincronizan debido a la interacción del usuario. Al tocar el botón se volverá a centrar el mapa en su ubicación actual, y un doble toque cambiará la vista al modo 3D.
 
-- El botón *Mi ubicación* tiene los siguientes estados:
+- El botón *Mi posición* tiene los siguientes estados:
   - *Icono azul completo*. La ubicación se ha encontrado pero no está sincronizada con el mapa.
   - *Icono blanco*. La ubicación se ha encontrado y está sincronizada con el mapa.
   - *Icono gris*. La ubicación aún no se ha encontrado.
   - *Icono de flecha*. El modo 3D está activado.
 
-- **Pulsación larga** (*Android*) en el botón *Mi ubicación* abre el [menú contextual del mapa](../map/map-context-menu.md), permitiéndole compartir su ubicación.
+- **Pulsación larga** (*Android*) en el botón *Mi posición* abre el [menú contextual del mapa](../map/map-context-menu.md), permitiéndole compartir su ubicación.
 
 <br/>
 
 **Botones de zoom**.  
-Los *botones de zoom* siempre están visibles junto a *Mi ubicación* y le permiten controlar el nivel de zoom del mapa.
+Los *botones de zoom* siempre están visibles junto a *Mi posición* y le permiten controlar el nivel de zoom del mapa.
 
 - Cambiar el nivel de zoom no afecta la sincronización del mapa con su ubicación.
 - **Pulsación larga** en los *botones de zoom* abre el diálogo *Lupa de mapa*, permitiéndole ajustar los niveles de detalle del mapa.
@@ -63,7 +63,7 @@ Los *botones de zoom* siempre están visibles junto a *Mi ubicación* y le permi
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-Puede personalizar los iconos del botón **Mi ubicación** utilizando los ajustes de apariencia del Perfil. Lea más sobre cómo hacerlo [aquí](../personal/profiles.md#profile-appearance).
+Puede personalizar los iconos del botón **Mi posición** utilizando los ajustes de apariencia del Perfil. Lea más sobre cómo hacerlo [aquí](../personal/profiles.md#profile-appearance).
 
 
 ## Interacción con el mapa {#map-interaction}
@@ -103,7 +103,7 @@ Mensajes claros en pantalla le guiarán al bloquear o desbloquear la pantalla.
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-Crea un efecto de desplazamiento suave del mapa en comparación con el icono *[Mi ubicación](../personal/profiles/#profile-appearance)* cuando está en movimiento. El efecto introduce un ligero retraso con respecto a la posición real de aproximadamente 1 segundo. Se ha informado que habilitar esto crea algunos problemas de retardo pronunciados en algunas circunstancias, desactívelo si surgen tales problemas.
+Crea un efecto de desplazamiento suave del mapa en comparación con el icono *[Mi posición](../personal/profiles/#profile-appearance)* cuando está en movimiento. El efecto introduce un ligero retraso con respecto a la posición real de aproximadamente 1 segundo. Se ha informado que habilitar esto crea algunos problemas de retardo pronunciados en algunas circunstancias, desactívelo si surgen tales problemas.
 
 ### Sin animaciones {#remove-animations}
 
@@ -195,7 +195,7 @@ Bajo el horizonte, puede ver la llamada *neblina* o *niebla*. Esta área del map
 El uso de la niebla es necesario ya que la visualización de objetos remotos en el mapa requiere importantes recursos informáticos y no siempre está justificado debido a las [distorsiones](../plugins/development.md#comparison-with-a-satellite-imagery) del mapa en ángulos de visión pequeños. Por lo tanto, la distancia visible en el mapa de OsmAnd está actualmente limitada a 35 teselas.  
 
 :::info
-La inclinación del mapa se puede cambiar con una pulsación larga en la pantalla con dos dedos y moviéndolos hacia arriba/abajo. También puede cambiar la inclinación tocando el icono [Mi ubicación](#my-position-and-zoom) en la esquina inferior derecha de la pantalla (solo están disponibles las posiciones de 45 y 90 grados).  
+La inclinación del mapa se puede cambiar con una pulsación larga en la pantalla con dos dedos y moviéndolos hacia arriba/abajo. También puede cambiar la inclinación tocando el icono [Mi posición](#my-position-and-zoom) en la esquina inferior derecha de la pantalla (solo están disponibles las posiciones de 45 y 90 grados).  
 No puede cambiar la inclinación de la cámara cuando el antiguo [motor de renderizado de mapa](../personal/global-settings.md#map-rendering-engine) (versión 1) está activado.
 :::
 
@@ -205,12 +205,15 @@ La *Lupa de mapa* es una herramienta que mejora la visibilidad del mapa, similar
 
 ### Vista de globo {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vista de globo](@site/static/img/map/globe_view_1.png) ![Vista de globo](@site/static/img/map/globe_view_2.png)
 
 La **Vista de globo** permite mostrar el mapa como una Tierra esférica en lugar de una proyección plana. Este modo cambia la geometría de la superficie del mapa y adapta la interacción del mapa a la navegación esférica.  
-Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vista global*
 
 La Vista de globo está disponible actualmente solo cuando:
 - El [plugin de Desarrollo](../plugins/development.md) está habilitado.  
@@ -219,6 +222,20 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,plugin_settings,debug
 Vaya a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - El [Motor de renderizado de mapa](../personal/global-settings.md#map-rendering-engine) está configurado en Versión 2 (OpenGL).  
 Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vista de globo](@site/static/img/map/globe_view_1_ios.png) ![Vista de globo](@site/static/img/map/globe_view_2_ios_new.png)
+
+La **Vista de globo** permite mostrar el mapa como una Tierra esférica en lugar de una proyección plana. Este modo cambia la geometría de la superficie del mapa y adapta la interacción del mapa a la navegación esférica.  
+
+</TabItem>
+
+</Tabs>
 
 Cuando la Vista de globo está habilitada, el mapa rota como un globo. Los gestos de arrastre rotan la Tierra, y el zoom cambia la distancia de la cámara en lugar de escalar una superficie plana. Los elementos del mapa como pistas, marcadores, símbolos y objetos 3D se renderizan directamente en la superficie esférica y siguen su curvatura. Los objetos desaparecen gradualmente detrás del horizonte a medida que gira el globo.
 
@@ -270,7 +287,7 @@ Para acceder a los ajustes de un dispositivo de entrada externo, debe habilitar 
 
 | Tecla | Dispositivo | Acción |
 |:---------|:---------------|:---------------|
-|**C**| *Teclado*   | Mover - [A Mi ubicación](#my-position-and-zoom) |
+|**C**| *Teclado*   | Mover - [A Mi posición](#my-position-and-zoom) |
 |**D**| *Teclado*   | Cambiar - [Orientación del mapa](#map-orientation-modes) |
 |**N**| *Teclado*   | Mostrar / Ocultar - Vista de navegación |
 |**S**| *Teclado*   | Mostrar / Ocultar - [Vista de búsqueda](../search/index.md) |
@@ -287,7 +304,7 @@ Para acceder a los ajustes de un dispositivo de entrada externo, debe habilitar 
 |**&#8593;**| *Wunderlinq*  | Mapa - [Acercar](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Abrir Datagrid de WunderLINQ |
 | **M** | *Teclado*  | Mostrar / Ocultar - [Menú lateral](../start-with/main-menu.md#main-menu-side-menu) |
-| **Pulsar joystick** <br/> (*Android antiguo*) | *Teclado*  | Mover - [A Mi ubicación](#my-position-and-zoom) |
+| **Pulsar joystick** <br/> (*Android antiguo*) | *Teclado*  | Mover - [A Mi posición](#my-position-and-zoom) |
 | **Botón multimedia** <br/> (*solo Android*)| *Teclado*  | Mostrar / Ocultar - [Notas AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*solo Android*)| *Parrot*  | Mapa - [Alejar](#my-position-and-zoom) |
 | **&#8594;** <br/> (*solo Android*) | *Parrot*  | Mapa - [Acercar](#my-position-and-zoom) |
