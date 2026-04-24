@@ -1,5 +1,5 @@
 ---
-source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
+source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
@@ -45,8 +45,9 @@ Die folgende Liste enthält Konverter für verschiedene von OsmAnd unterstützte
 
 | Typ | Beschreibung | Link |
 |-- | -- | --|
-| KMZ zu GPX | Python-Skript zur Konvertierung von *KMZ*-Dateien in das *GPX*-Format, einschließlich Symbolen. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML zu GPX | Python-Skript zur Konvertierung von *KML*-Dateien in das *GPX*-Format mit Symbolen. Andere Werkzeuge verfügbar. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| GoogleMap zu OSMAnd GPX | Erstellt einen Ordner mit GPX-Dateien im OsmAnd-Stil aus einer Google My Maps-Karte (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML zu OsmAnd GPX | Python-Skript zur Konvertierung von *KML*-Dateien in das *GPX*-Format mit Symbolen. Andere Werkzeuge verfügbar. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ zu GPX | Python-Skript zur Konvertierung von *KMZ*-Dateien in das *GPX*-Format, einschließlich Symbole. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
 | Garmin | Werkzeug zur Konvertierung von Garmin Basecamp-Dateien für OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi zu OsmAnd | Konvertierung der Kartenformate geoPDF, geoTiff und ozi für OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX zu KML | Werkzeug zur Konvertierung von OsmAnd *GPX*-Dateien in das *KML*-Format unter Beibehaltung der Symbole. | [GitHub](https://github.com/mariush444/osmand2kml) |
@@ -82,7 +83,7 @@ Das Folgende ist eine Liste von [benutzerdefinierten Plugins](../plugins/custom.
 
 | Name | Beschreibung | Plugin-Link |
 |--|--|--|
-| Advanced Profiles & Maps  | Daten von [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Das Plugin fügt die Kartenstile Enduro, CycloRoute und Wandern hinzu (weitere Informationen [hier](../map/map-styles.md#default-map-styles)) sowie 5 neue [Profile](https://osmand.net/docs/user/personal/profiles) (Fußgänger, Fahrrad und drei Motorradprofile). Es bietet auch Online-Karten für Spanien, Frankreich, die Schweiz, Österreich, Belgien und Argentinien über das Menü [Karten & Ressourcen](../personal/maps-resources.md#extra-maps) im Ordner *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Advanced Profiles & Maps  | Daten von [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Das Plugin fügt die Kartenstile Enduro, CycloRoute und Wandern hinzu (weitere Informationen [hier](../map/map-styles.md#default-map-styles)) sowie 5 neue [Profile](https://osmand.net/docs/user/personal/profiles) (Fußgänger, Fahrrad und drei Motorradprofile). Es bietet auch Online-Karten für Spanien, Frankreich, Norwegen, die Schweiz, Österreich, Belgien und Argentinien über das Menü [Karten & Ressourcen](../personal/maps-resources.md#extra-maps) im Ordner *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Saudi Arabia Desert Maps by Rahal Team  | Eine professionelle Offline-Karte des Königreichs Saudi-Arabien, die topografische Merkmale, Straßen, Städte, Dörfer und Wasserquellen enthält. Perfekt für Wüstentouren. Besuchen Sie [Rahal Maps](https://rahalteam.com) für weitere Informationen. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D Position Icons  | Dieses Paket fügt eine 3D-Modelloption für Profile hinzu (Es ist ein Beispiel, wie man eigene 3D-Icons zu OsmAnd hinzufügen kann). Passen Sie das Aussehen über das Menü an: [*OsmAnd-Menü → Einstellungen → Profil → Profil-Aussehen → wählen Sie das 4.-5. Symbol des Positionssymbols*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS Online Maps Collection | Daten von [AnyGIS web page](https://anygis.ru/index_en). Eine Sammlung verschiedener Online-Kartenquellen, darunter Satelliten-, Touristen- und historische Karten.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -130,7 +131,7 @@ Die folgende Tabelle listet verschiedene von Nutzern erstellte Online-Kartenquel
 | RainViewer | [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) Karte mit verschiedenen [Farbschemata](https://www.rainviewer.com/api/color-schemes.html) |[RainViewer-osf data](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | Der Satz von Karten von Österreich basierend auf [basemap.at WMTS](https://basemap.at/en/), erstellt von mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | Der Satz von Karten, die vom französischen geografischen Institut IGN bereitgestellt werden. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
-| AnyGis maps collection | Die Seite bietet eine Sammlung von Karten für den Urlaub auf dem Land, einschließlich Touristen-, Berg-, Seekarten und vielen anderen. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| AnyGis maps collection | Die Seite bietet eine Sammlung von Karten für ländliche Urlaube, einschließlich Touristen-, Berg-, Seekarten und vielen anderen. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
 
 
 <!-- Hardware

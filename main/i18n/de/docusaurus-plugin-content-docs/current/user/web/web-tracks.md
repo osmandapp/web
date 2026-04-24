@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -73,28 +73,16 @@ Klicken Sie auf den Drei-Punkte-Button (⋮), um das *Track-Ordner*-Menü zu öf
 GPX-Tracks, die Sie in [OsmAnd Cloud](../personal/osmand-cloud.md) haben, sind nach der Anmeldung zur Anzeige und Bearbeitung verfügbar. Nur für **Pro-Nutzer** <ProFeature/> und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Nutzer (die ihre Daten auch nach Ablauf ihres Pro-Abonnements herunterladen können).
 
 Die folgenden Funktionen sind verfügbar, nachdem Sie einen Cloud-Track ausgewählt haben:
+- *Information* - Anzeige der Track-Daten.
+- *Höhe* - Höhen-Diagramm.
+- *Geschwindigkeit* - Geschwindigkeitsdiagramm.
+- *Steigung* - Steigungsdiagramm.
+- *Höhe (Satellit) neu berechnen* - Berechnet die Höhenwerte für den ausgewählten Track neu und zeigt sie im Höhen-Diagramm an.
+- *Straßentyp* - Zerlegt den Track in Segmente nach Straßeneinstufung.
+- *Oberfläche* - Zeigt die Arten von Track-Oberflächen entlang der Route.
+- *Glätte* - Zeigt die Glätte der Segmente basierend auf OSM-Tags an.
 
-![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track.png)
-
-- Informationsbildschirme:
-  - *Information* - Anzeige der Track-Daten.
-  - *Höhe* - Höhen-Diagramm.
-  - *Geschwindigkeit* - Geschwindigkeitsdiagramm.
-  - *Steigung* - Steigungsdiagramm.
-  - *Einstellungen* - Liste der Navigationsprofile für das Tool *Route erstellen*.
-  - *Wenden* - Eine generierte Liste approximativer Wendeanweisungen basierend auf der Track-Geometrie.
-  - *Straßentyp* - Zerlegt den Track in Segmente nach Straßeneinstufung.
-  - *Oberfläche* - Zeigt die Arten von Track-Oberflächen entlang der Route.
-  - *Glätte* - Zeigt die Glätte der Segmente basierend auf OSM-Tags an.
-
-![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track_details.png)
-
-- Aktionsbuttons:
-  - *Track bearbeiten* - Cloud-Track lokal zur Bearbeitung hinzufügen (_Lokale Bearbeitung*-Button auf dem Panel).
-  - *GPX herunterladen* - Lädt den Track auf den PC herunter.
-  - *Höhe (Satellit) neu berechnen* - Berechnet die Höhenwerte für den ausgewählten Track neu und zeigt sie im Höhen-Diagramm an.
-  - *Track löschen* - Löscht den Track.
-  - *Track schließen* - Schließt den Track.
+![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Verwandte Artikel {#related-articles}

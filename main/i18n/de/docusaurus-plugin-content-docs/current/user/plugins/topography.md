@@ -1,5 +1,5 @@
 ---
-source-hash: 6eba2390ad96e6adb371907334b58bd9527dd60a372e7da21b4fc6be530e6c15
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topografie
 ---
@@ -305,7 +305,7 @@ Sie können [diese Paletten bearbeiten](../personal/color-palette-schemes.md#pal
 | ------ | ------- |
 | ![Sichtbarkeit ](../../../blog/2023-08-28-terrain/img/31.png) | ![Sichtbarkeit ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für die Schummerung und der Farben, die zur Darstellung des Winkels im Neigungsparameter verwendet werden, anzupassen.
+Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für die Schummerung und der Farben, die zur Darstellung des Winkels im Neigungsparameter verwendet werden, anzupassen. Der Schieberegler erlaubt Werte von 10 % bis 100 %, mit 50 % als Standard. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter.
 
 ### Zoomstufen {#zoom-levels}
 
@@ -346,28 +346,58 @@ Die Haupteinstellungen für *Kartentypen anzeigen oder ausblenden* befinden sich
 
 ## 3D-Gebäude {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-Gebäude* 
+<TabItem value="android" label="Android">  
 
-![3D-Gebäude](@site/static/img/map/3d_buildings_1_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2_new.png) 
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstelle von flachen Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert und verwenden Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. 3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können.  
+![3D-Gebäude](@site/static/img/map/3d_buildings_4_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_3_new.png)
 
-Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
+</TabItem>
 
-Diese Option ist nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
+<TabItem value="ios" label="iOS">  
+
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstelle von flachen Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert und verwenden Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. Wenn [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) Durchgänge durch Gebäude mit dem Tag `tunnel=building_passage` enthalten, rendert OsmAnd sichtbare Öffnungen im 3D-Gebäudemodell, sodass Straßen oder Fußwege, die durch das Gebäude führen, korrekt angezeigt werden. 
+
+3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können. Wenn ein POI oder ein ausgewählter Ort (z. B. ein Kartenstift oder Navigationsziel) in einem Gebäude liegt, hebt OsmAnd das entsprechende Gebäude hervor, um es leichter auf der Karte zu identifizieren.
+
+Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Hauptschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
+
+Auf Android ist diese Option nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
 Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellung** und **Leistung**.
 
 ### Darstellung {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![3D-Gebäude](@site/static/img/map/3d_buildings_color.png)
 
-Die **Darstellung** steuert, wie 3D-Gebäude auf der Karte aussehen. Sie umfasst zwei Einstellungen: Farbe und Sichtbarkeit. 
+</TabItem>
 
-**Farbe** ermöglicht es Ihnen, die Gebäudefarbe zu ändern. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen.
+<TabItem value="ios" label="iOS">  
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Die **<Translate android="true" ids="shared_string_appearance"/>** steuert, wie 3D-Gebäude auf der Karte aussehen. Sie umfasst zwei Einstellungen: Farbe und Sichtbarkeit. 
+
+**<Translate android="true" ids="shared_string_color"/>** ermöglicht es Ihnen, die Gebäudefarbe zu ändern. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen. Der Vorschirm zeigt eine Live-Karte, sodass Sie sofort sehen können, wie die ausgewählte Farbe die Gebäude beeinflusst.
 - **Kartenstil** — verwendet die Standard-Gebäudefarbe aus dem derzeit ausgewählten Kartenstil.
 - **Benutzerdefiniert** — ermöglicht es Ihnen, eine benutzerdefinierte Gebäudefarbe separat für Tag-/Nachtmodus festzulegen.
 
@@ -377,19 +407,19 @@ Die Farbanpassung von 3D-Gebäuden ist eine [kostenpflichtige Funktion](../purch
 
 Wenn benutzerdefinierte Farben nicht gekauft wurden, sehen Sie einen leeren Zustand mit einer kurzen Beschreibung und einem Button „Erwerben“. Wenn Benutzerdefiniert verfügbar ist, können Sie zwischen Tag und Nacht wechseln, eine Farbe aus der Palette auswählen (oder Alle Farben öffnen) und dann auf Anwenden tippen.
 
-**Sichtbarkeit** steuert die Opazität (Transparenz) von 3D-Gebäuden. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz festzulegen. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Antippen von Sichtbarkeit öffnet ebenfalls einen separaten Vorschirm mit dem Schieberegler.
+**<Translate android="true" ids="gpx_visibility_txt"/>** steuert die Opazität (Transparenz) von 3D-Gebäuden. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz festzulegen. Der Schieberegler erlaubt Werte von 10 % bis 100 %, mit 50 % als Standard. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Antippen von Sichtbarkeit öffnet ebenfalls einen separaten Vorschirm mit dem Schieberegler.
 
 Auf den Vorschirmen (Farbe / Sichtbarkeit) können Sie über die App-Leiste „Auf Standard zurücksetzen“, um den Standardwert wiederherzustellen.
 
 ### Leistung {#performance}
 
-Die **Leistung** steuert, wie 3D-Gebäude gerendert werden. Sie umfasst zwei Einstellungen: Detailgrad und Sichtweite.
+Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude gerendert werden. Sie umfasst zwei Einstellungen: Detailgrad und Sichtweite.
 
-**Detailgrad** bestimmt die Komplexität der 3D-Gebäudengeometrie:
+**<Translate android="true" ids="level_of_details"/>** bestimmt die Komplexität der 3D-Gebäudengeometrie:
 - Niedrig (Standard) — einfachere Geometrie.
 - Hoch — detailliertere Geometrie.
 
-**Sichtweite** steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
+**<Translate android="true" ids="view_distance"/>** steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
 - Nah (Standard) — rendert Gebäude näher bei Ihnen.
 - Fern — rendert Gebäude aus größerer Entfernung.
 

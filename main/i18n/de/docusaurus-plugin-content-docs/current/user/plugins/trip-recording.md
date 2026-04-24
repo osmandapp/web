@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Reiseaufzeichnung
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Das **Reiseaufzeichnungs-Plugin** ist ein unverzichtbares Werkzeug zur Erfassung Ihrer Routen, Bewegungen und Trainingseinheiten. Diese Funktion ermöglicht es Ihnen nicht nur, Ihre Reisen aufzuzeichnen, sondern auch Ihre Tracks einfach wiederzuverwenden, zu ändern, zu aktualisieren und mit anderen zu teilen.  
+Das **Reiseaufzeichnungs-Plugin** ist ein unverzichtbares Werkzeug zur Erfassung Ihrer Routen, Bewegungen und Workouts. Diese Funktion ermöglicht es Ihnen nicht nur, Ihre Reisen aufzuzeichnen, sondern auch Ihre Tracks einfach wiederzuverwenden, zu ändern, zu aktualisieren und mit anderen zu teilen.  
 
 Mit dem *Reiseaufzeichnungs-Plugin* können Sie neue Tracks erstellen, aufgezeichnete direkt auf der Karte anzeigen und bestehende Aufzeichnungen verwalten. Es bietet wertvolle Einblicke in Ihre Reisen, wie Geschwindigkeit, Höhenänderungen, Geländedetails und Daten von externen Sensoren. Das Plugin zeichnet Ihre Route auf und ermöglicht eine detaillierte Analyse und das Teilen nach Ihrer Reise.
 
@@ -69,7 +69,7 @@ Mit dem Reiseaufzeichnungs-Plugin in OsmAnd können Sie ganz einfach mit der Auf
 
 **Empfehlungen:**
 
-- [Genauer Standort](../start-with/first-steps.md#permission-to-access-the-location) — Stellen Sie für eine genaue Track-Aufzeichnung sicher, dass OsmAnd diese Berechtigung hat.
+- [Genauer Standort](../start-with/first-steps.md#permission-to-access-the-location) — Für eine genaue Track-Aufzeichnung stellen Sie sicher, dass OsmAnd diese Berechtigung hat.
 
 - [Fehlerbehebung](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) — **iOS-Geräte** können manchmal Apps, die im Hintergrund laufen, vorübergehend **anhalten oder stoppen**, was die Track-Aufzeichnung unterbrechen könnte.
 
@@ -415,7 +415,7 @@ Einige Reiseaufzeichnungs-Widgets unterstützen mehrere Anzeigemodi. Modi ermög
 | **Widget** | **Verfügbare Modi**  |
 |-------|-------------|
 | Durchschnittssteigung | Letzter Bergab; Letzter Bergauf |
-| Durchschnittsgeschwindigkeit (*Nur Android*) | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
+| Durchschnittsgeschwindigkeit *(Nur Android)* | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
 | Distanz (Start-Stopp) | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
 | Bergab | Gesamt (Standard); Letzter Bergab |
 | Max. Geschwindigkeit | Gesamt (Standard); Letzter Bergab; Letzter Bergauf |
@@ -451,7 +451,7 @@ Unter Android unterstützt das Distanz-Widget mehrere Anzeigemodi:
 |------------|
 |**Durchschnittssteigung**. Zeigt die durchschnittliche Steigung für den letzten Bergauf- oder Bergababschnitt der aktuellen Reise an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
-|**Durchschnittsgeschwindigkeit** (*Nur Android*). Zeigt die Durchschnittsgeschwindigkeit für die aktuell aufgezeichnete Reise oder die Durchschnittsgeschwindigkeit während des letzten Bergauf- oder Bergababschnitts an, abhängig vom ausgewählten Modus. |
+|**Durchschnittsgeschwindigkeit** *(Nur Android)*. Zeigt die Durchschnittsgeschwindigkeit für die aktuell aufgezeichnete Reise oder die Durchschnittsgeschwindigkeit während des letzten Bergauf- oder Bergababschnitts an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|

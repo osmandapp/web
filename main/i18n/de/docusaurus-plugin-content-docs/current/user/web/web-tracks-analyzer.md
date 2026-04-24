@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -27,7 +27,7 @@ Nach dem Öffnen des Tracks Analyzer (dargestellt als Schraubenschlüssel) öffn
 
 Um die Analyse zu starten, legen Sie einen oder zwei Punkte direkt auf der Karte fest. Klicken Sie mit der rechten Maustaste auf den gewünschten Ort und wählen Sie **Punkt A / Punkt B** aus dem Kontextmenü aus. Der Analyzer sucht dann nach Track-Segmenten, die durch den ausgewählten Punkt verlaufen oder zwischen den beiden Punkten liegen.
 
-![Tracks Analyzer](@site/static/img/web/web_analyzer_select.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_points.png)
+![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sortierung und sichtbare Parameter {#sorting-and-visible-parameters}
@@ -36,14 +36,14 @@ Nachdem der Analyzer passende Segmente gefunden hat, werden die Ergebnisse als L
 Die verfügbaren Parameter sind nach Typ gruppiert:
 
 **Geschwindigkeit**
-- Maximale Geschwindigkeit
-- Durchschnittsgeschwindigkeit
-- Minimale Geschwindigkeit
+- Max. Geschwindigkeit
+- Durchschn. Geschwindigkeit
+- Min. Geschwindigkeit
 
 **Höhe**
-- Maximale Höhe
-- Durchschnittshöhe
-- Minimale Höhe
+- Max. Höhe
+- Durchschn. Höhe
+- Min. Höhe
 
 **Bergauf / Bergab**
 
@@ -57,18 +57,18 @@ Die verfügbaren Parameter sind nach Typ gruppiert:
 
 **Länge**
 
-![Tracks Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_fields.png)
+![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
 
 ## Datenanalyse {#data-analysis}
 
-Jedes passende Segment wird in der Ergebnisliste links angezeigt. Für jedes Segment werden berechnete Parameter angezeigt, abhängig davon, welche sichtbaren Parameter aktiviert sind.
+Jedes passende Segment wird in der Ergebnisliste links angezeigt. Für jedes Segment wird eine Reihe berechneter Parameter angezeigt, abhängig davon, welche Sichtbare Parameter aktiviert sind.
 
 Jedes Segment hat auch ein Menü mit drei Punkten (⋮) mit den folgenden Aktionen:
 - Track öffnen — öffnet den vollständigen Track, der mit dem ausgewählten Segment zusammenhängt.
 - Track ausblenden / Track sichtbar machen — steuert, ob der Track auf der Karte angezeigt wird.
 - Ausschließen — entfernt das Segment aus den aktuellen Analyseergebnissen.
 
-![Tracks Analyzer](@site/static/img/web/web_analyzer_menu.png)
+![Track Analyzer](@site/static/img/web/web_analyzer_menu.png)
 
 ### Diagramme {#graphs}
 
@@ -82,7 +82,7 @@ Nur ein Datentyp wird zur Zeit angezeigt, und die Änderung aktualisiert das Dia
 
 Wenn mehrere Segmente vorhanden sind, zeigt das Diagramm Daten für mehrere Segmente gleichzeitig. Ein Selector über dem Diagramm ermöglicht es, auszuwählen, wie viele Segmentdiagramme gleichzeitig angezeigt werden, und zwischen ihnen zu wechseln.
 
-![Tracks Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_tracks.png)
+![Track Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Track Analyzer](@site/static/img/web/web_analyzer_tracks.png)
 
 ## Verwandte Artikel {#related-articles}
 

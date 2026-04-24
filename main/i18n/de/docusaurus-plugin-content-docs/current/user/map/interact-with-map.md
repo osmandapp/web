@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Mit der Karte interagieren
 ---
@@ -211,12 +211,15 @@ Die *Kartenlupe* ist ein Werkzeug, das die Sichtbarkeit der Karte verbessert, ä
 
 ### Globusansicht {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
 
 **Globusansicht** ermöglicht es Ihnen, die Karte als sphärische Erde anstelle einer flachen Projektion anzuzeigen. Dieser Modus ändert die Geometrie der Kartenoberfläche und passt die Karteninteraktion an die sphärische Navigation an.  
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
 Die Globusansicht ist derzeit nur verfügbar, wenn:
 - Das [Development-Plugin](../plugins/development.md) aktiviert ist.  
@@ -225,6 +228,20 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - Die [Karten-Rendering-Engine](../personal/global-settings.md#map-rendering-engine) auf Version 2 (OpenGL) eingestellt ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Globe View](@site/static/img/map/globe_view_1_ios.png) ![Globe View](@site/static/img/map/globe_view_2_ios_new.png)
+
+**Globusansicht** ermöglicht es Ihnen, die Karte als sphärische Erde anstelle einer flachen Projektion anzuzeigen. Dieser Modus ändert die Geometrie der Kartenoberfläche und passt die Karteninteraktion an die sphärische Navigation an.  
+
+</TabItem>
+
+</Tabs>
 
 Wenn die Globusansicht aktiviert ist, rotiert die Karte als Globus. Ziehen-Gesten drehen die Erde, und Zoom ändert den Kameradistanz anstelle der Skalierung einer flachen Oberfläche. Kartenelemente wie Tracks, Marker, Symbole und 3D-Objekte werden direkt auf der sphärischen Oberfläche gerendert und folgen ihrer Krümmung. Objekte verschwinden allmählich hinter dem Horizont, wenn sich der Globus dreht.
 

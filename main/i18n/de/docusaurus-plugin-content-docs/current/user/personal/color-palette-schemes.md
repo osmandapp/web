@@ -1,5 +1,5 @@
 ---
-source-hash: 16b194b28666864219e1a39a0b4b4f9c7a0fcb3e58705b90bbf617b0516a74f9
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title:  Farbschemata
 ---
@@ -24,7 +24,7 @@ Farbschemata werden als Teil der kostenpflichtigen [Maps+](../purchases/index.md
 
 :::
 
-Farbschemata werden bei der [Einfärbung von Tracks und Routen](#tracks-routes), dem [Kartengelände](#terrain) und der [Wetterkarte](#weather) verwendet und stellen einen separaten Teil der Informationen dar, die exportiert, importiert und bearbeitet werden können, um das Farbschema der Karte und die Datenvisualisierung zu ändern.
+Farbschemata werden bei der [Färbung von Routen](#tracks-routes), dem [Kartengelände](#terrain) und der [Wetterkarte](#weather) verwendet und stellen einen separaten Teil der Informationen dar, die exportiert, importiert und bearbeitet werden können, um das Farbschema der Karte und die Datenvisualisierung zu ändern.
 
 Die Daten der Farbpalette sind im Menü [*Karten & Ressourcen*](../personal/maps-resources.md#local-menu) verfügbar.
 
@@ -71,7 +71,7 @@ Gehen Sie zu: *Menü → Karten & Ressourcen → Lokal → Farben*
 
 Geländedateien (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definieren 3 [Geländedarstellungen](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schummerung, Neigung* und *Höhe*. Für jeden Typ können Sie mehrere Paletten haben, zum Beispiel wird die *Lawinenneigung* standardmäßig bereitgestellt. Weitere Details finden Sie im Artikel [Topographie](../plugins/topography.md#default-color-scheme).
 
-Auf Android können Paletten für *Neigung* und *Höhe* Farbschemata auch direkt in der App mit dem [Gradienten-Paletten-Editor](../plugins/topography.md#modify-color-scheme) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
+Auf Android können Paletten für *Neigung* und *Höhe* Farbschemata auch direkt in der App mit dem [Farbpaletten-Editor](../plugins/topography.md#modify-color-scheme) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
 
 ### Tracks & Routen {#tracks-routes}
 
@@ -96,7 +96,7 @@ Visualisierungen mit Linienverlauf verwenden Palettendateien (`route_<type_name>
 - Für [Routen](../navigation/guidance/map-during-navigation.md#color): *Geschwindigkeit (`route_speed_default.txt`), Neigung (`route_slope_default.txt`)* und *Höhe (Altitude) (`route_elevation_default.txt`)*.
 - Für [GPX-Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Geschwindigkeit, Neigung, Höchstgeschwindigkeit (`route_maxspeed_default.txt`)* und *Höhe (Altitude)* oder Informationen von *externen Sensoren*.
 
-Auf Android können Paletten auch direkt in der App mit dem [Gradienten-Paletten-Editor](../map/tracks/appearance.md#gradient-palettes) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
+Auf Android können Paletten auch direkt in der App mit dem [Farbpaletten-Editor](../map/tracks/appearance.md#color-palette-editor) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
 
 ### Favoriten & Wegpunkte {#favorites-waypoints}
 
@@ -182,7 +182,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 Sie können alle verfügbaren Standard- und benutzerdefinierten Farbpaletten mit dem Wiederherstellungs- und Backup-Dateien-Tool von OsmAnd importieren und exportieren.
 
-- Öffnen Sie das Hauptmenü *Menü*, *Einstellungen*, scrollen Sie nach unten zum Abschnitt **Import/Export** (*Android*) oder **Lokales Backup** (*iOS*) und wählen Sie die gewünschte Aktion.
+- Öffnen Sie das Hauptmenü *Menü*, *Einstellungen*, scrollen Sie nach unten zum Abschnitt **Import/export** (*Android*) oder **Lokales Backup** (*iOS*) und wählen Sie die gewünschte Aktion.
 - Wählen Sie ein oder mehrere Elemente aus der Liste *Farbe* oder die Option *Alle auswählen*.
 - Alle exportierten Dateien werden im `.osf`-Format gespeichert.
 - Wenn die Größe Ihrer ausgewählten Daten erheblich ist, benötigt die Anwendung einige Zeit, um die `.osf`-Datei vorzubereiten.

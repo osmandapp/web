@@ -1,5 +1,5 @@
 ---
-source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
+source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -130,7 +130,7 @@ Der Reiter **Download** ermöglicht es Ihnen, verschiedene Kartentypen von den O
 - **Kartenzähler** (***Kostenlose Version***). Zeigt an, wie viele Karten Sie noch herunterladen können.
 - [Zusätzliche Karten](#extra-maps). Zeigt die Kartendaten für das [Benutzerdefinierte Paket](../plugins/custom.md) an.
 - **Regionen**. Liste nach Kontinent und Weltregion: *Afrika, Antarktis, Asien, Australien und Ozeanien, Mittelamerika, Europa, Nordamerika, Russland und Südamerika.*
-- [Weltkarten](#world-maps). Eine Liste von Karten der ganzen Welt: *Welt-Höhenkorrektur (nur Android)*, *Weltübersichtskarte*, *Ganze Welt (Wettervorhersage)*
+- [Weltkarten](#world-maps). Eine Liste von Karten der ganzen Welt: *<Translate android="true" ids="index_item_world_altitude_correction"/> (Nur Android)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Weltwetterkarte*
 - [Seekarten](../plugins/nautical-charts.md) ([*kostenpflichtige Funktion*](../purchases/index.md)). Vektorkarten mit Höhenangaben als Punkte oder Linien.
 - [Reiseführer (Wikivoyage)](../plan-route/travel-guides.md) ([*kostenpflichtige Funktion*](../purchases/index.md)). Vektorkarten mit einer Sammlung von Artikeln im HTML-Format und zusätzlich GPX-Dateien.
 - **Andere Karten**. Karten, die nicht der aktuellen Kartenhierarchie zugeordnet werden können, weil sie nicht unterstützt werden oder in zukünftigen Versionen verfügbar sein werden.
@@ -142,9 +142,9 @@ Der Reiter **Download** ermöglicht es Ihnen, verschiedene Kartentypen von den O
 
 Im Menü Karten herunterladen gibt es einen Abschnitt **Weltkarten**, der den Zugriff auf den Download verschiedener Weltkarten ermöglicht und die Funktionalität der App ergänzt.  
 
-- **Welt-Höhenkorrektur** (*Nur Android*). Diese Datei enthält Höhenkorrekturen, um die Krümmung des Planeten auszugleichen.
-- **Weltübersichtskarte**. Bietet eine umfassende Übersicht über die Erdoberfläche, nützlich für die langfristige Routenplanung und gelegentliche Erkundungen.
-- **Ganze Welt (Wettervorhersage)**. Ermöglicht das Herunterladen einer Karte mit Wetterinformationen.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Nur Android*). Diese Datei enthält Höhenkorrekturen, um die Krümmung des Planeten auszugleichen.
+- **<Translate android="true" ids="index_item_world_basemap"/>**. Bietet eine umfassende Übersicht über die Erdoberfläche, nützlich für die langfristige Routenplanung und gelegentliche Erkundungen.
+- **Weltwetterkarte**. Ermöglicht das Herunterladen einer Karte mit Wetterinformationen.
 
 
 ### Zusätzliche Karten {#extra-maps}
@@ -219,7 +219,7 @@ Der Reiter 'Lokal' bietet eine Übersicht über die Speichernutzung für Karten-
 - ***Orange***. Teil des genutzten Speichers, der von OsmAnd-Downloads belegt wird.
 - ***Grau***. Freier Speicherplatz auf dem Gerät.
 
-Unter der Speicherleiste wird eine Liste aller heruntergeladenen OsmAnd-Karten und -Ressourcen angezeigt, einschließlich ihres Typs und ihrer Dateigröße. Online-Karten werden in der Speicherleiste nicht gezählt, da sie gestreamt und nur vorübergehend zwischengespeichert werden.
+Unter der Speicherleiste wird eine Liste aller heruntergeladenen OsmAnd-Karten und -Ressourcen angezeigt, einschließlich ihres Typs und ihrer Dateigröße. Online-Karten werden in der Speicherleiste nicht gezählt, da sie gestreamt und nur vorübergehend zwischengesichert werden.
 
 </TabItem>
 
@@ -243,7 +243,9 @@ Tippen Sie auf ein beliebiges Element im Reiter **Lokal**, um dessen detailliert
 - **Drei-Punkte-Menü**:  
     ***Auswählen***. Wählen Sie mehrere Elemente für Aktionen wie *Löschen*, *Deaktivieren* oder *Aktivieren*.  
     ***Importieren***. Greifen Sie auf den Speicher des Geräts zu, um Dateien zu importieren.
-- **Sortieroption**. Sortieren Sie Elemente nach Name, Land, Datum oder Größe (Verfügbarkeit hängt vom Datentyp ab).
+- **Sortieroption**. Sortieren Sie Elemente nach Name, Land, Datum oder Größe (Verfügbarkeit hängt vom Datentyp ab).  
+
+Für Standardkarten können einige Elemente nach Region gruppiert sein. In solchen Fällen zeigt jeder Karten-Eintrag sowohl die Unterregion als auch ihre übergeordnete Region an. Die Reihenfolge dieser Namen hängt von der ausgewählten Sortiermethode ab: Beim Sortieren nach Name wird zuerst die Unterregion angezeigt, gefolgt von der Region; beim Sortieren nach Land wird zuerst die Region angezeigt, gefolgt von der Unterregion.
 
 Jedes Element in der Liste bietet ein *Drei-Punkte-Menü* mit Optionen:
 
@@ -436,7 +438,7 @@ Der Reiter **Aktualisierungen** ermöglicht es Ihnen, OsmAnd-Karten und -Ressour
 
 Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Für stündliche Updates überprüfen Sie Ihren [Live-Updates](#live-updates)-Abonnementstatus. Wenn aktiviert, erscheint der Abschnitt **Live-Updates** oben im Reiter unter der Gerätespeicheranzeige.
 
-Der Reiter **Aktualisierungen** kann auch ein Element **Nicht unterstützte Karten** anzeigen. Es erscheint, wenn Sie Karten haben, die nicht mehr unterstützt werden und durch kleinere Regionen ersetzt wurden. Tippen Sie auf Nicht unterstützte Karten, um die Liste zu überprüfen, veraltete Karten zu entfernen und stattdessen die neuen Regionalversionen herunterzuladen. Auf dem Bildschirm Nicht unterstützte Karten können Sie alle nicht unterstützten Karten anzeigen und Alle löschen verwenden, um sie auf einmal zu entfernen (vor dem Löschen wird eine Bestätigungsaufforderung angezeigt).
+Der Reiter **Aktualisierungen** kann auch ein Element **<Translate ios="true" ids="unsupported_maps"/>** anzeigen. Es erscheint, wenn Sie Karten haben, die nicht mehr unterstützt werden und durch kleinere Regionen ersetzt wurden. Tippen Sie auf <Translate ios="true" ids="unsupported_maps"/>, um die Liste zu überprüfen, veraltete Karten zu entfernen und stattdessen die neuen Regionalversionen herunterzuladen. Auf dem Bildschirm <Translate ios="true" ids="unsupported_maps"/> können Sie alle nicht unterstützten Karten anzeigen und Alle löschen verwenden, um sie auf einmal zu entfernen (vor dem Löschen wird eine Bestätigungsaufforderung angezeigt).
 
 Der Reiter **Aktualisierungen** enthält auch einen Abschnitt zur Wettervorhersage. Er dient zur Verwaltung Ihrer Offline-Vorhersagen für ausgewählte Länder:
 
@@ -468,7 +470,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Kartenmenü OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Kartenmenü OsmAnd live bearbeiten iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Kartenmenü OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Kartenmenü OsmAnd live bearbeiten iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 

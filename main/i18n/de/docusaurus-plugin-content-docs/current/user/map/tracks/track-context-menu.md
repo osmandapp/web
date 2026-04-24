@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -246,7 +246,7 @@ Dieser Abschnitt des *Übersicht*-Tabs zeigt ***Tag-Daten*** und ***alle allgeme
 </Tabs>
 
 
-Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren.
+Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks und über [Route planen](../../plan-route/create-route.md) gespeicherte Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren. Diese erhalten automatisch einen Aktivitätstyp basierend auf dem verwendeten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
 
 - [Aktivitäts-Tags für GPX-Tracks](../../plugins/trip-recording.md#recording-settings). Aufgezeichnete Tracks erhalten automatisch einen Aktivitätstyp basierend auf dem ausgewählten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
 - [Aktivitätsfilter](../../personal/tracks/smart-folder.md#search-filter). Sie können die aufgezeichneten GPX-Tracks nach Aktivität filtern, was es Ihnen ermöglicht, sich auf die Suche nach bestimmten Arten von Aufzeichnungen zu konzentrieren, wie z. B. alle Rad- oder Wandertracks.
@@ -392,7 +392,7 @@ Wegpunkte sind eine der Arten von Punkten, die auf der Karte verfügbar sind. Im
 
 <TabItem value="android" label="Android">
 
-![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ In diesem *Punkte*-Tab:
 
 - [Trackpunktdaten anzeigen](#display-custom-gpx-tags) und Ihre Trackpunkte (Wegpunkte und Routenpunkte) ändern, [löschen und Wegpunkte](#points--waypoints) zu einem Track hinzufügen.
 - [Gruppe (Ordner) von Punkten](#waypoint-groups) erstellen und ändern.
+- Die Karte auf einen Wegpunkt zentrieren, indem Sie das Pin-Symbol in der Wegpunktliste verwenden (*nur Android*), ohne die Liste zu schließen, was es Ihnen ermöglicht, Wegpunkte nacheinander zu previewen.
 
 
 ### Wegpunkt zu einem Track hinzufügen {#add-waypoint-to-a-track}

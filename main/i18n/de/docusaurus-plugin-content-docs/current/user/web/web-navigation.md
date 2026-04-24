@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Wenn Sie Track auswählen anklicken, öffnet der Browser einen Dateiauswahldialo
 
 ## Routendetails {#route-details}
 
-![Web-Navigation](@site/static/img/web/navigation_info.png) ![Web-Navigation](@site/static/img/web/navigation_turns.png)
+![Web-Navigation](@site/static/img/web/navigation_overview.png) ![Web-Navigation](@site/static/img/web/navigation_turns_new.png)
 
-Wenn eine Route berechnet wird, zeigt das Panel eine grundlegende Zusammenfassung (Distanz, Zeit, Anstieg/Abstieg) und eine Schaltfläche **Details**. Verwenden Sie Details, um die Routenansicht mit zwei Registerkarten zu öffnen: Info und Abbiege.
+Wenn eine Route berechnet wird, zeigt das Panel eine grundlegende Zusammenfassung (Distanz, Zeit, Anstieg/Abstieg) und eine Schaltfläche **Details**. Verwenden Sie Details, um die Routenansicht mit mehreren Tabs zu öffnen. Die Haupttabs umfassen Übersicht, Track und Punkte. Der Abbiege-Tab ist über den Pfeil (›) in der Tab-Leiste verfügbar.
 
-Info fasst die Route und Höhenangaben zusammen:
+Übersicht fasst die Route und Höhenangaben zusammen:
 - **Punkte** — die Anzahl der Routenpunkte, die zur Erstellung der Route verwendet werden.
 - **Route** — Distanz und Zeit.
 - **Anstieg/Abstieg** — Gesamtaufstieg und -abstieg.

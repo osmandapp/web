@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Favoriten
 ---
@@ -272,7 +272,7 @@ Das Antippen der &#8942;-Schaltfläche (**Android**) öffnet spezielle Funktione
 Verwenden Sie das ***Drei-Punkte-Menü*** neben jedem Ordner, um Gruppen von Favoriten zu verwalten:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
-- **Ordner anpinnen** — Pinnen Sie den ausgewählten Ordner, um ihn oben in der Favoritenliste für einen schnelleren Zugriff zu halten.
+- **<Translate android="true" ids="pin_folder"/>** — Pinnen Sie den ausgewählten Ordner, um ihn oben in der Favoritenliste für einen schnelleren Zugriff zu halten.
 - **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Von Kartenmarkierungen entfernen** — Fügen Sie alle Favoritenpunkte aus dem Ordner zur *Liste der Kartenmarkierungen* hinzu oder entfernen Sie sie bei Bedarf zur einfachen Referenz.
@@ -397,12 +397,12 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 
 </Tabs>
 
-Sie benötigen ein OsmAnd Cloud-Konto, um die Funktion *Kostenloses Einstellungs-Backup* zu nutzen. Wenn Sie ein Konto in *OsmAnd Pro* oder ein aktives Konto in *OsmAnd Cloud acount* haben, wird Ihnen das Werbebanner nicht angezeigt.  
+Sie benötigen ein OsmAnd Cloud-Konto, um die Funktion *Kostenloses Favoriten-Backup* zu nutzen. Wenn Sie ein Konto in *OsmAnd Pro* oder ein aktives Konto in *OsmAnd Cloud acount* haben, wird Ihnen das Werbebanner nicht angezeigt.  
 
 - *Banner für kostenloses Favoriten-Backup*. Tippen Sie auf dieses Banner, um den Sicherungsvorgang zu starten.
 - *Schließen Sie den Registrierungsschritt ab*, wenn Sie kein OsmAnd Cloud-Konto haben, indem Sie den Anweisungen in der [Registrierungsanleitung](../personal/osmand-cloud.md#login) folgen.
 - *Navigieren Sie zum Menü "OsmAnd-Käufe"* (*Menü → Einstellungen → Käufe*).
-- *[OsmAnd Start-Paket](../personal/osmand-cloud.md#osmand-start)*. Wählen Sie diese Option, um auf die Funktion "Kostenloses Einstellungs-Backup" zuzugreifen.
+- *[OsmAnd Start-Paket](../personal/osmand-cloud.md#osmand-start)*. Wählen Sie diese Option, um auf die Funktion "Kostenloses Favoriten-Backup" zuzugreifen.
 - *Erstellen Sie ein Backup* Ihrer Einstellungen.
 
 

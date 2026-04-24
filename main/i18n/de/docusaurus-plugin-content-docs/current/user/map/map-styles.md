@@ -1,5 +1,5 @@
 ---
-source-hash: 887e37d512e29933bbd3ee7af217024887ffcc5ac636c9ddc52e7480299a8d1b
+source-hash: 383e9a6814a4fe9dfbefeb9e426313df17c79d317898ed48ee3cdc95f7de4d54
 sidebar_position: 6
 title:  Map Styles (Vector Maps)
 ---

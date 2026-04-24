@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
@@ -40,7 +40,10 @@ Die OsmAnd-Webkarte ist eine globale Karte, die auf Daten von [OpenStreetMap (OS
 
 Um es zu öffnen, klicken Sie mit der rechten Maustaste irgendwo auf die Karte. Dieses Menü enthält die folgenden Aktionen:
 
-- **Wo bin ich** – Finden Sie schnell Ihren aktuellen Standort auf der Karte. Diese Funktion zeigt die nächstgelegenen Adressen zum ausgewählten Punkt auf der Karte an.
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Wetter öffnen** – Greifen Sie auf das [Wettermenü](../web/web-weather.md) zu, um Wetterdetails anzuzeigen.
 - **Neue Route erstellen** – Öffnet das Werkzeug [*Route planen*](../web/web-navigation.md) mit dem ausgewählten Ort als Start- oder Zielpunkt.
 - **Favorit hinzufügen** – Ermöglicht es Ihnen, einen [Favoriten](../web/web-favorites.md#add--edit-favorite) an einem beliebigen Punkt auf der Karte zu erstellen und zu speichern, um einen einfachen Zugriff zu ermöglichen.
@@ -57,7 +60,21 @@ Um es zu öffnen, klicken Sie mit der rechten Maustaste irgendwo auf die Karte. 
 Add pin option will be added back once it becomes available again.
 -->
 
-![Kartenkontextmenü](@site/static/img/web/map_context_menu_new.png)
+![Kartenkontextmenü](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Ausgewähltes Objekt {#selected-object}
+
+Wenn ein Objekt auf der Karte (wie ein POI, Favorit oder Navigationspunkt) ausgewählt wird, wird es mit einem größeren Pin hervorgehoben. Nur ein Objekt kann zur Zeit ausgewählt werden.
+
+Wenn das ausgewählte Objekt bereits auf dem Bildschirm sichtbar ist, bewegt sich die Karte nicht. Wenn es außerhalb des aktuellen Views liegt, zentriert die Karte sich darauf, ohne die Zoomstufe zu ändern.
+
+Der ausgewählte Marker bleibt beim Zoomen der Karte sichtbar.
+
+Nahegelegene Marker können ausgeblendet werden, um das ausgewählte Objekt leichter sichtbar zu machen.
+
+![Ausgewähltes Objekt](@site/static/img/web/selected_object_favorite.png) ![Ausgewähltes Objekt](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menü "Karte konfigurieren" {#configure-map-menu}
@@ -66,7 +83,7 @@ Das Menü "Karte konfigurieren" ermöglicht es Ihnen, die Anzeigeeinstellungen f
 
 - [POI-Overlay...](#poi-overlay). Ermöglicht es Ihnen, die benötigten POI-Kategorien auszuwählen und auf der Karte anzuzeigen.
 - [Favoriten](#favorites). Schaltet die Anzeige von Favoriten auf der Karte um.
-- [Tracks](#tracks). Enthält GPX-Tracks, die auf der Karte sichtbar sind.  
+- [Tracks](#tracks). Enthält GPX-Tracks, die auf der Karte sichtbar sind.
 - [Haltestellen](#transport-stops). Schaltet die Anzeige von öffentlichen Verkehrshaltestellen auf der Karte um. 
 - [Gelände](#terrain). Aktiviert oder deaktiviert das Geländefarbschema auf der Karte.
 
@@ -111,11 +128,20 @@ Jeder Track hat ein **Kontextmenü** (zugänglich über die Schaltfläche ⋮) m
 - **Track ausblenden**: Blendet den aktuell sichtbaren Track von der Karte aus.  
 - **Track sichtbar machen**: Zeigt einen Track aus der Liste "Kürzlich sichtbar" auf der Karte an.  
 - **Umbenennen**: Ermöglicht es Ihnen, den Track zur leichteren Identifizierung umzubenennen.  
-- **Duplizieren**: Erstellt eine Kopie des Tracks.  
+- **Duplizieren**: Erstellt eine Kopie des Tracks.
+- **Teilen**: Öffnet den Teilen-Bildschirm (gleich wie für [Favoriten](../web/web-favorites.md#share)).
 - **Herunterladen**: Speichert den Track auf Ihrem lokalen Gerät.  
 - **Löschen**: Entfernt den Track dauerhaft aus der Liste.
 
-![Menü "Karte konfigurieren" Tracks](@site/static/img/web/configure_map_track.png)
+Wenn Sie einen Track öffnen, wird ein Panel mit einer oberen Aktionsleiste angezeigt. Die Leiste zeigt den Track-Namen und bietet schnellen Zugriff auf Aktionen. Zusätzlich zu den Befehlen des Drei-Punkte-Menüs enthält die obere Leiste **Bearbeiten**. **Darstellung** ist derzeit nicht aktiv.
+
+Das Track-Panel enthält die folgenden Registerkarten:
+
+- Übersicht — zeigt allgemeine Track-Informationen.
+- Track — derzeit nicht implementiert.
+- Punkte — zeigt Wegpunkte und Routenpunkte, gruppiert nach Typ.
+
+![Menü "Karte konfigurieren" Tracks](@site/static/img/web/configure_map_track_new.png) ![Menü "Karte konfigurieren" Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Haltestellen {#transport-stops}
 

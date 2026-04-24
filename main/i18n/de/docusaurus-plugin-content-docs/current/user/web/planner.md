@@ -1,5 +1,5 @@
 ---
-source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
+source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
 sidebar_position: 9
 sidebar_label:  Route planen
 title: Route auf der Webseite planen
@@ -65,7 +65,7 @@ Es gibt zwei Möglichkeiten, eine neue Route in Route planen zu starten. Die ers
 
 Sobald die Route erstellt ist, fügen Sie Punkte direkt auf der Karte hinzu. Jeder Klick platziert den nächsten Punkt, und der Planer erstellt die Route zwischen den Punkten.
 
-![OsmAnd Web Neue Route erstellen](@site/static/img/web/create_new_route.png)
+![OsmAnd Web Neue Route erstellen](@site/static/img/web/create_new_route_1.png)
 
 ### Track importieren {#import-track}
 
@@ -82,20 +82,24 @@ Jedes Element in der Liste hat einen Umschalter, mit dem Sie den Track schnell a
 
 ## Track verwalten {#manage-track}
 
-Wenn Sie eine Route in Route planen erstellen oder importieren, öffnet sich ein vertikales Track-Panel. Verwenden Sie dieses Panel, um das Routing-Profil zu ändern und die Route zu verwalten. Klicken Sie auf die Profil-Steuerung, um den Dialog **Profil ändern** zu öffnen, wählen Sie das benötigte Profil aus (z. B. Auto, Fahrrad oder Fußgänger) und wählen Sie aus, wie es angewendet werden soll: *Nächste Segmente* wendet das Profil nur auf neue Teile an, die ab diesem Punkt hinzugefügt werden, während *Alle Segmente* die gesamte Route mit dem ausgewählten Profil neu berechnet.
+Wenn Sie eine Route in Route planen erstellen oder importieren, öffnet sich ein vertikales Track-Panel. Dieses Panel ermöglicht es Ihnen, das Routing-Profil zu ändern und die Route zu verwalten.
 
-Aus dem Track-Panel können Sie auch gängige Dateiaktionen ausführen. Sie können **In Cloud speichern**, um die Route für späteren Gebrauch zu behalten, **GPX herunterladen**, um sie als Datei zu exportieren, **Track schließen**, um die Bearbeitung zu stoppen, oder **Track löschen**, um sie aus Ihrer lokalen Liste zu entfernen. Diese Aktionen sind auch von den entsprechenden Steuerelementen im [Info-Panel](#info-panel) verfügbar.
+Klicken Sie auf die Profil-Steuerung, um den Dialog **Profil ändern** zu öffnen. Wählen Sie das benötigte Profil aus (z. B. Auto, Fahrrad oder Fußgänger) und wählen Sie aus, wie es angewendet werden soll: *Nächste Segmente* wendet das Profil nur auf neue Teile an, die ab diesem Punkt hinzugefügt werden, während *Alle Segmente* die gesamte Route mit dem ausgewählten Profil neu berechnet.
 
-![OsmAnd Web Track verwalten](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Track verwalten](@site/static/img/web/change_profile.png)
+Aus dem Track-Panel können Sie den Track auch aus Ihrer lokalen Liste **löschen**.
+
+Im [Übersichts-Panel](#overview-panel) können Sie **In Cloud speichern**, um die Route für späteren Gebrauch zu behalten, und sie als GPX-Datei **herunterladen**.
+
+![OsmAnd Web Track verwalten](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Track verwalten](@site/static/img/web/change_profile.png)
 
 
 ## Track-Detailpanels {#track-details-panels}
 
-Das lokale Track-Menü umfasst drei Panels: **Info**, **Track** und **Wegpunkte**. Verwenden Sie sie, um Track-Informationen anzuzeigen und Routenpunkte und Wegpunkte zu verwalten.
+Das lokale Track-Menü umfasst drei Panels: **Übersicht**, **Track** und **Punkte**. Verwenden Sie sie, um Track-Informationen anzuzeigen und Routenpunkte und Wegpunkte zu verwalten.
 
-### Info-Panel {#info-panel}
+### Übersichts-Panel {#overview-panel}
 
-Das Info-Panel fasst den ausgewählten Track zusammen und zeigt wichtige Routen- und Höhenangaben. Es enthält einen schnellen Überblick über die Routenstatistiken sowie Diagramme und zusätzliche Track-Analysen basierend auf verfügbaren Kartenangaben.
+Das Übersichts-Panel fasst den ausgewählten Track zusammen und zeigt wichtige Routen- und Höhenangaben. Es enthält einen schnellen Überblick über die Routenstatistiken sowie Diagramme und zusätzliche Track-Analysen basierend auf verfügbaren Kartenangaben.
 
 Der Zusammenfassungsabschnitt zeigt:
 
@@ -109,29 +113,34 @@ Unter der Zusammenfassung bietet das Panel Diagramme:
 
 - Höhe — ein Höhenprofil der Route.
 - Steigung — ein Steigungsdiagramm, das Gradientenänderungen entlang des Tracks zeigt.
+- Geschwindigkeit — ein Geschwindigkeitsdiagramm entlang des Tracks.
+
+Sie können die folgenden Optionen aktivieren oder deaktivieren:
+
+- Track-Punkte anzeigen — zeigt Track-Punkte auf der Karte an.
+- Wegpunkte anzeigen — zeigt Wegpunkte auf der Karte an.
 
 Für zusätzliche Track-Details öffnen Sie die Analyseabschnitte:
 
+- Straßenart — unterteilt den Track in Segmente nach Straßeneinstufung.
 - Oberfläche — zeigt Oberflächentypen entlang der Route basierend auf OSM-Daten.
 - Glätte — zeigt die Segmentglätte basierend auf OSM-Tags.
 
-Gängige Track-Aktionen wie Speichern, Herunterladen, Schließen und Löschen sind auch in diesem Panel verfügbar.
-
-![OsmAnd Web Info-Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Track verwalten](@site/static/img/web/info_panel_2.png)
+![OsmAnd Web Übersichts-Panel](@site/static/img/web/overview_panel.png) 
 
 ### Track-Panel {#track-panel}
 
 Das Track-Panel zeigt die Liste der Routenpunkte, die zur Erstellung des Tracks verwendet werden. Verwenden Sie es, um die Routenstruktur zu überprüfen und zu bearbeiten: Ziehen Sie Punkte, um sie neu anzuordnen, entfernen Sie Punkte mit dem Löschsymbol oder verwenden Sie Alle Punkte löschen, um alle Punkte zu entfernen und neu zu beginnen.
 
-![OsmAnd Web Track-Panel](@site/static/img/web/track_panel.png)
+![OsmAnd Web Track-Panel](@site/static/img/web/track_panel_new.png)
 
-### Wegpunkte-Panel {#waypoints-panel}
+### Punkte-Panel {#points-panel}
 
-Das Wegpunkte-Panel wird verwendet, um Wegpunkte für den ausgewählten Track anzuzeigen und zu verwalten. Wegpunkte können aus dem Kartenkontextmenü hinzugefügt werden — klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie die Option **Wegpunkt hinzufügen**, füllen Sie dann die Wegpunkt-Details aus (wie Name, Symbol und Farbe) und speichern Sie ihn.
+Das Punkte-Panel wird verwendet, um Wegpunkte für den ausgewählten Track anzuzeigen und zu verwalten. Wegpunkte können aus dem Kartenkontextmenü hinzugefügt werden — klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie die Option **Wegpunkt hinzufügen**, füllen Sie dann die Wegpunkt-Details aus (wie Name, Symbol und Farbe) und speichern Sie ihn.
 
 In der Wegpunkte-Liste können Sie steuern, ob Wegpunkte auf der Karte angezeigt werden, und einzelne Wegpunkte bei Bedarf entfernen. Um alle Wegpunkte vom Track auf einmal zu entfernen, verwenden Sie *Alle Wegpunkte löschen*.
 
-![OsmAnd Web Wegpunkte-Panel](@site/static/img/web/waypoints_panel.png)
+![OsmAnd Web Wegpunkte-Panel](@site/static/img/web/points_panel.png)
 
 
 ## Verwandte Artikel {#related-articles}

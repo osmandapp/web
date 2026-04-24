@@ -1,5 +1,5 @@
 ---
-source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
+source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
 sidebar_position: 3
 title: Intelligenter Ordner (Filter)
 ---
@@ -89,7 +89,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
     - Herzfrequenz, Durchschnitt.
     - Herzfrequenz, Max.
     - Fahrrad-Trittfrequenz, Durchschnitt.
-    - Fahrrad-Trittfrequenz, Max.
+    - Fahrrad-Trittfrequenz, Max
     - Fahrrad-Leistung, Durchschnitt.
     - Fahrrad-Leistung, Max.
     - Temperatur, Durchschnitt.
@@ -170,20 +170,20 @@ Der neu erstellte **Intelligente Ordner** aktualisiert seinen Inhalt automatisch
 
 Der **Intelligente Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste im Tracks-Tab angezeigt. Um den Ordner zu verwalten, tippen Sie auf das *Drei-Punkte-Menü* daneben, um auf die verfügbaren Aktionen zuzugreifen:
 
-- **Details** — Zeigen Sie die vollständige Liste der im Ordner enthaltenen Tracks an.
-- **Alle Tracks auf der Karte anzeigen** — Zeigen Sie alle Tracks des Ordners auf der Karte an.  
+- **<Translate android="true" ids="shared_string_details"/>** — Zeigen Sie die vollständige Liste der im Ordner enthaltenen Tracks an.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Zeigen Sie alle Tracks des Ordners auf der Karte an.  
     *HINWEIS: Das Laden vieler Tracks kann die Leistung beeinträchtigen.*
-- **Umbenennen** — Ändern Sie den Ordnernamen zur einfacheren Identifizierung.
-- **Aktualisieren** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
-- **Filter bearbeiten** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Intelligenten Ordner. Siehe [Suchfilter](#search-filter) für Details.
-- **Exportieren** — Exportieren Sie alle Tracks im Intelligenten Ordner über die Funktion [Import/Export](../../personal/import-export.md). Sie werden zu *Menü → Einstellungen → Aktionen-Tab* weitergeleitet.
-- **Ordner löschen** — Entfernen Sie den Intelligenten Ordner, ohne seine Tracks zu löschen.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Ändern Sie den Ordnernamen zur einfacheren Identifizierung.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
+- **<Translate android="true" ids="edit_filter"/>** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Intelligenten Ordner. Siehe [Suchfilter](#search-filter) für Details.
+- **<Translate android="true" ids="shared_string_export"/>** — Exportieren Sie alle Tracks im Intelligenten Ordner über die Funktion [Import/Export](../../personal/import-export.md). Sie werden zu *Menü → Einstellungen → Aktionen-Tab* weitergeleitet.
+- **<Translate android="true" ids="delete_folder"/>** — Entfernen Sie den Intelligenten Ordner, ohne seine Tracks zu löschen.  
     *WARNUNG: Diese Aktion ist unumkehrbar und fordert eine Bestätigungsnachricht an.*
 
 Sie können auch den Ordner öffnen und auf das *Drei-Punkte-Menü* in der *rechten oberen Ecke* tippen, um zusätzliche Aktionen aufzurufen:
 
-- **Auswählen** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
-- **Nach organisieren** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
+- **<Translate android="true" ids="organize_by"/>** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
 
 Einige Gruppierungsparameter sind nur mit einem OsmAnd Pro-Abonnement verfügbar. Kostenlose Parameter umfassen *Activity*, *Year of creation* und *Nearest city*. Alle anderen Parameter sind mit einem <ProFeature/>-Label gekennzeichnet.
 
@@ -201,17 +201,17 @@ Für PRO-Parameter können Sie die Gruppierungsvorschau einrichten (z. B. den Sc
 
 Der **Intelligente Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste im Tracks-Tab angezeigt. Um den Ordner zu verwalten, *langes Tippen* Sie auf den Ordnernamen, um auf die verfügbaren Aktionen zuzugreifen:
 
-- **Umbenennen**— Ändern Sie den Ordnernamen zur einfacheren Identifizierung.
-- **Exportieren** — Exportieren Sie alle Tracks im Intelligenten Ordner über die Funktion [Import/Export](../../personal/import-export.md). Sie werden zu *Menü → Einstellungen → Aktionen-Tab* weitergeleitet.
-- **Verschieben** — Ermöglicht es Ihnen, den Ordner in einen anderen bestehenden Ordner zu verschieben oder einen neuen zu erstellen.
-- **Löschen** — Entfernen Sie den Intelligenten Ordner, ohne seine Tracks zu löschen.  
+- **<Translate ios="true" ids="shared_string_rename"/>**— Ändern Sie den Ordnernamen zur einfacheren Identifizierung.
+- **<Translate ios="true" ids="shared_string_export"/>** — Exportieren Sie alle Tracks im Intelligenten Ordner über die Funktion [Import/Export](../../personal/import-export.md). Sie werden zu *Menü → Einstellungen → Aktionen-Tab* weitergeleitet.
+- **<Translate ios="true" ids="shared_string_move"/>** — Ermöglicht es Ihnen, den Ordner in einen anderen bestehenden Ordner zu verschieben oder einen neuen zu erstellen.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Entfernen Sie den Intelligenten Ordner, ohne seine Tracks zu löschen.  
     *WARNUNG: Diese Aktion ist unumkehrbar und fordert eine Bestätigungsnachricht an.*
 
 Sie können auch den Ordner öffnen und auf das Symbol in der *rechten oberen Ecke* tippen, um zusätzliche Aktionen aufzurufen:
 
-- **Auswählen** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
-- **Aktualisieren** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
-- **Filter bearbeiten** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Intelligenten Ordner. Siehe [Suchfilter](#search-filter) für Details.
+- **<Translate ios="true" ids="shared_string_select"/>** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
+- **<Translate ios="true" ids="edit_filter"/>** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Intelligenten Ordner. Siehe [Suchfilter](#search-filter) für Details.
 
 </TabItem>
 

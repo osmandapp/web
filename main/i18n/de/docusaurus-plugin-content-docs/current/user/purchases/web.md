@@ -1,5 +1,5 @@
 ---
-source-hash: 10e2341332ad6f362f02e8ca20670f75459fd950a7fe11cc51ec340380692495
+source-hash: 74a8a7707c0d2f97d8c606769b7fafa2d86892a59f64ff3fbd3e0ff06f84c40d
 sidebar_position: 3
 title:  Web-Käufe
 ---
@@ -67,8 +67,8 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |**Einmalkauf** (15 Jahre Pro / Maps+ Lebenslang) |
-| **Preis (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
-| **Preis (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+| **Preis (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
+| **Preis (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
 
 
