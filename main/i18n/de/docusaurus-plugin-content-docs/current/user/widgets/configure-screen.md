@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -465,11 +465,11 @@ Sie können die Einstellungen für das Kartenbildschirm-Layout aus dem Menü "Bi
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_single.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_separate.png)
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Kartenbildschirm-Layout*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd unterstützt zwei Layout-Modi für den Kartenbildschirm:
-- **Einzelnes Layout** – verwendet das gleiche Widget-Layout für alle Bildschirmausrichtungen. Diese Option ist standardmäßig ausgewählt.
-- **Getrennte Layouts** – ermöglicht es Ihnen, unterschiedliche Widget-Layouts für Hoch- und Querformat zu konfigurieren.
+- **<Translate android="true" ids="single_layout"/>** – verwendet das gleiche Widget-Layout für alle Bildschirmausrichtungen. Diese Option ist standardmäßig ausgewählt.
+- **<Translate android="true" ids="separate_layouts"/>** – ermöglicht es Ihnen, unterschiedliche Widget-Layouts für Hoch- und Querformat zu konfigurieren.
 
 Wenn Getrennte Layouts aktiviert ist, wirken Änderungen in einer Ausrichtung nicht auf die andere. Dies ist nützlich, wenn Sie den Kartenbildschirm unterschiedlich für Hoch- und Querformat optimieren möchten.
 
@@ -480,8 +480,8 @@ Wenn Getrennte Layouts aktiviert ist, wirken Änderungen in einer Ausrichtung ni
 Wenn Getrennte Layouts aktiviert ist, werden zwei Registerkarten im Bildschirm "Konfigurieren" verfügbar: **Hochformat** und **Querformat**. Jede Registerkarte stellt ein unabhängiges Layout für die entsprechende Bildschirmausrichtung dar. Sie können zwischen den Registerkarten durch Tippen wechseln.
 
 Sie können das Layout zwischen den Ausrichtungen kopieren. Um diese Aktionen aufzurufen, tippen Sie auf das Drei-Punkte-Menü für die Widget-Leiste:
-- **Von Hochformat kopieren** – kopiert die Widget-Liste aus dem Hochformat-Layout in das Querformat-Layout.
-- **Von Querformat kopieren** – kopiert die Widget-Liste aus dem Querformat-Layout in das Hochformat-Layout.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – kopiert die Widget-Liste aus dem Hochformat-Layout in das Querformat-Layout.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – kopiert die Widget-Liste aus dem Querformat-Layout in das Hochformat-Layout.
 
 Nur die Widget-Liste wird kopiert, und die Operation gilt innerhalb desselben Profils.
 
@@ -496,8 +496,8 @@ Die Einstellung **Leisten-Layout** steuert, wie die oberen und unteren Widget-Le
 **Hinweis:** Diese Option ist nur verfügbar, wenn [Getrennte Layouts](#single-and-separate-layouts) aktiviert ist.
 
 Sie können zwischen zwei Modi wählen:
-- **Breit** – die oberen und unteren Leisten erstrecken sich über die volle Breite des Bildschirms.
-- **Kompakt** – die oberen und unteren Leisten passen zwischen die Seitenleisten und Karten-Schaltflächen.
+- **<Translate android="true" ids="panels_layout_wide"/>** – die oberen und unteren Leisten erstrecken sich über die volle Breite des Bildschirms.
+- **<Translate android="true" ids="panels_layout_compact"/>** – die oberen und unteren Leisten passen zwischen die Seitenleisten und Karten-Schaltflächen.
 
 Das Leisten-Layout kann unabhängig für Hoch- und Querformat konfiguriert werden, was eine bessere Anpassung an unterschiedliche Bildschirmgrößen und -ausrichtungen ermöglicht.
 

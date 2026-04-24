@@ -1,7 +1,7 @@
 ---
-source-hash: 35d0a278e6fa783087c1faddcb0a80dc8813f98e7c4ad6bfabd7a203ebf51919
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
-title:  Darstellung von Tracks
+title:  Track Appearance
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Die Funktion **Darstellung von Tracks** ermöglicht es Benutzern, die Anzeige von Tracks auf der Karte anzupassen. Dies umfasst die Anpassung von Farbe, Breite, Richtungspfeilen und anderen visuellen Elementen. Die Anpassung der Track-Darstellung hilft dabei, mehrere Tracks zu unterscheiden, bestimmte Routen hervorzuheben und die Lesbarkeit der Karte zu verbessern.
+Die Funktion **Track Appearance** ermöglicht es Benutzern, anzupassen, wie Tracks auf der Karte angezeigt werden. Dies umfasst die Anpassung von Farbe, Breite, Richtungspfeilen und anderen visuellen Elementen. Die Anpassung der Track-Darstellung hilft dabei, mehrere Tracks zu unterscheiden, bestimmte Routen hervorzuheben und die Lesbarkeit der Karte zu verbessern.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -71,14 +71,13 @@ Auf iOS öffnet sich die **Färbungsliste** als Kontextmenü. Elemente können i
 
 Weitere Details zur Anpassung der Routenliniendarstellung finden Sie unter [Kartenbildschirm während der Navigation](../../navigation/guidance/map-during-navigation.md#color) und zur Auswahl und Erstellung einer benutzerdefinierten Farbe unter [Farbschemata](../../personal/color-palette-schemes.md#tracks-routes).
 
-
-### Verlaufs-Paletten {#gradient-palettes}
+### Editor für Farbpaletten {#color-palette-editor}
 
 <InfoAndroidOnly/> 
 
-![Verlaufs-Paletten](@site/static/img/map/gradient_palettes_1.png)   ![Verlaufs-Paletten](@site/static/img/map/gradient_palettes_2.png) 
+![Editor für Farbpaletten](@site/static/img/map/gradient_palettes_1.png) ![Editor für Farbpaletten](@site/static/img/map/gradient_palettes_2.png) 
 
-Beim Einfärben eines Tracks nach Geschwindigkeit, Höhe oder Steigung verwendet OsmAnd Verlaufs-Paletten, um zu definieren, wie Farben entlang des Tracks angewendet werden.
+Beim Einfärben eines Tracks nach Geschwindigkeit, Höhe oder Steigung können Sie eigene Paletten verwenden, um zu definieren, wie Farben entlang des Tracks angewendet werden.
 
 Der Bildschirm *Alle Farben* zeigt die verfügbaren Paletten an. Tippen Sie auf das Drei-Punkte-Menü neben einer Palette, um:
 - Umzubenennen.
@@ -87,8 +86,8 @@ Der Bildschirm *Alle Farben* zeigt die verfügbaren Paletten an. Tippen Sie auf 
 - Zu entfernen. Das Entfernen einer Palette erfordert eine Bestätigung.
 
 Tippen Sie auf die + Schaltfläche auf dem Bildschirm *Alle Farben*. Zwei Arten von Paletten sind verfügbar:
-- **Relativ** — Farben skalieren automatisch basierend auf den Mindest- und Höchstwerten des Tracks.
-- **Feste Werte** — Farben werden spezifischen absoluten Zahlen zugewiesen (z. B. 50 km/h). Werte können manuell bearbeitet werden. Die Einheiten folgen den [Systemeinstellungen](../../personal/profiles.md#units--formats). Der Verlauf skaliert nicht automatisch, wenn er auf verschiedene Tracks angewendet wird.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — Farben skalieren automatisch basierend auf den Mindest- und Höchstwerten des Tracks.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — Farben werden spezifischen absoluten Zahlen zugewiesen (z. B. 50 km/h). Werte können manuell bearbeitet werden. Die Einheiten folgen den [Systemeinstellungen](../../personal/profiles.md#units--formats). Der Verlauf skaliert nicht automatisch, wenn er auf verschiedene Tracks angewendet wird.
 
 :::info Pro-Funktion
 Das Erstellen benutzerdefinierter Paletten ist eine [**OsmAnd Pro**](../../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
@@ -106,7 +105,6 @@ Beim Erstellen oder Bearbeiten einer Palette umfasst der Editor-Bildschirm:
 - Eine Speichern-Schaltfläche.
 
 Verwenden Sie das Rückgängig-Symbol in der App-Leiste, um die letzte Aktion rückgängig zu machen. Tippen Sie auf Schließen, um den Editor zu verlassen. Wenn Änderungen vorgenommen wurden, erscheint vor dem Schließen ein Bestätigungsdialog.
-
 
 
 ### Breite {#width}

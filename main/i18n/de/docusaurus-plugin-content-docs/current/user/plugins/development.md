@@ -1,5 +1,5 @@
 ---
-source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
 sidebar_position: 11
 title:  OsmAnd-Entwicklung
 ---
@@ -53,7 +53,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 <TabItem value="ios" label="iOS">  
 
-![Entwicklungseinstellungen iOS](@site/static/img/plugins/development/development_ios_1_new.png)
+![Entwicklungseinstellungen iOS](@site/static/img/plugins/development/development_ios_2_new.png)
 
 </TabItem>
 
@@ -71,18 +71,19 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 - **Energiesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um die Akkulaufzeit bei der Verwendung von Anwendungen zu verlängern.
 - **3D-Standortsymbole verwenden** (*iOS*). Ermöglicht die Auswahl eines 3D-Symbols für das [Symbol "Mein Standort"](../personal/profiles.md#my-location-appearance).
 - **OBD-Daten simulieren** (*Android* / *iOS*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
-- **Leistungs-Debug-Info** (*Android* / *iOS*). Zeigt die Rendering- und Navigationsleistung an.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Zeigt die Rendering- und Navigationsleistung an.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Zeigt Debug-Informationen zur Kacheln-Rasterisierung an.
 - **Kartenebenen deaktivieren** (*Android*). Deaktiviert alle Kartenebenen über der Vektorkarte (Neustart erforderlich).
 - **Logcat-Puffer** (*Android*). Überprüfen und teilen Sie detaillierte Protokolle der App.  
 - **Toast über gedrückte Taste anzeigen** (*Android*). Zeigt eine Meldung über die Taste an.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Die Peilung ist die Kompassrichtung von Ihrer aktuellen Position zu Ihrem beabsichtigten Ziel. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Die Kursrichtung ist die Kompassrichtung von Ihrer aktuellen Position in Richtung geografisch Nord. Diese Option ist standardmäßig aktiviert. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.
-- **MSAA aktivieren** (*Android*) / **MSAA für CarPlay aktivieren** (*iOS*). Aktiviert Multisample-Anti-Aliasing, um das Karten-Rendering zu glätten. Verbessert die visuelle Qualität des [„Mein Standort“-Symbols](../personal/profiles.md#my-location-appearance) und der Routenlinie, indem pixelige Kanten reduziert werden. Auf Android wirkt sich diese Option auf das Karten-Rendering auf dem Gerät und bei der Verwendung von [Android Auto](../navigation/auto-car.md) aus. Auf iOS gilt sie nur für [CarPlay](../navigation/car-play.md).
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Aktiviert Multisample-Anti-Aliasing, um das Karten-Rendering zu glätten. Verbessert die visuelle Qualität des [„Mein Standort“-Symbols](../personal/profiles.md#my-location-appearance) und der Routenlinie, indem pixelige Kanten reduziert werden. Auf Android wirkt sich diese Option auf das Karten-Rendering auf dem Gerät und bei der Verwendung von [Android Auto](../navigation/auto-car.md) aus. Auf iOS gilt sie nur für [CarPlay](../navigation/car-play.md).
 
 
 ### Anwendungstests {#application-testing}
 
-:::caution Nur Android
+:::caution Android only
 :::
 
 - **Ersten App-Start simulieren**. Setzt das Flag, das den ersten App-Start anzeigt, und behält alle anderen Einstellungen bei.  
@@ -95,7 +96,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 ### Interne Algorithmen {#internal-algorithms}
 
-:::caution Nur Android
+:::caution Android only
 :::
 
 - **Sicherer Modus**. Führen Sie die App im (langsameren) sicheren Modus aus.  
@@ -103,7 +104,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 ### Speichereinstellungen {#memory-settings}
 
-:::caution Nur Android
+:::caution Android only
 :::  
 
 - Die Option **Für das Routing zugewiesener Speicher** ermöglicht es Ihnen, die Speichermenge zu bestimmen, die für die Berechnung langer Routen zugewiesen wird. Sie können diese Option verwenden, wenn das [Standard-Routing A*](../navigation/guidance/navigation-settings.md#development-settings) in den *Navigationseinstellungen* ausgewählt ist.
@@ -116,7 +117,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 ### Informationen und Statistiken {#info-and-statistics}
 
-:::caution Nur Android
+:::caution Android only
 :::  
 
 - **Zugewiesener Speicher**. Zeigt den zugewiesenen Systemspeicher für die OsmAnd-Anwendung an.  
@@ -319,9 +320,9 @@ Die folgende Tabelle enthält Informationen über die Neigung der Kamera sowie d
 |20| 66|11|30|10%|
 
 
-## Widget für verfügbaren RAM {#available-ram-widget}
+## Speicher-Info-Widget {#memory-info-widget}
 
-Dieses Widget wurde speziell für Sie entwickelt, wenn Sie OsmAnd verwenden, um eine bequemere und informativere Interaktion mit dem verfügbaren RAM auf Ihrem Gerät zu ermöglichen. Es ermöglicht Ihnen, den verfügbaren RAM einfach und schnell zu überwachen, was besonders nützlich ist, wenn Sie OsmAnd zur Navigation verwenden. Lesen Sie mehr über das Widget im Artikel [Informations-Widgets](../widgets/info-widgets.md#available-ram).
+Dieses Widget wurde speziell für Sie entwickelt, wenn Sie OsmAnd verwenden, um eine bequemere und informativere Interaktion mit der Speichernutzung Ihres Geräts zu ermöglichen. Es ermöglicht Ihnen, verschiedene Arten von Speicher, die von der Anwendung verwendet werden, einfach und schnell zu überwachen, was besonders nützlich ist, wenn Sie OsmAnd zur Navigation verwenden. Lesen Sie mehr über das Widget im Artikel [Informations-Widgets](../widgets/info-widgets.md#memory-info).
 
 
 ## GPX-Track-Simulation {#gpx-track-simulation}
@@ -349,7 +350,7 @@ OsmAnd bietet die Möglichkeit, den Standort und die Bewegung Ihres Geräts mith
 
 </Tabs>  
 
-Nach dem Start der Simulation sehen Sie auf dem Hauptbildschirm der App, dass sich die Navigationsmarkierung entsprechend dem GPX-Track bewegt. Tippen Sie auf die Schaltfläche [Mein Standort](../map/interact-with-map.md#my-location-and-zoom), um *Mein Standort* (simulierte Geolokalisierung des Geräts) mit dem Mittelpunkt der Karte zu synchronisieren.  
+Nach dem Start der Simulation sehen Sie auf dem Hauptbildschirm der App, dass sich die Navigationsmarkierung entsprechend dem GPX-Track bewegt. Tippen Sie auf die Schaltfläche [Meine Position](../map/interact-with-map.md#my-position-and-zoom), um *Mein Standort* (simulierte Geolokalisierung des Geräts) mit dem Mittelpunkt der Karte zu synchronisieren.  
 Um die Simulation der Bewegung Ihres Geräts zu beenden, gehen Sie zurück zu den OsmAnd-Entwicklungs-[Einstellungen](#plugin-settings) und tippen Sie auf **Stopp** in der Option **Ihre Position simulieren**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* kann auch über das **[Schnellaktionsmenü](../widgets/quick-action.md#navigation)** aufgerufen werden.

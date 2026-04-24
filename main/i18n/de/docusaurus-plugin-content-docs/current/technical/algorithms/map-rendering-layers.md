@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -11,17 +11,18 @@ Die OsmAnd-Karte wird schichtweise von unten nach oben gerendert. Einige Ebenen 
 
 OsmAnd verwendet drei Arten von Ebenen: Raster, Symbole und Steuerung. Zuerst werden [Rasterebenen in OpenGL gerendert](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162), gefolgt von [Symbolebenen](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). Steuerungsebenen werden unabhängig von OpenGL in der Benutzeroberfläche von Android- oder iOS-Geräten über der Karte gerendert.
 
-**Android:**
+**Android:**  
 Die meisten Ebenen auf Android werden in der Methode [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) der Klasse `MapLayers` instanziiert.
 
-Die Reihenfolge jeder Ebene hängt von ihrer `zOrder`-Eigenschaft während der Instanziierung ab und wird in der Methode [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) der Klasse `OsmAndMapLayer` festgelegt.
+Die Reihenfolge jeder Ebene hängt von ihrer `zOrder`-Eigenschaft während der Instanziierung ab und wird in der Methode [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) der Klasse `OsmAndMapLayer` festgelegt.  
 Andere Ebenen können in Plugins instanziiert werden.
 
-**iOS:**
+**iOS:**  
 Die meisten Ebenen auf iOS werden in der Methode [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) von `OAMapLayers` instanziiert.
 
-Die Reihenfolge jeder Ebene wird direkt durch die Eigenschaft `baseOrder` in `createLayers` festgelegt.
+Die Reihenfolge jeder Ebene wird direkt durch die Eigenschaft `baseOrder` in `createLayers` festgelegt.  
 Andere Ebenen können in Plugins instanziiert werden.
+
 
 ## Android-Reihenfolgetabellen {#android-order-tables}
 
@@ -32,7 +33,7 @@ Andere Ebenen können in Plugins instanziiert werden.
 | MapTileLayer (Unterlage)           | -50 000        | Karte  | Rasterkacheln als Unterlage                 |
 | MapTileLayer (Hauptebene)         | 5 000          | Karte  | Kartenrasterkacheln                      |
 | ContourLinesLayer                 | 6 000          | Karte  | Hat keine eigene Ebenenklasse; wird von der Haupt-MapTileLayer verwaltet |
-| TerrainLayer                      | 60 000         | Karte  | [Schummerung und Hangneigung](/docs/user/plugins/topography)           |
+| TerrainLayer                      | 60 000         | Karte  | [Höhenlinien, Schummerung und Hangneigung](/docs/user/plugins/topography)           |
 | MapTileLayer (Überlagerung)            | 70 000         | Karte  | Rasterkacheln als Überlagerung                  |
 
 ### Android. Symbolebenen {#android-symbols-layers}
@@ -42,10 +43,10 @@ Andere Ebenen können in Plugins instanziiert werden.
 | DownloadedRegionsLayer            | -1 100 000   | Polygone | Zeigt heruntergeladene Regionen an          |
 | Icons (MapVectorLayer)            | -1 000 000   | Punkte   | Vektorkarte, iconOrder im Stil mit [Hinzufügen von 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (Linien)                  | -500 000     | Linien    | Track-Linien             |
-| RouteLayer (Diagramm-Hervorhebungspunkt)| -197 900     | Punkt    | Navigationsroutenanalyse auf der Karte  |
-| RouteLayer (Diagramm-X-Achsenpunkte)  | -198 000     | Punkte   | Navigationsroutenanalyse auf der Karte  |
-| RouteLayer (Abbiegepfeile)          | -199 000     | Linien    | Navigationsroute                  |
 | RouteLayer                        | -200 000     | Linien    | Navigationsroute                  |
+| RouteLayer (Abbiegepfeile)          | -199 000     | Linien    | Navigationsroute                  |
+| RouteLayer (Diagramm-X-Achsenpunkte)  | -198 000     | Punkte   | Navigationsroutenanalyse auf der Karte  |
+| RouteLayer (Diagramm-Hervorhebungspunkt)| -197 900     | Punkt    | Navigationsroutenanalyse auf der Karte  |
 | Text (MapVectorLayer)             | 1 - 255      | Text     | Vektorkarte, textOrder im [Stil](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), standardmäßig 100                 |
 | Schilde (MapVectorLayer)          | 1 - 255       | Schilde  | Vektorkarte, textOrder im Stil für Schilde, standardmäßig 100 |
 | GPX Track Start, Ende           | 90 101       | Punkte   | GPXLayer                          |
@@ -86,6 +87,7 @@ Andere Ebenen können in Plugins instanziiert werden.
 | MapInfoLayer              | 900 000     | Widgets               |
 | MapControlsLayer          | 1 100 000   |                       |
 | MapQuickActionLayer       | 1 200 000   |                       |
+
 
 ## iOS-Reihenfolgetabellen {#ios-order-tables}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  Route Preparation
 ---
@@ -65,14 +65,14 @@ Stellen Sie vor der Verwendung der Offline-Navigation sicher, dass die erforderl
 1. Öffnen Sie das [*Navigationsmenü*](#navigation-menu):
 
     - Geben Sie den [Zielpunkt](#set-target-point) an.
-    - Warten Sie, bis die Route berechnet ist. Danach können Sie zusätzliche Informationen zu Ihrer Route im Abschnitt *[Details](../setup/route-details.md)* abrufen.
+    - Warten Sie, bis die Route berechnet ist. Danach können Sie zusätzliche Informationen zu Ihrer Route im Abschnitt *[Details](./route-details.md#overview)* abrufen.
     - Sie können zwischen verschiedenen [Routing-Typen](./../routing/osmand-routing.md#routing-types) (Profilen) wechseln, um das beste Ergebnis zu erzielen.
     - Fügen Sie [Zwischenziele](#intermediate-destinations) hinzu (optional).
     - Sie können auch den Abfahrtspunkt vom [aktuellen Standort](../../map/interact-with-map.md#my-position-and-zoom) zum gewünschten ändern.
 
 2. Zusätzliche [*Navigationseinstellungen*](#settings) können je nach Ihren Zwecken verwendet werden (Sie können konfigurieren, welche Straßen vermieden oder bevorzugt werden sollen, Kraftstoff sparen oder die schnellste Route wählen usw.).
 
-3. [Starten](#start--stop-navigation) Sie die Navigation oder [simulieren Sie die Navigation](#simulated-navigation) zuerst (mit dieser Funktion können Sie Ihre Route testen, bevor Sie sie tatsächlich befahren).
+3. [Starten](#start--stop-navigation) Sie die Navigation oder [simulieren Sie die Navigation](#simulated-navigation) zuerst (mit dieser Funktion können Sie Ihre Route testen, bevor Sie sie tatsächlich befahren). [Auf iOS-Geräten](https://support.apple.com/en-us/121430) in EU-Ländern kann OsmAnd auch als Standard-Navigations-App in den Systemeinstellungen festgelegt werden, sodass sie automatisch für Navigationsanfragen geöffnet wird.
 
 4. Während der Fahrt können Sie die Navigation [*Pausieren/Fortsetzen*](#pause--resume-navigation) und [*Stoppen*](#start--stop-navigation).
 

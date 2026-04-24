@@ -1,8 +1,8 @@
 ---
-source-hash: 586e89c491ebdc9f9d39017e43dfe0ba1044c71a6eddcfcdc4d71787f3703bae
+source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
 sidebar_position: 3
-title: Astronomie
-unlisted: true
+title:  Astronomie
+unlistead: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,8 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<InfoIncompleteArticle/>
 
 <InfoAndroidOnly/>
 
@@ -49,15 +47,15 @@ Das Plugin funktioniert mit beiden Kartenrendering-Engines, performt aber am bes
 
 ## Sternenkarten-Bildschirm {#star-map-screen}
 
-**Zum Gehen:** *Aktiviertes Plugin → Menü → Sternenkarte* 
+**Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Sternenkarten-Bildschirm](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 Der dedizierte **Sternenkarten-Bildschirm** zeigt eine interaktive Himmelskuppel mit Sternen, Sternbildern, Planeten, Sonnen- und Mondbahnen. Am unteren Rand des Bildschirms haben Sie Zugriff auf die folgenden Steuerelemente: 
 - [**Suche**](#search) — öffnet den Suchbildschirm, auf dem Sie nach Himmelskörpern suchen und Himmelskataloge und Kategorien durchsuchen können. 
 - **Zeit und Datum** — ermöglicht es Ihnen, das Datum und die Zeit zu ändern, um den Himmel zu verschiedenen Momenten in der Vergangenheit oder Zukunft zu beobachten. Dies ist nützlich für die Planung von Beobachtungen, das Verfolgen der Objektbewegung oder das Lernen, wie sich der Himmel im Laufe der Zeit verändert. Wenn Sie ein benutzerdefiniertes Datum/Zeit festlegen, zeigt der Chip das vollständige Datum und die Zeit an, und neben ihm erscheint eine Zurücksetzen-Schaltfläche, um zur aktuellen Systemzeit zurückzukehren.
-- **Magnitude-Filter** — ermöglicht es Ihnen, zu begrenzen, welche Sterne basierend auf ihrer Helligkeit angezeigt werden. Verwenden Sie den Schieberegler, um den maximalen Magnitude-Wert einzustellen. Niedrigere Werte zeigen nur die hellsten Sterne, während höhere Werte schwächere Sterne und Deep-Sky-Objekte enthüllen. Dies hilft, visuelle Unordnung zu reduzieren oder zu simulieren, was mit dem bloßen Auge sichtbar ist.
-- [**Ansicht konfigurieren**](#configure-view) — öffnet Anzeigeeinstellungen, die steuern, wie Objekte, Bahnen und Referenzlinien auf der Sternenkarte angezeigt werden.
+- **<Translate android="true" ids="magnitude_filter"/>** — ermöglicht es Ihnen, zu begrenzen, welche Sterne basierend auf ihrer Helligkeit angezeigt werden. Verwenden Sie den Schieberegler, um den maximalen Magnitude-Wert einzustellen. Niedrigere Werte zeigen nur die hellsten Sterne, während höhere Werte schwächere Sterne und Deep-Sky-Objekte enthüllen. Dies hilft, visuelle Unordnung zu reduzieren oder zu simulieren, was mit dem bloßen Auge sichtbar ist.
+- [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — öffnet Anzeigeeinstellungen, die steuern, wie Objekte, Bahnen und Referenzlinien auf der Sternenkarte angezeigt werden.
 
 Der Bildschirm rendert die volle Himmelshemisphäre über Ihrem Standort, ausgerichtet auf die Kompassrichtung. Die Sternenkarte kann manuell durch Ziehen am Bildschirm rotiert werden. Die manuelle Rotation der Sternenkarte beeinflusst nicht die Ausrichtung der Erdkarte. Die Erdkarte folgt immer dem [Kartenorientierungsmodus](../map/interact-with-map.md#map-orientation-modes), der in Ihren Einstellungen ausgewählt ist. Tippen Sie auf Himmelskörper für Details wie Magnitude, Auf- und Untergangszeiten oder Bahnen.
 
@@ -76,37 +74,39 @@ Das Kontextmenü erscheint am unteren Rand des Bildschirms und enthält Objektin
 
 ### Objektinformationen {#object-information}
 
-![Objektinformationen](@site/static/img/plugins/starwatcher/object_view.png)
+![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_new.png) ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_2.png)
 
 Der obere Abschnitt des Kontextmenüs zeigt den Namen und die Klassifikation des Objekts. Unter dem Namen werden der Objekttyp und sein übergeordnetes Sternbild oder Gruppe angezeigt. Zum Beispiel:  
 - **Beta Ursae Minoris** — Stern • Kleiner Bär
-- **Jupiter** — Planet • Sonnensystem
-- **Andromeda** — Galaxie • Deep Sky
+- **<Translate android="true" ids="astro_name_moon"/>** — Satellit • Erde
+- **<Translate android="true" ids="astro_name_jupiter"/>** — Planet • Sonnensystem
 
 Schnellinformationsblöcke zeigen wichtige Beobachtungsparameter an:  
-- Aufgang – die Zeit, zu der das Objekt über dem Horizont aufgeht.
-- Untergang – die Zeit, zu der das Objekt unter dem Horizont untergeht.
-- Azimut – die Richtung des Objekts relativ zum Norden (0°–360°).
-- Höhe – die Höhe des Objekts über dem Horizont.
-- Magnitude – die Helligkeit des Objekts, wie sie von der Erde aus gesehen wird. 
+- <Translate android="true" ids="astro_rise"/> – die Zeit, zu der das Objekt über dem Horizont aufgeht.
+- <Translate android="true" ids="astro_set"/> – die Zeit, zu der das Objekt unter dem Horizont untergeht.
+- <Translate android="true" ids="shared_string_azimuth"/> – die Richtung des Objekts relativ zum Norden (0°–360°).
+- <Translate android="true" ids="altitude"/> – die Höhe des Objekts über dem Horizont.
+- <Translate android="true" ids="shared_string_magnitude"/> – die Helligkeit des Objekts, wie sie von der Erde aus gesehen wird. 
 
 Diese Werte werden dynamisch basierend auf der ausgewählten Zeit und dem Standort des Benutzers aktualisiert.
 
 Unter den Schnellinformationsblöcken kann das Menü auch zusätzliche Informationen und Ressourcen über das Objekt enthalten:  
-- Auf Wikipedia lesen – Öffnet den Wikipedia-Artikel des Objekts. Wenn Offline-Wikipedia-Daten verfügbar sind, kann der Artikel ohne Internetverbindung geöffnet werden; andernfalls öffnet sich die Seite im Browser.
-- Online-Fotos – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper an.
+- <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Ermöglicht es Ihnen, eine erweiterte Datenbank mit Wikipedia-Artikeln und Deep-Sky-Katalogen für die Offline-Nutzung herunterzuladen. Nach dem Herunterladen können detaillierte Informationen über Himmelskörper direkt in der App ohne Internetverbindung angezeigt werden.
+- <Translate android="true" ids="read_on_wiki"/> – Öffnet den Wikipedia-Artikel des Objekts im Browser.
+- <Translate android="true" ids="astro_designations"/> – Zeigt alternative Namen und Katalog-Identifikatoren für das Objekt (z. B. HD, HIP, NGC). Dieser Abschnitt ist für Objekte mit Katalogeinträgen verfügbar, wie Sterne und Deep-Sky-Objekte. Wenn das Objekt keinen gängigen Namen hat, wird einer dieser Bezeichnungen als primärer Name verwendet.
+- <Translate android="true" ids="online_photos"/> – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper an.
 
 ### Aktionen {#actions}
 
 Unter den Objektinformationen bietet das Kontextmenü mehrere Aktionen zur Interaktion mit dem ausgewählten Himmelskörper:
-- **Speichern** – Fügt das Objekt zu Ihrer Favoritenliste für schnellen Zugriff hinzu.
-- **Lokalisieren** – Zentriert das ausgewählte Objekt auf der Sternenkarte.
-- **Richtung** – Zeigt die Richtung zum Objekt auf der Karte, um Ihnen bei der Orientierung während der Himmelsbeobachtung zu helfen.
-- **Bahn** – Zeigt die tägliche Trajektorie des Objekts am Himmel, sodass Sie sehen können, wie es sich während des Tages bewegt.
+- **<Translate android="true" ids="shared_string_save"/>** – Fügt das Objekt zu Ihrer Favoritenliste für schnellen Zugriff hinzu.
+- **<Translate android="true" ids="astro_locate"/>** – Zentriert das ausgewählte Objekt auf der Sternenkarte.
+- **<Translate android="true" ids="astro_direction"/>** – Zeigt die Richtung zum Objekt auf der Karte, um Ihnen bei der Orientierung während der Himmelsbeobachtung zu helfen.
+- **<Translate android="true" ids="astro_path"/>** – Zeigt die tägliche Trajektorie des Objekts am Himmel, sodass Sie sehen können, wie es sich während des Tages bewegt.
 
-### Sichtbarkeitsdiagramm {#actions}
+### Sichtbarkeitsdiagramm {#visibility-graph}
 
-![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility.png)
+![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_new.png)
 
 Die Registerkarte **Sichtbarkeit** zeigt, wie das ausgewählte Objekt während eines 24-Stunden-Zeitraums am Himmel bewegt.
 
@@ -130,27 +130,27 @@ Die Farbe der Trajektorie des Objekts spiegelt auch seine Höhe wider:
 - rot – nahe am Horizont
 - lila – unter dem Horizont (nicht sichtbar)
 
-Ein beweglicher Indikator ermöglicht es Ihnen, die Position des Objekts zu verschiedenen Zeiten zu erkunden. Wenn der Indikator bewegt wird, werden die aktuelle Zeit, Höhe und Azimut-Werte aktualisiert.
+Ein beweglicher Indikator ermöglicht es Ihnen, die Position des Objekts zu verschiedenen Zeiten zu erkunden. Wenn der Indikator bewegt wird, werden die aktuelle Zeit, Höhe und Azimut-Werte aktualisiert. Der Azimut-Wert enthält auch die entsprechende Kompassrichtung (z. B. 354° Az (N)).
 
 Unter dem Diagramm werden wichtige Beobachtungsereignisse angezeigt: 
-- **Aufgang** – wenn das Objekt über dem Horizont aufgeht.
-- **Kulmination** – wenn das Objekt seine höchste Höhe erreicht.
-- **Untergang** – wenn das Objekt unter dem Horizont untergeht.
+- **<Translate android="true" ids="astro_rise"/>** – wenn das Objekt über dem Horizont aufgeht.
+- **<Translate android="true" ids="astro_culmination"/>** – wenn das Objekt seine höchste Höhe erreicht.
+- **<Translate android="true" ids="astro_set"/>** – wenn das Objekt unter dem Horizont untergeht. Wenn das Objekt nie aufgeht oder nie untergeht, werden die entsprechenden Werte ausgeblendet.
 
-Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit positioniert. Der für die Berechnungen verwendete Standort wird unter dem Diagramm angezeigt.
+Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit positioniert. Der für die Berechnungen verwendete Standort wird unter dem Diagramm angezeigt. Der Standort wird als Stadtname angezeigt.
 
 ### Beobachtungsplan {#actions}
 
-![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule.png)
+![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_new.png)
 
 Die Registerkarte **Plan** zeigt die Sichtbarkeit des ausgewählten Objekts für die aktuelle Woche. Jede Zeile stellt einen Tag dar und enthält:  
 - den Tag der Woche
 - das Datum
 - Aufgangszeit
-- Untergangszeit
+- Untergangszeit. Wenn die Untergangszeit am nächsten Tag erfolgt, ist sie mit ⁺¹ markiert
 - ein kleines Sichtbarkeitsdiagramm für diesen Tag
 
-Das Mini-Diagramm zeigt, wann das Objekt während des Tages sichtbar ist und wie sich seine Höhe ändert. Der farbige Abschnitt der Leiste stellt den Zeitraum dar, in dem das Objekt über dem Horizont ist.
+Das Mini-Diagramm zeigt, wann das Objekt während des Tages sichtbar ist und wie sich seine Höhe ändert. Der farbige Abschnitt der Leiste stellt den Zeitraum dar, in dem das Objekt über dem Horizont ist. Das Mini-Diagramm stellt den Zeitraum von 00:00 bis 23:59 für den ausgewählten Tag dar.
 
 Sie können zwischen Wochen mit den Pfeilschaltflächen im Plan-Header navigieren. Die Kalender-Schaltfläche ermöglicht es Ihnen, zur aktuellen Woche zurückzukehren.
 
@@ -177,7 +177,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR-Sternensuche (Kamera-Modus) {#ar-star-finding}
 
-**Zum Gehen:** *Aktiviertes Plugin → Menü → Sternenkarte → Kamera-Schaltfläche* 
+**Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Kamera-Schaltfläche* 
 
 Die **Astronomy**-Schicht arbeitet mit der **Gerätekamera**, um **Augmented Reality (AR) Sternenbeobachtung** zu ermöglichen. Richten Sie die Kamera Ihres Handys auf den realen Nachthimmel und sehen Sie Sterne, Planeten, Sternbilder, Sonne/Mond in Echtzeit überlagert.
 
@@ -199,7 +199,7 @@ Der AR-Modus verwendet Gerätesensoren (Gyroskop, Beschleunigungssensor und Komp
 
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/half_state_new.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/full_state.png)
 
-**Ansicht konfigurieren** ermöglicht es Ihnen, zu steuern, wie die Sternenkarte angezeigt wird, indem Sie visuelle Modi, Objekte und Rendering-Hilfen aktivieren oder deaktivieren.
+**<Translate android="true" ids="astro_configure_view"/>** ermöglicht es Ihnen, zu steuern, wie die Sternenkarte angezeigt wird, indem Sie visuelle Modi, Objekte und Rendering-Hilfen aktivieren oder deaktivieren.
 
 Um Ansicht konfigurieren zu öffnen, tippen Sie auf die Schaltfläche Ansicht konfigurieren in der unteren rechten Ecke des Sternenkarten-Bildschirms. Die Schaltfläche wird durch ein Layer-ähnliches Symbol (gestapelte Formen) dargestellt, das Anzeige- und Layer-Einstellungen anzeigt. Ansicht konfigurieren öffnet sich im *Halbzustand* und zeigt die Hauptanzeigeoptionen. Wischen Sie das Panel nach oben, um es in den *Vollzustand* zu erweitern und auf alle verfügbaren Einstellungen zuzugreifen. Um Ansicht konfigurieren zu schließen, wischen Sie das Panel einmal nach unten, um zum Halbzustand zurückzukehren, wischen Sie erneut nach unten, um es vollständig zu schließen, oder tippen Sie irgendwo auf die Karte außerhalb des Panels. Sie können auch auf die Schaltfläche Schließen (X) in der oberen rechten Ecke des Panels tippen.
 
@@ -209,9 +209,9 @@ Um Ansicht konfigurieren zu öffnen, tippen Sie auf die Schaltfläche Ansicht ko
 
 Dieser Abschnitt steuert die Hauptanzeigemodi der Sternenkarte.
 
-- **2D / 3D**. Schaltet zwischen einer Himmelsbahn-Ansicht (2D), die den Himmel als projizierte Kuppel mit Objektbahnen zeigt, und einer kugelförmigen Himmelsansicht (3D), die die Himmelskugel darstellt.
-- **Karte**. Aktiviert eine zusätzliche Erdkartenansicht unter der Sternenkarte, die es Ihnen ermöglicht, Himmelskörper mit Ihrer realen geografischen Umgebung in Beziehung zu setzen.
-- **Roter Filter**. Wendet einen roten Farbfilter auf den gesamten Bildschirm an, um Lichtverschmutzung zu reduzieren und die Nachtsicht während Dark-Sky-Beobachtungen zu erhalten.
+- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Schaltet zwischen einer Himmelsbahn-Ansicht (2D), die den Himmel als projizierte Kuppel mit Objektbahnen zeigt, und einer kugelförmigen Himmelsansicht (3D), die die Himmelskugel darstellt.
+- **<Translate android="true" ids="shared_string_map"/>**. Aktiviert eine zusätzliche Erdkartenansicht unter der Sternenkarte, die es Ihnen ermöglicht, Himmelskörper mit Ihrer realen geografischen Umgebung in Beziehung zu setzen.
+- **<Translate android="true" ids="red_filter"/>**. Wendet einen roten Farbfilter auf den gesamten Bildschirm an, um Lichtverschmutzung zu reduzieren und die Nachtsicht während Dark-Sky-Beobachtungen zu erhalten.
 
 ### Sichtbare Objekte {#visible-objects}
 
@@ -221,12 +221,12 @@ Dieser Abschnitt ermöglicht es Ihnen, zu wählen, welche Typen von Himmelskörp
 
 | Objekt | Beschreibung |
 |--------|-------------|
-| Sonnensystem | Zeigt die Sonne, den Mond und sichtbare Planeten. |
-| Sternbilder | Zeigt Sternbildlinien und Muster, die von Sternen gebildet werden. |
-| Sterne | Zeigt einzelne Sterne, die auf der Sternenkarte sichtbar sind. |
-| Nebel | Zeigt Nebel-Objekte, wo verfügbar. |
-| Sternhaufen | Zeigt Sternhaufen als separate Himmelskörper. |
-| Deep Sky | Schaltet Deep-Sky-Objekte wie Galaxien, Galaxienhaufen und Schwarze Löcher um. |
+| <Translate android="true" ids="astro_solar_system"/> | Zeigt die Sonne, den Mond und sichtbare Planeten. |
+| <Translate android="true" ids="astro_constellations"/> | Zeigt Sternbildlinien und Muster, die von Sternen gebildet werden. |
+| <Translate android="true" ids="astro_stars"/> | Zeigt einzelne Sterne, die auf der Sternenkarte sichtbar sind. |
+| <Translate android="true" ids="astro_nebulas"/> | Zeigt Nebel-Objekte, wo verfügbar. |
+| <Translate android="true" ids="astro_star_clusters"/> | Zeigt Sternhaufen als separate Himmelskörper. |
+| <Translate android="true" ids="astro_deep_sky"/> | Schaltet Deep-Sky-Objekte wie Galaxien, Galaxienhaufen und Schwarze Löcher um. |
 
 ### Persönliche Anzeigeoptionen {#personal-display-options}
 
@@ -234,9 +234,9 @@ Dieser Abschnitt ermöglicht es Ihnen, zu wählen, welche Typen von Himmelskörp
 
 | Option | Beschreibung |
 |--------|-------------|
-| Richtung | Zeigt einen Richtungsindikator, um Ihre Ansicht zu orientieren. |
-| Tägliche Bahn | Zeigt die tägliche Bahn ausgewählter Himmelskörper am Himmel. |
-| Favoriten | Hebt Objekte hervor oder zeigt Objekte an, die als Favoriten markiert sind. |
+| <Translate android="true" ids="astro_direction"/> | Zeigt einen Richtungsindikator, um Ihre Ansicht zu orientieren. |
+| <Translate android="true" ids="astro_daily_path"/> | Zeigt die tägliche Bahn ausgewählter Himmelskörper am Himmel. |
+| <Translate android="true" ids="shared_string_favorites"/> | Hebt Objekte hervor oder zeigt Objekte an, die als Favoriten markiert sind. |
 
 ### Rendering-Hilfen {#rendering-aids}
 
@@ -244,12 +244,12 @@ Dieser Abschnitt ermöglicht es Ihnen, zu wählen, welche Typen von Himmelskörp
 
 | Hilfsmittel | Beschreibung |
 |-------------|-------------|
-| Azimut-Gitter | Fügt ein azimutbasiertes Gitter für die horizontale Himmelsorientierung hinzu. |
-| Meridianlinie | Zeigt die Meridianlinie, die den Himmel von Nord nach Süd kreuzt. |
-| Äquatoriales Gitter | Zeigt das himmlische äquatoriale Koordinatengitter. |
-| Ekliptiklinie | Zeigt die Ekliptiklinie, die den scheinbaren Pfad der Sonne darstellt. |
-| Äquatorlinie | Zeigt die Projektion des Erdaquators auf die Himmelskugel, um die Erdrotation relativ zum Himmel zu visualisieren. |
-| Galaktische Linie | Zeigt die Ebene der Milchstraßengalaxie am Himmel, die die Haupt Richtung der galaktischen Scheibe anzeigt. |
+| <Translate android="true" ids="azimuthal_grid"/> | Fügt ein azimutbasiertes Gitter für die horizontale Himmelsorientierung hinzu. |
+| <Translate android="true" ids="meridian_line"/> | Zeigt die Meridianlinie, die den Himmel von Nord nach Süd kreuzt. |
+| <Translate android="true" ids="equatorial_grid"/> | Zeigt das himmlische äquatoriale Koordinatengitter. |
+| <Translate android="true" ids="ecliptic_line"/> | Zeigt die Ekliptiklinie, die den scheinbaren Pfad der Sonne darstellt. |
+| <Translate android="true" ids="equator_line"/> | Zeigt die Projektion des Erdaquators auf die Himmelskugel, um die Erdrotation relativ zum Himmel zu visualisieren. |
+| <Translate android="true" ids="galactic_line"/> | Zeigt die Ebene der Milchstraßengalaxie am Himmel, die die Haupt Richtung der galaktischen Scheibe anzeigt. |
 
 <!-- 
 ## Astronomy Settings
@@ -294,39 +294,39 @@ Tippen Sie auf die Suchleiste, um die vollständige Suchoberfläche zu öffnen. 
 
 Sie können Objekte sortieren nach:  
 - Name (A–Z oder Z–A)
-- Hellste zuerst
-- Schwächste zuerst
-- Geht am frühesten auf
-- Geht am frühesten unter
+- <Translate android="true" ids="astro_sort_brightest_first"/>
+- <Translate android="true" ids="astro_sort_faintest_first"/>
+- <Translate android="true" ids="astro_sort_rises_soonest"/>
+- <Translate android="true" ids="astro_sort_sets_soonest"/>
 
 Filter helfen, sichtbare Objekte einzugrenzen.
 
 **Sichtbarkeit**  
-- Alle anzeigen — zeigt alle Objekte
-- Jetzt sichtbar — Objekte derzeit über dem Horizont
-- Heute Nacht sichtbar — Objekte sichtbar zwischen Sonnenuntergang und Sonnenaufgang
+- <Translate android="true" ids="astro_filter_show_all"/> — zeigt alle Objekte
+- <Translate android="true" ids="astro_filter_visible_now"/> — Objekte derzeit über dem Horizont
+- <Translate android="true" ids="astro_filter_visible_tonight"/> — Objekte sichtbar zwischen Sonnenuntergang und Sonnenaufgang
 
 **Zusätzliche Filter**  
-- Mit bloßen Auge sichtbar — zeigt nur Objekte mit Magnitude ≤ 6
+- <Translate android="true" ids="astro_filter_naked_eye"/> — zeigt nur Objekte mit Magnitude ≤ 6
 
 **Kategorien**  
 Sie können Ergebnisse nach Objekttyp filtern. Das Auswählen spezifischer Kategorien deaktiviert automatisch die Alle-Option.
 
 ### Meine Daten {#my-data}
 
-![Meine Daten](@site/static/img/plugins/starwatcher/my_data.png)
+![Meine Daten](@site/static/img/plugins/starwatcher/my_data_new.png)
 
 Der Abschnitt Meine Daten enthält Objekte, mit denen der Benutzer interagiert hat. Dieser Abschnitt umfasst drei Listen:
 
-- Favoriten — Objekte, die aus dem Kontextmenü gespeichert wurden.
-- Tägliche Bahn — Objekte, für die die tägliche Bewegungsbahn aktiviert ist.
-- Richtungen — Objekte mit einem aktiven Richtungsindikator auf der Sternenkarte.
+- <Translate android="true" ids="shared_string_favorites"/> — Objekte, die aus dem Kontextmenü gespeichert wurden.
+- <Translate android="true" ids="astro_daily_path"/> — Objekte, für die die tägliche Bewegungsbahn aktiviert ist.
+- <Translate android="true" ids="astro_directions"/> — Objekte mit einem aktiven Richtungsindikator auf der Sternenkarte.
 
 Das Auswählen eines Elements öffnet das Kontextmenü des Objekts.
 
 ### Kataloge {#catalogs}
 
-![Kataloge](@site/static/img/plugins/starwatcher/catalogs.png)
+![Kataloge](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
 Der Kataloge-Abschnitt bietet Zugriff auf astronomische Kataloge, die im Astronomy-Plugin verfügbar sind.
 
@@ -337,4 +337,3 @@ Kataloge enthalten große Sammlungen von Himmelskörpern wie Sternen, Galaxien, 
 - [Mit der Karte interagieren](../../user/map/interact-with-map.md)
 - [Globale Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten](../../user/map/vector-maps.md)
-

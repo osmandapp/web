@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  Fahrzeugmetriken
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Übersicht {#overview}
 
 :::info Pro-Funktion
-Das Fahrzeugmetriken-Plugin ist eine [**OsmAnd Pro**](../purchases/index.md) <ProFeature />. Fahrzeuggeschwindigkeit und Motordrehzahl-Informationen sind in der kostenlosen OsmAnd-Version verfügbar.
+Das Fahrzeugmetriken-Plugin ist eine [**OsmAnd Pro**](../purchases/index.md) <ProFeature /> bezahlte Funktion. Fahrzeuggeschwindigkeit und Motordrehzahl sind in der kostenlosen OsmAnd-Version verfügbar.
 :::
 
 Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten in Echtzeit über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Messwerte wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.  
@@ -161,7 +161,7 @@ Die Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittlich
 
 <TabItem value="android" label="Android">
 
-**Android**. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+**Android.** Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
@@ -172,7 +172,7 @@ Die Metriken sind zur besseren Übersichtlichkeit kategorisiert. Fortschrittlich
 
 <TabItem value="ios" label="iOS">
 
-**iOS**. Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
+**iOS.** Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
 
 | | |
 |--|--|
@@ -203,7 +203,7 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 <TabItem value="android" label="Android">
 
-**Android.** Gehen Sie zu: *Menü → Bildschirm konfigurieren → Widgets → Ein Panel auswählen → Fahrzeugmetriken*
+**Android.** Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel aus → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Gehen Sie zu: *Menü → Bildschirm konfigurieren → Widgets → Ein Panel auswählen → Fahrzeugmetriken*
+**iOS.** Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel aus → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  Tracks
 sidebar_position: 2
 ---
@@ -124,7 +124,7 @@ Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate android="
 
 Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track-Menü auf Karte analysieren](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track-Menü auf Karte analysieren ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track-Menü auf Karte analysieren](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track-Menü auf Karte analysieren ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate ios="true
 
 Dieses Werkzeug bietet eine detaillierte Analyse von [Track](../../map/tracks/track-context-menu.md#options)-Daten mithilfe von Diagrammen und Karten.
 
-- **Diagrammdaten (Y-Achse)** zeigt an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Daten externer Sensoren*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track-Daten enthalten. ***Nur Android:*** Für Auto-Tracks, die mit OBD-II-Daten aufgezeichnet wurden, stellt die Y-Achse zusätzlich Fahrzeugmetriken bereit, wie Motordrehzahl, Kühlmitteltemperatur usw.
+- **Diagrammdaten (Y-Achse)** zeigt an: *Höhe*, *Steigung*, *Geschwindigkeit*, [*Daten externer Sensoren*](../../plugins/external-sensors.md) und Kombinationen von bis zu zwei Optionen, falls in den Track-Daten enthalten. Für Auto-Tracks, die mit OBD-II-Daten aufgezeichnet wurden, stellt die Y-Achse zusätzlich Fahrzeugmetriken bereit, wie Motordrehzahl, Kühlmitteltemperatur usw.
 - **Diagrammdimension (X-Achse)** stellt dar: *Distanz*, *Zeit* und *Tageszeit*.
 - **Tippen/Schieben-Interaktion**. Tippen Sie auf ein Diagramm, um Informationen über einen bestimmten Punkt auf dem Track anzuzeigen. Das Schieben auf dem Diagramm hebt die entsprechende Stelle auf der Karte hervor und zeigt Details in der Informationsleiste an.
 - **Distanzbeschriftung**. Beim Tippen oder Schieben entlang des Diagramms zeigt das Tooltip auch die genaue Distanz entlang des Tracks an. Der Wert folgt den Einstellungen der aktuellen Profil-Einheit (<Translate android="true" ids="km"/> oder <Translate android="true" ids="mile"/>). Verwenden Sie es, um schnell zu schätzen, wie weit ein Punkt vom Track-Start entfernt ist, oder um die Distanz zwischen zwei Positionen zu berechnen, indem Sie ihre Werte vergleichen.

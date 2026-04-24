@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Eine Route planen
 ---
@@ -339,6 +339,8 @@ Es gibt vier Möglichkeiten zum Speichern:
 - ***Änderungen speichern*** im [Optionsmenü](#options) ermöglicht es Ihnen, Änderungen in einer Datei zu speichern und die Routenplanung fortzusetzen.
 - ***Als neuen Track speichern*** im [Optionsmenü](#options) öffnet einen Dialog, in dem Sie den Namen des Tracks und den Ordner angeben, in dem die Route gespeichert wird.
 - ***Änderungen zu einem Track hinzufügen***. Hängt einen erstellten Track als [separates Segment](#segments) an einen anderen bestehenden Track an. Änderungen an einem ausgewählten Track können *nicht rückgängig gemacht werden*.
+
+Beim Speichern erbt der Track den Aktivitätstyp des für die Planung verwendeten Routing-Profils. Die Aktivität wird in den Track-Metadaten gespeichert und bleibt nach dem Exportieren oder Importieren der GPX-Datei erhalten.
 
 :::note Option Vereinfachter Track
 Beim Speichern eines neuen Tracks können Sie die Option ***Vereinfachter*** Track auswählen, um den Track mit anderen Drittanbieter-Anwendungen kompatibel zu machen. Technisch gesehen wird der Track ohne Routenanweisungen als rein geometrischer Track gespeichert.

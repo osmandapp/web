@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  Routen
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener [Routen](#type-of-routes) auf der Karte. Standardmäßig sind diese Routen Teil von [Vektorkarten](./vector-maps.md#routes) (OpenStreetMap-Daten), aber eine ähnliche Funktionalität wird durch [Tracks](./tracks/index.md) bereitgestellt, die mit [Route planen](../plan-route/create-route.md) erstellt, als [GPX-Tracks](#save-as-a-track) importiert oder mit dem [Plugin Reiseaufzeichnung](../plugins/trip-recording.md) aufgezeichnet werden können. Die Kartenlegende für Routen finden Sie [hier](../map-legend/osmand.md#routes).
+OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener [Routen](#type-of-routes) auf der Karte. Standardmäßig sind diese Routen Teil von [Vektorkarten](./vector-maps.md#routes) (OpenStreetMap-Daten), aber eine ähnliche Funktionalität wird durch [Tracks](./tracks/index.md) bereitgestellt, die mit [Route planen](../plan-route/create-route.md) erstellt, als [GPX-Tracks](#save-as-a-track) importiert oder mit dem [Plugin Reiseaufzeichnung](../plugins/trip-recording.md) aufgezeichnet werden können. Die Routen-Kartenlegende finden Sie [hier](../map-legend/osmand.md#routes).
 
 
 ## Arten von Routen {#type-of-routes}
@@ -239,6 +239,7 @@ Wenn Sie auf ein **Routensymbol** auf der Karte tippen:
 
 - Eine **Liste der nahegelegenen Routen** an diesem Ort wird angezeigt.
 - Nach Auswahl einer Route aus der Liste öffnet sich ein [Kontextmenü](../map/tracks/track-context-menu.md) für diese Route, das detaillierte Informationen und verfügbare Aktionen anzeigt.
+- Die ausgewählte Route wird in einer Track-Ansicht geöffnet, sodass Sie mit ihr auf die gleiche Weise interagieren können wie mit einem GPX-Track.
 
 Im **Kontextmenü** können Sie:
 
@@ -317,7 +318,7 @@ Sie können auch den Reiter *Track* öffnen und zu der Ansicht *Höhe* wechseln,
 </Tabs>  
 
 
-Um die Route als *GPX-Datei* zu speichern, tippen Sie auf die Schaltfläche **Speichern (Herunterladen)** unter dem [Infobereich](../map/tracks/track-context-menu.md#info-panel). Dies öffnet das Bedienfeld für [Schnellaktionen](../map/tracks/track-context-menu.md#track-actions), wo Sie Zugriff auf Track-Aktionen wie das Ändern des [Erscheinungsbilds](./tracks/appearance.md), der [Navigation](../navigation/setup/route-navigation.md) oder das Bearbeiten mit [Route planen](../plan-route/create-route.md) haben.
+Um die Route als *GPX-Datei* zu speichern, tippen Sie auf die Schaltfläche **Speichern (Herunterladen)** unter dem [Infobereich](../map/tracks/track-context-menu.md#info-panel). Dies öffnet das Bedienfeld für [Schnellaktionen](../map/tracks/track-context-menu.md#track-actions), wo Sie Zugriff auf Track-Aktionen wie das Ändern des [Erscheinungsbilds](./tracks/appearance.md), der [Navigation](../navigation/setup/route-navigation.md) oder das Bearbeiten mit [Route planen](../plan-route/create-route.md) haben. Gespeicherte Routen verhalten sich wie andere Tracks und sind in Ihrer Track-Sammlung verfügbar.
 
 
 ### Navigation starten {#start-navigation}

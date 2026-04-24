@@ -1,5 +1,5 @@
 ---
-source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Vektorkarten 
 ---
@@ -371,41 +371,29 @@ Die Gelände-Option ermöglicht es Ihnen, drei Funktionen wie Hillshade, Steigun
 
 ### 3D-Gebäude {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-Gebäude*  
+<TabItem value="android" label="Android"> 
 
-![3D-Gebäude](@site/static/img/map/3d_buildings_1_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2.png) 
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_1_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Die **3D-Gebäude**-Funktion zeigt Gebäude als volumetrische 3D-Modelle statt als flache Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert.
 
-Diese Option ist nur verfügbar, wenn das Topographie-Plugin aktiviert ist. Siehe den Artikel zum [Topographie-Plugin](../plugins/topography.md#3d-buildings) für Details.
-
-Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellung** und **Leistung**.
-
-**Darstellung: Farbe**. Sie steuert die Farbe der 3D-Gebäude. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschau-Bildschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen.
-- **Kartenstil** — verwendet die Standard-Gebäude-Farbe aus dem derzeit ausgewählten Kartenstil.
-- **Benutzerdefiniert** — ermöglicht es Ihnen, eine benutzerdefinierte Gebäude-Farbe separat für Tag-/Nachtmodus festzulegen.
-
-:::tip Kauf
-Die Farbanpassung von 3D-Gebäuden ist eine [kostenpflichtige Funktion](../purchases/index.md).  
-:::
-
-Wenn benutzerdefinierte Farben nicht gekauft wurden, sehen Sie einen leeren Zustand mit einer kurzen Beschreibung und einem Button „Erhalten“. Wenn Benutzerdefiniert verfügbar ist, können Sie zwischen Tag und Nacht wechseln, eine Farbe aus der Palette wählen (oder Alle Farben öffnen) und dann auf Anwenden tippen.
-
-**Darstellung: Sichtbarkeit**. Sie steuert die Opazität (Transparenz) der 3D-Gebäude. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz einzustellen. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Tippen auf Sichtbarkeit öffnet ebenfalls einen separaten Vorschau-Bildschirm mit dem Schieberegler.
-
-Auf den Vorschau-Bildschirmen (Farbe / Sichtbarkeit) können Sie Zurücksetzen auf Standard aus der App-Leiste verwenden, um den Standardwert wiederherzustellen.
-
-**Leistung: Detailgrad**. Sie steuert, wie detailliert die 3D-Gebäudengeometrie ist:
-- Niedrig (Standard) — einfachere Geometrie.
-- Hoch — detailliertere Geometrie.
-
-**Leistung: Sichtweite**. Sie steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
-- Nah (Standard) — rendert Gebäude näher bei Ihnen.
-- Fern — rendert Gebäude aus größerer Entfernung.
-
-Beide Leistungsoptionen verwenden einen Zweipositionsschalter direkt auf dem 3D-Gebäude-Einstellungsbildschirm.
+Unter Android ist diese Option nur verfügbar, wenn das Topographie-Plugin aktiviert ist. Siehe den Artikel zum [Topographie-Plugin](../plugins/topography.md#3d-buildings) für Details.
 
 ### 3D-Relief {#3d-relief}
 
@@ -441,11 +429,25 @@ Weitere Details zur nautischen Kartenansicht finden Sie auf der [Seite des Nauti
 
 ### Globusansicht {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Globale Ansicht*
+<TabItem value="android" label="Android">  
+
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Globusansicht](@site/static/img/map/globe_view_1.png) ![Globusansicht](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Globusansicht](@site/static/img/map/globe_view_1_ios.png) ![Globusansicht](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 **Globusansicht** ermöglicht es Ihnen, die Karte als sphärische Erde anstelle einer flachen Projektion anzuzeigen. Dieser Modus ändert die Geometrie der Kartenoberfläche und passt die Karteninteraktion an die sphärische Navigation an. Für weitere Informationen siehe den [Globusansicht-Abschnitt](../map/interact-with-map.md#globe-view) im Artikel Mit der Karte interagieren.
 

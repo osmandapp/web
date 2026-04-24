@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Profiles (Settings)
 ---
@@ -84,7 +84,7 @@ Dieser Abschnitt enthält alle Einstellungen zu Erscheinungsbild, Navigationsopt
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
-![Funktionen des Favoritenordners Android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+![Funktionen des kostenlosen Cloud-Backups Android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
 </TabItem>
 
@@ -98,7 +98,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 </Tabs>
 
-OsmAnd ermöglicht es Ihnen, Ihre Anwendungsprofileinstellungen [in OsmAnd Cloud zu sichern](../personal/osmand-cloud.md#osmand-start), um sicherzustellen, dass Ihre Konfigurationen sicher gespeichert und problemlos über Android-, iOS- und Web-Versionen hinweg wiederhergestellt werden können. Diese Backup-Funktion schützt Ihre Einstellungen im Falle eines Geräteausfalls oder einer Neuinstallation der App. Sie können von diesem speziellen Plan profitieren, indem Sie [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) verwenden.  
+OsmAnd ermöglicht es Ihnen, [Ihre Anwendungsprofileinstellungen zu sichern](../personal/osmand-cloud.md#osmand-start) in OsmAnd Cloud, um sicherzustellen, dass Ihre Konfigurationen sicher gespeichert und problemlos über Android-, iOS- und Web-Versionen hinweg wiederhergestellt werden können. Diese Backup-Funktion schützt Ihre Einstellungen im Falle eines Geräteausfalls oder einer Neuinstallation der App. Sie können von diesem speziellen Plan profitieren, indem Sie [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) verwenden.  
 
 Sie müssen ein [OsmAnd Cloud](../personal/osmand-cloud.md#login)-Konto haben, um das *kostenlose Einstellungs-Backup* zu nutzen. Wenn Sie ein *OsmAnd Pro*-Abonnement oder ein aktives *OsmAnd Cloud*-Konto haben, wird das Werbebanner nicht angezeigt.
 
@@ -447,7 +447,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 Die Einstellungen für das **Erscheinungsbild "Mein Standort"** ermöglichen es Ihnen, anzupassen, wie Ihr Standort auf der Karte angezeigt wird, sowohl im Stillstand (Ruhend) als auch in Bewegung (Navigation). Bewegung wird vom Betriebssystem erkannt, wenn die Geschwindigkeit des Geräts **größer als Null** ist.
 
-Verwenden Sie **Symbolgröße**, um die Größe des Mein-Standort-Positionsymbols unabhängig von der Textgröße der App anzupassen. Sie können unterschiedliche Größen für die Modi Ruhend und Navigation festlegen. Die Größe kann von 50 % bis 300 % (50, 75, 100, 125, 150, 200, 250, 300 %) eingestellt werden. Der Standardwert beträgt 100 %. Tippen Sie auf Symbolgröße, um die Größeneinstellungen zu öffnen, und verwenden Sie dann den Schieberegler oder die Schritttasten + / – , um den Wert zu ändern. Verwenden Sie **Auf Standard zurücksetzen**, um zu 100 % zurückzukehren.
+Verwenden Sie **<Translate ios="true" ids="icon_size"/>**, um die Größe des Mein-Standort-Positionsymbols unabhängig von der Textgröße der App anzupassen. Sie können unterschiedliche Größen für die Modi Ruhend und Navigation festlegen. Die Größe kann von 50 % bis 300 % (50, 75, 100, 125, 150, 200, 250, 300 %) eingestellt werden. Der Standardwert beträgt 100 %. Tippen Sie auf <Translate ios="true" ids="icon_size"/>, um die Größeneinstellungen zu öffnen, und verwenden Sie dann den Schieberegler oder die Schritttasten + / – , um den Wert zu ändern. Verwenden Sie **<Translate ios="true" ids="reset_to_default"/>**, um zu 100 % zurückzukehren.
 
 </TabItem>
 
@@ -526,7 +526,7 @@ Mit der Funktion zur UI-Anpassung können Sie die Anzahl der Elemente in Aktione
 
 ### Kontextmenü-Aktionen {#context-menu-actions}
 
-![Profile Kontextmenü Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Karte konfigurieren Menü Zurücksetzen Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![Profile Kontextmenü Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Kontextmenü Zurücksetzen Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Karten-Kontextmenü** - Im Abschnitt *UI anpassen* können Sie Elemente im [Karten-Kontextmenü](../map/map-context-menu.md) neu anordnen oder ausblenden, um den Zugriff auf häufig verwendete Funktionen zu optimieren.
 

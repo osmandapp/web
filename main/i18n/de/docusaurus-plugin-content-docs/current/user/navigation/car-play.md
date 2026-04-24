@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -73,7 +73,7 @@ Möglicherweise benötigen Sie eine Internetverbindung, um OsmAnd in *CarPlay* z
 
 ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
-Um die iOS-Version der OsmAnd-App in *CarPlay* zu verwenden, müssen Sie eine [kostenpflichtige Version der App erwerben oder ein Abonnement abschließen](../purchases/ios#free-and-paid-features).  
+Um die iOS-Version der OsmAnd-App in *CarPlay* zu verwenden, müssen Sie eine [kostenpflichtige Version der App erwerben oder abonnieren](../purchases/ios#free-and-paid-features).  
 
 1. Um eine Route zu erstellen, müssen Sie den [Routenendpunkt](#select-a-route-endpoint) auf dem *CarPlay-Bildschirm* oder in der [OsmAnd-App](../navigation/setup/route-navigation.md) auswählen.
 2. Sie können [Sprachanweisungen](#voice-prompts) verwenden, um Anweisungen oder Meldungen über Probleme auf der Straße zu hören.  
@@ -279,10 +279,10 @@ Die OsmAnd-App kann geöffnet und zur Navigation in *CarPlay* auf dem Bildschirm
 Wenn die Navigation in CarPlay abgeschlossen ist, zeigt OsmAnd einen Dialog **„Sie sind angekommen“** auf dem Fahrzeugbildschirm an. Dieser Dialog verwendet dieselbe Ankunftsdetektionslogik wie die mobile App und bietet schnellen Zugriff auf gängige Aktionen nach Erreichen des Ziels.
 
 Verfügbare Aktionen:
-- **Als Parkort markieren**. Speichert Ihre aktuelle Position als Parkort und platziert einen Parkmarker auf der Karte.
-- **Parkplatz suchen**. Öffnet den Suchbildschirm mit der vorausgewählten Parkplatz-Kategorie, um Ihnen bei der Suche nach nahegelegenen Parkmöglichkeiten zu helfen.
-- **Route neu berechnen**. Baut eine neue Route zum ursprünglichen Ziel auf, wenn Sie die Navigation fortsetzen möchten.
-- **Navigation beenden**. Beendet die aktuelle Route und setzt OsmAnd in den Standardkartenzustand zurück.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Speichert Ihre aktuelle Position als Parkort und platziert einen Parkmarker auf der Karte.
+- **<Translate ios="true" ids="find_parking"/>**. Öffnet den Suchbildschirm mit der vorausgewählten Parkplatz-Kategorie, um Ihnen bei der Suche nach nahegelegenen Parkmöglichkeiten zu helfen.
+- **<Translate ios="true" ids="recalculate_route"/>**. Baut eine neue Route zum ursprünglichen Ziel auf, wenn Sie die Navigation fortsetzen möchten.
+- **<Translate ios="true" ids="finish_navigation"/>**. Beendet die aktuelle Route und setzt OsmAnd in den Standardkartenzustand zurück.
 
 Wenn CarPlay während der aktiven Navigation getrennt wird, wendet OsmAnd zusätzliche Logik auf dem iPhone an:
 - Wenn die Entfernung zum Ziel weniger als 100 m beträgt, wird die Navigation automatisch beendet und das Standardprofil wiederhergestellt. In diesem Fall wird die Benachrichtigung „Sie sind angekommen“ nicht auf dem Telefonsbildschirm angezeigt.

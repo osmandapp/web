@@ -1,5 +1,5 @@
 ---
-source-hash: cc7b11b19f0261ab3f9cc12de149c6d268cdaa50b3a828cc60f5dd3ebe0ce868
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title:  Adresssuche
 ---
@@ -18,6 +18,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 *OsmAnd Adresssuche* basiert auf OpenStreetMap-Daten und ermöglicht es Ihnen, den Standort und die Wegbeschreibung zu einer bestimmten Adresse aus einer bereits sortierten Liste zu finden, sowie nach Postleitzahl oder Koordinaten zu suchen. Dieses Werkzeug ermöglicht es Ihnen, die gewünschten Adressen mit wenigen Fingertipps zu finden, was die Suchzeit verkürzt und hilft, falls Sie sich nicht an die genaue Adresse erinnern.
 
 Die Adresssuche funktioniert offline mit heruntergeladenen Karten. Stellen Sie sicher, dass die Karte für die Region, in der Sie suchen, installiert ist. Die Ergebnisse hängen von den in OpenStreetMap verfügbaren Adressdaten ab.
+
+Suchergebnisse werden automatisch nach Relevanz und Entfernung sortiert, sodass nahegelegene und relevantere Ergebnisse höher in der Liste erscheinen.
 
 OsmAnd bietet mehrere Möglichkeiten, zum *Suchwerkzeug* zu gelangen, wo sich der Abschnitt **Adresssuche** befindet.
 
@@ -83,6 +85,8 @@ Sie müssen sie nicht in einer strengen Reihenfolge eingeben. **Beispielabfragen
 
 Wenn die vollständige Adresse nicht gefunden wird, versucht OsmAnd automatisch vereinfachte Abfragen (z. B. durch Entfernen zusätzlicher Wörter), um die Chancen zu verbessern, den Standort zu finden.
 
+Wenn eine Abfrage sowohl eine Adresse als auch einen POI betreffen kann, priorisiert OsmAnd automatisch die relevanteste Interpretation basierend auf Kontext, Entfernung und Objektwichtigkeit.
+
 **HINWEIS:** Die Adresssuche funktioniert nur innerhalb heruntergeladener Karten. Suchergebnisse basieren auf:
 - auf dem Gerät installierten Karten;
 - dem sichtbaren Kartenbereich;
@@ -117,6 +121,8 @@ Die Adresssuche in OsmAnd ist tolerant gegenüber unterschiedlichen Eingabeforma
 - die Reihenfolge der Wörter zu ändern;
 - zusätzliche Informationen zu entfernen;
 - nur nach Straßennamen zu suchen.
+
+Sehr kurze oder allgemeine Abfragen (z. B. „Apple“) können jedoch eine Mischung aus Adressen und POIs zurückgeben, einschließlich einer Marke, eines Straßennamens oder einer Ortschaft mit demselben Namen. Um die Genauigkeit zu verbessern, versuchen Sie, mehr Details wie Stadtname, Straße oder POI-Name hinzuzufügen.
 
 Die Suchmaschine toleriert auch gängige Variationen in der Adressformatierung, wie unterschiedliche Wortreihenfolge, Schreibunterschiede, Abkürzungen oder Hausnummerformate. Die folgende Tabelle zeigt typische Suchvariationen, die möglicherweise dieselbe Adresse zurückgeben.
 
@@ -160,13 +166,13 @@ These variations may still return the same address.
 
 <TabItem value="android" label="Android">
 
-![Straßensuche Android](@site/static/img/search/town_search_android.png)
+![Stadtsuche Android](@site/static/img/search/town_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Straßensuche iOS](@site/static/img/search/town_search_ios.png)
+![Stadtsuche iOS](@site/static/img/search/town_search_ios.png)
 
 </TabItem>
 
@@ -209,7 +215,7 @@ Diese Art der Suche erleichtert das Auffinden bestimmter Orte innerhalb einer au
 
 <TabItem value="ios" label="iOS">
 
-![Straßensuche iOS](@site/static/img/search/address_street_search_3_ios.png) ![Straßensuche Android](@site/static/img/search/address_street_search_4_ios.png)
+![Straßensuche iOS](@site/static/img/search/address_street_search_3_ios.png) ![Straßensuche iOS](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 
