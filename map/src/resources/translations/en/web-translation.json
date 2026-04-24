@@ -319,6 +319,7 @@
     "fav_name_already_exists": "This name already exists.",
     "fav_address": "Address",
     "fav_address_searching": "Searching...",
+    "fav_address_autofill": "Auto-fill address",
     "rename_item_not_found": "Folder or track was not found.",
     "garmin_sync_title": "Sync your activities",
     "garmin_sync_description": "Connect your account to sync Garmin Connect™ activities with OsmAnd.",

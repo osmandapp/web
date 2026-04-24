@@ -1,5 +1,6 @@
-import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
+import { Box, IconButton, InputAdornment, TextField, Tooltip } from '@mui/material';
 import { ReactComponent as CancelIcon } from '../../../../assets/icons/ic_action_cancel.svg';
+import { ReactComponent as LocationIcon } from '../../../../assets/icons/ic_action_location_marker_outlined.svg';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getAddressByLatLon } from '../../wpt/WptDetails';
@@ -11,15 +12,16 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, w
 
     useEffect(() => {
         if (!latLon?.lat || !latLon?.lon || favoriteAddress) return;
+        searchAddress();
+    }, [latLon]);
+
+    function searchAddress() {
+        if (!latLon?.lat || !latLon?.lon) return;
         setSearching(true);
         getAddressByLatLon(latLon.lat, latLon.lon).then((address) => {
             setFavoriteAddress(address ?? '');
             setSearching(false);
         });
-    }, [latLon]);
-
-    function handleClear() {
-        setFavoriteAddress('');
     }
 
     return (
@@ -35,9 +37,17 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, w
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
-                            <IconButton size="small" onClick={handleClear}>
-                                <CancelIcon style={{ fill: 'var(--svg-icon-color)' }} />
-                            </IconButton>
+                            {favoriteAddress ? (
+                                <IconButton size="small" onClick={() => setFavoriteAddress('')}>
+                                    <CancelIcon style={{ fill: 'var(--svg-icon-color)' }} />
+                                </IconButton>
+                            ) : (
+                                <Tooltip title={t('web:fav_address_autofill')}>
+                                    <IconButton size="small" onClick={searchAddress} disabled={searching}>
+                                        <LocationIcon style={{ fill: '#237BFF' }} />
+                                    </IconButton>
+                                </Tooltip>
+                            )}
                         </InputAdornment>
                     ),
                 }}

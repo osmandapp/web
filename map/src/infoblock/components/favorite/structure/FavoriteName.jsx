@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../../context/AppContext';
 import { getPropsFromSearchResultItem } from '../../../../menu/search/search/SearchResultItem';
 import { useTranslation } from 'react-i18next';
+import styles from '../wptEditPanel.module.css';
 
 export default function FavoriteName({
     favoriteName,
@@ -96,6 +97,7 @@ export default function FavoriteName({
                 autoFocus
                 error={favoriteName === '' || nameAlreadyExist}
                 helperText={getErrorText(favoriteName)}
+                FormHelperTextProps={{ className: styles.helperText }}
             />
         </Box>
     );
