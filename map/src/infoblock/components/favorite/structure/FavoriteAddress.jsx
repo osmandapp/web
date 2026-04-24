@@ -4,6 +4,7 @@ import { ReactComponent as LocationIcon } from '../../../../assets/icons/ic_acti
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getAddressByLatLon } from '../../wpt/WptDetails';
+import styles from '../wptEditPanel.module.css';
 
 export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, widthDialog, latLon }) {
     const { t } = useTranslation();
@@ -34,6 +35,7 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, w
                 disabled={searching}
                 onChange={(e) => setFavoriteAddress(e.target.value)}
                 value={searching ? t('web:fav_address_searching') : favoriteAddress}
+                inputProps={{ className: styles.fieldInput }}
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">

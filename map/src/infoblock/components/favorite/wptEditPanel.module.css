@@ -25,6 +25,10 @@
     text-overflow: ellipsis;
 }
 
+.fieldInput {
+    padding-left: 8px !important;
+}
+
 .actions {
     display: flex;
     justify-content: flex-end;
