@@ -27,16 +27,15 @@ export default function FavoriteName({
         }
         let group = ctx.favorites?.mapObjs?.[id];
         let names = [];
-        group &&
-            group.wpts.forEach((wpt) => {
-                if (favorite) {
-                    if (wpt.name !== favorite.name) {
-                        names.push(wpt.name);
-                    }
-                } else {
+        group?.wpts.forEach((wpt) => {
+            if (favorite) {
+                if (wpt.name !== favorite.name) {
                     names.push(wpt.name);
                 }
-            });
+            } else {
+                names.push(wpt.name);
+            }
+        });
         validateName(favoriteName, names);
         setFavNames(names);
     }, [favoriteGroup]);
@@ -60,14 +59,14 @@ export default function FavoriteName({
         setErrorName(nameExists);
     }
 
-    function gerErrorText(favoriteName) {
-        if (favoriteName === '') {
-            return 'Empty name!';
+    function getErrorText(name) {
+        if (name === '') {
+            return t('web:fav_name_empty');
         } else if (nameAlreadyExist) {
-            return 'This name already exists!';
-        } else {
-            return ' ';
+            return t('web:fav_name_already_exists');
         }
+
+        return ' ';
     }
 
     useEffect(() => {
@@ -89,29 +88,15 @@ export default function FavoriteName({
         <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 id={isGroupName ? 'se-fav-group-name-input' : 'se-fav-name-input'}
-                label="Name"
+                label={t('shared_string_name')}
                 fullWidth
+                margin="dense"
+                variant="filled"
                 onChange={(e) => setFavoriteName(e.target.value)}
                 value={favoriteName}
                 autoFocus
                 error={favoriteName === '' || nameAlreadyExist}
-                helperText={gerErrorText(favoriteName)}
-                sx={{
-                    maxWidth: '450px !important',
-                    resize: 'none',
-                    fontFamily: 'Arial',
-                    color: 'black',
-                    fontSize: 20,
-                    ml: '-2px',
-                    borderColor: '#bebdb4',
-                    backgroundColor: 'transparent',
-                    outlineColor: '#757575',
-                    cursor: 'pointer',
-                    '&[disabled]': { border: 'none' },
-                    mb: '-10px',
-                    pb: '8px',
-                    pt: '8px',
-                }}
+                helperText={getErrorText(favoriteName)}
             />
         </ListItemText>
     );
