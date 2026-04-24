@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Carte
 title: Carte globale sur le site web
@@ -40,7 +40,10 @@ La carte web d'OsmAnd est une carte mondiale basée sur les données d'[OpenStre
 
 Pour l'ouvrir, faites un clic droit n'importe où sur la carte. Ce menu comprend les actions suivantes :
 
-- **Où suis-je** – Trouvez rapidement votre position actuelle sur la carte. Cette fonction affiche les adresses les plus proches du point sélectionné sur la carte.
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Ouvrir la météo** – Accédez au [Menu Météo](../web/web-weather.md) pour voir les détails météorologiques.
 - **Créer un nouvel itinéraire** – Ouvre l'outil [*Planifier un itinéraire*](../web/web-navigation.md) avec l'emplacement sélectionné comme point de départ ou de destination.
 - **Ajouter un favori** – Permet de créer et d'enregistrer un [favori](../web/web-favorites.md#add--edit-favorite) à n'importe quel point de la carte pour un accès facile.
@@ -57,7 +60,21 @@ Pour l'ouvrir, faites un clic droit n'importe où sur la carte. Ce menu comprend
 Add pin option will be added back once it becomes available again.
 -->
 
-![Menu contextuel de la carte](@site/static/img/web/map_context_menu_new.png)
+![Menu contextuel de la carte](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Objet sélectionné {#selected-object}
+
+Lorsqu'un objet sur la carte (tel qu'un POI, un favori ou un point de navigation) est sélectionné, il est mis en évidence avec une épingle plus grande. Un seul objet peut être sélectionné à la fois.
+
+Si l'objet sélectionné est déjà visible à l'écran, la carte ne se déplace pas. S'il est en dehors de la vue actuelle, la carte se centre sur lui sans changer le niveau de zoom.
+
+Le marqueur sélectionné reste visible lors du zoom sur la carte.
+
+Les marqueurs à proximité peuvent être masqués pour rendre l'objet sélectionné plus facile à voir.
+
+![Objet sélectionné](@site/static/img/web/selected_object_favorite.png) ![Objet sélectionné](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menu Configurer la carte {#configure-map-menu}
@@ -66,7 +83,7 @@ Le menu Configurer la carte vous permet de gérer les paramètres d'affichage de
 
 - [Superposition de POI...](#poi-overlay). Permet de choisir et d'afficher les catégories de POI nécessaires sur la carte.
 - [Favoris](#favorites). Active ou désactive l'affichage des favoris sur la carte.
-- [Traces](#tracks). Contient les traces GPX visibles sur la carte.  
+- [Traces](#tracks). Contient les traces GPX visibles sur la carte.
 - [Arrêts de transport](#transport-stops). Active ou désactive l'affichage des arrêts de transport public sur la carte. 
 - [Terrain](#terrain). Active ou désactive le schéma de couleurs du terrain sur la carte.
 
@@ -106,16 +123,25 @@ Cette section contient une liste de vos [**traces GPX visibles sur la carte**](.
 - Vous pouvez activer ou désactiver les traces directement.  
 - Activez ou désactivez les traces depuis la liste **Récemment visibles**.  
 
-Chaque trace a un **Menu contextuel** (accessible via le bouton ⋮) avec les commandes suivantes :
+Chaque trace a un menu (⋮) avec les commandes suivantes :
 
 - **Masquer la trace** : Masque la trace actuellement visible de la carte.  
 - **Rendre la trace visible** : Affiche une trace de la liste Récemment visibles sur la carte.  
 - **Renommer** : Vous permet de renommer la trace pour une identification plus facile.  
-- **Dupliquer** : Crée une copie de la trace.  
+- **Dupliquer** : Crée une copie de la trace.
+- **Partager** : Ouvre l'écran de partage (identique à celui pour les [Favoris](../web/web-favorites.md#share)).
 - **Télécharger** : Enregistre la trace sur votre appareil local.  
 - **Supprimer** : Supprime définitivement la trace de la liste.
 
-![Menu Configurer la carte Traces](@site/static/img/web/configure_map_track.png)
+Lorsque vous ouvrez une trace, un panneau avec une barre d'actions supérieure est affiché. La barre montre le nom de la trace et fournit un accès rapide aux actions. En plus des commandes du menu à trois points, la barre supérieure inclut **Modifier**. **Apparence** n'est actuellement pas active.
+
+Le panneau de la trace inclut les onglets suivants :
+
+- Aperçu — affiche les informations générales sur la trace.
+- Trace — actuellement non implémenté.
+- Points — affiche les points de passage et les points de route regroupés par type.
+
+![Menu Configurer la carte Traces](@site/static/img/web/configure_map_track_new.png) ![Menu Configurer la carte Traces](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Arrêts de transport {#transport-stops}
 

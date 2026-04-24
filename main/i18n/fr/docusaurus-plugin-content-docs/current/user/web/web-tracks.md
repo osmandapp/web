@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -73,28 +73,16 @@ Cliquez sur le bouton à trois points (⋮) pour ouvrir le menu *Dossier de trac
 Les traces GPX que vous avez dans [OsmAnd Cloud](../personal/osmand-cloud.md) seront disponibles pour l'affichage et la modification après connexion. Uniquement pour les utilisateurs **Pro** <ProFeature/> et pour les utilisateurs [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (qui peuvent télécharger leurs données même après l'expiration de leur abonnement Pro).
 
 Les fonctionnalités suivantes sont disponibles après avoir choisi une trace cloud :
+- *Informations* - affichage des données de la trace.
+- *Altitude* - graphique d'altitude.
+- *Vitesse* - graphique de vitesse.
+- *Pente* - graphique de pente.
+- *Recalculer l'altitude (Satellite)* - recalcule les valeurs d'altitude pour la trace sélectionnée et les affiche sur le graphique d'altitude.
+- *Type de route* - divise la trace en segments par classification de route.
+- *Surface* - montre les types de surfaces de trace le long de l'itinéraire.
+- *Fluidité* - affiche la fluidité des segments basée sur les étiquettes OSM.
 
-![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track.png)
-
-- Écrans d'information :
-  - *Informations* - affichage des données de la trace.
-  - *Altitude* - graphique d'altitude.
-  - *Vitesse* - graphique de vitesse.
-  - *Pente* - graphique de pente.
-  - *Paramètres* - liste des profils de navigation pour l'outil *Créer un itinéraire*.
-  - *Virages* - une liste générée d'instructions de virage approximatives basée sur la géométrie de la trace.
-  - *Type de route* - divise la trace en segments par classification de route .
-  - *Surface* - montre les types de surfaces de trace le long de l'itinéraire.
-  - *Fluidité* - affiche la fluidité des segments basée sur les étiquettes OSM .
-
-![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_turns.png) ![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details.png)
-
-- Boutons d'action :
-  - *Modifier la trace* - ajout de la trace cloud en local pour modification (bouton _Modifier localement_ sur le panneau).
-  - *Télécharger GPX* - télécharge la trace sur le PC.
-  - *Recalculer* Altitude (Satellite) - recalcule les valeurs d'altitude pour la trace sélectionnée et les affiche sur le graphique d'altitude.
-  - *Supprimer la trace* - supprime la trace.
-  - *Fermer la trace* - ferme la trace.
+![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Articles connexes {#related-articles}

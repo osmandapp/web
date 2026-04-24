@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -279,10 +279,10 @@ L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *CarPlay
 Lorsque la navigation est terminée dans CarPlay, OsmAnd affiche un dialogue **« Vous êtes arrivé »** sur l'écran du véhicule. Ce dialogue utilise la même logique de détection d'arrivée que l'application mobile et fournit un accès rapide aux actions courantes après avoir atteint votre destination.
 
 Actions disponibles :
-- **Marquer comme emplacement de stationnement**. Enregistre votre position actuelle comme emplacement de stationnement et place un marqueur de stationnement sur la carte.
-- **Trouver un stationnement**. Ouvre l'écran de Recherche avec la catégorie Stationnement pré-sélectionnée pour vous aider à trouver des options de stationnement à proximité.
-- **Recalculer l'itinéraire**. Construit un nouvel itinéraire vers la destination originale si vous souhaitez continuer la navigation.
-- **Terminer la navigation**. Met fin à l'itinéraire actuel et ramène OsmAnd à l'état par défaut de la carte.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Enregistre votre position actuelle comme emplacement de stationnement et place un marqueur de stationnement sur la carte.
+- **<Translate ios="true" ids="find_parking"/>**. Ouvre l'écran de Recherche avec la catégorie Stationnement pré-sélectionnée pour vous aider à trouver des options de stationnement à proximité.
+- **<Translate ios="true" ids="recalculate_route"/>**. Construit un nouvel itinéraire vers la destination originale si vous souhaitez continuer la navigation.
+- **<Translate ios="true" ids="finish_navigation"/>**. Met fin à l'itinéraire actuel et ramène OsmAnd à l'état par défaut de la carte.
 
 Si CarPlay est déconnecté pendant que la navigation est active, OsmAnd applique une logique supplémentaire sur l'iPhone :
 - Si la distance jusqu'à la destination est inférieure à 100 m, la navigation est automatiquement terminée et le profil par défaut est restauré. Dans ce cas, la notification « Vous êtes arrivé » n'est pas affichée sur l'écran du téléphone.

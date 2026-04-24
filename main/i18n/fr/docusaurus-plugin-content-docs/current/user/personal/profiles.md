@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Profils (Paramètres)
 ---
@@ -447,7 +447,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 Les paramètres **Apparence de Ma position** vous permettent de personnaliser la façon dont votre position est affichée sur la carte, que ce soit à l'arrêt (Repos) ou en mouvement (Navigation). Le mouvement est détecté par le système d'exploitation lorsque la vitesse de l'appareil est **supérieure à zéro**.
 
-Utilisez **Taille de l'icône** pour ajuster la taille de l'icône de position Ma position indépendamment de la taille du texte de l'application. Vous pouvez définir des tailles différentes pour les modes Repos et Navigation. La taille peut être ajustée de 50 % à 300 % (50, 75, 100, 125, 150, 200, 250, 300 %). La valeur par défaut est de 100 %. Appuyez sur Taille de l'icône pour ouvrir les paramètres de taille, puis utilisez le curseur ou les boutons de pas + / – pour modifier la valeur. Utilisez **Réinitialiser par défaut** pour revenir à 100 %.
+Utilisez **<Translate ios="true" ids="icon_size"/>** pour ajuster la taille de l'icône de position Ma position indépendamment de la taille du texte de l'application. Vous pouvez définir des tailles différentes pour les modes Repos et Navigation. La taille peut être ajustée de 50 % à 300 % (50, 75, 100, 125, 150, 200, 250, 300 %). La valeur par défaut est de 100 %. Appuyez sur <Translate ios="true" ids="icon_size"/> pour ouvrir les paramètres de taille, puis utilisez le curseur ou les boutons de pas + / – pour modifier la valeur. Utilisez **<Translate ios="true" ids="reset_to_default"/>** pour revenir à 100 %.
 
 </TabItem>
 

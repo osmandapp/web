@@ -1,5 +1,5 @@
 ---
-source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
+source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
 sidebar_position: 9
 sidebar_label:  Planifier un itinéraire
 title: Planifier un itinéraire sur le site web
@@ -65,7 +65,7 @@ Il existe deux façons de démarrer un nouvel itinéraire dans Planifier un itin
 
 Une fois l'itinéraire créé, ajoutez des points directement sur la carte. Chaque clic place le point suivant, et le planificateur construit l'itinéraire entre les points.
 
-![Créer un nouvel itinéraire web OsmAnd](@site/static/img/web/create_new_route.png)
+![Créer un nouvel itinéraire web OsmAnd](@site/static/img/web/create_new_route_1.png)
 
 ### Importer une trace {#import-track}
 
@@ -82,20 +82,24 @@ Chaque élément de la liste dispose d'un interrupteur qui vous permet d'affiche
 
 ## Gérer une trace {#manage-track}
 
-Lorsque vous créez ou importez un itinéraire dans Planifier un itinéraire, un panneau de trace vertical s'ouvre. Utilisez ce panneau pour changer le profil de routage et gérer l'itinéraire. Cliquez sur le contrôle de profil pour ouvrir la boîte de dialogue **Changer de profil**, sélectionnez le profil dont vous avez besoin (par exemple, Voiture, Vélo ou Piéton), et choisissez comment l'appliquer : *Segments suivants* applique le profil uniquement aux nouvelles parties ajoutées à partir de ce point, tandis que *Tous les segments* recalcule l'ensemble de l'itinéraire avec le profil sélectionné.
+Lorsque vous créez ou importez un itinéraire dans Planifier un itinéraire, un panneau de trace vertical s'ouvre. Ce panneau vous permet de changer le profil de routage et de gérer l'itinéraire.
 
-Depuis le panneau de trace, vous pouvez également effectuer des actions courantes sur les fichiers. Vous pouvez **Enregistrer sur le Cloud** pour conserver l'itinéraire pour une utilisation ultérieure, **Télécharger GPX** pour l'exporter en tant que fichier, **Fermer la trace** pour arrêter son édition, ou **Supprimer la trace** pour la retirer de votre liste locale. Ces actions sont également disponibles depuis les contrôles correspondants dans le [panneau Infos](#info-panel).
+Cliquez sur le contrôle de profil pour ouvrir la boîte de dialogue **Changer de profil**. Sélectionnez le profil requis (par exemple, Voiture, Vélo ou Piéton), puis choisissez comment l'appliquer : *Segments suivants* applique le profil uniquement aux nouvelles parties ajoutées à partir de ce point, tandis que *Tous les segments* recalcule l'ensemble de l'itinéraire avec le profil sélectionné.
 
-![Gérer une trace web OsmAnd](@site/static/img/web/manage_track_new.png) ![Gérer une trace web OsmAnd](@site/static/img/web/change_profile.png)
+Depuis le panneau de trace, vous pouvez également **Supprimer** la trace de votre liste locale.
+
+Dans le [panneau Aperçu](#overview-panel), vous pouvez **Enregistrer sur le Cloud** pour conserver l'itinéraire pour une utilisation ultérieure et **Télécharger** en tant que fichier GPX.
+
+![Gérer une trace web OsmAnd](@site/static/img/web/manage_track_2_new.png) ![Gérer une trace web OsmAnd](@site/static/img/web/change_profile.png)
 
 
 ## Panneaux de détails de trace {#track-details-panels}
 
-Le menu de trace locale comprend trois panneaux : **Infos**, **Trace** et **Points de cheminement**. Utilisez-les pour afficher les informations de la trace et gérer les points d'itinéraire et les points de cheminement.
+Le menu de trace locale comprend trois panneaux : **Aperçu**, **Trace** et **Points**. Utilisez-les pour afficher les informations de la trace et gérer les points d'itinéraire et les points de cheminement.
 
-### Panneau Infos {#info-panel}
+### Panneau Aperçu {#overview-panel}
 
-Le panneau Infos résume la trace sélectionnée et affiche les données clés sur l'itinéraire et l'altitude. Il inclut un aperçu rapide des statistiques de l'itinéraire, ainsi que des graphiques et une analyse supplémentaire de la trace basée sur les données de carte disponibles.
+Le panneau Aperçu résume la trace sélectionnée et affiche les données clés sur l'itinéraire et l'altitude. Il inclut un aperçu rapide des statistiques de l'itinéraire, ainsi que des graphiques et une analyse supplémentaire de la trace basée sur les données de carte disponibles.
 
 La section de résumé affiche :
 
@@ -109,29 +113,34 @@ Sous le résumé, le panneau fournit des graphiques :
 
 - Altitude — un profil d'altitude de l'itinéraire.
 - Pente — un graphique de pente montrant les changements de gradient le long de la trace.
+- Vitesse — un graphique de vitesse le long de la trace.
+
+Vous pouvez activer ou désactiver les options suivantes :
+
+- Afficher les points de trace — affiche les points de trace sur la carte.
+- Afficher les points de cheminement — affiche les points de cheminement sur la carte.
 
 Pour des détails supplémentaires sur la trace, ouvrez les sections d'analyse :
 
+- Type de route — divise la trace en segments par classification de route.
 - Surface — affiche les types de surface le long de l'itinéraire basés sur les données OSM.
 - Fluidité — affiche la fluidité des segments basée sur les étiquettes OSM.
 
-Les actions courantes sur la trace telles que l'enregistrement, le téléchargement, la fermeture et la suppression sont également disponibles dans ce panneau.
-
-![Panneau Infos web OsmAnd](@site/static/img/web/info_panel.png) ![Gérer une trace web OsmAnd](@site/static/img/web/info_panel_2.png)
+![Panneau Aperçu web OsmAnd](@site/static/img/web/overview_panel.png) 
 
 ### Panneau Trace {#track-panel}
 
 Le panneau Trace affiche la liste des points d'itinéraire utilisés pour construire la trace. Utilisez-le pour examiner et modifier la structure de l'itinéraire : glissez les points pour les réorganiser, supprimez des points à l'aide de l'icône de suppression, ou utilisez Effacer les points pour supprimer tous les points et recommencer.
 
-![Panneau Trace web OsmAnd](@site/static/img/web/track_panel.png)
+![Panneau Trace web OsmAnd](@site/static/img/web/track_panel_new.png)
 
-### Panneau Points de cheminement {#waypoints-panel}
+### Panneau Points {#points-panel}
 
-Le panneau Points de cheminement est utilisé pour afficher et gérer les points de cheminement pour la trace sélectionnée. Les points de cheminement peuvent être ajoutés depuis le menu contextuel de la carte — clic droit sur la carte et choisissez l'option pour **Ajouter un point de cheminement**, puis remplissez les détails du point de cheminement (tels que le nom, l'icône et la couleur) et enregistrez-le.
+Le panneau Points est utilisé pour afficher et gérer les points de cheminement pour la trace sélectionnée. Les points de cheminement peuvent être ajoutés depuis le menu contextuel de la carte — clic droit sur la carte et choisissez l'option pour **Ajouter un point de cheminement**, puis remplissez les détails du point de cheminement (tels que le nom, l'icône et la couleur) et enregistrez-le.
 
 Dans la liste des Points de cheminement, vous pouvez contrôler si les points de cheminement sont affichés sur la carte et supprimer des points de cheminement individuels si nécessaire. Pour supprimer tous les points de cheminement de la trace en une seule fois, utilisez *Effacer tous les points de cheminement*.
 
-![Panneau Points de cheminement web OsmAnd](@site/static/img/web/waypoints_panel.png)
+![Panneau Points de cheminement web OsmAnd](@site/static/img/web/points_panel.png)
 
 
 ## Articles connexes {#related-articles}

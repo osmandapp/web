@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  Traces
 sidebar_position: 2
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Aperçu {#overview}
-OsmAnd dispose de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte. Les itinéraires peuvent être construits dans le cadre de la Navigation, créés via Planifier un itinéraire, importés en tant que traces GPX, enregistrés via l'extension Enregistrement de trajet, ou parcourus et sélectionnés à partir des données OpenStreetMap.
+OsmAnd dispose de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte. Les itinéraires peuvent être construits dans le cadre de la Navigation, créés via Planifier un itinéraire, importés en tant que traces GPX, enregistrés via l'extension Enregistrement de trajet, ou explorés et sélectionnés à partir des données OpenStreetMap.
 
 
 ## Types de traces {#types-of-tracks}
@@ -124,7 +124,7 @@ Aller à : *Touchez la trace → Onglet Trace → <Translate android="true" ids=
 
 Aller à : *Touchez la trace → Onglet Trace → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menu de la trace analyser sur la carte](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menu de la trace analyser sur la carte ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Menu de la trace analyser sur la carte](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menu de la trace analyser sur la carte ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Aller à : *Touchez la trace → Onglet Trace → <Translate ios="true" ids="ana
 
 Cet outil fournit une analyse détaillée des données de la [trace](../../map/tracks/track-context-menu.md#options) à l'aide de graphiques et de cartes.
 
-- **Données du graphique (axe Y)** affiche : *Altitude*, *Pente*, *Vitesse*, [*Données de capteurs externes*](../../plugins/external-sensors.md), et des combinaisons de jusqu'à deux options si elles sont contenues dans les données de la trace. ***Android uniquement :*** pour les traces automobiles enregistrées avec des données OBD-II, l'axe Y fournit en outre des métriques du véhicule, telles que la vitesse du moteur, la température du liquide de refroidissement, et plus encore.
+- **Données du graphique (axe Y)** affiche : *Altitude*, *Pente*, *Vitesse*, [*Données de capteurs externes*](../../plugins/external-sensors.md), et des combinaisons de jusqu'à deux options si elles sont contenues dans les données de la trace. Pour les traces automobiles enregistrées avec des données OBD-II, l'axe Y fournit en outre des métriques du véhicule, telles que la vitesse du moteur, la température du liquide de refroidissement, et plus encore.
 - **Dimension du graphique (axe X)** représente : *Distance*, *Temps*, et *Heure de la journée*.
 - **Interaction par appui/glissement**. Appuyez sur un graphique pour afficher des informations sur un point spécifique de la trace. Glisser sur le graphique met en évidence l'emplacement approprié sur la carte et affiche les détails dans la barre d'informations.
 - **Étiquette de distance**. Lors d'un appui ou d'un glissement le long du graphique, l'infobulle affiche également la distance exacte le long de la trace. La valeur suit les paramètres d'unité du profil actuel (<Translate android="true" ids="km"/> ou <Translate android="true" ids="mile"/>). Utilisez-la pour estimer rapidement la distance d'un point par rapport au début de la trace, ou pour calculer la distance entre deux positions en comparant leurs valeurs.
@@ -157,7 +157,7 @@ Cet outil fournit une analyse détaillée des données de la [trace](../../map/t
 
 </Tabs>
 
-Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position.
+Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-position-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position.
 
 - L'**échelle du graphique** reste la même, et les **informations de la barre** sont fixées à 1/4 du côté gauche.
 - Au fur et à mesure que vous vous déplacez, le **graphique glissera** de gauche à droite, affichant les informations en avant de votre trace.

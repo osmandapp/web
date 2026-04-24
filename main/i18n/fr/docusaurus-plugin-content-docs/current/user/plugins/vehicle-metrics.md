@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  Métriques du véhicule
 ---
@@ -93,7 +93,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 <TabItem value="android" label="Android">
 
-**Android.** Allez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
+**Android.** Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="obd_widget_group"/>*
 
 |  |  |
 |--|--|
@@ -104,7 +104,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Allez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
+**iOS.** Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate ios="true" ids="obd_plugin_name"/>*
 
 |  |  |
 |--|--|
@@ -161,7 +161,7 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 
 <TabItem value="android" label="Android">
 
-**Android**. Allez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+**Android.** Allez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
@@ -172,7 +172,7 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 
 <TabItem value="ios" label="iOS">
 
-**iOS**. Allez à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
+**iOS.** Allez à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
 
 | | |
 |--|--|
@@ -203,7 +203,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 <TabItem value="android" label="Android">
 
-**Android.** Allez à : *Menu → Configurer l'écran → Widgets → Choisir un panneau → Métriques du véhicule*
+**Android.** Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Allez à : *Menu → Configurer l'écran → Widgets → Choisir un panneau → Métriques du véhicule*
+**iOS.** Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -470,11 +470,11 @@ Vous pouvez ouvrir les paramètres de mise en page de l'écran de la carte depui
 
 ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_single.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_separate.png)
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Mise en page de l'écran de la carte*
+Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd prend en charge deux modes de mise en page pour l'écran de la carte :
-- **Mise en page unique** – utilise la même disposition de widgets pour toutes les orientations d'écran. Cette option est sélectionnée par défaut.
-- **Mises en page séparées** – vous permet de configurer différentes dispositions de widgets pour les orientations Portrait et Paysage.
+- **<Translate android="true" ids="single_layout"/>** – utilise la même disposition de widgets pour toutes les orientations d'écran. Cette option est sélectionnée par défaut.
+- **<Translate android="true" ids="separate_layouts"/>** – vous permet de configurer différentes dispositions de widgets pour les orientations Portrait et Paysage.
 
 Lorsque Mises en page séparées est activé, les modifications apportées dans une orientation n'affectent pas l'autre. Cela est utile si vous souhaitez optimiser l'écran de la carte différemment pour les utilisations portrait et paysage.
 
@@ -485,8 +485,8 @@ Lorsque Mises en page séparées est activé, les modifications apportées dans 
 Lorsque Mises en page séparées est activé, deux onglets deviennent disponibles dans l'écran Configurer l'écran : **Portrait** et **Paysage**. Chaque onglet représente une mise en page indépendante pour l'orientation d'écran correspondante. Vous pouvez basculer entre les onglets en les appuyant.
 
 Vous pouvez copier la mise en page entre les orientations. Pour accéder à ces actions, appuyez sur le menu à trois points pour le panneau de widgets :
-- **Copier depuis Portrait** – copie la liste de widgets de la mise en page Portrait vers la mise en page Paysage.
-- **Copier depuis Paysage** – copie la liste de widgets de la mise en page Paysage vers la mise en page Portrait.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – copie la liste de widgets de la mise en page Portrait vers la mise en page Paysage.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – copie la liste de widgets de la mise en page Paysage vers la mise en page Portrait.
 
 Seule la liste de widgets est copiée, et l'opération s'applique au sein du même profil.
 
@@ -501,8 +501,8 @@ Le paramètre **Mise en page des panneaux** contrôle la façon dont les panneau
 **Note :** Cette option est disponible uniquement lorsque [Mises en page séparées](#single-and-separate-layouts) est activé.
 
 Vous pouvez choisir entre deux modes :
-- **Large** – les panneaux supérieur et inférieur s'étendent sur toute la largeur de l'écran.
-- **Compact** – les panneaux supérieur et inférieur s'adaptent entre les panneaux latéraux et les boutons de la carte.
+- **<Translate android="true" ids="panels_layout_wide"/>** – les panneaux supérieur et inférieur s'étendent sur toute la largeur de l'écran.
+- **<Translate android="true" ids="panels_layout_compact"/>** – les panneaux supérieur et inférieur s'adaptent entre les panneaux latéraux et les boutons de la carte.
 
 La mise en page des panneaux peut être configurée indépendamment pour les orientations Portrait et Paysage, permettant une meilleure adaptation à différentes tailles et orientations d'écran.
 

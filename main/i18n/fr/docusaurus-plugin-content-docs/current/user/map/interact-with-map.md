@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Interagir avec la carte
 ---
@@ -205,12 +205,15 @@ La *Loupe de carte* est un outil qui améliore la visibilité de la carte, simil
 
 ### Vue globe {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vue Globe](@site/static/img/map/globe_view_1.png) ![Vue Globe](@site/static/img/map/globe_view_2.png)
 
 La **Vue globe** vous permet d'afficher la carte sous forme de Terre sphérique au lieu d'une projection plate. Ce mode change la géométrie de la surface de la carte et adapte l'interaction avec la carte à une navigation sphérique.  
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vue globale*
 
 La Vue globe est actuellement disponible uniquement lorsque :
 - Le [plugin Développement](../plugins/development.md) est activé.  
@@ -219,6 +222,20 @@ Allez à : *<Translate android="true" ids="shared_string_menu,plugin_settings,de
 Allez à : *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - Le [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) est défini sur la Version 2 (OpenGL).  
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vue Globe](@site/static/img/map/globe_view_1_ios.png) ![Vue Globe](@site/static/img/map/globe_view_2_ios_new.png)
+
+La **Vue globe** vous permet d'afficher la carte sous forme de Terre sphérique au lieu d'une projection plate. Ce mode change la géométrie de la surface de la carte et adapte l'interaction avec la carte à une navigation sphérique.  
+
+</TabItem>
+
+</Tabs>
 
 Lorsque la Vue globe est activée, la carte tourne comme un globe. Les gestes de glissement font tourner la Terre, et le zoom change la distance de la caméra plutôt que d'agrandir une surface plate. Les éléments de la carte tels que les traces, les marqueurs, les symboles et les objets 3D sont rendus directement sur la surface sphérique et suivent sa courbure. Les objets disparaissent progressivement derrière l'horizon au fur et à mesure que le globe tourne.
 

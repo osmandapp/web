@@ -1,5 +1,5 @@
 ---
-source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -57,7 +57,7 @@ Pour les appareils Android, vous pouvez télécharger les versions **gratuite** 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Un **plan gratuit** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et les *éditions/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités cloud de base et à **5 Mo** de stockage. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Une **application payante distincte** qui inclut des fonctionnalités avancées. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Peut être ajouté à la [Bibliothèque famille Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Une **application payante distincte** qui inclut des fonctionnalités avancées. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Peut être ajouté à la [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** pour l'application gratuite OsmAnd, débloquant les mêmes fonctionnalités qu'OsmAnd+. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand) et [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identique en fonctionnalités et en prix à OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque des [fonctionnalités pro](#pro-features) et avancées supplémentaires. | Disponible sur [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) et [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Il offre un accès complet aux fonctionnalités d'OsmAnd Cloud. |
 
@@ -69,7 +69,7 @@ Pour les appareils Android, vous pouvez télécharger les versions **gratuite** 
 
 3. **OsmAnd Pro**,  **OsmAnd+** et **Maps+** sont des achats *multiplateformes*. Cela signifie que vous pouvez l'acheter dans une boutique (par ex., *Google Play, Huawei AppGallery, AppStore* et *osmand.net*) et le restaurer dans une autre en [liant votre achat à votre compte OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-4. Vous pouvez ajouter **OsmAnd+** à la **[Bibliothèque famille Google Play](https://support.google.com/googleplay/answer/7007852?hl=en)** pour partager l'achat avec les membres de votre famille.  
+4. Vous pouvez ajouter **OsmAnd+** à la **[Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en)** pour partager l'achat avec les membres de votre famille.  
 
 
 ## Prix {#prices}
@@ -107,13 +107,15 @@ Le tableau ci-dessous détaille les fonctionnalités incluses dans les forfaits 
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Données topographiques](../plugins/topography.md#overview)<br/>(Lignes de contour et Terrain) | **-** | ✔ | ✔ |
-| [Personnalisation de la couleur de la grille de coordonnées](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [Personnalisation de la couleur des bâtiments 3D](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Bâtiments 3D — Personnalisation de la couleur](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Visualisation de trace 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lieux populaires (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
-| [Wikivoyage hors ligne - Guides de voyage](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Plugin Astronomie](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Wikivoyage hors ligne — Guides de voyage](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md) — [Planification d'observation](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md) — [Mode AR interactif](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md) — [Carte du ciel hors ligne](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec instructions virage par virage | ✔ | ✔ | ✔ |
 | [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
 | [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

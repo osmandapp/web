@@ -1,5 +1,5 @@
 ---
-source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Cartes vectorielles 
 ---
@@ -140,7 +140,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
     ![Paramètre de carte - Revêtement de la route](@site/static/img/map/map-parameter-road-surface.png)
 
 - **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indique la qualité de la route. Indique la régularité (pente) de la route. L'état de vos routes : bon, mauvais, peut-être terrible, etc. Regardez la [Légende de la carte](../map-legend/index.md) pour déterminer la régularité de votre route.  
-    ![Paramètre de carte - État de la route](@site/static/img/map/map-parameter-road-smoothness.png)
+    ![Paramètre de carte - Régularité de la route](@site/static/img/map/map-parameter-road-smoothness.png)
 
 - **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**.  Affiche l'accessibilité de la route : privée ou autorisée, urgence seulement, ou route à péage. Consultez la [Légende de la carte](../map-legend/index.md) pour trouver les routes disponibles.  
     ![Paramètre de carte - Accès à la route](@site/static/img/map/map-parameter-road-access.png)
@@ -371,42 +371,29 @@ L'option Terrain vous permet de personnaliser trois fonctionnalités telles que 
 
 ### Bâtiments 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Bâtiments 3D](@site/static/img/map/3d_buildings_1_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_2.png) 
+<TabItem value="android" label="Android"> 
 
-La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés.  
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Bâtiments 3D*  
-Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des bâtiments. Pour voir les bâtiments en 3D, inclinez la carte en plaçant deux doigts sur l'écran et en balayant vers le haut.
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
 
-Actuellement, cette option n'est disponible que lorsque le [plugin de développement OsmAnd](../plugins/development.md) est activé.  
-Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+![Bâtiments 3D](@site/static/img/map/3d_buildings_1_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_2.png)
 
-Les paramètres des bâtiments 3D sont divisés en deux groupes : **Apparence** et **Performance**.
+</TabItem>
 
-**Apparence : Couleur**. Contrôle la couleur des bâtiments 3D. Lorsque vous appuyez sur Couleur, OsmAnd ouvre un écran d'aperçu séparé où vous pouvez voir la carte tout en ajustant le paramètre.
-- **Style de carte** — utilise la couleur par défaut des bâtiments du style de carte actuellement sélectionné.
-- **Personnalisé** — vous permet de définir une couleur personnalisée pour les bâtiments séparément pour les modes Jour / Nuit.
+<TabItem value="ios" label="iOS">  
 
-:::tip Achat
-La personnalisation de la couleur des bâtiments 3D est une [fonctionnalité payante](../purchases/index.md).  
-:::
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-Si les couleurs personnalisées ne sont pas achetées, vous verrez un état vide avec une brève description et un bouton Obtenir. Si Personnalisé est disponible, vous pouvez basculer entre Jour et Nuit, choisir une couleur dans la palette (ou ouvrir Toutes les couleurs), puis appuyer sur Appliquer.
+![Bâtiments 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_2_ios.png)
 
-**Apparence : Visibilité**. Contrôle l'opacité (transparence) des bâtiments 3D. Utilisez le curseur pour définir la visibilité en pourcentage. Des valeurs plus basses rendent les bâtiments plus transparents et aident les routes/étiquettes à rester lisibles. Des valeurs plus élevées rendent les bâtiments plus solides et visuellement dominants. Appuyer sur Visibilité ouvre également un écran d'aperçu séparé avec le curseur.
+</TabItem>
 
-Sur les écrans d'aperçu (Couleur / Visibilité), vous pouvez utiliser Réinitialiser aux valeurs par défaut depuis la barre d'application pour restaurer la valeur par défaut.
+</Tabs>
 
-**Performance : Niveau de détail**. Contrôle le niveau de détail de la géométrie des bâtiments 3D :
-- Faible (par défaut) — géométrie plus simple.
-- Élevé — géométrie plus détaillée.
+La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-**Performance : Distance de vue**. Contrôle la distance par rapport à la caméra à laquelle les bâtiments 3D sont rendus :
-- Proche (par défaut) — rend les bâtiments plus près de vous.
-- Lointain — rend les bâtiments à une distance plus longue.
-
-Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
+Sur Android, cette option n'est disponible que lorsque le plugin Topographie est activé. Consultez l'article sur le [plugin Topographie](../plugins/topography.md#3d-buildings) pour plus de détails.
 
 ### Relief 3D {#3d-relief}
 
@@ -442,11 +429,25 @@ Pour plus de détails sur la vue Carte marine, visitez la [page du plugin Carte 
 
 ### Vue Globe {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vue globale*
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vue Globe](@site/static/img/map/globe_view_1.png) ![Vue Globe](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vue Globe](@site/static/img/map/globe_view_1_ios.png) ![Vue Globe](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 La **Vue Globe** vous permet d'afficher la carte comme une Terre sphérique au lieu d'une projection plate. Ce mode change la géométrie de la surface de la carte et adapte l'interaction avec la carte à la navigation sphérique. Pour plus d'informations, consultez la section [Vue globe](../map/interact-with-map.md#globe-view) dans l'article Interagir avec la carte.
 

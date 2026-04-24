@@ -1,5 +1,5 @@
 ---
-source-hash: cc7b11b19f0261ab3f9cc12de149c6d268cdaa50b3a828cc60f5dd3ebe0ce868
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title:  Recherche d'adresse
 ---
@@ -18,6 +18,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 *La recherche d'adresse OsmAnd* est basée sur les données OpenStreetMap et vous permet de trouver l'emplacement et les directions vers une adresse spécifique à partir d'une liste déjà triée, ainsi que de rechercher par code postal ou coordonnées. Cet outil vous permet de trouver les adresses requises en quelques appuis, ce qui réduit le temps de recherche et vous aide si vous ne vous souvenez pas de l'adresse exacte.
 
 La recherche d'adresse fonctionne hors ligne en utilisant les cartes téléchargées. Assurez-vous que la carte de la région dans laquelle vous effectuez la recherche est installée. Les résultats dépendent des données d'adresse disponibles dans OpenStreetMap.
+
+Les résultats de recherche sont automatiquement triés par pertinence et distance, de sorte que les résultats proches et plus pertinents apparaissent en haut de la liste.
 
 OsmAnd offre plusieurs moyens d'accéder à l'*outil de recherche* où se trouve la section **Recherche d'adresse**.
 
@@ -83,6 +85,8 @@ Vous n'avez pas besoin de les saisir dans un ordre strict. **Exemples de requêt
 
 Si l'adresse complète n'est pas trouvée, OsmAnd essaie automatiquement des requêtes simplifiées (par exemple en supprimant les mots supplémentaires) pour améliorer les chances de trouver l'emplacement.
 
+Lorsque une requête peut faire référence à la fois à une adresse et à un POI, OsmAnd priorise automatiquement l'interprétation la plus pertinente en fonction du contexte, de la distance et de l'importance de l'objet.
+
 **NOTE :** La recherche d'adresse ne fonctionne que dans les cartes téléchargées. Les résultats de recherche sont basés sur :
 - les cartes installées sur votre appareil ;
 - la zone visible de la carte ;
@@ -117,6 +121,8 @@ La recherche d'adresse dans OsmAnd est tolérante aux différents formats de sai
 - de changer l'ordre des mots ;
 - de supprimer les informations supplémentaires ;
 - de rechercher uniquement par nom de rue.
+
+Cependant, les requêtes très courtes ou générales (par exemple, « Apple ») peuvent renvoyer un mélange d'adresses et de POI, y compris une marque, un nom de rue ou une localité portant le même nom. Pour améliorer la précision, essayez d'ajouter plus de détails tels que le nom de la ville, la rue ou le nom du POI.
 
 Le moteur de recherche tolère également les variations courantes dans le formatage des adresses, telles que différents ordres de mots, différences d'orthographe, abréviations ou formats de numéros de maison. Le tableau ci-dessous montre des variations de recherche typiques qui peuvent encore renvoyer la même adresse.
 
@@ -209,7 +215,7 @@ Cette méthode de recherche facilite la recherche d'emplacements spécifiques au
 
 <TabItem value="ios" label="iOS">
 
-![Recherche de rue iOS](@site/static/img/search/address_street_search_3_ios.png) ![Recherche de rue Android](@site/static/img/search/address_street_search_4_ios.png)
+![Recherche de rue iOS](@site/static/img/search/address_street_search_3_ios.png) ![Recherche de rue iOS](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 

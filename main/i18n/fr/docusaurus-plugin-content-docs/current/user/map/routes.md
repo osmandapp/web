@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  Itinéraires
 ---
@@ -239,6 +239,7 @@ Lorsque vous appuyez sur un **symbole d'itinéraire** sur la carte :
 
 - Une **liste des itinéraires à proximité** à cet endroit est affichée.
 - Après avoir sélectionné un itinéraire dans la liste, un [menu contextuel](../map/tracks/track-context-menu.md) pour cet itinéraire s'ouvre, affichant des informations détaillées et les actions disponibles.
+- L'itinéraire sélectionné s'ouvre dans une vue de trace, vous permettant d'interagir avec lui de la même manière qu'avec une trace GPX.
 
 Dans le **menu contextuel**, vous pouvez :
 
@@ -317,7 +318,7 @@ Vous pouvez également ouvrir l'onglet *Trace* et passer à la vue *Altitude* po
 </Tabs>  
 
 
-Pour enregistrer l'itinéraire en tant que *fichier GPX*, appuyez sur le bouton **Enregistrer (Télécharger)** sous le [panneau d'information](../map/tracks/track-context-menu.md#info-panel). Cela ouvrira le panneau de boutons des [actions rapides](../map/tracks/track-context-menu.md#track-actions) où vous aurez accès aux actions de la trace telles que la modification de l'[Apparence](./tracks/appearance.md), la [Navigation](../navigation/setup/route-navigation.md), ou l'édition avec [Planifier un itinéraire](../plan-route/create-route.md).
+Pour enregistrer l'itinéraire en tant que *fichier GPX*, appuyez sur le bouton **Enregistrer (Télécharger)** sous le [panneau d'information](../map/tracks/track-context-menu.md#info-panel). Cela ouvrira le panneau de boutons des [actions rapides](../map/tracks/track-context-menu.md#track-actions) où vous aurez accès aux actions de la trace telles que la modification de l'[Apparence](./tracks/appearance.md), la [Navigation](../navigation/setup/route-navigation.md), ou l'édition avec [Planifier un itinéraire](../plan-route/create-route.md). Les itinéraires enregistrés se comportent de la même manière que les autres traces et sont disponibles dans votre collection de traces.
 
 
 ### Démarrer la navigation {#start-navigation}

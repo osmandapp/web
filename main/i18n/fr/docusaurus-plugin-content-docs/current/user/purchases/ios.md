@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -99,6 +99,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Données topographiques](../plugins/topography.md#overview)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
 | [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Bâtiments 3D — Personnalisation de la couleur](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Visualisation de trace 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guides de voyage (Wikipédia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
