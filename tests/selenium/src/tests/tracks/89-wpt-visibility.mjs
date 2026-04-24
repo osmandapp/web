@@ -91,26 +91,24 @@ export default async function test() {
     await deleteTrack(trackName);
 }
 
-async function validateVisibleWaypointCount(expectedCount, message) {
-    const countMarkers = async () => {
-        const markers = await driver.findElements(By.className('leaflet-marker-icon'));
-        const visible = [];
-        for (const marker of markers) {
-            const display = await marker.getCssValue('display');
-            if (display !== 'none') {
-                visible.push(marker);
-            }
+async function countVisibleWaypointMarkers() {
+    const markers = await driver.findElements(By.className('leaflet-marker-icon'));
+    const visible = [];
+    for (const marker of markers) {
+        const display = await marker.getCssValue('display');
+        if (display !== 'none') {
+            visible.push(marker);
         }
-        return visible;
-    };
+    }
+    return visible;
+}
 
+async function validateVisibleWaypointCount(expectedCount, message, timeout = 3000) {
     await actionIdleWait({ idle: 1000 });
-
-    const TIMEOUT_VISIBLE_MARKERS_MS = 3000;
-    const deadline = Date.now() + TIMEOUT_VISIBLE_MARKERS_MS;
+    const deadline = Date.now() + timeout;
     let visibleMarkers = [];
     while (Date.now() < deadline) {
-        visibleMarkers = await countMarkers();
+        visibleMarkers = await countVisibleWaypointMarkers();
         if (visibleMarkers.length === expectedCount) {
             break;
         }
