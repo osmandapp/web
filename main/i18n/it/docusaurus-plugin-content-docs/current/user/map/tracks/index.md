@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  Tracce
 sidebar_position: 2
 ---
@@ -124,7 +124,7 @@ Vai a: *Tocca la traccia → Scheda Traccia → <Translate android="true" ids="a
 
 Vai a: *Tocca la traccia → Scheda Traccia → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menu traccia analizza sulla mappa](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menu traccia analizza sulla mappa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Menu traccia analizza sulla mappa](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menu traccia analizza sulla mappa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Vai a: *Tocca la traccia → Scheda Traccia → <Translate ios="true" ids="analy
 
 Questo strumento fornisce un'analisi dettagliata dei dati della [traccia](../../map/tracks/track-context-menu.md#options) utilizzando grafici e mappe.
 
-- **Dati del grafico (asse Y)** visualizza: *Altitudine*, *Pendenza*, *Velocità*, [*Dati sensore esterno*](../../plugins/external-sensors.md), e combinazioni di fino a due opzioni se contenute nei dati della traccia. ***Solo Android:*** per le tracce auto registrate con dati OBD-II, l'asse Y fornisce inoltre metriche del veicolo, come giri del motore, temperatura del liquido di raffreddamento e altro.
+- **Dati del grafico (asse Y)** visualizza: *Altitudine*, *Pendenza*, *Velocità*, [*Dati sensore esterno*](../../plugins/external-sensors.md), e combinazioni di fino a due opzioni se contenute nei dati della traccia. Per le tracce auto registrate con dati OBD-II, l'asse Y fornisce inoltre metriche del veicolo, come giri del motore, temperatura del liquido di raffreddamento e altro.
 - **Dimensione del grafico (asse X)** rappresenta: *Distanza*, *Tempo* e *Ora del giorno*.
 - **Interazione tocco/scorrimento**. Tocca un grafico per visualizzare le informazioni su un punto specifico della traccia. Scorrendo sul grafico si evidenzia la posizione appropriata sulla mappa e si mostrano i dettagli nella barra delle informazioni.
 - **Etichetta distanza**. Quando si tocca o si scorre lungo il grafico, il tooltip visualizza anche la distanza esatta lungo la traccia. Il valore segue le impostazioni dell'unità del profilo corrente (<Translate android="true" ids="km"/> o <Translate android="true" ids="mile"/>). Utilizzalo per stimare rapidamente quanto è distante un punto dall'inizio della traccia, o per calcolare la distanza tra due posizioni confrontando i loro valori.

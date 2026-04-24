@@ -1,7 +1,7 @@
 ---
-source-hash: 586e89c491ebdc9f9d39017e43dfe0ba1044c71a6eddcfcdc4d71787f3703bae
+source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
 sidebar_position: 3
-title: Astronomia
+title: Astronomy
 unlistead: true
 ---
 
@@ -16,141 +16,143 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 <InfoAndroidOnly/>
 
 :::info
-**Astronomia** è attualmente in **beta**.
+**Astronomy** is currently in **beta**.
 :::
 
-## Panoramica {#overview}
+## Overview {#overview}
 
-:::tip Acquisto
-Il plugin Astronomia è una [funzionalità a pagamento](../purchases/index.md).  
+:::tip Purchase
+Astronomy plugin is a [paid feature](../purchases/index.md).  
 :::
 
-Il plugin Astronomia visualizza una sovrapposizione del cielo con stelle, costellazioni, il Sole, la Luna e i pianeti direttamente sulla mappa. Utilizza un catalogo celeste offline per calcolare e visualizzare le posizioni attuali e future degli oggetti celesti. Il plugin consente inoltre agli utenti di esplorare il cielo notturno, identificare oggetti e pianificare osservazioni visualizzando i loro percorsi nel cielo.
+The Astronomy plugin displays a sky overlay with stars, constellations, the Sun, the Moon, and planets directly on the map. It uses an offline celestial catalog to calculate and display the current and future positions of celestial objects. The plugin also allows users to explore the night sky, identify objects, and plan observations by viewing their paths across the sky.
 
-Il plugin funziona completamente offline utilizzando cataloghi stellari integrati, consentendo l'esplorazione del cielo anche senza connessione internet.
+The plugin works fully offline using built-in star catalogs, allowing sky exploration even without an internet connection.
 
-## Parametri di Configurazione Richiesti {#required-setup-parameters}
+
+## Required Setup Parameters {#required-setup-parameters}
   
-Le seguenti impostazioni sono richieste per visualizzare la sovrapposizione Astronomia:
+The following settings are required to display Astronomy overlay:
 
-1. Abilita il plugin [**Astronomia**](../plugins/index.md#enable--disable) dalla sezione *Plugin* del *Menu Principale*
-2. Usa **Menu → Mappa stellare** per aprire la schermata dedicata con il cielo stellato, le impostazioni e i controlli del tempo.
-3. Seleziona **data e ora** utilizzando i controlli sulla schermata della Mappa stellare.
-4. Regola ciò che viene mostrato sulla Mappa stellare utilizzando [**Configura Vista**](#configure-view) — ad esempio, attiva/disattiva oggetti visibili e ausili di rendering.
-5. Tocca il pulsante **Chiudi (X)** in alto sulla schermata della Mappa stellare per uscire dalla Mappa stellare e tornare alla mappa terrestre.
+1. Enable [**Astronomy** plugin](../plugins/index.md#enable--disable) from the *Plugins* section of the *Main Menu*
+2. Use **Menu → Star map** to open dedicated screen with star sky, settings and time controls.
+3. Select **time and date** using the controls on the Star map screen.
+4. Adjust what is shown on the Star map using [**Configure View**](#configure-view) — for example, toggle visible objects and rendering aids.
+5. Tap the **Close (X)** button at the top of the Star map screen to exit Star map and return to the Earth map.
 
-Il plugin funziona con entrambi i motori di rendering della mappa, ma offre le migliori prestazioni in modalità OpenGL.
+The plugin works with both Map rendering engines but performs best in OpenGL mode.
 
-## Schermata Mappa Stellare {#star-map-screen}
+## Star Map Screen {#star-map-screen}
 
-**Vai a:** *Plugin abilitato → Menu → Mappa stellare* 
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
-![Schermata mappa stellare](@site/static/img/plugins/starwatcher/view_new_1.png)
+![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
-La **Schermata Mappa stellare** dedicata mostra una cupola celeste interattiva con stelle, costellazioni, pianeti, percorsi del Sole e della Luna. In fondo alla schermata, puoi accedere ai seguenti controlli: 
-- [**Ricerca**](#search) — apre la schermata di Ricerca dove puoi cercare oggetti celesti e sfogliare cataloghi e categorie del cielo. 
-- **Data e ora** — ti permette di cambiare data e ora per osservare il cielo in diversi momenti passati o futuri. Questo è utile per pianificare osservazioni, tracciare il movimento degli oggetti o imparare come cambia il cielo nel tempo. Se imposti una data/ora personalizzata, il chip mostra la data e l'ora completa, e accanto appare un pulsante di reset per tornare all'ora di sistema corrente.
-- **Filtro di magnitudine** — ti consente di limitare quali stelle vengono visualizzate in base alla loro luminosità. Usa il cursore per impostare il valore massimo di magnitudine. Valori più bassi mostrano solo le stelle più luminose, mentre valori più alti rivelano stelle più deboli e oggetti del cielo profondo. Questo aiuta a ridurre il disordine visivo o a simulare ciò che è visibile a occhio nudo.
-- [**Configura Vista**](#configure-view) — apre le impostazioni di visualizzazione che controllano come vengono mostrati oggetti, percorsi e linee di riferimento sulla Mappa stellare.
+The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
+- [**Search**](#search) — opens the Search screen where you can search for celestial objects and browse sky catalogs and categories. 
+- **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
+- **<Translate android="true" ids="magnitude_filter"/>** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
+- [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
 
-La schermata rende l'intero emisfero celeste sopra la tua posizione, allineato con la direzione della bussola. La Mappa stellare può essere ruotata manualmente trascinando la schermata. La rotazione manuale della Mappa stellare non influisce sull'orientamento della mappa terrestre. La mappa terrestre segue sempre la [modalità di orientamento della mappa](../map/interact-with-map.md#map-orientation-modes) selezionata nelle tue impostazioni. Tocca gli oggetti celesti per dettagli come magnitudine, orari di levata/tramonto o percorsi.
+The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
 
-La Mappa stellare può anche allinearsi con l'orientamento del tuo dispositivo quando la modalità bussola è abilitata. In questa modalità, il cielo ruota in base ai sensori accelerometro e bussola del dispositivo, consentendoti di esplorare il cielo spostando fisicamente il telefono.
+The Star map can also align with your device orientation when compass mode is enabled. In this mode, the sky rotates according to the device's accelerometer and compass sensors, allowing you to explore the sky by physically moving your phone.
 
-## Menu Contestuale {#context-menu}
 
-![Menu Contestuale](@site/static/img/plugins/starwatcher/context_menu_view.png)
+## Context Menu {#context-menu}
 
-Il **Menu Contestuale** fornisce informazioni dettagliate sugli oggetti celesti e strumenti per osservarli. Si apre quando tocchi un oggetto celeste sulla Mappa stellare.
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
 
-Quando un oggetto è selezionato, viene evidenziato sulla Mappa stellare con un marker circolare rosso. Il suo moto giornaliero è anche visualizzato da un anello orario (00–23), che mostra dove l'oggetto apparirà nel cielo a ogni ora del giorno locale e la direzione del suo movimento.
+The **Context Menu** provides detailed information about celestial objects and tools for observing them. It opens when you tap a celestial object on the Star map.
 
-Il Menu Contestuale appare in fondo alla schermata e contiene informazioni sull'oggetto, azioni rapide e schede per esplorare la visibilità dell'oggetto e l'orario di osservazione.
+When an object is selected, it is highlighted on the Star map with a red circle marker. Its daily motion is also visualized by an hour ring (00–23), showing where the object will appear in the sky at each hour of the local day and the direction of its movement.
 
-### Informazioni sull'Oggetto {#object-information}
+The Context Menu appears at the bottom of the screen and contains object information, quick actions, and tabs for exploring the object's visibility and observation schedule.
 
-![Informazioni sull'Oggetto](@site/static/img/plugins/starwatcher/object_view.png)
+### Object Information {#object-information}
 
-La sezione superiore del Menu Contestuale visualizza il nome e la classificazione dell'oggetto. Sotto il nome, vengono mostrati il tipo di oggetto e la sua costellazione o gruppo genitore. Ad esempio:  
-- **Beta Ursae Minoris** — Stella • Orsa Minore
-- **Giove** — Pianeta • Sistema solare
-- **Andromeda** — Galassia • Cielo profondo
+![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
 
-Blocchi di informazioni rapide visualizzano parametri osservativi chiave:  
-- Levata – l'ora in cui l'oggetto sorge sopra l'orizzonte.
-- Tramonto – l'ora in cui l'oggetto tramonta sotto l'orizzonte.
-- Azimut – la direzione dell'oggetto rispetto al nord (0°–360°).
-- Altitudine – l'altezza dell'oggetto sopra l'orizzonte.
-- Magnitudine – la luminosità dell'oggetto vista dalla Terra. 
+The top section of the Context Menu displays the object's name and classification. Below the name, the object type and its parent constellation or group are shown. For example:
+- **Beta Ursae Minoris** — Star • Ursa Minor
+- **<Translate android="true" ids="astro_name_moon"/>** — Satellite • Earth
+- **<Translate android="true" ids="astro_name_jupiter"/>** — Planet • Solar system
 
-Questi valori si aggiornano dinamicamente in base all'ora selezionata e alla posizione dell'utente.
+Quick information blocks display key observational parameters:  
+- <Translate android="true" ids="astro_rise"/> – the time when the object rises above the horizon.
+- <Translate android="true" ids="astro_set"/> – the time when the object sets below the horizon.
+- <Translate android="true" ids="shared_string_azimuth"/> – the object's direction relative to north (0°–360°).
+- <Translate android="true" ids="altitude"/> – the object's height above the horizon.
+- <Translate android="true" ids="shared_string_magnitude"/> – the brightness of the object as seen from Earth. 
 
-Sotto i blocchi di informazioni rapide, il menu può includere anche informazioni e risorse aggiuntive sull'oggetto:  
-- Leggi su Wikipedia – Apre l'articolo Wikipedia dell'oggetto. Se i dati Wikipedia offline sono disponibili, l'articolo può essere aperto senza connessione internet; altrimenti la pagina si apre nel browser.
-- Foto online – Visualizza foto disponibili relative all'oggetto celeste selezionato.
+These values update dynamically based on the selected time and the user's location.
 
-### Azioni {#actions}
+Below the quick information blocks, the menu may also include additional information and resources about the object:
+- <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
+- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article in the browser.
+- <Translate android="true" ids="astro_designations"/> – Shows alternative names and catalogue identifiers for the object (for example, HD, HIP, NGC). This section is available for objects that have catalog entries, such as stars and deep sky objects. If the object does not have a common name, one of these designations is used as the primary name.
+- <Translate android="true" ids="online_photos"/> – Displays available photos related to the selected celestial object.
 
-Sotto le informazioni sull'oggetto, il Menu Contestuale fornisce diverse azioni per interagire con l'oggetto celeste selezionato:
-- **Salva** – Aggiunge l'oggetto alla tua lista dei Preferiti per un accesso rapido.
-- **Localizza** – Centra l'oggetto selezionato sulla Mappa stellare.
-- **Direzione** – Mostra la direzione verso l'oggetto sulla mappa, aiutandoti a orientarti durante l'osservazione del cielo.
-- **Percorso** – Visualizza la traiettoria giornaliera dell'oggetto nel cielo, consentendoti di vedere come si muove durante il giorno.
+### Actions {#actions}
 
-### Grafico di Visibilità {#actions}
+Below the object information, the Context Menu provides several actions for interacting with the selected celestial object:
+- **<Translate android="true" ids="shared_string_save"/>** – Adds the object to your Favorites list for quick access.
+- **<Translate android="true" ids="astro_locate"/>** – Centers the selected object on the Star map.
+- **<Translate android="true" ids="astro_direction"/>** – Shows the direction to the object on the map, helping you orient yourself while observing the sky.
+- **<Translate android="true" ids="astro_path"/>** – Displays the object's daily trajectory across the sky, allowing you to see how it moves during the day.
 
-![Grafico di Visibilità](@site/static/img/plugins/starwatcher/visibility.png)
+### Visibility Graph {#visibility-graph}
 
-La scheda **Visibilità** mostra come l'oggetto selezionato si muove nel cielo durante un periodo di 24 ore.
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
 
-Il grafico visualizza l'altitudine dell'oggetto sopra l'orizzonte nel tempo.
+The **Visibility** tab shows how the selected object moves across the sky during a 24-hour period.
 
-- L'asse orizzontale rappresenta il tempo dalle 12:00 alle 12:00 del giorno successivo.
-- L'asse verticale rappresenta l'altitudine da −30° a +90°.
+The graph displays the object's altitude above the horizon over time.
 
-La curva colorata mostra l'altitudine dell'oggetto durante il giorno.
+- The horizontal axis represents time from 12:00 to 12:00 the next day.
+- The vertical axis represents altitude from −30° to +90°.
 
-Lo sfondo del grafico rappresenta lo stato del cielo e cambia in base alla posizione del Sole. Questo aiuta a identificare quando le osservazioni sono possibili.
+The colored curve shows the object's altitude throughout the day.
 
-I colori rappresentano diverse condizioni del cielo:  
-- azzurro chiaro — diurno
-- azzurro più scuro — crepuscolo
-- azzurro scuro / nero — notturno
+The background of the graph represents the state of the sky and changes depending on the Sun's position. This helps identify when observations are possible.
 
-Il colore della traiettoria dell'oggetto riflette anche la sua altitudine:  
-- giallo – alto nel cielo (migliore visibilità)
-- arancione – altitudine media
-- rosso – vicino all'orizzonte
-- viola – sotto l'orizzonte (non visibile)
+The colors represent different sky conditions:  
+- light blue — daytime
+- darker blue — twilight
+- dark blue / black — night
 
-Un indicatore mobile ti permette di esplorare la posizione dell'oggetto in diversi momenti. Quando l'indicatore viene spostato, i valori di ora corrente, altitudine e azimut vengono aggiornati.
+The color of the object's trajectory also reflects its altitude:  
+- yellow – high in the sky (best visibility)
+- orange – medium altitude
+- red – close to the horizon
+- purple – below the horizon (not visible)
 
-Sotto il grafico, vengono visualizzati eventi di osservazione importanti: 
-- **Levata** – quando l'oggetto sorge sopra l'orizzonte.
-- **Culminazione** – quando l'oggetto raggiunge la sua altitudine massima.
-- **Tramonto** – quando l'oggetto tramonta sotto l'orizzonte.
+A movable indicator allows you to explore the object's position at different times. When the indicator is moved, the current time, altitude, and azimuth values are updated. The azimuth value also includes the corresponding compass direction (for example, 354° Az (N)).
 
-Il grafico si apre con l'indicatore posizionato all'ora di sistema corrente. La posizione utilizzata per i calcoli è mostrata sotto il grafico.
+Below the graph, important observation events are displayed: 
+- **<Translate android="true" ids="astro_rise"/>** – when the object rises above the horizon.
+- **<Translate android="true" ids="astro_culmination"/>** – when the object reaches its highest altitude.
+- **<Translate android="true" ids="astro_set"/>** – when the object sets below the horizon. If the object never rises or never sets, the corresponding values are hidden.
 
-### Orario di Osservazione {#actions}
+The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name.
 
-![Orario di Osservazione](@site/static/img/plugins/starwatcher/schedule.png)
+### Observation Schedule {#actions}
 
-La scheda **Orario** visualizza la visibilità dell'oggetto selezionato per la settimana corrente. Ogni riga rappresenta un giorno e include:  
-- il giorno della settimana
-- la data
-- ora di levata
-- ora di tramonto
-- un piccolo grafico di visibilità per quel giorno
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
-Il mini grafico mostra quando l'oggetto è visibile durante il giorno e come cambia la sua altitudine. La sezione colorata della barra rappresenta il periodo in cui l'oggetto è sopra l'orizzonte.
+The **Schedule** tab displays the visibility of the selected object for the current week. Each row represents one day and includes:  
+- the day of the week
+- the date
+- rise time
+- set time. If the set time occurs on the next day, it is marked with ⁺¹
+- a small visibility graph for that day
 
-Puoi navigare tra le settimane utilizzando i pulsanti freccia nell'intestazione dell'Orario. Il pulsante calendario ti permette di tornare alla settimana corrente.
+The mini graph shows when the object is visible during the day and how its altitude changes. The colored section of the bar represents the period when the object is above the horizon. The mini graph represents the time range from 00:00 to 23:59 for the selected day.
+
+You can navigate between weeks using the arrow buttons in the Schedule header. The calendar button allows you to return to the current week.
 
 <!--
 ## Celestial Object Info {#celestial-object-info}
@@ -173,80 +175,81 @@ Tap any **star, planet, constellation, or Sun/Moon** on the **Star map screen** 
 This feature helps identify objects in real sky, plan observations, and learn astronomy facts directly from OsmAnd.
 -->
 
-## Ricerca Stelle AR (Modalità Fotocamera) {#ar-star-finding}
+## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-**Vai a:** *Plugin abilitato → Menu → Mappa stellare → Pulsante Fotocamera* 
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Camera button* 
 
-Il livello **Astronomia** funziona con la **fotocamera del tuo dispositivo** per abilitare la **Realtà Aumentata (AR) per l'osservazione delle stelle**. Punta la fotocamera del telefono verso il cielo notturno reale e vedi stelle, pianeti, costellazioni, Sole/Luna sovrapposti in tempo reale.
+The **Astronomy** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
 
-**Come funziona la Ricerca Stelle AR:**
-- **Vista fotocamera live** mostra il cielo reale con sovrapposizioni astronomiche trasparenti allineate all'orizzonte/bussola.
-- **Muovi la fotocamera** per scansionare il cielo — gli oggetti si evidenziano quando appaiono nel tuo campo visivo.
-- **Tocca gli oggetti evidenziati** per vedere azimut, altitudine, magnitudine, orari di levata/tramonto e link Wikipedia.
-- **Calibrazione bussola** richiesta per un allineamento accurato (agita il telefono in figura-8 se necessario).
+**How AR Star Finding works:**
+- **Live camera view** shows real sky with transparent astronomical overlays aligned to horizon/compass.
+- **Move camera** to scan sky — objects highlight when they appear in your field of view.
+- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and Wikipedia link.
+- **Compass calibration** required for accurate alignment (wave phone in figure-8 if needed).
 
-La modalità AR utilizza i sensori del dispositivo (giroscopio, accelerometro e bussola) per allineare gli oggetti celesti con il cielo reale.
+The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align celestial objects with the real sky.
 
-**Perfetto per:**
-- Identificare stelle/pianeti deboli invisibili a occhio nudo.
-- Localizzare costellazioni spostando il telefono nel cielo.
-- Navigazione celeste in tempo reale durante escursioni o campeggio.
+**Perfect for:**
+- Identifying faint stars/planets invisible to naked eye.
+- Locating constellations by moving phone across sky.
+- Real-time sky navigation during hikes or camping.
 
-## Configura Vista {#configure-view}
 
-![Configura Vista](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configura Vista](@site/static/img/plugins/starwatcher/full_state.png)
+## Configure View {#configure-view}
 
-**Configura Vista** ti permette di controllare come viene visualizzata la Mappa stellare abilitando o disabilitando modalità visive, oggetti e ausili di rendering.
+![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
 
-Per aprire Configura Vista, tocca il pulsante Configura Vista nell'angolo inferiore destro della schermata Mappa stellare. Il pulsante è rappresentato da un'icona a strati (forme sovrapposte), che indica impostazioni di visualizzazione e livelli. Configura Vista si apre in uno *stato Parziale*, mostrando le opzioni di visualizzazione principali. Scorri il pannello verso l'alto per espanderlo in *stato Completo* e accedere a tutte le impostazioni disponibili. Per chiudere Configura Vista, scorri il pannello verso il basso una volta per tornare allo stato Parziale, scorri verso il basso di nuovo per chiuderlo completamente, o tocca ovunque sulla mappa fuori dal pannello. Puoi anche toccare il pulsante Chiudi (X) nell'angolo superiore destro del pannello.
+**<Translate android="true" ids="astro_configure_view"/>** allows you to control how the Star map is displayed by enabling or disabling visual modes, objects, and rendering aids.
 
-### Modalità e Azioni {#modes-and-actions}
+To open Configure View, tap the Configure View button in the bottom-right corner of the Star map screen. The button is represented by a layer-style icon (stacked shapes), indicating display and layer settings. Configure View opens in a *Half state*, showing the main display options. Swipe the panel upwards to expand it into *Full state* and access all available settings. To close Configure View, swipe the panel downwards once to return to the Half state, swipe downwards again to close it completely, or tap anywhere on the map outside the panel. You also can tap the Close (X) button in the top-right corner of the panel.
 
-![Configura Vista](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configura Vista](@site/static/img/plugins/starwatcher/red_filter_new.png)
+### Modes and Actions {#modes-and-actions}
 
-Questa sezione controlla le modalità di visualizzazione principali della Mappa stellare.
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
 
-- **2D / 3D**. Passa tra una vista del percorso celeste (2D), che mostra il cielo come una cupola proiettata con percorsi degli oggetti, e una vista del cielo a stile globo (3D) che rappresenta la sfera celeste.
-- **Mappa**. Abilita una vista aggiuntiva della mappa terrestre visualizzata sotto la Mappa stellare, consentendoti di correlare gli oggetti celesti ai tuoi dintorni geografici reali.
-- **Filtro rosso**. Applica un filtro di colore rosso all'intera schermata per ridurre l'inquinamento luminoso e preservare la visione notturna durante osservazioni in cieli scuri.
+This section controls the main display modes of the Star map.
 
-### Oggetti Visibili {#visible-objects}
+- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Switches between a celestial path view (2D), which shows the sky as a projected dome with object paths, and a globe-style sky view (3D) representing the celestial sphere.
+- **<Translate android="true" ids="shared_string_map"/>**. Enables an additional Earth map view displayed below the Star map, allowing you to relate celestial objects to your real geographic surroundings.
+- **<Translate android="true" ids="red_filter"/>**. Applies a red color filter to the entire screen to reduce light pollution and preserve night vision during dark-sky observations.
 
-![Configura Vista](@site/static/img/plugins/starwatcher/solar_system.png) ![Configura Vista](@site/static/img/plugins/starwatcher/constellations.png)
+### Visible Objects {#visible-objects}
 
-Questa sezione ti permette di scegliere quali tipi di oggetti celesti vengono mostrati sulla Mappa stellare.
+![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
 
-| Oggetto | Descrizione |
-|---------|-------------|
-| Sistema solare | Visualizza il Sole, la Luna e i pianeti visibili. |
-| Costellazioni | Mostra linee e pattern delle costellazioni formati da stelle. |
-| Stelle | Visualizza stelle individuali visibili sulla Mappa stellare. |
-| Nebulose | Mostra oggetti nebulari dove disponibili. |
-| Ammassi stellari | Visualizza ammassi stellari come oggetti celesti separati. |
-| Cielo profondo | Attiva/disattiva oggetti del cielo profondo come galassie, ammassi di galassie e buchi neri. |
+This section lets you choose which types of celestial objects are shown on the Star map.
 
-### Opzioni di Visualizzazione Personali {#personal-display-options}
+| Object | Description |
+|-------|-------------|
+| <Translate android="true" ids="astro_solar_system"/> | Displays the Sun, Moon, and visible planets. |
+| <Translate android="true" ids="astro_constellations"/> | Shows constellation lines and patterns formed by stars. |
+| <Translate android="true" ids="astro_stars"/> | Displays individual stars visible on the Star map. |
+| <Translate android="true" ids="astro_nebulas"/> | Shows nebula objects where available. |
+| <Translate android="true" ids="astro_star_clusters"/> | Displays star clusters as separate celestial objects. |
+| <Translate android="true" ids="astro_deep_sky"/> | Toggles deep-sky objects such as galaxies, galaxy clusters, and black holes. |
 
-Le **opzioni di visualizzazione personali** controllano ausili visivi aggiuntivi relativi al focus dell'utente e all'osservazione.
+### Personal Display Options {#personal-display-options}
 
-| Opzione | Descrizione |
-|---------|-------------|
-| Direzione | Mostra un indicatore direzionale per aiutare a orientare la tua vista. |
-| Percorso giornaliero | Visualizza il percorso giornaliero degli oggetti celesti selezionati nel cielo. |
-| Preferiti | Evidenzia o visualizza oggetti contrassegnati come preferiti. |
+**Personal display options** control additional visual aids related to user focus and observation.
 
-### Ausili di Rendering {#rendering-aids}
+| Option | Description |
+|-------|-------------|
+| <Translate android="true" ids="astro_direction"/> | Shows a directional indicator to help orient your view. |
+| <Translate android="true" ids="astro_daily_path"/> | Displays the daily path of selected celestial objects across the sky. |
+| <Translate android="true" ids="shared_string_favorites"/> | Highlights or displays objects marked as favorites. |
 
-Gli **ausili di rendering** aggiungono linee di riferimento e griglie per aiutare a orientare la Mappa stellare.
+### Rendering Aids {#rendering-aids}
 
-| Ausilio | Descrizione |
-|---------|-------------|
-| Griglia azimutale | Aggiunge una griglia basata sull'azimut per l'orientamento orizzontale del cielo. |
-| Linea del meridiano | Visualizza la linea del meridiano che attraversa il cielo da nord a sud. |
-| Griglia equatoriale | Mostra la griglia di coordinate equatoriali celesti. |
-| Linea dell'eclittica | Visualizza la linea dell'eclittica che rappresenta il percorso apparente del Sole. |
-| Linea dell'equatore | Visualizza la proiezione equatoriale della Terra sulla sfera celeste, aiutando a visualizzare la rotazione della Terra rispetto al cielo. |
-| Linea galattica | Mostra il piano della galassia Via Lattea nel cielo, indicando la direzione principale del disco galattico. |
+**Rendering aids** add reference lines and grids to help orient the Star map.
+
+| Aid | Description |
+|-------|-------------|
+| <Translate android="true" ids="azimuthal_grid"/> | Adds an azimuth-based grid for horizontal sky orientation. |
+| <Translate android="true" ids="meridian_line"/> | Displays the meridian line crossing the sky from north to south. |
+| <Translate android="true" ids="equatorial_grid"/> | Shows the celestial equatorial coordinate grid. |
+| <Translate android="true" ids="ecliptic_line"/> | Displays the ecliptic line representing the apparent path of the Sun. |
+| <Translate android="true" ids="equator_line"/> | Displays the Earth's equatorial projection on the celestial sphere, helping visualize the Earth's rotation relative to the sky. |
+| <Translate android="true" ids="galactic_line"/> | Shows the plane of the Milky Way galaxy across the sky, indicating the main direction of the galactic disk. |
 
 <!-- 
 ## Astronomy Settings
@@ -269,69 +272,68 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 -->
 
-## Ricerca {#search}
+## Search {#search}
 
-![Ricerca](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
 
-La funzionalità **Ricerca** nel plugin Astronomia ti permette di trovare oggetti celesti, esplorare categorie del cielo e accedere a dati di osservazione. Per aprire la Ricerca, tocca il pulsante Ricerca sulla Mappa stellare. Questo apre la schermata di Ricerca, che fornisce diverse sezioni per scoprire e organizzare oggetti celesti. La schermata di ricerca include le seguenti sezioni:
+The **Search** feature in the Astronomy plugin allows you to find celestial objects, explore sky categories, and access observation data. To open Search, tap the Search button on the Star map. This opens the Search screen, which provides several sections for discovering and organizing celestial objects. The Search screen includes the following sections:
 
-**1. Osserva ora**
+**1. Watch now**
 
-La sezione Osserva ora evidenzia oggetti celesti che sono visibili in questo momento o stasera. Questa sezione funge da strumento di raccomandazione, mostrando oggetti più adatti per l'osservazione in base alla tua posizione e ora corrente.
+The Watch now section highlights celestial objects that are visible right now or tonight. This section acts as a recommendation tool, showing objects that are best suited for observation based on your current location and time.
 
-**2. Categorie**
+**2. Categories**
 
-La sezione Categorie ti permette di sfogliare oggetti per tipo: Sistema solare, Costellazioni, Stelle, Nebulose, Ammassi stellari e Cielo profondo. Ogni categoria apre un elenco di oggetti con informazioni chiave: nome oggetto, tipo o costellazione, magnitudine (luminosità) e ora di levata o tramonto (se applicabile).
+The Categories section allows you to browse objects by type: Solar system, Constellations, Stars, Nebulas, Star clusters, and Deep sky. Each category opens a list of objects with key information: object name, type or constellation, magnitude (brightness), and rise or set time (if applicable).
 
-### Ordinamento e Filtri {#sorting-and-filters}
+### Sorting and Filters {#sorting-and-filters}
 
-![Ordinamento](@site/static/img/plugins/starwatcher/sorting.png) ![Filtri](@site/static/img/plugins/starwatcher/filters.png)
+![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
 
-Tocca la barra di ricerca per aprire l'interfaccia di ricerca completa. Puoi affinare i risultati utilizzando opzioni di ordinamento e filtraggio.
+Tap the search bar to open the full search interface. You can refine results using sorting and filtering options.
 
-Puoi ordinare gli oggetti per:  
-- Nome (A–Z o Z–A)
-- Più luminosi prima
-- Più deboli prima
-- Leva prima
-- Tramonta prima
+You can sort objects by:  
+- Name (A–Z or Z–A)
+- <Translate android="true" ids="astro_sort_brightest_first"/>
+- <Translate android="true" ids="astro_sort_faintest_first"/>
+- <Translate android="true" ids="astro_sort_rises_soonest"/>
+- <Translate android="true" ids="astro_sort_sets_soonest"/>
 
-I filtri aiutano a restringere gli oggetti visibili.
+Filters help narrow down visible objects.
 
-**Visibilità**  
-- Mostra tutto — visualizza tutti gli oggetti
-- Visibile ora — oggetti attualmente sopra l'orizzonte
-- Visibile stasera — oggetti visibili tra il tramonto e l'alba
+**Visibility**  
+- <Translate android="true" ids="astro_filter_show_all"/> — displays all objects
+- <Translate android="true" ids="astro_filter_visible_now"/> — objects currently above the horizon
+- <Translate android="true" ids="astro_filter_visible_tonight"/> — objects visible between sunset and sunrise
 
-**Filtri aggiuntivi**  
-- Visibile a occhio nudo — mostra solo oggetti con magnitudine ≤ 6
+**Additional filters**  
+- <Translate android="true" ids="astro_filter_naked_eye"/> — shows only objects with magnitude ≤ 6
 
-**Categorie**  
-Puoi filtrare i risultati per tipo di oggetto. Selezionando categorie specifiche disabilita automaticamente l'opzione Tutto.
+**Categories**  
+You can filter results by object type. Selecting specific categories automatically disables the All option.
 
-### I Miei Dati {#my-data}
+### My Data {#my-data}
 
-![I Miei Dati](@site/static/img/plugins/starwatcher/my_data.png)
+![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
 
-La sezione I Miei Dati contiene oggetti con cui l'utente ha interagito. Questa sezione include tre elenchi:
+The My Data section contains objects that the user has interacted with. This section includes three lists:
 
-- Preferiti — oggetti salvati dal menu contestuale.
-- Percorso Giornaliero — oggetti per cui il percorso di moto giornaliero è abilitato.
-- Direzioni — oggetti con un indicatore di direzione attivo sulla Mappa stellare.
+- <Translate android="true" ids="shared_string_favorites"/> — objects saved from the context menu.
+- <Translate android="true" ids="astro_daily_path"/> — objects for which the daily motion path is enabled.
+- <Translate android="true" ids="astro_directions"/> — objects with an active direction indicator on the Star map.
 
-Selezionando un elemento si apre il menu contestuale dell'oggetto.
+Selecting an item opens the object's context menu.
 
-### Cataloghi {#catalogs}
+### Catalogs {#catalogs}
 
-![Cataloghi](@site/static/img/plugins/starwatcher/catalogs.png)
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
-La sezione Cataloghi fornisce accesso ai cataloghi astronomici disponibili nel plugin Astronomia.
+The Catalogs section provides access to astronomical catalogs available in the Astronomy plugin.
 
-I cataloghi contengono grandi collezioni di oggetti celesti come stelle, galassie, nebulose e ammassi stellari. Aprendo un catalogo viene visualizzato un elenco di oggetti inclusi in quel catalogo.
+Catalogs contain large collections of celestial objects such as stars, galaxies, nebulae, and star clusters. Opening a catalog displays a list of objects included in that catalog.
 
-## Articoli Correlati {#related-articles}
+## Related Articles {#related-articles}
 
-- [Interagisci con la Mappa](../../user/map/interact-with-map.md)
-- [Impostazioni Globali](../../user/personal/global-settings.md)
-- [Mappe Vettoriali](../../user/map/vector-maps.md)
-
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps](../../user/map/vector-maps.md)

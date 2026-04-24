@@ -1,5 +1,5 @@
 ---
-source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
+source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
 sidebar_position: 9
 sidebar_label:  Pianifica Itinerario
 title: Pianificare un Itinerario sul Sito Web
@@ -65,7 +65,7 @@ Esistono due modi per iniziare un nuovo itinerario in Pianifica itinerario. La p
 
 Una volta creato l'itinerario, aggiungi punti direttamente sulla mappa. Ogni clic posiziona il punto successivo e il pianificatore costruisce l'itinerario tra i punti.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route.png)
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
 
 ### Importa Traccia {#import-track}
 
@@ -82,20 +82,24 @@ Ogni elemento nella lista ha un interruttore che ti permette di mostrare o nasco
 
 ## Gestire Traccia {#manage-track}
 
-Quando crei o importi un itinerario in Pianifica itinerario, si apre un pannello verticale della traccia. Usa questo pannello per cambiare il profilo di instradamento e gestire l'itinerario. Fai clic sul controllo del profilo per aprire la finestra di dialogo **Cambia profilo**, seleziona il profilo di cui hai bisogno (ad esempio, Auto, Bicicletta o Pedone) e scegli come applicarlo: *Segmenti successivi* applica il profilo solo alle nuove parti aggiunte da questo punto in poi, mentre *Tutti i segmenti* ricalcola l'intero itinerario con il profilo selezionato.
+Quando crei o importi un itinerario in Pianifica itinerario, si apre un pannello verticale della traccia. Questo pannello ti permette di cambiare il profilo di instradamento e gestire l'itinerario.
 
-Dal pannello della traccia puoi anche eseguire azioni comuni sui file. Puoi **Salva su Cloud** per mantenere l'itinerario per un uso successivo, **Scarica GPX** per esportarlo come file, **Chiudi traccia** per interrompere la modifica o **Elimina traccia** per rimuoverla dalla tua lista locale. Queste azioni sono disponibili anche dai controlli corrispondenti nel [pannello Info](#info-panel).
+Fai clic sul controllo del profilo per aprire la finestra di dialogo **Cambia profilo**. Seleziona il profilo richiesto (ad esempio, Auto, Bicicletta o Pedone), quindi scegli come applicarlo: *Segmenti successivi* applica il profilo solo alle nuove parti aggiunte da questo punto in poi, mentre *Tutti i segmenti* ricalcola l'intero itinerario utilizzando il profilo selezionato.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+Dal pannello della traccia puoi anche **Eliminare** la traccia dalla tua lista locale.
+
+Nel [pannello Panoramica](#overview-panel), puoi **Salva su Cloud** per mantenere l'itinerario per un uso successivo e **Scarica** come file GPX.
+
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
 ## Pannelli Dettagli Traccia {#track-details-panels}
 
-Il menu della traccia locale include tre pannelli: **Info**, **Traccia** e **Waypoint**. Usali per visualizzare le informazioni sulla traccia e gestire i punti dell'itinerario e i waypoint.
+Il menu della traccia locale include tre pannelli: **Panoramica**, **Traccia** e **Punti**. Usali per visualizzare le informazioni sulla traccia e gestire i punti dell'itinerario e i waypoint.
 
-### Pannello Info {#info-panel}
+### Pannello Panoramica {#overview-panel}
 
-Il pannello Info riassume la traccia selezionata e mostra i dati chiave sull'itinerario e sull'elevazione. Include una panoramica rapida delle statistiche dell'itinerario, più grafici e analisi aggiuntive della traccia basate sui dati della mappa disponibili.
+Il pannello Panoramica riassume la traccia selezionata e mostra i dati chiave sull'itinerario e sull'elevazione. Include una panoramica rapida delle statistiche dell'itinerario, più grafici e analisi aggiuntive della traccia basate sui dati della mappa disponibili.
 
 La sezione di riepilogo mostra:
 
@@ -109,29 +113,34 @@ Sotto il riepilogo, il pannello fornisce grafici:
 
 - Elevazione — un profilo di elevazione dell'itinerario.
 - Pendenza — un grafico della pendenza che mostra le variazioni di gradiente lungo la traccia.
+- Velocità — un grafico della velocità lungo la traccia.
+
+Puoi attivare o disattivare le seguenti opzioni:
+
+- Mostra punti traccia — visualizza i punti traccia sulla mappa.
+- Mostra waypoint — visualizza i waypoint sulla mappa.
 
 Per dettagli aggiuntivi sulla traccia, apri le sezioni di analisi:
 
+- Tipo di strada — suddivide la traccia in segmenti in base alla classificazione della strada.
 - Superficie — mostra i tipi di superficie lungo l'itinerario basati sui dati OSM.
 - Fluidità — mostra la fluidità dei segmenti basata sui tag OSM.
 
-Azioni comuni sulla traccia come salvare, scaricare, chiudere ed eliminare sono disponibili anche in questo pannello.
-
-![OsmAnd Web Info Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Manage Track](@site/static/img/web/info_panel_2.png)
+![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
 
 ### Pannello Traccia {#track-panel}
 
 Il pannello Traccia mostra l'elenco dei punti dell'itinerario utilizzati per costruire la traccia. Usalo per rivedere e modificare la struttura dell'itinerario: trascina i punti per riordinarli, rimuovi i punti usando l'icona di eliminazione o usa Cancella punti per rimuovere tutti i punti e ricominciare.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel.png)
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
 
-### Pannello Waypoint {#waypoints-panel}
+### Pannello Punti {#points-panel}
 
-Il pannello Waypoint viene utilizzato per visualizzare e gestire i waypoint per la traccia selezionata. I waypoint possono essere aggiunti dal menu contestuale della mappa — fai clic con il pulsante destro del mouse sulla mappa e scegli l'opzione per **Aggiungi waypoint**, quindi compila i dettagli del waypoint (come nome, icona e colore) e salvalo.
+Il pannello Punti viene utilizzato per visualizzare e gestire i waypoint per la traccia selezionata. I waypoint possono essere aggiunti dal menu contestuale della mappa — fai clic con il pulsante destro del mouse sulla mappa e scegli l'opzione per **Aggiungi waypoint**, quindi compila i dettagli del waypoint (come nome, icona e colore) e salvalo.
 
 Nell'elenco dei Waypoint, puoi controllare se i waypoint sono mostrati sulla mappa e rimuovere waypoint individuali quando necessario. Per rimuovere tutti i waypoint dalla traccia in una volta, usa *Cancella tutti i waypoint*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
 
 
 ## Articoli Correlati {#related-articles}

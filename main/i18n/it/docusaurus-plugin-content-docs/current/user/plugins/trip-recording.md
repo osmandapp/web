@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Registrazione tracce
 ---
@@ -414,13 +414,13 @@ Alcuni widget di Registrazione tracce supportano più modalità di visualizzazio
 
 | **Widget** | **Modalità disponibili**  |
 |-------|-------------|
-| Pendenza media | Ultima discesa; Ultima salita |
-| Velocità media *(Solo Android)* | Media del viaggio (predefinita); Ultima discesa; Ultima salita |
-| Distanza (Avvio-Stop) | Media del viaggio (predefinita); Ultima discesa; Ultima salita |
-| Discesa | Totale (predefinita); Ultima discesa |
-| Velocità massima | Totale (predefinita); Ultima discesa; Ultima salita |
-| Tempo in movimento | Totale (predefinita); Ultima discesa; Ultima salita |
-| Salita | Totale (predefinita); Ultima salita |
+| Pendenza media | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Velocità media *(Solo Android)* | Media del viaggio (predefinita); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distanza (Avvio-Stop) | Media del viaggio (predefinita); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Discesa | Totale (predefinita); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Velocità massima | Totale (predefinita); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Tempo in movimento | Totale (predefinita); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Salita | Totale (predefinita); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Il passaggio di modalità dipende dal widget:
 - Salita / Discesa / Velocità massima / Pendenza media / Tempo in movimento / Velocità media — toccare il widget sulla mappa per passare alla sua modalità.

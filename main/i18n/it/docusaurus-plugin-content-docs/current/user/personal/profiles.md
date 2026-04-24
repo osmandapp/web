@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Profili (Impostazioni)
 ---
@@ -222,7 +222,7 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Esempio: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Esempio: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Esempio: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
-|          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zona Nord Est) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
+|          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zona Nording Esting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Esempio: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Esempio:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) rappresenta un'area di 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (solo versione Android) | Esempio: 2 215 227.87, 830 915.9 ([Sistema di coordinate svizzero](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
@@ -447,7 +447,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 Le impostazioni di **Aspetto La mia posizione** ti consentono di personalizzare come la tua posizione viene visualizzata sulla mappa, sia quando sei fermo (Riposo) che in movimento (Navigazione). Il movimento viene rilevato dal sistema operativo quando la velocità del dispositivo è **maggiore di zero**.
 
-Utilizza **Dimensione icona** per regolare la dimensione dell'icona della posizione La mia posizione in modo indipendente dalla dimensione del testo dell'app. Puoi impostare dimensioni diverse per le modalità Riposo e Navigazione. La dimensione può essere regolata dal 50% al 300% (50, 75, 100, 125, 150, 200, 250, 300%). Il valore predefinito è 100%. Tocca Dimensione icona per aprire le impostazioni di dimensione, quindi utilizza il cursore o i pulsanti di passo + / – per modificare il valore. Utilizza **Reimposta predefinito** per tornare al 100%.
+Utilizza **<Translate ios="true" ids="icon_size"/>** per regolare la dimensione dell'icona della posizione La mia posizione in modo indipendente dalla dimensione del testo dell'app. Puoi impostare dimensioni diverse per le modalità Riposo e Navigazione. La dimensione può essere regolata dal 50% al 300% (50, 75, 100, 125, 150, 200, 250, 300%). Il valore predefinito è 100%. Tocca <Translate ios="true" ids="icon_size"/> per aprire le impostazioni di dimensione, quindi utilizza il cursore o i pulsanti di passo + / – per modificare il valore. Utilizza **<Translate ios="true" ids="reset_to_default"/>** per tornare al 100%.
 
 </TabItem>
 
@@ -456,7 +456,7 @@ Utilizza **Dimensione icona** per regolare la dimensione dell'icona della posizi
 
 ### Angolo di visuale e Raggio di posizione {#view-angle-and-location-radius}
 
-È possibile personalizzare gli elementi visivi relativi alla propria posizione e applicarli separatamente o insieme per le posizioni di **Riposo** e **Navigazione**. Sia in modalità 2D che 3D, l'*Angolo di visuale* e il *Raggio di posizione* vengono visualizzati con lo stesso colore selezionato per il [profilo di navigazione](#profile-appearance), direttamente sotto l'icona [La mia posizione](../map/interact-with-map.md#my-position-and-zoom).
+È possibile personalizzare gli elementi visivi relativi alla propria posizione e applicarli separatamente o insieme per le posizione di **Riposo** e **Navigazione**. Sia in modalità 2D che 3D, l'*Angolo di visuale* e il *Raggio di posizione* vengono visualizzati con lo stesso colore selezionato per il [profilo di navigazione](#profile-appearance), direttamente sotto l'icona [La mia posizione](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Visualizza un'area a **forma di cono** che indica la direzione in cui si sta guardando.  
 - **<Translate android="true" ids="location_radius"/>** – Mostra un'area **circolare** attorno alla tua icona, che rappresenta la precisione della tua posizione attuale.

@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -33,8 +33,8 @@ Si tratta di una funzionalità a pagamento <ProFeature/>. Per utilizzarla, acced
 La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce. Sono disponibili le seguenti opzioni:
 
 - Mostra tracce da [OsmAnd Cloud](#cloud-tracks).
-- Aggiungi tracce sulla mappa (cartella **Visible on map**).
-- Visualizza tutte le informazioni sulle tracce e il grafico
+- Aggiungere tracce sulla mappa (cartella **Visible on map**).
+- Visualizzare tutte le info sulle tracce e il grafico
 - Modifica tracce e aggiungile al Cloud.
 - Scarica ed elimina tracce.
 - Crea nuove cartelle o eliminale.
@@ -73,32 +73,20 @@ Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qu
 Le tracce GPX che hai in [OsmAnd Cloud](../personal/osmand-cloud.md) saranno disponibili per la visualizzazione e la modifica dopo l'accesso. Solo per utenti **Pro** <ProFeature/> e per utenti di [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (che possono scaricare i loro dati anche dopo la scadenza dell'abbonamento Pro).
 
 Le seguenti funzionalità sono disponibili dopo aver selezionato una traccia cloud:
+- *Information* - visualizzazione dei dati della traccia.
+- *Elevation* - grafico dell'elevazione.
+- *Speed* - grafico della velocità.
+- *Slope* - grafico della pendenza.
+- *Recalculate Elevation (Satellite)* - ricalcola i valori di elevazione per la traccia selezionata e li mostra nel grafico dell'elevazione.
+- *Road type* - divide la traccia in segmenti per classificazione stradale.
+- *Surface* - mostra i tipi di superfici della traccia lungo il percorso.
+- *Smoothness* - visualizza la fluidità del segmento basata sui tag OSM.
 
-![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track.png)
-
-- Schermi informativi:
-  - *Information* - visualizza i dati della traccia.
-  - *Elevation* - grafico dell'elevazione.
-  - *Speed* - grafico della velocità.
-  - *Slope* - grafico della pendenza.
-  - *Settings* - elenco di profili di navigazione per lo strumento *Create route*.
-  - *Turns* - un elenco generato di istruzioni approssimative di svolta basate sulla geometria della traccia.
-  - *Road type* - divide la traccia in segmenti per classificazione stradale.
-  - *Surface* - mostra i tipi di superfici della traccia lungo il percorso.
-  - *Smoothness* - visualizza la fluidità del segmento basata sui tag OSM.
-
-![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_turns.png) ![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details.png)
-
-- Pulsanti di azione:
-  - *Edit track* - aggiungi traccia cloud al locale per la modifica (pulsante _Edit locality_ sul pannello).
-  - *Download GPX* - scarica la traccia sul PC.
-  - *Recalculate* Elevazione (Satellite) - ricalcola i valori di elevazione per la traccia selezionata e li mostra nel grafico dell'elevazione.
-  - *Delete Track* - elimina la traccia.
-  - *Close track* - chiudi la traccia.
+![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Articoli correlati {#related-articles}
 
 - [Gestisci tracce](../personal/tracks/manage-tracks.md)
-- [Tracks Analyzer](../web/web-tracks-analyzer.md)
+- [Analizzatore Tracce](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)

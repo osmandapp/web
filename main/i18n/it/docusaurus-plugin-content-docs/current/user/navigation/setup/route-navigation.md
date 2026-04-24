@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  Preparazione del percorso
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-La funzione **Preparazione del percorso** di OsmAnd fornisce una guida alla navigazione passo-passo per vari [tipi di percorso](./../routing/osmand-routing.md#routing-types), tra cui [guida](./../routing/car-based-routing.md), [camminata](./../routing/pedestrian-routing.md), ciclismo, [equitazione](./../routing/horse-routing.md) e [sci](./../routing/ski-routing.md). Gli utenti possono personalizzare le impostazioni di navigazione, aggiungere destinazioni e ottimizzare i percorsi per una maggiore efficienza.
+La funzione **Preparazione del percorso** di OsmAnd fornisce una guida alla navigazione passo-passo per vari [tipi di percorso](./../routing/osmand-routing.md#routing-types), tra cui [guida in auto](./../routing/car-based-routing.md), [camminata](./../routing/pedestrian-routing.md), ciclismo, [equitazione](./../routing/horse-routing.md) e [sci](./../routing/ski-routing.md). Gli utenti possono personalizzare le impostazioni di navigazione, aggiungere destinazioni e ottimizzare i percorsi per una maggiore efficienza.
 
 :::tip
 
@@ -65,14 +65,14 @@ Prima di utilizzare la navigazione offline, assicurarsi che le [mappe richieste 
 1. Aprire il [*Menu di navigazione*](#navigation-menu):
 
     - Specificare il [punto di destinazione](#set-target-point).
-    - Attendere il calcolo del percorso. Successivamente, sarà possibile ottenere informazioni aggiuntive sul percorso nella sezione *[Dettagli](./route-details.md#overview)*.
+    - Attendere il calcolo del percorso. Successivamente, sarà possibile ottenere informazioni aggiuntive sul percorso nella sezione *[Dettagli](../setup/route-details.md#overview)*.
     - È possibile passare da un [tipo di percorso](./../routing/osmand-routing.md#routing-types) (profilo) all'altro per ottenere il risultato migliore.
     - Aggiungere [destinazioni intermedie](#intermediate-destinations) (opzionale).
     - È anche possibile cambiare il punto di partenza dalla [posizione corrente](../../map/interact-with-map.md#my-position-and-zoom) a quella desiderata.
 
 2. A seconda delle proprie esigenze, è possibile utilizzare [*Impostazioni di navigazione*](#settings) aggiuntive (è possibile configurare quali strade evitare o preferire, risparmiare carburante o scegliere il percorso più veloce, ecc.).
 
-3. [Avviare](#start--stop-navigation) la navigazione o prima [simulare la navigazione](#simulated-navigation) (con questa funzione è possibile testare il percorso prima di percorrerlo effettivamente).
+3. [Avviare](#start--stop-navigation) la navigazione o prima [simulare la navigazione](#simulated-navigation) (con questa funzione è possibile testare il percorso prima di percorrerlo effettivamente). [Sui dispositivi iOS](https://support.apple.com/en-us/121430) nei paesi UE, OsmAnd può essere impostato come app di navigazione predefinita nelle impostazioni di sistema, consentendo l'apertura automatica per le richieste di navigazione.
 
 4. Durante il percorso è possibile [*Mettere in pausa/Riprendere*](#pause--resume-navigation) la navigazione e [*Interromperla*](#start--stop-navigation).
 

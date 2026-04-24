@@ -1,5 +1,5 @@
 ---
-source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topografia
 ---
@@ -223,7 +223,7 @@ Il menu **Terreno** include la selezione dello [schema di colori](#default-color
 
 | Ombreggiatura | Pendenza | Altitudine |
 | ------ | ------- | ------- |
-| ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Altitudine](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **L'ombreggiatura** si basa sulla simulazione dell'illuminazione della superficie utilizzando i dati del terreno. Questo metodo comporta la creazione di ombre e luci in base all'angolo della superficie rispetto alla fonte di luce. Di conseguenza, sulla mappa si vedono colline, valli e altri dettagli del terreno in modo naturale.  
 
@@ -346,28 +346,58 @@ Le impostazioni principali per *Mostra o nascondi tipi di mappa* si trovano nell
 
 ## Edifici 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edifici 3D* 
+<TabItem value="android" label="Android">  
 
-![Edifici 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_2_new.png) 
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. Gli edifici 3D vengono mostrati solo a livelli di zoom più alti (vista città/strada), dove gli edifici individuali possono essere visualizzati.  
+![Edifici 3D](@site/static/img/map/3d_buildings_4_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_3_new.png)
 
-Utilizza l'interruttore principale per abilitare o disabilitare il rendering 3D degli edifici. Per visualizzare gli edifici in 3D, inclina la mappa posizionando due dita sullo schermo e scorrendo verso l'alto. In questa vista, gli edifici potrebbero coprire parzialmente le strade o le etichette della mappa a seconda dell'impostazione di visibilità.
+</TabItem>
 
-Questa opzione è disponibile solo quando il plugin Topografia è abilitato.  
+<TabItem value="ios" label="iOS">  
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![Edifici 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. Se i [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includono passaggi attraverso gli edifici mappati con il tag `tunnel=building_passage`, OsmAnd rende visibili le aperture nel modello 3D dell'edificio in modo che le strade o i percorsi pedonali che passano attraverso l'edificio siano visualizzati correttamente. 
+
+Gli edifici 3D vengono mostrati solo a livelli di zoom più alti (vista città/strada), dove gli edifici individuali possono essere visualizzati. Quando un POI o una posizione selezionata (come una mappa pin o una destinazione di navigazione) si trova all'interno di un edificio, OsmAnd evidenzia l'edificio corrispondente per facilitarne l'identificazione sulla mappa.
+
+Utilizza l'interruttore principale per abilitare o disabilitare il rendering 3D degli edifici. Quando abilitato, l'impostazione visualizza anche il [Livello di dettaglio](#performance) corrente (Basso o Alto) sotto l'interruttore principale (*solo Android*). Per visualizzare gli edifici in 3D, inclina la mappa posizionando due dita sullo schermo e scorrendo verso l'alto. In questa vista, gli edifici potrebbero coprire parzialmente le strade o le etichette della mappa a seconda dell'impostazione di visibilità.
+
+Su Android, questa opzione è disponibile solo quando il plugin Topografia è abilitato.  
 Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
 Le impostazioni per gli edifici 3D sono divise in due gruppi: **Aspetto** e **Prestazioni**.
 
 ### Aspetto {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![Edifici 3D](@site/static/img/map/3d_buildings_color.png)
 
-I controlli **Aspetto** determinano l'aspetto degli edifici 3D sulla mappa. Include due impostazioni: Colore e Visibilità. 
+</TabItem>
 
-**Colore** ti permette di cambiare il colore degli edifici. Quando tocchi Colore, OsmAnd apre una schermata di anteprima separata dove puoi vedere la mappa mentre regoli l'impostazione.
+<TabItem value="ios" label="iOS">  
+
+![Edifici 3D](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+I controlli **<Translate android="true" ids="shared_string_appearance"/>** determinano l'aspetto degli edifici 3D sulla mappa. Include due impostazioni: Colore e Visibilità. 
+
+**<Translate android="true" ids="shared_string_color"/>** ti permette di cambiare il colore degli edifici. Quando tocchi Colore, OsmAnd apre una schermata di anteprima separata dove puoi vedere la mappa mentre regoli l'impostazione. La schermata di anteprima mostra una mappa live in modo da poter vedere immediatamente come il colore selezionato influisce sugli edifici.
 - **Stile mappa** — utilizza il colore predefinito degli edifici dallo stile mappa attualmente selezionato.
 - **Personalizzato** — ti permette di impostare un colore personalizzato per gli edifici separatamente per la modalità Giorno / Notte.
 
@@ -377,25 +407,39 @@ La personalizzazione del colore degli Edifici 3D è una [funzionalità a pagamen
 
 Se i colori personalizzati non sono acquistati, vedrai uno stato vuoto con una breve descrizione e un pulsante Acquista. Se Personalizzato è disponibile, puoi passare tra Giorno e Notte, scegliere un colore dalla palette (o aprire Tutti i colori), quindi toccare Applica.
 
-**Visibilità** controlla l'opacità (trasparenza) degli edifici 3D. Utilizza il cursore per impostare la visibilità come percentuale. Valori più bassi rendono gli edifici più trasparenti e aiutano le strade/etichette a rimanere leggibili. Valori più alti rendono gli edifici più solidi e visivamente dominanti. Tocca Visibilità per aprire anche una schermata di anteprima separata con il cursore.
+**<Translate android="true" ids="gpx_visibility_txt"/>** controlla l'opacità (trasparenza) degli edifici 3D. Utilizza il cursore per impostare la visibilità come percentuale. Il cursore consente valori dal 10% al 100%, con il 50% utilizzato per impostazione predefinita. Valori più bassi rendono gli edifici più trasparenti e aiutano le strade/etichette a rimanere leggibili. Valori più alti rendono gli edifici più solidi e visivamente dominanti. Tocca Visibilità per aprire anche una schermata di anteprima separata con il cursore.
 
 Nelle schermate di anteprima (Colore / Visibilità), puoi utilizzare Ripristina predefinito dalla barra delle applicazioni per ripristinare il valore predefinito.
 
 ### Prestazioni {#performance}
 
-I controlli **Prestazioni** determinano come vengono renderizzati gli edifici 3D. Include due impostazioni: Livello di dettaglio e Distanza di visualizzazione.
+I controlli **<Translate android="true" ids="performance"/>** determinano come vengono renderizzati gli edifici 3D. Include due impostazioni: Livello di dettaglio e Distanza di visualizzazione.
 
-**Livello di dettaglio** determina la complessità della geometria degli edifici 3D:
+**<Translate android="true" ids="level_of_details"/>** determina la complessità della geometria degli edifici 3D:
 - Basso (predefinito) — geometria più semplice.
 - Alto — geometria più dettagliata.
 
-**Distanza di visualizzazione** controlla quanto lontano dalla fotocamera vengono renderizzati gli edifici 3D:
+**<Translate android="true" ids="view_distance"/>** controlla quanto lontano dalla fotocamera vengono renderizzati gli edifici 3D:
 - Vicino (predefinito) — renderizza gli edifici più vicini a te.
 - Lontano — renderizza gli edifici da una distanza maggiore.
 
-Entrambe le opzioni di prestazioni utilizzano un interruttore a due posizioni direttamente nella schermata delle impostazioni degli edifici 3D.
+Entrambe le opzioni di prestazioni utilizzano un interruttore a due posizione direttamente nella schermata delle impostazioni degli edifici 3D.
 
 **Nota:** Utilizzare *Dettaglio alto* e *Distanza di visualizzazione lontana* migliora l'aspetto visivo ma potrebbe influire sulle prestazioni e aumentare il consumo della batteria.
+
+
+<!--
+### Sole {#sun}
+
+![Edifici 3D](@site/static/img/map/sun_setting.png)
+
+L'impostazione **Sole** controlla la direzione dell'illuminazione utilizzata per il rendering degli edifici 3D. Influenza il modo in cui luce e ombre appaiono sugli edifici nella vista 3D. Quando tocchi Sole, OsmAnd apre una schermata di anteprima dove puoi regolare l'illuminazione utilizzando due cursori:
+
+- Azimut — controlla la direzione orizzontale della fonte di luce (la direzione della bussola del sole).
+- Altitudine — controlla l'altezza del sole sopra l'orizzonte.
+
+Cambiare questi parametri modifica il modo in cui le ombre cadono sugli edifici e può migliorare la percezione visiva delle forme degli edifici nella vista 3D. Tocca Applica per confermare i parametri di illuminazione selezionati.
+-->
 
 
 ## Rilievo 3D {#3d-relief}

@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -11,16 +11,16 @@ La mappa di OsmAnd viene renderizzata per livelli dal basso verso l'alto. Alcuni
 
 OsmAnd utilizza tre tipi di livelli: raster, simboli e controlli. Innanzitutto, i [livelli raster vengono renderizzati](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) in OpenGL, seguiti dai [livelli simbolo](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). I livelli di controllo vengono renderizzati indipendentemente da OpenGL nell'interfaccia utente dei dispositivi Android o iOS, sopra la mappa.
 
-**Android:**
+**Android:**  
 La maggior parte dei livelli su Android viene istanziata nel metodo [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) della classe `MapLayers`.
 
-L'ordine di ogni livello dipende dalla sua proprietà `zOrder` durante l'istanza ed è impostato nel metodo [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) della classe `OsmAndMapLayer`.
+L'ordine di ogni livello dipende dalla sua proprietà `zOrder` durante l'istanza ed è impostato nel metodo [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) della classe `OsmAndMapLayer`.  
 Altri livelli possono essere istanziati nei plugin.
 
-**iOS:**
+**iOS:**  
 La maggior parte dei livelli su iOS viene istanziata nel metodo [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) di `OAMapLayers`.
 
-L'ordine di ogni livello è impostato direttamente dalla proprietà `baseOrder` in `createLayers`.
+L'ordine di ogni livello è impostato direttamente dalla proprietà `baseOrder` in `createLayers`.  
 Altri livelli possono essere istanziati nei plugin.
 
 
@@ -43,21 +43,21 @@ Altri livelli possono essere istanziati nei plugin.
 | DownloadedRegionsLayer            | -1 100 000   | Poligoni | Mostra le regioni scaricate          |
 | Icone (MapVectorLayer)            | -1 000 000   | Punti   | Mappa vettoriale, iconOrder nello stile con [aggiunta di 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (linee)                  | -500 000     | Linee    | Linee del percorso             |
-| RouteLayer (punto di evidenziazione grafico)| -197 900     | Punto    | Analisi del percorso di navigazione sulla mappa  |
-| RouteLayer (punti asse x grafico)  | -198 000     | Punti   | Analisi del percorso di navigazione sulla mappa  |
-| RouteLayer (frecce di svolta)          | -199 000     | Linee    | Percorso di navigazione                  |
 | RouteLayer                        | -200 000     | Linee    | Percorso di navigazione                  |
+| RouteLayer (frecce di svolta)     | -199 000     | Linee    | Percorso di navigazione                  |
+| RouteLayer (punti asse x grafico) | -198 000     | Punti   | Analisi del percorso di navigazione sulla mappa  |
+| RouteLayer (punto di evidenziazione grafico)| -197 900     | Punto    | Analisi del percorso di navigazione sulla mappa  |
 | Testo (MapVectorLayer)             | 1 - 255      | Testo     | Mappa vettoriale, textOrder nello [stile](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), 100 per impostazione predefinita                 |
-| Scudi (MapVectorLayer)          | 1 - 255       | Scudi  | Mappa vettoriale, textOrder nello stile per gli scudi, 100 per impostazione predefinita |
-| Inizio, fine percorso GPX           | 90 101       | Punti   | GPXLayer                          |
-| Waypoint percorso GPX                | 90 300       | Punti   | GPXLayer                          |
+| Scudi (MapVectorLayer)            | 1 - 255       | Scudi  | Mappa vettoriale, textOrder nello stile per gli scudi, 100 per impostazione predefinita |
+| Inizio, fine percorso GPX         | 90 101       | Punti   | GPXLayer                          |
+| Waypoint percorso GPX             | 90 300       | Punti   | GPXLayer                          |
 | GPXLayer (nome wpt)               | 90 300       | Testo     | Nome waypoint                    |
-| Icona grafico percorso GPX              | 90 500       | Punti   | GPXLayer                          |
-| Icona selezionata percorso GPX           | 90 600       | Punti   | GPXLayer                          |
-| Note OSM (OsmBugsLayer)          | 200 000      | Punti   | Note OSM                         |
-| Icona Fixme (OsmBugsLayer)         | 200 000      | Punti   | Icone fixme OSM                   |
-| Testo Fixme (OsmBugsLayer)         | 200 000      | Testo     | Testo fixme OSM                    |
-| POIMapLayer (icona)                | 300 000      | Punti   | Sovralivello POI                       |
+| Icona grafico percorso GPX        | 90 500       | Punti   | GPXLayer                          |
+| Icona selezionata percorso GPX    | 90 600       | Punti   | GPXLayer                          |
+| Note OSM (OsmBugsLayer)           | 200 000      | Punti   | Note OSM                         |
+| Icona Fixme (OsmBugsLayer)        | 200 000      | Punti   | Icone fixme OSM                   |
+| Testo Fixme (OsmBugsLayer)        | 200 000      | Testo     | Testo fixme OSM                    |
+| POIMapLayer (icona)               | 300 000      | Punti   | Sovralivello POI                       |
 | POIMapLayer (nome)                | 300 000      | Testo     | Nome sovralivello POI                  |
 | AudioNotesLayer                   | 350 000      | Punti   | Plugin note audio/video          |
 | OsmEditsLayer                     | 350 000      | Punti   | Plugin modifica OSM                   |
@@ -68,13 +68,13 @@ Altri livelli possono essere istanziati nei plugin.
 | PointLocationLayer                | 600 000      | Punti   | La mia posizione                       |
 | PointNavigationLayer              | 700 000      | Punti   | Punti di inizio/fine nella navigazione |
 | PointNavigationLayer              | 700 600      | Punti   | Punto selezionato nella navigazione      |
-| MapMarkersLayer (linea)            | 729 999      | Linee    | Linea tratteggiata ai marcatori mappa        |
-| MapMarkersLayer (testo)            | 730 000      | Testo     | Testo sulla linea. Rendering canvas    |
-| MapMarkersLayer (marcatori)         | 730 000      | Punti   | Marcatori mappa                       |
+| MapMarkersLayer (linea)           | 729 999      | Linee    | Linea tratteggiata ai marcatori mappa        |
+| MapMarkersLayer (testo)           | 730 000      | Testo     | Testo sulla linea. Rendering canvas    |
+| MapMarkersLayer (marcatori)       | 730 000      | Punti   | Marcatori mappa                       |
 | ImpassableRoadsLayer              | 750 000      | Punti   | Evita strade                       |
 | ContextMenuLayer                  | 800 000      | Punti   | Pin del menu contestuale               |
 | MapillaryVectorLayer (linee)      | 1 000 000    | Linee    | Linee Mapillary tra punti    |
-| MapillaryVectorLayer (punti)     | 1 000 000    | Punti   | Punti Mapillary                  |
+| MapillaryVectorLayer (punti)      | 1 000 000    | Punti   | Punti Mapillary                  |
 
 ### Android. Livelli di controllo {#android-controls-layers}
 

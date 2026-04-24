@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Mappa
 title: Mappa Globale sul Sito Web
@@ -40,7 +40,6 @@ La mappa web di OsmAnd è una mappa globale basata sui dati di [OpenStreetMap (O
 
 Per aprirlo, fare clic con il pulsante destro del mouse in un punto qualsiasi della mappa. Questo menu include le seguenti azioni:
 
-- **Dove sono** – Trova rapidamente la tua posizione attuale sulla mappa. Questa funzione mostra gli indirizzi più vicini al punto selezionato sulla mappa.
 - **Apri meteo** – Accedi al [menu Meteo](../web/web-weather.md) per visualizzare i dettagli meteorologici.
 - **Crea nuovo percorso** – Apre lo strumento [*Pianifica un percorso*](../web/web-navigation.md) con la posizione selezionata come punto di partenza o di destinazione.
 - **Aggiungi Preferito** – Consente di creare e salvare un [preferito](../web/web-favorites.md#add--edit-favorite) in qualsiasi punto della mappa per un facile accesso.
@@ -57,7 +56,21 @@ Per aprirlo, fare clic con il pulsante destro del mouse in un punto qualsiasi de
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_new.png)
+![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Oggetto Selezionato {#selected-object}
+
+Quando un oggetto sulla mappa (come un POI, un preferito o un punto di navigazione) viene selezionato, viene evidenziato con un pin più grande. Solo un oggetto può essere selezionato alla volta.
+
+Se l'oggetto selezionato è già visibile sullo schermo, la mappa non si sposta. Se si trova al di fuori della vista corrente, la mappa si centra su di esso senza modificare il livello di zoom.
+
+Il marker selezionato rimane visibile durante lo zoom della mappa.
+
+I marker vicini potrebbero essere nascosti per rendere l'oggetto selezionato più facile da vedere.
+
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menu Configura Mappa {#configure-map-menu}
@@ -106,20 +119,29 @@ Questa sezione contiene un elenco delle tue [**tracce GPX visibili sulla mappa**
 - È possibile attivare o disattivare le tracce direttamente.  
 - Attivare o disattivare le tracce dall'elenco **Visibili di recente**.  
 
-Ogni traccia ha un **Menu Contestuale** (accessibile tramite il pulsante ⋮) con i seguenti comandi:
+Ogni traccia ha un menu (⋮) con i seguenti comandi:
 
 - **Nascondi traccia**: Nasconde la traccia attualmente visibile dalla mappa.  
 - **Rendi traccia visibile**: Visualizza una traccia dall'elenco Visibili di recente sulla mappa.  
 - **Rinomina**: Consente di rinominare la traccia per una più facile identificazione.  
-- **Duplica**: Crea una copia della traccia.  
+- **Duplica**: Crea una copia della traccia.
+- **Condividi**: Apre la schermata di condivisione (stessa come per [Preferiti](../web/web-favorites.md#share)).
 - **Scarica**: Salva la traccia sul dispositivo locale.  
 - **Elimina**: Rimuove permanentemente la traccia dall'elenco.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
+Quando apri una traccia, viene visualizzato un pannello con una barra di azioni superiore. La barra mostra il nome della traccia e fornisce accesso rapido alle azioni. Oltre ai comandi del menu a tre punti, la barra superiore include **Modifica**. **Aspetto** è attualmente non attivo.
+
+Il pannello della traccia include le seguenti schede:
+
+- Panoramica — mostra le informazioni generali sulla traccia.
+- Traccia — attualmente non implementata.
+- Punti — mostra i waypoint e i punti di rotta raggruppati per tipo.
+
+![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Fermate di trasporto {#transport-stops}
 
-L'opzione **Fermate di trasporto** consente di visualizzare le fermate di trasporto pubblico direttamente sulla mappa. Quando abilitata, i marker delle fermate appaiono sulla mappa, rappresentando le posizioni in cui si fermano le rotte di trasporto pubblico. Selezionando una fermata di trasporto si apre un pannello contestuale con informazioni su quella fermata e le rotte di trasporto che vi passano. Il pannello della fermata contiene diverse sezioni.
+L'opzione **Fermate di trasporto** consente di visualizzare le fermate di trasporto pubblico direttamente sulla mappa. Quando abilitata, i marker delle fermate appaiono sulla mappa, rappresentando le posizione in cui si fermano le rotte di trasporto pubblico. Selezionando una fermata di trasporto si apre un pannello contestuale con informazioni su quella fermata e le rotte di trasporto che vi passano. Il pannello della fermata contiene diverse sezioni.
 
 **1. Informazioni sulla fermata**
 
@@ -222,7 +244,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 Per un facile utilizzo del servizio web (e dell'applicazione) di OsmAnd, è possibile usufruire di link diretti. Si tratta di URL speciali che consentono di trasferire dati di localizzazione e includono dettagli su segnaposto, tracce, meteo e altro ancora.
 
-Questi URL possono essere copiati e condivisi con qualsiasi mezzo supportato dal vostro dispositivo e sono compatibili con le versioni Android e iOS di OsmAnd.
+Questi URL possono essere copiati e condivisi utilizzando qualsiasi mezzo supportato dal tuo dispositivo e sono compatibili con entrambe le versioni Android e iOS di OsmAnd.
 
 1. **URL con un segnaposto sulla mappa:**
 

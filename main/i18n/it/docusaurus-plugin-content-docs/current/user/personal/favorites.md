@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Preferiti
 ---
@@ -272,7 +272,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Utilizzare il ***menu a tre punti*** accanto a ogni cartella per gestire i gruppi di preferiti:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Nascondi sulla mappa** — Attivare/disattivare questa opzione per visualizzare o nascondere i punti preferiti della cartella sulla mappa.
-- **Pin cartella** — Pinna la cartella selezionata per mantenerla in cima all'elenco dei preferiti per un accesso più rapido.
+- **<Translate android="true" ids="pin_folder"/>** — Pinna la cartella selezionata per mantenerla in cima all'elenco dei preferiti per un accesso più rapido.
 - **<Translate android="true" ids="shared_string_rename"/>** — Utilizzare questa opzione per cambiare il nome della cartella selezionata.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalizzare l'aspetto dei punti preferiti nella cartella sulla mappa, modificandone icone, colori o etichette.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Rimuovi dai segnaposto mappa** — Aggiungere tutti i punti preferiti della cartella all'*elenco Segnaposto mappa* o rimuoverli secondo necessità per una facile consultazione.

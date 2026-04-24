@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -465,11 +465,11 @@ L'impostazione **Layout schermata mappa** consente di controllare come i pannell
 
 ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_single.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_separate.png)
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Layout schermata mappa*
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd supporta due modalità di layout per la schermata della mappa:
-- **Layout singolo** – utilizza lo stesso layout dei widget per tutte le orientamenti dello schermo. Questa opzione è selezionata per impostazione predefinita.
-- **Layout separati** – consente di configurare layout dei widget diversi per orientamenti Portrait e Landscape.
+- **<Translate android="true" ids="single_layout"/>** – utilizza lo stesso layout dei widget per tutte le orientamenti dello schermo. Questa opzione è selezionata per impostazione predefinita.
+- **<Translate android="true" ids="separate_layouts"/>** – consente di configurare layout dei widget diversi per orientamenti Portrait e Landscape.
 
 Quando Layout separati è abilitato, le modifiche apportate in un orientamento non influenzano l'altro. Questo è utile se si desidera ottimizzare la schermata della mappa in modo diverso per l'uso in portrait e landscape.
 
@@ -480,8 +480,8 @@ Quando Layout separati è abilitato, le modifiche apportate in un orientamento n
 Quando Layout separati è abilitato, due schede diventano disponibili nella schermata Configura: **Portrait** e **Landscape**. Ogni scheda rappresenta un layout indipendente per l'orientamento dello schermo corrispondente. È possibile passare tra le schede toccandole.
 
 È possibile copiare il layout tra gli orientamenti. Per accedere a queste azioni, tocca il menu a tre punti per il pannello dei widget:
-- **Copia da Portrait** – copia l'elenco dei widget dal layout Portrait al layout Landscape.
-- **Copia da Landscape** – copia l'elenco dei widget dal layout Landscape al layout Portrait.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – copia l'elenco dei widget dal layout Portrait al layout Landscape.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – copia l'elenco dei widget dal layout Landscape al layout Portrait.
 
 Viene copiato solo l'elenco dei widget e l'operazione si applica all'interno dello stesso profilo.
 
@@ -496,8 +496,8 @@ L'impostazione **Layout pannelli** controlla come i pannelli widget superiore e 
 **Nota:** Questa opzione è disponibile solo quando [Layout separati](#single-and-separate-layouts) è abilitato.
 
 È possibile scegliere tra due modalità:
-- **Largo** – i pannelli superiore e inferiore si estendono per l'intera larghezza dello schermo.
-- **Compatto** – i pannelli superiore e inferiore si adattano tra i pannelli laterali e i pulsanti della mappa.
+- **<Translate android="true" ids="panels_layout_wide"/>** – i pannelli superiore e inferiore si estendono per l'intera larghezza dello schermo.
+- **<Translate android="true" ids="panels_layout_compact"/>** – i pannelli superiore e inferiore si adattano tra i pannelli laterali e i pulsanti della mappa.
 
 Il Layout pannelli può essere configurato indipendentemente per orientamenti Portrait e Landscape, consentendo un migliore adattamento a diverse dimensioni e orientamenti dello schermo.
 

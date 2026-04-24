@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -278,10 +278,10 @@ L'app OsmAnd può essere aperta e utilizzata per navigare in *CarPlay* sullo sch
 Quando la navigazione è completata in CarPlay, OsmAnd visualizza un dialogo **“Sei arrivato”** sullo schermo del veicolo. Questo dialogo utilizza la stessa logica di rilevamento dell'arrivo dell'app mobile e fornisce un accesso rapido alle azioni comuni dopo aver raggiunto la destinazione.
 
 Azioni disponibili:
-- **Segna come posizione di parcheggio**. Salva la posizione corrente come posizione di parcheggio e posiziona un indicatore di parcheggio sulla mappa.
-- **Trova parcheggio**. Apre la schermata di Ricerca con la categoria Parcheggio pre-selezionata per aiutarti a trovare opzioni di parcheggio nelle vicinanze.
-- **Ricalcola percorso**. Crea un nuovo percorso verso la destinazione originale se si desidera continuare la navigazione.
-- **Termina navigazione**. Termina il percorso corrente e riporta OsmAnd allo stato predefinito della mappa.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Salva la posizione corrente come posizione di parcheggio e posiziona un indicatore di parcheggio sulla mappa.
+- **<Translate ios="true" ids="find_parking"/>**. Apre la schermata di Ricerca con la categoria Parcheggio pre-selezionata per aiutarti a trovare opzioni di parcheggio nelle vicinanze.
+- **<Translate ios="true" ids="recalculate_route"/>**. Crea un nuovo percorso verso la destinazione originale se si desidera continuare la navigazione.
+- **<Translate ios="true" ids="finish_navigation"/>**. Termina il percorso corrente e riporta OsmAnd allo stato predefinito della mappa.
 
 Se CarPlay viene disconnesso mentre la navigazione è attiva, OsmAnd applica una logica aggiuntiva sull'iPhone:
 - Se la distanza dalla destinazione è inferiore a 100 m, la navigazione viene terminata automaticamente e il profilo predefinito viene ripristinato. In questo caso, la notifica “Sei arrivato” non viene mostrata sullo schermo del telefono.

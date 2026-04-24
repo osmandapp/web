@@ -1,5 +1,5 @@
 ---
-source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
+source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
 sidebar_position: 1
 title:  Primi Passi
 ---
@@ -130,15 +130,21 @@ Sebbene OsmAnd consenta di scaricare le mappe per tutte le regioni disponibili, 
 
 ### Come cambiare la lingua dell'app {#how-to-change-app-language}
 
-L'opzione *Lingua di visualizzazione* viene utilizzata per cambiare la lingua dell'intera app, inclusi i messaggi a comparsa, il testo interno, i messaggi e altro ancora. Fino ad Android 12, OsmAnd consente di personalizzare la lingua di visualizzazione in base alle proprie preferenze direttamente nell'app. A partire da Android 13 e sui dispositivi iOS, la lingua di visualizzazione può essere modificata solo nelle impostazioni di sistema (vedere come modificare le preferenze linguistiche per app in [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+L'opzione *Lingua di visualizzazione* viene utilizzata per cambiare la lingua dell'intera app, inclusi i messaggi a comparsa, il testo interno, i messaggi e altro ancora. 
+
+Sui dispositivi Android, OsmAnd consente di personalizzare la lingua di visualizzazione direttamente nell'app su tutte le versioni supportate. Per impostazione predefinita, l'app utilizza la lingua del sistema, ma è possibile selezionare manualmente una lingua diversa se necessario.
+
+Su Android 13 e versioni successive, è possibile cambiare la lingua dell'app sia nelle impostazioni di OsmAnd che nelle impostazioni di sistema del dispositivo. La lingua selezionata viene sincronizzata tra l'app e il sistema. Alcune modifiche potrebbero richiedere il riavvio dell'app per applicare completamente la lingua selezionata.
+
+Sui dispositivi iOS, la lingua di visualizzazione può essere modificata solo nelle impostazioni di sistema (vedere come modificare le preferenze linguistiche per app in [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Andare a: *Impostazioni → App → OsmAnd → Lingua*
+Andare a: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Lingua di visualizzazione*
 
-![Impostazioni Generali Lingua Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
+![Impostazioni Generali Lingua Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Impostazioni Generali Lingua Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -146,14 +152,14 @@ Andare a: *Impostazioni → App → OsmAnd → Lingua*
 
 Andare a: *Impostazioni → OsmAnd Maps → Lingua*
 
-![Impostazioni Generali Lingua iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![Impostazioni Generali Lingua iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Nessuna opzione per impostare le lingue dell'app
-Su alcuni dispositivi Android (Xiaomi con Muiu 14), non c'è l'opzione per impostare le lingue delle app individualmente nelle impostazioni di sistema, quindi la lingua di OsmAnd può essere cambiata solo con la lingua dell'intero sistema. È possibile consultare la discussione su [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) per ulteriori informazioni.
+Su alcuni dispositivi Android o versioni di sistema, l'opzione per impostare le lingue delle app individualmente nelle impostazioni di sistema potrebbe non essere disponibile o limitata (è possibile consultare la discussione su [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) per ulteriori informazioni). In tali casi, è comunque possibile cambiare la lingua dell'app direttamente in OsmAnd utilizzando l'impostazione Lingua di visualizzazione. Anche se una lingua non è supportata dal sistema Android, OsmAnd applicherà e manterrà comunque la lingua selezionata all'interno dell'app.
 :::
 
 
@@ -375,6 +381,10 @@ La [Navigazione](../navigation/index.md) fornisce una guida passo-passo verso la
 </Tabs>
 
 [Leggi di più](../navigation/index.md) sulla navigazione.
+
+**NOTA:** Sui dispositivi iOS nei paesi UE, è possibile impostare OsmAnd come app di navigazione predefinita nelle impostazioni di sistema.  
+Andare a: *Impostazioni → App → App predefinite → Navigazione*  
+Una volta impostata, OsmAnd si aprirà automaticamente per le richieste di navigazione dal sistema.
 
 
 ### Come registrare il tuo viaggio {#how-to-record-your-trip}

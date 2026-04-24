@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Quando clicchi Seleziona traccia, il browser apre un selettore di file dove puoi
 
 ## Dettagli del Percorso {#route-details}
 
-![Navigazione Web](@site/static/img/web/navigation_info.png) ![Navigazione Web](@site/static/img/web/navigation_turns.png)
+![Navigazione Web](@site/static/img/web/navigation_overview.png) ![Navigazione Web](@site/static/img/web/navigation_turns_new.png)
 
-Quando un percorso viene calcolato, il pannello mostra un riassunto di base (distanza, tempo, salita/discesa) e un pulsante **Dettagli**. Utilizza Dettagli per aprire la vista del percorso con due schede: Info e Curve.
+Quando un percorso viene calcolato, il pannello mostra un riassunto di base (distanza, tempo, salita/discesa) e un pulsante **Dettagli**. Utilizza Dettagli per aprire la vista del percorso con più schede. Le schede principali includono Panoramica, Traccia e Punti. La scheda Curve è disponibile tramite la freccia (›) nella barra delle schede.
 
-Info riassume il percorso e i dati di altitudine:
+Panoramica riassume il percorso e i dati di altitudine:
 - **Punti** — il numero di punti di percorso utilizzati per costruire il percorso.
 - **Percorso** — distanza e tempo.
 - **Salita/Discesa** — ascesa e discesa totali.

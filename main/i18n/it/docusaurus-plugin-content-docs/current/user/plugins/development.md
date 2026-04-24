@@ -1,5 +1,5 @@
 ---
-source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
 sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
@@ -53,7 +53,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 <TabItem value="ios" label="iOS">  
 
-![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_ios_1_new.png)
+![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_ios_2_new.png)
 
 </TabItem>
 
@@ -71,13 +71,14 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 - **Modalità risparmio energetico** (*Android* / *iOS*). Questa impostazione riduce [la frequenza di aggiornamento dello schermo](#map-rendering-fps-widget) di 20 fotogrammi al secondo per aiutare a risparmiare la batteria durante l'uso delle applicazioni.
 - **Usa icone di posizione 3D** (*iOS*). Permette di selezionare un'icona 3D per l'[icona La mia posizione](../personal/profiles.md#my-location-appearance).
 - **Simula dati OBD** (*Android* / *iOS*). Permette la simulazione dell'uso dello [scanner OBD](./vehicle-metrics.md).
-- **Informazioni di debug sulle prestazioni** (*Android* / *iOS*). Visualizza le prestazioni di rendering e navigazione.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Visualizza le prestazioni di rendering e navigazione.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Visualizza le informazioni di debug sulla rasterizzazione delle tessere.
 - **Disabilita i livelli della mappa** (*Android*). Disabilita tutti i livelli della mappa sopra la mappa vettoriale (richiede il riavvio).
 - **Buffer Logcat** (*Android*). Controlla e condividi i log dettagliati dell'app.  
 - **Mostra un messaggio toast per il tasto premuto** (*Android*). Visualizza un messaggio relativo al tasto.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Il rilevamento è la direzione della bussola dalla posizione corrente alla destinazione prevista. Influisce sulla *[registrazione della traccia](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. La direzione è la direzione della bussola dalla posizione corrente verso il nord geografico. Questa opzione è abilitata per impostazione predefinita. Influisce sulla *[registrazione della traccia](../plugins/trip-recording.md)*.
-- **Abilita MSAA** (*Android*) / **Abilita MSAA per CarPlay** (*iOS*). Abilita l'anti-aliasing multisample per rendere fluido il rendering della mappa. Migliora la qualità visiva dell'[icona La mia posizione](../personal/profiles.md#my-location-appearance) e della linea del percorso riducendo i bordi pixelati. Su Android, questa opzione influisce sul rendering della mappa sul dispositivo e durante l'uso di [Android Auto](../navigation/auto-car.md). Su iOS, si applica solo a [CarPlay](../navigation/car-play.md).
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Abilita l'anti-aliasing multisample per rendere fluido il rendering della mappa. Migliora la qualità visiva dell'[icona La mia posizione](../personal/profiles.md#my-location-appearance) e della linea del percorso riducendo i bordi pixelati. Su Android, questa opzione influisce sul rendering della mappa sul dispositivo e durante l'uso di [Android Auto](../navigation/auto-car.md). Su iOS, si applica solo a [CarPlay](../navigation/car-play.md).
 
 
 ### Test dell'applicazione {#application-testing}
@@ -319,9 +320,9 @@ La tabella seguente contiene informazioni sull'inclinazione della telecamera e s
 |20| 66|11|30|10%|
 
 
-## Widget RAM disponibile {#available-ram-widget}
+## Widget Informazioni memoria {#memory-info-widget}
 
-Questo widget è progettato specificamente per te quando usi OsmAnd per fornire un'interazione più comoda e informativa con la RAM disponibile sul tuo dispositivo. Ti permette di monitorare facilmente e rapidamente la RAM disponibile, il che è particolarmente utile quando si utilizza OsmAnd per la navigazione. Leggi di più sul widget nell'articolo [Widget informativi](../widgets/info-widgets.md#available-ram).
+Questo widget è progettato specificamente per te quando usi OsmAnd per fornire un'interazione più comoda e informativa con l'utilizzo della memoria del dispositivo. Ti permette di monitorare facilmente e rapidamente i diversi tipi di memoria utilizzati dall'applicazione, il che è particolarmente utile quando si utilizza OsmAnd per la navigazione. Leggi di più sul widget nell'articolo [Widget informativi](../widgets/info-widgets.md#memory-info).
 
 
 ## Simulazione traccia GPX {#gpx-track-simulation}
@@ -349,7 +350,7 @@ OsmAnd offre l'opportunità di simulare la posizione e il movimento del tuo disp
 
 </Tabs>  
 
-Dopo aver avviato la simulazione, vedrai sulla schermata principale dell'app che il marcatore di navigazione si sta muovendo secondo la traccia GPX. Tocca il [pulsante La mia posizione](../map/interact-with-map.md#my-location-and-zoom) per sincronizzare *La mia posizione* (geolocalizzazione simulata del dispositivo) con il centro della mappa.  
+Dopo aver avviato la simulazione, vedrai sulla schermata principale dell'app che il marcatore di navigazione si sta muovendo secondo la traccia GPX. Tocca il [pulsante La mia posizione](../map/interact-with-map.md#my-position-and-zoom) per sincronizzare *La mia posizione* (geolocalizzazione simulata del dispositivo) con il centro della mappa.  
 Per interrompere la simulazione del movimento del tuo dispositivo, torna alle [impostazioni](#plugin-settings) di Sviluppo OsmAnd e tocca **stop** nell'opzione **simula la tua posizione**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* può essere accessibile anche tramite il **[menu Azione rapida](../widgets/quick-action.md#navigation)**.

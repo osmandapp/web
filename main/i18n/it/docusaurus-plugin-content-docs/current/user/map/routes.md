@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  Percorsi
 ---
@@ -239,6 +239,7 @@ Quando si tocca un **simbolo del percorso** sulla mappa:
 
 - Viene visualizzato un **elenco dei percorsi vicini** in quella posizione.
 - Dopo aver selezionato un percorso dall'elenco, si apre un [menu contestuale](../map/tracks/track-context-menu.md) per quel percorso, che mostra informazioni dettagliate e le azioni disponibili.
+- Il percorso selezionato viene aperto in una vista traccia, consentendo di interagire con esso nello stesso modo di una traccia GPX.
 
 Nel **menu contestuale**, è possibile:
 
@@ -317,7 +318,7 @@ Per visualizzare il grafico dell'altitudine, della pendenza o i dettagli dell'al
 </Tabs>  
 
 
-Per salvare il percorso come *file GPX*, toccare il pulsante **Salva (Download)** sotto il [pannello Info](../map/tracks/track-context-menu.md#info-panel). Questo aprirà il pannello dei pulsanti [Azioni rapide](../map/tracks/track-context-menu.md#track-actions) dove si avrà accesso alle azioni sulla traccia come la modifica dell'[Aspetto](./tracks/appearance.md), la [Navigazione](../navigation/setup/route-navigation.md) o la modifica in [Pianifica un percorso](../plan-route/create-route.md).
+Per salvare il percorso come *file GPX*, toccare il pulsante **Salva (Download)** sotto il [pannello Info](../map/tracks/track-context-menu.md#info-panel). Questo aprirà il pannello dei pulsanti [Azioni rapide](../map/tracks/track-context-menu.md#track-actions) dove si avrà accesso alle azioni sulla traccia come la modifica dell'[Aspetto](./tracks/appearance.md), la [Navigazione](../navigation/setup/route-navigation.md) o la modifica in [Pianifica un percorso](../plan-route/create-route.md). I percorsi salvati si comportano come altre tracce e sono disponibili nella tua collezione di tracce.
 
 
 ### Avvia navigazione {#start-navigation}
