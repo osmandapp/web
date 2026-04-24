@@ -1,5 +1,5 @@
 ---
-source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topographie
 ---
@@ -346,28 +346,58 @@ Les principaux paramètres pour *Afficher ou Masquer les types de carte* se trou
 
 ## Bâtiments 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Bâtiments 3D* 
+<TabItem value="android" label="Android">  
 
-![Bâtiments 3D](@site/static/img/map/3d_buildings_1_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_2_new.png) 
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés.  
+![Bâtiments 3D](@site/static/img/map/3d_buildings_4_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_3_new.png)
 
-Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des bâtiments. Pour voir les bâtiments en 3D, inclinez la carte en plaçant deux doigts sur l'écran et en balayant vers le haut. Dans cette vue, les bâtiments peuvent partiellement couvrir les routes ou les étiquettes de la carte en fonction du paramètre de visibilité.
+</TabItem>
 
-Cette option n'est disponible que lorsque le plugin Topographie est activé.  
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![Bâtiments 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Si les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluent des passages à travers les bâtiments cartographiés avec la balise `tunnel=building_passage`, OsmAnd rend des ouvertures visibles dans le modèle de bâtiment 3D afin que les routes ou les voies piétonnes passant à travers le bâtiment soient affichées correctement. 
+
+Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés. Lorsqu'un POI ou un emplacement sélectionné (comme une épingle sur la carte ou une destination de navigation) se trouve à l'intérieur d'un bâtiment, OsmAnd met en évidence le bâtiment correspondant pour faciliter son identification sur la carte.
+
+Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des bâtiments. Lorsque activé, le paramètre affiche également le [Niveau de détail](#performance) actuel (Faible ou Élevé) sous l'interrupteur principal (*Android uniquement*). Pour voir les bâtiments en 3D, inclinez la carte en plaçant deux doigts sur l'écran et en balayant vers le haut. Dans cette vue, les bâtiments peuvent partiellement couvrir les routes ou les étiquettes de la carte en fonction du paramètre de visibilité.
+
+Sur Android, cette option n'est disponible que lorsque le plugin Topographie est activé.  
 Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
 Les paramètres des bâtiments 3D sont divisés en deux groupes : **Apparence** et **Performance**.
 
 ### Apparence {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![Bâtiments 3D](@site/static/img/map/3d_buildings_color.png)
 
-Les contrôles **Apparence** déterminent l'aspect des bâtiments 3D sur la carte. Ils incluent deux paramètres : Couleur et Visibilité. 
+</TabItem>
 
-**Couleur** vous permet de changer la couleur des bâtiments. Lorsque vous appuyez sur Couleur, OsmAnd ouvre un écran d'aperçu séparé où vous pouvez voir la carte tout en ajustant le paramètre.
+<TabItem value="ios" label="iOS">  
+
+![Bâtiments 3D](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Les contrôles **<Translate android="true" ids="shared_string_appearance"/>** déterminent l'aspect des bâtiments 3D sur la carte. Ils incluent deux paramètres : Couleur et Visibilité. 
+
+**<Translate android="true" ids="shared_string_color"/>** vous permet de changer la couleur des bâtiments. Lorsque vous appuyez sur Couleur, OsmAnd ouvre un écran d'aperçu séparé où vous pouvez voir la carte tout en ajustant le paramètre. L'écran d'aperçu affiche une carte en direct pour que vous puissiez immédiatement voir comment la couleur sélectionnée affecte les bâtiments.
 - **Style de carte** — utilise la couleur par défaut des bâtiments du style de carte actuellement sélectionné.
 - **Personnalisé** — vous permet de définir une couleur personnalisée pour les bâtiments séparément pour le mode Jour / Nuit.
 
@@ -377,19 +407,19 @@ La personnalisation de la couleur des bâtiments 3D est une [fonctionnalité pay
 
 Si les couleurs personnalisées ne sont pas achetées, vous verrez un état vide avec une brève description et un bouton Obtenir. Si Personnalisé est disponible, vous pouvez basculer entre Jour et Nuit, choisir une couleur dans la palette (ou ouvrir Toutes les couleurs), puis appuyer sur Appliquer.
 
-**Visibilité** contrôle l'opacité (transparence) des bâtiments 3D. Utilisez le curseur pour définir la visibilité en pourcentage. Des valeurs plus basses rendent les bâtiments plus transparents et aident les routes/étiquettes à rester lisibles. Des valeurs plus élevées rendent les bâtiments plus solides et visuellement dominants. Appuyer sur Visibilité ouvre également un écran d'aperçu séparé avec le curseur.
+**<Translate android="true" ids="gpx_visibility_txt"/>** contrôle l'opacité (transparence) des bâtiments 3D. Utilisez le curseur pour définir la visibilité en pourcentage. Le curseur permet des valeurs de 10 % à 100 %, avec 50 % utilisé par défaut. Des valeurs plus basses rendent les bâtiments plus transparents et aident les routes/étiquettes à rester lisibles. Des valeurs plus élevées rendent les bâtiments plus solides et visuellement dominants. Appuyer sur Visibilité ouvre également un écran d'aperçu séparé avec le curseur.
 
 Sur les écrans d'aperçu (Couleur / Visibilité), vous pouvez utiliser Réinitialiser aux valeurs par défaut depuis la barre d'application pour restaurer la valeur par défaut.
 
 ### Performance {#performance}
 
-Les contrôles **Performance** déterminent la façon dont les bâtiments 3D sont rendus. Ils incluent deux paramètres : Niveau de détail et Distance de vue.
+Les contrôles **<Translate android="true" ids="performance"/>** déterminent la façon dont les bâtiments 3D sont rendus. Ils incluent deux paramètres : Niveau de détail et Distance de vue.
 
-**Niveau de détail** détermine la complexité de la géométrie des bâtiments 3D :
+**<Translate android="true" ids="level_of_details"/>** détermine la complexité de la géométrie des bâtiments 3D :
 - Faible (par défaut) — géométrie plus simple.
 - Élevé — géométrie plus détaillée.
 
-**Distance de vue** contrôle la distance par rapport à la caméra à laquelle les bâtiments 3D sont rendus :
+**<Translate android="true" ids="view_distance"/>** contrôle la distance par rapport à la caméra à laquelle les bâtiments 3D sont rendus :
 - Proche (par défaut) — rend les bâtiments plus près de vous.
 - Lointaine — rend les bâtiments à une distance plus longue.
 
@@ -455,7 +485,6 @@ La fonction Relief 3D produit un relief surélevé et fournit une représentatio
 </TabItem>
 
 </Tabs>
-
 
 ### Exagération verticale {#vertical-exaggeration}
 

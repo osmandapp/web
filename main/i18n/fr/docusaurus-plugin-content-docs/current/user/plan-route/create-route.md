@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Planifier un itinéraire
 ---
@@ -234,7 +234,7 @@ Vous pouvez changer l'itinéraire entre 2 points spécifiques ou entre plusieurs
 
 - *Trace entière*. La trace entière sera recalculée en utilisant le profil sélectionné.
 - *Segment suivant*. Seul le segment suivant sera recalculé en utilisant le profil sélectionné.  
-- *Changer le type d'itinéraire avant/après le point*. Dans le *menu contextuel du point*, vous pouvez changer la manière dont l'itinéraire est calculé pour la section de ce point au point le plus proche ou au point extrême. Le paramètre fournit des informations sur la distance de ce point au début ou à la fin de l'itinéraire, ou au point suivant/précédent.
+- *Changer le Type d'Itinéraire Avant/Après le Point*. Dans le *menu contextuel du point*, vous pouvez changer la manière dont l'itinéraire est calculé pour la section de ce point au point le plus proche ou au point extrême. Le paramètre fournit des informations sur la distance de ce point au début ou à la fin de l'itinéraire, ou au point suivant/précédent.
 - *Recalculer les itinéraires*. Vous pouvez utiliser le recalcul d'itinéraire sans changer le type de profil. L'icône de profil affichée sur l'itinéraire planifié dans l'outil ne changera pas, mais le type d'itinéraire correspondra à celui sélectionné. Vous pourriez en avoir besoin pour trouver des itinéraires alternatifs.  
 
 ### Segments {#segments}
@@ -338,6 +338,8 @@ Il y a quatre façons d'enregistrer :
 - ***Enregistrer les modifications*** dans le [menu Options](#options) vous permet d'enregistrer les modifications dans un fichier et de continuer à planifier l'itinéraire.
 - ***Enregistrer comme nouvelle trace*** dans le [menu Options](#options) ouvre une boîte de dialogue où vous spécifiez le nom de la trace et le dossier où l'itinéraire sera enregistré.
 - ***Ajouter les modifications à une trace***. Attache une trace créée comme un [segment séparé](#segments) à une autre trace existante. Les modifications apportées à une trace sélectionnée *ne peuvent pas être annulées*.
+
+Lors de l'enregistrement, la trace hérite du type d'activité du profil de routage utilisé pour la planification. L'activité est enregistrée dans les métadonnées de la trace et est préservée après l'exportation ou l'importation du fichier GPX.
 
 :::note Option de trace simplifiée
 Lors de l'enregistrement d'une nouvelle trace, vous pouvez sélectionner l'option de trace ***Simplifiée*** pour rendre la trace compatible avec d'autres applications tierces. Techniquement, la trace sera enregistrée sans instructions d'itinéraire, comme une trace purement géométrique.

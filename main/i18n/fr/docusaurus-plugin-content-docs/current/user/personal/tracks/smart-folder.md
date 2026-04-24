@@ -1,5 +1,5 @@
 ---
-source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
+source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -170,20 +170,20 @@ Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour so
 
 Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, appuyez sur le *menu à trois points* à côté de celui-ci pour accéder aux actions disponibles :
 
-- **Détails** — Affichez la liste complète des traces contenues dans le dossier.
-- **Afficher toutes les traces sur la carte** — Affichez toutes les traces du dossier sur la carte.  
+- **<Translate android="true" ids="shared_string_details"/>** — Affichez la liste complète des traces contenues dans le dossier.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Affichez toutes les traces du dossier sur la carte.  
     *NOTE : Le chargement de nombreuses traces peut affecter les performances.*
-- **Renommer** — Changez le nom du dossier pour une identification plus facile.
-- **Actualiser** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
-- **Modifier le filtre** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
-- **Exporter** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
-- **Supprimer le dossier** — Supprimez le Dossier intelligent sans supprimer ses traces.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Changez le nom du dossier pour une identification plus facile.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
+- **<Translate android="true" ids="edit_filter"/>** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
+- **<Translate android="true" ids="shared_string_export"/>** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
+- **<Translate android="true" ids="delete_folder"/>** — Supprimez le Dossier intelligent sans supprimer ses traces.  
     *AVERTISSEMENT : Cette action est irréversible et affichera un message de confirmation.*
 
 Vous pouvez également ouvrir le dossier et appuyer sur le *menu à trois points* dans le *coin supérieur droit* pour accéder à des actions supplémentaires :
 
-- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
-- **Organiser par** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
+- **<Translate android="true" ids="organize_by"/>** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
 
 Certains paramètres de regroupement ne sont disponibles qu'avec un abonnement OsmAnd Pro. Les paramètres gratuits incluent *Activité*, *Année de création*, et *Ville la plus proche*. Tous les autres paramètres sont marqués avec une étiquette <ProFeature/>.
 
@@ -201,17 +201,17 @@ Pour les paramètres PRO, vous pouvez prévisualiser la configuration de regroup
 
 Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, effectuez un *appui long* sur le nom du dossier pour accéder aux actions disponibles :
 
-- **Renommer** — Changez le nom du dossier pour une identification plus facile.
-- **Exporter** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
-- **Déplacer** — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
-- **Supprimer** — Supprimez le Dossier intelligent sans supprimer ses traces.  
+- **<Translate ios="true" ids="shared_string_rename"/>** — Changez le nom du dossier pour une identification plus facile.
+- **<Translate ios="true" ids="shared_string_export"/>** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Supprimez le Dossier intelligent sans supprimer ses traces.  
     *AVERTISSEMENT : Cette action est irréversible et affichera un message de confirmation.*
 
 Vous pouvez également ouvrir le dossier et appuyer sur l'icône dans le *coin supérieur droit* pour accéder à des actions supplémentaires :
 
-- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
-- **Actualiser** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
-- **Modifier le filtre** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
+- **<Translate ios="true" ids="shared_string_select"/>** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
+- **<Translate ios="true" ids="edit_filter"/>** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
 
 </TabItem>
 

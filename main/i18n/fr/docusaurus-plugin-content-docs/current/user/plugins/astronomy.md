@@ -1,5 +1,5 @@
 ---
-source-hash: 586e89c491ebdc9f9d39017e43dfe0ba1044c71a6eddcfcdc4d71787f3703bae
+source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -15,8 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<InfoIncompleteArticle/>
 
 <InfoAndroidOnly/>
 
@@ -49,15 +47,15 @@ Le plugin fonctionne avec les deux moteurs de rendu de carte, mais offre les mei
 
 ## Écran Carte des étoiles {#star-map-screen}
 
-**Accéder à :** *Plugin activé → Menu → Carte des étoiles* 
+**Accéder à :** *Plugin activé → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
-![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+![Écran Carte des étoiles](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 L'écran dédié **Carte des étoiles** affiche un dôme céleste interactif avec des étoiles, des constellations, des planètes, des trajectoires du Soleil et de la Lune. En bas de l'écran, vous pouvez accéder aux contrôles suivants : 
 - [**Recherche**](#search) — ouvre l'écran de Recherche où vous pouvez rechercher des objets célestes et parcourir les catalogues et catégories du ciel. 
 - **Heure et date** — vous permet de changer la date et l'heure pour observer le ciel à différents moments dans le passé ou le futur. Cela est utile pour planifier des observations, suivre le mouvement des objets ou apprendre comment le ciel change au fil du temps. Si vous définissez une date/heure personnalisée, la puce affiche la date et l'heure complètes, et un bouton de réinitialisation apparaît à côté pour revenir à l'heure système actuelle.
-- **Filtre de magnitude** — vous permet de limiter quelles étoiles sont affichées en fonction de leur luminosité. Utilisez le curseur pour définir la valeur maximale de magnitude. Des valeurs plus basses n'affichent que les étoiles les plus brillantes, tandis que des valeurs plus élevées révèlent des étoiles plus faibles et des objets du ciel profond. Cela aide à réduire l'encombrement visuel ou à simuler ce qui est visible à l'œil nu.
-- [**Configurer la vue**](#configure-view) — ouvre les paramètres d'affichage qui contrôlent comment les objets, les trajectoires et les lignes de référence sont affichés sur la Carte des étoiles.
+- **<Translate android="true" ids="magnitude_filter"/>** — vous permet de limiter quelles étoiles sont affichées en fonction de leur luminosité. Utilisez le curseur pour définir la valeur maximale de magnitude. Des valeurs plus basses n'affichent que les étoiles les plus brillantes, tandis que des valeurs plus élevées révèlent des étoiles plus faibles et des objets du ciel profond. Cela aide à réduire l'encombrement visuel ou à simuler ce qui est visible à l'œil nu.
+- [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — ouvre les paramètres d'affichage qui contrôlent comment les objets, les trajectoires et les lignes de référence sont affichés sur la Carte des étoiles.
 
 L'écran rend l'hémisphère céleste complet au-dessus de votre emplacement, aligné sur la direction de la boussole. La Carte des étoiles peut être rotée manuellement en faisant glisser l'écran. La rotation manuelle de la Carte des étoiles n'affecte pas l'orientation de la carte de la Terre. La carte de la Terre suit toujours le [mode d'orientation de la carte](../map/interact-with-map.md#map-orientation-modes) sélectionné dans vos paramètres. Appuyez sur les objets célestes pour obtenir des détails comme la magnitude, les heures de lever/coucher ou les trajectoires.
 
@@ -66,7 +64,7 @@ La Carte des étoiles peut également s'aligner sur l'orientation de votre appar
 
 ## Menu contextuel {#context-menu}
 
-![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+![Menu contextuel](@site/static/img/plugins/starwatcher/context_menu_view.png)
 
 Le **Menu contextuel** fournit des informations détaillées sur les objets célestes et des outils pour les observer. Il s'ouvre lorsque vous appuyez sur un objet céleste sur la Carte des étoiles.
 
@@ -76,37 +74,39 @@ Le Menu contextuel apparaît en bas de l'écran et contient des informations sur
 
 ### Informations sur l'objet {#object-information}
 
-![Object Information](@site/static/img/plugins/starwatcher/object_view.png)
+![Informations sur l'objet](@site/static/img/plugins/starwatcher/object_view_new.png) ![Informations sur l'objet](@site/static/img/plugins/starwatcher/object_view_2.png)
 
-La section supérieure du Menu contextuel affiche le nom et la classification de l'objet. Sous le nom, le type d'objet et sa constellation ou son groupe parent sont indiqués. Par exemple :  
+La section supérieure du Menu contextuel affiche le nom et la classification de l'objet. Sous le nom, le type d'objet et sa constellation ou son groupe parent sont indiqués. Par exemple :
 - **Beta Ursae Minoris** — Étoile • Ursa Minor
-- **Jupiter** — Planète • Système solaire
-- **Andromède** — Galaxie • Ciel profond
+- **<Translate android="true" ids="astro_name_moon"/>** — Satellite • Terre
+- **<Translate android="true" ids="astro_name_jupiter"/>** — Planète • Système solaire
 
 Des blocs d'informations rapides affichent les paramètres d'observation clés :  
-- Lever – l'heure à laquelle l'objet se lève au-dessus de l'horizon.
-- Coucher – l'heure à laquelle l'objet se couche sous l'horizon.
-- Azimut – la direction de l'objet par rapport au nord (0°–360°).
-- Altitude – la hauteur de l'objet au-dessus de l'horizon.
-- Magnitude – la luminosité de l'objet telle que vue depuis la Terre. 
+- <Translate android="true" ids="astro_rise"/> – l'heure à laquelle l'objet se lève au-dessus de l'horizon.
+- <Translate android="true" ids="astro_set"/> – l'heure à laquelle l'objet se couche sous l'horizon.
+- <Translate android="true" ids="shared_string_azimuth"/> – la direction de l'objet par rapport au nord (0°–360°).
+- <Translate android="true" ids="altitude"/> – la hauteur de l'objet au-dessus de l'horizon.
+- <Translate android="true" ids="shared_string_magnitude"/> – la luminosité de l'objet telle que vue depuis la Terre. 
 
 Ces valeurs se mettent à jour dynamiquement en fonction de l'heure sélectionnée et de l'emplacement de l'utilisateur.
 
-Sous les blocs d'informations rapides, le menu peut également inclure des informations et ressources supplémentaires sur l'objet :  
-- Lire sur Wikipédia – Ouvre l'article Wikipédia de l'objet. Si des données Wikipédia hors ligne sont disponibles, l'article peut être ouvert sans connexion Internet ; sinon, la page s'ouvre dans le navigateur.
-- Photos en ligne – Affiche les photos disponibles liées à l'objet céleste sélectionné.
+Sous les blocs d'informations rapides, le menu peut également inclure des informations et ressources supplémentaires sur l'objet :
+- <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Vous permet de télécharger une base de données étendue avec des articles Wikipédia et des catalogues du ciel profond pour une utilisation hors ligne. Après le téléchargement, des informations détaillées sur les objets célestes peuvent être consultées directement dans l'application sans connexion Internet.
+- <Translate android="true" ids="read_on_wiki"/> – Ouvre l'article Wikipédia de l'objet dans le navigateur.
+- <Translate android="true" ids="astro_designations"/> – Affiche les noms alternatifs et les identifiants de catalogue pour l'objet (par exemple, HD, HIP, NGC). Cette section est disponible pour les objets qui ont des entrées de catalogue, tels que les étoiles et les objets du ciel profond. Si l'objet n'a pas de nom commun, l'un de ces désignations est utilisé comme nom principal.
+- <Translate android="true" ids="online_photos"/> – Affiche les photos disponibles liées à l'objet céleste sélectionné.
 
 ### Actions {#actions}
 
 Sous les informations sur l'objet, le Menu contextuel fournit plusieurs actions pour interagir avec l'objet céleste sélectionné :
-- **Enregistrer** – Ajoute l'objet à votre liste de Favoris pour un accès rapide.
-- **Localiser** – Centre l'objet sélectionné sur la Carte des étoiles.
-- **Direction** – Affiche la direction vers l'objet sur la carte, vous aidant à vous orienter lors de l'observation du ciel.
-- **Trajectoire** – Affiche la trajectoire quotidienne de l'objet à travers le ciel, vous permettant de voir comment il se déplace pendant la journée.
+- **<Translate android="true" ids="shared_string_save"/>** – Ajoute l'objet à votre liste de Favoris pour un accès rapide.
+- **<Translate android="true" ids="astro_locate"/>** – Centre l'objet sélectionné sur la Carte des étoiles.
+- **<Translate android="true" ids="astro_direction"/>** – Affiche la direction vers l'objet sur la carte, vous aidant à vous orienter lors de l'observation du ciel.
+- **<Translate android="true" ids="astro_path"/>** – Affiche la trajectoire quotidienne de l'objet à travers le ciel, vous permettant de voir comment il se déplace pendant la journée.
 
-### Graphique de visibilité {#actions}
+### Graphique de visibilité {#visibility-graph}
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility.png)
+![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_new.png)
 
 L'onglet **Visibilité** montre comment l'objet sélectionné se déplace à travers le ciel pendant une période de 24 heures.
 
@@ -130,27 +130,27 @@ La couleur de la trajectoire de l'objet reflète également son altitude :
 - rouge – proche de l'horizon
 - violet – sous l'horizon (non visible)
 
-Un indicateur mobile vous permet d'explorer la position de l'objet à différents moments. Lorsque l'indicateur est déplacé, l'heure actuelle, l'altitude et les valeurs d'azimut sont mises à jour.
+Un indicateur mobile vous permet d'explorer la position de l'objet à différents moments. Lorsque l'indicateur est déplacé, l'heure actuelle, l'altitude et les valeurs d'azimut sont mises à jour. La valeur d'azimut inclut également la direction de la boussole correspondante (par exemple, 354° Az (N)).
 
 Sous le graphique, les événements d'observation importants sont affichés : 
-- **Lever** – quand l'objet se lève au-dessus de l'horizon.
-- **Culmination** – quand l'objet atteint son altitude la plus élevée.
-- **Coucher** – quand l'objet se couche sous l'horizon.
+- **<Translate android="true" ids="astro_rise"/>** – quand l'objet se lève au-dessus de l'horizon.
+- **<Translate android="true" ids="astro_culmination"/>** – quand l'objet atteint son altitude la plus élevée.
+- **<Translate android="true" ids="astro_set"/>** – quand l'objet se couche sous l'horizon. Si l'objet ne se lève jamais ou ne se couche jamais, les valeurs correspondantes sont masquées.
 
-Le graphique s'ouvre avec l'indicateur positionné à l'heure système actuelle. L'emplacement utilisé pour les calculs est indiqué sous le graphique.
+Le graphique s'ouvre avec l'indicateur positionné à l'heure système actuelle. L'emplacement utilisé pour les calculs est indiqué sous le graphique. L'emplacement est affiché sous forme de nom de ville.
 
 ### Calendrier d'observation {#actions}
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule.png)
+![Calendrier d'observation](@site/static/img/plugins/starwatcher/schedule_new.png)
 
 L'onglet **Calendrier** affiche la visibilité de l'objet sélectionné pour la semaine en cours. Chaque ligne représente un jour et inclut :  
 - le jour de la semaine
 - la date
 - l'heure de lever
-- l'heure de coucher
+- l'heure de coucher. Si l'heure de coucher se produit le lendemain, elle est marquée avec ⁺¹
 - un petit graphique de visibilité pour ce jour
 
-Le mini graphique montre quand l'objet est visible pendant la journée et comment son altitude change. La section colorée de la barre représente la période où l'objet est au-dessus de l'horizon.
+Le mini graphique montre quand l'objet est visible pendant la journée et comment son altitude change. La section colorée de la barre représente la période où l'objet est au-dessus de l'horizon. Le mini graphique représente la plage horaire de 00:00 à 23:59 pour le jour sélectionné.
 
 Vous pouvez naviguer entre les semaines en utilisant les boutons fléchés dans l'en-tête du Calendrier. Le bouton calendrier vous permet de revenir à la semaine actuelle.
 
@@ -177,7 +177,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## Recherche d'étoiles en RA (Mode Caméra) {#ar-star-finding}
 
-**Accéder à :** *Plugin activé → Menu → Carte des étoiles → Bouton Caméra* 
+**Accéder à :** *Plugin activé → <Translate android="true" ids="shared_string_menu,star_map"/> → Bouton Caméra* 
 
 La couche **Astronomie** fonctionne avec la **caméra de votre appareil** pour activer la **réalité augmentée (RA) pour l'observation des étoiles**. Pointez la caméra de votre téléphone vers le vrai ciel nocturne et voyez des étoiles, des planètes, des constellations, le Soleil/Lune superposés en temps réel.
 
@@ -197,36 +197,36 @@ Le mode RA utilise les capteurs de l'appareil (gyroscope, accéléromètre et bo
 
 ## Configurer la vue {#configure-view}
 
-![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+![Configurer la vue](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configurer la vue](@site/static/img/plugins/starwatcher/full_state.png)
 
-**Configurer la vue** vous permet de contrôler l'affichage de la Carte des étoiles en activant ou désactivant les modes visuels, les objets et les aides à la visualisation.
+**<Translate android="true" ids="astro_configure_view"/>** vous permet de contrôler l'affichage de la Carte des étoiles en activant ou désactivant les modes visuels, les objets et les aides à la visualisation.
 
 Pour ouvrir Configurer la vue, appuyez sur le bouton Configurer la vue dans le coin inférieur droit de l'écran de la Carte des étoiles. Le bouton est représenté par une icône de style couche (formes empilées), indiquant les paramètres d'affichage et de couche. Configurer la vue s'ouvre en *État moitié*, affichant les options d'affichage principales. Faites glisser le panneau vers le haut pour l'étendre en *État complet* et accéder à tous les paramètres disponibles. Pour fermer Configurer la vue, faites glisser le panneau vers le bas une fois pour revenir à l'État moitié, faites glisser vers le bas à nouveau pour le fermer complètement, ou appuyez n'importe où sur la carte en dehors du panneau. Vous pouvez également appuyer sur le bouton Fermer (X) dans le coin supérieur droit du panneau.
 
 ### Modes et actions {#modes-and-actions}
 
-![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+![Configurer la vue](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configurer la vue](@site/static/img/plugins/starwatcher/red_filter_new.png)
 
 Cette section contrôle les modes d'affichage principaux de la Carte des étoiles.
 
-- **2D / 3D**. Bascule entre une vue de trajectoire céleste (2D), qui affiche le ciel comme un dôme projeté avec des trajectoires d'objets, et une vue de ciel style globe (3D) représentant la sphère céleste.
-- **Carte**. Active une vue de carte de la Terre supplémentaire affichée sous la Carte des étoiles, vous permettant de relier les objets célestes à vos environs géographiques réels.
-- **Filtre rouge**. Applique un filtre de couleur rouge à l'ensemble de l'écran pour réduire la pollution lumineuse et préserver la vision nocturne pendant les observations en ciel sombre.
+- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Bascule entre une vue de trajectoire céleste (2D), qui affiche le ciel comme un dôme projeté avec des trajectoires d'objets, et une vue de ciel style globe (3D) représentant la sphère céleste.
+- **<Translate android="true" ids="shared_string_map"/>**. Active une vue de carte de la Terre supplémentaire affichée sous la Carte des étoiles, vous permettant de relier les objets célestes à vos environs géographiques réels.
+- **<Translate android="true" ids="red_filter"/>**. Applique un filtre de couleur rouge à l'ensemble de l'écran pour réduire la pollution lumineuse et préserver la vision nocturne pendant les observations en ciel sombre.
 
 ### Objets visibles {#visible-objects}
 
-![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+![Configurer la vue](@site/static/img/plugins/starwatcher/solar_system.png) ![Configurer la vue](@site/static/img/plugins/starwatcher/constellations.png)
 
 Cette section vous permet de choisir quels types d'objets célestes sont affichés sur la Carte des étoiles.
 
 | Objet | Description |
 |-------|-------------|
-| Système solaire | Affiche le Soleil, la Lune et les planètes visibles. |
-| Constellations | Affiche les lignes et motifs des constellations formés par les étoiles. |
-| Étoiles | Affiche les étoiles individuelles visibles sur la Carte des étoiles. |
-| Nébuleuses | Affiche les objets nébuleux là où ils sont disponibles. |
-| Amas d'étoiles | Affiche les amas d'étoiles en tant qu'objets célestes distincts. |
-| Ciel profond | Active/désactive les objets du ciel profond tels que les galaxies, les amas de galaxies et les trous noirs. |
+| <Translate android="true" ids="astro_solar_system"/> | Affiche le Soleil, la Lune et les planètes visibles. |
+| <Translate android="true" ids="astro_constellations"/> | Affiche les lignes et motifs des constellations formés par les étoiles. |
+| <Translate android="true" ids="astro_stars"/> | Affiche les étoiles individuelles visibles sur la Carte des étoiles. |
+| <Translate android="true" ids="astro_nebulas"/> | Affiche les objets nébuleux là où ils sont disponibles. |
+| <Translate android="true" ids="astro_star_clusters"/> | Affiche les amas d'étoiles en tant qu'objets célestes distincts. |
+| <Translate android="true" ids="astro_deep_sky"/> | Active/désactive les objets du ciel profond tels que les galaxies, les amas de galaxies et les trous noirs. |
 
 ### Options d'affichage personnelles {#personal-display-options}
 
@@ -234,9 +234,9 @@ Les **options d'affichage personnelles** contrôlent les aides visuelles supplé
 
 | Option | Description |
 |-------|-------------|
-| Direction | Affiche un indicateur directionnel pour aider à orienter votre vue. |
-| Trajectoire quotidienne | Affiche la trajectoire quotidienne des objets célestes sélectionnés à travers le ciel. |
-| Favoris | Met en évidence ou affiche les objets marqués comme favoris. |
+| <Translate android="true" ids="astro_direction"/> | Affiche un indicateur directionnel pour aider à orienter votre vue. |
+| <Translate android="true" ids="astro_daily_path"/> | Affiche la trajectoire quotidienne des objets célestes sélectionnés à travers le ciel. |
+| <Translate android="true" ids="shared_string_favorites"/> | Met en évidence ou affiche les objets marqués comme favoris. |
 
 ### Aides à la visualisation {#rendering-aids}
 
@@ -244,12 +244,12 @@ Les **aides à la visualisation** ajoutent des lignes de référence et des gril
 
 | Aide | Description |
 |-------|-------------|
-| Grille azimutale | Ajoute une grille basée sur l'azimut pour l'orientation horizontale du ciel. |
-| Ligne de méridien | Affiche la ligne de méridien traversant le ciel du nord au sud. |
-| Grille équatoriale | Affiche la grille de coordonnées équatoriales célestes. |
-| Ligne d'écliptique | Affiche la ligne d'écliptique représentant la trajectoire apparente du Soleil. |
-| Ligne d'équateur | Affiche la projection équatoriale de la Terre sur la sphère céleste, aidant à visualiser la rotation de la Terre par rapport au ciel. |
-| Ligne galactique | Affiche le plan de la galaxie Voie lactée à travers le ciel, indiquant la direction principale du disque galactique. |
+| <Translate android="true" ids="azimuthal_grid"/> | Ajoute une grille basée sur l'azimut pour l'orientation horizontale du ciel. |
+| <Translate android="true" ids="meridian_line"/> | Affiche la ligne de méridien traversant le ciel du nord au sud. |
+| <Translate android="true" ids="equatorial_grid"/> | Affiche la grille de coordonnées équatoriales célestes. |
+| <Translate android="true" ids="ecliptic_line"/> | Affiche la ligne d'écliptique représentant la trajectoire apparente du Soleil. |
+| <Translate android="true" ids="equator_line"/> | Affiche la projection équatoriale de la Terre sur la sphère céleste, aidant à visualiser la rotation de la Terre par rapport au ciel. |
+| <Translate android="true" ids="galactic_line"/> | Affiche le plan de la galaxie Voie lactée à travers le ciel, indiquant la direction principale du disque galactique. |
 
 <!-- 
 ## Astronomy Settings
@@ -274,7 +274,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Recherche {#search}
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Recherche](@site/static/img/plugins/starwatcher/explore_screen.png)
 
 La fonctionnalité **Recherche** dans le plugin Astronomie vous permet de trouver des objets célestes, d'explorer les catégories du ciel et d'accéder aux données d'observation. Pour ouvrir la Recherche, appuyez sur le bouton Recherche sur la Carte des étoiles. Cela ouvre l'écran de Recherche, qui fournit plusieurs sections pour découvrir et organiser les objets célestes. L'écran de Recherche inclut les sections suivantes :
 
@@ -288,45 +288,45 @@ La section Catégories vous permet de parcourir les objets par type : Système s
 
 ### Tri et filtres {#sorting-and-filters}
 
-![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+![Tri](@site/static/img/plugins/starwatcher/sorting.png) ![Filtres](@site/static/img/plugins/starwatcher/filters.png)
 
 Appuyez sur la barre de recherche pour ouvrir l'interface de recherche complète. Vous pouvez affiner les résultats en utilisant les options de tri et de filtrage.
 
 Vous pouvez trier les objets par :  
 - Nom (A–Z ou Z–A)
-- Les plus brillantes en premier
-- Les plus faibles en premier
-- Levez le plus tôt
-- Coucher le plus tôt
+- <Translate android="true" ids="astro_sort_brightest_first"/>
+- <Translate android="true" ids="astro_sort_faintest_first"/>
+- <Translate android="true" ids="astro_sort_rises_soonest"/>
+- <Translate android="true" ids="astro_sort_sets_soonest"/>
 
 Les filtres aident à réduire les objets visibles.
 
 **Visibilité**  
-- Afficher tout — affiche tous les objets
-- Visible maintenant — objets actuellement au-dessus de l'horizon
-- Visible ce soir — objets visibles entre le coucher et le lever du soleil
+- <Translate android="true" ids="astro_filter_show_all"/> — affiche tous les objets
+- <Translate android="true" ids="astro_filter_visible_now"/> — objets actuellement au-dessus de l'horizon
+- <Translate android="true" ids="astro_filter_visible_tonight"/> — objets visibles entre le coucher et le lever du soleil
 
 **Filtres supplémentaires**  
-- Visible à l'œil nu — n'affiche que les objets avec une magnitude ≤ 6
+- <Translate android="true" ids="astro_filter_naked_eye"/> — n'affiche que les objets avec une magnitude ≤ 6
 
 **Catégories**  
 Vous pouvez filtrer les résultats par type d'objet. Sélectionner des catégories spécifiques désactive automatiquement l'option Tout.
 
 ### Mes données {#my-data}
 
-![My Data](@site/static/img/plugins/starwatcher/my_data.png)
+![Mes données](@site/static/img/plugins/starwatcher/my_data_new.png)
 
 La section Mes données contient les objets avec lesquels l'utilisateur a interagi. Cette section inclut trois listes :
 
-- Favoris — objets enregistrés depuis le menu contextuel.
-- Trajectoire quotidienne — objets pour lesquels la trajectoire de mouvement quotidienne est activée.
-- Directions — objets avec un indicateur de direction actif sur la Carte des étoiles.
+- <Translate android="true" ids="shared_string_favorites"/> — objets enregistrés depuis le menu contextuel.
+- <Translate android="true" ids="astro_daily_path"/> — objets pour lesquels la trajectoire de mouvement quotidienne est activée.
+- <Translate android="true" ids="astro_directions"/> — objets avec un indicateur de direction actif sur la Carte des étoiles.
 
 Sélectionner un élément ouvre le menu contextuel de l'objet.
 
 ### Catalogues {#catalogs}
 
-![Catalogs](@site/static/img/plugins/starwatcher/catalogs.png)
+![Catalogues](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
 La section Catalogues fournit un accès aux catalogues astronomiques disponibles dans le plugin Astronomie.
 
@@ -337,4 +337,3 @@ Les catalogues contiennent de grandes collections d'objets célestes tels que de
 - [Interagir avec la carte](../../user/map/interact-with-map.md)
 - [Paramètres globaux](../../user/personal/global-settings.md)
 - [Cartes vectorielles](../../user/map/vector-maps.md)
-

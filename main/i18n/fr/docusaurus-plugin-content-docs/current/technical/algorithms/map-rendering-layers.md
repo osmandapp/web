@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -43,20 +43,20 @@ D'autres couches peuvent être instanciées dans des plugins.
 | DownloadedRegionsLayer            | -1 100 000   | Polygones | Affiche les régions téléchargées          |
 | Icônes (MapVectorLayer)           | -1 000 000   | Points   | Carte vectorielle, iconOrder dans le style avec [ajout de 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (lignes)                 | -500 000     | Lignes   | Lignes de trace             |
-| RouteLayer (point de surbrillance du graphique)| -197 900 | Point    | Analyse de l'itinéraire de navigation sur la carte  |
-| RouteLayer (points de l'axe des x du graphique) | -198 000 | Points   | Analyse de l'itinéraire de navigation sur la carte  |
-| RouteLayer (flèches de virage)    | -199 000     | Lignes   | Itinéraire de navigation                  |
 | RouteLayer                        | -200 000     | Lignes   | Itinéraire de navigation                  |
+| RouteLayer (flèches de virage)    | -199 000     | Lignes   | Itinéraire de navigation                  |
+| RouteLayer (points de l'axe des x du graphique) | -198 000 | Points   | Analyse de l'itinéraire de navigation sur la carte  |
+| RouteLayer (point de surbrillance du graphique)| -197 900 | Point    | Analyse de l'itinéraire de navigation sur la carte  |
 | Texte (MapVectorLayer)            | 1 - 255      | Texte    | Carte vectorielle, textOrder dans le [style](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), 100 par défaut                 |
 | Boucliers (MapVectorLayer)        | 1 - 255      | Boucliers | Carte vectorielle, textOrder dans le style pour les boucliers, 100 par défaut |
 | Début, fin de trace GPX           | 90 101       | Points   | GPXLayer                          |
-| Point de cheminement GPX          | 90 300       | Points   | GPXLayer                          |
-| GPXLayer (nom du point de cheminement) | 90 300   | Texte    | Nom des points de cheminement                    |
+| Point de cheminement de trace GPX | 90 300       | Points   | GPXLayer                          |
+| GPXLayer (nom wpt)                | 90 300       | Texte    | Nom des points de cheminement                    |
 | Icône du graphique de trace GPX   | 90 500       | Points   | GPXLayer                          |
 | Icône sélectionnée de trace GPX   | 90 600       | Points   | GPXLayer                          |
 | Notes OSM (OsmBugsLayer)          | 200 000      | Points   | Notes OSM                         |
-| Icône Fixme (OsmBugsLayer)        | 200 000      | Points   | Icônes Fixme OSM                   |
-| Texte Fixme (OsmBugsLayer)        | 200 000      | Texte    | Texte Fixme OSM                    |
+| Icône Fixme (OsmBugsLayer)        | 200 000      | Points   | Icônes fixme OSM                   |
+| Texte Fixme (OsmBugsLayer)        | 200 000      | Texte    | Texte fixme OSM                    |
 | POIMapLayer (icône)               | 300 000      | Points   | Superposition de POI                       |
 | POIMapLayer (nom)                 | 300 000      | Texte    | Nom de la superposition de POI                  |
 | AudioNotesLayer                   | 350 000      | Points   | Plugin de notes audio/vidéo          |
@@ -66,7 +66,7 @@ D'autres couches peuvent être instanciées dans des plugins.
 | TransportStopsLayer               | 500 001      | Points   | Arrêts de transport public            |
 | MapTextLayer                      | 595 000      | Texte    | Texte pour différentes couches, rendu sur canevas |
 | PointLocationLayer                | 600 000      | Points   | Ma position                       |
-| PointNavigationLayer              | 700 000      | Points   | Points de départ/arrivée en navigation |
+| PointNavigationLayer              | 700 000      | Points   | Points de départ/fin en navigation |
 | PointNavigationLayer              | 700 600      | Points   | Point sélectionné en navigation      |
 | MapMarkersLayer (ligne)           | 729 999      | Lignes   | Ligne pointillée vers les marqueurs de carte        |
 | MapMarkersLayer (texte)           | 730 000      | Texte    | Texte sur la ligne. Rendu sur canevas    |
@@ -110,7 +110,7 @@ D'autres couches peuvent être instanciées dans des plugins.
 | ---------------------------- | -----------: | -------- | ------------------------------------------------------------------------------------------ |
 | Icônes                       | -1 000 000   | Points   | Carte vectorielle, iconOrder dans le style avec [ajout de 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | Texte                        | 1 - 255      | Texte    | Carte vectorielle, textOrder dans le style, 100 par défaut             |
-| Boucliers                     | 1 - 255      | Boucliers | Carte vectorielle, textOrder dans le style pour les boucliers, 100 par défaut |
+| Boucliers                    | 1 - 255      | Boucliers | Carte vectorielle, textOrder dans le style pour les boucliers, 100 par défaut |
 | OADownloadedRegionsLayer     | 10 000       | Polygones | Affiche les régions vertes téléchargées |
 | Icône POI (OAPOILayer)       | 90 000       | Points   | Superposition de POI                 |
 | Nom POI (OAPOILayer)         | 90 000       | Texte    | Nom de la superposition de POI            |
@@ -119,8 +119,8 @@ D'autres couches peuvent être instanciées dans des plugins.
 | Icône du point de cheminement GPX | 100 003  | Points   | Points de cheminement GPX               |
 | Début, fin de trace GPX      | 120 000      | Points   | OAGPXLayer                  |
 | Notes OSM (OAOsmBugsLayer)   | 120 000      | Texte    | Notes OSM                   |
-| Texte Fixme (OAOsmBugsLayer) | 120 000      | Texte    | Texte Fixme OSM              |
-| Icône Fixme (OAOsmBugsLayer) | 120 000      | Points   | Icône Fixme OSM              |
+| Texte Fixme (OAOsmBugsLayer) | 120 000      | Texte    | Texte fixme OSM              |
+| Icône Fixme (OAOsmBugsLayer) | 120 000      | Points   | Icône fixme OSM              |
 | OAOsmEditsLayer              | 120 000      | Points   | Plugin d'édition OSM             |
 | OAPreviewRouteLineLayer      | 120 000      | Lignes   | Options d'itinéraire de prévisualisation       |
 | OATransportStopsLayer (lignes)| 120 000     | Lignes   | Lignes de transport public       |

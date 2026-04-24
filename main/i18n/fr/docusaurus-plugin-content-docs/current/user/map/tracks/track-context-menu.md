@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -248,7 +248,7 @@ Cette section de l'onglet *Aperçu* affiche les ***données des balises*** et **
 
 La fonction *Activité* dans OsmAnd vous permet de marquer les traces GPX enregistrées avec des activités spécifiques pour une analyse plus approfondie et une organisation dans des dossiers.
 
-- [Balises d'activité pour les traces GPX](../../plugins/trip-recording.md#recording-settings). Les traces enregistrées reçoivent automatiquement un type d'activité basé sur le profil sélectionné, ce qui aide à les catégoriser et à les filtrer ultérieurement. Vous pouvez modifier l'activité manuellement si nécessaire.
+- [Balises d'activité pour les traces GPX](../../plugins/trip-recording.md#recording-settings). Les traces enregistrées et les traces enregistrées via [Planifier un itinéraire](../../plan-route/create-route.md) reçoivent automatiquement un type d'activité basé sur le profil utilisé pour les créer. Cela aide à les catégoriser et à les filtrer ultérieurement. Vous pouvez modifier l'activité manuellement si nécessaire.
 - [Filtre d'activité](../../personal/tracks/smart-folder.md#search-filter). Vous pouvez filtrer les traces GPX enregistrées par activité, ce qui vous permet de vous concentrer sur la recherche de types d'enregistrements spécifiques, comme toutes les traces de vélo ou de randonnée.
 - [Gérer les types d'activité](../../personal/tracks/manage-tracks.md#selection-mode). Vous pouvez modifier le type d'activité pour les dossiers ou les traces sélectionnés en utilisant le mode de sélection dans l'onglet Traces du menu Mes lieux.
 - **Liste d'activités**. Les catégories et groupes d'activités sont définis dans les ressources d'OsmAnd. Pour les développeurs et les contributeurs, la liste des activités est maintenue dans un format structuré à l'adresse [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), qui détaille les groupes et types d'activités disponibles.
@@ -392,7 +392,7 @@ Les waypoints sont l'un des types de points disponibles sur la carte. En génér
 
 <TabItem value="android" label="Android">
 
-![Points du menu contextuel de la trace Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Points du menu contextuel de la trace Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ Dans cet onglet *Points* :
 
 - [Afficher les données des points de la trace](#display-custom-gpx-tags) et modifier vos points de trace (waypoints et points d'itinéraire), les [supprimer et ajouter](#points--waypoints) des waypoints à une trace.
 - Créer et modifier un [Groupe (dossier) de points](#waypoint-groups).
+- Centrer la carte sur un waypoint en utilisant l'icône de goupille dans la liste des waypoints (*Android uniquement*) sans fermer la liste, ce qui vous permet de prévisualiser les waypoints un par un.
 
 
 ### Ajouter un waypoint à une trace {#add-waypoint-to-a-track}

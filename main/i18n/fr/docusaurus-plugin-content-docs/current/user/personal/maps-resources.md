@@ -1,5 +1,5 @@
 ---
-source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
+source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -130,7 +130,7 @@ L'onglet **Télécharger** vous permet de télécharger divers types de cartes d
 - **Compteur de cartes** (***Version gratuite***). Affiche le nombre de cartes qu'il vous reste à télécharger.
 - [Cartes supplémentaires](#extra-maps). Affiche les données cartographiques pour le [paquetage personnalisé](../plugins/custom.md).
 - **Régions**. Liste par continent et région du monde : *Afrique, Antarctique, Asie, Australie et Océanie, Amérique centrale, Europe, Amérique du Nord, Russie et Amérique du Sud.*
-- [Cartes du monde](#world-maps). Une liste de cartes du monde entier : *Correction d'altitude mondiale (Android uniquement)*, *Carte générale du monde*, *Monde entier (Prévisions météo)*
+- [Cartes du monde](#world-maps). Une liste de cartes du monde entier : *<Translate android="true" ids="index_item_world_altitude_correction"/> (Android uniquement)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Carte météo mondiale*
 - [Cartes marines](../plugins/nautical-charts.md) ([*fonctionnalité payante*](../purchases/index.md)). Cartes vectorielles avec des altitudes sous forme de points ou de lignes.
 - [Guides de voyage (Wikivoyage)](../plan-route/travel-guides.md) ([*fonctionnalité payante*](../purchases/index.md)). Cartes vectorielles avec une collection d'articles au format HTML et des fichiers GPX supplémentaires.
 - **Autres cartes**. Cartes qui ne peuvent pas être assignées à la hiérarchie de cartes actuelle car elles ne sont pas prises en charge ou seront disponibles dans les versions futures.
@@ -142,9 +142,9 @@ L'onglet **Télécharger** vous permet de télécharger divers types de cartes d
 
 Dans le menu Télécharger les cartes, il y a une section **Cartes du monde** qui donne accès au téléchargement de diverses cartes du monde, complétant ainsi les fonctionnalités de l'application.  
 
-- **Correction d'altitude mondiale** (*Android uniquement*). Ce fichier contient des corrections d'altitude pour compenser la courbure planétaire.
-- **Carte générale du monde**. Fournit un aperçu étendu de la surface de la Terre, utile pour la planification d'itinéraires à long terme et l'exploration occasionnelle.
-- **Monde entier (Prévisions météo)**. Permet de télécharger une carte avec des informations météorologiques.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Android uniquement*). Ce fichier contient des corrections d'altitude pour compenser la courbure planétaire.
+- **<Translate android="true" ids="index_item_world_basemap"/>**. Fournit un aperçu étendu de la surface de la Terre, utile pour la planification d'itinéraires à long terme et l'exploration occasionnelle.
+- **Carte météo mondiale**. Permet de télécharger une carte avec des informations météorologiques.
 
 
 ### Cartes supplémentaires {#extra-maps}
@@ -243,7 +243,9 @@ Appuyez sur n'importe quel élément de l'onglet **Local** pour ouvrir sa liste 
 - **Menu à trois points** :  
     ***Sélectionner***. Choisir plusieurs éléments pour des actions comme *Supprimer*, *Désactiver* ou *Activer*.  
     ***Importer***. Accéder au stockage de l'appareil pour importer des fichiers.
-- **Option de tri**. Trier les éléments par nom, pays, date ou taille (la disponibilité dépend du type de données).
+- **Option de tri**. Trier les éléments par nom, pays, date ou taille (la disponibilité dépend du type de données).  
+
+Pour les cartes standard, certains éléments peuvent être regroupés par région. Dans ces cas, chaque entrée de carte affiche à la fois la sous-région et sa région parente. L'ordre de ces noms dépend de la méthode de tri sélectionnée : lors du tri par nom, la sous-région est affichée en premier, suivie de la région ; lors du tri par pays, la région est affichée en premier, suivie de la sous-région.
 
 Chaque élément de la liste propose un *menu à trois points* avec des options :
 
@@ -436,7 +438,7 @@ L'onglet **Mises à jour** vous permet de rafraîchir les cartes et les ressourc
 
 Utilisez le bouton *Tout mettre à jour* pour mettre à jour toutes les cartes simultanément, ou mettez à jour les cartes individuelles selon vos besoins. Pour les mises à jour horaires, vérifiez l'état de votre abonnement aux [Mises à jour en direct](#live-updates). Si cette option est activée, la section **Mises à jour en direct** apparaîtra en haut de l'onglet, sous l'indicateur de mémoire de l'appareil.
 
-L'onglet **Mises à jour** peut également afficher un élément **Cartes non prises en charge**. Il apparaît lorsque vous avez des cartes qui ne sont plus prises en charge et qui ont été remplacées par des régions plus petites. Appuyez sur Cartes non prises en charge pour examiner la liste, supprimer les cartes obsolètes et télécharger les nouvelles versions de régions à la place. Sur l'écran Cartes non prises en charge, vous pouvez visualiser toutes les cartes non prises en charge et utiliser Supprimer tout pour les supprimer en une fois (un invite de confirmation est affiché avant la suppression).
+L'onglet **Mises à jour** peut également afficher un élément **<Translate ios="true" ids="unsupported_maps"/>**. Il apparaît lorsque vous avez des cartes qui ne sont plus prises en charge et qui ont été remplacées par des régions plus petites. Appuyez sur <Translate ios="true" ids="unsupported_maps"/> pour examiner la liste, supprimer les cartes obsolètes et télécharger les nouvelles versions de régions à la place. Sur l'écran <Translate ios="true" ids="unsupported_maps"/>, vous pouvez visualiser toutes les cartes non prises en charge et utiliser Supprimer tout pour les supprimer en une fois (un invite de confirmation est affiché avant la suppression).
 
 L'onglet **Mises à jour** comprend également une section Prévisions météo. Elle est conçue pour gérer vos prévisions hors ligne pour les pays sélectionnés :
 
@@ -468,7 +470,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Menu Cartes OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Menu Cartes OsmAnd live modifier iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Menu Cartes OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Menu Cartes OsmAnd live modifier iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 
@@ -484,7 +486,7 @@ Fonctionnalités clés :
 
 - **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Mises à jour en direct**. Gérez via un interrupteur dans les paramètres.
 - Bouton **&#8230; &#124;** (*Android*) / Bouton **&#62;** (*iOS*). Ouvre les paramètres des *Mises à jour en direct*.
-- **Sélecteur**(*Android*) / Bouton **&#43;** (*iOS*). Ajoute des cartes pour les *mises à jour en direct*.
+- **Interrupteur**(*Android*) / Bouton **&#43;** (*iOS*). Ajoute des cartes pour les *mises à jour en direct*.
 - **<Translate android="true" ids="update_frequency"/>**. Sélectionnez la fréquence de mise à jour de la carte (horaire, quotidienne ou hebdomadaire).
 - **<Translate android="true" ids="update_now"/>**. Démarre les *mises à jour en direct* pour la carte.
 - **<Translate android="true" ids="updates_size"/>**(*Android*) / **<Translate ios="true" ids="osmand_live_updates_size"/>**(*iOS*). Taille des *mises à jour en direct*.

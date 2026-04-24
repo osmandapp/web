@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Lorsque vous cliquez sur Sélectionner une piste, le navigateur ouvre un sélect
 
 ## Détails de l'itinéraire {#route-details}
 
-![Navigation Web](@site/static/img/web/navigation_info.png) ![Navigation Web](@site/static/img/web/navigation_turns.png)
+![Navigation Web](@site/static/img/web/navigation_overview.png) ![Navigation Web](@site/static/img/web/navigation_turns_new.png)
 
-Lorsque un itinéraire est calculé, le panneau affiche un résumé de base (distance, temps, montée/descente) et un bouton **Détails**. Utilisez Détails pour ouvrir la vue de l'itinéraire avec deux onglets : Info et Virages.
+Lorsque un itinéraire est calculé, le panneau affiche un résumé de base (distance, temps, montée/descente) et un bouton **Détails**. Utilisez Détails pour ouvrir la vue de l'itinéraire avec plusieurs onglets. Les onglets principaux incluent Aperçu, Piste et Points. L'onglet Virages est disponible via la flèche (›) dans la barre d'onglets.
 
-Info résume l'itinéraire et les données d'altitude :
+Aperçu résume l'itinéraire et les données d'altitude :
 - **Points** — le nombre de points d'itinéraire utilisés pour construire l'itinéraire.
 - **Itinéraire** — distance et temps.
 - **Montée/Descente** — ascension et descente totales.

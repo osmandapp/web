@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Enregistrement de trajet
 ---
@@ -414,13 +414,13 @@ Certains widgets d'enregistrement de trajet prennent en charge plusieurs modes d
 
 | **Widget** | **Modes disponibles**  |
 |-------|-------------|
-| Pente moyenne | Dernière descente ; Dernière montée |
-| Vitesse moyenne *(Android uniquement)* | Moyenne du trajet (par défaut) ; Dernière descente ; Dernière montée |
-| Distance (Démarrer-Arrêter) | Moyenne du trajet (par défaut) ; Dernière descente ; Dernière montée |
-| Dénivelé négatif | Total (par défaut) ; Dernière descente |
-| Vitesse max. | Total (par défaut) ; Dernière descente ; Dernière montée |
-| Temps en mouvement | Total (par défaut) ; Dernière descente ; Dernière montée |
-| Dénivelé positif | Total (par défaut) ; Dernière montée |
+| Pente moyenne | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Vitesse moyenne *(Android uniquement)* | Moyenne du trajet (par défaut); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distance (Démarrer-Arrêter) | Moyenne du trajet (par défaut); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Dénivelé négatif | Total (par défaut); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Vitesse max. | Total (par défaut); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Temps en mouvement | Total (par défaut); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Dénivelé positif | Total (par défaut); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Le basculement de mode dépend du widget :
 - Dénivelé positif / Dénivelé négatif / Vitesse max. / Pente moyenne / Temps en mouvement / Vitesse moyenne — appuyez sur le widget sur la carte pour basculer son mode.

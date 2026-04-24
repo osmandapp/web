@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -86,8 +86,8 @@ L'écran *Toutes les couleurs* affiche les palettes disponibles. Appuyez sur le 
 - Supprimer. La suppression d'une palette nécessite une confirmation.
 
 Appuyez sur le bouton + dans l'écran Toutes les couleurs. Deux types de palettes sont disponibles :
-- **Relative** — les couleurs s'adaptent automatiquement en fonction des valeurs minimales et maximales de la trace.
-- **Valeurs fixes** — les couleurs sont assignées à des nombres absolus spécifiques (par exemple, 50 km/h). Les valeurs peuvent être modifiées manuellement. Les unités suivent les [paramètres système](../../personal/profiles.md#units--formats). L'échelle de couleurs ne se redimensionne pas automatiquement lors de l'application à différentes traces.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — les couleurs s'adaptent automatiquement en fonction des valeurs minimales et maximales de la trace.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — les couleurs sont assignées à des nombres absolus spécifiques (par exemple, 50 km/h). Les valeurs peuvent être modifiées manuellement. Les unités suivent les [paramètres système](../../personal/profiles.md#units--formats). L'échelle de couleurs ne se redimensionne pas automatiquement lors de l'application à différentes traces.
 
 :::info Pro feature
 La création de palettes personnalisées est une fonctionnalité payante [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.

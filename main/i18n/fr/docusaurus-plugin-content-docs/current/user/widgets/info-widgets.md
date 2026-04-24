@@ -1,5 +1,5 @@
 ---
-source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
+source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -222,7 +222,7 @@ Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse*
 
 **Utilisation des widgets :**
 
-- *Planification de vols de plaine.* Pour les pilotes de vol à voile, le widget *Finesse vers la cible* devient un outil indispensable lors de la planification et de l'exécution de vols de plaine. Les pilotes peuvent estimer jusqu'où ils peuvent voler vers leur cible compte tenu des conditions actuelles et de la finesse requise.
+- *Planification de vols à voile.* Pour les pilotes de vol à voile, le widget *Finesse vers la cible* devient un outil indispensable lors de la planification et de l'exécution de vols à voile. Les pilotes peuvent estimer jusqu'où ils peuvent voler vers leur cible compte tenu des conditions actuelles et de la finesse requise.
 - *Optimiser les montées et les descentes.* La finesse moyenne permet aux pilotes d'optimiser les montées et les descentes en fonction des conditions actuelles. Les pilotes peuvent choisir le moment optimal pour les montées afin de maximiser le temps de vol, ou pour les descentes afin d'atteindre un point cible.
 - *Réagir aux conditions changeantes.* Le widget fournit des mises à jour continues de la finesse, permettant aux pilotes de réagir instantanément aux changements des conditions atmosphériques ou des itinéraires. Ils peuvent ajuster leur plan de vol pour garantir la sécurité et l'efficacité.
 - *Utilisation maximale de la distance horizontale.* Connaître la finesse permet aux pilotes de maximiser l'utilisation de la distance horizontale pour se déplacer vers la cible, ce qui est particulièrement important lors de la planification de longs vols.
@@ -768,25 +768,26 @@ Les **widgets de la caméra** vous permettent de surveiller l'alignement entre l
 | Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### RAM disponible {#available-ram}
+#### Infos mémoire {#memory-info}
 
 <InfoAndroidOnly />
 
-![RAM disponible](@site/static/img/widgets/available_RAM_2_andr.png)
+![Widgets d'infos mémoire](@site/static/img/widgets/memory_info.png)
 
-Le widget **RAM disponible** est un outil pour surveiller l'utilisation de la mémoire de votre appareil par rapport à OsmAnd. Il fournit des données détaillées pour aider à optimiser les performances de l'application.
+Le widget **Infos mémoire** est un outil pour développeurs permettant de surveiller l'utilisation de la mémoire de l'appareil par OsmAnd. Il fournit des informations sur les différents types de mémoire utilisés par l'application.
 
-- **RAM disponible pour l'application.** Affiche la quantité de RAM disponible pour OsmAnd sans causer de problèmes de performance.
+Modes disponibles :  
+- **<Translate android="true" ids="memory_used_settings"/>** — Affiche la quantité de mémoire heap Java actuellement utilisée par les objets dans l'application.
+- **<Translate android="true" ids="memory_allocated_settings"/>** — Indique la quantité de mémoire que la Machine Virtuelle Java (JVM) a actuellement allouée pour l'application.
+- **<Translate android="true" ids="memory_limit_settings"/>** — Indique la taille maximale du heap Java autorisée pour l'application par le système Android.
+- **<Translate android="true" ids="memory_native_settings"/>** — Affiche la quantité de mémoire allouée via du code natif (C/C++), incluant les bibliothèques système et les composants NDK.
+- **<Translate android="true" ids="memory_graphics_settings"/>** — Indique la quantité de mémoire utilisée pour les ressources graphiques telles que les textures et buffers OpenGL.
 
-- **Utilisation de la RAM par l'application** — Indique la consommation actuelle de RAM par OsmAnd.
-
-- **RAM totale de l'application** — Indique la mémoire totale allouée à OsmAnd, y compris la mémoire utilisée et disponible.
-
-> **NOTE**. *La *RAM totale disponible* peut varier en fonction des processus en arrière-plan et des autres applications en cours d'exécution sur votre appareil. Ces valeurs sont dynamiques et offrent un moyen de suivre et de gérer l'utilisation de la mémoire pour des performances OsmAnd constantes et efficaces.*
+**NOTE :** Les valeurs de mémoire peuvent fluctuer en fonction des processus système, des applications en arrière-plan et de l'activité actuelle dans OsmAnd. Ces valeurs sont dynamiques et destinées principalement au débogage et à la surveillance des performances.
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → <Translate android="true" ids="developer_widgets"/> → *RAM disponible* |
+| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → <Translate android="true" ids="developer_widgets,map_widget_memory_info"/>* |
 | Par appui | Pas de changement |
 | Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 

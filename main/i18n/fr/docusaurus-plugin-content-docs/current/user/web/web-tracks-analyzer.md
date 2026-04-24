@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -27,7 +27,7 @@ Après avoir ouvert l'Analyseur de traces (représenté par une clé à molette)
 
 Pour démarrer l'analyse, définissez un ou deux points directement sur la carte. Faites un clic droit à l'emplacement souhaité et sélectionnez **Point A / Point B** dans le menu contextuel. L'analyseur recherche ensuite les segments de traces qui passent par le point sélectionné ou entre les deux points.
 
-![Analyseur de traces](@site/static/img/web/web_analyzer_select.png) ![Analyseur de traces](@site/static/img/web/web_analyzer_points.png)
+![Analyseur de traces](@site/static/img/web/web_analyzer_select.png) ![Analyseur de traces](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Tri et paramètres visibles {#sorting-and-visible-parameters}

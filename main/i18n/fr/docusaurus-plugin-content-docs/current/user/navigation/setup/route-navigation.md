@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  Préparation de l'itinéraire
 ---
@@ -72,7 +72,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 2. Des [*Paramètres de navigation*](#settings) supplémentaires peuvent être utilisés en fonction de vos objectifs (vous pouvez configurer les routes à éviter ou à préférer, économiser du carburant ou choisir l'itinéraire le plus rapide, etc.).
 
-3. [Démarrer](#start--stop-navigation) la navigation ou d'abord [simuler la navigation](#simulated-navigation) (avec cette fonction, vous pouvez tester votre itinéraire avant de le parcourir réellement).
+3. [Démarrer](#start--stop-navigation) la navigation ou d'abord [simuler la navigation](#simulated-navigation) (avec cette fonction, vous pouvez tester votre itinéraire avant de le parcourir réellement). [Sur les appareils iOS](https://support.apple.com/en-us/121430) dans les pays de l'UE, OsmAnd peut également être défini comme application de navigation par défaut dans les paramètres système, ce qui lui permet de s'ouvrir automatiquement pour les demandes de navigation.
 
 4. Pendant le trajet, vous pouvez [*Mettre en pause/Reprendre*](#pause--resume-navigation) la navigation et l'[*Arrêter*](#start--stop-navigation).
 

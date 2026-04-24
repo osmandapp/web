@@ -1,5 +1,5 @@
 ---
-source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
+source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -27,7 +27,7 @@ Pour vous connecter avec d'autres utilisateurs d'OsmAnd, poser des questions et 
 
 | Plateforme | Nom du groupe | Description | Lien |
 | :-- | :-- | :-- | :-- |
-| Facebook | OsmAnd users community (*English*)  |  C'est un groupe où les utilisateurs d'OsmAnd peuvent aider d'autres utilisateurs.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Facebook | OsmAnd users community (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
 |  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
@@ -45,8 +45,9 @@ La liste ci-dessous fournit des convertisseurs pour divers types de données pri
 
 | Type | Description | Lien |
 |-- | -- | --|
+| GoogleMap To OSMAnd GPX | Crée un dossier de fichiers GPX de style OsmAnd à partir d'une carte Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Script Python pour convertir les fichiers *KML* au format *GPX* avec des icônes. D'autres outils sont disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ to GPX | Script Python pour convertir les fichiers *KMZ* au format *GPX*, y compris les icônes. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML to GPX | Script Python pour convertir les fichiers *KML* au format *GPX* avec des icônes. D'autres outils sont disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Outil pour convertir les fichiers Garmin Basecamp vers OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi to OsmAnd | Conversion des formats de carte geoPDF, geoTiff et ozi vers OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX to KML | Outil pour convertir les fichiers *GPX* d'OsmAnd au format *KML*, en préservant les icônes. | [GitHub](https://github.com/mariush444/osmand2kml) |
@@ -64,7 +65,7 @@ Ces manuels, disponibles en plusieurs langues, fournissent souvent des aperçus 
 | Langue | Description | Lien |
 | :-- | :-- | :-- |
 | Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtenir plus d'outils pour la navigation virtuelle et qu'il serve d'outil pour les travaux géodésiques. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |

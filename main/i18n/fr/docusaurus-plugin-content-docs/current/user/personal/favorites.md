@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Favoris
 ---
@@ -272,7 +272,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Utilisez le ***menu à trois points*** à côté de chaque dossier pour gérer les groupes de favoris :
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
-- **Épingler le dossier** — Épinglez le dossier sélectionné pour le garder en haut de la liste des favoris pour un accès plus rapide.
+- **<Translate android="true" ids="pin_folder"/>** — Épinglez le dossier sélectionné pour le garder en haut de la liste des favoris pour un accès plus rapide.
 - **<Translate android="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Retirer des marqueurs de carte** — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou retirez-les selon vos besoins pour une référence facile.
