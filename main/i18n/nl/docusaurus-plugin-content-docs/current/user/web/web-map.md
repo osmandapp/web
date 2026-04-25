@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -36,11 +36,14 @@ De OsmAnd-webkaart is een wereldkaart gebaseerd op [OpenStreetMap (OSM)](https:/
 ![OsmAnd Web alles](@site/static/img/web/web_map_all.png)
 
 
-## Contextmenu Kaart {#map-context-menu}
+## Kaart Contextmenu {#map-context-menu}
 
 Om het te openen, klikt u met de rechtermuisknop ergens op de kaart. Dit menu bevat de volgende acties:
 
-- **Waar ben ik** – Vind snel uw huidige locatie op de kaart. Deze functie toont de dichtstbijzijnde adressen bij het geselecteerde punt op de kaart.
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Weer openen** – Ga naar het [Weermenu](../web/web-weather.md) om weergegevens te bekijken.
 - **Nieuwe route maken** – Opent de [*Plan een route*-tool](../web/web-navigation.md) met de geselecteerde locatie als start- of eindpunt.
 - **Favoriet toevoegen** – Hiermee kunt u een [favoriet](../web/web-favorites.md#add--edit-favorite) op elk punt op de kaart maken en opslaan voor eenvoudige toegang.
@@ -57,7 +60,21 @@ Om het te openen, klikt u met de rechtermuisknop ergens op de kaart. Dit menu be
 Add pin option will be added back once it becomes available again.
 -->
 
-![Contextmenu Kaart](@site/static/img/web/map_context_menu_new.png)
+![Kaart Contextmenu](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Geselecteerd Object {#selected-object}
+
+Wanneer een object op de kaart (zoals een POI, favoriet of navigatiepunt) is geselecteerd, wordt het gemarkeerd met een grotere pin. Slechts één object kan tegelijkertijd worden geselecteerd.
+
+Als het geselecteerde object al zichtbaar is op het scherm, verplaatst de kaart zich niet. Als het buiten het huidige zichtveld ligt, centreert de kaart erop zonder het zoomniveau te wijzigen.
+
+De geselecteerde marker blijft zichtbaar bij het zoomen op de kaart.
+
+Aangrenzende markers kunnen worden verborgen om het geselecteerde object gemakkelijker zichtbaar te maken.
+
+![Geselecteerd Object](@site/static/img/web/selected_object_favorite.png) ![Geselecteerd Object](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menu Kaart configureren {#configure-map-menu}
@@ -66,7 +83,7 @@ Het menu Kaart configureren stelt u in staat om de weergave-instellingen voor ka
 
 - [POI-overlay...](#poi-overlay). Hiermee kunt u de benodigde POI-categorieën kiezen en op de kaart weergeven.
 - [Favorieten](#favorites). Schakel de weergave van favorieten op de kaart in of uit.
-- [Tracks](#tracks). Bevat GPX-tracks die zichtbaar zijn op de kaart.  
+- [Tracks](#tracks). Bevat GPX-tracks die zichtbaar zijn op de kaart.
 - [Vervoersstops](#transport-stops). Schakel de weergave van openbare vervoersstops op de kaart in of uit. 
 - [Terrein](#terrain). Schakel het terrein-kleurenschema op de kaart in of uit.
 
@@ -106,16 +123,25 @@ Deze sectie bevat een lijst van uw [**GPX-tracks die zichtbaar zijn op de kaart*
 - U kunt tracks direct in- of uitschakelen.  
 - Schakel tracks in of uit vanuit de lijst **Recent Zichtbaar**.  
 
-Elke track heeft een **Contextmenu** (toegankelijk via de ⋮ knop) met de volgende commando's:
+Elke track heeft een menu (⋮) met de volgende commando's:
 
 - **Track verbergen**: Verbergt de momenteel zichtbare track van de kaart.  
 - **Track zichtbaar maken**: Toont een track uit de lijst Recent Zichtbaar op de kaart.  
 - **Hernoemen**: Hiermee kunt u de track hernoemen voor eenvoudigere identificatie.  
-- **Dupliceren**: Maakt een kopie van de track.  
+- **Dupliceren**: Maakt een kopie van de track.
+- **Delen**: Opent het deelscherm (dezelfde als voor [Favorieten](../web/web-favorites.md#share)).
 - **Downloaden**: Slaat de track op uw lokale apparaat op.  
 - **Verwijderen**: Verwijdert de track permanent uit de lijst.
 
-![Menu Kaart configureren Tracks](@site/static/img/web/configure_map_track.png)
+Wanneer u een track opent, wordt een paneel met een bovenste actie-balk weergegeven. De balk toont de tracknaam en biedt snelle toegang tot acties. Naast de commando's van het driepuntmenu bevat de bovenste balk **Bewerken**. **Uiterlijk** is momenteel niet actief.
+
+Het trackpaneel bevat de volgende tabbladen:
+
+- Overzicht — toont algemene trackinformatie.
+- Track — momenteel niet geïmplementeerd.
+- Punten — toont waypoints en routepunten gegroepeerd op type.
+
+![Menu Kaart configureren Tracks](@site/static/img/web/configure_map_track_new.png) ![Menu Kaart configureren Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Vervoersstops {#transport-stops}
 
@@ -252,7 +278,7 @@ Afhankelijk van de opgegeven parameters kunnen URL-strings het volgende bevatten
 
 4. **Weer**&nbsp; – &nbsp;`osmand.net/map/weather`
 
-***Bijvoorbeeld***, u kunt direct naar de weerpagina gaan met opgegeven coördinaten:  
+***Voorbeeld***, u kunt direct naar de weerpagina gaan met opgegeven coördinaten:  
     [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
 5. **Account**&nbsp; – &nbsp;`osmand.net/map/account`
@@ -272,7 +298,7 @@ Afhankelijk van de opgegeven parameters kunnen URL-strings het volgende bevatten
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [Contextmenu Kaart](../map/map-context-menu.md)
+- [Kaart Contextmenu](../map/map-context-menu.md)
 - [OsmAnd-account](./web-cloud.md)
 - [Tracks](./web-tracks.md)
 - [Favorieten](./web-favorites.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -99,6 +99,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografische gegevens](../plugins/topography.md#overview)<br/>(Hoogtelijnen en Terrein) | **-** | ✔ | ✔ |
 | [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D-gebouwen — Kleuraanpassing](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [3D-trackvisualisatie](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Reisgidsen (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

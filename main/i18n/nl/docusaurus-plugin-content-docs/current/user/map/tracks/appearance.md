@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
@@ -86,8 +86,8 @@ Het scherm *Alle kleuren* toont beschikbare paletten. Tik op het menu met drie s
 - Verwijderen. Het verwijderen van een palet vereist bevestiging.
 
 Tik op de + knop op het scherm Alle kleuren. Twee typen paletten zijn beschikbaar:
-- **Relatief** — kleuren schalen automatisch op basis van de minimum- en maximumwaarden van de track.
-- **Vaste waarden** — kleuren worden toegewezen aan specifieke absolute getallen (bijvoorbeeld 50 km/u). Waarden kunnen handmatig worden bewerkt. Eenheden volgen de [systeeminstellingen](../../personal/profiles.md#units--formats). De kleurenschaal schaalt niet automatisch opnieuw bij toepassing op verschillende tracks.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — kleuren schalen automatisch op basis van de minimum- en maximumwaarden van de track.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — kleuren worden toegewezen aan specifieke absolute getallen (bijvoorbeeld 50 km/u). Waarden kunnen handmatig worden bewerkt. Eenheden volgen de [systeeminstellingen](../../personal/profiles.md#units--formats). De kleurenschaal schaalt niet automatisch opnieuw bij toepassing op verschillende tracks.
 
 :::info Pro-functie
 Het maken van aangepaste paletten is een [**OsmAnd Pro**](../../purchases/index.md) betaalde functie <ProFeature />.

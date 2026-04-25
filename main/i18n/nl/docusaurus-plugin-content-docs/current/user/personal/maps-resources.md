@@ -1,5 +1,5 @@
 ---
-source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
+source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -142,9 +142,9 @@ Via het tabblad **Downloaden** kunt u verschillende kaarttypes downloaden van de
 
 In het menu Kaarten downloaden is er een sectie **Wereldkaarten** die toegang biedt tot het downloaden van verschillende wereldkaarten, wat de functionaliteit van de app aanvult.  
 
-- **Wereldhoogtecorrectie** (*alleen Android*). Dit bestand bevat hoogtecorrecties om de kromming van de planeet te compenseren.
-- **Wereldoverzichtskaart**. Biedt een uitgebreid overzicht van het aardoppervlak, handig voor lange-termijn routeplanning en vrijblijvende verkenning.
-- **Hele wereld (Weersvoorspelling)**. Hiermee kunt u een kaart met weersinformatie downloaden.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*alleen Android*). Dit bestand bevat hoogtecorrecties om de kromming van de planeet te compenseren.
+- **<Translate android="true" ids="index_item_world_basemap"/>**. Biedt een uitgebreid overzicht van het aardoppervlak, handig voor lange-termijn routeplanning en vrijblijvende verkenning.
+- **Wereldweerkaart**. Hiermee kunt u een kaart met weersinformatie downloaden.
 
 
 ### Extra kaarten {#extra-maps}
@@ -236,6 +236,8 @@ Onder de geheugenbalk wordt een lijst van alle gedownloade OsmAnd-kaarten en -br
 
 
 Tik op een item in het tabblad **Lokaal** om de gedetailleerde lijst te openen. Bovenaan deze lijst toont een visueel paneel hoeveel ruimte het geselecteerde gegevenstype inneemt ten opzichte van de totale OsmAnd-opslag.
+
+Voor Standaardkaarten kunnen sommige items per regio worden gegroepeerd. In dat geval toont elke kaartvermelding zowel de subregio als de bovenliggende regio. De volgorde van deze namen hangt af van de geselecteerde sorteermethode: bij sorteren op naam wordt de subregio eerst weergegeven, gevolgd door de regio; bij sorteren op land wordt de regio eerst weergegeven, gevolgd door de subregio.
 
 ***Beschikbare acties:***
 
@@ -436,7 +438,7 @@ Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernie
 
 Gebruik de knop *Alles bijwerken* om alle kaarten tegelijk bij te werken, of werk individuele kaarten naar behoefte bij. Voor uurlijkse updates, controleer de status van uw [Live Updates](#live-updates)-abonnement. Indien ingeschakeld, verschijnt de sectie **Live Updates** bovenaan het tabblad, onder de indicator voor het apparaatgeheugen.
 
-Het tabblad **Updates** kan ook een item **Niet-ondersteunde kaarten** tonen. Dit verschijnt wanneer u kaarten hebt die niet langer worden ondersteund en zijn vervangen door kleinere regio's. Tik op Niet-ondersteunde kaarten om de lijst te bekijken, verouderde kaarten te verwijderen en in plaats daarvan de nieuwe regioversies te downloaden. Op het scherm Niet-ondersteunde kaarten kunt u alle niet-ondersteunde kaarten bekijken en Alles verwijderen gebruiken om ze in één keer te verwijderen (een bevestigingsaanvraag wordt getoond vóór verwijdering).
+Het tabblad **Updates** kan ook een item **<Translate ios="true" ids="unsupported_maps"/>** tonen. Dit verschijnt wanneer u kaarten hebt die niet langer worden ondersteund en zijn vervangen door kleinere regio's. Tik op Niet-ondersteunde kaarten om de lijst te bekijken, verouderde kaarten te verwijderen en in plaats daarvan de nieuwe regioversies te downloaden. Op het scherm Niet-ondersteunde kaarten kunt u alle niet-ondersteunde kaarten bekijken en Alles verwijderen gebruiken om ze in één keer te verwijderen (een bevestigingsaanvraag wordt getoond vóór verwijdering).
 
 Het tabblad **Updates** bevat ook een sectie Weersvoorspelling. Deze is ontworpen om uw offline voorspellingen voor geselecteerde landen te beheren:
 
@@ -468,7 +470,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Kaartenmenu OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Kaartenmenu OsmAnd live bewerken iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Kaartenmenu OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Kaartenmenu OsmAnd live bewerken iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 

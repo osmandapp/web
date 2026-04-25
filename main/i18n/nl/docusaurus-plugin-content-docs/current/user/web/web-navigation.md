@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,14 +81,14 @@ Wanneer je Track selecteren klikt, opent de browser een bestandskiezer waar je e
 
 ## Routedetails {#route-details}
 
-![Web Navigatie](@site/static/img/web/navigation_info.png) ![Web Navigatie](@site/static/img/web/navigation_turns.png)
+![Web Navigatie](@site/static/img/web/navigation_overview.png) ![Web Navigatie](@site/static/img/web/navigation_turns_new.png)
 
-Wanneer een route is berekend, toont het paneel een basisoverzicht (afstand, tijd, klimmen/dalen) en een knop **Details**. Gebruik Details om het routeweergave te openen met twee tabbladen: Info en Bochten.
+Wanneer een route is berekend, toont het paneel een basisoverzicht (afstand, tijd, stijging/daling) en een knop **Details**. Gebruik Details om het routeweergave te openen met meerdere tabbladen. De hoofdtabbladen omvatten Overzicht, Track en Punten. Het Bochten-tabblad is beschikbaar via de pijl (›) in de tabbalk.
 
-Info vat de route en hoogtegegevens samen:
+Overzicht vat de route en hoogtegegevens samen:
 - **Punten** — het aantal routepunten gebruikt om de route op te bouwen.
 - **Route** — afstand en tijd.
-- **Klimmen/Dalen** — totale stijging en daling.
+- **Stijging/Daling** — totale stijging en daling.
 - **Hoogte (min/gem/max)** — hoogte-statistieken voor de route.
 - **Hoogte (Satelliet)** — herberekent de hoogtegegevens van de track met behulp van terreingegevens (DEM) en werkt het hoogtegrafiek bij.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  Tracks
 sidebar_position: 2
 ---
@@ -124,7 +124,7 @@ Ga naar: *Tik op de track → Tabblad Track → <Translate android="true" ids="a
 
 Ga naar: *Tik op de track → Tabblad Track → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Ga naar: *Tik op de track → Tabblad Track → <Translate ios="true" ids="analy
 
 Deze tool biedt een gedetailleerde analyse van [trackgegevens](../../map/tracks/track-context-menu.md#options) met behulp van grafieken en kaarten.
 
-- **Grafiekgegevens (Y-as)** toont: *Hoogte*, *Helling*, *Snelheid*, [*Externe sensorgegevens*](../../plugins/external-sensors.md), en combinaties van maximaal twee opties indien aanwezig in de trackgegevens. ***Alleen Android:*** voor auto-tracks opgenomen met OBD-II-gegevens, biedt de Y-as additioneel voertuigmetrics, zoals motortoerental, koelvloeistoftemperatuur, en meer.
+- **Grafiekgegevens (Y-as)** toont: *Hoogte*, *Helling*, *Snelheid*, [*Externe sensorgegevens*](../../plugins/external-sensors.md), en combinaties van maximaal twee opties indien aanwezig in de trackgegevens. Voor auto-tracks opgenomen met OBD-II-gegevens biedt de Y-as additioneel voertuigmetrics, zoals motortoerental, koelvloeistoftemperatuur, en meer.
 - **Grafiekdimensie (X-as)** vertegenwoordigt: *Afstand*, *Tijd*, en *Tijdstip van de dag*.
 - **Tik/schuif-interactie**. Tik op een grafiek om informatie over een specifiek punt op de track weer te geven. Schuiven op de grafiek markeert de juiste locatie op de kaart en toont details in de informatiebalk.
 - **Afstandslabel**. Wanneer u tikt of schuift langs de grafiek, toont de tooltip ook de exacte afstand langs de track. De waarde volgt de huidige profiel eenheidsinstellingen (<Translate android="true" ids="km"/> of <Translate android="true" ids="mile"/>). Gebruik het om snel in te schatten hoe ver een punt van de start van de track is, of om de afstand tussen twee posities te berekenen door hun waarden te vergelijken.

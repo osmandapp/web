@@ -1,5 +1,5 @@
 ---
-source-hash: 10e2341332ad6f362f02e8ca20670f75459fd950a7fe11cc51ec340380692495
+source-hash: 74a8a7707c0d2f97d8c606769b7fafa2d86892a59f64ff3fbd3e0ff06f84c40d
 sidebar_position: 3
 title:  Webaankopen
 ---
@@ -24,7 +24,7 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 
 ### Verschil tussen aankopen {#difference-between-purchases}
 
-| Plan | Description | Notes |
+| Plan | Beschrijving | Opmerkingen |
 |------------|------------|------------|
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies ontgrendelt voor de gratis OsmAnd-app. | Ondersteunt **cross-platform** toegang |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementplan** dat alle [pro-functies](#free-and-paid-features) ontgrendelt, inclusief CarPlay en 3D-reliëf. | Ondersteunt **cross-platform** toegang |
@@ -36,6 +36,7 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 ## Prijzen {#prices}
 
 Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in andere regio's worden automatisch door het betalingsplatform omgerekend naar de lokale valuta.
+
 
 <!--
 
@@ -66,8 +67,9 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
-| **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
-| **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+| **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
+| **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+
 
 
 

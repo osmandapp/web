@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Ritten Registreren
 ---
@@ -414,13 +414,13 @@ Sommige widgets voor Ritten Registreren ondersteunen meerdere weergavemodi. Modi
 
 | **Widget** | **Beschikbare modi**  |
 |-------|-------------|
-| Gemiddelde Helling | Laatste daling; Laatste stijging |
-| Gemiddelde Snelheid (*Alleen Android*) | Gemiddelde rit (standaard); Laatste daling; Laatste stijging |
-| Afstand (Start-Stop) | Gemiddelde rit (standaard); Laatste daling; Laatste stijging |
-| Dalen | Totaal (standaard); Laatste daling |
-| Max Snelheid | Totaal (standaard); Laatste daling; Laatste stijging |
-| Tijd in Beweging | Totaal (standaard); Laatste daling; Laatste stijging |
-| Stijgen | Totaal (standaard); Laatste stijging |
+| Gemiddelde Helling | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Gemiddelde Snelheid *(Alleen Android)* | Gemiddelde rit (standaard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Afstand (Start-Stop) | Gemiddelde rit (standaard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Dalen | Totaal (standaard); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Max Snelheid | Totaal (standaard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Tijd in Beweging | Totaal (standaard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Stijgen | Totaal (standaard); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Moduswisseling hangt af van de widget:
 - Stijgen / Dalen / Max Snelheid / Gemiddelde Helling / Tijd in Beweging / Gemiddelde Snelheid — tik op de widget op de kaart om de modus te wisselen.
@@ -446,7 +446,7 @@ Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets
 |------------|
 |**Gemiddelde Helling**. Toont de gemiddelde helling voor het laatste stijgings- of dalingssegment van de huidige rit, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
-|**Gemiddelde Snelheid** (*Alleen Android*). Toont de gemiddelde snelheid voor de momenteel opgenomen rit, of de gemiddelde snelheid tijdens het laatste stijgings- of dalingssegment, afhankelijk van de geselecteerde modus. |
+|**Gemiddelde Snelheid** *(Alleen Android)*. Toont de gemiddelde snelheid voor de momenteel opgenomen rit, of de gemiddelde snelheid tijdens het laatste stijgings- of dalingssegment, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|

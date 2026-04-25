@@ -1,5 +1,5 @@
 ---
-source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topografie
 ---
@@ -75,10 +75,10 @@ Voor volledige informatie, zie de [Licentie](https://github.com/osmandapp/OsmAnd
 
 Om **Hoogtelijnen** en **Terrein (Schaduwreliëf, Helling)** gegevens op de kaart weer te geven:
 
-1. **Aankoop**: [OsmAnd+, OsmAnd Maps+ of OsmAnd Pro aankoopplan](../plugins/index.md#purchase)
+1. **Aankoop**: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
 2. [Inschakelen](../plugins/index.md#enable--disable) van de Topografie-plugin in de sectie Plugins van het *Hoofdmenu*.
-3. [Downloaden](#download-maps): Hoogtelijnen, Schaduwreliëf, Helling of Terrein (3D) kaarten.
-4. **Inschakelen en aanpassen**: Hoogtelijnen, Schaduwreliëf of Helling voor de kaartweergave.
+3. [Downloaden](#download-maps): Hoogtelijnen, Schaduwreliëf, Helling of Terrein map (3D) kaarten.
+4. **Inschakelen en aanpassen**: Hoogtelijnen, Schaduwreliëf, of Helling voor de kaartweergave.
 5. U kunt ook de [YouTube-tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg) bekijken.  
 
 Om [**3D-reliëf**](#3d-relief) weer te geven, moet u het *OsmAnd Pro*-plan aanschaffen, inclusief toegang tot de Topografie-plugin.
@@ -311,7 +311,7 @@ De functie *Zichtbaarheid* wordt gebruikt om de transparantie van de schaduwen v
 
 ![Zoomniveaus](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-De functie *Zoomniveaus* stelt u in staat de minimum- en maximumwaarden van de kaartzoomniveaus in te stellen, variërend van 4 tot 19, waarop de Schaduwreliëf- of Helling-kaartlagen worden weergegeven.
+De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de kaartzoomniveaus in te stellen, variërend van 4 tot 19, waarop de Schaduwreliëf- of Helling-kaartlagen worden weergegeven.
 
 ### Cachegrootte {#cache-size}
 
@@ -334,7 +334,7 @@ De functie *Zoomniveaus* stelt u in staat de minimum- en maximumwaarden van de k
 
 ### Snelle Acties {#quick-actions}
 
-![Snelle acties voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![QA voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](../../user/personal/color-palette-schemes.md#quick-actions) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.  
 
@@ -345,28 +345,58 @@ De hoofdinstellingen voor *Toon of Verberg kaarttypes* bevinden zich in de secti
 
 ## 3D-gebouwen {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-gebouwen* 
+<TabItem value="android" label="Android">  
 
-![3D-gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_2_new.png) 
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-**3D-gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. 3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven.  
+![3D-gebouwen](@site/static/img/map/3d_buildings_4_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_3_new.png)
 
-Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. Om gebouwen in 3D te bekijken, kantel de kaart door twee vingers op het scherm te plaatsen en omhoog te vegen. In deze weergave kunnen gebouwen gedeeltelijk wegen of kaartlabels bedekken, afhankelijk van de zichtbaarheid-instelling.
+</TabItem>
 
-Deze optie is alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld.  
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D-gebouwen](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**3D-gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. Als [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) doorgangen door gebouwen bevat die zijn gemarkeerd met de tag `tunnel=building_passage`, renderen OsmAnd zichtbare openingen in het 3D-gebouwenmodel zodat wegen of voetgangerswegen die door het gebouw lopen correct worden weergegeven. 
+
+3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven. Wanneer een POI of een geselecteerde locatie (zoals een kaartpin of navigatiebestemming) zich binnen een gebouw bevindt, markeert OsmAnd het bijbehorende gebouw om het gemakkelijker te identificeren op de kaart.
+
+Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. Wanneer ingeschakeld, toont de instelling ook het huidige [Detailniveau](#performance) (Laag of Hoog) onder de hoofdschakelaar (*Alleen Android*). Om gebouwen in 3D te bekijken, kantel de kaart door twee vingers op het scherm te plaatsen en omhoog te vegen. In deze weergave kunnen gebouwen gedeeltelijk wegen of kaartlabels bedekken, afhankelijk van de zichtbaarheid-instelling.
+
+Op Android is deze optie alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld.  
 Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
 De 3D-gebouwen-instellingen zijn verdeeld in twee groepen: **Uiterlijk** en **Prestaties**.
 
 ### Uiterlijk {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![3D-gebouwen](@site/static/img/map/3d_buildings_color.png)
 
-De **Uiterlijk**-instellingen bepalen hoe 3D-gebouwen eruitzien op de kaart. Het omvat twee instellingen: Kleur en Zichtbaarheid. 
+</TabItem>
 
-**Kleur** laat u de gebouwkleur wijzigen. Wanneer u op Kleur tikt, opent OsmAnd een apart voorbeeldscherm waar u de kaart kunt zien terwijl u de instelling aanpast.
+<TabItem value="ios" label="iOS">  
+
+![3D-gebouwen](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+De **<Translate android="true" ids="shared_string_appearance"/>** stuurt hoe 3D-gebouwen eruitzien op de kaart. Het omvat twee instellingen: Kleur en Zichtbaarheid. 
+
+**<Translate android="true" ids="shared_string_color"/>** laat u de gebouwkleur wijzigen. Wanneer u op Kleur tikt, opent OsmAnd een apart voorbeeldscherm waar u de kaart kunt zien terwijl u de instelling aanpast. Het voorbeeldscherm toont een live kaart zodat u onmiddellijk kunt zien hoe de geselecteerde kleur de gebouwen beïnvloedt.
 - **Kaartstijl** — gebruikt de standaard gebouwkleur uit de momenteel geselecteerde kaartstijl.
 - **Aangepast** — laat u een aangepaste gebouwkleur instellen voor Dag / Nacht-modus.
 
@@ -376,19 +406,19 @@ KleurAanpassing van 3D-gebouwen is een [betaalde functie](../purchases/index.md)
 
 Als aangepaste kleuren niet zijn aangeschaft, ziet u een lege toestand met een korte beschrijving en een Knop Kopen. Als Aangepast beschikbaar is, kunt u schakelen tussen Dag en Nacht, een kleur kiezen uit het palet (of Alle kleuren openen), en vervolgens Toepassen tikken.
 
-**Zichtbaarheid** stuurt de opacity (transparantie) van 3D-gebouwen aan. Gebruik de schuifregelaar om de zichtbaarheid als percentage in te stellen. Lagere waarden maken gebouwen transparanter en helpen wegen/labels leesbaar te houden. Hogere waarden maken gebouwen solider en visueel dominanter. Op Zichtbaarheid tikken opent ook een apart voorbeeldscherm met de schuifregelaar.
+**<Translate android="true" ids="gpx_visibility_txt"/>** stuurt de opacity (transparantie) van 3D-gebouwen aan. Gebruik de schuifregelaar om de zichtbaarheid als percentage in te stellen. De schuifregelaar staat waarden toe van 10% tot 100%, met 50% als standaard. Lagere waarden maken gebouwen transparanter en helpen wegen/labels leesbaar te houden. Hogere waarden maken gebouwen solider en visueel dominanter. Op Zichtbaarheid tikken opent ook een apart voorbeeldscherm met de schuifregelaar.
 
 Op de voorbeeldschermen (Kleur / Zichtbaarheid) kunt u Reset naar standaard gebruiken vanuit de app-balk om de standaardwaarde te herstellen.
 
 ### Prestaties {#performance}
 
-De **Prestaties**-instellingen bepalen hoe 3D-gebouwen worden gerenderd. Het omvat twee instellingen: Detailniveau en Bezichtigingsafstand.
+De **<Translate android="true" ids="performance"/>** stuurt hoe 3D-gebouwen worden gerenderd. Het omvat twee instellingen: Detailniveau en Bezichtigingsafstand.
 
-**Detailniveau** bepaalt de complexiteit van de 3D-gebouwgeometrie:
+**<Translate android="true" ids="level_of_details"/>** bepaalt de complexiteit van de 3D-gebouwgeometrie:
 - Laag (standaard) — eenvoudigere geometrie.
 - Hoog — gedetailleerdere geometrie.
 
-**Bezichtigingsafstand** stuurt hoe ver van de camera 3D-gebouwen worden gerenderd:
+**<Translate android="true" ids="view_distance"/>** stuurt hoe ver van de camera 3D-gebouwen worden gerenderd:
 - Dichtbij (standaard) — rendert gebouwen dichter bij u.
 - Ver — rendert gebouwen vanaf een grotere afstand.
 

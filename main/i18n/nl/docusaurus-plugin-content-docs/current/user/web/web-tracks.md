@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -68,33 +68,21 @@ Klik op de driepunt-knop (⋮) om het menu *Track-map* te openen. Van hieruit ku
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
 
-## Cloud Tracks {#cloud-tracks}
+## Cloud-tracks {#cloud-tracks}
 
 GPX-tracks die u hebt in [OsmAnd Cloud](../personal/osmand-cloud.md) zijn na inloggen beschikbaar voor weergave en bewerking. Alleen voor **Pro-gebruikers** <ProFeature/> en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gebruikers (die hun gegevens kunnen downloaden zelfs nadat hun Pro-abonnement is verlopen).
 
 De volgende functies zijn beschikbaar na het kiezen van een cloud-track:
+- *Informatie* - weergeven van track-gegevens.
+- *Hoogte* - grafiek van hoogte.
+- *Snelheid* - snelheidsgrafiek.
+- *Helling* - hellingsgrafiek.
+- *Hoogte herberekenen (Satelliet)* - herberekent de hoogtewaarden voor de geselecteerde track en toont deze op de hoogtegrafiek.
+- *Wegtype* - breekt de track op in segmenten op basis van wegclassificatie.
+- *Oppervlak* - toont de typen track-oppervlakken langs de route.
+- *Gladheid* - toont segmentgladheid op basis van OSM-tags.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
-
-- Informatieschermen:
-  - *Informatie* - weergeven van track-gegevens.
-  - *Hoogte* - grafiek van hoogte.
-  - *Snelheid* - snelheidsgrafiek.
-  - *Helling* - hellingsgrafiek.
-  - *Instellingen* - lijst van navigatieprofielen voor het hulpmiddel *Route aanmaken*.
-  - *Bochten* - een gegenereerde lijst van benaderende bochtinstructies op basis van de track-geometrie.
-  - *Wegtype* - breekt de track op in segmenten op basis van wegclassificatie .
-  - *Oppervlak* - toont de typen track-oppervlakken langs de route.
-  - *Gladheid* - toont segmentgladheid op basis van OSM-tags .
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details.png)
-
-- Actieknoppen:
-  - *Track bewerken* - cloud-track toevoegen aan lokaal voor bewerking (knop _Edit locality_ op het paneel).
-  - *GPX downloaden* - downloadt de track naar de PC.
-  - *Herberekenen* Hoogte (Satelliet) - herberekent de hoogtewaarden voor de geselecteerde track en toont deze op de hoogtegrafiek.
-  - *Track verwijderen* - verwijdert de track.
-  - *Track sluiten* - sluit de track.
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Gerelateerde artikelen {#related-articles}

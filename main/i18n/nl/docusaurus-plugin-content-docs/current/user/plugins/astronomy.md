@@ -1,5 +1,5 @@
 ---
-source-hash: 586e89c491ebdc9f9d39017e43dfe0ba1044c71a6eddcfcdc4d71787f3703bae
+source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
 sidebar_position: 3
 title: Astronomie
 unlisted: true
@@ -15,8 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<InfoIncompleteArticle/>
 
 <InfoAndroidOnly/>
 
@@ -49,15 +47,15 @@ De plugin werkt met beide kaartweergavemotoren, maar presteert het beste in Open
 
 ## Sterrenkaart-scherm {#star-map-screen}
 
-**Ga naar:** *Geactiveerde plugin → Menu → Sterrenkaart* 
+**Ga naar:** *Geactiveerde plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
-![Sterrenkaart-scherm](@site/static/img/plugins/starwatcher/view_new_1.png)
+![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 Het speciale **Sterrenkaart-scherm** toont een interactieve hemelkoepel met sterren, sterrenbeelden, planeten, Zon- en Maanbanen. Onderaan het scherm kun je toegang krijgen tot de volgende regelaars: 
 - [**Zoeken**](#search) — opent het Zoekscherm waar je naar hemellichamen kunt zoeken en hemelcatalogi en categorieën kunt doorbladeren. 
 - **Tijd en datum** — laat je de datum en tijd wijzigen om de hemel op verschillende momenten in het verleden of de toekomst te observeren. Dit is handig voor het plannen van waarnemingen, het volgen van objectbewegingen of het leren hoe de hemel in de loop van de tijd verandert. Als je een aangepaste datum/tijd instelt, toont de chip de volledige datum en tijd, en verschijnt er een resetknop ernaast om terug te keren naar de huidige systeemtijd.
-- **Groottefilter** — stelt je in staat om te beperken welke sterren worden weergegeven op basis van hun helderheid. Gebruik de schuifregelaar om de maximale groottewaarde in te stellen. Lagere waarden tonen alleen de helderste sterren, terwijl hogere waarden zwakkere sterren en deep-sky-objecten onthullen. Dit helpt om visuele rommel te verminderen of te simuleren wat met het blote oog zichtbaar is.
-- [**Weergave configureren**](#configure-view) — opent weergave-instellingen die bepalen hoe objecten, banen en referentielijnen op de Sterrenkaart worden weergegeven.
+- **<Translate android="true" ids="magnitude_filter"/>** — stelt je in staat om te beperken welke sterren worden weergegeven op basis van hun helderheid. Gebruik de schuifregelaar om de maximale groottewaarde in te stellen. Lagere waarden tonen alleen de helderste sterren, terwijl hogere waarden zwakkere sterren en deep-sky-objecten onthullen. Dit helpt om visuele rommel te verminderen of te simuleren wat met het blote oog zichtbaar is.
+- [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — opent weergave-instellingen die bepalen hoe objecten, banen en referentielijnen op de Sterrenkaart worden weergegeven.
 
 Het scherm rendert de volledige hemisfeer boven je locatie, afgestemd op de kompasrichting. De Sterrenkaart kan handmatig worden gedraaid door het scherm te slepen. Handmatige rotatie van de Sterrenkaart beïnvloedt de oriëntatie van de Aardekaart niet. De Aardekaart volgt altijd de [kaartoriëntatiemodus](../map/interact-with-map.md#map-orientation-modes) die is geselecteerd in je instellingen. Tik op hemellichamen voor details zoals grootte, opkomst/ondergangstijden of banen.
 
@@ -66,7 +64,7 @@ De Sterrenkaart kan ook afgestemd zijn op de oriëntatie van je apparaat wanneer
 
 ## Contextmenu {#context-menu}
 
-![Contextmenu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
 
 Het **Contextmenu** biedt gedetailleerde informatie over hemellichamen en hulpmiddelen voor het observeren ervan. Het opent wanneer je op een hemellichaam tikt op de Sterrenkaart.
 
@@ -76,37 +74,39 @@ Het Contextmenu verschijnt onderaan het scherm en bevat objectinformatie, snelle
 
 ### Objectinformatie {#object-information}
 
-![Objectinformatie](@site/static/img/plugins/starwatcher/object_view.png)
+![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
 
 Het bovenste gedeelte van het Contextmenu toont de naam en classificatie van het object. Onder de naam worden het objecttype en het bovenliggende sterrenbeeld of de groep weergegeven. Bijvoorbeeld:  
 - **Beta Ursae Minoris** — Ster • Ursa Minor
-- **Jupiter** — Planeet • Zonnestelsel
-- **Andromedanevel** — Melkweg • Deep sky
+- **<Translate android="true" ids="astro_name_moon"/>** — Satelliet • Aarde
+- **<Translate android="true" ids="astro_name_jupiter"/>** — Planeet • Zonnestelsel
 
 Snelle informatieblokken tonen belangrijke waarnemingsparameters:  
-- Opkomst – de tijd waarop het object boven de horizon opkomt.
-- Ondergang – de tijd waarop het object onder de horizon zakt.
-- Azimut – de richting van het object ten opzichte van het noorden (0°–360°).
-- Hoogte – de hoogte van het object boven de horizon.
-- Grootte – de helderheid van het object zoals gezien vanaf de aarde. 
+- <Translate android="true" ids="astro_rise"/> – de tijd waarop het object boven de horizon opkomt.
+- <Translate android="true" ids="astro_set"/> – de tijd waarop het object onder de horizon zakt.
+- <Translate android="true" ids="shared_string_azimuth"/> – de richting van het object ten opzichte van het noorden (0°–360°).
+- <Translate android="true" ids="altitude"/> – de hoogte van het object boven de horizon.
+- <Translate android="true" ids="shared_string_magnitude"/> – de helderheid van het object zoals gezien vanaf de aarde. 
 
 Deze waarden worden dynamisch bijgewerkt op basis van de geselecteerde tijd en de locatie van de gebruiker.
 
 Onder de snelle informatieblokken kan het menu ook aanvullende informatie en bronnen over het object bevatten:  
-- Lees op Wikipedia – Opent het Wikipedia-artikel over het object. Als offline Wikipedia-gegevens beschikbaar zijn, kan het artikel worden geopend zonder internetverbinding; anders opent de pagina in de browser.
-- Online foto's – Toont beschikbare foto's met betrekking tot het geselecteerde hemellichaam.
+- <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Maakt het mogelijk om een uitgebreide database met Wikipedia-artikelen en deep-sky-catalogi te downloaden voor offline gebruik. Na het downloaden kunnen gedetailleerde informatie over hemellichamen direct in de app worden bekeken zonder internetverbinding.
+- <Translate android="true" ids="read_on_wiki"/> – Opent het Wikipedia-artikel over het object in de browser.
+- <Translate android="true" ids="astro_designations"/> – Toont alternatieve namen en catalogusidentificaties voor het object (bijvoorbeeld HD, HIP, NGC). Deze sectie is beschikbaar voor objecten met catalogusvermeldingen, zoals sterren en deep-sky-objecten. Als het object geen algemene naam heeft, wordt een van deze aanduidingen gebruikt als primaire naam.
+- <Translate android="true" ids="online_photos"/> – Toont beschikbare foto's met betrekking tot het geselecteerde hemellichaam.
 
 ### Acties {#actions}
 
 Onder de objectinformatie biedt het Contextmenu verschillende acties voor interactie met het geselecteerde hemellichaam:
-- **Opslaan** – Voegt het object toe aan je Favorietenlijst voor snelle toegang.
-- **Lokaliseren** – Centreert het geselecteerde object op de Sterrenkaart.
-- **Richting** – Toont de richting naar het object op de kaart, om je te helpen oriënteren tijdens het observeren van de hemel.
-- **Baan** – Toont de dagelijkse baan van het object over de hemel, zodat je kunt zien hoe het tijdens de dag beweegt.
+- **<Translate android="true" ids="shared_string_save"/>** – Voegt het object toe aan je Favorietenlijst voor snelle toegang.
+- **<Translate android="true" ids="astro_locate"/>** – Centreert het geselecteerde object op de Sterrenkaart.
+- **<Translate android="true" ids="astro_direction"/>** – Toont de richting naar het object op de kaart, om je te helpen oriënteren tijdens het observeren van de hemel.
+- **<Translate android="true" ids="astro_path"/>** – Toont de dagelijkse baan van het object over de hemel, zodat je kunt zien hoe het tijdens de dag beweegt.
 
-### Zichtbaarheidsgrafiek {#actions}
+### Zichtbaarheidsgrafiek {#visibility-graph}
 
-![Zichtbaarheidsgrafiek](@site/static/img/plugins/starwatcher/visibility.png)
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
 
 Het tabblad **Zichtbaarheid** toont hoe het geselecteerde object over de hemel beweegt tijdens een periode van 24 uur.
 
@@ -130,27 +130,27 @@ De kleur van de baan van het object weerspiegelt ook de hoogte:
 - rood – dicht bij de horizon
 - paars – onder de horizon (niet zichtbaar)
 
-Een beweegbare indicator stelt je in staat om de positie van het object op verschillende tijdstippen te verkennen. Wanneer de indicator wordt verplaatst, worden de huidige tijd, hoogte en azimutwaarden bijgewerkt.
+Een beweegbare indicator stelt je in staat om de positie van het object op verschillende tijdstippen te verkennen. Wanneer de indicator wordt verplaatst, worden de huidige tijd, hoogte en azimutwaarden bijgewerkt. De azimutwaarde bevat ook de bijbehorende kompasrichting (bijvoorbeeld 354° Az (N)).
 
 Onder de grafiek worden belangrijke waarnemingsgebeurtenissen weergegeven: 
-- **Opkomst** – wanneer het object boven de horizon opkomt.
-- **Kulminatie** – wanneer het object zijn hoogste hoogte bereikt.
-- **Ondergang** – wanneer het object onder de horizon zakt.
+- **<Translate android="true" ids="astro_rise"/>** – wanneer het object boven de horizon opkomt.
+- **<Translate android="true" ids="astro_culmination"/>** – wanneer het object zijn hoogste hoogte bereikt.
+- **<Translate android="true" ids="astro_set"/>** – wanneer het object onder de horizon zakt. Als het object nooit opkomt of nooit zakt, worden de bijbehorende waarden verborgen.
 
-De grafiek opent met de indicator gepositioneerd op de huidige systeemtijd. De locatie die wordt gebruikt voor berekeningen, wordt onder de grafiek weergegeven.
+De grafiek opent met de indicator gepositioneerd op de huidige systeemtijd. De locatie die wordt gebruikt voor berekeningen, wordt onder de grafiek weergegeven als een stadsnaam.
 
 ### Waarnemingsschema {#actions}
 
-![Waarnemingsschema](@site/static/img/plugins/starwatcher/schedule.png)
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
 Het tabblad **Schema** toont de zichtbaarheid van het geselecteerde object voor de huidige week. Elke rij vertegenwoordigt één dag en bevat:  
 - de dag van de week
 - de datum
 - opkomsttijd
-- ondergangstijd
+- ondergangstijd. Als de ondergangstijd op de volgende dag valt, wordt deze gemarkeerd met ⁺¹
 - een kleine zichtbaarheidgrafiek voor die dag
 
-De minigrafiek toont wanneer het object gedurende de dag zichtbaar is en hoe de hoogte verandert. Het gekleurde gedeelte van de balk vertegenwoordigt de periode waarin het object boven de horizon staat.
+De minigrafiek toont wanneer het object gedurende de dag zichtbaar is en hoe de hoogte verandert. Het gekleurde gedeelte van de balk vertegenwoordigt de periode waarin het object boven de horizon staat. De minigrafiek vertegenwoordigt het tijdinterval van 00:00 tot 23:59 voor de geselecteerde dag.
 
 Je kunt tussen weken navigeren met behulp van de pijltjestoetsen in de kop van het Schema. De kalenderknop stelt je in staat om terug te keren naar de huidige week.
 
@@ -177,7 +177,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR-ster vinden (Camera-modus) {#ar-star-finding}
 
-**Ga naar:** *Geactiveerde plugin → Menu → Sterrenkaart → Cameraknop* 
+**Ga naar:** *Geactiveerde plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Cameraknop* 
 
 De **Astronomie**-laag werkt met de **camera van je apparaat** om **Augmented Reality (AR) sterrenkijken** mogelijk te maken. Richt de camera van je telefoon op de echte nachtelijke hemel en zie sterren, planeten, sterrenbeelden, Zon/Maan overlegd in real-time.
 
@@ -197,36 +197,36 @@ De AR-modus gebruikt apparaatssensoren (gyroscoop, accelerometer en kompas) om h
 
 ## Weergave configureren {#configure-view}
 
-![Weergave configureren](@site/static/img/plugins/starwatcher/half_state_new.png) ![Weergave configureren](@site/static/img/plugins/starwatcher/full_state.png)
+![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
 
-**Weergave configureren** stelt je in staat om te bepalen hoe de Sterrenkaart wordt weergegeven door visuele modi, objecten en weergavehulpmiddelen in of uit te schakelen.
+**<Translate android="true" ids="astro_configure_view"/>** stelt je in staat om te bepalen hoe de Sterrenkaart wordt weergegeven door visuele modi, objecten en weergavehulpmiddelen in of uit te schakelen.
 
 Om Weergave configureren te openen, tik je op de knop Weergave configureren in de rechteronderhoek van het Sterrenkaart-scherm. De knop wordt weergegeven door een laagstijl-icoon (gestapelde vormen), dat weergave- en laaginstellingen aangeeft. Weergave configureren opent in een *Half-stand*, met de belangrijkste weergave-opties. Veeg het paneel omhoog om het uit te breiden naar *Full-stand* en toegang te krijgen tot alle beschikbare instellingen. Om Weergave configureren te sluiten, veeg je het paneel één keer omlaag om terug te keren naar de Half-stand, veeg je nog een keer omlaag om het volledig te sluiten, of tik je ergens op de kaart buiten het paneel. Je kunt ook op de knop Sluiten (X) in de rechterbovenhoek van het paneel tikken.
 
 ### Modi en acties {#modes-and-actions}
 
-![Weergave configureren](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Weergave configureren](@site/static/img/plugins/starwatcher/red_filter_new.png)
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
 
 Dit gedeelte regelt de belangrijkste weergavemodi van de Sterrenkaart.
 
-- **2D / 3D**. Schakelt tussen een hemelbaanweergave (2D), die de hemel toont als een geprojecteerde koepel met objectbanen, en een bolvormige hemelweergave (3D) die de hemelbol vertegenwoordigt.
-- **Kaart**. Schakelt een aanvullende Aardekaart-weergave in die onder de Sterrenkaart wordt weergegeven, zodat je hemellichamen kunt relateren aan je echte geografische omgeving.
-- **Rood filter**. Past een rood kleurfilter toe op het gehele scherm om lichtvervuiling te verminderen en nachtzicht te behouden tijdens waarnemingen in donkere hemels.
+- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Schakelt tussen een hemelbaanweergave (2D), die de hemel toont als een geprojecteerde koepel met objectbanen, en een bolvormige hemelweergave (3D) die de hemelbol vertegenwoordigt.
+- **<Translate android="true" ids="shared_string_map"/>**. Schakelt een aanvullende Aardekaart-weergave in die onder de Sterrenkaart wordt weergegeven, zodat je hemellichamen kunt relateren aan je echte geografische omgeving.
+- **<Translate android="true" ids="red_filter"/>**. Past een rood kleurfilter toe op het gehele scherm om lichtvervuiling te verminderen en nachtzicht te behouden tijdens waarnemingen in donkere hemels.
 
 ### Zichtbare objecten {#visible-objects}
 
-![Weergave configureren](@site/static/img/plugins/starwatcher/solar_system.png) ![Weergave configureren](@site/static/img/plugins/starwatcher/constellations.png)
+![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
 
 Dit gedeelte stelt je in staat om te kiezen welke typen hemellichamen op de Sterrenkaart worden weergegeven.
 
 | Object | Beschrijving |
 |--------|-------------|
-| Zonnestelsel | Toont de Zon, Maan en zichtbare planeten. |
-| Sterrenbeelden | Toont sterrenbeeldlijnen en patronen gevormd door sterren. |
-| Sterren | Toont individuele sterren die zichtbaar zijn op de Sterrenkaart. |
-| Nevels | Toont nevelobjecten waar beschikbaar. |
-| Sterrenhopen | Toont sterrenhopen als afzonderlijke hemellichamen. |
-| Deep sky | Schakelt deep-sky-objecten in of uit, zoals sterrenstelsels, sterrenstelselclusters en zwarte gaten. |
+| <Translate android="true" ids="astro_solar_system"/> | Toont de Zon, Maan en zichtbare planeten. |
+| <Translate android="true" ids="astro_constellations"/> | Toont sterrenbeeldlijnen en patronen gevormd door sterren. |
+| <Translate android="true" ids="astro_stars"/> | Toont individuele sterren die zichtbaar zijn op de Sterrenkaart. |
+| <Translate android="true" ids="astro_nebulas"/> | Toont nevelobjecten waar beschikbaar. |
+| <Translate android="true" ids="astro_star_clusters"/> | Toont sterrenhopen als afzonderlijke hemellichamen. |
+| <Translate android="true" ids="astro_deep_sky"/> | Schakelt deep-sky-objecten in of uit, zoals sterrenstelsels, sterrenstelselclusters en zwarte gaten. |
 
 ### Persoonlijke weergave-opties {#personal-display-options}
 
@@ -234,9 +234,9 @@ Dit gedeelte stelt je in staat om te kiezen welke typen hemellichamen op de Ster
 
 | Optie | Beschrijving |
 |-------|-------------|
-| Richting | Toont een richtingsindicator om je weergave te helpen oriënteren. |
-| Dagelijkse baan | Toont de dagelijkse baan van geselecteerde hemellichamen over de hemel. |
-| Favorieten | Markeert of toont objecten die als favorieten zijn gemarkeerd. |
+| <Translate android="true" ids="astro_direction"/> | Toont een richtingsindicator om je weergave te helpen oriënteren. |
+| <Translate android="true" ids="astro_daily_path"/> | Toont de dagelijkse baan van geselecteerde hemellichamen over de hemel. |
+| <Translate android="true" ids="shared_string_favorites"/> | Markeert of toont objecten die als favorieten zijn gemarkeerd. |
 
 ### Weergavehulpmiddelen {#rendering-aids}
 
@@ -244,12 +244,12 @@ Dit gedeelte stelt je in staat om te kiezen welke typen hemellichamen op de Ster
 
 | Hulpmiddel | Beschrijving |
 |------------|-------------|
-| Azimutrooster | Voegt een azimutgebaseerd rooster toe voor horizontale hemeloriëntatie. |
-| Meridiaanlijn | Toont de meridiaanlijn die de hemel van noord naar zuid doorkruist. |
-| Equatoriaal rooster | Toont het hemel-equatoriale coördinatenrooster. |
-| Ekliptieklijn | Toont de ekliptieklijn die de schijnbare baan van de Zon vertegenwoordigt. |
-| Equatorlijn | Toont de equatoriale projectie van de aarde op de hemelbol, om de rotatie van de aarde ten opzichte van de hemel te visualiseren. |
-| Galactische lijn | Toont het vlak van de Melkweg over de hemel, dat de hoofdrichting van de galactische schijf aangeeft. |
+| <Translate android="true" ids="azimuthal_grid"/> | Voegt een azimutgebaseerd rooster toe voor horizontale hemeloriëntatie. |
+| <Translate android="true" ids="meridian_line"/> | Toont de meridiaanlijn die de hemel van noord naar zuid doorkruist. |
+| <Translate android="true" ids="equatorial_grid"/> | Toont het hemel-equatoriale coördinatenrooster. |
+| <Translate android="true" ids="ecliptic_line"/> | Toont de ekliptieklijn die de schijnbare baan van de Zon vertegenwoordigt. |
+| <Translate android="true" ids="equator_line"/> | Toont de equatoriale projectie van de aarde op de hemelbol, om de rotatie van de aarde ten opzichte van de hemel te visualiseren. |
+| <Translate android="true" ids="galactic_line"/> | Toont het vlak van de Melkweg over de hemel, dat de hoofdrichting van de galactische schijf aangeeft. |
 
 <!-- 
 ## Astronomy Settings
@@ -274,7 +274,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Zoeken {#search}
 
-![Zoeken](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
 
 De **Zoek**-functie in de Astronomie-plugin stelt je in staat om hemellichamen te vinden, hemelcategorieën te verkennen en waarnemingsgegevens te openen. Om Zoeken te openen, tik je op de Zoekknop op de Sterrenkaart. Dit opent het Zoekscherm, dat verschillende secties biedt voor het ontdekken en organiseren van hemellichamen. Het Zoekscherm bevat de volgende secties:
 
@@ -288,45 +288,45 @@ De sectie Categorieën stelt je in staat om objecten te doorbladeren op type: Zo
 
 ### Sorteren en filters {#sorting-and-filters}
 
-![Sorteren](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
 
 Tik op de zoekbalk om de volledige zoekinterface te openen. Je kunt resultaten verfijnen met sorteer- en filteropties.
 
 Je kunt objecten sorteren op:  
 - Naam (A–Z of Z–A)
-- Helderst eerst
-- Zwakst eerst
-- Komt het snelst op
-- Zakt het snelst
+- <Translate android="true" ids="astro_sort_brightest_first"/>
+- <Translate android="true" ids="astro_sort_faintest_first"/>
+- <Translate android="true" ids="astro_sort_rises_soonest"/>
+- <Translate android="true" ids="astro_sort_sets_soonest"/>
 
 Filters helpen om zichtbare objecten te beperken.
 
 **Zichtbaarheid**  
-- Toon alles — toont alle objecten
-- Nu zichtbaar — objecten momenteel boven de horizon
-- Vanavond zichtbaar — objecten zichtbaar tussen zonsondergang en zonsopgang
+- <Translate android="true" ids="astro_filter_show_all"/> — toont alle objecten
+- <Translate android="true" ids="astro_filter_visible_now"/> — objecten momenteel boven de horizon
+- <Translate android="true" ids="astro_filter_visible_tonight"/> — objecten zichtbaar tussen zonsondergang en zonsopgang
 
 **Aanvullende filters**  
-- Met blote oog zichtbaar — toont alleen objecten met grootte ≤ 6
+- <Translate android="true" ids="astro_filter_naked_eye"/> — toont alleen objecten met grootte ≤ 6
 
 **Categorieën**  
 Je kunt resultaten filteren op objecttype. Het selecteren van specifieke categorieën schakelt de Alle-optie automatisch uit.
 
 ### Mijn gegevens {#my-data}
 
-![Mijn gegevens](@site/static/img/plugins/starwatcher/my_data.png)
+![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
 
 De sectie Mijn gegevens bevat objecten waarmee de gebruiker heeft geïnteracteerd. Deze sectie bevat drie lijsten:
 
-- Favorieten — objecten opgeslagen vanuit het contextmenu.
-- Dagelijkse baan — objecten waarvoor de dagelijkse bewegingsbaan is ingeschakeld.
-- Richtingen — objecten met een actieve richtingsindicator op de Sterrenkaart.
+- <Translate android="true" ids="shared_string_favorites"/> — objecten opgeslagen vanuit het contextmenu.
+- <Translate android="true" ids="astro_daily_path"/> — objecten waarvoor de dagelijkse bewegingsbaan is ingeschakeld.
+- <Translate android="true" ids="astro_directions"/> — objecten met een actieve richtingsindicator op de Sterrenkaart.
 
 Het selecteren van een item opent het contextmenu van het object.
 
 ### Catalogi {#catalogs}
 
-![Catalogi](@site/static/img/plugins/starwatcher/catalogs.png)
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
 De sectie Catalogi biedt toegang tot astronomische catalogi die beschikbaar zijn in de Astronomie-plugin.
 
@@ -337,4 +337,3 @@ Catalogi bevatten grote collecties hemellichamen zoals sterren, sterrenstelsels,
 - [Interacteer met kaart](../../user/map/interact-with-map.md)
 - [Globale instellingen](../../user/personal/global-settings.md)
 - [Vectorkaarten](../../user/map/vector-maps.md)
-

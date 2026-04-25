@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Een route plannen
 ---
@@ -338,6 +338,8 @@ Er zijn vier manieren om op te slaan:
 - ***Wijzigingen opslaan*** in het [Opties menu](#options) stelt u in staat om wijzigingen in een bestand op te slaan en door te gaan met het plannen van de route.
 - ***Opslaan als nieuwe track*** in het [Opties menu](#options) opent een dialoogvenster waarin u de naam van de track en de map waarin de route wordt opgeslagen, opgeeft.
 - ***Wijzigingen toevoegen aan een track***. Voegt een aangemaakte track als een [apart segment](#segments) toe aan een andere bestaande track. Wijzigingen aan een geselecteerde track *kunnen niet ongedaan worden gemaakt*.
+
+Bij het opslaan erft de track het activiteitstype van het routeringsprofiel dat is gebruikt voor de planning. De activiteit wordt opgeslagen in de trackmetadata en blijft behouden na het exporteren of importeren van het GPX-bestand.
 
 :::note Optie Vereenvoudigde track
 Bij het opslaan van een nieuwe track kunt u de optie ***Vereenvoudigde*** track selecteren om de track compatibel te maken met andere applicaties van derden. Technisch gezien wordt de track opgeslagen zonder route-instructies als een puur geometrische track.

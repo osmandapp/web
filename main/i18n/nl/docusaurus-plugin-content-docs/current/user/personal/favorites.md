@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Favorieten
 ---
@@ -272,7 +272,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
-- **Map vastzetten** — Zet de geselecteerde map vast om deze bovenaan de favorietenlijst te houden voor snellere toegang.
+- **<Translate android="true" ids="pin_folder"/>** — Zet de geselecteerde map vast om deze bovenaan de favorietenlijst te houden voor snellere toegang.
 - **<Translate android="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Verwijder van kaartmarkeringen** — Voeg alle favorietenpunten uit de map toe aan de *Lijst met kaartmarkeringen* of verwijder ze indien nodig voor eenvoudige referentie.
@@ -286,7 +286,7 @@ Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
 
 ![Favorietenacties ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
-Gebruik ***lang tikken*** op de map om groepen favorieten te beheren:
+Gebruik ***lang tikken op de map*** om groepen favorieten te beheren:
 
 - **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
 - **<Translate ios="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
@@ -397,12 +397,12 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up* te gebruiken. Als u een account heeft in *OsmAnd Pro* of een actief account in *OsmAnd Cloud*, ziet u de promotiebanner niet.  
+U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Favorietenback-up* te gebruiken. Als u een account heeft in *OsmAnd Pro* of een actief account in *OsmAnd Cloud*, ziet u de promotiebanner niet.  
 
 - *Banner Gratis Favorietenback-up*. Tik op deze banner om het back-upproces te starten.
 - *Voltooi de registratiestap* als u geen OsmAnd Cloud-account heeft door de instructies in de [registratiegids](../personal/osmand-cloud.md#login) te volgen.
 - *Navigeer naar het menu OsmAnd Aankopen* (*Menu → Instellingen → Aankopen*).
-- *[OsmAnd Start-pakket](../personal/osmand-cloud.md#osmand-start)*. Selecteer deze optie om toegang te krijgen tot de functie Gratis Instellingenback-up.
+- *[OsmAnd Start-pakket](../personal/osmand-cloud.md#osmand-start)*. Selecteer deze optie om toegang te krijgen tot de functie Gratis Favorietenback-up.
 - *Maak een back-up* van uw instellingen.
 
 
@@ -496,29 +496,3 @@ Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van 
 
 
 ```xml
-<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-    <wpt lat="37.5460870" lon="-77.4532843">
-        <time>2023-06-07T12:31:35Z</time>
-        <name>Test</name>
-        <type>SOTM</type>
-        <extensions>
-            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
-            <osmand:icon>place_town</osmand:icon>
-            <osmand:background>circle</osmand:background>
-            <osmand:color>#ff4e4eff</osmand:color>
-            <test:country>United States</test:country>
-            <test:state>Virginia</test:state>
-            <test:telephone>(804) 828-0100</test:telephone>
-            <test:postcode>23284</test:postcode>
-            <test:start_date>Thursday, June 8, 2023</test:start_date>
-        </extensions>
-    </wpt>
-</gpx>
-```  
-
-
-## Gerelateerde Artikelen {#related-articles}
-
-- [Tracks Beheren](../personal/tracks/manage-tracks.md#import--export-track)
-- [Zoekgeschiedenis](../search/search-history.md#export-and-share)
-- [Kleurenpaletschema's](../personal/color-palette-schemes.md)

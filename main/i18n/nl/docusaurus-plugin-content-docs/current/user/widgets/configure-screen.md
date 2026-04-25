@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Scherm configureren
 ---
@@ -470,11 +470,11 @@ U kunt de Kaartschermlay-out-instellingen openen vanuit het Scherm configureren-
 
 ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_single.png) ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_separate.png)
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Kaartschermlay-out*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd ondersteunt twee lay-outmodi voor het kaartscherm:
-- **Enkele lay-out** – gebruikt dezelfde widgetlay-out voor alle schermoriëntaties. Deze optie is standaard geselecteerd.
-- **Aparte lay-outs** – stelt u in staat om verschillende widgetlay-outs te configureren voor Staande en Liggende oriëntaties.
+- **<Translate android="true" ids="single_layout"/>** – gebruikt dezelfde widgetlay-out voor alle schermoriëntaties. Deze optie is standaard geselecteerd.
+- **<Translate android="true" ids="separate_layouts"/>** – stelt u in staat om verschillende widgetlay-outs te configureren voor Staande en Liggende oriëntaties.
 
 Wanneer Aparte lay-outs is ingeschakeld, hebben wijzigingen in één oriëntatie geen invloed op de andere. Dit is nuttig als u het kaartscherm anders wilt optimaliseren voor staand en liggend gebruik.
 
@@ -485,8 +485,8 @@ Wanneer Aparte lay-outs is ingeschakeld, hebben wijzigingen in één oriëntatie
 Wanneer Aparte lay-outs is ingeschakeld, worden twee tabbladen beschikbaar in het Scherm configureren: **Staand** en **Liggend**. Elk tabblad vertegenwoordigt een onafhankelijke lay-out voor de bijbehorende schermoriëntatie. U kunt tussen tabbladen schakelen door erop te tikken.
 
 U kunt de lay-out tussen oriëntaties kopiëren. Om toegang te krijgen tot deze acties, tikt u op het driepuntmenu voor het widgetpaneel:
-- **Kopiëren van Staand** – kopieert de widgetlijst van de Staande lay-out naar de Liggende lay-out.
-- **Kopiëren van Liggend** – kopieert de widgetlijst van de Liggende lay-out naar de Staande lay-out.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – kopieert de widgetlijst van de Staande lay-out naar de Liggende lay-out.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – kopieert de widgetlijst van de Liggende lay-out naar de Staande lay-out.
 
 Alleen de widgetlijst wordt gekopieerd, en de bewerking geldt binnen hetzelfde profiel.
 
@@ -501,8 +501,8 @@ De instelling **Paneellay-out** beheert hoe de boven- en onderwidgetpanelen word
 **Opmerking:** Deze optie is alleen beschikbaar wanneer [Aparte lay-outs](#single-and-separate-layouts) is ingeschakeld.
 
 U kunt kiezen tussen twee modi:
-- **Breed** – de boven- en onderpanelen beslaan de volledige breedte van het scherm.
-- **Compact** – de boven- en onderpanelen passen tussen de zijpanelen en kaartknoppen.
+- **<Translate android="true" ids="panels_layout_wide"/>** – de boven- en onderpanelen beslaan de volledige breedte van het scherm.
+- **<Translate android="true" ids="panels_layout_compact"/>** – de boven- en onderpanelen passen tussen de zijpanelen en kaartknoppen.
 
 Paneellay-out kan onafhankelijk worden geconfigureerd voor Staande en Liggende oriëntaties, waardoor betere aanpassing aan verschillende schermformaten en oriëntaties mogelijk is.
 
@@ -724,7 +724,7 @@ Beschikbare acties:
 - Voor **Android**-apparaten kunt u profielen wijzigen bovenaan het startscherm van Scherm configureren met behulp van de beschikbare profielpictogrammen.  
 - Als u een **iOS**-apparaat gebruikt, tikt u op het profielpictogram in de bovenhoek van het startscherm van Scherm configureren en selecteer het gewenste profiel uit de lijst om het te activeren.  
 
-**Let op**: De optie *Profiel wisselen* toont niet alle bestaande profielen, maar alleen die welke zijn *ingeschakeld* in het Instellingen-menu.
+**Opmerking**: De optie *Profiel wisselen* toont niet alle bestaande profielen, maar alleen die welke zijn *ingeschakeld* in het Instellingen-menu.
 
 
 ## Gerelateerde artikelen {#related-articles}
@@ -735,4 +735,3 @@ Beschikbare acties:
 - [Straal-liniaal en Liniaal](./radius-ruler.md)
 - [Markerwidgets](./markers.md)
 - [Snelle actie](./quick-action.md)
-

@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  Voertuigstatistieken
 ---
@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 De Voertuigstatistieken-plugin is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.
 :::
 
-De **Voertuigstatistieken-plugin** maakt real-time monitoring van voertuiggegevens mogelijk via het [OBD-II-protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gebruikers kunnen essentiële statistieken bijhouden, zoals motorprestaties, brandstofefficiëntie en snelheid, wat proactief voertuigonderhoud en probleemoplossing mogelijk maakt.  
+De **Voertuigstatistieken-plugin** maakt real-time monitoring van voertuiggegevens mogelijk via het [OBD-II-protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gebruikers kunnen essentiële metrieken bijhouden, zoals motorprestaties, brandstofefficiëntie en snelheid, wat proactief voertuigonderhoud en probleemoplossing mogelijk maakt.  
 
 [OBD-II-scanners](https://en.wikipedia.org/wiki/ELM327) zijn een integraal onderdeel van de moderne autodiagnostiek. Met real-time datastreaming krijgen gebruikers direct inzicht in voertuigsystemen, wat preventief onderhoud vergemakkelijkt en reparatiekosten verlaagt. Deze tools zijn essentieel voor zowel persoonlijk gebruik als professionele autodiensten.
 
@@ -43,7 +43,7 @@ De **Voertuigstatistieken-plugin** maakt real-time monitoring van voertuiggegeve
 </Tabs>
 
 
-## Vereiste installatieparameters {#required-setup-parameters}
+## Vereiste opzetparameters {#required-setup-parameters}
 
 Om gegevens van een OBD-II-scanner te gebruiken:
 
@@ -52,11 +52,11 @@ Om gegevens van een OBD-II-scanner te gebruiken:
 3. **Schakel** Bluetooth **in** op uw apparaat.
 4. [Verbind](#pair-odb-ii-scanner) de OBD-II-scanner met de poort van uw voertuig.
 5. [Configureer](#scanner-settings) de **scannerinstellingen**.
-6. [Voeg](#widgets) **Voertuigstatistieken-widgets** toe om gegevens op het scherm weer te geven (optioneel).
-7. [Gebruik](#trip-recording)de **Ritregistratie-plugin** om voertuiggegevens op te nemen.
+6. [Voeg](#widgets) **Voertuigstatistieken-widgets** toe voor weergave op het scherm (optioneel).
+7. [Gebruik](#trip-recording) de **Ritregistratie-plugin** om voertuiggegevens op te nemen.
 
 
-### ODB-II-scanner koppelen {#pair-odb-ii-scanner}
+### OBD-II-scanner koppelen {#pair-odb-ii-scanner}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -122,9 +122,9 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 **Herconnectiegedrag:** OsmAnd probeert automatisch opnieuw verbinding te maken met de OBD-II-adapter wanneer de applicatie wordt gestart, wanneer navigatie wordt gestart, of wanneer Android Auto / Car Play wordt gelanceerd. Als een verbinding niet beschikbaar is, tonen Voertuigstatistieken-widgets “–”. Een enkele tik op een willekeurige Voertuigstatistieken-widget zal proberen opnieuw verbinding te maken met de sensor. Als de sensor al verbonden is, schakelt de tik de weergavemodi van de widget zoals gewoonlijk.
 
 
-## Lijst met statistieken {#metrics-list}
+## Lijst met metrieken {#metrics-list}
 
-Statistieken zijn gecategoriseerd voor de duidelijkheid. Geavanceerde diagnostische tools maken preventief onderhoud mogelijk door deze parameters te interpreteren:
+Metrieken zijn gecategoriseerd voor de duidelijkheid. Geavanceerde diagnostische tools maken preventief onderhoud mogelijk door deze parameters te interpreteren:
 
 *Temperatuur:*
 
@@ -184,11 +184,11 @@ Statistieken zijn gecategoriseerd voor de duidelijkheid. Geavanceerde diagnostis
 
 
 
-Om OBD-II-gegevens in een GPX-bestand op te nemen, moet u de gewenste parameters voor opname selecteren met behulp van de [Ritregistratie-plugin](../plugins/trip-recording.md#recording-settings). Hiermee kunt u voertuigstatistieken samen met uw ritgegevens analyseren.
+Om OBD-II-gegevens in een GPX-bestand op te nemen, moet u de gewenste parameters voor opname selecteren met behulp van de [Ritregistratie-plugin](../plugins/trip-recording.md#recording-settings). Hiermee kunt u voertuigmetrieken samen met uw ritgegevens analyseren.
 
 ### Tags {#tags}
 
-OsmAnd past aangepaste tagnamen toe voor voertuigstatistieken in het [GPX-bestand](../plugins/trip-recording.md#recorded-gpx-file). Bijvoorbeeld:
+OsmAnd past aangepaste tagnamen toe voor voertuigmetrieken in het [GPX-bestand](../plugins/trip-recording.md#recorded-gpx-file). Bijvoorbeeld:
 
 - `vm_eotemp`: Motorolietemperatuur.
 - `vm_fpress`: Brandstofdruk.
@@ -203,7 +203,7 @@ Deze tags maken het gemakkelijker om specifieke voertuiggegevens te identificere
 
 <TabItem value="android" label="Android">
 
-**Android.** Ga naar: *Menu → Scherm configureren → Widgets → Kies een paneel → Voertuigstatistieken*
+**Android.** Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Deze tags maken het gemakkelijker om specifieke voertuiggegevens te identificere
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Ga naar: *Menu → Scherm configureren → Widgets → Kies een paneel → Voertuigstatistieken*
+**iOS.** Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Kies een paneel → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|
@@ -230,11 +230,11 @@ De [Voertuigstatistieken-widgets](../widgets/info-widgets.md#vehicle-metrics-wid
 
 ### Widgetinstellingen {#widget-settings}
 
-De widgets tonen belangrijke gegevens van uw verbonden OBD-II-apparaat in realtime, zoals snelheid, motorstatistieken en brandstofverbruik. Zorg ervoor dat ze zichtbaar zijn voordat u uw rit begint om de statistieken naadloos te volgen.
+De widgets tonen belangrijke gegevens van uw verbonden OBD-II-apparaat in realtime, zoals snelheid, motorstatistieken en brandstofverbruik. Zorg ervoor dat ze zichtbaar zijn voordat u uw rit begint om de metrieken naadloos te volgen.
 
 Sommige widgets bieden weergavemodusopties:
 
-- **Direct**. Toont realtime gegevens voor de geselecteerde statistiek.
+- **Direct**. Toont realtime gegevens voor de geselecteerde metriek.
 - **Gemiddeld**. Toont gemiddelde waarden over een configureerbaar tijdsinterval (15 seconden tot 60 minuten).
 
 Verschillende widgets, inclusief *Brandstofverbruik*, passen hun weergegeven eenheden en regionale metrische formaten aan op basis van de [Profielinstellingen](https://osmand.net/docs/user/personal/profiles#units--formats). Bij gebruik van volume-eenheden anders dan liters ondersteunt Brandstofverbruik het tonen van waarden als Miles per Gallon (MPG). Het exacte MPG-type hangt af van de geselecteerde volume-eenheid:
