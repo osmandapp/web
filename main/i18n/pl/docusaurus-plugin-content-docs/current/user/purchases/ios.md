@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -99,6 +99,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i teren) | **-** | ✔ | ✔ |
 | [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Budynki 3D — Dostosowanie kolorów](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Wizualizacja trasy 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -126,14 +127,14 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 ![Pro](@site/static/img/svg/pro_icon.svg) *Funkcje Pro* są dostępne w ramach [subskrypcji OsmAnd Pro](#prices). Oznacza to, że musisz posiadać [subskrypcję OsmAnd Pro](#install-osmand-ios).
 
-Obecnie subskrypcja Pro obejmuje następujące funkcje:
+W chwili obecnej subskrypcja Pro obejmuje następujące funkcje:
 
 |  Funkcja Pro  | Opis   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
 | [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala sprawdzić wysokość nad poziomem morza dla bieżącego środka mapy.  |
-| [Live](../personal/maps-resources.md#live-updates) | Mapy OsmAnd aktualizują się co 15 minut po wprowadzeniu ulepszeń w [OpenStreetMap](https://www.openstreetmap.org/). |
+| [Aktualizacje na żywo](../personal/maps-resources.md#live-updates) | Mapy OsmAnd aktualizują się co 15 minut po wprowadzeniu ulepszeń w [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Wtyczka Pogoda](../plugins/weather.md) | Godzinowa prognoza na 24h z 7-dniowym wyprzedzeniem na mapie. |
 | [Wtyczka Metryki pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Umożliwia podłączenie skanera OBD-II w celu wyświetlania szczegółowych danych pojazdu w aplikacji OsmAnd i przechowywania informacji w zapisach tras. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne w darmowej wersji OsmAnd.  |
 | [Dostosuj linię trasy](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Zmiana koloru i szerokości linii trasy podczas nawigacji. |

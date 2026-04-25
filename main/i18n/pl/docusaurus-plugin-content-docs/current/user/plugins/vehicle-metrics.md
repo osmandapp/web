@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title:  Metryki pojazdu
 ---
@@ -151,7 +151,7 @@ Metryki są podzielone na kategorie dla przejrzystości. Zaawansowane narzędzia
 - **Napięcie adaptera**. Wyświetla napięcie dostarczane do adaptera OBD-II (komenda AT RV).
 - **Prędkość pojazdu**. Wyświetla dane z czujnika prędkości pojazdu (VSS).
 - **Położenie przepustnicy**. Określa dopływ powietrza do silnika poprzez kąt otwarcia przepustnicy.  
-- **VIN**. Wyświetla 17-znakowy numer identyfikacyjny pojazdu.
+  **VIN**. Wyświetla 17-znakowy numer identyfikacyjny pojazdu.
 
 
 ## Zapis trasy {#trip-recording}
@@ -203,7 +203,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 <TabItem value="android" label="Android">
 
-**Android.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Metryki pojazdu*
+**Android.** Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Metryki pojazdu*
+**iOS.** Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wybierz panel → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

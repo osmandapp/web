@@ -1,5 +1,5 @@
 ---
-source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -53,7 +53,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 <TabItem value="ios" label="iOS">  
 
-![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_1_new.png)
+![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_2_new.png)
 
 </TabItem>
 
@@ -71,13 +71,14 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 - **Tryb oszczędzania baterii** (*Android* / *iOS*). To ustawienie zmniejsza [częstotliwość odświeżania ekranu](#map-rendering-fps-widget) o 20 klatek na sekundę, aby pomóc oszczędzać energię baterii podczas korzystania z aplikacji.
 - **Użyj ikon pozycji lokalizacji 3D** (*iOS*). Pozwala wybrać ikonę 3D dla [ikony Moja lokalizacja](../personal/profiles.md#my-location-appearance).
 - **Symuluj dane OBD** (*Android* / *iOS*). Umożliwia symulację użycia [skanera OBD](./vehicle-metrics.md).
-- **Informacje debugowania wydajności** (*Android* / *iOS*). Wyświetla wydajność renderowania i nawigacji.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Wyświetla wydajność renderowania i nawigacji.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Wyświetla informacje debugowania rasteryzacji kafelków.
 - **Wyłącz warstwy mapy** (*Android*). Wyłącza wszystkie warstwy mapy nad mapą wektorową (wymagany restart).
 - **Bufor Logcat** (*Android*). Sprawdzaj i udostępniaj szczegółowe logi aplikacji.  
 - **Pokaż komunikat o naciśniętym klawiszu** (*Android*). Wyświetla komunikat o klawiszu.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Namiar to kierunek kompasu od bieżącej pozycji do zamierzonego celu. Wpływa na *[nagrywanie trasy](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Kurs to kierunek kompasu od bieżącej pozycji w stronę północy geograficznej. Ta opcja jest domyślnie włączona. Wpływa na *[nagrywanie trasy](../plugins/trip-recording.md)*.
-- **Włącz MSAA** (*Android*) / **Włącz MSAA dla CarPlay** (*iOS*). Włącza wielopróbkowe wygładzanie krawędzi w celu wygładzenia renderowania mapy. Poprawia jakość wizualną [ikony Moja lokalizacja](../personal/profiles.md#my-location-appearance) i linii trasy poprzez redukcję postrzępionych krawędzi. Na Androidzie ta opcja wpływa na renderowanie mapy na urządzeniu oraz podczas używania [Android Auto](../navigation/auto-car.md). Na iOS dotyczy tylko [CarPlay](../navigation/car-play.md).
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Włącza wielopróbkowe wygładzanie krawędzi w celu wygładzenia renderowania mapy. Poprawia jakość wizualną [ikony Moja lokalizacja](../personal/profiles.md#my-location-appearance) i linii trasy poprzez redukcję postrzępionych krawędzi. Na Androidzie ta opcja wpływa na renderowanie mapy na urządzeniu oraz podczas używania [Android Auto](../navigation/auto-car.md). Na iOS dotyczy tylko [CarPlay](../navigation/car-play.md).
 
 
 ### Testowanie aplikacji {#application-testing}
@@ -319,9 +320,9 @@ Poniższa tabela zawiera informacje o nachyleniu kamery oraz odległości do cel
 |20| 66|11|30|10%|
 
 
-## Widżet dostępnej pamięci RAM {#available-ram-widget}
+## Widżet informacji o pamięci {#memory-info-widget}
 
-Ten widżet został zaprojektowany specjalnie dla Ciebie podczas korzystania z OsmAnd, aby zapewnić wygodniejszą i bardziej informacyjną interakcję z dostępną pamięcią RAM na Twoim urządzeniu. Pozwala on łatwo i szybko monitorować dostępną pamięć RAM, co jest szczególnie przydatne podczas korzystania z OsmAnd do nawigacji. Przeczytaj więcej o widżecie w artykule [Widżety informacyjne](../widgets/info-widgets.md#available-ram).
+Ten widżet został zaprojektowany specjalnie dla Ciebie podczas korzystania z OsmAnd, aby zapewnić wygodniejszą i bardziej informacyjną interakcję z zużyciem pamięci urządzenia. Pozwala on łatwo i szybko monitorować różne typy pamięci używane przez aplikację, co jest szczególnie przydatne podczas korzystania z OsmAnd do nawigacji. Przeczytaj więcej o widżecie w artykule [Widżety informacyjne](../widgets/info-widgets.md#memory-info).
 
 
 ## Symulacja śladu GPX {#gpx-track-simulation}

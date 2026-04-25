@@ -1,5 +1,5 @@
 ---
-source-hash: 0b9fec9a92cbab58480cefaa92e29f493c2277360a9b9044570e4cc41a94d83d
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Mapy wektorowe 
 ---
@@ -371,15 +371,29 @@ Opcja Teren pozwala dostosować trzy funkcje, takie jak zacienienie wzgórz, nac
 
 ### Budynki 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+<TabItem value="android" label="Android"> 
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png) 
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-Ta opcja jest dostępna tylko po włączeniu wtyczki Rzeźba terenu. Szczegóły znajdziesz w artykule [Wtyczka Rzeźba terenu](../plugins/topography.md#3d-buildings).
+Na Androidzie ta opcja jest dostępna tylko po włączeniu wtyczki Rzeźba terenu. Szczegóły znajdziesz w artykule [Wtyczka Rzeźba terenu](../plugins/topography.md#3d-buildings).
 
 ### Rzeźba 3D {#3d-relief}
 
@@ -415,11 +429,25 @@ Aby uzyskać więcej szczegółów na temat widoku mapy morskiej, odwiedź stron
 
 ### Widok globu {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+<TabItem value="android" label="Android">  
+
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Globe View](@site/static/img/map/globe_view_1_ios.png) ![Globe View](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 **Widok globu** umożliwia wyświetlanie mapy jako sferycznej Ziemi zamiast płaskiej projekcji. Ten tryb zmienia geometrię powierzchni mapy i dostosowuje interakcję z mapą do nawigacji sferycznej. Więcej informacji znajdziesz w sekcji [Widok globu](../map/interact-with-map.md#globe-view) w artykule Interakcja z mapą.
 

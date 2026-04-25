@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Tracks Analyzer** to narzędzie internetowe, które pomaga analizować powtarzające się segmenty ścieżek między wybranymi punktami na mapie. Aby korzystać z tej funkcji z własnymi danymi, potrzebujesz konta OsmAnd Pro z zsynchronizowanymi ścieżkami do OsmAnd Cloud — w przeciwnym razie Twoje ścieżki nie będą dostępne w Planerze internetowym. Skanuje Twoje ścieżki i znajduje wszystkie segmenty przechodzące przez wybrane lokalizacje, umożliwiając porównanie prędkości, wysokości, dystansu i czasu w wielu aktywnościach.
+**Tracks Analyzer** to narzędzie internetowe, które pomaga analizować powtarzające się segmenty ścieżek między wybranymi punktami na mapie. Aby korzystać z tej funkcji z własnymi danymi, potrzebujesz konta OsmAnd Pro ze ścieżkami zsynchronizowanymi do OsmAnd Cloud — w przeciwnym razie Twoje ścieżki nie będą dostępne w Planerze internetowym. Skanuje Twoje ścieżki i znajduje wszystkie segmenty przechodzące przez wybrane lokalizacje, umożliwiając porównanie prędkości, wysokości, dystansu i czasu w wielu aktywnościach.
 
 ## Jak używać {#how-to-use}
 
@@ -27,7 +27,7 @@ Po otwarciu Tracks Analyzer (pokazanego jako ikona klucza), narzędzie otwiera s
 
 Aby rozpocząć analizę, ustaw jeden lub dwa punkty bezpośrednio na mapie. Kliknij prawym przyciskiem myszy w żądanej lokalizacji i wybierz **Punkt A / Punkt B** z menu kontekstowego. Analyzer następnie wyszukuje segmenty ścieżek przechodzące przez wybrany punkt lub między dwoma punktami.
 
-![Analizator ścieżek](@site/static/img/web/web_analyzer_select.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_points.png)
+![Analizator ścieżek](@site/static/img/web/web_analyzer_select.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sortowanie i widoczne parametry {#sorting-and-visible-parameters}

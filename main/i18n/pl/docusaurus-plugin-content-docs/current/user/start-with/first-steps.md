@@ -1,5 +1,5 @@
 ---
-source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
+source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
 sidebar_position: 1
 title:  Pierwsze kroki
 ---
@@ -130,15 +130,21 @@ Chociaż OsmAnd pozwala na pobieranie map dla wszystkich dostępnych regionów, 
 
 ### Jak zmienić język aplikacji {#how-to-change-app-language}
 
-Opcja *Język wyświetlania* służy do zmiany języka całej aplikacji, w tym wyskakujących okienek, tekstu wewnętrznego, wiadomości i innych. Do wersji Android 12 OsmAnd pozwalał na dostosowanie języka wyświetlania zgodnie z preferencjami bezpośrednio w aplikacji. Począwszy od Androida 13 i na urządzeniach z systemem iOS, język wyświetlania można zmienić tylko w ustawieniach systemowych (zobacz, jak zmienić preferencje językowe dla poszczególnych aplikacji w systemie [Android](https://developer.android.com/guide/topics/resources/app-languages) i [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+Opcja *Język wyświetlania* służy do zmiany języka całej aplikacji, w tym wyskakujących okienek, tekstu wewnętrznego, wiadomości i innych. 
+
+Na urządzeniach z Androidem OsmAnd pozwala na dostosowanie języka wyświetlania bezpośrednio w aplikacji we wszystkich obsługiwanych wersjach. Domyślnie aplikacja używa języka systemowego, ale możesz ręcznie wybrać inny język, jeśli jest to potrzebne.
+
+Na Androidzie 13 i nowszych możesz zmienić język aplikacji albo w ustawieniach OsmAnd, albo w ustawieniach systemowych urządzenia. Wybrany język jest synchronizowany między aplikacją a systemem. Niektóre zmiany mogą wymagać ponownego uruchomienia aplikacji, aby w pełni zastosować wybrany język.
+
+Na urządzeniach z iOS język wyświetlania można zmienić tylko w ustawieniach systemowych (zobacz, jak zmienić preferencje językowe dla poszczególnych aplikacji w systemie [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *Ustawienia → Aplikacje → OsmAnd → Język*
+Przejdź do: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Język wyświetlania*
 
-![Ogólne ustawienia języka Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
+![Ogólne ustawienia języka Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Ogólne ustawienia języka Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -146,14 +152,14 @@ Przejdź do: *Ustawienia → Aplikacje → OsmAnd → Język*
 
 Przejdź do: *Ustawienia → OsmAnd Maps → Język*
 
-![Ogólne ustawienia języka iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![Ogólne ustawienia języka iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Brak opcji ustawienia języków aplikacji
-Na niektórych urządzeniach z Androidem (Xiaomi z Muiu 14) nie ma opcji indywidualnego ustawiania języków aplikacji w ustawieniach systemowych, więc język OsmAnd można zmienić tylko wraz z językiem całego systemu. Możesz sprawdzić dyskusję na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990), aby uzyskać dodatkowe informacje.
+Na niektórych urządzeniach z Androidem lub wersjach systemu opcja indywidualnego ustawiania języków aplikacji w ustawieniach systemowych może być niedostępna lub ograniczona (możesz sprawdzić dyskusję na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990), aby uzyskać dodatkowe informacje). W takich przypadkach nadal możesz zmienić język aplikacji bezpośrednio w OsmAnd za pomocą ustawienia Język wyświetlania. Nawet jeśli język nie jest obsługiwany przez system Android, OsmAnd nadal zastosuje i zachowa wybrany język w aplikacji.
 :::
 
 
@@ -376,10 +382,14 @@ Musisz pobrać mapę przed wyszukaniem na niej adresu. Ponadto, jeśli Twoja bie
 
 [Czytaj więcej](../navigation/index.md) o nawigacji.
 
+**UWAGA:** Na urządzeniach z iOS w krajach UE możesz ustawić OsmAnd jako domyślną aplikację nawigacyjną w ustawieniach systemowych.  
+Przejdź do: *Ustawienia → Aplikacje → Domyślne aplikacje → Nawigacja*  
+Po ustawieniu OsmAnd otworzy się automatycznie dla żądań nawigacji z systemu.
+
 
 ### Jak nagrać swoją podróż {#how-to-record-your-trip}
 
-[Nagrywanie podróży](../plugins/trip-recording.md) to specjalne narzędzie w postaci wtyczki OsmAnd, która pozwala na rejestrowanie wszystkich ruchów na śladzie za pomocą GPS urządzenia.
+[Nagrywanie podróży](../plugins/trip-recording.md) to specjalne narzędzie w postaci wtyczki OsmAnd, które pozwala na rejestrowanie wszystkich ruchów na śladzie za pomocą GPS urządzenia.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -434,7 +444,7 @@ Istnieją dwa dostępne warianty zamknięcia OsmAnd.
 1. Zamknij aplikację, przesuwając ją w górę i poza ekran. W przypadku pionowej listy aplikacji przesuń palcem w lewo lub w prawo.  
 
 2. Może być konieczne wykonanie następujących czynności przed zamknięciem, w przeciwnym razie OsmAnd będzie działać w tle:
-    - [Zakończ nawigację](../navigation/setup/route-navigation.md#start--stop-navigation)
+    - [Anuluj nawigację](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Zatrzymaj pobieranie i aktualizowanie map](../start-with/download-maps.md)
     - [Zatrzymaj nagrywanie podróży](../plugins/trip-recording.md#new-track-recording)
     - [Zatrzymaj nagrywanie notatek audio/wideo](../plugins/audio-video-notes.md)

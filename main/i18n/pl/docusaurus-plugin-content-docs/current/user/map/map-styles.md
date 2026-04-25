@@ -1,7 +1,7 @@
 ---
-source-hash: 887e37d512e29933bbd3ee7af217024887ffcc5ac636c9ddc52e7480299a8d1b
+source-hash: 383e9a6814a4fe9dfbefeb9e426313df17c79d317898ed48ee3cdc95f7de4d54
 sidebar_position: 6
-title:  Map Styles (Vector Maps)
+title:  Style map (Mapy wektorowe)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## Przegląd {#overview}
 
-Style map określają, jak dane wektorowe mapy są renderowane w OsmAnd. Styl kontroluje wygląd wizualny obiektów mapy, takich jak drogi, budynki, użytkowanie terenu, woda i punkty orientacyjne, w tym kolory, wzory linii i etykiety.
+Style map określają, jak dane wektorowe mapy są renderowane w OsmAnd. Styl kontroluje wygląd wizualny obiektów mapy, takich jak drogi, budynki, użytkowanie terenu, woda i punkty zainteresowania, w tym kolory, wzory linii i etykiety.
 
 OsmAnd oferuje kilka wbudowanych stylów zoptymalizowanych pod różne aktywności. Możesz przełączać style w menu [Konfiguruj mapę](./configure-map-menu.md) i dostosowywać parametry stylu. Style map wektorowych obsługują przełączanie między trybami dziennym i nocnym.
 
@@ -26,7 +26,7 @@ Oprócz wbudowanych stylów OsmAnd obsługuje niestandardowe style map. Niestand
 
 ## Domyślne style map {#default-map-styles}
 
-OsmAnd oferuje wiele stylów map i warstw danych, które pasują domyślnie. Ten rozdział opisuje główne z nich dla trybów dziennego i nocnego.
+OsmAnd oferuje Ci wiele stylów map i warstw danych, które pasują domyślnie. Ten rozdział opisuje główne z nich dla trybów dziennego i nocnego.
 
 **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
 
@@ -64,13 +64,13 @@ Style UniRS i LightRS to style autorskie, które renderują podstawowe informacj
 
 ![Styl mapy nautyczny](@site/static/img/map/map-style-nautical.png)
 
-Jest to styl nawigacji nautycznej z bojami, latarniami morskimi, trasami rzecznymi, szlakami morskimi, znakami, portami i znakami nautycznymi. Więcej informacji w sekcji [Styl mapy nautycznej](../plugins/nautical-charts.md#nautical-map-style).
+Jest to styl nawigacji nautycznej z bojami, latarniami morskimi, trasami rzecznymi, szlakami morskimi, znakami, portami i znakami nautycznymi. Więcej informacji w sekcji [Styl mapy nautyczny](../plugins/nautical-charts.md#nautical-map-style).
 
 ### Morski {#marine}
 
 ![Styl mapy morski](@site/static/img/map/map-style-marine.png)
 
-Jest to zaawansowany styl mapy nautycznej z sektorami świateł, pełnymi charakterystykami latarni morskich oraz innymi szczegółowymi cechami morskimi dla realistycznej i dokładnej nawigacji morskiej. Więcej szczegółów w sekcji [Styl mapy morskiej](../plugins/nautical-charts.md#marine-map-style).
+Jest to zaawansowany styl mapy nautycznej z sektorami świateł, pełnymi charakterystykami latarni morskich oraz innymi szczegółowymi cechami morskimi dla realistycznej i dokładnej nawigacji morskiej. Więcej szczegółów w sekcji [Styl mapy morski](../plugins/nautical-charts.md#marine-map-style).
 
 ### Zimowy i narciarski {#winter-and-ski}
 
@@ -102,7 +102,7 @@ Zaprojektowany dla pustyń i innych słabo zaludnionych regionów, oferujący ba
 
 ![Styl mapy offroad](@site/static/img/map/map-style-offroad.png)
 
-Zaprojektowany do nawigacji off-road, ten styl opiera się na układzie mapy [Topo](#topo) i dobrze współpracuje z obrazami satelitarnymi jako podkładem. Charakteryzuje się cieńszymi głównymi drogami, aby podkreślić ścieżki, drogi, trasy rowerowe i inne szlaki off-road, co czyni go idealnym do eksploracji nieutwardzonych tras na obszarach wiejskich lub odległych.
+Zaprojektowany do nawigacji off-road, ten styl opiera się na układzie mapy [Topo](#topo) i dobrze współpracuje z obrazami satelitarnymi jako podkładem. Charakteryzuje się cieńszymi głównymi drogami, aby podkreślić ścieżki, tory, trasy rowerowe i inne szlaki off-road, co czyni go idealnym do eksploracji nieutwardzonych tras na obszarach wiejskich lub odległych.
 
 ### Śnieżny skuter {#snowmobile}
 

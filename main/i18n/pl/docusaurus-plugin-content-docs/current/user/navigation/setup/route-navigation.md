@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title:  Przygotowanie trasy
 ---
@@ -65,14 +65,14 @@ Przed rozpoczęciem korzystania z nawigacji offline upewnij się, że wymagane [
 1. Otwórz [*Menu nawigacji*](#navigation-menu):
 
     - Określ [punkt docelowy](#set-target-point).
-    - Poczekaj, aż trasa zostanie obliczona. Następnie będzie można uzyskać dodatkowe informacje o trasie w sekcji [**Szczegóły**](../setup/route-details.md).
+    - Poczekaj, aż trasa zostanie obliczona. Następnie będzie można uzyskać dodatkowe informacje o trasie w sekcji *[Details section](./route-details.md#overview)*.
     - Możesz przełączać się między różnymi [typami tras](./../routing/osmand-routing.md#routing-types) (profilami), aby uzyskać najlepszy wynik.
     - Dodaj [pośrednie punkty docelowe](#intermediate-destinations) (opcjonalnie).
     - Możesz także zmienić punkt początkowy z [bieżącej pozycji](../../map/interact-with-map.md#my-position-and-zoom) na wymagany.
 
 2. Dodatkowe [*Ustawienia nawigacji*](#settings) mogą być używane w zależności od celów (można skonfigurować, które drogi unikać lub preferować, oszczędzać paliwo lub wybrać najszybszą trasę itp.).
 
-3. [Rozpocznij](#start--stop-navigation) nawigację lub najpierw [symuluj nawigację](#simulated-navigation) (dzięki tej funkcji możesz przetestować trasę przed faktycznym jej pokonaniem).
+3. [Rozpocznij](#start--stop-navigation) nawigację lub najpierw [symuluj nawigację](#simulated-navigation) (dzięki tej funkcji możesz przetestować trasę przed faktycznym jej pokonaniem). [Na urządzeniach iOS](https://support.apple.com/en-us/121430) w krajach UE OsmAnd można również ustawić jako domyślną aplikację nawigacyjną w ustawieniach systemowych, co pozwala na automatyczne otwieranie jej dla żądań nawigacji.
 
 4. Będąc na trasie, możesz [*Wstrzymać/Wznowić*](#pause--resume-navigation) nawigację i [*Zatrzymać*](#start--stop-navigation) ją.
 
@@ -306,7 +306,7 @@ Po wybraniu punktu początkowego i końcowego aplikacja utworzy między nimi tra
 - **Zatrzymaj** nawigację, wybierając **Zatrzymaj** (*Android*) lub **Anuluj** (*iOS*).
 
 :::note Szczegóły trasy
-Dodatkowe informacje o utworzonej trasie, takie jak wysokość, instrukcje krok po kroku, narzędzie do analizy i inne, można znaleźć w sekcji [**Szczegóły**](../setup/route-details.md).
+Dodatkowe informacje o utworzonej trasie, takie jak wysokość, instrukcje krok po kroku, narzędzie do analizy i inne, można znaleźć w sekcji [**Details**](../setup/route-details.md).
 :::
 
 ### Przeliczanie trasy {#route-recalculation}

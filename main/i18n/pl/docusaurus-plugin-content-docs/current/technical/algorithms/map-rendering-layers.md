@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -11,17 +11,18 @@ Mapa OsmAnd jest renderowana warstwami od dołu do góry. Niektóre warstwy pokr
 
 OsmAnd używa trzech typów warstw: rastrowych, symboli i kontrolnych. Najpierw [renderowane są warstwy rastrowe](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) w OpenGL, a następnie [warstwy symboli](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200). Warstwy kontrolne są renderowane niezależnie od OpenGL w interfejsie użytkownika urządzeń z systemem Android lub iOS, na wierzchu mapy.
 
-**Android:**
+**Android:**  
 Większość warstw na Androidzie jest instancjonowana w metodzie [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) klasy `MapLayers`.
 
-Kolejność każdej warstwy zależy od jej właściwości `zOrder` podczas instancjonowania i jest ustawiana w metodzie [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) klasy `OsmAndMapLayer`.
+Kolejność każdej warstwy zależy od jej właściwości `zOrder` podczas instancjonowania i jest ustawiana w metodzie [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) klasy `OsmAndMapLayer`.  
 Inne warstwy mogą być instancjonowane w wtyczkach.
 
-**iOS:**
+**iOS:**  
 Większość warstw na iOS jest instancjonowana w metodzie [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) klasy `OAMapLayers`.
 
-Kolejność każdej warstwy jest ustawiana bezpośrednio przez właściwość `baseOrder` w `createLayers`.
+Kolejność każdej warstwy jest ustawiana bezpośrednio przez właściwość `baseOrder` w `createLayers`.  
 Inne warstwy mogą być instancjonowane w wtyczkach.
+
 
 ## Tabele kolejności dla Androida {#android-order-tables}
 
@@ -42,10 +43,10 @@ Inne warstwy mogą być instancjonowane w wtyczkach.
 | DownloadedRegionsLayer            | -1 100 000       | Poligony | Pokazuje pobrane regiony                                     |
 | Ikony (MapVectorLayer)            | -1 000 000       | Punkty   | Mapa wektorowa, iconOrder w stylu z [dodaniem 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (linie)                  | -500 000         | Linie    | Linie śladu                                                  |
-| RouteLayer (punkt podświetlenia wykresu) | -197 900     | Punkt    | Analiza trasy nawigacji na mapie                             |
-| RouteLayer (punkty osi x wykresu) | -198 000         | Punkty   | Analiza trasy nawigacji na mapie                             |
-| RouteLayer (strzałki skrętu)      | -199 000         | Linie    | Trasa nawigacji                                              |
 | RouteLayer                        | -200 000         | Linie    | Trasa nawigacji                                              |
+| RouteLayer (strzałki skrętu)      | -199 000         | Linie    | Trasa nawigacji                                              |
+| RouteLayer (punkty osi x wykresu) | -198 000         | Punkty   | Analiza trasy nawigacji na mapie                             |
+| RouteLayer (punkt podświetlenia wykresu) | -197 900     | Punkt    | Analiza trasy nawigacji na mapie                             |
 | Tekst (MapVectorLayer)            | 1 - 255          | Tekst    | Mapa wektorowa, textOrder w [stylu](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), domyślnie 100 |
 | Tarcze (MapVectorLayer)           | 1 - 255          | Tarcze   | Mapa wektorowa, textOrder w stylu dla tarcz, domyślnie 100   |
 | Początek, koniec śladu GPX        | 90 101           | Punkty   | GPXLayer                                                     |
@@ -87,6 +88,7 @@ Inne warstwy mogą być instancjonowane w wtyczkach.
 | MapControlsLayer          | 1 100 000        |                           |
 | MapQuickActionLayer       | 1 200 000        |                           |
 
+
 ## Tabele kolejności dla iOS {#ios-order-tables}
 
 ### iOS. Warstwy rastrowe {#ios-raster-layers}
@@ -119,7 +121,7 @@ Inne warstwy mogą być instancjonowane w wtyczkach.
 | Notatki OSM (OAOsmBugsLayer)      | 120 000          | Tekst    | Notatki OSM                                                  |
 | Tekst Fixme (OAOsmBugsLayer)      | 120 000          | Tekst    | Tekst Fixme OSM                                              |
 | Ikona Fixme (OAOsmBugsLayer)      | 120 000          | Punkty   | Ikona Fixme OSM                                              |
-| OAOsmEditsLayer                   | 120 000          | Punkty   | Edytuj wtyczkę OSM                                           |
+| OAOsmEditsLayer                   | 120 000          | Punkty   | Wtyczka do edycji OSM                                        |
 | OAPreviewRouteLineLayer           | 120 000          | Linie    | Opcje podglądu trasy                                         |
 | OATransportStopsLayer (linie)     | 120 000          | Linie    | Linie transportu publicznego                                 |
 | OATransportStopsLayer (ikony)     | 121 000          | Punkty   | Przystanki transportu publicznego                            |
@@ -142,3 +144,4 @@ Inne warstwy mogą być instancjonowane w wtyczkach.
 | OAMeasurementToolLayer     | 160 000          |                |
 | OARulerByTapControlLayer   | 170 000          | Linijka odległości |
 | OAContextMenuLayer         | 210 000          |                |
+|

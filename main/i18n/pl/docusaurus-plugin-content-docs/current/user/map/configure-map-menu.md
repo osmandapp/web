@@ -1,5 +1,5 @@
 ---
-source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
+source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
 sidebar_position: 4
 title:  Konfiguruj mapę
 ---
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Przegląd {#overview}
 
-Menu **Konfiguruj mapę** jest ważnym elementem *Menu głównego* OsmAnd, w którym można dostosować wyświetlanie mapy do własnych potrzeb. Można na niej wyróżnić ulubione punkty, znaczniki nawigacyjne lub specjalne punkty zainteresowania, wyświetlać określone trasy lub pliki GPX innych firm, nakładać informacje o rzeźbie terenu, obrazy satelitarne lub inne dostępne obrazy rastrowe, wyświetlać informacje o transporcie publicznym i zmieniać styl mapy.  
+Menu **Konfiguruj mapę** jest ważnym elementem *Menu głównego* OsmAnd, w którym można dostosować wyświetlanie mapy do własnych potrzeb. Można wyróżnić ulubione punkty, znaczniki nawigacyjne lub specjalne punkty zainteresowania na mapie, wyświetlać określone trasy lub pliki GPX innych firm, nakładać informacje o rzeźbie terenu, obrazy satelitarne lub inne dostępne obrazy rastrowe, wyświetlać informacje o transporcie publicznym i zmieniać styl mapy.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -47,7 +47,7 @@ Sekcja **Pokaż na mapie**:
 
 Sekcja **Topografia**:  
 
-![Konfiguruj mapę iOS](@site/static/img/map/configure_map_topography_ios.png)  
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_topography_ios_new.png)  
 
 Sekcja **OpenStreetMap**:  
 
@@ -73,7 +73,7 @@ Sekcje **Nakładka/podkładka i język**:
 Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie kategorie:
 
 - [Parametry stylu mapy](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (lub **<Translate ios="true" ids="map_widget_renderer"/>**) to grupa ustawień, które pozwalają zmienić sposób wyświetlania mapy głównej.  
-- [Warstwy mapy](#map-layers). Warstwy te pozwalają na umieszczenie informacji na wierzchu (lub pod spodem) głównej warstwy mapy, ale nie zmieniają sposobu jej wyświetlania.  
+- [Warstwy mapy](#map-layers). Te warstwy pozwalają na umieszczenie informacji na wierzchu (lub pod spodem) głównej warstwy mapy, ale nie zmieniają sposobu wyświetlania samej mapy.  
 
 **Uwagi:**
 
@@ -97,7 +97,7 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
    - [Znaczniki mapy](../map/point-layers-on-map.md) - wyświetla znaczniki mapy.
    - [Etykiety nakładki](../map/point-layers-on-map.md) - pokazuje nazwy punktów i ulubionych na mapie.
    - [Transport](../map/vector-maps.md#transport) - pokazuje przystanki transportu publicznego.
-   - [Trasy](../map/tracks/index.md) - wyświetla zaimportowane, zaplanowane lub nagrane trasy na mapie.
+   - [Trasy](../map/tracks/index.md) - wyświetla zaimportowane, zaplanowane lub nagrane trasy nad mapą.
    - [Zdjęcia na poziomie ulicy](../plugins/mapillary.md#map-layer) - wyświetla punkty z dostępnymi zdjęciami na poziomie ulicy.
    - [Przewodniki turystyczne](../plan-route/travel-guides.md) - wyświetla przewodniki turystyczne na mapie.
    - [Popularne miejsca](../map/popular_places.md) - podświetla popularne miejsca na podstawie artykułów z Wikipedii i wyświetla je na mapie.
@@ -107,7 +107,7 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
 
 ## Parametry stylu mapy {#map-style-parameters}
 
-Ustawienia stylu mapy zależą od głównego stylu mapy wyświetlanego. Więcej informacji na ten temat można przeczytać w artykule [Style map](../map/vector-maps).
+Ustawienia stylu mapy zależą od głównego stylu mapy wyświetlanego. Więcej informacji na ten temat można przeczytać w artykule [Style mapy](../map/vector-maps).
 
    - [Styl mapy](../map/vector-maps.md#map-styles) - obejmuje OsmAnd (Miasto), Topo, Nautyczny i inne.
    - [Tryb mapy](../map/vector-maps.md#map-mode) - pozwala wybrać widok mapy i nawigację w zależności od pory dnia.

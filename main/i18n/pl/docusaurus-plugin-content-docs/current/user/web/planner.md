@@ -1,5 +1,5 @@
 ---
-source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
+source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
 sidebar_position: 9
 sidebar_label:  Planuj trasę
 title: Planowanie trasy na stronie internetowej
@@ -65,7 +65,7 @@ Istnieją dwa sposoby na rozpoczęcie nowej trasy w narzędziu Planuj trasę. Pi
 
 Po utworzeniu trasy dodawaj punkty bezpośrednio na mapie. Każdy klik umieszcza następny punkt, a planista buduje trasę między punktami.
 
-![Tworzenie nowej trasy w OsmAnd Web](@site/static/img/web/create_new_route.png)
+![Tworzenie nowej trasy w OsmAnd Web](@site/static/img/web/create_new_route_1.png)
 
 ### Import Track {#import-track}
 
@@ -82,20 +82,24 @@ Każdy element na liście ma przełącznik, który pozwala szybko pokazywać lub
 
 ## Manage Track {#manage-track}
 
-Po utworzeniu lub zaimportowaniu trasy w narzędziu Planuj trasę otwiera się pionowy panel śladu. Użyj tego panelu, aby zmienić profil routingu i zarządzać trasą. Kliknij kontrolkę profilu, aby otworzyć okno dialogowe **Zmień profil**, wybierz potrzebny profil (na przykład Samochód, Rower lub Pieszy) i wybierz, jak go zastosować: *Następne segmenty* stosuje profil tylko do nowych części dodanych od tego punktu wzwyż, natomiast *Wszystkie segmenty* przelicza całą trasę z wybranym profilem.
+Po utworzeniu lub zaimportowaniu trasy w narzędziu Planuj trasę otwiera się pionowy panel śladu. Ten panel pozwala zmienić profil routingu i zarządzać trasą.
 
-Z panelu śladu możesz również wykonywać typowe akcje na plikach. Możesz **Zapisać w chmurze**, aby zachować trasę do późniejszego użytku, **Pobrać GPX**, aby wyeksportować ją jako plik, **Zamknąć ślad**, aby zakończyć edycję, lub **Usunąć ślad**, aby usunąć go z listy lokalnej. Te akcje są również dostępne z odpowiednich kontrolek w [panelu Informacje](#info-panel).
+Kliknij kontrolkę profilu, aby otworzyć okno dialogowe **Zmień profil**. Wybierz wymagany profil (na przykład Samochód, Rower lub Pieszy), a następnie wybierz, jak go zastosować: *Następne segmenty* stosuje profil tylko do nowych części dodanych od tego punktu wzwyż, natomiast *Wszystkie segmenty* przelicza całą trasę z wybranym profilem.
 
-![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/manage_track_new.png) ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/change_profile.png)
+Z panelu śladu możesz również **Usunąć** ślad z listy lokalnej.
+
+W [panelu Przegląd](#overview-panel) możesz **Zapisać w chmurze**, aby zachować trasę do późniejszego użytku, oraz **Pobrać** ją jako plik GPX.
+
+![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/manage_track_2_new.png) ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/change_profile.png)
 
 
 ## Track Details Panels {#track-details-panels}
 
-Menu lokalnego śladu zawiera trzy panele: **Informacje**, **Ślad** i **Punkty trasy**. Użyj ich do wyświetlania informacji o śladzie i zarządzania punktami trasy oraz punktami orientacyjnymi.
+Menu lokalnego śladu zawiera trzy panele: **Przegląd**, **Ślad** i **Punkty**. Użyj ich do wyświetlania informacji o śladzie i zarządzania punktami trasy oraz punktami orientacyjnymi.
 
-### Info Panel {#info-panel}
+### Overview Panel {#overview-panel}
 
-Panel Informacje podsumowuje wybrany ślad i pokazuje kluczowe dane trasy oraz wysokości. Zawiera szybki przegląd statystyk trasy, a także wykresy i dodatkową analizę śladu na podstawie dostępnych danych mapy.
+Panel Przegląd podsumowuje wybrany ślad i pokazuje kluczowe dane trasy oraz wysokości. Zawiera szybki przegląd statystyk trasy, a także wykresy i dodatkową analizę śladu na podstawie dostępnych danych mapy.
 
 Sekcja podsumowania pokazuje:
 
@@ -109,29 +113,34 @@ Pod podsumowaniem panel zapewnia wykresy:
 
 - Wysokość — profil wysokości trasy.
 - Nachylenie — wykres nachylenia pokazujący zmiany gradientu wzdłuż śladu.
+- Prędkość — wykres prędkości wzdłuż śladu.
+
+Możesz włączyć lub wyłączyć następujące opcje:
+
+- Pokaż punkty śladu — wyświetla punkty śladu na mapie.
+- Pokaż punkty orientacyjne — wyświetla punkty orientacyjne na mapie.
 
 Aby uzyskać dodatkowe szczegóły śladu, otwórz sekcje analizy:
 
+- Typ drogi — dzieli ślad na segmenty według klasyfikacji dróg.
 - Powierzchnia — pokazuje typy nawierzchni wzdłuż trasy na podstawie danych OSM.
 - Gładkość — pokazuje gładkość segmentów na podstawie znaczników OSM.
 
-Typowe akcje na śladzie, takie jak zapisywanie, pobieranie, zamykanie i usuwanie, są również dostępne w tym panelu.
-
-![Panel Informacje w OsmAnd Web](@site/static/img/web/info_panel.png) ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/info_panel_2.png)
+![Panel Przegląd w OsmAnd Web](@site/static/img/web/overview_panel.png) 
 
 ### Track Panel {#track-panel}
 
 Panel Ślad pokazuje listę punktów trasy użytych do zbudowania śladu. Użyj go do przeglądu i edycji struktury trasy: przeciągaj punkty, aby zmienić ich kolejność, usuwaj punkty za pomocą ikony usuń lub użyj Wyczyść punkty, aby usunąć wszystkie punkty i zacząć od nowa.
 
-![Panel Ślad w OsmAnd Web](@site/static/img/web/track_panel.png)
+![Panel Ślad w OsmAnd Web](@site/static/img/web/track_panel_new.png)
 
-### Waypoints Panel {#waypoints-panel}
+### Points Panel {#points-panel}
 
-Panel Punkty trasy służy do wyświetlania i zarządzania punktami orientacyjnymi dla wybranego śladu. Punkty orientacyjne można dodać z menu kontekstowego mapy — kliknij prawym przyciskiem myszy na mapie i wybierz opcję **Dodaj punkt orientacyjny**, a następnie wypełnij szczegóły punktu orientacyjnego (takie jak nazwa, ikona i kolor) i zapisz go.
+Panel Punkty służy do wyświetlania i zarządzania punktami orientacyjnymi dla wybranego śladu. Punkty orientacyjne można dodać z menu kontekstowego mapy — kliknij prawym przyciskiem myszy na mapie i wybierz opcję **Dodaj punkt orientacyjny**, a następnie wypełnij szczegóły punktu orientacyjnego (takie jak nazwa, ikona i kolor) i zapisz go.
 
-Na liście Punkty trasy możesz kontrolować, czy punkty orientacyjne są wyświetlane na mapie, oraz usuwać pojedyncze punkty orientacyjne w razie potrzeby. Aby usunąć wszystkie punkty orientacyjne z śladu naraz, użyj *Wyczyść wszystkie punkty orientacyjne*.
+Na liście Punkty orientacyjne możesz kontrolować, czy punkty orientacyjne są wyświetlane na mapie, oraz usuwać pojedyncze punkty orientacyjne w razie potrzeby. Aby usunąć wszystkie punkty orientacyjne z śladu naraz, użyj *Wyczyść wszystkie punkty orientacyjne*.
 
-![Panel Punkty trasy w OsmAnd Web](@site/static/img/web/waypoints_panel.png)
+![Panel Punkty w OsmAnd Web](@site/static/img/web/points_panel.png)
 
 
 ## Related Articles {#related-articles}
