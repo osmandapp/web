@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Mapa
 title: Globalna mapa na stronie internetowej
@@ -40,7 +40,10 @@ Mapa internetowa OsmAnd to globalna mapa oparta na danych [OpenStreetMap (OSM)](
 
 Aby je otworzyć, kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie. Menu to zawiera następujące działania:
 
-- **Gdzie jestem** – Szybko znajdź swoją bieżącą lokalizację na mapie. Ta funkcja wyświetla najbliższe adresy do wybranego punktu na mapie.
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Otwórz pogodę** – Uzyskaj dostęp do [menu Pogoda](../web/web-weather.md), aby wyświetlić szczegóły pogody.
 - **Utwórz nową trasę** – Otwiera narzędzie [*Plan a route* tool](../web/web-navigation.md) z wybraną lokalizacją jako punktem początkowym lub docelowym.
 - **Dodaj ulubione** –  Umożliwia utworzenie i zapisanie [ulubionego](../web/web-favorites.md#add--edit-favorite) w dowolnym punkcie na mapie w celu łatwego dostępu.
@@ -57,7 +60,21 @@ Aby je otworzyć, kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie. 
 Add pin option will be added back once it becomes available again.
 -->
 
-![Menu kontekstowe mapy](@site/static/img/web/map_context_menu_new.png)
+![Menu kontekstowe mapy](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Wybrany obiekt {#selected-object}
+
+Gdy obiekt na mapie (taki jak POI, ulubione lub punkt nawigacyjny) jest wybrany, jest podświetlony większą pinezką. W danym momencie może być wybrany tylko jeden obiekt.
+
+Jeśli wybrany obiekt jest już widoczny na ekranie, mapa się nie przesuwa. Jeśli znajduje się poza bieżącym widokiem, mapa centruje się na nim bez zmiany poziomu powiększenia.
+
+Wybrany znacznik pozostaje widoczny podczas powiększania mapy.
+
+Pobliskie znaczniki mogą być ukryte, aby ułatwić zobaczenie wybranego obiektu.
+
+![Wybrany obiekt](@site/static/img/web/selected_object_favorite.png) ![Wybrany obiekt](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menu Konfiguruj mapę {#configure-map-menu}
@@ -66,7 +83,7 @@ Menu Konfiguruj mapę umożliwia zarządzanie ustawieniami wyświetlania danych 
 
 - [Nakładka POI...](#poi-overlay). Umożliwia wybór i wyświetlanie potrzebnych kategorii POI na mapie.
 - [Ulubione](#favorites). Przełączanie wyświetlania ulubionych na mapie.
-- [Ścieżki](#tracks). Zawiera ścieżki GPX widoczne na mapie.  
+- [Ścieżki](#tracks). Zawiera ścieżki GPX widoczne na mapie.
 - [Przystanki transportu](#transport-stops). Przełączanie wyświetlania przystanków transportu publicznego na mapie. 
 - [Teren](#terrain). Włącz lub wyłącz schemat kolorów terenu na mapie.
 
@@ -106,16 +123,25 @@ Ta sekcja zawiera listę twoich [**ścieżek GPX widocznych na mapie**](../web/w
 - Możesz bezpośrednio włączać i wyłączać ścieżki.  
 - Włączaj lub wyłączaj ścieżki z listy **Ostatnio widoczne**.  
 
-Każda ścieżka ma **Menu kontekstowe** (dostępne za pomocą przycisku ⋮) z następującymi poleceniami:
+Każda ścieżka ma **Menu** (⋮) z następującymi poleceniami:
 
 - **Ukryj ścieżkę**: Ukrywa aktualnie widoczną ścieżkę na mapie.  
 - **Uczyń ścieżkę widoczną**: Wyświetla ścieżkę z listy Ostatnio widoczne na mapie.  
 - **Zmień nazwę**: Umożliwia zmianę nazwy ścieżki w celu łatwiejszej identyfikacji.  
-- **Duplikuj**: Tworzy kopię ścieżki.  
+- **Duplikuj**: Tworzy kopię ścieżki.
+- **Udostępnij**: Otwiera ekran udostępniania (taki sam jak dla [Ulubionych](../web/web-favorites.md#share)).
 - **Pobierz**: Zapisuje ścieżkę na urządzeniu lokalnym.  
 - **Usuń**: Trwale usuwa ścieżkę z listy.
 
-![Menu Konfiguruj mapę Ścieżki](@site/static/img/web/configure_map_track.png)
+Gdy otworzysz ścieżkę, wyświetlany jest panel z górnym paskiem akcji. Pasek pokazuje nazwę ścieżki i zapewnia szybki dostęp do działań. Oprócz poleceń menu z trzema kropkami, górny pasek zawiera **Edytuj**. **Wygląd** jest obecnie nieaktywne.
+
+Panel ścieżki zawiera następujące zakładki:
+
+- Przegląd — pokazuje ogólne informacje o ścieżce.
+- Ścieżka — obecnie niezaimplementowane.
+- Punkty — pokazuje punkty trasy i punkty nawigacyjne pogrupowane według typu.
+
+![Menu Konfiguruj mapę Ścieżki](@site/static/img/web/configure_map_track_new.png) ![Menu Konfiguruj mapę Ścieżki](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Przystanki transportu {#transport-stops}
 

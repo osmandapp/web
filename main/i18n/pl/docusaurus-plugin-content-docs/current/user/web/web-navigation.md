@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Gdy klikniesz Wybierz ślad, przeglądarka otwiera selektor plików, w którym m
 
 ## Szczegóły trasy {#route-details}
 
-![Nawigacja w sieci](@site/static/img/web/navigation_info.png) ![Nawigacja w sieci](@site/static/img/web/navigation_turns.png)
+![Nawigacja w sieci](@site/static/img/web/navigation_overview.png) ![Nawigacja w sieci](@site/static/img/web/navigation_turns_new.png)
 
-Gdy trasa jest obliczana, panel pokazuje podstawowe podsumowanie (odległość, czas, podjazdy/zjazdy) i przycisk **Szczegóły**. Użyj Szczegółów, aby otworzyć widok trasy z dwoma kartami: Info i Skręty.
+Gdy trasa jest obliczana, panel pokazuje podstawowe podsumowanie (odległość, czas, podjazdy/zjazdy) i przycisk **Szczegóły**. Użyj Szczegółów, aby otworzyć widok trasy z wieloma kartami. Główne karty obejmują Przegląd, Ślad i Punkty. Karta Skręty jest dostępna za pomocą strzałki (›) w pasku kart.
 
-Info podsumowuje trasę i dane wysokościowe:
+Przegląd podsumowuje trasę i dane wysokościowe:
 - **Punkty** — liczba punktów trasy użytych do zbudowania trasy.
 - **Trasa** — odległość i czas.
 - **Podjazdy/Zjazdy** — całkowity wzniesienie i zejście.

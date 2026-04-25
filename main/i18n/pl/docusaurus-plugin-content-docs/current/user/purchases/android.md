@@ -1,5 +1,5 @@
 ---
-source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -108,12 +108,14 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Obsługa zewnętrznych czujników](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i rzeźba terenu) | **-** | ✔ | ✔ |
 | [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [Budynki 3D — Dostosowanie kolorów](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [Budynki 3D — Dostosowanie kolorów](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Wizualizacja trasy 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popularne miejsca (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage offline - Przewodniki turystyczne](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Wtyczka Astronomia](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Planowanie obserwacji](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Interaktywny tryb AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Mapa nieba offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręcie | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -187,7 +189,7 @@ lub
 
 ## Starsze subskrypcje (sprzed wersji 4.0) {#legacy-subscriptions-prior-40}
 
-Nowe subskrypcje zaczynają się od wersji OsmAnd 4.0 (sierpień 2021). Wszystkie poprzednie subskrypcje są przestarzałe i technicznie odpowiadają *Subskrypcji map*, chociaż starsze subskrypcje kwalifikują się do godzinowych aktualizacji map. Użytkownicy nie mogą kupować starych subskrypcji, ale stare subskrypcje są automatycznie odnawiane, dopóki nie zrezygnujesz z subskrypcji (cena może ulec zmianie w przyszłości).
+Nowe subskrypcje zaczynają się od wersji OsmAnd 4.0 (sierpień 2021). Wszystkie poprzednie subskrypcje są przestarzałe i technicznie odpowiadają *Subskrypcji map*, chociaż starsze subskrypcje kwalifikują się do godzinowych aktualizacji map. Użytkownicy nie mogą kupować starych subskrypcji, ale stare subskrypcje są automatycznie odnawiane, dopóki nie anulujesz subskrypcji (cena może ulec zmianie w przyszłości).
 
 
 ## Przywracanie zakupów {#restore-purchases}
@@ -210,7 +212,7 @@ Aby przywrócić zakup, sprawdź, który plan OsmAnd kupiłeś.
 | OsmAnd  | ✔  &nbsp;&nbsp;[Zainstaluj](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Zainstaluj](https://appgallery.huawei.com/#/app/C101486545) |
 | OsmAnd+  | ✔  &nbsp;&nbsp;[Zainstaluj](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
-### Przywróć subskrypcję / Zakup w aplikacji {#restore-subscription--in-app}
+### Przywróć subskrypcję / W aplikacji {#restore-subscription--in-app}
 
 **Aby przywrócić *zakup w aplikacji* lub *subskrypcję* ([Maps+, Pro, Aktualizacje na żywo](#difference-between-purchases-android)).**
 

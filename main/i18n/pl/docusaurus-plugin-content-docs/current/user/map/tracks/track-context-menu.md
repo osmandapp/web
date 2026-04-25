@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -248,7 +248,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 Funkcja *Aktywność* w OsmAnd pozwala na oznaczanie zarejestrowanych śladów GPX określonymi aktywnościami w celu dalszej analizy i organizacji w folderach.
 
-- [Tagi aktywności dla śladów GPX](../../plugins/trip-recording.md#recording-settings). Zarejestrowane ślady automatycznie otrzymują typ aktywności na podstawie wybranego profilu, co pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
+- [Tagi aktywności dla śladów GPX](../../plugins/trip-recording.md#recording-settings). Zarejestrowane ślady i ślady zapisane za pomocą [Planowanie trasy](../../plan-route/create-route.md) automatycznie otrzymują typ aktywności na podstawie profilu użytego do ich utworzenia. To pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
 - [Filtr aktywności](../../personal/tracks/smart-folder.md#search-filter). Możesz filtrować zarejestrowane ślady GPX według aktywności, co pozwala skupić się na wyszukiwaniu określonych typów nagrań, takich jak wszystkie ślady rowerowe lub piesze.
 - [Zarządzaj typami aktywności](../../personal/tracks/manage-tracks.md#selection-mode). Możesz zmienić typ aktywności dla wybranych folderów lub śladów za pomocą trybu wyboru w zakładce Ślady w menu Moje miejsca.
 - **Lista aktywności**. Kategorie i grupy aktywności są zdefiniowane w zasobach OsmAnd. Dla deweloperów i współtwórców lista aktywności jest utrzymywana w ustrukturyzowanym formacie w pliku [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), który szczegółowo opisuje dostępne grupy i typy aktywności.
@@ -392,7 +392,7 @@ Waypointy to jeden z typów punktów dostępnych na mapie. Ogólnie rzecz biorą
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ W tej zakładce *Punkty*:
 
 - [Wyświetlaj dane punktów śladu](#display-custom-gpx-tags) i modyfikuj swoje punkty śladu (waypointy i punkty trasy), [usuwaj je i dodawaj](#points--waypoints) waypointy do śladu.
 - Twórz i modyfikuj [Grupę (folder) punktów](#waypoint-groups).
+- Wyśrodkuj mapę na waypoincie za pomocą ikony pinezki w liście waypointów (*tylko Android*), bez zamykania listy, co pozwala na podgląd waypointów jeden po drugim.
 
 
 ### Dodaj waypoint do śladu {#add-waypoint-to-a-track}

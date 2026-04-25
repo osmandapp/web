@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -73,28 +73,16 @@ Kliknij przycisk z trzema kropkami (⋮), aby otworzyć menu *Folder tras*. Stą
 Trasy GPX, które masz w [OsmAnd Cloud](../personal/osmand-cloud.md), będą dostępne do wyświetlania i edycji po zalogowaniu. Tylko dla użytkowników **Pro** <ProFeature/> oraz dla użytkowników [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (którzy mogą pobrać swoje dane nawet po wygaśnięciu subskrypcji Pro).
 
 Po wybraniu trasy w chmurze dostępne są następujące funkcje:
+- *Informacje* - wyświetlanie danych trasy.
+- *Wysokość* - wykres wysokości.
+- *Prędkość* - wykres prędkości.
+- *Nachylenie* - wykres nachylenia.
+- *Przelicz Wysokość (Satelita)* - przelicza wartości wysokości dla wybranej trasy i wyświetla je na wykresie wysokości.
+- *Typ drogi* - dzieli trasę na segmenty według klasyfikacji dróg.
+- *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż trasy.
+- *Gładkość* - wyświetla gładkość segmentów na podstawie tagów OSM.
 
-![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track.png)
-
-- Ekrany informacyjne:
-  - *Informacje* - wyświetlanie danych trasy.
-  - *Wysokość* - wykres wysokości.
-  - *Prędkość* - wykres prędkości.
-  - *Nachylenie* - wykres nachylenia.
-  - *Ustawienia* - lista profili nawigacyjnych dla narzędzia *Utwórz trasę*.
-  - *Zakręty* - wygenerowana lista przybliżonych instrukcji skrętów na podstawie geometrii trasy.
-  - *Typ drogi* - dzieli trasę na segmenty według klasyfikacji dróg.
-  - *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż trasy.
-  - *Gładkość* - wyświetla gładkość segmentów na podstawie tagów OSM.
-
-![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_turns.png) ![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_details.png)
-
-- Przyciski akcji:
-  - *Edytuj trasę* - dodawanie trasy z chmury do lokalnej w celu edycji (przycisk _Edytuj lokalnie_ na panelu).
-  - *Pobierz GPX* - pobiera trasę na komputer.
-  - *Przelicz* Wysokość (Satelita) - przelicza wartości wysokości dla wybranej trasy i wyświetla je na wykresie wysokości.
-  - *Usuń trasę* - usuwa trasę.
-  - *Zamknij trasę* - zamyka trasę.
+![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Powiązane artykuły {#related-articles}

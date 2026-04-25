@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  Ślady
 sidebar_position: 2
 ---
@@ -124,7 +124,7 @@ Przejdź do: *Dotknij śladu → zakładka Ślad → <Translate android="true" i
 
 Przejdź do: *Dotknij śladu → zakładka Ślad → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menu śladu analiza na mapie](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menu śladu analiza na mapie ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Menu śladu analiza na mapie](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menu śladu analiza na mapie ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Przejdź do: *Dotknij śladu → zakładka Ślad → <Translate ios="true" ids="
 
 To narzędzie zapewnia szczegółową analizę danych [śladu](../../map/tracks/track-context-menu.md#options) za pomocą wykresów i map.
 
-- **Dane wykresu (oś Y)** wyświetlają: *Wysokość*, *Nachylenie*, *Prędkość*, [*Dane z czujników zewnętrznych*](../../plugins/external-sensors.md) oraz kombinacje do dwóch opcji, jeśli są zawarte w danych śladu. ***Tylko Android:*** dla śladów samochodowych nagranych z danymi OBD-II, oś Y dodatkowo udostępnia metryki pojazdu, takie jak obroty silnika, temperatura płynu chłodzącego i inne.
+- **Dane wykresu (oś Y)** wyświetlają: *Wysokość*, *Nachylenie*, *Prędkość*, [*Dane z czujników zewnętrznych*](../../plugins/external-sensors.md) oraz kombinacje do dwóch opcji, jeśli są zawarte w danych śladu. Dla śladów samochodowych nagranych z danymi OBD-II, oś Y dodatkowo udostępnia metryki pojazdu, takie jak obroty silnika, temperatura płynu chłodzącego i inne.
 - **Wymiar wykresu (oś X)** reprezentuje: *Odległość*, *Czas* i *Pora dnia*.
 - **Interakcja przez dotknięcie/przesunięcie**. Dotknij wykresu, aby wyświetlić informacje o konkretnym punkcie na śladzie. Przesuwanie po wykresie podświetla odpowiednią lokalizację na mapie i pokazuje szczegóły na pasku informacyjnym.
 - **Etykieta odległości**. Po dotknięciu lub przesunięciu wzdłuż wykresu w podpowiedzi wyświetlany jest również dokładny dystans wzdłuż śladu. Wartość podąża za bieżącymi ustawieniami jednostek profilu (<Translate android="true" ids="km"/> lub <Translate android="true" ids="mile"/>). Użyj jej, aby szybko oszacować, jak daleko punkt jest od początku śladu, lub aby obliczyć odległość między dwoma pozycjami, porównując ich wartości.
@@ -160,7 +160,7 @@ To narzędzie zapewnia szczegółową analizę danych [śladu](../../map/tracks/
 Dotknij przycisku [Moja pozycja](../../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować widok mapy i wykres z Twoją lokalizacją.
 
 - **Skala wykresu** pozostaje taka sama, a **pasek informacyjny** jest ustalony na 1/4 po lewej stronie.
-- W miarę poruszania się **wykres będzie się przesuwał** od lewej do prawej, wyświetlając informacje przed Tobą wzdłuż śladu.
+- W miarę poruszania się **wykres będzie się przesuwał** od lewej do prawej, wyświetlając informacje przed Tobą na śladzie.
 - Na tym ekranie nie są wyświetlane żadne inne widżety.
 - Ta funkcja jest przydatna podczas pieszych wędrówek i jazdy na rowerze podczas nawigacji po śladzie.  
 

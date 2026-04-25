@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -191,7 +191,7 @@ Każdy panel obsługuje różne zachowania układu:
 
 - [Widżety deweloperskie](../widgets/info-widgets.md#developer-widgets).  
     Wyświetla opcjonalne informacje.  
-    Zawiera 5 widżetów: *FPS renderowania mapy*, *Nachylenie kamery*, *Wysokość kamery*, *Poziom powiększenia*, *Odległość od kamery do celu*, *Dostępna pamięć RAM*.  
+    Zawiera 6 widżetów: *FPS renderowania mapy*, *Nachylenie kamery*, *Wysokość kamery*, *Poziom powiększenia*, *Odległość od kamery do celu*, *Dostępna pamięć RAM*.  
 
 - [Widżety czujników zewnętrznych](../widgets/info-widgets.md#external-sensors-widgets).  
     Zestaw pomaga śledzić dane z czujników BLE/ANT+ w czasie rzeczywistym.  
@@ -339,6 +339,13 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
     - W rozmiarze Mały etykiety nie są pokazywane w panelach Lewy i Prawy. W panelach Górny i Dolny etykieta może być automatycznie ukryta (gdy jest umieszczona po prawej stronie), aby zachować pełną widoczność wartości liczbowych.
     - Nie ma oddzielnej opcji do włączania lub wyłączania etykiet tekstowych.
 
+<!--
+3. **Hiding widget text labels**:
+
+    - Automatically hides text labels to keep numeric information fully visible in compact layouts.
+    - Helps maintain a clean and readable widget arrangement when space is limited.  
+--> 
+
 4. **Indywidualny rozmiar dla różnych wierszy** (*dla wszystkich paneli*):
 
     - Widżety można indywidualnie dopasowywać, dostosowując rozmiar wiersza i kolumny.
@@ -434,8 +441,6 @@ OsmAnd pozwala na dodawanie wielu instancji tego samego widżetu do różnych pa
 
 </Tabs>
 
-
-
 Możesz zmieniać układ lub usuwać widżety z ekranu aplikacji za pomocą trybu **Edycja**.  
 
 ***Jak przenieść widżet:***
@@ -465,11 +470,11 @@ Możesz otworzyć ustawienia układu ekranu mapy z menu Konfiguracja ekranu, bez
 
 ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_single.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_separate.png)
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Układ ekranu mapy*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd obsługuje dwa tryby układu dla ekranu mapy:
-- **Pojedynczy układ** – używa tego samego układu widżetów dla wszystkich orientacji ekranu. Ta opcja jest wybrana domyślnie.
-- **Oddzielne układy** – pozwala skonfigurować różne układy widżetów dla orientacji pionowej i poziomej.
+- **<Translate android="true" ids="single_layout"/>** – używa tego samego układu widżetów dla wszystkich orientacji ekranu. Ta opcja jest wybrana domyślnie.
+- **<Translate android="true" ids="separate_layouts"/>** – pozwala skonfigurować różne układy widżetów dla orientacji pionowej i poziomej.
 
 Gdy włączone są oddzielne układy, zmiany wprowadzone w jednej orientacji nie wpływają na drugą. Jest to przydatne, jeśli chcesz zoptymalizować ekran mapy w różny sposób dla użytku w orientacji pionowej i poziomej.
 
@@ -480,8 +485,8 @@ Gdy włączone są oddzielne układy, zmiany wprowadzone w jednej orientacji nie
 Gdy włączone są oddzielne układy, w menu Konfiguracja ekranu dostępne stają się dwie zakładki: **Pionowa** i **Pozioma**. Każda zakładka reprezentuje niezależny układ dla odpowiadającej orientacji ekranu. Możesz przełączać się między zakładkami, dotykając ich.
 
 Możesz kopizować układ między orientacjami. Aby uzyskać dostęp do tych akcji, dotknij menu z trzema kropkami dla panelu widżetów:
-- **Kopiuj z pionowej** – kopiuje listę widżetów z układu pionowego do układu poziomego.
-- **Kopiuj z poziomej** – kopiuje listę widżetów z układu poziomego do układu pionowego.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – kopiuje listę widżetów z układu pionowego do układu poziomego.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – kopiuje listę widżetów z układu poziomego do układu pionowego.
 
 Kopiowana jest tylko lista widżetów, a operacja dotyczy tego samego profilu.
 
@@ -496,8 +501,8 @@ Ustawienie **Układ paneli** kontroluje, jak wyświetlane są panele widżetów 
 **Uwaga:** Ta opcja jest dostępna tylko wtedy, gdy włączone są [Oddzielne układy](#single-and-separate-layouts).
 
 Możesz wybrać między dwoma trybami:
-- **Szeroki** – panele górny i dolny rozciągają się na całą szerokość ekranu.
-- **Kompaktowy** – panele górny i dolny mieszczą się między panelami bocznymi a przyciskami mapy.
+- **<Translate android="true" ids="panels_layout_wide"/>** – panele górny i dolny rozciągają się na całą szerokość ekranu.
+- **<Translate android="true" ids="panels_layout_compact"/>** – panele górny i dolny mieszczą się między panelami bocznymi a przyciskami mapy.
 
 Układ paneli można skonfigurować niezależnie dla orientacji pionowej i poziomej, co pozwala na lepsze dostosowanie do różnych rozmiarów i orientacji ekranu.
 

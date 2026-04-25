@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Profile (Ustawienia)
 ---
@@ -447,7 +447,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 Ustawienia **Wygląd mojej pozycji** pozwalają dostosować sposób wyświetlania pozycji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
-Użyj **Rozmiar ikony**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij Rozmiar ikony, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **Przywróć domyślne**, aby wrócić do 100%.
+Użyj **<Translate ios="true" ids="icon_size"/>**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij <Translate ios="true" ids="icon_size"/>, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **<Translate ios="true" ids="reset_to_default"/>**, aby wrócić do 100%.
 
 </TabItem>
 

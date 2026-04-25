@@ -1,5 +1,5 @@
 ---
-source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
+source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -45,8 +45,9 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 
 | Typ | Opis | Link |
 |-- | -- | --|
+| GoogleMap do GPX OsmAnd | Tworzy folder plików GPX w stylu OsmAnd z mapy Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML do GPX OsmAnd | Skrypt Pythona do konwersji plików *KML* do formatu *GPX* z ikonami. Dostępne są również inne narzędzia. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ do GPX | Skrypt Pythona do konwersji plików *KMZ* do formatu *GPX*, w tym ikon. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML do GPX | Skrypt Pythona do konwersji plików *KML* do formatu *GPX* z ikonami. Dostępne są również inne narzędzia. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Narzędzie do konwersji plików Garmin Basecamp do OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi do OsmAnd | Konwersja formatów map geoPDF, geoTiff i ozi do OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX do KML | Narzędzie do konwersji plików *GPX* z OsmAnd do formatu *KML* z zachowaniem ikon. | [GitHub](https://github.com/mariush444/osmand2kml) |

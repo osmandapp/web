@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Nagrywanie trasy
 ---
@@ -414,13 +414,13 @@ Niektóre widżety Nagrywanie trasy obsługują wiele trybów wyświetlania. Try
 
 | **Widżet** | **Dostępne tryby**  |
 |-------|-------------|
-| Średnie nachylenie | Ostatni zjazd; Ostatni podjazd |
-| Średnia prędkość *(Tylko Android)* | Średnia podróży (domyślnie); Ostatni zjazd; Ostatni podjazd |
-| Dystans (Start-Stop) | Średnia podróży (domyślnie); Ostatni zjazd; Ostatni podjazd |
-| W dół | Całkowity (domyślnie); Ostatni zjazd |
-| Maks. prędkość | Całkowity (domyślnie); Ostatni zjazd; Ostatni podjazd |
-| Czas w ruchu | Całkowity (domyślnie); Ostatni zjazd; Ostatni podjazd |
-| W górę | Całkowity (domyślnie); Ostatni podjazd |
+| Średnie nachylenie | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Średnia prędkość *(Tylko Android)* | Średnia podróży (domyślnie); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Dystans (Start-Stop) | Średnia podróży (domyślnie); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| W dół | Całkowity (domyślnie); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Maks. prędkość | Całkowity (domyślnie); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Czas w ruchu | Całkowity (domyślnie); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| W górę | Całkowity (domyślnie); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Przełączanie trybów zależy od widżetu:
 - W górę / W dół / Maks. prędkość / Średnie nachylenie / Czas w ruchu / Średnia prędkość — stuknij widżet na mapie, aby przełączyć jego tryb.

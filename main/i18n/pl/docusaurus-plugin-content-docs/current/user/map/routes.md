@@ -1,7 +1,7 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
-title:  Routes
+title:  Trasy
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-OsmAnd posiada wiele zaawansowanych funkcji do wyświetlania różnych [tras](#type-of-routes) na mapie. Domyślnie trasy te są częścią [map wektorowych](./vector-maps.md#routes) (dane OpenStreetMap), jednak podobną funkcjonalność zapewniają [ślady](./tracks/index.md), które można utworzyć za pomocą [Plan a Route](../plan-route/create-route.md), zaimportować jako [GPX tracks](#save-as-a-track) lub zarejestrować za pomocą [wtyczki Trip Recording](../plugins/trip-recording.md). Routes Map Ledend znajduje się [tutaj](../map-legend/osmand.md#routes).
+OsmAnd posiada wiele zaawansowanych funkcji do wyświetlania różnych [tras](#type-of-routes) na mapie. Domyślnie trasy te są częścią [map wektorowych](./vector-maps.md#routes) (dane OpenStreetMap), jednak podobną funkcjonalność zapewniają [ślady](./tracks/index.md), które można utworzyć za pomocą [Plan a Route](../plan-route/create-route.md), zaimportować jako [GPX tracks](#save-as-a-track) lub zarejestrować za pomocą [wtyczki Trip Recording](../plugins/trip-recording.md). Legenda mapy tras znajduje się [tutaj](../map-legend/osmand.md#routes).
 
 
 ## Type of Routes {#type-of-routes}
@@ -67,7 +67,7 @@ Trasy MTB mają specyficzne mapowanie w [OpenStreetMap](https://wiki.openstreetm
 - ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  Koloruje według [network affiliation](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Koloruje trasy zgodnie z typem [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional or local).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Koloruje trasy zgodnie z typem [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional lub local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
@@ -239,6 +239,7 @@ Po dotknięciu **symbolu trasy** na mapie:
 
 - Wyświetlana jest **lista pobliskich tras** w tej lokalizacji.
 - Po wybraniu trasy z listy otwiera się [menu kontekstowe](../map/tracks/track-context-menu.md) dla tej trasy, wyświetlające szczegółowe informacje i dostępne działania.
+- Wybrana trasa jest otwierana w widoku śladu, co pozwala na interakcję z nią w taki sam sposób jak z śladem GPX.
 
 W **menu kontekstowym** możesz:
 
@@ -317,7 +318,7 @@ Możesz również otworzyć zakładkę *Track* i przełączyć na widok *Altitud
 </Tabs>  
 
 
-Aby zapisać trasę jako *plik GPX*, dotknij przycisku **Save (Download)** pod [panelem informacyjnym](../map/tracks/track-context-menu.md#info-panel). Spowoduje to otwarcie panelu przycisków [Quick actions](../map/tracks/track-context-menu.md#track-actions), gdzie będziesz mieć dostęp do działań na śladzie, takich jak zmiana [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md) lub edycja w [Plan a route](../plan-route/create-route.md).
+Aby zapisać trasę jako *plik GPX*, dotknij przycisku **Save (Download)** pod [panelem informacyjnym](../map/tracks/track-context-menu.md#info-panel). Spowoduje to otwarcie panelu przycisków [Quick actions](../map/tracks/track-context-menu.md#track-actions), gdzie będziesz mieć dostęp do działań na śladzie, takich jak zmiana [Appearance](./tracks/appearance.md), [Navigation](../navigation/setup/route-navigation.md) lub edycja w [Plan a route](../plan-route/create-route.md). Zapisane trasy zachowują się tak samo jak inne ślady i są dostępne w Twojej kolekcji śladów.
 
 
 ### Start Navigation {#start-navigation}

@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Planowanie trasy
 ---
@@ -338,6 +338,8 @@ Istnieją cztery sposoby zapisu:
 - ***Zapisz zmiany*** w [menu Opcje](#options) pozwala zapisać zmiany w pliku i kontynuować planowanie trasy.
 - ***Zapisz jako nowy ślad*** w [menu Opcje](#options) otwiera okno dialogowe, w którym należy podać nazwę śladu i folder, w którym trasa zostanie zapisana.
 - ***Dodaj zmiany do śladu***. Dołącza utworzony ślad jako [oddzielny segment](#segments) do innego istniejącego śladu. Zmian w wybranym śladzie *nie można cofnąć*.
+
+Podczas zapisywania ślad dziedziczy typ aktywności profilu wyznaczania trasy użytego do planowania. Aktywność jest zapisywana w metadanych śladu i jest zachowywana po eksportowaniu lub importowaniu pliku GPX.
 
 :::note Opcja Uproszczony ślad
 Podczas zapisywania nowego śladu można wybrać opcję ***Uproszczony*** ślad, aby ślad był kompatybilny z innymi aplikacjami firm trzecich. Technicznie rzecz biorąc, ślad zostanie zapisany bez instrukcji nawigacyjnych jako czysto geometryczny ślad.

@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -279,10 +279,10 @@ Aplikacja OsmAnd może być otwierana i używana do nawigacji w *CarPlay* na ekr
 Gdy nawigacja zostanie zakończona w CarPlay, OsmAnd wyświetla na ekranie pojazdu okno dialogowe **„Dotarłeś na miejsce”**. To okno dialogowe wykorzystuje tę samą logikę wykrywania przybycia co aplikacja mobilna i zapewnia szybki dostęp do typowych czynności po dotarciu do celu.
 
 Dostępne czynności:
-- **Oznacz jako miejsce parkowania**. Zapisuje Twoją bieżącą pozycję jako miejsce parkowania i umieszcza znacznik parkowania na mapie.
-- **Znajdź parking**. Otwiera ekran Wyszukiwania z wstępnie wybraną kategorią Parking, aby pomóc znaleźć pobliskie opcje parkowania.
-- **Przelicz trasę**. Tworzy nową trasę do pierwotnego celu, jeśli chcesz kontynuować nawigację.
-- **Zakończ nawigację**. Kończy bieżącą trasę i przywraca OsmAnd do domyślnego stanu mapy.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Zapisuje Twoją bieżącą pozycję jako miejsce parkowania i umieszcza znacznik parkowania na mapie.
+- **<Translate ios="true" ids="find_parking"/>**. Otwiera ekran Wyszukiwania z wstępnie wybraną kategorią Parking, aby pomóc znaleźć pobliskie opcje parkowania.
+- **<Translate ios="true" ids="recalculate_route"/>**. Tworzy nową trasę do pierwotnego celu, jeśli chcesz kontynuować nawigację.
+- **<Translate ios="true" ids="finish_navigation"/>**. Kończy bieżącą trasę i przywraca OsmAnd do domyślnego stanu mapy.
 
 Jeśli CarPlay zostanie odłączony podczas aktywnej nawigacji, OsmAnd stosuje dodatkową logikę na iPhonie:
 - Jeśli odległość do celu jest mniejsza niż 100 m, nawigacja jest automatycznie kończona, a przywracany jest domyślny profil. W tym przypadku powiadomienie „Dotarłeś na miejsce” nie jest wyświetlane na ekranie telefonu.
@@ -317,7 +317,7 @@ Aplikacja OsmAnd dla *CarPlay* pozwala dostosować pozycję wskaźnika bieżące
 
 Czasami *CarPlay* nie łączy się lub po prostu nic nie słychać, mimo że jest podłączony. Innym razem aplikacja OsmAnd nie otwiera się poprawnie w *CarPlay*. Możliwe rozwiązania:  
 
-1. W większości przypadków wszystkie **sygnały** pozostają na stałym, pełnym poziomie głośności, niezależnie od ustawień odtwarzania dźwięku w tym samym czasie. Aby zmienić głośność komunikatów nawigacyjnych OsmAnd podczas korzystania z *CarPlay*, przejdź do *Ustawienia → Głos → Głośność głosu* na ekranie systemu multimedialnego pojazdu.  
+1. W większości przypadków wszystkie **sygnały** pozostają na stałym, pełnym poziomie głośności, niezależnie od ustawień odtwarzania dźwięku w tym samym czasie. Aby zmienić głośność komunikatów nawigacyjnych OsmAnd podczas korzystania z *CarPlay*, przejdź do *Konfiguracja → Głos → Głośność głosu* na ekranie systemu multimedialnego pojazdu.  
 2. Uruchom ponownie urządzenie.
 3. Upewnij się, że *CarPlay* jest włączony na Twoim iPhonie. Aby to zrobić:
    - Przejdź do ustawień telefonu, a następnie do *Ogólne*.

@@ -1,5 +1,5 @@
 ---
-source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
+source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -768,25 +768,26 @@ Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [wtycz
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### Dostępna pamięć RAM {#available-ram}
+#### Informacje o pamięci {#memory-info}
 
 <InfoAndroidOnly />
 
-![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
+![Memory info widgets](@site/static/img/widgets/memory_info.png)
 
-Widżet **Dostępna pamięć RAM** to narzędzie do monitorowania zużycia pamięci urządzenia w odniesieniu do OsmAnd. Dostarcza szczegółowych danych, które pomagają zoptymalizować wydajność aplikacji.
+Widżet **Informacje o pamięci** to narzędzie deweloperskie do monitorowania, jak OsmAnd wykorzystuje pamięć urządzenia. Dostarcza informacji o różnych typach pamięci używanych przez aplikację.
 
-- **Dostępna pamięć RAM aplikacji.** Wyświetla ilość pamięci RAM dostępnej dla OsmAnd do użycia bez powodowania problemów z wydajnością.
+Dostępne tryby:  
+- **<Translate android="true" ids="memory_used_settings"/>** — Wyświetla ilość pamięci Java heap aktualnie używanej przez obiekty w aplikacji.
+- **<Translate android="true" ids="memory_allocated_settings"/>** — Pokazuje ilość pamięci, którą Java Virtual Machine (JVM) aktualnie przydzieliła dla aplikacji.
+- **<Translate android="true" ids="memory_limit_settings"/>** — Wskazuje maksymalny rozmiar Java heap dozwolony dla aplikacji przez system Android.
+- **<Translate android="true" ids="memory_native_settings"/>** — Wyświetla ilość pamięci przydzielonej za pośrednictwem natywnego kodu (C/C++), w tym bibliotek systemowych i komponentów NDK.
+- **<Translate android="true" ids="memory_graphics_settings"/>** — Pokazuje ilość pamięci używanej na zasoby graficzne, takie jak tekstury i bufory OpenGL.
 
-- **Zużycie pamięci RAM aplikacji** — pokazuje bieżące zużycie pamięci RAM przez OsmAnd.
-
-- **Całkowita pamięć RAM aplikacji** — wskazuje całkowitą pamięć przydzieloną OsmAnd, w tym zarówno używaną, jak i dostępną pamięć.
-
-> **UWAGA**. *Całkowita dostępna pamięć RAM* może się różnić w zależności od procesów działających w tle i innych aplikacji uruchomionych na urządzeniu. Wartości te są dynamiczne i oferują sposób na śledzenie i zarządzanie zużyciem pamięci w celu zapewnienia spójnej i wydajnej pracy OsmAnd.*
+**UWAGA:** Wartości pamięci mogą się zmieniać w zależności od procesów systemowych, aplikacji w tle i bieżącej aktywności w OsmAnd. Te wartości są dynamiczne i przeznaczone głównie do debugowania i monitorowania wydajności.
 
 | | |
 |:------------|:------------|
-| Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets"/> → *Dostępna pamięć RAM* |
+| Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets,map_widget_memory_info"/>* |
 | Poprzez dotknięcie | Bez zmian |
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  Wygląd trasy
 ---
@@ -86,8 +86,8 @@ Ekran *Wszystkie kolory* wyświetla dostępne palety. Dotknij menu z trzema krop
 - Usunąć. Usunięcie palety wymaga potwierdzenia.
 
 Dotknij przycisku + na ekranie Wszystkie kolory. Dostępne są dwa typy palet:
-- **Względna** — kolory skalują się automatycznie na podstawie minimalnych i maksymalnych wartości trasy.
-- **Stałe wartości** — kolory są przypisywane do konkretnych wartości bezwzględnych (na przykład 50 km/h). Wartości można edytować ręcznie. Jednostki podążają za [ustawieniami systemowymi](../../personal/profiles.md#units--formats). Skala kolorów nie skaluje się automatycznie po zastosowaniu do różnych tras.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — kolory skalują się automatycznie na podstawie minimalnych i maksymalnych wartości trasy.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — kolory są przypisywane do konkretnych wartości bezwzględnych (na przykład 50 km/h). Wartości można edytować ręcznie. Jednostki podążają za [ustawieniami systemowymi](../../personal/profiles.md#units--formats). Skala kolorów nie skaluje się automatycznie po zastosowaniu do różnych tras.
 
 :::info Pro feature
 Tworzenie niestandardowych palet to płatna [funkcja **OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
