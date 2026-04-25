@@ -1,5 +1,5 @@
 ---
-source-hash: cc7b11b19f0261ab3f9cc12de149c6d268cdaa50b3a828cc60f5dd3ebe0ce868
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title: Pesquisar Endereço
 ---
@@ -18,6 +18,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 *Pesquisa por Endereço do OsmAnd* é baseada em dados do OpenStreetMap e permite que você encontre a localização e as direções para um endereço específico a partir de uma lista já classificada, bem como pesquise por código postal ou coordenadas. Esta ferramenta permite que você encontre os endereços necessários em poucos toques, o que reduz o tempo de pesquisa e ajuda caso você não se lembre do endereço exato.
 
 A pesquisa por endereço funciona offline usando mapas baixados. Certifique-se de que o mapa da região em que você está pesquisando esteja instalado. Os resultados dependem dos dados de endereço disponíveis no OpenStreetMap.
+
+Os resultados da pesquisa são automaticamente ordenados por relevância e distância, para que resultados próximos e mais relevantes apareçam mais altos na lista.
 
 O OsmAnd oferece várias maneiras de acessar a *ferramenta de Pesquisa*, onde a seção **Pesquisar Endereço** está localizada.
 
@@ -61,6 +63,8 @@ Você não precisa inseri-los em uma ordem estrita. **Consultas de exemplo**:
 
 Se o endereço completo não for encontrado, o OsmAnd tenta automaticamente consultas simplificadas (por exemplo, removendo palavras extras) para melhorar as chances de encontrar a localização.
 
+Quando uma consulta pode se referir tanto a um endereço quanto a um POI, o OsmAnd prioriza automaticamente a interpretação mais relevante com base no contexto, distância e importância do objeto.
+
 **NOTA:** A pesquisa por endereço funciona apenas dentro de mapas baixados. Os resultados de pesquisa são baseados em:
 - mapas instalados no seu dispositivo;
 - a área visível do mapa;
@@ -70,11 +74,11 @@ Se nada for encontrado, o OsmAnd pode sugerir aumentar o raio de pesquisa.
 
 ### Pesquisa de Endereços nos EUA e Dados TIGER {#us-address-search-and-tiger-data}
 
-O OsmAnd suporta pesquisas de endereço usando dados do OpenStreetMap, mas nos Estados Unidos, os resultados da pesquisa de endereço podem estar incompletos devido ao uso de [dados TIGER](https://wiki.openstreetmap.org/wiki/TIGER).
+O OsmAnd suporta pesquisas de endereço usando dados do OpenStreetMap, mas nos Estados Unidos, os resultados da pesquisa de endereço podem estar incompletos devido ao uso de [dados TIGER](https://wiki.openstreetmap.org/wiki/TIGER).  
 
 - **Os dados TIGER fornecem intervalos de endereço, não locais exatos**, o que significa que alguns números de casa podem não ser reconhecidos.
 - **Se um endereço não for encontrado**, tente pesquisar *pelo nome da rua* em vez de um número de casa específico.
-- Use *identificadores de localização alternativos*, como pontos de referência próximos ou códigos postais, para refinar seus resultados de pesquisa.
+- Use *identificadores de localização alternativos*, como pontos de referência próximos ou códigos ZIP, para refinar seus resultados de pesquisa.  
 
 ### Formatos suportados {#supported-formats}
 
@@ -96,6 +100,8 @@ A pesquisa por endereço no OsmAnd é tolerante a diferentes formatos de entrada
 - removendo informações extras;
 - pesquisando apenas pelo nome da rua.
 
+No entanto, consultas muito curtas ou gerais (por exemplo, “Apple”) podem retornar uma mistura de endereços e POIs, incluindo uma marca, nome de rua ou localidade com o mesmo nome. Para melhorar a precisão, tente adicionar mais detalhes, como nome da cidade, rua ou nome do POI.
+
 O mecanismo de pesquisa também tolera variações comuns no formato de endereço, como ordem diferente de palavras, diferenças de grafia, abreviações ou formatos de número da casa. A tabela abaixo mostra variações típicas de pesquisa que ainda podem retornar o mesmo endereço.
 
 | Variação de pesquisa | Consultas de exemplo | Discussão relacionada |
@@ -115,13 +121,13 @@ O mecanismo de pesquisa também tolera variações comuns no formato de endereç
 
 <TabItem value="android" label="Android">
 
-![Pesquisar Rua Android](@site/static/img/search/town_search_android.png)
+![Pesquisar Cidade Android](@site/static/img/search/town_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pesquisar Rua iOS](@site/static/img/search/town_search_ios.png)
+![Pesquisar Cidade iOS](@site/static/img/search/town_search_ios.png)
 
 </TabItem>
 
@@ -156,7 +162,7 @@ Essa forma de pesquisa facilita a localização de locais específicos dentro de
 
 <TabItem value="ios" label="iOS">
 
-![Pesquisar Rua iOS](@site/static/img/search/address_street_search_3_ios.png) ![Pesquisar Rua Android](@site/static/img/search/address_street_search_4_ios.png)
+![Pesquisar Rua iOS](@site/static/img/search/address_street_search_3_ios.png) ![Pesquisar Rua iOS](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 

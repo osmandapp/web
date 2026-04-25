@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title: Favoritos
 ---
@@ -272,7 +272,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Use o ***Menu de três pontos*** ao lado de cada pasta para gerenciar grupos de favoritos:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ocultar no mapa** — Alterne esta opção para exibir ou ocultar os pontos favoritos da pasta no mapa.
-- **Fixar pasta** — Fixe a pasta selecionada para mantê-la no topo da lista de favoritos para acesso mais rápido.
+- **<Translate android="true" ids="pin_folder"/>** — Fixe a pasta selecionada para mantê-la no topo da lista de favoritos para acesso mais rápido.
 - **<Translate android="true" ids="shared_string_rename"/>** — Use esta opção para alterar o nome da pasta selecionada.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Remover dos marcadores do mapa** — Adicione todos os pontos favoritos da pasta à *lista de marcadores do mapa* ou remova-os conforme necessário para fácil referência.
@@ -397,12 +397,12 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 </Tabs>
 
-Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de Configurações*. Se você tiver uma conta no *OsmAnd Pro* ou uma conta ativa no *OsmAnd Cloud acount*, você não verá o banner de promoção.  
+Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de Favoritos*. Se você tiver uma conta no *OsmAnd Pro* ou uma conta ativa no *OsmAnd Cloud acount*, você não verá o banner de promoção.  
 
 - *Banner de Backup Gratuito de Favoritos*. Toque neste banner para iniciar o processo de backup.
 - *Conclua a etapa de registro* se você não tiver uma conta OsmAnd Cloud, seguindo as instruções no [guia de registro](../personal/osmand-cloud.md#login).
 - *Navegue até o menu Compras do OsmAnd* (*Menu → Configurações → Compras*).
-- *[Pacote OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Selecione esta opção para acessar o recurso Backup Gratuito de Configurações.
+- *[Pacote OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Selecione esta opção para acessar o recurso Backup Gratuito de Favoritos.
 - *Crie um backup* de suas configurações.
 
 

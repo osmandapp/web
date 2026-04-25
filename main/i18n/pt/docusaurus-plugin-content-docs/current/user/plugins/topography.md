@@ -1,5 +1,5 @@
 ---
-source-hash: db5100e593e959bddd7c050a00a3702808a3d2eb1673ab3d7afe8c6151f814cc
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topografia
 ---
@@ -311,7 +311,7 @@ A função *Visibilidade* é usada para ajustar a transparência das sombras par
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-A função *Níveis de Zoom* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
+A função *Níveis de Escala* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
 
 ### Tamanho do Cache {#cache-size}
 
@@ -345,28 +345,58 @@ As principais configurações para *Mostrar ou Ocultar tipos de mapa* estão na 
 
 ## Edifícios 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edifícios 3D* 
+<TabItem value="android" label="Android">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-O recurso **Edifícios 3D** exibe edifícios como modelos 3D volumétricos em vez de formas planas. Os edifícios são gerados a partir de [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), usando informações de altura de tags como `height` e `building:levels` quando disponíveis. Edifícios 3D são exibidos apenas em níveis de zoom mais altos (visão da cidade/rua), onde edifícios individuais podem ser exibidos.  
+![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
 
-Use o alternador principal para ativar ou desativar a renderização 3D de edifícios. Quando ativado, a configuração também exibe o [Nível de detalhe](#performance) atual (Baixo ou Alto) sob o alternador principal. Para visualizar edifícios em 3D, incline o mapa colocando dois dedos na tela e deslizando para cima. Nesta visão, os edifícios podem cobrir parcialmente estradas ou rótulos do mapa dependendo da configuração de visibilidade.
+</TabItem>
 
-Esta opção está disponível apenas quando o plugin Topografia está ativado.  
+<TabItem value="ios" label="iOS">  
+
+Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+O recurso **Edifícios 3D** exibe edifícios como modelos 3D volumétricos em vez de formas planas. Os edifícios são gerados a partir de [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), usando informações de altura de tags como `height` e `building:levels` quando disponíveis. Se [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluírem passagens através de edifícios mapeadas com a tag `tunnel=building_passage`, o OsmAnd renderiza aberturas visíveis no modelo de edifício 3D para que estradas ou caminhos pedestres passando pelo edifício sejam exibidos corretamente. 
+
+Edifícios 3D são exibidos apenas em níveis de zoom mais altos (visão da cidade/rua), onde edifícios individuais podem ser exibidos. Quando um POI ou um local selecionado (como um pino do mapa ou destino de navegação) estiver dentro de um edifício, o OsmAnd destaca o edifício correspondente para facilitar sua identificação no mapa.
+
+Use o alternador principal para ativar ou desativar a renderização 3D de edifícios. Quando ativado, a configuração também exibe o [Nível de detalhe](#performance) atual (Baixo ou Alto) sob o alternador principal (*apenas Android*). Para visualizar edifícios em 3D, incline o mapa colocando dois dedos na tela e deslizando para cima. Nesta visão, os edifícios podem cobrir parcialmente estradas ou rótulos do mapa dependendo da configuração de visibilidade.
+
+No Android, esta opção está disponível apenas quando o plugin Topografia está ativado.  
 Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-As configurações de edifícios 3D incluem controles que afetam a aparência, o desempenho e a iluminação dos edifícios 3D.
+As configurações de edifícios 3D são divididas em dois grupos: **Aparência** e **Desempenho**.
 
 ### Aparência {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![3D Buildings](@site/static/img/map/3d_buildings_color.png)
 
-Os controles de **Aparência** determinam como os edifícios 3D aparecem no mapa. Inclui duas configurações: Cor e Visibilidade. 
+</TabItem>
 
-**Cor** permite alterar a cor do edifício. Quando você toca em Cor, o OsmAnd abre uma tela de visualização separada onde você pode ver o mapa enquanto ajusta a configuração. A tela de visualização mostra um mapa ao vivo para que você possa ver imediatamente como a cor selecionada afeta os edifícios.
+<TabItem value="ios" label="iOS">  
+
+![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Os controles de **<Translate android="true" ids="shared_string_appearance"/>** determinam como os edifícios 3D aparecem no mapa. Inclui duas configurações: Cor e Visibilidade. 
+
+**<Translate android="true" ids="shared_string_color"/>** permite alterar a cor do edifício. Quando você toca em Cor, o OsmAnd abre uma tela de visualização separada onde você pode ver o mapa enquanto ajusta a configuração. A tela de visualização mostra um mapa ao vivo para que você possa ver imediatamente como a cor selecionada afeta os edifícios.
 - **Estilo do mapa** — usa a cor padrão do edifício do estilo de mapa atualmente selecionado.
 - **Personalizado** — permite definir uma cor de edifício personalizada separadamente para o modo Dia / Noite.
 
@@ -376,36 +406,25 @@ Personalização de Cor de Edifícios 3D é um [recurso pago](../purchases/index
 
 Se as cores personalizadas não forem compradas, você verá um estado vazio com uma descrição curta e um botão Obter. Se Personalizado estiver disponível, você pode alternar entre Dia e Noite, escolher uma cor da paleta (ou abrir Todas as cores), depois tocar em Aplicar.
 
-**Visibilidade** controla a opacidade (transparência) dos edifícios 3D. Use o controle deslizante para definir a visibilidade como uma porcentagem. O controle deslizante permite valores de 10% a 100%, com 50% usado por padrão. Valores mais baixos tornam os edifícios mais transparentes e ajudam as estradas/rótulos a permanecerem legíveis. Valores mais altos tornam os edifícios mais sólidos e visualmente dominantes. Tocar em Visibilidade também abre uma tela de visualização separada com o controle deslizante.
+**<Translate android="true" ids="gpx_visibility_txt"/>** controla a opacidade (transparência) dos edifícios 3D. Use o controle deslizante para definir a visibilidade como uma porcentagem. O controle deslizante permite valores de 10% a 100%, com 50% usado por padrão. Valores mais baixos tornam os edifícios mais transparentes e ajudam as estradas/rótulos a permanecerem legíveis. Valores mais altos tornam os edifícios mais sólidos e visualmente dominantes. Tocar em Visibilidade também abre uma tela de visualização separada com o controle deslizante.
 
 Nas telas de visualização (Cor / Visibilidade), você pode usar Redefinir para o padrão na barra do aplicativo para restaurar o valor padrão.
 
 ### Desempenho {#performance}
 
-Os controles de **Desempenho** determinam como os edifícios 3D são renderizados. Inclui duas configurações: Nível de detalhe e Distância de visualização.
+Os controles de **<Translate android="true" ids="performance"/>** determinam como os edifícios 3D são renderizados. Inclui duas configurações: Nível de detalhe e Distância de visualização.
 
-**Nível de detalhe** determina a complexidade da geometria do edifício 3D:
+**<Translate android="true" ids="level_of_details"/>** determina a complexidade da geometria do edifício 3D:
 - Baixo (padrão) — geometria mais simples.
 - Alto — geometria mais detalhada.
 
-**Distância de visualização** controla quão longe da câmera os edifícios 3D são renderizados:
+**<Translate android="true" ids="view_distance"/>** controla quão longe da câmera os edifícios 3D são renderizados:
 - Próximo (padrão) — renderiza edifícios mais próximos de você.
 - Longe — renderiza edifícios de uma distância maior.
 
 Ambas as opções de desempenho usam um alternador de duas posições diretamente na tela de configurações de edifícios 3D.
 
 **Nota:** Usar *Alto detalhe* e *Distância de visualização longe* melhora a aparência visual, mas pode impactar o desempenho e aumentar o uso da bateria.
-
-### Sol {#sun}
-
-![3D Buildings](@site/static/img/map/sun_setting.png)
-
-A configuração **Sol** controla a direção da iluminação usada para renderizar edifícios 3D. Afeta como a luz e as sombras aparecem nos edifícios na visão 3D. Quando você toca em Sol, o OsmAnd abre uma tela de visualização onde você pode ajustar a iluminação usando dois controles deslizantes:
-
-- Azimute — controla a direção horizontal da fonte de luz (a direção do compasso do sol).
-- Altitude — controla a altura do sol acima do horizonte.
-
-Alterar esses parâmetros modifica como as sombras caem nos edifícios e pode melhorar a percepção visual das formas dos edifícios na visão 3D. Toque em Aplicar para confirmar os parâmetros de iluminação selecionados.
 
 
 ## Relevo 3D {#3d-relief}
@@ -465,7 +484,6 @@ O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridi
 </TabItem>
 
 </Tabs>
-
 
 ### Exagero Vertical {#vertical-exaggeration}
 

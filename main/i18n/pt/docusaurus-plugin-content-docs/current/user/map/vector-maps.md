@@ -1,5 +1,5 @@
 ---
-source-hash: 0b9fec9a92cbab58480cefaa92e29f493c2277360a9b9044570e4cc41a94d83d
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title:  Mapas Vetoriais
 ---
@@ -371,15 +371,29 @@ A opção Terreno permite personalizar três funcionalidades, como Hillshade, Sl
 
 ### Edifícios 3D {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+<TabItem value="android" label="Android"> 
 
-![Edifícios 3D](@site/static/img/map/3d_buildings_1_new_2.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_2.png) 
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![Edifícios 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![Edifícios 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 A funcionalidade **Edifícios 3D** exibe edifícios como modelos volumétricos 3D em vez de formas planas. Os edifícios são gerados a partir de [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
 
-Esta opção está disponível apenas quando o plugin de Topografia está ativado. Consulte o artigo [plugin de Topografia](../plugins/topography.md#3d-buildings) para obter detalhes.
+No Android, esta opção está disponível apenas quando o plugin de Topografia está ativado. Consulte o artigo [plugin de Topografia](../plugins/topography.md#3d-buildings) para obter detalhes.
 
 ### Relevo 3D {#3d-relief}
 
@@ -415,11 +429,25 @@ Para mais detalhes sobre a visualização de mapa Náutico, visite a [página do
 
 ### Vista do Globo {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+<TabItem value="android" label="Android">  
+
+Ir para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Vista do Globo](@site/static/img/map/globe_view_1.png) ![Vista do Globo](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Vista do Globo](@site/static/img/map/globe_view_1_ios.png) ![Vista do Globo](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 A **Vista do Globo** permite exibir o mapa como uma Terra esférica em vez de uma projeção plana. Este modo altera a geometria da superfície do mapa e adapta a interação do mapa à navegação esférica. Para mais informações, consulte a secção [Vista do Globo](../map/interact-with-map.md#globe-view) no artigo Interagir com o Mapa.
 
@@ -476,7 +504,7 @@ Ir para: *Menu → Configurar Mapa → Mostrar → Grelha de Coordenadas*
 
 <TabItem value="ios" label="iOS">  
 
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+![Menu da grelha de coordenadas](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 

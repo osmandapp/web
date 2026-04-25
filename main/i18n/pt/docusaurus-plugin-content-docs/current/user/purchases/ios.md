@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title: Compras iOS
 ---
@@ -53,6 +53,25 @@ Pode descarregar a aplicação através deste link - [OsmAnd Maps na Apple App S
 
 Na lista, há informações sobre os preços do produto OsmAnd para as regiões dos EUA e Europa. Para outras regiões, os preços são equivalentes nas moedas locais.
 
+<!--
+
+:::danger February Sale
+
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+
+-->
 
 
 |    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Subscrição | [OsmAnd Pro](#install-osmand-ios) |
@@ -80,6 +99,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [Relevo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dados de topografia](../plugins/topography.md#overview)<br/>(Curvas de nível e Terreno) | **-** | ✔ | ✔ |
 | [Grelha de Coordenadas — Personalização de Cor](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Edifícios 3D — Personalização de Cor](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Visualização de trilhos 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guias de viagem (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

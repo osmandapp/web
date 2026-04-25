@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title: Trilhas
 sidebar_position: 2
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Visão geral {#overview}
-OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As rotas podem ser construídas como parte da Navegação, criadas via Planejar Rota, importadas como trilhas GPX, gravadas via plugin de Gravação de Viagem, ou navegadas e selecionadas a partir de dados do OpenStreetMap.
+OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As rotas podem ser construídas como parte da Navegação, criadas via Planejar Rota, importadas como trilhas GPX, gravadas via plugin de Gravação de Viagem, ou procuradas e selecionadas a partir de dados do OpenStreetMap.
 
 
 ## Tipos de Trilhas {#types-of-tracks}
@@ -124,7 +124,7 @@ Vá para: *Toque na trilha → Aba Trilha → <Translate android="true" ids="ana
 
 Vá para: *Toque na trilha → Aba Trilha → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menu de trilha analisar no mapa](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menu de trilha analisar no mapa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Menu de trilha analisar no mapa](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menu de trilha analisar no mapa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Vá para: *Toque na trilha → Aba Trilha → <Translate ios="true" ids="analyze
 
 Esta ferramenta fornece uma análise detalhada dos dados da [trilha](../../map/tracks/track-context-menu.md#options) usando gráficos e mapas.
 
-- Os **dados do gráfico (eixo Y)** exibem: *Altitude*, *Inclinação*, *Velocidade*, [*Dados do sensor externo*](../../plugins/external-sensors.md) e combinações de até duas opções, se contidas nos dados da trilha. ***Apenas Android:*** para trilhas de carro gravadas com dados OBD-II, o eixo Y também fornece métricas do veículo, como velocidade do motor, temperatura do fluido de arrefecimento, e mais.
+- Os **dados do gráfico (eixo Y)** exibem: *Altitude*, *Inclinação*, *Velocidade*, [*Dados do sensor externo*](../../plugins/external-sensors.md) e combinações de até duas opções, se contidas nos dados da trilha. Para trilhas de carro gravadas com dados OBD-II, o eixo Y também fornece métricas do veículo, como velocidade do motor, temperatura do fluido de arrefecimento, e mais.
 - A **dimensão do gráfico (eixo X)** representa: *Distância*, *Tempo* e *Hora do dia*.
 - **Interação de toque/deslize**. Toque em um gráfico para exibir informações sobre um ponto específico na trilha. Deslizar no gráfico destaca o local apropriado no mapa e mostra detalhes na barra de informações.
 - **Rótulo de distância**. Ao tocar ou deslizar ao longo do gráfico, a dica de ferramenta também exibe a distância exata ao longo da trilha. O valor segue as configurações de unidade do perfil atual (<Translate android="true" ids="km"/> ou <Translate android="true" ids="mile"/>). Use-o para estimar rapidamente quão longe um ponto está do início da trilha, ou para calcular a distância entre duas posições comparando seus valores.

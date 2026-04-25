@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -27,7 +27,7 @@ Após abrir o Tracks Analyzer (mostrado como uma chave inglesa), a ferramenta ab
 
 Para iniciar a análise, defina um ou dois pontos diretamente no mapa. Clique com o botão direito no local desejado e selecione **Ponto A / Ponto B** do menu de contexto. O analisador então procura por segmentos de trilha que passem pelo ponto selecionado ou entre os dois pontos.
 
-![Analisador de Trilhas](@site/static/img/web/web_analyzer_select.png) ![Analisador de Trilhas](@site/static/img/web/web_analyzer_points.png)
+![Analisador de Trilhas](@site/static/img/web/web_analyzer_select.png) ![Analisador de Trilhas](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Classificação e Parâmetros Visíveis {#sorting-and-visible-parameters}

@@ -1,5 +1,5 @@
 ---
-source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
+source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -114,7 +114,7 @@ Você pode selecionar [POIs](../map/point-layers-on-map.md#points-of-interest-po
     - Todas as categorias podem conter não mais itens de lista do que os fornecidos pelo sistema multimídia do seu veículo. Isso significa que a lista no *CarPlay* pode estar incompleta, e todas as outras pastas estão disponíveis apenas no aplicativo OsmAnd no seu dispositivo.
     - A pasta [Última modificação](#folder-last-modified) contém uma lista de destinos recentes, classificados por data de adição ou alteração.
     - A lista de todas as outras pastas é classificada pela atualização mais recente, as novas pastas estão no topo da lista. Não é possível alterar sua ordem manualmente.
-    - A lista de pontos dentro das pastas é classificada pela distância até eles, começando pelos mais próximos. Cada ponto tem um nome ou coordenadas, um ícone em forma (cor e ícone definidos por padrão ou escolhidos por você no aplicativo OsmAnd), e a distância do ponto da localização atual até ele.
+    - A lista de pontos dentro das pastas é classificada pela distância até eles, começando pelos mais próximos. Cada ponto tem um nome ou coordenadas, um ícone em forma (cor e ícone definidos por padrão ou escolhidos por você no aplicativo OsmAnd), e a distância da localização atual até ele.
 2. Selecione a categoria [Histórico](#history) para encontrar um dos destinos recentes que estão armazenados na memória do dispositivo.
 3. Selecione [Pesquisar](#search) para inserir um destino das categorias de pesquisa disponíveis.
 
@@ -278,10 +278,10 @@ O aplicativo OsmAnd pode ser aberto e usado para navegar no *CarPlay* na tela do
 Quando a navegação é concluída no CarPlay, o OsmAnd exibe um diálogo **“Você chegou”** na tela do veículo. Este diálogo usa a mesma lógica de detecção de chegada que o aplicativo móvel e fornece acesso rápido a ações comuns após chegar ao destino.
 
 Ações disponíveis:
-- **Marcar como local de estacionamento**. Salva sua posição atual como um local de estacionamento e coloca um marcador de estacionamento no mapa.
-- **Encontrar estacionamento**. Abre a tela de Pesquisa com a categoria Estacionamento pré-selecionada para ajudá-lo a encontrar opções de estacionamento próximas.
-- **Recalcular rota**. Constrói uma nova rota para o destino original se você quiser continuar a navegação.
-- **Finalizar navegação**. Encerra a rota atual e retorna o OsmAnd ao estado padrão do mapa.
+- **<Translate ios="true" ids="context_menu_item_add_parking_point"/>**. Salva sua posição atual como um local de estacionamento e coloca um marcador de estacionamento no mapa.
+- **<Translate ios="true" ids="find_parking"/>**. Abre a tela de Pesquisa com a categoria Estacionamento pré-selecionada para ajudá-lo a encontrar opções de estacionamento próximas.
+- **<Translate ios="true" ids="recalculate_route"/>**. Constrói uma nova rota para o destino original se você quiser continuar a navegação.
+- **<Translate ios="true" ids="finish_navigation"/>**. Encerra a rota atual e retorna o OsmAnd ao estado padrão do mapa.
 
 Se o CarPlay for desconectado enquanto a navegação estiver ativa, o OsmAnd aplica uma lógica adicional no iPhone:
 - Se a distância até o destino for inferior a 100 m, a navegação é finalizada automaticamente e o perfil padrão é restaurado. Nesse caso, a notificação “Você chegou” não é exibida na tela do telefone.

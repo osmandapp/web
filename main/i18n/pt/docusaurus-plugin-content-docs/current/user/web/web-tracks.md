@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -73,28 +73,16 @@ Clique no botão de três pontos (⋮) para abrir o menu *Track Folder*. A parti
 As trilhas GPX que você tem no [OsmAnd Cloud](../personal/osmand-cloud.md) estarão disponíveis para exibição e edição após o login. Apenas para usuários **Pro** <ProFeature/> e para usuários [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que podem baixar seus dados mesmo após o vencimento da assinatura Pro).
 
 Os seguintes recursos estão disponíveis após escolher uma trilha na nuvem:
+- *Informação* - exibindo dados da trilha.
+- *Elevação* - gráfico de elevação.
+- *Velocidade* - gráfico de velocidade.
+- *Inclinação* - gráfico de inclinação.
+- *Recalcular Elevação (Satélite)* - recalcula os valores de elevação para a trilha selecionada e os mostra no gráfico de elevação.
+- *Tipo de estrada* - divide a trilha em segmentos por classificação de estrada.
+- *Superfície* - mostra os tipos de superfícies da trilha ao longo da rota.
+- *Suavidade* - exibe a suavidade do segmento baseada em tags OSM.
 
-![Edição de GPX na nuvem do OsmAnd Web](@site/static/img/web/cloud_track.png)
-
-- Telas de informação:
-  - *Informação* - exibindo dados da trilha.
-  - *Elevação* - gráfico de elevação.
-  - *Velocidade* - gráfico de velocidade.
-  - *Inclinação* - gráfico de inclinação.
-  - *Configurações* - lista de perfis de navegação para a ferramenta *Create route*.
-  - *Curvas* - uma lista gerada de instruções aproximadas de curvas baseada na geometria da trilha.
-  - *Tipo de estrada* - divide a trilha em segmentos por classificação de estrada .
-  - *Superfície* - mostra os tipos de superfícies da trilha ao longo da rota.
-  - *Suavidade* - exibe a suavidade do segmento baseada em tags OSM .
-
-![Edição de GPX na nuvem do OsmAnd Web](@site/static/img/web/cloud_track_turns.png) ![Edição de GPX na nuvem do OsmAnd Web](@site/static/img/web/cloud_track_details.png)
-
-- Botões de ação:
-  - *Editar trilha* - adicionar trilha na nuvem ao local para edição (botão _Edit locality_ no painel).
-  - *Baixar GPX* - baixa a trilha para o PC.
-  - *Recalcular* Elevação (Satélite) - recalcula os valores de elevação para a trilha selecionada e os mostra no gráfico de elevação.
-  - *Excluir Trilha* - exclui a trilha.
-  - *Fechar trilha* - fechar a trilha.
+![Edição de GPX na nuvem do OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Edição de GPX na nuvem do OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Artigos Relacionados {#related-articles}

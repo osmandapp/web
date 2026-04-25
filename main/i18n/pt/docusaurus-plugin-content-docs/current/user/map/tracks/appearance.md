@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
@@ -86,8 +86,8 @@ A tela *Todas as cores* exibe as paletas disponíveis. Toque no menu de três po
 - Remover. A remoção de uma paleta requer confirmação.
 
 Toque no botão + na tela Todas as cores. Dois tipos de paletas estão disponíveis:
-- **Relativa** — as cores escalam automaticamente com base nos valores mínimo e máximo da trilha.
-- **Valores Fixos** — as cores são atribuídas a números absolutos específicos (por exemplo, 50 km/h). Os valores podem ser editados manualmente. As unidades seguem as [configurações do sistema](../../personal/profiles.md#units--formats). A escala de cores não é redimensionada automaticamente quando aplicada a diferentes trilhas.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — as cores escalam automaticamente com base nos valores mínimo e máximo da trilha.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — as cores são atribuídas a números absolutos específicos (por exemplo, 50 km/h). Os valores podem ser editados manualmente. As unidades seguem as [configurações do sistema](../../personal/profiles.md#units--formats). A escala de cores não é redimensionada automaticamente quando aplicada a diferentes trilhas.
 
 :::info Recurso Pro
 Criar paletas personalizadas é um recurso pago do [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.

@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title: Interagir com o Mapa
 ---
@@ -207,12 +207,15 @@ A *Lupa do Mapa* é uma ferramenta que melhora a visibilidade do mapa, semelhant
 
 ### Visualização em Globo {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Visualização em Globo](@site/static/img/map/globe_view_1.png) ![Visualização em Globo](@site/static/img/map/globe_view_2.png)
 
 **Visualização em Globo** permite que você exiba o mapa como uma Terra esférica em vez de uma projeção plana. Este modo altera a geometria da superfície do mapa e adapta a interação do mapa à navegação esférica.  
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Visualização Global*
 
 A Visualização em Globo está atualmente disponível apenas quando:
 - O [plugin de Desenvolvimento](../plugins/development.md) está ativado.  
@@ -221,6 +224,20 @@ Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,deb
 Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - O [Motor de renderização do mapa](../personal/global-settings.md#map-rendering-engine) está definido para a Versão 2 (OpenGL).  
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Visualização em Globo](@site/static/img/map/globe_view_1_ios.png) ![Visualização em Globo](@site/static/img/map/globe_view_2_ios_new.png)
+
+**Visualização em Globo** permite que você exiba o mapa como uma Terra esférica em vez de uma projeção plana. Este modo altera a geometria da superfície do mapa e adapta a interação do mapa à navegação esférica.  
+
+</TabItem>
+
+</Tabs>
 
 Quando a Visualização em Globo está ativada, o mapa gira como um globo. Gestos de arrastar giram a Terra, e o zoom altera a distância da câmera em vez de escalar uma superfície plana. Elementos do mapa, como trilhas, marcadores, símbolos e objetos 3D, são renderizados diretamente na superfície esférica e seguem sua curvatura. Os objetos desaparecem gradualmente atrás do horizonte à medida que o globo gira.
 

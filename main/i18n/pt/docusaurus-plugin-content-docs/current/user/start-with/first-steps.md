@@ -1,5 +1,5 @@
 ---
-source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
+source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
 sidebar_position: 1
 title: Primeiros Passos
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Bem-vindo ao OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
-Explore como baixar mapas, como configurar o aplicativo, como usar o mapa e construir uma rota, como iniciar a navegação e como pesquisar pontos de interesse. Familiarize-se com os pontos-chave da política de privacidade do OsmAnd e as permissões necessárias.
+Explore como baixar mapas, como configurar o aplicativo, como usar o mapa e construir uma rota, como iniciar a navegação e como pesquisar pontos de interesse. Familiarize-se com os pontos principais da política de privacidade do OsmAnd e as permissões necessárias.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -60,7 +60,7 @@ Nosso objetivo é criar um aplicativo totalmente funcional e orientado a mapas q
 - Visualize um Mapa Mundial com muitos detalhes exibidos em [diferentes estilos de mapa](../map/vector-maps.md).
 - Exiba, [pesquise](../search/search-poi.md) e salve vários [Pontos de Interesse](../map/point-layers-on-map.md).
 - [Planeje uma rota](../plan-route/create-route.md) de carro, bicicleta, a pé e combine em rotas multimodais.
-- Inicie a [navegação guiada por voz](../navigation/guidance/voice-navigation.md) com a tela ligada e desligada.
+- Inicie a [navegação guiada por voz](../navigation/guidance/voice-navigation.md) quando você ligar e desligar a tela.
 - Enriqueça sua viagem turística com [Wikipedia](../plugins/wikipedia.md) e [Wikivoyage](../plan-route/travel-guides.md) offline.
 - Personalize totalmente como [o mapa é exibido](../map/configure-map-menu.md) e quais [widgets](../widgets/index.md) são exibidos nele.
 - Navegue [por rota](../navigation/setup/route-navigation.md), [por uma trilha específica](../navigation/setup/gpx-navigation.md), [por transporte público](../navigation/routing/public-transport-navigation.md) e [off-road](../navigation/setup/markers-navigation.md).
@@ -130,15 +130,21 @@ Embora o OsmAnd permita baixar mapas para todas as regiões disponíveis, não h
 
 ### Como mudar o idioma do aplicativo {#how-to-change-app-language}
 
-A opção *Idioma de exibição* é usada para alterar o idioma de todo o aplicativo, incluindo avisos pop-up, texto interno, mensagens e muito mais. Até o Android 12, o OsmAnd permite personalizar o idioma de exibição de acordo com suas preferências diretamente no aplicativo. A partir do Android 13 e em dispositivos iOS, o idioma de exibição só pode ser alterado nas configurações do sistema (veja como alterar as preferências de idioma por aplicativo no [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+A opção *Idioma de exibição* é usada para alterar o idioma de todo o aplicativo, incluindo avisos pop-up, texto interno, mensagens e muito mais. 
+
+Em dispositivos Android, o OsmAnd permite que você personalize o idioma de exibição diretamente no aplicativo em todas as versões suportadas. Por padrão, o aplicativo usa o idioma do sistema, mas você pode selecionar manualmente um idioma diferente, se necessário.
+
+No Android 13 e posterior, você pode alterar o idioma do aplicativo tanto nas configurações do OsmAnd quanto nas configurações do sistema do dispositivo. O idioma selecionado é sincronizado entre o aplicativo e o sistema. Algumas alterações podem exigir a reinicialização do aplicativo para aplicar totalmente o idioma selecionado.
+
+Em dispositivos iOS, o idioma de exibição só pode ser alterado nas configurações do sistema (veja como alterar as preferências de idioma por aplicativo no [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *Configurações → Aplicativos → OsmAnd → Idioma*
+Vá para: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Idioma de exibição*
 
-![Idioma das Configurações Gerais Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
+![Idioma das Configurações Gerais Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Idioma das Configurações Gerais Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -146,14 +152,14 @@ Vá para: *Configurações → Aplicativos → OsmAnd → Idioma*
 
 Vá para: *Configurações → OsmAnd Maps → Idioma*
 
-![Idioma das Configurações Gerais iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![Idioma das Configurações Gerais iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Nenhuma opção para definir idiomas do aplicativo
-Em alguns dispositivos Android (Xiaomi com Muiu 14), não há opção para definir idiomas de aplicativos individualmente nas configurações do sistema, então o idioma do OsmAnd só pode ser alterado com o idioma de todo o sistema. Você pode verificar a discussão no [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) para informações adicionais.
+Em alguns dispositivos Android ou versões do sistema, a opção para definir idiomas de aplicativos individualmente nas configurações do sistema pode estar indisponível ou limitada (você pode verificar a discussão no [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) para informações adicionais). Nesses casos, você ainda pode alterar o idioma do aplicativo diretamente no OsmAnd usando a configuração Idioma de exibição. Mesmo se um idioma não for suportado pelo seu sistema Android, o OsmAnd ainda aplicará e preservará o idioma selecionado dentro do aplicativo.
 :::
 
 
@@ -375,6 +381,10 @@ Você precisa baixar o mapa antes de procurar um endereço nele. Além disso, se
 </Tabs>
 
 [Leia mais](../navigation/index.md) about navigation.
+
+**NOTA:** Em dispositivos iOS em países da UE, você pode definir o OsmAnd como o aplicativo de navegação padrão nas configurações do sistema.  
+Vá para: *Configurações → Apps → Apps Padrão → Navegação*  
+Quando definido, o OsmAnd será aberto automaticamente para solicitações de navegação do sistema.
 
 
 ### Como gravar sua viagem {#how-to-record-your-trip}

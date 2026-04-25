@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title: Preparação de Rota
 ---
@@ -72,7 +72,7 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
 
 2. Configurações de [*Navegação*](#settings) adicionais podem ser usadas dependendo de seus propósitos (você pode configurar quais estradas evitar ou preferir, economizar combustível ou escolher a rota mais rápida, etc.).
 
-3. [Inicie](#start--stop-navigation) a navegação ou primeiro [simule a navegação](#simulated-navigation) (com esta função você pode testar sua rota antes de realmente percorrê-la).
+3. [Inicie](#start--stop-navigation) a navegação ou primeiro [simule a navegação](#simulated-navigation) (com esta função você pode testar sua rota antes de realmente percorrê-la). [Em dispositivos iOS](https://support.apple.com/en-us/121430) em países da UE, o OsmAnd também pode ser definido como o aplicativo de navegação padrão nas configurações do sistema, permitindo que ele seja aberto automaticamente para solicitações de navegação.
 
 4. Enquanto estiver na rota, você pode [*Pausar/Retomar*](#pause--resume-navigation) a navegação e [*Parar*](#start--stop-navigation) ela.
 
@@ -306,7 +306,7 @@ Uma vez selecionados os pontos de início e fim, o aplicativo criará uma rota e
 - **Pare** a navegação selecionando **Parar** (*Android*) ou **Cancelar** (*iOS*).
 
 :::note Detalhes da Rota
-Informações adicionais sobre a rota criada, como altitude, instruções passo a passo, ferramenta de análise e outras, podem ser encontradas na seção [**Detalhes**](./route-details.md).
+Informações adicionais sobre a rota criada, como altitude, instruções passo a passo, ferramenta de análise e outras, podem ser encontradas na seção [**Detalhes**](../setup/route-details.md).
 :::
 
 ### Recálculo de Rota {#route-recalculation}

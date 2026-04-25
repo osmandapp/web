@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -470,11 +470,11 @@ Você pode abrir as configurações de Layout da tela do mapa a partir do menu C
 
 ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_single.png) ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_separate.png)
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Layout da Tela do Mapa*
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 O OsmAnd suporta dois modos de layout para a tela do mapa:
-- **Layout único** – usa o mesmo layout de widgets para todas as orientações de tela. Esta opção é selecionada por padrão.
-- **Layouts separados** – permite configurar layouts de widgets diferentes para orientações Retrato e Paisagem.
+- **<Translate android="true" ids="single_layout"/>** – usa o mesmo layout de widgets para todas as orientações de tela. Esta opção é selecionada por padrão.
+- **<Translate android="true" ids="separate_layouts"/>** – permite configurar layouts de widgets diferentes para orientações Retrato e Paisagem.
 
 Quando Layouts separados está ativado, as alterações feitas em uma orientação não afetam a outra. Isso é útil se você quiser otimizar a tela do mapa de forma diferente para uso em retrato e paisagem.
 
@@ -485,8 +485,8 @@ Quando Layouts separados está ativado, as alterações feitas em uma orientaç�
 Quando Layouts separados está ativado, duas abas ficam disponíveis na tela Configurar: **Retrato** e **Paisagem**. Cada aba representa um layout independente para a orientação de tela correspondente. Você pode alternar entre as abas tocando nelas.
 
 Você pode copiar o layout entre as orientações. Para acessar essas ações, toque no menu de três pontos para o painel de widgets:
-- **Copiar do Retrato** – copia a lista de widgets do layout Retrato para o layout Paisagem.
-- **Copiar da Paisagem** – copia a lista de widgets do layout Paisagem para o layout Retrato.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – copia a lista de widgets do layout Retrato para o layout Paisagem.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – copia a lista de widgets do layout Paisagem para o layout Retrato.
 
 Apenas a lista de widgets é copiada, e a operação se aplica dentro do mesmo perfil.
 
@@ -501,8 +501,8 @@ A configuração **Layout de painéis** controla como os painéis de widgets sup
 **Nota:** Esta opção está disponível apenas quando [Layouts separados](#single-and-separate-layouts) está ativado.
 
 Você pode escolher entre dois modos:
-- **Amplo** – os painéis superior e inferior se estendem pela largura total da tela.
-- **Compacto** – os painéis superior e inferior se ajustam entre os painéis laterais e os botões do mapa.
+- **<Translate android="true" ids="panels_layout_wide"/>** – os painéis superior e inferior se estendem pela largura total da tela.
+- **<Translate android="true" ids="panels_layout_compact"/>** – os painéis superior e inferior se ajustam entre os painéis laterais e os botões do mapa.
 
 O Layout de painéis pode ser configurado independentemente para orientações Retrato e Paisagem, permitindo uma melhor adaptação a diferentes tamanhos e orientações de tela.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title:  Planejar uma Rota
 ---
@@ -338,6 +338,8 @@ Existem quatro maneiras de salvar:
 - ***Salvar alterações*** no [Menu de opções](#options) permite salvar as alterações em um arquivo e continuar planejando a rota.
 - ***Salvar como nova trilha*** no [Menu de opções](#options) abre uma caixa de diálogo onde você especifica o nome da trilha e a pasta onde a rota será salva.
 - ***Adicionar alterações a uma trilha***. Anexa uma trilha criada como um [segmento separado](#segments) a outra trilha existente. As alterações em uma trilha selecionada *não podem ser desfeitas*.
+
+Ao salvar, a trilha herda o tipo de atividade do perfil de roteamento usado para o planejamento. A atividade é salva nos metadados da trilha e é preservada após a exportação ou importação do arquivo GPX.
 
 :::note Opção de trilha simplificada
 Ao salvar uma nova trilha, você pode selecionar a opção de trilha ***Simplificada*** para tornar a trilha compatível com outros aplicativos de terceiros. Tecnicamente, a trilha será salva sem instruções de rota como uma trilha puramente geométrica.

@@ -1,5 +1,5 @@
 ---
-source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title: Compras Android
 ---
@@ -76,7 +76,25 @@ Para dispositivos Android, pode descarregar as versões **Gratuita** e **Paga** 
 
 Na lista, há informações sobre os preços do produto OsmAnd para as regiões dos EUA e Europa. Para outras regiões, os preços são equivalentes nas moedas locais.
 
+<!--
 
+:::danger February Sale
+
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+
+-->
 
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) na Aplicação | [Maps+](#install-osmand-android) Assinatura | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -107,13 +125,15 @@ A tabela abaixo detalha as funcionalidades incluídas nos pacotes gratuito e pag
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Suporte a sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dados topográficos](../plugins/topography.md#overview)<br/>(Curvas de nível e Terreno) | **-** | ✔ | ✔ |
-| [Personalização de Cor da Grelha de Coordenadas](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [Personalização de Cor de Edifícios 3D](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [Grelha de Coordenadas — Personalização de Cor](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Edifícios 3D — Personalização de Cor](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Visualização de trilhos 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Locais Populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
-| [Wikivoyage Offline - Guias de Viagem](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Plugin de Astronomia](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Wikivoyage Offline — Guias de Viagem](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md) — [Planeamento de Observação](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md) — [Modo AR Interativo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md) — [Mapa do Céu Offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navegação offline e online](../navigation/index.md)<br/>com instruções passo a passo | ✔ | ✔ | ✔ |
 | [Pesquisa instantânea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Gravação de viagem](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -148,7 +168,7 @@ A assinatura **Pro** atualmente tem as seguintes funcionalidades:
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Faça backup e restaure os seus dados, sincronize dados com o [portal web OsmAnd](https://www.osmand.net/map). |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | Permite ter e observar um modelo em escala da sua vizinhança ou de um continente inteiro. |
-| [Atualizações em tempo real](../personal/maps-resources.md#live-updates) | Os mapas OsmAnd são atualizados a cada 15 minutos após melhorias no [OpenStreetMap](https://www.openstreetmap.org/). |
+| [Atualizações em Tempo Real](../personal/maps-resources.md#live-updates) | Os mapas OsmAnd são atualizados a cada 15 minutos após melhorias no [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin Meteorológico](../plugins/weather.md) | Previsão horária de 24h para 7 dias no mapa. |
 | [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registos de trilhos. A velocidade do veículo e as rotações do motor estão disponíveis para o OsmAnd gratuito.  |
 | [Personalizar linha de rota](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Alterar a cor e a largura da linha de rota durante a navegação. |
