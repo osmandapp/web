@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Quando você clica em Selecionar trilha, o navegador abre um seletor de arquivos
 
 ## Detalhes da Rota {#route-details}
 
-![Navegação na Web](@site/static/img/web/navigation_info.png) ![Navegação na Web](@site/static/img/web/navigation_turns.png)
+![Navegação na Web](@site/static/img/web/navigation_overview.png) ![Navegação na Web](@site/static/img/web/navigation_turns_new.png)
 
-Quando uma rota é calculada, o painel mostra um resumo básico (distância, tempo, subida/descida) e um botão **Detalhes**. Use Detalhes para abrir a visualização da rota com duas abas: Info e Curvas.
+Quando uma rota é calculada, o painel mostra um resumo básico (distância, tempo, subida/descida) e um botão **Detalhes**. Use Detalhes para abrir a visualização da rota com múltiplas abas. As abas principais incluem Visão Geral, Trilha e Pontos. A aba Curvas está disponível via a seta (›) na barra de abas.
 
-Info resume a rota e dados de elevação:
+Visão Geral resume a rota e dados de elevação:
 - **Pontos** — o número de pontos de rota usados para construir a rota.
 - **Rota** — distância e tempo.
 - **Subida/Descida** — ascensão e descida totais.

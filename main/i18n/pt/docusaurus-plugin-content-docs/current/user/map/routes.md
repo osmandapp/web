@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title: Rotas
 ---
@@ -239,6 +239,7 @@ Ao tocar em um **símbolo de rota** no mapa:
 
 - Uma **lista das rotas próximas** naquele local é exibida.
 - Após selecionar uma rota da lista, um [menu de contexto](../map/tracks/track-context-menu.md) para essa rota é aberto, exibindo informações detalhadas e ações disponíveis.
+- A rota selecionada é aberta em uma visualização de trilha, permitindo que você interaja com ela da mesma forma que com uma trilha GPX.
 
 No **menu de contexto**, você pode:
 
@@ -317,7 +318,7 @@ Você também pode abrir a aba *Trilha* e alternar para a visualização *Altitu
 </Tabs>  
 
 
-Para salvar a rota como um *arquivo GPX*, toque no botão **Salvar (Download)** abaixo do [painel de Informações](../map/tracks/track-context-menu.md#info-panel). Isso abrirá o painel de botões [Ações rápidas](../map/tracks/track-context-menu.md#track-actions) onde você terá acesso a ações de trilha, como alterar [Aparência](./tracks/appearance.md), [Navegação](../navigation/setup/route-navigation.md) ou editar [Planejar uma rota](../plan-route/create-route.md).
+Para salvar a rota como um *arquivo GPX*, toque no botão **Salvar (Download)** abaixo do [painel de Informações](../map/tracks/track-context-menu.md#info-panel). Isso abrirá o painel de botões [Ações rápidas](../map/tracks/track-context-menu.md#track-actions) onde você terá acesso a ações de trilha, como alterar [Aparência](./tracks/appearance.md), [Navegação](../navigation/setup/route-navigation.md) ou editar [Planejar uma rota](../plan-route/create-route.md). Rotas salvas se comportam da mesma forma que outras trilhas e estão disponíveis em sua coleção de trilhas.
 
 
 ### Iniciar Navegação {#start-navigation}

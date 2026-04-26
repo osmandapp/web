@@ -1,5 +1,5 @@
 ---
-source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
+source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
 sidebar_position: 3
 title: Pasta Inteligente (Filtro)
 ---
@@ -170,20 +170,20 @@ A **Pasta Inteligente** recém-criada atualizará automaticamente seu conteúdo 
 
 A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na guia Trilhas. Para gerenciar a pasta, toque no *menu de três pontos* ao lado dela para acessar as ações disponíveis:
 
-- **Detalhes** — Visualize a lista completa de trilhas contidas na pasta.
-- **Mostrar todas as trilhas no mapa** — Exiba todas as trilhas da pasta no mapa.  
+- **<Translate android="true" ids="shared_string_details"/>** — Visualize a lista completa de trilhas contidas na pasta.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Exiba todas as trilhas da pasta no mapa.  
     *NOTA: Carregar muitas trilhas pode afetar o desempenho.*
-- **Renomear** — Altere o nome da pasta para facilitar a identificação.
-- **Atualizar** — Atualize manualmente o conteúdo da pasta para garantir que ela inclua as trilhas mais recentes.
-- **Editar filtro** — Modifique as configurações de filtro de trilha para a Pasta Inteligente atual. Consulte [Filtro de Busca](#search-filter) para obter detalhes.
-- **Exportar** — Exporte todas as trilhas na Pasta Inteligente através do recurso [Importar/Exportar](../../personal/import-export.md). Você será redirecionado para *Menu → Configurações → guia Ações*.
-- **Excluir pasta** — Remova a Pasta Inteligente sem excluir suas trilhas.  
+- **<Translate android="true" ids="shared_string_rename"/>** — Altere o nome da pasta para facilitar a identificação.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Atualize manualmente o conteúdo da pasta para garantir que ela inclua as trilhas mais recentes.
+- **<Translate android="true" ids="edit_filter"/>** — Modifique as configurações de filtro de trilha para a Pasta Inteligente atual. Consulte [Filtro de Busca](#search-filter) para obter detalhes.
+- **<Translate android="true" ids="shared_string_export"/>** — Exporte todas as trilhas na Pasta Inteligente através do recurso [Importar/Exportar](../../personal/import-export.md). Você será redirecionado para *Menu → Configurações → guia Ações*.
+- **<Translate android="true" ids="delete_folder"/>** — Remova a Pasta Inteligente sem excluir suas trilhas.  
     *AVISO: Esta ação é irreversível e solicitará uma mensagem de confirmação.*
 
 Você também pode abrir a pasta e tocar no *menu de três pontos* no *canto superior direito* para acessar ações adicionais:
 
-- **Selecionar** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
-- **Organizar por** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
+- **<Translate android="true" ids="organize_by"/>** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
 
 Alguns parâmetros de agrupamento estão disponíveis apenas com uma assinatura OsmAnd Pro. Os parâmetros gratuitos incluem *Atividade*, *Ano de criação* e *Cidade mais próxima*. Todos os outros parâmetros são marcados com um rótulo <ProFeature/>.
 
@@ -201,17 +201,17 @@ Para parâmetros PRO, você pode pré-visualizar a configuração de agrupamento
 
 A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na guia Trilhas. Para gerenciar a pasta, *toque longo* no nome da pasta para acessar as ações disponíveis:
 
-- **Renomear**— Altere o nome da pasta para facilitar a identificação.
-- **Exportar** — Exporte todas as trilhas na Pasta Inteligente através do recurso [Importar/Exportar](../../personal/import-export.md). Você será redirecionado para *Menu → Configurações → guia Ações*.
-- **Mover** — Permite mover a pasta para outra pasta existente ou criar uma nova.
-- **Excluir** — Remova a Pasta Inteligente sem excluir suas trilhas.  
+- **<Translate ios="true" ids="shared_string_rename"/>**— Altere o nome da pasta para facilitar a identificação.
+- **<Translate ios="true" ids="shared_string_export"/>** — Exporte todas as trilhas na Pasta Inteligente através do recurso [Importar/Exportar](../../personal/import-export.md). Você será redirecionado para *Menu → Configurações → guia Ações*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Permite mover a pasta para outra pasta existente ou criar uma nova.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Remova a Pasta Inteligente sem excluir suas trilhas.  
     *AVISO: Esta ação é irreversível e solicitará uma mensagem de confirmação.*
 
 Você também pode abrir a pasta e tocar no ícone no *canto superior direito* para acessar ações adicionais:
 
-- **Selecionar** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
-- **Atualizar** — Atualize manualmente o conteúdo da pasta para garantir que ela inclua as trilhas mais recentes.
-- **Editar filtro** — Modifique as configurações de filtro de trilha para a Pasta Inteligente atual. Consulte [Filtro de Busca](#search-filter) para obter detalhes.
+- **<Translate ios="true" ids="shared_string_select"/>** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Atualize manualmente o conteúdo da pasta para garantir que ela inclua as trilhas mais recentes.
+- **<Translate ios="true" ids="edit_filter"/>** — Modifique as configurações de filtro de trilha para a Pasta Inteligente atual. Consulte [Filtro de Busca](#search-filter) para obter detalhes.
 
 </TabItem>
 

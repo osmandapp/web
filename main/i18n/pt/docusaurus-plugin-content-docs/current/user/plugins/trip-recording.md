@@ -1,5 +1,5 @@
 ---
-source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title: Gravação de Viagem
 ---
@@ -414,13 +414,13 @@ Alguns widgets de Gravação de Viagem suportam múltiplos modos de exibição. 
 
 | **Widget** | **Modos disponíveis**  |
 |-------|-------------|
-| Inclinação Média | Última descida; Última subida |
-| Velocidade Média *(Somente Android)* | Média da viagem (padrão); Última descida; Última subida |
-| Distância (Iniciar-Parar) | Média da viagem (padrão); Última descida; Última subida |
-| Descida | Total (padrão); Última descida |
-| Velocidade Máxima | Total (padrão); Última descida; Última subida |
-| Tempo em Movimento | Total (padrão); Última descida; Última subida |
-| Subida | Total (padrão); Última subida |
+| Inclinação Média | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Velocidade Média *(Somente Android)* | Média da viagem (padrão); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distância (Iniciar-Parar) | Média da viagem (padrão); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Descida | Total (padrão); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Velocidade Máxima | Total (padrão); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Tempo em Movimento | Total (padrão); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Subida | Total (padrão); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 A alternância de modo depende do widget:
 - Subida / Descida / Velocidade Máxima / Inclinação Média / Tempo em Movimento / Velocidade Média — toque no widget no mapa para alternar seu modo.

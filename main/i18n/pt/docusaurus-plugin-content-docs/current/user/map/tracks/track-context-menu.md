@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -248,7 +248,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 
 O recurso *Atividade* no OsmAnd permite que você marque trilhas GPX gravadas com atividades específicas para análise e organização futuras em pastas.
 
-- [Tags de atividade para trilhas GPX](../../plugins/trip-recording.md#recording-settings). Trilhas gravadas recebem automaticamente um tipo de atividade com base no perfil selecionado, o que ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
+- [Tags de atividade para trilhas GPX](../../plugins/trip-recording.md#recording-settings). Trilhas gravadas e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
 - [Filtro de atividade](../../personal/tracks/smart-folder.md#search-filter). Você pode filtrar as trilhas GPX gravadas por atividade, o que permite focar na localização de tipos específicos de gravações, como todas as trilhas de ciclismo ou caminhada.
 - [Gerenciar tipos de atividade](../../personal/tracks/manage-tracks.md#selection-mode). Você pode alterar o tipo de atividade para pastas ou trilhas selecionadas usando o modo de seleção na aba Trilhas do menu Meus Locais.
 - **Lista de atividades**. As categorias e grupos de atividades são definidos nos recursos do OsmAnd. Para desenvolvedores e colaboradores, a lista de atividades é mantida em um formato estruturado em [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalha os grupos e tipos de atividades disponíveis.
@@ -392,7 +392,7 @@ Waypoints são um dos tipos de pontos disponíveis no mapa. Em geral, eles podem
 
 <TabItem value="android" label="Android">
 
-![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ Nesta aba *Pontos*:
 
 - [Mostrar dados de pontos da trilha](#display-custom-gpx-tags) e modificar seus pontos da trilha (waypoints e pontos de rota), [excluí-los e adicionar](#points--waypoints) waypoints a uma trilha.
 - Criar e modificar [Grupo (pasta) de pontos](#waypoint-groups).
+- Centralizar o mapa em um waypoint usando o ícone de alfinete na lista de waypoints (*somente Android*) sem fechar a lista, permitindo que você visualize os waypoints um por um.
 
 
 ### Adicionar Waypoint a uma Trilha {#add-waypoint-to-a-track}

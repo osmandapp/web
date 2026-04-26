@@ -1,5 +1,5 @@
 ---
-source-hash: 887e37d512e29933bbd3ee7af217024887ffcc5ac636c9ddc52e7480299a8d1b
+source-hash: 383e9a6814a4fe9dfbefeb9e426313df17c79d317898ed48ee3cdc95f7de4d54
 sidebar_position: 6
 title:  Map Styles (Vector Maps)
 ---
@@ -26,7 +26,7 @@ Além dos estilos integrados, o OsmAnd suporta estilos de mapa personalizados. E
 
 ## Estilos de Mapa Padrão {#default-map-styles}
 
-O OsmAnd oferece muitos estilos de mapa e camadas de dados que se ajustam por padrão. Esta seção descreve os principais para modos diurno e noturno.
+O OsmAnd oferece a você muitos estilos de mapa e camadas de dados que se ajustam por padrão. Esta seção descreve os principais para modos diurno e noturno.
 
 **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
 

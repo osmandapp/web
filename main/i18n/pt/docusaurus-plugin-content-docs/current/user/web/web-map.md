@@ -1,5 +1,5 @@
 ---
-source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
+source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
 sidebar_position: 3
 sidebar_label: Map
 title: Global Map on the Website
@@ -40,7 +40,10 @@ O mapa web do OsmAnd é um mapa global baseado em dados do [OpenStreetMap (OSM)]
 
 Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu inclui as seguintes ações:
 
-- **Onde estou** – Encontre rapidamente sua localização atual no mapa. Este recurso exibe os endereços mais próximos ao ponto selecionado no mapa.
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Abrir clima** – Acesse o [menu Clima](../web/web-weather.md) para ver os detalhes do clima.
 - **Criar nova rota** – Abre a ferramenta [*Planejar uma rota*](../web/web-navigation.md) com o local selecionado como ponto de partida ou destino.
 - **Adicionar Favorito** –  Permite criar e salvar um [favorito](../web/web-favorites.md#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
@@ -57,7 +60,21 @@ Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu i
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_new.png)
+![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+
+
+## Objeto Selecionado {#selected-object}
+
+Quando um objeto no mapa (como um POI, favorito ou ponto de navegação) é selecionado, ele é destacado com um pino maior. Apenas um objeto pode ser selecionado por vez.
+
+Se o objeto selecionado já estiver visível na tela, o mapa não se move. Se ele estiver fora da visão atual, o mapa centraliza nele sem alterar o nível de zoom.
+
+O marcador selecionado permanece visível ao fazer zoom no mapa.
+
+Marcadores próximos podem ser ocultados para facilitar a visualização do objeto selecionado.
+
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+
 
 
 ## Menu Configurar Mapa {#configure-map-menu}
@@ -66,7 +83,7 @@ O menu Configurar Mapa permite gerenciar as configurações de exibição para d
 
 - [Sobreposição de POI...](#poi-overlay). Permite escolher e mostrar as categorias de POI necessárias no mapa.
 - [Favoritos](#favorites). Alterna a exibição de favoritos no mapa.
-- [Trilhas](#tracks). Contém trilhas GPX visíveis no mapa.  
+- [Trilhas](#tracks). Contém trilhas GPX visíveis no mapa.
 - [Paradas de transporte](#transport-stops). Alterna a exibição de paradas de transporte público no mapa. 
 - [Terreno](#terrain). Ativa ou desativa o esquema de cores do terreno no mapa.
 
@@ -106,16 +123,25 @@ Esta seção contém uma lista das suas [**trilhas GPX visíveis no mapa**](../w
 - Você pode ativar ou desativar as trilhas diretamente.  
 - Ativar ou desativar trilhas da lista **Recentemente Visíveis**.  
 
-Cada trilha possui um **Menu de Contexto** (acessível através do botão ⋮) com os seguintes comandos:
+Cada trilha possui um menu (⋮) com os seguintes comandos:
 
 - **Ocultar trilha**: Oculta a trilha atualmente visível do mapa.  
 - **Tornar trilha visível**: Exibe uma trilha da lista Recentemente Visíveis no mapa.  
 - **Renomear**: Permite renomear a trilha para facilitar a identificação.  
-- **Duplicar**: Cria uma cópia da trilha.  
+- **Duplicar**: Cria uma cópia da trilha.
+- **Compartilhar**: Abre a tela de compartilhamento (mesmo que para [Favoritos](../web/web-favorites.md#share)).
 - **Baixar**: Salva a trilha no seu dispositivo local.  
 - **Excluir**: Remove a trilha permanentemente da lista.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
+Quando você abre uma trilha, um painel com uma barra de ações superior é exibido. A barra mostra o nome da trilha e fornece acesso rápido a ações. Além dos comandos do menu de três pontos, a barra superior inclui **Editar**. **Aparência** atualmente não está ativa.
+
+O painel da trilha inclui as seguintes abas:
+
+- Visão Geral — mostra informações gerais da trilha.
+- Trilha — atualmente não implementado.
+- Pontos — mostra waypoints e pontos de rota agrupados por tipo.
+
+![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Paradas de transporte {#transport-stops}
 
