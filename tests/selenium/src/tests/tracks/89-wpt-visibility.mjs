@@ -46,15 +46,11 @@ export default async function test() {
     const isOnAfter = await massSwitch.isSelected();
     await assert(isOnAfter, 'Switch should be ON after click');
 
-    // Get initial marker count (find all visible waypoint markers on map)
-    const initialMarkers = await getVisibleWaypointMarkers();
-    const initialCount = initialMarkers.length;
-    await assert(initialCount === 9, `Track should have 9 waypoints, got ${initialCount}`);
+    await validateVisibleWaypointCount(9, 'Track should have 9 waypoints');
 
     // Test: Toggle first group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
-    const afterFirstHide = await getVisibleWaypointMarkers();
-    await assert(afterFirstHide.length === 6, `First group should be hidden. Expected 6, got ${afterFirstHide.length}`);
+    await validateVisibleWaypointCount(6, 'First group should be hidden');
 
     // log out and log in again
     await actionLogOut();
@@ -64,17 +60,12 @@ export default async function test() {
     // open track
     await clickBy(By.id('se-show-menu-tracks'));
     await clickBy(By.id('se-cloud-track-' + trackName));
-    const afterReload = await getVisibleWaypointMarkers();
-    await assert(afterReload.length === 6, `First group should be hidden. Expected 6, got ${afterReload.length}`);
+    await validateVisibleWaypointCount(6, 'First group should be hidden after reload');
     await clickBy(By.css("[testid='se-tab-points']"));
 
     // Test: Toggle second group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    const afterSecondHide = await getVisibleWaypointMarkers();
-    await assert(
-        afterSecondHide.length === 1,
-        `Both groups should be hidden. Expected 1, got ${afterSecondHide.length}`
-    );
+    await validateVisibleWaypointCount(1, 'Both groups should be hidden');
 
     // Test: Toggle first group visibility ON
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
@@ -88,37 +79,44 @@ export default async function test() {
     // open track
     await clickBy(By.id('se-show-menu-tracks'));
     await clickBy(By.id('se-cloud-track-' + trackName));
-
-    const afterFirstShow = await getVisibleWaypointMarkers();
-    await assert(
-        afterFirstShow.length === 4,
-        `First group should be visible again. Expected 4, got ${afterFirstShow.length}`
-    );
+    await validateVisibleWaypointCount(4, 'First group should be visible again');
     await clickBy(By.css("[testid='se-tab-points']"));
 
     // Test: Toggle second group visibility ON
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    const afterBothShow = await getVisibleWaypointMarkers();
-    await assert(afterBothShow.length === 9, `Both groups should be visible. Expected 9, got ${afterBothShow.length}`);
+    await validateVisibleWaypointCount(9, 'Both groups should be visible');
 
     // Close track and cleanup
     await clickBy(By.id('se-button-back'));
     await deleteTrack(trackName);
 }
 
-// Helper function to count visible waypoint markers on the map
-async function getVisibleWaypointMarkers() {
-    await actionIdleWait({ idle: 1000 });
-    // Find all waypoint markers that are visible (display !== 'none')
+async function countVisibleWaypointMarkers() {
     const markers = await driver.findElements(By.className('leaflet-marker-icon'));
-
-    const visibleMarkers = [];
+    const visible = [];
     for (const marker of markers) {
         const display = await marker.getCssValue('display');
         if (display !== 'none') {
-            visibleMarkers.push(marker);
+            visible.push(marker);
         }
     }
+    return visible;
+}
 
-    return visibleMarkers;
+async function validateVisibleWaypointCount(expectedCount, message, timeout = 3000) {
+    await actionIdleWait({ idle: 1000 });
+    const deadline = Date.now() + timeout;
+    let visibleMarkers = [];
+    while (Date.now() < deadline) {
+        visibleMarkers = await countVisibleWaypointMarkers();
+        if (visibleMarkers.length === expectedCount) {
+            break;
+        }
+        await actionIdleWait({ idle: 300 });
+    }
+
+    await assert(
+        visibleMarkers.length === expectedCount,
+        `${message}. Expected ${expectedCount}, got ${visibleMarkers.length}`
+    );
 }
