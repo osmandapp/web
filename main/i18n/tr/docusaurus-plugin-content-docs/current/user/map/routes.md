@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title: Rotalar
 ---
@@ -239,6 +239,7 @@ Harita üzerindeki bir **rota sembolüne** dokunduğunuzda:
 
 - O konumdaki **yakındaki rotaların bir listesi** görüntülenir.
 - Listeden bir rota seçtikten sonra, o rota için [bağlam menüsü](../map/tracks/track-context-menu.md) açılır ve ayrıntılı bilgi ve mevcut eylemler gösterilir.
+- Seçilen rota, bir GPX izi ile aynı şekilde etkileşim kurmanızı sağlayan iz görünümünde açılır.
 
 **Bağlam menüsünde** şunları yapabilirsiniz:
 
@@ -317,7 +318,7 @@ Ayrıca, *İz sekmesini* açabilir ve *Rakım görünümüne* geçerek rotanın 
 </Tabs>  
 
 
-Rotayı bir *GPX dosyası* olarak kaydetmek için, [Bilgi paneli](../map/tracks/track-context-menu.md#info-panel) altındaki **Kaydet (İndir)** düğmesine dokunun. Bu, [Görünümünü](./tracks/appearance.md) değiştirme, [Navigasyon](../navigation/setup/route-navigation.md) veya [Rota Planla](../plan-route/create-route.md) düzenleme gibi iz eylemlerine erişebileceğiniz [Hızlı eylemler](../map/tracks/track-context-menu.md#track-actions) düğme panelini açacaktır.
+Rotayı bir *GPX dosyası* olarak kaydetmek için, [Bilgi paneli](../map/tracks/track-context-menu.md#info-panel) altındaki **Kaydet (İndir)** düğmesine dokunun. Bu, [Görünümünü](./tracks/appearance.md) değiştirme, [Navigasyon](../navigation/setup/route-navigation.md) veya [Rota Planla](../plan-route/create-route.md) düzenleme gibi iz eylemlerine erişebileceğiniz [Hızlı eylemler](../map/tracks/track-context-menu.md#track-actions) düğme panelini açacaktır. Kaydedilen rotalar diğer izler gibi davranır ve iz koleksiyonunuzda kullanılabilir.
 
 
 ### Navigasyonu Başlat {#start-navigation}

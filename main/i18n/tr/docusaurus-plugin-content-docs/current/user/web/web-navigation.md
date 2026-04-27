@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -81,11 +81,11 @@ Tipik bölümler şunlardır:
 
 ## Rota Detayları {#route-details}
 
-![Web Navigation](@site/static/img/web/navigation_info.png) ![Web Navigation](@site/static/img/web/navigation_turns.png)
+![Web Navigation](@site/static/img/web/navigation_overview.png) ![Web Navigation](@site/static/img/web/navigation_turns_new.png)
 
-Bir rota hesaplandığında, panel temel bir özet (mesafe, süre, yokuş yukarı/yokuş aşağı) ve bir **Detaylar** düğmesi gösterir. Detaylar'ı kullanarak İki sekme ile rota görünümünü açın: Bilgi ve Dönüşler.
+Bir rota hesaplandığında, panel temel bir özet (mesafe, süre, yokuş yukarı/yokuş aşağı) ve bir **Detaylar** düğmesi gösterir. Detaylar'ı kullanarak birden fazla sekme ile rota görünümünü açın. Ana sekmeler Genel Bakış, İz ve Noktalar'ı içerir. Dönüşler sekmesi sekme çubuğundaki ok (›) aracılığıyla kullanılabilir.
 
-Bilgi rotayı ve yükseklik verilerini özetler:
+Genel Bakış rotayı ve yükseklik verilerini özetler:
 - **Noktalar** — rotayı oluşturmak için kullanılan rota noktalarının sayısı.
 - **Rota** — mesafe ve süre.
 - **Yokuş Yukarı/Yokuş Aşağı** — toplam tırmanış ve iniş.

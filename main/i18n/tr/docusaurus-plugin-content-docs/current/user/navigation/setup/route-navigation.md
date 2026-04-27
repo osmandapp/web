@@ -1,5 +1,5 @@
 ---
-source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
+source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
 sidebar_position: 1
 title: Rota Hazırlığı
 ---
@@ -72,7 +72,7 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
 
 2. Ek [*Navigasyon ayarları*](#settings) amaçlarınıza bağlı olarak kullanılabilir (hangi yollardan kaçınılacağını veya tercih edileceğini yapılandırabilir, yakıt tasarrufu yapabilir veya en hızlı rotayı seçebilirsiniz vb.).
 
-3. Navigasyonu [başlatın](#start--stop-navigation) veya önce [simüle edilmiş navigasyonu](#simulated-navigation) yapın (bu fonksiyonla rotanızı gerçekten seyahat etmeden önce test edebilirsiniz).
+3. Navigasyonu [başlatın](#start--stop-navigation) veya önce [simüle edilmiş navigasyonu](#simulated-navigation) yapın (bu fonksiyonla rotanızı gerçekten seyahat etmeden önce test edebilirsiniz). [iOS cihazlarında](https://support.apple.com/en-us/121430) AB ülkelerinde, OsmAnd sistem ayarlarında varsayılan navigasyon uygulaması olarak ayarlanabilir, navigasyon istekleri için otomatik olarak açılmasını sağlar.
 
 4. Rota üzerindeyken navigasyonu [*Duraklat/Devam Ettir*](#pause--resume-navigation) ve [*Durdur*](#start--stop-navigation) yapabilirsiniz.
 

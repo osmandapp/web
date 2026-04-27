@@ -1,5 +1,5 @@
 ---
-source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
+source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-*Rota bağlam menüsü*, *[Rota](../../personal/tracks/index.md)* hakkında hem metin hem de [grafik](#altitude--speed-graphs) biçiminde bilgi sağlar. Rota ile ilgili bilgi eklemenize, değişiklik yapmanıza, düzenlemenize ve çeşitli başka eylemler gerçekleştirmenize olanak tanır. *Rota bağlam menüsüne* harita üzerinde gerekli rotaya dokunarak veya *[Yerlerim](../../personal/myplaces.md)* menüsünü (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*) kullanarak erişebilirsiniz. Rota klasörünü açmanız ve istediğiniz rotayı üzerine dokunarak seçmeniz gerekebilir.  
+*Rota bağlam menüsü*, *[Rota](../../personal/tracks/index.md)* hakkında hem metin hem de [grafik](#altitude--speed-graphs) biçiminde bilgi sağlar. Rota ile ilgili bilgi eklemenize, değişiklik yapmanıza, düzenlemenize ve çeşitli başka eylemler gerçekleştirmenize olanak tanır. *Rota bağlam menüsüne* harita üzerinde gerekli rotaya dokunarak veya *[Yerlerim](../../personal/myplaces.md)* menüsünü (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* ) kullanarak erişebilirsiniz. Rota klasörünü açmanız ve istediğiniz rotayı üzerine dokunarak seçmeniz gerekebilir.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -248,7 +248,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 
 OsmAnd'daki *Etkinlik* özelliği, daha fazla analiz ve klasörlerde düzenleme için kaydedilen GPX rotalarını belirli etkinliklerle etiketlemenize olanak tanır.
 
-- [GPX rotaları için etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Kaydedilen rotalar, seçilen profile dayalı olarak otomatik olarak bir etkinlik türü alır, bu da daha sonra kategorize etmenize ve filtrelemenize yardımcı olur. Gerekirse etkinliği manuel olarak değiştirebilirsiniz.
+- [GPX rotaları için etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Kaydedilen rotalar ve [Rota planla](../../plan-route/create-route.md) aracılığıyla kaydedilen rotalar, oluşturuldukları profile dayalı olarak otomatik olarak bir etkinlik türü alır, bu da daha sonra kategorize etmenize ve filtrelemenize yardımcı olur. Gerekirse etkinliği manuel olarak değiştirebilirsiniz.
 - [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX rotalarını etkinliğe göre filtreleyebilirsiniz, bu da bisiklet veya yürüyüş rotaları gibi belirli kayıt türlerini bulmaya odaklanmanızı sağlar.
 - [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün Rotalar sekmesindeki seçim modunu kullanarak seçilen klasörler veya rotalar için etkinlik türünü değiştirebilirsiniz.
 - **Etkinlik listesi**. Etkinlik kategorileri ve grupları OsmAnd'ın kaynaklarında tanımlanmıştır. Geliştiriciler ve katkıda bulunanlar için etkinlik listesi, mevcut etkinlik gruplarını ve türlerini detaylandıran [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) adresinde yapılandırılmış bir formatta tutulur.
@@ -392,7 +392,7 @@ Yol noktaları, haritada bulunan nokta türlerinden biridir. Genel olarak, GPX d
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
 
 </TabItem>
 
@@ -408,6 +408,7 @@ Bu *Noktalar* sekmesinde:
 
 - [Rota noktaları verilerini göster](#display-custom-gpx-tags) ve rota noktalarınızı (yol noktaları ve rota noktaları) değiştirin, [silin ve](#points--waypoints) rotaya yol noktaları ekleyin.
 - [Nokta grubu (klasörü)](#waypoint-groups) oluşturun ve değiştirin.
+- Yol noktası listesindeki iğne simgesini kullanarak (*yalnızca Android*) haritayı bir yol noktasının üzerine merkezleyin, listeyi kapatmadan yol noktalarını tek tek önizlemenize olanak tanır.
 
 
 ### Rotaya Yol Noktası Ekle {#add-waypoint-to-a-track}
@@ -621,7 +622,7 @@ Harita üzerindeki rotanın bağlam menüsünün sağ üst köşesindeki düğme
 Yol noktaları, [GPX dosyasına](../../../technical/osmand-file-formats/osmand-gpx.md) rota ile birlikte kaydedilir. Bu yol noktalarının her birinin kendi açıklama etiketleri kümesi vardır. OsmAnd uygulamasında doğrudan düzenlenebilen yol noktalarının açıklamasıyla doğrudan ilgili tüm etiketler bu bölümde listelenmiştir.  
 Yol noktası açıklamasını değiştirmek için aşağıdaki yollardan birini kullanabilirsiniz:
   
-1. Gerekli rotayı *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi* listesinde bulun.
+1. Gerekli rotayı *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* sekmesi listesinde bulun.
 2. Haritada görünür [rotalar listesine](../tracks/index.md#display-tracks-on-the-map) dahil edilmişse, harita üzerindeki rotaya dokunun.
 3. Haritada [görünürse](../../personal/tracks/manage-tracks.md#track-menu) gerekli yol noktasına dokunun.  
 

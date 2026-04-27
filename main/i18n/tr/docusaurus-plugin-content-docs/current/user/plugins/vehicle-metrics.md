@@ -1,5 +1,5 @@
 ---
-source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
 sidebar_position: 18
 title: Araç Metrikleri
 ---
@@ -161,7 +161,7 @@ Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu
 
 <TabItem value="android" label="Android">
 
-**Android**. Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+**Android.** Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
@@ -172,7 +172,7 @@ Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu
 
 <TabItem value="ios" label="iOS">
 
-**iOS**. Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
+**iOS.** Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
 
 | | |
 |--|--|
@@ -203,7 +203,7 @@ Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tan
 
 <TabItem value="android" label="Android">
 
-**Android.** Şuraya gidin: *Menü → Ekranı Yapılandır → Widget'lar → Bir panel seçin → Araç Metrikleri*
+**Android.** Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="obd_widget_group"/>*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tan
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Şuraya gidin: *Menü → Ekranı Yapılandır → Widget'lar → Bir panel seçin → Araç Metrikleri*
+**iOS.** Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate ios="true" ids="obd_plugin_name"/>*
 
 | | |
 |--|--|

@@ -1,5 +1,5 @@
 ---
-source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
+source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
 sidebar_position: 5
 title:  İz Görünümü
 ---
@@ -86,8 +86,8 @@ Hız, Rakım veya Eğim'e göre bir iz renklendirirken, renklerin iz boyunca nas
 - Kaldırın. Bir paleti kaldırmak onay gerektirir.
 
 Tüm renkler ekranındaki + düğmesine dokunun. İki tür palet mevcuttur:
-- **Göreceli** — renkler izin minimum ve maksimum değerlerine göre otomatik olarak ölçeklenir.
-- **Sabit Değerler** — renkler belirli mutlak sayılara atanır (örneğin, 50 km/s). Değerler manuel olarak düzenlenebilir. Birimler [sistem ayarlarını](../../personal/profiles.md#units--formats) takip eder. Renk ölçeği farklı izlere uygulandığında otomatik olarak yeniden ölçeklenmez.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — renkler izin minimum ve maksimum değerlerine göre otomatik olarak ölçeklenir.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — renkler belirli mutlak sayılara atanır (örneğin, 50 km/s). Değerler manuel olarak düzenlenebilir. Birimler [sistem ayarlarını](../../personal/profiles.md#units--formats) takip eder. Renk ölçeği farklı izlere uygulandığında otomatik olarak yeniden ölçeklenmez.
 
 :::info Pro feature
 Özel paletler oluşturmak bir [**OsmAnd Pro**](../../purchases/index.md) ücretli özelliktir <ProFeature />.
@@ -115,7 +115,7 @@ Uygulamanın çeşitli menülerinde izin görünümünü özelleştirebilirsiniz
 
 - [*İz → Görünüm*](../../personal/tracks/manage-tracks.md#track-folder).
 - [*Navigasyon ayarları → Rota çizgisini özelleştir*](../../navigation/guidance/navigation-settings.md#customize-route-line).
-- [*Yerlerim → İzler sekmesi → herhangi bir klasör → Varsayılan görünüm*](../../personal/tracks/manage-tracks/md#track-folder).
+- [*Yerlerim → İzler sekmesi → herhangi bir klasör → Varsayılan görünüm*](../../personal/tracks/manage-tracks.md#track-folder).
 
 Haritada görünürlüğü artırmak için iz genişliğini ayarlayın.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
+source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
 sidebar_position: 1
 title: Android Satın Almaları
 ---
@@ -127,12 +127,14 @@ Aşağıdaki tablo, OsmAnd'ın hem ücretsiz hem de ücretli paketlerinde buluna
 | [Harici sensör desteği](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografya verileri](../plugins/topography.md#overview)<br/>(Eşyükselti eğrileri ve Arazi) | **-** | ✔ | ✔ |
 | [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D Binalar — Renk Özelleştirme](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D Binalar — Renk Özelleştirme](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [3D iz görselleştirme](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popüler Yerler (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Çevrimdışı Wikivoyage - Seyahat rehberleri](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Astronomi eklentisi](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md) — [Gözlem Planlama](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md) — [Etkileşimli AR Modu](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md) — [Çevrimdışı Gökyüzü Haritası](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Çevrimdışı ve çevrimiçi navigasyon](../navigation/index.md)<br/>adım adım yol tarifleriyle | ✔ | ✔ | ✔ |
 | [Çevrimdışı anında arama](../search/index.md) | ✔ | ✔ | ✔ |
 | [Yolculuk kaydı](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

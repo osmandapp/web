@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Favorites
 ---
@@ -273,7 +273,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Her klasörün yanındaki ***Üç nokta menüsünü*** kullanarak favori gruplarını yönetin:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
-- **Klasörü sabitle** — Seçilen klasörü favoriler listesinin en üstünde tutmak için sabitleyin, daha hızlı erişim için.
+- **<Translate android="true" ids="pin_folder"/>** — Seçilen klasörü favoriler listesinin en üstünde tutmak için sabitleyin, daha hızlı erişim için.
 - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Harita işaretçilerinden kaldır** — Klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın, kolay başvuru için.

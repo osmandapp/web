@@ -1,5 +1,5 @@
 ---
-source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
+source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
 sidebar_position: 4
 title: Haritayı Yapılandır
 ---

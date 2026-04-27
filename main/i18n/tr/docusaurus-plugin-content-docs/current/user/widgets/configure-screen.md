@@ -1,5 +1,5 @@
 ---
-source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
+source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -245,7 +245,7 @@ Her panel farklı düzen davranışlarını destekler:
 
 **Satır modu** özelliği, üst ve alt panellere gerektiği kadar satır eklemenize olanak tanır. Satır başına birden çok widget görüntüleyebilir, böylece görünür bilgi miktarını artırabilirsiniz.
 
-***Satırlar nasıl yapılandırılır:***
+***Satırları nasıl yapılandırılır:***
 
 - **Widget ekle**: *Artı* düğmesine (Android) veya *Widget ekle* (iOS) dokunun, ardından mevcut widget'lar listesinden seçin.
 - **Widget'ları yeniden sırala**: Widget'ları yeniden düzenlemek için *Kalem* düğmesine (Android) veya *Düzenle* (iOS) dokunun.
@@ -472,11 +472,11 @@ Harita ekranı düzeni ayarlarını Ekranı Yapılandır menüsünden açabilirs
 
 ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_single.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_separate.png)
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Harita Ekranı Düzeni*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd, harita ekranı için iki düzen modu destekler:
-- **Tek düzen** – tüm ekran yönelimleri için aynı widget düzenini kullanır. Bu seçenek varsayılan olarak seçilidir.
-- **Ayrı düzenler** – Portre ve Yatay yönelimler için farklı widget düzenleri yapılandırmanıza olanak tanır.
+- **<Translate android="true" ids="single_layout"/>** – tüm ekran yönelimleri için aynı widget düzenini kullanır. Bu seçenek varsayılan olarak seçilidir.
+- **<Translate android="true" ids="separate_layouts"/>** – Portre ve Yatay yönelimler için farklı widget düzenleri yapılandırmanıza olanak tanır.
 
 Ayrı düzenler etkinleştirildiğinde, bir yönelimde yapılan değişiklikler diğerini etkilemez. Bu, portre ve yatay kullanım için harita ekranını farklı optimize etmek istiyorsanız kullanışlıdır.
 
@@ -487,8 +487,8 @@ Ayrı düzenler etkinleştirildiğinde, bir yönelimde yapılan değişiklikler 
 Ayrı düzenler etkinleştirildiğinde, Ekranı Yapılandır'da iki sekme kullanılabilir hale gelir: **Portre** ve **Yatay**. Her sekme, ilgili ekran yönelimi için bağımsız bir düzeni temsil eder. Sekmeler arasında geçiş yapmak için onlara dokunabilirsiniz.
 
 Düzenleri yönelimler arasında kopyalayabilirsiniz. Bu eylemlere erişmek için widget panelinin üç nokta menüsüne dokunun:
-- **Portreden kopyala** – Portre düzeninden widget listesini Yatay düzenine kopyalar.
-- **Yataydan kopyala** – Yatay düzeninden widget listesini Portre düzenine kopyalar.
+- **<Translate android="true" ids="copy_from_portrait_layout"/>** – Portre düzeninden widget listesini Yatay düzenine kopyalar.
+- **<Translate android="true" ids="copy_from_landscape_layout"/>** – Yatay düzeninden widget listesini Portre düzenine kopyalar.
 
 Yalnızca widget listesi kopyalanır ve işlem aynı profil içinde uygulanır.
 
@@ -503,8 +503,8 @@ Yalnızca widget listesi kopyalanır ve işlem aynı profil içinde uygulanır.
 **Not:** Bu seçenek yalnızca [Ayrı düzenler](#single-and-separate-layouts) etkinleştirildiğinde kullanılabilir.
 
 İki mod arasında seçim yapabilirsiniz:
-- **Geniş** – üst ve alt paneller ekranın tam genişliğini kaplar.
-- **Kompakt** – üst ve alt paneller yan paneller ve harita düğmeleri arasında sığar.
+- **<Translate android="true" ids="panels_layout_wide"/>** – üst ve alt paneller ekranın tam genişliğini kaplar.
+- **<Translate android="true" ids="panels_layout_compact"/>** – üst ve alt paneller yan paneller ve harita düğmeleri arasında sığar.
 
 Paneller düzeni, Portre ve Yatay yönelimler için bağımsız olarak yapılandırılabilir, farklı ekran boyutlarına ve yönelimlere daha iyi uyum sağlar.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
+source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
 sidebar_position: 4
 title:  Profiller (Ayarlar)
 ---
@@ -447,7 +447,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 **Konumum görünümü** ayarları, konumunuzun haritada hem sabitken (Dinlenme) hem de hareket halindeyken (Navigasyon) nasıl görüntülendiğini özelleştirmenize olanak tanır. Cihaz hızı **sıfırdan büyük** olduğunda hareket işletim sistemi tarafından algılanır.
 
-**Simges boyutu**nu kullanarak, Konumum konum simgesinin boyutunu uygulamanın metin boyutundan bağımsız olarak ayarlayın. Dinlenme ve Navigasyon modları için farklı boyutlar ayarlayabilirsiniz. Boyut %50'den %300'e kadar ayarlanabilir (%50, %75, %100, %125, %150, %200, %250, %300). Varsayılan değer %100'dür. Simges boyutuna dokunarak boyut ayarlarını açın, ardından kaydırıcıyı veya + / – adım düğmelerini kullanarak değeri değiştirin. **Varsayılana Sıfırla**yı kullanarak %100'e dönün.
+**<Translate ios="true" ids="icon_size"/>**'u kullanarak, Konumum konum simgesinin boyutunu uygulamanın metin boyutundan bağımsız olarak ayarlayın. Dinlenme ve Navigasyon modları için farklı boyutlar ayarlayabilirsiniz. Boyut %50'den %300'e kadar ayarlanabilir (%50, %75, %100, %125, %150, %200, %250, %300). Varsayılan değer %100'dür. Simges boyutuna dokunarak boyut ayarlarını açın, ardından kaydırıcıyı veya + / – adım düğmelerini kullanarak değeri değiştirin. **<Translate ios="true" ids="reset_to_default"/>**'u kullanarak %100'e dönün.
 
 </TabItem>
 

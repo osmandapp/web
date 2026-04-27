@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -11,16 +11,16 @@ OsmAnd haritası, katmanlar halinde alttan üste doğru oluşturulur. Bazı katm
 
 OsmAnd üç tür katman kullanır: raster, semboller ve kontroller. İlk olarak, [raster katmanlar](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L162) OpenGL'de oluşturulur, ardından [sembol katmanları](https://github.com/osmandapp/OsmAnd-core/blob/b124dc5cccee2c9d562e7929fe13c712f7bc883d/src/Map/OpenGL/AtlasMapRenderer_OpenGL.cpp#L200) gelir. Kontrol katmanları, Android veya iOS cihazlarının kullanıcı arayüzünde, haritanın üzerinde, OpenGL'den bağımsız olarak oluşturulur.
 
-**Android:**
+**Android:**  
 Android'deki çoğu katman, `MapLayers` sınıfının [`createLayers`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/MapLayers.java#L121) yönteminde örneklendirilir.
 
-Her katmanın sırası, örneklendirme sırasındaki `zOrder` özelliğine bağlıdır ve `OsmAndMapLayer` sınıfının [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) yönteminde ayarlanır.
+Her katmanın sırası, örneklendirme sırasındaki `zOrder` özelliğine bağlıdır ve `OsmAndMapLayer` sınıfının [`getBaseOrder`](https://github.com/osmandapp/OsmAnd/blob/c87a2e70df7759c5116b1f133ad38065d0dc4dfa/OsmAnd/src/net/osmand/plus/views/layers/base/OsmandMapLayer.java#L95) yönteminde ayarlanır.  
 Diğer katmanlar eklentilerde örneklendirilebilir.
 
-**iOS:**
+**iOS:**  
 iOS'taki çoğu katman, `OAMapLayers`'ın [`createLayers`](https://github.com/osmandapp/OsmAnd-iOS/blob/c03cc60d4301c743573ac50dfc0026522c08a66c/Sources/Controllers/Map/Layers/OAMapLayers.mm#L36) yönteminde örneklendirilir.
 
-Her katmanın sırası, `createLayers` içindeki `baseOrder` özelliği tarafından doğrudan ayarlanır.
+Her katmanın sırası, `createLayers` içindeki `baseOrder` özelliği tarafından doğrudan ayarlanır.  
 Diğer katmanlar eklentilerde örneklendirilebilir.
 
 ## Android Sıra Tabloları {#android-order-tables}
@@ -42,10 +42,10 @@ Diğer katmanlar eklentilerde örneklendirilebilir.
 | DownloadedRegionsLayer            | -1 100 000   | Poligonlar | İndirilen bölgeleri gösterir        |
 | Simgeler (MapVectorLayer)         | -1 000 000   | Noktalar | Vektör harita, [1 000 000 eklenmiş](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) stilindeki iconOrder |
 | GPXLayer (çizgiler)               | -500 000     | Çizgiler | İz çizgileri                      |
-| RouteLayer (grafik vurgulama noktası)| -197 900     | Nokta    | Haritada navigasyon rotası analizi  |
-| RouteLayer (grafik x-ekseni noktaları)| -198 000     | Noktalar | Haritada navigasyon rotası analizi  |
-| RouteLayer (dönüş okları)         | -199 000     | Çizgiler | Navigasyon rotası                   |
 | RouteLayer                        | -200 000     | Çizgiler | Navigasyon rotası                   |
+| RouteLayer (dönüş okları)         | -199 000     | Çizgiler | Navigasyon rotası                   |
+| RouteLayer (grafik x-ekseni noktaları) | -198 000 | Noktalar | Haritada navigasyon rotası analizi  |
+| RouteLayer (grafik vurgulama noktası)| -197 900     | Nokta    | Haritada navigasyon rotası analizi  |
 | Metin (MapVectorLayer)            | 1 - 255      | Metin    | Vektör harita, [stildeki](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml) textOrder, varsayılan olarak 100 |
 | Kalkanlar (MapVectorLayer)        | 1 - 255      | Kalkanlar | Vektör harita, kalkanlar için stildeki textOrder, varsayılan olarak 100 |
 | GPX iz başlangıcı, bitişi         | 90 101       | Noktalar | GPXLayer                          |
