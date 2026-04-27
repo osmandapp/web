@@ -66,6 +66,23 @@ Click the three-dot button (⋮) to open the *Track Folder* menu. From here, you
 
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
+### Smart Folders {#smart-folders}
+
+**Smart Folders** created on mobile devices can be synced and viewed in the web version via OsmAnd Cloud. To ensure they appear on the web, synchronization of [OsmAnd Settings](../personal/osmand-cloud.md#select-data-to-back-up) must be enabled in Cloud settings.  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Smart Folders are currently stored as part of global settings, so they are uploaded to the Cloud only when Settings sync is active. After creating or editing a Smart Folder, it is recommended to run a manual sync to update the data.
+
+On the web, Smart Folders are displayed in the track list with a distinct star icon, making them easy to distinguish from regular folders. The folder name is synchronized first, while the list of tracks depends on how the folder is configured on the device.
+
+Tracks are displayed only if the Smart Folder configuration is supported on the web. This includes both [filter settings](../personal/tracks/smart-folder.md#search-filter) and [grouping options](../personal/tracks/smart-folder.md#managing-smart-folders). If unsupported parameters are used (for example, nearest city), the folder may appear without tracks. For best compatibility, use common parameters such as activity, date, distance, or duration.
+
+Smart Folder synchronization may vary depending on the platform and sync configuration. For the most consistent results, ensure that Cloud sync is enabled and up to date on all devices.
+
+In the three-dot menu (⋮), you can download the Smart Folder as an OBF collection.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+
 
 ## Cloud Tracks {#cloud-tracks}
 
