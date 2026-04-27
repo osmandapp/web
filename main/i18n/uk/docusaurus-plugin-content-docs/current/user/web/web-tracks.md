@@ -1,5 +1,5 @@
 ---
-source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
+source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -34,11 +34,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Показати треки з [OsmAnd Cloud](#cloud-tracks).
 - Додавання треків на мапу (папка **Visible on map**).
-- Looking all tracks info and graph
-- Modify tracks and add it to Cloud.
-- Download and delete tracks.
-- Create new folders or delete it.
-- Download folders as OSF or OBF collection.
+- Перегляд інформації про всі треки та графіків
+- Редагування треків та додавання їх до Cloud.
+- Завантаження та видалення треків.
+- Створення нових папок або видалення їх.
+- Завантаження папок як OSF або OBF колекції.
 
 
 ## Visible on the Map {#visible-on-the-map}
@@ -59,11 +59,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Натисніть кнопку з трьома крапками (⋮), щоб відкрити меню *Track Folder*. Звідси ви можете:
 
  - Download as OSF.
- - Download as OBF Collection. Export the folder in OsmAnd Binary Format, choosing either an [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or a [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
-      -  **OBF file**. You can download an offline OBF map and open it with OsmAnd on your device. It is suitable for displaying a large number of tracks on the map.
-      -  **Travel OBF**. You can also import a map of tracks as a travel book, which allows you to select individual tracks on the map and use them like normal GPX files. A travel book also supports features such as displaying tracks as points, filtering tracks by activity type, and filtering waypoints.
- - Rename. Opens a dialog where you can enter a new name for the selected folder. The change is synced to OsmAnd Cloud and will appear on all connected devices.
- - Delete. Opens a confirmation dialog. Deleting a folder removes it permanently along with all tracks it contains. This action is also synced through OsmAnd Cloud.
+ - Download as OBF Collection. Експорт папки в бінарному форматі OsmAnd, обравши або [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) чи [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+      -  **OBF file**. Ви можете завантажити офлайн-мапу OBF та відкрити її в OsmAnd на вашому пристрої. Вона підходить для відображення великої кількості треків на мапі.
+      -  **Travel OBF**. Ви також можете імпортувати мапу треків як travel book, що дозволяє вибирати окремі треки на мапі та використовувати їх як звичайні GPX-файли. Travel book також підтримує функції, такі як відображення треків як точок, фільтрація треків за типом активності та фільтрація waypoints.
+ - Rename. Відкриває діалог, де ви можете ввести нову назву для вибраної папки. Зміна синхронізується з OsmAnd Cloud і з'явиться на всіх підключених пристроях.
+ - Delete. Відкриває діалог підтвердження. Видалення папки безповоротно видаляє її разом з усіма треками, які вона містить. Ця дія також синхронізується через OsmAnd Cloud.
 
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
@@ -73,28 +73,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 GPX-треки, які у вас є в [OsmAnd Cloud](../personal/osmand-cloud.md), будуть доступні для відображення та редагування після входу в систему. Тільки для **Pro users** <ProFeature/> та для користувачів [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (які можуть завантажувати свої дані навіть після закінчення терміну дії підписки Pro).
 
 Наступні функції доступні після вибору хмарного треку:
+- *Information* - відображення даних треку.
+- *Elevation* - графік висоти.
+- *Speed* - графік швидкості.
+- *Slope* - графік нахилу.
+- *Recalculate Elevation (Satellite)* - перераховує значення висоти для вибраного треку та показує їх на графіку висоти.
+- *Road type* - розбиває трек на сегменти за класифікацією доріг.
+- *Surface* - показує типи поверхонь треку вздовж маршруту.
+- *Smoothness* - відображає гладкість сегментів на основі тегів OSM.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
-
-- Information screens:
-  - *Information* - displaying track data.
-  - *Elevation* - graph of elevation.
-  - *Speed* - speed graph.
-  - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.
-  - *Turns* - a generated list of approximate turn instructions based on the track geometry.
-  - *Road type* - breaks the track into segments by road classification .
-  - *Surface* - shows the types of track surfaces along the route.
-  - *Smoothness* - displays segment smoothness based on OSM tags .
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details.png)
-
-- Action buttons:
-  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
-  - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - recalculates elevation values for the selected track and shows them on the elevation graph.
-  - *Delete Track* - deletes the track.
-  - *Close track* - close the track.
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Related Articles {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
+source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
 sidebar_position: 7
 title:  Обране
 ---
@@ -272,7 +272,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Використовуйте ***меню з трьома крапками*** поруч з кожною папкою, щоб керувати групами обраних точок:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
-- **Закріпити папку** — Закріпіть вибрану папку, щоб вона залишалася вгорі списку обраного для швидшого доступу.
+- **<Translate android="true" ids="pin_folder"/>** — Закріпіть вибрану папку, щоб вона залишалася вгорі списку обраного для швидшого доступу.
 - **<Translate android="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Видалити з маркерів на мапі** — Додайте всі обрані точки з папки до *Списку маркерів на мапі* або видаліть їх за потреби для зручності.

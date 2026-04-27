@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title:  Покупки в iOS
 ---
@@ -99,6 +99,7 @@ import Translate from '@site/src/components/Translate.js';
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Топографічні дані](../plugins/topography.md#overview)<br/>(Ізолінії та Рельєф) | **-** | ✔ | ✔ |
 | [Координатна сітка — Налаштування кольору](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D-будівлі — Налаштування кольору](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
 | [3D-візуалізація треку](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Путівники (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

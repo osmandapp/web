@@ -1,5 +1,5 @@
 ---
-source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
+source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
@@ -45,8 +45,9 @@ OsmAnd — це потужний застосунок із широкою баз
 
 | Тип | Опис | Посилання |
 |-- | -- | --|
+| GoogleMap у GPX для OsmAnd | Створює папку з файлами GPX у стилі OsmAnd з карти google my maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML у GPX для OsmAnd | Скрипт Python для конвертації файлів *KML* у формат *GPX* з іконками. Доступні й інші інструменти. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ у GPX | Скрипт Python для конвертації файлів *KMZ* у формат *GPX*, включно з іконками. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML у GPX | Скрипт Python для конвертації файлів *KML* у формат *GPX* з іконками. Доступні й інші інструменти. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Інструмент для конвертації файлів Garmin Basecamp для OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi в OsmAnd | Конвертація форматів карт geoPDF, geoTiff та ozi для OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX у KML | Інструмент для конвертації файлів *GPX* з OsmAnd у формат *KML* зі збереженням іконок. | [GitHub](https://github.com/mariush444/osmand2kml) |
@@ -127,7 +128,7 @@ OsmAnd — це потужний застосунок із широкою баз
 | -- | -- | --|
 | Gravel Roads Seeker | Карта гравійних доріг (вебсторінка *французькою*). Онлайн-карта, що генерується в реальному часі з тайлових серверів, таких як WMTS (Web Map Tile Service) або WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
 | OsmAnd Rendering GitHUB | Колекція онлайн-карт, включаючи топографічні, ортофотоплани та інші, доступні від деяких основних географічних інститутів різних країн. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
-| RainViewer | Карта [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) з різними [колірними схемами](https://www.rainviewer.com/api/color-schemes.html) |[Дані RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
+| RainViewer | Карта [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) з різними [схемами кольорів](https://www.rainviewer.com/api/color-schemes.html) |[Дані RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | Набір карт Австрії на основі [basemap.at WMTS](https://basemap.at/en/) створений mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | Набір карт, наданий французьким географічним інститутом IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | Сайт надає колекцію карт для заміського відпочинку, включаючи туристичні, гірські, морські та багато інших. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|

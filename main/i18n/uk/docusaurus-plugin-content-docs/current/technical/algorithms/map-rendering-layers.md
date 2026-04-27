@@ -1,5 +1,5 @@
 ---
-source-hash: ae9731211ef7c961e05f3400b8bf789863b06304c7891096d6b4075e34fcf55a
+source-hash: d2a2d6291999a004e8e48830979de9e099409f66de57da7056c3908f20934590
 sidebar_position: 5
 ---
 
@@ -43,12 +43,12 @@ OsmAnd використовує три типи шарів: растрові, с
 | DownloadedRegionsLayer            | -1 100 000   | Полігони | Показує завантажені регіони          |
 | Іконки (MapVectorLayer)            | -1 000 000   | Точки   | Векторна карта, iconOrder у стилі з [додаванням 1 000 000](https://github.com/osmandapp/OsmAnd-core/blob/f2cd0a5d98d6fb1a7bed90c7e9deb2b5c3cd9fd7/src/Map/MapPrimitiviser_P.cpp#L2828) |
 | GPXLayer (лінії)                  | -500 000     | Лінії    | Лінії треку             |
-| RouteLayer (точка виділення на графіку)| -197 900     | Точка    | Аналіз навігаційного маршруту на карті  |
-| RouteLayer (точки осі x на графіку)  | -198 000     | Точки   | Аналіз навігаційного маршруту на карті  |
-| RouteLayer (стрілки поворотів)          | -199 000     | Лінії    | Навігаційний маршрут                  |
 | RouteLayer                        | -200 000     | Лінії    | Навігаційний маршрут                  |
+| RouteLayer (стрілки поворотів)          | -199 000     | Лінії    | Навігаційний маршрут                  |
+| RouteLayer (точки осі x на графіку)  | -198 000     | Точки   | Аналіз навігаційного маршруту на карті  |
+| RouteLayer (точка виділення на графіку)| -197 900     | Точка    | Аналіз навігаційного маршруту на карті  |
 | Текст (MapVectorLayer)             | 1 - 255      | Текст     | Векторна карта, textOrder у [стилі](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml), за замовчуванням 100                 |
-| Щити (MapVectorLayer)             | 1 - 255       | Щити  | Векторна карта, textOrder у стилі для щитів, за замовчуванням 100 |
+| Щити (MapVectorLayer)          | 1 - 255       | Щити  | Векторна карта, textOrder у стилі для щитів, за замовчуванням 100 |
 | Початок, кінець GPX треку           | 90 101       | Точки   | GPXLayer                          |
 | Точка маршруту GPX                | 90 300       | Точки   | GPXLayer                          |
 | GPXLayer (назва точки маршруту)               | 90 300       | Текст     | Назва точок маршруту                    |
@@ -74,7 +74,7 @@ OsmAnd використовує три типи шарів: растрові, с
 | ImpassableRoadsLayer              | 750 000      | Точки   | Уникати доріг                       |
 | ContextMenuLayer                  | 800 000      | Точки   | Шпиль контекстного меню               |
 | MapillaryVectorLayer (лінії)      | 1 000 000    | Лінії    | Лінії Mapillary між точками    |
-| MapillaryVectorLayer (точки)      | 1 000 000    | Точки   | Точки Mapillary                  |
+| MapillaryVectorLayer (точки)     | 1 000 000    | Точки   | Точки Mapillary                  |
 
 ### Android. Контрольні шари {#android-controls-layers}
 

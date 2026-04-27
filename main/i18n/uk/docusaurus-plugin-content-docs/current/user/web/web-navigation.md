@@ -1,5 +1,5 @@
 ---
-source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
+source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Навігація слідує простому процесу: перша точка стає Початком, а наступна — Призначенням. Як тільки обидві точки встановлено, маршрут розраховується та відображається на карті.
 
-![Навігація у веб](@site/static/img/web/navigation_start.png)
+![Навігація в веб](@site/static/img/web/navigation_start.png)
 
 ### Керування точками маршруту {#manage-route-points}
 
@@ -40,7 +40,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Обмін Початком і Призначенням — обмінює Початок і Призначення, зберігаючи проміжні точки без змін. Дія позначена іконкою з двома стрілками в протилежних напрямках.
 
-![Навігація у веб](@site/static/img/web/navigation_points.png)
+![Навігація в веб](@site/static/img/web/navigation_points.png)
 
 
 ## Профіль маршрутизації {#routing-profile}
@@ -51,7 +51,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Коли ви змінюєте профіль, Навігація оновлює маршрут відповідно до вибраного режиму пересування.
 
-![Навігація у веб](@site/static/img/web/navigation_profile.png)
+![Навігація в веб](@site/static/img/web/navigation_profile.png)
 
 
 ## Налаштування навігації {#navigation-settings}
@@ -65,7 +65,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Уникати** — опції, що виключають певні типи доріг або ситуації з маршруту (наприклад, уникнення платних доріг, поромів, автомагістралей, тунелів тощо).
 - **[Параметри транспортного засобу](../navigation/guidance/vehicle-parameters.md)** — доступні для профілів на основі транспортного засобу. Дозволяє вказати обмеження транспортного засобу (наприклад, розміри/вагу), що може впливати на маршрутизацію на обмежених дорогах.
 
-![Навігація у веб](@site/static/img/web/navigation_settings.png) ![Навігація у веб](@site/static/img/web/navigation_settings_2.png)
+![Навігація в веб](@site/static/img/web/navigation_settings.png) ![Навігація в веб](@site/static/img/web/navigation_settings_2.png)
 
 
 ## Прив'язка треку {#attaching-track}
@@ -81,11 +81,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Деталі маршруту {#route-details}
 
-![Навігація у веб](@site/static/img/web/navigation_info.png) ![Навігація у веб](@site/static/img/web/navigation_turns.png)
+![Навігація в веб](@site/static/img/web/navigation_overview.png) ![Навігація в веб](@site/static/img/web/navigation_turns_new.png)
 
-Коли маршрут розрахований, панель показує базове резюме (відстань, час, підйом/спуск) та кнопку **Деталі**. Використовуйте Деталі, щоб відкрити вигляд маршруту з двома вкладками: Інфо та Повороти.
+Коли маршрут розрахований, панель показує базове резюме (відстань, час, підйом/спуск) та кнопку **Деталі**. Використовуйте Деталі, щоб відкрити вигляд маршруту з кількома вкладками. Основні вкладки включають Огляд, Трек і Точки. Вкладка Повороти доступна через стрілку (›) у панелі вкладок.
 
-Інфо підсумовує маршрут та дані про висоту:
+Огляд підсумовує маршрут та дані про висоту:
 - **Точки** — кількість точок маршруту, використаних для побудови маршруту.
 - **Маршрут** — відстань і час.
 - **Підйом/Спуск** — загальний підйом і спуск.
@@ -104,7 +104,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Нова проміжна точка з'являється в панелі Маршрут як додаткова точка, вставлена над Призначенням, і резюме маршруту оновлюється відповідно.
 - Ви можете керувати доданою точкою проходження так само, як і іншими [проміжними точками](#manage-route-points).
 
-![Навігація у веб](@site/static/img/web/navigation_on_map.png)
+![Навігація в веб](@site/static/img/web/navigation_on_map.png)
 
 ### Завантаження та Збереження {#download-and-save}
 
@@ -120,7 +120,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете зберегти маршрут як трек за допомогою *Зберегти в хмару / Завантажити в OsmAnd Cloud*. Це відкриває діалог, де ви можете підтвердити збереження в хмарні треки, редагувати Назву, за бажанням обрати Папку, потім Зберегти або Скасувати. Якщо ви не ввійшли в систему, *Зберегти в хмару / Завантажити в OsmAnd Cloud* відкриває сторінку Ціноутворення.
 
-![Навігація у веб](@site/static/img/web/download_options.png)
+![Навігація в веб](@site/static/img/web/download_options.png)
 
 ### Спільний доступ до маршруту {#share-a-route}
 

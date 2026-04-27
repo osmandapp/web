@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Взаємодія з мапою
 ---
@@ -206,20 +206,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Вигляд глобуса {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
 
 **Вигляд глобуса** дозволяє відображати мапу як сферичну Землю замість пласкої проєкції. Цей режим змінює геометрію поверхні мапи та адаптує взаємодію з мапою до сферичної навігації.  
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Глобальний вигляд*
 
 Вигляд глобуса наразі доступний лише за таких умов:
 - Увімкнено [плагін Розробка](../plugins/development.md).  
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>* 
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - Увімкнено [плагін Топографії](../plugins/topography.md).  
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - [Рушій візуалізації мапи](../personal/global-settings.md#map-rendering-engine) встановлено на Версію 2 (OpenGL).  
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Globe View](@site/static/img/map/globe_view_1_ios.png) ![Globe View](@site/static/img/map/globe_view_2_ios_new.png)
+
+**Вигляд глобуса** дозволяє відображати мапу як сферичну Землю замість пласкої проєкції. Цей режим змінює геометрію поверхні мапи та адаптує взаємодію з мапою до сферичної навігації.  
+
+</TabItem>
+
+</Tabs>
 
 Коли увімкнено Вигляд глобуса, мапа обертається як глобус. Жести перетягування обертають Землю, а масштабування змінює відстань камери, а не масштабування пласкої поверхні. Елементи мапи, такі як треки, маркери, символи та 3D-об'єкти, відображаються безпосередньо на сферичній поверхні та слідують її кривизні. Об'єкти поступово зникають за горизонтом під час обертання глобуса.
 
