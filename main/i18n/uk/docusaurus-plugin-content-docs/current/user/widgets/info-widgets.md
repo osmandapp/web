@@ -1,5 +1,5 @@
 ---
-source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
+source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
 sidebar_position: 3
 title:  Інформаційні віджети
 ---
@@ -24,14 +24,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ![Інформаційні віджети](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Віджети висоти {#altitude-widgets}
+## Віджети висоти   {#altitude-widgets}
 
-Віджети висоти відображають висоту над рівнем моря поточного географічного розташування та висоту центру карти.
+Віджети висоти відображають висоту над рівнем моря поточного географічного розташування та висоту центру карти.  
 
 
-### Висота: Поточне місцезнаходження {#altitude-current-location}
+### Висота: Поточне місцезнаходження   {#altitude-current-location}
   
-:::note Завантажте корекцію висот світу
+:::note  Завантажте корекцію висот світу
 На деяких пристроях Android висота може відображатися неточно. Щоб вирішити цю проблему, завантажте карту з корекцією висот.
 
 - Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
@@ -322,7 +322,7 @@ OsmAnd пропонує два типи віджетів координат:
 | Формат | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) або <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## Інформація GPS {#gps-info}
+## Інформація GPS   {#gps-info}
 
 <InfoAndroidOnly />
 
@@ -457,7 +457,7 @@ OsmAnd пропонує два типи віджетів координат:
 Ці віджети вмикаються та працюють у поєднанні з відповідними плагінами.
 
 
-### Віджети запису поїздки {#trip-recording-widgets}
+### Віджети запису поїздки   {#trip-recording-widgets}
 
 :::note  
 Ви можете прочитати більш детальний опис тут: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
@@ -768,25 +768,26 @@ OsmAnd пропонує два типи віджетів координат:
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
 
-#### Доступна оперативна пам'ять {#available-ram}
+#### Інформація про пам’ять {#memory-info}
 
 <InfoAndroidOnly />
 
-![Віджети середньої швидкості](@site/static/img/widgets/available_RAM_2_andr.png)
+![Віджети інформації про пам’ять](@site/static/img/widgets/memory_info.png)
 
-Віджет **Доступна оперативна пам'ять** — це інструмент для моніторингу використання пам'яті вашого пристрою у зв'язку з OsmAnd. Він надає детальні дані для оптимізації продуктивності програми.
+Віджет **Інформація про пам’ять** — це інструмент розробника для моніторингу використання пам’яті пристрою у зв’язку з OsmAnd. Він надає інформацію про різні типи пам’яті, що використовуються додатком.
 
-- **Доступна оперативна пам'ять для програми.** Відображає обсяг оперативної пам'яті, доступний для використання OsmAnd без спричинення проблем з продуктивністю.
+Доступні режими:  
+- **<Translate android="true" ids="memory_used_settings"/>** — Відображає обсяг пам’яті Java heap, що зараз використовується об’єктами в додатку.
+- **<Translate android="true" ids="memory_allocated_settings"/>** — Показує обсяг пам’яті, яку Java Virtual Machine (JVM) зараз виділила для додатку.
+- **<Translate android="true" ids="memory_limit_settings"/>** — Вказує максимальний розмір Java heap, дозволений для додатку системою Android.
+- **<Translate android="true" ids="memory_native_settings"/>** — Відображає обсяг пам’яті, виділеної через нативний код (C/C++), включаючи системні бібліотеки та компоненти NDK.
+- **<Translate android="true" ids="memory_graphics_settings"/>** — Показує обсяг пам’яті, використаної для графічних ресурсів, таких як текстури та буфери OpenGL.
 
-- **Використання оперативної пам'яті програмою** — показує поточне споживання оперативної пам'яті програмою OsmAnd.
-
-- **Загальна оперативна пам'ять програми** — вказує на загальний обсяг пам'яті, виділений для OsmAnd, включаючи як використану, так і доступну пам'ять.
-
-> **ПРИМІТКА**. *Загальний обсяг доступної оперативної пам'яті* може змінюватися залежно від фонових процесів та інших програм, що працюють на вашому пристрої. Ці значення є динамічними та пропонують спосіб відстежувати та керувати використанням пам'яті для стабільної та ефективної роботи OsmAnd.*
+**ПРИМІТКА:** Значення пам’яті можуть коливатися залежно від системних процесів, фонових додатків та поточної активності в OsmAnd. Ці значення є динамічними та призначені переважно для налагодження та моніторингу продуктивності.
 
 | | |
 |:------------|:------------|
-| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="developer_widgets"/> → *Доступна оперативна пам'ять* |
+| Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Обрати панель → Додати віджет → <Translate android="true" ids="developer_widgets,map_widget_memory_info"/>* |
 | При натисканні | Без змін |
 | Довге натискання | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 

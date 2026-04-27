@@ -1,5 +1,5 @@
 ---
-source-hash: 586e89c491ebdc9f9d39017e43dfe0ba1044c71a6eddcfcdc4d71787f3703bae
+source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -15,8 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<InfoIncompleteArticle/>
 
 <InfoAndroidOnly/>
 
@@ -49,7 +47,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Star Map Screen {#star-map-screen}
 
-**Go to:** *Enabled plugin → Menu → Star map* 
+**Go to:** *Enabled plugin → Меню, Зоряна карта* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
@@ -76,12 +74,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Object Information {#object-information}
 
-![Object Information](@site/static/img/plugins/starwatcher/object_view.png)
+![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
 
 Верхня секція Контекстного меню відображає назву об’єкта та його класифікацію. Під назвою показується тип об’єкта та його батьківське сузір’я або група. Наприклад:  
 - **Beta Ursae Minoris** — Зірка • Мала Ведмедиця
-- **Jupiter** — Планета • Сонячна система
-- **Andromeda** — Галактика • Глибоке небо
+- **Місяць** — Супутник • Земля
+- **Юпітер** — Планета • Сонячна система
 
 Блоки швидкої інформації відображають ключові параметри спостереження:  
 - Схід – час, коли об’єкт сходить над горизонтом.
@@ -93,7 +91,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Ці значення динамічно оновлюються на основі вибраного часу та розташування користувача.
 
 Під блоками швидкої інформації меню може також містити додаткову інформацію та ресурси про об’єкт:  
-- Читати у Вікіпедії – Відкриває статтю об’єкта у Вікіпедії. Якщо доступні офлайн-даних Вікіпедії, статтю можна відкрити без підключення до інтернету; інакше сторінка відкривається в браузері.
+- Офлайн база знань – Дозволяє завантажити розширену базу даних із статтями Вікіпедії та каталогами глибокого неба для офлайн-використання. Після завантаження детальну інформацію про небесні об’єкти можна переглядати безпосередньо в додатку без підключення до інтернету.
+- Читати у Вікіпедії – Відкриває статтю об’єкта у Вікіпедії в браузері.
+- Позначення – Показує альтернативні назви та ідентифікатори каталогів для об’єкта (наприклад, HD, HIP, NGC). Цей розділ доступний для об’єктів, які мають записи в каталогах, таких як зірки та об’єкти глибокого неба. Якщо об’єкт не має загальної назви, одне з цих позначень використовується як основна назва.
 - Онлайн-фото – Відображає доступні фото, пов’язані з вибраним небесним об’єктом.
 
 ### Actions {#actions}
@@ -104,9 +104,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Напрямок** – Показує напрямок до об’єкта на карті, допомагаючи орієнтуватися під час спостереження неба.
 - **Траєкторія** – Відображає добову траєкторію об’єкта по небу, дозволяючи побачити, як він рухається протягом дня.
 
-### Visibility Graph {#actions}
+### Visibility Graph {#visibility-graph}
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility.png)
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
 
 Вкладка **Видимість** показує, як вибраний об’єкт рухається по небу протягом 24-годинного періоду.
 
@@ -130,27 +130,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - червоний – близько до горизонту
 - фіолетовий – нижче горизонту (невидимий)
 
-Рухливий індикатор дозволяє досліджувати позицію об’єкта в різні часи. Коли індикатор рухається, оновлюються значення поточного часу, висоти та азимута.
+Рухливий індикатор дозволяє досліджувати позицію об’єкта в різні часи. Коли індикатор рухається, оновлюються значення поточного часу, висоти та азимута. Значення азимута також включає відповідний напрямок компаса (наприклад, 354° Аз (Пн)).
 
 Під графіком відображаються важливі події спостереження: 
 - **Схід** – коли об’єкт сходить над горизонтом.
 - **Кульмінація** – коли об’єкт досягає своєї найвищої висоти.
-- **Захід** – коли об’єкт заходить під горизонт.
+- **Захід** – коли об’єкт заходить під горизонт. Якщо об’єкт ніколи не сходить або не заходить, відповідні значення приховуються.
 
-Графік відкривається з індикатором, позиціонованим на поточний системний час. Розташування, використане для обчислень, показано під графіком.
+Графік відкривається з індикатором, позиціонованим на поточний системний час. Розташування, використане для обчислень, показано під графіком у вигляді назви міста.
 
 ### Observation Schedule {#actions}
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule.png)
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
 Вкладка **Розклад** відображає видимість вибраного об’єкта на поточний тиждень. Кожен рядок представляє один день і включає:  
 - день тижня
 - дату
 - час сходу
-- час заходу
+- час заходу. Якщо час заходу відбувається наступного дня, він позначається знаком ⁺¹
 - маленький графік видимості на той день
 
-Міні-графік показує, коли об’єкт видимий протягом дня та як змінюється його висота. Кольорова секція смуги представляє період, коли об’єкт над горизонтом.
+Міні-графік показує, коли об’єкт видимий протягом дня та як змінюється його висота. Кольорова секція смуги представляє період, коли об’єкт над горизонтом. Міні-графік представляє діапазон часу від 00:00 до 23:59 для вибраного дня.
 
 Ви можете перемикатися між тижнями за допомогою стрілкових кнопок у заголовку Розкладу. Кнопка календаря дозволяє повернутися до поточного тижня.
 
@@ -177,7 +177,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-**Go to:** *Enabled plugin → Menu → Star map → Camera button* 
+**Go to:** *Enabled plugin → Меню, Зоряна карта → Camera button* 
 
 Шар **Астрономії** працює з **камерою пристрою**, щоб увімкнути **доповнену реальність (AR) для спостереження зірок**. Спрямуйте камеру телефону на реальне нічне небо та побачте зірки, планети, сузір’я, накладені на Сонце/Місяць у реальному часі.
 
@@ -314,7 +314,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### My Data {#my-data}
 
-![My Data](@site/static/img/plugins/starwatcher/my_data.png)
+![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
 
 Секція My Data містить об’єкти, з якими взаємодіяв користувач. Ця секція включає три списки:
 
@@ -326,7 +326,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### Catalogs {#catalogs}
 
-![Catalogs](@site/static/img/plugins/starwatcher/catalogs.png)
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
 Секція Catalogs надає доступ до астрономічних каталогів, доступних у плагіні Астрономія.
 

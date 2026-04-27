@@ -1,5 +1,5 @@
 ---
-source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
+source-hash: 77c8a1dfb972edc78c846c4f76e834defa4dd3e8e356943fb8fc683341245954
 sidebar_position: 11
 title:  Routes
 ---
@@ -29,7 +29,7 @@ OsmAnd має багато потужних функцій для відобра
 
 ### Велосипедні маршрути {#cycle-routes}
 
-[Велосипедні маршрути](https://wiki.openstreetmap.org/wiki/Cycle_routes) представлені трьома типами: *місцеві* (`lcn`), *регіональні* (`rcn`), *національні* (`ncn`), *міжнародні* (`icn`). Також велосипедні маршрути можуть бути частиною [вузлових мереж](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Ви можете вибрати, як призначати колір сегментам маршруту:
+[Велосипедні маршрути](https://wiki.openstreetmap.org/wiki/Cycle_routes) представлені чотирма типами: *місцеві* (`lcn`), *регіональні* (`rcn`), *національні* (`ncn`), *міжнародні* (`icn`). Також велосипедні маршрути можуть бути частиною [вузлових мереж](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Ви можете вибрати, як призначати колір сегментам маршруту:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -59,7 +59,7 @@ OsmAnd має багато потужних функцій для відобра
 
 ### Пішохідні маршрути {#hiking--walking-routes}
 
-[Пішохідні маршрути](https://wiki.openstreetmap.org/wiki/Walking_Routes) представлені трьома типами: *місцеві* (`lwn`), *регіональні* (`rwn`), *національні* (`nwn`), *міжнародні* (`iwn`). Також пішохідні маршрути можуть бути частиною [вузлових мереж](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd не розділяє піші та туристичні маршрути, а об'єднує їх в одну групу. Ви можете вибрати, як призначати колір сегментам маршруту:
+[Пішохідні маршрути](https://wiki.openstreetmap.org/wiki/Walking_Routes) представлені чотирма типами: *місцеві* (`lwn`), *регіональні* (`rwn`), *національні* (`nwn`), *міжнародні* (`iwn`). Також пішохідні маршрути можуть бути частиною [вузлових мереж](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd не розділяє піші та туристичні маршрути, а об'єднує їх в одну групу. Ви можете вибрати, як призначати колір сегментам маршруту:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***. Забарвлює маршрути відповідно до їх індивідуального [місцевого кольору](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (якщо він доступний в OpenStreetMap) та символу туристичного щита.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
@@ -239,6 +239,7 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 - Відображається **список найближчих маршрутів** у цьому місці.
 - Після вибору маршруту зі списку відкривається [контекстне меню](../map/tracks/track-context-menu.md) для цього маршруту, що відображає детальну інформацію та доступні дії.
+- Вибраний маршрут відкривається у вигляді треку, що дозволяє взаємодіяти з ним так само, як з треком GPX.
 
 У **контекстному меню** ви можете:
 
@@ -317,7 +318,7 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 </Tabs>  
 
 
-Щоб зберегти маршрут як *файл GPX*, натисніть кнопку **Зберегти (Завантажити)** під [інформаційною панеллю](../map/tracks/track-context-menu.md#info-panel). Це відкриє панель кнопок [швидких дій](../map/tracks/track-context-menu.md#track-actions), де ви матимете доступ до дій з треком, таких як зміна [Зовнішнього вигляду](./tracks/appearance.md), [Навігація](../navigation/setup/route-navigation.md) або редагування [Планування маршруту](../plan-route/create-route.md).
+Щоб зберегти маршрут як *файл GPX*, натисніть кнопку **Зберегти (Завантажити)** під [інформаційною панеллю](../map/tracks/track-context-menu.md#info-panel). Це відкриє панель кнопок [швидких дій](../map/tracks/track-context-menu.md#track-actions), де ви матимете доступ до дій з треком, таких як зміна [Зовнішнього вигляду](./tracks/appearance.md), [Навігація](../navigation/setup/route-navigation.md) або редагування [Планування маршруту](../plan-route/create-route.md). Збережені маршрути поводяться так само, як інші треки, і доступні у вашій колекції треків.
 
 
 ### Почати навігацію {#start-navigation}

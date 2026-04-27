@@ -1,5 +1,5 @@
 ---
-source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
 sidebar_position: 11
 title:  Розробка OsmAnd
 ---
@@ -53,7 +53,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_2_new.png)
 
 </TabItem>
 
@@ -71,13 +71,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Режим економії заряду батареї** (*Android* / *iOS*). Цей параметр зменшує [частоту оновлення екрана](#map-rendering-fps-widget) на 20 кадрів на секунду, щоб допомогти заощадити заряд батареї під час використання програм.
 - **Використовувати 3D-іконки місцезнаходження** (*iOS*). Дозволяє вибрати 3D-іконку для [іконки Моє місцезнаходження](../personal/profiles.md#my-location-appearance).
 - **Симулювати дані OBD** (*Android* / *iOS*). Дозволяє симулювати використання [сканера OBD](./vehicle-metrics.md).
-- **Інформація про налагодження продуктивності** (*Android* / *iOS*). Відображає продуктивність рендерингу та навігації.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Відображає продуктивність рендерингу та навігації.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Відображає інформацію про налагодження растеризації тайлів.
 - **Вимкнути шари мапи** (*Android*). Вимикає всі шари мапи поверх векторної мапи (потрібне перезавантаження).
 - **Буфер Logcat** (*Android*). Перевіряйте та діліться детальними журналами програми.  
 - **Показувати спливаюче повідомлення про натиснуту клавішу** (*Android*). Відображати повідомлення про клавішу.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Азимут — це напрямок за компасом від вашого поточного місцезнаходження до пункту призначення. Впливає на *[запис треку](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Курс — це напрямок за компасом від вашого поточного місцезнаходження до істинної півночі. Ця опція увімкнена за замовчуванням. Впливає на *[запис треку](../plugins/trip-recording.md)*.
-- **Увімкнути MSAA** (*Android*) / **Увімкнути MSAA для CarPlay** (*iOS*). Увімкнює багатовибіркове згладжування для згладжування рендерингу мапи. Покращує візуальну якість [іконки Моє місцезнаходження](../personal/profiles.md#my-location-appearance) та лінії маршруту, зменшуючи пікселізовані краї. На Android ця опція впливає на рендеринг мапи на пристрої та при використанні [Android Auto](../navigation/auto-car.md). На iOS вона застосовується лише до [CarPlay](../navigation/car-play.md).
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Увімкнює багатовибіркове згладжування для згладжування рендерингу мапи. Покращує візуальну якість [іконки Моє місцезнаходження](../personal/profiles.md#my-location-appearance) та лінії маршруту, зменшуючи пікселізовані краї. На Android ця опція впливає на рендеринг мапи на пристрої та при використанні [Android Auto](../navigation/auto-car.md). На iOS вона застосовується лише до [CarPlay](../navigation/car-play.md).
 
 
 ### Тестування програми {#application-testing}
@@ -319,9 +320,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |20| 66|11|30|10%|
 
 
-## Віджет доступної оперативної пам'яті {#available-ram-widget}
+## Віджет інформації про пам'ять {#memory-info-widget}
 
-Цей віджет розроблено спеціально для вас при використанні OsmAnd, щоб забезпечити більш зручну та інформативну взаємодію з доступною оперативною пам'яттю на вашому пристрої. Він дозволяє легко та швидко відстежувати доступну оперативну пам'ять, що особливо корисно при використанні OsmAnd для навігації. Детальніше про віджет читайте у статті [Інформаційні віджети](../widgets/info-widgets.md#available-ram).
+Цей віджет розроблено спеціально для вас при використанні OsmAnd, щоб забезпечити більш зручну та інформативну взаємодію з використанням пам'яті пристрою. Він дозволяє легко та швидко відстежувати різні типи пам'яті, що використовуються програмою, що особливо корисно при використанні OsmAnd для навігації. Детальніше про віджет читайте у статті [Інформаційні віджети](../widgets/info-widgets.md#memory-info).
 
 
 ## Симуляція GPX-треку {#gpx-track-simulation}
