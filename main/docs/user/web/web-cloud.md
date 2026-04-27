@@ -118,6 +118,23 @@ When you are signed in, the OsmAnd Cloud section appears in Menu → Settings an
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
 
+### Connected Apps {#connected-apps}
+
+The **Connected apps** section allows you to link external services to your OsmAnd account. Currently, it supports integration with **Garmin Connect**, enabling automatic synchronization of your activities. To open it,  
+Go to: *General Menu → Account → Connected apps*
+
+In this section, you can connect your Garmin Connect account by clicking **Connect**. You will be redirected to the Garmin authorization page, where you need to sign in and grant access. After successful connection, synchronization starts automatically.
+
+Once connected, OsmAnd imports your activities and creates a dedicated Garmin Connect folder in the [Tracks section](./web-tracks.md). All synced activities are stored in this folder and are available across devices when OsmAnd Cloud is enabled. New activities are added automatically after they are recorded in your Garmin Connect account, so no manual import is required.
+
+Currently, only *Hiking*, *Cycling*, and *Walking* activities are supported. During the initial connection, you can enable synchronization of recent activities, which allows importing data from the past 30 days. Activities older than this period are not imported automatically.
+
+The section also displays basic information about the connection, such as the connected account, number of activities, and the last synchronization time. If needed, you can disconnect your Garmin Connect account at any time. After disconnecting, new activities will no longer be synced, but previously imported tracks will remain in the Garmin Connect folder.
+
+Garmin Connect integration is available for [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) users.
+
+![Garmin Connect](@site/static/img/web/garmin_connect.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2.png)
+
 
 ## Troubleshooting {#troubleshooting}
 
@@ -208,5 +225,6 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Introduction](./web-overview.md)
 - [Cross-Platform Purchases](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Tracks](./web-tracks.md)
 
 
