@@ -1,5 +1,5 @@
 ---
-source-hash: 0b9fec9a92cbab58480cefaa92e29f493c2277360a9b9044570e4cc41a94d83d
+source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
 sidebar_position: 5
 title: Vektör Haritalar
 ---
@@ -162,7 +162,7 @@ Yollar için özel ayarlar, yol atlasına uyması için renkleri değiştirebili
 - **<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. Deniz derinliği konturlarını gösterir. [Denizcilik eklentisini](../plugins/nautical-charts) yüklemeniz ve Denizcilik haritalarını indirmeniz gerekir.  
     ![Harita parametresi - Derinlik konturları](@site/static/img/map/map-parameter-depth-contours.png)
 
-- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. [Doğa koruma alanı](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve) için yeşil pano ve "NR" etiketleri gösteriliyor. Yaban hayatı koruma bölgeleri için yeşil bir sınır ve "NR" etiketi ile korunan alanları vurgular.  
+- **<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. [Doğa koruma alanı](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve) için yeşil sınır ve "NR" etiketleri gösteriliyor. Yaban hayatı koruma bölgeleri için yeşil bir sınır ve "NR" etiketi ile korunan alanları vurgular.  
 
     &nbsp;&nbsp;&nbsp;![Harita parametresi - Doğa rezervi](@site/static/img/map/nature-reserve.png)
 
@@ -378,15 +378,29 @@ Arazi seçeneği, Hillshade, Slope ve Altitude gibi üç özelliği özelleştir
 
 ### 3D Binalar {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D binalar*  
+<TabItem value="android" label="Android"> 
 
-![3D Binalar](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Binalar](@site/static/img/map/3d_buildings_2.png) 
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*  
+
+![3D Binalar](@site/static/img/map/3d_buildings_1_new.png) ![3D Binalar](@site/static/img/map/3d_buildings_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D Binalar](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Binalar](@site/static/img/map/3d_buildings_2_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 **3D Binalar** özelliği, binaları düz şekiller yerine hacimli 3D modeller olarak görüntüler. Binalar, [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur.
 
-Bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabilir. Ayrıntılar için [Topografya eklentisi](../plugins/topography.md#3d-buildings) makalesine bakın.
+Android'de bu seçenek, Topografya eklentisi etkinleştirildiğinde kullanılabilir. Ayrıntılar için [Topografya eklentisi](../plugins/topography.md#3d-buildings) makalesine bakın.
 
 ### 3D Kabartma {#3d-relief}
 
@@ -422,11 +436,25 @@ Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritas
 
 ### Küre Görünümü {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Küresel Görünüm*
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Küre Görünümü](@site/static/img/map/globe_view_1.png) ![Küre Görünümü](@site/static/img/map/globe_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Küre Görünümü](@site/static/img/map/globe_view_1_ios.png) ![Küre Görünümü](@site/static/img/map/globe_view_2_ios_new.png)
+
+</TabItem>
+
+</Tabs>
 
 **Küre Görünümü**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar. Daha fazla bilgi için, Haritayla Etkileşim makalesindeki [Küre görünümü bölümü](../map/interact-with-map.md#globe-view)ne bakın.
 
@@ -551,3 +579,18 @@ Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş 
 - [Rotalar](../map/routes.md)
 - [İçe / Dışa Aktar](../personal/import-export.md)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
+
+<!--
+| | | |
+|--------|--------|--------|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
+-->

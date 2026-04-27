@@ -1,5 +1,5 @@
 ---
-source-hash: db5100e593e959bddd7c050a00a3702808a3d2eb1673ab3d7afe8c6151f814cc
+source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
 sidebar_position: 16
 title: Topografya
 ---
@@ -347,28 +347,58 @@ Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletler
 
 ## 3B Binalar {#3d-buildings}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3B binalar* 
+<TabItem value="android" label="Android">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. 3B binalar yalnızca daha yüksek yakınlaştırma seviyelerinde (şehir/sokak görünümü) gösterilir, burada bireysel binalar görüntülenebilir.  
+![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
 
-3B binaların oluşturma işlemini etkinleştirmek veya devre dışı bırakmak için ana geçişi kullanın. Etkinleştirildiğinde, ayar ayrıca ana geçişin altında mevcut [Detay seviyesi](#performance) (Düşük veya Yüksek) değerini de görüntüler. Binaları 3B olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı doğru kaydırarak haritayı eğin. Bu görünümde, binalar görünürlük ayarına bağlı olarak yolları veya harita etiketlerini kısmen kaplayabilir.
+</TabItem>
 
-Bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabilir.  
+<TabItem value="ios" label="iOS">  
+
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. [OpenStreetMap verileri](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage), binalardan geçen geçitleri `tunnel=building_passage` etiketiyle haritalanmışsa, OsmAnd 3B bina modelinde görünür açıklıkları oluşturur böylece binadan geçen yollar veya yaya yolları doğru şekilde görüntülenir. 
+
+Bir POI veya seçili konum (örneğin bir harita pim'i veya navigasyon hedefi) bir binanın içindeyse, OsmAnd ilgili binayı haritada tanımlamayı kolaylaştırmak için vurgular.
+
+3B binaların oluşturma işlemini etkinleştirmek veya devre dışı bırakmak için ana geçişi kullanın. Etkinleştirildiğinde, ayar ayrıca ana geçişin altında mevcut [Detay seviyesi](#performance) (Düşük veya Yüksek) değerini de görüntüler (*Yalnızca Android*). Binaları 3B olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı doğru kaydırarak haritayı eğin. Bu görünümde, binalar görünürlük ayarına bağlı olarak yolları veya harita etiketlerini kısmen kaplayabilir.
+
+Android'de bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabilir.  
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-3B binalar ayarları, 3B binaların görünümünü, performansını ve aydınlatmasını etkileyen kontrolleri içerir.
+3B binalar ayarları, iki gruba ayrılır: **Görünüm** ve **Performans**.
 
 ### Görünüm {#appearance}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
 ![3D Buildings](@site/static/img/map/3d_buildings_color.png)
 
-**Görünüm**, 3B binaların haritada nasıl göründüğünü kontrol eder. Renk ve Görünürlük olmak üzere iki ayarı içerir. 
+</TabItem>
 
-**Renk**, bina rengini değiştirmenize olanak tanır. Renk'e dokunduğunuzda, OsmAnd ayarınızı düzenlerken haritayı görebileceğiniz ayrı bir önizleme ekranı açar. Önizleme ekranı, seçilen rengin binaları nasıl etkilediğini hemen görebileceğiniz canlı bir harita gösterir.
+<TabItem value="ios" label="iOS">  
+
+![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**<Translate android="true" ids="shared_string_appearance"/>**, 3B binaların haritada nasıl göründüğünü kontrol eder. Renk ve Görünürlük olmak üzere iki ayarı içerir. 
+
+**<Translate android="true" ids="shared_string_color"/>**, bina rengini değiştirmenize olanak tanır. Renk'e dokunduğunuzda, OsmAnd ayarınızı düzenlerken haritayı görebileceğiniz ayrı bir önizleme ekranı açar. Önizleme ekranı, seçilen rengin binaları nasıl etkilediğini hemen görebileceğiniz canlı bir harita gösterir.
 - **Harita stili** — şu anda seçili harita stilinden varsayılan bina rengini kullanır.
 - **Özel** — Gündüz / Gece modu için ayrı olarak özel bir bina rengi ayarlamanıza olanak tanır.
 
@@ -378,19 +408,19 @@ Bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabili
 
 Özel renkler satın alınmamışsa, kısa bir açıklama ve Al butonu ile boş bir durum görürsünüz. Özel mevcutsa, Gündüz ve Gece arasında geçiş yapabilir, paletten bir renk seçebilir (veya Tüm renkleri açabilirsiniz), ardından Uygula'ya dokunabilirsiniz.
 
-**Görünürlük**, 3B binaların opaklığını (şeffaflığını) kontrol eder. Görünürlüğü yüzde olarak ayarlamak için kaydırıcıyı kullanın. Kaydırıcı %10 ile %100 arasında değerlere izin verir, varsayılan olarak %50 kullanılır. Daha düşük değerler binaları daha şeffaf hale getirir ve yolların/etiketlerin okunabilir kalmasına yardımcı olur. Daha yüksek değerler binaları daha katı ve görsel olarak baskın hale getirir. Görünürlük'e dokunmak da kaydırıcı ile birlikte ayrı bir önizleme ekranını açar.
+**<Translate android="true" ids="gpx_visibility_txt"/>**, 3B binaların opaklığını (şeffaflığını) kontrol eder. Görünürlüğü yüzde olarak ayarlamak için kaydırıcıyı kullanın. Kaydırıcı %10 ile %100 arasında değerlere izin verir, varsayılan olarak %50 kullanılır. Daha düşük değerler binaları daha şeffaf hale getirir ve yolların/etiketlerin okunabilir kalmasına yardımcı olur. Daha yüksek değerler binaları daha katı ve görsel olarak baskın hale getirir. Görünürlük'e dokunmak da kaydırıcı ile birlikte ayrı bir önizleme ekranını açar.
 
 Önizleme ekranlarında (Renk / Görünürlük), varsayılan değeri geri yüklemek için uygulama çubuğundan Sıfırla varsayılana kullanabilirsiniz.
 
 ### Performans {#performance}
 
-**Performans**, 3B binaların nasıl oluşturulduğunu kontrol eder. Detay seviyesi ve Görünüm mesafesi olmak üzere iki ayarı içerir.
+**<Translate android="true" ids="performance"/>**, 3B binaların nasıl oluşturulduğunu kontrol eder. Detay seviyesi ve Görünüm mesafesi olmak üzere iki ayarı içerir.
 
-**Detay seviyesi**, 3B bina geometrisinin karmaşıklığını belirler:
+**<Translate android="true" ids="level_of_details"/>**, 3B bina geometrisinin karmaşıklığını belirler:
 - Düşük (varsayılan) — daha basit geometri.
 - Yüksek — daha detaylı geometri.
 
-**Görünüm mesafesi**, 3B binaların kameradan ne kadar uzakta oluşturulduğunu kontrol eder:
+**<Translate android="true" ids="view_distance"/>**, 3B binaların kameradan ne kadar uzakta oluşturulduğunu kontrol eder:
 - Yakın (varsayılan) — size daha yakın binaları oluşturur.
 - Uzak — binaları daha uzun mesafeden oluşturur.
 
@@ -398,6 +428,7 @@ Her iki performans seçeneği de 3B binalar ayar ekranında doğrudan iki konuml
 
 **Not:** *Yüksek detay* ve *Uzak görünüm mesafesi* kullanmak görsel görünümü iyileştirir ancak performansı etkileyebilir ve pil kullanımını artırabilir.
 
+<!--
 ### Güneş {#sun}
 
 ![3D Buildings](@site/static/img/map/sun_setting.png)
@@ -408,6 +439,7 @@ Her iki performans seçeneği de 3B binalar ayar ekranında doğrudan iki konuml
 - İrtifa — ufuk çizgisi üzerindeki güneş yüksekliğini kontrol eder.
 
 Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştüğünü değiştirir ve 3B görünümde bina şekillerinin görsel algısını iyileştirebilir. Seçilen aydınlatma parametrelerini onaylamak için Uygula'ya dokunun.
+-->
 
 
 ## 3B Rölyef {#3d-relief}

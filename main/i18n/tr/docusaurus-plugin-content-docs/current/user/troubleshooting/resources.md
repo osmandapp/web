@@ -1,5 +1,5 @@
 ---
-source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
+source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -25,7 +25,7 @@ Bu makale, özel kullanıcı kılavuzlarına, sosyal medya gruplarına, eklentil
 
 Diğer OsmAnd kullanıcılarıyla bağlantı kurmak, soru sormak ve deneyimlerinizi paylaşmak için uygulamaya adanmış birçok sosyal medya grubundan birine katılın. Bu gruplar, kullanıcıların ipuçlarını değiş tokuş edebileceği, özellikleri tartışabileceği ve tavsiye alabileceği canlı topluluklardır.
 
-| Platform | Grup Adı | Açıklama | Bağlantı |
+| Platform | Group Name | Description | Link |
 | :-- | :-- | :-- | :-- |
 | Facebook | OsmAnd users community (*English*)  |  Bu, OsmAnd kullanıcılarının diğer kullanıcılara yardımcı olabileceği bir gruptur.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  "Osmand" uygulamasındaki güncellemelerden ve/veya değişikliklerden haberdar olmak isterseniz, bunları buradan okuyabilirsiniz. İpuçları, sorular, yorumlar da hoş geldiniz.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
@@ -43,14 +43,15 @@ Diğer OsmAnd kullanıcılarıyla bağlantı kurmak, soru sormak ve deneyimlerin
 
 Aşağıdaki liste, OsmAnd tarafından desteklenen çeşitli veri türleri için dönüştürücüler sağlar ve kullanıcıların farklı veri formatlarını aktarmasına, değiştirmesine ve entegre etmesine olanak tanır.
 
-| Tür | Açıklama | Bağlantı |
+| Type | Description | Link |
 |-- | -- | --|
+| Google Haritalar'dan OsmAnd GPX'e | Bir Google My Maps haritasından (GMap) OsmAnd stili GPX dosyaları klasörü oluşturur. | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML'den OsmAnd GPX'e | *KML* dosyalarını simgelerle *GPX* formatına dönüştürmek için Python betiği. Diğer araçlar mevcut. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ'den GPX'e | *KMZ* dosyalarını *GPX* formatına, simgeler dahil, dönüştürmek için Python betiği. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML'den GPX'e | *KML* dosyalarını simgelerle *GPX* formatına dönüştürmek için Python betiği. Diğer araçlar mevcut. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Garmin Basecamp dosyalarını OsmAnd'e dönüştürmek için araç. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi'den OsmAnd'e | GeoPDF, geoTiff ve ozi harita formatlarının OsmAnd'e dönüştürülmesi. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX'ten KML'ye | OsmAnd *GPX* dosyalarını *KML* formatına, simgeleri koruyarak, dönüştürmek için araç. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX'ten OsmAnd'e | iOverlander *GPX* dosyalarını OsmAnd'e simgelerle dışa aktarmak için Python betiği. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| iOverlander GPX'ten OsmAnd'e | iOverlander *GPX* dosyalarını simgelerle OsmAnd'e dönüştürmek için Python betiği. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo haritasını yazdırılabilir hale getirme| Bu, OsmAnd'den (https://osmand.net) ekran görüntüleri kullanarak yazdırılabilir bir topografik harita oluşturmak için [bir araçtır](https://github.com/acui/osmand_topo_map_generator). Harita UTM ızgarasını kullanır ve sapma bilgisine sahiptir. Bir pusula veya UTM koordinatlarına sahip bir GPS cihazı ile kullanılmalıdır.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Özel Kaynaklar {#custom-resources}

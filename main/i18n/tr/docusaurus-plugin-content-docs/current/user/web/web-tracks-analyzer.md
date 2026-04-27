@@ -1,5 +1,5 @@
 ---
-source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
+source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
 sidebar_position: 7
 sidebar_label: İz Analizörü
 title: İz Analizörü
@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Analizi başlatmak için harita üzerinde doğrudan bir veya iki nokta ayarlayın. İstediğiniz konuma sağ tıklayın ve bağlam menüsünden **Nokta A / Nokta B**'yi seçin. Analizör, seçilen noktadan geçen veya iki nokta arasında iz segmentlerini arar.
 
-![İz Analizörü](@site/static/img/web/web_analyzer_select.png) ![İz Analizörü](@site/static/img/web/web_analyzer_points.png)
+![İz Analizörü](@site/static/img/web/web_analyzer_select.png) ![İz Analizörü](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sıralama ve Görünür Parametreler {#sorting-and-visible-parameters}

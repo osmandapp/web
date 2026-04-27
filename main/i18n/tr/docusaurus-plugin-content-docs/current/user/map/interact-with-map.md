@@ -1,5 +1,5 @@
 ---
-source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Harita ile Etkileşim
 ---
@@ -206,20 +206,37 @@ Eski [harita oluşturma motoru](../personal/global-settings.md#map-rendering-eng
 
 ### Küresel Görünüm {#globe-view}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
 
 ![Küresel Görünüm](@site/static/img/map/globe_view_1.png) ![Küresel Görünüm](@site/static/img/map/globe_view_2.png)
 
 **Küresel Görünüm**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar.  
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Küresel Görünüm*
 
 Küresel Görünüm şu anda yalnızca şu durumlarda kullanılabilir:
 - [Geliştirme eklentisi](../plugins/development.md) etkinleştirildiğinde.  
-Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - [Topografi eklentisi](../plugins/topography.md) etkinleştirildiğinde.  
-Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - [Harita oluşturma motoru](../personal/global-settings.md#map-rendering-engine) Sürüm 2 (OpenGL) olarak ayarlandığında.  
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,show_spherical_map"/>*
+
+![Küresel Görünüm](@site/static/img/map/globe_view_1_ios.png) ![Küresel Görünüm](@site/static/img/map/globe_view_2_ios_new.png)
+
+**Küresel Görünüm**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar.  
+
+</TabItem>
+
+</Tabs>
 
 Küresel Görünüm etkinleştirildiğinde, harita bir küre olarak döner. Sürükleme hareketleri Dünya'yı döndürür ve yakınlaştırma, düz bir yüzeyi ölçeklendirmek yerine kamera mesafesini değiştirir. İzler, işaretçiler, semboller ve 3D nesneler gibi harita öğeleri, küresel yüzey üzerinde doğrudan işlenir ve eğriliğini takip eder. Küre döndükçe nesneler ufuk arkasında yavaş yavaş kaybolur.
 
@@ -341,7 +358,7 @@ Harici bir giriş cihazı (klavye, joystick veya kontrolör gibi) için tuş ata
 Özel bir giriş türü oluşturduktan sonra, gerekli eylemleri tuşlara atayabilirsiniz. Hızlı Eylem widget'ından geniş bir [eylem türü](../widgets/quick-action.md#action-types) yelpazesi mevcuttur.
 
 - Bir cihaz türü seçin, ardından **Tuş atamaları** öğesine dokunun.
-- Ekranın sağ alt köşesindeki ***Ekle*** düğmesine (&nbsp;"**＋**"&nbsp;) dokunun.
+- ***Ekle*** düğmesine (&nbsp;"**＋**"&nbsp;) dokunun.
 - Gerekli eylemi seçin, ardından ***Tuş ekle*** alanına dokunun ve eyleme atamak için cihazınızdaki düğmeye dokunun.  
 
 :::note

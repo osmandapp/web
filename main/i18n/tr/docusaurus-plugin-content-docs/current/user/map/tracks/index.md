@@ -1,5 +1,5 @@
 ---
-source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
+source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
 title:  İzler
 sidebar_position: 2
 ---
@@ -28,7 +28,7 @@ OsmAnd, harita üzerinde çeşitli rotaları görüntülemek için birçok güç
 - Rota olarak iz (***Rota***). Dosya bir ```<rtept>``` nokta dizisine sahiptir, her nokta rotanın ara noktası olarak tanımlanır. Noktaların bir rota içinde nasıl bağlanması gerektiği, küçük rota segmentleri olarak mı yoksa düz bir çizgiyle mi bağlanacağı buna bağlıdır. Bu izler haritada kesikli çizgiler olarak görüntülenir.
 - Yol Noktaları (***Noktalar***). Dosya niteliklere sahip ```<wpt>``` noktalarına sahiptir. Yol noktaları haritada dairesel noktalar olarak görüntülenir. Ek bilgi almak için onlara dokunabilirsiniz.
 
-OsmAnd, 1–3 kombinasyonlu izler oluşturabilir. [Rota Planla](../../plan-route/create-route.md) ***Geometri*** ve ***Rota*** içeren bir iz oluşturur, eğer bunu ***Basitleştirilmiş İz*** olarak kaydederseniz, sadece ***Geometri*** kalır. [İz kaydetme](../../plugins/trip-recording.md#new-track-recording) sadece ***Geometri*** oluşturur, ancak bağlam menüsü aracılığıyla buna ***Noktalar*** da ekleyebilirsiniz.
+OsmAnd, 1–3 kombinasyonlu izler oluşturabilir. [Rota Planla](../../plan-route/create-route.md) ***Geometri*** ve ***Rota*** içeren bir iz oluşturur, eğer bunu ***Basitleştirilmiş İz*** olarak kaydederseniz, sadece ***Geometri*** kalır. [İz Kaydetme](../../plugins/trip-recording.md#new-track-recording) sadece ***Geometri*** oluşturur, ancak bağlam menüsü aracılığıyla buna ***Noktalar*** da ekleyebilirsiniz.
 
 
 ## Haritada İzleri Görüntüle {#display-tracks-on-the-map}
@@ -124,7 +124,7 @@ Haritada bir iz seçtiğinizde veya bir izi kaydettikten veya içe aktardıktan 
 
 Şuraya git: *İze dokunun → İz sekmesi → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![İz menüsü haritada analiz et](@site/static/img/personal/tracks/track_analyze_ios.png)  ![İz menüsü haritada analiz et ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![İz menüsü haritada analiz et](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![İz menüsü haritada analiz et](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Haritada bir iz seçtiğinizde veya bir izi kaydettikten veya içe aktardıktan 
 
 Bu araç, grafikler ve haritalar kullanarak [iz](../../map/tracks/track-context-menu.md#options) verilerinin ayrıntılı bir analizini sağlar.
 
-- **Grafik verileri (Y ekseni)** şunları gösterir: *Rakım*, *Eğim*, *Hız*, [*Harici sensör verileri*](../../plugins/external-sensors.md) ve iz verilerinde bulunuyorsa en fazla iki seçeneğin kombinasyonları. ***Yalnızca Android:*** OBD-II verileriyle kaydedilen araç izleri için, Y ekseni ayrıca motor devri, soğutma sıvısı sıcaklığı ve daha fazlası gibi Araç metriklerini sağlar.
+- **Grafik verileri (Y ekseni)** şunları gösterir: *Rakım*, *Eğim*, *Hız*, [*Harici sensör verileri*](../../plugins/external-sensors.md) ve iz verilerinde bulunuyorsa en fazla iki seçeneğin kombinasyonları. OBD-II verileriyle kaydedilen araç izleri için, Y ekseni ayrıca motor devri, soğutma sıvısı sıcaklığı ve daha fazlası gibi Araç metriklerini sağlar.
 - **Grafik boyutu (X ekseni)** şunları temsil eder: *Mesafe*, *Zaman* ve *Günün saati*.
 - **Dokunma/kaydırma etkileşimi**. İz üzerindeki belirli bir nokta hakkında bilgi görüntülemek için bir grafiğe dokunun. Grafikte kaydırma, harita üzerindeki uygun konumu vurgular ve bilgi çubuğunda ayrıntıları gösterir.
 - **Mesafe etiketi**. Grafik boyunca dokunurken veya kaydırırken, araç ipucu iz boyunca tam mesafeyi de görüntüler. Değer, mevcut profil birim ayarlarını takip eder (<Translate android="true" ids="km"/> veya <Translate android="true" ids="mile"/>). Bir noktanın iz başlangıcından ne kadar uzakta olduğunu hızlıca tahmin etmek veya iki konum arasındaki mesafeyi değerlerini karşılaştırarak hesaplamak için kullanın.
@@ -151,7 +151,7 @@ Bu araç, grafikler ve haritalar kullanarak [iz](../../map/tracks/track-context-
 
 <TabItem value="ios" label="iOS">
 
-![İz menüsü haritada analiz et](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![İz menüsü haritada analiz et ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![İz menüsü haritada analiz et](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![İz menüsü haritada analiz et](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 
@@ -159,7 +159,7 @@ Bu araç, grafikler ve haritalar kullanarak [iz](../../map/tracks/track-context-
 
 Harita görünümünü ve grafiği konumunuzla senkronize etmek için [Konumum](../../map/interact-with-map.md#my-position-and-zoom) düğmesine dokunun.
 
-- **Grafiğin ölçeği** aynı kalır ve **çubuk bilgisi** sol tarafta 1/4 oranında sabitlenir.
+- **Grafiğin ölçeği** aynı kalır ve **bilgi çubuğu** sol tarafta 1/4 oranında sabitlenir.
 - Siz hareket ettikçe, **grafik soldan sağa kayar** ve izinizin önündeki bilgileri görüntüler.
 - Bu ekranda başka hiçbir widget görüntülenmez.
 - Bu özellik, izde gezinirken yürüyüş ve bisiklet için kullanışlıdır.  

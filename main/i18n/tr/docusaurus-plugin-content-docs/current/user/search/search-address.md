@@ -1,5 +1,5 @@
 ---
-source-hash: cc7b11b19f0261ab3f9cc12de149c6d268cdaa50b3a828cc60f5dd3ebe0ce868
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title: Adres Ara
 ---
@@ -18,6 +18,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 *OsmAnd Adrese Göre Arama*, OpenStreetMap verilerine dayanır ve belirli bir adrese giden konumu ve yol tarifini hazır sıralanmış bir listeden bulmanıza, ayrıca posta kodu veya koordinatlara göre arama yapmanıza olanak tanır. Bu araç, gerekli adresleri birkaç dokunuşla bulmanızı sağlayarak arama süresini azaltır ve tam adresi hatırlamadığınız durumlarda yardımcı olur.
 
 Adres araması, indirilen haritaları kullanarak çevrimdışı çalışır. Aradığınız bölgenin haritasının yüklü olduğundan emin olun. Sonuçlar, OpenStreetMap'te mevcut olan adres verilerine bağlıdır.
+
+Arama sonuçları, ilgili ve mesafeye göre otomatik olarak sıralanır, bu nedenle yakındaki ve daha ilgili sonuçlar listede daha üstte görünür.
 
 OsmAnd, **Adres Ara** bölümünün bulunduğu *Arama aracına* ulaşmak için çeşitli yollar sunar.
 
@@ -61,6 +63,8 @@ Onları katı bir sırayla girmenize gerek yoktur. **Örnek sorgular**:
 
 Tam adres bulunamazsa, OsmAnd konum bulma şansını artırmak için otomatik olarak basitleştirilmiş sorguları (örneğin fazladan kelimeleri kaldırarak) dener.
 
+Bir sorgu hem bir adres hem de bir POI'ye atıfta bulunuyorsa, OsmAnd bağlam, mesafe ve nesne önemi temelinde en ilgili yorumu otomatik olarak önceliklendirir.
+
 **NOT:** Adres araması yalnızca indirilen haritalar içinde çalışır. Arama sonuçları şunlara dayanır:
 - cihazınıza yüklenmiş haritalar;
 - görünür harita alanı;
@@ -96,6 +100,8 @@ OsmAnd'daki adres araması, farklı giriş formatlarına toleranslıdır. Şunla
 - fazladan bilgiyi kaldırma;
 - yalnızca cadde adına göre arama.
 
+Ancak, çok kısa veya genel sorgular (örneğin, “Apple”) adresler ve POI'lerin bir karışımını döndürebilir, aynı ada sahip bir marka, cadde adı veya yerleşim yeri dahil. Doğruluğu artırmak için şehir adı, cadde veya POI adı gibi daha fazla detay eklemeyi deneyin.
+
 Arama motoru ayrıca farklı kelime sırası, yazım farklılıkları, kısaltmalar veya ev numarası formatları gibi adres formatlamasındaki yaygın varyasyonlara da tolerans gösterir. Aşağıdaki tablo, aynı adresi döndürebilecek tipik arama varyasyonlarını gösterir.
 
 | Arama varyasyonu | Örnek sorgular | İlgili tartışma |
@@ -128,7 +134,7 @@ Arama motoru ayrıca farklı kelime sırası, yazım farklılıkları, kısaltma
 </Tabs>
 
 **En yakın şehirler**  
-    Bu, **konumunuzun veya *Cadde seç* veya *Şehir seç* için belirttiğiniz yerleşim yerinin etrafındaki küçük bir şehir listesini görüntüler**. Her alan, şehrin büyüklüğüne karşılık gelen bir simge, şehrin adı, sizden merkezine olan uzaklık ve Android için pusula yönünü içerir.
+    Bu, **konumunuzun etrafındaki küçük bir şehir listesini görüntüler** veya *Cadde seç* veya *Şehir seç* için belirttiğiniz yerleşim yeri. Her alan, şehrin büyüklüğüne karşılık gelen bir simge, şehrin adı, sizden merkezine olan uzaklık ve Android için pusula yönünü içerir.
 
 Bu arama şekli, seçilen bir yerleşim yeri içindeki belirli konumları bulmayı kolaylaştırır, adresleri doğru ve hızlı bir şekilde bulmak için uygun bir yol sağlar. Gerekli adresi, yerleşim yerini belirleyerek aramaya başlayabilirsiniz.
 
@@ -139,7 +145,7 @@ Bu arama şekli, seçilen bir yerleşim yeri içindeki belirli konumları bulmay
 - Adresin, ev numarasının veya kavşak adının son öğesine dokunmak, nesnenin [harita bağlam menüsünü](../map/map-context-menu.md#select-an-object-single-tap) açar.  
 
 :::note Anahtar ve Değer
-[**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) ile *Şehir / Kasaba / Köy araması*  
+*Şehir / Kasaba / Köy araması* [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) ile  
 *Sonuç*: Bu ada sahip tüm nesneleri görüntüler.
 :::
 
@@ -169,7 +175,7 @@ Cadde araması, bulunduğunuz yerleşim yerinde veya daha önce arama yaptığı
 - Diğer öğelerde, cadde araması [Şehir Seç](#select-city) ile aynıdır.
 
 :::note Anahtar ve Değer
-[**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) ile *Cadde araması*  
+*Cadde araması* [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr) ile  
 *Sonuç*: Bu ada sahip tüm caddeler gösterilir.
 :::
 

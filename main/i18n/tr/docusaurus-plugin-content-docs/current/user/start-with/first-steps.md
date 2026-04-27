@@ -1,5 +1,5 @@
 ---
-source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
+source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
 sidebar_position: 1
 title: İlk Adımlar
 ---
@@ -130,15 +130,21 @@ OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm 
 
 ### Uygulama dili nasıl değiştirilir {#how-to-change-app-language}
 
-*Görüntüleme dili seçeneği*, açılır pencereler, dahili metin, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. Android 12'ye kadar OsmAnd, görüntüleme dilini doğrudan uygulamada tercihlerinize göre özelleştirmenize olanak tanır. Android 13 ve iOS cihazlardan itibaren, görüntüleme dili yalnızca sistem ayarlarında değiştirilebilir (Android'de [uygulama başına dil tercihlerini](https://developer.android.com/guide/topics/resources/app-languages) ve iOS'ta [nasıl değiştireceğinizi](https://developer.apple.com/news/?id=u2cfuj88) görün).  
+*Görüntüleme dili seçeneği*, açılır pencereler, dahili metin, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. 
+
+Android cihazlarda, OsmAnd tüm desteklenen sürümlerde görüntüleme dilini doğrudan uygulamada özelleştirmenize olanak tanır. Varsayılan olarak, uygulama sistem dilini kullanır, ancak gerekirse farklı bir dil manuel olarak seçebilirsiniz.
+
+Android 13 ve sonraki sürümlerde, uygulama dilini OsmAnd ayarlarında veya cihazınızın sistem ayarlarında değiştirebilirsiniz. Seçilen dil, uygulama ve sistem arasında senkronize edilir. Bazı değişiklikler, seçilen dilin tam olarak uygulanması için uygulamanın yeniden başlatılmasını gerektirebilir.
+
+iOS cihazlarda, görüntüleme dili yalnızca sistem ayarlarında değiştirilebilir ([iOS](https://developer.apple.com/news/?id=u2cfuj88)'ta uygulama başına dil tercihlerini nasıl değiştireceğinizi görün).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *Ayarlar → Uygulamalar → OsmAnd → Dil*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Görüntüleme dili*
 
-![Genel Ayarlar Dil Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
+![Genel Ayarlar Dil Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Genel Ayarlar Dil Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -146,14 +152,14 @@ OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm 
 
 Şuraya gidin: *Ayarlar → OsmAnd Haritalar → Dil*
 
-![Genel Ayarlar Dil iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+![Genel Ayarlar Dil iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Uygulama dillerini ayarlama seçeneği yok
-Bazı Android cihazlarda (Muiu 14'lü Xiaomi), sistem ayarlarında uygulama dillerini ayrı ayrı ayarlama seçeneği yoktur, bu nedenle OsmAnd'ın dili yalnızca tüm sistemin diliyle değiştirilebilir. Ek bilgi için [GitHub tartışmasına](https://github.com/osmandapp/OsmAnd/issues/16990) göz atabilirsiniz.
+Bazı Android cihazlarda veya sistem sürümlerinde, sistem ayarlarında uygulama dillerini ayrı ayrı ayarlama seçeneği kullanılamayabilir veya sınırlı olabilir ([GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) tartışmasını ek bilgi için kontrol edebilirsiniz). Bu tür durumlarda, Görüntüleme dili ayarını kullanarak uygulama dilini doğrudan OsmAnd'da değiştirebilirsiniz. Android sisteminiz tarafından desteklenmese bile, OsmAnd seçilen dili uygulama içinde uygulayacak ve koruyacaktır.
 :::
 
 
@@ -376,6 +382,10 @@ Adres araması hakkında [daha fazla bilgi edinin](../search/search-address.md).
 
 Navigasyon hakkında [daha fazla bilgi edinin](../navigation/index.md).
 
+**NOT:** AB ülkelerindeki iOS cihazlarda, sistem ayarlarında OsmAnd'ı varsayılan navigasyon uygulaması olarak ayarlayabilirsiniz.  
+Şuraya gidin: *Ayarlar → Uygulamalar → Varsayılan Uygulamalar → Navigasyon*  
+Ayarlandığında, OsmAnd sistemden gelen navigasyon istekleri için otomatik olarak açılacaktır.
+
 
 ### Seyahatinizi nasıl kaydedersiniz {#how-to-record-your-trip}
 
@@ -434,7 +444,7 @@ OsmAnd'ı kapatmanın iki yolu vardır.
 1. Uygulamayı yukarı kaydırarak ve ekrandan çıkararak kapatın. Dikey bir uygulama listesi için sola veya sağa kaydırın.  
 
 2. Bunu yapmadan önce aşağıdaki adımları uygulamanız gerekebilir, aksi takdirde OsmAnd arka planda çalışmaya devam eder:
-    - [Navigasyonu kapat](../navigation/setup/route-navigation.md#start--stop-navigation)
+    - [Navigasyonu iptal et](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Harita indirme ve güncellemeyi durdur](../start-with/download-maps.md)
     - [Seyahat kaydını durdur](../plugins/trip-recording.md#new-track-recording)
     - [Sesli/görüntülü not kaydını durdur](../plugins/audio-video-notes.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
+source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
 sidebar_position: 1
 title: Rota Planla
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**Rota Planla** (*Menü → Rota Planla*) aracı, OsmAnd uygulamasının güçlü bir özelliğidir. Bu araç, GPX izleri olarak [yeni rotalar oluşturmanıza](#create-new-route), zaten kaydedilmiş izlere [yeni segmentler eklemenize ve düzenlemenize](#segments), harita üzerinde [mesafeleri ölçmenize](#distance-measurement) ve farklı navigasyon profilleri kullanarak [iz segmentlerini](#attach-track-to-roads) en yakın mevcut yola bağlamanıza olanak tanır. Özellik, *çevrimdışı modda* çalışmak üzere tasarlanmıştır.
+**Rota Planla** (*Menü → Rota Planla*) aracı, OsmAnd uygulamasının güçlü bir özelliğidir. Bu araç, GPX izleri olarak [yeni rotalar oluşturmanıza](#create-new-route), zaten kaydedilmiş izlere [yeni segmentler eklemenize ve düzenlemenize](#segments), harita üzerinde [mesafeleri ölçmenize](#distance-measurement) ve farklı navigasyon profilleri kullanarak [iz](#attach-track-to-roads) segmentlerini en yakın mevcut yola bağlamanıza olanak tanır. Özellik, *çevrimdışı modda* çalışmak üzere tasarlanmıştır.
 
 Bir rota, belirtilen noktalar arasındaki bir dizi segmentten oluşur. Segmentler düz çizgiler veya seçilen profile uyarlanmış rotalar olabilir. Rota, daha sonra içe aktarma, düzenleme ve [navigasyon](../navigation/setup/gpx-navigation.md) için GPX olarak kaydedilebilir.
 
@@ -338,6 +338,8 @@ Kaydetmenin dört yolu vardır:
 - [Seçenekler menüsündeki](#options) ***Değişiklikleri kaydet***, değişiklikleri bir dosyaya kaydetmenizi ve rotayı planlamaya devam etmenizi sağlar.
 - [Seçenekler menüsündeki](#options) ***Yeni iz olarak kaydet***, izinin adını ve rotanın kaydedileceği klasörü belirttiğiniz bir iletişim kutusu açar.
 - ***Değişiklikleri bir ize ekle***. Oluşturulan bir izi, başka bir mevcut ize [ayrı bir segment](#segments) olarak ekler. Seçilen bir izdeki değişiklikler *geri alınamaz*.
+
+Kaydetme sırasında, iz planlama için kullanılan yönlendirme profilinin aktivite türünü miras alır. Aktivite, iz meta verilerinde kaydedilir ve GPX dosyasını dışa aktarma veya içe aktarma sonrasında korunur.
 
 :::note Basitleştirilmiş iz seçeneği
 Yeni bir iz kaydederken, izi diğer üçüncü taraf uygulamalarla uyumlu hale getirmek için ***Basitleştirilmiş*** iz seçeneğini seçebilirsiniz. Teknik olarak, iz, yalnızca geometrik bir iz olarak rota talimatları olmadan kaydedilecektir.

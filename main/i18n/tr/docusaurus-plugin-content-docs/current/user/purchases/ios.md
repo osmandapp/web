@@ -1,5 +1,5 @@
 ---
-source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
+source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -99,7 +99,8 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [3D Rölyef](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografya verileri](../plugins/topography.md#overview)<br/>(Kontur çizgileri ve Arazi) | **-** | ✔ | ✔ |
 | [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D iz görselleştirme](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [3D Binalar — Renk Özelleştirme](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D iz görselleştirme](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Seyahat rehberleri (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Harici sensör desteği](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -131,9 +132,9 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 |  Pro Özelliği  | Açıklama   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://www.osmand.net/map) ile senkronize edin. |
-| [3D Rölyef](../plugins/topography.md#3D-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modeline sahip olmanızı ve gözlemlemenizi sağlar. |
+| [3D Rölyef](../plugins/topography.md#3d-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modeline sahip olmanızı ve gözlemlemenizi sağlar. |
 | [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar.  |
-| [Canlı](../personal/maps-resources.md#live-updates) | OsmAnd haritaları, [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden sonra her 15 dakikada bir güncellenir. |
+| [Canlı Güncellemeler](../personal/maps-resources.md#live-updates) | OsmAnd haritaları, [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden sonra her 15 dakikada bir güncellenir. |
 | [Hava Durumu Eklentisi](../plugins/weather.md) | Harita üzerinde 24 saatlik saatlik tahmin, 7 gün önceden. |
 | [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanızı sağlar. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümü için mevcuttur.  |
 | [Rota çizgisini özelleştir](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Navigasyon sırasında rota çizgisinin rengini ve genişliğini değiştirme. |
