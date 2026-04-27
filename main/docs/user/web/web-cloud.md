@@ -127,7 +127,7 @@ In this section, you can connect your Garmin Connect account by clicking **Conne
 
 Once connected, OsmAnd imports your activities and creates a dedicated Garmin Connect folder in the [Tracks section](./web-tracks.md). All synced activities are stored in this folder and are available across devices when OsmAnd Cloud is enabled. New activities are added automatically after they are recorded in your Garmin Connect account, so no manual import is required.
 
-Currently, only *Hiking*, *Cycling*, and *Walking* activities are supported. During the initial connection, you can enable synchronization of recent activities, which allows importing data from the past 30 days. Activities older than this period are not imported automatically.
+Imported activities are converted into tracks. Activity types are preserved when possible and may include hiking, walking, cycling, running, and other Garmin activity types. During the initial connection, you can enable synchronization of recent activities, which allows importing data from the past 30 days. Activities older than this period are not imported automatically.
 
 The section also displays basic information about the connection, such as the connected account, number of activities, and the last synchronization time. If needed, you can disconnect your Garmin Connect account at any time. After disconnecting, new activities will no longer be synced, but previously imported tracks will remain in the Garmin Connect folder.
 
