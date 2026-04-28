@@ -24,6 +24,7 @@ function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted 
         newSelectedFile.file.updatetimems = result.updatetimems;
     }
     newSelectedFile.id = selectedGroup.id;
+    newSelectedFile.groupId = selectedGroup.id;
     updateMarker(newSelectedFile, deleted, favoriteName);
     ctx.setSelectedGpxFile(newSelectedFile);
     ctx.setSelectedWpt(newSelectedFile);
