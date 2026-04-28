@@ -112,6 +112,14 @@ Use `?.` whenever a value may be `null` or `undefined`. Avoid `&&`-chains for pr
 
 Before writing anything — check if it already exists. Extract shared logic into modules, pass data that's already fetched instead of re-fetching it.
 
+## No unnecessary refactoring
+
+When asked to make a focused change — fix a bug, add a feature, rename something — do exactly that and nothing else. Do not restructure surrounding code, rename unrelated variables, reorder logic, or "clean up" things that weren't part of the request. Unrelated changes make diffs harder to review and can introduce bugs.
+
+## Never remove existing comments
+
+Do not delete inline comments or block comments that already exist in code you are editing, even if they seem obvious or redundant. Comments represent the author's intent and are part of the code's documentation.
+
 ## refs — last resort
 
 Use `useRef` / `ref` only when the problem **cannot be solved any other way**. Always look for a solution via state, context, props, or derived values first. A `ref` is acceptable only when all other options are unsuitable (e.g. direct DOM node access, storing a value without triggering a re-render).

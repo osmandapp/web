@@ -29,10 +29,13 @@ export default async function test() {
     await clickBy(By.id('se-add-favorite-action'));
     await waitBy(By.id('se-add-fav-dialog'));
     await sendKeysBy(By.id('se-fav-name-input'), favoriteName);
-    await clickBy(By.id('se-add-fav-add-address-btn'));
     await sendKeysBy(By.id('se-edit-fav-dialog-address'), favoriteAddress);
+    // open description panel, type, save and return
     await clickBy(By.id('se-add-fav-add-desc-btn'));
+    await waitBy(By.id('se-back-description-panel'));
     await sendKeysBy(By.id('se-edit-fav-dialog-desc'), favoriteDescription);
+    await clickBy(By.id('se-back-description-panel'));
+    await waitByRemoved(By.id('se-back-description-panel'));
     // create new favorite group
     await clickBy(By.id('se-add-new-fav-group'));
     await waitBy(By.id('se-add-new-fav-group-dialog'));

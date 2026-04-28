@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AppBar, Box, Button, Drawer, IconButton, Toolbar, Typography, Skeleton } from '@mui/material';
-import SwipeableViews from 'react-swipeable-views';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as BackForward } from '../../../assets/icons/ic_arrow_forward.svg';
@@ -18,20 +19,33 @@ import PropTypes from 'prop-types';
 import { fmt } from '../../../util/dateFmt';
 import { getPhotoTitle } from '../../../manager/SearchManager';
 
+const HEADER_HEIGHT = 60;
+const LEFT_MARGIN = 423;
+const FOOTER_HEIGHT = 88;
+const METADATA_MARGIN = 62;
+
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
     const { t, i18n } = useTranslation();
 
+    const swiperRef = useRef(null);
+    const [width, height] = useWindowSize();
+
     const [open, setOpen] = useState(true);
     const [activeStep, setActiveStep] = useState(ctx.selectedPhotoInd);
-    const [width, height] = useWindowSize();
     const [showInfo, setShowInfo] = useState(false);
     const [activePhoto, setActivePhoto] = useState(null);
 
-    const HEADER_HEIGHT = 60;
-    const LEFT_MARGIN = 423;
-    const METADATA_MARGIN = 62;
-    const FOOTER_HEIGHT = 88;
+    const handleClose = () => ctx.setSelectedPhotoInd(-1);
+
+    const handleNext = () => ctx.setSelectedPhotoInd(Math.min(activeStep + 1, photos.length - 1));
+
+    const handleBack = () => ctx.setSelectedPhotoInd(Math.max(activeStep - 1, 0));
+
+    const handleStepChange = (step) => {
+        setActiveStep(step);
+        ctx.setSelectedPhotoInd(step);
+    };
 
     useEffect(() => {
         if (ctx.selectedPhotoInd !== -1) {
@@ -55,18 +69,6 @@ export default function PhotosModal({ photos }) {
         }
     }, [ctx.selectedPhotoInd]);
 
-    const handleClose = () => {
-        ctx.setSelectedPhotoInd(-1);
-    };
-
-    const handleNext = () => {
-        ctx.setSelectedPhotoInd(Math.min(activeStep + 1, photos.length - 1));
-    };
-
-    const handleBack = () => {
-        ctx.setSelectedPhotoInd(Math.max(activeStep - 1, 0));
-    };
-
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === 'ArrowRight' || event.key === ' ') {
@@ -75,89 +77,30 @@ export default function PhotosModal({ photos }) {
                 handleBack();
             }
         };
+        globalThis.addEventListener('keydown', handleKeyDown);
 
-        window.addEventListener('keydown', handleKeyDown);
         return () => {
-            window.removeEventListener('keydown', handleKeyDown);
+            globalThis.removeEventListener('keydown', handleKeyDown);
         };
     }, [handleNext, handleBack]);
 
-    const handleStepChange = (step) => setActiveStep(step);
+    useEffect(() => {
+        if (swiperRef.current && swiperRef.current.activeIndex !== activeStep) {
+            swiperRef.current.slideTo(activeStep);
+        }
+    }, [activeStep]);
 
-    function getHeight() {
-        return height - HEADER_HEIGHT;
-    }
+    const getHeight = () => height - HEADER_HEIGHT;
+    const getWidth = () => width - LEFT_MARGIN;
 
-    function getPhotoHeight() {
-        return height - HEADER_HEIGHT - FOOTER_HEIGHT;
-    }
-
-    function getWidth() {
-        return width - LEFT_MARGIN;
-    }
-
-    function needOpenMoreModal(str) {
-        const fontSize = 16;
-        const avgCharWidth = fontSize * 0.6;
-        const textWidth = str.length * avgCharWidth;
-        const containerWidth = getWidth() - METADATA_MARGIN;
-        return textWidth > containerWidth;
-    }
+    const needOpenMoreModal = (str) => {
+        const textWidth = str.length * 16 * 0.6; // approx: font-size 16px * ~0.6 char-width ratio
+        return textWidth > getWidth() - METADATA_MARGIN;
+    };
 
     if (!photos || photos.length === 0) {
         return null;
     }
-
-    function hasFooterInfo(photo) {
-        return (
-            photo?.properties?.date ||
-            photo?.properties?.author ||
-            photo?.properties?.license ||
-            photo?.properties?.description
-        );
-    }
-
-    const formatDate = (dateStr) => {
-        if (!dateStr) {
-            return '';
-        }
-        const clean = dateStr?.startsWith('+') ? dateStr.slice(1) : dateStr;
-        // Format YYYY 2025 -> 2025
-        const yearRegex = /^\d{4}$/;
-        if (yearRegex.test(clean)) {
-            return clean;
-        }
-        // Format YYYY-MM 2025-09 -> September 2025
-        const yearMonthRegex = /^\d{4}-\d{2}$/;
-        if (yearMonthRegex.test(clean)) {
-            const d = new Date(clean + '-01'); // Add the first day of the month for browser compatibility
-            return isNaN(d) ? dateStr : fmt.monthYearLong(d);
-        }
-        // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
-        const d = new Date(clean);
-        return isNaN(d) ? dateStr : fmt.dMMMMY(d);
-    };
-
-    const parseDescription = (descriptionStr) => {
-        if (!descriptionStr) {
-            return '';
-        }
-        try {
-            const parsed = JSON.parse(descriptionStr);
-            const currentLang = i18n.language?.split('-')[0] || 'en';
-
-            if (parsed[currentLang]) {
-                return parsed[currentLang];
-            } else if (parsed['en']) {
-                return parsed['en'];
-            } else {
-                const firstKey = Object.keys(parsed)[0];
-                return firstKey ? parsed[firstKey] : descriptionStr;
-            }
-        } catch (e) {
-            return descriptionStr;
-        }
-    };
 
     return (
         <Drawer
@@ -192,22 +135,22 @@ export default function PhotosModal({ photos }) {
                             <CloseIcon />
                         </IconButton>
                         <Typography component="div" className={styles.singlePhotoTitle}>
-                            Photos
+                            {t('web:photos')}
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <SwipeableViews axis={'x'} index={activeStep} onChangeIndex={handleStepChange}>
+                <Swiper
+                    className={styles.photoSwiper}
+                    initialSlide={activeStep}
+                    onSwiper={(swiper) => (swiperRef.current = swiper)}
+                    onSlideChange={(swiper) => handleStepChange(swiper.activeIndex)}
+                >
                     {photos.map((photo, index) => (
-                        <PhotoItem
-                            key={index}
-                            photo={photo}
-                            index={index}
-                            getWidth={getWidth}
-                            getHeight={getPhotoHeight}
-                            activeStep={activeStep}
-                        />
+                        <SwiperSlide key={index}>
+                            <PhotoItem photo={photo} index={index} activeStep={activeStep} />
+                        </SwiperSlide>
                     ))}
-                </SwipeableViews>
+                </Swiper>
                 <Box className={styles.iconsPrevNextBlock}>
                     <Button onClick={handleBack} disabled={activeStep === 0} className={styles.iconsPrevNext}>
                         <BackIcon />
@@ -229,8 +172,7 @@ export default function PhotosModal({ photos }) {
                                 {activePhoto.properties.date ? (
                                     (() => {
                                         const label = t('shared_string_date');
-                                        const value = formatDate(activePhoto.properties.date);
-                                        const text = `${label}: ${value}`;
+                                        const text = `${label}: ${formatDate(activePhoto.properties.date)}`;
 
                                         return (
                                             <MenuItemWithLines
@@ -252,8 +194,7 @@ export default function PhotosModal({ photos }) {
                                 {activePhoto.properties.author ? (
                                     (() => {
                                         const label = t('shared_string_author');
-                                        const value = activePhoto.properties.author;
-                                        const text = `${label}: ${value}`;
+                                        const text = `${label}: ${activePhoto.properties.author}`;
 
                                         return (
                                             <MenuItemWithLines
@@ -288,8 +229,7 @@ export default function PhotosModal({ photos }) {
                                     ) : (
                                         (() => {
                                             const label = t('shared_string_license');
-                                            const value = activePhoto.properties.license;
-                                            const text = `${label}: ${value}`;
+                                            const text = `${label}: ${activePhoto.properties.license}`;
 
                                             return (
                                                 <MenuItemWithLines
@@ -312,8 +252,7 @@ export default function PhotosModal({ photos }) {
                                 {activePhoto.properties.description ? (
                                     (() => {
                                         const label = t('shared_string_description');
-                                        const value = parseDescription(activePhoto.properties.description).trimStart();
-                                        const text = `${label}: ${value}`;
+                                        const text = `${label}: ${parseDescription(activePhoto.properties.description, i18n.language).trimStart()}`;
 
                                         return (
                                             <MenuItemWithLines
@@ -340,30 +279,25 @@ export default function PhotosModal({ photos }) {
     );
 }
 
-function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
-    const { ref, inView } = useInView({
-        threshold: 0.1,
-        triggerOnce: true,
-    });
+PhotosModal.propTypes = {
+    photos: PropTypes.array,
+};
+
+function PhotoItem({ photo, index, activeStep }) {
+    const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+    const [width, height] = useWindowSize();
     const MARGIN = 95;
 
-    // Preload next 5 images if within range
     const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
+    const photoWidth = width - LEFT_MARGIN;
+    const photoHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT;
 
-    function getImageHref() {
-        const filename = getPhotoTitle(photo);
-        return `https://commons.wikimedia.org/wiki/File:${filename}`;
-    }
+    const getImageHref = () => `https://commons.wikimedia.org/wiki/File:${getPhotoTitle(photo)}`;
 
     return (
         <div
             id={`se-photo-modal-${photo.properties.mediaId}`}
-            key={index}
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             ref={ref}
         >
             {shouldLoadImage ? (
@@ -376,24 +310,62 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
                     <img
                         src={getPhotoUrl({ photo, size: 1280 })}
                         alt={index + 1}
-                        style={{ width: '100%', height: getHeight() - MARGIN, objectFit: 'contain' }}
+                        style={{ width: '100%', height: photoHeight - MARGIN, objectFit: 'contain' }}
                     />
                 </a>
             ) : (
-                <Skeleton variant="rectangular" width={getWidth()} height={getHeight() - MARGIN} />
+                <Skeleton variant="rectangular" width={photoWidth} height={photoHeight - MARGIN} />
             )}
         </div>
     );
 }
 
-PhotosModal.propTypes = {
-    photos: PropTypes.array.isRequired,
-};
-
 PhotoItem.propTypes = {
     photo: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,
-    getWidth: PropTypes.func.isRequired,
-    getHeight: PropTypes.func.isRequired,
     activeStep: PropTypes.number.isRequired,
 };
+
+function hasFooterInfo(photo) {
+    return (
+        photo?.properties?.date ||
+        photo?.properties?.author ||
+        photo?.properties?.license ||
+        photo?.properties?.description
+    );
+}
+
+function formatDate(dateStr) {
+    if (!dateStr) {
+        return '';
+    }
+    const clean = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
+    // Format YYYY 2025 -> 2025
+    if (/^\d{4}$/.test(clean)) {
+        return clean;
+    }
+    // Format YYYY-MM 2025-09 -> September 2025
+    if (/^\d{4}-\d{2}$/.test(clean)) {
+        const d = new Date(clean + '-01'); // Add the first day of the month for browser compatibility
+        return isNaN(d) ? dateStr : fmt.monthYearLong(d);
+    }
+    // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
+    const d = new Date(clean);
+
+    return isNaN(d) ? dateStr : fmt.dMMMMY(d);
+}
+
+function parseDescription(descriptionStr, language) {
+    if (!descriptionStr) {
+        return '';
+    }
+    try {
+        const parsed = JSON.parse(descriptionStr);
+        const lang = language?.split('-')[0] || 'en';
+        const firstKey = Object.keys(parsed)[0];
+
+        return parsed[lang] ?? parsed['en'] ?? (firstKey ? parsed[firstKey] : descriptionStr);
+    } catch (e) {
+        return descriptionStr;
+    }
+}

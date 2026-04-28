@@ -13,7 +13,20 @@
 }
 
 .fields {
-    padding: 8px 16px 16px 16px;
+    padding: 16px;
+}
+
+.helperText {
+    height: 16px;
+    line-height: 16px;
+    margin: 2px 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fieldInput {
+    padding-left: 8px !important;
 }
 
 .actions {
@@ -27,4 +40,8 @@
     padding: 0 12px;
     justify-content: flex-end;
     align-items: center;
+}
+
+.descriptionSection {
+    padding-bottom: 9px;
 }

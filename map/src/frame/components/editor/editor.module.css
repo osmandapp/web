@@ -1,0 +1,103 @@
+.prosemirror :global(.ProseMirror) {
+    outline: none;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary, #212121);
+    padding: 16px;
+    min-height: 120px;
+}
+
+.prosemirror :global(.ProseMirror p) {
+    margin: 0 0 4px 0;
+}
+
+.prosemirror :global(.ProseMirror p:last-child) {
+    margin-bottom: 0;
+}
+
+.prosemirror :global(.ProseMirror h1) {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.prosemirror :global(.ProseMirror h2) {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+}
+
+.prosemirror :global(.ProseMirror h3) {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+.prosemirror :global(.ProseMirror ul),
+.prosemirror :global(.ProseMirror ol) {
+    padding-left: 24px;
+    margin: 4px 0;
+}
+
+.editorContent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    min-height: 43px;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 0;
+    flex-shrink: 0;
+}
+
+.toolbarBtn {
+    color: var(--text-secondary, #666) !important;
+    border-radius: 4px !important;
+    padding: 2px !important;
+}
+
+.toolbarBtn:hover {
+    background-color: #f0f0f0 !important;
+}
+
+.toolbarBtnActive {
+    color: #237BFF !important;
+    background-color: #e9f0fb !important;
+    border-radius: 4px !important;
+    padding: 2px !important;
+}
+
+.toolbarDivider {
+    margin: 0 4px !important;
+    height: 20px !important;
+    align-self: center !important;
+}
+
+.headingBtnLabel {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.prosemirror :global(.ProseMirror blockquote) {
+    border-left: 3px solid #ccc;
+    margin: 4px 0;
+    padding-left: 12px;
+    color: var(--text-secondary, #666);
+    font-style: italic;
+}
+
+.prosemirror :global(.ProseMirror a) {
+    color: #237BFF;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -18,7 +18,7 @@ export default function MoreInfoDialog({ setOpenMoreDialog, title, content }) {
                 </Box>
             </Box>
             <DialogContent>
-                <Typography>{content}</Typography>
+                <Typography component="div">{content}</Typography>
             </DialogContent>
         </Dialog>
     );

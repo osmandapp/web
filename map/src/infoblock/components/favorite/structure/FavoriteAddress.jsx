@@ -1,48 +1,59 @@
-import { IconButton, ListItemText, TextField } from '@mui/material';
-import { Delete } from '@mui/icons-material';
-import React from 'react';
+import { Box, IconButton, InputAdornment, TextField, Tooltip } from '@mui/material';
+import { ReactComponent as CancelIcon } from '../../../../assets/icons/ic_action_cancel.svg';
+import { ReactComponent as LocationIcon } from '../../../../assets/icons/ic_action_location_marker_outlined.svg';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { getAddressByLatLon } from '../../wpt/WptDetails';
+import styles from '../wptEditPanel.module.css';
 
-export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, setClose, widthDialog }) {
+export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, widthDialog, latLon }) {
+    const { t } = useTranslation();
+
+    const [searching, setSearching] = useState(false);
+
+    useEffect(() => {
+        if (!latLon?.lat || !latLon?.lon || favoriteAddress) return;
+        searchAddress();
+    }, [latLon]);
+
+    function searchAddress() {
+        if (!latLon?.lat || !latLon?.lon) return;
+        setSearching(true);
+        getAddressByLatLon(latLon.lat, latLon.lon).then((address) => {
+            setFavoriteAddress(address ?? '');
+            setSearching(false);
+        });
+    }
+
     return (
-        <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
+        <Box sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 id="se-edit-fav-dialog-address"
-                label="Address"
+                label={t('web:fav_address')}
                 fullWidth
+                variant="filled"
+                disabled={searching}
                 onChange={(e) => setFavoriteAddress(e.target.value)}
-                value={favoriteAddress}
-                autoFocus
-                sx={{
-                    maxWidth: '450px !important',
-                    resize: 'none',
-                    fontFamily: 'Arial',
-                    color: 'black',
-                    fontSize: 20,
-                    ml: '-2px',
-                    borderColor: '#bebdb4',
-                    backgroundColor: 'transparent',
-                    outlineColor: '#757575',
-                    cursor: 'pointer',
-                    '&[disabled]': { border: 'none' },
-                    mb: '-10px',
-                    pb: '8px',
-                    pt: '8px',
+                value={searching ? t('web:fav_address_searching') : favoriteAddress}
+                inputProps={{ className: styles.fieldInput }}
+                InputProps={{
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            {favoriteAddress ? (
+                                <IconButton size="small" onClick={() => setFavoriteAddress('')}>
+                                    <CancelIcon style={{ fill: 'var(--svg-icon-color)' }} />
+                                </IconButton>
+                            ) : (
+                                <Tooltip title={t('web:fav_address_autofill')}>
+                                    <IconButton size="small" onClick={searchAddress} disabled={searching}>
+                                        <LocationIcon style={{ fill: '#237BFF' }} />
+                                    </IconButton>
+                                </Tooltip>
+                            )}
+                        </InputAdornment>
+                    ),
                 }}
             />
-            {favoriteAddress && favoriteAddress !== '' && (
-                <IconButton
-                    variant="contained"
-                    type="button"
-                    onClick={() => {
-                        if (setClose) {
-                            setClose(false);
-                        }
-                        setFavoriteAddress('');
-                    }}
-                >
-                    <Delete fontSize="small" />
-                </IconButton>
-            )}
-        </ListItemText>
+        </Box>
     );
 }
