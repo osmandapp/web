@@ -18,6 +18,21 @@ Direct links to free OsmAnd versions.
 
 ## Version 5 {#version-5}
 
+### Version 5.3 {#version-53}
+
+Release date 04/2026:
+
+- Astronomy plugin with an astronomical overlay showing the paths of the Sun, planets, and stars on the map.
+- More flexible layout for widgets and map buttons.
+- 3D buildings.
+- Globe view.
+- New Trip Recording widgets: Average Speed and Moving Time.
+- Speedometer widget with visual speeding indication, tolerance warning, and limit-exceed states.
+- New Palette Editor for creating and editing custom color schemes for tracks and terrain visualization.
+- Improved bicycle routing considering bicycle width.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+
 ### Version 5.2 {#version-52}
 
 Release date 11/2025:
