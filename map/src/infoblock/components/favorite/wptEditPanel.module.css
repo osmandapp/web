@@ -41,3 +41,7 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.descriptionSection {
+    padding-bottom: 9px;
+}

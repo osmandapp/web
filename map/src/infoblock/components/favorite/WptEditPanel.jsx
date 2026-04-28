@@ -7,6 +7,7 @@ import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoriteName from './structure/FavoriteName';
 import FavoriteAddress from './structure/FavoriteAddress';
 import FavoriteDescription from './structure/FavoriteDescription';
+import DescriptionPanel from './structure/DescriptionPanel';
 import FavoriteGroup from './structure/FavoriteGroup';
 import FavoriteIcon from './structure/FavoriteIcon';
 import FavoriteColor from './structure/FavoriteColor';
@@ -56,7 +57,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteAddress, setFavoriteAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [favoriteDescription, setFavoriteDescription] = useState(editWpt?.desc ?? '');
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
-    const [addDescription, setAddDescription] = useState(isEditMode);
+    const [showDescriptionPanel, setShowDescriptionPanel] = useState(false);
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteIcon, setFavoriteIcon] = useState(
         editWpt?.icon ?? poi?.options?.[FINAL_POI_ICON_NAME] ?? MarkerOptions.DEFAULT_WPT_ICON
@@ -442,124 +443,123 @@ export default function WptEditPanel({ setShowInfoBlock }) {
           : t('web:add_favorite');
 
     return (
-        <Box className={styles.panel}>
-            {process && <LinearProgress />}
-            <HeaderWithUnderline
-                title={title}
-                onClose={closePanel}
-                showBackButton={isEditMode}
-                appBarProps={{ id: isEditMode ? 'se-back-edit-wpt-panel' : 'se-close-add-wpt-panel' }}
-                rightContent={
-                    <Box className={styles.saveAction}>
-                        <PrimaryBtn
-                            id={isEditMode ? 'se-edit-fav-item-submit' : 'se-add-fav-btn'}
-                            text={t('web:shared_string_save')}
-                            disabled={errorName || groupHasSameWpt()}
-                            action={() => save()}
-                        />
-                    </Box>
-                }
-            />
-            <Box id={isEditMode ? 'se-edit-fav-dialog' : 'se-add-fav-dialog'} className={styles.content}>
-                <Box className={styles.fields}>
-                    <FavoriteName
-                        favoriteName={favoriteName}
-                        setFavoriteName={setFavoriteName}
-                        favoriteGroup={favoriteGroup}
-                        favorite={isEditMode ? editWpt : undefined}
-                        setErrorName={setErrorName}
-                        widthDialog={PANEL_CONTENT_WIDTH}
-                    />
-                    {!addAddress && (
-                        <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
-                            <IconButton
-                                id={'se-add-fav-add-address-btn'}
-                                sx={{ mt: -1 }}
-                                onClick={() => setAddAddress(true)}
-                            >
-                                <Add />
-                            </IconButton>
-                            Add address
-                        </ListItemText>
-                    )}
-                    {addAddress && (
-                        <FavoriteAddress
-                            favoriteAddress={favoriteAddress}
-                            setFavoriteAddress={setFavoriteAddress}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                            latLon={isAddMode ? latLon : null}
-                        />
-                    )}
-                    {!addDescription && (
-                        <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
-                            <IconButton
-                                id={'se-add-fav-add-desc-btn'}
-                                sx={{ mt: -1 }}
-                                onClick={() => setAddDescription(true)}
-                            >
-                                <Add />
-                            </IconButton>
-                            Add description
-                        </ListItemText>
-                    )}
-                    {addDescription && (
-                        <FavoriteDescription
-                            favoriteDescription={favoriteDescription}
-                            setFavoriteDescription={setFavoriteDescription}
-                            setClose={isEditMode ? null : setAddDescription}
+        <>
+            {showDescriptionPanel && (
+                <DescriptionPanel
+                    description={favoriteDescription}
+                    setDescription={setFavoriteDescription}
+                    onClose={() => setShowDescriptionPanel(false)}
+                />
+            )}
+            <Box className={styles.panel}>
+                {process && <LinearProgress />}
+                <HeaderWithUnderline
+                    title={title}
+                    onClose={closePanel}
+                    showBackButton={isEditMode}
+                    appBarProps={{ id: isEditMode ? 'se-back-edit-wpt-panel' : 'se-close-add-wpt-panel' }}
+                    rightContent={
+                        <Box className={styles.saveAction}>
+                            <PrimaryBtn
+                                id={isEditMode ? 'se-edit-fav-item-submit' : 'se-add-fav-btn'}
+                                text={t('web:shared_string_save')}
+                                disabled={errorName || groupHasSameWpt()}
+                                action={save}
+                            />
+                        </Box>
+                    }
+                />
+                <Box id={isEditMode ? 'se-edit-fav-dialog' : 'se-add-fav-dialog'} className={styles.content}>
+                    <Box className={styles.fields}>
+                        <FavoriteName
+                            favoriteName={favoriteName}
+                            setFavoriteName={setFavoriteName}
+                            favoriteGroup={favoriteGroup}
+                            favorite={isEditMode ? editWpt : undefined}
+                            setErrorName={setErrorName}
                             widthDialog={PANEL_CONTENT_WIDTH}
                         />
-                    )}
-                    <FavoriteGroup
-                        favoriteGroup={favoriteGroup}
-                        setFavoriteGroup={setFavoriteGroup}
-                        groups={groups}
-                        defaultGroup={defaultGroup}
-                        widthDialog={PANEL_CONTENT_WIDTH}
-                    />
-                    <FavoriteIcon
-                        favoriteIcon={favoriteIcon}
-                        setFavoriteIcon={setFavoriteIcon}
-                        currentIconCategories={currentIconCategories}
-                        favoriteIconCategories={favoriteIconCategories}
-                        selectedGpxFile={ctx.selectedGpxFile}
-                        add={!isEditMode}
-                        defaultIcon={isEditMode ? editWpt.icon : MarkerOptions.DEFAULT_WPT_ICON}
-                        widthDialog={PANEL_CONTENT_WIDTH}
-                    />
-                    <FavoriteColor
-                        favoriteColor={favoriteColor}
-                        setFavoriteColor={setFavoriteColor}
-                        defaultColor={isEditMode ? editWpt.color : MarkerOptions.DEFAULT_WPT_COLOR}
-                        widthDialog={PANEL_CONTENT_WIDTH}
-                    />
-                    <FavoriteShape
-                        color={favoriteColor}
-                        favoriteShape={favoriteShape}
-                        setFavoriteShape={setFavoriteShape}
-                        defaultBackground={isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE}
-                    />
-                </Box>
-                {isEditMode && !isEditTrackWpt && (
-                    <>
-                        <ThickDivider />
-                        <DefaultItem
-                            id={'se-delete-fav-item'}
-                            icon={<Delete sx={{ color: 'error.main' }} />}
-                            name={t('web:remove_favorite')}
-                            onClick={() => setDeleteWptDialogOpen(true)}
-                        />
-                        {deleteWptDialogOpen && (
-                            <DeleteWptDialog
-                                dialogOpen={deleteWptDialogOpen}
-                                setDialogOpen={setDeleteWptDialogOpen}
-                                wpt={editWpt}
+                        {!addAddress && (
+                            <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>
+                                <IconButton
+                                    id={'se-add-fav-add-address-btn'}
+                                    sx={{ mt: -1 }}
+                                    onClick={() => setAddAddress(true)}
+                                >
+                                    <Add />
+                                </IconButton>
+                                {t('web:fav_add_address')}
+                            </ListItemText>
+                        )}
+                        {addAddress && (
+                            <FavoriteAddress
+                                favoriteAddress={favoriteAddress}
+                                setFavoriteAddress={setFavoriteAddress}
+                                widthDialog={PANEL_CONTENT_WIDTH}
+                                latLon={isAddMode ? latLon : null}
                             />
                         )}
-                    </>
-                )}
-                <ColorBlock color={'#f0f0f0'} />
+                    </Box>
+                    <ThickDivider />
+                    <FavoriteDescription
+                        favoriteDescription={favoriteDescription}
+                        onClick={() => setShowDescriptionPanel(true)}
+                    />
+                    <ThickDivider />
+                    <Box className={styles.fields}>
+                        <FavoriteGroup
+                            favoriteGroup={favoriteGroup}
+                            setFavoriteGroup={setFavoriteGroup}
+                            groups={groups}
+                            defaultGroup={defaultGroup}
+                            widthDialog={PANEL_CONTENT_WIDTH}
+                        />
+                        <FavoriteIcon
+                            favoriteIcon={favoriteIcon}
+                            setFavoriteIcon={setFavoriteIcon}
+                            currentIconCategories={currentIconCategories}
+                            favoriteIconCategories={favoriteIconCategories}
+                            selectedGpxFile={ctx.selectedGpxFile}
+                            add={!isEditMode}
+                            defaultIcon={isEditMode ? editWpt.icon : MarkerOptions.DEFAULT_WPT_ICON}
+                            widthDialog={PANEL_CONTENT_WIDTH}
+                        />
+                        <FavoriteColor
+                            favoriteColor={favoriteColor}
+                            setFavoriteColor={setFavoriteColor}
+                            defaultColor={isEditMode ? editWpt.color : MarkerOptions.DEFAULT_WPT_COLOR}
+                            widthDialog={PANEL_CONTENT_WIDTH}
+                        />
+                        <FavoriteShape
+                            color={favoriteColor}
+                            favoriteShape={favoriteShape}
+                            setFavoriteShape={setFavoriteShape}
+                            defaultBackground={
+                                isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE
+                            }
+                        />
+                    </Box>
+                    {isEditMode && !isEditTrackWpt && (
+                        <>
+                            <ThickDivider />
+                            <DefaultItem
+                                id={'se-delete-fav-item'}
+                                icon={<Delete sx={{ color: 'error.main' }} />}
+                                name={t('web:remove_favorite')}
+                                onClick={() => setDeleteWptDialogOpen(true)}
+                            />
+                            {deleteWptDialogOpen && (
+                                <DeleteWptDialog
+                                    dialogOpen={deleteWptDialogOpen}
+                                    setDialogOpen={setDeleteWptDialogOpen}
+                                    wpt={editWpt}
+                                />
+                            )}
+                        </>
+                    )}
+                    <ColorBlock color={'#f0f0f0'} />
+                </Box>
             </Box>
-        </Box>
+        </>
     );
 }

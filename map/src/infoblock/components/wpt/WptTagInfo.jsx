@@ -2,6 +2,7 @@ import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Toolt
 import styles from './wptDetails.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import parse from 'html-react-parser';
 import { CUISINE_PREFIX, openWikipediaContent, POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
@@ -9,8 +10,9 @@ import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
-import { translateWithSplit } from '../../../manager/PoiManager';
+import { cleanHtml, translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
+import { stripHtml } from '../../../frame/components/editor/htmlUtils';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
     const ctx = useContext(AppContext);
@@ -295,8 +297,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
                         <ListItemText
                             onClick={() => {
-                                if (baseTag.value?.length > 50) {
-                                    setOpenMoreDialog({ title: baseTag.name, content: baseTag.value });
+                                if (baseTag.isDesc || baseTag.value?.length > 50) {
+                                    setOpenMoreDialog({
+                                        title: baseTag.name,
+                                        content: baseTag.isDesc ? parse(cleanHtml(baseTag.value)) : baseTag.value,
+                                    });
                                 }
                             }}
                         >
@@ -311,7 +316,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                                     open={hover && copy}
                                     onClick={() => handleCopy(baseTag.value)}
                                 >
-                                    <MenuItemWithLines name={baseTag.value} maxLines={3} className={styles.tagName} />
+                                    <MenuItemWithLines
+                                        name={baseTag.isDesc ? stripHtml(baseTag.value) : baseTag.value}
+                                        maxLines={3}
+                                        className={styles.tagName}
+                                    />
                                 </Tooltip>
                             )}
                             {baseTag.link}
