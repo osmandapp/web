@@ -5,7 +5,7 @@ import { ReactComponent as CloseRoundedIcon } from '../../../../assets/icons/ic_
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 import ActionIconBtn from '../../../../frame/components/btns/ActionIconBtn';
-import Editor from '../../../../frame/components/editor/Editor';
+import RichTextEditor from '../../../../frame/components/editor/RichTextEditor';
 import { textToHTML } from '../../../../frame/components/editor/htmlUtils';
 
 export default function DescriptionPanel({ description, setDescription, onClose }) {
@@ -41,7 +41,7 @@ export default function DescriptionPanel({ description, setDescription, onClose 
                     </Tooltip>
                 }
             />
-            <Editor content={textToHTML(description)} onChange={setHtml} editorId="se-edit-fav-dialog-desc" />
+            <RichTextEditor content={textToHTML(description)} onChange={setHtml} editorId="se-edit-fav-dialog-desc" />
         </SecondaryMenuDrawer>
     );
 }

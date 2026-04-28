@@ -5,7 +5,7 @@ import StarterKit from '@tiptap/starter-kit';
 import EditorToolbar from './EditorToolbar';
 import styles from './editor.module.css';
 
-export default function Editor({ content, onChange, autofocus = true, editorId }) {
+export default function RichTextEditor({ content, onChange, autofocus = true, editorId }) {
     const editor = useEditor({
         extensions: [StarterKit.configure({ link: { openOnClick: false } })],
         content,
