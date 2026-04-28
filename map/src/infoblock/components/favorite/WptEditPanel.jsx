@@ -432,7 +432,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const defaultGroup = isAddTrackWpt
         ? DEFAULT_GROUP_NAME_POINTS_GROUPS
         : isEditMode
-          ? editWpt.category
+          ? (editWpt.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
           : FavoritesManager.DEFAULT_GROUP_NAME;
     const title = isEditMode
         ? isEditTrackWpt
