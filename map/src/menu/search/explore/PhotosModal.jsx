@@ -94,7 +94,7 @@ export default function PhotosModal({ photos }) {
     const getWidth = () => width - LEFT_MARGIN;
 
     const needOpenMoreModal = (str) => {
-        const textWidth = str.length * 16 * 0.6;
+        const textWidth = str.length * 16 * 0.6; // approx: font-size 16px * ~0.6 char-width ratio
         return textWidth > getWidth() - METADATA_MARGIN;
     };
 
