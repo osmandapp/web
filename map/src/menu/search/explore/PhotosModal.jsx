@@ -280,7 +280,7 @@ export default function PhotosModal({ photos }) {
 }
 
 PhotosModal.propTypes = {
-    photos: PropTypes.array.isRequired,
+    photos: PropTypes.array,
 };
 
 function PhotoItem({ photo, index, activeStep }) {
