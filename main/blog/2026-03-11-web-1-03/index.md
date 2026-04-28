@@ -44,11 +44,16 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 - Improved [marker selection behavior](#marker-selection) to make map interaction more reliable;
 - Improved [POI category search behavior](#poi-category-search-behavior) to make finding places faster and more accurate;
 - [Expired purchases](#account-improvements) are now hidden on the account page to keep the purchase list cleaner;
+- Added [Garmin Connect integration](#garmin-connect-integration) for automatic activity sync;
 - [Bug fixes](#bug-fixes).
 
 ## Navigation UI Redesign {#navigation-ui-redesign}
 
 ## Smart Folders Support {#smart-folders-support}
+
+Smart Folders are now supported in the web version, allowing you to view and manage track collections created on mobile devices. Smart Folders are synced via OsmAnd Cloud when Settings synchronization is enabled.
+
+On the web, Smart Folders are displayed in the track list with a distinct star icon for easy identification. The folder content depends on its configuration on the device, and only supported parameters are applied when displaying tracks.
 
 ## Track Tools {#track-tools}
 
@@ -111,6 +116,14 @@ Favorite folders can now be pinned so that frequently used folders appear at the
 ### Marker Selection {#marker-selection}
 
 ## Account Improvements {#account-improvements}
+
+## Garmin Connect Integration {#garmin-connect-integration}
+
+You can now connect your Garmin Connect account in the Web Planner and automatically sync your activities with OsmAnd.
+
+Once connected, activities are imported as tracks and stored in a dedicated Garmin Connect folder in the Tracks section. New activities are added automatically after they are recorded in your Garmin account. Imported activities are converted into tracks, and their types are preserved when possible. You can also sync recent activity history during the initial connection.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_notes.png)
 
 ## Bug fixes {#bug-fixes} 
 
