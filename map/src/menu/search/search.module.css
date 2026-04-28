@@ -196,6 +196,10 @@
 .tooltip {
     border-radius: 33px !important;
 }
+.photoSwiper {
+    width: 100%;
+}
+
 .iconsPrevNextBlock {
     display: flex !important;
     justify-content: space-between !important;
@@ -207,6 +211,7 @@
     transform: translateY(-50%) !important;
     padding: 0 16px !important;
     pointer-events: none !important;
+    z-index: 1 !important;
 }
 .iconsPrevNext {
     border-radius: 50px !important;
