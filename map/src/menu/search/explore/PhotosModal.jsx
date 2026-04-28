@@ -340,13 +340,16 @@ function formatDate(dateStr) {
         return '';
     }
     const clean = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
+    // Format YYYY 2025 -> 2025
     if (/^\d{4}$/.test(clean)) {
         return clean;
     }
+    // Format YYYY-MM 2025-09 -> September 2025
     if (/^\d{4}-\d{2}$/.test(clean)) {
-        const d = new Date(clean + '-01');
+        const d = new Date(clean + '-01'); // Add the first day of the month for browser compatibility
         return isNaN(d) ? dateStr : fmt.monthYearLong(d);
     }
+    // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
     const d = new Date(clean);
 
     return isNaN(d) ? dateStr : fmt.dMMMMY(d);
