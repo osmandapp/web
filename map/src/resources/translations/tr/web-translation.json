@@ -218,6 +218,7 @@
   "header_docs": "Belgeler",
   "header_blog": "Blog",
   "header_pricing": "Fiyatlandırma",
+  "header_spring_sale": "Bahar indirimi",
   "header_map": "Harita",
   "header_join_us": "Bize katılın",
   "track_analyzer_desc": "Harita üzerinde bir veya iki nokta seçerek, bu noktalardan geçen parkurları bulun ve analizleri görüntüleyin.",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "Boş klasör adı.",
   "rename_folder_already_exists": "Klasör zaten mevcut.",
   "rename_item_not_found": "Klasör veya parkur bulunamadı.",
+  "garmin_sync_title": "Etkinliklerinizi senkronize edin",
+  "garmin_sync_description": "Hesabınızı bağlayarak Garmin Connect™ etkinliklerini OsmAnd ile senkronize edin.",
+  "garmin_help": "Yardım",
+  "garmin_help_new_activities": "Yeni etkinlikler otomatik olarak Parkurlar → Garmin klasöründe kullanılabilir olacak.",
+  "garmin_help_supported_activities": "<strong>Desteklenen Etkinlikler:</strong> Şu anda OsmAnd, Garmin Connect™ hesabınızdan yalnızca Yürüyüş, Bisiklet ve Yürüyüş etkinliklerini senkronize eder.",
+  "garmin_help_historic_data": "<strong>Tarihsel veriler:</strong> Bu seçeneği Garmin Connect™ yetkilendirme sayfasında etkinleştirerek son 30 günün etkinliklerini senkronize edebilirsiniz. Lütfen 30 günden eski etkinliklerin otomatik olarak içe aktarılamayacağını unutmayın.",
+  "garmin_activities": "Etkinlikler",
+  "garmin_last_sync": "Son senkronizasyon",
+  "garmin_disconnect_confirm_title": "Garmin Connect™ bağlantısını kesin mi?",
+  "garmin_disconnect_confirm_desc": "OsmAnd artık etkinliklerinizi senkronize etmeyecek. Önceki parkurlarınız Garmin klasöründe kalacak.",
+  "garmin_time_min_ago": "{{n}} dk önce",
+  "garmin_time_h_ago": "{{n}} saat önce",
+  "garmin_time_days_ago": "{{n}} gün önce",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }

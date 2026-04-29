@@ -218,6 +218,7 @@
   "header_docs": "المستندات",
   "header_blog": "المدونة",
   "header_pricing": "الأسعار",
+  "header_spring_sale": "عروض الربيع",
   "header_map": "الخريطة",
   "header_join_us": "انضم إلينا",
   "track_analyzer_desc": "حدد نقطة أو نقطتين على الخريطة للعثور على المسارات التي تمر من خلالهما وعرض التحليلات.",
@@ -226,7 +227,7 @@
   "track_analyzer_select_tracks": "تحديد المسارات",
   "track_analyzer_a": "النقطة أ",
   "track_analyzer_b": "النقطة ب",
-  "empty_favorites": "لا تملك ملفات مفضلة",
+  "empty_favorites": "ليس لديك ملفات مفضلة",
   "empty_favorites_description": "يمكنك استيراد أو إنشاء ملفات مفضلة باستخدام تطبيق OsmAnd.",
   "weather_current": "الموقع الحالي",
   "weather_generated": "الطقس المتولد",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "اسم مجلد فارغ.",
   "rename_folder_already_exists": "المجلد موجود بالفعل.",
   "rename_item_not_found": "لم يتم العثور على المجلد أو المسار.",
+  "garmin_sync_title": "مزامنة أنشطتك",
+  "garmin_sync_description": "ربط حسابك لمزامنة أنشطة Garmin Connect™ مع OsmAnd.",
+  "garmin_help": "مساعدة",
+  "garmin_help_new_activities": "ستكون الأنشطة الجديدة متاحة تلقائيًا في مجلد المسارات → غارمين.",
+  "garmin_help_supported_activities": "<strong>الأنشطة المدعومة:</strong> حاليًا، يقوم OsmAnd بمزامنة أنشطة المشي لمسافات طويلة، ركوب الدراجات، والمشي فقط من حساب Garmin Connect™ الخاص بك.",
+  "garmin_help_historic_data": "<strong>البيانات التاريخية:</strong> يمكنك مزامنة الأنشطة من الـ 30 يومًا الماضية عن طريق تمكين هذا الخيار في صفحة تفويض Garmin Connect™. يرجى ملاحظة أن الأنشطة الأقدم من 30 يومًا لا يمكن استيرادها تلقائيًا.",
+  "garmin_activities": "الأنشطة",
+  "garmin_last_sync": "آخر مزامنة",
+  "garmin_disconnect_confirm_title": "فصل الاتصال بـ Garmin Connect™؟",
+  "garmin_disconnect_confirm_desc": "لن يقوم OsmAnd بعد الآن بمزامنة أنشطتك. ستظل مساراتك السابقة في مجلد غارمين.",
+  "garmin_time_min_ago": "{{n}} دقيقة مضت",
+  "garmin_time_h_ago": "{{n}} ساعة مضت",
+  "garmin_time_days_ago": "{{n}} يوم مضى",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }
