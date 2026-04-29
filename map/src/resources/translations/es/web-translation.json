@@ -16,7 +16,7 @@
   "login_btn": "Iniciar sesión",
   "login_desc": "Por favor, introduce el correo electrónico que utilizaste para crear tu cuenta.",
   "user_email": "Correo electrónico",
-  "email_is_not_registered": "Este correo electrónico no ha sido registrado de OsmAnd Cloud.",
+  "email_is_not_registered": "Este correo electrónico no ha sido registrado en OsmAnd Cloud.",
   "incorrect_password": "Contraseña incorrecta.",
   "change_password": "No tengo o olvidé la contraseña",
   "change_reset_password": "Cambiar o restablecer contraseña",
@@ -218,6 +218,7 @@
   "header_docs": "Documentos",
   "header_blog": "Blog",
   "header_pricing": "Precios",
+  "header_spring_sale": "Oferta de primavera",
   "header_map": "Mapa",
   "header_join_us": "Únete a nosotros",
   "track_analyzer_desc": "Selecciona uno o dos puntos en el mapa para encontrar rutas que pasen por ellos y ver análisis.",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "Nombre de carpeta vacío.",
   "rename_folder_already_exists": "La carpeta ya existe.",
   "rename_item_not_found": "La carpeta o ruta no se encontró.",
+  "garmin_sync_title": "Sincroniza tus actividades",
+  "garmin_sync_description": "Conecta tu cuenta para sincronizar actividades de Garmin Connect™ con OsmAnd.",
+  "garmin_help": "Ayuda",
+  "garmin_help_new_activities": "Las nuevas actividades estarán disponibles automáticamente en la carpeta Tracks → Garmin.",
+  "garmin_help_supported_activities": "<strong>Actividades compatibles:</strong> Actualmente, OsmAnd sincroniza solo actividades de Senderismo, Ciclismo y Caminata de tu cuenta de Garmin Connect™.",
+  "garmin_help_historic_data": "<strong>Datos históricos:</strong> Puedes sincronizar actividades de los últimos 30 días activando esta opción en la página de autorización de Garmin Connect™. Ten en cuenta que las actividades anteriores a 30 días no se pueden importar automáticamente.",
+  "garmin_activities": "Actividades",
+  "garmin_last_sync": "Última sincronización",
+  "garmin_disconnect_confirm_title": "¿Desconectar Garmin Connect™?",
+  "garmin_disconnect_confirm_desc": "OsmAnd ya no sincronizará tus actividades. Tus rutas anteriores permanecerán en la carpeta Garmin.",
+  "garmin_time_min_ago": "hace {{n}} min",
+  "garmin_time_h_ago": "hace {{n}} h",
+  "garmin_time_days_ago": "hace {{n}} días",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }

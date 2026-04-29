@@ -218,6 +218,7 @@
   "header_docs": "Документація",
   "header_blog": "Блог",
   "header_pricing": "Ціни",
+  "header_spring_sale": "Весняний розпродаж",
   "header_map": "Мапа",
   "header_join_us": "Приєднуйтесь",
   "track_analyzer_desc": "Виберіть одну або дві точки на мапі, щоб знайти треки, що проходять через них, та переглянути аналітику.",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "Порожня назва теки.",
   "rename_folder_already_exists": "Тека вже існує.",
   "rename_item_not_found": "Теку або трек не знайдено.",
+  "garmin_sync_title": "Синхронізувати ваші активності",
+  "garmin_sync_description": "Підключіть свій обліковий запис, щоб синхронізувати активності Garmin Connect™ з OsmAnd.",
+  "garmin_help": "Довідка",
+  "garmin_help_new_activities": "Нові активності будуть автоматично доступні в теці Треки → Garmin.",
+  "garmin_help_supported_activities": "<strong>Підтримувані активності:</strong> Наразі OsmAnd синхронізує лише активності з прогулянок, велосипедних поїздок та ходьби з вашого облікового запису Garmin Connect™.",
+  "garmin_help_historic_data": "<strong>Історичні дані:</strong> Ви можете синхронізувати активності за останні 30 днів, увімкнувши цю опцію на сторінці авторизації Garmin Connect™. Зауважте, що активності старші за 30 днів не можна імпортувати автоматично.",
+  "garmin_activities": "Активності",
+  "garmin_last_sync": "Остання синхронізація",
+  "garmin_disconnect_confirm_title": "Відключити Garmin Connect™?",
+  "garmin_disconnect_confirm_desc": "OsmAnd більше не синхронізуватиме ваші активності. Ваші попередні треки залишаться в теці Garmin.",
+  "garmin_time_min_ago": "{{n}} хв тому",
+  "garmin_time_h_ago": "{{n}} год тому",
+  "garmin_time_days_ago": "{{n}} днів тому",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }
