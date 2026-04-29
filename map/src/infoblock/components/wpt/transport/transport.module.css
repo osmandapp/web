@@ -6,6 +6,7 @@
     align-items: flex-start !important;
     gap: 18px !important;
     justify-content: space-between !important;
+    flex-shrink: 0 !important;
 }
 
 .routeDetailsNameDefault {
@@ -45,6 +46,7 @@
     align-items: flex-start !important;
     gap: 18px !important;
     justify-content: space-between !important;
+    flex-shrink: 0 !important;
 }
 
 .routeDetailsName {
@@ -155,7 +157,6 @@
 
 /* Route details — stop list */
 .routeDetailsHeaderContent {
-    overflow: hidden !important;
     flex-grow: 1 !important;
     min-width: 0 !important;
     display: flex !important;
@@ -250,6 +251,8 @@
 .stopItemWrapper > * {
     padding-left: 0 !important;
     padding-right: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .stopItemWrapper > * > :first-child {

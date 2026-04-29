@@ -133,8 +133,8 @@ function RouteSection({
     );
 
     return (
-        <Box sx={{ mb: '-16px' }}>
-            <Divider sx={{ mt: '16px' }} />
+        <Box>
+            <Divider />
             <SelectItemWithoutOptions
                 title={title}
                 onClick={() => setOpen(!open)}
