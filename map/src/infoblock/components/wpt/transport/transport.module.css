@@ -250,6 +250,8 @@
 .stopItemWrapper > * {
     padding-left: 0 !important;
     padding-right: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .stopItemWrapper > * > :first-child {
