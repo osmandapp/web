@@ -44,7 +44,12 @@ export default async function test() {
     await waitByRemoved(By.id('se-add-new-fav-group-dialog'));
     // add favorite to group
     await clickBy(By.id('se-select-fav-color-0'));
-    await clickBy(By.id('se-favorite-icon-0'));
+    // open icon selection panel, pick first icon, go back
+    await clickBy(By.id('se-fav-icon-row'));
+    await waitBy(By.id('se-back-icon-selection-panel'));
+    await clickBy(By.id('se-fav-icon-last-used-0'));
+    await clickBy(By.id('se-back-icon-selection-panel'));
+    await waitByRemoved(By.id('se-back-icon-selection-panel'));
     await clickBy(By.id('se-favorite-shape-1'));
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));

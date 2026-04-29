@@ -353,5 +353,8 @@
     "editor_strikethrough": "Strikethrough",
     "editor_add_link": "Add link",
     "editor_remove_link": "Remove link",
-    "editor_link_url_prompt": "URL"
+    "editor_link_url_prompt": "URL",
+    "wpt_appearance_icon_label": "Icon",
+    "wpt_icon_selection_title": "All icons",
+    "wpt_icon_selection_last_used": "Last used"
 }
