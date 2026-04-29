@@ -524,7 +524,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         id="se-fav-icon-row"
                         name={t('web:wpt_appearance_icon_label')}
                         onClick={() => setShowIconSelectionPanel(true)}
-                        rightIcon={<WptIconPreview icon={favoriteIcon} color={favoriteColor} shape={favoriteShape} />}
+                        rightIcon={
+                            <WptIconPreview icon={favoriteIcon} color={favoriteColor} shape={favoriteShape} size={36} />
+                        }
                     />
                     <Box className={styles.fields}>
                         <FavoriteColor
