@@ -1,5 +1,5 @@
-import React, { useContext, useLayoutEffect, useMemo, useRef } from 'react';
-import { Box, ListItem, ListItemButton } from '@mui/material';
+import React, { useContext, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Box, IconButton, ListItem, ListItemButton, Menu, MenuItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../../context/AppContext';
 import MarkerOptions from '../../../../map/markers/MarkerOptions';
@@ -11,9 +11,11 @@ import ColorBlock from '../../../../frame/components/other/ColorBlock';
 import WptIconPreview from './WptIconPreview';
 import isEmpty from 'lodash-es/isEmpty';
 import styles from '../wptEditPanel.module.css';
+import { ReactComponent as ListFlatIcon } from '../../../../assets/features/ic_action_list_flat.svg';
 
 const SELECTION_COLOR = '#237bff';
 const FALLBACK_BG_COLOR = '#e6e6e6';
+const LAST_USED_KEY = '__last_used__';
 
 export default function IconSelectionPanel({
     selectedIcon,
@@ -29,6 +31,9 @@ export default function IconSelectionPanel({
 
     // Capture icon at mount time so changing selection inside the panel does not re-trigger the scroll
     const initialIconRef = useRef(selectedIcon);
+
+    const [menuAnchor, setMenuAnchor] = useState(null);
+    const [scrollTarget, setScrollTarget] = useState(null);
 
     const usedIcons = useMemo(() => {
         const res = [...ctx.usedIcons];
@@ -55,9 +60,53 @@ export default function IconSelectionPanel({
         return entry ? entry[0] : null;
     }, [favoriteIconCategories]);
 
-    function handleSelectIcon(icon) {
-        setSelectedIcon(icon);
+    // Build ordered list of categories for the dropdown: Last used first, then all named categories.
+    const categoryMenuItems = useMemo(() => {
+        const items = [];
+        if (usedIcons.length > 0) {
+            items.push({ key: LAST_USED_KEY, label: t('web:wpt_icon_selection_last_used') });
+        }
+        if (favoriteIconCategories?.categories) {
+            Object.keys(favoriteIconCategories.categories).forEach((name) => {
+                items.push({ key: name, label: formatCategoryName(name) });
+            });
+        }
+        return items;
+    }, [usedIcons, favoriteIconCategories]);
+
+    function openMenu(e) {
+        setMenuAnchor(e.currentTarget);
     }
+
+    function closeMenu() {
+        setMenuAnchor(null);
+    }
+
+    function scrollToCategory(key) {
+        closeMenu();
+        setScrollTarget(key);
+    }
+
+    const rightContent = (
+        <>
+            <IconButton className={styles.categoryMenuBtn} onClick={openMenu} size="small">
+                <ListFlatIcon />
+            </IconButton>
+            <Menu
+                anchorEl={menuAnchor}
+                open={Boolean(menuAnchor)}
+                onClose={closeMenu}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            >
+                {categoryMenuItems.map(({ key, label }) => (
+                    <MenuItem key={key} onClick={() => scrollToCategory(key)}>
+                        {label}
+                    </MenuItem>
+                ))}
+            </Menu>
+        </>
+    );
 
     return (
         <SecondaryMenuDrawer onClose={onClose}>
@@ -66,36 +115,50 @@ export default function IconSelectionPanel({
                 onClose={onClose}
                 showBackButton
                 appBarProps={{ id: 'se-back-icon-selection-panel' }}
+                rightContent={rightContent}
             />
             <Box className={styles.iconSelectionContent}>
                 {usedIcons.length > 0 && (
                     <IconCategorySection
+                        categoryKey={LAST_USED_KEY}
                         title={t('web:wpt_icon_selection_last_used')}
                         icons={usedIcons}
                         selectedIcon={selectedIcon}
-                        onSelect={handleSelectIcon}
+                        onSelect={setSelectedIcon}
                         idPrefix="se-fav-icon-last-used"
+                        scrollTarget={scrollTarget}
                     />
                 )}
                 {favoriteIconCategories &&
                     Object.entries(favoriteIconCategories.categories).map(([categoryName, categoryData]) => (
                         <IconCategorySection
                             key={categoryName}
+                            categoryKey={categoryName}
                             scrollOnMount={categoryName === initialCategory}
                             title={formatCategoryName(categoryName)}
                             icons={categoryData.icons ?? []}
                             selectedIcon={selectedIcon}
-                            onSelect={handleSelectIcon}
+                            onSelect={setSelectedIcon}
                             idPrefix={`se-fav-icon-${categoryName}`}
+                            scrollTarget={scrollTarget}
                         />
                     ))}
-                <ColorBlock color={'#f0f0f0'} />
+                <ColorBlock color={'#f0f0f0'} minHeight={scrollTarget ? '100%' : undefined} />
             </Box>
         </SecondaryMenuDrawer>
     );
 }
 
-function IconCategorySection({ scrollOnMount = false, title, icons, selectedIcon, onSelect, idPrefix }) {
+function IconCategorySection({
+    scrollOnMount = false,
+    categoryKey,
+    scrollTarget,
+    title,
+    icons,
+    selectedIcon,
+    onSelect,
+    idPrefix,
+}) {
     const ref = useRef(null);
     const didScroll = useRef(false);
 
@@ -104,6 +167,11 @@ function IconCategorySection({ scrollOnMount = false, title, icons, selectedIcon
         ref.current.scrollIntoView({ block: 'start' });
         didScroll.current = true;
     }, [scrollOnMount]);
+
+    useLayoutEffect(() => {
+        if (scrollTarget !== categoryKey || !ref.current) return;
+        ref.current.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }, [scrollTarget, categoryKey]);
 
     if (!icons || icons.length === 0) {
         return null;

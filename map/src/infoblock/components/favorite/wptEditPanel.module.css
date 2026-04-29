@@ -46,6 +46,14 @@
     padding-bottom: 9px;
 }
 
+.categoryMenuBtn {
+    color: var(--svg-icon-color) !important;
+    padding: 8px !important;
+    &:hover {
+        background-color: #f5f5f5 !important;
+    }
+}
+
 .iconSelectionContent {
     overflow-x: hidden;
     overflow-y: auto;
