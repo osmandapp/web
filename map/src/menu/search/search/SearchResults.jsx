@@ -90,7 +90,7 @@ export default function SearchResults() {
 
     // Clear search results when search params change
     useEffect(() => {
-        if (params.query || params.type) {
+        if (params.query || params.type && !isSearchEqualToUrl(ctx.searchQuery)) {
             setResult(null);
         }
     }, [params.query, params.type]);

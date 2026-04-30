@@ -33,7 +33,7 @@ import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
-import { getDist, getTime } from '../../../manager/track/TracksManager';
+import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 
 export function getFirstSubstring(inputString) {
@@ -188,6 +188,22 @@ export default function SearchResultItem({ item, typeItem, index }) {
     })();
 
     async function clickHandler() {
+        if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+            const fileName = item.properties?.[CATEGORY_NAME];
+            const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
+            if (!file) return;
+            file.mapObj = true; 
+            const newTracks = await openTrackOnMap({
+                file,
+                showOnMap: true,
+                showInfo: true,
+                zoomToTrack: true,
+                ctx,
+                recentSaver,
+            });
+            updateTracks(ctx, null, newTracks);
+            return;
+        }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
             const type = item.properties[WEB_PREFIX + TYPE];
             let options;

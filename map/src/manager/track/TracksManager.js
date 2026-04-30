@@ -11,6 +11,7 @@ import {
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_SHARE_FILE,
+    OBJECT_SEARCH,
 } from '../../context/AppContext';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { saveTrackToLocal } from './SaveTrackManager';
@@ -1630,7 +1631,7 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
         allFiles = ctx.gpxFiles;
 
         // not set for track analyzer, because we need to keep the current object type
-        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER) {
+        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER && ctx.currentObjectType !== OBJECT_SEARCH) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         }
     }
