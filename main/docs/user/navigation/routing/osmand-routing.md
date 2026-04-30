@@ -75,6 +75,10 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 - Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/navigation-settings.md). Description of this setting is provided in the articles about [Routing types](#routing-types) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
 - You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
+When a road type (such as *Unpaved roads*) is selected in the Avoid settings, OsmAnd strictly excludes such roads from route calculation. Even very short sections (for example, 100–200 meters of unpaved road) are completely avoided and will not be included in the route under any circumstances. As a result, routes may become significantly longer if avoiding such roads requires detours.
+
+If the Avoid option is disabled, these roads are still allowed but may be assigned lower priority (penalty), meaning OsmAnd will prefer better roads when possible but can still include them if needed.
+
 :::note
 
 - The road must be marked at maximum zoom, as OsmAnd may misinterpret the tap and block, for example, the incorrect side of two-roadways road or sidewalk.
