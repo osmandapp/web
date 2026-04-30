@@ -33,6 +33,8 @@ import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
+import { getDist, getTime } from '../../../manager/track/TracksManager';
+import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -73,6 +75,8 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
             type = poiType;
         }
         type = preparedType(type, t);
+    } else if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+        name = props[CATEGORY_NAME];
     } else {
         name = props[CATEGORY_NAME];
         if (props[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
@@ -161,6 +165,14 @@ export default function SearchResultItem({ item, typeItem, index }) {
         const bearing = item.bearing;
         const isUserLocation = item.isUserLocation;
         const icon = item.icon;
+        if (item.properties[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+            const fileName = item.properties?.[CATEGORY_NAME];
+            const trackFile = ctx.listFiles?.uniqueFiles.find((f) => f.name === fileName);
+            const dist = `${convertMeters(getDist(trackFile), ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
+            const time = getTime(trackFile);
+            const info = `${dist}${time ? ` · ${time}` : ''}`;
+            return { ...res, icon, distance, bearing, isUserLocation, info };
+        }
         return { ...res, icon, distance, bearing, isUserLocation };
     }
 

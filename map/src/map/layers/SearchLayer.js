@@ -44,6 +44,7 @@ export const SEARCH_ICON_MAP_LOCATION = 'location';
 export const SEARCH_ICON_MAP_BUILDING = 'house';
 export const SEARCH_ICON_MAP_STREET = 'street';
 export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
+export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
 
 export const ZOOM_TO_MAP = 17;
 
@@ -57,6 +58,7 @@ export const searchTypeMap = {
     CITY: 'CITY',
     TOWN: 'TOWN',
     VILLAGE: 'VILLAGE',
+    GPX_TRACK: 'GPX_TRACK',
 };
 
 export const typeIconMap = {
@@ -64,6 +66,7 @@ export const typeIconMap = {
     [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
     [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
     [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
+    [searchTypeMap.GPX_TRACK]: SEARCH_ICON_MAP_GPX_TRACK,
 };
 
 export function getObjIdSearch(obj) {
