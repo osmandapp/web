@@ -193,6 +193,7 @@ export default function SearchResultItem({ item, typeItem, index }) {
             const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
             if (!file) return;
             file.mapObj = true; 
+            file.openedFromSearch = true;
             const newTracks = await openTrackOnMap({
                 file,
                 showOnMap: true,

@@ -28,14 +28,12 @@ export default async function test() {
     const trackResultId = `se-${trackName}.gpx`;
     await clickBy(By.id(trackResultId));
     await waitBy(By.id('se-track-context-menu'));
+    await waitBy(By.id(`se-track-${trackName}`));
 
-//    await clickBy(By.id('se-button-back'));
+    await clickBy(By.id('se-button-back'));
 
-//    await waitBy(By.id('se-search-results'));
-//    await waitBy(trackResult);
-
-//    const loading = await waitBy(By.id('se-loading-page'), { optional: true });
-//    await assert(!loading, 'Search should show previous result list, not loading spinner');
+    await waitBy(By.id('se-search-results'));
+    await waitBy(By.id(trackResultId));
 
     await clickBy(By.id('se-show-menu-tracks'));
     await waitBy(By.id(`se-cloud-track-${trackName}`));
