@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Dialog, DialogActions, DialogContent, DialogTitle, Popover, Slider, Typography } from '@mui/material';
+import { Box, Dialog, DialogActions, DialogContent, DialogTitle, Slider, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import {
-    hexToRgba,
     hsvToRgb,
     parseCssRgb,
     parseColorToRgba,
@@ -14,27 +13,9 @@ import {
 } from '../../../../util/ColorUtil';
 import GrayBtnWithBlueHover from '../../../../frame/components/btns/GrayBtnWithBlueHover';
 import PrimaryBtn from '../../../../frame/components/btns/PrimaryBtn';
-import { ReactComponent as BackIcon } from '../../../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as ForwardIcon } from '../../../../assets/icons/ic_arrow_forward.svg';
-import { ReactComponent as AppearanceIcon } from '../../../../assets/icons/ic_action_appearance.svg';
 import styles from '../wptEditPanel.module.css';
 
 const SV_STEP_KEY = 0.03;
-const FORMATS = ['HEX', 'RGBA', 'ARGB'];
-const PRESET_COLORS = [
-    '#000000',
-    '#808080',
-    '#ffffff',
-    '#ff0000',
-    '#ff8000',
-    '#ffff00',
-    '#00ff00',
-    '#00ffff',
-    '#0000ff',
-    '#4b0082',
-    '#8000ff',
-    '#ff00ff',
-];
 
 export default function ColorPickerDialog({ open, initialColor, onApply, onClose }) {
     const { t } = useTranslation();
@@ -43,9 +24,6 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
     // Prevents the picker→inputText sync effect from running when the text
     // input itself triggered the picker state change (avoids cursor-jump loops).
     const skipSyncRef = useRef(false);
-    // Stores the color at open time (Before) and the last picked color (After).
-    const initialColorRef = useRef(initialColor);
-    const afterColorRef = useRef(initialColor);
 
     const [hue, setHue] = useState(220);
     const [saturation, setSaturation] = useState(0.8);
@@ -53,21 +31,17 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
     const [alpha, setAlpha] = useState(255);
     const [dragging, setDragging] = useState(false);
     const [inputText, setInputText] = useState('');
-    const [inputFormat, setInputFormat] = useState('HEX');
-    const [presetsAnchor, setPresetsAnchor] = useState(null);
 
     // Initialise all state when dialog opens.
     useEffect(() => {
         if (open && initialColor) {
-            initialColorRef.current = initialColor;
-            afterColorRef.current = initialColor;
             const { r, g, b, a } = parseColorToRgba(initialColor);
             const { h, s, v } = rgbToHsv(r, g, b);
             setHue(h);
             setSaturation(s);
             setColorValue(v);
             setAlpha(a);
-            setInputText(formatColor(inputFormat, r, g, b, a));
+            setInputText(formatColor(r, g, b, a));
         }
     }, [open, initialColor]);
 
@@ -78,8 +52,8 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
             return;
         }
         const { r, g, b } = hsvToRgb(hue, saturation, colorValue);
-        setInputText(formatColor(inputFormat, r, g, b, alpha));
-    }, [hue, saturation, colorValue, alpha, inputFormat]);
+        setInputText(formatColor(r, g, b, alpha));
+    }, [hue, saturation, colorValue, alpha]);
 
     // Pointer drag on the SV gradient.
     useEffect(() => {
@@ -128,37 +102,9 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
         if (e.key === 'ArrowDown') setColorValue((v) => Math.max(0, v - SV_STEP_KEY));
     }
 
-    function handleFormatChange(fmt) {
-        setInputFormat(fmt);
-        const { r, g, b } = hsvToRgb(hue, saturation, colorValue);
-        setInputText(formatColor(fmt, r, g, b, alpha));
-    }
-
-    function applyColorFromHex(hex) {
-        if (!hex) return;
-        const { r, g, b, a } = parseColorToRgba(hex);
-        const { h, s, v } = rgbToHsv(r, g, b);
-        skipSyncRef.current = true;
-        setHue(h);
-        setSaturation(s);
-        setColorValue(v);
-        setAlpha(a);
-    }
-
-    function handleBefore() {
-        // Save current "after" color before reverting, then apply "before".
-        const { r, g, b } = hsvToRgb(hue, saturation, colorValue);
-        afterColorRef.current = toColorString(r, g, b, alpha);
-        applyColorFromHex(initialColorRef.current);
-    }
-
-    function handleAfter() {
-        applyColorFromHex(afterColorRef.current);
-    }
-
     function handleInputChange(raw) {
         setInputText(raw);
-        const parsed = parseColorInput(inputFormat, raw);
+        const parsed = parseColorInput(raw);
         if (!parsed) return;
         const { r, g, b, a } = parsed;
         const { h, s, v } = rgbToHsv(r, g, b);
@@ -174,11 +120,10 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
         const pasted = e.clipboardData.getData('text');
         const detected = detectFormatAndParse(pasted);
         if (!detected) return;
-        const { format, r, g, b, a } = detected;
+        const { r, g, b, a } = detected;
         const { h, s, v } = rgbToHsv(r, g, b);
         skipSyncRef.current = true;
-        setInputFormat(format);
-        setInputText(formatColor(format, r, g, b, a));
+        setInputText(pasted.trim());
         setHue(h);
         setSaturation(s);
         setColorValue(v);
@@ -187,18 +132,10 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
 
     function handleInputBlur() {
         // If the user left an incomplete / invalid value, snap back to current color.
-        if (!parseColorInput(inputFormat, inputText)) {
+        if (!parseColorInput(inputText) && !detectFormatAndParse(inputText)) {
             const { r, g, b } = hsvToRgb(hue, saturation, colorValue);
-            setInputText(formatColor(inputFormat, r, g, b, alpha));
+            setInputText(formatColor(r, g, b, alpha));
         }
-    }
-
-    function handlePresetSelect(color) {
-        applyColorFromHex(color);
-        const { r, g, b, a } = parseColorToRgba(color);
-        setInputFormat('HEX');
-        setInputText(formatColor('HEX', r, g, b, a));
-        setPresetsAnchor(null);
     }
 
     function handleApply() {
@@ -210,9 +147,7 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
     const alphaPercent = Math.round((alpha / 255) * 100);
     const selectedCssColor = `rgb(${r} ${g} ${b})`;
     const swatchCssColor = alpha < 255 ? `rgba(${r},${g},${b},${(alpha / 255).toFixed(3)})` : selectedCssColor;
-    const inputIsInvalid = inputText.length > 0 && !parseColorInput(inputFormat, inputText);
-    const showHashPrefix = inputFormat === 'HEX' || inputFormat === 'ARGB';
-    const beforeCssColor = initialColorRef.current ? hexToRgba(initialColorRef.current) : 'transparent';
+    const inputIsInvalid = inputText.length > 0 && !parseColorInput(inputText) && !detectFormatAndParse(inputText);
 
     return (
         <Dialog
@@ -291,74 +226,6 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
                     />
                 </Box>
 
-                {/* Format chips + prev/next arrows */}
-                <Box className={styles.colorPickerFormatRow}>
-                    {FORMATS.map((fmt) => (
-                        <button
-                            key={fmt}
-                            type="button"
-                            className={`${styles.colorPickerFormatChip}${inputFormat === fmt ? ` ${styles.colorPickerFormatChipActive}` : ''}`}
-                            onClick={() => handleFormatChange(fmt)}
-                        >
-                            {fmt}
-                        </button>
-                    ))}
-                    <Box className={styles.colorPickerFormatArrows}>
-                        <button
-                            type="button"
-                            className={styles.colorPickerFormatArrowBtn}
-                            onClick={handleBefore}
-                            aria-label="Before"
-                            title="Revert to before"
-                        >
-                            <BackIcon />
-                        </button>
-                        <Box className={styles.colorPickerBeforeAfterSwatches} aria-hidden>
-                            <Box className={styles.colorPickerBeforeSwatch} style={{ background: beforeCssColor }} />
-                            <Box className={styles.colorPickerAfterSwatch} style={{ background: swatchCssColor }} />
-                        </Box>
-                        <button
-                            type="button"
-                            className={styles.colorPickerFormatArrowBtn}
-                            onClick={handleAfter}
-                            aria-label="After"
-                            title="Restore after color"
-                        >
-                            <ForwardIcon />
-                        </button>
-                        <button
-                            type="button"
-                            className={styles.colorPickerFormatArrowBtn}
-                            onClick={(e) => setPresetsAnchor(e.currentTarget)}
-                            aria-label="Preset colors"
-                            title="Preset colors"
-                        >
-                            <AppearanceIcon />
-                        </button>
-                        <Popover
-                            open={Boolean(presetsAnchor)}
-                            anchorEl={presetsAnchor}
-                            onClose={() => setPresetsAnchor(null)}
-                            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-                            PaperProps={{ className: styles.colorPickerPresetsPopover }}
-                        >
-                            <Box className={styles.colorPickerPresetsGrid}>
-                                {PRESET_COLORS.map((color) => (
-                                    <button
-                                        key={color}
-                                        type="button"
-                                        className={styles.colorPickerPresetSwatch}
-                                        style={{ background: color }}
-                                        onClick={() => handlePresetSelect(color)}
-                                        title={color.toUpperCase()}
-                                        aria-label={color.toUpperCase()}
-                                    />
-                                ))}
-                            </Box>
-                        </Popover>
-                    </Box>
-                </Box>
                 <Box className={styles.colorPickerHexRow}>
                     <Box className={styles.colorPickerSwatch} aria-hidden>
                         <Box className={styles.colorPickerSwatchColor} style={{ background: swatchCssColor }} />
@@ -366,7 +233,7 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
                     <Box
                         className={`${styles.colorPickerHexWrap}${inputIsInvalid ? ` ${styles.colorPickerHexWrapError}` : ''}`}
                     >
-                        {showHashPrefix && <span className={styles.colorPickerHexPrefix}>#</span>}
+                        <span className={styles.colorPickerHexPrefix}>#</span>
                         <input
                             id="se-color-picker-hex"
                             className={styles.colorPickerHexInput}
@@ -375,13 +242,11 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
                             onFocus={(e) => e.target.select()}
                             onBlur={handleInputBlur}
                             onPaste={handlePaste}
-                            maxLength={inputFormat === 'RGBA' ? 19 : 8}
+                            maxLength={8}
                             spellCheck={false}
                             autoComplete="off"
                             autoCorrect="off"
-                            placeholder={
-                                inputFormat === 'RGBA' ? 'R, G, B, A' : inputFormat === 'ARGB' ? 'AARRGGBB' : 'RRGGBB'
-                            }
+                            placeholder="RRGGBB"
                             aria-label="Color code"
                         />
                     </Box>
@@ -395,72 +260,49 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
     );
 }
 
-// Formats r,g,b,a → display string for the given format.
-// HEX  → RRGGBB / RRGGBBAA  (CSS standard, alpha last)
-// RGBA → "R, G, B, A"       (channels 0–255)
-// ARGB → RRGGBB / AARRGGBB  (OsmAnd format, alpha first)
-function formatColor(format, r, g, b, a) {
+// Formats r,g,b,a → HEX display string: RRGGBB (opaque) or RRGGBBAA (with alpha).
+function formatColor(r, g, b, a) {
     const h = (v) => v.toString(16).padStart(2, '0').toUpperCase();
-    if (format === 'HEX') {
-        return a === 255 ? `${h(r)}${h(g)}${h(b)}` : `${h(r)}${h(g)}${h(b)}${h(a)}`;
-    }
-    if (format === 'RGBA') {
-        return a === 255 ? `${r}, ${g}, ${b}` : `${r}, ${g}, ${b}, ${a}`;
-    }
-    return a === 255 ? `${h(r)}${h(g)}${h(b)}` : `${h(a)}${h(r)}${h(g)}${h(b)}`;
+
+    return a === 255 ? `${h(r)}${h(g)}${h(b)}` : `${h(r)}${h(g)}${h(b)}${h(a)}`;
 }
 
-// Parses a user-typed string → {r,g,b,a} or null if invalid / incomplete.
-function parseColorInput(format, text) {
-    if (format === 'HEX') {
-        const clean = text.replace(/[^0-9a-fA-F]/g, '');
-        if (clean.length !== 6 && clean.length !== 8) return null;
-        if (clean.length === 6) return parseColorToRgba('#' + clean);
-        return parseHexAlphaLast(clean);
-    }
-    if (format === 'RGBA') {
-        return parseRgbaChannels(text);
-    }
+// Parses a user-typed HEX string → {r,g,b,a} or null if invalid / incomplete.
+// Accepts RRGGBB (opaque) or RRGGBBAA (alpha last).
+function parseColorInput(text) {
     const clean = text.replace(/[^0-9a-fA-F]/g, '');
     if (clean.length !== 6 && clean.length !== 8) return null;
+    if (clean.length === 6) return parseColorToRgba('#' + clean);
 
-    return parseColorToRgba('#' + clean);
+    return parseHexAlphaLast(clean);
 }
 
 // Auto-detects color format from arbitrary pasted text and parses it.
 // Supports: css rgb()/rgba(), comma-separated R,G,B[,A],
 // #RRGGBB / #RRGGBBAA (HEX), RRGGBB (HEX), AARRGGBB (ARGB).
-// Returns { format, r, g, b, a } or null if unrecognised.
+// Returns {r,g,b,a} or null if unrecognised.
 function detectFormatAndParse(text) {
     const trimmed = text.trim();
 
     // CSS rgb() / rgba() — e.g. "rgb(255, 128, 0)" or "rgba(255,128,0,0.5)"
     const cssRgb = parseCssRgb(trimmed);
-    if (cssRgb) return { format: 'RGBA', ...cssRgb };
+    if (cssRgb) return cssRgb;
 
     // Comma-separated integers — e.g. "255, 128, 0" or "255,128,0,128"
     if (trimmed.includes(',')) {
         const rgba = parseRgbaChannels(trimmed);
-        if (rgba) return { format: 'RGBA', ...rgba };
+        if (rgba) return rgba;
     }
 
     // Hex strings
     const hasHash = trimmed.startsWith('#');
     const clean = trimmed.replace(/^#/, '').replace(/\s/g, '');
     if (/^[0-9a-fA-F]+$/.test(clean)) {
-        if (clean.length === 3) {
-            return { format: 'HEX', ...parseShortHex(clean) };
-        }
-        if (clean.length === 6) {
-            return { format: 'HEX', ...parseColorToRgba('#' + clean) };
-        }
+        if (clean.length === 3) return parseShortHex(clean);
+        if (clean.length === 6) return parseColorToRgba('#' + clean);
         if (clean.length === 8) {
-            if (hasHash) {
-                // #RRGGBBAA
-                return { format: 'HEX', ...parseHexAlphaLast(clean) };
-            }
-            // AARRGGBB without #
-            return { format: 'ARGB', ...parseColorToRgba('#' + clean) };
+            // #RRGGBBAA — alpha last; AARRGGBB without # — alpha first (OsmAnd)
+            return hasHash ? parseHexAlphaLast(clean) : parseColorToRgba('#' + clean);
         }
     }
 

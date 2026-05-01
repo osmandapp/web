@@ -344,91 +344,6 @@
 
 /* ── Format selector chips ─────────────────────────────────────────────────── */
 
-.colorPickerFormatRow {
-    display: flex;
-    gap: 6px;
-    margin-top: 14px;
-    margin-bottom: 8px;
-}
-
-.colorPickerFormatChip {
-    padding: 3px 10px;
-    border-radius: 20px;
-    border: 1.5px solid rgba(33, 33, 33, 0.15);
-    background: transparent;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    color: var(--text-secondary, #888);
-    cursor: pointer;
-    transition:
-        background 0.15s ease,
-        border-color 0.15s ease,
-        color 0.15s ease;
-    line-height: 1.4;
-}
-
-.colorPickerFormatChip:hover {
-    border-color: color-mix(in srgb, var(--selected-color, #237bff) 50%, transparent);
-    color: var(--selected-color, #237bff);
-}
-
-.colorPickerFormatChipActive {
-    background: color-mix(in srgb, var(--selected-color, #237bff) 12%, transparent);
-    border-color: color-mix(in srgb, var(--selected-color, #237bff) 55%, transparent);
-    color: var(--selected-color, #237bff);
-}
-
-.colorPickerFormatArrows {
-    display: flex;
-    gap: 4px;
-    margin-left: auto;
-    align-items: center;
-}
-
-.colorPickerFormatArrowBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    padding: 0;
-    border: 1.5px solid rgba(33, 33, 33, 0.15);
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
-    color: var(--text-secondary, #888);
-    transition: background 0.15s ease, color 0.15s ease;
-    flex-shrink: 0;
-}
-
-.colorPickerFormatArrowBtn svg {
-    fill: currentColor;
-    width: 16px;
-    height: 16px;
-}
-
-.colorPickerFormatArrowBtn:hover {
-    background: #f5f5f5;
-    color: var(--selected-color, #237bff);
-}
-
-.colorPickerBeforeAfterSwatches {
-    display: flex;
-    width: 38px;
-    height: 18px;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid rgba(33, 33, 33, 0.18);
-    flex-shrink: 0;
-}
-
-.colorPickerBeforeSwatch,
-.colorPickerAfterSwatch {
-    flex: 1;
-}
-
-
 /* ── Color code input row ──────────────────────────────────────────────────── */
 
 .colorPickerHexRow {
@@ -516,82 +431,10 @@
     caret-color: var(--selected-color, #237bff);
 }
 
-/* ── Before / After preview ────────────────────────────────────────────────── */
-
-.colorPickerBeforeAfter {
-    display: flex;
-    height: 44px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 12px;
-    border: 1px solid rgba(33, 33, 33, 0.1);
-    /* checkered background shows through transparent halves */
-    background-color: #fff;
-    background-image:
-        linear-gradient(45deg, #ccc 25%, transparent 25%),
-        linear-gradient(-45deg, #ccc 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #ccc 75%),
-        linear-gradient(-45deg, transparent 75%, #ccc 75%);
-    background-size: 8px 8px;
-    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
-}
-
-.colorPickerBeforeAfterHalf {
-    flex: 1;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 5px;
-}
-
-.colorPickerBeforeAfterHalf:first-child {
-    border-right: 1px solid rgb(255 255 255 / 0.35);
-}
-
-.colorPickerBeforeAfterLabel {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    color: rgb(255 255 255 / 0.82);
-    text-shadow: 0 1px 3px rgb(0 0 0 / 0.45);
-    pointer-events: none;
-    user-select: none;
-}
-
 .colorPickerPaper:global(.MuiPaper-root) {
-    min-width: 330px;
+    min-width: 300px;
     border-radius: 16px;
     overflow-x: hidden;
-}
-
-.colorPickerPresetsPopover:global(.MuiPaper-root) {
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.colorPickerPresetsGrid {
-    display: grid;
-    grid-template-columns: repeat(6, 22px);
-    gap: 6px;
-    padding: 10px;
-}
-
-.colorPickerPresetSwatch {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-
-.colorPickerPresetSwatch:hover {
-    transform: scale(1.2);
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .colorPickerTitle:global(.MuiDialogTitle-root) {
