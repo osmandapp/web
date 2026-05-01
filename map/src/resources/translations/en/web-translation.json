@@ -355,6 +355,14 @@
     "editor_remove_link": "Remove link",
     "editor_link_url_prompt": "URL",
     "wpt_appearance_icon_label": "Icon",
+    "wpt_appearance_color_label": "Color",
+    "wpt_select_shape": "Select shape",
     "wpt_icon_selection_title": "All icons",
-    "wpt_icon_selection_last_used": "Last used"
+    "wpt_icon_selection_last_used": "Last used",
+    "all_colors_title": "All colors",
+    "color_picker_title": "Pick a color",
+    "color_picker_hue": "Hue",
+    "color_picker_sv_plane": "Saturation and brightness. Drag or use arrow keys.",
+    "color_picker_alpha": "Opacity",
+    "color_palette_save_failed": "Could not save color palette to cloud"
 }

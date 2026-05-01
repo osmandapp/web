@@ -1,7 +1,7 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
 import L from 'leaflet';
-import Utils from '../../util/Utils';
+import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
 
 export const SELECTED_PIN_SIZE = 70;
@@ -18,7 +18,7 @@ const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
 
 const toColor = (c) => {
     if (!c) return DEFAULT_WPT_COLOR;
-    if (c.startsWith('#')) return Utils.hexToRgba(c);
+    if (c.startsWith('#')) return hexToRgba(c);
     return c;
 };
 

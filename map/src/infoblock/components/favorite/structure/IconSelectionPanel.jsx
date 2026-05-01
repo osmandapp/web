@@ -11,6 +11,7 @@ import ColorBlock from '../../../../frame/components/other/ColorBlock';
 import WptIconPreview from './WptIconPreview';
 import isEmpty from 'lodash-es/isEmpty';
 import styles from '../wptEditPanel.module.css';
+import menuStyles from '../../../../menu/trackfavmenu.module.css';
 import { ReactComponent as ListFlatIcon } from '../../../../assets/features/ic_action_list_flat.svg';
 
 const SELECTION_COLOR = '#237bff';
@@ -89,7 +90,7 @@ export default function IconSelectionPanel({
 
     const rightContent = (
         <>
-            <IconButton className={styles.categoryMenuBtn} onClick={openMenu} size="small">
+            <IconButton className={menuStyles.appBarIcon} onClick={openMenu} size="small">
                 <ListFlatIcon />
             </IconButton>
             <Menu

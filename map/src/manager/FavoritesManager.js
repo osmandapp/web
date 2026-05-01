@@ -5,6 +5,7 @@ import MarkerOptions, {
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
 import Utils, { getDistance, quickNaNfix } from '../util/Utils';
+import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import TracksManager from './track/TracksManager';
@@ -60,8 +61,11 @@ function GroupResult(clienttimems, updatetimems, data) {
 
 function getShapesSvg(color) {
     let res = {};
+    // Convert OsmAnd color formats (#rrggbb / #aarrggbb) to a CSS color string
+    // so SVG `fill="..."` honours alpha for transparent palette entries.
+    const svgColor = hexToRgba(color);
     shapes.forEach((shape) => {
-        res[shape] = getBackground(color, shape);
+        res[shape] = getBackground(svgColor, shape);
     });
     return res;
 }
@@ -237,7 +241,7 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
         }
     }
     if (color) {
-        return Utils.hexToRgba(color);
+        return hexToRgba(color);
     }
 }
 

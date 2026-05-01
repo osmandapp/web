@@ -2,7 +2,7 @@ import styles from '../resources/mapStyles/styleRulesResult.json';
 import mapKeys from 'lodash-es/mapKeys';
 import isEmpty from 'lodash-es/isEmpty';
 import i18n from '../i18n';
-import Utils from '../util/Utils';
+import { hexToRgba } from '../util/ColorUtil';
 import { Interaction } from 'chart.js';
 import { getRelativePosition } from 'chart.js/helpers';
 
@@ -91,7 +91,7 @@ function parseType(styles, tag, style = DEFAULT_STYLE) {
         }
         res[data.value ? data.value : attr] = {
             name: name,
-            color: Utils.hexToRgba(data.attrColorValue),
+            color: hexToRgba(data.attrColorValue),
         };
         if (data.value === 'road') {
             res[UNDEFINED_DATA] = res.road;

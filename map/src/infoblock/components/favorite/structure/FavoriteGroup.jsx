@@ -2,7 +2,7 @@ import { Box, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItem
 import { Add, Folder } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import FavoritesManager from '../../../../manager/FavoritesManager';
-import Utils from '../../../../util/Utils';
+import { hexToRgba } from '../../../../util/ColorUtil';
 import AddNewGroupDialog from '../AddNewGroupDialog';
 import values from 'lodash-es/values';
 import AppContext from '../../../../context/AppContext';
@@ -23,8 +23,8 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups,
             ? group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? '' : group.name]
             : group;
         let colorGroup;
-        if (g && g.color) {
-            colorGroup = Utils.hexToRgba(g.color);
+        if (g?.color) {
+            colorGroup = hexToRgba(g.color);
         }
         let size = g && (g.groupSize ? g.groupSize : g.points?.length);
         return (

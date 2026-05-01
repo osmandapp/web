@@ -9,10 +9,10 @@ import FavoriteAddress from './structure/FavoriteAddress';
 import FavoriteDescription from './structure/FavoriteDescription';
 import DescriptionPanel from './structure/DescriptionPanel';
 import FavoriteGroup from './structure/FavoriteGroup';
-import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
 import IconSelectionPanel from './structure/IconSelectionPanel';
-import WptIconPreview from './structure/WptIconPreview';
+import ColorSelectionPanel from './structure/ColorSelectionPanel';
+import WptIconPreview, { getShapeSvg } from './structure/WptIconPreview';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
@@ -34,9 +34,11 @@ import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import ColorBlock from '../../../frame/components/other/ColorBlock';
 
 const PANEL_CONTENT_WIDTH = 320;
+const APPEARANCE_PREVIEW_SIZE = 36;
 
 export default function WptEditPanel({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -60,8 +62,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteAddress, setFavoriteAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [favoriteDescription, setFavoriteDescription] = useState(editWpt?.desc ?? '');
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
-    const [showDescriptionPanel, setShowDescriptionPanel] = useState(false);
-    const [showIconSelectionPanel, setShowIconSelectionPanel] = useState(false);
+    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color'
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteIcon, setFavoriteIcon] = useState(
         editWpt?.icon ?? poi?.options?.[FINAL_POI_ICON_NAME] ?? MarkerOptions.DEFAULT_WPT_ICON
@@ -281,6 +282,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         const oldGroupName = useSelected ? ctx.selectedGpxFile.file.name : editWpt.group.file.name;
 
         const currentWpt = getCurrentWpt(selectedGroupName);
+        if (!currentWpt) {
+            setProcess(false);
+            return;
+        }
         const arrWpt = useSelected ? ctx.selectedGpxFile.trackData?.wpts : ctx.favorites.mapObjs[oldGroupId].wpts;
 
         const newGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
@@ -422,6 +427,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         );
     }
 
+    function togglePanel(panel) {
+        setActivePanel((prev) => (prev === panel ? null : panel));
+    }
+
     const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
     const defaultGroup = isAddTrackWpt
         ? DEFAULT_GROUP_NAME_POINTS_GROUPS
@@ -438,21 +447,29 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     return (
         <>
-            {showDescriptionPanel && (
+            {activePanel === 'description' && (
                 <DescriptionPanel
                     description={favoriteDescription}
                     setDescription={setFavoriteDescription}
-                    onClose={() => setShowDescriptionPanel(false)}
+                    onClose={() => setActivePanel(null)}
                 />
             )}
-            {showIconSelectionPanel && (
+            {activePanel === 'icon' && (
                 <IconSelectionPanel
                     selectedIcon={favoriteIcon}
                     setSelectedIcon={setFavoriteIcon}
                     favoriteIconCategories={favoriteIconCategories}
                     selectedGpxFile={ctx.selectedGpxFile}
                     add={!isEditMode}
-                    onClose={() => setShowIconSelectionPanel(false)}
+                    onClose={() => setActivePanel(null)}
+                />
+            )}
+            {activePanel === 'color' && (
+                <ColorSelectionPanel
+                    selectedColor={favoriteColor}
+                    setSelectedColor={setFavoriteColor}
+                    favoriteShape={favoriteShape}
+                    onClose={() => setActivePanel(null)}
                 />
             )}
             <Box className={styles.panel}>
@@ -507,7 +524,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     <ThickDivider />
                     <FavoriteDescription
                         favoriteDescription={favoriteDescription}
-                        onClick={() => setShowDescriptionPanel(true)}
+                        onClick={() => togglePanel('description')}
                     />
                     <ThickDivider />
                     <Box className={styles.fields}>
@@ -523,18 +540,32 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     <SimpleItemWithRightIcon
                         id="se-fav-icon-row"
                         name={t('web:wpt_appearance_icon_label')}
-                        onClick={() => setShowIconSelectionPanel(true)}
+                        onClick={() => togglePanel('icon')}
                         rightIcon={
-                            <WptIconPreview icon={favoriteIcon} color={favoriteColor} shape={favoriteShape} size={36} />
+                            <WptIconPreview
+                                icon={favoriteIcon}
+                                color={favoriteColor}
+                                shape={favoriteShape}
+                                size={APPEARANCE_PREVIEW_SIZE}
+                            />
                         }
                     />
+                    <DividerWithMargin margin={'16px'} />
+                    <SimpleItemWithRightIcon
+                        id="se-fav-color-row"
+                        name={t('web:wpt_appearance_color_label')}
+                        onClick={() => togglePanel('color')}
+                        rightIcon={
+                            <Box
+                                sx={{ width: APPEARANCE_PREVIEW_SIZE, height: APPEARANCE_PREVIEW_SIZE }}
+                                dangerouslySetInnerHTML={{
+                                    __html: getShapeSvg(favoriteShape, favoriteColor, APPEARANCE_PREVIEW_SIZE),
+                                }}
+                            />
+                        }
+                    />
+                    <DividerWithMargin margin={'16px'} />
                     <Box className={styles.fields}>
-                        <FavoriteColor
-                            favoriteColor={favoriteColor}
-                            setFavoriteColor={setFavoriteColor}
-                            defaultColor={isEditMode ? editWpt.color : MarkerOptions.DEFAULT_WPT_COLOR}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                        />
                         <FavoriteShape
                             color={favoriteColor}
                             favoriteShape={favoriteShape}
