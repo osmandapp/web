@@ -45,3 +45,417 @@
 .descriptionSection {
     padding-bottom: 9px;
 }
+
+.iconSelectionContent {
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.iconGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 48px);
+    column-gap: 9px;
+    row-gap: 9px;
+    padding: 4px 12px;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.iconGridItem {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.iconGridButton {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+}
+
+.iconGridButton:hover {
+    background-color: transparent !important;
+}
+
+.addColorBtn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.addColorShape {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(35, 123, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #237bff;
+}
+
+.colorCircleContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.colorCheckerBg {
+    background-image:
+        linear-gradient(45deg, #bbb 25%, transparent 25%),
+        linear-gradient(-45deg, #bbb 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #bbb 75%),
+        linear-gradient(-45deg, transparent 75%, #bbb 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    background-color: white;
+}
+
+.wptIconPreview {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wptIconPreviewShape {
+    position: absolute;
+}
+
+.wptIconPreviewIcon {
+    position: absolute;
+}
+
+.wptIconPreviewRing {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.colorPickerGradient {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    margin: 12px 0 16px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    cursor: crosshair;
+    user-select: none;
+    touch-action: none;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.colorPickerGradient:focus,
+.colorPickerGradient:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+.colorPickerGradientWhite {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, white, transparent);
+    border-radius: 8px;
+}
+
+.colorPickerGradientBlack {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, black);
+    border-radius: 8px;
+}
+
+.colorPickerCursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border: 2px solid rgb(255 255 255 / 0.95);
+    --sv-picker-rgb: 128 128 128;
+    box-shadow:
+        0 0 5px rgb(var(--sv-picker-rgb) / 0.78),
+        0 0 12px rgb(var(--sv-picker-rgb) / 0.62),
+        0 0 22px rgb(var(--sv-picker-rgb) / 0.48),
+        inset 0 1px 2px rgb(255 255 255 / 0.55);
+    transition: box-shadow 0.2s ease;
+}
+
+.colorPickerGradient:active .colorPickerCursor {
+    box-shadow:
+        0 0 9px rgb(var(--sv-picker-rgb) / 0.85),
+        0 0 18px rgb(var(--sv-picker-rgb) / 0.68),
+        0 0 32px rgb(var(--sv-picker-rgb) / 0.52),
+        inset 0 1px 2px rgb(255 255 255 / 0.55);
+}
+
+.colorPickerGradient:focus-visible .colorPickerCursor {
+    box-shadow:
+        0 0 7px rgb(var(--sv-picker-rgb) / 0.8),
+        0 0 16px rgb(var(--sv-picker-rgb) / 0.65),
+        0 0 28px rgb(var(--sv-picker-rgb) / 0.5),
+        inset 0 1px 2px rgb(255 255 255 / 0.55);
+}
+
+.colorPickerHueTrack {
+    position: relative;
+    height: 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(33, 33, 33, 0.12);
+    overflow: visible;
+    background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    box-sizing: border-box;
+}
+
+.colorPickerSlider {
+    padding: 0;
+}
+
+/* Тонкая полоска как у старых <input type="range">; слайдер центрируем поверх 12px-трека */
+.colorPickerHueTrack .colorPickerSlider,
+.colorPickerAlphaShell > .colorPickerSlider {
+    position: absolute;
+    z-index: 1;
+    left: 2px;
+    right: 2px;
+    top: 50%;
+    width: auto;
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+.colorPickerSlider :global(.MuiSlider-root) {
+    padding: 10px 0 !important;
+    color: var(--selected-color);
+}
+
+.colorPickerSlider :global(.MuiSlider-rail) {
+    height: 4px !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    border-radius: 2px !important;
+}
+
+.colorPickerSlider :global(.MuiSlider-track) {
+    height: 4px !important;
+    opacity: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 2px !important;
+}
+
+.colorPickerSlider :global(.MuiSlider-thumb) {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgb(0 0 0 / 0.06) !important;
+    background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(248 248 250) 100%) !important;
+    box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--selected-color) 22%, transparent),
+        0 0 10px color-mix(in srgb, var(--selected-color) 28%, transparent),
+        0 3px 10px rgb(0 0 0 / 0.14),
+        0 1px 2px rgb(0 0 0 / 0.08),
+        inset 0 1px 1px rgb(255 255 255 / 0.95),
+        inset 0 -1px 2px rgb(0 0 0 / 0.05);
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+.colorPickerSlider :global(.MuiSlider-thumb):hover,
+.colorPickerSlider :global(.MuiSlider-thumb.Mui-active),
+.colorPickerSlider :global(.MuiSlider-thumb.Mui-focusVisible) {
+    box-shadow:
+        0 0 0 3px color-mix(in srgb, var(--selected-color) 30%, transparent),
+        0 0 18px color-mix(in srgb, var(--selected-color) 38%, transparent),
+        0 4px 14px rgb(0 0 0 / 0.16),
+        0 2px 4px rgb(0 0 0 / 0.1),
+        inset 0 1px 1px rgb(255 255 255 / 0.95),
+        inset 0 -1px 2px rgb(0 0 0 / 0.05);
+}
+
+.colorPickerAlphaLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.colorPickerAlphaShell {
+    position: relative;
+    height: 12px;
+    margin-bottom: 9px;
+    border-radius: 6px;
+    border: 1px solid rgba(33, 33, 33, 0.12);
+    overflow: visible;
+    background-color: white;
+    background-image:
+        linear-gradient(45deg, #cfcfcf 25%, transparent 25%),
+        linear-gradient(-45deg, #cfcfcf 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #cfcfcf 75%),
+        linear-gradient(-45deg, transparent 75%, #cfcfcf 75%);
+    background-size: 8px 8px;
+    background-position:
+        0 0,
+        0 4px,
+        4px -4px,
+        -4px 0px;
+    box-sizing: border-box;
+}
+
+.colorPickerAlphaGradientOverlay {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.colorPickerLabel {
+    color: var(--text-secondary);
+}
+
+/* ── Format selector chips ─────────────────────────────────────────────────── */
+
+/* ── Color code input row ──────────────────────────────────────────────────── */
+
+.colorPickerHexRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* Colour swatch — checkered bg reveals transparency */
+.colorPickerSwatch {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1.5px solid rgba(33, 33, 33, 0.1);
+    background-color: #fff;
+    background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
+
+.colorPickerSwatchColor {
+    position: absolute;
+    inset: 0;
+}
+
+/* Hex field wrapper — pill shape */
+.colorPickerHexWrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 10px;
+    background: rgba(33, 33, 33, 0.045);
+    border: 1px solid rgba(33, 33, 33, 0.08);
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.colorPickerHexWrap:focus-within {
+    background: rgba(33, 33, 33, 0.025);
+    border-color: color-mix(in srgb, var(--selected-color, #237bff) 60%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--selected-color, #237bff) 14%, transparent);
+}
+
+.colorPickerHexWrapError {
+    border-color: rgba(211, 47, 47, 0.5);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.colorPickerHexPrefix {
+    color: var(--text-secondary, #888);
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    user-select: none;
+    margin-right: 2px;
+    flex-shrink: 0;
+}
+
+.colorPickerHexInput {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary, #212121);
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 0;
+    caret-color: var(--selected-color, #237bff);
+}
+
+.colorPickerPaper:global(.MuiPaper-root) {
+    min-width: 300px;
+    border-radius: 16px;
+    overflow-x: hidden;
+}
+
+.colorPickerTitle:global(.MuiDialogTitle-root) {
+    color: var(--text-primary);
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.colorPickerDialogContent:global(.MuiDialogContent-root) {
+    padding-top: 0;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    overflow: hidden;
+}
+
+.colorPickerActions:global(.MuiDialogActions-root) {
+    padding-top: 0;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    gap: 8px;
+}
+

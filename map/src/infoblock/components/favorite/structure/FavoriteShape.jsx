@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Box, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import FavoritesManager from '../../../../manager/FavoritesManager';
 
 export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, defaultBackground }) {
+    const { t } = useTranslation();
     const [selectFavoriteShape, setSelectFavoriteShape] = useState(false);
     let shapesSvg = FavoritesManager.getShapesSvg(color);
 
     return (
         <>
             <ListItemText>
-                <Typography noWrap>Select shape</Typography>
+                <Typography noWrap>{t('web:wpt_select_shape')}</Typography>
             </ListItemText>
             <Box
                 sx={{
@@ -18,7 +20,7 @@ export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, 
             >
                 {Object.entries(shapesSvg).map((shape, index) => {
                     return (
-                        <ListItem style={{ maxWidth: 71 }} component="div" key={index} disablePadding>
+                        <ListItem style={{ maxWidth: 71 }} component="div" key={shape[0]} disablePadding>
                             <ListItemButton
                                 id={`se-favorite-shape-${index}`}
                                 sx={{ maxHeight: 50 }}

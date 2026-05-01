@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import Utils from '../../util/Utils';
+import { hexToRgba } from '../../util/ColorUtil';
 import poiicons from '../../resources/generated/poiicons.json';
 import mapicons from '../../resources/generated/mapicons.json';
 import shadersicons from '../../resources/generated/shadersicons.json';
@@ -91,7 +91,7 @@ export function createPoiIcon({
             : point?.extensions?.color && point?.extensions.color !== 'null'
               ? point?.extensions.color
               : DEFAULT_WPT_COLOR;
-    colorBackground = Utils.hexToRgba(colorBackground);
+    colorBackground = hexToRgba(colorBackground);
     const shapeBackground = background ?? point?.background;
     let svg = getBackground(colorBackground, shapeBackground);
     if (backgroundSize) {
@@ -155,7 +155,7 @@ export function createPoiIcon({
 }
 
 export function getPoiCategoryIcon({ icon, color, background }) {
-    const colorBackground = Utils.hexToRgba(color);
+    const colorBackground = hexToRgba(color);
     const svg = getBackground(colorBackground, background);
     const allIconSize = DEFAULT_ICON_SIZE;
     const bsize = getBackgroundSize(background);

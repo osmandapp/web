@@ -12,6 +12,7 @@ import { getFavoriteId } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
+import { hexToRgba, numberToRgba } from '../../util/ColorUtil';
 import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
 
 export const TEMP_LAYER_FLAG = 'temp';
@@ -251,9 +252,9 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
             : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
     if (trackAppearance?.color) {
         if (typeof trackAppearance.color === 'string') {
-            color = Utils.hexToRgba(trackAppearance.color);
+            color = hexToRgba(trackAppearance.color);
         } else if (typeof trackAppearance.color === 'number') {
-            color = Utils.numberToRgba(trackAppearance.color);
+            color = numberToRgba(trackAppearance.color);
         }
     }
     const width = trackAppearance?.width ?? 'medium';
@@ -566,7 +567,7 @@ function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
         return secLatLng.equals(coords);
     });
     if (isSecondaryMarker) {
-        const color = point.color ? Utils.hexToRgba(point.color) : DEFAULT_WPT_COLOR;
+        const color = point.color ? hexToRgba(point.color) : DEFAULT_WPT_COLOR;
         if (!markerLayer.options.originalIcon && markerLayer.options.icon) {
             markerLayer.options.originalIcon = markerLayer.options.icon;
         }

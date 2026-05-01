@@ -8,6 +8,7 @@ import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import { getFiles } from '../../util.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
+import actionSelectFavoriteColorInWptEdit from '../../actions/favorites/actionSelectFavoriteColorInWptEdit.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -42,9 +43,14 @@ export default async function test() {
     await sendKeysBy(By.id('se-fav-group-name-input'), favoriteGroupName);
     await clickBy(By.id('se-add-new-fav-group-btn'));
     await waitByRemoved(By.id('se-add-new-fav-group-dialog'));
-    // add favorite to group
-    await clickBy(By.id('se-select-fav-color-0'));
-    await clickBy(By.id('se-favorite-icon-0'));
+    // pick a color (palette panel; empty palette → add via color picker)
+    await actionSelectFavoriteColorInWptEdit();
+    // open icon selection panel, pick first icon, go back
+    await clickBy(By.id('se-fav-icon-row'));
+    await waitBy(By.id('se-back-icon-selection-panel'));
+    await clickBy(By.id('se-fav-icon-last-used-0'));
+    await clickBy(By.id('se-back-icon-selection-panel'));
+    await waitByRemoved(By.id('se-back-icon-selection-panel'));
     await clickBy(By.id('se-favorite-shape-1'));
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));

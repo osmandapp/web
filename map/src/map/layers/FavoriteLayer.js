@@ -15,7 +15,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
-import Utils from '../../util/Utils';
+import { hexToRgba } from '../../util/ColorUtil';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
@@ -57,7 +57,7 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
     }
 
     if (isSecondaryMarker) {
-        const color = layer.options.color ? Utils.hexToRgba(layer.options.color) : DEFAULT_WPT_COLOR;
+        const color = layer.options.color ? hexToRgba(layer.options.color) : DEFAULT_WPT_COLOR;
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],
