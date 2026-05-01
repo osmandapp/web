@@ -64,7 +64,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
         const idx = contextMenu.index;
         closeContextMenu();
         const copy = { id: nextPaletteId(colors), value: colors[idx].value };
-        const updated = [...colors.slice(0, idx + 1), copy, ...colors.slice(idx + 1)];
+        const updated = [copy, ...colors];
         const ok = await saveColorPalette(updated, ctx.setNotification);
         if (ok) {
             setColors(updated);
@@ -105,7 +105,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
                 setSelectedColor(color);
             }
         } else {
-            const updated = [...colors, { id: nextPaletteId(colors), value: color }];
+            const updated = [{ id: nextPaletteId(colors), value: color }, ...colors];
             const ok = await saveColorPalette(updated, ctx.setNotification);
             if (!ok) return;
             setPickerOpen(false);

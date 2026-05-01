@@ -6,9 +6,7 @@ const COLOR_PALETTE_FILE = 'color-palette/user_palette_default.txt';
 const COLOR_PALETTE_TYPE = 'FILE';
 const PALETTE_HEADER = '# Index,R,G,B,A';
 
-// First CSV column is a stable palette entry id (printed as float, e.g. `4.0`).
-// It does NOT match the row position — rows can be reordered while ids stay fixed.
-// Each entry: { id: number, value: string }.
+// Each entry: { id: number, value: string }
 export function parsePalette(text) {
     if (!text) return [];
     return text
@@ -31,9 +29,10 @@ export function parsePalette(text) {
 
 export function stringifyPalette(items) {
     const lines = [PALETTE_HEADER];
-    items.forEach(({ id, value }) => {
+    const total = items.length;
+    items.forEach(({ value }, index) => {
         const { r, g, b, a } = parseColorToRgba(value);
-        lines.push(`${id}.0,${r},${g},${b},${a}`);
+        lines.push(`${total - index}.0,${r},${g},${b},${a}`);
     });
     return lines.join('\n') + '\n';
 }
@@ -73,8 +72,6 @@ export async function saveColorPalette(items, setNotification) {
     }
 }
 
-// Next stable id for a new palette entry: max(existing ids) + 1.
 export function nextPaletteId(items) {
-    if (!items?.length) return 1;
-    return Math.max(...items.map((c) => c.id)) + 1;
+    return (items?.length ?? 0) + 1;
 }
