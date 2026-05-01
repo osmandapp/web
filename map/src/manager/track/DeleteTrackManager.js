@@ -87,6 +87,17 @@ async function deleteCloudFile(name, type, ctx) {
                 return { ...o };
             });
 
+            // delete track from search results cache
+            ctx.setSearchResult((prevResult) => {
+                if (!prevResult?.features) {
+                    return prevResult;
+                }
+                return {
+                    ...prevResult,
+                    features: prevResult.features.filter((feature) => feature?.properties?.web_name !== name),
+                };
+            });
+
             await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
         }
     }
@@ -101,6 +112,8 @@ export async function deleteTrackFolder(folder, ctx) {
         dataOnErrors: true,
     });
     if (res && res?.data?.status === 'ok') {
+        // Clear search results cache when folder is deleted
+        ctx.setSearchResult(null);
         refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
