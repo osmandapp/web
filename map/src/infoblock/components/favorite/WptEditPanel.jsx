@@ -101,6 +101,13 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         }
     }, [ctx.addFavorite]);
 
+    useEffect(() => {
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            previewAppearance: { color: favoriteColor, icon: favoriteIcon, background: favoriteShape },
+        }));
+    }, [favoriteColor, favoriteIcon, favoriteShape]);
+
     async function getIconCategories() {
         const resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER, { apiCache: true });
         const res = await resp.json();
@@ -381,6 +388,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             location: null,
             editTrack: false,
             editWpt: null,
+            previewAppearance: null,
         }));
         // In case of track waypoint, we need to update info block to show new/edited waypoint details
         if (isTrackWpt) {

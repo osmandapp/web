@@ -14,7 +14,7 @@ const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;
 const SELECTED_MARKER_HIDE_RADIUS_COEFF = 300 / 16;
 const SELECTED_MARKER_HIDE_MIN_RADIUS_M = 50;
 
-const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
+export const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
 
 const toColor = (c) => {
     if (!c) return DEFAULT_WPT_COLOR;

@@ -9,10 +9,17 @@ import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
-import { restoreOriginalIcon } from '../util/MarkerSelectionService';
+import {
+    restoreOriginalIcon,
+    hideMarkersNearPin,
+    toShape,
+    SELECTED_PIN_SIZE,
+    SELECTED_ICON_SIZE,
+} from '../util/MarkerSelectionService';
 import { panToIfNeeded } from '../util/MapManager';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
+import { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR, ICONS_PREFIX } from '../markers/MarkerOptions';
+import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
 import { hexToRgba } from '../../util/ColorUtil';
@@ -89,6 +96,34 @@ const FavoriteLayer = () => {
     );
 
     useSelectMarkerOnMap({ ctx, getLayers: getFavoriteLayers, type: FAVORITE_FILE_TYPE, map, zoom, move });
+
+    // Update selected pin in real-time when user changes appearance in edit/add panel
+    useEffect(() => {
+        const preview = ctx.addFavorite?.previewAppearance;
+        if (!preview) return;
+
+        const pin = ctx.selectedCreatedLayerRef?.current;
+        if (!pin || !map.hasLayer(pin)) return;
+
+        const iconHtml = createPoiIcon({
+            color: preview.color,
+            background: preview.background,
+            icon: ICONS_PREFIX + preview.icon,
+        }).options.html;
+
+        const shape = toShape(preview.background);
+        const color = preview.color?.startsWith('#') ? hexToRgba(preview.color) : (preview.color ?? DEFAULT_WPT_COLOR);
+
+        pin.setIcon(
+            createLayeredPinIcon({
+                shape,
+                color,
+                iconHtml,
+                size: SELECTED_PIN_SIZE,
+                iconSize: SELECTED_ICON_SIZE,
+            })
+        );
+    }, [ctx.addFavorite?.previewAppearance]);
 
     const openGroupId = useMemo(() => {
         const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
@@ -285,6 +320,10 @@ const FavoriteLayer = () => {
                 }
                 updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
                 file.markersOnMap = res;
+                // Re-hide markers near the selected pin after new markers are placed on the map
+                if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+                    hideMarkersNearPin(map, ctx);
+                }
             }
         } else {
             if (file.markersOnMap) {
@@ -391,6 +430,24 @@ const FavoriteLayer = () => {
             (m) => m.options?.name === ctx.selectedGpxFile.markerCurrent?.name
         );
         if (!layer) return;
+
+        // Update the selected pin icon in-place with the new saved appearance.
+        const existingPin = ctx.selectedCreatedLayerRef?.current;
+        if (existingPin && map.hasLayer(existingPin)) {
+            const opts = layer.options;
+            const iconHtml = opts.icon?.options?.html ?? '';
+            const shape = toShape(opts.background);
+            const color = opts.color?.startsWith('#') ? hexToRgba(opts.color) : (opts.color ?? DEFAULT_WPT_COLOR);
+            existingPin.setIcon(
+                createLayeredPinIcon({
+                    shape,
+                    color,
+                    iconHtml,
+                    size: SELECTED_PIN_SIZE,
+                    iconSize: SELECTED_ICON_SIZE,
+                })
+            );
+        }
 
         const opts = layer.options;
         const iconOpts = opts.icon?.options;
