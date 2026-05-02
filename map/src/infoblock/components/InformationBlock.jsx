@@ -93,6 +93,14 @@ export default function InformationBlock({
         }
     }, [showWptEditPanel]);
 
+    // Close WptEditPanel when the user navigates to another object or switches context
+    useEffect(() => {
+        ctx.setAddFavorite((prev) => {
+            if (!prev?.location && !prev?.editWpt) return prev;
+            return { ...prev, add: false, location: null, editTrack: false, editWpt: null, previewAppearance: null };
+        });
+    }, [ctx.selectedWpt, ctx.currentObjectType]);
+
     useEffect(() => {
         if (closeShareMenu) {
             setCloseShareMenu(false);
