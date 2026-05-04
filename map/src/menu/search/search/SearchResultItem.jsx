@@ -97,6 +97,9 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
     const info = getInfo();
 
     function getInfo() {
+        if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+            return getTrackInfo(name);
+        }
         if (addressParts.length > 0) {
             if (type.toLowerCase() === searchTypeMap.STREET.toLowerCase()) {
                 return addressParts[0];
@@ -104,6 +107,18 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
             return addressParts.join(', ');
         }
         return undefined;
+    }
+
+    function getTrackInfo(name) {
+        const ctx = useContext(AppContext);
+        const trackFile = ctx.listFiles?.uniqueFiles.find((f) => f.name === name);
+        if (!trackFile) return '';
+        const distance = convertMeters(getDist(trackFile), ctx.unitsSettings.len, LARGE_UNIT);
+        const dist = distance != null
+            ? `${distance.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`
+            : '';
+        const time = getTime(trackFile);
+        return [dist, time].filter(Boolean).join(' · ');
     }
 
     if (restoreLang) {
@@ -165,14 +180,6 @@ export default function SearchResultItem({ item, typeItem, index }) {
         const bearing = item.bearing;
         const isUserLocation = item.isUserLocation;
         const icon = item.icon;
-        if (item.properties[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
-            const fileName = item.properties?.[CATEGORY_NAME];
-            const trackFile = ctx.listFiles?.uniqueFiles.find((f) => f.name === fileName);
-            const dist = `${convertMeters(getDist(trackFile), ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
-            const time = getTime(trackFile);
-            const info = `${dist}${time ? ` · ${time}` : ''}`;
-            return { ...res, icon, distance, bearing, isUserLocation, info };
-        }
         return { ...res, icon, distance, bearing, isUserLocation };
     }
 
