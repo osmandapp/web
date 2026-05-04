@@ -11,7 +11,6 @@ import { apiGet } from '../../util/HttpApi';
 import styles from '../map.module.css';
 import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
 import AppContext from '../../context/AppContext';
-import { useLocation } from 'react-router-dom';
 
 const flyZoom = 9;
 const locationZoom = 17;
@@ -75,8 +74,6 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
 
     const positionClass = POSITION_CLASSES[position];
     const tooltipPlacement = TOOLTIP_PLACEMENT[position];
-
-    const location = useLocation();
 
     const [status, setStatus] = useState('new');
     const [marker, setMarker] = useState(null);
@@ -172,9 +169,9 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const onClick = useCallback(
         (event) => {
             if (event.altKey) {
-                localStorage.setItem(XYZ_HASH_SYNC, location.hash);
+                localStorage.setItem(XYZ_HASH_SYNC, globalThis.location.hash);
             } else if (event.ctrlKey) {
-                window.location.hash = localStorage.getItem(XYZ_HASH_SYNC);
+                globalThis.location.hash = localStorage.getItem(XYZ_HASH_SYNC);
             } else {
                 circle?.removeFrom(map);
                 marker?.removeFrom(map);
