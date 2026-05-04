@@ -1505,7 +1505,9 @@ export async function openTrackOnMap({
     if (files[file.name]?.url) {
         if (showOnMap || zoomToTrack) {
             if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
-                newGpxFiles[ctx.selectedGpxFile.name].url = null;
+                if (newGpxFiles[ctx.selectedGpxFile.name]) {
+                    newGpxFiles[ctx.selectedGpxFile.name].url = null;
+                }
             }
         }
         newGpxFiles[file.name].showOnMap = showOnMap;
