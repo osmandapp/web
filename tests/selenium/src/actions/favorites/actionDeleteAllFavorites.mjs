@@ -38,5 +38,16 @@ export default async function test(favorites, other = null) {
         }
     }
 
+    // delete any remaining groups left over from failed previous tests
+    let leftover;
+    do {
+        leftover = await waitBy(By.css('[id^="se-menu-fav-"]'), { optional: true, idle: true });
+        if (leftover) {
+            const id = await leftover.getAttribute('id');
+            const groupName = id.replace('se-menu-fav-', '');
+            await actionDeleteFavGroup(groupName);
+        }
+    } while (leftover);
+
     await waitBy(By.id('se-empty-page'));
 }
