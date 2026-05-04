@@ -139,7 +139,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
                         return (
                             <ListItem key={id} className={styles.iconGridItem} component="div" disablePadding>
                                 <ListItemButton
-                                    id={`se-color-item-${index}`}
+                                    id={`se-color-item-${value.replace(/^#/, '')}`}
                                     className={styles.iconGridButton}
                                     onClick={() => handleSelect(value)}
                                     onContextMenu={(e) => openContextMenu(e, index)}

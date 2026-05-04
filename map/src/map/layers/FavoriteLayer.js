@@ -15,10 +15,16 @@ import {
     toShape,
     SELECTED_PIN_SIZE,
     SELECTED_ICON_SIZE,
+    applySelectedPin,
 } from '../util/MarkerSelectionService';
 import { panToIfNeeded } from '../util/MapManager';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR, ICONS_PREFIX } from '../markers/MarkerOptions';
+import MarkerOptions, {
+    createPoiIcon,
+    DEFAULT_ICON_SIZE,
+    DEFAULT_WPT_COLOR,
+    ICONS_PREFIX,
+} from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
@@ -97,7 +103,32 @@ const FavoriteLayer = () => {
 
     useSelectMarkerOnMap({ ctx, getLayers: getFavoriteLayers, type: FAVORITE_FILE_TYPE, map, zoom, move });
 
-    // Update selected pin in real-time when user changes appearance in edit/add panel
+    // Creates a preview pin when user clicks the map to add a new favorite or track waypoint.
+    useEffect(() => {
+        const loc = ctx.addFavorite?.location;
+        if (!loc || ctx.addFavorite?.editWpt || !map) return;
+
+        applySelectedPin({
+            ctx,
+            map,
+            layer: null,
+            latlng: L.latLng(loc.lat, loc.lng),
+            markerData: {
+                color: DEFAULT_WPT_COLOR,
+                background: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                iconHtml: createPoiIcon({
+                    color: DEFAULT_WPT_COLOR,
+                    background: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                    icon: ICONS_PREFIX + MarkerOptions.DEFAULT_WPT_ICON,
+                }).options.html,
+                invertIcon: false,
+            },
+            isSelection: true,
+        });
+    }, [map, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+
+    // Updates the selected pin icon in real-time when user changes appearance (color, icon, shape).
+    // Works for both add mode (preview pin) and edit mode (selected existing pin).
     useEffect(() => {
         const preview = ctx.addFavorite?.previewAppearance;
         if (!preview) return;
@@ -123,6 +154,14 @@ const FavoriteLayer = () => {
                 iconSize: SELECTED_ICON_SIZE,
             })
         );
+
+        const el = pin.getElement?.();
+        if (el) {
+            const bg = String(preview.background ?? 'circle');
+            const icon = String(preview.icon ?? '');
+            const color = String(preview.color ?? '').replace(/^#/, '');
+            el.id = `se-add-fav-map-preview--${bg}--${icon}--${color}`;
+        }
     }, [ctx.addFavorite?.previewAppearance]);
 
     const openGroupId = useMemo(() => {
