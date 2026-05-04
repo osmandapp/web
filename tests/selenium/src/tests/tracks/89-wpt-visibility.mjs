@@ -48,6 +48,16 @@ export default async function test() {
 
     await validateVisibleWaypointCount(9, 'Track should have 9 waypoints');
 
+    // Test: save waypoint group visibility without page refresh
+    await clickBy(By.id('se-wpt-group-visibility-waypoints'));
+    await validateVisibleWaypointCount(8, 'Track should have 8 waypoints');
+    await clickBy(By.id('se-button-back'));
+    await clickBy(By.id('se-cloud-track-' + trackName));
+    await clickBy(By.css("[testid='se-tab-points']"));
+    await waitBy(By.id('se-waypoints-tab-content'));
+    await validateVisibleWaypointCount(8, 'Track should have 8 waypoints');
+    await clickBy(By.id('se-wpt-group-visibility-waypoints'));
+
     // Test: Toggle first group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
     await validateVisibleWaypointCount(6, 'First group should be hidden');
