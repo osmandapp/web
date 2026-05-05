@@ -4,6 +4,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { clickBy, enclose, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { driver } from '../../options.mjs';
 import { getFiles } from '../../util.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
@@ -91,8 +92,63 @@ export default async function test() {
     await clickBy(By.id('se-edit-fav-item-submit'));
     await waitBy(By.id(`se-fav-item-info-${wptName}${suffix}`));
 
-    // edit shape → verify preview marker on map
+    // color context menu: duplicate → verify → delete → verify
     await clickBy(By.id('se-edit-fav-item'));
+    await waitBy(By.id('se-edit-fav-dialog'));
+    await clickBy(By.id('se-fav-color-row'));
+    await waitBy(By.id('se-back-color-selection-panel'));
+
+    const colorItemForDup = await waitBy(By.css(`[id="se-color-item-${COLOR_NEW}"]`));
+    await driver.actions({ async: true }).contextClick(colorItemForDup).perform();
+    await waitBy(By.id('color-duplicate'));
+    await clickBy(By.id('color-duplicate'));
+    await enclose(
+        async () => {
+            const items = await driver.findElements(By.css(`[id="se-color-item-${COLOR_NEW}"]`));
+            return items.length === 2;
+        },
+        { tag: 'color-duplicate-created' }
+    );
+
+    const colorItemForDel = (await driver.findElements(By.css(`[id="se-color-item-${COLOR_NEW}"]`)))[0];
+    await driver.actions({ async: true }).contextClick(colorItemForDel).perform();
+    await waitBy(By.id('color-remove'));
+    await clickBy(By.id('color-remove'));
+    await enclose(
+        async () => {
+            const items = await driver.findElements(By.css(`[id="se-color-item-${COLOR_NEW}"]`));
+            return items.length === 1;
+        },
+        { tag: 'color-duplicate-deleted' }
+    );
+
+    await clickBy(By.id('se-back-color-selection-panel'));
+    await waitByRemoved(By.id('se-back-color-selection-panel'));
+    await clickBy(By.id('se-back-edit-wpt-panel'));
+    await waitByRemoved(By.id('se-edit-fav-dialog'));
+
+    // reload page and verify duplicate is gone (palette persisted to server)
+    await actionOpenMap();
+    await actionOpenFavorites();
+    await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+    await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
+    await clickBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
+    await waitBy(By.id(`se-fav-item-info-${wptName}${suffix}`));
+    await clickBy(By.id('se-edit-fav-item'));
+    await waitBy(By.id('se-edit-fav-dialog'));
+    await clickBy(By.id('se-fav-color-row'));
+    await waitBy(By.id('se-back-color-selection-panel'));
+    await enclose(
+        async () => {
+            const items = await driver.findElements(By.css(`[id="se-color-item-${COLOR_NEW}"]`));
+            return items.length === 1;
+        },
+        { tag: 'color-not-persisted-after-reload' }
+    );
+    await clickBy(By.id('se-back-color-selection-panel'));
+    await waitByRemoved(By.id('se-back-color-selection-panel'));
+
+    // edit shape → verify preview marker on map
     await waitBy(By.id('se-edit-fav-dialog'));
     await clickBy(By.id('se-favorite-shape-1'));
     await waitBy(By.id(favPreviewMarkerId('octagon', ICON_NEW, COLOR_NEW)));
