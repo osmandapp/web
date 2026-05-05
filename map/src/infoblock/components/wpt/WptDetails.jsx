@@ -79,6 +79,7 @@ import {
 } from '../../../map/layers/TransportStopsLayer';
 import TransportStopsRoutes from './transport/TransportStopsRoutes';
 import capitalize from 'lodash-es/capitalize';
+import { getResolvedPointsGroups } from '../../../manager/track/TracksManager';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
@@ -484,7 +485,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             hidden: currentWpt.hidden,
             latlon: getCoordsFromWpt(currentWpt),
             marker: currentWpt.marker,
-            ...resolveWptAppearance(currentWpt, selectedWpt.trackData?.pointsGroups),
+            ...resolveWptAppearance(currentWpt, getResolvedPointsGroups(selectedWpt.trackData)),
             category: currentWpt.category,
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
