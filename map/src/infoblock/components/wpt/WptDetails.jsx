@@ -15,6 +15,7 @@ import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, {
     isTrack,
+    isLocalTrack,
     OBJECT_SEARCH,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_POI,
@@ -267,6 +268,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type?.isWpt) {
             const newWpt = getDataFromWpt(type, ctx.selectedWpt);
             newWpt.id = ctx.selectedWpt.id;
+            newWpt.trackWpt = true;
             return newWpt;
         } else if (type?.isFav || type?.isShareFav) {
             const markerName = ctx.selectedWpt.markerCurrent.name;
@@ -760,7 +762,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     function showFavoriteActions() {
-        return wpt.type.isFav || wpt.type.isShareFav;
+        return wpt.type.isFav || wpt.type.isShareFav || (wpt.type.isWpt && isLocalTrack(ctx));
     }
 
     function showPoiActions() {

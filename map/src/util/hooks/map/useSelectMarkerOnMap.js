@@ -101,7 +101,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         if (found) {
             applyPinForLayer(found, true);
         }
-    }, [selectedObjId, type, getLayers, layersProp, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+    }, [
+        selectedObjId,
+        type,
+        getLayers,
+        layersProp,
+        ctx.addFavorite?.location,
+        ctx.addFavorite?.editWpt,
+        ctx.selectedWpt,
+    ]);
 
     // ========== HOVER PIN ==========
     useEffect(() => {
@@ -237,14 +245,14 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             if (isFavorites) {
                 iconHtml = iconFromLayer ?? '';
             } else {
-                iconHtml = layer.options?.svg ?? '';
+                iconHtml = layer.options?.svg ?? iconFromLayer ?? '';
             }
         } else {
             // hover
             if (isFavorites) {
                 iconHtml = layer.options?.originalIcon?.options?.html ?? iconFromLayer ?? '';
             } else {
-                iconHtml = layer.options?.svg ?? layer.options?.originalIcon?.options?.html ?? '';
+                iconHtml = layer.options?.svg ?? layer.options?.originalIcon?.options?.html ?? iconFromLayer ?? '';
             }
         }
 

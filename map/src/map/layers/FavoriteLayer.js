@@ -131,7 +131,18 @@ const FavoriteLayer = () => {
     // Works for both add mode (preview pin) and edit mode (selected existing pin).
     useEffect(() => {
         const preview = ctx.addFavorite?.previewAppearance;
-        if (!preview) return;
+        if (!preview) {
+            // Edit dialog closed — restore the selected-marker id if a wpt is still selected.
+            const pin = ctx.selectedCreatedLayerRef?.current;
+            if (pin && map.hasLayer(pin)) {
+                const el = pin.getElement?.();
+                const name = ctx.selectedWpt?.name;
+                if (el && name) {
+                    el.id = `se-selected-marker-${name}`;
+                }
+            }
+            return;
+        }
 
         const pin = ctx.selectedCreatedLayerRef?.current;
         if (!pin || !map.hasLayer(pin)) return;

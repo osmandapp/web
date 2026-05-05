@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
@@ -13,6 +13,7 @@ import { clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
 import { addLayerToMap } from '../util/MapManager';
@@ -183,6 +184,14 @@ const CloudTrackLayer = () => {
     const [move, setMove] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    const getCloudWptLayers = useCallback(() => {
+        if (!isCloudTrack(ctx)) return null;
+        return ctx.selectedGpxFile?.gpx?.getLayers?.() ?? null;
+    }, [ctx.selectedGpxFile?.gpx, ctx.currentObjectType]);
+
+    useSelectMarkerOnMap({ ctx, getLayers: getCloudWptLayers, type: OBJECT_TYPE_CLOUD_TRACK, map, zoom, move });
+
     const recentSaver = useRecentDataSaver();
 
     useEffect(() => {

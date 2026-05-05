@@ -1284,8 +1284,19 @@ export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, en
 }
 
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
-    if (ctxTrack?.showPoint?.layer) {
-        map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
+    const showPoint = ctxTrack?.showPoint;
+    if (showPoint?.wptDetails) {
+        if (selectedPointMarker) {
+            map.removeLayer(selectedPointMarker.marker);
+            setSelectedPointMarker(null);
+        }
+        if (showPoint.lat != null) {
+            map.setView([showPoint.lat, showPoint.lng], Math.max(map.getZoom(), 15));
+        }
+        return;
+    }
+    if (showPoint?.layer) {
+        map.setView([showPoint.layer._latlng.lat, showPoint.layer._latlng.lng], 17);
     } else {
         if (selectedPointMarker) {
             map.removeLayer(selectedPointMarker.marker);

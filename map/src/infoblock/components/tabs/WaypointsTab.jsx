@@ -64,7 +64,12 @@ const WaypointGroup = ({
 
     return (
         <>
-            <MenuItem divider sx={{ px: 1, py: 1 }} onClick={switchOpen}>
+            <MenuItem
+                id={`se-wpt-group-header-${group || 'waypoints'}`}
+                divider
+                sx={{ px: 1, py: 1 }}
+                onClick={switchOpen}
+            >
                 <Grid container alignItems="center">
                     <Grid item xs={2}>
                         <Box
@@ -141,9 +146,12 @@ const WaypointRow = ({ point, index, ctx }) => {
     const [, , mobile] = useWindowSize();
 
     function showPoint(point) {
+        const lat = Number.parseFloat(point.wpt.lat);
+        const lng = Number.parseFloat(point.wpt.lon);
         ctx.setSelectedWpt({
             ...point.wpt,
             trackWpt: true,
+            id: `fav:${lat}:${lng}`,
         });
         ctx.setSelectedGpxFile((o) => ({
             ...o,
@@ -151,6 +159,7 @@ const WaypointRow = ({ point, index, ctx }) => {
                 ...point,
                 lat: Number.parseFloat(point.wpt.lat),
                 lng: Number.parseFloat(point.wpt.lon),
+                wptDetails: true,
             },
         }));
     }

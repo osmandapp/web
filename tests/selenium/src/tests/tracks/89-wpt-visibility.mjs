@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, waitBy, assert } from '../../lib.mjs';
+import { clickBy, waitBy, waitByRemoved, assert } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -85,6 +85,18 @@ export default async function test() {
     // Test: Toggle second group visibility ON
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
     await validateVisibleWaypointCount(9, 'Both groups should be visible');
+
+    // Test: open a wpt from the list and verify selected pin appears on map
+    await clickBy(By.id('se-wpt-group-header-waypoints')); // expand the group
+    await waitBy(By.id('se-wpt-row-VELO-0'));
+    await clickBy(By.id('se-wpt-row-VELO-0'));
+    await waitBy(By.id('se-wpt-details'));
+    await waitBy(By.css('[id^="se-selected-marker-"]'));
+
+    // close wpt details — selected pin should disappear
+    await clickBy(By.id('se-back-wpt-details'));
+    await waitByRemoved(By.id('se-wpt-details'));
+    await waitByRemoved(By.css('[id^="se-selected-marker-"]'));
 
     // Close track and cleanup
     await clickBy(By.id('se-button-back'));

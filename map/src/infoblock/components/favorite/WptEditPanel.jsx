@@ -345,7 +345,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
         const newWpt = ctx.selectedGpxFile.wpts[ind];
         newWpt.mapObj = editWpt.mapObj;
-        ctx.setSelectedWpt({ trackWpt: true, trackData: ctx.selectedGpxFile.trackData, ...newWpt });
+        ctx.setSelectedWpt({ trackWpt: true, trackData: ctx.selectedGpxFile.trackData, ...newWpt, id: editWpt.id });
         ctx.setPointContextMenu({});
 
         setProcess(false);

@@ -7,11 +7,16 @@ import { By } from 'selenium-webdriver';
 import { deleteTrack, getFiles } from '../../util.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 
+const SELECTED_PIN = By.css('[id^="se-selected-marker-"]');
+const PREVIEW_PIN = By.css('[id^="se-add-fav-map-preview--"]');
+const PREVIEW_PIN_OCTAGON = By.css('[id*="--octagon--"]');
+
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
     const wptName = 'MyWaypoint';
+    const suffix = '-edited';
     const trackName = getFormattedDate();
 
     // prepare — clean up any tracks from previous runs
@@ -43,9 +48,33 @@ export default async function test() {
     // verify WptDetails shows correct name
     await matchTextBy(By.id('se-wpt-name'), wptName);
 
+    // selected pin should appear on map when wpt details open
+    await waitBy(SELECTED_PIN);
+
+    // open edit dialog
+    await clickBy(By.id('se-edit-fav-item'));
+    await waitBy(By.id('se-edit-fav-dialog'));
+
+    // preview pin should appear on map during edit
+    await waitBy(PREVIEW_PIN);
+
+    // change shape to octagon — preview pin id should update accordingly
+    await clickBy(By.id('se-favorite-shape-1'));
+    await waitBy(PREVIEW_PIN_OCTAGON);
+
+    // edit waypoint name and save
+    await sendKeysBy(By.id('se-fav-name-input'), suffix);
+    await clickBy(By.id('se-edit-fav-item-submit'));
+    await matchTextBy(By.id('se-wpt-name'), `${wptName}${suffix}`);
+
+    // selected pin should still be on map after saving edit
+    await waitBy(SELECTED_PIN);
+
     // go back to track editor and save to cloud
     await clickBy(By.id('se-back-wpt-details'));
     await waitByRemoved(By.id('se-wpt-details'));
+    // selected pin should disappear after closing wpt details
+    await waitByRemoved(SELECTED_PIN);
     await waitBy(By.id('se-local-track-actions-save-to-cloud'));
     await clickBy(By.id('se-local-track-actions-save-to-cloud'));
     await waitBy(By.id('se-save-track-dialog'));

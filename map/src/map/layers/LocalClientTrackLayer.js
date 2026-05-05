@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
@@ -27,6 +27,7 @@ import TracksRoutingCache, {
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { deleteLocalTracksByIndexes, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 import { createLocalTrack, createNewPoint, initNewSelectedTrack, isNewTrack } from '../util/creator/LocalTrackHelper';
 import {
@@ -37,6 +38,7 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { addLayerToMap } from '../util/MapManager';
+import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -69,6 +71,13 @@ export default function LocalClientTrackLayer() {
     const [move, setMove] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    const getLocalWptLayers = useCallback(() => {
+        if (!isLocalTrack(ctx)) return null;
+        return ctx.selectedGpxFile?.layers?.getLayers?.() ?? null;
+    }, [ctx.selectedGpxFile?.layers, ctx.currentObjectType]);
+
+    useSelectMarkerOnMap({ ctx, getLayers: getLocalWptLayers, type: LOCAL_TRACKS_LAYERS_ID, map, zoom, move });
 
     let ctxTrack = ctx.selectedGpxFile;
 
@@ -436,6 +445,7 @@ export default function LocalClientTrackLayer() {
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
             TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
+            ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: false }));
         }
     }
 
@@ -505,6 +515,10 @@ export default function LocalClientTrackLayer() {
                 trackLayers: ctxTrack.layers,
             });
             saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+            // After layer rebuild, re-hide markers near the selected pin (new marker instances were created)
+            if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+                hideMarkersNearPin(map, ctx);
+            }
         }
     }
 
