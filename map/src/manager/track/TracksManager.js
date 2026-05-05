@@ -1644,7 +1644,14 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
     }
 
     if (hasUrl) {
-        ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
+        // Use file.mapObj explicitly instead of allFiles[file.name].mapObj to avoid
+        // stale mapObj:true from a previous URL-based open.
+        ctx.setSelectedGpxFile({
+            ...allFiles[file.name],
+            zoomToTrack: true,
+            cloudRedrawWpts: true,
+            mapObj: file.mapObj,
+        });
     } else {
         ctx.setSelectedGpxFile({ ...file });
     }

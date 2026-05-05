@@ -137,9 +137,11 @@ export default function InformationBlock({
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
-            hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
-            if (!isEmpty(ctx.selectedGpxFile)) {
-                ctx.setSelectedGpxFile({});
+            if (!ctx.currentObjectType) {
+                hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+                if (!isEmpty(ctx.selectedGpxFile)) {
+                    ctx.setSelectedGpxFile({});
+                }
             }
         }
     }, [showInfoBlock]);
