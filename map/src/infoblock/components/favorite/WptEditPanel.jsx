@@ -411,10 +411,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             result,
             id: key,
         });
-        if (!isTrack(ctx) && (isEditMode || isTrackWpt)) {
-            // Only update selectedFile when editing an existing wpt/favorite.
-            // When adding a new favorite from the map we use the savedFav overlay
-            // and must not overwrite ctx.selectedWpt / ctx.selectedGpxFile.
+        if (!isTrack(ctx) && isEditMode) {
             ctx.selectedGpxFile.mapObj = true;
             FavoriteHelper.updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted: false });
         }
