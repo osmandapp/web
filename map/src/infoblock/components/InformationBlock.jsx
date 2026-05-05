@@ -299,7 +299,7 @@ export default function InformationBlock({
         if (openWptTab) {
             const tObj = new TrackTabList().create(ctx, setShowInfoBlock);
             clearStateIfObjChange();
-            tObj.defaultTab = TRACK_TAB_IDS.WAYPOINTS;
+            tObj.defaultTab = TRACK_TAB_IDS.POINTS;
             setTabsObj(tObj);
             setOpenWptDetails(false);
             setOpenWptTab(false);
