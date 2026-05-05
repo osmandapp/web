@@ -33,10 +33,8 @@ import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wiki
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
-    prepareBackground,
-    prepareColor,
-    prepareIcon,
     navigateToFavoritesMenu,
+    resolveWptAppearance,
 } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
@@ -486,9 +484,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             hidden: currentWpt.hidden,
             latlon: getCoordsFromWpt(currentWpt),
             marker: currentWpt.marker,
-            background: prepareBackground(currentWpt.background),
-            color: prepareColor(currentWpt.color),
-            icon: prepareIcon(currentWpt.icon),
+            ...resolveWptAppearance(currentWpt, selectedWpt.trackData?.pointsGroups),
             category: currentWpt.category,
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,

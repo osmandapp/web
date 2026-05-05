@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <gpx version="1.1" creator="OsmAnd~ 4.6.0" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>favorites-ozoo.gpx3335412093842249927</name>
+    <name>favorites-ozoo</name>
     <time>2023-10-31T10:14:38Z</time>
   </metadata>
   <wpt lat="49.9081375" lon="23.8014346">
@@ -11,14 +11,37 @@
     <extensions>
       <osmand:icon>special_star</osmand:icon>
       <osmand:background>square</osmand:background>
-      <osmand:amenity_origin>Amenity:Vedmežij pritulok Domažir: entertainment:park</osmand:amenity_origin>
-      <osmand:color>#b300ff</osmand:color>
       <osmand:hidden>false</osmand:hidden>
+    </extensions>
+  </wpt>
+  <wpt lat="49.9095000" lon="23.8030000">
+    <time>2023-03-22T11:00:00Z</time>
+    <name>Водоспад Шипіт</name>
+    <type>ozoo</type>
+    <extensions>
+      <osmand:icon>suburb</osmand:icon>
+      <osmand:background>circle</osmand:background>
+    </extensions>
+  </wpt>
+  <wpt lat="49.9068000" lon="23.7995000">
+    <time>2023-03-22T11:10:00Z</time>
+    <name>Скеля Довбуша</name>
+    <type>ozoo</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+    </extensions>
+  </wpt>
+  <wpt lat="49.9058000" lon="23.8022000">
+    <time>2023-03-22T11:20:00Z</time>
+    <name>Озеро Синевир</name>
+    <type>ozoo</type>
+    <extensions>
+      <osmand:background>octagon</osmand:background>
     </extensions>
   </wpt>
   <extensions>
     <osmand:points_groups>
-      <group name="ozoo" color="#b300ff" icon="special_star" background="square" />
+      <group name="ozoo" color="#00ff00" icon="amenity_fire_station" background="square" />
     </osmand:points_groups>
   </extensions>
 </gpx>

@@ -58,7 +58,12 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         let markerList = [];
         if (ctx.favorites.mapObjs[group.id]?.markers) {
             let layers = ctx.favorites.mapObjs[group.id].markers._layers;
-            markerList = getFavMenuListByLayers(layers, ctx.favorites.mapObjs[group.id].wpts, currentLoc);
+            markerList = getFavMenuListByLayers({
+                layers,
+                wpts: ctx.favorites.mapObjs[group.id].wpts,
+                currentLoc,
+                pointsGroups: ctx.favorites.mapObjs[group.id].pointsGroups,
+            });
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
         if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[group.id]) {

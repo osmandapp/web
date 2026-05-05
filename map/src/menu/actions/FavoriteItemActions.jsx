@@ -4,12 +4,7 @@ import styles from '../trackfavmenu.module.css';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
-import FavoritesManager, {
-    isNoValue,
-    prepareBackground,
-    prepareColor,
-    prepareIcon,
-} from '../../manager/FavoritesManager';
+import FavoritesManager, { isNoValue, resolveWptAppearance } from '../../manager/FavoritesManager';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 
@@ -22,9 +17,11 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
     const favorite = getFavorite();
 
     function getFavorite() {
-        const wptInd = ctx.favorites.mapObjs[group.id].wpts.findIndex((wpt) => wpt.name === marker.name);
-        const wpt = ctx.favorites.mapObjs[group.id].wpts[wptInd];
+        const mapObj = ctx.favorites.mapObjs[group.id];
+        const wptInd = mapObj.wpts.findIndex((wpt) => wpt.name === marker.name);
+        const wpt = mapObj.wpts[wptInd];
         if (wpt) {
+            const appearance = resolveWptAppearance(wpt, mapObj.pointsGroups);
             return {
                 name: wpt.name,
                 groupId: group.id,
@@ -32,9 +29,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                 comment: wpt.ext.comment,
                 address: isNoValue(wpt.address) ? '' : wpt.address,
                 category: wpt.category ? wpt.category : FavoritesManager.DEFAULT_GROUP_NAME,
-                background: prepareBackground(wpt.background),
-                color: prepareColor(wpt.color),
-                icon: prepareIcon(wpt.icon),
+                ...appearance,
                 lat: wpt.ext.lat,
                 lon: wpt.ext.lon,
                 time: wpt.ext.time,

@@ -155,7 +155,12 @@ export default function ShareFile() {
         const layers = ctx.shareFileMarkers?.getLayers();
         if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
             const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getMapCenter(ctx, hash);
-            const markerList = getFavMenuListByLayers(layers, ctx.selectedGpxFile.wpts, loc);
+            const markerList = getFavMenuListByLayers({
+                layers,
+                wpts: ctx.selectedGpxFile.wpts,
+                currentLoc: loc,
+                pointsGroups: ctx.selectedGpxFile.pointsGroups ?? ctx.selectedGpxFile.info?.pointsGroups,
+            });
             const items = [];
             markerList.map((m, index) => {
                 items.push(

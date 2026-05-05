@@ -19,6 +19,7 @@ import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../.
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
+import { resolveWptAppearance } from '../../../manager/FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
 import { ReactComponent as EmptyIcon } from '../../../assets/icons/ic_action_track_disabled.svg';
@@ -29,6 +30,7 @@ const WaypointGroup = ({
     ctx,
     group,
     points,
+    pointsGroup,
     defaultOpen,
     defaultVisible = true,
     massOpen,
@@ -59,8 +61,8 @@ const WaypointGroup = ({
     }, [defaultVisible, massVisible]);
 
     const point = points[0].wpt;
-    const iconHTML = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon })
-        .options.html;
+    const appearance = resolveWptAppearance(point, { [point.category ?? '']: pointsGroup });
+    const iconHTML = createPoiIcon({ point, ...appearance }).options.html;
 
     return (
         <>
@@ -350,6 +352,7 @@ export default function WaypointsTab() {
                         ctx={ctx}
                         group={g}
                         points={groups[g]}
+                        pointsGroup={pointsGroups?.[g]}
                         defaultOpen={keys.length === 1}
                         defaultVisible={isWptGroupShown(pointsGroups, g)}
                         massVisible={massVisible}
