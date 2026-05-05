@@ -194,7 +194,7 @@ function IconCategorySection({
                             disablePadding
                         >
                             <ListItemButton
-                                id={`${idPrefix}-${index}`}
+                                id={`${idPrefix}-${icon}`}
                                 className={styles.iconGridButton}
                                 onClick={() => onSelect(icon)}
                             >

@@ -8,7 +8,11 @@ import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import { getFiles } from '../../util.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
-import actionSelectFavoriteColorInWptEdit from '../../actions/favorites/actionSelectFavoriteColorInWptEdit.mjs';
+
+const PREVIEW_DEFAULT_ICON = 'special_star';
+const PREVIEW_DEFAULT_COLOR_PART = 'eecc22';
+const PREVIEW_DEFAULT_SHAPE = 'circle';
+const PREVIEW_SELECTED_SHAPE = 'octagon';
 
 export default async function test() {
     await actionOpenMap();
@@ -21,10 +25,24 @@ export default async function test() {
         'Apple Inc. is an American multinational technology company that specializes in consumer electronics, computer software, and online services.';
     const favoriteGroupName = 'Tech Companies';
 
+    const idPreviewCircleDefault = favPreviewMarkerId(
+        PREVIEW_DEFAULT_SHAPE,
+        PREVIEW_DEFAULT_ICON,
+        PREVIEW_DEFAULT_COLOR_PART
+    );
+
     // prepare
     await actionOpenFavorites();
     await actionDeleteAllFavorites(favorites, favoriteGroupName);
 
+    // add favorite — cancel once: preview must disappear
+    await actionOpenContextMenu();
+    await clickBy(By.id('se-add-favorite-action'));
+    await waitBy(By.id('se-add-fav-dialog'));
+    await waitBy(By.id(idPreviewCircleDefault));
+    await clickBy(By.id('se-close-add-wpt-panel'));
+    await waitByRemoved(By.id('se-add-fav-dialog'));
+    await waitByRemoved(By.id(idPreviewCircleDefault));
     // add favorite
     await actionOpenContextMenu();
     await clickBy(By.id('se-add-favorite-action'));
@@ -44,21 +62,27 @@ export default async function test() {
     await clickBy(By.id('se-add-new-fav-group-btn'));
     await waitByRemoved(By.id('se-add-new-fav-group-dialog'));
     // pick a color (palette panel; empty palette → add via color picker)
-    await actionSelectFavoriteColorInWptEdit();
+    await selectFavoriteColor();
     // open icon selection panel, pick first icon, go back
     await clickBy(By.id('se-fav-icon-row'));
     await waitBy(By.id('se-back-icon-selection-panel'));
-    await clickBy(By.id('se-fav-icon-last-used-0'));
+    await waitBy(By.id(`se-fav-icon-last-used-${PREVIEW_DEFAULT_ICON}`));
+    await clickBy(By.id(`se-fav-icon-last-used-${PREVIEW_DEFAULT_ICON}`));
     await clickBy(By.id('se-back-icon-selection-panel'));
     await waitByRemoved(By.id('se-back-icon-selection-panel'));
     await clickBy(By.id('se-favorite-shape-1'));
+    const idPreviewComplete = favPreviewMarkerId(
+        PREVIEW_SELECTED_SHAPE,
+        PREVIEW_DEFAULT_ICON,
+        PREVIEW_DEFAULT_COLOR_PART
+    );
+    await waitBy(By.id(idPreviewComplete));
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
     // check favorite info
     await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
     await matchTextBy(By.id('se-wpt-group'), `${favoriteGroupName} (1)`);
     await matchTextBy(By.id('se-wpt-address'), favoriteAddress);
-    await waitBy(By.className('leaflet-marker-icon'));
     await clickBy(By.id('se-close-wpt-details'));
     // check new favorite group
     await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
@@ -82,4 +106,25 @@ export default async function test() {
     await waitBy(By.id('se-empty-page'));
 
     await actionFinish();
+}
+
+function favPreviewMarkerId(background, icon, color) {
+    const c = String(color ?? '').replace(/^#/, '');
+    return `se-add-fav-map-preview--${background}--${icon}--${c}`;
+}
+
+async function selectFavoriteColor() {
+    await clickBy(By.id('se-fav-color-row'));
+    await waitBy(By.id('se-back-color-selection-panel'));
+    const swatch = await waitBy(By.id(`se-color-item-${PREVIEW_DEFAULT_COLOR_PART}`), { optional: true, idle: true });
+    if (swatch) {
+        await swatch.click();
+    } else {
+        await clickBy(By.id('se-color-add-btn'));
+        await waitBy(By.id('se-color-picker-dialog'));
+        await clickBy(By.id('se-color-picker-apply'));
+        await waitByRemoved(By.id('se-color-picker-dialog'));
+    }
+    await clickBy(By.id('se-back-color-selection-panel'));
+    await waitByRemoved(By.id('se-back-color-selection-panel'));
 }

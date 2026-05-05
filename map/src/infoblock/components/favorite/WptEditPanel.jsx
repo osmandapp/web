@@ -1,7 +1,7 @@
 import { Box, IconButton, LinearProgress, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
+import AppContext, { isTrack } from '../../../context/AppContext';
 import { Add, Delete } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoriteName from './structure/FavoriteName';
@@ -16,6 +16,7 @@ import WptIconPreview, { getShapeSvg } from './structure/WptIconPreview';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
+    openFavoriteObj,
     updateFavoriteGroups,
 } from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
@@ -25,7 +26,7 @@ import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsP
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { apiGet } from '../../../util/HttpApi';
-import { getUniqFileId } from '../../../manager/GlobalManager';
+import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import PrimaryBtn from '../../../frame/components/btns/PrimaryBtn';
 import DefaultItem from '../../../frame/components/items/DefaultItem';
@@ -101,6 +102,13 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         }
     }, [ctx.addFavorite]);
 
+    useEffect(() => {
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            previewAppearance: { color: favoriteColor, icon: favoriteIcon, background: favoriteShape },
+        }));
+    }, [favoriteColor, favoriteIcon, favoriteShape]);
+
     async function getIconCategories() {
         const resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER, { apiCache: true });
         const res = await resp.json();
@@ -123,12 +131,12 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             const saved = await saveNewFavorite();
             if (saved) {
                 await updateGroupMarkers(saved.res, saved.selectedGroup);
-                if (!ctx.searchResult && !ctx.selectedWpt?.poi && !ctx.selectedWpt?.wikidata) {
-                    ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-                    ctx.setUpdateInfoBlock(true);
-                }
                 setProcess(false);
-                closePanel();
+                if (isPoi) {
+                    closePanel();
+                } else {
+                    openSavedFavoriteDetails(saved);
+                }
             }
         }
         ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
@@ -337,7 +345,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
         const newWpt = ctx.selectedGpxFile.wpts[ind];
         newWpt.mapObj = editWpt.mapObj;
-        ctx.setSelectedWpt({ trackWpt: true, trackData: ctx.selectedGpxFile.trackData, ...newWpt });
+        ctx.setSelectedWpt({ trackWpt: true, trackData: ctx.selectedGpxFile.trackData, ...newWpt, id: editWpt.id });
         ctx.setPointContextMenu({});
 
         setProcess(false);
@@ -379,8 +387,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             ...prev,
             add: false,
             location: null,
+            poi: null,
             editTrack: false,
             editWpt: null,
+            previewAppearance: null,
         }));
         // In case of track waypoint, we need to update info block to show new/edited waypoint details
         if (isTrackWpt) {
@@ -401,11 +411,52 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             result,
             id: key,
         });
-        ctx.selectedGpxFile.mapObj = true;
-        FavoriteHelper.updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted: false });
+        if (!isTrack(ctx) && isEditMode) {
+            ctx.selectedGpxFile.mapObj = true;
+            FavoriteHelper.updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted: false });
+        }
         ctx.setUpdateMarkers({ ...ctx.favorites });
         ctx.setFavorites({ ...ctx.favorites });
         setFavoriteGroup(ctx.favorites.mapObjs[key]);
+    }
+
+    function openSavedFavoriteDetails({ selectedGroup }) {
+        const key = selectedGroup.id ?? getUniqFileId(selectedGroup.file);
+
+        // The preview pin is already on the map — use it as the layer.
+        const previewLayer = ctx.selectedCreatedLayerRef?.current;
+
+        const newGpxFile = {
+            trackData: { ...ctx.favorites.mapObjs[key] },
+            file: selectedGroup.file,
+            markerCurrent: {
+                name: favoriteName,
+                iconName: favoriteIcon,
+                color: favoriteColor,
+                background: favoriteShape,
+                groupId: key,
+                layer: previewLayer,
+            },
+            name: favoriteName,
+            nameGroup: selectedGroup.name,
+            id: key,
+            mapObj: true,
+        };
+
+        openFavoriteObj(ctx, newGpxFile);
+
+        // Clear state
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            add: false,
+            location: null,
+            poi: null,
+            editTrack: false,
+            editWpt: null,
+            previewAppearance: null,
+        }));
+
+        ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
     }
 
     function groupHasSameWpt() {

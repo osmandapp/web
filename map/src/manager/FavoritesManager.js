@@ -485,6 +485,28 @@ export function prepareIcon(value) {
 }
 
 /**
+ * Resolves wpt color, icon and background with a consistent priority:
+ *   1. wpt's own value (from ext)
+ *   2. pointsGroup value (group settings)
+ *   3. default value
+ */
+export function resolveWptAppearance(wpt, pointsGroups) {
+    const category = wpt?.category ?? '';
+    const group = pointsGroups?.[category];
+    return {
+        color: isNoValue(wpt?.color)
+            ? (group?.color ?? MarkerOptions.DEFAULT_WPT_COLOR)
+            : wpt.color,
+        background: isNoValue(wpt?.background)
+            ? (group?.backgroundType ?? group?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE)
+            : wpt.background,
+        icon: isNoValue(wpt?.icon)
+            ? (group?.iconName ?? group?.icon ?? MarkerOptions.DEFAULT_WPT_ICON)
+            : wpt.icon,
+    };
+}
+
+/**
  * Asynchronously adds favorite groups to the map.
  *
  * @param {Object} favGroups - The favorite groups to add.
@@ -671,7 +693,7 @@ export function getSize(group, t) {
         : 'empty';
 }
 
-export function getFavMenuListByLayers(layers, wpts, currentLoc) {
+export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
         // Only process waypoint markers (skip route points, track points, polylines, start/end markers)
@@ -682,19 +704,18 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
         if (!wpt) {
             return;
         }
+        const appearance = resolveWptAppearance(wpt, pointsGroups);
         const icon = createPoiIcon({
             point: wpt,
-            color: wpt.color,
-            background: wpt.background,
+            ...appearance,
             hasBackgroundLight: false,
-            icon: wpt.icon,
         }).options.html;
         const marker = {
             name: value.options.name,
-            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, wpt.background),
+            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, appearance.background),
             layer: value,
-            color: wpt.color,
-            background: wpt.background,
+            color: appearance.color,
+            background: appearance.background,
         };
         markerList.push(marker);
     });

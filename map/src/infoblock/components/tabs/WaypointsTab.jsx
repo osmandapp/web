@@ -19,6 +19,7 @@ import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../.
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
+import { resolveWptAppearance } from '../../../manager/FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
 import { ReactComponent as EmptyIcon } from '../../../assets/icons/ic_action_track_disabled.svg';
@@ -29,6 +30,7 @@ const WaypointGroup = ({
     ctx,
     group,
     points,
+    pointsGroup,
     defaultOpen,
     defaultVisible = true,
     massOpen,
@@ -59,12 +61,17 @@ const WaypointGroup = ({
     }, [defaultVisible, massVisible]);
 
     const point = points[0].wpt;
-    const iconHTML = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon })
-        .options.html;
+    const appearance = resolveWptAppearance(point, { [point.category ?? '']: pointsGroup });
+    const iconHTML = createPoiIcon({ point, ...appearance }).options.html;
 
     return (
         <>
-            <MenuItem divider sx={{ px: 1, py: 1 }} onClick={switchOpen}>
+            <MenuItem
+                id={`se-wpt-group-header-${group || 'waypoints'}`}
+                divider
+                sx={{ px: 1, py: 1 }}
+                onClick={switchOpen}
+            >
                 <Grid container alignItems="center">
                     <Grid item xs={2}>
                         <Box
@@ -141,9 +148,12 @@ const WaypointRow = ({ point, index, ctx }) => {
     const [, , mobile] = useWindowSize();
 
     function showPoint(point) {
+        const lat = Number.parseFloat(point.wpt.lat);
+        const lng = Number.parseFloat(point.wpt.lon);
         ctx.setSelectedWpt({
             ...point.wpt,
             trackWpt: true,
+            id: `fav:${lat}:${lng}`,
         });
         ctx.setSelectedGpxFile((o) => ({
             ...o,
@@ -151,6 +161,7 @@ const WaypointRow = ({ point, index, ctx }) => {
                 ...point,
                 lat: Number.parseFloat(point.wpt.lat),
                 lng: Number.parseFloat(point.wpt.lon),
+                wptDetails: true,
             },
         }));
     }
@@ -341,6 +352,7 @@ export default function WaypointsTab() {
                         ctx={ctx}
                         group={g}
                         points={groups[g]}
+                        pointsGroup={pointsGroups?.[g]}
                         defaultOpen={keys.length === 1}
                         defaultVisible={isWptGroupShown(pointsGroups, g)}
                         massVisible={massVisible}

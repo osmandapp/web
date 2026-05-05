@@ -240,11 +240,11 @@ export default function MainMenu({
                         return;
                     }
                     ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-                    file.mapObj = true;
+                    const fileWithMapObj = { ...file, mapObj: true };
                     if (location.pathname.includes(SHARE_MENU_URL)) {
                         // open share menu
                         if (!ctx.shareFile) {
-                            getShareFileInfo({ file, ctx }).then();
+                            getShareFileInfo({ file: fileWithMapObj, ctx }).then();
                         }
                     } else {
                         // open track info
@@ -253,7 +253,7 @@ export default function MainMenu({
                             showOnMap: true,
                             showInfo: true,
                             zoomToTrack: true,
-                            file,
+                            file: fileWithMapObj,
                             ctx,
                             fileStorage: ctx.gpxFiles,
                             setFileStorage: ctx.setGpxFiles,
@@ -268,7 +268,7 @@ export default function MainMenu({
                     const mapObj = ctx.favorites.mapObjs[group.id];
                     if (!mapObj?.markers?._layers) return;
 
-                    const markerList = getFavMenuListByLayers(mapObj.markers._layers, mapObj.wpts, currentLoc);
+                    const markerList = getFavMenuListByLayers({ layers: mapObj.markers._layers, wpts: mapObj.wpts, currentLoc, pointsGroups: mapObj.pointsGroups });
                     if (markerList.length === 0) return;
 
                     const marker = markerList.find((m) => m.name === decodeString(favname));

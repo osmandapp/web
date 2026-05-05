@@ -27,7 +27,7 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
     async function deleteWpt() {
         setProcess(true);
         //delete wpt from track
-        if (ctx.addFavorite.editTrack) {
+        if (ctx.addFavorite.editTrack || wpt?.trackWpt) {
             if (ctx.selectedWpt) {
                 const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
                 const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
@@ -61,6 +61,7 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
             deleteFavorite().then(() => {
                 setTimeout(() => {
                     ctx.setSelectedWpt(null);
+                    ctx.setSelectedWptId(null);
                     ctx.setSelectedFavoriteObj(null);
                     ctx.setSelectedGpxFile({});
                     ctx.setCurrentObjectType(null);

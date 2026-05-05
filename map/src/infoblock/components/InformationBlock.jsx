@@ -93,6 +93,14 @@ export default function InformationBlock({
         }
     }, [showWptEditPanel]);
 
+    // Close WptEditPanel when the user navigates to another object or switches context
+    useEffect(() => {
+        ctx.setAddFavorite((prev) => {
+            if (!prev?.location && !prev?.editWpt) return prev;
+            return { ...prev, add: false, location: null, editTrack: false, editWpt: null, previewAppearance: null };
+        });
+    }, [ctx.selectedWpt, ctx.currentObjectType]);
+
     useEffect(() => {
         if (closeShareMenu) {
             setCloseShareMenu(false);
@@ -129,9 +137,11 @@ export default function InformationBlock({
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
-            hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
-            if (!isEmpty(ctx.selectedGpxFile)) {
-                ctx.setSelectedGpxFile({});
+            if (!ctx.currentObjectType) {
+                hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+                if (!isEmpty(ctx.selectedGpxFile)) {
+                    ctx.setSelectedGpxFile({});
+                }
             }
         }
     }, [showInfoBlock]);
@@ -289,7 +299,7 @@ export default function InformationBlock({
         if (openWptTab) {
             const tObj = new TrackTabList().create(ctx, setShowInfoBlock);
             clearStateIfObjChange();
-            tObj.defaultTab = TRACK_TAB_IDS.WAYPOINTS;
+            tObj.defaultTab = TRACK_TAB_IDS.POINTS;
             setTabsObj(tObj);
             setOpenWptDetails(false);
             setOpenWptTab(false);

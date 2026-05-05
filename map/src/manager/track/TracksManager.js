@@ -1284,8 +1284,19 @@ export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, en
 }
 
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
-    if (ctxTrack?.showPoint?.layer) {
-        map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
+    const showPoint = ctxTrack?.showPoint;
+    if (showPoint?.wptDetails) {
+        if (selectedPointMarker) {
+            map.removeLayer(selectedPointMarker.marker);
+            setSelectedPointMarker(null);
+        }
+        if (showPoint.lat != null) {
+            map.setView([showPoint.lat, showPoint.lng], Math.max(map.getZoom(), 15));
+        }
+        return;
+    }
+    if (showPoint?.layer) {
+        map.setView([showPoint.layer._latlng.lat, showPoint.layer._latlng.lng], 17);
     } else {
         if (selectedPointMarker) {
             map.removeLayer(selectedPointMarker.marker);
@@ -1505,7 +1516,9 @@ export async function openTrackOnMap({
     if (files[file.name]?.url) {
         if (showOnMap || zoomToTrack) {
             if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
-                newGpxFiles[ctx.selectedGpxFile.name].url = null;
+                if (newGpxFiles[ctx.selectedGpxFile.name]) {
+                    newGpxFiles[ctx.selectedGpxFile.name].url = null;
+                }
             }
         }
         newGpxFiles[file.name].showOnMap = showOnMap;
@@ -1642,7 +1655,14 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
     }
 
     if (hasUrl) {
-        ctx.setSelectedGpxFile({ ...allFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
+        // Use file.mapObj explicitly instead of allFiles[file.name].mapObj to avoid
+        // stale mapObj:true from a previous URL-based open.
+        ctx.setSelectedGpxFile({
+            ...allFiles[file.name],
+            zoomToTrack: true,
+            cloudRedrawWpts: true,
+            mapObj: file.mapObj,
+        });
     } else {
         ctx.setSelectedGpxFile({ ...file });
     }

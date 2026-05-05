@@ -8,7 +8,7 @@ import TracksManager, {
     isProtectedSegment,
     isWptGroupShown,
 } from '../../manager/track/TracksManager';
-import { getFavoriteId } from '../../manager/FavoritesManager';
+import { getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
@@ -484,7 +484,8 @@ function parseWpt({
     const resolvedPointsGroups = pointsGroups ?? getResolvedPointsGroups(data);
     points?.forEach((point) => {
         let opt = {};
-        const icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
+        const appearance = resolveWptAppearance(point, resolvedPointsGroups);
+        const icon = createPoiIcon({ point, ...appearance });
         const pInfo = point.ext;
         const lat = point.lat != null ? point.lat : pInfo?.lat;
         const lon = point.lon != null ? point.lon : pInfo?.lon;
@@ -497,7 +498,7 @@ function parseWpt({
         let coords = new L.LatLng(lat, lon);
         if (icon) {
             opt = { clickable: true, icon: icon };
-            opt.iconName = point.icon;
+            opt.iconName = appearance.icon;
             if (pInfo?.time) {
                 opt.time = pInfo.time;
             }
@@ -518,8 +519,8 @@ function parseWpt({
         }
         opt.draggable = false;
         opt.wpt = true;
-        opt.color = point.color;
-        opt.background = point.background;
+        opt.color = appearance.color;
+        opt.background = appearance.background;
         let markerLayer = new L.Marker(coords, opt);
         const marker = simplify ? getMarkerFromCluster(point, clusters, coords, opt, markerLayer) : markerLayer;
         if (!marker) {

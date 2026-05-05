@@ -15,6 +15,7 @@ import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, {
     isTrack,
+    isLocalTrack,
     OBJECT_SEARCH,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_POI,
@@ -32,10 +33,8 @@ import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wiki
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
-    prepareBackground,
-    prepareColor,
-    prepareIcon,
     navigateToFavoritesMenu,
+    resolveWptAppearance,
 } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
@@ -80,6 +79,7 @@ import {
 } from '../../../map/layers/TransportStopsLayer';
 import TransportStopsRoutes from './transport/TransportStopsRoutes';
 import capitalize from 'lodash-es/capitalize';
+import { getResolvedPointsGroups } from '../../../manager/track/TracksManager';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
@@ -267,6 +267,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type?.isWpt) {
             const newWpt = getDataFromWpt(type, ctx.selectedWpt);
             newWpt.id = ctx.selectedWpt.id;
+            newWpt.trackWpt = true;
             return newWpt;
         } else if (type?.isFav || type?.isShareFav) {
             const markerName = ctx.selectedWpt.markerCurrent.name;
@@ -484,9 +485,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             hidden: currentWpt.hidden,
             latlon: getCoordsFromWpt(currentWpt),
             marker: currentWpt.marker,
-            background: prepareBackground(currentWpt.background),
-            color: prepareColor(currentWpt.color),
-            icon: prepareIcon(currentWpt.icon),
+            ...resolveWptAppearance(currentWpt, getResolvedPointsGroups(selectedWpt.trackData)),
             category: currentWpt.category,
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
@@ -610,6 +609,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     function closeObjectFromMap() {
         ctx.setCurrentObjectType(null);
+        ctx.setSelectedWpt(null);
 
         if (ctx.poiByUrl?.layer) {
             // remove poi marker
@@ -759,7 +759,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     function showFavoriteActions() {
-        return wpt.type.isFav || wpt.type.isShareFav;
+        return wpt.type.isFav || wpt.type.isShareFav || (wpt.type.isWpt && isLocalTrack(ctx));
     }
 
     function showPoiActions() {
