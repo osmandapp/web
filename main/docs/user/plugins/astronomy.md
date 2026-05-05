@@ -138,7 +138,7 @@ Below the graph, important observation events are displayed:
 
 The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name.
 
-### Observation Schedule {#actions}
+### Observation Schedule {#observation-schedule}
 
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
