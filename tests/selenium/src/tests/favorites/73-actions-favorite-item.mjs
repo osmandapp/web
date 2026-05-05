@@ -168,6 +168,8 @@ export default async function test() {
     await clickBy(By.id('se-delete-fav-dialog-submit'));
     await waitByRemoved(By.id(`se-actions-${wptName}${suffix}`));
     await waitByRemoved(By.id(`se-fav-item-name-${wptName}${suffix}`));
+    // ghost pin must not reappear after deletion
+    await waitByRemoved(By.css('[id^="se-selected-marker-"]'));
 
     await waitBy(By.id(`se-actions-${wptName2}`), { idle: true });
     await clickBy(By.id(`se-actions-${wptName2}`));

@@ -61,6 +61,7 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
             deleteFavorite().then(() => {
                 setTimeout(() => {
                     ctx.setSelectedWpt(null);
+                    ctx.setSelectedWptId(null);
                     ctx.setSelectedFavoriteObj(null);
                     ctx.setSelectedGpxFile({});
                     ctx.setCurrentObjectType(null);
