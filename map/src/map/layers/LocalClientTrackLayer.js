@@ -283,6 +283,8 @@ export default function LocalClientTrackLayer() {
                 if (track.updated) {
                     updateTrackOnMap(track, currLayer.active);
                 }
+                const pointsGroups = getResolvedPointsGroups(track);
+                redrawWptsOnLayer({ layer: currLayer.layer, pointsGroups: pointsGroups });
             }
         }
 

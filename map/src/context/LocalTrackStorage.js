@@ -153,6 +153,9 @@ export function saveTrackToLocalStorage({ ctx, track }) {
     if (currentTrackIndex === -1) {
         currentTrackIndex = localTracks.push(track) - 1;
         ctx.setLocalTracks([...localTracks]);
+    } else {
+        localTracks[currentTrackIndex] = track;
+        ctx.setLocalTracks([...localTracks]);
     }
 
     const res = prepareLocalTrack(track);
