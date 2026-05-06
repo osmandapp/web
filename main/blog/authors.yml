@@ -5,7 +5,7 @@ eugene:
   image_url: https://avatars.githubusercontent.com/u/44466116?s=400&u=71229fe1980e30ac5ab43d7afaf6f91897c5ed53&v=4
   socials:
       github: https://github.com/EugeneZmeuk
-      email: eugene.kizevich@osmand.net
+      
 
 
 tat:
@@ -34,7 +34,7 @@ victor:
   socials:
       github: https://github.com/vshcherb
       x: https://x.com/victor_shcherb
-      email: victor.shcherb@osmand.net
+      
 
 shura:
   name: Alexandra
