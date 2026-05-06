@@ -451,6 +451,7 @@ export default function InformationBlock({
                 ) : (
                     <>
                         {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
+                        {ctx.updateFiles && <LinearProgress id="se-info-files-loading" size={20} />}
                         {showTrackContextMenu && (
                             <TrackContextMenu
                                 track={ctx.selectedGpxFile}
