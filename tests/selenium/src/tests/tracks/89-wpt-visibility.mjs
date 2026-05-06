@@ -24,6 +24,17 @@ export default async function test() {
 
     // Upload track with multiple waypoint groups
     await actionUploadGpx({ mask: trackName + '.gpx' });
+
+    // Test: local track save waypoint group visibility without page refresh
+    await clickBy(By.id('se-local-track-' + trackName));
+    await clickBy(By.css("[testid='se-tab-points']"));
+    await waitBy(By.id('se-waypoints-tab-content'));
+    await clickBy(By.id('se-wpt-group-visibility-waypoints'));
+    await validateVisibleWaypointCount(8, 'Local track should have 8 waypoints');
+    await clickBy(By.id('se-button-back'));
+    await clickBy(By.id('se-local-track-' + trackName));
+    await validateVisibleWaypointCount(8, 'Local track should have 8 waypoints after returning to track');
+    
     await clickBy(By.id('se-show-menu-planroute'));
     await actionLocalToCloud({ mask: trackName });
 
@@ -53,9 +64,7 @@ export default async function test() {
     await validateVisibleWaypointCount(8, 'Track should have 8 waypoints');
     await clickBy(By.id('se-button-back'));
     await clickBy(By.id('se-cloud-track-' + trackName));
-    await clickBy(By.css("[testid='se-tab-points']"));
-    await waitBy(By.id('se-waypoints-tab-content'));
-    await validateVisibleWaypointCount(8, 'Track should have 8 waypoints');
+    await validateVisibleWaypointCount(8, 'Track should have 8 waypoints after returning to track');
     await clickBy(By.id('se-wpt-group-visibility-waypoints'));
 
     // Test: Toggle first group visibility OFF
