@@ -3,6 +3,10 @@ eugene:
   title: Marketing lead
   url: http://github.com/EugeneZmeuk
   image_url: https://avatars.githubusercontent.com/u/44466116?s=400&u=71229fe1980e30ac5ab43d7afaf6f91897c5ed53&v=4
+  socials:
+      github: https://github.com/EugeneZmeuk
+      email: eugene.kizevich@osmand.net
+
 
 tat:
   name: Tatiana
@@ -27,12 +31,24 @@ victor:
   title: CEO
   url: https://github.com/vshcherb
   image_url: https://avatars.githubusercontent.com/u/1042025?v=4
+  socials:
+      github: https://github.com/vshcherb
+      x: https://x.com/victor_shcherb
+      email: victor.shcherb@osmand.net
 
 shura:
   name: Alexandra
   title: Technical writer
   url: https://github.com/shurasmiling
   image_url: https://avatars.githubusercontent.com/u/105276875?v=4
+
+tina:
+  name: Tina
+  title: Technical writer
+  url: https://github.com/TinaPohor
+  image_url: https://avatars.githubusercontent.com/u/229568890?v=4
+  socials:
+      github: https://github.com/TinaPohor
 
 antti:
   name: Antti
