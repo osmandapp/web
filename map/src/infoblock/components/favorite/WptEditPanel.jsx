@@ -616,19 +616,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         }
                     />
                     <DividerWithMargin margin={'16px'} />
-                    <Box className={styles.fields}>
-                        <FavoriteShape
-                            color={favoriteColor}
-                            favoriteShape={favoriteShape}
-                            setFavoriteShape={setFavoriteShape}
-                            defaultBackground={
-                                isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE
-                            }
-                        />
-                    </Box>
+                    <FavoriteShape favoriteShape={favoriteShape} setFavoriteShape={setFavoriteShape} />
                     {isEditMode && !isEditTrackWpt && (
                         <>
-                            <ThickDivider />
+                            <ThickDivider mt={0} mb={0} />
                             <DefaultItem
                                 id={'se-delete-fav-item'}
                                 icon={<Delete sx={{ color: 'error.main' }} />}
