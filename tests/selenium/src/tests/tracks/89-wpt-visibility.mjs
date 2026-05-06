@@ -3,7 +3,6 @@ import { clickBy, waitBy, waitByRemoved, assert } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import actionLogOut from '../../actions/login/actionLogOut.mjs';
 import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
 import actionLocalToCloud from '../../actions/tracks/actionLocalToCloud.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -18,6 +17,7 @@ export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
     const trackName = 'test-track-wpt';
 
+    await clickBy(By.id('se-show-menu-tracks'));
     for (const track of tracks) {
         await actionDeleteTracksByPattern(track.name);
     }
@@ -84,55 +84,35 @@ export default async function test() {
 
     await validateVisibleWaypointCount(9, 'Track should have 9 waypoints');
 
-    // Test: Toggle first group visibility OFF
+    // Test: Toggle first group visibility OFF, check close/reopen and page refresh
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
     await validateVisibleWaypointCount(6, 'First group should be hidden');
 
-    // log out and log in again
-    await actionLogOut();
-    await clickBy(By.id('se-login-button'));
-    await actionLogIn();
-
-    // open track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await clickBy(By.id('se-cloud-track-' + trackName));
-    await validateVisibleWaypointCount(6, 'First group should be hidden after reload');
-    await clickBy(By.css("[testid='se-tab-points']"));
-
-    // Test: Toggle second group visibility OFF
-    await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    await validateVisibleWaypointCount(1, 'Both groups should be hidden');
-
-    // Test: Toggle first group visibility ON
-    await clickBy(By.id('se-wpt-group-visibility-groupA'));
-    await actionIdleWait({ idle: 1000 });
-
-    // log out and log in again
-    await actionLogOut();
-    await clickBy(By.id('se-login-button'));
-    await actionLogIn();
-
-    // open track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await clickBy(By.id('se-cloud-track-' + trackName));
-    await validateVisibleWaypointCount(4, 'First group should be visible again');
-    await clickBy(By.css("[testid='se-tab-points']"));
-
-    // Test: Toggle second group visibility ON
-    await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    await validateVisibleWaypointCount(9, 'Both groups should be visible');
-
-    await clickBy(By.id('se-wpt-group-visibility-groupA'));
-    await actionIdleWait({ idle: 3000 });
+    // close/reopen without refresh — visibility must survive in-memory
     await clickBy(By.id('se-button-back'));
     await waitByRemoved(By.id('se-track-context-menu'));
     await clickBy(By.id('se-cloud-track-' + trackName));
-    await validateVisibleWaypointCount(6, 'GroupA must stay hidden after close/reopen without page refresh');
+    await validateVisibleWaypointCount(6, 'First group must stay hidden after close/reopen');
+    await driver.navigate().refresh();
+    await waitBy(By.id('se-track-context-menu'));
+    await waitByRemoved(By.id('se-info-files-loading'));
+    await validateVisibleWaypointCount(6, 'First group should be hidden after page refresh');
+
+    // Test: Toggle second group OFF, first group ON, verify mixed state persists after refresh
     await clickBy(By.css("[testid='se-tab-points']"));
-    await waitBy(By.id('se-waypoints-tab-content'));
+    await clickBy(By.id('se-wpt-group-visibility-groupB'));
+    await validateVisibleWaypointCount(1, 'Both groups should be hidden');
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
-    await actionIdleWait({ idle: 3000 });
-    await validateVisibleWaypointCount(9, 'All groups visible after restoring groupA');
+    await actionIdleWait();
+    await driver.navigate().refresh();
+    await waitBy(By.id('se-track-context-menu'));
+    await waitByRemoved(By.id('se-info-files-loading'));
+    await validateVisibleWaypointCount(4, 'First group visible, second hidden after page refresh');
+    await clickBy(By.css("[testid='se-tab-points']"));
+
+    // Test: Toggle second group visibility ON — all visible
+    await clickBy(By.id('se-wpt-group-visibility-groupB'));
+    await validateVisibleWaypointCount(9, 'Both groups should be visible');
 
     // Test: open a wpt from the list and verify selected pin appears on map
     await clickBy(By.id('se-wpt-group-header-waypoints')); // expand the group
@@ -147,7 +127,9 @@ export default async function test() {
     await waitByRemoved(By.css('[id^="se-selected-marker-"]'));
 
     // Close track and cleanup
-    await clickBy(By.id('se-button-back'));
+    await clickBy(By.id('se-button-close'));
+    await clickBy(By.id('se-show-main-menu'), { optional: true });
+    await clickBy(By.id('se-show-menu-tracks'));
     await deleteTrack(trackName);
 }
 
