@@ -155,7 +155,7 @@ async function createConfig(){
               title: 'OsmAnd',
               items: [
                 {
-                  label: 'Spring Sale 🌱',
+                  label: 'Pricing 💳',
                   to: 'pathname:///pricing',
                 },
                 {
