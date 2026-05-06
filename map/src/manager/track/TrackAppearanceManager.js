@@ -1,6 +1,7 @@
 import { apiPost } from '../../util/HttpApi';
 import { getResolvedPointsGroups, INFO_FILE_EXT, GPX_FILE_TYPE } from './TracksManager';
 import { isCloudTrack, isLocalTrack } from '../../context/AppContext';
+import { saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
 import isEmpty from 'lodash-es/isEmpty';
 
 const VISIBILITY_DEBOUNCE_MS = 1000;
@@ -131,8 +132,15 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
             },
         };
 
-        if (isLocalTrack(ctx) && ctx.createTrack?.enable) {
-            updatedGpxFile.updateLayers = true;
+        if (isLocalTrack(ctx)) {
+            if (ctx.createTrack?.enable) {
+                updatedGpxFile.updateLayers = true;
+            }
+            const idx = ctx.localTracks.findIndex((t) => t?.name === prevFile?.name);
+            if (idx !== -1) {
+                ctx.localTracks[idx].info = updatedGpxFile.info;
+                saveTrackToLocalStorage({ ctx, track: ctx.localTracks[idx] });
+            }
         }
 
         if (isCloudTrack(ctx)) {

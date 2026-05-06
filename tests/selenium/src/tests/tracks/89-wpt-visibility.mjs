@@ -24,6 +24,42 @@ export default async function test() {
 
     // Upload track with multiple waypoint groups
     await actionUploadGpx({ mask: trackName + '.gpx' });
+
+    // Test local track WPT group visibility persistence (regression: visibility lost after close/reopen)
+    await clickBy(By.id(`se-local-track-${trackName}`));
+    await waitBy(By.id('se-track-context-menu'));
+    await clickBy(By.css("[testid='se-tab-points']"));
+    await waitBy(By.id('se-waypoints-tab-content'));
+    await validateVisibleWaypointCount(9, 'Local: all waypoints visible');
+    await clickBy(By.id('se-wpt-group-visibility-groupA'));
+    await validateVisibleWaypointCount(6, 'Local: groupA hidden');
+
+    // Close and reopen WITHOUT page refresh — visibility must survive
+    await clickBy(By.id('se-button-back'));
+    await waitByRemoved(By.id('se-track-context-menu'));
+    await clickBy(By.id(`se-local-track-${trackName}`));
+    await waitBy(By.id('se-track-context-menu'));
+    await validateVisibleWaypointCount(6, 'Local: groupA must stay hidden after close/reopen without page refresh');
+    await clickBy(By.id('se-button-back'));
+    await waitByRemoved(By.id('se-track-context-menu'));
+
+    // Page refresh — IndexedDB must carry the updated pointsGroups
+    await driver.navigate().refresh();
+    await actionIdleWait();
+    await waitBy(By.id(`se-local-track-${trackName}`));
+    await clickBy(By.id(`se-local-track-${trackName}`));
+    await waitBy(By.id('se-track-context-menu'));
+    await validateVisibleWaypointCount(6, 'Local: groupA must stay hidden after page refresh (IndexedDB)');
+
+    // Restore visibility and continue
+    await clickBy(By.css("[testid='se-tab-points']"));
+    await waitBy(By.id('se-waypoints-tab-content'));
+    await clickBy(By.id('se-wpt-group-visibility-groupA'));
+    await validateVisibleWaypointCount(9, 'Local: all waypoints visible after restore');
+    await actionIdleWait({ idle: 1000 });
+    await clickBy(By.id('se-button-back'));
+    await waitByRemoved(By.id('se-track-context-menu'));
+
     await clickBy(By.id('se-show-menu-planroute'));
     await actionLocalToCloud({ mask: trackName });
 
