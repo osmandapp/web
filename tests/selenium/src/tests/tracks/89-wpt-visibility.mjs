@@ -86,6 +86,18 @@ export default async function test() {
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
     await validateVisibleWaypointCount(9, 'Both groups should be visible');
 
+    await clickBy(By.id('se-wpt-group-visibility-groupA'));
+    await actionIdleWait({ idle: 3000 });
+    await clickBy(By.id('se-button-back'));
+    await waitByRemoved(By.id('se-track-context-menu'));
+    await clickBy(By.id('se-cloud-track-' + trackName));
+    await validateVisibleWaypointCount(6, 'GroupA must stay hidden after close/reopen without page refresh');
+    await clickBy(By.css("[testid='se-tab-points']"));
+    await waitBy(By.id('se-waypoints-tab-content'));
+    await clickBy(By.id('se-wpt-group-visibility-groupA'));
+    await actionIdleWait({ idle: 3000 });
+    await validateVisibleWaypointCount(9, 'All groups visible after restoring groupA');
+
     // Test: open a wpt from the list and verify selected pin appears on map
     await clickBy(By.id('se-wpt-group-header-waypoints')); // expand the group
     await waitBy(By.id('se-wpt-row-VELO-0'));

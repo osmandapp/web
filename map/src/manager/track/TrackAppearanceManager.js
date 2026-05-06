@@ -67,8 +67,13 @@ export async function createOrUpdateInfoFile(ctx, gpxFile, fileName, infoFile) {
     if (res?.data?.updatetime) {
         if (infoFile) {
             infoFile.updatetimems = res.data.updatetime;
+            infoFile.details = { ...infoFile.details, data: gpxFile.info };
         } else {
-            ctx.listFiles?.uniqueFiles?.push({ name: infoFileName, updatetimems: res.data.updatetime });
+            ctx.listFiles?.uniqueFiles?.push({
+                name: infoFileName,
+                updatetimems: res.data.updatetime,
+                details: { data: gpxFile.info },
+            });
         }
         return true;
     }
