@@ -111,6 +111,66 @@
     fill: #237bff;
 }
 
+.shapeRow {
+    width: 360px !important;
+    min-height: 56px !important;
+    padding: 4px 10px 4px 16px !important;
+    gap: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: default !important;
+}
+
+.shapeRowText {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.shapeToggleGroup {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 10px;
+    background: rgba(33, 33, 33, 0.06);
+    flex-shrink: 0;
+    margin-right: 6px;
+}
+
+.shapeToggleBtn {
+    width: 50px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    fill: var(--svg-icon-color);
+}
+
+.shapeToggleBtn:not(.shapeToggleBtnSelected):hover {
+    background-color: rgba(33, 33, 33, 0.06);
+}
+
+.shapeToggleBtnSelected {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.shapeToggleIcon {
+    width: 24px;
+    height: 24px;
+    fill: inherit;
+}
+
+.shapeToggleIconSelected {
+    fill: var(--selected-color);
+}
+
 .colorCircleContainer {
     position: relative;
     display: flex;

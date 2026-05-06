@@ -356,6 +356,7 @@
     "editor_link_url_prompt": "URL",
     "wpt_appearance_icon_label": "Icon",
     "wpt_appearance_color_label": "Color",
+    "wpt_appearance_shape_label": "Shape",
     "wpt_select_shape": "Select shape",
     "wpt_icon_selection_title": "All icons",
     "wpt_icon_selection_last_used": "Last used",
