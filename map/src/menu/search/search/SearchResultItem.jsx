@@ -114,9 +114,7 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
         const trackFile = ctx.listFiles?.uniqueFiles.find((f) => f.name === name);
         if (!trackFile) return '';
         const distance = convertMeters(getDist(trackFile), ctx.unitsSettings.len, LARGE_UNIT);
-        const dist = distance != null
-            ? `${distance.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`
-            : '';
+        const dist = distance != null ? `${distance.toFixed(2)} ${t(getLargeLengthUnit(ctx))}` : '';
         const time = getTime(trackFile);
         return [dist, time].filter(Boolean).join(' · ');
     }
@@ -199,7 +197,7 @@ export default function SearchResultItem({ item, typeItem, index }) {
             const fileName = item.properties?.[CATEGORY_NAME];
             const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
             if (!file) return;
-            file.mapObj = true; 
+            file.mapObj = true;
             file.openedFromSearch = true;
             const newTracks = await openTrackOnMap({
                 file,

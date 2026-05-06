@@ -36,6 +36,7 @@ import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/Map
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
+import { getGpxFiles, prepareName } from '../../manager/track/TracksManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -76,6 +77,26 @@ export function getObjIdSearch(obj) {
         return null;
     }
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
+}
+
+function searchCloudTrackFeatures({ listFiles, query }) {
+    const normalize = (s) => s?.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().trim();
+
+    if (!query || !listFiles?.uniqueFiles) return [];
+    const q = normalize(query);
+    if (!q) return [];
+
+    return getGpxFiles(listFiles)
+        .filter((f) => !f.name.endsWith(INFO_FILE_EXT))
+        .filter((f) => normalize(prepareName(f.name, true)).includes(q))
+        .map((f) => ({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [0, 0] },
+            properties: {
+                [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK,
+                [CATEGORY_NAME]: f.name,
+            },
+        }));
 }
 
 export default function SearchLayer() {
@@ -187,7 +208,12 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                ctx.setSearchResult(data);
+                const cloudFeatures = searchCloudTrackFeatures({
+                    listFiles: ctx.listFiles,
+                    query: searchData.query,
+                });
+                const features = [...cloudFeatures, ...(data?.features ?? [])];
+                ctx.setSearchResult({ ...data, features });
             } else {
                 ctx.setSearchResult(null);
             }
