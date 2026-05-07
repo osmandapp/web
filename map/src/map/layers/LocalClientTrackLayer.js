@@ -721,9 +721,12 @@ export default function LocalClientTrackLayer() {
 
     function clickMap(e) {
         if (ctxTrack?.addWpt) {
-            ctx.addFavorite.location = e.latlng;
-            ctx.addFavorite.editTrack = true;
-            ctx.setAddFavorite({ ...ctx.addFavorite });
+            ctx.setAddFavorite((prev) => ({
+                ...prev,
+                location: e.latlng,
+                editTrack: true,
+                openKey: Date.now(),
+            }));
             delete ctxTrack.addWpt;
             ctx.setSelectedGpxFile({ ...ctxTrack });
             TracksManager.updateState(ctx);

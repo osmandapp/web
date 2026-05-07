@@ -70,7 +70,7 @@
 }
 
 .toolbarBtnActive {
-    color: #237BFF !important;
+    color: #237bff !important;
     background-color: #e9f0fb !important;
     border-radius: 4px !important;
     padding: 2px !important;
@@ -97,7 +97,7 @@
 }
 
 .prosemirror :global(.ProseMirror a) {
-    color: #237BFF;
+    color: #237bff;
     text-decoration: underline;
     cursor: pointer;
 }

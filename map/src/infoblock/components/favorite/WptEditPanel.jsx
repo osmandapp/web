@@ -86,6 +86,14 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 setFavoriteGroup(defaultGroup);
             }
         }
+        // Remove the preview marker when this panel instance unmounts.
+        const myOpenKey = ctx.addFavorite?.openKey;
+        return () => {
+            ctx.setAddFavorite((prev) => {
+                if (!prev || prev.openKey !== myOpenKey) return prev;
+                return { ...prev, location: null, previewAppearance: null };
+            });
+        };
     }, []);
 
     useEffect(() => {

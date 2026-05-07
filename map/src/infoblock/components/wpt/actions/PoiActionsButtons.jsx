@@ -33,10 +33,10 @@ export default function PoiActionsButtons({ wpt }) {
                 ctx.selectedWpt?.poi?.latlng ??
                 new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
             ctx.setAddFavorite({
-                ...ctx.addFavorite,
                 poi: ctx.selectedWpt?.poi,
                 address: wpt.address,
                 location: loc,
+                openKey: Date.now(),
             });
         } else {
             navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);

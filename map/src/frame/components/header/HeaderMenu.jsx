@@ -35,7 +35,7 @@ const pages = ({ t }) => [
     },
     {
         name: `💳 ${t('web:header_pricing')}`,
-     //   name: `🌱 ${t('web:header_spring_sale')}`,
+        //   name: `🌱 ${t('web:header_spring_sale')}`,
         url: '/pricing',
     },
     {
