@@ -543,6 +543,8 @@ export default function PoiLayer() {
                     } else {
                         clearPoiList();
                     }
+                } catch (e) {
+                    if (e?.name !== 'AbortError') throw e;
                 } finally {
                     map.spin(false);
                     clearTimeout(notifyTimeout);
