@@ -48,7 +48,7 @@ export const iconPathMap = {
     street: '/map/images/map_icons/ic_action_street_name.svg',
     intersection: '/map/images/map_icons/ic_action_intersection.svg',
     ic_action_transport_bus: '/map/images/map_icons/ic_action_transport_bus.svg',
-    gpx_track: '/map/images/map_icons/ic_action_polygom_dark.svg',
+    gpx_track: '/map/images/map_icons/ic_action_polygon_dark.svg',
 };
 
 export async function getIconFromMap(name) {
