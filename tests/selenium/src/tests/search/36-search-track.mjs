@@ -14,7 +14,7 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    const trackName = 'test-track-wpt';
+    const trackName = 'test-track-mixed';
 
     await actionDeleteTracksByPattern(trackName);
 
@@ -30,7 +30,7 @@ export default async function test() {
     await waitBy(By.id('se-track-context-menu'));
     await waitBy(By.id(`se-track-${trackName}`));
 
-    await clickBy(By.id('se-button-back'));
+    await clickBy(By.id('se-button-close'));
 
     await waitBy(By.id('se-search-results'));
     await waitBy(By.id(trackResultId));

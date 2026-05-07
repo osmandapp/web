@@ -375,10 +375,7 @@ export default function InformationBlock({
     function closeMapObjectMenu() {
         ctx.setCloseMapObj(true);
         if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
-            ctx.mutateGpxFiles((o) => {
-                o[ctx.selectedGpxFile.name].mapObj = null;
-                o[ctx.selectedGpxFile.name].openedFromSearch = null;
-            });
+            ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].mapObj = null));
         }
     }
 
@@ -449,7 +446,7 @@ export default function InformationBlock({
                                 track={ctx.selectedGpxFile}
                                 onClose={handleCloseTrackContextMenu}
                                 tabsObj={tabsObj}
-                                showBackButton={!ctx.selectedGpxFile?.mapObj || ctx.selectedGpxFile?.openedFromSearch}
+                                showBackButton={!ctx.selectedGpxFile?.mapObj}
                             />
                         )}
                     </>

@@ -11,7 +11,6 @@ import {
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_SHARE_FILE,
-    OBJECT_SEARCH,
 } from '../../context/AppContext';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { saveTrackToLocal } from './SaveTrackManager';
@@ -1546,7 +1545,6 @@ export async function openTrackOnMap({
             track.name = file.name;
             track.key = track.name;
             track.mapObj = file.mapObj;
-            track.openedFromSearch = file.openedFromSearch;
             Object.keys(track).forEach((t) => {
                 oneGpxFile[t] = track[t];
             });
@@ -1632,7 +1630,7 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
         allFiles = ctx.gpxFiles;
 
         // not set for track analyzer, because we need to keep the current object type
-        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER && (ctx.currentObjectType !== OBJECT_SEARCH || file?.mapObj)) {
+        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         }
     }

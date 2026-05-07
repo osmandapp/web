@@ -36,7 +36,7 @@ import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/Map
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
-import { getGpxFiles, prepareName } from '../../manager/track/TracksManager';
+import { getGpxFiles, prepareName, EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -87,7 +87,7 @@ function searchCloudTrackFeatures({ listFiles, query }) {
     if (!q) return [];
 
     return getGpxFiles(listFiles)
-        .filter((f) => !f.name.endsWith(INFO_FILE_EXT))
+        .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME))
         .filter((f) => normalize(prepareName(f.name, true)).includes(q))
         .map((f) => ({
             type: 'Feature',
