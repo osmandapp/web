@@ -397,9 +397,19 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             return tags;
         };
 
-        setLoading(true);
+        if (!wpt) {
+            setLoading(true);
+        }
+
         fetchTagsAndData().then((tags) => {
-            setWpt({ ...newWpt, tags });
+            setWpt((prev) => {
+                const base = { ...newWpt, tags };
+                // preserve address if same POI was already loaded
+                if (prev?.id === newWpt.id && prev?.address) {
+                    base.address = prev.address;
+                }
+                return base;
+            });
             setIsAddressAdded(false);
             setIsPhotosAdded(false);
             setLoading(false);
@@ -515,7 +525,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 return { ...prev, address: addressData || ADDRESS_NOT_FOUND };
             });
         });
-    }, [wpt?.id]);
+    }, [wpt?.id, isAddressAdded]);
 
     useEffect(() => {
         if (!wpt || !objWithPhotos(wpt) || isPhotosAdded) return;
