@@ -190,6 +190,7 @@
     fill: var(--svg-icon-color) !important;
 }
 
-.sectionRow:hover .sectionRowChevron {
+.sectionRow:hover .sectionRowChevron,
+.item:hover .sectionRowChevron {
     fill: var(--selected-color) !important;
 }

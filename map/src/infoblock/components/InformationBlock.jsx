@@ -15,7 +15,7 @@ import React, { useState, useContext, useEffect, useCallback } from 'react';
 import TrackTabList, { TRACK_TAB_IDS } from './tabs/TrackTabList';
 import TrackContextMenu from './track/TrackContextMenu';
 import isEmpty from 'lodash-es/isEmpty';
-import { hasSegmentTurns } from '../../manager/track/TracksManager';
+import { hasSegmentTurns, findGroupByName } from '../../manager/track/TracksManager';
 import {
     FAVORITES_URL,
     FAVOURITES,
@@ -402,6 +402,25 @@ export default function InformationBlock({
 
     function closeCloudTrack() {
         hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+
+        // If openGroups is empty (e.g. track was opened directly from Garmin last-sync menu),
+        // rebuild the full folder stack from the track name so the back button navigates
+        // correctly through each parent folder (openGroups acts as a stack — pop() goes up one level).
+        if (!ctx.openGroups || ctx.openGroups.length === 0) {
+            const fileName = ctx.selectedGpxFile?.name;
+            if (fileName) {
+                const folderParts = fileName.split('/').slice(0, -1);
+                if (folderParts.length > 0) {
+                    const groups = folderParts
+                        .map((_, i) => findGroupByName(ctx.tracksGroups, folderParts.slice(0, i + 1).join('/')))
+                        .filter(Boolean);
+                    if (groups.length > 0) {
+                        ctx.setOpenGroups(groups);
+                    }
+                }
+            }
+        }
+
         if (!isEmpty(ctx.selectedGpxFile)) {
             ctx.setSelectedGpxFile({});
         }

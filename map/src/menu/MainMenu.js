@@ -304,12 +304,21 @@ export default function MainMenu({
         if (location.pathname.includes(POI_URL)) {
             return;
         }
-        if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
+        if (location.pathname.includes(INFO_MENU_URL)) {
+            // Close login and switch menu if navigating to a track/favorites info URL from Login/Garmin
+            if (ltx.openLoginMenu) {
+                ltx.setOpenLoginMenu(false);
+            }
+            switchMenuByCurrentUrl();
+            return;
+        }
+        if (savePrevState) {
             setSavePrevState(false);
             return;
         }
         if (location.pathname.includes(LOGIN_URL)) {
             ltx.setOpenLoginMenu(true);
+            setShowInfoBlock(false);
             return;
         }
         if (openVisibleTracks) {
@@ -318,6 +327,10 @@ export default function MainMenu({
         }
         if (!menuInfo) {
             selectMenuByUrl();
+        } else {
+            // When navigating to a menu URL from a different menu,
+            // switch directly without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
+            switchMenuByCurrentUrl();
         }
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -353,6 +366,15 @@ export default function MainMenu({
             return selectMenu({ item, openFromUrl: true });
         }
         return null;
+    }
+
+    // Switch menu by current URL without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
+    function switchMenuByCurrentUrl() {
+        const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
+        if (matchedItem && !isSelectedMenuItem(matchedItem)) {
+            setMenuInfo(matchedItem.component);
+            setSelectedType(matchedItem.type);
+        }
     }
 
     function openShareFileByLink() {

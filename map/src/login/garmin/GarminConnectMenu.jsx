@@ -13,6 +13,7 @@ import LoginContext from '../../context/LoginContext';
 import gStyles from '../../menu/gstylesmenu.module.css';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import Loading from '../../menu/errors/Loading';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 
 export default function GarminConnectMenu() {
     const ltx = useContext(LoginContext);
@@ -65,7 +66,7 @@ export default function GarminConnectMenu() {
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBarWithBtns id="garmin-connect" header="Garmin Connect" hasBackBtn={true} leftBtnAction={goBack} />
-
+            <ThickDivider />
             <Box className={gStyles.scrollActiveBlock}>
                 {loading && <Loading />}
 
