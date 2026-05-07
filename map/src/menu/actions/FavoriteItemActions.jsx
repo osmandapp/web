@@ -50,7 +50,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                         id={'se-edit-fav-item'}
                         className={styles.action}
                         onClick={() => {
-                            ctx.setAddFavorite((prev) => ({ ...prev, editWpt: favorite }));
+                            ctx.setAddFavorite({ editWpt: favorite, openKey: Date.now() });
                             setOpenActions(false);
                         }}
                     >
@@ -88,7 +88,6 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                     setOpenActions={setOpenActions}
                 />
             )}
-
         </>
     );
 });

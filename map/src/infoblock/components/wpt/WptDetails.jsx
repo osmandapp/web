@@ -32,10 +32,7 @@ import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, {
-    navigateToFavoritesMenu,
-    resolveWptAppearance,
-} from '../../../manager/FavoritesManager';
+import FavoritesManager, { navigateToFavoritesMenu, resolveWptAppearance } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {

@@ -16,6 +16,7 @@ import {
     SELECTED_PIN_SIZE,
     SELECTED_ICON_SIZE,
     applySelectedPin,
+    resetSelectedPin,
 } from '../util/MarkerSelectionService';
 import { panToIfNeeded } from '../util/MapManager';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
@@ -125,6 +126,8 @@ const FavoriteLayer = () => {
             },
             isSelection: true,
         });
+
+        return () => resetSelectedPin({ ctx, map, force: true });
     }, [map, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
 
     // Updates the selected pin icon in real-time when user changes appearance (color, icon, shape).

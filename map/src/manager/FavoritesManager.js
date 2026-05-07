@@ -494,15 +494,11 @@ export function resolveWptAppearance(wpt, pointsGroups) {
     const category = wpt?.category ?? '';
     const group = pointsGroups?.[category];
     return {
-        color: isNoValue(wpt?.color)
-            ? (group?.color ?? MarkerOptions.DEFAULT_WPT_COLOR)
-            : wpt.color,
+        color: isNoValue(wpt?.color) ? (group?.color ?? MarkerOptions.DEFAULT_WPT_COLOR) : wpt.color,
         background: isNoValue(wpt?.background)
             ? (group?.backgroundType ?? group?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE)
             : wpt.background,
-        icon: isNoValue(wpt?.icon)
-            ? (group?.iconName ?? group?.icon ?? MarkerOptions.DEFAULT_WPT_ICON)
-            : wpt.icon,
+        icon: isNoValue(wpt?.icon) ? (group?.iconName ?? group?.icon ?? MarkerOptions.DEFAULT_WPT_ICON) : wpt.icon,
     };
 }
 

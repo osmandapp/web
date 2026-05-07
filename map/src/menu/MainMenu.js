@@ -268,7 +268,12 @@ export default function MainMenu({
                     const mapObj = ctx.favorites.mapObjs[group.id];
                     if (!mapObj?.markers?._layers) return;
 
-                    const markerList = getFavMenuListByLayers({ layers: mapObj.markers._layers, wpts: mapObj.wpts, currentLoc, pointsGroups: mapObj.pointsGroups });
+                    const markerList = getFavMenuListByLayers({
+                        layers: mapObj.markers._layers,
+                        wpts: mapObj.wpts,
+                        currentLoc,
+                        pointsGroups: mapObj.pointsGroups,
+                    });
                     if (markerList.length === 0) return;
 
                     const marker = markerList.find((m) => m.name === decodeString(favname));

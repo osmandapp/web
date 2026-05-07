@@ -181,12 +181,14 @@
 
 .colorCheckerBg {
     background-image:
-        linear-gradient(45deg, #bbb 25%, transparent 25%),
-        linear-gradient(-45deg, #bbb 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #bbb 75%),
-        linear-gradient(-45deg, transparent 75%, #bbb 75%);
+        linear-gradient(45deg, #bbb 25%, transparent 25%), linear-gradient(-45deg, #bbb 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #bbb 75%), linear-gradient(-45deg, transparent 75%, #bbb 75%);
     background-size: 8px 8px;
-    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    background-position:
+        0 0,
+        0 4px,
+        4px -4px,
+        -4px 0px;
     background-color: white;
 }
 
@@ -377,10 +379,8 @@
     overflow: visible;
     background-color: white;
     background-image:
-        linear-gradient(45deg, #cfcfcf 25%, transparent 25%),
-        linear-gradient(-45deg, #cfcfcf 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #cfcfcf 75%),
-        linear-gradient(-45deg, transparent 75%, #cfcfcf 75%);
+        linear-gradient(45deg, #cfcfcf 25%, transparent 25%), linear-gradient(-45deg, #cfcfcf 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #cfcfcf 75%), linear-gradient(-45deg, transparent 75%, #cfcfcf 75%);
     background-size: 8px 8px;
     background-position:
         0 0,
@@ -424,12 +424,14 @@
     border: 1.5px solid rgba(33, 33, 33, 0.1);
     background-color: #fff;
     background-image:
-        linear-gradient(45deg, #ccc 25%, transparent 25%),
-        linear-gradient(-45deg, #ccc 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #ccc 75%),
-        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+        linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%);
     background-size: 8px 8px;
-    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    background-position:
+        0 0,
+        0 4px,
+        4px -4px,
+        -4px 0px;
 }
 
 .colorPickerSwatchColor {
@@ -518,4 +520,3 @@
     padding-left: 16px;
     gap: 8px;
 }
-

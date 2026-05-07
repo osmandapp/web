@@ -346,8 +346,7 @@ export default function InformationBlock({
                 ctx.createTrack.deletePrev = deletePrev;
             }
             ctx.setCreateTrack({ ...ctx.createTrack });
-            ctx.addFavorite.editTrack = false;
-            ctx.setAddFavorite({ ...ctx.addFavorite });
+            ctx.setAddFavorite((prev) => ({ ...prev, editTrack: false }));
         }
     }
 
@@ -433,7 +432,7 @@ export default function InformationBlock({
             {showInfoBlock &&
                 !trackUrlOpenLoading &&
                 (showWptEditPanel ? (
-                    <WptEditPanel setShowInfoBlock={setShowInfoBlock} />
+                    <WptEditPanel key={ctx.addFavorite?.openKey} setShowInfoBlock={setShowInfoBlock} />
                 ) : openWptDetails ? (
                     ctx.photoGallery ? (
                         <WptPhotoList photos={ctx.photoGallery} />
