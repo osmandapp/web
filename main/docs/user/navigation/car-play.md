@@ -300,6 +300,17 @@ You can change the notification settings for the OsmAnd app in the system settin
 
 You can also enable or disable Announce messages directly in *CarPlay*. Read about how notification management is implemented on [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) and [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
+### Map Theme {#map-theme}
+
+![Map Theme](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+CarPlay allows you to configure the map appearance for better visibility in different driving conditions. You can choose one of the following appearance modes:
+
+- *Automatic*. The map appearance changes automatically depending on the system settings, time of day, or vehicle conditions.
+- *Always Dark*. CarPlay uses the dark map theme.
+
+When the *Always Show Dark Maps* option is enabled, the map always remains in Dark Mode regardless of the vehicle headlight status or the time of day.
+
 ### Location Position in CarPlay {#location-position-in-carplay}
 
 The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
