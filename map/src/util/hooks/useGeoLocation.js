@@ -14,7 +14,7 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
         } else {
             setLoc(LOCATION_UNAVAILABLE);
         }
-    }, [ctx]);
+    }, [ctx.stopUseGeoLocation]);
 
     function getCoordinates() {
         return new Promise((resolve) => {
