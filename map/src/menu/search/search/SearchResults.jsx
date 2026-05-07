@@ -88,16 +88,15 @@ export default function SearchResults() {
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
-    // Clear search results when search params change
     useEffect(() => {
-        if (params.query || params.type) {
+        if ((params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery)) {
             setResult(null);
         }
-    }, [params.query, params.type]);
+    }, [params.query, params.type, ctx.searchQuery]);
 
     useEffect(() => {
         const handler = setTimeout(() => {
-            setDebouncedLatLon({ lat, lon });
+            setDebouncedLatLon((prev) => (prev.lat === lat && prev.lon === lon ? prev : { lat, lon }));
         }, 300);
 
         return () => {
