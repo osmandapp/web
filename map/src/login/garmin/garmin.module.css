@@ -42,3 +42,21 @@
 .connectedLabel {
     flex-shrink: 0;
 }
+
+.activityTypeItem {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.activityTypesToolbar {
+    justify-content: space-between;
+}
+
+.activityTypeCheckbox {
+    color: #B3B3B3 !important;
+}
+
+.activityTypeCheckbox:global(.Mui-checked) {
+    color: #237bff !important;
+}
+

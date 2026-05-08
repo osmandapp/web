@@ -7,7 +7,7 @@ import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_clo
 
 export default function AppBarWithBtns({ id, header, hasBackBtn = false, leftBtnAction = null, rightBtns = null }) {
     return (
-        <AppBar position="static" className={headerStyles.appbar}>
+        <AppBar position="static" className={headerStyles.appbar} sx={{ position: 'relative', zIndex: 1 }}>
             <Toolbar className={headerStyles.toolbar}>
                 {hasBackBtn ? (
                     <IconButton
