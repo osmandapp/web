@@ -475,7 +475,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     }
 
     function groupHasSameWpt() {
-        if (isEditMode || isTrackWpt) return false;
+        if (isEditMode || isTrackWpt) {
+            return false;
+        }
         const selectedGroup =
             favoriteGroup === null
                 ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)

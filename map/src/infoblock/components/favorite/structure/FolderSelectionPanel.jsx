@@ -207,7 +207,9 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
 }
 
 function buildTree(groups, isTrackWpt, t) {
-    if (!groups || (Array.isArray(groups) && groups.length === 0) || isEmpty(groups)) return [];
+    if (!groups || (Array.isArray(groups) && groups.length === 0) || isEmpty(groups)) {
+        return [];
+    }
 
     if (isTrackWpt) {
         return values(groups).map((g) => ({

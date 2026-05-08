@@ -32,7 +32,9 @@ export function buildGroupTree(groups, t) {
 
     // second pass — create virtual entries for any missing intermediate folders
     for (const group of sorted) {
-        if (group.name === FavoritesManager.DEFAULT_GROUP_NAME || !group.name.includes('/')) continue;
+        if (group.name === FavoritesManager.DEFAULT_GROUP_NAME || !group.name.includes('/')) {
+            continue;
+        }
         const parts = group.name.split('/');
         for (let i = 1; i < parts.length; i++) {
             const ancestorName = parts.slice(0, i).join('/');

@@ -369,8 +369,12 @@ export default function MainMenu({
     }
 
     // Switch menu by current URL without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
+    // Skip if a map object (e.g. favorite opened from map) is displayed — keep selectedType pointing at the
+    // originating menu (e.g. cloud track) so that closeMapObj can navigate back to it correctly.
     function switchMenuByCurrentUrl() {
-        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
+            return;
+        }
         const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
         if (matchedItem && !isSelectedMenuItem(matchedItem)) {
             setMenuInfo(matchedItem.component);
@@ -490,7 +494,9 @@ export default function MainMenu({
 
     // url caching for every menu type
     useEffect(() => {
-        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
+            return;
+        }
         const menuByUrl = items.find(
             (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
         );
