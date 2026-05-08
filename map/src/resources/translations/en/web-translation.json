@@ -396,5 +396,6 @@
     "color_palette_save_failed": "Could not save color palette to cloud",
     "fav_folder_location": "Location",
     "fav_folder_name": "Folder name",
-    "folder_already_exists": "A folder with this name already exists."
+    "folder_already_exists": "A folder with this name already exists.",
+    "shared_string_advanced": "Advanced"
 }

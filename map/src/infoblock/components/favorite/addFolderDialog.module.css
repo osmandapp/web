@@ -1,6 +1,20 @@
 .dialogActions {
     padding: 10px 24px !important;
     gap: 8px !important;
+    justify-content: space-between !important;
+}
+
+.dialogActionsRight {
+    display: flex;
+    gap: 8px;
+}
+
+.appearanceBtn {
+    font-size: 11px !important;
+    color: var(--text-secondary) !important;
+    text-transform: uppercase !important;
+    padding: 10px 8px !important;
+    font-weight: 500 !important;
 }
 
 .locationField {

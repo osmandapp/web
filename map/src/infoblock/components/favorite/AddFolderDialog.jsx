@@ -25,6 +25,7 @@ import dialogStyles from '../../../dialogs/dialog.module.css';
 import itemStyles from '../../../frame/components/items/items.module.css';
 import styles from './addFolderDialog.module.css';
 import { groupTreeToList } from './FavoriteGroupTree';
+import AddNewGroupDialog from './AddNewGroupDialog';
 
 export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup, groupTree, onCreated }) {
     const ctx = useContext(AppContext);
@@ -38,6 +39,7 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
     const [selectedParent, setSelectedParent] = useState(parentGroup ?? defaultGroup);
     const [locationAnchorEl, setLocationAnchorEl] = useState(null);
     const [process, setProcess] = useState(false);
+    const [advancedOpen, setAdvancedOpen] = useState(false);
 
     const flatGroups = useMemo(() => groupTreeToList(groupTree ?? []), [groupTree]);
 
@@ -104,126 +106,143 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
     }
 
     return (
-        <Dialog
-            id="se-add-fav-folder-dialog"
-            className={dialogStyles.dialog}
-            open={dialogOpen}
-            onClose={handleClose}
-            PaperProps={{ sx: { overflow: 'visible' } }}
-        >
-            {process && <LinearProgress />}
-            <DialogTitle className={dialogStyles.title}>{t('add_new_folder')}</DialogTitle>
-            <DialogContent className={dialogStyles.content}>
-                <TextField
-                    id="se-add-fav-folder-name-input"
-                    autoFocus
-                    fullWidth
-                    variant="filled"
-                    label={t('web:fav_folder_name')}
-                    placeholder={t('add_new_folder')}
-                    value={folderName}
-                    onChange={handleNameChange}
-                    onKeyDown={handleKeyDown}
-                    error={folderNameError !== ''}
-                    helperText={folderNameError || undefined}
-                />
-                <TextField
-                    id="se-add-fav-folder-location"
-                    fullWidth
-                    variant="filled"
-                    label={t('web:fav_folder_location')}
-                    value={parentDisplayName}
-                    onClick={(e) => setLocationAnchorEl(locationAnchorEl ? null : e.currentTarget)}
-                    inputProps={{ readOnly: true, style: { cursor: 'pointer' } }}
-                    InputLabelProps={{ shrink: true }}
-                    InputProps={{
-                        endAdornment: (
-                            <ExpandMoreIcon
-                                sx={{
-                                    fill: 'var(--svg-icon-color)',
-                                    transition: 'transform 0.2s',
-                                    transform: locationOpen ? 'rotate(180deg)' : 'none',
-                                }}
-                            />
-                        ),
-                    }}
-                    className={styles.locationField}
-                />
-                <Popover
-                    open={locationOpen}
-                    anchorEl={locationAnchorEl}
-                    onClose={() => setLocationAnchorEl(null)}
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                    transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                    disableAutoFocus
-                    disableEnforceFocus
-                    disablePortal
-                    transitionDuration={0}
-                    slotProps={{
-                        paper: {
-                            sx: {
-                                width: locationAnchorEl?.offsetWidth,
-                                maxHeight: 380,
-                                mt: '10px',
+        <>
+            <Dialog
+                id="se-add-fav-folder-dialog"
+                className={dialogStyles.dialog}
+                open={dialogOpen}
+                onClose={handleClose}
+                PaperProps={{ sx: { overflow: 'visible' } }}
+            >
+                {process && <LinearProgress />}
+                <DialogTitle className={dialogStyles.title}>{t('add_new_folder')}</DialogTitle>
+                <DialogContent className={dialogStyles.content}>
+                    <TextField
+                        id="se-add-fav-folder-name-input"
+                        autoFocus
+                        fullWidth
+                        variant="filled"
+                        label={t('web:fav_folder_name')}
+                        placeholder={t('add_new_folder')}
+                        value={folderName}
+                        onChange={handleNameChange}
+                        onKeyDown={handleKeyDown}
+                        error={folderNameError !== ''}
+                        helperText={folderNameError || undefined}
+                    />
+                    <TextField
+                        id="se-add-fav-folder-location"
+                        fullWidth
+                        variant="filled"
+                        label={t('web:fav_folder_location')}
+                        value={parentDisplayName}
+                        onClick={(e) => setLocationAnchorEl(locationAnchorEl ? null : e.currentTarget)}
+                        inputProps={{ readOnly: true, style: { cursor: 'pointer' } }}
+                        InputLabelProps={{ shrink: true }}
+                        InputProps={{
+                            endAdornment: (
+                                <ExpandMoreIcon
+                                    sx={{
+                                        fill: 'var(--svg-icon-color)',
+                                        transition: 'transform 0.2s',
+                                        transform: locationOpen ? 'rotate(180deg)' : 'none',
+                                    }}
+                                />
+                            ),
+                        }}
+                        className={styles.locationField}
+                    />
+                    <Popover
+                        open={locationOpen}
+                        anchorEl={locationAnchorEl}
+                        onClose={() => setLocationAnchorEl(null)}
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                        disableAutoFocus
+                        disableEnforceFocus
+                        disablePortal
+                        transitionDuration={0}
+                        slotProps={{
+                            paper: {
+                                sx: {
+                                    width: locationAnchorEl?.offsetWidth,
+                                    maxHeight: 380,
+                                    mt: '10px',
+                                },
                             },
-                        },
-                    }}
-                >
-                    <List dense disablePadding>
-                        {flatGroups.map((item, idx) => {
-                            const effectiveGroup = item.group ?? { name: item.fullName };
-                            const isSelected =
-                                selectedParent?.name === item.fullName ||
-                                (!selectedParent && item.fullName === FavoritesManager.DEFAULT_GROUP_NAME);
-                            const showDivider = idx > 0 && item.level === 0;
-                            const prefix = item.level >= 1 ? '↳ ' : '';
+                        }}
+                    >
+                        <List dense disablePadding>
+                            {flatGroups.map((item, idx) => {
+                                const effectiveGroup = item.group ?? { name: item.fullName };
+                                const isSelected =
+                                    selectedParent?.name === item.fullName ||
+                                    (!selectedParent && item.fullName === FavoritesManager.DEFAULT_GROUP_NAME);
+                                const showDivider = idx > 0 && item.level === 0;
+                                const prefix = item.level >= 1 ? '↳ ' : '';
 
-                            return (
-                                <Box key={item.fullName}>
-                                    {showDivider && <Divider />}
-                                    <ListItemButton
-                                        selected={isSelected}
-                                        className={styles.dropdownItem}
-                                        onClick={() => {
-                                            setSelectedParent(effectiveGroup);
-                                            setLocationAnchorEl(null);
-                                        }}
-                                    >
-                                        <ListItemText
-                                            primary={`${prefix}${item.displayName}`}
-                                            primaryTypographyProps={{ noWrap: true }}
-                                        />
-                                        <Box className={itemStyles.selectRadioControl}>
-                                            <Radio
-                                                checked={isSelected}
-                                                onChange={() => {
-                                                    setSelectedParent(effectiveGroup);
-                                                    setLocationAnchorEl(null);
-                                                }}
-                                                onClick={(e) => e.stopPropagation()}
+                                return (
+                                    <Box key={item.fullName}>
+                                        {showDivider && <Divider />}
+                                        <ListItemButton
+                                            selected={isSelected}
+                                            className={styles.dropdownItem}
+                                            onClick={() => {
+                                                setSelectedParent(effectiveGroup);
+                                                setLocationAnchorEl(null);
+                                            }}
+                                        >
+                                            <ListItemText
+                                                primary={`${prefix}${item.displayName}`}
+                                                primaryTypographyProps={{ noWrap: true }}
                                             />
-                                        </Box>
-                                    </ListItemButton>
-                                </Box>
-                            );
-                        })}
-                    </List>
-                </Popover>
-            </DialogContent>
-            <DialogActions className={styles.dialogActions}>
-                <Button className={dialogStyles.button} onClick={handleClose}>
-                    {t('shared_string_cancel')}
-                </Button>
-                <Button
-                    id="se-add-fav-folder-save-btn"
-                    className={dialogStyles.button}
-                    onClick={handleSave}
-                    disabled={!canSave}
-                >
-                    {t('web:shared_string_save')}
-                </Button>
-            </DialogActions>
-        </Dialog>
+                                            <Box className={itemStyles.selectRadioControl}>
+                                                <Radio
+                                                    checked={isSelected}
+                                                    onChange={() => {
+                                                        setSelectedParent(effectiveGroup);
+                                                        setLocationAnchorEl(null);
+                                                    }}
+                                                    onClick={(e) => e.stopPropagation()}
+                                                />
+                                            </Box>
+                                        </ListItemButton>
+                                    </Box>
+                                );
+                            })}
+                        </List>
+                    </Popover>
+                </DialogContent>
+                <DialogActions className={styles.dialogActions}>
+                    <Button className={styles.appearanceBtn} onClick={() => setAdvancedOpen(true)}>
+                        {t('web:shared_string_advanced')}
+                    </Button>
+                    <Box className={styles.dialogActionsRight}>
+                        <Button className={dialogStyles.button} onClick={handleClose}>
+                            {t('shared_string_cancel')}
+                        </Button>
+                        <Button
+                            id="se-add-fav-folder-save-btn"
+                            className={dialogStyles.button}
+                            onClick={handleSave}
+                            disabled={!canSave}
+                        >
+                            {t('web:shared_string_save')}
+                        </Button>
+                    </Box>
+                </DialogActions>
+            </Dialog>
+            {advancedOpen && (
+                <AddNewGroupDialog
+                    dialogOpen={advancedOpen}
+                    setDialogOpen={setAdvancedOpen}
+                    setFavoriteGroup={(group) => {
+                        onCreated?.(group);
+                        setDialogOpen(false);
+                    }}
+                />
+            )}
+        </>
     );
 }
 
