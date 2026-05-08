@@ -127,7 +127,7 @@ export default function FavoriteIcon({
         );
 
     function getTabUsedIcons() {
-        const res = [...ctx.usedIcons];
+        const res = [...ctx.wptRecents.icons];
         if (add || isEmpty(selectedGpxFile)) {
             return <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={res} />;
         }

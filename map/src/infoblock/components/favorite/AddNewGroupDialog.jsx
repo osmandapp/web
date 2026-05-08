@@ -45,7 +45,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
         } else {
             await saveGroup();
         }
-        ctx.setUsedIcons((prev) => new Set([groupIcon, ...prev]));
+        ctx.setWptRecents((prev) => ({ ...prev, icons: new Set([groupIcon, ...prev.icons]) }));
     }
 
     function saveTrackWptGroup() {

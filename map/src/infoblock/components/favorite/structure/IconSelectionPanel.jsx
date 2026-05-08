@@ -37,7 +37,7 @@ export default function IconSelectionPanel({
     const [scrollTarget, setScrollTarget] = useState(null);
 
     const usedIcons = useMemo(() => {
-        const res = [...ctx.usedIcons];
+        const res = [...ctx.wptRecents.icons];
         if (add || isEmpty(selectedGpxFile)) {
             return res;
         }
@@ -49,7 +49,7 @@ export default function IconSelectionPanel({
         });
 
         return res;
-    }, [ctx.usedIcons, selectedGpxFile, add]);
+    }, [ctx.wptRecents.icons, selectedGpxFile, add]);
 
     // Find the actual category containing the initially selected icon, so we can scroll to it on open.
     // Last used is intentionally skipped — it's a shortcut, not the canonical location of an icon.

@@ -80,10 +80,13 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     useEffect(() => {
         getIconCategories().then();
-        if (!isEditMode && !isTrackWpt) {
-            const defaultGroup = ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME);
-            if (defaultGroup) {
-                setFavoriteGroup(defaultGroup);
+        if (!isTrackWpt) {
+            const categoryName = isEditMode
+                ? (editWpt?.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
+                : ctx.wptRecents.groups[0];
+            if (categoryName) {
+                const group = ctx.favorites.groups?.find((g) => g.name === categoryName);
+                if (group) setFavoriteGroup(group);
             }
         }
         // Remove the preview marker when this panel instance unmounts.
@@ -147,7 +150,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 }
             }
         }
-        ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
+        const groupName = favoriteGroup?.name ?? FavoritesManager.DEFAULT_GROUP_NAME;
+        ctx.setWptRecents((prev) => ({
+            icons: new Set([favoriteIcon, ...prev.icons]),
+            groups: [groupName, ...prev.groups.filter((g) => g !== groupName)],
+        }));
     }
 
     function excludePoiTags(tag) {
@@ -468,7 +475,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     }
 
     function groupHasSameWpt() {
-        if (isEditMode || isTrackWpt) return false;
+        if (isEditMode || isTrackWpt) {
+            return false;
+        }
         const selectedGroup =
             favoriteGroup === null
                 ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)
@@ -586,15 +595,12 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         onClick={() => togglePanel('description')}
                     />
                     <ThickDivider />
-                    <Box className={styles.fields}>
-                        <FavoriteGroup
-                            favoriteGroup={favoriteGroup}
-                            setFavoriteGroup={setFavoriteGroup}
-                            groups={groups}
-                            defaultGroup={defaultGroup}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                        />
-                    </Box>
+                    <FavoriteGroup
+                        favoriteGroup={favoriteGroup}
+                        setFavoriteGroup={setFavoriteGroup}
+                        defaultGroup={defaultGroup}
+                        isTrackWpt={isTrackWpt}
+                    />
                     <SubTitleMenu text={t('shared_string_appearance')} />
                     <SimpleItemWithRightIcon
                         id="se-fav-icon-row"

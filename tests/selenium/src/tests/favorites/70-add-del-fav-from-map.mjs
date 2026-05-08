@@ -55,12 +55,16 @@ export default async function test() {
     await sendKeysBy(By.id('se-edit-fav-dialog-desc'), favoriteDescription);
     await clickBy(By.id('se-back-description-panel'));
     await waitByRemoved(By.id('se-back-description-panel'));
-    // create new favorite group
-    await clickBy(By.id('se-add-new-fav-group'));
-    await waitBy(By.id('se-add-new-fav-group-dialog'));
-    await sendKeysBy(By.id('se-fav-group-name-input'), favoriteGroupName);
-    await clickBy(By.id('se-add-new-fav-group-btn'));
-    await waitByRemoved(By.id('se-add-new-fav-group-dialog'));
+    // create new favorite group via folder selection panel
+    await clickBy(By.id('se-fav-group-selector'));
+    await waitBy(By.id('se-back-folder-selection-panel'));
+    await clickBy(By.id('se-add-folder-btn'));
+    await waitBy(By.id('se-add-fav-folder-dialog'));
+    await sendKeysBy(By.id('se-add-fav-folder-name-input'), favoriteGroupName);
+    await clickBy(By.id('se-add-fav-folder-save-btn'));
+    await waitByRemoved(By.id('se-add-fav-folder-dialog'));
+    await clickBy(By.id('se-back-folder-selection-panel'));
+    await waitByRemoved(By.id('se-back-folder-selection-panel'));
     // pick a color (palette panel; empty palette → add via color picker)
     await selectFavoriteColor();
     // open icon selection panel, pick first icon, go back
