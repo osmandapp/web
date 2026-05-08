@@ -16,7 +16,8 @@ export default async function test({
             await waitByRemoved(By.id(`se-poi-marker-icon-${iconWpt}-${colorIcon}-${name}`));
         }
         if (isSelected) {
-            await waitByRemoved(By.id(`se-selected-marker-${name}`));
+            const colorHex = colorShape.replace(/^#/, '');
+            await waitByRemoved(By.id(`se-selected-marker-${name}-${colorHex}`));
         }
     } else {
         await waitBy(By.id(`se-poi-marker-background-${colorShape}-${shape}`));
@@ -24,7 +25,8 @@ export default async function test({
             await waitBy(By.id(`se-poi-marker-icon-${iconWpt}-${colorIcon}-${name}`));
         }
         if (isSelected) {
-            await waitBy(By.id(`se-selected-marker-${name}`));
+            const colorHex = colorShape.replace(/^#/, '');
+            await waitBy(By.id(`se-selected-marker-${name}-${colorHex}`));
         }
     }
 }
