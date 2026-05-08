@@ -83,7 +83,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         if (!isTrackWpt) {
             const categoryName = isEditMode
                 ? (editWpt?.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
-                : FavoritesManager.DEFAULT_GROUP_NAME;
+                : (ctx.wptRecents.groups[0] ?? FavoritesManager.DEFAULT_GROUP_NAME);
             const group = ctx.favorites.groups?.find((g) => g.name === categoryName);
             if (group) setFavoriteGroup(group);
         }
@@ -148,7 +148,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 }
             }
         }
-        ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
+        const groupName = favoriteGroup?.name ?? FavoritesManager.DEFAULT_GROUP_NAME;
+        ctx.setWptRecents((prev) => ({
+            icons: new Set([favoriteIcon, ...prev.icons]),
+            groups: [groupName, ...prev.groups.filter((g) => g !== groupName)],
+        }));
     }
 
     function excludePoiTags(tag) {
