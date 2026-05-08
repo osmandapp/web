@@ -122,25 +122,7 @@ Do not delete inline comments or block comments that already exist in code you a
 
 ## No 1-liner if-statements with multiple conditions
 
-Avoid collapsing an `if`-statement to a single line when the condition contains more than one logical operator (`&&` or `||`). Always use a block body in that case.
-
-```js
-// Bad
-if (isEditMode || isTrackWpt) return false;
-if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
-
-// Good
-if (isEditMode || isTrackWpt) {
-    return false;
-}
-if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
-    return;
-}
-
-// OK — single condition, simple comparator
-if (!group) return;
-if (x === y) return true;
-```
+Avoid collapsing an `if`-statement to a single line when the condition contains more than one logical operator (`&&` or `||`). Always use a block body in that case. Single-condition 1-liners are fine: `if (!group) return;`.
 
 ## refs — last resort
 
