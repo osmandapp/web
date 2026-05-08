@@ -78,7 +78,6 @@ export default function GarminConnectMenu() {
         <>
             {showActivityTypes && (
                 <GarminActivitiesToSync
-                    allActivityTypes={allActivityTypes}
                     selectedActivityTypes={selectedActivityTypes}
                     onClose={() => setShowActivityTypes(false)}
                     onSaved={(list) => setSelectedActivityTypes(list)}

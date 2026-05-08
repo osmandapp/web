@@ -92,11 +92,11 @@ const TYPE_LABEL_KEY = {
     MULTI: 'web:garmin_type_multi',
 };
 
-export default function GarminActivitiesToSync({ allActivityTypes, selectedActivityTypes, onClose, onSaved }) {
+export default function GarminActivitiesToSync({ selectedActivityTypes, onClose, onSaved }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const allTypes = allActivityTypes?.length > 0 ? allActivityTypes : GARMIN_ACTIVITY_GROUPS.flatMap((g) => g.types);
+    const allTypes = GARMIN_ACTIVITY_GROUPS.flatMap((g) => g.types);
 
     const [selected, setSelected] = useState(() => new Set(selectedActivityTypes ?? []));
     const [saving, setSaving] = useState(false);
@@ -107,6 +107,7 @@ export default function GarminActivitiesToSync({ allActivityTypes, selectedActiv
     }, [selectedActivityTypes]);
 
     useEffect(() => {
+        let cancelled = false;
         const allTypes = GARMIN_ACTIVITY_GROUPS.flatMap((g) => g.types);
         const typeIconName = Object.fromEntries(
             allTypes.map((type) => {
@@ -122,9 +123,13 @@ export default function GarminActivitiesToSync({ allActivityTypes, selectedActiv
                 return [iconName, icon];
             })
         ).then((iconEntries) => {
+            if (cancelled) return;
             const iconByName = Object.fromEntries(iconEntries);
             setIcons(Object.fromEntries(allTypes.map((type) => [type, iconByName[typeIconName[type]] ?? null])));
         });
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
     const allSelected = allTypes.every((type) => selected.has(type));
@@ -153,7 +158,11 @@ export default function GarminActivitiesToSync({ allActivityTypes, selectedActiv
         setSaving(true);
         try {
             const list = Array.from(selected);
-            await saveGarminActivityTypes(list);
+            const ok = await saveGarminActivityTypes(list);
+            if (!ok) {
+                ctx.setNotification({ text: t('web:garmin_save_activity_types_error'), severity: 'error' });
+                return;
+            }
             onSaved?.(list);
             onClose();
         } finally {

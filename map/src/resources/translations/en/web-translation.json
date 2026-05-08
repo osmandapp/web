@@ -365,6 +365,7 @@
     "garmin_type_board": "Board",
     "garmin_type_ride": "Ride",
     "garmin_type_multi": "Multi",
+    "garmin_save_activity_types_error": "Failed to save activity types. Please try again.",
     "fav_add_address": "Add address",
     "editor_undo": "Undo",
     "editor_redo": "Redo",

@@ -128,7 +128,7 @@ function RightWithChevron({ text }) {
 }
 
 function handleViewOnGarminClick() {
-    globalThis.open('https://connect.garmin.com/app/activities', '_blank');
+    globalThis.open('https://connect.garmin.com/app/activities', '_blank', 'noopener,noreferrer');
 }
 
 function formatTimeAgo(ms, t) {

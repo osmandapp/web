@@ -17,23 +17,27 @@ export async function disconnectGarmin() {
 const GARMIN_ACTIVITY_TYPES_STORAGE_KEY = 'garmin_all_activity_types';
 
 export async function fetchAllGarminActivityTypes(serverVersion) {
-    const cached = localStorage.getItem(GARMIN_ACTIVITY_TYPES_STORAGE_KEY);
-    if (cached) {
-        try {
-            const { version, types } = JSON.parse(cached);
-            if (version === serverVersion && Array.isArray(types)) {
-                return types;
+    if (serverVersion != null) {
+        const cached = localStorage.getItem(GARMIN_ACTIVITY_TYPES_STORAGE_KEY);
+        if (cached) {
+            try {
+                const { version, types } = JSON.parse(cached);
+                if (version === serverVersion && Array.isArray(types)) {
+                    return types;
+                }
+            } catch {
+                // corrupted — fall through to fetch
             }
-        } catch {
-            // corrupted — fall through to fetch
         }
     }
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/garmin/get-activity-types`);
     if (res.ok && Array.isArray(res.data)) {
-        localStorage.setItem(
-            GARMIN_ACTIVITY_TYPES_STORAGE_KEY,
-            JSON.stringify({ version: serverVersion, types: res.data })
-        );
+        if (serverVersion != null) {
+            localStorage.setItem(
+                GARMIN_ACTIVITY_TYPES_STORAGE_KEY,
+                JSON.stringify({ version: serverVersion, types: res.data })
+            );
+        }
         return res.data;
     }
     return [];
