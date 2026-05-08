@@ -1,8 +1,7 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import { assert, clickBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
-import { driver } from '../../options.mjs';
 import { deleteTrack, getFiles } from '../../util.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
@@ -14,7 +13,7 @@ import actionLocalToCloud from '../../actions/tracks/actionLocalToCloud.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 const GROUP_NAME = 'ozoo';
-const GROUP_COLOR = '00ff00';
+const GROUP_COLOR = '00FF00';
 const GROUP_ICON = 'amenity_fire_station';
 const GROUP_BG = 'square';
 
@@ -41,13 +40,7 @@ export default async function test() {
     await actionsUploadFavorites({ files: path });
     await waitBy(By.id(`se-menu-fav-${GROUP_NAME}`));
 
-    // check folder icon color matches group color (#00ff00 → rgb(0, 255, 0))
-    const folderSvg = await driver.findElement(By.css(`#se-menu-fav-${GROUP_NAME} svg`));
-    const folderFill = await folderSvg.getCssValue('fill');
-    await assert(
-        folderFill.includes('0, 255, 0') || folderFill.includes('00ff00'),
-        `Folder icon color should be green (got: ${folderFill})`
-    );
+    await waitBy(By.id(`se-fav-group-icon-${GROUP_NAME}-rgb(0 255 0)`)); // hexToRgba('#00FF00') → rgb(0 255 0)
 
     // open group folder
     await clickBy(By.id(`se-menu-fav-${GROUP_NAME}`));
@@ -84,8 +77,8 @@ export default async function test() {
     const trackName = 'test-track-wpt';
     // groupA: #ff0000 (red), groupB: #00ff00 (green) — all points have no own color
     const TRACK_GROUPS = [
-        { group: 'groupA', point: 'VELO-6', color: '255, 0, 0', hex: 'ff0000' },
-        { group: 'groupB', point: 'VELO-3', color: '0, 255, 0', hex: '00ff00' },
+        { group: 'groupA', point: 'VELO-6', hex: 'FF0000' },
+        { group: 'groupB', point: 'VELO-3', hex: '00FF00' },
     ];
 
     await clickBy(By.id('se-show-menu-tracks'));
@@ -96,7 +89,6 @@ export default async function test() {
     await actionLocalToCloud({ mask: trackName });
 
     // open track from cloud
-    await clickBy(By.id('se-show-menu-tracks'));
     await clickBy(By.id(`se-cloud-track-${trackName}`));
     await waitBy(By.id('se-track-context-menu'));
 
@@ -104,8 +96,8 @@ export default async function test() {
     await clickBy(By.css("[testid='se-tab-points']"));
     await waitBy(By.id('se-waypoints-tab-content'));
 
-    // check one point from each group: click → selected marker on map → verify its color
-    for (const { group, point, color, hex } of TRACK_GROUPS) {
+    // check one point from each group: click → selected marker id encodes resolved group color
+    for (const { group, point, hex } of TRACK_GROUPS) {
         // expand group (groups are collapsed by default when multiple exist)
         await clickBy(By.id(`se-wpt-group-header-${group}`));
         await waitBy(By.id(`se-wpt-row-${point}`));
@@ -113,14 +105,7 @@ export default async function test() {
         await clickBy(By.id(`se-wpt-row-${point}`));
         await waitBy(By.id('se-wpt-details'));
 
-        // selected marker appears on map with resolved color from group
-        const selectedMarker = await waitBy(By.id(`se-selected-marker-${point}`));
-        const svgEl = await selectedMarker.findElement(By.css('svg'));
-        const fill = await svgEl.getCssValue('fill');
-        await assert(
-            fill.includes(color) || fill.includes(hex),
-            `Track WPT "${point}" (group ${group}) marker color should be #${hex} (got: ${fill})`
-        );
+        await waitBy(By.id(`se-selected-marker-${point}-${hex}`));
 
         await clickBy(By.id('se-back-wpt-details'));
         await waitByRemoved(By.id('se-wpt-details'));

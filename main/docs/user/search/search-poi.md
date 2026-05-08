@@ -57,7 +57,8 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 - **Point of Interest (POI) search by type and name**:
     - Allows you to search:
        - For nearby points of interest (POI) or specific categories of POI.
-       - For [OSM routes](../map/routes.md) by name and by ref number.
+       - For [OSM routes](../map/routes.md) by name, ref number, or relation ID using the format `O+relation_id` (for example: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - For objects linked with Wikidata identifiers (for example: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - For [Popular places (Wikipedia)](../map/popular_places.md).
        - For places by combining a city name with a POI name or type (for example: Berlin airport, Bratislava Billa).
     - Filters and sorting results by category, distance, or rating are possible.

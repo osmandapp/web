@@ -32,14 +32,8 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
 
     const sharedFile = smartf?.type === SHARE_TYPE;
 
-    const iconStyle = {
-        fill:
-            group.name &&
-            FavoritesManager.getColorGroup({
-                favoritesGroup: group,
-                groupName: group.name,
-            }),
-    };
+    const iconColor = FavoritesManager.getColorGroup({ favoritesGroup: group, groupName: group.name });
+    const iconStyle = { fill: group.name && iconColor };
 
     useEffect(() => {
         if (ctx.favorites.mapObjs?.[group.id]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -80,7 +74,10 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                     ) : group.pinned ? (
                         <FolderPinIcon style={iconStyle} />
                     ) : (
-                        <FolderIcon style={iconStyle} />
+                        <FolderIcon
+                            style={iconStyle}
+                            id={`se-fav-group-icon-${group.name}-${iconColor?.replace(/^#/, '')}`}
+                        />
                     )}
                 </ListItemIcon>
                 <ListItemText id={`se-fav-group-size-${groupSize}`}>
