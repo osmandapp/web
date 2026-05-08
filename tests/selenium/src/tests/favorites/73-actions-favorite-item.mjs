@@ -13,7 +13,7 @@ import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.m
 import actionsUploadFavorites from '../../actions/favorites/actionsUploadFavorites.mjs';
 
 const ICON_NEW = 'amenity_fire_station';
-const COLOR_ORIG = 'b300ff';
+const COLOR_ORIG = 'B300FF';
 const COLOR_NEW = 'eecc22';
 
 export default async function test() {
