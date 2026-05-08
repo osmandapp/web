@@ -370,6 +370,7 @@ export default function MainMenu({
 
     // Switch menu by current URL without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
     function switchMenuByCurrentUrl() {
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
         const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
         if (matchedItem && !isSelectedMenuItem(matchedItem)) {
             setMenuInfo(matchedItem.component);

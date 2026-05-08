@@ -81,6 +81,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
         return (
             <Box>
                 <ListItemButton
+                    id={`se-fav-group-item-${folder.name}`}
                     className={styles.folderItem}
                     style={{ paddingLeft: 4 + level * 24 }}
                     onMouseEnter={() => setHoveredItem(folder.name)}

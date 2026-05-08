@@ -20,6 +20,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, default
     return (
         <>
             <SelectItemWithoutOptions
+                id="se-fav-group-selector"
                 title={t('folder')}
                 value={displayName}
                 boldTitle={false}

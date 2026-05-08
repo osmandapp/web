@@ -83,9 +83,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         if (!isTrackWpt) {
             const categoryName = isEditMode
                 ? (editWpt?.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
-                : (ctx.wptRecents.groups[0] ?? FavoritesManager.DEFAULT_GROUP_NAME);
-            const group = ctx.favorites.groups?.find((g) => g.name === categoryName);
-            if (group) setFavoriteGroup(group);
+                : ctx.wptRecents.groups[0];
+            if (categoryName) {
+                const group = ctx.favorites.groups?.find((g) => g.name === categoryName);
+                if (group) setFavoriteGroup(group);
+            }
         }
         // Remove the preview marker when this panel instance unmounts.
         const myOpenKey = ctx.addFavorite?.openKey;

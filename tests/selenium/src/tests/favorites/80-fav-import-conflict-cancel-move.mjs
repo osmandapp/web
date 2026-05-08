@@ -72,8 +72,12 @@ export default async function test() {
     await waitBy(By.id('se-fav-item-actions'));
     await clickBy(By.id('se-edit-fav-item'));
     await waitBy(By.id('se-edit-fav-dialog'));
-    // select food group in the group picker
+    // select food group via folder selection panel
+    await clickBy(By.id('se-fav-group-selector'));
+    await waitBy(By.id('se-back-folder-selection-panel'));
     await clickBy(By.id(`se-fav-group-item-${foodGroupName}`));
+    await clickBy(By.id('se-back-folder-selection-panel'));
+    await waitByRemoved(By.id('se-back-folder-selection-panel'));
     await clickBy(By.id('se-edit-fav-item-submit'));
     await waitByRemoved(By.id('se-edit-fav-dialog'));
 
