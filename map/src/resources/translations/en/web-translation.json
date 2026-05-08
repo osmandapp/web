@@ -393,5 +393,8 @@
     "color_picker_hue": "Hue",
     "color_picker_sv_plane": "Saturation and brightness. Drag or use arrow keys.",
     "color_picker_alpha": "Opacity",
-    "color_palette_save_failed": "Could not save color palette to cloud"
+    "color_palette_save_failed": "Could not save color palette to cloud",
+    "fav_folder_location": "Location",
+    "fav_folder_name": "Folder name",
+    "folder_already_exists": "A folder with this name already exists."
 }

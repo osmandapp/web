@@ -80,11 +80,12 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     useEffect(() => {
         getIconCategories().then();
-        if (!isEditMode && !isTrackWpt) {
-            const defaultGroup = ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME);
-            if (defaultGroup) {
-                setFavoriteGroup(defaultGroup);
-            }
+        if (!isTrackWpt) {
+            const categoryName = isEditMode
+                ? (editWpt?.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
+                : FavoritesManager.DEFAULT_GROUP_NAME;
+            const group = ctx.favorites.groups?.find((g) => g.name === categoryName);
+            if (group) setFavoriteGroup(group);
         }
         // Remove the preview marker when this panel instance unmounts.
         const myOpenKey = ctx.addFavorite?.openKey;
@@ -586,15 +587,12 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         onClick={() => togglePanel('description')}
                     />
                     <ThickDivider />
-                    <Box className={styles.fields}>
-                        <FavoriteGroup
-                            favoriteGroup={favoriteGroup}
-                            setFavoriteGroup={setFavoriteGroup}
-                            groups={groups}
-                            defaultGroup={defaultGroup}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                        />
-                    </Box>
+                    <FavoriteGroup
+                        favoriteGroup={favoriteGroup}
+                        setFavoriteGroup={setFavoriteGroup}
+                        defaultGroup={defaultGroup}
+                        isTrackWpt={isTrackWpt}
+                    />
                     <SubTitleMenu text={t('shared_string_appearance')} />
                     <SimpleItemWithRightIcon
                         id="se-fav-icon-row"

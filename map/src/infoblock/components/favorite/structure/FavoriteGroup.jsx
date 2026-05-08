@@ -1,140 +1,55 @@
-import { Box, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
-import { Add, Folder } from '@mui/icons-material';
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useTranslation } from 'react-i18next';
 import FavoritesManager from '../../../../manager/FavoritesManager';
-import { hexToRgba } from '../../../../util/ColorUtil';
-import AddNewGroupDialog from '../AddNewGroupDialog';
-import values from 'lodash-es/values';
-import AppContext from '../../../../context/AppContext';
+import SelectItemWithoutOptions from '../../../../frame/components/items/SelectItemWithoutOptions';
+import FolderSelectionPanel from './FolderSelectionPanel';
 
-export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, groups, defaultGroup, widthDialog }) {
-    const ctx = useContext(AppContext);
+export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, defaultGroup, isTrackWpt }) {
+    const { t } = useTranslation();
 
-    const [addGroupDialogOpen, setAddGroupDialogOpen] = useState(false);
+    const [panelOpen, setPanelOpen] = useState(false);
 
-    let groupList = FavoritesManager.orderList(values(groups), defaultGroup);
+    const displayName = getDisplayName(favoriteGroup, defaultGroup, t);
 
-    const defaultGroupName = ctx.addFavorite.editTrack && defaultGroup === null ? '' : defaultGroup;
-    // filter shared groups
-    groupList = groupList.filter((group) => !group.sharedWithMe);
-
-    const FavoriteGroupItem = (group) => {
-        let g = group.pointsGroups
-            ? group.pointsGroups[group.name === FavoritesManager.DEFAULT_GROUP_NAME ? '' : group.name]
-            : group;
-        let colorGroup;
-        if (g?.color) {
-            colorGroup = hexToRgba(g.color);
-        }
-        let size = g && (g.groupSize ? g.groupSize : g.points?.length);
-        return (
-            <Box
-                sx={{
-                    width: 110,
-                    height: 50,
-                    border: 1,
-                    borderColor: '#c1c1c1',
-                    paddingLeft: 1,
-                }}
-            >
-                <Grid container>
-                    <Grid item container xs={3}>
-                        <ListItemIcon style={{ color: colorGroup }}>
-                            <Folder fontSize="small" />
-                        </ListItemIcon>
-                    </Grid>
-                    <Grid item container xs={2} sx={{ mt: -0.5 }}>
-                        <ListItemText>
-                            <Typography noWrap>{size}</Typography>
-                        </ListItemText>
-                    </Grid>
-                    <Grid item container xs={10}>
-                        <ListItemText>
-                            <Typography noWrap>
-                                {group.name === '' && !ctx.addFavorite.editTrack
-                                    ? FavoritesManager.DEFAULT_GROUP_NAME
-                                    : group.name}
-                            </Typography>
-                        </ListItemText>
-                    </Grid>
-                </Grid>
-            </Box>
-        );
-    };
-
-    const AddNewGroup = () => {
-        return (
-            <ListItem key={'newGroup'} component="div" disablePadding>
-                <ListItemButton onClick={() => setAddGroupDialogOpen(true)}>
-                    <Box
-                        sx={{
-                            width: 110,
-                            height: 50,
-                            border: 1,
-                            borderColor: '#c1c1c1',
-                            paddingLeft: 1,
-                        }}
-                    >
-                        <Grid container>
-                            <Grid item container xs={10} sx={{ mt: -0.5 }}>
-                                <IconButton
-                                    id={'se-add-new-fav-group'}
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => setAddGroupDialogOpen(true)}
-                                >
-                                    <Add fontSize="small" />
-                                </IconButton>
-                            </Grid>
-                            <Grid item container xs={10} sx={{ mt: -1 }}>
-                                <ListItemText>
-                                    <Typography noWrap>Add new</Typography>
-                                </ListItemText>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                </ListItemButton>
-            </ListItem>
-        );
-    };
-
-    function selectGroup(group) {
-        return favoriteGroup?.name === group?.name || (favoriteGroup === null && group.name === defaultGroupName);
+    function handleSelect(group) {
+        setFavoriteGroup(group);
+        setPanelOpen(false);
     }
 
     return (
         <>
-            <ListItemText>
-                <Typography noWrap>Select group</Typography>
-            </ListItemText>
-            <Box
-                sx={{
-                    display: 'flex',
-                    maxWidth: `${widthDialog}px`,
-                    overflowX: 'auto',
-                }}
-            >
-                {groupList.length > 0 &&
-                    groupList?.map((group, index) => {
-                        return (
-                            <ListItem key={index} component="div" disablePadding>
-                                <ListItemButton
-                                    id={`se-fav-group-item-${group.name || 'favorites'}`}
-                                    selected={selectGroup(group)}
-                                    onClick={() => setFavoriteGroup(group)}
-                                >
-                                    {FavoriteGroupItem(group)}
-                                </ListItemButton>
-                            </ListItem>
-                        );
-                    })}
-                <AddNewGroup />
-            </Box>
-            <AddNewGroupDialog
-                dialogOpen={addGroupDialogOpen}
-                setDialogOpen={setAddGroupDialogOpen}
-                setFavoriteGroup={setFavoriteGroup}
+            <SelectItemWithoutOptions
+                title={t('folder')}
+                value={displayName}
+                boldTitle={false}
+                endIcon={<ChevronRightIcon sx={{ color: 'var(--text-secondary)' }} />}
+                onClick={() => setPanelOpen((o) => !o)}
             />
+            {panelOpen && (
+                <FolderSelectionPanel
+                    selectedGroup={favoriteGroup}
+                    defaultGroup={defaultGroup}
+                    isTrackWpt={!!isTrackWpt}
+                    onSelect={handleSelect}
+                />
+            )}
         </>
     );
+}
+
+function getDisplayName(group, defaultGroup, t) {
+    if (!group) {
+        if (!defaultGroup || defaultGroup === FavoritesManager.DEFAULT_GROUP_NAME) {
+            return t('shared_string_my_favorites');
+        }
+        const parts = defaultGroup.split('/');
+        return parts[parts.length - 1];
+    }
+    const { name } = group;
+    if (!name || name === FavoritesManager.DEFAULT_GROUP_NAME || name === '') {
+        return t('shared_string_my_favorites');
+    }
+    const parts = name.split('/');
+    return parts[parts.length - 1];
 }

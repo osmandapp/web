@@ -1,0 +1,13 @@
+.dialogActions {
+    padding: 10px 24px !important;
+    gap: 8px !important;
+}
+
+.locationField {
+    margin-top: 24px !important;
+}
+
+.dropdownItem {
+    padding: 3px 6px 3px 16px !important;
+    min-height: 52px !important;
+}
