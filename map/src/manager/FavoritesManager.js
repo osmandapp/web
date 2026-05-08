@@ -701,6 +701,38 @@ export function getWptByTitle(title, wpts) {
     return wpts.find((wpt) => wpt.name === title);
 }
 
+/** Build menu marker + group for opening a favorite from search (requires map markers loaded). */
+export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
+    const group = ctx.favorites?.groups?.find((g) => g.id === groupId);
+    const mapObj = ctx.favorites?.mapObjs?.[groupId];
+    if (!group || !mapObj?.wpts || !mapObj?.markers?._layers) {
+        return null;
+    }
+    const wpt = getWptByTitle(wptName, mapObj.wpts);
+    if (!wpt) {
+        return null;
+    }
+    const layer = Object.values(mapObj.markers._layers).find((l) => l.options?.name === wptName);
+    if (!layer) {
+        return null;
+    }
+    const icon = createPoiIcon({
+        point: wpt,
+        color: wpt.color,
+        background: wpt.background,
+        hasBackgroundLight: false,
+        icon: wpt.icon,
+    }).options.html;
+    const marker = {
+        name: wptName,
+        icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, wpt.background),
+        layer,
+        color: wpt.color,
+        background: wpt.background,
+    };
+    return { group, marker };
+}
+
 export function addLocDist({ location, markers = null, wpts = null }) {
     let res = [];
     if (location && location !== LOCATION_UNAVAILABLE) {

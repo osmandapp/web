@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import {
     ADDRESS_1,
@@ -35,6 +35,8 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
+import { addFavoriteToMap } from '../../favorite/FavoriteItem';
+import { resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -75,6 +77,9 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
             type = poiType;
         }
         type = preparedType(type, t);
+    } else if (props[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+        name = props[POI_NAME] ?? props[CATEGORY_NAME];
+        type = t ? t('shared_string_my_favorites') : '';
     } else if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
         name = props[CATEGORY_NAME];
     } else {
@@ -206,6 +211,16 @@ export default function SearchResultItem({ item, typeItem, index }) {
                 recentSaver,
             });
             updateTracks(ctx, null, newTracks);
+            return;
+        }
+        if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+            const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
+            const wptName = item.properties[POI_NAME] ?? item.properties[CATEGORY_NAME];
+            const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, wptName);
+            if (!resolved) {
+                return;
+            }
+            addFavoriteToMap({ group: resolved.group, marker: resolved.marker, ctx, mapObj: true });
             return;
         }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {

@@ -37,6 +37,8 @@ import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRe
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
 import { getGpxFiles, prepareName, EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
+import { resolveFavoriteMarkerForSearch } from '../../manager/FavoritesManager';
+import { addFavoriteToMap } from '../../menu/favorite/FavoriteItem';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -60,7 +62,10 @@ export const searchTypeMap = {
     TOWN: 'TOWN',
     VILLAGE: 'VILLAGE',
     GPX_TRACK: 'GPX_TRACK',
+    FAVORITE: 'FAVORITE',
 };
+
+export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
 
 export const typeIconMap = {
     [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_LOCATION,
@@ -79,10 +84,71 @@ export function getObjIdSearch(obj) {
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
 }
 
-function searchCloudTrackFeatures({ listFiles, query }) {
-    const normalize = (s) => s?.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().trim();
+function normalize(s) {
+    return s?.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().trim();
+}
 
-    if (!query || !listFiles?.uniqueFiles) return [];
+export function searchFavoriteFeatures({ favorites, query }) {
+    console.log('favorites', favorites);
+    console.log('query', query);
+    if (!query || !favorites?.groups?.length || !favorites.mapObjs) {
+        return [];
+    }
+    const q = normalize(query);
+    if (!q) {
+        return [];
+    }
+
+    const features = [];
+
+    for (const group of favorites.groups) {
+        if (!group?.id) {
+            continue;
+        }
+        const mapObj = favorites.mapObjs[group.id];
+        const wpts = mapObj?.wpts;
+        console.log('wpts', wpts);
+        if (!wpts?.length) {
+            continue;
+        }
+
+        for (const wpt of wpts) {
+            console.log('wpt', wpt);
+            if (!wpt?.name) {
+                continue;
+            }
+            const nameNorm = normalize(wpt.name);
+            const descNorm = normalize(wpt.desc ?? '');
+            const textHit = nameNorm.includes(q) || (descNorm && descNorm.includes(q));
+            if (!textHit) {
+                continue;
+            }
+
+            if (wpt.lat == null || wpt.lon == null) {
+                continue;
+            }
+
+            features.push({
+                type: 'Feature',
+                geometry: { 
+                    type: 'Point', 
+                    coordinates: [wpt.lon, wpt.lat] 
+                },
+                properties: {
+                    [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
+                    [CATEGORY_NAME]: wpt.name,
+                    [POI_NAME]: wpt.name,
+                    [FAVORITE_HIT_GROUP_ID]: group.id,
+                },
+            });
+        }
+    }
+console.log('features', features);
+    return features;
+}
+
+function searchCloudTrackFeatures({ listFiles, query }) {
+  if (!query || !listFiles?.uniqueFiles) return [];
     const q = normalize(query);
     if (!q) return [];
 
@@ -212,7 +278,11 @@ export default function SearchLayer() {
                     listFiles: ctx.listFiles,
                     query: searchData.query,
                 });
-                const features = [...cloudFeatures, ...(data?.features ?? [])];
+                const favoriteFeatures = searchFavoriteFeatures({
+                    favorites: ctx.favorites,
+                    query: searchData.query,
+                });
+                const features = [...cloudFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 ctx.setSearchResult({ ...data, features });
             } else {
                 ctx.setSearchResult(null);
@@ -256,10 +326,21 @@ export default function SearchLayer() {
     }, [ctx.searchResult]);
 
     function onClick(e) {
+        const opts = e.sourceTarget.options;
+        if (opts[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+            const groupId = opts[FAVORITE_HIT_GROUP_ID];
+            const wptName = opts[POI_NAME] ?? opts[CATEGORY_NAME];
+            const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, wptName);
+            if (resolved) {
+                addFavoriteToMap({ group: resolved.group, marker: resolved.marker, ctx, mapObj: true });
+            }
+            return;
+        }
+
         ctx.setCurrentObjectType(OBJECT_SEARCH);
 
         const poi = {
-            options: e.sourceTarget.options,
+            options: opts,
             latlng: e.sourceTarget._latlng,
             mapObj: true,
         };
