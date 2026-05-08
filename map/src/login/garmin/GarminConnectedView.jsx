@@ -7,6 +7,7 @@ import { ReactComponent as SyncIcon } from '../../assets/icons/ic_action_update.
 import { ReactComponent as LogoutIcon } from '../../assets/icons/ic_action_logout.svg';
 import { ReactComponent as ExternalLinkIcon } from '../../assets/icons/ic_action_external_link.svg';
 import { ReactComponent as ChevronIcon } from '../../assets/icons/ic_action_arrow_up.svg';
+import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import DefaultItem from '../../frame/components/items/DefaultItem';
@@ -16,10 +17,18 @@ import { fmt } from '../../util/dateFmt';
 import { EMPTY_FILE_NAME, openTrackOnMap } from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import { GARMIN_FOLDER_NAME } from './garminApi';
+import { GARMIN_ACTIVITY_GROUPS } from './GarminActivitiesToSync';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import styles from '../../frame/components/items/items.module.css';
 
-export default function GarminConnectedView({ syncTimeMs, disconnecting, onDisconnectClick }) {
+export default function GarminConnectedView({
+    syncTimeMs,
+    disconnecting,
+    onDisconnectClick,
+    allActivityTypes,
+    selectedActivityTypes,
+    onActivitiesToSyncClick,
+}) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -59,6 +68,11 @@ export default function GarminConnectedView({ syncTimeMs, disconnecting, onDisco
         });
     }
 
+    const staticTotal = GARMIN_ACTIVITY_GROUPS.flatMap((g) => g.types).length;
+    const totalCount = allActivityTypes?.length > 0 ? allActivityTypes.length : staticTotal;
+    const selectedCount = selectedActivityTypes?.length ?? 0;
+    const activityTypesLabel = `${selectedCount}/${totalCount}`;
+
     return (
         <>
             <SubTitleMenu text={t('web:my_data')} />
@@ -81,6 +95,14 @@ export default function GarminConnectedView({ syncTimeMs, disconnecting, onDisco
                 name={t('web:garmin_view_on_garmin_connect')}
                 additionalInfo="https://connect.garmin.com"
                 onClick={handleViewOnGarminClick}
+            />
+            <ThickDivider mt={'0px'} mb={'0px'} />
+            <SubTitleMenu text={t('shared_string_settings')} />
+            <DefaultItem
+                icon={<FilterIcon />}
+                name={t('web:garmin_activities_to_sync')}
+                onClick={onActivitiesToSyncClick}
+                rightSlot={<RightWithChevron text={activityTypesLabel} />}
             />
             <ThickDivider mt={'0px'} mb={'0px'} />
             <DefaultItem
