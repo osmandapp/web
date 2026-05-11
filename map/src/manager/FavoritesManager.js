@@ -371,8 +371,12 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
         });
         if (resp.data) {
             const res = resp.data;
-            await refreshGlobalFiles({ ctx, currentFileName: groupName, type: OBJECT_TYPE_FAVORITE });
-            return FavoritesManager.createGroup(res);
+            const refreshed = await refreshGlobalFiles({
+                ctx,
+                currentFileName: groupName,
+                type: OBJECT_TYPE_FAVORITE,
+            });
+            return refreshed?.groups?.find((g) => g.file?.name === res.name) ?? FavoritesManager.createGroup(res);
         }
     }
 }

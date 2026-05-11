@@ -12,11 +12,6 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, default
 
     const displayName = getDisplayName(favoriteGroup, defaultGroup, t);
 
-    function handleSelect(group) {
-        setFavoriteGroup(group);
-        setPanelOpen(false);
-    }
-
     return (
         <>
             <SelectItemWithoutOptions
@@ -32,7 +27,8 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, default
                     selectedGroup={favoriteGroup}
                     defaultGroup={defaultGroup}
                     isTrackWpt={!!isTrackWpt}
-                    onSelect={handleSelect}
+                    onSelect={setFavoriteGroup}
+                    onClose={() => setPanelOpen(false)}
                 />
             )}
         </>
