@@ -18,13 +18,12 @@ import values from 'lodash-es/values';
 import styles from './folderSelectionPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
 
-export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTrackWpt, onSelect }) {
+export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTrackWpt, onSelect, onClose }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
 
-    const [pendingGroup, setPendingGroup] = useState(selectedGroup);
     const [expanded, setExpanded] = useState(() => {
         const set = new Set();
         if (selectedGroup?.name?.includes('/')) {
@@ -49,10 +48,6 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
         });
     }
 
-    function handleBack() {
-        onSelect(pendingGroup);
-    }
-
     function handleAddFolder(parentGroup) {
         setAddFolderParent(parentGroup ?? null);
         setAddFolderDialogOpen(true);
@@ -63,7 +58,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
     }
 
     function isSelected(folder) {
-        const sel = pendingGroup;
+        const sel = selectedGroup;
         if (!sel) {
             return folder.name === defaultGroup || folder.name === FavoritesManager.DEFAULT_GROUP_NAME;
         }
@@ -86,12 +81,13 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                     style={{ paddingLeft: 4 + level * 24 }}
                     onMouseEnter={() => setHoveredItem(folder.name)}
                     onMouseLeave={() => setHoveredItem(null)}
-                    onClick={() => !isVirtual && setPendingGroup(folder.group ?? { name: folder.name })}
+                    onClick={() => !isVirtual && onSelect(folder.group ?? { name: folder.name })}
                     selected={selected}
                 >
                     <Box className={styles.arrowBox}>
                         {hasSubfolders && (
                             <IconButton
+                                id={`se-fav-group-expand-${folder.name}`}
                                 size="small"
                                 className={styles.arrowBtn}
                                 sx={{
@@ -119,9 +115,10 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                     </Typography>
                     {isHovered && !isTrackWpt ? (
                         <IconButton
+                            id={`se-add-folder-inside-${folder.name}`}
                             onClick={(e) => {
                                 e.stopPropagation();
-                                handleAddFolder(folder.group);
+                                handleAddFolder(folder.group ?? { name: folder.name });
                             }}
                             title={t('add_new_folder')}
                             className={styles.addFolderInsideBtn}
@@ -135,7 +132,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                     {!isVirtual ? (
                         <Radio
                             checked={selected}
-                            onChange={() => setPendingGroup(folder.group ?? { name: folder.name })}
+                            onChange={() => onSelect(folder.group ?? { name: folder.name })}
                             onClick={(e) => e.stopPropagation()}
                             size="small"
                             className={styles.radio}
@@ -158,11 +155,11 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
 
     return (
         <>
-            <SecondaryMenuDrawer onClose={handleBack}>
+            <SecondaryMenuDrawer onClose={onClose}>
                 <Box className={styles.panel}>
                     <HeaderWithUnderline
                         title={t('folder')}
-                        onClose={handleBack}
+                        onClose={onClose}
                         showBackButton
                         appBarProps={{ id: 'se-back-folder-selection-panel' }}
                         rightContent={
@@ -195,7 +192,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                     parentGroup={addFolderParent}
                     groupTree={groupTree}
                     onCreated={(newGroup) => {
-                        setPendingGroup(newGroup);
+                        onSelect(newGroup);
                         if (addFolderParent) {
                             setExpanded((prev) => new Set([...prev, addFolderParent.name]));
                         }
