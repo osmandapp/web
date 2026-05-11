@@ -120,20 +120,21 @@ When you are signed in, the OsmAnd Cloud section appears in Menu → Settings an
 
 ### Connected Apps {#connected-apps}
 
-The **Connected apps** section allows you to link external services to your OsmAnd account. Currently, it supports integration with **Garmin Connect**, enabling automatic synchronization of your activities. To open it,  
-Go to: *General Menu → Account → Connected apps*
+The **Connected Apps** section allows you to link external services to your OsmAnd account. Currently, it supports integration with [Garmin Connect™](https://connect.garmin.com/app/), which allows automatic synchronization of Garmin activities. To open it, go to: *OsmAnd Web Map → Account → Connected apps*.
 
-In this section, you can connect your Garmin Connect account by clicking **Connect**. You will be redirected to the Garmin authorization page, where you need to sign in and grant access. After successful connection, synchronization starts automatically.
+Garmin Connect integration is available only for [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) users. If you do not have an active Pro subscription, selecting the Garmin Connect item opens the Pricing page.
 
-Once connected, OsmAnd imports your activities and creates a dedicated Garmin Connect folder in the [Tracks section](./web-tracks.md). All synced activities are stored in this folder and are available across devices when OsmAnd Cloud is enabled. New activities are added automatically after they are recorded in your Garmin Connect account, so no manual import is required.
+To connect your Garmin Connect™ account, click **Connect**. You will be redirected to the Garmin authorization page, where you need to sign in and grant access to your Garmin Connect™ data. During authorization, you can enable synchronization of recent activities to import data from the past 30 days. Activities older than 30 days cannot be imported automatically.
 
-Imported activities are converted into tracks. Activity types are preserved when possible and may include hiking, walking, cycling, running, and other Garmin activity types. During the initial connection, you can enable synchronization of recent activities, which allows importing data from the past 30 days. Activities older than this period are not imported automatically.
+After connection, OsmAnd creates a dedicated Garmin Connect folder in the [Tracks section](./web-tracks.md) and begins importing activities automatically. New activities recorded in Garmin Connect™ are added to this folder without manual import. The folder is also synchronized with OsmAnd mobile apps when [OsmAnd Cloud](../personal/osmand-cloud.md) is enabled.
 
-The section also displays basic information about the connection, such as the connected account, number of activities, and the last synchronization time. If needed, you can disconnect your Garmin Connect account at any time. After disconnecting, new activities will no longer be synced, but previously imported tracks will remain in the Garmin Connect folder.
+The Garmin Connect menu contains two sections: **My data** and **Settings**. In My data, you can view the number of synchronized activities, open the last retrieved activity, or open the Garmin Connect™ Activities page using the **View on Garmin Connect™** button. In Settings, you can configure which activity types should be synchronized using the Activities to sync option.
 
-Garmin Connect integration is available for [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) users.
+Activities are grouped into categories such as Cycling, Walking & Running, Water Sports, and Winter & Other Sports. Individual activity types can be enabled or disabled. By default, all supported activity types are selected after connection.
 
-![Garmin Connect](@site/static/img/web/garmin_connect.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2.png)
+To disconnect your Garmin Connect™ account, go to *Settings → Disconnect* and confirm the action. Previously imported tracks remain in the Garmin Connect folder, but new activities will no longer be synchronized.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Troubleshooting {#troubleshooting}
