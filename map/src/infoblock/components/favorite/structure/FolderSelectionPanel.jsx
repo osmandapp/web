@@ -87,6 +87,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                     <Box className={styles.arrowBox}>
                         {hasSubfolders && (
                             <IconButton
+                                id={`se-fav-group-expand-${folder.name}`}
                                 size="small"
                                 className={styles.arrowBtn}
                                 sx={{
@@ -114,9 +115,10 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                     </Typography>
                     {isHovered && !isTrackWpt ? (
                         <IconButton
+                            id={`se-add-folder-inside-${folder.name}`}
                             onClick={(e) => {
                                 e.stopPropagation();
-                                handleAddFolder(folder.group);
+                                handleAddFolder(folder.group ?? { name: folder.name });
                             }}
                             title={t('add_new_folder')}
                             className={styles.addFolderInsideBtn}

@@ -2,8 +2,9 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
-import { assert, clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { assert, clickBy, matchValueBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { driver } from '../../options.mjs';
 import { getFiles } from '../../util.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
@@ -100,7 +101,7 @@ export default async function test() {
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
 
-    // Edit wpt currently in food, switch group to shops, save without clicking back.
+    // --- Test 4: Group selection commits on row click (no back required) ---
     await clickBy(By.id(`se-menu-fav-${foodGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${foodGroupName}`));
     await waitBy(By.id(`se-actions-${wptName}`), { idle: true });
@@ -111,11 +112,9 @@ export default async function test() {
     await clickBy(By.id('se-fav-group-selector'));
     await waitBy(By.id('se-back-folder-selection-panel'));
     await clickBy(By.id(`se-fav-group-item-${shopGroupName}`));
-    // intentionally NO back click — selection must commit on row click
     await clickBy(By.id('se-edit-fav-item-submit'));
     await waitByRemoved(By.id('se-edit-fav-dialog'));
 
-    // verify wpt moved back to shops
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
     await clickBy(By.id(`se-menu-fav-${shopGroupName}`));
@@ -124,7 +123,6 @@ export default async function test() {
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
 
-    // verify wpt removed from food group
     await clickBy(By.id(`se-menu-fav-${foodGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${foodGroupName}`));
     const stillInFood = await waitBy(By.id(`se-fav-item-name-${wptName}`), { optional: true, idle: true });
@@ -132,8 +130,9 @@ export default async function test() {
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
 
-    // Create a new folder during edit and save without clicking back
-    const newGroupName = 'NewGroup';
+    // --- Test 5: Hover-+ preselects parent, subfolder appears in hierarchy, save via WptEditPanel ---
+    const subName = 'Sub';
+    const subFullName = `${shopGroupName}/${subName}`;
     await clickBy(By.id(`se-menu-fav-${shopGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shopGroupName}`));
     await waitBy(By.id(`se-actions-${wptName}`), { idle: true });
@@ -143,26 +142,32 @@ export default async function test() {
     await waitBy(By.id('se-edit-fav-dialog'));
     await clickBy(By.id('se-fav-group-selector'));
     await waitBy(By.id('se-back-folder-selection-panel'));
-    await clickBy(By.id('se-add-folder-btn'));
+    const shopsRow = await waitBy(By.id(`se-fav-group-item-${shopGroupName}`));
+    await driver.actions({ async: true }).move({ origin: shopsRow }).perform();
+    await clickBy(By.id(`se-add-folder-inside-${shopGroupName}`));
     await waitBy(By.id('se-add-fav-folder-dialog'));
-    await sendKeysBy(By.id('se-add-fav-folder-name-input'), newGroupName);
+    await matchValueBy(By.id('se-add-fav-folder-location'), shopGroupName);
+    await sendKeysBy(By.id('se-add-fav-folder-name-input'), subName);
     await clickBy(By.id('se-add-fav-folder-save-btn'));
     await waitByRemoved(By.id('se-add-fav-folder-dialog'));
-    // newly created group is auto-selected — save directly, without clicking back
+    await waitBy(By.id(`se-fav-group-expand-${shopGroupName}`));
+    await waitBy(By.id(`se-fav-group-item-${subFullName}`));
+    await clickBy(By.id(`se-fav-group-expand-${shopGroupName}`));
+    await waitByRemoved(By.id(`se-fav-group-item-${subFullName}`));
+    await clickBy(By.id(`se-fav-group-expand-${shopGroupName}`));
+    await waitBy(By.id(`se-fav-group-item-${subFullName}`));
     await clickBy(By.id('se-edit-fav-item-submit'));
     await waitByRemoved(By.id('se-edit-fav-dialog'));
 
-    // verify wpt moved to the newly created group
     await clickBy(By.id('se-back-folder-button-favorites'));
-    await waitBy(By.id(`se-menu-fav-${newGroupName}`));
-    await clickBy(By.id(`se-menu-fav-${newGroupName}`));
-    await waitBy(By.id(`se-opened-fav-group-${newGroupName}`));
+    await waitBy(By.id(`se-menu-fav-${subFullName}`));
+    await clickBy(By.id(`se-menu-fav-${subFullName}`));
+    await waitBy(By.id(`se-opened-fav-group-${subFullName}`));
     await waitBy(By.id(`se-fav-item-name-${wptName}`));
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
 
-    // clean up
-    await actionDeleteFavGroup(newGroupName);
+    await actionDeleteFavGroup(subFullName);
     await actionDeleteFavGroup(foodGroupName);
     await actionDeleteFavGroup(shopGroupName);
     await waitBy(By.id('se-empty-page'));
