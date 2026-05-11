@@ -146,6 +146,9 @@ export default function SearchResults() {
             if (!f?.properties) return;
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
+            if (type === searchTypeMap.FAVORITE) {
+                return;
+            }
             if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
                 const brandRes = parseTagWithLang(props[CATEGORY_ICON]);
                 if (brandRes.key === SEARCH_BRAND) {
@@ -335,6 +338,7 @@ export default function SearchResults() {
                                     item={item}
                                     index={index}
                                     typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
+                                    currentLoc={currentLoc}
                                 />
                             ))}
                     </Box>

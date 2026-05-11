@@ -26,7 +26,7 @@ export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
 
-function FavInfo({ marker, currentLoc, unitsSettings }) {
+export function FavInfo({ marker, currentLoc, unitsSettings }) {
     const { t } = useTranslation();
 
     const comma = marker.locDist > 0 && marker?.layer?.options?.address ? ', ' : '';

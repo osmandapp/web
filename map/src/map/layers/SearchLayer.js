@@ -23,6 +23,8 @@ import {
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
+    COLOR_NAME_EXTENSION,
+    BACKGROUND_TYPE_EXTENSION,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
@@ -139,6 +141,10 @@ export function searchFavoriteFeatures({ favorites, query }) {
                     [CATEGORY_NAME]: wpt.name,
                     [POI_NAME]: wpt.name,
                     [FAVORITE_HIT_GROUP_ID]: group.id,
+                    [ICON_KEY_NAME]: wpt.icon,
+                    [COLOR_NAME_EXTENSION]: wpt.color,
+                    [BACKGROUND_TYPE_EXTENSION]: wpt.background,
+                    ...(wpt.address ? { address: wpt.address } : {}),
                 },
             });
         }
@@ -382,6 +388,16 @@ export default function SearchLayer() {
                             iconName: obj.properties[POI_ICON_NAME],
                         });
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
+                } else if (objType === searchTypeMap.FAVORITE) {
+                    const p = obj.properties;
+                    icon = createPoiIcon({
+                        point: {},
+                        icon: p[ICON_KEY_NAME],
+                        color: p[COLOR_NAME_EXTENSION],
+                        background: p[BACKGROUND_TYPE_EXTENSION],
+                        hasBackgroundLight: false,
+                    });
+                    finalIconName = p[ICON_KEY_NAME] ?? null;
                 } else {
                     finalIconName = getIconByType(objType);
                     icon = await getSearchIcon(obj, innerCache, finalIconName);

@@ -16,6 +16,9 @@ import {
     CATEGORY_TYPE,
     CITY,
     EN_NAME,
+    ICON_KEY_NAME,
+    COLOR_NAME_EXTENSION,
+    BACKGROUND_TYPE_EXTENSION,
     MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
@@ -35,8 +38,9 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
-import { addFavoriteToMap } from '../../favorite/FavoriteItem';
-import { resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import { CustomIcon, FavInfo, addFavoriteToMap } from '../../favorite/FavoriteItem';
+import { getFavoriteMenuIconHtml, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import favMenuStyles from '../../trackfavmenu.module.css';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -135,7 +139,7 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index }) {
+export default function SearchResultItem({ item, typeItem, index, currentLoc }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -297,43 +301,84 @@ export default function SearchResultItem({ item, typeItem, index }) {
         return ` · ${city}`;
     }
 
+    const isFavoriteHit = item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE;
+    const favoriteListMarker = isFavoriteHit
+        ? {
+              name,
+              icon: getFavoriteMenuIconHtml({
+                  icon: item.properties[ICON_KEY_NAME],
+                  color: item.properties[COLOR_NAME_EXTENSION],
+                  background: item.properties[BACKGROUND_TYPE_EXTENSION],
+              }),
+              layer: { options: { address: item.properties.address ?? '' } },
+              locDist: distance,
+          }
+        : null;
+
     return (
         <div ref={ref}>
             {!inView ? (
                 <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
             ) : (
                 <div>
-                    <MenuItem
-                        id={id}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
-                        onClick={clickHandler}
-                    >
-                        <ListItemText>
-                            <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {(info || type) && (
-                                <MenuItemWithLines
-                                    className={styles.placeTypes}
-                                    name={`${addInfo()}${addType()}${addCity()}`}
-                                    maxLines={4}
-                                >
-                                    {distance > 0 && (
-                                        <span style={{ display: 'inline-flex' }}>
-                                            <Typography className={styles.placeDistance}>{' · '}</Typography>
-                                            <DistanceInfo
-                                                distance={distance}
-                                                bearing={bearing}
-                                                isUserLocation={isUserLocation}
-                                            />
-                                        </span>
+                    {isFavoriteHit ? (
+                        <>
+                            <MenuItem
+                                id={`se-search-fav-result-${index}-${item.properties[FAVORITE_HIT_GROUP_ID] ?? ''}`}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                                className={`${favMenuStyles.item} ${isHovered ? favMenuStyles.itemHovered : ''}`}
+                                onClick={clickHandler}
+                            >
+                                <ListItemIcon className={favMenuStyles.icon}>
+                                    <CustomIcon marker={favoriteListMarker} />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <MenuItemWithLines name={name} maxLines={1} />
+                                    <FavInfo
+                                        marker={favoriteListMarker}
+                                        currentLoc={currentLoc}
+                                        unitsSettings={ctx.unitsSettings}
+                                    />
+                                </ListItemText>
+                            </MenuItem>
+                            <DividerWithMargin margin={'64px'} />
+                        </>
+                    ) : (
+                        <>
+                            <MenuItem
+                                id={id}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                                className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
+                                onClick={clickHandler}
+                            >
+                                <ListItemText>
+                                    <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                                    {(info || type) && (
+                                        <MenuItemWithLines
+                                            className={styles.placeTypes}
+                                            name={`${addInfo()}${addType()}${addCity()}`}
+                                            maxLines={4}
+                                        >
+                                            {distance > 0 && (
+                                                <span style={{ display: 'inline-flex' }}>
+                                                    <Typography className={styles.placeDistance}>{' · '}</Typography>
+                                                    <DistanceInfo
+                                                        distance={distance}
+                                                        bearing={bearing}
+                                                        isUserLocation={isUserLocation}
+                                                    />
+                                                </span>
+                                            )}
+                                        </MenuItemWithLines>
                                     )}
-                                </MenuItemWithLines>
-                            )}
-                        </ListItemText>
-                        <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
-                    </MenuItem>
-                    <DividerWithMargin margin={'16px'} />
+                                </ListItemText>
+                                <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
+                            </MenuItem>
+                            <DividerWithMargin margin={'16px'} />
+                        </>
+                    )}
                 </div>
             )}
         </div>

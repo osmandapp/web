@@ -225,14 +225,14 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             if (isFavorites) {
                 iconHtml = iconFromLayer ?? '';
             } else {
-                iconHtml = layer.options?.svg ?? '';
+                iconHtml = layer.options?.svg ?? iconFromLayer ?? '';
             }
         } else {
             // hover
             if (isFavorites) {
                 iconHtml = layer.options?.originalIcon?.options?.html ?? iconFromLayer ?? '';
             } else {
-                iconHtml = layer.options?.svg ?? layer.options?.originalIcon?.options?.html ?? '';
+                iconHtml = layer.options?.svg ?? layer.options?.originalIcon?.options?.html ?? iconFromLayer ?? '';
             }
         }
 

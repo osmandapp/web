@@ -667,6 +667,20 @@ export function getSize(group, t) {
         : 'empty';
 }
 
+export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } = {}) {
+    const point = wpt ?? {};
+    const rawHtml = createPoiIcon({
+        point,
+        icon: icon ?? wpt?.icon,
+        color: color ?? wpt?.color,
+        background: background ?? wpt?.background,
+        hasBackgroundLight: false,
+    }).options.html;
+    const bg = background ?? wpt?.background;
+
+    return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, bg);
+}
+
 export function getFavMenuListByLayers(layers, wpts, currentLoc) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
@@ -678,16 +692,9 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
         if (!wpt) {
             return;
         }
-        const icon = createPoiIcon({
-            point: wpt,
-            color: wpt.color,
-            background: wpt.background,
-            hasBackgroundLight: false,
-            icon: wpt.icon,
-        }).options.html;
         const marker = {
             name: value.options.name,
-            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, wpt.background),
+            icon: getFavoriteMenuIconHtml({ wpt }),
             layer: value,
             color: wpt.color,
             background: wpt.background,
@@ -716,16 +723,9 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     if (!layer) {
         return null;
     }
-    const icon = createPoiIcon({
-        point: wpt,
-        color: wpt.color,
-        background: wpt.background,
-        hasBackgroundLight: false,
-        icon: wpt.icon,
-    }).options.html;
     const marker = {
         name: wptName,
-        icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, wpt.background),
+        icon: getFavoriteMenuIconHtml({ wpt }),
         layer,
         color: wpt.color,
         background: wpt.background,
