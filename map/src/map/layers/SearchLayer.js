@@ -33,6 +33,7 @@ import { getIconByType } from '../../manager/SearchManager';
 import { BBOX_COORDS_DECIMALS, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
+import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
@@ -140,6 +141,7 @@ export default function SearchLayer() {
                 newLayers.eachLayer((l) => {
                     searchLayers.current.addLayer(l);
                 });
+                hideMarkersNearPin(map, ctx);
             }
         };
 

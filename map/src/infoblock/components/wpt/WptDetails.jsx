@@ -98,20 +98,21 @@ import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
+    const cachedIcon = ctx.poiIconCache[icon];
 
     useEffect(() => {
         const loadIcon = async () => {
             setIconState({ svg: null, isLoading: true });
 
             try {
-                const svg = iconPathMap[icon] ? await getIconFromMap(icon) : (ctx.poiIconCache[icon] ?? null);
+                const svg = iconPathMap[icon] ? await getIconFromMap(icon) : (cachedIcon ?? null);
                 setIconState({ svg, isLoading: false });
             } catch (error) {
                 setIconState({ svg: null, isLoading: false });
             }
         };
         loadIcon().then();
-    }, [icon, ctx.poiIconCache]);
+    }, [icon, cachedIcon]);
 
     if (iconState.isLoading) {
         return <div style={{ display: 'flex', width: shieldSize, height: shieldSize }} />;
