@@ -36,12 +36,12 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
     const { toggleVisibility, checkedSwitch } = useTrackVisibility({ file: track });
 
     useEffect(() => {
-        if (track?.name) {
+        if (track?.name && isCloudTrack(ctx)) {
             setSelectionFocus({ type: OBJECT_TYPE_CLOUD_TRACK, id: track.name });
         }
 
         return () => clearSelectionFocus();
-    }, [track?.name]);
+    }, [track?.name, ctx.currentObjectType]);
 
     const trackName = track ? getFileName(track) : null;
     const showActionsBtn = (isCloudTrack(ctx) || isLocalTrack(ctx)) && track?.name;
