@@ -366,7 +366,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 **3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. If [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includes passages through buildings mapped with the tag `tunnel=building_passage`, OsmAnd renders visible openings in the 3D building model so that roads or pedestrian ways passing through the building are displayed correctly. 
 
-3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed. When a POI or a selected location (such as a map pin or navigation destination) is inside a building, OsmAnd highlights the corresponding building to make it easier to identify it on the map.
+3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed. When zooming in or out and when panning the map, 3D buildings appear and disappear with a smooth fade animation. When a POI or a selected location (such as a map pin or navigation destination) is inside a building, OsmAnd highlights the corresponding building to make it easier to identify it on the map.
 
 Use the main toggle to enable or disable 3D rendering of buildings. When enabled, the setting also displays the current [Level of detail](#performance) (Low or High) under the main toggle (*Android only*). To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up. In this view, buildings may partially cover roads or map labels depending on the visibility setting.
 
@@ -415,7 +415,7 @@ The **<Translate android="true" ids="performance"/>** controls how 3D buildings 
 
 **<Translate android="true" ids="level_of_details"/>** determines the complexity of the 3D building geometry:
 - Low (default) — simpler geometry.
-- High — more detailed geometry.
+- High — more detailed geometry. Fade animation for 3D buildings is available only with this setting.
 
 **<Translate android="true" ids="view_distance"/>** controls how far from the camera 3D buildings are rendered:
 - Near (default) — renders buildings closer to you.
