@@ -402,6 +402,27 @@ export async function getMapHash() {
     return `${z}/${lat.toFixed(3)}/${lon.toFixed(3)}`;
 }
 
+// Counts on-map items (markers + vector layers) by opacity bucket.
+// Used to verify Focus mode: dim=0.35 by default, hidden=0 when Focus toggle is on.
+export async function countMapItemsByOpacity() {
+    return await driver.executeScript(`
+        const map = window.__leafletMap;
+        const r = { full: 0, dim: 0, hidden: 0, total: 0 };
+        if (!map) return r;
+        map.eachLayer(layer => {
+            const isMarker = typeof layer.getLatLng === 'function';
+            const isVector = typeof layer.getLatLngs === 'function' && typeof layer.setStyle === 'function';
+            if (!isMarker && !isVector) return;
+            const op = layer.options.opacity == null ? 1 : layer.options.opacity;
+            if (op === 0) r.hidden++;
+            else if (op < 1) r.dim++;
+            else r.full++;
+            r.total++;
+        });
+        return r;
+    `);
+}
+
 export async function assert(condition, message) {
     if (!condition) {
         verbose && (await logBrowserAndNetworkErrors(driver));
