@@ -721,7 +721,7 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
         const appearance = resolveWptAppearance(wpt, pointsGroups);
         const marker = {
             name: value.options.name,
-            icon: getFavoriteMenuIconHtml({ wpt, ...appearance}),
+            icon: getFavoriteMenuIconHtml({ wpt, ...appearance }),
             layer: value,
             color: appearance.color,
             background: appearance.background,

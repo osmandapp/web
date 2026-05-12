@@ -129,9 +129,9 @@ export function searchFavoriteFeatures({ favorites, query }) {
 
             features.push({
                 type: 'Feature',
-                geometry: { 
-                    type: 'Point', 
-                    coordinates: [wpt.lon, wpt.lat] 
+                geometry: {
+                    type: 'Point',
+                    coordinates: [wpt.lon, wpt.lat],
                 },
                 properties: {
                     [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
@@ -152,7 +152,7 @@ export function searchFavoriteFeatures({ favorites, query }) {
 }
 
 function searchCloudTrackFeatures({ listFiles, query }) {
-  if (!query || !listFiles?.uniqueFiles) return [];
+    if (!query || !listFiles?.uniqueFiles) return [];
     const q = normalize(query);
     if (!q) return [];
 

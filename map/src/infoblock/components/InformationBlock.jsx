@@ -23,10 +23,13 @@ import {
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
+    SEARCH_RESULT_URL,
+    SEARCH_URL,
     SHARE_FILE_MAIN_URL,
     SHARE_MENU_URL,
     TRACKS_URL,
 } from '../../manager/GlobalManager';
+import { buildSearchParamsFromQuery } from '../../util/hooks/search/useSearchNav';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
@@ -366,11 +369,13 @@ export default function InformationBlock({
     function handleCloseTrackContextMenu() {
         setShowInfoBlock(false);
 
+        const wasCloudTrack = isCloudTrack(ctx);
+
         if (!isTrackAnalyzer(ctx)) {
             closeTrackAnalyzer();
         }
-        if (ctx.selectedGpxFile.mapObj) {
-            closeMapObjectMenu();
+        if (ctx.selectedGpxFile?.mapObj) {
+            closeMapObjectMenu({ wasCloudTrack });
         } else if (isCloudTrack(ctx)) {
             closeCloudTrack();
         } else if (isLocalTrack(ctx)) {
@@ -381,10 +386,30 @@ export default function InformationBlock({
         }
     }
 
-    function closeMapObjectMenu() {
-        ctx.setCloseMapObj(true);
-        if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
-            ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].mapObj = null));
+    function closeMapObjectMenu({ wasCloudTrack } = {}) {
+        const name = ctx.selectedGpxFile?.name;
+        if (name && !isEmpty(ctx.gpxFiles) && ctx.gpxFiles[name]) {
+            ctx.mutateGpxFiles((o) => (o[name].mapObj = null));
+        }
+
+        const returnToSearch =
+            wasCloudTrack &&
+            ctx.searchQuery &&
+            (ctx.searchQuery.query || ctx.searchQuery.type) &&
+            ctx.searchResult?.features?.length;
+
+        if (wasCloudTrack) {
+            setTrackName(null);
+        }
+
+        if (returnToSearch) {
+            navigate({
+                pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+                search: buildSearchParamsFromQuery(ctx.searchQuery),
+                hash: location.hash,
+            });
+        } else {
+            ctx.setCloseMapObj(true);
         }
     }
 

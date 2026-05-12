@@ -64,7 +64,7 @@ export function preparedType(type, t, lang = null) {
     return res;
 }
 
-export function getPropsFromSearchResultItem(props, t = null, lang = null) {
+export function getPropsFromSearchResultItem(props, t = null, lang = null, listFiles = null, unitsSettings = null) {
     let restoreLang;
     if (t && lang) {
         restoreLang = i18n.language;
@@ -107,7 +107,7 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
 
     function getInfo() {
         if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
-            return getTrackInfo(name);
+            return getTrackInfo(name, listFiles, unitsSettings, t);
         }
         if (addressParts.length > 0) {
             if (type.toLowerCase() === searchTypeMap.STREET.toLowerCase()) {
@@ -118,21 +118,21 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
         return undefined;
     }
 
-    function getTrackInfo(name) {
-        const ctx = useContext(AppContext);
-        const trackFile = ctx.listFiles?.uniqueFiles.find((f) => f.name === name);
-        if (!trackFile) return '';
-        const distance = convertMeters(getDist(trackFile), ctx.unitsSettings.len, LARGE_UNIT);
-        const dist = distance != null ? `${distance.toFixed(2)} ${t(getLargeLengthUnit(ctx))}` : '';
-        const time = getTime(trackFile);
-        return [dist, time].filter(Boolean).join(' · ');
-    }
-
     if (restoreLang) {
         i18n.changeLanguage(restoreLang);
     }
 
     return { name, type, info, city };
+}
+
+function getTrackInfo(name, listFiles, unitsSettings, t) {
+    if (!listFiles || !unitsSettings) return '';
+    const trackFile = listFiles.uniqueFiles?.find((f) => f.name === name);
+    if (!trackFile) return '';
+    const distance = convertMeters(getDist(trackFile), unitsSettings.len, LARGE_UNIT);
+    const dist = distance != null ? `${distance.toFixed(2)} ${t(getLargeLengthUnit({ unitsSettings }))}` : '';
+    const time = getTime(trackFile);
+    return [dist, time].filter(Boolean).join(' · ');
 }
 
 function safeCategoryTypeKey(type) {
@@ -182,7 +182,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }, [ctx.selectedWptId?.id]);
 
     function parseItem(item) {
-        const res = getPropsFromSearchResultItem(item.properties, t);
+        const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
         const distance = item.locDist;
         const bearing = item.bearing;
         const isUserLocation = item.isUserLocation;
