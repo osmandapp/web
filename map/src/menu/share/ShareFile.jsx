@@ -22,6 +22,7 @@ import {
 } from '../../manager/GlobalManager';
 import NotAvailableError from './errors/NotAvailableError';
 import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, extractBaseFavFileName } from '../../manager/FavoritesManager';
+import { getResolvedPointsGroups } from '../../manager/track/TracksManager';
 import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
@@ -155,7 +156,12 @@ export default function ShareFile() {
         const layers = ctx.shareFileMarkers?.getLayers();
         if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
             const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getMapCenter(ctx, hash);
-            const markerList = getFavMenuListByLayers(layers, ctx.selectedGpxFile.wpts, loc);
+            const markerList = getFavMenuListByLayers({
+                layers,
+                wpts: ctx.selectedGpxFile.wpts,
+                currentLoc: loc,
+                pointsGroups: getResolvedPointsGroups(ctx.selectedGpxFile),
+            });
             const items = [];
             markerList.map((m, index) => {
                 items.push(

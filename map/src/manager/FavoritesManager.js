@@ -5,6 +5,7 @@ import MarkerOptions, {
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
 import Utils, { getDistance, quickNaNfix } from '../util/Utils';
+import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import TracksManager from './track/TracksManager';
@@ -60,8 +61,11 @@ function GroupResult(clienttimems, updatetimems, data) {
 
 function getShapesSvg(color) {
     let res = {};
+    // Convert OsmAnd color formats (#rrggbb / #aarrggbb) to a CSS color string
+    // so SVG `fill="..."` honours alpha for transparent palette entries.
+    const svgColor = hexToRgba(color);
     shapes.forEach((shape) => {
-        res[shape] = getBackground(color, shape);
+        res[shape] = getBackground(svgColor, shape);
     });
     return res;
 }
@@ -237,7 +241,7 @@ function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = n
         }
     }
     if (color) {
-        return Utils.hexToRgba(color);
+        return hexToRgba(color);
     }
 }
 
@@ -367,8 +371,12 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
         });
         if (resp.data) {
             const res = resp.data;
-            await refreshGlobalFiles({ ctx, currentFileName: groupName, type: OBJECT_TYPE_FAVORITE });
-            return FavoritesManager.createGroup(res);
+            const refreshed = await refreshGlobalFiles({
+                ctx,
+                currentFileName: groupName,
+                type: OBJECT_TYPE_FAVORITE,
+            });
+            return refreshed?.groups?.find((g) => g.file?.name === res.name) ?? FavoritesManager.createGroup(res);
         }
     }
 }
@@ -478,6 +486,24 @@ export function prepareBackground(value) {
 
 export function prepareIcon(value) {
     return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
+}
+
+/**
+ * Resolves wpt color, icon and background with a consistent priority:
+ *   1. wpt's own value (from ext)
+ *   2. pointsGroup value (group settings)
+ *   3. default value
+ */
+export function resolveWptAppearance(wpt, pointsGroups) {
+    const category = wpt?.category ?? '';
+    const group = pointsGroups?.[category];
+    return {
+        color: isNoValue(wpt?.color) ? (group?.color ?? MarkerOptions.DEFAULT_WPT_COLOR) : wpt.color,
+        background: isNoValue(wpt?.background)
+            ? (group?.backgroundType ?? group?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE)
+            : wpt.background,
+        icon: isNoValue(wpt?.icon) ? (group?.iconName ?? group?.icon ?? MarkerOptions.DEFAULT_WPT_ICON) : wpt.icon,
+    };
 }
 
 /**
@@ -681,7 +707,7 @@ export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } 
     return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, bg);
 }
 
-export function getFavMenuListByLayers(layers, wpts, currentLoc) {
+export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
         // Only process waypoint markers (skip route points, track points, polylines, start/end markers)
@@ -692,12 +718,13 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
         if (!wpt) {
             return;
         }
+        const appearance = resolveWptAppearance(wpt, pointsGroups);
         const marker = {
             name: value.options.name,
-            icon: getFavoriteMenuIconHtml({ wpt }),
+            icon: getFavoriteMenuIconHtml({ wpt, ...appearance}),
             layer: value,
-            color: wpt.color,
-            background: wpt.background,
+            color: appearance.color,
+            background: appearance.background,
         };
         markerList.push(marker);
     });

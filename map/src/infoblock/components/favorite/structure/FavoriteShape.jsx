@@ -1,54 +1,57 @@
-import React, { useState } from 'react';
-import { Box, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
-import FavoritesManager from '../../../../manager/FavoritesManager';
+import React from 'react';
+import { Box, ListItemText, MenuItem } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
+import MarkerOptions from '../../../../map/markers/MarkerOptions';
+import { ReactComponent as CircleIcon } from '../../../../assets/icons/ic_action_bg_shape_circle.svg';
+import { ReactComponent as SquareIcon } from '../../../../assets/icons/ic_action_bg_shape_square.svg';
+import { ReactComponent as OctagonIcon } from '../../../../assets/icons/ic_action_bg_shape_octagon.svg';
+import MenuItemWithLines from '../../../../menu/components/MenuItemWithLines';
+import styles from '../wptEditPanel.module.css';
 
-export default function FavoriteShape({ color, favoriteShape, setFavoriteShape, defaultBackground }) {
-    const [selectFavoriteShape, setSelectFavoriteShape] = useState(false);
-    let shapesSvg = FavoritesManager.getShapesSvg(color);
+const SHAPES = [
+    {
+        value: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+        Icon: CircleIcon,
+        id: 'se-favorite-shape-0',
+    },
+    {
+        value: MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON,
+        Icon: OctagonIcon,
+        id: 'se-favorite-shape-1',
+    },
+    {
+        value: MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE,
+        Icon: SquareIcon,
+        id: 'se-favorite-shape-2',
+    },
+];
+
+export default function FavoriteShape({ favoriteShape, setFavoriteShape }) {
+    const { t } = useTranslation();
 
     return (
-        <>
-            <ListItemText>
-                <Typography noWrap>Select shape</Typography>
+        <MenuItem disableRipple className={styles.shapeRow}>
+            <ListItemText className={styles.shapeRowText}>
+                <MenuItemWithLines name={t('web:wpt_appearance_shape_label')} maxLines={1} />
             </ListItemText>
-            <Box
-                sx={{
-                    display: 'flex',
-                }}
-            >
-                {Object.entries(shapesSvg).map((shape, index) => {
+            <Box className={styles.shapeToggleGroup}>
+                {SHAPES.map(({ value, Icon, id }) => {
+                    const isSelected = favoriteShape === value;
                     return (
-                        <ListItem style={{ maxWidth: 71 }} component="div" key={index} disablePadding>
-                            <ListItemButton
-                                id={`se-favorite-shape-${index}`}
-                                sx={{ maxHeight: 50 }}
-                                selected={
-                                    favoriteShape === shape[0] ||
-                                    (!selectFavoriteShape && shape[0] === defaultBackground)
-                                }
-                                onClick={() => {
-                                    setSelectFavoriteShape(true);
-                                    setFavoriteShape(shape[0]);
-                                }}
-                            >
-                                <Box
-                                    component="div"
-                                    sx={{
-                                        '& .background': {
-                                            left: '-20px',
-                                            top: '2px',
-                                            width: '80px',
-                                            height: '80px',
-                                            filter: 'drop-shadow(0 0 0 gray)',
-                                        },
-                                    }}
-                                    dangerouslySetInnerHTML={{ __html: shape[1] + '' }}
-                                />
-                            </ListItemButton>
-                        </ListItem>
+                        <Box
+                            key={value}
+                            id={id}
+                            className={clsx(styles.shapeToggleBtn, isSelected && styles.shapeToggleBtnSelected)}
+                            onClick={() => setFavoriteShape(value)}
+                        >
+                            <Icon
+                                className={clsx(styles.shapeToggleIcon, isSelected && styles.shapeToggleIconSelected)}
+                            />
+                        </Box>
                     );
                 })}
             </Box>
-        </>
+        </MenuItem>
     );
 }

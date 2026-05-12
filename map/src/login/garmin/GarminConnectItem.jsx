@@ -20,6 +20,7 @@ export default function GarminConnectItem() {
 
     const [garminLinked, setGarminLinked] = useState(false);
     const [syncTimeMs, setSyncTimeMs] = useState(null);
+    const [selectedTypes, setSelectedTypes] = useState(null);
     const [garminLoading, setGarminLoading] = useState(false);
 
     const isProUser = ltx.isProAccount();
@@ -33,6 +34,7 @@ export default function GarminConnectItem() {
             const data = await fetchGarminStatus();
             setGarminLinked(!!data?.linked);
             setSyncTimeMs(data?.syncTimeMs || null);
+            setSelectedTypes(data?.selectedTypes ?? null);
         } finally {
             setGarminLoading(false);
         }
@@ -48,7 +50,7 @@ export default function GarminConnectItem() {
 
     const openGarminPage = () =>
         navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + GARMIN_URL + location.hash, {
-            state: { linked: garminLinked, syncTimeMs },
+            state: { linked: garminLinked, syncTimeMs, selectedTypes },
         });
 
     let rightSlot;

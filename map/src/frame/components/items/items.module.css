@@ -143,6 +143,32 @@
     gap: 8px !important;
 }
 
+.itemWithRightIcon {
+    width: 360px !important;
+    min-height: 48px !important;
+    padding: 4px 10px 4px 16px !important;
+    gap: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.itemRightIconBox {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.itemWithRightIconText {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
 .sectionRowText {
     flex: 1 1 0;
     min-width: 0;
@@ -164,6 +190,7 @@
     fill: var(--svg-icon-color) !important;
 }
 
-.sectionRow:hover .sectionRowChevron {
+.sectionRow:hover .sectionRowChevron,
+.item:hover .sectionRowChevron {
     fill: var(--selected-color) !important;
 }

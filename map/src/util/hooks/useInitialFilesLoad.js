@@ -21,13 +21,12 @@ import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 /**
  * Merges refreshed .info file payloads from list-files refresh into loaded GPX entries and the selected track.
  */
-export function applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelectedGpxFile, selectedGpxFile) {
+export function applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelectedGpxFile) {
     const infoFilesFromRefresh = updatedData.filter((r) => r.name?.toLowerCase().endsWith(INFO_FILE_EXT));
-
-    let selectedInfoDataFromRefresh = null;
+    if (infoFilesFromRefresh.length === 0) return;
 
     setGpxFiles((prev) => {
-        if (isEmpty(prev) || infoFilesFromRefresh.length === 0) return prev;
+        if (isEmpty(prev)) return prev;
         let next = null;
         for (const [gpxName, file] of Object.entries(prev)) {
             const infoRow = infoFilesFromRefresh.find((r) => r.name === gpxName + INFO_FILE_EXT);
@@ -39,24 +38,18 @@ export function applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelect
                 info: { ...file.info, ...data },
                 cloudRedrawWpts: true,
             };
-            if (gpxName === selectedGpxFile?.name && !selectedGpxFile?.infoChanged) {
-                selectedInfoDataFromRefresh = data;
-            }
         }
         return next ?? prev;
     });
 
-    if (selectedInfoDataFromRefresh != null) {
-        setSelectedGpxFile((track) =>
-            !track || track.infoChanged || track.name !== selectedGpxFile?.name
-                ? track
-                : {
-                      ...track,
-                      info: { ...track.info, ...selectedInfoDataFromRefresh },
-                      cloudRedrawWpts: true,
-                  }
-        );
-    }
+    // Read selectedGpxFile via setter callback to merge .info into the currently open track.
+    setSelectedGpxFile((track) => {
+        if (!track || track.infoChanged || !track.name) return track;
+        const infoRow = infoFilesFromRefresh.find((r) => r.name === track.name + INFO_FILE_EXT);
+        const data = infoRow?.details?.data;
+        if (data == null) return track;
+        return { ...track, info: { ...track.info, ...data }, cloudRedrawWpts: true };
+    });
 }
 
 /**

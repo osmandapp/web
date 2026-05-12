@@ -218,6 +218,7 @@
   "header_docs": "Documentos",
   "header_blog": "Blog",
   "header_pricing": "Preços",
+  "header_spring_sale": "Promoção de primavera",
   "header_map": "Mapa",
   "header_join_us": "Junte-se a nós",
   "track_analyzer_desc": "Selecione um ou dois pontos no mapa para encontrar trilhas que passam por eles e visualizar análises.",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "Nome de pasta vazio.",
   "rename_folder_already_exists": "Pasta já existe.",
   "rename_item_not_found": "Pasta ou trilha não foi encontrada.",
+  "garmin_sync_title": "Sincronizar suas atividades",
+  "garmin_sync_description": "Conecte sua conta para sincronizar atividades do Garmin Connect™ com o OsmAnd.",
+  "garmin_help": "Ajuda",
+  "garmin_help_new_activities": "Novas atividades estarão disponíveis automaticamente na pasta Trilhas → Garmin.",
+  "garmin_help_supported_activities": "<strong>Atividades Suportadas:</strong> Atualmente, o OsmAnd sincroniza apenas atividades de Caminhada, Ciclismo e Andar a Pé da sua conta Garmin Connect™.",
+  "garmin_help_historic_data": "<strong>Dados históricos:</strong> Você pode sincronizar atividades dos últimos 30 dias ativando esta opção na página de autorização do Garmin Connect™. Observe que atividades com mais de 30 dias não podem ser importadas automaticamente.",
+  "garmin_activities": "Atividades",
+  "garmin_last_sync": "Última sincronização",
+  "garmin_disconnect_confirm_title": "Desconectar Garmin Connect™?",
+  "garmin_disconnect_confirm_desc": "O OsmAnd não sincronizará mais suas atividades. Suas trilhas anteriores permanecerão na pasta Garmin.",
+  "garmin_time_min_ago": "{{n}} min atrás",
+  "garmin_time_h_ago": "{{n}} h atrás",
+  "garmin_time_days_ago": "{{n}} dias atrás",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }

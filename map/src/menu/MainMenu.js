@@ -231,7 +231,9 @@ export default function MainMenu({
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
-        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles) {
+        // Wait until .info details are loaded (updateFiles == null) before auto-opening the
+        // track, so processDisplayTrack reads pointsGroups visibility from the refreshed listFiles.
+        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && !ctx.updateFiles) {
             if (isEmpty(ctx.selectedGpxFile)) {
                 if (filename) {
                     const decodeFilename = decodeString(filename);
@@ -240,11 +242,11 @@ export default function MainMenu({
                         return;
                     }
                     ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-                    file.mapObj = true;
+                    const fileWithMapObj = { ...file, mapObj: true };
                     if (location.pathname.includes(SHARE_MENU_URL)) {
                         // open share menu
                         if (!ctx.shareFile) {
-                            getShareFileInfo({ file, ctx }).then();
+                            getShareFileInfo({ file: fileWithMapObj, ctx }).then();
                         }
                     } else {
                         // open track info
@@ -253,7 +255,7 @@ export default function MainMenu({
                             showOnMap: true,
                             showInfo: true,
                             zoomToTrack: true,
-                            file,
+                            file: fileWithMapObj,
                             ctx,
                             fileStorage: ctx.gpxFiles,
                             setFileStorage: ctx.setGpxFiles,
@@ -268,7 +270,12 @@ export default function MainMenu({
                     const mapObj = ctx.favorites.mapObjs[group.id];
                     if (!mapObj?.markers?._layers) return;
 
-                    const markerList = getFavMenuListByLayers(mapObj.markers._layers, mapObj.wpts, currentLoc);
+                    const markerList = getFavMenuListByLayers({
+                        layers: mapObj.markers._layers,
+                        wpts: mapObj.wpts,
+                        currentLoc,
+                        pointsGroups: mapObj.pointsGroups,
+                    });
                     if (markerList.length === 0) return;
 
                     const marker = markerList.find((m) => m.name === decodeString(favname));
@@ -293,18 +300,27 @@ export default function MainMenu({
                 }
             }
         }
-    }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
+    }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups, ctx.updateFiles]);
 
     useEffect(() => {
         if (location.pathname.includes(POI_URL)) {
             return;
         }
-        if (location.pathname.includes(INFO_MENU_URL) || savePrevState) {
+        if (location.pathname.includes(INFO_MENU_URL)) {
+            // Close login and switch menu if navigating to a track/favorites info URL from Login/Garmin
+            if (ltx.openLoginMenu) {
+                ltx.setOpenLoginMenu(false);
+            }
+            switchMenuByCurrentUrl();
+            return;
+        }
+        if (savePrevState) {
             setSavePrevState(false);
             return;
         }
         if (location.pathname.includes(LOGIN_URL)) {
             ltx.setOpenLoginMenu(true);
+            setShowInfoBlock(false);
             return;
         }
         if (openVisibleTracks) {
@@ -313,6 +329,10 @@ export default function MainMenu({
         }
         if (!menuInfo) {
             selectMenuByUrl();
+        } else {
+            // When navigating to a menu URL from a different menu,
+            // switch directly without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
+            switchMenuByCurrentUrl();
         }
         if (location.pathname === MAIN_URL_WITH_SLASH) {
             ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
@@ -348,6 +368,20 @@ export default function MainMenu({
             return selectMenu({ item, openFromUrl: true });
         }
         return null;
+    }
+
+    // Switch menu by current URL without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
+    // Skip if a map object (e.g. favorite opened from map) is displayed — keep selectedType pointing at the
+    // originating menu (e.g. cloud track) so that closeMapObj can navigate back to it correctly.
+    function switchMenuByCurrentUrl() {
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
+            return;
+        }
+        const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
+        if (matchedItem && !isSelectedMenuItem(matchedItem)) {
+            setMenuInfo(matchedItem.component);
+            setSelectedType(matchedItem.type);
+        }
     }
 
     function openShareFileByLink() {
@@ -462,7 +496,9 @@ export default function MainMenu({
 
     // url caching for every menu type
     useEffect(() => {
-        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) return;
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
+            return;
+        }
         const menuByUrl = items.find(
             (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
         );

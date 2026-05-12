@@ -37,6 +37,12 @@ function iconHtmlFromIconName(finalIconName) {
 
 const loadedPhotoUrls = new Set();
 
+/** Add favorite from map/POI, or add track waypoint (context menu / track) — preview pin until save/cancel.
+ * Not when editing an existing wpt (`editWpt`). */
+function isAddFavoritePreviewActive(ctx) {
+    return !!(ctx.addFavorite?.location && !ctx.addFavorite?.editWpt);
+}
+
 function resolveLayers(getLayers, layersProp) {
     if (typeof getLayers === 'function') return getLayers();
     if (Array.isArray(layersProp)) return layersProp;
@@ -78,6 +84,9 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         if (!map) return;
 
         if (!selectedObjId) {
+            if (isAddFavoritePreviewActive(ctx)) {
+                return;
+            }
             resetSelectedPin({ ctx, map });
             return;
         }
@@ -92,13 +101,24 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         if (found) {
             applyPinForLayer(found, true);
         }
-    }, [selectedObjId, type, getLayers, layersProp]);
+    }, [
+        selectedObjId,
+        type,
+        getLayers,
+        layersProp,
+        ctx.addFavorite?.location,
+        ctx.addFavorite?.editWpt,
+        ctx.selectedWpt,
+    ]);
 
     // ========== HOVER PIN ==========
     useEffect(() => {
         if (!map || selectedObjId) return;
 
         if (!hoverId) {
+            if (isAddFavoritePreviewActive(ctx)) {
+                return;
+            }
             resetSelectedPin({ ctx, map });
             return;
         }
@@ -120,7 +140,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
                 resetSelectedPin({ ctx, map });
             }
         }
-    }, [hoverId, selectedObjId, type, getLayers, layersProp]);
+    }, [hoverId, selectedObjId, type, getLayers, layersProp, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
 
     // Builds markerData from layer options
     function applyPinForLayer(layer, isSelection) {

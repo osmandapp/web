@@ -12,7 +12,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.3 {#ios-53}
+# iOS 5.4 {#ios-54}
 
 ## Join Beta {#join-beta}
 
@@ -27,6 +27,15 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ## What's new {#whats-new}
 
+- Search updated with a new **[Explore](https://osmand.net/docs/user/map/popular_places#explore-in-search)** tab featuring popular places nearby.
+- New experimental **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** with an astronomical overlay showing the paths of the Sun, planets and stars.
+- Added a **[palette editor](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** to create and customize color schemes for routes and terrain.
+- Smarter track organization with **[Smart Folders](https://osmand.net/docs/user/personal/tracks/smart-folder)** and clearer summary statistics.
+- More flexible **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especially in landscape mode.
+- Enhanced **[Plan a route](https://osmand.net/docs/user/plan-route/create-route)** with elevation graph, offline elevation calculation, and route parameters.
+- Added uphill, downhill, and flat segments to **[track analysis](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
+
+<!--
 - Last Uphill / Last Downhill mode for **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, with switching between total and last ascent/descent.
 - Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill/downhill distance.
 - **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing maximum speed for the whole trip or for the most recent uphill/downhill section.
@@ -38,14 +47,23 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
 - Enhanced POI search results with consistent city display, refined layout, and optional thumbnails.
 - Default appearance settings for track folders, allowing new tracks to inherit a unified folder style.
+-->
 
 
 ## Bug fixes {#bug-fixes}
 
+- Fixed [Smart Folders](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) not syncing to OsmAnd Cloud or appearing in Settings export.
+- Updated the [Wikipedia context menu](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) with a new design and added online photos.
+- Fixed missing [POI names](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) in the “What’s here” menu.
+- Fixed opening [Travel Guides](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) from search results to show the article directly.
+- Adjusted the position of the [Online Photos](https://github.com/osmandapp/OsmAnd-iOS/issues/5336) section in the region context menu.
+
+<!--
 - Faster opening of context menus when tapping POIs, Favorites, tracks and buildings.
 - Correct handling of relation-based POIs on multipolygons.
 - Fixed “null” appearing instead of a city name in POI search results and improved night-mode background consistency.
 - Restored tappable behaviour for fitness, running and canoe routes with shields.
+-->
 
 
 

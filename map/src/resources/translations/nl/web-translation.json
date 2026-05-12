@@ -218,6 +218,7 @@
   "header_docs": "Documenten",
   "header_blog": "Blog",
   "header_pricing": "Prijzen",
+  "header_spring_sale": "Lente-aanbieding",
   "header_map": "Kaart",
   "header_join_us": "Doe mee",
   "track_analyzer_desc": "Selecteer één of twee punten op de kaart om tracks te vinden die erdoorheen lopen en bekijk analyses.",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "Lege mapnaam.",
   "rename_folder_already_exists": "Map bestaat al.",
   "rename_item_not_found": "Map of track niet gevonden.",
+  "garmin_sync_title": "Synchroniseer uw activiteiten",
+  "garmin_sync_description": "Verbind uw account om Garmin Connect™-activiteiten te synchroniseren met OsmAnd.",
+  "garmin_help": "Help",
+  "garmin_help_new_activities": "Nieuwe activiteiten zijn automatisch beschikbaar in de map Tracks → Garmin.",
+  "garmin_help_supported_activities": "<strong>Ondersteunde activiteiten:</strong> Momenteel synchroniseert OsmAnd alleen wandelen, fietsen en hardlopen-activiteiten van uw Garmin Connect™-account.",
+  "garmin_help_historic_data": "<strong>Historische gegevens:</strong> U kunt activiteiten van de afgelopen 30 dagen synchroniseren door deze optie in te schakelen op de Garmin Connect™-autorisatiepagina. Let op dat activiteiten ouder dan 30 dagen niet automatisch kunnen worden geïmporteerd.",
+  "garmin_activities": "Activiteiten",
+  "garmin_last_sync": "Laatste synchronisatie",
+  "garmin_disconnect_confirm_title": "Garmin Connect™ ontkoppelen?",
+  "garmin_disconnect_confirm_desc": "OsmAnd zal uw activiteiten niet langer synchroniseren. Uw eerdere tracks blijven in de Garmin-map staan.",
+  "garmin_time_min_ago": "{{n}} min geleden",
+  "garmin_time_h_ago": "{{n}} u geleden",
+  "garmin_time_days_ago": "{{n}} dagen geleden",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }

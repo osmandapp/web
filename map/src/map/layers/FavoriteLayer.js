@@ -9,13 +9,27 @@ import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
-import { restoreOriginalIcon } from '../util/MarkerSelectionService';
+import {
+    restoreOriginalIcon,
+    hideMarkersNearPin,
+    toShape,
+    SELECTED_PIN_SIZE,
+    SELECTED_ICON_SIZE,
+    applySelectedPin,
+    resetSelectedPin,
+} from '../util/MarkerSelectionService';
 import { panToIfNeeded } from '../util/MapManager';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
+import MarkerOptions, {
+    createPoiIcon,
+    DEFAULT_ICON_SIZE,
+    DEFAULT_WPT_COLOR,
+    ICONS_PREFIX,
+} from '../markers/MarkerOptions';
+import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
-import Utils from '../../util/Utils';
+import { hexToRgba } from '../../util/ColorUtil';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
@@ -57,7 +71,7 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
     }
 
     if (isSecondaryMarker) {
-        const color = layer.options.color ? Utils.hexToRgba(layer.options.color) : DEFAULT_WPT_COLOR;
+        const color = layer.options.color ? hexToRgba(layer.options.color) : DEFAULT_WPT_COLOR;
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],
@@ -89,6 +103,80 @@ const FavoriteLayer = () => {
     );
 
     useSelectMarkerOnMap({ ctx, getLayers: getFavoriteLayers, type: FAVORITE_FILE_TYPE, map, zoom, move });
+
+    // Creates a preview pin when user clicks the map to add a new favorite or track waypoint.
+    useEffect(() => {
+        const loc = ctx.addFavorite?.location;
+        if (!loc || ctx.addFavorite?.editWpt || !map) return;
+
+        applySelectedPin({
+            ctx,
+            map,
+            layer: null,
+            latlng: L.latLng(loc.lat, loc.lng),
+            markerData: {
+                color: DEFAULT_WPT_COLOR,
+                background: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                iconHtml: createPoiIcon({
+                    color: DEFAULT_WPT_COLOR,
+                    background: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+                    icon: ICONS_PREFIX + MarkerOptions.DEFAULT_WPT_ICON,
+                }).options.html,
+                invertIcon: false,
+            },
+            isSelection: true,
+        });
+
+        return () => resetSelectedPin({ ctx, map, force: true });
+    }, [map, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+
+    // Updates the selected pin icon in real-time when user changes appearance (color, icon, shape).
+    // Works for both add mode (preview pin) and edit mode (selected existing pin).
+    useEffect(() => {
+        const preview = ctx.addFavorite?.previewAppearance;
+        if (!preview) {
+            // Edit dialog closed — restore the selected-marker id if a wpt is still selected.
+            const pin = ctx.selectedCreatedLayerRef?.current;
+            if (pin && map.hasLayer(pin)) {
+                const el = pin.getElement?.();
+                const name = ctx.selectedWpt?.name;
+                if (el && name) {
+                    el.id = `se-selected-marker-${name}`;
+                }
+            }
+            return;
+        }
+
+        const pin = ctx.selectedCreatedLayerRef?.current;
+        if (!pin || !map.hasLayer(pin)) return;
+
+        const iconHtml = createPoiIcon({
+            color: preview.color,
+            background: preview.background,
+            icon: ICONS_PREFIX + preview.icon,
+        }).options.html;
+
+        const shape = toShape(preview.background);
+        const color = preview.color?.startsWith('#') ? hexToRgba(preview.color) : (preview.color ?? DEFAULT_WPT_COLOR);
+
+        pin.setIcon(
+            createLayeredPinIcon({
+                shape,
+                color,
+                iconHtml,
+                size: SELECTED_PIN_SIZE,
+                iconSize: SELECTED_ICON_SIZE,
+            })
+        );
+
+        const el = pin.getElement?.();
+        if (el) {
+            const bg = String(preview.background ?? 'circle');
+            const icon = String(preview.icon ?? '');
+            const color = String(preview.color ?? '').replace(/^#/, '');
+            el.id = `se-add-fav-map-preview--${bg}--${icon}--${color}`;
+        }
+    }, [ctx.addFavorite?.previewAppearance]);
 
     const openGroupId = useMemo(() => {
         const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
@@ -285,6 +373,10 @@ const FavoriteLayer = () => {
                 }
                 updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
                 file.markersOnMap = res;
+                // Re-hide markers near the selected pin after new markers are placed on the map
+                if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+                    hideMarkersNearPin(map, ctx);
+                }
             }
         } else {
             if (file.markersOnMap) {
@@ -391,6 +483,24 @@ const FavoriteLayer = () => {
             (m) => m.options?.name === ctx.selectedGpxFile.markerCurrent?.name
         );
         if (!layer) return;
+
+        // Update the selected pin icon in-place with the new saved appearance.
+        const existingPin = ctx.selectedCreatedLayerRef?.current;
+        if (existingPin && map.hasLayer(existingPin)) {
+            const opts = layer.options;
+            const iconHtml = opts.icon?.options?.html ?? '';
+            const shape = toShape(opts.background);
+            const color = opts.color?.startsWith('#') ? hexToRgba(opts.color) : (opts.color ?? DEFAULT_WPT_COLOR);
+            existingPin.setIcon(
+                createLayeredPinIcon({
+                    shape,
+                    color,
+                    iconHtml,
+                    size: SELECTED_PIN_SIZE,
+                    iconSize: SELECTED_ICON_SIZE,
+                })
+            );
+        }
 
         const opts = layer.options;
         const iconOpts = opts.icon?.options;

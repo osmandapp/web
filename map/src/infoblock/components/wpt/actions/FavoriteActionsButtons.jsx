@@ -56,7 +56,7 @@ export default function FavoriteActionsButtons({ wpt }) {
                 {!isShare && (
                     <BlueBtn
                         action={() => {
-                            ctx.setAddFavorite((prev) => ({ ...prev, editWpt: wpt }));
+                            ctx.setAddFavorite({ editWpt: wpt, openKey: Date.now() });
                         }}
                         id={'se-edit-fav-item'}
                         icon={<EditIcon className={styles.wptActionButtonIcon} />}

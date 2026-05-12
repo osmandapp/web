@@ -1,7 +1,7 @@
 import { Box, IconButton, LinearProgress, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
+import AppContext, { isTrack } from '../../../context/AppContext';
 import { Add, Delete } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoriteName from './structure/FavoriteName';
@@ -9,12 +9,14 @@ import FavoriteAddress from './structure/FavoriteAddress';
 import FavoriteDescription from './structure/FavoriteDescription';
 import DescriptionPanel from './structure/DescriptionPanel';
 import FavoriteGroup from './structure/FavoriteGroup';
-import FavoriteIcon from './structure/FavoriteIcon';
-import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
+import IconSelectionPanel from './structure/IconSelectionPanel';
+import ColorSelectionPanel from './structure/ColorSelectionPanel';
+import WptIconPreview, { getShapeSvg } from './structure/WptIconPreview';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
+    openFavoriteObj,
     updateFavoriteGroups,
 } from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
@@ -24,16 +26,20 @@ import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsP
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { apiGet } from '../../../util/HttpApi';
-import { getUniqFileId } from '../../../manager/GlobalManager';
+import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import PrimaryBtn from '../../../frame/components/btns/PrimaryBtn';
 import DefaultItem from '../../../frame/components/items/DefaultItem';
+import SimpleItemWithRightIcon from '../../../frame/components/items/SimpleItemWithRightIcon';
+import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
+import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import ColorBlock from '../../../frame/components/other/ColorBlock';
 
 const PANEL_CONTENT_WIDTH = 320;
+const APPEARANCE_PREVIEW_SIZE = 36;
 
 export default function WptEditPanel({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -57,7 +63,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteAddress, setFavoriteAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [favoriteDescription, setFavoriteDescription] = useState(editWpt?.desc ?? '');
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
-    const [showDescriptionPanel, setShowDescriptionPanel] = useState(false);
+    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color'
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteIcon, setFavoriteIcon] = useState(
         editWpt?.icon ?? poi?.options?.[FINAL_POI_ICON_NAME] ?? MarkerOptions.DEFAULT_WPT_ICON
@@ -67,7 +73,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteShape, setFavoriteShape] = useState(
         editWpt?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE
     );
-    const [currentIconCategories, setCurrentIconCategories] = useState(null);
     const [errorName, setErrorName] = useState(false);
     const [process, setProcess] = useState(false);
     const [latLon, setLatLon] = useState(null);
@@ -75,12 +80,23 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     useEffect(() => {
         getIconCategories().then();
-        if (!isEditMode && !isTrackWpt) {
-            const defaultGroup = ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME);
-            if (defaultGroup) {
-                setFavoriteGroup(defaultGroup);
+        if (!isTrackWpt) {
+            const categoryName = isEditMode
+                ? (editWpt?.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
+                : ctx.wptRecents.groups[0];
+            if (categoryName) {
+                const group = ctx.favorites.groups?.find((g) => g.name === categoryName);
+                if (group) setFavoriteGroup(group);
             }
         }
+        // Remove the preview marker when this panel instance unmounts.
+        const myOpenKey = ctx.addFavorite?.openKey;
+        return () => {
+            ctx.setAddFavorite((prev) => {
+                if (!prev || prev.openKey !== myOpenKey) return prev;
+                return { ...prev, location: null, previewAppearance: null };
+            });
+        };
     }, []);
 
     useEffect(() => {
@@ -97,19 +113,17 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         }
     }, [ctx.addFavorite]);
 
+    useEffect(() => {
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            previewAppearance: { color: favoriteColor, icon: favoriteIcon, background: favoriteShape },
+        }));
+    }, [favoriteColor, favoriteIcon, favoriteShape]);
+
     async function getIconCategories() {
         const resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER, { apiCache: true });
         const res = await resp.json();
         if (res) {
-            if (isEditMode) {
-                Object.entries(res.categories).forEach(([catName, catData]) => {
-                    if (catData.icons.find((icon) => icon === editWpt.icon)) {
-                        setCurrentIconCategories(catName);
-                    }
-                });
-            } else {
-                setCurrentIconCategories('special');
-            }
             setFavoriteIconCategories(res);
         }
     }
@@ -128,15 +142,19 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             const saved = await saveNewFavorite();
             if (saved) {
                 await updateGroupMarkers(saved.res, saved.selectedGroup);
-                if (!ctx.searchResult && !ctx.selectedWpt?.poi && !ctx.selectedWpt?.wikidata) {
-                    ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-                    ctx.setUpdateInfoBlock(true);
-                }
                 setProcess(false);
-                closePanel();
+                if (isPoi) {
+                    closePanel();
+                } else {
+                    openSavedFavoriteDetails(saved);
+                }
             }
         }
-        ctx.setUsedIcons((prev) => new Set([favoriteIcon, ...prev]));
+        const groupName = favoriteGroup?.name ?? FavoritesManager.DEFAULT_GROUP_NAME;
+        ctx.setWptRecents((prev) => ({
+            icons: new Set([favoriteIcon, ...prev.icons]),
+            groups: [groupName, ...prev.groups.filter((g) => g !== groupName)],
+        }));
     }
 
     function excludePoiTags(tag) {
@@ -287,6 +305,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         const oldGroupName = useSelected ? ctx.selectedGpxFile.file.name : editWpt.group.file.name;
 
         const currentWpt = getCurrentWpt(selectedGroupName);
+        if (!currentWpt) {
+            setProcess(false);
+            return;
+        }
         const arrWpt = useSelected ? ctx.selectedGpxFile.trackData?.wpts : ctx.favorites.mapObjs[oldGroupId].wpts;
 
         const newGroup = ctx.favorites.groups.find((g) => g.id === selectedGroupId);
@@ -338,7 +360,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
         const newWpt = ctx.selectedGpxFile.wpts[ind];
         newWpt.mapObj = editWpt.mapObj;
-        ctx.setSelectedWpt({ trackWpt: true, trackData: ctx.selectedGpxFile.trackData, ...newWpt });
+        ctx.setSelectedWpt({ trackWpt: true, trackData: ctx.selectedGpxFile.trackData, ...newWpt, id: editWpt.id });
         ctx.setPointContextMenu({});
 
         setProcess(false);
@@ -380,8 +402,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             ...prev,
             add: false,
             location: null,
+            poi: null,
             editTrack: false,
             editWpt: null,
+            previewAppearance: null,
         }));
         // In case of track waypoint, we need to update info block to show new/edited waypoint details
         if (isTrackWpt) {
@@ -402,15 +426,58 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             result,
             id: key,
         });
-        ctx.selectedGpxFile.mapObj = true;
-        FavoriteHelper.updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted: false });
+        if (!isTrack(ctx) && isEditMode) {
+            ctx.selectedGpxFile.mapObj = true;
+            FavoriteHelper.updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted: false });
+        }
         ctx.setUpdateMarkers({ ...ctx.favorites });
         ctx.setFavorites({ ...ctx.favorites });
         setFavoriteGroup(ctx.favorites.mapObjs[key]);
     }
 
+    function openSavedFavoriteDetails({ selectedGroup }) {
+        const key = selectedGroup.id ?? getUniqFileId(selectedGroup.file);
+
+        // The preview pin is already on the map — use it as the layer.
+        const previewLayer = ctx.selectedCreatedLayerRef?.current;
+
+        const newGpxFile = {
+            trackData: { ...ctx.favorites.mapObjs[key] },
+            file: selectedGroup.file,
+            markerCurrent: {
+                name: favoriteName,
+                iconName: favoriteIcon,
+                color: favoriteColor,
+                background: favoriteShape,
+                groupId: key,
+                layer: previewLayer,
+            },
+            name: favoriteName,
+            nameGroup: selectedGroup.name,
+            id: key,
+            mapObj: true,
+        };
+
+        openFavoriteObj(ctx, newGpxFile);
+
+        // Clear state
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            add: false,
+            location: null,
+            poi: null,
+            editTrack: false,
+            editWpt: null,
+            previewAppearance: null,
+        }));
+
+        ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+    }
+
     function groupHasSameWpt() {
-        if (isEditMode || isTrackWpt) return false;
+        if (isEditMode || isTrackWpt) {
+            return false;
+        }
         const selectedGroup =
             favoriteGroup === null
                 ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)
@@ -426,6 +493,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 point.lat === parseFloat(parseFloat(latLon?.lat).toFixed(5)) &&
                 point.lon === parseFloat(parseFloat(latLon?.lon).toFixed(5))
         );
+    }
+
+    function togglePanel(panel) {
+        setActivePanel((prev) => (prev === panel ? null : panel));
     }
 
     const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
@@ -444,11 +515,29 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     return (
         <>
-            {showDescriptionPanel && (
+            {activePanel === 'description' && (
                 <DescriptionPanel
                     description={favoriteDescription}
                     setDescription={setFavoriteDescription}
-                    onClose={() => setShowDescriptionPanel(false)}
+                    onClose={() => setActivePanel(null)}
+                />
+            )}
+            {activePanel === 'icon' && (
+                <IconSelectionPanel
+                    selectedIcon={favoriteIcon}
+                    setSelectedIcon={setFavoriteIcon}
+                    favoriteIconCategories={favoriteIconCategories}
+                    selectedGpxFile={ctx.selectedGpxFile}
+                    add={!isEditMode}
+                    onClose={() => setActivePanel(null)}
+                />
+            )}
+            {activePanel === 'color' && (
+                <ColorSelectionPanel
+                    selectedColor={favoriteColor}
+                    setSelectedColor={setFavoriteColor}
+                    favoriteShape={favoriteShape}
+                    onClose={() => setActivePanel(null)}
                 />
             )}
             <Box className={styles.panel}>
@@ -503,45 +592,48 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     <ThickDivider />
                     <FavoriteDescription
                         favoriteDescription={favoriteDescription}
-                        onClick={() => setShowDescriptionPanel(true)}
+                        onClick={() => togglePanel('description')}
                     />
                     <ThickDivider />
-                    <Box className={styles.fields}>
-                        <FavoriteGroup
-                            favoriteGroup={favoriteGroup}
-                            setFavoriteGroup={setFavoriteGroup}
-                            groups={groups}
-                            defaultGroup={defaultGroup}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                        />
-                        <FavoriteIcon
-                            favoriteIcon={favoriteIcon}
-                            setFavoriteIcon={setFavoriteIcon}
-                            currentIconCategories={currentIconCategories}
-                            favoriteIconCategories={favoriteIconCategories}
-                            selectedGpxFile={ctx.selectedGpxFile}
-                            add={!isEditMode}
-                            defaultIcon={isEditMode ? editWpt.icon : MarkerOptions.DEFAULT_WPT_ICON}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                        />
-                        <FavoriteColor
-                            favoriteColor={favoriteColor}
-                            setFavoriteColor={setFavoriteColor}
-                            defaultColor={isEditMode ? editWpt.color : MarkerOptions.DEFAULT_WPT_COLOR}
-                            widthDialog={PANEL_CONTENT_WIDTH}
-                        />
-                        <FavoriteShape
-                            color={favoriteColor}
-                            favoriteShape={favoriteShape}
-                            setFavoriteShape={setFavoriteShape}
-                            defaultBackground={
-                                isEditMode ? editWpt.background : MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE
-                            }
-                        />
-                    </Box>
+                    <FavoriteGroup
+                        favoriteGroup={favoriteGroup}
+                        setFavoriteGroup={setFavoriteGroup}
+                        defaultGroup={defaultGroup}
+                        isTrackWpt={isTrackWpt}
+                    />
+                    <SubTitleMenu text={t('shared_string_appearance')} />
+                    <SimpleItemWithRightIcon
+                        id="se-fav-icon-row"
+                        name={t('web:wpt_appearance_icon_label')}
+                        onClick={() => togglePanel('icon')}
+                        rightIcon={
+                            <WptIconPreview
+                                icon={favoriteIcon}
+                                color={favoriteColor}
+                                shape={favoriteShape}
+                                size={APPEARANCE_PREVIEW_SIZE}
+                            />
+                        }
+                    />
+                    <DividerWithMargin margin={'16px'} />
+                    <SimpleItemWithRightIcon
+                        id="se-fav-color-row"
+                        name={t('web:wpt_appearance_color_label')}
+                        onClick={() => togglePanel('color')}
+                        rightIcon={
+                            <Box
+                                sx={{ width: APPEARANCE_PREVIEW_SIZE, height: APPEARANCE_PREVIEW_SIZE }}
+                                dangerouslySetInnerHTML={{
+                                    __html: getShapeSvg(favoriteShape, favoriteColor, APPEARANCE_PREVIEW_SIZE),
+                                }}
+                            />
+                        }
+                    />
+                    <DividerWithMargin margin={'16px'} />
+                    <FavoriteShape favoriteShape={favoriteShape} setFavoriteShape={setFavoriteShape} />
                     {isEditMode && !isEditTrackWpt && (
                         <>
-                            <ThickDivider />
+                            <ThickDivider mt={0} mb={0} />
                             <DefaultItem
                                 id={'se-delete-fav-item'}
                                 icon={<Delete sx={{ color: 'error.main' }} />}

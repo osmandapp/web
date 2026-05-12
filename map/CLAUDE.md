@@ -120,6 +120,10 @@ When asked to make a focused change — fix a bug, add a feature, rename somethi
 
 Do not delete inline comments or block comments that already exist in code you are editing, even if they seem obvious or redundant. Comments represent the author's intent and are part of the code's documentation.
 
+## No 1-liner if-statements with multiple conditions
+
+Avoid collapsing an `if`-statement to a single line when the condition contains more than one logical operator (`&&` or `||`). Always use a block body in that case. Single-condition 1-liners are fine: `if (!group) return;`.
+
 ## refs — last resort
 
 Use `useRef` / `ref` only when the problem **cannot be solved any other way**. Always look for a solution via state, context, props, or derived values first. A `ref` is acceptable only when all other options are unsuitable (e.g. direct DOM node access, storing a value without triggering a re-render).

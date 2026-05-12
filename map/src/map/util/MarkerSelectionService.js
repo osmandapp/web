@@ -1,7 +1,7 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
 import L from 'leaflet';
-import Utils from '../../util/Utils';
+import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
 
 export const SELECTED_PIN_SIZE = 70;
@@ -14,11 +14,11 @@ const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;
 const SELECTED_MARKER_HIDE_RADIUS_COEFF = 300 / 16;
 const SELECTED_MARKER_HIDE_MIN_RADIUS_M = 50;
 
-const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
+export const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
 
 const toColor = (c) => {
     if (!c) return DEFAULT_WPT_COLOR;
-    if (c.startsWith('#')) return Utils.hexToRgba(c);
+    if (c.startsWith('#')) return hexToRgba(c);
     return c;
 };
 
@@ -189,7 +189,8 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         selectedLayer.options.idObj = layer?.options?.idObj ?? null;
         ctx.selectedCreatedLayerRef.current = selectedLayer;
-        selectedLayer.getElement().setAttribute('id', `se-selected-marker-${layer?.options?.name}`);
+        const markerColor = String(markerData.color ?? '').replace(/^#/, '');
+        selectedLayer.getElement().setAttribute('id', `se-selected-marker-${layer?.options?.name}-${markerColor}`);
         hideMarkersNearPin(map, ctx);
     } else if (layer && map.hasLayer(layer)) {
         applySelectedWithUpdateMarker(layer, markerData);

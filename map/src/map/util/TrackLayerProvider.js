@@ -8,10 +8,11 @@ import TracksManager, {
     isProtectedSegment,
     isWptGroupShown,
 } from '../../manager/track/TracksManager';
-import { getFavoriteId } from '../../manager/FavoritesManager';
+import { getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
+import { hexToRgba, numberToRgba } from '../../util/ColorUtil';
 import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
 
 export const TEMP_LAYER_FLAG = 'temp';
@@ -251,9 +252,9 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
             : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
     if (trackAppearance?.color) {
         if (typeof trackAppearance.color === 'string') {
-            color = Utils.hexToRgba(trackAppearance.color);
+            color = hexToRgba(trackAppearance.color);
         } else if (typeof trackAppearance.color === 'number') {
-            color = Utils.numberToRgba(trackAppearance.color);
+            color = numberToRgba(trackAppearance.color);
         }
     }
     const width = trackAppearance?.width ?? 'medium';
@@ -483,7 +484,8 @@ function parseWpt({
     const resolvedPointsGroups = pointsGroups ?? getResolvedPointsGroups(data);
     points?.forEach((point) => {
         let opt = {};
-        const icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
+        const appearance = resolveWptAppearance(point, resolvedPointsGroups);
+        const icon = createPoiIcon({ point, ...appearance });
         const pInfo = point.ext;
         const lat = point.lat != null ? point.lat : pInfo?.lat;
         const lon = point.lon != null ? point.lon : pInfo?.lon;
@@ -496,7 +498,7 @@ function parseWpt({
         let coords = new L.LatLng(lat, lon);
         if (icon) {
             opt = { clickable: true, icon: icon };
-            opt.iconName = point.icon;
+            opt.iconName = appearance.icon;
             if (pInfo?.time) {
                 opt.time = pInfo.time;
             }
@@ -517,8 +519,8 @@ function parseWpt({
         }
         opt.draggable = false;
         opt.wpt = true;
-        opt.color = point.color;
-        opt.background = point.background;
+        opt.color = appearance.color;
+        opt.background = appearance.background;
         let markerLayer = new L.Marker(coords, opt);
         const marker = simplify ? getMarkerFromCluster(point, clusters, coords, opt, markerLayer) : markerLayer;
         if (!marker) {
@@ -566,7 +568,7 @@ function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
         return secLatLng.equals(coords);
     });
     if (isSecondaryMarker) {
-        const color = point.color ? Utils.hexToRgba(point.color) : DEFAULT_WPT_COLOR;
+        const color = point.color ? hexToRgba(point.color) : DEFAULT_WPT_COLOR;
         if (!markerLayer.options.originalIcon && markerLayer.options.icon) {
             markerLayer.options.originalIcon = markerLayer.options.icon;
         }

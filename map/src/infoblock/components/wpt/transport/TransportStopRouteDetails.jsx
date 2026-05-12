@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Box, Collapse, Divider, Typography } from '@mui/material';
+import { Box, Divider, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Visibility } from '@mui/icons-material';
 import { ReactComponent as StopIcon } from '../../../../assets/icons/ic_action_transport_stop_list.svg';
 import TransportStopActionIcon from './TransportStopActionIcon';
@@ -192,6 +192,10 @@ export default function TransportStopRouteDetails() {
     const [scrollContentRef, hasVerticalScroll, recheckScroll] = useHasVerticalScroll([route]);
     const [, height] = useWindowSize();
 
+    useEffect(() => {
+        recheckScroll();
+    }, [stopsBeforeOpen, recheckScroll]);
+
     const stops = route?.stops ?? [];
     const hasTravelTime = stops.some((s) => s?.travelTime != null);
     const currentStopIndex = route ? stops.findIndex((s) => s.stopId === route.currentStopId) : -1;
@@ -239,12 +243,7 @@ export default function TransportStopRouteDetails() {
                                             showValue={false}
                                         />
                                     </CollapseRowWithDots>
-                                    <Collapse
-                                        in={stopsBeforeOpen}
-                                        timeout="auto"
-                                        onEntered={recheckScroll}
-                                        onExited={recheckScroll}
-                                    >
+                                    {stopsBeforeOpen && (
                                         <LineAndIconWrapper routeColor={routeColor} lineNoRadiusBottom>
                                             {stops.slice(0, currentStopIndex).map((stop, i) => (
                                                 <React.Fragment key={`before-${stop.stopId ?? i}`}>
@@ -257,7 +256,7 @@ export default function TransportStopRouteDetails() {
                                                 </React.Fragment>
                                             ))}
                                         </LineAndIconWrapper>
-                                    </Collapse>
+                                    )}
                                 </>
                             )}
                             {/* Current stop + stops after current */}

@@ -128,37 +128,6 @@ function getPointsDist(list) {
     return list;
 }
 
-function hexToRgba(hex) {
-    hex = hex.replace(/^#/, '');
-    let alphaFromHex = 1;
-
-    if (hex.length === 8) {
-        alphaFromHex = Number.parseInt(hex.slice(0, 2), 16) / 255;
-        hex = hex.slice(2, 8);
-    }
-    const number = Number.parseInt(hex, 16);
-    const red = number >> 16;
-    const green = (number >> 8) & 255;
-    const blue = number & 255;
-    const alpha = alphaFromHex;
-    const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
-    return `rgb(${red} ${green} ${blue}${alphaString})`;
-}
-
-function numberToRgba(argb) {
-    // >>> 0 turns it into an unsigned 32-bit (e.g. -15679248)
-    const u = argb >>> 0;
-    const a = (u >>> 24) & 0xff;
-    const r = (u >>> 16) & 0xff;
-    const g = (u >>> 8) & 0xff;
-    const b = u & 0xff;
-
-    const alpha = a / 255;
-    const alphaString = alpha === 1 ? '' : ` / ${(alpha * 100).toFixed(2)}%`;
-
-    return `rgb(${r} ${g} ${b}${alphaString})`;
-}
-
 export function formatMeters(m) {
     if (m < 1000) {
         const meters = Number(m).toFixed(0);
@@ -369,8 +338,6 @@ const Utils = {
     getDistance,
     getBearing,
     getPointsDist,
-    hexToRgba,
-    numberToRgba,
     truncateText,
 };
 

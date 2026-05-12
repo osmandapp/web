@@ -11,6 +11,7 @@ const getDisplayValue = (value, placeholder) => {
 };
 
 export default function SelectItemWithoutOptions({
+    id,
     title,
     value,
     onClick,
@@ -27,7 +28,7 @@ export default function SelectItemWithoutOptions({
     );
 
     return (
-        <MenuItem className={styles.item} onClick={onClick} disabled={disabled}>
+        <MenuItem id={id} className={styles.item} onClick={onClick} disabled={disabled}>
             <ListItemText disableTypography>
                 <Box className={styles.selectItemContent}>
                     <Box className={styles.selectTitleRow}>

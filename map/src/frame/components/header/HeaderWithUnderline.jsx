@@ -16,7 +16,12 @@ export default function HeaderWithUnderline({
 }) {
     const { id: buttonId, ...restAppBarProps } = appBarProps;
     return (
-        <AppBar position="static" className={headerStyles.appbar} {...restAppBarProps}>
+        <AppBar
+            {...restAppBarProps}
+            position="static"
+            className={headerStyles.appbar}
+            sx={{ position: 'relative', zIndex: 1 }}
+        >
             <Toolbar className={headerStyles.toolbar} {...toolbarProps}>
                 <IconButton
                     id={buttonId}

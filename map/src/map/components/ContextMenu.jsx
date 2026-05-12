@@ -132,18 +132,11 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     }
 
     function addFavorite(latlng) {
-        ctx.setAddFavorite((prevState) => ({
-            ...prevState,
-            location: latlng,
-        }));
+        ctx.setAddFavorite({ location: latlng, openKey: Date.now() });
     }
 
     function addWpt(latlng) {
-        ctx.setAddFavorite((prevState) => ({
-            ...prevState,
-            location: latlng,
-            editTrack: true,
-        }));
+        ctx.setAddFavorite({ location: latlng, editTrack: true, openKey: Date.now() });
     }
 
     function formattingRegions(regions) {

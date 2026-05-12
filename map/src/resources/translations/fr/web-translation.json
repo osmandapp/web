@@ -218,6 +218,7 @@
   "header_docs": "Docs",
   "header_blog": "Blog",
   "header_pricing": "Tarifs",
+  "header_spring_sale": "Vente de printemps",
   "header_map": "Carte",
   "header_join_us": "Rejoignez-nous",
   "track_analyzer_desc": "Sélectionnez un ou deux points sur la carte pour trouver les traces qui les traversent et afficher les analyses.",
@@ -305,7 +306,20 @@
   "rename_empty_folder_name": "Nom de dossier vide.",
   "rename_folder_already_exists": "Le dossier existe déjà.",
   "rename_item_not_found": "Le dossier ou la trace n'a pas été trouvé.",
+  "garmin_sync_title": "Synchroniser vos activités",
+  "garmin_sync_description": "Connectez votre compte pour synchroniser les activités Garmin Connect™ avec OsmAnd.",
+  "garmin_help": "Aide",
+  "garmin_help_new_activities": "Les nouvelles activités seront disponibles automatiquement dans le dossier Traces → Garmin.",
+  "garmin_help_supported_activities": "<strong>Activités prises en charge :</strong> Actuellement, OsmAnd synchronise uniquement les activités de randonnée, de cyclisme et de marche de votre compte Garmin Connect™.",
+  "garmin_help_historic_data": "<strong>Données historiques :</strong> Vous pouvez synchroniser les activités des 30 derniers jours en activant cette option sur la page d'autorisation Garmin Connect™. Veuillez noter que les activités de plus de 30 jours ne peuvent pas être importées automatiquement.",
+  "garmin_activities": "Activités",
+  "garmin_last_sync": "Dernière synchronisation",
+  "garmin_disconnect_confirm_title": "Déconnecter Garmin Connect™ ?",
+  "garmin_disconnect_confirm_desc": "OsmAnd ne synchronisera plus vos activités. Vos traces précédentes resteront dans le dossier Garmin.",
+  "garmin_time_min_ago": "il y a {{n}} min",
+  "garmin_time_h_ago": "il y a {{n}} h",
+  "garmin_time_days_ago": "il y a {{n}} jours",
   "sourceHash": {
-    "message": "4022836a058054aa916922bf58b9f5be08ca4791b24309bc0aea8071069b7374"
+    "message": "c6bcf833428b334477d6fb1d39aed9c4b8aa9e2e6997b0d01f7801a592bf4b7d"
   }
 }

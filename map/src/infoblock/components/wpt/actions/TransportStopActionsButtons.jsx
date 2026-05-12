@@ -31,12 +31,10 @@ export default function TransportStopActionsButtons({ wpt }) {
             const loc = lat && lon ? new LatLng(lat, lon) : null;
             if (loc) {
                 ctx.setAddFavorite({
-                    ...ctx.addFavorite,
-                    poi: {
-                        name: wpt.name || '',
-                    },
+                    poi: { name: wpt.name || '' },
                     address: wpt.address,
                     location: loc,
+                    openKey: Date.now(),
                 });
             }
         } else {

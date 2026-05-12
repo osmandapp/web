@@ -269,7 +269,6 @@ export const planFeatures = {
         'contour_lines',
         'terrain_visualization',
         'android_auto_and_apple_carplay',
-        'vehicle_metrics_obd_ii',
         'external_sensors',
         'wikimedia_photos',
         'offline_wikipedia',

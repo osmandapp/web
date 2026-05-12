@@ -15,7 +15,7 @@ import React, { useState, useContext, useEffect, useCallback } from 'react';
 import TrackTabList, { TRACK_TAB_IDS } from './tabs/TrackTabList';
 import TrackContextMenu from './track/TrackContextMenu';
 import isEmpty from 'lodash-es/isEmpty';
-import { hasSegmentTurns } from '../../manager/track/TracksManager';
+import { hasSegmentTurns, findGroupByName } from '../../manager/track/TracksManager';
 import {
     FAVORITES_URL,
     FAVOURITES,
@@ -93,6 +93,14 @@ export default function InformationBlock({
         }
     }, [showWptEditPanel]);
 
+    // Close WptEditPanel when the user navigates to another object or switches context
+    useEffect(() => {
+        ctx.setAddFavorite((prev) => {
+            if (!prev?.location && !prev?.editWpt) return prev;
+            return { ...prev, add: false, location: null, editTrack: false, editWpt: null, previewAppearance: null };
+        });
+    }, [ctx.selectedWpt, ctx.currentObjectType]);
+
     useEffect(() => {
         if (closeShareMenu) {
             setCloseShareMenu(false);
@@ -129,9 +137,11 @@ export default function InformationBlock({
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
-            hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
-            if (!isEmpty(ctx.selectedGpxFile)) {
-                ctx.setSelectedGpxFile({});
+            if (!ctx.currentObjectType) {
+                hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+                if (!isEmpty(ctx.selectedGpxFile)) {
+                    ctx.setSelectedGpxFile({});
+                }
             }
         }
     }, [showInfoBlock]);
@@ -289,7 +299,7 @@ export default function InformationBlock({
         if (openWptTab) {
             const tObj = new TrackTabList().create(ctx, setShowInfoBlock);
             clearStateIfObjChange();
-            tObj.defaultTab = TRACK_TAB_IDS.WAYPOINTS;
+            tObj.defaultTab = TRACK_TAB_IDS.POINTS;
             setTabsObj(tObj);
             setOpenWptDetails(false);
             setOpenWptTab(false);
@@ -336,8 +346,7 @@ export default function InformationBlock({
                 ctx.createTrack.deletePrev = deletePrev;
             }
             ctx.setCreateTrack({ ...ctx.createTrack });
-            ctx.addFavorite.editTrack = false;
-            ctx.setAddFavorite({ ...ctx.addFavorite });
+            ctx.setAddFavorite((prev) => ({ ...prev, editTrack: false }));
         }
     }
 
@@ -393,6 +402,25 @@ export default function InformationBlock({
 
     function closeCloudTrack() {
         hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+
+        // If openGroups is empty (e.g. track was opened directly from Garmin last-sync menu),
+        // rebuild the full folder stack from the track name so the back button navigates
+        // correctly through each parent folder (openGroups acts as a stack — pop() goes up one level).
+        if (!ctx.openGroups || ctx.openGroups.length === 0) {
+            const fileName = ctx.selectedGpxFile?.name;
+            if (fileName) {
+                const folderParts = fileName.split('/').slice(0, -1);
+                if (folderParts.length > 0) {
+                    const groups = folderParts
+                        .map((_, i) => findGroupByName(ctx.tracksGroups, folderParts.slice(0, i + 1).join('/')))
+                        .filter(Boolean);
+                    if (groups.length > 0) {
+                        ctx.setOpenGroups(groups);
+                    }
+                }
+            }
+        }
+
         if (!isEmpty(ctx.selectedGpxFile)) {
             ctx.setSelectedGpxFile({});
         }
@@ -423,7 +451,7 @@ export default function InformationBlock({
             {showInfoBlock &&
                 !trackUrlOpenLoading &&
                 (showWptEditPanel ? (
-                    <WptEditPanel setShowInfoBlock={setShowInfoBlock} />
+                    <WptEditPanel key={ctx.addFavorite?.openKey} setShowInfoBlock={setShowInfoBlock} />
                 ) : openWptDetails ? (
                     ctx.photoGallery ? (
                         <WptPhotoList photos={ctx.photoGallery} />
@@ -441,6 +469,7 @@ export default function InformationBlock({
                 ) : (
                     <>
                         {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
+                        {ctx.updateFiles && <LinearProgress id="se-info-files-loading" size={20} />}
                         {showTrackContextMenu && (
                             <TrackContextMenu
                                 track={ctx.selectedGpxFile}
