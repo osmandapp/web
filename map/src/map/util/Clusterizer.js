@@ -5,6 +5,7 @@ import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
 import { getObjIdSearch, searchTypeMap } from '../layers/SearchLayer';
 import {
     CATEGORY_TYPE,
+    COLOR_NAME_EXTENSION,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
@@ -342,27 +343,35 @@ export function createSecondaryMarker(obj) {
     }
     const latlng = L.latLng(obj.geometry.coordinates[1], obj.geometry.coordinates[0]);
 
-    let finalIconName = obj.properties[FINAL_POI_ICON_NAME];
+    const props = obj.properties;
+    let finalIconName = props[FINAL_POI_ICON_NAME];
     if (!finalIconName) {
-        if (searchTypeMap.POI === obj.properties[CATEGORY_TYPE]) {
+        if (searchTypeMap.POI === props[CATEGORY_TYPE]) {
             finalIconName = PoiManager.getIconNameForPoiType({
-                iconKeyName: obj.properties[ICON_KEY_NAME],
-                typeOsmTag: obj.properties[TYPE_OSM_TAG],
-                typeOsmValue: obj.properties[TYPE_OSM_VALUE],
-                iconName: obj.properties[POI_ICON_NAME],
+                iconKeyName: props[ICON_KEY_NAME],
+                typeOsmTag: props[TYPE_OSM_TAG],
+                typeOsmValue: props[TYPE_OSM_VALUE],
+                iconName: props[POI_ICON_NAME],
             });
+        } else if (searchTypeMap.FAVORITE === props[CATEGORY_TYPE]) {
+            finalIconName = props[ICON_KEY_NAME];
         } else {
-            finalIconName = getIconByType(obj.properties[CATEGORY_TYPE]);
+            finalIconName = getIconByType(props[CATEGORY_TYPE]);
         }
     }
 
-    return new SimpleDotMarker(latlng, obj, {
-        ...obj.properties,
-        id: obj.properties.id,
+    const markerOpts = {
+        ...props,
+        id: props.id,
         idObj: getObjIdSearch(obj),
         simple: true,
         [FINAL_POI_ICON_NAME]: finalIconName,
-    }).build();
+    };
+    if (searchTypeMap.FAVORITE === props[CATEGORY_TYPE]) {
+        markerOpts.fillColor = props[COLOR_NAME_EXTENSION] ?? SimpleDotMarker.defaultOptions.fillColor;
+    }
+
+    return new SimpleDotMarker(latlng, obj, markerOpts).build();
 }
 
 export function addMarkerTooltip({

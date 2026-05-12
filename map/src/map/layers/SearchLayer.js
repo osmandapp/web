@@ -92,8 +92,6 @@ function normalize(s) {
 }
 
 export function searchFavoriteFeatures({ favorites, query }) {
-    console.log('favorites', favorites);
-    console.log('query', query);
     if (!query || !favorites?.groups?.length || !favorites.mapObjs) {
         return [];
     }
@@ -110,13 +108,11 @@ export function searchFavoriteFeatures({ favorites, query }) {
         }
         const mapObj = favorites.mapObjs[group.id];
         const wpts = mapObj?.wpts;
-        console.log('wpts', wpts);
         if (!wpts?.length) {
             continue;
         }
 
         for (const wpt of wpts) {
-            console.log('wpt', wpt);
             if (!wpt?.name) {
                 continue;
             }
@@ -145,12 +141,13 @@ export function searchFavoriteFeatures({ favorites, query }) {
                     [ICON_KEY_NAME]: wpt.icon,
                     [COLOR_NAME_EXTENSION]: wpt.color,
                     [BACKGROUND_TYPE_EXTENSION]: wpt.background,
+                    [FINAL_POI_ICON_NAME]: wpt.icon,
                     ...(wpt.address ? { address: wpt.address } : {}),
                 },
             });
         }
     }
-console.log('features', features);
+
     return features;
 }
 
