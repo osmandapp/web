@@ -1,5 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
 import TracksManager, {
@@ -16,7 +17,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE } from '../../menu/share/shareConstants';
-import { addLayerToMap } from '../util/MapManager';
+import { addLayerToMap, applyZoomToFit } from '../util/MapManager';
 import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 
@@ -42,7 +43,7 @@ function clickHandler({ ctx, file, navigate, recentSaver }) {
     ctx.setUpdateInfoBlock(true);
 }
 
-export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, navigate } = {}) {
+export function addTrackToMap({ ctx, mtx, file, map, fit = false, recentSaver, navigate } = {}) {
     const ID = 'add-cloud-track-to-map';
     let layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
     if (!layer) {
@@ -51,7 +52,7 @@ export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, naviga
     layer.on('click', () => clickHandler({ ctx, file, layer, recentSaver, navigate }));
 
     if (fit || file.zoomToTrack) {
-        panToTrack({ map, layer, ctx });
+        panToTrack({ map, layer, mtx });
         if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
             // Simplify and add layer immediately for tracks with many waypoints
             layer = simplifyLayer({
@@ -151,25 +152,14 @@ function removeLayerFromMap(file, map) {
     return null;
 }
 
-function panToTrack({ map, layer, ctx }) {
-    const start = getTrackStart(layer);
-    if (!start) {
-        map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
-        return;
-    }
-    map.setView(start, map.getZoom());
-}
-
-function getTrackStart(layer) {
-    const polyline = layer.getLayers().find((l) => l.getLatLngs?.()?.length);
-    if (!polyline) return null;
-
-    const [first] = polyline.getLatLngs();
-    return first && (Array.isArray(first) ? first[0] : first);
+function panToTrack({ map, layer, mtx }) {
+    const bounds = layer?.getBounds();
+    applyZoomToFit({ map, mtx, bounds });
 }
 
 const CloudTrackLayer = () => {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ctxTrack = ctx.selectedGpxFile;
 
     const [allLayers, mutateAllLayers] = useMutator({});
@@ -264,7 +254,7 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         if (ctxTrack?.gpx && isCloudTrack(ctx)) {
             if (ctxTrack.zoom) {
-                panToTrack({ map, layer: ctxTrack.gpx, ctx });
+                panToTrack({ map, layer: ctxTrack.gpx, mtx });
                 ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
             } else if (ctxTrack.cloudRedrawWpts) {
                 // skip processing if layer is removed
@@ -288,7 +278,14 @@ const CloudTrackLayer = () => {
             for (const l in newGpxFiles) {
                 if (newGpxFiles[l].gpx && map.hasLayer(newGpxFiles[l].gpx) === false) {
                     restored++;
-                    newGpxFiles[l].gpx = addTrackToMap({ ctx, file: newGpxFiles[l], map, fit: false, recentSaver });
+                    newGpxFiles[l].gpx = addTrackToMap({
+                        ctx,
+                        mtx,
+                        file: newGpxFiles[l],
+                        map,
+                        fit: false,
+                        recentSaver,
+                    });
                     registerCleanupFileLayer(newGpxFiles[l]);
 
                     // update setSelectedGpxFile cloud layer
@@ -311,13 +308,13 @@ const CloudTrackLayer = () => {
         Object.values(newFiles).forEach((file) => {
             if (file.url && !file.gpx && (file.showOnMap || file.zoomToTrack)) {
                 processed++;
-                file.gpx = addTrackToMap({ ctx, file, map, recentSaver, navigate });
+                file.gpx = addTrackToMap({ ctx, mtx, file, map, recentSaver, navigate });
                 if (file.name === ctxTrack.name) {
                     ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }
                 registerCleanupFileLayer(file);
             } else if (file.url && file.zoomToTrack && file.gpx) {
-                panToTrack({ map, layer: file.gpx, ctx });
+                panToTrack({ map, layer: file.gpx, mtx });
                 file.zoomToTrack = false;
             } else if (!file.url && file.gpx) {
                 processed++;
@@ -362,7 +359,7 @@ const CloudTrackLayer = () => {
         ) {
             const bounds = getTracksArrBounds(Object.values(ctx.shareWithMeFiles.tracks));
             if (bounds.length > 0) {
-                map.fitBounds(bounds, fitBoundsOptions(ctx));
+                map.fitBounds(bounds, fitBoundsOptions(mtx));
             }
             ctx.setFitBoundsShareTracks(null);
         }

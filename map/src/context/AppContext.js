@@ -120,7 +120,6 @@ export const AppContextProvider = (props) => {
     const [processingSaveTrack, setProcessingSaveTrack] = useState(false);
 
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
-    const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
     const [openMenu, setOpenMenu] = useState(null);
     const [openContextMenu, setOpenContextMenu] = useState(false);
@@ -223,7 +222,6 @@ export const AppContextProvider = (props) => {
     // favorites
     const [favorites, setFavorites] = useState({});
     const [updateMarkers, setUpdateMarkers] = useState(null);
-    const [focusFavGroupId, setFocusFavGroupId] = useState(null);
     const [addFavorite, setAddFavorite] = useState({
         add: false,
         location: null,
@@ -636,8 +634,6 @@ export const AppContextProvider = (props) => {
                 infoBlockWidth,
                 setInfoBlockWidth,
                 routeObject,
-                fitBoundsPadding,
-                mutateFitBoundsPadding,
                 openGroups,
                 setOpenGroups,
                 trackErrorMsg,
@@ -648,8 +644,6 @@ export const AppContextProvider = (props) => {
                 setStopUseGeoLocation,
                 configureMapState,
                 setConfigureMapState,
-                focusFavGroupId,
-                setFocusFavGroupId,
                 updateMarkers,
                 setUpdateMarkers,
                 processingGroups,

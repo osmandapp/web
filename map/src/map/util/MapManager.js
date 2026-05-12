@@ -1,8 +1,64 @@
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 import styles from '../map.module.css';
+import { fitBoundsOptions } from '../../manager/track/TracksManager';
 
 export const TOOLTIP_MAX_LENGTH = 50;
+
+// zoom-to-fit object types (favorite group / track)
+export const ZOOM_TO_FIT_TYPE = {
+    FAVORITE_GROUP: 'favorite_group',
+    TRACK: 'track',
+};
+
+// Bounds for the {type, object} pair, or null if geometry isn't ready.
+export function getZoomToFitBounds({ type, object, ctx }) {
+    if (!type) return null;
+    if (!object) return null;
+    if (type === ZOOM_TO_FIT_TYPE.FAVORITE_GROUP) {
+        const markers = ctx?.favorites?.mapObjs?.[object.id]?.markers;
+        const bounds = markers?.getBounds();
+
+        return bounds?.isValid() ? bounds : null;
+    }
+    if (type === ZOOM_TO_FIT_TYPE.TRACK) {
+        const bounds = object?.gpx?.getBounds();
+
+        return bounds?.isValid() ? bounds : null;
+    }
+
+    return null;
+}
+
+// fitBounds + save prev view on the first call of the chain (reset by restoreMapView),
+// so re-fires of the same selection don't overwrite the original view.
+export function applyZoomToFit({ map, mtx, bounds }) {
+    if (!map) return false;
+    if (!bounds?.isValid()) return false;
+
+    if (!mtx.mapViewBeforeZoomFit) {
+        const center = map.getCenter();
+        mtx.setMapViewBeforeZoomFit({
+            center: { lat: center.lat, lng: center.lng },
+            zoom: map.getZoom(),
+        });
+    }
+    map.fitBounds(bounds, fitBoundsOptions(mtx));
+
+    return true;
+}
+
+// Restore the saved view (back-navigation) and clear it.
+export function restoreMapView({ map, mtx }) {
+    if (!map) return false;
+    const saved = mtx?.mapViewBeforeZoomFit;
+    if (!saved) return false;
+
+    map.setView([saved.center.lat, saved.center.lng], saved.zoom);
+    mtx.setMapViewBeforeZoomFit(null);
+
+    return true;
+}
 
 export function formatTrackName(name) {
     return name ? name.replaceAll('/', ' · ') : name;

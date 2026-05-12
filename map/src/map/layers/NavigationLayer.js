@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useContext, useCallback, useMemo } from 'reac
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import MarkerOptions from '../markers/MarkerOptions';
 import { getStartPointIconSvg } from '../markers/StartPointMarker';
 import { getIntermediatePointIcon, getIntermediatePointIconHtml } from '../markers/IntermediatePointMarker';
@@ -66,6 +67,7 @@ function moveableMarker(routeObject, map, marker) {
 const NavigationLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
 
     const makeDotIcon = useCallback((color = '#ff7800', opacity = 0.9, size = 16, border = '#000', strokeWidth = 1) => {
         const r = size / 2 - strokeWidth / 2;
@@ -439,7 +441,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
     useEffect(() => {
         if (routeLayer && routeZoom) {
             routeObject.setOption('route.map.zoom', false);
-            map.fitBounds(routeLayer.getBounds(), fitBoundsOptions(ctx));
+            map.fitBounds(routeLayer.getBounds(), fitBoundsOptions(mtx));
         }
     }, [routeZoom, routeLayer]);
 

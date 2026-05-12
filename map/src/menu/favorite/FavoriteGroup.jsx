@@ -18,11 +18,14 @@ import { SHARE_TYPE } from '../share/shareConstants';
 import { fmt } from '../../util/dateFmt';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
+import { ZOOM_TO_FIT_TYPE } from '../../map/util/MapManager';
 
 export default function FavoriteGroup({ index, group, smartf = null, showDivider = true }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const { updateQueryParam } = useUpdateQueryParam();
+    const { zoomToFit } = useZoomToFit();
 
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
@@ -64,7 +67,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                                 replace: false,
                             });
                         }
-                        ctx.setFocusFavGroupId(group.id);
+                        zoomToFit({ type: ZOOM_TO_FIT_TYPE.FAVORITE_GROUP, object: group });
                     }
                 }}
             >

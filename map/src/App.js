@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
+import { MapContextProvider } from './context/MapContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
@@ -110,62 +111,67 @@ const App = () => {
             <ResetAppContext.Provider value={resetApp}>
                 <LoginContextProvider key={'login-' + resetKey}>
                     <AppContextProvider key={'app-' + resetKey}>
-                        <BrowserRouter
-                            key={'router-' + resetKey}
-                            // Enable React Router v7 features: concurrent transitions and correct relative splat path resolution
-                            future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-                        >
-                            <AppServices />
-                            <NavigateGlobal />
-                            <Routes>
-                                <Route path={MAIN_URL} element={<GlobalFrame />}>
-                                    <Route path={LOGIN_URL} element={<LoginMenu />}>
-                                        <Route path={PURCHASES_URL} element={<PurchasesMenu />}>
-                                            <Route path=":key" element={<PurchaseInfo />}></Route>
+                        <MapContextProvider>
+                            <BrowserRouter
+                                key={'router-' + resetKey}
+                                // Enable React Router v7 features: concurrent transitions and correct relative splat path resolution
+                                future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+                            >
+                                <AppServices />
+                                <NavigateGlobal />
+                                <Routes>
+                                    <Route path={MAIN_URL} element={<GlobalFrame />}>
+                                        <Route path={LOGIN_URL} element={<LoginMenu />}>
+                                            <Route path={PURCHASES_URL} element={<PurchasesMenu />}>
+                                                <Route path=":key" element={<PurchaseInfo />}></Route>
+                                            </Route>
+                                            <Route path={GARMIN_URL} element={<GarminConnectMenu />} />
                                         </Route>
-                                        <Route path={GARMIN_URL} element={<GarminConnectMenu />} />
-                                    </Route>
-                                    <Route
-                                        path={DELETE_ACCOUNT_URL}
-                                        element={<DeleteAccountDialog setDeleteAccountFlag={null} />}
-                                    />
-                                    <Route path={SEARCH_URL} element={<SearchMenu />}>
-                                        <Route path={EXPLORE_URL} element={<ExploreMenu />}></Route>
-                                        <Route path={POI_CATEGORIES_URL} element={<PoiCategoriesList />}></Route>
-                                        <Route path={SEARCH_RESULT_URL} element={<SearchResults />}></Route>
-                                    </Route>
-                                    <Route path={CONFIGURE_URL} element={<ConfigureMap />}></Route>
-                                    <Route path={WEATHER_URL} element={<Weather />}>
-                                        <Route path={WEATHER_FORECAST_URL} element={<WeatherForecastDetails />}></Route>
-                                    </Route>
-                                    <Route path={TRACKS_URL} element={<TracksMenu />}>
-                                        <Route path={INFO_MENU_URL + ':filename'} element={<InformationBlock />}>
-                                            <Route path={SHARE_MENU_URL} element={<ShareFileMenu />} />
+                                        <Route
+                                            path={DELETE_ACCOUNT_URL}
+                                            element={<DeleteAccountDialog setDeleteAccountFlag={null} />}
+                                        />
+                                        <Route path={SEARCH_URL} element={<SearchMenu />}>
+                                            <Route path={EXPLORE_URL} element={<ExploreMenu />}></Route>
+                                            <Route path={POI_CATEGORIES_URL} element={<PoiCategoriesList />}></Route>
+                                            <Route path={SEARCH_RESULT_URL} element={<SearchResults />}></Route>
                                         </Route>
+                                        <Route path={CONFIGURE_URL} element={<ConfigureMap />}></Route>
+                                        <Route path={WEATHER_URL} element={<Weather />}>
+                                            <Route
+                                                path={WEATHER_FORECAST_URL}
+                                                element={<WeatherForecastDetails />}
+                                            ></Route>
+                                        </Route>
+                                        <Route path={TRACKS_URL} element={<TracksMenu />}>
+                                            <Route path={INFO_MENU_URL + ':filename'} element={<InformationBlock />}>
+                                                <Route path={SHARE_MENU_URL} element={<ShareFileMenu />} />
+                                            </Route>
+                                        </Route>
+                                        <Route path={VISIBLE_TRACKS_URL} element={<VisibleTracks />}></Route>
+                                        <Route path={FAVORITES_URL} element={<FavoritesMenu />}>
+                                            <Route
+                                                path={INFO_MENU_URL + ':favgroup/:favname'}
+                                                element={<InformationBlock />}
+                                            />
+                                            <Route
+                                                path={INFO_MENU_URL + ':filename' + '/' + SHARE_MENU_URL}
+                                                element={<ShareFileMenu />}
+                                            />
+                                        </Route>
+                                        <Route path={NAVIGATE_URL} element={<NavigationMenu />}></Route>
+                                        <Route path={PLANROUTE_URL} element={<PlanRouteMenu />}></Route>
+                                        <Route path={TRAVEL_URL} element={<TravelMenu />}></Route>
+                                        <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>
+                                        <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
+                                        <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
+                                        <Route path={POI_URL} element={<WptDetails />}></Route>
+                                        <Route path={STOP_URL} element={<WptDetails />}></Route>
                                     </Route>
-                                    <Route path={VISIBLE_TRACKS_URL} element={<VisibleTracks />}></Route>
-                                    <Route path={FAVORITES_URL} element={<FavoritesMenu />}>
-                                        <Route
-                                            path={INFO_MENU_URL + ':favgroup/:favname'}
-                                            element={<InformationBlock />}
-                                        />
-                                        <Route
-                                            path={INFO_MENU_URL + ':filename' + '/' + SHARE_MENU_URL}
-                                            element={<ShareFileMenu />}
-                                        />
-                                    </Route>
-                                    <Route path={NAVIGATE_URL} element={<NavigationMenu />}></Route>
-                                    <Route path={PLANROUTE_URL} element={<PlanRouteMenu />}></Route>
-                                    <Route path={TRAVEL_URL} element={<TravelMenu />}></Route>
-                                    <Route path={SETTINGS_URL} element={<SettingsMenu />}></Route>
-                                    <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
-                                    <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
-                                    <Route path={POI_URL} element={<WptDetails />}></Route>
-                                    <Route path={STOP_URL} element={<WptDetails />}></Route>
-                                </Route>
-                                <Route path={PRICING_URL} element={<PricingPage />}></Route>
-                            </Routes>
-                        </BrowserRouter>
+                                    <Route path={PRICING_URL} element={<PricingPage />}></Route>
+                                </Routes>
+                            </BrowserRouter>
+                        </MapContextProvider>
                     </AppContextProvider>
                 </LoginContextProvider>
             </ResetAppContext.Provider>

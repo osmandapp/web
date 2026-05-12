@@ -36,7 +36,9 @@ import WptEditPanel from './favorite/WptEditPanel';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createUrlParams, encodeString } from '../../util/Utils';
 import LoginContext from '../../context/LoginContext';
+import MapContext from '../../context/MapContext';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
 import Loading from '../../menu/errors/Loading';
 
 export default function InformationBlock({
@@ -51,10 +53,12 @@ export default function InformationBlock({
 
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+    const mtx = useContext(MapContext);
 
     const navigate = useNavigate();
     const location = useLocation();
     const { updateQueryParam } = useUpdateQueryParam();
+    const { restoreMapView } = useZoomToFit();
 
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
@@ -150,7 +154,7 @@ export default function InformationBlock({
         const width = getWidth();
         const px = parseFloat(width) || 0; // 100px -> 100, auto -> 0
         const padding = px || DRAWER_SIZE + Number(mainMenuSize.replace('px', '')) + 24; // always apply right padding on desktop
-        ctx.mutateFitBoundsPadding((o) => (o.left = padding));
+        mtx.mutateFitBoundsPadding((o) => (o.left = padding));
     }, [showInfoBlock]);
 
     useEffect(() => {
@@ -379,6 +383,7 @@ export default function InformationBlock({
             }
             ctx.setSelectedLocalTrackObj(null);
         }
+        restoreMapView();
     }
 
     function closeMapObjectMenu() {

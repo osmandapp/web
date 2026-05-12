@@ -3,10 +3,12 @@ import { useLocation } from 'react-router-dom';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
+import { applyZoomToFit, getZoomToFitBounds, restoreMapView } from '../util/MapManager';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
@@ -65,6 +67,7 @@ export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
 
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const map = useMap();
     const { pathname } = useLocation();
 
@@ -116,6 +119,25 @@ export default function MapStateLayer() {
             }
         };
     }, []);
+
+    // Central zoom-to-fit handler driven by useZoomToFit.
+    useEffect(() => {
+        if (!mtx.zoomToFitRequest) return;
+        const bounds = getZoomToFitBounds({ ...mtx.zoomToFitRequest, ctx });
+        if (bounds) {
+            applyZoomToFit({ map, mtx, bounds });
+            mtx.setZoomToFitRequest(null);
+        }
+    }, [mtx.zoomToFitRequest, ctx.favorites?.mapObjs, ctx.gpxFiles]);
+
+    // Restore the view captured by the latest zoomToFit() call (back-navigation).
+    useEffect(() => {
+        if (!mtx.restoreMapViewRequest) return;
+
+        restoreMapView({ map, mtx });
+
+        mtx.setRestoreMapViewRequest(false);
+    }, [mtx.restoreMapViewRequest]);
 
     useEffect(() => {
         const sync = () => {
