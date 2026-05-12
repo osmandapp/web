@@ -195,7 +195,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         if (qType != null && qType !== '' && index != null) {
             return `se-search-result-item-${safeCategoryTypeKey(qType)}-${index}`;
         }
-        if (item.properties[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
+        const categoryType = item.properties[CATEGORY_TYPE];
+        if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK 
+            || categoryType === searchTypeMap.FAVORITE) {
             return `se-search-result-${item.properties[CATEGORY_NAME]}`;
         }
         return 'se-search-result-item';
@@ -324,7 +326,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                     {isFavoriteHit ? (
                         <>
                             <MenuItem
-                                id={`se-search-fav-result-${index}-${item.properties[FAVORITE_HIT_GROUP_ID] ?? ''}`}
+                                id={id}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                                 className={`${favMenuStyles.item} ${isHovered ? favMenuStyles.itemHovered : ''}`}

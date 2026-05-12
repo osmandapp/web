@@ -25,7 +25,7 @@ export default async function test() {
     await searchForTrack(trackName);
     
     await waitBy(By.id('se-search-results'));
-    const trackResultId = `se-${trackName}.gpx`;
+    const trackResultId = `se-search-result-${trackName}.gpx`;
     await clickBy(By.id(trackResultId));
     await waitBy(By.id('se-track-context-menu'));
     await waitBy(By.id(`se-track-${trackName}`));
