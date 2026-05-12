@@ -35,6 +35,7 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 - Added the ability to [export GPX tracks as simplified files](#export-gpx-as-simplified-track) for easier sharing and smaller file size;
 - [Opening hours](#opening-hours) are now displayed directly in the POI context menu when available;
 - Added support for [pinned favorite folders](#pinned-favorites-folders) for quicker access to frequently used collections;
+- Improved [selected object](#selected-object) highlighting on the map with a distinct pin marker and smarter map behavior;
 - Improved [Wikimedia metadata handling](#wikimedia-metadata), including better display of author, license, and description for images;
 - Added [Garmin Connect integration](#garmin-connect-integration) for automatic activity sync;
 - [Bug fixes](#bug-fixes).
@@ -94,6 +95,13 @@ Photos from Wikimedia sources now display additional information in the [POI pho
 Favorite folders can now be pinned so that frequently used folders appear at the top of the list for quicker access. Pinned folders are displayed in a separate section above the rest of the Favorites.
 
 ![Favorite Folders](@site/static/img/web/pin_folder.png)
+
+
+## Selected Object {#selected-object}
+
+When an [object on the map](https://osmand.net/docs/user/web/web-map#selected-object) (such as a POI, favorite, or navigation point) is selected, it is now highlighted with a distinct pin marker. Only one object can be selected at a time, and the map scrolls to it only if it is not currently visible on screen.
+
+![Selected Object](@site/static/img/web/selected_object_notes.png)
 
 
 ## Garmin Connect Integration {#garmin-connect-integration}
