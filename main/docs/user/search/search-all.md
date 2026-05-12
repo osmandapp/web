@@ -76,7 +76,7 @@ Important information:
 - Search by tracks.
 - Search by business venues and brand names.
 - Online search (Nominatim).
-- URL search (Google and OsmAnd).
+- URL search (Google and OsmAnd). OsmAnd can recognize many shared Google Maps links, including short links from `maps.app.goo.gl`.
 - Search History.
 
 <!--
