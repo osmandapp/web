@@ -39,6 +39,7 @@ import LoginContext from '../../context/LoginContext';
 import MapContext from '../../context/MapContext';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
+import { useFocusMode } from '../../util/hooks/map/useFocusMode';
 import Loading from '../../menu/errors/Loading';
 
 export default function InformationBlock({
@@ -59,6 +60,7 @@ export default function InformationBlock({
     const location = useLocation();
     const { updateQueryParam } = useUpdateQueryParam();
     const { restoreMapView } = useZoomToFit();
+    const { clearSelectionFocus } = useFocusMode();
 
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
@@ -384,6 +386,7 @@ export default function InformationBlock({
             ctx.setSelectedLocalTrackObj(null);
         }
         restoreMapView();
+        clearSelectionFocus();
     }
 
     function closeMapObjectMenu() {

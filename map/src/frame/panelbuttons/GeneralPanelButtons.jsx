@@ -8,6 +8,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import styles from '../../map/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
+import FocusToggleBtn from '../../frame/components/btns/FocusToggleBtn';
 import ConfigureMap from '../../menu/configuremap/ConfigureMap';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import SearchMenu from '../../menu/search/SearchMenu';
@@ -110,6 +111,17 @@ export default function GeneralPanelButtons({
                         <Typography className={styles.searchTitle}>Search</Typography>
                     </Box>
                 </Paper>
+            </div>
+            <div
+                style={{
+                    marginLeft: getMarginFromMenu(),
+                    marginTop: '14px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                }}
+            >
+                <FocusToggleBtn />
             </div>
             <div
                 style={{

@@ -1,6 +1,6 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
@@ -19,7 +19,6 @@ import { fmt } from '../../util/dateFmt';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
-import { ZOOM_TO_FIT_TYPE } from '../../map/util/MapManager';
 
 export default function FavoriteGroup({ index, group, smartf = null, showDivider = true }) {
     const ctx = useContext(AppContext);
@@ -67,7 +66,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                                 replace: false,
                             });
                         }
-                        zoomToFit({ type: ZOOM_TO_FIT_TYPE.FAVORITE_GROUP, object: group });
+                        zoomToFit({ type: OBJECT_TYPE_FAVORITE, object: group });
                     }
                 }}
             >

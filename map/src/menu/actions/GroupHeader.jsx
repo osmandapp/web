@@ -25,6 +25,7 @@ import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
+import { useFocusMode } from '../../util/hooks/map/useFocusMode';
 
 export default function GroupHeader({
     type,
@@ -41,6 +42,7 @@ export default function GroupHeader({
 
     const { updateQueryParam, searchParams } = useUpdateQueryParam();
     const { restoreMapView } = useZoomToFit();
+    const { clearSelectionFocus } = useFocusMode();
 
     const TRACKS_TYPE = 'tracks';
     const FAVORITES_TYPE = 'favorites';
@@ -84,6 +86,7 @@ export default function GroupHeader({
             }
         }
         restoreMapView();
+        clearSelectionFocus();
     }
 
     function getGroupsCount() {
@@ -159,6 +162,7 @@ export default function GroupHeader({
                                 }
                                 closeHeader({ ctx });
                                 restoreMapView();
+                                clearSelectionFocus();
                             }}
                         >
                             <CloseIcon />

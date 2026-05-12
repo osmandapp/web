@@ -18,10 +18,12 @@ import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
 import { useLocation } from 'react-router-dom';
+import { useFocusMode } from '../../util/hooks/map/useFocusMode';
 
 export default function FavoriteGroupFolder({ folder, smartf = null, onClose = null }) {
     const ctx = useContext(AppContext);
     const location = useLocation();
+    const { setSelectionFocus, clearSelectionFocus } = useFocusMode();
 
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
@@ -127,6 +129,14 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             setGroup({ ...folder });
         }
     }, [folder]);
+
+    useEffect(() => {
+        if (folder?.id != null) {
+            setSelectionFocus({ type: OBJECT_TYPE_FAVORITE, id: folder.id });
+        }
+
+        return () => clearSelectionFocus();
+    }, [folder?.id]);
 
     const favItems = useMemo(() => {
         if (markers?.length > 0) {

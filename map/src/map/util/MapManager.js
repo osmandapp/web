@@ -2,26 +2,21 @@ import L from 'leaflet';
 import Utils from '../../util/Utils';
 import styles from '../map.module.css';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 
 export const TOOLTIP_MAX_LENGTH = 50;
-
-// zoom-to-fit object types (favorite group / track)
-export const ZOOM_TO_FIT_TYPE = {
-    FAVORITE_GROUP: 'favorite_group',
-    TRACK: 'track',
-};
 
 // Bounds for the {type, object} pair, or null if geometry isn't ready.
 export function getZoomToFitBounds({ type, object, ctx }) {
     if (!type) return null;
     if (!object) return null;
-    if (type === ZOOM_TO_FIT_TYPE.FAVORITE_GROUP) {
+    if (type === OBJECT_TYPE_FAVORITE) {
         const markers = ctx?.favorites?.mapObjs?.[object.id]?.markers;
         const bounds = markers?.getBounds();
 
         return bounds?.isValid() ? bounds : null;
     }
-    if (type === ZOOM_TO_FIT_TYPE.TRACK) {
+    if (type === OBJECT_TYPE_CLOUD_TRACK) {
         const bounds = object?.gpx?.getBounds();
 
         return bounds?.isValid() ? bounds : null;

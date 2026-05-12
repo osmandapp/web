@@ -267,8 +267,8 @@ const FavoriteLayer = () => {
             }
 
             if (file.url) {
-                if (openGroupId) {
-                    fileId === openGroupId ? addMarkersOnMap(file, fileId) : removeMarkersFromMap(file, fileId);
+                if (!ctx.configureMapState.showFavorites && fileId !== openGroupId) {
+                    removeMarkersFromMap(file, fileId);
                 } else {
                     addMarkersOnMap(file, fileId);
                 }

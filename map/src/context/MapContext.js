@@ -9,6 +9,10 @@ export const MapContextProvider = ({ children }) => {
     const [restoreMapViewRequest, setRestoreMapViewRequest] = useState(false);
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
+    // currently focused selection ({ type, id })
+    const [selectionFocus, setSelectionFocus] = useState(null);
+    const [focusModeOn, setFocusModeOn] = useState(false);
+
     return (
         <MapContext.Provider
             value={{
@@ -20,6 +24,10 @@ export const MapContextProvider = ({ children }) => {
                 setRestoreMapViewRequest,
                 fitBoundsPadding,
                 mutateFitBoundsPadding,
+                selectionFocus,
+                setSelectionFocus,
+                focusModeOn,
+                setFocusModeOn,
             }}
         >
             {children}
