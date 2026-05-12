@@ -503,7 +503,7 @@ export const AppContextProvider = (props) => {
                             setSmartFoldersLoading(false);
                         });
 
-                    applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelectedGpxFile, selectedGpxFile);
+                    applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelectedGpxFile);
                 }
             }
         };

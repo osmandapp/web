@@ -231,7 +231,9 @@ export default function MainMenu({
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
-        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles) {
+        // Wait until .info details are loaded (updateFiles == null) before auto-opening the
+        // track, so processDisplayTrack reads pointsGroups visibility from the refreshed listFiles.
+        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && !ctx.updateFiles) {
             if (isEmpty(ctx.selectedGpxFile)) {
                 if (filename) {
                     const decodeFilename = decodeString(filename);
@@ -298,7 +300,7 @@ export default function MainMenu({
                 }
             }
         }
-    }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups]);
+    }, [location.pathname, ctx.listFiles.uniqueFiles, ctx.favorites?.groups, ctx.updateFiles]);
 
     useEffect(() => {
         if (location.pathname.includes(POI_URL)) {
