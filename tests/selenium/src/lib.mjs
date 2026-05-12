@@ -396,6 +396,12 @@ export async function getUrl() {
     return await driver.getCurrentUrl();
 }
 
+export async function getMapHash() {
+    const [z, lat, lon] = ((await getUrl()).split('#')[1] ?? '').split('/').map(Number);
+
+    return `${z}/${lat.toFixed(3)}/${lon.toFixed(3)}`;
+}
+
 export async function assert(condition, message) {
     if (!condition) {
         verbose && (await logBrowserAndNetworkErrors(driver));
