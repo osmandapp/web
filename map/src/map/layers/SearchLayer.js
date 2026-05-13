@@ -87,16 +87,32 @@ export function getObjIdSearch(obj) {
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
 }
 
-function normalize(s) {
-    return s?.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().trim();
+function searchIncludes(text, query, collator) {
+    const textChars = [...String(text ?? '')];
+    const queryStr = String(query ?? '');
+
+    if (!queryStr) {
+        return true;
+    }
+
+    const queryLength = [...queryStr].length;
+
+    for (let i = 0; i <= textChars.length - queryLength; i++) {
+        const candidate = textChars
+            .slice(i, i + queryLength)
+            .join('');
+
+        if (collator.compare(candidate, queryStr) === 0) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
-export function searchFavoriteFeatures({ favorites, query }) {
-    if (!query || !favorites?.groups?.length || !favorites.mapObjs) {
-        return [];
-    }
-    const q = normalize(query);
-    if (!q) {
+function searchFavoriteFeatures({ favorites, query, collator }) {
+    const q = String(query ?? '').trim();
+    if (!q || !favorites?.groups?.length || !favorites.mapObjs) {
         return [];
     }
 
@@ -116,9 +132,7 @@ export function searchFavoriteFeatures({ favorites, query }) {
             if (!wpt?.name) {
                 continue;
             }
-            const nameNorm = normalize(wpt.name);
-            const descNorm = normalize(wpt.desc ?? '');
-            const textHit = nameNorm.includes(q) || (descNorm && descNorm.includes(q));
+            const textHit = searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator);
             if (!textHit) {
                 continue;
             }
@@ -151,14 +165,13 @@ export function searchFavoriteFeatures({ favorites, query }) {
     return features;
 }
 
-function searchCloudTrackFeatures({ listFiles, query }) {
-    if (!query || !listFiles?.uniqueFiles) return [];
-    const q = normalize(query);
-    if (!q) return [];
+function searchCloudTrackFeatures({ listFiles, query, collator }) {
+    const q = String(query ?? '').trim();
+    if (!q || !listFiles?.uniqueFiles) return [];
 
     return getGpxFiles(listFiles)
         .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME))
-        .filter((f) => normalize(prepareName(f.name, true)).includes(q))
+        .filter((f) => searchIncludes(prepareName(f.name, true), q, collator))
         .map((f) => ({
             type: 'Feature',
             geometry: { type: 'Point', coordinates: [0, 0] },
@@ -279,13 +292,16 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
+                const collator = ctx.searchTextCollator;
                 const cloudFeatures = searchCloudTrackFeatures({
                     listFiles: ctx.listFiles,
                     query: searchData.query,
+                    collator,
                 });
                 const favoriteFeatures = searchFavoriteFeatures({
                     favorites: ctx.favorites,
                     query: searchData.query,
+                    collator,
                 });
                 const features = [...cloudFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 ctx.setSearchResult({ ...data, features });
