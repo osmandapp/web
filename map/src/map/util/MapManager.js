@@ -31,13 +31,9 @@ export function applyZoomToFit({ map, mtx, bounds }) {
     if (!map) return false;
     if (!bounds?.isValid()) return false;
 
-    if (!mtx.mapViewBeforeZoomFit) {
-        const center = map.getCenter();
-        mtx.setMapViewBeforeZoomFit({
-            center: { lat: center.lat, lng: center.lng },
-            zoom: map.getZoom(),
-        });
-    }
+    const center = map.getCenter();
+    const captured = { center: { lat: center.lat, lng: center.lng }, zoom: map.getZoom() };
+    mtx.setMapViewBeforeZoomFit((prev) => prev ?? captured);
     map.fitBounds(bounds, fitBoundsOptions(mtx));
 
     return true;
