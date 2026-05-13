@@ -778,12 +778,19 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return wpt?.type?.isStop;
     }
 
+    const returnToSearch =
+        ctx.searchQuery &&
+        (ctx.searchQuery.query || ctx.searchQuery.type) &&
+        !!ctx.searchResult?.features?.length;
+
+    const showBackButton = !wpt?.mapObj || returnToSearch;
+
     const Header = () => {
         return (
             <HeaderWithUnderline
                 onClose={() => closeDetails()}
-                showBackButton={!wpt?.mapObj}
-                appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+                showBackButton={showBackButton}
+                appBarProps={{ id: showBackButton ? 'se-back-wpt-details' : 'se-close-wpt-details' }}
             />
         );
     };

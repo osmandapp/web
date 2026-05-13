@@ -366,6 +366,12 @@ export default function InformationBlock({
         return openShareFileItem && isCloseFavItemDetails;
     }
 
+    const returnToSearch =
+        isCloudTrack(ctx) &&
+        ctx.searchQuery &&
+        (ctx.searchQuery.query || ctx.searchQuery.type) &&
+        !!ctx.searchResult?.features?.length;
+
     function handleCloseTrackContextMenu() {
         setShowInfoBlock(false);
 
@@ -391,12 +397,6 @@ export default function InformationBlock({
         if (name && !isEmpty(ctx.gpxFiles) && ctx.gpxFiles[name]) {
             ctx.mutateGpxFiles((o) => (o[name].mapObj = null));
         }
-
-        const returnToSearch =
-            wasCloudTrack &&
-            ctx.searchQuery &&
-            (ctx.searchQuery.query || ctx.searchQuery.type) &&
-            ctx.searchResult?.features?.length;
 
         if (wasCloudTrack) {
             setTrackName(null);
@@ -500,7 +500,7 @@ export default function InformationBlock({
                                 track={ctx.selectedGpxFile}
                                 onClose={handleCloseTrackContextMenu}
                                 tabsObj={tabsObj}
-                                showBackButton={!ctx.selectedGpxFile?.mapObj}
+                                showBackButton={!ctx.selectedGpxFile?.mapObj || returnToSearch}
                             />
                         )}
                     </>
