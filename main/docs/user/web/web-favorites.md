@@ -71,7 +71,7 @@ The Details view provides information associated with the selected place and dep
 
 To edit an existing favorite, click the favorite point either directly on the map or select it from a favorites folder. This opens the Details panel, where the Edit action is available. Editing can also be started from the three-dot menu (⋮) next to the favorite in the Favorites list.
 
-The Edit favorite panel allows changing the main properties of a favorite, including its name, address, description, folder, icon, color, and shape. Changes made to the appearance are previewed directly on the map in real time.
+The Edit favorite panel allows changing the main properties of a favorite, including its name, address, description, folder, icon, color, and shape. The selected appearance is previewed directly in the editing panel.
 
 ### Edit Address {#edit-address}
 
@@ -117,7 +117,7 @@ Selecting **Color** opens the color palette panel.
 
 The **Shape** option defines the background form used for the favorite marker.  The following shapes are available: circle, square, and octagon.
 
-While editing a favorite, the preview marker on the map updates immediately when changing the icon, color, or shape. Opening additional panels, such as Icon or Color selection, automatically adjusts the visible map area to keep the preview marker visible.
+The appearance preview updates immediately when changing the icon, color, or shape.
 
 ![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
