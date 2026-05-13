@@ -197,26 +197,6 @@ const FavoriteLayer = () => {
     }, [searchParams]);
 
     useEffect(() => {
-        const groupId = ctx.focusFavGroupId;
-        ctx.setFocusFavGroupId(null);
-        if (!groupId) return;
-
-        const group = ctx.favorites.mapObjs[groupId];
-        if (!group?.markers) return;
-
-        const layers = group.markers.getLayers();
-        if (layers.length === 0) return;
-
-        const bounds = map.getBounds();
-        const allInView = layers.every((layer) => bounds.contains(layer.getLatLng()));
-
-        if (!allInView) {
-            const firstLatLng = layers[0].getLatLng();
-            if (firstLatLng) map.panTo(firstLatLng);
-        }
-    }, [ctx.focusFavGroupId]);
-
-    useEffect(() => {
         if (ctx.removeFavGroup) {
             removeMarkersFromMap(ctx.removeFavGroup);
             ctx.setRemoveFavGroup(null);
@@ -287,8 +267,8 @@ const FavoriteLayer = () => {
             }
 
             if (file.url) {
-                if (openGroupId) {
-                    fileId === openGroupId ? addMarkersOnMap(file, fileId) : removeMarkersFromMap(file, fileId);
+                if (!ctx.configureMapState.showFavorites && fileId !== openGroupId) {
+                    removeMarkersFromMap(file, fileId);
                 } else {
                     addMarkersOnMap(file, fileId);
                 }

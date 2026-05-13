@@ -28,7 +28,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
-import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
+import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
@@ -36,6 +36,8 @@ import {
     BBOX_COORDS_DECIMALS,
     MENU_INFO_OPEN_SIZE,
     NAVIGATE_URL,
+    POI_LAYER_ID,
+    SEARCH_LAYER_ID,
     showProcessingNotification,
 } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
@@ -163,8 +165,6 @@ export async function getPoiIcon(poi, cache, finalIconName) {
         }
     }
 }
-
-export const POI_LAYER_ID = 'poi-layer';
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);

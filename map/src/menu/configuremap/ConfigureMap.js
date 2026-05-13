@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
@@ -56,6 +57,7 @@ export function updateConfigureMapCache(conf) {
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
     const [, height] = useWindowSize();
@@ -100,8 +102,8 @@ export default function ConfigureMap() {
     }, [ctx.gpxFiles, ctx.visibleTracks]);
 
     useEffect(() => {
-        if (ctx.configureMapState.terrain && ctx.configureMapState.terrain.key !== ctx.heightmap?.key) {
-            ctx.setHeightmap(ctx.configureMapState.terrain);
+        if (ctx.configureMapState.terrain && ctx.configureMapState.terrain.key !== mtx.heightmap?.key) {
+            mtx.setHeightmap(ctx.configureMapState.terrain);
         }
     }, [ctx.configureMapState.terrain]);
 
@@ -259,13 +261,13 @@ export default function ConfigureMap() {
                                         <Select
                                             labelid="rendering-style-selector-label"
                                             label={t('map_widget_renderer')}
-                                            value={ctx.allTileURLs[ctx.tileURL.key] ? ctx.tileURL.key : ''}
+                                            value={ctx.allTileURLs[mtx.tileURL.key] ? mtx.tileURL.key : ''}
                                             onChange={(e) => {
-                                                ctx.setTileURL(ctx.allTileURLs[e.target.value]);
+                                                mtx.setTileURL(ctx.allTileURLs[e.target.value]);
                                                 if (e.target.value === INTERACTIVE_LAYER) {
-                                                    ctx.setRenderingType(DYNAMIC_RENDERING);
-                                                } else if (ctx.renderingType) {
-                                                    ctx.setRenderingType(null);
+                                                    mtx.setRenderingType(DYNAMIC_RENDERING);
+                                                } else if (mtx.renderingType) {
+                                                    mtx.setRenderingType(null);
                                                 }
                                             }}
                                         >

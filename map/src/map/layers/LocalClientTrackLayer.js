@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, {
@@ -47,6 +48,7 @@ export const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
 
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const map = useMap();
 
     const [registeredLayers, setRegisteredLayers] = useState({});
@@ -465,7 +467,7 @@ export default function LocalClientTrackLayer() {
         if (layer) {
             if (fitBounds) {
                 if (!isEmpty(layer.getBounds())) {
-                    map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
+                    map.fitBounds(layer.getBounds(), fitBoundsOptions(mtx));
                 }
             }
             layer.on('click', () => {
@@ -493,7 +495,7 @@ export default function LocalClientTrackLayer() {
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer.getBounds(), fitBoundsOptions(ctx));
+            map.fitBounds(currLayer.layer.getBounds(), fitBoundsOptions(mtx));
             ctxTrack.zoom = false;
             ctx.setSelectedGpxFile({ ...ctxTrack });
         }

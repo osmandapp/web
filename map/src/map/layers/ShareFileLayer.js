@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext, { OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { addTrackToMap } from './CloudTrackLayer';
 import { useMap } from 'react-leaflet';
 import { FAVOURITES, GPX, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
@@ -14,6 +15,7 @@ import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 export default function ShareFileLayer() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const map = useMap();
 
     const { lat } = useHashParams();
@@ -29,7 +31,7 @@ export default function ShareFileLayer() {
     useEffect(() => {
         if (ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && location.pathname.includes(SHARE_FILE_MAIN_URL)) {
             if (ctx.selectedGpxFile?.type === GPX) {
-                const layer = addTrackToMap({ ctx, file: ctx.selectedGpxFile, map, fit: true, recentSaver });
+                const layer = addTrackToMap({ ctx, mtx, file: ctx.selectedGpxFile, map, fit: true, recentSaver });
                 if (layer) {
                     setCurrentShareFile(layer);
                 }

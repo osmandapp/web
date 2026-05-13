@@ -15,7 +15,8 @@ import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { cleanHtml, getIconNameForPoiType } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
-import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
+import { getImgByProps } from '../../../map/layers/ExploreLayer';
+import { EXPLORE_LAYER_ID } from '../../../manager/GlobalManager';
 
 export const WIKI_PLACE_PHOTO_SIZE = 160;
 

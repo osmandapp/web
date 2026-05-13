@@ -11,7 +11,7 @@ import PoiManager, {
     parseBrandType,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
-import { getPoiIcon, POI_LAYER_ID } from './PoiLayer';
+import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
 import {
     CATEGORY_NAME,
@@ -30,7 +30,12 @@ import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
-import { BBOX_COORDS_DECIMALS, showProcessingNotification } from '../../manager/GlobalManager';
+import {
+    BBOX_COORDS_DECIMALS,
+    POI_LAYER_ID,
+    SEARCH_LAYER_ID,
+    showProcessingNotification,
+} from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
@@ -39,7 +44,6 @@ import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
-export const SEARCH_LAYER_ID = 'search-layer';
 
 export const SEARCH_ICON_MAP_LOCATION = 'location';
 export const SEARCH_ICON_MAP_BUILDING = 'house';

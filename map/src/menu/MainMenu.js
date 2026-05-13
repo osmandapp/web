@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 import LoginContext from '../context/LoginContext';
+import MapContext from '../context/MapContext';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
     OBJECT_GLOBAL_SETTINGS,
@@ -137,6 +138,7 @@ export default function MainMenu({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -783,7 +785,7 @@ export default function MainMenu({
     // Note: When adding new parameters, it may be necessary to refactor pageParams
     // to store a list of parameters as a map instead of a string for better flexibility.
     useEffect(() => {
-        const pinPoint = ctx.pinPoint;
+        const pinPoint = mtx.pinPoint;
         if (pinPoint) {
             if (location.pathname.includes(NAVIGATE_URL) && !ctx.routeObject.isReady()) {
                 return;
@@ -805,7 +807,7 @@ export default function MainMenu({
 
             ctx.setPageParams(pageParams);
         }
-    }, [ctx.pinPoint]);
+    }, [mtx.pinPoint]);
 
     function addParamsToUrl(pageParams, type, pinRegex, newPin, pretty) {
         const existingParams = pageParams[type] || '';
