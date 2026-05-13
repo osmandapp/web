@@ -1,13 +1,13 @@
 import { useMap } from 'react-leaflet';
 import { useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import L from 'leaflet';
 import { NO_HEIGHTMAP } from '../../menu/configuremap/TerrainConfig';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 
 export default function HeightmapLayer() {
-    const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
     const map = useMap();
@@ -19,7 +19,7 @@ export default function HeightmapLayer() {
     useEffect(() => {
         if (!map || !ltx.loginUser || ltx.loginUser === INIT_LOGIN_STATE) return;
 
-        if (ctx.heightmap === NO_HEIGHTMAP.key) {
+        if (mtx.heightmap === NO_HEIGHTMAP.key) {
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
                 tileLayerRef.current = null;
@@ -28,8 +28,8 @@ export default function HeightmapLayer() {
         }
 
         // update opacity
-        if (tileLayerRef.current?._url === ctx.heightmap?.url && ctx.heightmap?.opacity) {
-            tileLayerRef.current.setOpacity(ctx.heightmap.opacity);
+        if (tileLayerRef.current?._url === mtx.heightmap?.url && mtx.heightmap?.opacity) {
+            tileLayerRef.current.setOpacity(mtx.heightmap.opacity);
             return;
         } else {
             // remove old layer
@@ -38,15 +38,15 @@ export default function HeightmapLayer() {
             }
         }
 
-        if (ctx.heightmap) {
-            tileLayerRef.current = L.tileLayer(ctx.heightmap.url, {
+        if (mtx.heightmap) {
+            tileLayerRef.current = L.tileLayer(mtx.heightmap.url, {
                 minZoom: 5,
                 maxNativeZoom: 15,
                 maxZoom: 18,
                 tileSize: 256,
             });
 
-            tileLayerRef.current.setOpacity(ctx.heightmap.opacity);
+            tileLayerRef.current.setOpacity(mtx.heightmap.opacity);
 
             tileLayerRef.current.on('loading', () => {
                 setLoadingTiles(true);
@@ -70,9 +70,9 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('tileerror');
             }
         };
-    }, [ctx.heightmap, map, ltx.loginUser]);
+    }, [mtx.heightmap, ltx.loginUser]);
 
     useEffect(() => {
-        ctx.setProcessHeightmaps(loadingTiles);
-    }, [loadingTiles, ctx]);
+        mtx.setProcessHeightmaps(loadingTiles);
+    }, [loadingTiles]);
 }

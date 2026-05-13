@@ -53,10 +53,9 @@
 }
 
 .activityTypeCheckbox {
-    color: #B3B3B3 !important;
+    color: #b3b3b3 !important;
 }
 
 .activityTypeCheckbox:global(.Mui-checked) {
     color: #237bff !important;
 }
-

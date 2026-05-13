@@ -13,6 +13,7 @@ import { apiGet } from '../HttpApi';
 
 export const useWeatherLocationChange = ({
     ctx,
+    mtx,
     currentLoc,
     delayedHash,
     weatherLoc,
@@ -37,7 +38,7 @@ export const useWeatherLocationChange = ({
                 });
             }
         } else {
-            const center = getMapCenter(ctx, delayedHash);
+            const center = getMapCenter(mtx, delayedHash);
             if (center) {
                 fetchAddress({ point: center, useMapBbox: true }).then((obj) => {
                     if (obj) {
@@ -67,7 +68,7 @@ export const useWeatherLocationChange = ({
         let nw = null;
         let se = null;
         if (useMapBbox) {
-            const bbox = ctx.mapBbox;
+            const bbox = mtx.mapBbox;
             if (bbox) {
                 nw = `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`;
                 se = `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`;

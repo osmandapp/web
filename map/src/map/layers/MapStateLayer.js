@@ -14,11 +14,11 @@ import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
     const params = calcVisibleBboxParamsPx(map, ctx);
-    return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : (ctx.visibleBboxInfo ?? null);
+    return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : null;
 }
 
-export function getMapCenter(ctx, hash) {
-    return ctx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
+export function getMapCenter(mtx, hash) {
+    return mtx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
 }
 
 const CENTRE_ICON_SIZE = 24;
@@ -85,8 +85,8 @@ export default function MapStateLayer() {
             const { topLeft, bottomRight, centerPx } = calcVisibleBboxParamsPx(map, ctx) ?? {};
 
             const visible = calcVisibleBbox(topLeft, bottomRight);
-            if (visible && !isInitialViewWithEmptyContext(visible, map, ctx.visibleBboxInfo)) {
-                ctx.setVisibleBboxInfo(visible);
+            if (visible && !isInitialViewWithEmptyContext(visible, map, mtx.visibleBboxInfo)) {
+                mtx.setVisibleBboxInfo(visible);
             }
             setCenterPositionPx(centerPx);
         };
@@ -156,7 +156,7 @@ export default function MapStateLayer() {
         return () => map.off('resize', sync);
     }, [globalMapSpinLoading, spinLayoutLikeOpenInfoBlock, ctx.infoBlockWidth]);
 
-    if (!pathname.includes(SEARCH_RESULT_URL) || !ctx.visibleBboxInfo?.center || !centerPositionPx) {
+    if (!pathname.includes(SEARCH_RESULT_URL) || !mtx.visibleBboxInfo?.center || !centerPositionPx) {
         return null;
     }
 

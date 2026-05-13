@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
+import MapContext from '../../../context/MapContext';
 import CustomInput from './CustomInput';
 import PoiManager, {
     formattingPoiType,
@@ -76,6 +77,7 @@ export function searchByCategory(searchParams, ctx, t) {
 
 export default function SearchResults() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const { t } = useTranslation();
 
     const [result, setResult] = useState(null);
@@ -266,11 +268,11 @@ export default function SearchResults() {
                 isUser = true;
                 loc = currentLoc;
             } else {
-                loc = getMapCenter(ctx, hash);
+                loc = getMapCenter(mtx, hash);
             }
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
-            loc = getMapCenter(ctx, hash);
+            loc = getMapCenter(mtx, hash);
             setLocReady(true);
         }
         return { loc, isUser };

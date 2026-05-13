@@ -288,7 +288,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             dragend() {
                 const marker = pinPointRef.current;
                 if (marker != null) {
-                    ctx.setPinPoint(marker.getLatLng());
+                    mtx.setPinPoint(marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
             },
@@ -536,10 +536,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     zIndexOffset={1000}
                 />
             )}
-            {ctx.pinPoint && (
+            {mtx.pinPoint && (
                 <Marker
                     key={'pin-point' + refreshKey}
-                    position={ctx.pinPoint}
+                    position={mtx.pinPoint}
                     icon={MarkerOptions.options.pointerIcons}
                     ref={pinPointRef}
                     draggable={true}

@@ -10,7 +10,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
-import { GLOBAL_GRAPH_HEIGHT_SIZE, POI_URL, STOP_URL } from '../manager/GlobalManager';
+import { GLOBAL_GRAPH_HEIGHT_SIZE } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
@@ -48,8 +48,6 @@ export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
-
-const PIN_PARAM = 'pin';
 
 export const MAX_RECENT_OBJS = 5;
 
@@ -144,9 +142,7 @@ export const AppContextProvider = (props) => {
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(new Date());
     const [weatherType, setWeatherType] = useState(searchParams.get(FORECAST_SOURCE_PARAM) ?? 'gfs');
-    const [renderingType, setRenderingType] = useState(null);
     const [forecastLoading, setForecastLoading] = useState(false);
-    const [mapBbox, setMapBbox] = useState(null);
 
     const [gpxLoading, setGpxLoading] = useState(false);
     const [smartFoldersLoading, setSmartFoldersLoading] = useState(false);
@@ -170,7 +166,6 @@ export const AppContextProvider = (props) => {
     const [processingSearch, setProcessingSearch] = useState(false);
     const [moveToMapObj, setMoveToMapObj] = useState(null);
     const [visibleBounds, setVisibleBounds] = useState(null);
-    const [visibleBboxInfo, setVisibleBboxInfo] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
     const [poiByUrl, setPoiByUrl] = useState(null);
@@ -199,25 +194,7 @@ export const AppContextProvider = (props) => {
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
 
-    const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
-    const [heightmap, setHeightmap] = useState(null);
-    const [processHeightmaps, setProcessHeightmaps] = useState(false);
-
-    let pinInit;
-    if (
-        searchParams.get(PIN_PARAM) &&
-        !globalThis.location.pathname.includes(POI_URL) &&
-        !globalThis.location.pathname.includes(STOP_URL)
-    ) {
-        const arr = searchParams.get(PIN_PARAM).split(',');
-        const lat = Number.parseFloat(arr[0]);
-        const lng = Number.parseFloat(arr[1]);
-        if (arr.length === 2 && !Number.isNaN(lat) && !Number.isNaN(lng)) {
-            pinInit = { lat, lng };
-        }
-    }
-    const [pinPoint, setPinPoint] = useState(pinInit);
 
     // favorites
     const [favorites, setFavorites] = useState({});
@@ -389,7 +366,6 @@ export const AppContextProvider = (props) => {
             }
             // Normalize saved data to ensure all default fields are present
             savedConfigureMap = { ...defaultConfigureMapStateValues, ...savedConfigureMap };
-            setHeightmap(savedConfigureMap.terrain);
             if (!isEmpty(savedConfigureMap.pois)) {
                 setShowPoiCategories(savedConfigureMap.pois);
             }
@@ -559,15 +535,7 @@ export const AppContextProvider = (props) => {
                 setUnverifiedGpxFile,
                 mapMarkerListener,
                 setMapMarkerListener,
-                tileURL,
-                setTileURL,
                 allTileURLs,
-                heightmap,
-                setHeightmap,
-                processHeightmaps,
-                setProcessHeightmaps,
-                pinPoint,
-                setPinPoint,
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,
@@ -654,10 +622,6 @@ export const AppContextProvider = (props) => {
                 setVisibleTracks,
                 forecastLoading,
                 setForecastLoading,
-                renderingType,
-                setRenderingType,
-                mapBbox,
-                setMapBbox,
                 wikiPlaces,
                 setWikiPlaces,
                 searchSettings,
@@ -755,8 +719,6 @@ export const AppContextProvider = (props) => {
                 setSelectedCloudTrackObj,
                 visibleBounds,
                 setVisibleBounds,
-                visibleBboxInfo,
-                setVisibleBboxInfo,
                 exploreMenu,
                 setExploreMenu,
                 openTravel,

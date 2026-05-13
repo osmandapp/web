@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import AppContext, { OBJECT_TRACK_ANALYZER, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
@@ -33,6 +34,7 @@ import LoginContext from '../../context/LoginContext';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
     const map = useMap();
@@ -355,7 +357,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             <MenuItem
                                 id={'se-add-pin-action'}
                                 className={styles.contextMenuItem}
-                                onClick={() => handleMenuItemClick((latlng) => ctx.setPinPoint(latlng))}
+                                onClick={() => handleMenuItemClick((latlng) => mtx.setPinPoint(latlng))}
                             >
                                 <ListItemIcon className={styles.contextMenuIcon}>
                                     <AddPinIcon />

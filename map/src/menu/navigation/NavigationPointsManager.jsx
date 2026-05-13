@@ -7,6 +7,7 @@ import useNavigationHistory from '../../util/hooks/navigation/useNavigationHisto
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import AppContext from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
@@ -72,10 +73,11 @@ const preparePointUpdate = ({ value, current }) => {
 export default function NavigationPointsManager() {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
 
     const location = useLocation();
     const navObject = ctx.navigationObject;
-    const centrePoint = getMapCenter(ctx, location.hash);
+    const centrePoint = getMapCenter(mtx, location.hash);
 
     const startPoint = navObject.getOption(ROUTE_POINTS_START);
     const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);

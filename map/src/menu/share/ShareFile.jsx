@@ -7,6 +7,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import styles from './share.module.css';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import AppContext, { OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import RequestAccessError from './errors/RequestAccessError';
 import PendingAccessError from './errors/PendingAccessError';
 import BlockedAccessError from './errors/BlockedAccessError';
@@ -37,6 +38,7 @@ import { BLOCKED_ACCESS_TYPE, PENDING_ACCESS_TYPE, REQUEST_ACCESS_TYPE } from '.
 
 export default function ShareFile() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
     const { uuid } = useParams();
@@ -155,7 +157,7 @@ export default function ShareFile() {
     const favItems = useMemo(() => {
         const layers = ctx.shareFileMarkers?.getLayers();
         if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
-            const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getMapCenter(ctx, hash);
+            const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getMapCenter(mtx, hash);
             const markerList = getFavMenuListByLayers({
                 layers,
                 wpts: ctx.selectedGpxFile.wpts,
