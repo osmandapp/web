@@ -2,7 +2,7 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { collator } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -113,10 +113,10 @@ export default function SearchMenu() {
                         const validCategories = Object.values(categoriesResult).filter(
                             (item) => item[CATEGORY_KEY_NAME] !== undefined
                         );
-                        const sortedCategories = validCategories?.sort((a, b) => {
-                            const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`)).toLowerCase();
-                            const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`)).toLowerCase();
-                            return nameA.localeCompare(nameB);
+                        const sortedCategories = validCategories?.toSorted((a, b) => {
+                            const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`));
+                            const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`));
+                            return collator.compare(nameA, nameB);
                         });
                         getCategoriesIcons(sortedCategories);
                         setSearchCategories(sortedCategories);

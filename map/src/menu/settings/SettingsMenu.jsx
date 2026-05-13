@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import styles from './settings.module.css';
 import headerStyles from '../trackfavmenu.module.css';
-import AppContext from '../../context/AppContext';
+import AppContext, { collator } from '../../context/AppContext';
 import React, { useContext, useMemo, useRef, useState, useCallback } from 'react';
 import langList from '../../resources/translations/supportedLanguages.json';
 import enList from '../../resources/translations/en/translation.json';
@@ -71,7 +71,6 @@ export default function SettingsMenu() {
     }
 
     const languageList = useMemo(() => {
-        const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
         return langList
             .map((lang) => ({ lang, transLang: getTransLanguage(lang) }))
             .filter(({ transLang }) => Boolean(transLang))

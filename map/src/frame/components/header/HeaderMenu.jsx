@@ -22,6 +22,7 @@ import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 import { handleLanguageChange } from '../../../i18n';
+import { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 
 const pages = ({ t }) => [
@@ -109,7 +110,6 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     }, []);
 
     const languageItems = useMemo(() => {
-        const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
         return [...availableLanguages]
             .sort((a, b) => collator.compare(getTransLanguage(a), getTransLanguage(b)))
             .map((lng) => (
