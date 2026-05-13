@@ -409,7 +409,11 @@ export async function countMapItemsByOpacity() {
         const map = window.__leafletMap;
         const r = { full: 0, dim: 0, hidden: 0, total: 0 };
         if (!map) return r;
-        map.eachLayer(layer => {
+        function walk(layer) {
+            if (typeof layer.eachLayer === 'function') {
+                layer.eachLayer(walk);
+                return;
+            }
             const isMarker = typeof layer.getLatLng === 'function';
             const isVector = typeof layer.getLatLngs === 'function' && typeof layer.setStyle === 'function';
             if (!isMarker && !isVector) return;
@@ -418,7 +422,8 @@ export async function countMapItemsByOpacity() {
             else if (op < 1) r.dim++;
             else r.full++;
             r.total++;
-        });
+        }
+        map.eachLayer(walk);
         return r;
     `);
 }
