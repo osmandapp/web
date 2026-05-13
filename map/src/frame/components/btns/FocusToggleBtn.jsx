@@ -28,8 +28,8 @@ export default function FocusToggleBtn({ id = 'se-focus-toggle' }) {
 
     return (
         <Tooltip title={tip} arrow placement="bottom">
-            <Paper id={id} className={mapStyles.button} sx={primarySx}>
-                <IconButton onClick={toggleFocusMode}>
+            <Paper className={mapStyles.button} sx={primarySx}>
+                <IconButton id={id} aria-label={tip} onClick={toggleFocusMode}>
                     <SvgIcon component={Icon} inheritViewBox />
                 </IconButton>
             </Paper>
