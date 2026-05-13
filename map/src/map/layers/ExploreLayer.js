@@ -35,10 +35,9 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
-import { BBOX_COORDS_DECIMALS, MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID, MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 
-export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
 
 export function updateMarkerZIndex(layerGroup, zIndex) {
@@ -364,6 +363,7 @@ export default function ExploreLayer() {
         if (oldLayers) {
             oldLayers.clearLayers();
         }
+        newLayers.options = { ...newLayers.options, id: EXPLORE_LAYER_ID };
         map.addLayer(newLayers);
         hideMarkersNearPin(map, ctx);
         return newLayers;

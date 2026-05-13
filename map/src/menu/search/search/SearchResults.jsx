@@ -12,14 +12,14 @@ import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
 import { iconPathMap } from '../../../map/util/MapManager';
-import { SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getDistance, getBearing } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
-import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
+import { POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 import useHashParams from '../../../util/hooks/useHashParams';
 import {
     CATEGORY_ICON,

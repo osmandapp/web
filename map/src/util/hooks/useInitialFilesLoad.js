@@ -314,6 +314,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, l
 
         promises.push(
             TracksManager.getTrackData(gpxfile).then(async (track) => {
+                if (!track) return;
                 track.name = file.name;
                 const infoFile = findInfoFile({ listFiles }, file.name);
                 track.info = infoFile?.details?.data;

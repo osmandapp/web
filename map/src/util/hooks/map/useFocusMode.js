@@ -1,6 +1,8 @@
 import { useCallback, useContext, useEffect } from 'react';
+import { useMap } from 'react-leaflet';
 import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
+import { EXPLORE_LAYER_ID, POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 
 export const FOCUS_DIM_OPACITY = 0.35;
 export const FOCUS_HIDDEN_OPACITY = 0;
@@ -49,6 +51,8 @@ export function getFocusModeTypes() {
     return Object.keys(getFocusModeHandlers());
 }
 
+const FOCUS_PASSIVE_LAYER_IDS = new Set([POI_LAYER_ID, SEARCH_LAYER_ID, EXPLORE_LAYER_ID]);
+
 export function resolveFocusOpacity({ type, id }, selectionFocus, focusModeOn) {
     if (!selectionFocus) return FOCUS_FULL_OPACITY;
     const isFocused = selectionFocus.type === type && String(selectionFocus.id) === String(id);
@@ -60,7 +64,15 @@ export function resolveFocusOpacity({ type, id }, selectionFocus, focusModeOn) {
 export function useFocusVisibility() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const map = useMap();
 
+    const passiveOpacity = !mtx.selectionFocus
+        ? FOCUS_FULL_OPACITY
+        : mtx.focusModeOn
+          ? FOCUS_HIDDEN_OPACITY
+          : FOCUS_DIM_OPACITY;
+
+    // Apply opacity to focused types (tracks/favorites) and passive layers (POI/Search/Explore).
     useEffect(() => {
         const handlers = getFocusModeHandlers();
         Object.entries(handlers).forEach(([type, getItems]) => {
@@ -70,7 +82,24 @@ export function useFocusVisibility() {
                 applyOpacityToLayer(layer, resolveFocusOpacity({ type, id }, mtx.selectionFocus, mtx.focusModeOn));
             });
         });
-    }, [mtx.selectionFocus, mtx.focusModeOn, ctx.favorites?.mapObjs, ctx.gpxFiles]);
+        map.eachLayer((layer) => {
+            if (!FOCUS_PASSIVE_LAYER_IDS.has(layer.options?.id)) return;
+            applyOpacityToLayer(layer, passiveOpacity);
+        });
+    }, [mtx.selectionFocus, passiveOpacity, ctx.favorites?.mapObjs, ctx.gpxFiles]);
+
+    // Apply passive opacity to layers added after focus state was established.
+    useEffect(() => {
+        function applyPassive() {
+            map.eachLayer((layer) => {
+                if (!FOCUS_PASSIVE_LAYER_IDS.has(layer.options?.id)) return;
+                applyOpacityToLayer(layer, passiveOpacity);
+            });
+        }
+        map.on('layeradd', applyPassive);
+
+        return () => map.off('layeradd', applyPassive);
+    }, [passiveOpacity]);
 }
 
 export function useFocusMode() {

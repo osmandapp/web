@@ -22,6 +22,7 @@ import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentD
 import { useNavigate } from 'react-router-dom';
 
 function clickHandler({ ctx, file, navigate, recentSaver }) {
+    ctx.setSelectedWpt(null);
     if (file.name === ctx.selectedCloudTrackObj?.name) return;
 
     file.analysis = TracksManager.prepareAnalysis(file.analysis);
@@ -29,9 +30,6 @@ function clickHandler({ ctx, file, navigate, recentSaver }) {
     recentSaver(TRACKS_KEY, file);
     ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
     ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-    if (ctx.selectedWpt) {
-        ctx.setSelectedWpt(null);
-    }
     navigate(
         {
             pathname: MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(file.name)),
@@ -309,6 +307,7 @@ const CloudTrackLayer = () => {
             if (file.url && !file.gpx && (file.showOnMap || file.zoomToTrack)) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, mtx, file, map, recentSaver, navigate });
+                if (!file.gpx) return;
                 if (file.name === ctxTrack.name) {
                     ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }

@@ -12,6 +12,10 @@ export const GLOBAL_GRAPH_HEIGHT_SIZE = 200;
 export const BBOX_COORDS_DECIMALS = 5;
 export const WEATHER_COORDS_DECIMALS = 5;
 
+export const POI_LAYER_ID = 'poi-layer';
+export const SEARCH_LAYER_ID = 'search-layer';
+export const EXPLORE_LAYER_ID = 'explore-layer';
+
 export const GPX = 'GPX';
 export const FAVOURITES = 'FAVOURITES';
 
