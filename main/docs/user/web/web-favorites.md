@@ -67,16 +67,59 @@ The Details view provides information associated with the selected place and dep
 
 ## Favorites Actions {#favorites-actions}
 
-### Add / Edit Favorite {#add--edit-favorite}
-
 [To add](../personal/favorites.md#manage-favorites) a new favorite point, right-click on the screen. 
 
 To edit an existing favorite, click the favorite point either directly on the map or select it from a favorites folder. This opens the Details panel, where the Edit action is available. Editing can also be started from the three-dot menu (⋮) next to the favorite in the Favorites list.
 
-The edit interface allows you to modify the main properties of the favorite, such as its name, icon, color, and description. The layout and available fields are consistent with the editing experience in the [OsmAnd mobile app](../personal/favorites.md#create), providing a familiar workflow across platforms.
+The Edit favorite panel allows changing the main properties of a favorite, including its name, address, description, folder, icon, color, and shape. The selected appearance is previewed directly in the editing panel.
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+### Edit Address {#edit-address}
 
+The **Address** field supports automatic address detection based on the selected map location. The field can appear in several states:
+
+- Searching... — displayed while the address is being automatically determined.
+- Empty field — displayed after clearing the address. In this state, the location button can be used to detect the address again automatically.
+- Filled field — displays either the automatically detected address or manually entered text.
+
+The address field also includes quick actions for clearing or restoring the detected address.
+
+### Edit Description {#edit-description}
+
+The **Description** section allows adding notes or additional information to the favorite. Selecting Add notes opens the description editor in a secondary panel. If a description has already been added, a short preview is displayed in the main panel and is limited to two lines of text. The description editor supports rich text formatting and automatically preserves changes when returning to the previous panel.
+
+### Edit Folder {#edit-folder}
+
+Favorites can be organized into folders for easier management and quick access. Selecting the **Folder** item opens a secondary panel where available folders can be selected. The previously used folder is selected automatically by default. Each folder also displays the number of favorite points stored inside it.
+
+New folders can be created directly from the folder selection panel. Selecting the Add folder button opens a dialog where you can enter the folder name and choose its location in the Favorites list.
+
+The dialog also includes an Advanced section, where default appearance settings for the folder can be configured. These settings include the default color, icon, and shape that will be automatically applied to favorite points added to this folder.
+
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
+
+### Edit Appearance {#edit-appearance}
+
+The **Appearance** section allows customizing how the favorite is displayed on the map. The following properties are available: icon, color, shape, and icon. 
+
+Selecting **Icon** opens a secondary panel with categorized icon groups.
+
+- Icons are grouped by categories.
+- Recently used icons are displayed first.
+- The currently selected icon is highlighted.
+- The preview uses the selected shape and color.
+
+Selecting **Color** opens the color palette panel.
+
+- The palette contains predefined and user-defined colors.
+- Custom colors can be added using the color picker.
+- Colors can be edited, duplicated, or removed through the context menu.
+- Newly added colors are saved in the user palette and remain available later.
+
+The **Shape** option defines the background form used for the favorite marker.  The following shapes are available: circle, square, and octagon.
+
+The appearance preview updates immediately when changing the icon, color, or shape.
+
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Other Actions {#other-actions}
 
