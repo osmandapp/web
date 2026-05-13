@@ -750,12 +750,18 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     if (!layer) {
         return null;
     }
+    const appearance = resolveWptAppearance(wpt, mapObj.pointsGroups);
     const marker = {
         name: wptName,
-        icon: getFavoriteMenuIconHtml({ wpt }),
+        icon: getFavoriteMenuIconHtml({
+            wpt,
+            icon: appearance.icon,
+            color: appearance.color,
+            background: appearance.background,
+        }),
         layer,
-        color: wpt.color,
-        background: wpt.background,
+        color: appearance.color,
+        background: appearance.background,
     };
     return { group, marker };
 }

@@ -116,53 +116,34 @@ function searchFavoriteFeatures({ favorites, query, collator }) {
         return [];
     }
 
-    const features = [];
+    return favorites.groups
+        .filter((group) => group?.id)
+        .flatMap((group) => {
+            const wpts = favorites.mapObjs[group.id]?.wpts;
+            if (!wpts?.length) return [];
 
-    for (const group of favorites.groups) {
-        if (!group?.id) {
-            continue;
-        }
-        const mapObj = favorites.mapObjs[group.id];
-        const wpts = mapObj?.wpts;
-        if (!wpts?.length) {
-            continue;
-        }
-
-        for (const wpt of wpts) {
-            if (!wpt?.name) {
-                continue;
-            }
-            const textHit = searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator);
-            if (!textHit) {
-                continue;
-            }
-
-            if (wpt.lat == null || wpt.lon == null) {
-                continue;
-            }
-
-            features.push({
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: [wpt.lon, wpt.lat],
-                },
-                properties: {
-                    [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
-                    [CATEGORY_NAME]: wpt.name,
-                    [POI_NAME]: wpt.name,
-                    [FAVORITE_HIT_GROUP_ID]: group.id,
-                    [ICON_KEY_NAME]: wpt.icon,
-                    [COLOR_NAME_EXTENSION]: wpt.color,
-                    [BACKGROUND_TYPE_EXTENSION]: wpt.background,
-                    [FINAL_POI_ICON_NAME]: wpt.icon,
-                    ...(wpt.address ? { address: wpt.address } : {}),
-                },
-            });
-        }
-    }
-
-    return features;
+            return wpts
+                .filter((wpt) => wpt?.name && wpt.lat != null && wpt.lon != null && 
+                (searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator)))
+                .map((wpt) => ({
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [wpt.lon, wpt.lat],
+                    },
+                    properties: {
+                        [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
+                        [CATEGORY_NAME]: wpt.category,
+                        [POI_NAME]: wpt.name,
+                        [FAVORITE_HIT_GROUP_ID]: group.id,
+                        [ICON_KEY_NAME]: wpt.icon,
+                        [COLOR_NAME_EXTENSION]: wpt.color,
+                        [BACKGROUND_TYPE_EXTENSION]: wpt.background,
+                        [FINAL_POI_ICON_NAME]: wpt.icon,
+                        ...(wpt.address ? { address: wpt.address } : {}),
+                    },
+                }));
+        });
 }
 
 function searchCloudTrackFeatures({ listFiles, query, collator }) {
@@ -170,8 +151,7 @@ function searchCloudTrackFeatures({ listFiles, query, collator }) {
     if (!q || !listFiles?.uniqueFiles) return [];
 
     return getGpxFiles(listFiles)
-        .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME))
-        .filter((f) => searchIncludes(prepareName(f.name, true), q, collator))
+        .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME) && searchIncludes(prepareName(f.name, true), q, collator))
         .map((f) => ({
             type: 'Feature',
             geometry: { type: 'Point', coordinates: [0, 0] },
@@ -390,7 +370,9 @@ export default function SearchLayer() {
         const mainMarkersLayers = await Promise.all(
             mainMarkers.map(async (obj) => {
                 const objType = obj.properties[CATEGORY_TYPE];
-                let title = obj.properties[CATEGORY_NAME];
+                let title = objType === searchTypeMap.FAVORITE
+                        ? obj.properties[POI_NAME] ?? obj.properties[CATEGORY_NAME]
+                        : obj.properties[CATEGORY_NAME];
                 let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
                 if (objType === searchTypeMap.POI) {

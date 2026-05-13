@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
@@ -196,8 +196,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             return `se-search-result-item-${safeCategoryTypeKey(qType)}-${index}`;
         }
         const categoryType = item.properties[CATEGORY_TYPE];
-        if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK 
-            || categoryType === searchTypeMap.FAVORITE) {
+        if (categoryType === searchTypeMap.FAVORITE) {
+            return `se-search-result-${item.properties[POI_NAME] ?? item.properties[CATEGORY_NAME]}`;
+        }
+        if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK) {
             return `se-search-result-${item.properties[CATEGORY_NAME]}`;
         }
         return 'se-search-result-item';
@@ -304,18 +306,34 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     const isFavoriteHit = item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE;
-    const favoriteListMarker = isFavoriteHit
-        ? {
-              name,
-              icon: getFavoriteMenuIconHtml({
-                  icon: item.properties[ICON_KEY_NAME],
-                  color: item.properties[COLOR_NAME_EXTENSION],
-                  background: item.properties[BACKGROUND_TYPE_EXTENSION],
-              }),
-              layer: { options: { address: item.properties.address ?? '' } },
-              locDist: distance,
-          }
-        : null;
+
+    const favMarkerIcon = useMemo(() => {
+        if (item.properties[CATEGORY_TYPE] !== searchTypeMap.FAVORITE) {
+            return null;
+        }
+        return getFavoriteMenuIconHtml({
+            icon: item.properties[ICON_KEY_NAME],
+            color: item.properties[COLOR_NAME_EXTENSION],
+            background: item.properties[BACKGROUND_TYPE_EXTENSION],
+        });
+    }, [
+        item.properties[CATEGORY_TYPE],
+        item.properties[ICON_KEY_NAME],
+        item.properties[COLOR_NAME_EXTENSION],
+        item.properties[BACKGROUND_TYPE_EXTENSION],
+    ]);
+
+    const favoriteListMarker = useMemo(() => {
+        if (favMarkerIcon == null) {
+            return null;
+        }
+        return {
+            name,
+            icon: favMarkerIcon,
+            layer: { options: { address: item.properties.address ?? '' } },
+            locDist: distance,
+        };
+    }, [favMarkerIcon, name, distance, item.properties.address]);
 
     return (
         <div ref={ref}>
