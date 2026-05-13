@@ -1,5 +1,6 @@
 import FavoritesManager, { normalizeFavoritePointsGroupName } from '../../../manager/FavoritesManager';
 import { hexToRgba } from '../../../util/ColorUtil';
+import { collator } from '../../../context/AppContext';
 
 export function buildGroupTree(groups, t) {
     const sorted = [...groups]
@@ -7,7 +8,7 @@ export function buildGroupTree(groups, t) {
         .sort((a, b) => {
             if (a.name === FavoritesManager.DEFAULT_GROUP_NAME) return -1;
             if (b.name === FavoritesManager.DEFAULT_GROUP_NAME) return 1;
-            return a.name.localeCompare(b.name);
+            return collator.compare(a.name, b.name);
         });
 
     const folderMap = {};
@@ -57,7 +58,7 @@ export function buildGroupTree(groups, t) {
     const allNames = Object.keys(folderMap).sort((a, b) => {
         if (a === FavoritesManager.DEFAULT_GROUP_NAME) return -1;
         if (b === FavoritesManager.DEFAULT_GROUP_NAME) return 1;
-        return a.localeCompare(b);
+        return collator.compare(a, b);
     });
 
     for (const name of allNames) {

@@ -24,6 +24,10 @@ import {
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
 import { useInitialFilesLoad, loadSmartFolders, applyRefreshedInfoFilesToGpx } from '../util/hooks/useInitialFilesLoad';
+import supportedLanguages from '../resources/translations/supportedLanguages.json';
+import { normalizeLang } from '../util/lang';
+
+export const collator = new Intl.Collator(supportedLanguages.map(normalizeLang), { numeric: true });
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud

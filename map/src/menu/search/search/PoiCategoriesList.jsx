@@ -13,7 +13,7 @@ import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProv
 import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
-import AppContext from '../../../context/AppContext';
+import AppContext, { collator } from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
@@ -24,9 +24,9 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
     const { navigateToSearchMenu, navigateToSearchResults } = useSearchNav();
 
     const sortedCategories = categories?.sort((a, b) => {
-        const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`)).toLowerCase();
-        const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`)).toLowerCase();
-        return nameA.localeCompare(nameB);
+        const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`));
+        const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`));
+        return collator.compare(nameA, nameB);
     });
 
     return (
