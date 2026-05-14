@@ -1,6 +1,6 @@
 import { apiGet } from '../../util/HttpApi';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, searchCollator } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -275,16 +275,15 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                const collator = ctx.searchTextCollator;
                 const cloudFeatures = searchCloudTrackFeatures({
                     listFiles: ctx.listFiles,
                     query: searchData.query,
-                    collator,
+                    collator: searchCollator,
                 });
                 const favoriteFeatures = searchFavoriteFeatures({
                     favorites: ctx.favorites,
                     query: searchData.query,
-                    collator,
+                    collator: searchCollator,
                 });
                 const features = [...cloudFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 ctx.setSearchResult({ ...data, features });

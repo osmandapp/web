@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import LoginContext from '../context/LoginContext';
 import { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
@@ -24,7 +24,13 @@ import {
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
 import { useInitialFilesLoad, loadSmartFolders, applyRefreshedInfoFilesToGpx } from '../util/hooks/useInitialFilesLoad';
-import { useTranslation } from 'react-i18next';
+import supportedLanguages from '../resources/translations/supportedLanguages.json';
+import { normalizeLang } from '../util/lang';
+
+export const searchCollator = new Intl.Collator(supportedLanguages.map(normalizeLang), {
+    usage: 'search',
+    sensitivity: 'base',
+});
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -115,7 +121,6 @@ const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
     const { loginUser } = useContext(LoginContext);
-    const { i18n } = useTranslation();
 
     seleniumUpdateActivity();
 
@@ -537,15 +542,6 @@ export const AppContextProvider = (props) => {
 
     const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
 
-    const searchTextCollator = useMemo(
-        () =>
-            new Intl.Collator(i18n.language || undefined, {
-                usage: 'search',
-                sensitivity: 'base',
-            }),
-        [i18n.language]
-    );
-
     return (
         <AppContext.Provider
             value={{
@@ -590,7 +586,6 @@ export const AppContextProvider = (props) => {
                 setRouteVisibleProfiles,
                 searchQuery,
                 setSearchQuery,
-                searchTextCollator,
                 forceSearch,
                 setForceSearch,
                 favorites,
