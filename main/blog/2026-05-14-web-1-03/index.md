@@ -1,9 +1,10 @@
 ---
 slug: osmand-web-1.03-released
 title: OsmAnd Web 1.03
-authors: eugene
+authors: 
+ - tina 
+ - eugene
 tags: [release, web]
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,15 +20,18 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 OsmAnd Web 1.03 — Now Available!
 
-We're excited to announce the release of OsmAnd Web 1.03. This update introduces a redesigned navigation interface, improved management of personal data with Smart Folders and pinned Favorites, and enhanced track customization with adjustable color and width. The release also improves POI information with opening hours displayed directly in the context menu, along with multiple usability improvements and bug fixes across the web map.
+We're excited to announce the release of [OsmAnd Web 1.03](https://osmand.net/map). This update introduces Garmin Connect integration for automatic activity sync, a redesigned navigation interface, improved management of personal data with Smart Folders and pinned Favorites, and enhanced track customization with adjustable color and width. It also improves POI information with opening hours displayed directly in the context menu, along with multiple usability improvements and bug fixes across the web map.
 
 Enjoy a smoother and more intuitive OsmAnd Web experience.
+
+![Overview](./img/overview.png)
 
 
 <!--truncate-->
 
 ## What's new
 
+- Added [Garmin Connect integration](#garmin-connect-integration) for automatic activity sync;
 - Added [Smart folders support](#smart-folders-support) for organizing tracks;
 - [Public transport stops](#public-transport-stops) are now displayed on the map to help locate nearby transit options;
 - Improved [POI context menu](#poi-context-menu-improvements) with richer information and a clearer layout;
@@ -38,8 +42,18 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 - [Redesigned Favorites](#favorites-and-waypoint-editing) and waypoint editing interface with improved appearance customization and folder management;
 - Improved [selected object](#selected-object) highlighting on the map with a distinct pin marker and smarter map behavior;
 - Improved [Wikimedia metadata handling](#wikimedia-metadata), including better display of author, license, and description for images;
-- Added [Garmin Connect integration](#garmin-connect-integration) for automatic activity sync;
 - [Bug fixes](#bug-fixes).
+
+
+## Garmin Connect Integration {#garmin-connect-integration}
+
+You can now connect your [Garmin Connect](https://osmand.net/docs/user/web/web-cloud#connected-apps) account in the Web Planner and automatically sync your activities with OsmAnd.
+
+Once connected, activities are imported as tracks and stored in a dedicated Garmin Connect folder in the Tracks section. New activities are added automatically after they are recorded in your Garmin account. Imported activities are converted into tracks, and their types are preserved when possible. You can also sync recent activity history during the initial connection.
+
+Read more about it in [our blog article](../2026-05-13-garmin/index.mdx).
+
+![Garmin Connect](@site/static/img/web/garmin_connect_notes_new.png)
 
 
 ## Smart Folders Support {#smart-folders-support}
@@ -114,14 +128,6 @@ When an [object on the map](https://osmand.net/docs/user/web/web-map#selected-ob
 ![Selected Object](@site/static/img/web/selected_object_notes.png)
 
 
-## Garmin Connect Integration {#garmin-connect-integration}
-
-You can now connect your [Garmin Connect](https://osmand.net/docs/user/web/web-cloud#connected-apps) account in the Web Planner and automatically sync your activities with OsmAnd.
-
-Once connected, activities are imported as tracks and stored in a dedicated Garmin Connect folder in the Tracks section. New activities are added automatically after they are recorded in your Garmin account. Imported activities are converted into tracks, and their types are preserved when possible. You can also sync recent activity history during the initial connection.
-
-![Garmin Connect](@site/static/img/web/garmin_connect_notes_new.png)
-
 ## Bug fixes {#bug-fixes} 
 
 - Fixed an issue where [the map jumped away from the selected track](https://github.com/osmandapp/web/issues/1444).
@@ -146,7 +152,3 @@ ______________________
 - **Follow**: <LinksSocial/>  
 
 - **Join**: <LinksTelegram/>  
-
-- **Get**: 
-
-&nbsp;<AppleStore/>
