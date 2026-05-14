@@ -35,7 +35,7 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 - Added the ability to [export GPX tracks as simplified files](#export-gpx-as-simplified-track) for easier sharing and smaller file size;
 - [Opening hours](#opening-hours) are now displayed directly in the POI context menu when available;
 - Added support for [pinned favorite folders](#pinned-favorites-folders) for quicker access to frequently used collections;
-- [Redesigned Favorites](#favorites-improvements) editing interface with improved appearance customization and folder management;
+- [Redesigned Favorites](#favorites-and-waypoint-editing) and waypoint editing interface with improved appearance customization and folder management;
 - Improved [selected object](#selected-object) highlighting on the map with a distinct pin marker and smarter map behavior;
 - Improved [Wikimedia metadata handling](#wikimedia-metadata), including better display of author, license, and description for images;
 - Added [Garmin Connect integration](#garmin-connect-integration) for automatic activity sync;
@@ -98,11 +98,11 @@ Favorite folders can now be pinned so that frequently used folders appear at the
 ![Favorite Folders](@site/static/img/web/pin_folder.png)
 
 
-## Favorites Improvements {#favorites-improvements}
+## Favorites and Waypoint Editing {#favorites-and-waypoint-editing}
 
-The [Favorites editing workflow](https://osmand.net/docs/user/web/web-favorites#favorites-actions) has been redesigned with a new unified Edit favorite panel. Favorites can now be edited more conveniently, including name, address, description, folder, icon, color, and shape settings.
+The [Favorites and waypoint editing workflow](https://osmand.net/docs/user/web/web-favorites#favorites-actions) has been redesigned with a new unified Edit panel. Favorites and track waypoints can now be edited more conveniently, including name, address, description, folder, icon, color, and shape settings.
 
-The updated interface also adds improved appearance preview, categorized icon selection, custom color palettes, dedicated description editing, and easier folder management with support for creating new folders directly from the editor.
+The updated interface also adds improved appearance preview both in the editor and on the map, categorized icon selection, custom color palettes, dedicated description editing, and easier folder management with support for creating new folders directly from the editor.
 
 ![Favorites Improvements](@site/static/img/web/edit_folder.png)
 

@@ -137,9 +137,11 @@ The Track panel shows the list of route points used to build the track. Use it t
 
 The Points panel is used to view and manage waypoints for the selected track. Waypoints can be added from the map context menu — right-click on the map and choose the option to **Add awaypoint**, then fill in the waypoint details (such as name, icon, and color) and save it.
 
+Waypoint editing uses the same interface as [Favorites editing](../web/web-favorites.md#edit-favorites). You can modify waypoint properties such as name, address, description, icon, color, and shape using the unified Edit panel. The selected appearance is previewed both in the editing panel and directly on the map.
+
 In the Waypoints list, you can control whether waypoints are shown on the map and remove individual waypoints when needed. To remove all waypoints from the track at once, use *Clear all waypoints*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## Related Articles {#related-articles}

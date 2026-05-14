@@ -71,9 +71,9 @@ The Details view provides information associated with the selected place and dep
 
 To edit an existing favorite, click the favorite point either directly on the map or select it from a favorites folder. This opens the Details panel, where the Edit action is available. Editing can also be started from the three-dot menu (⋮) next to the favorite in the Favorites list.
 
-The Edit favorite panel allows changing the main properties of a favorite, including its name, address, description, folder, icon, color, and shape. The selected appearance is previewed directly in the editing panel.
+The Edit favorite panel allows changing the main properties of a favorite, including its name, address, description, folder, icon, color, and shape. The selected appearance is previewed both in the editing panel and directly on the map.
 
-### Edit Address {#edit-address}
+### Edit Favorites {#edit-favorites}
 
 The **Address** field supports automatic address detection based on the selected map location. The field can appear in several states:
 
@@ -83,11 +83,7 @@ The **Address** field supports automatic address detection based on the selected
 
 The address field also includes quick actions for clearing or restoring the detected address.
 
-### Edit Description {#edit-description}
-
 The **Description** section allows adding notes or additional information to the favorite. Selecting Add notes opens the description editor in a secondary panel. If a description has already been added, a short preview is displayed in the main panel and is limited to two lines of text. The description editor supports rich text formatting and automatically preserves changes when returning to the previous panel.
-
-### Edit Folder {#edit-folder}
 
 Favorites can be organized into folders for easier management and quick access. Selecting the **Folder** item opens a secondary panel where available folders can be selected. The previously used folder is selected automatically by default. Each folder also displays the number of favorite points stored inside it.
 
@@ -97,7 +93,7 @@ The dialog also includes an Advanced section, where default appearance settings 
 
 ![Web Edit Folder](@site/static/img/web/edit_folder.png)
 
-### Edit Appearance {#edit-appearance}
+### Appearance {#appearance}
 
 The **Appearance** section allows customizing how the favorite is displayed on the map. The following properties are available: icon, color, shape, and icon. 
 
@@ -117,7 +113,7 @@ Selecting **Color** opens the color palette panel.
 
 The **Shape** option defines the background form used for the favorite marker.  The following shapes are available: circle, square, and octagon.
 
-The appearance preview updates immediately when changing the icon, color, or shape.
+The appearance preview updates immediately both in the editing panel and on the map when changing the icon, color, or shape.
 
 ![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
