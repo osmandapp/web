@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useTranslation } from 'react-i18next';
 import FavoritesManager from '../../../../manager/FavoritesManager';
-import SelectItemWithoutOptions from '../../../../frame/components/items/SelectItemWithoutOptions';
+import ChevronItem from '../../../../frame/components/items/ChevronItem';
 import FolderSelectionPanel from './FolderSelectionPanel';
 
 export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, defaultGroup, isTrackWpt }) {
@@ -14,12 +13,10 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, default
 
     return (
         <>
-            <SelectItemWithoutOptions
+            <ChevronItem
                 id="se-fav-group-selector"
                 title={t('folder')}
                 value={displayName}
-                boldTitle={false}
-                endIcon={<ChevronRightIcon sx={{ color: 'var(--text-secondary)' }} />}
                 onClick={() => setPanelOpen((o) => !o)}
             />
             {panelOpen && (

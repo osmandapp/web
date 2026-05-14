@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as SyncIcon } from '../../assets/icons/ic_action_update.svg';
 import { ReactComponent as LogoutIcon } from '../../assets/icons/ic_action_logout.svg';
 import { ReactComponent as ExternalLinkIcon } from '../../assets/icons/ic_action_external_link.svg';
-import { ReactComponent as ChevronIcon } from '../../assets/icons/ic_action_arrow_up.svg';
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import ChevronItem from '../../frame/components/items/ChevronItem';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { MAIN_URL_WITH_SLASH, TRACKS_URL } from '../../manager/GlobalManager';
@@ -19,7 +18,6 @@ import AppContext from '../../context/AppContext';
 import { GARMIN_FOLDER_NAME } from './garminApi';
 import { GARMIN_ACTIVITY_GROUPS } from './GarminActivitiesToSync';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
-import styles from '../../frame/components/items/items.module.css';
 
 export default function GarminConnectedView({
     syncTimeMs,
@@ -76,18 +74,18 @@ export default function GarminConnectedView({
     return (
         <>
             <SubTitleMenu text={t('web:my_data')} />
-            <DefaultItem
+            <ChevronItem
                 icon={<FolderIcon />}
-                name={t('web:garmin_activities')}
+                title={t('web:garmin_activities')}
+                value={String(activitiesCount)}
                 onClick={handleActivitiesClick}
-                rightSlot={<RightWithChevron text={String(activitiesCount)} />}
             />
             <DividerWithMargin margin={'64px'} />
-            <DefaultItem
+            <ChevronItem
                 icon={<SyncIcon />}
-                name={t('web:garmin_last_sync')}
+                title={t('web:garmin_last_sync')}
+                value={syncTimeMs ? formatTimeAgo(syncTimeMs, t) : '—'}
                 onClick={handleLastActivityClick}
-                rightSlot={<RightWithChevron text={syncTimeMs ? formatTimeAgo(syncTimeMs, t) : '—'} />}
             />
             <DividerWithMargin margin={'64px'} />
             <DefaultItem
@@ -98,11 +96,11 @@ export default function GarminConnectedView({
             />
             <ThickDivider mt={'0px'} mb={'0px'} />
             <SubTitleMenu text={t('shared_string_settings')} />
-            <DefaultItem
+            <ChevronItem
                 icon={<FilterIcon />}
-                name={t('web:garmin_activities_to_sync')}
+                title={t('web:garmin_activities_to_sync')}
+                value={activityTypesLabel}
                 onClick={onActivitiesToSyncClick}
-                rightSlot={<RightWithChevron text={activityTypesLabel} />}
             />
             <ThickDivider mt={'0px'} mb={'0px'} />
             <DefaultItem
@@ -115,15 +113,6 @@ export default function GarminConnectedView({
             />
             <ThickDivider mt={'0px'} mb={'0px'} />
         </>
-    );
-}
-
-function RightWithChevron({ text }) {
-    return (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Typography className={styles.addInfo}>{text}</Typography>
-            <ChevronIcon className={styles.sectionRowChevron} />
-        </Box>
     );
 }
 
