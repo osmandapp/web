@@ -39,7 +39,11 @@ import { useNavigate } from 'react-router-dom';
 import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import { CustomIcon, FavInfo, addFavoriteToMap } from '../../favorite/FavoriteItem';
-import { getFavoriteMenuIconHtml, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import {
+    createFavoritePoiIcon,
+    getFavoriteMenuIconHtml,
+    resolveFavoriteMarkerForSearch,
+} from '../../../manager/FavoritesManager';
 import favMenuStyles from '../../trackfavmenu.module.css';
 
 export function getFirstSubstring(inputString) {
@@ -170,7 +174,20 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     function setSelectedPoint({ show }) {
-        ctx.setSelectedWptId({ id: itemId, show, type: typeItem, obj: item, prev: ctx.selectedWptId });
+        // For favorite hits, pass markerOptions so the hover fallback pin (when the marker
+        // is hidden by clustering) uses the favorite's color/background/icon instead of defaults.
+        let markerOptions;
+        if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+            const color = item.properties[COLOR_NAME_EXTENSION];
+            const background = item.properties[BACKGROUND_TYPE_EXTENSION];
+            const iconHtml = createFavoritePoiIcon({
+                icon: item.properties[ICON_KEY_NAME],
+                color,
+                background,
+            })?.options?.html;
+            markerOptions = { color, background, iconHtml };
+        }
+        ctx.setSelectedWptId({ id: itemId, show, type: typeItem, obj: item, markerOptions, prev: ctx.selectedWptId });
     }
 
     useEffect(() => {
