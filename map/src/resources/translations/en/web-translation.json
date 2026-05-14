@@ -397,5 +397,7 @@
     "fav_folder_location": "Location",
     "fav_folder_name": "Folder name",
     "folder_already_exists": "A folder with this name already exists.",
-    "shared_string_advanced": "Advanced"
+    "shared_string_advanced": "Advanced",
+    "focus_on": "Focus: hide other items",
+    "focus_off": "Focus: dim other items"
 }

@@ -1,5 +1,6 @@
 import { Box, Divider, FormControl, FormControlLabel, Paper, Radio, RadioGroup } from '@mui/material';
 import { getAnalysisData, getGpxTime, filterSmartFolders } from '../../manager/track/TracksManager';
+import { collator } from '../../context/AppContext';
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
@@ -20,13 +21,12 @@ import { getSelectedSort } from '../components/buttons/SortFilesButton';
 import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
-const az = (a, b) => (a > b) - (a < b);
+const az = (a, b) => collator.compare(a, b);
 
 function byAlpha(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = a.name.toLowerCase();
-        const B = b.name.toLowerCase();
-        return reverse ? (B > A) - (B < A) : (A > B) - (A < B);
+        const result = collator.compare(a.name, b.name);
+        return reverse ? -result : result;
     });
 }
 

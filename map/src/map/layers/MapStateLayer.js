@@ -3,19 +3,22 @@ import { useLocation } from 'react-router-dom';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
+import { applyZoomToFit, getZoomToFitBounds, restoreMapView } from '../util/MapManager';
+import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
     const params = calcVisibleBboxParamsPx(map, ctx);
-    return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : (ctx.visibleBboxInfo ?? null);
+    return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : null;
 }
 
-export function getMapCenter(ctx, hash) {
-    return ctx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
+export function getMapCenter(mtx, hash) {
+    return mtx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
 }
 
 const CENTRE_ICON_SIZE = 24;
@@ -65,6 +68,7 @@ export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
 
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const map = useMap();
     const { pathname } = useLocation();
 
@@ -74,14 +78,15 @@ export default function MapStateLayer() {
     const [centerPositionPx, setCenterPositionPx] = useState(null);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+    useFocusVisibility();
 
     useEffect(() => {
         const update = () => {
             const { topLeft, bottomRight, centerPx } = calcVisibleBboxParamsPx(map, ctx) ?? {};
 
             const visible = calcVisibleBbox(topLeft, bottomRight);
-            if (visible && !isInitialViewWithEmptyContext(visible, map, ctx.visibleBboxInfo)) {
-                ctx.setVisibleBboxInfo(visible);
+            if (visible && !isInitialViewWithEmptyContext(visible, map, mtx.visibleBboxInfo)) {
+                mtx.setVisibleBboxInfo(visible);
             }
             setCenterPositionPx(centerPx);
         };
@@ -117,6 +122,25 @@ export default function MapStateLayer() {
         };
     }, []);
 
+    // Central zoom-to-fit handler driven by useZoomToFit.
+    useEffect(() => {
+        if (!mtx.zoomToFitRequest) return;
+        const bounds = getZoomToFitBounds({ ...mtx.zoomToFitRequest, ctx });
+        if (bounds) {
+            applyZoomToFit({ map, mtx, bounds });
+            mtx.setZoomToFitRequest(null);
+        }
+    }, [mtx.zoomToFitRequest, ctx.favorites?.mapObjs, ctx.gpxFiles]);
+
+    // Restore the view captured by the latest zoomToFit() call (back-navigation).
+    useEffect(() => {
+        if (!mtx.restoreMapViewRequest) return;
+
+        restoreMapView({ map, mtx });
+
+        mtx.setRestoreMapViewRequest(false);
+    }, [mtx.restoreMapViewRequest]);
+
     useEffect(() => {
         const sync = () => {
             if (globalMapSpinLoading && map._spinner?.el) {
@@ -132,7 +156,7 @@ export default function MapStateLayer() {
         return () => map.off('resize', sync);
     }, [globalMapSpinLoading, spinLayoutLikeOpenInfoBlock, ctx.infoBlockWidth]);
 
-    if (!pathname.includes(SEARCH_RESULT_URL) || !ctx.visibleBboxInfo?.center || !centerPositionPx) {
+    if (!pathname.includes(SEARCH_RESULT_URL) || !mtx.visibleBboxInfo?.center || !centerPositionPx) {
         return null;
     }
 

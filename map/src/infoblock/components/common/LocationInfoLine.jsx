@@ -3,6 +3,7 @@ import { Box, CircularProgress, ListItemText, Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
+import MapContext from '../../../context/MapContext';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { getBearing, getDistance } from '../../../util/Utils';
 import DistanceInfo from './DistanceInfo';
@@ -20,6 +21,7 @@ const EMPTY_DISTANCE_INFO = { distance: null, bearing: null };
 
 export default function LocationInfoLine({ wpt = null, track = null }) {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const location = useLocation();
 
     const [trackAddress, setTrackAddress] = useState(null);
@@ -41,7 +43,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         if (!coords) {
             return EMPTY_DISTANCE_INFO;
         }
-        const mapCenter = getMapCenter(ctx, location.hash);
+        const mapCenter = getMapCenter(mtx, location.hash);
         if (!mapCenter) {
             return EMPTY_DISTANCE_INFO;
         }

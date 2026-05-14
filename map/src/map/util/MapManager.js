@@ -1,8 +1,55 @@
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 import styles from '../map.module.css';
+import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 
 export const TOOLTIP_MAX_LENGTH = 50;
+
+// Bounds for the {type, object} pair, or null if geometry isn't ready.
+export function getZoomToFitBounds({ type, object, ctx }) {
+    if (!type) return null;
+    if (!object) return null;
+    if (type === OBJECT_TYPE_FAVORITE) {
+        const markers = ctx?.favorites?.mapObjs?.[object.id]?.markers;
+        const bounds = markers?.getBounds();
+
+        return bounds?.isValid() ? bounds : null;
+    }
+    if (type === OBJECT_TYPE_CLOUD_TRACK) {
+        const bounds = object?.gpx?.getBounds();
+
+        return bounds?.isValid() ? bounds : null;
+    }
+
+    return null;
+}
+
+// fitBounds + save prev view on the first call of the chain (reset by restoreMapView),
+// so re-fires of the same selection don't overwrite the original view.
+export function applyZoomToFit({ map, mtx, bounds }) {
+    if (!map) return false;
+    if (!bounds?.isValid()) return false;
+
+    const center = map.getCenter();
+    const captured = { center: { lat: center.lat, lng: center.lng }, zoom: map.getZoom() };
+    mtx.setMapViewBeforeZoomFit((prev) => prev ?? captured);
+    map.fitBounds(bounds, fitBoundsOptions(mtx));
+
+    return true;
+}
+
+// Restore the saved view (back-navigation) and clear it.
+export function restoreMapView({ map, mtx }) {
+    if (!map) return false;
+    const saved = mtx?.mapViewBeforeZoomFit;
+    if (!saved) return false;
+
+    map.setView([saved.center.lat, saved.center.lng], saved.zoom);
+    mtx.setMapViewBeforeZoomFit(null);
+
+    return true;
+}
 
 export function formatTrackName(name) {
     return name ? name.replaceAll('/', ' · ') : name;

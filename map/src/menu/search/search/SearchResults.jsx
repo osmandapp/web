@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
+import MapContext from '../../../context/MapContext';
 import CustomInput from './CustomInput';
 import PoiManager, {
     formattingPoiType,
@@ -12,14 +13,14 @@ import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
 import { iconPathMap } from '../../../map/util/MapManager';
-import { SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getDistance, getBearing } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
-import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
+import { POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 import useHashParams from '../../../util/hooks/useHashParams';
 import {
     CATEGORY_ICON,
@@ -76,6 +77,7 @@ export function searchByCategory(searchParams, ctx, t) {
 
 export default function SearchResults() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const { t } = useTranslation();
 
     const [result, setResult] = useState(null);
@@ -269,11 +271,11 @@ export default function SearchResults() {
                 isUser = true;
                 loc = currentLoc;
             } else {
-                loc = getMapCenter(ctx, hash);
+                loc = getMapCenter(mtx, hash);
             }
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
-            loc = getMapCenter(ctx, hash);
+            loc = getMapCenter(mtx, hash);
             setLocReady(true);
         }
         return { loc, isUser };

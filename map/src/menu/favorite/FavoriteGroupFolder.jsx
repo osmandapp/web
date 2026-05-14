@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
@@ -18,10 +19,13 @@ import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
 import { useLocation } from 'react-router-dom';
+import { useFocusMode } from '../../util/hooks/map/useFocusMode';
 
 export default function FavoriteGroupFolder({ folder, smartf = null, onClose = null }) {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const location = useLocation();
+    const { setSelectionFocus, clearSelectionFocus } = useFocusMode();
 
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
@@ -115,7 +119,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             }
         } else if (refMarkers.current?.length > 0) {
             const updatedMarkers = addLocDist({
-                location: getMapCenter(ctx, hash),
+                location: getMapCenter(mtx, hash),
                 markers: refMarkers.current,
             });
             setMarkers(updatedMarkers);
@@ -127,6 +131,14 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             setGroup({ ...folder });
         }
     }, [folder]);
+
+    useEffect(() => {
+        if (folder?.id != null) {
+            setSelectionFocus({ type: OBJECT_TYPE_FAVORITE, id: folder.id });
+        }
+
+        return () => clearSelectionFocus();
+    }, [folder?.id]);
 
     const favItems = useMemo(() => {
         if (markers?.length > 0) {

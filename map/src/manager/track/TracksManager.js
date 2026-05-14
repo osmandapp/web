@@ -59,11 +59,11 @@ const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation point
 export const FIT_BOUNDS_MAX_ZOOM = 17;
 export const DEFAULT_GROUP_NAME = '';
 
-export function fitBoundsOptions(ctx) {
+export function fitBoundsOptions(mtx) {
     return {
         maxZoom: FIT_BOUNDS_MAX_ZOOM,
-        paddingTopLeft: [ctx.fitBoundsPadding.left, ctx.fitBoundsPadding.top],
-        paddingBottomRight: [ctx.fitBoundsPadding.right, ctx.fitBoundsPadding.bottom],
+        paddingTopLeft: [mtx.fitBoundsPadding.left, mtx.fitBoundsPadding.top],
+        paddingBottomRight: [mtx.fitBoundsPadding.right, mtx.fitBoundsPadding.bottom],
     };
 }
 

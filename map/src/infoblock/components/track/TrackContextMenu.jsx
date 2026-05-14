@@ -1,10 +1,16 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Box, CircularProgress } from '@mui/material';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import TabPanels from '../tabs/TabPanels';
 import { ReactComponent as TracksIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import styles from './trackcontextmenu.module.css';
-import AppContext, { isCloudTrack, isLocalTrack, isRouteTrack, isShareTrack } from '../../../context/AppContext';
+import AppContext, {
+    isCloudTrack,
+    isLocalTrack,
+    isRouteTrack,
+    isShareTrack,
+    OBJECT_TYPE_CLOUD_TRACK,
+} from '../../../context/AppContext';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { getFileName } from '../../../manager/track/TracksManager';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
@@ -17,15 +23,25 @@ import RouteTrackActionsButtons from './RouteTrackActionsButtons';
 import LocalTrackActionsButtons from './LocalTrackActionsButtons';
 import ShareTrackActionsButtons from './ShareTrackActionsButtons';
 import LocationInfoLine from '../common/LocationInfoLine';
+import { useFocusMode } from '../../../util/hooks/map/useFocusMode';
 
 export default function TrackContextMenu({ track, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
+    const { setSelectionFocus, clearSelectionFocus } = useFocusMode();
 
     const anchorEl = useRef(null);
     const [openActions, setOpenActions] = useState(false);
     const { compact, scrollAreaHandlers } = useCompactOnScroll();
 
     const { toggleVisibility, checkedSwitch } = useTrackVisibility({ file: track });
+
+    useEffect(() => {
+        if (track?.name && isCloudTrack(ctx)) {
+            setSelectionFocus({ type: OBJECT_TYPE_CLOUD_TRACK, id: track.name });
+        }
+
+        return () => clearSelectionFocus();
+    }, [track?.name, ctx.currentObjectType]);
 
     const trackName = track ? getFileName(track) : null;
     const showActionsBtn = (isCloudTrack(ctx) || isLocalTrack(ctx)) && track?.name;

@@ -3,6 +3,7 @@ import { AppBar, Box, IconButton, Slider, Toolbar, Tooltip, Typography } from '@
 import styles from './configuremap.module.css';
 import gStyles from '../gstylesmenu.module.css';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
@@ -34,11 +35,12 @@ export function getCurrentColorScheme(t, ctx) {
 
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
-    const [value, setValue] = useState((ctx.heightmap?.opacity ?? 1) * 100);
+    const [value, setValue] = useState((mtx.heightmap?.opacity ?? 1) * 100);
 
     const OPACITY_HEIGHTMAP = 'opacity_heightmap';
 
@@ -52,44 +54,44 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
     }
 
     useEffect(() => {
-        if ((ctx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateOpacity())) {
+        if ((mtx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateOpacity())) {
             // save selected terrain to local storage
             let newConfigureMap = cloneDeep(ctx.configureMapState);
-            newConfigureMap.terrain = ctx.heightmap;
+            newConfigureMap.terrain = mtx.heightmap;
             localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
             ctx.setConfigureMapState(newConfigureMap);
             // set slider value
-            setValue(getOpacity(ctx.heightmap.key));
+            setValue(getOpacity(mtx.heightmap.key));
         }
 
         function sameHeightmap() {
-            return ctx.heightmap?.key === ctx.configureMapState.terrain?.key;
+            return mtx.heightmap?.key === ctx.configureMapState.terrain?.key;
         }
 
         function needUpdateOpacity() {
-            return ctx.heightmap?.opacity !== ctx.configureMapState.terrain?.opacity;
+            return mtx.heightmap?.opacity !== ctx.configureMapState.terrain?.opacity;
         }
-    }, [ctx.heightmap]);
+    }, [mtx.heightmap]);
 
     const localizedNone = { ...NO_HEIGHTMAP, name: t(NO_HEIGHTMAP.name), divider: true };
     const heightmapOptions = [localizedNone, ...getHeightmapLayers()];
 
     const handleSliderChange = (e, newValue) => {
-        ctx.setHeightmap({ ...ctx.heightmap, opacity: newValue / 100 });
-        saveOpacity(newValue, ctx.heightmap.key);
+        mtx.setHeightmap({ ...mtx.heightmap, opacity: newValue / 100 });
+        saveOpacity(newValue, mtx.heightmap.key);
         setValue(newValue);
     };
 
     const handleHeightmapSelect = (selectedKey) => {
         if (selectedKey === NO_HEIGHTMAP.key) {
-            ctx.setHeightmap(NO_HEIGHTMAP.key);
+            mtx.setHeightmap(NO_HEIGHTMAP.key);
             return;
         }
 
         const selectedHeightmap = heightmapOptions.find((layer) => layer.key === selectedKey);
         if (selectedHeightmap) {
             selectedHeightmap.opacity = getOpacity(selectedHeightmap.key) / 100;
-            ctx.setHeightmap(selectedHeightmap);
+            mtx.setHeightmap(selectedHeightmap);
         }
     };
 
@@ -128,7 +130,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                     variant="contained"
                                     type="button"
                                     className={headerStyles.appBarIcon}
-                                    onClick={() => ctx.setHeightmap(NO_HEIGHTMAP.key)}
+                                    onClick={() => mtx.setHeightmap(NO_HEIGHTMAP.key)}
                                 >
                                     <ResetIcon />
                                 </IconButton>
@@ -140,14 +142,14 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             <Box className={gStyles.scrollActiveBlock}>
                 <SelectItem
                     title={t('web:terrain_color_scheme')}
-                    value={ctx.heightmap?.key ?? NO_HEIGHTMAP.key}
+                    value={mtx.heightmap?.key ?? NO_HEIGHTMAP.key}
                     options={heightmapOptions}
-                    loading={ctx.processHeightmaps}
+                    loading={mtx.processHeightmaps}
                     getOptionLabel={(option) => option.name}
                     getOptionValue={(option) => option.key}
                     onSelect={handleHeightmapSelect}
                 />
-                {ctx.heightmap?.key ? (
+                {mtx.heightmap?.key ? (
                     <Box>
                         <ThickDivider />
                         <SubTitleMenu text={t('shared_string_appearance')} />

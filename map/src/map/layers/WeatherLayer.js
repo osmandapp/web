@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
 import { disableLayers } from '../../manager/WeatherManager';
 
@@ -23,6 +24,7 @@ function getWeatherTime(weatherDateObj) {
 const WeatherLayer = () => {
     const map = useMap();
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
 
     const [time, setTime] = useState(null);
 
@@ -49,8 +51,8 @@ const WeatherLayer = () => {
 
     useEffect(() => {
         if (map) {
-            map.on('zoomend', () => ctx.setMapBbox(map.getBounds()));
-            map.on('dragend', () => ctx.setMapBbox(map.getBounds()));
+            map.on('zoomend', () => mtx.setMapBbox(map.getBounds()));
+            map.on('dragend', () => mtx.setMapBbox(map.getBounds()));
         }
     }, [map]);
 

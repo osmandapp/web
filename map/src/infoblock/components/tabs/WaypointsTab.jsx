@@ -1,5 +1,6 @@
 import { useContext, useEffect, useMemo, useState, useRef } from 'react';
 import AppContext, { isLocalTrack } from '../../../context/AppContext';
+import { stripHtml } from '../../../frame/components/editor/htmlUtils';
 import {
     Box,
     Button,
@@ -183,7 +184,7 @@ const WaypointRow = ({ point, index, ctx }) => {
             );
         const lines = [];
         lines.push(line({ key: 'name', font: 1.0, str: point.wpt.name ?? 'unknown' }));
-        lines.push(line({ key: 'desc', font: 0.75, str: point.wpt.desc }));
+        lines.push(line({ key: 'desc', font: 0.75, str: stripHtml(point.wpt.desc) }));
         lines.push(line({ key: 'addr', font: 0.75, str: point.wpt.address }));
         return lines;
     }
@@ -204,7 +205,7 @@ const WaypointRow = ({ point, index, ctx }) => {
             );
         const lines = [];
         lines.push(line({ key: 'name', font: 1.0, str: point.wpt.name ?? 'unknown' }));
-        lines.push(line({ key: 'desc', font: 0.75, str: point.wpt.desc }));
+        lines.push(line({ key: 'desc', font: 0.75, str: stripHtml(point.wpt.desc) }));
         lines.push(line({ key: 'addr', font: 0.75, str: point.wpt.address }));
         return lines;
     }

@@ -29,7 +29,7 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
-import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
+import { POI_LAYER_ID } from '../../../manager/GlobalManager';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import { apiGet } from '../../../util/HttpApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';

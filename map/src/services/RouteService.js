@@ -5,6 +5,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
 } from '../context/AppContext';
+import MapContext from '../context/MapContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
 import { createUrlParams } from '../util/Utils';
 import {
@@ -17,10 +18,11 @@ import { useLocation } from 'react-router-dom';
 
 export function RouteService() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
 
     const location = useLocation();
 
-    const pinPoint = ctx.pinPoint;
+    const pinPoint = mtx.pinPoint;
 
     const routeObject = ctx.routeObject;
     const routeTrack = routeObject.getTrack();

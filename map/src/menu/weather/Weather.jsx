@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import {
     openWeatherForecastDetails,
     dayFormatter,
@@ -47,6 +48,7 @@ export function selectedForecastDetails(ctx) {
 
 export default function Weather() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
 
     const [, height] = useWindowSize();
 
@@ -78,6 +80,7 @@ export default function Weather() {
     useWeatherTypeChange({ ctx, currentLoc, setDayForecast, setWeekForecast });
     useWeatherLocationChange({
         ctx,
+        mtx,
         currentLoc,
         delayedHash,
         weatherLoc,

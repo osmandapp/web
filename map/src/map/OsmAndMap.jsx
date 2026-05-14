@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
+import MapContext from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
 import 'leaflet-hash';
@@ -68,6 +69,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const [width] = useWindowSize();
 
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const [hoverPoint, setHoverPoint] = useState(null);
 
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
@@ -96,11 +98,11 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
         if (tileLayer.current) {
             const leafletLayer = tileLayer.current.getLeafletLayer();
             if (leafletLayer) {
-                leafletLayer.setUrl(ctx.tileURL.url);
+                leafletLayer.setUrl(mtx.tileURL.url);
                 window.seIsTilesLoaded = false;
             }
         }
-    }, [ctx.tileURL]);
+    }, [mtx.tileURL]);
 
     const handlersRef = useRef({ handleLoad: null, leafletLayer: null });
 
