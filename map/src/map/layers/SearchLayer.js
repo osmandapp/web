@@ -40,7 +40,7 @@ import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRe
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
 import { getGpxFiles, prepareName, EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
-import { resolveFavoriteMarkerForSearch } from '../../manager/FavoritesManager';
+import { createFavoritePoiIcon, resolveFavoriteMarkerForSearch } from '../../manager/FavoritesManager';
 import { addFavoriteToMap } from '../../menu/favorite/FavoriteItem';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
@@ -98,9 +98,7 @@ function searchIncludes(text, query, collator) {
     const queryLength = [...queryStr].length;
 
     for (let i = 0; i <= textChars.length - queryLength; i++) {
-        const candidate = textChars
-            .slice(i, i + queryLength)
-            .join('');
+        const candidate = textChars.slice(i, i + queryLength).join('');
 
         if (collator.compare(candidate, queryStr) === 0) {
             return true;
@@ -123,8 +121,13 @@ function searchFavoriteFeatures({ favorites, query, collator }) {
             if (!wpts?.length) return [];
 
             return wpts
-                .filter((wpt) => wpt?.name && wpt.lat != null && wpt.lon != null && 
-                (searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator)))
+                .filter(
+                    (wpt) =>
+                        wpt?.name &&
+                        wpt.lat != null &&
+                        wpt.lon != null &&
+                        (searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator))
+                )
                 .map((wpt) => ({
                     type: 'Feature',
                     geometry: {
@@ -370,8 +373,9 @@ export default function SearchLayer() {
         const mainMarkersLayers = await Promise.all(
             mainMarkers.map(async (obj) => {
                 const objType = obj.properties[CATEGORY_TYPE];
-                let title = objType === searchTypeMap.FAVORITE
-                        ? obj.properties[POI_NAME] ?? obj.properties[CATEGORY_NAME]
+                let title =
+                    objType === searchTypeMap.FAVORITE
+                        ? (obj.properties[POI_NAME] ?? obj.properties[CATEGORY_NAME])
                         : obj.properties[CATEGORY_NAME];
                 let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
@@ -387,12 +391,10 @@ export default function SearchLayer() {
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else if (objType === searchTypeMap.FAVORITE) {
                     const p = obj.properties;
-                    icon = createPoiIcon({
-                        point: {},
+                    icon = createFavoritePoiIcon({
                         icon: p[ICON_KEY_NAME],
                         color: p[COLOR_NAME_EXTENSION],
                         background: p[BACKGROUND_TYPE_EXTENSION],
-                        hasBackgroundLight: false,
                     });
                     finalIconName = p[ICON_KEY_NAME] ?? null;
                 } else {

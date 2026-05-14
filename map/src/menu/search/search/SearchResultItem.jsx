@@ -197,7 +197,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         }
         const categoryType = item.properties[CATEGORY_TYPE];
         if (categoryType === searchTypeMap.FAVORITE) {
-            return `se-search-result-${item.properties[POI_NAME] ?? item.properties[CATEGORY_NAME]}`;
+            return `se-search-result-${name}`;
         }
         if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK) {
             return `se-search-result-${item.properties[CATEGORY_NAME]}`;
@@ -223,8 +223,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         }
         if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
             const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
-            const wptName = item.properties[POI_NAME] ?? item.properties[CATEGORY_NAME];
-            const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, wptName);
+            const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
             if (!resolved) {
                 return;
             }

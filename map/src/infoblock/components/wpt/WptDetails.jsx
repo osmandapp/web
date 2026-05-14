@@ -779,9 +779,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     const returnToSearch =
-        ctx.searchQuery &&
-        (ctx.searchQuery.query || ctx.searchQuery.type) &&
-        !!ctx.searchResult?.features?.length;
+        ctx.searchQuery && (ctx.searchQuery.query || ctx.searchQuery.type) && !!ctx.searchResult?.features?.length;
 
     const showBackButton = !wpt?.mapObj || returnToSearch;
 

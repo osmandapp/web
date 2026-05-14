@@ -543,7 +543,7 @@ export const AppContextProvider = (props) => {
                 usage: 'search',
                 sensitivity: 'base',
             }),
-        [i18n.language],
+        [i18n.language]
     );
 
     return (

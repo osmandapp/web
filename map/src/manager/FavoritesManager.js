@@ -693,16 +693,19 @@ export function getSize(group, t) {
         : 'empty';
 }
 
+export function createFavoritePoiIcon({ point = {}, icon, color, background }) {
+    return createPoiIcon({ point, icon, color, background, hasBackgroundLight: false });
+}
+
 export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } = {}) {
     const point = wpt ?? {};
-    const rawHtml = createPoiIcon({
+    const bg = background ?? wpt?.background;
+    const rawHtml = createFavoritePoiIcon({
         point,
         icon: icon ?? wpt?.icon,
         color: color ?? wpt?.color,
-        background: background ?? wpt?.background,
-        hasBackgroundLight: false,
+        background: bg,
     }).options.html;
-    const bg = background ?? wpt?.background;
 
     return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, bg);
 }
