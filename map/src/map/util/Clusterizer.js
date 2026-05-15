@@ -352,7 +352,7 @@ export function createSecondaryMarker(obj) {
                 iconName: obj.properties[POI_ICON_NAME],
             });
         } else if (searchTypeMap.FAVORITE === obj.properties[CATEGORY_TYPE]) {
-            finalIconName = props[ICON_KEY_NAME];
+            finalIconName = obj.properties[ICON_KEY_NAME];
         } else {
             finalIconName = getIconByType(obj.properties[CATEGORY_TYPE]);
         }

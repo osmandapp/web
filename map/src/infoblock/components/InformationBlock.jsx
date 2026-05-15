@@ -383,22 +383,14 @@ export default function InformationBlock({
         return openShareFileItem && isCloseFavItemDetails;
     }
 
-    const returnToSearch =
-        isCloudTrack(ctx) &&
-        ctx.searchQuery &&
-        (ctx.searchQuery.query || ctx.searchQuery.type) &&
-        !!ctx.searchResult?.features?.length;
-
     function handleCloseTrackContextMenu() {
         setShowInfoBlock(false);
-
-        const wasCloudTrack = isCloudTrack(ctx);
 
         if (!isTrackAnalyzer(ctx)) {
             closeTrackAnalyzer();
         }
-        if (ctx.selectedGpxFile?.mapObj) {
-            closeMapObjectMenu({ wasCloudTrack });
+        if (ctx.selectedGpxFile.mapObj) {
+            closeMapObjectMenu();
         } else if (isCloudTrack(ctx)) {
             closeCloudTrack({ fromSearch: isTrackFromSearch(ctx) });
         } else if (isLocalTrack(ctx)) {
@@ -411,24 +403,10 @@ export default function InformationBlock({
         clearSelectionFocus();
     }
 
-    function closeMapObjectMenu({ wasCloudTrack } = {}) {
-        const name = ctx.selectedGpxFile?.name;
-        if (name && !isEmpty(ctx.gpxFiles) && ctx.gpxFiles[name]) {
-            ctx.mutateGpxFiles((o) => (o[name].mapObj = null));
-        }
-
-        if (wasCloudTrack) {
-            setTrackName(null);
-        }
-
-        if (returnToSearch) {
-            navigate({
-                pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
-                search: buildSearchParamsFromQuery(ctx.searchQuery),
-                hash: location.hash,
-            });
-        } else {
-            ctx.setCloseMapObj(true);
+    function closeMapObjectMenu() {
+        ctx.setCloseMapObj(true);
+        if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
+            ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].mapObj = null));
         }
     }
 
@@ -526,7 +504,7 @@ export default function InformationBlock({
                                 track={ctx.selectedGpxFile}
                                 onClose={handleCloseTrackContextMenu}
                                 tabsObj={tabsObj}
-                                showBackButton={!ctx.selectedGpxFile?.mapObj || returnToSearch}
+                                showBackButton={!ctx.selectedGpxFile?.mapObj}
                             />
                         )}
                     </>

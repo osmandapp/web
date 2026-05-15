@@ -18,7 +18,7 @@ export function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}) {
             zoomToTrack: true,
             ctx,
             recentSaver,
-        }).then();
+        });
     }
 }
 
