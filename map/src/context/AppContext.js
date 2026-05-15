@@ -330,6 +330,7 @@ export const AppContextProvider = (props) => {
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
     const [selectedLocalTrackObj, setSelectedLocalTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
+    const [selectedSearchObj, setSelectedSearchObj] = useState(null);
 
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
@@ -735,6 +736,8 @@ export const AppContextProvider = (props) => {
                 setPoiCatMenu,
                 selectedPoiObj,
                 setSelectedPoiObj,
+                selectedSearchObj,
+                setSelectedSearchObj,
                 zoomToCoords,
                 setZoomToCoords,
                 poiByUrl,

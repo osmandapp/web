@@ -48,8 +48,11 @@ export default function useMenuDots(ctx) {
     }, [ctx.searchTravelRoutes, ctx.selectedTravelRoute]);
 
     useEffect(() => {
-        setActiveMenu(OBJECT_SEARCH, ctx.searchResult || ctx.exploreMenu || ctx.poiCatMenu || ctx.selectedPoiObj);
-    }, [ctx.searchResult, ctx.exploreMenu, ctx.poiCatMenu, ctx.selectedPoiObj]);
+        setActiveMenu(
+            OBJECT_SEARCH,
+            ctx.searchResult || ctx.exploreMenu || ctx.poiCatMenu || ctx.selectedPoiObj || ctx.selectedSearchObj
+        );
+    }, [ctx.searchResult, ctx.exploreMenu, ctx.poiCatMenu, ctx.selectedPoiObj, ctx.selectedSearchObj]);
 
     useEffect(() => {
         setActiveMenu(OBJECT_TRACK_ANALYZER, ctx.trackAnalyzer);

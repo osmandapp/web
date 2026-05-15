@@ -6,7 +6,7 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
-import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import {
@@ -42,6 +42,7 @@ import { CustomIcon, FavInfo, addFavoriteToMap } from '../../favorite/FavoriteIt
 import {
     createFavoritePoiIcon,
     getFavoriteMenuIconHtml,
+    openFavoriteObj,
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
 import favMenuStyles from '../../trackfavmenu.module.css';
@@ -227,8 +228,16 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             const fileName = item.properties?.[CATEGORY_NAME];
             const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
             if (!file) return;
+            const searchFile = {
+                name: file.name,
+                type: file.type,
+                clienttimems: file.clienttimems,
+                updatetimems: file.updatetimems,
+                mapObj: false,
+            };
+            ctx.setSelectedSearchObj({ type: OBJECT_TYPE_CLOUD_TRACK, object: searchFile });
             const newTracks = await openTrackOnMap({
-                file: { ...file, mapObj: true },
+                file: searchFile,
                 showOnMap: true,
                 showInfo: true,
                 zoomToTrack: true,
@@ -244,13 +253,18 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             if (!resolved) {
                 return;
             }
-            addFavoriteToMap({ 
-                group: resolved.group, 
-                marker: resolved.marker, 
-                ctx, 
+            const searchFavorite = addFavoriteToMap({
+                group: resolved.group,
+                marker: resolved.marker,
+                ctx,
                 mapObj: false,
-                openedFromSearch: true 
+                returnSelection: true,
             });
+            if (searchFavorite) {
+                ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: searchFavorite });
+                ctx.setCurrentObjectType(OBJECT_SEARCH);
+                openFavoriteObj(ctx, searchFavorite, { fromSearch: true });
+            }
             return;
         }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {

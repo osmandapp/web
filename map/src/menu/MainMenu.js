@@ -80,7 +80,6 @@ import {
     DELETE_ACCOUNT_URL,
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
-    SEARCH_RESULT_URL,
     EXPLORE_URL,
     POI_URL,
     MENU_IDS,
@@ -98,9 +97,9 @@ import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
-import useMenuDots from '../util/hooks/menu/useMenuDots';
-import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
+import useMenuDots from '../util/hooks/menu/useMenuDots';       
 import { openPoiObj } from '../manager/SearchManager';
+import { openSearchObj, navigateBackToSearchResults } from '../manager/SearchObjectManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from './favorite/FavoriteItem';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
@@ -352,7 +351,14 @@ export default function MainMenu({
         // Don't close infoBlock if selectedWpt exists - it means user selected an object on map
         // (even if data is still loading asynchronously)
         const hasSelectedWpt = !!ctx.selectedWpt;
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite && !ctx.selectedPoiObj && !hasSelectedWpt) {
+        if (
+            !startCreateTrack &&
+            !openCloudTrackAfterSave &&
+            !openFavorite &&
+            !ctx.selectedPoiObj &&
+            !ctx.selectedSearchObj &&
+            !hasSelectedWpt
+        ) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
@@ -579,11 +585,7 @@ export default function MainMenu({
                 return;
             }
             if (ctx.searchQuery) {
-                navigate({
-                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
-                    search: buildSearchParamsFromQuery(ctx.searchQuery),
-                    hash: location.hash,
-                });
+                navigateBackToSearchResults(navigate, ctx, location);
                 return;
             }
 
@@ -692,6 +694,10 @@ export default function MainMenu({
                     recentSaver,
                 }).then();
             }
+        }
+
+        if (selectedType === OBJECT_SEARCH && ctx.selectedSearchObj) {
+            openSearchObj(ctx, ctx.selectedSearchObj, { recentSaver });
         }
 
         if (selectedType === OBJECT_SEARCH && ctx.selectedPoiObj) {

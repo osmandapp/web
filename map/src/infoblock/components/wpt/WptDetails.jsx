@@ -92,6 +92,7 @@ import {
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
+import { isFavoriteFromSearch, navigateBackToSearchResults } from '../../../manager/SearchObjectManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
@@ -319,7 +320,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
         const type = getWptType(ctx.selectedWpt);
 
-        if ((type?.isFav && !ctx.selectedWpt.mapObj) || type?.isShareFav) {
+        if ((type?.isFav && !ctx.selectedWpt.mapObj && !isFavoriteFromSearch(ctx)) || type?.isShareFav) {
             recentSaver(FAVORITES_KEY, ctx.selectedWpt);
             ctx.setSelectedFavoriteObj({ ...ctx.selectedWpt });
         }
@@ -546,7 +547,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi && !wpt?.wikidata,
             isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && wpt?.trackWpt,
-            isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
+            isFav:
+                (ctx.currentObjectType === OBJECT_TYPE_FAVORITE ||
+                    ctx.selectedSearchObj?.type === OBJECT_TYPE_FAVORITE) &&
+                wpt?.markerCurrent,
             isShareFav: ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && wpt?.markerCurrent,
             isStop: ctx.currentObjectType === OBJECT_TYPE_STOP && wpt?.stop,
         };
@@ -601,13 +605,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isFav) {
             if (!wpt.mapObj) {
                 ctx.setSelectedFavoriteObj(null);
-                if (ctx.selectedGpxFile.openedFromSearch && ctx.searchQuery) {
+                if (isFavoriteFromSearch(ctx)) {
+                    ctx.setSelectedSearchObj(null);
                     setShowInfoBlock(false);
-                    navigate({
-                        pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
-                        search: buildSearchParamsFromQuery(ctx.searchQuery),
-                        hash: location.hash,
-                    });
+                    navigateBackToSearchResults(navigate, ctx, location);
                 } else {
                     closeOnlyFavDetails();
                 }

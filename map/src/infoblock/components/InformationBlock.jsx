@@ -30,6 +30,11 @@ import {
     TRACKS_URL,
 } from '../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../util/hooks/search/useSearchNav';
+import {
+    isFavoriteFromSearch,
+    isTrackFromSearch,
+    navigateBackToSearchResults,
+} from '../../manager/SearchObjectManager';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
@@ -172,6 +177,9 @@ export default function InformationBlock({
 
     // update URL for info track menu
     useEffect(() => {
+        if (isTrackFromSearch(ctx)) {
+            return;
+        }
         if (trackName && !ctx.shareFile) {
             navigate(
                 {
@@ -186,6 +194,9 @@ export default function InformationBlock({
 
     // open favorite info menu when marker is selected
     useEffect(() => {
+        if (isFavoriteFromSearch(ctx)) {
+            return;
+        }
         if (
             ctx.selectedGpxFile.file?.type === FAVOURITES &&
             !ctx.shareFile &&
@@ -243,7 +254,7 @@ export default function InformationBlock({
                 } else if (showTrackContextMenu) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
-                    if (isCloudTrack(ctx)) {
+                    if (isCloudTrack(ctx) && !isTrackFromSearch(ctx)) {
                         // set track identification for URL
                         setTrackName(ctx.selectedGpxFile.name);
                         setTrackType(TRACKS_URL);
@@ -389,7 +400,7 @@ export default function InformationBlock({
         if (ctx.selectedGpxFile?.mapObj) {
             closeMapObjectMenu({ wasCloudTrack });
         } else if (isCloudTrack(ctx)) {
-            closeCloudTrack();
+            closeCloudTrack({ fromSearch: isTrackFromSearch(ctx) });
         } else if (isLocalTrack(ctx)) {
             if (!isEmpty(ctx.selectedGpxFile)) {
                 ctx.setSelectedGpxFile({});
@@ -433,7 +444,7 @@ export default function InformationBlock({
         ctx.setCurrentObjectType(null);
     }
 
-    function closeCloudTrack() {
+    function closeCloudTrack({ fromSearch = false } = {}) {
         hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
 
         // If openGroups is empty (e.g. track was opened directly from Garmin last-sync menu),
@@ -460,6 +471,13 @@ export default function InformationBlock({
         setTrackName(null);
         setSavePrevState(true);
         ctx.setSelectedCloudTrackObj(null);
+
+        if (fromSearch) {
+            ctx.setSelectedSearchObj(null);
+            if (navigateBackToSearchResults(navigate, ctx, location)) {
+                return;
+            }
+        }
 
         navigate({
             pathname: MAIN_URL_WITH_SLASH + trackType,

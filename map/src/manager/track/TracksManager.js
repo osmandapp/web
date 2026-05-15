@@ -1649,8 +1649,8 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
     }
 
     recentSaver(TRACKS_KEY, file);
-    // save only tracks from menu
-    if (!file.mapObj) {
+    // save only tracks from menu (not from search results list)
+    if (!file.mapObj && !ctx.selectedSearchObj) {
         ctx.setSelectedCloudTrackObj({ ...file });
     }
 

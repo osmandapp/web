@@ -1,5 +1,6 @@
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { isFavoriteFromSearch } from '../../manager/SearchObjectManager';
 
 export function closeHeader({ ctx, setShowInfoBlock = null }) {
     if (setShowInfoBlock) {
@@ -10,6 +11,11 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
     if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
         ctx.setSelectedGpxFile({});
         ctx.setSelectedFavoriteObj(null);
+    }
+    if (isFavoriteFromSearch(ctx)) {
+        ctx.setSelectedGpxFile({});
+        ctx.setSelectedFavoriteObj(null);
+        ctx.setSelectedSearchObj(null);
     }
     if (ctx.poiByUrl?.layer) {
         // remove poi marker
