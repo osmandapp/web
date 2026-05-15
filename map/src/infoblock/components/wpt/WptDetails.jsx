@@ -601,7 +601,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isFav) {
             if (!wpt.mapObj) {
                 ctx.setSelectedFavoriteObj(null);
-                closeOnlyFavDetails();
+                if (ctx.selectedGpxFile.openedFromSearch && ctx.searchQuery) {
+                    setShowInfoBlock(false);
+                    navigate({
+                        pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+                        search: buildSearchParamsFromQuery(ctx.searchQuery),
+                        hash: location.hash,
+                    });
+                } else {
+                    closeOnlyFavDetails();
+                }
             } else {
                 closeObjectFromMap();
             }

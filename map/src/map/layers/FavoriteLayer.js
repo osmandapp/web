@@ -452,6 +452,8 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.mapObj = true;
             ctx.selectedGpxFile.openedFolder = folderNameRef.current ?? undefined;
 
+            ctx.setSelectedFavoriteObj(null);
+
             openFavoriteObj(ctx, ctx.selectedGpxFile);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         },

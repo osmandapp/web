@@ -55,7 +55,7 @@ export function FavInfo({ marker, currentLoc, unitsSettings }) {
     );
 }
 
-export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
+export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined, openedFromSearch = false }) {
     const newSelectedGpxFile = {};
     if (marker?.layer) {
         marker.latlng = marker.layer.getLatLng();
@@ -85,6 +85,7 @@ export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapOb
     newSelectedGpxFile.favItem = true;
     newSelectedGpxFile.mapObj = mapObj;
     newSelectedGpxFile.openedFolder = openedFolder;
+    newSelectedGpxFile.openedFromSearch = openedFromSearch;
 
     openFavoriteObj(ctx, newSelectedGpxFile);
 }

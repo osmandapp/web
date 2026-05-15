@@ -244,7 +244,13 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             if (!resolved) {
                 return;
             }
-            addFavoriteToMap({ group: resolved.group, marker: resolved.marker, ctx, mapObj: true });
+            addFavoriteToMap({ 
+                group: resolved.group, 
+                marker: resolved.marker, 
+                ctx, 
+                mapObj: false,
+                openedFromSearch: true 
+            });
             return;
         }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
