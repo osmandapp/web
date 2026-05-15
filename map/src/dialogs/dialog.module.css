@@ -37,6 +37,15 @@
     letter-spacing: 0.28px !important;
     text-transform: uppercase !important;
 }
+.contentText {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    letter-spacing: 0.25px !important;
+    color: var(--text-secondary) !important;
+    align-self: stretch !important;
+    padding: 12px 0 !important;
+}
 /* 280px (.title width) + 24px * 2 (left/right padding from .title) */
 .dialog :global(.MuiPaper-root) {
     max-width: 328px !important;

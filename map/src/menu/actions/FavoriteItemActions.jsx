@@ -50,8 +50,12 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                         id={'se-edit-fav-item'}
                         className={styles.action}
                         onClick={() => {
-                            ctx.setAddFavorite({ editWpt: favorite, openKey: Date.now() });
-                            setOpenActions(false);
+                            const guard = ctx.exitGuards.wptEdit;
+                            const action = () => {
+                                ctx.setAddFavorite({ editWpt: favorite, openKey: Date.now() });
+                                setOpenActions(false);
+                            };
+                            guard ? guard(action) : action();
                         }}
                     >
                         <ListItemIcon className={styles.iconAction}>

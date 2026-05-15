@@ -399,5 +399,9 @@
     "folder_already_exists": "A folder with this name already exists.",
     "shared_string_advanced": "Advanced",
     "focus_on": "Focus: hide other items",
-    "focus_off": "Focus: dim other items"
+    "focus_off": "Focus: dim other items",
+    "exit_without_saving": "Exit without saving?",
+    "all_changes_will_be_lost": "All changes will be lost.",
+    "keep_editing": "Keep Editing",
+    "shared_string_exit": "Exit"
 }

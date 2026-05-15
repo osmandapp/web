@@ -8,6 +8,7 @@ import styles from '../wptEditPanel.module.css';
 export default function FavoriteName({
     favoriteName,
     setFavoriteName,
+    onAutoFill,
     favoriteGroup,
     favorite,
     setErrorName,
@@ -75,13 +76,12 @@ export default function FavoriteName({
             const objOptions = ctx.selectedWpt.poi?.options ?? ctx.selectedWpt.poi?.properties;
             const { name } = getPropsFromSearchResultItem(objOptions, t);
             setFavoriteName(name);
+            onAutoFill?.(name);
         } else if (ctx.selectedWpt?.stop) {
             const name = ctx.selectedWpt?.stop.options.name;
-            if (name && name.trim() !== '') {
-                setFavoriteName(name);
-            } else {
-                setFavoriteName(t('web:transport_stop'));
-            }
+            const resolved = name && name.trim() !== '' ? name : t('web:transport_stop');
+            setFavoriteName(resolved);
+            onAutoFill?.(resolved);
         }
     }, [ctx.selectedWpt]);
 

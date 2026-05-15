@@ -742,7 +742,16 @@ export default function MainMenu({
         return res.join(' ');
     }
 
-    function selectMenu({ item }) {
+    function selectMenu({ item, openFromUrl = false }) {
+        if (!openFromUrl) {
+            const guard = ctx.exitGuards.wptEdit;
+            guard ? guard(() => doSelectMenu({ item })) : doSelectMenu({ item });
+            return;
+        }
+        doSelectMenu({ item });
+    }
+
+    function doSelectMenu({ item }) {
         closeSubPages({ ctx, ltx });
         let currentType;
         if (menuInfo) {

@@ -79,7 +79,8 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
         const ok = await saveColorPalette(updated, ctx.setNotification);
         if (ok) {
             setColors(updated);
-            if (removed.value === selectedColor) {
+            const colorStillAvailable = updated.some((c) => c.value === removed.value);
+            if (removed.value === selectedColor && !colorStillAvailable) {
                 setSelectedColor(updated[0]?.value ?? MarkerOptions.DEFAULT_WPT_COLOR);
             }
         }
