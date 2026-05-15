@@ -130,16 +130,16 @@ When an [object on the map](https://osmand.net/docs/user/web/web-map#selected-ob
 
 ## Bug fixes {#bug-fixes} 
 
-- Fixed an issue where [the map jumped away from the selected track](https://github.com/osmandapp/web/issues/1444).
-- Fixed a problem where [favorites were not displayed when opening folders](https://github.com/osmandapp/web/issues/1435).
-- Fixed [a scrolling issue in the track list](https://github.com/osmandapp/web/issues/1389).
-- Fixed an issue where [favorite folders ending with `.gpx` could not be renamed](https://github.com/osmandapp/web/issues/1442).
-- Fixed [incorrect statistics calculation for some multi-segment tracks](https://github.com/osmandapp/web/issues/1347).
-- Fixed [slow route analysis when building complex routes](https://github.com/osmandapp/web/issues/1080).
-- Fixed [a crash when importing GPX files with longitude equal to `0.0`](https://github.com/osmandapp/web/issues/1152).
-- Fixed an issue where [shared track links required a page refresh to open correctly](https://github.com/osmandapp/web/issues/1316).
-- Fixed [incorrect geocoding results for some addresses](https://github.com/osmandapp/web/issues/1180).
-- Fixed an issue where [some Wikimedia photos were not displayed for POIs](https://github.com/osmandapp/OsmAnd/issues/24494).
+- [Map jumped away from the selected track](https://github.com/osmandapp/web/issues/1444).
+- [Favorites were not displayed when opening folders](https://github.com/osmandapp/web/issues/1435).
+- [Scrolling issue in the track list](https://github.com/osmandapp/web/issues/1389).
+- [Favorite folders ending with `.gpx` could not be renamed](https://github.com/osmandapp/web/issues/1442).
+- [Incorrect statistics calculation for some multi-segment tracks](https://github.com/osmandapp/web/issues/1347).
+- [Slow route analysis when building complex routes](https://github.com/osmandapp/web/issues/1080).
+- [Crash when importing GPX files with longitude equal to `0.0`](https://github.com/osmandapp/web/issues/1152).
+- [Shared track links required a page refresh to open correctly](https://github.com/osmandapp/web/issues/1316).
+- [Incorrect geocoding results for some addresses](https://github.com/osmandapp/web/issues/1180).
+- [Some Wikimedia photos were not displayed for POIs](https://github.com/osmandapp/OsmAnd/issues/24494).
 
 
 
