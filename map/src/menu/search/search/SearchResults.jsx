@@ -238,6 +238,10 @@ export default function SearchResults() {
                 if (!isSearchResultRoute) {
                     return;
                 }
+                const isWordSearch = params.query && params.query !== '' && !params.type;
+                if (isWordSearch && (ctx.gpxLoading || ctx.processingGroups)) {
+                    return;
+                }
                 ctx.setProcessingSearch(true);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
@@ -255,7 +259,7 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params, ctx.forceSearch]);
+    }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {

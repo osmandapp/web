@@ -6,7 +6,12 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
-import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, {
+    OBJECT_SEARCH,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_POI,
+} from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import {

@@ -97,7 +97,7 @@ import { processDisplayTrack } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
-import useMenuDots from '../util/hooks/menu/useMenuDots';       
+import useMenuDots from '../util/hooks/menu/useMenuDots';
 import { openPoiObj } from '../manager/SearchManager';
 import { openSearchObj, navigateBackToSearchResults } from '../manager/SearchObjectManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
