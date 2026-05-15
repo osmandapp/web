@@ -19,9 +19,9 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, o
     function searchAddress() {
         if (!latLon?.lat || !latLon?.lon) return;
         setSearching(true);
-        getAddressByLatLon(latLon.lat, latLon.lon).then((resolved = '') => {
-            setFavoriteAddress(resolved);
-            onAutoFill?.(resolved);
+        getAddressByLatLon(latLon.lat, latLon.lon).then((addr = '') => {
+            setFavoriteAddress(addr);
+            onAutoFill?.(addr);
             setSearching(false);
         });
     }

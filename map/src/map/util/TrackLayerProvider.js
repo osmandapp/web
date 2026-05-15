@@ -8,7 +8,7 @@ import TracksManager, {
     isProtectedSegment,
     isWptGroupShown,
 } from '../../manager/track/TracksManager';
-import { getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
+import { FAVORITE_FILE_TYPE, getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
@@ -527,6 +527,14 @@ function parseWpt({
             return;
         }
         marker.options.idObj = getFavoriteId(marker);
+        if (type === FAVORITE_FILE_TYPE && point.name) {
+            marker.on('add', () => {
+                const el = marker.getElement();
+                if (el) {
+                    el.id = `se-fav-map-marker-${point.name}`;
+                }
+            });
+        }
         bindWptVisibilityOnAdd(marker, resolvedPointsGroups);
         if (ctx && map && data) {
             if (type === GPX_FILE_TYPE) {
