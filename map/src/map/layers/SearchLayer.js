@@ -31,7 +31,7 @@ import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getIconByType } from '../../manager/SearchManager';
+import { getIconByType, searchCloudTrackFeatures, searchFavoriteFeatures } from '../../manager/SearchManager';
 import {
     BBOX_COORDS_DECIMALS,
     POI_LAYER_ID,
@@ -44,7 +44,6 @@ import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
-import { getGpxFiles, prepareName, EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
 import {
     createFavoritePoiIcon,
     openFavoriteFromSearch,
@@ -92,84 +91,6 @@ export function getObjIdSearch(obj) {
         return null;
     }
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
-}
-
-function searchIncludes(text, query, collator) {
-    const textChars = [...String(text ?? '')];
-    const queryStr = String(query ?? '');
-
-    if (!queryStr) {
-        return true;
-    }
-
-    const queryLength = [...queryStr].length;
-
-    for (let i = 0; i <= textChars.length - queryLength; i++) {
-        const candidate = textChars.slice(i, i + queryLength).join('');
-
-        if (collator.compare(candidate, queryStr) === 0) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function searchFavoriteFeatures({ favorites, query, collator }) {
-    const q = String(query ?? '').trim();
-    if (!q || !favorites?.groups?.length || !favorites.mapObjs) {
-        return [];
-    }
-
-    return favorites.groups
-        .filter((group) => group?.id)
-        .flatMap((group) => {
-            const wpts = favorites.mapObjs[group.id]?.wpts;
-            if (!wpts?.length) return [];
-
-            return wpts
-                .filter(
-                    (wpt) =>
-                        wpt?.name &&
-                        wpt.lat != null &&
-                        wpt.lon != null &&
-                        (searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator))
-                )
-                .map((wpt) => ({
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [wpt.lon, wpt.lat],
-                    },
-                    properties: {
-                        [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
-                        [CATEGORY_NAME]: wpt.category,
-                        [POI_NAME]: wpt.name,
-                        [FAVORITE_HIT_GROUP_ID]: group.id,
-                        [ICON_KEY_NAME]: wpt.icon,
-                        [COLOR_NAME_EXTENSION]: wpt.color,
-                        [BACKGROUND_TYPE_EXTENSION]: wpt.background,
-                        [FINAL_POI_ICON_NAME]: wpt.icon,
-                        ...(wpt.address ? { address: wpt.address } : {}),
-                    },
-                }));
-        });
-}
-
-function searchCloudTrackFeatures({ listFiles, query, collator }) {
-    const q = String(query ?? '').trim();
-    if (!q || !listFiles?.uniqueFiles) return [];
-
-    return getGpxFiles(listFiles)
-        .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME) && searchIncludes(prepareName(f.name, true), q, collator))
-        .map((f) => ({
-            type: 'Feature',
-            geometry: { type: 'Point', coordinates: [0, 0] },
-            properties: {
-                [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK,
-                [CATEGORY_NAME]: f.name,
-            },
-        }));
 }
 
 export default function SearchLayer() {
