@@ -19,7 +19,7 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 **OsmAnd Pro для подписчиоков Андрея Бересневича**
 
-Всем привет! OsmAnd и [_"Андрей Бересневич"_](facebook.com/profile.php?id=100008956056636) предоставляют вам OsmAnd Pro годовую подписку. Вы можете воспользоваться всеми функциями OsmAnd на [всех платформах](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android и OsmAnd Web.
+Всем привет! OsmAnd и [_"Андрей Бересневич"_](https://www.facebook.com/andrej.beresnevic) предоставляют вам OsmAnd Pro годовую подписку. Вы можете воспользоваться всеми функциями OsmAnd на [всех платформах](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android и OsmAnd Web.
 
 **Ваши действия**:
 
