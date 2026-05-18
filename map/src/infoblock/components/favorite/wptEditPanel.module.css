@@ -27,7 +27,11 @@
 }
 
 .fieldInput {
-    padding-left: 8px !important;
+    padding-left: 16px !important;
+}
+
+.fieldLabel {
+    left: 4px !important;
 }
 
 .actions {
