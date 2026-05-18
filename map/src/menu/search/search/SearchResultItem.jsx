@@ -6,12 +6,7 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
-import AppContext, {
-    OBJECT_SEARCH,
-    OBJECT_TYPE_CLOUD_TRACK,
-    OBJECT_TYPE_FAVORITE,
-    OBJECT_TYPE_POI,
-} from '../../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import {
@@ -43,14 +38,14 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
-import { CustomIcon, FavInfo, addFavoriteToMap } from '../../favorite/FavoriteItem';
 import {
     createFavoritePoiIcon,
+    getFavoriteMarkerOptionsForSearch,
     getFavoriteMenuIconHtml,
-    openFavoriteObj,
+    openFavoriteFromSearch,
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
-import favMenuStyles from '../../trackfavmenu.module.css';
+import FavoriteSearchResultItem from './FavoriteSearchResultItem';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -258,18 +253,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             if (!resolved) {
                 return;
             }
-            const searchFavorite = addFavoriteToMap({
-                group: resolved.group,
-                marker: resolved.marker,
-                ctx,
-                mapObj: false,
-                returnSelection: true,
-            });
-            if (searchFavorite) {
-                ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: searchFavorite });
-                ctx.setCurrentObjectType(OBJECT_SEARCH);
-                openFavoriteObj(ctx, searchFavorite, { fromSearch: true });
-            }
+            openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker, mapObj: false });
             return;
         }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
@@ -383,28 +367,17 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             ) : (
                 <div>
                     {isFavoriteHit ? (
-                        <>
-                            <MenuItem
-                                id={id}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                                className={`${favMenuStyles.item} ${isHovered ? favMenuStyles.itemHovered : ''}`}
-                                onClick={clickHandler}
-                            >
-                                <ListItemIcon className={favMenuStyles.icon}>
-                                    <CustomIcon marker={favoriteListMarker} />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <MenuItemWithLines name={name} maxLines={1} />
-                                    <FavInfo
-                                        marker={favoriteListMarker}
-                                        currentLoc={currentLoc}
-                                        unitsSettings={ctx.unitsSettings}
-                                    />
-                                </ListItemText>
-                            </MenuItem>
-                            <DividerWithMargin margin={'64px'} />
-                        </>
+                        <FavoriteSearchResultItem
+                            id={id}
+                            name={name}
+                            favoriteListMarker={favoriteListMarker}
+                            currentLoc={currentLoc}
+                            unitsSettings={ctx.unitsSettings}
+                            isHovered={isHovered}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={clickHandler}
+                        />
                     ) : (
                         <>
                             <MenuItem

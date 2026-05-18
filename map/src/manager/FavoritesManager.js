@@ -699,15 +699,18 @@ export function createFavoritePoiIcon({ point = {}, icon, color, background }) {
 
 export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } = {}) {
     const point = wpt ?? {};
-    const bg = background ?? wpt?.background;
+    const resolvedIcon = icon ?? wpt?.icon;
+    const resolvedColor = color ?? wpt?.color;
+    const resolvedBackground = background ?? wpt?.background;
+
     const rawHtml = createFavoritePoiIcon({
         point,
-        icon: icon ?? wpt?.icon,
-        color: color ?? wpt?.color,
-        background: bg,
+        icon: resolvedIcon,
+        color: resolvedColor,
+        background: resolvedBackground,
     }).options.html;
 
-    return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, bg);
+    return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, resolvedBackground);
 }
 
 export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {
@@ -816,6 +819,58 @@ export function addShareFavoriteToMap(marker, ctx) {
 export function getFavoriteId(layer) {
     const { lat, lng } = layer.getLatLng();
     return `fav:${lat}:${lng}`;
+}
+
+export function buildFavoriteSelection({
+    group,
+    marker,
+    ctx,
+    sharedFile = false,
+    mapObj = false,
+    openedFolder = undefined,
+}) {
+    const selection = {};
+    if (marker?.layer) {
+        marker.latlng = marker.layer.getLatLng();
+    }
+    selection.markerCurrent = { ...marker, groupId: group.id };
+    if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
+        selection.markerPrev = ctx.selectedGpxFile.markerCurrent;
+    }
+    let trackData;
+    Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
+        if (fileId === group.id) {
+            selection.nameGroup = group.name;
+            Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
+                if (m.options.name === marker.name) {
+                    trackData = ctx.favorites.mapObjs[fileId];
+                }
+            });
+        }
+    });
+    selection.id = group.id;
+    selection.key = `${group.id}:${marker.name}`;
+    selection.trackData = trackData;
+    selection.sharedWithMe = sharedFile;
+    selection.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
+    selection.name = marker.name;
+    selection.prevState = ctx.selectedGpxFile;
+    selection.favItem = true;
+    selection.mapObj = mapObj;
+    selection.openedFolder = openedFolder;
+
+    return selection;
+}
+
+export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
+    openFavoriteObj(ctx, buildFavoriteSelection({ group, marker, ctx, sharedFile, mapObj, openedFolder }));
+}
+
+/** Open favorite from search UI or search map layer; keeps selectedSearchObj for back navigation. */
+export function openFavoriteFromSearch(ctx, { group, marker, mapObj = false }) {
+    const selection = buildFavoriteSelection({ group, marker, ctx, mapObj });
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: selection });
+    openFavoriteObj(ctx, selection, { fromSearch: true });
 }
 
 export function openFavoriteObj(ctx, object, options = {}) {

@@ -23,18 +23,11 @@ import {
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
-    SEARCH_RESULT_URL,
-    SEARCH_URL,
     SHARE_FILE_MAIN_URL,
     SHARE_MENU_URL,
     TRACKS_URL,
 } from '../../manager/GlobalManager';
-import { buildSearchParamsFromQuery } from '../../util/hooks/search/useSearchNav';
-import {
-    isFavoriteFromSearch,
-    isTrackFromSearch,
-    navigateBackToSearchResults,
-} from '../../manager/SearchObjectManager';
+import { isFavoriteFromSearch, isTrackFromSearch, navigateBackToSearchResults } from '../../manager/SearchManager';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';

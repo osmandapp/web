@@ -4,10 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
 import {
     FAVORITE_FILE_TYPE,
+    addFavoriteToMap,
     addShareFavoriteToMap,
     getColorLocation,
     getFavoriteId,
-    openFavoriteObj,
 } from '../../manager/FavoritesManager';
 import { useSearchParams } from 'react-router-dom';
 import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
@@ -53,51 +53,6 @@ export function FavInfo({ marker, currentLoc, unitsSettings }) {
             </Typography>
         </div>
     );
-}
-
-export function addFavoriteToMap({
-    group,
-    marker,
-    ctx,
-    sharedFile = false,
-    mapObj = false,
-    openedFolder = undefined,
-    returnSelection = false,
-}) {
-    const newSelectedGpxFile = {};
-    if (marker?.layer) {
-        marker.latlng = marker.layer.getLatLng();
-    }
-    newSelectedGpxFile.markerCurrent = { ...marker, groupId: group.id };
-    if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
-        newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-    }
-    let trackData;
-    Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
-        if (fileId === group.id) {
-            newSelectedGpxFile.nameGroup = group.name;
-            Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
-                if (m.options.name === marker.name) {
-                    trackData = ctx.favorites.mapObjs[fileId];
-                }
-            });
-        }
-    });
-    newSelectedGpxFile.id = group.id;
-    newSelectedGpxFile.key = `${group.id}:${marker.name}`;
-    newSelectedGpxFile.trackData = trackData;
-    newSelectedGpxFile.sharedWithMe = sharedFile;
-    newSelectedGpxFile.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
-    newSelectedGpxFile.name = marker.name;
-    newSelectedGpxFile.prevState = ctx.selectedGpxFile;
-    newSelectedGpxFile.favItem = true;
-    newSelectedGpxFile.mapObj = mapObj;
-    newSelectedGpxFile.openedFolder = openedFolder;
-
-    if (returnSelection) {
-        return newSelectedGpxFile;
-    }
-    openFavoriteObj(ctx, newSelectedGpxFile);
 }
 
 export default function FavoriteItem({

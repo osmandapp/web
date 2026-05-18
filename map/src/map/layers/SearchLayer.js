@@ -45,8 +45,11 @@ import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRe
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
 import { getGpxFiles, prepareName, EMPTY_FILE_NAME } from '../../manager/track/TracksManager';
-import { createFavoritePoiIcon, resolveFavoriteMarkerForSearch } from '../../manager/FavoritesManager';
-import { addFavoriteToMap } from '../../menu/favorite/FavoriteItem';
+import {
+    createFavoritePoiIcon,
+    openFavoriteFromSearch,
+    resolveFavoriteMarkerForSearch,
+} from '../../manager/FavoritesManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 
@@ -339,7 +342,7 @@ export default function SearchLayer() {
             const wptName = opts[POI_NAME] ?? opts[CATEGORY_NAME];
             const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, wptName);
             if (resolved) {
-                addFavoriteToMap({ group: resolved.group, marker: resolved.marker, ctx, mapObj: true });
+                openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker, mapObj: true });
             }
             return;
         }

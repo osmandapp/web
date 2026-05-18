@@ -92,7 +92,7 @@ import {
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
-import { isFavoriteFromSearch, navigateBackToSearchResults } from '../../../manager/SearchObjectManager';
+import { isFavoriteFromSearch, navigateBackToSearchResults } from '../../../manager/SearchManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
