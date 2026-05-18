@@ -36,7 +36,7 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, o
                 disabled={searching}
                 onChange={(e) => setFavoriteAddress(e.target.value)}
                 value={searching ? t('web:fav_address_searching') : (favoriteAddress ?? '')}
-                inputProps={{ className: styles.fieldInput }}
+                inputProps={{ className: styles.fieldInput, autoComplete: 'off' }}
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">

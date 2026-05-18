@@ -98,7 +98,7 @@ export default function FavoriteName({
                 autoFocus
                 error={(submitted && favoriteName === '') || nameAlreadyExist}
                 helperText={getErrorText(favoriteName)}
-                inputProps={{ className: styles.fieldInput }}
+                inputProps={{ className: styles.fieldInput, autoComplete: 'off' }}
                 FormHelperTextProps={{ className: styles.helperText }}
             />
         </Box>
