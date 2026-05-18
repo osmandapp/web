@@ -1,59 +1,20 @@
-import { ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
-import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { MenuItem, Skeleton } from '@mui/material';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
-import {
-    FAVORITE_FILE_TYPE,
-    addFavoriteToMap,
-    addShareFavoriteToMap,
-    getColorLocation,
-    getFavoriteId,
-} from '../../manager/FavoritesManager';
+import { addFavoriteToMap, addShareFavoriteToMap } from '../../manager/FavoritesManager';
 import { useSearchParams } from 'react-router-dom';
-import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
-import MenuItemWithLines from '../components/MenuItemWithLines';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
-import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
-import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
+import { useFavoriteItemHover } from '../../util/hooks/menu/useFavoriteItemHover';
+import { FavoriteItemContent } from './FavoriteItemContent';
 
-export const CustomIcon = ({ marker }) => {
-    return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
-};
-
-export function FavInfo({ marker, currentLoc, unitsSettings }) {
-    const { t } = useTranslation();
-
-    const comma = marker.locDist > 0 && marker?.layer?.options?.address ? ', ' : '';
-    const address = marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
-
-    return (
-        <div style={{ display: 'flex', alignItems: 'centre' }}>
-            {marker.locDist > 0 && (
-                <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
-                    <DirectionIcon />
-                </ListItemIcon>
-            )}
-            {marker.locDist > 0 && (
-                <Typography
-                    variant="body2"
-                    className={styles.favLocationInfo}
-                    sx={{ color: getColorLocation(currentLoc) }}
-                >
-                    {`${convertMeters(marker.locDist, unitsSettings.len, LARGE_UNIT).toFixed(0)} ${t(getLargeLengthUnit({ unitsSettings }))}`}
-                </Typography>
-            )}
-            <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
-                {address}
-            </Typography>
-        </div>
-    );
-}
+export { CustomIcon, FavInfo } from './FavoriteItemContent';
 
 export default function FavoriteItem({
     marker,
@@ -75,50 +36,13 @@ export default function FavoriteItem({
     const anchorEl = useRef(null);
     const menuItemRef = useRef(null);
 
-    const favId = getFavoriteId(marker.layer);
-
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
             setOpenActions(false);
         }
     }, [ctx.openedPopper]);
 
-    const setHover = useCallback(
-        (show) => {
-            if (show) {
-                if (ctx.openedPopper) return;
-                ctx.setSelectedWptId({
-                    id: favId,
-                    show: true,
-                    type: FAVORITE_FILE_TYPE,
-                    obj: marker.layer,
-                    markerOptions: {
-                        color: marker.layer.options?.color,
-                        background: marker.layer.options?.background,
-                        iconHtml: marker.layer.options?.icon?.options?.html,
-                    },
-                });
-            } else {
-                ctx.setSelectedWptId((prev) =>
-                    prev?.id === favId && prev?.type === FAVORITE_FILE_TYPE ? { ...prev, show: false } : prev
-                );
-            }
-            if (menuItemRef.current) {
-                menuItemRef.current.classList.toggle(styles.itemHovered, show);
-            }
-        },
-        [favId, marker.layer, ctx.openedPopper]
-    );
-
-    useEffect(() => {
-        const hovered =
-            ctx.selectedWptId?.id === favId &&
-            ctx.selectedWptId?.type === FAVORITE_FILE_TYPE &&
-            ctx.selectedWptId?.show !== false;
-        if (menuItemRef.current) {
-            menuItemRef.current.classList.toggle(styles.itemHovered, hovered);
-        }
-    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.show, ctx.selectedWptId?.type, favId]);
+    const setHover = useFavoriteItemHover(marker, ctx, menuItemRef);
 
     const sharedFile = smartf?.type === SHARE_TYPE;
 
@@ -153,22 +77,21 @@ export default function FavoriteItem({
                                 }
                             }}
                         >
-                            <ListItemIcon className={styles.icon}>
-                                <CustomIcon marker={marker} />
-                            </ListItemIcon>
-                            <ListItemText>
-                                <MenuItemWithLines name={marker.name} maxLines={1} />
-                                <FavInfo marker={marker} currentLoc={currentLoc} unitsSettings={ctx.unitsSettings} />
-                            </ListItemText>
-                            {!share && !sharedFile && (
-                                <ThreeDotsButton
-                                    name={'action_menu_group'}
-                                    tip={'shared_string_menu'}
-                                    id={`se-actions-${marker.name}`}
-                                    setOpenActions={setOpenActions}
-                                    anchorEl={anchorEl}
-                                />
-                            )}
+                            <FavoriteItemContent
+                                marker={marker}
+                                currentLoc={currentLoc}
+                                unitsSettings={ctx.unitsSettings}
+                            >
+                                {!share && !sharedFile && (
+                                    <ThreeDotsButton
+                                        name={'action_menu_group'}
+                                        tip={'shared_string_menu'}
+                                        id={`se-actions-${marker.name}`}
+                                        setOpenActions={setOpenActions}
+                                        anchorEl={anchorEl}
+                                    />
+                                )}
+                            </FavoriteItemContent>
                         </MenuItem>
                     )}
                     <DividerWithMargin margin={'64px'} />

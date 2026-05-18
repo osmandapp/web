@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
@@ -16,9 +16,6 @@ import {
     CATEGORY_TYPE,
     CITY,
     EN_NAME,
-    ICON_KEY_NAME,
-    COLOR_NAME_EXTENSION,
-    BACKGROUND_TYPE_EXTENSION,
     MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
@@ -38,13 +35,6 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
-import {
-    createFavoritePoiIcon,
-    getFavoriteMarkerOptionsForSearch,
-    getFavoriteMenuIconHtml,
-    openFavoriteFromSearch,
-    resolveFavoriteMarkerForSearch,
-} from '../../../manager/FavoritesManager';
 import FavoriteSearchResultItem from './FavoriteSearchResultItem';
 
 export function getFirstSubstring(inputString) {
@@ -175,20 +165,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     function setSelectedPoint({ show }) {
-        // For favorite hits, pass markerOptions so the hover fallback pin (when the marker
-        // is hidden by clustering) uses the favorite's color/background/icon instead of defaults.
-        let markerOptions;
-        if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
-            const color = item.properties[COLOR_NAME_EXTENSION];
-            const background = item.properties[BACKGROUND_TYPE_EXTENSION];
-            const iconHtml = createFavoritePoiIcon({
-                icon: item.properties[ICON_KEY_NAME],
-                color,
-                background,
-            })?.options?.html;
-            markerOptions = { color, background, iconHtml };
-        }
-        ctx.setSelectedWptId({ id: itemId, show, type: typeItem, obj: item, markerOptions, prev: ctx.selectedWptId });
+        ctx.setSelectedWptId({ id: itemId, show, type: typeItem, obj: item, prev: ctx.selectedWptId });
     }
 
     useEffect(() => {
@@ -245,15 +222,6 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                 recentSaver,
             });
             updateTracks(ctx, null, newTracks);
-            return;
-        }
-        if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
-            const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
-            const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
-            if (!resolved) {
-                return;
-            }
-            openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker, mapObj: false });
             return;
         }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
@@ -330,90 +298,56 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         return ` · ${city}`;
     }
 
-    const isFavoriteHit = item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE;
-
-    const favMarkerIcon = useMemo(() => {
-        if (item.properties[CATEGORY_TYPE] !== searchTypeMap.FAVORITE) {
-            return null;
-        }
-        return getFavoriteMenuIconHtml({
-            icon: item.properties[ICON_KEY_NAME],
-            color: item.properties[COLOR_NAME_EXTENSION],
-            background: item.properties[BACKGROUND_TYPE_EXTENSION],
-        });
-    }, [
-        item.properties[CATEGORY_TYPE],
-        item.properties[ICON_KEY_NAME],
-        item.properties[COLOR_NAME_EXTENSION],
-        item.properties[BACKGROUND_TYPE_EXTENSION],
-    ]);
-
-    const favoriteListMarker = useMemo(() => {
-        if (favMarkerIcon == null) {
-            return null;
-        }
-        return {
-            name,
-            icon: favMarkerIcon,
-            layer: { options: { address: item.properties.address ?? '' } },
-            locDist: distance,
-        };
-    }, [favMarkerIcon, name, distance, item.properties.address]);
+    if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+        return (
+            <FavoriteSearchResultItem
+                id={id}
+                groupId={item.properties[FAVORITE_HIT_GROUP_ID]}
+                name={name}
+                locDist={distance}
+                currentLoc={currentLoc}
+            />
+        );
+    }
 
     return (
         <div ref={ref}>
             {!inView ? (
                 <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
             ) : (
-                <div>
-                    {isFavoriteHit ? (
-                        <FavoriteSearchResultItem
-                            id={id}
-                            name={name}
-                            favoriteListMarker={favoriteListMarker}
-                            currentLoc={currentLoc}
-                            unitsSettings={ctx.unitsSettings}
-                            isHovered={isHovered}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            onClick={clickHandler}
-                        />
-                    ) : (
-                        <>
-                            <MenuItem
-                                id={id}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                                className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
-                                onClick={clickHandler}
-                            >
-                                <ListItemText>
-                                    <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                                    {(info || type) && (
-                                        <MenuItemWithLines
-                                            className={styles.placeTypes}
-                                            name={`${addInfo()}${addType()}${addCity()}`}
-                                            maxLines={4}
-                                        >
-                                            {distance > 0 && (
-                                                <span style={{ display: 'inline-flex' }}>
-                                                    <Typography className={styles.placeDistance}>{' · '}</Typography>
-                                                    <DistanceInfo
-                                                        distance={distance}
-                                                        bearing={bearing}
-                                                        isUserLocation={isUserLocation}
-                                                    />
-                                                </span>
-                                            )}
-                                        </MenuItemWithLines>
+                <>
+                    <MenuItem
+                        id={id}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
+                        onClick={clickHandler}
+                    >
+                        <ListItemText>
+                            <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                            {(info || type) && (
+                                <MenuItemWithLines
+                                    className={styles.placeTypes}
+                                    name={`${addInfo()}${addType()}${addCity()}`}
+                                    maxLines={4}
+                                >
+                                    {distance > 0 && (
+                                        <span style={{ display: 'inline-flex' }}>
+                                            <Typography className={styles.placeDistance}>{' · '}</Typography>
+                                            <DistanceInfo
+                                                distance={distance}
+                                                bearing={bearing}
+                                                isUserLocation={isUserLocation}
+                                            />
+                                        </span>
                                     )}
-                                </ListItemText>
-                                <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
-                            </MenuItem>
-                            <DividerWithMargin margin={'16px'} />
-                        </>
-                    )}
-                </div>
+                                </MenuItemWithLines>
+                            )}
+                        </ListItemText>
+                        <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
+                    </MenuItem>
+                    <DividerWithMargin margin={'16px'} />
+                </>
             )}
         </div>
     );

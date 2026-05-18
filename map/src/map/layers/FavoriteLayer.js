@@ -5,6 +5,7 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } from '../../manager/FavoritesManager';
+import { isFavoriteFromSearch } from '../../manager/SearchManager';
 import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -454,7 +455,7 @@ const FavoriteLayer = () => {
 
             ctx.setSelectedFavoriteObj(null);
 
-            openFavoriteObj(ctx, ctx.selectedGpxFile);
+            openFavoriteObj(ctx, ctx.selectedGpxFile, { fromSearch: isFavoriteFromSearch(ctx) });
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         },
         [ctx, selectedGpxFileRef]
