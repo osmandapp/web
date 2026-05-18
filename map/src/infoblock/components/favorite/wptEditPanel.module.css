@@ -42,7 +42,7 @@
 
 .saveAction {
     display: flex;
-    padding: 0 12px;
+    padding: 0 8px 0 0;
     justify-content: flex-end;
     align-items: center;
 }

@@ -616,7 +616,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                             favoriteGroup={favoriteGroup}
                             favorite={isEditMode ? editWpt : undefined}
                             setErrorName={setErrorName}
-                            widthDialog={PANEL_CONTENT_WIDTH}
                             submitted={submitted}
                         />
                         {!addAddress && (
@@ -636,7 +635,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                                 favoriteAddress={favoriteAddress}
                                 setFavoriteAddress={setFavoriteAddress}
                                 onAutoFill={setInitialAddress}
-                                widthDialog={PANEL_CONTENT_WIDTH}
                                 latLon={isAddMode ? latLon : null}
                             />
                         )}
