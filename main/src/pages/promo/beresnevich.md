@@ -34,33 +34,8 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 OsmAnd не собирает никакую информацию, пожалуйста, ознакомьтесь с [Политикой конфиденциальности](https://osmand.net/docs/legal/privacy-policy) и [Условиями использования OsmAnd](https://osmand.net/docs/legal/terms-of-use).
 
-Ссылки на Андрея Бересневича: [Facebook](facebook.com/profile.php?id=100008956056636), [Youtube](https://www.youtube.com/@Andrei_Beresnevich), [Instagram](instagram.com/andrei.beresnevich.by?utm_medium=copy_link).
+Ссылки на Андрея Бересневича: [Facebook](https://www.facebook.com/andrej.beresnevic), [Youtube](https://www.youtube.com/@Andrei_Beresnevich), [Instagram](instagram.com/andrei.beresnevich.by).
 
-________________________________
-
-
-## English version
-
-**OsmAnd Pro for "Nomad's trip" watchers**
-
-Hello fans of trips!
-
-OsmAnd and ["Nomad's trip"](https://www.facebook.com/nomadetpep) introduce and present you OsmAnd Pro subscriptions for 1 year. 
-You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
-
-**Your steps**:
-
-1. **Input your e-mail** for registration:
-   
-<RegisterUserPromoBlock  promoKey='beresnevich'/>
-
-<p> </p>
-
-2. **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
-
-OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
-
-"Nomad's trip" links: [Facebook](https://www.facebook.com/nomadetpep), [Youtube](https://www.youtube.com/@nomadstrip1718/videos), [Instagram](https://www.instagram.com/lenomadtrip/).
 ________________________________
 
 <SotmScreenshots />
