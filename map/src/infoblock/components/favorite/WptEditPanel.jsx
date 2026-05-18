@@ -67,6 +67,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteAddress, setFavoriteAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [initialAddress, setInitialAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [favoriteDescription, setFavoriteDescription] = useState(editWpt?.desc ?? '');
+    const [initialDescription] = useState(editWpt?.desc ?? '');
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
     const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color'
     const [favoriteGroup, setFavoriteGroup] = useState(null);
@@ -93,7 +94,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         favoriteShape !== (editWpt?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
 
     const hasAddChanges =
-        favoriteName !== initialName || favoriteDescription !== '' || favoriteAddress !== initialAddress;
+        favoriteName !== initialName ||
+        favoriteDescription !== initialDescription ||
+        favoriteAddress !== initialAddress;
 
     const hasChanges = isEditMode ? hasEditChanges : hasAddChanges;
 
