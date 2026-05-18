@@ -80,6 +80,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         editWpt?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE
     );
     const [errorName, setErrorName] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
     const [process, setProcess] = useState(false);
     const [latLon, setLatLon] = useState(null);
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
@@ -160,6 +161,8 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     }
 
     async function save() {
+        setSubmitted(true);
+        if (!favoriteName?.trim()) return;
         setProcess(true);
         if (isEditMode) {
             if (isEditTrackWpt) {
@@ -614,6 +617,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                             favorite={isEditMode ? editWpt : undefined}
                             setErrorName={setErrorName}
                             widthDialog={PANEL_CONTENT_WIDTH}
+                            submitted={submitted}
                         />
                         {!addAddress && (
                             <ListItemText sx={{ maxWidth: `${PANEL_CONTENT_WIDTH}px` }}>

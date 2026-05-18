@@ -14,6 +14,7 @@ export default function FavoriteName({
     setErrorName,
     widthDialog,
     isGroupName = false,
+    submitted = true,
 }) {
     const ctx = useContext(AppContext);
 
@@ -44,13 +45,13 @@ export default function FavoriteName({
 
     useEffect(() => {
         validateName(favoriteName, favNames);
-    }, [favoriteName]);
+    }, [favoriteName, submitted]);
 
     function validateName(name, otherNames) {
         const trimmedName = name?.trim();
 
         if (!trimmedName) {
-            setErrorName(true);
+            setErrorName(submitted);
             setNameAlreadyExist(false);
             return;
         }
@@ -62,7 +63,7 @@ export default function FavoriteName({
     }
 
     function getErrorText(name) {
-        if (name === '') {
+        if (name === '' && submitted) {
             return t('web:fav_name_empty');
         } else if (nameAlreadyExist) {
             return t('web:fav_name_already_exists');
@@ -95,8 +96,9 @@ export default function FavoriteName({
                 onChange={(e) => setFavoriteName(e.target.value)}
                 value={favoriteName}
                 autoFocus
-                error={favoriteName === '' || nameAlreadyExist}
+                error={(submitted && favoriteName === '') || nameAlreadyExist}
                 helperText={getErrorText(favoriteName)}
+                inputProps={{ className: styles.fieldInput }}
                 FormHelperTextProps={{ className: styles.helperText }}
             />
         </Box>
