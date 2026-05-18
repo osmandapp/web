@@ -222,7 +222,7 @@ Has introducido tu correo electrónico en uno de los formularios de promoción. 
 
 2b. Activa OsmAnd Pro en tu dispositivo:
 
-_OsmAnd app → Menú → Configuración → OsmAnd Cloud → Ya tengo una cuenta_
+_Menú de la aplicación OsmAnd > Configuración > OsmAnd Cloud > Ya tengo una cuenta_
 
 <table class="blogimage">
   <tr>
@@ -232,7 +232,7 @@ _OsmAnd app → Menú → Configuración → OsmAnd Cloud → Ya tengo una cuent
 </table> 
 
 
-3. Después de esto, recibirás un código de **cuatro dígitos** en tu correo electrónico.
+3. After this, recibirás un código de **cuatro dígitos** en tu correo electrónico.
 
 ![Confirmation](@site/static/img/promo/advportal/confirmation_3.png)
 
@@ -249,7 +249,7 @@ Introduce este código en la aplicación OsmAnd:
 
 4. Reinicia la aplicación OsmAnd y verifica la activación de OsmAnd Pro:
 
-_OsmAnd app → Menú → Configuración → Compras → Restaurar compras_
+_Menú de la aplicación OsmAnd > Configuración > Compras > Restaurar compras_
 
 <table class="blogimage">
   <tr>
@@ -287,7 +287,7 @@ Avete inserito la vostra e-mail in uno dei moduli Promo. Ora dovete attivare Osm
 
 2b. Attivare OsmAnd Pro sul dispositivo:    
 
-_OsmAnd app Menu > Settings > OsmAnd Cloud > I already have an account_
+_Menu dell'app OsmAnd > Impostazioni > OsmAnd Cloud > Ho già un account_
 
 <table class="blogimage">
   <tr>
@@ -314,7 +314,7 @@ Utilizzate questo codice a quattro cifre nell'app OsmAnd:
 
 4. Riavviare l'app OsmAnd e verificare l'attivazione di Osmand Pro:
 
-_OsmAnd app Menu > Settings > Purchases > Restore purchases_
+_Menu dell'app OsmAnd > Impostazioni > Acquisti > Ripristina acquisti_
 
 <table class="blogimage">
   <tr>
@@ -335,7 +335,7 @@ _________________________________
 
 **Jak aktywować OsmAnd Promo Pro**
 
-Wprowadziłeś swój e-mail do jednego z formularzy Promo. Teraz musisz aktywować OsmAnd Pro dla swoich urządzeń.
+Wprowadziłeś swój e-mail do jednego z formularzy Promo. Sekarang musisz aktywować OsmAnd Pro dla swoich urządzeń.
 
 **Twoje kroki**:
 
@@ -353,7 +353,7 @@ Wprowadziłeś swój e-mail do jednego z formularzy Promo. Teraz musisz aktywowa
 
 2b. Aktywuj OsmAnd Pro na swoim urządzeniu:
 
-_OsmAnd app Menu > Ustawienia > OsmAnd Cloud > Mam już konto_
+_Menu aplikacji OsmAnd > Ustawienia > OsmAnd Cloud > Mam już konto_
 
 <table class="blogimage">
   <tr>
@@ -377,7 +377,7 @@ Proszę użyć tego czterocyfrowego kodu w aplikacji OsmAnd:
 
 4. Uruchom ponownie OsmAnd app i sprawdź aktywację Osmand Pro:
    
-_OsmAnd app Menu > Ustawienia > Zakupy > Przywróć zakupy_
+_Menu aplikacji OsmAnd > Ustawienia > Zakupy > Przywróć zakupy_
 
 <table class="blogimage">
   <tr>
@@ -415,7 +415,7 @@ ______________________________
 
 2b. Активируйте OsmAnd Pro на своем устройстве:
 
-_OsmAnd app Menu > Settings > OsmAnd Cloud > I already have an account_
+_Меню приложения OsmAnd > Настройки > OsmAnd Cloud > У меня уже есть аккаунт_
 
 <table class="blogimage">
   <tr>
@@ -443,7 +443,7 @@ _OsmAnd app Menu > Settings > OsmAnd Cloud > I already have an account_
 4. Перезапустите приложение OsmAnd и проверьте активацию Osmand Pro в разделе _Покупки_:
 
 
-_OsmAnd app Menu > Settings > Purchases > Restore purchases_
+_Меню приложения OsmAnd > Настройки > Покупки > Восстановить покупки_
 
 <table class="blogimage">
   <tr>
