@@ -34,7 +34,7 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 OsmAnd не собирает никакую информацию, пожалуйста, ознакомьтесь с [Политикой конфиденциальности](https://osmand.net/docs/legal/privacy-policy) и [Условиями использования OsmAnd](https://osmand.net/docs/legal/terms-of-use).
 
-Ссылки на Андрея Бересневича: [Facebook](https://www.facebook.com/andrej.beresnevic), [Youtube](https://www.youtube.com/@Andrei_Beresnevich), [Instagram](instagram.com/andrei.beresnevich.by).
+Ссылки на Андрея Бересневича: [Facebook](https://www.facebook.com/andrej.beresnevic), [Youtube](https://www.youtube.com/@Andrei_Beresnevich), [Instagram](https://www.instagram.com/andrei.beresnevich.by).
 
 ________________________________
 
