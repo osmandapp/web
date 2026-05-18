@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import FavoritesManager from '../../../../manager/FavoritesManager';
 import ChevronItem from '../../../../frame/components/items/ChevronItem';
 import FolderSelectionPanel from './FolderSelectionPanel';
+import itemStyles from '../../../../frame/components/items/items.module.css';
 
 export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, defaultGroup, isTrackWpt }) {
     const { t } = useTranslation();
@@ -16,6 +17,7 @@ export default function FavoriteGroup({ favoriteGroup, setFavoriteGroup, default
             <ChevronItem
                 id="se-fav-group-selector"
                 title={t('folder')}
+                titleProps={{ className: itemStyles.mainBoldText }}
                 value={displayName}
                 onClick={() => setPanelOpen((o) => !o)}
             />

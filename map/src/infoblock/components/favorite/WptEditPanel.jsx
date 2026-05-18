@@ -662,6 +662,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         defaultGroup={defaultGroup}
                         isTrackWpt={isTrackWpt}
                     />
+                    <ThickDivider mt={0} mb={0} />
                     <SubTitleMenu text={t('shared_string_appearance')} />
                     <SimpleItemWithRightIcon
                         id="se-fav-icon-row"
