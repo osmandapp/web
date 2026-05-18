@@ -111,6 +111,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const blocker = useBlocker(hasChanges);
 
     useEffect(() => {
+        ctx.setAddFavorite((prev) => ({
+            ...prev,
+            panRequest: { key: Date.now(), infoBlockWidthPx: MENU_INFO_OPEN_SIZE },
+        }));
         getIconCategories().then();
         if (!isTrackWpt) {
             const categoryName = isEditMode
@@ -529,8 +533,15 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         );
     }
 
+    function closeActivePanel() {
+        togglePanel(activePanel);
+    }
+
     function togglePanel(panel) {
-        setActivePanel((prev) => (prev === panel ? null : panel));
+        const next = activePanel === panel ? null : panel;
+        setActivePanel(next);
+        const infoBlockWidthPx = next !== null ? MENU_INFO_OPEN_SIZE * 2 : MENU_INFO_OPEN_SIZE;
+        ctx.setAddFavorite((prev) => ({ ...prev, panRequest: { key: Date.now(), infoBlockWidthPx } }));
     }
 
     function handleClose() {
@@ -568,7 +579,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 <DescriptionPanel
                     description={favoriteDescription}
                     setDescription={setFavoriteDescription}
-                    onClose={() => setActivePanel(null)}
+                    onClose={closeActivePanel}
                 />
             )}
             {activePanel === 'icon' && (
@@ -578,7 +589,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     favoriteIconCategories={favoriteIconCategories}
                     selectedGpxFile={ctx.selectedGpxFile}
                     add={!isEditMode}
-                    onClose={() => setActivePanel(null)}
+                    onClose={closeActivePanel}
                 />
             )}
             {activePanel === 'color' && (
@@ -586,7 +597,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     selectedColor={favoriteColor}
                     setSelectedColor={setFavoriteColor}
                     favoriteShape={favoriteShape}
-                    onClose={() => setActivePanel(null)}
+                    onClose={closeActivePanel}
                 />
             )}
             <Box className={styles.panel}>
