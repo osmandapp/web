@@ -23,6 +23,7 @@ import FavoriteHelper from './FavoriteHelper';
 import DeleteWptDialog from '../../../dialogs/favorites/DeleteWptDialog';
 import ExitWithoutSavingDialog from '../../../dialogs/favorites/ExitWithoutSavingDialog';
 import useExitGuard from '../../../util/hooks/useExitGuard';
+import { useBlocker } from 'react-router-dom';
 import { ADDRESS_NOT_FOUND } from '../wpt/WptDetails';
 import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsProvider';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
@@ -101,14 +102,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         renderDialog: ({ onKeepEditing, onExit }) => (
             <ExitWithoutSavingDialog open={true} onKeepEditing={onKeepEditing} onExit={onExit} />
         ),
-        register: (fn) =>
-            ctx.setExitGuards((prev) => {
-                if (fn) return { ...prev, wptEdit: fn };
-                const next = { ...prev };
-                delete next.wptEdit;
-                return next;
-            }),
+        register: (guard) => ctx.setExitGuards((prev) => ({ ...prev, wptEdit: guard ?? undefined })),
     });
+    const blocker = useBlocker(hasChanges);
 
     useEffect(() => {
         getIconCategories().then();
@@ -552,6 +548,16 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     return (
         <>
             {dialog}
+            {blocker.state === 'blocked' && (
+                <ExitWithoutSavingDialog
+                    open={true}
+                    onKeepEditing={() => blocker.reset()}
+                    onExit={() => {
+                        closePanel();
+                        blocker.proceed();
+                    }}
+                />
+            )}
             {activePanel === 'description' && (
                 <DescriptionPanel
                     description={favoriteDescription}

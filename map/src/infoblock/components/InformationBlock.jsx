@@ -113,8 +113,8 @@ export default function InformationBlock({
                     previewAppearance: null,
                 };
             });
-        const guard = ctx.exitGuards.wptEdit;
-        guard ? guard(close) : close();
+        if (ctx.exitGuards.wptEdit?.hasChanges) return;
+        close();
     }, [ctx.selectedWpt, ctx.currentObjectType]);
 
     useEffect(() => {

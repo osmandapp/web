@@ -208,8 +208,6 @@ export const AppContextProvider = (props) => {
         location: null,
     });
 
-    // Registry of exit guards: { key: guardFn }. Components register via useExitGuard({ register }).
-    // Callers: const guard = ctx.exitGuards.wptEdit; guard ? guard(action) : action();
     const [exitGuards, setExitGuards] = useState({});
 
     const [processingGroups, setProcessingGroups] = useState(false);

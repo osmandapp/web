@@ -83,7 +83,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
     useEffect(() => {
         if (!map) return;
 
-        if (ctx.addFavorite?.editWpt && ctx.exitGuards?.wptEdit) {
+        if (ctx.addFavorite?.editWpt && ctx.exitGuards.wptEdit?.hasChanges) {
             return;
         }
 

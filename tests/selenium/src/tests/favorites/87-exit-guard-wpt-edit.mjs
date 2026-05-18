@@ -17,7 +17,7 @@ export default async function test() {
     const favorites = getFiles({ folder: 'favorites' });
     const shopGroupName = 'shops';
     const wptName = 'Test wpt';
-    const wptName2 = 'Spuistraat (Oude Binnenstad) 96';
+    const wptName2 = 'Dapperstraat 40-1';
 
     const { path: shopsPath } = favorites.find((t) => t.name === 'favorites-shops');
 
@@ -51,6 +51,7 @@ export default async function test() {
     await waitByRemoved(By.id('se-edit-fav-dialog'));
     // navigate back to favorites root
     await actionOpenFavorites();
+    await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
     // --- Test 2: Add from map → type name → open context menu again → add favorite → guard fires → dialog ---
     await actionOpenContextMenu();
@@ -62,8 +63,6 @@ export default async function test() {
     await waitBy(By.id('se-exit-dialog-exit'));
     await clickBy(By.id('se-exit-dialog-exit'));
     await clickBy(By.id('se-close-add-wpt-panel'));
-    await actionOpenFavorites();
-    await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
     // --- Test 3: Edit → no changes → add favorite from context menu → NO dialog ---
     await clickBy(By.id(`se-menu-fav-${shopGroupName}`));

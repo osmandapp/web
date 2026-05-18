@@ -150,17 +150,6 @@
       <osmand:color>#43a047ff</osmand:color>
     </extensions>
   </wpt>
-  <wpt lat="51.4438267" lon="3.5723525">
-    <time>2023-03-16T19:08:46Z</time>
-    <name>Spuistraat (Oude Binnenstad) 96</name>
-    <type>shops</type>
-    <extensions>
-      <osmand:address>Vlissingen</osmand:address>
-      <osmand:icon>amenity_fire_station</osmand:icon>
-      <osmand:background>circle</osmand:background>
-      <osmand:color>#43a047ff</osmand:color>
-    </extensions>
-  </wpt>
   <wpt lat="52.3691041" lon="4.9008535">
     <time>2023-03-16T19:06:49Z</time>
     <name>Waterlooplein (Amsterdam) 1</name>

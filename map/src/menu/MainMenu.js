@@ -743,20 +743,21 @@ export default function MainMenu({
     }
 
     function selectMenu({ item, openFromUrl = false }) {
-        if (!openFromUrl) {
-            const guard = ctx.exitGuards.wptEdit;
-            guard ? guard(() => doSelectMenu({ item })) : doSelectMenu({ item });
-            return;
-        }
         doSelectMenu({ item });
     }
 
     function doSelectMenu({ item }) {
-        closeSubPages({ ctx, ltx });
+        const editInProgress = !!ctx.exitGuards.wptEdit?.hasChanges;
+        if (!editInProgress) {
+            closeSubPages({ ctx, ltx });
+        }
         let currentType;
         if (menuInfo) {
             // update menu
-            setShowInfoBlock(false);
+            if (!editInProgress) {
+                setShowInfoBlock(false);
+                ctx.setCurrentObjectType(null);
+            }
             ctx.setOpenNavigationSettings(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
@@ -767,7 +768,6 @@ export default function MainMenu({
             }
             setMenuInfo(menu?.component);
             currentType = menu?.type;
-            ctx.setCurrentObjectType(null);
         } else {
             // select first menu
             setMenuInfo(item.component);

@@ -68,8 +68,11 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const handleMenuItemClick = (callback) => {
         const latlng = clickLatLng;
         handleClose();
-        const guard = ctx.exitGuards.wptEdit;
-        guard ? guard(() => callback(latlng)) : callback(latlng);
+        if (ctx.exitGuards.wptEdit) {
+            ctx.exitGuards.wptEdit.guard(() => callback(latlng));
+        } else {
+            callback(latlng);
+        }
     };
 
     const openLogin = () => {
