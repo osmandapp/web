@@ -17,8 +17,21 @@
     font-weight: 500 !important;
 }
 
-.locationField {
-    margin-top: 24px !important;
+.locationWrapper {
+    margin-top: 24px;
+    align-self: stretch;
+}
+
+.locationBackdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1300;
+}
+
+.locationDropdown {
+    position: fixed !important;
+    overflow-y: auto;
+    z-index: 1301;
 }
 
 .dropdownItem {
