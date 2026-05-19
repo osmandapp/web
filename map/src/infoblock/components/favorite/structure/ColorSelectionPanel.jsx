@@ -3,6 +3,7 @@ import { Box, IconButton, ListItem, ListItemButton, Menu } from '@mui/material';
 import { ReactComponent as AddIcon } from '../../../../assets/icons/ic_action_add.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../../context/AppContext';
+import LoginContext from '../../../../context/LoginContext';
 import MarkerOptions from '../../../../map/markers/MarkerOptions';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
@@ -11,7 +12,14 @@ import ActionsMenuItems from '../../../../frame/components/other/ActionsMenuItem
 import ColorBlock from '../../../../frame/components/other/ColorBlock';
 import { getShapeSvg, SelectedMarker } from './WptIconPreview';
 import ColorPickerDialog from './ColorPickerDialog';
-import { loadColorPalette, nextPaletteId, saveColorPalette } from '../../../../manager/ColorPaletteManager';
+import {
+    clearLocalPalette,
+    loadColorPalette,
+    loadLocalPalette,
+    nextPaletteId,
+    saveColorPalette,
+    saveLocalPalette,
+} from '../../../../manager/ColorPaletteManager';
 import { hasAlpha } from '../../../../util/ColorUtil';
 import { ReactComponent as EditIcon } from '../../../../assets/icons/ic_action_appearance.svg';
 import { ReactComponent as DuplicateIcon } from '../../../../assets/icons/ic_action_copy.svg';
@@ -25,6 +33,7 @@ const COLOR_ITEM_CONTAINER = 48;
 
 export default function ColorSelectionPanel({ selectedColor, setSelectedColor, favoriteShape, onClose }) {
     const ctx = useContext(AppContext);
+    const { isProAccount } = useContext(LoginContext);
     const { t } = useTranslation();
 
     const [colors, setColors] = useState([]); // [{ id, value }] — id is the stable palette index
@@ -32,13 +41,37 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
     const [pickerOpen, setPickerOpen] = useState(false);
     const [editIndex, setEditIndex] = useState(null);
 
+    const isPro = isProAccount();
+
     useEffect(() => {
-        loadColorPalette().then((loaded) => {
-            if (loaded.length > 0) {
-                setColors(loaded);
-            }
-        });
+        if (isPro) {
+            loadColorPalette().then((cloudColors) => {
+                const localColors = loadLocalPalette();
+                if (localColors.length > 0) {
+                    // Migrate local colors to cloud: merge, deduplicate by value, cloud takes priority
+                    const merged = mergeColors(cloudColors, localColors);
+                    saveColorPalette(merged, ctx.setNotification).then((ok) => {
+                        if (ok) clearLocalPalette();
+                    });
+                    setColors(merged);
+                } else {
+                    if (cloudColors.length > 0) setColors(cloudColors);
+                }
+            });
+        } else {
+            const localColors = loadLocalPalette();
+            if (localColors.length > 0) setColors(localColors);
+        }
     }, []);
+
+    async function savePalette(items) {
+        if (isPro) {
+            return saveColorPalette(items, ctx.setNotification);
+        }
+        saveLocalPalette(items);
+
+        return true;
+    }
 
     function handleSelect(color) {
         setSelectedColor(color);
@@ -65,7 +98,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
         closeContextMenu();
         const copy = { id: nextPaletteId(colors), value: colors[idx].value };
         const updated = [copy, ...colors];
-        const ok = await saveColorPalette(updated, ctx.setNotification);
+        const ok = await savePalette(updated);
         if (ok) {
             setColors(updated);
         }
@@ -76,7 +109,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
         const removed = colors[idx];
         closeContextMenu();
         const updated = colors.filter((_, i) => i !== idx);
-        const ok = await saveColorPalette(updated, ctx.setNotification);
+        const ok = await savePalette(updated);
         if (ok) {
             setColors(updated);
             const colorStillAvailable = updated.some((c) => c.value === removed.value);
@@ -98,7 +131,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
     async function handlePickerApply(color) {
         if (editIndex !== null) {
             const updated = colors.map((c, i) => (i === editIndex ? { ...c, value: color } : c));
-            const ok = await saveColorPalette(updated, ctx.setNotification);
+            const ok = await savePalette(updated);
             if (!ok) return;
             setPickerOpen(false);
             setColors(updated);
@@ -107,7 +140,7 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
             }
         } else {
             const updated = [{ id: nextPaletteId(colors), value: color }, ...colors];
-            const ok = await saveColorPalette(updated, ctx.setNotification);
+            const ok = await savePalette(updated);
             if (!ok) return;
             setPickerOpen(false);
             setColors(updated);
@@ -202,6 +235,14 @@ export default function ColorSelectionPanel({ selectedColor, setSelectedColor, f
             />
         </SecondaryMenuDrawer>
     );
+}
+
+function mergeColors(cloudColors, localColors) {
+    const cloudValues = new Set(cloudColors.map((c) => c.value));
+    const localOnly = localColors.filter((c) => !cloudValues.has(c.value));
+    const merged = [...cloudColors, ...localOnly];
+
+    return merged.map((c, i) => ({ ...c, id: i + 1 }));
 }
 
 function ColorCircle({ color, shape, size, containerSize, selected }) {
