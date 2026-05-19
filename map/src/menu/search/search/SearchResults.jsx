@@ -259,7 +259,18 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
+    }, [locReady, params, ctx.forceSearch]);
+
+    // Word search must wait for GPX files and groups to finish loading.
+    // Once loading is complete, re-trigger the search effect via forceSearch.
+    useEffect(() => {
+        if (ctx.gpxLoading || ctx.processingGroups) return;
+        const isWordSearch = params.query && params.query !== '' && !params.type;
+        if (!isWordSearch || !locReady || !isSearchResultRoute) return;
+        if (!isSearchEqualToUrl(ctx.searchQuery)) {
+            ctx.setForceSearch(true);
+        }
+    }, [ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {

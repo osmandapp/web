@@ -697,6 +697,14 @@ export function createFavoritePoiIcon({ point = {}, icon, color, background }) {
     return createPoiIcon({ point, icon, color, background, hasBackgroundLight: false });
 }
 
+/**
+ * Generates the icon HTML for a favorite waypoint in the menu list.
+ *
+ * @param {Object|null} [wpt] - Waypoint object used as a fallback for appearance fields.
+ * @param {string} [icon] - Icon name. Overrides wpt.icon when provided.
+ * @param {string} [color] - Icon color. Overrides wpt.color when provided.
+ * @param {string} [background] - Background shape. Overrides wpt.background when provided.
+ */
 export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } = {}) {
     const point = wpt ?? {};
     const resolvedIcon = icon ?? wpt?.icon;
