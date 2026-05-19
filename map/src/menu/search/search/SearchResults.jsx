@@ -87,7 +87,6 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
-    const [gpxReady, setGpxReady] = useState(!ctx.gpxLoading && !ctx.processingGroups);
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
@@ -240,7 +239,7 @@ export default function SearchResults() {
                     return;
                 }
                 const isWordSearch = params.query && params.query !== '' && !params.type;
-                if (isWordSearch && !gpxReady) {
+                if (isWordSearch && (ctx.gpxLoading || ctx.processingGroups)) {
                     return;
                 }
                 ctx.setProcessingSearch(true);
@@ -260,12 +259,7 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params, ctx.forceSearch, gpxReady]);
-
-    // Word search must wait for GPX files and groups to finish loading.
-    useEffect(() => {
-        setGpxReady(!ctx.gpxLoading && !ctx.processingGroups);
-    }, [ctx.gpxLoading, ctx.processingGroups]);
+    }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {
