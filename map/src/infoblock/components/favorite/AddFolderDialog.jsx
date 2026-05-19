@@ -12,7 +12,6 @@ import {
     ListItemButton,
     ListItemText,
     Popover,
-    Radio,
     TextField,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -21,6 +20,7 @@ import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { decodeGroupNameFromFile, saveFavoriteGroup } from '../../../manager/FavoritesManager';
 import { sanitizedFileName } from '../../../util/Utils';
+import AppRadio from '../../../frame/components/items/AppRadio';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import itemStyles from '../../../frame/components/items/items.module.css';
 import styles from './addFolderDialog.module.css';
@@ -194,10 +194,13 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
                                         >
                                             <ListItemText
                                                 primary={`${prefix}${item.displayName}`}
-                                                primaryTypographyProps={{ noWrap: true }}
+                                                primaryTypographyProps={{
+                                                    noWrap: true,
+                                                    className: styles.dropdownItemText,
+                                                }}
                                             />
                                             <Box className={itemStyles.selectRadioControl}>
-                                                <Radio
+                                                <AppRadio
                                                     checked={isSelected}
                                                     onChange={() => {
                                                         setSelectedParent(effectiveGroup);
