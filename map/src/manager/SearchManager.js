@@ -1,4 +1,3 @@
-import { apiGet } from '../util/HttpApi';
 import {
     BACKGROUND_TYPE_EXTENSION,
     CATEGORY_NAME,
@@ -15,7 +14,6 @@ import {
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
-import i18n from 'i18next';
 import {
     FAVORITE_HIT_GROUP_ID,
     getObjIdSearch,

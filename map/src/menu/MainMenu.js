@@ -378,10 +378,10 @@ export default function MainMenu({
     }
 
     // Switch menu by current URL without selectMenu's side-effects (closing infoBlock, clearing currentObjectType).
-    // Skip if a map object (e.g. favorite opened from map, or track opened from search) is displayed —
-    // keep selectedType pointing at the originating menu so that closeMapObj can navigate back to it correctly.
+    // Skip if a map object (e.g. favorite opened from map) is displayed — keep selectedType pointing at the
+    // originating menu (e.g. cloud track) so that closeMapObj can navigate back to it correctly.
     function switchMenuByCurrentUrl() {
-        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj || ctx.selectedGpxFile?.mapObj) {
+        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
             return;
         }
         const matchedItem = items.find((item) => location.pathname.startsWith(item.url));

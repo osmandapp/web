@@ -192,7 +192,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         }
         const categoryType = item.properties[CATEGORY_TYPE];
         if (categoryType === searchTypeMap.FAVORITE) {
-            return `se-search-result-${name}`;
+            return `se-search-result-fav-${name}`;
         }
         if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK) {
             return `se-search-result-${item.properties[CATEGORY_NAME]}`;

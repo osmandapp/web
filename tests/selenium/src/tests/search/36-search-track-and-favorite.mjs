@@ -45,8 +45,7 @@ export default async function test() {
     await submitSearchQuery(trackName);
 
     await waitBy(By.id('se-empty-search'));
-    const deletedTrackResult = await waitBy(By.id(trackResultId), { optional: true, idle: true });
-    await assert(!deletedTrackResult, `Deleted track "${trackName}" should be absent in search results`);
+    await waitByRemoved(By.id(trackResultId));
 
     // --- Search: favorite appears, then disappears after group delete ---
     const favGroupName = 'favorites-shops';
@@ -66,7 +65,7 @@ export default async function test() {
     await submitSearchQuery(wptName);
 
     await waitBy(By.id('se-search-results'));
-    const favResultId = `se-search-result-${wptName}`;
+    const favResultId = `se-search-result-fav-${wptName}`;
     await clickBy(By.id(favResultId));
     await waitBy(By.id(`se-fav-item-info-${wptName}`));
 
@@ -81,9 +80,7 @@ export default async function test() {
 
     await submitSearchQuery(wptName);
 
-    await waitBy(By.id('se-empty-search'));
-    const deletedFavResult = await waitBy(By.id(favResultId), { optional: true, idle: true });
-    await assert(!deletedFavResult, `Deleted favorite "${wptName}" should be absent in search results`);
+    await waitByRemoved(By.id(favResultId));
 
     await actionFinish();
 }
