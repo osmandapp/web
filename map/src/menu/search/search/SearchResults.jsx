@@ -87,6 +87,7 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
+    const [gpxReady, setGpxReady] = useState(!ctx.gpxLoading && !ctx.processingGroups);
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
@@ -239,7 +240,7 @@ export default function SearchResults() {
                     return;
                 }
                 const isWordSearch = params.query && params.query !== '' && !params.type;
-                if (isWordSearch && (ctx.gpxLoading || ctx.processingGroups)) {
+                if (isWordSearch && !gpxReady) {
                     return;
                 }
                 ctx.setProcessingSearch(true);
@@ -259,17 +260,11 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params, ctx.forceSearch]);
+    }, [locReady, params, ctx.forceSearch, gpxReady]);
 
     // Word search must wait for GPX files and groups to finish loading.
-    // Once loading is complete, re-trigger the search effect via forceSearch.
     useEffect(() => {
-        if (ctx.gpxLoading || ctx.processingGroups) return;
-        const isWordSearch = params.query && params.query !== '' && !params.type;
-        if (!isWordSearch || !locReady || !isSearchResultRoute) return;
-        if (!isSearchEqualToUrl(ctx.searchQuery)) {
-            ctx.setForceSearch(true);
-        }
+        setGpxReady(!ctx.gpxLoading && !ctx.processingGroups);
     }, [ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
