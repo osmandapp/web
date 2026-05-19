@@ -35,7 +35,8 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { getDist, getTime, openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
-import FavoriteSearchResultItem from './FavoriteSearchResultItem';
+import { openFavoriteFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import FavoriteItem from '../../favorite/FavoriteItem';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -299,13 +300,18 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+        const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
+        const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
+        if (!resolved) return null;
+        const marker = { ...resolved.marker, locDist: distance };
         return (
-            <FavoriteSearchResultItem
+            <FavoriteItem
                 id={id}
-                groupId={item.properties[FAVORITE_HIT_GROUP_ID]}
-                name={name}
-                locDist={distance}
+                marker={marker}
+                group={resolved.group}
                 currentLoc={currentLoc}
+                onOpen={() => openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
+                hideActions
             />
         );
     }
