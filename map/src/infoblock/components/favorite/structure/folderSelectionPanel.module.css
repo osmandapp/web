@@ -13,6 +13,8 @@
 
 .folderItem {
     min-height: 48px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     padding-right: 4px !important;
 }
 
