@@ -1,40 +1,39 @@
-import React, { useContext, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, IconButton, ListItem, ListItemButton, Menu, MenuItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { VariableSizeList } from 'react-window';
 import AppContext from '../../../../context/AppContext';
-import MarkerOptions from '../../../../map/markers/MarkerOptions';
+import MarkerOptions, { resolvedPoiCategories } from '../../../../map/markers/MarkerOptions';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
-import SubTitleMenu from '../../../../frame/components/titles/SubTitleMenu';
 import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
-import ColorBlock from '../../../../frame/components/other/ColorBlock';
+import SubTitleMenu from '../../../../frame/components/titles/SubTitleMenu';
 import WptIconPreview from './WptIconPreview';
 import isEmpty from 'lodash-es/isEmpty';
+import { useWindowSize } from '../../../../util/hooks/useWindowSize';
 import styles from '../wptEditPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
 import { ReactComponent as ListFlatIcon } from '../../../../assets/features/ic_action_list_flat.svg';
+import { HEADER_SIZE, PANEL_HEADER_HEIGHT } from '../../../../manager/GlobalManager';
 
 const SELECTION_COLOR = '#237bff';
 const FALLBACK_BG_COLOR = '#e6e6e6';
 const LAST_USED_KEY = '__last_used__';
 
-export default function IconSelectionPanel({
-    selectedIcon,
-    setSelectedIcon,
-    favoriteIconCategories,
-    selectedGpxFile,
-    add,
-    onClose,
-}) {
+const ICONS_PER_ROW = 6;
+const HEADER_ROW_HEIGHT = 64;
+const ICON_ROW_HEIGHT = 57;
+
+export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, selectedGpxFile, add, onClose }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
+    const [, windowHeight] = useWindowSize();
 
-    // Capture icon at mount time so changing selection inside the panel does not re-trigger the scroll
     const initialIconRef = useRef(selectedIcon);
+    const listRef = useRef(null);
 
     const [menuAnchor, setMenuAnchor] = useState(null);
-    const [scrollTarget, setScrollTarget] = useState(null);
 
     const usedIcons = useMemo(() => {
         const res = [...ctx.wptRecents.icons];
@@ -51,29 +50,62 @@ export default function IconSelectionPanel({
         return res;
     }, [ctx.wptRecents.icons, selectedGpxFile, add]);
 
-    // Find the actual category containing the initially selected icon, so we can scroll to it on open.
-    // Last used is intentionally skipped — it's a shortcut, not the canonical location of an icon.
-    const initialCategory = useMemo(() => {
+    // Build flat rows array and a map of category key → row index for scroll navigation.
+    const { rows, categoryIndexMap } = useMemo(() => {
+        const rows = [];
+        const categoryIndexMap = {};
+
+        if (usedIcons.length > 0) {
+            categoryIndexMap[LAST_USED_KEY] = rows.length;
+            rows.push({ type: 'header', key: LAST_USED_KEY, title: t('web:wpt_icon_selection_last_used') });
+            for (let i = 0; i < usedIcons.length; i += ICONS_PER_ROW) {
+                rows.push({
+                    type: 'icons',
+                    idPrefix: 'se-fav-icon-last-used',
+                    icons: usedIcons.slice(i, i + ICONS_PER_ROW),
+                });
+            }
+        }
+
+        for (const [category, icons] of Object.entries(resolvedPoiCategories)) {
+            categoryIndexMap[category] = rows.length;
+            rows.push({ type: 'header', key: category, title: formatCategoryName(category) });
+            for (let i = 0; i < icons.length; i += ICONS_PER_ROW) {
+                rows.push({
+                    type: 'icons',
+                    idPrefix: `se-fav-icon-${category}`,
+                    icons: icons.slice(i, i + ICONS_PER_ROW),
+                });
+            }
+        }
+
+        return { rows, categoryIndexMap };
+    }, [usedIcons, t]);
+
+    // On mount: scroll to the category containing the initially selected icon.
+    useEffect(() => {
+        if (!listRef.current) return;
         const icon = initialIconRef.current;
-        if (!icon || !favoriteIconCategories?.categories) return null;
-        const entry = Object.entries(favoriteIconCategories.categories).find(([, data]) => data?.icons?.includes(icon));
+        if (!icon) return;
+        const entry = Object.entries(resolvedPoiCategories).find(([, icons]) => icons.includes(icon));
+        if (!entry) return;
+        const idx = categoryIndexMap[entry[0]];
+        if (idx != null) {
+            listRef.current.scrollToItem(idx, 'start');
+        }
+    }, [categoryIndexMap]);
 
-        return entry ? entry[0] : null;
-    }, [favoriteIconCategories]);
-
-    // Build ordered list of categories for the dropdown: Last used first, then all named categories.
+    // Category dropdown menu items.
     const categoryMenuItems = useMemo(() => {
         const items = [];
         if (usedIcons.length > 0) {
             items.push({ key: LAST_USED_KEY, label: t('web:wpt_icon_selection_last_used') });
         }
-        if (favoriteIconCategories?.categories) {
-            Object.keys(favoriteIconCategories.categories).forEach((name) => {
-                items.push({ key: name, label: formatCategoryName(name) });
-            });
-        }
+        Object.keys(resolvedPoiCategories).forEach((name) => {
+            items.push({ key: name, label: formatCategoryName(name) });
+        });
         return items;
-    }, [usedIcons, favoriteIconCategories]);
+    }, [usedIcons, t]);
 
     function openMenu(e) {
         setMenuAnchor(e.currentTarget);
@@ -85,8 +117,14 @@ export default function IconSelectionPanel({
 
     function scrollToCategory(key) {
         closeMenu();
-        setScrollTarget(key);
+        const idx = categoryIndexMap[key];
+        if (idx != null && listRef.current) {
+            listRef.current.scrollToItem(idx, 'start');
+        }
     }
+
+    const getRowHeight = (index) => (rows[index]?.type === 'header' ? HEADER_ROW_HEIGHT : ICON_ROW_HEIGHT);
+    const listHeight = windowHeight - HEADER_SIZE - PANEL_HEADER_HEIGHT;
 
     const rightContent = (
         <>
@@ -118,83 +156,42 @@ export default function IconSelectionPanel({
                 appBarProps={{ id: 'se-back-icon-selection-panel' }}
                 rightContent={rightContent}
             />
-            <Box className={styles.iconSelectionContent}>
-                {usedIcons.length > 0 && (
-                    <IconCategorySection
-                        categoryKey={LAST_USED_KEY}
-                        title={t('web:wpt_icon_selection_last_used')}
-                        icons={usedIcons}
-                        selectedIcon={selectedIcon}
-                        onSelect={setSelectedIcon}
-                        idPrefix="se-fav-icon-last-used"
-                        scrollTarget={scrollTarget}
-                    />
+            <VariableSizeList
+                ref={listRef}
+                height={listHeight}
+                itemCount={rows.length}
+                itemSize={getRowHeight}
+                width="100%"
+                overscanCount={3}
+                style={{ overflowX: 'hidden' }}
+            >
+                {({ index, style }) => (
+                    <IconRow style={style} row={rows[index]} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />
                 )}
-                {favoriteIconCategories &&
-                    Object.entries(favoriteIconCategories.categories).map(([categoryName, categoryData]) => (
-                        <IconCategorySection
-                            key={categoryName}
-                            categoryKey={categoryName}
-                            scrollOnMount={categoryName === initialCategory}
-                            title={formatCategoryName(categoryName)}
-                            icons={categoryData.icons ?? []}
-                            selectedIcon={selectedIcon}
-                            onSelect={setSelectedIcon}
-                            idPrefix={`se-fav-icon-${categoryName}`}
-                            scrollTarget={scrollTarget}
-                        />
-                    ))}
-                <ColorBlock color={'#f0f0f0'} minHeight={scrollTarget ? '100%' : undefined} />
-            </Box>
+            </VariableSizeList>
         </SecondaryMenuDrawer>
     );
 }
 
-function IconCategorySection({
-    scrollOnMount = false,
-    categoryKey,
-    scrollTarget,
-    title,
-    icons,
-    selectedIcon,
-    onSelect,
-    idPrefix,
-}) {
-    const ref = useRef(null);
-    const didScroll = useRef(false);
-
-    useLayoutEffect(() => {
-        if (!scrollOnMount || didScroll.current || !ref.current) return;
-        ref.current.scrollIntoView({ block: 'start' });
-        didScroll.current = true;
-    }, [scrollOnMount]);
-
-    useLayoutEffect(() => {
-        if (scrollTarget !== categoryKey || !ref.current) return;
-        ref.current.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    }, [scrollTarget, categoryKey]);
-
-    if (!icons || icons.length === 0) {
-        return null;
+function IconRow({ style, row, selectedIcon, onSelect }) {
+    if (row.type === 'header') {
+        return (
+            <div style={style}>
+                <ThickDivider />
+                <SubTitleMenu text={row.title} />
+            </div>
+        );
     }
 
     return (
-        <Box ref={ref}>
-            <ThickDivider />
-            <SubTitleMenu text={title} />
+        <div style={style}>
             <Box className={styles.iconGrid}>
-                {icons.map((icon, index) => {
+                {row.icons.map((icon) => {
                     const isSelected = selectedIcon === icon;
-
                     return (
-                        <ListItem
-                            key={`${idPrefix}-${index}-${icon}`}
-                            className={styles.iconGridItem}
-                            component="div"
-                            disablePadding
-                        >
+                        <ListItem key={icon} className={styles.iconGridItem} component="div" disablePadding>
                             <ListItemButton
-                                id={`${idPrefix}-${icon}`}
+                                id={`${row.idPrefix}-${icon}`}
                                 className={styles.iconGridButton}
                                 onClick={() => onSelect(icon)}
                             >
@@ -213,12 +210,11 @@ function IconCategorySection({
                     );
                 })}
             </Box>
-        </Box>
+        </div>
     );
 }
 
 function formatCategoryName(name) {
     if (!name) return '';
-
     return name.charAt(0).toUpperCase() + name.slice(1).replaceAll('_', ' ');
 }

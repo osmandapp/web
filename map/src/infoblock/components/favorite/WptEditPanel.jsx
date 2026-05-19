@@ -28,7 +28,6 @@ import { ADDRESS_NOT_FOUND } from '../wpt/WptDetails';
 import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsProvider';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
-import { apiGet } from '../../../util/HttpApi';
 import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import PrimaryBtn from '../../../frame/components/btns/PrimaryBtn';
@@ -74,7 +73,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [favoriteIcon, setFavoriteIcon] = useState(
         editWpt?.icon ?? poi?.options?.[FINAL_POI_ICON_NAME] ?? MarkerOptions.DEFAULT_WPT_ICON
     );
-    const [favoriteIconCategories, setFavoriteIconCategories] = useState(null);
     const [favoriteColor, setFavoriteColor] = useState(editWpt?.color ?? MarkerOptions.DEFAULT_WPT_COLOR);
     const [favoriteShape, setFavoriteShape] = useState(
         editWpt?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE
@@ -115,7 +113,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             ...prev,
             panRequest: { key: Date.now(), infoBlockWidthPx: MENU_INFO_OPEN_SIZE },
         }));
-        getIconCategories().then();
+
         if (!isTrackWpt) {
             const categoryName = isEditMode
                 ? (editWpt?.category ?? FavoritesManager.DEFAULT_GROUP_NAME)
@@ -155,14 +153,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             previewAppearance: { color: favoriteColor, icon: favoriteIcon, background: favoriteShape },
         }));
     }, [favoriteColor, favoriteIcon, favoriteShape]);
-
-    async function getIconCategories() {
-        const resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER, { apiCache: true });
-        const res = await resp.json();
-        if (res) {
-            setFavoriteIconCategories(res);
-        }
-    }
 
     async function save() {
         setSubmitted(true);
@@ -586,7 +576,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 <IconSelectionPanel
                     selectedIcon={favoriteIcon}
                     setSelectedIcon={setFavoriteIcon}
-                    favoriteIconCategories={favoriteIconCategories}
                     selectedGpxFile={ctx.selectedGpxFile}
                     add={!isEditMode}
                     onClose={closeActivePanel}

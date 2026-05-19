@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import MarkerOptions, { ICONS_PREFIX, POI_ICONS_FOLDER } from '../../../../map/markers/MarkerOptions';
+import MarkerOptions, { getIconUrlByName } from '../../../../map/markers/MarkerOptions';
 import { ReactComponent as SelectionRing } from '../../../../assets/wpt/selection.svg';
 import { hexToRgba } from '../../../../util/ColorUtil';
 import styles from '../wptEditPanel.module.css';
@@ -55,7 +55,7 @@ export default function WptIconPreview({
             <Box
                 component="img"
                 className={styles.wptIconPreviewIcon}
-                src={`/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${icon}.svg`}
+                src={getIconUrlByName('poi', icon)}
                 sx={{
                     width: iconSize,
                     height: iconSize,
