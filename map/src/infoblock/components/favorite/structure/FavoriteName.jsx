@@ -56,7 +56,7 @@ export default function FavoriteName({
             return;
         }
 
-        const nameExists = otherNames.some((n) => n.toLowerCase() === trimmedName.toLowerCase());
+        const nameExists = otherNames.some((n) => n?.toLowerCase() === trimmedName.toLowerCase());
 
         setNameAlreadyExist(nameExists);
         setErrorName(nameExists);
