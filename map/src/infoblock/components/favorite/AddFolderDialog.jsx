@@ -32,16 +32,18 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
     const { t } = useTranslation();
 
     const groups = ctx.favorites.groups;
-    const defaultGroup = groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME) ?? null;
 
     const [folderName, setFolderName] = useState('');
     const [folderNameError, setFolderNameError] = useState('');
-    const [selectedParent, setSelectedParent] = useState(parentGroup ?? defaultGroup);
+    const [selectedParent, setSelectedParent] = useState(parentGroup ?? null);
     const [locationAnchorEl, setLocationAnchorEl] = useState(null);
     const [process, setProcess] = useState(false);
     const [advancedOpen, setAdvancedOpen] = useState(false);
 
-    const flatGroups = useMemo(() => groupTreeToList(groupTree ?? []), [groupTree]);
+    const flatGroups = useMemo(() => {
+        const topLevelItem = { group: null, displayName: t('web:fav_top_level'), level: 0, fullName: null };
+        return [topLevelItem, ...groupTreeToList(groupTree ?? [])];
+    }, [groupTree, t]);
 
     const locationOpen = Boolean(locationAnchorEl);
     const parentDisplayName = getDisplayName(selectedParent, t);
@@ -174,15 +176,16 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
                     >
                         <List dense disablePadding>
                             {flatGroups.map((item, idx) => {
-                                const effectiveGroup = item.group ?? { name: item.fullName };
-                                const isSelected =
-                                    selectedParent?.name === item.fullName ||
-                                    (!selectedParent && item.fullName === FavoritesManager.DEFAULT_GROUP_NAME);
+                                const isTopLevel = item.fullName === null;
+                                const effectiveGroup = isTopLevel ? null : (item.group ?? { name: item.fullName });
+                                const isSelected = isTopLevel
+                                    ? selectedParent === null
+                                    : selectedParent?.name === item.fullName;
                                 const showDivider = idx > 0 && item.level === 0;
                                 const prefix = item.level >= 1 ? '↳ ' : '';
 
                                 return (
-                                    <Box key={item.fullName}>
+                                    <Box key={item.fullName ?? '__top_level__'}>
                                         {showDivider && <Divider />}
                                         <ListItemButton
                                             selected={isSelected}
@@ -196,7 +199,10 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
                                                 primary={`${prefix}${item.displayName}`}
                                                 primaryTypographyProps={{
                                                     noWrap: true,
-                                                    className: styles.dropdownItemText,
+                                                    className:
+                                                        item.level === 0
+                                                            ? styles.dropdownItemTextMedium
+                                                            : styles.dropdownItemText,
                                                 }}
                                             />
                                             <Box className={itemStyles.selectRadioControl}>
@@ -250,14 +256,15 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
 }
 
 function buildFullPath(parentGroup, name) {
-    if (!parentGroup || parentGroup.name === FavoritesManager.DEFAULT_GROUP_NAME) {
+    if (!parentGroup) {
         return name;
     }
     return `${parentGroup.name}/${name}`;
 }
 
 function getDisplayName(group, t) {
-    if (!group || group.name === FavoritesManager.DEFAULT_GROUP_NAME) return t('shared_string_my_favorites');
+    if (!group) return t('web:fav_top_level');
+    if (group.name === FavoritesManager.DEFAULT_GROUP_NAME) return t('shared_string_my_favorites');
     const parts = group.name.split('/');
     return parts[parts.length - 1];
 }
