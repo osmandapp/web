@@ -3,7 +3,7 @@ import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
-import { apiGet, apiPost } from '../../util/HttpApi';
+import { apiGet, apiPost, digest } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,
@@ -483,11 +483,13 @@ export function addDistanceToPoints(points) {
 export async function getGpxFileFromTrackData(file, routeTypes, simplified = false) {
     const trackData = prepareTrackData({ file, routeTypes });
     const compressedData = compressJSONToBlob(trackData);
+    const apiCacheKey = await digest(JSON.stringify({ trackData, simplified }));
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, compressedData, {
         params: {
             simplified,
         },
         apiCache: true,
+        apiCacheKey,
         abortControllerKey: 'save-track-data-' + file?.name,
     });
 }
