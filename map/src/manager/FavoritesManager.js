@@ -19,7 +19,6 @@ export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
 export const PERSONAL_FAV_GROUP_NAME = 'personal';
 const DEFAULT_TAB_ICONS = 'used';
-const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
@@ -806,7 +805,6 @@ const FavoritesManager = {
     createDefaultWptGroup,
     getGroupSize,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
-    FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
     DEFAULT_GROUP_NAME: DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_WPT_COLOR: DEFAULT_GROUP_WPT_COLOR,
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,

@@ -396,8 +396,13 @@
     "color_palette_save_failed": "Could not save color palette to cloud",
     "fav_folder_location": "Location",
     "fav_folder_name": "Folder name",
+    "fav_top_level": "– Top level –",
     "folder_already_exists": "A folder with this name already exists.",
     "shared_string_advanced": "Advanced",
     "focus_on": "Focus: hide other items",
-    "focus_off": "Focus: dim other items"
+    "focus_off": "Focus: dim other items",
+    "exit_without_saving": "Exit without saving?",
+    "all_changes_will_be_lost": "All changes will be lost.",
+    "keep_editing": "Keep Editing",
+    "shared_string_exit": "Exit"
 }

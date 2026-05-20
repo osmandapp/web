@@ -601,10 +601,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isFav) {
             if (!wpt.mapObj) {
                 ctx.setSelectedFavoriteObj(null);
-                closeOnlyFavDetails();
             } else {
-                closeObjectFromMap();
+                // remove the selected pin from the map
+                ctx.setCloseMapObj(true);
             }
+            closeOnlyFavDetails();
         } else if (type.isShareFav) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));

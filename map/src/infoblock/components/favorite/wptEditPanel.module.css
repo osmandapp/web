@@ -19,14 +19,19 @@
 .helperText {
     height: 16px;
     line-height: 16px;
-    margin: 2px 0 0;
+    margin: 0 !important;
+    transform: translateY(-1px);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 .fieldInput {
-    padding-left: 8px !important;
+    padding-left: 16px !important;
+}
+
+.fieldLabel {
+    left: 4px !important;
 }
 
 .actions {
@@ -37,7 +42,7 @@
 
 .saveAction {
     display: flex;
-    padding: 0 12px;
+    padding: 0 8px 0 0;
     justify-content: flex-end;
     align-items: center;
 }

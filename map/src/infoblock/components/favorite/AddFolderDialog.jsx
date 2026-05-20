@@ -1,4 +1,5 @@
-import React, { useContext, useState, useMemo } from 'react';
+import React, { useContext, useState, useMemo, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import {
     Box,
     Button,
@@ -11,8 +12,7 @@ import {
     List,
     ListItemButton,
     ListItemText,
-    Popover,
-    Radio,
+    Paper,
     TextField,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -21,6 +21,7 @@ import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { decodeGroupNameFromFile, saveFavoriteGroup } from '../../../manager/FavoritesManager';
 import { sanitizedFileName } from '../../../util/Utils';
+import SmallRadio from '../../../frame/components/items/SmallRadio';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import itemStyles from '../../../frame/components/items/items.module.css';
 import styles from './addFolderDialog.module.css';
@@ -32,18 +33,20 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
     const { t } = useTranslation();
 
     const groups = ctx.favorites.groups;
-    const defaultGroup = groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME) ?? null;
 
     const [folderName, setFolderName] = useState('');
     const [folderNameError, setFolderNameError] = useState('');
-    const [selectedParent, setSelectedParent] = useState(parentGroup ?? defaultGroup);
-    const [locationAnchorEl, setLocationAnchorEl] = useState(null);
+    const [selectedParent, setSelectedParent] = useState(parentGroup ?? null);
+    const [foldersDropdownOpen, setFoldersDropdownOpen] = useState(false);
+    const foldersDropdownRef = useRef(null);
     const [process, setProcess] = useState(false);
     const [advancedOpen, setAdvancedOpen] = useState(false);
 
-    const flatGroups = useMemo(() => groupTreeToList(groupTree ?? []), [groupTree]);
+    const flatGroups = useMemo(() => {
+        const topLevelItem = { group: null, displayName: t('web:fav_top_level'), level: 0, fullName: null };
+        return [topLevelItem, ...groupTreeToList(groupTree ?? [])];
+    }, [groupTree, t]);
 
-    const locationOpen = Boolean(locationAnchorEl);
     const parentDisplayName = getDisplayName(selectedParent, t);
     const canSave = folderName.trim() !== '' && !process;
 
@@ -130,88 +133,41 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
                         error={folderNameError !== ''}
                         helperText={folderNameError || undefined}
                     />
-                    <TextField
-                        id="se-add-fav-folder-location"
-                        fullWidth
-                        variant="filled"
-                        label={t('web:fav_folder_location')}
-                        value={parentDisplayName}
-                        onClick={(e) => setLocationAnchorEl(locationAnchorEl ? null : e.currentTarget)}
-                        inputProps={{ readOnly: true, style: { cursor: 'pointer' } }}
-                        InputLabelProps={{ shrink: true }}
-                        InputProps={{
-                            endAdornment: (
-                                <ExpandMoreIcon
-                                    sx={{
-                                        fill: 'var(--svg-icon-color)',
-                                        transition: 'transform 0.2s',
-                                        transform: locationOpen ? 'rotate(180deg)' : 'none',
-                                    }}
-                                />
-                            ),
-                        }}
-                        className={styles.locationField}
-                    />
-                    <Popover
-                        open={locationOpen}
-                        anchorEl={locationAnchorEl}
-                        onClose={() => setLocationAnchorEl(null)}
-                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                        disableAutoFocus
-                        disableEnforceFocus
-                        disablePortal
-                        transitionDuration={0}
-                        slotProps={{
-                            paper: {
-                                sx: {
-                                    width: locationAnchorEl?.offsetWidth,
-                                    maxHeight: 380,
-                                    mt: '10px',
-                                },
-                            },
-                        }}
-                    >
-                        <List dense disablePadding>
-                            {flatGroups.map((item, idx) => {
-                                const effectiveGroup = item.group ?? { name: item.fullName };
-                                const isSelected =
-                                    selectedParent?.name === item.fullName ||
-                                    (!selectedParent && item.fullName === FavoritesManager.DEFAULT_GROUP_NAME);
-                                const showDivider = idx > 0 && item.level === 0;
-                                const prefix = item.level >= 1 ? '↳ ' : '';
-
-                                return (
-                                    <Box key={item.fullName}>
-                                        {showDivider && <Divider />}
-                                        <ListItemButton
-                                            selected={isSelected}
-                                            className={styles.dropdownItem}
-                                            onClick={() => {
-                                                setSelectedParent(effectiveGroup);
-                                                setLocationAnchorEl(null);
-                                            }}
-                                        >
-                                            <ListItemText
-                                                primary={`${prefix}${item.displayName}`}
-                                                primaryTypographyProps={{ noWrap: true }}
-                                            />
-                                            <Box className={itemStyles.selectRadioControl}>
-                                                <Radio
-                                                    checked={isSelected}
-                                                    onChange={() => {
-                                                        setSelectedParent(effectiveGroup);
-                                                        setLocationAnchorEl(null);
-                                                    }}
-                                                    onClick={(e) => e.stopPropagation()}
-                                                />
-                                            </Box>
-                                        </ListItemButton>
-                                    </Box>
-                                );
-                            })}
-                        </List>
-                    </Popover>
+                    <Box className={styles.locationWrapper} ref={foldersDropdownRef}>
+                        <TextField
+                            id="se-add-fav-folder-location"
+                            fullWidth
+                            variant="filled"
+                            label={t('web:fav_folder_location')}
+                            value={parentDisplayName}
+                            onClick={() => setFoldersDropdownOpen((prev) => !prev)}
+                            inputProps={{ readOnly: true, style: { cursor: 'pointer' } }}
+                            InputLabelProps={{ shrink: true }}
+                            InputProps={{
+                                endAdornment: (
+                                    <ExpandMoreIcon
+                                        sx={{
+                                            fill: 'var(--svg-icon-color)',
+                                            transition: 'transform 0.2s',
+                                            transform: foldersDropdownOpen ? 'rotate(180deg)' : 'none',
+                                        }}
+                                    />
+                                ),
+                            }}
+                        />
+                        {foldersDropdownOpen && (
+                            <LocationDropdown
+                                anchorRef={foldersDropdownRef}
+                                flatGroups={flatGroups}
+                                selectedParent={selectedParent}
+                                onSelect={(group) => {
+                                    setSelectedParent(group);
+                                    setFoldersDropdownOpen(false);
+                                }}
+                                onClose={() => setFoldersDropdownOpen(false)}
+                            />
+                        )}
+                    </Box>
                 </DialogContent>
                 <DialogActions className={styles.dialogActions}>
                     <Button className={styles.appearanceBtn} onClick={() => setAdvancedOpen(true)}>
@@ -246,15 +202,75 @@ export default function AddFolderDialog({ dialogOpen, setDialogOpen, parentGroup
     );
 }
 
+function LocationDropdown({ anchorRef, flatGroups, selectedParent, onSelect, onClose }) {
+    const rect = anchorRef.current?.getBoundingClientRect();
+    if (!rect) return null;
+
+    const maxHeight = Math.min(380, window.innerHeight - rect.bottom - 18);
+
+    return ReactDOM.createPortal(
+        <>
+            <Box className={styles.locationBackdrop} onClick={onClose} />
+            <Paper
+                className={styles.locationDropdown}
+                style={{ top: rect.bottom + 10, left: rect.left, width: rect.width, maxHeight }}
+            >
+                <List dense disablePadding>
+                    {flatGroups.map((item, idx) => {
+                        const isTopLevel = item.fullName === null;
+                        const effectiveGroup = isTopLevel ? null : (item.group ?? { name: item.fullName });
+                        const isSelected = isTopLevel
+                            ? selectedParent === null
+                            : selectedParent?.name === item.fullName;
+                        const showDivider = idx > 0 && item.level === 0;
+                        const prefix = item.level >= 1 ? '↳ ' : '';
+
+                        return (
+                            <Box key={item.fullName ?? '__top_level__'}>
+                                {showDivider && <Divider />}
+                                <ListItemButton
+                                    selected={isSelected}
+                                    className={styles.dropdownItem}
+                                    onClick={() => onSelect(effectiveGroup)}
+                                >
+                                    <ListItemText
+                                        primary={`${prefix}${item.displayName}`}
+                                        primaryTypographyProps={{
+                                            noWrap: true,
+                                            className:
+                                                item.level === 0
+                                                    ? styles.dropdownItemTextMedium
+                                                    : styles.dropdownItemText,
+                                        }}
+                                    />
+                                    <Box className={itemStyles.selectRadioControl}>
+                                        <SmallRadio
+                                            checked={isSelected}
+                                            onChange={() => onSelect(effectiveGroup)}
+                                            onClick={(e) => e.stopPropagation()}
+                                        />
+                                    </Box>
+                                </ListItemButton>
+                            </Box>
+                        );
+                    })}
+                </List>
+            </Paper>
+        </>,
+        document.body
+    );
+}
+
 function buildFullPath(parentGroup, name) {
-    if (!parentGroup || parentGroup.name === FavoritesManager.DEFAULT_GROUP_NAME) {
+    if (!parentGroup) {
         return name;
     }
     return `${parentGroup.name}/${name}`;
 }
 
 function getDisplayName(group, t) {
-    if (!group || group.name === FavoritesManager.DEFAULT_GROUP_NAME) return t('shared_string_my_favorites');
+    if (!group) return t('web:fav_top_level');
+    if (group.name === FavoritesManager.DEFAULT_GROUP_NAME) return t('shared_string_my_favorites');
     const parts = group.name.split('/');
     return parts[parts.length - 1];
 }

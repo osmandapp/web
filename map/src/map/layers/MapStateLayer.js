@@ -28,21 +28,25 @@ const MAP_SPIN_COLOR = '#1976d2';
 const TOP_PADDING = HEADER_SIZE;
 const BOTTOM_PADDING = 0;
 
-function centerPercentsForInfoBlockPx(map, infoBlockWidthPx) {
-    if (!map?.getSize) {
-        return { left: '50%', top: '50%' };
-    }
+function calcVisibleCenterPx(map, infoBlockWidthPx) {
     const containerSize = map.getSize();
-    if (!containerSize?.x || !containerSize?.y) {
-        return { left: '50%', top: '50%' };
-    }
+    if (!containerSize?.x || !containerSize?.y) return null;
     const infoColumnWidthPx = Number.isFinite(infoBlockWidthPx) ? infoBlockWidthPx : 0;
     const leftChromeWidthPx = infoColumnWidthPx + MAIN_MENU_MIN_SIZE;
-    const centerX = leftChromeWidthPx + (containerSize.x - leftChromeWidthPx) / 2;
-    const centerY = TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2;
     return {
-        left: `${(centerX / containerSize.x) * 100}%`,
-        top: `${(centerY / containerSize.y) * 100}%`,
+        x: leftChromeWidthPx + (containerSize.x - leftChromeWidthPx) / 2,
+        y: TOP_PADDING + (containerSize.y - TOP_PADDING - BOTTOM_PADDING) / 2,
+        containerSize,
+    };
+}
+
+function centerPercentsForInfoBlockPx(map, infoBlockWidthPx) {
+    if (!map?.getSize) return { left: '50%', top: '50%' };
+    const center = calcVisibleCenterPx(map, infoBlockWidthPx);
+    if (!center) return { left: '50%', top: '50%' };
+    return {
+        left: `${(center.x / center.containerSize.x) * 100}%`,
+        top: `${(center.y / center.containerSize.y) * 100}%`,
     };
 }
 
@@ -52,6 +56,14 @@ export function getVisibleBboxCenterPercents(map, ctx) {
     }
     const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10);
     return centerPercentsForInfoBlockPx(map, infoBlockWidthPx);
+}
+
+export function panToVisibleCenter(map, latlng, infoBlockWidthPx) {
+    if (!map || !latlng) return;
+    const center = calcVisibleCenterPx(map, infoBlockWidthPx);
+    if (!center) return;
+    const pinPoint = map.latLngToContainerPoint(L.latLng(latlng.lat, latlng.lng ?? latlng.lon));
+    map.panBy([pinPoint.x - center.x, pinPoint.y - center.y], { animate: true });
 }
 
 export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {

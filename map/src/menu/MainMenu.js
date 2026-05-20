@@ -742,12 +742,22 @@ export default function MainMenu({
         return res.join(' ');
     }
 
-    function selectMenu({ item }) {
-        closeSubPages({ ctx, ltx });
+    function selectMenu({ item, openFromUrl = false }) {
+        doSelectMenu({ item });
+    }
+
+    function doSelectMenu({ item }) {
+        const editInProgress = !!ctx.exitGuards.wptEdit?.hasChanges;
+        if (!editInProgress) {
+            closeSubPages({ ctx, ltx });
+        }
         let currentType;
         if (menuInfo) {
             // update menu
-            setShowInfoBlock(false);
+            if (!editInProgress) {
+                setShowInfoBlock(false);
+                ctx.setCurrentObjectType(null);
+            }
             ctx.setOpenNavigationSettings(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
@@ -758,7 +768,6 @@ export default function MainMenu({
             }
             setMenuInfo(menu?.component);
             currentType = menu?.type;
-            ctx.setCurrentObjectType(null);
         } else {
             // select first menu
             setMenuInfo(item.component);

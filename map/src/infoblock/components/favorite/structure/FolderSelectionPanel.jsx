@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useContext } from 'react';
-import { Box, Divider, IconButton, List, ListItemButton, ListItemIcon, Radio, Typography } from '@mui/material';
+import { Box, Divider, IconButton, List, ListItemButton, ListItemIcon, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -15,6 +15,7 @@ import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
 import AddFolderDialog from '../AddFolderDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import values from 'lodash-es/values';
+import SmallRadio from '../../../../frame/components/items/SmallRadio';
 import styles from './folderSelectionPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
 
@@ -130,11 +131,10 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                         folder.size != null && <Typography className={styles.folderCount}>{folder.size}</Typography>
                     )}
                     {!isVirtual ? (
-                        <Radio
+                        <SmallRadio
                             checked={selected}
                             onChange={() => onSelect(folder.group ?? { name: folder.name })}
                             onClick={(e) => e.stopPropagation()}
-                            size="small"
                             className={styles.radio}
                         />
                     ) : (

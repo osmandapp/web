@@ -3,11 +3,21 @@ import { hexToRgba } from '../../util/ColorUtil';
 import poiicons from '../../resources/generated/poiicons.json';
 import mapicons from '../../resources/generated/mapicons.json';
 import shadersicons from '../../resources/generated/shadersicons.json';
-import PoiManager from '../../manager/PoiManager';
+import poiTypes from '../../resources/generated/poi-types.json';
+import poiCategoriesData from '../../resources/generated/poi_categories.json';
 import backgrounds from '../../resources/generated/poiBackgroundIcons.json';
+import PoiManager from '../../manager/PoiManager';
 import { startPointIcon } from './StartPointMarker';
 import { intermediatePointIcon } from './IntermediatePointMarker';
 import { destinationPointIcon } from './DestinationPointMarker';
+
+const poiIconsSet = new Set(poiicons);
+const mapIconsSet = new Set(mapicons);
+const shaderIconsSet = new Set(shadersicons);
+
+const poiTypeFallbackMap = Object.fromEntries(
+    poiTypes.filter((pt) => pt.tag && pt.value).map((pt) => [pt.name, `${pt.tag}_${pt.value}`])
+);
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
@@ -414,13 +424,40 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize, shape = null) {
     return svgHtml;
 }
 
+// Resolves a poi_type name to the icon key that has an SVG available.
+export function resolvePoiIconKey(name) {
+    if (poiIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
+        return name;
+    }
+    const fallback = poiTypeFallbackMap[name];
+    if (fallback && poiIconsSet.has(`${ICONS_PREFIX}${fallback}.svg`)) {
+        return fallback;
+    }
+    return null;
+}
+
+// Pre-computed resolved icon categories: each category's raw icon names are resolved
+// and filtered to only those with an available SVG.
+export const resolvedPoiCategories = (() => {
+    const result = {};
+    const cats = poiCategoriesData?.categories;
+    if (!cats) return result;
+    for (const [category, data] of Object.entries(cats)) {
+        const resolved = (data.icons ?? []).map(resolvePoiIconKey).filter(Boolean);
+        if (resolved.length > 0) {
+            result[category] = resolved;
+        }
+    }
+    return result;
+})();
+
 export function getIconUrlByName(type, name) {
     if (type === 'poi') {
-        if (poiicons.includes(`${ICONS_PREFIX}${name}.svg`)) {
+        if (poiIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
             return `/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${name}.svg`;
         } else return `/map/images/${POI_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;
     } else if (type === 'map') {
-        if (mapicons.includes(`${ICONS_PREFIX}${name}.svg`)) {
+        if (mapIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
             return `/map/images/${MAP_ICONS_FOLDER}/${ICONS_PREFIX}${name}.svg`;
         } else return `/map/images/${MAP_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;
     }
@@ -428,7 +465,7 @@ export function getIconUrlByName(type, name) {
 }
 
 export function getShaderUrlByName(name) {
-    if (shadersicons.includes(`${ICONS_PREFIX}${name}.svg`)) {
+    if (shaderIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
         return `/map/images/${SHADERS_FOLDER}/${SHADERS_PREFIX}${name}.svg`;
     } else return `/map/images/${SHADERS_FOLDER}/${COLORED_SHADERS_PREFIX}${name}.svg`;
 }
