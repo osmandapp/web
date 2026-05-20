@@ -342,8 +342,7 @@ const cache = {};
 export async function digest(string) {
     let hash = null;
     try {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(string);
+        const data = string instanceof ArrayBuffer ? new Uint8Array(string) : new TextEncoder().encode(string);
         const hashBuffer = await crypto.subtle.digest('SHA-256', data);
         const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
         hash = hashArray.map((b) => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
@@ -360,7 +359,9 @@ async function generateCacheKey(url, options = null) {
     let form = '';
     const body = options?.body;
 
-    if (body && isFormData(body)) {
+    if (body instanceof Blob) {
+        form = await digest(await body.arrayBuffer());
+    } else if (body && isFormData(body)) {
         for (const [k, v] of body.entries()) {
             form = await digest(form + k);
             if (v.toString() === '[object File]') {
