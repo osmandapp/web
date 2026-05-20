@@ -1,0 +1,6092 @@
+[
+  {
+    "name": "convenience",
+    "tag": "shop",
+    "value": "convenience"
+  },
+  {
+    "name": "supermarket",
+    "tag": "shop",
+    "value": "supermarket"
+  },
+  {
+    "name": "alcohol",
+    "tag": "shop",
+    "value": "alcohol"
+  },
+  {
+    "name": "bakery",
+    "tag": "shop",
+    "value": "bakery"
+  },
+  {
+    "name": "beverages",
+    "tag": "shop",
+    "value": "beverages"
+  },
+  {
+    "name": "butcher",
+    "tag": "shop",
+    "value": "butcher"
+  },
+  {
+    "name": "cheese",
+    "tag": "shop",
+    "value": "cheese"
+  },
+  {
+    "name": "chocolate",
+    "tag": "shop",
+    "value": "chocolate"
+  },
+  {
+    "name": "coffee",
+    "tag": "shop",
+    "value": "coffee"
+  },
+  {
+    "name": "confectionery",
+    "tag": "shop",
+    "value": "confectionery"
+  },
+  {
+    "name": "dairy",
+    "tag": "shop",
+    "value": "dairy"
+  },
+  {
+    "name": "deli",
+    "tag": "shop",
+    "value": "deli"
+  },
+  {
+    "name": "farm",
+    "tag": "shop",
+    "value": "farm"
+  },
+  {
+    "name": "frozen_food",
+    "tag": "shop",
+    "value": "frozen_food"
+  },
+  {
+    "name": "greengrocer",
+    "tag": "shop",
+    "value": "greengrocer"
+  },
+  {
+    "name": "honey",
+    "tag": "shop",
+    "value": "honey"
+  },
+  {
+    "name": "ice_cream",
+    "tag": "amenity",
+    "value": "ice_cream"
+  },
+  {
+    "name": "mall",
+    "tag": "shop",
+    "value": "mall"
+  },
+  {
+    "name": "pasta",
+    "tag": "shop",
+    "value": "pasta"
+  },
+  {
+    "name": "party",
+    "tag": "shop",
+    "value": "party"
+  },
+  {
+    "name": "pastry",
+    "tag": "shop",
+    "value": "pastry"
+  },
+  {
+    "name": "seafood",
+    "tag": "shop",
+    "value": "seafood"
+  },
+  {
+    "name": "spices",
+    "tag": "shop",
+    "value": "spices"
+  },
+  {
+    "name": "tea",
+    "tag": "shop",
+    "value": "tea"
+  },
+  {
+    "name": "vending_machine",
+    "tag": "amenity",
+    "value": "vending_machine"
+  },
+  {
+    "name": "agrarian",
+    "tag": "shop",
+    "value": "agrarian"
+  },
+  {
+    "name": "anime",
+    "tag": "shop",
+    "value": "anime"
+  },
+  {
+    "name": "antiques",
+    "tag": "shop",
+    "value": "antiques"
+  },
+  {
+    "name": "appliance",
+    "tag": "shop",
+    "value": "appliance"
+  },
+  {
+    "name": "art",
+    "tag": "shop",
+    "value": "art"
+  },
+  {
+    "name": "atv",
+    "tag": "shop",
+    "value": "atv"
+  },
+  {
+    "name": "baby_goods",
+    "tag": "shop",
+    "value": "baby_goods"
+  },
+  {
+    "name": "bag",
+    "tag": "shop",
+    "value": "bag"
+  },
+  {
+    "name": "bathroom_furnishing",
+    "tag": "shop",
+    "value": "bathroom_furnishing"
+  },
+  {
+    "name": "bed",
+    "tag": "shop",
+    "value": "bed"
+  },
+  {
+    "name": "bicycle",
+    "tag": "shop",
+    "value": "bicycle"
+  },
+  {
+    "name": "shop_boat",
+    "tag": "shop",
+    "value": "boat"
+  },
+  {
+    "name": "books",
+    "tag": "shop",
+    "value": "books"
+  },
+  {
+    "name": "boutique",
+    "tag": "shop",
+    "value": "boutique"
+  },
+  {
+    "name": "camera",
+    "tag": "shop",
+    "value": "camera"
+  },
+  {
+    "name": "candles",
+    "tag": "shop",
+    "value": "candles"
+  },
+  {
+    "name": "cannabis",
+    "tag": "shop",
+    "value": "cannabis"
+  },
+  {
+    "name": "carpet",
+    "tag": "shop",
+    "value": "carpet"
+  },
+  {
+    "name": "charity",
+    "tag": "shop",
+    "value": "charity"
+  },
+  {
+    "name": "chemist",
+    "tag": "shop",
+    "value": "chemist"
+  },
+  {
+    "name": "clothes",
+    "tag": "shop",
+    "value": "clothes"
+  },
+  {
+    "name": "car_parts",
+    "tag": "shop",
+    "value": "car_parts"
+  },
+  {
+    "name": "car",
+    "tag": "shop",
+    "value": "car"
+  },
+  {
+    "name": "collector",
+    "tag": "shop",
+    "value": "collector"
+  },
+  {
+    "name": "computer",
+    "tag": "shop",
+    "value": "computer"
+  },
+  {
+    "name": "cosmetics",
+    "tag": "shop",
+    "value": "cosmetics"
+  },
+  {
+    "name": "country_store",
+    "tag": "shop",
+    "value": "country_store"
+  },
+  {
+    "name": "shop_craft",
+    "tag": "shop",
+    "value": "craft"
+  },
+  {
+    "name": "curtain",
+    "tag": "shop",
+    "value": "curtain"
+  },
+  {
+    "name": "department_store",
+    "tag": "shop",
+    "value": "department_store"
+  },
+  {
+    "name": "dive",
+    "tag": "shop",
+    "value": "dive"
+  },
+  {
+    "name": "doityourself",
+    "tag": "shop",
+    "value": "doityourself"
+  },
+  {
+    "name": "doors",
+    "tag": "shop",
+    "value": "doors"
+  },
+  {
+    "name": "e_cigarette",
+    "tag": "shop",
+    "value": "e-cigarette"
+  },
+  {
+    "name": "electrical",
+    "tag": "shop",
+    "value": "electrical"
+  },
+  {
+    "name": "electronics",
+    "tag": "shop",
+    "value": "electronics"
+  },
+  {
+    "name": "energy",
+    "tag": "shop",
+    "value": "energy"
+  },
+  {
+    "name": "erotic",
+    "tag": "shop",
+    "value": "erotic"
+  },
+  {
+    "name": "fabric",
+    "tag": "shop",
+    "value": "fabric"
+  },
+  {
+    "name": "shop_fireplace",
+    "tag": "shop",
+    "value": "fireplace"
+  },
+  {
+    "name": "fishing",
+    "tag": "shop",
+    "value": "fishing"
+  },
+  {
+    "name": "florist",
+    "tag": "shop",
+    "value": "florist"
+  },
+  {
+    "name": "flooring",
+    "tag": "shop",
+    "value": "flooring"
+  },
+  {
+    "name": "frame",
+    "tag": "shop",
+    "value": "frame"
+  },
+  {
+    "name": "free_flying",
+    "tag": "shop",
+    "value": "free_flying"
+  },
+  {
+    "name": "shop_fuel",
+    "tag": "shop",
+    "value": "fuel"
+  },
+  {
+    "name": "furniture",
+    "tag": "shop",
+    "value": "furniture"
+  },
+  {
+    "name": "games",
+    "tag": "shop",
+    "value": "games"
+  },
+  {
+    "name": "garden_centre",
+    "tag": "shop",
+    "value": "garden_centre"
+  },
+  {
+    "name": "garden_furniture",
+    "tag": "shop",
+    "value": "garden_furniture"
+  },
+  {
+    "name": "groundskeeping",
+    "tag": "shop",
+    "value": "groundskeeping"
+  },
+  {
+    "name": "gas",
+    "tag": "shop",
+    "value": "gas"
+  },
+  {
+    "name": "shop_general",
+    "tag": "shop",
+    "value": "general"
+  },
+  {
+    "name": "gift",
+    "tag": "shop",
+    "value": "gift"
+  },
+  {
+    "name": "glaziery",
+    "tag": "shop",
+    "value": "glaziery"
+  },
+  {
+    "name": "hardware",
+    "tag": "shop",
+    "value": "hardware"
+  },
+  {
+    "name": "hearing_aids",
+    "tag": "shop",
+    "value": "hearing_aids"
+  },
+  {
+    "name": "herbalist",
+    "tag": "shop",
+    "value": "herbalist"
+  },
+  {
+    "name": "hifi",
+    "tag": "shop",
+    "value": "hifi"
+  },
+  {
+    "name": "houseware",
+    "tag": "shop",
+    "value": "houseware"
+  },
+  {
+    "name": "health_food",
+    "tag": "shop",
+    "value": "health_food"
+  },
+  {
+    "name": "hunting",
+    "tag": "shop",
+    "value": "hunting"
+  },
+  {
+    "name": "interior_decoration",
+    "tag": "shop",
+    "value": "interior_decoration"
+  },
+  {
+    "name": "jewelry",
+    "tag": "shop",
+    "value": "jewelry"
+  },
+  {
+    "name": "kiosk",
+    "tag": "shop",
+    "value": "kiosk"
+  },
+  {
+    "name": "kitchen",
+    "tag": "shop",
+    "value": "kitchen"
+  },
+  {
+    "name": "leather",
+    "tag": "shop",
+    "value": "leather"
+  },
+  {
+    "name": "lighting",
+    "tag": "shop",
+    "value": "lighting"
+  },
+  {
+    "name": "locksmith",
+    "tag": "shop",
+    "value": "locksmith"
+  },
+  {
+    "name": "lottery",
+    "tag": "shop",
+    "value": "lottery"
+  },
+  {
+    "name": "mall",
+    "tag": "shop",
+    "value": "mall"
+  },
+  {
+    "name": "marketplace",
+    "tag": "amenity",
+    "value": "marketplace"
+  },
+  {
+    "name": "medical_supply",
+    "tag": "shop",
+    "value": "medical_supply"
+  },
+  {
+    "name": "mobile_phone",
+    "tag": "shop",
+    "value": "mobile_phone"
+  },
+  {
+    "name": "model",
+    "tag": "shop",
+    "value": "model"
+  },
+  {
+    "name": "motorcycle",
+    "tag": "shop",
+    "value": "motorcycle"
+  },
+  {
+    "name": "motorcycle_parts",
+    "tag": "shop",
+    "value": "motorcycle_parts"
+  },
+  {
+    "name": "musical_instrument",
+    "tag": "shop",
+    "value": "musical_instrument"
+  },
+  {
+    "name": "music",
+    "tag": "shop",
+    "value": "music"
+  },
+  {
+    "name": "newsagent",
+    "tag": "shop",
+    "value": "newsagent"
+  },
+  {
+    "name": "nutrition_supplements",
+    "tag": "shop",
+    "value": "nutrition_supplements"
+  },
+  {
+    "name": "nuts",
+    "tag": "shop",
+    "value": "nuts"
+  },
+  {
+    "name": "optician",
+    "tag": "shop",
+    "value": "optician"
+  },
+  {
+    "name": "outdoor",
+    "tag": "shop",
+    "value": "outdoor"
+  },
+  {
+    "name": "outpost",
+    "tag": "shop",
+    "value": "outpost"
+  },
+  {
+    "name": "paint",
+    "tag": "shop",
+    "value": "paint"
+  },
+  {
+    "name": "pawnbroker",
+    "tag": "shop",
+    "value": "pawnbroker"
+  },
+  {
+    "name": "perfumery",
+    "tag": "shop",
+    "value": "perfumery"
+  },
+  {
+    "name": "pest_control",
+    "tag": "shop",
+    "value": "pest_control"
+  },
+  {
+    "name": "pet",
+    "tag": "shop",
+    "value": "pet"
+  },
+  {
+    "name": "pet_grooming",
+    "tag": "shop",
+    "value": "pet_grooming"
+  },
+  {
+    "name": "photo",
+    "tag": "shop",
+    "value": "photo"
+  },
+  {
+    "name": "photo_studio",
+    "tag": "shop",
+    "value": "photo_studio"
+  },
+  {
+    "name": "pottery",
+    "tag": "shop",
+    "value": "pottery"
+  },
+  {
+    "name": "printer_ink",
+    "tag": "shop",
+    "value": "printer_ink"
+  },
+  {
+    "name": "pyrotechnics",
+    "tag": "shop",
+    "value": "pyrotechnics"
+  },
+  {
+    "name": "radiotechnics",
+    "tag": "shop",
+    "value": "radiotechnics"
+  },
+  {
+    "name": "religion",
+    "tag": "shop",
+    "value": "religion"
+  },
+  {
+    "name": "rice",
+    "tag": "shop",
+    "value": "rice"
+  },
+  {
+    "name": "scuba_diving_shop",
+    "tag": "shop",
+    "value": "scuba_diving"
+  },
+  {
+    "name": "second_hand",
+    "tag": "shop",
+    "value": "second_hand"
+  },
+  {
+    "name": "shop_security",
+    "tag": "shop",
+    "value": "security"
+  },
+  {
+    "name": "sewing",
+    "tag": "shop",
+    "value": "sewing"
+  },
+  {
+    "name": "ship_chandler",
+    "tag": "shop",
+    "value": "ship_chandler"
+  },
+  {
+    "name": "shoes",
+    "tag": "shop",
+    "value": "shoes"
+  },
+  {
+    "name": "shoe_repair",
+    "tag": "shop",
+    "value": "shoe_repair"
+  },
+  {
+    "name": "skate",
+    "tag": "shop",
+    "value": "skate"
+  },
+  {
+    "name": "sports",
+    "tag": "shop",
+    "value": "sports"
+  },
+  {
+    "name": "stationery",
+    "tag": "shop",
+    "value": "stationery"
+  },
+  {
+    "name": "supermarket",
+    "tag": "shop",
+    "value": "supermarket"
+  },
+  {
+    "name": "swimming_pool_shop",
+    "tag": "shop",
+    "value": "swimming_pool"
+  },
+  {
+    "name": "telecommunication",
+    "tag": "shop",
+    "value": "telecommunication"
+  },
+  {
+    "name": "ticket",
+    "tag": "shop",
+    "value": "ticket"
+  },
+  {
+    "name": "tiles",
+    "tag": "shop",
+    "value": "tiles"
+  },
+  {
+    "name": "tobacco",
+    "tag": "shop",
+    "value": "tobacco"
+  },
+  {
+    "name": "tool_hire",
+    "tag": "shop",
+    "value": "tool_hire"
+  },
+  {
+    "name": "toys",
+    "tag": "shop",
+    "value": "toys"
+  },
+  {
+    "name": "trade",
+    "tag": "shop",
+    "value": "trade"
+  },
+  {
+    "name": "travel_agency",
+    "tag": "shop",
+    "value": "travel_agency"
+  },
+  {
+    "name": "trophy",
+    "tag": "shop",
+    "value": "trophy"
+  },
+  {
+    "name": "tyres",
+    "tag": "shop",
+    "value": "tyres"
+  },
+  {
+    "name": "vacuum_cleaner",
+    "tag": "shop",
+    "value": "vacuum_cleaner"
+  },
+  {
+    "name": "variety_store",
+    "tag": "shop",
+    "value": "variety_store"
+  },
+  {
+    "name": "video_games",
+    "tag": "shop",
+    "value": "video_games"
+  },
+  {
+    "name": "video",
+    "tag": "shop",
+    "value": "video"
+  },
+  {
+    "name": "watches",
+    "tag": "shop",
+    "value": "watches"
+  },
+  {
+    "name": "shop_water",
+    "tag": "shop",
+    "value": "water"
+  },
+  {
+    "name": "water_sports",
+    "tag": "shop",
+    "value": "water_sports"
+  },
+  {
+    "name": "weapons",
+    "tag": "shop",
+    "value": "weapons"
+  },
+  {
+    "name": "shop_wholesale",
+    "tag": "shop",
+    "value": "wholesale"
+  },
+  {
+    "name": "window_blind",
+    "tag": "shop",
+    "value": "window_blind"
+  },
+  {
+    "name": "wool",
+    "tag": "shop",
+    "value": "wool"
+  },
+  {
+    "name": "police",
+    "tag": "amenity",
+    "value": "police"
+  },
+  {
+    "name": "fire_station",
+    "tag": "amenity",
+    "value": "fire_station"
+  },
+  {
+    "name": "ambulance_station",
+    "tag": "emergency",
+    "value": "ambulance_station"
+  },
+  {
+    "name": "disaster_response",
+    "tag": "emergency",
+    "value": "disaster_response"
+  },
+  {
+    "name": "rescue_station",
+    "tag": "amenity",
+    "value": "rescue_station"
+  },
+  {
+    "name": "mountain_rescue",
+    "tag": "emergency",
+    "value": "mountain_rescue"
+  },
+  {
+    "name": "lifeguard",
+    "tag": "emergency",
+    "value": "lifeguard"
+  },
+  {
+    "name": "life_ring",
+    "tag": "emergency",
+    "value": "life_ring"
+  },
+  {
+    "name": "rescue_box",
+    "tag": "emergency",
+    "value": "rescue_box"
+  },
+  {
+    "name": "first_aid_kit",
+    "tag": "emergency",
+    "value": "first_aid_kit"
+  },
+  {
+    "name": "defibrillator",
+    "tag": "emergency",
+    "value": "defibrillator"
+  },
+  {
+    "name": "avalanche_transceiver",
+    "tag": "amenity",
+    "value": "avalanche_transceiver"
+  },
+  {
+    "name": "emergency_phone",
+    "tag": "emergency",
+    "value": "phone"
+  },
+  {
+    "name": "fire_hydrant",
+    "tag": "emergency",
+    "value": "fire_hydrant"
+  },
+  {
+    "name": "fire_extinguisher",
+    "tag": "emergency",
+    "value": "fire_extinguisher"
+  },
+  {
+    "name": "fire_flapper",
+    "tag": "emergency",
+    "value": "fire_flapper"
+  },
+  {
+    "name": "fire_hose",
+    "tag": "emergency",
+    "value": "fire_hose"
+  },
+  {
+    "name": "fire_water_pond",
+    "tag": "emergency",
+    "value": "fire_water_pond"
+  },
+  {
+    "name": "grit_bin",
+    "tag": "amenity",
+    "value": "grit_bin"
+  },
+  {
+    "name": "emergency_access_point",
+    "tag": "highway",
+    "value": "emergency_access_point"
+  },
+  {
+    "name": "assembly_point",
+    "tag": "emergency",
+    "value": "assembly_point"
+  },
+  {
+    "name": "suction_point",
+    "tag": "emergency",
+    "value": "suction_point"
+  },
+  {
+    "name": "water_tank",
+    "tag": "emergency",
+    "value": "water_tank"
+  },
+  {
+    "name": "siren",
+    "tag": "emergency",
+    "value": "siren"
+  },
+  {
+    "name": "ford",
+    "tag": "ford",
+    "value": "yes"
+  },
+  {
+    "name": "ford_stepping_stones",
+    "tag": "ford",
+    "value": "stepping_stones"
+  },
+  {
+    "name": "mountain_pass",
+    "tag": "mountain_pass",
+    "value": "yes"
+  },
+  {
+    "name": "toll_booth",
+    "tag": "barrier",
+    "value": "toll_booth"
+  },
+  {
+    "name": "border_control",
+    "tag": "barrier",
+    "value": "border_control"
+  },
+  {
+    "name": "military_checkpoint",
+    "tag": "military",
+    "value": "checkpoint"
+  },
+  {
+    "name": "traffic_signals",
+    "tag": "highway",
+    "value": "traffic_signals"
+  },
+  {
+    "name": "highway_crossing",
+    "tag": "highway",
+    "value": "crossing"
+  },
+  {
+    "name": "railway_level_crossing",
+    "tag": "railway",
+    "value": "level_crossing"
+  },
+  {
+    "name": "traffic_calming_bump",
+    "tag": "traffic_calming",
+    "value": "bump"
+  },
+  {
+    "name": "traffic_calming_hump",
+    "tag": "traffic_calming",
+    "value": "hump"
+  },
+  {
+    "name": "traffic_calming_cushion",
+    "tag": "traffic_calming",
+    "value": "cushion"
+  },
+  {
+    "name": "traffic_calming_chicane",
+    "tag": "traffic_calming",
+    "value": "chicane"
+  },
+  {
+    "name": "traffic_calming_rumble_strip",
+    "tag": "traffic_calming",
+    "value": "rumble_strip"
+  },
+  {
+    "name": "traffic_calming_table",
+    "tag": "traffic_calming",
+    "value": "table"
+  },
+  {
+    "name": "traffic_calming_choker",
+    "tag": "traffic_calming",
+    "value": "choker"
+  },
+  {
+    "name": "traffic_calming_island",
+    "tag": "traffic_calming",
+    "value": "island"
+  },
+  {
+    "name": "highway_steps",
+    "tag": "highway",
+    "value": "steps"
+  },
+  {
+    "name": "elevator",
+    "tag": "highway",
+    "value": "elevator"
+  },
+  {
+    "name": "fuel",
+    "tag": "amenity",
+    "value": "fuel"
+  },
+  {
+    "name": "aeroway_fuel",
+    "tag": "aeroway",
+    "value": "fuel"
+  },
+  {
+    "name": "waterway_fuel",
+    "tag": "waterway",
+    "value": "fuel"
+  },
+  {
+    "name": "charging_station",
+    "tag": "amenity_charging_station",
+    "value": "charging"
+  },
+  {
+    "name": "car_repair",
+    "tag": "shop",
+    "value": "car_repair"
+  },
+  {
+    "name": "motorcycle_repair",
+    "tag": "shop",
+    "value": "motorcycle_repair"
+  },
+  {
+    "name": "vehicle_inspection",
+    "tag": "amenity",
+    "value": "vehicle_inspection"
+  },
+  {
+    "name": "car_wash",
+    "tag": "amenity",
+    "value": "car_wash"
+  },
+  {
+    "name": "vehicle_ramp",
+    "tag": "amenity",
+    "value": "vehicle_ramp"
+  },
+  {
+    "name": "compressed_air",
+    "tag": "amenity",
+    "value": "compressed_air"
+  },
+  {
+    "name": "amenity_vacuum_cleaner",
+    "tag": "amenity",
+    "value": "vacuum_cleaner"
+  },
+  {
+    "name": "parking",
+    "tag": "amenity",
+    "value": "parking"
+  },
+  {
+    "name": "motorcycle_parking",
+    "tag": "amenity",
+    "value": "motorcycle_parking"
+  },
+  {
+    "name": "parking_entrance",
+    "tag": "amenity",
+    "value": "parking_entrance"
+  },
+  {
+    "name": "parking_space",
+    "tag": "amenity",
+    "value": "parking_space"
+  },
+  {
+    "name": "public_transport_platform",
+    "tag": "public_transport",
+    "value": "platform"
+  },
+  {
+    "name": "public_transport_stop_position",
+    "tag": "public_transport",
+    "value": "stop_position"
+  },
+  {
+    "name": "bus_stop",
+    "tag": "highway",
+    "value": "bus_stop"
+  },
+  {
+    "name": "tram_stop",
+    "tag": "railway",
+    "value": "tram_stop"
+  },
+  {
+    "name": "public_transport_station",
+    "tag": "public_transport",
+    "value": "station"
+  },
+  {
+    "name": "bus_station",
+    "tag": "amenity",
+    "value": "bus_station"
+  },
+  {
+    "name": "railway_station",
+    "tag": "railway",
+    "value": "station"
+  },
+  {
+    "name": "halt",
+    "tag": "railway",
+    "value": "halt"
+  },
+  {
+    "name": "railway_yard",
+    "tag": "railway",
+    "value": "yard"
+  },
+  {
+    "name": "subway_entrance",
+    "tag": "railway",
+    "value": "subway_entrance"
+  },
+  {
+    "name": "taxi",
+    "tag": "amenity",
+    "value": "taxi"
+  },
+  {
+    "name": "funicular",
+    "tag": "railway",
+    "value": "funicular"
+  },
+  {
+    "name": "aerodrome",
+    "tag": "aeroway",
+    "value": "aerodrome"
+  },
+  {
+    "name": "helipad",
+    "tag": "aeroway",
+    "value": "helipad"
+  },
+  {
+    "name": "runway",
+    "tag": "aeroway",
+    "value": "runway"
+  },
+  {
+    "name": "aeroway_terminal",
+    "tag": "aeroway",
+    "value": "terminal"
+  },
+  {
+    "name": "aeroway_gate",
+    "tag": "aeroway",
+    "value": "gate"
+  },
+  {
+    "name": "spaceport",
+    "tag": "aeroway",
+    "value": "spaceport"
+  },
+  {
+    "name": "slipway",
+    "tag": "leisure",
+    "value": "slipway"
+  },
+  {
+    "name": "ferry_terminal",
+    "tag": "amenity",
+    "value": "ferry_terminal"
+  },
+  {
+    "name": "bicycle_parking",
+    "tag": "amenity",
+    "value": "bicycle_parking"
+  },
+  {
+    "name": "bicycle_repair_station",
+    "tag": "amenity",
+    "value": "bicycle_repair_station"
+  },
+  {
+    "name": "aerialway_station",
+    "tag": "aerialway",
+    "value": "station"
+  },
+  {
+    "name": "aerialway_cable_car",
+    "tag": "aerialway",
+    "value": "cable_car"
+  },
+  {
+    "name": "aerialway_gondola",
+    "tag": "aerialway",
+    "value": "gondola"
+  },
+  {
+    "name": "aerialway_chair_lift",
+    "tag": "aerialway",
+    "value": "chair_lift"
+  },
+  {
+    "name": "aerialway_t_bar",
+    "tag": "aerialway",
+    "value": "t-bar"
+  },
+  {
+    "name": "aerialway_j_bar",
+    "tag": "aerialway",
+    "value": "j-bar"
+  },
+  {
+    "name": "aerialway_platter",
+    "tag": "aerialway",
+    "value": "platter"
+  },
+  {
+    "name": "aerialway_mixed_lift",
+    "tag": "aerialway",
+    "value": "mixed_lift"
+  },
+  {
+    "name": "aerialway_drag_lift",
+    "tag": "aerialway",
+    "value": "drag_lift"
+  },
+  {
+    "name": "aerialway_rope_tow",
+    "tag": "aerialway",
+    "value": "rope_tow"
+  },
+  {
+    "name": "aerialway_zip_line",
+    "tag": "aerialway",
+    "value": "zip_line"
+  },
+  {
+    "name": "aerialway_goods",
+    "tag": "aerialway",
+    "value": "goods"
+  },
+  {
+    "name": "aerialway_magic_carpet",
+    "tag": "aerialway",
+    "value": "magic_carpet"
+  },
+  {
+    "name": "aerialway_pylon",
+    "tag": "aerialway",
+    "value": "pylon"
+  },
+  {
+    "name": "enforcement_traffic_signals",
+    "tag": "enforcement",
+    "value": "traffic_signals"
+  },
+  {
+    "name": "enforcement_maxspeed",
+    "tag": "enforcement",
+    "value": "maxspeed"
+  },
+  {
+    "name": "enforcement_maxheight",
+    "tag": "enforcement",
+    "value": "maxheight"
+  },
+  {
+    "name": "enforcement_mindistance",
+    "tag": "enforcement",
+    "value": "mindistance"
+  },
+  {
+    "name": "enforcement_check",
+    "tag": "enforcement",
+    "value": "check"
+  },
+  {
+    "name": "enforcement_access",
+    "tag": "enforcement",
+    "value": "access"
+  },
+  {
+    "name": "enforcement_toll",
+    "tag": "enforcement",
+    "value": "toll"
+  },
+  {
+    "name": "speed_camera",
+    "tag": "highway",
+    "value": "speed_camera"
+  },
+  {
+    "name": "motorway_junction",
+    "tag": "highway",
+    "value": "motorway_junction"
+  },
+  {
+    "name": "junction",
+    "tag": "junction",
+    "value": "yes"
+  },
+  {
+    "name": "rest_area",
+    "tag": "highway",
+    "value": "rest_area"
+  },
+  {
+    "name": "escape_lane",
+    "tag": "highway",
+    "value": "escape"
+  },
+  {
+    "name": "emergency_bay",
+    "tag": "highway",
+    "value": "emergency_bay"
+  },
+  {
+    "name": "traffic_mirror",
+    "tag": "highway",
+    "value": "traffic_mirror"
+  },
+  {
+    "name": "access_main_tag",
+    "tag": "access_main",
+    "value": "tag"
+  },
+  {
+    "name": "tunnel",
+    "tag": "man_made",
+    "value": "tunnel"
+  },
+  {
+    "name": "bridge",
+    "tag": "man_made",
+    "value": "bridge"
+  },
+  {
+    "name": "square",
+    "tag": "square",
+    "value": "yes"
+  },
+  {
+    "name": "wildlife_crossing",
+    "tag": "man_made",
+    "value": "wildlife_crossing"
+  },
+  {
+    "name": "water_well",
+    "tag": "man_made",
+    "value": "water_well"
+  },
+  {
+    "name": "standpipe",
+    "tag": "man_made",
+    "value": "standpipe"
+  },
+  {
+    "name": "water_works",
+    "tag": "man_made",
+    "value": "water_works"
+  },
+  {
+    "name": "boatyard",
+    "tag": "waterway",
+    "value": "boatyard"
+  },
+  {
+    "name": "wastewater_plant",
+    "tag": "man_made",
+    "value": "wastewater_plant"
+  },
+  {
+    "name": "water_tower",
+    "tag": "man_made",
+    "value": "water_tower"
+  },
+  {
+    "name": "lock_gate",
+    "tag": "waterway",
+    "value": "lock_gate"
+  },
+  {
+    "name": "lock",
+    "tag": "lock",
+    "value": "yes"
+  },
+  {
+    "name": "waterway_turning_point",
+    "tag": "waterway",
+    "value": "turning_point"
+  },
+  {
+    "name": "weir",
+    "tag": "waterway",
+    "value": "weir"
+  },
+  {
+    "name": "dam",
+    "tag": "waterway",
+    "value": "dam"
+  },
+  {
+    "name": "dyke",
+    "tag": "man_made",
+    "value": "dyke"
+  },
+  {
+    "name": "watermill",
+    "tag": "man_made",
+    "value": "watermill"
+  },
+  {
+    "name": "reservoir",
+    "tag": "landuse",
+    "value": "reservoir"
+  },
+  {
+    "name": "canal",
+    "tag": "waterway",
+    "value": "canal"
+  },
+  {
+    "name": "breakwater",
+    "tag": "man_made",
+    "value": "breakwater"
+  },
+  {
+    "name": "groyne",
+    "tag": "man_made",
+    "value": "groyne"
+  },
+  {
+    "name": "drinking_water",
+    "tag": "amenity",
+    "value": "drinking_water"
+  },
+  {
+    "name": "water_point",
+    "tag": "amenity",
+    "value": "water_point"
+  },
+  {
+    "name": "watering_place",
+    "tag": "amenity",
+    "value": "watering_place"
+  },
+  {
+    "name": "dock",
+    "tag": "waterway",
+    "value": "dock"
+  },
+  {
+    "name": "power_substation",
+    "tag": "power",
+    "value": "substation"
+  },
+  {
+    "name": "power_transformer",
+    "tag": "power",
+    "value": "transformer"
+  },
+  {
+    "name": "power_terminal",
+    "tag": "power",
+    "value": "terminal"
+  },
+  {
+    "name": "power_plant",
+    "tag": "power",
+    "value": "plant"
+  },
+  {
+    "name": "power_generator",
+    "tag": "power",
+    "value": "generator"
+  },
+  {
+    "name": "telephone_exchange",
+    "tag": "man_made",
+    "value": "telephone_exchange"
+  },
+  {
+    "name": "telecom_exchange",
+    "tag": "telecom",
+    "value": "exchange"
+  },
+  {
+    "name": "landfill",
+    "tag": "landuse",
+    "value": "landfill"
+  },
+  {
+    "name": "spoil_heap",
+    "tag": "man_made",
+    "value": "spoil_heap"
+  },
+  {
+    "name": "pier",
+    "tag": "man_made",
+    "value": "pier"
+  },
+  {
+    "name": "surveillance",
+    "tag": "man_made",
+    "value": "surveillance"
+  },
+  {
+    "name": "observatory",
+    "tag": "man_made",
+    "value": "observatory"
+  },
+  {
+    "name": "telescope",
+    "tag": "man_made",
+    "value": "telescope"
+  },
+  {
+    "name": "lighthouse",
+    "tag": "man_made",
+    "value": "lighthouse"
+  },
+  {
+    "name": "tower",
+    "tag": "man_made",
+    "value": "tower"
+  },
+  {
+    "name": "antenna",
+    "tag": "man_made",
+    "value": "antenna"
+  },
+  {
+    "name": "industrial",
+    "tag": "landuse",
+    "value": "industrial"
+  },
+  {
+    "name": "quarry",
+    "tag": "landuse",
+    "value": "quarry"
+  },
+  {
+    "name": "vineyard",
+    "tag": "landuse",
+    "value": "vineyard"
+  },
+  {
+    "name": "orchard",
+    "tag": "landuse",
+    "value": "orchard"
+  },
+  {
+    "name": "plant_nursery",
+    "tag": "landuse",
+    "value": "plant_nursery"
+  },
+  {
+    "name": "greenhouse_horticulture",
+    "tag": "landuse",
+    "value": "greenhouse_horticulture"
+  },
+  {
+    "name": "allotments",
+    "tag": "landuse",
+    "value": "allotments"
+  },
+  {
+    "name": "forest",
+    "tag": "landuse",
+    "value": "forest"
+  },
+  {
+    "name": "farmyard",
+    "tag": "landuse",
+    "value": "farmyard"
+  },
+  {
+    "name": "meadow",
+    "tag": "landuse",
+    "value": "meadow"
+  },
+  {
+    "name": "cemetery",
+    "tag": "landuse",
+    "value": "cemetery"
+  },
+  {
+    "name": "garages",
+    "tag": "landuse",
+    "value": "garages"
+  },
+  {
+    "name": "landuse_railway",
+    "tag": "landuse",
+    "value": "railway"
+  },
+  {
+    "name": "construction",
+    "tag": "landuse",
+    "value": "construction"
+  },
+  {
+    "name": "brownfield",
+    "tag": "landuse",
+    "value": "brownfield"
+  },
+  {
+    "name": "greenfield",
+    "tag": "landuse",
+    "value": "greenfield"
+  },
+  {
+    "name": "basin",
+    "tag": "landuse",
+    "value": "basin"
+  },
+  {
+    "name": "commercial",
+    "tag": "landuse",
+    "value": "commercial"
+  },
+  {
+    "name": "retail",
+    "tag": "landuse",
+    "value": "retail"
+  },
+  {
+    "name": "religious",
+    "tag": "landuse",
+    "value": "religious"
+  },
+  {
+    "name": "grass",
+    "tag": "landuse",
+    "value": "grass"
+  },
+  {
+    "name": "greenery",
+    "tag": "landuse",
+    "value": "greenery"
+  },
+  {
+    "name": "farmland",
+    "tag": "landuse",
+    "value": "farmland"
+  },
+  {
+    "name": "logging",
+    "tag": "landuse",
+    "value": "logging"
+  },
+  {
+    "name": "depot",
+    "tag": "landuse",
+    "value": "depot"
+  },
+  {
+    "name": "salt_pond",
+    "tag": "landuse",
+    "value": "salt_pond"
+  },
+  {
+    "name": "aquaculture",
+    "tag": "landuse",
+    "value": "aquaculture"
+  },
+  {
+    "name": "landuse_education",
+    "tag": "landuse",
+    "value": "education"
+  },
+  {
+    "name": "mast",
+    "tag": "man_made",
+    "value": "mast"
+  },
+  {
+    "name": "satellite_dish",
+    "tag": "man_made",
+    "value": "satellite_dish"
+  },
+  {
+    "name": "flare",
+    "tag": "man_made",
+    "value": "flare"
+  },
+  {
+    "name": "monitoring_station",
+    "tag": "man_made",
+    "value": "monitoring_station"
+  },
+  {
+    "name": "crane",
+    "tag": "man_made",
+    "value": "crane"
+  },
+  {
+    "name": "weighbridge",
+    "tag": "amenity",
+    "value": "weighbridge"
+  },
+  {
+    "name": "chimney",
+    "tag": "man_made",
+    "value": "chimney"
+  },
+  {
+    "name": "ventilation_shaft",
+    "tag": "man_made",
+    "value": "ventilation_shaft"
+  },
+  {
+    "name": "pumping_station",
+    "tag": "man_made",
+    "value": "pumping_station"
+  },
+  {
+    "name": "sanitary_dump_station",
+    "tag": "amenity",
+    "value": "sanitary_dump_station"
+  },
+  {
+    "name": "works",
+    "tag": "man_made",
+    "value": "works"
+  },
+  {
+    "name": "kiln",
+    "tag": "man_made",
+    "value": "kiln"
+  },
+  {
+    "name": "mineshaft",
+    "tag": "man_made",
+    "value": "mineshaft"
+  },
+  {
+    "name": "adit",
+    "tag": "man_made",
+    "value": "adit"
+  },
+  {
+    "name": "cellar_entrance",
+    "tag": "man_made",
+    "value": "cellar_entrance"
+  },
+  {
+    "name": "petroleum_well",
+    "tag": "man_made",
+    "value": "petroleum_well"
+  },
+  {
+    "name": "pipeline_substation",
+    "tag": "pipeline",
+    "value": "substation"
+  },
+  {
+    "name": "survey_point",
+    "tag": "man_made",
+    "value": "survey_point"
+  },
+  {
+    "name": "windsock",
+    "tag": "aeroway",
+    "value": "windsock"
+  },
+  {
+    "name": "windmill",
+    "tag": "man_made",
+    "value": "windmill"
+  },
+  {
+    "name": "beehive",
+    "tag": "man_made",
+    "value": "beehive"
+  },
+  {
+    "name": "cricket_nets",
+    "tag": "sport",
+    "value": "cricket_nets"
+  },
+  {
+    "name": "bunker_silo",
+    "tag": "man_made",
+    "value": "bunker_silo"
+  },
+  {
+    "name": "storage_tank",
+    "tag": "man_made",
+    "value": "storage_tank"
+  },
+  {
+    "name": "cairn",
+    "tag": "man_made",
+    "value": "cairn"
+  },
+  {
+    "name": "forestry_compartment",
+    "tag": "signpost",
+    "value": "forestry_compartment"
+  },
+  {
+    "name": "forestry_allotment",
+    "tag": "signpost",
+    "value": "forestry_allotment"
+  },
+  {
+    "name": "cutline",
+    "tag": "man_made",
+    "value": "cutline"
+  },
+  {
+    "name": "fish_pass",
+    "tag": "man_made",
+    "value": "fish_pass"
+  },
+  {
+    "name": "dovecote",
+    "tag": "man_made",
+    "value": "dovecote"
+  },
+  {
+    "name": "abandoned_poi",
+    "tag": "abandoned_poi",
+    "value": "yes"
+  },
+  {
+    "name": "cross",
+    "tag": "man_made",
+    "value": "cross"
+  },
+  {
+    "name": "grave",
+    "tag": "cemetery",
+    "value": "grave"
+  },
+  {
+    "name": "dolphin",
+    "tag": "man_made",
+    "value": "dolphin"
+  },
+  {
+    "name": "street_cabinet",
+    "tag": "man_made",
+    "value": "street_cabinet"
+  },
+  {
+    "name": "college",
+    "tag": "amenity",
+    "value": "college"
+  },
+  {
+    "name": "driving_school",
+    "tag": "amenity",
+    "value": "driving_school"
+  },
+  {
+    "name": "driver_training",
+    "tag": "amenity",
+    "value": "driver_training"
+  },
+  {
+    "name": "kindergarten",
+    "tag": "amenity",
+    "value": "kindergarten"
+  },
+  {
+    "name": "library",
+    "tag": "amenity",
+    "value": "library"
+  },
+  {
+    "name": "mobile_library",
+    "tag": "amenity",
+    "value": "mobile_library"
+  },
+  {
+    "name": "childcare",
+    "tag": "amenity",
+    "value": "childcare"
+  },
+  {
+    "name": "school",
+    "tag": "amenity",
+    "value": "school"
+  },
+  {
+    "name": "prep_school",
+    "tag": "amenity",
+    "value": "prep_school"
+  },
+  {
+    "name": "music_school",
+    "tag": "amenity",
+    "value": "music_school"
+  },
+  {
+    "name": "language_school",
+    "tag": "amenity",
+    "value": "language_school"
+  },
+  {
+    "name": "training",
+    "tag": "amenity",
+    "value": "training"
+  },
+  {
+    "name": "dojo",
+    "tag": "amenity",
+    "value": "dojo"
+  },
+  {
+    "name": "animal_training",
+    "tag": "amenity",
+    "value": "animal_training"
+  },
+  {
+    "name": "university",
+    "tag": "amenity",
+    "value": "university"
+  },
+  {
+    "name": "courthouse",
+    "tag": "amenity",
+    "value": "courthouse"
+  },
+  {
+    "name": "prison",
+    "tag": "amenity",
+    "value": "prison"
+  },
+  {
+    "name": "office_diplomatic",
+    "tag": "office",
+    "value": "diplomatic"
+  },
+  {
+    "name": "government",
+    "tag": "office",
+    "value": "government"
+  },
+  {
+    "name": "townhall",
+    "tag": "amenity",
+    "value": "townhall"
+  },
+  {
+    "name": "customs",
+    "tag": "amenity",
+    "value": "customs"
+  },
+  {
+    "name": "country",
+    "tag": "place",
+    "value": "country"
+  },
+  {
+    "name": "city",
+    "tag": "place",
+    "value": "city"
+  },
+  {
+    "name": "town",
+    "tag": "place",
+    "value": "town"
+  },
+  {
+    "name": "village",
+    "tag": "place",
+    "value": "village"
+  },
+  {
+    "name": "hamlet",
+    "tag": "place",
+    "value": "hamlet"
+  },
+  {
+    "name": "island",
+    "tag": "place",
+    "value": "island"
+  },
+  {
+    "name": "islet",
+    "tag": "place",
+    "value": "islet"
+  },
+  {
+    "name": "atoll",
+    "tag": "place",
+    "value": "atoll"
+  },
+  {
+    "name": "isolated_dwelling",
+    "tag": "place",
+    "value": "isolated_dwelling"
+  },
+  {
+    "name": "suburb",
+    "tag": "place",
+    "value": "suburb"
+  },
+  {
+    "name": "quarter",
+    "tag": "place",
+    "value": "quarter"
+  },
+  {
+    "name": "neighbourhood",
+    "tag": "place",
+    "value": "neighbourhood"
+  },
+  {
+    "name": "borough",
+    "tag": "place",
+    "value": "borough"
+  },
+  {
+    "name": "city_block",
+    "tag": "place",
+    "value": "city_block"
+  },
+  {
+    "name": "locality",
+    "tag": "place",
+    "value": "locality"
+  },
+  {
+    "name": "place_allotments",
+    "tag": "place",
+    "value": "allotments"
+  },
+  {
+    "name": "place_farm",
+    "tag": "place",
+    "value": "farm"
+  },
+  {
+    "name": "residential",
+    "tag": "landuse",
+    "value": "residential"
+  },
+  {
+    "name": "embassy",
+    "tag": "amenity",
+    "value": "embassy"
+  },
+  {
+    "name": "consulate",
+    "tag": "amenity",
+    "value": "consulate"
+  },
+  {
+    "name": "pharmacy",
+    "tag": "amenity",
+    "value": "pharmacy"
+  },
+  {
+    "name": "health_post",
+    "tag": "amenity",
+    "value": "health_post"
+  },
+  {
+    "name": "hospital",
+    "tag": "amenity",
+    "value": "hospital"
+  },
+  {
+    "name": "doctors",
+    "tag": "amenity",
+    "value": "doctors"
+  },
+  {
+    "name": "clinic",
+    "tag": "amenity",
+    "value": "clinic"
+  },
+  {
+    "name": "dentist",
+    "tag": "amenity",
+    "value": "dentist"
+  },
+  {
+    "name": "social_facility",
+    "tag": "amenity",
+    "value": "social_facility"
+  },
+  {
+    "name": "baby_hatch",
+    "tag": "amenity",
+    "value": "baby_hatch"
+  },
+  {
+    "name": "veterinary",
+    "tag": "amenity",
+    "value": "veterinary"
+  },
+  {
+    "name": "healthcare_alternative",
+    "tag": "healthcare",
+    "value": "alternative"
+  },
+  {
+    "name": "audiologist",
+    "tag": "healthcare",
+    "value": "audiologist"
+  },
+  {
+    "name": "blood_bank",
+    "tag": "healthcare",
+    "value": "blood_bank"
+  },
+  {
+    "name": "midwife",
+    "tag": "healthcare",
+    "value": "midwife"
+  },
+  {
+    "name": "nurse",
+    "tag": "healthcare",
+    "value": "nurse"
+  },
+  {
+    "name": "occupational_therapist",
+    "tag": "healthcare",
+    "value": "occupational_therapist"
+  },
+  {
+    "name": "optometrist",
+    "tag": "healthcare",
+    "value": "optometrist"
+  },
+  {
+    "name": "physiotherapist",
+    "tag": "healthcare",
+    "value": "physiotherapist"
+  },
+  {
+    "name": "podiatrist",
+    "tag": "healthcare",
+    "value": "podiatrist"
+  },
+  {
+    "name": "psychotherapist",
+    "tag": "healthcare",
+    "value": "psychotherapist"
+  },
+  {
+    "name": "healthcare_rehabilitation",
+    "tag": "healthcare",
+    "value": "rehabilitation"
+  },
+  {
+    "name": "speech_therapist",
+    "tag": "healthcare",
+    "value": "speech_therapist"
+  },
+  {
+    "name": "paediatrics",
+    "tag": "healthcare",
+    "value": "paediatrics"
+  },
+  {
+    "name": "healthcare_yes",
+    "tag": "healthcare",
+    "value": "yes"
+  },
+  {
+    "name": "hospice",
+    "tag": "healthcare",
+    "value": "hospice"
+  },
+  {
+    "name": "laboratory",
+    "tag": "healthcare",
+    "value": "laboratory"
+  },
+  {
+    "name": "blood_donation",
+    "tag": "healthcare",
+    "value": "blood_donation"
+  },
+  {
+    "name": "sample_collection",
+    "tag": "healthcare",
+    "value": "sample_collection"
+  },
+  {
+    "name": "health_amenity_type_first_aid_kit",
+    "tag": "health_amenity:type",
+    "value": "first_aid_kit"
+  },
+  {
+    "name": "health_amenity_type_scales",
+    "tag": "health_amenity:type",
+    "value": "scales"
+  },
+  {
+    "name": "health_facility_type_office",
+    "tag": "health_facility:type",
+    "value": "office"
+  },
+  {
+    "name": "office_camping",
+    "tag": "office",
+    "value": "camping"
+  },
+  {
+    "name": "company",
+    "tag": "office",
+    "value": "company"
+  },
+  {
+    "name": "insurance",
+    "tag": "office",
+    "value": "insurance"
+  },
+  {
+    "name": "estate_agent",
+    "tag": "shop",
+    "value": "estate_agent"
+  },
+  {
+    "name": "lawyer",
+    "tag": "office",
+    "value": "lawyer"
+  },
+  {
+    "name": "office_telecommunication",
+    "tag": "office",
+    "value": "telecommunication"
+  },
+  {
+    "name": "travel_agent",
+    "tag": "office",
+    "value": "travel_agent"
+  },
+  {
+    "name": "ngo",
+    "tag": "office",
+    "value": "ngo"
+  },
+  {
+    "name": "quango",
+    "tag": "office",
+    "value": "quango"
+  },
+  {
+    "name": "accountant",
+    "tag": "office",
+    "value": "accountant"
+  },
+  {
+    "name": "employment_agency",
+    "tag": "office",
+    "value": "employment_agency"
+  },
+  {
+    "name": "research",
+    "tag": "office",
+    "value": "research"
+  },
+  {
+    "name": "engineer",
+    "tag": "office",
+    "value": "engineer"
+  },
+  {
+    "name": "it",
+    "tag": "office",
+    "value": "it"
+  },
+  {
+    "name": "newspaper",
+    "tag": "office",
+    "value": "newspaper"
+  },
+  {
+    "name": "architect",
+    "tag": "office",
+    "value": "architect"
+  },
+  {
+    "name": "geodesist",
+    "tag": "office",
+    "value": "geodesist"
+  },
+  {
+    "name": "advertising_agency",
+    "tag": "office",
+    "value": "advertising_agency"
+  },
+  {
+    "name": "educational_institution",
+    "tag": "office",
+    "value": "educational_institution"
+  },
+  {
+    "name": "studio",
+    "tag": "amenity",
+    "value": "studio"
+  },
+  {
+    "name": "bookmaker",
+    "tag": "shop",
+    "value": "bookmaker"
+  },
+  {
+    "name": "office_religion",
+    "tag": "office",
+    "value": "religion"
+  },
+  {
+    "name": "association",
+    "tag": "office",
+    "value": "association"
+  },
+  {
+    "name": "financial",
+    "tag": "office",
+    "value": "financial"
+  },
+  {
+    "name": "political_party",
+    "tag": "office",
+    "value": "political_party"
+  },
+  {
+    "name": "property_management",
+    "tag": "office",
+    "value": "property_management"
+  },
+  {
+    "name": "notary",
+    "tag": "office",
+    "value": "notary"
+  },
+  {
+    "name": "foundation",
+    "tag": "office",
+    "value": "foundation"
+  },
+  {
+    "name": "tax_advisor",
+    "tag": "office",
+    "value": "tax_advisor"
+  },
+  {
+    "name": "guide",
+    "tag": "office",
+    "value": "guide"
+  },
+  {
+    "name": "consulting",
+    "tag": "office",
+    "value": "consulting"
+  },
+  {
+    "name": "cooperative",
+    "tag": "office",
+    "value": "cooperative"
+  },
+  {
+    "name": "office_forestry",
+    "tag": "office",
+    "value": "forestry"
+  },
+  {
+    "name": "logistics",
+    "tag": "office",
+    "value": "logistics"
+  },
+  {
+    "name": "parish",
+    "tag": "office",
+    "value": "parish"
+  },
+  {
+    "name": "publisher",
+    "tag": "office",
+    "value": "publisher"
+  },
+  {
+    "name": "energy_supplier",
+    "tag": "office",
+    "value": "energy_supplier"
+  },
+  {
+    "name": "water_utility",
+    "tag": "office",
+    "value": "water_utility"
+  },
+  {
+    "name": "research_institute",
+    "tag": "amenity",
+    "value": "research_institute"
+  },
+  {
+    "name": "financial_advisor",
+    "tag": "office",
+    "value": "financial_advisor"
+  },
+  {
+    "name": "security",
+    "tag": "office",
+    "value": "security"
+  },
+  {
+    "name": "construction_company",
+    "tag": "office",
+    "value": "construction_company"
+  },
+  {
+    "name": "union",
+    "tag": "office",
+    "value": "union"
+  },
+  {
+    "name": "office_charity",
+    "tag": "office",
+    "value": "charity"
+  },
+  {
+    "name": "courier",
+    "tag": "office",
+    "value": "courier"
+  },
+  {
+    "name": "moving_company",
+    "tag": "office",
+    "value": "moving_company"
+  },
+  {
+    "name": "surveyor",
+    "tag": "office",
+    "value": "surveyor"
+  },
+  {
+    "name": "graphic_design",
+    "tag": "office",
+    "value": "graphic_design"
+  },
+  {
+    "name": "office_university",
+    "tag": "office",
+    "value": "university"
+  },
+  {
+    "name": "transport",
+    "tag": "office",
+    "value": "transport"
+  },
+  {
+    "name": "harbour_master",
+    "tag": "office",
+    "value": "harbour_master"
+  },
+  {
+    "name": "bail_bond_agent",
+    "tag": "office",
+    "value": "bail_bond_agent"
+  },
+  {
+    "name": "translator",
+    "tag": "office",
+    "value": "translator"
+  },
+  {
+    "name": "private_investigator",
+    "tag": "office",
+    "value": "private_investigator"
+  },
+  {
+    "name": "visa",
+    "tag": "office",
+    "value": "visa"
+  },
+  {
+    "name": "interior_design",
+    "tag": "office",
+    "value": "interior_design"
+  },
+  {
+    "name": "chamber",
+    "tag": "office",
+    "value": "chamber"
+  },
+  {
+    "name": "tutoring",
+    "tag": "office",
+    "value": "tutoring"
+  },
+  {
+    "name": "politician",
+    "tag": "office",
+    "value": "politician"
+  },
+  {
+    "name": "adoption_agency",
+    "tag": "office",
+    "value": "adoption_agency"
+  },
+  {
+    "name": "international_organization",
+    "tag": "office",
+    "value": "international_organization"
+  },
+  {
+    "name": "airline",
+    "tag": "office",
+    "value": "airline"
+  },
+  {
+    "name": "stadium",
+    "tag": "leisure",
+    "value": "stadium"
+  },
+  {
+    "name": "sports_centre",
+    "tag": "leisure",
+    "value": "sports_centre"
+  },
+  {
+    "name": "sports_hall",
+    "tag": "leisure",
+    "value": "sports_hall"
+  },
+  {
+    "name": "golf_course",
+    "tag": "leisure",
+    "value": "golf_course"
+  },
+  {
+    "name": "golf_pin",
+    "tag": "golf",
+    "value": "pin"
+  },
+  {
+    "name": "ice_rink",
+    "tag": "leisure",
+    "value": "ice_rink"
+  },
+  {
+    "name": "pitch",
+    "tag": "leisure",
+    "value": "pitch"
+  },
+  {
+    "name": "leisure_track",
+    "tag": "leisure",
+    "value": "track"
+  },
+  {
+    "name": "raceway",
+    "tag": "highway",
+    "value": "raceway"
+  },
+  {
+    "name": "9pin",
+    "tag": "sport",
+    "value": "9pin"
+  },
+  {
+    "name": "10pin",
+    "tag": "sport",
+    "value": "10pin"
+  },
+  {
+    "name": "aikido",
+    "tag": "sport",
+    "value": "aikido"
+  },
+  {
+    "name": "archery",
+    "tag": "sport",
+    "value": "archery"
+  },
+  {
+    "name": "athletics",
+    "tag": "sport",
+    "value": "athletics"
+  },
+  {
+    "name": "american_football",
+    "tag": "sport",
+    "value": "american_football"
+  },
+  {
+    "name": "australian_football",
+    "tag": "sport",
+    "value": "australian_football"
+  },
+  {
+    "name": "base",
+    "tag": "sport",
+    "value": "base"
+  },
+  {
+    "name": "baseball",
+    "tag": "sport",
+    "value": "baseball"
+  },
+  {
+    "name": "basketball",
+    "tag": "sport",
+    "value": "basketball"
+  },
+  {
+    "name": "beachvolleyball",
+    "tag": "sport",
+    "value": "beachvolleyball"
+  },
+  {
+    "name": "biathlon",
+    "tag": "sport",
+    "value": "biathlon"
+  },
+  {
+    "name": "bmx",
+    "tag": "sport",
+    "value": "bmx"
+  },
+  {
+    "name": "boules",
+    "tag": "sport",
+    "value": "boules"
+  },
+  {
+    "name": "bowls",
+    "tag": "sport",
+    "value": "bowls"
+  },
+  {
+    "name": "canadian_football",
+    "tag": "sport",
+    "value": "canadian_football"
+  },
+  {
+    "name": "canoe",
+    "tag": "sport",
+    "value": "canoe"
+  },
+  {
+    "name": "chess",
+    "tag": "sport",
+    "value": "chess"
+  },
+  {
+    "name": "cliff_diving",
+    "tag": "sport",
+    "value": "cliff_diving"
+  },
+  {
+    "name": "climbing",
+    "tag": "sport",
+    "value": "climbing"
+  },
+  {
+    "name": "climbing_area",
+    "tag": "osmand_climbing",
+    "value": "area"
+  },
+  {
+    "name": "climbing_crag",
+    "tag": "osmand_climbing",
+    "value": "crag"
+  },
+  {
+    "name": "climbing_route",
+    "tag": "climbing",
+    "value": "route"
+  },
+  {
+    "name": "climbing_route_bottom",
+    "tag": "climbing",
+    "value": "route_bottom"
+  },
+  {
+    "name": "climbing_adventure",
+    "tag": "sport",
+    "value": "climbing_adventure"
+  },
+  {
+    "name": "cockfighting",
+    "tag": "sport",
+    "value": "cockfighting"
+  },
+  {
+    "name": "cricket",
+    "tag": "sport",
+    "value": "cricket"
+  },
+  {
+    "name": "crossfit",
+    "tag": "sport",
+    "value": "crossfit"
+  },
+  {
+    "name": "croquet",
+    "tag": "sport",
+    "value": "croquet"
+  },
+  {
+    "name": "curling",
+    "tag": "sport",
+    "value": "curling"
+  },
+  {
+    "name": "cycle_polo",
+    "tag": "sport",
+    "value": "cycle_polo"
+  },
+  {
+    "name": "cycling",
+    "tag": "sport",
+    "value": "cycling"
+  },
+  {
+    "name": "diving",
+    "tag": "sport",
+    "value": "diving"
+  },
+  {
+    "name": "scuba_diving",
+    "tag": "sport",
+    "value": "scuba_diving"
+  },
+  {
+    "name": "dive_centre",
+    "tag": "amenity",
+    "value": "dive_centre"
+  },
+  {
+    "name": "dog_agility",
+    "tag": "sport",
+    "value": "dog_agility"
+  },
+  {
+    "name": "dog_racing",
+    "tag": "sport",
+    "value": "dog_racing"
+  },
+  {
+    "name": "equestrian",
+    "tag": "sport",
+    "value": "equestrian"
+  },
+  {
+    "name": "fencing",
+    "tag": "sport",
+    "value": "fencing"
+  },
+  {
+    "name": "field_hockey",
+    "tag": "sport",
+    "value": "field_hockey"
+  },
+  {
+    "name": "hang_gliding",
+    "tag": "sport",
+    "value": "hang_gliding"
+  },
+  {
+    "name": "golf",
+    "tag": "sport",
+    "value": "golf"
+  },
+  {
+    "name": "disc_golf",
+    "tag": "sport",
+    "value": "disc_golf"
+  },
+  {
+    "name": "gymnastics",
+    "tag": "sport",
+    "value": "gymnastics"
+  },
+  {
+    "name": "handball",
+    "tag": "sport",
+    "value": "handball"
+  },
+  {
+    "name": "horseshoes",
+    "tag": "sport",
+    "value": "horseshoes"
+  },
+  {
+    "name": "ice_hockey",
+    "tag": "sport",
+    "value": "ice_hockey"
+  },
+  {
+    "name": "ice_skating",
+    "tag": "sport",
+    "value": "ice_skating"
+  },
+  {
+    "name": "ice_stock",
+    "tag": "sport",
+    "value": "ice_stock"
+  },
+  {
+    "name": "karate",
+    "tag": "sport",
+    "value": "karate"
+  },
+  {
+    "name": "kickboxing",
+    "tag": "sport",
+    "value": "kickboxing"
+  },
+  {
+    "name": "korfball",
+    "tag": "sport",
+    "value": "korfball"
+  },
+  {
+    "name": "sport_motor",
+    "tag": "sport",
+    "value": "motor"
+  },
+  {
+    "name": "sport_multi",
+    "tag": "sport",
+    "value": "multi"
+  },
+  {
+    "name": "orienteering",
+    "tag": "sport",
+    "value": "orienteering"
+  },
+  {
+    "name": "paddle_tennis",
+    "tag": "sport",
+    "value": "paddle_tennis"
+  },
+  {
+    "name": "paintball",
+    "tag": "sport",
+    "value": "paintball"
+  },
+  {
+    "name": "sport_free_flying",
+    "tag": "sport",
+    "value": "free_flying"
+  },
+  {
+    "name": "pelota",
+    "tag": "sport",
+    "value": "pelota"
+  },
+  {
+    "name": "racquet",
+    "tag": "sport",
+    "value": "racquet"
+  },
+  {
+    "name": "roller_skating",
+    "tag": "sport",
+    "value": "roller_skating"
+  },
+  {
+    "name": "rowing",
+    "tag": "sport",
+    "value": "rowing"
+  },
+  {
+    "name": "rugby_league",
+    "tag": "sport",
+    "value": "rugby_league"
+  },
+  {
+    "name": "rugby_union",
+    "tag": "sport",
+    "value": "rugby_union"
+  },
+  {
+    "name": "sailing",
+    "tag": "sport",
+    "value": "sailing"
+  },
+  {
+    "name": "shooting",
+    "tag": "sport",
+    "value": "shooting"
+  },
+  {
+    "name": "shot_put",
+    "tag": "sport",
+    "value": "shot-put"
+  },
+  {
+    "name": "skateboard",
+    "tag": "sport",
+    "value": "skateboard"
+  },
+  {
+    "name": "skiing",
+    "tag": "sport",
+    "value": "skiing"
+  },
+  {
+    "name": "snooker",
+    "tag": "sport",
+    "value": "snooker"
+  },
+  {
+    "name": "soccer",
+    "tag": "sport",
+    "value": "soccer"
+  },
+  {
+    "name": "speedway",
+    "tag": "sport",
+    "value": "speedway"
+  },
+  {
+    "name": "surfing",
+    "tag": "sport",
+    "value": "surfing"
+  },
+  {
+    "name": "swimming",
+    "tag": "sport",
+    "value": "swimming"
+  },
+  {
+    "name": "table_soccer",
+    "tag": "sport",
+    "value": "table_soccer"
+  },
+  {
+    "name": "table_tennis",
+    "tag": "sport",
+    "value": "table_tennis"
+  },
+  {
+    "name": "taekwondo",
+    "tag": "sport",
+    "value": "taekwondo"
+  },
+  {
+    "name": "tennis",
+    "tag": "sport",
+    "value": "tennis"
+  },
+  {
+    "name": "toboggan",
+    "tag": "sport",
+    "value": "toboggan"
+  },
+  {
+    "name": "volleyball",
+    "tag": "sport",
+    "value": "volleyball"
+  },
+  {
+    "name": "model_aerodrome",
+    "tag": "sport",
+    "value": "model_aerodrome"
+  },
+  {
+    "name": "fitness",
+    "tag": "sport",
+    "value": "fitness"
+  },
+  {
+    "name": "billiards",
+    "tag": "sport",
+    "value": "billiards"
+  },
+  {
+    "name": "bobsleigh",
+    "tag": "sport",
+    "value": "bobsleigh"
+  },
+  {
+    "name": "bullfighting",
+    "tag": "sport",
+    "value": "bullfighting"
+  },
+  {
+    "name": "gaelic_games",
+    "tag": "sport",
+    "value": "gaelic_games"
+  },
+  {
+    "name": "running",
+    "tag": "sport",
+    "value": "running"
+  },
+  {
+    "name": "netball",
+    "tag": "sport",
+    "value": "netball"
+  },
+  {
+    "name": "karting",
+    "tag": "sport",
+    "value": "karting"
+  },
+  {
+    "name": "badminton",
+    "tag": "sport",
+    "value": "badminton"
+  },
+  {
+    "name": "jiu_jitsu",
+    "tag": "sport",
+    "value": "jiu-jitsu"
+  },
+  {
+    "name": "judo",
+    "tag": "sport",
+    "value": "judo"
+  },
+  {
+    "name": "futsal",
+    "tag": "sport",
+    "value": "futsal"
+  },
+  {
+    "name": "rc_car",
+    "tag": "sport",
+    "value": "rc_car"
+  },
+  {
+    "name": "sumo",
+    "tag": "sport",
+    "value": "sumo"
+  },
+  {
+    "name": "squash",
+    "tag": "sport",
+    "value": "squash"
+  },
+  {
+    "name": "shuffleboard",
+    "tag": "sport",
+    "value": "shuffleboard"
+  },
+  {
+    "name": "lacrosse",
+    "tag": "sport",
+    "value": "lacrosse"
+  },
+  {
+    "name": "boxing",
+    "tag": "sport",
+    "value": "boxing"
+  },
+  {
+    "name": "bandy",
+    "tag": "sport",
+    "value": "bandy"
+  },
+  {
+    "name": "pilates",
+    "tag": "sport",
+    "value": "pilates"
+  },
+  {
+    "name": "ultimate",
+    "tag": "sport",
+    "value": "ultimate"
+  },
+  {
+    "name": "ultralight_aviation",
+    "tag": "sport",
+    "value": "ultralight_aviation"
+  },
+  {
+    "name": "wakeboarding",
+    "tag": "sport",
+    "value": "wakeboarding"
+  },
+  {
+    "name": "water_polo",
+    "tag": "sport",
+    "value": "water_polo"
+  },
+  {
+    "name": "water_ski",
+    "tag": "sport",
+    "value": "water_ski"
+  },
+  {
+    "name": "weightlifting",
+    "tag": "sport",
+    "value": "weightlifting"
+  },
+  {
+    "name": "wrestling",
+    "tag": "sport",
+    "value": "wrestling"
+  },
+  {
+    "name": "yoga",
+    "tag": "sport",
+    "value": "yoga"
+  },
+  {
+    "name": "zurkhaneh_sport",
+    "tag": "sport",
+    "value": "zurkhaneh_sport"
+  },
+  {
+    "name": "via_ferrata",
+    "tag": "highway",
+    "value": "via_ferrata"
+  },
+  {
+    "name": "museum",
+    "tag": "tourism",
+    "value": "museum"
+  },
+  {
+    "name": "memorial",
+    "tag": "historic",
+    "value": "memorial"
+  },
+  {
+    "name": "monument",
+    "tag": "historic",
+    "value": "monument"
+  },
+  {
+    "name": "technical_monument",
+    "tag": "historic",
+    "value": "technical_monument"
+  },
+  {
+    "name": "locomotive",
+    "tag": "historic",
+    "value": "locomotive"
+  },
+  {
+    "name": "artwork",
+    "tag": "tourism",
+    "value": "artwork"
+  },
+  {
+    "name": "archaeological_site",
+    "tag": "historic",
+    "value": "archaeological_site"
+  },
+  {
+    "name": "pa",
+    "tag": "historic",
+    "value": "pa"
+  },
+  {
+    "name": "monastery",
+    "tag": "amenity",
+    "value": "monastery"
+  },
+  {
+    "name": "palaeontological_site",
+    "tag": "geological",
+    "value": "palaeontological_site"
+  },
+  {
+    "name": "outcrop",
+    "tag": "geological",
+    "value": "outcrop"
+  },
+  {
+    "name": "battlefield",
+    "tag": "historic",
+    "value": "battlefield"
+  },
+  {
+    "name": "historic_cannon",
+    "tag": "historic",
+    "value": "cannon"
+  },
+  {
+    "name": "historic_quarry",
+    "tag": "historic",
+    "value": "quarry"
+  },
+  {
+    "name": "historic_aircraft",
+    "tag": "historic",
+    "value": "aircraft"
+  },
+  {
+    "name": "historic_spacecraft",
+    "tag": "historic",
+    "value": "spacecraft"
+  },
+  {
+    "name": "historic_tank",
+    "tag": "historic",
+    "value": "tank"
+  },
+  {
+    "name": "historic_gallows",
+    "tag": "historic",
+    "value": "gallows"
+  },
+  {
+    "name": "geoglyph",
+    "tag": "man_made",
+    "value": "geoglyph"
+  },
+  {
+    "name": "castle",
+    "tag": "historic",
+    "value": "castle"
+  },
+  {
+    "name": "historic_manor",
+    "tag": "historic",
+    "value": "manor"
+  },
+  {
+    "name": "historic_farm",
+    "tag": "historic",
+    "value": "farm"
+  },
+  {
+    "name": "city_gate",
+    "tag": "historic",
+    "value": "city_gate"
+  },
+  {
+    "name": "fountain",
+    "tag": "amenity",
+    "value": "fountain"
+  },
+  {
+    "name": "historic_ruins",
+    "tag": "historic",
+    "value": "ruins"
+  },
+  {
+    "name": "rune_stone",
+    "tag": "historic",
+    "value": "rune_stone"
+  },
+  {
+    "name": "historic_stone",
+    "tag": "historic",
+    "value": "stone"
+  },
+  {
+    "name": "wreck",
+    "tag": "historic",
+    "value": "wreck"
+  },
+  {
+    "name": "historic_ship",
+    "tag": "historic",
+    "value": "ship"
+  },
+  {
+    "name": "historic_mine",
+    "tag": "historic",
+    "value": "mine"
+  },
+  {
+    "name": "viewpoint",
+    "tag": "tourism",
+    "value": "viewpoint"
+  },
+  {
+    "name": "zoo",
+    "tag": "tourism",
+    "value": "zoo"
+  },
+  {
+    "name": "aquarium",
+    "tag": "tourism",
+    "value": "aquarium"
+  },
+  {
+    "name": "theme_park",
+    "tag": "tourism",
+    "value": "theme_park"
+  },
+  {
+    "name": "attraction",
+    "tag": "tourism",
+    "value": "attraction"
+  },
+  {
+    "name": "attraction_amusement_ride",
+    "tag": "attraction",
+    "value": "amusement_ride"
+  },
+  {
+    "name": "attraction_animal",
+    "tag": "attraction",
+    "value": "animal"
+  },
+  {
+    "name": "attraction_big_wheel",
+    "tag": "attraction",
+    "value": "big_wheel"
+  },
+  {
+    "name": "attraction_carousel",
+    "tag": "attraction",
+    "value": "carousel"
+  },
+  {
+    "name": "attraction_maze",
+    "tag": "attraction",
+    "value": "maze"
+  },
+  {
+    "name": "attraction_roller_coaster",
+    "tag": "attraction",
+    "value": "roller_coaster"
+  },
+  {
+    "name": "attraction_slide",
+    "tag": "attraction",
+    "value": "slide"
+  },
+  {
+    "name": "attraction_summer_toboggan",
+    "tag": "attraction",
+    "value": "summer_toboggan"
+  },
+  {
+    "name": "attraction_swing_carousel",
+    "tag": "attraction",
+    "value": "swing_carousel"
+  },
+  {
+    "name": "attraction_train",
+    "tag": "attraction",
+    "value": "train"
+  },
+  {
+    "name": "attraction_water_slide",
+    "tag": "attraction",
+    "value": "water_slide"
+  },
+  {
+    "name": "hotel",
+    "tag": "tourism",
+    "value": "hotel"
+  },
+  {
+    "name": "guest_house",
+    "tag": "tourism",
+    "value": "guest_house"
+  },
+  {
+    "name": "hostel",
+    "tag": "tourism",
+    "value": "hostel"
+  },
+  {
+    "name": "motel",
+    "tag": "tourism",
+    "value": "motel"
+  },
+  {
+    "name": "alpine_hut",
+    "tag": "tourism",
+    "value": "alpine_hut"
+  },
+  {
+    "name": "chalet",
+    "tag": "tourism",
+    "value": "chalet"
+  },
+  {
+    "name": "apartment",
+    "tag": "tourism",
+    "value": "apartment"
+  },
+  {
+    "name": "wilderness_hut",
+    "tag": "tourism",
+    "value": "wilderness_hut"
+  },
+  {
+    "name": "cabin",
+    "tag": "tourism",
+    "value": "cabin"
+  },
+  {
+    "name": "hunting_lodge",
+    "tag": "tourism",
+    "value": "hunting_lodge"
+  },
+  {
+    "name": "mosque",
+    "tag": "building",
+    "value": "mosque"
+  },
+  {
+    "name": "buddhist_temple",
+    "tag": "building",
+    "value": "buddhist_temple"
+  },
+  {
+    "name": "hindu_temple",
+    "tag": "building",
+    "value": "hindu_temple"
+  },
+  {
+    "name": "shinto_shrine",
+    "tag": "building",
+    "value": "shinto_shrine"
+  },
+  {
+    "name": "synagogue",
+    "tag": "building",
+    "value": "synagogue"
+  },
+  {
+    "name": "jehovahs_witness_kingdom_hall",
+    "tag": "building",
+    "value": "jehovahs_witness_kingdom_hall"
+  },
+  {
+    "name": "catholic_church",
+    "tag": "building",
+    "value": "catholic_church"
+  },
+  {
+    "name": "roman_catholic_church",
+    "tag": "building",
+    "value": "roman_catholic_church"
+  },
+  {
+    "name": "baptist_church",
+    "tag": "building",
+    "value": "baptist_church"
+  },
+  {
+    "name": "lutheran_church",
+    "tag": "building",
+    "value": "lutheran_church"
+  },
+  {
+    "name": "orthodox_church",
+    "tag": "building",
+    "value": "orthodox_church"
+  },
+  {
+    "name": "protestant_church",
+    "tag": "building",
+    "value": "protestant_church"
+  },
+  {
+    "name": "anglican_church",
+    "tag": "building",
+    "value": "anglican_church"
+  },
+  {
+    "name": "methodist_church",
+    "tag": "building",
+    "value": "methodist_church"
+  },
+  {
+    "name": "greek_orthodox_church",
+    "tag": "building",
+    "value": "greek_orthodox_church"
+  },
+  {
+    "name": "russian_orthodox_church",
+    "tag": "building",
+    "value": "russian_orthodox_church"
+  },
+  {
+    "name": "pentecostal_church",
+    "tag": "building",
+    "value": "pentecostal_church"
+  },
+  {
+    "name": "evangelical_church",
+    "tag": "building",
+    "value": "evangelical_church"
+  },
+  {
+    "name": "presbyterian_church",
+    "tag": "building",
+    "value": "presbyterian_church"
+  },
+  {
+    "name": "mormon_church",
+    "tag": "building",
+    "value": "mormon_church"
+  },
+  {
+    "name": "seventh_day_adventist_church",
+    "tag": "building",
+    "value": "seventh_day_adventist_church"
+  },
+  {
+    "name": "reformed_church",
+    "tag": "building",
+    "value": "reformed_church"
+  },
+  {
+    "name": "ethiopian_orthodox_church",
+    "tag": "building",
+    "value": "ethiopian_orthodox_church"
+  },
+  {
+    "name": "romanian_orthodox_church",
+    "tag": "building",
+    "value": "romanian_orthodox_church"
+  },
+  {
+    "name": "serbian_orthodox_church",
+    "tag": "building",
+    "value": "serbian_orthodox_church"
+  },
+  {
+    "name": "greek_catholic_church",
+    "tag": "building",
+    "value": "greek_catholic_church"
+  },
+  {
+    "name": "united_methodist_church",
+    "tag": "building",
+    "value": "united_methodist_church"
+  },
+  {
+    "name": "ukrainian_greek_catholic_church",
+    "tag": "building",
+    "value": "ukrainian_greek_catholic_church"
+  },
+  {
+    "name": "episcopal_church",
+    "tag": "building",
+    "value": "episcopal_church"
+  },
+  {
+    "name": "iglesia_ni_cristo_church",
+    "tag": "building",
+    "value": "iglesia_ni_cristo_church"
+  },
+  {
+    "name": "nondenominational_church",
+    "tag": "building",
+    "value": "nondenominational_church"
+  },
+  {
+    "name": "georgian_orthodox_church",
+    "tag": "building",
+    "value": "georgian_orthodox_church"
+  },
+  {
+    "name": "new_apostolic_church",
+    "tag": "building",
+    "value": "new_apostolic_church"
+  },
+  {
+    "name": "ukrainian_orthodox_church",
+    "tag": "building",
+    "value": "ukrainian_orthodox_church"
+  },
+  {
+    "name": "united_church",
+    "tag": "building",
+    "value": "united_church"
+  },
+  {
+    "name": "assemblies_of_god_church",
+    "tag": "building",
+    "value": "assemblies_of_god_church"
+  },
+  {
+    "name": "church_of_scotland",
+    "tag": "building",
+    "value": "church_of_scotland"
+  },
+  {
+    "name": "salvation_army_church",
+    "tag": "building",
+    "value": "salvation_army_church"
+  },
+  {
+    "name": "armenian_apostolic_church",
+    "tag": "building",
+    "value": "armenian_apostolic_church"
+  },
+  {
+    "name": "quaker_church",
+    "tag": "building",
+    "value": "quaker_church"
+  },
+  {
+    "name": "church_of_christ",
+    "tag": "building",
+    "value": "church_of_christ"
+  },
+  {
+    "name": "neo_pentecostal_church",
+    "tag": "building",
+    "value": "neo-pentecostal_church"
+  },
+  {
+    "name": "latter_day_saints_church",
+    "tag": "building",
+    "value": "latter_day_saints_church"
+  },
+  {
+    "name": "evangelical_lutheran_church",
+    "tag": "building",
+    "value": "evangelical_lutheran_church"
+  },
+  {
+    "name": "mennonite_church",
+    "tag": "building",
+    "value": "mennonite_church"
+  },
+  {
+    "name": "adventist_church",
+    "tag": "building",
+    "value": "adventist_church"
+  },
+  {
+    "name": "uniting_church",
+    "tag": "building",
+    "value": "uniting_church"
+  },
+  {
+    "name": "apostolic_church",
+    "tag": "building",
+    "value": "apostolic_church"
+  },
+  {
+    "name": "united_church_of_christ",
+    "tag": "building",
+    "value": "united_church_of_christ"
+  },
+  {
+    "name": "united_reformed_church",
+    "tag": "building",
+    "value": "united_reformed_church"
+  },
+  {
+    "name": "anabaptist_church",
+    "tag": "building",
+    "value": "anabaptist_church"
+  },
+  {
+    "name": "bulgarian_orthodox_church",
+    "tag": "building",
+    "value": "bulgarian_orthodox_church"
+  },
+  {
+    "name": "african_methodist_episcopal_church",
+    "tag": "building",
+    "value": "african_methodist_episcopal_church"
+  },
+  {
+    "name": "macedonian_orthodox_church",
+    "tag": "building",
+    "value": "macedonian_orthodox_church"
+  },
+  {
+    "name": "southern_baptist_church",
+    "tag": "building",
+    "value": "southern_baptist_church"
+  },
+  {
+    "name": "congregational_church",
+    "tag": "building",
+    "value": "congregational_church"
+  },
+  {
+    "name": "spiritist_church",
+    "tag": "building",
+    "value": "spiritist_church"
+  },
+  {
+    "name": "christian_church",
+    "tag": "building",
+    "value": "christian_church"
+  },
+  {
+    "name": "place_of_worship",
+    "tag": "amenity",
+    "value": "place_of_worship"
+  },
+  {
+    "name": "hanami",
+    "tag": "tourism",
+    "value": "hanami"
+  },
+  {
+    "name": "boundary_stone",
+    "tag": "historic",
+    "value": "boundary_stone"
+  },
+  {
+    "name": "historic_milestone",
+    "tag": "historic",
+    "value": "milestone"
+  },
+  {
+    "name": "historic_railway",
+    "tag": "historic",
+    "value": "railway"
+  },
+  {
+    "name": "charcoal_pile",
+    "tag": "historic",
+    "value": "charcoal_pile"
+  },
+  {
+    "name": "historic_threshing_floor",
+    "tag": "historic",
+    "value": "threshing_floor"
+  },
+  {
+    "name": "wayside_cross",
+    "tag": "historic",
+    "value": "wayside_cross"
+  },
+  {
+    "name": "wayside_shrine",
+    "tag": "historic",
+    "value": "wayside_shrine"
+  },
+  {
+    "name": "ranger_station",
+    "tag": "amenity",
+    "value": "ranger_station"
+  },
+  {
+    "name": "information",
+    "tag": "tourism",
+    "value": "information"
+  },
+  {
+    "name": "information_guidepost",
+    "tag": "information",
+    "value": "guidepost"
+  },
+  {
+    "name": "trailhead",
+    "tag": "highway",
+    "value": "trailhead"
+  },
+  {
+    "name": "clock",
+    "tag": "amenity",
+    "value": "clock"
+  },
+  {
+    "name": "camp_site",
+    "tag": "tourism",
+    "value": "camp_site"
+  },
+  {
+    "name": "camp_pitch",
+    "tag": "tourism",
+    "value": "camp_pitch"
+  },
+  {
+    "name": "caravan_site",
+    "tag": "tourism",
+    "value": "caravan_site"
+  },
+  {
+    "name": "picnic_site",
+    "tag": "tourism",
+    "value": "picnic_site"
+  },
+  {
+    "name": "picnic_table",
+    "tag": "leisure",
+    "value": "picnic_table"
+  },
+  {
+    "name": "firepit",
+    "tag": "leisure",
+    "value": "firepit"
+  },
+  {
+    "name": "grave_yard",
+    "tag": "amenity",
+    "value": "grave_yard"
+  },
+  {
+    "name": "tomb",
+    "tag": "historic",
+    "value": "tomb"
+  },
+  {
+    "name": "pillory",
+    "tag": "historic",
+    "value": "pillory"
+  },
+  {
+    "name": "resort",
+    "tag": "leisure",
+    "value": "resort"
+  },
+  {
+    "name": "beach_resort",
+    "tag": "leisure",
+    "value": "beach_resort"
+  },
+  {
+    "name": "city_wall",
+    "tag": "barrier",
+    "value": "city_wall"
+  },
+  {
+    "name": "bird_hide",
+    "tag": "leisure",
+    "value": "bird_hide"
+  },
+  {
+    "name": "wildlife_hide",
+    "tag": "leisure",
+    "value": "wildlife_hide"
+  },
+  {
+    "name": "historic_railway_station",
+    "tag": "historic",
+    "value": "railway_station"
+  },
+  {
+    "name": "prison_camp",
+    "tag": "abandoned:amenity",
+    "value": "prison_camp"
+  },
+  {
+    "name": "nightclub",
+    "tag": "amenity",
+    "value": "nightclub"
+  },
+  {
+    "name": "stripclub",
+    "tag": "amenity",
+    "value": "stripclub"
+  },
+  {
+    "name": "club_art",
+    "tag": "club",
+    "value": "art"
+  },
+  {
+    "name": "club_amateur_radio",
+    "tag": "club",
+    "value": "amateur_radio"
+  },
+  {
+    "name": "club_astronomy",
+    "tag": "club",
+    "value": "astronomy"
+  },
+  {
+    "name": "club_automobile",
+    "tag": "club",
+    "value": "automobile"
+  },
+  {
+    "name": "club_aviation",
+    "tag": "club",
+    "value": "aviation"
+  },
+  {
+    "name": "club_bicycle",
+    "tag": "club",
+    "value": "bicycle"
+  },
+  {
+    "name": "club_board_games",
+    "tag": "club",
+    "value": "board_games"
+  },
+  {
+    "name": "club_charity",
+    "tag": "club",
+    "value": "charity"
+  },
+  {
+    "name": "club_chess",
+    "tag": "club",
+    "value": "chess"
+  },
+  {
+    "name": "club_cinema",
+    "tag": "club",
+    "value": "cinema"
+  },
+  {
+    "name": "club_computer",
+    "tag": "club",
+    "value": "computer"
+  },
+  {
+    "name": "club_dog",
+    "tag": "club",
+    "value": "dog"
+  },
+  {
+    "name": "club_doityourself",
+    "tag": "club",
+    "value": "doityourself"
+  },
+  {
+    "name": "club_ethnic",
+    "tag": "club",
+    "value": "ethnic"
+  },
+  {
+    "name": "club_fan",
+    "tag": "club",
+    "value": "fan"
+  },
+  {
+    "name": "club_fishing",
+    "tag": "club",
+    "value": "fishing"
+  },
+  {
+    "name": "club_freemasonry",
+    "tag": "club",
+    "value": "freemasonry"
+  },
+  {
+    "name": "club_game",
+    "tag": "club",
+    "value": "game"
+  },
+  {
+    "name": "club_history",
+    "tag": "club",
+    "value": "history"
+  },
+  {
+    "name": "club_hunting",
+    "tag": "club",
+    "value": "hunting"
+  },
+  {
+    "name": "club_linux",
+    "tag": "club",
+    "value": "linux"
+  },
+  {
+    "name": "club_motorcycle",
+    "tag": "club",
+    "value": "motorcycle"
+  },
+  {
+    "name": "club_music",
+    "tag": "club",
+    "value": "music"
+  },
+  {
+    "name": "club_nature",
+    "tag": "club",
+    "value": "nature"
+  },
+  {
+    "name": "club_photography",
+    "tag": "club",
+    "value": "photography"
+  },
+  {
+    "name": "club_religion",
+    "tag": "club",
+    "value": "religion"
+  },
+  {
+    "name": "club_sailing",
+    "tag": "club",
+    "value": "sailing"
+  },
+  {
+    "name": "club_scout",
+    "tag": "club",
+    "value": "scout"
+  },
+  {
+    "name": "club_shooting",
+    "tag": "club",
+    "value": "shooting"
+  },
+  {
+    "name": "club_social",
+    "tag": "club",
+    "value": "social"
+  },
+  {
+    "name": "club_sport",
+    "tag": "club",
+    "value": "sport"
+  },
+  {
+    "name": "club_theatre",
+    "tag": "club",
+    "value": "theatre"
+  },
+  {
+    "name": "club_tourism",
+    "tag": "club",
+    "value": "tourism"
+  },
+  {
+    "name": "club_veterans",
+    "tag": "club",
+    "value": "veterans"
+  },
+  {
+    "name": "club_youth_movement",
+    "tag": "club",
+    "value": "youth_movement"
+  },
+  {
+    "name": "ski_resort",
+    "tag": "leisure",
+    "value": "ski_resort"
+  },
+  {
+    "name": "piste_downhill",
+    "tag": "piste:type",
+    "value": "downhill"
+  },
+  {
+    "name": "piste_nordic",
+    "tag": "piste:type",
+    "value": "nordic"
+  },
+  {
+    "name": "piste_skitour",
+    "tag": "piste:type",
+    "value": "skitour"
+  },
+  {
+    "name": "piste_hike",
+    "tag": "piste:type",
+    "value": "hike"
+  },
+  {
+    "name": "piste_sleigh",
+    "tag": "piste:type",
+    "value": "sleigh"
+  },
+  {
+    "name": "piste_sled",
+    "tag": "piste:type",
+    "value": "sled"
+  },
+  {
+    "name": "piste_snow_park",
+    "tag": "piste:type",
+    "value": "snow_park"
+  },
+  {
+    "name": "piste_playground",
+    "tag": "piste:type",
+    "value": "playground"
+  },
+  {
+    "name": "piste_ice_skate",
+    "tag": "piste:type",
+    "value": "ice_skate"
+  },
+  {
+    "name": "piste_ski_jump",
+    "tag": "piste:type",
+    "value": "ski_jump"
+  },
+  {
+    "name": "arts_centre",
+    "tag": "amenity",
+    "value": "arts_centre"
+  },
+  {
+    "name": "cinema",
+    "tag": "amenity",
+    "value": "cinema"
+  },
+  {
+    "name": "casino",
+    "tag": "amenity",
+    "value": "casino"
+  },
+  {
+    "name": "planetarium",
+    "tag": "amenity",
+    "value": "planetarium"
+  },
+  {
+    "name": "community_centre",
+    "tag": "amenity",
+    "value": "community_centre"
+  },
+  {
+    "name": "social_centre",
+    "tag": "amenity",
+    "value": "social_centre"
+  },
+  {
+    "name": "conference_centre",
+    "tag": "amenity",
+    "value": "conference_centre"
+  },
+  {
+    "name": "public_bookcase",
+    "tag": "amenity",
+    "value": "public_bookcase"
+  },
+  {
+    "name": "toy_library",
+    "tag": "amenity",
+    "value": "toy_library"
+  },
+  {
+    "name": "photo_booth",
+    "tag": "amenity",
+    "value": "photo_booth"
+  },
+  {
+    "name": "give_box",
+    "tag": "amenity",
+    "value": "give_box"
+  },
+  {
+    "name": "theatre",
+    "tag": "amenity",
+    "value": "theatre"
+  },
+  {
+    "name": "bandstand",
+    "tag": "leisure",
+    "value": "bandstand"
+  },
+  {
+    "name": "music_venue",
+    "tag": "amenity",
+    "value": "music_venue"
+  },
+  {
+    "name": "gallery",
+    "tag": "tourism",
+    "value": "gallery"
+  },
+  {
+    "name": "dance_floor",
+    "tag": "leisure",
+    "value": "dance"
+  },
+  {
+    "name": "stands",
+    "tag": "leisure",
+    "value": "bleachers"
+  },
+  {
+    "name": "events_venue",
+    "tag": "amenity",
+    "value": "events_venue"
+  },
+  {
+    "name": "swimming_area",
+    "tag": "leisure",
+    "value": "swimming_area"
+  },
+  {
+    "name": "dog_park",
+    "tag": "leisure",
+    "value": "dog_park"
+  },
+  {
+    "name": "leisure_fishing",
+    "tag": "leisure",
+    "value": "fishing"
+  },
+  {
+    "name": "hunting_stand",
+    "tag": "amenity",
+    "value": "hunting_stand"
+  },
+  {
+    "name": "feeding_place",
+    "tag": "amenity",
+    "value": "feeding_place"
+  },
+  {
+    "name": "harbour",
+    "tag": "harbour",
+    "value": "yes"
+  },
+  {
+    "name": "marina",
+    "tag": "leisure",
+    "value": "marina"
+  },
+  {
+    "name": "miniature_golf",
+    "tag": "leisure",
+    "value": "miniature_golf"
+  },
+  {
+    "name": "bowling_alley",
+    "tag": "leisure",
+    "value": "bowling_alley"
+  },
+  {
+    "name": "playground",
+    "tag": "leisure",
+    "value": "playground"
+  },
+  {
+    "name": "playground_structure",
+    "tag": "playground",
+    "value": "structure"
+  },
+  {
+    "name": "playground_slide",
+    "tag": "playground",
+    "value": "slide"
+  },
+  {
+    "name": "playground_climbingframe",
+    "tag": "playground",
+    "value": "climbingframe"
+  },
+  {
+    "name": "playground_climbingwall",
+    "tag": "playground",
+    "value": "climbingwall"
+  },
+  {
+    "name": "playground_balancebeam",
+    "tag": "playground",
+    "value": "balancebeam"
+  },
+  {
+    "name": "playground_playhouse",
+    "tag": "playground",
+    "value": "playhouse"
+  },
+  {
+    "name": "playground_sandpit",
+    "tag": "playground",
+    "value": "sandpit"
+  },
+  {
+    "name": "playground_hopscotch",
+    "tag": "playground",
+    "value": "hopscotch"
+  },
+  {
+    "name": "playground_teenshelter",
+    "tag": "playground",
+    "value": "teenshelter"
+  },
+  {
+    "name": "playground_sledding",
+    "tag": "playground",
+    "value": "sledding"
+  },
+  {
+    "name": "playground_youth_bench",
+    "tag": "playground",
+    "value": "youth_bench"
+  },
+  {
+    "name": "playground_map",
+    "tag": "playground",
+    "value": "map"
+  },
+  {
+    "name": "playground_bridge",
+    "tag": "playground",
+    "value": "bridge"
+  },
+  {
+    "name": "playground_funnel_ball",
+    "tag": "playground",
+    "value": "funnel_ball"
+  },
+  {
+    "name": "playground_tunnel_tube",
+    "tag": "playground",
+    "value": "tunnel_tube"
+  },
+  {
+    "name": "playground_speaking_tube",
+    "tag": "playground",
+    "value": "speaking_tube"
+  },
+  {
+    "name": "playground_ball_pool",
+    "tag": "playground",
+    "value": "ball_pool"
+  },
+  {
+    "name": "playground_swing",
+    "tag": "playground",
+    "value": "swing"
+  },
+  {
+    "name": "playground_spinning_circle",
+    "tag": "playground",
+    "value": "spinning_circle"
+  },
+  {
+    "name": "playground_basketswing",
+    "tag": "playground",
+    "value": "basketswing"
+  },
+  {
+    "name": "playground_basketrotator",
+    "tag": "playground",
+    "value": "basketrotator"
+  },
+  {
+    "name": "playground_aerialrotator",
+    "tag": "playground",
+    "value": "aerialrotator"
+  },
+  {
+    "name": "playground_seesaw",
+    "tag": "playground",
+    "value": "seesaw"
+  },
+  {
+    "name": "playground_springy",
+    "tag": "playground",
+    "value": "springy"
+  },
+  {
+    "name": "playground_trampoline",
+    "tag": "playground",
+    "value": "trampoline"
+  },
+  {
+    "name": "playground_roundabout",
+    "tag": "playground",
+    "value": "roundabout"
+  },
+  {
+    "name": "playground_cushion",
+    "tag": "playground",
+    "value": "cushion"
+  },
+  {
+    "name": "playground_zipwire",
+    "tag": "playground",
+    "value": "zipwire"
+  },
+  {
+    "name": "playground_water",
+    "tag": "playground",
+    "value": "water"
+  },
+  {
+    "name": "playground_splash_pad",
+    "tag": "playground",
+    "value": "splash_pad"
+  },
+  {
+    "name": "playground_horizontal_bar",
+    "tag": "playground",
+    "value": "horizontal_bar"
+  },
+  {
+    "name": "playground_activitypanel",
+    "tag": "playground",
+    "value": "activitypanel"
+  },
+  {
+    "name": "playground_exercise",
+    "tag": "playground",
+    "value": "exercise"
+  },
+  {
+    "name": "bench",
+    "tag": "amenity",
+    "value": "bench"
+  },
+  {
+    "name": "lounger",
+    "tag": "amenity",
+    "value": "lounger"
+  },
+  {
+    "name": "swimming_pool",
+    "tag": "leisure",
+    "value": "swimming_pool"
+  },
+  {
+    "name": "fitness_station",
+    "tag": "leisure",
+    "value": "fitness_station"
+  },
+  {
+    "name": "fitness_centre",
+    "tag": "leisure",
+    "value": "fitness_centre"
+  },
+  {
+    "name": "trampoline_park",
+    "tag": "leisure",
+    "value": "trampoline_park"
+  },
+  {
+    "name": "water_park",
+    "tag": "leisure",
+    "value": "water_park"
+  },
+  {
+    "name": "park",
+    "tag": "leisure",
+    "value": "park"
+  },
+  {
+    "name": "recreation_ground",
+    "tag": "landuse",
+    "value": "recreation_ground"
+  },
+  {
+    "name": "village_green",
+    "tag": "landuse",
+    "value": "village_green"
+  },
+  {
+    "name": "trail_riding_station",
+    "tag": "tourism",
+    "value": "trail_riding_station"
+  },
+  {
+    "name": "sauna",
+    "tag": "leisure",
+    "value": "sauna"
+  },
+  {
+    "name": "tanning_salon",
+    "tag": "leisure",
+    "value": "tanning_salon"
+  },
+  {
+    "name": "brothel",
+    "tag": "amenity",
+    "value": "brothel"
+  },
+  {
+    "name": "love_hotel",
+    "tag": "amenity",
+    "value": "love_hotel"
+  },
+  {
+    "name": "horse_riding",
+    "tag": "leisure",
+    "value": "horse_riding"
+  },
+  {
+    "name": "leisure_common",
+    "tag": "leisure",
+    "value": "common"
+  },
+  {
+    "name": "garden",
+    "tag": "leisure",
+    "value": "garden"
+  },
+  {
+    "name": "gambling",
+    "tag": "amenity",
+    "value": "gambling"
+  },
+  {
+    "name": "amusement_arcade",
+    "tag": "leisure",
+    "value": "amusement_arcade"
+  },
+  {
+    "name": "adult_gaming_centre",
+    "tag": "leisure",
+    "value": "adult_gaming_centre"
+  },
+  {
+    "name": "escape_game",
+    "tag": "leisure",
+    "value": "escape_game"
+  },
+  {
+    "name": "cafe",
+    "tag": "amenity",
+    "value": "cafe"
+  },
+  {
+    "name": "restaurant",
+    "tag": "amenity",
+    "value": "restaurant"
+  },
+  {
+    "name": "food_court",
+    "tag": "amenity",
+    "value": "food_court"
+  },
+  {
+    "name": "fast_food",
+    "tag": "amenity",
+    "value": "fast_food"
+  },
+  {
+    "name": "outdoor_seating_poi",
+    "tag": "leisure",
+    "value": "outdoor_seating"
+  },
+  {
+    "name": "hookah_lounge",
+    "tag": "amenity",
+    "value": "hookah_lounge"
+  },
+  {
+    "name": "biergarten",
+    "tag": "amenity_biergarten",
+    "value": "biergarten"
+  },
+  {
+    "name": "bar",
+    "tag": "amenity",
+    "value": "bar"
+  },
+  {
+    "name": "pub",
+    "tag": "amenity",
+    "value": "pub"
+  },
+  {
+    "name": "barbecue",
+    "tag": "amenity",
+    "value": "bbq"
+  },
+  {
+    "name": "craft_agricultural_engines",
+    "tag": "craft",
+    "value": "agricultural_engines"
+  },
+  {
+    "name": "craft_bakery",
+    "tag": "craft",
+    "value": "bakery"
+  },
+  {
+    "name": "craft_basket_maker",
+    "tag": "craft",
+    "value": "basket_maker"
+  },
+  {
+    "name": "craft_beekeeper",
+    "tag": "craft",
+    "value": "beekeeper"
+  },
+  {
+    "name": "craft_blacksmith",
+    "tag": "craft",
+    "value": "blacksmith"
+  },
+  {
+    "name": "craft_brewery",
+    "tag": "craft",
+    "value": "brewery"
+  },
+  {
+    "name": "craft_boatbuilder",
+    "tag": "craft",
+    "value": "boatbuilder"
+  },
+  {
+    "name": "craft_bookbinder",
+    "tag": "craft",
+    "value": "bookbinder"
+  },
+  {
+    "name": "craft_builder",
+    "tag": "craft",
+    "value": "builder"
+  },
+  {
+    "name": "craft_cabinet_maker",
+    "tag": "craft",
+    "value": "cabinet_maker"
+  },
+  {
+    "name": "craft_carpenter",
+    "tag": "craft",
+    "value": "carpenter"
+  },
+  {
+    "name": "craft_carpet_layer",
+    "tag": "craft",
+    "value": "carpet_layer"
+  },
+  {
+    "name": "craft_caterer",
+    "tag": "craft",
+    "value": "caterer"
+  },
+  {
+    "name": "craft_clockmaker",
+    "tag": "craft",
+    "value": "clockmaker"
+  },
+  {
+    "name": "craft_computer",
+    "tag": "craft",
+    "value": "computer"
+  },
+  {
+    "name": "craft_confectionery",
+    "tag": "craft",
+    "value": "confectionery"
+  },
+  {
+    "name": "craft_dressmaker",
+    "tag": "craft",
+    "value": "dressmaker"
+  },
+  {
+    "name": "craft_distillery",
+    "tag": "craft",
+    "value": "distillery"
+  },
+  {
+    "name": "craft_electrician",
+    "tag": "craft",
+    "value": "electrician"
+  },
+  {
+    "name": "craft_electronics_repair",
+    "tag": "craft",
+    "value": "electronics_repair"
+  },
+  {
+    "name": "craft_floorer",
+    "tag": "craft",
+    "value": "floorer"
+  },
+  {
+    "name": "craft_gardener",
+    "tag": "craft",
+    "value": "gardener"
+  },
+  {
+    "name": "craft_glaziery",
+    "tag": "craft",
+    "value": "glaziery"
+  },
+  {
+    "name": "craft_handicraft",
+    "tag": "craft",
+    "value": "handicraft"
+  },
+  {
+    "name": "craft_hvac",
+    "tag": "craft",
+    "value": "hvac"
+  },
+  {
+    "name": "craft_insulation",
+    "tag": "craft",
+    "value": "insulation"
+  },
+  {
+    "name": "craft_jeweller",
+    "tag": "craft",
+    "value": "jeweller"
+  },
+  {
+    "name": "craft_joiner",
+    "tag": "craft",
+    "value": "joiner"
+  },
+  {
+    "name": "craft_locksmith",
+    "tag": "craft",
+    "value": "locksmith"
+  },
+  {
+    "name": "craft_key_cutter",
+    "tag": "craft",
+    "value": "key_cutter"
+  },
+  {
+    "name": "craft_metal_construction",
+    "tag": "craft",
+    "value": "metal_construction"
+  },
+  {
+    "name": "craft_optician",
+    "tag": "craft",
+    "value": "optician"
+  },
+  {
+    "name": "craft_painter",
+    "tag": "craft",
+    "value": "painter"
+  },
+  {
+    "name": "craft_parquet_layer",
+    "tag": "craft",
+    "value": "parquet_layer"
+  },
+  {
+    "name": "craft_photographer",
+    "tag": "craft",
+    "value": "photographer"
+  },
+  {
+    "name": "craft_photographic_laboratory",
+    "tag": "craft",
+    "value": "photographic_laboratory"
+  },
+  {
+    "name": "craft_plasterer",
+    "tag": "craft",
+    "value": "plasterer"
+  },
+  {
+    "name": "craft_plumber",
+    "tag": "craft",
+    "value": "plumber"
+  },
+  {
+    "name": "craft_pottery",
+    "tag": "craft",
+    "value": "pottery"
+  },
+  {
+    "name": "craft_rigger",
+    "tag": "craft",
+    "value": "rigger"
+  },
+  {
+    "name": "craft_roofer",
+    "tag": "craft",
+    "value": "roofer"
+  },
+  {
+    "name": "craft_saddler",
+    "tag": "craft",
+    "value": "saddler"
+  },
+  {
+    "name": "craft_sailmaker",
+    "tag": "craft",
+    "value": "sailmaker"
+  },
+  {
+    "name": "craft_sawmill",
+    "tag": "craft",
+    "value": "sawmill"
+  },
+  {
+    "name": "craft_scaffolder",
+    "tag": "craft",
+    "value": "scaffolder"
+  },
+  {
+    "name": "craft_sculptor",
+    "tag": "craft",
+    "value": "sculptor"
+  },
+  {
+    "name": "craft_shoemaker",
+    "tag": "craft",
+    "value": "shoemaker"
+  },
+  {
+    "name": "craft_stand_builder",
+    "tag": "craft",
+    "value": "stand_builder"
+  },
+  {
+    "name": "craft_stonemason",
+    "tag": "craft",
+    "value": "stonemason"
+  },
+  {
+    "name": "craft_sun_protection",
+    "tag": "craft",
+    "value": "sun_protection"
+  },
+  {
+    "name": "craft_chimney_sweeper",
+    "tag": "craft",
+    "value": "chimney_sweeper"
+  },
+  {
+    "name": "craft_tailor",
+    "tag": "craft",
+    "value": "tailor"
+  },
+  {
+    "name": "craft_tiler",
+    "tag": "craft",
+    "value": "tiler"
+  },
+  {
+    "name": "craft_tinsmith",
+    "tag": "craft",
+    "value": "tinsmith"
+  },
+  {
+    "name": "craft_upholsterer",
+    "tag": "craft",
+    "value": "upholsterer"
+  },
+  {
+    "name": "craft_watchmaker",
+    "tag": "craft",
+    "value": "watchmaker"
+  },
+  {
+    "name": "craft_window_construction",
+    "tag": "craft",
+    "value": "window_construction"
+  },
+  {
+    "name": "craft_winery",
+    "tag": "craft",
+    "value": "winery"
+  },
+  {
+    "name": "internet_access_yes",
+    "tag": "internet_access",
+    "value": "yes"
+  },
+  {
+    "name": "funeral_directors",
+    "tag": "shop",
+    "value": "funeral_directors"
+  },
+  {
+    "name": "post_office",
+    "tag": "amenity",
+    "value": "post_office"
+  },
+  {
+    "name": "post_box",
+    "tag": "amenity",
+    "value": "post_box"
+  },
+  {
+    "name": "letter_box",
+    "tag": "amenity",
+    "value": "letter_box"
+  },
+  {
+    "name": "parcel_locker",
+    "tag": "amenity",
+    "value": "parcel_locker"
+  },
+  {
+    "name": "beauty",
+    "tag": "shop",
+    "value": "beauty"
+  },
+  {
+    "name": "hairdresser",
+    "tag": "shop",
+    "value": "hairdresser"
+  },
+  {
+    "name": "hairdresser_supply",
+    "tag": "shop",
+    "value": "hairdresser_supply"
+  },
+  {
+    "name": "massage",
+    "tag": "shop",
+    "value": "massage"
+  },
+  {
+    "name": "tattoo",
+    "tag": "shop",
+    "value": "tattoo"
+  },
+  {
+    "name": "dry_cleaning",
+    "tag": "shop",
+    "value": "dry_cleaning"
+  },
+  {
+    "name": "laundry",
+    "tag": "shop",
+    "value": "laundry"
+  },
+  {
+    "name": "services",
+    "tag": "highway",
+    "value": "services"
+  },
+  {
+    "name": "car_pooling",
+    "tag": "amenity",
+    "value": "car_pooling"
+  },
+  {
+    "name": "car_rental",
+    "tag": "amenity",
+    "value": "car_rental"
+  },
+  {
+    "name": "car_sharing",
+    "tag": "amenity",
+    "value": "car_sharing"
+  },
+  {
+    "name": "boat_sharing",
+    "tag": "amenity",
+    "value": "boat_sharing"
+  },
+  {
+    "name": "boat_rental",
+    "tag": "amenity",
+    "value": "boat_rental"
+  },
+  {
+    "name": "boat_storage",
+    "tag": "amenity",
+    "value": "boat_storage"
+  },
+  {
+    "name": "bicycle_rental",
+    "tag": "amenity",
+    "value": "bicycle_rental"
+  },
+  {
+    "name": "ski_rental",
+    "tag": "amenity",
+    "value": "ski_rental"
+  },
+  {
+    "name": "toilets",
+    "tag": "amenity",
+    "value": "toilets"
+  },
+  {
+    "name": "shower",
+    "tag": "amenity",
+    "value": "shower"
+  },
+  {
+    "name": "dressing_room",
+    "tag": "amenity",
+    "value": "dressing_room"
+  },
+  {
+    "name": "public_bath",
+    "tag": "amenity",
+    "value": "public_bath"
+  },
+  {
+    "name": "telephone",
+    "tag": "amenity",
+    "value": "telephone"
+  },
+  {
+    "name": "smoking_area",
+    "tag": "amenity",
+    "value": "smoking_area"
+  },
+  {
+    "name": "recycling",
+    "tag": "amenity",
+    "value": "recycling"
+  },
+  {
+    "name": "waste_disposal",
+    "tag": "amenity",
+    "value": "waste_disposal"
+  },
+  {
+    "name": "waste_basket",
+    "tag": "amenity",
+    "value": "waste_basket"
+  },
+  {
+    "name": "waste_transfer_station",
+    "tag": "amenity",
+    "value": "waste_transfer_station"
+  },
+  {
+    "name": "trolley_bay",
+    "tag": "amenity",
+    "value": "trolley_bay"
+  },
+  {
+    "name": "water_tap",
+    "tag": "man_made",
+    "value": "water_tap"
+  },
+  {
+    "name": "mortuary",
+    "tag": "amenity",
+    "value": "mortuary"
+  },
+  {
+    "name": "crematorium",
+    "tag": "amenity",
+    "value": "crematorium"
+  },
+  {
+    "name": "internet_cafe",
+    "tag": "amenity",
+    "value": "internet_cafe"
+  },
+  {
+    "name": "hackerspace",
+    "tag": "leisure",
+    "value": "hackerspace"
+  },
+  {
+    "name": "coworking_space",
+    "tag": "amenity",
+    "value": "coworking_space"
+  },
+  {
+    "name": "shelter",
+    "tag": "amenity",
+    "value": "shelter"
+  },
+  {
+    "name": "copyshop",
+    "tag": "shop",
+    "value": "copyshop"
+  },
+  {
+    "name": "animal_shelter",
+    "tag": "amenity",
+    "value": "animal_shelter"
+  },
+  {
+    "name": "animal_boarding",
+    "tag": "amenity",
+    "value": "animal_boarding"
+  },
+  {
+    "name": "animal_keeping",
+    "tag": "landuse",
+    "value": "animal_keeping"
+  },
+  {
+    "name": "lavoir",
+    "tag": "amenity",
+    "value": "lavoir"
+  },
+  {
+    "name": "refugee_site",
+    "tag": "amenity",
+    "value": "refugee_site"
+  },
+  {
+    "name": "bank",
+    "tag": "amenity",
+    "value": "bank"
+  },
+  {
+    "name": "atm",
+    "tag": "amenity_atm",
+    "value": "atm"
+  },
+  {
+    "name": "payment_terminal",
+    "tag": "amenity",
+    "value": "payment_terminal"
+  },
+  {
+    "name": "payment_centre",
+    "tag": "amenity",
+    "value": "payment_centre"
+  },
+  {
+    "name": "money_lender",
+    "tag": "shop",
+    "value": "money_lender"
+  },
+  {
+    "name": "money_transfer",
+    "tag": "amenity",
+    "value": "money_transfer"
+  },
+  {
+    "name": "bureau_de_change",
+    "tag": "amenity",
+    "value": "bureau_de_change"
+  },
+  {
+    "name": "mobile_money_agent",
+    "tag": "amenity",
+    "value": "mobile_money_agent"
+  },
+  {
+    "name": "ticket_validator",
+    "tag": "amenity",
+    "value": "ticket_validator"
+  },
+  {
+    "name": "cave_entrance",
+    "tag": "natural",
+    "value": "cave_entrance"
+  },
+  {
+    "name": "peak",
+    "tag": "natural",
+    "value": "peak"
+  },
+  {
+    "name": "hill",
+    "tag": "natural",
+    "value": "hill"
+  },
+  {
+    "name": "saddle",
+    "tag": "natural",
+    "value": "saddle"
+  },
+  {
+    "name": "volcano",
+    "tag": "natural",
+    "value": "volcano"
+  },
+  {
+    "name": "fumarole",
+    "tag": "natural",
+    "value": "fumarole"
+  },
+  {
+    "name": "glacier",
+    "tag": "natural",
+    "value": "glacier"
+  },
+  {
+    "name": "crater",
+    "tag": "natural",
+    "value": "crater"
+  },
+  {
+    "name": "ridge",
+    "tag": "natural",
+    "value": "ridge"
+  },
+  {
+    "name": "sinkhole",
+    "tag": "natural",
+    "value": "sinkhole"
+  },
+  {
+    "name": "waterfall",
+    "tag": "waterway",
+    "value": "waterfall"
+  },
+  {
+    "name": "rapids",
+    "tag": "waterway",
+    "value": "rapids"
+  },
+  {
+    "name": "canoe_put_in",
+    "tag": "canoe",
+    "value": "put_in"
+  },
+  {
+    "name": "canoe_egress",
+    "tag": "canoe",
+    "value": "egress"
+  },
+  {
+    "name": "whitewater_hazard",
+    "tag": "whitewater",
+    "value": "hazard"
+  },
+  {
+    "name": "spring",
+    "tag": "natural",
+    "value": "spring"
+  },
+  {
+    "name": "hot_spring",
+    "tag": "natural",
+    "value": "hot_spring"
+  },
+  {
+    "name": "geyser",
+    "tag": "natural",
+    "value": "geyser"
+  },
+  {
+    "name": "blowhole",
+    "tag": "natural",
+    "value": "blowhole"
+  },
+  {
+    "name": "river",
+    "tag": "waterway",
+    "value": "river"
+  },
+  {
+    "name": "stream",
+    "tag": "waterway",
+    "value": "stream"
+  },
+  {
+    "name": "stone",
+    "tag": "natural",
+    "value": "stone"
+  },
+  {
+    "name": "rock",
+    "tag": "natural",
+    "value": "rock"
+  },
+  {
+    "name": "cape",
+    "tag": "natural",
+    "value": "cape"
+  },
+  {
+    "name": "cliff",
+    "tag": "natural",
+    "value": "cliff"
+  },
+  {
+    "name": "beach",
+    "tag": "natural",
+    "value": "beach"
+  },
+  {
+    "name": "bay",
+    "tag": "natural",
+    "value": "bay"
+  },
+  {
+    "name": "reef",
+    "tag": "natural",
+    "value": "reef"
+  },
+  {
+    "name": "valley",
+    "tag": "natural",
+    "value": "valley"
+  },
+  {
+    "name": "gorge",
+    "tag": "natural",
+    "value": "gorge"
+  },
+  {
+    "name": "couloir",
+    "tag": "natural",
+    "value": "couloir"
+  },
+  {
+    "name": "mountain_area",
+    "tag": "region:type",
+    "value": "mountain_area"
+  },
+  {
+    "name": "plateau",
+    "tag": "natural",
+    "value": "plateau"
+  },
+  {
+    "name": "arch",
+    "tag": "natural",
+    "value": "arch"
+  },
+  {
+    "name": "water",
+    "tag": "natural",
+    "value": "water"
+  },
+  {
+    "name": "wetland",
+    "tag": "natural",
+    "value": "wetland"
+  },
+  {
+    "name": "wood",
+    "tag": "natural",
+    "value": "wood"
+  },
+  {
+    "name": "tree",
+    "tag": "natural",
+    "value": "tree"
+  },
+  {
+    "name": "shrub",
+    "tag": "natural",
+    "value": "shrub"
+  },
+  {
+    "name": "birds_nest",
+    "tag": "natural",
+    "value": "birds_nest"
+  },
+  {
+    "name": "anthill",
+    "tag": "natural",
+    "value": "anthill"
+  },
+  {
+    "name": "termite_mound",
+    "tag": "natural",
+    "value": "termite_mound"
+  },
+  {
+    "name": "nature_reserve",
+    "tag": "leisure",
+    "value": "nature_reserve"
+  },
+  {
+    "name": "aboriginal_lands",
+    "tag": "boundary",
+    "value": "aboriginal_lands"
+  },
+  {
+    "name": "border_zone",
+    "tag": "boundary",
+    "value": "border_zone"
+  },
+  {
+    "name": "protected_area",
+    "tag": "boundary",
+    "value": "protected_area"
+  },
+  {
+    "name": "strait",
+    "tag": "natural",
+    "value": "strait"
+  },
+  {
+    "name": "heath",
+    "tag": "natural",
+    "value": "heath"
+  },
+  {
+    "name": "grassland",
+    "tag": "natural",
+    "value": "grassland"
+  },
+  {
+    "name": "scrub",
+    "tag": "natural",
+    "value": "scrub"
+  },
+  {
+    "name": "sand",
+    "tag": "natural",
+    "value": "sand"
+  },
+  {
+    "name": "dune",
+    "tag": "natural",
+    "value": "dune"
+  },
+  {
+    "name": "hazard_yes",
+    "tag": "hazard",
+    "value": "yes"
+  },
+  {
+    "name": "hazard_erosion",
+    "tag": "hazard",
+    "value": "erosion"
+  },
+  {
+    "name": "hazard_falling_rocks",
+    "tag": "hazard",
+    "value": "falling_rocks"
+  },
+  {
+    "name": "hazard_nuclear",
+    "tag": "hazard",
+    "value": "nuclear"
+  },
+  {
+    "name": "hazard_flood",
+    "tag": "hazard",
+    "value": "flood"
+  },
+  {
+    "name": "hazard_avalanche",
+    "tag": "hazard",
+    "value": "avalanche"
+  },
+  {
+    "name": "hazard_minefield",
+    "tag": "hazard",
+    "value": "minefield"
+  },
+  {
+    "name": "hazard_contamination",
+    "tag": "hazard",
+    "value": "contamination"
+  },
+  {
+    "name": "hazard_landslide",
+    "tag": "hazard",
+    "value": "landslide"
+  },
+  {
+    "name": "hazard_slippery_road",
+    "tag": "hazard",
+    "value": "slippery_road"
+  },
+  {
+    "name": "hazard_hole",
+    "tag": "hazard",
+    "value": "hole"
+  },
+  {
+    "name": "hazard_curve",
+    "tag": "hazard",
+    "value": "curve"
+  },
+  {
+    "name": "hazard_curves",
+    "tag": "hazard",
+    "value": "curves"
+  },
+  {
+    "name": "hazard_pedestrians",
+    "tag": "hazard",
+    "value": "pedestrians"
+  },
+  {
+    "name": "hazard_children",
+    "tag": "hazard",
+    "value": "children"
+  },
+  {
+    "name": "hazard_animal_crossing",
+    "tag": "hazard",
+    "value": "animal_crossing"
+  },
+  {
+    "name": "hazard_dangerous_junction",
+    "tag": "hazard",
+    "value": "dangerous_junction"
+  },
+  {
+    "name": "hazard_school_zone",
+    "tag": "hazard",
+    "value": "school_zone"
+  },
+  {
+    "name": "hazard_cyclists",
+    "tag": "hazard",
+    "value": "cyclists"
+  },
+  {
+    "name": "hazard_shooting_range",
+    "tag": "hazard",
+    "value": "shooting_range"
+  },
+  {
+    "name": "hazard_queues_likely",
+    "tag": "hazard",
+    "value": "queues_likely"
+  },
+  {
+    "name": "hazard_side_winds",
+    "tag": "hazard",
+    "value": "side_winds"
+  },
+  {
+    "name": "hazard_ice",
+    "tag": "hazard",
+    "value": "ice"
+  },
+  {
+    "name": "anchorage",
+    "tag": "seamark",
+    "value": "anchorage"
+  },
+  {
+    "name": "anchor_berth",
+    "tag": "seamark",
+    "value": "anchor_berth"
+  },
+  {
+    "name": "beacon",
+    "tag": "man_made",
+    "value": "beacon"
+  },
+  {
+    "name": "beacon_cardinal",
+    "tag": "seamark",
+    "value": "beacon_cardinal"
+  },
+  {
+    "name": "beacon_lateral",
+    "tag": "seamark",
+    "value": "beacon_lateral"
+  },
+  {
+    "name": "beacon_safe_water",
+    "tag": "seamark",
+    "value": "beacon_safe_water"
+  },
+  {
+    "name": "beacon_special_purpose",
+    "tag": "seamark",
+    "value": "beacon_special_purpose"
+  },
+  {
+    "name": "berth",
+    "tag": "seamark",
+    "value": "berth"
+  },
+  {
+    "name": "seamark_building",
+    "tag": "seamark",
+    "value": "building"
+  },
+  {
+    "name": "seamark_bridge",
+    "tag": "seamark",
+    "value": "bridge"
+  },
+  {
+    "name": "buoy_cardinal",
+    "tag": "seamark",
+    "value": "buoy_cardinal"
+  },
+  {
+    "name": "buoy_installation",
+    "tag": "seamark",
+    "value": "buoy_installation"
+  },
+  {
+    "name": "buoy_isolated_danger",
+    "tag": "seamark",
+    "value": "buoy_isolated_danger"
+  },
+  {
+    "name": "buoy_lateral",
+    "tag": "seamark",
+    "value": "buoy_lateral"
+  },
+  {
+    "name": "buoy_safe_water",
+    "tag": "seamark",
+    "value": "buoy_safe_water"
+  },
+  {
+    "name": "buoy_special_purpose",
+    "tag": "seamark",
+    "value": "buoy_special_purpose"
+  },
+  {
+    "name": "daymark",
+    "tag": "seamark",
+    "value": "daymark"
+  },
+  {
+    "name": "distance_mark",
+    "tag": "seamark",
+    "value": "distance_mark"
+  },
+  {
+    "name": "dry_dock",
+    "tag": "seamark",
+    "value": "dry_dock"
+  },
+  {
+    "name": "floating_dock",
+    "tag": "seamark",
+    "value": "floating_dock"
+  },
+  {
+    "name": "fog_signal",
+    "tag": "seamark",
+    "value": "fog_signal"
+  },
+  {
+    "name": "harbour_basin",
+    "tag": "seamark",
+    "value": "harbour_basin"
+  },
+  {
+    "name": "landmark",
+    "tag": "seamark",
+    "value": "landmark"
+  },
+  {
+    "name": "seamark_light",
+    "tag": "seamark",
+    "value": "light"
+  },
+  {
+    "name": "seamark_light_major",
+    "tag": "seamark",
+    "value": "light_major"
+  },
+  {
+    "name": "seamark_light_minor",
+    "tag": "seamark",
+    "value": "light_minor"
+  },
+  {
+    "name": "seamark_light_float",
+    "tag": "seamark",
+    "value": "light_float"
+  },
+  {
+    "name": "seamark_light_vessel",
+    "tag": "seamark",
+    "value": "light_vessel"
+  },
+  {
+    "name": "lock_basin",
+    "tag": "seamark",
+    "value": "lock_basin"
+  },
+  {
+    "name": "mooring",
+    "tag": "seamark",
+    "value": "mooring"
+  },
+  {
+    "name": "notice",
+    "tag": "seamark",
+    "value": "notice"
+  },
+  {
+    "name": "pile",
+    "tag": "seamark",
+    "value": "pile"
+  },
+  {
+    "name": "radar_transponder",
+    "tag": "seamark",
+    "value": "radar_transponder"
+  },
+  {
+    "name": "radio_station",
+    "tag": "seamark",
+    "value": "radio_station"
+  },
+  {
+    "name": "signal_station_traffic",
+    "tag": "seamark",
+    "value": "signal_station_traffic"
+  },
+  {
+    "name": "signal_station_warning",
+    "tag": "seamark",
+    "value": "signal_station_warning"
+  },
+  {
+    "name": "small_craft_facility",
+    "tag": "seamark",
+    "value": "small_craft_facility"
+  },
+  {
+    "name": "seamark_rock",
+    "tag": "seamark",
+    "value": "rock"
+  },
+  {
+    "name": "seamark_wreck",
+    "tag": "seamark",
+    "value": "wreck"
+  },
+  {
+    "name": "seamark_obstruction",
+    "tag": "seamark",
+    "value": "obstruction"
+  },
+  {
+    "name": "military_landuse",
+    "tag": "landuse",
+    "value": "military"
+  },
+  {
+    "name": "military_bunker",
+    "tag": "military",
+    "value": "bunker"
+  },
+  {
+    "name": "military_danger_area",
+    "tag": "military",
+    "value": "danger_area"
+  },
+  {
+    "name": "military_range",
+    "tag": "military",
+    "value": "range"
+  },
+  {
+    "name": "military_office",
+    "tag": "military",
+    "value": "office"
+  },
+  {
+    "name": "military_naval_base",
+    "tag": "military",
+    "value": "naval_base"
+  },
+  {
+    "name": "military_nuclear_explosion_site",
+    "tag": "military",
+    "value": "nuclear_explosion_site"
+  },
+  {
+    "name": "wiki_place",
+    "tag": "osmwiki",
+    "value": "wiki_place"
+  },
+  {
+    "name": "route_article",
+    "tag": "route_type",
+    "value": "article"
+  },
+  {
+    "name": "route_article_point",
+    "tag": "route_type",
+    "value": "article_point"
+  },
+  {
+    "name": "route_track_point",
+    "tag": "route_type",
+    "value": "track_point"
+  },
+  {
+    "name": "routes_driving",
+    "tag": "route_type",
+    "value": "driving"
+  },
+  {
+    "name": "routes_motorcycling",
+    "tag": "route_type",
+    "value": "motorcycling"
+  },
+  {
+    "name": "routes_foot",
+    "tag": "route_type",
+    "value": "foot"
+  },
+  {
+    "name": "routes_winter_sport",
+    "tag": "route_type",
+    "value": "winter_sport"
+  },
+  {
+    "name": "routes_cycling",
+    "tag": "route_type",
+    "value": "cycling"
+  },
+  {
+    "name": "routes_air_sports",
+    "tag": "route_type",
+    "value": "air_sports"
+  },
+  {
+    "name": "routes_water_sport",
+    "tag": "route_type",
+    "value": "water_sport"
+  },
+  {
+    "name": "routes_other",
+    "tag": "route_type",
+    "value": "other"
+  },
+  {
+    "name": "cycling_network_node",
+    "tag": "cycling_network",
+    "value": "node"
+  },
+  {
+    "name": "hiking_network_node",
+    "tag": "hiking_network",
+    "value": "node"
+  },
+  {
+    "name": "checkpoint_hiking",
+    "tag": "checkpoint",
+    "value": "hiking"
+  },
+  {
+    "name": "checkpoint_cycling",
+    "tag": "checkpoint",
+    "value": "cycling"
+  },
+  {
+    "name": "user_defined_other_postcode",
+    "tag": "user_defined_other",
+    "value": "postcode"
+  },
+  {
+    "name": "xmas_event",
+    "tag": "xmas:feature",
+    "value": "event"
+  },
+  {
+    "name": "xmas_market",
+    "tag": "xmas:feature",
+    "value": "market"
+  },
+  {
+    "name": "xmas_pyramid",
+    "tag": "xmas:feature",
+    "value": "pyramid"
+  },
+  {
+    "name": "xmas_shop",
+    "tag": "xmas:feature",
+    "value": "shop"
+  },
+  {
+    "name": "xmas_tree",
+    "tag": "xmas:feature",
+    "value": "tree"
+  },
+  {
+    "name": "bollard",
+    "tag": "barrier",
+    "value": "bollard"
+  },
+  {
+    "name": "cycle_barrier",
+    "tag": "barrier",
+    "value": "cycle_barrier"
+  },
+  {
+    "name": "motorcycle_barrier",
+    "tag": "barrier",
+    "value": "motorcycle_barrier"
+  },
+  {
+    "name": "block",
+    "tag": "barrier",
+    "value": "block"
+  },
+  {
+    "name": "bus_trap",
+    "tag": "barrier",
+    "value": "bus_trap"
+  },
+  {
+    "name": "cattle_grid",
+    "tag": "barrier",
+    "value": "cattle_grid"
+  },
+  {
+    "name": "full_height_turnstile",
+    "tag": "barrier",
+    "value": "full-height_turnstile"
+  },
+  {
+    "name": "gate",
+    "tag": "barrier",
+    "value": "gate"
+  },
+  {
+    "name": "bump_gate",
+    "tag": "barrier",
+    "value": "bump_gate"
+  },
+  {
+    "name": "lift_gate",
+    "tag": "barrier",
+    "value": "lift_gate"
+  },
+  {
+    "name": "hampshire_gate",
+    "tag": "barrier",
+    "value": "hampshire_gate"
+  },
+  {
+    "name": "stile",
+    "tag": "barrier",
+    "value": "stile"
+  },
+  {
+    "name": "debris",
+    "tag": "barrier",
+    "value": "debris"
+  },
+  {
+    "name": "barrier_bar",
+    "tag": "barrier",
+    "value": "bar"
+  },
+  {
+    "name": "barrier_board",
+    "tag": "barrier",
+    "value": "barrier_board"
+  },
+  {
+    "name": "barrier_tyres",
+    "tag": "barrier",
+    "value": "tyres"
+  },
+  {
+    "name": "jersey_barrier",
+    "tag": "barrier",
+    "value": "jersey_barrier"
+  },
+  {
+    "name": "height_restrictor",
+    "tag": "barrier",
+    "value": "height_restrictor"
+  },
+  {
+    "name": "horse_stile",
+    "tag": "barrier",
+    "value": "horse_stile"
+  },
+  {
+    "name": "kissing_gate",
+    "tag": "barrier",
+    "value": "kissing_gate"
+  },
+  {
+    "name": "sally_port",
+    "tag": "barrier",
+    "value": "sally_port"
+  },
+  {
+    "name": "swing_gate",
+    "tag": "barrier",
+    "value": "swing_gate"
+  },
+  {
+    "name": "turnstile",
+    "tag": "barrier",
+    "value": "turnstile"
+  },
+  {
+    "name": "kent_carriage_gap",
+    "tag": "barrier",
+    "value": "kent_carriage_gap"
+  },
+  {
+    "name": "barrier_entrance",
+    "tag": "barrier",
+    "value": "entrance"
+  },
+  {
+    "name": "barrier_coupure",
+    "tag": "barrier",
+    "value": "coupure"
+  },
+  {
+    "name": "barrier_planter",
+    "tag": "barrier",
+    "value": "planter"
+  },
+  {
+    "name": "barrier_chain",
+    "tag": "barrier",
+    "value": "chain"
+  },
+  {
+    "name": "barrier_log",
+    "tag": "barrier",
+    "value": "log"
+  },
+  {
+    "name": "barrier_sliding_gate",
+    "tag": "barrier",
+    "value": "sliding_gate"
+  },
+  {
+    "name": "spikes",
+    "tag": "barrier",
+    "value": "spikes"
+  },
+  {
+    "name": "wedge",
+    "tag": "barrier",
+    "value": "wedge"
+  },
+  {
+    "name": "tank_trap",
+    "tag": "barrier",
+    "value": "tank_trap"
+  },
+  {
+    "name": "sump_buster",
+    "tag": "barrier",
+    "value": "sump_buster"
+  },
+  {
+    "name": "entrance_main",
+    "tag": "entrance",
+    "value": "main"
+  },
+  {
+    "name": "entrance",
+    "tag": "entrance",
+    "value": "yes"
+  },
+  {
+    "name": "entrance_exit",
+    "tag": "entrance",
+    "value": "exit"
+  },
+  {
+    "name": "wicket_gate",
+    "tag": "barrier",
+    "value": "wicket_gate"
+  },
+  {
+    "name": "railway_buffer_stop",
+    "tag": "railway",
+    "value": "buffer_stop"
+  },
+  {
+    "name": "power_tower",
+    "tag": "power",
+    "value": "tower"
+  },
+  {
+    "name": "power_portal",
+    "tag": "power",
+    "value": "portal"
+  },
+  {
+    "name": "power_pole",
+    "tag": "power",
+    "value": "pole"
+  },
+  {
+    "name": "flagpole",
+    "tag": "man_made",
+    "value": "flagpole"
+  },
+  {
+    "name": "mini_roundabout",
+    "tag": "highway",
+    "value": "mini_roundabout"
+  },
+  {
+    "name": "turning_circle",
+    "tag": "highway",
+    "value": "turning_circle"
+  },
+  {
+    "name": "toll_gantry",
+    "tag": "highway",
+    "value": "toll_gantry"
+  },
+  {
+    "name": "railway_crossing",
+    "tag": "railway",
+    "value": "crossing"
+  },
+  {
+    "name": "street_lamp",
+    "tag": "highway",
+    "value": "street_lamp"
+  },
+  {
+    "name": "deadlock",
+    "tag": "noexit",
+    "value": "yes"
+  },
+  {
+    "name": "passing_place",
+    "tag": "highway",
+    "value": "passing_place"
+  },
+  {
+    "name": "osm_note_yes",
+    "tag": "osm_note",
+    "value": "yes"
+  },
+  {
+    "name": "osmand_foot_prohibited_tunnel",
+    "tag": "osmand_foot_prohibited_tunnel",
+    "value": "yes"
+  },
+  {
+    "name": "osmand_bicycle_prohibited_tunnel",
+    "tag": "osmand_bicycle_prohibited_tunnel",
+    "value": "yes"
+  }
+]

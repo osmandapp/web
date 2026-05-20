@@ -11,7 +11,7 @@ import FavoriteIcon from './structure/FavoriteIcon';
 import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
 import { saveFavoriteGroup } from '../../../manager/FavoritesManager';
-import poiCategories from '../../../resources/generated/poi_categories.json';
+import poiCategories from '../../../resources/poiStyles/poi-categories.json';
 
 export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavoriteGroup }) {
     const ctx = useContext(AppContext);
