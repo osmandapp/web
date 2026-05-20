@@ -535,6 +535,6 @@ const FavoriteLayer = () => {
     }
 
     return null;
-};;
+};
 
 export default FavoriteLayer;

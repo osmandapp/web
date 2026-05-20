@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, ListItemText, MenuItem, Typography } from '@mui/material';
-import AppRadio from './AppRadio';
+import SmallRadio from './SmallRadio';
 import styles from './items.module.css';
 import DividerWithMargin from '../dividers/DividerWithMargin';
 
@@ -35,7 +35,7 @@ export default function SelectItemRadio({
                             {title}
                         </Typography>
                         <Box className={styles.selectRadioControl}>
-                            <AppRadio checked={!!checked} onChange={handleRadioChange} />
+                            <SmallRadio checked={!!checked} onChange={handleRadioChange} />
                         </Box>
                     </Box>
                 </ListItemText>

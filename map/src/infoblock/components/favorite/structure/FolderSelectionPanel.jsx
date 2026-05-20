@@ -15,7 +15,7 @@ import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
 import AddFolderDialog from '../AddFolderDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import values from 'lodash-es/values';
-import AppRadio from '../../../../frame/components/items/AppRadio';
+import SmallRadio from '../../../../frame/components/items/SmallRadio';
 import styles from './folderSelectionPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
 
@@ -131,7 +131,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                         folder.size != null && <Typography className={styles.folderCount}>{folder.size}</Typography>
                     )}
                     {!isVirtual ? (
-                        <AppRadio
+                        <SmallRadio
                             checked={selected}
                             onChange={() => onSelect(folder.group ?? { name: folder.name })}
                             onClick={(e) => e.stopPropagation()}

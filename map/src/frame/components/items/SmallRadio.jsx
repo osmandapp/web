@@ -1,7 +1,7 @@
 import React from 'react';
 import { Radio } from '@mui/material';
 
-export default function AppRadio({ checked, onChange, onClick, className }) {
+export default function SmallRadio({ checked, onChange, onClick, className }) {
     return (
         <Radio
             checked={checked}

@@ -21,7 +21,7 @@ import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { decodeGroupNameFromFile, saveFavoriteGroup } from '../../../manager/FavoritesManager';
 import { sanitizedFileName } from '../../../util/Utils';
-import AppRadio from '../../../frame/components/items/AppRadio';
+import SmallRadio from '../../../frame/components/items/SmallRadio';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import itemStyles from '../../../frame/components/items/items.module.css';
 import styles from './addFolderDialog.module.css';
@@ -244,7 +244,7 @@ function LocationDropdown({ anchorRef, flatGroups, selectedParent, onSelect, onC
                                         }}
                                     />
                                     <Box className={itemStyles.selectRadioControl}>
-                                        <AppRadio
+                                        <SmallRadio
                                             checked={isSelected}
                                             onChange={() => onSelect(effectiveGroup)}
                                             onClick={(e) => e.stopPropagation()}
