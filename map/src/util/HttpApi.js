@@ -353,7 +353,7 @@ export async function digest(string) {
     return hash;
 }
 
-// hash deeply through FormData and File objects
+// hash deeply through FormData, File, and Blob objects
 async function generateCacheKey(url, options = null) {
     const opts = options ? await digest(JSON.stringify({ ...options, signal: null })) : '';
 
@@ -370,6 +370,8 @@ async function generateCacheKey(url, options = null) {
                 form = await digest(form + JSON.stringify(v));
             }
         }
+    } else if (body instanceof Blob) {
+        form = await digest(await body.text());
     }
 
     return await digest(url + opts + form);
