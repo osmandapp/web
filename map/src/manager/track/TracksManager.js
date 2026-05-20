@@ -487,7 +487,7 @@ export async function getGpxFileFromTrackData(file, routeTypes, simplified = fal
         params: {
             simplified,
         },
-        apiCache: true,
+        apiCache: false,
         abortControllerKey: 'save-track-data-' + file?.name,
     });
 }
