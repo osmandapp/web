@@ -63,7 +63,7 @@ export function restoreHiddenMarkers(hiddenLayersRef) {
 }
 
 export function hideMarkersNearPin(map, ctx) {
-    const selectedPin = ctx.selectedCreatedLayerRef?.current;
+    const selectedPin = ctx.selectedCreatedLayerRef?.current ?? ctx.selectedUpdatedLayerRef?.current;
     if (!selectedPin || !map.hasLayer(selectedPin)) return;
 
     const radiusM = getSelectedMarkerHideRadiusM(map.getZoom());
@@ -196,10 +196,12 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         applySelectedWithUpdateMarker(layer, markerData);
         ctx.selectedUpdatedLayerRef.current = layer;
         selectedLayer = layer;
+        hideMarkersNearPin(map, ctx);
     } else {
         // Fallback: layer is not on the map — create a new pin at the given latlng.
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         ctx.selectedCreatedLayerRef.current = selectedLayer;
+        hideMarkersNearPin(map, ctx);
     }
     updateMarkerZIndex(new L.FeatureGroup([selectedLayer]), SELECTED_MARKER_Z_INDEX);
 
