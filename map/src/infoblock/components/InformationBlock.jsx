@@ -27,7 +27,7 @@ import {
     SHARE_MENU_URL,
     TRACKS_URL,
 } from '../../manager/GlobalManager';
-import { isFavoriteFromSearch, isTrackFromSearch, navigateBackToSearchResults } from '../../manager/SearchManager';
+import { isTrackFromSearch, navigateBackToSearchResults } from '../../manager/SearchManager';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
@@ -170,9 +170,6 @@ export default function InformationBlock({
 
     // update URL for info track menu
     useEffect(() => {
-        if (isTrackFromSearch(ctx)) {
-            return;
-        }
         if (trackName && !ctx.shareFile) {
             navigate(
                 {
@@ -187,9 +184,6 @@ export default function InformationBlock({
 
     // open favorite info menu when marker is selected
     useEffect(() => {
-        if (isFavoriteFromSearch(ctx)) {
-            return;
-        }
         if (
             ctx.selectedGpxFile.file?.type === FAVOURITES &&
             !ctx.shareFile &&
@@ -247,7 +241,7 @@ export default function InformationBlock({
                 } else if (showTrackContextMenu) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
-                    if (isCloudTrack(ctx) && !isTrackFromSearch(ctx)) {
+                    if (isCloudTrack(ctx)) {
                         // set track identification for URL
                         setTrackName(ctx.selectedGpxFile.name);
                         setTrackType(TRACKS_URL);
