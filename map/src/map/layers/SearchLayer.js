@@ -297,9 +297,7 @@ export default function SearchLayer() {
             mainMarkers.map(async (obj) => {
                 const objType = obj.properties[CATEGORY_TYPE];
                 let title =
-                    objType === searchTypeMap.FAVORITE
-                        ? obj.properties[POI_NAME]
-                        : obj.properties[CATEGORY_NAME];
+                    objType === searchTypeMap.FAVORITE ? obj.properties[POI_NAME] : obj.properties[CATEGORY_NAME];
                 let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
                 if (objType === searchTypeMap.POI) {
@@ -314,7 +312,8 @@ export default function SearchLayer() {
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else if (objType === searchTypeMap.FAVORITE) {
                     const p = obj.properties;
-                    icon = createPoiIcon({point: {},
+                    icon = createPoiIcon({
+                        point: {},
                         icon: p[ICON_KEY_NAME],
                         color: p[COLOR_NAME_EXTENSION],
                         background: p[BACKGROUND_TYPE_EXTENSION],
