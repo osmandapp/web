@@ -692,29 +692,17 @@ export function getSize(group, t) {
         : 'empty';
 }
 
-/**
- * Generates the icon HTML for a favorite waypoint in the menu list.
- *
- * @param {Object|null} [wpt] - Waypoint object used as a fallback for appearance fields.
- * @param {string} [icon] - Icon name. Overrides wpt.icon when provided.
- * @param {string} [color] - Icon color. Overrides wpt.color when provided.
- * @param {string} [background] - Background shape. Overrides wpt.background when provided.
- */
+/** Build icon HTML for a favorite waypoint marker in the menu list. */
 export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } = {}) {
-    const point = wpt ?? {};
-    const resolvedIcon = icon ?? wpt?.icon;
-    const resolvedColor = color ?? wpt?.color;
-    const resolvedBackground = background ?? wpt?.background;
-
     const rawHtml = createPoiIcon({
-        point,
-        icon: resolvedIcon,
-        color: resolvedColor,
-        background: resolvedBackground,
+        point: wpt ?? {},
+        icon,
+        color,
+        background,
         hasBackgroundLight: false,
     }).options.html;
 
-    return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, resolvedBackground);
+    return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, background);
 }
 
 export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {

@@ -548,7 +548,7 @@ const FavoriteLayer = () => {
             file?.hidden === HIDDEN_TRUE &&
             file?.markersOnMap &&
             fileId !== openGroupId &&
-            !(ctx.searchFavoriteGroupIds?.has(fileId) ?? false)
+            !ctx.searchFavoriteGroupIds?.has(fileId)
         ) {
             map.removeLayer(file.markersOnMap);
         }

@@ -296,11 +296,10 @@ export default function SearchLayer() {
     }, [ctx.searchResult]);
 
     function onClick(e) {
-        const opts = e.sourceTarget.options;
         ctx.setCurrentObjectType(OBJECT_SEARCH);
 
         const poi = {
-            options: opts,
+            options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
             mapObj: true,
         };
