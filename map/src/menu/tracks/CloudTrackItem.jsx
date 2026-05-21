@@ -36,12 +36,14 @@ export function getTrackInfoText(file, unitsSettings, t) {
     if (!file || !unitsSettings) {
         return '';
     }
-    const distance = convertMeters(getDist(file), unitsSettings.len, LARGE_UNIT);
-    const dist = distance != null ? `${distance.toFixed(2)} ${t(getLargeLengthUnit({ unitsSettings }))}` : '';
+    const dist = getDist(file);
+    const distText = dist
+        ? `${convertMeters(dist, unitsSettings.len, LARGE_UNIT).toFixed(2)} ${t(getLargeLengthUnit({ unitsSettings }))}`
+        : String(dist);
     const time = getTime(file);
     const wptPoints = getWptPoints(file);
 
-    return [dist, time, wptPoints].filter(Boolean).join(' · ');
+    return [distText, time, wptPoints].filter(Boolean).join(' · ');
 }
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
