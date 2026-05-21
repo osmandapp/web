@@ -35,7 +35,7 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { getTrackInfoText } from '../../tracks/CloudTrackItem';
-import { openFavoriteFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import { addFavoriteToMapFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
 
 export function getFirstSubstring(inputString) {
@@ -307,7 +307,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                 marker={marker}
                 group={resolved.group}
                 currentLoc={currentLoc}
-                onOpen={() => openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
+                onOpen={() => addFavoriteToMapFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
                 hideActions
             />
         );

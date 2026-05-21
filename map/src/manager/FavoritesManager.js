@@ -813,7 +813,7 @@ export function getFavoriteId(layer) {
     return `fav:${lat}:${lng}`;
 }
 
-export function buildFavoriteSelection({
+export function getSelectedFavoriteObj({
     group,
     marker,
     ctx,
@@ -821,18 +821,18 @@ export function buildFavoriteSelection({
     mapObj = false,
     openedFolder = undefined,
 }) {
-    const selection = {};
+    const favObj = {};
     if (marker?.layer) {
         marker.latlng = marker.layer.getLatLng();
     }
-    selection.markerCurrent = { ...marker, groupId: group.id };
+    favObj.markerCurrent = { ...marker, groupId: group.id };
     if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
-        selection.markerPrev = ctx.selectedGpxFile.markerCurrent;
+        favObj.markerPrev = ctx.selectedGpxFile.markerCurrent;
     }
     let trackData;
     Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
         if (fileId === group.id) {
-            selection.nameGroup = group.name;
+            favObj.nameGroup = group.name;
             Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
                 if (m.options.name === marker.name) {
                     trackData = ctx.favorites.mapObjs[fileId];
@@ -840,37 +840,40 @@ export function buildFavoriteSelection({
             });
         }
     });
-    selection.id = group.id;
-    selection.key = `${group.id}:${marker.name}`;
-    selection.trackData = trackData;
-    selection.sharedWithMe = sharedFile;
-    selection.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
-    selection.name = marker.name;
-    selection.prevState = ctx.selectedGpxFile;
-    selection.favItem = true;
-    selection.mapObj = mapObj;
-    selection.openedFolder = openedFolder;
+    favObj.id = group.id;
+    favObj.key = `${group.id}:${marker.name}`;
+    favObj.trackData = trackData;
+    favObj.sharedWithMe = sharedFile;
+    favObj.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
+    favObj.name = marker.name;
+    favObj.prevState = ctx.selectedGpxFile;
+    favObj.favItem = true;
+    favObj.mapObj = mapObj;
+    favObj.openedFolder = openedFolder;
 
-    return selection;
+    return favObj;
 }
 
 export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
-    openFavoriteObj(ctx, buildFavoriteSelection({ group, marker, ctx, sharedFile, mapObj, openedFolder }));
+    const favoriteObj = getSelectedFavoriteObj({ group, marker, ctx, sharedFile, mapObj, openedFolder });
+    openFavoriteObj({
+        ctx,
+        favoriteObj,
+    });
 }
 
-/** Open favorite from search list; keeps selectedSearchObj for back navigation. */
-export function openFavoriteFromSearch(ctx, { group, marker }) {
-    const selection = buildFavoriteSelection({ group, marker, ctx, mapObj: false });
-    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: selection });
-    openFavoriteObj(ctx, selection, { fromSearch: true });
+export function addFavoriteToMapFromSearch(ctx, { group, marker }) {
+    const favoriteObj = getSelectedFavoriteObj({ group, marker, ctx, mapObj: false });
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: favoriteObj });
+    openFavoriteObj({ ctx, favoriteObj, options: { fromSearch: true } });
 }
 
-export function openFavoriteObj(ctx, object, options = {}) {
-    const fromSearch = options.fromSearch === true;
-    ctx.setCurrentObjectType(fromSearch ? OBJECT_SEARCH : OBJECT_TYPE_FAVORITE);
-    const selectionId = getFavoriteId(object.markerCurrent?.layer);
-    ctx.setSelectedWpt({ ...object, selectionId, id: selectionId, groupId: object.id });
-    ctx.setSelectedGpxFile({ ...object });
+export function openFavoriteObj({ ctx, favoriteObj, options = {} }) {
+    ctx.setCurrentObjectType(options.fromSearch === true ? OBJECT_SEARCH : OBJECT_TYPE_FAVORITE);
+    const selectionId = getFavoriteId(favoriteObj.markerCurrent?.layer);
+    ctx.setSelectedWpt({ ...favoriteObj, selectionId, id: selectionId, groupId: favoriteObj.id });
+
+    ctx.setSelectedGpxFile({ ...favoriteObj });
 }
 
 export function navigateToFavoritesMenu(navigate, ctx) {
@@ -890,11 +893,9 @@ const FavoritesManager = {
     deleteFavorite,
     updateFavorite,
     prepareTrackData,
-    getShapesSvg,
     orderList,
     getColorGroup,
     createGroup,
-    createDefaultWptGroup,
     getGroupSize,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     DEFAULT_GROUP_NAME: DEFAULT_FAV_GROUP_NAME,
