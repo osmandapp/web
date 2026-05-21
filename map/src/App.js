@@ -196,8 +196,7 @@ const App = () => {
                     },
                 ],
                 {
-                    // Enable React Router v7 features: concurrent transitions and correct relative splat path resolution
-                    future: { v7_startTransition: true, v7_relativeSplatPath: true },
+                    future: { v7_relativeSplatPath: true },
                 }
             ),
         [resetKey]
@@ -209,7 +208,7 @@ const App = () => {
                 <LoginContextProvider key={'login-' + resetKey}>
                     <AppContextProvider key={'app-' + resetKey}>
                         <MapContextProvider>
-                            <RouterProvider router={router} />
+                            <RouterProvider router={router} future={{ v7_startTransition: true }} />
                         </MapContextProvider>
                     </AppContextProvider>
                 </LoginContextProvider>
