@@ -7,7 +7,7 @@ import {
     addShareFavoriteToMap,
     getColorLocation,
     getFavoriteId,
-    openFavoriteObj,
+    addFavoriteToMap,
 } from '../../manager/FavoritesManager';
 import { useSearchParams } from 'react-router-dom';
 import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
@@ -55,40 +55,6 @@ function FavInfo({ marker, currentLoc, unitsSettings }) {
     );
 }
 
-export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
-    const newSelectedGpxFile = {};
-    if (marker?.layer) {
-        marker.latlng = marker.layer.getLatLng();
-    }
-    newSelectedGpxFile.markerCurrent = { ...marker, groupId: group.id };
-    if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
-        newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-    }
-    let trackData;
-    Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
-        if (fileId === group.id) {
-            newSelectedGpxFile.nameGroup = group.name;
-            Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
-                if (m.options.name === marker.name) {
-                    trackData = ctx.favorites.mapObjs[fileId];
-                }
-            });
-        }
-    });
-    newSelectedGpxFile.id = group.id;
-    newSelectedGpxFile.key = `${group.id}:${marker.name}`;
-    newSelectedGpxFile.trackData = trackData;
-    newSelectedGpxFile.sharedWithMe = sharedFile;
-    newSelectedGpxFile.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
-    newSelectedGpxFile.name = marker.name;
-    newSelectedGpxFile.prevState = ctx.selectedGpxFile;
-    newSelectedGpxFile.favItem = true;
-    newSelectedGpxFile.mapObj = mapObj;
-    newSelectedGpxFile.openedFolder = openedFolder;
-
-    openFavoriteObj(ctx, newSelectedGpxFile);
-}
-
 export default function FavoriteItem({
     marker,
     group,
@@ -96,6 +62,9 @@ export default function FavoriteItem({
     share = false,
     smartf = null,
     insideVirtualizedList = false,
+    onOpen = null,
+    hideActions = false,
+    id = null,
 }) {
     const ctx = useContext(AppContext);
     const [searchParams] = useSearchParams();
@@ -109,16 +78,19 @@ export default function FavoriteItem({
     const anchorEl = useRef(null);
     const menuItemRef = useRef(null);
 
-    const favId = getFavoriteId(marker.layer);
-
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
             setOpenActions(false);
         }
     }, [ctx.openedPopper]);
 
+    const favId = marker?.layer ? getFavoriteId(marker.layer) : null;
+
     const setHover = useCallback(
         (show) => {
+            if (!favId || !marker?.layer) {
+                return;
+            }
             if (show) {
                 if (ctx.openedPopper) return;
                 ctx.setSelectedWptId({
@@ -141,7 +113,7 @@ export default function FavoriteItem({
                 menuItemRef.current.classList.toggle(styles.itemHovered, show);
             }
         },
-        [favId, marker.layer, ctx.openedPopper]
+        [favId, marker?.layer, ctx.openedPopper]
     );
 
     useEffect(() => {
@@ -171,7 +143,7 @@ export default function FavoriteItem({
                         <MenuItem
                             ref={menuItemRef}
                             className={styles.item}
-                            id={'se-fav-item-name-' + marker.name}
+                            id={id ?? 'se-fav-item-name-' + marker.name}
                             onMouseEnter={() => setHover(true)}
                             onMouseLeave={() => {
                                 if (!openActions) {
@@ -179,7 +151,9 @@ export default function FavoriteItem({
                                 }
                             }}
                             onClick={() => {
-                                if (share) {
+                                if (onOpen) {
+                                    onOpen();
+                                } else if (share) {
                                     addShareFavoriteToMap(marker, ctx);
                                 } else {
                                     const openedFolder = searchParams.get(FAVORITES_URL_PARAM_FOLDER) ?? undefined;
@@ -194,7 +168,7 @@ export default function FavoriteItem({
                                 <MenuItemWithLines name={marker.name} maxLines={1} />
                                 <FavInfo marker={marker} currentLoc={currentLoc} unitsSettings={ctx.unitsSettings} />
                             </ListItemText>
-                            {!share && !sharedFile && (
+                            {!share && !sharedFile && !hideActions && (
                                 <ThreeDotsButton
                                     name={'action_menu_group'}
                                     tip={'shared_string_menu'}
@@ -206,7 +180,7 @@ export default function FavoriteItem({
                         </MenuItem>
                     )}
                     <DividerWithMargin margin={'64px'} />
-                    {inView && (
+                    {inView && !hideActions && (
                         <ActionsMenu
                             open={openActions}
                             setOpen={setOpenActions}

@@ -32,6 +32,20 @@ import ActionsMenu from '../actions/ActionsMenu';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
 import { useTrackVisibility } from '../../util/hooks/menu/useTrackVisibility';
 
+export function getTrackInfoText(file, unitsSettings, t) {
+    if (!file || !unitsSettings) {
+        return '';
+    }
+    const dist = getDist(file);
+    const distText = dist
+        ? `${convertMeters(dist, unitsSettings.len, LARGE_UNIT).toFixed(2)} ${t(getLargeLengthUnit({ unitsSettings }))}`
+        : String(dist);
+    const time = getTime(file);
+    const wptPoints = getWptPoints(file);
+
+    return [distText, time, wptPoints].filter(Boolean).join(' · ');
+}
+
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
 
@@ -56,9 +70,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const updateDetails = file?.details?.update;
     const loadingError = file?.details?.error;
 
-    const dist = getDist(file);
-    const time = getTime(file);
-    const wptPoints = getWptPoints(file);
+    const trackInfoText = getTrackInfoText(file, ctx.unitsSettings, t);
     const share = getShare(file, ctx);
 
     useEffect(() => {
@@ -103,10 +115,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     noWrap
                                 >
                                     {share && <FileShareIcon />}
-                                    {dist &&
-                                        `${convertMeters(dist, ctx.unitsSettings.len, LARGE_UNIT)?.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`}
-                                    {time && ` · ${time}`}
-                                    {wptPoints && ` · ${wptPoints}`}
+                                    {trackInfoText}
                                     {updateDetails && ` · ${t('shared_string_loading')}...`}
                                     {loadingError && ` · Error`}
                                 </Typography>
@@ -171,9 +180,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         showMenu,
         checkedSwitch,
         visible,
-        dist,
-        time,
-        wptPoints,
+        trackInfoText,
         ctx,
         isLastItem,
         id,

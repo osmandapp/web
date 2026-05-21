@@ -147,6 +147,9 @@ export default function SearchResults() {
             if (!f?.properties) return;
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
+            if (type === searchTypeMap.FAVORITE) {
+                return;
+            }
             if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
                 const brandRes = parseTagWithLang(props[CATEGORY_ICON]);
                 if (brandRes.key === SEARCH_BRAND) {
@@ -235,6 +238,10 @@ export default function SearchResults() {
                 if (!isSearchResultRoute) {
                     return;
                 }
+                const isWordSearch = params.query && params.query !== '' && !params.type;
+                if (isWordSearch && (ctx.gpxLoading || ctx.processingGroups)) {
+                    return;
+                }
                 ctx.setProcessingSearch(true);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
@@ -252,7 +259,7 @@ export default function SearchResults() {
                 }
             }
         }
-    }, [locReady, params, ctx.forceSearch]);
+    }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
         if (zoom < MIN_SEARCH_ZOOM) {
@@ -292,6 +299,7 @@ export default function SearchResults() {
     function backToMainSearch() {
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
+        ctx.setSearchFavoriteGroupIds(null);
         ctx.setSearchQuery(null);
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
         navigateToSearchMenu();
@@ -336,6 +344,7 @@ export default function SearchResults() {
                                     item={item}
                                     index={index}
                                     typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
+                                    currentLoc={currentLoc}
                                 />
                             ))}
                     </Box>

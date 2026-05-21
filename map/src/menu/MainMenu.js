@@ -80,7 +80,6 @@ import {
     DELETE_ACCOUNT_URL,
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
-    SEARCH_RESULT_URL,
     EXPLORE_URL,
     POI_URL,
     MENU_IDS,
@@ -99,10 +98,9 @@ import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
-import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
-import { openPoiObj } from '../manager/SearchManager';
+import { openPoiObj, openSearchObj, navigateBackToSearchResults, isFavoriteFromSearch, isTrackFromSearch } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
-import { addFavoriteToMap } from './favorite/FavoriteItem';
+import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
@@ -289,7 +287,7 @@ export default function MainMenu({
                         ctx.selectedFavoriteObj?.name === marker.name &&
                         ctx.selectedFavoriteObj?.nameGroup === group.name
                     ) {
-                        openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+                        openFavoriteObj({ ctx, favoriteObj: ctx.selectedFavoriteObj });
                         return;
                     }
                     addFavoriteToMap({
@@ -352,7 +350,14 @@ export default function MainMenu({
         // Don't close infoBlock if selectedWpt exists - it means user selected an object on map
         // (even if data is still loading asynchronously)
         const hasSelectedWpt = !!ctx.selectedWpt;
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite && !ctx.selectedPoiObj && !hasSelectedWpt) {
+        if (
+            !startCreateTrack &&
+            !openCloudTrackAfterSave &&
+            !openFavorite &&
+            !ctx.selectedPoiObj &&
+            !ctx.selectedSearchObj &&
+            !hasSelectedWpt
+        ) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
@@ -377,6 +382,9 @@ export default function MainMenu({
     // originating menu (e.g. cloud track) so that closeMapObj can navigate back to it correctly.
     function switchMenuByCurrentUrl() {
         if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
+            return;
+        }
+        if (ctx.selectedSearchObj) {
             return;
         }
         const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
@@ -579,11 +587,7 @@ export default function MainMenu({
                 return;
             }
             if (ctx.searchQuery) {
-                navigate({
-                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
-                    search: buildSearchParamsFromQuery(ctx.searchQuery),
-                    hash: location.hash,
-                });
+                navigateBackToSearchResults(navigate, ctx, location);
                 return;
             }
 
@@ -674,7 +678,7 @@ export default function MainMenu({
     function openMenuObject() {
         if (selectedType === OBJECT_TYPE_FAVORITE) {
             if (ctx.selectedFavoriteObj) {
-                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+                openFavoriteObj({ ctx, favoriteObj: ctx.selectedFavoriteObj });
             }
         }
 
@@ -692,6 +696,10 @@ export default function MainMenu({
                     recentSaver,
                 }).then();
             }
+        }
+
+        if (selectedType === OBJECT_SEARCH && ctx.selectedSearchObj) {
+            openSearchObj(ctx, ctx.selectedSearchObj, { recentSaver });
         }
 
         if (selectedType === OBJECT_SEARCH && ctx.selectedPoiObj) {
@@ -750,6 +758,11 @@ export default function MainMenu({
         const editInProgress = !!ctx.exitGuards.wptEdit?.hasChanges;
         if (!editInProgress) {
             closeSubPages({ ctx, ltx });
+        }
+        if (location.pathname.startsWith(item.url) && location.pathname !== item.url) {
+            if (isFavoriteFromSearch(ctx) || isTrackFromSearch(ctx)) {
+                navigate(item.url + location.hash);
+            }
         }
         let currentType;
         if (menuInfo) {

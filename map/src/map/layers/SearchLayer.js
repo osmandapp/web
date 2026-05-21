@@ -1,6 +1,6 @@
 import { apiGet } from '../../util/HttpApi';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, searchCollator } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -29,7 +29,7 @@ import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getIconByType } from '../../manager/SearchManager';
+import { getIconByType, searchCloudTrackFeatures, searchFavoriteFeatures } from '../../manager/SearchManager';
 import {
     BBOX_COORDS_DECIMALS,
     POI_LAYER_ID,
@@ -49,6 +49,7 @@ export const SEARCH_ICON_MAP_LOCATION = 'location';
 export const SEARCH_ICON_MAP_BUILDING = 'house';
 export const SEARCH_ICON_MAP_STREET = 'street';
 export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
+export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
 
 export const ZOOM_TO_MAP = 17;
 
@@ -62,13 +63,18 @@ export const searchTypeMap = {
     CITY: 'CITY',
     TOWN: 'TOWN',
     VILLAGE: 'VILLAGE',
+    GPX_TRACK: 'GPX_TRACK',
+    FAVORITE: 'FAVORITE',
 };
+
+export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
 
 export const typeIconMap = {
     [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_LOCATION,
     [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
     [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
     [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
+    [searchTypeMap.GPX_TRACK]: SEARCH_ICON_MAP_GPX_TRACK,
 };
 
 export function getObjIdSearch(obj) {
@@ -78,6 +84,21 @@ export function getObjIdSearch(obj) {
         return null;
     }
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
+}
+
+// Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
+export function buildFavGroupMap(favoriteFeatures) {
+    if (!favoriteFeatures?.length) return null;
+    const result = new Map();
+    favoriteFeatures.forEach((f) => {
+        const groupId = f.properties[FAVORITE_HIT_GROUP_ID];
+        const wptName = f.properties[POI_NAME];
+        if (groupId && wptName) {
+            if (!result.has(groupId)) result.set(groupId, new Set());
+            result.get(groupId).add(wptName);
+        }
+    });
+    return result.size > 0 ? result : null;
 }
 
 export default function SearchLayer() {
@@ -135,6 +156,34 @@ export default function SearchLayer() {
         }
     }, [ctx.searchQuery]);
 
+    // When favorites change (rename, edit, delete), refresh the favorites part of search results
+    useEffect(() => {
+        const query = ctx.searchQuery?.query;
+        if (!query || ctx.searchQuery?.type || !ctx.searchResult) return;
+
+        const favoriteFeatures = searchFavoriteFeatures({
+            favorites: ctx.favorites,
+            query,
+            collator: searchCollator,
+        });
+
+        const favGroupMap = buildFavGroupMap(favoriteFeatures);
+
+        ctx.setSearchResult((prev) => {
+            if (!prev) return prev;
+            const trackFeatures = (prev.features ?? []).filter(
+                (f) => f.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK
+            );
+            const serverFeatures = (prev.features ?? []).filter(
+                (f) =>
+                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.FAVORITE &&
+                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.GPX_TRACK
+            );
+            return { ...prev, features: [...trackFeatures, ...favoriteFeatures, ...serverFeatures] };
+        });
+        ctx.setSearchFavoriteGroupIds(favGroupMap);
+    }, [ctx.favorites]);
+
     useEffect(() => {
         const updateAsyncLayers = async () => {
             if (searchLayers.current) {
@@ -190,8 +239,22 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                ctx.setSearchResult(data);
+                const trackFeatures = searchCloudTrackFeatures({
+                    listFiles: ctx.listFiles,
+                    query: searchData.query,
+                    collator: searchCollator,
+                });
+                const favoriteFeatures = searchFavoriteFeatures({
+                    favorites: ctx.favorites,
+                    query: searchData.query,
+                    collator: searchCollator,
+                });
+                const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
+                const favGroupMap = buildFavGroupMap(favoriteFeatures);
+                ctx.setSearchFavoriteGroupIds(favGroupMap);
+                ctx.setSearchResult({ ...data, features });
             } else {
+                ctx.setSearchFavoriteGroupIds(null);
                 ctx.setSearchResult(null);
             }
         } catch (e) {
@@ -254,8 +317,12 @@ export default function SearchLayer() {
         const center = map.getCenter();
         const zoom = map.getZoom();
         const latitude = center.lat;
+        // FAVORITE and GPX_TRACK are user objects rendered by their own layers — skip map markers for them.
+        const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK]);
+        const mapMarkerFeatures = (objList ?? []).filter((f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE]));
+
         const { mainMarkers, secondaryMarkers } = clusterMarkers({
-            places: objList,
+            places: mapMarkerFeatures,
             zoom,
             latitude,
             iconSize: DEFAULT_ICON_SIZE,

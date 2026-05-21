@@ -28,6 +28,10 @@ import supportedLanguages from '../resources/translations/supportedLanguages.jso
 import { normalizeLang } from '../util/lang';
 
 export const collator = new Intl.Collator(supportedLanguages.map(normalizeLang), { numeric: true });
+export const searchCollator = new Intl.Collator(supportedLanguages.map(normalizeLang), {
+    usage: 'search',
+    sensitivity: 'base',
+});
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -329,6 +333,9 @@ export const AppContextProvider = (props) => {
     const [selectedCloudTrackObj, setSelectedCloudTrackObj] = useState(null);
     const [selectedLocalTrackObj, setSelectedLocalTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
+    const [selectedSearchObj, setSelectedSearchObj] = useState(null);
+    // Group IDs of favorites visible in current search results — their map markers must always show.
+    const [searchFavoriteGroupIds, setSearchFavoriteGroupIds] = useState(null);
 
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
@@ -736,6 +743,10 @@ export const AppContextProvider = (props) => {
                 setPoiCatMenu,
                 selectedPoiObj,
                 setSelectedPoiObj,
+                selectedSearchObj,
+                setSelectedSearchObj,
+                searchFavoriteGroupIds,
+                setSearchFavoriteGroupIds,
                 zoomToCoords,
                 setZoomToCoords,
                 poiByUrl,

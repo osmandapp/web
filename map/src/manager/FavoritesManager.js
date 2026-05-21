@@ -10,7 +10,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
-import { OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
+import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { getUniqFileId, MAIN_URL_WITH_SLASH, FAVORITES_URL } from './GlobalManager';
 import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage';
@@ -692,6 +692,19 @@ export function getSize(group, t) {
         : 'empty';
 }
 
+/** Build icon HTML for a favorite waypoint marker in the menu list. */
+export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } = {}) {
+    const rawHtml = createPoiIcon({
+        point: wpt ?? {},
+        icon,
+        color,
+        background,
+        hasBackgroundLight: false,
+    }).options.html;
+
+    return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, background);
+}
+
 export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
@@ -704,14 +717,9 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
             return;
         }
         const appearance = resolveWptAppearance(wpt, pointsGroups);
-        const icon = createPoiIcon({
-            point: wpt,
-            ...appearance,
-            hasBackgroundLight: false,
-        }).options.html;
         const marker = {
             name: value.options.name,
-            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, appearance.background),
+            icon: getFavoriteMenuIconHtml({ wpt, ...appearance }),
             layer: value,
             color: appearance.color,
             background: appearance.background,
@@ -723,6 +731,37 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
 
 export function getWptByTitle(title, wpts) {
     return wpts.find((wpt) => wpt.name === title);
+}
+
+/** Build menu marker + group for opening a favorite from search (requires map markers loaded). */
+export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
+    const group = ctx.favorites?.groups?.find((g) => g.id === groupId);
+    const mapObj = ctx.favorites?.mapObjs?.[groupId];
+    if (!group || !mapObj?.wpts || !mapObj?.markers?._layers) {
+        return null;
+    }
+    const wpt = getWptByTitle(wptName, mapObj.wpts);
+    if (!wpt) {
+        return null;
+    }
+    const layer = Object.values(mapObj.markers._layers).find((l) => l.options?.name === wptName);
+    if (!layer) {
+        return null;
+    }
+    const appearance = resolveWptAppearance(wpt, mapObj.pointsGroups);
+    const marker = {
+        name: wptName,
+        icon: getFavoriteMenuIconHtml({
+            wpt,
+            icon: appearance.icon,
+            color: appearance.color,
+            background: appearance.background,
+        }),
+        layer,
+        color: appearance.color,
+        background: appearance.background,
+    };
+    return { group, marker };
 }
 
 export function addLocDist({ location, markers = null, wpts = null }) {
@@ -774,11 +813,63 @@ export function getFavoriteId(layer) {
     return `fav:${lat}:${lng}`;
 }
 
-export function openFavoriteObj(ctx, object) {
-    ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-    const selectionId = getFavoriteId(object.markerCurrent?.layer);
-    ctx.setSelectedWpt({ ...object, selectionId, id: selectionId, groupId: object.id });
-    ctx.setSelectedGpxFile({ ...object });
+export function getSelectedFavoriteObj({
+    group,
+    marker,
+    ctx,
+    sharedFile = false,
+    mapObj = false,
+    openedFolder = undefined,
+}) {
+    const favObj = {};
+    if (marker?.layer) {
+        marker.latlng = marker.layer.getLatLng();
+    }
+    favObj.markerCurrent = { ...marker, groupId: group.id };
+    if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
+        favObj.markerPrev = ctx.selectedGpxFile.markerCurrent;
+    }
+    let trackData;
+    Object.keys(ctx.favorites.mapObjs).forEach((fileId) => {
+        if (fileId === group.id) {
+            favObj.nameGroup = group.name;
+            Object.values(ctx.favorites.mapObjs[fileId].markers._layers).forEach((m) => {
+                if (m.options.name === marker.name) {
+                    trackData = ctx.favorites.mapObjs[fileId];
+                }
+            });
+        }
+    });
+    favObj.id = group.id;
+    favObj.key = `${group.id}:${marker.name}`;
+    favObj.trackData = trackData;
+    favObj.sharedWithMe = sharedFile;
+    favObj.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
+    favObj.name = marker.name;
+    favObj.prevState = ctx.selectedGpxFile;
+    favObj.favItem = true;
+    favObj.mapObj = mapObj;
+    favObj.openedFolder = openedFolder;
+
+    return favObj;
+}
+
+export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
+    const favoriteObj = getSelectedFavoriteObj({ group, marker, ctx, sharedFile, mapObj, openedFolder });
+    openFavoriteObj({ ctx, favoriteObj });
+}
+
+export function addFavoriteToMapFromSearch(ctx, { group, marker }) {
+    const favoriteObj = getSelectedFavoriteObj({ group, marker, ctx, mapObj: false });
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: favoriteObj });
+    openFavoriteObj({ ctx, favoriteObj, options: { fromSearch: true } });
+}
+
+export function openFavoriteObj({ ctx, favoriteObj, options = {} }) {
+    ctx.setCurrentObjectType(options.fromSearch === true ? OBJECT_SEARCH : OBJECT_TYPE_FAVORITE);
+    const selectionId = getFavoriteId(favoriteObj.markerCurrent?.layer);
+    ctx.setSelectedWpt({ ...favoriteObj, selectionId, id: selectionId, groupId: favoriteObj.id });
+    ctx.setSelectedGpxFile({ ...favoriteObj });
 }
 
 export function navigateToFavoritesMenu(navigate, ctx) {
@@ -798,11 +889,9 @@ const FavoritesManager = {
     deleteFavorite,
     updateFavorite,
     prepareTrackData,
-    getShapesSvg,
     orderList,
     getColorGroup,
     createGroup,
-    createDefaultWptGroup,
     getGroupSize,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     DEFAULT_GROUP_NAME: DEFAULT_FAV_GROUP_NAME,

@@ -486,7 +486,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             mapObj: true,
         };
 
-        openFavoriteObj(ctx, newGpxFile);
+        openFavoriteObj({ ctx, favoriteObj: newGpxFile });
 
         // Clear state
         ctx.setAddFavorite((prev) => ({

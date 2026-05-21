@@ -27,6 +27,7 @@ import {
     SHARE_MENU_URL,
     TRACKS_URL,
 } from '../../manager/GlobalManager';
+import { isTrackFromSearch, navigateBackToSearchResults } from '../../manager/SearchManager';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
@@ -154,6 +155,7 @@ export default function InformationBlock({
             ctx.setTrackRange(null);
             setClearState(true);
             if (!ctx.currentObjectType) {
+                setTrackName(null);
                 hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
                 if (!isEmpty(ctx.selectedGpxFile)) {
                     ctx.setSelectedGpxFile({});
@@ -388,7 +390,7 @@ export default function InformationBlock({
         if (ctx.selectedGpxFile.mapObj) {
             closeMapObjectMenu();
         } else if (isCloudTrack(ctx)) {
-            closeCloudTrack();
+            closeCloudTrack({ fromSearch: isTrackFromSearch(ctx) });
         } else if (isLocalTrack(ctx)) {
             if (!isEmpty(ctx.selectedGpxFile)) {
                 ctx.setSelectedGpxFile({});
@@ -418,7 +420,7 @@ export default function InformationBlock({
         ctx.setCurrentObjectType(null);
     }
 
-    function closeCloudTrack() {
+    function closeCloudTrack({ fromSearch = false } = {}) {
         hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
 
         // If openGroups is empty (e.g. track was opened directly from Garmin last-sync menu),
@@ -445,6 +447,13 @@ export default function InformationBlock({
         setTrackName(null);
         setSavePrevState(true);
         ctx.setSelectedCloudTrackObj(null);
+
+        if (fromSearch) {
+            ctx.setSelectedSearchObj(null);
+            if (navigateBackToSearchResults(navigate, ctx, location)) {
+                return;
+            }
+        }
 
         navigate({
             pathname: MAIN_URL_WITH_SLASH + trackType,

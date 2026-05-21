@@ -1,17 +1,32 @@
-import { apiGet } from '../util/HttpApi';
 import {
+    BACKGROUND_TYPE_EXTENSION,
+    CATEGORY_NAME,
+    CATEGORY_TYPE,
+    COLOR_NAME_EXTENSION,
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
     MAIN_CATEGORY_KEY_NAME,
     POI_ID,
+    POI_NAME,
     WEB_POI_ADDITIONAL_CATEGORY,
     WEB_POI_FILTER_NAME,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
-import i18n from 'i18next';
-import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, typeIconMap } from '../map/layers/SearchLayer';
+import {
+    FAVORITE_HIT_GROUP_ID,
+    getObjIdSearch,
+    SEARCH_ICON_MAP_LOCATION,
+    searchTypeMap,
+    typeIconMap,
+} from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
-import { OBJECT_TYPE_POI } from '../context/AppContext';
+import { OBJECT_TYPE_POI, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../context/AppContext';
+import { openFavoriteObj } from './FavoritesManager';
+import { EMPTY_FILE_NAME, getGpxFiles, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
+import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL } from './GlobalManager';
+import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 
 export const USE_OSMAND_SERVER = true;
 export const OSMAND_WIKI_BASE_URL = 'https://data.osmand.net/wikimedia/images-1280/';
@@ -21,6 +36,84 @@ export const SEARCH_BRAND = 'brand';
 
 export function getIconByType(type) {
     return typeIconMap[type] ?? SEARCH_ICON_MAP_LOCATION;
+}
+
+function searchIncludes(text, query, collator) {
+    const textChars = [...String(text ?? '')];
+    const queryStr = String(query ?? '');
+
+    if (!queryStr) {
+        return true;
+    }
+
+    const queryLength = [...queryStr].length;
+
+    for (let i = 0; i <= textChars.length - queryLength; i++) {
+        const candidate = textChars.slice(i, i + queryLength).join('');
+
+        if (collator.compare(candidate, queryStr) === 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+export function searchFavoriteFeatures({ favorites, query, collator }) {
+    const q = String(query ?? '').trim();
+    if (!q || !favorites?.groups?.length || !favorites.mapObjs) {
+        return [];
+    }
+
+    return favorites.groups
+        .filter((group) => group?.id)
+        .flatMap((group) => {
+            const wpts = favorites.mapObjs[group.id]?.wpts;
+            if (!wpts?.length) return [];
+
+            return wpts
+                .filter(
+                    (wpt) =>
+                        wpt?.name &&
+                        wpt.lat != null &&
+                        wpt.lon != null &&
+                        (searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator))
+                )
+                .map((wpt) => ({
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [0, 0],
+                    },
+                    properties: {
+                        [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
+                        [CATEGORY_NAME]: wpt.category,
+                        [POI_NAME]: wpt.name,
+                        [FAVORITE_HIT_GROUP_ID]: group.id,
+                        [ICON_KEY_NAME]: wpt.icon,
+                        [COLOR_NAME_EXTENSION]: wpt.color,
+                        [BACKGROUND_TYPE_EXTENSION]: wpt.background,
+                        [FINAL_POI_ICON_NAME]: wpt.icon,
+                        ...(wpt.address ? { address: wpt.address } : {}),
+                    },
+                }));
+        });
+}
+
+export function searchCloudTrackFeatures({ listFiles, query, collator }) {
+    const q = String(query ?? '').trim();
+    if (!q || !listFiles?.uniqueFiles) return [];
+
+    return getGpxFiles(listFiles)
+        .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME) && searchIncludes(prepareName(f.name, true), q, collator))
+        .map((f) => ({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [0, 0] },
+            properties: {
+                [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK,
+                [CATEGORY_NAME]: f.name,
+            },
+        }));
 }
 
 /**
@@ -138,4 +231,44 @@ export function openPoiObj(ctx, object) {
         ctx.setSelectedWpt((prev) => ({ ...prev, poi: object, id }));
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
     }
+}
+
+export async function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}) {
+    if (!selectedSearchObj) {
+        return;
+    }
+    if (selectedSearchObj.type === OBJECT_TYPE_FAVORITE) {
+        openFavoriteObj({ ctx, favoriteObj: selectedSearchObj.object, options: { fromSearch: true } });
+    } else if (selectedSearchObj.type === OBJECT_TYPE_CLOUD_TRACK) {
+        const newTracks = await openTrackOnMap({
+            file: selectedSearchObj.object,
+            showOnMap: true,
+            showInfo: true,
+            zoomToTrack: true,
+            ctx,
+            recentSaver,
+            fromSearch: true,
+        });
+        updateTracks(ctx, null, newTracks);
+    }
+}
+
+export function navigateBackToSearchResults(navigate, ctx, location) {
+    if (!ctx.searchQuery) {
+        return false;
+    }
+    navigate({
+        pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+        search: buildSearchParamsFromQuery(ctx.searchQuery),
+        hash: location?.hash ?? globalThis.location.hash,
+    });
+    return true;
+}
+
+export function isFavoriteFromSearch(ctx) {
+    return ctx.selectedSearchObj?.type === OBJECT_TYPE_FAVORITE;
+}
+
+export function isTrackFromSearch(ctx) {
+    return ctx.selectedSearchObj?.type === OBJECT_TYPE_CLOUD_TRACK;
 }

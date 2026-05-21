@@ -6,8 +6,8 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
-import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import {
     ADDRESS_1,
@@ -33,6 +33,10 @@ import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
+import { openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
+import { getTrackInfoText } from '../../tracks/CloudTrackItem';
+import { addFavoriteToMapFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import FavoriteItem from '../../favorite/FavoriteItem';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -56,7 +60,7 @@ export function preparedType(type, t, lang = null) {
     return res;
 }
 
-export function getPropsFromSearchResultItem(props, t = null, lang = null) {
+export function getPropsFromSearchResultItem(props, t = null, lang = null, listFiles = null, unitsSettings = null) {
     let restoreLang;
     if (t && lang) {
         restoreLang = i18n.language;
@@ -73,6 +77,11 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
             type = poiType;
         }
         type = preparedType(type, t);
+    } else if (props[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+        name = props[POI_NAME] ?? props[CATEGORY_NAME];
+        type = t ? t('shared_string_my_favorites') : '';
+    } else if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+        name = props[CATEGORY_NAME];
     } else {
         name = props[CATEGORY_NAME];
         if (props[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
@@ -93,6 +102,9 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
     const info = getInfo();
 
     function getInfo() {
+        if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+            return getTrackInfo(name, listFiles, unitsSettings, t);
+        }
         if (addressParts.length > 0) {
             if (type.toLowerCase() === searchTypeMap.STREET.toLowerCase()) {
                 return addressParts[0];
@@ -109,11 +121,17 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
     return { name, type, info, city };
 }
 
+function getTrackInfo(name, listFiles, unitsSettings, t) {
+    if (!listFiles || !unitsSettings) return '';
+    const file = listFiles.uniqueFiles?.find((f) => f.name === name);
+    return getTrackInfoText(file, unitsSettings, t);
+}
+
 function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index }) {
+export default function SearchResultItem({ item, typeItem, index, currentLoc }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -156,7 +174,7 @@ export default function SearchResultItem({ item, typeItem, index }) {
     }, [ctx.selectedWptId?.id]);
 
     function parseItem(item) {
-        const res = getPropsFromSearchResultItem(item.properties, t);
+        const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
         const distance = item.locDist;
         const bearing = item.bearing;
         const isUserLocation = item.isUserLocation;
@@ -169,13 +187,41 @@ export default function SearchResultItem({ item, typeItem, index }) {
         if (qType != null && qType !== '' && index != null) {
             return `se-search-result-item-${safeCategoryTypeKey(qType)}-${index}`;
         }
-        if (item.properties[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
+        const categoryType = item.properties[CATEGORY_TYPE];
+        if (categoryType === searchTypeMap.FAVORITE) {
+            return `se-search-result-fav-${name}`;
+        }
+        if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK) {
             return `se-search-result-${item.properties[CATEGORY_NAME]}`;
         }
         return 'se-search-result-item';
     })();
 
     async function clickHandler() {
+        if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
+            const fileName = item.properties?.[CATEGORY_NAME];
+            const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
+            if (!file) return;
+            const searchFile = {
+                name: file.name,
+                type: file.type,
+                clienttimems: file.clienttimems,
+                updatetimems: file.updatetimems,
+                mapObj: false,
+            };
+            ctx.setSelectedSearchObj({ type: OBJECT_TYPE_CLOUD_TRACK, object: searchFile });
+            const newTracks = await openTrackOnMap({
+                file: searchFile,
+                showOnMap: true,
+                showInfo: true,
+                zoomToTrack: true,
+                ctx,
+                recentSaver,
+                fromSearch: true,
+            });
+            updateTracks(ctx, null, newTracks);
+            return;
+        }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
             const type = item.properties[WEB_PREFIX + TYPE];
             let options;
@@ -250,12 +296,29 @@ export default function SearchResultItem({ item, typeItem, index }) {
         return ` · ${city}`;
     }
 
+    if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
+        const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
+        const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
+        if (!resolved) return null;
+        const marker = { ...resolved.marker, locDist: distance };
+        return (
+            <FavoriteItem
+                id={id}
+                marker={marker}
+                group={resolved.group}
+                currentLoc={currentLoc}
+                onOpen={() => addFavoriteToMapFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
+                hideActions
+            />
+        );
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
                 <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
             ) : (
-                <div>
+                <>
                     <MenuItem
                         id={id}
                         onMouseEnter={handleMouseEnter}
@@ -287,7 +350,7 @@ export default function SearchResultItem({ item, typeItem, index }) {
                         <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
                     </MenuItem>
                     <DividerWithMargin margin={'16px'} />
-                </div>
+                </>
             )}
         </div>
     );
