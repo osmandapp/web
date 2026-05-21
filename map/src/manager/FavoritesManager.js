@@ -856,10 +856,7 @@ export function getSelectedFavoriteObj({
 
 export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
     const favoriteObj = getSelectedFavoriteObj({ group, marker, ctx, sharedFile, mapObj, openedFolder });
-    openFavoriteObj({
-        ctx,
-        favoriteObj,
-    });
+    openFavoriteObj({ ctx, favoriteObj });
 }
 
 export function addFavoriteToMapFromSearch(ctx, { group, marker }) {
@@ -872,7 +869,6 @@ export function openFavoriteObj({ ctx, favoriteObj, options = {} }) {
     ctx.setCurrentObjectType(options.fromSearch === true ? OBJECT_SEARCH : OBJECT_TYPE_FAVORITE);
     const selectionId = getFavoriteId(favoriteObj.markerCurrent?.layer);
     ctx.setSelectedWpt({ ...favoriteObj, selectionId, id: selectionId, groupId: favoriteObj.id });
-
     ctx.setSelectedGpxFile({ ...favoriteObj });
 }
 

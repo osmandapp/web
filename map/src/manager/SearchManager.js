@@ -24,7 +24,7 @@ import {
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 import { OBJECT_TYPE_POI, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 import { openFavoriteObj } from './FavoritesManager';
-import { EMPTY_FILE_NAME, getGpxFiles, openTrackOnMap, prepareName } from './track/TracksManager';
+import { EMPTY_FILE_NAME, getGpxFiles, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
 import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL } from './GlobalManager';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 
@@ -233,14 +233,14 @@ export function openPoiObj(ctx, object) {
     }
 }
 
-export function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}) {
+export async function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}) {
     if (!selectedSearchObj) {
         return;
     }
     if (selectedSearchObj.type === OBJECT_TYPE_FAVORITE) {
-        openFavoriteObj(ctx, selectedSearchObj.object, { fromSearch: true });
+        openFavoriteObj({ ctx, favoriteObj: selectedSearchObj.object, options: { fromSearch: true } });
     } else if (selectedSearchObj.type === OBJECT_TYPE_CLOUD_TRACK) {
-        openTrackOnMap({
+        const newTracks = await openTrackOnMap({
             file: selectedSearchObj.object,
             showOnMap: true,
             showInfo: true,
@@ -249,6 +249,7 @@ export function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}) {
             recentSaver,
             fromSearch: true,
         });
+        updateTracks(ctx, null, newTracks);
     }
 }
 

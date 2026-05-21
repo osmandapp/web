@@ -98,7 +98,7 @@ import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
-import { openPoiObj, openSearchObj, navigateBackToSearchResults } from '../manager/SearchManager';
+import { openPoiObj, openSearchObj, navigateBackToSearchResults, isFavoriteFromSearch, isTrackFromSearch } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
@@ -287,7 +287,7 @@ export default function MainMenu({
                         ctx.selectedFavoriteObj?.name === marker.name &&
                         ctx.selectedFavoriteObj?.nameGroup === group.name
                     ) {
-                        openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+                        openFavoriteObj({ ctx, favoriteObj: ctx.selectedFavoriteObj });
                         return;
                     }
                     addFavoriteToMap({
@@ -678,7 +678,7 @@ export default function MainMenu({
     function openMenuObject() {
         if (selectedType === OBJECT_TYPE_FAVORITE) {
             if (ctx.selectedFavoriteObj) {
-                openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+                openFavoriteObj({ ctx, favoriteObj: ctx.selectedFavoriteObj });
             }
         }
 
@@ -758,6 +758,11 @@ export default function MainMenu({
         const editInProgress = !!ctx.exitGuards.wptEdit?.hasChanges;
         if (!editInProgress) {
             closeSubPages({ ctx, ltx });
+        }
+        if (location.pathname.startsWith(item.url) && location.pathname !== item.url) {
+            if (isFavoriteFromSearch(ctx) || isTrackFromSearch(ctx)) {
+                navigate(item.url + location.hash);
+            }
         }
         let currentType;
         if (menuInfo) {

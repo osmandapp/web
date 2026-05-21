@@ -482,7 +482,11 @@ const FavoriteLayer = () => {
 
             ctx.setSelectedFavoriteObj(null);
 
-            openFavoriteObj(ctx, ctx.selectedGpxFile, { fromSearch: isFavoriteFromSearch(ctx) });
+            openFavoriteObj({
+                ctx,
+                favoriteObj: ctx.selectedGpxFile,
+                options: { fromSearch: isFavoriteFromSearch(ctx) },
+            });
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         },
         [ctx, selectedGpxFileRef]

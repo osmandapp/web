@@ -155,6 +155,7 @@ export default function InformationBlock({
             ctx.setTrackRange(null);
             setClearState(true);
             if (!ctx.currentObjectType) {
+                setTrackName(null);
                 hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
                 if (!isEmpty(ctx.selectedGpxFile)) {
                     ctx.setSelectedGpxFile({});
