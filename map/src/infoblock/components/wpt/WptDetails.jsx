@@ -32,11 +32,7 @@ import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, {
-    navigateToFavoritesMenu,
-    resolveWptAppearance,
-    restoreFavoriteFromSearch,
-} from '../../../manager/FavoritesManager';
+import FavoritesManager, { navigateToFavoritesMenu, resolveWptAppearance } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
@@ -607,24 +603,22 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
         } else if (type.isFav) {
-            if (!wpt.mapObj) {
+            if (isFavoriteFromSearch(ctx)) {
+                // Opened from search — always return to search results.
+                ctx.setSelectedSearchObj(null);
+                setShowInfoBlock(false);
+                if (!wpt.mapObj) {
+                    ctx.setSelectedFavoriteObj(null);
+                }
+                navigateBackToSearchResults(navigate, ctx, location);
+            } else if (!wpt.mapObj) {
                 ctx.setSelectedFavoriteObj(null);
-                if (isFavoriteFromSearch(ctx)) {
-                    ctx.setSelectedSearchObj(null);
-                    setShowInfoBlock(false);
-                    navigateBackToSearchResults(navigate, ctx, location);
-                } else {
-                    closeOnlyFavDetails();
-                }
+                closeOnlyFavDetails();
             } else {
-                // Map overlay while search favorite is active — return to search anchor, not closeMapObj flow.
-                const restored = isFavoriteFromSearch(ctx) && restoreFavoriteFromSearch(ctx);
-                if (!restored) {
-                    // remove the selected pin from the map
-                    ctx.setCloseMapObj(true);
-                }
+                // remove the selected pin from the map
+                ctx.setCloseMapObj(true);
+                closeOnlyFavDetails();
             }
-            closeOnlyFavDetails();
         } else if (type.isShareFav) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));

@@ -277,13 +277,14 @@ const FavoriteLayer = () => {
                 continue;
             }
 
-            if (!ctx.configureMapState.showFavorites && !openGroupId) {
+            const isInSearch = ctx.searchFavoriteGroupIds?.has(fileId) ?? false;
+            if (!ctx.configureMapState.showFavorites && !openGroupId && !isInSearch) {
                 removeMarkersFromMap(file, fileId);
                 continue;
             }
 
             if (file.url) {
-                if (!ctx.configureMapState.showFavorites && fileId !== openGroupId) {
+                if (!ctx.configureMapState.showFavorites && fileId !== openGroupId && !isInSearch) {
                     removeMarkersFromMap(file, fileId);
                 } else {
                     addMarkersOnMap(file, fileId);
@@ -296,7 +297,9 @@ const FavoriteLayer = () => {
     }
 
     function addMarkersOnMap(file, fileId) {
-        const shouldShow = file.markers && (file.hidden !== HIDDEN_TRUE || fileId === openGroupId);
+        const shouldShow =
+            file.markers &&
+            (file.hidden !== HIDDEN_TRUE || fileId === openGroupId || ctx.searchFavoriteGroupIds?.has(fileId));
         if (shouldShow) {
             if (file.markers) {
                 const mapBounds = map.getBounds();
@@ -361,8 +364,17 @@ const FavoriteLayer = () => {
                 res.addTo(map);
                 // When a hidden favorites group is opened explicitly, keep all its markers visible.
                 if (fileId === openGroupId) {
+                    // Opened from favorites menu — show all markers in the group.
                     [...mainLayers, ...secondaryLayers].forEach((marker) => {
                         if (marker?._icon?.style) {
+                            marker._icon.style.display = '';
+                        }
+                    });
+                } else if (ctx.searchFavoriteGroupIds?.has(fileId)) {
+                    // Opened from search — show only the specific markers that matched the query.
+                    const matchedNames = ctx.searchFavoriteGroupIds.get(fileId);
+                    [...mainLayers, ...secondaryLayers].forEach((marker) => {
+                        if (marker?._icon?.style && matchedNames?.has(marker.options?.name)) {
                             marker._icon.style.display = '';
                         }
                     });
@@ -384,7 +396,7 @@ const FavoriteLayer = () => {
     useEffect(() => {
         ctx.setFavLoading(false);
         updateMarkers();
-    }, [ctx.favorites, openGroupId, ctx.configureMapState.showFavorites]);
+    }, [ctx.favorites, openGroupId, ctx.searchFavoriteGroupIds, ctx.configureMapState.showFavorites]);
 
     // update markers on map after zoom
     useEffect(() => {
@@ -532,7 +544,12 @@ const FavoriteLayer = () => {
             map.removeLayer(file.oldMarkers);
             delete file.oldMarkers;
         }
-        if (file?.hidden === HIDDEN_TRUE && file?.markersOnMap && fileId !== openGroupId) {
+        if (
+            file?.hidden === HIDDEN_TRUE &&
+            file?.markersOnMap &&
+            fileId !== openGroupId &&
+            !(ctx.searchFavoriteGroupIds?.has(fileId) ?? false)
+        ) {
             map.removeLayer(file.markersOnMap);
         }
     }

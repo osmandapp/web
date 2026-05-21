@@ -217,6 +217,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                 zoomToTrack: true,
                 ctx,
                 recentSaver,
+                fromSearch: true,
             });
             updateTracks(ctx, null, newTracks);
             return;

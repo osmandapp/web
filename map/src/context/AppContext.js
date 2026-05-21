@@ -334,6 +334,8 @@ export const AppContextProvider = (props) => {
     const [selectedLocalTrackObj, setSelectedLocalTrackObj] = useState(null);
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
     const [selectedSearchObj, setSelectedSearchObj] = useState(null);
+    // Group IDs of favorites visible in current search results — their map markers must always show.
+    const [searchFavoriteGroupIds, setSearchFavoriteGroupIds] = useState(null);
 
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
@@ -743,6 +745,8 @@ export const AppContextProvider = (props) => {
                 setSelectedPoiObj,
                 selectedSearchObj,
                 setSelectedSearchObj,
+                searchFavoriteGroupIds,
+                setSearchFavoriteGroupIds,
                 zoomToCoords,
                 setZoomToCoords,
                 poiByUrl,

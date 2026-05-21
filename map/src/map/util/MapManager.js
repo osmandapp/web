@@ -96,7 +96,6 @@ export const iconPathMap = {
     intersection: '/map/images/map_icons/ic_action_intersection.svg',
     ic_action_transport_bus: '/map/images/map_icons/ic_action_transport_bus.svg',
     gpx_track: '/map/images/map_icons/ic_action_polygon_dark.svg',
-    favorite: '/map/images/map_icons/ic_action_favorite.svg',
 };
 
 export async function getIconFromMap(name) {

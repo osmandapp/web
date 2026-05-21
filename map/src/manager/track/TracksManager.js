@@ -1498,6 +1498,7 @@ export async function openTrackOnMap({
     setError = null,
     returnOneTrack = false,
     recentSaver,
+    fromSearch = false,
 }) {
     // cleanup edited localTrack
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
@@ -1527,7 +1528,7 @@ export async function openTrackOnMap({
             newGpxFiles[file.name].url = null;
         }
         if (showInfo) {
-            showInfoBlock({ hasUrl: true, file, ctx, smartf, recentSaver });
+            showInfoBlock({ hasUrl: true, file, ctx, smartf, recentSaver, fromSearch });
         }
         if (returnOneTrack) {
             return {
@@ -1571,7 +1572,7 @@ export async function openTrackOnMap({
             }
             newGpxFiles[file.name] = oneGpxFile;
             if (showInfo) {
-                showInfoBlock({ hasUrl: false, file: oneGpxFile, ctx, smartf, recentSaver });
+                showInfoBlock({ hasUrl: false, file: oneGpxFile, ctx, smartf, recentSaver, fromSearch });
             }
             if (setError) {
                 setError('');
@@ -1631,7 +1632,7 @@ export function updateTracks(ctx, smartf, newTracks) {
     }
 }
 
-function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
+function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver, fromSearch = false }) {
     ctx.setUpdateInfoBlock(true);
     let allFiles;
     if (smartf?.type === SHARE_TYPE) {
@@ -1650,7 +1651,7 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
 
     recentSaver(TRACKS_KEY, file);
     // save only tracks from menu (not from search results list)
-    if (!file.mapObj && !ctx.selectedSearchObj) {
+    if (!file.mapObj && !fromSearch) {
         ctx.setSelectedCloudTrackObj({ ...file });
     }
 

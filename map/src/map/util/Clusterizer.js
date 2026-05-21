@@ -351,8 +351,6 @@ export function createSecondaryMarker(obj) {
                 typeOsmValue: obj.properties[TYPE_OSM_VALUE],
                 iconName: obj.properties[POI_ICON_NAME],
             });
-        } else if (searchTypeMap.FAVORITE === obj.properties[CATEGORY_TYPE]) {
-            finalIconName = obj.properties[ICON_KEY_NAME];
         } else {
             finalIconName = getIconByType(obj.properties[CATEGORY_TYPE]);
         }
@@ -364,7 +362,6 @@ export function createSecondaryMarker(obj) {
         idObj: getObjIdSearch(obj),
         simple: true,
         [FINAL_POI_ICON_NAME]: finalIconName,
-        fillColor: obj.properties.color ?? SimpleDotMarker.defaultOptions.fillColor,
     }).build();
 }
 

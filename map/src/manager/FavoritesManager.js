@@ -870,23 +870,11 @@ export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapOb
     openFavoriteObj(ctx, buildFavoriteSelection({ group, marker, ctx, sharedFile, mapObj, openedFolder }));
 }
 
-/** Open favorite from search UI or search map layer; keeps selectedSearchObj for back navigation. */
-export function openFavoriteFromSearch(ctx, { group, marker, mapObj = false }) {
-    const selection = buildFavoriteSelection({ group, marker, ctx, mapObj });
-    if (!mapObj) {
-        ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: selection });
-    }
+/** Open favorite from search list; keeps selectedSearchObj for back navigation. */
+export function openFavoriteFromSearch(ctx, { group, marker }) {
+    const selection = buildFavoriteSelection({ group, marker, ctx, mapObj: false });
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_FAVORITE, object: selection });
     openFavoriteObj(ctx, selection, { fromSearch: true });
-}
-
-/** Close map-opened favorite and return to the favorite opened from search using prevState. */
-export function restoreFavoriteFromSearch(ctx) {
-    const prev = ctx.selectedGpxFile?.prevState;
-    if (!prev?.markerCurrent) {
-        return false;
-    }
-    openFavoriteObj(ctx, { ...prev, mapObj: false }, { fromSearch: true });
-    return true;
 }
 
 export function openFavoriteObj(ctx, object, options = {}) {

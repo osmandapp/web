@@ -299,6 +299,7 @@ export default function SearchResults() {
     function backToMainSearch() {
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
+        ctx.setSearchFavoriteGroupIds(null);
         ctx.setSearchQuery(null);
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
         navigateToSearchMenu();

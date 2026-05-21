@@ -23,8 +23,6 @@ import {
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
-    COLOR_NAME_EXTENSION,
-    BACKGROUND_TYPE_EXTENSION,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
@@ -44,7 +42,6 @@ import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
-import { openFavoriteFromSearch, resolveFavoriteMarkerForSearch } from '../../manager/FavoritesManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 
@@ -87,6 +84,21 @@ export function getObjIdSearch(obj) {
         return null;
     }
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
+}
+
+// Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
+export function buildFavGroupMap(favoriteFeatures) {
+    if (!favoriteFeatures?.length) return null;
+    const result = new Map();
+    favoriteFeatures.forEach((f) => {
+        const groupId = f.properties[FAVORITE_HIT_GROUP_ID];
+        const wptName = f.properties[POI_NAME];
+        if (groupId && wptName) {
+            if (!result.has(groupId)) result.set(groupId, new Set());
+            result.get(groupId).add(wptName);
+        }
+    });
+    return result.size > 0 ? result : null;
 }
 
 export default function SearchLayer() {
@@ -143,6 +155,34 @@ export default function SearchLayer() {
             ctx.setShowPoiCategories([]);
         }
     }, [ctx.searchQuery]);
+
+    // When favorites change (rename, edit, delete), refresh the favorites part of search results
+    useEffect(() => {
+        const query = ctx.searchQuery?.query;
+        if (!query || ctx.searchQuery?.type || !ctx.searchResult) return;
+
+        const favoriteFeatures = searchFavoriteFeatures({
+            favorites: ctx.favorites,
+            query,
+            collator: searchCollator,
+        });
+
+        const favGroupMap = buildFavGroupMap(favoriteFeatures);
+
+        ctx.setSearchResult((prev) => {
+            if (!prev) return prev;
+            const trackFeatures = (prev.features ?? []).filter(
+                (f) => f.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK
+            );
+            const serverFeatures = (prev.features ?? []).filter(
+                (f) =>
+                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.FAVORITE &&
+                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.GPX_TRACK
+            );
+            return { ...prev, features: [...trackFeatures, ...favoriteFeatures, ...serverFeatures] };
+        });
+        ctx.setSearchFavoriteGroupIds(favGroupMap);
+    }, [ctx.favorites]);
 
     useEffect(() => {
         const updateAsyncLayers = async () => {
@@ -210,8 +250,11 @@ export default function SearchLayer() {
                     collator: searchCollator,
                 });
                 const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
+                const favGroupMap = buildFavGroupMap(favoriteFeatures);
+                ctx.setSearchFavoriteGroupIds(favGroupMap);
                 ctx.setSearchResult({ ...data, features });
             } else {
+                ctx.setSearchFavoriteGroupIds(null);
                 ctx.setSearchResult(null);
             }
         } catch (e) {
@@ -254,16 +297,6 @@ export default function SearchLayer() {
 
     function onClick(e) {
         const opts = e.sourceTarget.options;
-        if (opts[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
-            const groupId = opts[FAVORITE_HIT_GROUP_ID];
-            const wptName = opts[POI_NAME];
-            const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, wptName);
-            if (resolved) {
-                openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker, mapObj: true });
-            }
-            return;
-        }
-
         ctx.setCurrentObjectType(OBJECT_SEARCH);
 
         const poi = {
@@ -285,8 +318,12 @@ export default function SearchLayer() {
         const center = map.getCenter();
         const zoom = map.getZoom();
         const latitude = center.lat;
+        // FAVORITE and GPX_TRACK are user objects rendered by their own layers — skip map markers for them.
+        const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK]);
+        const mapMarkerFeatures = (objList ?? []).filter((f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE]));
+
         const { mainMarkers, secondaryMarkers } = clusterMarkers({
-            places: objList,
+            places: mapMarkerFeatures,
             zoom,
             latitude,
             iconSize: DEFAULT_ICON_SIZE,
@@ -296,8 +333,7 @@ export default function SearchLayer() {
         const mainMarkersLayers = await Promise.all(
             mainMarkers.map(async (obj) => {
                 const objType = obj.properties[CATEGORY_TYPE];
-                let title =
-                    objType === searchTypeMap.FAVORITE ? obj.properties[POI_NAME] : obj.properties[CATEGORY_NAME];
+                let title = obj.properties[CATEGORY_NAME];
                 let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
                 if (objType === searchTypeMap.POI) {
@@ -310,16 +346,6 @@ export default function SearchLayer() {
                             iconName: obj.properties[POI_ICON_NAME],
                         });
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
-                } else if (objType === searchTypeMap.FAVORITE) {
-                    const p = obj.properties;
-                    icon = createPoiIcon({
-                        point: {},
-                        icon: p[ICON_KEY_NAME],
-                        color: p[COLOR_NAME_EXTENSION],
-                        background: p[BACKGROUND_TYPE_EXTENSION],
-                        hasBackgroundLight: false,
-                    });
-                    finalIconName = p[ICON_KEY_NAME] ?? null;
                 } else {
                     finalIconName = getIconByType(objType);
                     icon = await getSearchIcon(obj, innerCache, finalIconName);

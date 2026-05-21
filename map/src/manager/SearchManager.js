@@ -83,7 +83,7 @@ export function searchFavoriteFeatures({ favorites, query, collator }) {
                     type: 'Feature',
                     geometry: {
                         type: 'Point',
-                        coordinates: [wpt.lon, wpt.lat],
+                        coordinates: [0, 0],
                     },
                     properties: {
                         [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
@@ -247,6 +247,7 @@ export function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}) {
             zoomToTrack: true,
             ctx,
             recentSaver,
+            fromSearch: true,
         });
     }
 }

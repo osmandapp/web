@@ -384,6 +384,9 @@ export default function MainMenu({
         if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
             return;
         }
+        if (ctx.selectedSearchObj) {
+            return;
+        }
         const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
         if (matchedItem && !isSelectedMenuItem(matchedItem)) {
             setMenuInfo(matchedItem.component);
