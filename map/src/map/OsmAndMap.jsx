@@ -235,7 +235,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <TransportStopsLayer />
                 <CustomTileLayer
                     ref={tileLayer}
-                    attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+                    attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
                     minZoom={1}
                     maxZoom={20}
                     maxNativeZoom={19}

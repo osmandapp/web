@@ -211,6 +211,9 @@ export const AppContextProvider = (props) => {
         add: false,
         location: null,
     });
+
+    const [exitGuards, setExitGuards] = useState({});
+
     const [processingGroups, setProcessingGroups] = useState(false);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
@@ -560,6 +563,8 @@ export const AppContextProvider = (props) => {
                 setFavorites,
                 addFavorite,
                 setAddFavorite,
+                exitGuards,
+                setExitGuards,
                 localTracks,
                 setLocalTracks,
                 currentObjectType,

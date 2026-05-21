@@ -20,6 +20,7 @@ import {
     resetSelectedPin,
 } from '../util/MarkerSelectionService';
 import { panToIfNeeded } from '../util/MapManager';
+import { panToVisibleCenter } from './MapStateLayer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import MarkerOptions, {
     createPoiIcon,
@@ -37,6 +38,13 @@ import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
 import { MARKER_Z_INDEX_MAIN, MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
+
+function getAddFavoritePinLatLng(addFavorite) {
+    const { location, editWpt } = addFavorite;
+    if (location) return { lat: location.lat, lng: location.lng };
+    if (editWpt) return { lat: editWpt.latlon?.lat ?? editWpt.lat, lng: editWpt.latlon?.lon ?? editWpt.lon };
+    return null;
+}
 
 export function filterPointsInBounds(points, map) {
     if (!map) return [];
@@ -130,6 +138,13 @@ const FavoriteLayer = () => {
 
         return () => resetSelectedPin({ ctx, map, force: true });
     }, [map, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+
+    // Pan map to keep the preview pin in the visible center: on open, secondary drawer open/close.
+    useEffect(() => {
+        const req = ctx.addFavorite?.panRequest;
+        if (!req || !map) return;
+        panToVisibleCenter(map, getAddFavoritePinLatLng(ctx.addFavorite), req.infoBlockWidthPx);
+    }, [ctx.addFavorite?.panRequest?.key]);
 
     // Updates the selected pin icon in real-time when user changes appearance (color, icon, shape).
     // Works for both add mode (preview pin) and edit mode (selected existing pin).

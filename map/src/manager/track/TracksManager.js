@@ -3,7 +3,7 @@ import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
-import { apiGet, apiPost } from '../../util/HttpApi';
+import { apiGet, apiPost, digest } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,

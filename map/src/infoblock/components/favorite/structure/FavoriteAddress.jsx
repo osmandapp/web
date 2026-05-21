@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { getAddressByLatLon } from '../../wpt/WptDetails';
 import styles from '../wptEditPanel.module.css';
 
-export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, widthDialog, latLon }) {
+export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, onAutoFill, widthDialog, latLon }) {
     const { t } = useTranslation();
 
     const [searching, setSearching] = useState(false);
@@ -19,8 +19,9 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, w
     function searchAddress() {
         if (!latLon?.lat || !latLon?.lon) return;
         setSearching(true);
-        getAddressByLatLon(latLon.lat, latLon.lon).then((address) => {
-            setFavoriteAddress(address ?? '');
+        getAddressByLatLon(latLon.lat, latLon.lon).then((addr = '') => {
+            setFavoriteAddress(addr);
+            onAutoFill?.(addr);
             setSearching(false);
         });
     }
@@ -34,8 +35,9 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, w
                 variant="filled"
                 disabled={searching}
                 onChange={(e) => setFavoriteAddress(e.target.value)}
-                value={searching ? t('web:fav_address_searching') : favoriteAddress}
-                inputProps={{ className: styles.fieldInput }}
+                value={searching ? t('web:fav_address_searching') : (favoriteAddress ?? '')}
+                inputProps={{ className: styles.fieldInput, autoComplete: 'off' }}
+                InputLabelProps={{ className: styles.fieldLabel }}
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">

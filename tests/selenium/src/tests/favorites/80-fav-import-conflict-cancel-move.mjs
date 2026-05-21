@@ -59,6 +59,8 @@ export default async function test() {
     await waitBy(By.id('se-add-fav-dialog'));
     await sendKeysBy(By.id('se-fav-name-input'), 'ShouldNotExist');
     await clickBy(By.id('se-close-add-wpt-panel'));
+    await waitBy(By.id('se-exit-dialog-exit'));
+    await clickBy(By.id('se-exit-dialog-exit'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
     // verify no default 'favorites' group was created (favorite was not saved)
     const notSaved = await waitBy(By.id('se-menu-fav-favorites'), { optional: true, idle: true });

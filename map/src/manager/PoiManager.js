@@ -1,5 +1,5 @@
 import { apiGet } from '../util/HttpApi';
-import icons from '../resources/generated/poiicons.json';
+import iconsRaw from '../resources/generated/poiicons.json';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     CATEGORY_ICON,
@@ -26,6 +26,8 @@ import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
 import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
 import { getPropsFromSearchResultItem, preparedType } from '../menu/search/search/SearchResultItem';
+
+const icons = new Set(iconsRaw);
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -122,13 +124,13 @@ export function getIconNameForPoiType({
     iconName = '',
     useDefault = true,
 }) {
-    if (icons.includes(`mx_${typeOsmTag}_${typeOsmValue}.svg`)) {
+    if (icons.has(`mx_${typeOsmTag}_${typeOsmValue}.svg`)) {
         return `${typeOsmTag}_${typeOsmValue}`;
-    } else if (icons.includes(`mx_${iconKeyName}.svg`)) {
+    } else if (icons.has(`mx_${iconKeyName}.svg`)) {
         return iconKeyName;
-    } else if (icons.includes(`mx_topo_${iconKeyName}.svg`)) {
+    } else if (icons.has(`mx_topo_${iconKeyName}.svg`)) {
         return `topo_${iconKeyName}`;
-    } else if (iconName !== 'null' && icons.includes(`mx_${iconName}.svg`)) {
+    } else if (iconName !== 'null' && icons.has(`mx_${iconName}.svg`)) {
         return iconName;
     } else {
         return useDefault ? DEFAULT_POI_ICON : null;
@@ -154,9 +156,9 @@ export function getCatPoiIconName(props) {
 }
 
 export function getIconName(obj) {
-    if (icons.includes(`mx_${obj.key}.svg`)) {
+    if (icons.has(`mx_${obj.key}.svg`)) {
         return obj.key;
-    } else if (icons.includes(`mx_${obj.value}.svg`)) {
+    } else if (icons.has(`mx_${obj.value}.svg`)) {
         return obj.value;
     }
     return null;

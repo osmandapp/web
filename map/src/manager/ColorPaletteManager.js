@@ -5,6 +5,7 @@ import { parseColorToRgba, toColorString } from '../util/ColorUtil';
 const COLOR_PALETTE_FILE = 'color-palette/user_palette_default.txt';
 const COLOR_PALETTE_TYPE = 'FILE';
 const PALETTE_HEADER = '# Index,R,G,B,A';
+const LOCAL_PALETTE_KEY = 'osmand_color_palette';
 
 // Each entry: { id: number, value: string }
 export function parsePalette(text) {
@@ -74,4 +75,26 @@ export async function saveColorPalette(items, setNotification) {
 
 export function nextPaletteId(items) {
     return (items?.length ?? 0) + 1;
+}
+
+export function loadLocalPalette() {
+    try {
+        const raw = localStorage.getItem(LOCAL_PALETTE_KEY);
+        if (!raw) return [];
+        return JSON.parse(raw);
+    } catch {
+        return [];
+    }
+}
+
+export function saveLocalPalette(items) {
+    try {
+        localStorage.setItem(LOCAL_PALETTE_KEY, JSON.stringify(items));
+    } catch {
+        // localStorage unavailable — silently ignore
+    }
+}
+
+export function clearLocalPalette() {
+    localStorage.removeItem(LOCAL_PALETTE_KEY);
 }

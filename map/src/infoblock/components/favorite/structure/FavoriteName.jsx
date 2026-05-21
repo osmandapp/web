@@ -8,11 +8,13 @@ import styles from '../wptEditPanel.module.css';
 export default function FavoriteName({
     favoriteName,
     setFavoriteName,
+    onAutoFill,
     favoriteGroup,
     favorite,
     setErrorName,
     widthDialog,
     isGroupName = false,
+    submitted = true,
 }) {
     const ctx = useContext(AppContext);
 
@@ -43,25 +45,25 @@ export default function FavoriteName({
 
     useEffect(() => {
         validateName(favoriteName, favNames);
-    }, [favoriteName]);
+    }, [favoriteName, submitted]);
 
     function validateName(name, otherNames) {
         const trimmedName = name?.trim();
 
         if (!trimmedName) {
-            setErrorName(true);
+            setErrorName(submitted);
             setNameAlreadyExist(false);
             return;
         }
 
-        const nameExists = otherNames.some((n) => n.toLowerCase() === trimmedName.toLowerCase());
+        const nameExists = otherNames.some((n) => n?.toLowerCase() === trimmedName.toLowerCase());
 
         setNameAlreadyExist(nameExists);
         setErrorName(nameExists);
     }
 
     function getErrorText(name) {
-        if (name === '') {
+        if (name === '' && submitted) {
             return t('web:fav_name_empty');
         } else if (nameAlreadyExist) {
             return t('web:fav_name_already_exists');
@@ -75,13 +77,12 @@ export default function FavoriteName({
             const objOptions = ctx.selectedWpt.poi?.options ?? ctx.selectedWpt.poi?.properties;
             const { name } = getPropsFromSearchResultItem(objOptions, t);
             setFavoriteName(name);
+            onAutoFill?.(name);
         } else if (ctx.selectedWpt?.stop) {
             const name = ctx.selectedWpt?.stop.options.name;
-            if (name && name.trim() !== '') {
-                setFavoriteName(name);
-            } else {
-                setFavoriteName(t('web:transport_stop'));
-            }
+            const resolved = name && name.trim() !== '' ? name : t('web:transport_stop');
+            setFavoriteName(resolved);
+            onAutoFill?.(resolved);
         }
     }, [ctx.selectedWpt]);
 
@@ -95,8 +96,10 @@ export default function FavoriteName({
                 onChange={(e) => setFavoriteName(e.target.value)}
                 value={favoriteName}
                 autoFocus
-                error={favoriteName === '' || nameAlreadyExist}
+                error={(submitted && favoriteName === '') || nameAlreadyExist}
                 helperText={getErrorText(favoriteName)}
+                inputProps={{ className: styles.fieldInput, autoComplete: 'off' }}
+                InputLabelProps={{ className: styles.fieldLabel }}
                 FormHelperTextProps={{ className: styles.helperText }}
             />
         </Box>

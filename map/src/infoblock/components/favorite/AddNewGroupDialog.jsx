@@ -2,7 +2,7 @@ import { Box, Button, Grid, IconButton, LinearProgress, ListItemText, Typography
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import { Close } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
@@ -10,33 +10,20 @@ import FavoriteName from './structure/FavoriteName';
 import FavoriteIcon from './structure/FavoriteIcon';
 import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
-import FavoritesManager, { saveFavoriteGroup } from '../../../manager/FavoritesManager';
-import { apiGet } from '../../../util/HttpApi';
+import { saveFavoriteGroup } from '../../../manager/FavoritesManager';
+import poiCategories from '../../../resources/poiStyles/poi-categories.json';
 
 export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavoriteGroup }) {
     const ctx = useContext(AppContext);
 
     const [groupName, setGroupName] = useState('');
     const [groupIcon, setGroupIcon] = useState(MarkerOptions.DEFAULT_WPT_ICON);
-    const [favoriteIconCategories, setFavoriteIconCategories] = useState(null);
-    const [currentIconCategories, setCurrentIconCategories] = useState(null);
+    const favoriteIconCategories = poiCategories;
+    const currentIconCategories = 'special';
     const [groupColor, setGroupColor] = useState(MarkerOptions.DEFAULT_WPT_COLOR);
     const [groupShape, setGroupShape] = useState(MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
     const [errorName, setErrorName] = useState(false);
     const [process, setProcess] = useState(false);
-
-    useEffect(() => {
-        getIconCategories().then();
-    }, [dialogOpen]);
-
-    async function getIconCategories() {
-        let resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER);
-        const res = await resp.json();
-        if (res) {
-            setCurrentIconCategories('special');
-            setFavoriteIconCategories(res);
-        }
-    }
 
     async function save() {
         setProcess(true);

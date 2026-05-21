@@ -66,8 +66,13 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     };
 
     const handleMenuItemClick = (callback) => {
-        callback(clickLatLng);
+        const latlng = clickLatLng;
         handleClose();
+        if (ctx.exitGuards.wptEdit) {
+            ctx.exitGuards.wptEdit.guard(() => callback(latlng));
+        } else {
+            callback(latlng);
+        }
     };
 
     const openLogin = () => {

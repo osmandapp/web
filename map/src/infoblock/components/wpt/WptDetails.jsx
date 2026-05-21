@@ -620,9 +620,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 // Map overlay while search favorite is active — return to search anchor, not closeMapObj flow.
                 const restored = isFavoriteFromSearch(ctx) && restoreFavoriteFromSearch(ctx);
                 if (!restored) {
-                    closeObjectFromMap();
+                    // remove the selected pin from the map
+                    ctx.setCloseMapObj(true);
                 }
             }
+            closeOnlyFavDetails();
         } else if (type.isShareFav) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));

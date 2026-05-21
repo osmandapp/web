@@ -91,7 +91,7 @@
 }
 .primaryButton {
     display: flex !important;
-    padding: 6px 0px !important;
+    padding: 6px 12px !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;

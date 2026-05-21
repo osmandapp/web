@@ -102,10 +102,20 @@ export default function InformationBlock({
 
     // Close WptEditPanel when the user navigates to another object or switches context
     useEffect(() => {
-        ctx.setAddFavorite((prev) => {
-            if (!prev?.location && !prev?.editWpt) return prev;
-            return { ...prev, add: false, location: null, editTrack: false, editWpt: null, previewAppearance: null };
-        });
+        const close = () =>
+            ctx.setAddFavorite((prev) => {
+                if (!prev?.location && !prev?.editWpt) return prev;
+                return {
+                    ...prev,
+                    add: false,
+                    location: null,
+                    editTrack: false,
+                    editWpt: null,
+                    previewAppearance: null,
+                };
+            });
+        if (ctx.exitGuards.wptEdit?.hasChanges) return;
+        close();
     }, [ctx.selectedWpt, ctx.currentObjectType]);
 
     useEffect(() => {
