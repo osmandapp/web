@@ -44,11 +44,7 @@ import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
-import {
-    createFavoritePoiIcon,
-    openFavoriteFromSearch,
-    resolveFavoriteMarkerForSearch,
-} from '../../manager/FavoritesManager';
+import { openFavoriteFromSearch, resolveFavoriteMarkerForSearch } from '../../manager/FavoritesManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 
@@ -203,7 +199,7 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                const cloudFeatures = searchCloudTrackFeatures({
+                const trackFeatures = searchCloudTrackFeatures({
                     listFiles: ctx.listFiles,
                     query: searchData.query,
                     collator: searchCollator,
@@ -213,7 +209,7 @@ export default function SearchLayer() {
                     query: searchData.query,
                     collator: searchCollator,
                 });
-                const features = [...cloudFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
+                const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 ctx.setSearchResult({ ...data, features });
             } else {
                 ctx.setSearchResult(null);
@@ -260,7 +256,7 @@ export default function SearchLayer() {
         const opts = e.sourceTarget.options;
         if (opts[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
             const groupId = opts[FAVORITE_HIT_GROUP_ID];
-            const wptName = opts[POI_NAME] ?? opts[CATEGORY_NAME];
+            const wptName = opts[POI_NAME];
             const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, wptName);
             if (resolved) {
                 openFavoriteFromSearch(ctx, { group: resolved.group, marker: resolved.marker, mapObj: true });
@@ -302,7 +298,7 @@ export default function SearchLayer() {
                 const objType = obj.properties[CATEGORY_TYPE];
                 let title =
                     objType === searchTypeMap.FAVORITE
-                        ? (obj.properties[POI_NAME] ?? obj.properties[CATEGORY_NAME])
+                        ? obj.properties[POI_NAME]
                         : obj.properties[CATEGORY_NAME];
                 let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
@@ -318,10 +314,11 @@ export default function SearchLayer() {
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else if (objType === searchTypeMap.FAVORITE) {
                     const p = obj.properties;
-                    icon = createFavoritePoiIcon({
+                    icon = createPoiIcon({point: {},
                         icon: p[ICON_KEY_NAME],
                         color: p[COLOR_NAME_EXTENSION],
                         background: p[BACKGROUND_TYPE_EXTENSION],
+                        hasBackgroundLight: false,
                     });
                     finalIconName = p[ICON_KEY_NAME] ?? null;
                 } else {

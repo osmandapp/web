@@ -693,10 +693,6 @@ export function getSize(group, t) {
         : 'empty';
 }
 
-export function createFavoritePoiIcon({ point = {}, icon, color, background }) {
-    return createPoiIcon({ point, icon, color, background, hasBackgroundLight: false });
-}
-
 /**
  * Generates the icon HTML for a favorite waypoint in the menu list.
  *
@@ -711,11 +707,12 @@ export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } 
     const resolvedColor = color ?? wpt?.color;
     const resolvedBackground = background ?? wpt?.background;
 
-    const rawHtml = createFavoritePoiIcon({
+    const rawHtml = createPoiIcon({
         point,
         icon: resolvedIcon,
         color: resolvedColor,
         background: resolvedBackground,
+        hasBackgroundLight: false,
     }).options.html;
 
     return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, resolvedBackground);
