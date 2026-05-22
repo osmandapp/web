@@ -12,7 +12,7 @@ const WeatherLayersActions = forwardRef((props, ref) => {
 
     const { t } = useTranslation();
 
-    const switchLayer = (ctx, index, weatherType) => (e) => {
+    const switchLayer = (index, weatherType) => (e) => {
         wtx.setWeatherLayers((prev) => ({
             ...prev,
             [weatherType]: prev[weatherType].map((l, i) => (i === index ? { ...l, checked: e.target.checked } : l)),
@@ -42,26 +42,25 @@ const WeatherLayersActions = forwardRef((props, ref) => {
                                 {t('menu_layers')}
                             </Typography>
                         </MenuItem>
-                        {wtx.weatherLayers &&
-                            wtx.weatherLayers[wtx.weatherType].map((item, index) => (
-                                <FormControlLabel
-                                    className={setWeatherStyles(item)}
-                                    disableTypography={true}
-                                    key={item.key}
-                                    label={<ActionItem item={item} />}
-                                    labelPlacement="start"
-                                    control={
-                                        <Checkbox
-                                            id={'se-weather-layer-' + index}
-                                            className={weatherStyles.checkbox}
-                                            size="small"
-                                            disabled={disableLayers(item, wtx)}
-                                            checked={item.checked}
-                                            onChange={switchLayer(ctx, index, wtx.weatherType)}
-                                        />
-                                    }
-                                ></FormControlLabel>
-                            ))}
+                        {wtx.weatherLayers?.[wtx.weatherType].map((item, index) => (
+                            <FormControlLabel
+                                className={setWeatherStyles(item)}
+                                disableTypography={true}
+                                key={item.key}
+                                label={<ActionItem item={item} />}
+                                labelPlacement="start"
+                                control={
+                                    <Checkbox
+                                        id={'se-weather-layer-' + index}
+                                        className={weatherStyles.checkbox}
+                                        size="small"
+                                        disabled={disableLayers(item, wtx)}
+                                        checked={item.checked}
+                                        onChange={switchLayer(index, wtx.weatherType)}
+                                    />
+                                }
+                            ></FormControlLabel>
+                        ))}
                     </FormControl>
                 </Paper>
             </Box>
