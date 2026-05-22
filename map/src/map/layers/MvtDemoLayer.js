@@ -10,6 +10,11 @@ import { isMvtDemoTileURL, MVT_DEMO_TILE_URL } from '../mvt/MvtDemoConfig';
 const PANE_NAME = 'mvtDemoPane';
 const POPUP_MAX_HEIGHT = 220;
 
+function getPublicAssetUrl(path) {
+    const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+    return new URL(`${publicUrl}${path}`, window.location.origin).toString();
+}
+
 function createStyle() {
     const style = JSON.parse(JSON.stringify(defaultStyle));
     style.sources = {
@@ -19,7 +24,7 @@ function createStyle() {
             tiles: [MVT_DEMO_TILE_URL],
         },
     };
-    style.sprite = `${process.env.PUBLIC_URL || ''}/mvt/sprites/sprite`;
+    style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     return style;
 }
 

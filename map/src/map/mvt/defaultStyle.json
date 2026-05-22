@@ -11,7 +11,7 @@
             "buffer": 128
         }
     },
-    "sprite": "https://builder.osmand.net/basemap/mvt/sprites/sprite",
+    "sprite": "/mvt/sprites/sprite",
     "glyphs": "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
     "layers": [
         {
