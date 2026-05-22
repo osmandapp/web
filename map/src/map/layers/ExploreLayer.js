@@ -172,7 +172,7 @@ export default function ExploreLayer() {
     useEffect(() => {
         const coords = ctx.selectedWpt?.wikidata?.geometry?.coordinates;
         if (!coords || coords.length < 2) return;
-        panToIfNeeded(map, { lat: coords[1], lng: coords[0] });
+        panToIfNeeded({ map, latlng: { lat: coords[1], lng: coords[0] }, ctx });
     }, [ctx.selectedWpt?.wikidata?.properties?.id]);
 
     useEffect(() => {

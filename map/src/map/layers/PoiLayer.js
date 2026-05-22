@@ -238,7 +238,7 @@ export default function PoiLayer() {
                                     },
                                     isSelection: true,
                                 });
-                                panToIfNeeded(map, marker.getLatLng());
+                                panToIfNeeded({ map, latlng: marker.getLatLng(), ctx });
                             }
                         }
                     }
