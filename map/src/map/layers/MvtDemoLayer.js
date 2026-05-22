@@ -9,6 +9,7 @@ import { isMvtDemoTileURL, MVT_DEMO_TILE_URL } from '../mvt/MvtDemoConfig';
 
 const PANE_NAME = 'mvtDemoPane';
 const POPUP_MAX_HEIGHT = 220;
+const MAPLIBRE_ZOOM_OFFSET = -1;
 
 function getPublicAssetPath(path) {
     const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
@@ -31,6 +32,10 @@ function createStyle() {
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
     return style;
+}
+
+function getMapLibreZoom(leafletZoom) {
+    return Math.max(0, leafletZoom + MAPLIBRE_ZOOM_OFFSET);
 }
 
 function formatPopupValue(value) {
@@ -114,7 +119,7 @@ export default function MvtDemoLayer() {
             container,
             style: createStyle(),
             center: [center.lng, center.lat],
-            zoom: map.getZoom(),
+            zoom: getMapLibreZoom(map.getZoom()),
             attributionControl: false,
             interactive: false,
             fadeDuration: 0,
@@ -123,7 +128,6 @@ export default function MvtDemoLayer() {
         maplibreRef.current = maplibreMap;
 
         let disposed = false;
-
         const syncContainer = () => {
             const size = map.getSize();
             container.style.width = `${size.x}px`;
@@ -132,18 +136,18 @@ export default function MvtDemoLayer() {
             maplibreMap.resize();
         };
 
-        const syncView = () => {
+        const syncView = ({ center = map.getCenter(), zoom = map.getZoom() } = {}) => {
             if (disposed) {
                 return;
             }
-            const nextCenter = map.getCenter();
             syncContainer();
-            maplibreMap.jumpTo({
-                center: [nextCenter.lng, nextCenter.lat],
-                zoom: map.getZoom(),
+            const nextView = {
+                center: [center.lng, center.lat],
+                zoom: getMapLibreZoom(zoom),
                 bearing: 0,
                 pitch: 0,
-            });
+            };
+            maplibreMap.jumpTo(nextView);
         };
 
         const requestSync = () => {
