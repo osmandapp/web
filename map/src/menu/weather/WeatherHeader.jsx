@@ -9,6 +9,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import WeatherForecastSourceActions from './WeatherForecastSourceActions';
 import WeatherLayersActions from './WeatherLayersActions';
 import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_action_umbrella.svg';
 import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +19,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function WeatherHeader({ setShowInfoBlock = null, isDetails = false }) {
     const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -44,17 +46,17 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            clearShowDetailsFlag(ctx);
+                            clearShowDetailsFlag(wtx);
                             if (isDetails) {
                                 navigate({
                                     pathname: MAIN_URL_WITH_SLASH + WEATHER_URL,
                                     hash: location.hash,
                                 });
                             } else {
-                                ctx.setWeatherDate(new Date());
-                                ctx.setWeatherLayers((prev) => ({
+                                wtx.setWeatherDate(new Date());
+                                wtx.setWeatherLayers((prev) => ({
                                     ...prev,
-                                    [ctx.weatherType]: prev[ctx.weatherType].map((l) => ({ ...l, checked: false })),
+                                    [wtx.weatherType]: prev[wtx.weatherType].map((l) => ({ ...l, checked: false })),
                                 }));
                                 closeHeader({ ctx, setShowInfoBlock });
                             }

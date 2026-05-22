@@ -13,6 +13,7 @@ import { apiGet } from '../HttpApi';
 
 export const useWeatherLocationChange = ({
     ctx,
+    wtx,
     mtx,
     currentLoc,
     delayedHash,
@@ -55,9 +56,9 @@ export const useWeatherLocationChange = ({
 
     function getForecastData(lat, lon) {
         Promise.allSettled([
-            fetchDayForecast({ lat, lon, ctx, setDayForecast }),
-            fetchWeekForecast({ lat, lon, ctx, setWeekForecast }),
-        ]).then(() => ctx.setForecastLoading(false));
+            fetchDayForecast({ lat, lon, wtx, setDayForecast }),
+            fetchWeekForecast({ lat, lon, wtx, setWeekForecast }),
+        ]).then(() => wtx.setForecastLoading(false));
     }
 
     const fetchAddress = async ({ point, useMapBbox = false }) => {

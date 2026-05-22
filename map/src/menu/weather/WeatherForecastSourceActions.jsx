@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import { Box, FormControlLabel, FormControl, MenuItem, Paper, Radio, RadioGroup, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import weatherStyles from './weather.module.css';
@@ -26,7 +26,7 @@ export const weatherTypes = {
 };
 
 const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref) => {
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
 
     const { t } = useTranslation();
 
@@ -34,11 +34,11 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
 
     const handleWeatherType = (e) => {
         const selectedType = e.target.value;
-        if (selectedType !== null && selectedType !== ctx.weatherType) {
+        if (selectedType !== null && selectedType !== wtx.weatherType) {
             localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
-            ctx.setWeatherType(selectedType);
+            wtx.setWeatherType(selectedType);
             updateQueryParam({ key: FORECAST_SOURCE_PARAM, value: selectedType });
-            ctx.setForecastLoading(true);
+            wtx.setForecastLoading(true);
             if (setOpenActions) {
                 setOpenActions(false);
             }
@@ -47,7 +47,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
 
     function setWeatherTypeStyles(type) {
         let res = [];
-        if (ctx.weatherType === type) {
+        if (wtx.weatherType === type) {
             res.push(weatherStyles.controlLabelSelected);
         } else {
             res.push(weatherStyles.controlLabel);
@@ -65,7 +65,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
                         </Typography>
                     </MenuItem>
                     <FormControl sx={{ width: '257px' }}>
-                        <RadioGroup value={ctx.weatherType} onChange={handleWeatherType}>
+                        <RadioGroup value={wtx.weatherType} onChange={handleWeatherType}>
                             <FormControlLabel
                                 id={'se-GFS'}
                                 className={setWeatherTypeStyles(GFS_WEATHER_TYPE)}

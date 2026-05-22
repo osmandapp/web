@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import { CircularProgress, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import {
     openWeatherForecastDetails,
@@ -17,7 +17,7 @@ import { MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../ma
 import { FORECAST_SOURCE_PARAM, FORECAST_TYPE_PARAM } from './Weather';
 
 export default function ForecastTable({ dayForecast, weekForecast, currentTimeForecast, setHeaderForecast }) {
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -36,14 +36,14 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
         function formatting(value) {
             return item.checkValue(value).toFixed(item.fixed);
         }
-        const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
+        const useDayForecast = wtx.weatherDate.getDay() === new Date().getDay();
         const forecast = useDayForecast ? dayForecast : weekForecast;
-        if (ctx.weatherDate && forecast) {
-            const timeKey = `${dayFormatter(ctx.weatherDate)} ${timeFormatter(ctx.weatherDate)}`;
+        if (wtx.weatherDate && forecast) {
+            const timeKey = `${dayFormatter(wtx.weatherDate)} ${timeFormatter(wtx.weatherDate)}`;
             const currentF = useDayForecast ? currentTimeForecast?.day : currentTimeForecast?.week;
             const res = currentF ?? forecast?.filter((f) => f.time === timeKey);
             if (res?.length > 0) {
-                if ((ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS) || res[0][item.key] === undefined) {
+                if ((wtx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS) || res[0][item.key] === undefined) {
                     return NOT_AVAILABLE;
                 }
 
@@ -57,7 +57,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
 
     const ForecastItem = ({ item, index }) => {
         const forecastValue = getForecastValue(item);
-        const isLastItem = index === ctx.weatherLayers[ctx.weatherType].length - 1;
+        const isLastItem = index === wtx.weatherLayers[wtx.weatherType].length - 1;
 
         useEffect(() => {
             if (forecastValue) {
@@ -77,10 +77,10 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                     onClick={() => {
                         navigate({
                             pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
-                            search: `?${FORECAST_TYPE_PARAM}=${item.key}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                            search: `?${FORECAST_TYPE_PARAM}=${item.key}&${FORECAST_SOURCE_PARAM}=${wtx.weatherType}`,
                             hash: location.hash,
                         });
-                        openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
+                        openWeatherForecastDetails(wtx, item.key, wtx.weatherType);
                     }}
                 >
                     <ListItemIcon className={styles.forecastIcon}>{item.icon}</ListItemIcon>
@@ -92,7 +92,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                             {item.name()}
                         </Typography>
                     </ListItemText>
-                    {ctx.forecastLoading ? (
+                    {wtx.forecastLoading ? (
                         <CircularProgress id="se-loading-weather-data" size={12} />
                     ) : (
                         <div style={{ display: 'flex' }}>
@@ -121,7 +121,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
     return (
         <>
             <Divider />
-            {ctx.weatherLayers?.[ctx.weatherType].map((item, index) => (
+            {wtx.weatherLayers?.[wtx.weatherType].map((item, index) => (
                 <ForecastItem item={item} index={index} key={item.id || item.name} />
             ))}
             <Divider sx={{ mt: '0px !important' }} />

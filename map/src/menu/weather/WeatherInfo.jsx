@@ -1,25 +1,25 @@
 import { ListItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { currentDiffHours } from '../../manager/WeatherManager';
-import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
 
 export default function WeatherInfo({ dayForecast, weekForecast }) {
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
     const { t } = useTranslation();
 
     const [resultText, setResultText] = useState(null);
 
     useEffect(() => {
-        const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
+        const useDayForecast = wtx.weatherDate.getDay() === new Date().getDay();
         const forecast = useDayForecast ? dayForecast : weekForecast;
-        if (ctx.weatherDate && forecast) {
+        if (wtx.weatherDate && forecast) {
             if (Array.isArray(forecast) && forecast.length > 0) {
                 const time = forecast[0].fileModified;
                 const weatherDateObj = new Date(time);
                 let hourstr = 'now';
-                let hours = currentDiffHours(ctx, weatherDateObj);
+                let hours = currentDiffHours(wtx, weatherDateObj);
 
                 if (hours !== 0) {
                     let day = 0;

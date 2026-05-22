@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
-import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import WeatherContext from '../../context/WeatherContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
 import { disableLayers } from '../../manager/WeatherManager';
 
@@ -23,23 +23,23 @@ function getWeatherTime(weatherDateObj) {
 
 const WeatherLayer = () => {
     const map = useMap();
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
     const mtx = useContext(MapContext);
 
     const [time, setTime] = useState(null);
 
     useEffect(() => {
-        ctx.setWeatherLayers((prev) => {
+        wtx.setWeatherLayers((prev) => {
             const next = { ...prev };
             Object.keys(next).forEach((type) => {
-                if (type !== ctx.weatherType) {
+                if (type !== wtx.weatherType) {
                     next[type] = next[type].map((l, index) => {
                         if (!l.checked) return l;
-                        const canEnable = !disableLayers(next[ctx.weatherType][index], ctx);
+                        const canEnable = !disableLayers(next[wtx.weatherType][index], wtx);
                         const cleared = { ...l, checked: false };
                         if (canEnable) {
-                            const tgt = next[ctx.weatherType][index];
-                            next[ctx.weatherType][index] = { ...tgt, checked: true };
+                            const tgt = next[wtx.weatherType][index];
+                            next[wtx.weatherType][index] = { ...tgt, checked: true };
                         }
                         return cleared;
                     });
@@ -47,7 +47,7 @@ const WeatherLayer = () => {
             });
             return next;
         });
-    }, [ctx.weatherType]);
+    }, [wtx.weatherType]);
 
     useEffect(() => {
         if (map) {
@@ -60,7 +60,7 @@ const WeatherLayer = () => {
         if (map) {
             map.eachLayer((layer) => {
                 if (layer.options?.name?.match(/^weather-/) && layer.options.time) {
-                    const newTime = getWeatherTime(ctx.weatherDate);
+                    const newTime = getWeatherTime(wtx.weatherDate);
                     const key = layer.options.name.split('-')[1];
                     map.eachLayer((fade) => {
                         if (fade.options?.name === 'fade-' + key) {
@@ -89,16 +89,16 @@ const WeatherLayer = () => {
                 }
             });
         }
-        setTime(getWeatherTime(ctx.weatherDate));
-    }, [ctx.weatherDate]);
+        setTime(getWeatherTime(wtx.weatherDate));
+    }, [wtx.weatherDate]);
 
     const opacityDivider = 0.6; // main+fade layers (*0.5 + *0.5) result less opacity than 1 layer *1.0
 
     return (
         <>
             <LayersControl>
-                {Object.keys(ctx.weatherLayers).map((k) => {
-                    return ctx.weatherLayers[k].map((item) => (
+                {Object.keys(wtx.weatherLayers).map((k) => {
+                    return wtx.weatherLayers[k].map((item) => (
                         <React.Fragment key={'weather_fader_' + item.key}>
                             <LayersControl.Overlay
                                 key={'weather_main_' + item.key + item.checked}

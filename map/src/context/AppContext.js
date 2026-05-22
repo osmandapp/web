@@ -5,7 +5,6 @@ import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
-import WeatherManager from '../manager/WeatherManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
@@ -15,7 +14,6 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
-import { FORECAST_SOURCE_PARAM } from '../menu/weather/Weather';
 import {
     EXPLORE_OBJS_KEY,
     FAVORITES_KEY,
@@ -144,13 +142,6 @@ export const AppContextProvider = (props) => {
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
-
-    const searchParams = new URLSearchParams(globalThis.location.search);
-    // weather
-    const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
-    const [weatherDate, setWeatherDate] = useState(new Date());
-    const [weatherType, setWeatherType] = useState(searchParams.get(FORECAST_SOURCE_PARAM) ?? 'gfs');
-    const [forecastLoading, setForecastLoading] = useState(false);
 
     const [gpxLoading, setGpxLoading] = useState(false);
     const [smartFoldersLoading, setSmartFoldersLoading] = useState(false);
@@ -528,12 +519,6 @@ export const AppContextProvider = (props) => {
             value={{
                 globalConfirmation,
                 setGlobalConfirmation,
-                weatherLayers,
-                setWeatherLayers,
-                weatherDate,
-                setWeatherDate,
-                weatherType,
-                setWeatherType,
                 listFiles,
                 setListFiles,
                 gpxFiles,
@@ -636,8 +621,6 @@ export const AppContextProvider = (props) => {
                 setSelectedSort,
                 visibleTracks,
                 setVisibleTracks,
-                forecastLoading,
-                setForecastLoading,
                 wikiPlaces,
                 setWikiPlaces,
                 searchSettings,

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import WeatherContext from '../../../context/WeatherContext';
 import {
     OBJECT_SEARCH,
     OBJECT_TRACK_ANALYZER,
@@ -15,6 +16,7 @@ import { selectedForecastDetails } from '../../../menu/weather/Weather';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../store/geoRouter/profileConstants';
 
 export default function useMenuDots(ctx) {
+    const wtx = useContext(WeatherContext);
     const [menuDots, setMenuDots] = useState({});
     const [searchParams] = useSearchParams();
 
@@ -35,11 +37,14 @@ export default function useMenuDots(ctx) {
     }, [ctx.openGroups, ctx.selectedCloudTrackObj, ctx.openVisibleMenu?.showTracks]);
 
     useEffect(() => {
-        const showDetails = selectedForecastDetails(ctx);
-        const openLayers = ctx.weatherLayers[ctx.weatherType]?.some((l) => l.checked);
+        if (!wtx?.weatherLayers || !wtx?.weatherType) {
+            return;
+        }
+        const showDetails = selectedForecastDetails(wtx);
+        const openLayers = wtx.weatherLayers[wtx.weatherType]?.some((l) => l.checked);
 
         setActiveMenu(OBJECT_TYPE_WEATHER, !isSameHour() || showDetails || openLayers);
-    }, [ctx.weatherDate, ctx.weatherLayers, ctx.weatherType]);
+    }, [wtx?.weatherDate, wtx?.weatherLayers, wtx?.weatherType]);
 
     useEffect(() => {
         const hasSearchResults = ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear;
@@ -69,8 +74,9 @@ export default function useMenuDots(ctx) {
     }, [ctx.selectedLocalTrackObj]);
 
     function isSameHour() {
+        if (!wtx?.weatherDate) return true;
         const initial = new Date();
-        const current = ctx.weatherDate;
+        const current = wtx.weatherDate;
 
         return (
             initial.getFullYear() === current.getFullYear() &&
