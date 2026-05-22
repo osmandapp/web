@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
+import { mvtDemoTileURL } from '../map/mvt/MvtDemoConfig';
 
 const MapContext = React.createContext();
-
-const osmandTileURL = {
-    uiname: 'Mapnik (tiles)',
-    key: 'mapniktile',
-    tileSize: 512,
-    url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
-};
 
 function getInitialHeightmap() {
     try {
@@ -50,7 +44,7 @@ export const MapContextProvider = ({ children }) => {
     const [focusModeOn, setFocusModeOn] = useState(false);
 
     // map tile and rendering
-    const [tileURL, setTileURL] = useState(osmandTileURL);
+    const [tileURL, setTileURL] = useState(mvtDemoTileURL);
     const [renderingType, setRenderingType] = useState(null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);

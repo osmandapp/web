@@ -128,6 +128,8 @@ export default function MvtDemoLayer() {
         maplibreRef.current = maplibreMap;
 
         let disposed = false;
+        let syncFrame = null;
+
         const syncContainer = () => {
             const size = map.getSize();
             container.style.width = `${size.x}px`;
@@ -151,7 +153,20 @@ export default function MvtDemoLayer() {
         };
 
         const requestSync = () => {
-            L.Util.requestAnimFrame(syncView);
+            if (syncFrame !== null) {
+                return;
+            }
+            syncFrame = L.Util.requestAnimFrame(() => {
+                syncFrame = null;
+                syncView();
+            });
+        };
+
+        const cancelRequestedSync = () => {
+            if (syncFrame !== null) {
+                L.Util.cancelAnimFrame(syncFrame);
+                syncFrame = null;
+            }
         };
 
         const handleLoading = () => {
@@ -170,7 +185,6 @@ export default function MvtDemoLayer() {
             if (disposed) {
                 return;
             }
-
             const point = [event.containerPoint.x, event.containerPoint.y];
             let features = [];
             try {
@@ -204,6 +218,7 @@ export default function MvtDemoLayer() {
 
         return () => {
             disposed = true;
+            cancelRequestedSync();
             map.off('move zoom resize viewreset', requestSync);
             map.off('click', handleMapClick);
             maplibreMap.off('dataloading', handleLoading);
