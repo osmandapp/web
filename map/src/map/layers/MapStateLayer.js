@@ -134,6 +134,43 @@ export default function MapStateLayer() {
         };
     }, []);
 
+    // Override map.zoomIn / map.zoomOut so zoom buttons use the visible-bbox center
+    useEffect(() => {
+        const origZoomIn = map.zoomIn.bind(map);
+        const origZoomOut = map.zoomOut.bind(map);
+
+        function visibleCenterPoint() {
+            const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10);
+            const center = calcVisibleCenterPx(map, infoBlockWidthPx);
+            return center ? L.point(center.x, center.y) : null;
+        }
+
+        map.zoomIn = (delta) => {
+            const pt = visibleCenterPoint();
+            const dz = delta ?? map.options.zoomDelta ?? 1;
+            if (pt) {
+                map.setZoomAround(pt, map.getZoom() + dz);
+            } else {
+                origZoomIn(delta);
+            }
+        };
+
+        map.zoomOut = (delta) => {
+            const pt = visibleCenterPoint();
+            const dz = delta ?? map.options.zoomDelta ?? 1;
+            if (pt) {
+                map.setZoomAround(pt, map.getZoom() - dz);
+            } else {
+                origZoomOut(delta);
+            }
+        };
+
+        return () => {
+            map.zoomIn = origZoomIn;
+            map.zoomOut = origZoomOut;
+        };
+    }, [ctx.infoBlockWidth]);
+
     // Central zoom-to-fit handler driven by useZoomToFit.
     useEffect(() => {
         if (!mtx.zoomToFitRequest) return;
