@@ -874,7 +874,7 @@
             "source": "osm",
             "source-layer": "ground_layer",
             "minzoom": 17,
-            "layout": { "text-field": "{addr:housenumber}", "text-size": 10 },
+            "layout": { "text-field": "{addr:housenumber}", "text-font": ["Noto Sans Regular"], "text-size": 10 },
             "paint": {
                 "text-halo-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 0.6
@@ -887,7 +887,7 @@
             "source-layer": "ground_layer",
             "minzoom": 16,
             "filter": ["all", ["==", "building", ""]],
-            "layout": { "text-field": "{name}", "text-size": 10 },
+            "layout": { "text-field": "{name}", "text-font": ["Noto Sans Regular"], "text-size": 10 },
             "paint": {
                 "text-halo-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 0.6
