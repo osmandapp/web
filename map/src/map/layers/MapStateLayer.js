@@ -145,24 +145,26 @@ export default function MapStateLayer() {
             return center ? L.point(center.x, center.y) : null;
         }
 
-        map.zoomIn = (delta) => {
+        map.zoomIn = (delta, options) => {
             const pt = visibleCenterPoint();
             const dz = delta ?? map.options.zoomDelta ?? 1;
             if (pt) {
-                map.setZoomAround(pt, map.getZoom() + dz);
+                map.setZoomAround(pt, map.getZoom() + dz, options);
             } else {
-                origZoomIn(delta);
+                origZoomIn(delta, options);
             }
+            return map;
         };
 
-        map.zoomOut = (delta) => {
+        map.zoomOut = (delta, options) => {
             const pt = visibleCenterPoint();
             const dz = delta ?? map.options.zoomDelta ?? 1;
             if (pt) {
-                map.setZoomAround(pt, map.getZoom() - dz);
+                map.setZoomAround(pt, map.getZoom() - dz, options);
             } else {
-                origZoomOut(delta);
+                origZoomOut(delta, options);
             }
+            return map;
         };
 
         return () => {
