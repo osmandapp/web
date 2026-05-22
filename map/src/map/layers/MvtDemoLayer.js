@@ -10,6 +10,7 @@ import { isMvtDemoTileURL, MVT_DEMO_TILE_URL } from '../mvt/MvtDemoConfig';
 const PANE_NAME = 'mvtDemoPane';
 const POPUP_MAX_HEIGHT = 220;
 const MAPLIBRE_ZOOM_OFFSET = -1;
+const PAN_BUFFER = 768;
 
 function getPublicAssetPath(path) {
     const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
@@ -110,9 +111,9 @@ export default function MvtDemoLayer() {
         container.style.pointerEvents = 'none';
 
         const initialSize = map.getSize();
-        container.style.width = `${initialSize.x}px`;
-        container.style.height = `${initialSize.y}px`;
-        L.DomUtil.setPosition(container, map.containerPointToLayerPoint([0, 0]));
+        container.style.width = `${initialSize.x + PAN_BUFFER * 2}px`;
+        container.style.height = `${initialSize.y + PAN_BUFFER * 2}px`;
+        L.DomUtil.setPosition(container, map.containerPointToLayerPoint([-PAN_BUFFER, -PAN_BUFFER]));
 
         const center = map.getCenter();
         const maplibreMap = new maplibregl.Map({
@@ -129,20 +130,37 @@ export default function MvtDemoLayer() {
 
         let disposed = false;
         let syncFrame = null;
+        let deferredContainerSync = null;
+        let dragging = false;
+        let containerWidth = initialSize.x + PAN_BUFFER * 2;
+        let containerHeight = initialSize.y + PAN_BUFFER * 2;
 
         const syncContainer = () => {
             const size = map.getSize();
-            container.style.width = `${size.x}px`;
-            container.style.height = `${size.y}px`;
-            L.DomUtil.setPosition(container, map.containerPointToLayerPoint([0, 0]));
-            maplibreMap.resize();
+            const nextWidth = size.x + PAN_BUFFER * 2;
+            const nextHeight = size.y + PAN_BUFFER * 2;
+
+            if (nextWidth !== containerWidth || nextHeight !== containerHeight) {
+                containerWidth = nextWidth;
+                containerHeight = nextHeight;
+                container.style.width = `${containerWidth}px`;
+                container.style.height = `${containerHeight}px`;
+                maplibreMap.resize();
+            }
+            L.DomUtil.setPosition(container, map.containerPointToLayerPoint([-PAN_BUFFER, -PAN_BUFFER]));
         };
 
-        const syncView = ({ center = map.getCenter(), zoom = map.getZoom() } = {}) => {
+        const cancelDeferredContainerSync = () => {
+            if (deferredContainerSync !== null) {
+                maplibreMap.off('render', deferredContainerSync);
+                deferredContainerSync = null;
+            }
+        };
+
+        const jumpToLeafletView = ({ center = map.getCenter(), zoom = map.getZoom() } = {}) => {
             if (disposed) {
                 return;
             }
-            syncContainer();
             const nextView = {
                 center: [center.lng, center.lat],
                 zoom: getMapLibreZoom(zoom),
@@ -152,8 +170,31 @@ export default function MvtDemoLayer() {
             maplibreMap.jumpTo(nextView);
         };
 
+        const syncView = (view) => {
+            if (disposed) {
+                return;
+            }
+            cancelDeferredContainerSync();
+            syncContainer();
+            jumpToLeafletView(view);
+        };
+
+        const syncViewAfterPan = () => {
+            if (disposed) {
+                return;
+            }
+            cancelDeferredContainerSync();
+            deferredContainerSync = () => {
+                deferredContainerSync = null;
+                syncContainer();
+            };
+            maplibreMap.once('render', deferredContainerSync);
+            jumpToLeafletView();
+            maplibreMap.triggerRepaint();
+        };
+
         const requestSync = () => {
-            if (syncFrame !== null) {
+            if (dragging || syncFrame !== null) {
                 return;
             }
             syncFrame = L.Util.requestAnimFrame(() => {
@@ -167,6 +208,20 @@ export default function MvtDemoLayer() {
                 L.Util.cancelAnimFrame(syncFrame);
                 syncFrame = null;
             }
+        };
+
+        const handleDragStart = () => {
+            dragging = true;
+            cancelRequestedSync();
+            cancelDeferredContainerSync();
+        };
+
+        const handleMoveEnd = () => {
+            if (!dragging) {
+                return;
+            }
+            dragging = false;
+            syncViewAfterPan();
         };
 
         const handleLoading = () => {
@@ -185,7 +240,7 @@ export default function MvtDemoLayer() {
             if (disposed) {
                 return;
             }
-            const point = [event.containerPoint.x, event.containerPoint.y];
+            const point = [event.containerPoint.x + PAN_BUFFER, event.containerPoint.y + PAN_BUFFER];
             let features = [];
             try {
                 features = maplibreMap.queryRenderedFeatures(point);
@@ -210,6 +265,8 @@ export default function MvtDemoLayer() {
         };
 
         map.on('move zoom resize viewreset', requestSync);
+        map.on('dragstart', handleDragStart);
+        map.on('moveend', handleMoveEnd);
         map.on('click', handleMapClick);
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
@@ -219,7 +276,10 @@ export default function MvtDemoLayer() {
         return () => {
             disposed = true;
             cancelRequestedSync();
+            cancelDeferredContainerSync();
             map.off('move zoom resize viewreset', requestSync);
+            map.off('dragstart', handleDragStart);
+            map.off('moveend', handleMoveEnd);
             map.off('click', handleMapClick);
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
