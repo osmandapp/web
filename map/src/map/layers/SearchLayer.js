@@ -36,8 +36,8 @@ import {
     SEARCH_LAYER_ID,
     showProcessingNotification,
 } from '../../manager/GlobalManager';
-import { getVisibleBboxInfo } from './MapStateLayer';
-import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
+import { getVisibleBboxInfo, panToVisibleCenter } from './MapStateLayer';
+import { findFeatureGroupById, getIconFromMap } from '../util/MapManager';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
@@ -129,7 +129,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToCoords) {
-            panToIfNeeded(map, { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon });
+            panToVisibleCenter(map, { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon }, Number.parseInt(ctx.infoBlockWidth, 10));
             ctx.setZoomToCoords(null);
         }
     }, [ctx.zoomToCoords]);
@@ -212,7 +212,7 @@ export default function SearchLayer() {
     useEffect(() => {
         if (ctx.moveToMapObj) {
             const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
-            panToIfNeeded(map, { lat, lng });
+            panToVisibleCenter(map, { lat, lng }, Number.parseInt(ctx.infoBlockWidth, 10));
         }
     }, [ctx.moveToMapObj]);
 
