@@ -5,6 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
 import { ensureAppDataVersion } from './util/appDataVersion';
 
+globalThis.addEventListener('unhandledrejection', (event) => {
+    const reason = event.reason;
+    if (reason?.name === 'AbortError' || String(reason?.message).includes('aborted')) {
+        event.preventDefault();
+    }
+});
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
