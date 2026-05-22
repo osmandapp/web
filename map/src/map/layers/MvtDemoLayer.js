@@ -8,6 +8,7 @@ import defaultStyle from '../mvt/defaultStyle.json';
 import { isMvtDemoTileURL, MVT_DEMO_TILE_URL } from '../mvt/MvtDemoConfig';
 
 const PANE_NAME = 'mvtDemoPane';
+const POPUP_MAX_HEIGHT = 220;
 
 function createStyle() {
     const style = JSON.parse(JSON.stringify(defaultStyle));
@@ -20,6 +21,53 @@ function createStyle() {
     };
     style.sprite = `${process.env.PUBLIC_URL || ''}/mvt/sprites/sprite`;
     return style;
+}
+
+function formatPopupValue(value) {
+    if (value === undefined || value === null) {
+        return 'N/A';
+    }
+    if (typeof value === 'object') {
+        return JSON.stringify(value);
+    }
+    return value.toString();
+}
+
+function createTagsPopupContent(properties) {
+    const wrapper = L.DomUtil.create('div', 'mvt-demo-popup');
+    wrapper.style.maxHeight = `${POPUP_MAX_HEIGHT}px`;
+    wrapper.style.overflowY = 'auto';
+
+    const entries = Object.entries(properties || {}).sort(([a], [b]) => a.localeCompare(b));
+
+    if (entries.length === 0) {
+        const empty = L.DomUtil.create('div', '', wrapper);
+        empty.textContent = 'No tags';
+        return wrapper;
+    }
+
+    const table = L.DomUtil.create('table', '', wrapper);
+    table.style.borderCollapse = 'collapse';
+    table.style.width = '100%';
+
+    entries.forEach(([key, value]) => {
+        const row = L.DomUtil.create('tr', '', table);
+        const keyCell = L.DomUtil.create('td', '', row);
+        const valueCell = L.DomUtil.create('td', '', row);
+
+        keyCell.textContent = key || 'N/A';
+        valueCell.textContent = formatPopupValue(value);
+
+        keyCell.style.fontWeight = '600';
+        keyCell.style.padding = '3px 8px 3px 0';
+        keyCell.style.verticalAlign = 'top';
+        valueCell.style.padding = '3px 0';
+        valueCell.style.textAlign = 'right';
+        valueCell.style.verticalAlign = 'top';
+        valueCell.style.wordBreak = 'break-word';
+    });
+
+    return wrapper;
 }
 
 export default function MvtDemoLayer() {
@@ -104,7 +152,37 @@ export default function MvtDemoLayer() {
             console.warn('MVT demo layer error', event?.error ?? event);
         };
 
+        const handleMapClick = (event) => {
+            if (disposed) {
+                return;
+            }
+
+            const point = [event.containerPoint.x, event.containerPoint.y];
+            let features = [];
+            try {
+                features = maplibreMap.queryRenderedFeatures(point);
+            } catch (error) {
+                return;
+            }
+            if (features.length === 0) {
+                map.closePopup();
+                return;
+            }
+
+            const feature = features.find((item) => Object.keys(item.properties || {}).length > 0) || features[0];
+            L.popup({
+                closeButton: true,
+                autoClose: true,
+                closeOnClick: false,
+                maxWidth: 360,
+            })
+                .setLatLng(event.latlng)
+                .setContent(createTagsPopupContent(feature.properties))
+                .openOn(map);
+        };
+
         map.on('move zoom resize viewreset', requestSync);
+        map.on('click', handleMapClick);
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
         maplibreMap.on('error', handleError);
@@ -113,6 +191,7 @@ export default function MvtDemoLayer() {
         return () => {
             disposed = true;
             map.off('move zoom resize viewreset', requestSync);
+            map.off('click', handleMapClick);
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
