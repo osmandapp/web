@@ -42,13 +42,14 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
         return group.files;
     };
 
-    async function downloadFolderBackup() {
+    async function downloadFolderBackup(isSmart) {
         setProcessDownload(true);
         const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup-folder`, [], {
             params: {
                 format: '.osf',
                 folderName: group.fullName,
                 type: 'GPX',
+                smart: isSmart,
             },
             headers: {
                 'Content-Type': 'application/json',
@@ -76,25 +77,23 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
         <>
             <Box ref={ref}>
                 <Paper id="se-folder-actions" className={styles.actions}>
-                    {group.type !== SMART_TYPE && (
-                        <MenuItem
-                            disabled={group.realSize === 0}
-                            className={styles.action}
-                            onClick={() => {
-                                downloadFolderBackup().then();
-                                setOpenActions(false);
-                            }}
-                        >
-                            <ListItemIcon className={styles.iconAction}>
-                                <TimeIcon />
-                            </ListItemIcon>
-                            <ListItemText>
-                                <Typography className={styles.actionName} noWrap>
-                                    {t('web:download_as_osf')}
-                                </Typography>
-                            </ListItemText>
-                        </MenuItem>
-                    )}
+                    <MenuItem
+                        disabled={group.realSize === 0}
+                        className={styles.action}
+                        onClick={() => {
+                            downloadFolderBackup(group.type === SMART_TYPE).then();
+                            setOpenActions(false);
+                        }}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
+                            <TimeIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography className={styles.actionName} noWrap>
+                                {t('web:download_as_osf')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
                     <MenuItem
                         disabled={group.realSize === 0}
                         className={styles.action}
