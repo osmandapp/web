@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import WeatherContext from '../../context/WeatherContext';
 import {
     openWeatherForecastDetails,
     dayFormatter,
@@ -40,14 +41,18 @@ export const forecastParams = (urlLocation) => {
     return { type, source };
 };
 
-export function selectedForecastDetails(ctx) {
-    return ctx.weatherLayers[ctx.weatherType].find((layer) => {
+export function selectedForecastDetails(wtx) {
+    if (!wtx?.weatherLayers || !wtx?.weatherType) {
+        return undefined;
+    }
+    return wtx.weatherLayers[wtx.weatherType]?.find((layer) => {
         return layer.showDetails;
     });
 }
 
 export default function Weather() {
     const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
     const mtx = useContext(MapContext);
 
     const [, height] = useWindowSize();
@@ -77,9 +82,10 @@ export default function Weather() {
     const [weekForecast, setWeekForecast] = useState(getSavedWeekForecast);
     const [headerForecast, setHeaderForecast] = useState(null);
 
-    useWeatherTypeChange({ ctx, currentLoc, setDayForecast, setWeekForecast });
+    useWeatherTypeChange({ wtx, currentLoc, setDayForecast, setWeekForecast });
     useWeatherLocationChange({
         ctx,
+        wtx,
         mtx,
         currentLoc,
         delayedHash,
@@ -108,9 +114,9 @@ export default function Weather() {
     // get current forecast
     useEffect(() => {
         if (!dayForecast && !weekForecast) return;
-        if (ctx.weatherDate === null) return;
+        if (wtx.weatherDate === null) return;
 
-        const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
+        const useDayForecast = wtx.weatherDate.getDay() === new Date().getDay();
         const forecast = useDayForecast ? dayForecast : weekForecast;
 
         const findForecast = (date) => {
@@ -118,12 +124,12 @@ export default function Weather() {
             return forecast?.filter((f) => f.time === timeKey) ?? [];
         };
 
-        let res = findForecast(ctx.weatherDate);
+        let res = findForecast(wtx.weatherDate);
 
         if (res.length === 0) {
-            const alignedStep = getAlignedStep({ direction: +1, weatherDate: ctx.weatherDate, ctx });
+            const alignedStep = getAlignedStep({ direction: +1, weatherDate: wtx.weatherDate, wtx });
             if (alignedStep) {
-                const shifted = new Date(ctx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000);
+                const shifted = new Date(wtx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000);
                 res = findForecast(shifted);
             }
         }
@@ -131,27 +137,27 @@ export default function Weather() {
         if (res.length > 0) {
             useDayForecast ? setDayF(res) : setWeekF(res);
         }
-    }, [ctx.weatherDate, weekForecast]);
+    }, [wtx.weatherDate, weekForecast]);
 
     useEffect(() => {
         if (!showForecastOutlet) return;
 
         const params = forecastParams(urlLocation);
         if (params) {
-            if (params.source !== ctx.weatherType) {
-                ctx.setWeatherType(params.source);
+            if (params.source !== wtx.weatherType) {
+                wtx.setWeatherType(params.source);
                 localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
             }
-            openWeatherForecastDetails(ctx, params.type, params.source);
+            openWeatherForecastDetails(wtx, params.type, params.source);
             return;
         }
 
-        const list = ctx.weatherLayers?.[ctx.weatherType];
+        const list = wtx.weatherLayers?.[wtx.weatherType];
         if (!list?.length) return;
         const layer = list.find((l) => l.showDetails) ?? list[0];
 
-        openWeatherForecastDetails(ctx, layer.key, ctx.weatherType);
-    }, [urlLocation, showForecastOutlet, ctx.weatherType]);
+        openWeatherForecastDetails(wtx, layer.key, wtx.weatherType);
+    }, [urlLocation, showForecastOutlet, wtx.weatherType]);
 
     return (
         <>

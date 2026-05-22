@@ -2,6 +2,7 @@ import { Box, Divider, ListItemText, MenuItem, Typography } from '@mui/material'
 import WeatherHeader from './WeatherHeader';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import TopWeatherInfo from './TopWeatherInfo';
 import { openWeatherForecastDetails, ECWMF_WEATHER_TYPE, PRECIP_LAYER_KEY } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
@@ -20,6 +21,7 @@ import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 
 export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
     const [, height] = useWindowSize();
 
     const { updateQueryParam } = useUpdateQueryParam();
@@ -41,29 +43,29 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const [currentWeatherUnits, setCurrentWeatherUnits] = useState(null);
 
     useEffect(() => {
-        const list = ctx.weatherLayers?.[ctx.weatherType];
+        const list = wtx.weatherLayers?.[wtx.weatherType];
         if (!list?.length) return;
         const res = list.find((layer) => layer.showDetails);
         const chosen = res ?? list[0];
         setCurrentWeatherType(chosen.key);
         setCurrentWeatherUnits(chosen.units);
-    }, [ctx.weatherLayers, ctx.weatherType]);
+    }, [wtx.weatherLayers, wtx.weatherType]);
 
     useEffect(() => {
         if (currentWeatherType) {
-            const selectedType = ctx.weatherLayers[ctx.weatherType].find((layer) => currentWeatherType === layer.key);
-            setIsDisabledType(ctx.weatherType === ECWMF_WEATHER_TYPE && selectedType.onlyGFS);
+            const selectedType = wtx.weatherLayers[wtx.weatherType].find((layer) => currentWeatherType === layer.key);
+            setIsDisabledType(wtx.weatherType === ECWMF_WEATHER_TYPE && selectedType.onlyGFS);
         }
-    }, [ctx.weatherType, currentWeatherType]);
+    }, [wtx.weatherType, currentWeatherType]);
 
     const forecastPreparedData = useMemo(() => {
-        if (!forecast || !ctx.weatherLayers || !ctx.weatherType) {
+        if (!forecast || !wtx.weatherLayers || !wtx.weatherType) {
             return {};
         }
 
         let res = {};
         const uniqueDates = new Set();
-        const layers = ctx.weatherLayers[ctx.weatherType].map((layer) => ({ ...layer }));
+        const layers = wtx.weatherLayers[wtx.weatherType].map((layer) => ({ ...layer }));
 
         forecast.forEach((item) => {
             const date = new Date(item.ts);
@@ -126,10 +128,10 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         });
 
         return res;
-    }, [forecast, ctx.weatherLayers, ctx.weatherType]);
+    }, [forecast, wtx.weatherLayers, wtx.weatherType]);
 
     const ForecastButtonItem = ({ item, index }) => {
-        const disabled = ctx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS;
+        const disabled = wtx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS;
         const selected = item.key === currentWeatherType;
 
         return (
@@ -142,7 +144,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     setCurrentWeatherType(item.key);
                     setCurrentWeatherUnits(item.units);
                     updateQueryParam({ key: FORECAST_TYPE_PARAM, value: item.key });
-                    openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
+                    openWeatherForecastDetails(wtx, item.key, wtx.weatherType);
                 }}
             />
         );
@@ -216,12 +218,12 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 <TopWeatherInfo loadingLocation={isPending} weatherLoc={weatherLoc} />
                 {!isEmpty(forecastPreparedData) && (
                     <Box className={styles.forecastButtonBox}>
-                        {ctx.weatherLayers[ctx.weatherType].map((item, index) => (
+                        {wtx.weatherLayers[wtx.weatherType].map((item, index) => (
                             <ForecastButtonItem item={item} index={index} key={item.id || item.name} />
                         ))}
                     </Box>
                 )}
-                {ctx.forecastLoading ? (
+                {wtx.forecastLoading ? (
                     <Loading />
                 ) : !isDisabledType ? (
                     <>

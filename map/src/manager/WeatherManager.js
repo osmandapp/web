@@ -114,17 +114,17 @@ export function getWeatherLayers(type) {
     return layers;
 }
 
-export function disableLayers(item, ctx) {
-    return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === ECWMF_WEATHER_TYPE;
+export function disableLayers(item, wtx) {
+    return (item.key === 'wind' || item.key === 'cloud') && wtx.weatherType === ECWMF_WEATHER_TYPE;
 }
 
 function getWeatherUrl(layer, type) {
     return `${process.env.REACT_APP_WEATHER_URL}${type}/tiles/${layer}/{time}/{z}/{x}/{y}.png`;
 }
 
-export function updateWeatherTime(ctx, hours) {
-    const dt = new Date(ctx.weatherDate.getTime() + hours * 60 * 60 * 1000);
-    ctx.setWeatherDate(dt);
+export function updateWeatherTime(wtx, hours) {
+    const dt = new Date(wtx.weatherDate.getTime() + hours * 60 * 60 * 1000);
+    wtx.setWeatherDate(dt);
 }
 
 export function dayFormatter(date) {
@@ -141,28 +141,28 @@ export function timeFormatter(date) {
 export const currentDiffHours = (ctx, weatherDate) =>
     Math.trunc(weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
 
-export function getBaseStep(diffHours, ctx) {
-    if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
+export function getBaseStep(diffHours, wtx) {
+    if (wtx.weatherType === ECWMF_WEATHER_TYPE) {
         return Math.abs(diffHours) + new Date().getUTCHours() >= 120 ? 6 : 3;
     }
-    if (ctx.weatherType === GFS_WEATHER_TYPE) {
+    if (wtx.weatherType === GFS_WEATHER_TYPE) {
         return Math.abs(diffHours) >= 24 ? 3 : 1;
     }
     return 0;
 }
 
 // align-backward (<0) align-forward (>0) else just align if needed
-export function getAlignedStep({ direction = null, weatherDate = null, ctx, diffHours = null, date = null }) {
+export function getAlignedStep({ direction = null, weatherDate = null, wtx, diffHours = null, date = null }) {
     if (!weatherDate) {
-        weatherDate = ctx.weatherDate;
+        weatherDate = wtx.weatherDate;
     }
     if (!diffHours) {
-        diffHours = currentDiffHours(ctx, weatherDate);
+        diffHours = currentDiffHours(wtx, weatherDate);
     }
     if (!date) {
         date = weatherDate;
     }
-    const baseStep = getBaseStep(diffHours, ctx);
+    const baseStep = getBaseStep(diffHours, wtx);
     const baseStepWithDirection = direction < 0 ? -baseStep : direction > 0 ? +baseStep : 0;
     const newHoursUTC = new Date(date.getTime() + baseStepWithDirection * 3600 * 1000).getUTCHours();
     if (newHoursUTC % baseStep === 0) {
@@ -172,21 +172,21 @@ export function getAlignedStep({ direction = null, weatherDate = null, ctx, diff
     return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
 }
 
-export function openWeatherForecastDetails(ctx, key, source) {
-    const newWeatherLayers = ctx.weatherLayers[source].map((layerItem) => {
+export function openWeatherForecastDetails(wtx, key, source) {
+    const newWeatherLayers = wtx.weatherLayers[source].map((layerItem) => {
         return {
             ...layerItem,
             showDetails: layerItem.key === key,
         };
     });
-    ctx.setWeatherLayers((prev) => ({
+    wtx.setWeatherLayers((prev) => ({
         ...prev,
         [source]: newWeatherLayers,
     }));
 }
 
-export function clearShowDetailsFlag(ctx) {
-    const newWeatherLayers = ctx.weatherLayers[ctx.weatherType].map((layerItem) => {
+export function clearShowDetailsFlag(wtx) {
+    const newWeatherLayers = wtx.weatherLayers[wtx.weatherType].map((layerItem) => {
         if (layerItem.showDetails) {
             const newLayerItem = { ...layerItem };
             delete newLayerItem.showDetails;
@@ -194,16 +194,16 @@ export function clearShowDetailsFlag(ctx) {
         }
         return layerItem;
     });
-    ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+    wtx.setWeatherLayers({ ...wtx.weatherLayers, [wtx.weatherType]: newWeatherLayers });
 }
 
-export const fetchDayForecast = async ({ lat, lon, ctx, setDayForecast = null }) => {
+export const fetchDayForecast = async ({ lat, lon, wtx, setDayForecast = null }) => {
     const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
         apiCache: true,
         params: {
             lat: Number(lat).toFixed(WEATHER_COORDS_DECIMALS),
             lon: Number(lon).toFixed(WEATHER_COORDS_DECIMALS),
-            weatherType: ctx.weatherType,
+            weatherType: wtx.weatherType,
         },
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -217,13 +217,13 @@ export const fetchDayForecast = async ({ lat, lon, ctx, setDayForecast = null })
     }
 };
 
-export const fetchWeekForecast = async ({ lat, lon, ctx, setWeekForecast = null }) => {
+export const fetchWeekForecast = async ({ lat, lon, wtx, setWeekForecast = null }) => {
     const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
         apiCache: true,
         params: {
             lat: Number(lat).toFixed(WEATHER_COORDS_DECIMALS),
             lon: Number(lon).toFixed(WEATHER_COORDS_DECIMALS),
-            weatherType: ctx.weatherType,
+            weatherType: wtx.weatherType,
             week: true,
         },
         method: 'GET',

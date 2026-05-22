@@ -15,6 +15,7 @@ import {
 import { Menu } from '@mui/icons-material';
 import LoginContext from '../context/LoginContext';
 import MapContext from '../context/MapContext';
+import WeatherContext from '../context/WeatherContext';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
     OBJECT_GLOBAL_SETTINGS,
@@ -136,6 +137,7 @@ export default function MainMenu({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
     const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
 
@@ -550,7 +552,7 @@ export default function MainMenu({
                 const type = res.key;
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
-                    search: `?${FORECAST_TYPE_PARAM}=${type}&${FORECAST_SOURCE_PARAM}=${ctx.weatherType}`,
+                    search: `?${FORECAST_TYPE_PARAM}=${type}&${FORECAST_SOURCE_PARAM}=${wtx.weatherType}`,
                     hash: location.hash,
                 });
                 return;

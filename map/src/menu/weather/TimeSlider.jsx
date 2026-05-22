@@ -1,26 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Slider } from '@mui/material';
-import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import { getAlignedStep } from '../../manager/WeatherManager';
 
 export default function TimeSlider() {
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
 
     const [availableMarks, setAvailableMarks] = useState([]);
     const [currentDay, setCurrentDay] = useState(null);
     const [currentWeatherType, setCurrentWeatherType] = useState(null);
 
-    function calculateAvailableHours(ctx) {
-        let currentHour = ctx.weatherDate.getHours();
-        const alignedStep = getAlignedStep({ direction: 0, ctx });
+    function calculateAvailableHours(wtx) {
+        let currentHour = wtx.weatherDate.getHours();
+        const alignedStep = getAlignedStep({ direction: 0, wtx });
         if (alignedStep) {
-            currentHour = new Date(ctx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000).getHours();
+            currentHour = new Date(wtx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000).getHours();
         }
 
         const availableHours = [{ value: currentHour, label: currentHour.toString().padStart(2, '0') }];
 
         const tryAddHour = (hour, direction) => {
-            const alignedStep = getAlignedStep({ direction, ctx });
+            const alignedStep = getAlignedStep({ direction, wtx });
             if (alignedStep === direction) {
                 let label = hour.toString().padStart(2, '0');
                 availableHours.push({
@@ -51,22 +51,22 @@ export default function TimeSlider() {
 
     // update available marks when day changes
     useEffect(() => {
-        const newDay = ctx.weatherDate.getDate();
-        if (newDay !== currentDay || currentWeatherType !== ctx.weatherType) {
-            const newAvailableMarks = calculateAvailableHours(ctx);
+        const newDay = wtx.weatherDate.getDate();
+        if (newDay !== currentDay || currentWeatherType !== wtx.weatherType) {
+            const newAvailableMarks = calculateAvailableHours(wtx);
             setAvailableMarks(newAvailableMarks);
             setCurrentDay(newDay);
-            setCurrentWeatherType(ctx.weatherType);
+            setCurrentWeatherType(wtx.weatherType);
         }
-    }, [ctx.weatherDate]);
+    }, [wtx.weatherDate]);
 
     const handleChange = (event, newValue) => {
-        const newDate = new Date(ctx.weatherDate);
+        const newDate = new Date(wtx.weatherDate);
         newDate.setHours(newValue, 0, 0, 0);
         if (newDate.getTime() < new Date().getTime()) {
             return;
         }
-        ctx.setWeatherDate(newDate);
+        wtx.setWeatherDate(newDate);
     };
 
     const marks = Array.from({ length: 9 }, (_, index) => {
@@ -87,7 +87,7 @@ export default function TimeSlider() {
                 marks={availableMarks.length === 24 ? marks : availableMarks}
                 min={0}
                 max={23}
-                value={ctx.weatherDate.getHours()}
+                value={wtx.weatherDate.getHours()}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 valueLabelFormat={(value) => `${value}:00`}

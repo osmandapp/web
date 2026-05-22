@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider, useNavigate } from 'react-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
+import { WeatherContextProvider } from './context/WeatherContext';
 import { MapContextProvider } from './context/MapContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
@@ -207,9 +208,11 @@ const App = () => {
             <ResetAppContext.Provider value={resetApp}>
                 <LoginContextProvider key={'login-' + resetKey}>
                     <AppContextProvider key={'app-' + resetKey}>
-                        <MapContextProvider>
-                            <RouterProvider router={router} future={{ v7_startTransition: true }} />
-                        </MapContextProvider>
+                        <WeatherContextProvider>
+                            <MapContextProvider>
+                                <RouterProvider router={router} future={{ v7_startTransition: true }} />
+                            </MapContextProvider>
+                        </WeatherContextProvider>
                     </AppContextProvider>
                 </LoginContextProvider>
             </ResetAppContext.Provider>

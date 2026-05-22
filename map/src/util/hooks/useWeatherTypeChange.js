@@ -9,24 +9,24 @@ import {
 } from '../../manager/WeatherManager';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
-export const useWeatherTypeChange = ({ ctx, currentLoc, setDayForecast = null, setWeekForecast = null }) => {
+export const useWeatherTypeChange = ({ wtx, currentLoc, setDayForecast = null, setWeekForecast = null }) => {
     function getForecastData({ lat, lon }) {
         if (setDayForecast && setWeekForecast) {
             Promise.allSettled([
-                fetchDayForecast({ lat, lon, ctx, setDayForecast }),
-                fetchWeekForecast({ lat, lon, ctx, setWeekForecast }),
-            ]).then(() => ctx.setForecastLoading(false));
+                fetchDayForecast({ lat, lon, wtx, setDayForecast }),
+                fetchWeekForecast({ lat, lon, wtx, setWeekForecast }),
+            ]).then(() => wtx.setForecastLoading(false));
         } else {
             if (setDayForecast) {
-                fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();
+                fetchDayForecast({ lat, lon, wtx, setDayForecast }).then();
             } else if (setWeekForecast) {
-                fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
+                fetchWeekForecast({ lat, lon, wtx, setWeekForecast }).then(() => wtx.setForecastLoading(false));
             }
         }
     }
 
     useEffect(() => {
-        if (changedWeatherType(ctx.weatherType)) {
+        if (changedWeatherType(wtx.weatherType)) {
             if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
                 getForecastData({ lat: currentLoc.lat, lon: currentLoc.lng });
             } else {
@@ -36,10 +36,10 @@ export const useWeatherTypeChange = ({ ctx, currentLoc, setDayForecast = null, s
                     getForecastData({ lat: savedWeatherLoc.lat, lon: savedWeatherLoc.lon });
                 }
             }
-            const alignedStep = getAlignedStep({ direction: 0, ctx });
+            const alignedStep = getAlignedStep({ direction: 0, wtx });
             if (alignedStep) {
-                updateWeatherTime(ctx, alignedStep); // step current when need
+                updateWeatherTime(wtx, alignedStep); // step current when need
             }
         }
-    }, [ctx.weatherType]);
+    }, [wtx.weatherType]);
 };

@@ -1,7 +1,7 @@
 import { CircularProgress, ListItemText, Typography } from '@mui/material';
 import i18n from 'i18next';
 import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
 import { fmt } from '../../util/dateFmt';
@@ -12,12 +12,12 @@ export default function TopWeatherInfo({
     weatherLoc = null,
     useWeatherDate = false,
 }) {
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
 
     const { t } = useTranslation();
 
     function getSubInfo() {
-        return useWeatherDate ? fmt.wkLongTime(ctx.weatherDate) : t('web:weather_current');
+        return useWeatherDate ? fmt.wkLongTime(wtx.weatherDate) : t('web:weather_current');
     }
 
     function getLocation() {
@@ -53,7 +53,7 @@ export default function TopWeatherInfo({
                 </div>
                 {headerForecast && (
                     <>
-                        {ctx.forecastLoading ? (
+                        {wtx.forecastLoading ? (
                             <CircularProgress size={20} />
                         ) : (
                             <div style={{ display: 'flex' }}>

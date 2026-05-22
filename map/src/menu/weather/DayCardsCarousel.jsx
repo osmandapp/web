@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Box, ListItemButton, Typography } from '@mui/material';
 import isEmpty from 'lodash-es/isEmpty';
-import AppContext from '../../context/AppContext';
+import WeatherContext from '../../context/WeatherContext';
 import { getAlignedStep } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import { fmt } from '../../util/dateFmt';
 
 export default function DayCardsCarousel() {
-    const ctx = useContext(AppContext);
+    const wtx = useContext(WeatherContext);
 
     const [dayList, setDayList] = useState({});
     const [isDragging, setIsDragging] = useState(false);
@@ -75,7 +75,7 @@ export default function DayCardsCarousel() {
         let res = [];
         res.push(styles.dayItem);
 
-        if (currentDay.getDay() === ctx.weatherDate.getDay()) {
+        if (currentDay.getDay() === wtx.weatherDate.getDay()) {
             res.push(styles.selectedItemDay);
         }
 
@@ -103,11 +103,11 @@ export default function DayCardsCarousel() {
                             key={key}
                             className={setDayStyles(currentDay)}
                             onClick={() => {
-                                const alignedStep = getAlignedStep({ direction: 0, weatherDate: currentDay, ctx });
+                                const alignedStep = getAlignedStep({ direction: 0, weatherDate: currentDay, wtx });
                                 if (alignedStep) {
                                     currentDay = new Date(currentDay.getTime() + alignedStep * 60 * 60 * 1000);
                                 }
-                                ctx.setWeatherDate(currentDay);
+                                wtx.setWeatherDate(currentDay);
                             }}
                         >
                             {DayItem(value)}
