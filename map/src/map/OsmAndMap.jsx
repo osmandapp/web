@@ -217,6 +217,10 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 minZoom={1}
                 maxZoom={20}
                 zoomControl={false}
+                zoomAnimation={false}
+                fadeAnimation={false}
+                markerZoomAnimation={false}
+                inertia={false}
                 whenReady={whenReadyHandler}
                 contextmenu={true}
                 contextmenuItems={[]}
