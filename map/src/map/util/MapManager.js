@@ -3,6 +3,7 @@ import Utils from '../../util/Utils';
 import styles from '../map.module.css';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { getVisibleBboxInfo, panToVisibleCenter } from '../layers/MapStateLayer';
 
 export const TOOLTIP_MAX_LENGTH = 50;
 
@@ -108,10 +109,13 @@ export async function getIconFromMap(name) {
     return svgData;
 }
 
-export function panToIfNeeded(map, latlng) {
+export function panToIfNeeded({ map, latlng, ctx }) {
     if (!map || !latlng) return;
     const ll = L.latLng(latlng.lat, latlng.lng ?? latlng.lon);
-    if (!map.getBounds().contains(ll)) map.panTo(ll);
+    const visibleBounds = getVisibleBboxInfo(ctx, map)?.bounds;
+    if (!visibleBounds?.contains(ll)) {
+        panToVisibleCenter(map, latlng, Number.parseInt(ctx.infoBlockWidth, 10));
+    }
 }
 
 export function createTooltip(content, latlng, options = {}) {

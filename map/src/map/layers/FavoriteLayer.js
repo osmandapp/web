@@ -417,7 +417,7 @@ const FavoriteLayer = () => {
         const current = ctx.selectedGpxFile?.markerCurrent;
         if (!current?.name) return;
 
-        panToIfNeeded(map, current.latlng);
+        panToIfNeeded({ map, latlng: current.latlng, ctx });
     }, [ctx.selectedGpxFile?.id]);
 
     const onClick = useCallback(

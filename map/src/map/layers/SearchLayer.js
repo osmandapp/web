@@ -129,7 +129,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToCoords) {
-            panToIfNeeded(map, { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon });
+            panToIfNeeded({ map, latlng: { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon }, ctx });
             ctx.setZoomToCoords(null);
         }
     }, [ctx.zoomToCoords]);
@@ -212,7 +212,7 @@ export default function SearchLayer() {
     useEffect(() => {
         if (ctx.moveToMapObj) {
             const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
-            panToIfNeeded(map, { lat, lng });
+            panToIfNeeded({ map, latlng: { lat, lng }, ctx });
         }
     }, [ctx.moveToMapObj]);
 
