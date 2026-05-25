@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OsmAnd Birthday Quiz</title>
+
+<style>
+:root {
+    --osmand-orange: #f47c20;
+    --osmand-orange-hover: #e06b12;
+    --osmand-orange-bg: #fff5ee;
+    --bg-main: #f8f9fa;
+    --text-dark: #1c1c1e;
+    --text-muted: #636366;
+    --border-color: #e5e5ea;
+    --correct-green: #34c759;
+    --wrong-red: #ff3b30;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container{
+    max-width: 720px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+}
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* Стильний тимчасовий кружечок для маскота (за замовчуванням Телескоп) */
+.mascot-box {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--osmand-orange-bg);
+    border: 3px solid var(--osmand-orange);
+    border-radius: 50%;
+    font-size: 42px;
+    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+    animation: bounce 2.5s infinite ease-in-out;
+}
+
+.header-text {
+    flex-grow: 1;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.subtitle{
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+.progress-wrapper{
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 0;
+    display: none; /* Ховаємо на старті, показуємо під час тесту */
+}
+
+.progress{
+    height: 100%;
+    width: 0%;
+    background: var(--osmand-orange);
+    border-radius: 10px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-number{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--osmand-orange);
+    margin-bottom: 12px;
+}
+
+.question-title{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.question-hint{
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ОПТИМАЛЬНЕ НАЛАШТУВАННЯ ДЛЯ ВЕРТИКАЛЬНИХ СКРІНШОТІВ */
+.hint-image-wrapper {
+    width: 100%;
+    height: 280px;
+    background: #1c1c1e; /* Темний фон гармонійно зливається з нічною темою мапи */
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hint-image-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.option{
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.4;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.option:hover{
+    border-color: var(--osmand-orange);
+    background: var(--osmand-orange-bg);
+    transform: translateY(-1px);
+}
+
+.option.selected{
+    border-color: var(--osmand-orange);
+    background: var(--osmand-orange-bg);
+    font-weight: 500;
+    box-shadow: inset 0 0 0 1px var(--osmand-orange);
+}
+
+button.action-btn {
+    background: var(--osmand-orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+}
+
+button.action-btn:hover{
+    background: var(--osmand-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(244, 124, 32, 0.25);
+}
+
+.feedback{
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 14px;
+    line-height: 1.5;
+    font-size: 15px;
+    animation: slideUp 0.3s ease;
+}
+
+.feedback strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.correct{
+    background: #e6f9ed;
+    color: #147029;
+    border: 1px solid #bbf2c7;
+}
+
+.wrong{
+    background: #fdf2f2;
+    color: #b42318;
+    border: 1px solid #fecdca;
+}
+
+.match-row{
+    margin-bottom: 14px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.match-row strong{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+select{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--osmand-orange);
+}
+
+.sequence-item{
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.sequence-item select{
+    width: 80px;
+    padding: 8px;
+}
+
+/* ЕКРАНИ СТАРТУ ТА ФІНІШУ */
+.start-screen, .result-screen {
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.start-screen .mascot-box, .result-screen .mascot-box {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px auto;
+}
+
+.start-screen .mascot-box {
+    background: var(--osmand-orange-bg);
+    border-color: var(--osmand-orange);
+}
+
+.result-screen .mascot-box {
+    background: #e6f9ed;
+    border-color: var(--correct-green);
+}
+
+.start-description {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px auto 28px auto;
+    max-width: 500px;
+}
+
+.deadline-box {
+    max-width: 500px;
+    margin: 0 auto 24px auto;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: var(--osmand-orange-bg);
+    border: 1px solid rgba(244, 124, 32, 0.25);
+    color: var(--text-dark);
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.deadline-box strong {
+    color: var(--osmand-orange);
+}
+
+.email-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.email-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.email-form input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-form input[type="email"]:focus {
+    border-color: var(--osmand-orange);
+    box-shadow: 0 0 0 3px rgba(244, 124, 32, 0.12);
+}
+
+.email-note {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.form-error {
+    display: none;
+    margin-top: 10px;
+    color: #b42318;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.reward-box {
+    padding: 20px;
+    border-radius: 14px;
+    margin: 20px 0 24px 0;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.reward-success {
+    background: #e6f9ed;
+    color: #147029;
+    border: 1px solid #bbf2c7;
+}
+
+.reward-try-again {
+    background: var(--osmand-orange-bg);
+    color: #9a4a00;
+    border: 1px solid rgba(244, 124, 32, 0.25);
+}
+
+.score{
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--osmand-orange);
+    margin: 16px 0;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media(max-width:700px){
+    .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
+    .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
+    h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="quiz-header" id="quizHeader" style="display: none;">
+        <div class="mascot-box" id="mascotContainer">🎁</div>
+        <div class="header-text">
+            <h1>OsmAnd's Birthday Quiz</h1>
+            <p class="subtitle">Test your knowledge of OsmAnd, open-source navigation, and key app features.</p>
+        </div>
+    </div>
+
+    <div class="progress-wrapper" id="progressWrapper">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="start-screen" id="startScreen">
+        <div class="mascot-box">🎁</div>
+        <h1>Ready to celebrate OsmAnd?</h1>
+        <p class="start-description">
+            Take this short birthday quiz and test your knowledge of OsmAnd’s open-source roots, offline navigation, map data, Cloud sync, terrain tools, Web features, and customization options.
+            Score 90% or higher to receive one month of OsmAnd Pro activated to your email.
+        </p>
+        <div class="deadline-box">
+            <div><strong>Quiz Deadline:</strong> Complete the quiz by June 6th.</div>
+            <div><strong>Gift Distribution:</strong> The Pro subscription will be active until June 10th.</div>
+        </div>
+        <div class="email-form">
+            <label for="userEmail">Email for OsmAnd Pro activation</label>
+            <input type="email" id="userEmail" placeholder="name@example.com" autocomplete="email" required>
+            <p class="email-note">We will use this email to register your quiz result in our Google Sheet and activate OsmAnd Pro monthly if you score 90% or higher.</p>
+            <div class="form-error" id="emailError">Please enter a valid email address before starting the quiz.</div>
+        </div>
+        <button class="action-btn" onclick="startQuiz()">Start quiz</button>
+    </div>
+
+    <div id="quiz" style="display: none;"></div>
+
+    <div class="result-screen" id="resultScreen" style="display: none;">
+        <div class="mascot-box" id="mascotResultContainer">🎁</div>
+        <h1>Quiz complete</h1>
+        <div class="score" id="score"></div>
+        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;">Great job exploring OsmAnd’s features and history!</p>
+        <button class="action-btn" onclick="restartQuiz()">Restart quiz</button>
+    </div>
+
+</div>
+
+<script>
+const questions = [
+    {
+        type: "single",
+        title: "How many years of open-source navigation is OsmAnd officially celebrating on June 3rd?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "10 years",
+            "14 years",
+            "16 years",
+            "20 years"
+        ],
+        correct: [2],
+        feedback: "OsmAnd is celebrating 16 years of open-source navigation on June 3rd."
+    },
+    {
+        type: "single",
+        title: "What collaborative, open-source project serves as the foundational map database for OsmAnd?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Google Maps",
+            "OpenStreetMap (OSM)",
+            "HERE Technologies",
+            "Apple Maps"
+        ],
+        correct: [1],
+        feedback: "OsmAnd is based on OpenStreetMap data, which is created and maintained by a global community of contributors."
+    },
+    {
+        type: "single",
+        title: "Which of the following aligns with OsmAnd’s long-standing business principles regarding user data?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Monetizing via targeted third-party ad banners",
+            "Zero third-party data sharing and completely ad-free application experiences",
+            "Mandatory account creation to use offline maps",
+            "Selling generalized regional user tracking telemetry"
+        ],
+        correct: [1],
+        feedback: "OsmAnd is built around privacy-focused principles, including no third-party data sharing and no advertising experience inside the app."
+    },
+    {
+        type: "single",
+        title: "When you record, import, or follow a custom hiking trail or route path in OsmAnd, what standard file format is used?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            ".KML",
+            ".GPX",
+            ".JSON",
+            ".SHP",
+            ".KMX"
+        ],
+        correct: [1],
+        feedback: "GPX is the standard format used in OsmAnd for tracks, routes, and recorded trips."
+    },
+    {
+        type: "single",
+        title: "What is the name of OsmAnd's tier that unlocks global satellite imagery, hourly live map updates, cross-platform cloud sync, and weather forecasts?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "OsmAnd Premium",
+            "OsmAnd Plus",
+            "OsmAnd Pro",
+            "OsmAnd Gold",
+            "OsmAnd Brilliant",
+            "OsmAnd Victor"
+        ],
+        correct: [2],
+        feedback: "OsmAnd Pro is the tier that includes advanced features such as Cloud sync, weather, satellite imagery, and Live Updates."
+    },
+    {
+        type: "single",
+        title: "Which OsmAnd feature allows you to change the entire visual style of the map instantly — switching between optimized layouts for Car driving, Cycling, Hiking, or Marine navigation?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Map Layers",
+            "App Profiles (Configure Map)",
+            "Plugin Manager",
+            "Quick Action Menu"
+        ],
+        correct: [1],
+        feedback: "App profiles let you use different map, navigation, and interface configurations for different activities."
+    },
+    {
+        type: "single",
+        title: "When preparing for a long vacation, what feature helps you group, filter, and organise your saved POIs, favorites, and markers into custom categories?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Navigation History",
+            "Waypoint Aligner",
+            "Smart Folders",
+            "Route Planner"
+        ],
+        correct: [2],
+        feedback: "Smart Folders help organise saved items into structured categories for easier planning and management."
+    },
+    {
+        type: "single",
+        title: "To synchronise your custom tracks, settings, and favorites across multiple devices, such as Android and iOS, which menu section must you navigate to?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Settings → Purchases → Restore Purchases",
+            "Menu → Settings → OsmAnd Cloud",
+            "Settings → App Profile → External Storage",
+            "Menu → Plugins → OpenStreetMap Editing"
+        ],
+        correct: [1],
+        feedback: "OsmAnd Cloud is used to synchronise supported personal data across devices."
+    },
+    {
+        type: "single",
+        title: "If you are hiking up a mountain and want to visually identify terrain elevation transitions and steep slopes directly on your map view, which two map layout features should you turn on?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Public Transport lines and Street names",
+            "Contour lines and Hillshading",
+            "POIs and Smart Folders",
+            "Live Weather Overlays and Vector Polygons"
+        ],
+        correct: [1],
+        feedback: "Contour lines and hillshading help visualise terrain, elevation changes, and slope patterns on the map."
+    },
+    {
+        type: "single",
+        title: "OsmAnd launched a platform that lets users manage paths, test public transit lines, and organise smart folders via a computer browser. What major version update did this web application achieve when its major UI redesign rolled out?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "OsmAnd Web v0.5",
+            "OsmAnd Web v1.03",
+            "OsmAnd Web v2.10",
+            "OsmAnd Web Pro v4.0"
+        ],
+        correct: [1],
+        feedback: "The quiz points to OsmAnd Web v1.03 as the major update connected with the redesigned web interface."
+    },
+    {
+        type: "single",
+        title: "What massive public transit feature was introduced alongside the sidebar visual redesign in the OsmAnd Web engine updates?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Direct commercial flight route pricing",
+            "Public Transport support, displaying lines, stops, and multi-stop bus/train navigation UI",
+            "Real-time automated electric vehicle charging reservations",
+            "Live satellite traffic congestion metrics"
+        ],
+        correct: [1],
+        feedback: "Public Transport support adds lines, stops, and transit navigation-related interface elements to OsmAnd Web."
+    },
+    {
+        type: "single",
+        title: "How frequently can maps be refreshed globally for users who activate the Live Updates feature?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Once a month",
+            "Weekly",
+            "Hourly",
+            "Daily"
+        ],
+        correct: [2],
+        feedback: "Live Updates can refresh map data hourly for supported users."
+    },
+    {
+        type: "single",
+        title: "When customising the map appearance, which option allows you to explicitly toggle the visibility of specific terrain details, such as showing or hiding forest types, orchard layouts, or custom surface colors?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Map Orientation",
+            "Route Planner Mode",
+            "Map Style (Rendering Details)",
+            "Overlay Map Layer"
+        ],
+        correct: [2],
+        feedback: "Rendering details let users fine-tune which map elements and terrain details are displayed."
+    },
+    {
+        type: "single",
+        title: "Which customisable feature allows you to add a floating action button directly onto the map screen to trigger fast, one-tap actions like toggling specific map layers, starting a GPX track recording, or dropping a map marker?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Configure Profile",
+            "Plugin Manager",
+            "Quick Action Menu",
+            "Smart Folders"
+        ],
+        correct: [2],
+        feedback: "The Quick Action Menu provides fast access to selected actions directly from the map screen."
+    },
+    {
+        type: "single",
+        title: "Because OsmAnd is built from the ground up as a highly flexible, open-source project, what unique advantage does it offer power-users regarding their mapping data?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "It tracks user habits to suggest tailored commercial venues.",
+            "It provides absolute offline reliability and full localised control over raw spatial routing files and personal trip histories.",
+            "It automatically syncs device contacts to public navigation leaderboards.",
+            "It requires constant remote verification from third-party server nodes."
+        ],
+        correct: [1],
+        feedback: "OsmAnd gives users strong offline reliability and local control over maps, tracks, routes, and personal trip data."
+    },
+    {
+        type: "single",
+        title: "What type of overlay function can you activate to see live temperature changes, wind directions, and rain fronts moving across your map screen?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "Historical Map Style",
+            "Public Transport Layer",
+            "Weather Overlay",
+            "Topographic Contour Line"
+        ],
+        correct: [2],
+        feedback: "The Weather Overlay displays weather-related layers such as temperature, wind, and precipitation on the map."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let registeredEmail = "";
+const rewardThreshold = 0.9;
+
+// Replace this value with your deployed Google Apps Script Web App URL.
+// The script should be connected to this Google Sheet:
+// https://docs.google.com/spreadsheets/d/1t1Zlx4mELyBCdz1S9YSBEup1Wa7dAfR4MgJ7RqJdxDw/edit
+const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxaHYNkYymrFD94LOdvT1y5unW8YdOTgWnamZskh0L3fPKcBZVY8qW-1VczOHaE4UiB3A/exec";
+
+const quiz = document.getElementById("quiz");
+const startScreen = document.getElementById("startScreen");
+const quizHeader = document.getElementById("quizHeader");
+const progressWrapper = document.getElementById("progressWrapper");
+const mascotContainer = document.getElementById("mascotContainer");
+const mascotResultContainer = document.getElementById("mascotResultContainer");
+
+function isValidEmail(email) {
+    const atIndex = email.indexOf("@");
+    const dotIndex = email.lastIndexOf(".");
+    return atIndex > 0 && dotIndex > atIndex + 1 && dotIndex < email.length - 1;
+}
+
+function checkEmailAlreadyRegistered(email) {
+    return new Promise((resolve) => {
+        if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL.includes("PASTE_YOUR")) {
+            resolve({ ok: false, exists: false, localOnly: true });
+            return;
+        }
+
+        const callbackName = "osmandQuizEmailCheck_" + Date.now() + "_" + Math.floor(Math.random() * 100000);
+        const script = document.createElement("script");
+        const timeout = setTimeout(() => {
+            cleanup();
+            resolve({ ok: false, exists: false, error: "timeout" });
+        }, 10000);
+
+        function cleanup() {
+            clearTimeout(timeout);
+            delete window[callbackName];
+            if (script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
+        }
+
+        window[callbackName] = function(response) {
+            cleanup();
+            resolve(response || { ok: false, exists: false });
+        };
+
+        script.onerror = function() {
+            cleanup();
+            resolve({ ok: false, exists: false, error: "network" });
+        };
+
+        script.src = GOOGLE_SHEETS_WEB_APP_URL
+            + "?action=checkEmail"
+            + "&email=" + encodeURIComponent(email)
+            + "&callback=" + encodeURIComponent(callbackName);
+
+        document.body.appendChild(script);
+    });
+}
+
+async function saveQuizRegistration(result) {
+    const registrations = JSON.parse(localStorage.getItem("osmandBirthdayQuizRegistrations") || "[]");
+    registrations.push(result);
+    localStorage.setItem("osmandBirthdayQuizRegistrations", JSON.stringify(registrations));
+
+    if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL.includes("PASTE_YOUR")) {
+        console.warn("Google Sheets Web App URL is not configured yet. Result saved locally only.", result);
+        return { ok: false, localOnly: true };
+    }
+
+    try {
+        await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(result)
+        });
+        return { ok: true };
+    } catch (error) {
+        console.error("Could not submit quiz result to Google Sheets:", error);
+        return { ok: false, error };
+    }
+}
+
+async function startQuiz() {
+    const emailInput = document.getElementById("userEmail");
+    const emailError = document.getElementById("emailError");
+    const startButton = document.querySelector("#startScreen button.action-btn");
+    const email = emailInput.value.trim().toLowerCase();
+
+    if(!isValidEmail(email)) {
+        emailError.textContent = "Please enter a valid email address before starting the quiz.";
+        emailError.style.display = "block";
+        emailInput.focus();
+        return;
+    }
+
+    startButton.disabled = true;
+    startButton.textContent = "Checking email...";
+    emailError.style.display = "none";
+
+    const emailCheck = await checkEmailAlreadyRegistered(email);
+
+    startButton.disabled = false;
+    startButton.textContent = "Start quiz";
+
+    if(!emailCheck.ok) {
+        emailError.textContent = "We could not verify this email. Please allow network access and try again.";
+        emailError.style.display = "block";
+        emailInput.focus();
+        return;
+    }
+
+    if(emailCheck.exists) {
+        emailError.textContent = "This email has already been used for this quiz. Each email can participate only once.";
+        emailError.style.display = "block";
+        emailInput.focus();
+        return;
+    }
+
+    registeredEmail = email;
+    emailError.style.display = "none";
+    startScreen.style.display = "none";
+    quizHeader.style.display = "flex";
+    progressWrapper.style.display = "block";
+    quiz.style.display = "block";
+    renderQuestion();
+    sendIframeHeight();
+}
+
+function updateProgress(){
+    const percent = (currentQuestion / questions.length) * 100;
+    document.getElementById("progress").style.width = percent + "%";
+}
+
+function renderQuestion(){
+    updateProgress();
+    
+    // Початкова емоція — тепер це наш красивий Телескоп 
+    mascotContainer.innerHTML = "🎁";
+    mascotContainer.style.borderColor = "var(--osmand-orange)";
+    mascotContainer.style.background = "var(--osmand-orange-bg)";
+    
+    const q = questions[currentQuestion];
+
+    let html = `
+    <div class="question">
+    <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+    <div class="question-title">${q.title}</div>
+    <div class="question-hint">${q.hint}</div>
+    `;
+
+    if(q.questionImg && q.questionImg !== "") {
+        html += `
+        <div class="hint-image-wrapper">
+            <img src="${q.questionImg}" alt="Question Hint Interface">
+        </div>
+        `;
+    }
+
+    if(q.type === "single" || q.type === "multi"){
+        q.options.forEach((option,index)=>{
+            html += `
+            <div class="option" data-index="${index}">
+            ${option}
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitChoice()">Submit answer</button>`;
+    }
+
+    if(q.type === "matching"){
+        const rightSide = [...q.pairs.map(p=>p[1])].sort(()=>Math.random()-0.5);
+        q.pairs.forEach((pair)=>{
+            html += `
+            <div class="match-row">
+            <strong>${pair[0]}</strong>
+            <select data-answer="${pair[1]}">
+            <option value="">Select match...</option>
+            ${rightSide.map(item=>`<option value="${item}">${item}</option>`).join("")}
+            </select>
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitMatching()">Submit answer</button>`;
+    }
+
+    if(q.type === "sequence"){
+        q.steps.forEach((step,index)=>{
+            html += `
+            <div class="sequence-item">
+            <select class="seq-select" data-index="${index}">
+            <option value="">No.</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+            <div>${step}</div>
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitSequence()">Submit answer</button>`;
+    }
+
+    html += `<div id="feedback"></div>`;
+    quiz.innerHTML = html;
+    attachOptionEvents(q.type);
+    sendIframeHeight();
+}
+
+function attachOptionEvents(type){
+    const options = document.querySelectorAll(".option");
+    options.forEach(option=>{
+        option.addEventListener("click",()=>{
+            if(type === "single"){
+                options.forEach(o=>o.classList.remove("selected"));
+            }
+            option.classList.toggle("selected");
+        });
+    });
+}
+
+function arraysEqual(a,b){
+    return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+}
+
+function submitChoice(){
+    const q = questions[currentQuestion];
+    const selected = [...document.querySelectorAll(".option.selected")].map(el=>Number(el.dataset.index));
+    if (selected.length === 0) return;
+    const correct = arraysEqual(selected,q.correct);
+    if(correct) score++;
+    showFeedback(correct,q.feedback);
+}
+
+function submitMatching(){
+    const selects = document.querySelectorAll("select");
+    let anyEmpty = false;
+    let correct = true;
+    selects.forEach(select=>{
+        if(!select.value) anyEmpty = true;
+        if(select.value !== select.dataset.answer) correct = false;
+    });
+    if(anyEmpty) return;
+    if(correct) score++;
+    showFeedback(correct,questions[currentQuestion].feedback);
+}
+
+function submitSequence(){
+    const selects = document.querySelectorAll(".seq-select");
+    const q = questions[currentQuestion];
+    let anyEmpty = false;
+    let correct = true;
+    
+    selects.forEach(select => {
+        if(!select.value) anyEmpty = true;
+        const idx = Number(select.dataset.index);
+        if(select.value !== q.correctSequence[idx]) {
+            correct = false;
+        }
+    });
+    
+    if(anyEmpty) return;
+    if(correct) score++;
+    showFeedback(correct,q.feedback);
+}
+
+function showFeedback(correct,text){
+    const feedback = document.getElementById("feedback");
+    feedback.className = correct ? "feedback correct" : "feedback wrong";
+    const isLastQuestion = currentQuestion === questions.length - 1;
+
+    // Інтерактивна зміна емоцій: телескоп перетворюється на оцінку
+    if(correct) {
+        mascotContainer.innerHTML = "🎁";
+        mascotContainer.style.borderColor = "var(--correct-green)";
+        mascotContainer.style.background = "#e6f9ed";
+    } else {
+        mascotContainer.innerHTML = "🎁";
+        mascotContainer.style.borderColor = "var(--wrong-red)";
+        mascotContainer.style.background = "#fdf2f2";
+    }
+
+    feedback.innerHTML = `
+    <strong>${correct ? "✓ Correct!" : "✕ Incorrect"}</strong>
+    ${text}
+    <button class="action-btn" style="margin-top:20px; background: ${correct ? '#34c759' : '#ff3b30'}; box-shadow: none;" onclick="nextQuestion()">
+        ${isLastQuestion ? "View results" : "Next question"}
+    </button>
+    `;
+    
+    const mainBtn = document.querySelector(".question > button.action-btn");
+    if(mainBtn) mainBtn.style.display = 'none';
+    sendIframeHeight();
+}
+
+async function nextQuestion(){
+    currentQuestion++;
+    if(currentQuestion >= questions.length){
+        const percentScore = score / questions.length;
+        const percentageText = Math.round(percentScore * 100);
+        const isEligible = percentScore >= rewardThreshold;
+
+        const saveStatus = await saveQuizRegistration({
+            email: registeredEmail,
+            score: score,
+            total: questions.length,
+            percentage: percentageText,
+            eligibleForOsmAndProMonthly: isEligible,
+            completedAt: new Date().toISOString(),
+            source: "OsmAnd Birthday Quiz"
+        });
+
+        document.getElementById("quizHeader").style.display = "none";
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("resultScreen").style.display = "block";
+        document.getElementById("progress").style.width = "100%";
+        document.getElementById("score").innerText = `${score} / ${questions.length}`;
+
+        const resultText = document.querySelector("#resultScreen p");
+        resultText.outerHTML = isEligible ? `
+            <div class="reward-box reward-success">
+                <strong>Congratulations!</strong><br>
+                You scored ${percentageText}% and qualify for one month of OsmAnd Pro. We will activate it for: <strong>${registeredEmail}</strong>.<br>
+                <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+            </div>
+        ` : `
+            <div class="reward-box reward-try-again">
+                You scored ${percentageText}%. A score of 90% or higher is required to receive one month of OsmAnd Pro.<br>
+                <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+            </div>
+        `;
+        sendIframeHeight();
+        return;
+    }
+    renderQuestion();
+}
+
+function restartQuiz(){
+    currentQuestion = 0;
+    score = 0;
+    registeredEmail = "";
+    document.getElementById("quizHeader").style.display = "none";
+    document.getElementById("progressWrapper").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("resultScreen").style.display = "none";
+    document.getElementById("score").innerText = "";
+    document.getElementById("userEmail").value = "";
+
+    const existingReward = document.querySelector("#resultScreen .reward-box");
+    if(existingReward) {
+        existingReward.outerHTML = '<p style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;">Great job exploring OsmAnd’s features and history!</p>';
+    }
+
+    startScreen.style.display = "block";
+    sendIframeHeight();
+}
+
+function sendIframeHeight() {
+    const height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+    );
+
+    window.parent.postMessage(
+        {
+            type: "osmandQuizIframeHeight",
+            height: height + 40
+        },
+        "*"
+    );
+}
+
+window.addEventListener("load", sendIframeHeight);
+window.addEventListener("resize", sendIframeHeight);
+
+const iframeResizeObserver = new ResizeObserver(() => {
+    sendIframeHeight();
+});
+
+iframeResizeObserver.observe(document.body);
+
+setTimeout(sendIframeHeight, 300);
+setTimeout(sendIframeHeight, 1000);
+setTimeout(sendIframeHeight, 2000);
+</script>
+
+</body>
+</html>
