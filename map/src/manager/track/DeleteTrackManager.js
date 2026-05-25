@@ -9,7 +9,7 @@ import { hideAllVisTracks, showAllVisTracks, updateVisibleCache } from '../../me
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
-import { SHARE_TYPE } from '../../menu/share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
 
 export async function deleteTrack({ file, ctx, ltx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ltx.loginUser) {
@@ -97,6 +97,7 @@ export async function deleteTrackFolder(folder, ctx) {
         params: {
             folderName: folder.fullName,
             type: 'GPX',
+            smart: folder.type === SMART_TYPE,
         },
         dataOnErrors: true,
     });

@@ -9,6 +9,8 @@ import { DEFAULT_GROUP_NAME, findGroupByName, GPX_FILE_EXT, prepareName } from '
 import { renameFolder, renameLocalTrack, renameTrack } from '../../manager/track/SaveTrackManager';
 import { sanitizedFileName } from '../../util/Utils';
 import { useTranslation } from 'react-i18next';
+import { SMART_TYPE } from '../../menu/share/shareConstants';
+import { filterSmartFolders } from '../../manager/track/TracksManager';
 
 export default function RenameDialog({
     setOpenDialog,
@@ -196,6 +198,12 @@ function getParentFolder(folder, ctx) {
 
 function validateFolderName(name, group, ctx, t) {
     if (!name?.trim()) return t('web:rename_empty_folder_name');
+    if (group.type === SMART_TYPE) {
+        if (filterSmartFolders(ctx.tracksGroups).some((f) => f.name === name)) {
+            return t('web:rename_folder_already_exists');
+        }
+        return '';
+    }
     const parent = getParentFolder(group, ctx);
     if (parent?.subfolders?.some((f) => f.name === name)) return t('web:rename_folder_already_exists');
     return '';

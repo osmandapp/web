@@ -27,6 +27,7 @@ import Utils, { sanitizedFileName } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
+import { SMART_TYPE } from '../../menu/share/shareConstants';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
@@ -336,6 +337,7 @@ export async function renameFolder(folder, newName, ctx) {
             folderName: folder.fullName,
             newFolderName: newFolderName,
             type: 'GPX',
+            smart: folder.type === SMART_TYPE,
         },
         dataOnErrors: true,
     });

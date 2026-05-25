@@ -111,42 +111,40 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    {group.type !== SMART_TYPE && (
-                        <>
-                            <Divider className={styles.dividerActions} />
-                            <MenuItem
-                                id="se-folder-actions-rename"
-                                className={styles.action}
-                                disabled={garminLinked}
-                                onClick={() => setOpenRenameDialog(true)}
-                            >
-                                <ListItemIcon className={styles.iconAction}>
-                                    <RenameIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography className={styles.actionName} noWrap>
-                                        {t('shared_string_rename')}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                            <Divider className={styles.dividerActions} />
-                            <MenuItem
-                                id="se-folder-actions-delete"
-                                className={styles.action}
-                                disabled={garminLinked}
-                                onClick={() => setOpenDeleteDialog(true)}
-                            >
-                                <ListItemIcon className={styles.iconAction}>
-                                    <DeleteIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography className={styles.actionName} noWrap>
-                                        {t('shared_string_delete')}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                        </>
-                    )}
+                    <>
+                        <Divider className={styles.dividerActions} />
+                        <MenuItem
+                            id="se-folder-actions-rename"
+                            className={styles.action}
+                            disabled={garminLinked}
+                            onClick={() => setOpenRenameDialog(true)}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <RenameIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography className={styles.actionName} noWrap>
+                                    {t('shared_string_rename')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                        <Divider className={styles.dividerActions} />
+                        <MenuItem
+                            id="se-folder-actions-delete"
+                            className={styles.action}
+                            disabled={garminLinked}
+                            onClick={() => setOpenDeleteDialog(true)}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <DeleteIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography className={styles.actionName} noWrap>
+                                    {t('shared_string_delete')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    </>
                 </Paper>
             </Box>
             {newCollection.length > 0 && (
