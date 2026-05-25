@@ -24,7 +24,6 @@
 
 body{
     margin: 0;
-    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg-main);
     color: var(--text-dark);
@@ -422,17 +421,20 @@ select:focus {
         <div class="mascot-box">🎁</div>
         <h1>Ready to celebrate OsmAnd?</h1>
         <p class="start-description">
-            Take this short birthday quiz and test your knowledge of OsmAnd’s open-source roots, offline navigation, map data, Cloud sync, terrain tools, Web features, and customization options.
-            Score 90% or higher to receive one month of OsmAnd Pro activated to your email.
+            Take this short birthday quiz and claim your OsmAnd Pro gift based on your result.
         </p>
         <div class="deadline-box">
+            <div><strong>Rewards:</strong></div>
+            <div>85% or higher — 3 months of OsmAnd Pro</div>
+            <div>55%–84% — 1 month of OsmAnd Pro</div>
+            <br>
             <div><strong>Quiz Deadline:</strong> Complete the quiz by June 6th.</div>
             <div><strong>Gift Distribution:</strong> The Pro subscription will be active until June 10th.</div>
         </div>
         <div class="email-form">
             <label for="userEmail">Email for OsmAnd Pro activation</label>
             <input type="email" id="userEmail" placeholder="name@example.com" autocomplete="email" required>
-            <p class="email-note">We will use this email to register your quiz result in our Google Sheet and activate OsmAnd Pro monthly if you score 90% or higher.</p>
+            <p class="email-note">We will use this email to register your quiz result in our Google Sheet and activate OsmAnd Pro if your quiz score qualifies for a reward.</p>
             <div class="form-error" id="emailError">Please enter a valid email address before starting the quiz.</div>
         </div>
         <button class="action-btn" onclick="startQuiz()">Start quiz</button>
@@ -684,7 +686,8 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let registeredEmail = "";
-const rewardThreshold = 0.9;
+const rewardThreeMonthsThreshold = 0.85;
+const rewardOneMonthThreshold = 0.55;
 
 // Replace this value with your deployed Google Apps Script Web App URL.
 // The script should be connected to this Google Sheet:
@@ -814,7 +817,6 @@ async function startQuiz() {
     progressWrapper.style.display = "block";
     quiz.style.display = "block";
     renderQuestion();
-    sendIframeHeight();
 }
 
 function updateProgress(){
@@ -896,7 +898,6 @@ function renderQuestion(){
     html += `<div id="feedback"></div>`;
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
-    sendIframeHeight();
 }
 
 function attachOptionEvents(type){
@@ -982,7 +983,6 @@ function showFeedback(correct,text){
     
     const mainBtn = document.querySelector(".question > button.action-btn");
     if(mainBtn) mainBtn.style.display = 'none';
-    sendIframeHeight();
 }
 
 async function nextQuestion(){
@@ -990,14 +990,28 @@ async function nextQuestion(){
     if(currentQuestion >= questions.length){
         const percentScore = score / questions.length;
         const percentageText = Math.round(percentScore * 100);
-        const isEligible = percentScore >= rewardThreshold;
+
+        let rewardMonths = 0;
+        let rewardLabel = "No reward";
+
+        if (percentScore >= rewardThreeMonthsThreshold) {
+            rewardMonths = 3;
+            rewardLabel = "3 months of OsmAnd Pro";
+        } else if (percentScore >= rewardOneMonthThreshold) {
+            rewardMonths = 1;
+            rewardLabel = "1 month of OsmAnd Pro";
+        }
+
+        const isEligible = rewardMonths > 0;
 
         const saveStatus = await saveQuizRegistration({
             email: registeredEmail,
             score: score,
             total: questions.length,
             percentage: percentageText,
-            eligibleForOsmAndProMonthly: isEligible,
+            rewardMonths: rewardMonths,
+            rewardLabel: rewardLabel,
+            eligibleForOsmAndPro: isEligible,
             completedAt: new Date().toISOString(),
             source: "OsmAnd Birthday Quiz"
         });
@@ -1009,19 +1023,31 @@ async function nextQuestion(){
         document.getElementById("score").innerText = `${score} / ${questions.length}`;
 
         const resultText = document.querySelector("#resultScreen p");
-        resultText.outerHTML = isEligible ? `
-            <div class="reward-box reward-success">
-                <strong>Congratulations!</strong><br>
-                You scored ${percentageText}% and qualify for one month of OsmAnd Pro. We will activate it for: <strong>${registeredEmail}</strong>.<br>
-                <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
-            </div>
-        ` : `
-            <div class="reward-box reward-try-again">
-                You scored ${percentageText}%. A score of 90% or higher is required to receive one month of OsmAnd Pro.<br>
-                <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
-            </div>
-        `;
-        sendIframeHeight();
+
+        if (rewardMonths === 3) {
+            resultText.outerHTML = `
+                <div class="reward-box reward-success">
+                    <strong>Congratulations!</strong><br>
+                    You scored ${percentageText}% and qualify for <strong>3 months of OsmAnd Pro</strong>. We will activate it for: <strong>${registeredEmail}</strong>.<br>
+                    <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+                </div>
+            `;
+        } else if (rewardMonths === 1) {
+            resultText.outerHTML = `
+                <div class="reward-box reward-success">
+                    <strong>Congratulations!</strong><br>
+                    You scored ${percentageText}% and qualify for <strong>1 month of OsmAnd Pro</strong>. We will activate it for: <strong>${registeredEmail}</strong>.<br>
+                    <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+                </div>
+            `;
+        } else {
+            resultText.outerHTML = `
+                <div class="reward-box reward-try-again">
+                    You scored ${percentageText}%. A score of 55% or higher is required to receive an OsmAnd Pro reward.<br>
+                    <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+                </div>
+            `;
+        }
         return;
     }
     renderQuestion();
@@ -1044,38 +1070,7 @@ function restartQuiz(){
     }
 
     startScreen.style.display = "block";
-    sendIframeHeight();
 }
-
-function sendIframeHeight() {
-    const height = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight
-    );
-
-    window.parent.postMessage(
-        {
-            type: "osmandQuizIframeHeight",
-            height: height + 40
-        },
-        "*"
-    );
-}
-
-window.addEventListener("load", sendIframeHeight);
-window.addEventListener("resize", sendIframeHeight);
-
-const iframeResizeObserver = new ResizeObserver(() => {
-    sendIframeHeight();
-});
-
-iframeResizeObserver.observe(document.body);
-
-setTimeout(sendIframeHeight, 300);
-setTimeout(sendIframeHeight, 1000);
-setTimeout(sendIframeHeight, 2000);
 </script>
 
 </body>
