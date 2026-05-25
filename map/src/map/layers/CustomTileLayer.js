@@ -9,7 +9,7 @@ import { apiGet } from '../../util/HttpApi';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
 import styles from '../map.module.css';
-import { isMvtDemoTileURL } from '../mvt/MvtDemoConfig';
+import { isMvtTileURL } from '../mvt/MvtDemoConfig';
 
 export const INTERACTIVE_LAYER = 'int';
 
@@ -370,7 +370,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
-        if (isMvtDemoTileURL(mtx.tileURL)) {
+        if (isMvtTileURL(mtx.tileURL)) {
             if (rasterTileLayerRef.current && map.hasLayer(rasterTileLayerRef.current)) {
                 map.removeLayer(rasterTileLayerRef.current);
             }

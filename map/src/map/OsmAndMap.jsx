@@ -28,7 +28,8 @@ import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
-import { isMvtDemoTileURL } from './mvt/MvtDemoConfig';
+import MvtOsmLayer from './layers/MvtOsmLayer';
+import { isMvtTileURL } from './mvt/MvtDemoConfig';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;
@@ -97,7 +98,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        if (isMvtDemoTileURL(mtx.tileURL)) {
+        if (isMvtTileURL(mtx.tileURL)) {
             return;
         }
         if (tileLayer.current) {
@@ -250,6 +251,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                     maxNativeZoom={19}
                 />
                 <MvtDemoLayer />
+                <MvtOsmLayer />
                 <HeightmapLayer />
                 {hoverPoint && (
                     <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
