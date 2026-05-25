@@ -572,7 +572,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)  ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-A route is a path that is predetermined and needs to be followed to reach a specific destination. A route can be optimized for different types of travel, such as cycling, hiking, running, public transport, and others. You can read more about routes and their types in the [Routes article](../map/routes.md).
+A route is a path that is predetermined and needs to be followed to reach a specific destination. A route can be optimized for different types of travel, such as cycling, hiking, running, public transport, and others. You can read more about routes and their types in the [Routes article](../map/routes/index.md).
 
 
 ## Related Articles {#related-articles}
@@ -580,7 +580,7 @@ A route is a path that is predetermined and needs to be followed to reach a spec
 - [Interact with Map](../map/interact-with-map.md)
 - [Configure Map](../map/configure-map-menu.md)
 - [Map Styles](../map/map-styles.md)
-- [Routes](../map/routes.md)
+- [Routes](../map/routes/index.md)
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
