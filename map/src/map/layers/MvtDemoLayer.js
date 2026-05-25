@@ -11,6 +11,7 @@ const PANE_NAME = 'mvtDemoPane';
 const POPUP_MAX_HEIGHT = 220;
 const MAPLIBRE_ZOOM_OFFSET = -1;
 const PAN_BUFFER = 768;
+const SHOW_TILE_BOUNDARIES = true;
 
 function getPublicAssetPath(path) {
     const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
@@ -125,6 +126,7 @@ export default function MvtDemoLayer() {
             interactive: false,
             fadeDuration: 0,
         });
+        maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
 
         maplibreRef.current = maplibreMap;
 
