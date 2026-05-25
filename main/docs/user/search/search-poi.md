@@ -57,7 +57,7 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 - **Point of Interest (POI) search by type and name**:
     - Allows you to search:
        - For nearby points of interest (POI) or specific categories of POI.
-       - For [OSM routes](../map/routes.md) by name, ref number, or relation ID using the format `O+relation_id` (for example: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - For [OSM routes](../map/routes/types-of-routes.md) by name, ref number, or relation ID using the format `O+relation_id` (for example: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
        - For objects linked with Wikidata identifiers (for example: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - For [Popular places (Wikipedia)](../map/popular_places.md).
        - For places by combining a city name with a POI name or type (for example: Berlin airport, Bratislava Billa).
@@ -252,7 +252,7 @@ A filter can consist of quite a number of items, the presence of which depends o
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
         Includes *9* types of filters.
 
- 17. **Routes**. Includes [OSM routes](../map/routes.md) for various types of activities.  
+ 17. **Routes**. Includes [OSM routes](../map/routes/types-of-routes.md) for various types of activities.  
         Includes *14* types of filters: **Checkpoint**, **Cycling network node**, **Hiking network node**, **Routes network (cycling)**, **Routes network (hiking)**, **Route point category**, **Air Sports**, **Cycling**, **Driving**, **Foot**, **Motorcycling**, **Other routes**, **Water sports**, **Winter sports**.
 
  18. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
