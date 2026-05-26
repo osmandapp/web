@@ -50,7 +50,7 @@ Tracks context menu is menu with actions and data of GPX-track.
 
 Public transport is an additional layer that allows you to display transport routes and stops on the map, to check detailed information about them and to navigate.
 
-## [Routes](./routes) {#routes}
+## [Routes](./routes/index.md) {#routes}
 
 OsmAnd has many powerful features to display various routes on the map.
 
@@ -58,7 +58,5 @@ OsmAnd has many powerful features to display various routes on the map.
 
 All information about route types available in OsmAnd. 
 
-### [Routes on the Map](./routes/routes-on-map.md) {#routes-on-the-map}
 
-Read about how to display, interact with, and navigate routes on the map.
 

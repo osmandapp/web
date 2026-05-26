@@ -240,7 +240,7 @@ To find out which pistes outside the ski resort you can navigate, you need to en
 
 With the Skiing profile, the ski navigation and the [Winter and Ski map style](../map/map-styles.md#winter-and-ski) enabled, the [Ski slopes and routes](../map/routes/types-of-routes.md#ski-slopes-and-routes) show all types of pistes that the Ski navigation can use to build navigation routes along. Such ski slope routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
 When enabling the option [Ski slopes and routes](../map/routes/types-of-routes.md#ski-slopes-and-routes) for a map style other than Winter and Ski, only the slopes are displayed. Other ski-related features might not be shown in this styling layer.  
-_Ski slopes and routes_ [are clickable](../map/routes/routes-on-map.md#actions-with-routes).
+_Ski slopes and routes_ [are clickable](../map/routes/index.md#actions-with-routes).
 
 
 ### Night and Lighting {#night-and-lighting}
