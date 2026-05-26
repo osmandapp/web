@@ -167,6 +167,7 @@ export async function updateFavoriteGroup(favGroupData, group, groupName) {
             fileName: group.file.name,
             groupName,
             updatetime: group.updatetimems,
+            clienttime: group.clienttimems,
         },
     });
     if (resp?.data) {
