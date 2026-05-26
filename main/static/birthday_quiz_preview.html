@@ -693,6 +693,11 @@ const rewardOneMonthThreshold = 0.55;
 // The script should be connected to this Google Sheet:
 // https://docs.google.com/spreadsheets/d/1t1Zlx4mELyBCdz1S9YSBEup1Wa7dAfR4MgJ7RqJdxDw/edit
 const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxaHYNkYymrFD94LOdvT1y5unW8YdOTgWnamZskh0L3fPKcBZVY8qW-1VczOHaE4UiB3A/exec";
+const OSMAND_PROMO_ENDPOINT_URL = "/api/promo-add-user";
+const PROMO_KEYS = {
+    1: "birthday1",
+    3: "birthday_3"
+};
 
 const quiz = document.getElementById("quiz");
 const startScreen = document.getElementById("startScreen");
@@ -817,6 +822,7 @@ async function startQuiz() {
     progressWrapper.style.display = "block";
     quiz.style.display = "block";
     renderQuestion();
+    sendIframeHeight();
 }
 
 function updateProgress(){
@@ -898,6 +904,7 @@ function renderQuestion(){
     html += `<div id="feedback"></div>`;
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
+    sendIframeHeight();
 }
 
 function attachOptionEvents(type){
@@ -983,6 +990,48 @@ function showFeedback(correct,text){
     
     const mainBtn = document.querySelector(".question > button.action-btn");
     if(mainBtn) mainBtn.style.display = 'none';
+    sendIframeHeight();
+}
+
+
+async function activateOsmAndPro(email, rewardMonths) {
+    const promoKey = PROMO_KEYS[rewardMonths];
+
+    if (!promoKey) {
+        return {
+            ok: false,
+            message: "No promo key for this reward."
+        };
+    }
+
+    try {
+        const url = OSMAND_PROMO_ENDPOINT_URL
+            + "?promoKey=" + encodeURIComponent(promoKey)
+            + "&userEmail=" + encodeURIComponent(email);
+
+        const response = await fetch(url, {
+            method: "POST"
+        });
+
+        const text = await response.text();
+
+        if (!response.ok) {
+            return {
+                ok: false,
+                message: text || "Could not activate OsmAnd Pro automatically."
+            };
+        }
+
+        return {
+            ok: true,
+            message: text
+        };
+    } catch (error) {
+        return {
+            ok: false,
+            message: String(error.message || error)
+        };
+    }
 }
 
 async function nextQuestion(){
@@ -1003,6 +1052,20 @@ async function nextQuestion(){
         }
 
         const isEligible = rewardMonths > 0;
+        let activationStatus = "NOT_ELIGIBLE";
+        let activationMessage = "";
+
+        if (isEligible) {
+            const activationResult = await activateOsmAndPro(registeredEmail, rewardMonths);
+
+            if (activationResult.ok) {
+                activationStatus = "ACTIVATED";
+                activationMessage = activationResult.message;
+            } else {
+                activationStatus = "ACTIVATION_ERROR";
+                activationMessage = activationResult.message;
+            }
+        }
 
         const saveStatus = await saveQuizRegistration({
             email: registeredEmail,
@@ -1012,6 +1075,8 @@ async function nextQuestion(){
             rewardMonths: rewardMonths,
             rewardLabel: rewardLabel,
             eligibleForOsmAndPro: isEligible,
+            activationStatus: activationStatus,
+            activationMessage: activationMessage,
             completedAt: new Date().toISOString(),
             source: "OsmAnd Birthday Quiz"
         });
@@ -1023,31 +1088,41 @@ async function nextQuestion(){
         document.getElementById("score").innerText = `${score} / ${questions.length}`;
 
         const resultText = document.querySelector("#resultScreen p");
+        const submittedText = saveStatus.localOnly
+            ? "Preview mode: result is saved locally only until the Google Apps Script URL is added."
+            : "Your result has been submitted.";
 
-        if (rewardMonths === 3) {
+        if (activationStatus === "ACTIVATED") {
             resultText.outerHTML = `
                 <div class="reward-box reward-success">
                     <strong>Congratulations!</strong><br>
-                    You scored ${percentageText}% and qualify for <strong>3 months of OsmAnd Pro</strong>. We will activate it for: <strong>${registeredEmail}</strong>.<br>
-                    <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+                    You scored ${percentageText}% and received <strong>${rewardLabel}</strong> for: <strong>${registeredEmail}</strong>.<br><br>
+                    To activate Pro on your device, please follow this manual:<br>
+                    <a href="https://osmand.net/promo/manual/" target="_blank" rel="noopener noreferrer">
+                        https://osmand.net/promo/manual/
+                    </a><br><br>
+                    <small>${submittedText}</small>
                 </div>
             `;
-        } else if (rewardMonths === 1) {
+        } else if (activationStatus === "ACTIVATION_ERROR") {
             resultText.outerHTML = `
-                <div class="reward-box reward-success">
-                    <strong>Congratulations!</strong><br>
-                    You scored ${percentageText}% and qualify for <strong>1 month of OsmAnd Pro</strong>. We will activate it for: <strong>${registeredEmail}</strong>.<br>
-                    <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+                <div class="reward-box reward-try-again">
+                    You scored ${percentageText}% and qualify for <strong>${rewardLabel}</strong>, but we could not activate it automatically.<br>
+                    Please try again later or contact support with this email: <strong>${registeredEmail}</strong>.<br><br>
+                    <small>Error: ${activationMessage}</small><br>
+                    <small>${submittedText}</small>
                 </div>
             `;
         } else {
             resultText.outerHTML = `
                 <div class="reward-box reward-try-again">
                     You scored ${percentageText}%. A score of 55% or higher is required to receive an OsmAnd Pro reward.<br>
-                    <small>${saveStatus.localOnly ? "Preview mode: result is saved locally only until the Google Apps Script URL is added." : "Your result has been submitted."}</small>
+                    <small>${submittedText}</small>
                 </div>
             `;
         }
+
+        sendIframeHeight();
         return;
     }
     renderQuestion();
@@ -1070,7 +1145,24 @@ function restartQuiz(){
     }
 
     startScreen.style.display = "block";
+    sendIframeHeight();
 }
+
+function sendIframeHeight() {
+    window.parent.postMessage(
+        {
+            type: "osmandQuizContentChanged"
+        },
+        window.location.origin
+    );
+}
+
+window.addEventListener("load", sendIframeHeight);
+window.addEventListener("resize", sendIframeHeight);
+
+setTimeout(sendIframeHeight, 300);
+setTimeout(sendIframeHeight, 1000);
+setTimeout(sendIframeHeight, 2000);
 </script>
 
 </body>
