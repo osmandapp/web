@@ -352,6 +352,15 @@ select:focus {
     font-weight: 500;
 }
 
+.answer-warning {
+    display: none;
+    margin-top: 10px;
+    color: #b42318;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
 .reward-box {
     padding: 20px;
     border-radius: 14px;
@@ -425,16 +434,15 @@ select:focus {
         </p>
         <div class="deadline-box">
             <div><strong>Rewards:</strong></div>
-            <div>85% or higher — 3 months of OsmAnd Pro</div>
-            <div>55%–84% — 1 month of OsmAnd Pro</div>
+            <div>13 or more correct answers out of 16 — 3 months of OsmAnd Pro</div>
+            <div>8–12 correct answers out of 16 — 1 month of OsmAnd Pro</div>
             <br>
-            <div><strong>Quiz Deadline:</strong> Complete the quiz by June 6th.</div>
-            <div><strong>Gift Distribution:</strong> The Pro subscription will be active until June 10th.</div>
+            <div><strong>Quiz Deadline:</strong> Complete the quiz by June 15th.</div>
         </div>
         <div class="email-form">
             <label for="userEmail">Email for OsmAnd Pro activation</label>
             <input type="email" id="userEmail" placeholder="name@example.com" autocomplete="email" required>
-            <p class="email-note">We will use this email to register your quiz result in our Google Sheet and activate OsmAnd Pro if your quiz score qualifies for a reward.</p>
+            <p class="email-note">In accordance with our Privacy Policy, we use your email only to activate OsmAnd Pro. We do not use it for any other purposes and do not share it with third parties.</p>
             <div class="form-error" id="emailError">Please enter a valid email address before starting the quiz.</div>
         </div>
         <button class="action-btn" onclick="startQuiz()">Start quiz</button>
@@ -475,11 +483,11 @@ const questions = [
         questionImg: "",
         options: [
             "Google Maps",
-            "OpenStreetMap (OSM)",
+            "Apple Maps",
             "HERE Technologies",
-            "Apple Maps"
+            "OpenStreetMap (OSM)"
         ],
-        correct: [1],
+        correct: [3],
         feedback: "OsmAnd is based on OpenStreetMap data, which is created and maintained by a global community of contributors."
     },
     {
@@ -488,12 +496,12 @@ const questions = [
         hint: "Select one answer.",
         questionImg: "",
         options: [
-            "Monetizing via targeted third-party ad banners",
             "Zero third-party data sharing and completely ad-free application experiences",
+            "Monetizing via targeted third-party ad banners",
             "Mandatory account creation to use offline maps",
             "Selling generalized regional user tracking telemetry"
         ],
-        correct: [1],
+        correct: [0],
         feedback: "OsmAnd is built around privacy-focused principles, including no third-party data sharing and no advertising experience inside the app."
     },
     {
@@ -505,7 +513,6 @@ const questions = [
             ".KML",
             ".GPX",
             ".JSON",
-            ".SHP",
             ".KMX"
         ],
         correct: [1],
@@ -519,41 +526,40 @@ const questions = [
         options: [
             "OsmAnd Premium",
             "OsmAnd Plus",
-            "OsmAnd Pro",
+            "OsmAnd Victor",
             "OsmAnd Gold",
-            "OsmAnd Brilliant",
-            "OsmAnd Victor"
+            "OsmAnd Pro"
         ],
-        correct: [2],
+        correct: [4],
         feedback: "OsmAnd Pro is the tier that includes advanced features such as Cloud sync, weather, satellite imagery, and Live Updates."
     },
     {
         type: "single",
-        title: "Which OsmAnd feature allows you to change the entire visual style of the map instantly — switching between optimized layouts for Car driving, Cycling, Hiking, or Marine navigation?",
+        title: "Which feature allows you to configure the app for your own needs and use different settings for activities such as driving, cycling, hiking, or marine navigation?",
         hint: "Select one answer.",
         questionImg: "",
         options: [
             "Map Layers",
-            "App Profiles (Configure Map)",
+            "App Profiles",
             "Plugin Manager",
             "Quick Action Menu"
         ],
         correct: [1],
-        feedback: "App profiles let you use different map, navigation, and interface configurations for different activities."
+        feedback: "App Profiles allow you to configure map, navigation, and interface settings for different activities and personal needs."
     },
     {
         type: "single",
-        title: "When preparing for a long vacation, what feature helps you group, filter, and organise your saved POIs, favorites, and markers into custom categories?",
+        title: "Which OsmAnd feature allows you to build a multi-profile route?",
         hint: "Select one answer.",
         questionImg: "",
         options: [
-            "Navigation History",
-            "Waypoint Aligner",
-            "Smart Folders",
-            "Route Planner"
+            "Navigation",
+            "Track Recording",
+            "Route Planner",
+            "OsmAnd Tracker"
         ],
         correct: [2],
-        feedback: "Smart Folders help organise saved items into structured categories for easier planning and management."
+        feedback: "Route Planner allows you to create and edit routes, including routes that use different profiles for different parts of the trip."
     },
     {
         type: "single",
@@ -571,17 +577,17 @@ const questions = [
     },
     {
         type: "single",
-        title: "If you are hiking up a mountain and want to visually identify terrain elevation transitions and steep slopes directly on your map view, which two map layout features should you turn on?",
+        title: "If you are hiking up a mountain and want to visually identify terrain elevation transitions and steep slopes directly on your map view, which map layout feature should you turn on?",
         hint: "Select one answer.",
         questionImg: "",
         options: [
             "Public Transport lines and Street names",
-            "Contour lines and Hillshading",
+            "Live Weather Overlays and Vector Polygons",
             "POIs and Smart Folders",
-            "Live Weather Overlays and Vector Polygons"
+            "Contour lines"
         ],
-        correct: [1],
-        feedback: "Contour lines and hillshading help visualise terrain, elevation changes, and slope patterns on the map."
+        correct: [3],
+        feedback: "Contour lines help visualise terrain elevation changes and slope patterns on the map."
     },
     {
         type: "single",
@@ -589,12 +595,12 @@ const questions = [
         hint: "Select one answer.",
         questionImg: "",
         options: [
+            "OsmAnd Web v0.3",
             "OsmAnd Web v0.5",
             "OsmAnd Web v1.03",
-            "OsmAnd Web v2.10",
-            "OsmAnd Web Pro v4.0"
+            "OsmAnd Web v2.03"
         ],
-        correct: [1],
+        correct: [2],
         feedback: "The quiz points to OsmAnd Web v1.03 as the major update connected with the redesigned web interface."
     },
     {
@@ -604,11 +610,11 @@ const questions = [
         questionImg: "",
         options: [
             "Direct commercial flight route pricing",
-            "Public Transport support, displaying lines, stops, and multi-stop bus/train navigation UI",
+            "Live satellite traffic congestion metrics",
             "Real-time automated electric vehicle charging reservations",
-            "Live satellite traffic congestion metrics"
+            "Public Transport support, displaying lines, stops, and multi-stop bus/train navigation UI"
         ],
-        correct: [1],
+        correct: [3],
         feedback: "Public Transport support adds lines, stops, and transit navigation-related interface elements to OsmAnd Web."
     },
     {
@@ -627,21 +633,21 @@ const questions = [
     },
     {
         type: "single",
-        title: "When customising the map appearance, which option allows you to explicitly toggle the visibility of specific terrain details, such as showing or hiding forest types, orchard layouts, or custom surface colors?",
+        title: "Which setting changes the overall visual rendering of the map for different activities and use cases?",
         hint: "Select one answer.",
         questionImg: "",
         options: [
-            "Map Orientation",
-            "Route Planner Mode",
-            "Map Style (Rendering Details)",
-            "Overlay Map Layer"
+            "Map Appearance",
+            "Overlay Map Layer",
+            "Map Style",
+            "Track Appearance"
         ],
         correct: [2],
-        feedback: "Rendering details let users fine-tune which map elements and terrain details are displayed."
+        feedback: "Map Style changes the overall visual rendering of the map and allows users to choose different map views for different use cases."
     },
     {
         type: "single",
-        title: "Which customisable feature allows you to add a floating action button directly onto the map screen to trigger fast, one-tap actions like toggling specific map layers, starting a GPX track recording, or dropping a map marker?",
+        title: "Which customisable feature allows you to add a floating action button directly onto the map screen to trigger fast, one-tap actions like toggling specific map layers, starting a GPX track recording, or Lock screen?",
         hint: "Select one answer.",
         questionImg: "",
         options: [
@@ -675,10 +681,10 @@ const questions = [
         options: [
             "Historical Map Style",
             "Public Transport Layer",
-            "Weather Overlay",
-            "Topographic Contour Line"
+            "Topographic Contour Line",
+            "Weather Overlay"
         ],
-        correct: [2],
+        correct: [3],
         feedback: "The Weather Overlay displays weather-related layers such as temperature, wind, and precipitation on the map."
     }
 ];
@@ -686,8 +692,8 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let registeredEmail = "";
-const rewardThreeMonthsThreshold = 0.85;
-const rewardOneMonthThreshold = 0.55;
+const rewardThreeMonthsCorrectAnswers = 13;
+const rewardOneMonthCorrectAnswers = 8;
 
 // Replace this value with your deployed Google Apps Script Web App URL.
 // The script should be connected to this Google Sheet:
@@ -901,9 +907,26 @@ function renderQuestion(){
         html += `<button class="action-btn" onclick="submitSequence()">Submit answer</button>`;
     }
 
+    html += `<div class="answer-warning" id="answerWarning">Please select an answer.</div>`;
     html += `<div id="feedback"></div>`;
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
+    sendIframeHeight();
+}
+
+function clearAnswerWarning(){
+    const warning = document.getElementById("answerWarning");
+    if(warning) {
+        warning.style.display = "none";
+    }
+}
+
+function showAnswerWarning(){
+    const warning = document.getElementById("answerWarning");
+    if(warning) {
+        warning.textContent = "Please select an answer.";
+        warning.style.display = "block";
+    }
     sendIframeHeight();
 }
 
@@ -911,11 +934,17 @@ function attachOptionEvents(type){
     const options = document.querySelectorAll(".option");
     options.forEach(option=>{
         option.addEventListener("click",()=>{
+            clearAnswerWarning();
             if(type === "single"){
                 options.forEach(o=>o.classList.remove("selected"));
             }
             option.classList.toggle("selected");
         });
+    });
+
+    const selects = document.querySelectorAll("select");
+    selects.forEach(select=>{
+        select.addEventListener("change", clearAnswerWarning);
     });
 }
 
@@ -926,7 +955,10 @@ function arraysEqual(a,b){
 function submitChoice(){
     const q = questions[currentQuestion];
     const selected = [...document.querySelectorAll(".option.selected")].map(el=>Number(el.dataset.index));
-    if (selected.length === 0) return;
+    if (selected.length === 0) {
+        showAnswerWarning();
+        return;
+    }
     const correct = arraysEqual(selected,q.correct);
     if(correct) score++;
     showFeedback(correct,q.feedback);
@@ -940,7 +972,10 @@ function submitMatching(){
         if(!select.value) anyEmpty = true;
         if(select.value !== select.dataset.answer) correct = false;
     });
-    if(anyEmpty) return;
+    if(anyEmpty) {
+        showAnswerWarning();
+        return;
+    }
     if(correct) score++;
     showFeedback(correct,questions[currentQuestion].feedback);
 }
@@ -959,7 +994,10 @@ function submitSequence(){
         }
     });
     
-    if(anyEmpty) return;
+    if(anyEmpty) {
+        showAnswerWarning();
+        return;
+    }
     if(correct) score++;
     showFeedback(correct,q.feedback);
 }
@@ -1043,15 +1081,32 @@ async function nextQuestion(){
         let rewardMonths = 0;
         let rewardLabel = "No reward";
 
-        if (percentScore >= rewardThreeMonthsThreshold) {
+        if (score >= rewardThreeMonthsCorrectAnswers) {
             rewardMonths = 3;
             rewardLabel = "3 months of OsmAnd Pro";
-        } else if (percentScore >= rewardOneMonthThreshold) {
+        } else if (score >= rewardOneMonthCorrectAnswers) {
             rewardMonths = 1;
             rewardLabel = "1 month of OsmAnd Pro";
         }
 
         const isEligible = rewardMonths > 0;
+
+        const restartButton = document.querySelector("#resultScreen button.action-btn");
+
+        if (restartButton) {
+            restartButton.style.display = isEligible ? "none" : "block";
+        }
+
+        mascotResultContainer.innerHTML = isEligible ? "🎁" : "😔";
+
+        if (isEligible) {
+            mascotResultContainer.style.borderColor = "var(--correct-green)";
+            mascotResultContainer.style.background = "#e6f9ed";
+        } else {
+            mascotResultContainer.style.borderColor = "var(--wrong-red)";
+            mascotResultContainer.style.background = "#fdf2f2";
+        }
+
         let activationStatus = "NOT_ELIGIBLE";
         let activationMessage = "";
 
@@ -1096,7 +1151,7 @@ async function nextQuestion(){
             resultText.outerHTML = `
                 <div class="reward-box reward-success">
                     <strong>Congratulations!</strong><br>
-                    You scored ${percentageText}% and received <strong>${rewardLabel}</strong> for: <strong>${registeredEmail}</strong>.<br><br>
+                    You answered ${score} out of ${questions.length} questions correctly (${percentageText}%) and received <strong>${rewardLabel}</strong> for: <strong>${registeredEmail}</strong>.<br><br>
                     To activate Pro on your device, please follow this manual:<br>
                     <a href="https://osmand.net/promo/manual/" target="_blank" rel="noopener noreferrer">
                         https://osmand.net/promo/manual/
@@ -1107,7 +1162,7 @@ async function nextQuestion(){
         } else if (activationStatus === "ACTIVATION_ERROR") {
             resultText.outerHTML = `
                 <div class="reward-box reward-try-again">
-                    You scored ${percentageText}% and qualify for <strong>${rewardLabel}</strong>, but we could not activate it automatically.<br>
+                    You answered ${score} out of ${questions.length} questions correctly (${percentageText}%) and qualify for <strong>${rewardLabel}</strong>, but we could not activate it automatically.<br>
                     Please try again later or contact support with this email: <strong>${registeredEmail}</strong>.<br><br>
                     <small>Error: ${activationMessage}</small><br>
                     <small>${submittedText}</small>
@@ -1116,7 +1171,7 @@ async function nextQuestion(){
         } else {
             resultText.outerHTML = `
                 <div class="reward-box reward-try-again">
-                    You scored ${percentageText}%. A score of 55% or higher is required to receive an OsmAnd Pro reward.<br>
+                    You answered ${score} out of ${questions.length} questions correctly (${percentageText}%). At least 8 correct answers are required to receive an OsmAnd Pro reward.<br>
                     <small>${submittedText}</small>
                 </div>
             `;
@@ -1142,6 +1197,12 @@ function restartQuiz(){
     const existingReward = document.querySelector("#resultScreen .reward-box");
     if(existingReward) {
         existingReward.outerHTML = '<p style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;">Great job exploring OsmAnd’s features and history!</p>';
+    }
+
+    const restartButton = document.querySelector("#resultScreen button.action-btn");
+
+    if (restartButton) {
+        restartButton.style.display = "block";
     }
 
     startScreen.style.display = "block";
