@@ -93,16 +93,29 @@ async function deleteCloudFile(name, type, ctx) {
 }
 
 export async function deleteTrackFolder(folder, ctx) {
-    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-folder`, {
-        params: {
-            folderName: folder.fullName,
-            type: 'GPX',
-            smart: folder.type === SMART_TYPE,
-        },
-        dataOnErrors: true,
-    });
+    let res;
+    if (folder.type === SMART_TYPE) {
+        res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/update-smart-folder`, {
+            params: {
+                folderName: folder.fullName,
+            },
+            dataOnErrors: true,
+        });
+    } else {
+        res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-folder`, {
+            params: {
+                folderName: folder.fullName,
+                type: 'GPX',
+            },
+            dataOnErrors: true,
+        });
+    }
     if (res && res?.data?.status === 'ok') {
-        refreshGlobalFiles({ ctx }).then();
+        if (folder.type === SMART_TYPE) {
+            await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
+        } else {
+            refreshGlobalFiles({ ctx }).then();
+        }
     } else {
         ctx.setTrackErrorMsg({
             title: 'Delete error',
