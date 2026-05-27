@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -97,7 +97,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![منحدرات التزلج ومسارات الدراجات الجبلية](@site/static/img/map/ski_mtb.png)  ![منحدرات التزلج ومسارات الدراجات الجبلية](@site/static/img/map/ski_mtb_2.png)
 
-يمكنك النقر على عناصر الخريطة مثل **منحدرات التزلج**، و**مسارات الدراجات الجبلية (MTB)**، و**ممرات الدراجات الترابية** لفتح قائمة السياق الخاصة بها مع معلومات مفصلة. تحقق من [مقالة المسارات](../map/routes.md#actions-with-routes) لمزيد من المعلومات.
+يمكنك النقر على عناصر الخريطة مثل **منحدرات التزلج**، و**مسارات الدراجات الجبلية (MTB)**، و**ممرات الدراجات الترابية** لفتح قائمة السياق الخاصة بها مع معلومات مفصلة. تحقق من [مقالة المسارات](../map/routes/index.md#actions-with-routes) لمزيد من المعلومات.
 
 
 
@@ -882,7 +882,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 أنواع الإجراءات المتاحة:
 
 - **<Translate android="true" ids="main_actions"/>**. يحتوي القسم على 4 أزرار فقط، يمكن تخصيص ثلاثة منها، ويبقى زر الإجراءات دون تغيير.  
-- **<Translate android="true" ids="additional_actions"/>**. يمكنك الوصول إلى هذه الإجراءات عن طريق النقر على زر *الإجراءات*.  
+- **<Translate android="true" ids="additional_actions"/>**. يمكن الوصول إلى هذه الإجراءات عن طريق النقر على زر *الإجراءات*.  
 - **<Translate android="true" ids="shared_string_hidden"/>**. نقل الإجراءات إلى هذا القسم لا يوقف عملها. إنها فقط لا تظهر في قائمة الإجراءات.  
 
 

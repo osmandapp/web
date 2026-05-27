@@ -1,5 +1,5 @@
 ---
-source-hash: 91a31a428026d3f096ac2e5ae3c87ed7602a196858aeed773cb52ba0586c9450
+source-hash: 99f4f132ee5c0b6fd48949f2e16d91c53267fa3ebef0498549f074e425034b5d
 sidebar_position: 4
 ---
 
@@ -15,11 +15,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';  
 
 
-# أندرويد 5.3 {#android-53}
+# أندرويد 5.4 {#android-54}
 
 
 
-# انضم إلى النسخة التجريبية {#join-beta}
+## انضم إلى النسخة التجريبية {#join-beta}
 
 يُصدر OsmAnd العديد من الإصدارات الجاهزة للاستخدام يوميًا، مما يتيح لك تتبع الميزات الجديدة والمشاركة في عملية ترجمة OsmAnd. يمكنك المشاركة في اختبار النسخة التجريبية من OsmAnd باستخدام Google Play.
 
@@ -33,25 +33,46 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## ما الجديد {#whats-new}
 
-- التجريبي الجديد **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** مع طبقة فلكية تعرض مسارات الشمس والكواكب والنجوم.
-- تحسين قسم **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** مع إعدادات النسخ الاحتياطي الأوضح، وسجل الإصدارات، والنسخ الاحتياطي التلقائي.
-- تحديث خيارات **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** مع دليل أوضح وفلاتر محسنة لمسارات المشي والدراجات وMTB.
-- أدوات عرض الارتفاع والملاحة الجديدة والمعاد تصميمها مع ملفات تعريف الارتفاع ومقاييس الصعود/الهبوط والدرجة المتوسطة.
-- تحسينات **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** مع دعم موسع للأدوات وتكامل أفضل لـ OBD II.
-- تخطيط أكثر مرونة لـ **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**، خاصة في وضع الشاشة الأفقي.
-- إدارة محسنة للمفضلات في **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
-- تنظيم مسارات أذكى مع مجلدات ذكية وإحصائيات ملخص أوضح.
-- تحليل متقدم للمسارات والتراكبات.
-- تحسينات ميزات الوصولية، بما في ذلك تعليقات الملاحة الصوتية واللمسية الأكثر مرونة.
-- أعمال أولية لدمج الساعات الذكية للملاحة وبيانات تسجيل الرحلة.
+- تحسين **[المفضلات](https://osmand.net/docs/user/personal/favorites)** مع دعم مرفقات الوسائط (الصور والصوت والفيديو) وتحسين دمج ملاحظات الصوت/الفيديو.
+- تحسين **[أدوات الملاحة](https://osmand.net/docs/user/widgets/nav-widgets)** مع مرونة أكبر في الحجم والتكيف مع التخطيط عبر كثافات واتجاهات الشاشات المختلفة.
+- إضافة مفتاح الخريطة إلى **[تهيئة الخريطة](https://osmand.net/docs/user/map/configure-map-menu)** لفهم أفضل لأنواع المسارات وعناصر الخريطة.
+- تحسين تصفية المسارات والتحكم البصري في **[تهيئة الخريطة](https://osmand.net/docs/user/map/configure-map-menu)**، بما في ذلك تصنيفات المسارات وأولوياتها.
+- تحسين تحليل المسارات مع أنواع رسوم بيانية جديدة وبيانات أكثر تفصيلاً مثل السطح ونوع الطريق والانحدار.
+- تحسين إدارة المسارات مع معاينات وتنظيم أفضل في **[أماكني](https://osmand.net/docs/user/personal/myplaces)**.
+- النسخ الاحتياطي التلقائي ومزامنة أكثر موثوقية لبيانات المستخدم في **[سحابة OsmAnd](https://osmand.net/docs/user/personal/osmand-cloud)**، بما في ذلك **[المجلدات الذكية](https://osmand.net/docs/user/personal/tracks/smart-folder)**.
+- تحسينات أولية للملاحة البحرية مع تحسينات AIS ومعلمات وأدوات ملاحة إضافية.
+- تحسين تجربة **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** مع تحسين عناصر البحث والملاحة.
+- إضافة إمكانية التفاعل مع الخريطة على **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**، بما في ذلك تحديد النقاط مباشرة.
+- إعادة تصميم **[أداة الارتفاع](https://osmand.net/docs/user/widgets/nav-widgets#elevation-widget)** مع معلومات ارتفاع المسار الأكثر تفصيلاً.
+
+<!--
+- New experimental **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** with an astronomical overlay showing the paths of the Sun, planets and stars.
+- Improved **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** section with clearer backup, version history and automatic backup settings.
+- Updated **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** options with a clearer legend and improved filters for hiking, cycling and MTB routes.
+- New and redesigned elevation and navigation widgets with elevation profiles, uphill/downhill metrics and average grade.
+- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** improvements with extended widget support and better OBD II integration.
+- More flexible **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especially in landscape mode.
+- Enhanced Favorites management in **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
+- Smarter track organization with Smart Folders and clearer summary statistics.
+- Advanced route and track analysis.
+- Improved accessibility features, including more flexible audio and haptic navigation feedback.
+- Initial groundwork for smartwatch integration for navigation and trip recording data.
+-->
 
 
 ## إصلاحات الأخطاء {#bug-fixes}
 
-- تحسين استقرار مزامنة **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** والنسخ الاحتياطي، تقليل التعارضات وضمان استعادة الأدوات والإعدادات بشكل صحيح عبر الأجهزة.
-- إصلاح القيم غير الصحيحة للصعود/الهبوط في أدوات الارتفاع وتحسين دقة حسابات الصعود/الهبوط في تحليل المسار.
-- تحسين سلوك الملاحة في **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**، بما في ذلك اتجاهات الخروج الصحيحة في الدوارات ووضع أدوات الشاشة المناسبة مثل مسطرة النصف القطر.
-- إصلاح عدة مشكلات متعلقة بوضع **[Accessibility](https://osmand.net/docs/user/plugins/accessibility)**، بما في ذلك إعلانات الملاحة والتفاعل مع أدوات الخريطة المعينة.
-- إصلاحات عامة للواجهة والأداء عبر عرض الخريطة، وعرض الأدوات، وشاشات التكوين.
+- إصلاح [مشكلة](https://github.com/osmandapp/OsmAnd/issues/16507) حيث لم يتم تحديث خصائص المفضلة (اللون والرمز والشكل) عند تغيير مجموعتها.
+- إصلاح [اتجاهات الخروج غير الصحيحة](https://github.com/osmandapp/OsmAnd/issues/23104) المعروضة على الدوارات في Android Auto.
+- تصحيح [قيم الصعود والهبوط غير الدقيقة](https://github.com/osmandapp/OsmAnd/issues/20624) في أدوات الارتفاع.
+- منع [المفضلات المخفية](https://github.com/osmandapp/OsmAnd/issues/24689) من الظهور مجددًا على الخريطة عند إضافة نقاط مسار إلى مجلد.
+- حل [التناقضات بين الرسوم البيانية](https://github.com/osmandapp/OsmAnd/issues/24712) في شاشة التفاصيل.
+- حل [مشكلة](https://github.com/osmandapp/OsmAnd/issues/24791) حيث تظهر مجلدات المفضلات غير المثبتة مثبتة مرة أخرى بعد إعادة تشغيل التطبيق.
 
-
+<!--
+- Improved stability of **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** sync and backup, reducing conflicts and ensuring widgets and settings restore correctly across devices.
+- Fixed incorrect uphill/downhill values in elevation widgets and improved accuracy of ascent/descent calculations in route analysis.
+- Improved **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** navigation behaviour, including correct exit directions at roundabouts and proper placement of on-screen tools such as the radius ruler.
+- Fixed several issues related to **[Accessibility](https://osmand.net/docs/user/plugins/accessibility)** mode, including navigation announcements and interaction with certain map tools.
+- General interface and performance fixes across map rendering, widget display and configuration screens.
+-->

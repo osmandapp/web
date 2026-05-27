@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  الحساب
 title: حساب OsmAnd
@@ -119,6 +119,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![سحابة الويب](@site/static/img/web/web_changes.png) ![سحابة الويب](@site/static/img/web/web_trash.png)
 
+### التطبيقات المتصلة {#connected-apps}
+
+يسمح قسم **التطبيقات المتصلة** بربط خدمات خارجية بحساب OsmAnd الخاص بك. يدعم حاليًا التكامل مع [Garmin Connect™](https://connect.garmin.com/app/)، مما يتيح مزامنة تلقائية لأنشطة Garmin. لفتحه، اذهب إلى: *خريطة OsmAnd على الويب → الحساب → التطبيقات المتصلة*.
+
+تتوفر ميزة Garmin Connect فقط لمستخدمي [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). إذا لم يكن لديك اشتراك Pro نشط، فسيؤدي تحديد عنصر Garmin Connect إلى فتح صفحة الأسعار.
+
+لربط حساب Garmin Connect™ الخاص بك، انقر على **ربط**. ستتم إعادة توجيهك إلى صفحة تفويض Garmin، حيث يجب عليك تسجيل الدخول ومنح الوصول إلى بيانات Garmin Connect™ الخاصة بك. أثناء التفويض، يمكنك تمكين مزامنة الأنشطة الأخيرة لاستيراد البيانات من آخر 30 يومًا. لا يمكن استيراد الأنشطة الأقدم من 30 يومًا تلقائيًا.
+
+بعد الاتصال، ينشئ OsmAnd مجلد Garmin Connect مخصصًا في [قسم المسارات](./web-tracks.md) ويبدأ استيراد الأنشطة تلقائيًا. تُضاف الأنشطة الجديدة المسجلة في Garmin Connect™ إلى هذا المجلد دون استيراد يدوي. يُزامن المجلد أيضًا مع تطبيقات OsmAnd المحمولة عند تمكين [سحابة OsmAnd](../personal/osmand-cloud.md).
+
+تحتوي قائمة Garmin Connect على قسمين: **بياناتي** و**الإعدادات**. في بياناتي، يمكنك عرض عدد الأنشطة المتزامنة، أو فتح آخر نشاط تم استرداده، أو فتح صفحة أنشطة Garmin Connect™ باستخدام زر **عرض على Garmin Connect™**. في الإعدادات، يمكنك تكوين أنواع الأنشطة التي يجب مزامنتها باستخدام خيار الأنشطة المراد مزامنتها.
+
+تُجمَّع الأنشطة في فئات مثل ركوب الدراجات، المشي والجري، الرياضات المائية، والرياضات الشتوية وغيرها. يمكن تمكين أو تعطيل أنواع الأنشطة الفردية. افتراضيًا، يتم تحديد جميع أنواع الأنشطة المدعومة بعد الاتصال.
+
+لفصل حساب Garmin Connect™ الخاص بك، اذهب إلى *الإعدادات → فصل* وأكد الإجراء. تبقى المسارات المستوردة سابقًا في مجلد Garmin Connect، لكن لن تتم مزامنة الأنشطة الجديدة بعد ذلك.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
+
 
 ## استكشاف الأخطاء وإصلاحها {#troubleshooting}
 
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [مقدمة](./web-overview.md)
 - [المشتريات عبر المنصات](../purchases/cross.md)
 - [سحابة OsmAnd](../personal/osmand-cloud.md)
+- [المسارات](./web-tracks.md)
