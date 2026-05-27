@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
 sidebar_label: المسارات
 title: المسارات
@@ -66,6 +66,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  - الحذف. يفتح حوار تأكيد. حذف مجلد يزيله نهائيًا مع جميع المسارات التي يحتويها. يتم مزامنة هذا الإجراء أيضًا عبر OsmAnd Cloud.
 
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+
+### المجلدات الذكية {#smart-folders}
+
+يمكن مزامنة **المجلدات الذكية** التي تم إنشاؤها على الأجهزة المحمولة وعرضها في إصدار الويب عبر OsmAnd Cloud. لضمان ظهورها على الويب، يجب تمكين مزامنة [إعدادات OsmAnd](../personal/osmand-cloud.md#select-data-to-back-up) في إعدادات السحابة.  
+انتقل إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+تُخزن المجلدات الذكية حاليًا كجزء من الإعدادات العامة، لذا تُرفع إلى السحابة فقط عندما تكون مزامنة الإعدادات نشطة. بعد إنشاء مجلد ذكي أو تعديله، يُفضل تشغيل مزامنة يدوية لتحديث البيانات.
+
+على الويب، تُعرض المجلدات الذكية في قائمة المسارات بأيقونة نجمة مميزة، مما يسهل تمييزها عن المجلدات العادية. يُزامن اسم المجلد أولاً، بينما تعتمد قائمة المسارات على كيفية تكوين المجلد على الجهاز.
+
+تُعرض المسارات فقط إذا كان تكوين المجلد الذكي مدعومًا على الويب. يشمل ذلك كلاً من [إعدادات التصفية](../personal/tracks/smart-folder.md#search-filter) و[خيارات التجميع](../personal/tracks/smart-folder.md#managing-smart-folders). إذا استُخدمت معاملات غير مدعومة (مثل أقرب مدينة)، قد يظهر المجلد بدون مسارات. للحصول على أفضل توافق، استخدم معاملات شائعة مثل النشاط أو التاريخ أو المسافة أو المدة.
+
+قد تختلف مزامنة المجلدات الذكية حسب المنصة وتكوين المزامنة. للحصول على أفضل النتائج، تأكد من تمكين مزامنة السحابة وتحديثها على جميع الأجهزة.
+
+في قائمة النقاط الثلاث (⋮)، يمكنك تنزيل المجلد الذكي كمجموعة OBF.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
 ## مسارات السحابة {#cloud-tracks}

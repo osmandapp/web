@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  حول توجيه OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -76,9 +76,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - حدد نوع الطريق في قسم [معلمات المسار](../guidance/navigation-settings.md#route-parameters) من [إعدادات الملاحة](../guidance/navigation-settings.md). يتم توفير وصف هذا الإعداد في المقالات حول إعدادات [أنواع التوجيه](#routing-types). كمثال، راجع وصف نوع توجيه [السيارة / الشاحنة / الدراجة النارية](../routing/car-based-routing.md#route-parameters---car).
 - يمكنك أيضًا تحديد طرق معينة لن يتم استخدامها للتوجيه باستخدام خيار *[تجنب الطرق](../../map/map-context-menu.md#avoid-road)* من خلال *قائمة سياق الخريطة* أو باستخدام *[قائمة تجنب الطرق](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
+عند تحديد نوع طريق (مثل *الطرق غير المعبدة*) في إعدادات التجنب، يستبعد OsmAnd هذه الطرق تمامًا من حساب المسار. حتى المقاطع القصيرة جدًا (على سبيل المثال، 100–200 متر من الطريق غير المعبد) يتم تجنبها بالكامل ولن تُدرج في المسار تحت أي ظرف. نتيجة لذلك، قد تصبح المسارات أطول بكثير إذا تطلب تجنب هذه الطرق الالتفافات.
+
+إذا تم تعطيل خيار التجنب، فلا تزال هذه الطرق مسموحًا بها لكن قد تُعطى أولوية أقل (عقوبة)، مما يعني أن OsmAnd سيفضل الطرق الأفضل عند الإمكان لكنه قد يشملها إذا لزم الأمر.
+
 :::note
 
-- يجب تحديد الطريق عند أقصى تكبير، حيث قد يسيء OsmAnd تفسير النقرة ويحظر، على سبيل المثال، الجانب غير الصحيح من طريق ذي مسارين أو رصيف.
+- يجب تحديد الطريق عند أقصى تكبير، حيث قد يسيء OsmAnd تفسير النقطة ويحظر، على سبيل المثال، الجانب غير الصحيح من طريق ذي مسارين أو رصيف.
 - وظيفة تجنب طرق محددة لا تعمل بشكل صحيح مع خيار [الملاحة حسب المسار](../setup/gpx-navigation.md) ولا تؤثر على [ملاحة العلامات](../setup/markers-navigation.md#use-markers-in-navigation) المبسطة.
 
 :::

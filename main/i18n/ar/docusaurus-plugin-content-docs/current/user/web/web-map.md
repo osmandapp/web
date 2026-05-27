@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: الخريطة
 title: الخريطة العالمية على الموقع الإلكتروني
@@ -40,9 +40,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لفتحها انقر بزر الماوس الأيمن في أي مكان على الخريطة. تتضمن هذه القائمة الإجراءات التالية:
 
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **فتح الطقس** – الوصول إلى [قائمة الطقس](../web/web-weather.md) لعرض تفاصيل الطقس.
 - **إنشاء مسار جديد** – يفتح أداة [*تخطيط مسار*](../web/web-navigation.md) مع الموقع المحدد كنقطة بداية أو وجهة.
-- **إضافة مفضلة** –  يتيح لك إنشاء وحفظ [مفضلة](../web/web-favorites.md#add--edit-favorite) في أي نقطة على الخريطة للوصول السهل إليها.
+- **إضافة مفضلة** –  يتيح لك إنشاء وحفظ [مفضلة](../web/web-favorites.md#favorites-actions) في أي نقطة على الخريطة للوصول السهل إليها.
 - **الاتجاهات من** –  يعين النقطة المحددة [كموقع بداية](../web/web-navigation.md#start-a-route) للملاحة.
 - **الاتجاهات إلى** – يعين النقطة المحددة [كوجهة للملاحة](../web/web-navigation.md#start-a-route).
 - **نسخ الإحداثيات** – ينسخ إحداثيات النقطة المحددة للاستخدام الخارجي.
@@ -219,7 +223,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - دقائق لكل كيلومتر.
 - أميال بحرية في الساعة (عقد). 
 
-على سبيل المثال، سرعة 90 كم/ساعة تتوافق مع 25 م/ث أو نحو 55.92 ميل/ساعة.
+على سبيل المثال، سرعة 90 كم/ساعة تتوافق مع 25 م/س أو نحو 55.92 ميل/ساعة.
 
 ![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
 
