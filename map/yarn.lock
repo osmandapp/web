@@ -3163,6 +3163,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stomp/stompjs@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "@stomp/stompjs@npm:7.3.0"
+  checksum: 8bdee303eadd3063141443c79451af5b39386123d9090ffdaeff3cf843da1e1362460e3a34a539a146da023a364ac77491b681bc55d63bfdadf9e4f044212871
+  languageName: node
+  linkType: hard
+
 "@surma/rollup-plugin-off-main-thread@npm:^2.2.3":
   version: 2.2.3
   resolution: "@surma/rollup-plugin-off-main-thread@npm:2.2.3"
@@ -12414,6 +12421,7 @@ eslint-plugin-react-compiler@beta:
     "@mui/icons-material": ^5.8.3
     "@mui/lab": ^5.0.0-alpha.85
     "@mui/material": ^5.8.3
+    "@stomp/stompjs": ^7.3.0
     "@tiptap/pm": ^3.22.4
     "@tiptap/react": ^3.22.4
     "@tiptap/starter-kit": ^3.22.4
