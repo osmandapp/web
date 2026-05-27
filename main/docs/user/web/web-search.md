@@ -76,7 +76,7 @@ The **POI Context Menu** displays key information about the selected place and p
 ### POI Actions {#poi-actions}
 
 The **POI Context Menu** includes action buttons for common tasks. Use these quick actions to save a place, share it, or start route planning and navigation:
-- **Add to Favorites** — saves the POI to your [Favorites](../web/web-favorites.md#add--edit-favorite).
+- **Add to Favorites** — saves the POI to your [Favorites](../web/web-favorites.md#favorites-actions).
 - **Share** — generates a shareable link that opens the POI directly in OsmAnd Web. The link includes the POI name, type, and coordinates (pin).
 - **Directions from** — sets the selected POI as the start point and opens the route panel so you can choose a destination and profile.
 - **Navigation** — sets the selected POI as the destination point for [navigation](../web/web-navigation.md#start-a-route).
@@ -92,7 +92,7 @@ If you search by **Category name**, the first result will display the category o
 Click the chosen POI on the map or in the result list opens the **POI Context Menu**. This menu provides the following data and links:
 
 - **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#add--edit-favorite).  
+- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
 - **🔍 Button**. Moves the map to the POI's location.  
 - **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
 - **Location**. Displays the coordinates of the POI.  
@@ -115,7 +115,7 @@ You can choose and display one POI category on the map in the **Categories Menu*
 Click the selected  POI on the map or in the results list to open the **POI Context Menu**. This menu provides the following data and links:
 
 - **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#add--edit-favorite).  
+- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
 - **🔍 Button**. Moves the map to the POI's location.  
 - **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
 - **Location**. Displays the coordinates of the POI.  
