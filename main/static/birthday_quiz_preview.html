@@ -434,15 +434,15 @@ select:focus {
         </p>
         <div class="deadline-box">
             <div><strong>Rewards:</strong></div>
-            <div>13 or more correct answers out of 16 — 3 months of OsmAnd Pro</div>
-            <div>8–12 correct answers out of 16 — 1 month of OsmAnd Pro</div>
+            <div>13–16 correct answers — 3 months of OsmAnd Pro</div>
+            <div>8–12 correct answers — 1 month of OsmAnd Pro</div>
             <br>
-            <div><strong>Quiz Deadline:</strong> Complete the quiz by June 15th.</div>
+            <div><strong>Quiz Deadline:</strong> Complete the quiz by <strong>June 15th</strong>.</div>
         </div>
         <div class="email-form">
             <label for="userEmail">Email for OsmAnd Pro activation</label>
             <input type="email" id="userEmail" placeholder="name@example.com" autocomplete="email" required>
-            <p class="email-note">In accordance with our Privacy Policy, we use your email only to activate OsmAnd Pro. We do not use it for any other purposes and do not share it with third parties.</p>
+            <p class="email-note">In accordance with our <a href="https://osmand.net/docs/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, we use your email only to activate OsmAnd Pro. We do not use it for any other purposes and do not share it with third parties.</p>
             <div class="form-error" id="emailError">Please enter a valid email address before starting the quiz.</div>
         </div>
         <button class="action-btn" onclick="startQuiz()">Start quiz</button>
@@ -480,7 +480,7 @@ const questions = [
         type: "single",
         title: "What collaborative, open-source project serves as the foundational map database for OsmAnd?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-2.png",
         options: [
             "Google Maps",
             "Apple Maps",
@@ -508,7 +508,7 @@ const questions = [
         type: "single",
         title: "When you record, import, or follow a custom hiking trail or route path in OsmAnd, what standard file format is used?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-4.png",
         options: [
             ".KML",
             ".GPX",
@@ -537,7 +537,7 @@ const questions = [
         type: "single",
         title: "Which feature allows you to configure the app for your own needs and use different settings for activities such as driving, cycling, hiking, or marine navigation?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-6.png",
         options: [
             "Map Layers",
             "App Profiles",
@@ -551,7 +551,7 @@ const questions = [
         type: "single",
         title: "Which OsmAnd feature allows you to build a multi-profile route?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-7.png",
         options: [
             "Navigation",
             "Track Recording",
@@ -579,7 +579,7 @@ const questions = [
         type: "single",
         title: "If you are hiking up a mountain and want to visually identify terrain elevation transitions and steep slopes directly on your map view, which map layout feature should you turn on?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-9.png",
         options: [
             "Public Transport lines and Street names",
             "Live Weather Overlays and Vector Polygons",
@@ -593,7 +593,7 @@ const questions = [
         type: "single",
         title: "OsmAnd launched a platform that lets users manage paths, test public transit lines, and organise smart folders via a computer browser. What major version update did this web application achieve when its major UI redesign rolled out?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-10.png",
         options: [
             "OsmAnd Web v0.3",
             "OsmAnd Web v0.5",
@@ -607,7 +607,7 @@ const questions = [
         type: "single",
         title: "What massive public transit feature was introduced alongside the sidebar visual redesign in the OsmAnd Web engine updates?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-11.png",
         options: [
             "Direct commercial flight route pricing",
             "Live satellite traffic congestion metrics",
@@ -635,7 +635,7 @@ const questions = [
         type: "single",
         title: "Which setting changes the overall visual rendering of the map for different activities and use cases?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-13.png",
         options: [
             "Map Appearance",
             "Overlay Map Layer",
@@ -677,7 +677,7 @@ const questions = [
         type: "single",
         title: "What type of overlay function can you activate to see live temperature changes, wind directions, and rain fronts moving across your map screen?",
         hint: "Select one answer.",
-        questionImg: "",
+        questionImg: "https://osmand.net/img/quiz/16-16.png",
         options: [
             "Historical Map Style",
             "Public Transport Layer",
@@ -840,7 +840,8 @@ function renderQuestion(){
     updateProgress();
     
     // Початкова емоція — тепер це наш красивий Телескоп 
-    mascotContainer.innerHTML = "🎁";
+    const questionEmojis = ["🍼", "🗺️", "🔒", "▶️", "👑", "🛶", "🗓️", "☁️", "⛰️", "🌐", "🚎", "🕒", "🌍", "⚡", "📴", "🌦️"];
+    mascotContainer.innerHTML = questionEmojis[currentQuestion] || "🎁";
     mascotContainer.style.borderColor = "var(--osmand-orange)";
     mascotContainer.style.background = "var(--osmand-orange-bg)";
     
@@ -1009,11 +1010,11 @@ function showFeedback(correct,text){
 
     // Інтерактивна зміна емоцій: телескоп перетворюється на оцінку
     if(correct) {
-        mascotContainer.innerHTML = "🎁";
+        mascotContainer.innerHTML = "👍";
         mascotContainer.style.borderColor = "var(--correct-green)";
         mascotContainer.style.background = "#e6f9ed";
     } else {
-        mascotContainer.innerHTML = "🎁";
+        mascotContainer.innerHTML = "😔";
         mascotContainer.style.borderColor = "var(--wrong-red)";
         mascotContainer.style.background = "#fdf2f2";
     }
