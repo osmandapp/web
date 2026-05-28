@@ -39,17 +39,10 @@ export default function LiveTrackContextMenu() {
     const participantList = Object.values(participants).filter((p) => p.locations?.length > 0);
     const viewers = translation ? (ctx.liveViewers?.[translation.id] ?? {}) : {};
     const viewerCount = Object.keys(viewers).length;
-    const followLocation = participantList[0]?.locations?.[0];
 
     function handleBack() {
         ctx.setSelectedLiveTranslation(null);
         navigate(MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL);
-    }
-
-    function handleFollow() {
-        if (followLocation?.lat != null && followLocation?.lon != null) {
-            ctx.setFollowLiveLocation(followLocation);
-        }
     }
 
     return (
@@ -62,15 +55,6 @@ export default function LiveTrackContextMenu() {
                 title={translation?.name ?? t('web:live_tracks')}
                 onClose={handleBack}
                 showBackButton={true}
-                rightContent={
-                    followLocation && (
-                        <Tooltip title={t('web:live_track_follow')} arrow placement="bottom">
-                            <IconButton className={trackFavStyles.sortIcon} onClick={handleFollow}>
-                                <FollowIcon />
-                            </IconButton>
-                        </Tooltip>
-                    )
-                }
             />
             {participantList.length > 0 && (
                 <>
@@ -112,11 +96,11 @@ export default function LiveTrackContextMenu() {
 }
 
 function LiveParticipantCard({ participant, isLast }) {
+    const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const locs = participant.locations;
-    const last = locs[0];
-    const speedKmh = last?.speed != null ? (last.speed * 3.6).toFixed(1) : '0.0';
-    const altitudeM = last?.ele != null ? `${last.ele.toFixed(0)} m` : '—';
+    const speedKmh = locs[0]?.speed != null ? (locs[0].speed * 3.6).toFixed(1) : '0.0';
+    const altitudeM = locs[0]?.ele != null ? `${locs[0].ele.toFixed(0)} m` : '—';
     let totalDist = 0;
     let maxSpeed = 0;
     for (let i = 0; i < locs.length - 1; i++) {
@@ -140,13 +124,30 @@ function LiveParticipantCard({ participant, isLast }) {
         return t('web:shared_string_flat');
     }
 
+    const lastLoc = locs[0];
+
+    function handleFollow() {
+        if (lastLoc?.lat != null && lastLoc?.lon != null) {
+            ctx.setFollowLiveLocation(lastLoc);
+        }
+    }
+
     return (
         <>
-            <SubTitleMenu text={`${t('web:share_owner')}: ${participant.nickname}`} />
+            <SubTitleMenu
+                text={`${t('web:share_owner')}: ${participant.nickname}`}
+                rightContent={
+                    <Tooltip title={t('web:live_track_follow')} arrow placement="bottom">
+                        <IconButton className={trackFavStyles.sortIcon} onClick={handleFollow}>
+                            <FollowIcon />
+                        </IconButton>
+                    </Tooltip>
+                }
+            />
             <DefaultItem
                 icon={<SpeedIcon />}
                 name={t('shared_string_speed')}
-                additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(last?.time)}`}
+                additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time)}`}
             />
             <DividerWithMargin margin={'64px'} />
             <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={formatTime(duration)} />

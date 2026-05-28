@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
@@ -10,28 +10,14 @@ export default function LiveTrackLayer() {
 
     // { [translationId]: { [nickname]: { polyline, marker } } }
     const layersRef = useRef({});
-    // track whether we've already panned for the current selection
-    const pannedForRef = useRef(null);
-
-    function removeTidLayers(tid) {
-        if (!layersRef.current[tid]) return;
-        Object.values(layersRef.current[tid]).forEach(({ polyline, marker }) => {
-            if (polyline) map.removeLayer(polyline);
-            if (marker) map.removeLayer(marker);
-        });
-        delete layersRef.current[tid];
-    }
-
-    function removeAllLayers() {
-        Object.keys(layersRef.current).forEach((tid) => removeTidLayers(tid));
-    }
+    const [pannedFor, setPannedFor] = useState(null);
 
     useEffect(() => {
         const selectedTid = ctx.selectedLiveTranslation?.id ?? null;
 
         // Remove layers for any translation that is not currently selected
         Object.keys(layersRef.current).forEach((tid) => {
-            if (tid !== selectedTid) removeTidLayers(tid);
+            if (tid !== selectedTid) removeTidLayers(map, layersRef, tid);
         });
 
         if (!selectedTid) return;
@@ -77,44 +63,25 @@ export default function LiveTrackLayer() {
         });
     }, [ctx.liveParticipants, ctx.selectedLiveTranslation]);
 
-    function panToTranslation(translationId) {
-        const participants = ctx.liveParticipants?.[translationId];
-        if (!participants) return false;
-
-        const locs = Object.values(participants)
-            .map((p) => p.locations?.[0])
-            .filter(Boolean);
-
-        if (locs.length === 0) return false;
-
-        if (locs.length === 1) {
-            map.setView([locs[0].lat, locs[0].lon], Math.max(map.getZoom() || 0, 15));
-        } else {
-            const bounds = L.latLngBounds(locs.map((l) => [l.lat, l.lon]));
-            map.fitBounds(bounds, { padding: [40, 40] });
-        }
-        return true;
-    }
-
     // Center map when a translation is selected (if data already loaded)
     useEffect(() => {
         const translation = ctx.selectedLiveTranslation;
         if (!translation) {
-            pannedForRef.current = null;
+            setPannedFor(null);
             return;
         }
-        if (pannedForRef.current === translation.id) return;
-        const panned = panToTranslation(translation.id);
-        if (panned) pannedForRef.current = translation.id;
+        if (pannedFor === translation.id) return;
+        const panned = panToTranslation(map, ctx.liveParticipants, translation.id, ctx.infoBlockWidth);
+        if (panned) setPannedFor(translation.id);
     }, [ctx.selectedLiveTranslation]);
 
     // Center map when data arrives for the selected translation (if not panned yet)
     useEffect(() => {
         const translation = ctx.selectedLiveTranslation;
         if (!translation) return;
-        if (pannedForRef.current === translation.id) return;
-        const panned = panToTranslation(translation.id);
-        if (panned) pannedForRef.current = translation.id;
+        if (pannedFor === translation.id) return;
+        const panned = panToTranslation(map, ctx.liveParticipants, translation.id, ctx.infoBlockWidth);
+        if (panned) setPannedFor(translation.id);
     }, [ctx.liveParticipants]);
 
     // Pan to location when Follow button is clicked in context menu.
@@ -127,8 +94,42 @@ export default function LiveTrackLayer() {
 
     // Cleanup on unmount
     useEffect(() => {
-        return removeAllLayers;
+        return () => removeAllLayers(map, layersRef);
     }, []);
 
     return null;
+}
+
+function removeTidLayers(map, layersRef, tid) {
+    if (!layersRef.current[tid]) return;
+    Object.values(layersRef.current[tid]).forEach(({ polyline, marker }) => {
+        if (polyline) map.removeLayer(polyline);
+        if (marker) map.removeLayer(marker);
+    });
+    delete layersRef.current[tid];
+}
+
+function removeAllLayers(map, layersRef) {
+    Object.keys(layersRef.current).forEach((tid) => removeTidLayers(map, layersRef, tid));
+}
+
+function panToTranslation(map, liveParticipants, translationId, infoBlockWidth) {
+    const participants = liveParticipants?.[translationId];
+    if (!participants) return false;
+
+    const locs = Object.values(participants)
+        .map((p) => p.locations?.[0])
+        .filter(Boolean);
+
+    if (locs.length === 0) return false;
+
+    const infoBlockWidthPx = Number.parseInt(String(infoBlockWidth), 10);
+    if (locs.length === 1) {
+        panToVisibleCenter(map, locs[0], infoBlockWidthPx);
+    } else {
+        const bounds = L.latLngBounds(locs.map((l) => [l.lat, l.lon]));
+        map.fitBounds(bounds, { padding: [40, 40] });
+    }
+
+    return true;
 }
