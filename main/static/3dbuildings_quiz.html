@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OsmAnd 3D Buildings Quiz</title>
+
+<style>
+:root {
+    --osmand-orange: #f47c20;
+    --osmand-orange-hover: #e06b12;
+    --osmand-orange-bg: #fff5ee;
+    --bg-main: #f8f9fa;
+    --text-dark: #1c1c1e;
+    --text-muted: #636366;
+    --border-color: #e5e5ea;
+    --correct-green: #34c759;
+    --wrong-red: #ff3b30;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container{
+    max-width: 1040px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+}
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.mascot-box {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--osmand-orange-bg);
+    border: 3px solid var(--osmand-orange);
+    border-radius: 50%;
+    font-size: 42px;
+    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+    animation: bounce 2.5s infinite ease-in-out;
+}
+
+.header-text {
+    flex-grow: 1;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.subtitle{
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+.progress-wrapper{
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 0;
+    display: none;
+}
+
+.progress{
+    height: 100%;
+    width: 0%;
+    background: var(--osmand-orange);
+    border-radius: 10px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* TWO-COLUMN LAYOUT */
+.quiz-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.quiz-left-col {
+    flex: 1;
+    min-width: 0;
+}
+
+.quiz-left-col.full-width {
+    width: 100%;
+}
+
+.quiz-right-col {
+    flex-shrink: 0;
+    width: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.question-number{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--osmand-orange);
+    margin-bottom: 12px;
+}
+
+.question-title{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.question-hint{
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* SIMULATOR INSTRUCTIONS STYLING */
+.simulator-tip {
+    background: var(--osmand-orange-bg);
+    border-left: 4px solid var(--osmand-orange);
+    padding: 12px 16px;
+    border-radius: 4px 12px 12px 4px;
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+/* STATIC IMAGE CONTAINER */
+.hint-image-wrapper {
+    width: 100%;
+    height: 520px; 
+    background: #1c1c1e;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hint-image-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* SECURE IFRAME SIMULATOR */
+.simulator-iframe {
+    width: 360px;
+    height: 740px;
+    border: none;
+    overflow: hidden;
+}
+
+.option{
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.4;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.option:hover{
+    border-color: var(--osmand-orange);
+    background: var(--osmand-orange-bg);
+    transform: translateY(-1px);
+}
+
+.option.selected{
+    border-color: var(--osmand-orange);
+    background: var(--osmand-orange-bg);
+    font-weight: 500;
+    box-shadow: inset 0 0 0 1px var(--osmand-orange);
+}
+
+button.action-btn {
+    background: var(--osmand-orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+}
+
+button.action-btn:hover{
+    background: var(--osmand-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(244, 124, 32, 0.25);
+}
+
+.feedback{
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 14px;
+    line-height: 1.5;
+    font-size: 15px;
+    animation: slideUp 0.3s ease;
+}
+
+.feedback strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.correct{
+    background: #e6f9ed;
+    color: #147029;
+    border: 1px solid #bbf2c7;
+}
+
+.wrong{
+    background: #fdf2f2;
+    color: #b42318;
+    border: 1px solid #fecdca;
+}
+
+.match-row{
+    margin-bottom: 14px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.match-row strong{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+select{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--osmand-orange);
+}
+
+.sequence-item{
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.sequence-item select{
+    width: 80px;
+    padding: 8px;
+}
+
+/* START AND RESULT SCREENS */
+.start-screen, .result-screen {
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.start-screen .mascot-box, .result-screen .mascot-box {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px auto;
+}
+
+.start-screen .mascot-box {
+    background: var(--osmand-orange-bg);
+    border-color: var(--osmand-orange);
+}
+
+.result-screen .mascot-box {
+    background: #e6f9ed;
+    border-color: var(--correct-green);
+}
+
+.start-description {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px auto 28px auto;
+    max-width: 500px;
+}
+
+.score{
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--osmand-orange);
+    margin: 16px 0;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* RESPONSIVE BREAKPOINT */
+@media(max-width:600px){
+    .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
+    .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
+    .quiz-layout { flex-direction: column; gap: 24px; }
+    .quiz-right-col { width: 100%; }
+    .hint-image-wrapper { height: 340px; }
+    h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="quiz-header" id="quizHeader" style="display: none;">
+        <div class="mascot-box" id="mascotContainer">🏢</div>
+        <div class="header-text">
+            <h1>Test your understanding of 3D Buildings in OsmAnd</h1>
+            <p class="subtitle">This quiz takes under 3 minutes.</p>
+        </div>
+    </div>
+
+    <div class="progress-wrapper" id="progressWrapper">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- START SCREEN -->
+    <div class="start-screen" id="startScreen">
+        <div class="mascot-box">🏢</div>
+        <h1>Ready to Explore the Map in 3D?</h1>
+        <p class="start-description">
+            You've learned how OsmAnd processes map tags to build volumetric urban landscapes. Now let's see how well you navigate 3D environments and configuration settings! Answer 7 technical and practical questions.
+        </p>
+        <button class="action-btn" onclick="startQuiz()">Start quiz</button>
+    </div>
+
+    <div id="quiz" style="display: none;"></div>
+
+    <!-- RESULT SCREEN -->
+    <div class="result-screen" id="resultScreen" style="display: none;">
+        <div class="mascot-box" id="mascotResultContainer">🏆</div>
+        <h1>Quiz complete</h1>
+        <div class="score" id="score"></div>
+        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;">Great job testing your 3D Buildings knowledge!</p>
+        <button class="action-btn" onclick="restartQuiz()">Restart quiz</button>
+    </div>
+
+</div>
+
+<script>
+const questions = [
+    {
+        type: "single",
+        title: "A mapper has added a building to OpenStreetMap with the tag building:levels=6 but no height tag. How will OsmAnd render this building's height?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "The building will not be rendered in 3D at all without an exact height value",
+            "OsmAnd will use a default height of 10 meters regardless of levels",
+            "OsmAnd will calculate approximately 18 meters, treating each level as 3 meters",
+            "OsmAnd will render it at the same height as surrounding buildings"
+        ],
+        correct: [2],
+        feedback: "When height=* is not available, OsmAnd uses building:levels=* as a practical alternative, treating each level as approximately 3 meters. So 6 levels × 3 meters = approximately 18 meters. This allows accurate relative heights even when exact measurements aren't mapped."
+    },
+    {
+        type: "single",
+        title: "You're mapping a historic arcade in Rome that has a low glass atrium and a taller surrounding structure. You want OsmAnd to render both sections at their correct heights. Which OSM tag should you use to split the building into separately rendered sections?",
+        hint: "Select one answer.",
+        questionImg: "",
+        options: [
+            "height=* with different values for each polygon",
+            "min_height=* to define where each section begins",
+            "type=building relation to group the sections",
+            "building:part=* to break the structure into sections, each with its own height"
+        ],
+        correct: [3],
+        feedback: "building:part=* allows a single structure to be broken into sections, each rendered independently at its own height. For OsmAnd to render them correctly as one coherent building, a type=building relation should also be used to connect the parts with the outer outline."
+    },
+    {
+        type: "single",
+        title: "You're navigating to a restaurant in a dense city block. OsmAnd suddenly highlights one specific building on the map even though you haven't tapped it. Why?",
+        hint: "Select one answer.",
+        questionImg: "https://osmand.net/img/quiz/3dbuildings_3.png",
+        options: [
+            "The building has been recently updated in OpenStreetMap",
+            "The building is tagged as a landmark in the map style",
+            "The restaurant's location falls inside that building, so OsmAnd highlights it automatically",
+            "The building is highlighted because it's blocking your navigation route"
+        ],
+        correct: [2],
+        feedback: "When a POI or navigation destination is inside a building, OsmAnd automatically highlights the corresponding structure. This makes it much easier to identify your destination in dense urban areas without scanning the whole block."
+    },
+    {
+        type: "single",
+        title: "You've enabled 3D buildings but roads and map labels are hard to read because buildings look too solid. What should you adjust?",
+        hint: "Select one answer.",
+        questionImg: "https://osmand.net/img/quiz/3dbuildings_4.png",
+        options: [
+            "Switch Level of detail from High to Low",
+            "Lower the Visibility slider — reducing it below 50% makes buildings more transparent and keeps roads and labels readable",
+            "Switch View distance from Far to Near",
+            "Change the Color setting to Map style"
+        ],
+        correct: [1],
+        feedback: "The Visibility slider controls building opacity from 10% to 100%, with 50% as the default. Lowering it makes buildings more transparent so roads and labels remain readable beneath them. This is exactly the use case the article describes for lower visibility values."
+    },
+    {
+        type: "multi",
+        title: "Which of the following are part of the Appearance settings group for 3D Buildings? (Select all that apply)",
+        hint: "Select all that apply.",
+        questionImg: "https://osmand.net/img/quiz/3dbuildings_5.png",
+        options: [
+            "Color",
+            "Level of detail",
+            "Visibility",
+            "View distance",
+            "Main toggle"
+        ],
+        correct: [0, 2],
+        feedback: "Appearance includes Color and Visibility. Level of detail and View distance belong to the Performance group, not Appearance. The main toggle enables or disables 3D rendering overall and is separate from both groups."
+    },
+    {
+        type: "matching",
+        title: "Match each OSM tag with what it controls in OsmAnd's 3D building rendering:",
+        hint: "Match each item with the correct description.",
+        questionImg: "",
+        pairs: [
+            ["height=*", "Exact building height in meters"],
+            ["building:levels=*", "Number of floors, each calculated as approximately 3 meters"],
+            ["min_height=*", "Where the walls begin, used for elevated sections or overhangs"],
+            ["tunnel=building_passage", "Creates a visible opening in the 3D model where a road passes through a building"]
+        ],
+        feedback: "Each tag adds a different dimension of spatial information. Together they allow OsmAnd to render not just the presence of a building, but its actual shape, height, and relationship to the streets around it."
+    },
+    {
+        type: "sequence",
+        title: "You want to get the best visual quality for 3D buildings but understand there may be a performance trade-off. Put the settings changes in the correct order:",
+        hint: "Assign the correct order number to each step.",
+        isSimulator: true, 
+        steps: [
+            "Switch Level of detail from Low to High",
+            "Switch View distance from Near to Far",
+            "Open Menu → Configure map → Topography → 3D buildings",
+            "Go to Performance settings"
+        ],
+        correctSequence: ["3", "4", "1", "2"], 
+        feedback: "For best visual quality, both Level of detail and View distance should be set to their higher values. The article notes that using High detail and Far view distance improves visual appearance but may impact performance and increase battery usage. Fade animation for buildings is also only available with High level of detail."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const quiz = document.getElementById("quiz");
+const startScreen = document.getElementById("startScreen");
+const quizHeader = document.getElementById("quizHeader");
+const progressWrapper = document.getElementById("progressWrapper");
+const mascotContainer = document.getElementById("mascotContainer");
+const mascotResultContainer = document.getElementById("mascotResultContainer");
+
+function startQuiz() {
+    startScreen.style.display = "none";
+    quizHeader.style.display = "flex";
+    progressWrapper.style.display = "block";
+    quiz.style.display = "block";
+    renderQuestion();
+}
+
+function updateProgress(){
+    const percent = (currentQuestion / questions.length) * 100;
+    document.getElementById("progress").style.width = percent + "%";
+}
+
+function renderQuestion(){
+    updateProgress();
+    
+    mascotContainer.innerHTML = "🏢";
+    mascotContainer.style.borderColor = "var(--osmand-orange)";
+    mascotContainer.style.background = "var(--osmand-orange-bg)";
+    
+    const q = questions[currentQuestion];
+    const hasMedia = q.isSimulator || (q.questionImg && q.questionImg !== "");
+
+    let html = `
+    <div class="quiz-layout">
+        <div class="quiz-left-col ${hasMedia ? '' : 'full-width'}">
+            <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+            <div class="question-title">${q.title}</div>
+    `;
+
+    if (q.isSimulator) {
+        html += `
+        <div class="simulator-tip">
+            <i><strong>Tip:</strong> You can use the interactive mobile simulator on the right to walk through the configuration steps, refresh your memory, and determine the correct sequence!</i>
+        </div>
+        `;
+    }
+
+    html += `<div class="question-hint">${q.hint}</div>`;
+
+    if(q.type === "single" || q.type === "multi"){
+        q.options.forEach((option,index)=>{
+            html += `
+            <div class="option" data-index="${index}">
+            ${option}
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitChoice()">Submit answer</button>`;
+    }
+
+    if(q.type === "matching"){
+        const rightSide = [...q.pairs.map(p=>p[1])].sort(()=>Math.random()-0.5);
+        q.pairs.forEach((pair)=>{
+            html += `
+            <div class="match-row">
+            <strong>${pair[0]}</strong>
+            <select data-answer="${pair[1]}">
+            <option value="">Select match...</option>
+            ${rightSide.map(item=>`<option value="${item}">${item}</option>`).join("")}
+            </select>
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitMatching()">Submit answer</button>`;
+    }
+
+    if(q.type === "sequence"){
+        q.steps.forEach((step,index)=>{
+            html += `
+            <div class="sequence-item">
+            <select class="seq-select" data-index="${index}">
+            <option value="">No.</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            </select>
+            <div>${step}</div>
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitSequence()">Submit answer</button>`;
+    }
+
+    html += `<div id="feedback"></div></div>`; 
+
+    if (hasMedia) {
+        html += `<div class="quiz-right-col">`;
+        
+        if(q.isSimulator) {
+            html += `
+            <iframe class="simulator-iframe" srcdoc="
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: transparent; overflow: hidden; }
+                        .phone-container { width: 320px; height: 658px; background: #000; border-radius: 36px; border: 10px solid #222; position: relative; overflow: hidden; user-select: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+                        .screen { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: 100% 100%; background-position: center; display: none; }
+                        .screen.active { display: block; }
+                        .clickable-zone { position: absolute; cursor: pointer; z-index: 10; box-sizing: border-box; }
+                        .clickable-zone:active { background-color: rgba(33, 150, 243, 0.4); border: 2px solid #2196F3; }
+                        .hint-overlay { position: absolute; border: 3px solid #ff4757; box-shadow: 0 0 15px #ff4757; border-radius: 4px; pointer-events: none; opacity: 0; z-index: 20; }
+                        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 0.6; } }
+                        .hint-overlay.show-hint { animation: pulse 0.5s ease-in-out 3; }
+                        .slider-zone { position: absolute; cursor: grab; z-index: 15; }
+                    </style>
+                </head>
+                <body>
+                    <div class='phone-container' id='simBox'>
+                        <div class='hint-overlay' id='hBox'></div>
+                        <div class='screen active' id='s1' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_1.png&quot;);'>
+                            <div class='clickable-zone' style='bottom: 8px; left: 6px; width: 60px; height: 60px;' onclick='go(2)'></div>
+                        </div>
+                        <div class='screen' id='s2' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_2.png&quot;);'>
+                            <div class='clickable-zone' style='top: 247px; left: 0; width: 100%; height: 50px;' onclick='go(3)'></div>
+                        </div>
+                        <div class='screen' id='s3' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_3.png&quot;);'>
+                            <div class='clickable-zone slider-zone' style='top: 392px; right: 15px; width: 65px; height: 40px;' id='knob'></div>
+                        </div>
+                        <div class='screen' id='s4' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_4.png&quot;);'>
+                            <div class='clickable-zone' style='top: 387px; left: 0; width: 250px; height: 50px;' onclick='go(5)'></div>
+                        </div>
+                        <div class='screen' id='s5' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_5.png&quot;);'>
+                            <div class='clickable-zone' style='top: 482px; right: 12px; width: 55px; height: 35px;' onclick='go(6)'></div>
+                        </div>
+                        <div class='screen' id='s6' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_6.png&quot;);'>
+                            <div class='clickable-zone' style='top: 530px; right: 12px; width: 55px; height: 35px;' onclick='go(7)'></div>
+                        </div>
+                        <div class='screen' id='s7' style='background-image: url(&quot;https://osmand.net/img/quiz/3D_7.png&quot;);' onclick='reset()'></div>
+                    </div>
+                    <script>
+                        let step = 1;
+                        const targets = {
+                            1: { left: '6px', top: '590px', width: '60px', height: '60px' },
+                            2: { left: '0px', top: '247px', width: '100%', height: '50px' },
+                            3: { left: '240px', top: '392px', width: '65px', height: '40px' },
+                            4: { left: '0px', top: '387px', width: '250px', height: '50px' },
+                            5: { left: '251px', top: '482px', width: '55px', height: '35px' },
+                            6: { left: '251px', top: '530px', width: '55px', height: '35px' }
+                        };
+                        function go(n) {
+                            document.getElementById('s' + step).classList.remove('active');
+                            document.getElementById('hBox').classList.remove('show-hint');
+                            step = n;
+                            document.getElementById('s' + step).classList.add('active');
+                        }
+                        function reset() {
+                            document.getElementById('s7').classList.remove('active');
+                            step = 1;
+                            document.getElementById('s1').classList.add('active');
+                        }
+                        document.getElementById('simBox').onclick = function(e) {
+                            if (e.target.classList.contains('clickable-zone') || step === 7) return;
+                            const coords = targets[step];
+                            const h = document.getElementById('hBox');
+                            if (coords && h) {
+                                h.style.left = coords.left; h.style.top = coords.top; h.style.width = coords.width; h.style.height = coords.height;
+                                h.classList.remove('show-hint'); void h.offsetWidth; h.classList.add('show-hint');
+                            }
+                        };
+                        const k = document.getElementById('knob');
+                        let drag = false;
+                        k.onmousedown = k.ontouchstart = function(e) { drag = true; };
+                        k.onmouseup = k.ontouchend = function(e) { if(drag) { drag = false; go(4); } };
+                        k.onclick = function(e) { go(4); e.stopPropagation(); };
+                    <\/script>
+                </body>
+                </html>
+            "></iframe>
+            `;
+        } else if(q.questionImg && q.questionImg !== "") {
+            html += `
+            <div class="hint-image-wrapper">
+                <img src="${q.questionImg}" alt="Interface Hint">
+            </div>
+            `;
+        }
+        html += `</div>`;
+    }
+    
+    html += `</div></div>`; 
+
+    quiz.innerHTML = html;
+    attachOptionEvents(q.type);
+}
+
+function attachOptionEvents(type){
+    const options = document.querySelectorAll(".option");
+    options.forEach(option=>{
+        option.addEventListener("click",()=>{
+            if(type === "single"){
+                options.forEach(o=>o.classList.remove("selected"));
+            }
+            option.classList.toggle("selected");
+        });
+    });
+}
+
+function arraysEqual(a,b){
+    return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+}
+
+function submitChoice(){
+    const q = questions[currentQuestion];
+    const selected = [...document.querySelectorAll(".option.selected")].map(el=>Number(el.dataset.index));
+    if (selected.length === 0) return;
+    const correct = arraysEqual(selected,q.correct);
+    if(correct) score++;
+    showFeedback(correct,q.feedback);
+}
+
+function submitMatching(){
+    const selects = document.querySelectorAll("select");
+    let anyEmpty = false;
+    let correct = true;
+    selects.forEach(select=>{
+        if(!select.value) anyEmpty = true;
+        if(select.value !== select.dataset.answer) correct = false;
+    });
+    if(anyEmpty) return;
+    if(correct) score++;
+    showFeedback(correct,questions[currentQuestion].feedback);
+}
+
+function submitSequence(){
+    const selects = document.querySelectorAll(".seq-select");
+    const q = questions[currentQuestion];
+    let anyEmpty = false;
+    let correct = true;
+    
+    selects.forEach(select => {
+        if(!select.value) anyEmpty = true;
+        const idx = Number(select.dataset.index);
+        if(select.value !== q.correctSequence[idx]) {
+            correct = false;
+        }
+    });
+    
+    if(anyEmpty) return;
+    if(correct) score++;
+    showFeedback(correct,q.feedback);
+}
+
+function showFeedback(correct,text){
+    const feedback = document.getElementById("feedback");
+    feedback.className = correct ? "feedback correct" : "feedback wrong";
+    const isLastQuestion = currentQuestion === questions.length - 1;
+
+    if(correct) {
+        mascotContainer.innerHTML = "👍";
+        mascotContainer.style.borderColor = "var(--correct-green)";
+        mascotContainer.style.background = "#e6f9ed";
+    } else {
+        mascotContainer.innerHTML = "🤔";
+        mascotContainer.style.borderColor = "var(--wrong-red)";
+        mascotContainer.style.background = "#fdf2f2";
+    }
+
+    feedback.innerHTML = `
+    <strong>${correct ? "✓ Correct!" : "✕ Incorrect"}</strong>
+    ${text}
+    <button class="action-btn" style="margin-top:20px; background: ${correct ? '#34c759' : '#ff3b30'}; box-shadow: none;" onclick="nextQuestion()">
+        ${isLastQuestion ? "View results" : "Next question"}
+    </button>
+    `;
+    
+    const mainBtn = document.querySelector(".quiz-left-col > button.action-btn");
+    if(mainBtn) mainBtn.style.display = 'none';
+}
+
+function nextQuestion(){
+    currentQuestion++;
+    if(currentQuestion >= questions.length){
+        document.getElementById("quizHeader").style.display = "none";
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("resultScreen").style.display = "block";
+        document.getElementById("progress").style.width = "100%";
+        document.getElementById("score").innerText = `${score} / ${questions.length}`;
+        return;
+    }
+    renderQuestion();
+}
+
+function restartQuiz(){
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById("quizHeader").style.display = "none";
+    document.getElementById("progressWrapper").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("resultScreen").style.display = "none";
+    startScreen.style.display = "block";
+}
+</script>
+
+</body>
+</html>
