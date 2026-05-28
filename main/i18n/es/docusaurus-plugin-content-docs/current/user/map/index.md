@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ El menú contextual de rutas es un menú con acciones y datos de la ruta GPX.
 
 El transporte público es una capa adicional que le permite mostrar rutas y paradas de transporte en el mapa, verificar información detallada sobre ellas y navegar.
 
-## [Rutas](./routes.md) {#routes}
+## [Rutas](./routes/index.md) {#routes}
 
 OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa.
+
+### [Tipos de rutas](./routes/types-of-routes.md) {#type-of-routes}
+
+Toda la información sobre los tipos de rutas disponibles en OsmAnd.

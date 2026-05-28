@@ -1,5 +1,5 @@
 ---
-source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
+source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -59,7 +59,7 @@ Para dispositivos Android, puedes descargar las versiones **Gratuita** y de **Pa
 | **OsmAnd Start** | Un **plan gratuito** que proporciona acceso a [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) para *Favoritos*, *Ajustes* y *edición/notas de OSM*. | Disponible para todos los usuarios de la versión gratuita de OsmAnd. | Limitado a las funciones básicas de la nube y **5MB** de almacenamiento. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Una **aplicación de pago independiente** que incluye funciones avanzadas. | Disponible en [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Se puede añadir a la [Biblioteca familiar de Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Una **compra dentro de la aplicación** o **suscripción** para la aplicación gratuita OsmAnd, que desbloquea las mismas funciones que OsmAnd+. | Disponible en [Google Play](https://play.google.com/store/apps/details?id=net.osmand) y [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Idéntico en funciones y precio a OsmAnd+. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan de suscripción** que desbloquea funciones avanzadas adicionales y [profesionales](#pro-features). | Disponible en [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) y [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Proporciona acceso completo a las funciones de OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan de suscripción** que desbloquea funciones avanzadas adicionales y [funciones pro](#pro-features). | Disponible en [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) y [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Proporciona acceso completo a las funciones de OsmAnd Cloud. |
 
 ### Notas importantes {#important-notes}
 
@@ -76,7 +76,25 @@ Para dispositivos Android, puedes descargar las versiones **Gratuita** y de **Pa
 
 En la lista, hay información sobre los precios del producto OsmAnd para la región de EE. UU. y Europa. Para otras regiones, los precios son equivalentes en las monedas locales.
 
+<!--
 
+:::danger 🌱 Spring Sale
+
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+
+
+-->
 
 |    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) en la aplicación | Suscripción [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
