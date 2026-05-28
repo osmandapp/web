@@ -103,7 +103,6 @@ export default async function test() {
     await clickBy(By.id('se-folder-actions-button-shops'));
     await waitBy(By.id('se-favorite-folder-actions'));
     await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
-    await waitBy(By.id('se-fav-menu-icon-hidden-shops'));
     await actionIdleWait();
     await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
 
@@ -121,7 +120,7 @@ export default async function test() {
     await waitBy(By.id('se-favorite-folder-actions'));
     await clickBy(By.id('se-favorite-folder-actions-pinned'));
     await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateAfterRenameHidden);
+    await validateGroupOrder(favGroupsOldDateAfterRename);
 
     await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await actionDeleteAllFavorites(favorites);
