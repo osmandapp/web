@@ -128,16 +128,16 @@ export default async function test() {
 
     // check shared track
     await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id('se-smart-folder-share-track'));
-    await clickBy(By.id('se-smart-folder-share-track'));
+    await waitBy(By.id('se-shared-folder-share-track'));
+    await clickBy(By.id('se-shared-folder-share-track'));
     await waitBy(By.id('se-tracks-folder'));
     await waitBy(By.id('se-cloud-track-' + trackName));
     await waitBy(By.id('se-cloud-track-' + trackName2));
 
     // check shared favorites
     await clickBy(By.id('se-show-menu-favorites'));
-    await waitBy(By.id('se-smart-folder-share-favorite'));
-    await clickBy(By.id('se-smart-folder-share-favorite'));
+    await waitBy(By.id('se-shared-folder-share-favorite'));
+    await clickBy(By.id('se-shared-folder-share-favorite'));
     await waitBy(By.id(`se-menu-fav-${favNameShort}`));
     await waitBy(By.id(`se-menu-fav-${favName2Short}`));
 

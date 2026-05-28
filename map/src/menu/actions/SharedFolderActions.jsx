@@ -11,7 +11,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
-const SmartFolderActions = forwardRef(
+const SharedFolderActions = forwardRef(
     ({ files, type, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
         const { t } = useTranslation();
         const ctx = useContext(AppContext);
@@ -104,7 +104,7 @@ const SmartFolderActions = forwardRef(
         return (
             <>
                 <Box ref={ref}>
-                    <Paper id="se-smart-folder-actions" className={styles.actions}>
+                    <Paper id="se-shared-folder-actions" className={styles.actions}>
                         {subtype === 'track' && (
                             <MenuItem
                                 disabled={files.realSize === 0}
@@ -168,5 +168,5 @@ const SmartFolderActions = forwardRef(
     }
 );
 
-SmartFolderActions.displayName = 'SmartFolderActions';
-export default SmartFolderActions;
+SharedFolderActions.displayName = 'SharedFolderActions';
+export default SharedFolderActions;

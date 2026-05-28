@@ -8,7 +8,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
-import SmartFolderActions from '../actions/SmartFolderActions';
+import SharedFolderActions from '../actions/SharedFolderActions';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { SHARE_TYPE } from '../share/shareConstants';
 
@@ -27,7 +27,7 @@ const types = {
     },
 };
 
-export default function SmartFolder({ type, subtype, files, onOpenFolder = null }) {
+export default function SharedFolder({ type, subtype, files, onOpenFolder = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -54,10 +54,10 @@ export default function SmartFolder({ type, subtype, files, onOpenFolder = null 
     return (
         <>
             <MenuItem
-                id={`se-smart-folder-${type}-${subtype}`}
+                id={`se-shared-folder-${type}-${subtype}`}
                 onClick={openFiles}
                 className={styles.group}
-                key={'smartFolder' + type}
+                key={'sharedFolder' + type}
             >
                 <ListItemIcon className={styles.icon}>{folder.icon}</ListItemIcon>
                 <ListItemText>
@@ -94,7 +94,7 @@ export default function SmartFolder({ type, subtype, files, onOpenFolder = null 
                 setOpen={setOpenActions}
                 anchorEl={anchorEl}
                 actions={
-                    <SmartFolderActions
+                    <SharedFolderActions
                         files={files}
                         type={type}
                         subtype={subtype}
