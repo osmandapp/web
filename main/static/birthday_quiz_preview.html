@@ -122,11 +122,11 @@ h1{
     font-style: italic;
 }
 
-/* ОПТИМАЛЬНЕ НАЛАШТУВАННЯ ДЛЯ ВЕРТИКАЛЬНИХ СКРІНШОТІВ */
+/* Question image block: optimized for 640×230 images */
 .hint-image-wrapper {
     width: 100%;
-    height: 280px;
-    background: #1c1c1e; /* Темний фон гармонійно зливається з нічною темою мапи */
+    aspect-ratio: 640 / 230;
+    background: #f8f9fa;
     border-radius: 14px;
     overflow: hidden;
     margin-bottom: 24px;
@@ -137,9 +137,10 @@ h1{
 }
 
 .hint-image-wrapper img {
+    width: 100%;
     height: 100%;
-    width: auto;
     object-fit: contain;
+    display: block;
 }
 
 .option{
