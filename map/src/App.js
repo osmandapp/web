@@ -20,6 +20,7 @@ import {
     PLANROUTE_URL,
     SETTINGS_URL,
     TRACKS_URL,
+    LIVE_TRACKS_URL,
     VISIBLE_TRACKS_URL,
     WEATHER_URL,
     EXPLORE_URL,
@@ -167,6 +168,7 @@ const App = () => {
                                             },
                                         ],
                                     },
+                                    { path: LIVE_TRACKS_URL, element: <TracksMenu /> },
                                     { path: VISIBLE_TRACKS_URL, element: <VisibleTracks /> },
                                     {
                                         path: FAVORITES_URL,

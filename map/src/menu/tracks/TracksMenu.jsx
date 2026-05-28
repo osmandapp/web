@@ -17,8 +17,13 @@ import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTr
 import { useTranslation } from 'react-i18next';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
-import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
+import LiveTrackGroup from './liveTrack/LiveTrackGroup';
+import LiveTrackFolder from './liveTrack/LiveTrackFolder';
+import LiveTrackContextMenu from './liveTrack/LiveTrackContextMenu';
+import useLiveTracking from '../../util/hooks/live/useLiveTracking';
+import useLiveTrackUrl from '../../util/hooks/live/useLiveTrackUrl';
 import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -40,6 +45,9 @@ export default function TracksMenu() {
     const [, height] = useWindowSize();
 
     const { t } = useTranslation();
+
+    const { addTranslation, removeTranslation } = useLiveTracking();
+    const { openLiveTracks, selectedLiveTranslation } = useLiveTrackUrl({ addTranslation });
 
     const checkHasFiles = () =>
         ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
@@ -101,6 +109,14 @@ export default function TracksMenu() {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
 
+    // live tracks folder / context menu
+    if (openLiveTracks) {
+        if (selectedLiveTranslation) {
+            return <LiveTrackContextMenu />;
+        }
+        return <LiveTrackFolder removeTranslation={removeTranslation} />;
+    }
+
     // open folders
     if (ctx.openGroups && ctx.openGroups.length > 0) {
         const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
@@ -158,6 +174,7 @@ export default function TracksMenu() {
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>
+                            <LiveTrackGroup />
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
                                 <SmartFolder type={SHARE_TYPE} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}

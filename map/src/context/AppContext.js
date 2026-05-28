@@ -55,6 +55,8 @@ export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
+export const LIVE_TRACKS_STORAGE_KEY = 'liveTranslations';
+
 export const MAX_RECENT_OBJS = 5;
 
 export const defaultConfigureMapStateValues = {
@@ -186,6 +188,19 @@ export const AppContextProvider = (props) => {
     const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
 
     const [smartFoldersCache, setSmartFoldersCache] = useState(null);
+
+    // live tracks
+    const [liveTranslations, setLiveTranslations] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem(LIVE_TRACKS_STORAGE_KEY)) ?? [];
+        } catch {
+            return [];
+        }
+    });
+    const [liveParticipants, setLiveParticipants] = useState({});
+    const [liveViewers, setLiveViewers] = useState({});
+    const [selectedLiveTranslation, setSelectedLiveTranslation] = useState(null);
+    const [followLiveLocation, setFollowLiveLocation] = useState(null);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -738,6 +753,16 @@ export const AppContextProvider = (props) => {
                 setStopByUrl,
                 closeMapObj,
                 setCloseMapObj,
+                liveTranslations,
+                setLiveTranslations,
+                liveParticipants,
+                setLiveParticipants,
+                liveViewers,
+                setLiveViewers,
+                selectedLiveTranslation,
+                setSelectedLiveTranslation,
+                followLiveLocation,
+                setFollowLiveLocation,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,

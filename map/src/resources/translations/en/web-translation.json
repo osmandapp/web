@@ -404,5 +404,20 @@
     "exit_without_saving": "Exit without saving?",
     "all_changes_will_be_lost": "All changes will be lost.",
     "keep_editing": "Keep Editing",
-    "shared_string_exit": "Exit"
+    "shared_string_exit": "Exit",
+    "live_tracks": "Live Tracks",
+    "live_track_delete": "Delete translation",
+    "live_track_empty": "No live tracks yet",
+    "live_track_empty_desc": "Open a share link in the browser to follow live location sharing",
+    "live_track_inactive": "Inactive",
+    "live_track_viewers": "Viewers",
+    "live_track_follow": "Follow on map",
+    "live_track_location_paused_title": "Location sharing paused",
+    "live_track_location_paused_desc": "The owner has paused sharing their location. You will see updates when they resume.",
+    "live_track_intervals": "Track intervals",
+    "live_track_elevation_gain": "Elevation gain",
+    "live_track_elevation_loss": "Elevation loss",
+    "live_track_updated": "updated",
+    "shared_string_flat": "Flat",
+    "shared_string_no_data": "No data"
 }

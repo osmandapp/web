@@ -25,6 +25,7 @@ import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
+import LiveTrackLayer from './layers/LiveTrackLayer';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
 
@@ -224,6 +225,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 {routersReady && <NavigationLayer geocodingData={geocodingData} region={regionData} />}
                 <TrackAnalyzerLayer />
                 <ShareFileLayer />
+                <LiveTrackLayer />
                 <TravelLayer />
                 <FavoriteLayer />
                 <WeatherLayer />

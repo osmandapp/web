@@ -9,13 +9,15 @@
  * --- Start with a point limit (pause after 1000 points) ---
  *   const sim = await window.__liveTrackSim.start({ speed: 30, maxPoints: 1000 });
  *
- * --- Join an existing translation ---
- *   const sim = await window.__liveTrackSim.start({ tid: 'abc123', speed: 30 });
+ * --- Join an existing translation (e.g. after page refresh or sim.stop()) ---
+ *   const sim = await window.__liveTrackSim.start({ tid: 'abc123' });
+ *   // tid is printed in the console when the translation is first created,
+ *   // or grab it from the share URL: ?tid=<value>
  *
- * --- Pause (after maxPoints or manually) ---
+ * --- Pause sending points (sim keeps connected) ---
  *   sim.pause();
  *
- * --- Resume ---
+ * --- Resume sending points after pause ---
  *   sim.resume();
  *
  * --- Stop and disconnect ---
@@ -27,10 +29,10 @@
  *   alias      — display name (default: 'WebSimulator')
  *   lat        — start latitude  (default: 50.4501)
  *   lon        — start longitude (default: 30.5234)
- *   speed      — km/h (default: 30)
+ *   speed      — km/h (default: 20, bicycle pace)
  *   bearing    — direction 0-360° (default: 45)
  *   interval   — ms between points (default: 2000)
- *   eleProfile — 'flat' | 'hilly' | 'alpine' (default: 'hilly')
+ *   eleProfile — 'flat' | 'hilly' | 'alpine' (default: 'flat')
  *   maxPoints  — stop after N points, then call sim.resume() (default: 0 = infinite)
  */
 
@@ -72,20 +74,20 @@ export function start(opts = {}) {
         alias: opts.alias ?? 'WebSimulator',
         lat: opts.lat ?? 50.4501,
         lon: opts.lon ?? 30.5234,
-        speed: opts.speed ?? 30,
+        speed: opts.speed ?? 20,
         bearing: opts.bearing ?? 45,
         interval: opts.interval ?? 2000,
-        eleProfile: opts.eleProfile ?? 'hilly',
+        eleProfile: opts.eleProfile ?? 'flat',
         maxPoints: opts.maxPoints ?? 0,
     };
 
     const brokerURL = 'ws://localhost:8080/osmand-websocket';
 
-    const speedMs = options.speed / 3.6;
     const getEle = makeElevationGenerator(options.eleProfile);
 
     let currentLat = options.lat;
     let currentLon = options.lon;
+    let currentBearing = options.bearing;
     let translationId = options.tid;
     let intervalHandle = null;
     let pointCount = 0;
@@ -149,8 +151,13 @@ export function start(opts = {}) {
             intervalHandle = setInterval(() => {
                 if (paused) return;
 
-                const distStep = speedMs * (options.interval / 1000);
-                const next = movePoint(currentLat, currentLon, distStep, options.bearing);
+                const baseSpeedMs = options.speed / 3.6;
+                const speedVariation = baseSpeedMs * (0.7 + Math.random() * 0.6);
+
+                currentBearing = (currentBearing + (Math.random() - 0.5) * 40 + 360) % 360;
+
+                const distStep = speedVariation * (options.interval / 1000);
+                const next = movePoint(currentLat, currentLon, distStep, currentBearing);
                 currentLat = next.lat;
                 currentLon = next.lon;
                 const ele = getEle();
@@ -160,7 +167,7 @@ export function start(opts = {}) {
                     lat: currentLat,
                     lon: currentLon,
                     timestamp: Date.now(),
-                    speed: speedMs,
+                    speed: speedVariation,
                     altitude: ele,
                 });
                 fetch(`/mapapi/translation/msg?${params}`).catch(() => {});
@@ -202,7 +209,7 @@ export function start(opts = {}) {
                 'color: orange; font-weight: bold'
             );
             console.log(
-                `   Speed: ${options.speed} km/h | Bearing: ${options.bearing}° | Profile: ${options.eleProfile}${limitMsg}`
+                `   Speed: ~${options.speed} km/h (±30% variation) | Bearing: ${options.bearing}° (±20° wander) | Profile: ${options.eleProfile}${limitMsg}`
             );
 
             startInterval(tid);
@@ -220,9 +227,13 @@ export function start(opts = {}) {
                 },
                 stop: () => {
                     clearInterval(intervalHandle);
-                    client.publish({ destination: `/app/translation/${tid}/stopSharing`, body: '{}' });
+                    if (client?.connected) {
+                        client.publish({ destination: `/app/translation/${tid}/stopSharing`, body: '{}' });
+                        setTimeout(() => client.deactivate(), 500);
+                    } else {
+                        client.deactivate();
+                    }
                     console.log(`%c⏹ Stopped after ${pointCount} points`, 'color: red; font-weight: bold');
-                    setTimeout(() => client.deactivate(), 500);
                 },
             });
         }
