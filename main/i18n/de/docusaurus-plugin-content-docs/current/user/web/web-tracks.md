@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -66,6 +66,23 @@ Klicken Sie auf den Drei-Punkte-Button (⋮), um das *Track-Ordner*-Menü zu öf
  - Löschen. Öffnet einen Bestätigungsdialog. Das Löschen eines Ordners entfernt ihn dauerhaft zusammen mit allen enthaltenen Tracks. Diese Aktion wird ebenfalls über OsmAnd Cloud synchronisiert.
 
 ![Track-Ordner-Menü](@site/static/img/web/collection_rename.png) ![Track-Ordner-Menü](@site/static/img/web/collection_delete.png)
+
+### Smart Folders {#smart-folders}
+
+**Smart Folders**, die auf Mobilgeräten erstellt wurden, können über OsmAnd Cloud synchronisiert und in der Webversion angezeigt werden. Damit sie im Web erscheinen, muss die Synchronisierung von [OsmAnd-Einstellungen](../personal/osmand-cloud.md#select-data-to-back-up) in den Cloud-Einstellungen aktiviert sein.  
+Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Smart Folders werden derzeit als Teil der globalen Einstellungen gespeichert, daher werden sie nur dann in die Cloud hochgeladen, wenn die Einstellungssynchronisierung aktiv ist. Nach dem Erstellen oder Bearbeiten eines Smart Folders wird empfohlen, eine manuelle Synchronisierung durchzuführen, um die Daten zu aktualisieren.
+
+Im Web werden Smart Folders in der Track-Liste mit einem Sternsymbol angezeigt, wodurch sie sich leicht von regulären Ordnern unterscheiden lassen. Der Ordnername wird zuerst synchronisiert, während die Track-Liste davon abhängt, wie der Ordner auf dem Gerät konfiguriert ist.
+
+Tracks werden nur angezeigt, wenn die Smart-Folder-Konfiguration im Web unterstützt wird. Dazu gehören sowohl [Filtereinstellungen](../personal/tracks/smart-folder.md#search-filter) als auch [Gruppierungsoptionen](../personal/tracks/smart-folder.md#managing-smart-folders). Bei nicht unterstützten Parametern (z. B. nächstgelegene Stadt) kann der Ordner ohne Tracks erscheinen. Für beste Kompatibilität verwenden Sie gängige Parameter wie Aktivität, Datum, Entfernung oder Dauer.
+
+Die Synchronisierung von Smart Folders kann je nach Plattform und Sync-Konfiguration variieren. Für konsistente Ergebnisse stellen Sie sicher, dass die Cloud-Synchronisierung auf allen Geräten aktiviert und auf dem neuesten Stand ist.
+
+Im Drei-Punkte-Menü (⋮) können Sie den Smart Folder als OBF-Sammlung herunterladen.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
 ## Cloud-Tracks {#cloud-tracks}

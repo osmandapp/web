@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -19,6 +19,21 @@ Sie können die neueste Version von OsmAnd kostenlos in den aufgeführten App-St
 Direkte Links zu kostenlosen OsmAnd-Versionen.
 
 ## Version 5 {#version-5}
+
+### Version 5.3 {#version-53}
+
+Veröffentlichungsdatum 04/2026:
+
+- Astronomy-Plugin mit einer astronomischen Überlagerung, die die Pfade von Sonne, Planeten und Sternen auf der Karte zeigt.
+- Flexibleres Layout für Widgets und Kartenschaltflächen.
+- 3D-Gebäude.
+- Globusansicht.
+- Neue Fahrtprotokollierungs-Widgets: Durchschnittsgeschwindigkeit und Bewegungszeit.
+- Tachometer-Widget mit visueller Geschwindigkeitsanzeige, Toleranzwarnung und Zuständen bei Überschreitung des Limits.
+- Neuer Paletten-Editor zum Erstellen und Bearbeiten benutzerdefinierter Farbschemata für Tracks und Geländevisualisierung.
+- Verbessertes Fahrrad-Routing unter Berücksichtigung der Fahrradbreite.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Version 5.2 {#version-52}
 
