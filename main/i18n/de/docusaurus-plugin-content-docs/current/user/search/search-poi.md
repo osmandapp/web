@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title:  POI-Suche
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-[OsmAnd Points of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) Funktionalität in OsmAnd bietet Genauigkeit, Sichtbarkeit und Komfort bei der Suche nach interessanten Orten, Routen und Dienstleistungen in der Nähe Ihres aktuellen Standorts oder eines ausgewählten Bereichs auf der Karte.  
+[OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) Funktionalität in OsmAnd bietet Genauigkeit, Sichtbarkeit und Komfort bei der Suche nach interessanten Orten, Routen und Dienstleistungen in der Nähe Ihres aktuellen Standorts oder eines ausgewählten Bereichs auf der Karte.  
 
 Die Suchleiste ermöglicht es Ihnen, Schlüsselwörter einzugeben, die sich auf die Orte beziehen, an denen Sie interessiert sind. Die POI-Suche präsentiert auch eine praktische, nach [Kategorie](#poi-search-by-categories) sortierte Liste, die Ihnen hilft, schnell zu finden, was Sie suchen, und der [Filter](#save-new-custom-filters) ermöglicht es Ihnen, spezifische POI-Eigenschaften auszuwählen, um nur relevante Ergebnisse anzuzeigen.  
 
@@ -58,7 +58,8 @@ OsmAnd bietet mehrere Wege, um zum Suchwerkzeug zu gelangen, wo sich der Abschni
 - **Suche nach Points of Interest (POI) nach Typ und Name**:
     - Ermöglicht die Suche:
        - Nach nahegelegenen Points of Interest (POI) oder spezifischen POI-Kategorien.
-       - Nach [OSM-Routen](../map/routes.md) nach Name und Referenznummer.
+       - Nach [OSM-Routen](../map/routes/types-of-routes.md) nach Name, Referenznummer oder Relations-ID im Format `O+relation_id` (z. B.: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Nach Objekten, die mit Wikidata-Identifikatoren verknüpft sind (z. B.: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - Nach [Beliebten Orten (Wikipedia)](../map/popular_places.md).
        - Nach Orten durch Kombinieren eines Städtenamens mit einem POI-Namen oder -Typ (z. B. Berlin Flughafen, Bratislava Billa).
     - Filtern und Sortieren der Ergebnisse nach Kategorie, Entfernung oder Bewertung ist möglich.
@@ -74,7 +75,7 @@ Suchergebnisse können zusätzliche Standortinformationen wie die Stadt, in der 
 - **Markensuche**:
     - Die Suche nach einem Geschäftsort nach Markennamen (wie Audi, Starbucks oder Aldi) ist der Suche nach verschiedenen POIs nach Typ sehr ähnlich. Der Hauptunterschied besteht darin, dass die Markenliste innerhalb der Karte bereitgestellt wird und sich bei jedem Update ändern kann. 
     - Eine Marke wird durch das OSM-Tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) definiert und OsmAnd sammelt eine begrenzte Anzahl von Markentypen pro Karte mit maximal 1000 Marken pro Karte, stellt jedoch sicher, dass die Liste der Marken über benachbarte Karten hinweg abgestimmt ist.
-    - Die Markensuche ist nicht groß-/kleinschreibungssensitiv. Zum Beispiel liefert die Eingabe von `starbucks`, `Starbucks` oder `STARBUCKS` dieselben Ergebnisse.
+    - Die Markensuche ist nicht groß-/kleinschreibungssensitiv. Zum Beispiel liefert die Eingabe von `starbucks`, `Starbucks` oder `STARBUCKS` dieselben Ergebnissen.
     - Nur Marken, die im Karten-Datenindex enthalten sind, erscheinen in den Suchergebnissen.
 
 ![POI-Suche Android](@site/static/img/search/brand_search_andr.png) ![POI-Suche Android](@site/static/img/search/brand_search_2_andr.png)
@@ -153,7 +154,7 @@ Das Werkzeug **Suche nach Kategorien** ermöglicht es Ihnen, schnell Objekte, Or
 
 POI-Kategorien in OsmAnd basieren auf OpenStreetMap-Tags. Einige Orte können unter einer allgemeineren Kategorie erscheinen, wenn ein spezifischerer Typ in den Kartendaten nicht verfügbar ist (z. B. kann eine Kirche unter `Place of worship` erscheinen).
 
-Jede Kategorie hat einen einzigartigen Satz von Merkmalen, und dieses Werkzeug verfügt über Filter, mit denen Sie die Suchergebnisse verfeinern können, indem Sie verschiedene Werte für zusätzliche Merkmale auswählen.
+Jede Kategorie haben einen einzigartigen Satz von Merkmalen, und dieses Werkzeug verfügt über Filter, mit denen Sie die Suchergebnisse verfeinern können, indem Sie verschiedene Werte für zusätzliche Merkmale auswählen.
 
 So funktioniert es:
 
@@ -161,6 +162,20 @@ So funktioniert es:
 - *Merkmalsfilter* - Nach der Auswahl einer Kategorie zeigt die Anwendung zusätzliche Merkmale an, die zur Verfeinerung der Suche verwendet werden können. Zum Beispiel können Sie für die Kategorie Restaurants Filter wie Küchentyp (italienisch, chinesisch usw.), Preisspanne, Bewertung und Parkmöglichkeiten auswählen.
 - *Filter anwenden* - Sie wählen die erforderlichen Werte in den Filtern aus, und die Anwendung wendet diese Filter dann auf die Suchergebnisse an, um nur die Eigenschaften anzuzeigen, die den angegebenen Merkmalen entsprechen.
 - *Ergebnisse anzeigen* - Nach dem Anwenden der Filter zeigt OsmAnd eine Liste mit kurzen Informationen an, die der eingestellten Kategorie und den Merkmalen entsprechen.
+
+<!--
+Benefits:
+
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
+
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
+-->
 
 ### Filtertypen {#types-of-filters}
 
@@ -238,7 +253,7 @@ Ein Filter kann aus einer ganzen Reihe von Elementen bestehen, deren Vorhandense
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. Es ist ein Transportsystem, das dazu dient, Menschen für öffentliche Zwecke zu befördern und für alle Einwohner und Besucher einer Stadt oder Region zugänglich ist.  
         Enthält *9* Filtertypen.
 
- 17. **Routen**. Umfasst [OSM-Routen](../map/routes.md) für verschiedene Arten von Aktivitäten.  
+ 17. **Routen**. Umfasst [OSM-Routen](../map/routes/types-of-routes.md) für verschiedene Arten von Aktivitäten.  
         Enthält *14* Filtertypen: **Kontrollpunkt**, **Radwegenetz-Knotenpunkt**, **Wanderwegenetz-Knotenpunkt**, **Routennetz (Radfahren)**, **Routennetz (Wandern)**, **Routenpunkt-Kategorie**, **Luftsport**, **Radfahren**, **Autofahren**, **Zu Fuß**, **Motorradfahren**, **Andere Routen**, **Wassersport**, **Wintersport**.
 
  18. **Sehenswürdigkeiten**. Es ist eine Aktivität, bei der Menschen interessante Orte oder Stätten besuchen, um sich mit ihnen vertraut zu machen und ihre Schönheit, Geschichte oder Bedeutung zu genießen.  

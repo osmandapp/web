@@ -1,5 +1,5 @@
 ---
-source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
+source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -113,7 +113,7 @@ Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-o
   
     - Alle Kategorien dürfen nicht mehr Listeneinträge enthalten, als von Ihrem Fahrzeug-Multimediasystem vorgesehen sind. Das bedeutet, dass die Liste in *CarPlay* unvollständig sein könnte und alle anderen Ordner nur in der OsmAnd-App auf Ihrem Gerät verfügbar sind.
     - Der Ordner [Zuletzt geändert](#folder-last-modified) enthält eine Liste der letzten Ziele, sortiert nach dem Datum des Hinzufügens oder Änderns.
-    - Die Liste aller anderen Ordner ist nach der letzten Aktualisierung sortiert, neue Ordner stehen ganz oben in der Liste. Es ist nicht möglich, ihre Reihenfolge manuell zu ändern.
+    - Die Liste aller anderer Ordner ist nach der letzten Aktualisierung sortiert, neue Ordner stehen ganz oben in der Liste. Es ist nicht möglich, ihre Reihenfolge manuell zu ändern.
     - Die Liste der Punkte innerhalb der Ordner ist nach der Entfernung zu ihnen sortiert, beginnend mit dem nächstgelegenen. Jeder Punkt hat einen Namen oder Koordinaten, ein geformtes Symbol (Farbe und Symbol sind standardmäßig festgelegt oder von Ihnen in der OsmAnd-Anwendung gewählt) und die Entfernung vom Punkt des aktuellen Standorts zu ihm.
 2. Wählen Sie die Kategorie [Verlauf](#history), um eines der letzten Ziele zu finden, die im Speicher des Geräts gespeichert sind.
 3. Wählen Sie [Suche](#search), um ein Ziel aus den verfügbaren Suchkategorien einzugeben.
@@ -225,8 +225,9 @@ Zusätzlich zu den Grundfunktionen der OsmAnd-App in *CarPlay*, die eine bequeme
 
 Die Sprachführung für *CarPlay* ist eine der nützlichsten Navigationsfunktionen von OsmAnd. Sie gibt Anweisungen in Echtzeit und ermöglicht es dem Fahrer, sich auf die Straße zu konzentrieren. Die Sprachanweisungen geben Abbiegungen, Richtungen und andere Navigationsanweisungen klar an und gewährleisten so eine sicherere und komfortablere Nutzung des Navigationssystems.  
 
-Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).  
+Wenn Sprachanweisungen wiedergegeben werden, passt OsmAnd den Hintergrundton je nach Typ an. Gesprochene Inhalte wie Podcasts und Hörbücher können während Navigationsanweisungen automatisch pausiert werden. Die Musikwiedergabe wird mit reduzierter Lautstärke fortgesetzt. Mit der Option *Gesprochene Audioinhalte pausieren* können Sie dieses Verhalten steuern.
 
+Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).  
 
 
 ### Bildschirm-Warnhinweis-Widget {#screen-alert-widget}
@@ -299,6 +300,17 @@ Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den System
 - *Vorherige Einstellung merken*
 
 Sie können das Ansagen von Nachrichten auch direkt in *CarPlay* aktivieren oder deaktivieren. Lesen Sie, wie die Benachrichtigungsverwaltung auf [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) und [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios) implementiert ist.
+
+### Kartenthema {#map-theme}
+
+![Kartenthema](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+CarPlay ermöglicht es Ihnen, das Kartenerscheinungsbild für eine bessere Sichtbarkeit unter verschiedenen Fahrbedingungen zu konfigurieren. Sie können einen der folgenden Erscheinungsmodi wählen:
+
+- *Automatisch*. Das Kartenerscheinungsbild ändert sich automatisch je nach Systemeinstellungen, Tageszeit oder Fahrzeugzustand.
+- *Immer dunkel*. CarPlay verwendet das dunkle Kartenthema.
+
+Wenn die Option *Immer dunkle Karten anzeigen* aktiviert ist, bleibt die Karte unabhängig vom Scheinwerferstatus des Fahrzeugs oder der Tageszeit immer im Dunkelmodus.
 
 ### Position des Standorts in CarPlay {#location-position-in-carplay}
 

@@ -1,56 +1,60 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
 # KARTE {#map}
 
-Die Karte ist ein Kernelement von OsmAnd. In diesem Abschnitt des Benutzerhandbuchs finden Sie nützliche Informationen zur Interaktion mit der Karte, zur Anpassung der Kartenansicht für Trekking, Radfahren oder Offroad-Navigation, zur Konfiguration zusätzlicher POI-Layer oder zur Aktivierung von Street-Level-Bildern usw.
+The map is a core element of OsmAnd. In this section of User guide you can find useful information on how to interact with map, how to customize map view for trekking, cycling or navigating offroad, how to configure additional POI layers or enable street level imagery etc.
 
 ## [Interaktion mit der Karte](./interact-with-map.md) {#interact-with-map}
 
-Wie Sie mit der Karte über Schaltflächen und Gesten interagieren können, um die Karte zu verschieben, zu drehen und zu vergrößern/verkleinern, wie Sie die Karte manuell oder automatisch nach Kompass oder Peilung drehen und wie Sie den Zoomfaktor ändern.
+How to interact with map using buttons and gestures, so you could pan, rotate and zoom in/out the map, how to rotate the map manually or automatically by compass or by bearing and how to change zoom scale.
 
 ## [Karten-Kontextmenü](./map-context-menu.md) {#map-context-menu}
 
-Das Karten-Kontextmenü bietet Informationen zum ausgewählten Objekt auf der Karte und ermöglicht das Teilen, Bearbeiten, Verschieben oder Navigieren zu diesem Ort.
+Map context menu provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
 
 ## [Karte konfigurieren](./configure-map-menu.md) {#configure-map}
 
-Das Menü „Karte konfigurieren“ ist ein wichtiger Punkt im *Hauptmenü* von OsmAnd, wo Sie die Kartenanzeige an Ihre Bedürfnisse anpassen können. Sie können Ihre Lieblingspunkte, Navigationsmarker oder spezielle Points of Interest auf der Karte hervorheben; bestimmte Routen oder GPX-Dateien von Drittanbietern anzeigen; Geländedaten, Satellitenbilder oder andere verfügbare Bitmap-Bilder überlagern; Informationen zum öffentlichen Nahverkehr anzeigen; und den Kartenstil ändern.
+The Configure map menu is an important item on OsmAnd's *Main Menu* where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
 
 ## [Vektorkarten](./vector-maps.md) {#vector-maps}
 
-Vektorkarten sind als Standardquelle für Kartendaten für OsmAnd konzipiert und müssen daher auf das Gerät heruntergeladen werden. Vektorkarten unterstützen eine riesige Auswahl an Kartenstilen für viele Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren usw. Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektor-Kartendaten können durch Vektordaten ergänzt und mit dem Standard-Kartenstil angezeigt werden, z. B. Höhenlinieninformationen. Sie können Ihren eigenen Kartenstil für OsmAnd erstellen, um die benötigten Informationen anzuzeigen.
+Vector maps are designed to be a default source of map data for OsmAnd, so they need to be downloaded to the device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style could be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour line information. You can create your own map style OsmAnd to display required information.
 
 ## [Kartenstile (Vektorkarten)](./map-styles.md) {#map-styles-vector-maps}
 
-Kartenstile definieren, wie Vektorkartendaten in OsmAnd gerendert werden. Ein Stil steuert das visuelle Erscheinungsbild von Kartenobjekten wie Straßen, Gebäuden, Landnutzung, Wasser und Points of Interest, einschließlich Farben, Linienmustern und Beschriftungen.
+Map styles define how vector map data is rendered in OsmAnd. A style controls the visual appearance of map objects such as roads, buildings, land use, water, and points of interest, including colors, line patterns, and labels.
 
 ## [Rasterkarten (Online / Offline)](./raster-maps.md) {#raster-maps-online--offline}
 
-Rasterkarten sind eine umfangreiche Ergänzung zu den standardmäßig von der Anwendung verwendeten offline OpenStreetMap-Vektorkarten. Rasterkarten ermöglichen die Kombination verschiedener Kartenquellen mit Vektorkarten. Zum Beispiel könnten nützliche Informationen zu Hügeln/Hängen als Raster-Layer angezeigt werden. Sie können eine Überlagerung von Wanderwegen, Live-Regenkarten, Live-Verkehrsdaten und eine Unterlage von Satellitenbildern anzeigen, die mit der halbtransparenten Basis-Vektorkarte gemischt werden. Sie können auch Standardkarten auf Online-Web-Rasterkacheln umstellen.
+Raster maps is an extensive addition to the offline OpenStreetMap Vector maps the application uses by default. Raster maps allow to combine different map sources with Vector Maps. For example, useful Hillshade / Slope information could be displayed as a raster layer. You can display an overlay of hiking routes, live rain maps, live traffic data and an underlay of satellite imagery mixing with semi-transparent base vector map. You can also switch default maps to online web raster tiles.
 
 ## [Punkte auf der Karte](./point-layers-on-map.md) {#points-on-the-map}
 
-Auf der Karte können Sie Punkte wie Favoriten, POIs, Marker, Wikipedia, Suchergebnisse, Audio-Video-Notizen, OSM-Bearbeitungen und andere anzeigen.
+On map you could display points such as Favorites, POIs, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and others.
 
 ## [Tracks](./tracks) {#tracks}
 
-Die Tracks-Funktion ermöglicht es Ihnen, Routen zu erstellen und zu speichern, damit Sie später leicht zu ihnen zurückkehren oder sie mit anderen teilen können.
+Tracks functionality lets you create and save routes so you can easily return to them later or share them with others.
 
 ### [Tracks-Kontextmenü](./tracks/track-context-menu.md) {#tracks-context-menu}
 
-Das Tracks-Kontextmenü ist ein Menü mit Aktionen und Daten von GPX-Tracks.
+Tracks context menu is menu with actions and data of GPX-track.
 
 ### [Track-Aussehen](./tracks/appearance.md) {#track-appearance}
 
-Das Tracks-Kontextmenü ist ein Menü mit Aktionen und Daten von GPX-Tracks.
+Tracks context menu is menu with actions and data of GPX-track.
 
 ## [Öffentlicher Nahverkehr](./public-transport.md) {#public-transport}
 
-Der öffentliche Nahverkehr ist ein zusätzlicher Layer, der es Ihnen ermöglicht, Transportrouten und Haltestellen auf der Karte anzuzeigen, detaillierte Informationen über diese zu überprüfen und zu navigieren.
+Public transport is an additional layer that allows you to display transport routes and stops on the map, to check detailed information about them and to navigate.
 
-## [Routen](./routes.md) {#routes}
+## [Routen](./routes/index.md) {#routes}
 
-OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener Routen auf der Karte.
+OsmAnd has many powerful features to display various routes on the map.
+
+### [Arten von Routen](./routes/types-of-routes.md) {#type-of-routes}
+
+All information about route types available in OsmAnd.

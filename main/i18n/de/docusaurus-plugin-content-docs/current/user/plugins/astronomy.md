@@ -1,5 +1,5 @@
 ---
-source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
+source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
 sidebar_position: 3
 title:  Astronomie
 unlistead: true
@@ -139,7 +139,7 @@ Unter dem Diagramm werden wichtige Beobachtungsereignisse angezeigt:
 
 Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit positioniert. Der für die Berechnungen verwendete Standort wird unter dem Diagramm angezeigt. Der Standort wird als Stadtname angezeigt.
 
-### Beobachtungsplan {#actions}
+### Beobachtungsplan {#observation-schedule}
 
 ![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_new.png)
 

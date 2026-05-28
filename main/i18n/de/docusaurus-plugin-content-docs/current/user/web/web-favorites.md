@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -68,16 +68,55 @@ Die Detailansicht bietet Informationen, die mit dem ausgewählten Ort verbunden 
 
 ## Favoritenaktionen {#favorites-actions}
 
-### Favorit hinzufügen / bearbeiten {#add--edit-favorite}
-
 [Um hinzuzufügen](../personal/favorites.md#manage-favorites) einen neuen Favoritenpunkt, klicken Sie mit der rechten Maustaste auf den Bildschirm. 
 
 Um einen bestehenden Favoriten zu bearbeiten, klicken Sie auf den Favoritenpunkt entweder direkt auf der Karte oder wählen Sie ihn aus einem Favoritenordner aus. Dies öffnet das Details-Panel, in dem die Bearbeitungsaktion verfügbar ist. Die Bearbeitung kann auch aus dem Drei-Punkte-Menü (⋮) neben dem Favoriten in der Favoritenliste gestartet werden.
 
-Die Bearbeitungsoberfläche ermöglicht es Ihnen, die Haupteigenschaften des Favoriten zu modifizieren, wie seinen Namen, Icon, Farbe und Beschreibung. Das Layout und die verfügbaren Felder sind konsistent mit der Bearbeitungserfahrung in der [OsmAnd Mobil-App](../personal/favorites.md#create) und bieten einen vertrauten Workflow über Plattformen hinweg.
+Das Bearbeitungsfavoriten-Panel ermöglicht es Ihnen, die Haupteigenschaften eines Favoriten zu ändern, einschließlich seines Namens, seiner Adresse, Beschreibung, Ordner, Symbol, Farbe und Form. Die ausgewählte Darstellung wird sowohl im Bearbeitungspanel als auch direkt auf der Karte in der Vorschau angezeigt.
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+### Favoriten bearbeiten {#edit-favorites}
 
+Das Feld **Adresse** unterstützt die automatische Adresserkennung basierend auf dem ausgewählten Kartenstandort. Das Feld kann in mehreren Zuständen erscheinen:
+
+- Suchen... — wird angezeigt, während die Adresse automatisch ermittelt wird.
+- Leeres Feld — wird nach dem Löschen der Adresse angezeigt. In diesem Zustand kann die Standortschaltfläche verwendet werden, um die Adresse erneut automatisch zu erkennen.
+- Ausgefülltes Feld — zeigt entweder die automatisch erkannte Adresse oder manuell eingegebenen Text an.
+
+Das Adressfeld enthält auch Schnellaktionen zum Löschen oder Wiederherstellen der erkannten Adresse.
+
+Der Abschnitt **Beschreibung** ermöglicht das Hinzufügen von Notizen oder zusätzlichen Informationen zum Favoriten. Durch Auswahl von Notizen hinzufügen wird der Beschreibungseditor in einem sekundären Panel geöffnet. Wenn bereits eine Beschreibung hinzugefügt wurde, wird eine kurze Vorschau im Hauptpanel angezeigt und auf zwei Textzeilen beschränkt. Der Beschreibungseditor unterstützt die Formatierung von Rich Text und speichert Änderungen automatisch, wenn Sie zum vorherigen Panel zurückkehren.
+
+Favoriten können zur einfacheren Verwaltung und schnellen Zugriff in Ordnern organisiert werden. Durch Auswahl des Elements **Ordner** wird ein sekundäres Panel geöffnet, in dem verfügbare Ordner ausgewählt werden können. Der zuvor verwendete Ordner wird standardmäßig automatisch ausgewählt. Jeder Ordner zeigt auch die Anzahl der darin gespeicherten Favoritenpunkte an.
+
+Neue Ordner können direkt aus dem Ordnerauswahlpanel erstellt werden. Durch Auswahl der Schaltfläche Ordner hinzufügen wird ein Dialog geöffnet, in dem Sie den Ordnernamen eingeben und seinen Standort in der Favoritenliste auswählen können.
+
+Der Dialog enthält auch einen Erweitert-Abschnitt, in dem Standarddarstellungseinstellungen für den Ordner konfiguriert werden können. Diese Einstellungen umfassen die Standardfarbe, das Symbol und die Form, die automatisch auf Favoritenpunkte angewendet werden, die diesem Ordner hinzugefügt werden.
+
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
+
+### Darstellung {#appearance}
+
+Der Abschnitt **Darstellung** ermöglicht die Anpassung der Anzeige des Favoriten auf der Karte. Die folgenden Eigenschaften sind verfügbar: Symbol, Farbe, Form und Symbol. 
+
+Durch Auswahl von **Symbol** wird ein sekundäres Panel mit kategorisierten Symbolgruppen geöffnet.
+
+- Symbole sind nach Kategorien gruppiert.
+- Zuletzt verwendete Symbole werden zuerst angezeigt.
+- Das aktuell ausgewählte Symbol ist hervorgehoben.
+- Die Vorschau verwendet die ausgewählte Form und Farbe.
+
+Durch Auswahl von **Farbe** wird das Farbpaletten-Panel geöffnet.
+
+- Die Palette enthält vordefinierte und benutzerdefinierte Farben.
+- Benutzerdefinierte Farben können mit dem Farbwähler hinzugefügt werden.
+- Farben können über das Kontextmenü bearbeitet, dupliziert oder entfernt werden.
+- Neu hinzugefügte Farben werden in der Benutzerpalette gespeichert und bleiben später verfügbar.
+
+Die Option **Form** definiert die Hintergrundform, die für die Favoritenmarkierung verwendet wird. Die folgenden Formen sind verfügbar: Kreis, Quadrat und Achteck.
+
+Die Darstellungsvorschau wird sofort sowohl im Bearbeitungspanel als auch auf der Karte aktualisiert, wenn Sie das Symbol, die Farbe oder die Form ändern.
+
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Andere Aktionen {#other-actions}
 

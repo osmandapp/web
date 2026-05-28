@@ -1,5 +1,5 @@
 ---
-source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
+source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
 sidebar_position: 1
 title:  Android-Käufe
 ---
@@ -34,9 +34,9 @@ Für Android-Geräte können Sie die **kostenlose** und die **kostenpflichtige**
 
 | Kauf  | Google Play  | Huawei AppGallery | App |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) In-App Maps+ | ✔ | ✔ | OsmAnd |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Abonnement Maps+ | ✔ | ✔ | OsmAnd |
-| ![Pro](@site/static/img/svg/pro_icon.svg) Abonnement OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) In-app Maps+ | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Subscription Maps+ | ✔ | ✔ | OsmAnd |
+| ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 <!--
 ### Types of subscriptions {#types-of-subscriptions}
@@ -56,7 +56,7 @@ Für Android-Geräte können Sie die **kostenlose** und die **kostenpflichtige**
 
 | Plan | Beschreibung | Verfügbarkeit | Anmerkungen |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Ein **kostenloser Plan**, der Zugriff auf [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) für *Favoriten*, *Einstellungen* und *OSM-Bearbeitungen/Notizen* bietet. | Verfügbar für alle Nutzer der kostenlosen OsmAnd-Version. | Beschränkt auf grundlegende Cloud-Funktionen und **5 MB** Speicherplatz. |
+| **OsmAnd Start** | Ein **kostenloser Plan**, der Zugriff auf [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) für *Favoriten*, *Einstellungen* und *OSM-Bearbeitungen/Notizen* bietet. | Verfügbar für alle Nutzer der kostenlosen OsmAnd-Version. | Beschränkt auf grundlegende Cloud-Funktionen und **5MB** Speicherplatz. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Eine **separate kostenpflichtige App**, die erweiterte Funktionen enthält. | Verfügbar bei [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Kann zur [Google Play Familienmediathek](https://support.google.com/googleplay/answer/7007852?hl=en) hinzugefügt werden. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Ein **In-App-Kauf** oder **Abonnement** für die kostenlose OsmAnd-App, das die gleichen Funktionen wie OsmAnd+ freischaltet. | Verfügbar bei [Google Play](https://play.google.com/store/apps/details?id=net.osmand) und in der [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | In Funktionen und Preisgestaltung identisch mit OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnementplan**, der zusätzliche erweiterte und [Pro-Funktionen](#pro-features) freischaltet. | Verfügbar bei [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) und in der [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Es bietet vollen Zugriff auf die Funktionen von OsmAnd Cloud. |
@@ -74,11 +74,29 @@ Für Android-Geräte können Sie die **kostenlose** und die **kostenpflichtige**
 
 ## Preise {#prices}
 
-In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für die Regionen USA und Europa. Für andere Regionen sind die Preise in den lokalen Währungen äquivalent.
+In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für die Regionen USA und Europa. Für andere Regionen sind die Preise in den localen Währungen äquivalent.
+
+<!--
+
+:::danger 🌱 Spring Sale
+
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+
+:::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+
+
+-->
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |
@@ -93,7 +111,7 @@ Die OsmAnd-Anwendung bietet eine breite Palette von Funktionen und Werkzeugen, v
 
 Die nachstehende Tabelle enthält Einzelheiten zu den Funktionen, die sowohl in den kostenlosen als auch in den kostenpflichtigen Paketen von OsmAnd enthalten sind, sowie die jeweiligen Preise.
 
-|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (In&#8209;App & Abonnement) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -172,7 +190,7 @@ Ein einfacher Weg, den gewünschten Plan auszuwählen und zu kaufen, ist das Men
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Mit OsmAnd Pro fortfahren*
 
-oder  
+or  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Mit OsmAnd Pro fortfahren*
 

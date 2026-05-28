@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Vektorkarten 
 ---
@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Vektorkarten sind als Standard-Kartendatenquelle für OsmAnd vorgesehen, daher **müssen Sie sie auf Ihr Gerät herunterladen**. Vektorkarten unterstützen eine große Anzahl von Kartenstilen für verschiedene Aktivitäten wie Radfahren, Wandern, Autofahren oder Schneemobilfahren und andere.  
 
-Jeder Kartenstil kann angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten erweitert und im Standard-Kartenstil angezeigt werden, wie z. B. *Höhenlinien*-Informationen. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die gewünschten Informationen darzustellen.
+Jeder Kartenstil können angepasst werden, um bestimmte Objekte hervorzuheben oder auszublenden und zwischen Tag- und Nachtmodus zu wechseln. Vektorkartendaten können durch Vektordaten erweitert und im Standard-Kartenstil angezeigt werden, wie z. B. *Höhenlinien*-Informationen. Sie können *Ihren eigenen OsmAnd-Kartenstil erstellen*, um die gewünschten Informationen darzustellen.
 
 Vektorkarten stellen räumliche Daten dar, wie Straßen, Gebäude, Punkte und Polygone, unter Verwendung mathematischer Geometrie, die in binärem Format gespeichert ist. Jedes Element (Knoten, Linie oder Polygon) wird durch Koordinaten definiert und dynamisch gerendert entsprechend dem Zoomniveau und Kartenstil.
 
@@ -559,7 +559,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 ![Kartenrouten - Radrouten](@site/static/img/map/map-routes-cycle-routes.png)  ![Kartenrouten - Wandernetz](@site/static/img/map/map-routes-hiking-network.png)
 
-Eine Route ist ein vorbestimmter Weg, dem gefolgt werden muss, um ein bestimmtes Ziel zu erreichen. Eine Route kann für verschiedene Reisearten optimiert werden, wie z. B. Radfahren, Wandern, Laufen, öffentliche Verkehrsmittel und andere. Mehr über Routen und ihre Typen können Sie im [Artikel Routen](../map/routes.md) lesen.
+Eine Route ist ein vorbestimmter Weg, dem gefolgt werden muss, um ein bestimmtes Ziel zu erreichen. Eine Route kann für verschiedene Reisearten optimiert werden, wie z. B. Radfahren, Wandern, Laufen, öffentliche Verkehrsmittel und andere. Mehr über Routen und ihre Typen können Sie im [Artikel Routen](../map/routes/index.md) lesen.
 
 
 ## Verwandte Artikel {#related-articles}
@@ -567,6 +567,6 @@ Eine Route ist ein vorbestimmter Weg, dem gefolgt werden muss, um ein bestimmtes
 - [Mit der Karte interagieren](../map/interact-with-map.md)
 - [Karte konfigurieren](../map/configure-map-menu.md)
 - [Kartenstile](../map/map-styles.md)
-- [Routen](../map/routes.md)
+- [Routen](../map/routes/index.md)
 - [Import / Export](../personal/import-export.md)
 - [Farbpaletten-Schemata](../personal/color-palette-schemes.md)

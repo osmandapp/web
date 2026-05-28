@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -97,7 +97,7 @@ Durch Antippen eines [GPX-Tracks](../map/tracks/index.md) auf der Karte wird das
 
 ![Skipisten und MTB-Wege](@site/static/img/map/ski_mtb.png)  ![Skipisten und MTB-Wege](@site/static/img/map/ski_mtb_2.png)
 
-Sie können Kartenelemente wie **Skipisten**, **Mountainbike (MTB)-Routen** und **Dirt-Bike-Pfade** antippen, um deren Kontextmenü mit detaillierten Informationen zu öffnen. Weitere Informationen finden Sie im Artikel [Routen](../map/routes.md#actions-with-routes).
+Sie können Kartenelemente wie **Skipisten**, **Mountainbike (MTB)-Routen** und **Dirt-Bike-Pfade** antippen, um deren Kontextmenü mit detaillierten Informationen zu öffnen. Weitere Informationen finden Sie im Artikel [Routen](../map/routes/index.md#actions-with-routes).
 
 
 
@@ -379,7 +379,7 @@ Durch Antippen eines Fotos wird die **Galerieansicht** geöffnet, in der Sie:
 
 > *Unter iOS öffnet ein langes Antippen eines Bildes ein Kontextmenü mit Schnellaktionen.*
 
-Weitere Informationen finden Sie unter: [Online-Fotos](https://osmand.net/docs/user/map/popular_places#online-photos) und [Galerieansicht](https://osmand.net/docs/user/map/popular_places#gallery)
+Weitere Informationen finden Sie unter: [Online-Fotos](https://osmand.net/docs/user/map/popular_places#online-photos) and [Galerieansicht](https://osmand.net/docs/user/map/popular_places#gallery)
 
 
 ### Bilder auf Straßenebene {#street-level-imagery}
