@@ -7,6 +7,7 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { DEFAULT_GROUP_NAME, findGroupByName, GPX_FILE_EXT, prepareName } from '../../manager/track/TracksManager';
 import { renameFolder, renameLocalTrack, renameTrack } from '../../manager/track/SaveTrackManager';
+import { renameSmartFolder } from '../../manager/SmartFoldersManager';
 import { sanitizedFileName } from '../../util/Utils';
 import { useTranslation } from 'react-i18next';
 import { SMART_TYPE } from '../../menu/share/shareConstants';
@@ -66,7 +67,11 @@ export default function RenameDialog({
                     await performRenameCloud(ctx, track, sanitized, groupByTrack);
                 }
             } else if (group) {
-                await renameFolder(group, sanitized, ctx);
+                if (group.type === SMART_TYPE) {
+                    await renameSmartFolder(group, sanitized, ctx);
+                } else {
+                    await renameFolder(group, sanitized, ctx);
+                }
             } else {
                 ctx.setTrackErrorMsg({
                     title: t('web:rename_error_title'),

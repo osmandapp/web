@@ -18,7 +18,7 @@ import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/Favorite
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
 import { getSelectedSort } from '../components/buttons/SortFilesButton';
-import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE } from '../share/shareConstants';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
 const az = (a, b) => collator.compare(a, b);

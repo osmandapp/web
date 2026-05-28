@@ -17,7 +17,7 @@ import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTr
 import { useTranslation } from 'react-i18next';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
-import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
 import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';

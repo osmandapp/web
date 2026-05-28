@@ -1,5 +1,6 @@
 import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { loadShareFiles, loadSmartFolders } from '../../util/hooks/useInitialFilesLoad';
+import { loadShareFiles } from '../../util/hooks/useInitialFilesLoad';
+import { loadSmartFolders } from '../SmartFoldersManager';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import { findGroupByName, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
@@ -9,7 +10,7 @@ import { hideAllVisTracks, showAllVisTracks, updateVisibleCache } from '../../me
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
-import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
+import { SHARE_TYPE } from '../../menu/share/shareConstants';
 
 export async function deleteTrack({ file, ctx, ltx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ltx.loginUser) {
@@ -93,29 +94,15 @@ async function deleteCloudFile(name, type, ctx) {
 }
 
 export async function deleteTrackFolder(folder, ctx) {
-    let res;
-    if (folder.type === SMART_TYPE) {
-        res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/update-smart-folder`, {
-            params: {
-                folderName: folder.fullName,
-            },
-            dataOnErrors: true,
-        });
-    } else {
-        res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-folder`, {
-            params: {
-                folderName: folder.fullName,
-                type: 'GPX',
-            },
-            dataOnErrors: true,
-        });
-    }
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-folder`, {
+        params: {
+            folderName: folder.fullName,
+            type: 'GPX',
+        },
+        dataOnErrors: true,
+    });
     if (res && res?.data?.status === 'ok') {
-        if (folder.type === SMART_TYPE) {
-            await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
-        } else {
-            refreshGlobalFiles({ ctx }).then();
-        }
+        refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
             title: 'Delete error',

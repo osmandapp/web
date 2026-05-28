@@ -22,13 +22,11 @@ import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
-import { getFilesForUpdateDetails, loadSmartFolders } from '../../util/hooks/useInitialFilesLoad';
+import { getFilesForUpdateDetails } from '../../util/hooks/useInitialFilesLoad';
 import Utils, { sanitizedFileName } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
-import { SMART_TYPE } from '../../menu/share/shareConstants';
-
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
@@ -332,32 +330,17 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
 
 export async function renameFolder(folder, newName, ctx) {
     const newFolderName = folder.fullName.replace(folder.name, newName);
-    let res;
-    if (folder.type === SMART_TYPE) {
-        res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/update-smart-folder`, {
-            params: {
-                folderName: folder.fullName,
-                newFolderName: newFolderName,
-            },
-            dataOnErrors: true,
-        });
-    } else {
-        res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
-            params: {
-                folderName: folder.fullName,
-                newFolderName: newFolderName,
-                type: 'GPX',
-            },
-            dataOnErrors: true,
-        });
-    }
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
+        params: {
+            folderName: folder.fullName,
+            newFolderName: newFolderName,
+            type: 'GPX',
+        },
+        dataOnErrors: true,
+    });
     if (res && res?.data?.status === 'ok') {
         updateSortList({ oldName: folder.fullName, newName: newFolderName, isTracks: true, ctx });
-        if (folder.type === SMART_TYPE) {
-            await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
-        } else {
-            refreshGlobalFiles({ ctx }).then();
-        }
+        refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
             title: 'Duplicate error',
