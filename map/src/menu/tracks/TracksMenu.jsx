@@ -159,11 +159,7 @@ export default function TracksMenu() {
                                 </ListItemText>
                             </MenuItem>
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
-                                <SharedFolder
-                                    type={SHARE_TYPE}
-                                    subtype={'track'}
-                                    files={ctx.shareWithMeFiles?.tracks}
-                                />
+                                <SharedFolder subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&
                                 (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)

@@ -12,7 +12,7 @@ import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
 const SharedFolderActions = forwardRef(
-    ({ files, type, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
+    ({ files, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
         const { t } = useTranslation();
         const ctx = useContext(AppContext);
         const recentSaver = useRecentDataSaver();
@@ -75,29 +75,27 @@ const SharedFolderActions = forwardRef(
         }
 
         async function showAll({ show }) {
-            if (type === SHARE_TYPE) {
-                setShowAllTracks(show);
-                const promises = Object.values(files).map((file) =>
-                    openTrackOnMap({
-                        file,
-                        showOnMap: show,
-                        showInfo: false,
-                        zoomToTrack: false,
-                        smartf: { type: SHARE_TYPE },
-                        ctx,
-                        returnOneTrack: true,
-                        recentSaver,
-                    })
-                );
-                const resultsArray = await Promise.all(promises);
-                const results = Object.assign({}, ...resultsArray);
-                if (!isEmpty(results)) {
-                    updateTracks(ctx, { type: SHARE_TYPE }, results);
-                    ctx.setFitBoundsShareTracks({
-                        type: SHARE_FILE_TYPE,
-                        zoom: FIT_BOUNDS_MAX_ZOOM,
-                    });
-                }
+            setShowAllTracks(show);
+            const promises = Object.values(files).map((file) =>
+                openTrackOnMap({
+                    file,
+                    showOnMap: show,
+                    showInfo: false,
+                    zoomToTrack: false,
+                    smartf: { type: SHARE_TYPE },
+                    ctx,
+                    returnOneTrack: true,
+                    recentSaver,
+                })
+            );
+            const resultsArray = await Promise.all(promises);
+            const results = Object.assign({}, ...resultsArray);
+            if (!isEmpty(results)) {
+                updateTracks(ctx, { type: SHARE_TYPE }, results);
+                ctx.setFitBoundsShareTracks({
+                    type: SHARE_FILE_TYPE,
+                    zoom: FIT_BOUNDS_MAX_ZOOM,
+                });
             }
         }
 

@@ -166,12 +166,7 @@ export default function FavoritesMenu() {
                 )}
                 {ctx.favLoading && <LinearProgress />}
                 {!isEmpty(sharedFiles) && (
-                    <SharedFolder
-                        type={'share'}
-                        subtype={'favorite'}
-                        files={sharedFiles}
-                        onOpenFolder={setOpenSharedFolder}
-                    />
+                    <SharedFolder subtype={'favorite'} files={sharedFiles} onOpenFolder={setOpenSharedFolder} />
                 )}
                 {ctx.gpxLoading || ctx.processingGroups ? (
                     <Loading />
