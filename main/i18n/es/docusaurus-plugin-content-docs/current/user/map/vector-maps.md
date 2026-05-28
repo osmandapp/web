@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Mapas vectoriales 
 ---
@@ -183,7 +183,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_re
 
 </Tabs>  
 
-Para mejorar la visibilidad del mapa, es posible que necesites ocultar ciertos objetos. Por ejemplo, puedes ocultar el agua cuando usas los [mapas en línea de Satélite con la capa de Subcapa](../map/raster-maps.md#layers).
+Para mejorar la visibilidad del mapa, es posible que necesites ocultar ciertos objetos. Por ejemplo, puedes ocultar el agua cuando uses los [mapas en línea de Satélite con la capa de Subcapa](../map/raster-maps.md#layers).
 
 - **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Oculta los límites regionales dentro de los países, pero los límites estatales son visibles.
 - **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Oculta todos los polígonos de objetos naturales, función especial para la [capa de Subcapa/Superposición](../map/raster-maps.md#layers).
@@ -559,7 +559,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_cat
 
 ![Rutas de mapa - rutas de ciclismo](@site/static/img/map/map-routes-cycle-routes.png)  ![Rutas de mapa - red de senderismo](@site/static/img/map/map-routes-hiking-network.png)
 
-Una ruta es un camino predeterminado que debe seguirse para llegar a un destino específico. Una ruta puede optimizarse para diferentes tipos de viaje, como ciclismo, senderismo, carrera, transporte público y otros. Puedes leer más sobre las rutas y sus tipos en el [artículo de Rutas](../map/routes.md).
+Una ruta es un camino predeterminado que debe seguirse para llegar a un destino específico. Una ruta puede optimizarse para diferentes tipos de viaje, como ciclismo, senderismo, carrera, transporte público y otros. Puedes leer más sobre las rutas y sus tipos en el [artículo de Rutas](../map/routes/index.md).
 
 
 ## Artículos relacionados {#related-articles}
@@ -567,7 +567,7 @@ Una ruta es un camino predeterminado que debe seguirse para llegar a un destino 
 - [Interactuar con el mapa](../map/interact-with-map.md)
 - [Configurar mapa](../map/configure-map-menu.md)
 - [Estilos de mapa](../map/map-styles.md)
-- [Rutas](../map/routes.md)
+- [Rutas](../map/routes/index.md)
 - [Importar / Exportar](../personal/import-export.md)
 - [Esquemas de paleta de colores](../personal/color-palette-schemes.md)
 
@@ -585,4 +585,3 @@ Una ruta es un camino predeterminado que debe seguirse para llegar a un destino 
 |**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
 |**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
 -->
-

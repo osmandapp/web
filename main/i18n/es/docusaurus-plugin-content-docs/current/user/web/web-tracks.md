@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
 sidebar_label: Pistas
 title: Pistas
@@ -45,7 +45,7 @@ La sección de Pistas contiene todas las herramientas y acciones relacionadas co
 
 La vista **Visible en el mapa** enumera todas las pistas que se muestran actualmente en el mapa. Cualquier pista se puede agregar a esta lista desde el panel principal de Pistas usando la opción **⋮ → Hacer la pista visible**.
 
-Las pistas que son visibles en el mapa se resaltan en azul, mientras que las pistas que están actualmente ocultas aparecen en gris. Un interruptor junto a cada pista te permite mostrarla o ocultarla rápidamente. El botón **Hide all** desactiva todas las pistas visibles de una vez.
+Las pistas que son visibles en el mapa se resaltan en azul, mientras que las pistas que están actualmente ocultas aparecen en gris. Un interruptor junto a cada pista te permite mostrarla u ocultarla rápidamente. El botón **Hide all** desactiva todas las pistas visibles de una vez.
 
 Debajo de la lista principal, la sección **Recently visible** muestra pistas que se mostraron en el mapa anteriormente. Esto facilita volver a activar una pista sin buscarla nuevamente en tus carpetas o en OsmAnd Cloud.
 
@@ -66,6 +66,23 @@ Haz clic en el botón de tres puntos (⋮) para abrir el menú de *Carpeta de pi
  - Eliminar. Abre un diálogo de confirmación. Eliminar una carpeta la elimina permanentemente junto con todas las pistas que contiene. Esta acción también se sincroniza a través de OsmAnd Cloud.
 
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+
+### Smart Folders {#smart-folders}
+
+**Smart Folders** creadas en dispositivos móviles se pueden sincronizar y ver en la versión web a través de OsmAnd Cloud. Para asegurarte de que aparezcan en la web, la sincronización de [OsmAnd Settings](../personal/osmand-cloud.md#select-data-to-back-up) debe estar habilitada en los ajustes de Cloud.  
+Ve a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Las Smart Folders se almacenan actualmente como parte de la configuración global, por lo que se cargan en la Nube solo cuando la sincronización de Ajustes está activa. Después de crear o editar una Smart Folder, se recomienda ejecutar una sincronización manual para actualizar los datos.
+
+En la web, las Smart Folders se muestran en la lista de pistas con un icono de estrella distintivo, lo que facilita distinguirlas de las carpetas normales. El nombre de la carpeta se sincroniza primero, mientras que la lista de pistas depende de cómo esté configurada la carpeta en el dispositivo.
+
+Las pistas se muestran solo si la configuración de la Smart Folder es compatible con la web. Esto incluye tanto los [ajustes de filtro](../personal/tracks/smart-folder.md#search-filter) como las [opciones de agrupación](../personal/tracks/smart-folder.md#managing-smart-folders). Si se utilizan parámetros no compatibles (por ejemplo, ciudad más cercana), la carpeta puede aparecer sin pistas. Para una mejor compatibilidad, utiliza parámetros comunes como actividad, fecha, distancia o duración.
+
+La sincronización de Smart Folders puede variar según la plataforma y la configuración de sincronización. Para obtener los resultados más consistentes, asegúrate de que la sincronización de Cloud esté habilitada y actualizada en todos los dispositivos.
+
+En el menú de tres puntos (⋮), puedes descargar la Smart Folder como una colección OBF.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
 ## Pistas en la nube {#cloud-tracks}

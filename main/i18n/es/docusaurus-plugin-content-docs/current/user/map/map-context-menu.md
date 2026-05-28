@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -97,7 +97,7 @@ Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú con
 
 ![Pistas de esquí y senderos de BTT](@site/static/img/map/ski_mtb.png)  ![Pistas de esquí y senderos de BTT](@site/static/img/map/ski_mtb_2.png)
 
-Puede tocar elementos del mapa como **pistas de esquí**, **rutas de bicicleta de montaña (BTT)** y **senderos de motocross** para abrir su menú contextual con información detallada. Consulte el [artículo de Rutas](../map/routes.md#actions-with-routes) para obtener más información.
+Puede tocar elementos del mapa como **pistas de esquí**, **rutas de bicicleta de montaña (BTT)** y **senderos de motocross** para abrir su menú contextual con información detallada. Consulte el [artículo de Rutas](../map/routes/index.md#actions-with-routes) para obtener más información.
 
 
 
@@ -671,8 +671,8 @@ Lea más sobre la herramienta [Planificar una ruta](../plan-route/create-route.m
 
 Para actualizar o descargar mapas en línea (teselas) en una ubicación específica, puede usar el menú contextual del objeto:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* y para *Actualizar*, vaya a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* y *<Translate ios="true" ids="update_tile"/>*.  
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Actualizar*, vaya a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* and *<Translate ios="true" ids="update_tile"/>*.  
 
 Por favor, lea las [instrucciones completas](../map/raster-maps.md#download--update-tiles).  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
+source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -38,9 +38,9 @@ El plugin funciona completamente sin conexión utilizando catálogos de estrella
 Los siguientes ajustes son necesarios para mostrar la superposición de Astronomía:
 
 1. Habilite el plugin [**Astronomía**](../plugins/index.md#enable--disable) desde la sección de *Plugins* del *Menú principal*
-2. Use **<Translate android="true" ids="shared_string_menu,star_map"/>** para abrir la pantalla dedicada con el cielo estrellado, ajustes y controles de tiempo.
+2. Use **Menú → Mapa estelar** para abrir la pantalla dedicada con el cielo estrellado, ajustes y controles de tiempo.
 3. Seleccione **hora y fecha** usando los controles en la pantalla del Mapa estelar.
-4. Ajuste lo que se muestra en el Mapa estelar usando [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — por ejemplo, active/desactive objetos visibles y ayudas de renderizado.
+4. Ajuste lo que se muestra en el Mapa estelar usando [**Configurar vista**](#configure-view) — por ejemplo, active/desactive objetos visibles y ayudas de renderizado.
 5. Toque el botón **Cerrar (X)** en la parte superior de la pantalla del Mapa estelar para salir del Mapa estelar y regresar al mapa de la Tierra.
 
 El plugin funciona con ambos motores de renderizado de mapa, pero ofrece el mejor rendimiento en modo OpenGL.
@@ -139,7 +139,7 @@ Debajo del gráfico, se muestran eventos importantes de observación:
 
 El gráfico se abre con el indicador posicionado en la hora actual del sistema. La ubicación utilizada para los cálculos se muestra debajo del gráfico. La ubicación se muestra como un nombre de ciudad.
 
-### Horario de observación {#actions}
+### Horario de observación {#observation-schedule}
 
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
