@@ -11,7 +11,7 @@ import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { SMART_TYPE } from '../share/shareConstants';
-import { populateSmartFolderFiles } from '../../util/hooks/useInitialFilesLoad';
+import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
 import { GARMIN_FOLDER_NAME, fetchGarminStatus } from '../../login/garmin/garminApi';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
@@ -42,13 +42,14 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
         return group.files;
     };
 
-    async function downloadFolderBackup() {
+    async function downloadFolderBackup(isSmart) {
         setProcessDownload(true);
         const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup-folder`, [], {
             params: {
                 format: '.osf',
                 folderName: group.fullName,
                 type: 'GPX',
+                smart: isSmart,
             },
             headers: {
                 'Content-Type': 'application/json',
@@ -76,25 +77,23 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
         <>
             <Box ref={ref}>
                 <Paper id="se-folder-actions" className={styles.actions}>
-                    {group.type !== SMART_TYPE && (
-                        <MenuItem
-                            disabled={group.realSize === 0}
-                            className={styles.action}
-                            onClick={() => {
-                                downloadFolderBackup().then();
-                                setOpenActions(false);
-                            }}
-                        >
-                            <ListItemIcon className={styles.iconAction}>
-                                <TimeIcon />
-                            </ListItemIcon>
-                            <ListItemText>
-                                <Typography className={styles.actionName} noWrap>
-                                    {t('web:download_as_osf')}
-                                </Typography>
-                            </ListItemText>
-                        </MenuItem>
-                    )}
+                    <MenuItem
+                        disabled={group.realSize === 0}
+                        className={styles.action}
+                        onClick={() => {
+                            downloadFolderBackup(group.type === SMART_TYPE).then();
+                            setOpenActions(false);
+                        }}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
+                            <TimeIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography className={styles.actionName} noWrap>
+                                {t('web:download_as_osf')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
                     <MenuItem
                         disabled={group.realSize === 0}
                         className={styles.action}
@@ -112,42 +111,40 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    {group.type !== SMART_TYPE && (
-                        <>
-                            <Divider className={styles.dividerActions} />
-                            <MenuItem
-                                id="se-folder-actions-rename"
-                                className={styles.action}
-                                disabled={garminLinked}
-                                onClick={() => setOpenRenameDialog(true)}
-                            >
-                                <ListItemIcon className={styles.iconAction}>
-                                    <RenameIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography className={styles.actionName} noWrap>
-                                        {t('shared_string_rename')}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                            <Divider className={styles.dividerActions} />
-                            <MenuItem
-                                id="se-folder-actions-delete"
-                                className={styles.action}
-                                disabled={garminLinked}
-                                onClick={() => setOpenDeleteDialog(true)}
-                            >
-                                <ListItemIcon className={styles.iconAction}>
-                                    <DeleteIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography className={styles.actionName} noWrap>
-                                        {t('shared_string_delete')}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                        </>
-                    )}
+                    <>
+                        <Divider className={styles.dividerActions} />
+                        <MenuItem
+                            id="se-folder-actions-rename"
+                            className={styles.action}
+                            disabled={garminLinked}
+                            onClick={() => setOpenRenameDialog(true)}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <RenameIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography className={styles.actionName} noWrap>
+                                    {t('shared_string_rename')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                        <Divider className={styles.dividerActions} />
+                        <MenuItem
+                            id="se-folder-actions-delete"
+                            className={styles.action}
+                            disabled={garminLinked}
+                            onClick={() => setOpenDeleteDialog(true)}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <DeleteIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography className={styles.actionName} noWrap>
+                                    {t('shared_string_delete')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    </>
                 </Paper>
             </Box>
             {newCollection.length > 0 && (

@@ -11,8 +11,8 @@ import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 
-const SmartFolderActions = forwardRef(
-    ({ files, type, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
+const SharedFolderActions = forwardRef(
+    ({ files, subtype, setOpenActions, setProcessDownload, showAllTracks, setShowAllTracks }, ref) => {
         const { t } = useTranslation();
         const ctx = useContext(AppContext);
         const recentSaver = useRecentDataSaver();
@@ -75,36 +75,34 @@ const SmartFolderActions = forwardRef(
         }
 
         async function showAll({ show }) {
-            if (type === SHARE_TYPE) {
-                setShowAllTracks(show);
-                const promises = Object.values(files).map((file) =>
-                    openTrackOnMap({
-                        file,
-                        showOnMap: show,
-                        showInfo: false,
-                        zoomToTrack: false,
-                        smartf: { type: SHARE_TYPE },
-                        ctx,
-                        returnOneTrack: true,
-                        recentSaver,
-                    })
-                );
-                const resultsArray = await Promise.all(promises);
-                const results = Object.assign({}, ...resultsArray);
-                if (!isEmpty(results)) {
-                    updateTracks(ctx, { type: SHARE_TYPE }, results);
-                    ctx.setFitBoundsShareTracks({
-                        type: SHARE_FILE_TYPE,
-                        zoom: FIT_BOUNDS_MAX_ZOOM,
-                    });
-                }
+            setShowAllTracks(show);
+            const promises = Object.values(files).map((file) =>
+                openTrackOnMap({
+                    file,
+                    showOnMap: show,
+                    showInfo: false,
+                    zoomToTrack: false,
+                    smartf: { type: SHARE_TYPE },
+                    ctx,
+                    returnOneTrack: true,
+                    recentSaver,
+                })
+            );
+            const resultsArray = await Promise.all(promises);
+            const results = Object.assign({}, ...resultsArray);
+            if (!isEmpty(results)) {
+                updateTracks(ctx, { type: SHARE_TYPE }, results);
+                ctx.setFitBoundsShareTracks({
+                    type: SHARE_FILE_TYPE,
+                    zoom: FIT_BOUNDS_MAX_ZOOM,
+                });
             }
         }
 
         return (
             <>
                 <Box ref={ref}>
-                    <Paper id="se-smart-folder-actions" className={styles.actions}>
+                    <Paper id="se-shared-folder-actions" className={styles.actions}>
                         {subtype === 'track' && (
                             <MenuItem
                                 disabled={files.realSize === 0}
@@ -168,5 +166,5 @@ const SmartFolderActions = forwardRef(
     }
 );
 
-SmartFolderActions.displayName = 'SmartFolderActions';
-export default SmartFolderActions;
+SharedFolderActions.displayName = 'SharedFolderActions';
+export default SharedFolderActions;

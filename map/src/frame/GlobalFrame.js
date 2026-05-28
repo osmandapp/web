@@ -35,7 +35,6 @@ import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
-import { SMART_TYPE } from '../menu/share/shareConstants';
 
 const ENCODED_COMMA = '%2C';
 const ENCODED_COLON = '%3A';
