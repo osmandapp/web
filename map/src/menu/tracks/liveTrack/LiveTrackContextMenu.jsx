@@ -22,13 +22,14 @@ import { ReactComponent as AltitudeIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as AscentIcon } from '../../../assets/icons/ic_action_altitude_ascent_16.svg';
 import { ReactComponent as DescentIcon } from '../../../assets/icons/ic_action_altitude_descent_16.svg';
 import { ReactComponent as FollowIcon } from '../../../assets/icons/ic_action_my_location.svg';
+import { ReactComponent as FolderAddIcon } from '../../../assets/icons/ic_action_folder_add_outlined.svg';
 import trackFavStyles from '../../trackfavmenu.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import errorStyles from '../../errors/errors.module.css';
 
 const ZONE_COLORS = { UPHILL: '#d35400', DOWNHILL: '#27ae60', FLAT: '#7f8c8d' };
 
-export default function LiveTrackContextMenu() {
+export default function LiveTrackContextMenu({ addTranslation }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -55,6 +56,18 @@ export default function LiveTrackContextMenu() {
                 title={translation?.name ?? t('web:live_tracks')}
                 onClose={handleBack}
                 showBackButton={true}
+                rightContent={
+                    !ctx.liveTranslations.some((t) => t.id === translation?.id) && (
+                        <Tooltip title={t('web:live_track_bookmark')} arrow placement="bottom">
+                            <IconButton
+                                className={trackFavStyles.sortIcon}
+                                onClick={() => addTranslation(translation.id, translation.name)}
+                            >
+                                <FolderAddIcon />
+                            </IconButton>
+                        </Tooltip>
+                    )
+                }
             />
             {participantList.length > 0 && (
                 <>

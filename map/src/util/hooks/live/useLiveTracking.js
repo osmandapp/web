@@ -106,48 +106,17 @@ export default function useLiveTracking() {
         [updateParticipant, handleMetadata, ctx.setLiveViewers]
     );
 
-    // Connect once on mount
-    useEffect(() => {
-        const client = new Client({
-            brokerURL: process.env.REACT_APP_WS_URL,
-            reconnectDelay: 5000,
-            onConnect: () => {
-                setConnected(true);
-            },
-            onDisconnect: () => setConnected(false),
-        });
-
-        client.activate();
-        clientRef.current = client;
-
-        return () => {
-            client.deactivate();
-            clientRef.current = null;
-            subscribedRef.current.clear();
-            setConnected(false);
-        };
-    }, []);
-
-    // Subscribe to translations whenever connected or list changes
-    useEffect(() => {
-        if (!connected) return;
-        const client = clientRef.current;
-        if (!client?.connected) return;
-        ctx.liveTranslations.forEach((t) => subscribeToTranslation(client, t.id));
-    }, [connected, ctx.liveTranslations, subscribeToTranslation]);
-
-    // Adds a new translation from a share link and opens its context menu.
-    // If the translation already exists, just selects it.
+    // Adds a translation to the saved list and persists to localStorage.
+    // If already saved, just selects it.
     const addTranslation = useCallback(
         (id, name) => {
-            const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
-            const exists = ctx.liveTranslations.some((t) => t.id === id);
-            if (exists) {
-                const existing = ctx.liveTranslations.find((t) => t.id === id);
+            const existing = ctx.liveTranslations.find((t) => t.id === id);
+            if (existing) {
                 ctx.setSelectedLiveTranslation(existing);
                 return;
             }
 
+            const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
             const newTranslation = { id, name: autoName };
             const updated = [...ctx.liveTranslations, newTranslation];
             ctx.setLiveTranslations(updated);
@@ -162,7 +131,7 @@ export default function useLiveTracking() {
         [ctx.liveTranslations, ctx.setLiveTranslations, ctx.setSelectedLiveTranslation, subscribeToTranslation]
     );
 
-    // Removes a translation from the list, clears its participants, and unsubscribes.
+    // Removes a translation from the saved list, clears its participants, and unsubscribes.
     const removeTranslation = useCallback(
         (id) => {
             const updated = ctx.liveTranslations.filter((t) => t.id !== id);
@@ -186,6 +155,40 @@ export default function useLiveTracking() {
             ctx.setSelectedLiveTranslation,
         ]
     );
+
+    // Connect once on mount
+    useEffect(() => {
+        const client = new Client({
+            brokerURL: process.env.REACT_APP_WS_URL,
+            reconnectDelay: 5000,
+            onConnect: () => {
+                setConnected(true);
+            },
+            onDisconnect: () => setConnected(false),
+        });
+
+        client.activate();
+        clientRef.current = client;
+
+        return () => {
+            client.deactivate();
+            clientRef.current = null;
+            subscribedRef.current.clear();
+            setConnected(false);
+        };
+    }, []);
+
+    // Subscribe to saved translations and to the currently selected (preview) translation
+    useEffect(() => {
+        if (!connected) return;
+        const client = clientRef.current;
+        if (!client?.connected) return;
+        ctx.liveTranslations.forEach((t) => subscribeToTranslation(client, t.id));
+        const sel = ctx.selectedLiveTranslation;
+        if (sel && !ctx.liveTranslations.find((t) => t.id === sel.id)) {
+            subscribeToTranslation(client, sel.id);
+        }
+    }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation]);
 
     return { addTranslation, removeTranslation };
 }

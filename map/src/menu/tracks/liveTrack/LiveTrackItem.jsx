@@ -17,12 +17,14 @@ export default function LiveTrackItem({ translation, isLastItem, removeTranslati
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
+
+    const [openActions, setOpenActions] = useState(false);
 
     const participants = ctx.liveParticipants?.[translation.id];
     const participantCount = participants ? Object.keys(participants).length : 0;
-    const infoText = participantCount > 0 ? `${participantCount} online` : t('web:live_track_inactive');
+    const infoText =
+        participantCount > 0 ? `${participantCount} ${t('web:live_track_online')}` : t('web:live_track_inactive');
 
     function handleClick(e) {
         if (anchorEl.current?.contains(e.target)) return;

@@ -7,30 +7,30 @@ const TID_PARAM = 'tid';
 const NAME_PARAM = 'name';
 
 // Derives live track state from the URL and syncs selectedLiveTranslation into context.
-// Also handles share URL (?tid=...&name=...) on mount.
-export default function useLiveTrackUrl({ addTranslation }) {
+// For saved translations — picks from liveTranslations list.
+// For preview (share URL, not yet saved) — constructs from URL params directly.
+export default function useLiveTrackUrl() {
     const ctx = useContext(AppContext);
     const location = useLocation();
     const [searchParams] = useSearchParams();
 
     const livePath = MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL;
     const openLiveTracks = location.pathname.startsWith(livePath);
-    const liveTid = openLiveTracks ? new URLSearchParams(location.search).get(TID_PARAM) : null;
-    const selectedLiveTranslation = liveTid ? (ctx.liveTranslations.find((tr) => tr.id === liveTid) ?? null) : null;
+    const liveTid = openLiveTracks ? searchParams.get(TID_PARAM) : null;
 
-    // Sync derived selectedLiveTranslation into context for LiveTrackLayer.
     useEffect(() => {
-        ctx.setSelectedLiveTranslation(selectedLiveTranslation);
-    }, [selectedLiveTranslation?.id]);
-
-    // Handle share URL: ?tid=...&name=... (adds translation to list if not yet present).
-    useEffect(() => {
-        const tid = searchParams.get(TID_PARAM);
-        if (tid) {
-            const name = searchParams.get(NAME_PARAM) ?? '';
-            addTranslation(tid, name);
+        if (!liveTid) {
+            ctx.setSelectedLiveTranslation(null);
+            return;
         }
-    }, []);
+        const fromList = ctx.liveTranslations.find((t) => t.id === liveTid);
+        if (fromList) {
+            ctx.setSelectedLiveTranslation(fromList);
+        } else {
+            const name = searchParams.get(NAME_PARAM) ?? '';
+            ctx.setSelectedLiveTranslation({ id: liveTid, name });
+        }
+    }, [liveTid]);
 
-    return { openLiveTracks, selectedLiveTranslation };
+    return { openLiveTracks };
 }

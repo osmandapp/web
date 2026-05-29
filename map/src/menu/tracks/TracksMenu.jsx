@@ -47,7 +47,7 @@ export default function TracksMenu() {
     const { t } = useTranslation();
 
     const { addTranslation, removeTranslation } = useLiveTracking();
-    const { openLiveTracks, selectedLiveTranslation } = useLiveTrackUrl({ addTranslation });
+    const { openLiveTracks } = useLiveTrackUrl();
 
     const checkHasFiles = () =>
         ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
@@ -111,8 +111,8 @@ export default function TracksMenu() {
 
     // live tracks folder / context menu
     if (openLiveTracks) {
-        if (selectedLiveTranslation) {
-            return <LiveTrackContextMenu />;
+        if (ctx.selectedLiveTranslation) {
+            return <LiveTrackContextMenu addTranslation={addTranslation} />;
         }
         return <LiveTrackFolder removeTranslation={removeTranslation} />;
     }
