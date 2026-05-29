@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -18,6 +18,21 @@ Puoi ottenere l'ultima versione di OsmAnd gratuitamente dagli store di app elenc
 Link diretti alle versioni gratuite di OsmAnd.
 
 ## Versione 5 {#version-5}
+
+### Versione 5.3 {#version-53}
+
+Data di rilascio 04/2026:
+
+- Plugin Astronomia con sovrapposizione astronomica che mostra i percorsi del Sole, dei pianeti e delle stelle sulla mappa.
+- Layout più flessibile per widget e pulsanti della mappa.
+- Edifici 3D.
+- Vista globo.
+- Nuovi widget per la Registrazione del Viaggio: Velocità Media e Tempo in movimento.
+- Widget Tachimetro con indicazione visiva dell'eccesso di velocità, avviso di tolleranza e stati di superamento del limite.
+- Nuovo Editor di palette per creare e modificare schemi di colori personalizzati per la visualizzazione di tracce e terreno.
+- Migliorato il routing ciclistico considerando la larghezza della bicicletta.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Versione 5.2 {#version-52}
 
@@ -314,7 +329,7 @@ Data di rilascio 05/2020:
 - Wikipedia come livello separato in Configura mappa, seleziona solo le lingue necessarie
 - Crea il tuo filtro/mappe POI con totale flessibilità
 - Aggiunte opzioni per ripristinare le impostazioni per i profili personalizzati
-- Percorsi GPX completi dalla navigazione supportano le corsie di traffico e le istruzioni di svolta complete
+- Percorsi GPX completi dalla navigazione supportano le corsine di traffico e le istruzioni di svolta complete
 - Correzione delle dimensioni dell'interfaccia utente sui tablet
 - Correzione dei bug con RTL
 
@@ -561,7 +576,7 @@ Data di rilascio 06/2015:
 
 - Nuovi dati Wikipedia strutturati per paese e contenenti molti più punti rispetto a prima
 - Migliore ricalcolo del percorso (dopo diversi tentativi il motore suggerisce un percorso diverso)
-- La ricerca POI supporta query più specifiche (come tipo di carburante e query specifiche per religione)
+- La ricerca POI supporta query più specifiche (come tipo di carburato e query specifiche per religione)
 - Visualizza le frecce di svolta sul percorso
 - Colore arancione per i POI che chiudono entro 30 minuti da ora
 - Molte correzioni in diverse aree

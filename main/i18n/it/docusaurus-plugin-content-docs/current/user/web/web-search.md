@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
+source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
 sidebar_position: 10
 sidebar_label:  Cerca
 title: Cerca sul sito web
@@ -77,7 +77,7 @@ Il **Menu contestuale PDI** visualizza informazioni chiave sul luogo selezionato
 ### Azioni PDI {#poi-actions}
 
 Il **Menu contestuale PDI** include pulsanti di azione per attività comuni. Usa queste azioni rapide per salvare un luogo, condividerlo o avviare la pianificazione del percorso e la navigazione:
-- **Aggiungi ai Preferiti** — salva il PDI nei tuoi [Preferiti](../web/web-favorites.md#add--edit-favorite).
+- **Aggiungi ai Preferiti** — salva il PDI nei tuoi [Preferiti](../web/web-favorites.md#favorites-actions).
 - **Condividi** — genera un link condivisibile che apre il PDI direttamente in OsmAnd Web. Il link include il nome del PDI, il tipo e le coordinate (pin).
 - **Indicazioni da** — imposta il PDI selezionato come punto di partenza e apre il pannello del percorso in modo da poter scegliere una destinazione e un profilo.
 - **Navigazione** — imposta il PDI selezionato come punto di destinazione per la [navigazione](../web/web-navigation.md#start-a-route).
@@ -93,7 +93,7 @@ If you search by **Category name**, the first result will display the category o
 Click the chosen POI on the map or in the result list opens the **POI Context Menu**. This menu provides the following data and links:
 
 - **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#add--edit-favorite).  
+- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
 - **🔍 Button**. Moves the map to the POI's location.  
 - **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
 - **Location**. Displays the coordinates of the POI.  
@@ -116,7 +116,7 @@ You can choose and display one POI category on the map in the **Categories Menu*
 Click the selected  POI on the map or in the results list to open the **POI Context Menu**. This menu provides the following data and links:
 
 - **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#add--edit-favorite).  
+- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
 - **🔍 Button**. Moves the map to the POI's location.  
 - **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
 - **Location**. Displays the coordinates of the POI.  

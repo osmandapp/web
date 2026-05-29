@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ Il menu contestuale delle tracce è un menu con azioni e dati di una traccia GPX
 
 Il trasporto pubblico è un livello aggiuntivo che ti consente di visualizzare percorsi e fermate di trasporto sulla mappa, di controllare informazioni dettagliate su di essi e di navigare.
 
-## [Percorsi](./routes.md) {#routes}
+## [Percorsi](./routes/index.md) {#routes}
 
 OsmAnd ha molte potenti funzionalità per visualizzare vari percorsi sulla mappa.
+
+### [Tipi di Percorsi](./routes/types-of-routes.md) {#type-of-routes}
+
+Tutte le informazioni sui tipi di percorsi disponibili in OsmAnd.

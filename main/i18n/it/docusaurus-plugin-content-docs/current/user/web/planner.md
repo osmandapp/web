@@ -1,8 +1,8 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Pianifica Itinerario
-title: Pianificare un Itinerario sul Sito Web
+title: Pianifica Itinerario sul Sito Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -59,7 +59,7 @@ To create a navigation route, follow these steps:
 -->
 
 
-## Creare Nuovo Itinerario {#create-new-route}
+## Crea Nuovo Itinerario {#create-new-route}
 
 Esistono due modi per iniziare un nuovo itinerario in Pianifica itinerario. La prima opzione è direttamente dalla mappa: fai clic con il pulsante destro del mouse in qualsiasi punto della mappa e seleziona **Crea nuovo itinerario**. La seconda opzione è dal pannello sinistro: fai clic sul pulsante **Crea traccia**.
 
@@ -80,7 +80,7 @@ Ogni elemento nella lista ha un interruttore che ti permette di mostrare o nasco
 ![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
-## Gestire Traccia {#manage-track}
+## Gestisci Traccia {#manage-track}
 
 Quando crei o importi un itinerario in Pianifica itinerario, si apre un pannello verticale della traccia. Questo pannello ti permette di cambiare il profilo di instradamento e gestire l'itinerario.
 
@@ -138,9 +138,11 @@ Il pannello Traccia mostra l'elenco dei punti dell'itinerario utilizzati per cos
 
 Il pannello Punti viene utilizzato per visualizzare e gestire i waypoint per la traccia selezionata. I waypoint possono essere aggiunti dal menu contestuale della mappa — fai clic con il pulsante destro del mouse sulla mappa e scegli l'opzione per **Aggiungi waypoint**, quindi compila i dettagli del waypoint (come nome, icona e colore) e salvalo.
 
+La modifica dei waypoint utilizza la stessa interfaccia di [Modifica preferiti](../web/web-favorites.md#edit-favorites). Puoi modificare le proprietà dei waypoint come nome, indirizzo, descrizione, icona, colore e forma utilizzando il pannello di modifica unificato. L'aspetto selezionato viene visualizzato in anteprima sia nel pannello di modifica che direttamente sulla mappa.
+
 Nell'elenco dei Waypoint, puoi controllare se i waypoint sono mostrati sulla mappa e rimuovere waypoint individuali quando necessario. Per rimuovere tutti i waypoint dalla traccia in una volta, usa *Cancella tutti i waypoint*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## Articoli Correlati {#related-articles}
