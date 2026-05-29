@@ -1,5 +1,5 @@
 ---
-source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+source-hash: 4e356d29cbf17a924d5de32bc4785b1214d4598771bd8a9b0b5f89a3b34f283a
 sidebar_position: 14
 title:  Skikaartweergave
 ---
@@ -147,7 +147,7 @@ Gebruik de [Legenda skikaart](../../user/map-legend/ski-map.md) voor elke refere
 
 Door de kaart te lezen, kunt u details achterhalen die voor u belangrijk zijn, zoals de moeilijkheidsgraad van een bepaalde piste, het type piste, of er preparatie plaatsvindt en of de piste 's nachts verlicht is.
 
-De hier beschreven opties zijn beschikbaar in de [Skinavigatie](../navigation/setup/route-navigation.md). De **Skinavigatie** stelt de individuele routeopties in, die alleen van toepassing zijn op skiën.
+De hier beschreven opties zijn beschikbaar in de [Skinavigatie](../navigation/setup/route-navigation.md). De **Skinavigatie** stelt de individuele routeopties in, die alleen van toepassing op skiën.
 
 
 :::info renderstijl
@@ -237,11 +237,11 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 </Tabs>
 
-Om te weten te komen over welke pistes buiten het skiresort u kunt navigeren, moet u de optie **Skipistes en routes** inschakelen in de [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) lijst, die geopend wordt vanuit het menu [Kaart configureren](../map/configure-map-menu.md).  
+Om te weten te komen over welke pistes buiten het skiresort u kunt navigeren, moet u de optie **Skipistes en routes** inschakelen in de [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes/types-of-routes.md) lijst, die geopend wordt vanuit het menu [Kaart configureren](../map/configure-map-menu.md).  
 
-Met het Skiprofiel, de skinavigatie en de [Winter en Ski kaartstijl](../map/map-styles.md#winter-and-ski) ingeschakeld, tonen de [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) alle soorten pistes die de Skinavigatie kan gebruiken om navigatieroutes langs uit te stippelen. Dergelijke skipisteroutes worden, indien ingeschakeld, meestal buiten de grenzen van het skiresort met een violette kleur omlijnd.  
-Wanneer de optie [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) wordt ingeschakeld voor een kaartstijl anders dan Winter en Ski, worden alleen de hellingen weergegeven. Andere ski-gerelateerde kenmerken worden mogelijk niet getoond in deze stijl-laag.  
-_Skipistes en routes_ [zijn klikbaar](../map/routes.md#actions-with-routes).
+Met het Skiprofiel, de skinavigatie en de [Winter en Ski kaartstijl](../map/map-styles.md#winter-and-ski) ingeschakeld, tonen de [Skipistes en routes](../map/routes/types-of-routes.md#ski-slopes-and-routes) alle soorten pistes die de Skinavigatie kan gebruiken om navigatieroutes langs uit te stippelen. Dergelijke skipisteroutes worden, indien ingeschakeld, meestal buiten de grenzen van het skiresort met een violette kleur omlijnd.  
+Wanneer de optie [Skipistes en routes](../map/routes/types-of-routes.md#ski-slopes-and-routes) wordt ingeschakeld voor een kaartstijl anders dan Winter en Ski, worden alleen de hellingen weergegeven. Andere ski-gerelateerde kenmerken worden mogelijk niet getoond in deze stijl-laag.  
+_Skipistes en routes_ [zijn klikbaar](../map/routes/index.md#actions-with-routes).
 
 
 ### Nacht en verlichting {#night-and-lighting}

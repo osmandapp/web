@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title:  POI zoeken
 ---
@@ -58,7 +58,8 @@ OsmAnd biedt verschillende manieren om naar de zoekfunctie te gaan waar de secti
 - **Point of Interest (POI) zoeken op type en naam**:
     - Hiermee kunt u zoeken:
        - Naar nabijgelegen points of interest (POI) of specifieke categorieën van POI.
-       - Naar [OSM-routes](../map/routes.md) op naam en op referentienummer.
+       - Naar [OSM-routes](../map/routes/types-of-routes.md) op naam, referentienummer of relatie-ID met de indeling `O+relation_id` (bijvoorbeeld: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Naar objecten die zijn gekoppeld aan Wikidata-identificatiecodes (bijvoorbeeld: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - Naar [Populaire plaatsen (Wikipedia)](../map/popular_places.md).
        - Naar plaatsen door een stadsnaam te combineren met een POI-naam of -type (bijvoorbeeld: Berlin airport, Bratislava Billa).
     - Filters en het sorteren van resultaten op categorie, afstand of beoordeling zijn mogelijk.
@@ -68,8 +69,8 @@ Het pictogram dat in de zoekresultaten wordt weergegeven, komt overeen met het p
 Zoekresultaten kunnen aanvullende locatie-informatie bevatten, zoals de stad waarin de POI zich bevindt. Dit helpt om plaatsen met dezelfde naam te onderscheiden bij het zoeken naar merken of populaire plaatsen.
     
 - **POI's zoeken op de kaart** - Toon op kaart:
-    1. U kunt de vereiste categorieën selecteren uit de [**lijst**](../map/point-layers-on-map.md#points-of-interest-pois) in *Kaart configureren → Toon POI-overlay...* en zoeken op pictogrammen op de verwachte locatie.
-    2. U kunt eerst een zoekopdracht invoeren of beginnen met het zoeken naar POI's in *Menu → Zoeken → Categorieën* en vervolgens op **Toon op kaart** klikken.
+    - U kunt de vereiste categorieën selecteren uit de [**lijst**](../map/point-layers-on-map.md#points-of-interest-pois) in *Kaart configureren → Toon POI-overlay...* en zoeken op pictogrammen op de verwachte locatie.
+    - U kunt eerst een zoekopdracht invoeren of beginnen met het zoeken naar POI's in *Menu → Zoeken → Categorieën* en vervolgens op **Toon op kaart** klikken.
 
 - **Merk zoeken**:
     - Het zoeken naar een bedrijfslocatie op merknaam (zoals Audi, Starbucks of Aldi) is zeer vergelijkbaar met het zoeken naar verschillende POI's op type. Het belangrijkste verschil is dat de merkenlijst in de kaart wordt aangeboden en bij elke update kan veranderen. 
@@ -252,7 +253,7 @@ Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhan
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. Het is een transportsysteem dat is ontworpen om mensen voor openbare doeleinden te vervoeren, toegankelijk voor alle inwoners en bezoekers van een stad of regio.  
         Bevat *9* soorten filters.
 
- 17. **Routes**. Omvat [OSM-routes](../map/routes.md) voor verschillende soorten activiteiten.  
+ 17. **Routes**. Omvat [OSM-routes](../map/routes/types-of-routes.md) voor verschillende soorten activiteiten.  
         Bevat *14* soorten filters: **Controlepunt**, **Fietsknooppunt**, **Wandelknooppunt**, **Routenetwerk (fietsen)**, **Routenetwerk (wandelen)**, **Routepuntcategorie**, **Luchtsporten**, **Fietsen**, **Autorijden**, **Te voet**, **Motorrijden**, **Andere routes**, **Watersporten**, **Wintersporten**.
 
  18. **Bezienswaardigheden**. Het is een activiteit waarbij mensen interessante plaatsen of locaties bezoeken om er vertrouwd mee te raken en te genieten van hun schoonheid, geschiedenis of betekenis.  
@@ -334,7 +335,7 @@ U kunt informatie over Online Navigatie vinden in het artikel [Online routering]
 
 ## POI-zoekopdracht aanpassen {#customize-poi-search}
 
-Aanpassing van POI-zoekopdrachten is een geavanceerde zoekfunctie waarmee u POI's uit verschillende categorieën kunt vinden en combineren voor een nauwkeurigere en persoonlijkere zoekopdracht. In tegenstelling tot de standaard POI-zoekopdracht, die beperkt is tot enkele vooraf gedefinieerde categorieën, biedt de aangepaste POI-zoekopdracht de flexibiliteit om verschillende soorten POI's te selecteren en te combineren.  
+Aanpassing van POI-zoekopdrachten is een geavanceerde zoekfunctie waarmee u POI's uit verschillende categorieën kunt vinden en combineren voor een nauwkeurige en persoonlijkere zoekopdracht. In tegenstelling tot de standaard POI-zoekopdracht, die beperkt is tot enkele vooraf gedefinieerde categorieën, biedt de aangepaste POI-zoekopdracht de flexibiliteit om verschillende soorten POI's te selecteren en te combineren.  
 
 U kunt bijvoorbeeld tegelijkertijd naar restaurants en apotheken zoeken om de dichtstbijzijnde eetgelegenheid te vinden en vervolgens uw medicijnen te halen. Of zoek naar het dichtstbijzijnde tankstation en autoservice als u een probleem met uw auto heeft.  
 

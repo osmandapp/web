@@ -1,5 +1,5 @@
 ---
-source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
+source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
 sidebar_position: 3
 title: Astronomie
 unlisted: true
@@ -139,7 +139,7 @@ Onder de grafiek worden belangrijke waarnemingsgebeurtenissen weergegeven:
 
 De grafiek opent met de indicator gepositioneerd op de huidige systeemtijd. De locatie die wordt gebruikt voor berekeningen, wordt onder de grafiek weergegeven als een stadsnaam.
 
-### Waarnemingsschema {#actions}
+### Waarnemingsschema {#observation-schedule}
 
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
@@ -280,7 +280,7 @@ De **Zoek**-functie in de Astronomie-plugin stelt je in staat om hemellichamen t
 
 **1. Nu kijken**
 
-De sectie Nu kijken markeert hemellichamen die nu of vanavond zichtbaar zijn. Deze sectie fungeert als een aanbevelingshulpmiddel en toont objecten die het beste geschikt zijn voor waarneming op basis van je huidige locatie en tijd.
+De sectie Nu kijken markeert hemellichamen die nu of vanavond zichtbaar zijn. Deze sectie fungeert als een aanbevelingshulpmiddel en toont objecten die het beste geschikt voor waarneming op basis van je huidige locatie en tijd.
 
 **2. Categorieën**
 

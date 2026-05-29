@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Topografie
 ---
@@ -367,7 +367,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 **3D-gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. Als [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) doorgangen door gebouwen bevat die zijn gemarkeerd met de tag `tunnel=building_passage`, renderen OsmAnd zichtbare openingen in het 3D-gebouwenmodel zodat wegen of voetgangerswegen die door het gebouw lopen correct worden weergegeven. 
 
-3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven. Wanneer een POI of een geselecteerde locatie (zoals een kaartpin of navigatiebestemming) zich binnen een gebouw bevindt, markeert OsmAnd het bijbehorende gebouw om het gemakkelijker te identificeren op de kaart.
+3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven. Wanneer u in- of uitzoomt en wanneer u de kaart verschuift, verschijnen en verdwijnen 3D-gebouwen met een vloeiende vervagingsanimatie. Wanneer een POI of een geselecteerde locatie (zoals een kaartpin of navigatiebestemming) zich binnen een gebouw bevindt, markeert OsmAnd het bijbehorende gebouw om het gemakkelijker te identificeren op de kaart.
 
 Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. Wanneer ingeschakeld, toont de instelling ook het huidige [Detailniveau](#performance) (Laag of Hoog) onder de hoofdschakelaar (*Alleen Android*). Om gebouwen in 3D te bekijken, kantel de kaart door twee vingers op het scherm te plaatsen en omhoog te vegen. In deze weergave kunnen gebouwen gedeeltelijk wegen of kaartlabels bedekken, afhankelijk van de zichtbaarheid-instelling.
 
@@ -416,7 +416,7 @@ De **<Translate android="true" ids="performance"/>** stuurt hoe 3D-gebouwen word
 
 **<Translate android="true" ids="level_of_details"/>** bepaalt de complexiteit van de 3D-gebouwgeometrie:
 - Laag (standaard) — eenvoudigere geometrie.
-- Hoog — gedetailleerdere geometrie.
+- Hoog — gedetailleerdere geometrie. Vervagingsanimatie voor 3D-gebouwen is alleen beschikbaar met deze instelling.
 
 **<Translate android="true" ids="view_distance"/>** stuurt hoe ver van de camera 3D-gebouwen worden gerenderd:
 - Dichtbij (standaard) — rendert gebouwen dichter bij u.

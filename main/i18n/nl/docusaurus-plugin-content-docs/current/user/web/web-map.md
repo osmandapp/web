@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 De OsmAnd-webkaart is een wereldkaart gebaseerd op [OpenStreetMap (OSM)](https://www.openstreetmap.org/) gegevens. Het stelt gebruikers in staat om hun eigen gegevens te bekijken, zoals tracks en favorieten, navigatieroutes voor elk profiel te maken en toegang te krijgen tot extra functies zoals het weer, openbare GPX-tracks, POI's en Wikimedia-afbeeldingen. Verken en pas uw gegevenservaring rechtstreeks in uw browser aan.
 
-![OsmAnd Web alles](@site/static/img/web/web_map_all.png)
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
 ## Kaart Contextmenu {#map-context-menu}
@@ -46,7 +46,7 @@ Om het te openen, klikt u met de rechtermuisknop ergens op de kaart. Dit menu be
 
 - **Weer openen** – Ga naar het [Weermenu](../web/web-weather.md) om weergegevens te bekijken.
 - **Nieuwe route maken** – Opent de [*Plan een route*-tool](../web/web-navigation.md) met de geselecteerde locatie als start- of eindpunt.
-- **Favoriet toevoegen** – Hiermee kunt u een [favoriet](../web/web-favorites.md#add--edit-favorite) op elk punt op de kaart maken en opslaan voor eenvoudige toegang.
+- **Favoriet toevoegen** – Hiermee kunt u een [favoriet](../web/web-favorites.md#favorites-actions) op elk punt op de kaart maken en opslaan voor eenvoudige toegang.
 - **Route vanaf** – Stelt het geselecteerde punt in als de [startlocatie](../web/web-navigation.md#start-a-route) voor navigatie.
 - **Route naar** – Stelt het geselecteerde punt in als de [bestemming voor navigatie](../web/web-navigation.md#start-a-route).
 - **Coördinaten kopiëren** – Kopieert de coördinaten van het geselecteerde punt voor extern gebruik.
@@ -127,7 +127,7 @@ Elke track heeft een menu (⋮) met de volgende commando's:
 
 - **Track verbergen**: Verbergt de momenteel zichtbare track van de kaart.  
 - **Track zichtbaar maken**: Toont een track uit de lijst Recent Zichtbaar op de kaart.  
-- **Hernoemen**: Hiermee kunt u de track hernoemen voor eenvoudigere identificatie.  
+- **Hernoemen**: Hiermee kunt u de track hernoemen voor eenvoudiger identificatie.  
 - **Dupliceren**: Maakt een kopie van de track.
 - **Delen**: Opent het deelscherm (dezelfde als voor [Favorieten](../web/web-favorites.md#share)).
 - **Downloaden**: Slaat de track op uw lokale apparaat op.  
@@ -149,7 +149,7 @@ De optie **Vervoersstops** stelt u in staat om openbare vervoersstops direct op 
 
 **1. Stopinformatie**
 
-De bovenste sectie toont basisinformatie over de geselecteerde stop, inclusief de naam en locatie. Snelle actieknoppen stellen u in staat om: *De stop aan Favorieten toe te voegen, Een link naar de stop te delen, Navigatie vanaf de stop te starten, De stop als bestemming in te stellen*.
+De bovenste sectie toont basisinformatie over de geselecteerde stop, inclusief de naam en locatie. Snelle actieknoppen stellen u in staat om: *De stop aan Favorieten toevoegen, Een link naar de stop te delen, Navigatie vanaf de stop te starten, De stop als bestemming in te stellen*.
 
 **2. Routes**
 

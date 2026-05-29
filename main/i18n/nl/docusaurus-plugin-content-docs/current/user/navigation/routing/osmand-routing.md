@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  Over OsmAnd-routering
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -75,6 +75,10 @@ Er zijn twee mogelijke manieren om te kiezen welke wegen te vermijden bij het be
 
 - Selecteer het wegtype in de sectie [Routeparameters](../guidance/navigation-settings.md#route-parameters) van [Navigatie-instellingen](../guidance/navigation-settings.md). De beschrijving van deze instelling wordt gegeven in de artikelen over de instellingen van [Routeringstypes](#routing-types). Zie als voorbeeld de beschrijving van het routeringstype [Auto / Vrachtwagen / Motor](../routing/car-based-routing.md#route-parameters---car).
 - U kunt ook specifieke wegen selecteren die niet worden gebruikt voor routering met de optie *[Weg vermijden](../../map/map-context-menu.md#avoid-road)* via het *kaartcontextmenu* of met het *[Menu Wegen vermijden](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Wanneer een wegtype (zoals *Onverharde wegen*) is geselecteerd in de Vermijd-instellingen, sluit OsmAnd dergelijke wegen strikt uit van de routeberekening. Zelfs zeer korte secties (bijvoorbeeld 100–200 meter onverharde weg) worden volledig vermeden en worden onder geen enkele omstandigheid in de route opgenomen. Hierdoor kunnen routes aanzienlijk langer worden als het vermijden van dergelijke wegen omwegen vereist.
+
+Als de Vermijd-optie is uitgeschakeld, zijn deze wegen nog steeds toegestaan, maar kunnen ze een lagere prioriteit (straf) krijgen, wat betekent dat OsmAnd waar mogelijk betere wegen prefereert, maar ze indien nodig toch kan opnemen.
 
 :::note
 

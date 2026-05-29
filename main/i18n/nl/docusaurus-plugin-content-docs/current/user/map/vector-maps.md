@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Vectorkaarten 
 ---
@@ -574,7 +574,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 ![Kaartroutes - fietsroutes](@site/static/img/map/map-routes-cycle-routes.png)  ![Kaartroutes - wandelnetwerk](@site/static/img/map/map-routes-hiking-network.png)
 
-Een route is een pad dat vooraf is bepaald en gevolgd moet worden om een specifieke bestemming te bereiken. Een route kan worden geoptimaliseerd voor verschillende soorten reizen, zoals fietsen, wandelen, hardlopen, openbaar vervoer en andere. U kunt meer lezen over routes en hun types in het [Routes artikel](../map/routes.md).
+Een route is een pad dat vooraf is bepaald en gevolgd moet worden om een specifieke bestemming te bereiken. Een route kan worden geoptimaliseerd voor verschillende soorten reizen, zoals fietsen, wandelen, hardlopen, openbaar vervoer en andere. U kunt meer lezen over routes en hun types in het [Routes artikel](../map/routes/index.md).
 
 
 ## Gerelateerde Artikelen {#related-articles}
@@ -582,6 +582,6 @@ Een route is een pad dat vooraf is bepaald en gevolgd moet worden om een specifi
 - [Omgaan met Kaart](../map/interact-with-map.md)
 - [Kaart configureren](../map/configure-map-menu.md)
 - [Kaartstijlen](../map/map-styles.md)
-- [Routes](../map/routes.md)
+- [Routes](../map/routes/index.md)
 - [Importeren / Exporteren](../personal/import-export.md)
 - [Kleurenpaletschema's](../personal/color-palette-schemes.md)

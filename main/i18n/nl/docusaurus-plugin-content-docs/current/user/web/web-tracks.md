@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -66,6 +66,23 @@ Klik op de driepunt-knop (⋮) om het menu *Track-map* te openen. Van hieruit ku
  - Verwijderen. Opent een bevestigingsdialoog. Het verwijderen van een map verwijdert deze permanent samen met alle tracks die het bevat. Deze actie wordt ook gesynchroniseerd via OsmAnd Cloud.
 
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+
+### Slimme mappen {#smart-folders}
+
+**Slimme mappen** die op mobiele apparaten zijn gemaakt, kunnen via OsmAnd Cloud worden gesynchroniseerd en bekeken in de webversie. Om ervoor te zorgen dat ze op het web verschijnen, moet synchronisatie van [OsmAnd-instellingen](../personal/osmand-cloud.md#select-data-to-back-up) zijn ingeschakeld in de Cloud-instellingen.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Slimme mappen worden momenteel opgeslagen als onderdeel van globale instellingen, dus ze worden alleen naar de Cloud geüpload wanneer Instellingen-synchronisatie actief is. Na het maken of bewerken van een Slimme map wordt aanbevolen om een handmatige synchronisatie uit te voeren om de gegevens bij te werken.
+
+Op het web worden Slimme mappen weergegeven in de tracklijst met een duidelijk sterpictogram, waardoor ze gemakkelijk te onderscheiden zijn van normale mappen. De mapnaam wordt als eerste gesynchroniseerd, terwijl de lijst met tracks afhangt van hoe de map op het apparaat is geconfigureerd.
+
+Tracks worden alleen weergegeven als de configuratie van de Slimme map wordt ondersteund op het web. Dit omvat zowel [filterinstellingen](../personal/tracks/smart-folder.md#search-filter) als [groeperingsopties](../personal/tracks/smart-folder.md#managing-smart-folders). Als niet-ondersteunde parameters worden gebruikt (bijvoorbeeld dichtstbijzijnde stad), kan de map zonder tracks verschijnen. Voor de beste compatibiliteit, gebruik algemene parameters zoals activiteit, datum, afstand of duur.
+
+De synchronisatie van Slimme mappen kan variëren afhankelijk van het platform en de synchronisatieconfiguratie. Voor de meest consistente resultaten, zorg ervoor dat Cloud-synchronisatie is ingeschakeld en up-to-date op alle apparaten.
+
+In het drie-puntenmenu (⋮) kunt u de Slimme map downloaden als een OBF-verzameling.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
 ## Cloud-tracks {#cloud-tracks}
