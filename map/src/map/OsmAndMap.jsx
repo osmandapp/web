@@ -27,6 +27,9 @@ import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
+import useLocalGpxImport from '../util/hooks/useLocalGpxImport';
+import useMapGpxDrop from '../util/hooks/map/useMapGpxDrop';
+import GpxMapDropOverlay from './components/GpxMapDropOverlay';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;
@@ -71,6 +74,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
     const [hoverPoint, setHoverPoint] = useState(null);
+    const { importGpxFiles } = useLocalGpxImport();
+    const { isDragOver, dropHandlers } = useMapGpxDrop({ importGpxFiles });
 
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
@@ -166,6 +171,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
 
     return (
         <Box
+            id="se-map-gpx-drop-zone"
+            {...dropHandlers}
             sx={{
                 width: '100%',
                 height: '100%',
@@ -206,6 +213,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 },
             }}
         >
+            <GpxMapDropOverlay active={isDragOver} />
             <MapContainer
                 zoom={initialView.zoom}
                 center={initialView.center}
