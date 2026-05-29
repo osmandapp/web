@@ -22,7 +22,7 @@ export default function LiveTrackItem({ translation, isLastItem, removeTranslati
     const [openActions, setOpenActions] = useState(false);
 
     const participants = ctx.liveParticipants?.[translation.id];
-    const participantCount = participants ? Object.keys(participants).length : 0;
+    const participantCount = participants ? Object.values(participants).filter((p) => p.active !== false).length : 0;
     const infoText =
         participantCount > 0 ? `${participantCount} ${t('web:live_track_online')}` : t('web:live_track_inactive');
 

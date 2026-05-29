@@ -148,7 +148,15 @@ function LiveParticipantCard({ participant, isLast }) {
     return (
         <>
             <SubTitleMenu
-                text={`${t('web:share_owner')}: ${participant.nickname}`}
+                text={
+                    <span className={trackFavStyles.participantNickname}>
+                        <span
+                            className={trackFavStyles.participantStatusDot}
+                            style={{ backgroundColor: participant.active !== false ? '#4CAF50' : '#F44336' }}
+                        />
+                        {participant.nickname}
+                    </span>
+                }
                 rightContent={
                     <Tooltip title={t('web:live_track_follow')} arrow placement="bottom">
                         <IconButton className={trackFavStyles.sortIcon} onClick={handleFollow}>

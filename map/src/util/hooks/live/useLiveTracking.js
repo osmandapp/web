@@ -27,6 +27,7 @@ export default function useLiveTracking() {
                         [nickname]: {
                             nickname,
                             color,
+                            active: existing?.active ?? true,
                             startTime: existing?.startTime ?? Date.now(),
                             locations: [point, ...locations],
                         },
@@ -45,21 +46,35 @@ export default function useLiveTracking() {
 
             ctx.setLiveParticipants((prev) => {
                 const byTranslation = { ...(prev[translationId] ?? {}) };
+                const activeNicknames = new Set();
                 data.shareLocations.forEach((loc, index) => {
-                    let locations = [];
+                    activeNicknames.add(loc.nickname);
+                    let historyLocations = [];
                     if (Array.isArray(loc.allLocations)) {
-                        locations = loc.allLocations;
+                        historyLocations = loc.allLocations;
                     } else if (loc.lastLocation) {
-                        locations = [loc.lastLocation];
+                        historyLocations = [loc.lastLocation];
                     }
                     const existing = byTranslation[loc.nickname];
                     const color = existing?.color ?? getColorByIndex(index, data.shareLocations.length);
+                    // Keep live points that arrived before history loaded and are newer than history head
+                    const historyHeadTime = historyLocations[0]?.time ?? 0;
+                    const livePoints = (existing?.locations ?? []).filter((p) => (p.time ?? 0) > historyHeadTime);
+                    const combined = [...livePoints, ...historyLocations];
+                    combined.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
                     byTranslation[loc.nickname] = {
                         nickname: loc.nickname,
                         color,
+                        active: true,
                         startTime: loc.startTime ?? existing?.startTime ?? Date.now(),
-                        locations,
+                        locations: combined,
                     };
+                });
+                // Mark participants no longer sharing as inactive
+                Object.keys(byTranslation).forEach((nick) => {
+                    if (!activeNicknames.has(nick)) {
+                        byTranslation[nick] = { ...byTranslation[nick], active: false };
+                    }
                 });
                 return { ...prev, [translationId]: byTranslation };
             });
@@ -162,6 +177,13 @@ export default function useLiveTracking() {
             brokerURL: process.env.REACT_APP_WS_URL,
             reconnectDelay: 5000,
             onConnect: () => {
+                // Subscribe to private queue to receive responses to /load (history snapshot)
+                client.subscribe('/user/queue/updates', (message) => {
+                    const msg = JSON.parse(message.body);
+                    if (msg.type === 'TRANSLATION' && msg.data?.id) {
+                        handleMetadata(msg.data.id, msg.data);
+                    }
+                });
                 setConnected(true);
             },
             onDisconnect: () => setConnected(false),

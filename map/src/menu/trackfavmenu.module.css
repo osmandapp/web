@@ -148,10 +148,22 @@
 .container {
     position: relative;
 }
+.participantNickname {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.participantStatusDot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
 
 .menuButtonContainer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 78px;
+    margin-left: 20px;
 }

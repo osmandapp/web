@@ -43,8 +43,10 @@ export default function LiveTrackLayer() {
             const { nickname, color, locations } = participant;
             if (!locations || locations.length === 0) return;
 
-            // newest at index 0, Leaflet needs [lat, lon]
-            const latLngs = locations.map((l) => [l.lat, l.lon]);
+            const latLngs = locations
+                .slice()
+                .reverse()
+                .map((l) => [l.lat, l.lon]);
             const lastLoc = locations[0];
 
             const existing = layersRef.current[selectedTid][nickname];
