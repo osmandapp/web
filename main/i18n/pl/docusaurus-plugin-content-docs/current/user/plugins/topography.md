@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Topografia
 ---
@@ -41,7 +41,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 
 | Linie konturowe | Cieniowanie wzgórz | Nachylenie |
 |:---|:---|:---|
-| ![Linie_konturowe_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Cieniowanie_wzgórz_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Nachylenia_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 
 | Linie konturowe | Cieniowanie wzgórz | Nachylenie |
 |:---|:---|:---|
-| ![Linie_konturowe_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Cieniowanie_wzgórz_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Nachylenia_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -99,7 +99,7 @@ W celu zapewnienia stabilnej pracy i oszczędności zasobów można pobrać map�
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Pobieranie map Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Pobieranie map Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +107,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Pobieranie map iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Pobieranie map iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +124,13 @@ Jeśli mapa wyświetlana na ekranie nie została pobrana, to w *Menu → Konfigu
 
 <TabItem value="android" label="Android">
 
-![Okno dialogowe pobierania linii konturowych Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Okno dialogowe pobierania linii konturowych iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +153,7 @@ Linie konturowe to [płatna funkcja](../purchases/index.md).
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Menu linii konturowych Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +161,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Linie konturowe*
 
-![Menu linii konturowych iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +196,7 @@ Teren to [płatna funkcja](../purchases/index.md).
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menu Teren Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menu Teren Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menu Teren iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menu Teren iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
 
 </TabItem>
 
@@ -223,7 +223,7 @@ Menu **Teren** zawiera wybór [schematu kolorów](#default-color-scheme) z opcj�
 
 | Cieniowanie wzgórz | Nachylenie | Wysokość |
 | ------ | ------- | ------- |
-| ![Cieniowanie wzgórz](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Cieniowanie wzgórz** opiera się na symulacji oświetlenia powierzchni przy użyciu danych o terenie. Metoda ta polega na tworzeniu cieni i podświetleń w oparciu o kąt nachylenia powierzchni względem źródła światła. W rezultacie na mapie widoczne są naturalne wzgórza, doliny i inne szczegóły terenu.  
 
@@ -244,7 +244,7 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 
 | Cieniowanie wzgórz | Nachylenie | Wysokość |
 | ------ | ------- | ------- |
-|![Cieniowanie wzgórz](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Nachylenie](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Cieniowanie wzgórz* wykorzystuje ciemne odcienie do pokazywania zboczy, szczytów i nizin. Wirtualne słońce ma stały azymut (kierunek) 315 stopni.
 
@@ -263,7 +263,7 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 
 <TabItem value="android" label="Android">
 
-![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
@@ -286,7 +286,7 @@ Aby uzyskać zaawansowaną personalizację palet za pomocą plików palet, zobac
 
 <TabItem value="ios" label="iOS">  
 
-![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
@@ -303,13 +303,13 @@ Możesz [edytować te palety](../personal/color-palette-schemes.md#palette-modif
 
 | Widoczność 31% | Widoczność 74% |
 | ------ | ------- |
-| ![Widoczność ](../../../blog/2023-08-28-terrain/img/31.png) | ![Widoczność ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
 Funkcja *Widoczność* służy do regulacji przezroczystości cieni dla Cieniowania wzgórz oraz kolorów używanych do reprezentowania kąta w parametrze Nachylenie.
 
 ### Poziomy powiększenia {#zoom-levels}
 
-![Powiększenie](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Funkcja *Poziomy powiększenia* pozwala ustawić minimalne i maksymalne wartości poziomów powiększenia mapy, w zakresie od 4 do 19, przy których będą wyświetlane warstwy mapy Cieniowanie wzgórz lub Nachylenie.
 
@@ -334,13 +334,13 @@ Funkcja *Poziomy powiększenia* pozwala ustawić minimalne i maksymalne wartośc
 
 ### Szybkie akcje {#quick-actions}
 
-![Szybka akcja dla Terenu](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać widoczność warstw [Linii konturowych](#contour-lines), [Terenu](#terrain) oraz [schematu kolorów terenu](../../user/personal/color-palette-schemes.md#quick-actions). W zależności od warstwy wybranej w menu Konfiguruj mapę, przypisanie akcji *Teren* do przycisku spowoduje wyświetlenie *Cieniowania wzgórz*, *Nachylenia* lub *Wysokości*.  
 
 Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topografia w menu Konfiguruj mapę. W artykule [Szybka akcja](../widgets/quick-action.md#configure-map) można znaleźć listę warstw dostępnych do wyświetlenia. Jeśli potrzebujesz szybkiego dostępu do tej konfiguracji mapy, użyj narzędzia *Przycisk niestandardowy*.
 
-- Przejdź do [Dodaj akcję](../widgets/quick-action.md#custom-buttons): *Menu → Konfiguruj ekran → Przyciski niestandardowe → Szybka akcja → Dodaj akcję → Konfiguruj mapę*.
+- Przejdź do [Dodaj akcję](../widgets/quick-action.md#custom-buttons): *Menu → Konfiguruj ekran → Przyciski niestandardowe → Szybka akcja → Dodaj akcja → Konfiguruj mapę*.
 - Dodaj jeden lub więcej przycisków Szybkiej akcji, aby zmienić widoczność określonej warstwy topograficznej.
 
 
@@ -352,7 +352,7 @@ Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topograf
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![Budynki 3D](@site/static/img/map/3d_buildings_4_new.png) ![Budynki 3D](@site/static/img/map/3d_buildings_3_new.png)
+![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -360,7 +360,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![Budynki 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Podświetlenie budynków 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -383,13 +383,13 @@ Ustawienia budynków 3D są podzielone na dwie grupy: **Wygląd** i **Wydajnoś�
 
 <TabItem value="android" label="Android">  
 
-![Budynki 3D](@site/static/img/map/3d_buildings_color.png)
+![3D Buildings](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Budynki 3D](@site/static/img/map/3d_buildings_color_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -440,7 +440,7 @@ Rzeźba 3D to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeatur
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -448,7 +448,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -472,7 +472,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 | Warstwa mapy wektorowej | Warstwa mapy rastrowej |
 | ------ | ------- |
-| ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -480,7 +480,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 | Warstwa mapy wektorowej | Warstwa mapy rastrowej |
 | ------ | ------- |
-| ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -495,7 +495,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Przewyższenie pionowe*
 
-![Przewyższenie pionowe Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -503,7 +503,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Przewyższenie pionowe*
 
-![Przewyższenie pionowe iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -516,7 +516,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 | Cieniowanie wzgórz | Rzeźba 3D |
 |--------|---------|
-| ![Warstwy terenu](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Warstwy terenu](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Cieniowanie wzgórz** to typ mapy, który wyświetla teren za pomocą cieni, tworząc wizualną reprezentację nachylenia i kształtu powierzchni ziemi.  
 **Rzeźba 3D** to funkcja, która dodaje do mapy efekty trójwymiarowe.  
@@ -532,13 +532,13 @@ Gdy **Cieniowanie wzgórz** jest **włączone**, obraz z cieniami rzeźby wydaje
 
 <TabItem value="android" label="Android">
 
-![Linie konturowe połączone z Cieniowaniem wzgórz](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Linie konturowe połączone z Nachyleniem](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Linie konturowe połączone z Cieniowaniem wzgórz w iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Linie konturowe połączone z Nachyleniem w iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 

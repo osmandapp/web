@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Mapa
 title: Globalna mapa na stronie internetowej
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 Mapa internetowa OsmAnd to globalna mapa oparta na danych [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Umożliwia użytkownikom przeglądanie własnych danych, takich jak ścieżki i ulubione, tworzenie tras nawigacyjnych dla dowolnego profilu oraz dostęp do dodatkowych funkcji, takich jak pogoda, publiczne ścieżki GPX, POI i obrazy z Wikimedii. Przeglądaj i dostosowuj doświadczenie ze swoimi danymi bezpośrednio w przeglądarce.
 
-![OsmAnd Web wszystko](@site/static/img/web/web_map_all.png)
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
 ## Menu kontekstowe mapy {#map-context-menu}
@@ -46,7 +46,7 @@ Aby je otworzyć, kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie. 
 
 - **Otwórz pogodę** – Uzyskaj dostęp do [menu Pogoda](../web/web-weather.md), aby wyświetlić szczegóły pogody.
 - **Utwórz nową trasę** – Otwiera narzędzie [*Plan a route* tool](../web/web-navigation.md) z wybraną lokalizacją jako punktem początkowym lub docelowym.
-- **Dodaj ulubione** –  Umożliwia utworzenie i zapisanie [ulubionego](../web/web-favorites.md#add--edit-favorite) w dowolnym punkcie na mapie w celu łatwego dostępu.
+- **Dodaj ulubione** –  Umożliwia utworzenie i zapisanie [ulubionego](../web/web-favorites.md#favorites-actions) w dowolnym punkcie na mapie w celu łatwego dostępu.
 - **Trasa z** –  Ustawia wybrany punkt jako [lokalizację początkową](../web/web-navigation.md#start-a-route) dla nawigacji.
 - **Trasa do** – Ustawia wybrany punkt jako [cel nawigacji](../web/web-navigation.md#start-a-route).
 - **Kopiuj współrzędne** – Kopiuje współrzędne wybranego punktu do użytku zewnętrznego.
@@ -60,7 +60,7 @@ Aby je otworzyć, kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie. 
 Add pin option will be added back once it becomes available again.
 -->
 
-![Menu kontekstowe mapy](@site/static/img/web/map_context_menu_2_new.png)
+![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Wybrany obiekt {#selected-object}
@@ -73,7 +73,7 @@ Wybrany znacznik pozostaje widoczny podczas powiększania mapy.
 
 Pobliskie znaczniki mogą być ukryte, aby ułatwić zobaczenie wybranego obiektu.
 
-![Wybrany obiekt](@site/static/img/web/selected_object_favorite.png) ![Wybrany obiekt](@site/static/img/web/selected_object_explore.png)
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
 
 
 
@@ -87,7 +87,7 @@ Menu Konfiguruj mapę umożliwia zarządzanie ustawieniami wyświetlania danych 
 - [Przystanki transportu](#transport-stops). Przełączanie wyświetlania przystanków transportu publicznego na mapie. 
 - [Teren](#terrain). Włącz lub wyłącz schemat kolorów terenu na mapie.
 
-![Menu POI](@site/static/img/web/configure_map_web_new.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Nakładka POI {#poi-overlay}
@@ -108,7 +108,7 @@ W panelu szczegółów POI dostępne są szybkie działania z przycisków akcji:
 - *Trasa z* — ustawia wybrany POI jako punkt startowy i otwiera panel Trasy, abyś mógł wybrać cel i profil.
 - *Nawigacja* — ustawia wybrany POI jako punkt docelowy nawigacji.
 
-![Menu kategorii POI](@site/static/img/web/poi_categories.png) ![Zdjęcia POI w menu](@site/static/img/web/poi_photo_new.png)
+![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
 ### Ulubione {#favorites}
@@ -141,7 +141,7 @@ Panel ścieżki zawiera następujące zakładki:
 - Ścieżka — obecnie niezaimplementowane.
 - Punkty — pokazuje punkty trasy i punkty nawigacyjne pogrupowane według typu.
 
-![Menu Konfiguruj mapę Ścieżki](@site/static/img/web/configure_map_track_new.png) ![Menu Konfiguruj mapę Ścieżki](@site/static/img/web/configure_map_track_2_new.png)
+![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Przystanki transportu {#transport-stops}
 
@@ -169,7 +169,7 @@ Filtr typu transportu pozwala na filtrowanie tras wyświetlanych na liście. Dom
 
 Sekcja Pobliskie trasy może wyświetlać dodatkowe trasy zlokalizowane blisko wybranego przystanku. Pomaga to szybko odkryć alternatywne opcje transportu w okolicy.
 
-![Przystanki transportu](@site/static/img/web/configure_map_transport_stops.png)
+![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Teren {#terrain}
 
@@ -183,7 +183,7 @@ W tej sekcji możesz:
   - **Wysokość**
 - Dostosować widoczność wybranej warstwy terenu od **0% do 100%**.
 
-![Menu Konfiguruj mapę Teren](@site/static/img/web/configure_map_terrain.png)
+![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
 
 ## Ustawienia {#settings}
@@ -196,7 +196,7 @@ Aby przełączyć język interfejsu:
 
 *Idź do: Menu → ⚙ Ustawienia → Język wyświetlania*
 
-![Język internetowy](@site/static/img/web/web_language.png)
+![Web Language](@site/static/img/web/web_language.png)
 
 ### Jednostki {#units}
 
@@ -225,7 +225,7 @@ Opcja **Jednostka prędkości** kontroluje, jak wyświetlana jest bieżąca prę
 
 Na przykład, prędkość 90 km/h odpowiada 25 m/s lub około 55,92 mph.
 
-![Jednostki internetowe](@site/static/img/web/web_units_len.png) ![Jednostki prędkości internetowe](@site/static/img/web/web_units_spe.png)
+![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -254,19 +254,19 @@ Te adresy URL można kopiować i udostępniać za pomocą dowolnego nośnika obs
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![Tworzenie ścieżki w OsmAnd Web](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL bez pinezki na mapie:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![Tworzenie ścieżki w OsmAnd Web](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL z nawigacją:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![Tworzenie ścieżki w OsmAnd Web](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
 W zależności od określonych parametrów, ciągi URL mogą zawierać:
 

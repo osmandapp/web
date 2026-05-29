@@ -1,5 +1,5 @@
 ---
-source-hash: 433c630536848b7031cc7094180ed08b5bcf9a316809b7e405f63ce39916101b
+source-hash: 29bdd243541ba71672a98f665c28b4b283eea00e13f6b91be2c4dfc1d4a6bfd3
 sidebar_position: 7
 title:  Szybka akcja (przyciski niestandardowe)
 ---
@@ -129,7 +129,7 @@ Akcje przypisane do przycisku szybkiej akcji są pogrupowane w ekrany. Te grupy 
 - Dotknij *Edytuj* (ikona ołówka), a następnie *Przytrzymaj i przeciągnij* na ikonie trzech pionowych linii, aby zmienić kolejność akcji.
 
 :::info note
-Niektóre akcje, takie jak *Źródło mapy*, *Styl mapy*, *Nakładka*, *Podkład*, *Schemat kolorów terenu* i *Dodaj profil*, można przypisać jako pętlę. Каждое dotknięcie przycisku cyklicznie przechodzi przez wybrane warstwy. Można wyświetlić pośredni dialog, aby ręcznie wybrać z listy, lub ukryć go, aby przełączać w określonej kolejności.
+Niektóre akcje, takie jak *Źródło mapy*, *Styl mapy*, *Nakładka*, *Podkład*, *Schemat kolorów terenu* i *Dodaj profil*, można przypisać jako pętlę. Każde dotknięcie przycisku cyklicznie przechodzi przez wybrane warstwy. Można wyświetlić pośredni dialog, aby ręcznie wybrać z listy, lub ukryć go, aby przełączać w określonej kolejności.
 :::
 
 
@@ -228,7 +228,7 @@ Siatka dostosowuje się do otaczającego interfejsu i ponownie pozycjonuje przyc
 
 | Akcja | Opis |
 |:-------------|:-------------|
-| Pokaż / Ukryj <br/> [**Trasy**](../map/vector-maps.md#routes) | Możesz wybrać typy tras, aby włączyć lub wyłączyć ich wyświetlanie. <br/> Niektóre trasy mają dodatkowe ustawienia. Domyślnie, jeśli nic nie zostało wybrane w menu [Konfiguracja mapy](../map/configure-map-menu.md), zostanie przypisany pierwszy typ trasy z listy, w przeciwnym razie zostanie przypisany wybrany przez Ciebie typ. Więcej informacji można znaleźć w artykule [Trasy](../map/routes.md). <br/> - ***Trasy rowerowe***  &nbsp;(*Trasa*, *Sieci węzłów*) <br/> - ***Trasy dla rowerów górskich***  &nbsp;(*Skala MTB*, *IMBA*) <br/> - ***Szlaki piesze***  &nbsp;(*OSMC*, *Przynależność do sieci*, *Sieci węzłów*) <br/> - ***Stopień trudności szlaków pieszych***  &nbsp;(*Skala SAC*, *Skala CAI*) <br/> - ***Stoki narciarskie*** <br/> - ***Szlaki konne*** <br/> - ***Sporty wodne*** <br/> - ***Trasy biegowe*** <br/> - ***Ścieżki fitness*** <br/> - ***Trasy podróżnicze***  &nbsp;(*Ślady*, *Książki podróżnicze*, *Punkty*) <br/> |
+| Pokaż / Ukryj <br/> [**Trasy**](../map/vector-maps.md#routes) | Możesz wybrać typy tras, aby włączyć lub wyłączyć ich wyświetlanie. <br/> Niektóre trasy mają dodatkowe ustawienia. Domyślnie, jeśli nic nie zostało wybrane w menu [Konfiguracja mapy](../map/configure-map-menu.md), zostanie przypisany pierwszy typ trasy z listy, w przeciwnym razie zostanie przypisany wybrany przez Ciebie typ. Więcej informacji można znaleźć w artykule [Trasy](../map/routes/index.md). <br/> - ***Trasy rowerowe***  &nbsp;(*Trasa*, *Sieci węzłów*) <br/> - ***Trasy dla rowerów górskich***  &nbsp;(*Skala MTB*, *IMBA*) <br/> - ***Szlaki piesze***  &nbsp;(*OSMC*, *Przynależność do sieci*, *Sieci węzłów*) <br/> - ***Stopień trudności szlaków pieszych***  &nbsp;(*Skala SAC*, *Skala CAI*) <br/> - ***Stoki narciarskie*** <br/> - ***Szlaki konne*** <br/> - ***Sporty wodne*** <br/> - ***Trasy biegowe*** <br/> - ***Ścieżki fitness*** <br/> - ***Trasy podróżnicze***  &nbsp;(*Ślady*, *Książki podróżnicze*, *Punkty*) <br/> |
 | Pokaż / Ukryj <br/> [**Warstwy topograficzne**](../plugins/topography.md#overview) | Wszystkie dane topograficzne są prezentowane jako oddzielne warstwy mapy. Za pomocą Szybkiej akcji można szybko przełączać widoczność tych warstw. <br/> - ***Linie konturowe*** <br/> - ***Teren***  &nbsp;(*W zależności od warstwy wybranej w menu [Konfiguracja mapy](../map/configure-map-menu.md) wyświetlany będzie *Cieniowanie wzgórz*, *Nachylenie* lub *Wysokość*.*) |
 | Zmień <br/> [**Schemat kolorów terenu**](../plugins/topography.md#modify-color-scheme) | Pozwala wybrać jedną lub więcej palet z listy istniejących, które będą się zmieniać po dotknięciu przycisku. |
 | Pokaż / Ukryj <br/> [**Warstwy pogodowe**](../plugins/weather.md#weather-layers) | Wszystkie dane pogodowe są prezentowane jako oddzielne warstwy mapy. Dzięki Szybkiej akcji możesz uzyskać szybki dostęp do przełączania widoczności tych warstw na mapie. <br/> - ***Warstwa opadów*** <br/> - ***Warstwa chmur*** <br/> - ***Warstwa ciśnienia*** <br/> - ***Warstwa wiatru*** <br/> - ***Warstwa animacji wiatru*** <br/> - ***Warstwa temperatury*** <br/> Istnieje również **Warstwy pogodowe** — główny przełącznik dla wszystkich aktywnych warstw pogodowych. Wyłącza wszystkie obecnie włączone warstwy pogodowe naraz. Po ponownym włączeniu przywraca dokładnie ten sam zestaw warstw, który był aktywny wcześniej. |

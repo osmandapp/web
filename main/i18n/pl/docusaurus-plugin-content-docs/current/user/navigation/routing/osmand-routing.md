@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  O routingu w OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -75,6 +75,10 @@ Istnieją dwa możliwe sposoby wyboru dróg, których należy unikać podczas ob
 
 - Wybierz typ drogi w sekcji [Parametry trasy](../guidance/navigation-settings.md#route-parameters) w [Ustawieniach nawigacji](../guidance/navigation-settings.md). Opis tego ustawienia znajduje się w artykułach o ustawieniach [Typów routingu](#routing-types). Jako przykład zobacz opis typu routingu [Samochód / Ciężarówka / Motocykl](../routing/car-based-routing.md#route-parameters---car).
 - Możesz także wybrać określone drogi, które nie będą używane do wyznaczania trasy, za pomocą opcji *[Unikaj drogi](../../map/map-context-menu.md#avoid-road)* w *menu kontekstowym mapy* lub za pomocą *[menu Unikaj dróg](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Gdy w ustawieniach Unikaj wybrany jest typ drogi (taki jak *Drogi nieutwardzone*), OsmAnd ściśle wyklucza takie drogi z obliczania trasy. Nawet bardzo krótkie odcinki (na przykład 100–200 metrów drogi nieutwardzonej) są całkowicie omijane i nie zostaną uwzględnione w trasie w żadnych okolicznościach. W rezultacie trasy mogą stać się znacznie dłuższe, jeśli unikanie takich dróg wymaga objazdów.
+
+Jeśli opcja Unikaj jest wyłączona, te drogi są nadal dozwolone, ale mogą otrzymać niższy priorytet (karę), co oznacza, że OsmAnd będzie preferować lepsze drogi, gdy to możliwe, ale nadal może je uwzględnić, jeśli będzie to konieczne.
 
 :::note
 
