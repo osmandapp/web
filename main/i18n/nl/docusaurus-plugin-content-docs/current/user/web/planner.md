@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Route Plannen
 title: Route Plannen op de Website
@@ -138,9 +138,11 @@ Het Track-paneel toont de lijst van routepunten die zijn gebruikt om de track op
 
 Het Punten-paneel wordt gebruikt om waypoints voor de geselecteerde track te bekijken en te beheren. Waypoints kunnen worden toegevoegd vanuit het contextmenu van de kaart — rechtermuisklik op de kaart en kies de optie om **Waypoint toevoegen**, vul vervolgens de waypointdetails in (zoals naam, pictogram en kleur) en sla het op.
 
+Waypoint-bewerking gebruikt dezelfde interface als [Favorieten bewerken](../web/web-favorites.md#edit-favorites). U kunt waypoint-eigenschappen zoals naam, adres, beschrijving, pictogram, kleur en vorm wijzigen met behulp van het uniforme Bewerkingspaneel. De geselecteerde weergave wordt zowel in het bewerkingspaneel als rechtstreeks op de kaart weergegeven.
+
 In de Waypoints-lijst kunt u beheren of waypoints op de kaart worden weergegeven en individuele waypoints verwijderen indien nodig. Om alle waypoints van de track tegelijk te verwijderen, gebruik *Alle waypoints wissen*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## Gerelateerde Artikelen {#related-articles}

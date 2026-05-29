@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -19,6 +19,21 @@ Je kunt de nieuwste versie van OsmAnd gratis downloaden via de vermelde appstore
 Directe links naar gratis OsmAnd-versies.
 
 ## Versie 5 {#version-5}
+
+### Versie 5.3 {#version-53}
+
+Releasedatum 04/2026:
+
+- Astronomie-plug-in met een astronomische overlay die de paden van de zon, planeten en sterren op de kaart toont.
+- Flexibeler indeling voor widgets en kaartknoppen.
+- 3D-gebouwen.
+- Globe-weergave.
+- Nieuwe widgets voor Ritopname: Gemiddelde snelheid en Bewegende tijd.
+- Snelheidsmeterwidget met visuele snelheidsaanduiding, tolerantie-waarschuwing en overschrijdingsstatussen.
+- Nieuwe Palet-editor voor het maken en bewerken van aangepaste kleurenschema's voor tracks en terreinvisualisatie.
+- Verbeterde fietsroutering rekening houdend met de breedte van de fiets.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Versie 5.2 {#version-52}
 
@@ -84,7 +99,7 @@ Releasedatum 11/2024:
 
 - Een full-screen galerijviewer voor Wikimedia-afbeeldingen toegevoegd.
 - Een nieuwe plug-in "Voertuigstatistieken" geïntroduceerd om voertuigprestaties te monitoren met behulp van het OBD-II-protocol.
-- De mogelijkheid toegevoegd om activiteiten aan tracks toe te wijzen en deze dienovereenkomstend te filteren.
+- De mogelijkheid toegevoegd om activiteiten aan tracks toe te wijzen en deze dienovereenkomstig te filteren.
 - Nieuwe snelle acties geïmplementeerd voor het opnemen van ritten en het vergrendelen van het touchscreen.
 - Aanpasbare weergave van kaartknoppen en een nauwkeurig raster geïntroduceerd.
 - Een contextmenu en een actie "Gemiddelde snelheid resetten" toegevoegd aan widgets.
@@ -684,7 +699,7 @@ Releasedatum 10/2013:
 
 - Ondersteuning van Full HD-apparaten
 - Ondersteuning van transparante kaartachtergrond
-- Gedownloade kaarten weergeven en het downloaden van ontbrekende kaarten direct vanuit de kaartweergave vergemakkelijken
+- Gedownloede kaarten weergeven en het downloaden van ontbrekende kaarten direct vanuit de kaartweergave vergemakkelijken
 - Contourlijnkaartbestanden nu gebundeld voor landen/regio's
 - Nieuwe wereldwijde basiskaart met belangrijke wegen, spoorwegen en belangrijke oppervlaktekenmerken zoals bossen.
 - Kaartvergrootglasfunctie (lang klikken op zoomknop) - Handig voor zowel tegel- als vectorkaarten
