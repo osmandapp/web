@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -68,16 +68,55 @@ La vue Détails fournit les informations associées au lieu sélectionné et dé
 
 ## Actions des Favoris {#favorites-actions}
 
-### Ajouter / Modifier un Favori {#add--edit-favorite}
-
 [Pour ajouter](../personal/favorites.md#manage-favorites) un nouveau point de favori, cliquez avec le bouton droit sur l'écran. 
 
 Pour modifier un favori existant, cliquez sur le point de favori soit directement sur la carte, soit sélectionnez-le depuis un dossier de favoris. Cela ouvre le panneau Détails, où l'action Modifier est disponible. La modification peut également être démarrée depuis le menu à trois points (⋮) à côté du favori dans la liste des Favoris.
 
-L'interface de modification vous permet de modifier les propriétés principales du favori, telles que son nom, son icône, sa couleur et sa description. La mise en page et les champs disponibles sont cohérents avec l'expérience de modification dans l'[application mobile OsmAnd](../personal/favorites.md#create), offrant un flux de travail familier sur toutes les plateformes.
+Le panneau de modification d'un favori permet de modifier les principales propriétés d'un favori, y compris son nom, son adresse, sa description, son dossier, son icône, sa couleur et sa forme. L'apparence sélectionnée est prévisualisée à la fois dans le panneau de modification et directement sur la carte.
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+### Modifier les Favoris {#edit-favorites}
 
+Le champ **Adresse** prend en charge la détection automatique d'adresse basée sur l'emplacement sélectionné sur la carte. Le champ peut apparaître dans plusieurs états :
+
+- Recherche en cours... — affiché pendant que l'adresse est déterminée automatiquement.
+- Champ vide — affiché après avoir effacé l'adresse. Dans cet état, le bouton de localisation peut être utilisé pour détecter à nouveau l'adresse automatiquement.
+- Champ rempli — affiche soit l'adresse détectée automatiquement, soit le texte saisi manuellement.
+
+Le champ d'adresse inclut également des actions rapides pour effacer ou restaurer l'adresse détectée.
+
+La section **Description** permet d'ajouter des notes ou des informations supplémentaires au favori. La sélection de Ajouter des notes ouvre l'éditeur de description dans un panneau secondaire. Si une description a déjà été ajoutée, un court aperçu est affiché dans le panneau principal et est limité à deux lignes de texte. L'éditeur de description prend en charge le formatage de texte enrichi et conserve automatiquement les modifications lors du retour au panneau précédent.
+
+Les favoris peuvent être organisés en dossiers pour une gestion plus facile et un accès rapide. La sélection de l'élément **Dossier** ouvre un panneau secondaire où les dossiers disponibles peuvent être sélectionnés. Le dossier précédemment utilisé est sélectionné automatiquement par défaut. Chaque dossier affiche également le nombre de points de favoris qu'il contient.
+
+De nouveaux dossiers peuvent être créés directement depuis le panneau de sélection des dossiers. La sélection du bouton Ajouter un dossier ouvre une boîte de dialogue dans laquelle vous pouvez saisir le nom du dossier et choisir son emplacement dans la liste des Favoris.
+
+La boîte de dialogue inclut également une section Avancé, où les paramètres d'apparence par défaut du dossier peuvent être configurés. Ces paramètres incluent la couleur, l'icône et la forme par défaut qui seront automatiquement appliquées aux points de favoris ajoutés à ce dossier.
+
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
+
+### Apparence {#appearance}
+
+La section **Apparence** permet de personnaliser l'affichage du favori sur la carte. Les propriétés suivantes sont disponibles : icône, couleur, forme et icône. 
+
+La sélection de **Icône** ouvre un panneau secondaire avec des groupes d'icônes classés par catégories.
+
+- Les icônes sont regroupées par catégories.
+- Les icônes récemment utilisées sont affichées en premier.
+- L'icône actuellement sélectionnée est mise en surbrillance.
+- L'aperçu utilise la forme et la couleur sélectionnées.
+
+La sélection de **Couleur** ouvre le panneau de la palette de couleurs.
+
+- La palette contient des couleurs prédéfinies et définies par l'utilisateur.
+- Des couleurs personnalisées peuvent être ajoutées à l'aide du sélecteur de couleurs.
+- Les couleurs peuvent être modifiées, dupliquées ou supprimées via le menu contextuel.
+- Les nouvelles couleurs ajoutées sont enregistrées dans la palette utilisateur et restent disponibles ultérieurement.
+
+L'option **Forme** définit la forme d'arrière-plan utilisée pour le marqueur de favori. Les formes suivantes sont disponibles : cercle, carré et octogone.
+
+L'aperçu de l'apparence est mis à jour immédiatement à la fois dans le panneau de modification et sur la carte lors du changement de l'icône, de la couleur ou de la forme.
+
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Autres Actions {#other-actions}
 

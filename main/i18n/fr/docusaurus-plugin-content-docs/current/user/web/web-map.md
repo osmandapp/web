@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Carte
 title: Carte globale sur le site web
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 La carte web d'OsmAnd est une carte mondiale basée sur les données d'[OpenStreetMap (OSM)](https://www.openstreetmap.org/). Elle permet aux utilisateurs de visualiser leurs propres données, telles que les traces et les favoris, de créer des itinéraires de navigation pour n'importe quel profil, et d'accéder à des fonctionnalités supplémentaires comme la météo, les traces GPX publiques, les POI et les images Wikimedia. Explorez et personnalisez votre expérience des données directement dans votre navigateur.
 
-![Tout OsmAnd Web](@site/static/img/web/web_map_all.png)
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
 ## Menu contextuel de la carte {#map-context-menu}
@@ -46,7 +46,7 @@ Pour l'ouvrir, faites un clic droit n'importe où sur la carte. Ce menu comprend
 
 - **Ouvrir la météo** – Accédez au [Menu Météo](../web/web-weather.md) pour voir les détails météorologiques.
 - **Créer un nouvel itinéraire** – Ouvre l'outil [*Planifier un itinéraire*](../web/web-navigation.md) avec l'emplacement sélectionné comme point de départ ou de destination.
-- **Ajouter un favori** – Permet de créer et d'enregistrer un [favori](../web/web-favorites.md#add--edit-favorite) à n'importe quel point de la carte pour un accès facile.
+- **Ajouter un favori** – Permet de créer et d'enregistrer un [favori](../web/web-favorites.md#favorites-actions) à n'importe quel point de la carte pour un accès facile.
 - **Itinéraire depuis** – Définit le point sélectionné comme [lieu de départ](../web/web-navigation.md#start-a-route) pour la navigation.
 - **Itinéraire vers** – Définit le point sélectionné comme [destination pour la navigation](../web/web-navigation.md#start-a-route).
 - **Copier les coordonnées** – Copie les coordonnées du point sélectionné pour une utilisation externe.
@@ -60,7 +60,7 @@ Pour l'ouvrir, faites un clic droit n'importe où sur la carte. Ce menu comprend
 Add pin option will be added back once it becomes available again.
 -->
 
-![Menu contextuel de la carte](@site/static/img/web/map_context_menu_2_new.png)
+![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Objet sélectionné {#selected-object}
@@ -73,7 +73,7 @@ Le marqueur sélectionné reste visible lors du zoom sur la carte.
 
 Les marqueurs à proximité peuvent être masqués pour rendre l'objet sélectionné plus facile à voir.
 
-![Objet sélectionné](@site/static/img/web/selected_object_favorite.png) ![Objet sélectionné](@site/static/img/web/selected_object_explore.png)
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
 
 
 
@@ -87,7 +87,7 @@ Le menu Configurer la carte vous permet de gérer les paramètres d'affichage de
 - [Arrêts de transport](#transport-stops). Active ou désactive l'affichage des arrêts de transport public sur la carte. 
 - [Terrain](#terrain). Active ou désactive le schéma de couleurs du terrain sur la carte.
 
-![Menu Superpositions POI](@site/static/img/web/configure_map_web_new.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Superposition de POI {#poi-overlay}
@@ -108,7 +108,7 @@ Dans le panneau de détails du POI, des actions rapides sont disponibles à part
 - *Itinéraire depuis* — définit le POI sélectionné comme point de départ et ouvre le panneau Itinéraire pour que vous puissiez choisir une destination et un profil.
 - *Navigation* — définit le POI sélectionné comme point de destination pour la navigation.
 
-![Menu Superpositions POI](@site/static/img/web/poi_categories.png) ![Menu Superpositions POI](@site/static/img/web/poi_photo_new.png)
+![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
 ### Favoris {#favorites}
@@ -133,7 +133,7 @@ Chaque trace a un menu (⋮) avec les commandes suivantes :
 - **Télécharger** : Enregistre la trace sur votre appareil local.  
 - **Supprimer** : Supprime définitivement la trace de la liste.
 
-Lorsque vous ouvrez une trace, un panneau avec une barre d'actions supérieure est affiché. La barre montre le nom de la trace et fournit un accès rapide aux actions. En plus des commandes du menu à trois points, la barre supérieure inclut **Modifier**. **Apparence** n'est actuellement pas active.
+Lorsque vous ouvrez une trace, un panneau avec une barre d'actions supérieure est affichée. La barre montre le nom de la trace et fournit un accès rapide aux actions. En plus des commandes du menu à trois points, la barre supérieure inclut **Modifier**. **Apparence** n'est actuellement pas active.
 
 Le panneau de la trace inclut les onglets suivants :
 
@@ -141,7 +141,7 @@ Le panneau de la trace inclut les onglets suivants :
 - Trace — actuellement non implémenté.
 - Points — affiche les points de passage et les points de route regroupés par type.
 
-![Menu Configurer la carte Traces](@site/static/img/web/configure_map_track_new.png) ![Menu Configurer la carte Traces](@site/static/img/web/configure_map_track_2_new.png)
+![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Arrêts de transport {#transport-stops}
 
@@ -169,7 +169,7 @@ Un filtre par type de transport permet de filtrer les itinéraires affichés dan
 
 La section Itinéraires à proximité peut afficher des itinéraires supplémentaires situés près de l'arrêt sélectionné. Cela vous aide à découvrir rapidement des options de transport alternatives dans la zone environnante.
 
-![Arrêts de transport](@site/static/img/web/configure_map_transport_stops.png)
+![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terrain {#terrain}
 
@@ -183,7 +183,7 @@ Dans cette section, vous pouvez :
   - **Hauteur**
 - Ajuster la visibilité de la couche de terrain sélectionnée de **0 % à 100 %**.
 
-![Menu Configurer la carte Terrain](@site/static/img/web/configure_map_terrain.png)
+![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
 
 ## Paramètres {#settings}
@@ -196,7 +196,7 @@ Pour changer la langue de l'interface :
 
 *Allez à : Menu → ⚙ Paramètres → Langue d'affichage*
 
-![Langue Web](@site/static/img/web/web_language.png)
+![Web Language](@site/static/img/web/web_language.png)
 
 ### Unités {#units}
 
@@ -225,7 +225,7 @@ L'option **Unité de vitesse** contrôle comment la vitesse actuelle et les limi
 
 Par exemple, une vitesse de 90 km/h correspond à 25 m/s ou environ 55,92 mph.
 
-![Unités Web](@site/static/img/web/web_units_len.png) ![Unités Web](@site/static/img/web/web_units_spe.png)
+![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -254,19 +254,19 @@ Ces URL peuvent être copiées et partagées via n'importe quel support pris en 
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![Créer une trace Web OsmAnd](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL sans épingle sur la carte :**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![Créer une trace Web OsmAnd](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL avec navigation :** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![Créer une trace Web OsmAnd](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
 Selon les paramètres spécifiés, les chaînes d'URL peuvent contenir :
 

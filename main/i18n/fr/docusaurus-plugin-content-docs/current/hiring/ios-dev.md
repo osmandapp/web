@@ -1,5 +1,5 @@
 ---
-source-hash: ff51c38b0c680f96f4e769ba5c90a79ee59427348b6dce6d5877cd5e30b74441
+source-hash: 6a5a97de97f4b209880efb8ea14c50e55c5e5a9f100fa063156a3e3e842373d7
 sidebar_position: 3
 title: Développeur iOS
 ---
@@ -11,42 +11,37 @@ Nous recherchons un développeur expérimenté et enthousiaste capable de faire 
 
 ### Exigences {#requirements}
 - 3+ ans d'expérience en développement iOS
-- Langages de programmation : Objective-C, C++, Swift
-- Frameworks : UIKit, CoreLocation, CoreData, Cocoa Touch, CocoaPods, Location Kit
+- Langages de programmation : Objective-C, Swift
+- Frameworks : UIKit, Foundation, CoreLocation, Core Data, Cocoa Touch, CocoaPods, Location Kit
 - IDE : Xcode
 - Services Web : REST, JSON, XML
-- Threading : GCD, NSOperations
-- Contrôle de version : Git/Github
+- Threading : GCD, NSOperation
+- Contrôle de version : Git/GitHub
 - Bases de données : SQLite, CoreData
 - Anglais technique (Intermédiaire+)
 
 ### Atouts {#nice-to-have}
-- Langages de programmation : Java, JavaScript
-- Frameworks : QT, JNI, GDAL
+- Langages de programmation : Kotlin, C++
+- Frameworks et outils : Qt, JNI, GDAL, Gradle, Swig
 - IDE : Android Studio
-- Outils : Gradle, Swig
-- Méthodologie Agile / Scrum
-- Toute expérience en SIG
-- OpenStreetMap
+- Familiarité avec Agile / Scrum
+- Expérience avec SIG, OpenStreetMap
 
-## Offres de l'entreprise {#company-offers}
+## Ce que nous offrons {#what-we-offer}
 
 ### Ce que vous pouvez attendre de nous {#what-you-can-expect-from-us}
 - Travailler dans un secteur passionnant et en pleine croissance
-- Une opportunité de combiner travail et loisirs (si vous êtes une personne voyageuse)
+- Une opportunité de combiner travail et loisirs (si vous êtes passionné par le voyage)
 - Apprentissage par la pratique – vous travaillerez avec des experts du secteur désireux de partager leurs connaissances et leur expérience
-- Améliorer vos compétences en participant à des programmes de formation et de mentorat
-- Faire progresser votre carrière en choisissant parmi différents parcours professionnels (technique, gestion)
-- Excellente ambiance et environnement favorable
-- Travailler dans une atmosphère amicale et détendue
+- Des opportunités d'améliorer vos compétences grâce à des programmes de formation et de mentorat
+- Un environnement de travail amical et favorable
 
 ### Ce que nous offrons {#what-do-we-offer}
-- Développer l'une des meilleures applications de cartes hors ligne 3D
+- Une opportunité de développer l'une des meilleures applications de cartes hors ligne 3D
 - Salaire compétitif en fonction de vos compétences et de vos performances
 - Horaires de travail flexibles
-- 15 jours de vacances payées
+- 25 jours de vacances payées
 - 15 jours de congés de maladie payés
-- Télétravail (Bureaux disponibles : Amstelveen - Pays-Bas, Cracovie - Pologne, Kyiv - Ukraine)
 - Garantie d'équilibre vie professionnelle-vie privée
 - Travail stable dans une entreprise en développement dynamique
-- Développement entièrement open source (https://github.com/osmandapp/)
+- Développement entièrement open source : https://github.com/osmandapp/

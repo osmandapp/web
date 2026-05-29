@@ -1,5 +1,5 @@
 ---
-source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
+source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -55,9 +55,9 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 <!--
 
-:::danger February Sale
+:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
 
 :::
 
@@ -67,8 +67,8 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
 
 -->
@@ -85,7 +85,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 ### Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
-|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(achat&nbsp;intégré&nbsp;&&nbsp;abonnement) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(in-app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -151,7 +151,7 @@ Un moyen simple de choisir et d'acheter la formule souhaitée est via le menu **
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continuer avec OsmAnd Pro*
 
-ou  
+or  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuer avec OsmAnd Pro*
 

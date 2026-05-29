@@ -1,5 +1,5 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  À propos du routage OsmAnd
 ---
@@ -75,6 +75,10 @@ Il y a deux manières possibles de choisir les routes à éviter lors du calcul 
 
 - Sélectionnez le type de route dans la section [Paramètres de l'itinéraire](../guidance/navigation-settings.md#route-parameters) des [Paramètres de navigation](../guidance/navigation-settings.md). La description de ce paramètre est fournie dans les articles sur les paramètres des [Types de routage](#routing-types). Par exemple, consultez la description du type de routage [Voiture / Camion / Moto](../routing/car-based-routing.md#route-parameters---car).
 - Vous pouvez également sélectionner des routes spécifiques qui ne seront pas utilisées pour le routage en utilisant l'option *[Éviter la route](../../map/map-context-menu.md#avoid-road)* via le *menu contextuel de la carte* ou en utilisant le *[Menu Éviter les routes](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Lorsque vous sélectionnez un type de route (tel que *Routes non pavées*) dans les paramètres d'évitement, OsmAnd exclut strictement ces routes du calcul d'itinéraire. Même de très courts tronçons (par exemple, 100–200 mètres de route non pavée) sont complètement évités et ne seront inclus dans l'itinéraire en aucun cas. Par conséquent, les itinéraires peuvent devenir beaucoup plus longs si l'évitement de ces routes nécessite des détours.
+
+Si l'option Éviter est désactivée, ces routes restent autorisées mais peuvent se voir attribuer une priorité inférieure (pénalité), ce qui signifie qu'OsmAnd préférera les meilleures routes lorsque cela est possible, mais pourra tout de même les inclure si nécessaire.
 
 :::note
 

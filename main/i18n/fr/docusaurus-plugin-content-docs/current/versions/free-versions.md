@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -18,6 +18,21 @@ Vous pouvez obtenir la dernière version d'OsmAnd gratuitement dans les boutique
 Liens directs vers les versions gratuites d'OsmAnd.
 
 ## Version 5 {#version-5}
+
+### Version 5.3 {#version-53}
+
+Date de publication 04/2026 :
+
+- Plugin Astronomie avec une superposition astronomique montrant les trajectoires du Soleil, des planètes et des étoiles sur la carte.
+- Mise en page plus flexible pour les widgets et les boutons de carte.
+- Bâtiments 3D.
+- Vue globe.
+- Nouveaux widgets d'enregistrement de trajet : Vitesse moyenne et Temps en mouvement.
+- Widget compteur de vitesse avec indication visuelle de l'excès de vitesse, avertissement de tolérance et états de dépassement de limite.
+- Nouvel éditeur de palettes pour créer et modifier des schémas de couleurs personnalisés pour la visualisation des pistes et du terrain.
+- Amélioration du routage cycliste en tenant compte de la largeur du vélo.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Version 5.2 {#version-52}
 

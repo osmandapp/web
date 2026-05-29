@@ -1,5 +1,5 @@
 ---
-source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
+source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -56,7 +56,7 @@ Pour les appareils Android, vous pouvez télécharger les versions **gratuite** 
 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Un **plan gratuit** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et les *éditions/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités cloud de base et à **5 Mo** de stockage. |
+| **OsmAnd Start** | Un **plan gratuit** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et les *éditions/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités cloud de base et à **5MB** de stockage. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Une **application payante distincte** qui inclut des fonctionnalités avancées. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Peut être ajouté à la [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** pour l'application gratuite OsmAnd, débloquant les mêmes fonctionnalités qu'OsmAnd+. | Disponible sur [Google Play](https://play.google.com/store/apps/details?id=net.osmand) et [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identique en fonctionnalités et en prix à OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan d'abonnement** qui débloque des [fonctionnalités pro](#pro-features) et avancées supplémentaires. | Disponible sur [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) et [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Il offre un accès complet aux fonctionnalités d'OsmAnd Cloud. |
@@ -76,14 +76,32 @@ Pour les appareils Android, vous pouvez télécharger les versions **gratuite** 
 
 La liste contient des informations sur les prix des produits OsmAnd pour les régions des États-Unis et de l'Europe. Pour les autres régions, les prix sont équivalents dans les devises locales.
 
+<!--
+
+:::danger 🌱 Spring Sale
+
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+
+:::
+
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Type d'achat** | **Gratuit** | **Achat unique** (À vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
-| **Prix (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
-| **Prix (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+
+
+-->
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 
@@ -97,47 +115,47 @@ Le tableau ci-dessous détaille les fonctionnalités incluses dans les forfaits 
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
-| [Accès sans publicité](#free-and-paid-features) | Sans publicité | Sans publicité | Sans publicité |
+| [Access without advertising](#free-and-paid-features) | Sans publicité | Sans publicité | Sans publicité |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
-| [Toutes les fonctionnalités Pro](#pro-features) | **-** | **-** | ✔ |
-| [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Téléchargements de cartes illimités](../start-with/download-maps.md) | <details><summary>**7 téléchargements de cartes**</summary>  - Le téléchargement ou la mise à jour d'une carte signifie uniquement le téléchargement-mise à jour d'une carte de pays (région). <br/> - La **carte générale du monde**, la **correction d'altitude mondiale**, les **polices de carte** et les **instructions vocales** ne sont pas comptés comme 7 possibilités de téléchargement. </details> | ✔ | ✔ |
-| [Mises à jour mensuelles des cartes](../personal/maps-resources.md#updates-menu)<br/>Une fois par mois (avec 2 jours de retard) | <details><summary>**7 téléchargements de cartes**</summary> La mise à jour de la carte compte comme un téléchargement.</details> | ✔ | ✔ |
-| [Mises à jour horaires des cartes](../personal/maps-resources.md#live-updates)<br/>Mises à jour en direct (délai de 1 heure) - [**](#-map-updates) | **-** | **-** | ✔ |
+| [All Pro Features](#pro-features) | **-** | **-** | ✔ |
+| [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
+| [Monthly map updates](../personal/maps-resources.md#updates-menu)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>Live updates (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
-| [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Données topographiques](../plugins/topography.md#overview)<br/>(Lignes de contour et Terrain) | **-** | ✔ | ✔ |
-| [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [Bâtiments 3D — Personnalisation de la couleur](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
-| [Visualisation de trace 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
-| [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
-| [Lieux populaires (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
-| [Wikivoyage hors ligne — Guides de voyage](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Plugin Astronomie](../plugins/astronomy.md) — [Planification d'observation](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
-| [Plugin Astronomie](../plugins/astronomy.md) — [Mode AR interactif](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
-| [Plugin Astronomie](../plugins/astronomy.md) — [Carte du ciel hors ligne](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
-| [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec instructions virage par virage | ✔ | ✔ | ✔ |
-| [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
-| [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Exporter des traces GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
-| [Importer des traces GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Outil de planification d'itinéraire](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Widgets de métriques du véhicule](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratuits**</summary><ul><li>*Vitesse du véhicule*</li><li>*Régime moteur*</li></ul></details> | <details><summary>**2 widgets gratuits**</summary><ul><li>*Vitesse du véhicule*</li><li>*Régime moteur*</li></ul></details> | ✔ |
-| [Outil de marqueurs de carte](../personal/markers.md) | ✔ | ✔ | ✔ |
-| [Sources de cartes en ligne](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Carte SQLitedb](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
-| [Points favoris](../map/point-layers-on-map.md)<br/>marque-pages et points de cheminement | ✔ | ✔ | ✔ |
-| [Points audio/photo/vidéo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
-| [Traceur GPS en ligne OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
-| [Exporter / Importer le profil de l'application](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
+| [Coordinates Grid — Color Customization](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D Buildings — Color Customization](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D track visualization](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
+| [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
+| [Popular Places (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
+| [Offline Wikivoyage — Travel guides](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Observation Planning](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Interactive AR Mode](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Offline Sky Map](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
+| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Plan a route tool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Vehicle Metrics Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | ✔ |
+| [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
+| [SQLitedb Map](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
+| [Favorite points](../map/point-layers-on-map.md)<br/>bookmarks and waypoints | ✔ | ✔ | ✔ |
+| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [Export / Import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** Mises à jour des cartes {#-map-updates}
+#### ** Map updates {#-map-updates}
 
-[Gratuit](../personal/maps-resources.md#free-for-osm-mappers). Les mises à jour en direct et les téléchargements de cartes illimités sont disponibles pour les cartographes OSM.
+[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
 
 #### *** Android Auto {#-android-auto}
 
-La fonctionnalité [Android Auto](https://www.android.com/auto/) ne fonctionne que pour les applications OsmAnd de [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023).
+[Android Auto](https://www.android.com/auto/) feature works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023).
 
 
 ### Fonctionnalités Pro {#pro-features}
@@ -146,20 +164,20 @@ Les fonctionnalités Pro sont disponibles avec l'[abonnement OsmAnd Pro](#prices
 
 L'abonnement **Pro** inclut actuellement les fonctionnalités suivantes :
 
-|  Fonctionnalité Pro  | Description   |
+|  Pro Feature  | Description   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Sauvegardez et restaurez vos données, synchronisez les données avec le [portail web OsmAnd](https://www.osmand.net/map). |
-| [Relief 3D](../plugins/topography.md#3d-relief) | Vous permet d'avoir et d'observer un modèle réduit de votre quartier ou d'un continent entier. |
-| [Mises à jour en direct](../personal/maps-resources.md#live-updates) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après une amélioration sur [OpenStreetMap](https://www.openstreetmap.org/). |
-| [Plugin Météo](../plugins/weather.md) | Prévisions horaires sur 24h et 7 jours à l'avance sur la carte. |
-| [Plugin Métriques du véhicule (OBD-II)](../plugins/vehicle-metrics.md) | Permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et stocker les informations dans les enregistrements de trajet. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.  |
-| [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
-| [Widget d'altitude](../widgets/nav-widgets.md#elevation-widget) | Affiche votre position sur le graphique d'altitude de l'itinéraire de navigation avec des informations supplémentaires.  |
-| [Widgets d'altitude - Élévation : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Permet de connaître l'altitude du centre actuel de la carte au-dessus du niveau de la mer.  |
-| [Correction d'altitude (hors ligne)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permet de calculer un graphique d'altitude pour votre trace ([Carte de terrain](../plugins/topography.md#download-maps) requise pour la région choisie). |
-| [Modifier le schéma de couleurs](../../user/plugins/topography.md#modify-color-scheme) | Permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palette pour personnaliser les couleurs de la carte et de l'itinéraire. |
-| [Créer des palettes personnalisées](../../user/map/tracks/appearance.md#color-palette-editor) | Permet de créer et de modifier des palettes dégradées pour la coloration des traces en utilisant des valeurs Relatives ou Fixes. Vous pouvez définir des étapes de couleur, attribuer des valeurs et personnaliser la façon dont les données (telles que la vitesse ou l'altitude) sont affichées le long de la trace. |
-| [Dossiers intelligents – Organiser par](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permet d'organiser les traces dans des Dossiers intelligents en utilisant des paramètres de regroupement avancés tels que la date et l'heure, la distance, la durée, la vitesse, l'altitude et l'élévation, et les données des capteurs. Ces options permettent une catégorisation plus détaillée des traces et une analyse flexible. |
+| [3D Relief](../plugins/topography.md#3d-relief) | Vous permet d'avoir et d'observer un modèle réduit de votre quartier ou d'un continent entier. |
+| [Live Updates](../personal/maps-resources.md#live-updates) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après une amélioration sur [OpenStreetMap](https://www.openstreetmap.org/). |
+| [Weather Plugin](../plugins/weather.md) | Prévisions horaires sur 24h et 7 jours à l'avance sur la carte. |
+| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et stocker les informations dans les enregistrements de trajet. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.  |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
+| [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Affiche votre position sur le graphique d'altitude de l'itinéraire de navigation avec des informations supplémentaires.  |
+| [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Permet de connaître l'altitude du centre actuel de la carte au-dessus du niveau de la mer.  |
+| [Elevation correction (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permet de calculer un graphique d'altitude pour votre trace ([Terrain map](../plugins/topography.md#download-maps) requise pour la région choisie). |
+| [Modify Color Scheme](../../user/plugins/topography.md#modify-color-scheme) | Permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palette pour personnaliser les couleurs de la carte et de l'itinéraire. |
+| [Creating custom palettes](../../user/map/tracks/appearance.md#color-palette-editor) | Permet de créer et de modifier des palettes dégradées pour la coloration des traces en utilisant des valeurs Relatives ou Fixes. Vous pouvez définir des étapes de couleur, attribuer des valeurs et personnaliser la façon dont les données (telles que la vitesse ou l'altitude) sont affichées le long de la trace. |
+| [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permet d'organiser les traces dans des Dossiers intelligents en utilisant des paramètres de regroupement avancés tels que la date et l'heure, la distance, la durée, la vitesse, l'altitude et l'élévation, et les données des capteurs. Ces options permettent une catégorisation plus détaillée des traces et une analyse flexible. |
 
 
 ## Comment acheter {#how-to-buy}
@@ -172,11 +190,11 @@ Un moyen facile de choisir et d'acheter le plan nécessaire via le menu **Achats
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continuer avec OsmAnd Pro*
 
-ou  
+or  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuer avec OsmAnd Pro*
 
-![Plan Pro](@site/static/img/purchases/android_subscription_plan_new.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Achat de Maps+ {#maps-purchase}
 
@@ -184,7 +202,7 @@ ou
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Appuyez sur la liste des fonctionnalités Maps+ → Continuer avec Maps+*
 
-![Plan Maps+](@site/static/img/purchases/maps_android_new.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Abonnements hérités (avant la 4.0) {#legacy-subscriptions-prior-40}
@@ -222,7 +240,7 @@ Pour restaurer l'achat, veuillez vérifier quel plan OsmAnd vous avez acheté.
 - *Pour ouvrir Restaurer les achats*, suivez ces étapes : *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* et en haut de l'écran devrait apparaître que Maps+(Pro) est activé.
 - *Enregistrez les fonctionnalités Pro* avec l'abonnement OsmAnd Pro pour toutes les plateformes (Android et iOS). Si vous avez un compte OsmAnd Pro, vous devez l'utiliser [pour activer OsmAnd Pro](../personal/osmand-cloud.md) sur votre appareil.
 
-![Plan Pro](@site/static/img/purchases/maps_purchases.png)
+![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 
 ### Autres cas {#other-cases}
 
