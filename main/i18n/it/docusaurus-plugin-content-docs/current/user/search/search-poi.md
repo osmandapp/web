@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title:  Ricerca PDI
 ---
@@ -58,7 +58,8 @@ OsmAnd offre diversi modi per accedere allo strumento di Ricerca in cui si trova
 - **Ricerca di Punti di Interesse (PDI) per tipo e nome**:
     - Permette di cercare:
        - Punti di interesse (PDI) nelle vicinanze o categorie specifiche di PDI.
-       - [Percorsi OSM](../map/routes.md) per nome e per numero di riferimento.
+       - [Percorsi OSM](../map/routes/types-of-routes.md) per nome, numero di riferimento o ID relazione utilizzando il formato `O+relation_id` (ad esempio: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Oggetti collegati con identificatori Wikidata (ad esempio: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - [Luoghi popolari (Wikipedia)](../map/popular_places.md).
        - Luoghi combinando un nome di città con un nome o tipo di PDI (ad esempio: aeroporto di Berlino, Billa di Bratislava).
     - È possibile filtrare e ordinare i risultati per categoria, distanza o valutazione.
@@ -68,8 +69,8 @@ L'icona visualizzata nei risultati della ricerca corrisponde all'icona utilizzat
 I risultati della ricerca possono includere informazioni aggiuntive sulla posizione, come la città in cui si trova il PDI. Questo aiuta a distinguere tra luoghi con lo stesso nome durante la ricerca di marchi o luoghi popolari.
     
 - **Cerca PDI sulla mappa** - Mostra sulla mappa:
-    1. È possibile selezionare le categorie richieste dall'[**elenco**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configura mappa → Mostra livello PDI...* e cercare tramite le icone nella posizione desiderata.
-    2. È possibile inserire prima una query di ricerca o iniziare a cercare PDI in *Menu → Cerca → Categorie* e poi fare clic su **Mostra sulla mappa**.
+    - È possibile selezionare le categorie richieste dall'[**elenco**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configura mappa → Mostra livello PDI...* e cercare tramite le icone nella posizione desiderata.
+    - È possibile inserire prima una query di ricerca o iniziare a cercare PDI in *Menu → Cerca → Categorie* e poi fare clic su **Mostra sulla mappa**.
 
 - **Ricerca per marchio**:
     - La ricerca di un'attività commerciale per nome del marchio (come Audi, Starbucks o Aldi) è molto simile alla ricerca di diversi PDI per tipo; la differenza principale è che l'elenco dei marchi è fornito all'interno della mappa ed è soggetto a modifiche ad ogni aggiornamento. 
@@ -162,6 +163,20 @@ Come funziona:
 - *Applicazione dei filtri* - Si selezionano i valori richiesti nei filtri, dopodiché l'applicazione applica questi filtri ai risultati della ricerca per mostrare solo le proprietà che corrispondono alle caratteristiche specificate.
 - *Visualizzazione dei risultati* - Dopo aver applicato i filtri, OsmAnd visualizza un elenco con brevi informazioni corrispondenti alla categoria e alle caratteristiche impostate.
 
+<!--
+Benefits:
+
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
+
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
+-->
+
 ### Tipi di Filtri {#types-of-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -238,7 +253,7 @@ Un filtro può essere composto da un numero piuttosto elevato di elementi, la cu
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. È un sistema di trasporto progettato per trasportare persone per scopi pubblici, accessibile a tutti i residenti e visitatori di una città o regione.  
         Include *9* tipi di filtri.
 
- 17. **Percorsi**. Include [percorsi OSM](../map/routes.md) per vari tipi di attività.  
+ 17. **Percorsi**. Include [percorsi OSM](../map/routes/types-of-routes.md) per vari tipi di attività.  
         Include *14* tipi di filtri: **Checkpoint**, **Nodo rete ciclabile**, **Nodo rete escursionistica**, **Rete percorsi (ciclismo)**, **Rete percorsi (escursionismo)**, **Categoria punto percorso**, **Sport aerei**, **Ciclismo**, **Guida**, **A piedi**, **Motociclismo**, **Altri percorsi**, **Sport acquatici**, **Sport invernali**.
 
  18. **Visite turistiche**. È un'attività in cui le persone visitano luoghi o siti interessanti per familiarizzare con essi e godere della loro bellezza, storia o significato.  
@@ -364,12 +379,12 @@ Per creare filtri personalizzati per la ricerca di luoghi sulla mappa, seleziona
 
 ### Categorie e loro Filtri {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Include 25 tipi: *Orti, Atollo, Borgo, Città, Isolati urbani, Nazione, Tribunale, Dogana, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Include 25 tipi: *Orti, Atollo, Borgo, Città, Isolati urbani, Nazione, Tribunale, Dogma, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
 
 2. **Natale**. Include 5 tipi di filtri:  
     *Evento natalizio, Mercatino di Natale, Piramide natalizia, Negozio natalizio, Albero di Natale*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Include 16 tipi: *Orti, Atollo, Borgo, Città, Isolati urbani, Nazione, Tribunale, Dogana, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Include 16 tipi: *Orti, Atollo, Borgo, Città, Isolati urbani, Nazione, Tribunale, Dogma, Ufficio diplomatico, Fattoria, Governo, Frazione, Isola, Isolotto, Abitazione isolata, Località, Quartiere, Polizia, Prigione, Quartiere, Area residenziale, Sobborgo, Cittadina, Municipio, Villaggio*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Include 26 tipi di filtri.  
 
