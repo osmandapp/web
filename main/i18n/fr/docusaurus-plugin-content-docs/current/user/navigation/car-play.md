@@ -1,5 +1,5 @@
 ---
-source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
+source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,8 +225,9 @@ En plus des fonctionnalités de base de l'application OsmAnd dans *CarPlay* qui 
 
 Le guidage vocal pour *CarPlay* est l'une des fonctionnalités de navigation les plus utiles d'OsmAnd, fournissant des indications en temps réel et permettant au conducteur de rester concentré sur la route. Les instructions vocales indiquent clairement les virages, les directions et autres instructions de navigation, garantissant une utilisation plus sûre et plus confortable du système de navigation.  
 
-Pour configurer les instructions vocales selon le profil sélectionné, vous devez le faire avant de commencer un itinéraire dans l'application OsmAnd sur votre appareil. Pour voir les paramètres recommandés pour *CarPlay*, consultez l'article [Instructions vocales / Notifications](../navigation/guidance/voice-navigation.md).  
+Lorsque les instructions vocales sont diffusées, OsmAnd ajuste l'audio de fond en fonction de son type. Le contenu audio parlé, tel que les podcasts et les livres audio, peut être automatiquement mis en pause pendant les instructions de navigation. La lecture de musique se poursuit avec un volume réduit. L'option *Mettre en pause l'audio parlé* vous permet de contrôler ce comportement.
 
+Pour configurer les instructions vocales selon le profil sélectionné, vous devez le faire avant de commencer un itinéraire dans l'application OsmAnd sur votre appareil. Pour voir les paramètres recommandés pour *CarPlay*, consultez l'article [Instructions vocales / Notifications](../navigation/guidance/voice-navigation.md).  
 
 
 ### Widget d'alerte à l'écran {#screen-alert-widget}
@@ -299,6 +300,17 @@ Vous pouvez modifier les paramètres de notification pour l'application OsmAnd d
 - *Mémoriser le réglage précédent*
 
 Vous pouvez également activer ou désactiver l'annonce des messages directement dans *CarPlay*. Lisez comment la gestion des notifications est implémentée sur [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) et [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
+
+### Thème de la carte {#map-theme}
+
+![Thème de la carte](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+*CarPlay* vous permet de configurer l'apparence de la carte pour une meilleure visibilité dans différentes conditions de conduite. Vous pouvez choisir l'un des modes d'apparence suivants :
+
+- *Automatique*. L'apparence de la carte change automatiquement en fonction des paramètres du système, de l'heure de la journée ou des conditions du véhicule.
+- *Toujours sombre*. *CarPlay* utilise le thème de carte sombre.
+
+Lorsque l'option *Toujours afficher les cartes sombres* est activée, la carte reste toujours en mode sombre, quel que soit l'état des phares du véhicule ou l'heure de la journée.
 
 ### Position de la localisation dans CarPlay {#location-position-in-carplay}
 

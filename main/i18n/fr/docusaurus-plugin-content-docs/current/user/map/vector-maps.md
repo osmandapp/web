@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Cartes vectorielles 
 ---
@@ -65,7 +65,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 </Tabs>
 
-La carte peut être affichée avec un thème clair ou sombre en fonction du mode sélectionné dans une liste d'options. Par défaut et pour tous les nouveaux utilisateurs, le [style de carte](#map-styles) s'aligne sur le thème choisi dans les paramètres système de votre appareil.
+La carte can be displayed with a light or dark theme based on the mode selected from a list of options. By default and for all new users, the [map style](#map-styles) aligns with the theme chosen in your device's system settings.
 
 - **<Translate android="true" ids="daynight_mode_day"/>**. Affiche toujours la carte avec un thème clair pour une visibilité optimale en journée.
 
@@ -534,7 +534,7 @@ Vous pouvez configurer les options suivantes :
 - **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°
 - **MGRS** (Military Grid Reference System)
 
-Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), mais vous pouvez le changer directement dans ce menu.
+Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), but you can change it directly in this menu.
 
 [Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
 
@@ -574,7 +574,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,renderin
 
 ![Itinéraires carte - pistes cyclables](@site/static/img/map/map-routes-cycle-routes.png)  ![Itinéraires carte - réseau de randonnée](@site/static/img/map/map-routes-hiking-network.png)
 
-Un itinéraire est un chemin prédéterminé qui doit être suivi pour atteindre une destination spécifique. Un itinéraire peut être optimisé pour différents types de déplacement, tels que le cyclisme, la randonnée, la course à pied, les transports en commun, et autres. Vous pouvez en savoir plus sur les itinéraires et leurs types dans l'[article Itinéraires](../map/routes.md).
+Un itinéraire est un chemin prédéterminé qui doit être suivi pour atteindre une destination spécifique. Un itinéraire peut être optimisé pour différents types de déplacement, tels que le cyclisme, la randonnée, la course à pied, les transports en commun, et autres. Vous pouvez en savoir plus sur les itinéraires et leurs types dans l'[article Itinéraires](../map/routes/index.md).
 
 
 ## Articles connexes {#related-articles}
@@ -582,6 +582,6 @@ Un itinéraire est un chemin prédéterminé qui doit être suivi pour atteindre
 - [Interagir avec la carte](../map/interact-with-map.md)
 - [Configurer la carte](../map/configure-map-menu.md)
 - [Styles de carte](../map/map-styles.md)
-- [Itinéraires](../map/routes.md)
+- [Itinéraires](../map/routes/index.md)
 - [Importer / Exporter](../personal/import-export.md)
 - [Schémas de palette de couleurs](../personal/color-palette-schemes.md)

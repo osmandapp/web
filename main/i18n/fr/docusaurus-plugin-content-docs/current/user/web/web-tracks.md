@@ -1,8 +1,8 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
-sidebar_label: Tracks
-title: Tracks
+sidebar_label: Traces
+title: Traces
 ---
 
 import Tabs from '@theme/Tabs';
@@ -21,72 +21,89 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Le Planificateur Web vous offre un moyen simple de travailler avec vos données personnelles directement dans le navigateur. Après vous être connecté, vous pouvez ouvrir vos traces, les ajuster, en créer de nouvelles ou télécharger des fichiers depuis votre ordinateur. 
 
-Toutes les modifications sont automatiquement synchronisées via [OsmAnd Cloud](../personal/osmand-cloud.md), de sorte que tout ce que vous mettez à jour sur le web apparaît sur vos appareils, et tout ce que vous créez sur votre téléphone s'affiche ici également. Cela facilite les transitions entre les plateformes et maintient vos données cohérentes où que vous utilisiez OsmAnd.
+All changes are automatically synced through [OsmAnd Cloud](../personal/osmand-cloud.md), so anything you update on the web appears on your devices, and anything you create on your phone shows up here as well. This makes it easy to move between platforms and keep your data consistent wherever you use OsmAnd.
 
 
-## Comment l'utiliser {#how-to-use}
+## How to use {#how-to-use}
 
-C'est une fonctionnalité payante <ProFeature/>. Pour l'utiliser, connectez-vous à votre compte OsmAnd Pro.
+It's a paid feature <ProFeature/>. To use it, log in to your OsmAnd Pro account.
 
-![Connexion aux traces](@site/static/img/web/track_login.png) ![Connexion aux traces](@site/static/img/web/track_login_2.png)
+![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
 
-La section Traces contient tous les outils et actions liés aux traces. Les options suivantes sont disponibles :
+Tracks section contains all track-related tools and actions. The following options are available:
 
-- Afficher les traces depuis [OsmAnd Cloud](#cloud-tracks).
-- Ajouter des traces sur la carte (dossier **Visible sur la carte**).
-- Consulter toutes les informations sur les traces et le graphique
-- Modifier les traces et les ajouter au Cloud.
-- Télécharger et supprimer les traces.
-- Créer de nouveaux dossiers ou les supprimer.
-- Télécharger les dossiers sous forme de collection OSF ou OBF.
-
-
-## Visible sur la carte {#visible-on-the-map}
-
-La vue **Visible sur la carte** liste toutes les traces actuellement affichées sur la carte. Toute trace peut être ajoutée à cette liste depuis le panneau principal des Traces en utilisant l'option **⋮ → Rendre la trace visible**.
-
-Les traces visibles sur la carte sont surlignées en bleu, tandis que les traces actuellement masquées apparaissent en gris. Un interrupteur à côté de chaque trace vous permet de l'afficher ou de la masquer rapidement. Le bouton **Masquer tout** désactive toutes les traces visibles en une seule fois.
-
-Sous la liste principale, la section **Récemment visible** affiche les traces qui ont été montrées sur la carte précédemment. Cela facilite la réactivation d'une trace sans avoir à la rechercher à nouveau dans vos dossiers ou dans OsmAnd Cloud.
-
-![Visible sur la carte](@site/static/img/web/visible_new.png) ![Visible sur la carte](@site/static/img/web/visible_new_2.png)
+- Show tracks from [OsmAnd Cloud](#cloud-tracks).
+- Adding tracks on the map (**Visible on map** folder).
+- Looking all tracks info and graph
+- Modify tracks and add it to Cloud.
+- Download and delete tracks.
+- Create new folders or delete it.
+- Download folders as OSF or OBF collection.
 
 
-## Menu du dossier de traces {#track-folder-menu}
+## Visible on the Map {#visible-on-the-map}
 
-![Menu du dossier de traces](@site/static/img/web/collection_new.png)
+The **Visible on map** view lists all tracks that are currently displayed on the map. Any track can be added to this list from the main Tracks panel using the **⋮ → Make track visible** option.
 
-Cliquez sur le bouton à trois points (⋮) pour ouvrir le menu *Dossier de traces*. Depuis ici, vous pouvez :
+Tracks that are visible on the map are highlighted in blue, while tracks that are currently hidden appear in grey. A switch next to each track lets you quickly show or hide it. The **Hide all** button turns off all visible tracks at once.
 
- - Télécharger au format OSF.
- - Télécharger au format Collection OBF. Exporter le dossier au format binaire OsmAnd, en choisissant soit un [fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) soit un [OBF de voyage](https://osmand.net/blog/routes#generated-travel-routes).
-      -  **Fichier OBF**. Vous pouvez télécharger une carte OBF hors ligne et l'ouvrir avec OsmAnd sur votre appareil. Cela convient pour afficher un grand nombre de traces sur la carte.
-      -  **OBF de voyage**. Vous pouvez également importer une carte de traces sous forme de livre de voyage, ce qui vous permet de sélectionner des traces individuelles sur la carte et de les utiliser comme des fichiers GPX normaux. Un livre de voyage prend également en charge des fonctionnalités telles que l'affichage des traces sous forme de points, le filtrage des traces par type d'activité et le filtrage des points de passage.
- - Renommer. Ouvre une boîte de dialogue où vous pouvez saisir un nouveau nom pour le dossier sélectionné. La modification est synchronisée avec OsmAnd Cloud et apparaîtra sur tous les appareils connectés.
- - Supprimer. Ouvre une boîte de dialogue de confirmation. La suppression d'un dossier le supprime définitivement ainsi que toutes les traces qu'il contient. Cette action est également synchronisée via OsmAnd Cloud.
+Below the main list, the **Recently visible** section displays tracks that were shown on the map earlier. This makes it easy to turn a track back on without searching for it again in your folders or in OsmAnd Cloud.
 
-![Menu du dossier de traces](@site/static/img/web/collection_rename.png) ![Menu du dossier de traces](@site/static/img/web/collection_delete.png)
+![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
-## Traces cloud {#cloud-tracks}
+## Track folder menu {#track-folder-menu}
 
-Les traces GPX que vous avez dans [OsmAnd Cloud](../personal/osmand-cloud.md) seront disponibles pour l'affichage et la modification après connexion. Uniquement pour les utilisateurs **Pro** <ProFeature/> et pour les utilisateurs [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (qui peuvent télécharger leurs données même après l'expiration de leur abonnement Pro).
+![Track folder menu](@site/static/img/web/collection_new.png)
 
-Les fonctionnalités suivantes sont disponibles après avoir choisi une trace cloud :
-- *Informations* - affichage des données de la trace.
-- *Altitude* - graphique d'altitude.
-- *Vitesse* - graphique de vitesse.
-- *Pente* - graphique de pente.
-- *Recalculer l'altitude (Satellite)* - recalcule les valeurs d'altitude pour la trace sélectionnée et les affiche sur le graphique d'altitude.
-- *Type de route* - divise la trace en segments par classification de route.
-- *Surface* - montre les types de surfaces de trace le long de l'itinéraire.
-- *Fluidité* - affiche la fluidité des segments basée sur les étiquettes OSM.
+Click the three-dot button (⋮) to open the *Track Folder* menu. From here, you can:
 
-![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Modification GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
+ - Download as OSF.
+ - Download as OBF Collection. Export the folder in OsmAnd Binary Format, choosing either an [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or a [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+      -  **OBF file**. You can download an offline OBF map and open it with OsmAnd on your device. It is suitable for displaying a large number of tracks on the map.
+      -  **Travel OBF**. You can also import a map of tracks as a travel book, which allows you to select individual tracks on the map and use them like normal GPX files. A travel book also supports features such as displaying tracks as points, filtering tracks by activity type, and filtering waypoints.
+ - Rename. Opens a dialog where you can enter a new name for the selected folder. The change is synced to OsmAnd Cloud and will appear on all connected devices.
+ - Delete. Opens a confirmation dialog. Deleting a folder removes it permanently along with all tracks it contains. This action is also synced through OsmAnd Cloud.
+
+![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+
+### Smart Folders {#smart-folders}
+
+**Smart Folders** created on mobile devices can be synced and viewed in the web version via OsmAnd Cloud. To ensure they appear on the web, synchronization of [OsmAnd Settings](../personal/osmand-cloud.md#select-data-to-back-up) must be enabled in Cloud settings.  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Smart Folders are currently stored as part of global settings, so they are uploaded to the Cloud only when Settings sync is active. After creating or editing a Smart Folder, it is recommended to run a manual sync to update the data.
+
+On the web, Smart Folders are displayed in the track list with a distinct star icon, making them easy to distinguish from regular folders. The folder name is synchronized first, while the list of tracks depends on how the folder is configured on the device.
+
+Tracks are displayed only if the Smart Folder configuration is supported on the web. This includes both [filter settings](../personal/tracks/smart-folder.md#search-filter) and [grouping options](../personal/tracks/smart-folder.md#managing-smart-folders). If unsupported parameters are used (for example, nearest city), the folder may appear without tracks. For best compatibility, use common parameters such as activity, date, distance, or duration.
+
+Smart Folder synchronization may vary depending on the platform and sync configuration. For the most consistent results, ensure that Cloud sync is enabled and up to date on all devices.
+
+In the three-dot menu (⋮), you can download the Smart Folder as an OBF collection.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
-## Articles connexes {#related-articles}
+## Cloud Tracks {#cloud-tracks}
 
-- [Gérer les traces](../personal/tracks/manage-tracks.md)
-- [Analyseur de traces](../web/web-tracks-analyzer.md)
+GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
+
+The following features are available after choosin cloud track:
+- *Information* - displaying track data.
+- *Elevation* - graph of elevation.
+- *Speed* - speed graph.
+- *Slope* - slope graph.
+- *Recalculate Elevation (Satellite)* - recalculates elevation values for the selected track and shows them on the elevation graph.
+- *Road type* - breaks the track into segments by road classification.
+- *Surface* - shows the types of track surfaces along the route.
+- *Smoothness* - displays segment smoothness based on OSM tags.
+
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+
+
+## Related Articles {#related-articles}
+
+- [Manage Tracks](../personal/tracks/manage-tracks.md)
+- [Tracks Analyzer](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
