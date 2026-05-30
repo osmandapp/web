@@ -1,5 +1,5 @@
 ---
-source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
+source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
 sidebar_position: 4
 title: Mapas e Dados
 ---
@@ -22,9 +22,13 @@ O OsmAnd foi projetado para suportar o OpenStreetMap (OSM) e prioriza esse camin
 
 ### Por que links do Google Maps podem não abrir no OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
 
-Links do Google Maps como `https://maps.app.goo.gl/...` podem não abrir no OsmAnd com um toque único a partir de SMS ou mensageiros. Mesmo que o OsmAnd consiga analisar esses links, o Android 12+ impõe Links de Aplicativos Verificados: domínios principais do Google (por exemplo, `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) são reservados para serviços do sistema Google, então aplicativos de terceiros não podem interceptá-los automaticamente. Como resultado, o link geralmente será aberto em um aplicativo/serviço do Google.
+Links do Google Maps como `https://maps.app.goo.gl/...` podem não abrir no OsmAnd com um toque único a partir de SMS ou mensageiros. Embora o OsmAnd consiga reconhecer e abrir muitos links do Google Maps, o Android 12+ impõe Links de Aplicativos Verificados: domínios principais do Google (por exemplo, `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) são reservados para serviços do sistema Google, então aplicativos de terceiros não podem interceptá-los automaticamente. Como resultado, o link geralmente será aberto em um aplicativo/serviço do Google.
+
+O OsmAnd suporta muitos links compartilhados do Google Maps, incluindo alguns links curtos e URLs de localização compartilhada. Você também pode colar um link do Google Maps diretamente na Pesquisa do OsmAnd.
 
 **Solução alternativa:** *toque longo na mensagem → Compartilhar → selecione OsmAnd*. Isso envia o link para o OsmAnd, onde ele pode ser analisado e aberto como um local.
+
+Dependendo das informações disponíveis na URL compartilhada do Google Maps, a localização aberta pode ser aproximada.
 
 ### Mapas carregando lentamente no Android 11, 12 (cartão SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
