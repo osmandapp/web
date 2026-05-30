@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
+source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
 sidebar_position: 10
 sidebar_label:  Wyszukiwanie
 title: Wyszukiwanie na stronie internetowej
@@ -65,7 +65,7 @@ Bez względu na to, którą opcję wyszukiwania użyjesz (Pasek wyszukiwania, Ka
 - **Nazwa i ikona** — pokazuje nazwę POI i jego ikonę.
 - **Odległość i kierunek** — pokazuje odległość i kierunek do POI.
 - **Lokalizacja** — wyświetla współrzędne POI.
-- **Godziny otwarcia** — pokazuje sparsowane godziny otwarcia z [danych OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). Aktualny status jest wyświetlany dynamicznie w zależności od bieżącego czasu (na przykład, *Otwarte teraz*, *Zamknięte* lub *Otwiera się o 10:00*), a pełny harmonogram jest pokazany poniżej.
+- **Godziny otwarcia** — pokazuje sparsowane godziny otwarcia z [danych OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). Aktualny status jest wyświetlany dynamicznie w zależności na bieżący czas (na przykład, *Otwarte teraz*, *Zamknięte* lub *Otwiera się o 10:00*), a pełny harmonogram jest pokazany poniżej.
 - **Opis** — dostarcza dodatkowych informacji o POI, jeśli są dostępne (na przykład z Wikipedii).
 - **Zdjęcia online** — pokazuje zdjęcia Wikimedia związane z POI, jeśli są dostępne. Wybierz Pokaż wszystko, aby otworzyć Galerię zdjęć. Wybierz zdjęcie, aby otworzyć je w galerii (tryb Otwórz zdjęcie).
 - **Dane obiektu** — dodatkowe informacje o POI, w tym tagi OSM i inne szczegóły, takie jak kontakty, linki społecznościowe, linki do Wikipedii i Wikivoyage, opisy i inskrypcje (jeśli są dostępne).
@@ -77,7 +77,7 @@ Bez względu na to, którą opcję wyszukiwania użyjesz (Pasek wyszukiwania, Ka
 ### Akcje POI {#poi-actions}
 
 **Menu kontekstowe POI** zawiera przyciski akcji dla typowych zadań. Użyj tych szybkich akcji, aby zapisać miejsce, udostępnić je lub rozpocząć planowanie trasy i nawigację:
-- **Dodaj do ulubionych** — zapisuje POI w twoich [Ulubionych](../web/web-favorites.md#add--edit-favorite).
+- **Dodaj do ulubionych** — zapisuje POI w twoich [Ulubionych](../web/web-favorites.md#favorites-actions).
 - **Udostępnij** — generuje udostępnialny link, który otwiera POI bezpośrednio w OsmAnd Web. Link zawiera nazwę POI, typ i współrzędne (pin).
 - **Trasa z** — ustawia wybrane POI jako punkt startowy i otwiera panel trasy, abyś mógł wybrać cel i profil.
 - **Nawigacja** — ustawia wybrane POI jako punkt docelowy dla [nawigacji](../web/web-navigation.md#start-a-route).
@@ -93,7 +93,7 @@ If you search by **Category name**, the first result will display the category o
 Click the chosen POI on the map or in the result list opens the **POI Context Menu**. This menu provides the following data and links:
 
 - **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#add--edit-favorite).  
+- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
 - **🔍 Button**. Moves the map to the POI's location.  
 - **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
 - **Location**. Displays the coordinates of the POI.  
@@ -116,7 +116,7 @@ You can choose and display one POI category on the map in the **Categories Menu*
 Click the selected  POI on the map or in the results list to open the **POI Context Menu**. This menu provides the following data and links:
 
 - **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#add--edit-favorite).  
+- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
 - **🔍 Button**. Moves the map to the POI's location.  
 - **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
 - **Location**. Displays the coordinates of the POI.  

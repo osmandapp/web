@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -18,6 +18,21 @@ Najnowszą bezpłatną wersję OsmAnd można pobrać z wymienionych sklepów z a
 Bezpośrednie linki do bezpłatnych wersji OsmAnd.
 
 ## Wersja 5 {#version-5}
+
+### Wersja 5.3 {#version-53}
+
+Data wydania 04/2026:
+
+- Wtyczka Astronomiczne z nakładką astronomiczną pokazującą ścieżki Słońca, planet i gwiazd na mapie.
+- Bardziej elastyczny układ widżetów i przycisków mapy.
+- Budynki 3D.
+- Widok globu.
+- Nowe widżety nagrywania podróży: Średnia prędkość i Czas ruchu.
+- Widżet Prędkościomierz z wizualnym wskazaniem przekroczenia prędkości, ostrzeżeniem o tolerancji i stanami przekroczenia limitu.
+- Nowy Edytor palet do tworzenia i edycji niestandardowych schematów kolorów dla wizualizacji ścieżek i terenu.
+- Ulepszono routing rowerowy z uwzględnieniem szerokości roweru.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Wersja 5.2 {#version-52}
 
@@ -382,7 +397,7 @@ Data wydania: 07/2019
 Data wydania: 03/2019
 
 - Nowy ekran kierunków: wyświetla przyciski celu Dom i Praca, skrót do poprzedniej trasy, listę aktywnych ścieżek, historię wyszukiwania
-- Dodatkowe informacje w *szczegółach trasy*: typy dróg, nawierzchnia, stromość, gładkość
+- Dodatkowe informacje w *szczegółach trasy*: typy dróg, nawierzchnia, stromość, gładność
 - Nawigacja transportem publicznym
 - Nowa szybka akcja do pokazywania/ukrywania ścieżek i trybów dzień/noc
 - Naprawiono zalane obszary w Niemczech, RPA, Quebecu
@@ -487,7 +502,7 @@ Data wydania 07/2017:
 Data wydania: 04/2017
 
 - Przycisk szybkiej akcji. Dodaj wybrane funkcje do jednego paska narzędzi
-- Ulepszone menu wyszukiwania. Tradycyjne wyszukiwanie krok po kroku połączone z nowoczesnym
+- Ulepszone menu wyszukiwania. Tradycyjne wyszukiwanie krok po kroku połącz z nowoczesnym
 - Profile wysokości i nachylenia dla tras. Wyświetl szczegóły wysokości każdej trasy
 - Linie konturowe głębokości morskich
 - Ustawienia stylu jazdy dla rowerzystów
@@ -637,7 +652,7 @@ Data wydania: 07/2014
 Wtyczka OsMo:
 
 - Zaawansowane monitorowanie na żywo
-- Udostępniaj swoją lokalizację znajomym i zobacz ich lokalizację na mapie
+- Udostępnianie swojej lokalizacji znajomym i zobaczenie ich lokalizacji na mapie
 - Twórz i dołączaj do aktywnych grup
 
 GPX (Moje miejsca):
@@ -755,7 +770,7 @@ Data wydania 02/2013:
 Data wydania 12/2012:
 
 - Ulepszenie wtyczki audio/wideo (zdjęcia z informacjami EXIF)
-- Poprawiona użyteczność i przebudowana wtyczka linii konturowych
+- Poprawiona użyteczność i przebudana wtyczka linii konturowych
 - Pakiety cieniowania wzgórz dla wtyczki linii konturowych
 - Poprawki błędów (nieoptymalny routing)
 - Wtyczka kalkulatora odległości

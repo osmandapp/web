@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Konto
 title: Konto OsmAnd
@@ -115,9 +115,27 @@ Po zalogowaniu sekcja OsmAnd Cloud pojawia się w Menu → Ustawienia i zawiera 
 
 Opcja **Zmiany** pokazuje chronologiczny wykaz plików przechowywanych w koncie OsmAnd Cloud. Elementy są pogrupowane według miesięcy i zawierają nazwę pliku, typ zmiany (na przykład dodano, zmodyfikowano lub usunięto), czas ostatniej aktualizacji i urządzenie, które ją utworzyło. Dla każdego wpisu możesz otworzyć menu z trzema kropkami i wybrać *Pobierz*, aby zapisać wybrany plik na komputerze, lub *Usuń*.
 
-Opcja **Kosz** zawiera pliki usunięte z OsmAnd Cloud. Lista jest również pogrupowana według miesięcy i pokazuje, kiedy każdy plik został usunięty i z jakiego urządzenia. Użyj menu z trzema kropkami obok pliku, aby *Pobrać* kopię, *Przywróć z kosza* (zwróć plik do OsmAnd Cloud, aby stał się ponownie dostępny w danych), lub *Usuń natychmiast*, aby usunąć go na stałe. Pomaga to zapobiegać przypadkowej utracie danych, jednocześnie pozwalając na zwolnienie miejsca w chmurze, gdy jesteś pewien, że plik nie jest już potrzebny. Możesz również wyczyścić wszystkie usunięte elementy naraz, klikając ikonę Kosza w nagłówku panelu Kosz. Otworzy się okno dialogowe **Opróżnij kosz**, w którym potwierdzasz usunięcie, aby trwale usunąć wszystkie pliki z Kosza.
+Opcja **Kosz** zawiera pliki usunięte z OsmAnd Cloud. Lista jest również pogrupowana według miesięcy i pokazuje, kiedy każdy plik został usunięty i z jakiego urządzenia. Użyj menu z trzema kropkami obok pliku, aby *Pobrać* kopię, *Przywrócić z kosza* (zwróć plik do OsmAnd Cloud, aby stał się ponownie dostępny w danych), lub *Usuń natychmiast*, aby usunąć go na stałe. Pomaga to zapobiegać przypadkowej utracie danych, jednocześnie pozwalając na zwolnienie miejsca w chmurze, gdy jesteś pewien, że plik nie jest już potrzebny. Możesz również wyczyścić wszystkie usunięte elementy naraz, klikając ikonę Kosza w nagłówku panelu Kosz. Otworzy się okno dialogowe **Opróżnij kosz**, w którym potwierdzasz usunięcie, aby trwale usunąć wszystkie pliki z Kosza.
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+### Połączone aplikacje {#connected-apps}
+
+Sekcja **Połączone aplikacje** umożliwia łączenie usług zewnętrznych z kontem OsmAnd. Obecnie obsługuje integrację z [Garmin Connect™](https://connect.garmin.com/app/), która pozwala na automatyczną synchronizację aktywności Garmin. Aby ją otworzyć, przejdź do: *OsmAnd Web Map → Konto → Połączone aplikacje*.
+
+Integracja z Garmin Connect jest dostępna tylko dla użytkowników [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Jeśli nie masz aktywnej subskrypcji Pro, wybranie elementu Garmin Connect otwiera stronę z cennikiem.
+
+Aby połączyć konto Garmin Connect™, kliknij **Połącz**. Zostaniesz przekierowany na stronę autoryzacji Garmin, gdzie musisz się zalogować i udzielić dostępu do danych Garmin Connect™. Podczas autoryzacji możesz włączyć synchronizację ostatnich aktywności, aby zaimportować dane z ostatnich 30 dni. Aktywności starsze niż 30 dni nie mogą być importowane automatycznie.
+
+Po połączeniu OsmAnd tworzy dedykowany folder Garmin Connect w sekcji [Ścieżki](./web-tracks.md) i rozpoczyna automatyczne importowanie aktywności. Nowe aktywności zarejestrowane w Garmin Connect™ są dodawane do tego folderu bez ręcznego importu. Folder jest również synchronizowany z aplikacjami mobilnymi OsmAnd, gdy włączona jest funkcja [OsmAnd Cloud](../personal/osmand-cloud.md).
+
+Menu Garmin Connect zawiera dwie sekcje: **Moje dane** i **Ustawienia**. W sekcji Moje dane możesz wyświetlić liczbę zsynchronizowanych aktywności, otworzyć ostatnio pobraną aktywność lub otworzyć stronę Aktywności Garmin Connect™ za pomocą przycisku **Wyświetl w Garmin Connect™**. W sekcji Ustawienia możesz skonfigurować, które typy aktywności mają być synchronizowane za pomocą opcji Aktywności do synchronizacji.
+
+Aktywności są pogrupowane w kategorie takie jak Cycling, Walking & Running, Water Sports oraz Winter & Other Sports. Poszczególne typy aktywności można włączać lub wyłączać. Domyślnie po połączeniu wybrane są wszystkie obsługiwane typy aktywności.
+
+Aby odłączyć konto Garmin Connect™, przejdź do *Ustawienia → Odłącz* i potwierdź czynność. Wcześniej zaimportowane ścieżki pozostają w folderze Garmin Connect, ale nowe aktywności nie będą już synchronizowane.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Rozwiązywanie problemów {#troubleshooting}
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Wprowadzenie](./web-overview.md)
 - [Zakupy wieloplatformowe](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Ścieżki](./web-tracks.md)

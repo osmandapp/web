@@ -1,5 +1,5 @@
 ---
-source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+source-hash: 4e356d29cbf17a924d5de32bc4785b1214d4598771bd8a9b0b5f89a3b34f283a
 sidebar_position: 14
 title:  Widok mapy narciarskiej
 ---
@@ -74,10 +74,10 @@ Styl mapy Zimowy i narciarski podświetla szlaki, trasy skiturowe, tory saneczko
 
 1. Wybierz wymagany [profil](../personal/profiles.md).  
 2. Otwórz [Konfiguruj mapę](../map/configure-map-menu.md).  
-3. Przewiń w dół do Styl mapy/Typ mapy, otwórz i zaznacz **Zimowy i narciarski**.
+3. Przewiż w dół do Styl mapy/Typ mapy, otwórz i zaznacz **Zimowy i narciarski**.
 
 :::tip konfiguracje
-Profil Narciarstwo jest przeznaczony do użytku w połączeniu ze stylami Zimowy i narciarski. Jednak typ nawigacji dla każdego konkretnego profilu można zmieniać i ustawiać indywidualnie, więc ostateczna konfiguracja profilu, stylu mapy i nawigacji zależy całkowicie od Twoich ustawień.
+Profil Narciarstwo jest przeznaczony do użytku w połączeniu ze stylami Zimowy i narciarski. However, typ nawigacji dla każdego konkretnego profilu można zmieniać i ustawiać indywidualnie, więc ostateczna konfiguracja profilu, stylu mapy i nawigacji zależy całkowicie od Twoich ustawień.
 :::
 
 
@@ -266,7 +266,7 @@ Styl **Zimowy i narciarski** może być używany z [trybem nocnym lub wschodu/za
 
 Obie opcje znajdują się w menu [Konfiguruj mapę](../map/configure-map-menu.md).  
 
-- Aby włączyć opcję ***Tryb nocny***, przewiń listę w dół:  
+- Aby włączyć opcję ***Tryb nocny***, przewiż listę w dół:  
 *<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
 - Aby włączyć opcję ***Oświetlenie uliczne***, otwórz listę **<Translate android="true" ids="rendering_category_details"/>** i włącz opcję:  

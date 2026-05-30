@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Planuj trasę
 title: Planowanie trasy na stronie internetowej
@@ -124,7 +124,7 @@ Aby uzyskać dodatkowe szczegóły śladu, otwórz sekcje analizy:
 
 - Typ drogi — dzieli ślad na segmenty według klasyfikacji dróg.
 - Powierzchnia — pokazuje typy nawierzchni wzdłuż trasy na podstawie danych OSM.
-- Gładkość — pokazuje gładkość segmentów na podstawie znaczników OSM.
+- Gładkość — pokazuje gładność segmentów na podstawie znaczników OSM.
 
 ![Panel Przegląd w OsmAnd Web](@site/static/img/web/overview_panel.png) 
 
@@ -138,9 +138,11 @@ Panel Ślad pokazuje listę punktów trasy użytych do zbudowania śladu. Użyj 
 
 Panel Punkty służy do wyświetlania i zarządzania punktami orientacyjnymi dla wybranego śladu. Punkty orientacyjne można dodać z menu kontekstowego mapy — kliknij prawym przyciskiem myszy na mapie i wybierz opcję **Dodaj punkt orientacyjny**, a następnie wypełnij szczegóły punktu orientacyjnego (takie jak nazwa, ikona i kolor) i zapisz go.
 
+Edycja punktów orientacyjnych korzysta z tego samego interfejsu co [edycja Ulubionych](../web/web-favorites.md#edit-favorites). Możesz modyfikować właściwości punktu orientacyjnego, takie jak nazwa, adres, opis, ikona, kolor i kształt, korzystając ze zunifikowanego panelu edycji. Wybrany wygląd jest podglądany zarówno w panelu edycji, jak i bezpośrednio na mapie.
+
 Na liście Punkty orientacyjne możesz kontrolować, czy punkty orientacyjne są wyświetlane na mapie, oraz usuwać pojedyncze punkty orientacyjne w razie potrzeby. Aby usunąć wszystkie punkty orientacyjne z śladu naraz, użyj *Wyczyść wszystkie punkty orientacyjne*.
 
-![Panel Punkty w OsmAnd Web](@site/static/img/web/points_panel.png)
+![Panel Punkty w OsmAnd Web](@site/static/img/web/points_panel_new.png)
 
 
 ## Related Articles {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -28,7 +28,7 @@ Wszystkie zmiany są automatycznie synchronizowane za pośrednictwem [OsmAnd Clo
 
 To funkcja płatna <ProFeature/>. Aby z niej skorzystać, zaloguj się na konto OsmAnd Pro.
 
-![Logowanie do tras](@site/static/img/web/track_login.png) ![Logowanie do tras](@site/static/img/web/track_login_2.png)
+![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
 
 Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne są następujące opcje:
 
@@ -45,16 +45,16 @@ Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne
 
 Widok **Widoczne na mapie** zawiera listę wszystkich tras, które są obecnie wyświetlane na mapie. Dowolną trasę można dodać do tej listy z głównego panelu Tras, korzystając z opcji **⋮ → Uczyń trasę widoczną**.
 
-Trasy widoczne na mapie są podświetlone na niebiesko, natomiast trasy obecnie ukryte pojawiają się na szaro. Przełącznik obok każdej trasy pozwala szybko ją pokazać lub ukryć. Przycisk **Ukryj wszystkie** wyłącza wszystkie widoczne trasy naraz.
+Trasy widoczne na mapie są podświetlone na niebiesko, natomiast trasy obecnie ukryte pojawiają się na szaro. Przełącznik obok każdej trasy pozwala szybko ją pokazać lub ukryć. Przycierz **Ukryj wszystkie** wyłącza wszystkie widoczne trasy naraz.
 
 Pod główną listą sekcja **Ostatnio widoczne** wyświetla trasy, które były wcześniej pokazywane na mapie. Ułatwia to ponowne włączenie trasy bez ponownego wyszukiwania jej w folderach lub w OsmAnd Cloud.
 
-![Widoczne na mapie](@site/static/img/web/visible_new.png) ![Widoczne na mapie](@site/static/img/web/visible_new_2.png)
+![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
 ## Menu folderu tras {#track-folder-menu}
 
-![Menu folderu tras](@site/static/img/web/collection_new.png)
+![Track folder menu](@site/static/img/web/collection_new.png)
 
 Kliknij przycisk z trzema kropkami (⋮), aby otworzyć menu *Folder tras*. Stąd możesz:
 
@@ -65,7 +65,24 @@ Kliknij przycisk z trzema kropkami (⋮), aby otworzyć menu *Folder tras*. Stą
  - Zmień nazwę. Otwiera okno dialogowe, w którym możesz wprowadzić nową nazwę dla wybranego folderu. Zmiana jest synchronizowana z OsmAnd Cloud i pojawi się na wszystkich podłączonych urządzeniach.
  - Usuń. Otwiera okno dialogowe z potwierdzeniem. Usunięcie folderu usuwa go na stałe wraz ze wszystkimi zawartymi w nim trasami. Ta akcja jest również synchronizowana za pośrednictwem OsmAnd Cloud.
 
-![Menu folderu tras](@site/static/img/web/collection_rename.png) ![Menu folderu tras](@site/static/img/web/collection_delete.png)
+![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+
+### Foldery inteligentne {#smart-folders}
+
+**Foldery inteligentne** utworzone na urządzeniach mobilnych mogą być synchronizowane i wyświetlane w wersji webowej za pośrednictwem OsmAnd Cloud. Aby upewnić się, że pojawiają się w wersji webowej, synchronizacja [Ustawień OsmAnd](../personal/osmand-cloud.md#select-data-to-back-up) musi być włączona w ustawieniach Chmury.  
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Foldery inteligentne są obecnie przechowywane jako część ustawień globalnych, więc są przesyłane do Chmury tylko wtedy, gdy synchronizacja Ustawień jest aktywna. Po utworzeniu lub edytowaniu folderu inteligentnego zaleca się uruchomienie ręcznej synchronizacji w celu zaktualizowania danych.
+
+W wersji webowej Foldery inteligentne są wyświetlane na liście tras z charakterystyczną ikoną gwiazdki, co ułatwia ich odróżnienie od zwykłych folderów. Nazwa folderu jest synchronizowana w pierwszej kolejności, natomiast lista tras zależy od konfiguracji folderu na urządzeniu.
+
+Trasy są wyświetlane tylko wtedy, gdy konfiguracja folderu inteligentnego jest obsługiwana w wersji webowej. Obejmuje to zarówno [ustawienia filtrów](../personal/tracks/smart-folder.md#search-filter), jak i [opcje grupowania](../personal/tracks/smart-folder.md#managing-smart-folders). Jeśli używane są nieobsługiwane parametry (na przykład najbliższe miasto), folder może pojawić się bez tras. Aby zapewnić najlepszą kompatybilność, używaj popularnych parametrów, takich jak aktywność, data, odległość lub czas trwania.
+
+Synchronizacja folderów inteligentnych może się różnić w zależności od platformy i konfiguracji synchronizacji. Aby uzyskać najbardziej spójne wyniki, upewnij się, że synchronizacja Chmury jest włączona i aktualna na wszystkich urządzeniach.
+
+W menu z trzema kropkami (⋮) możesz pobrać folder inteligentny jako kolekcję OBF.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
 ## Trasy w chmurze {#cloud-tracks}
@@ -82,7 +99,7 @@ Po wybraniu trasy w chmurze dostępne są następujące funkcje:
 - *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż trasy.
 - *Gładkość* - wyświetla gładkość segmentów na podstawie tagów OSM.
 
-![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Powiązane artykuły {#related-articles}

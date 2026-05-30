@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Mapy wektorowe 
 ---
@@ -574,7 +574,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)  ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-Trasa to ścieżka, która jest z góry określona i należy nią podążać, aby dotrzeć do określonego celu. Trasa może być zoptymalizowana dla różnych rodzajów podróży, takich jak jazda na rowerze, piesze wędrówki, bieganie, transport publiczny i inne. Możesz przeczytać więcej o trasach i ich typach w artykule [Trasy](../map/routes.md).
+Trasa to ścieżka, która jest z góry określona i należy nią podążać, aby dotrzeć do określonego celu. Trasa może być zoptymalizowana dla różnych rodzajów podróży, takich jak jazda na rowerze, piesze wędrówki, bieganie, transport publiczny i inne. Możesz przeczytać więcej o trasach i ich typach w artykule [Trasy](../map/routes/index.md).
 
 
 ## Powiązane artykuły {#related-articles}
@@ -582,6 +582,6 @@ Trasa to ścieżka, która jest z góry określona i należy nią podążać, ab
 - [Interakcja z mapą](../map/interact-with-map.md)
 - [Konfiguruj mapę](../map/configure-map-menu.md)
 - [Style map](../map/map-styles.md)
-- [Trasy](../map/routes.md)
+- [Trasy](../map/routes/index.md)
 - [Import / Eksport](../personal/import-export.md)
 - [Schematy palet kolorów](../personal/color-palette-schemes.md)
