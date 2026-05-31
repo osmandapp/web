@@ -44,7 +44,7 @@ export default async function test() {
 
     await submitSearchQuery(trackName);
 
-    await waitBy(By.id('se-empty-search'));
+    await waitBy(By.id('se-search-results'));
     await waitByRemoved(By.id(trackResultId));
 
     // --- Search: favorite appears, then disappears after group delete ---
@@ -80,6 +80,7 @@ export default async function test() {
 
     await submitSearchQuery(wptName);
 
+    await waitBy(By.id('se-search-results'));
     await waitByRemoved(By.id(favResultId));
 
     await actionFinish();
