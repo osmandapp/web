@@ -1,5 +1,5 @@
 ---
-source-hash: 2e0e202dc914399cfc04af97a092ae9d40cd89a34b4ce41472d2869d9810d626
+source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
 sidebar_position: 5
 sidebar_label: İzler
 title: İzler
@@ -66,6 +66,23 @@ Ana listenin altında, **Son Görünür** bölümü, daha önce haritada göster
  - Sil. Bir onay iletişim kutusu açar. Bir klasörü silmek, içerdiği tüm izlerle birlikte kalıcı olarak kaldırır. Bu eylem de OsmAnd Cloud üzerinden senkronize edilir.
 
 ![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+
+### Akıllı Klasörler {#smart-folders}
+
+Mobil cihazlarda oluşturulan **Akıllı Klasörler**, OsmAnd Cloud aracılığıyla web sürümünde senkronize edilebilir ve görüntülenebilir. Web'de görünmelerini sağlamak için Cloud ayarlarında [OsmAnd Ayarları](../personal/osmand-cloud.md#select-data-to-back-up) senkronizasyonunun etkinleştirilmesi gerekir.  
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Akıllı Klasörler şu anda genel ayarların bir parçası olarak saklandığından, yalnızca Ayarlar senkronizasyonu etkin olduğunda Bulut'a yüklenirler. Bir Akıllı Klasör oluşturduktan veya düzenledikten sonra, verileri güncellemek için el ile senkronizasyon çalıştırmanız önerilir.
+
+Web'de Akıllı Klasörler, normal klasörlerden ayırt edilmelerini sağlayan belirgin bir yıldız simgesiyle iz listesinde görüntülenir. Klasör adı önce senkronize edilirken, iz listesi klasörün cihazda nasıl yapılandırıldığına bağlıdır.
+
+İzler yalnızca Akıllı Klasör yapılandırması web'de destekleniyorsa görüntülenir. Bu, hem [filtre ayarlarını](../personal/tracks/smart-folder.md#search-filter) hem de [gruplandırma seçeneklerini](../personal/tracks/smart-folder.md#managing-smart-folders) içerir. Desteklenmeyen parametreler kullanılırsa (örneğin en yakın şehir), klasör izler olmadan görünebilir. En iyi uyumluluk için etkinlik, tarih, mesafe veya süre gibi yaygın parametreleri kullanın.
+
+Akıllı Klasör senkronizasyonu, platforma ve senkronizasyon yapılandırmasına bağlı olarak değişebilir. En tutarlı sonuçlar için, tüm cihazlarda Cloud senkronizasyonunun etkin ve güncel olduğundan emin olun.
+
+Üç nokta menüsünde (⋮), Akıllı Klasörü OBF koleksiyonu olarak indirebilirsiniz.
+
+![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
 
 
 ## Bulut İzleri {#cloud-tracks}

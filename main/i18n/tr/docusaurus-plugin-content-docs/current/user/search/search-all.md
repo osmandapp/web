@@ -1,5 +1,5 @@
 ---
-source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
+source-hash: bbea45d5dce16ad75da89a2972868fa960155b2b494751a1e9a11e82ed8cda79
 sidebar_position: 1
 title: Tümünü Ara
 ---
@@ -29,13 +29,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Android POI arama listesi](@site/static/img/search/search_online_2_andr_new.png)
+![Search POI list Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS POI arama listesi](@site/static/img/search/poi_list_1_ios.png)  
+![Search POI list iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
@@ -77,7 +77,7 @@ Aramanıza başlamak için aşağıdaki adımlardan birini uygulamanız gerekir:
 - Parkurlara göre arayın.
 - İşletme mekanlarına ve marka adlarına göre arayın.
 - Çevrimiçi arama (Nominatim).
-- URL araması (Google ve OsmAnd).
+- URL araması (Google ve OsmAnd). OsmAnd, `maps.app.goo.gl` adresinden gelen kısa bağlantılar dahil olmak üzere birçok paylaşılan Google Haritalar bağlantısını tanıyabilir.
 - Arama Geçmişi.
 
 <!--
@@ -117,13 +117,13 @@ OsmAnd, arama sonuçlarını birkaç kritere göre otomatik olarak sıralar:
 
 <TabItem value="android" label="Android">
 
-![Favori arama Android](@site/static/img/search/favorite_search_android.png)
+![Favorite search Android](@site/static/img/search/favorite_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favori arama iOS](@site/static/img/search/favorite_search_ios.png)  
+![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)  
 
 </TabItem>
 
@@ -153,13 +153,13 @@ OsmAnd, ABD adresleri hakkında bilgi sağlamak için ABD haritalarına [**TIGER
 
 <TabItem value="android" label="Android">
 
-![Android POI ara](@site/static/img/search/poi_overlay_android_new.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS POI ara](@site/static/img/search/poi_overlay_ios_new.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -176,7 +176,7 @@ OsmAnd, cihazınızın ekranındaki bir haritada görüntülenen noktaları aram
 
 ### Yakınlarda Ara {#search-nearby}
 
-![Android ara](@site/static/img/search/search_all_near_location_andr_new.png)
+![Search Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, arama menüsündeki listeden gerekli noktayı [seçin](#full-text-search) veya doğrudan harita üzerinde seçin. [Harita bağlam menüsünde](../map/map-context-menu.md#actions), *Eylemler → Yakınlarda ara* seçeneğini seçin.
 
@@ -187,13 +187,13 @@ Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, a
 
 <TabItem value="android" label="Android">
 
-![Android ara](@site/static/img/search/search_address_2_andr_new.png)
+![Search Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS ara](@site/static/img/search/street_search_ios.png)  
+![Search iOS](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
@@ -206,7 +206,7 @@ Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, a
 
 <InfoAndroidOnly/>
 
-![Keşfet arama](@site/static/img/search/explore_search_android.png)
+![Explore search](@site/static/img/search/explore_search_android.png)
 
 Arama aracındaki **Keşfet** sekmesi, mevcut konumunuzun yakınındaki yerleri hızlıca keşfetmenize ve son açılan öğelere erişmenize yardımcı olur. İki ana bölüm içerir:  
 - Yakındaki popüler yerler – konumunuzun yakınındaki iyi bilinen simgeler ve çekiciliklerin kaydırılabilir bir listesi. Her öğe, yerin adı, kategorisi, mesafe ve yönü ile varsa önizleme görüntüsünü içerebilir. Tam listeyi açmak için *Tümünü göster* veya bu yerleri haritada görüntülemek için *Haritada göster* üzerine dokunun.
@@ -216,7 +216,7 @@ Daha fazla ayrıntı için [buraya](../map/popular_places.md#explore-in-search) 
 
 ## Arama Geçmişi (iOS) {#search-history-ios}
 
-![Geçmiş arama](@site/static/img/search/history_search_ios.png)
+![History search](@site/static/img/search/history_search_ios.png)
 
 Daha önce bulunan yerleri, adresleri veya sık ziyaret edilen yerleri sorguyu tekrar girmeden tekrar aramak için **Arama Geçmişi**'ni kullanabilirsiniz. Daha fazla ayrıntıyı [Arama Geçmişi](./search-history.md) makalesinde bulabilirsiniz.
 
@@ -227,13 +227,13 @@ Daha önce bulunan yerleri, adresleri veya sık ziyaret edilen yerleri sorguyu t
 
 <TabItem value="android" label="Android">
 
-![Android POI ara](@site/static/img/search/search_poi_categoties_andr_new.png)
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS POI ara](@site/static/img/search/search_poi_categoties_1_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
@@ -256,13 +256,13 @@ Bölgenin haritaları mevcut olmadığında kullanışlıdır, ancak sürekli ve
 
 <TabItem value="android" label="Android">
 
-![Android Koordinat Ara](@site/static/img/search/coordinates_search_android.png)
+![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS Koordinat Ara](@site/static/img/search/coordinates_search_ios.png)
+![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
 
 </TabItem>
 

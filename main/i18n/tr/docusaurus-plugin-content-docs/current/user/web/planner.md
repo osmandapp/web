@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label: Rota Planla
 title: Web Sitesinde Rota Planla
@@ -138,9 +138,11 @@ Parkur paneli, parkuru oluşturmak için kullanılan rota noktalarının listesi
 
 Noktalar paneli, seçili parkur için yol noktalarını görüntülemek ve yönetmek için kullanılır. Yol noktaları harita bağlam menüsünden eklenebilir — haritaya sağ tıklayın ve **Yol noktası ekle** seçeneğini seçin, ardından yol noktası ayrıntılarını (ad, simge ve renk gibi) doldurun ve kaydedin.
 
+Yol noktası düzenleme, [Sık kullanılanları düzenleme](../web/web-favorites.md#edit-favorites) ile aynı arayüzü kullanır. Birleşik Düzenleme panelini kullanarak yol noktası özelliklerini (ad, adres, açıklama, simge, renk ve şekil gibi) değiştirebilirsiniz. Seçilen görünüm hem düzenleme panelinde hem de doğrudan haritada önizlenir.
+
 Yol Noktaları listesinde, yol noktalarının haritada gösterilip gösterilmeyeceğini kontrol edebilir ve gerektiğinde bireysel yol noktalarını kaldırabilirsiniz. Parkurdan tüm yol noktalarını bir kerede kaldırmak için *Tüm yol noktalarını temizle*'yi kullanın.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## İlgili Makaleler {#related-articles}

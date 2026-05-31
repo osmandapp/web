@@ -1,52 +1,47 @@
 ---
-source-hash: ff51c38b0c680f96f4e769ba5c90a79ee59427348b6dce6d5877cd5e30b74441
+source-hash: 6a5a97de97f4b209880efb8ea14c50e55c5e5a9f100fa063156a3e3e842373d7
 sidebar_position: 3
 title: iOS Geliştiricisi
 ---
 
 ## İş tanımı {#job-description}
-Açık kaynaklı iOS uygulamamızı bir sonraki seviyeye taşıyacak ve onu dünya çapında en iyi ve en güçlü hale getirecek deneyimli ve hevesli bir geliştirici arıyoruz.
+Açık kaynaklı uygulamamızı bir sonraki seviyeye taşımamıza yardımcı olacak ve onu dünya çapında en iyi ve en güçlü uygulamalardan biri haline getirecek deneyimli ve hevesli bir geliştirici arıyoruz.
 
 ## Nitelikler {#qualifications}
 
 ### Gereksinimler {#requirements}
 - iOS geliştirmede 3+ yıl deneyim
-- Programlama Dilleri: Objective-C, C++, Swift
-- Çerçeveler: UIKit, CoreLocation, CoreData, Cocoa Touch, CocoaPods, Location Kit
+- Programlama Dilleri: Objective-C, Swift
+- Çerçeveler: UIKit, Foundation, CoreLocation, Core Data, Cocoa Touch, CocoaPods, Location Kit
 - IDE: Xcode
 - Web Hizmetleri: REST, JSON, XML
-- İş Parçacığı Oluşturma: GCD, NSOperations
-- Sürüm Kontrolü: Git/Github
+- İş Parçacığı Oluşturma: GCD, NSOperation
+- Sürüm Kontrolü: Git/GitHub
 - Veritabanları: SQLite, CoreData
 - Teknik İngilizce (Orta Düzey+)
 
 ### Sahip olunması güzel özellikler {#nice-to-have}
-- Programlama Dilleri: Java, JavaScript
-- Çerçeveler: QT, JNI, GDAL
+- Programlama Dilleri: Kotlin, C++
+- Çerçeveler ve araçlar: Qt, JNI, GDAL, Gradle, Swig
 - IDE: Android Studio
-- Araçlar: Gradle, Swig
-- Çevik / Scrum metodolojisi
-- Herhangi bir CBS deneyimi
-- OpenStreetMap
+- Çevik / Scrum metodolojisine aşinalık
+- CBS ve OpenStreetMap deneyimi
 
-## Şirket teklifleri {#company-offers}
+## Neler sunuyoruz {#what-we-offer}
 
 ### Bizden ne bekleyebilirsiniz? {#what-you-can-expect-from-us}
 - Heyecan verici ve büyüyen bir sektörde çalışmak
 - İş ve hobileri birleştirme fırsatı (eğer gezgin bir insansanız)
 - Yaparak öğrenme – bilgi ve deneyimlerini paylaşmaya istekli sektör uzmanlarıyla çalışacaksınız
 - Eğitim ve mentorluk programlarına katılarak becerilerinizi geliştirmek
-- Farklı kariyer yolları (teknik, yönetim) arasından seçim yaparak kariyerinizi ilerletmek
-- Harika bir atmosfer ve destekleyici bir ortam
-- Samimi ve rahat bir atmosferde çalışmak
+- Samimi ve destekleyici bir çalışma ortamı
 
 ### Neler sunuyoruz? {#what-do-we-offer}
-- En iyi 3D Çevrimdışı Harita uygulamalarından birini geliştirmek
+- En iyi çevrimdışı 3D harita uygulamalarından birini geliştirmek
 - Yeteneklerinize ve performansınıza göre rekabetçi maaş
 - Esnek çalışma saatleri
-- 15 gün ücretli izin
+- 25 gün ücretli izin
 - 15 gün ücretli hastalık izni
-- Uzaktan çalışma (Ofisler mevcut: Amstelveen - Hollanda, Krakow - Polonya, Kiev - Ukrayna
 - İş-yaşam dengesi garantisi
 - Dinamik olarak gelişen bir şirkette istikrarlı çalışma
-- Tamamen açık kaynak geliştirme (https://github.com/osmandapp/)
+- Tamamen açık kaynak geliştirme: https://github.com/osmandapp/

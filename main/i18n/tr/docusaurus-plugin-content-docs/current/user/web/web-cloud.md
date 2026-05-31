@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -119,6 +119,24 @@ Oturum açtığınızda, OsmAnd Cloud bölümü Menü → Ayarlar'da görünür 
 
 ![Web Bulut](@site/static/img/web/web_changes.png) ![Web Bulut](@site/static/img/web/web_trash.png)
 
+### Bağlı Uygulamalar {#connected-apps}
+
+**Bağlı Uygulamalar** bölümü, harici hizmetleri OsmAnd hesabınıza bağlamanıza olanak tanır. Şu anda [Garmin Connect™](https://connect.garmin.com/app/) entegrasyonunu destekler ve Garmin aktivitelerinin otomatik senkronizasyonunu sağlar. Açmak için şuraya gidin: *OsmAnd Web Harita → Hesap → Bağlı uygulamalar*.
+
+Garmin Connect entegrasyonu yalnızca [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) kullanıcıları için kullanılabilir. Etkin bir Pro aboneliğiniz yoksa, Garmin Connect öğesini seçmek Fiyatlandırma sayfasını açar.
+
+Garmin Connect™ hesabınızı bağlamak için **Bağla**'ya tıklayın. Garmin yetkilendirme sayfasına yönlendirileceksiniz; burada oturum açmanız ve Garmin Connect™ verilerinize erişim izni vermeniz gerekir. Yetkilendirme sırasında, son 30 günden veri içe aktarmak için son etkinliklerin senkronizasyonunu etkinleştirebilirsiniz. 30 günden eski etkinlikler otomatik olarak içe aktarılamaz.
+
+Bağlantıdan sonra OsmAnd, [İzler bölümünde](./web-tracks.md) özel bir Garmin Connect klasörü oluşturur ve etkinlikleri otomatik olarak içe aktarmaya başlar. Garmin Connect™'te kaydedilen yeni etkinlikler, manuel içe aktarma olmadan bu klasöre eklenir. Klasör ayrıca [OsmAnd Cloud](../personal/osmand-cloud.md) etkinleştirildiğinde OsmAnd mobil uygulamalarıyla senkronize edilir.
+
+Garmin Connect menüsü iki bölüm içerir: **Verilerim** ve **Ayarlar**. Verilerim'de senkronize edilmiş etkinlik sayısını görüntüleyebilir, son alınan etkinliği açabilir veya **Garmin Connect™'te Görüntüle** düğmesini kullanarak Garmin Connect™ Etkinlikler sayfasını açabilirsiniz. Ayarlar'da, Etkinlikleri senkronize et seçeneğini kullanarak hangi etkinlik türlerinin senkronize edilmesi gerektiğini yapılandırabilirsiniz.
+
+Etkinlikler, Bisiklet, Yürüyüş ve Koşu, Su Sporları ve Kış ve Diğer Sporlar gibi kategorilere ayrılır. Bireysel etkinlik türleri etkinleştirilebilir veya devre dışı bırakılabilir. Varsayılan olarak, bağlantıdan sonra tüm desteklenen etkinlik türleri seçilir.
+
+Garmin Connect™ hesabınızın bağlantısını kesmek için *Ayarlar → Bağlantıyı kes* bölümüne gidin ve işlemi onaylayın. Önceden içe aktarılan izler Garmin Connect klasöründe kalır, ancak yeni etkinlikler artık senkronize edilmez.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
+
 
 ## Sorun Giderme {#troubleshooting}
 
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Giriş](./web-overview.md)
 - [Çapraz Platform Satın Alımlar](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [İzler](./web-tracks.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title: Vektör Haritalar
 ---
@@ -109,7 +109,7 @@ Yollar için özel ayarlar, yol atlasına uyması için renkleri değiştirebili
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Yolların yüksek kontrastı.  
 ![Harita yol stili yüksek kontrast](@site/static/img/map/map-road-style-high-contrast.png)
 - **Soluk**. Yolların daha az kontrastlı renkleri.  
-![Harita yol stili soluk](@site/static/img/map/map-road-style-pale.png)
+![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Yollar için kalın dış çizgi.  
 ![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-bold-outline.png)
@@ -406,7 +406,7 @@ Android'de bu seçenek, Topografya eklentisi etkinleştirildiğinde kullanılabi
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-3D Kabartma özelliği, kabartmalı bir kabartma üretir ve manzaranın üç boyutlu bir temsilini sağlar. 3D Kabartma çevrimdışı çalışır ve [OsmAnd vektör haritaları](../map/vector-maps.md) ile veya herhangi bir [raster harita](../map/raster-maps.md#layers) ile [Harita Kaynağı](../map/raster-maps.md#main) olarak veya [Alt/Üst Katman](../map/raster-maps.md#overlay) olarak kullanılabilir. Daha ayrıntılı bilgi [burada](../plugins/topography.md#3d-relief) mevcuttur.
+3D Kabartma özelliği, kabartmalı bir kabartma üretir ve manzalanın üç boyutlu bir temsilini sağlar. 3D Kabartma çevrimdışı çalışır ve [OsmAnd vektör haritaları](../map/vector-maps.md) ile veya herhangi bir [raster harita](../map/raster-maps.md#layers) ile [Harita Kaynağı](../map/raster-maps.md#main) olarak veya [Alt/Üst Katman](../map/raster-maps.md#overlay) olarak kullanılabilir. Daha ayrıntılı bilgi [burada](../plugins/topography.md#3d-relief) mevcuttur.
 
 ### * Deniz Derinliği {#-nautical-depth}
 
@@ -456,7 +456,7 @@ Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritas
 
 </Tabs>
 
-**Küre Görünümü**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar. Daha fazla bilgi için, Haritayla Etkileşim makalesindeki [Küre görünümü bölümü](../map/interact-with-map.md#globe-view)ne bakın.
+**Küre Görünümü**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harika etkileşimini küresel navigasyona uyarlar. Daha fazla bilgi için, Haritayla Etkileşim makalesindeki [Küre görünümü bölümü](../map/interact-with-map.md#globe-view)ne bakın.
 
 <!--
 ## Map Legend {#map-legend}
@@ -568,7 +568,7 @@ Varsayılan olarak, uygulama [Genel ayarlar](../personal/profiles.md#units--form
 
 ![Harita rotaları - bisiklet rotaları](@site/static/img/map/map-routes-cycle-routes.png)  ![Harita rotaları - yürüyüş ağı](@site/static/img/map/map-routes-hiking-network.png)
 
-Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş bir yoldur. Bir rota, bisiklet, yürüyüş, koşu, toplu taşıma ve diğerleri gibi farklı seyahat türleri için optimize edilebilir. Rotalar ve türleri hakkında daha fazla bilgiyi [Rotalar makalesinde](../map/routes.md) okuyabilirsiniz.
+Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş bir yoldur. Bir rota, bisiklet, yürüyüş, koşu, toplu taşıma ve diğerleri gibi farklı seyahat türleri için optimize edilebilir. Rotalar ve türleri hakkında daha fazla bilgiyi [Rotalar makalesinde](../map/routes/index.md) okuyabilirsiniz.
 
 
 ## İlgili Makaleler {#related-articles}
@@ -576,7 +576,7 @@ Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş 
 - [Haritayla Etkileşim](../map/interact-with-map.md)
 - [Haritayı Yapılandır](../map/configure-map-menu.md)
 - [Harita Stilleri](../map/map-styles.md)
-- [Rotalar](../map/routes.md)
+- [Rotalar](../map/routes/index.md)
 - [İçe / Dışa Aktar](../personal/import-export.md)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
 

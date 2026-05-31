@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title: OsmAnd yönlendirme hakkında
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -75,6 +75,10 @@ Rota hesaplarken hangi yollardan kaçınılacağını seçmenin iki olası yolu 
 
 - [Navigasyon ayarları](../guidance/navigation-settings.md) bölümündeki [Rota parametreleri](../guidance/navigation-settings.md#route-parameters) bölümünde yol türünü seçin. Bu ayarın açıklaması [Yönlendirme türleri](#routing-types) ayarları hakkındaki makalelerde verilmiştir. Örnek olarak, [Araba / Kamyon / Motosiklet](../routing/car-based-routing.md#route-parameters---car) yönlendirme türü açıklamasını inceleyin.
 - Ayrıca, *harita bağlam menüsü* aracılığıyla *[Yollardan kaçınma](../../map/map-context-menu.md#avoid-road)* seçeneğini kullanarak veya *[Yollardan kaçınma menüsünü](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*) kullanarak yönlendirme için kullanılmayacak belirli yolları seçebilirsiniz.
+
+Avoid ayarlarında bir yol türü (örneğin *Asfaltlanmamış yollar*) seçildiğinde, OsmAnd bu yolları rota hesaplamasından kesinlikle hariç tutar. Çok kısa bölümler bile (örneğin, 100–200 metre asfaltlanmamış yol) tamamen kaçınılır ve hiçbir koşulda rotaya dahil edilmez. Sonuç olarak, bu yollardan kaçınmak için sapma gerekiyorsa rotalar önemli ölçüde uzayabilir.
+
+Avoid seçeneği devre dışı bırakılırsa, bu yollara hala izin verilir ancak daha düşük öncelik (ceza) atanabilir, yani OsmAnd mümkün olduğunda daha iyi yolları tercih eder ancak gerekirse bunları yine de dahil edebilir.
 
 :::note
 
