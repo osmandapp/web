@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title: Sobre o roteamento OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão geral {#overview}
@@ -75,6 +75,10 @@ Existem duas maneiras possíveis de escolher quais estradas evitar ao calcular u
 
 - Selecione o tipo de estrada na seção [Parâmetros da rota](../guidance/navigation-settings.md#route-parameters) das [Configurações de navegação](../guidance/navigation-settings.md). A descrição desta configuração é fornecida nos artigos sobre as configurações dos [tipos de roteamento](#routing-types). Como exemplo, veja a descrição do tipo de roteamento [Carro / Caminhão / Motocicleta](../routing/car-based-routing.md#route-parameters---car).
 - Você também pode selecionar estradas específicas que não serão usadas para roteamento usando a opção *[Evitar estradas](../../map/map-context-menu.md#avoid-road)* através do *menu de contexto do mapa* ou usando o *[menu Evitar estradas](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Quando um tipo de estrada (como *Estradas não pavimentadas*) é selecionado nas configurações de Evitar, o OsmAnd exclui estritamente essas estradas do cálculo da rota. Mesmo trechos muito curtos (por exemplo, 100–200 metros de estrada não pavimentada) são completamente evitados e não serão incluídos na rota em nenhuma circunstância. Como resultado, as rotas podem se tornar significativamente mais longas se evitar essas estradas exigir desvios.
+
+Se a opção Evitar estiver desativada, essas estradas ainda são permitidas, mas podem receber menor prioridade (penalidade), o que significa que o OsmAnd preferirá estradas melhores quando possível, mas ainda poderá incluí-las se necessário.
 
 :::note
 

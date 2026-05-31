@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -68,16 +68,55 @@ A visualização de Detalhes fornece informações associadas ao lugar seleciona
 
 ## Ações dos Favoritos {#favorites-actions}
 
-### Adicionar / Editar Favorito {#add--edit-favorite}
-
 [Para adicionar](../personal/favorites.md#manage-favorites) um novo ponto de favorito, clique com o botão direito na tela. 
 
 Para editar um favorito existente, clique no ponto de favorito diretamente no mapa ou selecione-o de uma pasta de favoritos. Isso abre o painel de Detalhes, onde a ação Editar está disponível. A edição também pode ser iniciada do menu de três pontos (⋮) ao lado do favorito na lista de Favoritos.
 
-A interface de edição permite modificar as principais propriedades do favorito, como seu nome, ícone, cor e descrição. O layout e os campos disponíveis são consistentes com a experiência de edição no [aplicativo móvel OsmAnd](../personal/favorites.md#create), fornecendo um fluxo de trabalho familiar em plataformas.
+O painel de edição de favorito permite alterar as principais propriedades de um favorito, incluindo seu nome, endereço, descrição, pasta, ícone, cor e forma. A aparência selecionada é visualizada tanto no painel de edição quanto diretamente no mapa.
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+### Editar Favoritos {#edit-favorites}
 
+O campo **Endereço** suporta detecção automática de endereço com base na localização selecionada no mapa. O campo pode aparecer em vários estados:
+
+- Pesquisando... — exibido enquanto o endereço está sendo determinado automaticamente.
+- Campo vazio — exibido após limpar o endereço. Neste estado, o botão de localização pode ser usado para detectar o endereço novamente automaticamente.
+- Campo preenchido — exibe o endereço detectado automaticamente ou o texto inserido manualmente.
+
+O campo de endereço também inclui ações rápidas para limpar ou restaurar o endereço detectado.
+
+A seção **Descrição** permite adicionar notas ou informações adicionais ao favorito. Selecionar Adicionar notas abre o editor de descrição em um painel secundário. Se uma descrição já tiver sido adicionada, uma prévia curta é exibida no painel principal e é limitada a duas linhas de texto. O editor de descrição suporta formatação de texto rico e preserva automaticamente as alterações ao retornar ao painel anterior.
+
+Os favoritos podem ser organizados em pastas para facilitar o gerenciamento e o acesso rápido. Selecionar o item **Pasta** abre um painel secundário onde as pastas disponíveis podem ser selecionadas. A pasta usada anteriormente é selecionada automaticamente por padrão. Cada pasta também exibe o número de pontos de favoritos armazenados nela.
+
+Novas pastas podem ser criadas diretamente do painel de seleção de pastas. Selecionar o botão Adicionar pasta abre um diálogo onde você pode inserir o nome da pasta e escolher sua localização na lista de Favoritos.
+
+O diálogo também inclui uma seção Avançado, onde as configurações de aparência padrão para a pasta podem ser configuradas. Essas configurações incluem a cor padrão, ícone e forma que serão aplicados automaticamente aos pontos de favoritos adicionados a esta pasta.
+
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
+
+### Aparência {#appearance}
+
+A seção **Aparência** permite personalizar como o favorito é exibido no mapa. As seguintes propriedades estão disponíveis: ícone, cor, forma e ícone. 
+
+Selecionar **Ícone** abre um painel secundário com grupos de ícones categorizados.
+
+- Os ícones são agrupados por categorias.
+- Ícones usados recentemente são exibidos primeiro.
+- O ícone atualmente selecionado é destacado.
+- A visualização usa a forma e a cor selecionadas.
+
+Selecionar **Cor** abre o painel da paleta de cores.
+
+- A paleta contém cores predefinidas e definidas pelo usuário.
+- Cores personalizadas podem ser adicionadas usando o seletor de cores.
+- Cores podem ser editadas, duplicadas ou removidas através do menu de contexto.
+- As cores recém-adicionadas são salvas na paleta do usuário e permanecem disponíveis posteriormente.
+
+A opção **Forma** define o formato de fundo usado para o marcador de favorito.  As seguintes formas estão disponíveis: círculo, quadrado e octógono.
+
+A visualização da aparência é atualizada imediatamente tanto no painel de edição quanto no mapa ao alterar o ícone, a cor ou a forma.
+
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Outras Ações {#other-actions}
 

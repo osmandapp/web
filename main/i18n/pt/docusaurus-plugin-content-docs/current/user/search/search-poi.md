@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title: Pesquisar POI
 ---
@@ -58,7 +58,8 @@ O OsmAnd oferece várias formas de aceder à ferramenta de Pesquisa, onde se enc
 - **Pesquisa de Pontos de Interesse (POI) por tipo e nome**:
     - Permite pesquisar:
        - Para pontos de interesse (POI) próximos ou categorias específicas de POI.
-       - Para [rotas OSM](../map/routes.md) por nome e por número de referência.
+       - Para [rotas OSM](../map/routes/types-of-routes.md) por nome, número de referência ou ID de relação usando o formato `O+relation_id` (por exemplo: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Para objetos associados a identificadores Wikidata (por exemplo: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - Para [Locais populares (Wikipedia)](../map/popular_places.md).
        - Para locais combinando um nome de cidade com um nome ou tipo de POI (por exemplo: aeroporto de Berlim, Billa de Bratislava).
     - É possível filtrar e ordenar os resultados por categoria, distância ou classificação.
@@ -68,8 +69,8 @@ O ícone apresentado nos resultados de pesquisa corresponde ao ícone utilizado 
 Os resultados de pesquisa podem incluir informações adicionais de localização, como a cidade onde o POI está localizado. Isto ajuda a distinguir entre locais com o mesmo nome ao pesquisar por marcas ou locais populares.
     
 - **Pesquisar POIs no mapa** - Mostrar no mapa:
-    1. Pode selecionar as categorias necessárias da [**lista**](../map/point-layers-on-map.md#points-of-interest-pois) em *Configurar mapa → Mostrar sobreposição de POI...* e pesquisar por ícones na localização esperada.
-    2. Pode introduzir uma consulta de pesquisa primeiro ou pode começar a pesquisar POIs em *Menu → Pesquisar → Categorias* e depois clicar em **Mostrar no mapa**.
+    - Pode selecionar as categorias necessárias da [**lista**](../map/point-layers-on-map.md#points-of-interest-pois) em *Configurar mapa → Mostrar sobreposição de POI...* e pesquisar por ícones na localização esperada.
+    - Pode introduzir uma consulta de pesquisa primeiro ou pode começar a pesquisar POIs em *Menu → Pesquisar → Categorias* e depois clicar em **Mostrar no mapa**.
 
 - **Pesquisa de marca**:
     - Pesquisar um estabelecimento comercial por nome de marca (como Audi, Starbucks ou Aldi) é muito semelhante a pesquisar diferentes POIs por tipo, a principal diferença é que a lista de marcas é fornecida dentro do mapa e está sujeita a alterações durante cada atualização. 
@@ -162,6 +163,20 @@ Como funciona:
 - *Aplicação de Filtros* - Seleciona os valores necessários nos filtros e, em seguida, a aplicação aplica esses filtros aos resultados da pesquisa para mostrar apenas as propriedades que correspondem às características especificadas.
 - *Exibição de resultados* - Após aplicar os filtros, o OsmAnd exibe uma lista com informações breves que correspondem à categoria e às características definidas.
 
+<!--
+Benefits:
+
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
+
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
+-->
+
 ### Tipos de Filtros {#types-of-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -188,7 +203,7 @@ Com a função **Filtro**, pode selecionar as características necessárias e, c
 
 ![Pesquisar POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
 
-Um filtro pode consistir em um número considerável de itens, cuja presença depende da categoria selecionada. Cada categoria tem um número de filtros específicos para ela, organizados em pastas por tipo. Existem um total de *21 categorias padrão*. Algumas delas estão listadas aqui:
+Um filtro pode consistir em um número considerável de itens, cuja presença depende da categoria selecionada. Cada categoria tem um número de filtros específicos para ela, organizados em pastas por tipo. Existem um total de *21 categorias padrão*. Elas estão listadas aqui:
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Alojamento](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) inclui instalações que fornecem alojamento temporário, como hotéis, motéis, hostels, pensões e parques de campismo. Estes locais oferecem comodidades e serviços para uma estadia confortável durante a viagem.  
         Inclui *9* tipos de filtros: **Frigorífico** (tem *2* valores), **Aquecimento** (tem *7* valores), **Tipo de acesso à Internet** (tem *3* valores), **Colchão** (tem *2* valores), **Tipo de pagamento** (mais de *10* valores), **Chuveiro** (tem *1* valor), **Fumar** (tem *6* valores), **Classificação por estrelas** (tem *10* valores), **Acessibilidade para cadeiras de rodas** (tem *4* valores), Aberto agora / Aberto 24/7.
@@ -238,7 +253,7 @@ Um filtro pode consistir em um número considerável de itens, cuja presença de
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. É um sistema de transporte concebido para transportar pessoas para fins públicos, acessível a todos os residentes e visitantes de uma cidade ou região.  
         Inclui *9* tipos de filtros.
 
- 17. **Rotas**. Inclui [rotas OSM](../map/routes.md) para vários tipos de atividades.  
+ 17. **Rotas**. Inclui [rotas OSM](../map/routes/types-of-routes.md) para vários tipos de atividades.  
         Inclui *14* tipos de filtros: **Ponto de controlo**, **Nó de rede de ciclismo**, **Nó de rede de caminhada**, **Rede de rotas (ciclismo)**, **Rede de rotas (caminhada)**, **Categoria de ponto de rota**, **Desportos aéreos**, **Ciclismo**, **Condução**, **A pé**, **Motociclismo**, **Outras rotas**, **Desportos aquáticos**, **Desportos de inverno**.
 
  18. **Visitas turísticas**. É uma atividade em que as pessoas visitam locais ou sítios interessantes para se familiarizarem com eles e desfrutarem da sua beleza, história ou significado.  
@@ -367,7 +382,7 @@ Para criar filtros personalizados para encontrar locais no mapa, selecione categ
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Inclui 25 tipos: *Loteamentos, Atol, Bairro, Cidade, Bloco de cidade, País, Tribunal, Alfândega, Escritório diplomático, Quinta, Governo, Aldeia, Ilha, Ilhéu, Habitação isolada, Localidade, Bairro, Polícia, Prisão, Quarteirão, Área residencial, Subúrbio, Vila, Câmara Municipal, Aldeia*.  
 
 2. **Natal**. Inclui 5 tipos de filtros:  
-    *Evento de Natal, Mercado de Natal, Pirâmide de Natal, Loja de Natal, Árvore de Natal*.
+    *Evento de Natal, Mercado de Natal, Pirâmida de Natal, Loja de Natal, Árvore de Natal*.
 
 3. **<Translate android="true" ids="amenity_type_education"/>**. Inclui 16 tipos: *Loteamentos, Atol, Bairro, Cidade, Bloco de cidade, País, Tribunal, Alfândega, Escritório diplomático, Quinta, Governo, Aldeia, Ilha, Ilhéu, Habitação isolada, Localidade, Bairro, Polícia, Prisão, Quarteirão, Área residencial, Subúrbio, Vila, Câmara Municipal, Aldeia*.  
 
@@ -418,6 +433,15 @@ Para criar filtros personalizados para encontrar locais no mapa, selecione categ
 22. **Viagem**. Inclui 2 tipos de filtros.
 
 23. **Definido pelo utilizador**. Inclui 1 tipo: *Código postal definido pelo utilizador*.
+
+<!--
+:::note since OsmAnd 5.0 for Android
+Available for search:
+
+- Religious POIs based on the `amenity=place_of_worship` tag are divided into religious-specific locations such as churches, mosques, or synagogues.
+- Minor amenities such as “bench”, "youth bench" (`amenity=bench`) are available in the category list.
+:::
+-->
 
 ### Guardar Novos Filtros Personalizados {#save-new-custom-filters}
 
