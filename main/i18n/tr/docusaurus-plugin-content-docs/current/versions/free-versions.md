@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -19,6 +19,21 @@ OsmAnd'ın en son sürümünü listelenen uygulama mağazalarından ücretsiz ol
 Ücretsiz OsmAnd sürümlerine doğrudan bağlantılar.
 
 ## Sürüm 5 {#version-5}
+
+### Sürüm 5.3 {#version-53}
+
+Yayın tarihi 04/2026:
+
+- Güneş, gezegenler ve yıldızların yollarını harita üzerinde gösteren astronomik bir katman içeren Astronomi eklentisi.
+- Widget'lar ve harita düğmeleri için daha esnek düzen.
+- 3B binalar.
+- Küre görünümü.
+- Yeni Seyahat Kaydı widget'ları: Ortalama Hız ve Hareket Süresi.
+- Görsel hızlanma göstergesi, tolerans uyarısı ve sınır aşımı durumları içeren Hız göstergesi widget'ı.
+- Parkurlar ve arazi görselleştirmesi için özel renk şemaları oluşturma ve düzenleme amacıyla Yeni Palet Düzenleyici.
+- Bisiklet genişliğini dikkate alarak geliştirilmiş bisiklet yönlendirmesi.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Sürüm 5.2 {#version-52}
 
@@ -182,7 +197,7 @@ Yayın tarihi 08/2023:
 
 Yayın tarihi 03/2023:
 
-- "Haritayı Yapılandır" menüsündeki "Parkurlar" menüsü iyileştirildi
+- "Haritayı Yapılandır" menüsindeki "Parkurlar" menüsü iyileştirildi
 - Bağlam menüsü artık POI için yerelleştirilmiş adları görüntüler
 - Rotayı bağlantı ile paylaşma seçeneği eklendi
 - "Deniz mili/fit" uzunluk birimi eklendi
@@ -348,7 +363,7 @@ Yayın tarihi 02/2020:
 Yayın tarihi: 11/2019
 
 - Güncellenmiş uygulama ve profil ayarları. Ayarların türe göre uygun düzenlemesi, her profili özelleştirme yeteneği.
-- Göz atarken indirilecek bir harita öneren yeni harita indirme iletişim kutusu
+- Göz atırken indirilecek bir harita öneren yeni harita indirme iletişim kutusu
 - Gece teması düzeltmeleri
 - Dünya genelindeki birkaç yönlendirme sorunu düzeltildi
 - Daha ayrıntılı yol ağı ile güncellenmiş temel harita
@@ -418,7 +433,7 @@ Yayın tarihi 08/2018:
 - OSM Düzenleme: Nokta olmayan nesneler ve yollar için etiketleri düzenleme yeteneği, notlardaki eksik yorumları düzeltme, düzenlemelerin yedeklenmesi
 - Wikipedia ve Wikivoyage ayrıştırması iyileştirildi, güncellenmiş dosyalar zaten mevcut
 - Bağlam menüsü: gece modunda taşıma kalkanları rengini düzeltme, ek menü boyutlarını düzeltme
-- Tekne navigasyonu: su yolu geçidi için destek
+- Tekne navigasyonu: su yolu geçisi için destek
 
 <DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
@@ -824,7 +839,7 @@ Yayın tarihi 09/2011:
 - Favori noktalar ve gruplar (favorileri kategorize et, sil, yönet)
 - Yükseklik bilgisi
 - Uygulamada GPX Gezgini (parkur ayrıntılarını, mesafeyi, ortalama hızı, yüksekliği vb. görüntüle)
-- GPX navigasyonu (daha fazla seçenek, çökmeden sonra navigasyona devam et, döner kavşakları destekle)
+- GPX navigasyonu (daha fazla seçenek, çökmekten sonra navigasyona devam et, döner kavşakları destekle)
 - Çevrimdışı kullanım için rotayı GPX parkuru olarak kaydetme işlevi
 - GPX izlemeyi iyileştir (bazı yanlış konumları filtrele ve doğruluk/yükseklik/hızı kaydet)
 - [Upload GPX](https://download.osmand.net/gpx/) to OSM community

@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Harita
 title: Web Sitesindeki Küresel Harita
@@ -29,14 +29,14 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 -->
 
 
-## Overview {#overview}
+## Genel Bakış {#overview}
 
 OsmAnd web haritası, [OpenStreetMap (OSM)](https://www.openstreetmap.org/) verilerine dayalı küresel bir haritadır. Kullanıcıların kendi verilerini (örneğin, parkurlar ve favoriler) görüntülemesine, herhangi bir profil için navigasyon rotaları oluşturmasına ve hava durumu, genel GPX parkurları, POI'ler ve Wikimedia görselleri gibi ek özelliklere erişmesine olanak tanır. Veri deneyiminizi doğrudan tarayıcınızda keşfedin ve özelleştirin.
 
 ![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
-## Map Context Menu {#map-context-menu}
+## Harita Bağlam Menüsü {#map-context-menu}
 
 Açmak için haritada herhangi bir yere sağ tıklayın. Bu menü aşağıdaki eylemleri içerir:
 
@@ -46,7 +46,7 @@ Açmak için haritada herhangi bir yere sağ tıklayın. Bu menü aşağıdaki e
 
 - **Hava durumunu aç** – Hava durumu ayrıntılarını görüntülemek için [Hava durumu menüsü](../web/web-weather.md) erişin.
 - **Yeni rota oluştur** – Seçilen konumu başlangıç veya varış noktası olarak kullanarak [*Rota planla* aracı](../web/web-navigation.md) açar.
-- **Favori Ekle** –  Haritadaki herhangi bir noktada kolay erişim için bir [favori](../web/web-favorites.md#add--edit-favorite) oluşturmanıza ve kaydetmenize olanak tanır.
+- **Favori Ekle** –  Haritadaki herhangi bir noktada kolay erişim için bir [favori](../web/web-favorites.md#favorites-actions) oluşturmanıza ve kaydetmenize olanak tanır.
 - **Buradan yol tarifi** –  Seçilen noktayı navigasyon için [başlangıç konumu](../web/web-navigation.md#start-a-route) olarak ayarlar.
 - **Buraya yol tarifi** – Seçilen noktayı [navigasyon için varış noktası](../web/web-navigation.md#start-a-route) olarak ayarlar.
 - **Koordinatları kopyala** – Seçilen noktanın koordinatlarını harici kullanım için kopyalar.
@@ -63,7 +63,7 @@ Add pin option will be added back once it becomes available again.
 ![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
 
 
-## Selected Object {#selected-object}
+## Seçilen Nesne {#selected-object}
 
 Haritadaki bir nesne (örneğin bir POI, favori veya navigasyon noktası) seçildiğinde, daha büyük bir iğne ile vurgulanır. Bir seferde yalnızca bir nesne seçilebilir.
 
@@ -77,7 +77,7 @@ Seçilen nesneyi daha kolay görmek için yakındaki işaretçiler gizlenebilir.
 
 
 
-## Configure Map Menu {#configure-map-menu}
+## Harita Menüsünü Yapılandır {#configure-map-menu}
 
 Harita Menüsünü Yapılandır menüsü, POI katmanları, favoriler, parkurlar ve arazi gibi harita verileri için görüntüleme ayarlarını yönetmenize olanak tanır. Bu menü, OsmAnd hesabınıza giriş yaptıktan sonra kullanılabilir. Açmak için **sol üst köşedeki** düğmeye tıklayın veya **Menü** aracılığıyla erişin.
 
@@ -90,7 +90,7 @@ Harita Menüsünü Yapılandır menüsü, POI katmanları, favoriler, parkurlar 
 ![POIs menu](@site/static/img/web/configure_map_web_new.png)
 
 
-### POI overlay {#poi-overlay}
+### POI katmanı {#poi-overlay}
 
 POI katmanı özelliği, seçilen kategorilere göre haritada İlgi Noktalarını (POI'leri) görüntülemenize olanak tanır. Bu, harita üzerinde yerleri doğrudan taramak istediğinizde kullanışlıdır.
 
@@ -111,12 +111,12 @@ POI ayrıntı panelinde, eylem düğmelerinden hızlı eylemler kullanılabilir:
 ![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
-### Favorites {#favorites}
+### Favoriler {#favorites}
 
 Tek bir tıklamayla, haritada favorileri açıp kapatabilirsiniz. Ancak, yalnızca [**Haritada göster etkin**](../web/web-favorites.md#manage-favorites) olan favoriler görüntülenecektir.
 
 
-### Tracks {#tracks}
+### Parkurlar {#tracks}
 
 Bu bölüm, [**haritada görünen GPX parkurlarınızın**](../web/web-tracks.md#visible-on-the-map) ve **Son Görünür** parkurların bir listesini içerir.
 
@@ -143,7 +143,7 @@ Parkur paneli aşağıdaki sekmeleri içerir:
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
 
-### Transport stops {#transport-stops}
+### Taşıma durakları {#transport-stops}
 
 **Taşıma durakları** seçeneği, toplu taşıma duraklarını doğrudan haritada görüntülemenize olanak tanır. Etkinleştirildiğinde, durak işaretçileri harita genelinde görünür ve toplu taşıma rotalarının durduğu konumları temsil eder. Bir taşıma durağını seçmek, o durak hakkında bilgi ve duraktan geçen taşıma rotaları içeren bir bağlam panelini açar. Durak paneli birkaç bölüm içerir.
 
@@ -171,7 +171,7 @@ Yakındaki rotalar bölümü, seçilen durağa yakın konumdaki ek rotaları gö
 
 ![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
 
-### Terrain {#terrain}
+### Arazi {#terrain}
 
 **Arazi** bölümü ücretli bir özelliktir <ProFeature/>. Bu özelliği kullanmak için öncelikle OsmAnd Pro hesabınıza giriş yapmanız gerekir.
 
@@ -186,19 +186,19 @@ Bu bölümde şunları yapabilirsiniz:
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
 
-## Settings {#settings}
+## Ayarlar {#settings}
 
 Web Planlayıcı'da, *Genel ayarlar* (Görüntü dili, Uzunluk birimleri, Hız birimi) tüm kullanıcılar için kullanılabilir, giriş yapmış olsanız da olmasanız da. OsmAnd hesabınızla giriş yaptıktan sonra, Ayarlar panelinde ek bir OsmAnd Cloud bölümü görünür. OsmAnd Cloud hakkında [burada](./web-cloud.md) okuyabilirsiniz.
 
-### Language {#language}
+### Dil {#language}
 
 Arayüz dilini değiştirmek için:
 
-*Menü → ⚙ Ayarlar → Görüntü dili'ye gidin*
+*Menü → ⚙ Ayarlar → Görüntü dili'ne gidin*
 
 ![Web Language](@site/static/img/web/web_language.png)
 
-### Units {#units}
+### Birimler {#units}
 
 *Menü → ⚙ Ayarlar → Uzunluk birimleri'ne gidin*  
 *Menü → ⚙ Ayarlar → Hız birimi'ne gidin*
@@ -244,7 +244,7 @@ In this section of the menu, you can change the map style. You can read more abo
 -->
 
 
-## URL Schemes {#url-schemes}
+## URL Şemaları {#url-schemes}
 
 OsmAnd web hizmetini (ve uygulamasını) kolayca kullanmak için doğrudan bağlantılardan yararlanabilirsiniz. Bunlar, konum verilerini aktarmanıza ve iğneler, parkurlar, hava durumu ve daha fazlası hakkında ayrıntılar eklemenize olanak tanıyan özel URL'lerdir.
 
@@ -296,9 +296,9 @@ Belirtilen parametrelere bağlı olarak, URL dizeleri şunları içerebilir:
 11. Mevcut [**Keşfet sayfasına**](https://osmand.net/docs/user/web/web-search#explore) doğrudan bağlantı&nbsp; - &nbsp;`osmand.net/map/search`
 
 
-## Related Articles {#related-articles}
+## İlgili Makaleler {#related-articles}
 
-- [Map Context Menu](../map/map-context-menu.md)
+- [Harita Bağlam Menüsü](../map/map-context-menu.md)
 - [OsmAnd Hesabı](./web-cloud.md)
 - [Parkurlar](./web-tracks.md)
 - [Favoriler](./web-favorites.md)

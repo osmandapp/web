@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favoriler
 title: Favoriler
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-Web Planlayıcı'daki Favoriler, harita üzerinde önemli yerleri doğrudan kaydetmenize ve yönetmenize olanak tanır. Hızlı erişim istediğiniz konumları işaretlemek, bunları klasörlere organize etmek ve navigasyon veya rota planlama için yeniden kullanmak amacıyla kullanılabilirler. Web arayüzü, haritayı keşfederken favorileri görüntülemek, düzenlemek ve bunlarla çalışmak için kullanışlı araçlar sağlar; tüm güncellemeler [OsmAnd Cloud](../personal/osmand-cloud.md) üzerinden sorunsuz bir şekilde senkronize edilir.
+Favoriler, Web Planlayıcı'da harita üzerinde önemli yerleri doğrudan kaydetmenize ve yönetmenize olanak tanır. Hızlı erişim istediğiniz konumları işaretlemek, bunları klasörlere organize etmek ve navigasyon veya rota planlama için yeniden kullanmak amacıyla kullanılabilirler. Web arayüzü, haritayı keşfederken favorileri görüntülemek, düzenlemek ve bunlarla çalışmak için kullanışlı araçlar sağlar; tüm güncellemeler [OsmAnd Cloud](../personal/osmand-cloud.md) üzerinden sorunsuz bir şekilde senkronize edilir.
 
 
 ## Favorileri Yönet {#manage-favorites}
@@ -68,16 +68,55 @@ Detaylar görünümü, seçilen yerle ilişkili bilgileri sağlar ve o belirli f
 
 ## Favori Eylemleri {#favorites-actions}
 
-### Favori Ekle / Düzenle {#add--edit-favorite}
-
-[Yeni bir favori nokta eklemek](../personal/favorites.md#manage-favorites) için ekrana sağ tıklayın. 
+[Yeni bir favori noktası eklemek](../personal/favorites.md#manage-favorites) için ekrana sağ tıklayın. 
 
 Mevcut bir favoriyi düzenlemek için, favori noktasına harita üzerinde doğrudan tıklayın veya bir favoriler klasöründen seçin. Bu, Detaylar panelini açar; burada Düzenle eylemi kullanılabilir. Düzenleme ayrıca Favoriler listesindeki favorinin yanındaki üç nokta menüsünden (⋮) başlatılabilir.
 
-Düzenleme arayüzü, favorinin ana özelliklerini değiştirmenize olanak tanır; örneğin adı, simgesi, rengi ve açıklaması. Düzen ve mevcut alanlar, [OsmAnd mobil uygulamasındaki](../personal/favorites.md#create) düzenleme deneyimiyle tutarlıdır; platformlar arasında tanıdık bir iş akışı sağlar.
+Düzenleme paneli, favorinin ana özelliklerini değiştirmenize olanak tanır; örneğin adı, adresi, açıklaması, klasörü, simgesi, rengi ve şekli. Seçilen görünüm hem düzenleme panelinde hem de doğrudan harita üzerinde önizlenir.
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+### Favorileri Düzenle {#edit-favorites}
 
+**Adres** alanı, seçilen harita konumuna göre otomatik adres algılamayı destekler. Alan birkaç durumda görünebilir:
+
+- Aranıyor... — adres otomatik olarak belirlenirken görüntülenir.
+- Boş alan — adres temizlendikten sonra görüntülenir. Bu durumda, konumu yeniden otomatik olarak algılamak için konum düğmesi kullanılabilir.
+- Doldurulmuş alan — otomatik olarak algılanan adresi veya manuel olarak girilen metni görüntüler.
+
+Adres alanı ayrıca algılanan adresi temizleme veya geri yükleme için hızlı eylemler içerir.
+
+**Açıklama** bölümü, favoriye notlar veya ek bilgiler eklemenize olanak tanır. Not ekle seçilmesi, açıklamayı ikincil bir panelde düzenleyici olarak açar. Zaten bir açıklama eklenmişse, ana panelde kısa bir önizleme görüntülenir ve iki metin satırıyla sınırlıdır. Açıklama düzenleyici zengin metin biçimlendirmesini destekler ve önceki panele dönüldüğünde değişiklikleri otomatik olarak korur.
+
+Favoriler, daha kolay yönetim ve hızlı erişim için klasörler halinde düzenlenebilir. **Klasör** öğesi seçilmesi, mevcut klasörlerin seçilebileceği ikincil bir paneli açar. Önceden kullanılan klasör varsayılan olarak otomatik olarak seçilir. Her klasör ayrıca içinde depolanan favori noktalarının sayısını da gösterir.
+
+Yeni klasörler doğrudan klasör seçim panelinden oluşturulabilir. Klasör ekle düğmesi seçilmesi, klasör adını girebileceğiniz ve Favoriler listesindeki konumunu seçebileceğiniz bir iletişim kutusunu açar.
+
+İletişim kutusu ayrıca Gelişmiş bölümünü içerir; burada klasör için varsayılan görünüm ayarları yapılandırılabilir. Bu ayarlar, bu klasöre eklenen favori noktalarına otomatik olarak uygulanacak varsayılan rengi, simgeyi ve şekli içerir.
+
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
+
+### Görünüm {#appearance}
+
+**Görünüm** bölümü, favorinin harita üzerinde nasıl görüntüleneceğini özelleştirmenize olanak tanır. Aşağıdaki özellikler kullanılabilir: simge, renk, şekil ve simge. 
+
+**Simge** seçilmesi, kategorilere ayrılmış simge gruplarını içeren ikincil bir paneli açar.
+
+- Simgeler kategorilere göre gruplandırılır.
+- Son kullanılan simgeler önce görüntülenir.
+- Şu anda seçili simge vurgulanır.
+- Önizleme seçilen şekli ve rengi kullanır.
+
+**Renk** seçilmesi, renk paleti panelini açar.
+
+- Palet önceden tanımlanmış ve kullanıcı tanımlı renkler içerir.
+- Özel renkler renk seçici kullanılarak eklenebilir.
+- Renkler bağlam menüsü aracılığıyla düzenlenebilir, çoğaltılabilir veya kaldırılabilir.
+- Yeni eklenen renkler kullanıcı paletine kaydedilir ve daha sonra kullanılabilir kalır.
+
+**Şekil** seçeneği, favori işaretçisi için kullanılan arka plan formunu tanımlar.  Aşağıdaki şekiller kullanılabilir: daire, kare ve sekizgen.
+
+Görünüm önizlemesi, simge, renk veya şekil değiştirildiğinde hem düzenleme panelinde hem de harita üzerinde hemen güncellenir.
+
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Diğer Eylemler {#other-actions}
 

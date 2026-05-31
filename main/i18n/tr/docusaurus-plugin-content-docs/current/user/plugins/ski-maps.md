@@ -1,5 +1,5 @@
 ---
-source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+source-hash: 4e356d29cbf17a924d5de32bc4785b1214d4598771bd8a9b0b5f89a3b34f283a
 sidebar_position: 14
 title:  Kayak Haritası Görünümü
 ---
@@ -237,11 +237,11 @@ Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [
 
 </Tabs>
 
-Kayak merkezi dışındaki hangi pistlerde gezinebileceğinizi öğrenmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) listesindeki **Kayak yamaçları ve rotaları** seçeneğini etkinleştirmeniz gerekir.  
+Kayak merkezi dışındaki hangi pistlerde gezinebileceğinizi öğrenmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes/types-of-routes.md) listesindeki **Kayak yamaçları ve rotaları** seçeneğini etkinleştirmeniz gerekir.  
 
-Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/map-styles.md#winter-and-ski) etkinleştirildiğinde, [Kayak yamaçları ve rotaları](../map/routes.md#ski-slopes-and-routes), Kayak navigasyonunun navigasyon rotaları oluşturmak için kullanabileceği tüm pist türlerini gösterir. Bu tür kayak pisti rotaları, etkinleştirildiğinde, çoğunlukla kayak merkezi sınırları dışında mor renkle ana hatları çizilir.  
-Kış ve Kayak dışındaki bir harita stili için [Kayak yamaçları ve rotaları](../map/routes.md#ski-slopes-and-routes) seçeneğini etkinleştirdiğinizde, yalnızca yamaçlar görüntülenir. Diğer kayakla ilgili özellikler bu stil katmanında gösterilmeyebilir.  
-_Kayak yamaçları ve rotaları_ [tıklanabilir](../map/routes.md#actions-with-routes).
+Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/map-styles.md#winter-and-ski) etkinleştirildiğinde, [Kayak yamaçları ve rotaları](../map/routes/types-of-routes.md#ski-slopes-and-routes), Kayak navigasyonunun navigasyon rotaları oluşturmak için kullanabileceği tüm pist türlerini gösterir. Bu tür kayak pisti rotaları, etkinleştirildiğinde, çoğunlukla kayak merkezi sınırları dışında mor renkle ana hatları çizilir.  
+Kış ve Kayak dışındaki bir harita stili için [Kayak yamaçları ve rotaları](../map/routes/types-of-routes.md#ski-slopes-and-routes) seçeneğini etkinleştirdiğinizde, yalnızca yamaçlar görüntülenir. Diğer kayakla ilgili özellikler bu stil katmanında gösterilmeyebilir.  
+_Kayak yamaçları ve rotaları_ [tıklanabilir](../map/routes/index.md#actions-with-routes).
 
 
 ### Gece ve Aydınlatma {#night-and-lighting}

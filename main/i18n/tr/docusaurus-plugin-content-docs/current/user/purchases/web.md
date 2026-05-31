@@ -1,5 +1,5 @@
 ---
-source-hash: 74a8a7707c0d2f97d8c606769b7fafa2d86892a59f64ff3fbd3e0ff06f84c40d
+source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
@@ -37,21 +37,23 @@ Bu platformlardan yapılan tüm satın almalar [**çapraz platform erişimini**]
 
 Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer bölgelerdeki fiyatlar, ödeme platformu tarafından otomatik olarak yerel para birimine dönüştürülür.
 
+
 <!--
 
-:::danger February Sale
+:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
 
 :::
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+| :------------- | :------------- | :----------------------- | :------------------- | :-------------------  |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+| **Price (EUR)** | €0| <s>€69,99</s> **€34.99**| <s>€14.99</s> **€7.49**| €2.99 / <s>€39.99</s> **€19.99**|<s>€450</s> **€299.00**|
+| **Price (USD)** | $0| <s>$69,99</s> **$34.99**| <s>$14.99</s> **$7.49**| $2.99 / <s>$39.99</s> **$19.99**|<s>$450</s> **$299.00**|
+
 
 :::note 
 By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  

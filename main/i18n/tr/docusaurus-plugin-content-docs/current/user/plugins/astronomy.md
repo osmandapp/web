@@ -1,5 +1,5 @@
 ---
-source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
+source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -38,7 +38,7 @@ Eklenti, yerleşik yıldız kataloglarını kullanarak tamamen çevrimdışı ç
 Astronomi katmanını görüntülemek için aşağıdaki ayarlar gereklidir:
 
 1. *Ana Menü*'nün *Eklentiler* bölümünden [**Astronomi** eklentisini](../plugins/index.md#enable--disable) etkinleştirin
-2. **Menü → <Translate android="true" ids="shared_string_menu,star_map"/>**'yı kullanarak yıldız gökyüzü, ayarlar ve zaman kontrolleri içeren özel ekranı açın.
+2. **Menü → Yıldız haritası**'yı kullanarak yıldız gökyüzü, ayarlar ve zaman kontrolleri içeren özel ekranı açın.
 3. Yıldız haritası ekranındaki kontrolleri kullanarak **zaman ve tarihi** seçin.
 4. Yıldız haritasında gösterilenleri [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) kullanarak ayarlayın — örneğin, görünür nesneleri ve render yardımcısını açıp kapatın.
 5. Yıldız haritası ekranının üst kısmındaki **Kapat (X)** düğmesine dokunarak Yıldız haritasından çıkın ve Dünya haritasına dönün.
@@ -139,7 +139,7 @@ Grafiğin altında, önemli gözlem olayları görüntülenir:
 
 Grafik, gösterge mevcut sistem zamanında konumlandırılmış olarak açılır. Hesaplamalar için kullanılan konum, grafiğin altında gösterilir. Konum, bir şehir adı olarak görüntülenir.
 
-### Observation Schedule {#actions}
+### Observation Schedule {#observation-schedule}
 
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 
@@ -226,7 +226,7 @@ Bu bölüm, Yıldız haritasında hangi tür göksel nesnelerin gösterileceğin
 | <Translate android="true" ids="astro_stars"/> | Yıldız haritasında görünür bireysel yıldızları görüntüler. |
 | <Translate android="true" ids="astro_nebulas"/> | Mevcut olduğunda bulutsu nesneleri gösterir. |
 | <Translate android="true" ids="astro_star_clusters"/> | Yıldız kümelerini ayrı göksel nesneler olarak görüntüler. |
-| <Translate android="true" ids="astro_deep_sky"/> | Galaksiler, galaksi kümeleri ve kara delikler gibi derin gökyüzü nesnelerini açar/kapatır. |
+| <Translate android="true" ids="astro_deep_sky"/> | Galaksiler, galaksi kümeleri ve kara delikler gibi derin gökyüzü nesnelerini aç/kapatır. |
 
 ### Personal Display Options {#personal-display-options}
 
