@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Топографія
 ---
@@ -41,7 +41,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Лінії контуру | Відтінення пагорбів | Ухил |
 |:---|:---|:---|
-| ![Лінії контуру Android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Відтінення пагорбів Android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Ухили Android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Лінії контуру | Відтінення пагорбів | Ухил |
 |:---|:---|:---|
-| ![Лінії контуру iOS](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Відтінення пагорбів iOS](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Ухили iOS](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -99,7 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Завантаження карт 3D-рельєфу Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Завантаження карт 3D-рельєфу Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +107,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Завантаження карт 3D-рельєфу iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Завантаження карт 3D-рельєфу iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +124,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Діалогове вікно завантаження ліній контуру Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Діалогове вікно завантаження ліній контуру iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +153,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Меню ліній контуру Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +161,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Лінії контуру*
 
-![Меню ліній контуру iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +196,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Меню рельєфу Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Меню рельєфу Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Меню рельєфу iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Меню рельєфу iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
 
 </TabItem>
 
@@ -223,7 +223,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | Ухил | Висота |
 | ------ | ------- | ------- |
-| ![Відтінення пагорбів](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Ухил](../../../blog/2023-08-28-terrain/img/slope.png) | ![Висота](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Відтінення пагорбів** базується на симуляції освітлення поверхні з використанням даних про рельєф. Цей метод передбачає створення тіней та відблисків на основі кута нахилу поверхні відносно джерела світла. В результаті ви бачите на карті природні пагорби, долини та інші деталі рельєфу.  
 
@@ -244,11 +244,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | Ухил | Висота |
 | ------ | ------- | ------- |
-|![Відтінення пагорбів](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Ухил](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Меню](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Відтінення пагорбів* використовує темні відтінки для показу схилів, вершин та низин. Віртуальне Сонце має фіксований азимут (напрямок) 315 градусів.
 
-- *Ухил* використовує колір для візуалізації крутизни місцевості. Ви можете прочитати більше про це [тут](https://en.wikipedia.org/wiki/Grade_(slope)). Кожен колір відповідає куту відхилення від горизонталі. Додаткова колірна схема *Ухилу*, ***Лавина***, доступна в меню **Змінити**.
+- *Ухил* використовує колір для візуалізації крутизни місцевості. Ви можете прочитати більше про це [тут](https://en.wikipedia.org/wiki/Grade_(slope)). Кожен колір відповідає куту відхилення від горизонталі. Додаткова колірна схема *Ухилу*, ***Avalanche***, доступна в меню **Змінити**.
 
 - *Висота*. Карта висот забарвлює кожен піксель відповідно до розрахованої висоти карти, використовуючи градієнт із визначеної колірної схеми. Зазвичай схеми висот дуже залежать від місцевості. У гірських районах ви б віддали перевагу розподілу кольорів на ширший діапазон висот, а на рівнинних ділянках ви б обрали колірну схему з невеликим діапазоном між мінімальною/максимальною висотою.
 
@@ -263,7 +263,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Змінити колірну схему](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Змінити колірну схему](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 Функція *Змінити колірну схему* дозволяє вибрати колірну схему:
 
@@ -280,302 +280,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Примітка:** Відтінення пагорбів використовує фіксований алгоритм затінення і не підтримує користувацькі колірні палітри.
 
-Для розширеного налаштування палітр за допомогою файлів палітр дивіться статтю [Колірні схеми](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Змінити колірну схему](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Змінити колірну схему](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-Функція *Змінити колірну схему* дозволяє вибрати колірну схему:
-
-- З [попередньо визначеного списку](#default-color-scheme).
-- З файлів колірних палітр, які ви створили на своєму комп'ютері. Користувацькі файли можна додати до OsmAnd за допомогою інструменту [імпорту/експорту](../personal/import-export.md).
-
-Ви можете [редагувати ці палітри](../personal/color-palette-schemes.md#palette-modify), щоб персоналізувати вигляд карт та маршрутів.
-
 </TabItem>
 
 </Tabs>
-
-### Видимість {#visibility}
-
-| Видимість 31% | Видимість 74% |
-| ------ | ------- |
-| ![Видимість ](../../../blog/2023-08-28-terrain/img/31.png) | ![Видимість ](../../../blog/2023-08-28-terrain/img/74.png) |
-
-Функція *Видимість* використовується для налаштування прозорості тіней для "Відтінення пагорбів" та кольорів, що використовуються для представлення кута в параметрі "Ухил".
-
-### Рівні масштабування {#zoom-levels}
-
-![Масштабування](../../../blog/2023-08-28-terrain/img/zoom.png)  
-
-Функція *Рівні масштабування* дозволяє встановити мінімальне та максимальне значення рівнів масштабування карти, в діапазоні від 4 до 19, на яких будуть відображатися шари карти "Відтінення пагорбів" або "Ухил".
-
-### Розмір кешу {#cache-size}
-
-**Розмір кешу** — це інформаційний розділ, який відображає обсяг пам'яті на вашому пристрої, що наразі використовується для даних *Рельєфу*. Кожного разу, коли ви переглядаєте інформацію про *Відтінення пагорбів* або *Ухил* на карті, всі ці дані тимчасово зберігаються в кеші для швидкого доступу та подальшого використання, уникаючи додаткового навантаження на процесор вашого пристрою.  
-
-**Очищення кешу** іноді необхідне для звільнення місця на вашому пристрої або для вирішення потенційних проблем з продуктивністю. Щоб очистити кеш, вам потрібно перейти до *Системних налаштувань* пристрою, далі шлях може бути таким: *Застосунки → OsmAnd → Сховище → Очистити кеш*.
-
-
-### Рушій візуалізації (Android) {#rendering-engine-android}
-
-**Відтінення пагорбів** та **Ухил** відображаються та налаштовуються в будь-якому обраному [рушії візуалізації карти](../personal/global-settings.md#map-rendering-engine).
-
-1. Якщо ви використовуєте **рушій візуалізації карти версії 1**, вам потрібно використовувати звичайне [завантаження](../start-with/download-maps.md) растрових карт "Відтінення пагорбів" та "Ухил".
-
-2. Якщо ви використовуєте **рушій візуалізації карти версії 2 (OpenGL)**:
-    - Ви можете продовжувати використовувати звичайний тип завантаження растрових карт "Відтінення пагорбів" та "Ухил". Однак для цього вам потрібно буде активувати [плагін розробки OsmAnd](../plugins/development.md) та увімкнути налаштування [Використовувати растровий формат SQLite для відтінення пагорбів та ухилу](../plugins/development.md#terrain).
-
-    - Альтернативно, ви можете використовувати завантаження [Карти рельєфу (3D)](../personal/maps-resources.md#paid-map-content). Це економить місце в пам'яті вашого пристрою, а ефекти "Відтінення пагорбів", "Ухил" та "3D-рельєф" будуть генеруватися з них за допомогою вашого пристрою.
-
-
-### Швидкі дії {#quick-actions}
-
-![ШД для рельєфу](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
-
-Ви можете використовувати кнопки *Швидкої дії* на екрані карти для перемикання видимості шарів [Лінії контуру](#contour-lines), [Рельєф](#terrain) та [колірної схеми рельєфу](../../user/personal/color-palette-schemes.md#quick-actions). Залежно від шару, вибраного в меню "Налаштувати карту", призначення дії *Рельєф* кнопці відобразить *Відтінення пагорбів*, *Ухил* або *Висоту*.  
-
-Основні налаштування для *Показати або приховати типи карт* знаходяться в розділі "Топографія" меню "Налаштувати карту". У статті [Швидка дія](../widgets/quick-action.md#configure-map) ви можете знайти список шарів, доступних для відображення. Якщо вам потрібен швидкий доступ до цієї конфігурації карти, використовуйте інструмент *Користувацька кнопка*.
-
-- Перейдіть до [Додати дію](../widgets/quick-action.md#custom-buttons): *Меню → Налаштувати екран → Користувацькі кнопки → Швидка дія → Додати дію → Налаштувати карту*.
-- Додайте одну або кілька кнопок ШД для зміни видимості певного шару топографії.
-
-
-## 3D-будівлі {#3d-buildings}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
-
-![3D-будівлі](@site/static/img/map/3d_buildings_4_new.png) ![3D-будівлі](@site/static/img/map/3d_buildings_3_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
-
-![3D-будівлі](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D-будівлі](@site/static/img/map/3d_buildings_highlight_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Функція **3D-будівлі** відображає будівлі як об'ємні 3D-моделі замість плоских фігур. Будівлі генеруються з [даних OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), використовуючи інформацію про висоту з тегів, таких як `height` та `building:levels`, коли вони доступні. Якщо [дані OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) включають проходи через будівлі, позначені тегом `tunnel=building_passage`, OsmAnd відображає видимі отвори в 3D-моделі будівлі, щоб дороги або пішохідні шляхи, що проходять через будівлю, відображалися правильно. 
-
-3D-будівлі показуються лише на вищих рівнях масштабування (вигляд міста/вулиці), де можна відобразити окремі будівлі. Коли POI або вибране місце (наприклад, мітка на карті або пункт призначення навігації) знаходиться всередині будівлі, OsmAnd виділяє відповідну будівлю, щоб полегшити її ідентифікацію на карті.
-
-Використовуйте основний перемикач для увімкнення або вимкнення 3D-рендерингу будівель. Коли увімкнено, налаштування також відображає поточний [рівень деталізації](#performance) (Низький або Високий) під основним перемикачем (*лише Android*). Щоб переглянути будівлі в 3D, нахиліть карту, розмістивши два пальці на екрані та провівши вгору. У цьому вигляді будівлі можуть частково закривати дороги або мітки карти залежно від налаштування видимості.
-
-На Android ця опція доступна лише коли увімкнено плагін "Топографія".  
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
-
-Налаштування 3D-будівель поділено на дві групи: **Вигляд** та **Продуктивність**.
-
-### Вигляд {#appearance}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![3D-будівлі](@site/static/img/map/3d_buildings_color.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![3D-будівлі](@site/static/img/map/3d_buildings_color_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**<Translate android="true" ids="shared_string_appearance"/>** контролює, як виглядають 3D-будівлі на карті. Воно включає два налаштування: Колір та Видимість. 
-
-**<Translate android="true" ids="shared_string_color"/>** дозволяє змінювати колір будівель. Коли ви торкаєтеся Кольору, OsmAnd відкриває окремий екран попереднього перегляду, де ви можете бачити карту під час налаштування. Екран попереднього перегляду показує живу карту, щоб ви могли негайно побачити, як вибраний колір впливає на будівлі.
-- **Стиль карти** — використовує колір будівель за замовчуванням з поточного стилю карти.
-- **Користувацький** — дозволяє встановити користувацький колір будівель окремо для денного / нічного режиму.
-
-:::tip Придбання
-Налаштування кольору 3D-будівель — це [платна функція](../purchases/index.md).  
-:::
-
-Якщо користувацькі кольори не придбані, ви побачите порожній стан з коротким описом та кнопкою Отримати. Якщо Користувацький доступний, ви можете перемикатися між Днем і Ніччю, вибирати колір з палітри (або відкривати Всі кольори), а потім торкнутися Застосувати.
-
-**<Translate android="true" ids="gpx_visibility_txt"/>** контролює непрозорість (прозорість) 3D-будівель. Використовуйте слайдер для встановлення видимості у відсотках. Слайдер дозволяє значення від 10% до 100%, з 50% за замовчуванням. Нижчі значення роблять будівлі більш прозорими та допомагають дорогам/міткам залишатися читабельними. Вищі значення роблять будівлі більш суцільними та візуально домінуючими. Торкання Видимості також відкриває окремий екран попереднього перегляду зі слайдером.
-
-На екранах попереднього перегляду (Колір / Видимість) ви можете використовувати Скинути за замовчуванням з панелі застосунку, щоб відновити значення за замовчуванням.
-
-### Продуктивність {#performance}
-
-**<Translate android="true" ids="performance"/>** контролює, як рендериться 3D-будівлі. Воно включає два налаштування: Рівень деталізації та Відстань огляду.
-
-**<Translate android="true" ids="level_of_details"/>** визначає складність геометрії 3D-будівель:
-- Низький (за замовчуванням) — простіша геометрія.
-- Високий — детальніша геометрія.
-
-**<Translate android="true" ids="view_distance"/>** контролює, наскільки далеко від камери рендеряться 3D-будівлі:
-- Близько (за замовчуванням) — рендерить будівлі ближче до вас.
-- Далеко — рендерить будівлі з більшої відстані.
-
-Обидва варіанти продуктивності використовують двопозиційний перемикач безпосередньо на екрані налаштувань 3D-будівель.
-
-**Примітка:** Використання *Високої деталізації* та *Далекої відстані огляду* покращує візуальний вигляд, але може вплинути на продуктивність та збільшити споживання батареї.
-
-<!--
-### Сонце {#sun}
-
-![3D-будівлі](@site/static/img/map/sun_setting.png)
-
-Налаштування **Сонце** контролює напрямок освітлення, що використовується для рендерингу 3D-будівель. Воно впливає на те, як світло та тіні з'являються на будівлях у 3D-вигляді. Коли ви торкаєтеся Сонця, OsmAnd відкриває екран попереднього перегляду, де ви можете налаштовувати освітлення за допомогою двох слайдерів:
-
-- Азимут — контролює горизонтальний напрямок джерела світла (компасний напрямок сонця).
-- Висота — контролює висоту сонця над горизонтом.
-
-Зміна цих параметрів модифікує, як падають тіні на будівлі, і може покращити візуальне сприйняття форм будівель у 3D-вигляді. Торкніться Застосувати, щоб підтвердити вибрані параметри освітлення.
--->
-
-
-## 3D-рельєф {#3d-relief}
-
-:::info Функція Pro
-3D-рельєф — це платна функція [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
-
-![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
-
-![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-Функція 3D-рельєфу створює об'ємний рельєф і забезпечує тривимірне представлення ландшафту. 3D-рельєф працює в автономному режимі і може використовуватися з [векторними картами OsmAnd](../map/vector-maps.md) або будь-якими [растровими картами](../map/raster-maps.md#layers) як [джерело карти](../map/raster-maps.md#main) або як [підкладка/накладення](../map/raster-maps.md#overlay).
-
-***Як відобразити 3D-рельєф на карті.***
-
-- Придбайте підписку **OsmAnd Pro** для [iOS](../purchases/ios.md#pro-features) або [Android](../purchases/android.md#pro-features).
-
-- Перейдіть до [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
-    - **Android**: прокрутіть до розділу *<Translate android="true" ids="srtm_plugin_name"/> → <Translate android="true" ids="relief_3d"/>*.
-    - **iOS**: прокрутіть до розділу *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
-
-- Завантажте [Карту рельєфу (3D)](#3d-relief-maps) регіонів, якщо необхідно.
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-| Шар векторної карти | Шар растрової карти |
-| ------ | ------- |
-| ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
-
-</TabItem>  
-
-<TabItem value="ios" label="iOS">
-
-| Шар векторної карти | Шар растрової карти |
-| ------ | ------- |
-| ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
-
-</TabItem>
-
-</Tabs>
-
-
-### Вертикальне перебільшення {#vertical-exaggeration}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Вертикальне перебільшення*
-
-![Вертикальне перебільшення Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
-
-</TabItem>  
-
-<TabItem value="ios" label="iOS">
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Вертикальне перебільшення*
-
-![Вертикальне перебільшення iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
-
-</TabItem>
-
-</Tabs>
-
-*Вертикальне перебільшення* — це спеціальний коефіцієнт для *3D-рельєфу*. Ви можете змінювати масштаб (*Вертикальне перебільшення*) від x1 до x3. Ця функція дозволяє переглядати більш плавні контури рельєфу з підвищеною деталізацією.
-
-
-### Відтінення пагорбів та 3D-рельєф {#hillshade-and-3d-relief}
-
-| Відтінення пагорбів | 3D-рельєф |
-|--------|---------|
-| ![Шари рельєфу](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Шари рельєфу](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-**Відтінення пагорбів** — це тип карти, який відображає рельєф за допомогою тіней, створюючи візуальне уявлення про схил та форму поверхні землі.  
-**3D-рельєф** — це функція, яка додає тривимірні ефекти до карти.  
-
-Якщо ви **вимкнете** *Відтінення пагорбів* і **увімкнете** *3D-рельєф*, тіні рельєфу все одно будуть видимі, оскільки *Відтінення пагорбів* і *3D-рельєф* — це два різні способи візуалізації карти. *Відтінення пагорбів* створює тіні на основі рельєфу і додає їх на карту, тоді як *3D-рельєф* моделює 3D-елементи для показу глибини та форми рельєфу, а тіні є частиною візуалізації. Ці функції можуть працювати паралельно, і вимкнення *Відтінення пагорбів* не впливає на те, як відображаються 3D-ефекти.  
-
-Коли **Відтінення пагорбів** **увімкнено**, зображення з тінями рельєфу виглядає більш детальним, темнішим і більш ступінчастим, ніж зображення *3D-рельєфу*. Пояснення полягає в тому, що *Відтінення пагорбів* підкреслює градієнти та контрасти рельєфу, створюючи більш різке та детальне зображення. Функція *3D-рельєф* надає карті більш плавний та згладжений вигляд, пом'якшуючи рельєф і потенційно зменшуючи видимість деяких дрібних деталей.
-
-
-## Комбінування типів шарів {#combine-layer-types}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Лінії контуру в поєднанні з відтіненням пагорбів](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Лінії контуру в поєднанні з ухилом](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
-
-</TabItem>  
-
-<TabItem value="ios" label="iOS">
-
-![Лінії контуру в поєднанні з відтіненням пагорбів в iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Лінії контуру в поєднанні з ухилом в iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
-
-</TabItem>
-
-</Tabs>
-
-OsmAnd дозволяє комбінувати кілька типів шарів карти для більш наочного відображення.
-
-- Поєднання **ліній контуру** та **відтінення пагорбів** є оптимальним для візуальної та числової оцінки крутизни гірських схилів.
-- Поєднання шарів **ліній контуру** та **ухилу** найкраще підходить для оцінки крутизни схилу та знаходження точок з однаковою висотою.
-- Поєднання шарів **3D-рельєфу** та **відтінення пагорбів** дозволяє отримати більш реалістичне та візуальне уявлення про місцевість, рельєф та деталі ландшафту. Це поєднання особливо підходить для гірської та горбистої місцевості.
-
-
-## Пов'язані статті {#related-articles}
-
-- [Взаємодія з картою](../../user/map/interact-with-map.md)
-- [Загальні налаштування](../../user/personal/global-settings.md)
-- [Векторні карти (Стилі карти)](../../user/map/vector-maps.md)
-
-### Поширені проблеми та їх вирішення {#common-issues-and-solutions}
-
-<!-- Troubleshooting Steps-->
-
-1. Як відновити покупку плагіна "Топографія" (раніше "Лінії контуру"). [(перевірити)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
-2. Лінії контуру, дані про висоту або 3D-рельєф не відображаються. [(перевірити)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. Карта автоматично перемикається в 3D-режим під час навігації:  
-    - Переконайтеся, що кнопка **3D-режим** вимкнена в **Меню → Налаштувати екран → Кнопки → Кнопки за замовчуванням**.  
-    - Перевірте, чи увімкнені будь-які функції рельєфу в **Меню → Налаштувати карту → Топографія**, які можуть викликати 3D-ефект.

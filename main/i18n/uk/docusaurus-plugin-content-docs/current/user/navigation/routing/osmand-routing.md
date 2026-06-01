@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  Про маршрутизацію в OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -75,6 +75,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Виберіть тип дороги в розділі [Параметри маршруту](../guidance/navigation-settings.md#route-parameters) у [Налаштуваннях навігації](../guidance/navigation-settings.md). Опис цього налаштування наведено в статтях про налаштування [Типів маршрутизації](#routing-types). Як приклад, дивіться опис типу маршрутизації [Автомобіль / Вантажівка / Мотоцикл](../routing/car-based-routing.md#route-parameters---car).
 - Ви також можете вибрати конкретні дороги, які не будуть використовуватися для маршрутизації, за допомогою опції *[Уникати доріг](../../map/map-context-menu.md#avoid-road)* через *контекстне меню мапи* або за допомогою *[меню Уникати доріг](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Коли в налаштуваннях уникнення вибрано тип дороги (наприклад, *Ґрунтові дороги*), OsmAnd суворо виключає такі дороги з розрахунку маршруту. Навіть дуже короткі ділянки (наприклад, 100–200 метрів ґрунтової дороги) повністю уникаються і за жодних обставин не включаються до маршруту. В результаті маршрути можуть стати значно довшими, якщо уникнення таких доріг потребує об’їзду.
+
+Якщо опцію уникнення вимкнено, ці дороги все одно дозволені, але їм може бути призначено нижчий пріоритет (штраф), тобто OsmAnd віддаватиме перевагу кращим дорогам, коли це можливо, але все ж може включати їх за потреби.
 
 :::note
 
