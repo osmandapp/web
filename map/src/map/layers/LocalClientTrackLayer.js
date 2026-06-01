@@ -10,11 +10,8 @@ import TrackLayerProvider, {
     TEMP_LAYER_FLAG,
     WPT_SIMPLIFY_THRESHOLD,
 } from '../util/TrackLayerProvider';
-import TracksManager, {
-    fitBoundsOptions,
-    getResolvedPointsGroups,
-    isEmptyTrack,
-} from '../../manager/track/TracksManager';
+import TracksManager, { getResolvedPointsGroups, isEmptyTrack } from '../../manager/track/TracksManager';
+import { applyZoomToFit, addLayerToMap } from '../util/MapManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import EditablePolyline from '../util/creator/EditablePolyline';
@@ -40,7 +37,6 @@ import {
     deleteOldLayers,
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
-import { addLayerToMap } from '../util/MapManager';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
@@ -77,6 +73,7 @@ export default function LocalClientTrackLayer() {
 
     const [isDragOver, setIsDragOver] = useState(false);
     const dragCounterRef = useRef(0);
+    const pendingZoomRef = useRef(false);
 
     useEffect(() => {
         const container = map.getContainer();
@@ -98,9 +95,7 @@ export default function LocalClientTrackLayer() {
         };
         const onDrop = (e) => {
             e.preventDefault();
-            const files = Array.from(e.dataTransfer?.files || []).filter((f) =>
-                f.name.toLowerCase().endsWith('.gpx')
-            );
+            const files = Array.from(e.dataTransfer?.files || []).filter((f) => f.name.toLowerCase().endsWith('.gpx'));
             dragCounterRef.current = 0;
             setIsDragOver(false);
             if (files.length > 0) importGpxFiles(files);
@@ -512,12 +507,10 @@ export default function LocalClientTrackLayer() {
         });
         if (layer) {
             if (fitBounds) {
-                if (!isEmpty(layer.getBounds())) {
-                    map.fitBounds(layer.getBounds(), fitBoundsOptions(mtx));
-                }
+                pendingZoomRef.current = true;
             }
             layer.on('click', () => {
-                if (!ctx.createTrack || !ctx.createTrack.enable) {
+                if (!ctx.createTrack?.enable) {
                     ctx.setCreateTrack({
                         enable: true, // start-editor
                         edit: true,
@@ -541,7 +534,7 @@ export default function LocalClientTrackLayer() {
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer.getBounds(), fitBoundsOptions(mtx));
+            applyZoomToFit({ map, mtx, bounds: currLayer.layer.getBounds() });
             ctxTrack.zoom = false;
             ctx.setSelectedGpxFile({ ...ctxTrack });
         }
@@ -878,7 +871,9 @@ export default function LocalClientTrackLayer() {
             geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
 
-        ctx.setSelectedGpxFile({ ...ctxTrack });
+        const zoom = pendingZoomRef.current;
+        if (zoom) pendingZoomRef.current = false;
+        ctx.setSelectedGpxFile({ ...ctxTrack, zoom });
 
         addRegisteredLayers(ctxTrack.layers, setRegisteredLayers);
 

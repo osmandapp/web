@@ -18,6 +18,7 @@ import {
     POI_URL,
     STOP_URL,
     isTravelPath,
+    liveHash,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import GlobalAlert from './components/GlobalAlert';
@@ -114,7 +115,7 @@ const GlobalFrame = () => {
         const normalizedSearch = createUrlParams(params);
 
         if (normalizedSearch !== currentSearch) {
-            const newUrl = location.pathname + normalizedSearch + (location.hash || '');
+            const newUrl = location.pathname + normalizedSearch + liveHash();
             window.history.replaceState(window.history.state, '', newUrl);
         }
     }, [location.search]);
@@ -139,9 +140,9 @@ const GlobalFrame = () => {
             }
             if (location.pathname !== MAIN_URL_WITH_SLASH) {
                 if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
-                    navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
+                    navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + liveHash());
                 } else {
-                    navigate(MAIN_URL_WITH_SLASH + location.hash);
+                    navigate(MAIN_URL_WITH_SLASH + liveHash());
                 }
             }
         }

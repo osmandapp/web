@@ -15,7 +15,7 @@ import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attac
 import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
 import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as SaveCloudIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
-import { HEADER_SIZE, PRICING_URL } from '../../manager/GlobalManager';
+import { HEADER_SIZE, PRICING_URL, liveHash } from '../../manager/GlobalManager';
 import { useNavigate, useLocation } from 'react-router-dom';
 import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
@@ -243,7 +243,7 @@ export default function NavigationMenu() {
         if (!ltx.loginUser || ltx.accountInfo?.account === FREE_ACCOUNT) {
             navigate({
                 pathname: '/' + PRICING_URL,
-                hash: location.hash,
+                hash: liveHash(),
             });
             return;
         }

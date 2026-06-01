@@ -84,6 +84,7 @@ import {
     EXPLORE_URL,
     POI_URL,
     MENU_IDS,
+    liveHash,
 } from '../manager/GlobalManager';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -185,7 +186,7 @@ export default function MainMenu({
         }
 
         const origin = globalThis?.location?.origin ?? '';
-        const targetUrl = new URL(item.url + location.hash, origin).toString();
+        const targetUrl = new URL(item.url + liveHash(), origin).toString();
         globalThis.open(targetUrl, '_blank', 'noopener,noreferrer');
     };
 
@@ -515,7 +516,7 @@ export default function MainMenu({
             (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
         );
         if (menuByUrl) {
-            lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + location.hash;
+            lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + liveHash();
         }
     }, [location.pathname, location.search, location.hash]);
 
@@ -553,7 +554,7 @@ export default function MainMenu({
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
                     search: `?${FORECAST_TYPE_PARAM}=${type}&${FORECAST_SOURCE_PARAM}=${wtx.weatherType}`,
-                    hash: location.hash,
+                    hash: liveHash(),
                 });
                 return;
             }
@@ -585,7 +586,7 @@ export default function MainMenu({
                 }
             }
             if (ctx.poiCatMenu) {
-                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + location.hash);
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + liveHash());
                 return;
             }
             if (ctx.searchQuery) {
@@ -594,7 +595,7 @@ export default function MainMenu({
             }
 
             if (ctx.exploreMenu) {
-                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + location.hash);
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + liveHash());
                 return;
             }
         }
@@ -763,7 +764,7 @@ export default function MainMenu({
         }
         if (location.pathname.startsWith(item.url) && location.pathname !== item.url) {
             if (isFavoriteFromSearch(ctx) || isTrackFromSearch(ctx)) {
-                navigate(item.url + location.hash);
+                navigate(item.url + liveHash());
             }
         }
         let currentType;
@@ -891,14 +892,14 @@ export default function MainMenu({
             }
         }
 
-        const currentUrl = location.pathname + location.search + location.hash;
+        const currentUrl = location.pathname + location.search + liveHash();
         const navigateIfChanged = (targetUrl) => {
             if (targetUrl !== currentUrl) navigate(targetUrl);
         };
 
         if (isMain) {
             const pageType = params?.[MAIN_PAGE_TYPE] ?? '';
-            navigateIfChanged(MAIN_URL_WITH_SLASH + pageType + location.hash);
+            navigateIfChanged(MAIN_URL_WITH_SLASH + pageType + liveHash());
         } else if (menu) {
             if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && ctx.routeObject.getOption('route.map.zoom')) {
                 // auto navigation from the route (fitBounds)
@@ -917,7 +918,7 @@ export default function MainMenu({
                 targetUrl += location.search;
             }
 
-            navigateIfChanged(targetUrl + location.hash);
+            navigateIfChanged(targetUrl + liveHash());
         }
     }
 

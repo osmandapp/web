@@ -26,6 +26,7 @@ import {
     SHARE_FILE_MAIN_URL,
     SHARE_MENU_URL,
     TRACKS_URL,
+    liveHash,
 } from '../../manager/GlobalManager';
 import { isTrackFromSearch, navigateBackToSearchResults } from '../../manager/SearchManager';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
@@ -457,7 +458,7 @@ export default function InformationBlock({
 
         navigate({
             pathname: MAIN_URL_WITH_SLASH + trackType,
-            hash: location.hash,
+            hash: liveHash(),
         });
     }
 

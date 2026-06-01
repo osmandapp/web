@@ -14,7 +14,7 @@ import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_acti
 import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { useTranslation } from 'react-i18next';
 import { clearShowDetailsFlag } from '../../manager/WeatherManager';
-import { MAIN_URL_WITH_SLASH, WEATHER_URL } from '../../manager/GlobalManager';
+import { MAIN_URL_WITH_SLASH, WEATHER_URL, liveHash } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function WeatherHeader({ setShowInfoBlock = null, isDetails = false }) {
@@ -50,7 +50,7 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                             if (isDetails) {
                                 navigate({
                                     pathname: MAIN_URL_WITH_SLASH + WEATHER_URL,
-                                    hash: location.hash,
+                                    hash: liveHash(),
                                 });
                             } else {
                                 wtx.setWeatherDate(new Date());
