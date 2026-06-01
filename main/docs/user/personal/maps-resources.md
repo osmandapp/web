@@ -478,6 +478,8 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_u
 
 **Live Updates** provides frequent, incremental map updates through [subscription](../purchases/index.md) or is free for [OSM contributors](#free-for-osm-mappers). Updates occur every 15 minutes on OsmAnd servers and are downloadable hourly, daily, or weekly. These updates consume minimal storage — about 2-4% of the full map size per month.
 
+Live Updates are applied on top of the downloaded map and do not replace the full map file. As a result, the date shown for a map in the Local tab does not reflect Live Updates and may remain unchanged after they are applied. To download a newer version of the complete map, use Update map or Update all in the [Updates Menu](#updates-menu).
+
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
 -->
