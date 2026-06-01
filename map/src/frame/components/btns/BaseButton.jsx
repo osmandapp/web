@@ -1,5 +1,6 @@
 import { Button, IconButton, Tooltip } from '@mui/material';
 import React from 'react';
+import styles from './buttons.module.css';
 
 export default function BaseButton({
     action,
@@ -39,7 +40,7 @@ export default function BaseButton({
 
     return tooltipTitle ? (
         <Tooltip title={tooltipTitle} arrow placement={tooltipPlacement}>
-            {btn}
+            {disabled ? <span className={styles.disabledTooltipWrapper}>{btn}</span> : btn}
         </Tooltip>
     ) : (
         btn

@@ -19,7 +19,7 @@ export default function useLocalGpxImport() {
             mutateUploadedFiles((o) => delete o[file]);
             break; // process 1 file per 1 render
         }
-    }, [mutateUploadedFiles, uploadedFiles]);
+    }, [uploadedFiles]);
 
     const importGpxFiles = useCallback(
         (fileList) => {
