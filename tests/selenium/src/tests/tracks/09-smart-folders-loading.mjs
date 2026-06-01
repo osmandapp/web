@@ -67,7 +67,10 @@ async function renameSmartFolder(folderName, newName) {
         async () => {
             const input = await waitBy(By.id('se-rename-group-input'));
             await input.click();
-            await input.sendKeys(Key.chord(Key.CONTROL, 'a'));
+            const selectAllKey = process.platform === 'darwin'
+                ? Key.COMMAND  // macOS
+                : Key.CONTROL; // Windows, Linux
+            await input.sendKeys(Key.chord(selectAllKey, 'a'));
             await input.sendKeys(Key.DELETE);
             await input.sendKeys(newName);
             return true;
