@@ -404,6 +404,7 @@ select:focus {
 
 </div>
 
+<script src="/quiz-common.js"></script>
 <script>
 const questions = [
     {
@@ -517,6 +518,7 @@ const mascotContainer = document.getElementById("mascotContainer");
 const mascotResultContainer = document.getElementById("mascotResultContainer");
 
 function startQuiz() {
+    quizTrack('3dbuildings/start');
     startScreen.style.display = "none";
     quizHeader.style.display = "flex";
     progressWrapper.style.display = "block";
@@ -761,7 +763,8 @@ function submitSequence(){
     showFeedback(correct,q.feedback);
 }
 
-function showFeedback(correct,text){
+function showFeedback(correct, text){
+    quizTrack('3dbuildings/q/' + (currentQuestion + 1) + '/' + (correct ? 'correct' : 'wrong'));
     const feedback = document.getElementById("feedback");
     feedback.className = correct ? "feedback correct" : "feedback wrong";
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -791,6 +794,7 @@ function showFeedback(correct,text){
 function nextQuestion(){
     currentQuestion++;
     if(currentQuestion >= questions.length){
+        quizTrack('3dbuildings/finish?score=' + score + '&total=' + questions.length);
         document.getElementById("quizHeader").style.display = "none";
         document.getElementById("quiz").style.display = "none";
         document.getElementById("resultScreen").style.display = "block";
