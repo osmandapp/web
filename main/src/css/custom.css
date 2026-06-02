@@ -216,3 +216,48 @@ ul.no-bullets {
   justify-content: center;
 }
 
+/* Birthday article language tabs */
+.birthday-lang-tabs {
+  max-width: 100%;
+}
+
+/* Case 1: className is applied to the Tabs wrapper */
+.birthday-lang-tabs .tabs,
+.birthday-lang-tabs > .tabs {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* Case 2: className is applied directly to the tabs element */
+.birthday-lang-tabs.tabs {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.birthday-lang-tabs .tabs__item,
+.birthday-lang-tabs.tabs .tabs__item {
+  flex: 0 0 auto !important;
+}
+
+.birthday-lang-tabs .tabs::-webkit-scrollbar,
+.birthday-lang-tabs.tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.birthday-lang-tabs .tabs::-webkit-scrollbar-thumb,
+.birthday-lang-tabs.tabs::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 6px;
+}
