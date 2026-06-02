@@ -522,13 +522,6 @@ body[dir="rtl"] .email-form input[type="email"] {
 
 <script src="/quiz-common.js"></script>
 <script>
-function trackBirthdayQuizEvent(path) {
-    if (typeof window.quizTrack === "function") {
-        window.quizTrack(path);
-    } else {
-        console.warn("quizTrack is not available. Event was not sent:", path);
-    }
-}
 
 const LANGUAGES = {
     en: "English",
@@ -4228,7 +4221,7 @@ async function startQuiz() {
     }
 
     registeredEmail = email;
-    trackBirthdayQuizEvent('birthday16/start');
+    quizTrack('birthday/start');
     emailError.style.display = "none";
     startScreen.style.display = "none";
     quizHeader.style.display = "flex";
@@ -4418,7 +4411,7 @@ function submitSequence(){
 }
 
 function showFeedback(correct,text){
-    trackBirthdayQuizEvent('birthday16/q/' + (currentQuestion + 1) + '/' + (correct ? 'correct' : 'wrong'));
+    quizTrack('birthday/q/' + (currentQuestion + 1) + '/' + (correct ? 'correct' : 'wrong'));
     const feedback = document.getElementById("feedback");
     feedback.className = correct ? "feedback correct" : "feedback wrong";
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -4526,7 +4519,7 @@ async function nextQuestion(){
 
         const isEligible = rewardMonths > 0;
 
-        trackBirthdayQuizEvent('birthday16/finish?score=' + score + '&total=' + questions.length + '&rewardMonths=' + rewardMonths + '&lang=' + encodeURIComponent(selectedLanguage));
+        quizTrack('birthday/finish?score=' + score + '&total=' + questions.length);
 
         const restartButton = document.querySelector("#resultScreen button.action-btn");
 
