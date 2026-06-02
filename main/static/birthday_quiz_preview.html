@@ -355,11 +355,20 @@ select:focus {
 
 .answer-warning {
     display: none;
-    margin-top: 10px;
+    margin: 14px 0 0 0;
+    padding: 12px 14px;
     color: #b42318;
+    background: #fdf2f2;
+    border: 1px solid #fecdca;
+    border-radius: 12px;
     font-size: 14px;
-    font-weight: 500;
-    text-align: center;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+}
+
+body[dir="rtl"] .answer-warning {
+    text-align: right;
 }
 
 .reward-box {
@@ -4264,6 +4273,7 @@ function renderQuestion(){
             </div>
             `;
         });
+        html += `<div class="answer-warning" id="answerWarning" role="alert" aria-live="polite">${t("selectAnswer")}</div>`;
         html += `<button class="action-btn" onclick="submitChoice()">${t("submitAnswer")}</button>`;
     }
 
@@ -4280,6 +4290,7 @@ function renderQuestion(){
             </div>
             `;
         });
+        html += `<div class="answer-warning" id="answerWarning" role="alert" aria-live="polite">${t("selectAnswer")}</div>`;
         html += `<button class="action-btn" onclick="submitMatching()">${t("submitAnswer")}</button>`;
     }
 
@@ -4299,10 +4310,10 @@ function renderQuestion(){
             </div>
             `;
         });
+        html += `<div class="answer-warning" id="answerWarning" role="alert" aria-live="polite">${t("selectAnswer")}</div>`;
         html += `<button class="action-btn" onclick="submitSequence()">${t("submitAnswer")}</button>`;
     }
 
-    html += `<div class="answer-warning" id="answerWarning">${t("selectAnswer")}</div>`;
     html += `<div id="feedback"></div>`;
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
@@ -4321,6 +4332,11 @@ function showAnswerWarning(){
     if(warning) {
         warning.textContent = t("selectAnswer");
         warning.style.display = "block";
+        warning.setAttribute("tabindex", "-1");
+        warning.focus({ preventScroll: true });
+        warning.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } else {
+        alert(t("selectAnswer"));
     }
     sendIframeHeight();
 }
@@ -4337,7 +4353,7 @@ function attachOptionEvents(type){
         });
     });
 
-    const selects = document.querySelectorAll("select");
+    const selects = quiz.querySelectorAll("select");
     selects.forEach(select=>{
         select.addEventListener("change", clearAnswerWarning);
     });
@@ -4360,7 +4376,7 @@ function submitChoice(){
 }
 
 function submitMatching(){
-    const selects = document.querySelectorAll("select");
+    const selects = quiz.querySelectorAll("select");
     let anyEmpty = false;
     let correct = true;
     selects.forEach(select=>{
