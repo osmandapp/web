@@ -221,6 +221,8 @@ The **Next turn** widget displays the distance and type of the [next turn maneuv
 
 ### Route Info {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Route information consists of:
 
 - [Estimated travel time](../widgets/nav-widgets.md#time-to-destination),
