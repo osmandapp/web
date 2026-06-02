@@ -229,6 +229,8 @@ Route information consists of:
 
 When enabled, **[the widget setting](#eta-next-stop)** (Route information) will show route details for the next stop ([the intermediate point](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
+Tap the **X** button next to the route information widget to stop navigation.
+
 
 ### Navigation Alerts {#navigation-alerts}
 
