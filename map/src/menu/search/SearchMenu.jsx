@@ -13,6 +13,7 @@ import {
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
     SEARCH_URL,
+    liveHash,
 } from '../../manager/GlobalManager';
 import { matchPath, useLocation, useNavigate } from 'react-router-dom';
 import PoiManager, {
@@ -229,12 +230,12 @@ export default function SearchMenu() {
 
     function openSearchByCategories() {
         ctx.setPoiCatMenu(true);
-        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + liveHash());
     }
 
     function openExploreMenu() {
         ctx.setExploreMenu(true);
-        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + liveHash());
     }
 
     return (

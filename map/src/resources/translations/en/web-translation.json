@@ -253,6 +253,7 @@
     "plan_route": "Plan route",
     "create_track": "Create track",
     "import_track": "Import track",
+    "drop_gpx_to_import": "Drop GPX file to import",
     "download_track": "Download track",
     "download_track_desc": "You can download the track with full data, including navigation instructions, or a simplified version suitable for use with other apps.",
     "download_track_full": "Full track data",

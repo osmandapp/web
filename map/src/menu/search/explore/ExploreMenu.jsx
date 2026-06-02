@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as FilterIcon } from '../../../assets/icons/ic_action_filter.svg';
 import { useTranslation } from 'react-i18next';
-import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
+import { MAIN_URL_WITH_SLASH, SEARCH_URL, liveHash } from '../../../manager/GlobalManager';
 import AppContext from '../../../context/AppContext';
 import Loading from '../../errors/Loading';
 import Empty from '../../errors/Empty';
@@ -33,7 +33,7 @@ export default function ExploreMenu() {
     const MAX_PLACES = 50;
 
     function close() {
-        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + liveHash());
         ctx.setLoadingContextMenu(false);
         ctx.setExploreMenu(false);
     }

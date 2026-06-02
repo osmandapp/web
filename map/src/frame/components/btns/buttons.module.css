@@ -225,6 +225,10 @@
     display: none !important;
 }
 
+.disabledTooltipWrapper {
+    display: contents;
+}
+
 .iconContainer {
     position: relative !important;
     width: 100% !important;
