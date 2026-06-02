@@ -23,7 +23,7 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 ### ¡Obtén OsmAnd Pro Gratis por 12 Meses!
 
-Como participante del **State of the Map Latam 2026**, eres elegible para una suscripción gratuita de 12 meses a OsmAnd Pro.
+Como participante del **State of the Map Colombia 2026**, eres elegible para una suscripción gratuita de 12 meses a OsmAnd Pro.
 
 **Para reclamar tu suscripción:**
 
@@ -52,7 +52,7 @@ ______________________________________________
 
 ### Get OsmAnd Pro Free for 12 Months!
 
-As a participant of **State of the Map Latam 2026**, you’re eligible for a free 12-month OsmAnd Pro subscription.
+As a participant of **State of the Map Colombia 2026**, you’re eligible for a free 12-month OsmAnd Pro subscription.
 
 To claim your subscription:
 
