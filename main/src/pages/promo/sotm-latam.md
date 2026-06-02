@@ -1,5 +1,5 @@
 ---
-title: OsmAnd Pro para SotM LatAm 2025
+title: OsmAnd Pro para SotM LatAm 2026
 ---
 
 import Tabs from '@theme/Tabs';
@@ -21,17 +21,17 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 ## Versión en español
 
-### ¡Obtén OsmAnd Pro Gratis por 3 Meses!
+### ¡Obtén OsmAnd Pro Gratis por 12 Meses!
 
-Como participante del **State of the Map Latam 2025**, eres elegible para una suscripción gratuita de 3 meses a OsmAnd Pro.
+Como participante del **State of the Map Latam 2026**, eres elegible para una suscripción gratuita de 12 meses a OsmAnd Pro.
 
 **Para reclamar tu suscripción:**
 
 1. Ingresa tu correo electrónico en el siguiente formulario:
 
-<RegisterUserPromoBlock promoKey='sotmlatam'/>
+<RegisterUserPromoBlock promoKey='sotmlatam26'/>
 
-2. Envíalo antes del **10 de septiembre de 2025** (la oferta expira).
+2. Envíalo antes del **10 de septiembre de 2026** (la oferta expira).
 
 **Manual completo** [AQUÍ](https://osmand.net/promo/manual#versión-en-español).
 
@@ -50,17 +50,17 @@ ______________________________________________
 
 ## English version
 
-### Get OsmAnd Pro Free for 3 Months!
+### Get OsmAnd Pro Free for 12 Months!
 
-As a participant of **State of the Map Latam 2025**, you’re eligible for a free 3-month OsmAnd Pro subscription.
+As a participant of **State of the Map Latam 2026**, you’re eligible for a free 12-month OsmAnd Pro subscription.
 
 To claim your subscription:
 
 1. Enter your email in the form below.
 
-<RegisterUserPromoBlock  promoKey='sotmlatam'/>
+<RegisterUserPromoBlock  promoKey='sotmlatam26'/>
 
-2. Submit before September 10, 2025 (offer expires).
+2. Submit before September 10, 2026 (offer expires).
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
