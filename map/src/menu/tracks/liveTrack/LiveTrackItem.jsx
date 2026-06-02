@@ -12,7 +12,14 @@ import LiveTrackItemActions from '../../actions/LiveTrackItemActions';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 
-export default function LiveTrackItem({ translation, isLastItem, removeTranslation }) {
+export default function LiveTrackItem({
+    translation,
+    isLastItem,
+    removeTranslation,
+    deleteTranslationForAll,
+    startSharing,
+    pauseSharing,
+}) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -20,6 +27,10 @@ export default function LiveTrackItem({ translation, isLastItem, removeTranslati
     const anchorEl = useRef(null);
 
     const [openActions, setOpenActions] = useState(false);
+
+    const isOwner = translation.isOwner === true;
+    const isSharing = ctx.myBroadcastTid === translation.id;
+    const isParticipant = isSharing && !isOwner;
 
     const participants = ctx.liveParticipants?.[translation.id];
     const participantCount = participants ? Object.values(participants).filter((p) => p.active !== false).length : 0;
@@ -33,9 +44,28 @@ export default function LiveTrackItem({ translation, isLastItem, removeTranslati
         navigate(`${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${params}`);
     }
 
-    function handleDelete() {
+    function handleRemoveBookmark() {
         setOpenActions(false);
         removeTranslation(translation.id);
+    }
+
+    function handleOwnerSharingAction() {
+        setOpenActions(false);
+        if (!isSharing || ctx.isMyBroadcastPaused) {
+            startSharing(translation.id);
+        } else {
+            pauseSharing();
+        }
+    }
+
+    function handleParticipantStop() {
+        setOpenActions(false);
+        pauseSharing();
+    }
+
+    function handleDeleteForAll() {
+        setOpenActions(false);
+        deleteTranslationForAll(translation.id);
     }
 
     return (
@@ -67,7 +97,17 @@ export default function LiveTrackItem({ translation, isLastItem, removeTranslati
                 open={openActions}
                 setOpen={setOpenActions}
                 anchorEl={anchorEl}
-                actions={<LiveTrackItemActions handleDelete={handleDelete} />}
+                actions={
+                    <LiveTrackItemActions
+                        isOwner={isOwner}
+                        isSharing={isSharing}
+                        isParticipant={isParticipant}
+                        handleOwnerSharingAction={handleOwnerSharingAction}
+                        handleParticipantStop={handleParticipantStop}
+                        handleRemoveBookmark={handleRemoveBookmark}
+                        handleDeleteForAll={handleDeleteForAll}
+                    />
+                }
             />
         </>
     );

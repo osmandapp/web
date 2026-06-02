@@ -201,6 +201,8 @@ export const AppContextProvider = (props) => {
     const [liveViewers, setLiveViewers] = useState({});
     const [selectedLiveTranslation, setSelectedLiveTranslation] = useState(null);
     const [followLiveLocation, setFollowLiveLocation] = useState(null);
+    const [myBroadcastTid, setMyBroadcastTid] = useState(null);
+    const [isMyBroadcastPaused, setIsMyBroadcastPaused] = useState(false);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -763,6 +765,10 @@ export const AppContextProvider = (props) => {
                 setSelectedLiveTranslation,
                 followLiveLocation,
                 setFollowLiveLocation,
+                myBroadcastTid,
+                setMyBroadcastTid,
+                isMyBroadcastPaused,
+                setIsMyBroadcastPaused,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,

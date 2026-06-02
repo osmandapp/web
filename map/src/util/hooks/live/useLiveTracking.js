@@ -9,7 +9,34 @@ export default function useLiveTracking() {
     const clientRef = useRef(null);
     const subscribedRef = useRef(new Set());
 
+    // Stores { onSuccess, onError } for a pending /create request.
+    const pendingCreateRef = useRef(null);
+
     const [connected, setConnected] = useState(false);
+
+    // Manages geolocation watch: starts when myBroadcastTid is set and not paused, stops otherwise.
+    useEffect(() => {
+        if (!ctx.myBroadcastTid || ctx.isMyBroadcastPaused || !navigator.geolocation) return;
+
+        const watchId = navigator.geolocation.watchPosition(
+            (position) => {
+                const { latitude, longitude, altitude, speed, accuracy } = position.coords;
+                const params = new URLSearchParams({
+                    lat: latitude,
+                    lon: longitude,
+                    timestamp: position.timestamp,
+                });
+                if (speed != null) params.set('speed', speed);
+                if (altitude != null) params.set('altitude', altitude);
+                if (accuracy != null) params.set('hdop', accuracy);
+                fetch(`/mapapi/translation/msg?${params}`).catch(() => {});
+            },
+            () => {},
+            { enableHighAccuracy: true, maximumAge: 5000 }
+        );
+
+        return () => navigator.geolocation.clearWatch(watchId);
+    }, [ctx.myBroadcastTid, ctx.isMyBroadcastPaused]);
 
     // Prepends a new location point to the participant's history.
     // Newest point is always at index 0.
@@ -113,6 +140,20 @@ export default function useLiveTracking() {
                         delete byTranslation[msg.content];
                         return { ...prev, [translationId]: byTranslation };
                     });
+                } else if (msg.type === 'DELETE') {
+                    // Owner deleted the translation — remove it from all client state.
+                    ctx.setLiveTranslations((prev) => {
+                        const updated = prev.filter((t) => t.id !== translationId);
+                        localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
+                        return updated;
+                    });
+                    ctx.setLiveParticipants((prev) => {
+                        const next = { ...prev };
+                        delete next[translationId];
+                        return next;
+                    });
+                    ctx.setSelectedLiveTranslation((sel) => (sel?.id === translationId ? null : sel));
+                    subscribedRef.current.delete(translationId);
                 }
             });
 
@@ -171,6 +212,107 @@ export default function useLiveTracking() {
         ]
     );
 
+    // Starts (or resumes) sharing for the given translation.
+    // Also stops sharing any previously active translation.
+    const startSharing = useCallback(
+        (translationId) => {
+            if (ctx.myBroadcastTid && ctx.myBroadcastTid !== translationId) {
+                clientRef.current?.publish({
+                    destination: `/app/translation/${ctx.myBroadcastTid}/stopSharing`,
+                    body: '{}',
+                });
+            }
+            clientRef.current?.publish({
+                destination: `/app/translation/${translationId}/startSharing`,
+                body: '{}',
+            });
+            ctx.setMyBroadcastTid(translationId);
+            ctx.setIsMyBroadcastPaused(false);
+        },
+        [ctx.myBroadcastTid, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
+    );
+
+    // Pauses sharing: notifies server and stops geo broadcast, but keeps myBroadcastTid
+    // so the owner can resume. Also used by participants to stop sharing their location.
+    const pauseSharing = useCallback(() => {
+        if (ctx.myBroadcastTid) {
+            clientRef.current?.publish({
+                destination: `/app/translation/${ctx.myBroadcastTid}/stopSharing`,
+                body: '{}',
+            });
+        }
+        ctx.setIsMyBroadcastPaused(true);
+    }, [ctx.myBroadcastTid, ctx.setIsMyBroadcastPaused]);
+
+    // Creates a new translation on the server, saves it to the list, starts
+    // sharing the user's location, and calls onCreated(translation).
+    // onGeoError(errorKey) is called if geolocation is denied or unavailable.
+    const createTranslation = useCallback(
+        (name, onCreated, onGeoError, onCreateError) => {
+            // Stop any active sharing before creating a new translation.
+            if (ctx.myBroadcastTid) {
+                clientRef.current?.publish({
+                    destination: `/app/translation/${ctx.myBroadcastTid}/stopSharing`,
+                    body: '{}',
+                });
+                ctx.setMyBroadcastTid(null);
+                ctx.setIsMyBroadcastPaused(false);
+            }
+
+            pendingCreateRef.current = {
+                onSuccess: (id) => {
+                    const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
+                    // isOwner: true marks this client as the creator of this translation.
+                    const newTranslation = { id, name: autoName, isOwner: true };
+                    const updated = [...ctx.liveTranslations, newTranslation];
+                    ctx.setLiveTranslations(updated);
+                    localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
+                    ctx.setSelectedLiveTranslation(newTranslation);
+                    const client = clientRef.current;
+                    if (client?.connected) {
+                        subscribeToTranslation(client, id);
+                    }
+                    // Set sharing state — geo watch starts automatically via useEffect.
+                    ctx.setMyBroadcastTid(id);
+                    ctx.setIsMyBroadcastPaused(false);
+                    clientRef.current?.publish({
+                        destination: `/app/translation/${id}/startSharing`,
+                        body: '{}',
+                    });
+                    onCreated?.(newTranslation);
+                },
+                onError: onCreateError,
+            };
+
+            clientRef.current?.publish({ destination: '/app/translation/create', body: '{}' });
+        },
+        [
+            ctx.myBroadcastTid,
+            ctx.setMyBroadcastTid,
+            ctx.setIsMyBroadcastPaused,
+            ctx.liveTranslations,
+            ctx.setLiveTranslations,
+            ctx.setSelectedLiveTranslation,
+            subscribeToTranslation,
+        ]
+    );
+
+    // Deletes the translation for all viewers. Only works if the current user is the owner.
+    const deleteTranslationForAll = useCallback(
+        (id) => {
+            if (ctx.myBroadcastTid === id) {
+                clientRef.current?.publish({
+                    destination: `/app/translation/${id}/stopSharing`,
+                    body: '{}',
+                });
+                ctx.setMyBroadcastTid(null);
+                ctx.setIsMyBroadcastPaused(false);
+            }
+            clientRef.current?.publish({ destination: `/app/translation/${id}/delete`, body: '{}' });
+        },
+        [ctx.myBroadcastTid, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
+    );
+
     // Connect once on mount
     useEffect(() => {
         const client = new Client({
@@ -178,10 +320,21 @@ export default function useLiveTracking() {
             reconnectDelay: 5000,
             onConnect: () => {
                 // Subscribe to private queue to receive responses to /load (history snapshot)
+                // and to /create (new translation confirmation).
                 client.subscribe('/user/queue/updates', (message) => {
                     const msg = JSON.parse(message.body);
                     if (msg.type === 'TRANSLATION' && msg.data?.id) {
-                        handleMetadata(msg.data.id, msg.data);
+                        if (pendingCreateRef.current && msg.data.shareLocations == null) {
+                            // Response to /create — fire the callback and clear it.
+                            pendingCreateRef.current.onSuccess(msg.data.id);
+                            pendingCreateRef.current = null;
+                        } else {
+                            handleMetadata(msg.data.id, msg.data);
+                        }
+                    } else if (msg.type === 'ERROR' && pendingCreateRef.current) {
+                        // Server rejected /create (e.g. not authenticated).
+                        pendingCreateRef.current.onError?.(msg.data);
+                        pendingCreateRef.current = null;
                     }
                 });
                 setConnected(true);
@@ -212,5 +365,12 @@ export default function useLiveTracking() {
         }
     }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation]);
 
-    return { addTranslation, removeTranslation };
+    return {
+        addTranslation,
+        removeTranslation,
+        createTranslation,
+        deleteTranslationForAll,
+        startSharing,
+        pauseSharing,
+    };
 }

@@ -160,6 +160,27 @@
     border-radius: 50%;
     flex-shrink: 0;
 }
+.liveTrackDialogContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 300px;
+    min-height: 160px;
+    padding-top: 8px;
+    overflow: visible;
+}
+.liveTrackSliderBox {
+    padding: 0 8px;
+}
+.liveTrackList {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.liveTrackDurationLabel {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    margin-bottom: 4px !important;
+}
 
 .menuButtonContainer {
     position: absolute;
