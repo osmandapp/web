@@ -16,7 +16,7 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
-![SOTM](@site/static/img/promo/sotmlatam/sotmlatam.png)
+![SOTM](@site/static/img/promo/sotmlatam/sotm.jpg)
 
 
 ## Versión en español
