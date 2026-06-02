@@ -216,48 +216,45 @@ ul.no-bullets {
   justify-content: center;
 }
 
-/* Birthday article language tabs */
-.birthday-lang-tabs {
-  max-width: 100%;
+
+/* Birthday article language dropdown */
+.birthday-language-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 360px;
+  margin: 0 0 24px 0;
+  padding: 12px 14px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
 }
 
-/* Case 1: className is applied to the Tabs wrapper */
-.birthday-lang-tabs .tabs,
-.birthday-lang-tabs > .tabs {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  white-space: nowrap !important;
-  max-width: 100% !important;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+.birthday-language-select label {
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
 }
 
-/* Case 2: className is applied directly to the tabs element */
-.birthday-lang-tabs.tabs {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  white-space: nowrap !important;
-  max-width: 100% !important;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+.birthday-language-select select {
+  width: 100%;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 15px;
 }
 
-.birthday-lang-tabs .tabs__item,
-.birthday-lang-tabs.tabs .tabs__item {
-  flex: 0 0 auto !important;
-}
+@media (max-width: 480px) {
+  .birthday-language-select {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 100%;
+  }
 
-.birthday-lang-tabs .tabs::-webkit-scrollbar,
-.birthday-lang-tabs.tabs::-webkit-scrollbar {
-  height: 6px;
-}
-
-.birthday-lang-tabs .tabs::-webkit-scrollbar-thumb,
-.birthday-lang-tabs.tabs::-webkit-scrollbar-thumb {
-  background: #d0d0d0;
-  border-radius: 6px;
+  .birthday-language-select select {
+    min-width: 0;
+  }
 }
