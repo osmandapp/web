@@ -79,9 +79,9 @@ Tracks are displayed only if the Smart Folder configuration is supported on the 
 
 Smart Folder synchronization may vary depending on the platform and sync configuration. For the most consistent results, ensure that Cloud sync is enabled and up to date on all devices.
 
-In the three-dot menu (⋮), you can download the Smart Folder as an OBF collection.
+The three-dot menu (⋮) provides additional actions for the Smart Folder. You can *Download as OSF*, *Download as OBF collection*, *Rename*, or *Delete* the folder.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud Tracks {#cloud-tracks}
