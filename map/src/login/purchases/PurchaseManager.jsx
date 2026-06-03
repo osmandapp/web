@@ -34,6 +34,12 @@ const storeMap = {
 };
 
 export function getStatus(state, t = null) {
+    if (!state || state === 'undefined') {
+        if (t === null) {
+            return null;
+        }
+        return t('web:unknown_state');
+    }
     if (state === 'cancelled' || state === 'in_grace_period') {
         state = 'active';
     }

@@ -101,7 +101,8 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
         }
-        const status = ltx.accountInfo.state ? getStatus(ltx.accountInfo.state, t) + ' · ' : '';
+        const resolvedStatus = getStatus(ltx.accountInfo.state, t);
+        const status = resolvedStatus ? resolvedStatus + ' · ' : '';
         const type = getAccountType({ account: ltx.accountInfo.account, name: ltx.accountInfo.name }) || '';
         return status + type;
     };
