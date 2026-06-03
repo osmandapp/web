@@ -438,6 +438,9 @@
     "live_track_delete_for_all": "Delete translation for all",
     "live_track_stop_sharing": "Stop sharing my location",
     "live_track_start_sharing": "Start sharing my location",
+    "live_track_copy_share_link": "Copy share link",
+    "live_track_link_copied": "Link copied",
+    "live_track_key_gen_error": "Failed to generate encryption key. Please try again.",
     "shared_string_flat": "Flat",
     "shared_string_no_data": "No data"
 }

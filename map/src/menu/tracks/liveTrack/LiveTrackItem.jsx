@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../../../context/AppContext';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
+import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
 import styles from '../../trackfavmenu.module.css';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
@@ -68,6 +69,12 @@ export default function LiveTrackItem({
         deleteTranslationForAll(translation.id);
     }
 
+    function handleCopyShareLink() {
+        setOpenActions(false);
+        const url = buildLiveTrackShareUrl(translation);
+        if (url) navigator.clipboard.writeText(url).catch(() => {});
+    }
+
     return (
         <>
             <MenuItem
@@ -106,6 +113,8 @@ export default function LiveTrackItem({
                         handleParticipantStop={handleParticipantStop}
                         handleRemoveBookmark={handleRemoveBookmark}
                         handleDeleteForAll={handleDeleteForAll}
+                        handleCopyShareLink={handleCopyShareLink}
+                        hasShareLink={!!translation.key}
                     />
                 }
             />

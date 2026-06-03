@@ -37,6 +37,12 @@
  */
 
 import { Client } from '@stomp/stompjs';
+import {
+    generateTranslationKey,
+    computeTranslationId,
+    encryptLocation,
+    decryptLocation,
+} from '../util/livetracks/liveTrackCrypto';
 
 function movePoint(lat, lon, distanceMeters, bearingDeg) {
     const R = 6371000;
@@ -89,10 +95,12 @@ export function start(opts = {}) {
     let currentLon = options.lon;
     let currentBearing = options.bearing;
     let translationId = options.tid;
+    let encKey = opts.key ?? null;
     let intervalHandle = null;
     let pointCount = 0;
     let paused = false;
     let started = false;
+    let pendingConfirmation = false;
 
     return new Promise((resolve) => {
         const client = new Client({
@@ -109,15 +117,18 @@ export function start(opts = {}) {
 
                 client.subscribe('/user/queue/updates', (message) => {
                     const msg = JSON.parse(message.body);
-
-                    if (msg.type === 'TRANSLATION' && msg.data?.id && !translationId) {
-                        translationId = msg.data.id;
-                        console.log('%c📍 Translation ready!', 'color: blue; font-weight: bold');
-                        console.log(`   tid: ${translationId}`);
-                        console.log(
-                            `   Share URL: ${globalThis.location.origin}/map/live/?tid=${translationId}&name=${encodeURIComponent(options.alias)}`
-                        );
-                        subscribeAndSimulate(translationId);
+                    if (msg.type === 'TRANSLATION' && msg.data?.id) {
+                        if (pendingConfirmation) {
+                            pendingConfirmation = false;
+                            console.log('%c📍 Translation ready!', 'color: blue; font-weight: bold');
+                            console.log(`   tid: ${translationId}`);
+                            const params = new URLSearchParams({ tid: translationId });
+                            if (options.alias) params.set('name', options.alias);
+                            const shareUrl = `${globalThis.location.origin}/map/live/?${params}#${encKey}`;
+                            console.log('   Share URL (expand to copy):', { url: shareUrl });
+                            console.log(`   Private key: ${encKey}`);
+                            subscribeAndSimulate(translationId);
+                        }
                     }
 
                     if (msg.type === 'USER_INFO') {
@@ -135,8 +146,21 @@ export function start(opts = {}) {
                     console.log(`🔗 Joining translation: ${options.tid}`);
                     subscribeAndSimulate(options.tid);
                 } else {
-                    console.log('📡 Creating new translation...');
-                    client.publish({ destination: '/app/translation/create', body: '{}' });
+                    console.log('📡 Creating new encrypted translation...');
+                    generateTranslationKey()
+                        .then((key) => {
+                            encKey = key;
+                            return computeTranslationId(key);
+                        })
+                        .then((tid) => {
+                            translationId = tid;
+                            pendingConfirmation = true;
+                            client.publish({
+                                destination: '/app/translation/create',
+                                body: JSON.stringify({ translationId: tid }),
+                            });
+                        })
+                        .catch((err) => console.error('❌ Key generation failed:', err));
                 }
             },
 
@@ -163,14 +187,19 @@ export function start(opts = {}) {
                 const ele = getEle();
                 pointCount++;
 
-                const params = new URLSearchParams({
+                if (!encKey) return;
+                const locationData = {
                     lat: currentLat,
                     lon: currentLon,
-                    timestamp: Date.now(),
+                    time: Date.now(),
                     speed: speedVariation,
-                    altitude: ele,
-                });
-                fetch(`/mapapi/translation/msg?${params}`).catch(() => {});
+                    ele,
+                };
+                encryptLocation(encKey, locationData)
+                    .then((encData) => {
+                        fetch(`/mapapi/translation/msg?encryptedData=${encodeURIComponent(encData)}`).catch(() => {});
+                    })
+                    .catch(() => {});
 
                 if (options.maxPoints > 0 && pointCount >= options.maxPoints) {
                     paused = true;
@@ -186,13 +215,22 @@ export function start(opts = {}) {
             client.subscribe(`/topic/translation/${tid}`, (message) => {
                 const msg = JSON.parse(message.body);
                 if (msg.type === 'LOCATION') {
+                    const encryptedData = msg.content?.encryptedData;
                     const pt = msg.content?.point;
-                    if (pt) {
-                        const spd = Number.isFinite(pt.speed) ? (pt.speed * 3.6).toFixed(1) + 'km/h' : '-';
-                        const ele = Number.isFinite(pt.ele) ? pt.ele + 'm' : '-';
+                    function logPoint(p) {
+                        if (!p) return;
+                        const spd = Number.isFinite(p.speed) ? (p.speed * 3.6).toFixed(1) + 'km/h' : '-';
+                        const ele = Number.isFinite(p.ele) ? p.ele + 'm' : '-';
                         console.log(
-                            `📍 ${msg.sender}: lat=${pt.lat?.toFixed(5)} lon=${pt.lon?.toFixed(5)} spd=${spd} ele=${ele}`
+                            `📍 ${msg.sender}: lat=${p.lat?.toFixed(5)} lon=${p.lon?.toFixed(5)} spd=${spd} ele=${ele}`
                         );
+                    }
+                    if (encryptedData && encKey) {
+                        decryptLocation(encKey, encryptedData)
+                            .then(logPoint)
+                            .catch(() => {});
+                    } else if (pt) {
+                        logPoint(pt);
                     }
                 }
                 if (msg.type === 'JOIN') {

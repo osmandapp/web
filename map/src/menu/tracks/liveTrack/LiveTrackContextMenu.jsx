@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Icon, IconButton, ListItemText, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../../../context/AppContext';
 import { HEADER_SIZE, LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
+import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
+import { ReactComponent as ShareLinkIcon } from '../../../assets/icons/ic_action_link.svg';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { getDistance } from '../../../util/Utils';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
@@ -34,6 +36,7 @@ export default function LiveTrackContextMenu({ addTranslation }) {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [, height] = useWindowSize();
+    const [linkCopied, setLinkCopied] = useState(false);
 
     const translation = ctx.selectedLiveTranslation;
     const participants = translation ? (ctx.liveParticipants?.[translation.id] ?? {}) : {};
@@ -44,6 +47,12 @@ export default function LiveTrackContextMenu({ addTranslation }) {
     function handleBack() {
         ctx.setSelectedLiveTranslation(null);
         navigate(MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL);
+    }
+
+    function handleCopyShareLink() {
+        const url = buildLiveTrackShareUrl(translation);
+        if (!url) return;
+        navigator.clipboard.writeText(url).then(() => setLinkCopied(true));
     }
 
     return (
@@ -57,16 +66,29 @@ export default function LiveTrackContextMenu({ addTranslation }) {
                 onClose={handleBack}
                 showBackButton={true}
                 rightContent={
-                    !ctx.liveTranslations.some((t) => t.id === translation?.id) && (
-                        <Tooltip title={t('web:live_track_bookmark')} arrow placement="bottom">
-                            <IconButton
-                                className={trackFavStyles.sortIcon}
-                                onClick={() => addTranslation(translation.id, translation.name)}
+                    <>
+                        {translation?.isOwner && translation?.key && (
+                            <Tooltip
+                                title={t(linkCopied ? 'web:live_track_link_copied' : 'web:live_track_copy_share_link')}
+                                arrow
+                                placement="bottom"
                             >
-                                <FolderAddIcon />
-                            </IconButton>
-                        </Tooltip>
-                    )
+                                <IconButton className={trackFavStyles.sortIcon} onClick={handleCopyShareLink}>
+                                    <ShareLinkIcon />
+                                </IconButton>
+                            </Tooltip>
+                        )}
+                        {!ctx.liveTranslations.some((t) => t.id === translation?.id) && (
+                            <Tooltip title={t('web:live_track_bookmark')} arrow placement="bottom">
+                                <IconButton
+                                    className={trackFavStyles.sortIcon}
+                                    onClick={() => addTranslation(translation.id, translation.name, translation.key)}
+                                >
+                                    <FolderAddIcon />
+                                </IconButton>
+                            </Tooltip>
+                        )}
+                    </>
                 }
             />
             {participantList.length > 0 && (

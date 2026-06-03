@@ -17,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/ic_action_copy.svg';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
+import { generateTranslationKey, computeTranslationId } from '../../../util/livetracks/liveTrackCrypto';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import styles from '../../trackfavmenu.module.css';
 
@@ -28,12 +29,6 @@ function durationLabel(value, t) {
     if (value === 4) return t('web:live_track_duration_4h');
     if (value === 8) return t('web:live_track_duration_8h');
     return t('web:live_track_duration_24h');
-}
-
-function generateKey() {
-    return Array.from(crypto.getRandomValues(new Uint8Array(16)))
-        .map((b) => b.toString(16).padStart(2, '0'))
-        .join('');
 }
 
 export default function CreateLiveTrackDialog({ open, onClose, createTranslation }) {
@@ -78,16 +73,28 @@ export default function CreateLiveTrackDialog({ open, onClose, createTranslation
         }
 
         setCreating(true);
-        const key = generateKey();
+
+        let key, translationId;
+        try {
+            key = await generateTranslationKey();
+            translationId = await computeTranslationId(key);
+        } catch (_) {
+            setCreateError(t('web:live_track_key_gen_error'));
+            setCreating(false);
+            return;
+        }
+
         createTranslation(
+            translationId,
+            key,
             name.trim() || null,
             duration,
             (translation) => {
-                const urlParams = new URLSearchParams({ tid: translation.id, key });
+                const urlParams = new URLSearchParams({ tid: translation.id });
                 if (translation.name) {
                     urlParams.set('name', translation.name);
                 }
-                setShareUrl(`${window.location.origin}/map/live/?${urlParams}`);
+                setShareUrl(`${globalThis.location.origin}/map/live/?${urlParams}#${key}`);
                 setCreating(false);
                 navigate(
                     `${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?tid=${translation.id}&name=${encodeURIComponent(translation.name)}`
