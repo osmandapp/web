@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -68,16 +68,55 @@ De Details-weergave biedt informatie die is gekoppeld aan de geselecteerde plaat
 
 ## Favorietenacties {#favorites-actions}
 
-### Favoriet toevoegen / bewerken {#add--edit-favorite}
-
 [Om toe te voegen](../personal/favorites.md#manage-favorites) een nieuw favorietpunt, klik je met de rechtermuisknop op het scherm. 
 
 Om een bestaande favoriet te bewerken, klik je op het favorietpunt direct op de kaart of selecteer je het uit een favorietenmap. Dit opent het Details-paneel, waar de Bewerk-actie beschikbaar is. Bewerken kan ook worden gestart vanuit het driepuntmenu (⋮) naast de favoriet in de Favorietenlijst.
 
-De bewerkingsinterface laat je de hoofdeigenschappen van de favoriet wijzigen, zoals de naam, het pictogram, de kleur en de beschrijving. De lay-out en beschikbare velden zijn consistent met de bewerkingservaring in de [OsmAnd mobiele app](../personal/favorites.md#create), en bieden een vertrouwde workflow over platforms.
+Het paneel Favoriet bewerken laat je de hoofdeigenschappen van de favoriet wijzigen, waaronder de naam, het adres, de beschrijving, de map, het pictogram, de kleur en de vorm. De geselecteerde weergave wordt zowel in het bewerkingspaneel als direct op de kaart weergegeven.
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+### Favorieten bewerken {#edit-favorites}
 
+Het veld **Adres** ondersteunt automatische adresdetectie op basis van de geselecteerde kaartlocatie. Het veld kan in verschillende toestanden verschijnen:
+
+- Bezig met zoeken... — wordt weergegeven terwijl het adres automatisch wordt bepaald.
+- Leeg veld — wordt weergegeven nadat het adres is gewist. In deze toestand kan de locatieknop worden gebruikt om het adres opnieuw automatisch te detecteren.
+- Ingevuld veld — geeft het automatisch gedetecteerde adres of handmatig ingevoerde tekst weer.
+
+Het adresveld bevat ook snelle acties om het gedetecteerde adres te wissen of te herstellen.
+
+De sectie **Beschrijving** laat je notities of aanvullende informatie aan de favoriet toevoegen. Als je Notities toevoegen selecteert, wordt de beschrijvingseditor geopend in een secundair paneel. Als er al een beschrijving is toegevoegd, wordt een korte voorvertoning weergegeven in het hoofdpaneel en beperkt tot twee tekstregels. De beschrijvingseditor ondersteunt opgemaakte tekst en bewaart wijzigingen automatisch bij het terugkeren naar het vorige paneel.
+
+Favorieten kunnen in mappen worden georganiseerd voor eenvoudiger beheer en snelle toegang. Als je het item **Map** selecteert, wordt een secundair paneel geopend waarin beschikbare mappen kunnen worden geselecteerd. De eerder gebruikte map wordt standaard automatisch geselecteerd. Elke map toont ook het aantal favorietpunten dat erin is opgeslagen.
+
+Nieuwe mappen kunnen direct vanuit het mappenselectiepaneel worden gemaakt. Als je de knop Map toevoegen selecteert, wordt een dialoogvenster geopend waarin je de mapnaam kunt invoeren en de locatie in de Favorietenlijst kunt kiezen.
+
+Het dialoogvenster bevat ook een Geavanceerd-gedeelte, waarin standaardweergave-instellingen voor de map kunnen worden geconfigureerd. Deze instellingen omvatten de standaardkleur, het pictogram en de vorm die automatisch worden toegepast op favorietpunten die aan deze map worden toegevoegd.
+
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
+
+### Uiterlijk {#appearance}
+
+De sectie **Uiterlijk** laat je aanpassen hoe de favoriet op de kaart wordt weergegeven. De volgende eigenschappen zijn beschikbaar: pictogram, kleur, vorm en pictogram. 
+
+Als je **Pictogram** selecteert, wordt een secundair paneel geopend met gegroepeerde pictogramcategorieën.
+
+- Pictogrammen zijn gegroepeerd per categorie.
+- Recent gebruikte pictogrammen worden eerst weergegeven.
+- Het momenteel geselecteerde pictogram is gemarkeerd.
+- De voorvertoning gebruikt de geselecteerde vorm en kleur.
+
+Als je **Kleur** selecteert, wordt het kleurenpaletpaneel geopend.
+
+- Het palet bevat voorgedefinieerde en door de gebruiker gedefinieerde kleuren.
+- Aangepaste kleuren kunnen worden toegevoegd met de kleurenkiezer.
+- Kleuren kunnen worden bewerkt, gedupliceerd of verwijderd via het contextmenu.
+- Nieuw toegevoegde kleuren worden opgeslagen in het gebruikerspalet en blijven later beschikbaar.
+
+De optie **Vorm** definieert de achtergrondvorm die voor de favorietmarkering wordt gebruikt.  De volgende vormen zijn beschikbaar: cirkel, vierkant en achthoek.
+
+De voorvertoning van het uiterlijk wordt direct bijgewerkt in het bewerkingspaneel en op de kaart bij het wijzigen van het pictogram, de kleur of de vorm.
+
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Andere acties {#other-actions}
 

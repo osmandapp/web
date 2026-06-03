@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ Menu kontekstowe śladów to menu z akcjami i danymi śladu GPX.
 
 Transport publiczny to dodatkowa warstwa, która umożliwia wyświetlanie tras i przystanków transportu na mapie, sprawdzanie szczegółowych informacji o nich i nawigację.
 
-## [Trasy](./routes.md) {#routes}
+## [Trasy](./routes/index.md) {#routes}
 
 OsmAnd posiada wiele potężnych funkcji do wyświetlania różnych tras na mapie.
+
+### [Typy tras](./routes/types-of-routes.md) {#type-of-routes}
+
+Wszystkie informacje o typach tras dostępnych w OsmAnd.

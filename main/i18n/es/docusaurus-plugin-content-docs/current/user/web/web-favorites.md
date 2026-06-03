@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -68,16 +68,55 @@ La vista de Detalles proporciona información asociada con el lugar seleccionado
 
 ## Acciones de favoritos {#favorites-actions}
 
-### Agregar / Editar favorito {#add--edit-favorite}
-
 [Para agregar](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. 
 
 Para editar un favorito existente, haz clic en el punto de favorito ya sea directamente en el mapa o selecciónalo de una carpeta de favoritos. Esto abre el panel de Detalles, donde está disponible la acción de Editar. La edición también se puede iniciar desde el menú de tres puntos (⋮) junto al favorito en la lista de Favoritos.
 
-La interfaz de edición te permite modificar las propiedades principales del favorito, como su nombre, icono, color y descripción. El diseño y los campos disponibles son consistentes con la experiencia de edición en la [aplicación móvil de OsmAnd](../personal/favorites.md#create), proporcionando un flujo de trabajo familiar en todas las plataformas.
+El panel de edición de favoritos permite cambiar las propiedades principales de un favorito, incluyendo su nombre, dirección, descripción, carpeta, icono, color y forma. La apariencia seleccionada se previsualiza tanto en el panel de edición como directamente en el mapa.
 
-![Agregar favoritos en OsmAnd Web](@site/static/img/web/web_favorites_add.png)
+### Editar favoritos {#edit-favorites}
 
+El campo **Dirección** admite la detección automática de dirección según la ubicación seleccionada en el mapa. El campo puede aparecer en varios estados:
+
+- Buscando... — se muestra mientras se determina automáticamente la dirección.
+- Campo vacío — se muestra después de borrar la dirección. En este estado, el botón de ubicación se puede usar para detectar la dirección de nuevo automáticamente.
+- Campo rellenado — muestra la dirección detectada automáticamente o el texto introducido manualmente.
+
+El campo de dirección también incluye acciones rápidas para borrar o restaurar la dirección detectada.
+
+La sección **Descripción** permite añadir notas o información adicional al favorito. Al seleccionar Añadir notas se abre el editor de descripción en un panel secundario. Si ya se ha añadido una descripción, se muestra una vista previa corta en el panel principal y está limitada a dos líneas de texto. El editor de descripción admite formato de texto enriquecido y conserva automáticamente los cambios al volver al panel anterior.
+
+Los favoritos se pueden organizar en carpetas para facilitar su gestión y acceso rápido. Al seleccionar el elemento **Carpeta** se abre un panel secundario donde se pueden seleccionar las carpetas disponibles. De forma predeterminada, se selecciona automáticamente la carpeta utilizada anteriormente. Cada carpeta también muestra el número de puntos de favoritos que contiene.
+
+Se pueden crear nuevas carpetas directamente desde el panel de selección de carpetas. Al seleccionar el botón Añadir carpeta se abre un diálogo donde puedes introducir el nombre de la carpeta y elegir su ubicación en la lista de Favoritos.
+
+El diálogo también incluye una sección Avanzado, donde se pueden configurar los ajustes de apariencia predeterminados para la carpeta. Estos ajustes incluyen el color, icono y forma predeterminados que se aplicarán automáticamente a los puntos de favoritos añadidos a esta carpeta.
+
+![Editar carpeta web](@site/static/img/web/edit_folder.png)
+
+### Apariencia {#appearance}
+
+La sección **Apariencia** permite personalizar cómo se muestra el favorito en el mapa. Las siguientes propiedades están disponibles: icono, color, forma e icono. 
+
+Al seleccionar **Icono** se abre un panel secundario con grupos de iconos categorizados.
+
+- Los iconos están agrupados por categorías.
+- Los iconos usados recientemente se muestran primero.
+- El icono seleccionado actualmente está resaltado.
+- La vista previa utiliza la forma y el color seleccionados.
+
+Al seleccionar **Color** se abre el panel de paleta de colores.
+
+- La paleta contiene colores predefinidos y definidos por el usuario.
+- Se pueden añadir colores personalizados mediante el selector de color.
+- Los colores se pueden editar, duplicar o eliminar a través del menú contextual.
+- Los colores recién añadidos se guardan en la paleta del usuario y permanecen disponibles posteriormente.
+
+La opción **Forma** define la forma de fondo utilizada para el marcador de favorito.  Las siguientes formas están disponibles: círculo, cuadrado y octágono.
+
+La vista previa de la apariencia se actualiza inmediatamente tanto en el panel de edición como en el mapa al cambiar el icono, el color o la forma.
+
+![Editar apariencia web](@site/static/img/web/edit_icon.png)
 
 ### Otras acciones {#other-actions}
 

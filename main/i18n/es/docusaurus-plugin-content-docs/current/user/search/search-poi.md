@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title:  Buscar PDI
 ---
@@ -58,7 +58,8 @@ OsmAnd proporciona varias formas de acceder a la herramienta de Búsqueda donde 
 - **Búsqueda de Puntos de Interés (PDI) por tipo y nombre**:
     - Le permite buscar:
        - PDI cercanos o categorías específicas de PDI.
-       - [Rutas OSM](../map/routes.md) por nombre y por número de referencia.
+       - [Rutas OSM](../map/routes/types-of-routes.md) por nombre, número de referencia o ID de relación utilizando el formato `O+relation_id` (por ejemplo: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Objetos vinculados con identificadores de Wikidata (por ejemplo: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - [Lugares populares (Wikipedia)](../map/popular_places.md).
        - Lugares combinando un nombre de ciudad con un nombre o tipo de PDI (por ejemplo: aeropuerto de Berlín, Billa de Bratislava).
     - Es posible filtrar y ordenar los resultados por categoría, distancia o valoración.
@@ -68,8 +69,8 @@ El icono mostrado en los resultados de búsqueda corresponde al icono utilizado 
 Los resultados de búsqueda pueden incluir información adicional de ubicación, como la ciudad donde se encuentra el PDI. Esto ayuda a distinguir entre lugares con el mismo nombre al buscar marcas o lugares populares.
     
 - **Buscar PDI en el mapa** - Mostrar en el mapa:
-    1. Puede seleccionar las categorías deseadas de la [**lista**](../map/point-layers-on-map.md#points-of-interest-pois) en *Configurar mapa → Mostrar capa de PDI...* y buscar por iconos en la ubicación esperada.
-    2. Puede introducir primero una consulta de búsqueda o puede empezar a buscar PDI en *Menú → Buscar → Categorías* y luego hacer clic en **Mostrar en el mapa**.
+    - Puede seleccionar las categorías deseadas de la [**lista**](../map/point-layers-on-map.md#points-of-interest-pois) en *Configurar mapa → Mostrar capa de PDI...* y buscar por iconos en la ubicación esperada.
+    - Puede introducir primero una consulta de búsqueda o puede empezar a buscar PDI en *Menú → Buscar → Categorías* y luego hacer clic en **Mostrar en el mapa**.
 
 - **Búsqueda de marcas**:
     - La búsqueda de un local comercial por nombre de marca (como Audi, Starbucks o Aldi) es muy similar a la búsqueda de diferentes PDI por tipo, la principal diferencia es que la lista de marcas se proporciona dentro del mapa y está sujeta a cambios en cada actualización. 
@@ -217,7 +218,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
         Incluye *13* tipos de filtros: **Compra a granel** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Cambiador** (tiene *3* valores), **Café** (tiene *2* valores), **A domicilio** (tiene *1* valor), **Dieta** (tiene *8* valores), **Helado** (tiene *1* valor), **Productos ecológicos** (tiene *2* valores), **Tipo de pago** (más de *10* valores), **Filtro de segunda mano** (tiene *2* valores), **Autocaja** (tiene *2* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Emergencia](https://wiki.openstreetmap.org/wiki/Key:emergency) incluye instalaciones y lugares asociados a servicios de emergencia como hospitales, comisarías de policía, parques de bomberos y centros médicos de primeros auxilios.  
-        Incluye *26* tipos de filtros.
+        No contiene ningún filtro.
 
  6. **Gasolinera**. Una [estación de combustible](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), también conocida como estación de servicio, estación de gasolina y garaje de gasolina. Es la instalación de tipo minorista donde los vehículos de motor pueden ser repostados.  
         Incluye *13* tipos de filtros: **Lavado de coches** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Aire comprimido** (tiene *1* valores), **Tipo de combustible (avia)** (tiene más de *20* valores), **Tarjetas de combustible** (tiene *5* valor), **Tipo de pago** (tiene más de *20* valores), **Autocaja** (tiene *2* valor), **Acceso para motos de nieve** (tiene *3* valores), **Aseo** (más de *1* valores), **Aspiradora** (tiene *1* valores), **Surtidor automático de combustible** (tiene *1* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.  
@@ -252,8 +253,8 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. Es un sistema de transporte diseñado para transportar personas con fines públicos, accesible a todos los residentes y visitantes de una ciudad o región.  
         Incluye *9* tipos de filtros.
 
- 17. **Rutas**. Incluye [rutas OSM](../map/routes.md) para diversos tipos de actividades.  
-        Incluye *15* tipos de filtros: **Punto de control**, **Nodo de red ciclista**, **Nodo de red de senderismo**, **Red de rutas (ciclismo)**, **Red de rutas (senderismo)**, **Categoría de punto de ruta**, **Deportes aéreos**, **Ciclismo**, **Conducción**, **A pie**, **Motociclismo**, **Otras rutas**, **Deportes acuáticos**, **Deportes de invierno**.
+ 17. **Rutas**. Incluye [rutas OSM](../map/routes/types-of-routes.md) para diversos tipos de actividades.  
+        Incluye *14* tipos de filtros: **Punto de control**, **Nodo de red ciclista**, **Nodo de red de senderismo**, **Red de rutas (ciclismo)**, **Red de rutas (senderismo)**, **Categoría de punto de ruta**, **Deportes aéreos**, **Ciclismo**, **Conducción**, **A pie**, **Motociclismo**, **Otras rutas**, **Deportes acuáticos**, **Deportes de invierno**.
 
  18. **Visitas turísticas**. Es una actividad en la que las personas visitan lugares o sitios interesantes para familiarizarse con ellos y disfrutar de su belleza, historia o significado.  
         Incluye *8* tipos de filtros.

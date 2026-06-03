@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Mappe Vettoriali 
 ---
@@ -13,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Panoramica {#overview}
 
@@ -109,7 +108,7 @@ Impostazioni speciali per le strade, dove è possibile cambiare i colori per abb
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. L'alto contrasto delle strade.  
 ![Stile strada mappa alto contrasto](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pallido**. Colori meno contrastanti delle strade.  
-![Stile strada mappa pallido](@site/static/img/map/map-road-style-pale.png)
+![Stile strada mappa contorno spesso](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contorno spesso per le strade.  
 ![Stile strada mappa contorno spesso](@site/static/img/map/map-road-style-bold-outline.png)
@@ -576,7 +575,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ![Percorsi mappa - percorsi ciclabili](@site/static/img/map/map-routes-cycle-routes.png)  ![Percorsi mappa - rete escursionistica](@site/static/img/map/map-routes-hiking-network.png)
 
-Un percorso è un tracciato predefinito che deve essere seguito per raggiungere una destinazione specifica. Un percorso può essere ottimizzato per diversi tipi di viaggio, come ciclismo, escursionismo, corsa, trasporti pubblici e altri. È possibile leggere di più sui percorsi e sui loro tipi nell'articolo [Percorsi](../map/routes.md).
+Un percorso è un tracciato predefinito che deve essere seguito per raggiungere una destinazione specifica. Un percorso può essere ottimizzato per diversi tipi di viaggio, come ciclismo, escursionismo, corsa, trasporti pubblici e altri. È possibile leggere di più sui percorsi e sui loro tipi nell'articolo [Percorsi](../map/routes/index.md).
 
 
 ## Articoli Correlati {#related-articles}
@@ -584,6 +583,6 @@ Un percorso è un tracciato predefinito che deve essere seguito per raggiungere 
 - [Interagire con la Mappa](../map/interact-with-map.md)
 - [Configura Mappa](../map/configure-map-menu.md)
 - [Stili Mappa](../map/map-styles.md)
-- [Percorsi](../map/routes.md)
+- [Percorsi](../map/routes/index.md)
 - [Importa / Esporta](../personal/import-export.md)
 - [Schemi Palette Colori](../personal/color-palette-schemes.md)

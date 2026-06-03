@@ -12,6 +12,7 @@ import FocusToggleBtn from '../../frame/components/btns/FocusToggleBtn';
 import ConfigureMap from '../../menu/configuremap/ConfigureMap';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import SearchMenu from '../../menu/search/SearchMenu';
+import { closeHeader } from '../../menu/actions/HeaderHelper';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -65,8 +66,7 @@ export default function GeneralPanelButtons({
         ctx.setSelectedGpxFile({});
         if (ctx.currentObjectType === OBJECT_CONFIGURE_MAP) {
             // close menu
-            ctx.setCurrentObjectType(null);
-            setMenuInfo(null);
+            closeHeader({ ctx });
         } else {
             //open menu
             ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);

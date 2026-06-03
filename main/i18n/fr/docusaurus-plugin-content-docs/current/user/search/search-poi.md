@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title:  Recherche de POI
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-La fonctionnalité de [Point d'Intérêt (POI) d'OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) dans OsmAnd offre précision, visibilité et commodité pour trouver des lieux, des itinéraires et des services intéressants près de votre position actuelle ou d'une zone sélectionnée sur la carte.  
+La fonctionnalité [Point d'Intérêt (POI) d'OsmAnd](https://wiki.openstreetmap.org/wiki/Points_of_interest) dans OsmAnd offre précision, visibilité et commodité pour trouver des lieux, des itinéraires et des services intéressants près de votre position actuelle ou d'une zone sélectionnée sur la carte.  
 
 La barre de recherche vous permet de saisir des mots-clés liés aux lieux qui vous intéressent. La recherche de POI présente également une liste pratique triée par [catégorie](#poi-search-by-categories) pour vous aider à trouver rapidement ce que vous cherchez, et le [filtre](#save-new-custom-filters) vous permet de sélectionner des caractéristiques spécifiques de POI pour n'afficher que les résultats pertinents.  
 
@@ -58,7 +58,8 @@ OsmAnd offre plusieurs moyens d'accéder à l'outil de recherche où se trouve l
 - **Recherche de Point d'Intérêt (POI) par type et par nom** :
     - Permet de rechercher :
        - Des points d'intérêt (POI) à proximité ou des catégories spécifiques de POI.
-       - Des [itinéraires OSM](../map/routes.md) par nom et par numéro de référence.
+       - Des [itinéraires OSM](../map/routes/types-of-routes.md) par nom, numéro de référence ou identifiant de relation en utilisant le format `O+relation_id` (par exemple : [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Des objets liés à des identifiants Wikidata (par exemple : [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - Des [lieux populaires (Wikipédia)](../map/popular_places.md).
        - Des lieux en combinant un nom de ville avec un nom ou un type de POI (par exemple : aéroport de Berlin, Billa de Bratislava).
     - Le filtrage et le tri des résultats par catégorie, distance ou évaluation sont possibles.
@@ -68,8 +69,8 @@ L'icône affichée dans les résultats de recherche correspond à l'icône utili
 Les résultats de recherche peuvent inclure des informations de localisation supplémentaires, telles que la ville où se trouve le POI. Cela aide à distinguer les lieux ayant le même nom lors de la recherche de marques ou de lieux populaires.
     
 - **Rechercher des POI sur la carte** - Afficher sur la carte :
-    1. Vous pouvez sélectionner les catégories requises dans la [**liste**](../map/point-layers-on-map.md#points-of-interest-pois) dans *Configurer la carte → Afficher le calque des POI...* et rechercher par icônes à l'emplacement prévu.
-    2. Vous pouvez d'abord saisir une requête de recherche ou commencer à rechercher des POI dans *Menu → Recherche → Catégories*, puis cliquer sur **Afficher sur la carte**.
+    - Vous pouvez sélectionner les catégories requises dans la [**liste**](../map/point-layers-on-map.md#points-of-interest-pois) dans *Configurer la carte → Afficher le calque des POI...* et rechercher par icônes à l'emplacement prévu.
+    - Vous pouvez d'abord saisir une requête de recherche ou commencer à rechercher des POI dans *Menu → Recherche → Catégories*, puis cliquer sur **Afficher sur la carte**.
 
 - **Recherche par marque** :
     - La recherche d'un lieu commercial par nom de marque (comme Audi, Starbucks ou Aldi) est très similaire à la recherche de différents POI par type, la principale différence étant que la liste des marques est fournie à l'intérieur de la carte et sujette à des modifications à chaque mise à jour. 
@@ -81,7 +82,7 @@ Les résultats de recherche peuvent inclure des informations de localisation sup
 
 
 :::note
-Pour accomplir certaines de ces tâches (localiser des adresses, des POI), vous devrez disposer du fichier de carte vectorielle hors ligne. Initialement, la recherche est basée sur les données situées sur la carte dans la zone visible de l'écran de l'appareil. Si vous ne trouvez rien, OsmAnd propose d'augmenter le rayon de recherche.
+Pour accomplir certaines de ces tâches (localiser des adresses, des POI), vous devrez disposer du fichier de carte vectorielle hors ligne. Initialement, la recherche est basée sur les données situées sur la carte dans la zone visible de l'écran de l'appareil. If you find nothing, OsmAnd proposes to increase the search radius.
 :::  
 
 ### Astuces de recherche {#search-tips}
@@ -252,8 +253,8 @@ Un filtre peut comporter un grand nombre d'éléments, dont la présence dépend
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. C'est un système de transport conçu pour transporter des personnes à des fins publiques, accessible à tous les résidents et visiteurs d'une ville ou d'une région.  
         Comprend *9* types de filtres.
 
- 17. **Itinéraires**. Comprend les [itinéraires OSM](../map/routes.md) pour divers types d'activités.  
-        Comprend *15* types de filtres.  
+ 17. **Itinéraires**. Comprend les [itinéraires OSM](../map/routes/types-of-routes.md) pour divers types d'activités.  
+        Comprend *14* types de filtres : **Checkpoint**, **Cycling network node**, **Hiking network node**, **Routes network (cycling)**, **Routes network (hiking)**, **Route point category**, **Air Sports**, **Cycling**, **Driving**, **Foot**, **Motorcycling**, **Other routes**, **Water sports**, **Winter sports**.
 
  18. **Sites touristiques**. C'est une activité au cours de laquelle les gens visitent des lieux ou des sites intéressants pour se familiariser avec eux et apprécier leur beauté, leur histoire ou leur importance.  
         Comprend *8* types de filtres.
@@ -294,8 +295,8 @@ Description et comment l'utiliser :
 - Les modifications dans la liste des catégories sont effectuées pour chaque profil séparément.
 - Déplacez les catégories par glisser-déposer à la bonne position dans la liste.
 - *Pour masquer* les catégories inutiles, appuyez sur l'icône **moins**.
-- **Disponible**. Les catégories précédemment *Masquées* peuvent être remises dans la liste affichée en appuyant sur l'icône **plus**.
-- Utilisez le bouton **Réinitialiser par défaut** pour ramener la liste à son état prédéfini.
+- **Disponable**. Les catégories précédemment *Masquées* peuvent être remises dans la liste affichée en appuyant sur l'icône **plus**.
+- Utilisez le bouton **Réinitialiser** pour ramener la liste à son état prédéfini.
 - Les catégories créées avec la [Recherche personnalisée](#customize-poi-search) ou les [Filtres](#save-new-custom-filters) peuvent être supprimées à l'aide de l'icône **Supprimer**.  
 
 ![Recherche POI Android](@site/static/img/search/search_poi_rearrange_del_andr.png)  
@@ -303,7 +304,7 @@ Description et comment l'utiliser :
 
 ### Recherche en ligne {#online-search}
 
-<InfoAndroidOnly />
+<InfoAndroidOnly/>
 
 ![Recherche POI Android](@site/static/img/search/search_online_2_andr_new.png)  
 

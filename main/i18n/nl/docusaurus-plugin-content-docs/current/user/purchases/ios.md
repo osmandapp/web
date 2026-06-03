@@ -1,5 +1,5 @@
 ---
-source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
+source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -32,32 +32,32 @@ U kunt de app downloaden via deze link - [OsmAnd Maps on Apple App Store](https:
 -->
 
 
-### Verschil tussen aankopen (iOS) {#difference-between-purchases-ios}
+### Difference Between Purchases (iOS) {#difference-between-purchases-ios}
 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Een **gratis pakket** dat toegang geeft tot [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) voor *Favorieten*, *Instellingen* en *OSM-bewerkingen/notities*. | Beschikbaar voor alle gebruikers van de gratis versie van OsmAnd. | Beperkt tot basis cloudfuncties en **5MB** opslag. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies voor de gratis OsmAnd-app ontgrendelt. | Beschikbaar in de [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Kan worden toegevoegd aan de [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementspakket** dat extra geavanceerde en [pro-functies](#pro-features) ontgrendelt. | Beschikbaar in de [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Het biedt volledige toegang tot de functies van OsmAnd Cloud. |
+| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to basic cloud features and **5MB** storage. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Can be added to the [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced and [pro features](#pro-features). | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | It provides full access to OsmAnd Cloud features. |
 
-### Belangrijke opmerkingen {#important-notes}
+### Important Notes {#important-notes}
 
-1. **Maps+** is een *upgrade* voor de gratis versie van OsmAnd, waarmee de meeste functies worden ontgrendeld.
+1. **Maps+** is an *upgrade* for the free version of OsmAnd, unlocking most features.
 
-2. **OsmAnd Pro**,  **OsmAnd+** en **Maps+** zijn *cross-platform* aankopen. Dit betekent dat u het in één winkel kunt kopen (bijv. *Google Play, Huawei AppGallery, AppStore* en *osmand.net*) en het in een andere kunt herstellen door [uw aankoop te koppelen aan uw OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**,  **OsmAnd+** and **Maps+** are *cross-platform* purchases. This means you can purchase it in one store (e.g., *Google Play, Huawei AppGallery, AppStore*, and *osmand.net*) and restore it in another by [linking your purchase with OsmAnd Cloud account](../personal/osmand-cloud.md#cross-platform).
 
-3. U kunt **Maps+** toevoegen aan [Apple Family Sharing](https://support.apple.com/en-us/HT201088) om de aankoop met gezinsleden te delen.  
+3. You can add **Maps+** to [Apple Family Sharing](https://support.apple.com/en-us/HT201088) to share the purchase with family members.  
 
 
-## Prijzen {#prices}
+## Prices {#prices}
 
-In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS en de Europese regio. Voor andere regio's zijn de prijzen equivalent in lokale valuta.
+In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
 <!--
 
-:::danger February Sale
+:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
 
 :::
 
@@ -67,128 +67,128 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
 
 -->
 
 
-|    | OsmAnd Gratis   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
-| **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
-| **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 
-### Gratis en betaalde functies {#free-and-paid-features}
+### Free and Paid Features {#free-and-paid-features}
 
-|  | OsmAnd Gratis | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & abonnement) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
-| [Toegang zonder reclame](#free-and-paid-features) | Reclamevrij | Reclamevrij | Reclamevrij |
+| [Access without advertising](#free-and-paid-features) | Ad-free | Ad-free | Ad-free |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
-| [Alle Pro-functies](#pro-features) | **-** | **-** | ✔ |
-| [Kaartdownloads](../start-with/download-maps.md) |  <details><summary>**5 kaartdownloads** <br /> (kaartupdate telt als download):</summary> <br /> - Kaartdownload of -update betekent alleen het downloaden/updaten van een land- (of regio)kaart.<br /> - **Wereldoverzichtskaart**, **Wereldhoogtecorrectie**, **Kaartlettertypen** en **Gesproken aanwijzingen** worden niet meegeteld als 5 downloadmogelijkheden.</details> | ✔ | ✔ |
-| [Maandelijkse kaartupdates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Eenmaal per maand** <br /> (met 2 dagen vertraging):</summary> * beperkt tot 5 downloads (kaartupdate telt als download) </details> |  ✔ | ✔ |
-| [Kaartupdates per uur](../personal/maps-resources.md#live-updates)<br/>Live updates (1 uur vertraging) - [**](#-map-updates) | **-** | **-**| ✔ |
+| [All Pro Features](#pro-features) | **-** | **-** | ✔ |
+| [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
+| [Monthly map updates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>Live updates (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
-| [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Topografische gegevens](../plugins/topography.md#overview)<br/>(Hoogtelijnen en Terrein) | **-** | ✔ | ✔ |
-| [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-gebouwen — Kleuraanpassing](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
-| [3D-trackvisualisatie](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
-| [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
-| [Reisgidsen (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
-| [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Offline en online navigatie](../navigation/index.md)<br/>met stapsgewijze aanwijzingen | ✔ | ✔ | ✔ |
-| [Direct offline zoeken](../search/index.md) | ✔ | ✔ | ✔ |
-| [Trip opnemen](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [GPX-tracks exporteren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [GPX/KML-tracks importeren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Routeplanner](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Widgets voor voertuigstatistieken](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 gratis widgets**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | <details><summary>**2 gratis widgets**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | ✔ |
-| [Kaartmarkeringen](../personal/markers.md) | ✔ | ✔ | ✔ |
-| [Online kaartbronnen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Ondersteuning voor SQLitedb/mbtiles-kaarten](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
-| [Favoriete punten](../map/point-layers-on-map.md)<br/>bladwijzers en waypoints | ✔ | ✔ | ✔ |
-| [Audio/foto/video-punten](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
+| [Coordinates Grid — Color Customization](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D Buildings — Color Customization](../plugins/topography.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D track visualization](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
+| [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
+| [Travel guides (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
+| [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
+| [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Plan a route tool](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Vehicle Metrics Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | ✔ |
+| [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
+| [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
+| [SQLitedb/mbtiles Map support](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
+| [Favorite points](../map/point-layers-on-map.md)<br/>bookmarks and waypoints | ✔ | ✔ | ✔ |
+| [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
-| [App-profiel exporteren/importeren](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** Kaartupdates {#-map-updates}
+#### ** Map updates {#-map-updates}
 
-[Gratis](../personal/maps-resources.md#free-for-osm-mappers). Live updates en onbeperkte kaartdownloads zijn beschikbaar voor OSM Mappers.
+[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
 
-### Pro-functies {#pro-features}
+### Pro Features {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *Pro-functies* zijn beschikbaar voor het [OsmAnd Pro-abonnement](#prices). Dit betekent dat u een [OsmAnd Pro-abonnement](#install-osmand-ios) moet hebben.
+![Pro](@site/static/img/svg/pro_icon.svg) *Pro Features* are available for [OsmAnd Pro subscription](#prices). It means you need to have [OsmAnd Pro subscription](#install-osmand-ios).
 
-Op dit moment heeft het Pro-abonnement de volgende functies:
+At the moment, the Pro subscription has the following features:
 
-|  Pro-functie  | Beschrijving   |
+|  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Maak een back-up van uw gegevens en herstel ze, synchroniseer gegevens met het [OsmAnd-webportaal](https://www.osmand.net/map). |
-| [3D-reliëf](../plugins/topography.md#3d-relief) | Hiermee kunt u een schaalmodel van uw buurt of een heel continent bekijken. |
-| [Hoogtewidgets - Hoogte: Kaartcentrum](../widgets/info-widgets.md#elevation-map-center) | Hiermee kunt u de hoogte van het huidige kaartcentrum boven zeeniveau achterhalen.  |
-| [Live](../personal/maps-resources.md#live-updates) | OsmAnd-kaarten worden elke 15 minuten bijgewerkt na een verbetering op [OpenStreetMap](https://www.openstreetmap.org/). |
-| [Weer-plugin](../plugins/weather.md) | 24-uurs voorspelling per uur, 7 dagen vooruit op de kaart. |
-| [Plugin voor voertuigstatistieken (OBD-II)](../plugins/vehicle-metrics.md) | Hiermee kunt u een OBD-II-scanner aansluiten om gedetailleerde voertuiggegevens in de OsmAnd-app weer te geven en de informatie op te slaan in trackrecords. Informatie over voertuigsnelheid en motortoerental is beschikbaar voor OsmAnd gratis.  |
-| [Routelijn aanpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | De kleur en breedte van de routelijn tijdens de navigatie wijzigen. |
-| [Kleurenpalet aanpassen](../../user/plugins/topography.md#modify-color-scheme) | Hiermee kunt u het uiterlijk van de kaart aanpassen door kleurenpaletten te selecteren of te importeren. U kunt ingebouwde schema's bewerken of uw eigen paletbestanden gebruiken om kaart- en routekleuren te personaliseren. |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
+| [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
+| [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
+| [Live Updates](../personal/maps-resources.md#live-updates) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
+| [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
+| [Modify Color Scheme](../../user/plugins/topography.md#modify-color-scheme) | Allows you to customize the map appearance by selecting or importing color palettes. You can edit built-in schemes or use your own palette files to personalize map and route colors. |
 
 
-## Hoe te kopen {#how-to-buy}
+## How to Buy {#how-to-buy}
 
-Een eenvoudige manier om het benodigde pakket te kiezen en te kopen is via het menu **Aankopen**. Natuurlijk ziet u ook een voorstelmenu voor betaalde functies.
+Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
 
-### OsmAnd Pro-aankoop {#osmand-pro-purchase}
+### OsmAnd Pro Purchase {#osmand-pro-purchase}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* abonnementspakket. Hier kunt u kiezen voor een [maandelijks of jaarlijks abonnement](#prices):
+![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose [monthly or annual subscription](#prices):
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Doorgaan met OsmAnd Pro*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continue with OsmAnd Pro*
 
-of  
+or  
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Doorgaan met OsmAnd Pro*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro*
 
 ![Pro Plan](@site/static/img/purchases/pro_new.png)
 
-### Maps+-aankoop {#maps-purchase}
+### Maps+ Purchase {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* abonnement / in-app pakket. Hier kunt u kiezen voor een [jaarlijks abonnement](#prices) of een [eenmalige betaling](#prices):
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tik op de lijst met Maps+-functies → Doorgaan met Maps+*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
 ![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
-## Oude abonnementen (vóór 4.0) {#legacy-subscriptions-prior-40}
+## Legacy Subscriptions (prior 4.0) {#legacy-subscriptions-prior-40}
 
-Nieuwe abonnementen werden actief vanaf OsmAnd 4.3 (december 2022). Alle eerdere abonnementen zijn verouderd en technisch gelijk aan het "Maps-abonnement", hoewel oude abonnementen recht hebben op uurlijkse kaartupdates. Gebruikers kunnen geen oude abonnementen meer kopen, maar oude abonnementen worden automatisch verlengd totdat u zich afmeldt (de prijs ervan kan in de toekomst veranderen).
+New subscriptions became active from OsmAnd 4.3 (December 2022). All earlier subscriptions are legacy and technically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until you unsubscribes (the price for them might change in the future).
 
 
-## Aankopen herstellen {#restore-purchases}
+## Restore Purchases {#restore-purchases}
 
-Gebruikers kunnen alle aankopen en abonnementen beheren via hun [Apple-account](https://appleid.apple.com/).  
+User can control all purchases and subscription from [Apple account](https://appleid.apple.com/).  
 
-Gebruik dezelfde Apple ID om uw aankopen te herstellen.
+Use the same Apple ID to restore your purchases.
 
-- Log in op hetzelfde Apple App Store-account dat u gebruikte om in-apps (abonnementen) van OsmAnd Maps te kopen.
-- Installeer [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-- Open OsmAnd Maps met een actieve internetverbinding.
-- Volg deze stappen om aankopen te herstellen: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* en bovenaan het scherm zou moeten verschijnen dat Maps+ (Pro, Live) is geactiveerd.
+- Log in to the same Apple App Store account that you used to purchase in-apps(subscriptions) of OsmAnd Maps.
+- Install [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+- Open OsmAnd Maps with an active Internet connection.
+- To restore purchases follow these steps: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro, Live) is activated.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
 
-**Als geen van de methoden werkte:**
+**If none of the methods worked:**
 
-1. Wis de cache voor de App Store.
-2. Wis de cache voor OsmAnd.
-3. Herstart het apparaat en probeer opnieuw te herstellen.
+1. Clear the cache for App Store.
+2. Clear the cache for OsmAnd.
+3. Restart the device and try to restore again.
 
 
 <!--
@@ -200,9 +200,9 @@ Gebruik dezelfde Apple ID om uw aankopen te herstellen.
 -->
 
 
-## Cadeaukaarten {#giftcards}
+## Giftcards {#giftcards}
 
-U kunt OsmAnd kopen met een App Store-cadeaukaart. Met deze methode hoeft u geen creditcardgegevens rechtstreeks met de service te delen. Koop gewoon een cadeaukaart bij een winkel naar keuze en wissel de code in de App Store in.
+You can purchase OsmAnd using an App Store gift card. This method allows you to avoid sharing credit card information directly with the service. Simply buy a gift card from a retailer of your choice and redeem the code on the App Store.
 
-- [Gedetailleerde gids over het kopen van App Store-cadeaukaarten](https://www.apple.com/shop/gift-cards).
-- [Instructies voor het inwisselen van uw App Store-cadeaukaart](https://support.apple.com/en-gb/HT201209).
+- [Detailed guide on purchasing App Store gift cards](https://www.apple.com/shop/gift-cards).
+- [Instructions for redeeming your App Store gift card](https://support.apple.com/en-gb/HT201209).

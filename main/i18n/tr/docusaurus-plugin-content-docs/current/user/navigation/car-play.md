@@ -1,5 +1,5 @@
 ---
-source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
+source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,8 +225,9 @@ CarPlay arama özelliği, **adres ararken** sokaklara ve bina numaralarına önc
 
 *CarPlay* için sesli rehberlik, OsmAnd'ın en kullanışlı navigasyon özelliklerinden biridir, gerçek zamanlı rehberlik sağlar ve sürücünün yola odaklanmasını sağlar. Sesli komutlar, dönüşleri, yönleri ve diğer navigasyon talimatlarını açıkça belirtir, navigasyon sisteminin daha güvenli ve konforlu kullanılmasını sağlar.  
 
-Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin.  
+Sesli komutlar çalındığında OsmAnd, arka plan sesini türüne göre ayarlar. Podcast'ler ve sesli kitaplar gibi konuşma içeren ses içerikleri, navigasyon talimatları sırasında otomatik olarak duraklatılabilir. Müzik çalma sesi kısık olarak devam eder. *Konuşma sesini duraklat* seçeneği bu davranışı kontrol etmenizi sağlar.
 
+Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin.  
 
 
 ### Ekran Uyarısı Widget'ı {#screen-alert-widget}
@@ -299,6 +300,17 @@ OsmAnd uygulaması için bildirim ayarlarını cihazınızın sistem ayarlarınd
 - *Önceki Ayarı Hatırla*
 
 Ayrıca *CarPlay*'de doğrudan Mesajları Duyur özelliğini etkinleştirebilir veya devre dışı bırakabilirsiniz. Bildirim yönetiminin [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) ve [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios) üzerinde nasıl uygulandığını okuyun.
+
+### Harita Teması {#map-theme}
+
+![Map Theme](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+CarPlay, farklı sürüş koşullarında daha iyi görünürlük için harita görünümünü yapılandırmanıza olanak tanır. Aşağıdaki görünüm modlarından birini seçebilirsiniz:
+
+- *Otomatik*. Harita görünümü sistem ayarlarına, günün saatine veya araç koşullarına bağlı olarak otomatik olarak değişir.
+- *Her Zaman Koyu*. CarPlay koyu harita temasını kullanır.
+
+*Her Zaman Koyu Haritaları Göster* seçeneği etkinleştirildiğinde, araç far durumu veya günün saatinden bağımsız olarak harita her zaman Koyu Modda kalır.
 
 ### CarPlay'de Konum Pozisyonu {#location-position-in-carplay}
 

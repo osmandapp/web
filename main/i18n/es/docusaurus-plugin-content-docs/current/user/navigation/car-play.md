@@ -1,5 +1,5 @@
 ---
-source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
+source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,6 +225,8 @@ Además de las características básicas de la aplicación OsmAnd en *CarPlay* q
 
 La guía por voz para *CarPlay* es una de las características de navegación más útiles de OsmAnd, proporcionando guía en tiempo real y permitiendo al conductor mantenerse concentrado en la carretera. Las indicaciones de voz indican claramente los giros, las direcciones y otras instrucciones de navegación, garantizando un uso más seguro y cómodo del sistema de navegación.  
 
+Cuando se reproducen las indicaciones de voz, OsmAnd ajusta el audio de fondo según su tipo. El contenido de audio hablado, como podcasts y audiolibros, puede pausarse automáticamente durante las instrucciones de navegación. La reproducción de música continúa con volumen reducido. La opción *Pausar audio hablado* le permite controlar este comportamiento.
+
 Para configurar las indicaciones de voz según el perfil seleccionado, debe hacerlo antes de iniciar una ruta en la aplicación OsmAnd en su dispositivo. Para ver los ajustes recomendados para *CarPlay*, vaya al artículo [Indicaciones de voz / Notificaciones](../navigation/guidance/voice-navigation.md).  
 
 
@@ -298,6 +300,17 @@ Puede cambiar los ajustes de notificación para la aplicación OsmAnd en los aju
 - *Recordar ajuste anterior*
 
 También puede habilitar o deshabilitar el anuncio de mensajes directamente en *CarPlay*. Lea sobre cómo se implementa la gestión de notificaciones en [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) y [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
+
+### Tema del mapa {#map-theme}
+
+![Tema del mapa](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+CarPlay le permite configurar la apariencia del mapa para una mejor visibilidad en diferentes condiciones de conducción. Puede elegir uno de los siguientes modos de apariencia:
+
+- *Automático*. La apariencia del mapa cambia automáticamente según los ajustes del sistema, la hora del día o las condiciones del vehículo.
+- *Siempre oscuro*. CarPlay utiliza el tema de mapa oscuro.
+
+Cuando la opción *Mostrar siempre mapas oscuros* está activada, el mapa permanece siempre en modo oscuro independientemente del estado de las luces del vehículo o de la hora del día.
 
 ### Posición de la ubicación en CarPlay {#location-position-in-carplay}
 

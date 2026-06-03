@@ -1,5 +1,5 @@
 ---
-source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
+source-hash: bbea45d5dce16ad75da89a2972868fa960155b2b494751a1e9a11e82ed8cda79
 sidebar_position: 1
 title:  Recherche globale
 ---
@@ -77,7 +77,7 @@ Informations importantes :
 - Recherche par traces.
 - Recherche par lieux d'affaires et noms de marques.
 - Recherche en ligne (Nominatim).
-- Recherche par URL (Google et OsmAnd).
+- Recherche par URL (Google et OsmAnd). OsmAnd peut reconnaître de nombreux liens Google Maps partagés, y compris les liens courts de `maps.app.goo.gl`.
 - Historique de recherche.
 
 <!--

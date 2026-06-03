@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title: POI Ara
 ---
@@ -58,7 +58,8 @@ OsmAnd, **Kategoriler arama** bölümünün bulunduğu Arama aracına ulaşmak i
 - **İlgi Çekici Noktası (POI) türüne ve adına göre arama**:
     - Şunları aramanıza olanak tanır:
        - Yakındaki ilgi çekici noktalar (POI) veya belirli POI kategorileri için.
-       - [OSM rotaları](../map/routes.md) için ada ve referans numarasına göre.
+       - [OSM rotaları](../map/routes/types-of-routes.md) için ada, referans numarasına veya ilişki kimliğine göre `O+relation_id` biçimini kullanarak (örneğin: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Wikidata tanımlayıcılarıyla bağlantılı nesneler için (örneğin: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - [Popüler yerler (Wikipedia)](../map/popular_places.md).
        - Bir şehir adı ile POI adı veya türünü birleştirerek yerler için (örneğin: Berlin havalimanı, Bratislava Billa).
     - Kategoriye, mesafeye veya derecelendirmeye göre filtreleme ve sıralama mümkündür.
@@ -243,7 +244,7 @@ Bir filtre, seçilen kategoriye bağlı olarak oldukça fazla sayıda öğeden o
  13. **<Translate android="true" ids="poi_filter_parking"/>**. [Otopark](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking), halk, müşteriler veya diğer yetkili kullanıcılar tarafından arabalar ve kamyonlar gibi araçları park etmek için kullanılan tesisleri içerir, genellikle otopark (İngiliz İngilizcesi) veya park alanı (Amerikan İngilizcesi) olarak bilinir.  
         *34* tür filtre içerir.
 
- 14. **Kişisel ulaşım**. Tüm [araç türleri](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) sizin mülkiyetinizde olabilir.  
+ 14. **Kişel ulaşım**. Tüm [araç türleri](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) sizin mülkiyetinizde olabilir.  
         *38* tür filtre içerir.
 
  15. **Popüler yerler (Wikipedia)**. Bu kategoride arama yapmak için, ilgilendiğiniz bölgenin [Wikipedia haritasını](../plugins/wikipedia.md#overview) indirmeniz gerekir.  
@@ -252,8 +253,8 @@ Bir filtre, seçilen kategoriye bağlı olarak oldukça fazla sayıda öğeden o
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. Şehir veya bölgedeki tüm sakinlere ve ziyaretçilere açık, kamu amaçlı insan taşımak için tasarlanmış bir ulaşım sistemidir.  
         *9* tür filtre içerir.
 
- 17. **Rotalar**. Çeşitli etkinlik türleri için [OSM rotalarını](../map/routes.md) içerir.  
-        *15* tür filtre içerir: **Kontrol noktası**, **Bisiklet ağı düğümü**, **Yürüyüş ağı düğümü**, **Rota ağı (bisiklet)**, **Rota ağı (yürüyüş)**, **Rota noktası kategorisi**, **Hava Sporları**, **Bisiklet**, **Sürüş**, **Yaya**, **Motosiklet**, **Diğer rotalar**, **Su sporları**, **Kış sporları**.
+ 17. **Rotalar**. Çeşitli etkinlik türleri için [OSM rotalarını](../map/routes/types-of-routes.md) içerir.  
+        *14* tür filtre içerir: **Kontrol noktası**, **Bisiklet ağı düğümü**, **Yürüyüş ağı düğümü**, **Rota ağı (bisiklet)** , **Rota ağı (yürüyüş)**, **Rota noktası kategorisi**, **Hava Sporları**, **Bisiklet**, **Sürüş**, **Yaya**, **Motosiklet**, **Diğer rotalar**, **Su sporları**, **Kış sporları**.
 
  18. **Gezilecek yerler**. İnsanların ilgi çekici yerleri veya siteleri ziyaret ederek güzelliklerini, tarihlerini veya önemlerini tanımak ve keyfini çıkarmak için yaptıkları bir aktivitedir.  
         *8* tür filtre içerir.
@@ -261,7 +262,7 @@ Bir filtre, seçilen kategoriye bağlı olarak oldukça fazla sayıda öğeden o
  19. **Spor**. Spor aktiviteleri için alanları içerir.  
         *11* tür filtre içerir.
 
- 20. **Mağaza**. [Mağaza](https://wiki.openstreetmap.org/wiki/Key:shop), bakkallar, giyim mağazaları, elektronik mağazaları ve diğerleri gibi çeşitli mal veya hizmetler sunan çeşitli işletmeleri ve işyerlerini ifade eder.  
+ 20. **Mağaza**. [Mağaza](https://wiki.openstreetmap.org/wiki/Key:shop), bakkarlar, giyim mağazaları, elektronik mağazaları ve diğerleri gibi çeşitli mal veya hizmetler sunan çeşitli işletmeleri ve işyerlerini ifade eder.  
         *36* tür filtre içerir.
 
  21. **Turizm**. [Turizm](https://wiki.openstreetmap.org/wiki/Key:tourism), turistler için özel ilgi çekici yerleri ve şeyleri, görülecek yerleri, kalınacak yerleri ve turistlere bilgi ve destek sağlayan şeyleri ve yerleri içerir.  

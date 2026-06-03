@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Topografía
 ---
@@ -368,7 +368,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_n
 
 La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando información de altura de etiquetas como `height` y `building:levels` cuando está disponible. Si [los datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluyen pasajes a través de edificios mapeados con la etiqueta `tunnel=building_passage`, OsmAnd renderiza aberturas visibles en el modelo de edificio 3D para que las carreteras o caminos peatonales que pasan a través del edificio se muestren correctamente. 
 
-Los edificios 3D solo se muestran en niveles de zoom más altos (vista de ciudad/calle), donde se pueden mostrar edificios individuales. Cuando un POI o una ubicación seleccionada (como un pin del mapa o un destino de navegación) está dentro de un edificio, OsmAnd resalta el edificio correspondiente para facilitar su identificación en el mapa.
+Los edificios 3D solo se muestran en niveles de zoom más altos (vista de ciudad/calle), donde se pueden mostrar edificios individuales. Al hacer zoom o desplazar el mapa, los edificios 3D aparecen y desaparecen con una animación de fundido suave. Cuando un POI o una ubicación seleccionada (como un pin del mapa o un destino de navegación) está dentro de un edificio, OsmAnd resalta el edificio correspondiente para facilitar su identificación en el mapa.
 
 Usa el interruptor principal para habilitar o deshabilitar el renderizado 3D de edificios. Cuando está habilitado, la configuración también muestra el [Nivel de detalle](#performance) actual (Bajo o Alto) debajo del interruptor principal (*solo Android*). Para ver los edificios en 3D, inclina el mapa colocando dos dedos en la pantalla y deslizando hacia arriba. En esta vista, los edificios pueden cubrir parcialmente las carreteras o las etiquetas del mapa dependiendo de la configuración de visibilidad.
 
@@ -417,7 +417,7 @@ Los controles de **<Translate android="true" ids="performance"/>** determinan c�
 
 **<Translate android="true" ids="level_of_details"/>** determina la complejidad de la geometría del edificio 3D:
 - Bajo (predeterminado) — geometría más simple.
-- Alto — geometría más detallada.
+- Alto — geometría más detallada. La animación de fundido para edificios 3D solo está disponible con esta configuración.
 
 **<Translate android="true" ids="view_distance"/>** controla qué tan lejos de la cámara se renderizan los edificios 3D:
 - Cerca (predeterminado) — renderiza edificios más cerca de ti.

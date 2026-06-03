@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  Acerca del enrutamiento de OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -75,6 +75,10 @@ Hay dos formas posibles de elegir qué carreteras evitar al calcular una ruta:
 
 - Selecciona el tipo de carretera en la sección [Parámetros de ruta](../guidance/navigation-settings.md#route-parameters) de los [Ajustes de navegación](../guidance/navigation-settings.md). La descripción de este ajuste se proporciona en los artículos sobre los ajustes de los [Tipos de enrutamiento](#routing-types). Como ejemplo, consulta la descripción del tipo de enrutamiento [Coche / Camión / Motocicleta](../routing/car-based-routing.md#route-parameters---car).
 - También puedes seleccionar carreteras específicas que no se utilizarán para el enrutamiento utilizando la opción *[Evitar carretera](../../map/map-context-menu.md#avoid-road)* a través del *menú contextual del mapa* o utilizando el *[Menú Evitar carreteras](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Cuando se selecciona un tipo de carretera (como *Carreteras sin pavimentar*) en los ajustes de Evitar, OsmAnd excluye estrictamente dichas carreteras del cálculo de la ruta. Incluso tramos muy cortos (por ejemplo, 100–200 metros de carretera sin pavimentar) se evitan por completo y no se incluirán en la ruta bajo ninguna circunstancia. Como resultado, las rutas pueden volverse significativamente más largas si evitar esas carreteras requiere desvíos.
+
+Si la opción Evitar está desactivada, estas carreteras siguen estando permitidas, pero pueden recibir una prioridad más baja (penalización), lo que significa que OsmAnd preferirá mejores carreteras cuando sea posible, pero aún puede incluirlas si es necesario.
 
 :::note
 

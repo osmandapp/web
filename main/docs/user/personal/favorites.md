@@ -90,6 +90,8 @@ When adding a point from OSM data, the relevant POI information is automatically
 - **Group** — Select from an existing [Favorite group](#manage-favorites) or create a new one.
 - **Visual customization** — Icon, color, shape can either match the default [group appearance](#change-group-appearance) or be customized individually.
 
+**NOTE:** If the Favorites layer is disabled in [Configure map](../map/configure-map-menu), adding a new favorite point automatically enables the layer to make the newly added favorite visible on the map.
+
 
 ### Edit / Replace / Delete {#edit--replace--delete}
 

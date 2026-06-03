@@ -1,5 +1,5 @@
 ---
-source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
+source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
 sidebar_position: 1
 title: Android Satın Almaları
 ---

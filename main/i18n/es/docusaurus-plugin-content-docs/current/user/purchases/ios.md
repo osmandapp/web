@@ -1,5 +1,5 @@
 ---
-source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
+source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -55,9 +55,9 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 <!--
 
-:::danger February Sale
+:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
 
 :::
 
@@ -67,8 +67,8 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
 
 -->
@@ -85,7 +85,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 ### Funciones gratuitas y de pago {#free-and-paid-features}
 
-|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(en la aplicación y suscripción) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(in-app & suscripción) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |

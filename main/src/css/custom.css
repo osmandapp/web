@@ -216,3 +216,45 @@ ul.no-bullets {
   justify-content: center;
 }
 
+
+/* Birthday article language dropdown */
+.birthday-language-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 360px;
+  margin: 0 0 24px 0;
+  padding: 12px 14px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+}
+
+.birthday-language-select label {
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.birthday-language-select select {
+  width: 100%;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 15px;
+}
+
+@media (max-width: 480px) {
+  .birthday-language-select {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .birthday-language-select select {
+    min-width: 0;
+  }
+}

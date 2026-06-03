@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -97,7 +97,7 @@ Tocar em uma [trilha GPX](../map/tracks/index.md) no mapa abre o [menu de contex
 
 ![Pistas de Esqui e Trilhas de MTB](@site/static/img/map/ski_mtb.png)  ![Pistas de Esqui e Trilhas de MTB](@site/static/img/map/ski_mtb_2.png)
 
-Você pode tocar em elementos do mapa, como **pistas de esqui**, **rotas de mountain bike (MTB)** e **trilhas de moto suja**, para abrir seu menu de contexto com informações detalhadas. Consulte o [artigo Rotas](../map/routes.md#actions-with-routes) para obter mais informações.
+Você pode tocar em elementos do mapa, como **pistas de esqui**, **rotas de mountain bike (MTB)** e **trilhas de moto suja**, para abrir seu menu de contexto com informações detalhadas. Consulte o [artigo Rotas](../map/routes/index.md#actions-with-routes) para obter mais informações.
 
 
 
@@ -379,7 +379,7 @@ Tocar em uma foto abre a visualização da **Galeria**, onde você pode:
 
 > *No iOS, tocar longamente em uma imagem abre um menu de contexto com ações rápidas.*
 
-Para mais informações, consulte: [Fotos Online](https://osmand.net/docs/user/map/popular_places#online-photos) e [Visualização da Galeria](https://osmand.net/docs/user/map/popular_places#gallery)
+Para mais informações, consulte: [Fotos Online](https://osmand.net/docs/user/map/popular_places#online-photos) and [Visualização da Galeria](https://osmand.net/docs/user/map/popular_places#gallery)
 
 
 ### Imagens de Nível de Rua {#street-level-imagery}

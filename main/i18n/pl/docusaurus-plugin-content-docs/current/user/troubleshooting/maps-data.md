@@ -1,5 +1,5 @@
 ---
-source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
+source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
 sidebar_position: 4
 title:  Mapy i dane
 ---
@@ -22,9 +22,13 @@ OsmAnd jest zaprojektowany do wspierania OpenStreetMap (OSM) i priorytetowo trak
 
 ### Dlaczego linki do Map Google mogą nie otwierać się w OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
 
-Linki do Map Google, takie jak `https://maps.app.goo.gl/...`, mogą nie otwierać się w OsmAnd po jednokrotnym dotknięciu z SMS-a lub komunikatorów. Nawet jeśli OsmAnd może analizować te linki, Android 12+ wymusza Zweryfikowane linki aplikacji: główne domeny Google (na przykład `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) są zarezerwowane dla usług systemowych Google, więc aplikacje stron trzecich nie mogą ich automatycznie przejmować. W rezultacie link zazwyczaj otworzy się w aplikacji/usłudze Google.
+Linki do Map Google, takie jak `https://maps.app.goo.gl/...`, mogą nie otwierać się w OsmAnd po jednokrotnym dotknięciu z SMS-a lub komunikatorów. Chociaż OsmAnd może rozpoznawać i otwierać wiele linków Map Google, Android 12+ wymusza Zweryfikowane linki aplikacji: główne domeny Google (na przykład `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) są zarezerwowane dla usług systemowych Google, więc aplikacje stron trzecich nie mogą ich automatycznie przejmować. W rezultacie link zazwyczaj otworzy się w aplikacji/usłudze Google.
+
+OsmAnd obsługuje wiele udostępnionych linków Map Google, w tym niektóre krótkie linki i adresy URL udostępnionych lokalizacji. Możesz również wkleić link Map Google bezpośrednio do wyszukiwania OsmAnd.
 
 **Obejście**: *długie dotknięcie wiadomości → Udostępnij → wybierz OsmAnd*. To wysyła link do OsmAnd, gdzie może być analizowany i otwarty jako lokalizacja.
+
+W zależności od informacji dostępnych w udostępnionym adresie URL Map Google, otwarta lokalizacja może być przybliżona.
 
 ### Mapy ładują się powoli na Androidzie 11, 12 (karta SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -175,7 +179,7 @@ Jeśli próbujesz wyszukać lokalizację przy użyciu struktury *Miasto → Ulic
 
 - **Problem z Nominatim**. Dom może być obecny w OpenStreetMap, ale nie znaleziony przez Nominatim (wyszukiwarkę używaną przez OpenStreetMap). Możesz dowiedzieć się więcej o tym, jak rozwiązywać problemy związane z adresami [tutaj](https://wiki.openstreetmap.org/wiki/Addresses).
 
-- **Możliwy problem w OsmAnd**. Jeśli dom jest obecny w Nominatim, ale nadal nie jest znajdowany w OsmAnd, problem może być specyficzny dla OsmAnd. Możesz przyczynić się do rozwiązania tego problemu, badając go dalej. Więcej szczegółów można znaleźć w tym [artykule technicznym](../../technical/algorithms/trace-address-search-issues.md).
+- **Możliwy problem w OsmAnd**. Jeśli dom jest obecny w Nominatim, ale nadal nie jest znajdowany w OsmAnd, problem może być specyficzny na OsmAnd. Możesz przyczynić się do rozwiązania tego problemu, badając go dalej. Więcej szczegółów można znaleźć w tym [artykule technicznym](../../technical/algorithms/trace-address-search-issues.md).
 
 
 ## Ślady i punkty {#tracks-and-points}
@@ -196,4 +200,4 @@ Możesz zostawiać notatki i oznaczać lokalizacje na mapie w różnych formach,
 
 - *[POI (Użyteczne miejsca)](../map/point-layers-on-map.md#points-of-interest-pois)*. Są to predefiniowane punkty ze źródła danych OpenStreetMap, takie jak restauracje, parki czy zabytki. Możesz wyświetlić POI, włączając nakładkę POI w menu *Konfiguruj mapę* lub wybierając kategorię.
 
-- *[Wyszukiwanie](../search/index.md)*. Możesz również użyć funkcji wyszukiwania, aby znaleźć i oznaczyć miejsca na mapie.
+- *[Wyszukiwanie](../search/index.md)*. Możesz również użyć funkcji wyszukiwania, aby znaleźć i oznaczać miejsca na mapie.

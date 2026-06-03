@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Topografia
 ---
@@ -367,7 +367,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 O recurso **Edifícios 3D** exibe edifícios como modelos 3D volumétricos em vez de formas planas. Os edifícios são gerados a partir de [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), usando informações de altura de tags como `height` e `building:levels` quando disponíveis. Se [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluírem passagens através de edifícios mapeadas com a tag `tunnel=building_passage`, o OsmAnd renderiza aberturas visíveis no modelo de edifício 3D para que estradas ou caminhos pedestres passando pelo edifício sejam exibidos corretamente. 
 
-Edifícios 3D são exibidos apenas em níveis de zoom mais altos (visão da cidade/rua), onde edifícios individuais podem ser exibidos. Quando um POI ou um local selecionado (como um pino do mapa ou destino de navegação) estiver dentro de um edifício, o OsmAnd destaca o edifício correspondente para facilitar sua identificação no mapa.
+Edifícios 3D são exibidos apenas em níveis de zoom mais altos (visão da cidade/rua), onde edifícios individuais podem ser exibidos. Ao ampliar ou reduzir e ao mover o mapa, os edifícios 3D aparecem e desaparecem com uma animação de desvanecimento suave. Quando um POI ou um local selecionado (como um pino do mapa ou destino de navegação) estiver dentro de um edifício, o OsmAnd destaca o edifício correspondente para facilitar sua identificação no mapa.
 
 Use o alternador principal para ativar ou desativar a renderização 3D de edifícios. Quando ativado, a configuração também exibe o [Nível de detalhe](#performance) atual (Baixo ou Alto) sob o alternador principal (*apenas Android*). Para visualizar edifícios em 3D, incline o mapa colocando dois dedos na tela e deslizando para cima. Nesta visão, os edifícios podem cobrir parcialmente estradas ou rótulos do mapa dependendo da configuração de visibilidade.
 
@@ -416,7 +416,7 @@ Os controles de **<Translate android="true" ids="performance"/>** determinam com
 
 **<Translate android="true" ids="level_of_details"/>** determina a complexidade da geometria do edifício 3D:
 - Baixo (padrão) — geometria mais simples.
-- Alto — geometria mais detalhada.
+- Alto — geometria mais detalhada. A animação de desvanecimento para edifícios 3D está disponível apenas com esta configuração.
 
 **<Translate android="true" ids="view_distance"/>** controla quão longe da câmera os edifícios 3D são renderizados:
 - Próximo (padrão) — renderiza edifícios mais próximos de você.

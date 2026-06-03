@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ Le menu contextuel des traces est un menu avec des actions et des données de tr
 
 Les transports en commun sont une couche supplémentaire qui vous permet d'afficher les itinéraires et les arrêts de transport sur la carte, de vérifier des informations détaillées à leur sujet et de naviguer.
 
-## [Itinéraires](./routes.md) {#routes}
+## [Itinéraires](./routes/index.md) {#routes}
 
 OsmAnd possède de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte.
+
+### [Types d'itinéraires](./routes/types-of-routes.md) {#type-of-routes}
+
+Toutes les informations sur les types d'itinéraires disponibles dans OsmAnd.

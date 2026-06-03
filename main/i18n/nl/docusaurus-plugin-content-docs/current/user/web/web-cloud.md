@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -40,7 +40,7 @@ Om toegang te krijgen tot de OsmAnd Web-functies, moet u een account aanmaken. G
 
 Nadat de code is geverifieerd, is uw webaccount aangemaakt en bent u automatisch ingelogd.
 
-![Web Registratie](@site/static/img/web/web_sign_up.png) ![Web Verificatiecode](@site/static/img/web/web_ver_code.png)
+![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
 
 
 ### Inloggen {#login}
@@ -118,6 +118,24 @@ De optie **Wijzigingen** toont een chronologische lijst van bestanden die in uw 
 De optie **Prullenbak** bevat bestanden die uit OsmAnd Cloud zijn verwijderd. De lijst is ook gegroepeerd per maand en toont wanneer elk bestand is verwijderd en vanaf welk apparaat. Gebruik het driepuntmenu naast een bestand om een kopie te *Downloaden*, *Herstellen uit prullenbak* (het bestand terugzetten naar OsmAnd Cloud zodat het weer beschikbaar wordt in uw gegevens), of *Onmiddellijk verwijderen* om het permanent te verwijderen. Dit helpt ongelukken met gegevensverlies te voorkomen, terwijl u nog steeds cloudopslag kunt vrijmaken wanneer u zeker weet dat een bestand niet meer nodig is. U kunt ook alle verwijderde items tegelijk wissen door op het Prullenbak-icoon in de kop van het Prullenbak-paneel te klikken. Dit opent het dialoogvenster **Prullenbak legen**, waarin u de verwijdering bevestigt om alle bestanden permanent uit de Prullenbak te verwijderen.
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+### Gekoppelde apps {#connected-apps}
+
+De sectie **Gekoppelde apps** stelt u in staat externe services te koppelen aan uw OsmAnd-account. Momenteel ondersteunt het integratie met [Garmin Connect™](https://connect.garmin.com/app/), waardoor automatische synchronisatie van Garmin-activiteiten mogelijk is. Om deze te openen, gaat u naar: *OsmAnd Web Kaart → Account → Gekoppelde apps*.
+
+De integratie met Garmin Connect is alleen beschikbaar voor [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) gebruikers. Als u geen actief Pro-abonnement hebt, opent het selecteren van het Garmin Connect-item de Prijzen-pagina.
+
+Om uw Garmin Connect™-account te koppelen, klikt u op **Verbinden**. U wordt doorgestuurd naar de Garmin-autorisatiepagina, waar u moet inloggen en toegang moet verlenen tot uw Garmin Connect™-gegevens. Tijdens de autorisatie kunt u synchronisatie van recente activiteiten inschakelen om gegevens uit de afgelopen 30 dagen te importeren. Activiteiten ouder dan 30 dagen kunnen niet automatisch worden geïmporteerd.
+
+Na de verbinding maakt OsmAnd een speciale Garmin Connect-map aan in de [Tracks-sectie](./web-tracks.md) en begint automatisch met het importeren van activiteiten. Nieuwe activiteiten die in Garmin Connect™ worden vastgelegd, worden aan deze map toegevoegd zonder handmatige import. De map wordt ook gesynchroniseerd met OsmAnd mobiele apps wanneer [OsmAnd Cloud](../personal/osmand-cloud.md) is ingeschakeld.
+
+Het Garmin Connect-menu bevat twee secties: **Mijn gegevens** en **Instellingen**. In Mijn gegevens kunt u het aantal gesynchroniseerde activiteiten bekijken, de laatst opgehaalde activiteit openen of de Garmin Connect™ Activiteiten-pagina openen met de knop **Bekijken op Garmin Connect™**. In Instellingen kunt u configureren welke activiteitstypen moeten worden gesynchroniseerd met de optie Activiteiten om te synchroniseren.
+
+Activiteiten zijn gegroepeerd in categorieën zoals Fietsen, Wandelen & Hardlopen, Watersporten en Winter- & andere sporten. Individuele activiteitstypen kunnen worden in- of uitgeschakeld. Standaard zijn alle ondersteunde activiteitstypen geselecteerd na de verbinding.
+
+Om uw Garmin Connect™-account te ontkoppelen, gaat u naar *Instellingen → Ontkoppelen* en bevestigt u de actie. Eerder geïmporteerde tracks blijven in de Garmin Connect-map, maar nieuwe activiteiten worden niet langer gesynchroniseerd.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Probleemoplossing {#troubleshooting}
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Inleiding](./web-overview.md)
 - [Cross-platform aankopen](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Tracks](./web-tracks.md)

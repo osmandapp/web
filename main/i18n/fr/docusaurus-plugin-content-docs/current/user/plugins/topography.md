@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Topographie
 ---
@@ -368,7 +368,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Si les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluent des passages à travers les bâtiments cartographiés avec la balise `tunnel=building_passage`, OsmAnd rend des ouvertures visibles dans le modèle de bâtiment 3D afin que les routes ou les voies piétonnes passant à travers le bâtiment soient affichées correctement. 
 
-Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés. Lorsqu'un POI ou un emplacement sélectionné (comme une épingle sur la carte ou une destination de navigation) se trouve à l'intérieur d'un bâtiment, OsmAnd met en évidence le bâtiment correspondant pour faciliter son identification sur la carte.
+Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés. Lorsque vous zoomez ou dézoomez et que vous faites défiler la carte, les bâtiments 3D apparaissent et disparaissent avec une animation de fondu fluide. Lorsqu'un POI ou un emplacement sélectionné (comme une épingle sur la carte ou une destination de navigation) se trouve à l'intérieur d'un bâtiment, OsmAnd met en évidence le bâtiment correspondant pour faciliter son identification sur la carte.
 
 Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des bâtiments. Lorsque activé, le paramètre affiche également le [Niveau de détail](#performance) actuel (Faible ou Élevé) sous l'interrupteur principal (*Android uniquement*). Pour voir les bâtiments en 3D, inclinez la carte en plaçant deux doigts sur l'écran et en balayant vers le haut. Dans cette vue, les bâtiments peuvent partiellement couvrir les routes ou les étiquettes de la carte en fonction du paramètre de visibilité.
 
@@ -417,7 +417,7 @@ Les contrôles **<Translate android="true" ids="performance"/>** déterminent la
 
 **<Translate android="true" ids="level_of_details"/>** détermine la complexité de la géométrie des bâtiments 3D :
 - Faible (par défaut) — géométrie plus simple.
-- Élevé — géométrie plus détaillée.
+- Élevé — géométrie plus détaillée. L'animation de fondu pour les bâtiments 3D n'est disponible qu'avec ce paramètre.
 
 **<Translate android="true" ids="view_distance"/>** contrôle la distance par rapport à la caméra à laquelle les bâtiments 3D sont rendus :
 - Proche (par défaut) — rend les bâtiments plus près de vous.

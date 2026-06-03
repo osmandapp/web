@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 Die OsmAnd-Webkarte ist eine globale Karte, die auf Daten von [OpenStreetMap (OSM)](https://www.openstreetmap.org/) basiert. Sie ermöglicht es Benutzern, ihre eigenen Daten wie Tracks und Favoriten anzuzeigen, Navigationsrouten für jedes Profil zu erstellen und auf zusätzliche Funktionen wie Wetter, öffentliche GPX-Tracks, POIs und Wikimedia-Bilder zuzugreifen. Erkunden und passen Sie Ihr Datenerlebnis direkt in Ihrem Browser an.
 
-![OsmAnd Web alles](@site/static/img/web/web_map_all.png)
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
 ## Kartenkontextmenü {#map-context-menu}
@@ -46,7 +46,7 @@ Um es zu öffnen, klicken Sie mit der rechten Maustaste irgendwo auf die Karte. 
 
 - **Wetter öffnen** – Greifen Sie auf das [Wettermenü](../web/web-weather.md) zu, um Wetterdetails anzuzeigen.
 - **Neue Route erstellen** – Öffnet das Werkzeug [*Route planen*](../web/web-navigation.md) mit dem ausgewählten Ort als Start- oder Zielpunkt.
-- **Favorit hinzufügen** – Ermöglicht es Ihnen, einen [Favoriten](../web/web-favorites.md#add--edit-favorite) an einem beliebigen Punkt auf der Karte zu erstellen und zu speichern, um einen einfachen Zugriff zu ermöglichen.
+- **Favorit hinzufügen** – Ermöglicht es Ihnen, einen [Favoriten](../web/web-favorites.md#favorites-actions) an einem beliebigen Punkt auf der Karte zu erstellen und zu speichern, um einen einfachen Zugriff zu ermöglichen.
 - **Route von hier** – Legt den ausgewählten Punkt als [Startort](../web/web-navigation.md#start-a-route) für die Navigation fest.
 - **Route hierher** – Legt den ausgewählten Punkt als [Zielort für die Navigation](../web/web-navigation.md#start-a-route) fest.
 - **Koordinaten kopieren** – Kopiert die Koordinaten des ausgewählten Punktes zur externen Verwendung.
@@ -113,7 +113,7 @@ Im POI-Detailfenster sind Schnellaktionen über die Aktionsschaltflächen verfü
 
 ### Favoriten {#favorites}
 
-Mit einem Klick können Sie Favoriten auf der Karte ein- oder ausblenden. Es werden jedoch nur Favoriten angezeigt, bei denen [**Auf Karte anzeigen aktiviert**](../web/web-favorites.md#manage-favorites) ist.
+Mit einem Klick können Favoriten auf der Karte ein- oder ausblenden. Es werden jedoch nur Favoriten angezeigt, bei denen [**Auf Karte anzeigen aktiviert**](../web/web-favorites.md#manage-favorites) ist.
 
 
 ### Tracks {#tracks}
@@ -149,7 +149,7 @@ Die Option **Haltestellen** ermöglicht es Ihnen, öffentliche Verkehrshaltestel
 
 **1. Haltestelleninformationen**
 
-Der obere Abschnitt zeigt grundlegende Informationen zur ausgewählten Haltestelle, einschließlich Name und Lage. Schnellaktionsschaltflächen ermöglichen es Ihnen: *Die Haltestelle zu Favoriten hinzuzufügen, Einen Link zur Haltestelle zu teilen, Navigation von der Haltestelle zu starten, Die Haltestelle als Ziel festzulegen*.
+Der obere Abschnitt zeigt grundlegende Informationen zur ausgewählten Haltestelle, einschließlich Name und Lage. Schnellaktionsschaltflächen ermöglichen es Ihnen: *Die Haltestelle zu Favoriten hinzufügen, Einen Link zur Haltestelle zu teilen, Navigation von der Haltestelle zu starten, Die Haltestelle als Ziel festzulegen*.
 
 **2. Routen**
 

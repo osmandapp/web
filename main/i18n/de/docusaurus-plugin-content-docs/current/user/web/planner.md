@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Route planen
 title: Route auf der Webseite planen
@@ -138,9 +138,11 @@ Das Track-Panel zeigt die Liste der Routenpunkte, die zur Erstellung des Tracks 
 
 Das Punkte-Panel wird verwendet, um Wegpunkte für den ausgewählten Track anzuzeigen und zu verwalten. Wegpunkte können aus dem Kartenkontextmenü hinzugefügt werden — klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie die Option **Wegpunkt hinzufügen**, füllen Sie dann die Wegpunkt-Details aus (wie Name, Symbol und Farbe) und speichern Sie ihn.
 
+Die Wegpunkt-Bearbeitung verwendet dieselbe Oberfläche wie die [Favoriten-Bearbeitung](../web/web-favorites.md#edit-favorites). Sie können Wegpunkteigenschaften wie Name, Adresse, Beschreibung, Symbol, Farbe und Form über das einheitliche Bearbeitungspanel ändern. Die ausgewählte Darstellung wird sowohl im Bearbeitungspanel als auch direkt auf der Karte als Vorschau angezeigt.
+
 In der Wegpunkte-Liste können Sie steuern, ob Wegpunkte auf der Karte angezeigt werden, und einzelne Wegpunkte bei Bedarf entfernen. Um alle Wegpunkte vom Track auf einmal zu entfernen, verwenden Sie *Alle Wegpunkte löschen*.
 
-![OsmAnd Web Wegpunkte-Panel](@site/static/img/web/points_panel.png)
+![OsmAnd Web Wegpunkte-Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## Verwandte Artikel {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 74a8a7707c0d2f97d8c606769b7fafa2d86892a59f64ff3fbd3e0ff06f84c40d
+source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
 sidebar_position: 3
 title:  Acquisti Web
 ---

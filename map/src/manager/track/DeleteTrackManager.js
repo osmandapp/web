@@ -1,5 +1,6 @@
 import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { loadShareFiles, loadSmartFolders } from '../../util/hooks/useInitialFilesLoad';
+import { loadShareFiles } from '../../util/hooks/useInitialFilesLoad';
+import { loadSmartFolders } from '../SmartFoldersManager';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import { findGroupByName, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';

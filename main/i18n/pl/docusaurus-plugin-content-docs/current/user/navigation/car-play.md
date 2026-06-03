@@ -1,5 +1,5 @@
 ---
-source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
+source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -84,7 +84,7 @@ Aby korzystać z wersji OsmAnd na iOS w *CarPlay*, musisz kupić [płatną wersj
 6. Po zakończeniu trasy możesz dezaktywować *CarPlay*, odłączając urządzenie od systemu multimedialnego pojazdu.
 
 :::note
-Wszystkie kategorie wyboru **punktu końcowego trasy**, *[Historia](#history), [POI](#poi-categories), [Znaczniki](#map-markers), [Wyszukiwanie](#search), [Ulubione](#favorites) i [Trasy](#tracks)*, mogą zawierać nie więcej elementów listy, niż zapewnia system multimedialny Twojego pojazdu. Zazwyczaj w większości pojazdów listy są dynamicznie ograniczane do 12 lub 24 elementów. Oznacza to, że lista w *CarPlay* może nie być kompletna. Całkowita liczba elementów i rzeczywista liczba wyświetlanych elementów jest wskazana pod nazwą folderu.
+Wszystkie kategorie wyboru **punktu końcowego trasy**, *[Historia](#history), [POI](#poi-categories), [Znaczniki](#map-markers), [Wyszukiwanie](#search), [Ulubione](#favorites) i [Trasy](#tracks)*, mogą zawierać nie więcej elementów listy, niż zapewnia system multimedialny Twojego pojazdu. Zazwyczaj w większości pojazdów listy są dynamicznie ograniczane do 12 lub 24 elementów. Oznacza to, że lista w *CarPlay* może nie być kompletna. Całkowna liczba elementów i rzeczywista liczba wyświetlanych elementów jest wskazana pod nazwą folderu.
 :::  
 
 
@@ -225,8 +225,9 @@ Oprócz podstawowych funkcji aplikacji OsmAnd w *CarPlay*, które zapewniają wy
 
 Wskazówki głosowe dla *CarPlay* to jedna z najbardziej użytecznych funkcji nawigacyjnych OsmAnd, zapewniająca wskazówki w czasie rzeczywistym i pozwalająca kierowcy skupić się na drodze. Komunikaty głosowe wyraźnie wskazują zakręty, kierunki i inne instrukcje nawigacyjne, zapewniając bezpieczniejsze i bardziej komfortowe korzystanie z systemu nawigacji.  
 
-Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).  
+Gdy odtwarzane są komunikaty głosowe, OsmAnd dostosowuje dźwięk tła w zależności od jego typu. Treści audio mówione, takie jak podcasty i audiobooki, mogą być automatycznie wstrzymywane podczas instrukcji nawigacyjnych. Odtwarzanie muzyki jest kontynuowane z obniżoną głośnością. Opcja *Wstrzymaj dźwięk mówiony* pozwala kontrolować to zachowanie.
 
+Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).  
 
 
 ### Widżet alertów ekranowych {#screen-alert-widget}
@@ -299,6 +300,17 @@ Możesz zmienić ustawienia powiadomień dla aplikacji OsmAnd w ustawieniach sys
 - *Zapamiętaj poprzednie ustawienie*
 
 Możesz również włączyć lub wyłączyć ogłaszanie wiadomości bezpośrednio w *CarPlay*. Przeczytaj o tym, jak zarządzanie powiadomieniami jest zaimplementowane w [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) i [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
+
+### Motyw mapy {#map-theme}
+
+![Motyw mapy](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+CarPlay umożliwia skonfigurowanie wyglądu mapy dla lepszej widoczności w różnych warunkach jazdy. Możesz wybrać jeden z następujących trybów wyglądu:
+
+- *Automatyczny*. Wygląd mapy zmienia się automatycznie w zależności od ustawień systemowych, pory dnia lub warunków pojazdu.
+- *Zawsze ciemny*. CarPlay używa ciemnego motywu mapy.
+
+Gdy opcja *Zawsze pokazuj ciemne mapy* jest włączona, mapa zawsze pozostaje w trybie ciemnym niezależnie od stanu świateł pojazdu lub pory dnia.
 
 ### Pozycja lokalizacji w CarPlay {#location-position-in-carplay}
 

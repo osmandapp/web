@@ -2,17 +2,16 @@ import React, { useCallback, useContext, useEffect, useRef, useState } from 'rea
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
+import useLocalGpxImport from '../../util/hooks/useLocalGpxImport';
+import GpxMapDropOverlay from '../components/GpxMapDropOverlay';
 import L from 'leaflet';
 import TrackLayerProvider, {
     redrawWptsOnLayer,
     TEMP_LAYER_FLAG,
     WPT_SIMPLIFY_THRESHOLD,
 } from '../util/TrackLayerProvider';
-import TracksManager, {
-    fitBoundsOptions,
-    getResolvedPointsGroups,
-    isEmptyTrack,
-} from '../../manager/track/TracksManager';
+import TracksManager, { getResolvedPointsGroups, isEmptyTrack } from '../../manager/track/TracksManager';
+import { applyZoomToFit, addLayerToMap } from '../util/MapManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import EditablePolyline from '../util/creator/EditablePolyline';
@@ -38,7 +37,6 @@ import {
     deleteOldLayers,
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
-import { addLayerToMap } from '../util/MapManager';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
@@ -50,6 +48,7 @@ export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
     const map = useMap();
+    const { importGpxFiles } = useLocalGpxImport();
 
     const [registeredLayers, setRegisteredLayers] = useState({});
 
@@ -71,6 +70,48 @@ export default function LocalClientTrackLayer() {
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
+
+    const [isDragOver, setIsDragOver] = useState(false);
+    const dragCounterRef = useRef(0);
+    const pendingZoomRef = useRef(false);
+
+    useEffect(() => {
+        const container = map.getContainer();
+        const hasFiles = (e) => e.dataTransfer?.types?.includes('Files');
+
+        const onDragEnter = (e) => {
+            e.preventDefault();
+            if (!hasFiles(e)) return;
+            dragCounterRef.current += 1;
+            setIsDragOver(true);
+        };
+        const onDragOver = (e) => {
+            e.preventDefault();
+            if (hasFiles(e)) e.dataTransfer.dropEffect = 'copy';
+        };
+        const onDragLeave = () => {
+            dragCounterRef.current = Math.max(0, dragCounterRef.current - 1);
+            if (dragCounterRef.current === 0) setIsDragOver(false);
+        };
+        const onDrop = (e) => {
+            e.preventDefault();
+            const files = Array.from(e.dataTransfer?.files || []).filter((f) => f.name.toLowerCase().endsWith('.gpx'));
+            dragCounterRef.current = 0;
+            setIsDragOver(false);
+            if (files.length > 0) importGpxFiles(files);
+        };
+
+        container.addEventListener('dragenter', onDragEnter);
+        container.addEventListener('dragover', onDragOver);
+        container.addEventListener('dragleave', onDragLeave);
+        container.addEventListener('drop', onDrop);
+        return () => {
+            container.removeEventListener('dragenter', onDragEnter);
+            container.removeEventListener('dragover', onDragOver);
+            container.removeEventListener('dragleave', onDragLeave);
+            container.removeEventListener('drop', onDrop);
+        };
+    }, [map, importGpxFiles]);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -466,12 +507,10 @@ export default function LocalClientTrackLayer() {
         });
         if (layer) {
             if (fitBounds) {
-                if (!isEmpty(layer.getBounds())) {
-                    map.fitBounds(layer.getBounds(), fitBoundsOptions(mtx));
-                }
+                pendingZoomRef.current = true;
             }
             layer.on('click', () => {
-                if (!ctx.createTrack || !ctx.createTrack.enable) {
+                if (!ctx.createTrack?.enable) {
                     ctx.setCreateTrack({
                         enable: true, // start-editor
                         edit: true,
@@ -495,7 +534,7 @@ export default function LocalClientTrackLayer() {
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer.getBounds(), fitBoundsOptions(mtx));
+            applyZoomToFit({ map, mtx, bounds: currLayer.layer.getBounds() });
             ctxTrack.zoom = false;
             ctx.setSelectedGpxFile({ ...ctxTrack });
         }
@@ -832,7 +871,9 @@ export default function LocalClientTrackLayer() {
             geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
 
-        ctx.setSelectedGpxFile({ ...ctxTrack });
+        const zoom = pendingZoomRef.current;
+        if (zoom) pendingZoomRef.current = false;
+        ctx.setSelectedGpxFile({ ...ctxTrack, zoom });
 
         addRegisteredLayers(ctxTrack.layers, setRegisteredLayers);
 
@@ -878,6 +919,7 @@ export default function LocalClientTrackLayer() {
 
     return (
         <>
+            <GpxMapDropOverlay active={isDragOver} />
             {openAddRoutingToTrackDialog && (
                 <AddRoutingToTrackDialog
                     setOpenAddRoutingToTrackDialog={setOpenAddRoutingToTrackDialog}

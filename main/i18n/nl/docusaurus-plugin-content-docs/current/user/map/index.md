@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ Tracks contextmenu is een menu met acties en gegevens van GPX-track.
 
 Openbaar vervoer is een extra laag waarmee u transportroutes en haltes op de kaart kunt weergeven, gedetailleerde informatie erover kunt bekijken en kunt navigeren.
 
-## [Routes](./routes.md) {#routes}
+## [Routes](./routes/index.md) {#routes}
 
 OsmAnd heeft veel krachtige functies om verschillende routes op de kaart weer te geven.
+
+### [Soorten routes](./routes/types-of-routes.md) {#type-of-routes}
+
+Alle informatie over routetypes die beschikbaar zijn in OsmAnd.

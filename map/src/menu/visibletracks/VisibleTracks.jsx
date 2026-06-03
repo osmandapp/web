@@ -16,7 +16,14 @@ import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import LoginContext from '../../context/LoginContext';
 import Loading from '../errors/Loading';
-import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL, HEADER_SIZE } from '../../manager/GlobalManager';
+import {
+    CONFIGURE_URL,
+    MAIN_URL_WITH_SLASH,
+    MENU_IDS,
+    TRACKS_URL,
+    HEADER_SIZE,
+    liveHash,
+} from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
@@ -235,11 +242,11 @@ export default function VisibleTracks({ source, open }) {
                                 }));
 
                                 if (source === MENU_IDS.config) {
-                                    navigate(MAIN_URL_WITH_SLASH + CONFIGURE_URL + location.hash);
+                                    navigate(MAIN_URL_WITH_SLASH + CONFIGURE_URL + liveHash());
                                 } else if (source === MENU_IDS.tracks) {
-                                    navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + location.hash);
+                                    navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + liveHash());
                                 } else {
-                                    navigate(MAIN_URL_WITH_SLASH + location.hash);
+                                    navigate(MAIN_URL_WITH_SLASH + liveHash());
                                 }
 
                                 if (open) open(false);

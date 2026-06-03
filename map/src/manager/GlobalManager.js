@@ -26,6 +26,15 @@ export const MAIN_PAGE_TYPE = 'main';
 export const MAIN_URL = '/map';
 export const MAIN_URL_WITH_SLASH = '/map/';
 
+// The live map hash (#z/lat/lng) straight from the browser. leaflet-hash writes the map
+// position to the URL via location.replace(), bypassing React Router, so React Router's
+// useLocation().hash is stale. Any navigate()/replaceState that re-applies that stale hash
+// clobbers the live map position and makes the map snap back. For map-mode navigations always
+// carry this live value instead of location.hash.
+export function liveHash() {
+    return globalThis.location.hash || '';
+}
+
 export const SEARCH_URL = 'search/';
 export const EXPLORE_URL = 'explore/';
 export const POI_CATEGORIES_URL = 'poi-categories/';

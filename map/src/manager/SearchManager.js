@@ -25,7 +25,7 @@ import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 import { OBJECT_TYPE_POI, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 import { openFavoriteObj } from './FavoritesManager';
 import { EMPTY_FILE_NAME, getGpxFiles, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
-import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL } from './GlobalManager';
+import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL, liveHash } from './GlobalManager';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 
 export const USE_OSMAND_SERVER = true;
@@ -260,7 +260,7 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
     navigate({
         pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
         search: buildSearchParamsFromQuery(ctx.searchQuery),
-        hash: location?.hash ?? globalThis.location.hash,
+        hash: liveHash(),
     });
     return true;
 }

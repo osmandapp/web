@@ -1,5 +1,5 @@
 ---
-source-hash: 6529a00a8af53ba720787e17121f186961f2b5bd8fe4b80558945c384071abed
+source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -55,9 +55,9 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 <!--
 
-:::danger February Sale
+:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
 
 :::
 
@@ -67,8 +67,8 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
 
 -->
@@ -85,7 +85,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
-|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(w aplikacji i subskrypcja) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -104,7 +104,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Obsługa czujników zewnętrznych](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręcie | ✔ | ✔ | ✔ |
+| [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręt | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Eksport tras GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
@@ -115,7 +115,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [Źródła map online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
 | [Obsługa map SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Punkty ulubione](../map/point-layers-on-map.md)<br/>zakładki i punkty trasy | ✔ | ✔ | ✔ |
-| [Punkty audio/wideo/zdjęcia](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
+| [Punkty audio/zdjęcia/wideo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Eksport/import profilu aplikacji](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
@@ -151,7 +151,7 @@ W chwili obecnej subskrypcja Pro obejmuje następujące funkcje:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Kontynuuj z OsmAnd Pro*
 
-lub  
+or  
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Kontynuuj z OsmAnd Pro*
 

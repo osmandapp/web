@@ -88,8 +88,7 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 
 </Tabs>
 
-Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track context menu](../map/tracks/track-context-menu.md), where you can access additional track-related options.
-
+Tapping a [GPX-track](../map/tracks/index.md) on the map opens the [track context menu](../map/tracks/track-context-menu.md), where you can access additional track-related options. If the selected location contains multiple map objects, OsmAnd may first display the **What's here** list, allowing you to choose the desired object. For GPX tracks, this list shows summary information such as distance, duration, waypoint count, and the folder where the track is stored.
 
 
 ### Routes, Ski Slopes, and Trails {#routes-and-trails}

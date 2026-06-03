@@ -1,7 +1,7 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
-title:  Vector Maps 
+title:  الخرائط المتجهة 
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ## نظرة عامة {#overview}
 
-تهدف الخرائط المتجهة إلى استخدامها كمصدر بيانات الخرائط الافتراضي لـ OsmAnd، لذا **تحتاج إلى تنزيلها على جهازك**. تدعم الخرائط المتجهة عددًا هائلًا من أنماط الخرائط لأنشطة مختلفة مثل ركوب الدراجات، والمشي لمسافات طويلة، والقيادة بالسيارة أو عربة الثلوج، وغيرها.  
+تهدف الخرائط المتجهة إلى استخدامها كمصدر بيانات الخرائط الافتراضي لـ OsmAnd، لذا **تحتاج إلى تنزيلها على جهازك**. تدعم الخرائط المتجهة عددًا هائلاً من أنماط الخرائط لأنشطة مختلفة مثل ركوب الدراجات، والمشي لمسافات طويلة، والقيادة بالسيارة أو عربة الثلوج، وغيرها.  
 
 يمكن تخصيص كل نمط خريطة لإبراز أو إخفاء كائنات محددة، وللتبديل بين الوضعين النهاري والليلي. يمكن تعزيز بيانات الخرائط المتجهة ببيانات متجهة وعرضها في نمط الخريطة الافتراضي، مثل معلومات *خطوط الكفاف*. يمكنك *إنشاء نمط خريطة OsmAnd الخاص بك* لعرض المعلومات المطلوبة.
 
@@ -399,7 +399,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-تنتج ميزة الارتفاع ثلاثي الأبعاد ارتفاعًا مرتفعًا وتوفر تمثيلًا ثلاثي الأبعاد للمشهد الطبيعي. يعمل الارتفاع ثلاثي الأبعاد دون اتصال ويمكن استخدامه مع [خرائط OsmAnd المتجهة](../map/vector-maps.md) أو أي [خرائط نقطية](../map/raster-maps.md#layers) كـ [مصدر الخريطة](../map/raster-maps.md#main) أو كـ [طبقة سفلية/علوية](../map/raster-maps.md#overlay). معلومات أكثر تفصيلاً متاحة [هنا](../plugins/topography.md#3d-relief).
+تنتج ميزة الارتفاع ثلاثي الأبعاد ارتفاعًا مرتفعًا وتوفر تمثيلاً ثلاثي الأبعاد للمشهد الطبيعي. يعمل الارتفاع ثلاثي الأبعاد دون اتصال ويمكن استخدامه مع [خرائط OsmAnd المتجهة](../map/vector-maps.md) أو أي [خرائط نقطية](../map/raster-maps.md#layers) كـ [مصدر الخريطة](../map/raster-maps.md#main) أو كـ [طبقة سفلية/علوية](../map/raster-maps.md#overlay). معلومات أكثر تفصيلاً متاحة [هنا](../plugins/topography.md#3d-relief).
 
 ### * العمق البحري {#-nautical-depth}
 
@@ -504,7 +504,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 <TabItem value="ios" label="iOS">  
 
-![إعدادات شبكة الإحداثيات iOS](@site/static/img/map/show-borders-ios.png)
+![إعدادات شبكة الإحداثيات iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
@@ -551,7 +551,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ![مسارات الخريطة - مسارات الدراجات](@site/static/img/map/map-routes-cycle-routes.png)  ![مسارات الخريطة - شبكة المشي](@site/static/img/map/map-routes-hiking-network.png)
 
-المسار هو طريق محدد مسبقًا يجب اتباعه للوصول إلى وجهة معينة. يمكن تحسين المسار لأنواع مختلفة من السفر، مثل ركوب الدراجات، والمشي لمسافات طويلة، والجري، والنقل العام، وغيرها. يمكنك قراءة المزيد عن المسارات وأنواعها في [مقالة المسارات](../map/routes.md).
+المسار هو طريق محدد مسبقًا يجب اتباعه للوصول إلى وجهة معينة. يمكن تحسين المسار لأنواع مختلفة من السفر، مثل ركوب الدراجات، والمشي لمسافات طويلة، والجري، والنقل العام، وغيرها. يمكنك قراءة المزيد عن المسارات وأنواعها في [مقالة المسارات](../map/routes/index.md).
 
 
 ## مقالات ذات صلة {#related-articles}
@@ -559,7 +559,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 - [التفاعل مع الخريطة](../map/interact-with-map.md)
 - [تكوين الخريطة](../map/configure-map-menu.md)
 - [أنماط الخرائط](../map/map-styles.md)
-- [المسارات](../map/routes.md)
+- [المسارات](../map/routes/index.md)
 - [استيراد / تصدير](../personal/import-export.md)
 - [مخططات لوحة الألوان](../personal/color-palette-schemes.md)
 

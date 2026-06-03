@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ O menu de contexto dos rastreios é um menu com ações e dados de um rastreio G
 
 O transporte público é uma camada adicional que permite exibir rotas e paradas de transporte no mapa, verificar informações detalhadas sobre elas e navegar.
 
-## [Rotas](./routes.md) {#routes}
+## [Rotas](./routes/index.md) {#routes}
 
 O OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa.
+
+### [Tipos de Rotas](./routes/types-of-routes.md) {#type-of-routes}
+
+Todas as informações sobre os tipos de rotas disponíveis no OsmAnd.

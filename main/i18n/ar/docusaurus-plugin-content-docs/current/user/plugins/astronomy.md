@@ -1,5 +1,5 @@
 ---
-source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
+source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -139,11 +139,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يفتح الرسم البياني مع وضع المؤشر في الوقت الحالي للنظام. يُظهر الموقع المستخدم للحسابات أسفل الرسم البياني. يُعرض الموقع كاسم مدينة.
 
-### جدول الملاحظة {#actions}
+### جدول الملاحظة {#observation-schedule}
 
 ![جدول الملاحظة](@site/static/img/plugins/starwatcher/schedule_new.png)
 
-تعرض تبويب **الجدول** رؤية الجسم المحدد للأسبوع الحالي. تمثل كل صف يومًا واحدًا وتشمل:  
+تعرض تبويب **الجدول** رؤية الجسم المحدد للأسبوع الحالي. تمثل كل سطر يومًا واحدًا وتشمل:  
 - يوم الأسبوع
 - التاريخ
 - وقت الشروق
@@ -248,7 +248,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 | <Translate android="true" ids="meridian_line"/> | يعرض خط الخامرة الذي يعبر السماء من الشمال إلى الجنوب. |
 | <Translate android="true" ids="equatorial_grid"/> | تعرض شبكة إحداثيات الاستواء السماوي. |
 | <Translate android="true" ids="ecliptic_line"/> | يعرض خط المسار الشمسي الذي يمثل المسار الظاهري للشمس. |
-| <Translate android="true" ids="equator_line"/> | يعرض إسقاط الاستواء الأرضي على الكرة السماوية، مما يساعد في تصور دوران الأرض بالنسبة للسماء. |
+| <Translate android="true" ids="equator_line"/> | يعرض إسقط الاستواء الأرضي على الكرة السماوية، مما يساعد في تصور دوران الأرض بالنسبة للسماء. |
 | <Translate android="true" ids="galactic_line"/> | يعرض مستوى مجرة درب التبانة عبر السماء، مشيرًا إلى الاتجاه الرئيسي لقرص المجرة. |
 
 <!-- 

@@ -13,7 +13,7 @@ import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL } from '../../manager/GlobalManager';
+import { MAIN_URL_WITH_SLASH, WEATHER_FORECAST_URL, WEATHER_URL, liveHash } from '../../manager/GlobalManager';
 import { FORECAST_SOURCE_PARAM, FORECAST_TYPE_PARAM } from './Weather';
 
 export default function ForecastTable({ dayForecast, weekForecast, currentTimeForecast, setHeaderForecast }) {
@@ -78,7 +78,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                         navigate({
                             pathname: MAIN_URL_WITH_SLASH + WEATHER_URL + WEATHER_FORECAST_URL,
                             search: `?${FORECAST_TYPE_PARAM}=${item.key}&${FORECAST_SOURCE_PARAM}=${wtx.weatherType}`,
-                            hash: location.hash,
+                            hash: liveHash(),
                         });
                         openWeatherForecastDetails(wtx, item.key, wtx.weatherType);
                     }}

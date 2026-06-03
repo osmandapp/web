@@ -1,5 +1,5 @@
 ---
-source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
+source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
 sidebar_position: 2
 ---
 
@@ -19,6 +19,21 @@ Puedes obtener la última versión de OsmAnd gratis en las tiendas de aplicacion
 Enlaces directos a las versiones gratuitas de OsmAnd.
 
 ## Versión 5 {#version-5}
+
+### Versión 5.3 {#version-53}
+
+Fecha de lanzamiento 04/2026:
+
+- Plugin de Astronomía con una superposición astronómica que muestra las trayectorias del Sol, planetas y estrellas en el mapa.
+- Diseño más flexible para widgets y botones del mapa.
+- Edificios 3D.
+- Vista de globo.
+- Nuevos widgets de Grabación de Viajes: Velocidad media y Tiempo en movimiento.
+- Widget de velocímetro con indicación visual de exceso de velocidad, advertencia de tolerancia y estados de superación del límite.
+- Nuevo Editor de paletas para crear y editar esquemas de color personalizados para la visualización de pistas y terreno.
+- Enrutamiento de bicicleta mejorado considerando el ancho de la bicicleta.
+
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
 
 ### Versión 5.2 {#version-52}
 
@@ -192,7 +207,7 @@ Fecha de lanzamiento 03/2023:
 - Añadido gráfico "Speed/Slope" para el análisis de pistas
 - La selección de idioma de la aplicación se movió a la configuración del sistema en Android 13
 - Se corrigieron problemas con la visualización de lugares veganos
-- Añadida la posibilidad de descargar mosaicos en línea utilizados como mapas de "Overlay" o "Underlay"
+- Añadida la posibilidad de descargar mosailes en línea utilizados como mapas de "Overlay" o "Underlay"
 - Añadido soporte de unidades de medida imperiales para "Vehicle parameters"
 - Nuevo perfil de ciclomotor
 - "Display position" añadió nueva opción "Automatic"
@@ -429,7 +444,7 @@ Fecha de lanzamiento: 05/2018
   
 - Nuevo menú de Viajes: ver artículos de WikiVoyage sin usar internet
 - Wikipedia: nueva apariencia, enlaces activos, imágenes
-- Interfaz de usuario de pista abierta: muestra grupos de puntos de paso
+- Interfaz de pista abierta: muestra grupos de puntos de paso
 - Marcadores de mapa: importación de grupos seleccionados de archivos GPX, nueva apariencia de entrada de coordenadas
 - La suscripción a OsmAnd Live ahora incluye todas las funciones de OsmAnd
 
@@ -519,7 +534,7 @@ Fecha de lanzamiento: 08/2016
   
 - Búsqueda rápida. Todo tipo de consultas en un solo campo de búsqueda
 - Integración con el sistema de audio del coche. Usa el sistema de audio de tu coche para la navegación por voz
-- Mejor información de transporte público. Visualiza rutas completas de transporte público vinculadas a paradas
+- Mejor información de transporte público. Visualiza rutas completas de transporte público vincadas a paradas
 - Otras mejoras. Mejor guía por voz, nueva indicación de carril de giro y correcciones de almacenamiento
 
 <DownloadRelease blog="osmand-2-4" release="net.osmand-2.4.6.apk" />
