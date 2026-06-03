@@ -415,7 +415,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,prof
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
