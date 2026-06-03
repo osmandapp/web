@@ -81,6 +81,7 @@ export default function CreateLiveTrackDialog({ open, onClose, createTranslation
         const key = generateKey();
         createTranslation(
             name.trim() || null,
+            duration,
             (translation) => {
                 const urlParams = new URLSearchParams({ tid: translation.id, key });
                 if (translation.name) {

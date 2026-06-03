@@ -248,7 +248,7 @@ export default function useLiveTracking() {
     // sharing the user's location, and calls onCreated(translation).
     // onGeoError(errorKey) is called if geolocation is denied or unavailable.
     const createTranslation = useCallback(
-        (name, onCreated, onGeoError, onCreateError) => {
+        (name, durationHours, onCreated, onGeoError, onCreateError) => {
             // Stop any active sharing before creating a new translation.
             if (ctx.myBroadcastTid) {
                 clientRef.current?.publish({
@@ -284,7 +284,10 @@ export default function useLiveTracking() {
                 onError: onCreateError,
             };
 
-            clientRef.current?.publish({ destination: '/app/translation/create', body: '{}' });
+            clientRef.current?.publish({
+                destination: '/app/translation/create',
+                body: JSON.stringify({ durationHours }),
+            });
         },
         [
             ctx.myBroadcastTid,
