@@ -246,6 +246,7 @@ const GlobalFrame = () => {
     }, [location.pathname, location.search]);
 
     function mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, shared) {
+        savedVisible = savedVisible ?? { old: [], new: [], open: [] };
         const filterCondition = (name) =>
             shared ? !name.startsWith(VISIBLE_SHARE_MARKER) : name.startsWith(VISIBLE_SHARE_MARKER);
 
@@ -286,6 +287,8 @@ const GlobalFrame = () => {
     }
 
     const processTracks = (files, savedVisible, prefix = '') => {
+        // ensure savedVisible is never null/undefined (e.g. first run with empty localStorage)
+        savedVisible = savedVisible ?? { old: [], new: [], open: [] };
         // filter out empty values
         Object.keys(savedVisible).forEach((key) => {
             savedVisible[key] = (savedVisible[key] || []).filter(Boolean);
