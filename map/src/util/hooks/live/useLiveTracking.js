@@ -30,9 +30,10 @@ export default function useLiveTracking() {
         if (ctx.selectedLiveTranslation?.key) keysRef.current[ctx.selectedLiveTranslation.id] = ctx.selectedLiveTranslation.key;
     }, [ctx.liveTranslations, ctx.selectedLiveTranslation]);
 
-    // Manages geolocation watch: starts when myBroadcastTid is set and not paused, stops otherwise.
+    // Manages geolocation watch: starts when myBroadcastTid is set, not paused, and STOMP is connected.
+    // Stopping when disconnected prevents 404s during server restart / STOMP reconnect.
     useEffect(() => {
-        if (!ctx.myBroadcastTid || ctx.isMyBroadcastPaused || !navigator.geolocation) return;
+        if (!ctx.myBroadcastTid || ctx.isMyBroadcastPaused || !navigator.geolocation || !connected) return;
 
         const watchId = navigator.geolocation.watchPosition(
             (position) => {
@@ -58,7 +59,7 @@ export default function useLiveTracking() {
         );
 
         return () => navigator.geolocation.clearWatch(watchId);
-    }, [ctx.myBroadcastTid, ctx.isMyBroadcastPaused]);
+    }, [ctx.myBroadcastTid, ctx.isMyBroadcastPaused, connected]);
 
     // Prepends a new location point to the participant's history.
     // Newest point is always at index 0.
@@ -88,7 +89,8 @@ export default function useLiveTracking() {
     );
 
     // Handles METADATA message: server's initial snapshot sent in response to /load.
-    // Sets all participants at once with full track history (allLocations) or last known point.
+    // Marks participants as active/inactive. Encrypted location history is populated
+    // separately by processEncryptedHistory.
     const handleMetadata = useCallback(
         (translationId, data) => {
             if (!Array.isArray(data.shareLocations)) return;
@@ -98,25 +100,13 @@ export default function useLiveTracking() {
                 const activeNicknames = new Set();
                 data.shareLocations.forEach((loc, index) => {
                     activeNicknames.add(loc.nickname);
-                    let historyLocations = [];
-                    if (Array.isArray(loc.allLocations)) {
-                        historyLocations = loc.allLocations;
-                    } else if (loc.lastLocation) {
-                        historyLocations = [loc.lastLocation];
-                    }
                     const existing = byTranslation[loc.nickname];
-                    const color = existing?.color ?? getColorByIndex(index, data.shareLocations.length);
-                    // Keep live points that arrived before history loaded and are newer than history head
-                    const historyHeadTime = historyLocations[0]?.time ?? 0;
-                    const livePoints = (existing?.locations ?? []).filter((p) => (p.time ?? 0) > historyHeadTime);
-                    const combined = [...livePoints, ...historyLocations];
-                    combined.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
                     byTranslation[loc.nickname] = {
                         nickname: loc.nickname,
-                        color,
+                        color: existing?.color ?? getColorByIndex(index, data.shareLocations.length),
                         active: true,
                         startTime: loc.startTime ?? existing?.startTime ?? Date.now(),
-                        locations: combined,
+                        locations: existing?.locations ?? [],
                     };
                 });
                 // Mark participants no longer sharing as inactive
@@ -466,8 +456,11 @@ export default function useLiveTracking() {
         if (sel && !ctx.liveTranslations.find((t) => t.id === sel.id)) {
             subscribeToTranslation(client, sel.id);
         }
-        // Restore active sharing session after page refresh
-        if (!ctx.myBroadcastTid) {
+        // Re-register sharing session with the server on every reconnect
+        if (ctx.myBroadcastTid && !ctx.isMyBroadcastPaused) {
+            client.publish({ destination: `/app/translation/${ctx.myBroadcastTid}/startSharing`, body: '{}' });
+        } else if (!ctx.myBroadcastTid) {
+            // Restore from sessionStorage after page refresh.
             const savedTid = sessionStorage.getItem(BROADCAST_TID_SESSION);
             if (savedTid && ctx.liveTranslations.find((t) => t.id === savedTid)) {
                 ctx.setMyBroadcastTid(savedTid);
