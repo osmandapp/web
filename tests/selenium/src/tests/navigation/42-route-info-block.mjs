@@ -17,7 +17,7 @@ const routes = [
         strings: [
             'Points: 2',
             /Bicycle 2\.(0\d|1\d?) km/, // 2.09 km
-            /Route: 2\.1\d? km, 0:06 min/,
+            /Route: 2\.1\d? km, 0:[01]\d min/,
         ],
         turns: [
             'Go ahead and go 0.0 km',

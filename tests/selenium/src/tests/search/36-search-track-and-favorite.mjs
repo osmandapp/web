@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { assert, clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -44,7 +44,11 @@ export default async function test() {
 
     await submitSearchQuery(trackName);
 
-    await waitByRemoved(By.id(trackResultId));
+    let emptySearch = await waitBy(By.id('se-empty-search'), { optional: true });
+    if (!emptySearch) {
+        await waitBy(By.id('se-search-results'));
+        await waitByRemoved(By.id(trackResultId));
+    }
 
     // --- Search: favorite appears, then disappears after group delete ---
     const favGroupName = 'favorites-shops';
@@ -79,9 +83,11 @@ export default async function test() {
 
     await submitSearchQuery(wptName);
 
-    await waitBy(By.id('se-search-results'));
-    await waitByRemoved(By.id(favResultId));
-
+    emptySearch = await waitBy(By.id('se-empty-search'), { optional: true });
+    if (!emptySearch) {
+        await waitBy(By.id('se-search-results'));
+        await waitByRemoved(By.id(favResultId));
+    }
     await actionFinish();
 }
 
