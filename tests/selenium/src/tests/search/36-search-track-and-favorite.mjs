@@ -43,12 +43,7 @@ export default async function test() {
     await deleteTrack(trackName);
 
     await submitSearchQuery(trackName);
-
-    let emptySearch = await waitBy(By.id('se-empty-search'), { optional: true });
-    if (!emptySearch) {
-        await waitBy(By.id('se-search-results'));
-        await waitByRemoved(By.id(trackResultId));
-    }
+    await assertSearchResultGone(trackResultId);
 
     // --- Search: favorite appears, then disappears after group delete ---
     const favGroupName = 'favorites-shops';
@@ -82,13 +77,16 @@ export default async function test() {
     await actionDeleteFavGroup(shortFavGroupName);
 
     await submitSearchQuery(wptName);
+    await assertSearchResultGone(favResultId);
+    await actionFinish();
+}
 
-    emptySearch = await waitBy(By.id('se-empty-search'), { optional: true });
+async function assertSearchResultGone(resultId) {
+    const emptySearch = await waitBy(By.id('se-empty-search'), { optional: true });
     if (!emptySearch) {
         await waitBy(By.id('se-search-results'));
-        await waitByRemoved(By.id(favResultId));
+        await waitByRemoved(By.id(resultId));
     }
-    await actionFinish();
 }
 
 async function submitSearchQuery(query) {
