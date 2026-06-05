@@ -4,34 +4,68 @@ import AppContext, { LIVE_TRACKS_STORAGE_KEY } from '../../../context/AppContext
 import { getColorByIndex } from '../../../menu/analyzer/util/SegmentColorizer';
 import { encryptLocation, decryptLocation } from '../../livetracks/liveTrackCrypto';
 
-// sessionStorage key to restore the active broadcast tid after page refresh.
+// sessionStorage key: my broadcast tid, restored after page refresh.
 const BROADCAST_TID_SESSION = '__liveTrackBroadcastTid__';
+
+// Initial /load fetches the last 6h only (fast open); older windows via loadEarlier().
+const INITIAL_LOAD_WINDOW_MS = 6 * 60 * 60 * 1000;
 
 export default function useLiveTracking() {
     const ctx = useContext(AppContext);
 
     const clientRef = useRef(null);
-    const subscribedRef = useRef(new Set());
+    const subscribedRef = useRef(new Set()); // translationIds we've already subscribed to
+    const pendingCreateRef = useRef(null); // { onSuccess, onError } for the in-flight /create
 
-    // Stores { onSuccess, onError } for a pending /create request.
-    const pendingCreateRef = useRef(null);
+    // Per-translation maps (refs: change off-render, never displayed).
+    const keysRef = useRef({}); // tid → AES key (hex)
+    const lastTimeRef = useRef({}); // tid → newest serverReceiveTime seen; reconnect fetches the delta
+    const earliestFromRef = useRef({}); // tid → oldest fromTime requested; loadEarlier steps it back
 
     const [connected, setConnected] = useState(false);
+    // tid → true when no older history remains (earliest request passed creationDate). Disables "load earlier".
+    const [historyExhausted, setHistoryExhausted] = useState({});
 
-    // Maps translationId → encryption key (hex string).
-    const keysRef = useRef({});
+    // Publish a body-less command to the server (startSharing / stopSharing / delete).
+    const sendCommand = useCallback((destination) => {
+        clientRef.current?.publish({ destination, body: '{}' });
+    }, []);
 
-    // Sync keysRef from saved translations and the current preview translation.
-    // Runs whenever either changes so the LOCATION handler can always decrypt.
+    // Save the translations list to state and localStorage together.
+    const saveTranslations = useCallback(
+        (list) => {
+            ctx.setLiveTranslations(list);
+            localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(list));
+        },
+        [ctx.setLiveTranslations]
+    );
+
+    // Drop all client-side state for one translation.
+    const forgetTranslation = useCallback((id) => {
+        subscribedRef.current.delete(id);
+        delete keysRef.current[id];
+        delete lastTimeRef.current[id];
+        delete earliestFromRef.current[id];
+        setHistoryExhausted((prev) => {
+            if (!(id in prev)) return prev;
+            const next = { ...prev };
+            delete next[id];
+            return next;
+        });
+    }, []);
+
+    // Keep keysRef in sync so the LOCATION handler can always decrypt.
     useEffect(() => {
         ctx.liveTranslations.forEach((t) => {
             if (t.key) keysRef.current[t.id] = t.key;
         });
-        if (ctx.selectedLiveTranslation?.key) keysRef.current[ctx.selectedLiveTranslation.id] = ctx.selectedLiveTranslation.key;
+        if (ctx.selectedLiveTranslation?.key) {
+            keysRef.current[ctx.selectedLiveTranslation.id] = ctx.selectedLiveTranslation.key;
+        }
     }, [ctx.liveTranslations, ctx.selectedLiveTranslation]);
 
-    // Manages geolocation watch: starts when myBroadcastTid is set, not paused, and STOMP is connected.
-    // Stopping when disconnected prevents 404s during server restart / STOMP reconnect.
+    // Broadcast my position: watch geolocation while sharing is active and connected.
+    // Gated on `connected` so we don't POST during a STOMP reconnect.
     useEffect(() => {
         if (!ctx.myBroadcastTid || ctx.isMyBroadcastPaused || !navigator.geolocation || !connected) return;
 
@@ -61,8 +95,7 @@ export default function useLiveTracking() {
         return () => navigator.geolocation.clearWatch(watchId);
     }, [ctx.myBroadcastTid, ctx.isMyBroadcastPaused, connected]);
 
-    // Prepends a new location point to the participant's history.
-    // Newest point is always at index 0.
+    // Add a live point to a participant (newest at index 0).
     const updateParticipant = useCallback(
         (translationId, nickname, point) => {
             ctx.setLiveParticipants((prev) => {
@@ -88,9 +121,8 @@ export default function useLiveTracking() {
         [ctx.setLiveParticipants]
     );
 
-    // Handles METADATA message: server's initial snapshot sent in response to /load.
-    // Marks participants as active/inactive. Encrypted location history is populated
-    // separately by processEncryptedHistory.
+    // Apply a METADATA snapshot: mark who is currently sharing active/inactive.
+    // Their location history is filled separately by processEncryptedHistory.
     const handleMetadata = useCallback(
         (translationId, data) => {
             if (!Array.isArray(data.shareLocations)) return;
@@ -121,8 +153,7 @@ export default function useLiveTracking() {
         [ctx.setLiveParticipants]
     );
 
-    // Subscribes to a STOMP topic for the given translation and requests initial data.
-    // Skips silently if already subscribed.
+    // Subscribe to a translation's topic (once) and request its initial history.
     const subscribeToTranslation = useCallback(
         (client, translationId) => {
             if (subscribedRef.current.has(translationId)) {
@@ -133,6 +164,10 @@ export default function useLiveTracking() {
 
             client.subscribe(`/topic/translation/${translationId}`, (message) => {
                 const msg = JSON.parse(message.body);
+                // Track newest server time so reconnect only re-fetches the delta.
+                if (msg.serverReceiveTime && msg.serverReceiveTime > (lastTimeRef.current[translationId] ?? 0)) {
+                    lastTimeRef.current[translationId] = msg.serverReceiveTime;
+                }
                 if (msg.type === 'LOCATION') {
                     const encryptedData = msg.content?.encryptedData;
                     const key = keysRef.current[translationId];
@@ -160,7 +195,7 @@ export default function useLiveTracking() {
                         return { ...prev, [translationId]: byTranslation };
                     });
                 } else if (msg.type === 'DELETE') {
-                    // Owner deleted the translation — remove it from all client state.
+                    // Owner deleted the translation — wipe it from client state.
                     ctx.setLiveTranslations((prev) => {
                         const updated = prev.filter((t) => t.id !== translationId);
                         localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
@@ -172,28 +207,50 @@ export default function useLiveTracking() {
                         return next;
                     });
                     ctx.setSelectedLiveTranslation((sel) => (sel?.id === translationId ? null : sel));
-                    subscribedRef.current.delete(translationId);
-                    delete keysRef.current[translationId];
+                    forgetTranslation(translationId);
                 }
             });
-
-            client.publish({ destination: `/app/translation/${translationId}/load`, body: '{}' });
+            // Initial load: delta since the last point seen, or the recent window on first open.
+            const last = lastTimeRef.current[translationId];
+            const fromTime = last ? last + 1 : Date.now() - INITIAL_LOAD_WINDOW_MS;
+            if (earliestFromRef.current[translationId] == null) {
+                earliestFromRef.current[translationId] = fromTime;
+            }
+            client.publish({
+                destination: `/app/translation/${translationId}/load`,
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ fromTime }),
+            });
         },
-        [updateParticipant, handleMetadata, ctx.setLiveViewers]
+        [updateParticipant, handleMetadata, forgetTranslation, ctx.setLiveViewers]
     );
 
-    // Adds a translation to the saved list and persists to localStorage.
-    // key (hex string) is optional — required for decryption; stored with the translation.
-    // If already saved, just selects it (and updates the key if a better one is provided).
+    // Fetch the previous INITIAL_LOAD_WINDOW_MS of history (merged + de-duped on arrival).
+    const loadEarlier = useCallback(
+        (translationId) => {
+            if (historyExhausted[translationId]) {
+                return;
+            }
+            const currentFrom = earliestFromRef.current[translationId] ?? Date.now() - INITIAL_LOAD_WINDOW_MS;
+            const newFrom = currentFrom - INITIAL_LOAD_WINDOW_MS;
+            earliestFromRef.current[translationId] = newFrom;
+            clientRef.current?.publish({
+                destination: `/app/translation/${translationId}/load`,
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ fromTime: newFrom, toTime: currentFrom }),
+            });
+        },
+        [historyExhausted]
+    );
+
+    // Save a translation to the list (key needed to decrypt). If already saved, just
+    // select it, backfilling the key if we now have one.
     const addLiveTrack = useCallback(
         (id, name, key) => {
             const existing = ctx.liveTranslations.find((t) => t.id === id);
             if (existing) {
-                // Update key if we now have one but the stored translation doesn't.
                 if (key && !existing.key) {
-                    const updated = ctx.liveTranslations.map((t) => (t.id === id ? { ...t, key } : t));
-                    ctx.setLiveTranslations(updated);
-                    localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
+                    saveTranslations(ctx.liveTranslations.map((t) => (t.id === id ? { ...t, key } : t)));
                     keysRef.current[id] = key;
                     ctx.setSelectedLiveTranslation({ ...existing, key });
                 } else {
@@ -205,9 +262,7 @@ export default function useLiveTracking() {
             const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
             const newTranslation = { id, name: autoName, ...(key ? { key } : {}) };
             if (key) keysRef.current[id] = key;
-            const updated = [...ctx.liveTranslations, newTranslation];
-            ctx.setLiveTranslations(updated);
-            localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
+            saveTranslations([...ctx.liveTranslations, newTranslation]);
             ctx.setSelectedLiveTranslation(newTranslation);
 
             const client = clientRef.current;
@@ -215,17 +270,14 @@ export default function useLiveTracking() {
                 subscribeToTranslation(client, id);
             }
         },
-        [ctx.liveTranslations, ctx.setLiveTranslations, ctx.setSelectedLiveTranslation, subscribeToTranslation]
+        [ctx.liveTranslations, saveTranslations, ctx.setSelectedLiveTranslation, subscribeToTranslation]
     );
 
-    // Removes a translation from the saved list, clears its participants, and unsubscribes.
+    // Remove a translation from the list and drop all its client state.
     const removeLiveTrack = useCallback(
         (id) => {
-            const updated = ctx.liveTranslations.filter((t) => t.id !== id);
-            ctx.setLiveTranslations(updated);
-            localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
-            subscribedRef.current.delete(id);
-            delete keysRef.current[id];
+            saveTranslations(ctx.liveTranslations.filter((t) => t.id !== id));
+            forgetTranslation(id);
             ctx.setLiveParticipants((prev) => {
                 const next = { ...prev };
                 delete next[id];
@@ -237,59 +289,44 @@ export default function useLiveTracking() {
         },
         [
             ctx.liveTranslations,
-            ctx.setLiveTranslations,
+            saveTranslations,
+            forgetTranslation,
             ctx.setLiveParticipants,
             ctx.selectedLiveTranslation,
             ctx.setSelectedLiveTranslation,
         ]
     );
 
-    // Starts (or resumes) sharing for the given translation.
-    // Also stops sharing any previously active translation.
+    // Start (or resume) sharing this translation, stopping any other active one first.
     const startSharing = useCallback(
         (translationId) => {
             if (ctx.myBroadcastTid && ctx.myBroadcastTid !== translationId) {
-                clientRef.current?.publish({
-                    destination: `/app/translation/${ctx.myBroadcastTid}/stopSharing`,
-                    body: '{}',
-                });
+                sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
             }
-            clientRef.current?.publish({
-                destination: `/app/translation/${translationId}/startSharing`,
-                body: '{}',
-            });
+            sendCommand(`/app/translation/${translationId}/startSharing`);
             sessionStorage.setItem(BROADCAST_TID_SESSION, translationId);
             ctx.setMyBroadcastTid(translationId);
             ctx.setIsMyBroadcastPaused(false);
         },
-        [ctx.myBroadcastTid, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
+        [ctx.myBroadcastTid, sendCommand, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
     );
 
-    // Pauses sharing: notifies server and stops geo broadcast, but keeps myBroadcastTid
-    // so the owner can resume. Also used by participants to stop sharing their location.
+    // Pause sharing but keep myBroadcastTid so the owner can resume later.
     const pauseSharing = useCallback(() => {
         if (ctx.myBroadcastTid) {
-            clientRef.current?.publish({
-                destination: `/app/translation/${ctx.myBroadcastTid}/stopSharing`,
-                body: '{}',
-            });
+            sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
         }
         sessionStorage.removeItem(BROADCAST_TID_SESSION);
         ctx.setIsMyBroadcastPaused(true);
-    }, [ctx.myBroadcastTid, ctx.setIsMyBroadcastPaused]);
+    }, [ctx.myBroadcastTid, sendCommand, ctx.setIsMyBroadcastPaused]);
 
-    // Creates a new translation on the server with a client-generated translationId and key.
-    // The translationId MUST be SHA-256(key) so that the server ID is derivable from the key.
-    // Saves the translation (with key) to the list, starts sharing, and calls onCreated(translation).
-    // onGeoError(errorKey) is called if geolocation is denied or unavailable.
+    // Create a new translation on the server (id must equal SHA-256(key)). On success:
+    // save it as owner, select it, and start sharing. The server reply arrives on
+    // /user/queue/updates and is handled in the mount effect (pendingCreateRef).
     const createLiveTrack = useCallback(
         (translationId, key, name, durationHours, onCreated, onGeoError, onCreateError) => {
-            // Stop any active sharing before creating a new translation.
             if (ctx.myBroadcastTid) {
-                clientRef.current?.publish({
-                    destination: `/app/translation/${ctx.myBroadcastTid}/stopSharing`,
-                    body: '{}',
-                });
+                sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
                 ctx.setMyBroadcastTid(null);
                 ctx.setIsMyBroadcastPaused(false);
             }
@@ -297,25 +334,19 @@ export default function useLiveTracking() {
             pendingCreateRef.current = {
                 onSuccess: (id) => {
                     const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
-                    // isOwner: true marks this client as the creator of this translation.
                     const newTranslation = { id, name: autoName, key, isOwner: true };
                     keysRef.current[id] = key;
-                    const updated = [...ctx.liveTranslations, newTranslation];
-                    ctx.setLiveTranslations(updated);
-                    localStorage.setItem(LIVE_TRACKS_STORAGE_KEY, JSON.stringify(updated));
+                    saveTranslations([...ctx.liveTranslations, newTranslation]);
                     ctx.setSelectedLiveTranslation(newTranslation);
                     const client = clientRef.current;
                     if (client?.connected) {
                         subscribeToTranslation(client, id);
                     }
-                    // Set sharing state — geo watch starts automatically via useEffect.
+                    // Mark as my broadcast — the geolocation watch starts via useEffect.
                     sessionStorage.setItem(BROADCAST_TID_SESSION, id);
                     ctx.setMyBroadcastTid(id);
                     ctx.setIsMyBroadcastPaused(false);
-                    clientRef.current?.publish({
-                        destination: `/app/translation/${id}/startSharing`,
-                        body: '{}',
-                    });
+                    sendCommand(`/app/translation/${id}/startSharing`);
                     onCreated?.(newTranslation);
                 },
                 onError: onCreateError,
@@ -331,33 +362,38 @@ export default function useLiveTracking() {
             ctx.setMyBroadcastTid,
             ctx.setIsMyBroadcastPaused,
             ctx.liveTranslations,
-            ctx.setLiveTranslations,
+            saveTranslations,
             ctx.setSelectedLiveTranslation,
+            sendCommand,
             subscribeToTranslation,
         ]
     );
 
-    // Deletes the translation for all viewers. Only works if the current user is the owner.
+    // Delete the translation for everyone (owner only, enforced server-side).
     const deleteLiveTrack = useCallback(
         (id) => {
             if (ctx.myBroadcastTid === id) {
-                clientRef.current?.publish({
-                    destination: `/app/translation/${id}/stopSharing`,
-                    body: '{}',
-                });
+                sendCommand(`/app/translation/${id}/stopSharing`);
                 sessionStorage.removeItem(BROADCAST_TID_SESSION);
                 ctx.setMyBroadcastTid(null);
                 ctx.setIsMyBroadcastPaused(false);
             }
-            clientRef.current?.publish({ destination: `/app/translation/${id}/delete`, body: '{}' });
+            sendCommand(`/app/translation/${id}/delete`);
         },
-        [ctx.myBroadcastTid, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
+        [ctx.myBroadcastTid, sendCommand, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
     );
 
-    // Decrypts encrypted LOCATION messages from the /load history snapshot and
-    // populates liveParticipants so the last known positions are visible immediately.
+    // Decrypt a /load history batch into participant tracks (newest-first, de-duped by time).
     const processEncryptedHistory = useCallback(
         (translationId, history) => {
+            // Advance the delta cursor from server times (even for messages we can't decrypt).
+            if (Array.isArray(history)) {
+                for (const m of history) {
+                    if (m.serverReceiveTime && m.serverReceiveTime > (lastTimeRef.current[translationId] ?? 0)) {
+                        lastTimeRef.current[translationId] = m.serverReceiveTime;
+                    }
+                }
+            }
             const key = keysRef.current[translationId];
             if (!key || !Array.isArray(history) || history.length === 0) {
                 return;
@@ -405,27 +441,36 @@ export default function useLiveTracking() {
         [ctx.setLiveParticipants]
     );
 
-    // Connect once on mount
+    // Connect once on mount.
     useEffect(() => {
         const client = new Client({
             brokerURL: process.env.REACT_APP_WS_URL,
             reconnectDelay: 5000,
             onConnect: () => {
-                // Subscribe to private queue to receive responses to /load (history snapshot)
-                // and to /create (new translation confirmation).
+                // Private queue: replies to /load (history snapshot) and /create.
                 client.subscribe('/user/queue/updates', (message) => {
                     const msg = JSON.parse(message.body);
                     if (msg.type === 'TRANSLATION' && msg.data?.id) {
                         if (pendingCreateRef.current && msg.data.shareLocations == null) {
-                            // Response to /create — fire the callback and clear it.
+                            // /create reply — fire the callback and clear it.
                             pendingCreateRef.current.onSuccess(msg.data.id);
                             pendingCreateRef.current = null;
                         } else {
                             handleMetadata(msg.data.id, msg.data);
                             processEncryptedHistory(msg.data.id, msg.data.history);
+                            // No older history once our earliest request predates creation.
+                            // Runs on the first load too, so a fresh translation disables at once.
+                            const earliest = earliestFromRef.current[msg.data.id];
+                            const created = msg.data.creationDate;
+                            if (created && earliest != null) {
+                                const exhausted = earliest <= created;
+                                setHistoryExhausted((prev) =>
+                                    prev[msg.data.id] === exhausted ? prev : { ...prev, [msg.data.id]: exhausted }
+                                );
+                            }
                         }
                     } else if (msg.type === 'ERROR' && pendingCreateRef.current) {
-                        // Server rejected /create (e.g. not authenticated).
+                        // /create rejected (e.g. not authenticated).
                         pendingCreateRef.current.onError?.(msg.data);
                         pendingCreateRef.current = null;
                     }
@@ -446,7 +491,7 @@ export default function useLiveTracking() {
         };
     }, []);
 
-    // Subscribe to saved translations and to the currently selected (preview) translation
+    // On (re)connect: subscribe to saved + selected translations and re-register my sharing.
     useEffect(() => {
         if (!connected) return;
         const client = clientRef.current;
@@ -456,19 +501,18 @@ export default function useLiveTracking() {
         if (sel && !ctx.liveTranslations.find((t) => t.id === sel.id)) {
             subscribeToTranslation(client, sel.id);
         }
-        // Re-register sharing session with the server on every reconnect
         if (ctx.myBroadcastTid && !ctx.isMyBroadcastPaused) {
-            client.publish({ destination: `/app/translation/${ctx.myBroadcastTid}/startSharing`, body: '{}' });
+            sendCommand(`/app/translation/${ctx.myBroadcastTid}/startSharing`);
         } else if (!ctx.myBroadcastTid) {
-            // Restore from sessionStorage after page refresh.
+            // Resume my broadcast saved before a page refresh.
             const savedTid = sessionStorage.getItem(BROADCAST_TID_SESSION);
             if (savedTid && ctx.liveTranslations.find((t) => t.id === savedTid)) {
                 ctx.setMyBroadcastTid(savedTid);
                 ctx.setIsMyBroadcastPaused(false);
-                client.publish({ destination: `/app/translation/${savedTid}/startSharing`, body: '{}' });
+                sendCommand(`/app/translation/${savedTid}/startSharing`);
             }
         }
-    }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation]);
+    }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation, sendCommand]);
 
     return {
         addLiveTrack,
@@ -477,5 +521,7 @@ export default function useLiveTracking() {
         deleteLiveTrack,
         startSharing,
         pauseSharing,
+        loadEarlier,
+        historyExhausted,
     };
 }

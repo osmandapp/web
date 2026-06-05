@@ -10,9 +10,8 @@
  *   const sim = await window.__liveTrackSim.start({ speed: 30, maxPoints: 1000 });
  *
  * --- Join an existing translation (e.g. after page refresh or sim.stop()) ---
- *   const sim = await window.__liveTrackSim.start({ tid: 'abc123' });
- *   // tid is printed in the console when the translation is first created,
- *   // or grab it from the share URL: ?tid=<value>
+ *   const sim = await window.__liveTrackSim.start({ tid: 'abc123', key: '<64-hex key>' });
+ *   // tid + key are printed in the console when the translation is first created
  *
  * --- Pause sending points (sim keeps connected) ---
  *   sim.pause();
@@ -26,6 +25,7 @@
  *
  * --- Options ---
  *   tid        — join an existing translation (default: create a new one)
+ *   key        — 64-hex private key, required to SEND when joining via tid
  *   alias      — display name (default: 'WebSimulator')
  *   lat        — start latitude  (default: 50.4501)
  *   lon        — start longitude (default: 30.5234)
@@ -101,6 +101,7 @@ export function start(opts = {}) {
     let paused = false;
     let started = false;
     let pendingConfirmation = false;
+    let warnedNoKey = false;
 
     return new Promise((resolve) => {
         const client = new Client({

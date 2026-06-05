@@ -47,8 +47,16 @@ export default function TracksMenu() {
 
     const { t } = useTranslation();
 
-    const { addLiveTrack, removeLiveTrack, createLiveTrack, deleteLiveTrack, startSharing, pauseSharing } =
-        useLiveTracking();
+    const {
+        addLiveTrack,
+        removeLiveTrack,
+        createLiveTrack,
+        deleteLiveTrack,
+        startSharing,
+        pauseSharing,
+        loadEarlier,
+        historyExhausted,
+    } = useLiveTracking();
     const { openLiveTracks } = useLiveTrackUrl();
 
     const checkHasFiles = () =>
@@ -119,7 +127,13 @@ export default function TracksMenu() {
 
     if (openLiveTracks) {
         if (ctx.selectedLiveTranslation) {
-            return <LiveTrackContextMenu addLiveTrack={addLiveTrack} />;
+            return (
+                <LiveTrackContextMenu
+                    addLiveTrack={addLiveTrack}
+                    loadEarlier={loadEarlier}
+                    historyExhausted={historyExhausted}
+                />
+            );
         }
         return (
             <LiveTrackFolder

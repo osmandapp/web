@@ -32,7 +32,7 @@ import errorStyles from '../../errors/errors.module.css';
 
 const ZONE_COLORS = { UPHILL: '#d35400', DOWNHILL: '#27ae60', FLAT: '#7f8c8d' };
 
-export default function LiveTrackContextMenu({ addLiveTrack }) {
+export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, historyExhausted }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
@@ -69,6 +69,20 @@ export default function LiveTrackContextMenu({ addLiveTrack }) {
                 showBackButton={true}
                 rightContent={
                     <>
+                        {loadEarlier && participantList.length > 0 && (
+                            <Tooltip title={t('web:live_track_load_earlier')} arrow placement="bottom">
+                                <span>
+                                    <IconButton
+                                        id="se-live-track-load-earlier"
+                                        className={trackFavStyles.sortIcon}
+                                        onClick={() => loadEarlier(translation.id)}
+                                        disabled={!!historyExhausted?.[translation.id]}
+                                    >
+                                        <TimeIcon />
+                                    </IconButton>
+                                </span>
+                            </Tooltip>
+                        )}
                         {translation?.isOwner && translation?.key && (
                             <Tooltip
                                 title={t(linkCopied ? 'web:live_track_link_copied' : 'web:live_track_copy_share_link')}
