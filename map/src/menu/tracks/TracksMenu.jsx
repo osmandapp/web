@@ -24,8 +24,8 @@ import LiveTrackFolder from './liveTrack/LiveTrackFolder';
 import LiveTrackContextMenu from './liveTrack/LiveTrackContextMenu';
 import useLiveTracking from '../../util/hooks/live/useLiveTracking';
 import useLiveTrackUrl from '../../util/hooks/live/useLiveTrackUrl';
-import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -41,19 +41,14 @@ export default function TracksMenu() {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const [searchParams] = useSearchParams();
 
     const [, height] = useWindowSize();
 
     const { t } = useTranslation();
 
-    const {
-        addTranslation,
-        removeTranslation,
-        createTranslation,
-        deleteTranslationForAll,
-        startSharing,
-        pauseSharing,
-    } = useLiveTracking();
+    const { addLiveTrack, removeLiveTrack, createLiveTrack, deleteLiveTrack, startSharing, pauseSharing } =
+        useLiveTracking();
     const { openLiveTracks } = useLiveTrackUrl();
 
     const checkHasFiles = () =>
@@ -116,16 +111,21 @@ export default function TracksMenu() {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
 
-    // live tracks folder / context menu
+    // live tracks folder
+    if (openLiveTracks && !ltx.loginUser && !searchParams.get('tid')) {
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash, { replace: true });
+        return null;
+    }
+
     if (openLiveTracks) {
         if (ctx.selectedLiveTranslation) {
-            return <LiveTrackContextMenu addTranslation={addTranslation} />;
+            return <LiveTrackContextMenu addLiveTrack={addLiveTrack} />;
         }
         return (
             <LiveTrackFolder
-                removeTranslation={removeTranslation}
-                createTranslation={createTranslation}
-                deleteTranslationForAll={deleteTranslationForAll}
+                removeLiveTrack={removeLiveTrack}
+                createLiveTrack={createLiveTrack}
+                deleteLiveTrack={deleteLiveTrack}
                 startSharing={startSharing}
                 pauseSharing={pauseSharing}
             />

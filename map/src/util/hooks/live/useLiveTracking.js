@@ -185,7 +185,7 @@ export default function useLiveTracking() {
     // Adds a translation to the saved list and persists to localStorage.
     // key (hex string) is optional — required for decryption; stored with the translation.
     // If already saved, just selects it (and updates the key if a better one is provided).
-    const addTranslation = useCallback(
+    const addLiveTrack = useCallback(
         (id, name, key) => {
             const existing = ctx.liveTranslations.find((t) => t.id === id);
             if (existing) {
@@ -219,7 +219,7 @@ export default function useLiveTracking() {
     );
 
     // Removes a translation from the saved list, clears its participants, and unsubscribes.
-    const removeTranslation = useCallback(
+    const removeLiveTrack = useCallback(
         (id) => {
             const updated = ctx.liveTranslations.filter((t) => t.id !== id);
             ctx.setLiveTranslations(updated);
@@ -282,7 +282,7 @@ export default function useLiveTracking() {
     // The translationId MUST be SHA-256(key) so that the server ID is derivable from the key.
     // Saves the translation (with key) to the list, starts sharing, and calls onCreated(translation).
     // onGeoError(errorKey) is called if geolocation is denied or unavailable.
-    const createTranslation = useCallback(
+    const createLiveTrack = useCallback(
         (translationId, key, name, durationHours, onCreated, onGeoError, onCreateError) => {
             // Stop any active sharing before creating a new translation.
             if (ctx.myBroadcastTid) {
@@ -338,7 +338,7 @@ export default function useLiveTracking() {
     );
 
     // Deletes the translation for all viewers. Only works if the current user is the owner.
-    const deleteTranslationForAll = useCallback(
+    const deleteLiveTrack = useCallback(
         (id) => {
             if (ctx.myBroadcastTid === id) {
                 clientRef.current?.publish({
@@ -471,10 +471,10 @@ export default function useLiveTracking() {
     }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation]);
 
     return {
-        addTranslation,
-        removeTranslation,
-        createTranslation,
-        deleteTranslationForAll,
+        addLiveTrack,
+        removeLiveTrack,
+        createLiveTrack,
+        deleteLiveTrack,
         startSharing,
         pauseSharing,
     };

@@ -16,8 +16,8 @@ import MenuItemWithLines from '../../components/MenuItemWithLines';
 export default function LiveTrackItem({
     translation,
     isLastItem,
-    removeTranslation,
-    deleteTranslationForAll,
+    removeLiveTrack,
+    deleteLiveTrack,
     startSharing,
     pauseSharing,
 }) {
@@ -47,7 +47,7 @@ export default function LiveTrackItem({
 
     function handleRemoveBookmark() {
         setOpenActions(false);
-        removeTranslation(translation.id);
+        removeLiveTrack(translation.id);
     }
 
     function handleOwnerSharingAction() {
@@ -66,7 +66,7 @@ export default function LiveTrackItem({
 
     function handleDeleteForAll() {
         setOpenActions(false);
-        deleteTranslationForAll(translation.id);
+        deleteLiveTrack(translation.id);
     }
 
     function handleCopyShareLink() {

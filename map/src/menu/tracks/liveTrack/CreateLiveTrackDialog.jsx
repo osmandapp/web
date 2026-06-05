@@ -31,7 +31,7 @@ function durationLabel(value, t) {
     return t('web:live_track_duration_24h');
 }
 
-export default function CreateLiveTrackDialog({ open, onClose, createTranslation }) {
+export default function CreateLiveTrackDialog({ open, onClose, createLiveTrack }) {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
@@ -84,7 +84,7 @@ export default function CreateLiveTrackDialog({ open, onClose, createTranslation
             return;
         }
 
-        createTranslation(
+        createLiveTrack(
             translationId,
             key,
             name.trim() || null,

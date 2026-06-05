@@ -14,9 +14,9 @@ import { HEADER_SIZE, MAIN_URL_WITH_SLASH, TRACKS_URL } from '../../../manager/G
 import gStyles from '../../gstylesmenu.module.css';
 
 export default function LiveTrackFolder({
-    removeTranslation,
-    createTranslation,
-    deleteTranslationForAll,
+    removeLiveTrack,
+    createLiveTrack,
+    deleteLiveTrack,
     startSharing,
     pauseSharing,
 }) {
@@ -61,7 +61,7 @@ export default function LiveTrackFolder({
             <CreateLiveTrackDialog
                 open={dialogOpen}
                 onClose={() => setDialogOpen(false)}
-                createTranslation={createTranslation}
+                createLiveTrack={createLiveTrack}
             />
             {ctx.liveTranslations.length === 0 ? (
                 <Empty title={t('web:live_track_empty')} text={t('web:live_track_empty_desc')} />
@@ -72,8 +72,8 @@ export default function LiveTrackFolder({
                             key={translation.id}
                             translation={translation}
                             isLastItem={index === ctx.liveTranslations.length - 1}
-                            removeTranslation={removeTranslation}
-                            deleteTranslationForAll={deleteTranslationForAll}
+                            removeLiveTrack={removeLiveTrack}
+                            deleteLiveTrack={deleteLiveTrack}
                             startSharing={startSharing}
                             pauseSharing={pauseSharing}
                         />

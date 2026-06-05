@@ -3,6 +3,7 @@ import { Box, Icon, IconButton, ListItemText, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../../../context/AppContext';
+import LoginContext from '../../../context/LoginContext';
 import { HEADER_SIZE, LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
 import { ReactComponent as ShareLinkIcon } from '../../../assets/icons/ic_action_link.svg';
@@ -31,8 +32,9 @@ import errorStyles from '../../errors/errors.module.css';
 
 const ZONE_COLORS = { UPHILL: '#d35400', DOWNHILL: '#27ae60', FLAT: '#7f8c8d' };
 
-export default function LiveTrackContextMenu({ addTranslation }) {
+export default function LiveTrackContextMenu({ addLiveTrack }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [, height] = useWindowSize();
@@ -78,14 +80,23 @@ export default function LiveTrackContextMenu({ addTranslation }) {
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {!ctx.liveTranslations.some((t) => t.id === translation?.id) && (
-                            <Tooltip title={t('web:live_track_bookmark')} arrow placement="bottom">
-                                <IconButton
-                                    className={trackFavStyles.sortIcon}
-                                    onClick={() => addTranslation(translation.id, translation.name, translation.key)}
-                                >
-                                    <FolderAddIcon />
-                                </IconButton>
+                        {(!ltx.loginUser || !ctx.liveTranslations.some((t) => t.id === translation?.id)) && (
+                            <Tooltip
+                                title={t(
+                                    ltx.loginUser ? 'web:live_track_bookmark' : 'web:live_track_bookmark_login_required'
+                                )}
+                                arrow
+                                placement="bottom"
+                            >
+                                <span>
+                                    <IconButton
+                                        className={trackFavStyles.sortIcon}
+                                        onClick={() => addLiveTrack(translation.id, translation.name, translation.key)}
+                                        disabled={!ltx.loginUser}
+                                    >
+                                        <FolderAddIcon />
+                                    </IconButton>
+                                </span>
                             </Tooltip>
                         )}
                     </>

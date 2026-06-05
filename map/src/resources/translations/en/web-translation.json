@@ -415,6 +415,7 @@
     "live_track_viewers": "Viewers",
     "live_track_follow": "Follow on map",
     "live_track_bookmark": "Add to Live Tracks",
+    "live_track_bookmark_login_required": "Log in to add to Live Tracks",
     "live_track_location_paused_title": "Location sharing paused",
     "live_track_location_paused_desc": "The owner has paused sharing their location. You will see updates when they resume.",
     "live_track_intervals": "Track intervals",
