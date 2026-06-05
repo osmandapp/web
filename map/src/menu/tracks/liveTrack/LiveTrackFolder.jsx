@@ -19,6 +19,7 @@ export default function LiveTrackFolder({
     deleteLiveTrack,
     startSharing,
     pauseSharing,
+    regenerateLiveTrack,
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -76,6 +77,7 @@ export default function LiveTrackFolder({
                             deleteLiveTrack={deleteLiveTrack}
                             startSharing={startSharing}
                             pauseSharing={pauseSharing}
+                            regenerateLiveTrack={regenerateLiveTrack}
                         />
                     ))}
                 </Box>

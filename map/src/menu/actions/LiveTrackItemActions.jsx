@@ -7,6 +7,7 @@ import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remov
 import { ReactComponent as LocationOffIcon } from '../../assets/icons/ic_action_location_off.svg';
 import { ReactComponent as LocationOnIcon } from '../../assets/icons/ic_action_my_location.svg';
 import { ReactComponent as ShareLinkIcon } from '../../assets/icons/ic_action_link.svg';
+import { ReactComponent as RegenerateIcon } from '../../assets/icons/ic_action_update.svg';
 import styles from '../trackfavmenu.module.css';
 
 const LiveTrackItemActions = forwardRef(
@@ -20,6 +21,7 @@ const LiveTrackItemActions = forwardRef(
             handleRemoveBookmark,
             handleDeleteForAll,
             handleCopyShareLink,
+            handleRegenerate,
             hasShareLink,
         },
         ref
@@ -85,6 +87,23 @@ const LiveTrackItemActions = forwardRef(
                             <ListItemText>
                                 <Typography className={styles.actionName} noWrap>
                                     {t('web:live_track_copy_share_link')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {/* Owner: regenerate the key — new permanent link, old one revoked */}
+                    {isOwner && (
+                        <MenuItem
+                            id="se-live-track-item-actions-regenerate"
+                            className={styles.action}
+                            onClick={handleRegenerate}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <RegenerateIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography className={styles.actionName} noWrap>
+                                    {t('web:live_track_regenerate_link')}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>

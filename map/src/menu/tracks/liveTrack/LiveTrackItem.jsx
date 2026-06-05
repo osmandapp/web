@@ -20,6 +20,7 @@ export default function LiveTrackItem({
     deleteLiveTrack,
     startSharing,
     pauseSharing,
+    regenerateLiveTrack,
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -75,6 +76,14 @@ export default function LiveTrackItem({
         if (url) navigator.clipboard.writeText(url).catch(() => {});
     }
 
+    function handleRegenerate() {
+        setOpenActions(false);
+        regenerateLiveTrack(translation.id, (newTranslation) => {
+            const params = new URLSearchParams({ tid: newTranslation.id, name: newTranslation.name });
+            navigate(`${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${params}`);
+        });
+    }
+
     return (
         <>
             <MenuItem
@@ -114,6 +123,7 @@ export default function LiveTrackItem({
                         handleRemoveBookmark={handleRemoveBookmark}
                         handleDeleteForAll={handleDeleteForAll}
                         handleCopyShareLink={handleCopyShareLink}
+                        handleRegenerate={handleRegenerate}
                         hasShareLink={!!translation.key}
                     />
                 }

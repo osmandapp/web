@@ -419,6 +419,7 @@
     "live_track_location_paused_title": "Location sharing paused",
     "live_track_location_paused_desc": "The owner has paused sharing their location. You will see updates when they resume.",
     "live_track_load_earlier": "Load earlier",
+    "live_track_regenerate_link": "Regenerate link",
     "live_track_intervals": "Track intervals",
     "live_track_elevation_gain": "Elevation gain",
     "live_track_elevation_loss": "Elevation loss",

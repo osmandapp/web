@@ -54,6 +54,7 @@ export default function TracksMenu() {
         deleteLiveTrack,
         startSharing,
         pauseSharing,
+        regenerateLiveTrack,
         loadEarlier,
         historyExhausted,
     } = useLiveTracking();
@@ -142,6 +143,7 @@ export default function TracksMenu() {
                 deleteLiveTrack={deleteLiveTrack}
                 startSharing={startSharing}
                 pauseSharing={pauseSharing}
+                regenerateLiveTrack={regenerateLiveTrack}
             />
         );
     }

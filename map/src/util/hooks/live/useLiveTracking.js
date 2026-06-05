@@ -2,7 +2,12 @@ import { useContext, useEffect, useRef, useCallback, useState } from 'react';
 import { Client } from '@stomp/stompjs';
 import AppContext, { LIVE_TRACKS_STORAGE_KEY } from '../../../context/AppContext';
 import { getColorByIndex } from '../../../menu/analyzer/util/SegmentColorizer';
-import { encryptLocation, decryptLocation } from '../../livetracks/liveTrackCrypto';
+import {
+    encryptLocation,
+    decryptLocation,
+    generateTranslationKey,
+    computeTranslationId,
+} from '../../livetracks/liveTrackCrypto';
 
 // sessionStorage key: my broadcast tid, restored after page refresh.
 const BROADCAST_TID_SESSION = '__liveTrackBroadcastTid__';
@@ -323,8 +328,9 @@ export default function useLiveTracking() {
     // Create a new translation on the server (id must equal SHA-256(key)). On success:
     // save it as owner, select it, and start sharing. The server reply arrives on
     // /user/queue/updates and is handled in the mount effect (pendingCreateRef).
+    // replaceId (optional): regenerate — drop that old translation and revoke it server-side.
     const createLiveTrack = useCallback(
-        (translationId, key, name, durationHours, onCreated, onGeoError, onCreateError) => {
+        (translationId, key, name, durationHours, onCreated, onGeoError, onCreateError, replaceId) => {
             if (ctx.myBroadcastTid) {
                 sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
                 ctx.setMyBroadcastTid(null);
@@ -336,7 +342,12 @@ export default function useLiveTracking() {
                     const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
                     const newTranslation = { id, name: autoName, key, isOwner: true };
                     keysRef.current[id] = key;
-                    saveTranslations([...ctx.liveTranslations, newTranslation]);
+                    // Brand-new translation: nothing older than now, so disable "load earlier".
+                    setHistoryExhausted((prev) => ({ ...prev, [id]: true }));
+                    const others = replaceId
+                        ? ctx.liveTranslations.filter((t) => t.id !== replaceId)
+                        : ctx.liveTranslations;
+                    saveTranslations([...others, newTranslation]);
                     ctx.setSelectedLiveTranslation(newTranslation);
                     const client = clientRef.current;
                     if (client?.connected) {
@@ -347,6 +358,11 @@ export default function useLiveTracking() {
                     ctx.setMyBroadcastTid(id);
                     ctx.setIsMyBroadcastPaused(false);
                     sendCommand(`/app/translation/${id}/startSharing`);
+                    // Regenerate: revoke the old translation (its viewers get DELETE).
+                    if (replaceId) {
+                        sendCommand(`/app/translation/${replaceId}/delete`);
+                        forgetTranslation(replaceId);
+                    }
                     onCreated?.(newTranslation);
                 },
                 onError: onCreateError,
@@ -365,8 +381,25 @@ export default function useLiveTracking() {
             saveTranslations,
             ctx.setSelectedLiveTranslation,
             sendCommand,
+            forgetTranslation,
             subscribeToTranslation,
         ]
+    );
+
+    // Regenerate the key/link for a translation I own: issue a new permanent key and
+    // revoke the old one (old viewers lose access, my broadcast moves to the new link).
+    // onDone(newTranslation) lets the caller navigate to the new tid URL.
+    const regenerateLiveTrack = useCallback(
+        async (oldId, onDone) => {
+            const old = ctx.liveTranslations.find((t) => t.id === oldId);
+            if (!old?.isOwner) {
+                return;
+            }
+            const key = await generateTranslationKey();
+            const newId = await computeTranslationId(key);
+            createLiveTrack(newId, key, old.name, 0, onDone, null, null, oldId);
+        },
+        [ctx.liveTranslations, createLiveTrack]
     );
 
     // Delete the translation for everyone (owner only, enforced server-side).
@@ -521,6 +554,7 @@ export default function useLiveTracking() {
         deleteLiveTrack,
         startSharing,
         pauseSharing,
+        regenerateLiveTrack,
         loadEarlier,
         historyExhausted,
     };
