@@ -31,8 +31,8 @@ body{
 }
 
 .container{
-    max-width: 720px;
-    margin: 60px auto;
+    max-width: 1040px;
+    margin: 40px auto;
     background: white;
     border-radius: 20px;
     padding: 40px;
@@ -46,7 +46,6 @@ body{
     margin-bottom: 24px;
 }
 
-/* Стильний тимчасовий кружечок для маскота (за замовчуванням Телескоп) */
 .mascot-box {
     flex-shrink: 0;
     width: 90px;
@@ -87,7 +86,7 @@ h1{
     border-radius: 10px;
     overflow: hidden;
     margin: 30px 0;
-    display: none; /* Ховаємо на старті, показуємо під час тесту */
+    display: none;
 }
 
 .progress{
@@ -96,6 +95,28 @@ h1{
     background: var(--osmand-orange);
     border-radius: 10px;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quiz-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.quiz-left-col {
+    flex: 1;
+    min-width: 0;
+}
+
+.quiz-left-col.full-width {
+    width: 100%;
+}
+
+.quiz-right-col {
+    flex-shrink: 0;
+    width: 360px;
+    display: flex;
+    justify-content: center;
 }
 
 .question-number{
@@ -122,24 +143,41 @@ h1{
     font-style: italic;
 }
 
-/* ОПТИМАЛЬНЕ НАЛАШТУВАННЯ ДЛЯ ВЕРТИКАЛЬНИХ СКРІНШОТІВ */
-.hint-image-wrapper {
-    width: 100%;
-    height: 280px;
-    background: #1c1c1e; /* Темний фон гармонійно зливається з нічною темою мапи */
-    border-radius: 14px;
-    overflow: hidden;
+.simulator-tip {
+    background: var(--osmand-orange-bg);
+    border-left: 4px solid var(--osmand-orange);
+    padding: 12px 16px;
+    border-radius: 4px 12px 12px 4px;
+    font-size: 14px;
+    color: var(--text-dark);
     margin-bottom: 24px;
-    border: 1px solid var(--border-color);
+    line-height: 1.4;
+}
+
+.hint-image-wrapper {
+    width: 320px;
+    height: 658px;
+    background: #000;
+    border-radius: 36px;
+    border: 10px solid #222;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hint-image-wrapper img {
+    width: 100%;
     height: 100%;
-    width: auto;
-    object-fit: contain;
+    object-fit: cover;
+}
+
+.simulator-iframe {
+    width: 360px;
+    height: 740px;
+    border: none;
+    overflow: hidden;
 }
 
 .option{
@@ -261,7 +299,6 @@ select:focus {
     padding: 8px;
 }
 
-/* ЕКРАНИ СТАРТУ ТА ФІНІШУ */
 .start-screen, .result-screen {
     text-align: center;
     animation: fadeIn 0.5s ease;
@@ -313,9 +350,12 @@ select:focus {
     to { opacity: 1; }
 }
 
-@media(max-width:700px){
+@media(max-width:600px){
     .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
     .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
+    .quiz-layout { flex-direction: column; gap: 24px; }
+    .quiz-right-col { width: 100%; }
+    .hint-image-wrapper { width: 280px; height: 576px; border-radius: 28px; border-width: 8px; }
     h1 { font-size: 22px; }
 }
 </style>
@@ -358,13 +398,15 @@ select:focus {
 </div>
 
 <script src="/quiz-common.js"></script>
+
 <script>
 const questions = [
     {
         type: "single",
         title: "You're camping tonight and want to find out if Jupiter will be visible after midnight. Where do you go first in the Astronomy plugin?",
         hint: "Select one answer.",
-        questionImg: "https://osmand.net/img/quiz/astronomy_1.png",
+        questionImg: "",
+        isSimulator: true, 
         options: [
             "Configure View → Solar system",
             "Menu → Star map → tap Jupiter → Visibility tab",
@@ -372,7 +414,80 @@ const questions = [
             "Star map → Magnitude filter"
         ],
         correct: [1],
-        feedback: "The Visibility tab in the Context Menu shows a 24-hour altitude graph for any selected object — perfect for planning when to look for Jupiter tonight."
+        feedback: "The Visibility tab in the Context Menu shows a 24-hour altitude graph for any selected object — perfect for planning when to look for Jupiter tonight.",
+        simulatorSrcdoc: `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: transparent; overflow: hidden; }
+                    .phone-container { width: 320px; height: 658px; background: #000; border-radius: 36px; border: 10px solid #222; position: relative; overflow: hidden; user-select: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+                    .screen { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: 100% 100%; background-position: center; display: none; }
+                    .screen.active { display: block; }
+                    .scrollable-screen { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; position: relative; }
+                    .scrollable-content { width: 100%; position: relative; }
+                    .scrollable-content img { width: 100%; height: auto; display: block; }
+                    .clickable-zone { position: absolute; cursor: pointer; z-index: 10; box-sizing: border-box; }
+                    .clickable-zone:active { background-color: rgba(33, 150, 243, 0.4); border: 2px solid #2196F3; }
+                    .hint-overlay { position: absolute; border: 3px solid #ff4757; box-shadow: 0 0 15px #ff4757; border-radius: 4px; pointer-events: none; opacity: 0; z-index: 20; }
+                    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 0.6; } }
+                    .hint-overlay.show-hint { animation: pulse 0.5s ease-in-out 3; }
+                </style>
+            </head>
+            <body>
+                <div class="phone-container" id="simBox">
+                    <div class="hint-overlay" id="hBox"></div>
+                    <div class="screen active" id="s1" style="background-image: url('https://osmand.net/img/quiz/A1.png');">
+                        <div class="clickable-zone" style="bottom: 8px; left: 6px; width: 60px; height: 60px;" onclick="go(2)"></div>
+                    </div>
+                    <div class="screen" id="s2" style="background-image: url('https://osmand.net/img/quiz/A2.png');">
+                        <div class="clickable-zone" style="bottom: 135px; left: 0; width: 100%; height: 48px;" onclick="go(3)"></div>
+                    </div>
+                    <div class="screen" id="s3" style="background-image: url('https://osmand.net/img/quiz/A3.png');">
+                        <div class="clickable-zone" style="top: 366px; left: 245px; width: 55px; height: 55px;" onclick="go(4)"></div>
+                    </div>
+                    <div class="screen" id="s4">
+                        <div class="scrollable-screen" id="scrollContainer">
+                            <div class="scrollable-content">
+                                <img src="https://osmand.net/img/quiz/A4.png" alt="Jupiter Info">
+                                <div class="clickable-zone" style="bottom: 15px; right: 25px; width: 90px; height: 50px;" onclick="go(5)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen" id="s5" style="background-image: url('https://osmand.net/img/quiz/A4.png'); background-position: bottom;" onclick="reset()"></div>
+                </div>
+                <script>
+                    let step = 1;
+                    const targets = {
+                        1: { left: '6px', top: '590px', width: '60px', height: '60px' },
+                        2: { left: '0px', top: '475px', width: '100%', height: '48px' },
+                        3: { left: '245px', top: '366px', width: '55px', height: '55px' }
+                    };
+                    function go(n) {
+                        document.getElementById('s' + step).classList.remove('active');
+                        document.getElementById('hBox').classList.remove('show-hint');
+                        step = n;
+                        document.getElementById('s' + step).classList.add('active');
+                        if(n === 4) { document.getElementById('scrollContainer').scrollTop = 0; }
+                    }
+                    function reset() {
+                        document.getElementById('s' + step).classList.remove('active');
+                        step = 1;
+                        document.getElementById('s1').classList.add('active');
+                    }
+                    document.getElementById('simBox').onclick = function(e) {
+                        if (e.target.classList.contains('clickable-zone') || step === 4 || step === 5) return;
+                        const coords = targets[step];
+                        const h = document.getElementById('hBox');
+                        if (coords && h) {
+                            h.style.left = coords.left; h.style.top = coords.top; h.style.width = coords.width; h.style.height = coords.height;
+                            h.classList.remove('show-hint'); void h.offsetWidth; h.classList.add('show-hint');
+                        }
+                    };
+                <\/script>
+            </body>
+            </html>
+        `
     },
     {
         type: "single",
@@ -421,6 +536,7 @@ const questions = [
         title: "You're planning a stargazing session for next Friday. You want to check if the Orion Nebula will be visible that evening. What's the quickest way to check this?",
         hint: "Select one answer.",
         questionImg: "https://osmand.net/img/quiz/astronomy_5.png",
+        isSimulator: true, 
         options: [
             "Search → Visible tonight filter",
             "Tap Orion Nebula → Schedule tab → navigate to next week using arrow buttons",
@@ -428,7 +544,89 @@ const questions = [
             "Change date in Time and date controls → check Star map manually"
         ],
         correct: [1],
-        feedback: "The Schedule tab shows daily rise/set times for a whole week, and you can navigate forward using the arrow buttons — ideal for planning ahead."
+        feedback: "The Schedule tab shows daily rise/set times for a whole week, and you can navigate forward using the arrow buttons — ideal for planning ahead.",
+        simulatorSrcdoc: `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: transparent; overflow: hidden; }
+                    .phone-container { width: 320px; height: 658px; background: #000; border-radius: 36px; border: 10px solid #222; position: relative; overflow: hidden; user-select: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+                    .screen { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: 100% 100%; background-position: center; display: none; }
+                    .screen.active { display: block; }
+                    .scrollable-screen { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; position: relative; }
+                    .scrollable-content { width: 100%; position: relative; }
+                    .scrollable-content img { width: 100%; height: auto; display: block; }
+                    .clickable-zone { position: absolute; cursor: pointer; z-index: 10; box-sizing: border-box; }
+                    .clickable-zone:active { background-color: rgba(33, 150, 243, 0.4); border: 2px solid #2196F3; }
+                    #nextWeekFixedZone { display: none; position: absolute; top: 23.1%; right: 4.8%; width: 10%; height: 5%; z-index: 50; }
+                    .hint-overlay { position: absolute; border: 3px solid #ff4757; box-shadow: 0 0 15px #ff4757; border-radius: 4px; pointer-events: none; opacity: 0; z-index: 20; }
+                    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 0.6; } }
+                    .hint-overlay.show-hint { animation: pulse 0.5s ease-in-out 3; }
+                </style>
+            </head>
+            <body>
+                <div class="phone-container" id="simBox">
+                    <div class="hint-overlay" id="hBox"></div>
+                    <div class="screen active" id="s1" style="background-image: url('https://osmand.net/img/quiz/A5_1.png');">
+                        <div class="clickable-zone" style="top: 310px; left: 185px; width: 68px; height: 40px;" onclick="go(2)"></div>
+                    </div>
+                    <div class="screen" id="s2">
+                        <div class="clickable-zone" id="nextWeekFixedZone" onclick="go(3)"></div>
+                        <div class="scrollable-screen" id="scrollContainer" onscroll="checkScroll(this)">
+                            <div class="scrollable-content">
+                                <img src="https://osmand.net/img/quiz/A5_2.png" alt="Orion Info">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen" id="s3" style="background-image: url('https://osmand.net/img/quiz/A5_3.png');" onclick="reset()"></div>
+                </div>
+                <script>
+                    let step = 1;
+                    let isScrolledToBottom = false;
+                    const targets = {
+                        1: { left: '185px', top: '310px', width: '68px', height: '40px' },
+                        2: { left: '85.2%', top: '23.1%', width: '10%', height: '5%' }
+                    };
+                    function checkScroll(el) {
+                        if (el.scrollHeight - el.scrollTop <= el.clientHeight + 5) {
+                            isScrolledToBottom = true;
+                            document.getElementById('nextWeekFixedZone').style.display = 'block';
+                        } else {
+                            isScrolledToBottom = false;
+                            document.getElementById('nextWeekFixedZone').style.display = 'none';
+                        }
+                    }
+                    function go(n) {
+                        document.getElementById('s' + step).classList.remove('active');
+                        document.getElementById('hBox').classList.remove('show-hint');
+                        step = n;
+                        document.getElementById('s' + step).classList.add('active');
+                        if(n === 2) { 
+                            document.getElementById('scrollContainer').scrollTop = 0; 
+                            isScrolledToBottom = false;
+                            document.getElementById('nextWeekFixedZone').style.display = 'none';
+                        }
+                    }
+                    function reset() {
+                        document.getElementById('s' + step).classList.remove('active');
+                        step = 1;
+                        document.getElementById('s1').classList.add('active');
+                    }
+                    document.getElementById('simBox').onclick = function(e) {
+                        if (e.target.classList.contains('clickable-zone') || step === 3) return;
+                        if (step === 2 && !isScrolledToBottom) return;
+                        const coords = targets[step];
+                        const h = document.getElementById('hBox');
+                        if (coords && h) {
+                            h.style.left = coords.left; h.style.top = coords.top; h.style.width = coords.width; h.style.height = coords.height;
+                            h.classList.remove('show-hint'); void h.offsetWidth; h.classList.add('show-hint');
+                        }
+                    };
+                <\/script>
+            </body>
+            </html>
+        `
     },
     {
         type: "single",
@@ -513,8 +711,114 @@ const questions = [
             "Enable the Astronomy plugin from the Plugins section of the Main Menu",
             "Adjust date and time using the Time and date controls"
         ],
-        correctSequence: ["4", "1", "5", "2", "3"],
-        feedback: "This is the standard setup flow: plugin activation → open Star map → set time → configure display → explore objects. Getting these in order ensures the plugin works correctly before diving into observations."
+        correctSequence: [
+            "Enable the Astronomy plugin from the Plugins section of the Main Menu",
+            "Go to Menu → Star map",
+            "Adjust date and time using the Time and date controls",
+            "Tap Configure View to choose which objects and rendering aids to display",
+            "Tap a celestial object to explore its details in the Context Menu"
+        ],
+        feedback: "This is the standard setup flow: plugin activation → open Star map → set time → configure display → explore objects. Getting these in order ensures the plugin works correctly before diving into observations.",
+        isSimulator: true,
+        simulatorSrcdoc: `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: transparent; overflow: hidden; }
+                    .phone-container { width: 320px; height: 658px; background: #000; border-radius: 36px; border: 10px solid #222; position: relative; overflow: hidden; user-select: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+                    .screen { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: 100% 100%; background-position: center; display: none; }
+                    .screen.active { display: block; }
+                    .scrollable-screen { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; position: relative; }
+                    .scrollable-content { width: 100%; position: relative; }
+                    .scrollable-content img { width: 100%; height: auto; display: block; }
+                    .clickable-zone { position: absolute; cursor: pointer; z-index: 10; box-sizing: border-box; }
+                    .clickable-zone:active { background-color: rgba(33, 150, 243, 0.4); border: 2px solid #2196F3; }
+                    .hint-overlay { position: absolute; border: 3px solid #ff4757; box-shadow: 0 0 15px #ff4757; border-radius: 4px; pointer-events: none; opacity: 0; z-index: 20; }
+                    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 0.6; } }
+                    .hint-overlay.show-hint { animation: pulse 0.5s ease-in-out 3; }
+                </style>
+            </head>
+            <body>
+                <div class="phone-container" id="simBox">
+                    <div class="hint-overlay" id="hBox"></div>
+                    <div class="screen active" id="s1" style="background-image: url('https://osmand.net/img/quiz/A11_1.png');">
+                        <div class="clickable-zone" style="bottom: 1.5%; left: 3.5%; width: 14%; height: 6.5%;" onclick="go(2)"></div>
+                    </div>
+                    <div class="screen" id="s2" style="background-image: url('https://osmand.net/img/quiz/A11_2.png');">
+                        <div class="clickable-zone" style="top: 86.5%; left: 0%; width: 73%; height: 6.5%;" onclick="go(3)"></div>
+                    </div>
+                    <div class="screen" id="s3" style="background-image: url('https://osmand.net/img/quiz/astronomy_11.png');">
+                        <div class="clickable-zone" style="top: 59.5%; left: 0%; width: 100%; height: 11%;" onclick="go(4)"></div>
+                    </div>
+                    <div class="screen" id="s4" style="background-image: url('https://osmand.net/img/quiz/A11_2.png');">
+                        <div class="clickable-zone" style="top: 73.5%; left: 0%; width: 73%; height: 6.5%;" onclick="go(5)"></div>
+                    </div>
+                    <div class="screen" id="s5" style="background-image: url('https://osmand.net/img/quiz/A11_3.png');">
+                        <div class="clickable-zone" style="bottom: 2.2%; left: 35.5%; width: 29%; height: 6.5%;" onclick="go(6)"></div>
+                    </div>
+                    <div class="screen" id="s6" style="background-image: url('https://osmand.net/img/quiz/A11_4.png');">
+                        <div class="clickable-zone" style="bottom: 11.5%; left: 45.5%; width: 9%; height: 3.5%;" onclick="go(7)"></div>
+                    </div>
+                    <div class="screen" id="s7" style="background-image: url('https://osmand.net/img/quiz/A11_5.png');">
+                        <div class="clickable-zone" style="bottom: 2%; right: 3.5%; width: 14%; height: 6.5%;" onclick="go(8)"></div>
+                    </div>
+                    <div class="screen" id="s8" style="background-image: url('https://osmand.net/img/quiz/A11_6.png');">
+                        <div class="clickable-zone" style="top: 75.5%; right: 4.5%; width: 29%; height: 12%;" onclick="go(9)"></div>
+                    </div>
+                    <div class="screen" id="s9" style="background-image: url('https://osmand.net/img/quiz/A11_7.png');">
+                        <div class="clickable-zone" style="top: 53.5%; right: 4%; width: 9%; height: 4.5%;" onclick="go(10)"></div>
+                    </div>
+                    <div class="screen" id="s10" style="background-image: url('https://osmand.net/img/quiz/A11_8.png');">
+                        <div class="clickable-zone" style="top: 49.8%; left: 49.8%; width: 8%; height: 4%;" onclick="go(11)"></div>
+                    </div>
+                    <div class="screen" id="s11">
+                        <div class="scrollable-screen" id="scrollContainer" onclick="reset()">
+                            <div class="scrollable-content">
+                                <img src="https://osmand.net/img/quiz/A11_9.png" alt="Polaris Long Info Card">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let step = 1;
+                    const targets = {
+                        1: { left: '3.5%', top: '92%', width: '14%', height: '6.5%' },
+                        2: { left: '0%', top: '86.5%', width: '73%', height: '6.5%' },
+                        3: { left: '0%', top: '59.5%', width: '100%', height: '11%' },
+                        4: { left: '0%', top: '73.5%', width: '73%', height: '6.5%' },
+                        5: { left: '35.5%', top: '91.3%', width: '29%', height: '6.5%' },
+                        6: { left: '45.5%', top: '85%', width: '9%', height: '3.5%' },
+                        7: { left: '82.5%', top: '91.5%', width: '14%', height: '6.5%' },
+                        8: { left: '66.5%', top: '75.5%', width: '29%', height: '12%' },
+                        9: { left: '87%', top: '53.5%', width: '9%', height: '4.5%' },
+                        10: { left: '49.8%', top: '49.8%', width: '8%', height: '4%' }
+                    };
+                    function go(n) {
+                        document.getElementById('s' + step).classList.remove('active');
+                        document.getElementById('hBox').classList.remove('show-hint');
+                        step = n;
+                        document.getElementById('s' + step).classList.add('active');
+                        if(n === 11) { document.getElementById('scrollContainer').scrollTop = 0; }
+                    }
+                    function reset() {
+                        document.getElementById('s' + step).classList.remove('active');
+                        step = 1;
+                        document.getElementById('s1').classList.add('active');
+                    }
+                    document.getElementById('simBox').onclick = function(e) {
+                        if (e.target.classList.contains('clickable-zone') || step === 11) return;
+                        const coords = targets[step];
+                        const h = document.getElementById('hBox');
+                        if (coords && h) {
+                            h.style.left = coords.left; h.style.top = coords.top; h.style.width = coords.width; h.style.height = coords.height;
+                            h.classList.remove('show-hint'); void h.offsetWidth; h.classList.add('show-hint');
+                        }
+                    };
+                <\/script>
+            </body>
+            </html>
+        `
     }
 ];
 
@@ -545,27 +849,29 @@ function updateProgress(){
 function renderQuestion(){
     updateProgress();
     
-    // Початкова емоція — тепер це наш красивий Телескоп 
     mascotContainer.innerHTML = "🔭";
     mascotContainer.style.borderColor = "var(--osmand-orange)";
     mascotContainer.style.background = "var(--osmand-orange-bg)";
     
     const q = questions[currentQuestion];
+    const hasMedia = q.isSimulator || (q.questionImg && q.questionImg !== "");
 
     let html = `
-    <div class="question">
-    <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
-    <div class="question-title">${q.title}</div>
-    <div class="question-hint">${q.hint}</div>
+    <div class="quiz-layout">
+        <div class="quiz-left-col ${hasMedia ? '' : 'full-width'}">
+            <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+            <div class="question-title">${q.title}</div>
     `;
 
-    if(q.questionImg && q.questionImg !== "") {
+    if (q.isSimulator) {
         html += `
-        <div class="hint-image-wrapper">
-            <img src="${q.questionImg}" alt="Question Hint Interface">
+        <div class="simulator-tip">
+            <i><strong>Tip:</strong> You can use the interactive mobile simulator on the right to walk through the configuration steps, refresh your memory, and determine the correct sequence!</i>
         </div>
         `;
     }
+
+    html += `<div class="question-hint">${q.hint}</div>`;
 
     if(q.type === "single" || q.type === "multi"){
         q.options.forEach((option,index)=>{
@@ -613,7 +919,24 @@ function renderQuestion(){
         html += `<button class="action-btn" onclick="submitSequence()">Submit answer</button>`;
     }
 
-    html += `<div id="feedback"></div>`;
+    html += `<div id="feedback"></div></div>`;
+
+    if(hasMedia) {
+        html += `<div class="quiz-right-col">`;
+        
+        if(q.isSimulator) {
+            html += `<iframe class="simulator-iframe" srcdoc="${q.simulatorSrcdoc.replace(/"/g, '&quot;')}"></iframe>`;
+        } else if(q.questionImg && q.questionImg !== "") {
+            html += `
+            <div class="hint-image-wrapper">
+                <img src="${q.questionImg}" alt="Question Hint Interface">
+            </div>
+            `;
+        }
+        html += `</div>`;
+    }
+
+    html += `</div>`;
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
 }
@@ -631,14 +954,25 @@ function attachOptionEvents(type){
 }
 
 function arraysEqual(a,b){
-    return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
 }
 
 function submitChoice(){
     const q = questions[currentQuestion];
     const selected = [...document.querySelectorAll(".option.selected")].map(el=>Number(el.dataset.index));
     if (selected.length === 0) return;
-    const correct = arraysEqual(selected,q.correct);
+    
+    let correct;
+    if (q.type === "multi") {
+        correct = arraysEqual(selected.sort(), q.correct.sort());
+    } else {
+        correct = arraysEqual(selected, q.correct);
+    }
+    
     if(correct) score++;
     showFeedback(correct,q.feedback);
 }
@@ -660,17 +994,26 @@ function submitSequence(){
     const selects = document.querySelectorAll(".seq-select");
     const q = questions[currentQuestion];
     let anyEmpty = false;
-    let correct = true;
+    
+    let userSequence = new Array(q.steps.length).fill(null);
     
     selects.forEach(select => {
-        if(!select.value) anyEmpty = true;
-        const idx = Number(select.dataset.index);
-        if(select.value !== q.correctSequence[idx]) {
-            correct = false;
+        if(!select.value) {
+            anyEmpty = true;
+        } else {
+            const orderIndex = Number(select.value) - 1; 
+            const stepIndex = Number(select.dataset.index);
+            if (orderIndex >= 0 && orderIndex < q.steps.length) {
+                userSequence[orderIndex] = q.steps[stepIndex];
+            }
         }
     });
     
     if(anyEmpty) return;
+    
+    let correct = userSequence.every(step => step !== null) && 
+                  arraysEqual(userSequence, q.correctSequence);
+    
     if(correct) score++;
     showFeedback(correct,q.feedback);
 }
@@ -681,7 +1024,6 @@ function showFeedback(correct, text){
     feedback.className = correct ? "feedback correct" : "feedback wrong";
     const isLastQuestion = currentQuestion === questions.length - 1;
 
-    // Інтерактивна зміна емоцій: телескоп перетворюється на оцінку
     if(correct) {
         mascotContainer.innerHTML = "👍";
         mascotContainer.style.borderColor = "var(--correct-green)";
@@ -700,7 +1042,7 @@ function showFeedback(correct, text){
     </button>
     `;
     
-    const mainBtn = document.querySelector(".question > button.action-btn");
+    const mainBtn = document.querySelector(".quiz-left-col > button.action-btn");
     if(mainBtn) mainBtn.style.display = 'none';
 }
 
