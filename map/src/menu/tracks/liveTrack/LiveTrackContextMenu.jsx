@@ -26,6 +26,9 @@ import { ReactComponent as AscentIcon } from '../../../assets/icons/ic_action_al
 import { ReactComponent as DescentIcon } from '../../../assets/icons/ic_action_altitude_descent_16.svg';
 import { ReactComponent as FollowIcon } from '../../../assets/icons/ic_action_my_location.svg';
 import { ReactComponent as FolderAddIcon } from '../../../assets/icons/ic_action_folder_add_outlined.svg';
+import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
+import { ReactComponent as DestinationIcon } from '../../../assets/icons/ic_action_point_destination.svg';
+import { ReactComponent as BatteryIcon } from '../../../assets/icons/ic_action_info.svg';
 import trackFavStyles from '../../trackfavmenu.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import errorStyles from '../../errors/errors.module.css';
@@ -185,6 +188,13 @@ function LiveParticipantCard({ participant, isLast }) {
     }
 
     const lastLoc = locs[0];
+    // Optional fields sent by the mobile broadcaster (absent for web broadcasts).
+    const bearingDeg = lastLoc?.bearing;
+    const battery = lastLoc?.battery;
+    const timeToArrival = lastLoc?.tta;
+    const timeToIntermediate = lastLoc?.ttf;
+    const distToArrival = lastLoc?.dta;
+    const distToIntermediate = lastLoc?.dtf;
 
     function handleFollow() {
         if (lastLoc?.lat != null && lastLoc?.lon != null) {
@@ -242,6 +252,66 @@ function LiveParticipantCard({ participant, isLast }) {
                         icon={<DescentIcon />}
                         name={t('web:live_track_elevation_loss')}
                         additionalInfo={`${elevLoss.toFixed(0)} m`}
+                    />
+                </>
+            )}
+            {Number.isFinite(bearingDeg) && (
+                <>
+                    <DividerWithMargin margin={'64px'} />
+                    <DefaultItem
+                        icon={<DirectionIcon />}
+                        name={t('web:live_track_direction')}
+                        additionalInfo={`${Math.round(bearingDeg)}°`}
+                    />
+                </>
+            )}
+            {battery > 0 && (
+                <>
+                    <DividerWithMargin margin={'64px'} />
+                    <DefaultItem
+                        icon={<BatteryIcon />}
+                        name={t('web:live_track_battery')}
+                        additionalInfo={`${Math.round(battery)}%`}
+                    />
+                </>
+            )}
+            {timeToArrival > 0 && (
+                <>
+                    <DividerWithMargin margin={'64px'} />
+                    <DefaultItem
+                        icon={<TimeIcon />}
+                        name={t('web:live_track_eta')}
+                        additionalInfo={formatTime(timeToArrival)}
+                    />
+                </>
+            )}
+            {distToArrival > 0 && (
+                <>
+                    <DividerWithMargin margin={'64px'} />
+                    <DefaultItem
+                        icon={<DestinationIcon />}
+                        name={t('web:live_track_distance_to_destination')}
+                        additionalInfo={`${(distToArrival / 1000).toFixed(2)} km`}
+                    />
+                </>
+            )}
+            {timeToIntermediate > 0 && (
+                <>
+                    <DividerWithMargin margin={'64px'} />
+                    <DefaultItem
+                        icon={<TimeIcon />}
+                        name={t('web:live_track_eta_intermediate')}
+                        additionalInfo={formatTime(timeToIntermediate)}
+                    />
+                </>
+            )}
+            {distToIntermediate > 0 && (
+                <>
+                    <DividerWithMargin margin={'64px'} />
+                    <DefaultItem
+                        icon={<DestinationIcon />}
+                        name={t('web:live_track_distance_intermediate')}
+                        additionalInfo={`${(distToIntermediate / 1000).toFixed(2)} km`}
                     />
                 </>
             )}
