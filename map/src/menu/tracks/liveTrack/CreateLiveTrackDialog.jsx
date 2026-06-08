@@ -94,7 +94,9 @@ export default function CreateLiveTrackDialog({ open, onClose, createLiveTrack }
                 if (translation.name) {
                     urlParams.set('name', translation.name);
                 }
-                setShareUrl(`${globalThis.location.origin}/map/live/?${urlParams}#${key}`);
+                setShareUrl(
+                    `${globalThis.location.origin}${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${urlParams}#${key}`
+                );
                 setCreating(false);
                 navigate(
                     `${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?tid=${translation.id}&name=${encodeURIComponent(translation.name)}`
