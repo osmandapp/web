@@ -638,7 +638,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distance by tap](../widgets/radius-ruler.md#distance-by-tap). Gives the ability to measure the distance from your position to the selected point.
+- [Distance by tap](#distance-by-tap). [⬇](#distance-by-tap)
 - [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
@@ -667,6 +667,36 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 - **<Translate android="true" ids="position_on_map_center"/>**. The cursor is always positioned in the center of the screen.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is useful during navigation.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* - for movement direction, *Center* - for all others).
+
+### Distance by Tap {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+The **Distance by Tap** tool allows you to measure distances between points on the map without using the [Radius Ruler](../widgets/radius-ruler.md#radius-ruler-widget) or creating a route.
+
+There are two use cases:
+
+- **Distance from your location to a point**  
+  Tap anywhere on the map and a straight line will appear from your current location to the tapped point, along with a distance label. The line remains on screen even if you tap elsewhere.
+
+- **Distance between any two points**  
+  Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
+
+You can also adjust the text size of the distance label. Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
 
 
 ## Actions {#actions}

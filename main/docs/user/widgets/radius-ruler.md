@@ -208,7 +208,7 @@ You can switch to **3D view** to better visualize distances and surrounding terr
 
 The radius circles will appear with depth, which is particularly useful for route planning in hilly areas or urban environments where vertical context matters.
 
-
+<!--
 ## Distance by Tap {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -245,6 +245,7 @@ You can also adjust the text size of the distance label. Choose between *<Transl
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | Text size | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Video Guides {#video-guides}
