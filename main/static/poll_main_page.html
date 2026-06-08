@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OsmAnd Main Page Poll</title>
+
+<style>
+:root {
+    --osmand-orange: #f47c20;
+    --osmand-orange-hover: #e06b12;
+    --osmand-orange-bg: #fff5ee;
+    --bg-main: #f8f9fa;
+    --text-dark: #1c1c1e;
+    --text-muted: #636366;
+    --border-color: #e5e5ea;
+    --correct-green: #34c759;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container{
+    max-width: 720px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+}
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.mascot-box {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--osmand-orange-bg);
+    border: 3px solid var(--osmand-orange);
+    border-radius: 50%;
+    font-size: 42px;
+    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+    animation: bounce 2.5s infinite ease-in-out;
+}
+
+.header-text {
+    flex-grow: 1;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.subtitle{
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+.progress-wrapper{
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 0;
+    display: none;
+}
+
+.progress{
+    height: 100%;
+    width: 0%;
+    background: var(--osmand-orange);
+    border-radius: 10px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-number{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--osmand-orange);
+    margin-bottom: 12px;
+}
+
+.question-title{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.question-hint{
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.option{
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.4;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.option:hover{
+    border-color: var(--osmand-orange);
+    background: var(--osmand-orange-bg);
+    transform: translateY(-1px);
+}
+
+.option.selected{
+    border-color: var(--osmand-orange);
+    background: var(--osmand-orange-bg);
+    font-weight: 500;
+    box-shadow: inset 0 0 0 1px var(--osmand-orange);
+}
+
+/* Специфічний стиль для чекбоксів (multi) щоб візуально підказати користувачу */
+.quiz-layout[data-type="multi"] .option.selected {
+    border-color: #007aff;
+    background: #f2f8ff;
+    box-shadow: inset 0 0 0 1px #007aff;
+}
+
+.other-input-container {
+    display: none;
+    margin-top: -4px;
+    margin-bottom: 16px;
+    animation: slideUp 0.2s ease;
+}
+
+.other-input-container input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--osmand-orange);
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+button.action-btn {
+    background: var(--osmand-orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+}
+
+button.action-btn:hover{
+    background: var(--osmand-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(244, 124, 32, 0.25);
+}
+
+.feedback{
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 14px;
+    line-height: 1.5;
+    font-size: 15px;
+    animation: slideUp 0.3s ease;
+}
+
+.feedback strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.thanks-feedback{
+    background: #e6f9ed;
+    color: #147029;
+    border: 1px solid #bbf2c7;
+}
+
+.start-screen, .result-screen {
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.start-screen .mascot-box, .result-screen .mascot-box {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px auto;
+}
+
+.start-screen .mascot-box {
+    background: var(--osmand-orange-bg);
+    border-color: var(--osmand-orange);
+}
+
+.result-screen .mascot-box {
+    background: #e6f9ed;
+    border-color: var(--correct-green);
+}
+
+.start-description {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px auto 28px auto;
+    max-width: 500px;
+}
+
+.language-selector {
+    max-width: 500px;
+    margin: 0 auto 22px auto;
+    text-align: left;
+}
+
+body[dir="rtl"] .language-selector {
+    text-align: right;
+}
+
+.language-selector label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.language-selector select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media(max-width:700px){
+    .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
+    .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
+    h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="quiz-header" id="quizHeader" style="display: none;">
+        <div class="mascot-box" id="mascotContainer">📊</div>
+        <div class="header-text">
+            <h1 id="headerTitle"></h1>
+            <p class="subtitle" id="headerSubtitle"></p>
+        </div>
+    </div>
+
+    <div class="progress-wrapper" id="progressWrapper">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- START SCREEN -->
+    <div class="start-screen" id="startScreen">
+        <div class="language-selector">
+            <label for="languageSelect" id="languageLabel"></label>
+            <select id="languageSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="nl">Nederlands</option>
+                <option value="pl">Polski</option>
+                <option value="pt">Português</option>
+                <option value="tr">Türkçe</option>
+                <option value="uk">Українська</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+        <div class="mascot-box">📊</div>
+        <h1 id="startTitle"></h1>
+        <p class="start-description" id="startDescription"></p>
+        <button class="action-btn" id="startButton" onclick="startQuiz()"></button>
+    </div>
+
+    <div id="quiz" style="display: none;"></div>
+
+    <!-- RESULT SCREEN -->
+    <div class="result-screen" id="resultScreen" style="display: none;">
+        <div class="mascot-box" id="mascotResultContainer">🙏</div>
+        <h1 id="resultTitle"></h1>
+        <p id="resultDefault" style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;"></p>
+        <button class="action-btn" id="restartButton" onclick="restartQuiz()"></button>
+    </div>
+
+</div>
+
+<script>
+// Тимчасова функція-заглушка для локального тестування (щоб код не видавав помилку без файлу quiz-common.js)
+if (typeof quizTrack !== 'function') {
+    window.quizTrack = function(path) { console.log("Tracked path: " + path); };
+}
+
+const GOOGLE_SHEETS_WEB_APP_URL = ""; 
+
+const UI_TRANSLATIONS = {
+    "en": {
+        "headerTitle": "OsmAnd User Poll",
+        "headerSubtitle": "Help us improve by sharing your feedback.",
+        "languageLabel": "Choose language",
+        "startTitle": "Help us make OsmAnd better!",
+        "startDescription": "Take a short poll about how you use OsmAnd maps, features, and web services. Your feedback helps shape the future of our navigation platform.",
+        "startQuiz": "Start poll",
+        "questionOf": "Question {current} of {total}",
+        "submitAnswer": "Submit answer",
+        "thanksAnswer": "✓ Thank you for your answer!",
+        "nextQuestion": "Next question",
+        "viewResults": "Finish poll",
+        "resultTitle": "Thank you!",
+        "resultDefault": "Your answers have been recorded. We appreciate your time and dedication to improving OsmAnd!",
+        "restartQuiz": "Take poll again",
+        "hintSingle": "Select one answer.",
+        "hintMulti": "Select all that apply. (Multiple choice)",
+        "otherPlaceholder": "Please specify..."
+    },
+    "de": {
+        "headerTitle": "OsmAnd-Nutzerumfrage",
+        "headerSubtitle": "Helfen Sie uns, besser zu werden, indem Sie Ihr Feedback teilen.",
+        "languageLabel": "Sprache wählen",
+        "startTitle": "Helfen Sie uns, OsmAnd besser zu machen!",
+        "startDescription": "Nehmen Sie an einer kurzen Umfrage darüber teil, wie Sie OsmAnd-Karten, Funktionen und Webdienste nutzen.",
+        "startQuiz": "Umfrage starten",
+        "questionOf": "Frage {current} von {total}",
+        "submitAnswer": "Antwort absenden",
+        "thanksAnswer": "✓ Vielen Dank für Ihre Antwort!",
+        "nextQuestion": "Nächste Frage",
+        "viewResults": "Umfrage beenden",
+        "resultTitle": "Dankeschön!",
+        "resultDefault": "Ihre Antworten wurden aufgezeichnet.",
+        "restartQuiz": "Umfrage erneut teilnehmen",
+        "hintSingle": "Wählen Sie eine Antwort aus.",
+        "hintMulti": "Wählen Sie alle zutreffenden Antworten aus.",
+        "otherPlaceholder": "Bitte angeben..."
+    },
+    "es": {
+        "headerTitle": "Encuesta de usuarios de OsmAnd",
+        "headerSubtitle": "Ayúdenos a mejorar compartiendo sus comentarios.",
+        "languageLabel": "Elegir idioma",
+        "startTitle": "¡Ayúdenos a hacer que OsmAnd sea mejor!",
+        "startDescription": "Participe en una breve encuesta sobre cómo utiliza los mapas, las funciones y los servicios web de OsmAnd.",
+        "startQuiz": "Iniciar encuesta",
+        "questionOf": "Pregunta {current} de {total}",
+        "submitAnswer": "Enviar respuesta",
+        "thanksAnswer": "✓ ¡Gracias por su respuesta!",
+        "nextQuestion": "Siguiente pregunta",
+        "viewResults": "Finalizar encuesta",
+        "resultTitle": "¡Gracias!",
+        "resultDefault": "Sus respuestas han sido registradas.",
+        "restartQuiz": "Realizar encuesta de nuevo",
+        "hintSingle": "Seleccione una respuesta.",
+        "hintMulti": "Seleccione todas las opciones que correspondan.",
+        "otherPlaceholder": "Por favor, especifique..."
+    },
+    "fr": {
+        "headerTitle": "Sondage des utilisateurs d'OsmAnd",
+        "headerSubtitle": "Aidez-nous à nous améliorer en partageant vos commentaires.",
+        "languageLabel": "Choisir la langue",
+        "startTitle": "Aidez-nous à améliorer OsmAnd !",
+        "startDescription": "Répondez à un court sondage sur votre utilisation des cartes, des fonctionnalités et des services web d'OsmAnd.",
+        "startQuiz": "Commencer le sondage",
+        "questionOf": "Question {current} sur {total}",
+        "submitAnswer": "Valider la réponse",
+        "thanksAnswer": "✓ Merci pour votre réponse !",
+        "nextQuestion": "Question suivante",
+        "viewResults": "Terminer le sondage",
+        "resultTitle": "Merci !",
+        "resultDefault": "Vos réponses ont été enregistrées.",
+        "restartQuiz": "Refaire le sondage",
+        "hintSingle": "Sélectionnez une réponse.",
+        "hintMulti": "Sélectionnez toutes les options applicables.",
+        "otherPlaceholder": "Veuillez préciser..."
+    },
+    "it": {
+        "headerTitle": "Sondaggio utenti OsmAnd",
+        "headerSubtitle": "Aiutaci a migliorare condividendo il tuo feedback.",
+        "languageLabel": "Scegli la lingua",
+        "startTitle": "Aiutaci a rendere OsmAnd migliore!",
+        "startDescription": "Partecipa a un breve sondaggio su come utilizzi le mappe, le funzioni e i servizi web di OsmAnd.",
+        "startQuiz": "Inizia il sondaggio",
+        "questionOf": "Domanda {current} di {total}",
+        "submitAnswer": "Invia risposta",
+        "thanksAnswer": "✓ Grazie per la tua risposta!",
+        "nextQuestion": "Domanda successiva",
+        "viewResults": "Termina sondaggio",
+        "resultTitle": "Grazie!",
+        "resultDefault": "Le tue risposte sono state registrate.",
+        "restartQuiz": "Ripeti il sondaggio",
+        "hintSingle": "Seleziona una risposta.",
+        "hintMulti": "Seleziona tutte le opzioni applicabili.",
+        "otherPlaceholder": "Si prega di specificare..."
+    },
+    "nl": {
+        "headerTitle": "OsmAnd Gebruikersenquête",
+        "headerSubtitle": "Help ons te verbeteren door uw feedback te delen.",
+        "languageLabel": "Kies taal",
+        "startTitle": "Help ons OsmAnd beter te maken!",
+        "startDescription": "Doe mee aan een korte enquête over hoe u OsmAnd-kaarten, functies en webdiensten gebruikt.",
+        "startQuiz": "Enquête starten",
+        "questionOf": "Vraag {current} van {total}",
+        "submitAnswer": "Antwoord verzenden",
+        "thanksAnswer": "✓ Dank u voor uw antwoord!",
+        "nextQuestion": "Volgende vraag",
+        "viewResults": "Enquête afronden",
+        "resultTitle": "Dank u wel!",
+        "resultDefault": "Uw antwoorden zijn geregistreerd.",
+        "restartQuiz": "Enquête opnieuw invullen",
+        "hintSingle": "Selecteer één antwoord.",
+        "hintMulti": "Selecteer alles wat van toepassing is.",
+        "otherPlaceholder": "Specificeer a.u.b...."
+    },
+    "pl": {
+        "headerTitle": "Ankieta użytkowników OsmAnd",
+        "headerSubtitle": "Pomóż nam się doskonalić, dzieląc się swoją opinią.",
+        "languageLabel": "Wybierz język",
+        "startTitle": "Pomóż nam ulepszyć OsmAnd!",
+        "startDescription": "Weź udział w krótkiej ankiecie na temat tego, jak korzystasz z map, funkcji i usług internetowych OsmAnd.",
+        "startQuiz": "Rozpocznij ankietę",
+        "questionOf": "Pytanie {current} z {total}",
+        "submitAnswer": "Prześlij odpowiedź",
+        "thanksAnswer": "✓ Dziękujemy за odpowiedź!",
+        "nextQuestion": "Następne pytanie",
+        "viewResults": "Zakończ ankietę",
+        "resultTitle": "Dziękujemy!",
+        "resultDefault": "Twoje odpowiedzi zostały zapisane.",
+        "restartQuiz": "Wypełnij ankietę ponownie",
+        "hintSingle": "Wybierz jedną odpowiedź.",
+        "hintMulti": "Zaznacz wszystkie pasujące odpowiedzi.",
+        "otherPlaceholder": "Proszę określić..."
+    },
+    "pt": {
+        "headerTitle": "Inquérito aos utilizadores do OsmAnd",
+        "headerSubtitle": "Ajude-nos a melhorar partilhando os seus comentários.",
+        "languageLabel": "Escolher idioma",
+        "startTitle": "Ajude-nos a tornar o OsmAnd melhor!",
+        "startDescription": "Responda a um breve inquérito sobre como utiliza os mapas, as funcionalidades e os serviços web do OsmAnd.",
+        "startQuiz": "Iniciar inquérito",
+        "questionOf": "Pergunta {current} de {total}",
+        "submitAnswer": "Enviar resposta",
+        "thanksAnswer": "✓ Obrigado pela sua resposta!",
+        "nextQuestion": "Próxima pergunta",
+        "viewResults": "Terminar inquérito",
+        "resultTitle": "Obrigado!",
+        "resultDefault": "As suas respostas foram registadas.",
+        "restartQuiz": "Responder novamente",
+        "hintSingle": "Selecione uma resposta.",
+        "hintMulti": "Selecione todas as opções aplicáveis.",
+        "otherPlaceholder": "Por favor, especifique..."
+    },
+    "tr": {
+        "headerTitle": "OsmAnd Kullanıcı Anketi",
+        "headerSubtitle": "Geri bildiriminizi paylaşarak gelişmemize yardımcı olun.",
+        "languageLabel": "Dil seçin",
+        "startTitle": "OsmAnd’i daha iyi yapmamıza yardımcı olun!",
+        "startDescription": "OsmAnd haritalarını, özelliklerini ve web hizmetlerini nasıl kullandığınız hakkında kısa bir ankete katılın.",
+        "startQuiz": "Ankete başla",
+        "questionOf": "Soru {current} / {total}",
+        "submitAnswer": "Cevabı gönder",
+        "thanksAnswer": "✓ Cevabınız için teşekkür ederiz!",
+        "nextQuestion": "Sonraki soru",
+        "viewResults": "Anketi bitir",
+        "resultTitle": "Teşekkürler!",
+        "resultDefault": "Cevaplarınız kaydedildi.",
+        "restartQuiz": "Anketi tekrar doldur",
+        "hintSingle": "Bir cevap seçin.",
+        "hintMulti": "Uygun olanların tümünü seçin.",
+        "otherPlaceholder": "Lütfen belirtin..."
+    },
+    "uk": {
+        "headerTitle": "Опитування користувачів OsmAnd",
+        "headerSubtitle": "Допоможіть нам стати кращими, поділившись своїм відгуком.",
+        "languageLabel": "Оберіть мову",
+        "startTitle": "Допоможіть нам покращити OsmAnd!",
+        "startDescription": "Пройдіть коротке опитування про те, як ви використовуєте карти, функції та вебсервіси OsmAnd. Ваш відгук допомагає формувати майбутнє нашої навігаційної платформи.",
+        "startQuiz": "Почати опитування",
+        "questionOf": "Питання {current} з {total}",
+        "submitAnswer": "Надіслати відповідь",
+        "thanksAnswer": "✓ Дякуємо за вашу відповідь!",
+        "nextQuestion": "Наступне питання",
+        "viewResults": "Завершити опитування",
+        "resultTitle": "Дякуємо!",
+        "resultDefault": "Ваші відповіді були успішно записані. Ми щиро вдячні за ваш час та внесок у розвиток OsmAnd!",
+        "restartQuiz": "Пройти опитування знову",
+        "hintSingle": "Оберіть одну відповідь.",
+        "hintMulti": "Оберіть усі відповідні варіанти. (Можна декілька)",
+        "otherPlaceholder": "Будь ласка, вкажіть..."
+    },
+    "ar": {
+        "headerTitle": "استطلاع رأي مستخدمي OsmAnd",
+        "headerSubtitle": "ساعدنا في التحسين من خلال مشاركة تعليقاتك.",
+        "languageLabel": "اختر اللغة",
+        "startTitle": "ساعدنا في جعل OsmAnd أفضل!",
+        "startDescription": "شارك في استطلاع قصير حول كيفية استخدامك لخرائط وميزات وخدمات الويب الخاصة بـ OsmAnd.",
+        "startQuiz": "بدء الاستطلاع",
+        "questionOf": "السؤال {current} من {total}",
+        "submitAnswer": "إرسال الإجابة",
+        "thanksAnswer": "✓ شكرًا لك على إجابتك!",
+        "nextQuestion": "السؤال التالي",
+        "viewResults": "إنهاء الاستطلاع",
+        "resultTitle": "شكرًا لك!",
+        "resultDefault": "تم تسجيل إجاباتك.",
+        "restartQuiz": "إجراء الاستطلاع مرة أخرى",
+        "hintSingle": "اختر إجابة واحدة.",
+        "hintMulti": "اختر كل ما ينطبق.",
+        "otherPlaceholder": "يرجى تحديد..."
+    }
+};
+
+const QUESTION_BANK = {
+    "en": [
+        { type: "single", title: "Did you use our web service www.osmand.net/map for your panning route and sync your data?", options: ["Yes", "No", "I found out about it now", "Other"] },
+        { type: "single", title: "Do you use raster maps?", options: ["Yes", "No", "Other"] },
+        { type: "multi", title: "What is your preferred outdoor activity?", options: ["Cycling", "Walking", "Hiking", "Camping", "Fishing", "Kayaking", "Climbing", "Bird Watching", "Skiing", "Running", "Driving"] },
+        { type: "single", title: "What do you use OsmAnd for the most?", options: ["Planning outdoor activities", "Driving and navigation", "Mapping and editing OSM", "Off-road / adventure travel", "Maritime or aviation use", "Other"] },
+        { type: "single", title: "Do you synchronize your data with OsmAnd Cloud?", options: ["Yes, regularly", "Sometimes", "I didn’t know it existed", "I prefer manual backup", "Other"] },
+        { type: "single", title: "Which map source do you prefer for your activities?", options: ["Default vector maps", "Satellite imagery", "Raster map tiles", "Depends on the activity", "Other"] },
+        { type: "single", title: "Which subscription do you use (if any)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "I’m not sure", "Other"] }
+    ],
+    "de": [
+        { type: "single", title: "Haben Sie unseren Webdienst www.osmand.net/map für Ihre Routenplanung und Datensynchronisierung genutzt?", options: ["Ja", "Nein", "Ich habe erst jetzt davon erfahren", "Andere"] },
+        { type: "single", title: "Nutzen Sie Rasterkarten?", options: ["Ja", "Nein", "Andere"] },
+        { type: "multi", title: "Was ist Ihre bevorzugte Outdoor-Aktivität?", options: ["Radfahren", "Spazierengehen", "Wandern", "Campen", "Angeln", "Kajakfahren", "Klettern", "Vogelbeobachtung", "Skifahren", "Laufen", "Autofahren"] },
+        { type: "single", title: "Wofür nutzen Sie OsmAnd am meisten?", options: ["Planung von Outdoor-Aktivitäten", "Fahren und Navigation", "Kartierung und Bearbeitung von OSM", "Off-Road- / Abenteuerreisen", "Maritime oder Luftfahrtnutzung", "Andere"] },
+        { type: "single", title: "Synchronisieren Sie Ihre Daten mit der OsmAnd Cloud?", options: ["Ja, regelmäßig", "Manchmal", "Ich wusste nicht, dass es sie gibt", "Ich bevorzuge ein manuelles Backup", "Andere"] },
+        { type: "single", title: "Welche Kartenquelle bevorzugen Sie für Ihre Aktivitäten?", options: ["Standard-Vektorkarten", "Satellitenbilder", "Rasterkarten-Kacheln", "Hängt von der Aktivität ab", "Andere"] },
+        { type: "single", title: "Welches Abonnement nutzen Sie (falls vorhanden)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Ich bin mir nicht sicher", "Andere"] }
+    ],
+    "es": [
+        { type: "single", title: "¿Utilizó nuestro servicio web www.osmand.net/map para planificar su ruta y sincronizar sus datos?", options: ["Sí", "No", "Me he enterado ahora", "Otro"] },
+        { type: "single", title: "¿Utiliza mapas ráster?", options: ["Sí", "No", "Otro"] },
+        { type: "multi", title: "¿Cuál es su actividad al aire libre preferida?", options: ["Ciclismo", "Caminar", "Senderismo", "Camping", "Pesca", "Kayak", "Escalada", "Observación de aves", "Esquí", "Correr", "Conducir"] },
+        { type: "single", title: "¿Para qué utiliza más OsmAnd?", options: ["Planificación de actividades al aire libre", "Conducción y navegación", "Mapeo y edición de OSM", "Viajes todoterreno / de aventura", "Uso marítimo o de aviación", "Otro"] },
+        { type: "single", title: "¿Sincroniza sus datos con OsmAnd Cloud?", options: ["Sí, regularmente", "A veces", "No sabía que existía", "Prefiero la copia de seguridad manual", "Otro"] },
+        { type: "single", title: "¿Qué fuente de mapa prefiere para sus actividades?", options: ["Mapas vectoriales predeterminados", "Imágenes de satélite", "Mosaicos de mapas ráster", "Depende de la actividad", "Otro"] },
+        { type: "single", title: "¿Qué suscripción utiliza (si utiliza alguna)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "No estoy seguro", "Otro"] }
+    ],
+    "fr": [
+        { type: "single", title: "Avez-vous utilisé notre service web www.osmand.net/map pour planifier votre itinéraire et synchroniser vos données ?", options: ["Oui", "Non", "Je viens de le découvrir", "Autre"] },
+        { type: "single", title: "Utilisez-vous des cartes raster ?", options: ["Oui", "Non", "Autre"] },
+        { type: "multi", title: "Quelle est votre activité de plein air préférée ?", options: ["Vélo", "Marche", "Randonnée", "Camping", "Pêche", "Kayak", "Escalade", "Observation des oiseaux", "Ski", "Course à pied", "Conduite"] },
+        { type: "single", title: "Pour quoi utilisez-vous le plus OsmAnd ?", options: ["Planification d'activités de plein air", "Conduite et navigation", "Cartographie et édition d'OSM", "Voyage tout-terrain / d'aventure", "Usage maritime ou aéronautique", "Autre"] },
+        { type: "single", title: "Synchronisez-vous vos données con OsmAnd Cloud ?", options: ["Oui, régulièrement", "Parfois", "Je ne savais pas que cela existait", "Je préfère une sauvegarde manuelle", "Autre"] },
+        { type: "single", title: "Quelle source de carte préférez-vous pour vos activités ?", options: ["Cartes vectorielles par défaut", "Imagerie satellite", "Tuiles de cartes raster", "Dépend de l'activité", "Autre"] },
+        { type: "single", title: "Abonnement utilisez-vous (le cas échéant) ?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Je ne suis pas sûr", "Autre"] }
+    ],
+    "it": [
+        { type: "single", title: "Hai utilizzato il nostro servizio web www.osmand.net/map per pianificare il tuo percorso e sincronizzare i tuoi dati?", options: ["Sì", "No", "L'ho scoperto solo ora", "Altro"] },
+        { type: "single", title: "Utilizzi le mappe raster?", options: ["Sì", "No", "Altro"] },
+        { type: "multi", title: "Qual è la tua attività all'aperto preferita?", options: ["Ciclismo", "Camminare", "Escursionismo", "Campeggio", "Pesca", "Kayak", "Arrampicata", "Bird watching", "Sci", "Corsa", "Guida"] },
+        { type: "single", title: "Per cosa usi maggiormente OsmAnd?", options: ["Pianificazione di attività all'aperto", "Guida e navigazione", "Mappatura e modifica di OSM", "Viaggi fuoristrada / avventura", "Uso marittimo o aeronautico", "Altro"] },
+        { type: "single", title: "Sincronizzi i tuoi dati con OsmAnd Cloud?", options: ["Sì, regolarmente", "A veces", "Non sapevo esistesse", "Preferisco il backup manuale", "Altro"] },
+        { type: "single", title: "Quale fonte cartografica preferisci per le tue attività?", options: ["Mappe vettoriali predefinite", "Immagini satellitari", "Tasselli di mappa raster", "Dipende dall'attività", "Altro"] },
+        { type: "single", title: "Quale abbonamento utilizzi (se presente)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Non sono sicuro", "Altro"] }
+    ],
+    "nl": [
+        { type: "single", title: "Heeft u onze webdienst www.osmand.net/map gebruikt om uw route te plannen en uw gegevens te synchroniseren?", options: ["Ja", "Nee", "Ik ontdek het nu pas", "Anders"] },
+        { type: "single", title: "Gebruikt u rasterkaarten?", options: ["Ja", "Nee", "Anders"] },
+        { type: "multi", title: "Wat is uw favoriete buitenactiviteit?", options: ["Fietsen", "Wandelen", "Hiken", "Kamperen", "Vissen", "Kajakken", "Klimmen", "Vogels kijken", "Skiën", "Hardlopen", "Autorijden"] },
+        { type: "single", title: "Waarvoor gebruikt u OsmAnd het meest?", options: ["Plannen van buitenactiviteiten", "Rijden en navigatie", "In kaart brengen en bewerken van OSM", "Off-road / avontuurlijke reizen", "Maritiem of luchtvaartgebruik", "Anders"] },
+        { type: "single", title: "Synchroniseert u uw gegevens met OsmAnd Cloud?", options: ["Ja, regelmatig", "Soms", "Ik wist niet dat het bestond", "Ik geef de voorkeur aan handmatige back-up", "Anders"] },
+        { type: "single", title: "Welke kaartbron verkiest u voor uw activiteiten?", options: ["Standaard vectorkaarten", "Satellietbeelden", "Rasterkaarttegels", "Hangt af van de activiteit", "Anders"] },
+        { type: "single", title: "Welk abonnement gebruikt u (indien van toepassing)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Ik weet het niet zeker", "Anders"] }
+    ],
+    "pl": [
+        { type: "single", title: "Czy korzystałeś z naszego serwisu internetowego www.osmand.net/map do planowania trasy i synchronizacji danych?", options: ["Tak", "Nie", "Dowiedziałem się o tym teraz", "Inne"] },
+        { type: "single", title: "Czy używasz map rastrowych?", options: ["Tak", "Nie", "Inne"] },
+        { type: "multi", title: "Jaka jest Twoja ulubiona aktywność na świeżym powietrzu?", options: ["Jazda na rowerze", "Spacerowanie", "Szlaki turystyczne", "Camping", "Wędkarstwo", "Kajakarstwo", "Wspinaczka", "Obserwacja ptaków", "Narciarstwo", "Bieganie", "Jazda samochodem"] },
+        { type: "single", title: "Do czego najczęściej używasz OsmAnd?", options: ["Planowanie aktywności na świeżym powietrzu", "Jazda i nawigacja", "Mapowanie i edycja OSM", "Podróże off-road / przygodowe", "Zastosowanie morskie lub lotnicze", "Inne"] },
+        { type: "single", title: "Czy synchronizujesz swoje dane z OsmAnd Cloud?", options: ["Tak, regularnie", "Czasami", "Nie wiedziałem, że istnieje", "Wolę ręczną kopię zapasową", "Inne"] },
+        { type: "single", title: "Które źródło mapy preferujesz do swoich aktywności?", options: ["Domyślne mapy wektorowe", "Zdjęcia satelitarne", "Kafelki map rastrowych", "Zależy od aktywności", "Inne"] },
+        { type: "single", title: "Z jakiej subskrypcji korzystasz (jeśli w ogóle)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Nie jestem pewien", "Inne"] }
+    ],
+    "pt": [
+        { type: "single", title: "Utilizou o nosso serviço web www.osmand.net/map para planear a sua rota e sincronizar os seus dados?", options: ["Sim", "Não", "Soube disso agora", "Outro"] },
+        { type: "single", title: "Utiliza mapas raster?", options: ["Sim", "Não", "Outro"] },
+        { type: "multi", title: "Qual é a sua atividade ao ar livre preferida?", options: ["Ciclismo", "Caminhar", "Caminhada (Hiking)", "Campismo", "Pesca", "Caiaque", "Escalada", "Observação de aves", "Esqui", "Corrida", "Condução"] },
+        { type: "single", title: "Para que utiliza mais o OsmAnd?", options: ["Planeamento de atividades ao ar livre", "Condução e navegação", "Mapeamento e edição do OSM", "Viagens todo-o-terreno / aventura", "Uso marítimo ou aviação", "Outro"] },
+        { type: "single", title: "Sincroniza os seus dados com o OsmAnd Cloud?", options: ["Sim, regularmente", "Às vezes", "Não sabia que existia", "Prefiro cópia de segurança manual", "Outro"] },
+        { type: "single", title: "Que fonte de mapa prefere para as suas atividades?", options: ["Mapas vetoriais predefinidos", "Imagens de satélite", "Mosaicos de mapas raster", "Depende da atividade", "Outro"] },
+        { type: "single", title: "Que subscrição utiliza (se houver)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Não tenho a certeza", "Outro"] }
+    ],
+    "tr": [
+        { type: "single", title: "Rota planlamak ve verilerinizi senkronize etmek için www.osmand.net/map web hizmetimizi kullandınız mı?", options: ["Evet", "Hayır", "Şimdi öğrendim", "Diğer"] },
+        { type: "single", title: "Raster haritaları kullanıyor musunuz?", options: ["Evet", "Hayır", "Diğer"] },
+        { type: "multi", title: "En çok tercih ettiğiniz açık hava etkinliği hangisidir?", options: ["Bisiklet", "Yürüyüş", "Doğa Yürüyüşü", "Kamp", "Balık Tutma", "Kano", "Tırmanış", "Kuş Gözlemciliği", "Kayak", "Koşu", "Sürüş"] },
+        { type: "single", title: "OsmAnd’i en çok ne için kullanıyorsunuz?", options: ["Açık hava etkinlikleri planlama", "Sürüş og navigasyon", "OSM haritalama ve düzenleme", "Arazi / macera seyahati", "Denizcilik veya havacılık kullanımı", "Diğer"] },
+        { type: "single", title: "Verilerinizi OsmAnd Cloud ile senkronize ediyor musunuz?", options: ["Evet, düzenli olarak", "Bazen", "Var olduğunu bilmiyoredum", "Manuel yedeklemeyi tercih ederim", "Diğer"] },
+        { type: "single", title: "Etkinlikleriniz için hangi harita kaynağını tercih edersiniz?", options: ["Varsayılan vektör haritaları", "Uydu görüntüleri", "Raster harita karoları", "Etkinliğe göre değişir", "Diğer"] },
+        { type: "single", title: "Hangi aboneliği kullanıyorsunuz (varsa)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Emin değilim", "Diğer"] }
+    ],
+    "uk": [
+        { type: "single", title: "Чи використовували ви наш вебсервіс www.osmand.net/map для планування маршруту та синхронізації даних?", options: ["Так", "Ні", "Дізнався про нього щойно", "Інше"] },
+        { type: "single", title: "Чи використовуєте ви растрові карти?", options: ["Так", "Ні", "Інше"] },
+        { type: "multi", title: "Якому виду активного відпочинку ви віддаєте перевагу?", options: ["Велоспорт", "Прогулянки", "Піший туризм (Хайкінг)", "Кемпінг", "Риболовля", "Каякінг", "Альпінізм", "Спостереження за птахами", "Лижний спорт", "Біг", "Автоподорожі"] },
+        { type: "single", title: "Для чого ви найчастіше використовуєте OsmAnd?", options: ["Планування активного відпочинку", "Поїздки та навігація", "Картографування та редагування OSM", "Бездоріжжя / пригодницькі подорожі", "Морська або авіаційна навігація", "Інше"] },
+        { type: "single", title: "Чи синхронізуєте ви свої дані з OsmAnd Cloud?", options: ["Так, регулярно", "Іноді", "Я не знав про його існування", "Віддаю перевагу ручному бекапу", "Інше"] },
+        { type: "single", title: "Якому джерелу карт ви надаєте перевагу для своїх активностей?", options: ["Стандартні векторні карти", "Супутникові знімки", "Растрові тайли карт", "Залежить від виду активності", "Інше"] },
+        { type: "single", title: "Яку підписку ви використовуєте (якщо є)?", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "Не впевнений", "Інше"] }
+    ],
+    "ar": [
+        { type: "single", title: "هل استخدمت خدمة الويب الخاصة بنا www.osmand.net/map لتخطيط مسارك ومزامنة بياناتك؟", options: ["نعم", "لا", "اكتشفت ذلك الآن", "غير ذلك"] },
+        { type: "single", title: "هل تستخدم الخرائط النقطية (Raster maps)؟", options: ["نعم", "لا", "غير ذلك"] },
+        { type: "multi", title: "ما هو نشاطك الخارجي المفضل؟", options: ["ركوب الدراجات", "المشي", "التنزه السيرى", "التخييم", "الصيد", "الكاياك", "التسلق", "مراقبة الطيور", "التزلج", "الجري", "القيادة"] },
+        { type: "single", title: "ما هو أكثر شيء تستخدم OsmAnd من أجله؟", options: ["تخطيط الأنشطة الخارجية", "القيادة والملاحة", "رسم الخرائط وتحرير OSM", "الرحلات الوعرة / المغامرات", "الاستخدام البحري أو الطيران", "غير ذلك"] },
+        { type: "single", title: "هل تقوم بمزامنة بياناتك مع OsmAnd Cloud؟", options: ["نعم، بانتظام", "أحيانًا", "لم أكن أعرف بوجودها", "أفضل النسخ الاحتياطي اليدوي", "غير ذلك"] },
+        { type: "single", title: "ما هو مصدر الخرائط الذي تفضله لأنشطتك؟", options: ["الخرائط المتجهية الافتراضية", "صور الأقمار الصناعية", "خرائط الراستر التكرارية", "يعتمد على النشاط", "غير ذلك"] },
+        { type: "single", title: "ما هو الاشتراك الذي تستخدمه (إن وجد)؟", options: ["OsmAnd Free (Start)", "Maps+", "OsmAnd Pro", "لست متأكدًا", "غير ذلك"] }
+    ]
+};
+
+let selectedLanguage = localStorage.getItem("osmandMainPollLanguage") || "en";
+let questions = QUESTION_BANK[selectedLanguage] || QUESTION_BANK.en;
+let currentQuestion = 0;
+
+function t(key) {
+    const ui = UI_TRANSLATIONS[selectedLanguage] || UI_TRANSLATIONS.en;
+    return ui[key] || UI_TRANSLATIONS.en[key] || key;
+}
+
+function formatText(template, values) {
+    return String(template).replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
+}
+
+function applyLanguage() {
+    questions = QUESTION_BANK[selectedLanguage] || QUESTION_BANK.en;
+    const isRtl = selectedLanguage === "ar";
+    document.documentElement.lang = selectedLanguage;
+    document.documentElement.dir = isRtl ? "rtl" : "ltr";
+    
+    const langSelect = document.getElementById("languageSelect");
+    if (langSelect) langSelect.value = selectedLanguage;
+
+    document.getElementById("headerTitle").innerHTML = t("headerTitle");
+    document.getElementById("headerSubtitle").innerHTML = t("headerSubtitle");
+    document.getElementById("languageLabel").innerHTML = t("languageLabel");
+    document.getElementById("startTitle").innerHTML = t("startTitle");
+    document.getElementById("startDescription").innerHTML = t("startDescription");
+    document.getElementById("startButton").innerHTML = t("startQuiz");
+    document.getElementById("resultTitle").innerHTML = t("resultTitle");
+    document.getElementById("resultDefault").innerHTML = t("resultDefault");
+    document.getElementById("restartButton").innerHTML = t("restartQuiz");
+}
+
+function changeLanguage(language) {
+    selectedLanguage = language;
+    localStorage.setItem("osmandMainPollLanguage", selectedLanguage);
+    applyLanguage();
+}
+
+function startQuiz() {
+    if (typeof quizTrack === 'function') quizTrack('main_poll/start');
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("quizHeader").style.display = "flex";
+    document.getElementById("progressWrapper").style.display = "block";
+    document.getElementById("quiz").style.display = "block";
+    renderQuestion();
+}
+
+function updateProgress(){
+    const percent = (currentQuestion / questions.length) * 100;
+    document.getElementById("progress").style.width = percent + "%";
+}
+
+function renderQuestion(){
+    updateProgress();
+    
+    const mascotContainer = document.getElementById("mascotContainer");
+    mascotContainer.innerHTML = "📊";
+    mascotContainer.style.borderColor = "var(--osmand-orange)";
+    mascotContainer.style.background = "var(--osmand-orange-bg)";
+    
+    const q = questions[currentQuestion];
+    const hintText = q.type === "multi" ? t("hintMulti") : t("hintSingle");
+
+    let html = `
+    <div class="quiz-layout" data-type="${q.type}">
+        <div class="question-number">${formatText(t("questionOf"), { current: currentQuestion + 1, total: questions.length })}</div>
+        <div class="question-title">${q.title}</div>
+        <div class="question-hint">${hintText}</div>
+    `;
+
+    q.options.forEach((option, index) => {
+        html += `
+        <div class="option" data-index="${index}" data-value="${option}">
+        ${option}
+        </div>
+        `;
+        
+        if ((option.toLowerCase() === 'other' || option.toLowerCase() === 'andere' || option === 'Інше' || option === 'Otro' || option === 'Autre' || option === 'Altro' || option === 'Anders' || option === 'Inne' || option === 'Diğer' || option === 'غير ذلك') && q.type === 'single') {
+            html += `
+            <div class="other-input-container" id="otherInputContainer_${index}">
+                <input type="text" id="otherTextInput" placeholder="${t('otherPlaceholder')}">
+            </div>
+            `;
+        }
+    });
+    
+    html += `<button class="action-btn" onclick="submitChoice()">${t("submitAnswer")}</button>`;
+    html += `<div id="feedback"></div></div>`; 
+
+    document.getElementById("quiz").innerHTML = html;
+    attachOptionEvents(q.type);
+}
+
+function attachOptionEvents(type){
+    const options = document.querySelectorAll(".option");
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            const index = option.dataset.index;
+            const otherContainer = document.getElementById(`otherInputContainer_${index}`);
+            
+            if (type === "single") {
+                options.forEach(o => o.classList.remove("selected"));
+                option.classList.add("selected");
+                
+                document.querySelectorAll(".other-input-container").forEach(c => c.style.display = "none");
+                if (otherContainer) otherContainer.style.display = "block";
+            } else {
+                option.classList.toggle("selected");
+            }
+        });
+    });
+}
+
+async function submitChoice(){
+    const q = questions[currentQuestion];
+    const selectedElements = document.querySelectorAll(".option.selected");
+    if (selectedElements.length === 0) return;
+    
+    let selectedValues = [];
+    let customTextValue = "";
+
+    selectedElements.forEach(el => {
+        selectedValues.push(el.dataset.value);
+        const idx = el.dataset.index;
+        const inputField = document.getElementById("otherTextInput");
+        if (inputField && document.getElementById(`otherInputContainer_${idx}`)?.style.display === "block") {
+            customTextValue = inputField.value.trim();
+        }
+    });
+    
+    if (typeof quizTrack === 'function') {
+        quizTrack(`main_poll/q/${currentQuestion + 1}/answered?lang=${selectedLanguage}&value=${encodeURIComponent(selectedValues.join(','))}`);
+    }
+    
+    if (customTextValue !== "" && GOOGLE_SHEETS_WEB_APP_URL !== "") {
+        try {
+            await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify({
+                    date: new Date().toISOString(),
+                    language: selectedLanguage,
+                    question: q.title,
+                    answer: customTextValue
+                })
+            });
+        } catch (e) {
+            console.error("Error sending data to Google Sheets", e);
+        }
+    }
+    
+    showFeedback();
+}
+
+function showFeedback(){
+    const feedback = document.getElementById("feedback");
+    feedback.className = "feedback thanks-feedback";
+    const isLastQuestion = currentQuestion === questions.length - 1;
+
+    document.getElementById("mascotContainer").innerHTML = "💚";
+    document.getElementById("mascotContainer").style.borderColor = "var(--correct-green)";
+    document.getElementById("mascotContainer").style.background = "#e6f9ed";
+
+    feedback.innerHTML = `
+    <strong>${t("thanksAnswer")}</strong>
+    <button class="action-btn" style="margin-top:20px; background: #34c759; box-shadow: none;" onclick="nextQuestion()">
+        ${isLastQuestion ? t("viewResults") : t("nextQuestion")}
+    </button>
+    `;
+    
+    const mainBtn = document.querySelector("#quiz .action-btn");
+    if(mainBtn) mainBtn.style.display = 'none';
+}
+
+function nextQuestion(){
+    currentQuestion++;
+    if(currentQuestion >= questions.length){
+        if (typeof quizTrack === 'function') quizTrack('main_poll/finish');
+        document.getElementById("quizHeader").style.display = "none";
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("resultScreen").style.display = "block";
+        document.getElementById("progress").style.width = "100%";
+        return;
+    }
+    renderQuestion();
+}
+
+function restartQuiz(){
+    currentQuestion = 0;
+    document.getElementById("quizHeader").style.display = "none";
+    document.getElementById("progressWrapper").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("resultScreen").style.display = "none";
+    document.getElementById("startScreen").style.display = "block";
+}
+
+window.addEventListener("load", applyLanguage);
+</script>
+
+</body>
+</html>
