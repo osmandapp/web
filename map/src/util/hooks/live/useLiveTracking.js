@@ -114,6 +114,8 @@ export default function useLiveTracking() {
                         ...byTranslation,
                         [nickname]: {
                             nickname,
+                            owner: existing?.owner,
+                            mine: existing?.mine,
                             color,
                             active: existing?.active ?? true,
                             startTime: existing?.startTime ?? Date.now(),
@@ -140,6 +142,9 @@ export default function useLiveTracking() {
                     const existing = byTranslation[loc.nickname];
                     byTranslation[loc.nickname] = {
                         nickname: loc.nickname,
+                        owner: loc.owner === true,
+                        // mine is only present in the personal load reply; preserve it on broadcasts.
+                        mine: loc.mine ?? existing?.mine ?? false,
                         color: existing?.color ?? getColorByIndex(index, data.shareLocations.length),
                         active: true,
                         startTime: loc.startTime ?? existing?.startTime ?? Date.now(),
@@ -325,6 +330,55 @@ export default function useLiveTracking() {
         ctx.setIsMyBroadcastPaused(true);
     }, [ctx.myBroadcastTid, sendCommand, ctx.setIsMyBroadcastPaused]);
 
+    // Ask the owner of a translation (that I only have view access to) for permission to share.
+    const requestShare = useCallback(
+        (translationId) => {
+            sendCommand(`/app/translation/${translationId}/requestShare`);
+        },
+        [sendCommand]
+    );
+
+    // Drop a handled request from the owner's pending list (shown as map notifications).
+    const dropShareRequest = useCallback(
+        (translationId, userId) => {
+            ctx.setLiveShareRequests((prev) =>
+                prev.filter((r) => !(r.translationId === translationId && r.userId === userId))
+            );
+        },
+        [ctx.setLiveShareRequests]
+    );
+
+    // Owner approves a pending sharer; the server registers them and notifies the requester.
+    const approveShare = useCallback(
+        (translationId, userId) => {
+            clientRef.current?.publish({
+                destination: `/app/translation/${translationId}/approveShare`,
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ userId }),
+            });
+            dropShareRequest(translationId, userId);
+        },
+        [dropShareRequest]
+    );
+
+    // Owner denies a pending sharer (also used when the owner dismisses the notification).
+    const denyShare = useCallback(
+        (translationId, userId) => {
+            clientRef.current?.publish({
+                destination: `/app/translation/${translationId}/denyShare`,
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ userId }),
+            });
+            dropShareRequest(translationId, userId);
+        },
+        [dropShareRequest]
+    );
+
+    // Expose approve/deny so the map-level notifications (rendered in GlobalFrame) can act on them.
+    useEffect(() => {
+        ctx.setLiveShareActions({ approve: approveShare, deny: denyShare });
+    }, [approveShare, denyShare, ctx.setLiveShareActions]);
+
     // Create a new translation on the server (id must equal SHA-256(key)). On success:
     // save it as owner, select it, and start sharing. The server reply arrives on
     // /user/queue/updates and is handled in the mount effect (pendingCreateRef).
@@ -461,6 +515,8 @@ export default function useLiveTracking() {
                         combined.sort((a, b) => (b.time ?? 0) - (a.time ?? 0));
                         byTranslation[nickname] = {
                             nickname,
+                            owner: existing?.owner,
+                            mine: existing?.mine,
                             color,
                             active: existing?.active ?? true,
                             startTime: existing?.startTime ?? Date.now(),
@@ -491,6 +547,29 @@ export default function useLiveTracking() {
                         } else {
                             handleMetadata(msg.data.id, msg.data);
                             processEncryptedHistory(msg.data.id, msg.data.history);
+                            // Viewer roster snapshot — keeps the count correct after a page refresh.
+                            if (Array.isArray(msg.data.viewers)) {
+                                const tid = msg.data.id;
+                                const roster = {};
+                                msg.data.viewers.forEach((n) => {
+                                    roster[n] = true;
+                                });
+                                ctx.setLiveViewers((prev) => ({ ...prev, [tid]: roster }));
+                            }
+                            // Owner-only: viewers awaiting approval to share (delivered on load).
+                            // Replace this translation's pending list with the server's, so the
+                            // notifications reappear after a page refresh until handled.
+                            if (Array.isArray(msg.data.pendingRequests)) {
+                                const tid = msg.data.id;
+                                ctx.setLiveShareRequests((prev) => [
+                                    ...prev.filter((r) => r.translationId !== tid),
+                                    ...msg.data.pendingRequests.map((r) => ({
+                                        translationId: tid,
+                                        userId: r.userId,
+                                        nickname: r.nickname,
+                                    })),
+                                ]);
+                            }
                             // No older history once our earliest request predates creation.
                             // Runs on the first load too, so a fresh translation disables at once.
                             const earliest = earliestFromRef.current[msg.data.id];
@@ -502,6 +581,20 @@ export default function useLiveTracking() {
                                 );
                             }
                         }
+                    } else if (msg.type === 'SHARE_REQUEST' && msg.data?.translationId) {
+                        // Owner side: a viewer asked to share into my translation.
+                        const { translationId, userId, nickname } = msg.data;
+                        ctx.setLiveShareRequests((prev) =>
+                            prev.some((r) => r.translationId === translationId && r.userId === userId)
+                                ? prev
+                                : [...prev, { translationId, userId, nickname }]
+                        );
+                    } else if (msg.type === 'SHARE_APPROVED' && msg.data) {
+                        // Requester side: approved — start broadcasting into that translation.
+                        const tid = msg.data;
+                        sessionStorage.setItem(BROADCAST_TID_SESSION, tid);
+                        ctx.setMyBroadcastTid(tid);
+                        ctx.setIsMyBroadcastPaused(false);
                     } else if (msg.type === 'ERROR' && pendingCreateRef.current) {
                         // /create rejected (e.g. not authenticated).
                         pendingCreateRef.current.onError?.(msg.data);
@@ -557,5 +650,6 @@ export default function useLiveTracking() {
         regenerateLiveTrack,
         loadEarlier,
         historyExhausted,
+        requestShare,
     };
 }

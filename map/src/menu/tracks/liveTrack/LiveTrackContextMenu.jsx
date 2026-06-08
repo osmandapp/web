@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { Box, Icon, IconButton, ListItemText, Tooltip } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import { Box, Collapse, Icon, IconButton, ListItemText, MenuItem, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../../../context/AppContext';
@@ -35,17 +35,22 @@ import errorStyles from '../../errors/errors.module.css';
 
 const ZONE_COLORS = { UPHILL: '#d35400', DOWNHILL: '#27ae60', FLAT: '#7f8c8d' };
 
-export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, historyExhausted }) {
+export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, historyExhausted, requestShare }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [, height] = useWindowSize();
     const [linkCopied, setLinkCopied] = useState(false);
+    const [requestSent, setRequestSent] = useState(false);
 
     const translation = ctx.selectedLiveTranslation;
     const participants = translation ? (ctx.liveParticipants?.[translation.id] ?? {}) : {};
-    const participantList = Object.values(participants).filter((p) => p.locations?.length > 0);
+    // Order: owner first, then my own card (if I share here), then the rest.
+    const participantRank = (p) => (p.owner ? 0 : p.mine ? 1 : 2);
+    const participantList = Object.values(participants)
+        .filter((p) => p.locations?.length > 0)
+        .sort((a, b) => participantRank(a) - participantRank(b));
     const viewers = translation ? (ctx.liveViewers?.[translation.id] ?? {}) : {};
     const viewerCount = Object.keys(viewers).length;
 
@@ -59,6 +64,18 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
         if (!url) return;
         navigator.clipboard.writeText(url).then(() => setLinkCopied(true));
     }
+
+    function handleRequestShare() {
+        requestShare(translation.id);
+        setRequestSent(true);
+    }
+
+    const canRequestShare =
+        ltx.loginUser &&
+        translation &&
+        !translation.isOwner &&
+        !!translation.key &&
+        ctx.myBroadcastTid !== translation.id;
 
     return (
         <Box
@@ -97,6 +114,24 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
                                 </IconButton>
                             </Tooltip>
                         )}
+                        {canRequestShare && (
+                            <Tooltip
+                                title={t(requestSent ? 'web:live_track_request_sent' : 'web:live_track_request_share')}
+                                arrow
+                                placement="bottom"
+                            >
+                                <span>
+                                    <IconButton
+                                        id="se-live-track-request-share"
+                                        className={trackFavStyles.sortIcon}
+                                        onClick={handleRequestShare}
+                                        disabled={requestSent}
+                                    >
+                                        <FollowIcon />
+                                    </IconButton>
+                                </span>
+                            </Tooltip>
+                        )}
                         {(!ltx.loginUser || !ctx.liveTranslations.some((t) => t.id === translation?.id)) && (
                             <Tooltip
                                 title={t(
@@ -126,7 +161,6 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
                         name={t('web:live_track_viewers')}
                         additionalInfo={String(viewerCount)}
                     />
-                    <ThickDivider height={'8px'} />
                 </>
             )}
             <Box sx={{ overflowY: 'auto', overflowX: 'hidden', maxHeight: `${height - 120}px` }}>
@@ -145,11 +179,11 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
                         </Box>
                     </Box>
                 ) : (
-                    participantList.map((p, i) => (
+                    participantList.map((p) => (
                         <LiveParticipantCard
                             key={p.nickname}
                             participant={p}
-                            isLast={i === participantList.length - 1}
+                            defaultExpanded={participantRank(p) < 2}
                         />
                     ))
                 )}
@@ -158,9 +192,17 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
     );
 }
 
-function LiveParticipantCard({ participant, isLast }) {
+function LiveParticipantCard({ participant, defaultExpanded = true }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    // Owner / own card start expanded, others start collapsed; all stay clickable to toggle.
+    const [expanded, setExpanded] = useState(defaultExpanded);
+    // owner/userId flags may arrive after the card mounts — open it once they do.
+    useEffect(() => {
+        if (defaultExpanded) {
+            setExpanded(true);
+        }
+    }, [defaultExpanded]);
     const locs = participant.locations;
     const speedKmh = locs[0]?.speed != null ? (locs[0].speed * 3.6).toFixed(1) : '0.0';
     const altitudeM = locs[0]?.ele != null ? `${locs[0].ele.toFixed(0)} m` : '—';
@@ -203,136 +245,139 @@ function LiveParticipantCard({ participant, isLast }) {
     }
 
     return (
-        <>
-            <SubTitleMenu
-                text={
-                    <span className={trackFavStyles.participantNickname}>
-                        <span
-                            className={trackFavStyles.participantStatusDot}
-                            style={{ backgroundColor: participant.active !== false ? '#4CAF50' : '#F44336' }}
+        <Box className={trackFavStyles.participantCard}>
+            <MenuItem onClick={() => setExpanded((v) => !v)}>
+                <span className={trackFavStyles.participantCardName}>
+                    <span
+                        className={trackFavStyles.participantStatusDot}
+                        style={{ backgroundColor: participant.active !== false ? '#4CAF50' : '#F44336' }}
+                    />
+                    {participant.nickname}
+                </span>
+                <Tooltip title={t('web:live_track_follow')} arrow placement="bottom">
+                    <IconButton
+                        className={trackFavStyles.sortIcon}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleFollow();
+                        }}
+                    >
+                        <FollowIcon />
+                    </IconButton>
+                </Tooltip>
+            </MenuItem>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <DefaultItem
+                    icon={<SpeedIcon />}
+                    name={t('shared_string_speed')}
+                    additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time)}`}
+                />
+                <DividerWithMargin margin={'64px'} />
+                <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={formatTime(duration)} />
+                <DividerWithMargin margin={'64px'} />
+                <DefaultItem icon={<RouteIcon />} name={t('distance')} additionalInfo={`${distKm} km`} />
+                <DividerWithMargin margin={'64px'} />
+                <DefaultItem
+                    icon={<SpeedMaxIcon />}
+                    name={t('shared_string_max_speed')}
+                    additionalInfo={`${maxSpeed.toFixed(1)} km/h`}
+                />
+                <DividerWithMargin margin={'64px'} />
+                <DefaultItem icon={<AltitudeIcon />} name={t('altitude')} additionalInfo={altitudeM} />
+                {(elevGain > 0 || elevLoss < 0) && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<AscentIcon />}
+                            name={t('web:live_track_elevation_gain')}
+                            additionalInfo={`+${elevGain.toFixed(0)} m`}
                         />
-                        {participant.nickname}
-                    </span>
-                }
-                rightContent={
-                    <Tooltip title={t('web:live_track_follow')} arrow placement="bottom">
-                        <IconButton className={trackFavStyles.sortIcon} onClick={handleFollow}>
-                            <FollowIcon />
-                        </IconButton>
-                    </Tooltip>
-                }
-            />
-            <DefaultItem
-                icon={<SpeedIcon />}
-                name={t('shared_string_speed')}
-                additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time)}`}
-            />
-            <DividerWithMargin margin={'64px'} />
-            <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={formatTime(duration)} />
-            <DividerWithMargin margin={'64px'} />
-            <DefaultItem icon={<RouteIcon />} name={t('distance')} additionalInfo={`${distKm} km`} />
-            <DividerWithMargin margin={'64px'} />
-            <DefaultItem
-                icon={<SpeedMaxIcon />}
-                name={t('shared_string_max_speed')}
-                additionalInfo={`${maxSpeed.toFixed(1)} km/h`}
-            />
-            <DividerWithMargin margin={'64px'} />
-            <DefaultItem icon={<AltitudeIcon />} name={t('altitude')} additionalInfo={altitudeM} />
-            {(elevGain > 0 || elevLoss < 0) && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<AscentIcon />}
-                        name={t('web:live_track_elevation_gain')}
-                        additionalInfo={`+${elevGain.toFixed(0)} m`}
-                    />
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<DescentIcon />}
-                        name={t('web:live_track_elevation_loss')}
-                        additionalInfo={`${elevLoss.toFixed(0)} m`}
-                    />
-                </>
-            )}
-            {Number.isFinite(bearingDeg) && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<DirectionIcon />}
-                        name={t('web:live_track_direction')}
-                        additionalInfo={`${Math.round(bearingDeg)}°`}
-                    />
-                </>
-            )}
-            {battery > 0 && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<BatteryIcon />}
-                        name={t('web:live_track_battery')}
-                        additionalInfo={`${Math.round(battery)}%`}
-                    />
-                </>
-            )}
-            {timeToArrival > 0 && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<TimeIcon />}
-                        name={t('web:live_track_eta')}
-                        additionalInfo={formatTime(timeToArrival)}
-                    />
-                </>
-            )}
-            {distToArrival > 0 && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<DestinationIcon />}
-                        name={t('web:live_track_distance_to_destination')}
-                        additionalInfo={`${(distToArrival / 1000).toFixed(2)} km`}
-                    />
-                </>
-            )}
-            {timeToIntermediate > 0 && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<TimeIcon />}
-                        name={t('web:live_track_eta_intermediate')}
-                        additionalInfo={formatTime(timeToIntermediate)}
-                    />
-                </>
-            )}
-            {distToIntermediate > 0 && (
-                <>
-                    <DividerWithMargin margin={'64px'} />
-                    <DefaultItem
-                        icon={<DestinationIcon />}
-                        name={t('web:live_track_distance_intermediate')}
-                        additionalInfo={`${(distToIntermediate / 1000).toFixed(2)} km`}
-                    />
-                </>
-            )}
-            {zones.length > 0 && (
-                <>
-                    <ThickDivider height={'8px'} mt={'8px'} />
-                    <SubTitleMenu text={`${t('web:live_track_intervals')} (${zones.length})`} />
-                    {[...zones].reverse().map((z, i) => (
-                        <React.Fragment key={i}>
-                            <DefaultItem
-                                icon={<TerrainIcon style={{ fill: ZONE_COLORS[z.type] }} />}
-                                name={`${zones.length - i}. ${zoneTypeLabel(z.type)}`}
-                                additionalInfo={`${(z.distance / 1000).toFixed(2)} km · ${z.eleDiff > 0 ? '+' : ''}${z.eleDiff.toFixed(0)} m`}
-                            />
-                            {i < zones.length - 1 && <DividerWithMargin margin={'64px'} />}
-                        </React.Fragment>
-                    ))}
-                </>
-            )}
-            {!isLast && <ThickDivider height={'16px'} mt={'8px'} />}
-        </>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<DescentIcon />}
+                            name={t('web:live_track_elevation_loss')}
+                            additionalInfo={`${elevLoss.toFixed(0)} m`}
+                        />
+                    </>
+                )}
+                {Number.isFinite(bearingDeg) && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<DirectionIcon />}
+                            name={t('web:live_track_direction')}
+                            additionalInfo={`${Math.round(bearingDeg)}°`}
+                        />
+                    </>
+                )}
+                {battery > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<BatteryIcon />}
+                            name={t('web:live_track_battery')}
+                            additionalInfo={`${Math.round(battery)}%`}
+                        />
+                    </>
+                )}
+                {timeToArrival > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<TimeIcon />}
+                            name={t('web:live_track_eta')}
+                            additionalInfo={formatTime(timeToArrival)}
+                        />
+                    </>
+                )}
+                {distToArrival > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<DestinationIcon />}
+                            name={t('web:live_track_distance_to_destination')}
+                            additionalInfo={`${(distToArrival / 1000).toFixed(2)} km`}
+                        />
+                    </>
+                )}
+                {timeToIntermediate > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<TimeIcon />}
+                            name={t('web:live_track_eta_intermediate')}
+                            additionalInfo={formatTime(timeToIntermediate)}
+                        />
+                    </>
+                )}
+                {distToIntermediate > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<DestinationIcon />}
+                            name={t('web:live_track_distance_intermediate')}
+                            additionalInfo={`${(distToIntermediate / 1000).toFixed(2)} km`}
+                        />
+                    </>
+                )}
+                {zones.length > 0 && (
+                    <>
+                        <ThickDivider height={'8px'} mt={'8px'} />
+                        <SubTitleMenu text={`${t('web:live_track_intervals')} (${zones.length})`} />
+                        {[...zones].reverse().map((z, i) => (
+                            <React.Fragment key={i}>
+                                <DefaultItem
+                                    icon={<TerrainIcon style={{ fill: ZONE_COLORS[z.type] }} />}
+                                    name={`${zones.length - i}. ${zoneTypeLabel(z.type)}`}
+                                    additionalInfo={`${(z.distance / 1000).toFixed(2)} km · ${z.eleDiff > 0 ? '+' : ''}${z.eleDiff.toFixed(0)} m`}
+                                />
+                                {i < zones.length - 1 && <DividerWithMargin margin={'64px'} />}
+                            </React.Fragment>
+                        ))}
+                    </>
+                )}
+            </Collapse>
+        </Box>
     );
 }
 

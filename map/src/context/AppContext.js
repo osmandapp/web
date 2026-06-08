@@ -200,6 +200,10 @@ export const AppContextProvider = (props) => {
     });
     const [liveParticipants, setLiveParticipants] = useState({});
     const [liveViewers, setLiveViewers] = useState({});
+    // Pending share-permission requests shown to the owner as map notifications.
+    const [liveShareRequests, setLiveShareRequests] = useState([]); // [{ translationId, userId, nickname }]
+    // approve/deny callbacks published over websocket; wired by useLiveTracking.
+    const [liveShareActions, setLiveShareActions] = useState(null);
     const [selectedLiveTranslation, setSelectedLiveTranslation] = useState(null);
     const [followLiveLocation, setFollowLiveLocation] = useState(null);
     const [myBroadcastTid, setMyBroadcastTid] = useState(null);
@@ -762,6 +766,10 @@ export const AppContextProvider = (props) => {
                 setLiveParticipants,
                 liveViewers,
                 setLiveViewers,
+                liveShareRequests,
+                setLiveShareRequests,
+                liveShareActions,
+                setLiveShareActions,
                 selectedLiveTranslation,
                 setSelectedLiveTranslation,
                 followLiveLocation,

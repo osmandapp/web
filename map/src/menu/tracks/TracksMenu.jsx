@@ -57,6 +57,7 @@ export default function TracksMenu() {
         regenerateLiveTrack,
         loadEarlier,
         historyExhausted,
+        requestShare,
     } = useLiveTracking();
     const { openLiveTracks } = useLiveTrackUrl();
 
@@ -133,6 +134,7 @@ export default function TracksMenu() {
                     addLiveTrack={addLiveTrack}
                     loadEarlier={loadEarlier}
                     historyExhausted={historyExhausted}
+                    requestShare={requestShare}
                 />
             );
         }

@@ -160,6 +160,19 @@
     border-radius: 50%;
     flex-shrink: 0;
 }
+.participantCard {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin: 0 8px 8px;
+    overflow: hidden;
+}
+.participantCardName {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
 .liveTrackDialogContent {
     display: flex;
     flex-direction: column;
