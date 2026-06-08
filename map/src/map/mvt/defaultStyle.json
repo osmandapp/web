@@ -11,8 +11,8 @@
             "buffer": 128
         }
     },
-    "sprite": "/mvt/sprites/sprite",
-    "glyphs": "/mvt/fonts/{fontstack}/{range}.pbf",
+    "sprite": "https://test.osmand.net/mvt/sprites/sprite",
+    "glyphs": "https://test.osmand.net/mvt/fonts/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "background",
