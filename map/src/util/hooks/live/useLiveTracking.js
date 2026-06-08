@@ -424,6 +424,7 @@ export default function useLiveTracking() {
 
             clientRef.current?.publish({
                 destination: '/app/translation/create',
+                headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ translationId, durationHours }),
             });
         },

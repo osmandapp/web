@@ -270,7 +270,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                 <DefaultItem
                     icon={<SpeedIcon />}
                     name={t('shared_string_speed')}
-                    additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time)}`}
+                    additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time, t)}`}
                 />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={formatTime(duration)} />
@@ -503,12 +503,12 @@ function formatTime(ms) {
     return `${s}s`;
 }
 
-function getTimeAgo(timestamp) {
+function getTimeAgo(timestamp, t) {
     if (!timestamp) return '—';
     const diff = Math.floor((Date.now() - timestamp) / 1000);
-    if (diff < 10) return 'just now';
-    if (diff < 60) return `${diff}s ago`;
-    if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+    if (diff < 10) return t('web:live_track_just_now');
+    if (diff < 60) return t('web:live_track_seconds_ago', { value: diff });
+    if (diff < 3600) return t('web:live_track_minutes_ago', { value: Math.floor(diff / 60) });
 
-    return `${Math.floor(diff / 3600)}h ago`;
+    return t('web:live_track_hours_ago', { value: Math.floor(diff / 3600) });
 }

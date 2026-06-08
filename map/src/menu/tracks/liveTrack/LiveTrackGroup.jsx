@@ -14,7 +14,7 @@ export default function LiveTrackGroup() {
     const navigate = useNavigate();
 
     const count = ctx.liveTranslations.length;
-    const infoText = count > 0 ? `${count} ${t('shared_string_gpx_files').toLowerCase()}` : '';
+    const infoText = count > 0 ? `${count} ${t('web:live_tracks').toLowerCase()}` : '';
 
     function handleClick() {
         navigate(MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL);
