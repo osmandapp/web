@@ -101,7 +101,6 @@ export function start(opts = {}) {
     let paused = false;
     let started = false;
     let pendingConfirmation = false;
-    let warnedNoKey = false;
 
     return new Promise((resolve) => {
         const client = new Client({
