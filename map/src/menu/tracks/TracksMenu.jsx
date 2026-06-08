@@ -117,13 +117,18 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
+    const needLiveLogin = openLiveTracks && !ltx.loginUser && !searchParams.get('tid');
+    useEffect(() => {
+        if (needLiveLogin) {
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash, { replace: true });
+        }
+    }, [needLiveLogin, navigate, location.search, location.hash]);
+
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
 
-    // live tracks folder
-    if (openLiveTracks && !ltx.loginUser && !searchParams.get('tid')) {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash, { replace: true });
+    if (needLiveLogin) {
         return null;
     }
 
