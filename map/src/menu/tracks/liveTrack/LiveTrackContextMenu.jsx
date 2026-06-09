@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Box, Collapse, Icon, IconButton, ListItemText, MenuItem, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -197,31 +197,39 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
     const { t } = useTranslation();
     // Owner / own card start expanded, others start collapsed; all stay clickable to toggle.
     const [expanded, setExpanded] = useState(defaultExpanded);
+
     // owner/userId flags may arrive after the card mounts — open it once they do.
     useEffect(() => {
         if (defaultExpanded) {
             setExpanded(true);
         }
     }, [defaultExpanded]);
+
     const locs = participant.locations;
-    const speedKmh = locs[0]?.speed != null ? (locs[0].speed * 3.6).toFixed(1) : '0.0';
-    const altitudeM = locs[0]?.ele != null ? `${locs[0].ele.toFixed(0)} m` : '—';
-    let totalDist = 0;
-    let maxSpeed = 0;
-    for (let i = 0; i < locs.length - 1; i++) {
-        totalDist += getDistance(locs[i].lat, locs[i].lon, locs[i + 1].lat, locs[i + 1].lon);
-        const kmh = locs[i].speed != null ? locs[i].speed * 3.6 : 0;
-        if (kmh > maxSpeed) maxSpeed = kmh;
-    }
-    if (locs.length > 0) {
-        const lastKmh = locs.at(-1).speed != null ? locs.at(-1).speed * 3.6 : 0;
-        if (lastKmh > maxSpeed) maxSpeed = lastKmh;
-    }
-    const distKm = (totalDist / 1000).toFixed(2);
+
+    const { speedKmh, altitudeM, maxSpeed, distKm, zones, elevGain, elevLoss } = useMemo(() => {
+        const speedKmh = locs[0]?.speed != null ? (locs[0].speed * 3.6).toFixed(1) : '0.0';
+        const altitudeM = locs[0]?.ele != null ? `${locs[0].ele.toFixed(0)} m` : '—';
+        let totalDist = 0;
+        let maxSpeed = 0;
+        for (let i = 0; i < locs.length - 1; i++) {
+            totalDist += getDistance(locs[i].lat, locs[i].lon, locs[i + 1].lat, locs[i + 1].lon);
+            const kmh = locs[i].speed != null ? locs[i].speed * 3.6 : 0;
+            if (kmh > maxSpeed) maxSpeed = kmh;
+        }
+        if (locs.length > 0) {
+            const lastKmh = locs.at(-1).speed != null ? locs.at(-1).speed * 3.6 : 0;
+            if (lastKmh > maxSpeed) maxSpeed = lastKmh;
+        }
+        const distKm = (totalDist / 1000).toFixed(2);
+        const zones = computeZones(locs);
+        const elevGain = zones.filter((z) => z.eleDiff > 0).reduce((s, z) => s + z.eleDiff, 0);
+        const elevLoss = zones.filter((z) => z.eleDiff < 0).reduce((s, z) => s + z.eleDiff, 0);
+
+        return { speedKmh, altitudeM, maxSpeed, distKm, zones, elevGain, elevLoss };
+    }, [locs]);
+
     const duration = Date.now() - participant.startTime;
-    const zones = computeZones(locs);
-    const elevGain = zones.filter((z) => z.eleDiff > 0).reduce((s, z) => s + z.eleDiff, 0);
-    const elevLoss = zones.filter((z) => z.eleDiff < 0).reduce((s, z) => s + z.eleDiff, 0);
 
     function zoneTypeLabel(type) {
         if (type === 'UPHILL') return t('shared_string_uphill');
@@ -491,7 +499,6 @@ function computeZones(locations, minEleDiff = 7) {
 
     return zones;
 }
-
 
 function getTimeAgo(timestamp, t) {
     if (!timestamp) return '—';
