@@ -23,7 +23,7 @@ export default function useLiveTracking() {
     const ctx = useContext(AppContext);
 
     const clientRef = useRef(null);
-    const subscribedRef = useRef(new Set()); // translationIds we've already subscribed to
+    const subscribedRef = useRef(new Map()); // translationId → STOMP subscription (kept so we can unsubscribe)
     const pendingCreateRef = useRef(null); // { onSuccess, onError } for the in-flight /create
     const geoErrorRef = useRef(null); // onGeoError(errCode) for the active broadcast — fired from the watchPosition error
 
@@ -52,6 +52,8 @@ export default function useLiveTracking() {
 
     // Drop all client-side state for one translation.
     const forgetTranslation = useCallback((id) => {
+        // Unsubscribe from the STOMP topic so the client stops receiving updates for this translation.
+        subscribedRef.current.get(id)?.unsubscribe();
         subscribedRef.current.delete(id);
         delete keysRef.current[id];
         delete lastTimeRef.current[id];
@@ -178,9 +180,7 @@ export default function useLiveTracking() {
                 return;
             }
 
-            subscribedRef.current.add(translationId);
-
-            client.subscribe(`/topic/translation/${translationId}`, (message) => {
+            const subscription = client.subscribe(`/topic/translation/${translationId}`, (message) => {
                 const msg = JSON.parse(message.body);
                 // Track newest server time so reconnect only re-fetches the delta.
                 if (msg.serverReceiveTime && msg.serverReceiveTime > (lastTimeRef.current[translationId] ?? 0)) {
@@ -228,6 +228,7 @@ export default function useLiveTracking() {
                     forgetTranslation(translationId);
                 }
             });
+            subscribedRef.current.set(translationId, subscription);
             // Initial load: delta since the last point seen, or the recent window on first open.
             const last = lastTimeRef.current[translationId];
             const fromTime = last ? last + 1 : Date.now() - INITIAL_LOAD_WINDOW_MS;
