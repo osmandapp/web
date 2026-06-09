@@ -604,7 +604,11 @@ export default function useLiveTracking() {
                 });
                 setConnected(true);
             },
-            onDisconnect: () => setConnected(false),
+            onDisconnect: () => {
+                // Clear so the reconnect effect re-subscribes to topics on the new STOMP session.
+                subscribedRef.current.clear();
+                setConnected(false);
+            },
         });
 
         client.activate();
