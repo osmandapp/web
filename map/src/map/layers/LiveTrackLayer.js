@@ -59,7 +59,9 @@ export default function LiveTrackLayer() {
                 const iconHtml = `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:2px solid #fff;box-shadow:0 0 4px rgba(0,0,0,.5)"></div>`;
                 const icon = L.divIcon({ html: iconHtml, className: '', iconSize: [14, 14], iconAnchor: [7, 7] });
                 const marker = L.marker([lastLoc.lat, lastLoc.lon], { icon }).addTo(map);
-                marker.bindTooltip(nickname, { permanent: false, direction: 'top', offset: [0, -10] });
+                const tooltipNode = document.createElement('span');
+                tooltipNode.textContent = nickname;
+                marker.bindTooltip(tooltipNode, { permanent: false, direction: 'top', offset: [0, -10] });
                 layersRef.current[selectedTid][nickname] = { polyline, marker };
             }
         });
