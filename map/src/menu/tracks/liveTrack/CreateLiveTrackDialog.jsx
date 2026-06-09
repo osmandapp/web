@@ -18,7 +18,13 @@ import { useNavigate } from 'react-router-dom';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/ic_action_copy.svg';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { generateTranslationKey, computeTranslationId } from '../../../util/livetracks/liveTrackCrypto';
-import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE } from '../../../util/livetracks/liveTrackUtils';
+import {
+    buildLiveTrackShareUrl,
+    GEO_ERROR_DENIED,
+    GEO_ERROR_UNAVAILABLE,
+    NAME_PARAM,
+    TID_PARAM,
+} from '../../../util/livetracks/liveTrackUtils';
 import LiveTrackingContext from '../../../context/LiveTrackingContext';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import styles from '../../trackfavmenu.module.css';
@@ -92,16 +98,10 @@ export default function CreateLiveTrackDialog({ open, onClose }) {
             name.trim() || null,
             duration,
             (translation) => {
-                const urlParams = new URLSearchParams({ tid: translation.id });
-                if (translation.name) {
-                    urlParams.set('name', translation.name);
-                }
-                setShareUrl(
-                    `${globalThis.location.origin}${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${urlParams}#${key}`
-                );
+                setShareUrl(buildLiveTrackShareUrl(translation));
                 setCreating(false);
                 navigate(
-                    `${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?tid=${translation.id}&name=${encodeURIComponent(translation.name)}`
+                    `${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${TID_PARAM}=${translation.id}&${NAME_PARAM}=${encodeURIComponent(translation.name)}`
                 );
             },
             (errCode) => {

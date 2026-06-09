@@ -23,6 +23,7 @@ import LiveTrackGroup from './liveTrack/LiveTrackGroup';
 import LiveTrackFolder from './liveTrack/LiveTrackFolder';
 import LiveTrackContextMenu from './liveTrack/LiveTrackContextMenu';
 import LiveTrackingContext from '../../context/LiveTrackingContext';
+import { TID_PARAM } from '../../util/livetracks/liveTrackUtils';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -104,7 +105,7 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
-    const needLiveLogin = openLiveTracks && !ltx.loginUser && !searchParams.get('tid');
+    const needLiveLogin = openLiveTracks && !ltx.loginUser && !searchParams.get(TID_PARAM);
     useEffect(() => {
         if (needLiveLogin) {
             navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash, { replace: true });

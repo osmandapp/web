@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import LiveTrackingContext from '../../../context/LiveTrackingContext';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
-import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
+import { buildLiveTrackShareUrl, NAME_PARAM, TID_PARAM } from '../../../util/livetracks/liveTrackUtils';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
 import styles from '../../trackfavmenu.module.css';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
@@ -34,7 +34,7 @@ export default function LiveTrackItem({ translation, isLastItem }) {
     function handleClick(e) {
         if (anchorEl.current?.contains(e.target)) return;
         lttx.setSelectedLiveTranslation(translation);
-        const params = new URLSearchParams({ tid: translation.id, name: translation.name });
+        const params = new URLSearchParams({ [TID_PARAM]: translation.id, [NAME_PARAM]: translation.name });
         navigate(`${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${params}`);
     }
 
@@ -71,7 +71,7 @@ export default function LiveTrackItem({ translation, isLastItem }) {
     function handleRegenerate() {
         setOpenActions(false);
         lttx.regenerateLiveTrack(translation.id, (newTranslation) => {
-            const params = new URLSearchParams({ tid: newTranslation.id, name: newTranslation.name });
+            const params = new URLSearchParams({ [TID_PARAM]: newTranslation.id, [NAME_PARAM]: newTranslation.name });
             navigate(`${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${params}`);
         });
     }
