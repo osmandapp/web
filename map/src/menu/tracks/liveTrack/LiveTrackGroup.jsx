@@ -11,6 +11,7 @@ import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalMan
 export default function LiveTrackGroup() {
     const lttx = useContext(LiveTrackingContext);
     const { t } = useTranslation();
+
     const navigate = useNavigate();
 
     const count = lttx.liveTranslations.length;

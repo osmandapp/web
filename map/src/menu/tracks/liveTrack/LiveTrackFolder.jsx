@@ -16,7 +16,9 @@ import gStyles from '../../gstylesmenu.module.css';
 export default function LiveTrackFolder() {
     const lttx = useContext(LiveTrackingContext);
     const { t } = useTranslation();
+
     const navigate = useNavigate();
+
     const [, height] = useWindowSize();
     const [dialogOpen, setDialogOpen] = useState(false);
 

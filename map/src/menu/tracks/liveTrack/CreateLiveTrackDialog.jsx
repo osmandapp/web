@@ -30,6 +30,7 @@ function durationLabel(value, t) {
     if (value === 1) return t('web:live_track_duration_1h');
     if (value === 4) return t('web:live_track_duration_4h');
     if (value === 8) return t('web:live_track_duration_8h');
+
     return t('web:live_track_duration_24h');
 }
 
@@ -70,9 +71,7 @@ export default function CreateLiveTrackDialog({ open, onClose }) {
                     setGeoError('web:live_track_geo_denied');
                     return;
                 }
-            } catch (_) {
-                // permissions API not supported — proceed and let watchPosition handle it
-            }
+            } catch {}
         }
 
         setCreating(true);

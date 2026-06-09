@@ -48,8 +48,10 @@ export default function LiveTrackContextMenu() {
     const lttx = useContext(LiveTrackingContext);
     const { addLiveTrack, loadEarlier, historyExhausted, requestShare } = lttx;
     const ltx = useContext(LoginContext);
+
     const { t } = useTranslation();
     const navigate = useNavigate();
+
     const [, height] = useWindowSize();
     const [linkCopied, setLinkCopied] = useState(false);
     const [requestSent, setRequestSent] = useState(false);
@@ -211,10 +213,9 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
     const ctx = useContext(AppContext);
     const lttx = useContext(LiveTrackingContext);
     const { t } = useTranslation();
-    // Owner / own card start expanded, others start collapsed; all stay clickable to toggle.
+
     const [expanded, setExpanded] = useState(defaultExpanded);
 
-    // owner/userId flags may arrive after the card mounts — open it once they do.
     useEffect(() => {
         if (defaultExpanded) {
             setExpanded(true);
@@ -223,7 +224,6 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
 
     const locs = participant.locations;
 
-    // Raw SI values (metres, m/s) — converted to the user's units at render time.
     const { totalDistM, maxSpeedMS, zones, elevGainM, elevLossM } = useMemo(() => {
         let totalDistM = 0;
         let maxSpeedMS = 0;
@@ -243,10 +243,10 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
 
     const duration = Date.now() - participant.startTime;
 
-    // Unit labels + formatters, driven by the user's units settings (metric / imperial / nautical).
     const smallUnit = t(getSmallLengthUnit(ctx));
     const largeUnit = t(getLargeLengthUnit(ctx));
     const speedUnit = t(getSpeedUnit(ctx));
+
     const fmtSpeed = (ms) => (convertSpeedMS(ms, ctx.unitsSettings.speed) ?? 0).toFixed(1);
     const fmtLarge = (m) => (convertMeters(m, ctx.unitsSettings.len, LARGE_UNIT) ?? 0).toFixed(2);
     const fmtSmall = (m) => Math.round(convertMeters(m, ctx.unitsSettings.len) ?? 0);
