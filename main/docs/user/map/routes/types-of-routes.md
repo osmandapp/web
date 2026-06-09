@@ -31,17 +31,17 @@ You can configure the filtering of some route types in the [Configure Map](../..
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-You can find more information in the [Map Legend](../../map-legend/index.md) article.
+You can find more information in the [Map Legend](../../map-legend/osmand.md#cycling) article.
 
 
 ## Mountain bike {#mountain-bike}
 
 MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. More information is in the [Map Legend](../../map-legend/index.md) article.  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to the MTB scale. More information is in the [Map Legend](../../map-legend/osmand.md#mtb) article.  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Hiking / Walking {#hiking--walking}
@@ -62,7 +62,7 @@ MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels ([Map Legend](../../map-legend/osmand.md#routes)).  
+The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels ([Map Legend](../../map-legend/osmand.md#dirtbike-scale)).  
 
 You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking — more about the [`dirtbike` tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
