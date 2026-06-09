@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import { ReactComponent as CopyIcon } from '../../../assets/icons/ic_action_copy.svg';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { generateTranslationKey, computeTranslationId } from '../../../util/livetracks/liveTrackCrypto';
+import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE } from '../../../util/livetracks/liveTrackUtils';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import styles from '../../trackfavmenu.module.css';
 
@@ -210,7 +211,7 @@ export default function CreateLiveTrackDialog({ open, onClose, createLiveTrack }
 }
 
 function toGeoErrorKey(code) {
-    if (code === 'geolocation_denied') return 'web:live_track_geo_denied';
-    if (code === 'geolocation_unavailable') return 'web:live_track_geo_unavailable';
+    if (code === GEO_ERROR_DENIED) return 'web:live_track_geo_denied';
+    if (code === GEO_ERROR_UNAVAILABLE) return 'web:live_track_geo_unavailable';
     return 'web:live_track_geo_not_supported';
 }

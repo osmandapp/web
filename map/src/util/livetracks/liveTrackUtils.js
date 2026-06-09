@@ -4,6 +4,9 @@ import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManage
 // leaflet-hash initialization that would otherwise overwrite the URL fragment.
 export const LIVE_TRACK_KEY_SESSION = '__liveTrackShareKey__';
 
+export const GEO_ERROR_DENIED = 'geolocation_denied';
+export const GEO_ERROR_UNAVAILABLE = 'geolocation_unavailable';
+
 const KEY_HEX_RE = /^[0-9a-f]{64}$/;
 
 // Builds the share URL for a live track translation.

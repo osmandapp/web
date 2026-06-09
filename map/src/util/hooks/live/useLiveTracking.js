@@ -8,6 +8,7 @@ import {
     generateTranslationKey,
     computeTranslationId,
 } from '../../livetracks/liveTrackCrypto';
+import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE } from '../../livetracks/liveTrackUtils';
 
 // sessionStorage key: my broadcast tid, restored after page refresh.
 const BROADCAST_TID_SESSION = '__liveTrackBroadcastTid__';
@@ -15,12 +16,16 @@ const BROADCAST_TID_SESSION = '__liveTrackBroadcastTid__';
 // Initial /load fetches the last 6h only (fast open); older windows via loadEarlier().
 const INITIAL_LOAD_WINDOW_MS = 6 * 60 * 60 * 1000;
 
+// Cap on points kept per participant (newest first) — bounds memory and per-render computations.
+const MAX_PARTICIPANT_POINTS = 10000;
+
 export default function useLiveTracking() {
     const ctx = useContext(AppContext);
 
     const clientRef = useRef(null);
     const subscribedRef = useRef(new Set()); // translationIds we've already subscribed to
     const pendingCreateRef = useRef(null); // { onSuccess, onError } for the in-flight /create
+    const geoErrorRef = useRef(null); // onGeoError(errCode) for the active broadcast — fired from the watchPosition error
 
     // Per-translation maps (refs: change off-render, never displayed).
     const keysRef = useRef({}); // tid → AES key (hex)
@@ -93,7 +98,10 @@ export default function useLiveTracking() {
                     })
                     .catch(() => {});
             },
-            () => {},
+            (error) => {
+                const code = error?.code === error?.PERMISSION_DENIED ? GEO_ERROR_DENIED : GEO_ERROR_UNAVAILABLE;
+                geoErrorRef.current?.(code);
+            },
             { enableHighAccuracy: true, maximumAge: 5000 }
         );
 
@@ -119,7 +127,7 @@ export default function useLiveTracking() {
                             color,
                             active: existing?.active ?? true,
                             startTime: existing?.startTime ?? Date.now(),
-                            locations: [point, ...locations],
+                            locations: [point, ...locations].slice(0, MAX_PARTICIPANT_POINTS),
                         },
                     },
                 };
@@ -385,6 +393,7 @@ export default function useLiveTracking() {
     // replaceId (optional): regenerate — drop that old translation and revoke it server-side.
     const createLiveTrack = useCallback(
         (translationId, key, name, durationHours, onCreated, onGeoError, onCreateError, replaceId) => {
+            geoErrorRef.current = onGeoError ?? null;
             if (ctx.myBroadcastTid) {
                 sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
                 ctx.setMyBroadcastTid(null);
@@ -521,7 +530,7 @@ export default function useLiveTracking() {
                             color,
                             active: existing?.active ?? true,
                             startTime: existing?.startTime ?? Date.now(),
-                            locations: combined,
+                            locations: combined.slice(0, MAX_PARTICIPANT_POINTS),
                         };
                     });
                     return { ...prev, [translationId]: byTranslation };
