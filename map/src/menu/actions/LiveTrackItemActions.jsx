@@ -28,16 +28,12 @@ const LiveTrackItemActions = forwardRef(
     ) => {
         const ctx = useContext(AppContext);
         const { t } = useTranslation();
-
-        const ownerSharingLabel =
-            !isSharing && !ctx.isMyBroadcastPaused
-                ? 'web:live_track_start_sharing'
-                : ctx.isMyBroadcastPaused
-                  ? 'web:live_track_resume_sharing'
-                  : 'web:live_track_pause_sharing';
-
-        const ownerSharingIcon =
-            (!isSharing && !ctx.isMyBroadcastPaused) || ctx.isMyBroadcastPaused ? <LocationOnIcon /> : <LocationOffIcon />;
+        const ownerSharingLabel = !isSharing
+            ? 'web:live_track_start_sharing'
+            : ctx.isMyBroadcastPaused
+              ? 'web:live_track_resume_sharing'
+              : 'web:live_track_pause_sharing';
+        const ownerSharingIcon = isSharing && !ctx.isMyBroadcastPaused ? <LocationOffIcon /> : <LocationOnIcon />;
 
         return (
             <Box ref={ref}>
