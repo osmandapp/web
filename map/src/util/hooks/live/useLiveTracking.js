@@ -379,7 +379,7 @@ export default function useLiveTracking() {
         ctx.setLiveShareActions({ approve: approveShare, deny: denyShare });
     }, [approveShare, denyShare, ctx.setLiveShareActions]);
 
-    // Create a new translation on the server (id must equal SHA-256(key)). On success:
+    // Create a new translation on the server (id is derived from the key — see computeTranslationId()). On success:
     // save it as owner, select it, and start sharing. The server reply arrives on
     // /user/queue/updates and is handled in the mount effect (pendingCreateRef).
     // replaceId (optional): regenerate — drop that old translation and revoke it server-side.

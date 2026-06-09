@@ -1,5 +1,5 @@
 // Utilities for live track symmetric encryption (AES-256-GCM).
-// Key is a 32-byte hex string; translationId is SHA-256 of that key.
+// Key is a 32-byte hex string; translationId is the first TRANSLATION_ID_LENGTH hex chars of SHA-256(key).
 
 const GENERATE_ALGORITHM = { name: 'AES-GCM', length: 256 };
 const IMPORT_ALGORITHM = { name: 'AES-GCM' };
