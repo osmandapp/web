@@ -114,8 +114,11 @@ export default function CreateLiveTrackDialog({ open, onClose, createLiveTrack }
     }
 
     function handleCopy() {
-        navigator.clipboard.writeText(shareUrl);
-        setCopied(true);
+        if (!shareUrl) return;
+        navigator.clipboard
+            .writeText(shareUrl)
+            .then(() => setCopied(true))
+            .catch(() => {});
     }
 
     function handleClose() {
