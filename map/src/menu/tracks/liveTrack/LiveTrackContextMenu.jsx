@@ -29,6 +29,7 @@ import { ReactComponent as FolderAddIcon } from '../../../assets/icons/ic_action
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DestinationIcon } from '../../../assets/icons/ic_action_point_destination.svg';
 import { ReactComponent as BatteryIcon } from '../../../assets/icons/ic_action_info.svg';
+import { ReactComponent as AccuracyIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
 import trackFavStyles from '../../trackfavmenu.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import errorStyles from '../../errors/errors.module.css';
@@ -240,6 +241,8 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
     const lastLoc = locs[0];
     // Optional fields sent by the mobile broadcaster (absent for web broadcasts).
     const bearingDeg = lastLoc?.bearing;
+    const accuracyM = lastLoc?.acc; // web broadcaster: GPS accuracy radius (m)
+    const hdop = lastLoc?.hdop; // mobile broadcaster: horizontal dilution of precision (unitless)
     const battery = lastLoc?.battery;
     const timeToArrival = lastLoc?.tta;
     const timeToIntermediate = lastLoc?.ttf;
@@ -315,6 +318,26 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                             icon={<DirectionIcon />}
                             name={t('web:live_track_direction')}
                             additionalInfo={`${Math.round(bearingDeg)}°`}
+                        />
+                    </>
+                )}
+                {Number.isFinite(accuracyM) && accuracyM > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<AccuracyIcon />}
+                            name={t('web:live_track_accuracy')}
+                            additionalInfo={`±${Math.round(accuracyM)} m`}
+                        />
+                    </>
+                )}
+                {Number.isFinite(hdop) && hdop > 0 && (
+                    <>
+                        <DividerWithMargin margin={'64px'} />
+                        <DefaultItem
+                            icon={<AccuracyIcon />}
+                            name={t('web:live_track_hdop')}
+                            additionalInfo={hdop.toFixed(1)}
                         />
                     </>
                 )}

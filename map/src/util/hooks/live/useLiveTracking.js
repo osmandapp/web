@@ -92,7 +92,9 @@ export default function useLiveTracking() {
                     time: position.timestamp,
                     ...(speed != null && { speed }),
                     ...(altitude != null && { ele: altitude }),
-                    ...(accuracy != null && { hdop: accuracy }),
+                    // Browser geolocation reports accuracy as a radius in metres (not DOP), so send it
+                    // under `acc` rather than mislabeling it as the mobile broadcaster's `hdop`.
+                    ...(accuracy != null && { acc: accuracy }),
                 };
                 encryptLocation(key, locationData)
                     .then((encData) => {
@@ -118,6 +120,11 @@ export default function useLiveTracking() {
                 const existing = byTranslation[nickname];
                 const color = existing?.color ?? getColorByIndex(Object.keys(byTranslation).length, 100);
                 const locations = existing?.locations ?? [];
+                // Skip a duplicate of the newest point (geolocation may re-deliver a cached fix);
+                // returning prev unchanged also avoids a needless re-render.
+                if (point?.time != null && locations[0]?.time === point.time) {
+                    return prev;
+                }
                 return {
                     ...prev,
                     [translationId]: {
@@ -632,28 +639,30 @@ export default function useLiveTracking() {
         };
     }, []);
 
-    // On (re)connect: subscribe to saved + selected translations and re-register my sharing.
     useEffect(() => {
         if (!connected) return;
         const client = clientRef.current;
         if (!client?.connected) return;
         ctx.liveTranslations.forEach((t) => subscribeToTranslation(client, t.id));
         const sel = ctx.selectedLiveTranslation;
-        if (sel && !ctx.liveTranslations.find((t) => t.id === sel.id)) {
+        if (sel && !ctx.liveTranslations.some((t) => t.id === sel.id)) {
             subscribeToTranslation(client, sel.id);
         }
+    }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation]);
+
+    useEffect(() => {
+        if (!connected) return;
         if (ctx.myBroadcastTid && !ctx.isMyBroadcastPaused) {
             sendCommand(`/app/translation/${ctx.myBroadcastTid}/startSharing`);
         } else if (!ctx.myBroadcastTid) {
-            // Resume my broadcast saved before a page refresh.
             const savedTid = sessionStorage.getItem(BROADCAST_TID_SESSION);
-            if (savedTid && ctx.liveTranslations.find((t) => t.id === savedTid)) {
+            if (savedTid && ctx.liveTranslations.some((t) => t.id === savedTid)) {
                 ctx.setMyBroadcastTid(savedTid);
                 ctx.setIsMyBroadcastPaused(false);
                 sendCommand(`/app/translation/${savedTid}/startSharing`);
             }
         }
-    }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation, sendCommand]);
+    }, [connected, sendCommand]);
 
     return {
         addLiveTrack,

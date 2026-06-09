@@ -421,6 +421,8 @@
     "live_track_load_earlier": "Load earlier",
     "live_track_regenerate_link": "Regenerate link",
     "live_track_direction": "Direction",
+    "live_track_accuracy": "GPS accuracy",
+    "live_track_hdop": "HDOP",
     "live_track_battery": "Battery",
     "live_track_eta": "Time to destination",
     "live_track_distance_to_destination": "Distance to destination",
