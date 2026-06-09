@@ -105,6 +105,10 @@ export default function CreateLiveTrackDialog({ open, onClose, createLiveTrack }
             (errCode) => {
                 setGeoError(toGeoErrorKey(errCode));
                 setCreating(false);
+            },
+            (err) => {
+                setCreateError(typeof err === 'string' && err ? err : t('web:live_track_create_error'));
+                setCreating(false);
             }
         );
     }

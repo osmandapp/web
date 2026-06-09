@@ -457,6 +457,7 @@
     "live_track_share_request": "{{nickname}} wants to share their location in “{{track}}”",
     "live_track_link_copied": "Link copied",
     "live_track_key_gen_error": "Failed to generate encryption key. Please try again.",
+    "live_track_create_error": "Failed to create live track. Please try again.",
     "shared_string_flat": "Flat",
     "shared_string_no_data": "No data"
 }
