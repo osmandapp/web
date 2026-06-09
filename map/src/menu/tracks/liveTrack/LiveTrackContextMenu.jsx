@@ -8,7 +8,7 @@ import { HEADER_SIZE, LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../mana
 import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
 import { ReactComponent as ShareLinkIcon } from '../../../assets/icons/ic_action_link.svg';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import { getDistance } from '../../../util/Utils';
+import { getDistance, toHHMMSS } from '../../../util/Utils';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
 import DefaultItem from '../../../frame/components/items/DefaultItem';
@@ -273,7 +273,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                     additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time, t)}`}
                 />
                 <DividerWithMargin margin={'64px'} />
-                <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={formatTime(duration)} />
+                <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={toHHMMSS(duration)} />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem icon={<RouteIcon />} name={t('distance')} additionalInfo={`${distKm} km`} />
                 <DividerWithMargin margin={'64px'} />
@@ -326,7 +326,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<TimeIcon />}
                             name={t('web:live_track_eta')}
-                            additionalInfo={formatTime(timeToArrival)}
+                            additionalInfo={toHHMMSS(timeToArrival)}
                         />
                     </>
                 )}
@@ -346,7 +346,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<TimeIcon />}
                             name={t('web:live_track_eta_intermediate')}
-                            additionalInfo={formatTime(timeToIntermediate)}
+                            additionalInfo={toHHMMSS(timeToIntermediate)}
                         />
                     </>
                 )}
@@ -492,16 +492,6 @@ function computeZones(locations, minEleDiff = 7) {
     return zones;
 }
 
-function formatTime(ms) {
-    if (ms < 0) ms = 0;
-    const h = Math.floor(ms / 3600000);
-    const m = Math.floor((ms % 3600000) / 60000);
-    const s = Math.floor((ms % 60000) / 1000);
-    if (h > 0) return `${h}h ${m}m`;
-    if (m > 0) return `${m}m ${s}s`;
-
-    return `${s}s`;
-}
 
 function getTimeAgo(timestamp, t) {
     if (!timestamp) return '—';
