@@ -1,6 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { Client } from '@stomp/stompjs';
-import { LIVE_TRACKS_STORAGE_KEY } from '../../../context/AppContext';
 import { getColorByIndex } from '../../../menu/analyzer/util/SegmentColorizer';
 import {
     encryptLocation,
@@ -8,7 +7,7 @@ import {
     generateTranslationKey,
     computeTranslationId,
 } from '../../livetracks/liveTrackCrypto';
-import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE } from '../../livetracks/liveTrackUtils';
+import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE, LIVE_TRACKS_STORAGE_KEY } from '../../livetracks/liveTrackUtils';
 
 // sessionStorage key: my broadcast tid, restored after page refresh.
 const BROADCAST_TID_SESSION = '__liveTrackBroadcastTid__';

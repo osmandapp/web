@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { LIVE_TRACKS_STORAGE_KEY } from './AppContext';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
-import { LIVE_TRACK_KEY_SESSION } from '../util/livetracks/liveTrackUtils';
+import { LIVE_TRACK_KEY_SESSION, LIVE_TRACKS_STORAGE_KEY } from '../util/livetracks/liveTrackUtils';
 import useLiveTracking from '../util/hooks/live/useLiveTracking';
 
 const LiveTrackingContext = React.createContext();

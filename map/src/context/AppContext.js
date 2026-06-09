@@ -56,8 +56,6 @@ export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
-export const LIVE_TRACKS_STORAGE_KEY = 'liveTranslations';
-
 export const MAX_RECENT_OBJS = 5;
 
 export const defaultConfigureMapStateValues = {

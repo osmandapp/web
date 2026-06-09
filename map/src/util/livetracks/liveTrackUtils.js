@@ -1,7 +1,6 @@
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
-// sessionStorage key used to pass the live-track share key across the
-// leaflet-hash initialization that would otherwise overwrite the URL fragment.
+export const LIVE_TRACKS_STORAGE_KEY = 'liveTranslations';
 export const LIVE_TRACK_KEY_SESSION = '__liveTrackShareKey__';
 
 export const GEO_ERROR_DENIED = 'geolocation_denied';
