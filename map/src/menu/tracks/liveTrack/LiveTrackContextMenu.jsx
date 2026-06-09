@@ -7,6 +7,14 @@ import LoginContext from '../../../context/LoginContext';
 import { HEADER_SIZE, LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
 import { computeZones, ZONE_COLORS } from '../../../util/livetracks/liveTrackZones';
+import {
+    convertMeters,
+    convertSpeedMS,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    getSpeedUnit,
+    LARGE_UNIT,
+} from '../../settings/units/UnitsConverter';
 import { ReactComponent as ShareLinkIcon } from '../../../assets/icons/ic_action_link.svg';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { getDistance, toHHMMSS } from '../../../util/Utils';
@@ -212,29 +220,36 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
 
     const locs = participant.locations;
 
-    const { speedKmh, altitudeM, maxSpeed, distKm, zones, elevGain, elevLoss } = useMemo(() => {
-        const speedKmh = locs[0]?.speed != null ? (locs[0].speed * 3.6).toFixed(1) : '0.0';
-        const altitudeM = locs[0]?.ele != null ? `${locs[0].ele.toFixed(0)} m` : '—';
-        let totalDist = 0;
-        let maxSpeed = 0;
+    // Raw SI values (metres, m/s) — converted to the user's units at render time.
+    const { totalDistM, maxSpeedMS, zones, elevGainM, elevLossM } = useMemo(() => {
+        let totalDistM = 0;
+        let maxSpeedMS = 0;
         for (let i = 0; i < locs.length - 1; i++) {
-            totalDist += getDistance(locs[i].lat, locs[i].lon, locs[i + 1].lat, locs[i + 1].lon);
-            const kmh = locs[i].speed != null ? locs[i].speed * 3.6 : 0;
-            if (kmh > maxSpeed) maxSpeed = kmh;
+            totalDistM += getDistance(locs[i].lat, locs[i].lon, locs[i + 1].lat, locs[i + 1].lon);
+            if ((locs[i].speed ?? 0) > maxSpeedMS) maxSpeedMS = locs[i].speed;
         }
-        if (locs.length > 0) {
-            const lastKmh = locs.at(-1).speed != null ? locs.at(-1).speed * 3.6 : 0;
-            if (lastKmh > maxSpeed) maxSpeed = lastKmh;
+        if (locs.length > 0 && (locs.at(-1).speed ?? 0) > maxSpeedMS) {
+            maxSpeedMS = locs.at(-1).speed;
         }
-        const distKm = (totalDist / 1000).toFixed(2);
         const zones = computeZones(locs);
-        const elevGain = zones.filter((z) => z.eleDiff > 0).reduce((s, z) => s + z.eleDiff, 0);
-        const elevLoss = zones.filter((z) => z.eleDiff < 0).reduce((s, z) => s + z.eleDiff, 0);
+        const elevGainM = zones.filter((z) => z.eleDiff > 0).reduce((s, z) => s + z.eleDiff, 0);
+        const elevLossM = zones.filter((z) => z.eleDiff < 0).reduce((s, z) => s + z.eleDiff, 0);
 
-        return { speedKmh, altitudeM, maxSpeed, distKm, zones, elevGain, elevLoss };
+        return { totalDistM, maxSpeedMS, zones, elevGainM, elevLossM };
     }, [locs]);
 
     const duration = Date.now() - participant.startTime;
+
+    // Unit labels + formatters, driven by the user's units settings (metric / imperial / nautical).
+    const smallUnit = t(getSmallLengthUnit(ctx));
+    const largeUnit = t(getLargeLengthUnit(ctx));
+    const speedUnit = t(getSpeedUnit(ctx));
+    const fmtSpeed = (ms) => (convertSpeedMS(ms, ctx.unitsSettings.speed) ?? 0).toFixed(1);
+    const fmtLarge = (m) => (convertMeters(m, ctx.unitsSettings.len, LARGE_UNIT) ?? 0).toFixed(2);
+    const fmtSmall = (m) => Math.round(convertMeters(m, ctx.unitsSettings.len) ?? 0);
+
+    const lastEleM = locs[0]?.ele;
+    const altitude = lastEleM != null ? `${fmtSmall(lastEleM)} ${smallUnit}` : '—';
 
     function zoneTypeLabel(type) {
         if (type === 'UPHILL') return t('shared_string_uphill');
@@ -285,33 +300,37 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                 <DefaultItem
                     icon={<SpeedIcon />}
                     name={t('shared_string_speed')}
-                    additionalInfo={`${speedKmh} km/h · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time, t)}`}
+                    additionalInfo={`${fmtSpeed(lastLoc?.speed)} ${speedUnit} · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time, t)}`}
                 />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={toHHMMSS(duration)} />
                 <DividerWithMargin margin={'64px'} />
-                <DefaultItem icon={<RouteIcon />} name={t('distance')} additionalInfo={`${distKm} km`} />
+                <DefaultItem
+                    icon={<RouteIcon />}
+                    name={t('distance')}
+                    additionalInfo={`${fmtLarge(totalDistM)} ${largeUnit}`}
+                />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem
                     icon={<SpeedMaxIcon />}
                     name={t('shared_string_max_speed')}
-                    additionalInfo={`${maxSpeed.toFixed(1)} km/h`}
+                    additionalInfo={`${fmtSpeed(maxSpeedMS)} ${speedUnit}`}
                 />
                 <DividerWithMargin margin={'64px'} />
-                <DefaultItem icon={<AltitudeIcon />} name={t('altitude')} additionalInfo={altitudeM} />
-                {(elevGain > 0 || elevLoss < 0) && (
+                <DefaultItem icon={<AltitudeIcon />} name={t('altitude')} additionalInfo={altitude} />
+                {(elevGainM > 0 || elevLossM < 0) && (
                     <>
                         <DividerWithMargin margin={'64px'} />
                         <DefaultItem
                             icon={<AscentIcon />}
                             name={t('web:live_track_elevation_gain')}
-                            additionalInfo={`+${elevGain.toFixed(0)} m`}
+                            additionalInfo={`+${fmtSmall(elevGainM)} ${smallUnit}`}
                         />
                         <DividerWithMargin margin={'64px'} />
                         <DefaultItem
                             icon={<DescentIcon />}
                             name={t('web:live_track_elevation_loss')}
-                            additionalInfo={`${elevLoss.toFixed(0)} m`}
+                            additionalInfo={`${fmtSmall(Math.abs(elevLossM))} ${smallUnit}`}
                         />
                     </>
                 )}
@@ -331,7 +350,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<AccuracyIcon />}
                             name={t('web:live_track_accuracy')}
-                            additionalInfo={`±${Math.round(accuracyM)} m`}
+                            additionalInfo={`±${fmtSmall(accuracyM)} ${smallUnit}`}
                         />
                     </>
                 )}
@@ -371,7 +390,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<DestinationIcon />}
                             name={t('web:live_track_distance_to_destination')}
-                            additionalInfo={`${(distToArrival / 1000).toFixed(2)} km`}
+                            additionalInfo={`${fmtLarge(distToArrival)} ${largeUnit}`}
                         />
                     </>
                 )}
@@ -391,7 +410,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<DestinationIcon />}
                             name={t('web:live_track_distance_intermediate')}
-                            additionalInfo={`${(distToIntermediate / 1000).toFixed(2)} km`}
+                            additionalInfo={`${fmtLarge(distToIntermediate)} ${largeUnit}`}
                         />
                     </>
                 )}
@@ -404,7 +423,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                                 <DefaultItem
                                     icon={<TerrainIcon style={{ fill: ZONE_COLORS[z.type] }} />}
                                     name={`${zones.length - i}. ${zoneTypeLabel(z.type)}`}
-                                    additionalInfo={`${(z.distance / 1000).toFixed(2)} km · ${z.eleDiff > 0 ? '+' : ''}${z.eleDiff.toFixed(0)} m`}
+                                    additionalInfo={`${fmtLarge(z.distance)} ${largeUnit} · ${z.eleDiff >= 0 ? '+' : '-'}${fmtSmall(Math.abs(z.eleDiff))} ${smallUnit}`}
                                 />
                                 {i < zones.length - 1 && <DividerWithMargin margin={'64px'} />}
                             </React.Fragment>

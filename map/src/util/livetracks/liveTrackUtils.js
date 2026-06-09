@@ -23,7 +23,10 @@ export function extractAndSaveLiveTrackKey(raw) {
     if (!KEY_HEX_RE.test(raw)) return false;
     try {
         sessionStorage.setItem(LIVE_TRACK_KEY_SESSION, raw);
-    } catch (_) {}
-    history.replaceState(null, '', globalThis.location.pathname + globalThis.location.search);
-    return true;
+        // Only drop the fragment once the key is safely persisted — otherwise the key would be lost.
+        history.replaceState(null, '', globalThis.location.pathname + globalThis.location.search);
+        return true;
+    } catch (_) {
+        return false;
+    }
 }
