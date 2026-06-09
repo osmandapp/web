@@ -5,6 +5,7 @@ import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
 import { WeatherContextProvider } from './context/WeatherContext';
 import { MapContextProvider } from './context/MapContext';
+import { LiveTrackingProvider } from './context/LiveTrackingContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
@@ -115,11 +116,11 @@ const App = () => {
                     {
                         path: '/',
                         element: (
-                            <>
+                            <LiveTrackingProvider>
                                 <AppServices />
                                 <NavigateGlobal />
                                 <Outlet />
-                            </>
+                            </LiveTrackingProvider>
                         ),
                         children: [
                             {

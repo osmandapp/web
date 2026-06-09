@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     Alert,
     Button,
@@ -19,6 +19,7 @@ import { ReactComponent as CopyIcon } from '../../../assets/icons/ic_action_copy
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { generateTranslationKey, computeTranslationId } from '../../../util/livetracks/liveTrackCrypto';
 import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE } from '../../../util/livetracks/liveTrackUtils';
+import LiveTrackingContext from '../../../context/LiveTrackingContext';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import styles from '../../trackfavmenu.module.css';
 
@@ -32,7 +33,8 @@ function durationLabel(value, t) {
     return t('web:live_track_duration_24h');
 }
 
-export default function CreateLiveTrackDialog({ open, onClose, createLiveTrack }) {
+export default function CreateLiveTrackDialog({ open, onClose }) {
+    const { createLiveTrack } = useContext(LiveTrackingContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
 

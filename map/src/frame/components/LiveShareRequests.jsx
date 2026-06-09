@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Alert, IconButton, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../context/AppContext';
+import LiveTrackingContext from '../../context/LiveTrackingContext';
 import { ReactComponent as DoneIcon } from '../../assets/icons/ic_action_done.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import styles from './liveShareRequests.module.css';
@@ -10,16 +10,16 @@ import styles from './liveShareRequests.module.css';
 // ✓ approves, ✗ (dismiss) denies. Pending requests are restored from the server on reload,
 // so they reappear until the owner reacts.
 export default function LiveShareRequests() {
-    const ctx = useContext(AppContext);
+    const lttx = useContext(LiveTrackingContext);
     const { t } = useTranslation();
 
-    const requests = ctx.liveShareRequests;
+    const requests = lttx.liveShareRequests;
     if (!requests?.length) {
         return null;
     }
 
     const trackName = (translationId) =>
-        ctx.liveTranslations?.find((tr) => tr.id === translationId)?.name ?? translationId;
+        lttx.liveTranslations?.find((tr) => tr.id === translationId)?.name ?? translationId;
 
     return (
         <div className={styles.container}>
@@ -33,7 +33,7 @@ export default function LiveShareRequests() {
                                 <IconButton
                                     color="inherit"
                                     size="small"
-                                    onClick={() => ctx.liveShareActions?.approve(req.translationId, req.userId)}
+                                    onClick={() => lttx.liveShareActions?.approve(req.translationId, req.userId)}
                                 >
                                     <DoneIcon className={styles.approveIcon} />
                                 </IconButton>
@@ -42,7 +42,7 @@ export default function LiveShareRequests() {
                                 <IconButton
                                     color="inherit"
                                     size="small"
-                                    onClick={() => ctx.liveShareActions?.deny(req.translationId, req.userId)}
+                                    onClick={() => lttx.liveShareActions?.deny(req.translationId, req.userId)}
                                 >
                                     <CloseIcon className={styles.denyIcon} />
                                 </IconButton>

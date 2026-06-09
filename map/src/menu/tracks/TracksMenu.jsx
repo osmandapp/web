@@ -22,8 +22,7 @@ import TrackGroupFolder from './TrackGroupFolder';
 import LiveTrackGroup from './liveTrack/LiveTrackGroup';
 import LiveTrackFolder from './liveTrack/LiveTrackFolder';
 import LiveTrackContextMenu from './liveTrack/LiveTrackContextMenu';
-import useLiveTracking from '../../util/hooks/live/useLiveTracking';
-import useLiveTrackUrl from '../../util/hooks/live/useLiveTrackUrl';
+import LiveTrackingContext from '../../context/LiveTrackingContext';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -47,19 +46,7 @@ export default function TracksMenu() {
 
     const { t } = useTranslation();
 
-    const {
-        addLiveTrack,
-        removeLiveTrack,
-        createLiveTrack,
-        deleteLiveTrack,
-        startSharing,
-        pauseSharing,
-        regenerateLiveTrack,
-        loadEarlier,
-        historyExhausted,
-        requestShare,
-    } = useLiveTracking();
-    const { openLiveTracks } = useLiveTrackUrl();
+    const { openLiveTracks, selectedLiveTranslation } = useContext(LiveTrackingContext);
 
     const checkHasFiles = () =>
         ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
@@ -133,26 +120,10 @@ export default function TracksMenu() {
     }
 
     if (openLiveTracks) {
-        if (ctx.selectedLiveTranslation) {
-            return (
-                <LiveTrackContextMenu
-                    addLiveTrack={addLiveTrack}
-                    loadEarlier={loadEarlier}
-                    historyExhausted={historyExhausted}
-                    requestShare={requestShare}
-                />
-            );
+        if (selectedLiveTranslation) {
+            return <LiveTrackContextMenu />;
         }
-        return (
-            <LiveTrackFolder
-                removeLiveTrack={removeLiveTrack}
-                createLiveTrack={createLiveTrack}
-                deleteLiveTrack={deleteLiveTrack}
-                startSharing={startSharing}
-                pauseSharing={pauseSharing}
-                regenerateLiveTrack={regenerateLiveTrack}
-            />
-        );
+        return <LiveTrackFolder />;
     }
 
     // open folders

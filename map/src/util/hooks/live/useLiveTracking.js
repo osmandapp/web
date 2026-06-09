@@ -1,6 +1,6 @@
-import { useContext, useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { Client } from '@stomp/stompjs';
-import AppContext, { LIVE_TRACKS_STORAGE_KEY } from '../../../context/AppContext';
+import { LIVE_TRACKS_STORAGE_KEY } from '../../../context/AppContext';
 import { getColorByIndex } from '../../../menu/analyzer/util/SegmentColorizer';
 import {
     encryptLocation,
@@ -19,9 +19,7 @@ const INITIAL_LOAD_WINDOW_MS = 6 * 60 * 60 * 1000;
 // Cap on points kept per participant (newest first) — bounds memory and per-render computations.
 const MAX_PARTICIPANT_POINTS = 10000;
 
-export default function useLiveTracking() {
-    const ctx = useContext(AppContext);
-
+export default function useLiveTracking(ctx, enabled = true) {
     const clientRef = useRef(null);
     const subscribedRef = useRef(new Map()); // translationId → STOMP subscription (kept so we can unsubscribe)
     const pendingCreateRef = useRef(null); // { onSuccess, onError } for the in-flight /create
@@ -548,8 +546,9 @@ export default function useLiveTracking() {
         [ctx.setLiveParticipants]
     );
 
-    // Connect once on mount.
+    // Connect while live tracks are in use; tears down when no longer enabled.
     useEffect(() => {
+        if (!enabled) return;
         const client = new Client({
             brokerURL: process.env.REACT_APP_WS_URL,
             reconnectDelay: 5000,
@@ -637,7 +636,7 @@ export default function useLiveTracking() {
             subscribedRef.current.clear();
             setConnected(false);
         };
-    }, []);
+    }, [enabled]);
 
     useEffect(() => {
         if (!connected) return;

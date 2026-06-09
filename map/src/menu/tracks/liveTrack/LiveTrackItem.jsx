@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import AppContext from '../../../context/AppContext';
+import LiveTrackingContext from '../../../context/LiveTrackingContext';
 import { LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
@@ -13,16 +13,8 @@ import LiveTrackItemActions from '../../actions/LiveTrackItemActions';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 
-export default function LiveTrackItem({
-    translation,
-    isLastItem,
-    removeLiveTrack,
-    deleteLiveTrack,
-    startSharing,
-    pauseSharing,
-    regenerateLiveTrack,
-}) {
-    const ctx = useContext(AppContext);
+export default function LiveTrackItem({ translation, isLastItem }) {
+    const lttx = useContext(LiveTrackingContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
 
@@ -31,43 +23,43 @@ export default function LiveTrackItem({
     const [openActions, setOpenActions] = useState(false);
 
     const isOwner = translation.isOwner === true;
-    const isSharing = ctx.myBroadcastTid === translation.id;
+    const isSharing = lttx.myBroadcastTid === translation.id;
     const isParticipant = isSharing && !isOwner;
 
-    const participants = ctx.liveParticipants?.[translation.id];
+    const participants = lttx.liveParticipants?.[translation.id];
     const participantCount = participants ? Object.values(participants).filter((p) => p.active !== false).length : 0;
     const infoText =
         participantCount > 0 ? `${participantCount} ${t('web:live_track_online')}` : t('web:live_track_inactive');
 
     function handleClick(e) {
         if (anchorEl.current?.contains(e.target)) return;
-        ctx.setSelectedLiveTranslation(translation);
+        lttx.setSelectedLiveTranslation(translation);
         const params = new URLSearchParams({ tid: translation.id, name: translation.name });
         navigate(`${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${params}`);
     }
 
     function handleRemoveBookmark() {
         setOpenActions(false);
-        removeLiveTrack(translation.id);
+        lttx.removeLiveTrack(translation.id);
     }
 
     function handleOwnerSharingAction() {
         setOpenActions(false);
-        if (!isSharing || ctx.isMyBroadcastPaused) {
-            startSharing(translation.id);
+        if (!isSharing || lttx.isMyBroadcastPaused) {
+            lttx.startSharing(translation.id);
         } else {
-            pauseSharing();
+            lttx.pauseSharing();
         }
     }
 
     function handleParticipantStop() {
         setOpenActions(false);
-        pauseSharing();
+        lttx.pauseSharing();
     }
 
     function handleDeleteForAll() {
         setOpenActions(false);
-        deleteLiveTrack(translation.id);
+        lttx.deleteLiveTrack(translation.id);
     }
 
     function handleCopyShareLink() {
@@ -78,7 +70,7 @@ export default function LiveTrackItem({
 
     function handleRegenerate() {
         setOpenActions(false);
-        regenerateLiveTrack(translation.id, (newTranslation) => {
+        lttx.regenerateLiveTrack(translation.id, (newTranslation) => {
             const params = new URLSearchParams({ tid: newTranslation.id, name: newTranslation.name });
             navigate(`${MAIN_URL_WITH_SLASH}${LIVE_TRACKS_URL}?${params}`);
         });
@@ -89,7 +81,7 @@ export default function LiveTrackItem({
             <MenuItem
                 className={styles.item}
                 onClick={handleClick}
-                selected={ctx.selectedLiveTranslation?.id === translation.id}
+                selected={lttx.selectedLiveTranslation?.id === translation.id}
             >
                 <ListItemIcon className={styles.icon}>
                     <LocationIcon style={{ fill: participantCount > 0 ? '#4CAF50' : '#F44336' }} />

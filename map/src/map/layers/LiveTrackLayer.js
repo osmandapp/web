@@ -2,10 +2,12 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
+import LiveTrackingContext from '../../context/LiveTrackingContext';
 import { panToVisibleCenter } from './MapStateLayer';
 
 export default function LiveTrackLayer() {
     const ctx = useContext(AppContext);
+    const lttx = useContext(LiveTrackingContext);
     const map = useMap();
 
     // { [translationId]: { [nickname]: { polyline, marker } } }
@@ -13,7 +15,7 @@ export default function LiveTrackLayer() {
     const [pannedFor, setPannedFor] = useState(null);
 
     useEffect(() => {
-        const selectedTid = ctx.selectedLiveTranslation?.id ?? null;
+        const selectedTid = lttx.selectedLiveTranslation?.id ?? null;
 
         // Remove layers for any translation that is not currently selected
         Object.keys(layersRef.current).forEach((tid) => {
@@ -22,7 +24,7 @@ export default function LiveTrackLayer() {
 
         if (!selectedTid) return;
 
-        const byNickname = ctx.liveParticipants?.[selectedTid];
+        const byNickname = lttx.liveParticipants?.[selectedTid];
         if (!byNickname) return;
 
         if (!layersRef.current[selectedTid]) layersRef.current[selectedTid] = {};
@@ -65,36 +67,36 @@ export default function LiveTrackLayer() {
                 layersRef.current[selectedTid][nickname] = { polyline, marker };
             }
         });
-    }, [ctx.liveParticipants, ctx.selectedLiveTranslation]);
+    }, [lttx.liveParticipants, lttx.selectedLiveTranslation]);
 
     // Center map when a translation is selected (if data already loaded)
     useEffect(() => {
-        const translation = ctx.selectedLiveTranslation;
+        const translation = lttx.selectedLiveTranslation;
         if (!translation) {
             setPannedFor(null);
             return;
         }
         if (pannedFor === translation.id) return;
-        const panned = panToTranslation(map, ctx.liveParticipants, translation.id, ctx.infoBlockWidth);
+        const panned = panToTranslation(map, lttx.liveParticipants, translation.id, ctx.infoBlockWidth);
         if (panned) setPannedFor(translation.id);
-    }, [ctx.selectedLiveTranslation]);
+    }, [lttx.selectedLiveTranslation]);
 
     // Center map when data arrives for the selected translation (if not panned yet)
     useEffect(() => {
-        const translation = ctx.selectedLiveTranslation;
+        const translation = lttx.selectedLiveTranslation;
         if (!translation) return;
         if (pannedFor === translation.id) return;
-        const panned = panToTranslation(map, ctx.liveParticipants, translation.id, ctx.infoBlockWidth);
+        const panned = panToTranslation(map, lttx.liveParticipants, translation.id, ctx.infoBlockWidth);
         if (panned) setPannedFor(translation.id);
-    }, [ctx.liveParticipants]);
+    }, [lttx.liveParticipants]);
 
     // Pan to location when Follow button is clicked in context menu.
     useEffect(() => {
-        if (!ctx.followLiveLocation) return;
+        if (!lttx.followLiveLocation) return;
         const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10);
-        panToVisibleCenter(map, ctx.followLiveLocation, infoBlockWidthPx);
-        ctx.setFollowLiveLocation(null);
-    }, [ctx.followLiveLocation]);
+        panToVisibleCenter(map, lttx.followLiveLocation, infoBlockWidthPx);
+        lttx.setFollowLiveLocation(null);
+    }, [lttx.followLiveLocation]);
 
     // Cleanup on unmount
     useEffect(() => {

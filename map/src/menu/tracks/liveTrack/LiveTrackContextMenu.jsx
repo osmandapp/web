@@ -3,6 +3,7 @@ import { Box, Collapse, Icon, IconButton, ListItemText, MenuItem, Tooltip } from
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../../../context/AppContext';
+import LiveTrackingContext from '../../../context/LiveTrackingContext';
 import LoginContext from '../../../context/LoginContext';
 import { HEADER_SIZE, LIVE_TRACKS_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
 import { buildLiveTrackShareUrl } from '../../../util/livetracks/liveTrackUtils';
@@ -43,8 +44,9 @@ import trackFavStyles from '../../trackfavmenu.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import errorStyles from '../../errors/errors.module.css';
 
-export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, historyExhausted, requestShare }) {
-    const ctx = useContext(AppContext);
+export default function LiveTrackContextMenu() {
+    const lttx = useContext(LiveTrackingContext);
+    const { addLiveTrack, loadEarlier, historyExhausted, requestShare } = lttx;
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -52,18 +54,18 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
     const [linkCopied, setLinkCopied] = useState(false);
     const [requestSent, setRequestSent] = useState(false);
 
-    const translation = ctx.selectedLiveTranslation;
-    const participants = translation ? (ctx.liveParticipants?.[translation.id] ?? {}) : {};
+    const translation = lttx.selectedLiveTranslation;
+    const participants = translation ? (lttx.liveParticipants?.[translation.id] ?? {}) : {};
     // Order: owner first, then my own card (if I share here), then the rest.
     const participantRank = (p) => (p.owner ? 0 : p.mine ? 1 : 2);
     const participantList = Object.values(participants)
         .filter((p) => p.locations?.length > 0)
         .sort((a, b) => participantRank(a) - participantRank(b));
-    const viewers = translation ? (ctx.liveViewers?.[translation.id] ?? {}) : {};
+    const viewers = translation ? (lttx.liveViewers?.[translation.id] ?? {}) : {};
     const viewerCount = Object.keys(viewers).length;
 
     function handleBack() {
-        ctx.setSelectedLiveTranslation(null);
+        lttx.setSelectedLiveTranslation(null);
         navigate(MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL);
     }
 
@@ -86,7 +88,7 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
         translation &&
         !translation.isOwner &&
         !!translation.key &&
-        ctx.myBroadcastTid !== translation.id;
+        lttx.myBroadcastTid !== translation.id;
 
     return (
         <Box
@@ -145,7 +147,7 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
                                 </span>
                             </Tooltip>
                         )}
-                        {(!ltx.loginUser || !ctx.liveTranslations.some((t) => t.id === translation?.id)) && (
+                        {(!ltx.loginUser || !lttx.liveTranslations.some((t) => t.id === translation?.id)) && (
                             <Tooltip
                                 title={t(
                                     ltx.loginUser ? 'web:live_track_bookmark' : 'web:live_track_bookmark_login_required'
@@ -207,6 +209,7 @@ export default function LiveTrackContextMenu({ addLiveTrack, loadEarlier, histor
 
 function LiveParticipantCard({ participant, defaultExpanded = true }) {
     const ctx = useContext(AppContext);
+    const lttx = useContext(LiveTrackingContext);
     const { t } = useTranslation();
     // Owner / own card start expanded, others start collapsed; all stay clickable to toggle.
     const [expanded, setExpanded] = useState(defaultExpanded);
@@ -270,7 +273,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
 
     function handleFollow() {
         if (lastLoc?.lat != null && lastLoc?.lon != null) {
-            ctx.setFollowLiveLocation(lastLoc);
+            lttx.setFollowLiveLocation(lastLoc);
         }
     }
 

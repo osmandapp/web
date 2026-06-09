@@ -190,24 +190,6 @@ export const AppContextProvider = (props) => {
 
     const [smartFoldersCache, setSmartFoldersCache] = useState(null);
 
-    // live tracks
-    const [liveTranslations, setLiveTranslations] = useState(() => {
-        try {
-            return JSON.parse(localStorage.getItem(LIVE_TRACKS_STORAGE_KEY)) ?? [];
-        } catch {
-            return [];
-        }
-    });
-    const [liveParticipants, setLiveParticipants] = useState({});
-    const [liveViewers, setLiveViewers] = useState({});
-    // Pending share-permission requests shown to the owner as map notifications.
-    const [liveShareRequests, setLiveShareRequests] = useState([]); // [{ translationId, userId, nickname }]
-    // approve/deny callbacks published over websocket; wired by useLiveTracking.
-    const [liveShareActions, setLiveShareActions] = useState(null);
-    const [selectedLiveTranslation, setSelectedLiveTranslation] = useState(null);
-    const [followLiveLocation, setFollowLiveLocation] = useState(null);
-    const [myBroadcastTid, setMyBroadcastTid] = useState(null);
-    const [isMyBroadcastPaused, setIsMyBroadcastPaused] = useState(false);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -760,24 +742,6 @@ export const AppContextProvider = (props) => {
                 setStopByUrl,
                 closeMapObj,
                 setCloseMapObj,
-                liveTranslations,
-                setLiveTranslations,
-                liveParticipants,
-                setLiveParticipants,
-                liveViewers,
-                setLiveViewers,
-                liveShareRequests,
-                setLiveShareRequests,
-                liveShareActions,
-                setLiveShareActions,
-                selectedLiveTranslation,
-                setSelectedLiveTranslation,
-                followLiveLocation,
-                setFollowLiveLocation,
-                myBroadcastTid,
-                setMyBroadcastTid,
-                isMyBroadcastPaused,
-                setIsMyBroadcastPaused,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,
