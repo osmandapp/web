@@ -595,9 +595,11 @@ export default function useLiveTracking(ctx, enabled = true) {
                             pendingCreateRef.current = null;
                         } else {
                             handleMetadata(msg.data.id, msg.data);
-                            Promise.resolve(processEncryptedHistory(msg.data.id, msg.data.history)).then(() =>
-                                finishLoadingEarlier(msg.data.id)
-                            );
+                            // History may arrive split across several chunks
+                            const merged = Promise.resolve(processEncryptedHistory(msg.data.id, msg.data.history));
+                            if (msg.data.lastChunk !== false) {
+                                merged.then(() => finishLoadingEarlier(msg.data.id));
+                            }
                             // Viewer roster snapshot — keeps the count correct after a page refresh.
                             if (Array.isArray(msg.data.viewers)) {
                                 const tid = msg.data.id;
