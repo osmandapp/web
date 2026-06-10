@@ -69,6 +69,13 @@ export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
+export const OSMAND_POI_KEY = 'osmand_poi_key';
+export const OSM_TRAVEL_PREFIX = OSM_PREFIX + 'travel_';
+export const OSM_WIKI_PREFIX = OSM_PREFIX + 'wiki_';
+export const CONTENT = 'content';
+export const SHORT_DESCRIPTION = 'short_description';
+export const ADDR_STREET = 'addr_street';
+export const QRANK = OSM_PREFIX + 'qrank';
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
@@ -126,6 +133,16 @@ const HIDDEN_EXTENSIONS_POI = [
     POI_NAME,
     POI_ID,
     POI_OSM_URL,
+];
+
+const HIDDEN_KEYS_INCLUDES = [
+    CONTENT,
+    SHORT_DESCRIPTION,
+    ADDR_STREET,
+    QRANK,
+    OSM_WIKI_PREFIX,
+    OSM_TRAVEL_PREFIX,
+    OSMAND_POI_KEY,
 ];
 export const SEPARATOR = ';';
 
@@ -405,7 +422,8 @@ function fixTagsKeys(tags) {
             key.startsWith(AMENITY_PREFIX) ||
             key.startsWith(ALT_NAME) ||
             HIDDEN_EXTENSIONS.includes(key) ||
-            HIDDEN_EXTENSIONS_POI.includes(key)
+            HIDDEN_EXTENSIONS_POI.includes(key) ||
+            HIDDEN_KEYS_INCLUDES.some((hiddenKey) => key.includes(hiddenKey))
         ) {
             continue;
         } else {
