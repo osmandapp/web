@@ -306,7 +306,11 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                     additionalInfo={`${fmtSpeed(lastLoc?.speed)} ${speedUnit} · ${t('web:live_track_updated')} ${getTimeAgo(lastLoc?.time, t)}`}
                 />
                 <DividerWithMargin margin={'64px'} />
-                <DefaultItem icon={<TimeIcon />} name={t('web:active_state')} additionalInfo={toHHMMSS(duration)} />
+                <DefaultItem
+                    icon={<TimeIcon />}
+                    name={t('web:active_state')}
+                    additionalInfo={toHHMMSS(duration).split('.')[0]}
+                />
                 <DividerWithMargin margin={'64px'} />
                 <DefaultItem
                     icon={<RouteIcon />}
@@ -383,7 +387,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<TimeIcon />}
                             name={t('web:live_track_eta')}
-                            additionalInfo={toHHMMSS(timeToArrival)}
+                            additionalInfo={toHHMMSS(timeToArrival).split('.')[0]}
                         />
                     </>
                 )}
@@ -403,7 +407,7 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
                         <DefaultItem
                             icon={<TimeIcon />}
                             name={t('web:live_track_eta_intermediate')}
-                            additionalInfo={toHHMMSS(timeToIntermediate)}
+                            additionalInfo={toHHMMSS(timeToIntermediate).split('.')[0]}
                         />
                     </>
                 )}

@@ -43,6 +43,7 @@ import {
     encryptLocation,
     decryptLocation,
 } from '../util/livetracks/liveTrackCrypto';
+import { apiPost } from '../util/HttpApi';
 
 function movePoint(lat, lon, distanceMeters, bearingDeg) {
     const R = 6371000;
@@ -197,7 +198,11 @@ export function start(opts = {}) {
                 };
                 encryptLocation(encKey, locationData)
                     .then((encData) => {
-                        fetch(`/mapapi/translation/msg?encryptedData=${encodeURIComponent(encData)}`).catch(() => {});
+                        apiPost(
+                            '/mapapi/translation/msg',
+                            `translationId=${encodeURIComponent(translationId)}&encryptedData=${encodeURIComponent(encData)}`,
+                            { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+                        ).catch(() => {});
                     })
                     .catch(() => {});
 

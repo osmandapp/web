@@ -8,6 +8,7 @@ import {
     computeTranslationId,
 } from '../../livetracks/liveTrackCrypto';
 import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE, LIVE_TRACKS_STORAGE_KEY } from '../../livetracks/liveTrackUtils';
+import { apiPost } from '../../HttpApi';
 
 // sessionStorage key: my active broadcast tids (JSON array), restored after page refresh.
 const BROADCAST_TID_SESSION = '__liveTrackBroadcastTids__';
@@ -100,8 +101,10 @@ export default function useLiveTracking(ctx, enabled = true) {
                     if (!key) continue;
                     encryptLocation(key, locationData)
                         .then((encData) => {
-                            fetch(
-                                `/mapapi/translation/msg?translationId=${encodeURIComponent(tid)}&encryptedData=${encodeURIComponent(encData)}`
+                            apiPost(
+                                '/mapapi/translation/msg',
+                                `translationId=${encodeURIComponent(tid)}&encryptedData=${encodeURIComponent(encData)}`,
+                                { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
                             ).catch(() => {});
                         })
                         .catch(() => {});
