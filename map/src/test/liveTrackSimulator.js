@@ -9,6 +9,9 @@
  * --- Start with a point limit (pause after 1000 points) ---
  *   const sim = await window.__liveTrackSim.start({ speed: 30, maxPoints: 1000 });
  *
+ * --- Stress test: backfill 24h of history, then go live (big-data test) ---
+ *   const sim = await window.__liveTrackSim.start({ backfillHours: 24 });
+ *
  * --- Join an existing translation (e.g. after page refresh or sim.stop()) ---
  *   const sim = await window.__liveTrackSim.start({ tid: 'abc123', key: '<64-hex key>' });
  *   // tid + key are printed in the console when the translation is first created
@@ -34,6 +37,9 @@
  *   interval   — ms between points (default: 2000)
  *   eleProfile — 'flat' | 'hilly' | 'alpine' (default: 'flat')
  *   maxPoints  — stop after N points, then call sim.resume() (default: 0 = infinite)
+ *   backfillHours — send a burst of back-dated points spanning N hours before going live (default: 0 = off)
+ *   backfillStep  — ms between back-dated points (default: 0 = auto, fits the whole window
+ *                   under the client 10k-point cap; set explicitly to stress-test the cap)
  */
 
 import { Client } from '@stomp/stompjs';
@@ -86,6 +92,8 @@ export function start(opts = {}) {
         interval: opts.interval ?? 2000,
         eleProfile: opts.eleProfile ?? 'flat',
         maxPoints: opts.maxPoints ?? 0,
+        backfillHours: opts.backfillHours ?? 0,
+        backfillStep: opts.backfillStep ?? 0, // 0 = auto (fit the whole window under the client cap)
     };
 
     const brokerURL = 'ws://localhost:8080/osmand-websocket';
@@ -156,9 +164,13 @@ export function start(opts = {}) {
                         .then((tid) => {
                             translationId = tid;
                             pendingConfirmation = true;
+                            // Back-date creation so the backfilled history isn't cut off as "before
+                            // creation" (dev-only on the server) — lets loadEarlier paging be tested.
+                            const creationDate =
+                                options.backfillHours > 0 ? Date.now() - options.backfillHours * 3600 * 1000 : 0;
                             client.publish({
                                 destination: '/app/translation/create',
-                                body: JSON.stringify({ translationId: tid }),
+                                body: JSON.stringify({ translationId: tid, creationDate }),
                             });
                         })
                         .catch((err) => console.error('❌ Key generation failed:', err));
@@ -216,6 +228,75 @@ export function start(opts = {}) {
             }, options.interval);
         }
 
+        // Stress test
+        async function backfill() {
+            if (!encKey) return;
+            const BACKFILL_TARGET_POINTS = 9500;
+            const windowMs = options.backfillHours * 3600 * 1000;
+            const stepMs =
+                options.backfillStep > 0
+                    ? options.backfillStep
+                    : Math.max(2000, Math.ceil(windowMs / BACKFILL_TARGET_POINTS));
+            const end = Date.now();
+            const startTime = end - windowMs;
+
+            // Build the path sequentially (coherent track), then send concurrently in chunks.
+            const points = [];
+            let lat = currentLat;
+            let lon = currentLon;
+            let bearing = currentBearing;
+            for (let t = startTime; t < end; t += stepMs) {
+                bearing = (bearing + (Math.random() - 0.5) * 40 + 360) % 360;
+                const speed = (options.speed / 3.6) * (0.7 + Math.random() * 0.6);
+                const next = movePoint(lat, lon, speed * (stepMs / 1000), bearing);
+                lat = next.lat;
+                lon = next.lon;
+                points.push({ lat, lon, time: t, speed, ele: getEle() });
+            }
+            currentLat = lat;
+            currentLon = lon;
+            currentBearing = bearing;
+
+            console.log(
+                `%c⏳ Backfilling ${points.length} points over ${options.backfillHours}h (step ${stepMs}ms)...`,
+                'color: cyan; font-weight: bold'
+            );
+            if (points.length > 10000) {
+                console.warn(
+                    `⚠️ ${points.length} points exceed the client cap (10000): the oldest hours will be dropped on merge, loadEarlier won't reach the start of the window`
+                );
+            }
+            // Give the server a moment to process startSharing (sent over WS just before this),
+            // otherwise the first chunks are rejected as NOT_SHARED and the oldest points are lost.
+            await new Promise((r) => setTimeout(r, 500));
+            let failed = 0;
+            const CHUNK = 50;
+            for (let i = 0; i < points.length; i += CHUNK) {
+                await Promise.all(
+                    points.slice(i, i + CHUNK).map(async (p) => {
+                        try {
+                            const encData = await encryptLocation(encKey, p);
+                            await apiPost(
+                                '/mapapi/translation/msg',
+                                `translationId=${encodeURIComponent(translationId)}&encryptedData=${encodeURIComponent(encData)}&serverReceiveTime=${p.time}`,
+                                {
+                                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                    throwErrors: true,
+                                }
+                            );
+                        } catch {
+                            failed++;
+                        }
+                    })
+                );
+            }
+            pointCount += points.length - failed;
+            console.log(
+                `%c✅ Backfill done: ${points.length - failed} points sent${failed ? ` (${failed} FAILED — check the server)` : ''}`,
+                `color: ${failed ? 'orange' : 'green'}; font-weight: bold`
+            );
+        }
+
         function subscribeAndSimulate(tid) {
             client.subscribe(`/topic/translation/${tid}`, (message) => {
                 const msg = JSON.parse(message.body);
@@ -255,7 +336,11 @@ export function start(opts = {}) {
                 `   Speed: ~${options.speed} km/h (±30% variation) | Bearing: ${options.bearing}° (±20° wander) | Profile: ${options.eleProfile}${limitMsg}`
             );
 
-            startInterval(tid);
+            if (options.backfillHours > 0) {
+                backfill().then(() => startInterval(tid));
+            } else {
+                startInterval(tid);
+            }
 
             resolve({
                 translationId: tid,

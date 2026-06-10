@@ -34,6 +34,9 @@ export default function useLiveTracking(ctx, enabled = true) {
     // tid → true when no older history remains (earliest request passed creationDate). Disables "load earlier".
     const [historyExhausted, setHistoryExhausted] = useState({});
 
+    const [loadingEarlier, setLoadingEarlier] = useState({});
+    const earlierRequestRef = useRef({});
+
     // Publish a body-less command to the server (startSharing / stopSharing / delete).
     const sendCommand = useCallback((destination) => {
         clientRef.current?.publish({ destination, body: '{}' });
@@ -48,21 +51,35 @@ export default function useLiveTracking(ctx, enabled = true) {
         [ctx.setLiveTranslations]
     );
 
-    // Drop all client-side state for one translation.
-    const forgetTranslation = useCallback((id) => {
-        // Unsubscribe from the STOMP topic so the client stops receiving updates for this translation.
-        subscribedRef.current.get(id)?.unsubscribe();
-        subscribedRef.current.delete(id);
-        delete keysRef.current[id];
-        delete lastTimeRef.current[id];
-        delete earliestFromRef.current[id];
-        setHistoryExhausted((prev) => {
-            if (!(id in prev)) return prev;
+    const finishLoadingEarlier = useCallback((id) => {
+        delete earlierRequestRef.current[id];
+        setLoadingEarlier((prev) => {
+            if (!prev[id]) return prev;
             const next = { ...prev };
             delete next[id];
             return next;
         });
     }, []);
+
+    // Drop all client-side state for one translation.
+    const forgetTranslation = useCallback(
+        (id) => {
+            // Unsubscribe from the STOMP topic so the client stops receiving updates for this translation.
+            subscribedRef.current.get(id)?.unsubscribe();
+            subscribedRef.current.delete(id);
+            delete keysRef.current[id];
+            delete lastTimeRef.current[id];
+            delete earliestFromRef.current[id];
+            finishLoadingEarlier(id);
+            setHistoryExhausted((prev) => {
+                if (!(id in prev)) return prev;
+                const next = { ...prev };
+                delete next[id];
+                return next;
+            });
+        },
+        [finishLoadingEarlier]
+    );
 
     // Keep keysRef in sync so the LOCATION handler can always decrypt.
     useEffect(() => {
@@ -260,21 +277,24 @@ export default function useLiveTracking(ctx, enabled = true) {
     );
 
     // Fetch the previous INITIAL_LOAD_WINDOW_MS of history (merged + de-duped on arrival).
+    // One request in flight per translation: the spinner shows until the reply is merged.
     const loadEarlier = useCallback(
         (translationId) => {
-            if (historyExhausted[translationId]) {
+            if (historyExhausted[translationId] || loadingEarlier[translationId]) {
                 return;
             }
             const currentFrom = earliestFromRef.current[translationId] ?? Date.now() - INITIAL_LOAD_WINDOW_MS;
             const newFrom = currentFrom - INITIAL_LOAD_WINDOW_MS;
             earliestFromRef.current[translationId] = newFrom;
+            earlierRequestRef.current[translationId] = currentFrom;
+            setLoadingEarlier((prev) => ({ ...prev, [translationId]: true }));
             clientRef.current?.publish({
                 destination: `/app/translation/${translationId}/load`,
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ fromTime: newFrom, toTime: currentFrom }),
             });
         },
-        [historyExhausted]
+        [historyExhausted, loadingEarlier]
     );
 
     // Save a translation to the list (key needed to decrypt). If already saved, just
@@ -517,7 +537,7 @@ export default function useLiveTracking(ctx, enabled = true) {
             const encMessages = history.filter((m) => m.type === 'LOCATION' && m.content?.encryptedData && m.sender);
             if (encMessages.length === 0) return;
 
-            Promise.all(
+            return Promise.all(
                 encMessages.map((m) =>
                     decryptLocation(key, m.content.encryptedData).then((pt) => (pt ? { sender: m.sender, pt } : null))
                 )
@@ -575,7 +595,9 @@ export default function useLiveTracking(ctx, enabled = true) {
                             pendingCreateRef.current = null;
                         } else {
                             handleMetadata(msg.data.id, msg.data);
-                            processEncryptedHistory(msg.data.id, msg.data.history);
+                            Promise.resolve(processEncryptedHistory(msg.data.id, msg.data.history)).then(() =>
+                                finishLoadingEarlier(msg.data.id)
+                            );
                             // Viewer roster snapshot — keeps the count correct after a page refresh.
                             if (Array.isArray(msg.data.viewers)) {
                                 const tid = msg.data.id;
@@ -637,6 +659,11 @@ export default function useLiveTracking(ctx, enabled = true) {
             onDisconnect: () => {
                 // Clear so the reconnect effect re-subscribes to topics on the new STOMP session.
                 subscribedRef.current.clear();
+                Object.entries(earlierRequestRef.current).forEach(([tid, prevFrom]) => {
+                    earliestFromRef.current[tid] = prevFrom;
+                });
+                earlierRequestRef.current = {};
+                setLoadingEarlier({});
                 setConnected(false);
             },
         });
@@ -686,6 +713,7 @@ export default function useLiveTracking(ctx, enabled = true) {
         stopSharing,
         regenerateLiveTrack,
         loadEarlier,
+        loadingEarlier,
         historyExhausted,
         requestShare,
     };

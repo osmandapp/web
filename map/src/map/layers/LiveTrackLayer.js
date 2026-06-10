@@ -45,26 +45,48 @@ export default function LiveTrackLayer() {
             const { nickname, color, locations } = participant;
             if (!locations || locations.length === 0) return;
 
-            const latLngs = locations
-                .slice()
-                .reverse()
-                .map((l) => [l.lat, l.lon]);
             const lastLoc = locations[0];
+            const newestTime = locations[0]?.time;
+            const oldestTime = locations[locations.length - 1]?.time;
 
             const existing = layersRef.current[selectedTid][nickname];
 
             if (existing) {
-                existing.polyline.setLatLngs(latLngs);
+                if (
+                    existing.len === locations.length &&
+                    existing.newestTime === newestTime &&
+                    existing.oldestTime === oldestTime
+                ) {
+                    return;
+                }
+                const oneNewPoint =
+                    locations.length === existing.len + 1 &&
+                    locations[1]?.time === existing.newestTime &&
+                    existing.oldestTime === oldestTime;
+                if (oneNewPoint) {
+                    existing.polyline.addLatLng([lastLoc.lat, lastLoc.lon]);
+                } else {
+                    existing.polyline.setLatLngs(buildLatLngs(locations));
+                }
                 existing.marker.setLatLng([lastLoc.lat, lastLoc.lon]);
+                existing.len = locations.length;
+                existing.newestTime = newestTime;
+                existing.oldestTime = oldestTime;
             } else {
-                const polyline = L.polyline(latLngs, { color, weight: 4, opacity: 0.85 }).addTo(map);
+                const polyline = L.polyline(buildLatLngs(locations), { color, weight: 4, opacity: 0.85 }).addTo(map);
                 const iconHtml = `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:2px solid #fff;box-shadow:0 0 4px rgba(0,0,0,.5)"></div>`;
                 const icon = L.divIcon({ html: iconHtml, className: '', iconSize: [14, 14], iconAnchor: [7, 7] });
                 const marker = L.marker([lastLoc.lat, lastLoc.lon], { icon }).addTo(map);
                 const tooltipNode = document.createElement('span');
                 tooltipNode.textContent = nickname;
                 marker.bindTooltip(tooltipNode, { permanent: false, direction: 'top', offset: [0, -10] });
-                layersRef.current[selectedTid][nickname] = { polyline, marker };
+                layersRef.current[selectedTid][nickname] = {
+                    polyline,
+                    marker,
+                    len: locations.length,
+                    newestTime,
+                    oldestTime,
+                };
             }
         });
     }, [lttx.liveParticipants, lttx.selectedLiveTranslation]);
@@ -104,6 +126,17 @@ export default function LiveTrackLayer() {
     }, []);
 
     return null;
+}
+
+// locations are newest-first; the polyline wants oldest-first
+function buildLatLngs(locations) {
+    const latLngs = new Array(locations.length);
+    for (let i = 0; i < locations.length; i++) {
+        const l = locations[locations.length - 1 - i];
+        latLngs[i] = [l.lat, l.lon];
+    }
+
+    return latLngs;
 }
 
 function removeTidLayers(map, layersRef, tid) {

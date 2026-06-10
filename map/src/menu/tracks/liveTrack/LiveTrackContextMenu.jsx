@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { Box, Collapse, Icon, IconButton, ListItemText, MenuItem, Tooltip } from '@mui/material';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { Box, CircularProgress, Collapse, Icon, IconButton, ListItemText, MenuItem, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import AppContext from '../../../context/AppContext';
@@ -44,9 +44,13 @@ import trackFavStyles from '../../trackfavmenu.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import errorStyles from '../../errors/errors.module.css';
 
+// Zones (RDP over the full elevation profile) are O(N): during update bursts (history merge,
+// backfill) reuse the last result if it is fresher than the normal live point interval.
+const ZONES_MIN_RECOMPUTE_MS = 2000;
+
 export default function LiveTrackContextMenu() {
     const lttx = useContext(LiveTrackingContext);
-    const { addLiveTrack, loadEarlier, historyExhausted, requestShare } = lttx;
+    const { addLiveTrack, loadEarlier, loadingEarlier, historyExhausted, requestShare } = lttx;
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -111,9 +115,15 @@ export default function LiveTrackContextMenu() {
                                         id="se-live-track-load-earlier"
                                         className={trackFavStyles.sortIcon}
                                         onClick={() => loadEarlier(translation.id)}
-                                        disabled={!!historyExhausted?.[translation.id]}
+                                        disabled={
+                                            !!historyExhausted?.[translation.id] || !!loadingEarlier?.[translation.id]
+                                        }
                                     >
-                                        <TimeIcon />
+                                        {loadingEarlier?.[translation.id] ? (
+                                            <CircularProgress size={16} thickness={5} />
+                                        ) : (
+                                            <TimeIcon />
+                                        )}
                                     </IconButton>
                                 </span>
                             </Tooltip>
@@ -216,6 +226,9 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
 
     const [expanded, setExpanded] = useState(defaultExpanded);
 
+    const statsCacheRef = useRef(null); // locs, totalDistM, maxSpeedMS
+    const zonesCacheRef = useRef(null); // time, zones, elevGainM, elevLossM
+
     useEffect(() => {
         if (defaultExpanded) {
             setExpanded(true);
@@ -224,22 +237,16 @@ function LiveParticipantCard({ participant, defaultExpanded = true }) {
 
     const locs = participant.locations;
 
-    const { totalDistM, maxSpeedMS, zones, elevGainM, elevLossM } = useMemo(() => {
-        let totalDistM = 0;
-        let maxSpeedMS = 0;
-        for (let i = 0; i < locs.length - 1; i++) {
-            totalDistM += getDistance(locs[i].lat, locs[i].lon, locs[i + 1].lat, locs[i + 1].lon);
-            if ((locs[i].speed ?? 0) > maxSpeedMS) maxSpeedMS = locs[i].speed;
-        }
-        if (locs.length > 0 && (locs.at(-1).speed ?? 0) > maxSpeedMS) {
-            maxSpeedMS = locs.at(-1).speed;
-        }
-        const zones = computeZones(locs);
-        const elevGainM = zones.filter((z) => z.eleDiff > 0).reduce((s, z) => s + z.eleDiff, 0);
-        const elevLossM = zones.filter((z) => z.eleDiff < 0).reduce((s, z) => s + z.eleDiff, 0);
+    const { totalDistM, maxSpeedMS, zonesData } = useMemo(
+        () => computeParticipantStats(locs, statsCacheRef.current, zonesCacheRef.current),
+        [locs]
+    );
+    const { zones, elevGainM, elevLossM } = zonesData;
 
-        return { totalDistM, maxSpeedMS, zones, elevGainM, elevLossM };
-    }, [locs]);
+    useEffect(() => {
+        statsCacheRef.current = { locs, totalDistM, maxSpeedMS };
+        zonesCacheRef.current = zonesData;
+    }, [locs, totalDistM, maxSpeedMS, zonesData]);
 
     const duration = Date.now() - participant.startTime;
 
@@ -450,4 +457,67 @@ function getTimeAgo(timestamp, t) {
     if (diff < 3600) return t('web:live_track_minutes_ago', { value: Math.floor(diff / 60) });
 
     return t('web:live_track_hours_ago', { value: Math.floor(diff / 3600) });
+}
+
+function computeParticipantStats(locs, statsCache, zonesCache) {
+    const { totalDistM, maxSpeedMS } = computeDistanceAndSpeed(locs, statsCache);
+    const zonesData = computeZonesThrottled(locs, zonesCache, Date.now());
+
+    return { totalDistM, maxSpeedMS, zonesData };
+}
+
+function computeDistanceAndSpeed(locs, cache) {
+    const n = locs.length;
+    if (cache && cache.locs.length > 0 && n >= cache.locs.length) {
+        const prev = cache.locs;
+        const delta = n - prev.length;
+        const base = { totalDistM: cache.totalDistM, maxSpeedMS: cache.maxSpeedMS };
+        if (locs[delta] === prev[0] && locs[n - 1] === prev[prev.length - 1]) {
+            return addRange(locs, base, 0, delta, 0, delta);
+        }
+        if (delta > 0 && locs[0] === prev[0] && locs[prev.length - 1] === prev[prev.length - 1]) {
+            return addRange(locs, base, prev.length - 1, n - 1, prev.length, n);
+        }
+    }
+
+    return addRange(locs, { totalDistM: 0, maxSpeedMS: 0 }, 0, n - 1, 0, n);
+}
+
+function addRange(locs, totals, segFrom, segToExcl, ptFrom, ptToExcl) {
+    let { totalDistM, maxSpeedMS } = totals;
+    for (let i = segFrom; i < segToExcl; i++) {
+        totalDistM += getDistance(locs[i].lat, locs[i].lon, locs[i + 1].lat, locs[i + 1].lon);
+    }
+    for (let i = ptFrom; i < ptToExcl; i++) {
+        const speed = locs[i].speed ?? 0;
+        if (speed > maxSpeedMS) {
+            maxSpeedMS = speed;
+        }
+    }
+
+    return { totalDistM, maxSpeedMS };
+}
+
+function computeZonesThrottled(locs, cache, now) {
+    if (cache && now - cache.time < ZONES_MIN_RECOMPUTE_MS) {
+        return cache;
+    }
+    const zones = computeZones(locs);
+    const { elevGainM, elevLossM } = computeElevation(zones);
+
+    return { time: now, zones, elevGainM, elevLossM };
+}
+
+function computeElevation(zones) {
+    let elevGainM = 0;
+    let elevLossM = 0;
+    for (const zone of zones) {
+        if (zone.eleDiff > 0) {
+            elevGainM += zone.eleDiff;
+        } else if (zone.eleDiff < 0) {
+            elevLossM += zone.eleDiff;
+        }
+    }
+
+    return { elevGainM, elevLossM };
 }
