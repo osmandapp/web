@@ -9,8 +9,8 @@ import {
 } from '../../livetracks/liveTrackCrypto';
 import { GEO_ERROR_DENIED, GEO_ERROR_UNAVAILABLE, LIVE_TRACKS_STORAGE_KEY } from '../../livetracks/liveTrackUtils';
 
-// sessionStorage key: my broadcast tid, restored after page refresh.
-const BROADCAST_TID_SESSION = '__liveTrackBroadcastTid__';
+// sessionStorage key: my active broadcast tids (JSON array), restored after page refresh.
+const BROADCAST_TID_SESSION = '__liveTrackBroadcastTids__';
 
 // Initial /load fetches the last 6h only (fast open); older windows via loadEarlier().
 const INITIAL_LOAD_WINDOW_MS = 6 * 60 * 60 * 1000;
@@ -73,16 +73,18 @@ export default function useLiveTracking(ctx, enabled = true) {
         }
     }, [ctx.liveTranslations, ctx.selectedLiveTranslation]);
 
-    // Broadcast my position: watch geolocation while sharing is active and connected.
-    // Gated on `connected` so we don't POST during a STOMP reconnect.
+    // Broadcast my position into every translation I'm sharing into. Each translation has its own
+    // key, so the point is encrypted per key and addressed (translationId) — the server then routes
+    // each ciphertext to that one translation. Gated on `connected` so we don't POST during reconnect.
     useEffect(() => {
-        if (!ctx.myBroadcastTid || ctx.isMyBroadcastPaused || !navigator.geolocation || !connected) return;
+        const tids = ctx.myBroadcastTids;
+        if (!tids.length || !navigator.geolocation || !connected) {
+            return;
+        }
 
         const watchId = navigator.geolocation.watchPosition(
             (position) => {
                 const { latitude, longitude, altitude, speed, accuracy } = position.coords;
-                const key = keysRef.current[ctx.myBroadcastTid];
-                if (!key) return;
                 const locationData = {
                     lat: latitude,
                     lon: longitude,
@@ -93,11 +95,17 @@ export default function useLiveTracking(ctx, enabled = true) {
                     // under `acc` rather than mislabeling it as the mobile broadcaster's `hdop`.
                     ...(accuracy != null && { acc: accuracy }),
                 };
-                encryptLocation(key, locationData)
-                    .then((encData) => {
-                        fetch(`/mapapi/translation/msg?encryptedData=${encodeURIComponent(encData)}`).catch(() => {});
-                    })
-                    .catch(() => {});
+                for (const tid of tids) {
+                    const key = keysRef.current[tid];
+                    if (!key) continue;
+                    encryptLocation(key, locationData)
+                        .then((encData) => {
+                            fetch(
+                                `/mapapi/translation/msg?translationId=${encodeURIComponent(tid)}&encryptedData=${encodeURIComponent(encData)}`
+                            ).catch(() => {});
+                        })
+                        .catch(() => {});
+                }
             },
             (error) => {
                 const code = error?.code === error?.PERMISSION_DENIED ? GEO_ERROR_DENIED : GEO_ERROR_UNAVAILABLE;
@@ -107,7 +115,7 @@ export default function useLiveTracking(ctx, enabled = true) {
         );
 
         return () => navigator.geolocation.clearWatch(watchId);
-    }, [ctx.myBroadcastTid, ctx.isMyBroadcastPaused, connected]);
+    }, [ctx.myBroadcastTids, connected]);
 
     // Add a live point to a participant (newest at index 0).
     const updateParticipant = useCallback(
@@ -320,28 +328,32 @@ export default function useLiveTracking(ctx, enabled = true) {
         ]
     );
 
-    // Start (or resume) sharing this translation, stopping any other active one first.
+    // Start broadcasting into this translation. Added to the active set — other broadcasts keep going.
     const startSharing = useCallback(
         (translationId) => {
-            if (ctx.myBroadcastTid && ctx.myBroadcastTid !== translationId) {
-                sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
-            }
             sendCommand(`/app/translation/${translationId}/startSharing`);
-            sessionStorage.setItem(BROADCAST_TID_SESSION, translationId);
-            ctx.setMyBroadcastTid(translationId);
-            ctx.setIsMyBroadcastPaused(false);
+            ctx.setMyBroadcastTids((prev) => {
+                const next = prev.includes(translationId) ? prev : [...prev, translationId];
+                saveBroadcastTids(next);
+                return next;
+            });
         },
-        [ctx.myBroadcastTid, sendCommand, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
+        [sendCommand, ctx.setMyBroadcastTids]
     );
 
-    // Pause sharing but keep myBroadcastTid so the owner can resume later.
-    const pauseSharing = useCallback(() => {
-        if (ctx.myBroadcastTid) {
-            sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
-        }
-        sessionStorage.removeItem(BROADCAST_TID_SESSION);
-        ctx.setIsMyBroadcastPaused(true);
-    }, [ctx.myBroadcastTid, sendCommand, ctx.setIsMyBroadcastPaused]);
+    // Stop broadcasting into this translation. Removed from the active set; the rest keep going.
+    // The translation stays bookmarked, so the owner can start it again later (acts as pause/resume).
+    const stopSharing = useCallback(
+        (translationId) => {
+            sendCommand(`/app/translation/${translationId}/stopSharing`);
+            ctx.setMyBroadcastTids((prev) => {
+                const next = prev.filter((t) => t !== translationId);
+                saveBroadcastTids(next);
+                return next;
+            });
+        },
+        [sendCommand, ctx.setMyBroadcastTids]
+    );
 
     // Ask the owner of a translation (that I only have view access to) for permission to share.
     const requestShare = useCallback(
@@ -399,11 +411,6 @@ export default function useLiveTracking(ctx, enabled = true) {
     const createLiveTrack = useCallback(
         (translationId, key, name, durationHours, onCreated, onGeoError, onCreateError, replaceId) => {
             geoErrorRef.current = onGeoError ?? null;
-            if (ctx.myBroadcastTid) {
-                sendCommand(`/app/translation/${ctx.myBroadcastTid}/stopSharing`);
-                ctx.setMyBroadcastTid(null);
-                ctx.setIsMyBroadcastPaused(false);
-            }
 
             pendingCreateRef.current = {
                 onSuccess: (id) => {
@@ -421,11 +428,15 @@ export default function useLiveTracking(ctx, enabled = true) {
                     if (client?.connected) {
                         subscribeToTranslation(client, id);
                     }
-                    // Mark as my broadcast — the geolocation watch starts via useEffect.
-                    sessionStorage.setItem(BROADCAST_TID_SESSION, id);
-                    ctx.setMyBroadcastTid(id);
-                    ctx.setIsMyBroadcastPaused(false);
+                    // Start broadcasting into the new translation (the geolocation watch starts via useEffect).
                     sendCommand(`/app/translation/${id}/startSharing`);
+                    ctx.setMyBroadcastTids((prev) => {
+                        // Regenerate: drop the revoked old tid and add the new one; otherwise just add.
+                        const without = replaceId ? prev.filter((t) => t !== replaceId) : prev;
+                        const next = without.includes(id) ? without : [...without, id];
+                        saveBroadcastTids(next);
+                        return next;
+                    });
                     // Regenerate: revoke the old translation (its viewers get DELETE).
                     if (replaceId) {
                         sendCommand(`/app/translation/${replaceId}/delete`);
@@ -443,9 +454,7 @@ export default function useLiveTracking(ctx, enabled = true) {
             });
         },
         [
-            ctx.myBroadcastTid,
-            ctx.setMyBroadcastTid,
-            ctx.setIsMyBroadcastPaused,
+            ctx.setMyBroadcastTids,
             ctx.liveTranslations,
             saveTranslations,
             ctx.setSelectedLiveTranslation,
@@ -474,15 +483,16 @@ export default function useLiveTracking(ctx, enabled = true) {
     // Delete the translation for everyone (owner only, enforced server-side).
     const deleteLiveTrack = useCallback(
         (id) => {
-            if (ctx.myBroadcastTid === id) {
+            ctx.setMyBroadcastTids((prev) => {
+                if (!prev.includes(id)) return prev;
                 sendCommand(`/app/translation/${id}/stopSharing`);
-                sessionStorage.removeItem(BROADCAST_TID_SESSION);
-                ctx.setMyBroadcastTid(null);
-                ctx.setIsMyBroadcastPaused(false);
-            }
+                const next = prev.filter((t) => t !== id);
+                saveBroadcastTids(next);
+                return next;
+            });
             sendCommand(`/app/translation/${id}/delete`);
         },
-        [ctx.myBroadcastTid, sendCommand, ctx.setMyBroadcastTid, ctx.setIsMyBroadcastPaused]
+        [ctx.setMyBroadcastTids, sendCommand]
     );
 
     // Decrypt a /load history batch into participant tracks (newest-first, de-duped by time).
@@ -608,9 +618,11 @@ export default function useLiveTracking(ctx, enabled = true) {
                     } else if (msg.type === 'SHARE_APPROVED' && msg.data) {
                         // Requester side: approved — start broadcasting into that translation.
                         const tid = msg.data;
-                        sessionStorage.setItem(BROADCAST_TID_SESSION, tid);
-                        ctx.setMyBroadcastTid(tid);
-                        ctx.setIsMyBroadcastPaused(false);
+                        ctx.setMyBroadcastTids((prev) => {
+                            const next = prev.includes(tid) ? prev : [...prev, tid];
+                            saveBroadcastTids(next);
+                            return next;
+                        });
                     } else if (msg.type === 'ERROR' && pendingCreateRef.current) {
                         // /create rejected (e.g. not authenticated).
                         pendingCreateRef.current.onError?.(msg.data);
@@ -648,18 +660,18 @@ export default function useLiveTracking(ctx, enabled = true) {
         }
     }, [connected, ctx.liveTranslations, ctx.selectedLiveTranslation, subscribeToTranslation]);
 
+    // On (re)connect: re-register every active broadcast. Restores the set saved before a page
+    // refresh (kept only for translations that are still bookmarked), then re-sends startSharing.
     useEffect(() => {
         if (!connected) return;
-        if (ctx.myBroadcastTid && !ctx.isMyBroadcastPaused) {
-            sendCommand(`/app/translation/${ctx.myBroadcastTid}/startSharing`);
-        } else if (!ctx.myBroadcastTid) {
-            const savedTid = sessionStorage.getItem(BROADCAST_TID_SESSION);
-            if (savedTid && ctx.liveTranslations.some((t) => t.id === savedTid)) {
-                ctx.setMyBroadcastTid(savedTid);
-                ctx.setIsMyBroadcastPaused(false);
-                sendCommand(`/app/translation/${savedTid}/startSharing`);
-            }
+        const active = ctx.myBroadcastTids.length
+            ? ctx.myBroadcastTids
+            : loadBroadcastTids().filter((tid) => ctx.liveTranslations.some((t) => t.id === tid));
+        if (!active.length) return;
+        if (!ctx.myBroadcastTids.length) {
+            ctx.setMyBroadcastTids(active);
         }
+        active.forEach((tid) => sendCommand(`/app/translation/${tid}/startSharing`));
     }, [connected, sendCommand]);
 
     return {
@@ -668,10 +680,28 @@ export default function useLiveTracking(ctx, enabled = true) {
         createLiveTrack,
         deleteLiveTrack,
         startSharing,
-        pauseSharing,
+        stopSharing,
         regenerateLiveTrack,
         loadEarlier,
         historyExhausted,
         requestShare,
     };
+}
+
+function saveBroadcastTids(tids) {
+    try {
+        if (tids.length) {
+            sessionStorage.setItem(BROADCAST_TID_SESSION, JSON.stringify(tids));
+        } else {
+            sessionStorage.removeItem(BROADCAST_TID_SESSION);
+        }
+    } catch {}
+}
+
+function loadBroadcastTids() {
+    try {
+        return JSON.parse(sessionStorage.getItem(BROADCAST_TID_SESSION)) ?? [];
+    } catch {
+        return [];
+    }
 }

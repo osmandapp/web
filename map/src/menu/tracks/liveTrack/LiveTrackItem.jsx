@@ -23,7 +23,7 @@ export default function LiveTrackItem({ translation, isLastItem }) {
     const [openActions, setOpenActions] = useState(false);
 
     const isOwner = translation.isOwner === true;
-    const isSharing = lttx.myBroadcastTid === translation.id;
+    const isSharing = lttx.myBroadcastTids.includes(translation.id);
     const isParticipant = isSharing && !isOwner;
 
     const participants = lttx.liveParticipants?.[translation.id];
@@ -45,16 +45,16 @@ export default function LiveTrackItem({ translation, isLastItem }) {
 
     function handleOwnerSharingAction() {
         setOpenActions(false);
-        if (!isSharing || lttx.isMyBroadcastPaused) {
-            lttx.startSharing(translation.id);
+        if (isSharing) {
+            lttx.stopSharing(translation.id);
         } else {
-            lttx.pauseSharing();
+            lttx.startSharing(translation.id);
         }
     }
 
     function handleParticipantStop() {
         setOpenActions(false);
-        lttx.pauseSharing();
+        lttx.stopSharing(translation.id);
     }
 
     function handleDeleteForAll() {

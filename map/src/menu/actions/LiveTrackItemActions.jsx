@@ -1,7 +1,6 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef } from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import LiveTrackingContext from '../../context/LiveTrackingContext';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remove_outlined.svg';
 import { ReactComponent as LocationOffIcon } from '../../assets/icons/ic_action_location_off.svg';
@@ -26,14 +25,9 @@ const LiveTrackItemActions = forwardRef(
         },
         ref
     ) => {
-        const lttx = useContext(LiveTrackingContext);
         const { t } = useTranslation();
-        const ownerSharingLabel = !isSharing
-            ? 'web:live_track_start_sharing'
-            : lttx.isMyBroadcastPaused
-              ? 'web:live_track_resume_sharing'
-              : 'web:live_track_pause_sharing';
-        const ownerSharingIcon = isSharing && !lttx.isMyBroadcastPaused ? <LocationOffIcon /> : <LocationOnIcon />;
+        const ownerSharingLabel = isSharing ? 'web:live_track_pause_sharing' : 'web:live_track_start_sharing';
+        const ownerSharingIcon = isSharing ? <LocationOffIcon /> : <LocationOnIcon />;
 
         return (
             <Box ref={ref}>

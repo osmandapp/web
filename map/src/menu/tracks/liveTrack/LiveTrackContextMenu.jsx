@@ -90,7 +90,7 @@ export default function LiveTrackContextMenu() {
         translation &&
         !translation.isOwner &&
         !!translation.key &&
-        lttx.myBroadcastTid !== translation.id;
+        !lttx.myBroadcastTids.includes(translation.id);
 
     return (
         <Box

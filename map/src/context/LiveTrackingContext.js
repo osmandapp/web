@@ -31,8 +31,7 @@ export const LiveTrackingProvider = ({ children }) => {
     const [liveShareActions, setLiveShareActions] = useState(null);
     const [selectedLiveTranslation, setSelectedLiveTranslation] = useState(null);
     const [followLiveLocation, setFollowLiveLocation] = useState(null);
-    const [myBroadcastTid, setMyBroadcastTid] = useState(null);
-    const [isMyBroadcastPaused, setIsMyBroadcastPaused] = useState(false);
+    const [myBroadcastTids, setMyBroadcastTids] = useState([]);
 
     const livePath = MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL;
     const openLiveTracks = location.pathname.startsWith(livePath);
@@ -84,10 +83,8 @@ export const LiveTrackingProvider = ({ children }) => {
             setSelectedLiveTranslation,
             followLiveLocation,
             setFollowLiveLocation,
-            myBroadcastTid,
-            setMyBroadcastTid,
-            isMyBroadcastPaused,
-            setIsMyBroadcastPaused,
+            myBroadcastTids,
+            setMyBroadcastTids,
         }),
         [
             liveTranslations,
@@ -97,13 +94,12 @@ export const LiveTrackingProvider = ({ children }) => {
             liveShareActions,
             selectedLiveTranslation,
             followLiveLocation,
-            myBroadcastTid,
-            isMyBroadcastPaused,
+            myBroadcastTids,
         ]
     );
 
     // Hold the WebSocket only when live tracks are in use: viewing the page, broadcasting, or having bookmarked translations
-    const enabled = openLiveTracks || !!myBroadcastTid || liveTranslations.length > 0;
+    const enabled = openLiveTracks || myBroadcastTids.length > 0 || liveTranslations.length > 0;
     const api = useLiveTracking(liveState, enabled);
     const value = useMemo(() => ({ ...liveState, ...api, openLiveTracks }), [liveState, api, openLiveTracks]);
 
