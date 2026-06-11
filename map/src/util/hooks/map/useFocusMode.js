@@ -4,7 +4,7 @@ import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../..
 import MapContext from '../../../context/MapContext';
 import { EXPLORE_LAYER_ID, POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 
-export const FOCUS_DIM_OPACITY = 0.35;
+export const FOCUS_DIM_OPACITY = 0.9;
 export const FOCUS_HIDDEN_OPACITY = 0;
 export const FOCUS_FULL_OPACITY = 1;
 
