@@ -106,10 +106,11 @@ export default function MvtDemoLayer() {
         pane.style.zIndex = '200';
         pane.style.pointerEvents = 'none';
 
-        const container = L.DomUtil.create('div', 'leaflet-layer mvt-demo-maplibre-layer', pane);
+        const container = L.DomUtil.create('div', 'leaflet-layer leaflet-zoom-animated mvt-demo-maplibre-layer', pane);
         container.style.position = 'absolute';
         container.style.overflow = 'hidden';
         container.style.pointerEvents = 'none';
+        container.style.transformOrigin = '0 0';
 
         const initialSize = map.getSize();
         container.style.width = `${initialSize.x + PAN_BUFFER * 2}px`;
@@ -134,6 +135,7 @@ export default function MvtDemoLayer() {
         let syncFrame = null;
         let deferredContainerSync = null;
         let dragging = false;
+        let zooming = false;
         let containerWidth = initialSize.x + PAN_BUFFER * 2;
         let containerHeight = initialSize.y + PAN_BUFFER * 2;
 
@@ -196,7 +198,7 @@ export default function MvtDemoLayer() {
         };
 
         const requestSync = () => {
-            if (dragging || syncFrame !== null) {
+            if (dragging || zooming || syncFrame !== null) {
                 return;
             }
             syncFrame = L.Util.requestAnimFrame(() => {
@@ -224,6 +226,30 @@ export default function MvtDemoLayer() {
             }
             dragging = false;
             syncViewAfterPan();
+        };
+
+        // Leaflet applies a CSS transition to elements with the `leaflet-zoom-animated`
+        // class, so matching its target transform here keeps the overlay in sync and
+        // avoids the zoom glitch. The real re-render happens on zoomend via syncView.
+        const handleZoomAnim = (event) => {
+            if (disposed) {
+                return;
+            }
+            zooming = true;
+            cancelRequestedSync();
+            cancelDeferredContainerSync();
+            const scale = map.getZoomScale(event.zoom);
+            const topLeftLatLng = map.layerPointToLatLng(map.containerPointToLayerPoint([-PAN_BUFFER, -PAN_BUFFER]));
+            const offset = map._latLngToNewLayerPoint(topLeftLatLng, event.zoom, event.center);
+            L.DomUtil.setTransform(container, offset, scale);
+        };
+
+        const handleZoomEnd = () => {
+            if (!zooming) {
+                return;
+            }
+            zooming = false;
+            syncView();
         };
 
         const handleLoading = () => {
@@ -269,6 +295,8 @@ export default function MvtDemoLayer() {
         map.on('move zoom resize viewreset', requestSync);
         map.on('dragstart', handleDragStart);
         map.on('moveend', handleMoveEnd);
+        map.on('zoomanim', handleZoomAnim);
+        map.on('zoomend', handleZoomEnd);
         map.on('click', handleMapClick);
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
@@ -282,6 +310,8 @@ export default function MvtDemoLayer() {
             map.off('move zoom resize viewreset', requestSync);
             map.off('dragstart', handleDragStart);
             map.off('moveend', handleMoveEnd);
+            map.off('zoomanim', handleZoomAnim);
+            map.off('zoomend', handleZoomEnd);
             map.off('click', handleMapClick);
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
