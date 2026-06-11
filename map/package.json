@@ -21,6 +21,7 @@
         "chartjs-plugin-zoom": "^2.0.1",
         "clsx": "^1.2.1",
         "convert-units": "^2.3.4",
+        "driver.js": "^1.4.0",
         "env-cmd": "^10.1.0",
         "html-react-parser": "^5.1.10",
         "http-proxy-middleware": "^2.0.6",
