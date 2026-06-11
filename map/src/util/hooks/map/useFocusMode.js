@@ -116,7 +116,11 @@ function readFocusMode(type) {
 function writeFocusMode(type, value) {
     const store = readFocusModeStore();
     store[type] = value;
-    localStorage.setItem(FOCUS_MODE_STORAGE_KEY, JSON.stringify(store));
+    try {
+        localStorage.setItem(FOCUS_MODE_STORAGE_KEY, JSON.stringify(store));
+    } catch {
+        // localStorage unavailable (quota exceeded / blocked) — ignore
+    }
 }
 
 function applyOpacityToLayer(layer, opacity) {

@@ -49,5 +49,9 @@ function isCoachmarkSeen(id) {
 function markCoachmarkSeen(id) {
     const seen = readSeen();
     seen[id] = true;
-    localStorage.setItem(COACHMARKS_STORAGE_KEY, JSON.stringify(seen));
+    try {
+        localStorage.setItem(COACHMARKS_STORAGE_KEY, JSON.stringify(seen));
+    } catch {
+        // localStorage unavailable (quota exceeded / blocked) — ignore
+    }
 }
