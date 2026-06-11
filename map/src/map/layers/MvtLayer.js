@@ -1,0 +1,176 @@
+import { useContext, useEffect } from 'react';
+import { useMap } from 'react-leaflet';
+import L from 'leaflet';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import '@maplibre/maplibre-gl-leaflet';
+import MapContext from '../../context/MapContext';
+
+const POPUP_MAX_HEIGHT = 220;
+const SHOW_TILE_BOUNDARIES = true;
+
+function getPublicAssetPath(path) {
+    const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+    return `${publicUrl}${path}`;
+}
+
+function getPublicAssetUrl(path) {
+    return new URL(getPublicAssetPath(path), window.location.origin).toString();
+}
+
+function createStyle(baseStyle, tileUrl) {
+    const style = JSON.parse(JSON.stringify(baseStyle));
+    style.sources = {
+        ...style.sources,
+        osm: {
+            ...style.sources.osm,
+            tiles: [tileUrl],
+        },
+    };
+    style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
+    style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
+    return style;
+}
+
+function formatPopupValue(value) {
+    if (value === undefined || value === null) {
+        return 'N/A';
+    }
+    if (typeof value === 'object') {
+        return JSON.stringify(value);
+    }
+    return value.toString();
+}
+
+function createTagsPopupContent(properties, popupClassName) {
+    const wrapper = L.DomUtil.create('div', popupClassName);
+    wrapper.style.maxHeight = `${POPUP_MAX_HEIGHT}px`;
+    wrapper.style.overflowY = 'auto';
+
+    const entries = Object.entries(properties || {}).sort(([a], [b]) => a.localeCompare(b));
+
+    if (entries.length === 0) {
+        const empty = L.DomUtil.create('div', '', wrapper);
+        empty.textContent = 'No tags';
+        return wrapper;
+    }
+
+    const table = L.DomUtil.create('table', '', wrapper);
+    table.style.borderCollapse = 'collapse';
+    table.style.width = '100%';
+
+    entries.forEach(([key, value]) => {
+        const row = L.DomUtil.create('tr', '', table);
+        const keyCell = L.DomUtil.create('td', '', row);
+        const valueCell = L.DomUtil.create('td', '', row);
+
+        keyCell.textContent = key || 'N/A';
+        valueCell.textContent = formatPopupValue(value);
+
+        keyCell.style.fontWeight = '600';
+        keyCell.style.padding = '3px 8px 3px 0';
+        keyCell.style.verticalAlign = 'top';
+        valueCell.style.padding = '3px 0';
+        valueCell.style.textAlign = 'right';
+        valueCell.style.verticalAlign = 'top';
+        valueCell.style.wordBreak = 'break-word';
+    });
+
+    return wrapper;
+}
+
+export default function MvtLayer({ config }) {
+    const map = useMap();
+    const mtx = useContext(MapContext);
+
+    useEffect(() => {
+        const { style, tileUrl, isActive, popupClassName, errorLabel } = config;
+
+        if (!isActive(mtx.tileURL)) {
+            return undefined;
+        }
+
+        window.seIsTilesLoaded = false;
+
+        const glLayer = L.maplibreGL({
+            style: createStyle(style, tileUrl),
+            interactive: false,
+            fadeDuration: 0,
+        }).addTo(map);
+
+        const maplibreMap = glLayer.getMaplibreMap();
+        maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
+
+        let activePopup = null;
+
+        const handleLoading = () => {
+            window.seIsTilesLoaded = false;
+        };
+
+        const handleIdle = () => {
+            window.seIsTilesLoaded = true;
+        };
+
+        const handleError = (event) => {
+            console.warn(errorLabel, event?.error ?? event);
+        };
+
+        const handleMapClick = (event) => {
+            const canvas = glLayer.getCanvas();
+            const rect = canvas.getBoundingClientRect();
+            const point = [event.originalEvent.clientX - rect.left, event.originalEvent.clientY - rect.top];
+            let features = [];
+            try {
+                features = maplibreMap.queryRenderedFeatures(point);
+            } catch (error) {
+                return;
+            }
+            if (features.length === 0) {
+                // Only close our own popup, not unrelated ones (POI, tracks, …).
+                if (activePopup) {
+                    map.closePopup(activePopup);
+                    activePopup = null;
+                }
+                return;
+            }
+
+            const feature = features.find((item) => Object.keys(item.properties || {}).length > 0) || features[0];
+            activePopup = L.popup({
+                closeButton: true,
+                autoClose: true,
+                closeOnClick: false,
+                maxWidth: 360,
+            })
+                .setLatLng(event.latlng)
+                .setContent(createTagsPopupContent(feature.properties, popupClassName))
+                .openOn(map);
+        };
+
+        const handlePopupClose = (event) => {
+            if (event.popup === activePopup) {
+                activePopup = null;
+            }
+        };
+
+        map.on('click', handleMapClick);
+        map.on('popupclose', handlePopupClose);
+        maplibreMap.on('dataloading', handleLoading);
+        maplibreMap.on('idle', handleIdle);
+        maplibreMap.on('error', handleError);
+
+        return () => {
+            window.seIsTilesLoaded = true;
+            map.off('click', handleMapClick);
+            map.off('popupclose', handlePopupClose);
+            maplibreMap.off('dataloading', handleLoading);
+            maplibreMap.off('idle', handleIdle);
+            maplibreMap.off('error', handleError);
+            if (activePopup) {
+                map.closePopup(activePopup);
+                activePopup = null;
+            }
+            map.removeLayer(glLayer);
+        };
+    }, [map, mtx.tileURL, config]);
+
+    return null;
+}

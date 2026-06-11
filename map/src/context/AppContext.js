@@ -14,6 +14,8 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
+import { mvtDemoTileURL, MVT_DEMO_LAYER, mvtOsmTileURL, MVT_OSM_LAYER } from '../map/mvt/MvtDemoConfig';
+import { osmandTileURL } from '../map/baseTileURL';
 import {
     EXPLORE_OBJS_KEY,
     FAVORITES_KEY,
@@ -75,14 +77,7 @@ export const isTrack = (ctx) =>
     isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx) || isShareTrack(ctx);
 export const isTrackAnalyzer = (ctx) => ctx.currentObjectType === OBJECT_TRACK_ANALYZER;
 
-const osmandTileURL = {
-    uiname: 'Mapnik (tiles)',
-    key: 'mapniktile',
-    tileSize: 512,
-    url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
-};
-
-async function loadTileUrls(setAllTileURLs) {
+async function loadTileUrls(setAllTileURLs, develFeatures) {
     const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
     if (response.ok) {
         let data = await response.json();
@@ -102,6 +97,10 @@ async function loadTileUrls(setAllTileURLs) {
             }
         });
         data[osmandTileURL.key] = osmandTileURL;
+        if (develFeatures) {
+            data[MVT_DEMO_LAYER] = mvtDemoTileURL;
+            data[MVT_OSM_LAYER] = mvtOsmTileURL;
+        }
         setAllTileURLs(data);
     }
 }
@@ -448,8 +447,8 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        loadTileUrls(setAllTileURLs);
-    }, []);
+        loadTileUrls(setAllTileURLs, develFeatures);
+    }, [develFeatures]);
 
     useEffect(() => {
         const update = async () => {

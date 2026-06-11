@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
+import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
-
-const osmandTileURL = {
-    uiname: 'Mapnik (tiles)',
-    key: 'mapniktile',
-    tileSize: 512,
-    url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
-};
 
 function getInitialHeightmap() {
     try {
