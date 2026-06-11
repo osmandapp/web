@@ -105,7 +105,7 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
         try {
             const json = JSON.parse(response.data);
             if (json.message) {
-                setRoutingErrorMsg(json.message + ' (please try another provider/profile)');
+                setRoutingErrorMsg(`${json.message} (OSRM)`);
             }
         } catch (e) {
             console.error('OSRM fatal error', e);
@@ -172,7 +172,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     } else {
         this.resetRoute();
         changeRouteText(false, null);
-        setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
+        setRoutingErrorMsg('Router error.');
     }
 }
 

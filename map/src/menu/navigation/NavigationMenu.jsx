@@ -357,7 +357,7 @@ export default function NavigationMenu() {
                             <TextLeftIconBtn
                                 icon={<WarningIcon />}
                                 text={t('web:router_error_title')}
-                                desc={ctx.routingErrorMsg}
+                                desc={`${t('web:router_error_message')} ${ctx.routingErrorMsg}`}
                             />
                         </>
                     )}
