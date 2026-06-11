@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  Informazioni sul routing di OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -75,6 +75,10 @@ Ci sono due modi possibili per scegliere quali strade evitare durante il calcolo
 
 - Selezionare il tipo di strada nella sezione [Parametri del percorso](../guidance/navigation-settings.md#route-parameters) delle [Impostazioni di navigazione](../guidance/navigation-settings.md). La descrizione di questa impostazione è fornita negli articoli sulle impostazioni dei [Tipi di routing](#routing-types). Ad esempio, vedere la descrizione del tipo di routing [Auto / Camion / Motociclo](../routing/car-based-routing.md#route-parameters---car).
 - È anche possibile selezionare strade specifiche che non verranno utilizzate per il routing utilizzando l'opzione *[Evita strada](../../map/map-context-menu.md#avoid-road)* tramite il *menu contestuale della mappa* o utilizzando il *[Menu Evita strade](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+
+Quando un tipo di strada (come *Strade non asfaltate*) è selezionato nelle impostazioni di Evita, OsmAnd esclude rigorosamente tali strade dal calcolo del percorso. Anche sezioni molto brevi (ad esempio, 100–200 metri di strada non asfaltata) vengono completamente evitate e non saranno incluse nel percorso in nessuna circostanza. Di conseguenza, i percorsi possono diventare significativamente più lunghi se evitare tali strade richiede deviazioni.
+
+Se l'opzione Evita è disabilitata, queste strade sono comunque consentite ma possono ricevere una priorità inferiore (penalità), il che significa che OsmAnd preferirà strade migliori quando possibile, ma potrà comunque includerle se necessario.
 
 :::note
 

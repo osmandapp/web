@@ -1,5 +1,5 @@
 ---
-source-hash: 9d11022683566f420776aa418ed27e0c7395de91760867a3ffaa77ca4297d8b0
+source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
 sidebar_position: 5
 title:  Mapas Vetoriais
 ---
@@ -551,7 +551,7 @@ Ir para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 ![Rotas do mapa - ciclovias](@site/static/img/map/map-routes-cycle-routes.png)  ![Rotas do mapa - rede de caminhadas](@site/static/img/map/map-routes-hiking-network.png)
 
-Uma rota é um caminho predeterminado que precisa ser seguido para chegar a um destino específico. Uma rota pode ser otimizada para diferentes tipos de viagem, como ciclismo, caminhadas, corrida, transporte público e outros. Pode ler mais sobre rotas e seus tipos no artigo [Rotas](../map/routes.md).
+Uma rota é um caminho predeterminado que precisa ser seguido para chegar a um destino específico. Uma rota pode ser otimizada para diferentes tipos de viagem, como ciclismo, caminhadas, corrida, transporte público e outros. Pode ler mais sobre rotas e seus tipos no artigo [Rotas](../map/routes/index.md).
 
 
 ## Artigos Relacionados {#related-articles}
@@ -559,6 +559,6 @@ Uma rota é um caminho predeterminado que precisa ser seguido para chegar a um d
 - [Interagir com o Mapa](../map/interact-with-map.md)
 - [Configurar Mapa](../map/configure-map-menu.md)
 - [Estilos de Mapa](../map/map-styles.md)
-- [Rotas](../map/routes.md)
+- [Rotas](../map/routes/index.md)
 - [Importar / Exportar](../personal/import-export.md)
 - [Esquemas de Paleta de Cores](../personal/color-palette-schemes.md)

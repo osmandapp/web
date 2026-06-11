@@ -9,7 +9,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import isEmpty from 'lodash-es/isEmpty';
 import Loading from '../errors/Loading';
 import { byTime, doSort } from '../actions/SortActions';
-import SmartFolder from '../components/SmartFolder';
+import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
@@ -166,12 +166,7 @@ export default function FavoritesMenu() {
                 )}
                 {ctx.favLoading && <LinearProgress />}
                 {!isEmpty(sharedFiles) && (
-                    <SmartFolder
-                        type={'share'}
-                        subtype={'favorite'}
-                        files={sharedFiles}
-                        onOpenFolder={setOpenSharedFolder}
-                    />
+                    <SharedFolder subtype={'favorite'} files={sharedFiles} onOpenFolder={setOpenSharedFolder} />
                 )}
                 {ctx.gpxLoading || ctx.processingGroups ? (
                     <Loading />

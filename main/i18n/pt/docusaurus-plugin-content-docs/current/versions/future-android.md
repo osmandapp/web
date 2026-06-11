@@ -1,5 +1,5 @@
 ---
-source-hash: 91a31a428026d3f096ac2e5ae3c87ed7602a196858aeed773cb52ba0586c9450
+source-hash: 99f4f132ee5c0b6fd48949f2e16d91c53267fa3ebef0498549f074e425034b5d
 sidebar_position: 4
 ---
 
@@ -15,11 +15,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';  
 
 
-# Android 5.3 {#android-53}
+# Android 5.4 {#android-54}
 
 
 
-# Participar do Beta {#join-beta}
+## Participar do Beta {#join-beta}
 
 O OsmAnd lança várias compilações Prontas para Uso diariamente, permitindo que você acompanhe novos recursos e participe do processo de tradução do OsmAnd. Você pode participar dos testes da versão beta do OsmAnd usando o Google Play.
 
@@ -33,23 +33,46 @@ O OsmAnd lança várias compilações Prontas para Uso diariamente, permitindo q
 
 ## O que há de novo {#whats-new}
 
-- Novo plugin experimental **[Astronomia](https://osmand.net/docs/user/plugins/astronomy)** com uma sobreposição astronômica que mostra os caminhos do Sol, planetas e estrelas.
-- Seção **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** aprimorada com configurações de backup, histórico de versões e backup automático mais claras.
-- Opções atualizadas de **[Configurar mapa](https://osmand.net/docs/user/map/configure-map-menu)** com uma legenda mais clara e filtros aprimorados para rotas de caminhada, ciclismo e MTB.
-- Novos widgets de elevação e navegação redesenhados com perfis de elevação, métricas de subida/descida e inclinação média.
-- Melhorias no **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** com suporte estendido a widgets e melhor integração com OBD II.
-- Layout mais flexível de **[widgets e botões do mapa](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especialmente no modo paisagem.
-- Gerenciamento aprimorado de Favoritos em **[Meus Lugares](https://osmand.net/docs/user/personal/myplaces)**.
-- Organização de trilhas mais inteligente com Pastas Inteligentes e estatísticas de resumo mais claras.
-- Análise avançada de rotas e trilhas.
-- Funcionalidades de acessibilidade aprimoradas, incluindo feedback de navegação de áudio e háptico mais flexível.
-- Base inicial para integração com smartwatch para dados de navegação e gravação de viagens.
+- **[Favoritos](https://osmand.net/docs/user/personal/favorites)** aprimorados com suporte a anexos de mídia (fotos, áudio e vídeo) e integração melhorada de notas de áudio/vídeo.
+- **[Widgets de navegação](https://osmand.net/docs/user/widgets/nav-widgets)** aprimorados com tamanho mais flexível e adaptação de layout em diferentes densidades e orientações de tela.
+- Legenda do mapa adicionada em **[Configurar mapa](https://osmand.net/docs/user/map/configure-map-menu)** para melhor compreensão dos tipos de rotas e elementos do mapa.
+- Filtragem de rotas e controle visual aprimorados em **[Configurar mapa](https://osmand.net/docs/user/map/configure-map-menu)**, incluindo classificações e prioridades de rotas.
+- Análise de trilhas aprimorada com novos tipos de gráficos e dados mais detalhados, como superfície, tipo de estrada e inclinação.
+- Gerenciamento de trilhas aprimorado com visualizações e organização melhorada em **[Meus Lugares](https://osmand.net/docs/user/personal/myplaces)**.
+- Backup automático e sincronização mais confiável de dados do usuário no **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)**, incluindo **[Pastas Inteligentes](https://osmand.net/docs/user/personal/tracks/smart-folder)**.
+- Melhorias iniciais na navegação náutica com aprimoramentos no AIS e parâmetros e widgets de navegação adicionais.
+- Experiência aprimorada no **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** com busca e controles de navegação melhorados.
+- Adicionada a capacidade de interagir com o mapa no **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**, incluindo a seleção direta de pontos.
+- **[Widget de elevação](https://osmand.net/docs/user/widgets/nav-widgets#elevation-widget)** redesenhado com informações mais detalhadas sobre a elevação da rota.
+
+<!--
+- New experimental **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** with an astronomical overlay showing the paths of the Sun, planets and stars.
+- Improved **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** section with clearer backup, version history and automatic backup settings.
+- Updated **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** options with a clearer legend and improved filters for hiking, cycling and MTB routes.
+- New and redesigned elevation and navigation widgets with elevation profiles, uphill/downhill metrics and average grade.
+- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** improvements with extended widget support and better OBD II integration.
+- More flexible **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especially in landscape mode.
+- Enhanced Favorites management in **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
+- Smarter track organization with Smart Folders and clearer summary statistics.
+- Advanced route and track analysis.
+- Improved accessibility features, including more flexible audio and haptic navigation feedback.
+- Initial groundwork for smartwatch integration for navigation and trip recording data.
+-->
 
 
 ## Correções de bugs {#bug-fixes}
 
-- Estabilidade aprimorada da sincronização e backup do **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)**, reduzindo conflitos e garantindo que widgets e configurações sejam restaurados corretamente entre dispositivos.
-- Corrigidos valores incorretos de subida/descida em widgets de elevação e melhorada a precisão dos cálculos de ascensão/descida na análise de rotas.
-- Comportamento de navegação no **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** aprimorado, incluindo direções de saída corretas em rotatórias e posicionamento adequado de ferramentas na tela, como a régua de raio.
-- Corrigidos vários problemas relacionados ao modo **[Acessibilidade](https://osmand.net/docs/user/plugins/accessibility)**, incluindo anúncios de navegação e interação com certas ferramentas do mapa.
-- Correções gerais de interface e desempenho em renderização de mapa, exibição de widgets e telas de configuração.
+- Corrigido um [problema](https://github.com/osmandapp/OsmAnd/issues/16507) em que as propriedades dos favoritos (cor, ícone, forma) não eram atualizadas ao alterar seu grupo.
+- Corrigidas [direções de saída incorretas](https://github.com/osmandapp/OsmAnd/issues/23104) mostradas em rotatórias no Android Auto.
+- Corrigidos valores imprecisos de [subida e descida](https://github.com/osmandapp/OsmAnd/issues/20624) nos widgets de elevação.
+- Evitado que [favoritos ocultos](https://github.com/osmandapp/OsmAnd/issues/24689) reaparecessem no mapa ao adicionar waypoints de trilha a uma pasta.
+- Resolvidas [inconsistências entre gráficos](https://github.com/osmandapp/OsmAnd/issues/24712) na tela Detalhes.
+- Resolvido um [problema](https://github.com/osmandapp/OsmAnd/issues/24791) em que pastas de Favoritos desafixadas apareciam fixadas novamente após reiniciar o aplicativo.
+
+<!--
+- Improved stability of **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** sync and backup, reducing conflicts and ensuring widgets and settings restore correctly across devices.
+- Fixed incorrect uphill/downhill values in elevation widgets and improved accuracy of ascent/descent calculations in route analysis.
+- Improved **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** navigation behaviour, including correct exit directions at roundabouts and proper placement of on-screen tools such as the radius ruler.
+- Fixed several issues related to **[Accessibility](https://osmand.net/docs/user/plugins/accessibility)** mode, including navigation announcements and interaction with certain map tools.
+- General interface and performance fixes across map rendering, widget display and configuration screens.
+-->

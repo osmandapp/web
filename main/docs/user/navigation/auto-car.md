@@ -221,6 +221,8 @@ The **Next turn** widget displays the distance and type of the [next turn maneuv
 
 ### Route Info {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Route information consists of:
 
 - [Estimated travel time](../widgets/nav-widgets.md#time-to-destination),
@@ -228,6 +230,8 @@ Route information consists of:
 - [Travel distance](../widgets/nav-widgets.md#distance-to-destination).
 
 When enabled, **[the widget setting](#eta-next-stop)** (Route information) will show route details for the next stop ([the intermediate point](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Tap the **X** button next to the route information widget to stop navigation.
 
 
 ### Navigation Alerts {#navigation-alerts}

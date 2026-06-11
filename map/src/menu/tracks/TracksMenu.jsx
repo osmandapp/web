@@ -15,11 +15,11 @@ import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
-import SmartFolder from '../components/SmartFolder';
+import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
-import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
-import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
+import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
@@ -138,7 +138,7 @@ export default function TracksMenu() {
                                 className={styles.item}
                                 onClick={() => {
                                     setOpenVisibleTracks(true);
-                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash);
+                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
                                     ctx.setOpenVisibleMenu((prev) => ({
                                         ...prev,
                                         open: true,
@@ -159,7 +159,7 @@ export default function TracksMenu() {
                                 </ListItemText>
                             </MenuItem>
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
-                                <SmartFolder type={SHARE_TYPE} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
+                                <SharedFolder subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&
                                 (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)

@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -97,7 +97,7 @@ Appuyer sur une [trace GPX](../map/tracks/index.md) sur la carte ouvre le [menu 
 
 ![Pistes de ski et sentiers VTT](@site/static/img/map/ski_mtb.png)  ![Pistes de ski et sentiers VTT](@site/static/img/map/ski_mtb_2.png)
 
-Vous pouvez appuyer sur des éléments de la carte tels que les **pistes de ski**, les **itinéraires de VTT (vélo tout-terrain)** et les **pistes de moto tout-terrain** pour ouvrir leur menu contextuel avec des informations détaillées. Consultez l'[article sur les itinéraires](../map/routes.md#actions-with-routes) pour plus d'informations.
+Vous pouvez appuyer sur des éléments de la carte tels que les **pistes de ski**, les **itinéraires de VTT (vélo tout-terrain)** et les **pistes de moto tout-terrain** pour ouvrir leur menu contextuel avec des informations détaillées. Consultez l'[article sur les itinéraires](../map/routes/index.md#actions-with-routes) pour plus d'informations.
 
 
 

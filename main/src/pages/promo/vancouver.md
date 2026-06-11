@@ -19,7 +19,7 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 Please, input your e-mail for registration:
 
-<RegisterUserPromoBlock  promoKey='van'/>
+<RegisterUserPromoBlock  promoKey='van1'/>
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 

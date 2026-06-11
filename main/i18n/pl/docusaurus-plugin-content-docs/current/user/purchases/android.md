@@ -1,5 +1,5 @@
 ---
-source-hash: 0ae7c976ec982e841bfbd89fd28f2abdb0a44e6e062f5766e2f8479e2606d516
+source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -59,7 +59,7 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 | **OsmAnd Start** | **Darmowy plan** zapewniający dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników darmowej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5MB** pamięci. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **Oddzielna płatna aplikacja**, która zawiera zaawansowane funkcje. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Można dodać do [Biblioteki rodzinnej Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja** dla darmowej aplikacji OsmAnd, odblokowująca te same funkcje co OsmAnd+. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identyczna pod względem funkcji i ceny z OsmAnd+. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcyjny**, który odblokowuje dodatkowe zaawansowane i [profesjonalne funkcje](#pro-features). | Dostępna w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Zapewnia pełny dostęp do funkcji OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcyjny**, który odblokowuje dodatkowe zaawansowane i [funkcje Pro](#pro-features). | Dostępna w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Zapewnia pełny dostęp do funkcji OsmAnd Cloud. |
 
 ### Ważne uwagi {#important-notes}
 
@@ -76,7 +76,25 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. W innych regionach ceny są ekwiwalentne w lokalnych walutach.
 
+<!--
 
+:::danger 🌱 Spring Sale
+
+*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+
+
+-->
 
 |    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -116,7 +134,7 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Wtyczka Astronomia](../plugins/astronomy.md) — [Planowanie obserwacji](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Wtyczka Astronomia](../plugins/astronomy.md) — [Interaktywny tryb AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Wtyczka Astronomia](../plugins/astronomy.md) — [Mapa nieba offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
-| [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręcie | ✔ | ✔ | ✔ |
+| [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręt | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Eksport tras GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
@@ -172,7 +190,7 @@ Subskrypcja **Pro** obejmuje obecnie następujące funkcje:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Kontynuuj z OsmAnd Pro*
 
-lub  
+or  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Kontynuuj z OsmAnd Pro*
 

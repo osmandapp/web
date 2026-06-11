@@ -1,5 +1,5 @@
-import { By } from 'selenium-webdriver';
-import { clickBy, waitBy, waitByRemoved, assert } from '../../lib.mjs';
+import { By, Key } from 'selenium-webdriver';
+import { clickBy, enclose, waitBy, waitByRemoved, assert } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
@@ -24,6 +24,9 @@ const SMART_FOLDERS = [
     { name: '7smart f uphill 100', size: 265 },
 ];
 
+const SMART_FOLDER_ORIGINAL = '1smart f length 8646';
+const SMART_FOLDER_RENAMED = '1smart f length 8646 renamed';
+
 export default async function test() {
     await actionOpenMap();
     await actionLogIn({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
@@ -41,5 +44,40 @@ export default async function test() {
         const text = await parent.getText();
         await assert(text.includes(`${folder.size} tracks`), `${folder.name} has incorrect size`);
     }
+
+    await renameSmartFolder(SMART_FOLDER_ORIGINAL, SMART_FOLDER_RENAMED);
+    let parent = await waitBy(By.id(`se-menu-cloud-${SMART_FOLDER_RENAMED}`));
+    let text = await parent.getText();
+    await assert(text.includes('437 tracks'), `${SMART_FOLDER_RENAMED} has incorrect size after rename`);
+
+    await renameSmartFolder(SMART_FOLDER_RENAMED, SMART_FOLDER_ORIGINAL);
+    parent = await waitBy(By.id(`se-menu-cloud-${SMART_FOLDER_ORIGINAL}`));
+    text = await parent.getText();
+    await assert(text.includes('437 tracks'), `${SMART_FOLDER_ORIGINAL} has incorrect size after rename back`);
+
     await actionFinish();
+}
+
+async function renameSmartFolder(folderName, newName) {
+    await clickBy(By.id(`se-folder-actions-button-${folderName}`));
+    await waitBy(By.id('se-folder-actions'));
+    await clickBy(By.id('se-folder-actions-rename'));
+    await waitBy(By.id('se-rename-group-dialog'));
+    await enclose(
+        async () => {
+            const input = await waitBy(By.id('se-rename-group-input'));
+            await input.click();
+            const selectAllKey = process.platform === 'darwin'
+                ? Key.COMMAND  // macOS
+                : Key.CONTROL; // Windows, Linux
+            await input.sendKeys(Key.chord(selectAllKey, 'a'));
+            await input.sendKeys(Key.DELETE);
+            await input.sendKeys(newName);
+            return true;
+        },
+        { tag: 'rename-smart-folder' }
+    );
+    await clickBy(By.id('se-rename-group-submit'));
+    await waitByRemoved(By.id('se-rename-group-dialog'), true);
+    await actionIdleWait({ idle: 3000 });
 }

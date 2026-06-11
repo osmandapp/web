@@ -5,7 +5,9 @@ import { Button, LinearProgress, Dialog } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
 import { deleteTrackFolder } from '../../manager/track/DeleteTrackManager';
+import { deleteSmartFolder } from '../../manager/SmartFoldersManager';
 import AppContext from '../../context/AppContext';
+import { SMART_TYPE } from '../../menu/share/shareConstants';
 
 export default function DeleteFolderDialog({ setOpenDialog, folder, setOpenActions }) {
     const ctx = useContext(AppContext);
@@ -13,7 +15,11 @@ export default function DeleteFolderDialog({ setOpenDialog, folder, setOpenActio
 
     async function deleteFolder() {
         setProcess(true);
-        await deleteTrackFolder(folder, ctx);
+        if (folder?.type === SMART_TYPE) {
+            await deleteSmartFolder(folder, ctx);
+        } else {
+            await deleteTrackFolder(folder, ctx);
+        }
         setProcess(false);
         closeDialogs();
     }

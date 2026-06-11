@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  تخطيط المسار
 title: تخطيط المسار على الموقع
@@ -65,7 +65,7 @@ To create a navigation route, follow these steps:
 
 بمجرد إنشاء المسار، أضف النقاط مباشرة على الخريطة. يضع كل نقرة النقطة التالية، ويبني المخطط المسار بين النقاط.
 
-![إنشاء مسار جديد على الويب في OsmAnd](@site/static/img/web/create_new_route_1.png)
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
 
 ### استيراد مسار {#import-track}
 
@@ -77,7 +77,7 @@ To create a navigation route, follow these steps:
 
 لكل عنصر في القائمة مفتاح تبديل يسمح لك بإظهار أو إخفاء المسار على الخريطة بسرعة. حدد مسارًا من القائمة لفتحه في المخطط ومواصلة العمل معه. 
 
-![إنشاء مسار جديد على الويب في OsmAnd](@site/static/img/web/local_files.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
 ## إدارة المسار {#manage-track}
@@ -90,7 +90,7 @@ To create a navigation route, follow these steps:
 
 في [لوحة النظرة العامة](#overview-panel)، يمكنك **الحفظ في السحابة** للحفاظ على المسار للاستخدام لاحقًا و**تنزيل**ه كملف GPX.
 
-![إدارة مسار على الويب في OsmAnd](@site/static/img/web/manage_track_2_new.png) ![إدارة مسار على الويب في OsmAnd](@site/static/img/web/change_profile.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
 ## لوحات تفاصيل المسار {#track-details-panels}
@@ -126,21 +126,23 @@ To create a navigation route, follow these steps:
 - السطح — يظهر أنواع السطح على طول المسار بناءً على بيانات OSM.
 - السلاسة — يظهر سلاسة المقاطع بناءً على علامات OSM.
 
-![لوحة المعلومات على الويب في OsmAnd](@site/static/img/web/overview_panel.png) 
+![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
 
 ### لوحة المسار {#track-panel}
 
 تعرض لوحة المسار قائمة بنقاط المسار المستخدمة لبناء المسار. استخدمها لمراجعة وتحرير هيكل المسار: اسحب النقاط لإعادة ترتيبها، أزل النقاط باستخدام أيقونة الحذف، أو استخدم مسح النقاط لإزالة جميع النقاط والبدء من جديد.
 
-![لوحة المسار على الويب في OsmAnd](@site/static/img/web/track_panel_new.png)
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
 
 ### لوحة النقاط {#points-panel}
 
 تُستخدم لوحة النقاط لعرض وإدارة نقاط الطريق للمسار المحدد. يمكن إضافة نقاط الطريق من قائمة السياق للخريطة — انقر بزر الماوس الأيمن على الخريطة واختر الخيار لـ **إضافة نقطة طريق**، ثم املأ تفاصيل نقطة الطريق (مثل الاسم والأيقونة واللون) واحفظها.
 
+يستخدم تحرير نقاط الطريق نفس واجهة [تحرير المفضلات](../web/web-favorites.md#edit-favorites). يمكنك تعديل خصائص نقاط الطريق مثل الاسم والعنوان والوصف والأيقونة واللون والشكل باستخدام لوحة التحرير الموحدة. تتم معاينة المظهر المحدد في لوحة التحرير وعلى الخريطة مباشرة.
+
 في قائمة نقاط الطريق، يمكنك التحكم في ما إذا كانت نقاط الطريق تُظهر على الخريطة وإزالة نقاط الطريق الفردية عند الحاجة. لإزالة جميع نقاط الطريق من المسار دفعة واحدة، استخدم *مسح جميع نقاط الطريق*.
 
-![لوحة نقاط الطريق على الويب في OsmAnd](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## المقالات ذات الصلة {#related-articles}

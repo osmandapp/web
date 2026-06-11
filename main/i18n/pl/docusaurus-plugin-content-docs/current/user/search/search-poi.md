@@ -1,5 +1,5 @@
 ---
-source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
+source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
 sidebar_position: 4
 title:  Wyszukiwanie POI
 ---
@@ -13,6 +13,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
+<!--
+<InfoIncompleteArticle/>
+-->
+
 
 ## Przegląd {#overview}
 
@@ -53,7 +58,8 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
 - **Wyszukiwanie Punktów Użyteczności (POI) według typu i nazwy**:
     - Umożliwia wyszukiwanie:
        - Pobliskich punktów użyteczności (POI) lub określonych kategorii POI.
-       - [Tras OSM](../map/routes.md) według nazwy i numeru referencyjnego.
+       - [Tras OSM](../map/routes/types-of-routes.md) według nazwy, numeru referencyjnego lub identyfikatora relacji w formacie `O+relation_id` (na przykład: [Les Portes de Paris](https://hiking.waymarkedtrails.org/#route?id=13363916&map=12.0/48.8671/2.3788), GR 75, O13363916).
+       - Obiektów powiązanych z identyfikatorami Wikidata (na przykład: [Q3406840](https://www.wikidata.org/wiki/Q3406840)).
        - [Popularnych miejsc (Wikipedia)](../map/popular_places.md).
        - Miejsc poprzez połączenie nazwy miasta z nazwą POI lub typem (na przykład: Berlin airport, Bratislava Billa).
     - Możliwe jest filtrowanie i sortowanie wyników według kategorii, odległości lub oceny.
@@ -63,8 +69,8 @@ Ikona wyświetlona w wynikach wyszukiwania odpowiada ikonie używanej na mapie i
 Wyniki wyszukiwania mogą zawierać dodatkowe informacje o lokalizacji, takie jak miasto, w którym znajduje się POI. Pomaga to odróżnić miejsca o tej samej nazwie podczas wyszukiwania marek lub popularnych miejsc.
     
 - **Wyszukaj POI na mapie** - Pokaż na mapie:
-    1. Możesz wybrać wymagane kategorie z [**listy**](../map/point-layers-on-map.md#points-of-interest-pois) w *Konfiguruj mapę → Pokaż warstwę POI...* i wyszukiwać według ikon w oczekiwanej lokalizacji.
-    2. Możesz najpierw wprowadzić zapytanie wyszukiwania lub rozpocząć wyszukiwanie POI w *Menu → Wyszukaj → Kategorie*, a następnie kliknąć **Pokaż na mapie**.
+    - Możesz wybrać wymagane kategorie z [**listy**](../map/point-layers-on-map.md#points-of-interest-pois) w *Konfiguruj mapę → Pokaż warstwę POI...* i wyszukiwać według ikon w oczekiwanej lokalizacji.
+    - Możesz najpierw wprowadzić zapytanie wyszukiwania lub rozpocząć wyszukiwanie POI w *Menu → Wyszukaj → Kategorie*, a następnie kliknąć **Pokaż na mapie**.
 
 - **Wyszukiwanie według marki**:
     - Wyszukiwanie obiektu biznesowego według nazwy marki (takiej jak Audi, Starbucks czy Aldi) jest bardzo podobne do wyszukiwania różnych POI według typu, główną różnicą jest to, że lista marek jest dostarczana wewnątrz mapy i może ulec zmianie podczas każdej aktualizacji. 
@@ -157,6 +163,20 @@ Jak to działa:
 - *Stosowanie filtrów* - Wybierasz wymagane wartości w filtrach, a następnie aplikacja stosuje te filtry do wyników wyszukiwania, aby pokazać tylko te właściwości, które pasują do określonych cech.
 - *Wyświetlanie wyników* - Po zastosowaniu filtrów OsmAnd wyświetla listę z krótkimi informacjami pasującymi do ustawionej kategorii i cech.
 
+<!--
+Benefits:
+
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
+
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
+-->
+
 ### Typy filtrów {#types-of-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -233,7 +253,7 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
  16. **<Translate android="true" ids="poi_filter_public_transport"/>**. Jest to system transportu przeznaczony do przewozu osób w celach publicznych, dostępny dla wszystkich mieszkańców i gości miasta lub regionu.  
         Obejmuje *9* typów filtrów.
 
- 17. **Trasy**. Obejmuje [Trasy OSM](../map/routes.md) dla różnych rodzajów aktywności.  
+ 17. **Trasy**. Obejmuje [Trasy OSM](../map/routes/types-of-routes.md) dla różnych rodzajów aktywności.  
         Obejmuje *14* typów filtrów: **Punkt kontrolny**, **Węzeł sieci rowerowej**, **Węzeł sieci pieszej**, **Sieć tras (rowerowych)**, **Sieć tras (pieszych)**, **Kategoria punktu trasy**, **Sporty lotnicze**, **Kolarstwo**, **Jazda samochodem**, **Pieszo**, **Motocyklem**, **Inne trasy**, **Sporty wodne**, **Sporty zimowe**.
 
  18. **Zwiedzanie**. Jest to działalność, w której ludzie odwiedzają interesujące miejsca, aby zapoznać się z nimi i cieszyć się ich pięknem, historią lub znaczeniem.  

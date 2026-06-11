@@ -1,5 +1,5 @@
 ---
-source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
+source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -68,16 +68,55 @@ La vista Dettagli fornisce le informazioni associate al luogo selezionato e dipe
 
 ## Azioni Preferiti {#favorites-actions}
 
-### Aggiungi / Modifica Preferito {#add--edit-favorite}
-
 [Per aggiungere](../personal/favorites.md#manage-favorites) un nuovo punto preferito, fai clic destro sullo schermo. 
 
 Per modificare un preferito esistente, fai clic sul punto preferito direttamente sulla mappa o selezionalo da una cartella preferiti. Questo apre il pannello Dettagli, dove è disponibile l'azione Modifica. La modifica può anche essere avviata dal menu a tre punti (⋮) accanto al preferito nell'elenco Preferiti.
 
-L'interfaccia di modifica ti permette di modificare le proprietà principali del preferito, come il suo nome, icona, colore e descrizione. Il layout e i campi disponibili sono coerenti con l'esperienza di modifica nell'[app mobile OsmAnd](../personal/favorites.md#create), fornendo un flusso di lavoro familiare tra le piattaforme.
+Il pannello di modifica del preferito consente di modificare le proprietà principali di un preferito, inclusi nome, indirizzo, descrizione, cartella, icona, colore e forma. L'aspetto selezionato viene visualizzato in anteprima sia nel pannello di modifica che direttamente sulla mappa.
 
-![Aggiungi Preferiti Web OsmAnd](@site/static/img/web/web_favorites_add.png)
+### Modifica Preferiti {#edit-favorites}
 
+Il campo **Indirizzo** supporta il rilevamento automatico dell'indirizzo in base alla posizione selezionata sulla mappa. Il campo può apparire in diversi stati:
+
+- Ricerca in corso... — visualizzato mentre l'indirizzo viene determinato automaticamente.
+- Campo vuoto — visualizzato dopo aver cancellato l'indirizzo. In questo stato, il pulsante della posizione può essere utilizzato per rilevare nuovamente l'indirizzo automaticamente.
+- Campo compilato — visualizza l'indirizzo rilevato automaticamente o il testo inserito manualmente.
+
+Il campo indirizzo include anche azioni rapide per cancellare o ripristinare l'indirizzo rilevato.
+
+La sezione **Descrizione** consente di aggiungere note o informazioni aggiuntive al preferito. Selezionando Aggiungi note si apre l'editor della descrizione in un pannello secondario. Se è già stata aggiunta una descrizione, viene visualizzata un'anteprima breve nel pannello principale, limitata a due righe di testo. L'editor della descrizione supporta la formattazione del testo avanzata e conserva automaticamente le modifiche al ritorno al pannello precedente.
+
+I preferiti possono essere organizzati in cartelle per una gestione più semplice e un accesso rapido. Selezionando la voce **Cartella** si apre un pannello secondario in cui è possibile selezionare le cartelle disponibili. Per impostazione predefinita viene selezionata automaticamente la cartella utilizzata in precedenza. Ogni cartella mostra anche il numero di punti preferiti al suo interno.
+
+È possibile creare nuove cartelle direttamente dal pannello di selezione delle cartelle. Selezionando il pulsante Aggiungi cartella si apre una finestra di dialogo in cui è possibile inserire il nome della cartella e scegliere la sua posizione nell'elenco Preferiti.
+
+La finestra di dialogo include anche una sezione Avanzate, in cui è possibile configurare le impostazioni di aspetto predefinite per la cartella. Queste impostazioni includono il colore, l'icona e la forma predefiniti che verranno applicati automaticamente ai punti preferiti aggiunti a questa cartella.
+
+![Modifica cartella Web](@site/static/img/web/edit_folder.png)
+
+### Aspetto {#appearance}
+
+La sezione **Aspetto** consente di personalizzare la visualizzazione del preferito sulla mappa. Sono disponibili le seguenti proprietà: icona, colore, forma e icona. 
+
+Selezionando **Icona** si apre un pannello secondario con gruppi di icone categorizzati.
+
+- Le icone sono raggruppate per categorie.
+- Le icone utilizzate di recente vengono visualizzate per prime.
+- L'icona attualmente selezionata è evidenziata.
+- L'anteprima utilizza la forma e il colore selezionati.
+
+Selezionando **Colore** si apre il pannello della tavolozza dei colori.
+
+- La tavolozza contiene colori predefiniti e definiti dall'utente.
+- È possibile aggiungere colori personalizzati utilizzando il selettore dei colori.
+- I colori possono essere modificati, duplicati o rimossi tramite il menu contestuale.
+- I colori appena aggiunti vengono salvati nella tavolozza dell'utente e rimangono disponibili in seguito.
+
+L'opzione **Forma** definisce la forma di sfondo utilizzata per il marcatore del preferito.  Sono disponibili le seguenti forme: cerchio, quadrato e ottagono.
+
+L'anteprima dell'aspetto si aggiorna immediatamente sia nel pannello di modifica che sulla mappa quando si modifica l'icona, il colore o la forma.
+
+![Modifica aspetto Web](@site/static/img/web/edit_icon.png)
 
 ### Altre Azioni {#other-actions}
 

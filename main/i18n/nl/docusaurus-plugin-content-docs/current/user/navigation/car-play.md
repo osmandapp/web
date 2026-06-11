@@ -1,5 +1,5 @@
 ---
-source-hash: 4d3e2d619efdd8be498f68ed0956ca9843dda10b4ea213b162733a1788918145
+source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -84,7 +84,7 @@ Om de iOS-versie van de OsmAnd-app in *CarPlay* te gebruiken, moet u een [betaal
 6. Nadat u uw route hebt voltooid, kunt u *CarPlay* deactiveren door het apparaat los te koppelen van het multimediasysteem van uw voertuig.
 
 :::note
-Alle categorieën voor de selectie van het **eindpunt van de route**, *[Geschiedenis](#history), [POI's](#poi-categories), [Markers](#map-markers), [Zoeken](#search), [Favorieten](#favorites), en [Tracks](#tracks)* mogen niet meer lijstitems bevatten dan uw multimediasysteem van het voertuig toestaat. Doorgaans zijn lijsten in de meeste voertuigen dynamisch beperkt tot 12 of 24 items. Dit betekent dat de lijst in *CarPlay* mogelijk niet volledig is. Het totale aantal items en het werkelijke aantal weergegeven items wordt aangegeven onder de mapnaam.
+Alle categorieën voor de selectie van het **eindpunt van de route**, *[Geschiedenis](#history), [POI's](#poi-categories), [Markers](#map-markers), [Zoeken](#search), [Favorieten](#favorites), en [Tracks](#tracks)* mogen niet meer lijstitems bevatten dan uw multimediasysteem van het voertuig toestaat. Doorgaans zijn lijsten in de meeste voertuigen dynamisch beperkt tot 12 of 24 items. Dit betekent dat de lijst in *CarPlay* mogelijk niet volledig zijn. Het totale aantal items en het werkelijke aantal weergegeven items wordt aangegeven onder de mapnaam.
 :::  
 
 
@@ -225,8 +225,9 @@ Naast de basisfuncties van de OsmAnd-app in *CarPlay* die handige navigatie in u
 
 Spraakbegeleiding voor *CarPlay* is een van de meest nuttige navigatiefuncties van OsmAnd, die real-time begeleiding biedt en de bestuurder in staat stelt om gefocust te blijven op de weg. Gesproken aanwijzingen geven duidelijk bochten, richtingen en andere navigatie-instructies aan, wat zorgt voor een veiliger en comfortabeler gebruik van het navigatiesysteem.  
 
-Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Voor aanbevolen instellingen voor *CarPlay*, ga naar het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md).  
+Wanneer gesproken aanwijzingen worden afgespeeld, past OsmAnd de achtergrondaudio aan afhankelijk van het type. Gesproken audio-inhoud, zoals podcasts en audioboeken, kan automatisch worden gepauzeerd tijdens navigatie-instructies. Muziekafspeling gaat door met een lager volume. De optie *Gesproken audio pauzeren* stelt u in staat dit gedrag te beheren.
 
+Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Voor aanbevolen instellingen voor *CarPlay*, ga naar het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md).  
 
 
 ### Schermwaarschuwingswidget {#screen-alert-widget}
@@ -298,6 +299,17 @@ U kunt de meldingsinstellingen voor de OsmAnd-app wijzigen in de systeeminstelli
 - *Vorige instelling onthouden*
 
 U kunt het aankondigen van berichten ook rechtstreeks in *CarPlay* in- of uitschakelen. Lees hoe meldingsbeheer is geïmplementeerd op [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) en [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
+
+### Kaartthema {#map-theme}
+
+![Kaartthema](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+
+CarPlay stelt u in staat de kaartweergave te configureren voor betere zichtbaarheid onder verschillende rijomstandigheden. U kunt kiezen uit de volgende weergavemodi:
+
+- *Automatisch*. De kaartweergave verandert automatisch afhankelijk van de systeeminstellingen, het tijdstip van de dag of de voertuigomstandigheden.
+- *Altijd donker*. CarPlay gebruikt het donkere kaartthema.
+
+Wanneer de optie *Altijd donkere kaarten weergeven* is ingeschakeld, blijft de kaart altijd in de donkere modus, ongeacht de status van de koplampen van het voertuig of het tijdstip van de dag.
 
 ### Locatiepositie in CarPlay {#location-position-in-carplay}
 

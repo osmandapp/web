@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -97,7 +97,7 @@ Toccando una [traccia GPX](../map/tracks/index.md) sulla mappa si apre il [menu 
 
 ![Piste da sci e percorsi MTB](@site/static/img/map/ski_mtb.png)  ![Piste da sci e percorsi MTB](@site/static/img/map/ski_mtb_2.png)
 
-È possibile toccare elementi della mappa come **piste da sci**, **percorsi per mountain bike (MTB)** e **sentieri per moto da cross** per aprire il loro menu contestuale con informazioni dettagliate. Per maggiori informazioni, consultare l'articolo [Percorsi](../map/routes.md#actions-with-routes).
+È possibile toccare elementi della mappa come **piste da sci**, **percorsi per mountain bike (MTB)** e **sentieri per moto da cross** per aprire il loro menu contestuale con informazioni dettagliate. Per maggiori informazioni, consultare l'articolo [Percorsi](../map/routes/index.md#actions-with-routes).
 
 
 
@@ -378,7 +378,7 @@ Toccando una foto si apre la vista **Galleria**, dove è possibile:
 
 > *Su iOS, un tocco lungo su un'immagine apre un menu contestuale con azioni rapide.*
 
-Per saperne di più, vedere: [Foto online](https://osmand.net/docs/user/map/popular_places#online-photos) e [Vista Galleria](https://osmand.net/docs/user/map/popular_places#gallery)
+Per saperne di più, vedere: [Foto online](https://osmand.net/docs/user/map/popular_places#online-photos) and [Vista Galleria](https://osmand.net/docs/user/map/popular_places#gallery)
 
 
 ### Immagini a livello stradale {#street-level-imagery}
@@ -522,7 +522,7 @@ Opzioni disponibili per condividere la posizione:
 - ***Invia***. Invia testo tramite le app disponibili sul dispositivo. Include tutte le informazioni sulla posizione: il nome della mia posizione o il nome del POI selezionato, l'indirizzo, le coordinate e la geolocalizzazione come link.
 - ***Copia link***. Copia un link alla posizione selezionata negli appunti.  
 Esempio: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
-- ***Copia***. Copia tutte le informazioni sulla posizione (nome della mia posizione o nome del POI selezionato, indirizzo, coordinate e geolocalizzazione come link) negli appunti.  
+- ***Copia***. Copia tutte le informazioni sulla posizione (nome della mia posizione o nome del POI selezionato, indirizzo, coordinate e la geolocalizzazione come link) negli appunti.  
 - ***Copia indirizzo***. Copia solo le informazioni sull'indirizzo negli appunti.
 - ***Copia nome POI***. Copia solo il nome del POI o l'indirizzo se non c'è un nome negli appunti.
 - ***Copia coordinate***. Copia solo le informazioni sulle coordinate negli appunti.

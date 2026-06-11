@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -36,7 +36,7 @@ Um auf OsmAnd Web-Funktionen zugreifen zu können, müssen Sie ein Konto erstell
 - Wählen Sie **Neues Konto erstellen**. Das Dialogfeld „Neues Konto erstellen“ öffnet sich.
 - Geben Sie im Feld **E-Mail** die E-Mail-Adresse ein, die Sie für Ihr OsmAnd-Konto verwenden möchten, und klicken Sie auf **Weiter**.
 - Ein Verifizierungscode wird an diese E-Mail-Adresse gesendet. Überprüfen Sie Ihren Posteingang (und den Spam-Ordner, falls nötig).
-- Im nächsten Dialog geben Sie den Verifizierungscode ein und klicken auf **Weiter**, um Ihre E-Mail zu bestätigen. Wenn Sie den Code nicht erhalten haben, verwenden Sie den Link **Ich habe den Verifizierungscode nicht erhalten** und folgen Sie den Anweisungen.
+- Im nächsten Dialog geben Sie den Verifizierungscode ein und klicken Sie auf **Weiter**, um Ihre E-Mail zu bestätigen. Wenn Sie den Code nicht erhalten haben, verwenden Sie den Link **Ich habe den Verifizierungscode nicht erhalten** und folgen Sie den Anweisungen.
 
 Nach der Verifizierung des Codes wird Ihr Web-Konto erstellt und Sie werden automatisch angemeldet.
 
@@ -118,6 +118,24 @@ Die Option **Änderungen** zeigt eine chronologische Liste der in Ihrem **OsmAnd
 Die Option **Papierkorb** enthält Dateien, die aus **OsmAnd Cloud** gelöscht wurden. Die Liste ist ebenfalls nach Monaten gruppiert und zeigt, wann jede Datei entfernt wurde und von welchem Gerät. Verwenden Sie das Dreipunkt-Menü neben einer Datei, um eine Kopie *Herunterzuladen*, *Aus dem Papierkorb wiederherstellen* (die Datei zu **OsmAnd Cloud** zurückzuführen, damit sie wieder in Ihren Daten verfügbar wird) oder *Sofort löschen*, um sie dauerhaft zu entfernen. Dies hilft, versehentlichen Datenverlust zu verhindern, während Sie Cloud-Speicher freigeben können, wenn Sie sicher sind, dass eine Datei nicht mehr benötigt wird. Sie können auch alle gelöschten Elemente auf einmal löschen, indem Sie das Papierkorb-Symbol im Header des Papierkorb-Panels klicken. Dies öffnet den Dialog **Papierkorb leeren**, in dem Sie die Löschung bestätigen, um alle Dateien aus dem Papierkorb dauerhaft zu entfernen.
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+### Verbundene Apps {#connected-apps}
+
+Der Abschnitt **Verbundene Apps** ermöglicht es Ihnen, externe Dienste mit Ihrem OsmAnd-Konto zu verknüpfen. Derzeit unterstützt er die Integration mit [Garmin Connect™](https://connect.garmin.com/app/), die eine automatische Synchronisierung von Garmin-Aktivitäten ermöglicht. Um ihn zu öffnen, gehen Sie zu: *OsmAnd Web Map → Konto → Verbundene Apps*.
+
+Die Garmin Connect-Integration ist nur für [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) Benutzer verfügbar. Wenn Sie kein aktives Pro-Abonnement haben, öffnet die Auswahl des Garmin Connect-Elements die Preisseite.
+
+Um Ihr Garmin Connect™-Konto zu verbinden, klicken Sie auf **Verbinden**. Sie werden zur Garmin-Autorisierungsseite weitergeleitet, wo Sie sich anmelden und den Zugriff auf Ihre Garmin Connect™-Daten gewähren müssen. Während der Autorisierung können Sie die Synchronisierung kürzlicher Aktivitäten aktivieren, um Daten aus den letzten 30 Tagen zu importieren. Aktivitäten, die älter als 30 Tage sind, können nicht automatisch importiert werden.
+
+Nach der Verbindung erstellt OsmAnd einen dedizierten Garmin Connect-Ordner im [Tracks-Bereich](./web-tracks.md) und beginnt automatisch mit dem Import von Aktivitäten. Neue in Garmin Connect™ aufgezeichnete Aktivitäten werden diesem Ordner ohne manuellen Import hinzugefügt. Der Ordner wird auch mit OsmAnd-Mobil-Apps synchronisiert, wenn [OsmAnd Cloud](../personal/osmand-cloud.md) aktiviert ist.
+
+Das Garmin Connect-Menü enthält zwei Abschnitte: **Meine Daten** und **Einstellungen**. In Meine Daten können Sie die Anzahl der synchronisierten Aktivitäten anzeigen, die zuletzt abgerufene Aktivität öffnen oder die Garmin Connect™-Aktivitätenseite über die Schaltfläche **Auf Garmin Connect™ anzeigen** öffnen. In den Einstellungen können Sie festlegen, welche Aktivitätstypen mit der Option „Zu synchronisierende Aktivitäten“ synchronisiert werden sollen.
+
+Aktivitäten sind in Kategorien wie Radfahren, Gehen & Laufen, Wassersport und Winter- & andere Sportarten gruppiert. Einzelne Aktivitätstypen können aktiviert oder deaktiviert werden. Standardmäßig sind nach der Verbindung alle unterstützten Aktivitätstypen ausgewählt.
+
+Um Ihr Garmin Connect™-Konto zu trennen, gehen Sie zu *Einstellungen → Trennen* und bestätigen Sie die Aktion. Zuvor importierte Tracks bleiben im Garmin Connect-Ordner, aber neue Aktivitäten werden nicht mehr synchronisiert.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Fehlerbehebung {#troubleshooting}
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Einführung](./web-overview.md)
 - [Plattformübergreifende Käufe](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Tracks](./web-tracks.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Planear Rota
 title: Planear Rota no Website
@@ -138,9 +138,11 @@ O Painel de Percurso mostra a lista de pontos de rota usados para construir o pe
 
 O Painel de Pontos é usado para visualizar e gerir pontos de passagem para o percurso selecionado. Os pontos de passagem podem ser adicionados a partir do menu de contexto do mapa — clique com o botão direito no mapa e escolha a opção para **Adicionar ponto de passagem**, depois preencha os detalhes do ponto de passagem (como nome, ícone e cor) e guarde-o.
 
+A edição de pontos de passagem utiliza a mesma interface que a [edição de Favoritos](../web/web-favorites.md#edit-favorites). Pode modificar as propriedades dos pontos de passagem, como nome, endereço, descrição, ícone, cor e forma, utilizando o painel de edição unificado. A aparência selecionada é pré-visualizada tanto no painel de edição como diretamente no mapa.
+
 Na lista de Pontos de Passagem, pode controlar se os pontos de passagem são mostrados no mapa e remover pontos de passagem individuais quando necessário. Para remover todos os pontos de passagem do percurso de uma só vez, use *Limpar todos os pontos de passagem*.
 
-![OsmAnd Web Painel de Pontos de Passagem](@site/static/img/web/points_panel.png)
+![OsmAnd Web Painel de Pontos de Passagem](@site/static/img/web/points_panel_new.png)
 
 
 ## Artigos Relacionados {#related-articles}

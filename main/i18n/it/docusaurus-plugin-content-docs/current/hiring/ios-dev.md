@@ -1,5 +1,5 @@
 ---
-source-hash: ff51c38b0c680f96f4e769ba5c90a79ee59427348b6dce6d5877cd5e30b74441
+source-hash: 6a5a97de97f4b209880efb8ea14c50e55c5e5a9f100fa063156a3e3e842373d7
 sidebar_position: 3
 title: Sviluppatore iOS
 ---
@@ -11,42 +11,37 @@ Siamo alla ricerca di uno sviluppatore esperto ed entusiasta in grado di portare
 
 ### Requisiti {#requirements}
 - 3+ anni di esperienza nello sviluppo iOS
-- Linguaggi di programmazione: Objective-C, C++, Swift
-- Framework: UIKit, CoreLocation, CoreData, Cocoa Touch, CocoaPods, Location Kit
+- Linguaggi di programmazione: Objective-C, Swift
+- Framework: UIKit, Foundation, CoreLocation, Core Data, Cocoa Touch, CocoaPods, Location Kit
 - IDE: Xcode
 - Servizi Web: REST, JSON, XML
-- Threading: GCD, NSOperations
-- Controllo versione: Git/Github
+- Threading: GCD, NSOperation
+- Controllo versione: Git/GitHub
 - Database: SQLite, CoreData
 - Inglese tecnico (Intermedio+)
 
 ### Graditi {#nice-to-have}
-- Linguaggi di programmazione: Java, JavaScript
-- Framework: QT, JNI, GDAL
+- Linguaggi di programmazione: Kotlin, C++
+- Framework e strumenti: Qt, JNI, GDAL, Gradle, Swig
 - IDE: Android Studio
-- Strumenti: Gradle, Swig
-- Metodologia Agile/Scrum
-- Qualsiasi esperienza GIS
-- OpenStreetMap
+- Familiarità con Agile / Scrum
+- Esperienza con GIS, OpenStreetMap
 
-## Offerta aziendale {#company-offers}
+## Cosa offriamo {#what-we-offer}
 
 ### Cosa puoi aspettarti da noi {#what-you-can-expect-from-us}
 - Lavorare in un settore entusiasmante e in crescita
-- Un'opportunità per combinare lavoro e hobby (se sei una persona che viaggia)
+- Un'opportunità per combinare lavoro e hobby (se sei una persona appassionata di viaggi)
 - Imparare facendo: lavorerai con esperti del settore disposti a condividere le loro conoscenze ed esperienze
-- Migliorare le tue competenze partecipando a programmi di formazione e mentoring
-- Avanzare nella tua carriera scegliendo tra diversi percorsi di carriera (tecnico, gestionale)
-- Ottima atmosfera e ambiente di supporto
-- Lavorare in un'atmosfera amichevole e rilassata
+- Opportunità di migliorare le tue competenze partecipando a programmi di formazione e mentoring
+- Un ambiente di lavoro amichevole e di supporto
 
 ### Cosa offriamo {#what-do-we-offer}
-- Sviluppare una delle migliori applicazioni di mappe offline 3D
+- L'opportunità di sviluppare una delle migliori applicazioni di mappe offline 3D
 - Stipendio competitivo in base alle tue competenze e prestazioni
 - Orario di lavoro flessibile
-- 15 giorni di ferie pagate
+- 25 giorni di ferie pagate
 - 15 giorni di malattia pagata
-- Lavoro da remoto (Uffici disponibili: Amstelveen - Paesi Bassi, Cracovia - Polonia, Kiev - Ucraina)
 - Garanzia di equilibrio tra vita professionale e privata
 - Lavoro stabile in un'azienda in forte sviluppo
-- Sviluppo completamente open source (https://github.com/osmandapp/)
+- Sviluppo completamente open source: https://github.com/osmandapp/

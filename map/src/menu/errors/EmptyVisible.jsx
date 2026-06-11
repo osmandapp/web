@@ -6,7 +6,7 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';
 import LoginContext from '../../context/LoginContext';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
+import { MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 
 export default function EmptyVisible({ id = null }) {
     const ltx = useContext(LoginContext);
@@ -29,7 +29,7 @@ export default function EmptyVisible({ id = null }) {
         }
 
         ctx.setOpenMenu({ id: MENU_IDS.tracks });
-        navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + location.hash);
+        navigate(MAIN_URL_WITH_SLASH + TRACKS_URL + liveHash());
     }
 
     return (

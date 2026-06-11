@@ -1,5 +1,5 @@
 ---
-source-hash: 3252954ff365b510f9e08812eb66760b4b34eb801a0b9c749eb78fe02dc5aa20
+source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
 sidebar_position: 16
 title: Topografie
 ---
@@ -23,7 +23,7 @@ Das Topografie-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md
 :::
 
 Topografie ist eine wichtige Funktion der Kartografie, die Informationen zur visuellen Beurteilung des Geländereliefs liefert.
-Topografische Informationen wie [Höhenlinien](#contour-lines), [Gelände](#terrain) (*Schummerung* und *Neigung*), und [3D-Relief](#3d-relief) helfen bei der visuellen Einschätzung der Geländebeschaffenheit, indem sie Höhe, Relief, Extreme, Steilheit oder Punkte gleicher Höhe anzeigen.
+Topografische Informationen wie [Höhenlinien](#contour-lines), [Gelände](#terrain) (*Schummerung* und *Neigung*) und [3D-Relief](#3d-relief) helfen bei der visuellen Einschätzung der Geländebeschaffenheit, indem sie Höhe, Relief, Extreme, Steilheit oder Punkte gleicher Höhe anzeigen.
 
 Jede von diesem Plugin bereitgestellte Funktion ist eine unabhängige Kartenebene, die, wenn sie aktiviert ist, je nach den [Einstellungen](../map/raster-maps.md#overlay) über oder unter der Hauptkartenquelle angezeigt werden kann.  
 

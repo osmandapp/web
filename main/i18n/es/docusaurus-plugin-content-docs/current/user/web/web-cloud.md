@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-Iniciar sesión con una cuenta de OsmAnd convierte el [Planificador Web de OsmAnd](https://osmand.net/map) de un simple visor de mapas en su espacio de trabajo personal. La misma cuenta que utiliza en la aplicación móvil conecta el sitio web con sus datos y compras de OsmAnd Cloud, por lo que puede acceder a su contenido guardado y sus suscripciones en un solo lugar en la web.
+Iniciar sesión con una cuenta de OsmAnd convierte el [Planificador Web de OsmAnd](https://osmand.net/map) de un simple visor de mapas en su espacio de trabajo personal. La misma cuenta que utiliza en la aplicación móvil conecta el sitio web con sus datos y compras de OsmAnd Cloud, por lo que puede acceder a su contenido guardado y suscripciones en un solo lugar en la web.
 
 
 ## Autorización {#authorization}
@@ -119,6 +119,24 @@ La opción **Papelera** contiene archivos que se eliminaron de OsmAnd Cloud. La 
 
 ![Nube Web](@site/static/img/web/web_changes.png) ![Nube Web](@site/static/img/web/web_trash.png)
 
+### Aplicaciones conectadas {#connected-apps}
+
+La sección **Aplicaciones conectadas** permite vincular servicios externos a su cuenta de OsmAnd. Actualmente, admite la integración con [Garmin Connect™](https://connect.garmin.com/app/), que permite la sincronización automática de actividades de Garmin. Para abrirla, vaya a: *Mapa Web de OsmAnd → Cuenta → Aplicaciones conectadas*.
+
+La integración con Garmin Connect solo está disponible para usuarios de [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Si no tiene una suscripción Pro activa, al seleccionar el elemento Garmin Connect se abre la página de precios.
+
+Para conectar su cuenta de Garmin Connect™, haga clic en **Conectar**. Será redirigido a la página de autorización de Garmin, donde deberá iniciar sesión y conceder acceso a sus datos de Garmin Connect™. Durante la autorización, puede habilitar la sincronización de actividades recientes para importar datos de los últimos 30 días. Las actividades anteriores a 30 días no se pueden importar automáticamente.
+
+Después de la conexión, OsmAnd crea una carpeta dedicada de Garmin Connect en la [sección Pistas](./web-tracks.md) y comienza a importar actividades automáticamente. Las nuevas actividades registradas en Garmin Connect™ se añaden a esta carpeta sin importación manual. La carpeta también se sincroniza con las aplicaciones móviles de OsmAnd cuando [OsmAnd Cloud](../personal/osmand-cloud.md) está habilitado.
+
+El menú de Garmin Connect contiene dos secciones: **Mis datos** y **Configuración**. En Mis datos, puede ver el número de actividades sincronizadas, abrir la última actividad recuperada o abrir la página de Actividades de Garmin Connect™ mediante el botón **Ver en Garmin Connect™**. En Configuración, puede configurar qué tipos de actividad deben sincronizarse mediante la opción Actividades para sincronizar.
+
+Las actividades se agrupan en categorías como Ciclismo, Caminar y correr, Deportes acuáticos e Invierno y otros deportes. Los tipos de actividad individuales se pueden habilitar o deshabilitar. De forma predeterminada, todos los tipos de actividad compatibles se seleccionan después de la conexión.
+
+Para desconectar su cuenta de Garmin Connect™, vaya a *Configuración → Desconectar* y confirme la acción. Las pistas importadas previamente permanecen en la carpeta de Garmin Connect, pero las nuevas actividades ya no se sincronizarán.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
+
 
 ## Solución de problemas {#troubleshooting}
 
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Introducción](./web-overview.md)
 - [Compras multiplataforma](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Pistas](./web-tracks.md)

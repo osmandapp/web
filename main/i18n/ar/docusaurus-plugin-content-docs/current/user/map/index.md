@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ sidebar_position: 1
 
 النقل العام هو طبقة إضافية تسمح لك بعرض مسارات النقل ومحطاته على الخريطة، والتحقق من المعلومات التفصيلية عنها والتنقل.
 
-## [المسارات](./routes.md) {#routes}
+## [المسارات](./routes/index.md) {#routes}
 
 يحتوي OsmAnd على العديد من الميزات القوية لعرض المسارات المختلفة على الخريطة.
+
+### [أنواع المسارات](./routes/types-of-routes.md) {#type-of-routes}
+
+جميع المعلومات حول أنواع المسارات المتاحة في OsmAnd.

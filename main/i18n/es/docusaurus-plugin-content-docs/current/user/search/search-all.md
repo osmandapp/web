@@ -1,5 +1,5 @@
 ---
-source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
+source-hash: bbea45d5dce16ad75da89a2972868fa960155b2b494751a1e9a11e82ed8cda79
 sidebar_position: 1
 title:  Buscar todo
 ---
@@ -77,7 +77,7 @@ Información importante:
 - Búsqueda por tracks.
 - Búsqueda por locales comerciales y nombres de marcas.
 - Búsqueda en línea (Nominatim).
-- Búsqueda de URL (Google y OsmAnd).
+- Búsqueda de URL (Google y OsmAnd). OsmAnd puede reconocer muchos enlaces compartidos de Google Maps, incluidos los enlaces cortos de `maps.app.goo.gl`.
 - Historial de búsqueda.
 
 <!--

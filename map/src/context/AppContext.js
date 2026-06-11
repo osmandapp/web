@@ -22,7 +22,8 @@ import {
     SEARCH_RESULTS_KEY,
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
-import { useInitialFilesLoad, loadSmartFolders, applyRefreshedInfoFilesToGpx } from '../util/hooks/useInitialFilesLoad';
+import { useInitialFilesLoad, applyRefreshedInfoFilesToGpx } from '../util/hooks/useInitialFilesLoad';
+import { loadSmartFolders } from '../manager/SmartFoldersManager';
 import supportedLanguages from '../resources/translations/supportedLanguages.json';
 import { normalizeLang } from '../util/lang';
 

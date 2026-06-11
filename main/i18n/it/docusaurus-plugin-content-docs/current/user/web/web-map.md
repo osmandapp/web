@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Mappa
 title: Mappa Globale sul Sito Web
@@ -40,9 +40,13 @@ La mappa web di OsmAnd è una mappa globale basata sui dati di [OpenStreetMap (O
 
 Per aprirlo, fare clic con il pulsante destro del mouse in un punto qualsiasi della mappa. Questo menu include le seguenti azioni:
 
+<!--
+- **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
+-->
+
 - **Apri meteo** – Accedi al [menu Meteo](../web/web-weather.md) per visualizzare i dettagli meteorologici.
 - **Crea nuovo percorso** – Apre lo strumento [*Pianifica un percorso*](../web/web-navigation.md) con la posizione selezionata come punto di partenza o di destinazione.
-- **Aggiungi Preferito** – Consente di creare e salvare un [preferito](../web/web-favorites.md#add--edit-favorite) in qualsiasi punto della mappa per un facile accesso.
+- **Aggiungi Preferito** – Consente di creare e salvare un [preferito](../web/web-favorites.md#favorites-actions) in qualsiasi punto della mappa per un facile accesso.
 - **Indicazioni da** – Imposta il punto selezionato come [luogo di partenza](../web/web-navigation.md#start-a-route) per la navigazione.
 - **Indicazioni per** – Imposta il punto selezionato come [destinazione per la navigazione](../web/web-navigation.md#start-a-route).
 - **Copia coordinate** – Copia le coordinate del punto selezionato per uso esterno.
@@ -299,3 +303,4 @@ A seconda dei parametri specificati, le stringhe URL possono contenere:
 - [Tracce](./web-tracks.md)
 - [Preferiti](./web-favorites.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+```

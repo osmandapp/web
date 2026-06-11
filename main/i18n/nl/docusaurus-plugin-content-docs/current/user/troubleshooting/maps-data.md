@@ -1,5 +1,5 @@
 ---
-source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
+source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
 sidebar_position: 4
 title:  Kaarten & Gegevens
 ---
@@ -22,9 +22,13 @@ OsmAnd is ontworpen om OpenStreetMap (OSM) te ondersteunen en geeft zoveel mogel
 
 ### Waarom Google Maps-koppelingen mogelijk niet in OsmAnd openen? {#why-google-maps-links-may-not-open-in-osmand}
 
-Google Maps-koppelingen zoals `https://maps.app.goo.gl/...` openen mogelijk niet met één tik in OsmAnd vanuit SMS of chatapps. Zelfs als OsmAnd deze koppelingen kan parseren, handhaaft Android 12+ Geverifieerde App-koppelingen: kern Google-domeinen (bijvoorbeeld `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) zijn gereserveerd voor Google-systeemservices, waardoor apps van derden ze niet automatisch kunnen onderscheppen. Als gevolg hiervan opent de koppeling meestal in een Google-app/service.
+Google Maps-koppelingen zoals `https://maps.app.goo.gl/...` openen mogelijk niet met één tik in OsmAnd vanuit SMS of chatapps. Hoewel OsmAnd veel Google Maps-koppelingen kan herkennen en openen, handhaaft Android 12+ Geverifieerde App-koppelingen: kern Google-domeinen (bijvoorbeeld `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) zijn gereserveerd voor Google-systeemservices, waardoor apps van derden ze niet automatisch kunnen onderscheppen. Als gevolg hiervan opent de koppeling meestal in een Google-app/service.
+
+OsmAnd ondersteunt veel gedeelde Google Maps-koppelingen, inclusief sommige korte koppelingen en gedeelde locatie-URL's. U kunt ook een Google Maps-koppeling rechtstreeks in OsmAnd Zoeken plakken.
 
 **Workaround:** *lang op het bericht tikken → Delen → OsmAnd selecteren*. Dit stuurt de koppeling naar OsmAnd, waar deze kan worden geparset en geopend als een locatie.
+
+Afhankelijk van de informatie die beschikbaar is in de gedeelde Google Maps-URL, kan de geopende locatie bij benadering zijn.
 
 ### Kaarten laden traag op Android 11, 12 (SD-kaart) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -63,7 +67,7 @@ Android is strenger geworden met opslagrechten, waardoor de toegang tot app-spec
 OsmAnd heeft echter niet de *Toegang tot alle bestanden*-machtiging (vanwege de beperkingen van Google), wat de keuze van mappen beperkt. Een oplossing is het gebruik van de "Media"-opslagmap, waaraan Android doorgaans bredere lees-/schrijftoegang verleent. Om dit te doen:
 
 - Ga naar *OsmAnd’s Instellingen → OsmAnd-instellingen → Gegevensopslagmap* en bekijk de beschikbare opslagruimtes. Gebruik de indicator voor vrije ruimte om de doelopslag te identificeren, vaak aangeduid als *Externe opslag 2*.
-- Noteer het huidige mappad, dat eruit kan zien als */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
+- Noteer het huidige mappad, dat eruit kan kijken als */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
 - Schakel over naar de optie *Handmatig opgegeven* en wijzig het pad naar een voor media toegankelijke map. Op veel systemen werkt het wijzigen van */Android/data/* naar */media/* (bijv. ***/storage/xxxx-xxxx/media***). Sommige systemen vereisen mogelijk andere padaanpassingen.
 
 Een correct pad zal OsmAnd niet vragen om schrijfrechtenfouten. Voordat u deze wijzigingen aanbrengt, moet u ervoor zorgen dat OsmAnd de juiste opslagrechten heeft, inclusief de "Media"-opslagmachtiging, onder de **Apps**-instellingen van Android. In nieuwere Android-versies kunnen deze machtigingen zich in geavanceerde of verborgen menu's bevinden.
@@ -175,7 +179,7 @@ Als u probeert een locatie te zoeken met de structuur *Stad → Straat → Huisn
 
 - **Probleem met Nominatim**. Het huis kan aanwezig zijn in OpenStreetMap, maar niet worden gevonden via Nominatim (de zoekmachine die door OpenStreetMap wordt gebruikt). U kunt meer leren over hoe u adresgerelateerde problemen kunt oplossen [hier](https://wiki.openstreetmap.org/wiki/Addresses).
 
-- **Mogelijk probleem in OsmAnd**. Als het huis aanwezig is in Nominatim maar nog steeds niet wordt gevonden in OsmAnd, kan het probleem specifiek zijn voor OsmAnd. U kunt bijdragen aan het oplossen hiervan door verder onderzoek te doen. Meer details zijn te vinden in dit [technische artikel](../../technical/algorithms/trace-address-search-issues.md).
+- **Mogelijk probleem in OsmAnd**. Als het huis aanwezig is in Nominatim maar nog steeds niet wordt gevonden in OsmAnd, kan het probleem specifiek voor OsmAnd zijn. U kunt bijdragen aan het oplossen hiervan door verder onderzoek te doen. Meer details zijn te vinden in dit [technische artikel](../../technical/algorithms/trace-address-search-issues.md).
 
 
 ## Tracks en Punten {#tracks-and-points}

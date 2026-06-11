@@ -20,7 +20,7 @@ import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import SortFilesButton from '../components/buttons/SortFilesButton';
 import LoginContext from '../../context/LoginContext';
-import { SHARE_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
@@ -51,7 +51,7 @@ export default function GroupHeader({
 
     const [openAddFolderDialog, setOpenAddFolderDialog] = useState(false);
 
-    const hiddenBtn = smartf?.type === SHARE_TYPE;
+    const hiddenBtn = smartf?.type === SHARE_TYPE || trackGroup?.type === SMART_TYPE;
 
     useEffect(() => {
         if (favoriteGroup && !ctx.selectedSort) {

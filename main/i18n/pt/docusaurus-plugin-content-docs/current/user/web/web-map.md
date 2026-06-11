@@ -1,5 +1,5 @@
 ---
-source-hash: 4a91f182c5d862c87439dd14c030ab96af99706443cb10f3292a61c1f952f35a
+source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
 sidebar_position: 3
 sidebar_label: Map
 title: Global Map on the Website
@@ -46,7 +46,7 @@ Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu i
 
 - **Abrir clima** – Acesse o [menu Clima](../web/web-weather.md) para ver os detalhes do clima.
 - **Criar nova rota** – Abre a ferramenta [*Planejar uma rota*](../web/web-navigation.md) com o local selecionado como ponto de partida ou destino.
-- **Adicionar Favorito** –  Permite criar e salvar um [favorito](../web/web-favorites.md#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
+- **Adicionar Favorito** –  Permite criar e salvar um [favorito](../web/web-favorites.md#favorites-actions) em qualquer ponto do mapa para fácil acesso.
 - **Rotas de** –  Define o ponto selecionado como o [local de partida](../web/web-navigation.md#start-a-route) para navegação.
 - **Rotas para** – Define o ponto selecionado como o [destino para navegação](../web/web-navigation.md#start-a-route).
 - **Copiar coordenadas** – Copia as coordenadas do ponto selecionado para uso externo.

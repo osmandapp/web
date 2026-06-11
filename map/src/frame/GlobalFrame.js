@@ -18,6 +18,7 @@ import {
     POI_URL,
     STOP_URL,
     isTravelPath,
+    liveHash,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import GlobalAlert from './components/GlobalAlert';
@@ -35,7 +36,6 @@ import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
-import { SMART_TYPE } from '../menu/share/shareConstants';
 
 const ENCODED_COMMA = '%2C';
 const ENCODED_COLON = '%3A';
@@ -115,7 +115,7 @@ const GlobalFrame = () => {
         const normalizedSearch = createUrlParams(params);
 
         if (normalizedSearch !== currentSearch) {
-            const newUrl = location.pathname + normalizedSearch + (location.hash || '');
+            const newUrl = location.pathname + normalizedSearch + liveHash();
             window.history.replaceState(window.history.state, '', newUrl);
         }
     }, [location.search]);
@@ -140,9 +140,9 @@ const GlobalFrame = () => {
             }
             if (location.pathname !== MAIN_URL_WITH_SLASH) {
                 if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
-                    navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
+                    navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + liveHash());
                 } else {
-                    navigate(MAIN_URL_WITH_SLASH + location.hash);
+                    navigate(MAIN_URL_WITH_SLASH + liveHash());
                 }
             }
         }
@@ -246,6 +246,7 @@ const GlobalFrame = () => {
     }, [location.pathname, location.search]);
 
     function mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, shared) {
+        savedVisible = savedVisible ?? { old: [], new: [], open: [] };
         const filterCondition = (name) =>
             shared ? !name.startsWith(VISIBLE_SHARE_MARKER) : name.startsWith(VISIBLE_SHARE_MARKER);
 
@@ -286,6 +287,8 @@ const GlobalFrame = () => {
     }
 
     const processTracks = (files, savedVisible, prefix = '') => {
+        // ensure savedVisible is never null/undefined (e.g. first run with empty localStorage)
+        savedVisible = savedVisible ?? { old: [], new: [], open: [] };
         // filter out empty values
         Object.keys(savedVisible).forEach((key) => {
             savedVisible[key] = (savedVisible[key] || []).filter(Boolean);

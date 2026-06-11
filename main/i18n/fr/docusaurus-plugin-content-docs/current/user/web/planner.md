@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Planifier un itinéraire
 title: Planifier un itinéraire sur le site web
@@ -29,7 +29,7 @@ Le planificateur d'itinéraires web d'OsmAnd vous permet de créer des itinérai
 <!--
 ## Itinéraire de navigation {#navigation-route}
 
-Pour créer un itinéraire de navigation, suivez ces étapes :
+To create a navigation route, follow these steps :
 
 - **Clic droit** sur la carte pour ajouter des points de cheminement :
 
@@ -37,24 +37,24 @@ Pour créer un itinéraire de navigation, suivez ces étapes :
   - *Naviguer vers*. Définir la destination.
   - *Naviguer via*. Ajouter des points intermédiaires si nécessaire.
 
-- Après avoir défini les points de départ et d'arrivée, l'itinéraire s'affichera sur la carte.
+- After setting the start and end points, the route will be displayed on the map.
 
-- Dans le bloc **Itinéraire** :
+- In the **Route** block :
 
-  - Déplacez les points de départ et d'arrivée si nécessaire.
-  - Modifiez les points de cheminement et choisissez le type d'itinéraire souhaité (par exemple, voiture, vélo, marche).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-  ![Créer un itinéraire web OsmAnd](@site/static/img/web/navigation.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Sélectionnez le **Profil d'itinéraire** approprié pour les différentes options de navigation.
+- Select the appropriate **Route Profile** for different navigation options.
 
-  ![Créer un itinéraire web OsmAnd](@site/static/img/web/profile_type.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Cliquez sur les cercles orange le long de l'itinéraire pour afficher les instructions de navigation détaillées.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-  ![Créer un itinéraire web OsmAnd](@site/static/img/web/nav_instr.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- Pour partager l'itinéraire, copiez l'URL. Exemple : [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example : [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 -->
 
@@ -65,7 +65,7 @@ Il existe deux façons de démarrer un nouvel itinéraire dans Planifier un itin
 
 Une fois l'itinéraire créé, ajoutez des points directement sur la carte. Chaque clic place le point suivant, et le planificateur construit l'itinéraire entre les points.
 
-![Créer un nouvel itinéraire web OsmAnd](@site/static/img/web/create_new_route_1.png)
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
 
 ### Importer une trace {#import-track}
 
@@ -77,7 +77,7 @@ Tous les itinéraires et traces que vous créez ou importez dans Planifier un it
 
 Chaque élément de la liste dispose d'un interrupteur qui vous permet d'afficher ou de masquer rapidement la trace sur la carte. Sélectionnez une trace dans la liste pour l'ouvrir dans le planificateur et continuer à y travailler. 
 
-![Créer un nouvel itinéraire web OsmAnd](@site/static/img/web/local_files.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
 ## Gérer une trace {#manage-track}
@@ -90,7 +90,7 @@ Depuis le panneau de trace, vous pouvez également **Supprimer** la trace de vot
 
 Dans le [panneau Aperçu](#overview-panel), vous pouvez **Enregistrer sur le Cloud** pour conserver l'itinéraire pour une utilisation ultérieure et **Télécharger** en tant que fichier GPX.
 
-![Gérer une trace web OsmAnd](@site/static/img/web/manage_track_2_new.png) ![Gérer une trace web OsmAnd](@site/static/img/web/change_profile.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
 ## Panneaux de détails de trace {#track-details-panels}
@@ -126,21 +126,23 @@ Pour des détails supplémentaires sur la trace, ouvrez les sections d'analyse :
 - Surface — affiche les types de surface le long de l'itinéraire basés sur les données OSM.
 - Fluidité — affiche la fluidité des segments basée sur les étiquettes OSM.
 
-![Panneau Aperçu web OsmAnd](@site/static/img/web/overview_panel.png) 
+![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
 
 ### Panneau Trace {#track-panel}
 
 Le panneau Trace affiche la liste des points d'itinéraire utilisés pour construire la trace. Utilisez-le pour examiner et modifier la structure de l'itinéraire : glissez les points pour les réorganiser, supprimez des points à l'aide de l'icône de suppression, ou utilisez Effacer les points pour supprimer tous les points et recommencer.
 
-![Panneau Trace web OsmAnd](@site/static/img/web/track_panel_new.png)
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
 
 ### Panneau Points {#points-panel}
 
 Le panneau Points est utilisé pour afficher et gérer les points de cheminement pour la trace sélectionnée. Les points de cheminement peuvent être ajoutés depuis le menu contextuel de la carte — clic droit sur la carte et choisissez l'option pour **Ajouter un point de cheminement**, puis remplissez les détails du point de cheminement (tels que le nom, l'icône et la couleur) et enregistrez-le.
 
+L'édition des points de cheminement utilise la même interface que [l'édition des favoris](../web/web-favorites.md#edit-favorites). Vous pouvez modifier les propriétés des points de cheminement telles que le nom, l'adresse, la description, l'icône, la couleur et la forme à l'aide du panneau d'édition unifié. L'apparence sélectionnée est prévisualisée à la fois dans le panneau d'édition et directement sur la carte.
+
 Dans la liste des Points de cheminement, vous pouvez contrôler si les points de cheminement sont affichés sur la carte et supprimer des points de cheminement individuels si nécessaire. Pour supprimer tous les points de cheminement de la trace en une seule fois, utilisez *Effacer tous les points de cheminement*.
 
-![Panneau Points de cheminement web OsmAnd](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## Articles connexes {#related-articles}

@@ -43,7 +43,7 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -174,7 +174,7 @@ export default function ConfigureMap() {
                                     className={styles.item}
                                     onClick={() => {
                                         setOpenVisibleTracks(true);
-                                        navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + location.hash);
+                                        navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
                                         ctx.setOpenVisibleMenu((prev) => ({
                                             ...prev,
                                             open: true,

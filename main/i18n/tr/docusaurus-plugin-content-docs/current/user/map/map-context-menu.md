@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -97,7 +97,7 @@ Harita üzerinde bir [GPX izine](../map/tracks/index.md) dokunmak, ek izle ilgil
 
 ![Kayak Pistleri ve MTB Patikaları](@site/static/img/map/ski_mtb.png)  ![Kayak Pistleri ve MTB Patikaları](@site/static/img/map/ski_mtb_2.png)
 
-**Kayak pistleri**, **dağ bisikleti (MTB) rotaları** ve **kir bisikleti patikaları** gibi harita öğelerine dokunarak ayrıntılı bilgi içeren bağlam menülerini açabilirsiniz. Daha fazla bilgi için [Rotalar makalesine](../map/routes.md#actions-with-routes) bakın.
+**Kayak pistleri**, **dağ bisikleti (MTB) rotaları** ve **kir bisikleti patikaları** gibi harita öğelerine dokunarak ayrıntılı bilgi içeren bağlam menülerini açabilirsiniz. Daha fazla bilgi için [Rotalar makalesine](../map/routes/index.md#actions-with-routes) bakın.
 
 
 

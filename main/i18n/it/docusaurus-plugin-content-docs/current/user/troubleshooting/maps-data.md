@@ -1,5 +1,5 @@
 ---
-source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
+source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
 sidebar_position: 4
 title:  Mappe e Dati
 ---
@@ -22,9 +22,13 @@ OsmAnd è progettato per supportare OpenStreetMap (OSM) e dà priorità a questo
 
 ### Perché i link di Google Maps potrebbero non aprirsi in OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
 
-I link di Google Maps come `https://maps.app.goo.gl/...` potrebbero non aprirsi in OsmAnd con un singolo tocco da SMS o messaggistica. Anche se OsmAnd può analizzare questi link, Android 12+ impone Verified App Links: i domini principali di Google (ad esempio `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) sono riservati per i servizi di sistema Google, quindi le app di terze parti non possono intercettarli automaticamente. Di conseguenza, il link si aprirà solitamente in un'app/servizio Google.
+I link di Google Maps come `https://maps.app.goo.gl/...` potrebbero non aprirsi in OsmAnd con un singolo tocco da SMS o messaggistica. Anche se OsmAnd può riconoscere e aprire molti link di Google Maps, Android 12+ impone Verified App Links: i domini principali di Google (ad esempio `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) sono riservati per i servizi di sistema Google, quindi le app di terze parti non possono intercettarli automaticamente. Di conseguenza, il link si aprirà solitamente in un'app/servizio Google.
+
+OsmAnd supporta molti link condivisi di Google Maps, inclusi alcuni link brevi e URL di posizioni condivise. È anche possibile incollare un link di Google Maps direttamente nella ricerca di OsmAnd.
 
 **Soluzione alternativa:** *tocco lungo sul messaggio → Condividi → seleziona OsmAnd*. Questo invia il link a OsmAnd, dove può essere analizzato e aperto come posizione.
+
+A seconda delle informazioni disponibili nell'URL di Google Maps condiviso, la posizione aperta potrebbe essere approssimativa.
 
 ### Caricamento lento delle mappe su Android 11, 12 (scheda SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 

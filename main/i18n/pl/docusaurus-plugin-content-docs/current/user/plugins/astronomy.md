@@ -1,5 +1,5 @@
 ---
-source-hash: 37ed6a71b4e99bf1a605fa8103c14f11df87444fb843f17ab31a7d5ea498a31e
+source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -139,7 +139,7 @@ Poniżej wykresu wyświetlane są ważne wydarzenia obserwacyjne:
 
 Wykres otwiera się z wskaźnikiem umieszczonym na bieżącym czasie systemowym. Lokalizacja używana do obliczeń jest pokazana poniżej wykresu. Lokalizacja jest wyświetlana jako nazwa miasta.
 
-### Observation Schedule {#actions}
+### Observation Schedule {#observation-schedule}
 
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
 

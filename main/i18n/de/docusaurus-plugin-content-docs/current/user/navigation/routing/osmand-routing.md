@@ -1,8 +1,9 @@
 ---
-source-hash: 7c8272dbf6899f4214dddc8dd2957ce245f83752b109660a6880724a955deb10
+source-hash: fd857495c91c0a573c35c43de948d8fdeacf47af013dd0e71bb0cfb8bceee390
 sidebar_position: 0
 title:  Über das OsmAnd-Routing
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -75,6 +75,10 @@ Es gibt zwei Möglichkeiten, Straßen auszuwählen, die bei der Routenberechnung
 
 - Wählen Sie den Straßentyp im Abschnitt [Routenparameter](../guidance/navigation-settings.md#route-parameters) der [Navigationseinstellungen](../guidance/navigation-settings.md). Eine Beschreibung dieser Einstellung finden Sie in den Artikeln über die Einstellungen der [Routing-Arten](#routing-types). Sehen Sie sich als Beispiel die Beschreibung der Routing-Art [Auto / LKW / Motorrad](../routing/car-based-routing.md#route-parameters---car) an.
 - Sie können auch bestimmte Straßen auswählen, die nicht für das Routing verwendet werden sollen, indem Sie die Option *[Straße meiden](../../map/map-context-menu.md#avoid-road)* über das *Kartenkontextmenü* oder das *[Menü 'Straßen meiden'](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*) verwenden.
+
+Wenn in den Meide-Einstellungen ein Straßentyp (z. B. *Unbefestigte Straßen*) ausgewählt ist, schließt OsmAnd solche Straßen strikt von der Routenberechnung aus. Selbst sehr kurze Abschnitte (z. B. 100–200 Meter unbefestigte Straße) werden vollständig gemieden und unter keinen Umständen in die Route aufgenommen. Dadurch können Routen deutlich länger werden, wenn das Meiden solcher Straßen Umwege erfordert.
+
+Ist die Meide-Option deaktiviert, bleiben diese Straßen weiterhin erlaubt, können jedoch mit niedrigerer Priorität (Strafe) versehen werden. Das bedeutet, dass OsmAnd nach Möglichkeit bessere Straßen bevorzugt, sie aber bei Bedarf dennoch einbeziehen kann.
 
 :::note
 

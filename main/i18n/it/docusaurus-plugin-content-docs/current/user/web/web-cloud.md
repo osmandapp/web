@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -40,7 +40,7 @@ Per accedere alle funzionalità di OsmAnd Web, è necessario creare un account. 
 
 Dopo la verifica del codice, il tuo account web viene creato e accedi automaticamente.
 
-![Registrazione Web](@site/static/img/web/web_sign_up.png) ![Registrazione Web](@site/static/img/web/web_ver_code.png)
+![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
 
 
 ### Accesso {#login}
@@ -71,7 +71,7 @@ Se desideri salvare una copia di tutti i tuoi dati, utilizzare **Scarica tutto**
 
 Fare clic su **Scarica Backup** per avviare l'esportazione e salvare l'archivio sul tuo computer.
 
-![Account Web](@site/static/img/web/web_download_all.png)
+![Web Account](@site/static/img/web/web_download_all.png)
 
 ### Pagamenti e acquisti {#payments-and-purchases}
 
@@ -95,7 +95,7 @@ Se non ci sono ancora acquisti collegati al tuo account, questa sezione mostra u
 
 Per maggiori dettagli sull'utilizzo dei tuoi acquisti su diverse piattaforme, leggere su [accesso multipiattaforma](../purchases/cross.md).
 
-![Account Web](@site/static/img/web/web_purchases.png)
+![Web Account](@site/static/img/web/web_purchases.png)
 
 ### Sincronizzazione cloud {#cloud-sync}
 
@@ -107,7 +107,7 @@ La disponibilità della Sincronizzazione cloud dipende dal tipo di account:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – sincronizza [Preferiti](../web/web-favorites.md) e li visualizza sul web.
 - OsmAnd Pro – sincronizza [Tracce](../web/web-tracks.md), Preferiti e [Backup](#my-data), e sblocca l'accesso completo al web ai dati cloud.
 
-![Traccia Web](@site/static/img/web/web_track_start.png) ![Traccia Web](@site/static/img/web/web_track_pro.png)
+![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -117,7 +117,25 @@ L'opzione **Modifiche** mostra un elenco cronologico dei file memorizzati nel tu
 
 L'opzione **Cestino** contiene i file che sono stati eliminati da OsmAnd Cloud. L'elenco è anch'esso raggruppato per mese e mostra quando ogni file è stato rimosso e da quale dispositivo. Utilizzare il menu a tre punti accanto a un file per *Scaricare* una copia, *Ripristina dal cestino* (restituire il file a OsmAnd Cloud in modo che diventi disponibile nuovamente nei tuoi dati), o *Elimina immediatamente* per rimuoverlo permanentemente. Questo aiuta a prevenire la perdita accidentale di dati pur consentendo di liberare lo spazio di archiviazione cloud quando sei sicuro che un file non è più necessario. È anche possibile eliminare tutti gli elementi cancellati in una volta sola facendo clic sull'icona del Cestino nell'intestazione del pannello Cestino. Questo apre la finestra di dialogo **Svuota cestino**, dove confermi l'eliminazione per rimuovere permanentemente tutti i file dal Cestino.
 
-![Cloud Web](@site/static/img/web/web_changes.png) ![Cloud Web](@site/static/img/web/web_trash.png)
+![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+### App collegate {#connected-apps}
+
+La sezione **App collegate** consente di collegare servizi esterni al tuo account OsmAnd. Attualmente supporta l'integrazione con [Garmin Connect™](https://connect.garmin.com/app/), che permette la sincronizzazione automatica delle attività Garmin. Per aprirla, andare a: *OsmAnd Web Map → Account → App collegate*.
+
+L'integrazione con Garmin Connect è disponibile solo per gli utenti [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Se non hai un abbonamento Pro attivo, selezionando l'elemento Garmin Connect si apre la pagina dei prezzi.
+
+Per collegare il tuo account Garmin Connect™, fai clic su **Connetti**. Verrai reindirizzato alla pagina di autorizzazione Garmin, dove dovrai accedere e concedere l'accesso ai tuoi dati Garmin Connect™. Durante l'autorizzazione, puoi abilitare la sincronizzazione delle attività recenti per importare i dati degli ultimi 30 giorni. Le attività più vecchie di 30 giorni non possono essere importate automaticamente.
+
+Dopo la connessione, OsmAnd crea una cartella dedicata Garmin Connect nella [sezione Tracce](./web-tracks.md) e inizia a importare automaticamente le attività. Le nuove attività registrate in Garmin Connect™ vengono aggiunte a questa cartella senza importazione manuale. La cartella viene inoltre sincronizzata con le app mobili OsmAnd quando [OsmAnd Cloud](../personal/osmand-cloud.md) è abilitato.
+
+Il menu Garmin Connect contiene due sezioni: **I miei dati** e **Impostazioni**. In I miei dati, puoi visualizzare il numero di attività sincronizzate, aprire l'ultima attività recuperata o aprire la pagina delle attività Garmin Connect™ utilizzando il pulsante **Visualizza su Garmin Connect™**. In Impostazioni, puoi configurare quali tipi di attività devono essere sincronizzati utilizzando l'opzione Attività da sincronizzare.
+
+Le attività sono raggruppate in categorie come Ciclismo, Camminata e corsa, Sport acquatici e Sport invernali e altri. I singoli tipi di attività possono essere abilitati o disabilitati. Per impostazione predefinita, dopo la connessione vengono selezionati tutti i tipi di attività supportati.
+
+Per disconnettere il tuo account Garmin Connect™, vai su *Impostazioni → Disconnetti* e conferma l'azione. Le tracce precedentemente importate rimangono nella cartella Garmin Connect, ma le nuove attività non verranno più sincronizzate.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Risoluzione dei problemi {#troubleshooting}
@@ -126,7 +144,7 @@ L'opzione **Cestino** contiene i file che sono stati eliminati da OsmAnd Cloud. 
 
 Se non ricordi la tua password, utilizzare il collegamento **Non ho o ho dimenticato la password** nella finestra di dialogo di accesso. Questo apre il pannello **Cambia o reimposta password**. Inserire l'indirizzo email utilizzato per creare il tuo account e fare clic su **Continua**. Un messaggio con un codice di verifica viene inviato a questa email. Nella schermata successiva, digitare il codice di verifica e la tua nuova password, quindi selezionare **Continua** per confermare. Quando il codice è accettato, la tua password viene aggiornata e puoi accedere a OsmAnd Web con le nuove credenziali.
 
-![Account Web](@site/static/img/web/web_password.png)
+![Web Account](@site/static/img/web/web_password.png)
 
 ### Cambia indirizzo email {#change-email-address}
 
@@ -135,11 +153,11 @@ Andare a *Menu Generale → Account → Email → ⋮ → Cambia email*
 
 Appare la finestra di dialogo Cambia email. Un codice di verifica viene inviato all'indirizzo email corrente. Inserire questo codice nel campo **Codice dall'Email Vecchia**, specificare il nuovo indirizzo in **Nuova Email**, quindi selezionare **Avanti**. Per motivi di sicurezza, un messaggio di conferma viene inviato al tuo nuovo indirizzo email informandoti che l'email dell'account è stata aggiornata.
 
-![Account Web](@site/static/img/web/web_email_new.png)
+![Web Account](@site/static/img/web/web_email_new.png)
 
 ### Disconnessione ed eliminazione dell'account {#logout-and-delete}
 
-![Account Web](@site/static/img/web/web_logout_new.png)
+![Web Account](@site/static/img/web/web_logout_new.png)
 
 Il pannello Account OsmAnd contiene i controlli per terminare la sessione web corrente e rimuovere permanentemente l'account.
 
@@ -147,7 +165,7 @@ Per disconnettersi, aprire Account OsmAnd e utilizzare il pulsante **Disconnetti
 
 Per eliminare un account, selezionare **Elimina account** in fondo al pannello Account OsmAnd. Appare una finestra di dialogo di conferma con il messaggio *“Sei sicuro di volerlo fare?”* e una breve spiegazione che tutti i dati e i dettagli dell'account verranno rimossi da OsmAnd Cloud e i dispositivi secondari perderanno l'accesso alle funzionalità a pagamento. Un codice di verifica viene inviato all'indirizzo email dell'account. Inserire il codice nel campo Codice dall'Email e scegliere **ELIMINA QUESTO ACCOUNT** per completare il processo. Questa operazione è permanente e non può essere annullata.
 
-![Account Web](@site/static/img/web/web_delete.png)
+![Web Account](@site/static/img/web/web_delete.png)
 
 <!--
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Introduzione](./web-overview.md)
 - [Acquisti multipiattaforma](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Tracce](./web-tracks.md)

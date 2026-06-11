@@ -88,6 +88,7 @@ import {
     MAIN_URL_WITH_SLASH,
     SEARCH_RESULT_URL,
     SEARCH_URL,
+    liveHash,
 } from '../../../manager/GlobalManager';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import gStyles from '../../../menu/gstylesmenu.module.css';
@@ -578,7 +579,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
                     search: buildSearchParamsFromQuery(ctx.searchQuery),
-                    hash: location.hash,
+                    hash: liveHash(),
                 });
             } else {
                 closeObjectFromMap();
@@ -599,7 +600,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 ctx.setSelectedPoiObj(null);
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + (ctx.exploreMenu ? EXPLORE_URL : ''),
-                    hash: location.hash,
+                    hash: liveHash(),
                 });
             }
         } else if (type.isFav) {

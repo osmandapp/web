@@ -1,5 +1,5 @@
 ---
-source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
+source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -97,7 +97,7 @@ Dotknięcie [śladu GPX](../map/tracks/index.md) na mapie otwiera [menu kontekst
 
 ![Stoki narciarskie i szlaki MTB](@site/static/img/map/ski_mtb.png)  ![Stoki narciarskie i szlaki MTB](@site/static/img/map/ski_mtb_2.png)
 
-Możesz dotykać elementów mapy, takich jak **stoki narciarskie**, **trasy dla rowerów górskich (MTB)** i **szlaki dla motocykli terenowych**, aby otworzyć ich menu kontekstowe ze szczegółowymi informacjami. Sprawdź artykuł [Trasy](../map/routes.md#actions-with-routes), aby uzyskać więcej informacji.
+Możesz dotykać elementów mapy, takich jak **stoki narciarskie**, **trasy dla rowerów górskich (MTB)** i **szlaki dla motocykli terenowych**, aby otworzyć ich menu kontekstowe ze szczegółowymi informacjami. Sprawdź artykuł [Trasy](../map/routes/index.md#actions-with-routes), aby uzyskać więcej informacji.
 
 
 
@@ -466,7 +466,7 @@ W menu kontekstowym znajdują się opcje **dodawania** lub **edycji** wybranego 
 
 - Aby **Edytować** informacje o ulubionym punkcie, musisz włączyć *Pokaż na mapie* (*Menu → Moje miejsca → Ulubione*), a następnie nacisnąć na niego, a w menu kontekstowym zamiast ikony *Gwiazdki* pojawi się ikona *Ołówka* (z podpisem Edytuj).
 
-- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - dodaje wybrany punkt do listy ulubionych.
+- [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - dodaje wybrony punkt do listy ulubionych.
 
 
 ### Dodaj / Edytuj znacznik {#add--edit-marker}

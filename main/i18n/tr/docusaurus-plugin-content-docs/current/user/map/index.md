@@ -1,5 +1,5 @@
 ---
-source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
+source-hash: 8a47dfebdaedb8b683b381af694c0c78b11274e70ddab2295bda8db052909ab9
 sidebar_position: 1
 ---
 
@@ -51,6 +51,10 @@ Haritada Favoriler, POI'ler, İşaretleyiciler, Wikipedia, Arama sonuçları, Se
 
 Toplu taşıma, harita üzerinde ulaşım rotalarını ve duraklarını görüntülemenize, bunlar hakkında ayrıntılı bilgi kontrol etmenize ve navigasyon yapmanıza olanak tanıyan ek bir katmandır.
 
-## [Rotalar](./routes.md) {#routes}
+## [Rotalar](./routes/index.md) {#routes}
 
 OsmAnd, harita üzerinde çeşitli rotaları görüntülemek için birçok güçlü özelliğe sahiptir.
+
+### [Rota Türleri](./routes/types-of-routes.md) {#type-of-routes}
+
+OsmAnd'da mevcut rota türleri hakkında tüm bilgiler.

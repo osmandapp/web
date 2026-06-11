@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label: Conta
 title: Conta OsmAnd
@@ -115,9 +115,27 @@ Quando você está logado, a seção **OsmAnd Cloud** aparece em Menu → Settin
 
 A opção **Changes** mostra uma lista cronológica de arquivos armazenados na sua conta **OsmAnd Cloud**. Os itens são agrupados por mês e incluem o nome do arquivo, o tipo de alteração (por exemplo, added, modified or deleted), o horário da última atualização e o dispositivo que o criou. Para cada entrada, você pode abrir o menu de três pontos e escolher *Download* para salvar o arquivo selecionado no seu computador, ou *Delete*.
 
-A opção **Trash** contém arquivos que foram excluídos do **OsmAnd Cloud**. A lista também é agrupada por mês e mostra quando cada arquivo foi removido e de qual dispositivo. Use o menu de três pontos ao lado de um arquivo para *Download* uma cópia, *Restore from trash* (retornar o arquivo para o **OsmAnd Cloud** para que ele fique disponível novamente nos seus dados), ou *Delete immediately* para removê-lo permanentemente. Isso ajuda a prevenir perda acidental de dados, enquanto ainda permite liberar espaço de armazenamento em nuvem quando você tem certeza de que um arquivo não é mais necessário. Você também pode limpar todos os itens excluídos de uma vez clicando no ícone da Trash no cabeçalho do painel Trash. Isso abre a caixa de diálogo **Empty trash**, onde você confirma a exclusão para remover permanentemente todos os arquivos da Trash.
+A opção **Trash** contém arquivos que foram excluídos do **OsmAnd Cloud**. A lista também é agrupada por mês e mostra quando cada arquivo foi removido e de qual dispositivo. Use o menu de três pontos ao lado de um arquivo para *Download* uma cópia, *Restore from trash* (retornar o arquivo para o **OsmAnd Cloud** para que fique disponível novamente nos seus dados), ou *Delete immediately* para removê-lo permanentemente. Isso ajuda a prevenir perda acidental de dados, enquanto ainda permite liberar espaço de armazenamento em nuvem quando você tem certeza de que um arquivo não é mais necessário. Você também pode limpar todos os itens excluídos de uma vez clicando no ícone da Trash no cabeçalho do painel Trash. Isso abre a caixa de diálogo **Empty trash**, onde você confirma a exclusão para remover permanentemente todos os arquivos da Trash.
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+### Connected Apps {#connected-apps}
+
+A seção **Connected Apps** permite vincular serviços externos à sua conta OsmAnd. Atualmente, oferece suporte à integração com [Garmin Connect™](https://connect.garmin.com/app/), que permite a sincronização automática de atividades Garmin. Para abri-la, vá para: *OsmAnd Web Map → Account → Connected apps*.
+
+A integração com o Garmin Connect está disponível apenas para usuários do [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Se você não tiver uma assinatura Pro ativa, selecionar o item Garmin Connect abrirá a página de Preços.
+
+Para conectar sua conta Garmin Connect™, clique em **Connect**. Você será redirecionado para a página de autorização da Garmin, onde precisará fazer login e conceder acesso aos seus dados do Garmin Connect™. Durante a autorização, você pode ativar a sincronização de atividades recentes para importar dados dos últimos 30 dias. Atividades com mais de 30 dias não podem ser importadas automaticamente.
+
+Após a conexão, o OsmAnd cria uma pasta dedicada do Garmin Connect na [seção Tracks](./web-tracks.md) e começa a importar atividades automaticamente. Novas atividades registradas no Garmin Connect™ são adicionadas a esta pasta sem importação manual. A pasta também é sincronizada com os aplicativos móveis do OsmAnd quando o [OsmAnd Cloud](../personal/osmand-cloud.md) está ativado.
+
+O menu do Garmin Connect contém duas seções: **My data** e **Settings**. Em My data, você pode visualizar o número de atividades sincronizadas, abrir a última atividade recuperada ou abrir a página de Atividades do Garmin Connect™ usando o botão **View on Garmin Connect™**. Em Settings, você pode configurar quais tipos de atividade devem ser sincronizados usando a opção Activities to sync.
+
+As atividades são agrupadas em categorias como Ciclismo, Caminhada e Corrida, Esportes Aquáticos e Esportes de Inverno e Outros. Tipos de atividade individuais podem ser ativados ou desativados. Por padrão, todos os tipos de atividade suportados são selecionados após a conexão.
+
+Para desconectar sua conta Garmin Connect™, vá para *Settings → Disconnect* e confirme a ação. As trilhas importadas anteriormente permanecem na pasta Garmin Connect, mas novas atividades não serão mais sincronizadas.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Solução de Problemas {#troubleshooting}
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Introduction](./web-overview.md)
 - [Cross-Platform Purchases](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Tracks](./web-tracks.md)

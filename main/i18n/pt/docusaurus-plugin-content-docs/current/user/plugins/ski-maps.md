@@ -1,5 +1,5 @@
 ---
-source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+source-hash: 4e356d29cbf17a924d5de32bc4785b1214d4598771bd8a9b0b5f89a3b34f283a
 sidebar_position: 14
 title: Visualização do Mapa de Esqui
 ---
@@ -237,11 +237,11 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 </Tabs>
 
-Para descobrir quais pistas fora da estação de esqui você pode navegar, você precisa ativar a opção **Pistas de esqui e rotas** na lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aberta no menu [Configurar mapa](../map/configure-map-menu.md).  
+Para descobrir quais pistas fora da estação de esqui você pode navegar, você precisa ativar a opção **Pistas de esqui e rotas** na lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes/types-of-routes.md), aberta no menu [Configurar mapa](../map/configure-map-menu.md).  
 
-Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/map-styles.md#winter-and-ski) ativados, as [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.  
-Ao ativar a opção [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) para um estilo de mapa diferente de Inverno e Esqui, apenas as pistas são exibidas. Outros recursos relacionados ao esqui podem não ser mostrados nesta camada de estilo.  
-_Pistas de esqui e rotas_ [são clicáveis](../map/routes.md#actions-with-routes).
+Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/map-styles.md#winter-and-ski) ativados, as [Pistas de esqui e rotas](../map/routes/types-of-routes.md#ski-slopes-and-routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.  
+Ao ativar a opção [Pistas de esqui e rotas](../map/routes/types-of-routes.md#ski-slopes-and-routes) para um estilo de mapa diferente de Inverno e Esqui, apenas as pistas são exibidas. Outros recursos relacionados ao esqui podem não ser mostrados nesta camada de estilo.  
+_Pistas de esqui e rotas_ [são clicáveis](../map/routes/index.md#actions-with-routes).
 
 
 ### Noite e Iluminação {#night-and-lighting}

@@ -1,5 +1,5 @@
 ---
-source-hash: 6051df8ee7bb34a6945ea67f2e1b4575affefa6ec581f244fc3d2fdd13eed6b7
+source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
 sidebar_label:  Planificar Ruta
 title: Planificar Ruta en el Sitio Web
@@ -138,9 +138,11 @@ El Panel de Pista muestra la lista de puntos de ruta utilizados para construir l
 
 El Panel de Puntos se utiliza para ver y gestionar puntos intermedios para la pista seleccionada. Los puntos intermedios se pueden añadir desde el menú contextual del mapa — haga clic con el botón derecho en el mapa y elija la opción para **Añadir punto intermedio**, luego complete los detalles del punto intermedio (como nombre, icono y color) y guárdelo.
 
+La edición de puntos intermedios utiliza la misma interfaz que la [edición de Favoritos](../web/web-favorites.md#edit-favorites). Puede modificar las propiedades de los puntos intermedios, como nombre, dirección, descripción, icono, color y forma, utilizando el panel de edición unificado. La apariencia seleccionada se previsualiza tanto en el panel de edición como directamente en el mapa.
+
 En la lista de Puntos Intermedios, puede controlar si los puntos intermedios se muestran en el mapa y eliminar puntos intermedios individuales cuando sea necesario. Para eliminar todos los puntos intermedios de la pista a la vez, utilice *Limpiar todos los puntos intermedios*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel.png)
+![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
 
 
 ## Artículos Relacionados {#related-articles}

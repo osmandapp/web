@@ -1,5 +1,5 @@
 ---
-source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
+source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
 sidebar_position: 2
 sidebar_label:  Compte
 title: Compte OsmAnd
@@ -119,6 +119,24 @@ L'option **Corbeille** contient les fichiers qui ont été supprimés d'OsmAnd C
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
 
+### Applications connectées {#connected-apps}
+
+La section **Applications connectées** vous permet de lier des services externes à votre compte OsmAnd. Actuellement, elle prend en charge l'intégration avec [Garmin Connect™](https://connect.garmin.com/app/), qui permet la synchronisation automatique des activités Garmin. Pour l'ouvrir, allez à : *Carte Web OsmAnd → Compte → Applications connectées*.
+
+L'intégration Garmin Connect est disponible uniquement pour les utilisateurs d'[OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Si vous n'avez pas d'abonnement Pro actif, la sélection de l'élément Garmin Connect ouvre la page Tarification.
+
+Pour connecter votre compte Garmin Connect™, cliquez sur **Connecter**. Vous serez redirigé vers la page d'autorisation Garmin, où vous devrez vous connecter et accorder l'accès à vos données Garmin Connect™. Pendant l'autorisation, vous pouvez activer la synchronisation des activités récentes pour importer des données des 30 derniers jours. Les activités datant de plus de 30 jours ne peuvent pas être importées automatiquement.
+
+Après la connexion, OsmAnd crée un dossier Garmin Connect dédié dans la [section Pistes](./web-tracks.md) et commence à importer automatiquement les activités. Les nouvelles activités enregistrées dans Garmin Connect™ sont ajoutées à ce dossier sans importation manuelle. Le dossier est également synchronisé avec les applications mobiles OsmAnd lorsque [OsmAnd Cloud](../personal/osmand-cloud.md) est activé.
+
+Le menu Garmin Connect contient deux sections : **Mes données** et **Paramètres**. Dans Mes données, vous pouvez voir le nombre d'activités synchronisées, ouvrir la dernière activité récupérée ou ouvrir la page Activités Garmin Connect™ à l'aide du bouton **Voir sur Garmin Connect™**. Dans Paramètres, vous pouvez configurer les types d'activités à synchroniser à l'aide de l'option Activités à synchroniser.
+
+Les activités sont regroupées en catégories telles que Cyclisme, Marche et Course, Sports nautiques, et Sports d'hiver et autres. Les types d'activités individuels peuvent être activés ou désactivés. Par défaut, tous les types d'activités pris en charge sont sélectionnés après la connexion.
+
+Pour déconnecter votre compte Garmin Connect™, allez à *Paramètres → Déconnecter* et confirmez l'action. Les pistes précédemment importées restent dans le dossier Garmin Connect, mais les nouvelles activités ne seront plus synchronisées.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
+
 
 ## Dépannage {#troubleshooting}
 
@@ -209,3 +227,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Introduction](./web-overview.md)
 - [Achats multiplateforme](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Pistes](./web-tracks.md)
