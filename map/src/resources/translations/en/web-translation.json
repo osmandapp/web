@@ -437,7 +437,6 @@
     "live_track_minutes_ago": "{{value}}m ago",
     "live_track_hours_ago": "{{value}}h ago",
     "live_track_create": "Create Live Track",
-    "live_track_duration_permanent": "Permanent",
     "live_track_duration_1h": "1 hour",
     "live_track_duration_4h": "4 hours",
     "live_track_duration_8h": "8 hours",

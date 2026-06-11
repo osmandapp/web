@@ -29,10 +29,9 @@ import LiveTrackingContext from '../../../context/LiveTrackingContext';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import styles from '../../trackfavmenu.module.css';
 
-const DURATION_MARKS = [{ value: 0 }, { value: 1 }, { value: 4 }, { value: 8 }, { value: 24 }];
+const DURATION_MARKS = [{ value: 1 }, { value: 4 }, { value: 8 }, { value: 24 }];
 
 function durationLabel(value, t) {
-    if (value === 0) return t('web:live_track_duration_permanent');
     if (value === 1) return t('web:live_track_duration_1h');
     if (value === 4) return t('web:live_track_duration_4h');
     if (value === 8) return t('web:live_track_duration_8h');
@@ -46,7 +45,7 @@ export default function CreateLiveTrackDialog({ open, onClose }) {
     const navigate = useNavigate();
 
     const [name, setName] = useState('');
-    const [duration, setDuration] = useState(0);
+    const [duration, setDuration] = useState(1);
     const [shareUrl, setShareUrl] = useState(null);
     const [creating, setCreating] = useState(false);
     const [copied, setCopied] = useState(false);
@@ -125,7 +124,7 @@ export default function CreateLiveTrackDialog({ open, onClose }) {
 
     function handleClose() {
         setName('');
-        setDuration(0);
+        setDuration(1);
         setShareUrl(null);
         setCreating(false);
         setCopied(false);
@@ -185,7 +184,7 @@ export default function CreateLiveTrackDialog({ open, onClose }) {
                             <Slider
                                 value={duration}
                                 onChange={(_, v) => setDuration(v)}
-                                min={0}
+                                min={1}
                                 max={24}
                                 step={null}
                                 marks={DURATION_MARKS}
