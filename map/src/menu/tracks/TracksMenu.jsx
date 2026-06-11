@@ -19,8 +19,13 @@ import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
-import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
-import { useLocation, useNavigate } from 'react-router-dom';
+import LiveTrackGroup from './liveTrack/LiveTrackGroup';
+import LiveTrackFolder from './liveTrack/LiveTrackFolder';
+import LiveTrackContextMenu from './liveTrack/LiveTrackContextMenu';
+import LiveTrackingContext from '../../context/LiveTrackingContext';
+import { TID_PARAM } from '../../util/livetracks/liveTrackUtils';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -36,10 +41,13 @@ export default function TracksMenu() {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const [searchParams] = useSearchParams();
 
     const [, height] = useWindowSize();
 
     const { t } = useTranslation();
+
+    const { openLiveTracks, selectedLiveTranslation } = useContext(LiveTrackingContext);
 
     const checkHasFiles = () =>
         ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
@@ -97,8 +105,26 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
+    const needLiveLogin = openLiveTracks && !ltx.loginUser && !searchParams.get(TID_PARAM);
+    useEffect(() => {
+        if (needLiveLogin) {
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash, { replace: true });
+        }
+    }, [needLiveLogin, navigate, location.search, location.hash]);
+
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
+    }
+
+    if (needLiveLogin) {
+        return null;
+    }
+
+    if (openLiveTracks) {
+        if (selectedLiveTranslation) {
+            return <LiveTrackContextMenu />;
+        }
+        return <LiveTrackFolder />;
     }
 
     // open folders
@@ -158,6 +184,7 @@ export default function TracksMenu() {
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>
+                            <LiveTrackGroup />
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
                                 <SharedFolder subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}

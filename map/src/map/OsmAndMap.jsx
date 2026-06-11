@@ -25,13 +25,19 @@ import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
+import LiveTrackLayer from './layers/LiveTrackLayer';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
+import { extractAndSaveLiveTrackKey } from '../util/livetracks/liveTrackUtils';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;
     if (!hash || hash.length < 2) return null;
-    const [zoomStr, latStr, lngStr] = hash.slice(1).split('/');
+    const raw = hash.slice(1);
+
+    if (extractAndSaveLiveTrackKey(raw)) return null;
+
+    const [zoomStr, latStr, lngStr] = raw.split('/');
     const zoom = Number.parseInt(zoomStr, 10);
     const lat = Number.parseFloat(latStr);
     const lng = Number.parseFloat(lngStr);
@@ -224,6 +230,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 {routersReady && <NavigationLayer geocodingData={geocodingData} region={regionData} />}
                 <TrackAnalyzerLayer />
                 <ShareFileLayer />
+                <LiveTrackLayer />
                 <TravelLayer />
                 <FavoriteLayer />
                 <WeatherLayer />

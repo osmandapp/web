@@ -22,6 +22,7 @@ import {
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import GlobalAlert from './components/GlobalAlert';
+import LiveShareRequests from './components/LiveShareRequests';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
@@ -418,6 +419,7 @@ const GlobalFrame = () => {
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
                 <GlobalAlert width={width} />
+                <LiveShareRequests />
                 <Snackbar
                     open={!!ctx.notification}
                     autoHideDuration={3000}

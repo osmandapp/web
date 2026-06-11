@@ -69,6 +69,7 @@ import {
     PLANROUTE_URL,
     SETTINGS_URL,
     TRACKS_URL,
+    LIVE_TRACKS_URL,
     VISIBLE_TRACKS_URL,
     WEATHER_URL,
     TRAVEL_URL,
@@ -371,8 +372,14 @@ export default function MainMenu({
         }
     }, [ctx.selectedSort]);
 
+    function matchItemByUrl(pathname) {
+        return items.find(
+            (item) => pathname.startsWith(item.url) || item.otherUrls?.some((u) => pathname.startsWith(u))
+        );
+    }
+
     function selectMenuByUrl() {
-        const item = items.find((item) => location.pathname.startsWith(item.url));
+        const item = matchItemByUrl(location.pathname);
         if (item) {
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             return selectMenu({ item, openFromUrl: true });
@@ -390,7 +397,7 @@ export default function MainMenu({
         if (ctx.selectedSearchObj) {
             return;
         }
-        const matchedItem = items.find((item) => location.pathname.startsWith(item.url));
+        const matchedItem = matchItemByUrl(location.pathname);
         if (matchedItem && !isSelectedMenuItem(matchedItem)) {
             setMenuInfo(matchedItem.component);
             setSelectedType(matchedItem.type);
@@ -446,6 +453,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.tracks,
             url: MAIN_URL_WITH_SLASH + TRACKS_URL,
+            otherUrls: [MAIN_URL_WITH_SLASH + LIVE_TRACKS_URL],
         },
         {
             name: t('shared_string_my_favorites'),
@@ -886,7 +894,7 @@ export default function MainMenu({
 
     function navigateToUrl({ menu = null, isMain = false, params = null }) {
         if (menu) {
-            const isSubroute = location.pathname.startsWith(menu.url) && location.pathname !== menu.url;
+            const isSubroute = matchItemByUrl(location.pathname) === menu && location.pathname !== menu.url;
             if (isSubroute) {
                 return;
             }
