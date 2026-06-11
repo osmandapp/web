@@ -8,50 +8,12 @@ export const FOCUS_DIM_OPACITY = 0.9;
 export const FOCUS_HIDDEN_OPACITY = 0;
 export const FOCUS_FULL_OPACITY = 1;
 
-function applyOpacityToLayer(layer, opacity) {
-    if (!layer) return;
-    if (typeof layer.setOpacity === 'function' && typeof layer.eachLayer !== 'function') {
-        layer.setOpacity(opacity);
-        disablePointerEventsIfHidden(layer.getElement?.(), opacity);
-        return;
-    }
-    if (typeof layer.eachLayer === 'function') {
-        layer.eachLayer((child) => applyOpacityToLayer(child, opacity));
-        return;
-    }
-    if (typeof layer.setStyle === 'function') {
-        layer.setStyle({ opacity, fillOpacity: opacity });
-        disablePointerEventsIfHidden(layer.getElement?.(), opacity);
-    }
-}
-
-function disablePointerEventsIfHidden(el, opacity) {
-    if (!el) return;
-    el.style.pointerEvents = opacity === 0 ? 'none' : '';
-}
-
-function getFocusModeHandlers() {
-    return {
-        [OBJECT_TYPE_FAVORITE]: (ctx) => {
-            const groups = ctx.favorites?.mapObjs;
-            if (!groups) return [];
-
-            return Object.keys(groups).map((id) => ({ id, layer: groups[id]?.markers }));
-        },
-        [OBJECT_TYPE_CLOUD_TRACK]: (ctx) => {
-            const files = ctx.gpxFiles;
-            if (!files) return [];
-
-            return Object.values(files).map((f) => ({ id: f?.name, layer: f?.gpx }));
-        },
-    };
-}
+const FOCUS_MODE_STORAGE_KEY = 'focusModeByType';
+const FOCUS_PASSIVE_LAYER_IDS = new Set([POI_LAYER_ID, SEARCH_LAYER_ID, EXPLORE_LAYER_ID]);
 
 export function getFocusModeTypes() {
     return Object.keys(getFocusModeHandlers());
 }
-
-const FOCUS_PASSIVE_LAYER_IDS = new Set([POI_LAYER_ID, SEARCH_LAYER_ID, EXPLORE_LAYER_ID]);
 
 export function resolveFocusOpacity({ type, id }, selectionFocus, focusModeOn) {
     if (!selectionFocus) return FOCUS_FULL_OPACITY;
@@ -111,17 +73,23 @@ export function useFocusMode() {
             if (id == null) return;
             if (!getFocusModeTypes().includes(type)) return;
             mtx.setSelectionFocus({ type, id });
+            mtx.setFocusModeOn(readFocusMode(type));
         },
         [mtx]
     );
 
     const clearSelectionFocus = useCallback(() => {
         mtx.setSelectionFocus(null);
-        mtx.setFocusModeOn(false);
     }, [mtx]);
 
     const toggleFocusMode = useCallback(() => {
-        mtx.setFocusModeOn((on) => !on);
+        if (!mtx.selectionFocus) return;
+        mtx.setFocusModeOn((on) => {
+            const next = !on;
+            writeFocusMode(mtx.selectionFocus.type, next);
+
+            return next;
+        });
     }, [mtx]);
 
     return {
@@ -130,5 +98,62 @@ export function useFocusMode() {
         setSelectionFocus,
         clearSelectionFocus,
         toggleFocusMode,
+    };
+}
+
+function readFocusModeStore() {
+    try {
+        return JSON.parse(localStorage.getItem(FOCUS_MODE_STORAGE_KEY)) || {};
+    } catch {
+        return {};
+    }
+}
+
+function readFocusMode(type) {
+    return readFocusModeStore()[type] === true;
+}
+
+function writeFocusMode(type, value) {
+    const store = readFocusModeStore();
+    store[type] = value;
+    localStorage.setItem(FOCUS_MODE_STORAGE_KEY, JSON.stringify(store));
+}
+
+function applyOpacityToLayer(layer, opacity) {
+    if (!layer) return;
+    if (typeof layer.setOpacity === 'function' && typeof layer.eachLayer !== 'function') {
+        layer.setOpacity(opacity);
+        disablePointerEventsIfHidden(layer.getElement?.(), opacity);
+        return;
+    }
+    if (typeof layer.eachLayer === 'function') {
+        layer.eachLayer((child) => applyOpacityToLayer(child, opacity));
+        return;
+    }
+    if (typeof layer.setStyle === 'function') {
+        layer.setStyle({ opacity, fillOpacity: opacity });
+        disablePointerEventsIfHidden(layer.getElement?.(), opacity);
+    }
+}
+
+function disablePointerEventsIfHidden(el, opacity) {
+    if (!el) return;
+    el.style.pointerEvents = opacity === 0 ? 'none' : '';
+}
+
+function getFocusModeHandlers() {
+    return {
+        [OBJECT_TYPE_FAVORITE]: (ctx) => {
+            const groups = ctx.favorites?.mapObjs;
+            if (!groups) return [];
+
+            return Object.keys(groups).map((id) => ({ id, layer: groups[id]?.markers }));
+        },
+        [OBJECT_TYPE_CLOUD_TRACK]: (ctx) => {
+            const files = ctx.gpxFiles;
+            if (!files) return [];
+
+            return Object.values(files).map((f) => ({ id: f?.name, layer: f?.gpx }));
+        },
     };
 }
