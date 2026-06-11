@@ -17,6 +17,7 @@ export default async function test(customUrl = null) {
     await driver.get(newUrl);
 
     await driver.wait(until.titleIs('OsmAnd Map'), TIMEOUT_REQUIRED);
+    await driver.executeScript(`localStorage.setItem('coachmarksSeen', JSON.stringify({ focusToggle: true }))`);
 
     await actionIdleWait();
 }
