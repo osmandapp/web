@@ -403,6 +403,7 @@
     "shared_string_advanced": "Advanced",
     "focus_on": "Focus: hide other items",
     "focus_off": "Focus: dim other items",
+    "focus_coachmark": "Turn on Focus mode to hide all other favorites and tracks.",
     "exit_without_saving": "Exit without saving?",
     "all_changes_will_be_lost": "All changes will be lost.",
     "keep_editing": "Keep Editing",

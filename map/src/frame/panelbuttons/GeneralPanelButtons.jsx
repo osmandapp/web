@@ -112,15 +112,7 @@ export default function GeneralPanelButtons({
                     </Box>
                 </Paper>
             </div>
-            <div
-                style={{
-                    marginLeft: getMarginFromMenu(),
-                    marginTop: '14px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                }}
-            >
+            <div className={styles.focusToggleWrapper} style={{ marginLeft: getMarginFromMenu() }}>
                 <FocusToggleBtn />
             </div>
             <div
