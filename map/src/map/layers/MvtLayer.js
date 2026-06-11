@@ -138,6 +138,7 @@ export default function MvtLayer({ config }) {
         let deferredContainerSync = null;
         let dragging = false;
         let zooming = false;
+        let activePopup = null;
         let containerWidth = initialSize.x + PAN_BUFFER * 2;
         let containerHeight = initialSize.y + PAN_BUFFER * 2;
 
@@ -278,12 +279,16 @@ export default function MvtLayer({ config }) {
                 return;
             }
             if (features.length === 0) {
-                map.closePopup();
+                // Only close our own popup, not unrelated ones (POI, tracks, …).
+                if (activePopup) {
+                    map.closePopup(activePopup);
+                    activePopup = null;
+                }
                 return;
             }
 
             const feature = features.find((item) => Object.keys(item.properties || {}).length > 0) || features[0];
-            L.popup({
+            activePopup = L.popup({
                 closeButton: true,
                 autoClose: true,
                 closeOnClick: false,
@@ -294,12 +299,19 @@ export default function MvtLayer({ config }) {
                 .openOn(map);
         };
 
+        const handlePopupClose = (event) => {
+            if (event.popup === activePopup) {
+                activePopup = null;
+            }
+        };
+
         map.on('move zoom resize viewreset', requestSync);
         map.on('dragstart', handleDragStart);
         map.on('moveend', handleMoveEnd);
         map.on('zoomanim', handleZoomAnim);
         map.on('zoomend', handleZoomEnd);
         map.on('click', handleMapClick);
+        map.on('popupclose', handlePopupClose);
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
         maplibreMap.on('error', handleError);
@@ -307,6 +319,7 @@ export default function MvtLayer({ config }) {
 
         return () => {
             disposed = true;
+            window.seIsTilesLoaded = true;
             cancelRequestedSync();
             cancelDeferredContainerSync();
             map.off('move zoom resize viewreset', requestSync);
@@ -315,6 +328,11 @@ export default function MvtLayer({ config }) {
             map.off('zoomanim', handleZoomAnim);
             map.off('zoomend', handleZoomEnd);
             map.off('click', handleMapClick);
+            map.off('popupclose', handlePopupClose);
+            if (activePopup) {
+                map.closePopup(activePopup);
+                activePopup = null;
+            }
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
