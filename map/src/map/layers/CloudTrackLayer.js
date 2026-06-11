@@ -1,13 +1,16 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
 import TracksManager, {
+    DEFAULT_GROUP_NAME,
     fitBoundsOptions,
     getResolvedPointsGroups,
     getTracksArrBounds,
 } from '../../manager/track/TracksManager';
+import useCloudGpxImport from '../../util/hooks/useCloudGpxImport';
+import GpxMapDropOverlay from '../components/GpxMapDropOverlay';
 import { encodeString, useMutator } from '../../util/Utils';
 import { INFO_MENU_URL, MAIN_URL_WITH_SLASH, MENU_INFO_OPEN_SIZE, TRACKS_URL } from '../../manager/GlobalManager';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -164,12 +167,54 @@ const CloudTrackLayer = () => {
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     const map = useMap();
+    const { importGpxFiles } = useCloudGpxImport({ folder: DEFAULT_GROUP_NAME });
 
     const navigate = useNavigate();
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
+
+    const [isDragOver, setIsDragOver] = useState(false);
+    const dragCounterRef = useRef(0);
+
+    useEffect(() => {
+        const container = map.getContainer();
+        const hasFiles = (e) => e.dataTransfer?.types?.includes('Files');
+
+        const onDragEnter = (e) => {
+            e.preventDefault();
+            if (!hasFiles(e)) return;
+            dragCounterRef.current += 1;
+            setIsDragOver(true);
+        };
+        const onDragOver = (e) => {
+            e.preventDefault();
+            if (hasFiles(e)) e.dataTransfer.dropEffect = 'copy';
+        };
+        const onDragLeave = () => {
+            dragCounterRef.current = Math.max(0, dragCounterRef.current - 1);
+            if (dragCounterRef.current === 0) setIsDragOver(false);
+        };
+        const onDrop = (e) => {
+            e.preventDefault();
+            const files = Array.from(e.dataTransfer?.files || []);
+            dragCounterRef.current = 0;
+            setIsDragOver(false);
+            importGpxFiles(files);
+        };
+
+        container.addEventListener('dragenter', onDragEnter);
+        container.addEventListener('dragover', onDragOver);
+        container.addEventListener('dragleave', onDragLeave);
+        container.addEventListener('drop', onDrop);
+        return () => {
+            container.removeEventListener('dragenter', onDragEnter);
+            container.removeEventListener('dragover', onDragOver);
+            container.removeEventListener('dragleave', onDragLeave);
+            container.removeEventListener('drop', onDrop);
+        };
+    }, [map, importGpxFiles]);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -363,6 +408,8 @@ const CloudTrackLayer = () => {
             ctx.setFitBoundsShareTracks(null);
         }
     }, [ctx.fitBoundsShareTracks]);
+
+    return <GpxMapDropOverlay active={isDragOver} />;
 };
 
 export default CloudTrackLayer;
