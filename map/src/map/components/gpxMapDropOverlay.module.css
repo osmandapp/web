@@ -1,22 +1,22 @@
 .overlay {
     position: absolute;
-    top: 61px;
-    right: 0;
-    bottom: 0;
-    left: 67px;
-    z-index: 1200;
+    z-index: 3001;
     display: flex;
     align-items: center;
     justify-content: center;
     pointer-events: none;
-    border: 2px dashed #1976d2;
-    background: rgba(25, 118, 210, 0.12);
+    border: 3px dashed var(--selected-color);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--selected-color) 30%, transparent);
 }
 
 .text {
-    padding: 10px 16px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.65);
+    padding: 9px 12px;
+    border-radius: 40px;
+    background: var(--selected-color);
     color: #fff;
     font-size: 16px !important;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.01em;
 }

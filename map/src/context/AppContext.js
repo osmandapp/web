@@ -127,6 +127,7 @@ export const AppContextProvider = (props) => {
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
 
     const [openMenu, setOpenMenu] = useState(null);
+    const [openMainMenu, setOpenMainMenu] = useState(false);
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
     const [cloudSettings, setCloudSettings] = useState({
@@ -632,6 +633,8 @@ export const AppContextProvider = (props) => {
                 setSelectedWptId,
                 openMenu,
                 setOpenMenu,
+                openMainMenu,
+                setOpenMainMenu,
                 openContextMenu,
                 setOpenContextMenu,
                 prevPageUrl,
