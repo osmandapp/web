@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
-import { mvtDemoTileURL } from '../map/mvt/MvtDemoConfig';
+import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
 
@@ -44,7 +44,7 @@ export const MapContextProvider = ({ children }) => {
     const [focusModeOn, setFocusModeOn] = useState(false);
 
     // map tile and rendering
-    const [tileURL, setTileURL] = useState(mvtDemoTileURL);
+    const [tileURL, setTileURL] = useState(osmandTileURL);
     const [renderingType, setRenderingType] = useState(null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
