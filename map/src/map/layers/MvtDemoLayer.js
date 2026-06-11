@@ -6,8 +6,6 @@ const config = {
     style: defaultStyle,
     tileUrl: MVT_DEMO_TILE_URL,
     isActive: isMvtDemoTileURL,
-    paneName: 'mvtDemoPane',
-    containerClassName: 'mvt-demo-maplibre-layer',
     popupClassName: 'mvt-demo-popup',
     errorLabel: 'MVT demo layer error',
 };

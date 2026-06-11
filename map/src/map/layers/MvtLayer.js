@@ -1,13 +1,11 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import '@maplibre/maplibre-gl-leaflet';
 import MapContext from '../../context/MapContext';
 
 const POPUP_MAX_HEIGHT = 220;
-const MAPLIBRE_ZOOM_OFFSET = -1;
-const PAN_BUFFER = 768;
 const SHOW_TILE_BOUNDARIES = true;
 
 function getPublicAssetPath(path) {
@@ -31,10 +29,6 @@ function createStyle(baseStyle, tileUrl) {
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
     return style;
-}
-
-function getMapLibreZoom(leafletZoom) {
-    return Math.max(0, leafletZoom + MAPLIBRE_ZOOM_OFFSET);
 }
 
 function formatPopupValue(value) {
@@ -84,16 +78,12 @@ function createTagsPopupContent(properties, popupClassName) {
     return wrapper;
 }
 
-// Generic MapLibre GL vector-tile overlay rendered inside the Leaflet map.
-// Each MVT variant (demo, OSM, …) supplies its own `config`; the overlay is
-// active only while the matching tile layer is selected (config.isActive).
 export default function MvtLayer({ config }) {
     const map = useMap();
     const mtx = useContext(MapContext);
-    const maplibreRef = useRef(null);
 
     useEffect(() => {
-        const { style, tileUrl, isActive, paneName, containerClassName, popupClassName, errorLabel } = config;
+        const { style, tileUrl, isActive, popupClassName, errorLabel } = config;
 
         if (!isActive(mtx.tileURL)) {
             return undefined;
@@ -101,159 +91,16 @@ export default function MvtLayer({ config }) {
 
         window.seIsTilesLoaded = false;
 
-        let pane = map.getPane(paneName);
-        if (!pane) {
-            pane = map.createPane(paneName);
-        }
-        pane.style.zIndex = '200';
-        pane.style.pointerEvents = 'none';
-
-        const container = L.DomUtil.create('div', `leaflet-layer leaflet-zoom-animated ${containerClassName}`, pane);
-        container.style.position = 'absolute';
-        container.style.overflow = 'hidden';
-        container.style.pointerEvents = 'none';
-        container.style.transformOrigin = '0 0';
-
-        const initialSize = map.getSize();
-        container.style.width = `${initialSize.x + PAN_BUFFER * 2}px`;
-        container.style.height = `${initialSize.y + PAN_BUFFER * 2}px`;
-        L.DomUtil.setPosition(container, map.containerPointToLayerPoint([-PAN_BUFFER, -PAN_BUFFER]));
-
-        const center = map.getCenter();
-        const maplibreMap = new maplibregl.Map({
-            container,
+        const glLayer = L.maplibreGL({
             style: createStyle(style, tileUrl),
-            center: [center.lng, center.lat],
-            zoom: getMapLibreZoom(map.getZoom()),
-            attributionControl: false,
             interactive: false,
             fadeDuration: 0,
-        });
+        }).addTo(map);
+
+        const maplibreMap = glLayer.getMaplibreMap();
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
 
-        maplibreRef.current = maplibreMap;
-
-        let disposed = false;
-        let syncFrame = null;
-        let deferredContainerSync = null;
-        let dragging = false;
-        let zooming = false;
         let activePopup = null;
-        let containerWidth = initialSize.x + PAN_BUFFER * 2;
-        let containerHeight = initialSize.y + PAN_BUFFER * 2;
-
-        const syncContainer = () => {
-            const size = map.getSize();
-            const nextWidth = size.x + PAN_BUFFER * 2;
-            const nextHeight = size.y + PAN_BUFFER * 2;
-
-            if (nextWidth !== containerWidth || nextHeight !== containerHeight) {
-                containerWidth = nextWidth;
-                containerHeight = nextHeight;
-                container.style.width = `${containerWidth}px`;
-                container.style.height = `${containerHeight}px`;
-                maplibreMap.resize();
-            }
-            L.DomUtil.setPosition(container, map.containerPointToLayerPoint([-PAN_BUFFER, -PAN_BUFFER]));
-        };
-
-        const cancelDeferredContainerSync = () => {
-            if (deferredContainerSync !== null) {
-                maplibreMap.off('render', deferredContainerSync);
-                deferredContainerSync = null;
-            }
-        };
-
-        const jumpToLeafletView = ({ center = map.getCenter(), zoom = map.getZoom() } = {}) => {
-            if (disposed) {
-                return;
-            }
-            const nextView = {
-                center: [center.lng, center.lat],
-                zoom: getMapLibreZoom(zoom),
-                bearing: 0,
-                pitch: 0,
-            };
-            maplibreMap.jumpTo(nextView);
-        };
-
-        const syncView = (view) => {
-            if (disposed) {
-                return;
-            }
-            cancelDeferredContainerSync();
-            syncContainer();
-            jumpToLeafletView(view);
-        };
-
-        const syncViewAfterPan = () => {
-            if (disposed) {
-                return;
-            }
-            cancelDeferredContainerSync();
-            deferredContainerSync = () => {
-                deferredContainerSync = null;
-                syncContainer();
-            };
-            maplibreMap.once('render', deferredContainerSync);
-            jumpToLeafletView();
-            maplibreMap.triggerRepaint();
-        };
-
-        const requestSync = () => {
-            if (dragging || zooming || syncFrame !== null) {
-                return;
-            }
-            syncFrame = L.Util.requestAnimFrame(() => {
-                syncFrame = null;
-                syncView();
-            });
-        };
-
-        const cancelRequestedSync = () => {
-            if (syncFrame !== null) {
-                L.Util.cancelAnimFrame(syncFrame);
-                syncFrame = null;
-            }
-        };
-
-        const handleDragStart = () => {
-            dragging = true;
-            cancelRequestedSync();
-            cancelDeferredContainerSync();
-        };
-
-        const handleMoveEnd = () => {
-            if (!dragging) {
-                return;
-            }
-            dragging = false;
-            syncViewAfterPan();
-        };
-
-        // Leaflet applies a CSS transition to elements with the `leaflet-zoom-animated`
-        // class, so matching its target transform here keeps the overlay in sync and
-        // avoids the zoom glitch. The real re-render happens on zoomend via syncView.
-        const handleZoomAnim = (event) => {
-            if (disposed) {
-                return;
-            }
-            zooming = true;
-            cancelRequestedSync();
-            cancelDeferredContainerSync();
-            const scale = map.getZoomScale(event.zoom);
-            const topLeftLatLng = map.layerPointToLatLng(map.containerPointToLayerPoint([-PAN_BUFFER, -PAN_BUFFER]));
-            const offset = map._latLngToNewLayerPoint(topLeftLatLng, event.zoom, event.center);
-            L.DomUtil.setTransform(container, offset, scale);
-        };
-
-        const handleZoomEnd = () => {
-            if (!zooming) {
-                return;
-            }
-            zooming = false;
-            syncView();
-        };
 
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
@@ -268,10 +115,9 @@ export default function MvtLayer({ config }) {
         };
 
         const handleMapClick = (event) => {
-            if (disposed) {
-                return;
-            }
-            const point = [event.containerPoint.x + PAN_BUFFER, event.containerPoint.y + PAN_BUFFER];
+            const canvas = glLayer.getCanvas();
+            const rect = canvas.getBoundingClientRect();
+            const point = [event.originalEvent.clientX - rect.left, event.originalEvent.clientY - rect.top];
             let features = [];
             try {
                 features = maplibreMap.queryRenderedFeatures(point);
@@ -305,42 +151,24 @@ export default function MvtLayer({ config }) {
             }
         };
 
-        map.on('move zoom resize viewreset', requestSync);
-        map.on('dragstart', handleDragStart);
-        map.on('moveend', handleMoveEnd);
-        map.on('zoomanim', handleZoomAnim);
-        map.on('zoomend', handleZoomEnd);
         map.on('click', handleMapClick);
         map.on('popupclose', handlePopupClose);
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
         maplibreMap.on('error', handleError);
-        syncView();
 
         return () => {
-            disposed = true;
             window.seIsTilesLoaded = true;
-            cancelRequestedSync();
-            cancelDeferredContainerSync();
-            map.off('move zoom resize viewreset', requestSync);
-            map.off('dragstart', handleDragStart);
-            map.off('moveend', handleMoveEnd);
-            map.off('zoomanim', handleZoomAnim);
-            map.off('zoomend', handleZoomEnd);
             map.off('click', handleMapClick);
             map.off('popupclose', handlePopupClose);
+            maplibreMap.off('dataloading', handleLoading);
+            maplibreMap.off('idle', handleIdle);
+            maplibreMap.off('error', handleError);
             if (activePopup) {
                 map.closePopup(activePopup);
                 activePopup = null;
             }
-            maplibreMap.off('dataloading', handleLoading);
-            maplibreMap.off('idle', handleIdle);
-            maplibreMap.off('error', handleError);
-            maplibreMap.remove();
-            container.remove();
-            if (maplibreRef.current === maplibreMap) {
-                maplibreRef.current = null;
-            }
+            map.removeLayer(glLayer);
         };
     }, [map, mtx.tileURL, config]);
 

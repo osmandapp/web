@@ -2774,6 +2774,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@maplibre/maplibre-gl-leaflet@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@maplibre/maplibre-gl-leaflet@npm:0.1.3"
+  peerDependencies:
+    "@types/leaflet": ^1.9.0
+    leaflet: ^1.9.3
+    maplibre-gl: ^2.4.0 || ^3.3.1 || ^4.3.2 || ^5.0.0
+  checksum: 6c2b776c33e465290902a4223e13c47f5decb841ad20f021639bd537250cdd1837de357f12364dd53d0f86720a9527bcd51d1735d028493527c66ce3254d9920
+  languageName: node
+  linkType: hard
+
 "@maplibre/maplibre-gl-style-spec@npm:^24.8.1":
   version: 24.8.5
   resolution: "@maplibre/maplibre-gl-style-spec@npm:24.8.5"
@@ -12586,6 +12597,7 @@ eslint-plugin-react-compiler@beta:
     "@emotion/styled": ^11.8.1
     "@eslint/eslintrc": ^3.2.0
     "@hello-pangea/dnd": ^15.0.0
+    "@maplibre/maplibre-gl-leaflet": 0.1.3
     "@mui/icons-material": ^5.8.3
     "@mui/lab": ^5.0.0-alpha.85
     "@mui/material": ^5.8.3

@@ -6,8 +6,6 @@ const config = {
     style: mvtOsmStyle,
     tileUrl: MVT_OSM_TILE_URL,
     isActive: isMvtOsmTileURL,
-    paneName: 'mvtOsmPane',
-    containerClassName: 'mvt-osm-maplibre-layer',
     popupClassName: 'mvt-osm-popup',
     errorLabel: 'MVT OSM layer error',
 };
