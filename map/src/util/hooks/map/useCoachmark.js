@@ -16,14 +16,19 @@ export function useCoachmark({ id, targetId, description, enabled = true, side =
         const element = document.getElementById(targetId);
         if (!element) return;
 
-        markCoachmarkSeen(id);
+        let driverObj;
+        try {
+            driverObj = driver({
+                showProgress: false,
+                showButtons: ['close'],
+                steps: [{ element: `#${targetId}`, popover: { description, side, align } }],
+            });
+            driverObj.drive();
+        } catch {
+            return;
+        }
 
-        const driverObj = driver({
-            showProgress: false,
-            showButtons: ['close'],
-            steps: [{ element: `#${targetId}`, popover: { description, side, align } }],
-        });
-        driverObj.drive();
+        markCoachmarkSeen(id);
 
         return () => driverObj.destroy();
     }, [enabled, id, targetId, description, side, align]);
