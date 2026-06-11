@@ -203,7 +203,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
@@ -294,7 +294,7 @@ For advanced palette customization using palette files, see [Color Schemes](../p
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *Modify Color Scheme feature* allows you to select a color scheme:
 
