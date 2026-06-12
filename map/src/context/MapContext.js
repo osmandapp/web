@@ -5,6 +5,23 @@ import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
 
+export const LOCAL_STORAGE_MAP_STYLE = 'mapStyle';
+function getInitialMapStyle() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(LOCAL_STORAGE_MAP_STYLE));
+        if (saved?.tileURL) {
+            return { tileURL: saved.tileURL, renderingType: saved.renderingType ?? null };
+        }
+    } catch {
+        // ignore malformed cache
+    }
+    return { tileURL: osmandTileURL, renderingType: null };
+}
+
+export function saveMapStyle(tileURL, renderingType) {
+    localStorage.setItem(LOCAL_STORAGE_MAP_STYLE, JSON.stringify({ tileURL, renderingType }));
+}
+
 function getInitialHeightmap() {
     try {
         const saved = localStorage.getItem('configureMap');
@@ -43,9 +60,10 @@ export const MapContextProvider = ({ children }) => {
     const [selectionFocus, setSelectionFocus] = useState(null);
     const [focusModeOn, setFocusModeOn] = useState(false);
 
-    // map tile and rendering
-    const [tileURL, setTileURL] = useState(osmandTileURL);
-    const [renderingType, setRenderingType] = useState(null);
+    // map tile and rendering (restored from the dev-selected style, if any)
+    const initialMapStyle = getInitialMapStyle();
+    const [tileURL, setTileURL] = useState(initialMapStyle.tileURL);
+    const [renderingType, setRenderingType] = useState(initialMapStyle.renderingType);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);

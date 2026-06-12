@@ -14,8 +14,8 @@ import {
     Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
-import MapContext from '../../context/MapContext';
+import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
+import MapContext, { saveMapStyle } from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
@@ -50,10 +50,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
-
-export function updateConfigureMapCache(conf) {
-    localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(conf));
-}
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
@@ -263,12 +259,12 @@ export default function ConfigureMap() {
                                             label={t('map_widget_renderer')}
                                             value={ctx.allTileURLs[mtx.tileURL.key] ? mtx.tileURL.key : ''}
                                             onChange={(e) => {
-                                                mtx.setTileURL(ctx.allTileURLs[e.target.value]);
-                                                if (e.target.value === INTERACTIVE_LAYER) {
-                                                    mtx.setRenderingType(DYNAMIC_RENDERING);
-                                                } else if (mtx.renderingType) {
-                                                    mtx.setRenderingType(null);
-                                                }
+                                                const selected = ctx.allTileURLs[e.target.value];
+                                                const renderingType =
+                                                    e.target.value === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
+                                                mtx.setTileURL(selected);
+                                                mtx.setRenderingType(renderingType);
+                                                saveMapStyle(selected, renderingType);
                                             }}
                                         >
                                             {Object.values(ctx.allTileURLs).map((item) => {
