@@ -14,7 +14,7 @@ import {
     Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
@@ -26,7 +26,6 @@ import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';
 import { ReactComponent as TransportStopIcon } from '../../assets/icons/ic_action_transport_stop.svg';
-import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
@@ -47,10 +46,6 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export function updateConfigureMapCache(conf) {
-    localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify({ ...conf, updateTime: Date.now() }));
-}
-
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
@@ -68,18 +63,18 @@ export default function ConfigureMap() {
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
 
+    function updateConfigureMap(patch) {
+        const configureMap = { ...ctx.configureMapState, ...patch };
+        updateConfigureMapCache(configureMap);
+        ctx.setConfigureMapState(configureMap);
+    }
+
     const handleFavoritesSwitchChange = () => {
-        const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
-        updateConfigureMapCache(newConfigureMap);
-        ctx.setConfigureMapState(newConfigureMap);
+        updateConfigureMap({ showFavorites: !ctx.configureMapState.showFavorites });
     };
 
     const handleTransportStopsSwitchChange = () => {
-        const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.showTransportStops = !ctx.configureMapState.showTransportStops;
-        updateConfigureMapCache(newConfigureMap);
-        ctx.setConfigureMapState(newConfigureMap);
+        updateConfigureMap({ showTransportStops: !ctx.configureMapState.showTransportStops });
     };
 
     function setIconStyles(active) {
@@ -109,20 +104,13 @@ export default function ConfigureMap() {
         updateConfigureMapCache(defaultConfigureMap);
     }
 
-    function handleMapStyleChange(e) {
-        const mapStyle = e.target.value;
-        const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.mapStyle = mapStyle;
-
-        updateConfigureMapCache(newConfigureMap);
-        ctx.setConfigureMapState(newConfigureMap);
+    function handleMapStyleChange({ target: { value: mapStyle } }) {
+        updateConfigureMap({ mapStyle });
     }
 
     function getSelectedMapStyle() {
-        if (ctx.allTileURLs[ctx.configureMapState.mapStyle]) {
-            return ctx.configureMapState.mapStyle;
-        }
-        return ctx.allTileURLs[mtx.tileURL?.key] ? mtx.tileURL.key : '';
+        const key = ctx.allTileURLs[ctx.configureMapState.mapStyle] ? ctx.configureMapState.mapStyle : mtx.tileURL?.key;
+        return ctx.allTileURLs[key] ? key : '';
     }
 
     function showProButton() {

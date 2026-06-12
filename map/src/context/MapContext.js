@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
-import { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
+import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
 import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
@@ -12,16 +12,6 @@ function getInitialHeightmap() {
         return saved ? (JSON.parse(saved).terrain ?? null) : null;
     } catch {
         return null;
-    }
-}
-
-function getInitialMapTileURL() {
-    try {
-        const saved = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
-        const parsed = saved ? JSON.parse(saved) : null;
-        return parsed?.mapStyle && parsed.mapStyle !== osmandTileURL.key ? null : osmandTileURL;
-    } catch {
-        return osmandTileURL;
     }
 }
 
@@ -45,6 +35,7 @@ function getInitialPinPoint() {
 }
 
 export const MapContextProvider = ({ children }) => {
+    const { configureMapState } = useContext(AppContext);
     const [zoomToFitRequest, setZoomToFitRequest] = useState(null);
     const [mapViewBeforeZoomFit, setMapViewBeforeZoomFit] = useState(null);
     const [restoreMapViewRequest, setRestoreMapViewRequest] = useState(false);
@@ -55,7 +46,9 @@ export const MapContextProvider = ({ children }) => {
     const [focusModeOn, setFocusModeOn] = useState(false);
 
     // map tile and rendering
-    const [tileURL, setTileURL] = useState(getInitialMapTileURL);
+    const [tileURL, setTileURL] = useState(() =>
+        configureMapState.mapStyle === osmandTileURL.key ? osmandTileURL : null
+    );
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);

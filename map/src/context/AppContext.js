@@ -70,6 +70,13 @@ export const defaultConfigureMapStateValues = {
     mapStyle: osmandTileURL.key,
 };
 
+export function updateConfigureMapCache(conf) {
+    localStorage.setItem(
+        LOCAL_STORAGE_CONFIGURE_MAP,
+        JSON.stringify({ ...conf, updateTime: CONFIGURE_MAP_UPDATE_TIME })
+    );
+}
+
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
 export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
@@ -366,10 +373,7 @@ export const AppContextProvider = (props) => {
             savedConfigureMap = JSON.parse(savedConfigureMap);
             if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < CONFIGURE_MAP_UPDATE_TIME) {
                 savedConfigureMap = { ...defaultConfigureMapStateValues };
-                localStorage.setItem(
-                    LOCAL_STORAGE_CONFIGURE_MAP,
-                    JSON.stringify({ ...savedConfigureMap, updateTime: CONFIGURE_MAP_UPDATE_TIME })
-                );
+                updateConfigureMapCache(savedConfigureMap);
                 return savedConfigureMap;
             }
             // Normalize saved data to ensure all default fields are present
