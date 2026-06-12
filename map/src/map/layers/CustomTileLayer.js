@@ -4,7 +4,6 @@ import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import 'leaflet.vectorgrid';
 import { getIconUrlByName, getShaderUrlByName } from '../markers/MarkerOptions';
-import { DYNAMIC_RENDERING } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -16,11 +15,11 @@ export const INTERACTIVE_LAYER = 'int';
 const CustomTileLayer = forwardRef((props, ref) => {
     const map = useMap();
     const mtx = useContext(MapContext);
-    const renderingType = mtx.tileURL?.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
+    const interactive = mtx.tileURL?.key === INTERACTIVE_LAYER;
 
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);
-    const renderingTypeRef = useRef(renderingType);
+    const interactiveRef = useRef(interactive);
     const abortControllerRef = useRef(null);
     const zoomLevelRef = useRef(map.getZoom());
 
@@ -32,8 +31,8 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }));
 
     useEffect(() => {
-        renderingTypeRef.current = renderingType;
-    }, [renderingType]);
+        interactiveRef.current = interactive;
+    }, [interactive]);
 
     useEffect(() => {
         const handleZoomEnd = () => {
@@ -394,7 +393,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
 
         const tileChanged =
             dataLayersRef.current && dataLayersRef.current.rasterTileLayer !== rasterTileLayerRef.current;
-        const noDataLayers = !renderingTypeRef.current && dataLayersRef?.current?.layers.length > 0;
+        const noDataLayers = !interactiveRef.current && dataLayersRef?.current?.layers.length > 0;
 
         //if raster tile changed or no data layers, remove data layers
         if (tileChanged || noDataLayers) {
@@ -410,7 +409,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
         });
 
         rasterTileLayerRef.current.on('tileload', async function (e) {
-            if (mtx.tileURL.infoUrl === undefined || !renderingTypeRef.current) return;
+            if (mtx.tileURL.infoUrl === undefined || !interactiveRef.current) return;
 
             const { z, x, y } = e.coords;
             const key = generateTileKey(z, x, y);
@@ -441,7 +440,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             if (response.ok) {
                 const geoJsonData = await response.json();
                 const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);
-                if (preparedGeoJsonData && renderingTypeRef.current === DYNAMIC_RENDERING) {
+                if (preparedGeoJsonData && interactiveRef.current) {
                     if (!dataLayersRef.current) {
                         dataLayersRef.current = {
                             layers: [],
@@ -461,7 +460,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             }
             map.off('click', onMapClick);
         };
-    }, [mtx.tileURL.url, props, renderingType]);
+    }, [mtx.tileURL.url, props, interactive]);
 
     const removeDataLayers = useCallback(
         (dataLayers) => {
