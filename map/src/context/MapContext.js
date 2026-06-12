@@ -35,7 +35,7 @@ function getInitialPinPoint() {
 }
 
 export const MapContextProvider = ({ children }) => {
-    const { configureMapState } = useContext(AppContext);
+    const { allTileURLs, configureMapState } = useContext(AppContext);
     const [zoomToFitRequest, setZoomToFitRequest] = useState(null);
     const [mapViewBeforeZoomFit, setMapViewBeforeZoomFit] = useState(null);
     const [restoreMapViewRequest, setRestoreMapViewRequest] = useState(false);
@@ -45,10 +45,10 @@ export const MapContextProvider = ({ children }) => {
     const [selectionFocus, setSelectionFocus] = useState(null);
     const [focusModeOn, setFocusModeOn] = useState(false);
 
-    // map tile and rendering
-    const [tileURL, setTileURL] = useState(() =>
-        configureMapState.mapStyle === osmandTileURL.key ? osmandTileURL : null
-    );
+    const defaultTileURL = allTileURLs[osmandTileURL.key] || osmandTileURL;
+    const tileURL =
+        allTileURLs[configureMapState.mapStyle] ||
+        (configureMapState.mapStyle === osmandTileURL.key || Object.keys(allTileURLs).length ? defaultTileURL : null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
@@ -72,7 +72,6 @@ export const MapContextProvider = ({ children }) => {
                 focusModeOn,
                 setFocusModeOn,
                 tileURL,
-                setTileURL,
                 heightmap,
                 setHeightmap,
                 processHeightmaps,

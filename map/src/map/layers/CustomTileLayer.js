@@ -370,7 +370,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
-        if (isMvtTileURL(mtx.tileURL)) {
+        if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
             if (rasterTileLayerRef.current && map.hasLayer(rasterTileLayerRef.current)) {
                 map.removeLayer(rasterTileLayerRef.current);
             }
@@ -460,7 +460,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             }
             map.off('click', onMapClick);
         };
-    }, [mtx.tileURL.url, props, interactive]);
+    }, [mtx.tileURL?.url, props, interactive]);
 
     const removeDataLayers = useCallback(
         (dataLayers) => {

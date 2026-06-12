@@ -30,7 +30,6 @@ import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
 import { isMvtTileURL } from './mvt/MvtDemoConfig';
-import { osmandTileURL } from './baseTileURL';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;
@@ -97,13 +96,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             detectGeoByIp({ map, hash });
         }
     };
-
-    useEffect(() => {
-        const tileURL = ctx.allTileURLs[ctx.configureMapState.mapStyle] || ctx.allTileURLs[osmandTileURL.key];
-        if (tileURL) {
-            mtx.setTileURL(tileURL);
-        }
-    }, [ctx.allTileURLs, ctx.configureMapState.mapStyle]);
 
     useEffect(() => {
         if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
@@ -247,15 +239,13 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <MapStateLayer />
                 <ExploreLayer />
                 <TransportStopsLayer />
-                {mtx.tileURL && !isMvtTileURL(mtx.tileURL) && (
-                    <CustomTileLayer
-                        ref={tileLayer}
-                        attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
-                        minZoom={1}
-                        maxZoom={20}
-                        maxNativeZoom={19}
-                    />
-                )}
+                <CustomTileLayer
+                    ref={tileLayer}
+                    attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+                    minZoom={1}
+                    maxZoom={20}
+                    maxNativeZoom={19}
+                />
                 <MvtDemoLayer />
                 <MvtOsmLayer />
                 <HeightmapLayer />
