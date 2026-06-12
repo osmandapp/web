@@ -16,10 +16,11 @@ export const INTERACTIVE_LAYER = 'int';
 const CustomTileLayer = forwardRef((props, ref) => {
     const map = useMap();
     const mtx = useContext(MapContext);
+    const renderingType = mtx.tileURL?.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : mtx.renderingType;
 
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);
-    const renderingTypeRef = useRef(mtx.renderingType);
+    const renderingTypeRef = useRef(renderingType);
     const abortControllerRef = useRef(null);
     const zoomLevelRef = useRef(map.getZoom());
 
@@ -31,8 +32,8 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }));
 
     useEffect(() => {
-        renderingTypeRef.current = mtx.renderingType;
-    }, [mtx.renderingType]);
+        renderingTypeRef.current = renderingType;
+    }, [renderingType]);
 
     useEffect(() => {
         const handleZoomEnd = () => {
@@ -460,7 +461,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             }
             map.off('click', onMapClick);
         };
-    }, [mtx.tileURL.url, props, mtx.renderingType]);
+    }, [mtx.tileURL.url, props, renderingType]);
 
     const removeDataLayers = useCallback(
         (dataLayers) => {

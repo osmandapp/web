@@ -30,8 +30,6 @@ import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
 import { isMvtTileURL } from './mvt/MvtDemoConfig';
-import { INTERACTIVE_LAYER } from './layers/CustomTileLayer';
-import { DYNAMIC_RENDERING } from '../menu/configuremap/ConfigureMap';
 import { osmandTileURL } from './baseTileURL';
 
 function getInitialViewFromHash() {
@@ -102,13 +100,10 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        if (Object.keys(ctx.allTileURLs).length === 0) {
-            return;
+        if (Object.keys(ctx.allTileURLs).length > 0) {
+            mtx.setTileURL(ctx.allTileURLs[mapStyle] || ctx.allTileURLs[osmandTileURL.key] || osmandTileURL);
         }
-        const tileURL = ctx.allTileURLs[mapStyle] || ctx.allTileURLs[osmandTileURL.key] || osmandTileURL;
-        mtx.setTileURL(tileURL);
-        mtx.setRenderingType(tileURL.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null);
-    }, [ctx.allTileURLs, mapStyle, mtx]);
+    }, [ctx.allTileURLs, mapStyle]);
 
     useEffect(() => {
         if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
