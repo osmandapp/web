@@ -66,6 +66,7 @@ export const defaultConfigureMapStateValues = {
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
+    mapStyle: { tileURL: osmandTileURL, renderingType: null },
 };
 
 export const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16

@@ -1,30 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
+import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
 import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
 
-export const LOCAL_STORAGE_MAP_STYLE = 'mapStyle';
-function getInitialMapStyle() {
-    try {
-        const saved = JSON.parse(localStorage.getItem(LOCAL_STORAGE_MAP_STYLE));
-        if (saved?.tileURL) {
-            return { tileURL: saved.tileURL, renderingType: saved.renderingType ?? null };
-        }
-    } catch {
-        // ignore malformed cache
-    }
-    return { tileURL: osmandTileURL, renderingType: null };
-}
-
-export function saveMapStyle(tileURL, renderingType) {
-    localStorage.setItem(LOCAL_STORAGE_MAP_STYLE, JSON.stringify({ tileURL, renderingType }));
-}
-
 function getInitialHeightmap() {
     try {
-        const saved = localStorage.getItem('configureMap');
+        const saved = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         return saved ? (JSON.parse(saved).terrain ?? null) : null;
     } catch {
         return null;
@@ -60,10 +44,10 @@ export const MapContextProvider = ({ children }) => {
     const [selectionFocus, setSelectionFocus] = useState(null);
     const [focusModeOn, setFocusModeOn] = useState(false);
 
-    // map tile and rendering (restored from the dev-selected style, if any)
-    const initialMapStyle = getInitialMapStyle();
-    const [tileURL, setTileURL] = useState(initialMapStyle.tileURL);
-    const [renderingType, setRenderingType] = useState(initialMapStyle.renderingType);
+    // map tile and rendering — seeded from the single source of truth (configureMap in AppContext)
+    const { configureMapState } = useContext(AppContext);
+    const [tileURL, setTileURL] = useState(() => configureMapState.mapStyle?.tileURL ?? osmandTileURL);
+    const [renderingType, setRenderingType] = useState(() => configureMapState.mapStyle?.renderingType ?? null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);

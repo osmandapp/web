@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
-import MapContext, { saveMapStyle } from '../../context/MapContext';
+import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
@@ -264,7 +264,10 @@ export default function ConfigureMap() {
                                                     e.target.value === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
                                                 mtx.setTileURL(selected);
                                                 mtx.setRenderingType(renderingType);
-                                                saveMapStyle(selected, renderingType);
+                                                const newConfigureMap = cloneDeep(ctx.configureMapState);
+                                                newConfigureMap.mapStyle = { tileURL: selected, renderingType };
+                                                updateConfigureMapCache(newConfigureMap);
+                                                ctx.setConfigureMapState(newConfigureMap);
                                             }}
                                         >
                                             {Object.values(ctx.allTileURLs).map((item) => {
