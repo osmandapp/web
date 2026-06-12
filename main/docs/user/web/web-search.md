@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 The **Search menu** can be accessed from the side panel or from the Search icon 🔍 on the map. It contains:
 
-- [Search Bar](#search-bar). Enter keywords to search for specific locations or points of interest.  
+- [Search Bar](#search-bar). Enter keywords to search for specific locations, points of interest, favorites, or tracks. 
 - [Categories Section](#categories). Browse through categorized options for easier POI searches.  
 - [Explore Section](#explore). View popular POI for the current map center and explore places with photos on the map.
 
@@ -34,7 +34,7 @@ The **Search menu** can be accessed from the side panel or from the Search icon 
 
 ### Search Bar {#search-bar}
 
-Use the **Search Bar** to find specific places or points of interest by name. Click the Search icon, enter your query, and select a result from the list. Selecting a POI opens the [POI Context Menu](#poi-context-menu), where you can view details and use quick actions.
+Use the **Search Bar** to find specific places, points of interest, [favorites](../web/web-favorites.md), and [tracks](../web/web-tracks.md) by name. Click the Search icon, enter your query, and select a result from the list. Selecting a POI opens the [POI Context Menu](#poi-context-menu), while selecting a favorite or track opens its details, where you can view information and use quick actions.
 
 If you search by a category name, the first result may show the corresponding POI category. Click the category to open the [Categories search](#categories) view.
 
