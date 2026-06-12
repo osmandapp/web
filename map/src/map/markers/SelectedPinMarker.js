@@ -11,12 +11,24 @@ import { ReactComponent as SquareStroke } from '../../assets/map/map_pin_square_
 import { ReactComponent as HexagonColor } from '../../assets/map/map_pin_hexagon_color.svg';
 import { ReactComponent as HexagonLight } from '../../assets/map/map_pin_hexagon_light.svg';
 import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexagon_stroke.svg';
+import { ReactComponent as HoverCircle } from '../../assets/map/hover_point_circle.svg';
+import { ReactComponent as HoverSquare } from '../../assets/map/hover_point_square.svg';
+import { ReactComponent as HoverOctagon } from '../../assets/map/hover_point_octagon.svg';
 import { SELECTED_ICON_SIZE, SELECTED_PIN_COLOR, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
 import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
 /** Pin SVGs use viewBox 0 0 70 70; the map anchor must be the bottom dot center (y=67), not the box bottom. */
 const PIN_VIEWBOX_SIZE = 70;
 const PIN_TIP_CENTER_Y = 67;
+
+export const HOVER_OUTLINE_SIZE = 34;
+
+const HOVER_OUTLINE_SHAPES = {
+    circle: HoverCircle,
+    square: HoverSquare,
+    octagon: HoverOctagon,
+    hexagon: HoverOctagon,
+};
 
 const SHAPES = {
     circle: {
@@ -72,6 +84,21 @@ function prepareInnerIcon(html, iconSize) {
 
     const withoutShadow = removeShadowFromIconWpt(html);
     return changeIconSizeWpt(withoutShadow, iconSize, iconSize);
+}
+
+export function createHoverOutlineIcon({ shape, color, size } = {}) {
+    const px = Math.max(Number(size) || 0, HOVER_OUTLINE_SIZE);
+    const shapeKey = shape === 'octagon' || shape === 'hexagon' ? 'octagon' : shape;
+    const Component = HOVER_OUTLINE_SHAPES[shapeKey] ?? HOVER_OUTLINE_SHAPES.circle;
+    const svg = resizeSvg(renderToStaticMarkup(React.createElement(Component)), px);
+    const html = `<div class="map-hover-outline" style="width:${px}px;height:${px}px;color:${color};display:flex;align-items:center;justify-content:center;pointer-events:none;">${svg}</div>`;
+
+    return L.divIcon({
+        html,
+        className: '',
+        iconSize: [px, px],
+        iconAnchor: [px / 2, px / 2],
+    });
 }
 
 export function createLayeredPinIcon(options = {}) {

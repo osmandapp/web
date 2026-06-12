@@ -6,7 +6,12 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
+import {
+    EXPLORE_PHOTO_ICON_SIZE,
+    applySelectedPin,
+    applyHoverOutline,
+    resetSelectedPin,
+} from '../../../map/util/MarkerSelectionService';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { iconPathMap } from '../../../map/util/MapManager';
@@ -14,6 +19,7 @@ import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 import { TRANSPORT_STOPS_LAYER_ID } from '../../../map/layers/TransportStopsLayer';
 
 const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
+const HOVER_OUTLINE_GAP = 6;
 
 function extractLatlng(selectedWptId, type) {
     const obj = selectedWptId?.obj;
@@ -133,6 +139,25 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
+
+        // Hover originating on the map: show an outline ring around the point instead of
+        // replacing the marker with a full selected pin. List hover keeps the pin behavior below.
+        if (ctx.selectedWptId?.hoverFromMap) {
+            // Secondary (simple dot) points across all layers get no hover outline.
+            if (found?.options?.simple) {
+                resetSelectedPin({ ctx, map });
+                return;
+            }
+
+            const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
+            if (latlng) {
+                applyHoverOutline({ ctx, map, latlng, ...resolveHoverOutlineStyle(found) });
+            } else {
+                resetSelectedPin({ ctx, map });
+            }
+            return;
+        }
+
         if (found) {
             applyPinForLayer(found, false);
         } else {
@@ -145,6 +170,30 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             }
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+
+    // Resolves the outline ring shape/color/size from the hovered layer (falls back to selectedWptId markerOptions).
+    function resolveHoverOutlineStyle(layer) {
+        const opts = layer?.options ?? {};
+        const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
+        const isPhoto = !!opts.photoUrl;
+        const isSimpleDot = !!opts.simple;
+        const color = (isSimpleDot ? opts.fillColor : opts.color) ?? markerOpts.color ?? DEFAULT_POI_COLOR;
+        // Photo markers (e.g. large Explore images) are round — wrap them with a circle regardless of poi shape.
+        const shape = isPhoto ? 'circle' : (opts.background ?? markerOpts.background ?? DEFAULT_POI_SHAPE);
+
+        return { shape, color, size: measureMarkerSize(layer) };
+    }
+
+    // Diameter to wrap the marker with: its rendered size plus a small gap (clamped to a minimum inside the icon builder).
+    function measureMarkerSize(layer) {
+        const el = layer?.getElement?.();
+        const rendered = el ? Math.max(el.offsetWidth, el.offsetHeight) : 0;
+        if (rendered > 0) {
+            return rendered + HOVER_OUTLINE_GAP;
+        }
+
+        return 0;
+    }
 
     // Builds markerData from layer options
     function applyPinForLayer(layer, isSelection) {

@@ -1,8 +1,9 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
-import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
+import { createLayeredPinIcon, createHoverOutlineIcon } from '../markers/SelectedPinMarker';
 import L from 'leaflet';
 import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
+import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
 export const SELECTED_PIN_SIZE = 70;
 export const SELECTED_ICON_SIZE = 36;
@@ -137,11 +138,49 @@ export function restoreOriginalIcon(layer) {
     }
 }
 
+// Shows an outline ring around a point hovered on the map
+export function applyHoverOutline({ ctx, map, layer = null, latlng = null, shape, color, size }) {
+    if (!ctx || !map) {
+        return null;
+    }
+    resetHoverOutline({ ctx, map });
+
+    const ll = latlng ?? layer?.getLatLng();
+    if (!ll) {
+        return null;
+    }
+    const latlngObj = ll.lat !== undefined && ll.lng !== undefined ? L.latLng(ll.lat, ll.lng) : ll;
+
+    const outline = L.marker(latlngObj, {
+        icon: createHoverOutlineIcon({
+            shape: shape ?? DEFAULT_POI_SHAPE,
+            color: toColor(color ?? DEFAULT_POI_COLOR),
+            size,
+        }),
+        interactive: false,
+        zIndexOffset: SELECTED_MARKER_Z_INDEX,
+    });
+    outline.addTo(map);
+    ctx.selectedHoverOutlineRef.current = outline;
+
+    return outline;
+}
+
+// Removes the hover outline ring, if present.
+export function resetHoverOutline({ ctx, map }) {
+    const outline = ctx?.selectedHoverOutlineRef?.current;
+    if (outline && map?.hasLayer(outline)) {
+        map.removeLayer(outline);
+    }
+    if (ctx?.selectedHoverOutlineRef) ctx.selectedHoverOutlineRef.current = null;
+}
+
 // Removes the current selected/hover pin and restores hidden markers.
 // The created pin is kept only if its idObj still matches the current selectedWpt id.
 export function resetSelectedPin({ ctx, map, force = false }) {
     if (!ctx || !map) return;
 
+    resetHoverOutline({ ctx, map });
     restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
 
     const createdId = ctx.selectedCreatedLayerRef?.current?.options?.idObj;
