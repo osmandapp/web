@@ -30,6 +30,8 @@ import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
 import { isMvtTileURL } from './mvt/MvtDemoConfig';
+import { applyMapStyle, saveConfigureMap } from './MapStyleManager';
+import { osmandTileURL } from './baseTileURL';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;
@@ -98,7 +100,29 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        if (isMvtTileURL(mtx.tileURL)) {
+        if (Object.keys(ctx.allTileURLs).length === 0) {
+            return;
+        }
+
+        const savedMapStyle = ctx.configureMapState.mapStyle;
+        const savedTileURL = ctx.allTileURLs[savedMapStyle];
+        if (savedTileURL) {
+            applyMapStyle(savedTileURL, mtx);
+            return;
+        }
+
+        if (savedMapStyle && savedMapStyle !== osmandTileURL.key) {
+            const defaultConfigureMap = { ...ctx.configureMapState, mapStyle: osmandTileURL.key };
+            saveConfigureMap(defaultConfigureMap);
+            ctx.setConfigureMapState(defaultConfigureMap);
+        }
+
+        const defaultTileURL = ctx.allTileURLs[osmandTileURL.key] || osmandTileURL;
+        applyMapStyle(defaultTileURL, mtx);
+    }, [ctx.allTileURLs, ctx.configureMapState, ctx.configureMapState.mapStyle, mtx.tileURL, mtx.renderingType]);
+
+    useEffect(() => {
+        if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
             return;
         }
         if (tileLayer.current) {
@@ -239,13 +263,15 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <MapStateLayer />
                 <ExploreLayer />
                 <TransportStopsLayer />
-                <CustomTileLayer
-                    ref={tileLayer}
-                    attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
-                    minZoom={1}
-                    maxZoom={20}
-                    maxNativeZoom={19}
-                />
+                {mtx.tileURL && (
+                    <CustomTileLayer
+                        ref={tileLayer}
+                        attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+                        minZoom={1}
+                        maxZoom={20}
+                        maxNativeZoom={19}
+                    />
+                )}
                 <MvtDemoLayer />
                 <MvtOsmLayer />
                 <HeightmapLayer />

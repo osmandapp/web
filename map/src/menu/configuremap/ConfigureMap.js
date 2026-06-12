@@ -14,7 +14,7 @@ import {
     Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import AppContext, { defaultConfigureMapStateValues } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
@@ -30,7 +30,6 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
-import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash-es/capitalize';
@@ -47,12 +46,10 @@ import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHas
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
-
-export const DYNAMIC_RENDERING = 'dynamic';
-export const VECTOR_GRID = 'vector_grid';
+import { applyMapStyle, saveConfigureMap } from '../../map/MapStyleManager';
 
 export function updateConfigureMapCache(conf) {
-    localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(conf));
+    saveConfigureMap(conf);
 }
 
 export default function ConfigureMap() {
@@ -108,9 +105,28 @@ export default function ConfigureMap() {
     }, [ctx.configureMapState.terrain]);
 
     function setDefaultConfigureMap() {
-        const defaultConfigureMap = defaultConfigureMapStateValues;
-        ctx.setConfigureMapState({ ...defaultConfigureMap });
+        const defaultConfigureMap = { ...defaultConfigureMapStateValues };
         updateConfigureMapCache(defaultConfigureMap);
+        ctx.setConfigureMapState(defaultConfigureMap);
+        applyMapStyle(ctx.allTileURLs[defaultConfigureMap.mapStyle], mtx);
+    }
+
+    function handleMapStyleChange(e) {
+        const mapStyle = e.target.value;
+        const tileURL = ctx.allTileURLs[mapStyle];
+        const newConfigureMap = cloneDeep(ctx.configureMapState);
+        newConfigureMap.mapStyle = mapStyle;
+
+        updateConfigureMapCache(newConfigureMap);
+        ctx.setConfigureMapState(newConfigureMap);
+        applyMapStyle(tileURL, mtx);
+    }
+
+    function getSelectedMapStyle() {
+        if (ctx.allTileURLs[ctx.configureMapState.mapStyle]) {
+            return ctx.configureMapState.mapStyle;
+        }
+        return ctx.allTileURLs[mtx.tileURL?.key] ? mtx.tileURL.key : '';
     }
 
     function showProButton() {
@@ -261,15 +277,8 @@ export default function ConfigureMap() {
                                         <Select
                                             labelid="rendering-style-selector-label"
                                             label={t('map_widget_renderer')}
-                                            value={ctx.allTileURLs[mtx.tileURL.key] ? mtx.tileURL.key : ''}
-                                            onChange={(e) => {
-                                                mtx.setTileURL(ctx.allTileURLs[e.target.value]);
-                                                if (e.target.value === INTERACTIVE_LAYER) {
-                                                    mtx.setRenderingType(DYNAMIC_RENDERING);
-                                                } else if (mtx.renderingType) {
-                                                    mtx.setRenderingType(null);
-                                                }
-                                            }}
+                                            value={getSelectedMapStyle()}
+                                            onChange={handleMapStyleChange}
                                         >
                                             {Object.values(ctx.allTileURLs).map((item) => {
                                                 return (

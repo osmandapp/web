@@ -7,7 +7,7 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
+import { CONFIGURE_MAP_UPDATE_TIME, INTERACTIVE_LAYER, saveConfigureMap } from '../map/MapStyleManager';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { GLOBAL_GRAPH_HEIGHT_SIZE } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
@@ -66,6 +66,7 @@ export const defaultConfigureMapStateValues = {
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
+    mapStyle: osmandTileURL.key,
 };
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
@@ -359,15 +360,17 @@ export const AppContextProvider = (props) => {
     });
 
     function getConfigureMap() {
-        const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         if (savedConfigureMap) {
             savedConfigureMap = JSON.parse(savedConfigureMap);
-            if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < TIME_UPDATE_CONFIGURE_MAP) {
-                savedConfigureMap = defaultConfigureMapStateValues;
-                savedConfigureMap.updateTime = TIME_UPDATE_CONFIGURE_MAP;
-                localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(savedConfigureMap));
-                return defaultConfigureMapStateValues;
+            if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < CONFIGURE_MAP_UPDATE_TIME) {
+                const savedMapStyle = savedConfigureMap.mapStyle;
+                savedConfigureMap = { ...defaultConfigureMapStateValues };
+                if (savedMapStyle) {
+                    savedConfigureMap.mapStyle = savedMapStyle;
+                }
+                saveConfigureMap(savedConfigureMap);
+                return savedConfigureMap;
             }
             // Normalize saved data to ensure all default fields are present
             savedConfigureMap = { ...defaultConfigureMapStateValues, ...savedConfigureMap };
