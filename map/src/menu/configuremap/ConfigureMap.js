@@ -14,11 +14,7 @@ import {
     Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext, {
-    CONFIGURE_MAP_UPDATE_TIME,
-    defaultConfigureMapStateValues,
-    LOCAL_STORAGE_CONFIGURE_MAP,
-} from '../../context/AppContext';
+import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
@@ -55,10 +51,7 @@ export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
 
 export function updateConfigureMapCache(conf) {
-    localStorage.setItem(
-        LOCAL_STORAGE_CONFIGURE_MAP,
-        JSON.stringify({ ...conf, updateTime: CONFIGURE_MAP_UPDATE_TIME })
-    );
+    localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify({ ...conf, updateTime: Date.now() }));
 }
 
 export default function ConfigureMap() {

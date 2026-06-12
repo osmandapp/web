@@ -78,8 +78,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const mtx = useContext(MapContext);
     const [hoverPoint, setHoverPoint] = useState(null);
     const mapStyle = ctx.configureMapState.mapStyle;
-    const hasTileURLs = Object.keys(ctx.allTileURLs).length > 0;
-    const hasRasterTileURL = mtx.tileURL && !isMvtTileURL(mtx.tileURL);
 
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
@@ -104,23 +102,16 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        if (!hasTileURLs) {
+        if (Object.keys(ctx.allTileURLs).length === 0) {
             return;
         }
-
         const tileURL = ctx.allTileURLs[mapStyle] || ctx.allTileURLs[osmandTileURL.key] || osmandTileURL;
-        if (mtx.tileURL?.key !== tileURL.key || mtx.tileURL?.url !== tileURL.url) {
-            mtx.setTileURL(tileURL);
-        }
-
-        const renderingType = tileURL.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
-        if (mtx.renderingType !== renderingType) {
-            mtx.setRenderingType(renderingType);
-        }
-    }, [ctx.allTileURLs, hasTileURLs, mapStyle, mtx.renderingType, mtx.setRenderingType, mtx.setTileURL, mtx.tileURL]);
+        mtx.setTileURL(tileURL);
+        mtx.setRenderingType(tileURL.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null);
+    }, [ctx.allTileURLs, mapStyle, mtx]);
 
     useEffect(() => {
-        if (!hasRasterTileURL) {
+        if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
             return;
         }
         if (tileLayer.current) {
@@ -130,7 +121,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 window.seIsTilesLoaded = false;
             }
         }
-    }, [hasRasterTileURL, mtx.tileURL]);
+    }, [mtx.tileURL]);
 
     const handlersRef = useRef({ handleLoad: null, leafletLayer: null });
 
@@ -261,7 +252,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <MapStateLayer />
                 <ExploreLayer />
                 <TransportStopsLayer />
-                {hasRasterTileURL && (
+                {mtx.tileURL && !isMvtTileURL(mtx.tileURL) && (
                     <CustomTileLayer
                         ref={tileLayer}
                         attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
