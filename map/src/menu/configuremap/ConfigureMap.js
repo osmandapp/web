@@ -14,7 +14,11 @@ import {
     Box,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext, { defaultConfigureMapStateValues } from '../../context/AppContext';
+import AppContext, {
+    CONFIGURE_MAP_UPDATE_TIME,
+    defaultConfigureMapStateValues,
+    LOCAL_STORAGE_CONFIGURE_MAP,
+} from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
@@ -46,10 +50,12 @@ import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHas
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { applyMapStyle, saveConfigureMap } from '../../map/MapStyleManager';
 
 export function updateConfigureMapCache(conf) {
-    saveConfigureMap(conf);
+    localStorage.setItem(
+        LOCAL_STORAGE_CONFIGURE_MAP,
+        JSON.stringify({ ...conf, updateTime: CONFIGURE_MAP_UPDATE_TIME })
+    );
 }
 
 export default function ConfigureMap() {
@@ -106,20 +112,17 @@ export default function ConfigureMap() {
 
     function setDefaultConfigureMap() {
         const defaultConfigureMap = { ...defaultConfigureMapStateValues };
-        updateConfigureMapCache(defaultConfigureMap);
         ctx.setConfigureMapState(defaultConfigureMap);
-        applyMapStyle(ctx.allTileURLs[defaultConfigureMap.mapStyle], mtx);
+        updateConfigureMapCache(defaultConfigureMap);
     }
 
     function handleMapStyleChange(e) {
         const mapStyle = e.target.value;
-        const tileURL = ctx.allTileURLs[mapStyle];
         const newConfigureMap = cloneDeep(ctx.configureMapState);
         newConfigureMap.mapStyle = mapStyle;
 
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
-        applyMapStyle(tileURL, mtx);
     }
 
     function getSelectedMapStyle() {

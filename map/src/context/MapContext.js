@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
-import { getInitialMapTileURL } from '../map/MapStyleManager';
+import { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
+import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
 
 function getInitialHeightmap() {
     try {
-        const saved = localStorage.getItem('configureMap');
+        const saved = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         return saved ? (JSON.parse(saved).terrain ?? null) : null;
     } catch {
         return null;
+    }
+}
+
+function getInitialMapTileURL() {
+    try {
+        const saved = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
+        const parsed = saved ? JSON.parse(saved) : null;
+        return parsed?.mapStyle && parsed.mapStyle !== osmandTileURL.key ? null : osmandTileURL;
+    } catch {
+        return osmandTileURL;
     }
 }
 

@@ -2,7 +2,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, Box, IconButton, Slider, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './configuremap.module.css';
 import gStyles from '../gstylesmenu.module.css';
-import AppContext from '../../context/AppContext';
+import AppContext, { CONFIGURE_MAP_UPDATE_TIME, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -13,7 +13,6 @@ import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import LoginContext from '../../context/LoginContext';
 import SelectItem from '../../frame/components/items/SelectItem';
-import { saveConfigureMap } from '../../map/MapStyleManager';
 
 export const NO_HEIGHTMAP = {
     key: 'none',
@@ -59,7 +58,10 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             // save selected terrain to local storage
             let newConfigureMap = cloneDeep(ctx.configureMapState);
             newConfigureMap.terrain = mtx.heightmap;
-            saveConfigureMap(newConfigureMap);
+            localStorage.setItem(
+                LOCAL_STORAGE_CONFIGURE_MAP,
+                JSON.stringify({ ...newConfigureMap, updateTime: CONFIGURE_MAP_UPDATE_TIME })
+            );
             ctx.setConfigureMapState(newConfigureMap);
             // set slider value
             setValue(getOpacity(mtx.heightmap.key));

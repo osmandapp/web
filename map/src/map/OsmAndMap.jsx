@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
-import AppContext from '../context/AppContext';
+import AppContext, { CONFIGURE_MAP_UPDATE_TIME, LOCAL_STORAGE_CONFIGURE_MAP } from '../context/AppContext';
 import MapContext from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
@@ -30,7 +30,7 @@ import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
 import { isMvtTileURL } from './mvt/MvtDemoConfig';
-import { applyMapStyle, saveConfigureMap } from './MapStyleManager';
+import { applyMapStyle } from './MapStyleManager';
 import { osmandTileURL } from './baseTileURL';
 
 function getInitialViewFromHash() {
@@ -76,6 +76,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
     const [hoverPoint, setHoverPoint] = useState(null);
+    const mapStyle = ctx.configureMapState.mapStyle;
+    const hasTileURLs = Object.keys(ctx.allTileURLs).length > 0;
+    const hasRasterTileURL = mtx.tileURL && !isMvtTileURL(mtx.tileURL);
 
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
@@ -100,29 +103,58 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        if (Object.keys(ctx.allTileURLs).length === 0) {
+        const applyTileURL = (tileURL) =>
+            applyMapStyle(tileURL, {
+                tileURL: mtx.tileURL,
+                renderingType: mtx.renderingType,
+                setTileURL: mtx.setTileURL,
+                setRenderingType: mtx.setRenderingType,
+            });
+
+        if (!hasTileURLs) {
+            if (ctx.tileURLsLoadError && !mtx.tileURL) {
+                applyTileURL(osmandTileURL);
+            }
             return;
         }
 
-        const savedMapStyle = ctx.configureMapState.mapStyle;
-        const savedTileURL = ctx.allTileURLs[savedMapStyle];
+        const savedTileURL = ctx.allTileURLs[mapStyle];
         if (savedTileURL) {
-            applyMapStyle(savedTileURL, mtx);
+            applyTileURL(savedTileURL);
             return;
         }
 
-        if (savedMapStyle && savedMapStyle !== osmandTileURL.key) {
-            const defaultConfigureMap = { ...ctx.configureMapState, mapStyle: osmandTileURL.key };
-            saveConfigureMap(defaultConfigureMap);
-            ctx.setConfigureMapState(defaultConfigureMap);
+        if (mapStyle && mapStyle !== osmandTileURL.key) {
+            ctx.setConfigureMapState((prev) => {
+                if (prev.mapStyle !== mapStyle) {
+                    return prev;
+                }
+                const next = { ...prev, mapStyle: osmandTileURL.key };
+                localStorage.setItem(
+                    LOCAL_STORAGE_CONFIGURE_MAP,
+                    JSON.stringify({ ...next, updateTime: CONFIGURE_MAP_UPDATE_TIME })
+                );
+                return next;
+            });
+            return;
         }
 
         const defaultTileURL = ctx.allTileURLs[osmandTileURL.key] || osmandTileURL;
-        applyMapStyle(defaultTileURL, mtx);
-    }, [ctx.allTileURLs, ctx.configureMapState, ctx.configureMapState.mapStyle, mtx.tileURL, mtx.renderingType]);
+        applyTileURL(defaultTileURL);
+    }, [
+        ctx.allTileURLs,
+        ctx.setConfigureMapState,
+        ctx.tileURLsLoadError,
+        hasTileURLs,
+        mapStyle,
+        mtx.renderingType,
+        mtx.setRenderingType,
+        mtx.setTileURL,
+        mtx.tileURL,
+    ]);
 
     useEffect(() => {
-        if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
+        if (!hasRasterTileURL) {
             return;
         }
         if (tileLayer.current) {
@@ -132,7 +164,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 window.seIsTilesLoaded = false;
             }
         }
-    }, [mtx.tileURL]);
+    }, [hasRasterTileURL, mtx.tileURL]);
 
     const handlersRef = useRef({ handleLoad: null, leafletLayer: null });
 
@@ -263,7 +295,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <MapStateLayer />
                 <ExploreLayer />
                 <TransportStopsLayer />
-                {mtx.tileURL && (
+                {hasRasterTileURL && (
                     <CustomTileLayer
                         ref={tileLayer}
                         attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'

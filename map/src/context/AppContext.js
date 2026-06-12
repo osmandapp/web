@@ -7,7 +7,7 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import { CONFIGURE_MAP_UPDATE_TIME, INTERACTIVE_LAYER, saveConfigureMap } from '../map/MapStyleManager';
+import { INTERACTIVE_LAYER } from '../map/MapStyleManager';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { GLOBAL_GRAPH_HEIGHT_SIZE } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
@@ -53,6 +53,7 @@ export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
+export const CONFIGURE_MAP_UPDATE_TIME = 1744806975000; // 2025-04-16
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
 export const OBJECT_TYPE_TRAVEL = 'travel';
@@ -79,31 +80,37 @@ export const isTrack = (ctx) =>
 export const isTrackAnalyzer = (ctx) => ctx.currentObjectType === OBJECT_TRACK_ANALYZER;
 
 async function loadTileUrls(setAllTileURLs, develFeatures) {
-    const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
-    if (response.ok) {
-        let data = await response.json();
+    try {
+        const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
+        if (response.ok) {
+            let data = await response.json();
 
-        data[INTERACTIVE_LAYER] = createInteractiveMap(data, 'hd');
+            data[INTERACTIVE_LAYER] = createInteractiveMap(data, 'hd');
 
-        Object.values(data).forEach((item) => {
-            item.tileSize = 256 << item.tileSizeLog;
-            item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
-            if (item.key === INTERACTIVE_LAYER) {
-                item.infoUrl =
-                    process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
+            Object.values(data).forEach((item) => {
+                item.tileSize = 256 << item.tileSizeLog;
+                item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
+                if (item.key === INTERACTIVE_LAYER) {
+                    item.infoUrl =
+                        process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
+                }
+                item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
+                if (item.tileSize > 256) {
+                    item.uiname += ' HD';
+                }
+            });
+            data[osmandTileURL.key] = osmandTileURL;
+            if (develFeatures) {
+                data[MVT_DEMO_LAYER] = mvtDemoTileURL;
+                data[MVT_OSM_LAYER] = mvtOsmTileURL;
             }
-            item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
-            if (item.tileSize > 256) {
-                item.uiname += ' HD';
-            }
-        });
-        data[osmandTileURL.key] = osmandTileURL;
-        if (develFeatures) {
-            data[MVT_DEMO_LAYER] = mvtDemoTileURL;
-            data[MVT_OSM_LAYER] = mvtOsmTileURL;
+            setAllTileURLs(data);
+            return true;
         }
-        setAllTileURLs(data);
+    } catch (e) {
+        console.warn('Failed to load tile styles', e);
     }
+    return false;
 }
 
 function createInteractiveMap(data, type) {
@@ -195,6 +202,7 @@ export const AppContextProvider = (props) => {
     const [tracksGroups, setTracksGroups] = useState([]);
 
     const [allTileURLs, setAllTileURLs] = useState({});
+    const [tileURLsLoadError, setTileURLsLoadError] = useState(false);
 
     // favorites
     const [favorites, setFavorites] = useState({});
@@ -369,7 +377,10 @@ export const AppContextProvider = (props) => {
                 if (savedMapStyle) {
                     savedConfigureMap.mapStyle = savedMapStyle;
                 }
-                saveConfigureMap(savedConfigureMap);
+                localStorage.setItem(
+                    LOCAL_STORAGE_CONFIGURE_MAP,
+                    JSON.stringify({ ...savedConfigureMap, updateTime: CONFIGURE_MAP_UPDATE_TIME })
+                );
                 return savedConfigureMap;
             }
             // Normalize saved data to ensure all default fields are present
@@ -450,7 +461,10 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        loadTileUrls(setAllTileURLs, develFeatures);
+        setTileURLsLoadError(false);
+        loadTileUrls(setAllTileURLs, develFeatures).then((loaded) => {
+            setTileURLsLoadError(!loaded);
+        });
     }, [develFeatures]);
 
     useEffect(() => {
@@ -538,6 +552,7 @@ export const AppContextProvider = (props) => {
                 mapMarkerListener,
                 setMapMarkerListener,
                 allTileURLs,
+                tileURLsLoadError,
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,
