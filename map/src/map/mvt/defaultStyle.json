@@ -1926,8 +1926,9 @@
         "text-justify": "center",
         "text-letter-spacing": 0.1,
         "text-allow-overlap": false,
-        "text-padding": 15,
-        "visibility": "visible"
+        "text-padding": 70,
+        "visibility": "visible",
+        "symbol-spacing": 500
       },
       "paint": {
         "text-color": "#406080",
