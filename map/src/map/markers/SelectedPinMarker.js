@@ -14,9 +14,9 @@ import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexago
 import { ReactComponent as HoverCircle } from '../../assets/map/hover_point_circle.svg';
 import { ReactComponent as HoverSquare } from '../../assets/map/hover_point_square.svg';
 import { ReactComponent as HoverOctagon } from '../../assets/map/hover_point_octagon.svg';
-import { ReactComponent as DirectionColor } from '../../assets/map/ic_pin_circle_outisde_color.svg';
-import { ReactComponent as DirectionLight } from '../../assets/map/ic_pin_circle_outisde_light.svg';
-import { ReactComponent as DirectionStroke } from '../../assets/map/ic_pin_circle_outisde_stroke.svg';
+import { ReactComponent as DirectionColor } from '../../assets/map/ic_pin_circle_outside_color.svg';
+import { ReactComponent as DirectionLight } from '../../assets/map/ic_pin_circle_outside_light.svg';
+import { ReactComponent as DirectionStroke } from '../../assets/map/ic_pin_circle_outside_stroke.svg';
 import { SELECTED_ICON_SIZE, SELECTED_PIN_COLOR, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
 import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 

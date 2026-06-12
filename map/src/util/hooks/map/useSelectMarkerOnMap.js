@@ -37,6 +37,14 @@ function extractLatlng(selectedWptId, type) {
     return null;
 }
 
+function escapeHtmlAttr(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 function iconHtmlFromIconName(finalIconName) {
     if (!finalIconName) return null;
     const url =
@@ -233,7 +241,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
     }
 
     function photoIconHtml(photoUrl) {
-        return `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`;
+        return `<img src="${escapeHtmlAttr(photoUrl)}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`;
     }
 
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
