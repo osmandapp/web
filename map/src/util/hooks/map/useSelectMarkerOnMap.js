@@ -10,13 +10,16 @@ import {
     EXPLORE_PHOTO_ICON_SIZE,
     applySelectedPin,
     applyHoverOutline,
+    applyDirectionPin,
     resetSelectedPin,
 } from '../../../map/util/MarkerSelectionService';
+import { isOutsideVisibleMap } from '../../../map/layers/MapStateLayer';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 import { TRANSPORT_STOPS_LAYER_ID } from '../../../map/layers/TransportStopsLayer';
+import { SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 
 const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
 const HOVER_OUTLINE_GAP = 6;
@@ -158,16 +161,19 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
+        const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
+
+        if (type === SEARCH_LAYER_ID && latlng && isOutsideVisibleMap({ ctx, map, latlng })) {
+            applyDirectionPin({ ctx, map, latlng, markerData: resolveHoverMarkerData(found) });
+            return;
+        }
+
         if (found) {
             applyPinForLayer(found, false);
-        } else {
-            // Marker not on the map (e.g. hidden by clustering) — create a temporary hover pin.
-            const latlng = extractLatlng(ctx.selectedWptId, type);
-            if (latlng) {
-                applyHoverPinFallback(latlng);
-            } else if (type === TRANSPORT_STOPS_LAYER_ID) {
-                resetSelectedPin({ ctx, map });
-            }
+        } else if (latlng) {
+            applyHoverPinFallback(latlng);
+        } else if (type === TRANSPORT_STOPS_LAYER_ID) {
+            resetSelectedPin({ ctx, map });
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
 
@@ -226,10 +232,14 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
     }
 
+    function photoIconHtml(photoUrl) {
+        return `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`;
+    }
+
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
         const markerData = {
             color: EXPLORE_MAIN_MARKER_PIN_BACKGROUND,
-            iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
+            iconHtml: photoIconHtml(photoUrl),
         };
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
 
@@ -240,11 +250,26 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
     }
 
-    function applyHoverPinFallback(latlng) {
-        const photoUrl = ctx.selectedWptId?.photoUrl;
+    function resolveHoverMarkerData(layer) {
+        const photoUrl = layer?.options?.photoUrl ?? ctx.selectedWptId?.photoUrl;
         if (photoUrl) {
-            applyPhotoPin(null, latlng, photoUrl, false);
-            return;
+            return { color: EXPLORE_MAIN_MARKER_PIN_BACKGROUND, iconHtml: photoIconHtml(photoUrl) };
+        }
+
+        if (layer) {
+            const markerData = buildMarkerData(layer, false, type);
+            if (!markerData.iconHtml && layer.options?.simple) {
+                const props = ctx.selectedWptId?.obj?.properties;
+                markerData.iconHtml = iconHtmlFromIconName(
+                    props?.[FINAL_POI_ICON_NAME] ??
+                        getIconNameForPoiType({
+                            iconKeyName: props?.[ICON_KEY_NAME],
+                            typeOsmTag: props?.[TYPE_OSM_TAG],
+                            typeOsmValue: props?.[TYPE_OSM_VALUE],
+                        })
+                );
+            }
+            return markerData;
         }
 
         const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
@@ -262,17 +287,27 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         // Only apply white filter when icon came from URL (iconHtmlFromIconName), not when caller passed custom iconHtml (e.g. favorites)
         const invertIcon = markerOpts.invertIcon ?? markerOpts.iconHtml == null;
 
+        return {
+            color: markerOpts.color ?? DEFAULT_POI_COLOR,
+            background: markerOpts.background ?? DEFAULT_POI_SHAPE,
+            iconHtml,
+            invertIcon,
+        };
+    }
+
+    function applyHoverPinFallback(latlng) {
+        const photoUrl = ctx.selectedWptId?.photoUrl;
+        if (photoUrl) {
+            applyPhotoPin(null, latlng, photoUrl, false);
+            return;
+        }
+
         applySelectedPin({
             ctx,
             map,
             layer: null,
             latlng,
-            markerData: {
-                color: markerOpts.color ?? DEFAULT_POI_COLOR,
-                background: markerOpts.background ?? DEFAULT_POI_SHAPE,
-                iconHtml,
-                invertIcon,
-            },
+            markerData: resolveHoverMarkerData(null),
             isSelection: false,
         });
     }

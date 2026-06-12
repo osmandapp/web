@@ -1,9 +1,10 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
-import { createLayeredPinIcon, createHoverOutlineIcon } from '../markers/SelectedPinMarker';
+import { createLayeredPinIcon, createHoverOutlineIcon, createDirectionPinIcon } from '../markers/SelectedPinMarker';
 import L from 'leaflet';
 import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
+import { visibleMapRectPx } from '../layers/MapStateLayer';
 
 export const SELECTED_PIN_SIZE = 70;
 export const SELECTED_ICON_SIZE = 36;
@@ -14,6 +15,8 @@ export const EXPLORE_PHOTO_ICON_SIZE = 43;
 const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;
 const SELECTED_MARKER_HIDE_RADIUS_COEFF = 300 / 16;
 const SELECTED_MARKER_HIDE_MIN_RADIUS_M = 50;
+
+const DIRECTION_PIN_TIP_MARGIN = 6;
 
 export const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
 
@@ -143,7 +146,8 @@ export function applyHoverOutline({ ctx, map, layer = null, latlng = null, shape
     if (!ctx || !map) {
         return null;
     }
-    resetHoverOutline({ ctx, map });
+
+    resetSelectedPin({ ctx, map });
 
     const ll = latlng ?? layer?.getLatLng();
     if (!ll) {
@@ -161,18 +165,60 @@ export function applyHoverOutline({ ctx, map, layer = null, latlng = null, shape
         zIndexOffset: SELECTED_MARKER_Z_INDEX,
     });
     outline.addTo(map);
-    ctx.selectedHoverOutlineRef.current = outline;
+    ctx.selectedCreatedLayerRef.current = outline;
 
     return outline;
 }
 
-// Removes the hover outline ring, if present.
-export function resetHoverOutline({ ctx, map }) {
-    const outline = ctx?.selectedHoverOutlineRef?.current;
-    if (outline && map?.hasLayer(outline)) {
-        map.removeLayer(outline);
+function rayRectEdge(cx, cy, ux, uy, left, top, right, bottom) {
+    let t = Infinity;
+    if (ux > 0) t = Math.min(t, (right - cx) / ux);
+    else if (ux < 0) t = Math.min(t, (left - cx) / ux);
+    if (uy > 0) t = Math.min(t, (bottom - cy) / uy);
+    else if (uy < 0) t = Math.min(t, (top - cy) / uy);
+    if (!Number.isFinite(t)) {
+        t = 0;
     }
-    if (ctx?.selectedHoverOutlineRef) ctx.selectedHoverOutlineRef.current = null;
+
+    return L.point(cx + ux * t, cy + uy * t);
+}
+
+export function applyDirectionPin({ ctx, map, latlng, markerData }) {
+    if (!ctx || !map || !latlng || !markerData) {
+        return null;
+    }
+
+    resetSelectedPin({ ctx, map });
+
+    const rect = visibleMapRectPx(ctx, map);
+    if (!rect) {
+        return null;
+    }
+    const target = map.latLngToContainerPoint(L.latLng(latlng));
+    let ux = target.x - rect.cx;
+    let uy = target.y - rect.cy;
+    if (ux === 0 && uy === 0) {
+        uy = 1;
+    }
+
+    const m = DIRECTION_PIN_TIP_MARGIN;
+    const tip = rayRectEdge(rect.cx, rect.cy, ux, uy, rect.left + m, rect.top + m, rect.right - m, rect.bottom - m);
+    const angle = (Math.atan2(-ux, uy) * 180) / Math.PI;
+
+    const pin = L.marker(map.containerPointToLatLng(tip), {
+        icon: createDirectionPinIcon({
+            color: toColor(markerData.color ?? DEFAULT_POI_COLOR),
+            iconHtml: markerData.iconHtml,
+            invertIcon: markerData.invertIcon,
+            angle,
+        }),
+        interactive: false,
+        zIndexOffset: SELECTED_MARKER_Z_INDEX,
+    });
+    pin.addTo(map);
+    ctx.selectedCreatedLayerRef.current = pin;
+
+    return pin;
 }
 
 // Removes the current selected/hover pin and restores hidden markers.
@@ -180,7 +226,6 @@ export function resetHoverOutline({ ctx, map }) {
 export function resetSelectedPin({ ctx, map, force = false }) {
     if (!ctx || !map) return;
 
-    resetHoverOutline({ ctx, map });
     restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
 
     const createdId = ctx.selectedCreatedLayerRef?.current?.options?.idObj;

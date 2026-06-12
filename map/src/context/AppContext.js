@@ -157,7 +157,6 @@ export const AppContextProvider = (props) => {
     const selectedUpdatedLayerRef = useRef(null); // layer whose icon we replaced — restore on cleanup
     const selectedCreatedLayerRef = useRef(null); // layer we created — remove on cleanup
     const selectedHiddenLayersRef = useRef([]); // layers hidden near selected marker — restore when selection changes
-    const selectedHoverOutlineRef = useRef(null); // outline ring overlay shown when hovering a marker on the map
 
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
@@ -657,7 +656,6 @@ export const AppContextProvider = (props) => {
                 selectedUpdatedLayerRef,
                 selectedCreatedLayerRef,
                 selectedHiddenLayersRef,
-                selectedHoverOutlineRef,
                 favLoading,
                 setFavLoading,
                 searchTravelRoutes,
