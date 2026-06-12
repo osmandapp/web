@@ -7,7 +7,7 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import { INTERACTIVE_LAYER } from '../map/MapStyleManager';
+import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { GLOBAL_GRAPH_HEIGHT_SIZE } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
@@ -80,37 +80,31 @@ export const isTrack = (ctx) =>
 export const isTrackAnalyzer = (ctx) => ctx.currentObjectType === OBJECT_TRACK_ANALYZER;
 
 async function loadTileUrls(setAllTileURLs, develFeatures) {
-    try {
-        const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
-        if (response.ok) {
-            let data = await response.json();
+    const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
+    if (response.ok) {
+        let data = await response.json();
 
-            data[INTERACTIVE_LAYER] = createInteractiveMap(data, 'hd');
+        data[INTERACTIVE_LAYER] = createInteractiveMap(data, 'hd');
 
-            Object.values(data).forEach((item) => {
-                item.tileSize = 256 << item.tileSizeLog;
-                item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
-                if (item.key === INTERACTIVE_LAYER) {
-                    item.infoUrl =
-                        process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
-                }
-                item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
-                if (item.tileSize > 256) {
-                    item.uiname += ' HD';
-                }
-            });
-            data[osmandTileURL.key] = osmandTileURL;
-            if (develFeatures) {
-                data[MVT_DEMO_LAYER] = mvtDemoTileURL;
-                data[MVT_OSM_LAYER] = mvtOsmTileURL;
+        Object.values(data).forEach((item) => {
+            item.tileSize = 256 << item.tileSizeLog;
+            item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
+            if (item.key === INTERACTIVE_LAYER) {
+                item.infoUrl =
+                    process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
             }
-            setAllTileURLs(data);
-            return true;
+            item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
+            if (item.tileSize > 256) {
+                item.uiname += ' HD';
+            }
+        });
+        data[osmandTileURL.key] = osmandTileURL;
+        if (develFeatures) {
+            data[MVT_DEMO_LAYER] = mvtDemoTileURL;
+            data[MVT_OSM_LAYER] = mvtOsmTileURL;
         }
-    } catch (e) {
-        console.warn('Failed to load tile styles', e);
+        setAllTileURLs(data);
     }
-    return false;
 }
 
 function createInteractiveMap(data, type) {
@@ -202,7 +196,6 @@ export const AppContextProvider = (props) => {
     const [tracksGroups, setTracksGroups] = useState([]);
 
     const [allTileURLs, setAllTileURLs] = useState({});
-    const [tileURLsLoadError, setTileURLsLoadError] = useState(false);
 
     // favorites
     const [favorites, setFavorites] = useState({});
@@ -372,11 +365,7 @@ export const AppContextProvider = (props) => {
         if (savedConfigureMap) {
             savedConfigureMap = JSON.parse(savedConfigureMap);
             if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < CONFIGURE_MAP_UPDATE_TIME) {
-                const savedMapStyle = savedConfigureMap.mapStyle;
                 savedConfigureMap = { ...defaultConfigureMapStateValues };
-                if (savedMapStyle) {
-                    savedConfigureMap.mapStyle = savedMapStyle;
-                }
                 localStorage.setItem(
                     LOCAL_STORAGE_CONFIGURE_MAP,
                     JSON.stringify({ ...savedConfigureMap, updateTime: CONFIGURE_MAP_UPDATE_TIME })
@@ -461,10 +450,7 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        setTileURLsLoadError(false);
-        loadTileUrls(setAllTileURLs, develFeatures).then((loaded) => {
-            setTileURLsLoadError(!loaded);
-        });
+        loadTileUrls(setAllTileURLs, develFeatures);
     }, [develFeatures]);
 
     useEffect(() => {
@@ -552,7 +538,6 @@ export const AppContextProvider = (props) => {
                 mapMarkerListener,
                 setMapMarkerListener,
                 allTileURLs,
-                tileURLsLoadError,
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,

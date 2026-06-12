@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
-import AppContext, { CONFIGURE_MAP_UPDATE_TIME, LOCAL_STORAGE_CONFIGURE_MAP } from '../context/AppContext';
+import AppContext from '../context/AppContext';
 import MapContext from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
@@ -30,7 +30,8 @@ import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
 import { isMvtTileURL } from './mvt/MvtDemoConfig';
-import { applyMapStyle } from './MapStyleManager';
+import { INTERACTIVE_LAYER } from './layers/CustomTileLayer';
+import { DYNAMIC_RENDERING } from '../menu/configuremap/ConfigureMap';
 import { osmandTileURL } from './baseTileURL';
 
 function getInitialViewFromHash() {
@@ -103,55 +104,20 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        const applyTileURL = (tileURL) =>
-            applyMapStyle(tileURL, {
-                tileURL: mtx.tileURL,
-                renderingType: mtx.renderingType,
-                setTileURL: mtx.setTileURL,
-                setRenderingType: mtx.setRenderingType,
-            });
-
         if (!hasTileURLs) {
-            if (ctx.tileURLsLoadError && !mtx.tileURL) {
-                applyTileURL(osmandTileURL);
-            }
             return;
         }
 
-        const savedTileURL = ctx.allTileURLs[mapStyle];
-        if (savedTileURL) {
-            applyTileURL(savedTileURL);
-            return;
+        const tileURL = ctx.allTileURLs[mapStyle] || ctx.allTileURLs[osmandTileURL.key] || osmandTileURL;
+        if (mtx.tileURL?.key !== tileURL.key || mtx.tileURL?.url !== tileURL.url) {
+            mtx.setTileURL(tileURL);
         }
 
-        if (mapStyle && mapStyle !== osmandTileURL.key) {
-            ctx.setConfigureMapState((prev) => {
-                if (prev.mapStyle !== mapStyle) {
-                    return prev;
-                }
-                const next = { ...prev, mapStyle: osmandTileURL.key };
-                localStorage.setItem(
-                    LOCAL_STORAGE_CONFIGURE_MAP,
-                    JSON.stringify({ ...next, updateTime: CONFIGURE_MAP_UPDATE_TIME })
-                );
-                return next;
-            });
-            return;
+        const renderingType = tileURL.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
+        if (mtx.renderingType !== renderingType) {
+            mtx.setRenderingType(renderingType);
         }
-
-        const defaultTileURL = ctx.allTileURLs[osmandTileURL.key] || osmandTileURL;
-        applyTileURL(defaultTileURL);
-    }, [
-        ctx.allTileURLs,
-        ctx.setConfigureMapState,
-        ctx.tileURLsLoadError,
-        hasTileURLs,
-        mapStyle,
-        mtx.renderingType,
-        mtx.setRenderingType,
-        mtx.setTileURL,
-        mtx.tileURL,
-    ]);
+    }, [ctx.allTileURLs, hasTileURLs, mapStyle, mtx.renderingType, mtx.setRenderingType, mtx.setTileURL, mtx.tileURL]);
 
     useEffect(() => {
         if (!hasRasterTileURL) {

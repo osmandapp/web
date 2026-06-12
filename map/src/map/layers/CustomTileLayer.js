@@ -4,12 +4,14 @@ import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import 'leaflet.vectorgrid';
 import { getIconUrlByName, getShaderUrlByName } from '../markers/MarkerOptions';
-import { DYNAMIC_RENDERING } from '../MapStyleManager';
+import { DYNAMIC_RENDERING } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
 import styles from '../map.module.css';
 import { isMvtTileURL } from '../mvt/MvtDemoConfig';
+
+export const INTERACTIVE_LAYER = 'int';
 
 const CustomTileLayer = forwardRef((props, ref) => {
     const map = useMap();

@@ -51,6 +51,9 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+export const DYNAMIC_RENDERING = 'dynamic';
+export const VECTOR_GRID = 'vector_grid';
+
 export function updateConfigureMapCache(conf) {
     localStorage.setItem(
         LOCAL_STORAGE_CONFIGURE_MAP,
@@ -111,8 +114,8 @@ export default function ConfigureMap() {
     }, [ctx.configureMapState.terrain]);
 
     function setDefaultConfigureMap() {
-        const defaultConfigureMap = { ...defaultConfigureMapStateValues };
-        ctx.setConfigureMapState(defaultConfigureMap);
+        const defaultConfigureMap = defaultConfigureMapStateValues;
+        ctx.setConfigureMapState({ ...defaultConfigureMap });
         updateConfigureMapCache(defaultConfigureMap);
     }
 
