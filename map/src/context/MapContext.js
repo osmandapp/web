@@ -56,7 +56,6 @@ export const MapContextProvider = ({ children }) => {
 
     // map tile and rendering
     const [tileURL, setTileURL] = useState(getInitialMapTileURL);
-    const [renderingType, setRenderingType] = useState(null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
@@ -81,8 +80,6 @@ export const MapContextProvider = ({ children }) => {
                 setFocusModeOn,
                 tileURL,
                 setTileURL,
-                renderingType,
-                setRenderingType,
                 heightmap,
                 setHeightmap,
                 processHeightmaps,

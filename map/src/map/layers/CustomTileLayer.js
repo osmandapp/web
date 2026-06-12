@@ -16,7 +16,7 @@ export const INTERACTIVE_LAYER = 'int';
 const CustomTileLayer = forwardRef((props, ref) => {
     const map = useMap();
     const mtx = useContext(MapContext);
-    const renderingType = mtx.tileURL?.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : mtx.renderingType;
+    const renderingType = mtx.tileURL?.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
 
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);

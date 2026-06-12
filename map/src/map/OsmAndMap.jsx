@@ -75,7 +75,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
     const [hoverPoint, setHoverPoint] = useState(null);
-    const mapStyle = ctx.configureMapState.mapStyle;
 
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
@@ -100,10 +99,11 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
-        if (Object.keys(ctx.allTileURLs).length > 0) {
-            mtx.setTileURL(ctx.allTileURLs[mapStyle] || ctx.allTileURLs[osmandTileURL.key] || osmandTileURL);
+        const tileURL = ctx.allTileURLs[ctx.configureMapState.mapStyle] || ctx.allTileURLs[osmandTileURL.key];
+        if (tileURL) {
+            mtx.setTileURL(tileURL);
         }
-    }, [ctx.allTileURLs, mapStyle]);
+    }, [ctx.allTileURLs, ctx.configureMapState.mapStyle]);
 
     useEffect(() => {
         if (!mtx.tileURL || isMvtTileURL(mtx.tileURL)) {
