@@ -54,7 +54,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionwide maps Android](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Download map menu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionwide maps Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -65,7 +65,7 @@ Downloading maps into the OsmAnd application is an important step that determine
 ### Free Map Content {#free-map-content}
 
 - **Standard map**. Provides an overview of the area based on the [OpenStreetMap](https://www.openstreetmap.org/) source and contains a map, routes, addresses, POI, and public transportation information. Tapping opens a screen with a list of regions of the selected country and information about how much space these maps will take up on your device.  
-- **Roads-only** (*Android only*). The map contains only road grid information to focus on routes and road infrastructure. By removing details such as buildings and points of interest, it is smaller than a standard map. Tapping opens a screen with a list of regions in the selected country and information about how much space these maps will take up on your device.
+- **Roads-only**. The map contains only road grid information to focus on routes and road infrastructure. By removing details such as buildings and points of interest, it is smaller than a standard map. Tapping opens a screen with a list of regions in the selected country and information about how much space these maps will take up on your device.
 - **World-overview-map**. Versions of OsmAnd up to 3.8 offer to download a world map so you can view it on a planetary scale. In newer versions of OsmAnd, a lightweight *Mini World Map* is bundled with the application. The app lets you download a larger overview world map with more detailed information. 
 
 :::info monthly map updates
