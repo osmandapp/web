@@ -4,8 +4,7 @@ export const MVT_OSM_LAYER = 'mvt-osm';
 export const MVT_OSM_TILE_URL = 'https://tiles.openstreetmap.us/vector/openmaptiles/{z}/{x}/{y}.mvt';
 
 export const mvtDemoTileURL = {
-    uiname: 'MVT demo',
-    name: 'MVT demo',
+    uiname: 'OsmAnd vector (beta)',
     key: MVT_DEMO_LAYER,
     type: 'mvt',
     tileSize: 512,
@@ -13,8 +12,7 @@ export const mvtDemoTileURL = {
 };
 
 export const mvtOsmTileURL = {
-    uiname: 'MVT OSM example',
-    name: 'MVT OSM example',
+    uiname: 'OpenStreetMap vector (demo)',
     key: MVT_OSM_LAYER,
     type: 'mvt',
     tileSize: 512,

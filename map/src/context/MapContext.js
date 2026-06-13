@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
+import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
 import { osmandTileURL } from '../map/baseTileURL';
 
 const MapContext = React.createContext();
 
 function getInitialHeightmap() {
     try {
-        const saved = localStorage.getItem('configureMap');
+        const saved = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         return saved ? (JSON.parse(saved).terrain ?? null) : null;
     } catch {
         return null;
@@ -43,9 +44,10 @@ export const MapContextProvider = ({ children }) => {
     const [selectionFocus, setSelectionFocus] = useState(null);
     const [focusModeOn, setFocusModeOn] = useState(false);
 
-    // map tile and rendering
-    const [tileURL, setTileURL] = useState(osmandTileURL);
-    const [renderingType, setRenderingType] = useState(null);
+    // map tile and rendering — seeded from the single source of truth (configureMap in AppContext)
+    const { configureMapState } = useContext(AppContext);
+    const [tileURL, setTileURL] = useState(() => configureMapState.mapStyle?.tileURL ?? osmandTileURL);
+    const [renderingType, setRenderingType] = useState(() => configureMapState.mapStyle?.renderingType ?? null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);

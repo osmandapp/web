@@ -66,7 +66,16 @@ export const defaultConfigureMapStateValues = {
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
+    mapStyle: { tileURL: osmandTileURL, renderingType: null },
 };
+
+export const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16
+export function updateConfigureMapCache(conf) {
+    localStorage.setItem(
+        LOCAL_STORAGE_CONFIGURE_MAP,
+        JSON.stringify({ ...conf, updateTime: TIME_UPDATE_CONFIGURE_MAP })
+    );
+}
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
@@ -359,14 +368,11 @@ export const AppContextProvider = (props) => {
     });
 
     function getConfigureMap() {
-        const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         if (savedConfigureMap) {
             savedConfigureMap = JSON.parse(savedConfigureMap);
             if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < TIME_UPDATE_CONFIGURE_MAP) {
-                savedConfigureMap = defaultConfigureMapStateValues;
-                savedConfigureMap.updateTime = TIME_UPDATE_CONFIGURE_MAP;
-                localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(savedConfigureMap));
+                updateConfigureMapCache(defaultConfigureMapStateValues);
                 return defaultConfigureMapStateValues;
             }
             // Normalize saved data to ensure all default fields are present
