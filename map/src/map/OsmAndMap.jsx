@@ -40,7 +40,7 @@ function getInitialViewFromHash() {
     const lng = Number.parseFloat(lngStr);
     if (Number.isNaN(zoom) || Number.isNaN(lat) || Number.isNaN(lng)) return null;
 
-    return { center: [lat, lng], zoom };
+    return { center: [lat, L.Util.wrapNum(lng, [-180, 180], true)], zoom };
 }
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
@@ -217,6 +217,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 center={initialView.center}
                 minZoom={1}
                 maxZoom={20}
+                worldCopyJump={true}
                 zoomControl={false}
                 whenReady={whenReadyHandler}
                 contextmenu={true}

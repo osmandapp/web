@@ -54,7 +54,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
             mouseX: event.originalEvent.clientX + 5,
             mouseY: event.originalEvent.clientY + 5 - (ctx.globalGraph?.show ? `${GLOBAL_GRAPH_HEIGHT_SIZE}px` : 0),
         });
-        setClickLatLng(event.latlng);
+        setClickLatLng(map.wrapLatLng(event.latlng));
         setOpen(true);
         ctx.setOpenContextMenu(true);
     };
