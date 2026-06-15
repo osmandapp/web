@@ -20,6 +20,7 @@ import { navigationObject } from '../../store/navigationObject/navigationObject'
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
 
 const DRAG_DEBOUNCE_MS = 10;
+const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
 function setMarkerIconHtml(marker, html) {
     const el = marker?.getElement();
@@ -403,13 +404,14 @@ const NavigationLayer = ({ geocodingData, region }) => {
             L.marker(latlng, {
                 icon: makeDotIcon(opts.fillColor, opts.fillOpacity),
                 interactive: true,
+                zIndexOffset: TURN_DOT_Z_INDEX_OFFSET,
             })
         );
     };
 
     const pointToLayerGeoData = (feature, latlng) => {
         let opts = { ...geojsonMarkerOptions };
-        if (feature.properties && feature.properties.index) {
+        if (feature.properties?.index) {
             opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
             let clrs = ['#6DD6DA', '#95D9DA', '#A2ABB5', '#AE8CA3', '#817F82'];
             let indx = [2, 5, 7, 10, 20];

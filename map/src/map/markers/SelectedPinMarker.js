@@ -11,12 +11,30 @@ import { ReactComponent as SquareStroke } from '../../assets/map/map_pin_square_
 import { ReactComponent as HexagonColor } from '../../assets/map/map_pin_hexagon_color.svg';
 import { ReactComponent as HexagonLight } from '../../assets/map/map_pin_hexagon_light.svg';
 import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexagon_stroke.svg';
+import { ReactComponent as HoverCircle } from '../../assets/map/hover_point_circle.svg';
+import { ReactComponent as HoverSquare } from '../../assets/map/hover_point_square.svg';
+import { ReactComponent as HoverOctagon } from '../../assets/map/hover_point_octagon.svg';
+import { ReactComponent as DirectionColor } from '../../assets/map/ic_pin_circle_outside_color.svg';
+import { ReactComponent as DirectionLight } from '../../assets/map/ic_pin_circle_outside_light.svg';
+import { ReactComponent as DirectionStroke } from '../../assets/map/ic_pin_circle_outside_stroke.svg';
 import { SELECTED_ICON_SIZE, SELECTED_PIN_COLOR, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
 import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
 /** Pin SVGs use viewBox 0 0 70 70; the map anchor must be the bottom dot center (y=67), not the box bottom. */
 const PIN_VIEWBOX_SIZE = 70;
 const PIN_TIP_CENTER_Y = 67;
+
+export const HOVER_OUTLINE_SIZE = 34;
+const DIRECTION_PIN_SIZE = 60;
+const DIRECTION_PIN_ICON_SIZE = 26;
+const DIRECTION_PIN_TAIL_TIP_RATIO = 74 / 82;
+
+const HOVER_OUTLINE_SHAPES = {
+    circle: HoverCircle,
+    square: HoverSquare,
+    octagon: HoverOctagon,
+    hexagon: HoverOctagon,
+};
 
 const SHAPES = {
     circle: {
@@ -72,6 +90,65 @@ function prepareInnerIcon(html, iconSize) {
 
     const withoutShadow = removeShadowFromIconWpt(html);
     return changeIconSizeWpt(withoutShadow, iconSize, iconSize);
+}
+
+export function createHoverOutlineIcon({ shape, color, size } = {}) {
+    const px = Math.max(Number(size) || 0, HOVER_OUTLINE_SIZE);
+    const shapeKey = shape === 'octagon' || shape === 'hexagon' ? 'octagon' : shape;
+    const Component = HOVER_OUTLINE_SHAPES[shapeKey] ?? HOVER_OUTLINE_SHAPES.circle;
+    const svg = resizeSvg(renderToStaticMarkup(React.createElement(Component)), px);
+    const html = `<div class="map-hover-outline" style="width:${px}px;height:${px}px;color:${color};display:flex;align-items:center;justify-content:center;pointer-events:none;">${svg}</div>`;
+
+    return L.divIcon({
+        html,
+        className: '',
+        iconSize: [px, px],
+        iconAnchor: [px / 2, px / 2],
+    });
+}
+
+export function createDirectionPinIcon({
+    color,
+    iconHtml,
+    invertIcon,
+    angle = 0,
+    size = DIRECTION_PIN_SIZE,
+    iconSize = DIRECTION_PIN_ICON_SIZE,
+} = {}) {
+    const colorSvg = renderToStaticMarkup(React.createElement(DirectionColor));
+    const lightSvg = renderToStaticMarkup(React.createElement(DirectionLight));
+    const strokeSvg = renderToStaticMarkup(React.createElement(DirectionStroke));
+
+    const coloredLayer = resizeSvg(changeSvgColor(colorSvg, color), size);
+    const strokeLayer = resizeSvg(strokeSvg, size);
+    const lightLayer = resizeSvg(lightSvg, size);
+
+    const markerIconHtml = prepareInnerIcon(iconHtml, iconSize);
+    const iconWrapperSize = Math.min(iconSize, size);
+    const tipX = size / 2;
+    const tipY = size * DIRECTION_PIN_TAIL_TIP_RATIO;
+
+    const html = `
+        <div class="map-layered-pin" style="position:relative;width:${size}px;height:${size}px;transform:rotate(${angle}deg);transform-origin:${tipX}px ${tipY}px;">
+            <div class="map-layered-pin__layer" style="position:absolute;inset:0;">${coloredLayer}</div>
+            <div class="map-layered-pin__layer" style="position:absolute;inset:0;">${strokeLayer}</div>
+            <div class="map-layered-pin__layer" style="position:absolute;inset:0;">${lightLayer}</div>
+            ${
+                markerIconHtml
+                    ? `<div class="map-layered-pin__icon" style="position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) rotate(${-angle}deg);width:${iconWrapperSize}px;height:${iconWrapperSize}px;display:flex;align-items:center;justify-content:center;${invertIcon ? 'filter:brightness(0) invert(1);' : ''}">
+                            ${markerIconHtml}
+                       </div>`
+                    : ''
+            }
+        </div>
+    `;
+
+    return L.divIcon({
+        html,
+        className: '',
+        iconSize: [size, size],
+        iconAnchor: [tipX, tipY],
+    });
 }
 
 export function createLayeredPinIcon(options = {}) {
