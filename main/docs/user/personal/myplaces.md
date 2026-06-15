@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
 ![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
@@ -35,9 +35,9 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_new.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -53,13 +53,17 @@ My Places is organized by categories. Select a tab to manage the corresponding d
 
 <TabItem value="android" label="Android">
 
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
 ![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -89,7 +93,7 @@ For full instructions, refer to the [Favorites](../personal/favorites.md) articl
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -97,9 +101,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -137,7 +141,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
