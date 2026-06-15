@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import LoginContext from '../context/LoginContext';
 import { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
@@ -243,7 +243,22 @@ export const AppContextProvider = (props) => {
     const [updateInfoBlock, setUpdateInfoBlock] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
-    const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
+    const [routingErrorMsg, setRoutingErrorMsgState] = useState(null);
+    const setRoutingErrorMsg = useCallback((message) => {
+        const stack = new Error().stack?.split('\n').map((line) => line.trim()) ?? [];
+        const caller =
+            stack.find(
+                (line) => line !== 'Error' && !line.includes('AppContext.js') && !line.includes('setRoutingErrorMsg')
+            ) ??
+            stack[2] ??
+            stack[1];
+
+        console.log('[setRoutingErrorMsg]', {
+            message,
+            caller,
+        });
+        setRoutingErrorMsgState(message);
+    }, []);
     const [trackErrorMsg, setTrackErrorMsg] = useState(null);
     const [trackState, setTrackState] = useState({
         update: false, // push track to undo/redo
