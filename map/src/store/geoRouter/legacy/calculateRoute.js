@@ -89,12 +89,10 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
         dataOnErrors: true,
         abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
     });
-
-    if (!response) {
+    if (!response || reponse.aborted) {
         changeRouteText(false, null);
         return;
     }
-
     if (response.ok) {
         const osrm = await response.json();
         const { route } = this.putRouteOsrm({ osrm, style });
@@ -150,7 +148,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
             abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
         }
     );
-    if (!response) {
+    if (!response || response.aborted) {
         changeRouteText(false, null);
         return;
     }
@@ -159,6 +157,8 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         if (data.msg) {
             setRoutingErrorMsg(data.msg);
             data = data.features;
+        } else {
+            setRoutingErrorMsg(null);
         }
         if (data.features.length > 0) {
             data.features.forEach((f) => {
