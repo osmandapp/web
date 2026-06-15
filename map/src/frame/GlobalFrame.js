@@ -33,6 +33,7 @@ import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
 import { hideAllTracks } from '../manager/track/DeleteTrackManager';
 import GlobalGraph from '../graph/mapGraph/GlobalGraph';
+import GpxFileDragController from '../map/components/GpxFileDragController';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
@@ -414,6 +415,7 @@ const GlobalFrame = () => {
                 }}
             >
                 <GlobalConfirmationDialog />
+                <GpxFileDragController />
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
                 <GlobalAlert width={width} />

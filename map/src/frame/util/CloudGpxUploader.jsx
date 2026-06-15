@@ -7,10 +7,10 @@ import useCloudGpxImport from '../../util/hooks/useCloudGpxImport';
 
 export default function CloudGpxUploader({ children, folder = DEFAULT_GROUP_NAME, style = null }) {
     const ltx = useContext(LoginContext);
-    const { importGpxFiles } = useCloudGpxImport({ folder });
+    const { importGpxFiles } = useCloudGpxImport();
 
     const fileSelected = (e) => {
-        importGpxFiles(e.target.files);
+        importGpxFiles(e.target.files, folder);
     };
 
     const HiddenInput = styled('input')({ display: 'none' });

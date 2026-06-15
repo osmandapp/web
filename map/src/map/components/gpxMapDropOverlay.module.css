@@ -1,5 +1,5 @@
-.overlay {
-    position: absolute;
+.dropOverlay {
+    position: fixed;
     z-index: 3001;
     display: flex;
     align-items: center;

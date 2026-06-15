@@ -65,12 +65,16 @@ export default function CloudTrackGroup({ index, group }) {
         return `${fmt.monthShortDay(group.lastModifiedDate)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
     };
 
+    const isDropTarget = group.type !== SMART_TYPE;
+    const isDropHover = isDropTarget && ctx.gpxFileDrag?.hoverFolder === group.fullName;
+
     return (
         <>
             <MenuItem
-                className={styles.group}
+                className={`${styles.group}${isDropHover ? ` ${styles.groupDropTarget}` : ''}`}
                 key={'group' + group.name + index}
                 id={'se-menu-cloud-' + group.name}
+                data-cloud-track-folder={isDropTarget ? group.fullName : undefined}
                 onClick={handleClick}
             >
                 <ListItemIcon className={styles.icon}>{getFolderIcon()}</ListItemIcon>

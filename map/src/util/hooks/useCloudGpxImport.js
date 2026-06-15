@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import { DEFAULT_GROUP_NAME, GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
+import { GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
 import { createTrackFreeName, removeFileExtension, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { useMutator } from '../Utils';
 
@@ -18,15 +18,17 @@ function validName(name) {
     return name !== '' && name.trim().length > 0;
 }
 
-export default function useCloudGpxImport({ folder = DEFAULT_GROUP_NAME } = {}) {
+export default function useCloudGpxImport() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
     useEffect(() => {
         for (const file in uploadedFiles) {
-            let open = uploadedFiles[file].selected;
-            let fileName = uploadedFiles[file].name;
+            const uploadedFile = uploadedFiles[file];
+            let open = uploadedFile.selected;
+            let fileName = uploadedFile.name;
+            const folder = uploadedFile.folder;
             if (validName(fileName)) {
                 fileName = removeFileExtension(fileName);
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
@@ -36,7 +38,7 @@ export default function useCloudGpxImport({ folder = DEFAULT_GROUP_NAME } = {}) 
                     currentFolder: folder,
                     fileName,
                     type: 'GPX',
-                    uploadedFile: uploadedFiles[file],
+                    uploadedFile: uploadedFile,
                     open,
                 }).then();
                 mutateUploadedFiles((o) => delete o[file]);
@@ -46,7 +48,7 @@ export default function useCloudGpxImport({ folder = DEFAULT_GROUP_NAME } = {}) 
     }, [uploadedFiles]);
 
     const importGpxFiles = useCallback(
-        (fileList) => {
+        (fileList, folder) => {
             if (!ltx.loginUser || ltx.accountInfo?.account === FREE_ACCOUNT) {
                 return;
             }
@@ -66,7 +68,14 @@ export default function useCloudGpxImport({ folder = DEFAULT_GROUP_NAME } = {}) 
                     if (data) {
                         mutateUploadedFiles(
                             (o) =>
-                                (o[file.name] = { file, selected, data: data, name: file.name, originalName: file.name })
+                                (o[file.name] = {
+                                    file,
+                                    selected,
+                                    data: data,
+                                    name: file.name,
+                                    originalName: file.name,
+                                    folder,
+                                })
                         );
                     } else {
                         ctx.setTrackErrorMsg({
@@ -83,7 +92,7 @@ export default function useCloudGpxImport({ folder = DEFAULT_GROUP_NAME } = {}) 
                 }
             });
         },
-        [ctx, folder, ltx.accountInfo?.account, ltx.loginUser, mutateUploadedFiles]
+        [ctx, ltx.accountInfo?.account, ltx.loginUser, mutateUploadedFiles]
     );
 
     return { importGpxFiles };

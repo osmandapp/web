@@ -20,6 +20,7 @@ import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
+import styles from '../trackfavmenu.module.css';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -138,10 +139,14 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
         return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
     }
 
+    const isDropTarget = group && group.type !== SMART_TYPE && !smartf;
+
     return (
         <>
             <Box
                 id={`se-tracks-folder`}
+                className={isDropTarget ? styles.folderDropTarget : undefined}
+                data-cloud-track-folder={isDropTarget ? group.fullName : undefined}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
                 sx={{ overflow: 'hidden' }}

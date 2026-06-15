@@ -128,6 +128,8 @@ export default function TracksMenu() {
                     {hasFiles ? (
                         <Box
                             id={'se-track-menu'}
+                            className={styles.folderDropTarget}
+                            data-cloud-track-folder=""
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
                             sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
@@ -174,7 +176,7 @@ export default function TracksMenu() {
                             {defaultGroupItems}
                         </Box>
                     ) : (
-                        <Box id={'se-track-menu'}>
+                        <Box id={'se-track-menu'} className={styles.folderDropTarget} data-cloud-track-folder="">
                             <Empty
                                 title={t('empty_tracks')}
                                 text={t('empty_tracks_description')}
