@@ -158,7 +158,7 @@ export async function apiGet(url, options = null) {
             e?.name === 'AbortError' ||
             (e?.message && String(e.message).includes('aborted'));
         if (isAbort) {
-            return { ok: false, text: () => null, json: () => null, blob: () => null, data: null };
+            return { ok: false, aborted: true, text: () => null, json: () => null, blob: () => null, data: null };
         }
         // got general error (have no response)
         console.debug('fetch-catch-error', url, e);
