@@ -7,7 +7,7 @@
       "type": "vector",
       "tiles": ["https://test.osmand.net/vector/{z}/{x}/{y}.mvt"],
       "minzoom": 0,
-      "maxzoom": 20,
+      "maxzoom": 15,
       "buffer": 128
     }
   },
