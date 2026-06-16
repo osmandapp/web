@@ -1,7 +1,6 @@
 import { useCallback, useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import { GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
 import { createTrackFreeName, removeFileExtension, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { useMutator } from '../Utils';
@@ -49,7 +48,7 @@ export default function useCloudGpxImport() {
 
     const importGpxFiles = useCallback(
         (fileList, folder) => {
-            if (!ltx.loginUser || ltx.accountInfo?.account === FREE_ACCOUNT) {
+            if (!ltx.isProAccount()) {
                 return;
             }
 
@@ -92,7 +91,7 @@ export default function useCloudGpxImport() {
                 }
             });
         },
-        [ctx, ltx.accountInfo?.account, ltx.loginUser, mutateUploadedFiles]
+        [ctx, ltx.loginUser, ltx.accountInfo?.account, mutateUploadedFiles]
     );
 
     return { importGpxFiles };

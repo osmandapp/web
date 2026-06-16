@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import AppContext from '../context/AppContext';
+import LoginContext from '../context/LoginContext';
 import { IMPORT_FOLDER_NAME } from '../manager/track/TracksManager';
 import useCloudGpxImport from '../util/hooks/useCloudGpxImport';
 import TracksMapDropOverlay from './TracksMapDropOverlay';
@@ -15,6 +16,7 @@ function hasFiles(e) {
 
 export default function TracksFileDragController() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { importGpxFiles } = useCloudGpxImport();
     const dragCounterRef = useRef(0);
     const ctxRef = useRef(ctx);
@@ -27,7 +29,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragEnter = (e) => {
-            if (!hasFiles(e)) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             e.preventDefault();
@@ -35,7 +37,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragOver = (e) => {
-            if (!hasFiles(e)) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             e.preventDefault();
@@ -47,7 +49,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragLeave = (e) => {
-            if (!hasFiles(e)) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             dragCounterRef.current = Math.max(0, dragCounterRef.current - 1);
@@ -57,7 +59,7 @@ export default function TracksFileDragController() {
         };
 
         const onDrop = (e) => {
-            if (!hasFiles(e)) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             e.preventDefault();
@@ -89,7 +91,7 @@ export default function TracksFileDragController() {
             window.removeEventListener('drop', onDrop);
             window.removeEventListener('dragend', onDragEnd);
         };
-    }, [importGpxFiles]);
+    }, [importGpxFiles, ltx.loginUser, ltx.accountInfo?.account]);
 
     return createPortal(
         <>

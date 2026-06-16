@@ -1,44 +1,29 @@
-import { Typography } from '@mui/material';
-import { useContext, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/AppContext';
+import DropOverlay from './components/DropOverlay';
 import { getMenuDropOverlayRect, getMenuOverlayContainer } from './TracksMapDropGeometry';
-import styles from './tracksMapDropOverlay.module.css';
 
 export default function TracksMenuDropOverlay() {
     const ctx = useContext(AppContext);
-    const { t } = useTranslation();
-    const ctxRef = useRef(ctx);
-    const [overlayStyle, setOverlayStyle] = useState(null);
-
-    ctxRef.current = ctx;
+    const [overlayInsets, setOverlayInsets] = useState(null);
 
     const hoverFolder = ctx.gpxFileDrag?.hoverFolder;
     const active = ctx.gpxFileDrag?.active && !ctx.gpxFileDrag?.overMap && hoverFolder !== null;
 
     useEffect(() => {
         if (!active) {
-            setOverlayStyle(null);
+            setOverlayInsets(null);
             return;
         }
 
         const update = () => {
-            const container = getMenuOverlayContainer(ctxRef.current.gpxFileDrag?.hoverFolder);
+            const container = getMenuOverlayContainer(ctx.gpxFileDrag?.hoverFolder);
             if (!container) {
-                setOverlayStyle(null);
+                setOverlayInsets(null);
                 return;
             }
-            const rect = getMenuDropOverlayRect(container, ctxRef.current);
-            if (!rect) {
-                setOverlayStyle(null);
-                return;
-            }
-            setOverlayStyle({
-                top: `${rect.top}px`,
-                left: `${rect.left}px`,
-                right: `${rect.right}px`,
-                bottom: `${rect.bottom}px`,
-            });
+            const rect = getMenuDropOverlayRect(container, ctx);
+            setOverlayInsets(rect);
         };
 
         update();
@@ -54,15 +39,12 @@ export default function TracksMenuDropOverlay() {
         ctx.infoBlockWidth,
         ctx.globalGraph?.show,
         ctx.globalGraph?.size,
+        ctx.openMainMenu,
     ]);
 
-    if (!active || !overlayStyle) {
+    if (!active) {
         return null;
     }
 
-    return (
-        <div className={styles.dropOverlay} style={overlayStyle}>
-            <Typography className={styles.text}>{t('web:drop_gpx_to_import')}</Typography>
-        </div>
-    );
+    return <DropOverlay insets={overlayInsets} />;
 }
