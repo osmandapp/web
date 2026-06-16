@@ -18,6 +18,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import QuizEmbed from '@site/src/components/QuizEmbed.js';
 
 Some trips exist first as an idea. You open a map, find a coastline, and start building something in your head — a route, a few stops, maybe a harbor where you'd want to spend the evening. A principality of your own, even if just for a week.
 Principality of Monaco takes that idea literally. In summer the water gets crowded quickly — and what looks like open space from the shore has its own logic underneath. Shallow patches, restricted zones, boats coming and going from every direction. You don't notice any of it until you're already in the middle of it.
@@ -95,13 +96,7 @@ When you navigate with OsmAnd, you are not just using a static piece of software
 
 Before you weigh anchor for your next coastal journey, it is worth exploring the finer details of marine navigation. You can discover every map symbol, attribute, and advanced configuration in our full [Nautical Map View](https://osmand.net/docs/user/plugins/nautical-charts) documentation. Once you have studied the charts, try your hand at our interactive quiz to see if you can distinguish a safe fairway from a shallow risk. 
 
-<div style={{ position: 'relative', width: '100%', height: '0', paddingBottom: '75%', overflow: 'hidden', borderRadius: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', margin: '20px 0' }}>
-  <iframe 
-    src="/nautical_quiz.html" 
-    style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', border: 'none' }}
-    allow="fullscreen">
-  </iframe>
-</div>
+<QuizEmbed src="/nautical_quiz.html" />
 
 Out there on the Mediterranean, the water stops being an unpredictable obstacle — it becomes a route you can confidently read and follow.
 
