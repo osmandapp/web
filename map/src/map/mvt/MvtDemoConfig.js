@@ -28,5 +28,5 @@ export function isMvtOsmTileURL(tileURL) {
 }
 
 export function isMvtTileURL(tileURL) {
-    return isMvtDemoTileURL(tileURL) || isMvtOsmTileURL(tileURL);
+    return tileURL?.type === 'mvt' || isMvtDemoTileURL(tileURL) || isMvtOsmTileURL(tileURL);
 }
