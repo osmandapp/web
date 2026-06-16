@@ -1,11 +1,11 @@
 import { Typography } from '@mui/material';
 import { useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../context/AppContext';
-import { getVisibleMapInsets } from './GpxMapDropGeometry';
-import styles from './gpxMapDropOverlay.module.css';
+import AppContext from '../context/AppContext';
+import { getVisibleMapInsets } from './TracksMapDropGeometry';
+import styles from './tracksMapDropOverlay.module.css';
 
-export default function GpxMapDropOverlay() {
+export default function TracksMapDropOverlay() {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const active =

@@ -1,11 +1,11 @@
 import { Typography } from '@mui/material';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../context/AppContext';
-import { getMenuDropOverlayRect, getMenuOverlayContainer } from './GpxMapDropGeometry';
-import styles from './gpxMapDropOverlay.module.css';
+import AppContext from '../context/AppContext';
+import { getMenuDropOverlayRect, getMenuOverlayContainer } from './TracksMapDropGeometry';
+import styles from './tracksMapDropOverlay.module.css';
 
-export default function GpxMenuDropOverlay() {
+export default function TracksMenuDropOverlay() {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const ctxRef = useRef(ctx);

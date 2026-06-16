@@ -1,11 +1,11 @@
 import { useContext, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import AppContext from '../../context/AppContext';
-import { IMPORT_FOLDER_NAME } from '../../manager/track/TracksManager';
-import useCloudGpxImport from '../../util/hooks/useCloudGpxImport';
-import GpxMapDropOverlay from './GpxMapDropOverlay';
-import GpxMenuDropOverlay from './GpxMenuDropOverlay';
-import { resolveGpxDropTarget } from './GpxMapDropGeometry';
+import AppContext from '../context/AppContext';
+import { IMPORT_FOLDER_NAME } from '../manager/track/TracksManager';
+import useCloudGpxImport from '../util/hooks/useCloudGpxImport';
+import TracksMapDropOverlay from './TracksMapDropOverlay';
+import TracksMenuDropOverlay from './TracksMenuDropOverlay';
+import { resolveGpxDropTarget } from './TracksMapDropGeometry';
 
 const GPX_FILE_DRAG_IDLE = { active: false, hoverFolder: null, overMap: false };
 
@@ -13,7 +13,7 @@ function hasFiles(e) {
     return e.dataTransfer?.types?.includes('Files');
 }
 
-export default function GpxFileDragController() {
+export default function TracksFileDragController() {
     const ctx = useContext(AppContext);
     const { importGpxFiles } = useCloudGpxImport();
     const dragCounterRef = useRef(0);
@@ -93,8 +93,8 @@ export default function GpxFileDragController() {
 
     return createPortal(
         <>
-            <GpxMapDropOverlay />
-            <GpxMenuDropOverlay />
+            <TracksMapDropOverlay />
+            <TracksMenuDropOverlay />
         </>,
         document.body
     );

@@ -1,4 +1,4 @@
-import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MAIN_MENU_OPEN_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MAIN_MENU_OPEN_SIZE } from '../manager/GlobalManager';
 
 export const OVERLAY_MARGIN = 16;
 
