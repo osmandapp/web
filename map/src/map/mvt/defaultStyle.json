@@ -104,6 +104,25 @@
       "paint": {"fill-color": "#80c0ff"}
     },
     {
+      "id": "natural-synthetic-coastline",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "tunnel_layer",
+      "filter": ["all", ["==", "natural", "coastline"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff"}
+    },
+    {
+      "id": "natural-ground-mixed-coastline",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "coastline"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff"},
+      "TODO": "combine with coastline_line using 'in'"
+    },
+    {
       "id": "natural-wetland",
       "type": "fill",
       "source": "osm",

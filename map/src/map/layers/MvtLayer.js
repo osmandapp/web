@@ -7,6 +7,7 @@ import MapContext from '../../context/MapContext';
 
 const POPUP_MAX_HEIGHT = 220;
 const SHOW_TILE_BOUNDARIES = true;
+const TILE_SOURCES_KEY = '__osmandMvtTileSources';
 
 function getPublicAssetPath(path) {
     const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
@@ -29,6 +30,47 @@ function createStyle(baseStyle, tileUrl) {
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
     return style;
+}
+
+function getMvtSources(config) {
+    const sources = createStyle(config.style, config.tileUrl).sources || {};
+    return Object.entries(sources).flatMap(([id, source]) =>
+        source?.type === 'vector' && source.tiles?.length
+            ? [
+                  {
+                      id,
+                      url: source.tiles[0],
+                      minzoom: source.minzoom ?? 0,
+                      maxzoom: source.maxzoom ?? 22,
+                      scheme: source.scheme,
+                  },
+              ]
+            : []
+    );
+}
+
+function getTileCoord({ lat, lng }, source, zoom) {
+    const z = Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(zoom)));
+    const n = 2 ** z;
+    const sin = Math.sin((Math.max(-85.05112878, Math.min(85.05112878, lat)) * Math.PI) / 180);
+    const x = Math.floor((((L.Util.wrapNum(lng, [-180, 180], true) + 180) / 360) * n) % n);
+    const y = Math.max(0, Math.min(n - 1, Math.floor((0.5 - Math.log((1 + sin) / (1 - sin)) / (4 * Math.PI)) * n)));
+
+    return { z, x, y: source.scheme === 'tms' ? n - y - 1 : y };
+}
+
+export function getMvtTileDownloads(map, latlng) {
+    if (!map || !latlng) {
+        return [];
+    }
+
+    return (map?.[TILE_SOURCES_KEY] || []).map((source) => {
+        const { z, x, y } = getTileCoord(latlng, source, source.getZoom?.() ?? map.getZoom());
+        return {
+            url: source.url.replace('{z}', z).replace('{x}', x).replace('{y}', y),
+            name: `${source.id}-${z}-${x}-${y}.mvt`,
+        };
+    });
 }
 
 function formatPopupValue(value) {
@@ -100,6 +142,14 @@ export default function MvtLayer({ config }) {
         const maplibreMap = glLayer.getMaplibreMap();
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
 
+        const sourceOwner = Symbol(config.tileUrl);
+        const sources = getMvtSources(config).map((source) => ({
+            ...source,
+            sourceOwner,
+            getZoom: () => maplibreMap.getZoom(),
+        }));
+        map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
+
         let activePopup = null;
 
         const handleLoading = () => {
@@ -168,6 +218,9 @@ export default function MvtLayer({ config }) {
                 map.closePopup(activePopup);
                 activePopup = null;
             }
+            map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
+                (source) => source.sourceOwner !== sourceOwner
+            );
             map.removeLayer(glLayer);
         };
     }, [map, mtx.tileURL, config]);
