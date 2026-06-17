@@ -361,13 +361,15 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                                         </span>
                                     )}
                                     {matchedObjects.length > 1 && (
-                                        <InfoIcon
-                                            className={`${styles.placeTypesIcon} ${styles.matchedObjectsIcon}`}
+                                        <span
+                                            className={styles.matchedObjectsIcon}
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setShowMatched(true);
                                             }}
-                                        />
+                                        >
+                                            <InfoIcon className={styles.placeTypesIcon} />
+                                        </span>
                                     )}
                                 </MenuItemWithLines>
                             )}

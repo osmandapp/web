@@ -101,6 +101,11 @@ export function buildFavGroupMap(favoriteFeatures) {
     return result.size > 0 ? result : null;
 }
 
+export function appendSpatialDot(query) {
+    const q = String(query ?? '').trim();
+    return q && !q.endsWith('.') ? `${q}.` : q;
+}
+
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -231,7 +236,7 @@ export default function SearchLayer() {
                     lon: searchData.latlng.lng,
                     northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
                     southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                    text: searchData.query,
+                    text: ctx.spatialSearch ? appendSpatialDot(searchData.query) : searchData.query,
                     locale: i18n.language,
                     baseSearch: searchData.baseSearch,
                     ...(ctx.spatialSearch ? { spatial: true } : {}),
