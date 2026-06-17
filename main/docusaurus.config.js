@@ -137,7 +137,7 @@ async function createConfig(){
               label: 'Docs',
             },
             { to: '/blog', label: 'Blog', position: 'left'},
-            { to: 'pathname:///pricing', label: '🏖️ Sale & Pricing', position: 'left' },
+            { to: 'pathname:///pricing', label: '💳 Pricing', position: 'left' },
             { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
             { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
             {
@@ -155,7 +155,7 @@ async function createConfig(){
               title: 'OsmAnd',
               items: [
                 {
-                  label: 'Pricing & Sale🏖️ ',
+                  label: 'Pricing 💳',
                   to: 'pathname:///pricing',
                 },
                 {
