@@ -89,6 +89,11 @@
     max-width: 16px !important;
     fill: var(--svg-icon-color) !important;
 }
+.matchedObjectsIcon {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 6px;
+}
 .placeTypesEmptyIcon {
     min-width: 24px !important;
     max-width: 24px !important;

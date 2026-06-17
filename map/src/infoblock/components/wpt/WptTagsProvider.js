@@ -85,6 +85,7 @@ export const CATEGORY_TYPE = WEB_PREFIX + 'type';
 export const CITY = WEB_PREFIX + 'city';
 export const ADDRESS_1 = WEB_PREFIX + 'address1';
 export const ADDRESS_2 = WEB_PREFIX + 'address2';
+export const MATCHED_OBJECTS = WEB_PREFIX + 'matched_objects';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
 export const TYPE_OSM_TAG = WEB_PREFIX + 'typeOsmTag';

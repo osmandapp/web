@@ -1,8 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import {
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Skeleton,
+    Typography,
+} from '@mui/material';
+import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
+import dialogStyles from '../../../dialogs/dialog.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
@@ -17,6 +30,7 @@ import {
     CITY,
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
+    MATCHED_OBJECTS,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -141,6 +155,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
 
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
+    const [showMatched, setShowMatched] = useState(false);
+    const matchedObjects = item.properties?.[MATCHED_OBJECTS]?.split('\n').filter(Boolean) ?? [];
 
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
@@ -328,7 +344,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                     >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {(info || type) && (
+                            {(info || type || matchedObjects.length > 1) && (
                                 <MenuItemWithLines
                                     className={styles.placeTypes}
                                     name={`${addInfo()}${addType()}${addCity()}`}
@@ -344,12 +360,42 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                                             />
                                         </span>
                                     )}
+                                    {matchedObjects.length > 1 && (
+                                        <InfoIcon
+                                            className={`${styles.placeTypesIcon} ${styles.matchedObjectsIcon}`}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setShowMatched(true);
+                                            }}
+                                        />
+                                    )}
                                 </MenuItemWithLines>
                             )}
                         </ListItemText>
                         <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
                     </MenuItem>
                     <DividerWithMargin margin={'16px'} />
+                    {showMatched && (
+                        <Dialog
+                            className={dialogStyles.dialog}
+                            open={true}
+                            onClose={() => setShowMatched(false)}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <DialogTitle className={dialogStyles.title}>
+                                Matched objects ({matchedObjects.length})
+                            </DialogTitle>
+                            <DialogContent className={dialogStyles.content}>
+                                <List dense>
+                                    {matchedObjects.map((objName, i) => (
+                                        <ListItem key={i}>
+                                            <ListItemText primary={objName} />
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </DialogContent>
+                        </Dialog>
+                    )}
                 </>
             )}
         </div>
