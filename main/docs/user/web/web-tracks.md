@@ -88,6 +88,10 @@ The three-dot menu (⋮) provides additional actions for the Smart Folder. You c
 
 GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
 
+When you select a track, the map automatically centers and adjusts the zoom level to display the entire track within the visible map area.
+
+You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected track. Turn off Focus mode to restore the visibility of other map objects.
+
 The following features are available after choosin cloud track:
 - *Information* - displaying track data.
 - *Elevation* - graph of elevation.
