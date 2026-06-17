@@ -234,6 +234,7 @@ export default function SearchLayer() {
                     text: searchData.query,
                     locale: i18n.language,
                     baseSearch: searchData.baseSearch,
+                    ...(ctx.spatialSearch ? { spatial: true } : {}),
                     ...getCurrentTimeParams(),
                 },
             });
