@@ -55,6 +55,7 @@ export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
+export const SPATIAL_SEARCH_STORAGE_KEY = 'spatialSearch';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
@@ -306,6 +307,11 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
+
+    // dev-only: use new SpatialTextSearch on the backend (passes spatial=true to /search/search)
+    const [spatialSearch, setSpatialSearch] = useState(
+        () => localStorage.getItem(SPATIAL_SEARCH_STORAGE_KEY) === 'yes'
+    );
     const [infoBlockWidth, setInfoBlockWidth] = useState('0');
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
@@ -606,6 +612,8 @@ export const AppContextProvider = (props) => {
                 setPoiCategories,
                 develFeatures,
                 setDevelFeatures,
+                spatialSearch,
+                setSpatialSearch,
                 infoBlockWidth,
                 setInfoBlockWidth,
                 routeObject,

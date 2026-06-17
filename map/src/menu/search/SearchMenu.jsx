@@ -2,7 +2,7 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { collator } from '../../context/AppContext';
+import AppContext, { collator, SPATIAL_SEARCH_STORAGE_KEY } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -30,6 +30,7 @@ import EmptyLogin from '../../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import SelectItemBoolean from '../../frame/components/items/SelectItemBoolean';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
@@ -238,6 +239,11 @@ export default function SearchMenu() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + liveHash());
     }
 
+    function toggleSpatialSearch(on) {
+        ctx.setSpatialSearch(on);
+        localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
+    }
+
     return (
         <>
             {ltx.isLoggedIn() ? (
@@ -271,6 +277,14 @@ export default function SearchMenu() {
                                         }
                                         setSearchValue={setSearchValue}
                                     />
+                                    {ctx.develFeatures && (
+                                        <SelectItemBoolean
+                                            title="Spatial search (dev)"
+                                            checked={!!ctx.spatialSearch}
+                                            onToggle={toggleSpatialSearch}
+                                            boldTitle={false}
+                                        />
+                                    )}
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />
                                         <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>
