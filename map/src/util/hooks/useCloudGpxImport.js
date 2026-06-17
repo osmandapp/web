@@ -1,7 +1,7 @@
 import { useCallback, useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
+import { GPX_FILE_EXT, KMZ_FILE_EXT, validName } from '../../manager/track/TracksManager';
 import { createTrackFreeName, removeFileExtension, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { useMutator } from '../Utils';
 
@@ -11,10 +11,6 @@ function isCloudTrackFile(file) {
     const name = file?.name?.toLowerCase() ?? '';
 
     return CLOUD_TRACK_EXTENSIONS.some((ext) => name.endsWith(ext));
-}
-
-function validName(name) {
-    return name !== '' && name.trim().length > 0;
 }
 
 export default function useCloudGpxImport() {
@@ -61,6 +57,7 @@ export default function useCloudGpxImport() {
             ctx.setTrackLoading(files.map((track) => removeFileExtension(track.name) + GPX_FILE_EXT));
 
             files.forEach((file) => {
+                const loadingName = removeFileExtension(file.name) + GPX_FILE_EXT;
                 const reader = new FileReader();
                 reader.addEventListener('load', (e) => {
                     const data = e.target.result;
@@ -81,7 +78,7 @@ export default function useCloudGpxImport() {
                             title: 'Import error',
                             msg: `Unable to import ${file.name}`,
                         });
-                        ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
+                        ctx.setTrackLoading((prev) => prev.filter((n) => n !== loadingName));
                     }
                 });
                 if (file.name.toLowerCase().endsWith(KMZ_FILE_EXT)) {
