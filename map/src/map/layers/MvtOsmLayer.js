@@ -1,11 +1,11 @@
 import MvtLayer from './MvtLayer';
 import mvtOsmStyle from '../mvt/mvtOsmStyle.json';
-import { isMvtOsmTileURL, MVT_OSM_TILE_URL } from '../mvt/MvtDemoConfig';
+import { isOsmTestTileURL, MVT_OSM_TEST_URL } from '../mvt/MvtDemoConfig';
 
 const config = {
     style: mvtOsmStyle,
-    tileUrl: MVT_OSM_TILE_URL,
-    isActive: isMvtOsmTileURL,
+    tileUrl: MVT_OSM_TEST_URL,
+    isActive: isOsmTestTileURL,
     popupClassName: 'mvt-osm-popup',
     errorLabel: 'MVT OSM layer error',
 };

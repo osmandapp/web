@@ -14,7 +14,7 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
-import { mvtDemoTileURL, MVT_DEMO_LAYER, mvtOsmTileURL, MVT_OSM_LAYER } from '../map/mvt/MvtDemoConfig';
+import { mvtOsmAndURL, MVT_OSMAND_LAYER, mvtOsmTestURL, MVT_OSM_TEST_LAYER } from '../map/mvt/MvtDemoConfig';
 import { osmandTileURL } from '../map/baseTileURL';
 import {
     EXPLORE_OBJS_KEY,
@@ -107,8 +107,8 @@ async function loadTileUrls(setAllTileURLs, develFeatures) {
         });
         data[osmandTileURL.key] = osmandTileURL;
         if (develFeatures) {
-            data[MVT_DEMO_LAYER] = mvtDemoTileURL;
-            data[MVT_OSM_LAYER] = mvtOsmTileURL;
+            data[MVT_OSMAND_LAYER] = mvtOsmAndURL;
+            data[MVT_OSM_TEST_LAYER] = mvtOsmTestURL;
         }
         setAllTileURLs(data);
     }

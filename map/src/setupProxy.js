@@ -56,6 +56,7 @@ module.exports = function (app) {
 
     app.use('/gpx/', gpx);
     app.use('/tile/', tile);
+    app.use('/vector/', tile);
     app.use('/heightmap/', heightmap);
     app.use('/mapapi/', mapapi);
     app.use('/search/', search);
