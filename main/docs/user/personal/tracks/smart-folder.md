@@ -163,9 +163,7 @@ The newly created **Smart Folder** will automatically update its contents with t
 
 <TabItem value="android" label="Android">
 
-![My places Managing Smart Folders Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![My places Managing Smart Foldersn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it to access the available actions:
 
@@ -182,7 +180,7 @@ The **Smart folder** is displayed with a unique icon in the folder list in the T
 You can also open the folder and tap the *three-dot menu* in the *top-right corner* to access additional actions:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-- **<Translate android="true" ids="organize_by"/>** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+- **<Translate android="true" ids="organize_by"/>** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Select *None* to display all tracks as a single list, matching the default Smart Folder view. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
 
 Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
 
@@ -190,13 +188,13 @@ For numeric parameters (such as distance, duration, speed, or altitude), a *Set 
 
 For PRO parameters, you can preview the grouping setup (for example, open the step size selector and see how tracks are grouped), but applying these changes requires an active subscription. If you select a PRO parameter or tap the Unlock button, the Choose plan screen will open. Previously applied grouping remains visible even if the subscription expires, but editing or applying new PRO-based grouping requires an active subscription.
 
+After a grouping parameter is selected, tracks are displayed as groups. Each group shows its name, icon, and the number of tracks it contains. Tap a group to open the list of tracks in that group. Empty groups are not displayed. Grouped results can be sorted alphabetically (A–Z or Z–A) or, for numeric parameters, by highest or lowest values. Long-press a group to show all tracks in the group on the map or export all tracks in the group.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, *long tap* the folder name to access the available actions:
 
@@ -211,6 +209,15 @@ You can also open the folder and tap the icon in the *top-right corner* to acces
 - **<Translate ios="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Manually update the folder's content to ensure it includes the latest tracks.
 - **<Translate ios="true" ids="edit_filter"/>** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
+- **Organize by** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Select *None* to display all tracks as a single list, matching the default Smart Folder view. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+
+Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
+
+For numeric parameters (such as distance, duration, speed, or altitude), a *Set step size* dialog is available. Use the slider to define value ranges for grouping.
+
+For PRO parameters, you can preview the grouping setup (for example, open the step size selector and see how tracks are grouped), but applying these changes requires an active subscription. If you select a PRO parameter or tap the Unlock button, the Choose plan screen will open. Previously applied grouping remains visible even if the subscription expires, but editing or applying new PRO-based grouping requires an active subscription.
+
+After a grouping parameter is selected, tracks are displayed as groups. Each group shows its name, icon, and the number of tracks it contains. Tap a group to open the list of tracks in that group. Empty groups are not displayed. Grouped results can be sorted alphabetically (A–Z or Z–A) or, for numeric parameters, by highest or lowest values. Long-press a group to show all tracks in the group on the map or export all tracks in the group.
 
 </TabItem>
 
