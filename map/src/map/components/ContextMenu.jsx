@@ -392,7 +392,9 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                     <ListItemIcon className={styles.contextMenuIcon}>
                                         <DownloadIcon />
                                     </ListItemIcon>
-                                    <ListItemText className={styles.contextMenuItemText}>Download tile</ListItemText>
+                                    <ListItemText className={styles.contextMenuItemText}>
+                                        Download MVT tile
+                                    </ListItemText>
                                 </MenuItem>
                                 <Divider className={styles.dividerMenu} />
                             </>

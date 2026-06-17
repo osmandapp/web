@@ -68,7 +68,7 @@ export function getMvtTileDownloads(map, latlng) {
         const { z, x, y } = getTileCoord(latlng, source, source.getZoom?.() ?? map.getZoom());
         return {
             url: source.url.replace('{z}', z).replace('{x}', x).replace('{y}', y),
-            name: `${source.id}-${z}-${x}-${y}.mvt`,
+            name: `${source.layerKey || source.id}-${z}-${x}-${y}.mvt`,
         };
     });
 }
@@ -146,6 +146,7 @@ export default function MvtLayer({ config }) {
         const sources = getMvtSources(config).map((source) => ({
             ...source,
             sourceOwner,
+            layerKey: mtx.tileURL?.key,
             getZoom: () => maplibreMap.getZoom(),
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
