@@ -1,19 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import {
-    Dialog,
-    DialogContent,
-    DialogTitle,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Skeleton,
-    Typography,
-} from '@mui/material';
+import { Dialog, DialogTitle, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
+import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
+import DefaultItem from '../../../frame/components/items/DefaultItem';
 import styles from '../search.module.css';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import { useTranslation } from 'react-i18next';
@@ -156,7 +147,12 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
     const [showMatched, setShowMatched] = useState(false);
-    const matchedObjects = item.properties?.[MATCHED_OBJECTS]?.split('\n').filter(Boolean) ?? [];
+
+    const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
+    function openMatchedObject(obj) {
+        ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
+        setShowMatched(false);
+    }
 
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
@@ -378,24 +374,20 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
                     </MenuItem>
                     <DividerWithMargin margin={'16px'} />
                     {showMatched && (
-                        <Dialog
-                            className={dialogStyles.dialog}
-                            open={true}
-                            onClose={() => setShowMatched(false)}
-                            onClick={(e) => e.stopPropagation()}
-                        >
+                        <Dialog open={true} onClose={() => setShowMatched(false)} onClick={(e) => e.stopPropagation()}>
                             <DialogTitle className={dialogStyles.title}>
                                 Matched objects ({matchedObjects.length})
                             </DialogTitle>
-                            <DialogContent className={dialogStyles.content}>
-                                <List dense>
-                                    {matchedObjects.map((objName, i) => (
-                                        <ListItem key={i}>
-                                            <ListItemText primary={objName} />
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </DialogContent>
+                            {matchedObjects.map((obj, i) => (
+                                <DefaultItem
+                                    key={i}
+                                    icon={<LocationIcon />}
+                                    className={styles.matchedItem}
+                                    name={obj.name}
+                                    additionalInfo={`${obj.lat?.toFixed(5)}, ${obj.lon?.toFixed(5)}`}
+                                    onClick={() => openMatchedObject(obj)}
+                                />
+                            ))}
                         </Dialog>
                     )}
                 </>

@@ -99,6 +99,9 @@
     cursor: pointer;
     margin-left: 6px;
 }
+.matchedItem {
+    padding-left: 24px !important;
+}
 .matchedObjectsIcon svg {
     min-width: 16px !important;
     max-width: 16px !important;
