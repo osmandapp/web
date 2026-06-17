@@ -73,6 +73,12 @@
     font-size: 12px !important;
     font-weight: 400 !important;
 }
+.spatialInfo {
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    padding: 6px 16px;
+}
 .explorePlaceTypes {
     color: var(--text-secondary) !important;
     font-size: 14px !important;
@@ -91,8 +97,18 @@
 }
 .matchedObjectsIcon {
     cursor: pointer;
-    vertical-align: middle;
     margin-left: 6px;
+}
+.matchedItem {
+    padding-left: 24px !important;
+}
+.matchedObjectsIcon svg {
+    min-width: 16px !important;
+    max-width: 16px !important;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle !important;
+    fill: var(--svg-icon-color) !important;
 }
 .placeTypesEmptyIcon {
     min-width: 24px !important;

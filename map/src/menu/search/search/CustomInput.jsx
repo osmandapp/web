@@ -29,6 +29,7 @@ export default function CustomInput({
     const { t } = useTranslation();
 
     const MIN_SIZE_SEARCH_VALUE = 1;
+    const SPATIAL_SEARCH_DELAY_MS = 400;
 
     const { navigateToSearchResults } = useSearchNav();
 
@@ -56,6 +57,19 @@ export default function CustomInput({
             setIsInitialRender(false);
         }
     }, [value]);
+
+    // spatial search only: run search while typing (debounced)
+    useEffect(() => {
+        if (!ctx.spatialSearch || isInitialRender || type === SEARCH_TYPE_CATEGORY) {
+            return;
+        }
+        if (!value || value.length < MIN_SIZE_SEARCH_VALUE) {
+            return;
+        }
+        const timer = setTimeout(() => search(value), SPATIAL_SEARCH_DELAY_MS);
+
+        return () => clearTimeout(timer);
+    }, [value, ctx.spatialSearch]);
 
     useEffect(() => {
         setValue(defaultSearchValue);

@@ -11,7 +11,8 @@ import PoiManager, {
 } from '../../../manager/PoiManager';
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import styles from '../search.module.css';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
@@ -336,6 +337,13 @@ export default function SearchResults() {
                     <EmptySearch message={errorZoom} />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
+                        {ctx.spatialSearch && ctx.searchResult?.info && (
+                            <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
+                                {Object.entries(ctx.searchResult.info)
+                                    .map(([k, v]) => `${k}: ${v}`)
+                                    .join(' · ')}
+                            </Typography>
+                        )}
                         {result?.features
                             .filter((item) => item?.properties)
                             .map((item, index) => (
