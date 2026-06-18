@@ -780,6 +780,7 @@
       "source-layer": "ground_layer",
       "minzoom": 8,
       "filter": ["all", ["==", "highway", "secondary"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(50, 47, 18, 1)",
         "line-width": ["interpolate", ["linear"], ["zoom"], 8, 4, 18, 8],
@@ -1011,6 +1012,7 @@
       "source-layer": "ground_layer",
       "minzoom": 8,
       "filter": ["all", ["==", "highway", "secondary"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "#EFE35A",
         "line-width": ["interpolate", ["linear"], ["zoom"], 8, 3.5, 18, 7]
@@ -1084,7 +1086,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "ground_layer",
-      "minzoom": 14,
+      "minzoom": 15,
       "filter": ["all", ["in", "highway", "footway"]],
       "paint": {
         "line-color": "#886",
@@ -1280,9 +1282,10 @@
       "source-layer": "bridge_layer",
       "minzoom": 9,
       "filter": ["all", ["==", "highway", "secondary"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "#000",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 14, 5.5, 18, 10],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 5.5, 18, 10],
         "line-opacity": 0.85
       }
     },
@@ -1293,9 +1296,10 @@
       "source-layer": "bridge_layer",
       "minzoom": 9,
       "filter": ["all", ["==", "highway", "secondary"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "#EFE35A",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 14, 3.5, 18, 7],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 3.5, 18, 7],
         "line-opacity": 1
       }
     },
@@ -1472,6 +1476,246 @@
         "line-color": "#EFE35A",
         "line-width": ["interpolate", ["linear"], ["zoom"], 11, 2.5, 18, 5],
         "line-opacity": 1
+      }
+    },
+    {
+      "id": "highwayconst-1-motorway",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 4, 18, 10],
+        "line-dasharray": [6, 4]
+      }
+    },
+    {
+      "id": "highwayconst-motorway",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "motorway"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 4, 18, 10],
+        "line-dasharray": [6, 4]
+      }
+    },
+    {
+      "id": "highwayconst-1-trunk",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 12],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-trunk",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "trunk"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 12],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-1-primary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 8],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-primary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "primary"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 8],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-secondary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["==", "construction", "yes"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 3.5, 18, 7],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-1-secondary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "secondary"],
+        ["==", "construction", "yes"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 3.5, 18, 7],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-tertiary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 2, 18, 7],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-1-tertiary",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "highway", "tertiary"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 2, 18, 7],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-1-residential",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["in", "highway", "residential", "unclassified", "living_street"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(138, 138, 138, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 2.5, 18, 5],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-residential",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["in", "highway", "residential", "unclassified", "living_street"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(138, 138, 138, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 2.5, 18, 5],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-1-service",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "bridge_layer",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "highway", "service"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(161, 161, 161, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 2.5, 18, 5],
+        "line-dasharray": [0.5, 0.5]
+      }
+    },
+    {
+      "id": "highwayconst-service",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "highway", "service"],
+        ["==", "construction", "yes"]
+      ],
+      "paint": {
+        "line-color": "rgba(161, 161, 161, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 12, 2.5, 18, 5],
+        "line-dasharray": [0.5, 0.5]
       }
     },
     {
@@ -2703,6 +2947,92 @@
         "text-halo-color": "rgba(83, 163, 190, 0.54)",
         "text-halo-width": 1.8,
         "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "transport-traffic-signals-copy",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "highway", "traffic_signals"]],
+      "layout": {"icon-image": "highway_traffic_signals_map"}
+    },
+    {
+      "id": "transport-crossing",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "highway", "crossing"]],
+      "layout": {"icon-image": "highway_crossing_map", "visibility": "visible"}
+    },
+    {
+      "id": "religion-place_of_worship",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 14,
+      "filter": ["all", ["==", ["get", "amenity"], "place_of_worship"]],
+      "layout": {
+        "icon-image": [
+          "case",
+          ["==", ["get", "religion"], "christian"],
+          "religion_christian",
+          ["==", ["get", "religion"], "jewish"],
+          "religion_jewish",
+          ["==", ["get", "religion"], "muslim"],
+          "religion_muslim",
+          ["==", ["get", "religion"], "sikh"],
+          "religion_sikh",
+          ["==", ["get", "religion"], "buddhist"],
+          "religion_buddhist",
+          ["==", ["get", "religion"], "hindu"],
+          "religion_hindu",
+          ["==", ["get", "religion"], "shinto"],
+          "religion_shinto",
+          ["==", ["get", "religion"], "taoist"],
+          "religion_taoist",
+          "amenity_place_of_worship"
+        ],
+        "icon-size": 1,
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": false,
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 10,
+        "text-anchor": "top",
+        "text-offset": [0, 1.2],
+        "text-max-width": 8,
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#222",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "religion-monastery",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 15,
+      "filter": ["all", ["==", ["get", "amenity"], "monastery"]],
+      "layout": {
+        "icon-image": "amenity_monastery",
+        "icon-size": 1,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 10,
+        "text-anchor": "top",
+        "text-offset": [0, 1.3],
+        "text-max-width": 8
+      },
+      "paint": {
+        "text-color": "#222",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.5
       }
     }
   ],
