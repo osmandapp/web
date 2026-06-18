@@ -20,6 +20,101 @@
       "paint": {"background-color": "#f0e8d8"}
     },
     {
+      "id": "natural-wood",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["in", "natural", "wood", "forest"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#8cc96e"}
+    },
+    {
+      "id": "natural-scrub",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "scrub"]],
+      "paint": {"fill-color": "#b0d090"}
+    },
+    {
+      "id": "natural-coastline",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "coastline"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff" }
+    },
+    {
+      "id": "natural-land",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "land"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#f0e8d8" }
+    },
+    {
+      "id": "natural-coastline-synthetic",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "tunnel_layer",
+      "filter": ["all", ["==", "natural", "coastline"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff"}
+    },
+    {
+      "id": "natural-coastline-line",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "coastline_line"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "#0000ff"}
+    },
+    {
+      "id": "natural-coastline-broken",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "coastline_broken"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "#ff0000"}
+    },
+    {
+      "id": "natural-wetland",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "wetland"]],
+      "paint": {"fill-color": "#a0d0c0"}
+    },
+    {
+      "id": "natural-water",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "water"]],
+      "paint": {"fill-color": "#80c0ff"}
+    },
+    {
+      "id": "natural-grassland",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "grassland"]],
+      "paint": {"fill-color": "#c8e0b0"}
+    },
+    {
+      "id": "natural-bare_rock",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "filter": ["all", ["==", "natural", "bare_rock"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#d8d0c8"}
+    },
+    {
       "id": "aeroway-aerodrome",
       "type": "fill",
       "source": "osm",
@@ -76,84 +171,6 @@
       "source-layer": "ground_layer",
       "filter": ["all", ["==", "landuse", "farmland"]],
       "paint": {"fill-color": "#e8e4b0"}
-    },
-    {
-      "id": "natural-wood",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["in", "natural", "wood", "forest"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#8cc96e"}
-    },
-    {
-      "id": "natural-scrub",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "scrub"]],
-      "paint": {"fill-color": "#b0d090"}
-    },
-    {
-      "id": "natural-coastline",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "coastline_line"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#80c0ff"}
-    },
-    {
-      "id": "natural-synthetic-coastline",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "tunnel_layer",
-      "filter": ["all", ["==", "natural", "coastline"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#80c0ff"}
-    },
-    {
-      "id": "natural-ground-mixed-coastline",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "coastline"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#80c0ff"},
-      "TODO": "combine with coastline_line using 'in'"
-    },
-    {
-      "id": "natural-wetland",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "wetland"]],
-      "paint": {"fill-color": "#a0d0c0"}
-    },
-    {
-      "id": "natural-water",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "water"]],
-      "paint": {"fill-color": "#80c0ff"}
-    },
-    {
-      "id": "natural-grassland",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "grassland"]],
-      "paint": {"fill-color": "#c8e0b0"}
-    },
-    {
-      "id": "natural-bare_rock",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "ground_layer",
-      "filter": ["all", ["==", "natural", "bare_rock"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#d8d0c8"}
     },
     {
       "id": "areahighway-pedestrian",
