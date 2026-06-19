@@ -244,6 +244,8 @@ export default function SearchResults() {
                     return;
                 }
                 ctx.setProcessingSearch(true);
+                // drop the previous results so the spinner stays until the new list is ready (no stale flash)
+                setResult(null);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
@@ -330,6 +332,13 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
+            {ctx.spatialSearch && ctx.searchResult?.info && (
+                <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
+                    {Object.entries(ctx.searchResult.info)
+                        .map(([k, v]) => `${k}: ${v}`)
+                        .join(' · ')}
+                </Typography>
+            )}
             {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
                 !reopenSearchResult() &&
@@ -337,13 +346,6 @@ export default function SearchResults() {
                     <EmptySearch message={errorZoom} />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
-                        {ctx.spatialSearch && ctx.searchResult?.info && (
-                            <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
-                                {Object.entries(ctx.searchResult.info)
-                                    .map(([k, v]) => `${k}: ${v}`)
-                                    .join(' · ')}
-                            </Typography>
-                        )}
                         {result?.features
                             .filter((item) => item?.properties)
                             .map((item, index) => (
