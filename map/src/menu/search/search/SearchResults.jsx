@@ -316,6 +316,9 @@ export default function SearchResults() {
         return result && result !== EMPTY_SEARCH_RESULT && !params.query && !params.type;
     }
 
+    // URL query already changed but the shown result is still the previous search
+    const staleResult = (params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery);
+
     return (
         <>
             <CustomInput
@@ -339,9 +342,10 @@ export default function SearchResults() {
                         .join(' · ')}
                 </Typography>
             )}
-            {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
+            {(ctx.processingSearch || resulNotPrepared() || staleResult) && <Loading />}
             {!ctx.processingSearch &&
                 !reopenSearchResult() &&
+                !staleResult &&
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
