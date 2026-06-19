@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import LoginContext from '../context/LoginContext';
 import { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
@@ -129,6 +129,15 @@ export const AppContextProvider = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
     const [openMainMenu, setOpenMainMenu] = useState(false);
     const [gpxFileDrag, setGpxFileDrag] = useState({ active: false, hoverFolder: null, overMap: false });
+    const gpxDropOverlayRefs = useRef(new Map());
+    const registerGpxDropOverlay = useCallback((key, el) => {
+        if (el) {
+            gpxDropOverlayRefs.current.set(key, el);
+        } else {
+            gpxDropOverlayRefs.current.delete(key);
+        }
+    }, []);
+    const getGpxDropOverlayEl = useCallback((key) => gpxDropOverlayRefs.current.get(key), []);
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
     const [cloudSettings, setCloudSettings] = useState({
@@ -638,6 +647,8 @@ export const AppContextProvider = (props) => {
                 setOpenMainMenu,
                 gpxFileDrag,
                 setGpxFileDrag,
+                registerGpxDropOverlay,
+                getGpxDropOverlayEl,
                 openContextMenu,
                 setOpenContextMenu,
                 prevPageUrl,

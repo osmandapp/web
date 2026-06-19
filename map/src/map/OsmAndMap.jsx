@@ -25,6 +25,7 @@ import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
+import { useGpxFileDragMapZone } from '../util/hooks/useGpxFileDragZone';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
 
@@ -163,9 +164,11 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     }, [ctx]);
 
     const routersReady = ctx.trackRouter.isReady() && ctx.routeObject.isReady();
+    const mapDragHandlers = useGpxFileDragMapZone();
 
     return (
         <Box
+            {...mapDragHandlers}
             sx={{
                 width: '100%',
                 height: '100%',

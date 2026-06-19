@@ -15,6 +15,7 @@ import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { fmt } from '../../util/dateFmt';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
+import { useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -67,6 +68,7 @@ export default function CloudTrackGroup({ index, group }) {
 
     const isDropTarget = group.type !== SMART_TYPE;
     const isDropHover = isDropTarget && ctx.gpxFileDrag?.hoverFolder === group.fullName;
+    const folderDragHandlers = useGpxFileDragZone(isDropTarget ? group.fullName : null);
 
     return (
         <>
@@ -74,8 +76,8 @@ export default function CloudTrackGroup({ index, group }) {
                 className={`${styles.group}${isDropHover ? ` ${styles.groupDropTarget}` : ''}`}
                 key={'group' + group.name + index}
                 id={'se-menu-cloud-' + group.name}
-                data-cloud-track-folder={isDropTarget ? group.fullName : undefined}
                 onClick={handleClick}
+                {...(isDropTarget ? folderDragHandlers : {})}
             >
                 <ListItemIcon className={styles.icon}>{getFolderIcon()}</ListItemIcon>
                 <ListItemText>
@@ -93,7 +95,7 @@ export default function CloudTrackGroup({ index, group }) {
                     processDownload={processDownload}
                 />
             </MenuItem>
-            <DividerWithMargin margin={'64px'} />
+            <DividerWithMargin margin={'64px'} {...(isDropTarget ? folderDragHandlers : {})} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}

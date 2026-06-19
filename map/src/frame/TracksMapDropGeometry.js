@@ -21,55 +21,19 @@ export function getVisibleMapInsets(ctx) {
     };
 }
 
-export function isPointInVisibleMap(ctx, clientX, clientY) {
-    const insets = getVisibleMapInsets(ctx);
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    return (
-        clientX >= insets.left &&
-        clientX <= width - insets.right &&
-        clientY >= insets.top &&
-        clientY <= height - insets.bottom
-    );
-}
-
-export function getMenuDropContainers() {
-    return [
-        document.getElementById('se-tracks-folder'),
-        document.getElementById('se-track-menu'),
-    ].filter((el) => el?.hasAttribute('data-cloud-track-folder'));
-}
-
-export function getMenuOverlayContainer(hoverFolder) {
-    if (hoverFolder === null) {
-        return null;
-    }
-
-    const openFolder = document.getElementById('se-tracks-folder');
-    if (openFolder?.hasAttribute('data-cloud-track-folder')) {
-        const openFolderPath = openFolder.getAttribute('data-cloud-track-folder') ?? '';
-        if (hoverFolder === openFolderPath) {
-            return openFolder;
-        }
-    }
-
-    if (hoverFolder === '') {
-        return document.getElementById('se-track-menu');
-    }
-
-    return null;
-}
-
 export function getMenuDropOverlayTop(container) {
+    const minTop = getMenuDropOverlayMinTop(container);
+
     const folders = container.querySelectorAll('[id^="se-menu-cloud-"]');
     if (folders.length > 0) {
-        return folders[folders.length - 1].getBoundingClientRect().bottom;
+        const lastFolderBottom = folders[folders.length - 1].getBoundingClientRect().bottom;
+
+        return Math.max(lastFolderBottom, minTop);
     }
 
     const appBar = container.querySelector('.MuiAppBar-root');
     if (appBar) {
-        return appBar.getBoundingClientRect().bottom;
+        return Math.max(appBar.getBoundingClientRect().bottom, minTop);
     }
 
     const listAnchors = container.querySelectorAll('#se-visible-tracks-menu, [id^="se-shared-folder-"]');
@@ -78,10 +42,43 @@ export function getMenuDropOverlayTop(container) {
         listAnchors.forEach((el) => {
             bottom = Math.max(bottom, el.getBoundingClientRect().bottom);
         });
-        return bottom;
+
+        return Math.max(bottom, minTop);
+    }
+
+    return minTop;
+}
+
+function getMenuDropOverlayMinTop(container) {
+    const containerTop = container.getBoundingClientRect().top;
+    let minTop = Math.max(containerTop, getScrollContainerTop(container));
+
+    const headerBottom = getPanelHeaderBottom(container);
+    if (headerBottom != null) {
+        minTop = Math.max(minTop, headerBottom);
+    }
+
+    return minTop;
+}
+
+function getScrollContainerTop(container) {
+    let el = container;
+    while (el) {
+        const { overflowY } = globalThis.getComputedStyle(el);
+        if (overflowY === 'auto' || overflowY === 'scroll') {
+            return el.getBoundingClientRect().top;
+        }
+        el = el.parentElement;
     }
 
     return container.getBoundingClientRect().top;
+}
+
+function getPanelHeaderBottom(container) {
+    const panel = container.closest('#se-tracks-folder') || container.closest('#se-track-menu')?.parentElement;
+    const appBar = panel?.querySelector('.MuiAppBar-root');
+
+    return appBar?.getBoundingClientRect().bottom ?? null;
 }
 
 export function getMenuDropOverlayRect(container, ctx) {
@@ -103,57 +100,4 @@ export function getMenuDropOverlayRect(container, ctx) {
         right: window.innerWidth - containerRect.right + OVERLAY_MARGIN,
         bottom: bottomPx,
     };
-}
-
-function isPointInOverlayRect(clientX, clientY, rect) {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    return (
-        clientX >= rect.left &&
-        clientX <= width - rect.right &&
-        clientY >= rect.top &&
-        clientY <= height - rect.bottom
-    );
-}
-
-function getMenuDropFolderAtPoint(clientX, clientY, ctx) {
-    for (const container of getMenuDropContainers()) {
-        const rect = getMenuDropOverlayRect(container, ctx);
-        if (rect && isPointInOverlayRect(clientX, clientY, rect)) {
-            return container.getAttribute('data-cloud-track-folder') ?? '';
-        }
-    }
-
-    return null;
-}
-
-function getCloudTrackFolderFromElement(el) {
-    if (!el) {
-        return null;
-    }
-    const folderEl = el.closest('[data-cloud-track-folder]');
-    if (!folderEl) {
-        return null;
-    }
-
-    return folderEl.getAttribute('data-cloud-track-folder') ?? '';
-}
-
-export function resolveGpxDropTarget(clientX, clientY, ctx) {
-    const folderFromDom = getCloudTrackFolderFromElement(document.elementFromPoint(clientX, clientY));
-    if (folderFromDom !== null) {
-        return { hoverFolder: folderFromDom, overMap: false };
-    }
-
-    const folderFromRect = getMenuDropFolderAtPoint(clientX, clientY, ctx);
-    if (folderFromRect !== null) {
-        return { hoverFolder: folderFromRect, overMap: false };
-    }
-
-    if (isPointInVisibleMap(ctx, clientX, clientY)) {
-        return { hoverFolder: null, overMap: true };
-    }
-
-    return { hoverFolder: null, overMap: false };
 }

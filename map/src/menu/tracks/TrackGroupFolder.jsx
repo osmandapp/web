@@ -20,6 +20,11 @@ import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
+import {
+    useGpxFileDragClearZone,
+    useGpxFileDragZone,
+    useGpxDropOverlayRef,
+} from '../../util/hooks/useGpxFileDragZone';
 import styles from '../trackfavmenu.module.css';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
@@ -140,16 +145,18 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     }
 
     const isDropTarget = group && group.type !== SMART_TYPE && !smartf;
+    const folderDragHandlers = useGpxFileDragZone(isDropTarget ? group.fullName : null);
+    const folderDropOverlayRef = useGpxDropOverlayRef(isDropTarget ? group.fullName : null);
+    const clearGpxDragTarget = useGpxFileDragClearZone();
 
     return (
         <>
             <Box
                 id={`se-tracks-folder`}
-                className={isDropTarget ? styles.folderDropTarget : undefined}
-                data-cloud-track-folder={isDropTarget ? group.fullName : undefined}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
                 sx={{ overflow: 'hidden' }}
+                {...clearGpxDragTarget}
             >
                 {group && (
                     <GroupHeader
@@ -161,9 +168,19 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                     />
                 )}
                 <Box
+                    ref={folderDropOverlayRef}
+                    className={isDropTarget ? styles.folderDropTarget : undefined}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        overflowX: 'hidden',
+                        overflowY: 'auto',
+                        minHeight: `${height - 120}px`,
+                        maxHeight: `${height - 120}px`,
+                    }}
+                    {...(isDropTarget ? folderDragHandlers : {})}
                 >
                     {groupItems}
                     {ctx.trackLoading?.length > 0 &&
@@ -171,6 +188,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                             return <TrackLoading key={lt} name={lt} />;
                         })}
                     {trackItems}
+                    <Box sx={{ flex: 1, minHeight: 0 }} />
                 </Box>
             </Box>
             {isEmptyFolder() && (

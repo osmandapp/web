@@ -4,13 +4,11 @@ import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
 import { IMPORT_FOLDER_NAME } from '../manager/track/TracksManager';
 import useCloudGpxImport from '../util/hooks/useCloudGpxImport';
-import TracksMapDropOverlay from './TracksMapDropOverlay';
-import TracksMenuDropOverlay from './TracksMenuDropOverlay';
-import { resolveGpxDropTarget } from './TracksMapDropGeometry';
+import TracksDropOverlay from './TracksDropOverlay';
 
-const GPX_FILE_DRAG_IDLE = { active: false, hoverFolder: null, overMap: false };
+export const GPX_FILE_DRAG_IDLE = { active: false, hoverFolder: null, overMap: false };
 
-function hasFiles(e) {
+export function hasFiles(e) {
     return e.dataTransfer?.types?.includes('Files');
 }
 
@@ -18,7 +16,6 @@ export default function TracksFileDragController() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { importGpxFiles } = useCloudGpxImport();
-    const dragCounterRef = useRef(0);
     // Refs let the stable (deps:[]) listeners always read the latest values
     // without re-subscribing on every render.
     const ctxRef = useRef(ctx);
@@ -29,8 +26,12 @@ export default function TracksFileDragController() {
     importGpxFilesRef.current = importGpxFiles;
 
     useEffect(() => {
+        const container = document.getElementById('root');
+        if (!container) {
+            return;
+        }
+
         const resetDrag = () => {
-            dragCounterRef.current = 0;
             ctxRef.current.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
         };
 
@@ -39,7 +40,7 @@ export default function TracksFileDragController() {
                 return;
             }
             e.preventDefault();
-            dragCounterRef.current += 1;
+            ctxRef.current.setGpxFileDrag((prev) => (prev.active ? prev : { ...GPX_FILE_DRAG_IDLE, active: true }));
         };
 
         const onDragOver = (e) => {
@@ -48,22 +49,15 @@ export default function TracksFileDragController() {
             }
             e.preventDefault();
             e.dataTransfer.dropEffect = 'copy';
-
-            const { hoverFolder, overMap } = resolveGpxDropTarget(e.clientX, e.clientY, ctxRef.current);
-            ctxRef.current.setGpxFileDrag((prev) => {
-                if (prev.active && prev.hoverFolder === hoverFolder && prev.overMap === overMap) {
-                    return prev;
-                }
-                return { active: true, hoverFolder, overMap };
-            });
         };
 
         const onDragLeave = (e) => {
             if (!hasFiles(e) || !ltxRef.current.isProAccount()) {
                 return;
             }
-            dragCounterRef.current = Math.max(0, dragCounterRef.current - 1);
-            if (dragCounterRef.current === 0) {
+            // relatedTarget is the element the cursor is entering.
+            // null or outside #root means the cursor truly left the app.
+            if (!container.contains(e.relatedTarget)) {
                 resetDrag();
             }
         };
@@ -75,7 +69,7 @@ export default function TracksFileDragController() {
             e.preventDefault();
 
             const files = Array.from(e.dataTransfer?.files || []);
-            const { hoverFolder, overMap } = resolveGpxDropTarget(e.clientX, e.clientY, ctxRef.current);
+            const { hoverFolder, overMap } = ctxRef.current.gpxFileDrag ?? GPX_FILE_DRAG_IDLE;
             if (hoverFolder !== null) {
                 importGpxFilesRef.current(files, hoverFolder);
             } else if (overMap) {
@@ -88,25 +82,20 @@ export default function TracksFileDragController() {
             resetDrag();
         };
 
-        window.addEventListener('dragenter', onDragEnter);
-        window.addEventListener('dragover', onDragOver);
-        window.addEventListener('dragleave', onDragLeave);
-        window.addEventListener('drop', onDrop);
+        container.addEventListener('dragenter', onDragEnter);
+        container.addEventListener('dragover', onDragOver);
+        container.addEventListener('dragleave', onDragLeave);
+        container.addEventListener('drop', onDrop);
+        // dragend has no preventDefault; keep on window so external file drags still reset state.
         window.addEventListener('dragend', onDragEnd);
         return () => {
-            window.removeEventListener('dragenter', onDragEnter);
-            window.removeEventListener('dragover', onDragOver);
-            window.removeEventListener('dragleave', onDragLeave);
-            window.removeEventListener('drop', onDrop);
+            container.removeEventListener('dragenter', onDragEnter);
+            container.removeEventListener('dragover', onDragOver);
+            container.removeEventListener('dragleave', onDragLeave);
+            container.removeEventListener('drop', onDrop);
             window.removeEventListener('dragend', onDragEnd);
         };
     }, []);
 
-    return createPortal(
-        <>
-            <TracksMapDropOverlay />
-            <TracksMenuDropOverlay />
-        </>,
-        document.body
-    );
+    return createPortal(<TracksDropOverlay />, document.body);
 }
