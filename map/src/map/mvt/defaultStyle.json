@@ -118,15 +118,6 @@
           "mud",
           "wetland_tidalflat",
           "wetland"
-        ],
-        "fill-color": [
-          "match",
-          ["get", "wetland"],
-          "tidalflat",
-          "#e4ddd1",
-          "mud",
-          "#e4ddd1",
-          "wetland"
         ]
       }
     },
@@ -878,11 +869,11 @@
       "type": "line",
       "source": "osm",
       "source-layer": "ground_layer",
-      "minzoom": 5,
+      "minzoom": 7,
       "filter": ["all", ["==", "highway", "trunk"]],
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 3.1, 18, 13],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 13],
         "line-opacity": 0.9
       }
     },
@@ -891,11 +882,11 @@
       "type": "line",
       "source": "osm",
       "source-layer": "ground_layer",
-      "minzoom": 6,
+      "minzoom": 7,
       "filter": ["all", ["==", "highway", "primary"]],
       "paint": {
         "line-color": "rgba(95, 65, 51, 1)",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 3, 18, 10.6],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 10.6],
         "line-opacity": 0.9
       }
     },
@@ -904,11 +895,11 @@
       "type": "line",
       "source": "osm",
       "source-layer": "ground_layer",
-      "minzoom": 6,
+      "minzoom": 7,
       "filter": ["all", ["==", "highway", "motorway"]],
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 5, 18, 12],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2.5, 18, 12],
         "line-opacity": 0.6
       }
     },
@@ -1113,7 +1104,7 @@
       "filter": ["all", ["==", "highway", "primary"]],
       "paint": {
         "line-color": "#FFA24A",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 8]
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1, 18, 8]
       }
     },
     {
@@ -1126,7 +1117,7 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "#DE653A",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 4, 18, 10]
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 10]
       }
     },
     {
@@ -1138,7 +1129,7 @@
       "filter": ["all", ["==", "highway", "trunk"]],
       "paint": {
         "line-color": "#EF714A",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 2, 18, 12]
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1, 18, 12]
       }
     },
     {
