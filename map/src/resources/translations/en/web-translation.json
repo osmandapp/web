@@ -93,6 +93,8 @@
     "avg_speed": "Avg. speed",
     "moving_time": "Time in motion",
     "max_altitude": "Max. altitude",
+    "max_distance_between_points": "Max distance between points",
+    "waypoints": "Waypoints",
     "avg_altitude": "Avg. altitude",
     "min_altitude": "Min. altitude",
     "length": "Length",

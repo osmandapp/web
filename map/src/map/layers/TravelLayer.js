@@ -415,6 +415,10 @@ export default function TravelLayer() {
             tagMatchMode = TAG_MATCH_MODES.OR,
             distanceRange,
             speedRange,
+            maxSpeedRange,
+            maxDistBetweenPointsRange,
+            timeMinutesRange,
+            waypointsRange,
         } = ctx.searchTravelRoutes;
 
         const activityArr = activity === ACTIVITY_ALL ? undefined : activity;
@@ -430,6 +434,10 @@ export default function TravelLayer() {
             tagMatchMode,
             distanceRange,
             speedRange,
+            maxSpeedRange,
+            maxDistBetweenPointsRange,
+            timeMinutesRange,
+            waypointsRange,
         };
 
         const response = await apiPost(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, body, {
