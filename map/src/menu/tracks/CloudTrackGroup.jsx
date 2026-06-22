@@ -6,6 +6,7 @@ import { ReactComponent as SmartIcon } from '../../assets/icons/ic_action_folder
 import { ReactComponent as GarminConnectIcon } from '../../assets/icons/ic_logo_garmin_connect.svg';
 import { GARMIN_FOLDER_NAME } from '../../login/garmin/garminApi';
 import styles from '../trackfavmenu.module.css';
+import dropOverlayStyles from '../../frame/components/dropOverlay.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
@@ -73,7 +74,7 @@ export default function CloudTrackGroup({ index, group }) {
     return (
         <>
             <MenuItem
-                className={`${styles.group}${isDropHover ? ` ${styles.groupDropTarget}` : ''}`}
+                className={`${styles.group}${isDropHover ? ` ${dropOverlayStyles.groupDropTarget}` : ''}`}
                 key={'group' + group.name + index}
                 id={'se-menu-cloud-' + group.name}
                 onClick={handleClick}

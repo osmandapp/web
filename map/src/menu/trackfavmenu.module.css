@@ -79,15 +79,6 @@
     padding: 10px 16px !important;
     gap: 24px !important;
 }
-.groupDropTarget {
-    background: color-mix(in srgb, var(--selected-color) 30%, transparent) !important;
-    outline: 3px dashed var(--selected-color) !important;
-    outline-offset: -3px !important;
-    border-radius: 12px !important;
-}
-.folderDropTarget {
-    position: relative !important;
-}
 .action {
     padding: 10px 16px !important;
     gap: 20px !important;

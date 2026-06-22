@@ -20,3 +20,27 @@
     line-height: 120%;
     letter-spacing: 0.01em;
 }
+
+.groupDropTarget {
+    background: color-mix(in srgb, var(--selected-color) 30%, transparent) !important;
+    outline: 3px dashed var(--selected-color) !important;
+    outline-offset: -3px !important;
+    border-radius: 12px !important;
+}
+
+.folderDropTarget {
+    position: relative !important;
+}
+
+.tracksDropHighlight {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed var(--selected-color);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--selected-color) 30%, transparent);
+    pointer-events: none;
+    z-index: 1;
+    box-sizing: border-box;
+}

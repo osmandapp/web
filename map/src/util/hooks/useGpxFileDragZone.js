@@ -112,17 +112,3 @@ export function useGpxFileDragClearZone() {
         [clearTarget]
     );
 }
-
-export function useGpxDropOverlayRef(folderKey) {
-    const ctx = useContext(AppContext);
-
-    return useCallback(
-        (el) => {
-            if (folderKey === null || folderKey === undefined) {
-                return;
-            }
-            ctx.registerGpxDropOverlay(folderKey, el);
-        },
-        [ctx, folderKey]
-    );
-}
