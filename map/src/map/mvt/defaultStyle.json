@@ -1748,7 +1748,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 13,
+      "minzoom": 14,
       "filter": [
         "all",
         [
@@ -1782,7 +1782,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 13,
+      "minzoom": 14,
       "filter": [
         "all",
         [
@@ -2999,7 +2999,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": 11.5,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 6, 18, 16],
         "symbol-placement": "line",
         "symbol-spacing": 250
       },
@@ -3026,7 +3026,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 18, 18],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 6, 18, 16],
         "symbol-placement": "line"
       },
       "paint": {
@@ -3052,7 +3052,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 18, 18],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 7, 18, 18],
         "symbol-placement": "line"
       },
       "paint": {
@@ -3078,7 +3078,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 18, 18],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 7, 18, 18],
         "symbol-placement": "line"
       },
       "paint": {
@@ -3210,7 +3210,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 18, 18],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 7, 18, 18],
         "symbol-placement": "line"
       },
       "paint": {
@@ -3236,7 +3236,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 18, 18],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 7, 18, 18],
         "symbol-placement": "line",
         "visibility": "visible"
       },
@@ -3263,7 +3263,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 18, 18],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 6, 18, 16],
         "symbol-placement": "line"
       },
       "paint": {
@@ -3289,7 +3289,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": 11.5,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 6, 6, 18, 16],
         "symbol-placement": "line",
         "symbol-spacing": 250
       },
@@ -3901,7 +3901,7 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Bold"],
-        "text-size": 12,
+        "text-size": 13,
         "text-max-width": 8,
         "visibility": "visible",
         "icon-image": "place_town_dot",
