@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
@@ -16,14 +16,7 @@ export default function TracksFileDragController() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { importGpxFiles } = useCloudGpxImport();
-    // Refs let the stable (deps:[]) listeners always read the latest values
-    // without re-subscribing on every render.
-    const ctxRef = useRef(ctx);
-    const ltxRef = useRef(ltx);
-    const importGpxFilesRef = useRef(importGpxFiles);
-    ctxRef.current = ctx;
-    ltxRef.current = ltx;
-    importGpxFilesRef.current = importGpxFiles;
+    const isProAccount = ltx.isProAccount();
 
     useEffect(() => {
         const container = document.getElementById('root');
@@ -32,19 +25,19 @@ export default function TracksFileDragController() {
         }
 
         const resetDrag = () => {
-            ctxRef.current.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
+            ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
         };
 
         const onDragEnter = (e) => {
-            if (!hasFiles(e) || !ltxRef.current.isProAccount()) {
+            if (!hasFiles(e) || !isProAccount) {
                 return;
             }
             e.preventDefault();
-            ctxRef.current.setGpxFileDrag((prev) => (prev.active ? prev : { ...GPX_FILE_DRAG_IDLE, active: true }));
+            ctx.setGpxFileDrag((prev) => (prev.active ? prev : { ...GPX_FILE_DRAG_IDLE, active: true }));
         };
 
         const onDragOver = (e) => {
-            if (!hasFiles(e) || !ltxRef.current.isProAccount()) {
+            if (!hasFiles(e) || !isProAccount) {
                 return;
             }
             e.preventDefault();
@@ -52,7 +45,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragLeave = (e) => {
-            if (!hasFiles(e) || !ltxRef.current.isProAccount()) {
+            if (!hasFiles(e) || !isProAccount) {
                 return;
             }
             // relatedTarget is the element the cursor is entering.
@@ -63,17 +56,17 @@ export default function TracksFileDragController() {
         };
 
         const onDrop = (e) => {
-            if (!hasFiles(e) || !ltxRef.current.isProAccount()) {
+            if (!hasFiles(e) || !isProAccount) {
                 return;
             }
             e.preventDefault();
 
             const files = Array.from(e.dataTransfer?.files || []);
-            const { hoverFolder, overMap } = ctxRef.current.gpxFileDrag ?? GPX_FILE_DRAG_IDLE;
+            const { hoverFolder, overMap } = ctx.gpxFileDrag ?? GPX_FILE_DRAG_IDLE;
             if (hoverFolder !== null) {
-                importGpxFilesRef.current(files, hoverFolder);
+                importGpxFiles(files, hoverFolder);
             } else if (overMap) {
-                importGpxFilesRef.current(files, IMPORT_FOLDER_NAME);
+                importGpxFiles(files, IMPORT_FOLDER_NAME);
             }
             resetDrag();
         };
@@ -95,7 +88,7 @@ export default function TracksFileDragController() {
             container.removeEventListener('drop', onDrop);
             window.removeEventListener('dragend', onDragEnd);
         };
-    }, []);
+    }, [ctx.gpxFileDrag, ctx.setGpxFileDrag, importGpxFiles, isProAccount]);
 
     return createPortal(<TracksDropOverlay />, document.body);
 }
