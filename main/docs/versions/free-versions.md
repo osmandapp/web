@@ -31,7 +31,7 @@ Release date 04/2026:
 - New Palette Editor for creating and editing custom color schemes for tracks and terrain visualization.
 - Improved bicycle routing considering bicycle width.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### Version 5.2 {#version-52}
 
