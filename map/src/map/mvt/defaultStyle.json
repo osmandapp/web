@@ -2982,7 +2982,7 @@
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 8,
-      "filter": ["all", ["has", "name"], ["==", "natural", "water"]],
+      "filter": ["all", ["has", "name"], ["!=", "hide_caption", "yes"], ["==", "natural", "water"]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Italic"],
@@ -3117,7 +3117,7 @@
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 11,
-      "filter": ["any", ["==", "natural", "wood"], ["==", "landuse", "forest"]],
+      "filter": ["all", ["!=", "hide_caption", "yes"], ["any", ["==", "natural", "wood"], ["==", "landuse", "forest"]]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Italic"],
