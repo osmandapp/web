@@ -160,9 +160,10 @@
       "type": "fill",
       "source": "osm",
       "source-layer": "ground_layer",
+      "minzoom": 11,
       "filter": ["all", ["==", "natural", "bare_rock"]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#d8d0c8"}
+      "paint": {"fill-color": "#d8d0c8", "fill-pattern": "bare_rock"}
     },
     {
       "id": "aeroway-aerodrome",
@@ -3664,6 +3665,95 @@
         "text-color": "#222",
         "text-halo-color": "#ffffff",
         "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "naturalicon-spring",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 14,
+      "filter": ["all", ["==", "natural", "spring"]],
+      "layout": {
+        "icon-image": "natural_spring",
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Italic"],
+        "text-size": 11,
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 20,
+        "text-keep-upright": false,
+        "text-offset": [0, 0.5],
+        "icon-padding": [0, 0, 0, 0]
+      },
+      "paint": {
+        "text-halo-color": "rgba(240, 240, 240, 1)",
+        "text-halo-width": 1,
+        "text-color": "rgba(83, 110, 255, 1)"
+      }
+    },
+    {
+      "id": "naturalicon-hill",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 10,
+      "filter": ["all", ["==", "natural", "hill"]],
+      "layout": {
+        "icon-image": "hill",
+        "text-field": [
+          "case",
+          ["all", ["has", "name"], ["has", "ele"]],
+          ["concat", ["get", "name"], " (", ["get", "ele"], ")"],
+          ["has", "name"],
+          ["get", "name"],
+          ["has", "ele"],
+          ["get", "ele"],
+          ""
+        ],
+        "text-font": ["Noto Sans Italic"],
+        "text-size": 11,
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 20,
+        "text-keep-upright": false,
+        "text-offset": [0, 0.5]
+      },
+      "paint": {
+        "text-halo-color": "rgba(229, 229, 229, 1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "naturalicon-peak",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "ground_layer",
+      "minzoom": 9,
+      "filter": ["all", ["==", "natural", "peak"]],
+      "layout": {
+        "icon-image": "natural_peak",
+        "text-field": [
+          "case",
+          ["all", ["has", "name"], ["has", "ele"]],
+          ["concat", ["get", "name"], " (", ["get", "ele"], ")"],
+          ["has", "name"],
+          ["get", "name"],
+          ["has", "ele"],
+          ["get", "ele"],
+          ""
+        ],
+        "text-font": ["Noto Sans Italic"],
+        "text-size": 11,
+        "text-justify": "center",
+        "text-anchor": "top",
+        "text-padding": 20,
+        "text-keep-upright": false,
+        "text-offset": [0, 0.5]
+      },
+      "paint": {
+        "text-halo-color": "rgba(229, 229, 229, 1)",
+        "text-halo-width": 1
       }
     }
   ],
