@@ -20,6 +20,15 @@
       "paint": {"background-color": "#f0e8d8"}
     },
     {
+      "id": "area-water",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "natural", "water"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff"}
+    },
+    {
       "id": "area-coastline",
       "type": "fill",
       "source": "osm",
@@ -171,14 +180,6 @@
       "filter": ["all", ["==", ["get", "aeroway"], "aerodrome"]],
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "#e8e8e8", "fill-opacity": 0.6}
-    },
-    {
-      "id": "area-water",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "water"]],
-      "paint": {"fill-color": "#80c0ff"}
     },
     {
       "id": "area-highway-pedestrian",
