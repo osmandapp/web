@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { useLayoutEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { OVERLAY_MARGIN } from '../TracksMapDropGeometry';
+import { OVERLAY_MARGIN } from '../TracksDropOverlay';
 import styles from './dropOverlay.module.css';
 
 export default function TracksDropHighlight({ active, dropZoneRef, scrollRef }) {

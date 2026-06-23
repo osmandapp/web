@@ -50,6 +50,7 @@ const GlobalFrame = () => {
     const [clearState, setClearState] = useState(false);
     const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
+    const [openMainMenu, setOpenMainMenu] = useState(false);
 
     const [width, height] = useWindowSize();
     const navigate = useNavigate();
@@ -58,7 +59,7 @@ const GlobalFrame = () => {
 
     const [showInstallBanner, setShowInstallBanner] = useState(false);
 
-    const MAIN_MENU_SIZE = ctx.openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
+    const MAIN_MENU_SIZE = openMainMenu ? `${MAIN_MENU_OPEN_SIZE}px` : `${MAIN_MENU_MIN_SIZE}px`;
     const MENU_INFO_SIZE =
         menuInfo || ltx.openLoginMenu || ctx.infoBlockWidth === `${MENU_INFO_OPEN_SIZE}px`
             ? `${MENU_INFO_OPEN_SIZE}px`
@@ -442,8 +443,8 @@ const GlobalFrame = () => {
             <MainMenu
                 size={MAIN_MENU_SIZE}
                 infoSize={MENU_INFO_SIZE}
-                openMainMenu={ctx.openMainMenu}
-                setOpenMainMenu={ctx.setOpenMainMenu}
+                openMainMenu={openMainMenu}
+                setOpenMainMenu={setOpenMainMenu}
                 menuInfo={menuInfo}
                 setMenuInfo={setMenuInfo}
                 showInfoBlock={showInfoBlock}

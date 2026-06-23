@@ -127,7 +127,6 @@ export const AppContextProvider = (props) => {
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
 
     const [openMenu, setOpenMenu] = useState(null);
-    const [openMainMenu, setOpenMainMenu] = useState(false);
     const [gpxFileDrag, setGpxFileDrag] = useState({ active: false, hoverFolder: null, overMap: false });
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
@@ -634,8 +633,6 @@ export const AppContextProvider = (props) => {
                 setSelectedWptId,
                 openMenu,
                 setOpenMenu,
-                openMainMenu,
-                setOpenMainMenu,
                 gpxFileDrag,
                 setGpxFileDrag,
                 openContextMenu,

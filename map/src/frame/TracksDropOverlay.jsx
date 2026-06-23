@@ -1,7 +1,9 @@
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import DropOverlay from './components/DropOverlay';
-import { getVisibleMapInsets } from './TracksMapDropGeometry';
+import { getVisibleMapPadding } from '../map/layers/MapStateLayer';
+
+export const OVERLAY_MARGIN = 16;
 
 export default function TracksDropOverlay() {
     const ctx = useContext(AppContext);
@@ -11,5 +13,5 @@ export default function TracksDropOverlay() {
         return null;
     }
 
-    return <DropOverlay insets={getVisibleMapInsets(ctx)} />;
+    return <DropOverlay insets={getVisibleMapPadding(ctx, OVERLAY_MARGIN)} />;
 }

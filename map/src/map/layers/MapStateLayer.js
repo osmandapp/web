@@ -28,6 +28,19 @@ const MAP_SPIN_COLOR = '#1976d2';
 const TOP_PADDING = HEADER_SIZE;
 const BOTTOM_PADDING = 0;
 
+export function getVisibleMapPadding(ctx, margin = 0) {
+    const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10) || 0;
+    const bottomPx = ctx.globalGraph?.show ? ctx.globalGraph.size : 0;
+    const leftChromePx = MAIN_MENU_MIN_SIZE + infoBlockWidthPx;
+
+    return {
+        top: TOP_PADDING + margin,
+        left: leftChromePx + margin,
+        right: margin,
+        bottom: bottomPx + margin,
+    };
+}
+
 function calcVisibleCenterPx(map, infoBlockWidthPx) {
     const containerSize = map.getSize();
     if (!containerSize?.x || !containerSize?.y) return null;
