@@ -14,6 +14,8 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
+import { mvtOsmAndURL, MVT_OSMAND_LAYER, mvtOsmTestURL, MVT_OSM_TEST_LAYER } from '../map/mvt/MvtDemoConfig';
+import { osmandTileURL } from '../map/baseTileURL';
 import {
     EXPLORE_OBJS_KEY,
     FAVORITES_KEY,
@@ -53,6 +55,7 @@ export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
+export const SPATIAL_SEARCH_STORAGE_KEY = 'spatialSearch';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
@@ -64,7 +67,16 @@ export const defaultConfigureMapStateValues = {
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
+    mapStyle: { tileURL: osmandTileURL, renderingType: null },
 };
+
+export const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16
+export function updateConfigureMapCache(conf) {
+    localStorage.setItem(
+        LOCAL_STORAGE_CONFIGURE_MAP,
+        JSON.stringify({ ...conf, updateTime: TIME_UPDATE_CONFIGURE_MAP })
+    );
+}
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
@@ -75,14 +87,7 @@ export const isTrack = (ctx) =>
     isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx) || isShareTrack(ctx);
 export const isTrackAnalyzer = (ctx) => ctx.currentObjectType === OBJECT_TRACK_ANALYZER;
 
-const osmandTileURL = {
-    uiname: 'Mapnik (tiles)',
-    key: 'mapniktile',
-    tileSize: 512,
-    url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
-};
-
-async function loadTileUrls(setAllTileURLs) {
+async function loadTileUrls(setAllTileURLs, develFeatures) {
     const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
     if (response.ok) {
         let data = await response.json();
@@ -102,6 +107,10 @@ async function loadTileUrls(setAllTileURLs) {
             }
         });
         data[osmandTileURL.key] = osmandTileURL;
+        if (develFeatures) {
+            data[MVT_OSMAND_LAYER] = mvtOsmAndURL;
+            data[MVT_OSM_TEST_LAYER] = mvtOsmTestURL;
+        }
         setAllTileURLs(data);
     }
 }
@@ -299,6 +308,11 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
+
+    // dev-only: use new SpatialTextSearch on the backend (passes spatial=true to /search/search)
+    const [spatialSearch, setSpatialSearch] = useState(
+        () => localStorage.getItem(SPATIAL_SEARCH_STORAGE_KEY) === 'yes'
+    );
     const [infoBlockWidth, setInfoBlockWidth] = useState('0');
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
@@ -361,14 +375,11 @@ export const AppContextProvider = (props) => {
     });
 
     function getConfigureMap() {
-        const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         if (savedConfigureMap) {
             savedConfigureMap = JSON.parse(savedConfigureMap);
             if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < TIME_UPDATE_CONFIGURE_MAP) {
-                savedConfigureMap = defaultConfigureMapStateValues;
-                savedConfigureMap.updateTime = TIME_UPDATE_CONFIGURE_MAP;
-                localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(savedConfigureMap));
+                updateConfigureMapCache(defaultConfigureMapStateValues);
                 return defaultConfigureMapStateValues;
             }
             // Normalize saved data to ensure all default fields are present
@@ -449,8 +460,8 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        loadTileUrls(setAllTileURLs);
-    }, []);
+        loadTileUrls(setAllTileURLs, develFeatures);
+    }, [develFeatures]);
 
     useEffect(() => {
         const update = async () => {
@@ -602,6 +613,8 @@ export const AppContextProvider = (props) => {
                 setPoiCategories,
                 develFeatures,
                 setDevelFeatures,
+                spatialSearch,
+                setSpatialSearch,
                 infoBlockWidth,
                 setInfoBlockWidth,
                 routeObject,

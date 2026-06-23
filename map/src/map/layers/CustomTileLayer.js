@@ -9,6 +9,7 @@ import { apiGet } from '../../util/HttpApi';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
 import styles from '../map.module.css';
+import { isMvtTileURL } from '../mvt/MvtDemoConfig';
 
 export const INTERACTIVE_LAYER = 'int';
 
@@ -369,11 +370,25 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
+        if (isMvtTileURL(mtx.tileURL)) {
+            if (rasterTileLayerRef.current && map.hasLayer(rasterTileLayerRef.current)) {
+                map.removeLayer(rasterTileLayerRef.current);
+            }
+            if (dataLayersRef.current?.layers?.length > 0) {
+                removeDataLayers(dataLayersRef.current.layers);
+            }
+            dataLayersRef.current = { layers: [] };
+            return undefined;
+        }
+
         // get raster tile layer
         if (!rasterTileLayerRef.current) {
             rasterTileLayerRef.current = L.tileLayer(mtx.tileURL.url, props).addTo(map);
         } else {
             rasterTileLayerRef.current.setUrl(mtx.tileURL.url);
+            if (!map.hasLayer(rasterTileLayerRef.current)) {
+                rasterTileLayerRef.current.addTo(map);
+            }
         }
 
         const tileChanged =
@@ -462,7 +477,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
 
     useEffect(() => {
         return () => {
-            if (map.hasLayer(rasterTileLayerRef.current)) {
+            if (rasterTileLayerRef.current && map.hasLayer(rasterTileLayerRef.current)) {
                 map.removeLayer(rasterTileLayerRef.current);
             }
             if (dataLayersRef.current && dataLayersRef.current.layers.length > 0) {

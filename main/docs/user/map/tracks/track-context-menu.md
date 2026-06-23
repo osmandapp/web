@@ -670,12 +670,14 @@ The **Split by Time** option divides a track into intervals of equal duration. Y
 
 ![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. The way the intervals are displayed and the statistics provided for each segment are the same as in the [Split by Distance](#split-by-distance) section.
+This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. Intervals are displayed in the order they appear along the track, and each uphill, downhill, or flat section is assigned its own index number. The interval list provides the same core statistics as [Split by Distance](#split-by-distance).
 
 On the map, segments are marked with colored labels at the start of each interval:
 - **Uphill segments** (red labels) show an up arrow, the segment index, and the average slope in percent (for example, ↑ 11. 2%).
 - **Downhill segments** (green labels) show a down arrow, the segment index, and the average slope in percent (for example, ↓ 12. -2%).
 - **Flat segments** (blue labels) show the flat section distance (for example, 616 m, 411 m).
+
+Tap a label to open the details panel for the selected uphill, downhill, or flat segment. The details panel displays statistics for the selected segment, such as distance, duration, ascent and descent, altitude, speed, and time-related data.
 
 
 ### Heart Rate Metrics {#heart-rate-metrics}

@@ -30,7 +30,7 @@ export default function CustomInput({
 
     const MIN_SIZE_SEARCH_VALUE = 1;
 
-    const { navigateToSearchResults } = useSearchNav();
+    const { navigateToSearchResults, params } = useSearchNav();
 
     useEffect(() => {
         if (!isInitialRender) {
@@ -83,7 +83,11 @@ export default function CustomInput({
             });
             return;
         }
-        ctx.setForceSearch(true);
+        // force a re-search only when the query text is unchanged (navigation alone won't re-trigger it);
+        // for a changed query the URL param change already triggers a single search — avoids a stale double search
+        if (value === params.query) {
+            ctx.setForceSearch(true);
+        }
         navigateToSearchResults({ query: value });
     }
 

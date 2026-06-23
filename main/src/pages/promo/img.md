@@ -17,6 +17,8 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ## Sale images
 
+![images June 2026 sale](@site/static/img/email/sale2026-summer.png)
+
 ![images September sale](@site/static/img/email/SEPTS3.png)
 
 ![images August sale](@site/static/img/email/2024_august.png)

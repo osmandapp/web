@@ -15,11 +15,10 @@ import styles from '../configuremap/configuremap.module.css';
 import gStyles from '../gstylesmenu.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import AppContext from '../../context/AppContext';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import PoiManager, { translatePoi } from '../../manager/PoiManager';
 import { changeIconSizeWpt, getPoiCategoryIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
-import { updateConfigureMapCache } from './ConfigureMap';
 
 export const CategoryIcon = ({ color, background, icon, iconSize, shieldSize }) => {
     let svgHtml = getPoiCategoryIcon({ icon, color, background }).options.html;

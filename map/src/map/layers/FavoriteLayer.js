@@ -75,6 +75,7 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
     });
 
     if (isMainMarker) {
+        layer.options.simple = false;
         restoreOriginalIcon(layer);
         mainLayers.push(layer);
     }
@@ -88,6 +89,9 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
         });
         // Replace the marker's icon with the custom circle-like icon
         layer.setIcon(customIcon);
+        // Mark as a secondary (simple dot) marker so hover behavior matches POI:
+        // secondary markers get no hover outline. See useSelectMarkerOnMap.
+        layer.options.simple = true;
         secondaryLayers.push(layer);
     }
 }

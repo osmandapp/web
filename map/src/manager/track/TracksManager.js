@@ -57,6 +57,7 @@ const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000; // don't overload Auto-SRTM API with huge OSRM tracks
 const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation points (type=osmand might have up to 10%)
 export const FIT_BOUNDS_MAX_ZOOM = 17;
+export const FIT_BOUNDS_EXTRA_PADDING = 10;
 export const DEFAULT_GROUP_NAME = '';
 export const IMPORT_FOLDER_NAME = 'Import';
 
