@@ -3,26 +3,6 @@ import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { hasFiles } from '../../frame/TracksFileDragController';
 
-function useGpxFileDragGuard() {
-    const ltx = useContext(LoginContext);
-
-    return useCallback(
-        (e) => {
-            if (!hasFiles(e) || !ltx.isProAccount()) {
-                return false;
-            }
-            e.preventDefault();
-            e.stopPropagation();
-            if (e.type === 'dragover') {
-                e.dataTransfer.dropEffect = 'copy';
-            }
-
-            return true;
-        },
-        [ltx]
-    );
-}
-
 export function useGpxFileDragZone(hoverFolder) {
     const ctx = useContext(AppContext);
     const guard = useGpxFileDragGuard();
@@ -110,5 +90,25 @@ export function useGpxFileDragClearZone() {
             onDragOver: clearTarget,
         }),
         [clearTarget]
+    );
+}
+
+function useGpxFileDragGuard() {
+    const ltx = useContext(LoginContext);
+
+    return useCallback(
+        (e) => {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
+                return false;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+            if (e.type === 'dragover') {
+                e.dataTransfer.dropEffect = 'copy';
+            }
+
+            return true;
+        },
+        [ltx]
     );
 }

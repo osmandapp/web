@@ -46,7 +46,6 @@ export default function TracksMenu() {
 
     const rootDropZoneHandlers = useGpxFileDragZone('');
     const clearGpxDragTarget = useGpxFileDragClearZone();
-    const isRootDropActive = ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === '';
     const trackMenuScrollRef = useRef(null);
     const rootDropZoneRef = useRef(null);
 
@@ -105,6 +104,8 @@ export default function TracksMenu() {
             updateLoadingTracks(ctx, defaultGroup.groupFiles);
         }
     }, [defaultGroup?.groupFiles]);
+
+    const isRootDropActive = ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === '';
 
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;

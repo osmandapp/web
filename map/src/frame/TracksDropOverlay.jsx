@@ -7,9 +7,7 @@ export const OVERLAY_MARGIN = 16;
 
 export default function TracksDropOverlay() {
     const ctx = useContext(AppContext);
-    const drag = ctx.gpxFileDrag;
-
-    if (!drag?.active || !drag?.overMap || drag?.hoverFolder !== null) {
+    if (!ctx.gpxFileDrag?.active || !ctx.gpxFileDrag?.overMap || ctx.gpxFileDrag?.hoverFolder !== null) {
         return null;
     }
 

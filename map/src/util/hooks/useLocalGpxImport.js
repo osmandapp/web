@@ -6,10 +6,6 @@ import useGpxImport from './useGpxImport';
 
 const LOCAL_TRACK_EXTENSION = '.gpx';
 
-function isLocalTrackFile(file) {
-    return file?.name?.toLowerCase().endsWith(LOCAL_TRACK_EXTENSION);
-}
-
 export default function useLocalGpxImport() {
     const ctx = useContext(AppContext);
 
@@ -38,4 +34,8 @@ export default function useLocalGpxImport() {
         readFile,
         saveFile,
     });
+}
+
+function isLocalTrackFile(file) {
+    return file?.name?.toLowerCase().endsWith(LOCAL_TRACK_EXTENSION);
 }

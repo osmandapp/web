@@ -32,6 +32,10 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const [sortGroups, setSortGroups] = useState([]);
     const [, height] = useWindowSize();
     const [processingGroup, setProcessingGroup] = useState(false);
+    const folderScrollRef = useRef(null);
+    const folderDropZoneRef = useRef(null);
+    const folderDragHandlers = useGpxFileDragZone(group && group.type !== SMART_TYPE && !smartf ? group.fullName : null);
+    const clearGpxDragTarget = useGpxFileDragClearZone();
 
     // update group after changing or deleting inner tracks
     useEffect(() => {
@@ -141,12 +145,8 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
         return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
     }
 
-    const isDropTarget = group && group.type !== SMART_TYPE && !smartf;
-    const folderDragHandlers = useGpxFileDragZone(isDropTarget ? group.fullName : null);
-    const clearGpxDragTarget = useGpxFileDragClearZone();
+    const isDropTarget = group?.type !== SMART_TYPE && !smartf;
     const isFolderDropActive = isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
-    const folderScrollRef = useRef(null);
-    const folderDropZoneRef = useRef(null);
 
     return (
         <>

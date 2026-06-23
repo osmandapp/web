@@ -7,12 +7,6 @@ import useGpxImport from './useGpxImport';
 
 const CLOUD_TRACK_EXTENSIONS = ['.gpx', '.kmz', '.kml'];
 
-function isCloudTrackFile(file) {
-    const name = file?.name?.toLowerCase() ?? '';
-
-    return CLOUD_TRACK_EXTENSIONS.some((ext) => name.endsWith(ext));
-}
-
 export default function useCloudGpxImport() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
@@ -91,4 +85,10 @@ export default function useCloudGpxImport() {
         readFile,
         saveFile,
     });
+}
+
+function isCloudTrackFile(file) {
+    const name = file?.name?.toLowerCase() ?? '';
+
+    return CLOUD_TRACK_EXTENSIONS.some((ext) => name.endsWith(ext));
 }
