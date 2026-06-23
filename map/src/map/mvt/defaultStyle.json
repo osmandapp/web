@@ -20,7 +20,7 @@
       "paint": {"background-color": "#f0e8d8"}
     },
     {
-      "id": "natural-coastline",
+      "id": "area-coastline",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -29,7 +29,7 @@
       "paint": {"fill-color": "#80c0ff"}
     },
     {
-      "id": "natural-land",
+      "id": "area-land",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -38,7 +38,39 @@
       "paint": {"fill-color": "#f0e8d8"}
     },
     {
-      "id": "natural-scrub",
+      "id": "area-farmland",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "landuse", "farmland"]],
+      "paint": {"fill-color": "#e8e4b0"}
+    },
+    {
+      "id": "area-industrial",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "landuse", "industrial"]],
+      "paint": {"fill-color": "#d8d0c8"}
+    },
+    {
+      "id": "area-residential",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "landuse", "residential"]],
+      "paint": {"fill-color": "#e0d8d0"}
+    },
+    {
+      "id": "area-meadow",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["in", "landuse", "meadow", "grass", "pasture"]],
+      "paint": {"fill-color": "#c8e0b0"}
+    },
+    {
+      "id": "area-scrub",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -46,7 +78,7 @@
       "paint": {"fill-color": "#b0d090"}
     },
     {
-      "id": "natural-wood",
+      "id": "area-wood",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -55,34 +87,7 @@
       "paint": {"fill-color": "#8cc96e"}
     },
     {
-      "id": "natural-coastline-synthetic",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "coastline"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#80c0ff"}
-    },
-    {
-      "id": "natural-coastline-line",
-      "type": "line",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "coastline_line"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"line-color": "#0000ff"}
-    },
-    {
-      "id": "natural-coastline-broken",
-      "type": "line",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "coastline_broken"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"line-color": "#ff0000"}
-    },
-    {
-      "id": "natural-wetland",
+      "id": "area-wetland",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -122,7 +127,7 @@
       }
     },
     {
-      "id": "natural-leisure-park",
+      "id": "area-park",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -131,7 +136,7 @@
       "paint": {"fill-color": "rgba(116, 255, 103, 0.22)"}
     },
     {
-      "id": "natural-leisure-garden",
+      "id": "area-garden",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -140,15 +145,7 @@
       "paint": {"fill-color": "#8cc96e"}
     },
     {
-      "id": "natural-water",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "water"]],
-      "paint": {"fill-color": "#80c0ff"}
-    },
-    {
-      "id": "natural-grassland",
+      "id": "area-grassland",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -156,7 +153,7 @@
       "paint": {"fill-color": "#c8e0b0"}
     },
     {
-      "id": "natural-bare_rock",
+      "id": "area-bare_rock",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -166,7 +163,7 @@
       "paint": {"fill-color": "#d8d0c8", "fill-pattern": "bare_rock"}
     },
     {
-      "id": "aeroway-aerodrome",
+      "id": "area-aerodrome",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -176,47 +173,15 @@
       "paint": {"fill-color": "#e8e8e8", "fill-opacity": 0.6}
     },
     {
-      "id": "landuse-residential",
+      "id": "area-water",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
-      "filter": ["all", ["==", "landuse", "residential"]],
-      "paint": {"fill-color": "#e0d8d0"}
+      "filter": ["all", ["==", "natural", "water"]],
+      "paint": {"fill-color": "#80c0ff"}
     },
     {
-      "id": "landuse-commercial",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["in", "landuse", "commercial", "retail"]],
-      "paint": {"fill-color": "#f0d8c8"}
-    },
-    {
-      "id": "landuse-industrial",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "landuse", "industrial"]],
-      "paint": {"fill-color": "#d8d0c8"}
-    },
-    {
-      "id": "landuse-meadow",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["in", "landuse", "meadow", "grass", "pasture"]],
-      "paint": {"fill-color": "#c8e0b0"}
-    },
-    {
-      "id": "landuse-farmland",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "landuse", "farmland"]],
-      "paint": {"fill-color": "#e8e4b0"}
-    },
-    {
-      "id": "areahighway-pedestrian",
+      "id": "area-highway-pedestrian",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
@@ -227,6 +192,24 @@
         "fill-color": "#F7F3EF",
         "fill-outline-color": "rgba(201, 201, 201, 1)"
       }
+    },
+    {
+      "id": "coastline-line",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "natural", "coastline_line"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "#0000ff"}
+    },
+    {
+      "id": "coastline-broken",
+      "type": "line",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "natural", "coastline_broken"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "#ff0000"}
     },
     {
       "id": "aeroway-runway",
@@ -331,7 +314,7 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "#555555",
+        "line-color": "rgba(169, 169, 169, 1)",
         "line-width": 1.2,
         "line-dasharray": [5, 3]
       }
@@ -1102,7 +1085,7 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(124, 124, 124, 1)",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 14, 3, 18, 9],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 14, 3, 18, 11],
         "line-opacity": 0.9
       }
     },
@@ -1817,7 +1800,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 14,
+      "minzoom": 15,
       "filter": [
         "all",
         ["in", "highway", "track", "footway", "cycleway", "path"],
@@ -1837,7 +1820,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 14,
+      "minzoom": 15,
       "filter": [
         "all",
         ["in", "highway", "track", "footway", "cycleway", "path"],
@@ -1858,7 +1841,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 14,
+      "minzoom": 15,
       "filter": [
         "all",
         ["in", "highway", "footway"],
@@ -1937,7 +1920,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 12,
+      "minzoom": 15,
       "filter": [
         "all",
         ["in", "highway", "service"],
@@ -1956,7 +1939,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 12,
+      "minzoom": 15,
       "filter": [
         "all",
         ["in", "highway", "service"],
@@ -2414,77 +2397,6 @@
       }
     },
     {
-      "id": "oneway-arrows-waterway",
-      "type": "symbol",
-      "source": "osm",
-      "source-layer": "osmand",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["in", "waterway", "river", "stream"],
-        ["!has", "tunnel"],
-        ["!in", "layer", -1, -2, -3, "-4-", 5]
-      ],
-      "layout": {
-        "icon-image": "arrow_blue_big",
-        "symbol-placement": "line",
-        "symbol-spacing": 250,
-        "icon-rotation-alignment": "map",
-        "icon-rotate": 90,
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-        "icon-size": 0.8
-      }
-    },
-    {
-      "id": "oneway",
-      "type": "symbol",
-      "source": "osm",
-      "source-layer": "osmand",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["has", "highway"],
-        ["==", "oneway", "yes"],
-        ["!=", "proposed", "yes"],
-        ["!=", "highway", "proposed"]
-      ],
-      "layout": {
-        "icon-image": "oneway_black_semitransparent_big",
-        "symbol-placement": "line",
-        "symbol-spacing": 80,
-        "icon-rotation-alignment": "map",
-        "icon-rotate": 90,
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-        "icon-size": 0.8
-      }
-    },
-    {
-      "id": "oneway-reverse",
-      "type": "symbol",
-      "source": "osm",
-      "source-layer": "osmand",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["has", "highway"],
-        ["==", "oneway", "-1"],
-        ["!=", "proposed", "yes"],
-        ["!=", "highway", "proposed"]
-      ],
-      "layout": {
-        "icon-image": "oneway_reverse_black_semitransparent_big",
-        "symbol-placement": "line",
-        "symbol-spacing": 80,
-        "icon-rotation-alignment": "map",
-        "icon-rotate": 90,
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-        "icon-size": 0.8
-      }
-    },
-    {
       "id": "railwaybridge-rail-underlay-casing",
       "type": "line",
       "source": "osm",
@@ -2540,6 +2452,78 @@
         "line-color": "rgba(157, 157, 157, 1)",
         "line-width": 1.5,
         "line-dasharray": [6, 3]
+      }
+    },
+    {
+      "id": "oneway-arrows-waterway",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "osmand",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["in", "waterway", "river", "stream"],
+        ["!has", "tunnel"],
+        ["!in", "layer", -1, -2, -3, "-4-", 5]
+      ],
+      "layout": {
+        "icon-image": "arrow_blue_big",
+        "symbol-placement": "line",
+        "symbol-spacing": 250,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-size": 0.8
+      }
+    },
+    {
+      "id": "oneway",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "osmand",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["has", "highway"],
+        ["==", "oneway", "yes"],
+        ["!=", "proposed", "yes"],
+        ["!=", "highway", "proposed"]
+      ],
+      "layout": {
+        "icon-image": "oneway_black_semitransparent_big",
+        "symbol-placement": "line",
+        "symbol-spacing": 80,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": false,
+        "icon-size": 0.8,
+        "icon-optional": true
+      }
+    },
+    {
+      "id": "oneway-reverse",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "osmand",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["has", "highway"],
+        ["==", "oneway", "-1"],
+        ["!=", "proposed", "yes"],
+        ["!=", "highway", "proposed"]
+      ],
+      "layout": {
+        "icon-image": "oneway_reverse_black_semitransparent_big",
+        "symbol-placement": "line",
+        "symbol-spacing": 80,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-size": 0.8
       }
     },
     {
@@ -2606,7 +2590,7 @@
       "filter": ["all", ["==", ["get", "admin_level"], "4"]],
       "paint": {
         "line-color": "rgba(158, 41, 158, 0.15)",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 2, 12, 4],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 2, 12, 6],
         "line-dasharray": [4, 1]
       }
     },
@@ -2617,9 +2601,10 @@
       "source-layer": "osmand",
       "minzoom": 3,
       "filter": ["all", ["==", ["get", "admin_level"], "2"]],
+      "layout": {"visibility": "visible"},
       "paint": {
         "line-color": "rgba(158, 41, 158, 0.15)",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 3, 12, 7],
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 3, 12, 10],
         "line-dasharray": [4, 1]
       }
     },
@@ -2655,13 +2640,13 @@
         "text-size": 10.5,
         "text-anchor": "top",
         "text-offset": [0, 1.2],
-        "text-optional": true,
+        "text-optional": false,
         "text-max-width": 8,
         "visibility": "visible"
       },
       "paint": {
         "text-color": "rgba(113, 26, 164, 1)",
-        "text-halo-color": "rgba(236, 236, 236, 1)",
+        "text-halo-color": "rgba(239, 239, 239, 1)",
         "text-halo-width": 1.5
       }
     },
@@ -3440,7 +3425,7 @@
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 8,
-      "filter": ["all", ["has", "name"], ["!=", "hide_caption", "yes"], ["==", "natural", "water"]],
+      "filter": ["all", ["has", "name"], ["==", "natural", "water"]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Italic"],
@@ -3575,7 +3560,7 @@
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 11,
-      "filter": ["all", ["!=", "hide_caption", "yes"], ["any", ["==", "natural", "wood"], ["==", "landuse", "forest"]]],
+      "filter": ["any", ["==", "natural", "wood"], ["==", "landuse", "forest"]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Italic"],
@@ -4052,7 +4037,10 @@
         "icon-image": "blue_round_shield",
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
-        "icon-size": 0.9
+        "icon-size": 0.9,
+        "visibility": "visible",
+        "icon-optional": false,
+        "text-optional": false
       }
     },
     {
