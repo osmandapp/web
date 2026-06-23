@@ -25,6 +25,7 @@ export default function useCloudGpxImport() {
             let fileName = uploadedFile.name;
             const folder = uploadedFile.folder;
             if (validName(fileName)) {
+                const loadingName = removeFileExtension(fileName) + GPX_FILE_EXT;
                 fileName = removeFileExtension(fileName);
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
                 saveTrackToCloud({
@@ -35,7 +36,11 @@ export default function useCloudGpxImport() {
                     type: 'GPX',
                     uploadedFile: uploadedFile,
                     open,
-                }).then();
+                }).then((success) => {
+                    if (success) {
+                        ctx.setTrackLoading((prev) => prev.filter((n) => n !== loadingName));
+                    }
+                });
                 mutateUploadedFiles((o) => delete o[file]);
                 break; // process 1 file per 1 render
             }
