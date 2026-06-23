@@ -3770,10 +3770,18 @@
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 16,
+      "filter": [
+        "all",
+        ["!has", "shop"],
+        ["!has", "amenity"],
+        ["!has", "leisure"],
+        ["has", "addr:housenumber"]
+      ],
       "layout": {
         "text-field": "{addr:housenumber}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": 10
+        "text-size": 10,
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-color": "rgba(255, 255, 255, 1)",
@@ -3786,7 +3794,13 @@
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 15,
-      "filter": ["all", ["==", "building", ""]],
+      "filter": [
+        "all",
+        ["has", "building"],
+        ["!has", "shop"],
+        ["!has", "amenity"],
+        ["!has", "leisure"]
+      ],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
