@@ -89,7 +89,7 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
-    const [maxLevel, setMaxLevel] = useState(0);
+    const [visibleLevel, setVisibleLevel] = useState(0);
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
@@ -302,7 +302,7 @@ export default function SearchResults() {
     }, [ctx.searchResult]);
 
     useEffect(() => {
-        setMaxLevel(0);
+        setVisibleLevel(0);
     }, [ctx.searchResult]);
 
     function backToMainSearch() {
@@ -325,17 +325,17 @@ export default function SearchResults() {
     // URL query already changed but the shown result is still the previous search
     const staleResult = (params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery);
 
-    const getItemLevel = (item) => item?.properties?.[WEB_VISIBLE_LEVEL] ?? 0;
+    const getVisibleLevel = (item) => item?.properties?.[WEB_VISIBLE_LEVEL] ?? 0;
 
-    const maxSearchLevel = result?.features?.reduce((max, f) => Math.max(max, getItemLevel(f)), 0) ?? 0;
+    const maxVisibleLevel = result?.features?.reduce((max, f) => Math.max(max, getVisibleLevel(f)), 0) ?? 0;
     const visibleFeatures =
-        result?.features?.filter((item) => item?.properties && getItemLevel(item) <= maxLevel) ?? [];
+        result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= visibleLevel) ?? [];
     const hasMore =
-        maxLevel < maxSearchLevel &&
-        (result?.features?.some((item) => item?.properties && getItemLevel(item) > maxLevel) ?? false);
+        visibleLevel < maxVisibleLevel &&
+        (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > visibleLevel) ?? false);
 
     function showMoreResults() {
-        setMaxLevel((prev) => Math.min(prev + 1, maxSearchLevel));
+        setVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
     }
 
     return (
