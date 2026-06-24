@@ -11,7 +11,7 @@ import PoiManager, {
 } from '../../../manager/PoiManager';
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import styles from '../search.module.css';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
@@ -31,6 +31,7 @@ import {
     POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
+    WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
@@ -88,6 +89,7 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
+    const [visibleLevel, setVisibleLevel] = useState(0);
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
@@ -299,6 +301,10 @@ export default function SearchResults() {
         }
     }, [ctx.searchResult]);
 
+    useEffect(() => {
+        setVisibleLevel(0);
+    }, [ctx.searchResult]);
+
     function backToMainSearch() {
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
@@ -318,6 +324,19 @@ export default function SearchResults() {
 
     // URL query already changed but the shown result is still the previous search
     const staleResult = (params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery);
+
+    const getVisibleLevel = (item) => item?.properties?.[WEB_VISIBLE_LEVEL] ?? 0;
+
+    const maxVisibleLevel = result?.features?.reduce((max, f) => Math.max(max, getVisibleLevel(f)), 0) ?? 0;
+    const visibleFeatures =
+        result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= visibleLevel) ?? [];
+    const hasMore =
+        visibleLevel < maxVisibleLevel &&
+        (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > visibleLevel) ?? false);
+
+    function showMoreResults() {
+        setVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
+    }
 
     return (
         <>
@@ -350,17 +369,24 @@ export default function SearchResults() {
                     <EmptySearch message={errorZoom} />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
-                        {result?.features
-                            .filter((item) => item?.properties)
-                            .map((item, index) => (
-                                <SearchResultItem
-                                    key={index + (item?.id || item?.properties?.id || '')}
-                                    item={item}
-                                    index={index}
-                                    typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
-                                    currentLoc={currentLoc}
-                                />
-                            ))}
+                        {visibleFeatures.map((item, index) => (
+                            <SearchResultItem
+                                key={index + (item?.id || item?.properties?.id || '')}
+                                item={item}
+                                index={index}
+                                typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
+                                currentLoc={currentLoc}
+                            />
+                        ))}
+                        {ctx.spatialSearch && hasMore && (
+                            <Button
+                                id={'se-search-show-more'}
+                                className={styles.buttonShowAllExplore}
+                                onClick={showMoreResults}
+                            >
+                                {t('web:show_more')}
+                            </Button>
+                        )}
                     </Box>
                 ))}
         </>

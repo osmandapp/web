@@ -94,6 +94,7 @@ export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
 export const MAIN_CATEGORY_KEY_NAME = WEB_PREFIX + 'categoryKeyName';
 export const WEB_POI_FILTER_NAME = WEB_PREFIX + 'poiFilterName';
 export const WEB_POI_ADDITIONAL_CATEGORY = WEB_PREFIX + 'poiAdditionalCategory';
+export const WEB_VISIBLE_LEVEL = WEB_PREFIX + 'visible_level';
 
 export const MAPILLARY_ACCESS_TOKEN = 'MLY|4444816185556934|29475a355616c979409a5adc377a00fa';
 export const GRAPH_URL_ENDPOINT = 'https://graph.mapillary.com/';
