@@ -23,6 +23,7 @@ import {
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
+    WEB_VISIBLE_LEVEL,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
@@ -188,7 +189,7 @@ export default function SearchLayer() {
         const updateAsyncLayers = async () => {
             if (searchLayers.current) {
                 const newLayers = await createSearchLayer({
-                    objList: ctx.searchResult?.features,
+                    objList: filterByVisibleLevel(ctx.searchResult?.features, ctx.spatialSearch, ctx.searchVisibleLevel),
                 });
                 searchLayers.current.clearLayers();
                 newLayers.eachLayer((l) => {
@@ -286,7 +287,7 @@ export default function SearchLayer() {
             } else {
                 if (ctx.searchResult?.features && !ctx.searchQuery?.type) {
                     const layers = await createSearchLayer({
-                        objList: ctx.searchResult?.features,
+                        objList: filterByVisibleLevel(ctx.searchResult.features, ctx.spatialSearch, ctx.searchVisibleLevel),
                     });
                     searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
@@ -295,7 +296,7 @@ export default function SearchLayer() {
         };
 
         addAsyncLayers().then();
-    }, [ctx.searchResult]);
+    }, [ctx.searchResult, ctx.searchVisibleLevel]);
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
@@ -451,4 +452,10 @@ export default function SearchLayer() {
         }
         ctx.setShowPoiCategories([...ctx.showPoiCategories]);
     }
+}
+
+function filterByVisibleLevel(features, spatialSearch, visibleLevel) {
+    if (!spatialSearch) return features;
+
+    return (features ?? []).filter((f) => (f?.properties?.[WEB_VISIBLE_LEVEL] ?? 0) <= visibleLevel);
 }
