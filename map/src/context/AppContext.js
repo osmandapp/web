@@ -170,6 +170,7 @@ export const AppContextProvider = (props) => {
 
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
+    const [searchVisibleLevel, setSearchVisibleLevel] = useState(0);
     const [forceSearch, setForceSearch] = useState(false);
     const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
@@ -663,6 +664,8 @@ export const AppContextProvider = (props) => {
                 setCategoryIcons,
                 searchResult,
                 setSearchResult,
+                searchVisibleLevel,
+                setSearchVisibleLevel,
                 processingSearch,
                 setProcessingSearch,
                 searchTooltipRef,

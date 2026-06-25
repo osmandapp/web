@@ -89,7 +89,6 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
-    const [visibleLevel, setVisibleLevel] = useState(0);
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
@@ -302,8 +301,8 @@ export default function SearchResults() {
     }, [ctx.searchResult]);
 
     useEffect(() => {
-        setVisibleLevel(0);
-    }, [ctx.searchResult]);
+        ctx.setSearchVisibleLevel(0);
+    }, [ctx.searchQuery]);
 
     function backToMainSearch() {
         ctx.setCurrentObjectType(null);
@@ -329,13 +328,13 @@ export default function SearchResults() {
 
     const maxVisibleLevel = result?.features?.reduce((max, f) => Math.max(max, getVisibleLevel(f)), 0) ?? 0;
     const visibleFeatures =
-        result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= visibleLevel) ?? [];
+        result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= ctx.searchVisibleLevel) ?? [];
     const hasMore =
-        visibleLevel < maxVisibleLevel &&
-        (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > visibleLevel) ?? false);
+        ctx.searchVisibleLevel < maxVisibleLevel &&
+        (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > ctx.searchVisibleLevel) ?? false);
 
     function showMoreResults() {
-        setVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
+        ctx.setSearchVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
     }
 
     return (
