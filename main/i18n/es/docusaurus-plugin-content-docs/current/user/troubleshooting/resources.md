@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -53,6 +53,7 @@ La siguiente lista proporciona conversores para varios tipos de datos compatible
 | GPX a KML | Herramienta para convertir archivos *GPX* de OsmAnd a formato *KML*, conservando los iconos. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX a OsmAnd | Script de Python para convertir archivos *GPX* de iOverlander exportados a OsmAnd con iconos. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Mapa topográfico a imprimible| Esta es [una herramienta](https://github.com/acui/osmand_topo_map_generator) para generar un mapa topográfico imprimible utilizando capturas de pantalla de OsmAnd (https://osmand.net). El mapa utiliza la cuadrícula UTM y tiene información de declinación. Se debe usar con una brújula o un dispositivo GPS con coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar proyecta un rayo hacia el sol desde cada punto de una pista GPX y lo compara con el terreno y la vegetación (0.5 m HD LiDAR / IGN), para una fecha y hora dadas. Te indica, metro a metro, sol o sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Recursos personalizados {#custom-resources}
 
@@ -83,7 +84,7 @@ La siguiente es una lista de [plugins personalizados](../plugins/custom.md) desa
 
 | Nombre | Descripción | Enlace del plugin |
 |--|--|--|
-| Advanced Profiles & Maps  | Datos de [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). El plugin añade los estilos de mapa Enduro, CycloRoute y Senderismo (más información [aquí](../map/map-styles.md#default-map-styles)) y 5 nuevos [perfiles](https://osmand.net/docs/user/personal/profiles) (Peatón, Bicicleta y tres perfiles de Motocicleta). También proporciona mapas en línea para España, Francia, Noruega, Suiza, Austria, Bélgica y Argentina a través del menú [Mapas y Recursos](../personal/maps-resources.md#extra-maps) en la carpeta *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Advanced Profiles & Maps  | Datos de [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). El plugin añade los estilos de mapa Enduro, CycloRoute y Senderismo (más información [aquí](../map/map-styles.md#default-map-styles)) y 5 nuevos [perfiles](https://osmand.net/docs/user/personal/profiles) (Peatón, Bicicleta y tres perfiles de Motocicleta). También proporciona mapas en línea para España, Francia, Noruega, Suisse, Austria, Bélgica y Argentina a través del menú [Mapas y Recursos](../personal/maps-resources.md#extra-maps) en la carpeta *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Saudi Arabia Desert Maps by Rahal Team  | Un mapa profesional sin conexión del Reino de Arabia Saudita, que incluye características topográficas, carreteras, ciudades, pueblos y fuentes de agua. Perfecto para viajes por el desierto. Visita [Rahal Maps](https://rahalteam.com) para más información. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D Position Icons  | Este paquete añade una opción de modelo 3D para los perfiles (Es un ejemplo de cómo añadir un icono 3D propio a OsmAnd). Personaliza la apariencia a través del menú: [*Menú de OsmAnd → Ajustes → Perfil → Apariencia del perfil → elige los iconos 4º-5º del icono de Posición*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS Online Maps Collection | Datos de [AnyGIS web page](https://anygis.ru/index_en). Una colección de diversas fuentes de mapas en línea que incluyen mapas satelitales, turísticos e históricos, entre otros.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -109,6 +110,7 @@ El archivo por defecto [render.xml](https://github.com/osmandapp/OsmAnd-resource
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) es un estilo de mapa de Holder Tamm que te permite elegir si ocultar ciertos objetos o no.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) se basa principalmente en UniMap y routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [This is an OsmAnd rendering style optimized for storm chasing](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Recursos personalizados definidos del proyecto OsmAnd para ajustar finamente el comportamiento de OsmAnd. Aquí se definen: estilos de renderizado de mapas utilizados en OsmAnd, voces grabadas y TTS, configuración de la generación de mapas sin conexión, parámetros de enrutamiento, repositorio de iconos  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Mapas sin conexión {#offline-maps}
 

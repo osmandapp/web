@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title:  Mapas y Datos
 ---
@@ -181,6 +181,22 @@ Si está intentando buscar una ubicación utilizando la estructura *Ciudad → C
 
 - **Posible problema en OsmAnd**. Si la casa está presente en Nominatim pero aún no se encuentra en OsmAnd, el problema podría ser específico de OsmAnd. Puede contribuir a resolver esto investigando más a fondo. Se pueden encontrar más detalles en este [artículo técnico](../../technical/algorithms/trace-address-search-issues.md).
 
+### Buscar códigos postales del Reino Unido mediante un archivo PDI personalizado {#search-uk-postcodes-using-a-custom-poi-file}
+
+Si no se puede encontrar un código postal del Reino Unido mediante *Menú → Buscar → Dirección*, es posible que no esté disponible a través del índice de búsqueda de direcciones utilizado por OsmAnd.
+
+Existe un archivo PDI de códigos postales del Reino Unido mantenido por la comunidad como un archivo `.obf` personalizado. Contiene códigos postales almacenados como Puntos de Interés (PDI) con coordenadas y se puede utilizar para buscar códigos postales directamente.
+
+Cómo usarlo:
+
+1. Descargue el archivo `UK_postcodes_poi_europe.obf` desde el [repositorio de la comunidad](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. Si el archivo se descargó como un archivo ZIP, extráigalo primero.
+3. Copie el archivo `.obf` en la carpeta de datos de OsmAnd, o ábralo con un gestor de archivos en su dispositivo y elija **OsmAnd** para importarlo.
+4. Utilice la función de **Búsqueda** general (icono de lupa) en lugar de la búsqueda de **Dirección**.
+5. Introduzca un código postal (por ejemplo, CT14 8EU o EX34 7EX) en la barra de búsqueda.
+
+**NOTA:** Algunos códigos postales pueden aparecer más de una vez en los resultados de búsqueda porque tanto los datos de mapa predeterminados de OsmAnd como el archivo PDI de códigos postales personalizado pueden contener el mismo código postal.
+
 
 ## Trazas y Puntos {#tracks-and-points}
 
@@ -194,7 +210,7 @@ Puede dejar notas y marcar ubicaciones en el mapa de varias formas, cada una con
 
 - *[Waypoints](../map/tracks/index.md#types-of-tracks)*. Los waypoints se colocan a lo largo de las rutas que crea, ayudándole a marcar paradas o ubicaciones específicas en su viaje. También puede añadir descripciones a estos puntos. Para añadir un waypoint, haga una *pulsación larga en el mapa → Direcciones → añadir como waypoint intermedio*.
 
-- *[Notas de audio/vídeo](../plugins/audio-video-notes.md)*. Estas notas le permiten adjuntar archivos de audio, vídeo o fotos a ubicaciones específicas en el mapa. Para activarlo, active el complemento Notas de audio/vídeo en *Menú de OsmAnd → Complementos*. Para añadir una, haga una *pulsación larga → Acciones → elija el archivo requerido para adjuntar*.
+- *[Notas de audio/vídeo](../plugins/audio-video-notes.md)*. Estas notas le permiten adjuntar archivos de audio, vídeo o fotos a ubicaciones específicas en el mapa. Para activarlo, active el complemento Notes de audio/vídeo en *Menú de OsmAnd → Complementos*. Para añadir una, haga una *pulsación larga → Acciones → elija el archivo requerido para adjuntar*.
 
 - *[Notas de OSM](../plugins/osm-editing.md#create--modify-osm-note)*. Son informes que puede crear para resaltar errores o información faltante en OpenStreetMap. Active el complemento de edición de OSM en el *Menú de OsmAnd → Complementos*. Para añadir una Nota de OSM, haga una *pulsación larga → Acciones → Añadir nota de OSM*.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+source-hash: 470447687509454a83c4d6eeaff5fbef4b59e351e6fffa6397d47509009df4d8
 sidebar_position: 8
 title:  Vista de mapa náutico
 ---
@@ -105,7 +105,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,na
 
 <TabItem value="ios" label="iOS">  
 
-Vaya a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Vaya a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
 ![Vista de mapas del plugin náutico en iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 

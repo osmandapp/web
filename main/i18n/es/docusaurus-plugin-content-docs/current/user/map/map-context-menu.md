@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -89,8 +89,7 @@ Cuando realiza una **pulsación larga** en cualquier lugar del mapa, aparece un 
 
 </Tabs>
 
-Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú contextual del track](../map/tracks/track-context-menu.md), donde puede acceder a opciones adicionales relacionadas con el track.
-
+Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú contextual del track](../map/tracks/track-context-menu.md), donde puede acceder a opciones adicionales relacionadas con el track. Si la ubicación seleccionada contiene varios objetos del mapa, OsmAnd puede mostrar primero la lista **Qué hay aquí**, lo que le permite elegir el objeto deseado. Para los tracks GPX, esta lista muestra información resumida como distancia, duración, número de waypoints y la carpeta donde se almacena el track.
 
 
 ### Rutas, pistas de esquí y senderos {#routes-and-trails}

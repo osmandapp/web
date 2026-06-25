@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Carpeta Inteligente (Filtro)
 ---
@@ -164,9 +164,7 @@ La **Carpeta Inteligente** recién creada actualizará automáticamente su conte
 
 <TabItem value="android" label="Android">
 
-![Gestión de Carpetas Inteligentes en Mis lugares Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Gestión de Carpetas Inteligentes en Mis lugares Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![Gestión de Carpetas Inteligentes en Mis lugares Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Gestión de Carpetas Inteligentes en Mis lugares Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 La **Carpeta inteligente** se muestra con un icono único en la lista de carpetas de la pestaña Pistas. Para gestionar la carpeta, pulse el *menú de tres puntos* junto a ella para acceder a las acciones disponibles:
 
@@ -183,7 +181,7 @@ La **Carpeta inteligente** se muestra con un icono único en la lista de carpeta
 También puede abrir la carpeta y pulsar el *menú de tres puntos* en la *esquina superior derecha* para acceder a acciones adicionales:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
-- **<Translate android="true" ids="organize_by"/>** — Organiza automáticamente las pistas en la Carpeta Inteligente en grupos basados en un parámetro seleccionado. Los tipos de agrupación disponibles incluyen *General*, *Fecha y hora*, *Ubicación*, *Velocidad*, *Altitud y elevación* y *Datos del sensor*. 
+- **<Translate android="true" ids="organize_by"/>** — Organiza automáticamente las pistas en la Carpeta Inteligente en grupos basados en un parámetro seleccionado. Seleccione *Ninguno* para mostrar todas las pistas como una única lista, coincidiendo con la vista predeterminada de la Carpeta Inteligente. Los tipos de agrupación disponibles incluyen *General*, *Fecha y hora*, *Ubicación*, *Velocidad*, *Altitud y elevación* y *Datos del sensor*. 
 
 Algunos parámetros de agrupación solo están disponibles con una suscripción a OsmAnd Pro. Los parámetros gratuitos incluyen *Actividad*, *Año de creación* y *Ciudad más cercana*. Todos los demás parámetros están marcados con una etiqueta <ProFeature/>.
 
@@ -191,13 +189,13 @@ Para parámetros numéricos (como distancia, duración, velocidad o altitud), ha
 
 Para parámetros PRO, puede previsualizar la configuración de agrupación (por ejemplo, abrir el selector de tamaño de paso y ver cómo se agrupan las pistas), pero aplicar estos cambios requiere una suscripción activa. Si selecciona un parámetro PRO o pulsa el botón Desbloquear, se abrirá la pantalla Elegir plan. La agrupación aplicada previamente permanece visible incluso si la suscripción caduca, pero editar o aplicar una nueva agrupación basada en PRO requiere una suscripción activa.
 
+Una vez seleccionado un parámetro de agrupación, las pistas se muestran como grupos. Cada grupo muestra su nombre, icono y el número de pistas que contiene. Pulse un grupo para abrir la lista de pistas de ese grupo. Los grupos vacíos no se muestran. Los resultados agrupados se pueden ordenar alfabéticamente (A–Z o Z–A) o, para parámetros numéricos, por valores más altos o más bajos. Mantenga pulsado un grupo para mostrar todas las pistas del grupo en el mapa o exportar todas las pistas del grupo.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gestión de Carpetas Inteligentes en Mis lugares iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Gestión de Carpetas Inteligentes en Mis lugares iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![Gestión de Carpetas Inteligentes en Mis lugares iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Gestión de Carpetas Inteligentesn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 La **Carpeta inteligente** se muestra con un icono único en la lista de carpetas de la pestaña Pistas. Para gestionar la carpeta, realice una *pulsación larga* en el nombre de la carpeta para acceder a las acciones disponibles:
 
@@ -212,6 +210,15 @@ También puede abrir la carpeta y pulsar el icono en la *esquina superior derech
 - **<Translate ios="true" ids="shared_string_select"/>** — Utilice el [Modo de selección](./manage-tracks.md#selection-mode) para acciones específicas de pistas dentro de la carpeta.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Actualiza manualmente el contenido de la carpeta para asegurarse de que incluye las últimas pistas.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifica la configuración del filtro de pistas para la Carpeta Inteligente actual. Consulte [Filtro de búsqueda](#search-filter) para más detalles.
+- **Organizar por** — Organiza automáticamente las pistas en la Carpeta Inteligente en grupos basados en un parámetro seleccionado. Seleccione *Ninguno* para mostrar todas las pistas como una única lista, coincidiendo con la vista predeterminada de la Carpeta Inteligente. Los tipos de agrupación disponibles incluyen *General*, *Fecha y hora*, *Ubicación*, *Velocidad*, *Altitud y elevación* y *Datos del sensor*. 
+
+Algunos parámetros de agrupación solo están disponibles con una suscripción a OsmAnd Pro. Los parámetros gratuitos incluyen *Actividad*, *Año de creación* y *Ciudad más cercana*. Todos los demás parámetros están marcados con una etiqueta <ProFeature/>.
+
+Para parámetros numéricos (como distancia, duración, velocidad o altitud), hay disponible un diálogo *Establecer tamaño de paso*. Utilice el control deslizante para definir rangos de valores para la agrupación.
+
+Para parámetros PRO, puede previsualizar la configuración de agrupación (por ejemplo, abrir el selector de tamaño de paso y ver cómo se agrupan las pistas), pero aplicar estos cambios requiere una suscripción activa. Si selecciona un parámetro PRO o pulsa el botón Desbloquear, se abrirá la pantalla Elegir plan. La agrupación aplicada previamente permanece visible incluso si la suscripción caduca, pero editar o aplicar una nueva agrupación basada en PRO requiere una suscripción activa.
+
+Una vez seleccionado un parámetro de agrupación, las pistas se muestran como grupos. Cada grupo muestra su nombre, icono y el número de pistas que contiene. Pulse un grupo para abrir la lista de pistas de ese grupo. Los grupos vacíos no se muestran. Los resultados agrupados se pueden ordenar alfabéticamente (A–Z o Z–A) o, para parámetros numéricos, por valores más altos o más bajos. Mantenga pulsado un grupo para mostrar todas las pistas del grupo en el mapa o exportar todas las pistas del grupo.
 
 </TabItem>
 
