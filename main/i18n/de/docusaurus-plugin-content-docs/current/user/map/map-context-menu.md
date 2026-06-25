@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -89,8 +89,7 @@ Wenn Sie irgendwo auf der Karte **lange antippen**, erscheint ein **Kontextmenü
 
 </Tabs>
 
-Durch Antippen eines [GPX-Tracks](../map/tracks/index.md) auf der Karte wird das [Track-Kontextmenü](../map/tracks/track-context-menu.md) geöffnet, in dem Sie auf zusätzliche trackbezogene Optionen zugreifen können.
-
+Durch Antippen eines [GPX-Tracks](../map/tracks/index.md) auf der Karte wird das [Track-Kontextmenü](../map/tracks/track-context-menu.md) geöffnet, in dem Sie auf zusätzliche trackbezogene Optionen zugreifen können. Wenn der ausgewählte Ort mehrere Kartenobjekte enthält, kann OsmAnd zuerst die Liste **Was ist hier** anzeigen, damit Sie das gewünschte Objekt auswählen können. Für GPX-Tracks zeigt diese Liste Zusammenfassungsinformationen wie Entfernung, Dauer, Anzahl der Wegpunkte und den Ordner an, in dem der Track gespeichert ist.
 
 
 ### Routen, Skipisten und Wege {#routes-and-trails}

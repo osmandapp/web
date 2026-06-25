@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Intelligenter Ordner (Filter)
 ---
@@ -55,7 +55,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 
 - **Um alle** aktiven Filter zu löschen, tippen Sie auf **Alle zurücksetzen**.
 
-- **Um** den aktuellen Filtersatz als neuen **Intelligenten Ordner** zu speichern, tippen Sie auf das Speichern-Symbol in der oberen rechten Ecke des Bildschirms.
+- **Um** den aktuellen Filtersatz as neuen **Intelligenten Ordner** zu speichern, tippen Sie auf das Speichern-Symbol in der oberen rechten Ecke des Bildschirms.
 
 
 ### Verfügbare Filter {#available-filters}
@@ -164,9 +164,7 @@ Der neu erstellte **Intelligente Ordner** aktualisiert seinen Inhalt automatisch
 
 <TabItem value="android" label="Android">
 
-![My places Managing Smart Folders Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![My places Managing Smart Foldersn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 Der **Intelligente Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste im Tracks-Tab angezeigt. Um den Ordner zu verwalten, tippen Sie auf das *Drei-Punkte-Menü* daneben, um auf die verfügbaren Aktionen zuzugreifen:
 
@@ -183,7 +181,7 @@ Der **Intelligente Ordner** wird mit einem einzigartigen Symbol in der Ordnerlis
 Sie können auch den Ordner öffnen und auf das *Drei-Punkte-Menü* in der *rechten oberen Ecke* tippen, um zusätzliche Aktionen aufzurufen:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
-- **<Translate android="true" ids="organize_by"/>** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
+- **<Translate android="true" ids="organize_by"/>** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Wählen Sie *None*, um alle Tracks als einzelne Liste anzuzeigen, entsprechend der Standardansicht des Intelligenten Ordners. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
 
 Einige Gruppierungsparameter sind nur mit einem OsmAnd Pro-Abonnement verfügbar. Kostenlose Parameter umfassen *Activity*, *Year of creation* und *Nearest city*. Alle anderen Parameter sind mit einem <ProFeature/>-Label gekennzeichnet.
 
@@ -191,13 +189,13 @@ Für numerische Parameter (wie Entfernung, Dauer, Geschwindigkeit oder Höhe) is
 
 Für PRO-Parameter können Sie die Gruppierungsvorschau einrichten (z. B. den Schrittgrößen-Selektor öffnen und sehen, wie Tracks gruppiert werden), aber das Anwenden dieser Änderungen erfordert ein aktives Abonnement. Wenn Sie einen PRO-Parameter auswählen oder auf die Schaltfläche Entsperren tippen, öffnet sich der Bildschirm Plan auswählen. Zuvor angewendete Gruppierungen bleiben auch nach Ablauf des Abonnements sichtbar, aber das Bearbeiten oder Anwenden neuer PRO-basierter Gruppierungen erfordert ein aktives Abonnement.
 
+Nach Auswahl eines Gruppierungsparameters werden Tracks als Gruppen angezeigt. Jede Gruppe zeigt ihren Namen, ihr Symbol und die Anzahl der enthaltenen Tracks an. Tippen Sie auf eine Gruppe, um die Liste der Tracks in dieser Gruppe zu öffnen. Leere Gruppen werden nicht angezeigt. Gruppierte Ergebnisse können alphabetisch (A–Z oder Z–A) oder bei numerischen Parametern nach höchsten oder niedrigsten Werten sortiert werden. Langes Tippen auf eine Gruppe zeigt alle Tracks der Gruppe auf der Karte an oder exportiert alle Tracks der Gruppe.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 Der **Intelligente Ordner** wird mit einem einzigartigen Symbol in der Ordnerliste im Tracks-Tab angezeigt. Um den Ordner zu verwalten, *langes Tippen* Sie auf den Ordnernamen, um auf die verfügbaren Aktionen zuzugreifen:
 
@@ -212,6 +210,15 @@ Sie können auch den Ordner öffnen und auf das Symbol in der *rechten oberen Ec
 - **<Translate ios="true" ids="shared_string_select"/>** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
 - **<Translate ios="true" ids="edit_filter"/>** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Intelligenten Ordner. Siehe [Suchfilter](#search-filter) für Details.
+- **Organize by** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Wählen Sie *None*, um alle Tracks als einzelne Liste anzuzeigen, entsprechend der Standardansicht des Intelligenten Ordners. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
+
+Einige Gruppierungsparameter sind nur mit einem OsmAnd Pro-Abonnement verfügbar. Kostenlose Parameter umfassen *Activity*, *Year of creation* und *Nearest city*. Alle anderen Parameter sind mit einem <ProFeature/>-Label gekennzeichnet.
+
+Für numerische Parameter (wie Entfernung, Dauer, Geschwindigkeit oder Höhe) ist ein Dialog *Schrittgröße festlegen* verfügbar. Verwenden Sie den Schieberegler, um Wertebereiche für die Gruppierung zu definieren.
+
+Für PRO-Parameter können Sie die Gruppierungsvorschau einrichten (z. B. den Schrittgrößen-Selektor öffnen und sehen, wie Tracks gruppiert werden), aber das Anwenden dieser Änderungen erfordert ein aktives Abonnement. Wenn Sie einen PRO-Parameter auswählen oder auf die Schaltfläche Entsperren tippen, öffnet sich der Bildschirm Plan auswählen. Zuvor angewendete Gruppierungen bleiben auch nach Ablauf des Abonnements sichtbar, aber das Bearbeiten oder Anwenden neuer PRO-basierter Gruppierungen erfordert ein aktives Abonnement.
+
+Nach Auswahl eines Gruppierungsparameters werden Tracks als Gruppen angezeigt. Jede Gruppe zeigt ihren Namen, ihr Symbol und die Anzahl der enthaltenen Tracks an. Tippen Sie auf eine Gruppe, um die Liste der Tracks in dieser Gruppe zu öffnen. Leere Gruppen werden nicht angezeigt. Gruppierte Ergebnisse können alphabetisch (A–Z oder Z–A) oder bei numerischen Parametern nach höchsten oder niedrigsten Werten sortiert werden. Langes Tippen auf eine Gruppe zeigt alle Tracks der Gruppe auf der Karte an oder exportiert alle Tracks der Gruppe.
 
 </TabItem>
 

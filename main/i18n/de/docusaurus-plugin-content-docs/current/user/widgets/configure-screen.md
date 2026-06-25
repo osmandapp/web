@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -550,7 +550,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 </Tabs>
 
-**Standard-Schaltflächen** ermöglichen es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
+**Standard-Schaltflächen** ermöglicht es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
 
     - [3D-Modus](../widgets/map-buttons.md#3d-mode). Für iOS ist die Schaltfläche immer verfügbar. Für Android erscheint sie in der Liste und ist zur Einstellung verfügbar, wenn die Karten-Rendering-Engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) ausgewählt ist.
 
@@ -663,6 +663,37 @@ Ermöglicht es Ihnen, die Platzierung des Cursors für *[Mein Standort](../map/i
 - **<Translate android="true" ids="position_on_map_center"/>**. Der Cursor wird immer in der Mitte des Bildschirms positioniert.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mein Standort* wird etwas unterhalb der Bildschirmmitte platziert. Dieser Modus ermöglicht es Ihnen, mehr Karteninformationen vor Ihrer Bewegung zu sehen, was während der Navigation nützlich ist.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Platziert *Mein Standort* abhängig von der *[Kartenausrichtung](../map/interact-with-map.md#map-orientation-modes)* (*Unten* - für Bewegungsrichtung, *Mitte* - für alle anderen).
+
+
+### Entfernung durch Tippen {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Entfernung durch Tippen Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Entfernung durch Tippen iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Das Werkzeug **Entfernung durch Tippen** ermöglicht es Ihnen, Entfernungen zwischen Punkten auf der Karte zu messen, ohne das [Radiuslineal](../widgets/radius-ruler.md#radius-ruler-widget) zu verwenden oder eine Route zu erstellen.
+
+Es gibt zwei Anwendungsfälle:
+
+- **Entfernung von Ihrem Standort zu einem Punkt**  
+  Tippen Sie irgendwo auf die Karte, und es erscheint eine gerade Linie von Ihrem aktuellen Standort zum angetippten Punkt, zusammen mit einer Entfernungsangabe. Die Linie bleibt auf dem Bildschirm, auch wenn Sie woanders tippen.
+
+- **Entfernung zwischen beliebigen zwei Punkten**  
+  Tippen Sie gleichzeitig auf zwei Punkte auf der Karte (Multi-Touch). Eine Linie verbindet die beiden Punkte, und die gemessene Entfernung wird angezeigt.
+
+Sie können auch die Textgröße der Entfernungsbeschriftung anpassen. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Wählen Sie zwischen *<Translate android="true" ids="shared_string_normal"/>* (Standard) und *<Translate android="true" ids="shared_string_large"/>* (1,5× größer). Wenn die Option „Groß“ ausgewählt ist, wird automatisch zusätzlicher Abstand zwischen der Linie und der Beschriftung für eine bessere Lesbarkeit hinzugefügt. Änderungen werden sofort ohne Neustart der App übernommen.
 
 
 ## Aktionen {#actions}

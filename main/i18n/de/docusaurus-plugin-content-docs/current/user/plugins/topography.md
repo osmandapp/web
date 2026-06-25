@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
 sidebar_position: 16
 title: Topografie
 ---
@@ -204,19 +204,19 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Gelände-Menü iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Gelände-Menü iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Gelände-Menü iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Gelände-Menü iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-Die Option **Gelände** aktiviert und ermöglicht die Anpassung von drei Funktionen wie *Schummerung*, *Neigung* und *Höhe*.  
+Die Option **Gelände** aktiviert und ermöglicht die Anpassung von drei Funktionen wie *Schummerung*, *Neigung* und *Höhe*. Auf iOS enthält das Visualisierungsmenü auch *Geländeschatten*, einen Echtzeit-Geländeschattierungsmodus basierend auf 3D-Relief.  
 Spezifische Merkmale:  
 
-- Es kann immer nur eine Option gleichzeitig aktiviert sein, entweder Schummerung, Neigung oder Höhe.
+- Es kann immer nur eine Option gleichzeitig aktiviert sein, entweder Schummerung, Neigung, Höhe oder Geländeschatten.
 - Wenn Sie nach dem Herunterladen und Aktivieren der entsprechenden Karte keine Änderungen sehen, wird empfohlen, die Anwendung neu zu starten.
 
-Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-scheme) mit der Option, es zu [ändern](#modify-color-scheme) (für [Pro-Abonnenten](../../user/purchases/index.md)), die Möglichkeit, die Transparenz der Ebene auf der Karte zu ändern ([Sichtbarkeit](#visibility)), und die Auswahl der [Zoomstufe](#zoom-levels) für ihre Anzeige, Informationen über die Größe der [zwischengespeicherten Daten](#cache-size) und eine Liste der [Karten](../../user/personal/maps-resources.md), die zur Anzeige der Ebene benötigt werden.
+Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-scheme) (**Visualisierung** auf iOS) mit der Option, es zu [ändern](#modify-color-scheme) (für [Pro-Abonnenten](../../user/purchases/index.md)), die Möglichkeit, die Transparenz der Ebene auf der Karte zu ändern ([Sichtbarkeit](#visibility)), und die Auswahl der [Zoomstufe](#zoom-levels) für ihre Anzeige, Informationen über die Größe der [zwischengespeicherten Daten](#cache-size) und eine Liste der [Karten](../../user/personal/maps-resources.md), die zur Anzeige der Ebene benötigt werden.
 
 
 ## Schummerungs-, Neigungs- und Höhenschichten {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 - *Navigation.* Hilft bei der Identifizierung steiler Hänge, sowohl bergab als auch bergauf, was für eine sichere Navigation entscheidend sein kann.
 - *Routen planen.* Hilft bei der Auswahl der am besten geeigneten Routen unter Berücksichtigung des Geländes.
 - *Geländeeinschätzung.* Es ist praktisch, um die Landschaft zu visualisieren, besonders wenn Sie zu Fuß oder mit dem Fahrrad unterwegs sind.
+
+
+### Geländeschatten (iOS) {#terrain-shadows}
+
+![Geländeschatten iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Geländeschatten** bietet eine dynamische Echtzeit-Schattierung basierend auf der 3D-Geländegeometrie. Im Gegensatz zu Raster-Schummerungskarten wird der Schattierungseffekt direkt auf dem Gerät mithilfe von Geländedaten erzeugt und folgt automatisch der aktuellen Kartenperspektive.
+
+Geländeschatten erfordert 3D-Relief und aktiviert es automatisch bei Auswahl. Die Funktion soll die Lesbarkeit des Geländes verbessern und gleichzeitig die Leistungseinflüsse gering halten.
 
 
 ### Standard-Farbschema {#default-color-scheme}
@@ -286,7 +295,7 @@ Für erweiterte Palettenanpassung mit Palettendateien siehe den Artikel [Farbsch
 
 <TabItem value="ios" label="iOS">  
 
-![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwählen:
 
@@ -305,13 +314,15 @@ Sie können [diese Paletten bearbeiten](../personal/color-palette-schemes.md#pal
 | ------ | ------- |
 | ![Sichtbarkeit ](../../../blog/2023-08-28-terrain/img/31.png) | ![Sichtbarkeit ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für die Schummerung und der Farben, die zur Darstellung des Winkels im Neigungsparameter verwendet werden, anzupassen. Der Schieberegler erlaubt Werte von 10 % bis 100 %, mit 50 % als Standard. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter.
+Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für die Schummerung und der Farben, die zur Darstellung des Winkels im Neigungsparameter verwendet werden, anzupassen. Für Geländeschatten steuert Sichtbarkeit die Stärke des Geländeschattierungseffekts.
 
 ### Zoomstufen {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Die Funktion *Zoomstufen* ermöglicht es Ihnen, die minimalen und maximalen Werte der Kartenzoomstufen von 4 bis 19 festzulegen, bei denen die Schummerungs- oder Neigungskartenebenen angezeigt werden.
+
+Zoomstufen sind für Geländeschatten nicht verfügbar, da diese Visualisierung dynamisch gerendert wird und nicht von der Sichtbarkeitsspanne der Rasterebene abhängt.
 
 ### Cache-Größe {#cache-size}
 
@@ -368,7 +379,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 
 Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstelle von flachen Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert und verwenden Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. Wenn [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) Durchgänge durch Gebäude mit dem Tag `tunnel=building_passage` enthalten, rendert OsmAnd sichtbare Öffnungen im 3D-Gebäudemodell, sodass Straßen oder Fußwege, die durch das Gebäude führen, korrekt angezeigt werden. 
 
-3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können. Wenn ein POI oder ein ausgewählter Ort (z. B. ein Kartenstift oder Navigationsziel) in einem Gebäude liegt, hebt OsmAnd das entsprechende Gebäude hervor, um es leichter auf der Karte zu identifizieren.
+3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können. Beim Zoomen und Verschieben der Karte erscheinen und verschwinden 3D-Gebäude mit einer sanften Überblendungsanimation. Wenn ein POI oder ein ausgewählter Ort (z. B. ein Kartenstift oder Navigationsziel) in einem Gebäude liegt, hebt OsmAnd das entsprechende Gebäude hervor, um es leichter auf der Karte zu identifizieren.
 
 Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Hauptschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
 
@@ -417,7 +428,7 @@ Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude g
 
 **<Translate android="true" ids="level_of_details"/>** bestimmt die Komplexität der 3D-Gebäudengeometrie:
 - Niedrig (Standard) — einfachere Geometrie.
-- Hoch — detailliertere Geometrie.
+- Hoch — detailliertere Geometrie. Die Überblendungsanimation für 3D-Gebäude ist nur mit dieser Einstellung verfügbar.
 
 **<Translate android="true" ids="view_distance"/>** steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
 - Nah (Standard) — rendert Gebäude näher bei Ihnen.

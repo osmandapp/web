@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title:  Karten & Daten
 ---
@@ -180,6 +180,26 @@ Wenn Sie versuchen, einen Ort mit der Struktur *Stadt → Straße → Hausnummer
 - **Problem mit Nominatim**. Das Haus ist möglicherweise in OpenStreetMap vorhanden, wird aber über Nominatim (die von OpenStreetMap verwendete Suchmaschine) nicht gefunden. Sie können [hier](https://wiki.openstreetmap.org/wiki/Addresses) mehr darüber erfahren, wie Sie adressbezogene Probleme beheben können.
 
 - **Mögliches Problem in OsmAnd**. Wenn das Haus in Nominatim vorhanden ist, aber in OsmAnd immer noch nicht gefunden wird, könnte das Problem spezifisch für OsmAnd sein. Sie können zur Lösung beitragen, indem Sie weiter nachforschen. Weitere Details finden Sie in diesem [technischen Artikel](../../technical/algorithms/trace-address-search-issues.md).
+
+### UK-Postleitzahlen mit einer benutzerdefinierten POI-Datei suchen {#search-uk-postcodes-using-a-custom-poi-file}
+
+Wenn eine britische Postleitzahl nicht über *Menü → Suche → Adresse* gefunden werden kann, ist sie möglicherweise nicht im Adresssuchindex von OsmAnd verfügbar.
+
+Eine von der Community gepflegte UK-Postleitzahlen-POI-Datei ist als benutzerdefinierte `.obf`-Datei verfügbar. Sie enthält Postleitzahlen, die als Points of Interest (POIs) mit Koordinaten gespeichert sind, und kann verwendet werden, um direkt nach Postleitzahlen zu suchen.
+
+So verwenden Sie sie:
+
+1. Laden Sie die Datei `UK_postcodes_poi_europe.obf` aus dem [Community-Repository](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605) herunter.
+
+2. Wenn die Datei als ZIP-Archiv heruntergeladen wurde, entpacken Sie sie zuerst.
+
+3. Kopieren Sie die `.obf`-Datei in den OsmAnd-Datenordner oder öffnen Sie sie mit einem Dateimanager auf Ihrem Gerät und wählen Sie **OsmAnd** zum Importieren.
+
+4. Verwenden Sie die allgemeine **Such**-Funktion (Lupensymbol) anstelle der **Adress**-Suche.
+
+5. Geben Sie eine Postleitzahl (z. B. CT14 8EU oder EX34 7EX) in die Suchleiste ein.
+
+**HINWEIS:** Einige Postleitzahlen können mehrmals in den Suchergebnissen erscheinen, da sowohl die standardmäßigen OsmAnd-Kartendaten als auch die benutzerdefinierte Postleitzahlen-POI-Datei dieselbe Postleitzahl enthalten können.
 
 
 ## Tracks und Punkte {#tracks-and-points}

@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title:  My Places
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-**Meine Orte** ist die zentrale Anlaufstelle in der OsmAnd-App zur Verwaltung und Anpassung aller persönlichen Daten. In diesem Bereich können Sie [Favoritenpunkte](#favorites) organisieren, die als wichtig oder häufig besucht markiert sind. Der Tab [Tracks](#tracks) ermöglicht es Ihnen, GPX-Dateien anzuzeigen, zu importieren, aufzuzeichnen und zu erstellen, um eine detaillierte Historie Ihrer Routen und Reisen zu führen. Sie können auch Ihre [OpenStreetMap-Bearbeitungen](#openstreetmap-edits) verwalten, was es einfach macht, zu Kartenverbesserungen und -aktualisierungen beizutragen. Das [Audio-/Videonotizen](#audiovideo-notes)-Plugin und die Widgets ermöglichen es Android-Nutzern, Multimedianotizen zu erstellen und zu speichern, die sich auf bestimmte Orte beziehen und so ihren Reisen Kontext verleihen.
+**My Places** ist die zentrale Anlaufstelle in der OsmAnd-App zur Verwaltung und Anpassung aller persönlichen Daten. In diesem Bereich können Sie [Favoritenpunkte](#favorites) organisieren, die als wichtig oder häufig besucht markiert sind. Der Tab [Tracks](#tracks) ermöglicht es Ihnen, GPX-Dateien anzuzeigen, zu importieren, aufzuzeichnen und zu erstellen, um eine detaillierte Historie Ihrer Routen und Reisen zu führen. Sie können auch Ihre [OpenStreetMap-Bearbeitungen](#openstreetmap-edits) verwalten, was es einfach macht, zu Kartenverbesserungen und -aktualisierungen beizutragen. Das [Audio-/Videonotizen](#audiovideo-notes)-Plugin und die Widgets ermöglichen es Android-Nutzern, Multimedianotizen zu erstellen und zu speichern, die sich auf bestimmte Orte beziehen und so ihren Reisen Kontext verleihen. Auf iOS bietet My Places außerdem Zugriff auf gespeicherte [Reiseführer](#travel-guides), mit denen Sie gespeicherte Reiseinhalte organisieren und schnell öffnen können.
 
 ## Meine Orte Menü {#my-places-menu}
 
@@ -28,17 +28,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Orte*  
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Meine Orte Android](@site/static/img/personal/my_places_android_new.png) ![Meine Orte Menü Android](@site/static/img/personal/my_places_menu_android_new.png)
+![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu"/> → Meine Orte*  
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Meine Orte iOS](@site/static/img/personal/my_places_ios_new.png)  ![Meine Orte Menü iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ Meine Orte ist nach Kategorien organisiert. Wählen Sie einen Tab aus, um die en
 
 <TabItem value="android" label="Android">
 
-![Favoritenmenü Android](@site/static/img/personal/favorites_menu_android.png)
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoritenmenü iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,17 +94,17 @@ Detailliertere Anweisungen finden Sie im Artikel [Favoriten](../personal/favorit
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> Tab*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> Tab*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Meine Orte mit Tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -130,7 +134,7 @@ Eine umfassende Anleitung finden Sie im Artikel [Tracks verwalten](../personal/t
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Teilen](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Teilen](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -240,12 +244,15 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
-### Speicher verwalten {#manage-storage}
+### Reiseführer (iOS) {#travel-guides}
 
-Der Menüpunkt *Karten & Ressourcen* im *Hauptmenü* der OsmAnd-Anwendung bietet Zugriff auf die Datenverwaltung aus dem Bereich *Meine Orte*. Der Tab [*Lokal*](../personal/maps-resources.md#local-menu) zeigt Ihnen, wie viel Speicherplatz von allen vorhandenen OsmAnd-Daten auf Ihrem Gerät belegt ist, insbesondere der Bereich *Meine Orte*. Sie können ihn verwenden, um detaillierte Informationen über Ihre Daten zu erhalten und auf deren Verwaltung zuzugreifen. Der Abschnitt kann nur Elemente enthalten, für die Daten heruntergeladen wurden.  
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Überprüfen und verwalten Sie Ihre Daten. Für detaillierte Informationen siehe den Artikel [Karten & Ressourcen](../personal/maps-resources.md).  
+![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
 
+Der Abschnitt **Reiseführer** enthält gespeicherte Reiseführer und Artikel, die für den Offline-Zugriff gespeichert wurden. Sie können Ihre gespeicherten Reiseinhalte über Meine Orte schnell öffnen, organisieren und verwalten. Der Abschnitt Reiseführer wird nur angezeigt, wenn mehr als ein Reiseführer gespeichert wurde.
+
+Detaillierte Informationen finden Sie im Artikel [Reiseführer](../plan-route/travel-guides.md).
 
 ## Verwandte Artikel {#related-articles}
 
@@ -253,5 +260,6 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resour
 - [Favoriten](../personal/favorites.md)
 - [OpenStreetMap-Bearbeitung](../plugins/osm-editing.md)
 - [Audio-/Videonotizen](../plugins/audio-video-notes.md)
+- [Reiseführer](../plan-route/travel-guides.md)
 - [Suchverlauf](../search/search-history.md#export-and-share)
 - [Farbpaletten-Schemata](../personal/color-palette-schemes.md)
