@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
 sidebar_position: 5
 sidebar_label: المسارات
 title: المسارات
@@ -80,14 +80,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 قد تختلف مزامنة المجلدات الذكية حسب المنصة وتكوين المزامنة. للحصول على أفضل النتائج، تأكد من تمكين مزامنة السحابة وتحديثها على جميع الأجهزة.
 
-في قائمة النقاط الثلاث (⋮)، يمكنك تنزيل المجلد الذكي كمجموعة OBF.
+توفر قائمة النقاط الثلاث (⋮) إجراءات إضافية للمجلد الذكي. يمكنك *تنزيل كـ OSF*، أو *تنزيل كمجموعة OBF*، أو *إعادة التسمية*، أو *حذف* المجلد.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## مسارات السحابة {#cloud-tracks}
 
 ستكون مسارات GPX التي لديك في [OsmAnd Cloud](../personal/osmand-cloud.md) متاحة للعرض والتحرير بعد تسجيل الدخول. فقط لمستخدمي **Pro** <ProFeature/> وللمستخدمين في [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (الذين يمكنهم تنزيل بياناتهم حتى بعد انتهاء اشتراكهم في Pro).
+
+عند تحديد مسار، يقوم الخريطة تلقائيًا بتوسيط وتعديل مستوى التكبير لعرض المسار بالكامل ضمن منطقة الخريطة المرئية.
+
+يمكنك أيضًا استخدام زر **التركيز** لإخفاء جميع المفضلات والمسارات الأخرى على الخريطة، مما يسهل مراجعة المسار المحدد. قم بإيقاف وضع التركيز لاستعادة رؤية كائنات الخريطة الأخرى.
 
 الميزات التالية متاحة بعد اختيار مسار سحابي:
 - *المعلومات* - عرض بيانات المسار.

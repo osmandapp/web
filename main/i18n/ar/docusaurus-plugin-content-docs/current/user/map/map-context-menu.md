@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -89,8 +89,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يؤدي النقر على [مسار GPX](../map/tracks/index.md) على الخريطة إلى فتح [قائمة سياق المسار](../map/tracks/track-context-menu.md)، حيث يمكنك الوصول إلى خيارات إضافية متعلقة بالمسار.
-
+يؤدي النقر على [مسار GPX](../map/tracks/index.md) على الخريطة إلى فتح [قائمة سياق المسار](../map/tracks/track-context-menu.md)، حيث يمكنك الوصول إلى خيارات إضافية متعلقة بالمسار. إذا كان الموقع المحدد يحتوي على كائنات خريطة متعددة، فقد يعرض OsmAnd أولاً قائمة **ما هنا**، مما يتيح لك اختيار الكائن المطلوب. بالنسبة لمسارات GPX، تعرض هذه القائمة معلومات ملخصة مثل المسافة والمدة وعدد نقاط المسار والمجلد الذي يُخزن فيه المسار.
 
 
 ### المسارات ومنحدرات التزلج والممرات {#routes-and-trails}
@@ -379,7 +378,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 > *في iOS، يؤدي النقر المطول على صورة إلى فتح قائمة سياق مع إجراءات سريعة.*
 
-لمزيد من المعلومات، انظر: [الصور عبر الإنترنت](https://osmand.net/docs/user/map/popular_places#online-photos) و [عرض المعرض](https://osmand.net/docs/user/map/popular_places#gallery)
+لمزيد من المعلومات، انظر: [الصور عبر الإنترآن](https://osmand.net/docs/user/map/popular_places#online-photos) و [عرض المعرض](https://osmand.net/docs/user/map/popular_places#gallery)
 
 
 ### صور على مستوى الشارع {#street-level-imagery}

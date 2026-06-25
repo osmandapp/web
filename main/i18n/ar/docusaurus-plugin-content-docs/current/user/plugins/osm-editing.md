@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  تعديل OpenStreetMap
 ---
@@ -61,7 +61,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - **<Translate android="true" ids="offline_edition"/>**. إذا تم تمكين هذا الإعداد، يتم حفظ التغييرات أولاً محليًا (زر *حفظ*) ويتم تحميلها عند الطلب. إذا تم تعطيل الإعداد، يتم تحميل التغييرات فورًا (زر *تحميل*).
 - **<Translate android="true" ids="use_dev_url"/>** *(أندرويد فقط)*. يسمح لك بتمكين [dev.openstreetmap.org](https://dev.openstreetmap.org/) بدلاً من [openstreetmap.org](http://openstreetmap.org/) لاختبار تحميل ملاحظات OSM أو النقاط المهمة أو مسارات GPS. عند التمكين، يتم تسجيل خروجك تلقائيًا من OpenStreetMap.org. هذا الإعداد متاح فقط في القائمة عند تمكين *ملحق تطوير OsmAnd*.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. انقر عليه لفتح [*القائمة ← أماكني ← تعديلات OSM*](../personal/myplaces.md). تسرد علامة التبويب هذه ملاحظات OSM غير المحررة. الإجراءات التالية متاحة مع الملاحظة: *تحميل*، *عرض على الخريطة*، *تعديل ملاحظة OSM*، *حذف*. لم تعد الملاحظات التي تم تحميلها أو حذفها معروضة في القائمة.
+- **<Translate android="true" ids="layer_osm_edits"/>**. انقر عليه لفتح [*القائمة ← أماكني ← تعديلات OSM*](../personal/myplaces.md). تسرد علامة التبويب هذه ملاحظات OSM غير المحررة. الإجراءات التالية متاحة مع الملاحظة: *تحميل*، *عرض على الخريطة*، *تعديل ملاحظة OSM*، *حذف*. لم تعد الملاحظات التي تم تحميلها أو حذفها معروضة في القائمة. على iOS، يمكنك أيضًا استخدام وضع التحديد لاختيار عناصر متعددة وتحميلها أو حذفها مرة واحدة.
 
 :::note
 إذا كان لديك اشتراك [OsmAnd Pro](../purchases/android.md#pro-features)، فستظهر التغييرات التي تم إجراؤها على OSM على خريطة OsmAnd الخاصة بك في غضون ساعة واحدة. تأكد من تمكين [التحديثات المباشرة](../personal/maps-resources.md#live-updates).
@@ -138,7 +138,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 يمكنك تمكين أو تعطيل عرض تعديلات OSM كطبقة منفصلة في قسم [إعداد الخريطة](../map/configure-map-menu.md) من *القائمة الرئيسية*. تشمل تعديلات OSM ما يلي:  
 - **ملاحظات OSM (عبر الإنترنت)**. تعرض ملاحظات OpenStreetMap العامة التي أنشأها المستخدمون لتسليط الضوء على مشكلات الرسم أو طلب التحديثات. تُعرض الملاحظات كعلامات تفاعلية يمكن للمساهمين مراجعتها وفتحها وحلها.  
 ![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
-- **تعديلات OSM**. تعرض تعديلات OSM المحلية الخاصة بك المخزنة على الجهاز قبل تحميلها إلى خادم OpenStreetMap. تساعد هذه الطبقة في مراجعة الهندسة والسمات للكائنات التي قمت بتعديلها أو إضافتها.  
+- **تعديلات OSM**. تعرض تعديلات OSM المحلية الخاصة بك المخزنة على الجهاز قبل تحميلها إلى خادم OpenStreetMap. تساعد هذه الطبقة في مراجعة الهندسة والسمات للكائنات التي قمت بتعديلها أو أضافتها.  
 ![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
 - **علامات Fixme**. تسلط الضوء على الكائنات الموسومة بـ fixme=* في OSM. تحتوي هذه العناصر على تعليقات المساهمين التي تشير إلى أن المعلومات غير كاملة أو غير مؤكدة أو تحتاج إلى التحقق الميداني.  
 ![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
@@ -152,10 +152,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يسمح لك ملحق تعديل OpenStreetMap بإنشاء كائنات جديدة على الخريطة تسمى [نقاط الاهتمام أو POI](../map/point-layers-on-map.md#points-of-interest-pois). يمكنك رسم خريطة لمتجر جديد أو معلم مفضل أو مقعد أو مأوى حتى يتمكن الناس من العثور عليها.
 
-١. انقر على الخريطة لوضع نقطة مهمة جديدة، أو انقر على نقطة مهمة لم يتم تحميلها بعد.
-٢. انقر على [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-٣. اختر [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi)، وأضف اسمها ومعلومات أخرى مثل ساعات العمل والموقع الإلكتروني وما إلى ذلك. عند تحديد نقطة مهمة لم يتم تحميلها، يتغير *إنشاء نقطة مهمة* إلى *تعديل نقطة مهمة*.
-٤. بناءً على إعداد [التعديل دون اتصال](#settings)، يمكنك حفظ البيانات محليًا أو [تحميلها](../map/map-context-menu#-upload-poi--osm-note).
+١. انقر على الخريطة لوضع نقطة مهمة جديدة، أو انقر على نقطة مهمة لم يتم تحميلها بعد.٢. انقر على [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+٢. اختر [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi)، وأضف اسمها ومعلومات أخرى مثل ساعات العمل والموقع الإلكتروني وما إلى ذلك. عند تحديد نقطة مهمة لم يتم تحميلها، يتغير *إنشاء نقطة مهمة* إلى *تعديل نقطة مهمة*.
+٣. بناءً على إعداد [التعديل دون اتصال](#settings)، يمكنك حفظ البيانات محليًا أو [تحميلها](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### إضافة علامات {#add-tags}
@@ -193,7 +192,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ٢. انقر على *نوع النقطة المهمة*.
 ٣. أدخل مفتاح *amenity* وقيمة *freeshops* في الحقول المناسبة.
 ٤. املأ بقية البيانات المطلوبة لهذه النقطة المهمة.
-٥. انقر على *إضافة علامة* لإضافة النقطة المهمة الجديدة إلى قاعدة بياناتك.
+٥. انقر على *إضافة علامة* لإضافة النقطة المهمة الجديدة إلى قاعدة بيانك.
 
 تذكر أنه عند إضافة أنواع نقاط مهمة غير مدعومة، من المهم التأكد من إدخال البيانات بشكل صحيح لضمان الأداء الصحيح للتطبيق والمعالجة اللاحقة للمعلومات.
 

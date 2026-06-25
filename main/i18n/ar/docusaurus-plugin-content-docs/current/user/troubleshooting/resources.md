@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -53,6 +53,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | GPX إلى KML | أداة لتحويل ملفات *GPX* من OsmAnd إلى تنسيق *KML*، مع الحفاظ على الأيقونات. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX إلى OsmAnd | نص برمجي بايثون لتحويل ملفات *GPX* المصدرة من iOverlander إلى OsmAnd مع الأيقونات. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| هذه [أداة](https://github.com/acui/osmand_topo_map_generator) لإنشاء خريطة طبوغرافية قابلة للطباعة باستخدام لقطات شاشة من OsmAnd (https://osmand.net). تستخدم الخريطة شبكة UTM وتحتوي على معلومات الانحراف. يتم استخدامها مع بوصلة أو جهاز GPS بإحداثيات UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## الموارد المخصصة {#custom-resources}
 
@@ -65,7 +66,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | اللغة | الوصف | الرابط |
 | :-- | :-- | :-- |
 | الإسبانية  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| الإسبانية  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| الإسبانية  |  Este manual tiene el fin de explicar detalladamente todas las funciones that tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | الإسبانية  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | التشيكية   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | الفرنسية  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -88,7 +89,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 |  أيقونات الموضع ثلاثية الأبعاد  | تضيف هذه الحزمة خيار نموذج ثلاثي الأبعاد للملفات الشخصية (إنها مثال على كيفية إضافة أيقونة ثلاثية الأبعاد خاصة بك إلى OsmAnd). قم بتخصيص المظهر من خلال القائمة: [*قائمة OsmAnd → الإعدادات → الملف الشخصي → مظهر الملف الشخصي → اختر الأيقونات الرابعة والخامسة من أيقونة الموضع*](../personal/profiles.md#profile-appearance). | [أيقونات الموضع ثلاثية الأبعاد](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | مجموعة خرائط AnyGIS عبر الإنترنت | بيانات من [صفحة AnyGIS الإلكترونية](https://anygis.ru/index_en). مجموعة من مصادر الخرائط المختلفة عبر الإنترنت بما في ذلك الخرائط الفضائية والسياحية والتاريخية وغيرها.  | [مجموعة خرائط AnyGIS عبر الإنترنت](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | مفتاح الخريطة غير المتصل بالإنترنت | تضيف هذه الحزمة مفتاح خريطة غير متصل بالإنترنت (الإصدار 1.01؛ 03-04-2024)، يمكن الوصول إليه عبر *القائمة → أماكني → المفضلة → مفتاح الخريطة*. مفتاح الخريطة متاح أيضًا في [هذا الموقع](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [مفتاح الخريطة غير المتصل بالإنترنت](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸الأراضي والمسارات الأمريكية | مجموعة من خرائط الولايات المتحدة المتخصصة، محولة إلى تنسيق OBF لـ OsmAnd، تشمل<ul><li>[الأراضي العامة والمحمية USGS (PAD-US 3.0)، حسب الولاية](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview)،</li><li>[مسارات وطرق USFS، على مستوى البلاد](https://www.fs.usda.gov/visit/maps)،</li><li>[طرق ومسارات BLM، على مستوى البلاد](https://www.blm.gov/maps)،</li><li>[نقاط اهتمام أنشطة الترفيه BLM، على مستوى البلاد](https://www.blm.gov/maps)،</li><li>[الأراضي الخاصة (بيانات الطرود)، لبعض الولايات](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>مزيد من المعلومات على [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸الأراضي والمسارات الأمريكية](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇺🇸الأراضي والمسارات الأمريكية | مجموعة من خرائط الولايات المتحدة المتخصصة، محولة إلى تنسيق OBF لـ OsmAnd، تشمل<ul><li>[الأراضي العامة والمحمية USGS (PAD-US 3.0)، حسب الولاية](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[مسارات وطرق USFS، على مستوى البلاد](https://www.fs.usda.gov/visit/maps),</li><li>[طرق ومسارات BLM، على مستوى البلاد](https://www.blm.gov/maps),</li><li>[نقاط اهتمام أنشطة الترفيه BLM، على مستوى البلاد](https://www.blm.gov/maps),</li><li>[الأراضي الخاصة (بيانات الطرود)، لبعض الولايات](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>مزيد من المعلومات على [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸الأراضي والمسارات الأمريكية](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
 | 🇵🇱 خريطة UMP لبولندا | [UMP](https://ump.waw.pl/) تغطي معظم بولندا مع جهد تطوير مستمر. لفترة طويلة، تم استخدام اسم UMP-pcPL (mapą prawie całej Polski). | [🇵🇱 خريطة UMP لبولندا](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  تتضمن هذه الإضافة نمط خريطة خفيف الوزن يحسن رؤية الطرق غير المعبدة والمسارات في OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
@@ -100,7 +101,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | اسم المصدر | الوصف | الرابط |
 | -- | -- | --|
 | Gravel Roads Seeker | نمط خريطة يقدم تصورًا أفضل لسطح الطريق، ويميز بين الطرق المعبدة وغير المعبدة (صفحة ويب باللغة *الفرنسية*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
-| OsmAnd Rendering GitHUB | مجموعة من الوصول إلى الخرائط عبر الإنترنت، والخرائط الطبوغرافية، والصور الجوية، والموارد الجغرافية الأخرى المتاحة من بعض المؤسسات الجغرافية الرئيسية في بلدان مختلفة. التحديثات مستمرة، ولكن إذا كانت أي ملفات قديمة، يتم تشجيع المستخدمين على الإبلاغ. | [خرائط عبر الإنترنت: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| OsmAnd Rendering GitHUB | مجموعة من الوصول إلى الخرائط عبر الإنترنت، والخرائط الطبوغرافية، والصور الجوية، والموارد الجغرافية الأخرى المتاحة من بعض المؤسسات الجغرافية الرئيسية في بلدان مختلفة. التحديات مستمرة، ولكن إذا كانت أي ملفات قديمة، يتم تشجيع المستخدمين على الإبلاغ. | [خرائط عبر الإنترنت: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | خريطة طبوغرافية مع خيار *إخفاء كل المياه*، ساهم بها [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | تم تصميم المستودع لتوفير أنماط خرائط مخصصة أنشأها المستخدمون لمستخدمين آخرين. |[UniMap من GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | أنماط خرائط غير متصلة بالإنترنت تركز على السكك الحديدية، باستخدام نظام ألوان مشابه لـ [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
@@ -108,7 +109,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) هو نمط خريطة يركز على ركوب الدراجات، ويسلط الضوء على ممرات الدراجات (باللون الأحمر)، ومسارات الدراجات (خطوط زرقاء متقطعة)، ومسارات الدراجات (خطوط حمراء متقطعة)، والطرق ذات حركة مرور المركبات المحدودة، مثل شوارع الدراجات (حدود حمراء صلبة).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) هو نمط خريطة من Holder Tamm يسمح لك باختيار إخفاء كائنات معينة أم لا.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
-| Storm Chasing | [هذا نمط عرض OsmAnd المحسّن لمطاردة العواصف](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Storm Chasing | [هذا نمط عرض OsmAnd المحسّن لمطاردة العواصم](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### الخرائط غير المتصلة بالإنترنت {#offline-maps}
 
