@@ -204,6 +204,9 @@ async function fetchSvgIcon(url) {
             if (response.ok) {
                 return response.text();
             }
+            if (response.status >= 500 || response.status === 429) {
+                svgIconRequests.delete(url);
+            }
             console.warn(`Search icon not found (${response.status}): ${url}`);
 
             return null;

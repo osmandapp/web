@@ -22,6 +22,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     const heightsRef = useRef({});
     const rows = items ?? [];
     const autoMeasure = itemSize == null;
+    const safeHeight = Math.max(1, height || 0);
 
     useImperativeHandle(
         ref,
@@ -61,7 +62,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     return (
         <VariableSizeList
             ref={listRef}
-            height={height}
+            height={safeHeight}
             width={width}
             itemCount={rows.length}
             itemSize={resolveItemSize}

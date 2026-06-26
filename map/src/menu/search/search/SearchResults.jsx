@@ -116,7 +116,7 @@ export default function SearchResults() {
         if (result === EMPTY_SEARCH_RESULT) {
             checkZoomError();
         }
-    }, [zoom]);
+    }, [zoom, result]);
 
     // Calculate page title based on search params
     const pageTitle = useMemo(() => {
@@ -252,9 +252,7 @@ export default function SearchResults() {
     }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
-        if (zoom < MIN_SEARCH_ZOOM) {
-            setErrorZoom(ZOOM_ERROR);
-        }
+        setErrorZoom(zoom < MIN_SEARCH_ZOOM ? ZOOM_ERROR : null);
     }
 
     function getLoc() {
