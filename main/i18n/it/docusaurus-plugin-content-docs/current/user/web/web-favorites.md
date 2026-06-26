@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ Le seguenti azioni sono disponibili:
 - *Condividi* - apre le opzioni di condivisione. Puoi scegliere chi può accedere a questa cartella.
 - *Scarica* - scarica la cartella preferiti scelta.
 - *Elimina* - elimina la cartella preferiti scelta.
+
+Quando selezioni una cartella preferiti, la mappa centra automaticamente e regola il livello di zoom per visualizzare tutti i punti preferiti di quella cartella nell'area visibile della mappa.
+
+Puoi anche utilizzare il pulsante **Focus** per nascondere tutti gli altri preferiti e tracce sulla mappa, semplificando la revisione della cartella selezionata. Disattiva la modalità Focus per ripristinare la visibilità degli altri oggetti della mappa.
 
 ### Condividi {#share}
 

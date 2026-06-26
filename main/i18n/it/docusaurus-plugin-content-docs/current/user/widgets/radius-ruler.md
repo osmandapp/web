@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title:  Righello del raggio e Righello
 ---
@@ -210,6 +210,7 @@ Puoi passare alla **vista 3D** per visualizzare meglio le distanze e il terreno 
 I cerchi del raggio appariranno con profondità, il che è particolarmente utile per la pianificazione di percorsi in aree collinari o ambienti urbani dove il contesto verticale è importante.
 
 
+<!--
 ## Distanza tramite tocco {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -246,6 +247,7 @@ Puoi anche regolare la dimensione del testo dell'etichetta della distanza. Scegl
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | Dimensione testo | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Formato unità | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Guide video {#video-guides}

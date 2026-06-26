@@ -1,5 +1,5 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: 1bbeb6f0c1ba01e3cfc68f72f8d19e49e6c67481fe6111180cf273ab138dd078
 sidebar_position: 5
 title:  Schemi di colori
 ---
@@ -34,7 +34,7 @@ I dati della palette di colori sono disponibili nel menu [*Maps & Resources*](..
 
 Andare su: *Menu → Maps & Resources → Local → Colors*
 
-![Palette](@site/static/img/personal/color-schemes/colors.png)
+![Palettes](@site/static/img/personal/color-schemes/colors.png)
 
 </TabItem>
 
@@ -42,7 +42,7 @@ Andare su: *Menu → Maps & Resources → Local → Colors*
 
 Andare su: *Menu → Maps & Resources → Local → Colors*
 
-![Palette di colori](@site/static/img/personal/color-schemes/color_palette_ios.png)
+![Color palette](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
 </TabItem>
 
@@ -57,21 +57,21 @@ Andare su: *Menu → Maps & Resources → Local → Colors*
 
 <TabItem value="android" label="Android">
 
-![Palette](@site/static/img/personal/color-schemes/palette_new.png) ![Palette](@site/static/img/personal/color-schemes/palette_new_2.png)
+![Palettes](@site/static/img/personal/color-schemes/palette_new.png) ![Palettes](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Palette di colori](@site/static/img/personal/color-schemes/palette_ios.png) ![Palette di colori](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Color palette](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-I file del terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiscono 3 [visualizzazioni del terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Ombreggiatura, Pendenza* e *Altitudine*. Per ogni tipo si possono avere più palette, ad esempio, la *pendenza da valanga* è fornita di default. Vedere l'articolo [Topografia](../plugins/topography.md#default-color-scheme) per maggiori dettagli.
+I file del terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiscono 3 [visualizzazioni del terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope* e *Altitude*. Per ogni tipo si possono avere più palette, ad esempio, la *avalanche slope* è fornita di default. Vedere l'articolo [Topografia](../plugins/topography.md#default-color-scheme) per maggiori dettagli.
 
-Su Android, le palette per gli schemi di colori *Pendenza* e *Altitudine* possono anche essere create o modificate direttamente nell'app utilizzando l'[editor Palette di colori](../plugins/topography.md#modify-color-scheme). Si tratta di una funzionalità a pagamento <ProFeature />.
+Su Android, le palette per gli schemi di colori *Slope* e *Altitude* possono anche essere create o modificate direttamente nell'app utilizzando l'[editor Palette di colori](../plugins/topography.md#modify-color-scheme). Si tratta di una funzionalità a pagamento <ProFeature />.
 
 ### Tracce e Percorsi {#tracks-routes}
 
@@ -79,13 +79,13 @@ Su Android, le palette per gli schemi di colori *Pendenza* e *Altitudine* posson
 
 <TabItem value="android" label="Android">
 
-![Palette](@site/static/img/personal/color-schemes/track_palette_android.png) 
+![Palettes](@site/static/img/personal/color-schemes/track_palette_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Palette di colori](@site/static/img/personal/color-schemes/track_palette_ios.png) 
+![Color palette](@site/static/img/personal/color-schemes/track_palette_ios.png) 
 
 </TabItem>
 
@@ -93,8 +93,8 @@ Su Android, le palette per gli schemi di colori *Pendenza* e *Altitudine* posson
 
 Le visualizzazioni a gradiente di linea utilizzano file di palette (`route_<type_name>_<palette_name>.txt`) per colorare le tracce GPX e i Percorsi:
 
-- Per i [Percorsi](../navigation/guidance/map-during-navigation.md#color): *Velocità (`route_speed_default.txt`), Pendenza (`route_slope_default.txt`)* e *Elevazione (Altitudine) (`route_elevation_default.txt`)*.
-- Per le [Tracce GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocità, Pendenza, Velocità Massima (`route_maxspeed_default.txt`)* e *Elevazione (Altitudine)*, o info da *sensori esterni*.
+- Per i [Percorsi](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_default.txt`), Slope (`route_slope_default.txt`)* e *Elevation (Altitude) (`route_elevation_default.txt`)*.
+- Per le [Tracce GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_default.txt`)* e *Elevation (Altitude)*, o info da *External sensors*.
 
 Su Android, le palette possono anche essere create o modificate direttamente nell'app utilizzando l'[editor Palette di colori](../map/tracks/appearance.md#color-palette-editor). Si tratta di una funzionalità a pagamento <ProFeature />.
 
@@ -104,19 +104,19 @@ Su Android, le palette possono anche essere create o modificate direttamente nel
 
 <TabItem value="android" label="Android">
 
-![Palette](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palette](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
+![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Palette di colori](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
+![Color palette](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-La palette `user_palette_default.txt` è utilizzata per i colori predefiniti assegnati a [Preferiti](./favorites.md#edit--replace--delete) e [Waypoint](https://osmand.net/docs/user/navigation/setup/gpx-navigation#waypoints).
+La palette `user_palette_default.txt` è utilizzata per i colori predefiniti assegnati a [Preferiti](./favorites.md#edit--replace--delete) e [Waypoints](https://osmand.net/docs/user/navigation/setup/gpx-navigation#waypoints).
 
 ### Meteo {#weather}
 
@@ -166,7 +166,7 @@ Se è necessario modificare un file di palette esistente all'interno di OsmAnd (
 
 Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Esportazione Azioni Profili Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Esportazione Azioni Profili iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Esportazione Azioni Profili iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -192,9 +192,9 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="colore"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="colore"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="colore"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
     </tr>
 </table>
 
@@ -209,17 +209,17 @@ La legenda viene generata automaticamente in base alla palette selezionata e mos
 
 <TabItem value="android" label="Android">
 
-Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aggiungi azione → <Translate ios="true" ids="configure_map"/> → Cambia schema colori Terreno*
+Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aggiungi azione → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Schema colori](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Schema colori](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Aggiungi azione → <Translate ios="true" ids="configure_map"/> → Cambia schema colori Terreno*
+Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Aggiungi azione → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Palette di colori](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Palette di colori](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
 
 </TabItem>
 
