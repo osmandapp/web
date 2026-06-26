@@ -31,6 +31,8 @@ export const DEFAULT_ICON_SIZE = 24;
 export const POI_ICONS_FOLDER = 'poi-icons-svg';
 export const SHADERS_FOLDER = 'map-shaders-svg';
 export const MAP_ICONS_FOLDER = 'map-icons-svg';
+export const POI_ICON_TYPE = 'poi';
+export const MAP_ICON_TYPE = 'map';
 export const ICONS_PREFIX = 'mx_';
 export const COLORED_ICONS_PREFIX = 'c_mx_';
 export const SHADERS_PREFIX = 'h_';
@@ -172,7 +174,7 @@ export function getPoiCategoryIcon({ icon, color, background }) {
     const isize = 18;
     const offsetX = (allIconSize - isize) / 2; // Center the image horizontally
     const offsetY = (allIconSize - isize) / 2; // Center the image vertically
-    const src = getIconUrlByName('poi', PoiManager.preparePoiFilterIcon(icon));
+    const src = getIconUrlByName(POI_ICON_TYPE, PoiManager.preparePoiFilterIcon(icon));
 
     const html = `<svg viewBox="0 0 ${allIconSize} ${allIconSize}" width="${bsize}" height="${bsize}" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(${(allIconSize - bsize) / 2}, ${(allIconSize - bsize) / 2})">
@@ -261,6 +263,9 @@ export function removeShadowFromIconWpt(svgHtml) {
 }
 
 export function changeIconColor(svgHtml, color) {
+    if (!svgHtml) {
+        return svgHtml;
+    }
     const colorPattern = /(<path[^>]*fill=")[^"]*(")/g;
     const strokePattern = /(<path[^>]*stroke=")[^"]*(")/g;
     svgHtml = svgHtml.replace(colorPattern, `$1${color}$2`);
@@ -452,11 +457,11 @@ export const resolvedPoiCategories = (() => {
 })();
 
 export function getIconUrlByName(type, name) {
-    if (type === 'poi') {
+    if (type === POI_ICON_TYPE) {
         if (poiIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
             return `/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${name}.svg`;
         } else return `/map/images/${POI_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;
-    } else if (type === 'map') {
+    } else if (type === MAP_ICON_TYPE) {
         if (mapIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
             return `/map/images/${MAP_ICONS_FOLDER}/${ICONS_PREFIX}${name}.svg`;
         } else return `/map/images/${MAP_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;

@@ -186,11 +186,19 @@ export default function SearchLayer() {
     }, [ctx.favorites]);
 
     useEffect(() => {
+        let cancelled = false;
         const updateAsyncLayers = async () => {
             if (searchLayers.current) {
                 const newLayers = await createSearchLayer({
-                    objList: filterByVisibleLevel(ctx.searchResult?.features, ctx.spatialSearch, ctx.searchVisibleLevel),
+                    objList: filterByVisibleLevel(
+                        ctx.searchResult?.features,
+                        ctx.spatialSearch,
+                        ctx.searchVisibleLevel
+                    ),
                 });
+                if (cancelled) {
+                    return;
+                }
                 searchLayers.current.clearLayers();
                 newLayers.eachLayer((l) => {
                     searchLayers.current.addLayer(l);
@@ -208,6 +216,10 @@ export default function SearchLayer() {
         } else if (!ctx.visibleBounds?.equals(newBounds)) {
             ctx.setVisibleBounds(newBounds);
         }
+
+        return () => {
+            cancelled = true;
+        };
     }, [zoom, move]);
 
     useEffect(() => {
@@ -287,7 +299,11 @@ export default function SearchLayer() {
             } else {
                 if (ctx.searchResult?.features && !ctx.searchQuery?.type) {
                     const layers = await createSearchLayer({
-                        objList: filterByVisibleLevel(ctx.searchResult.features, ctx.spatialSearch, ctx.searchVisibleLevel),
+                        objList: filterByVisibleLevel(
+                            ctx.searchResult.features,
+                            ctx.spatialSearch,
+                            ctx.searchVisibleLevel
+                        ),
                     });
                     searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
@@ -314,7 +330,8 @@ export default function SearchLayer() {
     }
 
     async function createSearchLayer({ objList }) {
-        const innerCache = await createPoiCache({ poiList: objList, poiIconCache: ctx.poiIconCache });
+        const visibleObjList = filterByVisibleBounds(objList, getVisibleBboxInfo(ctx, map)?.bounds);
+        const innerCache = await createPoiCache({ poiList: visibleObjList, poiIconCache: ctx.poiIconCache });
         updatePoiCache(ctx, innerCache);
 
         const center = map.getCenter();
@@ -322,7 +339,7 @@ export default function SearchLayer() {
         const latitude = center.lat;
         // FAVORITE and GPX_TRACK are user objects rendered by their own layers — skip map markers for them.
         const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK]);
-        const mapMarkerFeatures = (objList ?? []).filter((f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE]));
+        const mapMarkerFeatures = visibleObjList.filter((f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE]));
 
         const { mainMarkers, secondaryMarkers } = clusterMarkers({
             places: mapMarkerFeatures,
@@ -458,4 +475,17 @@ function filterByVisibleLevel(features, spatialSearch, visibleLevel) {
     if (!spatialSearch) return features;
 
     return (features ?? []).filter((f) => (f?.properties?.[WEB_VISIBLE_LEVEL] ?? 0) <= visibleLevel);
+}
+
+function filterByVisibleBounds(features, bounds) {
+    if (!bounds) return features ?? [];
+
+    return (features ?? []).filter((f) => {
+        const coord = f?.geometry?.coordinates;
+        if (!coord) {
+            return false;
+        }
+
+        return bounds.contains(L.latLng(coord[1], coord[0]));
+    });
 }
