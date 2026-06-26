@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -89,8 +89,7 @@ Quando si effettua un **tocco lungo** in un punto qualsiasi della mappa, appare 
 
 </Tabs>
 
-Toccando una [traccia GPX](../map/tracks/index.md) sulla mappa si apre il [menu contestuale della traccia](../map/tracks/track-context-menu.md), dove è possibile accedere a opzioni aggiuntive relative alla traccia.
-
+Toccando una [traccia GPX](../map/tracks/index.md) sulla mappa si apre il [menu contestuale della traccia](../map/tracks/track-context-menu.md), dove è possibile accedere a opzioni aggiuntive relative alla traccia. Se la posizione selezionata contiene più oggetti della mappa, OsmAnd potrebbe prima visualizzare l'elenco **Cosa c'è qui**, consentendo di scegliere l'oggetto desiderato. Per le tracce GPX, questo elenco mostra informazioni di riepilogo come distanza, durata, numero di waypoint e la cartella in cui è memorizzata la traccia.
 
 
 ### Percorsi, piste da sci e sentieri {#routes-and-trails}
@@ -670,7 +669,7 @@ Per saperne di più sullo strumento [Pianifica un percorso](../plan-route/create
 
 Per aggiornare o scaricare mappe online (tasselli) in una posizione specifica, è possibile utilizzare il menu contestuale dell'oggetto:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* e per *Aggiorna*, andare su: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Aggiorna*, andare su: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
 - **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* e *<Translate ios="true" ids="update_tile"/>*.  
 
 Si prega di leggere le [istruzioni complete](../map/raster-maps.md#download--update-tiles).  

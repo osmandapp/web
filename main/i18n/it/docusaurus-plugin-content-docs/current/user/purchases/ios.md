@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -55,9 +55,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -139,6 +139,7 @@ Al momento, l'abbonamento Pro include le seguenti funzionalità:
 | [Plugin Metriche veicolo (OBD-II)](../plugins/vehicle-metrics.md) | Permette di collegare uno scanner OBD-II per visualizzare dati dettagliati del veicolo nell'app OsmAnd e memorizzare le informazioni nelle registrazioni delle tracce. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili per OsmAnd gratuito.  |
 | [Personalizza linea del percorso](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modifica del colore e della larghezza della linea del percorso durante la navigazione. |
 | [Modifica schema colori](../../user/plugins/topography.md#modify-color-scheme) | Consente di personalizzare l'aspetto della mappa selezionando o importando palette di colori. È possibile modificare gli schemi integrati o utilizzare i propri file di palette per personalizzare i colori della mappa e del percorso. |
+| [Cartelle Smart – Organizza per](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Consente di organizzare le tracce nelle Cartelle Smart utilizzando parametri di raggruppamento avanzati come data e ora, distanza, durata, velocità, altitudine ed elevazione e dati dei sensori. Queste opzioni consentono una categorizzazione più dettagliata delle tracce e un'analisi flessibile. |
 
 
 ## Come acquistare {#how-to-buy}

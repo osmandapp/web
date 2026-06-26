@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title:  Tipi di percorsi
 ---
@@ -32,17 +32,17 @@ Puoi configurare il filtraggio di alcuni tipi di percorsi nel menu [Configura ma
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Puoi trovare maggiori informazioni nell'articolo [Legenda della mappa](../../map-legend/index.md).
+Puoi trovare maggiori informazioni nell'articolo [Legenda della mappa](../../map-legend/osmand.md#cycling).
 
 
 ## Mountain bike {#mountain-bike}
 
 I percorsi MTB hanno una mappatura specifica in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) e possono essere selezionati separatamente dai percorsi ciclabili.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Mostra i sentieri secondo la scala MTB. Ulteriori informazioni sono nell'articolo [Legenda della mappa](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Mostra i sentieri secondo la scala MTB. Ulteriori informazioni sono nell'articolo [Legenda della mappa](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Mostra i sentieri MTB secondo l'International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Ulteriori informazioni sono nell'articolo [Legenda della mappa](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Mostra i sentieri MTB secondo l'International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Ulteriori informazioni sono nell'articolo [Legenda della mappa](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Escursionismo / Camminata {#hiking--walking}
@@ -63,7 +63,7 @@ I percorsi MTB hanno una mappatura specifica in [OpenStreetMap](https://wiki.ope
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-La funzione **Sentieri per moto da cross** consente di visualizzare sulla mappa percorsi specifici per moto da cross in base al tag `dirtbike:scale`. Questa scala evidenzia i sentieri adatti alla moto da cross, con una sovrapposizione colorata che mostra i livelli di difficoltà ([Legenda della mappa](../../map-legend/osmand.md#routes)).  
+La funzione **Sentieri per moto da cross** consente di visualizzare sulla mappa percorsi specifici per moto da cross in base al tag `dirtbike:scale`. Questa scala evidenzia i sentieri adatti alla moto da cross, con una sovrapposizione colorata che mostra i livelli di difficoltà ([Legenda della mappa](../../map-legend/osmand.md#dirtbike-scale)).  
 
 Puoi attivare questa funzione in *Menu → Configura mappa → Percorsi → Percorsi per moto da cross*. Il sistema funziona in modo simile alla scala MTB, offrendo una rappresentazione visiva dei percorsi pensati per la moto da cross — ulteriori informazioni sul [tag `dirtbike` sono disponibili qui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 

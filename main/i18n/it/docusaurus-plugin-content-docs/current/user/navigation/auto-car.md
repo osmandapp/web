@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -222,6 +222,8 @@ Il widget **Prossima svolta** visualizza la distanza e il tipo della [prossima m
 
 ### Info percorso {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Le informazioni sul percorso consistono in:
 
 - [Tempo di viaggio stimato](../widgets/nav-widgets.md#time-to-destination),
@@ -229,6 +231,8 @@ Le informazioni sul percorso consistono in:
 - [Distanza di viaggio](../widgets/nav-widgets.md#distance-to-destination).
 
 Quando abilitata, **[l'impostazione del widget](#eta-next-stop)** (Info percorso) mostrerà i dettagli del percorso per la fermata successiva ([il punto intermedio](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Toccare il pulsante **X** accanto al widget delle informazioni sul percorso per interrompere la navigazione.
 
 
 ### Avvisi di navigazione {#navigation-alerts}
