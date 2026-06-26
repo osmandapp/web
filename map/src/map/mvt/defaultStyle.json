@@ -1599,7 +1599,7 @@
       "type": "line",
       "source": "osm",
       "source-layer": "osmand",
-      "minzoom": 6,
+      "minzoom": 5,
       "filter": [
         "all",
         ["==", "highway", "trunk"],
