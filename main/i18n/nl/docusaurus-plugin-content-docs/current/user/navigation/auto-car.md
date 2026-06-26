@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -222,6 +222,8 @@ De widget **Volgende afslag** toont de afstand en het type van de [volgende afsl
 
 ### Route-informatie {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Route-informatie bestaat uit:
 
 - [Geschatte reistijd](../widgets/nav-widgets.md#time-to-destination),
@@ -229,6 +231,8 @@ Route-informatie bestaat uit:
 - [Reisafstand](../widgets/nav-widgets.md#distance-to-destination).
 
 Indien ingeschakeld, zal **[de widgetinstelling](#eta-next-stop)** (Route-informatie) routegegevens tonen voor de volgende stop ([het tussenliggende punt](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Tik op de knop **X** naast de widget Route-informatie om de navigatie te stoppen.
 
 
 ### Navigatie-waarschuwingen {#navigation-alerts}

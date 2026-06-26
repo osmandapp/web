@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -53,7 +53,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -87,7 +87,8 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::
 
 - **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
-- **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.  
+- **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.
+- **Show Touches** (*iOS*). Highlights screen touches with visual indicators.
 - **Transparante statusbalk**. De kaart wordt zichtbaar onder de statusbalk.  
 - **Toon banner gratis versie**. Toon de banner van de gratis versie, zelfs in de betaalde versie.  
 - **Toon debug-informatie**. Toon grafische informatie over de plaatsing van elke tekst op de kaart.
@@ -210,11 +211,11 @@ U kunt [Camerapositie-widgets](../widgets/info-widgets.md#camera-widgets) gebrui
 
 </Tabs>  
 
-De Camerakanteling-widget geeft de helling weer tussen de centrale kijkvector van de camera (kijker) en een denkbeeldige vlakke ondergrond van de aarde. De standaardwaarde is 90 graden (geen kanteling).  
+De Camerakanteling-widget geeft de helling weer tussen de centrale kijkvector van de camera (kijder) en een denkbeeldige vlakke ondergrond van de aarde. De standaardwaarde is 90 graden (geen kanteling).  
 
 :::note  
-De camerakanteling wordt gewijzigd door de camera (kijker) te bewegen terwijl het middelpunt op de kaart (waar we naar kijken) hetzelfde blijft. De afstand ernaartoe (in feite, zoom) verandert niet.
-Tegelijkertijd verandert door de denkbeeldige beweging van de kijker de afstand van de camera tot het oppervlak.
+De camerakanteling wordt gewijzigd door de camera (kijder) te bewegen terwijl het middelpunt op de kaart (waar we naar kijken) hetzelfde blijft. De afstand ernaartoe (in feite, zoom) verandert niet.
+Tegelijkertijd verandert door de denkbeeldige beweging van de kijder de afstand van de camera tot het oppervlak.
 :::
 
 
@@ -286,7 +287,7 @@ De widget heeft twee weergaven die worden omgeschakeld door erop te tikken:
 
 </Tabs>  
 
-De widget Afstand van camera tot doel toont de afstand tussen de camera (kijker) en het midden van de kaart. Deze afstand wordt weergegeven in meters / kilometers.  
+De widget Afstand van camera tot doel toont de afstand tussen de camera (kijder) en het midden van de kaart. Deze afstand wordt weergegeven in meters / kilometers.  
 
 
 ### Vergelijking met een satellietbeeld {#comparison-with-a-satellite-imagery}

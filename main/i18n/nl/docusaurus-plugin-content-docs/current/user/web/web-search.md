@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Zoeken
 title: Zoeken op de Website
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Het **Zoekmenu** is toegankelijk via het zijpaneel of via het zoekpictogram 🔍 op de kaart. Het bevat:
 
-- [Zoekbalk](#search-bar). Voer trefwoorden in om te zoeken naar specifieke locaties of punten van interesse.  
+- [Zoekbalk](#search-bar). Voer trefwoorden in om te zoeken naar specifieke locaties, punten van interesse, favorieten of tracks. 
 - [Categorieënsectie](#categories). Blader door gecategoriseerde opties voor eenvoudigere POI-zoekopdrachten.  
 - [Verkennen sectie](#explore). Bekijk populaire POI's voor het huidige kaartcentrum en verken plaatsen met foto's op de kaart.
 
@@ -35,7 +35,7 @@ Het **Zoekmenu** is toegankelijk via het zijpaneel of via het zoekpictogram 🔍
 
 ### Zoekbalk {#search-bar}
 
-Gebruik de **Zoekbalk** om specifieke plaatsen of punten van interesse op naam te vinden. Klik op het zoekpictogram, voer uw query in en selecteer een resultaat uit de lijst. Het selecteren van een POI opent het [POI-contextmenu](#poi-context-menu), waar u details kunt bekijken en snelle acties kunt uitvoeren.
+Gebruik de **Zoekbalk** om specifieke plaatsen, punten van interesse, [favorieten](../web/web-favorites.md) en [tracks](../web/web-tracks.md) op naam te vinden. Klik op het zoekpictogram, voer uw query in en selecteer een resultaat uit de lijst. Het selecteren van een POI opent het [POI-contextmenu](#poi-context-menu), terwijl het selecteren van een favoriet of track de bijbehorende details opent, waar u informatie kunt bekijken en snelle acties kunt uitvoeren.
 
 Als u zoekt op een categorienaam, toont het eerste resultaat mogelijk de bijbehorende POI-categorie. Klik op de categorie om het [Categorieën zoeken](#categories)-venster te openen.
 

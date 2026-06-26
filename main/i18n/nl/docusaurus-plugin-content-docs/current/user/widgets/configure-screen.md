@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title:  Scherm configureren
 ---
@@ -613,7 +613,7 @@ De functie *Knopuiterlijk* stelt u in staat om het uiterlijk van knoppen op uw k
 - **Pictogram**. Selecteer uit een lijst met pictogrammen die acties vertegenwoordigen die u al hebt toegevoegd, waardoor het gemakkelijk is om functies in één oogopslag te identificeren.
 - **Hoekstraal**. Pas deze instelling aan om de vorm van de knop te wijzigen, variërend van scherpe, vierkante hoeken tot gladde, afgeronde randen.
 - **Grootte**. Kies de knopgrootte die het beste past bij uw scherm en opvalt zoals nodig. 
-- **Achtergrondondoorzichtheid** (Android) / **Achtergrond** (iOS) . Beheer de zichtbaarheid van de achtergrond van de knop. U kunt deze instellen op volledig zichtbaar of gedeeltelijk transparant, of alleen de frameschaduw en het pictogram weergeven.
+- **Achtergrondondoorzichtigheid** (Android) / **Achtergrond** (iOS) . Beheer de zichtbaarheid van de achtergrond van de knop. U kunt deze instellen op volledig zichtbaar of gedeeltelijk transparant, of alleen de frameschaduw en het pictogram weergeven.
 
 
 ## Overig {#other}
@@ -639,7 +639,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Afstand op tik](../widgets/radius-ruler.md#distance-by-tap). Geeft de mogelijkheid om de afstand van uw positie tot het geselecteerde punt te meten.
+- [Afstand op tik](#distance-by-tap). [⬇](#distance-by-tap)
 - [Snelheidsmeter](../widgets/info-widgets.md#speedometer). Toont de huidige snelheid op basis van GPS-gegevens en de begrensde snelheid op basis van [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Key:maxspeed). De weergegeven gegevens hangen ook af van de instelling [Snelheidslimiet tolerantie](../navigation/guidance/voice-navigation.md#speed-limit) van OsmAnd.
 
 
@@ -668,6 +668,37 @@ Stelt u in staat om de plaatsing van de cursor in te stellen op *[Mijn locatie](
 - **<Translate android="true" ids="position_on_map_center"/>**. De cursor is altijd gepositioneerd in het centrum van het scherm.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mijn locatie* wordt iets onder het centrum van het scherm geplaatst. Deze modus stelt u in staat om meer kaartinformatie vooruit uw beweging te zien, wat nuttig is tijdens navigatie.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Plaats *Mijn locatie* afhankelijk van *[Kaartoriëntatie](../map/interact-with-map.md#map-orientation-modes)* (*Onder* - voor bewegingsrichting, *Centrum* - voor alle anderen).
+
+
+### Afstand op tik {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+De tool **Afstand op tik** stelt u in staat om afstanden tussen punten op de kaart te meten zonder de [Straal-liniaal](../widgets/radius-ruler.md#radius-ruler-widget) te gebruiken of een route te maken.
+
+Er zijn twee gebruiksscenario's:
+
+- **Afstand van uw locatie tot een punt**  
+  Tik ergens op de kaart en er verschijnt een rechte lijn van uw huidige locatie naar het aangeklikte punt, samen met een afstandslabel. De lijn blijft op het scherm staan, zelfs als u elders tikt.
+
+- **Afstand tussen twee willekeurige punten**  
+  Tik tegelijkertijd op twee punten op de kaart (multi-touch). Een lijn verbindt de twee punten en de gemeten afstand wordt weergegeven.
+
+U kunt ook de tekstgrootte van het afstandslabel aanpassen. Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Kies tussen *<Translate android="true" ids="shared_string_normal"/>* (standaard) en *<Translate android="true" ids="shared_string_large"/>* (1,5× groter). Wanneer de optie Groot is geselecteerd, wordt er automatisch extra ruimte toegevoegd tussen de lijn en het label voor betere leesbaarheid. Wijzigingen worden direct toegepast zonder de app opnieuw te starten.
 
 
 ## Acties {#actions}

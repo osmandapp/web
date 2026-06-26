@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Smart Folder (Filter)
 ---
@@ -94,7 +94,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
     - Fietsvermogen, max.
     - Temperatuur, gemiddeld.
     - Temperatuur, max.
-- **Max Snelheid** — Selecteer tracks met specifieke maximale snelheidsbereiken.
+- **Max Snelheid** — Selecteer tracks met specifieke maximale snelheidsbereichen.
 - **Stijgen** en **Dalen** — Filter tracks op basis van positieve of negatieve hoogteverschillen.
 - **Gemiddelde hoogte** en **Max hoogte** — Vind tracks met specifieke gemiddelde of maximale hoogtegegevens.
 - **Aanmaakdatum** — Filter tracks die binnen een bepaald datumbereik zijn gemaakt.
@@ -164,9 +164,7 @@ De nieuw aangemaakte **Slimme Map** zal zijn inhoud automatisch bijwerken met tr
 
 <TabItem value="android" label="Android">
 
-![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, tikt u op het *drie-puntjes menu* ernaast om toegang te krijgen tot de beschikbare acties:
 
@@ -183,7 +181,7 @@ De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het
 U kunt ook de map openen en op het *drie-puntjes menu* in de *rechterbovenhoek* tikken om toegang te krijgen tot extra acties:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
-- **<Translate android="true" ids="organize_by"/>** — Organiseer tracks in de Slimme Map automatisch in groepen op basis van een geselecteerde parameter. Beschikbare groeperingstypen omvatten *Algemeen*, *Datum & tijd*, *Locatie*, *Snelheid*, *Hoogte & elevatie* en *Sensorgegevens*. 
+- **<Translate android="true" ids="organize_by"/>** — Organiseer tracks in de Slimme Map automatisch in groepen op basis van een geselecteerde parameter. Selecteer *Geen* om alle tracks als één lijst weer te geven, overeenkomend met de standaardweergave van de Slimme Map. Beschikbare groeperingstypen omvatten *Algemeen*, *Datum & tijd*, *Locatie*, *Snelheid*, *Hoogte & elevatie* en *Sensorgegevens*. 
 
 Sommige groeperingsparameters zijn alleen beschikbaar met een OsmAnd Pro-abonnement. Gratis parameters omvatten *Activiteit*, *Jaar van aanmaak* en *Dichtstbijzijnde stad*. Alle andere parameters zijn gemarkeerd met een <ProFeature/> label.
 
@@ -191,13 +189,13 @@ Voor numerieke parameters (zoals afstand, duur, snelheid of hoogte) is er een *S
 
 Voor PRO-parameters kunt u de groeperingsinstelling previewen (bijvoorbeeld de stapgrootte-selector openen en zien hoe tracks worden gegroepeerd), maar het toepassen van deze wijzigingen vereist een actief abonnement. Als u een PRO-parameter selecteert of op de Ontgrendel-knop tikt, opent het scherm Kies abonnement. Eerder toegepaste groepering blijft zichtbaar, zelfs als het abonnement verloopt, maar het bewerken of toepassen van nieuwe PRO-gebaseerde groepering vereist een actief abonnement.
 
+Nadat een groeperingsparameter is geselecteerd, worden tracks als groepen weergegeven. Elke groep toont de naam, het pictogram en het aantal tracks dat het bevat. Tik op een groep om de lijst met tracks in die groep te openen. Lege groepen worden niet weergegeven. Gegroepeerde resultaten kunnen alfabetisch worden gesorteerd (A–Z of Z–A) of, voor numerieke parameters, op hoogste of laagste waarden. Lang tikken op een groep toont alle tracks in de groep op de kaart of exporteert alle tracks in de groep.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, *lang tikken* op de mapnaam om toegang te krijgen tot de beschikbare acties:
 
@@ -212,6 +210,15 @@ U kunt ook de map openen en op het icoon in de *rechterbovenhoek* tikken om toeg
 - **<Translate ios="true" ids="shared_string_select"/>** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
 - **<Translate ios="true" ids="edit_filter"/>** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
+- **Organiseren op** — Organiseer tracks in de Slimme Map automatisch in groepen op basis van een geselecteerde parameter. Selecteer *Geen* om alle tracks als één lijst weer te geven, overeenkomend met de standaardweergave van de Slimme Map. Beschikbare groeperingstypen omvatten *Algemeen*, *Datum & tijd*, *Locatie*, *Snelheid*, *Hoogte & elevatie* en *Sensorgegevens*. 
+
+Sommige groeperingsparameters zijn alleen beschikbaar met een OsmAnd Pro-abonnement. Gratis parameters omvatten *Activiteit*, *Jaar van aanmaak* en *Dichtstbijzijnde stad*. Alle andere parameters zijn gemarkeerd met een <ProFeature/> label.
+
+Voor numerieke parameters (zoals afstand, duur, snelheid of hoogte) is er een *Stapgrootte instellen*-dialoog beschikbaar. Gebruik de schuifregelaar om waardebereiken voor groepering te definiëren.
+
+Voor PRO-parameters kunt u de groeperingsinstelling previewen (bijvoorbeeld de stapgrootte-selector openen en zien hoe tracks worden gegroepeerd), maar het toepassen van deze wijzigingen vereist een actief abonnement. Als u een PRO-parameter selecteert of op de Ontgrendel-knop tikt, opent het scherm Kies abonnement. Eerder toegepaste groepering blijft zichtbaar, zelfs als het abonnement verloopt, maar het bewerken of toepassen van nieuwe PRO-gebaseerde groepering vereist een actief abonnement.
+
+Nadat een groeperingsparameter is geselecteerd, worden tracks als groepen weergegeven. Elke groep toont de naam, het pictogram en het aantal tracks dat het bevat. Tik op een groep om de lijst met tracks in die groep te openen. Lege groepen worden niet weergegeven. Gegroepeerde resultaten kunnen alfabetisch worden gesorteerd (A–Z of Z–A) of, voor numerieke parameters, op hoogste of laagste waarden. Lang tikken op een groep toont alle tracks in de groep op de kaart of exporteert alle tracks in de groep.
 
 </TabItem>
 
