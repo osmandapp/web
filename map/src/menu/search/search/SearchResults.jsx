@@ -21,7 +21,6 @@ import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
-import { getDistance, getBearing } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 import useHashParams from '../../../util/hooks/useHashParams';
@@ -181,7 +180,7 @@ export default function SearchResults() {
 
     const memoizedResult = useMemo(() => {
         if (!currentLoc) return null;
-        const { loc, isUser } = getLoc();
+        const { loc } = getLoc();
 
         if (!loc) return null;
 
@@ -194,21 +193,7 @@ export default function SearchResults() {
             return EMPTY_SEARCH_RESULT;
         }
 
-        return features.map((f) => {
-            const lat = f?.geometry?.coordinates[1];
-            const lon = f?.geometry?.coordinates[0];
-            if (!lat || !lon) return f;
-
-            const distance = lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon);
-            const bearing = lon === 0 && lat === 0 ? null : getBearing(loc.lat, loc.lng, lat, lon);
-
-            return {
-                ...f,
-                locDist: distance,
-                bearing: bearing,
-                isUserLocation: isUser,
-            };
-        });
+        return features.map((f) => ({ ...f }));
     }, [currentLoc, ctx.searchResult]);
 
     useEffect(() => {
@@ -282,10 +267,8 @@ export default function SearchResults() {
             } else {
                 loc = getMapCenter(mtx, hash);
             }
-            setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
             loc = getMapCenter(mtx, hash);
-            setLocReady(true);
         }
         return { loc, isUser };
     }
@@ -336,10 +319,30 @@ export default function SearchResults() {
         ctx.searchVisibleLevel < maxVisibleLevel &&
         (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > ctx.searchVisibleLevel) ?? false);
 
+    const { loc: distanceLoc, isUser } = useMemo(
+        () => getLoc(),
+        [currentLoc, ctx.visibleBounds, mtx.visibleBboxInfo, hash]
+    );
+
+    useEffect(() => {
+        if (distanceLoc) {
+            setLocReady(true);
+        }
+    }, [distanceLoc]);
+
     const typeItem = ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID;
     const renderSearchItem = useCallback(
-        (item, index) => <SearchResultItem item={item} index={index} typeItem={typeItem} currentLoc={currentLoc} />,
-        [typeItem, currentLoc]
+        (item, index) => (
+            <SearchResultItem
+                item={item}
+                index={index}
+                typeItem={typeItem}
+                currentLoc={currentLoc}
+                loc={distanceLoc}
+                isUser={isUser}
+            />
+        ),
+        [typeItem, currentLoc, distanceLoc, isUser]
     );
 
     function showMoreResults() {

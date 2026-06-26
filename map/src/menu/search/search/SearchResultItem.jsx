@@ -12,6 +12,7 @@ import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
+import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
@@ -135,7 +136,7 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index, currentLoc }) {
+export default function SearchResultItem({ item, typeItem, index, currentLoc, loc = null, isUser = false }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -185,11 +186,13 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
-        const distance = item.locDist;
-        const bearing = item.bearing;
-        const isUserLocation = item.isUserLocation;
+        const lat = item.geometry?.coordinates?.[1];
+        const lon = item.geometry?.coordinates?.[0];
+        const hasCoords = loc && lat != null && lon != null && !(lat === 0 && lon === 0);
+        const distance = hasCoords ? getDistance(loc.lat, loc.lng, lat, lon) : null;
+        const bearing = hasCoords ? getBearing(loc.lat, loc.lng, lat, lon) : null;
         const icon = item.icon;
-        return { ...res, icon, distance, bearing, isUserLocation };
+        return { ...res, icon, distance, bearing, isUserLocation: isUser };
     }
 
     const id = (() => {
