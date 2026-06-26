@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
 sidebar_position: 4
 title:  Profiles (Settings)
 ---
@@ -617,7 +617,7 @@ Aktionen mit dem ausgewählten Profil:
 - **Profil löschen**:
     - Diese Aktion ist nur für *Android* und nur für ein *benutzerdefiniertes Profil* verfügbar.
     - Standardprofile können nicht gelöscht werden.
-    - Um ein Profil hinzuzufügen, gehen Sie zu *Menü → Einstellungen → App-Profile → + Neues Profil*.
+    - Um ein Profil hinzuzufügen, gehen Sie zu *Menü → Einstellungen → App-Profil → + Neues Profil*.
 
 
 ## Verwandte Artikel {#related-articles}
