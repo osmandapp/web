@@ -4113,12 +4113,60 @@
       }
     },
     {
-      "id": "place-prominent-island",
+      "id": "place-islet",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "osmand",
+      "minzoom": 12,
+      "maxzoom": 19,
+      "filter": [
+        "all",
+        ["in", "place", "islet"],
+        ["!=", "hide_caption", "yes"]
+      ],
+      "layout": {
+        "text-size": 12,
+        "visibility": "visible",
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Italic"]
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-color": "rgba(255, 255, 255, 0.78)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "place-island",
+      "type": "symbol",
+      "source": "osm",
+      "source-layer": "osmand",
+      "minzoom": 10,
+      "maxzoom": 17,
+      "filter": [
+        "all",
+        ["in", "place", "island"],
+        ["!=", "hide_caption", "yes"]
+      ],
+      "layout": {
+        "text-size": 12,
+        "visibility": "visible",
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Italic"]
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-color": "rgba(255, 255, 255, 0.78)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "place-prominent-islands",
       "type": "symbol",
       "source": "osm",
       "source-layer": "osmand",
       "minzoom": 4,
-      "maxzoom": 14,
+      "maxzoom": 9,
       "filter": [
         "all",
         ["==", "place", "island"],
