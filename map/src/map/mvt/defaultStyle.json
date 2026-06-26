@@ -20,15 +20,6 @@
       "paint": {"background-color": "#f0e8d8"}
     },
     {
-      "id": "area-water",
-      "type": "fill",
-      "source": "osm",
-      "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "water"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#80c0ff"}
-    },
-    {
       "id": "area-coastline",
       "type": "fill",
       "source": "osm",
@@ -69,6 +60,16 @@
       "source-layer": "osmand",
       "filter": ["all", ["==", "landuse", "residential"]],
       "paint": {"fill-color": "#e0d8d0"}
+    },
+    {
+      "id": "area-water",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "filter": ["all", ["==", "natural", "water"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff"},
+      "note": "https://www.openstreetmap.org/relation/6200028 (place natural=water after landuse=residential)"
     },
     {
       "id": "area-meadow",
