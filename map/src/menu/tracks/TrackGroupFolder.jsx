@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
@@ -20,6 +20,9 @@ import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
+import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
+import dropOverlayStyles from '../../frame/components/dropOverlay.module.css';
+import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -138,6 +141,13 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
         return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
     }
 
+    const isDropTarget = group && group.type !== SMART_TYPE && !smartf;
+    const folderDragHandlers = useGpxFileDragZone(isDropTarget ? group.fullName : null);
+    const clearGpxDragTarget = useGpxFileDragClearZone();
+    const isFolderDropActive = isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
+    const folderScrollRef = useRef(null);
+    const folderDropZoneRef = useRef(null);
+
     return (
         <>
             <Box
@@ -145,6 +155,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
                 sx={{ overflow: 'hidden' }}
+                {...clearGpxDragTarget}
             >
                 {group && (
                     <GroupHeader
@@ -156,16 +167,37 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                     />
                 )}
                 <Box
+                    ref={folderScrollRef}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        overflowX: 'hidden',
+                        overflowY: 'auto',
+                        minHeight: `${height - 120}px`,
+                        maxHeight: `${height - 120}px`,
+                    }}
                 >
                     {groupItems}
-                    {ctx.trackLoading?.length > 0 &&
-                        ctx.trackLoading.map((lt) => {
-                            return <TrackLoading key={lt} name={lt} />;
-                        })}
-                    {trackItems}
+                    <Box
+                        ref={folderDropZoneRef}
+                        className={isDropTarget ? dropOverlayStyles.folderDropTarget : undefined}
+                        sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
+                        {...(isDropTarget ? folderDragHandlers : {})}
+                    >
+                        <TracksDropHighlight
+                            active={isFolderDropActive}
+                            dropZoneRef={folderDropZoneRef}
+                            scrollRef={folderScrollRef}
+                        />
+                        {ctx.trackLoading?.length > 0 &&
+                            ctx.trackLoading.map((lt) => {
+                                return <TrackLoading key={lt} name={lt} />;
+                            })}
+                        {trackItems}
+                        <Box sx={{ flex: 1, minHeight: 0 }} />
+                    </Box>
                 </Box>
             </Box>
             {isEmptyFolder() && (

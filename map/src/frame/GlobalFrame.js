@@ -41,6 +41,7 @@ import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
 import { hideAllTracks } from '../manager/track/DeleteTrackManager';
 import GlobalGraph from '../graph/mapGraph/GlobalGraph';
+import TracksFileDragController from './TracksFileDragController';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
@@ -56,9 +57,9 @@ const GlobalFrame = () => {
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
-    const [openMainMenu, setOpenMainMenu] = useState(false);
     const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
+    const [openMainMenu, setOpenMainMenu] = useState(false);
 
     const [width, height] = useWindowSize();
     const navigate = useNavigate();
@@ -429,6 +430,7 @@ const GlobalFrame = () => {
                 }}
             >
                 <GlobalConfirmationDialog />
+                <TracksFileDragController />
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
                 <GlobalAlert width={width} />
