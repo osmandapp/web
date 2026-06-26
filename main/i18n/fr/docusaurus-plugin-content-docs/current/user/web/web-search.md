@@ -1,7 +1,7 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
-sidebar_label:  Recherche
+sidebar_label: Recherche
 title: Recherche sur le site web
 ---
 
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Le **menu Recherche** est accessible depuis le panneau latéral ou depuis l'icône de recherche 🔍 sur la carte. Il contient :
 
-- [Barre de recherche](#search-bar). Saisissez des mots-clés pour rechercher des lieux ou des points d'intérêt spécifiques.  
+- [Barre de recherche](#search-bar). Saisissez des mots-clés pour rechercher des lieux spécifiques, des points d'intérêt, des favoris ou des traces.  
 - [Section Catégories](#categories). Parcourez les options classées par catégories pour faciliter les recherches de POI.  
 - [Section Explorer](#explore). Consultez les POI populaires pour le centre actuel de la carte et explorez des lieux avec des photos sur la carte.
 
@@ -35,7 +35,7 @@ Le **menu Recherche** est accessible depuis le panneau latéral ou depuis l'icô
 
 ### Barre de recherche {#search-bar}
 
-Utilisez la **Barre de recherche** pour trouver des lieux ou des points d'intérêt spécifiques par nom. Cliquez sur l'icône de recherche, saisissez votre requête et sélectionnez un résultat dans la liste. Sélectionner un POI ouvre le [Menu contextuel du POI](#poi-context-menu), où vous pouvez consulter les détails et utiliser des actions rapides.
+Utilisez la **Barre de recherche** pour trouver des lieux spécifiques, des points d'intérêt, des [favoris](../web/web-favorites.md) et des [traces](../web/web-tracks.md) par nom. Cliquez sur l'icône de recherche, saisissez votre requête et sélectionnez un résultat dans la liste. Sélectionner un POI ouvre le [Menu contextuel du POI](#poi-context-menu), tandis que la sélection d'un favori ou d'une trace ouvre ses détails, où vous pouvez consulter les informations et utiliser des actions rapides.
 
 Si vous recherchez par nom de catégorie, le premier résultat peut afficher la catégorie de POI correspondante. Cliquez sur la catégorie pour ouvrir la vue [Recherche par catégories](#categories).
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title:  Mes Lieux
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-**Mes Lieux** est le hub central de l'application OsmAnd pour gérer et personnaliser toutes les données personnelles. Vous pouvez utiliser cette section pour organiser les [points favoris](#favorites) marqués comme importants ou fréquemment visités. L'onglet [Traces](#tracks) vous permet de visualiser, importer, enregistrer et créer des fichiers GPX pour vous aider à conserver un historique détaillé de vos itinéraires et voyages. Vous pouvez également gérer vos [Modifications OpenStreetMap](#openstreetmap-edits), ce qui facilite la contribution aux améliorations et mises à jour de la carte. Le plugin et les widgets [Notes Audio / Vidéo](#audiovideo-notes) permettent aux utilisateurs Android de créer et d'enregistrer des notes multimédias liées à des lieux spécifiques, ajoutant du contexte à leurs voyages.
+**Mes Lieux** est le hub central de l'application OsmAnd pour gérer et personnaliser toutes les données personnelles. Vous pouvez utiliser cette section pour organiser les [points favoris](#favorites) marqués comme importants ou fréquemment visités. L'onglet [Traces](#tracks) vous permet de visualiser, importer, enregistrer et créer des fichiers GPX pour vous aider à conserver un historique détaillé de vos itinéraires et voyages. Vous pouvez également gérer vos [Modifications OpenStreetMap](#openstreetmap-edits), ce qui facilite la contribution aux améliorations et mises à jour de la carte. Le plugin et les widgets [Notes Audio / Vidéo](#audiovideo-notes) permettent aux utilisateurs Android de créer et d'enregistrer des notes multimédias liées à des lieux spécifiques, ajoutant du contexte à leurs voyages. Sur iOS, Mes Lieux donne également accès aux [Guides de voyage](#travel-guides) mis en signet, vous permettant d'organiser et d'ouvrir rapidement le contenu de voyage enregistré.
 
 ## Menu Mes Lieux {#my-places-menu}
 
@@ -28,17 +28,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Aller à : *<Translate android="true" ids="shared_string_menu"/> → Mes Lieux*  
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Mes Lieux Android](@site/static/img/personal/my_places_android_new.png) ![Menu Mes Lieux Android](@site/static/img/personal/my_places_menu_android_new.png)
+![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate android="true" ids="shared_string_menu"/> → Mes Lieux*  
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Mes Lieux iOS](@site/static/img/personal/my_places_ios_new.png)  ![Menu Mes Lieux iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ Mes Lieux est organisé par catégories. Sélectionnez un onglet pour gérer les
 
 <TabItem value="android" label="Android">
 
-![Menu Favoris Android](@site/static/img/personal/favorites_menu_android.png)
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Favoris iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,17 +94,17 @@ Pour des instructions complètes, consultez l'article [Favoris](../personal/favo
 
 <TabItem value="android" label="Android">
 
-Aller à : onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Mes Lieux avec des traces sur Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : onglet *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Mes Lieux avec des traces sur iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -128,17 +132,17 @@ Pour un guide complet, consultez l'article [Gérer les traces](../personal/track
 
 <TabItem value="android" label="Android">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Partager](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Partager](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -179,7 +183,7 @@ Consultez le [plugin d'édition OSM](../plugins/osm-editing.md) pour des instruc
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Plugin audio vidéo Menu Mes Lieux Trois actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
 Le **plugin Notes Audio/Vidéo** vous permet de créer des notes multimédias liées à des emplacements spécifiques sur la carte. Ces notes sont stockées dans **Mes Lieux** sous l'**onglet Notes A/V**.
 
@@ -240,11 +244,22 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
+### Guides de voyage (iOS) {#travel-guides}
+
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+
+![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
+
+La section **Voyage** contient les guides de voyage et articles mis en signet enregistrés pour un accès hors ligne. Vous pouvez rapidement ouvrir, organiser et gérer votre contenu de voyage enregistré depuis Mes Lieux. La section Voyage n'est affichée que lorsqu'au moins deux guides de voyage ont été mis en signet.
+
+Pour des informations détaillées, consultez l'article [Guides de voyage](../plan-route/travel-guides.md).
+
 ## Articles Connexes {#related-articles}
 
 - [Gérer les traces](../personal/tracks/manage-tracks.md#import--export-track)
 - [Favoris](../personal/favorites.md)
 - [Édition OpenStreetMap](../plugins/osm-editing.md)
 - [Notes Audio/Vidéo](../plugins/audio-video-notes.md)
+- [Guides de voyage](../plan-route/travel-guides.md)
 - [Historique de recherche](../search/search-history.md#export-and-share)
 - [Schémas de palette de couleurs](../personal/color-palette-schemes.md)

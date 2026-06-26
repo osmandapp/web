@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -89,8 +89,7 @@ Lorsque vous effectuez un **appui long** n'importe où sur la carte, un **menu c
 
 </Tabs>
 
-Appuyer sur une [trace GPX](../map/tracks/index.md) sur la carte ouvre le [menu contextuel de la trace](../map/tracks/track-context-menu.md), où vous pouvez accéder à des options supplémentaires liées à la trace.
-
+Appuyer sur une [trace GPX](../map/tracks/index.md) sur la carte ouvre le [menu contextuel de la trace](../map/tracks/track-context-menu.md), où vous pouvez accéder à des options supplémentaires liées à la trace. Si l'emplacement sélectionné contient plusieurs objets cartographiques, OsmAnd peut d'abord afficher la liste **Qu'y a-t-il ici**, vous permettant de choisir l'objet souhaité. Pour les traces GPX, cette liste affiche des informations récapitulatives telles que la distance, la durée, le nombre de points de cheminement et le dossier dans lequel la trace est stockée.
 
 
 ### Itinéraires, pistes de ski et sentiers {#routes-and-trails}

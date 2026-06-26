@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title: Types d'itinéraires
 ---
@@ -31,17 +31,17 @@ Vous pouvez configurer le filtrage de certains types d'itinéraires dans le menu
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Itinéraires sur la carte - réseaux de nœuds cyclables](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Vous trouverez plus d'informations dans l'article [Légende de la carte](../../map-legend/index.md).
+Vous trouverez plus d'informations dans l'article [Légende de la carte](../../map-legend/osmand.md#cycling).
 
 
 ## Vélo de montagne {#mountain-bike}
 
 Les itinéraires VTT ont un mappage spécifique dans [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) et peuvent être sélectionnés séparément des itinéraires cyclables.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Affiche les sentiers selon l'échelle VTT. Plus d'informations dans l'article [Légende de la carte](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Affiche les sentiers selon l'échelle VTT. Plus d'informations dans l'article [Légende de la carte](../../map-legend/osmand.md#mtb).  
 ![Itinéraires sur la carte - sentiers VTT](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Affiche les sentiers VTT selon l'International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Plus d'informations dans l'article [Légende de la carte](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Affiche les sentiers VTT selon l'International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Plus d'informations dans l'article [Légende de la carte](../../map-legend/osmand.md#mtb).  
 ![Itinéraires sur la carte - sentiers VTT](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Randonnée / Marche {#hiking--walking}
@@ -62,7 +62,7 @@ Les itinéraires VTT ont un mappage spécifique dans [OpenStreetMap](https://wik
 
 ![Itinéraires sur la carte - Sentiers de moto tout-terrain](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-La fonctionnalité **Sentiers de moto tout-terrain** permet d'afficher sur la carte des itinéraires spécifiques aux motos tout-terrain en fonction de la balise `dirtbike:scale`. Cette échelle met en évidence les sentiers adaptés à la moto tout-terrain, avec une superposition colorée indiquant les niveaux de difficulté ([Légende de la carte](../../map-legend/osmand.md#routes)).  
+La fonctionnalité **Sentiers de moto tout-terrain** permet d'afficher sur la carte des itinéraires spécifiques aux motos tout-terrain en fonction de la balise `dirtbike:scale`. Cette échelle met en évidence les sentiers adaptés à la moto tout-terrain, avec une superposition colorée indiquant les niveaux de difficulté ([Légende de la carte](../../map-legend/osmand.md#dirtbike-scale)).  
 
 Vous pouvez activer cette fonctionnalité dans *Menu → Configurer la carte → Itinéraires → Itinéraires moto tout-terrain*. Le système fonctionne de manière similaire à l'échelle VTT, offrant une représentation visuelle des itinéraires adaptés à la moto tout-terrain — plus d'informations sur la [balise `dirtbike` peuvent être trouvées ici](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 

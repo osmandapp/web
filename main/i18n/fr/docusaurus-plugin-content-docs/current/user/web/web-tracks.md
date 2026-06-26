@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
 sidebar_position: 5
 sidebar_label: Traces
 title: Traces
@@ -80,14 +80,18 @@ Tracks are displayed only if the Smart Folder configuration is supported on the 
 
 Smart Folder synchronization may vary depending on the platform and sync configuration. For the most consistent results, ensure that Cloud sync is enabled and up to date on all devices.
 
-In the three-dot menu (⋮), you can download the Smart Folder as an OBF collection.
+The three-dot menu (⋮) provides additional actions for the Smart Folder. You can *Download as OSF*, *Download as OBF collection*, *Rename*, or *Delete* the folder.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud Tracks {#cloud-tracks}
 
 GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
+
+When you select a track, the map automatically centers and adjusts the zoom level to display the entire track within the visible map area.
+
+You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected track. Turn off Focus mode to restore the visibility of other map objects.
 
 The following features are available after choosin cloud track:
 - *Information* - displaying track data.
