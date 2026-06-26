@@ -125,7 +125,7 @@ export default function MvtLayer({ config }) {
     const mtx = useContext(MapContext);
 
     useEffect(() => {
-        const { style, tileUrl, isActive, popupClassName, errorLabel } = config;
+        const { style, tileUrl, isActive, popupClassName, errorLabel, pane: paneName, paneZIndex } = config;
 
         if (!isActive(mtx.tileURL)) {
             return undefined;
@@ -133,10 +133,19 @@ export default function MvtLayer({ config }) {
 
         window.seIsTilesLoaded = false;
 
+        if (paneName) {
+            const pane = map.getPane(paneName) || map.createPane(paneName);
+            if (paneZIndex !== undefined) {
+                pane.style.zIndex = `${paneZIndex}`;
+            }
+            pane.style.pointerEvents = 'none';
+        }
+
         const glLayer = L.maplibreGL({
             style: createStyle(style, tileUrl),
             interactive: false,
             fadeDuration: 0,
+            ...(paneName ? { pane: paneName } : {}),
         }).addTo(map);
 
         const maplibreMap = glLayer.getMaplibreMap();
