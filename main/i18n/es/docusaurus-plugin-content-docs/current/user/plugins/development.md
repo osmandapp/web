@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
 sidebar_position: 11
 title:  Desarrollo de OsmAnd
 ---
@@ -53,7 +53,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 <TabItem value="ios" label="iOS">  
 
-![Ajustes de desarrollo iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Ajustes de desarrollo iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -88,6 +88,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 - **Simular el primer inicio de la aplicación**. Establece el indicador que señala el primer inicio de la aplicación, manteniendo todos los demás ajustes sin cambios.  
 - **Probar indicaciones de voz**. Seleccione una voz y pruébela reproduciendo anuncios.  
+- **Mostrar toques** (*iOS*). Resalta los toques en pantalla con indicadores visuales.
 - **Barra de estado transparente**. El mapa se vuelve visible debajo de la barra de estado.  
 - **Mostrar banner de la versión gratuita**. Muestra el banner de la versión gratuita incluso en la versión de pago.  
 - **Mostrar información de depuración**. Muestra información gráfica sobre la ubicación de cada texto en el mapa.

@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -248,7 +248,7 @@ Esta sección de la pestaña *Vista general* muestra ***datos de etiquetas*** y 
 
 La función *Actividad* en OsmAnd te permite etiquetar los tracks GPX grabados con actividades específicas para su posterior análisis y organización en carpetas.
 
-- [Etiquetas de actividad para tracks GPX](../../plugins/trip-recording.md#recording-settings). Los tracks grabados y los tracks guardados mediante [Planificar una ruta](../../plan-route/create-route.md) reciben automáticamente un tipo de actividad basado en el perfil utilizado para crearlos. Esto ayuda a categorizarlos y filtrarlos más tarde. Puedes cambiar la actividad manualmente si es necesario.
+- [Etiquetas de actividad para tracks GPX](#description-and-info). Los [tracks grabados](../../plugins/trip-recording.md#recording-settings) y los tracks guardados mediante [Planificar una ruta](../../plan-route/create-route.md) reciben automáticamente un tipo de actividad basado en el perfil utilizado para crearlos. Esto ayuda a categorizarlos y filtrarlos más tarde. Puedes cambiar la actividad manualmente si es necesario.
 - [Filtro de actividad](../../personal/tracks/smart-folder.md#search-filter). Puedes filtrar los tracks GPX grabados por actividad, lo que te permite centrarte en encontrar tipos específicos de grabaciones, como todos los tracks de ciclismo o senderismo.
 - [Gestionar tipos de actividad](../../personal/tracks/manage-tracks.md#selection-mode). Puedes cambiar el tipo de actividad para carpetas o tracks seleccionados utilizando el modo de selección en la pestaña Tracks del menú Mis Lugares.
 - **Lista de actividades**. Las categorías y grupos de actividades se definen en los recursos de OsmAnd. Para desarrolladores y colaboradores, la lista de actividades se mantiene en un formato estructurado en [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalla los grupos y tipos de actividades disponibles.
@@ -398,7 +398,7 @@ Los waypoints son uno de los tipos de puntos disponibles en el mapa. En general,
 
 <TabItem value="ios" label="iOS">
 
-![Menú contextual del track Puntos en iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Menú contextual del track Puntos en iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -408,7 +408,7 @@ En esta pestaña *Puntos*:
 
 - [Mostrar datos de los puntos del track](#display-custom-gpx-tags) y modificar los puntos de tu track (waypoints y puntos de ruta), [eliminarlos y añadir](#points--waypoints) waypoints a un track.
 - Crear y modificar [Grupo (carpeta) de puntos](#waypoint-groups).
-- Centrar el mapa en un waypoint usando el icono de pin en la lista de waypoints (*solo Android*) sin cerrar la lista, lo que te permite previsualizar los waypoints uno por uno.
+- Centrar el mapa en un waypoint usando el icono de pin en la lista de waypoints sin cerrar la lista, lo que te permite previsualizar los waypoints uno por uno.
 
 
 ### Añadir Waypoint a un Track {#add-waypoint-to-a-track}
@@ -671,12 +671,14 @@ La opción **Dividir por tiempo** divide un track en intervalos de duración igu
 
 ![Pestaña de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de división del track por subida/bajada](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Esta opción divide un track en segmentos basados en cambios de elevación. Cada intervalo se clasifica como ***subida***, ***bajada*** o ***plano***. La forma en que se muestran los intervalos y las estadísticas proporcionadas para cada segmento son las mismas que en la sección [Dividir por distancia](#split-by-distance).
+Esta opción divide un track en segmentos basados en cambios de elevación. Cada intervalo se clasifica como ***subida***, ***bajada*** o ***plano***. Los intervalos se muestran en el orden en que aparecen a lo largo del track, y a cada sección de subida, bajada o plana se le asigna su propio número de índice. La lista de intervalos proporciona las mismas estadísticas principales que en la sección [Dividir por distancia](#split-by-distance).
 
 En el mapa, los segmentos están marcados con etiquetas de color al inicio de cada intervalo:
 - **Segmentos de subida** (etiquetas rojas) muestran una flecha hacia arriba, el índice del segmento y la pendiente media en porcentaje (por ejemplo, ↑ 11. 2%).
 - **Segmentos de bajada** (etiquetas verdes) muestran una flecha hacia abajo, el índice del segmento y la pendiente media en porcentaje (por ejemplo, ↓ 12. -2%).
 - **Segmentos planos** (etiquetas azules) muestran la distancia de la sección plana (por ejemplo, 616 m, 411 m).
+
+Toca una etiqueta para abrir el panel de detalles del segmento de subida, bajada o plano seleccionado. El panel de detalles muestra estadísticas del segmento seleccionado, como distancia, duración, ascenso y descenso, altitud, velocidad y datos relacionados con el tiempo.
 
 
 ### Métricas de frecuencia cardíaca {#heart-rate-metrics}

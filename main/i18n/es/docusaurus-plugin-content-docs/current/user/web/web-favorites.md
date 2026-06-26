@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ Las siguientes acciones están disponibles:
 - *Compartir* - abre las opciones de compartición. Puedes elegir quién puede acceder a esta carpeta.
 - *Descargar* - descarga la carpeta de favoritos elegida.
 - *Eliminar* - elimina la carpeta de favoritos elegida.
+
+Al seleccionar una carpeta de favoritos, el mapa se centra automáticamente y ajusta el nivel de zoom para mostrar todos los puntos de favoritos de esa carpeta dentro del área visible del mapa.
+
+También puedes usar el botón **Enfocar** para ocultar todos los demás favoritos y trazados en el mapa, lo que facilita la revisión de la carpeta seleccionada. Desactiva el modo Enfocar para restaurar la visibilidad de otros objetos del mapa.
 
 ### Compartir {#share}
 

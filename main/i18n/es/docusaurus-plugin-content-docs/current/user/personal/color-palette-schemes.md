@@ -1,5 +1,5 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: 1bbeb6f0c1ba01e3cfc68f72f8d19e49e6c67481fe6111180cf273ab138dd078
 sidebar_position: 5
 title:  Esquemas de color
 ---
@@ -63,15 +63,15 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 <TabItem value="ios" label="iOS">
 
-![Paleta de colores](@site/static/img/personal/color-schemes/palette_ios.png) ![Paleta de colores](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Paleta de colores](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Paleta de colores](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Sombreado, Pendiente* y *Altitud*. Para cada tipo puede tener múltiples paletas, por ejemplo, la *pendiente de avalancha* se proporciona por defecto. Consulte el artículo [Topografía](../plugins/topography.md#default-color-scheme) para obtener más detalles.
+Los archivos de terreno (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definen 3 [visualizaciones de terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope* y *Altitude*. Para cada tipo puede tener múltiples paletas, por ejemplo, *avalanche slope* se proporciona por defecto. Consulte el artículo [Topografía](../plugins/topography.md#default-color-scheme) para obtener más detalles.
 
-En Android, las paletas para los esquemas de color de *Pendiente* y *Altitud* también se pueden crear o editar directamente en la aplicación utilizando el [editor de paleta de colores](../plugins/topography.md#modify-color-scheme). Esta es una función de pago <ProFeature />.
+En Android, las paletas para los esquemas de color de *Slope* y *Altitude* también se pueden crear o editar directamente en la aplicación utilizando el [editor de paleta de colores](../plugins/topography.md#modify-color-scheme). Esta es una función de pago <ProFeature />.
 
 ### Pistas y Rutas {#tracks-routes}
 
@@ -93,8 +93,8 @@ En Android, las paletas para los esquemas de color de *Pendiente* y *Altitud* ta
 
 Las visualizaciones de gradiente de línea utilizan archivos de paleta (`route_<type_name>_<palette_name>.txt`) para colorear las pistas GPX y las Rutas:
 
-- Para [Rutas](../navigation/guidance/map-during-navigation.md#color): *Velocidad (`route_speed_default.txt`), Pendiente (`route_slope_default.txt`),* y *Elevación (Altitud) (`route_elevation_default.txt`)*.
-- Para [Pistas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Velocidad, Pendiente, Velocidad máxima (`route_maxspeed_default.txt`)*, y *Elevación (Altitud)*, o información de *sensores externos*.
+- Para [Rutas](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_default.txt`), Slope (`route_slope_default.txt`),* y *Elevation (Altitude) (`route_elevation_default.txt`)*.
+- Para [Pistas GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_default.txt`)*, y *Elevation (Altitude)*, o información de *External sensors*.
 
 En Android, las paletas también se pueden crear o editar directamente en la aplicación utilizando el [editor de paleta de colores](../map/tracks/appearance.md#color-palette-editor). Esta es una función de pago <ProFeature />.
 
@@ -166,7 +166,7 @@ Si necesita cambiar un archivo de paleta existente dentro de OsmAnd (en lugar de
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Acciones de perfiles Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Copia de seguridad local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Acciones de perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Acciones de perfiles Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -199,7 +199,7 @@ Puede importar y exportar todas las paletas de colores personalizadas y por defe
 </table>
 
 
-La leyenda proporciona una forma fácil de ver y entender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**velocidad** para las pistas](../map/tracks/appearance#track-colors-in-gpx-files), el [**tipo de línea** para las rutas](../navigation/guidance/map-during-navigation.md#color), la [**altitud y pendiente** para el terreno](../plugins/topography.md#default-color-scheme), y todas las paletas de colores de las [**capas meteorológicas**](../plugins/weather.md#weather-layers).
+La leyenda proporciona una forma fácil de ver y entender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), el [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), la [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), y todas las paletas de colores de las [**weather layer**](../plugins/weather.md#weather-layers).
 
 La leyenda se genera automáticamente en función de la paleta seleccionada y muestra los pasos de gradiente con las unidades adecuadas (por ejemplo, km/h para la velocidad, % para la pendiente o metros para la altitud).
 
@@ -209,17 +209,17 @@ La leyenda se genera automáticamente en función de la paleta seleccionada y mu
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Añadir acción → <Translate ios="true" ids="configure_map"/> → Cambiar esquema de color del terreno*
+Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Esquema de color](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Esquema de color](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Añadir acción → <Translate ios="true" ids="configure_map"/> → Cambiar esquema de color del terreno*
+Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Add action → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Paleta de colores](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Paleta de colores](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
 
 </TabItem>
 
@@ -232,6 +232,6 @@ Al configurar esta acción, puede seleccionar una o varias paletas de colores de
 
 ## Artículos relacionados {#related-articles}
 
-- [Interactuar con el mapa](../../user/map/interact-with-map.md)
-- [Ajustes globales](../../user/personal/global-settings.md)
-- [Mapas vectoriales (Estilos de mapa)](../../user/map/vector-maps.md)
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -222,6 +222,8 @@ El widget **Próximo giro** muestra la distancia y el tipo de la [próxima manio
 
 ### Información de la ruta {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 La información de la ruta consiste en:
 
 - [Tiempo estimado de viaje](../widgets/nav-widgets.md#time-to-destination),
@@ -229,6 +231,8 @@ La información de la ruta consiste en:
 - [Distancia de viaje](../widgets/nav-widgets.md#distance-to-destination).
 
 Cuando está activado, **[el ajuste del widget](#eta-next-stop)** (Información de la ruta) mostrará los detalles de la ruta para la siguiente parada ([el punto intermedio](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Toca el botón **X** junto al widget de información de la ruta para detener la navegación.
 
 
 ### Alertas de navegación {#navigation-alerts}
