@@ -62,11 +62,29 @@
       "paint": {"fill-color": "#e0d8d0"}
     },
     {
+      "id": "area-swimming-pool",
+      "type": "fill",
+      "source": "osm",
+      "source-layer": "osmand",
+      "minzoom": 14,
+      "filter": ["all", ["==", "leisure", "swimming_pool"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#80c0ff"},
+      "note": "https://www.openstreetmap.org/relation/6200028 (place natural=water after landuse=residential)"
+    },
+    {
       "id": "area-water",
       "type": "fill",
       "source": "osm",
       "source-layer": "osmand",
-      "filter": ["all", ["==", "natural", "water"]],
+      "filter": [
+        "any",
+        ["==", "natural", "water"],
+        ["==", "landuse", "reservoir"],
+        ["==", "landuse", "basin"],
+        ["==", "landuse", "water"],
+        ["==", "waterway", "riverbank"]
+      ],
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "#80c0ff"},
       "note": "https://www.openstreetmap.org/relation/6200028 (place natural=water after landuse=residential)"
