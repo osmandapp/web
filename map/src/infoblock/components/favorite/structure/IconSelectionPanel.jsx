@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, IconButton, ListItem, ListItemButton, Menu, MenuItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { VariableSizeList } from 'react-window';
 import AppContext from '../../../../context/AppContext';
 import MarkerOptions, { resolvedPoiCategories } from '../../../../map/markers/MarkerOptions';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
+import VirtualizedList from '../../../../frame/components/VirtualizedList';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../../../frame/components/titles/SubTitleMenu';
@@ -156,27 +156,22 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
                 appBarProps={{ id: 'se-back-icon-selection-panel' }}
                 rightContent={rightContent}
             />
-            <VariableSizeList
+            <VirtualizedList
                 ref={listRef}
-                height={listHeight}
-                itemCount={rows.length}
+                items={rows}
+                renderItem={(row) => <IconRow row={row} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />}
                 itemSize={getRowHeight}
-                width="100%"
-                overscanCount={3}
+                height={listHeight}
                 style={{ overflowX: 'hidden' }}
-            >
-                {({ index, style }) => (
-                    <IconRow style={style} row={rows[index]} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />
-                )}
-            </VariableSizeList>
+            />
         </SecondaryMenuDrawer>
     );
 }
 
-function IconRow({ style, row, selectedIcon, onSelect }) {
+function IconRow({ row, selectedIcon, onSelect }) {
     if (row.type === 'header') {
         return (
-            <div style={style}>
+            <div>
                 <ThickDivider />
                 <SubTitleMenu text={row.title} />
             </div>
@@ -184,7 +179,7 @@ function IconRow({ style, row, selectedIcon, onSelect }) {
     }
 
     return (
-        <div style={style}>
+        <div>
             <Box className={styles.iconGrid}>
                 {row.icons.map((icon) => {
                     const isSelected = selectedIcon === icon;
