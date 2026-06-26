@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -164,9 +164,7 @@ Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour so
 
 <TabItem value="android" label="Android">
 
-![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, appuyez sur le *menu à trois points* à côté de celui-ci pour accéder aux actions disponibles :
 
@@ -183,7 +181,7 @@ Le **Dossier intelligent** est affiché avec une icône unique dans la liste des
 Vous pouvez également ouvrir le dossier et appuyer sur le *menu à trois points* dans le *coin supérieur droit* pour accéder à des actions supplémentaires :
 
 - **<Translate android="true" ids="shared_string_select"/>** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
-- **<Translate android="true" ids="organize_by"/>** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
+- **<Translate android="true" ids="organize_by"/>** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Sélectionnez *None* pour afficher toutes les traces sous forme de liste unique, correspondant à la vue par défaut du Dossier intelligent. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
 
 Certains paramètres de regroupement ne sont disponibles qu'avec un abonnement OsmAnd Pro. Les paramètres gratuits incluent *Activité*, *Année de création*, et *Ville la plus proche*. Tous les autres paramètres sont marqués avec une étiquette <ProFeature/>.
 
@@ -191,13 +189,13 @@ Pour les paramètres numériques (tels que la distance, la durée, la vitesse ou
 
 Pour les paramètres PRO, vous pouvez prévisualiser la configuration de regroupement (par exemple, ouvrir le sélecteur de taille d'étape et voir comment les traces sont regroupées), mais l'application de ces modifications nécessite un abonnement actif. Si vous sélectionnez un paramètre PRO ou appuyez sur le bouton Déverrouiller, l'écran Choisir un plan s'ouvrira. Le regroupement précédemment appliqué reste visible même si l'abonnement expire, mais la modification ou l'application d'un nouveau regroupement basé sur PRO nécessite un abonnement actif.
 
+Une fois qu'un paramètre de regroupement est sélectionné, les traces sont affichées sous forme de groupes. Chaque groupe affiche son nom, son icône et le nombre de traces qu'il contient. Appuyez sur un groupe pour ouvrir la liste des traces de ce groupe. Les groupes vides ne sont pas affichés. Les résultats groupés peuvent être triés par ordre alphabétique (A–Z ou Z–A) ou, pour les paramètres numériques, par valeurs les plus élevées ou les plus basses. Appuyez longuement sur un groupe pour afficher toutes les traces du groupe sur la carte ou exporter toutes les traces du groupe.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, effectuez un *appui long* sur le nom du dossier pour accéder aux actions disponibles :
 
@@ -212,6 +210,15 @@ Vous pouvez également ouvrir le dossier et appuyer sur l'icône dans le *coin s
 - **<Translate ios="true" ids="shared_string_select"/>** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
+- **Organize by** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Sélectionnez *None* pour afficher toutes les traces sous forme de liste unique, correspondant à la vue par défaut du Dossier intelligent. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
+
+Certains paramètres de regroupement ne sont disponibles qu'avec un abonnement OsmAnd Pro. Les paramètres gratuits incluent *Activité*, *Année de création*, et *Ville la plus proche*. Tous les autres paramètres sont marqués avec une étiquette <ProFeature/>.
+
+Pour les paramètres numériques (tels que la distance, la durée, la vitesse ou l'altitude), un dialogue *Définir la taille de l'étape* est disponible. Utilisez le curseur pour définir les plages de valeurs pour le regroupement.
+
+Pour les paramètres PRO, vous pouvez prévisualiser la configuration de regroupement (par exemple, ouvrir le sélecteur de taille d'étape et voir comment les traces sont regroupées), mais l'application de ces modifications nécessite un abonnement actif. Si vous sélectionnez un paramètre PRO ou appuyez sur le bouton Déverrouiller, l'écran Choisir un plan s'ouvrira. Le regroupement précédemment appliqué reste visible même si l'abonnement expire, mais la modification ou l'application d'un nouveau regroupement basé sur PRO nécessite un abonnement actif.
+
+Une fois qu'un paramètre de regroupement est sélectionné, les traces sont affichées sous forme de groupes. Chaque groupe affiche son nom, son icône et le nombre de traces qu'il contient. Appuyez sur un groupe pour ouvrir la liste des traces de ce groupe. Les groupes vides ne sont pas affichés. Les résultats groupés peuvent être triés par ordre alphabétique (A–Z ou Z–A) ou, pour les paramètres numériques, par valeurs les plus élevées ou les plus basses. Appuyez longuement sur un groupe pour afficher toutes les traces du groupe sur la carte ou exporter toutes les traces du groupe.
 
 </TabItem>
 

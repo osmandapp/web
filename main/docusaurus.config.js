@@ -39,7 +39,8 @@ async function createConfig(){
     staticDirectories: ['static', 'legacy-image-static'],
     i18n: {
       defaultLocale: 'en',
-      locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
+      //locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
+      locales: ['en', 'fr'],
       localeConfigs: {
         en: { label: 'English' },
         ar: { label: 'العربية', direction: 'rtl', htmlLang: 'ar'},

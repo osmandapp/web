@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -55,9 +55,9 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -85,7 +85,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 ### Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
-|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(in-app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -139,6 +139,7 @@ Pour le moment, l'abonnement Pro inclut les fonctionnalités suivantes :
 | [Plugin Métriques du véhicule (OBD-II)](../plugins/vehicle-metrics.md) | Permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et de stocker les informations dans les enregistrements de trace. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles pour OsmAnd gratuit.  |
 | [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
 | [Modifier le schéma de couleurs](../../user/plugins/topography.md#modify-color-scheme) | Vous permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palettes pour personnaliser les couleurs de la carte et de l'itinéraire. |
+| [Dossiers intelligents – Organiser par](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permet d'organiser les traces dans les Dossiers intelligents en utilisant des paramètres de regroupement avancés tels que la date et l'heure, la distance, la durée, la vitesse, l'altitude et les données des capteurs. Ces options permettent une catégorisation plus détaillée des traces et une analyse flexible. |
 
 
 ## Comment acheter {#how-to-buy}
