@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -53,7 +53,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 <TabItem value="ios" label="iOS">  
 
-![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -88,6 +88,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 - **Symuluj pierwsze uruchomienie aplikacji**. Ustawia flagę wskazującą pierwsze uruchomienie aplikacji, pozostawiając wszystkie inne ustawienia bez zmian.  
 - **Testuj komunikaty głosowe**. Wybierz głos i przetestuj, odtwarzając komunikaty.  
+- **Pokaż dotknięcia** (*iOS*). Podświetla dotknięcia ekranu za pomocą wskaźników wizualnych.
 - **Przezroczysty pasek stanu**. Mapa staje się widoczna pod paskiem stanu.  
 - **Pokaż baner wersji darmowej**. Wyświetla baner wersji darmowej nawet w wersji płatnej.  
 - **Pokaż informacje debugowania**. Wyświetla informacje graficzne o umiejscowieniu każdego tekstu na mapie.
@@ -239,7 +240,7 @@ Jednocześnie, z powodu wyimaginowanego ruchu obserwatora, zmienia się odległo
 Widżet wysokości kamery pokazuje wysokość kamery nad poziomem powierzchni. Wysokość kamery jest podawana w metrach / kilometrach.  
 
 
-### Poziom powiększenia {#zoom-level}
+### Poziem powiększenia {#zoom-level}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

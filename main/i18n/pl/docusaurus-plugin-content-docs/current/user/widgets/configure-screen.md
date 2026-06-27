@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -639,7 +639,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Odległość po dotknięciu](../widgets/radius-ruler.md#distance-by-tap). Daje możliwość zmierzenia odległości od Twojej pozycji do wybranego punktu.
+- [Odległość po dotknięciu](#distance-by-tap). [⬇](#distance-by-tap)
 - [Prędkościomierz](../widgets/info-widgets.md#speedometer). Pokazuje aktualną prędkość na podstawie danych GPS oraz ograniczenie prędkości na podstawie danych z [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Wyświetlane dane zależą również od ustawienia [Tolerancja ograniczenia prędkości](../navigation/guidance/voice-navigation.md#speed-limit) w OsmAnd.
 
 
@@ -668,6 +668,37 @@ Pozwala ustawić umiejscowienie kursora *[Moja lokalizacja](../map/interact-with
 - **<Translate android="true" ids="position_on_map_center"/>**. Kursor jest zawsze umieszczony na środku ekranu.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Moja lokalizacja* jest umieszczona nieco poniżej środka ekranu. Ten tryb pozwala zobaczyć więcej informacji na mapie przed tobą, co jest przydatne podczas nawigacji.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Umieszcza *Moją lokalizację* w zależności od *[Orientacji mapy](../map/interact-with-map.md#map-orientation-modes)* (*Dół* - dla kierunku ruchu, *Środek* - dla wszystkich pozostałych).
+
+
+### Odległość po dotknięciu {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Odległość po dotknięciu Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Odległość po dotknięciu iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Narzędzie **Odległość po dotknięciu** pozwala mierzyć odległości między punktami na mapie bez używania [Linijki promienia](../widgets/radius-ruler.md#radius-ruler-widget) lub tworzenia trasy.
+
+Istnieją dwa przypadki użycia:
+
+- **Odległość od Twojej lokalizacji do punktu**  
+  Dotknij dowolnego miejsca na mapie, a pojawi się prosta linia od Twojej bieżącej lokalizacji do dotkniętego punktu wraz z etykietą odległości. Linia pozostaje na ekranie nawet po dotknięciu innego miejsca.
+
+- **Odległość między dowolnymi dwoma punktami**  
+  Dotknij jednocześnie dwóch punktów na mapie (wielodotyk). Linia łączy te dwa punkty, a zmierzona odległość jest wyświetlana.
+
+Możesz również dostosować rozmiar tekstu etykiety odległości. Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Wybierz między *<Translate android="true" ids="shared_string_normal"/>* (domyślnie) a *<Translate android="true" ids="shared_string_large"/>* (1,5× większy). Po wybraniu opcji Duży automatycznie dodawane jest dodatkowe odstępy między linią a etykietą dla lepszej czytelności. Zmiany są stosowane natychmiast, bez ponownego uruchamiania aplikacji.
 
 
 ## Akcje {#actions}

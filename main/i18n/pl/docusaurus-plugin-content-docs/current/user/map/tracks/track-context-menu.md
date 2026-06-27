@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -248,7 +248,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 Funkcja *Aktywność* w OsmAnd pozwala na oznaczanie zarejestrowanych śladów GPX określonymi aktywnościami w celu dalszej analizy i organizacji w folderach.
 
-- [Tagi aktywności dla śladów GPX](../../plugins/trip-recording.md#recording-settings). Zarejestrowane ślady i ślady zapisane za pomocą [Planowanie trasy](../../plan-route/create-route.md) automatycznie otrzymują typ aktywności na podstawie profilu użytego do ich utworzenia. To pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
+- [Tagi aktywności dla śladów GPX](#description-and-info). Zarejestrowane ślady i ślady zapisane za pomocą [Planowanie trasy](../../plan-route/create-route.md) automatycznie otrzymują typ aktywności na podstawie profilu użytego do ich utworzenia. To pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
 - [Filtr aktywności](../../personal/tracks/smart-folder.md#search-filter). Możesz filtrować zarejestrowane ślady GPX według aktywności, co pozwala skupić się na wyszukiwaniu określonych typów nagrań, takich jak wszystkie ślady rowerowe lub piesze.
 - [Zarządzaj typami aktywności](../../personal/tracks/manage-tracks.md#selection-mode). Możesz zmienić typ aktywności dla wybranych folderów lub śladów za pomocą trybu wyboru w zakładce Ślady w menu Moje miejsca.
 - **Lista aktywności**. Kategorie i grupy aktywności są zdefiniowane w zasobach OsmAnd. Dla deweloperów i współtwórców lista aktywności jest utrzymywana w ustrukturyzowanym formacie w pliku [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), który szczegółowo opisuje dostępne grupy i typy aktywności.
@@ -398,7 +398,7 @@ Waypointy to jeden z typów punktów dostępnych na mapie. Ogólnie rzecz biorą
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -671,12 +671,14 @@ Opcja **Podziel według czasu** dzieli ślad na interwały o równej długości.
 
 ![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Ta opcja dzieli ślad na segmenty na podstawie zmian wysokości. Każdy interwał jest klasyfikowany jako ***wzniesienie***, ***spadek*** lub ***płasko***. Sposób wyświetlania interwałów, statystyki podane dla każdego segmentu oraz sposób ich wyświetlania na mapie są również takie same jak w sekcji [Podziel według odległości](#split-by-distance).
+Ta opcja dzieli ślad na segmenty na podstawie zmian wysokości. Każdy interwał jest klasyfikowany jako ***wzniesienie***, ***spadek*** lub ***płasko***. Interwały są wyświetlane w kolejności, w jakiej pojawiają się wzdłuż śladu, a każdy odcinek wzniesienia, spadku lub płaski otrzymuje własny numer indeksu. Lista interwałów zawiera te same podstawowe statystyki co [Podziel według odległości](#split-by-distance).
 
 Na mapie segmenty są oznaczone kolorowymi etykietami na początku każdego interwału:
 - **Segmenty wzniesień** (czerwone etykiety) pokazują strzałkę w górę, indeks segmentu i średnie nachylenie w procentach (na przykład, ↑ 11. 2%).
 - **Segmenty spadków** (zielone etykiety) pokazują strzałkę w dół, indeks segmentu i średnie nachylenie w procentach (na przykład, ↓ 12. -2%).
 - **Płaskie segmenty** (niebieskie etykiety) pokazują odległość płaskiego odcinka (na przykład, 616 m, 411 m).
+
+Dotknij etykiety, aby otworzyć panel szczegółów wybranego segmentu wzniesienia, spadku lub płaskiego. Panel szczegółów wyświetla statystyki wybranego segmentu, takie jak odległość, czas trwania, wzniesienie i spadek, wysokość, prędkość i dane związane z czasem.
 
 
 ### Metryki tętna {#heart-rate-metrics}
