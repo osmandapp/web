@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -53,6 +53,7 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 | GPX do KML | Narzędzie do konwersji plików *GPX* z OsmAnd do formatu *KML* z zachowaniem ikon. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX do OsmAnd | Skrypt Pythona do konwersji wyeksportowanych plików *GPX* iOverlander do OsmAnd z ikonami. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Niestandardowe zasoby {#custom-resources}
 
@@ -65,7 +66,7 @@ Podręczniki te, dostępne w wielu językach, często zawierają unikalne spostr
 | Język | Opis | Link |
 | :-- | :-- | :-- |
 | hiszpański  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| hiszpański  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| hiszpański  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva jako herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | hiszpański  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | czeski   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | francuski  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -83,7 +84,7 @@ Poniżej znajduje się lista [niestandardowych wtyczek](../plugins/custom.md) op
 
 | Nazwa | Opis | Link do wtyczki |
 |--|--|--|
-| Zaawansowane profile i mapy  | Dane z [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Wtyczka dodaje style map Enduro, CycloRoute i Hiking (więcej informacji [tutaj](../map/map-styles.md#default-map-styles)) oraz 5 nowych [profili](https://osmand.net/docs/user/personal/profiles) (Pieszy, Rower i trzy profile motocyklowe). Zapewnia również mapy online dla Hiszpanii, Francji, Norwegii, Szwajcarii, Austrii, Belgii i Argentyny za pośrednictwem menu [Mapy i zasoby](../personal/maps-resources.md#extra-maps) w folderze *Zaawansowane mapy online*. | [Zaawansowane profile i mapy](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Zaawansowane profile i mapy  | Dane z [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Wtyczka dodaje style map Enduro, CycloRoute i Hiking (więcej informacji [tutaj](../map/map-styles.md#default-map-styles)) oraz 5 nowych [profili](https://osmand.net/docs/user/personal/profiles) (Pieszy, Rower i trzy profile motocyklowe). Zapewnia również mapy online dla Hiszpanii, Francji, Norwegii, Suisse, Austrii, Belgii i Argentyny za pośrednictwem menu [Mapy i zasoby](../personal/maps-resources.md#extra-maps) w folderze *Zaawansowane mapy online*. | [Zaawansowane profile i mapy](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | 🇸🇦 Mapy pustynne Arabii Saudyjskiej autorstwa Rahal Team  | Profesjonalna mapa offline Królestwa Arabii Saudyjskiej, zawierająca cechy topograficzne, drogi, miasta, wioski i źródła wody. Idealna na wycieczki po pustyni. Odwiedź [Rahal Maps](https://rahalteam.com), aby uzyskać więcej informacji. | [🇸🇦 Mapy pustynne Arabii Saudyjskiej autorstwa Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | Ikony pozycji 3D  | Ten pakiet dodaje opcję modelu 3D dla profili (To przykład, jak dodać własną ikonę 3D do OsmAnd). Dostosuj wygląd za pomocą menu: [*Menu OsmAnd → Ustawienia → Profil → Wygląd profilu → wybierz 4-5 ikonę ikony pozycji*](../personal/profiles.md#profile-appearance). | [Ikony pozycji 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Kolekcja map online AnyGIS | Dane z [strony AnyGIS](https://anygis.ru/index_en). Kolekcja różnych źródeł map online, w tym map satelitarnych, turystycznych i historycznych.  | [Kolekcja map online AnyGIS](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -109,6 +110,7 @@ Domyślny plik [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/m
 | Styl mapy „Wybór” | [Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA) to styl mapy autorstwa Holdera Tamma, który pozwala wybrać, czy ukryć określone obiekty, czy nie.  |[Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Styl renderowania ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) jest głównie oparty na UniMap i routes.addon.render.xml  |[Styl mapy „ExplorerRS”](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [To jest styl renderowania OsmAnd zoptymalizowany do polowań na burze](https://github.com/pqo/stormchasing-rendering-style)  |[Styl renderowania Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Mapy offline {#offline-maps}
 
@@ -126,7 +128,7 @@ Poniższa tabela zawiera listę różnych źródeł map online przygotowanych pr
 
 | Nazwa | Opis | Link|
 | -- | -- | --|
-| Gravel Roads Seeker | Mapa dróg szutrowych (strona internetowa w języku *French*). Mapa online generowana w czasie rzeczywistym z serwerów kafelkowych, takich jak WMTS (Web Map Tile Service) lub WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
+| Gravel Roads Seeker | Mapa dróg szutrowych (strona internetowa w języku *French*). Mapa online generowana w czasie rzeczywistym z serwerów kafelkowych, takich jak WMTS (Web Map Tile Service) or WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
 | OsmAnd Rendering GitHUB | Kolekcja map online, w tym topo, ortofotomap i innych, dostępnych w niektórych głównych instytutach geograficznych różnych krajów. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | Mapa [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) z różnymi [schematami kolorów](https://www.rainviewer.com/api/color-schemes.html) |[Dane RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | Zestaw map Austrii oparty na [basemap.at WMTS](https://basemap.at/en/) stworzony przez mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|

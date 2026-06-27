@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Inteligentny folder (Filtr)
 ---
@@ -164,9 +164,7 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 
 <TabItem value="android" label="Android">
 
-![Moje miejsca Zarządzanie inteligentnymi folderami Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Moje miejsca Zarządzanie inteligentnymi folderami na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![Moje miejsca Zarządzanie inteligentnymi folderami Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Moje miejsca Zarządzanie inteligentnymi folderami Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 **Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Trasy. Aby zarządzać folderem, dotknij ikony *menu z trzema kropkami* obok niego, aby uzyskać dostęp do dostępnych działań:
 
@@ -183,7 +181,7 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 Możesz również otworzyć folder i dotknąć ikony *menu z trzema kropkami* w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
-- **<Translate android="true" ids="organize_by"/>** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
+- **<Translate android="true" ids="organize_by"/>** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Wybierz *Brak*, aby wyświetlić wszystkie trasy jako jedną listę, odpowiadającą domyślnemu widokowi Inteligentnego folderu. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
 
 Niektóre parametry grupowania są dostępne tylko z subskrypcją OsmAnd Pro. Darmowe parametry obejmują *Aktywność*, *Rok utworzenia* i *Najbliższe miasto*. Wszystkie inne parametry są oznaczone etykietą <ProFeature/>.
 
@@ -191,13 +189,13 @@ Dla parametrów numerycznych (takich jak dystans, czas trwania, prędkość lub 
 
 Dla parametrów PRO możesz podglądać konfigurację grupowania (na przykład, otworzyć selektor rozmiaru kroku i zobaczyć, jak trasy są grupowane), ale zastosowanie tych zmian wymaga aktywnej subskrypcji. Jeśli wybierzesz parametr PRO lub dotkniesz przycisku Odblokuj, otworzy się ekran Wybierz plan. Wcześniej zastosowane grupowanie pozostaje widoczne nawet po wygaśnięciu subskrypcji, ale edycja lub zastosowanie nowego grupowania opartego na PRO wymaga aktywnej subskrypcji.
 
+Po wybraniu parametru grupowania trasy są wyświetlane jako grupy. Każda grupa pokazuje swoją nazwę, ikonę oraz liczbę zawartych tras. Dotknij grupy, aby otworzyć listę tras w tej grupie. Puste grupy nie są wyświetlane. Wyniki pogrupowane można sortować alfabetycznie (A–Z lub Z–A) lub, w przypadku parametrów numerycznych, według najwyższych lub najniższych wartości. Naciśnij i przytrzymaj grupę, aby wyświetlić wszystkie trasy z grupy na mapie lub wyeksportować wszystkie trasy z grupy.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Moje miejsca Zarządzanie inteligentnymi folderami iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Moje miejsca Zarządzanie inteligentnymi folderami na iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![Moje miejsca Zarządzanie inteligentnymi folderami iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Moje miejsca Zarządzanie inteligentnymi folderami na iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 **Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Trasy. Aby zarządzać folderem, wykonaj *długie dotknięcie* nazwy folderu, aby uzyskać dostęp do dostępnych działań:
 
@@ -212,6 +210,15 @@ Możesz również otworzyć folder i dotknąć ikony w prawym górnym rogu, aby 
 - **<Translate ios="true" ids="shared_string_select"/>** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze trasy.
 - **<Translate ios="true" ids="edit_filter"/>** — Zmodyfikuj ustawienia filtra tras dla bieżącego inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter), aby uzyskać szczegółowe informacje.
+- **Organizuj według** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Wybierz *Brak*, aby wyświetlić wszystkie trasy jako jedną listę, odpowiadającą domyślnemu widokowi Inteligentnego folderu. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
+
+Niektóre parametry grupowania są dostępne tylko z subskrypcją OsmAnd Pro. Darmowe parametry obejmują *Aktywność*, *Rok utworzenia* i *Najbliższe miasto*. Wszystkie inne parametry są oznaczone etykietą <ProFeature/>.
+
+Dla parametrów numerycznych (takich jak dystans, czas trwania, prędkość lub wysokość) dostępny jest dialog *Ustaw rozmiar kroku*. Użyj suwaka, aby zdefiniować zakresy wartości dla grupowania.
+
+Dla parametrów PRO możesz podglądać konfigurację grupowania (na przykład, otworzyć selektor rozmiaru kroku i zobaczyć, jak trasy są grupowane), ale zastosowanie tych zmian wymaga aktywnej subskrypcji. Jeśli wybierzesz parametr PRO lub dotkniesz przycisku Odblokuj, otworzy się ekran Wybierz plan. Wcześniej zastosowane grupowanie pozostaje widoczne nawet po wygaśnięciu subskrypcji, ale edycja lub zastosowanie nowego grupowania opartego na PRO wymaga aktywnej subskrypcji.
+
+Po wybraniu parametru grupowania trasy są wyświetlane jako grupy. Każda grupa pokazuje swoją nazwę, ikonę oraz liczbę zawartych tras. Dotknij grupy, aby otworzyć listę tras w tej grupie. Puste grupy nie są wyświetlane. Wyniki pogrupowane można sortować alfabetycznie (A–Z lub Z–A) lub, w przypadku parametrów numerycznych, według najwyższych lub najniższych wartości. Naciśnij i przytrzymaj grupę, aby wyświetlić wszystkie trasy z grupy na mapie lub wyeksportować wszystkie trasy z grupy.
 
 </TabItem>
 
