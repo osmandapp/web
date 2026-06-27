@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  OpenStreetMap Bewerken
 ---
@@ -38,7 +38,7 @@ Om de *OpenStreetMap bewerken* plugin te gebruiken, moet u de volgende instellin
 - *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*
 
-![OpenStreetMap bewerkingsplugin Instellingen Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -47,7 +47,7 @@ Om de *OpenStreetMap bewerken* plugin te gebruiken, moet u de volgende instellin
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![OpenStreetMap bewerkingsplugin Instellingen iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ De plugin-instellingen zijn globaal en gelden voor alle profielen.
 - **<Translate android="true" ids="offline_edition"/>**. Als deze instelling is ingeschakeld, worden de wijzigingen eerst lokaal opgeslagen (*Opslaan*-knop) en op verzoek geüpload. Als de instelling is uitgeschakeld, worden de wijzigingen onmiddellijk geüpload (*Uploaden*-knop).
 - **<Translate android="true" ids="use_dev_url"/>** *(Alleen Android)*. Hiermee kunt u [dev.openstreetmap.org](https://dev.openstreetmap.org/) inschakelen in plaats van [openstreetmap.org](http://openstreetmap.org/) om het uploaden van OSM-notities, POI's of GPS-tracks te testen. Wanneer ingeschakeld, wordt u automatisch uitgelogd bij OpenStreetMap.org. Deze instelling is alleen beschikbaar in de lijst wanneer de *OsmAnd ontwikkelingsplugin* is ingeschakeld.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Tik hierop om [*Menu → Mijn Plaatsen → OSM-bewerkingen*](../personal/myplaces.md) te openen. Dit tabblad toont uw niet-geüploade OSM-bewerkingen. De volgende acties zijn beschikbaar voor de notitie: *Uploaden*, *Toon op kaart*, *Wijzig OSM-notitie*, *Verwijderen*. Geüploade of verwijderde notities worden niet langer in de lijst weergegeven.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Tik hierop om [*Menu → Mijn Plaatsen → OSM-bewerkingen*](../personal/myplaces.md) te openen. Dit tabblad toont uw niet-geüploade OSM-bewerkingen. De volgende acties zijn beschikbaar voor de notitie: *Uploaden*, *Toon op kaart*, *Wijzig OSM-notitie*, *Verwijderen*. Geüploade of verwijderde notities worden niet langer in de lijst weergegeven. Op iOS kunt u ook de Selectiemodus gebruiken om meerdere items tegelijk te selecteren en te uploaden of te verwijderen. 
 
 :::note
 Als u een [OsmAnd Pro](../purchases/android.md#pro-features) abonnement heeft, verschijnen wijzigingen die in OSM zijn aangebracht binnen een uur op uw OsmAnd-kaart. Zorg ervoor dat [Live updates](../personal/maps-resources.md#live-updates) zijn ingeschakeld.
@@ -121,7 +121,7 @@ De instelling <Translate android="true" ids="map_updates_for_mappers"/> stelt u 
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![OSM bewerkingslaag Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM bewerkingslaag Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
@@ -129,23 +129,23 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![OSM bewerkingslaag iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-U kunt de weergave van OSM-wijzigingen als een afzonderlijke laag in- of uitschakelen in de sectie [Kaart configureren](../map/configure-map-menu.md) van het *Hoofdmenu*.  OSM-wijzigingen omvatten het volgende:  
+U kunt de weergave van OSM-wijzigingen als een afzonderlijke laag in- of uitschakelen in de sectie [Kaart configureren](../map/configure-map-menu) van het *Hoofdmenu*.  OSM-wijzigingen omvatten het volgende:  
 - **OSM-notities (online)**. Toont openbare OpenStreetMap-notities gemaakt door gebruikers om mappingproblemen te markeren of updates aan te vragen. Notities worden weergegeven als interactieve markers die kunnen worden beoordeeld, geopend en opgelost door mappers.  
-![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
 - **OSM-bewerkingen**. Toont uw eigen lokale OSM-bewerkingen die op het apparaat zijn opgeslagen voordat ze worden geüpload naar de OpenStreetMap-server. Deze laag helpt bij het beoordelen van de geometrie en attributen van objecten die u heeft gewijzigd of toegevoegd.  
-![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
 - **Fixme-tags**. Markeert objecten die zijn getagd met fixme=* in OSM. Deze elementen bevatten opmerkingen van mappers die aangeven dat de informatie incompleet, onzeker is of veldverificatie nodig heeft.  
-![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
 - **Note-tags**. Toont objecten die note=* tags bevatten — opmerkingen van mappers die direct in de OSM-gegevens zijn ingebed. Deze tags beschrijven meestal tijdelijke omstandigheden of aanvullende context voor toekomstige bewerkingen.  
-![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
 - **Pictogrammen bij lage zoomniveaus**. Schakelt vereenvoudigde icoonachtige weergaven van OSM-objecten in met behulp van korte afkortingen afgeleid van hun primaire tag-sleutels. De betekenis wordt beschreven [hier](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Deze functie maakt meer objecten zichtbaar op lage zoomniveaus zonder de kaart te overbelasten of icoonoverlap te veroorzaken.  
-![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## POI aanmaken / wijzigen {#create--modify-poi}
@@ -154,8 +154,8 @@ De OpenStreetMap bewerkingsplugin stelt u in staat om nieuwe objecten op de kaar
 
 1. Tik op de kaart om een nieuwe POI te plaatsen, of tik op een nog niet geladen POI.
 2. Tik op [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Kies [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), en voeg de naam en andere informatie toe, zoals openingstijden, website, etc. Wanneer u een nog niet geüploade POI selecteert, verandert *POI aanmaken* in *POI wijzigen*.
-4. Afhankelijk van de instelling [Offline bewerken](#settings), kunt u de gegevens lokaal opslaan of [uploaden](../map/map-context-menu#-upload-poi--osm-note).
+2. Kies [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), en voeg de naam en andere informatie toe, zoals openingstijden, website, etc. Wanneer u een nog niet geüploade POI selecteert, verandert *POI aanmaken* in *POI wijzigen*.
+3. Afhankelijk van de instelling [Offline bewerken](#settings), kunt u de gegevens lokaal opslaan of [uploaden](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Tags toevoegen {#add-tags}
@@ -164,13 +164,13 @@ De OpenStreetMap bewerkingsplugin stelt u in staat om nieuwe objecten op de kaar
 
 <TabItem value="android" label="Android">  
 
-![POI-tag toevoegen Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![POI-tag toevoegen Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
+![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![POI-tag toevoegen iOS](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
@@ -206,7 +206,7 @@ Onthoud dat bij het toevoegen van niet-ondersteunde POI-types het belangrijk is 
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
-![OSM-notitie openen Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![OSM-notitie openen Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
+![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
@@ -214,7 +214,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
-![OSM-notitie openen iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
+![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
@@ -246,7 +246,7 @@ De GPS-tracks die u heeft opgenomen zijn nuttig voor:
 - **Informatie delen** over de tracks en routes die u heeft opgenomen op [op OpenStreetMap gebaseerde kaarten](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).  
 
 :::info OPMERKING
-Uw tracks worden binnen een uur toegevoegd aan [OSM-sporen](https://www.openstreetmap.org/traces), waar ze beschikbaar zijn voor u en anderen om te bekijken, te zoeken en te gebruiken.
+Uw tracks worden binnen een uur toegevoegd aan [OSM-sporen](https://www.openstreetmap.org/traces), waar ze beschikbaar voor u en anderen om te bekijken, te zoeken en te gebruiken.
 :::  
 
 
@@ -257,13 +257,13 @@ Uw tracks worden binnen een uur toegevoegd aan [OSM-sporen](https://www.openstre
 
 <TabItem value="android" label="Android">
 
-![OpenStreetMap bewerkingsplugin GPX naar OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStreetMap bewerkingsplugin GPX naar OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
 
 </TabItem>
 

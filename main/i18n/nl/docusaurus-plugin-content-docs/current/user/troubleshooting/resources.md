@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -53,6 +53,7 @@ De onderstaande lijst bevat converters voor verschillende gegevenstypen die door
 | GPX naar KML | Tool om OsmAnd *GPX*-bestanden naar *KML*-formaat te converteren, met behoud van pictogrammen. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX naar OsmAnd | Python-script om geëxporteerde iOverlander *GPX*-bestanden naar OsmAnd te converteren met pictogrammen. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topografische kaart naar afdrukbaar| Dit is [een tool](https://github.com/acui/osmand_topo_map_generator) om een afdrukbare topografische kaart te genereren met behulp van schermafbeeldingen van OsmAnd (https://osmand.net). De kaart gebruikt het UTM-raster en bevat declinatie-informatie. Het is bedoeld voor gebruik met een kompas of een GPS-apparaat met UTM-coördinaten.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar werpt vanuit elk punt van een GPX-track een straal naar de zon en test deze tegen het terrein en de vegetatie (0,5 m HD LiDAR / IGN), voor een bepaalde datum en tijd. Meter voor meter vertelt het je of het zon of schaduw is. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Aangepaste Hulpbronnen {#custom-resources}
 
@@ -65,7 +66,7 @@ Deze handleidingen, beschikbaar in meerdere talen, bieden vaak unieke inzichten,
 | Taal | Beschrijving | Link |
 | :-- | :-- | :-- |
 | Spaans  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spaans  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spaans  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks en het Go to. Todo ello con de intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Spaans  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Tsjechisch   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | Frans  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -83,7 +84,7 @@ Hieronder volgt een lijst van [aangepaste plugins](../plugins/custom.md) die zij
 
 | Naam | Beschrijving | Link van de Plugin |
 |--|--|--|
-| Advanced Profiles & Maps  | Gegevens van [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). De plugin voegt de kaartstijlen Enduro, CycloRoute en Hiking toe (meer info [hier](../map/map-styles.md#default-map-styles)) en 5 nieuwe [profielen](https://osmand.net/docs/user/personal/profiles) (Voetganger, Fiets en drie Motorprofielen). Het biedt ook online kaarten voor Spanje, Frankrijk, Noorwegen, Zwitserland, Oostenrijk, België en Argentinië via het menu [Kaarten & Bronnen](../personal/maps-resources.md#extra-maps) in de map *Geavanceerde Online Kaarten*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Advanced Profiles & Maps  | Gegevens van [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). De plugin voegt de kaartstijlen Enduro, CycloRoute en Hiking toe (meer info [hier](../map/map-styles.md#default-map-styles)) en 5 nieuwe [profielen](https://osmand.net/docs/user/personal/profiles) (Voetganger, Fiets en drie Motorprofielen). Het biedt ook online kaarten voor Spanje, Frankrijk, Noorwegen, Suisse, Oostenrijk, België en Argentinië via het menu [Kaarten & Bronnen](../personal/maps-resources.md#extra-maps) in de map *Geavanceerde Online Kaarten*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Saudi Arabia Desert Maps by Rahal Team  | Een professionele offline kaart van het Koninkrijk Saoedi-Arabië, inclusief topografische kenmerken, wegen, steden, dorpen en waterbronnen. Perfect voor woestijntochten. Bezoek [Rahal Maps](https://rahalteam.com) voor meer informatie. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D Position Icons  | Dit pakket voegt een 3D-modeloptie toe voor profielen (Het is een voorbeeld van hoe je je eigen 3D-pictogram aan OsmAnd kunt toevoegen). Pas het uiterlijk aan via het menu: [*OsmAnd-menu → Instellingen → Profiel → Profielweergave → kies het 4e-5e pictogram van Positiepictogram*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS Online Maps Collection | Gegevens van [AnyGIS web page](https://anygis.ru/index_en). Een verzameling van verschillende online kaartbronnen, waaronder satelliet-, toeristische en historische kaarten, onder andere.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -109,6 +110,7 @@ Het standaard [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/ma
 | Selectie Kaartstijl | ["Selectie" Kaartstijl](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is een kaartstijl van Holder Tamm waarmee u kunt kiezen of u bepaalde objecten wilt verbergen of niet.  |["Selectie" Kaartstijl](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [De ExplorerRS-weergavestijl](https://github.com/sykoram/OsmAnd-ExplorerRS) is voornamelijk gebaseerd op UniMap en routes.addon.render.xml  |["ExplorerRS" Kaartstijl](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Dit is een OsmAnd-weergavestijl geoptimaliseerd voor stormjagen](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing weergavestijl](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Aangepaste gedefinieerde bronnen van het OsmAnd-project om het gedrag van OsmAnd fijn af te stemmen. Hier worden gedefinieerd: kaartweergavestijlen die in OsmAnd worden gebruikt, opgenomen en TTS-stemmen, configuratie van de offline kaartgeneratie, routeringsparameters, pictogrammenopslagplaats  |[Stormchasing weergavestijl](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Offline Kaarten {#offline-maps}
 

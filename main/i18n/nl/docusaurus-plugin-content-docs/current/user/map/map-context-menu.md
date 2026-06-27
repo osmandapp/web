@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -89,7 +89,7 @@ Wanneer u ergens op de kaart **lang tikt**, verschijnt er een **contextmenu** me
 
 </Tabs>
 
-Door op een [GPX-track](../map/tracks/index.md) op de kaart te tikken, wordt het [trackcontextmenu](../map/tracks/track-context-menu.md) geopend, waar u toegang hebt tot extra trackgerelateerde opties.
+Door op een [GPX-track](../map/tracks/index.md) op de kaart te tikken, wordt het [trackcontextmenu](../map/tracks/track-context-menu.md) geopend, waar u toegang hebt tot extra trackgerelateerde opties. Als de geselecteerde locatie meerdere kaartobjecten bevat, kan OsmAnd eerst de lijst **Wat is hier** weergeven, zodat u het gewenste object kunt kiezen. Voor GPX-tracks toont deze lijst samenvattende informatie zoals afstand, duur, aantal waypoints en de map waarin de track is opgeslagen.
 
 
 
