@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
 sidebar_position: 7
 title:  Ulubione
 ---
@@ -88,8 +88,10 @@ Podczas dodawania punktu z danych OSM, odpowiednie informacje o POI są automaty
 
 - **Nazwa** — Unikalna nazwa w obrębie grupy (*Wymagane*).
 - **Adres** i **Opis** (*Opcjonalne*).
-- **Grupa** — Wybierz z istniejącej [Grupy ulubionych](#manage-favorites) lub utwórz nową.
+- **Grupa** — Wybierz z istniejącej [Grupy ulubionych](#manage-favorites) lub utwórz nową. Na Androidzie możesz również wybrać podfolder w grupie lub utworzyć nowy.
 - **Wizualna personalizacja** — Ikona, kolor, kształt mogą odpowiadać domyślnemu [wyglądowi grupy](#change-group-appearance) lub być dostosowane indywidualnie.
+
+**UWAGA:** Jeśli warstwa Ulubione jest wyłączona w [Konfiguruj mapę](../map/configure-map-menu), dodanie nowego punktu ulubionego automatycznie włącza warstwę, aby nowo dodany ulubiony był widoczny na mapie.
 
 
 ### Edytuj / Zastąp / Usuń {#edit--replace--delete}
@@ -267,12 +269,13 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Funkcje folderu ulubionych android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Funkcje folderu ulubionych android](@site/static/img/personal/favorites_folder_functions_new_2.png)
 
 Użyj ***menu z trzema kropkami*** obok każdego folderu, aby zarządzać grupami ulubionych:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć punkty ulubione z folderu na mapie.
 - **<Translate android="true" ids="pin_folder"/>** — Przypnij wybrany folder, aby utrzymać go na górze listy ulubionych dla szybszego dostępu.
+- **<Translate android="true" ids="add_new_folder"/>** — Utwórz nowy podfolder wewnątrz wybranego folderu.
 - **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Dostosuj wygląd punktów ulubionych w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Usuń ze znaczników mapy** — Dodaj wszystkie punkty ulubione z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić sobie odniesienie.

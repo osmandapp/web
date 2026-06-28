@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -89,8 +89,7 @@ Gdy **długo dotkniesz** dowolnego miejsca na mapie, pojawi się **menu kontekst
 
 </Tabs>
 
-Dotknięcie [śladu GPX](../map/tracks/index.md) na mapie otwiera [menu kontekstowe śladu](../map/tracks/track-context-menu.md), gdzie można uzyskać dostęp do dodatkowych opcji związanych ze śladem.
-
+Dotknięcie [śladu GPX](../map/tracks/index.md) na mapie otwiera [menu kontekstowe śladu](../map/tracks/track-context-menu.md), gdzie można uzyskać dostęp do dodatkowych opcji związanych ze śladem. Jeśli wybrana lokalizacja zawiera wiele obiektów mapy, OsmAnd może najpierw wyświetlić listę **Co tu jest**, umożliwiając wybór żądanego obiektu. W przypadku śladów GPX lista ta zawiera informacje podsumowujące, takie jak odległość, czas trwania, liczba punktów trasy oraz folder, w którym przechowywany jest ślad.
 
 
 ### Trasy, stoki narciarskie i szlaki {#routes-and-trails}
@@ -520,7 +519,7 @@ Aplikacja OsmAnd pozwala na **<Translate android="true" ids="shared_string_share
 
 Dostępne opcje udostępniania lokalizacji:
 
-- ***Wyślij***. Wysyła tekst za pośrednictwem aplikacji dostępnych na Twoim urządzeniu. Zawiera wszystkie informacje o lokalizacji: nazwę Mojej lokalizacji lub nazwę wybranego POI, adres, współrzędne i geolokalizację jako link.
+- ***Wyślij***. Wysyła tekst za pośrednictwem aplikacji dostępnych na Twoim urządzeniu. Zawiera wszystkie informacje o lokalizacji: nazwię Mojej lokalizacji lub nazwę wybranego POI, adres, współrzędne i geolokalizację jako link.
 - ***Kopiuj link***. Kopiuje link do wybranej lokalizacji do schowka.  
 Przykład: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Kopiuj***. Kopiuje wszystkie informacje o lokalizacji (nazwę Mojej lokalizacji lub nazwę wybranego POI, adres, współrzędne i geolokalizację jako link) do schowka.  

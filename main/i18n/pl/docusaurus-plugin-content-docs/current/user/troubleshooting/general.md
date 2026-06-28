@@ -1,8 +1,9 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title:  Ogólne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 Ogólne problemy związane z różnymi funkcjami OsmAnd.
 
@@ -76,6 +76,21 @@ Aby usunąć historię wyszukiwania w OsmAnd:
 Bardziej szczegółowe instrukcje dotyczące funkcji wyszukiwania można znaleźć w [tym przewodniku](../search/search-history.md).
 
 
+## Interfejs {#interface}
+
+### Dlaczego przyciski mapy, widżety lub linijka mapy są zbyt duże? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Jeśli przyciski mapy, widżety lub linijka mapy wydają się zbyt duże po dostosowaniu rozmiaru wyświetlacza w ustawieniach systemowych Androida, może to być związane z tym, jak OsmAnd dostosowuje interfejs do bieżącej konfiguracji ekranu.
+
+Na niektórych urządzeniach zmniejszenie gęstości ekranu lub zmiana rozmiaru wyświetlacza może wpływać na rozmiar elementów interfejsu, szczególnie na urządzeniach z dużym ekranem i tabletach.
+
+Najnowsze wersje OsmAnd nie stosują już dodatkowego automatycznego skalowania dla urządzeń wykrytych jako tablety. Elementy interfejsu teraz bardziej ściśle podążają za ustawieniami wyświetlania systemu Android.
+
+Jeśli chcesz ręcznie dostosować rozmiar przycisków mapy, użyj ustawień [Domyślny wygląd](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menu → Konfiguruj ekran → Przyciski → Domyślne przyciski → menu z trzema kropkami → Wygląd*. Tam możesz ustawić niestandardowy Rozmiar, Promień narożnika i Przezroczystość tła dla wszystkich domyślnych przycisków jednocześnie.
+
+Jeśli interfejs nadal wydaje się większy niż oczekiwano, sprawdź *Ustawienia systemowe Androida → Wyświetlanie → Rozmiar i tekst wyświetlacza* i dostosuj ustawienia wyświetlania w razie potrzeby.
+
+
 ## Inne {#other}
 
 ### Problem z połączeniem GPS (Android) {#problem-with-the-gps-connection-android}
@@ -112,6 +127,6 @@ Jeśli napotkasz problem, w którym adres e-mail powiązany z zakupem OsmAnd Pro
 
 5. **Zainstaluj ponownie OsmAnd**. Jeśli wyczyszczenie pamięci podręcznej nie rozwiąże problemu, spróbuj odinstalować i ponownie zainstalować aplikację. Przed wykonaniem tej czynności upewnij się, że wykonałeś kopię zapasową ważnych danych (tras, ulubionych), przechodząc do *Menu → Ustawienia → Eksportuj do pliku*. Ponowna instalacja aplikacji zapewni prawidłowe odświeżenie wszystkich szczegółów konta.
 
-6. **Wyłącz proxy**. Sprawdź ustawienia proxy aplikacji i upewnij się, że proxy jest wyłączone, przechodząc do *Menu → Ustawienia → Ustawienia OsmAnd → Proxy*. Proxy lub VPN mogą zakłócać synchronizację konta.
+6. **Wyłącz proxy**. Sprawdź ustawienia proxy aplikacji i upewnij się, że proxy jest wyłączony, przechodząc do *Menu → Ustawienia → Ustawienia OsmAnd → Proxy*. Proxy lub VPN mogą zakłócać synchronizację konta.
 
 7. **Zaloguj się ponownie lub użyj wersji internetowej do zarządzania kontem**. Jeśli nadal występują problemy, spróbuj wylogować się i zalogować ponownie, aby odświeżyć połączenie aplikacji z bieżącym kontem. Jeśli napotkasz problemy z usunięciem starego konta w aplikacji, rozważ zarządzanie kontem za pośrednictwem internetowej wersji OsmAnd.

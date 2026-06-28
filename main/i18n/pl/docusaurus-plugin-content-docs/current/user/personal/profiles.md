@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
 sidebar_position: 4
 title:  Profile (Ustawienia)
 ---
@@ -416,7 +416,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Wygląd profili](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Wygląd profili](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
@@ -447,7 +447,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 Ustawienia **Wygląd mojej pozycji** pozwalają dostosować sposób wyświetlania pozycji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
-Użyj **<Translate ios="true" ids="icon_size"/>**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij <Translate ios="true" ids="icon_size"/>, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **<Translate ios="true" ids="reset_to_default"/>**, aby wrócić do 100%.
+Użyń **<Translate ios="true" ids="icon_size"/>**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij <Translate ios="true" ids="icon_size"/>, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **<Translate ios="true" ids="reset_to_default"/>**, aby wrócić do 100%.
 
 </TabItem>
 
@@ -568,7 +568,7 @@ Wtyczki odblokowują dodatkowe funkcje aplikacji i mogą być [płatne lub bezp�
 
 - **Pogoda**. Interaktywne warstwy mapy [Pogoda](../plugins/weather.md#weather-settings) pozwalają monitorować temperaturę, ciśnienie powietrza, zachmurzenie, prędkość wiatru i opady w Twoim mieście lub w dowolnym innym miejscu na mapie globalnej.
 
-- **Notatki audio/wideo** (*tylko Android*). Ten element otwiera [ustawienia wtyczki audio-wideo](../plugins/audio-video-notes.md#plugin-settings) dla wybranego profilu. Wtyczka *Notatki audio/wideo* rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie notatek w różnych formatach, takich jak zdjęcie, wideo lub audio, i powiązanie ich z lokalizacją geograficzną lub bieżącą lokalizacją.  
+- **Notatki audio/wideo** (*tylko Android*). Ten element otwiera [ustawienia wtyczki audio-wideo](../plugins/audio-video-notes.md#plugin-settings) dla wybranego profilu. Wtyczka *Notatki audio/wideo* rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie notatek w różnych formatach, takich jak zdjęto, wideo lub audio, i powiązanie ich z lokalizacją geograficzną lub bieżącą lokalizacją.  
 
 - **Edycja OpenStreetMap**. Ten element otwiera [ustawienia wtyczki edycji OpenStreetMap](../plugins/osm-editing.md#settings) dla wybranego profilu. Dzięki OsmAnd i wtyczce do edycji OSM możesz współtworzyć OpenStreetMap.org, tworząc lub modyfikując POI, dodając lub komentując notatki i przesyłając nagrane ślady GPX.
 
