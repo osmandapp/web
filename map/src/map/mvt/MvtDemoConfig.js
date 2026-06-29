@@ -39,11 +39,20 @@ export function isMvtTileURL(tileURL) {
     return tileURL?.type === 'mvt' || isOsmAndTileURL(tileURL) || isOsmTestTileURL(tileURL);
 }
 
+let webGLAvailable;
+
 export function isWebGLAvailable() {
+    if (webGLAvailable !== undefined) {
+        return webGLAvailable;
+    }
+
     try {
         const canvas = document.createElement('canvas');
-        return !!(canvas.getContext('webgl2') || canvas.getContext('webgl'));
+        const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+        webGLAvailable = !!gl;
+        gl?.getExtension('WEBGL_lose_context')?.loseContext();
     } catch {
-        return false;
+        webGLAvailable = false;
     }
+    return webGLAvailable;
 }
