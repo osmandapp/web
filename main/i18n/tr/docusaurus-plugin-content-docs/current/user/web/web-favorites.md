@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favoriler
 title: Favoriler
@@ -35,6 +35,10 @@ Aşağıdaki eylemler kullanılabilir:
 - *Paylaş* - paylaşım seçeneklerini açar. Bu klasöre kimin erişebileceğini seçebilirsiniz.
 - *İndir* - seçilen favori klasörünü indir.
 - *Sil* - seçilen favori klasörünü sil.
+
+Bir favoriler klasörü seçtiğinizde, harita otomatik olarak ortalanır ve yakınlaştırma düzeyini ayarlayarak o klasördeki tüm favori noktaları görünür harita alanında gösterir.
+
+Ayrıca, seçilen klasörü incelemeyi kolaylaştırmak için diğer tüm favorileri ve izleri haritada gizlemek üzere **Odak** düğmesini kullanabilirsiniz. Odak modunu kapatmak, diğer harita nesnelerinin görünürlüğünü geri yükler.
 
 ### Paylaş {#share}
 
@@ -96,7 +100,7 @@ Yeni klasörler doğrudan klasör seçim panelinden oluşturulabilir. Klasör ek
 
 ### Görünüm {#appearance}
 
-**Görünüm** bölümü, favorinin harita üzerinde nasıl görüntüleneceğini özelleştirmenize olanak tanır. Aşağıdaki özellikler kullanılabilir: simge, renk, şekil ve simge. 
+**Görünüm** bölümü, favorinin harita üzerinde nasıl görüntürüleceğini özelleştirmenize olanak tanır. Aşağıdaki özellikler kullanılabilir: simge, renk, şekil ve simge. 
 
 **Simge** seçilmesi, kategorilere ayrılmış simge gruplarını içeren ikincil bir paneli açar.
 

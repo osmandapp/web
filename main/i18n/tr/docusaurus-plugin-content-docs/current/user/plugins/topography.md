@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
 sidebar_position: 16
 title: Topografya
 ---
@@ -204,19 +204,19 @@ Arazi, [ücretli bir özelliktir](../purchases/index.md).
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-**Arazi** seçeneği, *Gölgelendirme*, *Eğim* ve *Rakım* gibi üç özelliği etkinleştirir ve özelleştirmenize olanak tanır.  
+**Arazi** seçeneği, *Gölgelendirme*, *Eğim* ve *Rakım* gibi üç özelliği etkinleştirir ve özelleştirmenize olanak tanır. iOS'ta Görselleştirme menüsü ayrıca 3B Rölyef'e dayalı gerçek zamanlı bir arazi gölgelendirme modu olan *Arazi Gölgeleri*'ni de içerir.  
 Özel özellikler:  
 
-- Aynı anda yalnızca bir seçenek etkinleştirilebilir: Gölgelendirme, Eğim veya Rakım.
+- Aynı anda yalnızca bir seçenek etkinleştirilebilir: Gölgelendirme, Eğim, Rakım veya Arazi Gölgeleri.
 - İlgili haritayı indirip etkinleştirdikten sonra herhangi bir değişiklik görmüyorsanız, uygulamayı yeniden başlatmanız önerilir.
 
-**Arazi** menüsü, [renk şeması](#default-color-scheme) seçimi ile [değiştirme](#modify-color-scheme) seçeneğini ( [Pro aboneleri](../../user/purchases/index.md) için), harita üzerindeki katmanın şeffaflığını değiştirme ([görünürlük](#visibility)) ve görüntülenmesi için [yakınlaştırma seviyesini](#zoom-levels) seçme, [önbelleğe alınmış verilerin](#cache-size) boyutu hakkında bilgi ve katmanı görüntülemek için gereken [haritaların](../../user/personal/maps-resources.md) bir listesini içerir.
+**Arazi** menüsü, [renk şeması](#default-color-scheme) (**görselleştirme** iOS'ta) seçimi ile [değiştirme](#modify-color-scheme) seçeneğini ( [Pro aboneleri](../../user/purchases/index.md) için), harita üzerindeki katmanın şeffaflığını değiştirme ([görünürlük](#visibility)), ve görüntülenmesi için [yakınlaştırma seviyesini](#zoom-levels) seçme, [önbelleğe alınmış verilerin](#cache-size) boyutu hakkında bilgi ve katmanı görüntülemek için gereken [haritaların](../../user/personal/maps-resources.md) bir listesini içerir.
 
 
 ## Gölgelendirme, Eğim ve Rakım Katmanları {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Arazi, [ücretli bir özelliktir](../purchases/index.md).
 - *Navigasyon.* Hem yokuş aşağı hem de yokuş yukarı dik yamaçları belirlemeye yardımcı olur; bu, güvenli navigasyon için çok önemli olabilir.
 - *Rota planlama.* Araziyi göz önünde bulundurarak en uygun rotaları seçmeye yardımcı olur.
 - *Arazi tahmini.* Özellikle yürüyüş veya bisiklet sürüyorsanız, manzarayı görselleştirmek için uygundur.
+
+
+### Arazi Gölgeleri (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Arazi Gölgeleri**, 3B arazi geometrisine dayalı gerçek zamanlı dinamik gölgelendirme sağlar. Raster Gölgelendirme haritalarının aksine, gölgelendirme etkisi doğrudan cihaz üzerinde arazi verileri kullanılarak oluşturulur ve otomatik olarak mevcut harita perspektifini takip eder.
+
+Arazi Gölgeleri, 3B Rölyef gerektirir ve seçildiğinde otomatik olarak etkinleştirir. Bu özellik, düşük performans etkisiyle arazi okunabilirliğini iyileştirmek için tasarlanmıştır.
 
 
 ### Varsayılan Renk Şeması {#default-color-scheme}
@@ -286,7 +295,7 @@ Palet dosyalarını kullanarak gelişmiş palet özelleştirmesi için [Renk Şe
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
 
@@ -306,13 +315,15 @@ Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletler
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-*Görünürlük* işlevi, Gölgelendirme için gölgelerin şeffaflığını ve Eğim parametresindeki açıyı temsil etmek için kullanılan renkleri ayarlamak için kullanılır.
+*Görünürlük* işlevi, Gölgelendirme için gölgelerin şeffaflığını ve Eğim parametresindeki açıyı temsil etmek için kullanılan renkleri ayarlamak için kullanılır. Arazi Gölgeleri için Görünürlük, arazi gölgelendirme etkisinin gücünü kontrol eder.
 
 ### Yakınlaştırma Seviyeleri {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 *Yakınlaştırma Seviyeleri* işlevi, Gölgelendirme veya Eğim harita katmanlarının görüntüleneceği harita yakınlaştırma seviyelerinin minimum ve maksimum değerlerini 4'ten 19'a kadar ayarlamanıza olanak tanır.
+
+Arazi Gölgeleri için Yakınlaştırma Seviyeleri mevcut değildir çünkü bu görselleştirme dinamik olarak oluşturulur ve raster katman görünürlük aralıklarına bağlı değildir.
 
 ### Önbellek Boyutu {#cache-size}
 

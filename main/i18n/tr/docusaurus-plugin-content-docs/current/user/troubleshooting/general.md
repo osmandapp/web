@@ -1,8 +1,9 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title:  Genel
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 OsmAnd'ın çeşitli özellikleriyle ilgili genel sorunlar.
 
@@ -74,6 +74,21 @@ OsmAnd'da arama geçmişini silmek için:
 4. Silmeyi onaylamak için sağ üst köşedeki *Çöp Kutusu* simgesine dokunun.
 
 Arama işlevselliği hakkında daha ayrıntılı talimatlar için [bu kılavuza](../search/search-history.md) başvurabilirsiniz.
+
+
+## Arayüz {#interface}
+
+### Harita düğmeleri, widget'lar veya metin neden çok büyük görünüyor? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Harita düğmeleri, widget'lar veya harita cetveli, Android sistem ayarlarında ekran boyutunu ayarladıktan sonra aşırı büyük görünüyorsa, bunun nedeni OsmAnd'ın arayüzü geçerli ekran yapılandırmasına nasıl uyarladığıyla ilgili olabilir.
+
+Bazı cihazlarda ekran yoğunluğunu azaltmak veya ekran boyutunu değiştirmek, özellikle büyük ekranlı cihazlarda ve tabletlerde arayüz öğelerinin boyutunu etkileyebilir.
+
+Son OsmAnd sürümleri artık tablet olarak algılanan cihazlar için ek otomatik ölçeklendirme uygulamamaktadır. Arayüz öğeleri artık Android sistem ekran ayarlarını daha yakından takip etmektedir.
+
+Harita düğmelerinin boyutunu manuel olarak ayarlamak istiyorsanız, [Varsayılan Görünüm](https://osmand.net/docs/user/widgets/configure-screen#button-appearance) ayarlarını kullanın: *Menü → Ekranı yapılandır → Düğmeler → Varsayılan düğmeler → üç nokta menüsü → Görünüm*. Orada tüm varsayılan düğmeler için aynı anda özel Boyut, Köşe yarıçapı ve Arka plan opaklığı ayarlayabilirsiniz.
+
+Arayüz hala beklenenden daha büyük görünüyorsa, *Android Sistem Ayarları → Ekran → Ekran boyutu ve metin* bölümünü kontrol edin ve ekran ayarlarını gerektiği gibi ayarlayın.
 
 
 ## Diğer {#other}

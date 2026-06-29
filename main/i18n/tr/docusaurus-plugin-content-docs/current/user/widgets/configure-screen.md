@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -74,7 +74,7 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 
 </Tabs>
 
-OsmAnd, özelleştirilebilir widget panellerini kullanarak harita arayüzünü düzenlemenize olanak tanır.  
+OsmAnd, özelleştirilebilir widget panelleri kullanarak harita arayüzünü düzenlemenize olanak tanır.  
 Aşağıdaki panellerde widget'ları ekleyebilir, yeniden sıralayabilir, gruplayabilir ve kaldırabilirsiniz:
 
 - **Üst panel**
@@ -191,7 +191,7 @@ Her panel farklı düzen davranışlarını destekler:
 
 - [Geliştirici widget'ları](../widgets/info-widgets.md#developer-widgets).  
     İsteğe bağlı bilgileri görüntüler.  
-    5 widget dahildir: *Harita oluşturma FPS'si*, *Kamera eğimi*, *Kamera yüksekliği*, *Yakınlaştırma seviyesi*, *Kameradan hedefe uzaklık*, *Kullanılabilir RAM*.  
+    5 widget dahildir: *Harita oluşturma FPS'si*, *Kamera eğimi*, *Kamera yüksekliği*, *Yakınlaştırma seviyeli*, *Kameradan hedefe uzaklık*, *Kullanılabilir RAM*.  
 
 - [Harici Sensörler widget'ları](../widgets/info-widgets.md#external-sensors-widgets).  
     Set, BLE/ANT+ sensörlerinden gelen verileri gerçek zamanlı olarak izlemeye yardımcı olur.  
@@ -641,7 +641,7 @@ Varsayılan düğmeler ekranındaki **üç nokta menüsü** aşağıdaki eylemle
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Dokunarak mesafe](../widgets/radius-ruler.md#distance-by-tap). Konumunuzdan seçilen noktaya olan mesafeyi ölçme yeteneği verir.
+- [Dokunarak mesafe](#distance-by-tap). [⬇](#distance-by-tap)
 - [Hız göstergesi](../widgets/info-widgets.md#speedometer). GPS verilerine dayalı mevcut hızı ve [OpenStreetMap verilerine](https://wiki.openstreetmap.org/wiki/Key:maxspeed) dayalı sınırlı hızı gösterir. Görüntülenen veriler ayrıca OsmAnd'ın [Hız Sınırı Toleransı](../navigation/guidance/voice-navigation.md#speed-limit) ayarına da bağlıdır.
 
 
@@ -670,6 +670,37 @@ OsmAnd haritasında imlecin *[Konumum](../map/interact-with-map.md#my-position-a
 - **<Translate android="true" ids="position_on_map_center"/>**. İmleç her zaman ekranın ortasında konumlandırılır.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Konumum* ekranın ortasının biraz altına yerleştirilir. Bu mod, hareketinizin önünde daha fazla harita bilgisi görmenizi sağlar, bu da navigasyon sırasında kullanışlıdır.
 - **<Translate android="true" ids="shared_string_automatic"/>**. *Konumum*'u *[Harita yönü](../map/interact-with-map.md#map-orientation-modes)*'na bağlı olarak yerleştirir (*Alt* - hareket yönü için, *Merkez* - diğer tüm durumlar için).
+
+
+### Dokunarak Mesafe {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Dokunarak Mesafe Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dokunarak Mesafe IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Dokunarak Mesafe** aracı, [Yarıçap Cetveli](../widgets/radius-ruler.md#radius-ruler-widget) kullanmadan veya rota oluşturmadan haritadaki noktalar arasındaki mesafeleri ölçmenizi sağlar.
+
+İki kullanım durumu vardır:
+
+- **Konumunuzdan bir noktaya mesafe**  
+  Haritada herhangi bir yere dokunun; mevcut konumunuzdan dokunulan noktaya düz bir çizgi ve mesafe etiketi görünecektir. Çizgi, başka bir yere dokunsanız bile ekranda kalır.
+
+- **Herhangi iki nokta arasındaki mesafe**  
+  Haritada iki noktaya aynı anda (çoklu dokunma) dokunun. İki noktayı bir çizgi bağlar ve ölçülen mesafe görüntülenir.
+
+Mesafe etiketinin metin boyutunu da ayarlayabilirsiniz. Şuraya gidin: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. *<Translate android="true" ids="shared_string_normal"/>* (varsayılan) ve *<Translate android="true" ids="shared_string_large"/>* (1,5 kat daha büyük) arasında seçim yapın. Büyük seçenek seçildiğinde, daha iyi okunabilirlik için çizgi ile etiket arasına otomatik olarak ekstra boşluk eklenir. Değişiklikler uygulamayı yeniden başlatmadan anında uygulanır.
 
 
 ## Eylemler {#actions}

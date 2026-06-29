@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -55,9 +55,9 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -118,6 +118,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Sesli/resimli/videolu noktalar](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Çevrimiçi GPS Takipçisi](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Uygulama profilini dışa/içe aktar](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
 
 #### ** Harita güncellemeleri {#-map-updates}
 
@@ -139,6 +140,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanızı sağlar. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümü için mevcuttur.  |
 | [Rota çizgisini özelleştir](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Navigasyon sırasında rota çizgisinin rengini ve genişliğini değiştirme. |
 | [Renk Şemasını Değiştir](../../user/plugins/topography.md#modify-color-scheme) | Harita görünümünü seçerek veya içe aktararak renk paletleri ile özelleştirmenizi sağlar. Yerleşik şemaları düzenleyebilir veya harita ve rota renklerini kişiselleştirmek için kendi palet dosyalarınızı kullanabilirsiniz. |
+| [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
 
 
 ## Nasıl Satın Alınır {#how-to-buy}
