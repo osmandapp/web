@@ -87,7 +87,7 @@ Use one of the following paths to open the plugin settings:
 
 - **Simulate first app start**. Sets the flag indicating first app startup, keeps all other settings unchanged.  
 - **Test voice prompts**. Select a voice and test by playing announcements.
-- **Show Touches** (*iOS*). Highlights screen touches with visual indicators.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
 - **Transparent status bar**. The map becomes visible under the status bar.  
 - **Show free version banner**. Display the free version banner even in the paid version.  
 - **Show debug information**. Display graphical information about the placement of each text on the map.
