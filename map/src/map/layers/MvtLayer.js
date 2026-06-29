@@ -138,6 +138,12 @@ export default function MvtLayer({ config }) {
             interactive: false,
             fadeDuration: 0,
         }).addTo(map);
+        const originalOnRemove = glLayer.onRemove;
+        glLayer.onRemove = function onRemove(leafletMap) {
+            if (this._glMap) {
+                originalOnRemove.call(this, leafletMap);
+            }
+        };
 
         const maplibreMap = glLayer.getMaplibreMap();
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
@@ -222,7 +228,9 @@ export default function MvtLayer({ config }) {
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );
-            map.removeLayer(glLayer);
+            if (map.hasLayer(glLayer)) {
+                map.removeLayer(glLayer);
+            }
         };
     }, [map, mtx.tileURL, config]);
 
