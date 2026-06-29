@@ -38,3 +38,12 @@ export function isOsmTestTileURL(tileURL) {
 export function isMvtTileURL(tileURL) {
     return tileURL?.type === 'mvt' || isOsmAndTileURL(tileURL) || isOsmTestTileURL(tileURL);
 }
+
+export function isWebGLAvailable() {
+    try {
+        const canvas = document.createElement('canvas');
+        return !!(canvas.getContext('webgl2') || canvas.getContext('webgl'));
+    } catch {
+        return false;
+    }
+}

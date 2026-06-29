@@ -3,7 +3,10 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import { osmandTileURL } from '../baseTileURL';
+import { isWebGLAvailable } from '../mvt/MvtDemoConfig';
 
 const POPUP_MAX_HEIGHT = 220;
 const SHOW_TILE_BOUNDARIES = true;
@@ -122,6 +125,7 @@ function createTagsPopupContent(properties, popupClassName) {
 
 export default function MvtLayer({ config }) {
     const map = useMap();
+    const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
 
     useEffect(() => {
@@ -133,17 +137,27 @@ export default function MvtLayer({ config }) {
 
         window.seIsTilesLoaded = false;
 
+        if (!isWebGLAvailable()) {
+            window.seIsTilesLoaded = true;
+            console.warn(`${errorLabel}: WebGL is not available`);
+            mtx.setTileURL(osmandTileURL);
+            mtx.setRenderingType(null);
+            ctx.setConfigureMapState((prev) => {
+                const configureMap = {
+                    ...prev,
+                    mapStyle: { tileURL: osmandTileURL, renderingType: null },
+                };
+                updateConfigureMapCache(configureMap);
+                return configureMap;
+            });
+            return undefined;
+        }
+
         const glLayer = L.maplibreGL({
             style: createStyle(style, tileUrl),
             interactive: false,
             fadeDuration: 0,
         }).addTo(map);
-        const originalOnRemove = glLayer.onRemove;
-        glLayer.onRemove = function onRemove(leafletMap) {
-            if (this._glMap) {
-                originalOnRemove.call(this, leafletMap);
-            }
-        };
 
         const maplibreMap = glLayer.getMaplibreMap();
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
@@ -228,9 +242,7 @@ export default function MvtLayer({ config }) {
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );
-            if (map.hasLayer(glLayer)) {
-                map.removeLayer(glLayer);
-            }
+            map.removeLayer(glLayer);
         };
     }, [map, mtx.tileURL, config]);
 
