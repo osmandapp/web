@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -37,7 +37,7 @@ Tous les widgets sont [dépendants du profil](../personal/profiles.md) — chaqu
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
@@ -45,7 +45,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Configurer l'écran](@site/static/img/widgets/configure_screen_andr.png)
+![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
 
 </TabItem>
 
@@ -68,7 +68,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Configurer l'écran](@site/static/img/widgets/configure_screen_ios.png)
+![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
 
 </TabItem>
 
@@ -94,13 +94,13 @@ Chaque panneau prend en charge différents comportements de mise en page :
 
 <TabItem value="android" label="Android">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
 
 </TabItem>
 
@@ -229,13 +229,13 @@ Chaque panneau prend en charge différents comportements de mise en page :
 
 <TabItem value="android" label="Android">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
 
 </TabItem>
 
@@ -273,13 +273,13 @@ Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les 
 
 <TabItem value="android" label="Android">  
 
-![Contour de widget Android](@site/static/img/widgets/simple_widgets_andr.png) 
+![Widget stroke Android](@site/static/img/widgets/simple_widgets_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contour de widget iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+![Widget stroke IOS](@site/static/img/widgets/simple_widgets_ios.png) 
 
 </TabItem>
 
@@ -294,7 +294,7 @@ Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les 
 
 Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Modifier → Ajouter une page*  
 
-![Page de widget](@site/static/img/widgets/widget_page_1_andr.png) ![Page de widget](@site/static/img/widgets/widget_page_2_andr.png)
+![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)
 
 </TabItem>
 
@@ -302,7 +302,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Modifier → Ajouter une page*
 
-![Page de widget](@site/static/img/widgets/widget_page_1_ios.png) ![Page de widget](@site/static/img/widgets/widget_page_2_ios.png)  
+![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
 </TabItem>
 
@@ -319,7 +319,7 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
 
 ## Paramètres des widgets {#widget-settings}
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
 1. **Options de taille des widgets** (*pour tous les panneaux*) :  
     Vous pouvez personnaliser la taille des **widgets simples** dans les **panneaux supérieur, inférieur, gauche et droit** :
@@ -367,13 +367,13 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel du widget](@site/static/img/widgets/widget_context_menu_andr_new.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel du widget](@site/static/img/widgets/widget_context_menu_ios_new.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -410,7 +410,7 @@ Le **menu contextuel du widget** offre un moyen rapide de gérer et de configure
 
 *Menu OsmAnd → Configurer l'écran → Widgets → Panneau*  
 
-![Dupliquer un widget](@site/static/img/widgets/widget_dublicate.png)  
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
 OsmAnd vous permet d'ajouter plusieurs instances du même widget à différents panneaux ou pages. Cette fonctionnalité est particulièrement utile lorsque vous avez besoin d'informations cohérentes sur différentes vues ou profils.  
 
@@ -429,13 +429,13 @@ OsmAnd vous permet d'ajouter plusieurs instances du même widget à différents 
 
 <TabItem value="android" label="Android">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_remove_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_remove_ios.png) 
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_ios.png) 
 
 </TabItem>
 
@@ -460,7 +460,7 @@ Vous pouvez réorganiser ou supprimer des widgets de l'écran de l'application e
 
 <InfoAndroidOnly/>
 
-![Mise en page de l'écran de la carte](@site/static/img/widgets/map_screen_layout_1.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/map_screen_layout_2.png)
+![Map Screen Layout](@site/static/img/widgets/map_screen_layout_1.png) ![Map Screen Layout](@site/static/img/widgets/map_screen_layout_2.png)
 
 Le paramètre **Mise en page de l'écran de la carte** vous permet de contrôler la disposition des panneaux de widgets sur l'écran de la carte. Il aide à éviter le chevauchement des widgets et des boutons et améliore l'utilisation de l'espace d'écran, en particulier lors du passage entre les orientations portrait et paysage.
 
@@ -468,7 +468,7 @@ Vous pouvez ouvrir les paramètres de mise en page de l'écran de la carte depui
 
 ### Mises en page unique et séparée {#single-and-separate-layouts}
 
-![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_single.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_separate.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
@@ -480,7 +480,7 @@ Lorsque Mises en page séparées est activé, les modifications apportées dans 
 
 ### Onglets Portrait et Paysage {#portrait-and-landscape-tabs}
 
-![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_tabs.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_tabs.png)
 
 Lorsque Mises en page séparées est activé, deux onglets deviennent disponibles dans l'écran Configurer l'écran : **Portrait** et **Paysage**. Chaque onglet représente une mise en page indépendante pour l'orientation d'écran correspondante. Vous pouvez basculer entre les onglets en les appuyant.
 
@@ -490,11 +490,11 @@ Vous pouvez copier la mise en page entre les orientations. Pour accéder à ces 
 
 Seule la liste de widgets est copiée, et l'opération s'applique au sein du même profil.
 
-![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_portrait.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_landscape.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_portrait.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_landscape.png)
 
 ### Mise en page des panneaux {#panels-layout}
 
-![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_wide.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_compact.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_wide.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_compact.png)
 
 Le paramètre **Mise en page des panneaux** contrôle la façon dont les panneaux de widgets supérieur et inférieur sont affichés. 
 
@@ -517,7 +517,7 @@ La mise en page des panneaux peut être configurée indépendamment pour les ori
 
 Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Page de widget](@site/static/img/widgets/conf_screen_buttons_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
 </TabItem>
 
@@ -525,7 +525,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Page de widget](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
 </TabItem>
 
@@ -541,7 +541,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Page de widget](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -549,7 +549,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Page de widget](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
 </TabItem>
 
@@ -587,7 +587,7 @@ Le **menu à trois points** sur l'écran des boutons par défaut contient des ac
 
 <TabItem value="android" label="Android">  
 
-![Apparence du bouton](@site/static/img/widgets/button_appearance_settings_andr.png)
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
 **Accéder à** (pour les Boutons personnalisés) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu à trois points → *<Translate android="true" ids="shared_string_appearance"/>*  
 **Accéder à** (pour tous les Boutons par défaut) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu à trois points → *<Translate android="true" ids="shared_string_appearance"/>*  
@@ -597,7 +597,7 @@ Le **menu à trois points** sur l'écran des boutons par défaut contient des ac
 
 <TabItem value="ios" label="iOS">  
 
-![Apparence du bouton](@site/static/img/widgets/button_appearance_settings_ios.png)
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_ios.png)
 
 **Accéder à** (pour les Boutons personnalisés) : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu à trois points → *<Translate ios="true" ids="shared_string_appearance"/>*
 **Accéder à** (pour un Bouton par défaut spécifique) : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → sélectionner un bouton → *<Translate ios="true" ids="shared_string_appearance"/>*
@@ -624,7 +624,7 @@ La fonction *Apparence du bouton* vous permet de personnaliser entièrement l'as
 
 Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
-![Page de widget](@site/static/img/widgets/conf_screen_other_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
 
 </TabItem>
 
@@ -632,14 +632,14 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Autre*
 
-![Page de widget](@site/static/img/widgets/conf_screen_other_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_other_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distance par appui](../widgets/radius-ruler.md#distance-by-tap). Donne la possibilité de mesurer la distance entre votre position et le point sélectionné.
+- [Distance par appui](#distance-by-tap). [⬇](#distance-by-tap)
 - [Compteur de vitesse](../widgets/info-widgets.md#speedometer). Affiche la vitesse actuelle basée sur les données GPS et la vitesse limitée basée sur les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Les données affichées dépendent également du paramètre de [Tolérance de limitation de vitesse](../navigation/guidance/voice-navigation.md#speed-limit) d'OsmAnd.
 
 
@@ -649,13 +649,13 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/
 
 <TabItem value="android" label="Android">  
 
-![Page de widget](@site/static/img/widgets/conf_screen_display_position_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_display_position_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Page de widget](@site/static/img/widgets/conf_screen_display_position_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png)
 
 </TabItem>
 
@@ -670,6 +670,37 @@ Permet de définir le placement du curseur de *[Ma position](../map/interact-wit
 - **<Translate android="true" ids="shared_string_automatic"/>**. Place *Ma position* en fonction de l'*[Orientation de la carte](../map/interact-with-map.md#map-orientation-modes)* (*Bas* - pour la direction du mouvement, *Centre* - pour toutes les autres).
 
 
+### Distance par appui {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+L'outil **Distance par appui** vous permet de mesurer les distances entre des points sur la carte sans utiliser la [Règle de rayon](../widgets/radius-ruler.md#radius-ruler-widget) ou créer un itinéraire.
+
+Il existe deux cas d'utilisation :
+
+- **Distance entre votre position et un point**  
+  Appuyez n'importe où sur la carte et une ligne droite apparaîtra depuis votre position actuelle jusqu'au point appuyé, accompagnée d'une étiquette de distance. La ligne reste à l'écran même si vous appuyez ailleurs.
+
+- **Distance entre deux points quelconques**  
+  Appuyez simultanément sur deux points de la carte (multi-touch). Une ligne relie les deux points et la distance mesurée est affichée.
+
+Vous pouvez également ajuster la taille du texte de l'étiquette de distance. Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Choisissez entre *<Translate android="true" ids="shared_string_normal"/>* (par défaut) et *<Translate android="true" ids="shared_string_large"/>* (1,5× plus grand). Lorsque l'option Grande est sélectionnée, un espacement supplémentaire est automatiquement ajouté entre la ligne et l'étiquette pour une meilleure lisibilité. Les modifications s'appliquent instantanément sans redémarrer l'application.
+
+
 ## Actions {#actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -678,7 +709,7 @@ Permet de définir le placement du curseur de *[Ma position](../map/interact-wit
 
 Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
-![Page de widget](@site/static/img/widgets/widget_actions_andr.png)
+![Widget page](@site/static/img/widgets/widget_actions_andr.png)
 
 </TabItem>
 
@@ -686,7 +717,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → N'importe quel panneau*
 
-![Page de widget](@site/static/img/widgets/widget_actions_ios.png)  
+![Widget page](@site/static/img/widgets/widget_actions_ios.png)  
 
 </TabItem>
 
@@ -709,13 +740,13 @@ Actions disponibles :
 
 <TabItem value="android" label="Android">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_switch_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_switch_ios.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_ios.png)
 
 </TabItem>
 

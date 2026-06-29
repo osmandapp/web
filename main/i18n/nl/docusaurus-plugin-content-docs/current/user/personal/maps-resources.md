@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -55,7 +55,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Download kaartmenu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regio-brede kaarten iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Download kaartmenu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regio-brede kaarten iOS](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Het downloaden van kaarten in de OsmAnd-applicatie is een belangrijke stap die d
 ### Gratis kaartinhoud {#free-map-content}
 
 - **Standaardkaart**. Biedt een overzicht van het gebied op basis van de [OpenStreetMap](https://www.openstreetmap.org/)-bron en bevat een kaart, routes, adressen, POI en informatie over openbaar vervoer. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's van het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.  
-- **Alleen wegen** (*alleen Android*). De kaart bevat alleen informatie over het wegennet om te focussen op routes en wegeninfrastructuur. Door details zoals gebouwen en nuttige plaatsen te verwijderen, is deze kleiner dan een standaardkaart. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's in het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.
+- **Alleen wegen**. De kaart bevat alleen informatie over het wegennet om te focussen op routes en wegeninfrastructuur. Door details zoals gebouwen en nuttige plaatsen te verwijderen, is deze kleiner dan een standaardkaart. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's in het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.
 - **Wereldoverzichtskaart**. Versies van OsmAnd tot 3.8 bieden de mogelijkheid om een wereldkaart te downloaden zodat u deze op planetaire schaal kunt bekijken. In nieuwere versies van OsmAnd is een lichtgewicht *Mini Wereldkaart* gebundeld met de applicatie. De app laat u een grotere overzichtswereldkaart downloaden met meer gedetailleerde informatie. 
 
 :::info maandelijkse kaartupdates
@@ -237,15 +237,15 @@ Onder de geheugenbalk wordt een lijst van alle gedownloade OsmAnd-kaarten en -br
 
 Tik op een item in het tabblad **Lokaal** om de gedetailleerde lijst te openen. Bovenaan deze lijst toont een visueel paneel hoeveel ruimte het geselecteerde gegevenstype inneemt ten opzichte van de totale OsmAnd-opslag.
 
-Voor Standaardkaarten kunnen sommige items per regio worden gegroepeerd. In dat geval toont elke kaartvermelding zowel de subregio als de bovenliggende regio. De volgorde van deze namen hangt af van de geselecteerde sorteermethode: bij sorteren op naam wordt de subregio eerst weergegeven, gevolgd door de regio; bij sorteren op land wordt de regio eerst weergegeven, gevolgd door de subregio.
-
 ***Beschikbare acties:***
 
 - **Zoeken**. Vind specifieke gegevens op naam binnen de geselecteerde map.
 - **Driepuntenmenu**:  
     ***Selecteren***. Kies meerdere items voor acties zoals *Verwijderen*, *Deactiveren* of *Activeren*.  
     ***Importeren***. Krijg toegang tot de opslag van het apparaat om bestanden te importeren.
-- **Sorteeroptie**. Sorteer items op naam, land, datum of grootte (beschikbaarheid hangt af van het gegevenstype).
+- **Sorteeroptie**. Sorteer items op naam, land, datum of grootte (beschikbaarheid hangt af van het gegevenstype).  
+
+Voor Standaardkaarten kunnen sommige items per regio worden gegroepeerd. In dat geval toont elke kaartvermelding zowel de subregio als de bovenliggende regio. De volgorde van deze namen hangt af van de geselecteerde sorteermethode: bij sorteren op naam wordt de subregio eerst weergegeven, gevolgd door de regio; bij sorteren op land wordt de regio eerst weergegeven, gevolgd door de subregio.
 
 Elk item in de lijst biedt een *driepuntenmenu* met opties:
 
@@ -477,6 +477,8 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 </Tabs>
 
 **Live Updates** biedt frequente, incrementele kaartupdates via een [abonnement](../purchases/index.md) of is gratis voor [OSM-bijdragers](#free-for-osm-mappers). Updates vinden elke 15 minuten plaats op de OsmAnd-servers en zijn per uur, dagelijks of wekelijks te downloaden. Deze updates verbruiken minimale opslagruimte — ongeveer 2-4% van de volledige kaartgrootte per maand.
+
+Live Updates worden toegepast bovenop de gedownloade kaart en vervangen het volledige kaartbestand niet. Hierdoor weerspiegelt de datum die voor een kaart in het tabblad Lokaal wordt weergegeven geen Live Updates en kan deze ongewijzigd blijven nadat ze zijn toegepast. Om een nieuwere versie van de volledige kaart te downloaden, gebruikt u Bijwerken of Alles bijwerken in het [Updatemenu](#updates-menu).
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

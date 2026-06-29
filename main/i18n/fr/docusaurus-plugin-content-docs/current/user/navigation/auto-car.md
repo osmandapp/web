@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -222,13 +222,17 @@ Le widget **Prochain virage** affiche la distance et le type de la [manœuvre du
 
 ### Informations sur l'itinéraire {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Les informations sur l'itinéraire comprennent :
 
 - [Temps de trajet estimé](../widgets/nav-widgets.md#time-to-destination),
 - [Heure d'arrivée estimée](../widgets/nav-widgets.md#time-to-destination),
 - [Distance du trajet](../widgets/nav-widgets.md#distance-to-destination).
 
-Lorsqu'il est activé, [le paramètre du widget](#eta-next-stop) (Informations sur l'itinéraire) affichera les détails de l'itinéraire pour le prochain arrêt ([le point intermédiaire](../navigation/setup/route-navigation.md#intermediate-destinations)).
+Lorsqu'il est activé, **[le paramètre du widget](#eta-next-stop)** (Informations sur l'itinéraire) affichera les détails de l'itinéraire pour le prochain arrêt ([le point intermédiaire](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Appuyez sur le bouton **X** à côté du widget d'informations sur l'itinéraire pour arrêter la navigation.
 
 
 ### Alertes de navigation {#navigation-alerts}
@@ -269,7 +273,7 @@ Ce widget d'information combine des types d'alertes tels que **Passages piétons
 Le widget **Compteur de vitesse** est un élément d'interface intégré qui affiche la *vitesse actuelle* à l'aide des données GPS et la *limitation de vitesse* de la [base de données OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) et des [paramètres d'OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) sur l'écran du système multimédia du véhicule. Lorsque votre vitesse actuelle approche la tolérance de limite de vitesse configurée ou dépasse la limite de vitesse, le widget change d'apparence (couleurs) pour fournir un avertissement. Le changement d'apparence peut être animé.
 
 - Le **widget Compteur de vitesse** est [*dépendant du profil*](../personal/profiles.md), donc si vous modifiez les paramètres pour un profil, ils ne seront pas appliqués à un autre.
-- Il n'y a pas d'option pour personnaliser l'affichage du **widget Compteur de vitesse** directement dans *Android Auto*, vous devez le configurer dans l'application OsmAnd avant de commencer la navigation et de connecter votre appareil au véhicule.
+- Il n'y a pas d'option pour personnaliser l'affichage du **widget Compteur de vitesse** directement dans *Android Auto*, vous devez le configurer dans l'application avant de commencer la navigation et de connecter votre appareil au véhicule.
 - Pour plus d'informations sur la façon d'ajouter et de configurer le widget *Compteur de vitesse* à l'écran, veuillez lire l'[article sur les widgets d'information](../widgets/info-widgets.md#speedometer).
 
 

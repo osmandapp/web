@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
 sidebar_position: 11
 title:  تطوير OsmAnd
 ---
@@ -53,7 +53,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">  
 
-![إعدادات التطوير iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![إعدادات التطوير iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -88,6 +88,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **محاكاة بدء تشغيل التطبيق لأول مرة**. يضبط العلامة التي تشير إلى بدء تشغيل التطبيق لأول مرة، مع الحفاظ على جميع الإعدادات الأخرى دون تغيير.  
 - **اختبار التوجيهات الصوتية**. حدد صوتًا واختبره عن طريق تشغيل الإعلانات.  
+- **إظهار اللمسات** (*iOS*). يبرز لمسات الشاشة بمؤشرات بصرية.
 - **شريط الحالة الشفاف**. تصبح الخريطة مرئية تحت شريط الحالة.  
 - **إظهار لافتة النسخة المجانية**. عرض لافتة النسخة المجانية حتى في النسخة المدفوعة.  
 - **إظهار معلومات تصحيح الأخطاء**. عرض معلومات رسومية حول موضع كل نص على الخريطة.
@@ -322,7 +323,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## أداة معلومات الذاكرة {#memory-info-widget}
 
-تم تصميم هذه الأداة خصيصًا لك عند استخدام OsmAnd لتوفير تفاعل أكثر ملاءمة وغنى بالمعلومات مع استخدام ذاكرة الجهاز. تتيح لك مراقبة أنواع مختلفة من الذاكرة المستخدمة من قبل التطبيق بسهولة وسرعة، وهو أمر مفيد بشكل خاص عند استخدام OsmAnd للملاحة. اقرأ المزيد عن الأداة في مقالة [أدوات المعلومات](../widgets/info-widgets.md#memory-info).
+تم تصميم هذه الأداة خصيصًا لك عند استخدام OsmAnd لتوفير تفاعل أكثر ملاءمة وغنيًا بالمعلومات مع استخدام ذاكرة الجهاز. تتيح لك مراقبة أنواع مختلفة من الذاكرة المستخدمة من قبل التطبيق بسهولة وسرعة، وهو أمر مفيد بشكل خاص عند استخدام OsmAnd للملاحة. اقرأ المزيد عن الأداة في مقالة [أدوات المعلومات](../widgets/info-widgets.md#memory-info).
 
 
 ## محاكاة مسار GPX {#gpx-track-simulation}

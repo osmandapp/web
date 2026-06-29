@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -55,7 +55,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menú de descarga de mapas iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas de toda la región iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menú de descarga de mapas iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas de toda la región Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ La descarga de mapas en la aplicación OsmAnd es un paso importante que determin
 ### Contenido de mapa gratuito {#free-map-content}
 
 - **Mapa estándar**. Proporciona una visión general del área basada en la fuente [OpenStreetMap](https://www.openstreetmap.org/) y contiene un mapa, rutas, direcciones, PDI e información de transporte público. Al tocar se abre una pantalla con una lista de regiones del país seleccionado e información sobre cuánto espacio ocuparán estos mapas en su dispositivo.  
-- **Solo carreteras** (*solo Android*). El mapa contiene solo información de la red de carreteras para centrarse en las rutas y la infraestructura vial. Al eliminar detalles como edificios y puntos de interés, es más pequeño que un mapa estándar. Al tocar se abre una pantalla con una lista de regiones del país seleccionado e información sobre cuánto espacio ocuparán estos mapas en su dispositivo.
+- **Solo carreteras**. El mapa contiene solo información de la red de carreteras para centrarse en las rutas y la infraestructura vial. Al eliminar detalles como edificios y puntos de interés, es más pequeño que un mapa estándar. Al tocar se abre una pantalla con una lista de regiones del país seleccionado e información sobre cuánto espacio ocuparán estos mapas en su dispositivo.
 - **Mapa general del mundo**. Las versiones de OsmAnd hasta la 3.8 ofrecen descargar un mapa del mundo para que pueda verlo a escala planetaria. En las versiones más nuevas de OsmAnd, se incluye un *Mini mapa del mundo* ligero con la aplicación. La aplicación le permite descargar un mapa general del mundo más grande con información más detallada. 
 
 :::info actualizaciones mensuales de mapas
@@ -477,6 +477,8 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_up
 </Tabs>
 
 **Actualizaciones en vivo** proporciona actualizaciones de mapas frecuentes e incrementales a través de una [suscripción](../purchases/index.md) o es gratuito para los [colaboradores de OSM](#free-for-osm-mappers). Las actualizaciones ocurren cada 15 minutos en los servidores de OsmAnd y se pueden descargar por hora, día o semana. Estas actualizaciones consumen un almacenamiento mínimo, alrededor del 2-4% del tamaño completo del mapa por mes.
+
+Las actualizaciones en vivo se aplican sobre el mapa descargado y no reemplazan el archivo de mapa completo. Como resultado, la fecha que se muestra para un mapa en la pestaña Local no refleja las actualizaciones en vivo y puede permanecer sin cambios después de aplicarlas. Para descargar una versión más reciente del mapa completo, utilice Actualizar mapa o Actualizar todo en el [Menú de actualizaciones](#updates-menu).
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

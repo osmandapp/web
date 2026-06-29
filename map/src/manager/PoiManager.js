@@ -17,6 +17,7 @@ import {
     changeIconColor,
     createPoiIcon,
     getIconUrlByName,
+    POI_ICON_TYPE,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
 import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
@@ -190,6 +191,37 @@ function preparePoiFilterIcon(filter) {
     return filter;
 }
 
+// Dedupes SVG fetches by URL (including in-flight) so a batch of icon loads hits each file once,
+// which the React-state cache can't do within one Promise.all (avoids ERR_INSUFFICIENT_RESOURCES).
+const svgIconRequests = new Map();
+
+async function fetchSvgIcon(url) {
+    if (svgIconRequests.has(url)) {
+        return svgIconRequests.get(url);
+    }
+    const request = fetch(url)
+        .then((response) => {
+            if (response.ok) {
+                return response.text();
+            }
+            if (response.status >= 500 || response.status === 429) {
+                svgIconRequests.delete(url);
+            }
+            console.warn(`Search icon not found (${response.status}): ${url}`);
+
+            return null;
+        })
+        .catch((error) => {
+            console.error(`Failed to fetch SVG icon from ${url}: ${error}`);
+            svgIconRequests.delete(url);
+
+            return null;
+        });
+    svgIconRequests.set(url, request);
+
+    return request;
+}
+
 /**
  * Asynchronously creates a cache of Point of Interest (POI) icons.
  *
@@ -197,7 +229,7 @@ function preparePoiFilterIcon(filter) {
  * @param {Object} obj - An optional object representing a single POI.
  * @param {Object} poiIconCache - The existing cache of POI icons.
  * @param {String} icon - An optional icon name.
- * @returns {Object} - The updated cache of POI icons.
+ * @returns {Promise<Object>} - The updated cache of POI icons.
  */
 export async function createPoiCache({ poiList = null, obj = null, poiIconCache, icon = null }) {
     const iconCache = {};
@@ -226,11 +258,9 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache,
             } else {
                 // If the icon is not in the existing cache and not yet in the updated cache
                 if (!iconCache[iconWpt]) {
-                    try {
-                        const response = await fetch(getIconUrlByName('poi', iconWpt));
-                        iconCache[iconWpt] = await response.text();
-                    } catch (error) {
-                        console.error(`Failed to fetch SVG for iconWpt ${iconWpt}: ${error}`);
+                    const svgData = await fetchSvgIcon(getIconUrlByName(POI_ICON_TYPE, iconWpt));
+                    if (svgData) {
+                        iconCache[iconWpt] = svgData;
                     }
                 }
             }
@@ -327,9 +357,8 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
         if (ctx.poiIconCache?.[name]) {
             svgData = ctx.poiIconCache[name];
         } else {
-            const response = await fetch(iconUrl);
-            if (response.ok) {
-                svgData = await response.text();
+            svgData = await fetchSvgIcon(iconUrl);
+            if (svgData) {
                 ctx.setPoiIconCache((prevState) => ({
                     ...prevState,
                     [name]: svgData,

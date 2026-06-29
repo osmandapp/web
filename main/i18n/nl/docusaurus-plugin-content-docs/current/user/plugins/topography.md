@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
 sidebar_position: 16
 title: Topografie
 ---
@@ -41,7 +41,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 | Hoogtelijnen | Schaduwreliëf | Helling |
 |:---|:---|:---|
-| ![Hoogtelijnen_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Schaduwreliëf_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Hellingen_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 | Hoogtelijnen | Schaduwreliëf | Helling |
 |:---|:---|:---|
-| ![Hoogtelijnen_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Schaduwreliëf_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Hellingen_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -99,7 +99,7 @@ Voor stabiel werk en om bronnen te besparen, kunt u een kaart downloaden van nie
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Hoogtelijnen downloaden Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Hoogtelijnen downloaden Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +107,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,r
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Hoogtelijnen downloaden iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Hoogtelijnen downloaden iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +124,13 @@ Als de kaart die op het scherm wordt weergegeven niet is gedownload, dan wordt i
 
 <TabItem value="android" label="Android">
 
-![Dialoogvenster downloaden hoogtelijnen Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Dialoogvenster downloaden hoogtelijnen iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +153,7 @@ Hoogtelijnen is een [betaalde functie](../purchases/index.md).
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Hoogtelijnen menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +161,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Hoogtelijnen*
 
-![Hoogtelijnen menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +196,7 @@ Terrein is een [betaalde functie](../purchases/index.md).
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrein menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrein menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,26 +204,26 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrein menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrein menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-De optie **Terrein** schakelt drie functies in en stelt u in staat deze aan te passen, zoals *Schaduwreliëf*, *Helling* en *Hoogte*.  
+De optie **Terrein** schakelt drie functies in en stelt u in staat deze aan te passen, zoals *Schaduwreliëf*, *Helling* en *Hoogte*. Op iOS bevat het Visualisatiemenu ook *Terreinschaduwen*, een realtime terreinschaduwmodus gebaseerd op 3D-reliëf.  
 Specifieke kenmerken:  
 
-- Er kan slechts één optie tegelijk worden ingeschakeld, ofwel Schaduwreliëf, Helling of Hoogte.
+- Er kan slechts één optie tegelijk worden ingeschakeld, ofwel Schaduwreliëf, Helling, Hoogte of Terreinschaduwen.
 - Als u geen veranderingen ziet na het downloaden en inschakelen van de betreffende kaart, wordt aanbevolen de applicatie opnieuw te starten.
 
-Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-scheme) met de optie om dit te [wijzigen](#modify-color-scheme) (voor [Pro-abonnees](../../user/purchases/index.md)), de mogelijkheid om de transparantie van de laag op de kaart te veranderen ([zichtbaarheid](#visibility)), en het selecteren van het [zoomniveau](#zoom-levels) voor de weergave ervan, informatie over de grootte van [gecachete gegevens](#cache-size), en een lijst met [kaarten](../../user/personal/maps-resources.md) die nodig zijn om de laag weer te geven.
+Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-scheme) (**visualisatie** op iOS) met de optie om dit te [wijzigen](#modify-color-scheme) (voor [Pro-abonnees](../../user/purchases/index.md)), de mogelijkheid om de transparantie van de laag op de kaart te veranderen ([zichtbaarheid](#visibility)), en het selecteren van het [zoomniveau](#zoom-levels) voor de weergave ervan, informatie over de grootte van [gecachete gegevens](#cache-size), en een lijst met [kaarten](../../user/personal/maps-resources.md) die nodig zijn om de laag weer te geven.
 
 
 ## Schaduwreliëf-, Helling- en Hoogtelagen {#hillshade-slope-and-altitude-layers}
 
 | Schaduwreliëf | Helling | Hoogte |
 | ------ | ------- | ------- |
-| ![Schaduwreliëf](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Schaduwreliëf** is gebaseerd op het simuleren van oppervlakteverlichting met behulp van terreingegevens. Deze methode omvat het creëren van schaduwen en hooglichten op basis van de hoek van het oppervlak ten opzichte van de lichtbron. Als gevolg hiervan ziet u natuurlijke heuvels, valleien en andere terreindetails op de kaart.  
 
@@ -240,11 +240,20 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 - *Terrein-inschatting.* Het is handig voor het visualiseren van het landschap, vooral als u wandelt of fietst.
 
 
+### Terreinschaduwen (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Terreinschaduwen** biedt realtime dynamische schaduw op basis van 3D-terreingeometrie. In tegenstelling tot raster Schaduwreliëf-kaarten wordt het schaduweffect direct op het apparaat gegenereerd met behulp van terreingegevens en volgt het automatisch het huidige kaartperspectief.
+
+Terreinschaduwen vereist 3D-reliëf en schakelt dit automatisch in wanneer geselecteerd. De functie is ontworpen om de leesbaarheid van het terrein te verbeteren met behoud van lage prestatie-impact.
+
+
 ### Standaard Kleurenschema {#default-color-scheme}
 
 | Schaduwreliëf | Helling | Hoogte |
 | ------ | ------- | ------- |
-|![Schaduwreliëf](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Helling](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Schaduwreliëf* gebruikt donkere tinten om hellingen, pieken en laaglanden te tonen. De virtuele zon heeft een vaste azimut (richting) van 315 graden.
 
@@ -263,7 +272,7 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 <TabItem value="android" label="Android">
 
-![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 *De Kleurenschema Wijzigen-functie* stelt u in staat een kleurenschema te selecteren:
 
@@ -286,7 +295,7 @@ Voor geavanceerde palet-aanpassing met behulp van paletbestanden, zie het artike
 
 <TabItem value="ios" label="iOS">  
 
-![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *De Kleurenschema Wijzigen-functie* stelt u in staat een kleurenschema te selecteren:
 
@@ -303,19 +312,21 @@ U kunt [deze paletten bewerken](../personal/color-palette-schemes.md#palette-mod
 
 | Zichtbaarheid 31% | Zichtbaarheid 74% |
 | ------ | ------- |
-| ![Zichtbaarheid ](../../../blog/2023-08-28-terrain/img/31.png) | ![Zichtbaarheid ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-De functie *Zichtbaarheid* wordt gebruikt om de transparantie van de schaduwen voor Schaduwreliëf en de kleuren die worden gebruikt voor de weergave van de hoek in de Helling-parameter aan te passen.
+De functie *Zichtbaarheid* wordt gebruikt om de transparantie van de schaduwen voor Schaduwreliëf en de kleuren die worden gebruikt voor de weergave van de hoek in de Helling-parameter aan te passen. Voor Terreinschaduwen regelt Zichtbaarheid de sterkte van het terreinschaduweffect.
 
 ### Zoomniveaus {#zoom-levels}
 
-![Zoomniveaus](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de kaartzoomniveaus in te stellen, variërend van 4 tot 19, waarop de Schaduwreliëf- of Helling-kaartlagen worden weergegeven.
 
+Zoomniveaus zijn niet beschikbaar voor Terreinschaduwen omdat deze visualisatie dynamisch wordt gerenderd en niet afhankelijk is van de zichtbaarheid van rasterlagen.
+
 ### Cachegrootte {#cache-size}
 
-**Cachegrootte** is een informatieve sectie die de hoeveelheid geheugen op uw apparaat weergeeft die momenteel wordt gebruikt voor *Terrein*-gegevens. Elke keer dat u *Schaduwreliëf*- of *Helling*-informatie op een kaart bekijkt, worden al deze gegevens tijdelijk in de cache opgeslagen voor snelle toegang en later gebruik, waardoor extra belasting van de processor van uw apparaat wordt vermeden.  
+**Cachegrootte** is een informatieve sectie die de hoeveelheid geheugen op uw apparaat weergeeft die momenteel wordt gebruikt voor *Terrein* gegevens. Elke keer dat u *Schaduwreliëf*- of *Helling*-informatie op een kaart bekijkt, worden al deze gegevens tijdelijk in de cache opgeslagen voor snelle toegang en later gebruik, waardoor extra belasting van de processor van uw apparaat wordt vermeden.  
 
 **Het wissen van de cache** is soms nodig om ruimte op uw apparaat vrij te maken of om mogelijke prestatieproblemen op te lossen. Om de cache te wissen, moet u naar de *Systeeminstellingen* van het apparaat gaan, waarna het pad als volgt kan zijn: *Applicaties → OsmAnd → Opslag → Cache wissen*.
 
@@ -334,7 +345,7 @@ De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de
 
 ### Snelle Acties {#quick-actions}
 
-![QA voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](../../user/personal/color-palette-schemes.md#quick-actions) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.  
 
@@ -351,7 +362,7 @@ De hoofdinstellingen voor *Toon of Verberg kaarttypes* bevinden zich in de secti
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D-gebouwen](@site/static/img/map/3d_buildings_4_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_3_new.png)
+![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -359,7 +370,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![3D-gebouwen](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_highlight_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -382,13 +393,13 @@ De 3D-gebouwen-instellingen zijn verdeeld in twee groepen: **Uiterlijk** en **Pr
 
 <TabItem value="android" label="Android">  
 
-![3D-gebouwen](@site/static/img/map/3d_buildings_color.png)
+![3D Buildings](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![3D-gebouwen](@site/static/img/map/3d_buildings_color_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -439,7 +450,7 @@ Beide prestatie-opties gebruiken een tweeposities schakelaar direct in het 3D-ge
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -447,7 +458,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -471,7 +482,7 @@ De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensiona
 
 | Vectorkaartlaag | Rasterkaartlaag |
 | ------ | ------- |
-| ![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -479,7 +490,7 @@ De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensiona
 
 | Vectorkaartlaag | Rasterkaartlaag |
 | ------ | ------- |
-| ![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -493,7 +504,7 @@ De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensiona
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Verticale overdrijving*
 
-![Verticale overdrijving Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -501,7 +512,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Verticale overdrijving*
 
-![Verticale overdrijving iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -514,7 +525,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 | Schaduwreliëf | 3D-reliëf |
 |--------|---------|
-| ![Terreinlagen](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terreinlagen](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Schaduwreliëf** is een type kaart dat terrein weergeeft met behulp van schaduwen, waardoor een visuele weergave van de helling en vorm van het aardoppervlak ontstaat.  
 **3D-reliëf** is een functie die driedimensionale effecten aan de kaart toevoegt.  
@@ -530,13 +541,13 @@ Wanneer **Schaduwreliëf** is **ingeschakeld**, lijkt een afbeelding met reliëf
 
 <TabItem value="android" label="Android">
 
-![Hoogtelijnen gecombineerd met Schaduwreliëf](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Hoogtelijnen gecombineerd met Helling](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Hoogtelijnen gecombineerd met Schaduwreliëf in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Hoogtelijnen gecombineerd met Helling in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 

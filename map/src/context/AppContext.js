@@ -14,7 +14,7 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
-import { mvtDemoTileURL, MVT_DEMO_LAYER, mvtOsmTileURL, MVT_OSM_LAYER } from '../map/mvt/MvtDemoConfig';
+import { mvtOsmAndURL, MVT_OSMAND_LAYER, mvtOsmTestURL, MVT_OSM_TEST_LAYER } from '../map/mvt/MvtDemoConfig';
 import { osmandTileURL } from '../map/baseTileURL';
 import {
     EXPLORE_OBJS_KEY,
@@ -108,8 +108,8 @@ async function loadTileUrls(setAllTileURLs, develFeatures) {
         });
         data[osmandTileURL.key] = osmandTileURL;
         if (develFeatures) {
-            data[MVT_DEMO_LAYER] = mvtDemoTileURL;
-            data[MVT_OSM_LAYER] = mvtOsmTileURL;
+            data[MVT_OSMAND_LAYER] = mvtOsmAndURL;
+            data[MVT_OSM_TEST_LAYER] = mvtOsmTestURL;
         }
         setAllTileURLs(data);
     }
@@ -170,6 +170,7 @@ export const AppContextProvider = (props) => {
 
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
+    const [searchVisibleLevel, setSearchVisibleLevel] = useState(0);
     const [forceSearch, setForceSearch] = useState(false);
     const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
@@ -663,6 +664,8 @@ export const AppContextProvider = (props) => {
                 setCategoryIcons,
                 searchResult,
                 setSearchResult,
+                searchVisibleLevel,
+                setSearchVisibleLevel,
                 processingSearch,
                 setProcessingSearch,
                 searchTooltipRef,

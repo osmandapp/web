@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -55,9 +55,9 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -139,6 +139,7 @@ W chwili obecnej subskrypcja Pro obejmuje następujące funkcje:
 | [Wtyczka Metryki pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Umożliwia podłączenie skanera OBD-II w celu wyświetlania szczegółowych danych pojazdu w aplikacji OsmAnd i przechowywania informacji w zapisach tras. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne w darmowej wersji OsmAnd.  |
 | [Dostosuj linię trasy](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Zmiana koloru i szerokości linii trasy podczas nawigacji. |
 | [Modyfikuj schemat kolorów](../../user/plugins/topography.md#modify-color-scheme) | Pozwala dostosować wygląd mapy poprzez wybór lub import palet kolorów. Możesz edytować wbudowane schematy lub używać własnych plików palet, aby spersonalizować kolory mapy i trasy. |
+| [Foldery inteligentne – Organizuj według](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Pozwala organizować trasy w folderach inteligentnych przy użyciu zaawansowanych parametrów grupowania, takich jak data i godzina, odległość, czas trwania, prędkość, wysokość i dane z czujników. Opcje te umożliwiają bardziej szczegółową kategoryzację tras i elastyczną analizę. |
 
 
 ## Jak kupić {#how-to-buy}

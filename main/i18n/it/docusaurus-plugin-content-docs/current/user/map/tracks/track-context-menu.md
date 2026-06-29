@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Nella parte superiore del pannello informativo, è possibile visualizzare il nome della traccia e il simbolo utilizzato per contrassegnarla (*solo Android*). Il nome della traccia può essere modificato utilizzando la funzione di ridenominazione nel [menu Opzioni](#options). Alcune tracce (principalmente le *[Guide di viaggio](../../plan-route/travel-guides.md#manage-as-gpx-track)*) possono avere una breve *[descrizione](#description-and-info)* e/o un'immagine sotto il *Nome della traccia*. Una freccia mostra la *Direzione verso il punto più vicino della traccia* dalla [Mia posizione](../../map/interact-with-map.md#my-location-and-zoom).  
+Nella parte superiore del pannello informativo, è possibile visualizzare il nome della traccia e il simbolo utilizzato per contrassegnarla (*solo Android*). Il nome della traccia può essere modificato utilizzando la funzione di ridenominazione nel [menu Opzioni](#options). Alcune tracce (principalmente le *[Guide di viaggio](../../plan-route/travel-guides.md#manage-as-gpx-track)*) possono avere una breve *[descrizione](#description-and-info)* e/o un'immagine sotto il *Nome della traccia*. Una freccia mostra la *Direzione verso il punto più vicino della traccia* dalla [Mia posizione](../../map/interact-with-map.md#my-position-and-zoom).  
 
 Il pannello informativo fornisce anche informazioni su quanto segue:
 
@@ -248,7 +248,7 @@ Questa sezione della scheda *Panoramica* visualizza i ***dati dei tag*** e ***tu
 
 La funzione *Attività* in OsmAnd consente di etichettare le tracce GPX registrate e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) con attività specifiche per ulteriori analisi e organizzazione in cartelle.
 
-- [Tag di attività per tracce GPX](../../plugins/trip-recording.md#recording-settings). Le tracce registrate e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) ricevono automaticamente un tipo di attività in base al profilo utilizzato per crearle. Ciò aiuta a categorizzarle e filtrarle in seguito. È possibile modificare l'attività manualmente se necessario.
+- [Tag di attività per tracce GPX](#description-and-info). Le [tracce registrate](../../plugins/trip-recording.md#recording-settings) e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) ricevono automaticamente un tipo di attività in base al profilo utilizzato per crearle. Ciò aiuta a categorizzarle e filtrarle in seguito. È possibile modificare l'attività manualmente se necessario.
 - [Filtro attività](../../personal/tracks/smart-folder.md#search-filter). È possibile filtrare le tracce GPX registrate per attività, il che consente di concentrarsi sulla ricerca di tipi specifici di registrazioni, come tutte le tracce di ciclismo o escursionismo.
 - [Gestisci tipi di attività](../../personal/tracks/manage-tracks.md#selection-mode). È possibile modificare il tipo di attività per cartelle o tracce selezionate utilizzando la modalità di selezione nella scheda Tracce del menu I miei luoghi.
 - **Elenco attività**. Le categorie e i gruppi di attività sono definiti nelle risorse di OsmAnd. Per sviluppatori e contributori, l'elenco delle attività è mantenuto in un formato strutturato su [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), che dettagli i gruppi e i tipi di attività disponibili.
@@ -398,7 +398,7 @@ I waypoint sono uno dei tipi di punti disponibili sulla mappa. In generale, poss
 
 <TabItem value="ios" label="iOS">
 
-![Menu contestuale traccia Punti iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Menu contestuale traccia Punti iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -408,12 +408,12 @@ In questa scheda *Punti*:
 
 - [Mostra i dati dei punti della traccia](#display-custom-gpx-tags) e modifica i punti della traccia (waypoint e punti del percorso), [eliminali e aggiungi](#points--waypoints) waypoint a una traccia.
 - Crea e modifica [Gruppo (cartella) di punti](#waypoint-groups).
-- Centra la mappa su un waypoint utilizzando l'icona della spilla nell'elenco dei waypoint (*solo Android*) senza chiudere l'elenco, consentendo di visualizzare in anteprima i waypoint uno per uno.
+- Centra la mappa su un waypoint utilizzando l'icona della spilla nell'elenco dei waypoint senza chiudere l'elenco, consentendo di visualizzare in anteprima i waypoint uno per uno.
 
 
 ### Aggiungi Waypoint a una Traccia {#add-waypoint-to-a-track}
 
-I waypoint possono essere aggiunti alla traccia attualmente in registrazione o a qualsiasi traccia da [*I miei luoghi → Elenco tracce*](../../personal/tracks/manage-tracks.md):
+I waypoint possono essere aggiungi alla traccia attualmente in registrazione o a qualsiasi traccia da [*I miei luoghi → Elenco tracce*](../../personal/tracks/manage-tracks.md):
 
 - Usa il [menu contestuale della mappa](../../map/map-context-menu.md#-add--edit-track-waypoint).
   - I waypoint vengono visualizzati automaticamente se la traccia selezionata è abilitata sulla mappa.
@@ -671,12 +671,14 @@ L'opzione **Dividi per Tempo** divide una traccia in intervalli di durata uguale
 
 ![Scheda divisione traccia per salita/discesa](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mappa divisione traccia per salita/discesa](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Questa opzione divide una traccia in segmenti in base alle variazioni di altitudine. Ogni intervallo è classificato come ***salita***, ***discesa*** o ***piano***. Il modo in cui gli intervalli vengono visualizzati e le statistiche fornite per ogni segmento sono gli stessi della sezione [Dividi per Distanza](#split-by-distance).
+Questa opzione divide una traccia in segmenti in base alle variazioni di altitudine. Ogni intervallo è classificato come ***salita***, ***discesa*** o ***piano***. Gli intervalli vengono visualizzati nell'ordine in cui appaiono lungo la traccia e a ogni sezione in salita, in discesa o piana viene assegnato un proprio numero di indice. L'elenco degli intervalli fornisce le stesse statistiche principali della sezione [Dividi per Distanza](#split-by-distance).
 
 Sulla mappa, i segmenti sono contrassegnati con etichette colorate all'inizio di ogni intervallo:
 - **Segmenti in salita** (etichette rosse) mostrano una freccia verso l'alto, l'indice del segmento e la pendenza media in percentuale (ad esempio, ↑ 11. 2%).
 - **Segmenti in discesa** (etichette verdi) mostrano una freccia verso il basso, l'indice del segmento e la pendenza media in percentuale (ad esempio, ↓ 12. -2%).
-- **Segmenti piani** (etichette blu) mostrano la distanza della sezione piano (ad esempio, 616 m, 411 m).
+- **Segmenti piani** (etichette blu) mostrano la distanza della sezione piana (ad esempio, 616 m, 411 m).
+
+Tocca un'etichetta per aprire il pannello dei dettagli per il segmento selezionato in salita, in discesa o piana. Il pannello dei dettagli visualizza le statistiche per il segmento selezionato, come distanza, durata, salita e discesa, altitudine, velocità e dati relativi al tempo.
 
 
 ### Metriche Frequenza Cardiaca {#heart-rate-metrics}

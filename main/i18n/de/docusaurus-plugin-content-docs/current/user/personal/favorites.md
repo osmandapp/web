@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
 sidebar_position: 7
 title:  Favoriten
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-**Favoriten** ist eine Funktion von OsmAnd, mit der Sie Lesezeichen (Notizen) auf der Karte erstellen können. Diese Favoritenpunkte werden standardmäßig als gelbe Sterne angezeigt, aber Sie können sie vollständig mit verschiedenen Farben, Formen und Symbolen anpassen. Favoriten sind in einer eigenen Kartenebene gruppiert, die ab der *6. Zoomstufe* sichtbar wird.  
+**Favoriten** OsmAnd-Funktion ermöglicht das Erstellen von Lesezeichen (Notizen) auf der Karte. Diese Favoritenpunkte werden standardmäßig als gelbe Sterne angezeigt, können jedoch vollständig mit verschiedenen Farben, Formen und Symbolen angepasst werden. Favoriten sind in einer eigenen Kartenebene gruppiert, die ab der *6. Zoomstufe* sichtbar wird.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,13 +43,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favoriten-Ebene Android](@site/static/img/map/favorites_layer.png)
+![Favotires layer Android](@site/static/img/map/favorites_layer.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriten-Ebene iOS](@site/static/img/map/favorites_layer_ios.png)
+![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
 
 </TabItem>
 
@@ -88,8 +88,10 @@ Wenn ein Punkt aus OSM-Daten hinzugefügt wird, werden die relevanten POI-Inform
 
 - **Name** — Ein eindeutiger Name innerhalb der Gruppe (*Erforderlich*).
 - **Adresse** und **Beschreibung** (*Optional*).
-- **Gruppe** — Wählen Sie aus einer bestehenden [Favoritengruppe](#manage-favorites) oder erstellen Sie eine neue.
+- **Gruppe** — Wählen Sie aus einer bestehenden [Favoritengruppe](#manage-favorites) oder erstellen Sie eine neue. Auf Android können Sie auch einen Unterordner innerhalb einer Gruppe auswählen oder einen neuen erstellen.
 - **Visuelle Anpassung** — Symbol, Farbe und Form können entweder dem standardmäßigen [Erscheinungsbild der Gruppe](#change-group-appearance) entsprechen oder individuell angepasst werden.
+
+**HINWEIS:** Wenn die Favoritenebene in [Karte konfigurieren](../map/configure-map-menu) deaktiviert ist, wird beim Hinzufügen eines neuen Favoritenpunkts die Ebene automatisch aktiviert, damit der neu hinzugefügte Favorit auf der Karte sichtbar ist.
 
 
 ### Bearbeiten / Ersetzen / Löschen {#edit--replace--delete}
@@ -267,12 +269,13 @@ Das Antippen der &#8942;-Schaltfläche (**Android**) öffnet spezielle Funktione
 
 <TabItem value="android" label="Android">
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_new_2.png)
 
 Verwenden Sie das ***Drei-Punkte-Menü*** neben jedem Ordner, um Gruppen von Favoriten zu verwalten:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
 - **<Translate android="true" ids="pin_folder"/>** — Pinnen Sie den ausgewählten Ordner, um ihn oben in der Favoritenliste für einen schnelleren Zugriff zu halten.
+- **<Translate android="true" ids="add_new_folder"/>** — Erstellen Sie einen neuen Unterordner innerhalb des ausgewählten Ordners.
 - **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Von Kartenmarkierungen entfernen** — Fügen Sie alle Favoritenpunkte aus dem Ordner zur *Liste der Kartenmarkierungen* hinzu oder entfernen Sie sie bei Bedarf zur einfachen Referenz.

@@ -85,6 +85,7 @@ export const CATEGORY_TYPE = WEB_PREFIX + 'type';
 export const CITY = WEB_PREFIX + 'city';
 export const ADDRESS_1 = WEB_PREFIX + 'address1';
 export const ADDRESS_2 = WEB_PREFIX + 'address2';
+export const MATCHED_OBJECTS = WEB_PREFIX + 'matched_objects';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
 export const TYPE_OSM_TAG = WEB_PREFIX + 'typeOsmTag';
@@ -93,6 +94,7 @@ export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
 export const MAIN_CATEGORY_KEY_NAME = WEB_PREFIX + 'categoryKeyName';
 export const WEB_POI_FILTER_NAME = WEB_PREFIX + 'poiFilterName';
 export const WEB_POI_ADDITIONAL_CATEGORY = WEB_PREFIX + 'poiAdditionalCategory';
+export const WEB_VISIBLE_LEVEL = WEB_PREFIX + 'visible_level';
 
 export const MAPILLARY_ACCESS_TOKEN = 'MLY|4444816185556934|29475a355616c979409a5adc377a00fa';
 export const GRAPH_URL_ENDPOINT = 'https://graph.mapillary.com/';

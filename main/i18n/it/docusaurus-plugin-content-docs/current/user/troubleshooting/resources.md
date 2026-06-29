@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -53,6 +53,7 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 | GPX to KML | Strumento per convertire file *GPX* di OsmAnd in formato *KML*, preservando le icone. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX to OsmAnd | Script Python per convertire i file *GPX* di iOverlander esportati per OsmAnd con le icone. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Questo è [uno strumento](https://github.com/acui/osmand_topo_map_generator) per generare una mappa topografica stampabile utilizzando screenshot da OsmAnd (https://osmand.net). La mappa utilizza la griglia UTM e contiene informazioni sulla declinazione. Deve essere utilizzata con una bussola o un dispositivo GPS con coordinate UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar proietta un raggio verso il sole da ogni punto di una traccia GPX e lo confronta con il terreno e la vegetazione (LiDAR HD 0,5 m / IGN), per una data e un'ora specificate. Indica, metro per metro, sole o ombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Risorse personalizzate {#custom-resources}
 
@@ -109,6 +110,7 @@ Il file predefinito [render.xml](https://github.com/osmandapp/OsmAnd-resources/b
 | Stile di mappa Selection | Lo ["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) è uno stile di mappa di Holder Tamm che consente di scegliere se nascondere o meno determinati oggetti.  |["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Lo stile di rendering ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) si basa principalmente su UniMap e routes.addon.render.xml  |["Stile di mappa ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Si tratta di uno stile di rendering OsmAnd ottimizzato per l'inseguimento di tempeste](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Risorse personalizzate definite del progetto OsmAnd per ottimizzare il comportamento di OsmAnd. Qui sono definiti: stili di rendering della mappa utilizzati in OsmAnd, voci registrate e TTS, configurazione della generazione di mappe offline, parametri di instradamento, repository di icone  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Mappe offline {#offline-maps}
 

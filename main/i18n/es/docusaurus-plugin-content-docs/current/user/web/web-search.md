@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Búsqueda
 title: Búsqueda en el sitio web
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 El **menú de Búsqueda** se puede acceder desde el panel lateral o desde el icono de Búsqueda 🔍 en el mapa. Contiene:
 
-- [Barra de búsqueda](#search-bar). Introduce palabras clave para buscar ubicaciones o puntos de interés específicos.  
+- [Barra de búsqueda](#search-bar). Introduce palabras clave para buscar ubicaciones específicas, puntos de interés, favoritos o tracks. 
 - [Sección de Categorías](#categories). Navega a través de opciones categorizadas para búsquedas de PDI más fáciles.  
 - [Sección Explorar](#explore). Ver PDI populares para el centro actual del mapa y explorar lugares con fotos en el mapa.
 
@@ -35,7 +35,7 @@ El **menú de Búsqueda** se puede acceder desde el panel lateral o desde el ico
 
 ### Barra de búsqueda {#search-bar}
 
-Usa la **Barra de búsqueda** para encontrar lugares o puntos de interés específicos por nombre. Haz clic en el icono de Búsqueda, introduce tu consulta y selecciona un resultado de la lista. Seleccionar un PDI abre el [Menú contextual de PDI](#poi-context-menu), donde puedes ver detalles y usar acciones rápidas.
+Usa la **Barra de búsqueda** para encontrar lugares específicos, puntos de interés, [favoritos](../web/web-favorites.md) y [tracks](../web/web-tracks.md) por nombre. Haz clic en el icono de Búsqueda, introduce tu consulta y selecciona un resultado de la lista. Seleccionar un PDI abre el [Menú contextual de PDI](#poi-context-menu), mientras que seleccionar un favorito o track abre sus detalles, donde puedes ver información y usar acciones rápidas.
 
 Si buscas por un nombre de categoría, el primer resultado puede mostrar la categoría de PDI correspondiente. Haz clic en la categoría para abrir la vista de [búsqueda por Categorías](#categories).
 

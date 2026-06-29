@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title:  Mappe e Risorse
 ---
@@ -55,7 +55,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu download mappe iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mappe regionali iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu download mappe iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mappe regionali Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Il download delle mappe nell'applicazione OsmAnd è un passo importante che dete
 ### Contenuti Mappa Gratuiti {#free-map-content}
 
 - **Mappa standard**. Fornisce una panoramica dell'area basata sulla fonte [OpenStreetMap](https://www.openstreetmap.org/) e contiene una mappa, percorsi, indirizzi, PDI e informazioni sul trasporto pubblico. Toccando si apre una schermata con un elenco di regioni del paese selezionato e informazioni su quanto spazio queste mappe occuperanno sul dispositivo.  
-- **Solo strade** (*solo Android*). La mappa contiene solo informazioni sulla rete stradale per concentrarsi su percorsi e infrastrutture stradali. Rimuovendo dettagli come edifici e punti di interesse, è più piccola di una mappa standard. Toccando si apre una schermata con un elenco di regioni del paese selezionato e informazioni su quanto spazio queste mappe occuperanno sul dispositivo.
+- **Solo strade**. La mappa contiene solo informazioni sulla rete stradale per concentrarsi su percorsi e infrastrutture stradali. Rimuovendo dettagli come edifici e punti di interesse, è più piccola di una mappa standard. Toccando si apre una schermata con un elenco di regioni del paese selezionato e informazioni su quanto spazio queste mappe occuperanno sul dispositivo.
 - **Mappa di panoramica mondiale**. Le versioni di OsmAnd fino alla 3.8 offrono il download di una mappa mondiale per poterla visualizzare su scala planetaria. Nelle versioni più recenti di OsmAnd, una leggera *Mini Mappa Mondiale* è inclusa nell'applicazione. L'app consente di scaricare una mappa mondiale di panoramica più grande con informazioni più dettagliate. 
 
 :::info aggiornamenti mensili delle mappe
@@ -130,7 +130,7 @@ La scheda **Download** consente di scaricare vari tipi di mappe dai server di Os
 - **Contatore mappe** (***Versione gratuita***). Mostra quante mappe ti sono rimaste da scaricare.
 - [Mappe extra](#extra-maps). Mostra i dati della mappa per il [Pacchetto personalizzato](../plugins/custom.md).
 - **Regioni**. Elenco per continente e regione del mondo: *Africa, Antartide, Asia, Australia e Oceania, America Centrale, Europa, Nord America, Russia e Sud America.*
-- [Mappe mondiali](#world-maps). Un elenco di mappe del mondo intero: *<Translate android="true" ids="index_item_world_altitude_correction"/> (solo Android)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Mappa meteo mondiale*
+- [Mappe mondiali](#world-maps). Un elenco di mappe del mondo intero: *Correzione altitudine mondiale (solo Android)*, *Mappa panoramica mondiale*, *Tutto il mondo (Previsioni meteo)*
 - [Mappe nautiche](../plugins/nautical-charts.md) ([*funzione a pagamento*](../purchases/index.md)). Mappe vettoriali con elevazioni come punti o linee.
 - [Guide di viaggio (Wikivoyage)](../plan-route/travel-guides.md) ([*funzione a pagamento*](../purchases/index.md)). Mappe vettoriali con una raccolta di articoli in formato HTML e inoltre file GPX.
 - **Altre mappe**. Mappe che non possono essere assegnate alla gerarchia di mappe corrente perché non sono supportate o saranno disponibili nelle versioni future.
@@ -142,7 +142,7 @@ La scheda **Download** consente di scaricare vari tipi di mappe dai server di Os
 
 Nel menu Scarica Mappe, c'è una sezione **Mappe Mondiali** che fornisce l'accesso al download di varie mappe del mondo, completando la funzionalità dell'app.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Questo file contiene correzioni di altitudine per compensare la curvatura planetaria.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Questo file contiene correzioni di altitudine per compensare la curvura planetaria.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Fornisce una panoramica estesa della superficie terrestre, utile per la pianificazione di percorsi a lungo termine e l'esplorazione casuale.
 - **Mappa meteo mondiale**. Consente di scaricare una mappa con informazioni meteorologiche.
 
@@ -470,13 +470,15 @@ Vai a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,dow
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Menu Mappe OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Menu Mappe OsmAnd live modifica iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Menu Mappe OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Menu Mappe OsmAnd live modifica iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 **Aggiornamenti Live** fornisce aggiornamenti incrementali e frequenti delle mappe tramite [abbonamento](../purchases/index.md) o è gratuito per i [collaboratori OSM](#free-for-osm-mappers). Gli aggiornamenti avvengono ogni 15 minuti sui server di OsmAnd e sono scaricabili ogni ora, ogni giorno o ogni settimana. Questi aggiornamenti consumano uno spazio di archiviazione minimo — circa il 2-4% della dimensione completa della mappa al mese.
+
+Gli Aggiornamenti Live vengono applicati sopra la mappa scaricata e non sostituiscono il file mappa completo. Di conseguenza, la data mostrata per una mappa nella scheda Locale non riflette gli Aggiornamenti Live e potrebbe rimanere invariata dopo l'applicazione. Per scaricare una versione più recente della mappa completa, utilizzare Aggiorna mappa o Aggiorna tutto nel [Menu Aggiornamenti](#updates-menu).
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

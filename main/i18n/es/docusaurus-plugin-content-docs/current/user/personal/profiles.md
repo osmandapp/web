@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
 sidebar_position: 4
 title:  Perfiles (Ajustes)
 ---
@@ -416,7 +416,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,profi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Apariencia de Perfiles](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Apariencia de Perfiles](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 

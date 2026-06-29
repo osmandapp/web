@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
 sidebar_position: 7
 title:  Favoris
 ---
@@ -88,8 +88,10 @@ Lors de l'ajout d'un point à partir des données OSM, les informations pertinen
 
 - **Nom** — Un nom unique au sein du groupe (*Requis*).
 - **Adresse** et **Description** (*Optionnel*).
-- **Groupe** — Sélectionnez un [groupe de favoris](#manage-favorites) existant ou créez-en un nouveau.
+- **Groupe** — Sélectionnez un [groupe de favoris](#manage-favorites) existant ou créez-en un nouveau. Sur Android, vous pouvez également sélectionner un sous-dossier dans un groupe ou en créer un nouveau.
 - **Personnalisation visuelle** — L'icône, la couleur et la forme peuvent soit correspondre à l'[apparence par défaut du groupe](#change-group-appearance), soit être personnalisées individuellement.
+
+**NOTE :** Si la couche Favoris est désactivée dans [Configurer la carte](../map/configure-map-menu), l'ajout d'un nouveau point favori active automatiquement la couche pour rendre le favori nouvellement ajouté visible sur la carte.
 
 
 ### Modifier / Remplacer / Supprimer {#edit--replace--delete}
@@ -267,12 +269,13 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions_new_2.png)
 
 Utilisez le ***menu à trois points*** à côté de chaque dossier pour gérer les groupes de favoris :
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
 - **<Translate android="true" ids="pin_folder"/>** — Épinglez le dossier sélectionné pour le garder en haut de la liste des favoris pour un accès plus rapide.
+- **<Translate android="true" ids="add_new_folder"/>** — Créez un nouveau sous-dossier dans le dossier sélectionné.
 - **<Translate android="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Retirer des marqueurs de carte** — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou retirez-les selon vos besoins pour une référence facile.

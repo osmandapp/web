@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -459,7 +459,7 @@ Gebruik **<Translate ios="true" ids="icon_size"/>** om de grootte van het Mijn L
 U kunt de visuele elementen met betrekking tot uw locatie aanpassen en ze afzonderlijk of samen toepassen voor de posities **Rustend** en **Navigatie**. Voor zowel 2D- als 3D-modi worden *Kijkhoek* en *Locatieradius* weergegeven in dezelfde kleur die is geselecteerd voor het [navigatieprofiel](#profile-appearance), direct onder het icoon [Mijn positie](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Toont een **kegelvormig** gebied dat de richting aangeeft waarin u momenteel kijkt.  
-- **<Translate android="true" ids="location_radius"/>** – Toont een **cirkelvormig gebied** rond uw icoon, dat de nauwkeurigheid van uw huidige locatie weergeeft.
+- **<Translate android="true" ids="location_radius"/>** – Toont een **cirkelvormig** gebied rond uw icoon, dat de nauwkeurigheid van uw huidige locatie weergeeft.
 
 
 ### Aangepaste 3D-iconen {#custom-3d-icons}

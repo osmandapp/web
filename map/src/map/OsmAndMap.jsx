@@ -215,7 +215,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <MapContainer
                 zoom={initialView.zoom}
                 center={initialView.center}
-                minZoom={1}
+                minZoom={2}
                 maxZoom={20}
                 worldCopyJump={true}
                 zoomControl={false}
@@ -243,7 +243,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <CustomTileLayer
                     ref={tileLayer}
                     attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
-                    minZoom={1}
+                    minZoom={2}
                     maxZoom={20}
                     maxNativeZoom={19}
                 />

@@ -1,14 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import { Dialog, DialogTitle, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
+import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
+import DefaultItem from '../../../frame/components/items/DefaultItem';
 import styles from '../search.module.css';
+import dialogStyles from '../../../dialogs/dialog.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
+import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
@@ -17,6 +21,7 @@ import {
     CITY,
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
+    MATCHED_OBJECTS,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -131,16 +136,22 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index, currentLoc }) {
+export default function SearchResultItem({ item, typeItem, index, currentLoc, loc = null, isUser = false }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
 
     const { t } = useTranslation();
-    const { ref, inView } = useInView();
 
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
+    const [showMatched, setShowMatched] = useState(false);
+
+    const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
+    function openMatchedObject(obj) {
+        ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
+        setShowMatched(false);
+    }
 
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
@@ -175,11 +186,13 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
-        const distance = item.locDist;
-        const bearing = item.bearing;
-        const isUserLocation = item.isUserLocation;
+        const lat = item.geometry?.coordinates?.[1];
+        const lon = item.geometry?.coordinates?.[0];
+        const hasCoords = loc && lat != null && lon != null && !(lat === 0 && lon === 0);
+        const distance = hasCoords ? getDistance(loc.lat, loc.lng, lat, lon) : null;
+        const bearing = hasCoords ? getBearing(loc.lat, loc.lng, lat, lon) : null;
         const icon = item.icon;
-        return { ...res, icon, distance, bearing, isUserLocation };
+        return { ...res, icon, distance, bearing, isUserLocation: isUser };
     }
 
     const id = (() => {
@@ -314,44 +327,64 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     return (
-        <div ref={ref}>
-            {!inView ? (
-                <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
-            ) : (
-                <>
-                    <MenuItem
-                        id={id}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
-                        onClick={clickHandler}
-                    >
-                        <ListItemText>
-                            <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {(info || type) && (
-                                <MenuItemWithLines
-                                    className={styles.placeTypes}
-                                    name={`${addInfo()}${addType()}${addCity()}`}
-                                    maxLines={4}
-                                >
-                                    {distance > 0 && (
-                                        <span style={{ display: 'inline-flex' }}>
-                                            <Typography className={styles.placeDistance}>{' · '}</Typography>
-                                            <DistanceInfo
-                                                distance={distance}
-                                                bearing={bearing}
-                                                isUserLocation={isUserLocation}
-                                            />
-                                        </span>
-                                    )}
-                                </MenuItemWithLines>
+        <>
+            <MenuItem
+                id={id}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
+                onClick={clickHandler}
+            >
+                <ListItemText>
+                    <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                    {(info || type || matchedObjects.length > 1) && (
+                        <MenuItemWithLines
+                            className={styles.placeTypes}
+                            name={`${addInfo()}${addType()}${addCity()}`}
+                            maxLines={4}
+                        >
+                            {distance > 0 && (
+                                <span style={{ display: 'inline-flex' }}>
+                                    <Typography className={styles.placeDistance}>{' · '}</Typography>
+                                    <DistanceInfo
+                                        distance={distance}
+                                        bearing={bearing}
+                                        isUserLocation={isUserLocation}
+                                    />
+                                </span>
                             )}
-                        </ListItemText>
-                        <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
-                    </MenuItem>
-                    <DividerWithMargin margin={'16px'} />
-                </>
+                            {matchedObjects.length > 1 && (
+                                <span
+                                    className={styles.matchedObjectsIcon}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowMatched(true);
+                                    }}
+                                >
+                                    <InfoIcon className={styles.placeTypesIcon} />
+                                </span>
+                            )}
+                        </MenuItemWithLines>
+                    )}
+                </ListItemText>
+                <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
+            </MenuItem>
+            <DividerWithMargin margin={'16px'} />
+            {showMatched && (
+                <Dialog open={true} onClose={() => setShowMatched(false)} onClick={(e) => e.stopPropagation()}>
+                    <DialogTitle className={dialogStyles.title}>Matched objects ({matchedObjects.length})</DialogTitle>
+                    {matchedObjects.map((obj, i) => (
+                        <DefaultItem
+                            key={i}
+                            icon={<LocationIcon />}
+                            className={styles.matchedItem}
+                            name={obj.name}
+                            additionalInfo={`${obj.lat?.toFixed(5)}, ${obj.lon?.toFixed(5)}`}
+                            onClick={() => openMatchedObject(obj)}
+                        />
+                    ))}
+                </Dialog>
             )}
-        </div>
+        </>
     );
 }

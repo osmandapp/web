@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Cartella Smart (Filtro)
 ---
@@ -164,9 +164,7 @@ La **Cartella Smart** appena creata aggiornerà automaticamente il suo contenuto
 
 <TabItem value="android" label="Android">
 
-![Gestione Cartelle Smart I miei luoghi Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Gestione Cartelle Smart I miei luoghi Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![Gestione Cartelle Smart I miei luoghi Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Gestione Cartelle Smart I miei luoghi Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 La **cartella smart** viene visualizzata con un'icona unica nell'elenco delle cartelle nella scheda Tracce. Per gestire la cartella, tocca il *menu a tre punti* accanto ad essa per accedere alle azioni disponibili:
 
@@ -183,7 +181,7 @@ La **cartella smart** viene visualizzata con un'icona unica nell'elenco delle ca
 Puoi anche aprire la cartella e toccare il *menu a tre punti* nell'*angolo in alto a destra* per accedere ad azioni aggiuntive:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
-- **<Translate android="true" ids="organize_by"/>** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
+- **<Translate android="true" ids="organize_by"/>** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. Seleziona *None* per visualizzare tutte le tracce come un elenco singolo, corrispondente alla visualizzazione predefinita della Cartella Smart. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
 
 Alcuni parametri di raggruppamento sono disponibili solo con un abbonamento OsmAnd Pro. I parametri gratuiti includono *Attività*, *Anno di creazione* e *Città più vicina*. Tutti gli altri parametri sono contrassegnati con l'etichetta <ProFeature/>.
 
@@ -191,13 +189,13 @@ Per i parametri numerici (come distanza, durata, velocità o altitudine), è dis
 
 Per i parametri PRO, puoi visualizzare in anteprima la configurazione del raggruppamento (ad esempio, apri il selettore di dimensione passo e vedi come sono raggruppate le tracce), ma l'applicazione di queste modifiche richiede un abbonamento attivo. Se selezioni un parametro PRO o tocchi il pulsante Sblocca, si aprirà la schermata Scegli piano. Il raggruppamento applicato in precedenza rimane visibile anche se l'abbonamento scade, ma la modifica o l'applicazione di un nuovo raggruppamento basato su PRO richiede un abbonamento attivo.
 
+Dopo aver selezionato un parametro di raggruppamento, le tracce vengono visualizzate come gruppi. Ogni gruppo mostra il suo nome, l'icona e il numero di tracce che contiene. Tocca un gruppo per aprire l'elenco delle tracce in quel gruppo. I gruppi vuoti non vengono visualizzati. I risultati raggruppati possono essere ordinati alfabeticamente (A–Z o Z–A) o, per i parametri numerici, in base ai valori più alti o più bassi. Tocca a lungo un gruppo per mostrare tutte le tracce del gruppo sulla mappa o esportare tutte le tracce del gruppo.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gestione Cartelle Smart I miei luoghi iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Gestione Cartelle Smart I miei luoghi iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![Gestione Cartelle Smart I miei luoghi iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Gestione Cartelle Smart I miei luoghi iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 La **cartella smart** viene visualizzata con un'icona unica nell'elenco delle cartelle nella scheda Tracce. Per gestire la cartella, fai un *tocco lungo* sul nome della cartella per accedere alle azioni disponibili:
 
@@ -212,6 +210,15 @@ Puoi anche aprire la cartella e toccare l'icona nell'*angolo in alto a destra* p
 - **<Translate ios="true" ids="shared_string_select"/>** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
+- **Organize by** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. Seleziona *None* per visualizzare tutte le tracce come un elenco singolo, corrispondente alla visualizzazione predefinita della Cartella Smart. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
+
+Alcuni parametri di raggruppamento sono disponibili solo con un abbonamento OsmAnd Pro. I parametri gratuiti includono *Attività*, *Anno di creazione* e *Città più vicina*. Tutti gli altri parametri sono contrassegnati con l'etichetta <ProFeature/>.
+
+Per i parametri numerici (come distanza, durata, velocità o altitudine), è disponibile una finestra di dialogo *Imposta dimensione passo*. Utilizza il cursore per definire intervalli di valori per il raggruppamento.
+
+Per i parametri PRO, puoi visualizzare in anteprima la configurazione del raggruppamento (ad esempio, apri il selettore di dimensione passo e vedi come sono raggruppate le tracce), ma l'applicazione di queste modifiche richiede un abbonamento attivo. Se selezioni un parametro PRO o tocchi il pulsante Sblocca, si aprirà la schermata Scegli piano. Il raggruppamento applicato in precedenza rimane visibile anche se l'abbonamento scade, ma la modifica o l'applicazione di un nuovo raggruppamento basato su PRO richiede un abbonamento attivo.
+
+Dopo aver selezionato un parametro di raggruppamento, le tracce vengono visualizzate come gruppi. Ogni gruppo mostra il suo nome, l'icona e il numero di tracce che contiene. Tocca un gruppo per aprire l'elenco delle tracce in quel gruppo. I gruppi vuoti non vengono visualizzati. I risultati raggruppati possono essere ordinati alfabeticamente (A–Z o Z–A) o, per i parametri numerici, in base ai valori più alti o più bassi. Tocca a lungo un gruppo per mostrare tutte le tracce del gruppo sulla mappa o esportare tutte le tracce del gruppo.
 
 </TabItem>
 

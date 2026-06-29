@@ -1,5 +1,5 @@
 ---
-source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
+source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
 sidebar_position: 3
 title:  Web-Käufe
 ---
@@ -35,7 +35,7 @@ Alle über eine dieser Plattformen getätigten Käufe unterstützen den [**platt
 
 ## Preise {#prices}
 
-Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
+Unten sind die Preise für OsmAnd-Produkte in den USA und der EU aufgeführt. Preise in anderen Regionen werden automatisch von der Zahlungsplattform in die lokale Währung umgerechnet.
 
 
 <!--
@@ -75,29 +75,29 @@ Starting from the third year, the full price will apply.
 
 
 
-### Free and Paid Features {#free-and-paid-features}
+### Kostenlose und kostenpflichtige Funktionen {#free-and-paid-features}
 
-- [Android's free and paid features.](./android.md#free-and-paid-features)
-- [iOS's free and paid features.](./ios.md#free-and-paid-features)
+- [Kostenlose und kostenpflichtige Funktionen für Android.](./android.md#free-and-paid-features)
+- [Kostenlose und kostenpflichtige Funktionen für iOS.](./ios.md#free-and-paid-features)
 
 
 
-## Restore Purchases {#restore-purchases}
+## Käufe wiederherstellen {#restore-purchases}
 
-Your purchases are linked to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login) (your email). To restore purchases on a new device:
+Ihre Käufe sind mit Ihrem [OsmAnd Cloud-Konto](../personal/osmand-cloud.md#login) (Ihrer E-Mail-Adresse) verknüpft. So stellen Sie Käufe auf einem neuen Gerät wieder her:
 
-1. Install the OsmAnd app (Android or iOS).
-2. Open the app with an active internet connection.
-3. Go to:  
-   **Menu → Settings → OsmAnd Cloud → I already have an account**  
-   [More info here](../personal/osmand-cloud.md#login)
-4. To restore purchases:  
-   Go to **Menu → Settings → Purchases → Restore purchases**  
-   The screen will confirm that **Maps+**, **Pro**, or **Live** is activated.
+1. Installieren Sie die OsmAnd-App (Android oder iOS).
+2. Öffnen Sie die App mit einer aktiven Internetverbindung.
+3. Gehen Sie zu:  
+   **Menü → Einstellungen → OsmAnd Cloud → Ich habe bereits ein Konto**  
+   [Weitere Informationen hier](../personal/osmand-cloud.md#login)
+4. Um Käufe wiederherzustellen:  
+   Gehen Sie zu **Menü → Einstellungen → Käufe → Käufe wiederherstellen**  
+   Der Bildschirm bestätigt, dass **Maps+**, **Pro** oder **Live** aktiviert ist.
 
-**If restoration doesn’t work:**
+**Wenn die Wiederherstellung nicht funktioniert:**
 
-1. Clear the app cache.
-2. Restart your device.
-3. Try restoring again using the same account.
-4. Or write to us: support@osmand.net
+1. Löschen Sie den App-Cache.
+2. Starten Sie Ihr Gerät neu.
+3. Versuchen Sie erneut, mit demselben Konto wiederherzustellen.
+4. Oder schreiben Sie uns: support@osmand.net

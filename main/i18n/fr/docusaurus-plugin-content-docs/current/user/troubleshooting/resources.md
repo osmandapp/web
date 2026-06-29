@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -30,20 +30,20 @@ Pour vous connecter avec d'autres utilisateurs d'OsmAnd, poser des questions et 
 | Facebook | OsmAnd users community (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*Italian*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*English*)  | Un groupe où les utilisateurs partagent des conseils, répondent aux questions et discutent des fonctionnalités d'OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
-|  Reddit | OsmAnd - discussion and support  | La communauté Reddit pour les utilisateurs d'OsmAnd. Posez des questions, partagez vos expériences ou présentez vos styles de carte personnalisés. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | OsmAnd News channel (*English*)  | Le groupe officiel d'OsmAnd pour les annonces et les mises à jour directement des développeurs. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  X (Twitter) | OsmAnd news channel  | Groupe officiel d'OsmAnd pour les discussions en direct, les annonces et les mises à jour. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
-|  Instagram | OsmAnd news channel | Une communauté où vous pouvez discuter, partager des conseils et obtenir de l'aide sur les fonctionnalités d'OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [Google Groups](https://groups.google.com/g/osmand)  |
+|  Reddit | OsmAnd - discussion and support  | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+|  Telegram | OsmAnd News channel (*English*)  | The official OsmAnd group for announcements and updates directly from the developers. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  X (Twitter) | OsmAnd news channel  | Official OsmAnd group for live discussions, announcements, and updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | A community where you can chat, share tips, and get help with OsmAnd features. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Convertisseurs {#converters}
 
 La liste ci-dessous fournit des convertisseurs pour divers types de données pris en charge par OsmAnd, permettant aux utilisateurs de transférer, modifier et intégrer différents formats de données.
 
-| Type | Description | Lien |
+| Type | Description | Link |
 |-- | -- | --|
 | GoogleMap To OSMAnd GPX | Crée un dossier de fichiers GPX de style OsmAnd à partir d'une carte Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
 | KML to OsmAnd GPX | Script Python pour convertir les fichiers *KML* au format *GPX* avec des icônes. D'autres outils sont disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
@@ -53,6 +53,7 @@ La liste ci-dessous fournit des convertisseurs pour divers types de données pri
 | GPX to KML | Outil pour convertir les fichiers *GPX* d'OsmAnd au format *KML*, en préservant les icônes. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX to OsmAnd | Script Python pour convertir les fichiers *GPX* iOverlander exportés vers OsmAnd avec des icônes. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Ceci est [un outil](https://github.com/acui/osmand_topo_map_generator) pour générer une carte topographique imprimable en utilisant des captures d'écran d'OsmAnd (https://osmand.net). La carte utilise la grille UTM et contient des informations sur la déclinaison. Elle est destinée à être utilisée avec une boussole ou un appareil GPS avec des coordonnées UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar projette un rayon vers le soleil depuis chaque point d'une trace GPX et le compare au terrain et à la végétation (LiDAR HD 0,5 m / IGN), pour une date et une heure données. Il indique, mètre par mètre, le soleil ou l'ombre. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Ressources personnalisées {#custom-resources}
 
@@ -109,6 +110,7 @@ Le fichier [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) est principalement basé sur UniMap et routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Ceci est un style de rendu OsmAnd optimisé pour la chasse aux tempêtes](https://github.com/pqo/stormchasing-rendering-style)  |[Style de rendu Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Cartes hors ligne {#offline-maps}
 

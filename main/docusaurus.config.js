@@ -39,7 +39,8 @@ async function createConfig(){
     staticDirectories: ['static', 'legacy-image-static'],
     i18n: {
       defaultLocale: 'en',
-      locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
+      //locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
+      locales: ['en', 'fr'],
       localeConfigs: {
         en: { label: 'English' },
         ar: { label: 'العربية', direction: 'rtl', htmlLang: 'ar'},
@@ -137,7 +138,7 @@ async function createConfig(){
               label: 'Docs',
             },
             { to: '/blog', label: 'Blog', position: 'left'},
-            { to: 'pathname:///pricing', label: '🏖️ Sale & Pricing', position: 'left' },
+            { to: 'pathname:///pricing', label: '💳 Pricing', position: 'left' },
             { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
             { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
             {
@@ -155,7 +156,7 @@ async function createConfig(){
               title: 'OsmAnd',
               items: [
                 {
-                  label: 'Pricing & Sale🏖️ ',
+                  label: 'Pricing 💳',
                   to: 'pathname:///pricing',
                 },
                 {

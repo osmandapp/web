@@ -1,8 +1,9 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title:  Allgemein
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 Allgemeine Probleme im Zusammenhang mit verschiedenen Funktionen von OsmAnd.
 
@@ -74,6 +74,21 @@ So entfernen Sie den Suchverlauf in OsmAnd:
 4. Tippen Sie auf das *Papierkorb*-Symbol in der oberen rechten Ecke, um das Löschen zu bestätigen.
 
 Detailliertere Anweisungen zur Suchfunktion finden Sie in [dieser Anleitung](../search/search-history.md).
+
+
+## Benutzeroberfläche {#interface}
+
+### Warum sind Kartenbuttons, Widgets oder Text zu groß? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Wenn Kartenbuttons, Widgets oder das Kartenlineal nach der Anpassung der Anzeigegröße in den Android-Systemeinstellungen zu groß erscheinen, kann dies damit zusammenhängen, wie OsmAnd die Benutzeroberfläche an die aktuelle Bildschirmkonfiguration anpasst.
+
+Auf manchen Geräten kann die Reduzierung der Bildschirmdichte oder die Änderung der Anzeigegröße die Größe von Oberflächenelementen beeinflussen, insbesondere auf Geräten mit großem Bildschirm und Tablets.
+
+Neuere OsmAnd-Versionen wenden keine zusätzliche automatische Skalierung mehr für Geräte an, die als Tablets erkannt werden. Oberflächenelemente folgen nun stärker den Android-Systemanzeigeeinstellungen.
+
+Wenn Sie die Größe von Kartenbuttons manuell anpassen möchten, verwenden Sie die Einstellungen [Standarddarstellung](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menü → Bildschirm konfigurieren → Buttons → Standardbuttons → Drei-Punkte-Menü → Darstellung*. Dort können Sie eine benutzerdefinierte Größe, den Eckenradius und die Hintergrunddeckkraft für alle Standardbuttons gleichzeitig festlegen.
+
+Wenn die Benutzeroberfläche weiterhin größer als erwartet erscheint, überprüfen Sie *Android-Systemeinstellungen → Anzeige → Anzeigegröße und Text* und passen Sie die Anzeigeeinstellungen nach Bedarf an.
 
 
 ## Sonstiges {#other}
