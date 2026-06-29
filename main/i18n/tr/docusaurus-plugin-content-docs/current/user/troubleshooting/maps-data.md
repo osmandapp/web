@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title: Haritalar ve Veriler
 ---
@@ -181,6 +181,22 @@ Evet, kontur çizgileri metre yerine fit olarak görüntülenebilir. Kontur çiz
 
 - **OsmAnd'da Olası Sorun**. Ev Nominatim'de mevcutsa ancak OsmAnd'da hala bulunamıyorsa, sorun OsmAnd'a özgü olabilir. Daha fazla araştırma yaparak bu sorunun çözümüne katkıda bulunabilirsiniz. Daha fazla ayrıntı bu [teknik makalede](../../technical/algorithms/trace-address-search-issues.md) bulunabilir.
 
+### Bir özel POI dosyası kullanarak İngiltere posta kodlarını arama {#search-uk-postcodes-using-a-custom-poi-file}
+
+*Menü → Arama → Adres* kullanılarak bir İngiltere posta kodu bulunamazsa, OsmAnd tarafından kullanılan adres arama dizininde mevcut olmayabilir.
+
+Topluluk tarafından sürdürülen İngiltere posta kodu POI dosyası, özel bir `.obf` dosyası olarak mevcuttur. Koordinatlarla birlikte İlgi Çekici Noktalar (POI'ler) olarak saklanan posta kodlarını içerir ve posta kodlarını doğrudan aramak için kullanılabilir.
+
+Nasıl kullanılır:
+
+1. `UK_postcodes_poi_europe.obf` dosyasını [topluluk deposundan](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605) indirin.
+2. Dosya ZIP arşivi olarak indirildiyse, önce çıkarın.
+3. `.obf` dosyasını OsmAnd veri klasörüne kopyalayın veya cihazınızdaki bir dosya yöneticisiyle açın ve içe aktarmak için **OsmAnd**'ı seçin.
+4. **Adres** araması yerine genel **Arama** işlevini (büyüteç simgesi) kullanın.
+5. Arama çubuğuna bir posta kodu girin (örneğin, CT14 8EU veya EX34 7EX).
+
+**NOT:** Arama sonuçlarında bazı posta kodları birden fazla kez görünebilir çünkü hem varsayılan OsmAnd harita verileri hem de özel posta kodu POI dosyası aynı posta kodunu içerebilir.
+
 
 ## İzler ve Noktalar {#tracks-and-points}
 
@@ -190,7 +206,7 @@ Harita üzerinde çeşitli biçimlerde notlar bırakabilir ve konumları işaret
 
 - *[Favoriler](../personal/favorites.md)*. Bunlar, açıklama ekleyebileceğiniz harita üzerindeki kalıcı noktalardır. Bir Favori oluşturmak için, *uzun dokunun → Ekle'ye dokunun*. Favoriler, sık ziyaret ettiğiniz veya gelecekte başvurmak üzere kaydetmek istediğiniz yerleri işaretlemek için harikadır.
 
-- *[İşaretleyiciler](../personal/markers.md)*. İşaretleyiciler, genellikle navigasyon veya planlama için kullanılan geçici noktalardır. Mevcut konumunuzdan veya başka bir noktadan uzaklığı gösterebilirler ve artık ihtiyaç duyulmadığında hızlıca kaldırılabilirler. Bir İşaretleyici eklemek için, *uzun dokunun → İşaretleyici'ye dokunun*.
+- *[İşaretleyiler](../personal/markers.md)*. İşaretleyiciler, genellikle navigasyon veya planlama için kullanılan geçici noktalardır. Mevcut konumunuzdan veya başka bir noktadan uzaklığı gösterebilirler ve artık ihtiyaç duyulmadığında hızlıca kaldırılabilirler. Bir İşaretleyici eklemek için, *uzun dokunun → İşaretleyici'ye dokunun*.
 
 - *[Yol Noktaları](../map/tracks/index.md#types-of-tracks)*. Yol noktaları, oluşturduğunuz rotalar boyunca yerleştirilir ve yolculuğunuz boyunca belirli durakları veya konumları işaretlemenize yardımcı olur. Bu noktalara açıklama da ekleyebilirsiniz. Bir yol noktası eklemek için, *harita üzerinde uzun dokunun → Yol Tarifi → ara yol noktası olarak ekle*.
 

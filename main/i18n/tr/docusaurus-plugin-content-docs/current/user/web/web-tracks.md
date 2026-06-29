@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
 sidebar_position: 5
 sidebar_label: İzler
 title: İzler
@@ -82,12 +82,16 @@ Akıllı Klasör senkronizasyonu, platforma ve senkronizasyon yapılandırmasın
 
 Üç nokta menüsünde (⋮), Akıllı Klasörü OBF koleksiyonu olarak indirebilirsiniz.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Bulut İzleri {#cloud-tracks}
 
 [OsmAnd Cloud](../personal/osmand-cloud.md) içindeki GPX izleriniz, giriş yaptıktan sonra görüntüleme ve düzenleme için kullanılabilir. Yalnızca **Pro kullanıcıları** <ProFeature/> için ve [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) kullanıcıları için (Pro abonelikleri sona erdikten sonra bile verilerini indirebilirler).
+
+Bir iz seçtikten sonra harita otomatik olarak ortalanır ve yakınlaştırma düzeyini ayarlayarak tüm izi görünür harita alanında gösterir.
+
+Ayrıca **Odak** düğmesini kullanarak haritadaki diğer tüm favorileri ve izleri gizleyebilirsiniz, bu da seçili izi incelemeyi kolaylaştırır. Odak modunu kapatmak diğer harita nesnelerinin görünürlüğünü geri yükler.
 
 Bulut izi seçildikten sonra aşağıdaki özellikler mevcuttur:
 - *Bilgi* - iz verilerini görüntüleme.

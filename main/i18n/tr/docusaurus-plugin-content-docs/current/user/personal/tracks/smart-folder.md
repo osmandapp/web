@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Akıllı Klasör (Filtre)
 ---
@@ -164,9 +164,7 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 
 <TabItem value="android" label="Android">
 
-![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 **Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için yanındaki *üç nokta menü* simgesine dokunun ve mevcut eylemlere erişin:
 
@@ -183,7 +181,7 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 Klasörü ayrıca açabilir ve *sağ üst köşedeki* *üç nokta menü* simgesine dokunarak ek eylemlere erişebilirsiniz:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
-- **<Translate android="true" ids="organize_by"/>** — Seçilen bir parametreye göre Akıllı Klasördeki parkurları otomatik olarak gruplara ayırın. Mevcut gruplama türleri *Genel*, *Tarih ve saat*, *Konum*, *Hız*, *Rakım ve yükseklik* ve *Sensör verisi* içerir. 
+- **<Translate android="true" ids="organize_by"/>** — Seçilen bir parametreye göre Akıllı Klasördeki parkurları otomatik olarak gruplara ayırın. Tek liste olarak görüntülemek için *Yok* seçeneğini belirleyin; bu, varsayılan Akıllı Klasör görünümüyle eşleşir. Mevcut gruplama türleri *Genel*, *Tarih ve saat*, *Konum*, *Hız*, *Rakım ve yükseklik* ve *Sensör verisi* içerir. 
 
 Bazı gruplama parametreleri yalnızca OsmAnd Pro aboneliği ile kullanılabilir. Ücretsiz parametreler *Etkinlik*, *Oluşturma yılı* ve *En yakın şehir* içerir. Diğer tüm parametreler <ProFeature/> etiketiyle işaretlenmiştir.
 
@@ -191,13 +189,13 @@ Sayısal parametreler (örneğin mesafe, süre, hız veya rakım) için *Adım b
 
 PRO parametreleri için, gruplama kurulumunu önizleyebilirsiniz (örneğin, adım boyutu seçiciyi açın ve parkurların nasıl gruplandığını görün), ancak bu değişiklikleri uygulamak için aktif bir abonelik gereklidir. Bir PRO parametresi seçerseniz veya Kilidi aç düğmesine dokunursanız, Plan seç ekranı açılır. Önceden uygulanan gruplama, abonelik sona erse bile görünür kalır, ancak düzenleme veya yeni PRO tabanlı gruplama uygulamak için aktif bir abonelik gereklidir.
 
+Bir gruplama parametresi seçildikten sonra parkurlar gruplar halinde görüntülenir. Her grup adı, simgesi ve içerdiği parkur sayısını gösterir. Bir gruba dokunarak o gruptaki parkurların listesini açın. Boş gruplar görüntülenmez. Gruplandırılmış sonuçlar alfabetik olarak (A–Z veya Z–A) veya sayısal parametreler için en yüksek veya en düşük değerlere göre sıralanabilir. Bir gruba uzun basın, gruptaki tüm parkurları haritada gösterebilir veya gruptaki tüm parkurları dışa aktarabilirsiniz.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 **Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için klasör adına *uzun dokunun* ve mevcut eylemlere erişin:
 
@@ -212,6 +210,15 @@ Klasörü ayrıca açabilir ve *sağ üst köşedeki* simgeye dokunarak ek eylem
 - **<Translate ios="true" ids="shared_string_select"/>** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — En son parkurları içerdiğinden emin olmak için klasörün içeriğini manuel olarak güncelleyin.
 - **<Translate ios="true" ids="edit_filter"/>** — Geçerli Akıllı Klasör için parkur filtre ayarlarını değiştirin. Ayrıntılar için [Arama Filtresi](#search-filter) bölümüne bakın.
+- **Organize et** — Seçilen bir parametreye göre Akıllı Klasördeki parkurları otomatik olarak gruplara ayırın. Tek liste olarak görüntülemek için *Yok* seçeneğini belirleyin; bu, varsayılan Akıllı Klasör görünümüyle eşleşir. Mevcut gruplama türleri *Genel*, *Tarih ve saat*, *Konum*, *Hız*, *Rakım ve yükseklik* ve *Sensör verisi* içerir. 
+
+Bazı gruplama parametreleri yalnızca OsmAnd Pro aboneliği ile kullanılabilir. Ücretsiz parametreler *Etkinlik*, *Oluşturma yılı* ve *En yakın şehir* içerir. Diğer tüm parametreler <ProFeature/> etiketiyle işaretlenmiştir.
+
+Sayısal parametreler (örneğin mesafe, süre, hız veya rakım) için *Adım boyutu ayarla* diyaloğu kullanılabilir. Gruplama için değer aralıklarını tanımlamak üzere kaydırıcıyı kullanın.
+
+PRO parametreleri için, gruplama kurulumunu önizleyebilirsiniz (örneğin, adım boyutu seçiciyi açın ve parkurların nasıl gruplandığını görün), ancak bu değişiklikleri uygulamak için aktif bir abonelik gereklidir. Bir PRO parametresi seçerseniz veya Kilidi aç düğmesine dokunursanız, Plan seç ekranı açılır. Önceden uygulanan gruplama, abonelik sona erse bile görünür kalır, ancak düzenleme veya yeni PRO tabanlı gruplama uygulamak için aktif bir abonelik gereklidir.
+
+Bir gruplama parametresi seçildikten sonra parkurlar gruplar halinde görüntülenir. Her grup adı, simgesi ve içerdiği parkur sayısını gösterir. Bir gruba dokunarak o gruptaki parkurların listesini açın. Boş gruplar görüntülenmez. Gruplandırılmış sonuçlar alfabetik olarak (A–Z veya Z–A) veya sayısal parametreler için en yüksek veya en düşük değerlere göre sıralanabilir. Bir gruba uzun basın, gruptaki tüm parkurları haritada gösterebilir veya gruptaki tüm parkurları dışa aktarabilirsiniz.
 
 </TabItem>
 

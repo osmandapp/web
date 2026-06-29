@@ -1,7 +1,7 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
 sidebar_position: 7
-title:  Favorites
+title:  Favoriler
 ---
 
 import Tabs from '@theme/Tabs';
@@ -43,13 +43,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favoriler katmanı Android](@site/static/img/map/favorites_layer.png)
+![Favotires layer Android](@site/static/img/map/favorites_layer.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriler katmanı iOS](@site/static/img/map/favorites_layer_ios.png)
+![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
 
 </TabItem>
 
@@ -64,13 +64,13 @@ Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerin
 
 <TabItem value="android" label="Android">
 
-![Favori ekle açıklaması Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favori grubu Android](@site/static/img/personal/favorite_group_android.png)
+![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favori ekle açıklaması iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favori grubu iOS](@site/static/img/personal/favorite_group_ios.png)
+![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -88,8 +88,10 @@ OSM verilerinden bir nokta eklerken, ilgili İÇN bilgileri otomatik olarak dahi
 
 - **Ad** — Grup içinde benzersiz bir ad (*Gerekli*).
 - **Adres** ve **Açıklama** (*İsteğe bağlı*).
-- **Grup** — Mevcut bir [Favori grubundan](#manage-favorites) seçin veya yeni bir tane oluşturun.
+- **Grup** — Mevcut bir [Favori grubundan](#manage-favorites) seçin veya yeni bir tane oluşturun. Android'de ayrıca bir grup içindeki alt klasörü seçebilir veya yeni bir tane oluşturabilirsiniz.
 - **Görsel özelleştirme** — Simge, renk, şekil ya varsayılan [grup görünümüyle](#change-group-appearance) eşleşebilir ya da ayrı ayrı özelleştirilebilir.
+
+**NOT:** [Haritayı yapılandır](../map/configure-map-menu) bölümünde Favoriler katmanı devre dışı bırakılmışsa, yeni bir favori noktası eklemek katmanı otomatik olarak etkinleştirerek yeni eklenen favorinin haritada görünmesini sağlar.
 
 
 ### Düzenle / Değiştir / Sil {#edit--replace--delete}
@@ -98,13 +100,13 @@ OSM verilerinden bir nokta eklerken, ilgili İÇN bilgileri otomatik olarak dahi
 
 <TabItem value="android" label="Android">
 
-![Favori düzenle Android](@site/static/img/personal/favorite_edit_android.png)
+![Favorite edit Android](@site/static/img/personal/favorite_edit_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favori düzenle iOS](@site/static/img/personal/favorite_edit_ios.png)
+![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
 
 </TabItem>
 
@@ -268,12 +270,13 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Favoriler klasör işlevleri android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_new_2.png)
 
 Her klasörün yanındaki ***Üç nokta menüsünü*** kullanarak favori gruplarını yönetin:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
 - **<Translate android="true" ids="pin_folder"/>** — Seçilen klasörü favoriler listesinin en üstünde tutmak için sabitleyin, daha hızlı erişim için.
+- **<Translate android="true" ids="add_new_folder"/>** — Seçilen klasörün içinde yeni bir alt klasör oluşturun.
 - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Harita işaretçilerinden kaldır** — Klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın, kolay başvuru için.

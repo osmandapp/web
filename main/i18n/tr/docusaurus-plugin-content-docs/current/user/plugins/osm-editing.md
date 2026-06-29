@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title: OpenStreetMap Düzenleme
 ---
@@ -61,7 +61,7 @@ Eklenti ayarları geneldir ve tüm profiller için geçerlidir.
 - **<Translate android="true" ids="offline_edition"/>**. Bu ayar etkinleştirilirse, değişiklikler önce yerel olarak kaydedilir (*Kaydet* düğmesi) ve istek üzerine yüklenir. Ayar devre dışı bırakılırsa, değişiklikler hemen yüklenir (*Yükle* düğmesi).
 - **<Translate android="true" ids="use_dev_url"/>** *(Yalnızca Android)*. OSM Notu, İÇN veya GPS izlerini yüklemeyi test etmek için [openstreetmap.org](http://openstreetmap.org/) yerine [dev.openstreetmap.org](https://dev.openstreetmap.org/) adresini etkinleştirmenizi sağlar. Etkinleştirildiğinde, OpenStreetMap.org'dan otomatik olarak çıkış yaparsınız. Bu ayar yalnızca *OsmAnd geliştirme eklentisi* etkinleştirildiğinde listede kullanılabilir.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. [*Menü → Yerlerim → OSM düzenlemeleri*](../personal/myplaces.md) bölümünü açmak için dokunun. Bu sekme, düzenlenmemiş OSM notlarınızı listeler. Not ile aşağıdaki eylemler mevcuttur: *Yükle*, *Haritada göster*, *OSM notunu değiştir*, *Sil*. Yüklenen veya silinen notlar artık listede görüntülenmez.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. [*Menü → Yerlerim → OSM düzenlemeleri*](../personal/myplaces.md) bölümünü açmak için dokunun. Bu sekme, düzenlenmemiş OSM notlarınızı listeler. Not ile aşağıdaki eylemler mevcuttur: *Yükle*, *Haritada göster*, *OSM notunu değiştir*, *Sil*. Yüklenen veya silinen notlar artık listede görüntülenmez. iOS'ta ayrıca birden fazla öğe seçmek ve aynı anda yüklemek veya silmek için Seçim modunu kullanabilirsiniz.
 
 :::note
 Bir [OsmAnd Pro](../purchases/android.md#pro-features) aboneliğiniz varsa, OSM'de yapılan değişiklikler bir saat içinde OsmAnd haritanızda görünecektir. [Canlı güncellemelerin](../personal/maps-resources.md#live-updates) etkinleştirildiğinden emin olun.

@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -89,7 +89,7 @@ Harita üzerinde herhangi bir yere **uzun dokunduğunuzda**, seçilen konum hakk
 
 </Tabs>
 
-Harita üzerinde bir [GPX izine](../map/tracks/index.md) dokunmak, ek izle ilgili seçeneklere erişebileceğiniz [iz bağlam menüsünü](../map/tracks/track-context-menu.md) açar.
+Harita üzerinde bir [GPX izine](../map/tracks/index.md) dokunmak, ek izle ilgili seçeneklere erişebileceğiniz [iz bağlam menüsünü](../map/tracks/track-context-menu.md) açar. Seçilen konum birden fazla harita nesnesi içeriyorsa OsmAnd önce **Burada ne var** listesini görüntüleyebilir ve istediğiniz nesneyi seçmenize olanak tanır. GPX izleri için bu liste mesafe, süre, yol noktası sayısı ve izin kaydedildiği klasör gibi özet bilgileri gösterir.
 
 
 

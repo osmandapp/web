@@ -1,5 +1,5 @@
 ---
-source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
+source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
