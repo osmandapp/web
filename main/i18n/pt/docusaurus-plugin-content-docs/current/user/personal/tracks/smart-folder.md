@@ -1,5 +1,5 @@
 ---
-source-hash: 3117217c4fffd78faa67a5f11c0f1c9e098646082d01414748b92af93edf21d1
+source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
 sidebar_position: 3
 title: Pasta Inteligente (Filtro)
 ---
@@ -164,9 +164,7 @@ A **Pasta Inteligente** recém-criada atualizará automaticamente seu conteúdo 
 
 <TabItem value="android" label="Android">
 
-![Meus locais Gerenciando Pastas Inteligentes Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
-
-![Meus locais Gerenciando Pastas Inteligentesn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+![Meus locais Gerenciando Pastas Inteligentes Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Meus locais Gerenciando Pastas Inteligentes Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na guia Trilhas. Para gerenciar a pasta, toque no *menu de três pontos* ao lado dela para acessar as ações disponíveis:
 
@@ -180,10 +178,10 @@ A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na
 - **<Translate android="true" ids="delete_folder"/>** — Remova a Pasta Inteligente sem excluir suas trilhas.  
     *AVISO: Esta ação é irreversível e solicitará uma mensagem de confirmação.*
 
-Você também pode abrir a pasta e tocar no *menu de três pontos* no *canto superior direito* para acessar ações adicionais:
+Você também pode abrir a pasta e toque no *menu de três pontos* no *canto superior direito* para acessar ações adicionais:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
-- **<Translate android="true" ids="organize_by"/>** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
+- **<Translate android="true" ids="organize_by"/>** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Selecione *Nenhum* para exibir todas as trilhas como uma única lista, correspondendo à visualização padrão da Pasta Inteligente. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
 
 Alguns parâmetros de agrupamento estão disponíveis apenas com uma assinatura OsmAnd Pro. Os parâmetros gratuitos incluem *Atividade*, *Ano de criação* e *Cidade mais próxima*. Todos os outros parâmetros são marcados com um rótulo <ProFeature/>.
 
@@ -191,13 +189,13 @@ Para parâmetros numéricos (como distância, duração, velocidade ou altitude)
 
 Para parâmetros PRO, você pode pré-visualizar a configuração de agrupamento (por exemplo, abrir o seletor de tamanho do passo e ver como as trilhas são agrupadas), mas aplicar essas alterações requer uma assinatura ativa. Se você selecionar um parâmetro PRO ou tocar no botão Desbloquear, a tela Escolher plano será aberta. O agrupamento aplicado anteriormente permanece visível mesmo se a assinatura expirar, mas editar ou aplicar um novo agrupamento baseado em PRO requer uma assinatura ativa.
 
+Após selecionar um parâmetro de agrupamento, as trilhas são exibidas em grupos. Cada grupo mostra seu nome, ícone e o número de trilhas que contém. Toque em um grupo para abrir a lista de trilhas desse grupo. Grupos vazios não são exibidos. Os resultados agrupados podem ser ordenados alfabeticamente (A–Z ou Z–A) ou, para parâmetros numéricos, pelos valores mais altos ou mais baixos. Pressione e segure um grupo para mostrar todas as trilhas do grupo no mapa ou exportar todas as trilhas do grupo.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Meus locais Gerenciando Pastas Inteligentes iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
-
-![Meus locais Gerenciando Pastas Inteligentesn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+![Meus locais Gerenciando Pastas Inteligentes iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Meus locais Gerenciando Pastas Inteligentesn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na guia Trilhas. Para gerenciar a pasta, *toque longo* no nome da pasta para acessar as ações disponíveis:
 
@@ -207,11 +205,20 @@ A **Pasta inteligente** é exibida com um ícone exclusivo na lista de pastas na
 - **<Translate ios="true" ids="shared_string_delete"/>** — Remova a Pasta Inteligente sem excluir suas trilhas.  
     *AVISO: Esta ação é irreversível e solicitará uma mensagem de confirmação.*
 
-Você também pode abrir a pasta e tocar no ícone no *canto superior direito* para acessar ações adicionais:
+Você também pode abrir a pasta e toque no ícone no *canto superior direito* para acessar ações adicionais:
 
 - **<Translate ios="true" ids="shared_string_select"/>** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Atualize manualmente o conteúdo da pasta para garantir que ela inclua as trilhas mais recentes.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifique as configurações de filtro de trilha para a Pasta Inteligente atual. Consulte [Filtro de Busca](#search-filter) para obter detalhes.
+- **Organizar por** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Selecione *Nenhum* para exibir todas as trilhas como uma única lista, correspondendo à visualização padrão da Pasta Inteligente. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
+
+Alguns parâmetros de agrupamento estão disponíveis apenas com uma assinatura OsmAnd Pro. Os parâmetros gratuitos incluem *Atividade*, *Ano de criação* e *Cidade mais próxima*. Todos os outros parâmetros são marcados com um rótulo <ProFeature/>.
+
+Para parâmetros numéricos (como distância, duração, velocidade ou altitude), há um diálogo *Definir tamanho do passo*. Use o controle deslizante para definir intervalos de valores para o agrupamento.
+
+Para parâmetros PRO, você pode pré-visualizar a configuração de agrupamento (por exemplo, abrir o seletor de tamanho do passo e ver como as trilhas são agrupadas), mas aplicar essas alterações requer uma assinatura ativa. Se você selecionar um parâmetro PRO ou tocar no botão Desbloquear, a tela Escolher plano será aberta. O agrupamento aplicado anteriormente permanece visível mesmo se a assinatura expirar, mas editar ou aplicar um novo agrupamento baseado em PRO requer uma assinatura ativa.
+
+Após selecionar um parâmetro de agrupamento, as trilhas são exibidas em grupos. Cada grupo mostra seu nome, ícone e o número de trilhas que contém. Toque em um grupo para abrir a lista de trilhas desse grupo. Grupos vazios não são exibidos. Os resultados agrupados podem ser ordenados alfabeticamente (A–Z ou Z–A) ou, para parâmetros numéricos, pelos valores mais altos ou mais baixos. Pressione e segure um grupo para mostrar todas as trilhas do grupo no mapa ou exportar todas as trilhas do grupo.
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -248,7 +248,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 
 O recurso *Atividade* no OsmAnd permite que você marque trilhas GPX gravadas com atividades específicas para análise e organização futuras em pastas.
 
-- [Tags de atividade para trilhas GPX](../../plugins/trip-recording.md#recording-settings). Trilhas gravadas e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
+- [Tags de atividade para trilhas GPX](#description-and-info). Trilhas gravadas e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
 - [Filtro de atividade](../../personal/tracks/smart-folder.md#search-filter). Você pode filtrar as trilhas GPX gravadas por atividade, o que permite focar na localização de tipos específicos de gravações, como todas as trilhas de ciclismo ou caminhada.
 - [Gerenciar tipos de atividade](../../personal/tracks/manage-tracks.md#selection-mode). Você pode alterar o tipo de atividade para pastas ou trilhas selecionadas usando o modo de seleção na aba Trilhas do menu Meus Locais.
 - **Lista de atividades**. As categorias e grupos de atividades são definidos nos recursos do OsmAnd. Para desenvolvedores e colaboradores, a lista de atividades é mantida em um formato estruturado em [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalha os grupos e tipos de atividades disponíveis.
@@ -398,7 +398,7 @@ Waypoints são um dos tipos de pontos disponíveis no mapa. Em geral, eles podem
 
 <TabItem value="ios" label="iOS">
 
-![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -672,12 +672,14 @@ A opção **Dividir por Tempo** divide uma trilha em intervalos de duração igu
 
 ![Aba de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de divisão de trilha por subida/descida](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Esta opção divide uma trilha em segmentos com base em mudanças de elevação. Cada intervalo é classificado como ***subida***, ***descida*** ou ***plano***. A forma como os intervalos são exibidos e as estatísticas fornecidas para cada segmento são as mesmas da seção [Dividir por Distância](#split-by-distance).
+Esta opção divide uma trilha em segmentos com base em mudanças de elevação. Cada intervalo é classificado como ***subida***, ***descida*** ou ***plano***. Os intervalos são exibidos na ordem em que aparecem ao longo da trilha, e cada seção de subida, descida ou plana recebe seu próprio número de índice. A lista de intervalos fornece as mesmas estatísticas principais da seção [Dividir por Distância](#split-by-distance).
 
 No mapa, os segmentos são marcados com rótulos coloridos no início de cada intervalo:
 - **Segmentos de subida** (rótulos vermelhos) mostram uma seta para cima, o índice do segmento e a inclinação média em porcentagem (por exemplo, ↑ 11. 2%).
 - **Segmentos de descida** (rótulos verdes) mostram uma seta para baixo, o índice do segmento e a inclinação média em porcentagem (por exemplo, ↓ 12. -2%).
 - **Segmentos planos** (rótulos azuis) mostram a distância da seção plana (por exemplo, 616 m, 411 m).
+
+Toque em um rótulo para abrir o painel de detalhes do segmento de subida, descida ou plano selecionado. O painel de detalhes exibe estatísticas para o segmento selecionado, como distância, duração, subida e descida, altitude, velocidade e dados relacionados ao tempo.
 
 
 ### Métricas de Frequência Cardíaca {#heart-rate-metrics}

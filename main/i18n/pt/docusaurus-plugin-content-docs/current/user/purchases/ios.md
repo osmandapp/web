@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
 sidebar_position: 2
 title: Compras iOS
 ---
@@ -55,9 +55,9 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -118,6 +118,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [Pontos de áudio/imagem/vídeo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Exportar/importar perfil da aplicação](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
+| [Pastas Inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar trilhos em Pastas Inteligentes usando parâmetros avançados de agrupamento, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização mais detalhada dos trilhos e uma análise flexível. | Permite organizar trilhos em Pastas Inteligentes usando parâmetros avançados de agrupamento, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização mais detalhada dos trilhos e uma análise flexível. | Permite organizar trilhos em Pastas Inteligentes usando parâmetros avançados de agrupamento, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização mais detalhada dos trilhos e uma análise flexível. |
 
 #### ** Atualizações de mapas {#-map-updates}
 
@@ -139,6 +140,7 @@ Atualmente, a subscrição Pro tem as seguintes funcionalidades:
 | [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registos de trilhos. As informações de velocidade do veículo e velocidade do motor estão disponíveis para o OsmAnd gratuito.  |
 | [Personalizar linha de rota](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Alterar a cor e a largura da linha de rota durante a navegação. |
 | [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar as cores do mapa e da rota. |
+| [Pastas Inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar trilhos em Pastas Inteligentes usando parâmetros avançados de agrupamento, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização mais detalhada dos trilhos e uma análise flexível. |
 
 
 ## Como Comprar {#how-to-buy}

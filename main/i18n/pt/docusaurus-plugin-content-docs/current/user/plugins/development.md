@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
 sidebar_position: 11
 title: Desenvolvimento do OsmAnd
 ---
@@ -53,7 +53,7 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 
 <TabItem value="ios" label="iOS">  
 
-![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -87,7 +87,8 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 :::
 
 - **Simular primeira inicialização do aplicativo**. Define o sinalizador indicando a primeira inicialização do aplicativo, mantém todas as outras configurações inalteradas.  
-- **Testar avisos de voz**. Selecione uma voz e teste reproduzindo anúncios.  
+- **Testar avisos de voz**. Selecione uma voz e teste reproduzindo anúncios.
+- **Mostrar toques** (*iOS*). Destaca os toques na tela com indicadores visuais.
 - **Barra de status transparente**. O mapa fica visível sob a barra de status.  
 - **Mostrar banner da versão gratuita**. Exibe o banner da versão gratuita mesmo na versão paga.  
 - **Mostrar informações de depuração**. Exibe informações gráficas sobre o posicionamento de cada texto no mapa.

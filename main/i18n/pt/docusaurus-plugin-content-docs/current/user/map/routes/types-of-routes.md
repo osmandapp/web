@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title:  Tipos de Rotas
 ---
@@ -32,17 +32,17 @@ Você pode configurar a filtragem de alguns tipos de rotas no menu [Configurar M
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Você pode encontrar mais informações no artigo [Legenda do Mapa](../../map-legend/index.md).
+Você pode encontrar mais informações no artigo [Legenda do Mapa](../../map-legend/osmand.md#cycling).
 
 
 ## Mountain bike {#mountain-bike}
 
 As rotas de MTB têm um mapeamento específico no [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) e podem ser selecionadas separadamente das rotas de ciclismo.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Mostra trilhas de acordo com a escala MTB. Mais informações estão no artigo [Legenda do Mapa](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Mostra trilhas de acordo com a escala MTB. Mais informações estão no artigo [Legenda do Mapa](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Mostra trilhas de MTB de acordo com a International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Mais informações estão no artigo [Legenda do mapa](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Mostra trilhas de MTB de acordo com a International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Mais informações estão no artigo [Legenda do mapa](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Caminhada / Trilha {#hiking--walking}
@@ -63,7 +63,7 @@ As rotas de MTB têm um mapeamento específico no [OpenStreetMap](https://wiki.o
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-O recurso **Trilhas de Dirt Bike** permite exibir rotas específicas para dirt bike no mapa com base na tag `dirtbike:scale`. Esta escala destaca trilhas adequadas para dirt bike, com uma sobreposição colorida mostrando níveis de dificuldade ([Legenda do Mapa](../../map-legend/osmand.md#routes)).  
+O recurso **Trilhas de Dirt Bike** permite exibir rotas específicas para dirt bike no mapa com base na tag `dirtbike:scale`. Esta escala destaca trilhas adequadas para dirt bike, com uma sobreposição colorida mostrando níveis de dificuldade ([Legenda do Mapa](../../map-legend/osmand.md#dirtbike-scale)).  
 
 Você pode ativar este recurso em *Menu → Configurar mapa → Rotas → Rotas de dirt bike*. O sistema funciona de forma semelhante à escala MTB, oferecendo uma representação visual de rotas adaptadas ao dirt bike — mais sobre a [tag `dirtbike` pode ser encontrada aqui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
