@@ -1,5 +1,5 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: 1bbeb6f0c1ba01e3cfc68f72f8d19e49e6c67481fe6111180cf273ab138dd078
 sidebar_position: 5
 title: Esquemas de Cores
 ---
@@ -63,7 +63,7 @@ Vá para: *Menu → Mapas e Recursos → Local → Cores*
 
 <TabItem value="ios" label="iOS">
 
-![Paleta de cores](@site/static/img/personal/color-schemes/palette_ios.png) ![Paleta de cores](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Paleta de cores](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Paleta de cores](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 

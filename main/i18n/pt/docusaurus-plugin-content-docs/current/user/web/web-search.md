@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Search
 title: Pesquisar no Website
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 O **menu Pesquisar** pode ser acessado no painel lateral ou no ícone de Pesquisa 🔍 no mapa. Ele contém:
 
-- [Barra de pesquisa](#search-bar). Insira palavras-chave para pesquisar locais específicos ou pontos de interesse.  
+- [Barra de pesquisa](#search-bar). Insira palavras-chave para pesquisar locais específicos, pontos de interesse, favoritos ou trilhas.  
 - [Seção de categorias](#categories). Navegue pelas opções categorizadas para facilitar as pesquisas de POI.  
 - [Seção Explorar](#explore). Visualize POIs populares para o centro atual do mapa e explore lugares com fotos no mapa.
 
@@ -35,7 +35,7 @@ O **menu Pesquisar** pode ser acessado no painel lateral ou no ícone de Pesquis
 
 ### Barra de pesquisa {#search-bar}
 
-Use a **Barra de pesquisa** para encontrar lugares específicos ou pontos de interesse pelo nome. Clique no ícone de Pesquisa, insira sua consulta e selecione um resultado da lista. Selecionar um POI abre o [Menu de contexto do POI](#poi-context-menu), onde você pode visualizar detalhes e usar ações rápidas.
+Use a **Barra de pesquisa** para encontrar lugares específicos, pontos de interesse, [favoritos](../web/web-favorites.md) e [trilhas](../web/web-tracks.md) pelo nome. Clique no ícone de Pesquisa, insira sua consulta e selecione um resultado da lista. Selecionar um POI abre o [Menu de contexto do POI](#poi-context-menu), enquanto selecionar um favorito ou trilha abre seus detalhes, onde você pode visualizar informações e usar ações rápidas.
 
 Se você pesquisar por um nome de categoria, o primeiro resultado pode mostrar a categoria de POI correspondente. Clique na categoria para abrir a visualização de [Pesquisa de categorias](#categories).
 

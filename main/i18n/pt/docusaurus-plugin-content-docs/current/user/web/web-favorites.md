@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ As seguintes ações estão disponíveis:
 - *Compartilhar* - abre opções de compartilhamento. Você pode escolher quem pode acessar esta pasta.
 - *Baixar* - baixa a pasta de favoritos escolhida.
 - *Excluir* - exclui a pasta de favoritos escolhida.
+
+Ao selecionar uma pasta de favoritos, o mapa centraliza automaticamente e ajusta o nível de zoom para exibir todos os pontos de favoritos dessa pasta na área visível do mapa.
+
+Você também pode usar o botão **Foco** para ocultar todos os outros favoritos e trilhas no mapa, facilitando a revisão da pasta selecionada. Desative o modo Foco para restaurar a visibilidade de outros objetos do mapa.
 
 ### Compartilhar {#share}
 

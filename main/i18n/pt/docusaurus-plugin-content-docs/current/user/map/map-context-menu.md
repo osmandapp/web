@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -89,8 +89,7 @@ Quando você **toca longamente** em qualquer lugar do mapa, um **menu de context
 
 </Tabs>
 
-Tocar em uma [trilha GPX](../map/tracks/index.md) no mapa abre o [menu de contexto da trilha](../map/tracks/track-context-menu.md), onde você pode acessar opções adicionais relacionadas à trilha.
-
+Tocar em uma [trilha GPX](../map/tracks/index.md) no mapa abre o [menu de contexto da trilha](../map/tracks/track-context-menu.md), onde você pode acessar opções adicionais relacionadas à trilha. Se o local selecionado contiver vários objetos do mapa, o OsmAnd pode primeiro exibir a lista **O que há aqui**, permitindo que você escolha o objeto desejado. Para trilhas GPX, esta lista mostra informações resumidas como distância, duração, contagem de pontos de referência e a pasta onde a trilha está armazenada.
 
 
 ### Rotas, Pistas de Esqui e Trilhas {#routes-and-trails}
@@ -671,8 +670,8 @@ Leia mais sobre a ferramenta [Planejar uma rota](../plan-route/create-route.md).
 
 Para atualizar ou baixar mapas online (tiles) em um local específico, você pode usar o menu de contexto do objeto:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* e para *Atualizar*, vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* e *<Translate ios="true" ids="update_tile"/>*.  
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Atualizar*, vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* and *<Translate ios="true" ids="update_tile"/>*.  
 
 Por favor, leia a [instrução completa](../map/raster-maps.md#download--update-tiles).  
 

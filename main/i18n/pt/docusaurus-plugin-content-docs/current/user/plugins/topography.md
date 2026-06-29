@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
 sidebar_position: 16
 title: Topografia
 ---
@@ -204,19 +204,19 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-A opção **Terreno** ativa e permite personalizar três recursos, como *Hillshade*, *Declive* e *Altitude*.  
+A opção **Terreno** ativa e permite personalizar três recursos, como *Hillshade*, *Declive* e *Altitude*. No iOS, o menu Visualização também inclui *Sombras do Terreno*, um modo de sombreamento de terreno em tempo real baseado no Relevo 3D.  
 Recursos específicos:  
 
-- Apenas uma opção pode ser ativada ao mesmo tempo, seja Hillshade, Declive ou Altitude.
+- Apenas uma opção pode ser ativada ao mesmo tempo, seja Hillshade, Declive, Altitude ou Sombras do Terreno.
 - Se você não vir nenhuma alteração após baixar e ativar o mapa correspondente, é recomendável reiniciar o aplicativo.
 
-O menu **Terreno** inclui a seleção de [esquema de cores](#default-color-scheme) com a opção de [modificá-lo](#modify-color-scheme) (para [assinantes Pro](../../user/purchases/index.md)), a capacidade de alterar a transparência da camada no mapa ([visibilidade](#visibility)) e selecionar o [nível de zoom](#zoom-levels) para sua exibição, informações sobre o tamanho dos [dados em cache](#cache-size) e uma lista de [mapas](../../user/personal/maps-resources.md) necessários para exibir a camada.
+O menu **Terreno** inclui a seleção de [esquema de cores](#default-color-scheme) (**visualização** no iOS) com a opção de [modificá-lo](#modify-color-scheme) (para [assinantes Pro](../../user/purchases/index.md)), a capacidade de alterar a transparência da camada no mapa ([visibilidade](#visibility)) e selecionar o [nível de zoom](#zoom-levels) para sua exibição, informações sobre o tamanho dos [dados em cache](#cache-size) e uma lista de [mapas](../../user/personal/maps-resources.md) necessários para exibir a camada.
 
 
 ## Camadas de Hillshade, Declive e Altitude {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 - *Navegação.* Ajuda a identificar declives acentuados, tanto em descida quanto em subida, o que pode ser crucial para uma navegação segura.
 - *Planejar rotas.* Ajuda a escolher as rotas mais adequadas, considerando o terreno.
 - *Estimativa de terreno.* É conveniente para visualizar a paisagem, especialmente se você estiver caminhando ou andando de bicicleta.
+
+
+### Sombras do Terreno (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Sombras do Terreno** fornece sombreamento dinâmico em tempo real baseado na geometria 3D do terreno. Diferente dos mapas raster Hillshade, o efeito de sombreamento é gerado diretamente no dispositivo usando dados de terreno e segue automaticamente a perspectiva atual do mapa.
+
+Sombras do Terreno requer Relevo 3D e o ativa automaticamente quando selecionado. O recurso foi projetado para melhorar a legibilidade do terreno mantendo baixo impacto no desempenho.
 
 
 ### Esquema de Cores Padrão {#default-color-scheme}
@@ -286,7 +295,7 @@ Para personalização avançada de paleta usando arquivos de paleta, consulte o 
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
 
@@ -305,13 +314,15 @@ Você pode [editar essas paletas](../personal/color-palette-schemes.md#palette-m
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-A função *Visibilidade* é usada para ajustar a transparência das sombras para Hillshade e as cores usadas para representar o ângulo no parâmetro Declive.
+A função *Visibilidade* é usada para ajustar a transparência das sombras para Hillshade e as cores usadas para representar o ângulo no parâmetro Declive. Para Sombras do Terreno, Visibilidade controla a intensidade do efeito de sombreamento do terreno.
 
 ### Níveis de Zoom {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 A função *Níveis de Escala* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
+
+Os Níveis de Zoom não estão disponíveis para Sombras do Terreno porque esta visualização é renderizada dinamicamente e não depende de intervalos de visibilidade de camadas raster.
 
 ### Tamanho do Cache {#cache-size}
 
