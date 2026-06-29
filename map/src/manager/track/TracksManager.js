@@ -59,6 +59,7 @@ const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation point
 export const FIT_BOUNDS_MAX_ZOOM = 17;
 export const FIT_BOUNDS_EXTRA_PADDING = 10;
 export const DEFAULT_GROUP_NAME = '';
+export const IMPORT_FOLDER_NAME = 'Import';
 
 export function fitBoundsOptions(mtx) {
     return {

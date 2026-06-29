@@ -6,6 +6,7 @@ import { ReactComponent as SmartIcon } from '../../assets/icons/ic_action_folder
 import { ReactComponent as GarminConnectIcon } from '../../assets/icons/ic_logo_garmin_connect.svg';
 import { GARMIN_FOLDER_NAME } from '../../login/garmin/garminApi';
 import styles from '../trackfavmenu.module.css';
+import dropOverlayStyles from '../../frame/components/dropOverlay.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
@@ -15,6 +16,7 @@ import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { fmt } from '../../util/dateFmt';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
+import { useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -65,13 +67,18 @@ export default function CloudTrackGroup({ index, group }) {
         return `${fmt.monthShortDay(group.lastModifiedDate)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
     };
 
+    const isDropTarget = group.type !== SMART_TYPE;
+    const isDropHover = isDropTarget && ctx.gpxFileDrag?.hoverFolder === group.fullName;
+    const folderDragHandlers = useGpxFileDragZone(isDropTarget ? group.fullName : null);
+
     return (
         <>
             <MenuItem
-                className={styles.group}
+                className={`${styles.group}${isDropHover ? ` ${dropOverlayStyles.groupDropTarget}` : ''}`}
                 key={'group' + group.name + index}
                 id={'se-menu-cloud-' + group.name}
                 onClick={handleClick}
+                {...(isDropTarget ? folderDragHandlers : {})}
             >
                 <ListItemIcon className={styles.icon}>{getFolderIcon()}</ListItemIcon>
                 <ListItemText>
@@ -89,7 +96,7 @@ export default function CloudTrackGroup({ index, group }) {
                     processDownload={processDownload}
                 />
             </MenuItem>
-            <DividerWithMargin margin={'64px'} />
+            <DividerWithMargin margin={'64px'} {...(isDropTarget ? folderDragHandlers : {})} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}
