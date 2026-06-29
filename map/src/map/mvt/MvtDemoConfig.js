@@ -38,3 +38,21 @@ export function isOsmTestTileURL(tileURL) {
 export function isMvtTileURL(tileURL) {
     return tileURL?.type === 'mvt' || isOsmAndTileURL(tileURL) || isOsmTestTileURL(tileURL);
 }
+
+let webGLAvailable;
+
+export function isWebGLAvailable() {
+    if (webGLAvailable !== undefined) {
+        return webGLAvailable;
+    }
+
+    try {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+        webGLAvailable = !!gl;
+        gl?.getExtension('WEBGL_lose_context')?.loseContext();
+    } catch {
+        webGLAvailable = false;
+    }
+    return webGLAvailable;
+}

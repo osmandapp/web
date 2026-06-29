@@ -3,7 +3,10 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import { osmandTileURL } from '../baseTileURL';
+import { isWebGLAvailable } from '../mvt/MvtDemoConfig';
 
 const POPUP_MAX_HEIGHT = 220;
 const SHOW_TILE_BOUNDARIES = true;
@@ -122,6 +125,7 @@ function createTagsPopupContent(properties, popupClassName) {
 
 export default function MvtLayer({ config }) {
     const map = useMap();
+    const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
 
     useEffect(() => {
@@ -132,6 +136,20 @@ export default function MvtLayer({ config }) {
         }
 
         window.seIsTilesLoaded = false;
+
+        if (!isWebGLAvailable()) {
+            window.seIsTilesLoaded = true;
+            console.warn(`${errorLabel}: WebGL is not available`);
+            mtx.setTileURL(osmandTileURL);
+            mtx.setRenderingType(null);
+            const configureMap = {
+                ...ctx.configureMapState,
+                mapStyle: { tileURL: osmandTileURL, renderingType: null },
+            };
+            updateConfigureMapCache(configureMap);
+            ctx.setConfigureMapState(configureMap);
+            return undefined;
+        }
 
         const glLayer = L.maplibreGL({
             style: createStyle(style, tileUrl),

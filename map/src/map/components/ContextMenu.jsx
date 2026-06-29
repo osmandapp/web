@@ -23,6 +23,7 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
+import { ReactComponent as CopyIcon } from '../../assets/icons/ic_action_copy.svg';
 import { useTranslation } from 'react-i18next';
 import {
     GLOBAL_GRAPH_HEIGHT_SIZE,
@@ -155,6 +156,11 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
 
     function copyCoordinates(latlng) {
         navigator.clipboard.writeText(latlng.lat.toFixed(6) + ',' + latlng.lng.toFixed(6));
+    }
+
+    function copyMvtTileUrl(latlng) {
+        const urls = getMvtTileDownloads(map, latlng).map((tile) => tile.url);
+        navigator.clipboard.writeText(urls.join('\n'));
     }
 
     function openWeather(latlng) {
@@ -394,6 +400,18 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                     </ListItemIcon>
                                     <ListItemText className={styles.contextMenuItemText}>
                                         Download MVT tile
+                                    </ListItemText>
+                                </MenuItem>
+                                <MenuItem
+                                    id={'se-copy-mvt-tile-url'}
+                                    className={styles.contextMenuItem}
+                                    onClick={() => handleMenuItemClick(copyMvtTileUrl)}
+                                >
+                                    <ListItemIcon className={styles.contextMenuIcon}>
+                                        <CopyIcon />
+                                    </ListItemIcon>
+                                    <ListItemText className={styles.contextMenuItemText}>
+                                        Copy MVT tile URL
                                     </ListItemText>
                                 </MenuItem>
                                 <Divider className={styles.dividerMenu} />
