@@ -2,6 +2,7 @@ import {
     Box,
     CircularProgress,
     Collapse,
+    Divider,
     Slider,
     SvgIcon,
     ToggleButton,
@@ -79,17 +80,37 @@ export default function TravelMenu() {
 
     const DEFAULT_MAX_DISTANCE = 500000; // 500 km in meters
     const DEFAULT_MAX_SPEED = 100; // 100 km/h
+    const MAX_SPEED_DEFAULT = 300; // km/h, default upper bound for the max-speed filter
+    const MAX_DIST_BETWEEN_POINTS_DEFAULT = 1000; // 1000 m
+    const TIME_MINUTES_DEFAULT = 1440; // minutes (24h)
+    const WAYPOINTS_DEFAULT = 10000;
 
     const [minDistance, setMinDistance] = useState(0);
     const [maxDistance, setMaxDistance] = useState(DEFAULT_MAX_DISTANCE);
     const [minSpeed, setMinSpeed] = useState(0);
     const [maxSpeed, setMaxSpeed] = useState(DEFAULT_MAX_SPEED);
+    const [maxSpeedMin, setMaxSpeedMin] = useState(0);
+    const [maxSpeedMax, setMaxSpeedMax] = useState(MAX_SPEED_DEFAULT);
+    const [maxDistBetweenPointsMin, setMaxDistBetweenPointsMin] = useState(0);
+    const [maxDistBetweenPointsMax, setMaxDistBetweenPointsMax] = useState(MAX_DIST_BETWEEN_POINTS_DEFAULT);
+    const [timeMinutesMin, setTimeMinutesMin] = useState(0);
+    const [timeMinutesMax, setTimeMinutesMax] = useState(TIME_MINUTES_DEFAULT);
+    const [waypointsMin, setWaypointsMin] = useState(0);
+    const [waypointsMax, setWaypointsMax] = useState(WAYPOINTS_DEFAULT);
 
     const [distanceRange, setDistanceRange] = useState([0, DEFAULT_MAX_DISTANCE]);
     const [speedRange, setSpeedRange] = useState([0, DEFAULT_MAX_SPEED]);
+    const [maxSpeedRange, setMaxSpeedRange] = useState([0, MAX_SPEED_DEFAULT]);
+    const [maxDistBetweenPointsRange, setMaxDistBetweenPointsRange] = useState([0, MAX_DIST_BETWEEN_POINTS_DEFAULT]);
+    const [timeMinutesRange, setTimeMinutesRange] = useState([0, TIME_MINUTES_DEFAULT]);
+    const [waypointsRange, setWaypointsRange] = useState([0, WAYPOINTS_DEFAULT]);
 
     const [distanceSliderTouched, setDistanceSliderTouched] = useState(false);
     const [speedSliderTouched, setSpeedSliderTouched] = useState(false);
+    const [maxSpeedTouched, setMaxSpeedTouched] = useState(false);
+    const [maxDistBetweenPointsTouched, setMaxDistBetweenPointsTouched] = useState(false);
+    const [timeMinutesTouched, setTimeMinutesTouched] = useState(false);
+    const [waypointsTouched, setWaypointsTouched] = useState(false);
     const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
     const [showTagFilters, setShowTagFilters] = useState(true);
     const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
@@ -121,81 +142,122 @@ export default function TravelMenu() {
     }, []);
 
     const debouncedFetchRanges = useRef(
-        debounce(async ({ bounds, year, activity, distTouched, speedTouched }) => {
-            const minLat = bounds.getSouth();
-            const maxLat = bounds.getNorth();
-            const minLon = bounds.getWest();
-            const maxLon = bounds.getEast();
+        debounce(
+            async ({
+                bounds,
+                year,
+                activity,
+                distTouched,
+                speedTouched,
+                maxSpeedTouched,
+                maxDistBetweenPointsTouched,
+                timeMinutesTouched,
+                waypointsTouched,
+            }) => {
+                const minLat = bounds.getSouth();
+                const maxLat = bounds.getNorth();
+                const minLon = bounds.getWest();
+                const maxLon = bounds.getEast();
 
-            const params = {
-                minLat,
-                maxLat,
-                minLon,
-                maxLon,
-            };
+                const params = {
+                    minLat,
+                    maxLat,
+                    minLon,
+                    maxLon,
+                };
 
-            if (year && year !== ALL_YEARS) {
-                params.year = year;
-            }
-
-            const paramsActivities = { ...params };
-
-            try {
-                const activitiesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
-                    apiCache: true,
-                    params: paramsActivities,
-                });
-
-                if (activity && activity !== ACTIVITY_ALL) {
-                    params.activityArr = activity;
+                if (year && year !== ALL_YEARS) {
+                    params.year = year;
                 }
 
-                const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
-                    apiCache: true,
-                    params,
-                });
+                const paramsActivities = { ...params };
 
-                setActivityCounts(activitiesResponse?.data || null);
-
-                if (rangesResponse?.data) {
-                    const data = rangesResponse.data;
-                    const newMinDist = data.minDist || 0;
-                    const newMaxDist = data.maxDist || DEFAULT_MAX_DISTANCE;
-                    const newMinSpeed = data.minSpeed || 0;
-                    const newMaxSpeed = data.maxSpeed || DEFAULT_MAX_SPEED;
-
-                    setMinDistance(newMinDist);
-                    setMaxDistance(newMaxDist);
-                    setMinSpeed(newMinSpeed);
-                    setMaxSpeed(newMaxSpeed);
-
-                    setDistanceRange((prev) => {
-                        if (!distTouched) {
-                            return [newMinDist, newMaxDist];
-                        }
-                        // Clamp user's selection to new boundaries
-                        return [
-                            Math.max(newMinDist, Math.min(prev[0], newMaxDist)),
-                            Math.max(newMinDist, Math.min(prev[1], newMaxDist)),
-                        ];
+                try {
+                    const activitiesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
+                        apiCache: true,
+                        params: paramsActivities,
                     });
 
-                    setSpeedRange((prev) => {
-                        if (!speedTouched) {
-                            return [newMinSpeed, newMaxSpeed];
-                        }
-                        // Clamp user's selection to new boundaries
-                        return [
-                            Math.max(newMinSpeed, Math.min(prev[0], newMaxSpeed)),
-                            Math.max(newMinSpeed, Math.min(prev[1], newMaxSpeed)),
-                        ];
+                    if (activity && activity !== ACTIVITY_ALL) {
+                        params.activityArr = activity;
+                    }
+
+                    const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
+                        apiCache: true,
+                        params,
                     });
+
+                    setActivityCounts(activitiesResponse?.data || null);
+
+                    if (rangesResponse?.data) {
+                        const data = rangesResponse.data;
+                        const newMinDist = data.minDist || 0;
+                        const newMaxDist = data.maxDist || DEFAULT_MAX_DISTANCE;
+                        const newMinSpeed = data.minSpeed || 0;
+                        const newMaxSpeed = data.maxSpeed || DEFAULT_MAX_SPEED;
+                        const newMaxSpeedMin = data.maxSpeedMin || 0;
+                        const newMaxSpeedMax = data.maxSpeedMax || MAX_SPEED_DEFAULT;
+                        const newMaxDistBetweenPointsMin = data.maxDistBetweenPointsMin || 0;
+                        const newMaxDistBetweenPointsMax =
+                            data.maxDistBetweenPointsMax || MAX_DIST_BETWEEN_POINTS_DEFAULT;
+                        const newTimeMinutesMin = data.timeMinutesMin || 0;
+                        const newTimeMinutesMax = data.timeMinutesMax || TIME_MINUTES_DEFAULT;
+                        const newWaypointsMin = data.waypointsMin || 0;
+                        const newWaypointsMax = data.waypointsMax || WAYPOINTS_DEFAULT;
+
+                        setMinDistance(newMinDist);
+                        setMaxDistance(newMaxDist);
+                        setMinSpeed(newMinSpeed);
+                        setMaxSpeed(newMaxSpeed);
+                        setMaxSpeedMin(newMaxSpeedMin);
+                        setMaxSpeedMax(newMaxSpeedMax);
+                        setMaxDistBetweenPointsMin(newMaxDistBetweenPointsMin);
+                        setMaxDistBetweenPointsMax(newMaxDistBetweenPointsMax);
+                        setTimeMinutesMin(newTimeMinutesMin);
+                        setTimeMinutesMax(newTimeMinutesMax);
+                        setWaypointsMin(newWaypointsMin);
+                        setWaypointsMax(newWaypointsMax);
+
+                        // Clamp user's selection to new boundaries, or reset to full range if untouched
+                        const clamp = (prev, lo, hi) => [
+                            Math.max(lo, Math.min(prev[0], hi)),
+                            Math.max(lo, Math.min(prev[1], hi)),
+                        ];
+
+                        setDistanceRange((prev) =>
+                            !distTouched ? [newMinDist, newMaxDist] : clamp(prev, newMinDist, newMaxDist)
+                        );
+                        setSpeedRange((prev) =>
+                            !speedTouched ? [newMinSpeed, newMaxSpeed] : clamp(prev, newMinSpeed, newMaxSpeed)
+                        );
+                        setMaxSpeedRange((prev) =>
+                            !maxSpeedTouched
+                                ? [newMaxSpeedMin, newMaxSpeedMax]
+                                : clamp(prev, newMaxSpeedMin, newMaxSpeedMax)
+                        );
+                        setMaxDistBetweenPointsRange((prev) =>
+                            !maxDistBetweenPointsTouched
+                                ? [newMaxDistBetweenPointsMin, newMaxDistBetweenPointsMax]
+                                : clamp(prev, newMaxDistBetweenPointsMin, newMaxDistBetweenPointsMax)
+                        );
+                        setTimeMinutesRange((prev) =>
+                            !timeMinutesTouched
+                                ? [newTimeMinutesMin, newTimeMinutesMax]
+                                : clamp(prev, newTimeMinutesMin, newTimeMinutesMax)
+                        );
+                        setWaypointsRange((prev) =>
+                            !waypointsTouched
+                                ? [newWaypointsMin, newWaypointsMax]
+                                : clamp(prev, newWaypointsMin, newWaypointsMax)
+                        );
+                    }
+                } catch (error) {
+                    console.error('Error fetching ranges/activities:', error);
+                    setActivityCounts(null);
                 }
-            } catch (error) {
-                console.error('Error fetching ranges/activities:', error);
-                setActivityCounts(null);
-            }
-        }, 500)
+            },
+            500
+        )
     ).current;
 
     useEffect(() => {
@@ -209,6 +271,10 @@ export default function TravelMenu() {
             activity: selectedActivityTypeArr,
             distTouched: distanceSliderTouched,
             speedTouched: speedSliderTouched,
+            maxSpeedTouched: maxSpeedTouched,
+            maxDistBetweenPointsTouched: maxDistBetweenPointsTouched,
+            timeMinutesTouched: timeMinutesTouched,
+            waypointsTouched: waypointsTouched,
         });
     }, [ctx.visibleBounds, selectedYear, selectedActivityTypeArr]);
 
@@ -310,6 +376,10 @@ export default function TravelMenu() {
             tagMatchMode,
             distanceRange: distanceSliderTouched ? distanceRange : undefined,
             speedRange: speedSliderTouched ? speedRange : undefined,
+            maxSpeedRange: maxSpeedTouched ? maxSpeedRange : undefined,
+            maxDistBetweenPointsRange: maxDistBetweenPointsTouched ? maxDistBetweenPointsRange : undefined,
+            timeMinutesRange: timeMinutesTouched ? timeMinutesRange : undefined,
+            waypointsRange: waypointsTouched ? waypointsRange : undefined,
         });
     }
 
@@ -322,8 +392,16 @@ export default function TravelMenu() {
         setSortByDistance(null);
         setDistanceRange([minDistance, maxDistance]);
         setSpeedRange([minSpeed, maxSpeed]);
+        setMaxSpeedRange([maxSpeedMin, maxSpeedMax]);
+        setMaxDistBetweenPointsRange([maxDistBetweenPointsMin, maxDistBetweenPointsMax]);
+        setTimeMinutesRange([timeMinutesMin, timeMinutesMax]);
+        setWaypointsRange([waypointsMin, waypointsMax]);
         setDistanceSliderTouched(false);
         setSpeedSliderTouched(false);
+        setMaxSpeedTouched(false);
+        setMaxDistBetweenPointsTouched(false);
+        setTimeMinutesTouched(false);
+        setWaypointsTouched(false);
     }
 
     const sortedRoutes = useMemo(() => {
@@ -364,32 +442,32 @@ export default function TravelMenu() {
                         }
                     />
                     <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, mt: '-14px' }}>
-                        <Box>
-                            {updatedActivities?.length > 0 && (
-                                <ActivitySelect
-                                    name="Activity"
-                                    value={selectedActivityTypeArr}
-                                    onChange={(value) => setSelectedActivityTypeArr(value)}
-                                    activities={activities}
-                                    updatedActivities={updatedActivities}
-                                    activityCounts={activityCounts}
-                                    defaultIcon={ActivityAllIcon}
-                                />
-                            )}
-                            <CustomSelect
-                                name="Year"
-                                value={selectedYear}
-                                onChange={(value) => setSelectedYear(value)}
-                                options={years}
-                                renderLabel={(option) => option?.label}
-                                handleSelect={(year) => handleYearSelect(year)}
-                                menuWidth={'auto'}
-                                hasIcons={false}
-                                defaultIcon={SortDateIcon}
-                                my={'0px'}
-                                marginLeft={'250px'}
+                        {updatedActivities?.length > 0 && (
+                            <ActivitySelect
+                                name="Activity"
+                                value={selectedActivityTypeArr}
+                                onChange={(value) => setSelectedActivityTypeArr(value)}
+                                activities={activities}
+                                updatedActivities={updatedActivities}
+                                activityCounts={activityCounts}
+                                defaultIcon={ActivityAllIcon}
                             />
-                            <ThickDivider mt={16} />
+                        )}
+                        <CustomSelect
+                            name="Year"
+                            value={selectedYear}
+                            onChange={(value) => setSelectedYear(value)}
+                            options={years}
+                            renderLabel={(option) => option?.label}
+                            handleSelect={(year) => handleYearSelect(year)}
+                            menuWidth={'auto'}
+                            hasIcons={false}
+                            defaultIcon={SortDateIcon}
+                            my={'0px'}
+                            marginLeft={'250px'}
+                        />
+                        <ThickDivider mt={16} />
+                        <Box sx={{ flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>
                             <SelectItemWithoutOptions
                                 title="Tag filters"
                                 onClick={() => setShowTagFilters(!showTagFilters)}
@@ -443,7 +521,7 @@ export default function TravelMenu() {
                             <Collapse in={showAdvancedFilters}>
                                 <Box className={styles.sliderContainer}>
                                     <div className={styles.sliderHeader}>
-                                        <Typography className={styles.sliderTitle}>Distance</Typography>
+                                        <Typography className={styles.sliderTitle}>{t('distance')}</Typography>
                                         <Typography className={styles.sliderValue}>
                                             {convertMeters(distanceRange[0], ctx.unitsSettings.len, LARGE_UNIT).toFixed(
                                                 0
@@ -487,7 +565,50 @@ export default function TravelMenu() {
                                 </Box>
                                 <Box className={styles.sliderContainer}>
                                     <div className={styles.sliderHeader}>
-                                        <Typography className={styles.sliderTitle}>Speed</Typography>
+                                        <Typography className={styles.sliderTitle}>
+                                            {t('web:max_distance_between_points')}
+                                        </Typography>
+                                        <Typography className={styles.sliderValue}>
+                                            {maxDistBetweenPointsRange[0]} - {maxDistBetweenPointsRange[1]} {t('m')}
+                                        </Typography>
+                                    </div>
+                                    <Slider
+                                        value={maxDistBetweenPointsRange}
+                                        onChange={(e, newValue) => {
+                                            setMaxDistBetweenPointsRange(newValue);
+                                            setMaxDistBetweenPointsTouched(
+                                                newValue[0] !== maxDistBetweenPointsMin ||
+                                                    newValue[1] !== maxDistBetweenPointsMax
+                                            );
+                                        }}
+                                        min={maxDistBetweenPointsMin}
+                                        max={maxDistBetweenPointsMax}
+                                        step={10}
+                                        valueLabelDisplay="off"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                opacity: maxDistBetweenPointsTouched ? 1 : 0.5,
+                                            },
+                                            '& .MuiSlider-track': {
+                                                opacity: maxDistBetweenPointsTouched ? 1 : 0.5,
+                                            },
+                                        }}
+                                    />
+                                    <div className={styles.sliderBounds}>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {maxDistBetweenPointsMin}
+                                        </Typography>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {maxDistBetweenPointsMax}
+                                        </Typography>
+                                    </div>
+                                </Box>
+                                <Divider className={styles.filterSubDivider} />
+                                <Box className={styles.sliderContainer}>
+                                    <div className={styles.sliderHeader}>
+                                        <Typography className={styles.sliderTitle}>
+                                            {t('shared_string_speed')}
+                                        </Typography>
                                         <Typography className={styles.sliderValue}>
                                             {convertSpeedMS(speedRange[0] / 3.6, ctx.unitsSettings.speed).toFixed(0)} -{' '}
                                             {convertSpeedMS(speedRange[1] / 3.6, ctx.unitsSettings.speed).toFixed(0)}{' '}
@@ -522,6 +643,118 @@ export default function TravelMenu() {
                                         </Typography>
                                     </div>
                                 </Box>
+                                <Box className={styles.sliderContainer}>
+                                    <div className={styles.sliderHeader}>
+                                        <Typography className={styles.sliderTitle}>
+                                            {t('shared_string_max_speed')}
+                                        </Typography>
+                                        <Typography className={styles.sliderValue}>
+                                            {convertSpeedMS(maxSpeedRange[0] / 3.6, ctx.unitsSettings.speed).toFixed(0)}{' '}
+                                            -{' '}
+                                            {convertSpeedMS(maxSpeedRange[1] / 3.6, ctx.unitsSettings.speed).toFixed(0)}{' '}
+                                            {t(getSpeedUnit(ctx))}
+                                        </Typography>
+                                    </div>
+                                    <Slider
+                                        value={maxSpeedRange}
+                                        onChange={(e, newValue) => {
+                                            setMaxSpeedRange(newValue);
+                                            setMaxSpeedTouched(
+                                                newValue[0] !== maxSpeedMin || newValue[1] !== maxSpeedMax
+                                            );
+                                        }}
+                                        min={maxSpeedMin}
+                                        max={maxSpeedMax}
+                                        step={1}
+                                        valueLabelDisplay="off"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                opacity: maxSpeedTouched ? 1 : 0.5,
+                                            },
+                                            '& .MuiSlider-track': {
+                                                opacity: maxSpeedTouched ? 1 : 0.5,
+                                            },
+                                        }}
+                                    />
+                                    <div className={styles.sliderBounds}>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {convertSpeedMS(maxSpeedMin / 3.6, ctx.unitsSettings.speed).toFixed(0)}
+                                        </Typography>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {convertSpeedMS(maxSpeedMax / 3.6, ctx.unitsSettings.speed).toFixed(0)}
+                                        </Typography>
+                                    </div>
+                                </Box>
+                                <Divider className={styles.filterSubDivider} />
+                                <Box className={styles.sliderContainer}>
+                                    <div className={styles.sliderHeader}>
+                                        <Typography className={styles.sliderTitle}>
+                                            {t('shared_string_time_span')}
+                                        </Typography>
+                                        <Typography className={styles.sliderValue}>
+                                            {timeMinutesRange[0]} - {timeMinutesRange[1]}{' '}
+                                            {t('shared_string_minute_lowercase')}
+                                        </Typography>
+                                    </div>
+                                    <Slider
+                                        value={timeMinutesRange}
+                                        onChange={(e, newValue) => {
+                                            setTimeMinutesRange(newValue);
+                                            setTimeMinutesTouched(
+                                                newValue[0] !== timeMinutesMin || newValue[1] !== timeMinutesMax
+                                            );
+                                        }}
+                                        min={timeMinutesMin}
+                                        max={timeMinutesMax}
+                                        step={1}
+                                        valueLabelDisplay="off"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                opacity: timeMinutesTouched ? 1 : 0.5,
+                                            },
+                                            '& .MuiSlider-track': {
+                                                opacity: timeMinutesTouched ? 1 : 0.5,
+                                            },
+                                        }}
+                                    />
+                                    <div className={styles.sliderBounds}>
+                                        <Typography className={styles.sliderBoundValue}>{timeMinutesMin}</Typography>
+                                        <Typography className={styles.sliderBoundValue}>{timeMinutesMax}</Typography>
+                                    </div>
+                                </Box>
+                                <Box className={styles.sliderContainer}>
+                                    <div className={styles.sliderHeader}>
+                                        <Typography className={styles.sliderTitle}>{t('web:waypoints')}</Typography>
+                                        <Typography className={styles.sliderValue}>
+                                            {waypointsRange[0]} - {waypointsRange[1]}
+                                        </Typography>
+                                    </div>
+                                    <Slider
+                                        value={waypointsRange}
+                                        onChange={(e, newValue) => {
+                                            setWaypointsRange(newValue);
+                                            setWaypointsTouched(
+                                                newValue[0] !== waypointsMin || newValue[1] !== waypointsMax
+                                            );
+                                        }}
+                                        min={waypointsMin}
+                                        max={waypointsMax}
+                                        step={1}
+                                        valueLabelDisplay="off"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                opacity: waypointsTouched ? 1 : 0.5,
+                                            },
+                                            '& .MuiSlider-track': {
+                                                opacity: waypointsTouched ? 1 : 0.5,
+                                            },
+                                        }}
+                                    />
+                                    <div className={styles.sliderBounds}>
+                                        <Typography className={styles.sliderBoundValue}>{waypointsMin}</Typography>
+                                        <Typography className={styles.sliderBoundValue}>{waypointsMax}</Typography>
+                                    </div>
+                                </Box>
                             </Collapse>
                             <ThickDivider mt={0} />
                             <Box sx={{ m: 2 }}>
@@ -532,8 +765,6 @@ export default function TravelMenu() {
                                 />
                             </Box>
                             {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
-                        </Box>
-                        <Box sx={{ flex: 1, overflow: 'hidden' }}>
                             {travelResult &&
                                 (travelResult?.features?.length > 0 ? (
                                     <>
