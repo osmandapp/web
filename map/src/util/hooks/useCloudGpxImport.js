@@ -14,8 +14,8 @@ export default function useCloudGpxImport() {
     const canImport = useCallback(() => ltx.isProAccount(), [ltx]);
 
     const onFilesSelected = useCallback(
-        (files) => {
-            ctx.setTrackLoading(files.map((track) => removeFileExtension(track.name) + GPX_FILE_EXT));
+        (files, folder) => {
+            ctx.setTrackLoading(files.map((track) => ({ name: removeFileExtension(track.name) + GPX_FILE_EXT, folder })));
         },
         [ctx]
     );
@@ -40,7 +40,7 @@ export default function useCloudGpxImport() {
                         title: 'Import error',
                         msg: `Unable to import ${file.name}`,
                     });
-                    ctx.setTrackLoading((prev) => prev.filter((n) => n !== loadingName));
+                    ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === loadingName && t.folder === folder)));
                     resolve(null);
                 }
             });
@@ -70,7 +70,7 @@ export default function useCloudGpxImport() {
                     open: uploadedFile.selected,
                 }).then((success) => {
                     if (success) {
-                        ctx.setTrackLoading((prev) => prev.filter((n) => n !== loadingName));
+                        ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === loadingName && t.folder === folder)));
                     }
                 });
             }

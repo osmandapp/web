@@ -191,9 +191,11 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                             scrollRef={folderScrollRef}
                         />
                         {ctx.trackLoading?.length > 0 &&
-                            ctx.trackLoading.map((lt) => {
-                                return <TrackLoading key={lt} name={lt} />;
-                            })}
+                            ctx.trackLoading
+                                .filter((lt) => lt.folder === group?.fullName)
+                                .map((lt) => {
+                                    return <TrackLoading key={lt.name} name={lt.name} />;
+                                })}
                         {trackItems}
                         <Box className={dropOverlayStyles.dropZoneSpacer} />
                     </Box>

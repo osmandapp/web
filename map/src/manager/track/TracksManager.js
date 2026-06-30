@@ -1431,10 +1431,10 @@ export function updateLoadingTracks(ctx, group) {
     calculateLastModified(group);
     ctx.setTrackLoading([
         ...ctx.trackLoading.filter(
-            (name) =>
+            (t) =>
                 !group.some((file) => {
                     let parts = file.name.split('/');
-                    return parts[parts.length - 1] === name;
+                    return parts[parts.length - 1] === t.name;
                 })
         ),
     ]);

@@ -190,9 +190,11 @@ export default function TracksMenu() {
                                     scrollRef={trackMenuScrollRef}
                                 />
                                 {ctx.trackLoading?.length > 0 &&
-                                    ctx.trackLoading.map((lt) => {
-                                        return <TrackLoading key={lt} name={lt} />;
-                                    })}
+                                    ctx.trackLoading
+                                        .filter((lt) => lt.folder === DEFAULT_GROUP_NAME)
+                                        .map((lt) => {
+                                            return <TrackLoading key={lt.name} name={lt.name} />;
+                                        })}
                                 {defaultGroupItems}
                                 <Box className={dropOverlayStyles.dropZoneSpacer} />
                             </Box>
