@@ -14,6 +14,7 @@ import { MenuButton } from './MenuButton';
 import { Box, Button, Typography } from '@mui/material';
 import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
+import gStyles from '../../gstylesmenu.module.css';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
@@ -375,7 +376,7 @@ export default function SearchResults() {
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
-                    <Box id={'se-search-results'} ref={listContainerRef} sx={{ flex: 1, minHeight: 0 }}>
+                    <Box id={'se-search-results'} ref={listContainerRef} className={gStyles.fillBlock}>
                         <VirtualizedList
                             items={visibleFeatures}
                             renderItem={renderSearchItem}

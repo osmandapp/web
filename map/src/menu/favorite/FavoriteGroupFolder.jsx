@@ -5,6 +5,7 @@ import MapContext from '../../context/MapContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useElementHeight } from '../../util/hooks/useElementHeight';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
+import gStyles from '../gstylesmenu.module.css';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import FavoritesManager, {
@@ -203,15 +204,10 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         <>
             <Box
                 id={'se-opened-fav-group-' + group?.name}
+                className={gStyles.fixedColumn}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
-                sx={{
-                    overflow: 'hidden',
-                    height: `${height - HEADER_SIZE}px`,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    minHeight: 0,
-                }}
+                style={{ height: `${height - HEADER_SIZE}px` }}
             >
                 {smartf && !folder ? (
                     <GroupHeader
@@ -232,9 +228,9 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                 )}
                 <Box
                     ref={listContainerRef}
+                    className={gStyles.scrollActiveBlock}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1, minHeight: 0 }}
                 >
                     {groupItems}
                     {folder &&

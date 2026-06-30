@@ -4,6 +4,8 @@ import CloudTrackGroup from './CloudTrackGroup';
 import isEmpty from 'lodash-es/isEmpty';
 import { Box, LinearProgress, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import VirtualizedList from '../../frame/components/VirtualizedList';
 import CloudTrackItem from './CloudTrackItem';
 import { DEFAULT_GROUP_NAME, updateLoadingTracks } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
@@ -12,6 +14,7 @@ import GroupHeader from '../actions/GroupHeader';
 import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
 import styles from '../trackfavmenu.module.css';
+import gStyles from '../gstylesmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
@@ -19,8 +22,8 @@ import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
-import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import { useNavigate } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -35,9 +38,9 @@ export default function TracksMenu() {
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
 
     const navigate = useNavigate();
-    const location = useLocation();
 
     const [, height] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
 
     const { t } = useTranslation();
 
@@ -97,6 +100,58 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
+    const trackMenuRows = useMemo(() => {
+        const rows = [
+            <MenuItem
+                key={'se-visible-tracks-menu'}
+                id={'se-visible-tracks-menu'}
+                divider
+                className={styles.item}
+                onClick={() => {
+                    setOpenVisibleTracks(true);
+                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
+                    ctx.setOpenVisibleMenu((prev) => ({
+                        ...prev,
+                        open: true,
+                        showTracks: true,
+                    }));
+                }}
+            >
+                <ListItemIcon className={styles.icon}>
+                    <VisibleIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" className={styles.groupName}>
+                        {t('shared_string_visible_on_map')}
+                    </Typography>
+                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                        {`Tracks ${getCountVisibleTracks(ctx.visibleTracks)}`}
+                    </Typography>
+                </ListItemText>
+            </MenuItem>,
+        ];
+        if (!isEmpty(ctx.shareWithMeFiles?.tracks)) {
+            rows.push(<SharedFolder key={'shared-folder'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />);
+        }
+        if (ctx.tracksGroups) {
+            (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)
+                .filter((g) => g.name !== DEFAULT_GROUP_NAME)
+                .forEach((group, index) => {
+                    rows.push(<CloudTrackGroup key={group.name} index={index} group={group} />);
+                });
+        }
+        if (ctx.trackLoading?.length > 0) {
+            ctx.trackLoading.forEach((lt) => {
+                rows.push(<TrackLoading key={lt} name={lt} />);
+            });
+        }
+        if (defaultGroupItems) {
+            rows.push(...defaultGroupItems);
+        }
+
+        return rows;
+    }, [defaultGroupItems, sortGroups, ctx.tracksGroups, ctx.trackLoading, ctx.shareWithMeFiles, ctx.visibleTracks, t]);
+
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
@@ -111,7 +166,12 @@ export default function TracksMenu() {
     }
 
     return (
-        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+        <Box
+            className={gStyles.fixedColumn}
+            minWidth={ctx.infoBlockWidth}
+            maxWidth={ctx.infoBlockWidth}
+            style={{ height: `${height - HEADER_SIZE}px` }}
+        >
             {ltx.loginUser && (
                 <GroupHeader
                     type="tracks"
@@ -128,50 +188,17 @@ export default function TracksMenu() {
                     {hasFiles ? (
                         <Box
                             id={'se-track-menu'}
+                            ref={listContainerRef}
+                            className={gStyles.scrollMainBlock}
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
-                            sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                         >
-                            <MenuItem
-                                id={'se-visible-tracks-menu'}
-                                divider
-                                className={styles.item}
-                                onClick={() => {
-                                    setOpenVisibleTracks(true);
-                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
-                                    ctx.setOpenVisibleMenu((prev) => ({
-                                        ...prev,
-                                        open: true,
-                                        showTracks: true,
-                                    }));
-                                }}
-                            >
-                                <ListItemIcon className={styles.icon}>
-                                    <VisibleIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography variant="inherit" className={styles.groupName}>
-                                        {t('shared_string_visible_on_map')}
-                                    </Typography>
-                                    <Typography variant="body2" className={styles.groupInfo} noWrap>
-                                        {`Tracks ${getCountVisibleTracks(ctx.visibleTracks)}`}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                            {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
-                                <SharedFolder subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
-                            )}
-                            {ctx.tracksGroups &&
-                                (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)
-                                    .filter((g) => g.name !== DEFAULT_GROUP_NAME)
-                                    .map((group, index) => {
-                                        return <CloudTrackGroup key={group.name} index={index} group={group} />;
-                                    })}
-                            {ctx.trackLoading?.length > 0 &&
-                                ctx.trackLoading.map((lt) => {
-                                    return <TrackLoading key={lt} name={lt} />;
-                                })}
-                            {defaultGroupItems}
+                            <VirtualizedList
+                                items={trackMenuRows}
+                                renderItem={(row) => row}
+                                getItemKey={(row) => row.key}
+                                height={listHeight}
+                            />
                         </Box>
                     ) : (
                         <Box id={'se-track-menu'}>

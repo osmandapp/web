@@ -13,6 +13,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { useElementHeight } from '../../../../util/hooks/useElementHeight';
 import styles from '../wptEditPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
+import gStyles from '../../../../menu/gstylesmenu.module.css';
 import { ReactComponent as ListFlatIcon } from '../../../../assets/features/ic_action_list_flat.svg';
 
 const SELECTION_COLOR = '#237bff';
@@ -154,7 +155,7 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
                 appBarProps={{ id: 'se-back-icon-selection-panel' }}
                 rightContent={rightContent}
             />
-            <Box ref={listContainerRef} sx={{ flex: 1, minHeight: 0 }}>
+            <Box ref={listContainerRef} className={gStyles.scrollMainBlock}>
                 <VirtualizedList
                     ref={listRef}
                     items={rows}
