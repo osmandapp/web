@@ -267,9 +267,11 @@ export default function SearchLayer() {
                 const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 const favGroupMap = buildFavGroupMap(favoriteFeatures);
                 ctx.setSearchFavoriteGroupIds(favGroupMap);
+                ctx.setSearchVisibleLevel(0);
                 ctx.setSearchResult({ ...data, features });
             } else if (!response?.aborted) {
                 ctx.setSearchFavoriteGroupIds(null);
+                ctx.setSearchVisibleLevel(0);
                 ctx.setSearchResult(null);
             }
         } catch (e) {
@@ -305,6 +307,7 @@ export default function SearchLayer() {
                             ctx.searchVisibleLevel
                         ),
                     });
+                    removeOldSearchLayer();
                     searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
                 }

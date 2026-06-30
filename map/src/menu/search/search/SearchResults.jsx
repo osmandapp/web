@@ -283,10 +283,6 @@ export default function SearchResults() {
         }
     }, [ctx.searchResult]);
 
-    useEffect(() => {
-        ctx.setSearchVisibleLevel(0);
-    }, [ctx.searchQuery]);
-
     function backToMainSearch() {
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
