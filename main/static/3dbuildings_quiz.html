@@ -156,23 +156,24 @@ h1{
     line-height: 1.4;
 }
 
-/* STATIC IMAGE CONTAINER */
+/* STATIC IMAGE CONTAINER — SAME FORMAT AS ASTRONOMY */
 .hint-image-wrapper {
-    width: 100%;
-    height: 520px; 
-    background: #1c1c1e;
-    border-radius: 24px;
+    width: 320px;
+    height: 658px;
+    background: #000;
+    border-radius: 36px;
+    border: 10px solid #222;
     overflow: hidden;
-    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hint-image-wrapper img {
+    width: 100%;
     height: 100%;
-    width: auto;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* SECURE IFRAME SIMULATOR */
@@ -354,13 +355,13 @@ select:focus {
     to { opacity: 1; }
 }
 
-/* RESPONSIVE BREAKPOINT */
-@media(max-width:800px){
+/* SAME BREAKPOINT AS ASTRONOMY */
+@media(max-width:600px){
     .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
     .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
     .quiz-layout { flex-direction: column; gap: 24px; }
     .quiz-right-col { width: 100%; }
-    .hint-image-wrapper { height: 340px; }
+    .hint-image-wrapper { width: 280px; height: 576px; border-radius: 28px; border-width: 8px; }
     h1 { font-size: 22px; }
 }
 </style>
@@ -693,14 +694,14 @@ function renderQuestion(){
         } else if(q.questionImg && q.questionImg !== "") {
             html += `
             <div class="hint-image-wrapper">
-                <img src="${q.questionImg}" alt="Interface Hint">
+                <img src="${q.questionImg}" alt="Question Hint Interface">
             </div>
             `;
         }
         html += `</div>`;
     }
     
-    html += `</div></div>`; 
+    html += `</div>`;
 
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
