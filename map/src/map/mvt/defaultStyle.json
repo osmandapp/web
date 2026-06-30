@@ -223,7 +223,7 @@
       "source": "osm",
       "source-layer": "osmand",
       "filter": ["all", ["==", "natural", "coastline_line"]],
-      "layout": {"visibility": "visible"},
+      "layout": {"visibility": "none"},
       "paint": {"line-color": "#0000ff"}
     },
     {
