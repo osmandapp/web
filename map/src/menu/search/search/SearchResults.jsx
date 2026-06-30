@@ -13,12 +13,12 @@ import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box, Button, Typography } from '@mui/material';
 import VirtualizedList from '../../../frame/components/VirtualizedList';
-import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import styles from '../search.module.css';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
+import { useElementHeight } from '../../../util/hooks/useElementHeight';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import EmptySearch from '../../errors/EmptySearch';
@@ -45,8 +45,6 @@ const EMPTY_SEARCH_RESULT = 'empty';
 // Initial row height estimate used before a row is measured. Real heights are measured per row
 // (items vary: 1 line vs name + multi-line address + distance) and cached.
 const SEARCH_RESULT_ITEM_HEIGHT = 88;
-// Space taken by the search input and info line above the list.
-const SEARCH_LIST_TOP_OFFSET = 120;
 
 function getRowKey(item, index) {
     return item?.id ?? item?.properties?.id ?? index;
@@ -101,7 +99,7 @@ export default function SearchResults() {
     const [locReady, setLocReady] = useState(false);
     const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
-    const [, windowHeight] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
     const { zoom } = useHashParams();
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
@@ -377,16 +375,13 @@ export default function SearchResults() {
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
-                    <Box id={'se-search-results'}>
+                    <Box id={'se-search-results'} ref={listContainerRef} sx={{ flex: 1, minHeight: 0 }}>
                         <VirtualizedList
                             items={visibleFeatures}
                             renderItem={renderSearchItem}
                             getItemKey={getRowKey}
                             estimatedItemHeight={SEARCH_RESULT_ITEM_HEIGHT}
-                            height={Math.min(
-                                visibleFeatures.length * SEARCH_RESULT_ITEM_HEIGHT,
-                                windowHeight - SEARCH_LIST_TOP_OFFSET
-                            )}
+                            height={listHeight}
                         />
                         {ctx.spatialSearch && hasMore && (
                             <Button

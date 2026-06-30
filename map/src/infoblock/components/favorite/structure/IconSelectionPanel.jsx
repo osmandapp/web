@@ -10,11 +10,10 @@ import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../../../frame/components/titles/SubTitleMenu';
 import WptIconPreview from './WptIconPreview';
 import isEmpty from 'lodash-es/isEmpty';
-import { useWindowSize } from '../../../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../../../util/hooks/useElementHeight';
 import styles from '../wptEditPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
 import { ReactComponent as ListFlatIcon } from '../../../../assets/features/ic_action_list_flat.svg';
-import { HEADER_SIZE, PANEL_HEADER_HEIGHT } from '../../../../manager/GlobalManager';
 
 const SELECTION_COLOR = '#237bff';
 const FALLBACK_BG_COLOR = '#e6e6e6';
@@ -28,7 +27,7 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
-    const [, windowHeight] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
 
     const initialIconRef = useRef(selectedIcon);
     const listRef = useRef(null);
@@ -124,7 +123,6 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
     }
 
     const getRowHeight = (index) => (rows[index]?.type === 'header' ? HEADER_ROW_HEIGHT : ICON_ROW_HEIGHT);
-    const listHeight = windowHeight - HEADER_SIZE - PANEL_HEADER_HEIGHT;
 
     const rightContent = (
         <>
@@ -156,14 +154,16 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
                 appBarProps={{ id: 'se-back-icon-selection-panel' }}
                 rightContent={rightContent}
             />
-            <VirtualizedList
-                ref={listRef}
-                items={rows}
-                renderItem={(row) => <IconRow row={row} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />}
-                itemSize={getRowHeight}
-                height={listHeight}
-                style={{ overflowX: 'hidden' }}
-            />
+            <Box ref={listContainerRef} sx={{ flex: 1, minHeight: 0 }}>
+                <VirtualizedList
+                    ref={listRef}
+                    items={rows}
+                    renderItem={(row) => <IconRow row={row} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />}
+                    itemSize={getRowHeight}
+                    height={listHeight}
+                    style={{ overflowX: 'hidden' }}
+                />
+            </Box>
         </SecondaryMenuDrawer>
     );
 }
