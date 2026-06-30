@@ -11,7 +11,7 @@ export default function TrackLoading({ name }) {
             </ListItemIcon>
             <ListItemText>
                 <Typography className={styles.groupName} noWrap>
-                    {name}
+                    {name.replace(/\.[^.]+$/, '')}
                 </Typography>
                 <Typography variant="body2" className={styles.groupInfo} noWrap>
                     Importing...

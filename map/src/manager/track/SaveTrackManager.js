@@ -153,7 +153,6 @@ export async function saveTrackToCloud({
             title: 'Save error',
             msg: `Unable to save ${gpxFile?.name}`,
         });
-        ctx.setTrackLoading([...ctx.trackLoading.filter((t) => t.name !== currentFile.name)]);
     }
     return false;
 }
@@ -162,7 +161,7 @@ export function removeFileExtension(filename) {
     return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
 }
 
-export function createTrackFreeName(name, otherTracks, folder = null, folderName = null) {
+export function createTrackFreeName(name, otherTracks, folder = null, folderName = null, extraOccupied = null) {
     let occupied = null;
     let newName = name;
     for (let i = 1; i < 100; i++) {
@@ -173,7 +172,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
             //check local
             occupied = otherTracks?.some((t) => t?.name === newName);
         }
-        if (!occupied) {
+        if (!occupied && !extraOccupied?.has(newName)) {
             return newName;
         }
         newName = name + ' - ' + i; // try with "Track - X"

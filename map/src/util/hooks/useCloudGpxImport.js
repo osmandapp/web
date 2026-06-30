@@ -15,14 +15,20 @@ export default function useCloudGpxImport() {
 
     const onFilesSelected = useCallback(
         (files, folder) => {
-            ctx.setTrackLoading(files.map((track) => ({ name: removeFileExtension(track.name) + GPX_FILE_EXT, folder })));
+            const batchTaken = new Set();
+            const freeNames = files.map((file) => {
+                const freeName = createTrackFreeName(removeFileExtension(file.name), ctx.tracksGroups, folder, null, batchTaken);
+                batchTaken.add(freeName);
+                return freeName;
+            });
+            ctx.setTrackLoading(freeNames.map((freeName) => ({ name: freeName + GPX_FILE_EXT, folder })));
+            return freeNames;
         },
         [ctx]
     );
 
-    const readFile = useCallback((file, { folder, selected }) => {
+    const readFile = useCallback((file, { folder, selected, freeName }) => {
         return new Promise((resolve) => {
-            const loadingName = removeFileExtension(file.name) + GPX_FILE_EXT;
             const reader = new FileReader();
             reader.addEventListener('load', (e) => {
                 const data = e.target.result;
@@ -34,13 +40,14 @@ export default function useCloudGpxImport() {
                         name: file.name,
                         originalName: file.name,
                         folder,
+                        freeName,
                     });
                 } else {
                     ctx.setTrackErrorMsg({
                         title: 'Import error',
                         msg: `Unable to import ${file.name}`,
                     });
-                    ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === loadingName && t.folder === folder)));
+                    ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === freeName + GPX_FILE_EXT && t.folder === folder)));
                     resolve(null);
                 }
             });
@@ -54,24 +61,19 @@ export default function useCloudGpxImport() {
 
     const saveFile = useCallback(
         (uploadedFile) => {
-            let fileName = uploadedFile.name;
-            const folder = uploadedFile.folder;
-            if (validName(fileName)) {
-                const loadingName = removeFileExtension(fileName) + GPX_FILE_EXT;
-                fileName = removeFileExtension(fileName);
-                fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
+            const { folder, freeName } = uploadedFile;
+            if (validName(uploadedFile.name) && freeName) {
+                const freeLoadingName = freeName + GPX_FILE_EXT;
                 saveTrackToCloud({
                     ctx,
                     ltx,
                     currentFolder: folder,
-                    fileName,
+                    fileName: freeName,
                     type: 'GPX',
-                    uploadedFile: uploadedFile,
+                    uploadedFile,
                     open: uploadedFile.selected,
-                }).then((success) => {
-                    if (success) {
-                        ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === loadingName && t.folder === folder)));
-                    }
+                }).finally(() => {
+                    ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === freeLoadingName && t.folder === folder)));
                 });
             }
         },

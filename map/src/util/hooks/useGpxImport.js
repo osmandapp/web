@@ -16,10 +16,10 @@ export default function useGpxImport({ canImport, isTrackFile, onFilesSelected, 
             }
 
             const selected = files.length === 1;
-            onFilesSelected?.(files, folder);
+            const freeNames = onFilesSelected?.(files, folder);
 
-            files.forEach(async (file) => {
-                const uploadedFile = await readFile(file, { folder, selected });
+            files.forEach(async (file, i) => {
+                const uploadedFile = await readFile(file, { folder, selected, freeName: freeNames?.[i] });
                 if (uploadedFile) {
                     mutateUploadedFiles((o) => (o[file.name] = uploadedFile));
                 }
