@@ -1,0 +1,22 @@
+.quizFrame {
+  width: 100%;
+  margin: 28px 0;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  background: #fff;
+}
+
+.quizIframe {
+  width: 1px;
+  min-width: 100%;
+  border: none;
+  display: block;
+}
+
+:global([data-theme='dark']) .quizFrame {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.38);
+  background: #111;
+}
