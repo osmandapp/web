@@ -146,6 +146,7 @@ export default function SearchLayer() {
             if (ctx.searchQuery.type) {
                 searchByCategory(ctx.searchQuery);
             } else if (ctx.searchQuery.latlng) {
+                ctx.setSearchResult(null);
                 searchByWord(ctx.searchQuery).then();
             } else {
                 console.debug('SearchLayer: search query without latlng');
@@ -290,9 +291,9 @@ export default function SearchLayer() {
 
     useEffect(() => {
         const addAsyncLayers = async () => {
-            if (!ctx.searchResult || ctx.processingSearch) {
+            if (!ctx.searchResult) {
                 removeOldSearchLayer();
-                if (!ctx.searchResult && ctx.searchQuery?.type) {
+                if (ctx.searchQuery?.type) {
                     const category = PoiManager.formattingPoiFilter(ctx.searchQuery?.query, true);
                     removeCategory(category);
                 }
@@ -313,7 +314,7 @@ export default function SearchLayer() {
         };
 
         addAsyncLayers().then();
-    }, [ctx.searchResult, ctx.searchVisibleLevel, ctx.processingSearch]);
+    }, [ctx.searchResult, ctx.searchVisibleLevel]);
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
