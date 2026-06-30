@@ -220,16 +220,20 @@ export default function MvtLayer({ config }) {
             }
         };
 
-        map.on('click', handleMapClick);
-        map.on('popupclose', handlePopupClose);
+        if (ctx.develFeatures === true) {
+            map.on('click', handleMapClick);
+            map.on('popupclose', handlePopupClose);
+        }
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
         maplibreMap.on('error', handleError);
 
         return () => {
             window.seIsTilesLoaded = true;
-            map.off('click', handleMapClick);
-            map.off('popupclose', handlePopupClose);
+            if (ctx.develFeatures === true) {
+                map.off('click', handleMapClick);
+                map.off('popupclose', handlePopupClose);
+            }
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
