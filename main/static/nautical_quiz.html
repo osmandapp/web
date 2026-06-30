@@ -147,7 +147,7 @@ h1{
 /* STATIC IMAGE CONTAINER */
 .hint-image-wrapper {
     width: 100%;
-    height: 520px; 
+    height: 520px;
     background: #1c1c1e;
     border-radius: 24px;
     overflow: hidden;
@@ -318,14 +318,65 @@ select:focus {
     to { opacity: 1; }
 }
 
-/* RESPONSIVE BREAKPOINT */
+/* TABLET / MEDIUM EMBED BREAKPOINT */
+@media(max-width:800px){
+    .container {
+        padding: 28px 20px;
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .quiz-layout {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .quiz-left-col,
+    .quiz-left-col.full-width {
+        width: 100%;
+    }
+
+    .quiz-right-col {
+        width: 100%;
+    }
+
+    .hint-image-wrapper {
+        height: 420px;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+/* SMALL MOBILE BREAKPOINT */
 @media(max-width:600px){
-    .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
-    .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
-    .quiz-layout { flex-direction: column; gap: 24px; }
-    .quiz-right-col { width: 100%; }
-    .hint-image-wrapper { height: 340px; }
-    h1 { font-size: 22px; }
+    .container {
+        padding: 24px 16px;
+    }
+
+    .hint-image-wrapper {
+        height: 340px;
+        max-width: 100%;
+    }
+
+    .question-title {
+        font-size: 20px;
+    }
+
+    .option {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
 }
 </style>
 </head>
@@ -495,11 +546,11 @@ function updateProgress(){
 
 function renderQuestion(){
     updateProgress();
-    
+
     mascotContainer.innerHTML = "⚓";
     mascotContainer.style.borderColor = "var(--osmand-orange)";
     mascotContainer.style.background = "var(--osmand-orange-bg)";
-    
+
     const q = questions[currentQuestion];
     const hasMedia = q.questionImg && q.questionImg !== "";
 
@@ -538,7 +589,7 @@ function renderQuestion(){
         html += `<button class="action-btn" onclick="submitMatching()">Submit answer</button>`;
     }
 
-    html += `<div id="feedback"></div></div>`; 
+    html += `<div id="feedback"></div></div>`;
 
     if (hasMedia) {
         html += `
@@ -549,8 +600,8 @@ function renderQuestion(){
         </div>
         `;
     }
-    
-    html += `</div></div>`; 
+
+    html += `</div>`;
 
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
@@ -617,7 +668,7 @@ function showFeedback(correct, text){
         ${isLastQuestion ? "View results" : "Next question"}
     </button>
     `;
-    
+
     const mainBtn = document.querySelector(".quiz-left-col > button.action-btn");
     if(mainBtn) mainBtn.style.display = 'none';
 }
