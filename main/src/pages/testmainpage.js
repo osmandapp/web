@@ -454,11 +454,11 @@ export default function TestMainPage() {
           onFocus={() => setIsFeaturePaused(true)}
           onBlur={() => setIsFeaturePaused(false)}
         >
-        <div className={styles.magicFeatureHeader}>
-          <h2>Powerful navigation tools for every adventure</h2>
+          <div className={styles.magicFeatureHeader}>
+            <h2>Powerful navigation tools for every adventure</h2>
             <p>
-                 Explore offline maps, flexible routing, terrain tools, GPX tracks,
-                  and Cloud sync in one privacy-first app.
+              Explore offline maps, flexible routing, terrain tools, GPX tracks,
+              and Cloud sync in one privacy-first app.
             </p>
 
             <div className={styles.platformSwitch} role="tablist" aria-label="Platform">
@@ -508,8 +508,8 @@ export default function TestMainPage() {
             </div>
 
             <div className={styles.magicFeatureCopy} aria-live="polite">
-                <h3>{activeFeatureSlide.title}</h3>
-                <p>{activeFeatureSlide.text}</p>
+              <h3>{activeFeatureSlide.title}</h3>
+              <p>{activeFeatureSlide.text}</p>
 
               <Link className={styles.featureLink} to={activeFeatureSlide.link}>
                 {activeFeatureSlide.button}
@@ -557,26 +557,6 @@ export default function TestMainPage() {
                 })}
               </div>
             </div>
-          </div>
-
-          <div className={styles.magicFeatureList}>
-            {featureSlides.map((slide, index) => {
-              const isActive = index === activeFeature;
-
-              return (
-                <button
-                  type="button"
-                  key={slide.label}
-                  className={`${styles.magicFeatureListItem} ${
-                    isActive ? styles.magicFeatureListItemActive : ''
-                  }`}
-                  onClick={() => setActiveFeature(index)}
-                >
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <strong>{slide.label}</strong>
-                </button>
-              );
-            })}
           </div>
         </section>
 
