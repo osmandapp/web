@@ -40,10 +40,10 @@ const TemplateTileLayer = L.TileLayer.extend({
 });
 
 export function getHybridUnderlayUrl() {
-    if (sessionStorage.getItem(HYBRID_UNDERLAY_ACTIVE_KEY) !== 'true') {
+    if (localStorage.getItem(HYBRID_UNDERLAY_ACTIVE_KEY) !== 'true') {
         return '';
     }
-    return sessionStorage.getItem(HYBRID_UNDERLAY_URL_KEY) || '';
+    return localStorage.getItem(HYBRID_UNDERLAY_URL_KEY) || '';
 }
 
 function emitHybridUnderlayUrlChange() {
@@ -52,14 +52,14 @@ function emitHybridUnderlayUrlChange() {
 
 function activateHybridUnderlayUrl(url) {
     if (url) {
-        sessionStorage.setItem(HYBRID_UNDERLAY_URL_KEY, url);
-        sessionStorage.setItem(HYBRID_UNDERLAY_ACTIVE_KEY, 'true');
+        localStorage.setItem(HYBRID_UNDERLAY_URL_KEY, url);
+        localStorage.setItem(HYBRID_UNDERLAY_ACTIVE_KEY, 'true');
     }
     emitHybridUnderlayUrlChange();
 }
 
 function deactivateHybridUnderlayUrl() {
-    sessionStorage.removeItem(HYBRID_UNDERLAY_ACTIVE_KEY);
+    localStorage.removeItem(HYBRID_UNDERLAY_ACTIVE_KEY);
     emitHybridUnderlayUrlChange();
 }
 
@@ -84,7 +84,7 @@ export function toggleHybridUnderlayUrl() {
         return;
     }
 
-    const savedUrl = sessionStorage.getItem(HYBRID_UNDERLAY_URL_KEY) || '';
+    const savedUrl = localStorage.getItem(HYBRID_UNDERLAY_URL_KEY) || '';
     const nextUrl = window.prompt('UNDERLAY_URL', savedUrl)?.trim();
     if (nextUrl) {
         activateHybridUnderlayUrl(nextUrl);
