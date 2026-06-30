@@ -162,7 +162,6 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
                     renderItem={(row) => <IconRow row={row} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />}
                     itemSize={getRowHeight}
                     height={listHeight}
-                    style={{ overflowX: 'hidden' }}
                 />
             </Box>
         </SecondaryMenuDrawer>

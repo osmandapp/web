@@ -95,7 +95,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
             overscanCount={overscanCount}
             itemData={itemData}
             itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
-            style={style}
+            style={{ overflowX: 'hidden', ...style }}
         >
             {VirtualizedRow}
         </VariableSizeList>
