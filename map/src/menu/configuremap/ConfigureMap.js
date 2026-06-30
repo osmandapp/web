@@ -12,6 +12,7 @@ import {
     Toolbar,
     Tooltip,
     Box,
+    Button,
 } from '@mui/material';
 import { Layers, Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
@@ -48,7 +49,8 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
-import { mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
+import { isOsmAndTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
+import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -70,6 +72,7 @@ export default function ConfigureMap() {
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
+    const hybridUnderlayUrl = useHybridUnderlayUrl();
 
     const handleFavoritesSwitchChange = () => {
         const newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -337,6 +340,15 @@ export default function ConfigureMap() {
                                         <Settings fontSize="small" />
                                     </IconButton>
                                 </MenuItem>
+                                {isOsmAndTileURL(mtx.tileURL) && (
+                                    <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
+                                        <Button variant="outlined" fullWidth onClick={toggleHybridUnderlayUrl}>
+                                            {hybridUnderlayUrl
+                                                ? 'Deactivate hybrid layer'
+                                                : 'Activate hybrid MVT layer'}
+                                        </Button>
+                                    </Box>
+                                )}
                             </>
                         )}
                     </>
