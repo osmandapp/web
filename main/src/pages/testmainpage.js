@@ -1,33 +1,237 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
+
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import GPlay from '@site/src/components/buttons/GPlay.mdx';
+import Huawei from '@site/src/components/buttons/Huawei.mdx';
+
 import styles from './testmainpage.module.css';
 
-const features = [
+const androidFeatureSlides = [
   {
-    label: 'Topography',
-    title: 'Understand the terrain before you go',
-    text: 'Contour lines, hillshade, slope, altitude, and 3D relief help you plan outdoor routes with more confidence.',
-    link: '/docs/user/plugins/topography',
+    label: 'Offline Maps',
+    title: 'Detailed offline maps',
+    text: 'Download detailed maps before your trip and use them without mobile data.',
+    link: '/docs/versions/free-versions',
+    button: 'Explore offline maps',
+    badge: 'Android',
+    metric: 'Offline maps',
+    image: '/img/promo/promo-1s.png',
+    imageAlt: 'OsmAnd Android offline maps screenshot',
   },
   {
     label: 'Navigation',
-    title: 'Navigate offline anywhere',
-    text: 'Use offline routing profiles for driving, cycling, walking, hiking, off-road trips, and more.',
+    title: 'Turn-by-turn navigation',
+    text: 'Navigate with flexible routing profiles for driving, cycling, walking, hiking, and more.',
     link: '/docs/user/navigation',
+    button: 'Explore navigation',
+    badge: 'Android',
+    metric: 'Turn-by-turn',
+    image: '/img/promo/promo-2s.png',
+    imageAlt: 'OsmAnd Android navigation screenshot',
+  },
+  {
+    label: 'Topography',
+    title: 'Terrain and relief tools',
+    text: 'Use contour lines, hillshade, slope, altitude, and terrain tools for outdoor planning.',
+    link: '/docs/user/plugins/topography',
+    button: 'Explore topography',
+    badge: 'Android',
+    metric: 'Terrain',
+    image: '/img/promo/promo-3s.png',
+    imageAlt: 'OsmAnd Android topography screenshot',
   },
   {
     label: 'Tracks',
-    title: 'Record and manage every route',
-    text: 'Record GPX tracks, import routes, edit them, analyze details, and keep your travel history organized.',
+    title: 'GPX tracks and routes',
+    text: 'Record, import, edit, and analyze GPX tracks for every trip.',
     link: '/docs/user/plugins/trip-recording',
+    button: 'Explore tracks',
+    badge: 'Android',
+    metric: 'GPX',
+    image: '/img/promo/promo-4s.png',
+    imageAlt: 'OsmAnd Android tracks screenshot',
   },
   {
     label: 'Search',
-    title: 'Find places without internet',
-    text: 'Search addresses, categories, POIs, coordinates, and saved places directly from offline maps.',
+    title: 'Find places offline',
+    text: 'Search addresses, POIs, categories, coordinates, and saved places from offline maps.',
     link: '/docs/user/search',
+    button: 'Explore search',
+    badge: 'Android',
+    metric: 'Offline search',
+    image: '/img/promo/promo-5s.png',
+    imageAlt: 'OsmAnd Android search screenshot',
+  },
+  {
+    label: 'Map Layers',
+    title: 'Customize your map view',
+    text: 'Combine map styles, overlays, underlays, terrain, weather, and other layers.',
+    link: '/docs/user/map',
+    button: 'Explore map layers',
+    badge: 'Android',
+    metric: 'Map layers',
+    image: '/img/promo/promo-6s.png',
+    imageAlt: 'OsmAnd Android map layers screenshot',
+  },
+  {
+    label: 'Trip Tools',
+    title: 'Tools for every adventure',
+    text: 'Use widgets, navigation settings, map controls, and profile-based tools for each activity.',
+    link: '/docs/user/widgets',
+    button: 'Explore widgets',
+    badge: 'Android',
+    metric: 'Toolkit',
+    image: '/img/promo/promo-7s.png',
+    imageAlt: 'OsmAnd Android tools screenshot',
+  },
+  {
+    label: 'Cloud Sync',
+    title: 'Sync your data everywhere',
+    text: 'Keep favorites, tracks, backups, and profile settings available across your devices.',
+    link: '/docs/user/personal/osmand-cloud',
+    button: 'Explore Cloud Sync',
+    badge: 'Android',
+    metric: 'Cloud',
+    image: '/img/promo/promo-8s.png',
+    imageAlt: 'OsmAnd Android Cloud screenshot',
+  },
+  {
+    label: 'Weather',
+    title: 'Offline weather data',
+    text: 'Plan ahead with weather layers and forecast data available on the map.',
+    link: '/docs/user/plugins/weather',
+    button: 'Explore weather',
+    badge: 'Android',
+    metric: 'Weather',
+    image: '/img/promo/promo-9s.png',
+    imageAlt: 'OsmAnd Android weather screenshot',
+  },
+  {
+    label: 'Profiles',
+    title: 'Profiles for every activity',
+    text: 'Switch between driving, cycling, walking, hiking, off-road, and custom navigation profiles.',
+    link: '/docs/user/personal/profiles',
+    button: 'Explore profiles',
+    badge: 'Android',
+    metric: 'Profiles',
+    image: '/img/promo/promo-10s.png',
+    imageAlt: 'OsmAnd Android profiles screenshot',
+  },
+];
+
+const iosFeatureSlides = [
+  {
+    label: 'Offline Maps',
+    title: 'Offline maps on iPhone',
+    text: 'Use detailed offline maps and navigation tools directly on iPhone and iPad.',
+    link: '/docs/versions/free-versions',
+    button: 'Explore iOS app',
+    badge: 'iOS',
+    metric: 'Offline maps',
+    image: '/img/promo/ios-1s.png',
+    imageAlt: 'OsmAnd iOS offline maps screenshot',
+  },
+  {
+    label: 'Navigation',
+    title: 'Navigation on iOS',
+    text: 'Plan routes and navigate with OsmAnd on iPhone and iPad.',
+    link: '/docs/user/navigation',
+    button: 'Explore navigation',
+    badge: 'iOS',
+    metric: 'Navigation',
+    image: '/img/promo/ios-2s.png',
+    imageAlt: 'OsmAnd iOS navigation screenshot',
+  },
+  {
+    label: 'Topography',
+    title: 'Terrain tools on iOS',
+    text: 'Use outdoor map details, terrain data, and topographic tools for trip planning.',
+    link: '/docs/user/plugins/topography',
+    button: 'Explore topography',
+    badge: 'iOS',
+    metric: 'Terrain',
+    image: '/img/promo/ios-3s.png',
+    imageAlt: 'OsmAnd iOS terrain screenshot',
+  },
+  {
+    label: 'Tracks',
+    title: 'Tracks and route planning',
+    text: 'Record, import, organize, and analyze your GPX tracks on iOS.',
+    link: '/docs/user/plugins/trip-recording',
+    button: 'Explore tracks',
+    badge: 'iOS',
+    metric: 'GPX',
+    image: '/img/promo/ios-4s.png',
+    imageAlt: 'OsmAnd iOS tracks screenshot',
+  },
+  {
+    label: 'Search',
+    title: 'Search places offline',
+    text: 'Find places, addresses, categories, coordinates, and favorites without internet.',
+    link: '/docs/user/search',
+    button: 'Explore search',
+    badge: 'iOS',
+    metric: 'Search',
+    image: '/img/promo/ios-5s.png',
+    imageAlt: 'OsmAnd iOS search screenshot',
+  },
+  {
+    label: 'Map Layers',
+    title: 'Map layers and overlays',
+    text: 'Customize the map with layers, overlays, terrain, weather, and activity-specific details.',
+    link: '/docs/user/map',
+    button: 'Explore map layers',
+    badge: 'iOS',
+    metric: 'Layers',
+    image: '/img/promo/ios-6s.png',
+    imageAlt: 'OsmAnd iOS map layers screenshot',
+  },
+  {
+    label: 'Trip Tools',
+    title: 'Advanced trip tools',
+    text: 'Use map widgets, route tools, measurements, and profile settings for different activities.',
+    link: '/docs/user/widgets',
+    button: 'Explore widgets',
+    badge: 'iOS',
+    metric: 'Toolkit',
+    image: '/img/promo/ios-7s.png',
+    imageAlt: 'OsmAnd iOS tools screenshot',
+  },
+  {
+    label: 'Cloud Sync',
+    title: 'OsmAnd Cloud on iOS',
+    text: 'Sync favorites, tracks, backups, profile settings, and web-planned routes.',
+    link: '/docs/user/personal/osmand-cloud',
+    button: 'Explore Cloud Sync',
+    badge: 'iOS',
+    metric: 'Cloud',
+    image: '/img/promo/ios-8s.png',
+    imageAlt: 'OsmAnd iOS Cloud screenshot',
+  },
+  {
+    label: 'Weather',
+    title: 'Weather on the map',
+    text: 'Check weather data and map layers to plan safer outdoor routes.',
+    link: '/docs/user/plugins/weather',
+    button: 'Explore weather',
+    badge: 'iOS',
+    metric: 'Weather',
+    image: '/img/promo/ios-9s.png',
+    imageAlt: 'OsmAnd iOS weather screenshot',
+  },
+  {
+    label: 'Profiles',
+    title: 'Navigation profiles on iOS',
+    text: 'Use dedicated profiles for driving, cycling, walking, hiking, and custom navigation.',
+    link: '/docs/user/personal/profiles',
+    button: 'Explore profiles',
+    badge: 'iOS',
+    metric: 'Profiles',
+    image: '/img/promo/ios-10s.png',
+    imageAlt: 'OsmAnd iOS profiles screenshot',
   },
 ];
 
@@ -35,6 +239,43 @@ const stats = [
   ['Offline-first', 'Maps and navigation'],
   ['GPX', 'Tracks and route planning'],
   ['Android · iOS · Web', 'Cross-platform workflow'],
+];
+
+const heroCards = [
+  {
+    title: 'Detailed Offline Maps',
+    text: 'Ready anywhere',
+  },
+  {
+    title: '3D Reliefs',
+    text: 'Terrain data ready',
+  },
+  {
+    title: 'GPX Tracks',
+    text: 'Plan, record, share',
+  },
+  {
+    title: 'Multi-Tool Kit',
+    text: 'For every adventure',
+  },
+];
+
+const trustCards = [
+  {
+    icon: '✓',
+    title: 'No Ads',
+    text: 'A clean map experience with no advertising and no distractions.',
+  },
+  {
+    icon: '⌁',
+    title: 'Full Privacy',
+    text: 'Your personal location data is not tracked, shared, or sold.',
+  },
+  {
+    icon: '＋',
+    title: 'All-in-One Toolkit',
+    text: 'Offline maps, navigation, tracks, terrain, and trip tools in one app.',
+  },
 ];
 
 const platforms = [
@@ -58,99 +299,62 @@ const platforms = [
   },
 ];
 
-const storeButtons = [
-  {
-    title: 'Huawei AppGallery',
-    subtitle: 'Explore it on',
-    icon: 'H',
-    link: 'https://appgallery.huawei.com/#/app/C101486545',
-  },
-  {
-    title: 'Google Play',
-    subtitle: 'Get it on',
-    icon: '▶',
-    link: 'https://play.google.com/store/apps/details?id=net.osmand',
-  },
-  {
-    title: 'App Store',
-    subtitle: 'Download on the',
-    icon: '',
-    link: 'https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257',
-  },
-];
-
-const footerLinks = [
-  {
-    title: 'OsmAnd',
-    items: [
-      { label: 'Pricing 💳', to: 'pathname:///pricing' },
-      { label: 'Map 🌍', to: 'pathname:///map' },
-      { label: 'Docs', to: '/docs/intro' },
-      { label: 'Purchases', to: '/docs/user/purchases' },
-      { label: 'Map legend', to: '/docs/user/map-legend/osmand' },
-      { label: 'Downloads', to: '/docs/versions/free-versions' },
-      { label: 'Build it', to: '/docs/build-it' },
-      { label: 'Giveaway', to: '/giveaway' },
-      { label: 'About', to: '/help-online/about' },
-    ],
-  },
-  {
-    title: 'Community',
-    items: [
-      { label: 'GitHub Discussions', href: 'https://github.com/osmandapp/OsmAnd/discussions' },
-      { label: 'X (Twitter)', href: 'https://x.com/osmandapp' },
-      { label: 'Reddit', href: 'https://www.reddit.com/r/OsmAnd/' },
-      { label: 'Facebook', href: 'https://facebook.com/osmandapp/' },
-      { label: 'TikTok', href: 'https://www.tiktok.com/@osmandapp' },
-      { label: 'Telegram Channel', href: 'https://t.me/OsmAnd_News' },
-      { label: 'Matrix', href: 'https://matrix.to/#/#osmand:hacklab.fi' },
-    ],
-  },
-  {
-    title: 'Telegram chat',
-    items: [
-      { label: 'English', href: 'https://t.me/OsmAndMaps' },
-      { label: 'French', href: 'https://t.me/frosmand' },
-      { label: 'German', href: 'https://t.me/deosmand' },
-      { label: 'Italian', href: 'https://t.me/itosmand' },
-      { label: 'Ukrainian', href: 'https://t.me/uaosmand' },
-      { label: 'Polish', href: 'https://t.me/osmand_pl' },
-      { label: 'Spanish', href: 'https://t.me/osmand_es' },
-      { label: 'Brazilian', href: 'https://t.me/brosmand' },
-      { label: 'Arabic', href: 'https://t.me/+NwG00ihXJlBjZTA0' },
-      { label: 'Türkçe', href: 'https://t.me/OsmAndTR' },
-    ],
-  },
-  {
-    title: 'More',
-    items: [
-      { label: 'Blog', to: '/blog' },
-      { label: 'GitHub', href: 'https://github.com/osmandapp' },
-      { label: 'OsmAnd CZ Manuals', href: 'https://osmand.cz/' },
-      { label: 'Get OsmAnd Merchandise', href: 'https://www.redbubble.com/shop/ap/36789864' },
-      { label: 'Support', to: '/help-online/support' },
-    ],
-  },
-];
-
-function FooterLink({ item }) {
-  if (item.href) {
-    return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer">
-        {item.label}
-      </a>
-    );
-  }
-
-  return <Link to={item.to}>{item.label}</Link>;
-}
-
 export default function TestMainPage() {
+  const [activePlatform, setActivePlatform] = useState('android');
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [isFeaturePaused, setIsFeaturePaused] = useState(false);
+
+  const featureSlides =
+    activePlatform === 'ios' ? iosFeatureSlides : androidFeatureSlides;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const userAgent = window.navigator.userAgent || '';
+    const platform = window.navigator.platform || '';
+    const maxTouchPoints = window.navigator.maxTouchPoints || 0;
+
+    const isIOS =
+      /iPad|iPhone|iPod/.test(userAgent) ||
+      (platform === 'MacIntel' && maxTouchPoints > 1);
+
+    setActivePlatform(isIOS ? 'ios' : 'android');
+  }, []);
+
+  useEffect(() => {
+    setActiveFeature(0);
+  }, [activePlatform]);
+
+  useEffect(() => {
+    if (isFeaturePaused) {
+      return undefined;
+    }
+
+    const interval = setInterval(() => {
+      setActiveFeature((current) => (current + 1) % featureSlides.length);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [isFeaturePaused, featureSlides.length]);
+
+  const activeFeatureSlide = featureSlides[activeFeature];
+
+  const previousFeature = () => {
+    setActiveFeature((current) =>
+      current === 0 ? featureSlides.length - 1 : current - 1,
+    );
+  };
+
+  const nextFeature = () => {
+    setActiveFeature((current) => (current + 1) % featureSlides.length);
+  };
+
   return (
     <Layout
       title="OsmAnd — Offline Maps and Navigation"
       description="Offline maps, navigation, topography, GPX tracks, Cloud sync, and privacy-first tools for every trip."
-      noFooter
     >
       <Head>
         <meta name="robots" content="noindex, nofollow" />
@@ -183,52 +387,44 @@ export default function TestMainPage() {
             </div>
 
             <div className={styles.storeRow}>
-              {storeButtons.map((store) => (
-                <a
-                  className={styles.storeBadge}
-                  href={store.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={store.title}
-                >
-                  <span className={styles.storeIcon}>{store.icon}</span>
-                  <span>
-                    <small>{store.subtitle}</small>
-                    <strong>{store.title}</strong>
-                  </span>
-                </a>
-              ))}
+              <div className={styles.storeItem}>
+                <Huawei />
+              </div>
+
+              <div className={styles.storeItem}>
+                <GPlay />
+              </div>
+
+              <div className={styles.storeItem}>
+                <AppleStore />
+              </div>
             </div>
           </div>
 
           <div className={styles.heroVisual} aria-hidden="true">
-            <div className={styles.phone}>
-              <div className={styles.phoneMap}>
-                <div className={styles.route} />
-                <div className={styles.markerA} />
-                <div className={styles.markerB} />
-                <div className={styles.mapLabelOne}>Offline route</div>
-                <div className={styles.mapLabelTwo}>Hillshade</div>
+            <div className={styles.phoneScreenshotWrap}>
+              <img
+                className={`${styles.phoneScreenshot} ${styles.phoneScreenshotLight}`}
+                src="/img/test-main/screen-android.png"
+                alt=""
+              />
+
+              <img
+                className={`${styles.phoneScreenshot} ${styles.phoneScreenshotDark}`}
+                src="/img/test-main/screen-android-black.png"
+                alt=""
+              />
+            </div>
+
+            {heroCards.map((card, index) => (
+              <div
+                className={`${styles.floatCard} ${styles[`heroCard${index + 1}`]}`}
+                key={card.title}
+              >
+                <strong>{card.title}</strong>
+                <span>{card.text}</span>
               </div>
-
-              <div className={styles.routePanel}>
-                <div>
-                  <strong>Mountain route</strong>
-                  <span>Ready offline</span>
-                </div>
-                <b>28.4 km</b>
-              </div>
-            </div>
-
-            <div className={styles.floatCardOne}>
-              <strong>3D Relief</strong>
-              <span>Terrain data ready</span>
-            </div>
-
-            <div className={styles.floatCardTwo}>
-              <strong>GPX Track</strong>
-              <span>Recording active</span>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -241,36 +437,147 @@ export default function TestMainPage() {
           ))}
         </section>
 
-        <section className={styles.introSection}>
-          <p className={styles.kicker}>Everything works offline</p>
-          <h2>Built for travel, hiking, cycling, driving, and exploration</h2>
-          <p>
-            OsmAnd gives you detailed maps, flexible navigation profiles,
-            topographic tools, track recording, and cross-device sync in one app.
-          </p>
-        </section>
-
-        <section className={styles.featureGrid}>
-          {features.map((feature) => (
-            <article className={styles.featureCard} key={feature.title}>
-              <div className={styles.featureVisual}>
-                <div className={styles.miniMap}>
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </div>
-
-              <p className={styles.featureLabel}>{feature.label}</p>
-              <h3>{feature.title}</h3>
-              <p>{feature.text}</p>
-
-              <Link to={feature.link}>
-                Learn more
-                <span>→</span>
-              </Link>
+        <section className={styles.trustSection}>
+          {trustCards.map((card) => (
+            <article className={styles.trustCard} key={card.title}>
+              <span className={styles.trustIcon}>{card.icon}</span>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
             </article>
           ))}
+        </section>
+
+        <section
+          className={styles.magicFeatureSection}
+          onMouseEnter={() => setIsFeaturePaused(true)}
+          onMouseLeave={() => setIsFeaturePaused(false)}
+          onFocus={() => setIsFeaturePaused(true)}
+          onBlur={() => setIsFeaturePaused(false)}
+        >
+        <div className={styles.magicFeatureHeader}>
+          <h2>Powerful navigation tools for every adventure</h2>
+            <p>
+                 Explore offline maps, flexible routing, terrain tools, GPX tracks,
+                  and Cloud sync in one privacy-first app.
+            </p>
+
+            <div className={styles.platformSwitch} role="tablist" aria-label="Platform">
+              <button
+                type="button"
+                className={`${styles.platformSwitchButton} ${
+                  activePlatform === 'android'
+                    ? styles.platformSwitchButtonActive
+                    : ''
+                }`}
+                aria-pressed={activePlatform === 'android'}
+                onClick={() => setActivePlatform('android')}
+              >
+                Android
+              </button>
+
+              <button
+                type="button"
+                className={`${styles.platformSwitchButton} ${
+                  activePlatform === 'ios'
+                    ? styles.platformSwitchButtonActive
+                    : ''
+                }`}
+                aria-pressed={activePlatform === 'ios'}
+                onClick={() => setActivePlatform('ios')}
+              >
+                iOS
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.magicFeatureCarousel}>
+            <div className={styles.magicFeatureVisual}>
+              <div className={styles.magicFeatureGlow} />
+
+              <img
+                className={styles.magicFeatureImage}
+                src={activeFeatureSlide.image}
+                alt={activeFeatureSlide.imageAlt}
+                key={activeFeatureSlide.image}
+              />
+
+              <div className={styles.magicFeatureMiniCard}>
+                <strong>{activeFeatureSlide.badge}</strong>
+                <span>{activeFeatureSlide.metric}</span>
+              </div>
+            </div>
+
+            <div className={styles.magicFeatureCopy} aria-live="polite">
+                <h3>{activeFeatureSlide.title}</h3>
+                <p>{activeFeatureSlide.text}</p>
+
+              <Link className={styles.featureLink} to={activeFeatureSlide.link}>
+                {activeFeatureSlide.button}
+                <span>→</span>
+              </Link>
+
+              <div className={styles.magicFeatureControls}>
+                <button
+                  type="button"
+                  className={styles.magicFeatureArrow}
+                  aria-label="Previous feature"
+                  onClick={previousFeature}
+                >
+                  ‹
+                </button>
+
+                <button
+                  type="button"
+                  className={styles.magicFeatureArrow}
+                  aria-label="Next feature"
+                  onClick={nextFeature}
+                >
+                  ›
+                </button>
+              </div>
+
+              <div className={styles.magicFeatureDots}>
+                {featureSlides.map((slide, index) => {
+                  const isActive = index === activeFeature;
+
+                  return (
+                    <button
+                      type="button"
+                      key={slide.label}
+                      className={`${styles.magicFeatureDot} ${
+                        isActive ? styles.magicFeatureDotActive : ''
+                      }`}
+                      aria-label={`Show ${slide.label}`}
+                      aria-pressed={isActive}
+                      onClick={() => setActiveFeature(index)}
+                    >
+                      <span />
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.magicFeatureList}>
+            {featureSlides.map((slide, index) => {
+              const isActive = index === activeFeature;
+
+              return (
+                <button
+                  type="button"
+                  key={slide.label}
+                  className={`${styles.magicFeatureListItem} ${
+                    isActive ? styles.magicFeatureListItemActive : ''
+                  }`}
+                  onClick={() => setActiveFeature(index)}
+                >
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{slide.label}</strong>
+                </button>
+              );
+            })}
+          </div>
         </section>
 
         <section className={styles.carSection}>
@@ -292,14 +599,18 @@ export default function TestMainPage() {
             </div>
           </div>
 
-          <div className={styles.dashboardMockup}>
-            <div className={styles.dashboardScreen}>
-              <div className={styles.dashboardRoute} />
-              <div className={styles.dashboardPanel}>
-                <strong>Turn right</strong>
-                <span>350 m</span>
-              </div>
-            </div>
+          <div className={styles.carImageWrap}>
+            <img
+              className={`${styles.carImage} ${styles.carImageLight}`}
+              src="/img/test-main/carplay-main.png"
+              alt="OsmAnd navigation on a car dashboard"
+            />
+
+            <img
+              className={`${styles.carImage} ${styles.carImageDark}`}
+              src="/img/test-main/carplay-main-black.png"
+              alt=""
+            />
           </div>
         </section>
 
@@ -345,52 +656,6 @@ export default function TestMainPage() {
             ))}
           </div>
         </section>
-
-        <footer className={styles.footer}>
-          <div className={styles.footerInner}>
-            <div className={styles.footerBrand}>
-              <Link className={styles.footerLogo} to="/">
-                <img
-                  className={styles.footerLogoImage}
-                  src="/img/logo.svg"
-                  alt="OsmAnd Logo"
-                />
-                <span>OsmAnd</span>
-              </Link>
-
-              <p>
-                Offline maps, navigation, GPX tracks, terrain, and privacy-first
-                tools for every adventure.
-              </p>
-            </div>
-
-            <div className={styles.footerColumns}>
-              {footerLinks.map((section) => (
-                <div className={styles.footerColumn} key={section.title}>
-                  <h3>{section.title}</h3>
-
-                  <ul>
-                    {section.items.map((item) => (
-                      <li key={item.label}>
-                        <FooterLink item={item} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.footerBottom}>
-              <p>Copyright © {new Date().getFullYear()} OsmAnd BV.</p>
-
-              <div>
-                <Link to="/docs/user/purchases">Purchases</Link>
-                <Link to="/help-online/support">Support</Link>
-                <Link to="/docs/intro">Docs</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
       </main>
     </Layout>
   );
