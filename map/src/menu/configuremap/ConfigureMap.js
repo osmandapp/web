@@ -48,7 +48,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
-import { mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
+import { isOsmAndTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -132,6 +132,13 @@ export default function ConfigureMap() {
         mtx.setRenderingType(null);
         const newConfigureMap = cloneDeep(ctx.configureMapState);
         newConfigureMap.mapStyle = { tileURL: selected, renderingType: null };
+        updateConfigureMapCache(newConfigureMap);
+        ctx.setConfigureMapState(newConfigureMap);
+    }
+
+    function handleMvtPolygonFillsSwitchChange() {
+        const newConfigureMap = cloneDeep(ctx.configureMapState);
+        newConfigureMap.showMvtPolygonFills = ctx.configureMapState.showMvtPolygonFills === false;
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
     }
@@ -337,6 +344,20 @@ export default function ConfigureMap() {
                                         <Settings fontSize="small" />
                                     </IconButton>
                                 </MenuItem>
+                            </>
+                        )}
+                        {(ltx.loginUser || ctx.develFeatures) && isOsmAndTileURL(mtx.tileURL) && (
+                            <>
+                                <DividerWithMargin margin={'64px'} />
+                                <SimpleItemWithSwitch
+                                    icon={<Layers />}
+                                    text={t('web:mvt_polygon_fills')}
+                                    checked={ctx.configureMapState.showMvtPolygonFills !== false}
+                                    onChange={handleMvtPolygonFillsSwitchChange}
+                                    id="se-configure-map-menu-mvt-polygon-fills"
+                                    className={styles.item}
+                                    iconClassName={setIconStyles(ctx.configureMapState.showMvtPolygonFills !== false)}
+                                />
                             </>
                         )}
                     </>

@@ -413,5 +413,6 @@
     "exit_without_saving": "Exit without saving?",
     "all_changes_will_be_lost": "All changes will be lost.",
     "keep_editing": "Keep Editing",
+    "mvt_polygon_fills": "Polygon fills",
     "shared_string_exit": "Exit"
 }
