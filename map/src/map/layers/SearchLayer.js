@@ -146,7 +146,6 @@ export default function SearchLayer() {
             if (ctx.searchQuery.type) {
                 searchByCategory(ctx.searchQuery);
             } else if (ctx.searchQuery.latlng) {
-                ctx.setSearchResult(null);
                 searchByWord(ctx.searchQuery).then();
             } else {
                 console.debug('SearchLayer: search query without latlng');
@@ -268,9 +267,11 @@ export default function SearchLayer() {
                 const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 const favGroupMap = buildFavGroupMap(favoriteFeatures);
                 ctx.setSearchFavoriteGroupIds(favGroupMap);
+                ctx.setSearchVisibleLevel(0);
                 ctx.setSearchResult({ ...data, features });
             } else if (!response?.aborted) {
                 ctx.setSearchFavoriteGroupIds(null);
+                ctx.setSearchVisibleLevel(0);
                 ctx.setSearchResult(null);
             }
         } catch (e) {
