@@ -67,7 +67,6 @@ export const defaultConfigureMapStateValues = {
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
-    showMvtPolygonFills: true,
     mapStyle: { tileURL: osmandTileURL, renderingType: null },
 };
 

@@ -21,21 +21,7 @@ function getPublicAssetUrl(path) {
     return new URL(getPublicAssetPath(path), window.location.origin).toString();
 }
 
-function setPolygonFillVisibility(style, visibility) {
-    style.layers = style.layers?.map((layer) =>
-        layer.type === 'fill' || layer.type === 'background'
-            ? {
-                  ...layer,
-                  layout: {
-                      ...layer.layout,
-                      visibility,
-                  },
-              }
-            : layer
-    );
-}
-
-function createStyle(baseStyle, tileUrl, options = {}) {
+function createStyle(baseStyle, tileUrl) {
     const style = JSON.parse(JSON.stringify(baseStyle));
     style.sources = {
         ...style.sources,
@@ -46,9 +32,6 @@ function createStyle(baseStyle, tileUrl, options = {}) {
     };
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
-    if (options.showFillLayers === false) {
-        setPolygonFillVisibility(style, 'none');
-    }
     return style;
 }
 
@@ -169,9 +152,7 @@ export default function MvtLayer({ config }) {
         }
 
         const glLayer = L.maplibreGL({
-            style: createStyle(style, tileUrl, {
-                showFillLayers: ctx.configureMapState.showMvtPolygonFills,
-            }),
+            style: createStyle(style, tileUrl),
             interactive: false,
             fadeDuration: 0,
         }).addTo(map);
@@ -265,7 +246,7 @@ export default function MvtLayer({ config }) {
             );
             map.removeLayer(glLayer);
         };
-    }, [map, mtx.tileURL, config, ctx.develFeatures, ctx.configureMapState.showMvtPolygonFills]);
+    }, [map, mtx.tileURL, config, ctx.develFeatures]);
 
     return null;
 }
