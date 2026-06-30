@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -21,9 +21,13 @@ function getPublicAssetUrl(path) {
     return new URL(getPublicAssetPath(path), window.location.origin).toString();
 }
 
+function isPolygonFillLayer(layer) {
+    return layer.type === 'fill' || layer.type === 'background';
+}
+
 function setPolygonFillVisibility(style, visibility) {
     style.layers = style.layers?.map((layer) =>
-        layer.type === 'fill' || layer.type === 'background'
+        isPolygonFillLayer(layer)
             ? {
                   ...layer,
                   layout: {
@@ -50,6 +54,14 @@ function createStyle(baseStyle, tileUrl, options = {}) {
         setPolygonFillVisibility(style, 'none');
     }
     return style;
+}
+
+function setMapPolygonFillVisibility(maplibreMap, style, visibility) {
+    style.layers?.filter(isPolygonFillLayer).forEach((layer) => {
+        if (maplibreMap.getLayer(layer.id)) {
+            maplibreMap.setLayoutProperty(layer.id, 'visibility', visibility);
+        }
+    });
 }
 
 function getMvtSources(config) {
@@ -144,6 +156,7 @@ export default function MvtLayer({ config }) {
     const map = useMap();
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const maplibreMapRef = useRef(null);
 
     useEffect(() => {
         const { style, tileUrl, isActive, popupClassName, errorLabel } = config;
@@ -177,6 +190,7 @@ export default function MvtLayer({ config }) {
         }).addTo(map);
 
         const maplibreMap = glLayer.getMaplibreMap();
+        maplibreMapRef.current = maplibreMap;
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
@@ -263,9 +277,32 @@ export default function MvtLayer({ config }) {
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );
+            maplibreMapRef.current = null;
             map.removeLayer(glLayer);
         };
-    }, [map, mtx.tileURL, config, ctx.develFeatures, ctx.configureMapState.showMvtPolygonFills]);
+    }, [map, mtx.tileURL, config, ctx.develFeatures]);
+
+    useEffect(() => {
+        const maplibreMap = maplibreMapRef.current;
+        if (!maplibreMap || !config.isActive(mtx.tileURL)) {
+            return undefined;
+        }
+
+        const visibility = ctx.configureMapState.showMvtPolygonFills === false ? 'none' : 'visible';
+        const applyVisibility = () => {
+            setMapPolygonFillVisibility(maplibreMap, config.style, visibility);
+        };
+
+        if (maplibreMap.isStyleLoaded()) {
+            applyVisibility();
+            return undefined;
+        }
+
+        maplibreMap.once('idle', applyVisibility);
+        return () => {
+            maplibreMap.off('idle', applyVisibility);
+        };
+    }, [config, mtx.tileURL, ctx.configureMapState.showMvtPolygonFills]);
 
     return null;
 }
