@@ -329,10 +329,10 @@ export default function SearchResults() {
         }
     }, [distanceLoc]);
 
-    const typeItem = ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID;
     const showMoreResults = useCallback(() => {
         ctx.setSearchVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
     }, [maxVisibleLevel]);
+    const typeItem = ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID;
     const renderSearchItem = useCallback(
         (item, index) => {
             if (item === SHOW_MORE_ITEM) {
@@ -346,6 +346,7 @@ export default function SearchResults() {
                     </Button>
                 );
             }
+
             return (
                 <SearchResultItem
                     item={item}
@@ -357,7 +358,7 @@ export default function SearchResults() {
                 />
             );
         },
-        [typeItem, currentLoc, distanceLoc, isUser, showMoreResults, t]
+        [typeItem, currentLoc, distanceLoc, isUser, showMoreResults]
     );
 
     return (
