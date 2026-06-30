@@ -13,7 +13,7 @@ import {
     Tooltip,
     Box,
 } from '@mui/material';
-import { Settings } from '@mui/icons-material';
+import { Layers, Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
@@ -47,9 +47,12 @@ import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHas
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { osmandTileURL } from '../../map/baseTileURL';
+import { mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
+const DEFAULT_MAP_STYLE_OPTIONS = [osmandTileURL, mvtOsmAndURL];
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
@@ -111,6 +114,26 @@ export default function ConfigureMap() {
 
     function showProButton() {
         return ltx.accountInfo?.account === FREE_ACCOUNT;
+    }
+
+    const defaultMapStyleKey = DEFAULT_MAP_STYLE_OPTIONS.some((item) => item.key === mtx.tileURL.key)
+        ? mtx.tileURL.key
+        : '';
+    const defaultMapStyleLabel =
+        DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === defaultMapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
+
+    function handleDefaultMapStyleSelect(e) {
+        const selected = DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === e.target.value);
+        if (!selected) {
+            return;
+        }
+
+        mtx.setTileURL(selected);
+        mtx.setRenderingType(null);
+        const newConfigureMap = cloneDeep(ctx.configureMapState);
+        newConfigureMap.mapStyle = { tileURL: selected, renderingType: null };
+        updateConfigureMapCache(newConfigureMap);
+        ctx.setConfigureMapState(newConfigureMap);
     }
 
     const DEFAULT_CONFIGURE = () => {
@@ -212,7 +235,6 @@ export default function ConfigureMap() {
                                 />
                                 <DividerWithMargin margin={'64px'} />
                                 <MenuItem
-                                    divider
                                     className={styles.item}
                                     onClick={() => {
                                         if (!showProButton()) {
@@ -243,6 +265,38 @@ export default function ConfigureMap() {
                                             )}
                                         </div>
                                     </ListItemText>
+                                </MenuItem>
+                                <DividerWithMargin margin={'64px'} />
+                                <MenuItem className={styles.item} disableRipple={true}>
+                                    <ListItemIcon className={styles.iconEnabled}>
+                                        <Layers />
+                                    </ListItemIcon>
+                                    <FormControl fullWidth variant="standard">
+                                        <Select
+                                            variant="standard"
+                                            disableUnderline
+                                            displayEmpty
+                                            value={defaultMapStyleKey}
+                                            onChange={handleDefaultMapStyleSelect}
+                                            renderValue={(selectedKey) => (
+                                                <Typography variant="inherit" noWrap>
+                                                    {DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === selectedKey)
+                                                        ?.uiname ?? defaultMapStyleLabel}
+                                                </Typography>
+                                            )}
+                                            sx={{
+                                                '& .MuiSelect-select': {
+                                                    padding: 0,
+                                                },
+                                            }}
+                                        >
+                                            {DEFAULT_MAP_STYLE_OPTIONS.map((item) => (
+                                                <MenuItem key={item.key} value={item.key}>
+                                                    {item.uiname}
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
                                 </MenuItem>
                             </>
                         )}
