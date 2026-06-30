@@ -3,6 +3,9 @@ import { Box } from '@mui/material';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import gStyles from '../gstylesmenu.module.css';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import FavoritesManager, {
@@ -21,6 +24,8 @@ import FavoriteGroup from './FavoriteGroup';
 import { useLocation } from 'react-router-dom';
 import { useFocusMode } from '../../util/hooks/map/useFocusMode';
 
+const FAV_ITEM_HEIGHT = 70;
+
 export default function FavoriteGroupFolder({ folder, smartf = null, onClose = null }) {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
@@ -32,6 +37,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const [sortGroups, setSortGroups] = useState([]);
     const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
     const [markers, setMarkers] = useState([]);
     const [mapMoveTick, setMapMoveTick] = useState(0);
     const currentLoc = useGeoLocation(ctx);
@@ -152,9 +158,9 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
             return (
                 <FixedSizeList
-                    height={height - 120}
+                    height={Math.max(1, Math.min(visibleMarkers.length * FAV_ITEM_HEIGHT, listHeight))}
                     itemCount={visibleMarkers.length}
-                    itemSize={70}
+                    itemSize={FAV_ITEM_HEIGHT}
                     width={ctx.infoBlockWidth}
                     itemKey={(index) => visibleMarkers[index]?.name ?? index}
                 >
@@ -175,7 +181,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         }
 
         return null;
-    }, [markers, sortFiles, ctx.favorites, height]);
+    }, [markers, sortFiles, ctx.favorites, listHeight]);
 
     function isWpts(files) {
         return files?.length > 0 && !files[0].layer;
@@ -198,9 +204,10 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         <>
             <Box
                 id={'se-opened-fav-group-' + group?.name}
+                className={gStyles.fixedColumn}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
-                sx={{ overflow: 'hidden' }}
+                style={{ height: `${height - HEADER_SIZE}px` }}
             >
                 {smartf && !folder ? (
                     <GroupHeader
@@ -220,9 +227,10 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                     />
                 )}
                 <Box
+                    ref={listContainerRef}
+                    className={gStyles.scrollActiveBlock}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                 >
                     {groupItems}
                     {folder &&
@@ -232,10 +240,8 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                                 text={"This group doesn't have any wpt yet. You can add them using map."}
                                 menu={OBJECT_TYPE_FAVORITE}
                             />
-                        ) : favItems ? (
-                            favItems
                         ) : (
-                            <Loading />
+                            favItems || <Loading />
                         ))}
                 </Box>
             </Box>

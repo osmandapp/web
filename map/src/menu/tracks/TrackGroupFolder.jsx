@@ -4,6 +4,10 @@ import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import VirtualizedList from '../../frame/components/VirtualizedList';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import gStyles from '../gstylesmenu.module.css';
 import {
     createTrackGroups,
     DEFAULT_GROUP_NAME,
@@ -28,6 +32,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [, height] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
     const [processingGroup, setProcessingGroup] = useState(false);
 
     // update group after changing or deleting inner tracks
@@ -138,13 +143,23 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
         return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
     }
 
+    const folderRows = useMemo(
+        () => [
+            ...(groupItems ?? []),
+            ...(ctx.trackLoading?.length > 0 ? ctx.trackLoading.map((lt) => <TrackLoading key={lt} name={lt} />) : []),
+            ...(trackItems ?? []),
+        ],
+        [groupItems, trackItems, ctx.trackLoading]
+    );
+
     return (
         <>
             <Box
                 id={`se-tracks-folder`}
+                className={gStyles.fixedColumn}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
-                sx={{ overflow: 'hidden' }}
+                style={{ height: `${height - HEADER_SIZE}px` }}
             >
                 {group && (
                     <GroupHeader
@@ -156,16 +171,17 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                     />
                 )}
                 <Box
+                    ref={listContainerRef}
+                    className={gStyles.scrollMainBlock}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                 >
-                    {groupItems}
-                    {ctx.trackLoading?.length > 0 &&
-                        ctx.trackLoading.map((lt) => {
-                            return <TrackLoading key={lt} name={lt} />;
-                        })}
-                    {trackItems}
+                    <VirtualizedList
+                        items={folderRows}
+                        renderItem={(row) => row}
+                        getItemKey={(row) => row.key}
+                        height={listHeight}
+                    />
                 </Box>
             </Box>
             {isEmptyFolder() && (

@@ -32,3 +32,16 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+/* Panel with an explicit (dynamic) height set inline; lays its header + scroll area in a column. */
+.fixedColumn {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+/* Fills the remaining height of a flex column but keeps normal block flow inside (no flex layout
+   imposed on its children), so trailing content like a button flows right after the list. */
+.fillBlock {
+    flex: 1;
+    min-height: 0;
+}

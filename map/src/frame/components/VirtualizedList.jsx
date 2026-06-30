@@ -1,4 +1,13 @@
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useLayoutEffect, useMemo, useRef } from 'react';
+import {
+    forwardRef,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useLayoutEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import { VariableSizeList } from 'react-window';
 
 const DEFAULT_ESTIMATED_ITEM_HEIGHT = 56;
@@ -22,7 +31,9 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     const heightsRef = useRef({});
     const rows = items ?? [];
     const autoMeasure = itemSize == null;
-    const safeHeight = Math.max(1, height || 0);
+    const [contentHeight, setContentHeight] = useState(0);
+    const measuredContent = contentHeight || rows.length * estimatedItemHeight;
+    const safeHeight = Math.max(1, Math.min(measuredContent, height || 0));
 
     useImperativeHandle(
         ref,
@@ -32,26 +43,41 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         []
     );
 
-    const resolveItemSize = (index) => {
-        if (itemSize) {
-            return itemSize(index);
-        }
+    const resolveItemSize = useCallback(
+        (index) => {
+            if (itemSize) {
+                return itemSize(index);
+            }
 
-        return heightsRef.current[getItemKey(rows[index], index)] ?? estimatedItemHeight;
-    };
+            return heightsRef.current[getItemKey(rows[index], index)] ?? estimatedItemHeight;
+        },
+        [itemSize, getItemKey, rows, estimatedItemHeight]
+    );
+
+    const recomputeContentHeight = useCallback(() => {
+        let total = 0;
+        for (let i = 0; i < rows.length; i++) {
+            total += resolveItemSize(i);
+        }
+        setContentHeight(total);
+    }, [rows, resolveItemSize]);
 
     // Cache a measured row height and re-lay out from it when it changed.
-    const setRowHeight = useCallback((index, key, measured) => {
-        if (measured > 0 && heightsRef.current[key] !== measured) {
-            heightsRef.current[key] = measured;
-            listRef.current?.resetAfterIndex(index);
-        }
-    }, []);
+    const setRowHeight = useCallback(
+        (index, key, measured) => {
+            if (measured > 0 && heightsRef.current[key] !== measured) {
+                heightsRef.current[key] = measured;
+                listRef.current?.resetAfterIndex(index);
+                recomputeContentHeight();
+            }
+        },
+        [recomputeContentHeight]
+    );
 
-    // Re-lay out when the set of rows changes.
     useEffect(() => {
         listRef.current?.resetAfterIndex(0);
-    }, [rows]);
+        recomputeContentHeight();
+    }, [rows, recomputeContentHeight]);
 
     // Passed via itemData so react-window keeps the same row instances (no remount on re-render).
     const itemData = useMemo(
@@ -69,7 +95,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
             overscanCount={overscanCount}
             itemData={itemData}
             itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
-            style={style}
+            style={{ overflowX: 'hidden', ...style }}
         >
             {VirtualizedRow}
         </VariableSizeList>
