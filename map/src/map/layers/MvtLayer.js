@@ -7,7 +7,12 @@ import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from '../mvt/MvtDemoConfig';
-import { setMapHybridVisibility, setStyleHybridVisibility, useHybridUnderlayUrl } from './MvtHybridDemo';
+import {
+    ensureLeafletPane,
+    setMapHybridVisibility,
+    setStyleHybridVisibility,
+    useHybridUnderlayUrl,
+} from './MvtHybridDemo';
 
 const POPUP_MAX_HEIGHT = 220;
 const SHOW_TILE_BOUNDARIES = true;
@@ -161,11 +166,7 @@ export default function MvtLayer({ config }) {
         }
 
         if (paneName) {
-            const pane = map.getPane(paneName) || map.createPane(paneName);
-            if (paneZIndex !== undefined) {
-                pane.style.zIndex = `${paneZIndex}`;
-            }
-            pane.style.pointerEvents = 'none';
+            ensureLeafletPane(map, paneName, paneZIndex);
         }
 
         const glLayer = L.maplibreGL({

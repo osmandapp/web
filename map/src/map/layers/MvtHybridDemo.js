@@ -8,6 +8,7 @@ const HYBRID_UNDERLAY_URL_KEY = 'mvtHybridUnderlayUrl';
 const HYBRID_UNDERLAY_ACTIVE_KEY = 'mvtHybridUnderlayActive';
 const HYBRID_UNDERLAY_EVENT = 'mvt-hybrid-underlay-url-changed';
 const HYBRID_UNDERLAY_PANE = 'mvtHybridUnderlayPane';
+const HYBRID_UNDERLAY_PANE_Z_INDEX = 230;
 
 function getQuadKey({ x, y, z }) {
     let quadKey = '';
@@ -39,14 +40,25 @@ const TemplateTileLayer = L.TileLayer.extend({
     },
 });
 
-export function getHybridUnderlayUrl() {
+function readHybridUnderlayUrl() {
     if (localStorage.getItem(HYBRID_UNDERLAY_ACTIVE_KEY) !== 'true') {
         return '';
     }
     return localStorage.getItem(HYBRID_UNDERLAY_URL_KEY) || '';
 }
 
+let hybridUnderlayUrl = readHybridUnderlayUrl();
+
+export function getHybridUnderlayUrl() {
+    return hybridUnderlayUrl;
+}
+
+function refreshHybridUnderlayUrl() {
+    hybridUnderlayUrl = readHybridUnderlayUrl();
+}
+
 function emitHybridUnderlayUrlChange() {
+    refreshHybridUnderlayUrl();
     window.dispatchEvent(new Event(HYBRID_UNDERLAY_EVENT));
 }
 
@@ -64,12 +76,19 @@ function deactivateHybridUnderlayUrl() {
 }
 
 function subscribeHybridUnderlayUrl(callback) {
+    const handleStorage = (event) => {
+        if (event.key === HYBRID_UNDERLAY_URL_KEY || event.key === HYBRID_UNDERLAY_ACTIVE_KEY || event.key === null) {
+            refreshHybridUnderlayUrl();
+            callback();
+        }
+    };
+
     window.addEventListener(HYBRID_UNDERLAY_EVENT, callback);
-    window.addEventListener('storage', callback);
+    window.addEventListener('storage', handleStorage);
 
     return () => {
         window.removeEventListener(HYBRID_UNDERLAY_EVENT, callback);
-        window.removeEventListener('storage', callback);
+        window.removeEventListener('storage', handleStorage);
     };
 }
 
@@ -89,6 +108,15 @@ export function toggleHybridUnderlayUrl() {
     if (nextUrl) {
         activateHybridUnderlayUrl(nextUrl);
     }
+}
+
+export function ensureLeafletPane(map, paneName, zIndex) {
+    const pane = map.getPane(paneName) || map.createPane(paneName);
+    if (zIndex !== undefined) {
+        pane.style.zIndex = `${zIndex}`;
+    }
+    pane.style.pointerEvents = 'none';
+    return pane;
 }
 
 export function isHybridStyleLayer(layer) {
@@ -128,9 +156,7 @@ export default function MvtHybridDemoUnderlay() {
             return undefined;
         }
 
-        const pane = map.getPane(HYBRID_UNDERLAY_PANE) || map.createPane(HYBRID_UNDERLAY_PANE);
-        pane.style.zIndex = '200';
-        pane.style.pointerEvents = 'none';
+        ensureLeafletPane(map, HYBRID_UNDERLAY_PANE, HYBRID_UNDERLAY_PANE_Z_INDEX);
 
         const layer = new TemplateTileLayer(underlayUrl, {
             pane: HYBRID_UNDERLAY_PANE,
