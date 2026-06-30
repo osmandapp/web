@@ -26,16 +26,16 @@ import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
+    const [, height] = useWindowSize();
+    const folderDragHandlers = useGpxFileDragZone(folder != null && folder.type !== SMART_TYPE && !smartf ? folder.fullName : null);
+    const clearGpxDragTarget = useGpxFileDragClearZone();
 
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
-    const [, height] = useWindowSize();
     const [processingGroup, setProcessingGroup] = useState(false);
     const folderScrollRef = useRef(null);
     const folderDropZoneRef = useRef(null);
-    const folderDragHandlers = useGpxFileDragZone(group && group.type !== SMART_TYPE && !smartf ? group.fullName : null);
-    const clearGpxDragTarget = useGpxFileDragClearZone();
 
     // update group after changing or deleting inner tracks
     useEffect(() => {
@@ -145,7 +145,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
         return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
     }
 
-    const isDropTarget = group?.type !== SMART_TYPE && !smartf;
+    const isDropTarget = !!group && group.type !== SMART_TYPE && !smartf;
     const isFolderDropActive = isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
 
     return (
@@ -182,8 +182,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                     {groupItems}
                     <Box
                         ref={folderDropZoneRef}
-                        className={isDropTarget ? dropOverlayStyles.folderDropTarget : undefined}
-                        sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
+                        className={`${dropOverlayStyles.dropZoneContent}${isDropTarget ? ` ${dropOverlayStyles.folderDropTarget}` : ''}`}
                         {...(isDropTarget ? folderDragHandlers : {})}
                     >
                         <TracksDropHighlight
@@ -196,7 +195,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                                 return <TrackLoading key={lt} name={lt} />;
                             })}
                         {trackItems}
-                        <Box sx={{ flex: 1, minHeight: 0 }} />
+                        <Box className={dropOverlayStyles.dropZoneSpacer} />
                     </Box>
                 </Box>
             </Box>

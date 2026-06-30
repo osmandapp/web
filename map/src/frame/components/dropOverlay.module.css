@@ -32,6 +32,18 @@
     position: relative !important;
 }
 
+.dropZoneContent {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropZoneSpacer {
+    flex: 1;
+    min-height: 0;
+}
+
 .tracksDropHighlight {
     position: absolute;
     display: flex;

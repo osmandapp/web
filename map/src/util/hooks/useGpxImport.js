@@ -4,14 +4,6 @@ import { useMutator } from '../Utils';
 export default function useGpxImport({ canImport, isTrackFile, onFilesSelected, readFile, saveFile }) {
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
-    useEffect(() => {
-        for (const file in uploadedFiles) {
-            saveFile(uploadedFiles[file]);
-            mutateUploadedFiles((o) => delete o[file]);
-            break; // process 1 file per 1 render
-        }
-    }, [saveFile, uploadedFiles, mutateUploadedFiles]);
-
     const importGpxFiles = useCallback(
         (fileList, folder) => {
             if (canImport && !canImport()) {
@@ -35,6 +27,14 @@ export default function useGpxImport({ canImport, isTrackFile, onFilesSelected, 
         },
         [canImport, isTrackFile, mutateUploadedFiles, onFilesSelected, readFile]
     );
+
+    useEffect(() => {
+        for (const file in uploadedFiles) {
+            saveFile(uploadedFiles[file]);
+            mutateUploadedFiles((o) => delete o[file]);
+            break; // process 1 file per 1 render
+        }
+    }, [saveFile, uploadedFiles, mutateUploadedFiles]);
 
     return { importGpxFiles };
 }

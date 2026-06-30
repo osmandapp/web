@@ -181,8 +181,7 @@ export default function TracksMenu() {
                                     })}
                             <Box
                                 ref={rootDropZoneRef}
-                                className={dropOverlayStyles.folderDropTarget}
-                                sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
+                                className={`${dropOverlayStyles.dropZoneContent} ${dropOverlayStyles.folderDropTarget}`}
                                 {...rootDropZoneHandlers}
                             >
                                 <TracksDropHighlight
@@ -195,7 +194,7 @@ export default function TracksMenu() {
                                         return <TrackLoading key={lt} name={lt} />;
                                     })}
                                 {defaultGroupItems}
-                                <Box sx={{ flex: 1, minHeight: 0 }} />
+                                <Box className={dropOverlayStyles.dropZoneSpacer} />
                             </Box>
                         </Box>
                     ) : (

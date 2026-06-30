@@ -21,6 +21,7 @@ import { useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const folderDragHandlers = useGpxFileDragZone(group.type !== SMART_TYPE ? group.fullName : null);
 
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
@@ -69,7 +70,6 @@ export default function CloudTrackGroup({ index, group }) {
 
     const isDropTarget = group.type !== SMART_TYPE;
     const isDropHover = isDropTarget && ctx.gpxFileDrag?.hoverFolder === group.fullName;
-    const folderDragHandlers = useGpxFileDragZone(isDropTarget ? group.fullName : null);
 
     return (
         <>

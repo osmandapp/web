@@ -16,7 +16,6 @@ export default function TracksFileDragController() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { importGpxFiles } = useCloudGpxImport();
-    const isProAccount = ltx.isProAccount();
 
     useEffect(() => {
         const container = document.getElementById('root');
@@ -29,7 +28,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragEnter = (e) => {
-            if (!hasFiles(e) || !isProAccount) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             e.preventDefault();
@@ -37,7 +36,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragOver = (e) => {
-            if (!hasFiles(e) || !isProAccount) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             e.preventDefault();
@@ -45,7 +44,7 @@ export default function TracksFileDragController() {
         };
 
         const onDragLeave = (e) => {
-            if (!hasFiles(e) || !isProAccount) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             // relatedTarget is the element the cursor is entering.
@@ -56,7 +55,7 @@ export default function TracksFileDragController() {
         };
 
         const onDrop = (e) => {
-            if (!hasFiles(e) || !isProAccount) {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
             e.preventDefault();
@@ -88,7 +87,7 @@ export default function TracksFileDragController() {
             container.removeEventListener('drop', onDrop);
             window.removeEventListener('dragend', onDragEnd);
         };
-    }, [ctx.gpxFileDrag, ctx.setGpxFileDrag, importGpxFiles, isProAccount]);
+    }, [ctx.gpxFileDrag, ctx.setGpxFileDrag, importGpxFiles, ltx]);
 
     return createPortal(<TracksDropOverlay />, document.body);
 }

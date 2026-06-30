@@ -48,9 +48,9 @@ const GlobalFrame = () => {
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
+    const [openMainMenu, setOpenMainMenu] = useState(false);
     const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
-    const [openMainMenu, setOpenMainMenu] = useState(false);
 
     const [width, height] = useWindowSize();
     const navigate = useNavigate();

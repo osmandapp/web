@@ -163,8 +163,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
         };
     }, [ctx]);
 
-    const routersReady = ctx.trackRouter.isReady() && ctx.routeObject.isReady();
     const mapDragHandlers = useGpxFileDragMapZone();
+    const routersReady = ctx.trackRouter.isReady() && ctx.routeObject.isReady();
 
     return (
         <Box
