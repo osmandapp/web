@@ -311,6 +311,16 @@ select:focus{border-color:var(--osmand-orange)}
     box-shadow:0 8px 24px rgba(0,0,0,.16);
 }
 
+.quiz-close-btn svg{
+    width:22px;
+    height:22px;
+    stroke:currentColor;
+    stroke-width:2.3;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
 .quiz-close-btn:hover{
     border-color:var(--osmand-orange);
     color:var(--osmand-orange);
@@ -436,7 +446,12 @@ body.quiz-expanded.matching-question-active .feedback strong{
 
 <body>
 <div class="container">
-    <button class="quiz-close-btn" type="button" onclick="exitQuizFullscreen()" aria-label="Close expanded quiz">×</button>
+<button class="quiz-close-btn" type="button" onclick="collapseQuizFullscreen()" aria-label="Collapse quiz" title="Collapse quiz">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 18h12"></path>
+        <path d="M8 9l4 4 4-4"></path>
+    </svg>
+</button>
 
     <div class="quiz-header" id="quizHeader" style="display:none;">
         <div class="mascot-box" id="mascotContainer">⚓</div>
@@ -624,13 +639,18 @@ function setQuizFullscreen(active) {
     }
 }
 
-function exitQuizFullscreen(){
+function collapseQuizFullscreen(){
     setQuizFullscreen(false);
+    scrollToQuizSection();
+}
+
+function exitQuizFullscreen(){
+    collapseQuizFullscreen();
 }
 
 document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
-        exitQuizFullscreen();
+        collapseQuizFullscreen();
     }
 });
 
@@ -802,7 +822,7 @@ function finishQuiz(){
     scrollQuizResultIntoView();
 }
 
-function scrollQuizResultIntoView() {
+function scrollToQuizSection() {
     const targetSectionId = "setting-your-own-course";
 
     function scrollNow() {
@@ -848,6 +868,10 @@ function scrollQuizResultIntoView() {
     setTimeout(scrollNow, 120);
     setTimeout(scrollNow, 450);
     setTimeout(scrollNow, 900);
+}
+
+function scrollQuizResultIntoView() {
+    scrollToQuizSection();
 }
 
 function nextQuestion(){
