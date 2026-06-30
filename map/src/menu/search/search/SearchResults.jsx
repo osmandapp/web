@@ -46,8 +46,10 @@ const EMPTY_SEARCH_RESULT = 'empty';
 // Initial row height estimate used before a row is measured. Real heights are measured per row
 // (items vary: 1 line vs name + multi-line address + distance) and cached.
 const SEARCH_RESULT_ITEM_HEIGHT = 88;
+const SHOW_MORE_ITEM = '__show_more__';
 
 function getRowKey(item, index) {
+    if (item === SHOW_MORE_ITEM) return SHOW_MORE_ITEM;
     return item?.id ?? item?.properties?.id ?? index;
 }
 
@@ -306,15 +308,15 @@ export default function SearchResults() {
     const staleResult = (params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery);
 
     const maxVisibleLevel = result?.features?.reduce((max, f) => Math.max(max, getVisibleLevel(f)), 0) ?? 0;
-    const visibleFeatures = useMemo(
-        () =>
-            result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= ctx.searchVisibleLevel) ??
-            [],
-        [result, ctx.searchVisibleLevel]
-    );
     const hasMore =
         ctx.searchVisibleLevel < maxVisibleLevel &&
         (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > ctx.searchVisibleLevel) ?? false);
+    const visibleFeatures = useMemo(() => {
+        const features =
+            result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= ctx.searchVisibleLevel) ??
+            [];
+        return ctx.spatialSearch && hasMore ? [...features, SHOW_MORE_ITEM] : features;
+    }, [result, ctx.searchVisibleLevel, ctx.spatialSearch, hasMore]);
 
     const { loc: distanceLoc, isUser } = useMemo(
         () => getLoc(),
@@ -328,23 +330,35 @@ export default function SearchResults() {
     }, [distanceLoc]);
 
     const typeItem = ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID;
-    const renderSearchItem = useCallback(
-        (item, index) => (
-            <SearchResultItem
-                item={item}
-                index={index}
-                typeItem={typeItem}
-                currentLoc={currentLoc}
-                loc={distanceLoc}
-                isUser={isUser}
-            />
-        ),
-        [typeItem, currentLoc, distanceLoc, isUser]
-    );
-
-    function showMoreResults() {
+    const showMoreResults = useCallback(() => {
         ctx.setSearchVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
-    }
+    }, [maxVisibleLevel]);
+    const renderSearchItem = useCallback(
+        (item, index) => {
+            if (item === SHOW_MORE_ITEM) {
+                return (
+                    <Button
+                        id={'se-search-show-more'}
+                        className={styles.buttonShowAllExplore}
+                        onClick={showMoreResults}
+                    >
+                        {t('web:show_more')}
+                    </Button>
+                );
+            }
+            return (
+                <SearchResultItem
+                    item={item}
+                    index={index}
+                    typeItem={typeItem}
+                    currentLoc={currentLoc}
+                    loc={distanceLoc}
+                    isUser={isUser}
+                />
+            );
+        },
+        [typeItem, currentLoc, distanceLoc, isUser, showMoreResults, t]
+    );
 
     return (
         <>
@@ -384,15 +398,6 @@ export default function SearchResults() {
                             estimatedItemHeight={SEARCH_RESULT_ITEM_HEIGHT}
                             height={listHeight}
                         />
-                        {ctx.spatialSearch && hasMore && (
-                            <Button
-                                id={'se-search-show-more'}
-                                className={styles.buttonShowAllExplore}
-                                onClick={showMoreResults}
-                            >
-                                {t('web:show_more')}
-                            </Button>
-                        )}
                     </Box>
                 ))}
         </>
