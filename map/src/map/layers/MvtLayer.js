@@ -158,7 +158,7 @@ export default function MvtLayer({ config }) {
         }).addTo(map);
 
         const maplibreMap = glLayer.getMaplibreMap();
-        maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
+        maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
         const sources = getMvtSources(config).map((source) => ({
@@ -242,7 +242,7 @@ export default function MvtLayer({ config }) {
             );
             map.removeLayer(glLayer);
         };
-    }, [map, mtx.tileURL, config]);
+    }, [map, mtx.tileURL, config, ctx.develFeatures]);
 
     return null;
 }
