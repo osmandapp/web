@@ -1,5 +1,5 @@
 import React from 'react';
-import IframeResizer from 'iframe-resizer-react';
+import IframeResizer from '@iframe-resizer/react';
 
 export default function QuizEmbed({ src }) {
   return (
