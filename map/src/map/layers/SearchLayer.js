@@ -290,9 +290,9 @@ export default function SearchLayer() {
 
     useEffect(() => {
         const addAsyncLayers = async () => {
-            if (!ctx.searchResult) {
+            if (!ctx.searchResult || ctx.processingSearch) {
                 removeOldSearchLayer();
-                if (ctx.searchQuery?.type) {
+                if (!ctx.searchResult && ctx.searchQuery?.type) {
                     const category = PoiManager.formattingPoiFilter(ctx.searchQuery?.query, true);
                     removeCategory(category);
                 }
@@ -305,6 +305,7 @@ export default function SearchLayer() {
                             ctx.searchVisibleLevel
                         ),
                     });
+                    removeOldSearchLayer();
                     searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
                 }
@@ -312,7 +313,7 @@ export default function SearchLayer() {
         };
 
         addAsyncLayers().then();
-    }, [ctx.searchResult, ctx.searchVisibleLevel]);
+    }, [ctx.searchResult, ctx.searchVisibleLevel, ctx.processingSearch]);
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
