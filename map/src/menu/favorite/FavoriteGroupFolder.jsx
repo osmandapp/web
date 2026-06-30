@@ -158,7 +158,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
             return (
                 <FixedSizeList
-                    height={Math.min(visibleMarkers.length * FAV_ITEM_HEIGHT, listHeight)}
+                    height={Math.max(1, Math.min(visibleMarkers.length * FAV_ITEM_HEIGHT, listHeight))}
                     itemCount={visibleMarkers.length}
                     itemSize={FAV_ITEM_HEIGHT}
                     width={ctx.infoBlockWidth}
