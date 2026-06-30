@@ -119,6 +119,8 @@ export default function ConfigureMap() {
     const defaultMapStyleKey = DEFAULT_MAP_STYLE_OPTIONS.some((item) => item.key === mtx.tileURL.key)
         ? mtx.tileURL.key
         : '';
+    const defaultMapStyleLabel =
+        DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === defaultMapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
 
     function handleDefaultMapStyleSelect(e) {
         const selected = DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === e.target.value);
@@ -279,7 +281,7 @@ export default function ConfigureMap() {
                                             renderValue={(selectedKey) => (
                                                 <Typography variant="inherit" noWrap>
                                                     {DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === selectedKey)
-                                                        ?.uiname ?? ''}
+                                                        ?.uiname ?? defaultMapStyleLabel}
                                                 </Typography>
                                             )}
                                             sx={{
