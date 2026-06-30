@@ -4975,7 +4975,11 @@
       "source": "osm",
       "source-layer": "osmand",
       "filter": ["all", ["==", "railway", "level_crossing"]],
-      "layout": {"icon-image": "level_crossing_map", "visibility": "visible"}
+      "layout": {
+        "icon-image": "level_crossing_map",
+        "visibility": "visible",
+        "icon-size": 0.5
+      }
     },
     {
       "id": "transporticons-railway-crossing",
@@ -4983,7 +4987,11 @@
       "source": "osm",
       "source-layer": "osmand",
       "filter": ["all", ["==", "railway", "level_crossing"]],
-      "layout": {"icon-image": "level_crossing_map", "visibility": "visible"}
+      "layout": {
+        "icon-image": "level_crossing_map",
+        "visibility": "visible",
+        "icon-size": 0.5
+      }
     },
     {
       "id": "religion-place_of_worship",
