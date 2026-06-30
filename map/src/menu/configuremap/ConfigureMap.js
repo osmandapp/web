@@ -124,6 +124,7 @@ export default function ConfigureMap() {
         : '';
     const defaultMapStyleLabel =
         DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === defaultMapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
+    const hasRenderingSettings = Boolean(ctx.allTileURLs[mtx.tileURL.key]?.properties?.length);
 
     function handleDefaultMapStyleSelect(e) {
         const selected = DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === e.target.value);
@@ -336,7 +337,11 @@ export default function ConfigureMap() {
                                             })}
                                         </Select>
                                     </FormControl>
-                                    <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
+                                    <IconButton
+                                        sx={{ ml: 1 }}
+                                        disabled={!hasRenderingSettings}
+                                        onClick={() => setOpenSettings(true)}
+                                    >
                                         <Settings fontSize="small" />
                                     </IconButton>
                                 </MenuItem>
