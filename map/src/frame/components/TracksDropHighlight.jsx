@@ -4,9 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { OVERLAY_MARGIN } from '../TracksDropOverlay';
 import styles from './dropOverlay.module.css';
 
-export default function TracksDropHighlight({ active, dropZoneRef, scrollRef }) {
+export default function TracksDropHighlight({ active, dropZoneRef, scrollRef, listRef, rowsCount = 0, trackItemsCount = 0 }) {
     const { t } = useTranslation();
     const [insets, setInsets] = useState(null);
+
+    // Where the flat track rows start, i.e. how much of the list above them is folders.
+    const trackItemsStartIndex = rowsCount - trackItemsCount;
+    const contentOffset = active ? (listRef?.current?.getItemOffset(trackItemsStartIndex) ?? 0) : 0;
 
     useLayoutEffect(() => {
         if (!active) {
@@ -25,9 +29,12 @@ export default function TracksDropHighlight({ active, dropZoneRef, scrollRef }) 
             const scrollRect = scroll.getBoundingClientRect();
             const zoneRect = dropZone.getBoundingClientRect();
 
-            const top = Math.max(OVERLAY_MARGIN, scrollRect.top - zoneRect.top + OVERLAY_MARGIN);
-            const bottom = Math.max(OVERLAY_MARGIN, zoneRect.bottom - scrollRect.bottom + OVERLAY_MARGIN);
-            const height = zoneRect.height - top - bottom;
+            // Keep the highlight off the folder rows above the flat track list: skip
+            // whatever portion of the current scroll position is still inside them.
+            const foldersVisibleHeight = Math.max(0, contentOffset - scroll.scrollTop);
+
+            const top = Math.max(OVERLAY_MARGIN, scrollRect.top - zoneRect.top + OVERLAY_MARGIN + foldersVisibleHeight);
+            const height = zoneRect.height - top - OVERLAY_MARGIN;
 
             if (height <= 0) {
                 setInsets(null);
@@ -49,7 +56,7 @@ export default function TracksDropHighlight({ active, dropZoneRef, scrollRef }) 
             scroll.removeEventListener('scroll', update);
             window.removeEventListener('resize', update);
         };
-    }, [active, dropZoneRef, scrollRef]);
+    }, [active, dropZoneRef, scrollRef, contentOffset]);
 
     if (!insets) {
         return null;

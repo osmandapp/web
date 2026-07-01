@@ -24,6 +24,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         getItemKey = (item, index) => index,
         overscanCount = DEFAULT_OVERSCAN_COUNT,
         style = undefined,
+        outerRef = undefined,
     },
     ref
 ) {
@@ -35,14 +36,6 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     const measuredContent = contentHeight || rows.length * estimatedItemHeight;
     const safeHeight = Math.max(1, Math.min(measuredContent, height || 0));
 
-    useImperativeHandle(
-        ref,
-        () => ({
-            scrollToItem: (index, align) => listRef.current?.scrollToItem(index, align),
-        }),
-        []
-    );
-
     const resolveItemSize = useCallback(
         (index) => {
             if (itemSize) {
@@ -52,6 +45,21 @@ const VirtualizedList = forwardRef(function VirtualizedList(
             return heightsRef.current[getItemKey(rows[index], index)] ?? estimatedItemHeight;
         },
         [itemSize, getItemKey, rows, estimatedItemHeight]
+    );
+
+    useImperativeHandle(
+        ref,
+        () => ({
+            scrollToItem: (index, align) => listRef.current?.scrollToItem(index, align),
+            getItemOffset: (index) => {
+                let total = 0;
+                for (let i = 0; i < index; i++) {
+                    total += resolveItemSize(i);
+                }
+                return total;
+            },
+        }),
+        [resolveItemSize]
     );
 
     const recomputeContentHeight = useCallback(() => {
@@ -88,6 +96,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     return (
         <VariableSizeList
             ref={listRef}
+            outerRef={outerRef}
             height={safeHeight}
             width={width}
             itemCount={rows.length}

@@ -30,7 +30,6 @@ import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
-    const [, height] = useWindowSize();
     const folderDragHandlers = useGpxFileDragZone(folder != null && folder.type !== SMART_TYPE && !smartf ? folder.fullName : null);
     const clearGpxDragTarget = useGpxFileDragClearZone();
 
@@ -41,6 +40,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const [listContainerRef, listHeight] = useElementHeight();
     const [processingGroup, setProcessingGroup] = useState(false);
     const folderScrollRef = useRef(null);
+    const folderListRef = useRef(null);
     const folderDropZoneRef = useRef(null);
 
     // update group after changing or deleting inner tracks
@@ -201,8 +201,12 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                             active={isFolderDropActive}
                             dropZoneRef={folderDropZoneRef}
                             scrollRef={folderScrollRef}
+                            listRef={folderListRef}
+                            rowsCount={folderRows.length}
+                            trackItemsCount={trackItems?.length ?? 0}
                         />
                         <VirtualizedList
+                            ref={folderListRef}
                             outerRef={folderScrollRef}
                             items={folderRows}
                             renderItem={(row) => row}

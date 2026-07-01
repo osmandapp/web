@@ -26,7 +26,7 @@ import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -41,7 +41,6 @@ export default function TracksMenu() {
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
 
     const navigate = useNavigate();
-    const location = useLocation();
 
     const [, height] = useWindowSize();
     const [listContainerRef, listHeight] = useElementHeight();
@@ -51,6 +50,7 @@ export default function TracksMenu() {
     const rootDropZoneHandlers = useGpxFileDragZone('');
     const clearGpxDragTarget = useGpxFileDragClearZone();
     const trackMenuScrollRef = useRef(null);
+    const trackMenuListRef = useRef(null);
     const rootDropZoneRef = useRef(null);
 
     const checkHasFiles = () =>
@@ -216,8 +216,13 @@ export default function TracksMenu() {
                                     active={isRootDropActive}
                                     dropZoneRef={rootDropZoneRef}
                                     scrollRef={trackMenuScrollRef}
+                                    listRef={trackMenuListRef}
+                                    rowsCount={trackMenuRows.length}
+                                    trackItemsCount={defaultGroupItems?.length ?? 0}
                                 />
                                 <VirtualizedList
+                                    ref={trackMenuListRef}
+                                    outerRef={trackMenuScrollRef}
                                     items={trackMenuRows}
                                     renderItem={(row) => row}
                                     getItemKey={(row) => row.key}
