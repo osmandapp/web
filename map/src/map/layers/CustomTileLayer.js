@@ -20,7 +20,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);
     const renderingTypeRef = useRef(mtx.renderingType);
-    const abortControllerRef = useRef(null);
     const zoomLevelRef = useRef(map.getZoom());
 
     const tileLayerCache = useRef(new Map());
@@ -43,10 +42,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
         };
 
         const handleZoomStart = () => {
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort();
-                abortControllerRef.current = new AbortController();
-            }
             tileOnMapCache.current.clear();
         };
 
@@ -56,9 +51,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
         return () => {
             map.off('zoomstart', handleZoomStart);
             map.off('zoomend', handleZoomEnd);
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort();
-            }
         };
     }, [map]);
 
@@ -370,10 +362,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
-        if (abortControllerRef.current) {
-            abortControllerRef.current.abort();
-        }
-        abortControllerRef.current = new AbortController();
         tileLayerCache.current.clear();
         tileOnMapCache.current.clear();
         if (dataLayersRef.current?.layers?.length > 0) {
@@ -437,12 +425,8 @@ const CustomTileLayer = forwardRef((props, ref) => {
             }
 
             const geoJsonUrl = mtx.tileURL.infoUrl.replace('{z}', z).replace('{x}', x).replace('{y}', y);
-            if (abortControllerRef?.current?.signal.aborted) {
-                return;
-            }
             const response = await apiGet(geoJsonUrl, {
                 apiCache: true,
-                signal: abortControllerRef?.current?.signal,
             });
             if (response.ok) {
                 const geoJsonData = await response.json();
@@ -464,9 +448,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
         map.on('click', onMapClick);
 
         return () => {
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort();
-            }
             map.off('zoomstart', handleZoomStart);
             rasterTileLayerRef.current?.off('tileload', handleTileLoad);
             map.off('click', onMapClick);
