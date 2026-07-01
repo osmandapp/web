@@ -52,7 +52,7 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-
+<!--
 
 :::danger 🏖️ Summer Sale
 
@@ -69,8 +69,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
-<!--
 
+-->
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
@@ -80,7 +80,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Free and Paid Features {#free-and-paid-features}
 
@@ -138,6 +138,7 @@ At the moment, the Pro subscription has the following features:
 | [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Modify Color Scheme](../../user/plugins/topography.md#modify-color-scheme) | Allows you to customize the map appearance by selecting or importing color palettes. You can edit built-in schemes or use your own palette files to personalize map and route colors. |
+| [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Allows organizing tracks in Smart Folders using advanced grouping parameters such as date & time, distance, duration, speed, altitude & elevation, and sensor data. These options enable more detailed track categorization and flexible analysis. |
 
 
 ## How to Buy {#how-to-buy}

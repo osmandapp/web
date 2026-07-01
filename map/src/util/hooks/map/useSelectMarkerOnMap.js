@@ -6,14 +6,23 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
+import {
+    EXPLORE_PHOTO_ICON_SIZE,
+    applySelectedPin,
+    applyHoverOutline,
+    applyDirectionPin,
+    resetSelectedPin,
+} from '../../../map/util/MarkerSelectionService';
+import { isOutsideVisibleMap } from '../../../map/layers/MapStateLayer';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 import { TRANSPORT_STOPS_LAYER_ID } from '../../../map/layers/TransportStopsLayer';
+import { SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 
 const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
+const HOVER_OUTLINE_GAP = 6;
 
 function extractLatlng(selectedWptId, type) {
     const obj = selectedWptId?.obj;
@@ -26,6 +35,14 @@ function extractLatlng(selectedWptId, type) {
     if (coords?.length >= 2) return { lat: coords[1], lng: coords[0] };
 
     return null;
+}
+
+function escapeHtmlAttr(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 }
 
 function iconHtmlFromIconName(finalIconName) {
@@ -133,18 +150,64 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
-        if (found) {
-            applyPinForLayer(found, false);
-        } else {
-            // Marker not on the map (e.g. hidden by clustering) — create a temporary hover pin.
-            const latlng = extractLatlng(ctx.selectedWptId, type);
+
+        // Hover originating on the map: show an outline ring around the point instead of
+        // replacing the marker with a full selected pin. List hover keeps the pin behavior below.
+        if (ctx.selectedWptId?.hoverFromMap) {
+            // Secondary (simple dot) points across all layers get no hover outline.
+            if (found?.options?.simple) {
+                resetSelectedPin({ ctx, map });
+                return;
+            }
+
+            const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
             if (latlng) {
-                applyHoverPinFallback(latlng);
-            } else if (type === TRANSPORT_STOPS_LAYER_ID) {
+                applyHoverOutline({ ctx, map, latlng, ...resolveHoverOutlineStyle(found) });
+            } else {
                 resetSelectedPin({ ctx, map });
             }
+            return;
+        }
+
+        const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
+
+        if (type === SEARCH_LAYER_ID && latlng && isOutsideVisibleMap({ ctx, map, latlng })) {
+            applyDirectionPin({ ctx, map, latlng, markerData: resolveHoverMarkerData(found) });
+            return;
+        }
+
+        if (found) {
+            applyPinForLayer(found, false);
+        } else if (latlng) {
+            applyHoverPinFallback(latlng);
+        } else if (type === TRANSPORT_STOPS_LAYER_ID) {
+            resetSelectedPin({ ctx, map });
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+
+    // Resolves the outline ring shape/color/size from the hovered layer (falls back to selectedWptId markerOptions).
+    function resolveHoverOutlineStyle(layer) {
+        const opts = layer?.options ?? {};
+        const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
+        const isPhoto = !!opts.photoUrl;
+        const isSimpleDot = !!opts.simple;
+        const color = (isSimpleDot ? opts.fillColor : opts.color) ?? markerOpts.color ?? DEFAULT_POI_COLOR;
+        // Photo markers (e.g. large Explore images) are round — wrap them with a circle regardless of poi shape.
+        const shape = isPhoto ? 'circle' : (opts.background ?? markerOpts.background ?? DEFAULT_POI_SHAPE);
+
+        return { shape, color, size: measureMarkerSize(layer) };
+    }
+
+    // Diameter to wrap the marker with: its rendered size plus a small gap (clamped to a minimum inside the icon builder).
+    function measureMarkerSize(layer) {
+        const el = layer?.getElement?.();
+        const rendered = el ? Math.max(el.offsetWidth, el.offsetHeight) : 0;
+        if (rendered > 0) {
+            return rendered + HOVER_OUTLINE_GAP;
+        }
+
+        return 0;
+    }
 
     // Builds markerData from layer options
     function applyPinForLayer(layer, isSelection) {
@@ -177,10 +240,14 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
     }
 
+    function photoIconHtml(photoUrl) {
+        return `<img src="${escapeHtmlAttr(photoUrl)}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`;
+    }
+
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
         const markerData = {
             color: EXPLORE_MAIN_MARKER_PIN_BACKGROUND,
-            iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
+            iconHtml: photoIconHtml(photoUrl),
         };
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
 
@@ -191,11 +258,26 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
     }
 
-    function applyHoverPinFallback(latlng) {
-        const photoUrl = ctx.selectedWptId?.photoUrl;
+    function resolveHoverMarkerData(layer) {
+        const photoUrl = layer?.options?.photoUrl ?? ctx.selectedWptId?.photoUrl;
         if (photoUrl) {
-            applyPhotoPin(null, latlng, photoUrl, false);
-            return;
+            return { color: EXPLORE_MAIN_MARKER_PIN_BACKGROUND, iconHtml: photoIconHtml(photoUrl) };
+        }
+
+        if (layer) {
+            const markerData = buildMarkerData(layer, false, type);
+            if (!markerData.iconHtml && layer.options?.simple) {
+                const props = ctx.selectedWptId?.obj?.properties;
+                markerData.iconHtml = iconHtmlFromIconName(
+                    props?.[FINAL_POI_ICON_NAME] ??
+                        getIconNameForPoiType({
+                            iconKeyName: props?.[ICON_KEY_NAME],
+                            typeOsmTag: props?.[TYPE_OSM_TAG],
+                            typeOsmValue: props?.[TYPE_OSM_VALUE],
+                        })
+                );
+            }
+            return markerData;
         }
 
         const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
@@ -213,17 +295,27 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         // Only apply white filter when icon came from URL (iconHtmlFromIconName), not when caller passed custom iconHtml (e.g. favorites)
         const invertIcon = markerOpts.invertIcon ?? markerOpts.iconHtml == null;
 
+        return {
+            color: markerOpts.color ?? DEFAULT_POI_COLOR,
+            background: markerOpts.background ?? DEFAULT_POI_SHAPE,
+            iconHtml,
+            invertIcon,
+        };
+    }
+
+    function applyHoverPinFallback(latlng) {
+        const photoUrl = ctx.selectedWptId?.photoUrl;
+        if (photoUrl) {
+            applyPhotoPin(null, latlng, photoUrl, false);
+            return;
+        }
+
         applySelectedPin({
             ctx,
             map,
             layer: null,
             latlng,
-            markerData: {
-                color: markerOpts.color ?? DEFAULT_POI_COLOR,
-                background: markerOpts.background ?? DEFAULT_POI_SHAPE,
-                iconHtml,
-                invertIcon,
-            },
+            markerData: resolveHoverMarkerData(null),
             isSelection: false,
         });
     }

@@ -17,6 +17,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import QuizEmbed from '@site/src/components/QuizEmbed.js';
 
 Far from city lights, the sky looks different. In the Namib Desert, darkness comes quickly and the stars appear all at once, filling the entire horizon. At first, it feels simple. A guide points to a few constellations, maybe a bright planet. You follow along, recognising some shapes. But after a moment, you lose track. There are more stars than you expected, and it is hard to tell them apart.
 
@@ -97,13 +98,7 @@ And all of this works even without a connection. The Astronomy plugin uses offli
 
 Ready to test your new stargazing skills? For a deeper dive into all the features, feel free to explore our full [Astronomy Plugin documentation](https://osmand.net/docs/user/plugins/astronomy). Once you are ready, take this quick interactive quiz to see how well you can navigate the night sky!
 
-<div style={{ position: 'relative', width: '100%', height: '0', paddingBottom: '75%', overflow: 'hidden', borderRadius: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)', margin: '20px 0' }}>
-  <iframe 
-    src="/astronomy_quiz_new.html" 
-    style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', border: 'none' }}
-    allow="fullscreen">
-  </iframe>
-</div>
+<QuizEmbed src="/astronomy_quiz_new.html" />
 
 Out there, under a sky like in the Namib Desert, you no longer lose track after the first few constellations. You stay with it a little longer — and start to see more.
 

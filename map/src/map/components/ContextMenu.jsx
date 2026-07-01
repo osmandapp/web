@@ -22,6 +22,7 @@ import { ReactComponent as RouteViaIcon } from '../../assets/icons/ic_action_rou
 import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_coordinates_location.svg';
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
+import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { useTranslation } from 'react-i18next';
 import {
     GLOBAL_GRAPH_HEIGHT_SIZE,
@@ -31,6 +32,8 @@ import {
     POI_URL,
 } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
+import { isMvtTileURL } from '../mvt/MvtDemoConfig';
+import { getMvtTileDownloads } from '../layers/MvtLayer';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -54,7 +57,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
             mouseX: event.originalEvent.clientX + 5,
             mouseY: event.originalEvent.clientY + 5 - (ctx.globalGraph?.show ? `${GLOBAL_GRAPH_HEIGHT_SIZE}px` : 0),
         });
-        setClickLatLng(event.latlng);
+        setClickLatLng(map.wrapLatLng(event.latlng));
         setOpen(true);
         ctx.setOpenContextMenu(true);
     };
@@ -158,9 +161,31 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         ctx.setOpenMenu({ id: MENU_IDS.weather, latlng: latlng });
     }
 
+    async function downloadMvtTile(latlng) {
+        for (const tile of getMvtTileDownloads(map, latlng)) {
+            try {
+                const response = await fetch(tile.url);
+                if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+
+                const url = URL.createObjectURL(await response.blob());
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = tile.name;
+                link.click();
+                setTimeout(() => URL.revokeObjectURL(url));
+            } catch (error) {
+                console.warn('MVT tile download failed', tile.url, error);
+            }
+        }
+    }
+
     const showMenuItem = () => {
         return ctx.currentObjectType !== OBJECT_TRACK_ANALYZER;
     };
+
+    const showDownloadTile = Boolean(
+        ctx.develFeatures && clickLatLng && isMvtTileURL(mtx.tileURL) && getMvtTileDownloads(map, clickLatLng).length
+    );
 
     return (
         <>
@@ -357,6 +382,23 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             <ListItemText className={styles.contextMenuItemText}>{t('copy_coordinates')}</ListItemText>
                         </MenuItem>
                         <Divider className={styles.dividerMenu} />
+                        {showDownloadTile && (
+                            <>
+                                <MenuItem
+                                    id={'se-download-mvt-tile'}
+                                    className={styles.contextMenuItem}
+                                    onClick={() => handleMenuItemClick(downloadMvtTile)}
+                                >
+                                    <ListItemIcon className={styles.contextMenuIcon}>
+                                        <DownloadIcon />
+                                    </ListItemIcon>
+                                    <ListItemText className={styles.contextMenuItemText}>
+                                        Download MVT tile
+                                    </ListItemText>
+                                </MenuItem>
+                                <Divider className={styles.dividerMenu} />
+                            </>
+                        )}
                         {/*Add pin */}
                         {ctx.develFeatures && !location.pathname.includes(POI_URL) && showMenuItem() && (
                             <MenuItem

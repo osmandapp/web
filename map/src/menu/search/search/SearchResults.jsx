@@ -11,7 +11,8 @@ import PoiManager, {
 } from '../../../manager/PoiManager';
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import styles from '../search.module.css';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
@@ -243,6 +244,8 @@ export default function SearchResults() {
                     return;
                 }
                 ctx.setProcessingSearch(true);
+                // drop the previous results so the spinner stays until the new list is ready (no stale flash)
+                setResult(null);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
@@ -313,6 +316,9 @@ export default function SearchResults() {
         return result && result !== EMPTY_SEARCH_RESULT && !params.query && !params.type;
     }
 
+    // URL query already changed but the shown result is still the previous search
+    const staleResult = (params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery);
+
     return (
         <>
             <CustomInput
@@ -329,9 +335,17 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
+            {ctx.spatialSearch && ctx.searchResult?.info && (
+                <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
+                    {Object.entries(ctx.searchResult.info)
+                        .map(([k, v]) => `${k}: ${v}`)
+                        .join(' · ')}
+                </Typography>
+            )}
+            {(ctx.processingSearch || resulNotPrepared() || staleResult) && <Loading />}
             {!ctx.processingSearch &&
                 !reopenSearchResult() &&
+                !staleResult &&
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (

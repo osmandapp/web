@@ -203,19 +203,19 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*.  
+The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*. On iOS, the Visualization menu also includes *Terrain Shadows*, a real-time terrain shading mode based on 3D Relief.  
 Specific features:  
 
-- Only one option can be enabled at the same time, either Hillshade, Slope, or Altitude.
+- Only one option can be enabled at the same time, either Hillshade, Slope, Altitude, or Terrain Shadows.
 - If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
 
-The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
+The **Terrain** menu includes [color scheme](#default-color-scheme) (**visualization** on iOS) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
 
 
 ## Hillshade, Slope and Altitude Layers {#hillshade-slope-and-altitude-layers}
@@ -237,6 +237,15 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 - *Navigation.* Helps identify steep slopes, both downhill and uphill, which can be crucial for safe navigation.
 - *Plan routes.* Helps to choose the most suitable routes, considering the terrain.
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
+
+
+### Terrain Shadows (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Terrain Shadows** provides real-time dynamic shading based on 3D terrain geometry. Unlike raster Hillshade maps, the shading effect is generated directly on the device using terrain data and automatically follows the current map perspective.
+
+Terrain Shadows requires 3D Relief and automatically enables it when selected. The feature is designed to improve terrain readability while maintaining low performance impact.
 
 
 ### Default Color Scheme {#default-color-scheme}
@@ -285,7 +294,7 @@ For advanced palette customization using palette files, see [Color Schemes](../p
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *Modify Color Scheme feature* allows you to select a color scheme:
 
@@ -304,13 +313,15 @@ You can [edit these palettes](../personal/color-palette-schemes.md#palette-modif
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter.
+The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter. For Terrain Shadows, Visibility controls the strength of the terrain shading effect.
 
 ### Zoom Levels {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
+
+Zoom Levels are not available for Terrain Shadows because this visualization is rendered dynamically and does not depend on raster layer visibility ranges.
 
 ### Cache Size {#cache-size}
 

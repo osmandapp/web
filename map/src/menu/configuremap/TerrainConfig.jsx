@@ -2,7 +2,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, Box, IconButton, Slider, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './configuremap.module.css';
 import gStyles from '../gstylesmenu.module.css';
-import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -55,10 +55,9 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
 
     useEffect(() => {
         if ((mtx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateOpacity())) {
-            // save selected terrain to local storage
             let newConfigureMap = cloneDeep(ctx.configureMapState);
             newConfigureMap.terrain = mtx.heightmap;
-            localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
+            updateConfigureMapCache(newConfigureMap);
             ctx.setConfigureMapState(newConfigureMap);
             // set slider value
             setValue(getOpacity(mtx.heightmap.key));

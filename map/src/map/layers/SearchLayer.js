@@ -226,6 +226,7 @@ export default function SearchLayer() {
         try {
             const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
                 apiCache: true,
+                ...(ctx.spatialSearch ? { abortControllerKey: 'spatialSearch' } : {}),
                 params: {
                     lat: searchData.latlng.lat,
                     lon: searchData.latlng.lng,
@@ -234,6 +235,7 @@ export default function SearchLayer() {
                     text: searchData.query,
                     locale: i18n.language,
                     baseSearch: searchData.baseSearch,
+                    ...(ctx.spatialSearch ? { spatial: true } : {}),
                     ...getCurrentTimeParams(),
                 },
             });
@@ -253,7 +255,7 @@ export default function SearchLayer() {
                 const favGroupMap = buildFavGroupMap(favoriteFeatures);
                 ctx.setSearchFavoriteGroupIds(favGroupMap);
                 ctx.setSearchResult({ ...data, features });
-            } else {
+            } else if (!response?.aborted) {
                 ctx.setSearchFavoriteGroupIds(null);
                 ctx.setSearchResult(null);
             }

@@ -28,6 +28,9 @@ import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { useGpxFileDragMapZone } from '../util/hooks/useGpxFileDragZone';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
+import MvtDemoLayer from './layers/MvtDemoLayer';
+import MvtOsmLayer from './layers/MvtOsmLayer';
+import { isMvtTileURL } from './mvt/MvtDemoConfig';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;
@@ -38,7 +41,7 @@ function getInitialViewFromHash() {
     const lng = Number.parseFloat(lngStr);
     if (Number.isNaN(zoom) || Number.isNaN(lat) || Number.isNaN(lng)) return null;
 
-    return { center: [lat, lng], zoom };
+    return { center: [lat, L.Util.wrapNum(lng, [-180, 180], true)], zoom };
 }
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
@@ -96,6 +99,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
+        if (isMvtTileURL(mtx.tileURL)) {
+            return;
+        }
         if (tileLayer.current) {
             const leafletLayer = tileLayer.current.getLeafletLayer();
             if (leafletLayer) {
@@ -214,6 +220,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 center={initialView.center}
                 minZoom={1}
                 maxZoom={20}
+                worldCopyJump={true}
                 zoomControl={false}
                 whenReady={whenReadyHandler}
                 contextmenu={true}
@@ -243,6 +250,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                     maxZoom={20}
                     maxNativeZoom={19}
                 />
+                <MvtDemoLayer />
+                <MvtOsmLayer />
                 <HeightmapLayer />
                 {hoverPoint && (
                     <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />

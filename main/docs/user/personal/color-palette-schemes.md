@@ -62,7 +62,7 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/palette_ios.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Color palette](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 

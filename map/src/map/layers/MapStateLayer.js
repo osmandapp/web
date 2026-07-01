@@ -17,6 +17,30 @@ export function getVisibleBboxInfo(ctx, map) {
     return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : null;
 }
 
+export function visibleMapRectPx(ctx, map) {
+    const params = calcVisibleBboxParamsPx(map, ctx);
+    if (!params) {
+        return null;
+    }
+    const tl = map.latLngToContainerPoint(params.topLeft);
+    const br = map.latLngToContainerPoint(params.bottomRight);
+
+    return { left: tl.x, top: tl.y, right: br.x, bottom: br.y, cx: params.centerPx.x, cy: params.centerPx.y };
+}
+
+export function isOutsideVisibleMap({ ctx, map, latlng }) {
+    if (!ctx || !map || !latlng) {
+        return false;
+    }
+    const rect = visibleMapRectPx(ctx, map);
+    if (!rect) {
+        return false;
+    }
+    const p = map.latLngToContainerPoint(L.latLng(latlng));
+
+    return p.x < rect.left || p.x > rect.right || p.y < rect.top || p.y > rect.bottom;
+}
+
 export function getMapCenter(mtx, hash) {
     return mtx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
 }
