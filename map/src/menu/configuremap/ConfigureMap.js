@@ -48,7 +48,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
-import { isOsmAndTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
+import { isMvtTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 export const DYNAMIC_RENDERING = 'dynamic';
@@ -316,7 +316,7 @@ export default function ConfigureMap() {
                                         </Button>
                                     </Box>
                                 )}
-                                {isOsmAndTileURL(mtx.tileURL) && (
+                                {isMvtTileURL(mtx.tileURL) && (
                                     <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
                                         <Button variant="outlined" fullWidth onClick={toggleHybridUnderlayUrl}>
                                             {hybridUnderlayUrl
