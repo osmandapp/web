@@ -223,11 +223,23 @@ html[data-theme="dark"] .hint-image-wrapper {
 }
 
 /* SECURE IFRAME SIMULATOR */
+.simulator-frame {
+    width: 360px;
+    height: 740px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
 .simulator-iframe {
     width: 360px;
     height: 740px;
     border: none;
     overflow: hidden;
+    display: block;
+    flex-shrink: 0;
 }
 
 .option{
@@ -547,10 +559,17 @@ body.quiz-expanded.matching-question-active .feedback strong{
     .quiz-media-mobile .hint-image-wrapper,
     .hint-image-wrapper { width: 280px; height: 576px; border-radius: 28px; border-width: 8px; }
 
-    .quiz-media-mobile .simulator-iframe,
-    .simulator-iframe{
-        width: 280px;
-        height: 576px;
+    .quiz-media-mobile .simulator-frame{
+        width:280px;
+        height:576px;
+        margin:0 auto;
+    }
+
+    .quiz-media-mobile .simulator-iframe{
+        width:360px;
+        height:740px;
+        transform:scale(0.7778);
+        transform-origin:top center;
     }
 
     .question-title { font-size: 20px; }
@@ -818,6 +837,7 @@ function updateProgress(){
 
 function get3DBuildingsSimulatorIframe(){
     return `
+            <div class="simulator-frame">
             <iframe class="simulator-iframe" srcdoc="
                 <!DOCTYPE html>
                 <html>
@@ -897,6 +917,7 @@ function get3DBuildingsSimulatorIframe(){
                 </body>
                 </html>
             "></iframe>
+            </div>
             `;
 }
 
