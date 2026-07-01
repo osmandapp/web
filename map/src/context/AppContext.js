@@ -96,10 +96,12 @@ async function loadTileUrls(setAllTileURLs, develFeatures) {
 
         Object.values(data).forEach((item) => {
             item.tileSize = 256 << item.tileSizeLog;
-            item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
+            item.baseUrl = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
+            item.url = item.baseUrl;
             if (item.key === INTERACTIVE_LAYER) {
-                item.infoUrl =
+                item.infoBaseUrl =
                     process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
+                item.infoUrl = item.infoBaseUrl;
             }
             item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
             if (item.tileSize > 256) {
@@ -548,6 +550,7 @@ export const AppContextProvider = (props) => {
                 mapMarkerListener,
                 setMapMarkerListener,
                 allTileURLs,
+                setAllTileURLs,
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,

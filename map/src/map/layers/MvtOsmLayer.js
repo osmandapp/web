@@ -8,6 +8,8 @@ const config = {
     isActive: isOsmTestTileURL,
     popupClassName: 'mvt-osm-popup',
     errorLabel: 'MVT OSM layer error',
+    pane: 'mvtOsmPane',
+    paneZIndex: 250,
 };
 
 export default function MvtOsmLayer() {

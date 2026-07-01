@@ -2,7 +2,7 @@ import { useContext, useEffect, useSyncExternalStore } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
-import { isOsmAndTileURL } from '../mvt/MvtDemoConfig';
+import { isMvtTileURL } from '../mvt/MvtDemoConfig';
 
 const HYBRID_UNDERLAY_URL_KEY = 'mvtHybridUnderlayUrl';
 const HYBRID_UNDERLAY_ACTIVE_KEY = 'mvtHybridUnderlayActive';
@@ -152,7 +152,7 @@ export default function MvtHybridDemoUnderlay() {
     const underlayUrl = useHybridUnderlayUrl();
 
     useEffect(() => {
-        if (!underlayUrl || !isOsmAndTileURL(mtx.tileURL)) {
+        if (!underlayUrl || !isMvtTileURL(mtx.tileURL)) {
             return undefined;
         }
 

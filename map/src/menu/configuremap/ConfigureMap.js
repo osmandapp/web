@@ -1,10 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import {
     MenuItem,
     IconButton,
-    FormControl,
-    InputLabel,
-    Select,
     Typography,
     ListItemText,
     ListItemIcon,
@@ -13,8 +10,10 @@ import {
     Tooltip,
     Box,
     Button,
+    Paper,
 } from '@mui/material';
-import { Layers, Settings } from '@mui/icons-material';
+import { Layers } from '@mui/icons-material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
@@ -42,6 +41,7 @@ import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
+import ActionsMenu from '../actions/ActionsMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
@@ -49,7 +49,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
-import { isOsmAndTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
+import { isMvtTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 export const DYNAMIC_RENDERING = 'dynamic';
@@ -72,6 +72,8 @@ export default function ConfigureMap() {
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
+    const [openMapStyleMenu, setOpenMapStyleMenu] = useState(false);
+    const mapStyleAnchorRef = useRef(null);
     const hybridUnderlayUrl = useHybridUnderlayUrl();
 
     const handleFavoritesSwitchChange = () => {
@@ -119,30 +121,66 @@ export default function ConfigureMap() {
         return ltx.accountInfo?.account === FREE_ACCOUNT;
     }
 
-    const defaultMapStyleKey = DEFAULT_MAP_STYLE_OPTIONS.some((item) => item.key === mtx.tileURL.key)
-        ? mtx.tileURL.key
-        : '';
-    const defaultMapStyleLabel =
-        DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === defaultMapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
+    const mapStyleOptions = ctx.develFeatures ? Object.values(ctx.allTileURLs) : DEFAULT_MAP_STYLE_OPTIONS;
+    const mapStyleKey = mapStyleOptions.some((item) => item.key === mtx.tileURL.key) ? mtx.tileURL.key : '';
+    const mapStyleLabel = mapStyleOptions.find((item) => item.key === mapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
+    const hasRenderingSettings = Boolean(ctx.allTileURLs[mtx.tileURL.key]?.properties?.length);
 
-    function handleDefaultMapStyleSelect(e) {
-        const selected = DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === e.target.value);
+    function handleMapStyleSelect(selected) {
         if (!selected) {
             return;
         }
 
         mtx.setTileURL(selected);
-        mtx.setRenderingType(null);
+        const renderingType = selected.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
+        mtx.setRenderingType(renderingType);
         const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.mapStyle = { tileURL: selected, renderingType: null };
+        newConfigureMap.mapStyle = { tileURL: selected, renderingType };
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
+        setOpenMapStyleMenu(false);
+    }
+
+    function renderMapStyleSelect() {
+        return (
+            <>
+                <MenuItem className={styles.item} onClick={() => setOpenMapStyleMenu(true)}>
+                    <ListItemIcon className={styles.iconEnabled}>
+                        <Layers />
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography variant="inherit" noWrap>
+                            {mapStyleLabel}
+                        </Typography>
+                    </ListItemText>
+                    <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} ref={mapStyleAnchorRef} />
+                </MenuItem>
+                <ActionsMenu
+                    open={openMapStyleMenu}
+                    setOpen={setOpenMapStyleMenu}
+                    anchorEl={mapStyleAnchorRef}
+                    actions={
+                        <Paper>
+                            {mapStyleOptions.map((item) => (
+                                <MenuItem
+                                    key={item.key}
+                                    selected={item.key === mapStyleKey}
+                                    onClick={() => handleMapStyleSelect(item)}
+                                >
+                                    {item.uiname}
+                                </MenuItem>
+                            ))}
+                        </Paper>
+                    }
+                />
+            </>
+        );
     }
 
     const DEFAULT_CONFIGURE = () => {
         return (
             <>
-                {!ltx.loginUser && !ctx.develFeatures ? (
+                {!ltx.loginUser ? (
                     <EmptyLogin />
                 ) : (
                     <>
@@ -270,77 +308,19 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
-                                <MenuItem className={styles.item} disableRipple={true}>
-                                    <ListItemIcon className={styles.iconEnabled}>
-                                        <Layers />
-                                    </ListItemIcon>
-                                    <FormControl fullWidth variant="standard">
-                                        <Select
-                                            variant="standard"
-                                            disableUnderline
-                                            displayEmpty
-                                            value={defaultMapStyleKey}
-                                            onChange={handleDefaultMapStyleSelect}
-                                            renderValue={(selectedKey) => (
-                                                <Typography variant="inherit" noWrap>
-                                                    {DEFAULT_MAP_STYLE_OPTIONS.find((item) => item.key === selectedKey)
-                                                        ?.uiname ?? defaultMapStyleLabel}
-                                                </Typography>
-                                            )}
-                                            sx={{
-                                                '& .MuiSelect-select': {
-                                                    padding: 0,
-                                                },
-                                            }}
-                                        >
-                                            {DEFAULT_MAP_STYLE_OPTIONS.map((item) => (
-                                                <MenuItem key={item.key} value={item.key}>
-                                                    {item.uiname}
-                                                </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
-                                </MenuItem>
+                                {renderMapStyleSelect()}
                             </>
                         )}
                         {ctx.develFeatures && (
                             <>
-                                <SubTitleMenu text={t('shared_string_appearance')} />
-                                <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="rendering-style-selector-label">
-                                            {t('map_widget_renderer')}
-                                        </InputLabel>
-                                        <Select
-                                            labelid="rendering-style-selector-label"
-                                            label={t('map_widget_renderer')}
-                                            value={ctx.allTileURLs[mtx.tileURL.key] ? mtx.tileURL.key : ''}
-                                            onChange={(e) => {
-                                                const selected = ctx.allTileURLs[e.target.value];
-                                                const renderingType =
-                                                    e.target.value === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
-                                                mtx.setTileURL(selected);
-                                                mtx.setRenderingType(renderingType);
-                                                const newConfigureMap = cloneDeep(ctx.configureMapState);
-                                                newConfigureMap.mapStyle = { tileURL: selected, renderingType };
-                                                updateConfigureMapCache(newConfigureMap);
-                                                ctx.setConfigureMapState(newConfigureMap);
-                                            }}
-                                        >
-                                            {Object.values(ctx.allTileURLs).map((item) => {
-                                                return (
-                                                    <MenuItem key={item.key} value={item.key}>
-                                                        {item.uiname}
-                                                    </MenuItem>
-                                                );
-                                            })}
-                                        </Select>
-                                    </FormControl>
-                                    <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
-                                        <Settings fontSize="small" />
-                                    </IconButton>
-                                </MenuItem>
-                                {isOsmAndTileURL(mtx.tileURL) && (
+                                {hasRenderingSettings && (
+                                    <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
+                                        <Button variant="outlined" fullWidth onClick={() => setOpenSettings(true)}>
+                                            Rendering Props
+                                        </Button>
+                                    </Box>
+                                )}
+                                {isMvtTileURL(mtx.tileURL) && (
                                     <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
                                         <Button variant="outlined" fullWidth onClick={toggleHybridUnderlayUrl}>
                                             {hybridUnderlayUrl
