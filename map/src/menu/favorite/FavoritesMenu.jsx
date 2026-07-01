@@ -6,6 +6,9 @@ import Empty from '../errors/Empty';
 import { Box, LinearProgress } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import VirtualizedList from '../../frame/components/VirtualizedList';
+import gStyles from '../gstylesmenu.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 import Loading from '../errors/Loading';
 import { byTime, doSort } from '../actions/SortActions';
@@ -15,7 +18,7 @@ import { useTranslation } from 'react-i18next';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
 import PinnedFavoriteGroups from './PinnedFavoriteGroups';
 import { useSearchParams, useLocation } from 'react-router-dom';
-import { FAVORITES_URL, INFO_MENU_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { FAVORITES_URL, HEADER_SIZE, INFO_MENU_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -26,6 +29,7 @@ export default function FavoritesMenu() {
     const [searchParams] = useSearchParams();
 
     const [, height] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
     const [sortGroups, setSortGroups] = useState([]);
 
     const [openSharedFolder, setOpenSharedFolder] = useState(null);
@@ -72,6 +76,16 @@ export default function FavoritesMenu() {
         }
         return { pinnedGroups: [], unpinnedGroups: [] };
     }, [ctx.favorites?.groups, sortGroups]);
+
+    const groupRows = useMemo(
+        () => [
+            ...(pinnedGroups.length > 0
+                ? [<PinnedFavoriteGroups key={'pinned-groups'} pinnedGroups={pinnedGroups} />]
+                : []),
+            ...unpinnedGroups.map((g, index) => <FavoriteGroup key={g.id ?? index} index={index} group={g} />),
+        ],
+        [pinnedGroups, unpinnedGroups]
+    );
 
     useEffect(() => {
         if (ctx.selectedSort?.favorites?.[DEFAULT_FAV_GROUP_NAME]) {
@@ -156,7 +170,12 @@ export default function FavoritesMenu() {
 
     return (
         <>
-            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+            <Box
+                className={gStyles.fixedColumn}
+                minWidth={ctx.infoBlockWidth}
+                maxWidth={ctx.infoBlockWidth}
+                style={{ height: `${height - HEADER_SIZE}px` }}
+            >
                 {ltx.loginUser && (
                     <GroupHeader
                         type="favorites"
@@ -172,14 +191,17 @@ export default function FavoritesMenu() {
                     <Loading />
                 ) : !isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
                     <Box
+                        ref={listContainerRef}
+                        className={gStyles.scrollMainBlock}
                         minWidth={ctx.infoBlockWidth}
                         maxWidth={ctx.infoBlockWidth}
-                        sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                     >
-                        <PinnedFavoriteGroups pinnedGroups={pinnedGroups} />
-                        {unpinnedGroups.map((g, index) => (
-                            <FavoriteGroup key={g.id ?? index} index={index} group={g} />
-                        ))}
+                        <VirtualizedList
+                            items={groupRows}
+                            renderItem={(row) => row}
+                            getItemKey={(row) => row.key}
+                            height={listHeight}
+                        />
                     </Box>
                 ) : (
                     <Empty

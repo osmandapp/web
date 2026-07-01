@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title:  Mappe e Dati
 ---
@@ -180,6 +180,22 @@ Se si sta tentando di cercare una località utilizzando la struttura *Città →
 - **Problema con Nominatim**. La casa potrebbe essere presente in OpenStreetMap ma non trovata tramite Nominatim (il motore di ricerca utilizzato da OpenStreetMap). È possibile saperne di più su come risolvere i problemi relativi agli indirizzi [qui](https://wiki.openstreetmap.org/wiki/Addresses).
 
 - **Possibile problema in OsmAnd**. Se la casa è presente in Nominatim ma non viene ancora trovata in OsmAnd, il problema potrebbe essere specifico di OsmAnd. È possibile contribuire a risolvere questo problema investigando ulteriormente. Maggiori dettagli possono essere trovati in questo [articolo tecnico](../../technical/algorithms/trace-address-search-issues.md).
+
+### Cercare i codici postali del Regno Unito utilizzando un file PDI personalizzato {#search-uk-postcodes-using-a-custom-poi-file}
+
+Se un codice postale del Regno Unito non può essere trovato utilizzando *Menu → Ricerca → Indirizzo*, potrebbe non essere disponibile tramite l'indice di ricerca degli indirizzi utilizzato da OsmAnd.
+
+Un file PDI dei codici postali del Regno Unito gestito dalla community è disponibile come file `.obf` personalizzato. Contiene codici postali memorizzati come Punti di Interesse (PDI) con coordinate e può essere utilizzato per cercare direttamente i codici postali.
+
+Come usarlo:
+
+1. Scarica il file `UK_postcodes_poi_europe.obf` dal [repository della community](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. Se il file è stato scaricato come archivio ZIP, estrailo prima.
+3. Copia il file `.obf` nella cartella dati di OsmAnd, oppure aprilo con un gestore file sul tuo dispositivo e scegli **OsmAnd** per importarlo.
+4. Utilizza la funzione **Ricerca** generale (icona della lente di ingrandimento) invece della ricerca **Indirizzo**.
+5. Inserisci un codice postale (ad es., CT14 8EU o EX34 7EX) nella barra di ricerca.
+
+**NOTA:** Alcuni codici postali potrebbero apparire più di una volta nei risultati di ricerca perché sia i dati della mappa predefiniti di OsmAnd sia il file PDI dei codici postali personalizzato possono contenere lo stesso codice postale.
 
 
 ## Tracce e Punti {#tracks-and-points}

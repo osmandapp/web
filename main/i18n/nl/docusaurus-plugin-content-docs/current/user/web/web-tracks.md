@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -80,14 +80,18 @@ Tracks worden alleen weergegeven als de configuratie van de Slimme map wordt ond
 
 De synchronisatie van Slimme mappen kan variëren afhankelijk van het platform en de synchronisatieconfiguratie. Voor de meest consistente resultaten, zorg ervoor dat Cloud-synchronisatie is ingeschakeld en up-to-date op alle apparaten.
 
-In het drie-puntenmenu (⋮) kunt u de Slimme map downloaden als een OBF-verzameling.
+Het drie-puntenmenu (⋮) biedt extra acties voor de Slimme map. U kunt de map *Downloaden als OSF*, *Downloaden als OBF-verzameling*, *Hernoemen* of *Verwijderen*.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud-tracks {#cloud-tracks}
 
 GPX-tracks die u hebt in [OsmAnd Cloud](../personal/osmand-cloud.md) zijn na inloggen beschikbaar voor weergave en bewerking. Alleen voor **Pro-gebruikers** <ProFeature/> en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gebruikers (die hun gegevens kunnen downloaden zelfs nadat hun Pro-abonnement is verlopen).
+
+Wanneer u een track selecteert, centreert de kaart automatisch en past het zoomniveau aan om de volledige track binnen het zichtbare kaartgebied weer te geven.
+
+U kunt ook de knop **Focus** gebruiken om alle andere favorieten en tracks op de kaart te verbergen, zodat u de geselecteerde track gemakkelijker kunt bekijken. Schakel de Focus-modus uit om de zichtbaarheid van andere kaartobjecten te herstellen.
 
 De volgende functies zijn beschikbaar na het kiezen van een cloud-track:
 - *Informatie* - weergeven van track-gegevens.

@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -53,6 +53,7 @@ A lista abaixo fornece conversores para vários tipos de dados suportados pelo O
 | GPX to KML | Ferramenta para converter ficheiros *GPX* do OsmAnd para o formato *KML*, preservando os ícones. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX to OsmAnd | Script Python para converter ficheiros *GPX* do iOverlander exportados para OsmAnd com ícones. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Esta é [uma ferramenta](https://github.com/acui/osmand_topo_map_generator) para gerar um mapa topográfico imprimível usando capturas de ecrã do OsmAnd (https://osmand.net). O mapa usa a grade UTM e tem informações de declinação. Deve ser usado com uma bússola ou um dispositivo GPS com coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | O GPXsolar projeta um raio em direção ao sol a partir de cada ponto de um trilho GPX e testa-o contra o terreno e a vegetação (0,5 m HD LiDAR / IGN), para uma data e hora específicas. Ele informa, metro a metro, se é sol ou sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Recursos Personalizados {#custom-resources}
 
@@ -89,7 +90,7 @@ A seguir, uma lista de [plugins personalizados](../plugins/custom.md) desenvolvi
 | AnyGIS Online Maps Collection | Dados da [página web AnyGIS](https://anygis.ru/index_en). Uma coleção de várias fontes de mapas online, incluindo mapas de satélite, turísticos e históricos, entre outros.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Offline Map Legend | Este pacote adiciona uma legenda de mapa offline (versão 1.01; 03-04-2024), acessível via *Menu → Meus Locais → Favoritos → Legenda do mapa*. A legenda do mapa também está disponível [neste local](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Offline Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
 | 🇺🇸US Lands & Trails | Uma coleção de mapas especializados dos EUA, convertidos para o formato OBF do OsmAnd, apresentando<ul><li>[Terras públicas e áreas protegidas do USGS (PAD-US 3.0), por estado](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Trilhos e Estradas do USFS, em todo o país](https://www.fs.usda.gov/visit/maps),</li><li>[Estradas e Trilhos do BLM, em todo o país](https://www.blm.gov/maps),</li><li>[POIs de Atividades Recreativas do BLM, em todo o país](https://www.blm.gov/maps),</li><li>[Terras privadas (dados de parcelas), para alguns estados](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Mais informações no [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸US Lands & Trails](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) cobre a maior parte da Polónia com um esforço de desenvolvimento contínuo. Por muito tempo, o nome UMP-pcPL (mapą prawie całej Polski) foi usado. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) cobre a maior parte da Polónia com um esforço de desenvolvimento contínuo. Por muito tempo, o nome UMP-pcPL (mapą prawie toda a Polónia) foi usado. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Este plugin inclui um estilo de mapa leve que melhora a visibilidade de estradas e trilhos não pavimentados no OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
@@ -109,6 +110,7 @@ O ficheiro [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) é um estilo de mapa de Holder Tamm que permite escolher se deseja ocultar certos objetos ou não.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [O estilo de renderização ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) é principalmente baseado no UniMap e routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Este é um estilo de renderização OsmAnd otimizado para caça a tempestades](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Recursos personalizados definidos do projeto OsmAnd para ajustar finamente o comportamento do OsmAnd. Aqui são definidos: estilos de renderização de mapa usados no OsmAnd, vozes gravadas e TTS, configuração da geração de mapas offline, parâmetros de roteamento, repositório de ícones  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Mapas Offline {#offline-maps}
 

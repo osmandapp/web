@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -55,7 +55,7 @@ OsmAnd iki tür harita ile çalışır: [Vektör haritaları](../map/vector-maps
 
 <TabItem value="ios" label="iOS">
 
-![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Haritaları OsmAnd uygulamasına indirmek, navigasyonun işlevselliğini ve veri
 ### Ücretsiz Harita İçeriği {#free-map-content}
 
 - **Standart harita**. [OpenStreetMap](https://www.openstreetmap.org/) kaynağına dayalı olarak alanın genel bir görünümünü sağlar ve bir harita, rotalar, adresler, POI ve toplu taşıma bilgilerini içerir. Dokunulduğunda, seçilen ülkenin bölgelerinin bir listesini ve bu haritaların cihazınızda ne kadar yer kaplayacağına dair bilgileri içeren bir ekran açılır.  
-- **Yalnızca yollar** (*Yalnızca Android*). Harita, yalnızca rotalara ve yol altyapısına odaklanmak için yol ağı bilgilerini içerir. Binalar ve ilgi çekici noktalar gibi ayrıntıları kaldırarak standart bir haritadan daha küçüktür. Dokunulduğunda, seçilen ülkedeki bölgelerin bir listesini ve bu haritaların cihazınızda ne kadar yer kaplayacağına dair bilgileri içeren bir ekran açılır.
+- **Yalnızca yollar**. Harita, yalnızca rotalara ve yol altyapısına odaklanmak için yol ağı bilgilerini içerir. Binalar ve ilgi çekici noktalar gibi ayrıntıları kaldırarak standart bir haritadan daha küçüktür. Dokunulduğunda, seçilen ülkedeki bölgelerin bir listesini ve bu haritaların cihazınızda ne kadar yer kaplayacağına dair bilgileri içeren bir ekran açılır.
 - **Dünya genel bakış haritası**. OsmAnd'ın 3.8'e kadar olan sürümleri, gezegensel ölçekte görüntüleyebilmeniz için bir dünya haritası indirmeyi teklif eder. OsmAnd'ın daha yeni sürümlerinde, hafif bir *Mini Dünya Haritası* uygulamayla birlikte gelir. Uygulama, daha ayrıntılı bilgi içeren daha büyük bir genel bakış dünya haritası indirmenize olanak tanır. 
 
 :::info aylık harita güncellemeleri
@@ -133,7 +133,7 @@ Aktif bir abonelik olmadan, bu harita türleri İndir yerine bir *Satın Al* dü
 - [Dünya haritaları](#world-maps). Tüm dünyanın haritalarının bir listesi: *World altitude correction (Android only)*, *World overview map*, *All world (Weather forecast)*
 - [Deniz haritaları](../plugins/nautical-charts.md) ([*ücretli özellik*](../purchases/index.md)). Nokta veya çizgi olarak yüksekliklere sahip vektör haritaları.
 - [Seyahat rehberleri (Wikivoyage)](../plan-route/travel-guides.md) ([*ücretli özellik*](../purchases/index.md)). HTML formatında makale koleksiyonu ve ayrıca GPX dosyaları içeren vektör haritaları.
-- **Diğer haritalar**. Desteklenmedikleri veya gelecekteki sürümlerde mevcut olacakları için mevcut harita hiyerarşisine atanamayan haritalar.
+- **Diğer haritalar**. Desteklenmedikleri veya gelecekteki sürümlerinde mevcut olacakları için mevcut harita hiyerarşisine atanamayan haritalar.
 - [Sesli komutlar](../navigation/guidance/voice-navigation.md) (*Yalnızca Android*). Navigasyon komutlarını seslendirmek için ses paketleri.
 - [Harita yazı tipleri](../map/vector-maps.md#map-fonts-android) (*Yalnızca Android*). Harita üzerinde metin görüntülemek için ek yazı tipi dosyaları.
 - **Şehir veya bölge ara** (*Yalnızca Android*). İndirilenler sekmesinin üst kısmında (büyüteç simgesi) gerekli şehri veya bölgeyi bulmak için hızlı bir arama aracı.
@@ -424,7 +424,7 @@ Güncellemeler sekmesinden herhangi bir listelenmiş harita üzerinde uzun basma
 - **Devre Dışı Bırak** — haritayı verilerini kaldırmadan geçici olarak devre dışı bırakın
 - **Kaldır** — harita verilerini cihazdan tamamen silin
 
-Bir harita devre dışı bırakıldığında, Yerel sekmesinden geçici olarak kaybolabilir. Devre dışı bırakılmış bir harita için bir güncelleme mevcut hale gelirse, yine de Güncellemeler listesinde görünecek ve gri bir simgeyle gösterilecektir. Bu tür bir haritayı güncellemek onu otomatik olarak yeniden etkinleştirecektir.
+Bir harita devre dışı bırakıldığında, Yerel sekmesinden geçici olarak kaybolabilir. Devre dışı bırakılmış bir harita için bir güncelleme mevcut hale gelirse, yinede Güncellemeler listesinde görünecek ve gri bir simgeyle gösterilecektir. Bu tür bir haritayı güncellemek onu otomatik olarak yeniden etkinleştirecektir.
 
 </TabItem>
 
@@ -477,6 +477,8 @@ Canlı güncellemeler bir [**OsmAnd Pro**](../purchases/index.md) ücretli özel
 </Tabs>
 
 **Canlı Güncellemeler**, [abonelik](../purchases/index.md) aracılığıyla sık, artımlı harita güncellemeleri sağlar veya [OSM katkıda bulunanlar](#free-for-osm-mappers) için ücretsizdir. Güncellemeler OsmAnd sunucularında her 15 dakikada bir gerçekleşir ve saatlik, günlük veya haftalık olarak indirilebilir. Bu güncellemeler minimum depolama alanı tüketir - ayda tam harita boyutunun yaklaşık %2-4'ü.
+
+Canlı Güncellemeler, indirilen haritanın üzerine uygulanır ve tam harita dosyasının yerini almaz. Sonuç olarak, Yerel sekmesinde bir harita için gösterilen tarih Canlı Güncellemeleri yansıtmaz ve uygulandıktan sonra değişmeden kalabilir. Haritanın tam sürümünün daha yeni bir sürümünü indirmek için [Güncellemeler Menüsü](#updates-menu) bölümündeki Haritayı güncelle veya Tümünü güncelle seçeneğini kullanın.
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

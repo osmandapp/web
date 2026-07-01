@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title:  Mis lugares
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-**Mis lugares** es el centro neurálgico de la aplicación OsmAnd para gestionar y personalizar todos los datos personales. Puede utilizar esta sección para organizar [Puntos favoritos](#favorites) marcados como importantes o visitados con frecuencia. La pestaña [Tracks](#tracks) le permite ver, importar, grabar y crear archivos GPX para ayudarle a mantener un historial detallado de sus rutas y viajes. También puede gestionar sus [Ediciones de OpenStreetMap](#openstreetmap-edits), facilitando la contribución a las mejoras y actualizaciones de los mapas. El plugin [Notas de audio/vídeo](#audiovideo-notes) y los widgets permiten a los usuarios de Android crear y guardar notas multimedia relacionadas con ubicaciones específicas, añadiendo contexto a sus viajes.
+**Mis lugares** es el centro neurálgico de la aplicación OsmAnd para gestionar y personalizar todos los datos personales. Puede utilizar esta sección para organizar [Puntos favoritos](#favorites) marcados como importantes o visitados con frecuencia. La pestaña [Tracks](#tracks) le permite ver, importar, grabar y crear archivos GPX para ayudarle a mantener un historial detallado de sus rutas y viajes. También puede gestionar sus [Ediciones de OpenStreetMap](#openstreetmap-edits), facilitando la contribución a las mejoras y actualizaciones de los mapas. El plugin [Notas de audio/vídeo](#audiovideo-notes) y los widgets permiten a los usuarios de Android crear y guardar notas multimedia relacionadas con ubicaciones específicas, añadiendo contexto a sus viajes. En iOS, Mis lugares también proporciona acceso a las [Guías de viaje](#travel-guides) marcadas como favoritas, lo que le permite organizar y abrir rápidamente el contenido de viaje guardado.
 
 ## Menú Mis lugares {#my-places-menu}
 
@@ -28,17 +28,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu"/> → Mis lugares*  
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Mis lugares android](@site/static/img/personal/my_places_android_new.png) ![Menú Mis lugares Android](@site/static/img/personal/my_places_menu_android_new.png)
+![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate android="true" ids="shared_string_menu"/> → Mis lugares*  
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Mis lugares ios](@site/static/img/personal/my_places_ios_new.png)  ![Menú Mis lugares iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ Mis lugares está organizado por categorías. Seleccione una pestaña para gesti
 
 <TabItem value="android" label="Android">
 
-![Menú de favoritos android](@site/static/img/personal/favorites_menu_android.png)
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menú de favoritos iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,17 +94,17 @@ Para obtener instrucciones completas, consulte el artículo [Favoritos](../perso
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> pestaña*
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Mis lugares con tracks en Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> pestaña*
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Mis lugares con tracks en iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -130,7 +134,7 @@ Para obtener una guía completa, consulte el artículo [Gestionar Tracks](../per
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Compartir](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Compartir](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -179,7 +183,7 @@ Consulte el [plugin de edición OSM](../plugins/osm-editing.md) para obtener ins
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Plugin de audio y vídeo Menú Mis lugares Tres acciones](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
 El **plugin de Notas de audio/vídeo** le permite crear notas multimedia vinculadas a ubicaciones específicas del mapa. Estas notas se almacenan en **Mis lugares** en la **Pestaña Notas A/V**.
 
@@ -240,11 +244,22 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
+### Guías de viaje (iOS) {#travel-guides}
+
+Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+
+![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
+
+La sección **Viajes** contiene guías de viaje y artículos marcados como favoritos guardados para acceso sin conexión. Puede abrir, organizar y gestionar rápidamente su contenido de viaje guardado desde Mis lugares. La sección Viajes solo se muestra cuando se ha marcado como favorito más de una guía de viaje.
+
+Para obtener información detallada, consulte el artículo [Guías de viaje](../plan-route/travel-guides.md).
+
 ## Artículos relacionados {#related-articles}
 
 - [Gestionar Tracks](../personal/tracks/manage-tracks.md#import--export-track)
 - [Favoritos](../personal/favorites.md)
 - [Edición de OpenStreetMap](../plugins/osm-editing.md)
 - [Notas de audio/vídeo](../plugins/audio-video-notes.md)
+- [Guías de viaje](../plan-route/travel-guides.md)
 - [Historial de búsqueda](../search/search-history.md#export-and-share)
 - [Esquemas de paleta de colores](../personal/color-palette-schemes.md)

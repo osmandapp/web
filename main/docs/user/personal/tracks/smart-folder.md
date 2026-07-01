@@ -209,7 +209,7 @@ You can also open the folder and tap the icon in the *top-right corner* to acces
 - **<Translate ios="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Manually update the folder's content to ensure it includes the latest tracks.
 - **<Translate ios="true" ids="edit_filter"/>** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
-- **Organize by** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Select *None* to display all tracks as a single list, matching the default Smart Folder view. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+- **<Translate ios="true" ids="organize_by"/>** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Select *None* to display all tracks as a single list, matching the default Smart Folder view. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
 
 Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
 

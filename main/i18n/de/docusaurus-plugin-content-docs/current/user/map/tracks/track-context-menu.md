@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Oben im Infobereich sehen Sie den Namen des Tracks und das Symbol, mit dem er markiert ist (*nur Android*). Der Trackname kann mit der Umbenennungsfunktion im [Optionsmenü](#options) geändert werden. Einige Tracks (meistens die *[Reiseführer](../../plan-route/travel-guides.md#manage-as-gpx-track)*) können eine kurze *[Beschreibung](#description-and-info)* und/oder ein Bild unter dem *Tracknamen* haben. Ein Pfeil zeigt die *Richtung zum nächstgelegenen Punkt des Tracks* von [Mein Standort](../../map/interact-with-map.md#my-location-and-zoom) aus an.  
+Oben im Infobereich sehen Sie den Namen des Tracks und das Symbol, mit dem er markiert ist (*nur Android*). Der Trackname kann mit der Umbenennungsfunktion im [Optionsmenü](#options) geändert werden. Einige Tracks (meistens die *[Reiseführer](../../plan-route/travel-guides.md#manage-as-gpx-track)*) können eine kurze *[Beschreibung](#description-and-info)* und/oder ein Bild unter dem *Tracknamen* haben. Ein Pfeil zeigt die *Richtung zum nächstgelegenen Punkt des Tracks* von [Mein Standort](../../map/interact-with-map.md#my-position-and-zoom) aus an.  
 
 Der Infobereich bietet auch Informationen über Folgendes:
 
@@ -246,9 +246,9 @@ Dieser Abschnitt des *Übersicht*-Tabs zeigt ***Tag-Daten*** und ***alle allgeme
 </Tabs>
 
 
-Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks und über [Route planen](../../plan-route/create-route.md) gespeicherte Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren. Diese erhalten automatisch einen Aktivitätstyp basierend auf dem verwendeten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
+Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks und über [Route planen](../../plan-route/create-route.md) gespeicherte Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren.
 
-- [Aktivitäts-Tags für GPX-Tracks](../../plugins/trip-recording.md#recording-settings). Aufgezeichnete Tracks erhalten automatisch einen Aktivitätstyp basierend auf dem ausgewählten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
+- [Aktivitäts-Tags für GPX-Tracks](#description-and-info). [Aufgezeichnete Tracks](../../plugins/trip-recording.md#recording-settings) und über [Route planen](../../plan-route/create-route.md) gespeicherte Tracks erhalten automatisch einen Aktivitätstyp basierend auf dem verwendeten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
 - [Aktivitätsfilter](../../personal/tracks/smart-folder.md#search-filter). Sie können die aufgezeichneten GPX-Tracks nach Aktivität filtern, was es Ihnen ermöglicht, sich auf die Suche nach bestimmten Arten von Aufzeichnungen zu konzentrieren, wie z. B. alle Rad- oder Wandertracks.
 - [Aktivitätstypen verwalten](../../personal/tracks/manage-tracks.md#selection-mode). Sie können den Aktivitätstyp für ausgewählte Ordner oder Tracks im Auswahlmodus auf dem Tab "Tracks" des Menüs "Meine Orte" ändern.
 - **Aktivitätsliste**. Die Aktivitätskategorien und -gruppen sind in den Ressourcen von OsmAnd definiert. Für Entwickler und Mitwirkende wird die Aktivitätsliste in einem strukturierten Format unter [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) gepflegt, das die verfügbaren Aktivitätsgruppen und -typen detailliert beschreibt.
@@ -398,7 +398,7 @@ Wegpunkte sind eine der Arten von Punkten, die auf der Karte verfügbar sind. Im
 
 <TabItem value="ios" label="iOS">
 
-![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -671,12 +671,14 @@ Die Option **Nach Zeit aufteilen** teilt einen Track in Intervalle gleicher Daue
 
 ![Track-Aufteilung nach Bergauf/-ab Tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track-Aufteilung nach Bergauf/-ab Karte](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Diese Option teilt einen Track in Segmente basierend auf Höhenänderungen auf. Jedes Intervall wird als ***Bergauf***, ***Bergab*** oder ***Ebene*** klassifiziert. Die Art und Weise, wie die Intervalle angezeigt werden, die für jedes Segment bereitgestellten Statistiken und wie sie auf der Karte erscheinen, sind ebenfalls dieselben wie im Abschnitt [Nach Entfernung aufteilen](#split-by-distance).
+Diese Option teilt einen Track in Segmente basierend auf Höhenänderungen auf. Jedes Intervall wird als ***Bergauf***, ***Bergab*** oder ***Ebene*** klassifiziert. Die Intervalle werden in der Reihenfolge ihres Auftretens entlang des Tracks angezeigt, und jedem Bergauf-, Bergab- oder ebenen Abschnitt wird eine eigene Indexnummer zugewiesen. Die Intervallliste liefert dieselben Kernstatistiken wie [Nach Entfernung aufteilen](#split-by-distance).
 
 Auf der Karte werden die Segmente mit farbigen Beschriftungen am Anfang jedes Intervalls markiert:
 - **Bergauf-Segmente** (rote Beschriftungen) zeigen einen Pfeil nach oben, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↑ 11. 2 %).
 - **Bergab-Segmente** (grüne Beschriftungen) zeigen einen Pfeil nach unten, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↓ 12. -2 %).
 - **Ebene Segmente** (blaue Beschriftungen) zeigen die Distanz des ebenen Abschnitts (z. B. 616 m, 411 m).
+
+Tippen Sie auf eine Beschriftung, um das Detailfenster für das ausgewählte Bergauf-, Bergab- oder ebene Segment zu öffnen. Das Detailfenster zeigt Statistiken für das ausgewählte Segment an, z. B. Entfernung, Dauer, Auf- und Abstieg, Höhe, Geschwindigkeit und zeitbezogene Daten.
 
 
 ### Herzfrequenz-Metriken {#heart-rate-metrics}
@@ -700,7 +702,7 @@ Diese Option ermöglicht es Ihnen, durchschnittliche, minimale und maximale Herz
 
 Dieser Filter ermöglicht es Ihnen, Ihre Track-Statistiken zu verbessern, indem Sie unnötige oder falsche Daten ausschließen. Sie können Trackpunkte herausfiltern, die nicht zu Ihren Track-Parametern passen, und erhalten so ein genaueres Diagramm und eine visuelle Routenlinie ohne Verzerrungen oder Aufzeichnungsrauschen. Sie können Änderungen mit Filtern wie *Glättung*, *Geschwindigkeit*, *Höhe* und *GPS-Genauigkeit* vornehmen, die gefilterte Punkte aus dem aktuellen Track ausblenden. Außerdem können Sie im Menü *Statistik* überprüfen, wie Ihre Änderungen im Diagramm angezeigt werden, bevor Sie sie speichern. Sie können Ihren Track in diesem Filter auch *Auf Original zurücksetzen* und *Als Kopie speichern*, ohne das Original zu speichern.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

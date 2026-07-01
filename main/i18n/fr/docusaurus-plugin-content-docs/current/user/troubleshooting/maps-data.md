@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title:  Cartes & Données
 ---
@@ -169,7 +169,7 @@ Oui, les lignes de contour peuvent être affichées en pieds au lieu de mètres.
 
 Si vous essayez de rechercher un lieu en utilisant la structure *Ville → Rue → Numéro de maison* et qu'aucun résultat n'est retourné, considérez les conseils et les causes potentielles suivants :
 
-> **Conseil** : Essayez une recherche en texte intégral sans spécifier la ville, car l'adresse peut être répertoriée sous une autre ville.
+> **Conseil** : Essayez une recherche en texte intégral sans spécifiant la ville, car l'adresse peut être répertoriée sous une autre ville.
 
 **Problèmes potentiels :**
 
@@ -180,6 +180,22 @@ Si vous essayez de rechercher un lieu en utilisant la structure *Ville → Rue �
 - **Problème avec Nominatim**. La maison peut être présente dans OpenStreetMap mais non trouvée via Nominatim (le moteur de recherche utilisé par OpenStreetMap). Vous pouvez en apprendre davantage sur la manière de résoudre les problèmes liés aux adresses [ici](https://wiki.openstreetmap.org/wiki/Addresses).
 
 - **Problème possible dans OsmAnd**. Si la maison est présente dans Nominatim mais n'est toujours pas trouvée dans OsmAnd, le problème pourrait être spécifique à OsmAnd. Vous pouvez contribuer à résoudre ce problème en enquêtant davantage. Plus de détails peuvent être trouvés dans cet [article technique](../../technical/algorithms/trace-address-search-issues.md).
+
+### Rechercher les codes postaux britanniques à l'aide d'un fichier POI personnalisé {#search-uk-postcodes-using-a-custom-poi-file}
+
+Si un code postal britannique ne peut pas être trouvé via *Menu → Recherche → Adresse*, il se peut qu'il ne soit pas disponible dans l'index de recherche d'adresses utilisé par OsmAnd.
+
+Un fichier POI de codes postaux britanniques maintenu par la communauté est disponible sous forme de fichier `.obf` personnalisé. Il contient des codes postaux stockés en tant que Points d'Intérêt (POI) avec des coordonnées et peut être utilisé pour rechercher directement les codes postaux.
+
+Comment l'utiliser :
+
+1. Téléchargez le fichier `UK_postcodes_poi_europe.obf` depuis le [dépôt communautaire](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. Si le fichier a été téléchargé sous forme d'archive ZIP, extrayez-le d'abord.
+3. Copiez le fichier `.obf` dans le dossier de données OsmAnd, ou ouvrez-le avec un gestionnaire de fichiers sur votre appareil et choisissez **OsmAnd** pour l'importer.
+4. Utilisez la fonction **Recherche** générale (icône de loupe) au lieu de la recherche **Adresse**.
+5. Saisissez un code postal (par exemple, CT14 8EU ou EX34 7EX) dans la barre de recherche.
+
+**NOTE :** Certains codes postaux peuvent apparaître plusieurs fois dans les résultats de recherche, car les données cartographiques OsmAnd par défaut et le fichier POI de codes postaux personnalisé peuvent contenir le même code postal.
 
 
 ## Traces et points {#tracks-and-points}

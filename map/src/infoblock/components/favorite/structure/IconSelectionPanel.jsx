@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, IconButton, ListItem, ListItemButton, Menu, MenuItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { VariableSizeList } from 'react-window';
 import AppContext from '../../../../context/AppContext';
 import MarkerOptions, { resolvedPoiCategories } from '../../../../map/markers/MarkerOptions';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
+import VirtualizedList from '../../../../frame/components/VirtualizedList';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../../../frame/components/titles/SubTitleMenu';
 import WptIconPreview from './WptIconPreview';
 import isEmpty from 'lodash-es/isEmpty';
-import { useWindowSize } from '../../../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../../../util/hooks/useElementHeight';
 import styles from '../wptEditPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
+import gStyles from '../../../../menu/gstylesmenu.module.css';
 import { ReactComponent as ListFlatIcon } from '../../../../assets/features/ic_action_list_flat.svg';
-import { HEADER_SIZE, PANEL_HEADER_HEIGHT } from '../../../../manager/GlobalManager';
 
 const SELECTION_COLOR = '#237bff';
 const FALLBACK_BG_COLOR = '#e6e6e6';
@@ -28,7 +28,7 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
-    const [, windowHeight] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
 
     const initialIconRef = useRef(selectedIcon);
     const listRef = useRef(null);
@@ -124,7 +124,6 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
     }
 
     const getRowHeight = (index) => (rows[index]?.type === 'header' ? HEADER_ROW_HEIGHT : ICON_ROW_HEIGHT);
-    const listHeight = windowHeight - HEADER_SIZE - PANEL_HEADER_HEIGHT;
 
     const rightContent = (
         <>
@@ -156,27 +155,23 @@ export default function IconSelectionPanel({ selectedIcon, setSelectedIcon, sele
                 appBarProps={{ id: 'se-back-icon-selection-panel' }}
                 rightContent={rightContent}
             />
-            <VariableSizeList
-                ref={listRef}
-                height={listHeight}
-                itemCount={rows.length}
-                itemSize={getRowHeight}
-                width="100%"
-                overscanCount={3}
-                style={{ overflowX: 'hidden' }}
-            >
-                {({ index, style }) => (
-                    <IconRow style={style} row={rows[index]} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />
-                )}
-            </VariableSizeList>
+            <Box ref={listContainerRef} className={gStyles.scrollMainBlock}>
+                <VirtualizedList
+                    ref={listRef}
+                    items={rows}
+                    renderItem={(row) => <IconRow row={row} selectedIcon={selectedIcon} onSelect={setSelectedIcon} />}
+                    itemSize={getRowHeight}
+                    height={listHeight}
+                />
+            </Box>
         </SecondaryMenuDrawer>
     );
 }
 
-function IconRow({ style, row, selectedIcon, onSelect }) {
+function IconRow({ row, selectedIcon, onSelect }) {
     if (row.type === 'header') {
         return (
-            <div style={style}>
+            <div>
                 <ThickDivider />
                 <SubTitleMenu text={row.title} />
             </div>
@@ -184,7 +179,7 @@ function IconRow({ style, row, selectedIcon, onSelect }) {
     }
 
     return (
-        <div style={style}>
+        <div>
             <Box className={styles.iconGrid}>
                 {row.icons.map((icon) => {
                     const isSelected = selectedIcon === icon;

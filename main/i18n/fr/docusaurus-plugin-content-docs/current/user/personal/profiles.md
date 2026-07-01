@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
 sidebar_position: 4
 title:  Profils (Paramètres)
 ---
@@ -33,18 +33,18 @@ OsmAnd propose une variété de profils par défaut adaptés à différentes act
 
 <TabItem value="android" label="Android">
 
-- *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Parcourir la carte ou tout autre profil)
+- *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Browse map or any other profile)
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Paramètres des profils Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
+![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Paramètres des profils iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
+![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
 </TabItem>
 
@@ -53,27 +53,27 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 ## Configuration du profil {#profile-configuration}
 
-:::caution Application des paramètres à un profil spécifique uniquement
-Tous les paramètres s'appliquent exclusivement au profil d'application actuellement sélectionné.
+:::caution Applying settings to a specific profile only
+All settings apply exclusively to the currently selected application profile.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Paramètres des profils Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Paramètres des profils Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
+![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres des profils iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
+![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Cette section contient tous les paramètres relatifs à l'apparence, aux options de navigation, à l'affichage de la carte, au menu des paramètres et à l'écran du profil.
+This section contains all settings related to appearance, navigation options, map display, settings menu, and profile screen.
 
 
 ### Sauvegarde cloud gratuite {#free-cloud-backup}
@@ -82,30 +82,30 @@ Cette section contient tous les paramètres relatifs à l'apparence, aux options
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
-![Fonctions du dossier Favoris Android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Actions des favoris iOS](@site/static/img/personal/profile_settings_free_backup_ios.png)
+![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd vous permet de [sauvegarder](../personal/osmand-cloud.md#osmand-start) les paramètres de votre profil d'application sur OsmAnd Cloud, garantissant que vos configurations sont stockées en toute sécurité et facilement restaurées sur les versions Android, iOS et Web. Cette fonctionnalité de sauvegarde protège vos paramètres en cas de panne de l'appareil ou de réinstallation de l'application. Vous pouvez bénéficier de ce plan spécial en utilisant [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
+OsmAnd allows you [to back up](../personal/osmand-cloud.md#osmand-start) your application profile settings to OsmAnd Cloud, ensuring that your configurations are securely stored and easily restored across Android, iOS, and Web versions. This backup feature protects your settings in case of device failure or app reinstallation. You can benefit from this special plan using [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
 
-Vous devez avoir un compte [OsmAnd Cloud](../personal/osmand-cloud.md#login) pour utiliser la *Sauvegarde gratuite des paramètres*. Si vous avez un abonnement *OsmAnd Pro* ou un compte *OsmAnd Cloud* actif, la bannière promotionnelle ne sera pas affichée.
+You must have an [OsmAnd Cloud](../personal/osmand-cloud.md#login) account to use the *Free Settings Backup*. If you have an *OsmAnd Pro* subscription or an active *OsmAnd Cloud* account, the promotion banner will not be displayed.
 
 
 ## Paramètres généraux {#general-settings}
 
-Cette section contient les paramètres pour le thème de l'application et le bouton de la boussole, les unités et formats des données de la carte et du profil, les périphériques d'entrée externes, et de nombreux autres paramètres pour créer la configuration optimale pour le profil que vous avez choisi.
+This section contains settings for the application theme and compass button, map and profile data units and formats, external input devices, and many other settings to create the optimal configuration for your chosen profile.
 
 ### Apparence {#appearance}
 
@@ -113,62 +113,62 @@ Cette section contient les paramètres pour le thème de l'application et le bou
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Apparence des paramètres généraux des profils Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
+![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Apparence des paramètres généraux des profils iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **<Translate android="true" ids="choose_osmand_theme"/>**. Permet de définir un thème de jour et de nuit pour l'application, qui peut être appliqué à un seul profil ou à tous à la fois. Cette option ne modifie pas les paramètres du [mode carte](../map/vector-maps.md#map-mode).
-  - *Thème <Translate android="true" ids="dark_theme"/>*
-  - *Thème <Translate android="true" ids="light_theme"/>*
+- **<Translate android="true" ids="choose_osmand_theme"/>**. Allows you to set a day and night theme for the app, which can be applied to one profile or all at once. This option does not change the [map mode](../map/vector-maps.md#map-mode) settings.
+  - *<Translate android="true" ids="dark_theme"/> theme*
+  - *<Translate android="true" ids="light_theme"/> theme*
   - *<Translate android="true" ids="system_default_theme"/>*  
-      Applique le thème du système. Par défaut, et pour tous les nouveaux utilisateurs, le style de la carte correspond au thème clair ou sombre sélectionné dans les paramètres système de votre appareil.
-- **<Translate android="true" ids="rotate_map_to"/>**. Permet de choisir [le mode d'orientation de la carte](../map/interact-with-map.md#map-orientation-modes) pour le profil sélectionné.
+      Applies the system theme. By default, and for all new users, the map style corresponds to the light or dark theme selected in your device's system settings.
+- **<Translate android="true" ids="rotate_map_to"/>**. Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
   - *<Translate android="true" ids="rotate_map_manual_opt"/>*
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*
   - *<Translate android="true" ids="rotate_map_north_opt"/>*
 
-- **<Translate android="true" ids="map_screen_orientation"/>**. Définit et verrouille la position de l'écran dans l'application OsmAnd. Cette fonctionnalité n'est pas prise en charge sur iPad.
+- **<Translate android="true" ids="map_screen_orientation"/>**. Sets and locks the screen position in the OsmAnd application. This feature is not supported on iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
   - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
   - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
-- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android uniquement*). Ouvre le menu de contrôle de l'écran, où vous pouvez sélectionner des options pour l'écran de l'appareil pendant la navigation afin d'économiser la consommation de la batterie de l'appareil.  
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android only*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
 
 
-### Unités et formats {#units--formats}
+### Units & Formats {#units--formats}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Paramètres généraux des profils Unités et formats Android](@site/static/img/personal/profiles/units_formats_android.png)
+![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres généraux des profils Unités et formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
+![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesure et les formats pour les aligner sur vos préférences personnelles et les normes régionales, garantissant que toutes les données sont affichées de manière pratique et familière.
+In the **Units and Formats** section, you can adjust measurement units and formats to align with your personal preferences and regional standards, ensuring all data is displayed conveniently and familiarly.
 
 
 <!--
@@ -202,7 +202,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 
 |  |  |  |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="driving_region"/>** | <Translate android="true" ids="shared_string_automatic"/> | <ul><li>Selon l'emplacement de l'appareil</li></ul> |
+| **<Translate android="true" ids="driving_region"/>** | <Translate android="true" ids="shared_string_automatic"/> | <ul><li>According to the device location</li></ul> |
 |            | <Translate android="true" ids="driving_region_europe_asia"/>   | <ul><li><Translate android="true" ids="right_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |            | <Translate android="true" ids="driving_region_us"/>   |  <ul><li><Translate android="true" ids="right_side_navigation"/></li><li><Translate android="true" ids="si_mi_feet"/></li></ul>  |
 |            | <Translate android="true" ids="driving_region_canada"/>   | <ul><li><Translate android="true" ids="right_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
@@ -212,379 +212,379 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
 | **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0,62 mi / 3281 ft (1000 m) |
-|          | <Translate android="true" ids="si_mi_meters"/> | 0,62 mi / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 mi (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>La longueur s'applique aux valeurs de distance horizontale (par ex., distances de conduite/de trajet et distances de manœuvre en navigation). |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Length applies to horizontal distance values (e.g., driving/route distances and maneuver distances in navigation).|
 |  |  |  |
-| **Altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>L'altitude s'applique aux valeurs d'altitude/élévation et aux métriques associées (montée/descente, plage d'altitude) dans les widgets Altitude, les informations de trajet de navigation, les statistiques de trace et les étiquettes d'élévation des sommets montagneux sur la carte.<br/>Par défaut, l'altitude est synchronisée avec la longueur et devient indépendante uniquement après modification manuelle par l'utilisateur. |
+| **Altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Altitude applies to altitude/elevation values and related metrics (uphill/downhill, altitude range) in Altitude widgets, Navigation route info, Track statistics, and mountain peak elevation labels on the map.<br/>By default, Altitude is synced with Length and becomes independent only after the user manually changes it. |
 |  |  |  |
-| **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Exemple : 50.12333° 19.93233° (Lat Long) |
-|          | <Translate android="true" ids="dd_mm_mmm_format"/> | Exemple : 50°7.393′ 19°55.941′ (Lat Long)  |
-|          | <Translate android="true" ids="dd_mm_ss_format"/> | Exemple : 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
+| **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
+|          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
+|          | <Translate android="true" ids="dd_mm_ss_format"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
-|          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Exemple : 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
-|          | <Translate android="true" ids="navigate_point_format_olc"/> | Exemple :  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) représente une zone de 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (version Android uniquement) | Exemple : 2 215 227.87, 830 915.9 ([Système de coordonnées suisse](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (version Android uniquement) | Exemple : 4 215 227.87, 1 830 915.9 ([Système de coordonnées suisse](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Example: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
+|          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Android version only) | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
 |  |  |  |
-| **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Degrés 180° | Toutes les valeurs angulaires ont des lectures de 0° à 180° et de 0° à -180°.  |
-|          | Degrés 360° | Toutes les valeurs angulaires ont des lectures de 0° à 360°.  |
-|          | <Translate android="true" ids="shared_string_milliradians"/> | Toutes les valeurs angulaires ont une [valeur en milliradians](https://en.wikipedia.org/wiki/Milliradian).  |
+| **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
+|          | Degrees 360° | All angular values have readings from 0° to 360°.  |
+|          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
 | **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/h  |
-|          | <Translate android="true" ids="si_mph"/> | 55,92 mph  |
+|          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
-|          | <Translate android="true" ids="si_min_m"/> | 1,073 min/m |
-|          | <Translate android="true" ids="si_min_km"/> | 0,667 min/km |
-|          | <Translate android="true" ids="si_nm_h"/> | 48,59 kn |
+|          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
+|          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
+|          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Asie, Amérique latine, Canada, Japon, Inde, Australie |
-|  | <Translate android="true" ids="imperial_gallons"/> | Royaume-Uni et similaires |
-|  | <Translate android="true" ids="us_gallons"/> | États-Unis |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
+|  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
+|  | <Translate android="true" ids="us_gallons"/> | United States |
 |  |  |  |
 | **<Translate android="true" ids="shared_string_temperature"/>**| <Translate android="true" ids="system_default_theme"/> |  |
 |  | <Translate android="true" ids="weather_temperature_celsius"/> |  |
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
-| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Pour des mesures précises*, choisissez comment les informations de distance sont affichées dans les widgets de navigation, comme la distance jusqu'à un point, le prochain virage ou une voie spécifique. |
-|          | <Translate android="true" ids="round_up"/> | *Pour une meilleure lisibilité*, les nombres affichés dans les widgets de navigation (distance jusqu'à un point, prochain virage ou voie) seront arrondis à la baisse pour avoir moins de chiffres. <br/> Par exemple : 3672 m *→* 3,6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
+| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *For precise measurements*, choose how distance information is displayed in the navigation widgets, such as the distance to a point, the next turn, or a specific lane. |
+|          | <Translate android="true" ids="round_up"/> | *For better readability*, the numbers displayed in the navigation widgets (distance to a point, next turn, or lane) will be rounded down to have fewer digits. <br/> For examples: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
-### Autre {#other}
+### Other {#other}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Autres paramètres généraux des profils Android](@site/static/img/personal/profiles/other_settings_android.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Autres paramètres généraux des profils iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
+![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-La section **Autre** fournit des paramètres de profil supplémentaires pour personnaliser l'interface et les commandes d'entrée d'OsmAnd. Ces paramètres vous permettent de configurer des appareils externes, d'ajuster les préférences d'animation et de basculer en mode plein écran.
+The **Other** section provides additional profile settings to customize OsmAnd’s interface and input controls. These settings allow you to configure external devices, adjust animation preferences, and toggle fullscreen mode.
 
-- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Connectez des contrôleurs externes tels que *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, ou *<Translate android="true" ids="sett_parrot_ext_input"/>* pour utiliser OsmAnd avec des boutons physiques.
+- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Connect external controllers such as *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, or *<Translate android="true" ids="sett_parrot_ext_input"/>* to operate OsmAnd using physical buttons.
 
-- **<Translate android="true" ids="position_animation"/>** / **Animer sa propre position** – L'icône de [position](../map/interact-with-map.md#my-position-and-zoom) s'anime à chaque point GPS reçu (une fois par seconde). Un léger retard dans son mouvement peut être perceptible, en particulier lors de déplacements rapides ou de fluctuations du signal GPS. Vous pouvez ajuster cet effet en utilisant le paramètre *Temps de prédiction* (Android uniquement) : des valeurs plus élevées augmentent la fluidité mais ajoutent du retard, des valeurs plus faibles réduisent le retard mais peuvent rendre le mouvement moins fluide.
+- **<Translate android="true" ids="position_animation"/>** / **Animate own position** – The [position](../map/interact-with-map.md#my-position-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting (Android only): higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android uniquement*) – Activez ou désactivez la possibilité d'utiliser les boutons de volume de votre appareil pour [zoomer](../map/interact-with-map.md#my-position-and-zoom) sur la carte.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android only*) – Enable or disable the ability to use your device’s volume buttons for [zooming](../map/interact-with-map.md#my-position-and-zoom) in and out on the map.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Android uniquement*) – Lisse la rotation de la carte avec un [mouvement progressif](https://en.wikipedia.org/wiki/Kalman_filter), réduisant les changements de position brusques. Cela introduit un petit délai (*moins d'une seconde*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
 
 <!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
-- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Android uniquement*) – Appuyez sur un espace vide de la carte pour masquer les boutons de contrôle et les widgets, maximisant la visibilité de la carte.
+- **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Android only*) – Tap an empty space on the map to hide control buttons and widgets, maximizing map visibility.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Android uniquement*) – Désactivez les animations en mode navigation pour des transitions d'écran plus rapides.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Android only*) – Disable animations in navigation mode for faster screen transitions.
 
 
 
-## Paramètres de navigation {#navigation-settings}
+## Navigation Settings {#navigation-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Paramètres de navigation iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Pour un aperçu détaillé des options de navigation, consultez l'article [Paramètres de navigation](../navigation/guidance/navigation-settings.md), qui explique comment configurer OsmAnd pour une expérience de navigation optimale.
+For a detailed overview of navigation options, refer to the [Navigation Settings](../navigation/guidance/navigation-settings.md) article, which explains how to configure OsmAnd for an optimal navigation experience.
 
-- [Type de navigation](../navigation/guidance/navigation-settings.md#navigation-type) - Choisissez le mode de navigation approprié en fonction de votre méthode de déplacement et de la disponibilité d'Internet.
+- [Navigation type](../navigation/guidance/navigation-settings.md#navigation-type) - Choose the appropriate navigation mode based on your travel method and internet availability.
 
-- [Paramètres de l'itinéraire](../navigation/guidance/navigation-settings.md#route-parameters) - Définissez comment OsmAnd calcule les itinéraires, y compris les préférences pour éviter certaines routes ou sélectionner des types d'itinéraires.
+- [Route parameters](../navigation/guidance/navigation-settings.md#route-parameters) - Define how OsmAnd calculates routes, including preferences for avoiding certain roads or selecting route types.
 
-- [Alertes à l'écran](../navigation/guidance/navigation-settings.md#screen-alerts) - Activez le *Widget d'alertes* pour afficher des notifications en temps réel pour les limitations de vitesse, les virages et autres conditions routières importantes.
+- [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts) - Enable the *Alerts Widget* to display real-time notifications for speed limits, turns, and other important road conditions.
 
-- [Instructions vocales](../navigation/guidance/navigation-settings.md#voice-prompts) - Activez le guidage audio pour recevoir des instructions de navigation parlées en conduisant ou en marchant le long d'un itinéraire sélectionné.
+- [Voice prompts](../navigation/guidance/navigation-settings.md#voice-prompts) - Enable audio guidance to receive spoken navigation instructions while driving or walking along a selected route.
 
-- [Paramètres du véhicule](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Configurez les paramètres spécifiques au véhicule tels que la vitesse maximale et la hauteur du véhicule pour garantir un itinéraire précis et éviter les routes à accès restreint.
+- [Vehicle parameters](../navigation/guidance/navigation-settings.md#vehicle-parameters) – Configure vehicle-specific settings such as maximum speed and vehicle height to ensure accurate routing and avoid restricted roads.
 
-- [Personnaliser la ligne de l'itinéraire](../navigation/guidance/navigation-settings.md#customize-route-line) – Ajustez la couleur, la largeur et le style de la ligne de l'itinéraire affichée sur la carte pour une meilleure visibilité pendant la navigation.
+- [Customize route line](../navigation/guidance/navigation-settings.md#customize-route-line) – Adjust the color, width, and style of the route line displayed on the map for better visibility during navigation.
 
-- [Carte pendant la navigation](../navigation/guidance/navigation-settings.md#map-during-navigation) – Affichez le positionnement en temps réel sur la carte, suivez la progression le long de l'itinéraire et améliorez l'orientation à l'aide de points de repère.
+- [Map during navigation](../navigation/guidance/navigation-settings.md#map-during-navigation) – View real-time positioning on the map, track progress along the route, and improve orientation using landmarks.
 
-- [Guidage détaillé de la trace](../navigation/guidance/navigation-settings.md) – Améliorez la navigation virage par virage en alignant votre itinéraire sur les routes cartographiées. Paramètres disponibles : *Demander à chaque fois* ou *Toujours*.
+- [Detailed track guidance](../navigation/guidance/navigation-settings.md) – Improve turn-by-turn navigation by aligning your route with mapped roads. Available settings: *Ask Every Time* or *Always*.
 
 :::info
-Il n'y a pas de paramètres de navigation dans le profil *Parcourir la carte*.  
+There are no navigation settings in the *Browse map* profile.  
 :::
 
 
-## Configurer la carte {#configure-map}
+## Configure Map {#configure-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>*  
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ Configurer la carte*
+- *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ Configure map*
 
-![Paramètres de configuration de la carte des profils Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
+![Profiles Configure map Settings Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
 
-![Paramètres de configuration de la carte des profils iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
+![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Le menu [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) vous permet de personnaliser les paramètres d'affichage de la carte pour le profil sélectionné, permettant une meilleure visualisation des éléments clés de la carte.  
+The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) menu allows you to customize the map display settings for the selected profile, enabling better visualization of key map elements.  
 
-Avec ce menu, vous pouvez :
+With this menu, you can:
 
-- **Mettre en évidence les éléments importants de la carte**, y compris les [points favoris](../personal/favorites.md), les [marqueurs de navigation](../personal/markers.md), ou les [Points d'Intérêt](../map/point-layers-on-map.md#points-of-interest-pois) spéciaux sur la carte.
+- **Highlight important map elements**, including [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md), or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-pois) on the map.
 
-- **Afficher des itinéraires spécifiques et des fichiers GPX**, y compris des traces de tiers pour la navigation ou l'analyse.
+- **Display specific routes and GPX files**, including third-party tracks for navigation or analysis.
 
-- **Superposer des couches de carte supplémentaires**, telles que des [informations de terrain](../plugins/topography.md), des **images satellites**, ou d'autres [cartes raster](../map/raster-maps.md) disponibles.
+- **Overlay additional map layers**, such as [terrain information](../plugins/topography.md), **satellite imagery**, or other available [raster maps](../map/raster-maps.md).
 
-- **Activer la visualisation des transports en commun**, montrant les [itinéraires et arrêts](../map/public-transport.md) pour une meilleure planification de voyage.
+- **Enable public transport visualization**, showing [routes and stops](../map/public-transport.md) for better trip planning.
 
-- **Ajuster l'apparence de la carte** en sélectionnant un [style de carte](../map/map-styles.md) différent pour répondre à vos besoins.
+- **Adjust map appearance** by selecting a different [map style](../map/map-styles.md) to match your needs.
 
 
-## Configurer l'écran {#configure-screen}
+## Configure Screen {#configure-screen}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-- Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-- Allez à : *Menu → Paramètres → Profil de l'app → Configurer l'écran*
+- Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+- Go to: *Menu → Settings → App Profile → Configure screen*
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Menu Configurer l'écran](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Le [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) est un menu qui vous permet de configurer les widgets pour le profil sélectionné à afficher sur la carte. Sur cet écran, vous pouvez activer et configurer les widgets [d'information](../widgets/info-widgets.md) et de [navigation](../widgets/nav-widgets.md), ainsi que d'autres éléments.
+The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) is a menu that allows you to configure the widgets for the selected profile to be displayed on the map. On this screen, you can enable and configure [Informational](../widgets/info-widgets.md) and [Navigational](../widgets/nav-widgets.md) widgets, as well as other items.
 
 
-## Apparence du profil {#profile-appearance}
+## Profile Appearance {#profile-appearance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Apparence des profils](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Apparence des profils](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
-Les paramètres **Apparence du profil** vous permettent de personnaliser le nom et la représentation visuelle de votre profil. Vous pouvez également modifier l'apparence de [Ma position](#my-location-appearance) ici. Bien que le *nom du profil* doive être unique, les *icônes* et les *couleurs* peuvent être les mêmes pour différents profils. Ces modifications seront appliquées dans diverses parties de l'application, comme le menu de [Préparation de l'itinéraire](../navigation/setup/route-navigation.md).
+The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [My Location](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [Route preparation](../navigation/setup/route-navigation.md) menu.
 
 
-## Apparence de Ma position {#my-location-appearance}
+## My Location Appearance {#my-location-appearance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Apparence de Ma position](@site/static/img/personal/profiles/location_appearance_andr.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
-Les paramètres **Apparence de Ma position** vous permettent de personnaliser la façon dont votre position est affichée sur la carte, que ce soit à l'arrêt (Repos) ou en mouvement (Navigation). Le mouvement est détecté par le système d'exploitation lorsque la vitesse de l'appareil est **supérieure à zéro**.
+The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary (Resting) and in motion (Navigation). Motion is detected by the operating system when the device speed is **greater than zero**.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Apparence de Ma position](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
 
-Les paramètres **Apparence de Ma position** vous permettent de personnaliser la façon dont votre position est affichée sur la carte, que ce soit à l'arrêt (Repos) ou en mouvement (Navigation). Le mouvement est détecté par le système d'exploitation lorsque la vitesse de l'appareil est **supérieure à zéro**.
+The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary (Resting) and in motion (Navigation). Motion is detected by the operating system when the device speed is **greater than zero**.
 
-Utilisez **<Translate ios="true" ids="icon_size"/>** pour ajuster la taille de l'icône de position Ma position indépendamment de la taille du texte de l'application. Vous pouvez définir des tailles différentes pour les modes Repos et Navigation. La taille peut être ajustée de 50 % à 300 % (50, 75, 100, 125, 150, 200, 250, 300 %). La valeur par défaut est de 100 %. Appuyez sur <Translate ios="true" ids="icon_size"/> pour ouvrir les paramètres de taille, puis utilisez le curseur ou les boutons de pas + / – pour modifier la valeur. Utilisez **<Translate ios="true" ids="reset_to_default"/>** pour revenir à 100 %.
+Use **<Translate ios="true" ids="icon_size"/>** to adjust the size of the My Location position icon independently from the app’s text size. You can set different sizes for Resting and Navigation modes. The size can be adjusted from 50% to 300% (50, 75, 100, 125, 150, 200, 250, 300%). The default value is 100%. Tap Icon size to open the size settings, then use the slider or the + / – step buttons to change the value. Use **<Translate ios="true" ids="reset_to_default"/>** to return to 100%.
 
 </TabItem>
 
 </Tabs>
 
 
-### Angle de vue et rayon de localisation {#view-angle-and-location-radius}
+### View Angle and Location Radius {#view-angle-and-location-radius}
 
-Vous pouvez personnaliser les éléments visuels liés à votre position et les appliquer séparément ou ensemble pour les positions **À l'arrêt** et **Navigation**. Pour les modes 2D et 3D, l'*Angle de vue* et le *Rayon de localisation* sont affichés dans la même couleur sélectionnée pour le [profil de navigation](#profile-appearance), directement sous l'icône [Ma position](../map/interact-with-map.md#my-position-and-zoom).
+You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My position](../map/interact-with-map.md#my-position-and-zoom) icon.
 
-- **<Translate android="true" ids="view_angle"/>** – Affiche une zone en **forme de cône** indiquant la direction dans laquelle vous faites face actuellement.  
-- **<Translate android="true" ids="location_radius"/>** – Affiche une **zone circulaire** autour de votre icône, représentant la précision de votre position actuelle.
+- **<Translate android="true" ids="view_angle"/>** – Displays a **cone-shaped** area indicating the direction you are currently facing.  
+- **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.
 
 
-### Icônes 3D personnalisées {#custom-3d-icons}
+### Custom 3D Icons {#custom-3d-icons}
 
-Pour une expérience plus personnalisée, vous pouvez créer et ajouter des **icônes 3D personnalisées** à OsmAnd.  
+For a more personalized experience, you can create and add **custom 3D icons** to OsmAnd.  
 
-***Comment ajouter une icône de localisation 3D personnalisée :***
+***How to add a custom 3D location icon:***
 
-1. **Créez un modèle 3D**. Concevez votre icône aux formats [MTL et OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
+1. **Create a 3D model**. Design your icon in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
 
-2. **Intégrez le modèle dans OsmAnd :**  
-   - Développez un [plugin personnalisé](../plugins/custom.md) en utilisant l'[exemple de plugin](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) fourni.  
-   - Placez vos fichiers d'icônes 3D dans les chemins suivants :  
+2. **Integrate the model into OsmAnd:**  
+   - Develop a [custom plugin](../plugins/custom.md) using the provided [plugin example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf).  
+   - Place your 3D icon files in the following paths:  
 
      `..osmand/models/icon_folder_name/custom_3d_file.mtl`  
      `..osmand/models/icon_folder_name/custom_3d_file.obj`
 
-   - Alternativement, copiez les fichiers **MTL et OBJ** directement dans le dossier OsmAnd en utilisant la même structure de répertoires.  
+   - Alternatively, copy the **MTL and OBJ files** directly into the OsmAnd folder using the same directory structure.  
 
-### Modes d'orientation de la carte {#map-orientation-modes-my-location}
+### Map Orientation Modes {#map-orientation-modes-my-location}
 
-Vous pouvez contrôler le comportement de l'icône **Ma position** en utilisant différents [modes d'orientation de la carte](../widgets/map-buttons.md#compass).  
+You can control how the **My Location** icon behaves using different [map orientation modes](../widgets/map-buttons.md#compass).  
 
-- Si l'icône de localisation **bouge ou tourne** à l'arrêt, passez du **Mode Direction du mouvement** ([Rotation de la carte par relèvement](../map/interact-with-map.md#rotate-map-by-bearing)) à un autre mode.  
-- Ajustez les paramètres supplémentaires dans *Menu → Paramètres → Profils de l'app → Apparence du profil → Options*.
-- Apprenez-en plus sur le suivi du relèvement et de la direction dans la section [Widget de relèvement](../widgets/nav-widgets#bearing-widget).  
+- If the location icon **jiggles or rotates** while stationary, switch from **Movement Direction Mode** ([Rotate Map by Bearing](../map/interact-with-map.md#rotate-map-by-bearing)) to another mode.  
+- Adjust additional settings in *Menu → Settings → App Profiles → Profile Appearance → Options*.
+- Learn more about bearing and direction tracking in the [Bearing Widget](../widgets/nav-widgets#bearing-widget) section.  
 
 
-## Personnalisation de l'interface utilisateur {#ui-customization}
+## UI Customization {#ui-customization}
 
 <InfoAndroidOnly />
 
-:::note Pour les plugins non utilisés
-Pour masquer tous les paramètres de contrôle des [plugins](../plugins/index.md#configure-plugin) non utilisés, désactivez-les.
+:::note For unused plugins
+To hide all control parameters of unused [plugins](../plugins/index.md#configure-plugin), disable them.
 :::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
-![Personnalisation de l'interface utilisateur du profil Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
+![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
-Avec la fonction de personnalisation de l'interface utilisateur, vous pouvez ajuster le nombre d'éléments dans des actions telles que le [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) et les [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Des informations sur le nombre d'éléments ajoutés par rapport à tous les éléments possibles se trouvent sous le titre de chaque fonctionnalité.
-
-
-### Tiroir {#drawer}
-
-![Tiroir du profil Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Réinitialisation du profil Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
-
-- **Principaux éléments visibles** - Dans la section *Personnaliser l'interface utilisateur*, vous pouvez *réorganiser, masquer et restaurer* les éléments du [Tiroir](../start-with/main-menu.md#customize-advanced-use-of-android) pour correspondre à vos préférences.
-
-- **<Translate android="true" ids="reset_to_default"/>** - Restaure la *liste originale des éléments* dans le tiroir, annulant instantanément toutes les personnalisations.
-
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Vous permet de copier la *disposition du tiroir* d'un autre profil OsmAnd pour maintenir une configuration cohérente entre les profils.
-
-### Configuration de la carte {#configuring-the-map}
-
-![Menu Configurer la carte du profil Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Menu Configurer la carte du profil Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
-
-- **Menu Configurer la carte** - Dans la section *Personnaliser l'interface utilisateur*, vous pouvez *réorganiser ou masquer des éléments* du menu [Configurer la carte](../map/configure-map-menu.md), permettant un accès rapide aux paramètres fréquemment utilisés.
-
-- **<Translate android="true" ids="reset_to_default"/>** - Restaure la *liste d'éléments originale* dans le menu Configurer la carte, supprimant toutes les modifications.
-
-- **<Translate android="true" ids="copy_from_other_profile"/>** - Copie la *disposition du menu Configurer la carte* d'un autre profil OsmAnd.
+With the UI customization feature, you can adjust the number of items in actions such as [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) and [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature.
 
 
-### Actions du menu contextuel {#context-menu-actions}
+### Drawer {#drawer}
 
-![Menu contextuel du profil Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Réinitialisation du menu Configurer la carte du profil Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
-- **Menu contextuel de la carte** - Dans la section Personnaliser l'interface utilisateur, vous pouvez réorganiser ou masquer des éléments dans le [menu contextuel de la carte](../map/map-context-menu.md) pour optimiser l'accès aux fonctionnalités fréquemment utilisées.
+- **Main visible items** - In the *Customize UI* section, you can *reorder hide, and restore* items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android) to match your preferences.
 
-- **<Translate android="true" ids="reset_to_default"/>** – Restaure la *liste d'éléments par défaut* dans le menu contextuel de la carte, annulant instantanément toutes les modifications.
+- **<Translate android="true" ids="reset_to_default"/>** - Restores the *original list of items* in the drawer, instantly undoing any customizations.
 
-- **<Translate android="true" ids="copy_from_other_profile"/>** – Copie la *disposition du menu contextuel* d'un autre profil OsmAnd pour maintenir la cohérence entre les différents profils.
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Allow you to copy the *drawer layout* from another OsmAnd profile to maintain a consistent setup across profiles.
+
+### Configuring the Map {#configuring-the-map}
+
+![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+
+- **Configure map menu** - In the *Customize UI* section, you can *reorder or hide items* from the [Configure map](../map/configure-map-menu.md), allowing quick access to frequently used settings.
+
+- **<Translate android="true" ids="reset_to_default"/>** - Restores the *original item list* in the Configure map menu, removing any changes.
+
+- **<Translate android="true" ids="copy_from_other_profile"/>** - Copies the *Configure map menu layout* from another OsmAnd profile.
 
 
-## Paramètres des plugins {#plugin-settings}
+### Context Menu Actions {#context-menu-actions}
 
-:::caution Accès aux paramètres des plugins
-Pour accéder aux paramètres du plugin, vous devez d'abord [**activer le plugin**](../plugins/index.md#enable--disable) dans la *section Plugins du menu principal*.
+![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+
+- **Map context menu** - In the Customize UI section, you can reorder or hide items in the [map context menu](../map/map-context-menu.md) to optimize access to frequently used features.
+
+- **<Translate android="true" ids="reset_to_default"/>** – Restores the *default item list* in the map context menu, instantly reverting any modifications.
+
+- **<Translate android="true" ids="copy_from_other_profile"/>** – Copies the *context menu arrangement* from another OsmAnd profile to maintain consistency across different profiles.
+
+
+## Plugin Settings {#plugin-settings}
+
+:::caution Access to plugin settings
+To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the main menu*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
 
-![Plugins des paramètres du profil Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
+![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
-![Plugins des paramètres du profil iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
+![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Les plugins débloquent des fonctionnalités supplémentaires de l'application et peuvent être [payants ou gratuits](../plugins/index.md#purchase). Certains plugins ont leurs propres [paramètres](../plugins/index.md#plugin-settings), d'autres non. OsmAnd vous donne la possibilité de configurer les plugins pour chaque profil séparément.
+Plugins unlock additional features of the application and can be either [paid or free](../plugins/index.md#purchase). Some plugins have their own [settings](../plugins/index.md#plugin-settings), others do not. OsmAnd gives you the possibility to configure plugins for each profile separately.
 
 
-- **Enregistrement de trajet**. Cet élément ouvre les [paramètres d'enregistrement de trajet](../plugins/trip-recording.md#recording-settings) pour le profil sélectionné, où vous pouvez choisir n'importe quel paramètre pour enregistrer vos trajets.
+- **Trip Recording**. This item opens the [trip recording settings](../plugins/trip-recording.md#recording-settings) for the selected profile, where you can choose any parameters for recording your journeys.
 
-- **Météo**. Les couches de carte interactives [Météo](../plugins/weather.md#weather-settings) vous permettent de surveiller la température, la pression atmosphérique, la couverture nuageuse, la vitesse du vent et les précipitations dans votre ville ou tout autre endroit sur une carte mondiale.
+- **Weather**. Interactive [Weather](../plugins/weather.md#weather-settings) map layers allow you to monitor the temperature, air pressure, cloud coverage, wind speed, and precipitation in your city or any other location on a global map.
 
-- **Notes audio / vidéo** (*Android uniquement*). Cet élément ouvre les [paramètres du plugin audio-vidéo](../plugins/audio-video-notes.md#plugin-settings) pour le profil sélectionné. Le plugin *Notes audio/vidéo* étend les fonctionnalités d'OsmAnd en vous permettant de créer vos notes sous divers formats tels que photo, vidéo ou audio et de les associer à une localisation géographique ou à votre position actuelle.  
+- **Audio / Video Notes** (*Android only*). This item opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. The *Audio/Video Notes* plugin extends the functionality of OsmAnd by allowing you to create your notes in various formats such as photo, video, or audio and associate them with geographical location or current location.  
 
-- **Édition OpenStreetMap**. Cet élément ouvre les [paramètres du plugin d'édition OpenStreetMap](../plugins/osm-editing.md#settings) pour le profil sélectionné. Avec OsmAnd et le plugin d'édition OSM, vous pouvez contribuer à OpenStreetMap.org en créant ou en modifiant des POI, en ajoutant ou en commentant des notes, et en téléchargeant des traces GPX enregistrées.
+- **OpenStreetMap Editing**. This item opens the [OpenStreetMap editing plugin settings](../plugins/osm-editing.md#settings) for the selected profile. With OsmAnd and the OSM editing plugin, you can contribute to OpenStreetMap.org by creating or modifying POIs, adding or commenting on notes, and uploading recorded GPX tracks.
 
-- **Capteurs externes**. Lorsque vous appuyez sur un élément dans la section *Paramètres des plugins*, les [paramètres des capteurs externes](../plugins/external-sensors.md#sensor-settings) pour le profil sélectionné sont ouverts. Le plugin Capteurs externes vous permet de lire et d'enregistrer des données provenant de capteurs externes sans fil et de les afficher à l'aide de widgets dans l'application OsmAnd.
+- **External Sensors**. When you tap an item in the *Plugin Settings* section, the [settings of external sensors](../plugins/external-sensors.md#sensor-settings) for the selected profile are opened. The External Sensors plugin allows you to read and record data from wireless external sensors and display it using widgets in the OsmAnd application.
 
-- **Accessibilité** (*Android uniquement*). Cet élément ouvre les [paramètres du plugin Accessibilité](../plugins/accessibility.md#plugin-settings) pour le profil sélectionné. Les paramètres du plugin Accessibilité vous permettent de personnaliser l'application selon vos besoins. Tous les paramètres concernent le processus de navigation et sont définis individuellement pour chaque profil.
+- **Accessibility** (*Android only*). This item opens [Accessibility plugin settings](../plugins/accessibility.md#plugin-settings) for the selected profile. The Accessibility plugin settings allow you to customize the application according to your needs. All settings relate to the navigation process and are set individually for each profile.
 
-- **Développement OsmAnd**. Ce menu ouvre les [paramètres du plugin de développement OsmAnd](../plugins/development.md#plugin-settings), où vous pouvez configurer l'application OsmAnd à des fins de test ou explorer les fonctionnalités à venir. Ces paramètres sont destinés aux développeurs et ne sont pas nécessaires pour une utilisation normale de l'application.  
+- **OsmAnd Development**. This menu opens the [OsmAnd development plugin settings](../plugins/development.md#plugin-settings), where you can configure the OsmAnd application for testing purposes or explore upcoming features. These settings are intended for developers and are not required for normal use of the application.  
 
-  > ***La modification des paramètres du plugin de développement OsmAnd affecte tous les profils.***
+  > ***Changing the settings of the OsmAnd development plugin affects all profiles.***
 
-- **Wikipedia** (iOS uniquement). Ce menu ouvre les *[paramètres du plugin Wikipedia](../plugins/wikipedia.md#wikipedia-settings)*. Vous pouvez sélectionner la langue dans laquelle les articles seront affichés et choisir de télécharger ou non les images de Wikipedia. Avoir Wikipedia lors de votre voyage améliore votre expérience en fournissant des informations sur les lieux que vous visitez. Il fonctionne hors ligne et affiche les articles Wikipedia pertinents directement sur la carte en relation avec les points d'intérêt.
+- **Wikipedia** (iOS only). This menu opens *[Wikipedia plugin settings](../plugins/wikipedia.md#wikipedia-settings)*. You can select the language in which articles will be displayed and choose whether to download images from Wikipedia. Having Wikipedia on your trip enhances your experience by providing information about the places you visit. It works offline and displays relevant Wikipedia articles directly on the map related to points of interest.
 
-- **Métrique du véhicule**. Ce menu ouvre les *[paramètres du plugin Métriques du véhicule](../plugins/vehicle-metrics.md#scanner-settings)*. Il vous permet de connecter un scanner OBD-II à OsmAnd.
+- **Vehicle Metrics**. This menu opens *[Vehicle metrics plugin settings](../plugins/vehicle-metrics.md#scanner-settings)*. It allows you to connect OBD-II scanner to OsmAnd.
 
-- **Suivi de navire AIS** (Android uniquement). Ce menu ouvre les *[paramètres du plugin de suivi de navire AIS](../plugins/ais-tracker.md#plugin-settings)*. Ce plugin vous permet de connecter un traqueur AIS à OsmAnd.
+- **AIS vessel tracker** (Android only). This menu opens *[AIS vessel tracker plugin settings](../plugins/ais-tracker.md#plugin-settings)*. This plugin allows you to connect AIS tracker to OsmAnd.
 
 
 
@@ -594,34 +594,34 @@ Les plugins débloquent des fonctionnalités supplémentaires de l'application e
 
 <TabItem value="android" label="Android">
 
-![Paramètres des actions des profils Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
+![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres des actions des profils iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
+![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Actions avec le profil sélectionné :  
+Actions with selected profile:  
 
-- [Exporter le profil](https://osmand.net/docs/user/personal/import-export#export) - Exporter tous les paramètres du profil sélectionné au format OSF.
+- [Export profile](https://osmand.net/docs/user/personal/import-export#export) - Export all settings of the selected profile in OSF format.
 
-- **Copier depuis un autre profil** - Copie tous les paramètres d'un autre profil existant dans votre application OsmAnd.
+- **Copy from another profile** - Copies all settings from another existing profile in your OsmAnd application.
 
-- **Réinitialiser par défaut** - Ramène tous les paramètres à leur état initial.
+- **Reset to default** - Returns all settings to the initial state.
 
-- **Supprimer le profil** :
-    - Cette action n'est disponible que pour *Android* et uniquement pour un *profil personnalisé*.
-    - Les profils par défaut ne peuvent pas être supprimés.
-    - Pour ajouter un profil, allez à *Menu → Paramètres → Profils de l'app → + Nouveau profil*.
+- **Delete profile**:
+    - This action is available only for *Android* and only for a *Custom profile*.
+    - Default profiles cannot be deleted.
+    - To add a profile, go to *Menu → Settings → App profiles → + New profile*.
 
 
-## Articles connexes {#related-articles}
+## Related Articles {#related-articles}
 
-- [Gérer les traces](../personal/tracks/manage-tracks.md#import--export-track)
-- [Historique de recherche](../search/search-history.md#export-and-share)
-- [Schémas de palette de couleurs](../personal/color-palette-schemes.md)
+- [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
+- [Search History](../search/search-history.md#export-and-share)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)

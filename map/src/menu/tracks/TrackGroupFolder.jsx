@@ -4,6 +4,10 @@ import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import VirtualizedList from '../../frame/components/VirtualizedList';
+import { HEADER_SIZE } from '../../manager/GlobalManager';
+import gStyles from '../gstylesmenu.module.css';
 import {
     createTrackGroups,
     DEFAULT_GROUP_NAME,
@@ -33,6 +37,8 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
+    const [, height] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
     const [processingGroup, setProcessingGroup] = useState(false);
     const folderScrollRef = useRef(null);
     const folderDropZoneRef = useRef(null);
@@ -148,13 +154,27 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const isDropTarget = !!group && group.type !== SMART_TYPE && !smartf;
     const isFolderDropActive = isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
 
+    const folderRows = useMemo(
+        () => [
+            ...(groupItems ?? []),
+            ...(ctx.trackLoading?.length > 0 
+                ? ctx.trackLoading
+                       .filter((lt) => lt.folder === group?.fullName)
+                       .map((lt) => <TrackLoading key={lt.name} name={lt.name} />) 
+                : []),
+            ...(trackItems ?? []),
+        ],
+        [groupItems, trackItems, ctx.trackLoading, group?.fullName]
+    );
+
     return (
         <>
             <Box
                 id={`se-tracks-folder`}
+                className={gStyles.fixedColumn}
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
-                sx={{ overflow: 'hidden' }}
+                style={{ height: `${height - HEADER_SIZE}px` }}
                 {...clearGpxDragTarget}
             >
                 {group && (
@@ -167,19 +187,11 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                     />
                 )}
                 <Box
-                    ref={folderScrollRef}
+                    ref={listContainerRef}
+                    className={gStyles.scrollMainBlock}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        overflowX: 'hidden',
-                        overflowY: 'auto',
-                        minHeight: `${height - 120}px`,
-                        maxHeight: `${height - 120}px`,
-                    }}
                 >
-                    {groupItems}
                     <Box
                         ref={folderDropZoneRef}
                         className={`${dropOverlayStyles.dropZoneContent}${isDropTarget ? ` ${dropOverlayStyles.folderDropTarget}` : ''}`}
@@ -190,13 +202,13 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                             dropZoneRef={folderDropZoneRef}
                             scrollRef={folderScrollRef}
                         />
-                        {ctx.trackLoading?.length > 0 &&
-                            ctx.trackLoading
-                                .filter((lt) => lt.folder === group?.fullName)
-                                .map((lt) => {
-                                    return <TrackLoading key={lt.name} name={lt.name} />;
-                                })}
-                        {trackItems}
+                        <VirtualizedList
+                            outerRef={folderScrollRef}
+                            items={folderRows}
+                            renderItem={(row) => row}
+                            getItemKey={(row) => row.key}
+                            height={listHeight}
+                        />
                         <Box className={dropOverlayStyles.dropZoneSpacer} />
                     </Box>
                 </Box>

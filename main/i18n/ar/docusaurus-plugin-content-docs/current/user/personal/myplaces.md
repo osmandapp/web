@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title:  أماكني
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-**أماكني** هو المركز الرئيسي في تطبيق OsmAnd لإدارة وتخصيص جميع البيانات الشخصية. يمكنك استخدام هذا القسم لتنظيم [النقاط المفضلة](#favorites) التي تم تمييزها على أنها مهمة أو يتم زيارتها بشكل متكرر. تتيح علامة التبويب [المسارات](#tracks) عرض ملفات GPX واستيرادها وتسجيلها وإنشائها لمساعدتك في الاحتفاظ بسجل مفصل لمساراتك ورحلاتك. يمكنك أيضًا إدارة [تعديلات OpenStreetMap](#openstreetmap-edits) الخاصة بك، مما يسهل المساهمة في تحسينات الخريطة وتحديثاتها. يتيح ملحق [الملاحظات الصوتية/المرئية](#audiovideo-notes) والأدوات المصغرة لمستخدمي أندرويد إنشاء وحفظ ملاحظات الوسائط المتعددة المتعلقة بمواقع محددة، مما يضيف سياقًا لرحلاتهم.
+**أماكني** هو المركز الرئيسي في تطبيق OsmAnd لإدارة وتخصيص جميع البيانات الشخصية. يمكنك استخدام هذا القسم لتنظيم [النقاط المفضلة](#favorites) التي تم تمييزها على أنها مهمة أو يتم زيارتها بشكل متكرر. تتيح علامة التبويب [المسارات](#tracks) عرض ملفات GPX واستيرادها وتسجيلها وإنشائها لمساعدتك في الاحتفاظ بسجل مفصل لمساراتك ورحلاتك. يمكنك أيضًا إدارة [تعديلات OpenStreetMap](#openstreetmap-edits) الخاصة بك، مما يسهل المساهمة في تحسينات الخريطة وتحديثاتها. يتيح ملحق [الملاحظات الصوتية/المرئية](#audiovideo-notes) والأدوات المصغرة لمستخدمي أندرويد إنشاء وحفظ ملاحظات الوسائط المتعددة المتعلقة بمواقع محددة، مما يضيف سياقًا لرحلاتهم. على iOS، يوفر أماكني أيضًا إمكانية الوصول إلى [أدلة السفر](#travel-guides) المحفوظة، مما يتيح لك تنظيم محتوى السفر المحفوظ وفتحه بسرعة.
 
 ## قائمة أماكني {#my-places-menu}
 
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu"/> → أماكني*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
 ![أماكني أندرويد](@site/static/img/personal/my_places_android_new.png) ![قائمة أماكني أندرويد](@site/static/img/personal/my_places_menu_android_new.png)
 
@@ -36,9 +36,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu"/> → أماكني*  
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![أماكني iOS](@site/static/img/personal/my_places_ios_new.png)  ![قائمة أماكني iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![أماكني iOS](@site/static/img/personal/my_places_ios_2.png)  ![قائمة أماكني iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
 ![قائمة المفضلة أندرويد](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة المفضلة iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![قائمة المفضلة iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,7 +94,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -98,9 +102,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -235,10 +239,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. يعرض أو يستمع إلى الملاحظة الصوتية أو الفيديو أو الصورة المحددة مباشرة.
 - **<Translate android="true" ids="shared_string_share"/>**. يشارك الملاحظة مع الآخرين من خلال تطبيقات أو منصات مختلفة.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. يعرض الموقع ذي الصلة و [قائمة السياق](../plugins/audio-video-notes#show-on-the-map) للملاحظة على الخريطة.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. يعرض الموقع ذي الصلة و [قائمة السياق](../plugins/audio-video-notes#actions-in-map-context-menu) للملاحظة على الخريطة.
 - **<Translate android="true" ids="shared_string_rename"/>**. قم بتغيير اسم الملاحظة إلى شيء أكثر وصفًا أو صلة.
 - **<Translate android="true" ids="shared_string_delete"/>**. يتم حذف الملاحظات المحددة بشكل دائم من مجموعتك.
 -->
+
+### أدلة السفر (iOS) {#travel-guides}
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+
+![أدلة السفر iOS](@site/static/img/plan-route/my_places_ios.png)
+
+يحتوي قسم **السفر** على أدلة السفر ومقالاتها المحفوظة للوصول دون اتصال بالإنترنت. يمكنك فتح محتوى السفر المحفوظ وتنظيمه وإدارته بسرعة من أماكني. يظهر قسم السفر فقط عند حفظ أكثر من دليل سفر واحد.
+
+لمزيد من المعلومات التفصيلية، راجع مقالة [أدلة السفر](../plan-route/travel-guides.md).
 
 ## مقالات ذات صلة {#related-articles}
 
@@ -246,5 +260,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [المفضلة](../personal/favorites.md)
 - [تحرير OpenStreetMap](../plugins/osm-editing.md)
 - [الملاحظات الصوتية/المرئية](../plugins/audio-video-notes.md)
+- [أدلة السفر](../plan-route/travel-guides.md)
 - [سجل البحث](../search/search-history.md#export-and-share)
 - [مخططات لوحة الألوان](../personal/color-palette-schemes.md)

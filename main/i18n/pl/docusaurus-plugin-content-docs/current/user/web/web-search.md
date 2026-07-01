@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Wyszukiwanie
 title: Wyszukiwanie na stronie internetowej
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Menu Wyszukiwania** można otworzyć z panelu bocznego lub z ikony wyszukiwania 🔍 na mapie. Zawiera ono:
 
-- [Pasek wyszukiwania](#search-bar). Wprowadź słowa kluczowe, aby wyszukać określone lokalizacje lub punkty POI.  
+- [Pasek wyszukiwania](#search-bar). Wprowadź słowa kluczowe, aby wyszukać określone lokalizacje, punkty POI, ulubione lub ślady. 
 - [Sekcja Kategorie](#categories). Przeglądaj opcje podzielone na kategorie, aby ułatwić wyszukiwanie POI.  
 - [Sekcja Odkrywaj](#explore). Wyświetlaj popularne POI dla bieżącego centrum mapy i odkrywaj miejsca ze zdjęciami na mapie.
 
@@ -35,7 +35,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Pasek wyszukiwania {#search-bar}
 
-Użyj **paska wyszukiwania**, aby znaleźć określone miejsca lub punkty POI po nazwie. Kliknij ikonę wyszukiwania, wprowadź zapytanie i wybierz wynik z listy. Wybranie POI otwiera [menu kontekstowe POI](#poi-context-menu), w którym możesz wyświetlić szczegóły i użyć szybkich akcji.
+Użyj **paska wyszukiwania**, aby znaleźć określone miejsca, punkty POI, [ulubione](../web/web-favorites.md) i [ślady](../web/web-tracks.md) po nazwie. Kliknij ikonę wyszukiwania, wprowadź zapytanie i wybierz wynik z listy. Wybranie POI otwiera [menu kontekstowe POI](#poi-context-menu), natomiast wybranie ulubionego lub śladu otwiera jego szczegóły, w których możesz wyświetlić informacje i korzystać z szybkich akcji.
 
 Jeśli wyszukujesz według nazwy kategorii, pierwszy wynik może pokazać odpowiadającą kategorię POI. Kliknij kategorię, aby otworzyć widok [wyszukiwania w kategoriach](#categories).
 
@@ -57,7 +57,7 @@ Otwórz kartę Wyszukiwania, aby uzyskać dostęp do Odkrywaj — wyniki Odkrywa
 
 ## Menu kontekstowe POI {#poi-context-menu}
 
-Bez względu na to, którą opcję wyszukiwania użyjesz (Pasek wyszukiwania, Kategorie lub Odkrywaj), wybranie POI na mapie lub na liście wyników otwiera menu kontekstowe POI. Menu kontekstowe to główne miejsce do wyświetlania informacji o POI i wykonywania typowych akcji. Łączy ono szczegóły POI (takie jak lokalizacja i powiązane dane) z szybkimi akcjami (na przykład zapisywanie, udostępnianie lub rozpoczynanie planowania trasy i nawigacji).
+Bez względu na to, którą opcję wyszukiwania użyjesz (Pasek wyszukiwania, Kategorie lub Odkrywaj), wybranie POI na mapie lub na liście wyników otwiera menu kontekstowe POI. Menu kontekstowe to główne miejsce do wyświetlania informacji o POI i wykonywania typowych akcji. Łączy ono szczegóły POI (takie jak lokalizacja i powiązane dane) z szybkimi akcjami (na przykład zapisywanie, udostępnianie lub rozpoczynanie nawigacji).
 
 ### Szczegóły POI {#poi-details}
 

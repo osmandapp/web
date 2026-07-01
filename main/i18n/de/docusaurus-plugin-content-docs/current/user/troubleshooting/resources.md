@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
@@ -28,7 +28,7 @@ Um sich mit anderen OsmAnd-Nutzern zu vernetzen, Fragen zu stellen und Ihre Erfa
 | Plattform | Gruppenname | Beschreibung | Link |
 | :-- | :-- | :-- | :-- |
 | Facebook | OsmAnd users community (*English*)  |  Dies ist eine Gruppe, in der OsmAnd-Nutzer anderen Nutzern helfen können.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
-|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte bleiben van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
 |  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
 |  Facebook | Osmand Italian's friends (*Italian*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
@@ -53,6 +53,7 @@ Die folgende Liste enthält Konverter für verschiedene von OsmAnd unterstützte
 | GPX zu KML | Werkzeug zur Konvertierung von OsmAnd *GPX*-Dateien in das *KML*-Format unter Beibehaltung der Symbole. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX zu OsmAnd | Python-Skript zur Konvertierung von iOverlander *GPX*-Dateien, die mit Symbolen nach OsmAnd exportiert wurden. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo-Karte in druckbare Form| Dies ist [ein Werkzeug](https://github.com/acui/osmand_topo_map_generator) zur Erstellung einer druckbaren topografischen Karte unter Verwendung von Screenshots aus OsmAnd (https://osmand.net). Die Karte verwendet das UTM-Gitter und enthält Deklinationsinformationen. Sie ist für die Verwendung mit einem Kompass oder einem GPS-Gerät mit UTM-Koordinaten vorgesehen.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar wirft von jedem Punkt eines GPX-Tracks einen Strahl in Richtung Sonne und prüft ihn gegen das Gelände und die Vegetation (0,5 m HD LiDAR / IGN) für ein bestimmtes Datum und eine bestimmte Uhrzeit. Meter für Meter zeigt es Ihnen Sonne oder Schatten an. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 
 ## Benutzerdefinierte Ressourcen {#custom-resources}
 
@@ -109,6 +110,7 @@ Die Standarddatei [render.xml](https://github.com/osmandapp/OsmAnd-resources/blo
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) ist ein Kartenstil von Holder Tamm, der es Ihnen ermöglicht, auszuwählen, ob bestimmte Objekte ausgeblendet werden sollen oder nicht.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Der ExplorerRS-Rendering-Stil](https://github.com/sykoram/OsmAnd-ExplorerRS) basiert hauptsächlich auf UniMap und routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Dies ist ein OsmAnd-Rendering-Stil, der für Storm Chasing optimiert ist](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Benutzerdefinierte Ressourcen des OsmAnd-Projekts zur Feinabstimmung des OsmAnd-Verhaltens. Hier definiert sind: Karten-Rendering-Stile, die in OsmAnd verwendet werden, aufgezeichnete und TTS-Stimmen, Konfiguration der Offline-Kartenerstellung, Routing-Parameter, Icon-Repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Offline-Karten {#offline-maps}
 

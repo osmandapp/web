@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -64,7 +64,7 @@ Uygulamayı açtığınızda, bir kategori listesi görüntülenir. Kolay gezinm
 - [Ara](#search). Düğmeye dokunmak, arama işlevlerine erişim sağlayan bir ekran açar.
 - [Konumum](../widgets/map-buttons.md#my-position-and-zoom). Haritanın görünür kısmını, mevcut konumunuzun ekranın merkezinde olacak şekilde hareket ettirir.
 - [Yakınlaştır](../widgets/map-buttons.md#my-position-and-zoom). Haritanın görünür kısmını yakınlaştırmanıza ve uzaklaştırmanıza olanak tanır. Harita ölçeklendirme için yakınlaştırma jesti kullanılabilir. Baş ünite tarafından desteklenmiyorsa, yakınlaştırma ayarı çift dokunma ve kaydırma jesti ile gerçekleştirilir.
-- [Pusula](../widgets/map-buttons.md#compass). Cihazınızın ekranında dört mevcut harita yönlendirme modundan hangisinin seçildiğini gösterir.
+- [Pusula](../widgets/map-buttons.md#compass). Cihazınızın ekranında dört mevcut harita yönlendirme modlarından hangisinin seçildiğini gösterir.
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
@@ -221,6 +221,8 @@ Favoriler ve İzler kategorilerinde özel bir *Son Değiştirilen* klasörü bul
 
 ### Rota Bilgisi {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Rota bilgileri şunlardan oluşur:
 
 - [Tahmini seyahat süresi](../widgets/nav-widgets.md#time-to-destination),
@@ -228,6 +230,8 @@ Rota bilgileri şunlardan oluşur:
 - [Seyahat mesafesi](../widgets/nav-widgets.md#distance-to-destination).
 
 Etkinleştirildiğinde, **[widget ayarı](#eta-next-stop)** (Rota bilgileri) bir sonraki durak ([ara nokta](../navigation/setup/route-navigation.md#intermediate-destinations)) için rota ayrıntılarını gösterecektir.
+
+Rota bilgileri widget'ının yanındaki **X** düğmesine dokunarak navigasyonu durdurun.
 
 
 ### Navigasyon Uyarıları {#navigation-alerts}

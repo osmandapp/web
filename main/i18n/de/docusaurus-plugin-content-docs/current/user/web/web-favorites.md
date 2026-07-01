@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ Die folgenden Aktionen sind verfügbar:
 - *Teilen* - Öffnet Teileoptionen. Sie können wählen, wer Zugriff auf diesen Ordner haben kann.
 - *Herunterladen* - Lädt den ausgewählten Favoritenordner herunter.
 - *Löschen* - Löscht den ausgewählten Favoritenordner.
+
+Wenn Sie einen Favoritenordner auswählen, zentriert die Karte automatisch und passt die Zoomstufe an, um alle Favoritenpunkte aus diesem Ordner im sichtbaren Kartenbereich anzuzeigen.
+
+Sie können auch die Schaltfläche **Fokus** verwenden, um alle anderen Favoriten und Tracks auf der Karte auszublenden und so die Überprüfung des ausgewählten Ordners zu erleichtern. Deaktivieren Sie den Fokus-Modus, um die Sichtbarkeit anderer Kartenobjekte wiederherzustellen.
 
 ### Teilen {#share}
 

@@ -4,6 +4,8 @@ import CloudTrackGroup from './CloudTrackGroup';
 import isEmpty from 'lodash-es/isEmpty';
 import { Box, LinearProgress, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import VirtualizedList from '../../frame/components/VirtualizedList';
 import CloudTrackItem from './CloudTrackItem';
 import { DEFAULT_GROUP_NAME, updateLoadingTracks } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
@@ -14,6 +16,7 @@ import { doSort } from '../actions/SortActions';
 import styles from '../trackfavmenu.module.css';
 import dropOverlayStyles from '../../frame/components/dropOverlay.module.css';
 import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
+import gStyles from '../gstylesmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
@@ -21,7 +24,7 @@ import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
-import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -41,6 +44,7 @@ export default function TracksMenu() {
     const location = useLocation();
 
     const [, height] = useWindowSize();
+    const [listContainerRef, listHeight] = useElementHeight();
 
     const { t } = useTranslation();
 
@@ -107,6 +111,61 @@ export default function TracksMenu() {
 
     const isRootDropActive = ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === '';
 
+    const trackMenuRows = useMemo(() => {
+        const rows = [
+            <MenuItem
+                key={'se-visible-tracks-menu'}
+                id={'se-visible-tracks-menu'}
+                divider
+                className={styles.item}
+                {...clearGpxDragTarget}
+                onClick={() => {
+                    setOpenVisibleTracks(true);
+                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
+                    ctx.setOpenVisibleMenu((prev) => ({
+                        ...prev,
+                        open: true,
+                        showTracks: true,
+                    }));
+                }}
+            >
+                <ListItemIcon className={styles.icon}>
+                    <VisibleIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" className={styles.groupName}>
+                        {t('shared_string_visible_on_map')}
+                    </Typography>
+                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                        {`Tracks ${getCountVisibleTracks(ctx.visibleTracks)}`}
+                    </Typography>
+                </ListItemText>
+            </MenuItem>,
+        ];
+        if (!isEmpty(ctx.shareWithMeFiles?.tracks)) {
+            rows.push(<SharedFolder key={'shared-folder'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />);
+        }
+        if (ctx.tracksGroups) {
+            (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)
+                .filter((g) => g.name !== DEFAULT_GROUP_NAME)
+                .forEach((group, index) => {
+                    rows.push(<CloudTrackGroup key={group.name} index={index} group={group} />);
+                });
+        }
+        if (ctx.trackLoading?.length > 0) {
+            ctx.trackLoading
+                .filter((lt) => lt.folder === DEFAULT_GROUP_NAME)
+                .forEach((lt) => {
+                    rows.push(<TrackLoading key={lt.name} name={lt.name} />);
+            });
+        }
+        if (defaultGroupItems) {
+            rows.push(...defaultGroupItems);
+        }
+
+        return rows;
+    }, [defaultGroupItems, sortGroups, ctx.tracksGroups, ctx.trackLoading, ctx.shareWithMeFiles, ctx.visibleTracks, clearGpxDragTarget]);
+
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
@@ -121,7 +180,12 @@ export default function TracksMenu() {
     }
 
     return (
-        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+        <Box
+            className={gStyles.fixedColumn}
+            minWidth={ctx.infoBlockWidth}
+            maxWidth={ctx.infoBlockWidth}
+            style={{ height: `${height - HEADER_SIZE}px` }}
+        >
             {ltx.loginUser && (
                 <GroupHeader
                     type="tracks"
@@ -138,47 +202,11 @@ export default function TracksMenu() {
                     {hasFiles ? (
                         <Box
                             id={'se-track-menu'}
-                            ref={trackMenuScrollRef}
+                            ref={listContainerRef}
+                            className={gStyles.scrollMainBlock}
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
-                            sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                         >
-                            <MenuItem
-                                id={'se-visible-tracks-menu'}
-                                divider
-                                className={styles.item}
-                                {...clearGpxDragTarget}
-                                onClick={() => {
-                                    setOpenVisibleTracks(true);
-                                    navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
-                                    ctx.setOpenVisibleMenu((prev) => ({
-                                        ...prev,
-                                        open: true,
-                                        showTracks: true,
-                                    }));
-                                }}
-                            >
-                                <ListItemIcon className={styles.icon}>
-                                    <VisibleIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <Typography variant="inherit" className={styles.groupName}>
-                                        {t('shared_string_visible_on_map')}
-                                    </Typography>
-                                    <Typography variant="body2" className={styles.groupInfo} noWrap>
-                                        {`Tracks ${getCountVisibleTracks(ctx.visibleTracks)}`}
-                                    </Typography>
-                                </ListItemText>
-                            </MenuItem>
-                            {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
-                                <SharedFolder subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
-                            )}
-                            {ctx.tracksGroups &&
-                                (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)
-                                    .filter((g) => g.name !== DEFAULT_GROUP_NAME)
-                                    .map((group, index) => {
-                                        return <CloudTrackGroup key={group.name} index={index} group={group} />;
-                                    })}
                             <Box
                                 ref={rootDropZoneRef}
                                 className={`${dropOverlayStyles.dropZoneContent} ${dropOverlayStyles.folderDropTarget}`}
@@ -189,13 +217,12 @@ export default function TracksMenu() {
                                     dropZoneRef={rootDropZoneRef}
                                     scrollRef={trackMenuScrollRef}
                                 />
-                                {ctx.trackLoading?.length > 0 &&
-                                    ctx.trackLoading
-                                        .filter((lt) => lt.folder === DEFAULT_GROUP_NAME)
-                                        .map((lt) => {
-                                            return <TrackLoading key={lt.name} name={lt.name} />;
-                                        })}
-                                {defaultGroupItems}
+                                <VirtualizedList
+                                    items={trackMenuRows}
+                                    renderItem={(row) => row}
+                                    getItemKey={(row) => row.key}
+                                    height={listHeight}
+                                />
                                 <Box className={dropOverlayStyles.dropZoneSpacer} />
                             </Box>
                         </Box>

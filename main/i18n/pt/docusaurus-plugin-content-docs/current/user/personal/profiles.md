@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
 sidebar_position: 4
 title: Perfis (Configurações)
 ---
@@ -33,7 +33,7 @@ OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes ativida
 
 <TabItem value="android" label="Android">
 
-- *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Navegar no mapa ou qualquer outro perfil)
+- *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Browse map or any other profile)
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
@@ -212,21 +212,21 @@ Na seção **Unidades e Formatos**, você pode ajustar as unidades de medida e o
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
 | **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0,62 mi / 3281 ft (1000 m) |
-|          | <Translate android="true" ids="si_mi_meters"/> | 0,62 mi / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0,62 mi (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>As unidades de comprimento se aplicam a valores de distância horizontal (por exemplo, distâncias de direção/rota e distâncias de manobra na navegação). |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Length applies to horizontal distance values (e.g., driving/route distances and maneuver distances in navigation).|
 |  |  |  |
-| **Altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>A altitude se aplica a valores de altitude/elevação e métricas relacionadas (subida/descida, faixa de altitude) em widgets de Altitude, informações de rota de Navegação, estatísticas de Rastreamento e rótulos de elevação de picos de montanha no mapa.<br/>Por padrão, Altitude está sincronizado com Comprimento e se torna independente apenas após o usuário alterá-lo manualmente. |
+| **Altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Altitude applies to altitude/elevation values and related metrics (uphill/downhill, altitude range) in Altitude widgets, Navigation route info, Track statistics, and mountain peak elevation labels on the map.<br/>By default, Altitude is synced with Length and becomes independent only after the user manually changes it. |
 |  |  |  |
-| **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Exemplo: 50.12333° 19.93233° (Lat Long) |
-|          | <Translate android="true" ids="dd_mm_mmm_format"/> | Exemplo: 50°7.393′ 19°55.941′ (Lat Long)  |
-|          | <Translate android="true" ids="dd_mm_ss_format"/> | Exemplo: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
-|          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zona Norte Leste) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
-|          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Exemplo: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
-|          | <Translate android="true" ids="navigate_point_format_olc"/> | Exemplo:  9F2X4WFJ+7W ([Código de Localização Aberta](https://en.wikipedia.org/wiki/Open_Location_Code) representa área 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Somente versão Android) | Exemplo: 2 215 227.87, 830 915.9 ([Sistema de coordenadas suíço](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Somente versão Android) | Exemplo: 4 215 227.87, 1 830 915.9 ([Sistema de coordenadas suíço](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+| **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
+|          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
+|          | <Translate android="true" ids="dd_mm_ss_format"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
+|          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
+|          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Example: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
+|          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Android version only) | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Graus 180° | Todos os valores angulares têm leituras de 0° a 180° e de 0° a -180°.  |
 |          | Graus 360° | Todos os valores angulares têm leituras de 0° a 360°.  |
@@ -239,7 +239,7 @@ Na seção **Unidades e Formatos**, você pode ajustar as unidades de medida e o
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Ásia, América Latina, Canadá, Japão, Índia, Austrália |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Aisa, América Latina, Canadá, Japão, Índia, Austrália |
 |  | <Translate android="true" ids="imperial_gallons"/> | Reino Unido e similares |
 |  | <Translate android="true" ids="us_gallons"/> | Estados Unidos |
 |  |  |  |
@@ -416,7 +416,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,p
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 

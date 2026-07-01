@@ -1,9 +1,18 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import { osmandTileURL } from '../baseTileURL';
+import { isWebGLAvailable } from '../mvt/MvtDemoConfig';
+import {
+    ensureLeafletPane,
+    setMapHybridVisibility,
+    setStyleHybridVisibility,
+    useHybridUnderlayUrl,
+} from './MvtHybridDemo';
 
 const POPUP_MAX_HEIGHT = 220;
 const SHOW_TILE_BOUNDARIES = true;
@@ -18,7 +27,7 @@ function getPublicAssetUrl(path) {
     return new URL(getPublicAssetPath(path), window.location.origin).toString();
 }
 
-function createStyle(baseStyle, tileUrl) {
+function createStyle(baseStyle, tileUrl, options = {}) {
     const style = JSON.parse(JSON.stringify(baseStyle));
     style.sources = {
         ...style.sources,
@@ -29,6 +38,9 @@ function createStyle(baseStyle, tileUrl) {
     };
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
+    if (options.hideHybridLayers) {
+        setStyleHybridVisibility(style, 'none');
+    }
     return style;
 }
 
@@ -122,10 +134,16 @@ function createTagsPopupContent(properties, popupClassName) {
 
 export default function MvtLayer({ config }) {
     const map = useMap();
+    const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const hybridUnderlayUrl = useHybridUnderlayUrl();
+    const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
+    const maplibreMapRef = useRef(null);
+
+    hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
     useEffect(() => {
-        const { style, tileUrl, isActive, popupClassName, errorLabel } = config;
+        const { style, tileUrl, isActive, popupClassName, errorLabel, pane: paneName, paneZIndex } = config;
 
         if (!isActive(mtx.tileURL)) {
             return undefined;
@@ -133,14 +151,36 @@ export default function MvtLayer({ config }) {
 
         window.seIsTilesLoaded = false;
 
+        if (!isWebGLAvailable()) {
+            window.seIsTilesLoaded = true;
+            console.warn(`${errorLabel}: WebGL is not available`);
+            mtx.setTileURL(osmandTileURL);
+            mtx.setRenderingType(null);
+            const configureMap = {
+                ...ctx.configureMapState,
+                mapStyle: { tileURL: osmandTileURL, renderingType: null },
+            };
+            updateConfigureMapCache(configureMap);
+            ctx.setConfigureMapState(configureMap);
+            return undefined;
+        }
+
+        if (paneName) {
+            ensureLeafletPane(map, paneName, paneZIndex);
+        }
+
         const glLayer = L.maplibreGL({
-            style: createStyle(style, tileUrl),
+            style: createStyle(style, tileUrl, {
+                hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
+            }),
             interactive: false,
             fadeDuration: 0,
+            ...(paneName ? { pane: paneName } : {}),
         }).addTo(map);
 
         const maplibreMap = glLayer.getMaplibreMap();
-        maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES;
+        maplibreMapRef.current = maplibreMap;
+        maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
         const sources = getMvtSources(config).map((source) => ({
@@ -202,16 +242,20 @@ export default function MvtLayer({ config }) {
             }
         };
 
-        map.on('click', handleMapClick);
-        map.on('popupclose', handlePopupClose);
+        if (ctx.develFeatures === true) {
+            map.on('click', handleMapClick);
+            map.on('popupclose', handlePopupClose);
+        }
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
         maplibreMap.on('error', handleError);
 
         return () => {
             window.seIsTilesLoaded = true;
-            map.off('click', handleMapClick);
-            map.off('popupclose', handlePopupClose);
+            if (ctx.develFeatures === true) {
+                map.off('click', handleMapClick);
+                map.off('popupclose', handlePopupClose);
+            }
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
@@ -222,9 +266,31 @@ export default function MvtLayer({ config }) {
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );
+            maplibreMapRef.current = null;
             map.removeLayer(glLayer);
         };
-    }, [map, mtx.tileURL, config]);
+    }, [map, mtx.tileURL, config, ctx.develFeatures]);
+
+    useEffect(() => {
+        const maplibreMap = maplibreMapRef.current;
+        if (!maplibreMap || !config.isActive(mtx.tileURL)) {
+            return undefined;
+        }
+
+        const applyVisibility = () => {
+            setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
+        };
+
+        if (maplibreMap.isStyleLoaded()) {
+            applyVisibility();
+            return undefined;
+        }
+
+        maplibreMap.once('idle', applyVisibility);
+        return () => {
+            maplibreMap.off('idle', applyVisibility);
+        };
+    }, [config, mtx.tileURL, hybridUnderlayUrl]);
 
     return null;
 }

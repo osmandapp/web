@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
 sidebar_position: 16
 title: Topografía
 ---
@@ -204,19 +204,19 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-La opción **Terreno** habilita y permite personalizar tres características como *Sombreado de relieve*, *Pendiente* y *Altitud*.  
+La opción **Terreno** habilita y permite personalizar tres características como *Sombreado de relieve*, *Pendiente* y *Altitud*. En iOS, el menú de Visualización también incluye *Sombras de terreno*, un modo de sombreado de terreno en tiempo real basado en Relieve 3D.  
 Características específicas:  
 
-- Solo se puede habilitar una opción a la vez, ya sea Sombreado de relieve, Pendiente o Altitud.
+- Solo se puede habilitar una opción a la vez, ya sea Sombreado de relieve, Pendiente, Altitud o Sombras de terreno.
 - Si no ves ningún cambio después de descargar y habilitar el mapa correspondiente, se recomienda reiniciar la aplicación.
 
-El menú **Terreno** incluye la selección del [esquema de color](#default-color-scheme) con la opción de [modificarlo](#modify-color-scheme) (para [suscriptores Pro](../../user/purchases/index.md)), la capacidad de cambiar la transparencia de la capa en el mapa ([visibilidad](#visibility)), y seleccionar el [nivel de zoom](#zoom-levels) para su visualización, información sobre el tamaño de los [datos en caché](#cache-size), y una lista de [mapas](../../user/personal/maps-resources.md) necesarios para mostrar la capa.
+El menú **Terreno** incluye la selección del [esquema de color](#default-color-scheme) (**visualización** en iOS) con la opción de [modificarlo](#modify-color-scheme) (para [suscriptores Pro](../../user/purchases/index.md)), la capacidad de cambiar la transparencia de la capa en el mapa ([visibilidad](#visibility)), y seleccionar el [nivel de zoom](#zoom-levels) para su visualización, información sobre el tamaño de los [datos en caché](#cache-size), y una lista de [mapas](../../user/personal/maps-resources.md) necesarios para mostrar la capa.
 
 
 ## Capas de Sombreado, Pendiente y Altitud {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Los mapas raster de **Sombreado de relieve**, **Pendiente** y **Altitud** se cre
 - *Navegación.* Ayuda a identificar pendientes pronunciadas, tanto de bajada como de subida, lo que puede ser crucial para una navegación segura.
 - *Planificar rutas.* Ayuda a elegir las rutas más adecuadas, considerando el terreno.
 - *Estimación del terreno.* Es conveniente para visualizar el paisaje, especialmente si estás caminando o en bicicleta.
+
+
+### Sombras de terreno (iOS) {#terrain-shadows}
+
+![Sombras de terreno iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Sombras de terreno** proporciona sombreado dinámico en tiempo real basado en la geometría del terreno 3D. A diferencia de los mapas raster de Sombreado de relieve, el efecto de sombreado se genera directamente en el dispositivo utilizando datos del terreno y sigue automáticamente la perspectiva actual del mapa.
+
+Sombras de terreno requiere Relieve 3D y lo habilita automáticamente cuando se selecciona. La función está diseñada para mejorar la legibilidad del terreno manteniendo un bajo impacto en el rendimiento.
 
 
 ### Esquema de color por defecto {#default-color-scheme}
@@ -286,7 +295,7 @@ Para una personalización avanzada de paletas utilizando archivos de paleta, con
 
 <TabItem value="ios" label="iOS">  
 
-![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
+![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 La función *Modificar esquema de color* te permite seleccionar un esquema de color:
 
@@ -305,13 +314,15 @@ Puedes [editar estas paletas](../personal/color-palette-schemes.md#palette-modif
 | ------ | ------- |
 | ![Visibilidad ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilidad ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-La función *Visibilidad* se utiliza para ajustar la transparencia de las sombras para el Sombreado de relieve y los colores utilizados para representar el ángulo en el parámetro de Pendiente.
+La función *Visibilidad* se utiliza para ajustar la transparencia de las sombras para el Sombreado de relieve y los colores utilizados para representar el ángulo en el parámetro de Pendiente. Para Sombras de terreno, Visibilidad controla la intensidad del efecto de sombreado del terreno.
 
 ### Niveles de zoom {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 La función *Niveles de escala* te permite establecer los valores mínimos y máximos de los niveles de zoom del mapa, que van de 4 a 19, en los que se mostrarán las capas de mapa de Sombreado de relieve o Pendiente.
+
+Los Niveles de zoom no están disponibles para Sombras de terreno porque esta visualización se renderiza dinámicamente y no depende de los rangos de visibilidad de la capa raster.
 
 ### Tamaño de la caché {#cache-size}
 

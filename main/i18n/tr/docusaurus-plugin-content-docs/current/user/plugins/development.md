@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
 sidebar_position: 11
 title:  OsmAnd Geliştirme
 ---
@@ -53,7 +53,7 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -88,6 +88,7 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 - **Uygulamanın ilk başlangıcını simüle et**. Uygulamanın ilk başlangıcını gösteren bayrağı ayarlar, diğer tüm ayarları değişmeden bırakır.  
 - **Sesli komutları test et**. Bir ses seçin ve anonsları çalarak test edin.  
+- **Dokunuşları göster** (*iOS*). Ekran dokunuşlarını görsel göstergelerle vurgular.
 - **Şeffaf durum çubuğu**. Harita durum çubuğunun altında görünür hale gelir.  
 - **Ücretsiz sürüm banner'ını göster**. Ücretli sürümde bile ücretsiz sürüm banner'ını göster.  
 - **Hata ayıklama bilgilerini göster**. Haritadaki her metnin yerleşimi hakkında grafiksel bilgi görüntüler.
@@ -322,7 +323,7 @@ Aşağıdaki tablo, kamera eğimi ve hedefe olan mesafe ile OsmAnd harita bozulm
 
 ## Bellek Bilgisi Widget'ı {#memory-info-widget}
 
-Bu widget, OsmAnd'ı kullanırken cihaz belleği kullanımınızla daha rahat ve bilgilendirici bir etkileşim sağlamak için özel olarak tasarlanmıştır. Uygulamanın kullandığı farklı bellek türlerini kolayca ve hızlı bir şekilde izlemenize olanak tanır; bu özellikle OsmAnd'ı navigasyon için kullanırken faydalıdır. Widget hakkında daha fazla bilgiyi [Bilgi widget'ları](../widgets/info-widgets.md#memory-info) makalesinde okuyun.
+Bu widget, OsmAnd'ı kullanırken cihaz belleği kullanımınızla daha rahat ve bilgilendirici bir etkileşim sağlamak için özel olarak tasarlanmıştır. Uygulamanın kullandığı farklı bellek türlerini kolayca ve hızlı bir şekilde izlemenize olanak tanır; bu özellikle OsmAnd'ı navigasyon için kullanırken faygalıdır. Widget hakkında daha fazla bilgiyi [Bilgi widget'ları](../widgets/info-widgets.md#memory-info) makalesinde okuyun.
 
 
 ## GPX-Parkur Simülasyonu {#gpx-track-simulation}

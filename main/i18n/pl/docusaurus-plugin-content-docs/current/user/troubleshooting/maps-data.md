@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title:  Mapy i dane
 ---
@@ -64,7 +64,7 @@ Jeśli poprzednie rozwiązania nie działają lub wydają się ograniczone, moż
 
 Android stał się bardziej rygorystyczny w kwestii uprawnień do przechowywania danych, często ograniczając dostęp do folderów specyficznych dla aplikacji, zwłaszcza w przypadku nowych instalacji lub aktualizacji systemu. Domyślna pamięć masowa OsmAnd może być ograniczona, co czyni ją niewidoczną dla innych aplikacji, a nawet menedżerów plików. Wielu użytkowników chce przechowywać mapy i dane w dostępnej pamięci zewnętrznej w celu tworzenia kopii zapasowych, synchronizacji lub ręcznego zarządzania plikami.
 
-Jednak OsmAnd nie ma uprawnienia *Dostęp do wszystkich plików* (z powodu ograniczeń Google), co ogranicza wybór folderów. Jednym z obejść jest użycie folderu pamięci „Multimedia”, do którego Android zazwyczaj przyznaje szerszy dostęp do odczytu/zapisu. Aby to zrobić:
+Jednak OsmAnd nie ma uprawnienie *Dostęp do wszystkich plików* (z powodu ograniczeń Google), co ogranicza wybór folderów. Jednym z obejść jest użycie folderu pamięci „Multimedia”, do którego Android zazwyczaj przyznaje szerszy dostęp do odczytu/zapisu. Aby to zrobić:
 
 - Przejdź do *Ustawienia OsmAnd → Ustawienia OsmAnd → Folder zapisu danych* i przejrzyj dostępne obszary pamięci. Użyj wskaźnika wolnego miejsca, aby zidentyfikować docelową pamięć, często oznaczoną jako *Pamięć zewnętrzna 2*.
 - Zanotuj bieżącą ścieżkę folderu, która może wyglądać następująco: */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
@@ -180,6 +180,23 @@ Jeśli próbujesz wyszukać lokalizację przy użyciu struktury *Miasto → Ulic
 - **Problem z Nominatim**. Dom może być obecny w OpenStreetMap, ale nie znaleziony przez Nominatim (wyszukiwarkę używaną przez OpenStreetMap). Możesz dowiedzieć się więcej o tym, jak rozwiązywać problemy związane z adresami [tutaj](https://wiki.openstreetmap.org/wiki/Addresses).
 
 - **Możliwy problem w OsmAnd**. Jeśli dom jest obecny w Nominatim, ale nadal nie jest znajdowany w OsmAnd, problem może być specyficzny na OsmAnd. Możesz przyczynić się do rozwiązania tego problemu, badając go dalej. Więcej szczegółów można znaleźć w tym [artykule technicznym](../../technical/algorithms/trace-address-search-issues.md).
+
+
+### Wyszukiwanie brytyjskich kodów pocztowych za pomocą niestandardowego pliku POI {#search-uk-postcodes-using-a-custom-poi-file}
+
+Jeśli kod pocztowy w Wielkiej Brytanii nie może zostać znaleziony za pomocą *Menu → Wyszukiwanie → Adres*, może nie być dostępny w indeksie wyszukiwania adresów używanym przez OsmAnd.
+
+Dostępny jest utrzymywany przez społeczność plik POI z kodami pocztowymi Wielkiej Brytanii jako niestandardowy plik `.obf`. Zawiera on kody pocztowe przechowywane jako Punkty Użyteczne (POI) ze współrzędnymi i można go użyć do bezpośredniego wyszukiwania kodów pocztowych.
+
+Jak go używać:
+
+1. Pobierz plik `UK_postcodes_poi_europe.obf` z [repozytorium społeczności](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. Jeśli plik został pobrany jako archiwum ZIP, najpierw go rozpakuj.
+3. Skopiuj plik `.obf` do folderu danych OsmAnd lub otwórz go za pomocą menedżera plików na urządzeniu i wybierz **OsmAnd**, aby go zaimportować.
+4. Użyj ogólnej funkcji **Wyszukiwania** (ikona lupy) zamiast wyszukiwania **Adres**.
+5. Wpisz kod pocztowy (np. CT14 8EU lub EX34 7EX) w pasku wyszukiwania.
+
+**UWAGA:** Niektóre kody pocztowe mogą pojawiać się więcej niż raz w wynikach wyszukiwania, ponieważ zarówno domyślne dane map OsmAnd, jak i niestandardowy plik POI z kodami pocztowymi mogą zawierać ten sam kod pocztowy.
 
 
 ## Ślady i punkty {#tracks-and-points}

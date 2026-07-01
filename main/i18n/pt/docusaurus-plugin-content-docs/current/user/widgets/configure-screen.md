@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -639,7 +639,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distância por toque](../widgets/radius-ruler.md#distance-by-tap). Oferece a capacidade de medir a distância de sua posição até o ponto selecionado.
+- [Distância por toque](#distance-by-tap). [⬇](#distance-by-tap)
 - [Velocímetro](../widgets/info-widgets.md#speedometer). Mostra a velocidade atual com base nos dados do GPS e a velocidade limitada com base nos [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Os dados exibidos também dependem da configuração de [Tolerância de Limite de Velocidade](../navigation/guidance/voice-navigation.md#speed-limit) do OsmAnd.
 
 
@@ -668,6 +668,37 @@ Permite definir o posicionamento do cursor para *[Minha localização](../map/in
 - **<Translate android="true" ids="position_on_map_center"/>**. O cursor está sempre posicionado no centro da tela.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Minha localização* é colocada ligeiramente abaixo do centro da tela. Este modo permite que você veja mais informações do mapa à frente do seu movimento, o que é útil durante a navegação.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Coloca *Minha localização* dependendo da *[Orientação do mapa](../map/interact-with-map.md#map-orientation-modes)* (*Inferior* - para a direção do movimento, *Centro* - para todos os outros).
+
+
+### Distância por toque {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distância por toque Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distância por toque iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+A ferramenta **Distância por toque** permite medir distâncias entre pontos no mapa sem usar a [Régua de raio](../widgets/radius-ruler.md#radius-ruler-widget) ou criar uma rota.
+
+Existem dois casos de uso:
+
+- **Distância da sua localização até um ponto**  
+  Toque em qualquer lugar no mapa e uma linha reta aparecerá da sua localização atual até o ponto tocado, juntamente com um rótulo de distância. A linha permanece na tela mesmo se você tocar em outro lugar.
+
+- **Distância entre quaisquer dois pontos**  
+  Toque em dois pontos no mapa simultaneamente (toque múltiplo). Uma linha conecta os dois pontos e a distância medida é exibida.
+
+Você também pode ajustar o tamanho do texto do rótulo de distância. Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Escolha entre *<Translate android="true" ids="shared_string_normal"/>* (padrão) e *<Translate android="true" ids="shared_string_large"/>* (1,5× maior). Quando a opção Grande é selecionada, um espaçamento extra é adicionado automaticamente entre a linha e o rótulo para melhor legibilidade. As alterações são aplicadas instantaneamente sem reiniciar o aplicativo.
 
 
 ## Ações {#actions}

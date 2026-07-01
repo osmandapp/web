@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
 sidebar_position: 1
 title:  تهيئة الشاشة
 ---
@@ -324,7 +324,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ١. **خيارات حجم الأداة** (*لجميع اللوحات*):  
     يمكنك تخصيص حجم **الأدوات البسيطة** في **اللوحات العلوية والسفلية واليسرى واليمنى**:
 
-    - **صغير**. مثالي للشاشات المدمجة، مما يوفر مساحة أكبر على الشاشة للخرائط.
+    - **صغير**. مثالي لشاشات مدمجة، مما يوفر مساحة أكبر على الشاشة للخرائط.
     - **متوسط** (*حجم الأداة الافتراضي*). يوازن بين الرؤية واستخدام المساحة.
     - **كبير**. يوفر معلومات أداة أكبر وأكثر وضوحًا.  
 
@@ -641,7 +641,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [المسافة بالنقر](../widgets/radius-ruler.md#distance-by-tap). يمنح القدرة على قياس المسافة من موقعك إلى النقطة المحددة.
+- [المسافة بالنقر](#distance-by-tap). [⬇](#distance-by-tap)
 - [عداد السرعة](../widgets/info-widgets.md#speedometer). يعرض السرعة الحالية بناءً على بيانات GPS والسرعة المحدودة بناءً على [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). تعتمد البيانات المعروضة أيضًا على إعداد [تفاوت حد السرعة](../navigation/guidance/voice-navigation.md#speed-limit) في OsmAnd.
 
 
@@ -670,6 +670,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **<Translate android="true" ids="position_on_map_center"/>**. يتم وضع المؤشر دائمًا في وسط الشاشة.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. يتم وضع *موقعي* أسفل مركز الشاشة قليلاً. يسمح هذا الوضع برؤية المزيد من معلومات الخريطة أمام حركتك، وهو أمر مفيد أثناء الملاحة.
 - **<Translate android="true" ids="shared_string_automatic"/>**. يضع *موقعي* اعتمادًا على *[اتجاه الخريطة](../map/interact-with-map.md#map-orientation-modes)* (*أسفل* - لاتجاه الحركة، *وسط* - لجميع الحالات الأخرى).
+
+
+### المسافة بالنقر {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+![المسافة بالنقر أندرويد](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![المسافة بالنقر iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+تتيح لك أداة **المسافة بالنقر** قياس المسافات بين النقاط على الخريطة دون استخدام [مسطرة نصف القطر](../widgets/radius-ruler.md#radius-ruler-widget) أو إنشاء مسار.
+
+هناك حالتا استخدام:
+
+- **المسافة من موقعك إلى نقطة**  
+  انقر في أي مكان على الخريطة وسيظهر خط مستقيم من موقعك الحالي إلى النقطة المنقورة، مع تسمية المسافة. يبقى الخط على الشاشة حتى لو نقرت في مكان آخر.
+
+- **المسافة بين أي نقطتين**  
+  انقر على نقطتين على الخريطة في وقت واحد (لمس متعدد). يربط خط بين النقطتين، وتُعرض المسافة المقاسة.
+
+يمكنك أيضًا ضبط حجم نص تسمية المسافة. اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. اختر بين *<Translate android="true" ids="shared_string_normal"/>* (الافتراضي) و*<Translate android="true" ids="shared_string_large"/>* (أكبر بمقدار ١٫٥ مرة). عند اختيار الخيار الكبير، تُضاف مسافة إضافية تلقائيًا بين الخط والتسمية لتحسين القراءة. تُطبق التغييرات فورًا دون إعادة تشغيل التطبيق.
 
 
 ## الإجراءات {#actions}
@@ -726,7 +757,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - لأجهزة **أندرويد**، يمكنك تغيير الملفات الشخصية في الجزء العلوي من الشاشة الرئيسية لتهيئة الشاشة باستخدام أيقونات الملفات الشخصية المتاحة.  
 - إذا كنت تستخدم جهاز **iOS**، فانقر على أيقونة الملف الشخصي في الزاوية العلوية من الشاشة الرئيسية لتهيئة الشاشة وحدد الملف الشخصي المطلوب من القائمة لتفعيله.  
 
-**ملاحظة**: لا يعرض *خيار تبديل الملف الشخصي* جميع الملفات الشخصية الموجودة، ولكن فقط تلك التي تم *تشغيلها* في قائمة الإعدادات.
+**ملاحظة**: لا يعرض *خيار تبديل الملف الشخصي* جميع الملفات الشخصية الموجودة، بل فقط تلك التي تم *تشغيلها* في قائمة الإعدادات.
 
 
 ## مقالات ذات صلة {#related-articles}

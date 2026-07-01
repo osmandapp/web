@@ -1,5 +1,5 @@
 ---
-source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
+source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
 sidebar_position: 3
 title:  Webaankopen
 ---
@@ -40,9 +40,9 @@ Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in a
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 

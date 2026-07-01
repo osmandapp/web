@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -43,7 +43,7 @@ A seção Trilhas contém todas as ferramentas e ações relacionadas às trilha
 
 ## Visível no Mapa {#visible-on-the-map}
 
-A visualização **Visible on map** lista todas as trilhas que estão atualmente exibidas no mapa. Qualquer trilha pode ser adicionada a esta lista a partir do painel principal de Trilhas usando a opção **⋮ → Make track visible**.
+A visualização **Visible on map** lista todas as trilhas que estão atualmente exibidas no mapa. Qualquer trilha podem ser adicionada a esta lista a partir do painel principal de Trilhas usando a opção **⋮ → Make track visible**.
 
 As trilhas que estão visíveis no mapa são destacadas em azul, enquanto as trilhas atualmente ocultas aparecem em cinza. Um interruptor ao lado de cada trilha permite que você a mostre ou oculte rapidamente. O botão **Hide all** desativa todas as trilhas visíveis de uma vez.
 
@@ -80,14 +80,18 @@ As trilhas são exibidas apenas se a configuração da Pasta Inteligente for sup
 
 A sincronização de Pastas Inteligentes pode variar dependendo da plataforma e da configuração de sincronização. Para resultados mais consistentes, certifique-se de que a sincronização da Cloud esteja ativada e atualizada em todos os dispositivos.
 
-No menu de três pontos (⋮), você pode baixar a Pasta Inteligente como uma coleção OBF.
+No menu de três pontos (⋮), você pode baixar a Pasta Inteligente como uma coleção OBF, renomeá-la ou excluí-la.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Trilhas na Nuvem {#cloud-tracks}
 
 As trilhas GPX que você tem no [OsmAnd Cloud](../personal/osmand-cloud.md) estarão disponíveis para exibição e edição após o login. Apenas para usuários **Pro** <ProFeature/> e para usuários [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que podem baixar seus dados mesmo após o vencimento da assinatura Pro).
+
+Ao selecionar uma trilha, o mapa centraliza automaticamente e ajusta o nível de zoom para exibir toda a trilha na área visível do mapa.
+
+Você também pode usar o botão **Focus** para ocultar todos os outros favoritos e trilhas no mapa, facilitando a revisão da trilha selecionada. Desative o modo Focus para restaurar a visibilidade de outros objetos do mapa.
 
 Os seguintes recursos estão disponíveis após escolher uma trilha na nuvem:
 - *Information* - exibindo dados da trilha.

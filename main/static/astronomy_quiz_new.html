@@ -11,11 +11,45 @@
     --osmand-orange-hover: #e06b12;
     --osmand-orange-bg: #fff5ee;
     --bg-main: #f8f9fa;
+    --card-bg: #ffffff;
+    --option-bg: #ffffff;
+    --match-bg: #fafafa;
+    --select-bg: #ffffff;
     --text-dark: #1c1c1e;
     --text-muted: #636366;
     --border-color: #e5e5ea;
     --correct-green: #34c759;
     --wrong-red: #ff3b30;
+    --correct-bg: #e6f9ed;
+    --correct-text: #147029;
+    --correct-border: #bbf2c7;
+    --wrong-bg: #fdf2f2;
+    --wrong-text: #b42318;
+    --wrong-border: #fecdca;
+    color-scheme: light;
+}
+
+/* NIGHT THEME — controlled by site theme */
+html[data-theme="dark"] {
+    --osmand-orange-hover: #ff8a2a;
+    --osmand-orange-bg: #2a1b10;
+    --bg-main: #0f1115;
+    --card-bg: #17181c;
+    --option-bg: #1f2025;
+    --match-bg: #1f2025;
+    --select-bg: #15161a;
+    --text-dark: #f5f5f7;
+    --text-muted: #a1a1aa;
+    --border-color: #34343a;
+    --correct-green: #30d158;
+    --wrong-red: #ff453a;
+    --correct-bg: rgba(48, 209, 88, 0.14);
+    --correct-text: #8ff0a4;
+    --correct-border: rgba(48, 209, 88, 0.35);
+    --wrong-bg: rgba(255, 69, 58, 0.14);
+    --wrong-text: #ffb4ad;
+    --wrong-border: rgba(255, 69, 58, 0.35);
+    color-scheme: dark;
 }
 
 *{
@@ -33,10 +67,14 @@ body{
 .container{
     max-width: 1040px;
     margin: 40px auto;
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+}
+
+html[data-theme="dark"] .container {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
 
 .quiz-header {
@@ -167,6 +205,11 @@ h1{
     justify-content: center;
 }
 
+html[data-theme="dark"] .hint-image-wrapper {
+    border-color: #2c2c31;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+}
+
 .hint-image-wrapper img {
     width: 100%;
     height: 100%;
@@ -188,7 +231,8 @@ h1{
     cursor: pointer;
     font-size: 16px;
     line-height: 1.4;
-    background: white;
+    background: var(--option-bg);
+    color: var(--text-dark);
     transition: all 0.2s ease;
 }
 
@@ -242,15 +286,15 @@ button.action-btn:hover{
 }
 
 .correct{
-    background: #e6f9ed;
-    color: #147029;
-    border: 1px solid #bbf2c7;
+    background: var(--correct-bg);
+    color: var(--correct-text);
+    border: 1px solid var(--correct-border);
 }
 
 .wrong{
-    background: #fdf2f2;
-    color: #b42318;
-    border: 1px solid #fecdca;
+    background: var(--wrong-bg);
+    color: var(--wrong-text);
+    border: 1px solid var(--wrong-border);
 }
 
 .match-row{
@@ -258,7 +302,8 @@ button.action-btn:hover{
     padding: 16px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    background: #fafafa;
+    background: var(--match-bg);
+    color: var(--text-dark);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -274,7 +319,8 @@ select{
     padding: 12px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
-    background-color: white;
+    background-color: var(--select-bg);
+    color: var(--text-dark);
     font-size: 15px;
     outline: none;
 }
@@ -284,7 +330,8 @@ select:focus {
 }
 
 .sequence-item{
-    background: white;
+    background: var(--option-bg);
+    color: var(--text-dark);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 14px 16px;
@@ -316,7 +363,7 @@ select:focus {
 }
 
 .result-screen .mascot-box {
-    background: #e6f9ed;
+    background: var(--correct-bg);
     border-color: var(--correct-green);
 }
 
@@ -1027,17 +1074,17 @@ function showFeedback(correct, text){
     if(correct) {
         mascotContainer.innerHTML = "👍";
         mascotContainer.style.borderColor = "var(--correct-green)";
-        mascotContainer.style.background = "#e6f9ed";
+        mascotContainer.style.background = "var(--correct-bg)";
     } else {
         mascotContainer.innerHTML = "🤔";
         mascotContainer.style.borderColor = "var(--wrong-red)";
-        mascotContainer.style.background = "#fdf2f2";
+        mascotContainer.style.background = "var(--wrong-bg)";
     }
 
     feedback.innerHTML = `
     <strong>${correct ? "✓ Correct!" : "✕ Incorrect"}</strong>
     ${text}
-    <button class="action-btn" style="margin-top:20px; background: ${correct ? '#34c759' : '#ff3b30'}; box-shadow: none;" onclick="nextQuestion()">
+    <button class="action-btn" style="margin-top:20px; background: ${correct ? 'var(--correct-green)' : 'var(--wrong-red)'}; box-shadow: none;" onclick="nextQuestion()">
         ${isLastQuestion ? "View results" : "Next question"}
     </button>
     `;
@@ -1069,6 +1116,35 @@ function restartQuiz(){
     document.getElementById("resultScreen").style.display = "none";
     startScreen.style.display = "block";
 }
+</script>
+
+<script>
+(function syncThemeWithParent() {
+    function getThemeFromParent() {
+        try {
+            const parentTheme = window.parent.document.documentElement.getAttribute("data-theme");
+            if (parentTheme === "dark" || parentTheme === "light") {
+                return parentTheme;
+            }
+        } catch (e) {
+            /* Parent is not accessible, keep local theme. */
+        }
+
+        const localTheme = document.documentElement.getAttribute("data-theme");
+        if (localTheme === "dark" || localTheme === "light") {
+            return localTheme;
+        }
+
+        return "light";
+    }
+
+    function applyTheme() {
+        document.documentElement.setAttribute("data-theme", getThemeFromParent());
+    }
+
+    applyTheme();
+    setInterval(applyTheme, 300);
+})();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.4.5/js/iframeResizer.contentWindow.min.js"></script>

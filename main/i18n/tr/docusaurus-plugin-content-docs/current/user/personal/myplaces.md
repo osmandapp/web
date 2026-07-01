@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title: Yerlerim
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**Yerlerim**, OsmAnd uygulamasında tüm kişisel verileri yönetmek ve özelleştirmek için merkezi bir merkezdir. Bu bölümü, önemli veya sık ziyaret edilen olarak işaretlenmiş [Favori noktaları](#favorites) düzenlemek için kullanabilirsiniz. [Parkurlar](#tracks) sekmesi, rotalarınızın ve seyahatlerinizin ayrıntılı bir geçmişini tutmanıza yardımcı olmak için GPX dosyalarını görüntülemenize, içe aktarmanıza, kaydetmenize ve oluşturmanıza olanak tanır. Ayrıca [OpenStreetMap Düzenlemelerinizi](#openstreetmap-edits) yönetebilir, harita iyileştirmelerine ve güncellemelerine katkıda bulunmayı kolaylaştırabilirsiniz. [Sesli / Görüntülü Notlar](#audiovideo-notes) eklentisi ve widget'ları, Android kullanıcılarının belirli konumlarla ilgili multimedya notları oluşturmasına ve kaydetmesine olanak tanıyarak seyahatlerine bağlam ekler.
+**Yerlerim**, OsmAnd uygulamasında tüm kişisel verileri yönetmek ve özelleştirmek için merkezi bir merkezdir. Bu bölümü, önemli veya sık ziyaret edilen olarak işaretlenmiş [Favori noktaları](#favorites) düzenlemek için kullanabilirsiniz. [Parkurlar](#tracks) sekmesi, rotalarınızın ve seyahatlerinizin ayrıntılı bir geçmişini tutmanıza yardımcı olmak için GPX dosyalarını görüntülemenize, içe aktarmanıza, kaydetmenize ve oluşturmanıza olanak tanır. Ayrıca [OpenStreetMap Düzenlemelerinizi](#openstreetmap-edits) yönetebilir, harita iyileştirmelerine ve güncellemelerine katkıda bulunmayı kolaylaştırabilirsiniz. [Sesli / Görüntülü Notlar](#audiovideo-notes) eklentisi ve widget'ları, Android kullanıcılarının belirli konumlarla ilgili multimedya notları oluşturmasına ve kaydetmesine olanak tanıyarak seyahatlerine bağlam ekler. iOS'ta Yerlerim ayrıca yer imlerine eklenmiş [Seyahat Rehberlerine](#travel-guides) erişim sağlar ve kaydedilen seyahat içeriğini düzenlemenize ve hızlıca açmanıza olanak tanır.
 
 ## Yerlerim Menüsü {#my-places-menu}
 
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu"/> → Yerlerim*  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
 ![Yerlerim android](@site/static/img/personal/my_places_android_new.png) ![Yerlerim menüsü Android](@site/static/img/personal/my_places_menu_android_new.png)
 
@@ -36,9 +36,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu"/> → Yerlerim*  
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Yerlerim ios](@site/static/img/personal/my_places_ios_new.png)  ![Yerlerim menüsü iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![Yerlerim ios](@site/static/img/personal/my_places_ios_2.png)  ![Yerlerim menüsü iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ Yerlerim kategorilere göre organize edilmiştir. İlgili veriyi yönetmek için
 
 <TabItem value="android" label="Android">
 
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
 ![Favoriler menüsü android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriler menüsü iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favoriler menüsü iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,7 +94,7 @@ Tam talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![Android'de parkurlarla Yerlerim](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -98,9 +102,9 @@ Tam talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![iOS'ta parkurlarla Yerlerim](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![iOS'ta parkurlarla Yerlerim](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ Kapsamlı rehberlik için [Parkurları Yönet](../personal/tracks/manage-tracks.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Paylaş](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Paylaş](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -240,11 +244,22 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
+### Seyahat Rehberleri (iOS) {#travel-guides}
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+
+![Seyahat Rehberleri iOS](@site/static/img/plan-route/my_places_ios.png)
+
+**Seyahat** bölümü, çevrimdışı erişim için kaydedilen yer imli seyahat rehberlerini ve makaleleri içerir. Kaydedilen seyahat içeriğinizi Yerlerim'den hızlıca açabilir, düzenleyebilir ve yönetebilirsiniz. Seyahat bölümü yalnızca birden fazla seyahat rehberi yer imlerine eklendiğinde görüntülenir.
+
+Ayrıntılı bilgi için [Seyahat Rehberleri](../plan-route/travel-guides.md) makalesine bakın.
+
 ## İlgili Makaleler {#related-articles}
 
 - [Parkurları Yönet](../personal/tracks/manage-tracks.md#import--export-track)
 - [Favoriler](../personal/favorites.md)
 - [OpenStreetMap Düzenleme](../plugins/osm-editing.md)
 - [Sesli/Görüntülü Notlar](../plugins/audio-video-notes.md)
+- [Seyahat Rehberleri](../plan-route/travel-guides.md)
 - [Arama Geçmişi](../search/search-history.md#export-and-share)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)

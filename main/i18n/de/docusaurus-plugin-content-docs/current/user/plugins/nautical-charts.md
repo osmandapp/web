@@ -1,5 +1,5 @@
 ---
-source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+source-hash: 470447687509454a83c4d6eeaff5fbef4b59e351e6fffa6397d47509009df4d8
 sidebar_position: 8
 title:  Ansicht Nautische Karte
 ---
@@ -31,13 +31,13 @@ Seekarten sind wichtig für professionelle Segler und Amateure, die ein Boot mie
 
 <TabItem value="android" label="Android">
 
-![Nautische Karten](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)
+![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Nautische Karten](@site/static/img/plugins/nautical-charts/nautical_pl_4.png)
+![Nautical maps](@site/static/img/plugins/nautical-charts/nautical_pl_4.png)
 
 </TabItem>
 
@@ -68,7 +68,7 @@ Die folgende Einrichtung sorgt dafür, dass die nautische Karte auf dem Bildschi
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,nautical_renderer"/>*  
 
-![Nautischer Kartentyp in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
+![Nautical Map Type in Android](@site/static/img/plugins/nautical-charts/and_map_style1.png)
 
 </TabItem>
 
@@ -76,7 +76,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline"/>*  
 
-![Nautischer Kartentyp in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
+![Nautical Map Type in iOS](@site/static/img/plugins/nautical-charts/ios_nautical_map_type1.png)
 
 </TabItem>
 
@@ -99,15 +99,15 @@ Um den aktuellen Kartenstil auf Nautisch zu ändern, müssen Sie die folgenden E
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
 
-![Ansicht der Karten des Nautik-Plugins Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
+![Nautical plugin maps view Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
-![Ansicht der Karten des Nautik-Plugins iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
+![Nautical plugin maps view iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
 </TabItem>
 
@@ -127,7 +127,7 @@ Wenn Sie eine nautische Karte [herunterladen](../start-with/download-maps.md), e
     Tiefenlinien-Pakete ermöglichen es Ihnen, Bereiche gleicher Tiefe zu definieren.  Sie dienen dazu, Reliefveränderungen unter der Wasseroberfläche zu visualisieren. Tiefenlinien können für bestimmte Gebiete heruntergeladen und bei Nichtgebrauch wieder ausgeschaltet werden.
 
 :::info Tiefenangaben
-Alle Tiefenangaben auf den nautischen Karten sind in Metern angegeben.
+All depth numbers on the Nautical Maps are indicated in meters.
 :::
 
 
@@ -151,7 +151,7 @@ Das Deaktivieren des Nautik-Plugins entfernt keine geladenen nautischen Daten, s
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Nautische Tiefenlinien in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
+![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
@@ -159,7 +159,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![Tiefenlinien in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
+![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_boat_profile-2.png)
 
 </TabItem>
 
@@ -181,15 +181,15 @@ Das Nautik-Plugin in OsmAnd erweitert die Kartenstile der Vektorebene um den nau
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_others,rendering_attr_seabedDetail_name"/>*  
 
-![Meeresbodendetails](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
+![Seabed details](@site/static/img/plugins/nautical-charts/and_seabed_details1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Gehen Sie zu: *Menü → Karte konfigurieren → Kartenstil → Details → Meeresbodendetail*
+Go to: *Menu → Configure map → Map style → Details → Seabed detail*
 
-![Meeresbodendetails](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
+![Seabed details](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
 </TabItem>
 
@@ -208,9 +208,9 @@ Weitere Einzelheiten zur Klassifizierung der Oberflächendetails und den Darstel
 
 ### Lichthinderdetails {#light-detail}
 
-Android Gehen Sie zu: *Menü → Karte konfigurieren → Kartenstil Nautisch → Andere Kartenattribute → Lichthinderdetail*
+Android Gehen Sie zu: *Menu → Configure map → Map style Nautical → Other map attributes → Light detail*
 
-iOS Gehen Sie zu: *Menü → Karte konfigurieren → Kartentyp Nautisch → Details → Lichthinderdetail*
+iOS Gehen Sie zu: *Menu → Configure map → Map type Nautical → Details → Light detail*
 
 Diese Option zeigt das Informationsniveau für Navigationslichter an. Sie können wählen, wie detailliert die Lichtmerkmale in der Nähe jedes Leuchtturms oder jeder Bake angezeigt werden.
 
@@ -249,7 +249,7 @@ Dieser Stil fügt visuelle Elemente für die maritime Navigation hinzu, einschli
 Im Marine-Stil werden Lichtsektoren um Leuchttürme und Baken angezeigt: weiß (auf der Karte in Gelb dargestellt) zeigt die sichere Richtung für die Navigation an, rot markiert gefährliche oder eingeschränkte Bereiche, und grün zeigt Hilfs- oder seitliche Richtungen an.
 
 :::info
-Um diese Informationen anzuzeigen, muss das Nautik-Plugin aktiviert sein und die World Seamarks-Karte (oder World_seamarks_2.obf) heruntergeladen werden. Die Informationen sind nicht für die offizielle Navigation geeignet.
+Um diese Informationen anzuzeigen, muss das Nautik-Plugin aktiviert sein und die World Seamarks-Karte (or World_seamarks_2.obf) heruntergeladen werden. Die Informationen sind nicht für die offizielle Navigation geeignet.
 :::
 
 
@@ -258,7 +258,7 @@ Um diese Informationen anzuzeigen, muss das Nautik-Plugin aktiviert sein und die
 
 <TabItem value="android" label="Android">  
 
-![Attribute Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+![Attributes Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
 
 Gehen Sie zu: *Menü* → *Karte konfigurieren* → *Kartenstil Marine* → *Andere Kartenattribute*
 
@@ -266,9 +266,9 @@ Gehen Sie zu: *Menü* → *Karte konfigurieren* → *Kartenstil Marine* → *And
 
 <TabItem value="ios" label="iOS">
 
-![Attribute iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+![Attributes iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
 
-Gehen Sie zu: *Menü* → *Karte konfigurieren* → *Kartentyp Marine* → *Details* → *Lichthinderdetail/Meeresbodendetail*
+Gehen Sie zu: *Menü* → *Karte konfigurieren* → *Kartentyp Marine* → *Details* → *Light detail/Seabed detail*
 
 Gehen Sie zu: *Menü* → *Karte konfigurieren* → *Kartentyp Marine* → Wählen Sie andere Optionen
 
@@ -300,13 +300,13 @@ Nach der Aktivierung des Marine-Kartenstils können Sie zusätzliche visuelle El
 
 <TabItem value="android" label="Android">
 
-![Nautische Karten](@site/static/img/plugins/nautical-charts/and_depth_points.png)
+![Nautical maps](@site/static/img/plugins/nautical-charts/and_depth_points.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Nautische Karten](@site/static/img/plugins/nautical-charts/ios_depth_points.png)
+![Nautical maps](@site/static/img/plugins/nautical-charts/ios_depth_points.png)
 
 </TabItem>
 
@@ -323,7 +323,7 @@ Tiefenpunkt-[Pakete](../start-with/download-maps.md#overview) sind für Europa, 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
-![Nautische Tiefenlinien in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
+![Nautical depth contours in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 
@@ -331,7 +331,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_style,nautical_depth"/>*
 
-![Tiefenlinien in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
+![Depth contours in iOS](@site/static/img/plugins/nautical-charts/ios_depth_contours-2.png)
 
 </TabItem>
 

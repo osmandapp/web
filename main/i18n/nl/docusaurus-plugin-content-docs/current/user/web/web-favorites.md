@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ De volgende acties zijn beschikbaar:
 - *Delen* - opent deelopties. Je kunt kiezen wie toegang heeft tot deze map.
 - *Downloaden* - download de gekozen favorietenmap.
 - *Verwijderen* - verwijder de gekozen favorietenmap.
+
+Wanneer je een favorietenmap selecteert, centreert de kaart automatisch en past het zoomniveau aan om alle favorietpunten uit die map binnen het zichtbare kaartgebied weer te geven.
+
+Je kunt ook de knop **Focus** gebruiken om alle andere favorieten en tracks op de kaart te verbergen, zodat je de geselecteerde map gemakkelijker kunt bekijken. Schakel de Focus-modus uit om de zichtbaarheid van andere kaartobjecten te herstellen.
 
 ### Delen {#share}
 

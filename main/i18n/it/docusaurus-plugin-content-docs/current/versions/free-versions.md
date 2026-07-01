@@ -1,5 +1,5 @@
 ---
-source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -32,7 +32,7 @@ Data di rilascio 04/2026:
 - Nuovo Editor di palette per creare e modificare schemi di colori personalizzati per la visualizzazione di tracce e terreno.
 - Migliorato il routing ciclistico considerando la larghezza della bicicletta.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### Versione 5.2 {#version-52}
 
@@ -611,7 +611,7 @@ Navigazione:
 - Indicare i POI lungo il percorso
 - Notifiche visive e audio opzionali all'avvicinarsi dei waypoint
 - Segnare le strade come impraticabili (per sessione)
-- Supporto delle corsie di svolta
+- Supporto delle corsine di svolta
 - Calcolo di percorsi più lunghi, ora fino a 500 km
 - Aggiunto avviso vocale quando si torna sul percorso
 - La navigazione tiene conto dei segnali stradali
@@ -808,7 +808,7 @@ Data di rilascio: 07/2012
 - Pulsante di blocco schermo con servizi di logging
 - Supporto per arabo, scrittura Kannada e lingue RTL
 - Ricalcolo intelligente del percorso
-- Direzione per corsie
+- Direzione per corsine
 - Informazioni su limiti di velocità, autovelox e dossi
 - Abilita/disabilita widget di logging
 

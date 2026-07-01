@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
 import CustomInput from './CustomInput';
@@ -11,15 +11,17 @@ import PoiManager, {
 } from '../../../manager/PoiManager';
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
+import gStyles from '../../gstylesmenu.module.css';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
+import { useElementHeight } from '../../../util/hooks/useElementHeight';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
-import { getDistance, getBearing } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
 import useHashParams from '../../../util/hooks/useHashParams';
@@ -31,6 +33,7 @@ import {
     POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
+    WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
@@ -40,6 +43,19 @@ import { getMapCenter } from '../../../map/layers/MapStateLayer';
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
 const EMPTY_SEARCH_RESULT = 'empty';
+// Initial row height estimate used before a row is measured. Real heights are measured per row
+// (items vary: 1 line vs name + multi-line address + distance) and cached.
+const SEARCH_RESULT_ITEM_HEIGHT = 88;
+const SHOW_MORE_ITEM = '__show_more__';
+
+function getRowKey(item, index) {
+    if (item === SHOW_MORE_ITEM) return SHOW_MORE_ITEM;
+    return item?.id ?? item?.properties?.id ?? index;
+}
+
+function getVisibleLevel(item) {
+    return item?.properties?.[WEB_VISIBLE_LEVEL] ?? 0;
+}
 
 export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
@@ -86,8 +102,8 @@ export default function SearchResults() {
     const [locReady, setLocReady] = useState(false);
     const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
-    const { zoom, lat = null, lon = null } = useHashParams();
-    const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
+    const [listContainerRef, listHeight] = useElementHeight();
+    const { zoom } = useHashParams();
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
@@ -98,26 +114,10 @@ export default function SearchResults() {
     }, [params.query, params.type, ctx.searchQuery]);
 
     useEffect(() => {
-        const handler = setTimeout(() => {
-            setDebouncedLatLon((prev) => (prev.lat === lat && prev.lon === lon ? prev : { lat, lon }));
-        }, 300);
-
-        return () => {
-            clearTimeout(handler);
-        };
-    }, [lat, lon]);
-
-    const centerFromHash = useMemo(() => {
-        return debouncedLatLon.lat != null && debouncedLatLon.lon != null
-            ? { lat: debouncedLatLon.lat, lon: debouncedLatLon.lon }
-            : null;
-    }, [debouncedLatLon]);
-
-    useEffect(() => {
         if (result === EMPTY_SEARCH_RESULT) {
             checkZoomError();
         }
-    }, [zoom]);
+    }, [zoom, result]);
 
     // Calculate page title based on search params
     const pageTitle = useMemo(() => {
@@ -146,6 +146,7 @@ export default function SearchResults() {
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
             if (!f?.properties) return;
+            if (f.icon) return;
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
             if (type === searchTypeMap.FAVORITE) {
@@ -180,7 +181,7 @@ export default function SearchResults() {
 
     const memoizedResult = useMemo(() => {
         if (!currentLoc) return null;
-        const { loc, isUser } = getLoc();
+        const { loc } = getLoc();
 
         if (!loc) return null;
 
@@ -193,22 +194,8 @@ export default function SearchResults() {
             return EMPTY_SEARCH_RESULT;
         }
 
-        return features.map((f) => {
-            const lat = f?.geometry?.coordinates[1];
-            const lon = f?.geometry?.coordinates[0];
-            if (!lat || !lon) return f;
-
-            const distance = lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon);
-            const bearing = lon === 0 && lat === 0 ? null : getBearing(loc.lat, loc.lng, lat, lon);
-
-            return {
-                ...f,
-                locDist: distance,
-                bearing: bearing,
-                isUserLocation: isUser,
-            };
-        });
-    }, [currentLoc, ctx.searchResult, centerFromHash]);
+        return features.map((f) => ({ ...f }));
+    }, [currentLoc, ctx.searchResult]);
 
     useEffect(() => {
         if (ctx.processingSearch) return;
@@ -220,7 +207,8 @@ export default function SearchResults() {
         let cancelled = false;
         const updateIcons = async () => {
             const resultWithIcons = [...memoizedResult];
-            await calculateIcons(resultWithIcons, ctx);
+            const visibleToIcon = resultWithIcons.filter((f) => getVisibleLevel(f) <= ctx.searchVisibleLevel);
+            await calculateIcons(visibleToIcon, ctx);
             if (!cancelled) {
                 setResult({ features: resultWithIcons });
             }
@@ -230,7 +218,7 @@ export default function SearchResults() {
         return () => {
             cancelled = true;
         };
-    }, [memoizedResult, ctx.processingSearch]);
+    }, [memoizedResult, ctx.processingSearch, ctx.searchVisibleLevel]);
 
     useEffect(() => {
         if (locReady) {
@@ -265,9 +253,7 @@ export default function SearchResults() {
     }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
-        if (zoom < MIN_SEARCH_ZOOM) {
-            setErrorZoom(ZOOM_ERROR);
-        }
+        setErrorZoom(zoom < MIN_SEARCH_ZOOM ? ZOOM_ERROR : null);
     }
 
     function getLoc() {
@@ -280,10 +266,8 @@ export default function SearchResults() {
             } else {
                 loc = getMapCenter(mtx, hash);
             }
-            setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
             loc = getMapCenter(mtx, hash);
-            setLocReady(true);
         }
         return { loc, isUser };
     }
@@ -319,6 +303,60 @@ export default function SearchResults() {
     // URL query already changed but the shown result is still the previous search
     const staleResult = (params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery);
 
+    const maxVisibleLevel = result?.features?.reduce((max, f) => Math.max(max, getVisibleLevel(f)), 0) ?? 0;
+    const hasMore =
+        ctx.searchVisibleLevel < maxVisibleLevel &&
+        (result?.features?.some((item) => item?.properties && getVisibleLevel(item) > ctx.searchVisibleLevel) ?? false);
+    const visibleFeatures = useMemo(() => {
+        const features =
+            result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= ctx.searchVisibleLevel) ??
+            [];
+        return ctx.spatialSearch && hasMore ? [...features, SHOW_MORE_ITEM] : features;
+    }, [result, ctx.searchVisibleLevel, ctx.spatialSearch, hasMore]);
+
+    const { loc: distanceLoc, isUser } = useMemo(
+        () => getLoc(),
+        [currentLoc, ctx.visibleBounds, mtx.visibleBboxInfo, hash]
+    );
+
+    useEffect(() => {
+        if (distanceLoc) {
+            setLocReady(true);
+        }
+    }, [distanceLoc]);
+
+    const showMoreResults = useCallback(() => {
+        ctx.setSearchVisibleLevel((prev) => Math.min(prev + 1, maxVisibleLevel));
+    }, [maxVisibleLevel]);
+    const typeItem = ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID;
+    const renderSearchItem = useCallback(
+        (item, index) => {
+            if (item === SHOW_MORE_ITEM) {
+                return (
+                    <Button
+                        id={'se-search-show-more'}
+                        className={styles.buttonShowAllExplore}
+                        onClick={showMoreResults}
+                    >
+                        {t('web:show_more')}
+                    </Button>
+                );
+            }
+
+            return (
+                <SearchResultItem
+                    item={item}
+                    index={index}
+                    typeItem={typeItem}
+                    currentLoc={currentLoc}
+                    loc={distanceLoc}
+                    isUser={isUser}
+                />
+            );
+        },
+        [typeItem, currentLoc, distanceLoc, isUser, showMoreResults]
+    );
+
     return (
         <>
             <CustomInput
@@ -349,18 +387,14 @@ export default function SearchResults() {
                 (result === EMPTY_SEARCH_RESULT ? (
                     <EmptySearch message={errorZoom} />
                 ) : (
-                    <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
-                        {result?.features
-                            .filter((item) => item?.properties)
-                            .map((item, index) => (
-                                <SearchResultItem
-                                    key={index + (item?.id || item?.properties?.id || '')}
-                                    item={item}
-                                    index={index}
-                                    typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
-                                    currentLoc={currentLoc}
-                                />
-                            ))}
+                    <Box id={'se-search-results'} ref={listContainerRef} className={gStyles.fillBlock}>
+                        <VirtualizedList
+                            items={visibleFeatures}
+                            renderItem={renderSearchItem}
+                            getItemKey={getRowKey}
+                            estimatedItemHeight={SEARCH_RESULT_ITEM_HEIGHT}
+                            height={listHeight}
+                        />
                     </Box>
                 ))}
         </>
