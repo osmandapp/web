@@ -144,7 +144,7 @@ export default function ConfigureMap() {
     function renderMapStyleSelect() {
         return (
             <>
-                <MenuItem className={styles.item} onClick={() => setOpenMapStyleMenu(true)}>
+                <MenuItem ref={mapStyleAnchorRef} className={styles.item} onClick={() => setOpenMapStyleMenu(true)}>
                     <ListItemIcon className={styles.iconEnabled}>
                         <Layers />
                     </ListItemIcon>
@@ -153,7 +153,7 @@ export default function ConfigureMap() {
                             {mapStyleLabel}
                         </Typography>
                     </ListItemText>
-                    <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} ref={mapStyleAnchorRef} />
+                    <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
                 </MenuItem>
                 <ActionsMenu
                     open={openMapStyleMenu}
@@ -382,9 +382,7 @@ export default function ConfigureMap() {
                             )}
                         </Toolbar>
                     </AppBar>
-                    <Box className={gStyles.scrollActiveBlock}>
-                        <DEFAULT_CONFIGURE />
-                    </Box>
+                    <Box className={gStyles.scrollActiveBlock}>{DEFAULT_CONFIGURE()}</Box>
                 </>
             )}
         </Box>
