@@ -399,6 +399,10 @@ body.quiz-expanded.matching-question-active .feedback strong{
         padding:24px 16px;
         margin:0;
         border-radius:0;
+        min-height:0;
+    }
+
+    body.quiz-expanded .container{
         min-height:100vh;
     }
 
@@ -588,6 +592,14 @@ function trackQuiz(path){
     }
 }
 
+function notifyIframeHeightChanged(){
+    try {
+        window.dispatchEvent(new Event("resize"));
+        setTimeout(() => window.dispatchEvent(new Event("resize")), 120);
+        setTimeout(() => window.dispatchEvent(new Event("resize")), 450);
+    } catch (e) {}
+}
+
 function setQuizFullscreen(active) {
     document.body.classList.toggle("quiz-expanded", active);
 
@@ -641,6 +653,7 @@ function setQuizFullscreen(active) {
 
 function collapseQuizFullscreen(){
     setQuizFullscreen(false);
+    notifyIframeHeightChanged();
     scrollToQuizSection();
 }
 
@@ -738,6 +751,7 @@ function renderQuestion(){
 
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
+    notifyIframeHeightChanged();
 }
 
 function attachOptionEvents(type){
@@ -803,6 +817,8 @@ function showFeedback(correct, text){
     <button class="action-btn" style="margin-top:20px;background:${correct ? "var(--correct-green)" : "var(--wrong-red)"};box-shadow:none;" onclick="nextQuestion()">
         ${isLastQuestion ? "View results" : "Next question"}
     </button>`;
+
+    notifyIframeHeightChanged();
 }
 
 function finishQuiz(){
@@ -819,6 +835,7 @@ function finishQuiz(){
     document.getElementById("progress").style.width = "100%";
     document.getElementById("score").innerText = `${score} / ${questions.length}`;
 
+    notifyIframeHeightChanged();
     scrollQuizResultIntoView();
 }
 
@@ -899,6 +916,8 @@ function restartQuiz(){
 
     document.getElementById("resultScreen").style.display = "none";
     startScreen.style.display = "block";
+
+    notifyIframeHeightChanged();
 }
 </script>
 

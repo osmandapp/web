@@ -7,266 +7,417 @@
 
 <style>
 :root {
-    --osmand-orange: #f47c20;
-    --osmand-orange-hover: #e06b12;
-    --osmand-orange-bg: #fff5ee;
-    --bg-main: #f8f9fa;
-    --text-dark: #1c1c1e;
-    --text-muted: #636366;
-    --border-color: #e5e5ea;
-    --correct-green: #34c759;
-    --wrong-red: #ff3b30;
+    --osmand-orange:#f47c20;
+    --osmand-orange-hover:#e06b12;
+    --osmand-orange-bg:#fff5ee;
+    --bg-main:#f8f9fa;
+    --card-bg:#fff;
+    --option-bg:#fff;
+    --select-bg:#fff;
+    --text-dark:#1c1c1e;
+    --text-muted:#636366;
+    --border-color:#e5e5ea;
+    --correct-green:#34c759;
+    --wrong-red:#ff3b30;
+    --correct-bg:#e6f9ed;
+    --correct-text:#147029;
+    --correct-border:#bbf2c7;
+    --wrong-bg:#fdf2f2;
+    --wrong-text:#b42318;
+    --wrong-border:#fecdca;
+    color-scheme:light;
+}
+
+html[data-theme="dark"] {
+    --osmand-orange-hover:#ff8a2a;
+    --osmand-orange-bg:#2a1b10;
+    --bg-main:#0f1115;
+    --card-bg:#17181c;
+    --option-bg:#1f2025;
+    --select-bg:#15161a;
+    --text-dark:#f5f5f7;
+    --text-muted:#a1a1aa;
+    --border-color:#34343a;
+    --correct-green:#30d158;
+    --wrong-red:#ff453a;
+    --correct-bg:rgba(48,209,88,.14);
+    --correct-text:#8ff0a4;
+    --correct-border:rgba(48,209,88,.35);
+    --wrong-bg:rgba(255,69,58,.14);
+    --wrong-text:#ffb4ad;
+    --wrong-border:rgba(255,69,58,.35);
+    color-scheme:dark;
 }
 
 *{
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body{
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg-main);
-    color: var(--text-dark);
-    -webkit-font-smoothing: antialiased;
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg-main);
+    color:var(--text-dark);
+    -webkit-font-smoothing:antialiased;
 }
 
 .container{
-    max-width: 1040px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+    max-width:1040px;
+    margin:40px auto;
+    background:var(--card-bg);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 12px 40px rgba(0,0,0,.04);
 }
 
-.quiz-header {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 24px;
+html[data-theme="dark"] .container{
+    box-shadow:0 12px 40px rgba(0,0,0,.35);
 }
 
-.mascot-box {
-    flex-shrink: 0;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--osmand-orange-bg);
-    border: 3px solid var(--osmand-orange);
-    border-radius: 50%;
-    font-size: 42px;
-    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
-    animation: bounce 2.5s infinite ease-in-out;
+.quiz-header{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    margin-bottom:24px;
 }
 
-.header-text {
-    flex-grow: 1;
+.header-text{
+    flex-grow:1;
+}
+
+.mascot-box{
+    flex-shrink:0;
+    width:90px;
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--osmand-orange-bg);
+    border:3px solid var(--osmand-orange);
+    border-radius:50%;
+    font-size:42px;
+    box-shadow:0 4px 12px rgba(244,124,32,.15);
+    animation:bounce 2.5s infinite ease-in-out;
 }
 
 h1{
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin: 0 0 6px 0;
-    letter-spacing: -0.5px;
+    font-size:24px;
+    font-weight:700;
+    color:var(--text-dark);
+    margin:0 0 6px;
+    letter-spacing:-.5px;
 }
 
 .subtitle{
-    color: var(--text-muted);
-    font-size: 15px;
-    margin: 0;
+    color:var(--text-muted);
+    font-size:15px;
+    margin:0;
 }
 
 .progress-wrapper{
-    width: 100%;
-    height: 6px;
-    background: var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 30px 0;
-    display: none;
+    width:100%;
+    height:6px;
+    background:var(--border-color);
+    border-radius:10px;
+    overflow:hidden;
+    margin:30px 0;
+    display:none;
 }
 
 .progress{
-    height: 100%;
-    width: 0%;
-    background: var(--osmand-orange);
-    border-radius: 10px;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height:100%;
+    width:0;
+    background:var(--osmand-orange);
+    border-radius:10px;
+    transition:width .4s cubic-bezier(.4,0,.2,1);
 }
 
-.quiz-layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+.quiz-layout{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
 }
 
-.quiz-left-col {
-    width: 100%;
+.quiz-left-col{
+    width:100%;
 }
 
 .question-number{
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: var(--osmand-orange);
-    margin-bottom: 12px;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+    color:var(--osmand-orange);
+    margin-bottom:12px;
 }
 
 .question-title{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    color: var(--text-dark);
+    font-size:20px;
+    font-weight:600;
+    line-height:1.4;
+    margin-bottom:10px;
+    color:var(--text-dark);
 }
 
 .question-hint{
-    color: var(--text-muted);
-    margin-bottom: 24px;
-    font-size: 14px;
-    font-style: italic;
+    color:var(--text-muted);
+    margin-bottom:24px;
+    font-size:14px;
+    font-style:italic;
 }
 
 .option{
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1.4;
-    background: white;
-    transition: all 0.2s ease;
+    border:1px solid var(--border-color);
+    border-radius:12px;
+    padding:16px 20px;
+    margin-bottom:12px;
+    cursor:pointer;
+    font-size:16px;
+    line-height:1.4;
+    background:var(--option-bg);
+    color:var(--text-dark);
+    transition:all .2s ease;
 }
 
 .option:hover{
-    border-color: var(--osmand-orange);
-    background: var(--osmand-orange-bg);
-    transform: translateY(-1px);
+    border-color:var(--osmand-orange);
+    background:var(--osmand-orange-bg);
+    transform:translateY(-1px);
 }
 
 .option.selected{
-    border-color: var(--osmand-orange);
-    background: var(--osmand-orange-bg);
-    font-weight: 500;
-    box-shadow: inset 0 0 0 1px var(--osmand-orange);
+    border-color:var(--osmand-orange);
+    background:var(--osmand-orange-bg);
+    font-weight:500;
+    box-shadow:inset 0 0 0 1px var(--osmand-orange);
 }
 
-button.action-btn {
-    background: var(--osmand-orange);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 32px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(244, 124, 32, 0.15);
+button.action-btn{
+    background:var(--osmand-orange);
+    color:#fff;
+    border:0;
+    border-radius:12px;
+    padding:16px 32px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:20px;
+    width:100%;
+    transition:all .2s ease;
+    box-shadow:0 4px 12px rgba(244,124,32,.15);
 }
 
 button.action-btn:hover{
-    background: var(--osmand-orange-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(244, 124, 32, 0.25);
+    background:var(--osmand-orange-hover);
+    transform:translateY(-1px);
+    box-shadow:0 6px 16px rgba(244,124,32,.25);
 }
 
 .feedback{
-    margin-top: 24px;
-    padding: 24px;
-    border-radius: 14px;
-    line-height: 1.5;
-    font-size: 15px;
-    animation: slideUp 0.3s ease;
+    margin-top:24px;
+    padding:24px;
+    border-radius:14px;
+    line-height:1.5;
+    font-size:15px;
+    animation:slideUp .3s ease;
 }
 
-.feedback strong {
-    font-size: 18px;
-    display: block;
-    margin-bottom: 6px;
+.feedback strong{
+    font-size:18px;
+    display:block;
+    margin-bottom:6px;
 }
 
 .correct{
-    background: #e6f9ed;
-    color: #147029;
-    border: 1px solid #bbf2c7;
+    background:var(--correct-bg);
+    color:var(--correct-text);
+    border:1px solid var(--correct-border);
 }
 
 .wrong{
-    background: #fdf2f2;
-    color: #b42318;
-    border: 1px solid #fecdca;
+    background:var(--wrong-bg);
+    color:var(--wrong-text);
+    border:1px solid var(--wrong-border);
 }
 
-.start-screen, .result-screen {
-    text-align: center;
-    animation: fadeIn 0.5s ease;
+.start-screen,
+.result-screen{
+    text-align:center;
+    animation:fadeIn .5s ease;
 }
 
-.start-screen .mascot-box, .result-screen .mascot-box {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 20px auto;
+.start-screen .mascot-box,
+.result-screen .mascot-box{
+    width:110px;
+    height:110px;
+    margin:0 auto 20px;
 }
 
-.start-screen .mascot-box {
-    background: var(--osmand-orange-bg);
-    border-color: var(--osmand-orange);
+.start-screen .mascot-box{
+    background:var(--osmand-orange-bg);
+    border-color:var(--osmand-orange);
 }
 
-.result-screen .mascot-box {
-    background: #e6f9ed;
-    border-color: var(--correct-green);
+.result-screen .mascot-box{
+    background:var(--correct-bg);
+    border-color:var(--correct-green);
 }
 
-.start-description {
-    color: var(--text-muted);
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 16px auto 28px auto;
-    max-width: 500px;
+.start-description{
+    color:var(--text-muted);
+    font-size:16px;
+    line-height:1.5;
+    margin:16px auto 28px;
+    max-width:500px;
 }
 
 .score{
-    font-size: 64px;
-    font-weight: 800;
-    color: var(--osmand-orange);
-    margin: 16px 0;
+    font-size:64px;
+    font-weight:800;
+    color:var(--osmand-orange);
+    margin:16px 0;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+.quiz-close-btn{
+    display:none;
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:2147483647;
+    width:42px;
+    height:42px;
+    border:1px solid var(--border-color);
+    border-radius:50%;
+    background:var(--card-bg);
+    color:var(--text-dark);
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.16);
 }
 
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+.quiz-close-btn svg{
+    width:24px;
+    height:24px;
+    stroke:currentColor;
+    stroke-width:2.6;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.quiz-close-btn:hover{
+    border-color:var(--osmand-orange);
+    color:var(--osmand-orange);
+    transform:translateY(-1px);
+}
+
+body.quiz-expanded{
+    overflow:hidden;
+    background:var(--bg-main);
+}
+
+body.quiz-expanded .container{
+    position:fixed;
+    inset:0;
+    z-index:2147483646;
+    width:100vw;
+    max-width:none;
+    height:100vh;
+    margin:0;
+    border-radius:0;
+    padding:40px 24px;
+    overflow-y:auto;
+    background:var(--bg-main);
+}
+
+body.quiz-expanded .quiz-close-btn{
+    display:flex;
+}
+
+body.quiz-expanded .quiz-header,
+body.quiz-expanded .progress-wrapper,
+body.quiz-expanded #quiz,
+body.quiz-expanded .result-screen{
+    max-width:1040px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body.quiz-expanded .quiz-header{
+    padding-right:54px;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-6px)}
+}
+
+@keyframes slideUp{
+    from{opacity:0;transform:translateY(15px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
 }
 
 @media(max-width:600px){
-    .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
-    .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
-    h1 { font-size: 22px; }
+    .container{
+        padding:24px 16px;
+        margin:0;
+        border-radius:0;
+        min-height:0;
+    }
+
+    body.quiz-expanded .container{
+        min-height:100vh;
+    }
+
+    .quiz-header{
+        flex-direction:column;
+        text-align:center;
+        gap:12px;
+    }
+
+    .quiz-layout{
+        flex-direction:column;
+        gap:24px;
+    }
+
+    .quiz-left-col{
+        width:100%;
+    }
+
+    .question-title{
+        font-size:20px;
+    }
+
+    .option{
+        font-size:15px;
+        padding:14px 16px;
+    }
+
+    h1{
+        font-size:22px;
+    }
 }
 </style>
 </head>
+
 <body>
-
 <div class="container">
+    <button class="quiz-close-btn" type="button" onclick="collapseQuizFullscreen()" aria-label="Collapse quiz" title="Collapse quiz">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 18h12"></path>
+            <path d="M8 9l4 4 4-4"></path>
+        </svg>
+    </button>
 
-    <div class="quiz-header" id="quizHeader" style="display: none;">
+    <div class="quiz-header" id="quizHeader" style="display:none;">
         <div class="mascot-box" id="mascotContainer">📏</div>
         <div class="header-text">
             <h1>Test your understanding of measuring tools in OsmAnd</h1>
@@ -287,98 +438,98 @@ button.action-btn:hover{
         <button class="action-btn" onclick="startQuiz()">Start quiz</button>
     </div>
 
-    <div id="quiz" style="display: none;"></div>
+    <div id="quiz" style="display:none;"></div>
 
-    <div class="result-screen" id="resultScreen" style="display: none;">
+    <div class="result-screen" id="resultScreen" style="display:none;">
         <div class="mascot-box" id="mascotResultContainer">🏆</div>
         <h1>Quiz complete</h1>
         <div class="score" id="score"></div>
-        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;">Great job testing your Measuring Tools knowledge!</p>
+        <p style="color:var(--text-muted);font-size:16px;margin-bottom:24px;">Great job testing your Measuring Tools knowledge!</p>
         <button class="action-btn" onclick="restartQuiz()">Restart quiz</button>
     </div>
-
 </div>
 
 <script src="/quiz-common.js"></script>
+
 <script>
 const questions = [
     {
-        type: "single",
-        title: "You want to quickly find out how far a specific building is from where you're standing. What's the fastest way to do this in OsmAnd?",
-        hint: "Select one answer.",
-        options: [
+        type:"single",
+        title:"You want to quickly find out how far a specific building is from where you're standing. What's the fastest way to do this in OsmAnd?",
+        hint:"Select one answer.",
+        options:[
             "Add a map marker and check the marker widget",
             "Enable Distance by Tap and tap the building on the map",
             "Open Plan a route and use the Straight line method",
             "Enable the Radius Ruler widget"
         ],
-        correct: [1],
-        feedback: "Distance by Tap is designed for instant, one-tap measurements. It draws a straight line from your current location to any tapped point and shows the distance immediately — no widgets or route planning needed."
+        correct:[1],
+        feedback:"Distance by Tap is designed for instant, one-tap measurements. It draws a straight line from your current location to any tapped point and shows the distance immediately — no widgets or route planning needed."
     },
     {
-        type: "single",
-        title: "You're running and want to know the distance between two specific points on the map that are not your current location. Which gesture do you use with Distance by Tap?",
-        hint: "Select one answer.",
-        options: [
+        type:"single",
+        title:"You're running and want to know the distance between two specific points on the map that are not your current location. Which gesture do you use with Distance by Tap?",
+        hint:"Select one answer.",
+        options:[
             "Double-tap the first point, then tap the second",
             "Long-tap both points one after another",
             "Place two fingers on the map simultaneously (multi-touch)",
             "Tap the first point, then drag to the second"
         ],
-        correct: [2],
-        feedback: "The multi-touch gesture — placing two fingers on the map at the same time — measures the distance between any two points independently of your current location."
+        correct:[2],
+        feedback:"The multi-touch gesture — placing two fingers on the map at the same time — measures the distance between any two points independently of your current location."
     },
     {
-        type: "single",
-        title: "You increased the Distance by Tap label to Large. Besides being bigger, what else changes?",
-        hint: "Select one answer.",
-        options: [
+        type:"single",
+        title:"You increased the Distance by Tap label to Large. Besides being bigger, what else changes?",
+        hint:"Select one answer.",
+        options:[
             "The line becomes thicker",
             "The label changes color",
             "The measurement updates faster",
             "Extra spacing is added between the line and the label"
         ],
-        correct: [3],
-        feedback: "When Large is selected, the label becomes 1.5× bigger and extra spacing is automatically added between the line and the label for better readability."
+        correct:[3],
+        feedback:"When Large is selected, the label becomes 1.5× bigger and extra spacing is automatically added between the line and the label for better readability."
     },
     {
-        type: "single",
-        title: "You're looking at the Radius Ruler on your screen. You zoom in. What happens to the circles?",
-        hint: "Select one answer.",
-        options: [
+        type:"single",
+        title:"You're looking at the Radius Ruler on your screen. You zoom in. What happens to the circles?",
+        hint:"Select one answer.",
+        options:[
             "They disappear and need to be re-enabled",
             "The circles stay the same size regardless of zoom",
             "The intervals adjust automatically to reflect the new zoom level",
             "Only the innermost circle updates, the rest stay fixed"
         ],
-        correct: [2],
-        feedback: "The Radius Ruler adjusts dynamically as you zoom in or out, always keeping the ring labels accurate to the current map scale."
+        correct:[2],
+        feedback:"The Radius Ruler adjusts dynamically as you zoom in or out, always keeping the ring labels accurate to the current map scale."
     },
     {
-        type: "single",
-        title: "You've placed a map marker at Jaye Robinson Park. You're running toward it. When the marker goes off screen, what does OsmAnd show to keep you on track?",
-        hint: "Select one answer.",
-        options: [
+        type:"single",
+        title:"You've placed a map marker at Jaye Robinson Park. You're running toward it. When the marker goes off screen, what does OsmAnd show to keep you on track?",
+        hint:"Select one answer.",
+        options:[
             "An arrow indicating the direction to the marker",
             "A dashed route line is calculated automatically",
             "Nothing — you need to zoom out manually to see the marker",
             "A notification in the status bar"
         ],
-        correct: [0],
-        feedback: "When Arrows on the map is enabled in Map markers → Appearance, an arrow appears whenever the marker is outside the current map screen, always pointing you in the right direction."
+        correct:[0],
+        feedback:"When Arrows on the map is enabled in Map markers → Appearance, an arrow appears whenever the marker is outside the current map screen, always pointing you in the right direction."
     },
     {
-        type: "single",
-        title: "You've built a multi-point route in Plan a route using the Straight line method. What information does the points list show for each segment?",
-        hint: "Select one answer.",
-        options: [
+        type:"single",
+        title:"You've built a multi-point route in Plan a route using the Straight line method. What information does the points list show for each segment?",
+        hint:"Select one answer.",
+        options:[
             "Distance only",
             "Bearing (azimuth) only",
             "Distance and estimated travel time",
             "Distance and azimuth (bearing) for each segment"
         ],
-        correct: [3],
-        feedback: "In the Straight line method, the points list shows both the cumulative distance and the azimuth for each individual segment — useful for off-road navigation where knowing the exact direction matters."
+        correct:[3],
+        feedback:"In the Straight line method, the points list shows both the cumulative distance and the azimuth for each individual segment — useful for off-road navigation where knowing the exact direction matters."
     }
 ];
 
@@ -390,10 +541,93 @@ const startScreen = document.getElementById("startScreen");
 const quizHeader = document.getElementById("quizHeader");
 const progressWrapper = document.getElementById("progressWrapper");
 const mascotContainer = document.getElementById("mascotContainer");
-const mascotResultContainer = document.getElementById("mascotResultContainer");
+
+function trackQuiz(path){
+    if (typeof quizTrack === "function") {
+        quizTrack(path);
+    }
+}
+
+function notifyIframeHeightChanged(){
+    try {
+        window.dispatchEvent(new Event("resize"));
+        setTimeout(() => window.dispatchEvent(new Event("resize")), 120);
+        setTimeout(() => window.dispatchEvent(new Event("resize")), 450);
+    } catch (e) {}
+}
+
+function setQuizFullscreen(active) {
+    document.body.classList.toggle("quiz-expanded", active);
+
+    try {
+        const frame = window.frameElement;
+        const parentDoc = window.parent.document;
+
+        if (!frame || !parentDoc) return;
+
+        if (active) {
+            frame.classList.add("osmand-quiz-frame-fullscreen");
+            parentDoc.documentElement.classList.add("osmand-quiz-page-fullscreen");
+            parentDoc.body.classList.add("osmand-quiz-page-fullscreen");
+
+            const styleId = "osmand-quiz-fullscreen-style";
+
+            if (!parentDoc.getElementById(styleId)) {
+                const style = parentDoc.createElement("style");
+                style.id = styleId;
+                style.textContent = `
+                    html.osmand-quiz-page-fullscreen,
+                    body.osmand-quiz-page-fullscreen {
+                        overflow: hidden !important;
+                    }
+
+                    iframe.osmand-quiz-frame-fullscreen {
+                        position: fixed !important;
+                        inset: 0 !important;
+                        width: 100vw !important;
+                        height: 100vh !important;
+                        max-width: 100vw !important;
+                        max-height: 100vh !important;
+                        min-width: 100vw !important;
+                        min-height: 100vh !important;
+                        z-index: 2147483645 !important;
+                        border: 0 !important;
+                        background: var(--ifm-background-color, #fff) !important;
+                    }
+                `;
+                parentDoc.head.appendChild(style);
+            }
+        } else {
+            frame.classList.remove("osmand-quiz-frame-fullscreen");
+            parentDoc.documentElement.classList.remove("osmand-quiz-page-fullscreen");
+            parentDoc.body.classList.remove("osmand-quiz-page-fullscreen");
+        }
+    } catch (e) {
+        document.body.classList.toggle("quiz-expanded", active);
+    }
+
+    notifyIframeHeightChanged();
+}
+
+function collapseQuizFullscreen(){
+    setQuizFullscreen(false);
+    scrollToQuizSection();
+    notifyIframeHeightChanged();
+}
+
+function exitQuizFullscreen(){
+    collapseQuizFullscreen();
+}
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        collapseQuizFullscreen();
+    }
+});
 
 function startQuiz() {
-    quizTrack('measuringtools/start');
+    trackQuiz("measuringtools/start");
+    setQuizFullscreen(true);
     startScreen.style.display = "none";
     quizHeader.style.display = "flex";
     progressWrapper.style.display = "block";
@@ -402,17 +636,16 @@ function startQuiz() {
 }
 
 function updateProgress(){
-    const percent = (currentQuestion / questions.length) * 100;
-    document.getElementById("progress").style.width = percent + "%";
+    document.getElementById("progress").style.width = ((currentQuestion / questions.length) * 100) + "%";
 }
 
 function renderQuestion(){
     updateProgress();
-    
+
     mascotContainer.innerHTML = "📏";
     mascotContainer.style.borderColor = "var(--osmand-orange)";
     mascotContainer.style.background = "var(--osmand-orange-bg)";
-    
+
     const q = questions[currentQuestion];
 
     let html = `
@@ -423,25 +656,22 @@ function renderQuestion(){
             <div class="question-hint">${q.hint}</div>
     `;
 
-    q.options.forEach((option, index) => {
-        html += `
-        <div class="option" data-index="${index}">
-        ${option}
-        </div>
-        `;
+    q.options.forEach((option,index)=>{
+        html += `<div class="option" data-index="${index}">${option}</div>`;
     });
+
     html += `<button class="action-btn" onclick="submitChoice()">Submit answer</button>`;
-    html += `<div id="feedback"></div></div></div>`; 
+    html += `<div id="feedback"></div></div></div>`;
 
     quiz.innerHTML = html;
     attachOptionEvents();
+    notifyIframeHeightChanged();
 }
 
 function attachOptionEvents(){
-    const options = document.querySelectorAll(".option");
-    options.forEach(option => {
-        option.addEventListener("click", () => {
-            options.forEach(o => o.classList.remove("selected"));
+    document.querySelectorAll(".option").forEach(option=>{
+        option.addEventListener("click",()=>{
+            document.querySelectorAll(".option").forEach(o=>o.classList.remove("selected"));
             option.classList.add("selected");
         });
     });
@@ -450,69 +680,167 @@ function attachOptionEvents(){
 function submitChoice(){
     const q = questions[currentQuestion];
     const selectedEl = document.querySelector(".option.selected");
+
     if (!selectedEl) return;
-    
+
     const selectedIndex = Number(selectedEl.dataset.index);
     const isCorrect = selectedIndex === q.correct[0];
-    
+
     if(isCorrect) score++;
+
     showFeedback(isCorrect, q.feedback);
 }
 
 function showFeedback(correct, text){
-    quizTrack('measuringtools/q/' + (currentQuestion + 1) + '/' + (correct ? 'correct' : 'wrong'));
+    trackQuiz("measuringtools/q/" + (currentQuestion + 1) + "/" + (correct ? "correct" : "wrong"));
+
     const feedback = document.getElementById("feedback");
-    feedback.className = correct ? "feedback correct" : "feedback wrong";
     const isLastQuestion = currentQuestion === questions.length - 1;
 
-    if(correct) {
-        mascotContainer.innerHTML = "👍";
-        mascotContainer.style.borderColor = "var(--correct-green)";
-        mascotContainer.style.background = "#e6f9ed";
-    } else {
-        mascotContainer.innerHTML = "🤔";
-        mascotContainer.style.borderColor = "var(--wrong-red)";
-        mascotContainer.style.background = "#fdf2f2";
-    }
+    feedback.className = correct ? "feedback correct" : "feedback wrong";
+
+    mascotContainer.innerHTML = correct ? "👍" : "🤔";
+    mascotContainer.style.borderColor = correct ? "var(--correct-green)" : "var(--wrong-red)";
+    mascotContainer.style.background = correct ? "var(--correct-bg)" : "var(--wrong-bg)";
+
+    const mainBtn = document.querySelector(".quiz-left-col > button.action-btn");
+    if(mainBtn) mainBtn.style.display = "none";
 
     feedback.innerHTML = `
     <strong>${correct ? "✓ Correct!" : "✕ Incorrect"}</strong>
     ${text}
-    <button class="action-btn" style="margin-top:20px; background: ${correct ? '#34c759' : '#ff3b30'}; box-shadow: none;" onclick="nextQuestion()">
+    <button class="action-btn" style="margin-top:20px;background:${correct ? "var(--correct-green)" : "var(--wrong-red)"};box-shadow:none;" onclick="nextQuestion()">
         ${isLastQuestion ? "View results" : "Next question"}
-    </button>
-    `;
-    
-    const mainBtn = document.querySelector(".quiz-left-col > button.action-btn");
-    if(mainBtn) mainBtn.style.display = 'none';
+    </button>`;
+
+    notifyIframeHeightChanged();
+}
+
+function finishQuiz(){
+    trackQuiz("measuringtools/finish?score=" + score + "&total=" + questions.length);
+
+    setQuizFullscreen(false);
+
+    quizHeader.style.display = "none";
+    quiz.style.display = "none";
+
+    document.getElementById("resultScreen").style.display = "block";
+    document.getElementById("progress").style.width = "100%";
+    document.getElementById("score").innerText = `${score} / ${questions.length}`;
+
+    scrollQuizResultIntoView();
+    notifyIframeHeightChanged();
+}
+
+function scrollToQuizSection() {
+    const targetSectionId = "from-guesstimate-to-exact-numbers";
+
+    function scrollNow() {
+        try {
+            const parentWindow = window.parent;
+            const parentDoc = parentWindow.document;
+
+            const target =
+                parentDoc.getElementById(targetSectionId) ||
+                parentDoc.querySelector(`[name="${targetSectionId}"]`) ||
+                window.frameElement;
+
+            if (!target) {
+                document.querySelector(".container").scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+                return;
+            }
+
+            const fixedHeaderOffset = 90;
+            const rect = target.getBoundingClientRect();
+            const currentScroll =
+                parentWindow.pageYOffset ||
+                parentDoc.documentElement.scrollTop ||
+                parentDoc.body.scrollTop ||
+                0;
+
+            const targetY = Math.max(0, rect.top + currentScroll - fixedHeaderOffset);
+
+            parentWindow.scrollTo({
+                top:targetY,
+                behavior:"smooth"
+            });
+        } catch (e) {
+            document.querySelector(".container").scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    }
+
+    setTimeout(scrollNow, 120);
+    setTimeout(scrollNow, 450);
+    setTimeout(scrollNow, 900);
+}
+
+function scrollQuizResultIntoView() {
+    scrollToQuizSection();
 }
 
 function nextQuestion(){
     currentQuestion++;
+
     if(currentQuestion >= questions.length){
-        quizTrack('measuringtools/finish?score=' + score + '&total=' + questions.length);
-        document.getElementById("quizHeader").style.display = "none";
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("resultScreen").style.display = "block";
-        document.getElementById("progress").style.width = "100%";
-        document.getElementById("score").innerText = `${score} / ${questions.length}`;
+        finishQuiz();
         return;
     }
+
     renderQuestion();
 }
 
 function restartQuiz(){
+    setQuizFullscreen(false);
+
     currentQuestion = 0;
     score = 0;
-    document.getElementById("quizHeader").style.display = "none";
-    document.getElementById("progressWrapper").style.display = "none";
-    document.getElementById("quiz").style.display = "none";
+
+    quizHeader.style.display = "none";
+    progressWrapper.style.display = "none";
+    quiz.style.display = "none";
+
     document.getElementById("resultScreen").style.display = "none";
     startScreen.style.display = "block";
+
+    notifyIframeHeightChanged();
 }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.4.5/js/iframeResizer.contentWindow.min.js"></script>
+<script>
+(function syncThemeWithParent() {
+    function getThemeFromParent() {
+        try {
+            const parentTheme = window.parent.document.documentElement.getAttribute("data-theme");
 
+            if (parentTheme === "dark" || parentTheme === "light") {
+                return parentTheme;
+            }
+        } catch (e) {}
+
+        const localTheme = document.documentElement.getAttribute("data-theme");
+
+        if (localTheme === "dark" || localTheme === "light") {
+            return localTheme;
+        }
+
+        return "light";
+    }
+
+    function applyTheme() {
+        document.documentElement.setAttribute("data-theme", getThemeFromParent());
+    }
+
+    applyTheme();
+    setInterval(applyTheme, 300);
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.4.5/js/iframeResizer.contentWindow.min.js"></script>
 </body>
 </html>

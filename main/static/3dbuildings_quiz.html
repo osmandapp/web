@@ -29,7 +29,6 @@
     color-scheme: light;
 }
 
-/* NIGHT THEME — controlled by site theme */
 html[data-theme="dark"] {
     --osmand-orange-hover: #ff8a2a;
     --osmand-orange-bg: #2a1b10;
@@ -156,6 +155,10 @@ h1{
     width: 360px;
     display: flex;
     justify-content: center;
+}
+
+.quiz-media-mobile {
+    display: none;
 }
 
 .question-number{
@@ -318,6 +321,31 @@ button.action-btn:hover{
     font-weight: 600;
 }
 
+.matching-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.matching-grid .match-row {
+    margin-bottom: 0;
+    padding: 12px;
+    gap: 6px;
+}
+
+.matching-grid .match-row strong {
+    font-size: 14px;
+}
+
+.matching-grid select {
+    padding: 10px 12px;
+    min-height: 40px;
+}
+
+.matching-grid + button.action-btn {
+    margin-top: 14px;
+}
+
 select{
     width: 100%;
     padding: 12px;
@@ -387,6 +415,94 @@ select:focus {
     margin: 16px 0;
 }
 
+.quiz-close-btn{
+    display:none;
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:2147483647;
+    width:42px;
+    height:42px;
+    border:1px solid var(--border-color);
+    border-radius:50%;
+    background:var(--card-bg);
+    color:var(--text-dark);
+    font-size:28px;
+    line-height:1;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.16);
+}
+
+.quiz-close-btn svg{
+    width:24px;
+    height:24px;
+    stroke:currentColor;
+    stroke-width:2.6;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.quiz-close-btn:hover{
+    border-color:var(--osmand-orange);
+    color:var(--osmand-orange);
+    transform:translateY(-1px);
+}
+
+body.quiz-expanded{
+    overflow:hidden;
+    background:var(--bg-main);
+}
+
+body.quiz-expanded .container{
+    position:fixed;
+    inset:0;
+    z-index:2147483646;
+    width:100vw;
+    max-width:none;
+    height:100vh;
+    margin:0;
+    border-radius:0;
+    padding:40px 24px;
+    overflow-y:auto;
+    background:var(--bg-main);
+}
+
+body.quiz-expanded .quiz-close-btn{display:flex}
+
+body.quiz-expanded .quiz-header,
+body.quiz-expanded .progress-wrapper,
+body.quiz-expanded #quiz,
+body.quiz-expanded .result-screen{
+    max-width:1040px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body.quiz-expanded .quiz-header{padding-right:54px}
+
+body.quiz-expanded.matching-question-active .container{
+    padding-top:24px;
+    padding-bottom:24px;
+}
+
+body.quiz-expanded.matching-question-active .quiz-header{margin-bottom:16px}
+body.quiz-expanded.matching-question-active .progress-wrapper{margin:18px auto 24px}
+body.quiz-expanded.matching-question-active .question-title{margin-bottom:8px}
+body.quiz-expanded.matching-question-active .question-hint{margin-bottom:18px}
+
+body.quiz-expanded.matching-question-active .feedback{
+    margin-top:16px;
+    padding:18px 20px;
+}
+
+body.quiz-expanded.matching-question-active .feedback strong{
+    font-size:16px;
+    margin-bottom:4px;
+}
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
@@ -404,15 +520,42 @@ select:focus {
 
 /* SAME BREAKPOINT AS ASTRONOMY */
 @media(max-width:600px){
-    .container{ padding: 24px 16px; margin: 0; border-radius: 0; min-height: 100vh; }
+    .container{
+        padding: 24px 16px;
+        margin: 0;
+        border-radius: 0;
+        min-height: 0;
+    }
+
+    body.quiz-expanded .container{
+        min-height: 100vh;
+    }
+
     .quiz-header { flex-direction: column; text-align: center; gap: 12px; }
     .quiz-layout { flex-direction: column; gap: 24px; }
     .quiz-left-col,
     .quiz-left-col.full-width { width: 100%; }
-    .quiz-right-col { width: 100%; }
+
+    .quiz-media-mobile{
+        display:flex;
+        justify-content:center;
+        margin:0 0 20px;
+    }
+
+    .quiz-right-col { display:none; }
+
+    .quiz-media-mobile .hint-image-wrapper,
     .hint-image-wrapper { width: 280px; height: 576px; border-radius: 28px; border-width: 8px; }
+
+    .quiz-media-mobile .simulator-iframe,
+    .simulator-iframe{
+        width: 280px;
+        height: 576px;
+    }
+
     .question-title { font-size: 20px; }
     .option { font-size: 15px; padding: 14px 16px; }
+    .matching-grid { grid-template-columns: 1fr; }
     h1 { font-size: 22px; }
 }
 </style>
@@ -420,6 +563,12 @@ select:focus {
 <body>
 
 <div class="container">
+    <button class="quiz-close-btn" type="button" onclick="collapseQuizFullscreen()" aria-label="Collapse quiz" title="Collapse quiz">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 18h12"></path>
+            <path d="M8 9l4 4 4-4"></path>
+        </svg>
+    </button>
 
     <div class="quiz-header" id="quizHeader" style="display: none;">
         <div class="mascot-box" id="mascotContainer">🏢</div>
@@ -569,8 +718,92 @@ const progressWrapper = document.getElementById("progressWrapper");
 const mascotContainer = document.getElementById("mascotContainer");
 const mascotResultContainer = document.getElementById("mascotResultContainer");
 
+function trackQuiz(path){
+    if (typeof quizTrack === "function") {
+        quizTrack(path);
+    }
+}
+
+function notifyIframeHeightChanged(){
+    try {
+        window.dispatchEvent(new Event("resize"));
+        setTimeout(() => window.dispatchEvent(new Event("resize")), 120);
+        setTimeout(() => window.dispatchEvent(new Event("resize")), 450);
+    } catch (e) {}
+}
+
+function setQuizFullscreen(active) {
+    document.body.classList.toggle("quiz-expanded", active);
+
+    try {
+        const frame = window.frameElement;
+        const parentDoc = window.parent.document;
+
+        if (!frame || !parentDoc) return;
+
+        if (active) {
+            frame.classList.add("osmand-quiz-frame-fullscreen");
+            parentDoc.documentElement.classList.add("osmand-quiz-page-fullscreen");
+            parentDoc.body.classList.add("osmand-quiz-page-fullscreen");
+
+            const styleId = "osmand-quiz-fullscreen-style";
+
+            if (!parentDoc.getElementById(styleId)) {
+                const style = parentDoc.createElement("style");
+                style.id = styleId;
+                style.textContent = `
+                    html.osmand-quiz-page-fullscreen,
+                    body.osmand-quiz-page-fullscreen {
+                        overflow: hidden !important;
+                    }
+
+                    iframe.osmand-quiz-frame-fullscreen {
+                        position: fixed !important;
+                        inset: 0 !important;
+                        width: 100vw !important;
+                        height: 100vh !important;
+                        max-width: 100vw !important;
+                        max-height: 100vh !important;
+                        min-width: 100vw !important;
+                        min-height: 100vh !important;
+                        z-index: 2147483645 !important;
+                        border: 0 !important;
+                        background: var(--ifm-background-color, #fff) !important;
+                    }
+                `;
+                parentDoc.head.appendChild(style);
+            }
+        } else {
+            frame.classList.remove("osmand-quiz-frame-fullscreen");
+            parentDoc.documentElement.classList.remove("osmand-quiz-page-fullscreen");
+            parentDoc.body.classList.remove("osmand-quiz-page-fullscreen");
+        }
+    } catch (e) {
+        document.body.classList.toggle("quiz-expanded", active);
+    }
+
+    notifyIframeHeightChanged();
+}
+
+function collapseQuizFullscreen(){
+    setQuizFullscreen(false);
+    scrollToQuizSection();
+    notifyIframeHeightChanged();
+}
+
+function exitQuizFullscreen(){
+    collapseQuizFullscreen();
+}
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        collapseQuizFullscreen();
+    }
+});
+
 function startQuiz() {
-    quizTrack('3dbuildings/start');
+    trackQuiz('3dbuildings/start');
+    setQuizFullscreen(true);
     startScreen.style.display = "none";
     quizHeader.style.display = "flex";
     progressWrapper.style.display = "block";
@@ -583,85 +816,8 @@ function updateProgress(){
     document.getElementById("progress").style.width = percent + "%";
 }
 
-function renderQuestion(){
-    updateProgress();
-    
-    mascotContainer.innerHTML = "🏢";
-    mascotContainer.style.borderColor = "var(--osmand-orange)";
-    mascotContainer.style.background = "var(--osmand-orange-bg)";
-    
-    const q = questions[currentQuestion];
-    const hasMedia = q.isSimulator || (q.questionImg && q.questionImg !== "");
-
-    let html = `
-    <div class="quiz-layout">
-        <div class="quiz-left-col ${hasMedia ? '' : 'full-width'}">
-            <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
-            <div class="question-title">${q.title}</div>
-    `;
-
-    if (q.isSimulator) {
-        html += `
-        <div class="simulator-tip">
-            <i><strong>Tip:</strong> You can use the interactive mobile simulator on the right to walk through the configuration steps, refresh your memory, and determine the correct sequence!</i>
-        </div>
-        `;
-    }
-
-    html += `<div class="question-hint">${q.hint}</div>`;
-
-    if(q.type === "single" || q.type === "multi"){
-        q.options.forEach((option,index)=>{
-            html += `
-            <div class="option" data-index="${index}">
-            ${option}
-            </div>
-            `;
-        });
-        html += `<button class="action-btn" onclick="submitChoice()">Submit answer</button>`;
-    }
-
-    if(q.type === "matching"){
-        const rightSide = [...q.pairs.map(p=>p[1])].sort(()=>Math.random()-0.5);
-        q.pairs.forEach((pair)=>{
-            html += `
-            <div class="match-row">
-            <strong>${pair[0]}</strong>
-            <select data-answer="${pair[1]}">
-            <option value="">Select match...</option>
-            ${rightSide.map(item=>`<option value="${item}">${item}</option>`).join("")}
-            </select>
-            </div>
-            `;
-        });
-        html += `<button class="action-btn" onclick="submitMatching()">Submit answer</button>`;
-    }
-
-    if(q.type === "sequence"){
-        q.steps.forEach((step,index)=>{
-            html += `
-            <div class="sequence-item">
-            <select class="seq-select" data-index="${index}">
-            <option value="">No.</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            </select>
-            <div>${step}</div>
-            </div>
-            `;
-        });
-        html += `<button class="action-btn" onclick="submitSequence()">Submit answer</button>`;
-    }
-
-    html += `<div id="feedback"></div></div>`; 
-
-    if (hasMedia) {
-        html += `<div class="quiz-right-col">`;
-        
-        if(q.isSimulator) {
-            html += `
+function get3DBuildingsSimulatorIframe(){
+    return `
             <iframe class="simulator-iframe" srcdoc="
                 <!DOCTYPE html>
                 <html>
@@ -742,20 +898,120 @@ function renderQuestion(){
                 </html>
             "></iframe>
             `;
-        } else if(q.questionImg && q.questionImg !== "") {
+}
+
+function renderMedia(q){
+    if(q.isSimulator) {
+        return get3DBuildingsSimulatorIframe();
+    }
+
+    if(q.questionImg && q.questionImg !== "") {
+        return `
+        <div class="hint-image-wrapper">
+            <img src="${q.questionImg}" alt="Question Hint Interface">
+        </div>`;
+    }
+
+    return "";
+}
+
+function renderQuestion(){
+    updateProgress();
+
+    mascotContainer.innerHTML = "🏢";
+    mascotContainer.style.borderColor = "var(--osmand-orange)";
+    mascotContainer.style.background = "var(--osmand-orange-bg)";
+
+    const q = questions[currentQuestion];
+    const hasMedia = q.isSimulator || (q.questionImg && q.questionImg !== "");
+
+    document.body.classList.toggle("matching-question-active", q.type === "matching");
+
+    let html = `
+    <div class="quiz-layout ${q.type === "matching" ? "matching-layout" : ""}">
+        <div class="quiz-left-col ${hasMedia ? '' : 'full-width'}">
+            <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+            <div class="question-title">${q.title}</div>
+    `;
+
+    if (q.isSimulator) {
+        html += `
+        <div class="simulator-tip">
+            <i><strong>Tip:</strong> You can use the interactive mobile simulator to walk through the configuration steps, refresh your memory, and determine the correct sequence!</i>
+        </div>
+        `;
+    }
+
+    html += `<div class="question-hint">${q.hint}</div>`;
+
+    if (hasMedia) {
+        html += `
+        <div class="quiz-media-mobile">
+            ${renderMedia(q)}
+        </div>`;
+    }
+
+    if(q.type === "single" || q.type === "multi"){
+        q.options.forEach((option,index)=>{
             html += `
-            <div class="hint-image-wrapper">
-                <img src="${q.questionImg}" alt="Question Hint Interface">
+            <div class="option" data-index="${index}">
+            ${option}
             </div>
             `;
-        }
-        html += `</div>`;
+        });
+        html += `<button class="action-btn" onclick="submitChoice()">Submit answer</button>`;
     }
-    
+
+    if(q.type === "matching"){
+        const rightSide = [...q.pairs.map(p=>p[1])].sort(()=>Math.random()-0.5);
+
+        html += `<div class="matching-grid">`;
+
+        q.pairs.forEach((pair)=>{
+            html += `
+            <div class="match-row">
+                <strong>${pair[0]}</strong>
+                <select data-answer="${pair[1]}">
+                    <option value="">Select match...</option>
+                    ${rightSide.map(item=>`<option value="${item}">${item}</option>`).join("")}
+                </select>
+            </div>
+            `;
+        });
+
+        html += `</div>`;
+        html += `<button class="action-btn" onclick="submitMatching()">Submit answer</button>`;
+    }
+
+    if(q.type === "sequence"){
+        q.steps.forEach((step,index)=>{
+            html += `
+            <div class="sequence-item">
+            <select class="seq-select" data-index="${index}">
+            <option value="">No.</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            </select>
+            <div>${step}</div>
+            </div>
+            `;
+        });
+        html += `<button class="action-btn" onclick="submitSequence()">Submit answer</button>`;
+    }
+
+    html += `<div id="feedback"></div></div>`;
+
+    if (hasMedia) {
+        html += `<div class="quiz-right-col">${renderMedia(q)}</div>`;
+    }
+
     html += `</div>`;
 
     quiz.innerHTML = html;
     attachOptionEvents(q.type);
+    notifyIframeHeightChanged();
 }
 
 function attachOptionEvents(type){
@@ -771,7 +1027,7 @@ function attachOptionEvents(type){
 }
 
 function arraysEqual(a,b){
-    return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+    return JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
 }
 
 function submitChoice(){
@@ -801,7 +1057,7 @@ function submitSequence(){
     const q = questions[currentQuestion];
     let anyEmpty = false;
     let correct = true;
-    
+
     selects.forEach(select => {
         if(!select.value) anyEmpty = true;
         const idx = Number(select.dataset.index);
@@ -809,14 +1065,14 @@ function submitSequence(){
             correct = false;
         }
     });
-    
+
     if(anyEmpty) return;
     if(correct) score++;
     showFeedback(correct,q.feedback);
 }
 
 function showFeedback(correct, text){
-    quizTrack('3dbuildings/q/' + (currentQuestion + 1) + '/' + (correct ? 'correct' : 'wrong'));
+    trackQuiz('3dbuildings/q/' + (currentQuestion + 1) + '/' + (correct ? 'correct' : 'wrong'));
     const feedback = document.getElementById("feedback");
     feedback.className = correct ? "feedback correct" : "feedback wrong";
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -838,26 +1094,96 @@ function showFeedback(correct, text){
         ${isLastQuestion ? "View results" : "Next question"}
     </button>
     `;
-    
+
     const mainBtn = document.querySelector(".quiz-left-col > button.action-btn");
     if(mainBtn) mainBtn.style.display = 'none';
+
+    notifyIframeHeightChanged();
+}
+
+function finishQuiz(){
+    document.body.classList.remove("matching-question-active");
+
+    trackQuiz('3dbuildings/finish?score=' + score + '&total=' + questions.length);
+
+    setQuizFullscreen(false);
+
+    document.getElementById("quizHeader").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("resultScreen").style.display = "block";
+    document.getElementById("progress").style.width = "100%";
+    document.getElementById("score").innerText = `${score} / ${questions.length}`;
+
+    scrollQuizResultIntoView();
+    notifyIframeHeightChanged();
+}
+
+function scrollToQuizSection() {
+    const targetSectionId = "3d-cityscapes-challenge";
+
+    function scrollNow() {
+        try {
+            const parentWindow = window.parent;
+            const parentDoc = parentWindow.document;
+
+            const target =
+                parentDoc.getElementById(targetSectionId) ||
+                parentDoc.querySelector(`[name="${targetSectionId}"]`) ||
+                window.frameElement;
+
+            if (!target) {
+                document.querySelector(".container").scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+                return;
+            }
+
+            const fixedHeaderOffset = 90;
+            const rect = target.getBoundingClientRect();
+            const currentScroll =
+                parentWindow.pageYOffset ||
+                parentDoc.documentElement.scrollTop ||
+                parentDoc.body.scrollTop ||
+                0;
+
+            const targetY = Math.max(0, rect.top + currentScroll - fixedHeaderOffset);
+
+            parentWindow.scrollTo({
+                top:targetY,
+                behavior:"smooth"
+            });
+        } catch (e) {
+            document.querySelector(".container").scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+        }
+    }
+
+    setTimeout(scrollNow, 120);
+    setTimeout(scrollNow, 450);
+    setTimeout(scrollNow, 900);
+}
+
+function scrollQuizResultIntoView() {
+    scrollToQuizSection();
 }
 
 function nextQuestion(){
     currentQuestion++;
     if(currentQuestion >= questions.length){
-        quizTrack('3dbuildings/finish?score=' + score + '&total=' + questions.length);
-        document.getElementById("quizHeader").style.display = "none";
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("resultScreen").style.display = "block";
-        document.getElementById("progress").style.width = "100%";
-        document.getElementById("score").innerText = `${score} / ${questions.length}`;
+        finishQuiz();
         return;
     }
     renderQuestion();
 }
 
 function restartQuiz(){
+    document.body.classList.remove("matching-question-active");
+
+    setQuizFullscreen(false);
+
     currentQuestion = 0;
     score = 0;
     document.getElementById("quizHeader").style.display = "none";
@@ -865,6 +1191,8 @@ function restartQuiz(){
     document.getElementById("quiz").style.display = "none";
     document.getElementById("resultScreen").style.display = "none";
     startScreen.style.display = "block";
+
+    notifyIframeHeightChanged();
 }
 </script>
 
