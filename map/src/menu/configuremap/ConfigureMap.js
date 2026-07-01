@@ -1,9 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import {
     MenuItem,
     IconButton,
-    FormControl,
-    Select,
     Typography,
     ListItemText,
     ListItemIcon,
@@ -12,8 +10,10 @@ import {
     Tooltip,
     Box,
     Button,
+    Paper,
 } from '@mui/material';
 import { Layers } from '@mui/icons-material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
@@ -41,6 +41,7 @@ import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
+import ActionsMenu from '../actions/ActionsMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
@@ -71,6 +72,8 @@ export default function ConfigureMap() {
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
+    const [openMapStyleMenu, setOpenMapStyleMenu] = useState(false);
+    const mapStyleAnchorRef = useRef(null);
     const hybridUnderlayUrl = useHybridUnderlayUrl();
 
     const handleFavoritesSwitchChange = () => {
@@ -123,8 +126,7 @@ export default function ConfigureMap() {
     const mapStyleLabel = mapStyleOptions.find((item) => item.key === mapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
     const hasRenderingSettings = Boolean(ctx.allTileURLs[mtx.tileURL.key]?.properties?.length);
 
-    function handleMapStyleSelect(e) {
-        const selected = mapStyleOptions.find((item) => item.key === e.target.value);
+    function handleMapStyleSelect(selected) {
         if (!selected) {
             return;
         }
@@ -136,40 +138,42 @@ export default function ConfigureMap() {
         newConfigureMap.mapStyle = { tileURL: selected, renderingType };
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
+        setOpenMapStyleMenu(false);
     }
 
     function renderMapStyleSelect() {
         return (
-            <MenuItem className={styles.item} disableRipple={true}>
-                <ListItemIcon className={styles.iconEnabled}>
-                    <Layers />
-                </ListItemIcon>
-                <FormControl fullWidth variant="standard">
-                    <Select
-                        variant="standard"
-                        disableUnderline
-                        displayEmpty
-                        value={mapStyleKey}
-                        onChange={handleMapStyleSelect}
-                        renderValue={(selectedKey) => (
-                            <Typography variant="inherit" noWrap>
-                                {mapStyleOptions.find((item) => item.key === selectedKey)?.uiname ?? mapStyleLabel}
-                            </Typography>
-                        )}
-                        sx={{
-                            '& .MuiSelect-select': {
-                                padding: 0,
-                            },
-                        }}
-                    >
-                        {mapStyleOptions.map((item) => (
-                            <MenuItem key={item.key} value={item.key}>
-                                {item.uiname}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
-            </MenuItem>
+            <>
+                <MenuItem className={styles.item} onClick={() => setOpenMapStyleMenu(true)}>
+                    <ListItemIcon className={styles.iconEnabled}>
+                        <Layers />
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography variant="inherit" noWrap>
+                            {mapStyleLabel}
+                        </Typography>
+                    </ListItemText>
+                    <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} ref={mapStyleAnchorRef} />
+                </MenuItem>
+                <ActionsMenu
+                    open={openMapStyleMenu}
+                    setOpen={setOpenMapStyleMenu}
+                    anchorEl={mapStyleAnchorRef}
+                    actions={
+                        <Paper>
+                            {mapStyleOptions.map((item) => (
+                                <MenuItem
+                                    key={item.key}
+                                    selected={item.key === mapStyleKey}
+                                    onClick={() => handleMapStyleSelect(item)}
+                                >
+                                    {item.uiname}
+                                </MenuItem>
+                            ))}
+                        </Paper>
+                    }
+                />
+            </>
         );
     }
 
