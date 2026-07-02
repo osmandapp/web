@@ -1,6 +1,6 @@
 import MvtLayer from './MvtLayer';
-import mvtOsmStyle from '../mvt/mvtOsmStyle.json';
-import { isOsmTestTileURL, MVT_OSM_TEST_URL } from '../mvt/MvtDemoConfig';
+import mvtOsmStyle from '../../resources/mvt/osm-demo.mvt.json';
+import { isOsmTestTileURL, MVT_OSM_TEST_URL } from './MvtLayerConfig';
 
 const config = {
     style: mvtOsmStyle,

@@ -29,7 +29,7 @@ import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
-import { isMvtTileURL } from './mvt/MvtDemoConfig';
+import { isMvtTileURL } from './layers/MvtLayerConfig';
 
 function getInitialViewFromHash() {
     const hash = window.location.hash;

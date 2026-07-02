@@ -14,7 +14,7 @@ import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
 import MarkerOptions from '../map/markers/MarkerOptions';
-import { mvtOsmAndURL, MVT_OSMAND_LAYER, mvtOsmTestURL, MVT_OSM_TEST_LAYER } from '../map/mvt/MvtDemoConfig';
+import { mvtOsmAndURL, MVT_OSMAND_LAYER, mvtOsmTestURL, MVT_OSM_TEST_LAYER } from '../map/layers/MvtLayerConfig';
 import { osmandTileURL } from '../map/baseTileURL';
 import {
     EXPLORE_OBJS_KEY,

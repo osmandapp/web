@@ -49,7 +49,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
-import { isMvtTileURL, mvtOsmAndURL } from '../../map/mvt/MvtDemoConfig';
+import { isMvtTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 export const DYNAMIC_RENDERING = 'dynamic';
