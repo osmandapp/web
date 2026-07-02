@@ -23,7 +23,6 @@ import {
     liveHash,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
-import GlobalAlert from './components/GlobalAlert';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
@@ -431,7 +430,6 @@ const GlobalFrame = () => {
                 <GlobalConfirmationDialog />
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
-                <GlobalAlert width={width} />
                 <Snackbar
                     open={!!ctx.notification}
                     autoHideDuration={3000}
