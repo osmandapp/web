@@ -1,7 +1,7 @@
 import MvtLayer from './MvtLayer';
 import MvtHybridDemoUnderlay from './MvtHybridDemo';
-import defaultStyle from '../mvt/defaultStyle.json';
-import { isOsmAndTileURL, MVT_OSMAND_URL } from '../mvt/MvtDemoConfig';
+import defaultStyle from '../../resources/mvt/default.mvt.json';
+import { isOsmAndTileURL, MVT_OSMAND_URL } from './MvtLayerConfig';
 
 const config = {
     style: defaultStyle,

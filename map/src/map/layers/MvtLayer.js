@@ -6,7 +6,7 @@ import '@maplibre/maplibre-gl-leaflet';
 import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { osmandTileURL } from '../baseTileURL';
-import { isWebGLAvailable } from '../mvt/MvtDemoConfig';
+import { isWebGLAvailable } from './MvtLayerConfig';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,

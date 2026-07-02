@@ -2,7 +2,7 @@ import { useContext, useEffect, useSyncExternalStore } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
-import { isMvtTileURL } from '../mvt/MvtDemoConfig';
+import { isMvtTileURL } from './MvtLayerConfig';
 
 const HYBRID_UNDERLAY_URL_KEY = 'mvtHybridUnderlayUrl';
 const HYBRID_UNDERLAY_ACTIVE_KEY = 'mvtHybridUnderlayActive';

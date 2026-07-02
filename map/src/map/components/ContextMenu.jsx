@@ -33,7 +33,7 @@ import {
     POI_URL,
 } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
-import { isMvtTileURL } from '../mvt/MvtDemoConfig';
+import { isMvtTileURL } from '../layers/MvtLayerConfig';
 import { getMvtTileDownloads } from '../layers/MvtLayer';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {

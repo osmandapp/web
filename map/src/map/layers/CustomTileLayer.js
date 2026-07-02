@@ -9,7 +9,7 @@ import { apiGet } from '../../util/HttpApi';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
 import styles from '../map.module.css';
-import { isMvtTileURL } from '../mvt/MvtDemoConfig';
+import { isMvtTileURL } from './MvtLayerConfig';
 
 export const INTERACTIVE_LAYER = 'int';
 
