@@ -736,9 +736,6 @@ export function isTrackExists(name, folder, folderName, tracks) {
     }
     const foundFolder = findGroupByName(tracks, folderName !== null ? folderName : (folder?.title ?? folder));
     if (foundFolder) {
-        if (foundFolder.name === DEFAULT_GROUP_NAME) {
-            return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
-        }
         return foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name);
     }
     return false;
