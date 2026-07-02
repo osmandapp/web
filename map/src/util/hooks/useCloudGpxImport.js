@@ -2,11 +2,11 @@ import { useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { GPX_FILE_EXT, KMZ_FILE_EXT, KML_FILE_EXT, validName } from '../../manager/track/TracksManager';
+import { GPX_FILE_EXT, KMZ_FILE_EXT, validName } from '../../manager/track/TracksManager';
 import { createTrackFreeName, removeFileExtension, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import useGpxImport from './useGpxImport';
 
-const CLOUD_TRACK_EXTENSIONS = [GPX_FILE_EXT, KMZ_FILE_EXT, KML_FILE_EXT];
+const CLOUD_TRACK_EXTENSIONS = ['.gpx', '.kmz', '.kml'];
 
 export default function useCloudGpxImport() {
     const ctx = useContext(AppContext);

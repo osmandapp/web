@@ -15,6 +15,10 @@ export default function TracksDropHighlight({
     const { t } = useTranslation();
     const [insets, setInsets] = useState(null);
 
+    // Where the flat track rows start, i.e. how much of the list above them is folders.
+    const trackItemsStartIndex = rowsCount - trackItemsCount;
+    const contentOffset = active ? (listRef?.current?.getItemOffset(trackItemsStartIndex) ?? 0) : 0;
+
     useLayoutEffect(() => {
         if (!active) {
             setInsets(null);
@@ -27,10 +31,6 @@ export default function TracksDropHighlight({
             setInsets(null);
             return;
         }
-
-        // Where the flat track rows start, i.e. how much of the list above them is folders.
-        const trackItemsStartIndex = rowsCount - trackItemsCount;
-        const contentOffset = listRef?.current?.getItemOffset(trackItemsStartIndex) ?? 0;
 
         const update = () => {
             const scrollRect = scroll.getBoundingClientRect();
@@ -63,7 +63,7 @@ export default function TracksDropHighlight({
             scroll.removeEventListener('scroll', update);
             window.removeEventListener('resize', update);
         };
-    }, [active, dropZoneRef, scrollRef, listRef, rowsCount, trackItemsCount]);
+    }, [active, dropZoneRef, scrollRef, contentOffset]);
 
     if (!insets) {
         return null;

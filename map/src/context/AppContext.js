@@ -137,8 +137,6 @@ export const AppContextProvider = (props) => {
 
     const [openMenu, setOpenMenu] = useState(null);
     const [gpxFileDrag, setGpxFileDrag] = useState({ active: false, hoverFolder: null, overMap: false });
-    const gpxFileDragRef = useRef(gpxFileDrag);
-    gpxFileDragRef.current = gpxFileDrag;
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
     const [cloudSettings, setCloudSettings] = useState({
@@ -357,6 +355,8 @@ export const AppContextProvider = (props) => {
     const [processingAnalytics, setProcessingAnalytics] = useState(false);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
 
+    const gpxFileDragRef = useRef(gpxFileDrag);
+
     useEffect(() => {
         async function loadSort() {
             try {
@@ -529,6 +529,8 @@ export const AppContextProvider = (props) => {
     const [openGroups, setOpenGroups] = useState([]);
 
     const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
+
+    gpxFileDragRef.current = gpxFileDrag;
 
     return (
         <AppContext.Provider

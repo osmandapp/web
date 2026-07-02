@@ -2,8 +2,9 @@ import { useCallback, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import TracksManager from '../../manager/track/TracksManager';
 import { saveTrackToLocal } from '../../manager/track/SaveTrackManager';
-import { GPX_FILE_EXT } from '../../manager/track/TracksManager';
 import useGpxImport from './useGpxImport';
+
+const LOCAL_TRACK_EXTENSION = '.gpx';
 
 export default function useLocalGpxImport() {
     const ctx = useContext(AppContext);
@@ -36,5 +37,5 @@ export default function useLocalGpxImport() {
 }
 
 function isLocalTrackFile(file) {
-    return file?.name?.toLowerCase().endsWith(GPX_FILE_EXT);
+    return file?.name?.toLowerCase().endsWith(LOCAL_TRACK_EXTENSION);
 }
