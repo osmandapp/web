@@ -80,6 +80,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
 
+    const mapDragHandlers = useGpxFileDragMapZone();
+
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
@@ -169,7 +171,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
         };
     }, [ctx]);
 
-    const mapDragHandlers = useGpxFileDragMapZone();
     const routersReady = ctx.trackRouter.isReady() && ctx.routeObject.isReady();
 
     return (

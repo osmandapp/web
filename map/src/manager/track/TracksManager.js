@@ -31,6 +31,7 @@ export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
 export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
+export const KML_FILE_EXT = '.kml';
 export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';

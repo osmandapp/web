@@ -4,13 +4,16 @@ import { useTranslation } from 'react-i18next';
 import { OVERLAY_MARGIN } from '../TracksDropOverlay';
 import styles from './dropOverlay.module.css';
 
-export default function TracksDropHighlight({ active, dropZoneRef, scrollRef, listRef, rowsCount = 0, trackItemsCount = 0 }) {
+export default function TracksDropHighlight({
+    active,
+    dropZoneRef,
+    scrollRef,
+    listRef,
+    rowsCount = 0,
+    trackItemsCount = 0,
+}) {
     const { t } = useTranslation();
     const [insets, setInsets] = useState(null);
-
-    // Where the flat track rows start, i.e. how much of the list above them is folders.
-    const trackItemsStartIndex = rowsCount - trackItemsCount;
-    const contentOffset = active ? (listRef?.current?.getItemOffset(trackItemsStartIndex) ?? 0) : 0;
 
     useLayoutEffect(() => {
         if (!active) {
@@ -24,6 +27,10 @@ export default function TracksDropHighlight({ active, dropZoneRef, scrollRef, li
             setInsets(null);
             return;
         }
+
+        // Where the flat track rows start, i.e. how much of the list above them is folders.
+        const trackItemsStartIndex = rowsCount - trackItemsCount;
+        const contentOffset = listRef?.current?.getItemOffset(trackItemsStartIndex) ?? 0;
 
         const update = () => {
             const scrollRect = scroll.getBoundingClientRect();
@@ -56,7 +63,7 @@ export default function TracksDropHighlight({ active, dropZoneRef, scrollRef, li
             scroll.removeEventListener('scroll', update);
             window.removeEventListener('resize', update);
         };
-    }, [active, dropZoneRef, scrollRef, contentOffset]);
+    }, [active, dropZoneRef, scrollRef, listRef, rowsCount, trackItemsCount]);
 
     if (!insets) {
         return null;

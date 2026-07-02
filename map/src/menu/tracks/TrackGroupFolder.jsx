@@ -30,7 +30,9 @@ import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
-    const folderDragHandlers = useGpxFileDragZone(folder != null && folder.type !== SMART_TYPE && !smartf ? folder.fullName : null);
+    const folderDragHandlers = useGpxFileDragZone(
+        folder != null && folder.type !== SMART_TYPE && !smartf ? folder.fullName : null
+    );
     const clearGpxDragTarget = useGpxFileDragClearZone();
 
     const [group, setGroup] = useState(folder);
@@ -152,15 +154,16 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     }
 
     const isDropTarget = !!group && group.type !== SMART_TYPE && !smartf;
-    const isFolderDropActive = isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
+    const isFolderDropActive =
+        isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
 
     const folderRows = useMemo(
         () => [
             ...(groupItems ?? []),
-            ...(ctx.trackLoading?.length > 0 
+            ...(ctx.trackLoading?.length > 0
                 ? ctx.trackLoading
-                       .filter((lt) => lt.folder === group?.fullName)
-                       .map((lt) => <TrackLoading key={lt.name} name={lt.name} />) 
+                      .filter((lt) => lt.folder === group?.fullName)
+                      .map((lt) => <TrackLoading key={lt.name} name={lt.name} />)
                 : []),
             ...(trackItems ?? []),
         ],

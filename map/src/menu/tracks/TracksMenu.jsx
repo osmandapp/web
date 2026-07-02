@@ -157,14 +157,22 @@ export default function TracksMenu() {
                 .filter((lt) => lt.folder === DEFAULT_GROUP_NAME)
                 .forEach((lt) => {
                     rows.push(<TrackLoading key={lt.name} name={lt.name} />);
-            });
+                });
         }
         if (defaultGroupItems) {
             rows.push(...defaultGroupItems);
         }
 
         return rows;
-    }, [defaultGroupItems, sortGroups, ctx.tracksGroups, ctx.trackLoading, ctx.shareWithMeFiles, ctx.visibleTracks, clearGpxDragTarget]);
+    }, [
+        defaultGroupItems,
+        sortGroups,
+        ctx.tracksGroups,
+        ctx.trackLoading,
+        ctx.shareWithMeFiles,
+        ctx.visibleTracks,
+        clearGpxDragTarget,
+    ]);
 
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;

@@ -1,15 +1,17 @@
 import { useCallback, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { GPX_FILE_EXT, KMZ_FILE_EXT, validName } from '../../manager/track/TracksManager';
+import { GPX_FILE_EXT, KMZ_FILE_EXT, KML_FILE_EXT, validName } from '../../manager/track/TracksManager';
 import { createTrackFreeName, removeFileExtension, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import useGpxImport from './useGpxImport';
 
-const CLOUD_TRACK_EXTENSIONS = ['.gpx', '.kmz', '.kml'];
+const CLOUD_TRACK_EXTENSIONS = [GPX_FILE_EXT, KMZ_FILE_EXT, KML_FILE_EXT];
 
 export default function useCloudGpxImport() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+    const { t } = useTranslation();
 
     const canImport = useCallback(() => ltx.isProAccount(), [ltx]);
 
@@ -17,7 +19,13 @@ export default function useCloudGpxImport() {
         (files, folder) => {
             const batchTaken = new Set();
             const freeNames = files.map((file) => {
-                const freeName = createTrackFreeName(removeFileExtension(file.name), ctx.tracksGroups, folder, null, batchTaken);
+                const freeName = createTrackFreeName(
+                    removeFileExtension(file.name),
+                    ctx.tracksGroups,
+                    folder,
+                    null,
+                    batchTaken
+                );
                 batchTaken.add(freeName);
                 return freeName;
             });
@@ -27,37 +35,42 @@ export default function useCloudGpxImport() {
         [ctx]
     );
 
-    const readFile = useCallback((file, { folder, selected, freeName }) => {
-        return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.addEventListener('load', (e) => {
-                const data = e.target.result;
-                if (data) {
-                    resolve({
-                        file,
-                        selected,
-                        data: data,
-                        name: file.name,
-                        originalName: file.name,
-                        folder,
-                        freeName,
-                    });
+    const readFile = useCallback(
+        (file, { folder, selected, freeName }) => {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.addEventListener('load', (e) => {
+                    const data = e.target.result;
+                    if (data) {
+                        resolve({
+                            file,
+                            selected,
+                            data: data,
+                            name: file.name,
+                            originalName: file.name,
+                            folder,
+                            freeName,
+                        });
+                    } else {
+                        ctx.setTrackErrorMsg({
+                            title: t('web:import_error_title'),
+                            msg: t('web:import_error_msg', { name: file.name }),
+                        });
+                        ctx.setTrackLoading((prev) =>
+                            prev.filter((lt) => !(lt.name === freeName + GPX_FILE_EXT && lt.folder === folder))
+                        );
+                        resolve(null);
+                    }
+                });
+                if (file.name.toLowerCase().endsWith(KMZ_FILE_EXT)) {
+                    reader.readAsArrayBuffer(file);
                 } else {
-                    ctx.setTrackErrorMsg({
-                        title: 'Import error',
-                        msg: `Unable to import ${file.name}`,
-                    });
-                    ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === freeName + GPX_FILE_EXT && t.folder === folder)));
-                    resolve(null);
+                    reader.readAsText(file);
                 }
             });
-            if (file.name.toLowerCase().endsWith(KMZ_FILE_EXT)) {
-                reader.readAsArrayBuffer(file);
-            } else {
-                reader.readAsText(file);
-            }
-        });
-    }, [ctx]);
+        },
+        [ctx]
+    );
 
     const saveFile = useCallback(
         (uploadedFile) => {
@@ -73,7 +86,9 @@ export default function useCloudGpxImport() {
                     uploadedFile,
                     open: uploadedFile.selected,
                 }).finally(() => {
-                    ctx.setTrackLoading((prev) => prev.filter((t) => !(t.name === freeLoadingName && t.folder === folder)));
+                    ctx.setTrackLoading((prev) =>
+                        prev.filter((lt) => !(lt.name === freeLoadingName && lt.folder === folder))
+                    );
                 });
             }
         },

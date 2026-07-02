@@ -4,95 +4,47 @@ import LoginContext from '../../context/LoginContext';
 import { hasFiles } from '../../frame/TracksFileDragController';
 
 export function useGpxFileDragZone(hoverFolder) {
-    const ctx = useContext(AppContext);
-    const guard = useGpxFileDragGuard();
-
-    const setFolderTarget = useCallback(
-        (e) => {
-            if (hoverFolder === null || hoverFolder === undefined) {
-                return;
-            }
-            if (!guard(e)) {
-                return;
-            }
-            ctx.gpxFileDragRef.current = { active: true, hoverFolder, overMap: false };
-            ctx.setGpxFileDrag((prev) => {
-                if (prev.active && prev.hoverFolder === hoverFolder && !prev.overMap) {
-                    return prev;
-                }
-
-                return { active: true, hoverFolder, overMap: false };
-            });
-        },
-        [ctx, guard, hoverFolder]
-    );
-
-    return useMemo(
-        () => ({
-            onDragEnter: setFolderTarget,
-            onDragOver: setFolderTarget,
-        }),
-        [setFolderTarget]
-    );
+    return useGpxFileDragStateHandler(hoverFolder, false, hoverFolder == null);
 }
 
 export function useGpxFileDragMapZone() {
-    const ctx = useContext(AppContext);
-    const guard = useGpxFileDragGuard();
-
-    const setMapTarget = useCallback(
-        (e) => {
-            if (!guard(e)) {
-                return;
-            }
-            ctx.gpxFileDragRef.current = { active: true, hoverFolder: null, overMap: true };
-            ctx.setGpxFileDrag((prev) => {
-                if (prev.active && prev.hoverFolder === null && prev.overMap) {
-                    return prev;
-                }
-
-                return { active: true, hoverFolder: null, overMap: true };
-            });
-        },
-        [ctx, guard]
-    );
-
-    return useMemo(
-        () => ({
-            onDragEnter: setMapTarget,
-            onDragOver: setMapTarget,
-        }),
-        [setMapTarget]
-    );
+    return useGpxFileDragStateHandler(null, true);
 }
 
 export function useGpxFileDragClearZone() {
+    return useGpxFileDragStateHandler(null, false);
+}
+
+function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
     const ctx = useContext(AppContext);
     const guard = useGpxFileDragGuard();
 
-    const clearTarget = useCallback(
+    const handler = useCallback(
         (e) => {
+            if (disabled) {
+                return;
+            }
             if (!guard(e)) {
                 return;
             }
-            ctx.gpxFileDragRef.current = { active: true, hoverFolder: null, overMap: false };
+            ctx.gpxFileDragRef.current = { active: true, hoverFolder, overMap };
             ctx.setGpxFileDrag((prev) => {
-                if (prev.active && prev.hoverFolder === null && !prev.overMap) {
+                if (prev.active && prev.hoverFolder === hoverFolder && prev.overMap === overMap) {
                     return prev;
                 }
 
-                return { active: true, hoverFolder: null, overMap: false };
+                return { active: true, hoverFolder, overMap };
             });
         },
-        [ctx, guard]
+        [ctx, guard, hoverFolder, overMap, disabled]
     );
 
     return useMemo(
         () => ({
-            onDragEnter: clearTarget,
-            onDragOver: clearTarget,
+            onDragEnter: handler,
+            onDragOver: handler,
         }),
-        [clearTarget]
+        [handler]
     );
 }
 
