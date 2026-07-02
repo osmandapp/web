@@ -39,6 +39,16 @@ export default function useCloudGpxImport() {
         (file, { folder, selected, freeName }) => {
             return new Promise((resolve) => {
                 const reader = new FileReader();
+                const onFail = () => {
+                    ctx.setTrackErrorMsg({
+                        title: t('web:import_error_title'),
+                        msg: t('web:import_error_msg', { name: file.name }),
+                    });
+                    ctx.setTrackLoading((prev) =>
+                        prev.filter((lt) => !(lt.name === freeName + GPX_FILE_EXT && lt.folder === folder))
+                    );
+                    resolve(null);
+                };
                 reader.addEventListener('load', (e) => {
                     const data = e.target.result;
                     if (data) {
@@ -52,16 +62,11 @@ export default function useCloudGpxImport() {
                             freeName,
                         });
                     } else {
-                        ctx.setTrackErrorMsg({
-                            title: t('web:import_error_title'),
-                            msg: t('web:import_error_msg', { name: file.name }),
-                        });
-                        ctx.setTrackLoading((prev) =>
-                            prev.filter((lt) => !(lt.name === freeName + GPX_FILE_EXT && lt.folder === folder))
-                        );
-                        resolve(null);
+                        onFail();
                     }
                 });
+                reader.addEventListener('error', onFail);
+                reader.addEventListener('abort', onFail);
                 if (file.name.toLowerCase().endsWith(KMZ_FILE_EXT)) {
                     reader.readAsArrayBuffer(file);
                 } else {
