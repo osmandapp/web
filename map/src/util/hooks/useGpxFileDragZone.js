@@ -15,6 +15,7 @@ export function useGpxFileDragZone(hoverFolder) {
             if (!guard(e)) {
                 return;
             }
+            ctx.gpxFileDragRef.current = { active: true, hoverFolder, overMap: false };
             ctx.setGpxFileDrag((prev) => {
                 if (prev.active && prev.hoverFolder === hoverFolder && !prev.overMap) {
                     return prev;
@@ -44,6 +45,7 @@ export function useGpxFileDragMapZone() {
             if (!guard(e)) {
                 return;
             }
+            ctx.gpxFileDragRef.current = { active: true, hoverFolder: null, overMap: true };
             ctx.setGpxFileDrag((prev) => {
                 if (prev.active && prev.hoverFolder === null && prev.overMap) {
                     return prev;
@@ -73,6 +75,7 @@ export function useGpxFileDragClearZone() {
             if (!guard(e)) {
                 return;
             }
+            ctx.gpxFileDragRef.current = { active: true, hoverFolder: null, overMap: false };
             ctx.setGpxFileDrag((prev) => {
                 if (prev.active && prev.hoverFolder === null && !prev.overMap) {
                     return prev;

@@ -137,6 +137,8 @@ export const AppContextProvider = (props) => {
 
     const [openMenu, setOpenMenu] = useState(null);
     const [gpxFileDrag, setGpxFileDrag] = useState({ active: false, hoverFolder: null, overMap: false });
+    const gpxFileDragRef = useRef(gpxFileDrag);
+    gpxFileDragRef.current = gpxFileDrag;
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
     const [cloudSettings, setCloudSettings] = useState({
@@ -649,6 +651,7 @@ export const AppContextProvider = (props) => {
                 setOpenMenu,
                 gpxFileDrag,
                 setGpxFileDrag,
+                gpxFileDragRef,
                 openContextMenu,
                 setOpenContextMenu,
                 prevPageUrl,

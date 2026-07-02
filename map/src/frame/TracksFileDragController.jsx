@@ -61,7 +61,7 @@ export default function TracksFileDragController() {
             e.preventDefault();
 
             const files = Array.from(e.dataTransfer?.files || []);
-            const { hoverFolder, overMap } = ctx.gpxFileDrag ?? GPX_FILE_DRAG_IDLE;
+            const { hoverFolder, overMap } = ctx.gpxFileDragRef.current ?? GPX_FILE_DRAG_IDLE;
             if (hoverFolder !== null) {
                 importGpxFiles(files, hoverFolder);
             } else if (overMap) {
@@ -87,7 +87,7 @@ export default function TracksFileDragController() {
             container.removeEventListener('drop', onDrop);
             window.removeEventListener('dragend', onDragEnd);
         };
-    }, [ctx.gpxFileDrag, ctx.setGpxFileDrag, importGpxFiles, ltx]);
+    }, [ctx.setGpxFileDrag, importGpxFiles, ltx]);
 
     return createPortal(<TracksDropOverlay />, document.body);
 }
