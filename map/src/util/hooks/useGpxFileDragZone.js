@@ -1,7 +1,9 @@
 import { useCallback, useContext, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { hasFiles } from '../../frame/TracksFileDragController';
+import { GPX_FILE_DRAG_IDLE, hasFiles } from '../../frame/TracksFileDragController';
+import { IMPORT_FOLDER_NAME } from '../../manager/track/TracksManager';
+import useCloudGpxImport from './useCloudGpxImport';
 
 export function useGpxFileDragZone(hoverFolder) {
     return useGpxFileDragStateHandler(hoverFolder, false, hoverFolder == null);
@@ -15,19 +17,69 @@ export function useGpxFileDragClearZone() {
     return useGpxFileDragStateHandler(null, false);
 }
 
-function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
+// Catch-all zone for the whole app container: swallows drags/drops that land outside any
+// specific zone (so the browser never navigates to the dropped file) and tracks when the
+// cursor truly leaves the app, so more specific zones never need to know about "leave".
+export function useGpxFileDragRootZone() {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const guard = useGpxFileDragGuard();
 
-    const handler = useCallback(
+    const onDragEnter = useCallback(
         (e) => {
-            if (disabled) {
-                return;
-            }
             if (!guard(e)) {
                 return;
             }
-            ctx.gpxFileDragRef.current = { active: true, hoverFolder, overMap };
+            ctx.setGpxFileDrag((prev) => (prev.active ? prev : { ...GPX_FILE_DRAG_IDLE, active: true }));
+        },
+        [ctx, guard]
+    );
+
+    const onDragLeave = useCallback(
+        (e) => {
+            if (!hasFiles(e) || !ltx.isProAccount()) {
+                return;
+            }
+            // relatedTarget is the element the cursor is entering.
+            // null or outside the app container means the cursor truly left the app.
+            if (!e.currentTarget.contains(e.relatedTarget)) {
+                ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
+            }
+        },
+        [ctx, ltx]
+    );
+
+    const onDrop = useCallback(
+        (e) => {
+            if (!guard(e)) {
+                return;
+            }
+            ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
+        },
+        [ctx, guard]
+    );
+
+    return useMemo(
+        () => ({
+            onDragEnter,
+            onDragOver: onDragEnter,
+            onDragLeave,
+            onDrop,
+        }),
+        [onDragEnter, onDragLeave, onDrop]
+    );
+}
+
+function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
+    const ctx = useContext(AppContext);
+    const { importGpxFiles } = useCloudGpxImport();
+    const guard = useGpxFileDragGuard();
+
+    const onDragEnter = useCallback(
+        (e) => {
+            if (disabled || !guard(e)) {
+                return;
+            }
             ctx.setGpxFileDrag((prev) => {
                 if (prev.active && prev.hoverFolder === hoverFolder && prev.overMap === overMap) {
                     return prev;
@@ -39,12 +91,29 @@ function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
         [ctx, guard, hoverFolder, overMap, disabled]
     );
 
+    const onDrop = useCallback(
+        (e) => {
+            if (disabled || !guard(e)) {
+                return;
+            }
+            const files = Array.from(e.dataTransfer?.files || []);
+            if (hoverFolder !== null) {
+                importGpxFiles(files, hoverFolder);
+            } else if (overMap) {
+                importGpxFiles(files, IMPORT_FOLDER_NAME);
+            }
+            ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
+        },
+        [ctx, guard, importGpxFiles, hoverFolder, overMap, disabled]
+    );
+
     return useMemo(
         () => ({
-            onDragEnter: handler,
-            onDragOver: handler,
+            onDragEnter,
+            onDragOver: onDragEnter,
+            onDrop,
         }),
-        [handler]
+        [onDragEnter, onDrop]
     );
 }
 

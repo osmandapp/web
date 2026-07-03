@@ -45,6 +45,7 @@ import TracksFileDragController from './TracksFileDragController';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
+import { useGpxFileDragRootZone } from '../util/hooks/useGpxFileDragZone';
 
 const ENCODED_COMMA = '%2C';
 const ENCODED_COLON = '%3A';
@@ -54,6 +55,8 @@ const GlobalFrame = () => {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const mtx = useContext(MapContext);
+
+    const rootDragHandlers = useGpxFileDragRootZone();
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
@@ -420,7 +423,7 @@ const GlobalFrame = () => {
     };
 
     return (
-        <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
+        <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }} {...rootDragHandlers}>
             <InstallBanner showInstallBanner={showInstallBanner} />
             <HeaderMenu showInstallBanner={showInstallBanner} />
             <Box
