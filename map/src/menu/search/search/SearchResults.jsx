@@ -59,7 +59,7 @@ function getVisibleLevel(item) {
 
 export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
-        query: formattingPoiType(searchParams.query),
+        query: searchParams.query,
         latlng: { lat: loc.lat, lng: loc.lng },
         baseSearch,
     });
