@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
@@ -41,9 +41,6 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const [, height] = useWindowSize();
     const [listContainerRef, listHeight] = useElementHeight();
     const [processingGroup, setProcessingGroup] = useState(false);
-    const folderScrollRef = useRef(null);
-    const folderListRef = useRef(null);
-    const folderDropZoneRef = useRef(null);
 
     // update group after changing or deleting inner tracks
     useEffect(() => {
@@ -196,27 +193,20 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                     maxWidth={ctx.infoBlockWidth}
                 >
                     <Box
-                        ref={folderDropZoneRef}
                         className={`${dropOverlayStyles.dropZoneContent}${isDropTarget ? ` ${dropOverlayStyles.folderDropTarget}` : ''}`}
                         {...(isDropTarget ? folderDragHandlers : {})}
                     >
-                        <TracksDropHighlight
-                            active={isFolderDropActive}
-                            dropZoneRef={folderDropZoneRef}
-                            scrollRef={folderScrollRef}
-                            listRef={folderListRef}
-                            rowsCount={folderRows.length}
-                            trackItemsCount={trackItems?.length ?? 0}
-                        />
                         <VirtualizedList
-                            ref={folderListRef}
-                            outerRef={folderScrollRef}
                             items={folderRows}
                             renderItem={(row) => row}
                             getItemKey={(row) => row.key}
                             height={listHeight}
+                            fillHeight
+                            overlayIndex={
+                                isFolderDropActive ? folderRows.length - (trackItems?.length ?? 0) : undefined
+                            }
+                            overlayContent={isFolderDropActive ? <TracksDropHighlight /> : undefined}
                         />
-                        <Box className={dropOverlayStyles.dropZoneSpacer} />
                     </Box>
                 </Box>
             </Box>

@@ -9,6 +9,7 @@ import {
     useState,
 } from 'react';
 import { VariableSizeList } from 'react-window';
+import styles from './virtualizedList.module.css';
 
 const DEFAULT_ESTIMATED_ITEM_HEIGHT = 56;
 const DEFAULT_OVERSCAN_COUNT = 3;
@@ -24,17 +25,32 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         getItemKey = (item, index) => index,
         overscanCount = DEFAULT_OVERSCAN_COUNT,
         style = undefined,
-        outerRef = undefined,
+        overlayIndex = undefined,
+        overlayContent = undefined,
+        fillHeight = false,
     },
     ref
 ) {
     const listRef = useRef(null);
+    const outerElRef = useRef(null);
     const heightsRef = useRef({});
+    const [contentHeight, setContentHeight] = useState(0);
+    const [overlayTop, setOverlayTop] = useState(null);
+
     const rows = items ?? [];
     const autoMeasure = itemSize == null;
-    const [contentHeight, setContentHeight] = useState(0);
     const measuredContent = contentHeight || rows.length * estimatedItemHeight;
-    const safeHeight = Math.max(1, Math.min(measuredContent, height || 0));
+    // When fillHeight, the list always occupies the full available height (react-window just
+    // shows blank space below short content) instead of shrinking to fit like the default.
+    const safeHeight = fillHeight ? Math.max(1, height || 0) : Math.max(1, Math.min(measuredContent, height || 0));
+
+    useImperativeHandle(
+        ref,
+        () => ({
+            scrollToItem: (index, align) => listRef.current?.scrollToItem(index, align),
+        }),
+        []
+    );
 
     const resolveItemSize = useCallback(
         (index) => {
@@ -47,28 +63,40 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         [itemSize, getItemKey, rows, estimatedItemHeight]
     );
 
-    useImperativeHandle(
-        ref,
-        () => ({
-            scrollToItem: (index, align) => listRef.current?.scrollToItem(index, align),
-            getItemOffset: (index) => {
-                let total = 0;
-                for (let i = 0; i < index; i++) {
-                    total += resolveItemSize(i);
-                }
-                return total;
-            },
-        }),
+    const sumItemSizes = useCallback(
+        (count) => {
+            let total = 0;
+            for (let i = 0; i < count; i++) {
+                total += resolveItemSize(i);
+            }
+            return total;
+        },
         [resolveItemSize]
     );
 
-    const recomputeContentHeight = useCallback(() => {
-        let total = 0;
-        for (let i = 0; i < rows.length; i++) {
-            total += resolveItemSize(i);
+
+    const overlayOffset = useMemo(() => {
+        if (overlayIndex == null) {
+            return 0;
         }
-        setContentHeight(total);
-    }, [rows, resolveItemSize]);
+        return sumItemSizes(overlayIndex);
+    }, [overlayIndex, sumItemSizes, contentHeight]);
+
+    // How far the folder-row boundary currently is above the viewport (0 once scrolled past it).
+    const recomputeOverlayTop = useCallback(() => {
+        const outer = outerElRef.current;
+        if (!outer || overlayIndex == null) {
+            setOverlayTop(null);
+            return;
+        }
+
+        const top = Math.max(0, overlayOffset - outer.scrollTop);
+        setOverlayTop((prev) => (prev === top ? prev : top));
+    }, [overlayIndex, overlayOffset]);
+
+    const recomputeContentHeight = useCallback(() => {
+        setContentHeight(sumItemSizes(rows.length));
+    }, [rows.length, sumItemSizes]);
 
     // Cache a measured row height and re-lay out from it when it changed.
     const setRowHeight = useCallback(
@@ -87,27 +115,40 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         recomputeContentHeight();
     }, [rows, recomputeContentHeight]);
 
-    // Passed via itemData so react-window keeps the same row instances (no remount on re-render).
+    // No resize tracking needed: the overlay's bottom is plain `bottom: 0` (see render below),
+    // which the browser already keeps in sync with the wrapper's size.
+    useLayoutEffect(() => {
+        recomputeOverlayTop();
+    }, [recomputeOverlayTop]);
+
     const itemData = useMemo(
         () => ({ rows, renderItem, getItemKey, setRowHeight, autoMeasure }),
         [rows, renderItem, getItemKey, setRowHeight, autoMeasure]
     );
 
     return (
-        <VariableSizeList
-            ref={listRef}
-            outerRef={outerRef}
-            height={safeHeight}
-            width={width}
-            itemCount={rows.length}
-            itemSize={resolveItemSize}
-            overscanCount={overscanCount}
-            itemData={itemData}
-            itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
-            style={{ overflowX: 'hidden', ...style }}
-        >
-            {VirtualizedRow}
-        </VariableSizeList>
+        <div className={styles.container}>
+            <VariableSizeList
+                ref={listRef}
+                outerRef={outerElRef}
+                onScroll={overlayIndex != null ? recomputeOverlayTop : undefined}
+                height={safeHeight}
+                width={width}
+                itemCount={rows.length}
+                itemSize={resolveItemSize}
+                overscanCount={overscanCount}
+                itemData={itemData}
+                itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
+                style={{ overflowX: 'hidden', ...style }}
+            >
+                {VirtualizedRow}
+            </VariableSizeList>
+            {overlayTop != null && overlayContent && (
+                <div className={styles.overlay} style={{ top: overlayTop }}>
+                    {overlayContent}
+                </div>
+            )}
+        </div>
     );
 });
 

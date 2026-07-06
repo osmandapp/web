@@ -39,13 +39,9 @@
     flex-direction: column;
 }
 
-.dropZoneSpacer {
-    flex: 1;
-    min-height: 0;
-}
-
 .tracksDropHighlight {
     position: absolute;
+    inset: 16px;
     display: flex;
     align-items: center;
     justify-content: center;

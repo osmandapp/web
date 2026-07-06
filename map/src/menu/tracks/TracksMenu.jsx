@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useContext, useEffect, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import CloudTrackGroup from './CloudTrackGroup';
 import isEmpty from 'lodash-es/isEmpty';
@@ -49,9 +49,6 @@ export default function TracksMenu() {
 
     const rootDropZoneHandlers = useGpxFileDragZone('');
     const clearGpxDragTarget = useGpxFileDragClearZone();
-    const trackMenuScrollRef = useRef(null);
-    const trackMenuListRef = useRef(null);
-    const rootDropZoneRef = useRef(null);
 
     const checkHasFiles = () =>
         ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
@@ -216,41 +213,31 @@ export default function TracksMenu() {
                             maxWidth={ctx.infoBlockWidth}
                         >
                             <Box
-                                ref={rootDropZoneRef}
                                 className={`${dropOverlayStyles.dropZoneContent} ${dropOverlayStyles.folderDropTarget}`}
                                 {...rootDropZoneHandlers}
                             >
-                                <TracksDropHighlight
-                                    active={isRootDropActive}
-                                    dropZoneRef={rootDropZoneRef}
-                                    scrollRef={trackMenuScrollRef}
-                                    listRef={trackMenuListRef}
-                                    rowsCount={trackMenuRows.length}
-                                    trackItemsCount={defaultGroupItems?.length ?? 0}
-                                />
                                 <VirtualizedList
-                                    ref={trackMenuListRef}
-                                    outerRef={trackMenuScrollRef}
                                     items={trackMenuRows}
                                     renderItem={(row) => row}
                                     getItemKey={(row) => row.key}
                                     height={listHeight}
+                                    fillHeight
+                                    overlayIndex={
+                                        isRootDropActive
+                                            ? trackMenuRows.length - (defaultGroupItems?.length ?? 0)
+                                            : undefined
+                                    }
+                                    overlayContent={isRootDropActive ? <TracksDropHighlight /> : undefined}
                                 />
-                                <Box className={dropOverlayStyles.dropZoneSpacer} />
                             </Box>
                         </Box>
                     ) : (
                         <Box
                             id={'se-track-menu'}
-                            ref={rootDropZoneRef}
                             className={dropOverlayStyles.folderDropTarget}
                             {...rootDropZoneHandlers}
                         >
-                            <TracksDropHighlight
-                                active={isRootDropActive}
-                                dropZoneRef={rootDropZoneRef}
-                                scrollRef={rootDropZoneRef}
-                            />
+                            {isRootDropActive && <TracksDropHighlight />}
                             <Empty
                                 title={t('empty_tracks')}
                                 text={t('empty_tracks_description')}
