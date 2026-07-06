@@ -2,6 +2,7 @@ import styles from '../trackfavmenu.module.css';
 import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
+import { removeFileExtension } from '../../manager/track/SaveTrackManager';
 
 export default function TrackLoading({ name }) {
     return (
@@ -11,7 +12,7 @@ export default function TrackLoading({ name }) {
             </ListItemIcon>
             <ListItemText>
                 <Typography className={styles.groupName} noWrap>
-                    {name.replace(/\.[^.]+$/, '')}
+                    {removeFileExtension(name)}
                 </Typography>
                 <Typography variant="body2" className={styles.groupInfo} noWrap>
                     Importing...

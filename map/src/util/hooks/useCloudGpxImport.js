@@ -6,7 +6,8 @@ import { GPX_FILE_EXT, KMZ_FILE_EXT, validName } from '../../manager/track/Track
 import { createTrackFreeName, removeFileExtension, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import useGpxImport from './useGpxImport';
 
-const CLOUD_TRACK_EXTENSIONS = ['.gpx', '.kmz', '.kml'];
+export const CLOUD_TRACK_EXTENSIONS = ['.gpx', '.kmz', '.kml'];
+export const CLOUD_TRACK_ACCEPT = CLOUD_TRACK_EXTENSIONS.join(', ');
 
 export default function useCloudGpxImport() {
     const ctx = useContext(AppContext);
@@ -17,16 +18,16 @@ export default function useCloudGpxImport() {
 
     const onFilesSelected = useCallback(
         (files, folder) => {
-            const batchTaken = new Set();
+            const occupiedFileNames = new Set();
             const freeNames = files.map((file) => {
                 const freeName = createTrackFreeName(
                     removeFileExtension(file.name),
                     ctx.tracksGroups,
                     folder,
                     null,
-                    batchTaken
+                    occupiedFileNames
                 );
-                batchTaken.add(freeName);
+                occupiedFileNames.add(freeName);
                 return freeName;
             });
             ctx.setTrackLoading(freeNames.map((freeName) => ({ name: freeName + GPX_FILE_EXT, folder })));

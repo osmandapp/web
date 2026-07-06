@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import LoginContext from '../../context/LoginContext';
-import useCloudGpxImport from '../../util/hooks/useCloudGpxImport';
+import useCloudGpxImport, { CLOUD_TRACK_ACCEPT } from '../../util/hooks/useCloudGpxImport';
 
 export default function CloudGpxUploader({ children, folder = DEFAULT_GROUP_NAME, style = null }) {
     const ltx = useContext(LoginContext);
@@ -20,7 +20,7 @@ export default function CloudGpxUploader({ children, folder = DEFAULT_GROUP_NAME
             <HiddenInput
                 disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                 id="se-upload-cloud-gpx"
-                accept=".gpx, .kmz, .kml"
+                accept={CLOUD_TRACK_ACCEPT}
                 multiple
                 type="file"
                 onChange={fileSelected}

@@ -161,7 +161,7 @@ export function removeFileExtension(filename) {
     return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
 }
 
-export function createTrackFreeName(name, otherTracks, folder = null, folderName = null, extraOccupied = null) {
+export function createTrackFreeName(name, otherTracks, folder = null, folderName = null, occupiedFileNames = null) {
     let occupied = null;
     let newName = name;
     for (let i = 1; i < 100; i++) {
@@ -172,7 +172,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
             //check local
             occupied = otherTracks?.some((t) => t?.name === newName);
         }
-        if (!occupied && !extraOccupied?.has(newName)) {
+        if (!occupied && !occupiedFileNames?.has(newName)) {
             return newName;
         }
         newName = name + ' - ' + i; // try with "Track - X"
