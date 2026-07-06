@@ -136,6 +136,7 @@ Available details include:
 
 - [Article Description](#article-description)
 - [Alternative names](#alternative-names)
+- [Related](#related)
 - [Coordinates](#coordinates)
 - [Within areas](#polygon-information)
 - [Nearby POIs](#nearby-pois)
@@ -212,6 +213,28 @@ Features of alternative names display:
 - Other categories include *region-specific translation*, or *default settings*.
 
 - If a specific translation is *not available*, OsmAnd defaults to the **local** name to ensure accuracy and consistency across multilingual regions.
+
+### Related {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Related Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Related iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+The **Related** section displays map objects that are associated with the selected place through an OpenStreetMap relation. This section is available for supported relation-based POIs, such as university campuses and other multipolygon objects.
+
+Tap any item in the list to open its map context menu. This allows you to quickly navigate between related objects that belong to the same relation.
 
 
 ### Within area {#polygon-information}
