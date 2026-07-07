@@ -1,4 +1,4 @@
-import Utils, { quickNaNfix, toHHMMSS } from '../../util/Utils';
+import Utils, { cloneTrackObject, quickNaNfix, toHHMMSS } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -78,7 +78,7 @@ export function filterRegularFolders(tracksGroups) {
 }
 
 export function prepareLocalTrack(track) {
-    const prepareTrack = cloneDeep(track);
+    const prepareTrack = cloneTrackObject(track);
     return {
         name: prepareTrack.name,
         id: prepareTrack.id,
@@ -1036,7 +1036,7 @@ export function validateRoutePoints(points) {
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
 
-    const cloneFile = cloneDeep(ctx.selectedGpxFile);
+    const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
     if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
         return cloneFile; // no tracks = nothing to analyze
@@ -1126,7 +1126,7 @@ function createTrack(ctx, latlng) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: cloneDeep(ctx.selectedGpxFile),
+            file: cloneTrackObject(ctx.selectedGpxFile),
         };
     }
     ctx.setCreateTrack({ ...createState });
@@ -1504,7 +1504,7 @@ export async function openTrackOnMap({
         ctx.setCreateTrack({
             enable: false,
             closePrev: {
-                file: cloneDeep(ctx.selectedGpxFile),
+                file: cloneTrackObject(ctx.selectedGpxFile),
             },
         });
     }

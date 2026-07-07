@@ -19,11 +19,10 @@ import TracksManager, {
     updateMetadata,
 } from './TracksManager';
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
-import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { getFilesForUpdateDetails } from '../../util/hooks/useInitialFilesLoad';
-import Utils, { sanitizedFileName } from '../../util/Utils';
+import Utils, { cloneTrackObject, sanitizedFileName } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
@@ -247,7 +246,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
         //get gpx files
         let files = getGpxFiles(listFiles);
         if (ctx.gpxFiles[oldName]) {
-            let newGpxFiles = cloneDeep(ctx.gpxFiles);
+            let newGpxFiles = cloneTrackObject(ctx.gpxFiles);
             for (const file of files) {
                 if (file.name === newFileName) {
                     newGpxFiles[file.name] = preparedGpxFile({ file, oldFile: ctx.gpxFiles[oldName] });
@@ -412,7 +411,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: cloneDeep(ctx.selectedGpxFile),
+            file: cloneTrackObject(ctx.selectedGpxFile),
         };
     }
 
@@ -510,7 +509,7 @@ function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: cloneDeep(ctx.selectedGpxFile),
+            file: cloneTrackObject(ctx.selectedGpxFile),
         };
     }
 

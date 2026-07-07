@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { useMutator } from '../../util/Utils';
+import { cloneTrackObject, useMutator } from '../../util/Utils';
 import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
@@ -28,7 +28,7 @@ export default function FavoriteGroupUploader({ children }) {
     function preparedCurrentFile(track, newGroupName) {
         let pointsGroups = cloneDeep(track.pointsGroups);
         let newGroup = pointsGroups[newGroupName];
-        let newTrack = cloneDeep(track);
+        let newTrack = cloneTrackObject(track);
         newTrack.pointsGroups = {};
         newTrack.pointsGroups[newGroupName] = newGroup;
         newTrack.wpts = newTrack.wpts.filter((w) => w.category === newGroupName);
