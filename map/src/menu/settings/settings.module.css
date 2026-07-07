@@ -15,12 +15,7 @@
     }
 }
 .closeIcon {
-    fill: var(--svg-icon-color) !important;
     padding: 8px;
-    &:hover {
-        fill: var(--selected-color) !important;
-        background-color: #f5f5f5 !important;
-    }
 }
 .title {
     max-height: var(--base-title-size) !important;

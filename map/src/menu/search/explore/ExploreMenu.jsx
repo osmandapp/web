@@ -1,6 +1,7 @@
 import headerStyles from '../../trackfavmenu.module.css';
 import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
+import IconBtn from '../../../frame/components/btns/IconBtn';
 import styles from '../../settings/settings.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
@@ -56,7 +57,7 @@ export default function ExploreMenu() {
         <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
+                    <IconBtn
                         id={'se-explore-menu-close'}
                         variant="contained"
                         type="button"
@@ -64,7 +65,7 @@ export default function ExploreMenu() {
                         onClick={close}
                     >
                         <BackIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography id="se-explore-menu-name" component="div" className={headerStyles.title}>
                         {t('web:explore_menu')}
                     </Typography>

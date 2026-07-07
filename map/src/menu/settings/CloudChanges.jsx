@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import AppContext from '../../context/AppContext';
 import headerStyles from '../trackfavmenu.module.css';
@@ -9,6 +9,7 @@ import Loading from '../errors/Loading';
 import { closeCloudSettings } from '../../manager/SettingsManager';
 import Empty from '../errors/Empty';
 import ChangesItem from './ChangesItem';
+import IconBtn from '../../frame/components/btns/IconBtn';
 
 export default function CloudChanges({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -26,13 +27,13 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
+                    <IconBtn
                         variant="contained"
                         className={styles.closeIcon}
                         onClick={() => closeCloudSettings(true, setOpenCloudSettings, ctx)}
                     >
                         <BackIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_changes')}
                     </Typography>

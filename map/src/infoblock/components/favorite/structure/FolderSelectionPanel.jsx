@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useContext } from 'react';
 import { Box, IconButton, List, ListItemButton, ListItemIcon, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { ReactComponent as ArrowUpIcon } from '../../../../assets/icons/ic_action_arrow_up.svg';
+import { ReactComponent as ArrowDownIcon } from '../../../../assets/icons/ic_action_arrow_down.svg';
 import AppContext from '../../../../context/AppContext';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
@@ -13,6 +13,7 @@ import { ReactComponent as FolderIcon } from '../../../../assets/icons/ic_action
 import { ReactComponent as FolderAddIcon } from '../../../../assets/icons/ic_action_folder_add_v2.svg';
 import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../../frame/components/dividers/DividerWithMargin';
+import IconBtn from '../../../../frame/components/btns/IconBtn';
 import AddFolderDialog from '../AddFolderDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import values from 'lodash-es/values';
@@ -92,25 +93,18 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                 >
                     <Box className={styles.arrowBox}>
                         {hasSubfolders && (
-                            <IconButton
+                            <IconBtn
                                 id={`se-fav-group-expand-${folder.name}`}
                                 size="small"
-                                className={styles.arrowBtn}
-                                sx={{
-                                    color: isOpen ? 'var(--selected-color)' : 'var(--svg-icon-color)',
-                                    '&:hover': {
-                                        color: 'var(--selected-color)',
-                                        backgroundColor: '#f5f5f5',
-                                    },
-                                }}
+                                active={isOpen}
                                 onClick={(e) => toggleExpanded(folder.name, e)}
                             >
                                 {isOpen ? (
-                                    <KeyboardArrowDownIcon className={styles.arrowIcon} />
+                                    <ArrowDownIcon className={styles.arrowIcon} />
                                 ) : (
-                                    <KeyboardArrowRightIcon className={styles.arrowIcon} />
+                                    <ArrowUpIcon className={styles.arrowIcon} />
                                 )}
-                            </IconButton>
+                            </IconBtn>
                         )}
                     </Box>
                     <ListItemIcon className={styles.folderIconBox}>
@@ -120,8 +114,9 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                         {folder.displayName}
                     </Typography>
                     {isHovered && !isTrackWpt ? (
-                        <IconButton
+                        <IconBtn
                             id={`se-add-folder-inside-${folder.name}`}
+                            size="small"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 handleAddFolder(folder.group ?? { name: folder.name });
@@ -130,7 +125,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                             className={styles.addFolderInsideBtn}
                         >
                             <FolderAddIcon />
-                        </IconButton>
+                        </IconBtn>
                     ) : (
                         !isVirtual &&
                         folder.size != null && <Typography className={styles.folderCount}>{folder.size}</Typography>
