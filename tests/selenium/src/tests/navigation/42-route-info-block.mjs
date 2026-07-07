@@ -29,7 +29,7 @@ const routes = [
             'Turn left onto Оболонська набережна and go 0.3 km',
             'Keep left (+C,TSLR) onto Оболонська набережна and go 0.7 km',
             'Keep left (+C,TSLR) onto Оболонська набережна and go 0.0 km',
-            'Keep left (+C,TSLR) and go 0.8 km',
+            'Keep left (+C,TSLR) onto Оболонська набережна and go 0.8 km',
             'Turn left and go 0.0 km',
             'Keep left (+C,TSLR) and go 0.1 km',
         ],
