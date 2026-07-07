@@ -3,7 +3,8 @@ import AppContext, { FAVORITES_URL_PARAM_FOLDER, OBJECT_TYPE_FAVORITE } from '..
 import FavoriteGroup from './FavoriteGroup';
 import { DEFAULT_FAV_GROUP_NAME, HIDDEN_TRUE } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
-import { Box, LinearProgress } from '@mui/material';
+import { Box } from '@mui/material';
+import OverlayLinearProgress from '../../frame/components/progress/OverlayLinearProgress';
 import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useElementHeight } from '../../util/hooks/useElementHeight';
@@ -183,7 +184,7 @@ export default function FavoritesMenu() {
                         setSortGroups={setSortGroups}
                     />
                 )}
-                {ctx.favLoading && <LinearProgress />}
+                {ctx.favLoading && <OverlayLinearProgress />}
                 {!isEmpty(sharedFiles) && (
                     <SharedFolder subtype={'favorite'} files={sharedFiles} onOpenFolder={setOpenSharedFolder} />
                 )}

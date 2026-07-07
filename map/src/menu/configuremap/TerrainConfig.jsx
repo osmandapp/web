@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import cloneDeep from 'lodash-es/cloneDeep';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import LoginContext from '../../context/LoginContext';
 import SelectItem from '../../frame/components/items/SelectItem';
 
@@ -115,9 +116,9 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
         <Box className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" className={styles.closeIcon} onClick={() => closeConfig()}>
+                    <IconBtn variant="contained" className={styles.closeIcon} onClick={() => closeConfig()}>
                         <BackIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_terrain')}
                     </Typography>

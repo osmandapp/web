@@ -2,7 +2,6 @@ import {
     AppBar,
     Box,
     ClickAwayListener,
-    IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -26,6 +25,7 @@ import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import UnitsMenu from './units/UnitsMenu';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
@@ -89,9 +89,9 @@ export default function SettingsMenu() {
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
+                    <IconBtn variant="contained" type="button" className={styles.closeIcon} onClick={close}>
                         <CloseIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                         {t('shared_string_settings')}
                     </Typography>
