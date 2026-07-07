@@ -2,7 +2,12 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { collator, SPATIAL_SEARCH_STORAGE_KEY } from '../../context/AppContext';
+import AppContext, {
+    collator,
+    SEARCH_ENGINE_CLASSIC,
+    SEARCH_ENGINE_SPATIAL,
+    SPATIAL_SEARCH_STORAGE_KEY,
+} from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -47,7 +52,7 @@ export default function SearchMenu() {
 
     const [, height] = useWindowSize();
 
-    const { navigateToSearchResults } = useSearchNav();
+    const { params, updateSearchEngine, navigateToSearchResults } = useSearchNav();
     const location = useLocation();
 
     const isSearchResultRoute = matchPath(
@@ -88,6 +93,12 @@ export default function SearchMenu() {
             recentSaver(SEARCH_RESULTS_KEY, ctx.searchResult);
         }
     }, [ctx.searchResult]);
+
+    useEffect(() => {
+        if (params.engine) {
+            ctx.setSpatialSearch(params.engine === SEARCH_ENGINE_SPATIAL);
+        }
+    }, [params.engine]);
 
     useEffect(() => {
         if (ctx.categoryIcons) {
@@ -242,6 +253,7 @@ export default function SearchMenu() {
     function toggleSpatialSearch(on) {
         ctx.setSpatialSearch(on);
         localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
+        updateSearchEngine(on ? SEARCH_ENGINE_SPATIAL : SEARCH_ENGINE_CLASSIC);
     }
 
     return (
