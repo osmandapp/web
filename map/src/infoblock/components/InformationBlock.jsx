@@ -497,8 +497,8 @@ export default function InformationBlock({
                     <ShareFile />
                 ) : (
                     <>
-                        {(ctx.loadingContextMenu || ctx.gpxLoading) && <OverlayLinearProgress size={20} />}
-                        {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" size={20} />}
+                        {(ctx.loadingContextMenu || ctx.gpxLoading) && <OverlayLinearProgress />}
+                        {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" />}
                         {showTrackContextMenu && (
                             <TrackContextMenu
                                 track={ctx.selectedGpxFile}
