@@ -18,6 +18,7 @@ import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } f
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -353,7 +354,7 @@ export default function ConfigureMap() {
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>
-                            <IconButton
+                            <IconBtn
                                 id={'se-configure-map-menu-close'}
                                 variant="contained"
                                 type="button"
@@ -361,7 +362,7 @@ export default function ConfigureMap() {
                                 onClick={() => closeHeader({ ctx })}
                             >
                                 <CloseIcon />
-                            </IconButton>
+                            </IconBtn>
                             <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                                 {t('configure_map')}
                             </Typography>
