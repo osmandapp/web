@@ -2,7 +2,12 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { collator, SPATIAL_SEARCH_STORAGE_KEY } from '../../context/AppContext';
+import AppContext, {
+    collator,
+    SEARCH_ENGINE_CLASSIC,
+    SEARCH_ENGINE_SPATIAL,
+    SPATIAL_SEARCH_STORAGE_KEY,
+} from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -242,6 +247,9 @@ export default function SearchMenu() {
     function toggleSpatialSearch(on) {
         ctx.setSpatialSearch(on);
         localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
+        const params = new URLSearchParams(location.search);
+        params.set('engine', on ? SEARCH_ENGINE_SPATIAL : SEARCH_ENGINE_CLASSIC);
+        navigate({ pathname: location.pathname, search: `?${params}`, hash: liveHash() });
     }
 
     return (
@@ -277,14 +285,12 @@ export default function SearchMenu() {
                                         }
                                         setSearchValue={setSearchValue}
                                     />
-                                    {ctx.develFeatures && (
-                                        <SelectItemBoolean
-                                            title="Spatial search (dev)"
-                                            checked={!!ctx.spatialSearch}
-                                            onToggle={toggleSpatialSearch}
-                                            boldTitle={false}
-                                        />
-                                    )}
+                                    <SelectItemBoolean
+                                        title={t('search_try_spatial_search_beta')}
+                                        checked={!!ctx.spatialSearch}
+                                        onToggle={toggleSpatialSearch}
+                                        boldTitle={false}
+                                    />
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />
                                         <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>

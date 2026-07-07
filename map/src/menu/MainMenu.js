@@ -874,7 +874,12 @@ export default function MainMenu({
     useEffect(() => {
         // now this case only for login/logout
         if (ctx.prevPageUrl?.active) {
-            const currentMenu = items?.find((item) => item.url === ctx.prevPageUrl.url?.pathname);
+            const prev = ctx.prevPageUrl.url;
+            if (prev?.pathname?.startsWith(MAIN_URL_WITH_SLASH + SEARCH_URL)) {
+                navigate(prev.pathname + (prev.search || '') + liveHash());
+                return;
+            }
+            const currentMenu = items?.find((item) => item.url === prev?.pathname);
             if (currentMenu) {
                 navigateToUrl({ menu: currentMenu });
             } else {

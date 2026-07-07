@@ -1,6 +1,6 @@
 import { apiGet } from '../../util/HttpApi';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_SEARCH, searchCollator } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL, searchCollator } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -230,6 +230,7 @@ export default function SearchLayer() {
     }, [ctx.moveToMapObj]);
 
     async function searchByWord(searchData) {
+        const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
         const notifyTimeout = showProcessingNotification(ctx);
         const visible = getVisibleBboxInfo(ctx, map);
         if (!visible) {
@@ -239,7 +240,7 @@ export default function SearchLayer() {
         try {
             const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
                 apiCache: true,
-                ...(ctx.spatialSearch ? { abortControllerKey: 'spatialSearch' } : {}),
+                ...(spatialSearch ? { abortControllerKey: 'spatialSearch' } : {}),
                 params: {
                     lat: searchData.latlng.lat,
                     lon: searchData.latlng.lng,
@@ -248,7 +249,7 @@ export default function SearchLayer() {
                     text: searchData.query,
                     locale: i18n.language,
                     baseSearch: searchData.baseSearch,
-                    ...(ctx.spatialSearch ? { spatial: true } : {}),
+                    ...(spatialSearch ? { spatial: true } : {}),
                     ...getCurrentTimeParams(),
                 },
             });
