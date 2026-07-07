@@ -9,6 +9,7 @@ import {
     useState,
 } from 'react';
 import { VariableSizeList } from 'react-window';
+import styles from './virtualizedList.module.css';
 
 const DEFAULT_ESTIMATED_ITEM_HEIGHT = 56;
 const DEFAULT_OVERSCAN_COUNT = 3;
@@ -24,16 +25,22 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         getItemKey = (item, index) => index,
         overscanCount = DEFAULT_OVERSCAN_COUNT,
         style = undefined,
+        overlayIndex = undefined,
+        overlayContent = undefined,
+        fillHeight = false,
     },
     ref
 ) {
     const listRef = useRef(null);
+    const outerElRef = useRef(null);
     const heightsRef = useRef({});
+    const [contentHeight, setContentHeight] = useState(0);
+    const [overlayTop, setOverlayTop] = useState(null);
+
     const rows = items ?? [];
     const autoMeasure = itemSize == null;
-    const [contentHeight, setContentHeight] = useState(0);
     const measuredContent = contentHeight || rows.length * estimatedItemHeight;
-    const safeHeight = Math.max(1, Math.min(measuredContent, height || 0));
+    const safeHeight = fillHeight ? Math.max(1, height || 0) : Math.max(1, Math.min(measuredContent, height || 0));
 
     useImperativeHandle(
         ref,
@@ -54,13 +61,38 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         [itemSize, getItemKey, rows, estimatedItemHeight]
     );
 
-    const recomputeContentHeight = useCallback(() => {
-        let total = 0;
-        for (let i = 0; i < rows.length; i++) {
-            total += resolveItemSize(i);
+    const sumItemSizes = useCallback(
+        (count) => {
+            let total = 0;
+            for (let i = 0; i < count; i++) {
+                total += resolveItemSize(i);
+            }
+            return total;
+        },
+        [resolveItemSize]
+    );
+
+    const overlayOffset = useMemo(() => {
+        if (overlayIndex == null) {
+            return 0;
         }
-        setContentHeight(total);
-    }, [rows, resolveItemSize]);
+        return sumItemSizes(overlayIndex);
+    }, [overlayIndex, sumItemSizes, contentHeight]);
+
+    const recomputeOverlayTop = useCallback(() => {
+        const outer = outerElRef.current;
+        if (!outer || overlayIndex == null) {
+            setOverlayTop(null);
+            return;
+        }
+
+        const top = Math.max(0, overlayOffset - outer.scrollTop);
+        setOverlayTop((prev) => (prev === top ? prev : top));
+    }, [overlayIndex, overlayOffset]);
+
+    const recomputeContentHeight = useCallback(() => {
+        setContentHeight(sumItemSizes(rows.length));
+    }, [rows.length, sumItemSizes]);
 
     // Cache a measured row height and re-lay out from it when it changed.
     const setRowHeight = useCallback(
@@ -79,26 +111,38 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         recomputeContentHeight();
     }, [rows, recomputeContentHeight]);
 
-    // Passed via itemData so react-window keeps the same row instances (no remount on re-render).
+    useLayoutEffect(() => {
+        recomputeOverlayTop();
+    }, [recomputeOverlayTop]);
+
     const itemData = useMemo(
         () => ({ rows, renderItem, getItemKey, setRowHeight, autoMeasure }),
         [rows, renderItem, getItemKey, setRowHeight, autoMeasure]
     );
 
     return (
-        <VariableSizeList
-            ref={listRef}
-            height={safeHeight}
-            width={width}
-            itemCount={rows.length}
-            itemSize={resolveItemSize}
-            overscanCount={overscanCount}
-            itemData={itemData}
-            itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
-            style={{ overflowX: 'hidden', ...style }}
-        >
-            {VirtualizedRow}
-        </VariableSizeList>
+        <div className={styles.container}>
+            <VariableSizeList
+                ref={listRef}
+                outerRef={outerElRef}
+                onScroll={overlayIndex != null ? recomputeOverlayTop : undefined}
+                height={safeHeight}
+                width={width}
+                itemCount={rows.length}
+                itemSize={resolveItemSize}
+                overscanCount={overscanCount}
+                itemData={itemData}
+                itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
+                style={{ overflowX: 'hidden', ...style }}
+            >
+                {VirtualizedRow}
+            </VariableSizeList>
+            {overlayTop != null && overlayContent && (
+                <div className={styles.overlay} style={{ top: overlayTop }}>
+                    {overlayContent}
+                </div>
+            )}
+        </div>
     );
 });
 

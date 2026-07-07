@@ -1,6 +1,7 @@
 import { NAN_MARKER } from '../manager/track/TracksManager';
 import { apiGet } from '../util/HttpApi';
 import { useState } from 'react';
+import cloneDeepWith from 'lodash-es/cloneDeepWith';
 
 /**
  * seleniumUpdateActivity()
@@ -179,6 +180,11 @@ export function quickNaNfix(badString) {
 */
 export function copyObj(obj) {
     return typeof obj === 'object' ? JSON.parse(JSON.stringify(obj)) : obj;
+}
+
+export function cloneTrackObject(track) {
+    // Keep map layer refs shallow; cloneDeepWith clones other fields when customizer returns undefined.
+    return cloneDeepWith(track, (value, key) => (key === 'layers' || key === 'gpx' ? value : undefined));
 }
 
 // Used ONLY when creating a new file
