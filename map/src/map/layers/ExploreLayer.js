@@ -195,7 +195,7 @@ export default function ExploreLayer() {
             filtersRef.current = settings.selectedFilters ?? null;
             removeLayers();
             debouncer(
-                () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                () => runGetData({ controller, ignore, settings, setLoadingContextMenu }),
                 timerRef,
                 GET_OBJ_DEBOUNCE_MS
             );
@@ -208,7 +208,7 @@ export default function ExploreLayer() {
                 (ctx.exploreMenu && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
                 debouncer(
-                    () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                    () => runGetData({ controller, ignore, settings, setLoadingContextMenu }),
                     timerRef,
                     GET_OBJ_DEBOUNCE_MS
                 );
@@ -276,6 +276,14 @@ export default function ExploreLayer() {
             setLoadingContextMenu(false);
             removeTooltip(map, ctx.searchTooltipRef);
         }
+    }
+
+    function runGetData(params) {
+        getData(params).catch((e) => {
+            if (!params.controller.signal.aborted) {
+                throw e;
+            }
+        });
     }
 
     function openInfo(e, feature) {
@@ -397,13 +405,13 @@ export default function ExploreLayer() {
 
                 return new Promise((resolve, reject) => {
                     if (abortController.signal.aborted) {
-                        return reject('Operation aborted');
+                        return resolve();
                     }
 
                     const image = new Image();
                     image.onload = () => {
                         if (abortController.signal.aborted) {
-                            return reject('Operation aborted');
+                            return resolve();
                         }
 
                         const icon = L.icon({
@@ -424,7 +432,7 @@ export default function ExploreLayer() {
                     };
                     image.onerror = () => {
                         if (abortController.signal.aborted) {
-                            return reject('Operation aborted');
+                            return resolve();
                         }
 
                         const circle = new SimpleDotMarker(latlng, place, {
