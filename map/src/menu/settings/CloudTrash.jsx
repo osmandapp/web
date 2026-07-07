@@ -11,6 +11,7 @@ import AppContext from '../../context/AppContext';
 import EmptyTrash from '../errors/EmptyTrash';
 import EmptyTrashDialog from './EmptyTrashDialog';
 import TrashItem from './TrashItem';
+import IconBtn from '../../frame/components/btns/IconBtn';
 
 export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -29,14 +30,14 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
+                    <IconBtn
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => closeCloudSettings(true, setOpenCloudSettings, ctx)}
                     >
                         <BackIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_trash')}
                     </Typography>

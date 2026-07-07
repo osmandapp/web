@@ -100,7 +100,13 @@ import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
-import { openPoiObj, openSearchObj, navigateBackToSearchResults, isFavoriteFromSearch, isTrackFromSearch } from '../manager/SearchManager';
+import {
+    openPoiObj,
+    openSearchObj,
+    navigateBackToSearchResults,
+    isFavoriteFromSearch,
+    isTrackFromSearch,
+} from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';

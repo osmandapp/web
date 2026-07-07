@@ -1,5 +1,6 @@
-import { AppBar, Box, IconButton, Link, TextField, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Link, TextField, Toolbar, Typography } from '@mui/material';
 import headerStyles from '../menu/trackfavmenu.module.css';
+import IconBtn from '../frame/components/btns/IconBtn';
 import styles from './login.module.css';
 import { closeHeader } from '../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
@@ -104,7 +105,7 @@ export default function Login({ dialog = false }) {
             {!dialog && (
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
-                        <IconButton
+                        <IconBtn
                             id={'se-login-menu-close'}
                             variant="contained"
                             type="button"
@@ -115,7 +116,7 @@ export default function Login({ dialog = false }) {
                             }}
                         >
                             <CloseIcon />
-                        </IconButton>
+                        </IconBtn>
                         <Typography id="se-login-menu-name" component="div" className={headerStyles.title}>
                             {t('user_login')}
                         </Typography>
