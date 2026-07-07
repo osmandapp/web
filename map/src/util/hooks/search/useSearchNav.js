@@ -1,22 +1,19 @@
 import { useMemo } from 'react';
 import { matchPath, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
-import { SEARCH_ENGINE_CLASSIC, SEARCH_ENGINE_SPATIAL, SPATIAL_SEARCH_STORAGE_KEY } from '../../../context/AppContext';
 
 const QUERY_KEY = 'query';
 const TYPE_KEY = 'type';
-const ENGINE_KEY = 'engine';
 
-const QUERY_SEARCH_RESULT_PARAMS = [ENGINE_KEY, QUERY_KEY, TYPE_KEY];
+const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY];
 
 export function buildSearchParamsFromQuery(q) {
     if (!q) return '';
 
-    const engine = normalizeSearchEngine(q.engine) || getDefaultSearchEngine();
     const type = q.type;
     const query = q.query;
 
-    return buildSearchParams({ engine, query, type }, new URLSearchParams());
+    return buildSearchParams({ query, type }, new URLSearchParams());
 }
 
 export default function useSearchNav() {
@@ -26,13 +23,8 @@ export default function useSearchNav() {
 
     const params = useMemo(() => parseParams(searchParams), [searchParams]);
 
-    function updateSearchParams({ engine, query, type } = {}) {
-        return buildSearchParams({ engine: normalizeSearchEngine(engine) || params.engine, query, type }, searchParams);
-    }
-
-    function updateSearchEngine(engine) {
-        const searchString = buildSearchParams({ engine, query: params.query, type: params.type }, searchParams);
-        setSearchParams(searchString);
+    function updateSearchParams({ query, type } = {}) {
+        return buildSearchParams({ query, type }, searchParams);
     }
 
     function navigateToSearchMenu() {
@@ -42,8 +34,8 @@ export default function useSearchNav() {
         });
     }
 
-    function navigateToSearchResults({ engine, query, type }) {
-        const searchString = updateSearchParams({ engine, query, type });
+    function navigateToSearchResults({ query, type }) {
+        const searchString = updateSearchParams({ query, type });
         navigate({
             pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
             search: searchString,
@@ -67,7 +59,6 @@ export default function useSearchNav() {
         params,
         searchParams,
         setSearchParams,
-        updateSearchEngine,
         navigateToSearchResults,
         navigateToSearchMenu,
         isSearchEqualToUrl,
@@ -77,21 +68,11 @@ export default function useSearchNav() {
 }
 
 function parseParams(sp) {
-    const params = QUERY_SEARCH_RESULT_PARAMS.reduce((acc, key) => {
+    return QUERY_SEARCH_RESULT_PARAMS.reduce((acc, key) => {
         const v = sp.get(key) || '';
-        if (!v) return acc;
-        if (key === ENGINE_KEY) {
-            const engine = normalizeSearchEngine(v);
-            if (engine) acc[key] = engine;
-            return acc;
-        }
-        acc[key] = v;
+        if (v) acc[key] = v;
         return acc;
     }, {});
-    if (!params[ENGINE_KEY]) {
-        params[ENGINE_KEY] = getDefaultSearchEngine();
-    }
-    return params;
 }
 
 function shallowEqualByKeys(a, b, keys) {
@@ -101,39 +82,16 @@ function shallowEqualByKeys(a, b, keys) {
     return true;
 }
 
-function buildSearchParams({ engine, query, type } = {}, currentSearchParams) {
-    const current = new URLSearchParams(currentSearchParams);
-    const sp = new URLSearchParams();
+function buildSearchParams({ query, type } = {}, currentSearchParams) {
+    const sp = new URLSearchParams(currentSearchParams);
 
-    const nextEngine = normalizeSearchEngine(engine) || getDefaultSearchEngine();
-    sp.set(ENGINE_KEY, nextEngine);
-
-    if (!type && query) {
-        sp.set(QUERY_KEY, query);
-    }
     if (type) {
-        sp.set(TYPE_KEY, type);
+        sp.delete(QUERY_KEY);
+    } else {
+        query ? sp.set(QUERY_KEY, query) : sp.delete(QUERY_KEY);
     }
-
-    current.forEach((value, key) => {
-        if (!QUERY_SEARCH_RESULT_PARAMS.includes(key)) {
-            sp.append(key, value);
-        }
-    });
+    type ? sp.set(TYPE_KEY, type) : sp.delete(TYPE_KEY);
 
     const str = sp.toString();
     return str ? `?${str}` : '';
-}
-
-function normalizeSearchEngine(engine) {
-    if (engine === SEARCH_ENGINE_CLASSIC || engine === SEARCH_ENGINE_SPATIAL) {
-        return engine;
-    }
-    return null;
-}
-
-function getDefaultSearchEngine() {
-    return globalThis.localStorage?.getItem(SPATIAL_SEARCH_STORAGE_KEY) === 'yes'
-        ? SEARCH_ENGINE_SPATIAL
-        : SEARCH_ENGINE_CLASSIC;
 }

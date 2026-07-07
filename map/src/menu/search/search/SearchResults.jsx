@@ -59,7 +59,6 @@ function getVisibleLevel(item) {
 
 export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
-        engine: searchParams.engine,
         query: searchParams.query,
         latlng: { lat: loc.lat, lng: loc.lng },
         baseSearch,
@@ -87,7 +86,6 @@ export function searchByCategory(searchParams, ctx, t) {
     }
 
     ctx.setSearchQuery({
-        engine: searchParams.engine,
         query: formattingPoiType(categoryName),
         type: searchParams.type,
         lang: lang,
@@ -113,7 +111,7 @@ export default function SearchResults() {
         if ((params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery)) {
             setResult(null);
         }
-    }, [params.engine, params.query, params.type, ctx.searchQuery]);
+    }, [params.query, params.type, ctx.searchQuery]);
 
     useEffect(() => {
         if (result === EMPTY_SEARCH_RESULT) {
@@ -134,7 +132,7 @@ export default function SearchResults() {
             }
         }
         return null;
-    }, [params.engine, params.query, params.type]);
+    }, [params.query, params.type]);
 
     usePageTitle(pageTitle);
 
