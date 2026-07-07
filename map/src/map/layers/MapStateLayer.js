@@ -112,7 +112,6 @@ export default function MapStateLayer() {
     const [move, setMove] = useState(false);
 
     const [centerPositionPx, setCenterPositionPx] = useState(null);
-    const handledMapViewStackRequestRef = useRef(0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
     useFocusVisibility();
@@ -221,12 +220,10 @@ export default function MapStateLayer() {
     useEffect(() => {
         const request = mtx.mapViewStackRequest;
         if (!request) return;
-        if (handledMapViewStackRequestRef.current === request.id) return;
-
         if (request.action === 'pop') {
             popMapView({ map, mtx, key: request.key });
         }
-        handledMapViewStackRequestRef.current = request.id;
+        mtx.setMapViewStackRequest(null);
     }, [mtx.mapViewStackRequest]);
 
     useEffect(() => {
