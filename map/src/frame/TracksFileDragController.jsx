@@ -16,7 +16,6 @@ export default function TracksFileDragController() {
         const onDragEnd = () => {
             ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
         };
-        // dragend has no preventDefault; keep on window so external file drags still reset state.
         window.addEventListener('dragend', onDragEnd);
         return () => {
             window.removeEventListener('dragend', onDragEnd);

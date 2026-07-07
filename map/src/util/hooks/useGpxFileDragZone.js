@@ -17,9 +17,6 @@ export function useGpxFileDragClearZone() {
     return useGpxFileDragStateHandler(null, false);
 }
 
-// Catch-all zone for the whole app container: swallows drags/drops that land outside any
-// specific zone (so the browser never navigates to the dropped file) and tracks when the
-// cursor truly leaves the app, so more specific zones never need to know about "leave".
 export function useGpxFileDragRootZone() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
@@ -40,8 +37,6 @@ export function useGpxFileDragRootZone() {
             if (!hasFiles(e) || !ltx.isProAccount()) {
                 return;
             }
-            // relatedTarget is the element the cursor is entering.
-            // null or outside the app container means the cursor truly left the app.
             if (!e.currentTarget.contains(e.relatedTarget)) {
                 ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
             }

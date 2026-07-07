@@ -40,8 +40,6 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     const rows = items ?? [];
     const autoMeasure = itemSize == null;
     const measuredContent = contentHeight || rows.length * estimatedItemHeight;
-    // When fillHeight, the list always occupies the full available height (react-window just
-    // shows blank space below short content) instead of shrinking to fit like the default.
     const safeHeight = fillHeight ? Math.max(1, height || 0) : Math.max(1, Math.min(measuredContent, height || 0));
 
     useImperativeHandle(
@@ -81,7 +79,6 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         return sumItemSizes(overlayIndex);
     }, [overlayIndex, sumItemSizes, contentHeight]);
 
-    // How far the folder-row boundary currently is above the viewport (0 once scrolled past it).
     const recomputeOverlayTop = useCallback(() => {
         const outer = outerElRef.current;
         if (!outer || overlayIndex == null) {
@@ -114,8 +111,6 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         recomputeContentHeight();
     }, [rows, recomputeContentHeight]);
 
-    // No resize tracking needed: the overlay's bottom is plain `bottom: 0` (see render below),
-    // which the browser already keeps in sync with the wrapper's size.
     useLayoutEffect(() => {
         recomputeOverlayTop();
     }, [recomputeOverlayTop]);
