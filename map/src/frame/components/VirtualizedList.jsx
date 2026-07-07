@@ -74,7 +74,6 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         [resolveItemSize]
     );
 
-
     const overlayOffset = useMemo(() => {
         if (overlayIndex == null) {
             return 0;

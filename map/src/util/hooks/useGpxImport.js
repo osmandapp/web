@@ -6,7 +6,7 @@ export default function useGpxImport({ canImport, isTrackFile, onFilesSelected, 
 
     const importGpxFiles = useCallback(
         (fileList, folder) => {
-            if (canImport && !canImport()) {
+            if (canImport?.() === false) {
                 return;
             }
 
