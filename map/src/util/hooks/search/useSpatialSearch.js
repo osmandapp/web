@@ -1,4 +1,4 @@
-import { useCallback, useContext } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import AppContext, {
     SEARCH_ENGINE_CLASSIC,
@@ -17,6 +17,16 @@ export default function useSpatialSearch() {
     const ctx = useContext(AppContext);
     const location = useLocation();
     const navigate = useNavigate();
+
+    const urlEngine = new URLSearchParams(location.search).get(ENGINE_KEY);
+
+    useEffect(() => {
+        if (!urlEngine) return;
+        const spatial = urlEngine === SEARCH_ENGINE_SPATIAL;
+        if (ctx.spatialSearch !== spatial) {
+            ctx.setSpatialSearch(spatial);
+        }
+    }, [urlEngine]);
 
     const setSpatial = useCallback(
         (on) => {
