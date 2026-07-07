@@ -153,7 +153,6 @@ export async function saveTrackToCloud({
             title: 'Save error',
             msg: `Unable to save ${gpxFile?.name}`,
         });
-        ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== currentFile.name)]);
     }
     return false;
 }
@@ -162,7 +161,7 @@ export function removeFileExtension(filename) {
     return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
 }
 
-export function createTrackFreeName(name, otherTracks, folder = null, folderName = null) {
+export function createTrackFreeName(name, otherTracks, folder = null, folderName = null, occupiedFileNames = null) {
     let occupied = null;
     let newName = name;
     for (let i = 1; i < 100; i++) {
@@ -173,7 +172,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
             //check local
             occupied = otherTracks?.some((t) => t?.name === newName);
         }
-        if (!occupied) {
+        if (!occupied && !occupiedFileNames?.has(newName)) {
             return newName;
         }
         newName = name + ' - ' + i; // try with "Track - X"
@@ -441,6 +440,9 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         });
         newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
         newGpxFiles[file.name].showOnMap = showOnMap;
+        if (showOnMap) {
+            newGpxFiles[file.name].zoomToTrack = true;
+        }
         ctx.setGpxFiles(newGpxFiles);
         ctx.setSelectedGpxFile({ ...newGpxFiles[file.name] });
         ctx.setProcessingSaveTrack(false);

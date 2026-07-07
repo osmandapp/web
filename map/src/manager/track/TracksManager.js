@@ -59,6 +59,7 @@ const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation point
 export const FIT_BOUNDS_MAX_ZOOM = 17;
 export const FIT_BOUNDS_EXTRA_PADDING = 10;
 export const DEFAULT_GROUP_NAME = '';
+export const IMPORT_FOLDER_NAME = 'Import';
 
 export function fitBoundsOptions(mtx) {
     return {
@@ -735,9 +736,6 @@ export function isTrackExists(name, folder, folderName, tracks) {
     }
     const foundFolder = findGroupByName(tracks, folderName !== null ? folderName : (folder?.title ?? folder));
     if (foundFolder) {
-        if (foundFolder.name === DEFAULT_GROUP_NAME) {
-            return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
-        }
         return foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name);
     }
     return false;
@@ -1431,10 +1429,10 @@ export function updateLoadingTracks(ctx, group) {
     calculateLastModified(group);
     ctx.setTrackLoading([
         ...ctx.trackLoading.filter(
-            (name) =>
+            (t) =>
                 !group.some((file) => {
                     let parts = file.name.split('/');
-                    return parts[parts.length - 1] === name;
+                    return parts[parts.length - 1] === t.name;
                 })
         ),
     ]);

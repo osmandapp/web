@@ -1,41 +1,39 @@
-import { useCallback, useContext, useEffect } from 'react';
+import { useCallback, useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { GPX_FILE_EXT } from '../../manager/track/TracksManager';
 import { saveTrackToLocal } from '../../manager/track/SaveTrackManager';
-import { useMutator } from '../Utils';
+import useGpxImport from './useGpxImport';
 
 export default function useLocalGpxImport() {
     const ctx = useContext(AppContext);
-    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
-    useEffect(() => {
-        for (const file in uploadedFiles) {
+    const readFile = useCallback(async (file, { selected }) => {
+        const track = await TracksManager.getTrackData(file);
+        if (track) {
+            track.name = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+            return { track, selected };
+        }
+    }, []);
+
+    const saveFile = useCallback(
+        (uploadedFile) => {
             saveTrackToLocal({
                 ctx,
                 overwrite: false,
-                track: uploadedFiles[file].track,
-                selected: uploadedFiles[file].selected,
-            });
-            mutateUploadedFiles((o) => delete o[file]);
-            break; // process 1 file per 1 render
-        }
-    }, [uploadedFiles]);
-
-    const importGpxFiles = useCallback(
-        (fileList) => {
-            const files = Array.from(fileList || []).filter((file) => file?.name?.toLowerCase().endsWith('.gpx'));
-            const selected = files.length === 1;
-
-            files.forEach(async (file) => {
-                const track = await TracksManager.getTrackData(file);
-                if (track) {
-                    track.name = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
-                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
-                }
+                track: uploadedFile.track,
+                selected: uploadedFile.selected,
             });
         },
-        [mutateUploadedFiles]
+        [ctx]
     );
 
-    return { importGpxFiles };
+    return useGpxImport({
+        isTrackFile: isLocalTrackFile,
+        readFile,
+        saveFile,
+    });
+}
+
+function isLocalTrackFile(file) {
+    return file?.name?.toLowerCase().endsWith(GPX_FILE_EXT);
 }

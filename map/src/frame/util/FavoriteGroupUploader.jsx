@@ -14,6 +14,7 @@ import {
 import ImportFavoriteDialog from '../../dialogs/favorites/ImportFavoriteDialog';
 import ImportAsTrackDialog, { hasPoints } from '../../dialogs/favorites/ImportAsTrackDialog';
 import cloneDeep from 'lodash-es/cloneDeep';
+import { CLOUD_TRACK_ACCEPT } from '../../util/hooks/useCloudGpxImport';
 
 export default function FavoriteGroupUploader({ children }) {
     const ctx = useContext(AppContext);
@@ -132,7 +133,7 @@ export default function FavoriteGroupUploader({ children }) {
             <label htmlFor="se-upload-fav-group">
                 <HiddenInput
                     id="se-upload-fav-group"
-                    accept=".gpx, .kmz, .kml"
+                    accept={CLOUD_TRACK_ACCEPT}
                     multiple
                     type="file"
                     onChange={fileSelected}

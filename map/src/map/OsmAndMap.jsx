@@ -25,6 +25,7 @@ import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
+import { useGpxFileDragMapZone } from '../util/hooks/useGpxFileDragZone';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
@@ -78,6 +79,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const menuMargin = parseFloat(menuInfoWidth) !== 0 ? parseFloat(menuInfoWidth) - 100 : 0;
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
+
+    const mapDragHandlers = useGpxFileDragMapZone();
 
     const whenReadyHandler = (event) => {
         const { target: map } = event;
@@ -172,6 +175,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
 
     return (
         <Box
+            {...mapDragHandlers}
             sx={{
                 width: '100%',
                 height: '100%',
