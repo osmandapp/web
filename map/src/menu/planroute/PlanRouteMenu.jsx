@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import LocalGpxUploader from '../../frame/util/LocalGpxUploader';
 import { closeHeader } from '../actions/HeaderHelper';
-import cloneDeep from 'lodash-es/cloneDeep';
+import { cloneTrackObject } from '../../util/Utils';
 
 export function openSelectedLocalTrack(ctx) {
     const track = ctx.selectedLocalTrackObj;
@@ -47,7 +47,7 @@ export function startEdit(ctx) {
             enable: true, // start-editor
             edit: true,
             closePrev: {
-                file: cloneDeep(ctx.selectedGpxFile), // call startEdit() before modifications
+                file: cloneTrackObject(ctx.selectedGpxFile), // call startEdit() before modifications
             },
         });
     } else {

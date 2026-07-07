@@ -5,9 +5,10 @@ import AppContext, { isLocalTrack, OBJECT_TYPE_WEATHER, OBJECT_TYPE_POI } from '
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import isEmpty from 'lodash-es/isEmpty';
-import cloneDeep from 'lodash-es/cloneDeep';
 import TracksManager from '../../manager/track/TracksManager';
 import useUndoRedo from '../../infoblock/useUndoRedo';
+import { cloneTrackObject } from '../../util/Utils';
+
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
 
@@ -37,7 +38,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     useEffect(() => {
         if (!useSavedState) {
             if (ctx.trackState.update) {
-                setState(cloneDeep(ctx.selectedGpxFile));
+                setState(cloneTrackObject(ctx.selectedGpxFile));
                 ctx.trackState.update = false;
                 ctx.setTrackState({ ...ctx.trackState });
             }
