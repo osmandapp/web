@@ -20,7 +20,7 @@ import SelectItemBoolean from '../../../frame/components/items/SelectItemBoolean
 import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
-import { iconPathMap } from '../../../map/util/MapManager';
+import { iconPathMap, MAP_VIEW_SEARCH_RESULT } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
@@ -45,6 +45,7 @@ import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { useTranslation } from 'react-i18next';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { useNavigate } from 'react-router-dom';
+import { useMapViewStack } from '../../../util/hooks/map/useMapViewStack';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -116,12 +117,19 @@ export default function SearchResults() {
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute, location } = useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
+    const { hasMapView, requestMapViewPop } = useMapViewStack();
 
     useEffect(() => {
         if ((params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery)) {
             setResult(null);
         }
     }, [params.engine, params.query, params.type, ctx.searchQuery]);
+
+    useEffect(() => {
+        if (hasMapView(MAP_VIEW_SEARCH_RESULT)) {
+            requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
+        }
+    }, []);
 
     useEffect(() => {
         if (result === EMPTY_SEARCH_RESULT) {
@@ -293,6 +301,9 @@ export default function SearchResults() {
     }, [ctx.searchResult]);
 
     function backToMainSearch() {
+        if (hasMapView(MAP_VIEW_SEARCH_RESULT)) {
+            requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
+        }
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
         ctx.setSearchFavoriteGroupIds(null);

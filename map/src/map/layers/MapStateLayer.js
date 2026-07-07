@@ -8,7 +8,7 @@ import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
-import { applyZoomToFit, getZoomToFitBounds, restoreMapView } from '../util/MapManager';
+import { applyZoomToFit, getZoomToFitBounds, popMapView, restoreMapView } from '../util/MapManager';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
@@ -112,6 +112,7 @@ export default function MapStateLayer() {
     const [move, setMove] = useState(false);
 
     const [centerPositionPx, setCenterPositionPx] = useState(null);
+    const handledMapViewStackRequestRef = useRef(0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
     useFocusVisibility();
@@ -215,6 +216,18 @@ export default function MapStateLayer() {
 
         mtx.setRestoreMapViewRequest(false);
     }, [mtx.restoreMapViewRequest]);
+
+    // Central map-view stack handler.
+    useEffect(() => {
+        const request = mtx.mapViewStackRequest;
+        if (!request) return;
+        if (handledMapViewStackRequestRef.current === request.id) return;
+
+        if (request.action === 'pop') {
+            popMapView({ map, mtx, key: request.key });
+        }
+        handledMapViewStackRequestRef.current = request.id;
+    }, [mtx.mapViewStackRequest]);
 
     useEffect(() => {
         const sync = () => {

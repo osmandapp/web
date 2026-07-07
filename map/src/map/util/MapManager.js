@@ -52,6 +52,40 @@ export function restoreMapView({ map, mtx }) {
     return true;
 }
 
+export const MAP_VIEW_SEARCH_RESULT = 'search-result';
+
+export function pushMapView({ map, mtx, key }) {
+    if (!map) return false;
+    if (!key) return false;
+
+    const center = map.getCenter();
+    const entry = { key, center: { lat: center.lat, lng: center.lng }, zoom: map.getZoom() };
+    mtx.setMapViewStack((stack) => [...stack, entry]);
+
+    return true;
+}
+
+export function popMapView({ map, mtx, key }) {
+    if (!map) return false;
+    if (!key) return false;
+
+    const stack = mtx?.mapViewStack ?? [];
+    let index = -1;
+    for (let i = stack.length - 1; i >= 0; i--) {
+        if (stack[i].key === key) {
+            index = i;
+            break;
+        }
+    }
+    const saved = stack[index];
+    if (!saved) return false;
+
+    map.setView([saved.center.lat, saved.center.lng], saved.zoom);
+    mtx.setMapViewStack((prev) => prev.filter((_, i) => i !== index));
+
+    return true;
+}
+
 export function formatTrackName(name) {
     return name ? name.replaceAll('/', ' · ') : name;
 }

@@ -1,6 +1,7 @@
 import { apiGet } from '../../util/HttpApi';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL, searchCollator } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -38,7 +39,13 @@ import {
     showProcessingNotification,
 } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
-import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
+import {
+    findFeatureGroupById,
+    getIconFromMap,
+    MAP_VIEW_SEARCH_RESULT,
+    panToIfNeeded,
+    pushMapView,
+} from '../util/MapManager';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
@@ -104,6 +111,7 @@ export function buildFavGroupMap(favoriteFeatures) {
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const map = useMap();
 
     const navigate = useNavigate();
@@ -224,8 +232,10 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.moveToMapObj) {
+            pushMapView({ map, mtx, key: MAP_VIEW_SEARCH_RESULT });
             const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
             panToIfNeeded({ map, latlng: { lat, lng }, ctx });
+            ctx.setMoveToMapObj(null);
         }
     }, [ctx.moveToMapObj]);
 

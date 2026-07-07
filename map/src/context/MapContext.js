@@ -38,6 +38,8 @@ export const MapContextProvider = ({ children }) => {
     const [zoomToFitRequest, setZoomToFitRequest] = useState(null);
     const [mapViewBeforeZoomFit, setMapViewBeforeZoomFit] = useState(null);
     const [restoreMapViewRequest, setRestoreMapViewRequest] = useState(false);
+    const [mapViewStack, setMapViewStack] = useState([]);
+    const [mapViewStackRequest, setMapViewStackRequest] = useState(null);
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
     // currently focused selection ({ type, id })
@@ -64,6 +66,10 @@ export const MapContextProvider = ({ children }) => {
                 setMapViewBeforeZoomFit,
                 restoreMapViewRequest,
                 setRestoreMapViewRequest,
+                mapViewStack,
+                setMapViewStack,
+                mapViewStackRequest,
+                setMapViewStackRequest,
                 fitBoundsPadding,
                 mutateFitBoundsPadding,
                 selectionFocus,
