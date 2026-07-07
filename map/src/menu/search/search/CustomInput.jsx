@@ -9,6 +9,9 @@ import AppContext from '../../../context/AppContext';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { debouncer } from '../../../context/TracksRoutingCache';
+
+const SPATIAL_SEARCH_DEBOUNCE_MS = 500;
 
 export default function CustomInput({
     menuButton = null,
@@ -20,6 +23,7 @@ export default function CustomInput({
     const ctx = useContext(AppContext);
 
     const inputRef = useRef();
+    const spatialSearchTimerRef = useRef(null);
 
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
@@ -35,6 +39,10 @@ export default function CustomInput({
     useEffect(() => {
         if (!isInitialRender) {
             if (value === EMPTY_SEARCH) {
+                if (spatialSearchTimerRef.current) {
+                    clearTimeout(spatialSearchTimerRef.current);
+                    spatialSearchTimerRef.current = null;
+                }
                 ctx.setSearchResult((prevResult) => {
                     return {
                         ...prevResult,
@@ -60,6 +68,21 @@ export default function CustomInput({
     useEffect(() => {
         setValue(defaultSearchValue);
     }, [defaultSearchValue]);
+
+    useEffect(() => {
+        return () => {
+            if (spatialSearchTimerRef.current) {
+                clearTimeout(spatialSearchTimerRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!ctx.spatialSearch && spatialSearchTimerRef.current) {
+            clearTimeout(spatialSearchTimerRef.current);
+            spatialSearchTimerRef.current = null;
+        }
+    }, [ctx.spatialSearch]);
 
     useEffect(() => {
         const inputElement = inputRef.current;
@@ -125,9 +148,12 @@ export default function CustomInput({
                     }, 200);
                 }}
                 onChange={(e) => {
-                    setValue(e.target.value);
-                    if (type === SEARCH_TYPE_CATEGORY && e.target.value.length >= MIN_SIZE_SEARCH_VALUE) {
-                        search(formattingPoiType(e.target.value));
+                    const nextValue = e.target.value;
+                    setValue(nextValue);
+                    if (type === SEARCH_TYPE_CATEGORY && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
+                        search(formattingPoiType(nextValue));
+                    } else if (ctx.spatialSearch && !type && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
+                        debouncer(() => search(nextValue), spatialSearchTimerRef, SPATIAL_SEARCH_DEBOUNCE_MS);
                     }
                 }}
                 onKeyDown={(e) => handleKeyPress(e)}
