@@ -1,4 +1,5 @@
-import { Box, LinearProgress } from '@mui/material';
+import { Box } from '@mui/material';
+import OverlayLinearProgress from '../../frame/components/progress/OverlayLinearProgress';
 import AppContext, {
     isLocalTrack,
     OBJECT_TYPE_NAVIGATION_ALONE,
@@ -496,8 +497,8 @@ export default function InformationBlock({
                     <ShareFile />
                 ) : (
                     <>
-                        {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
-                        {ctx.updateFiles && <LinearProgress id="se-info-files-loading" size={20} />}
+                        {(ctx.loadingContextMenu || ctx.gpxLoading) && <OverlayLinearProgress size={20} />}
+                        {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" size={20} />}
                         {showTrackContextMenu && (
                             <TrackContextMenu
                                 track={ctx.selectedGpxFile}

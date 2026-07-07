@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { LinearProgress, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { getPhotoUrl } from './PhotoGallery';
 import styles from '../search.module.css';
@@ -173,7 +174,9 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                         </div>
                                     )}
                                 </MenuItem>
-                                {ctx.loadingContextItem === item && <LinearProgress id={'se-wiki-place-progress'} />}
+                                {ctx.loadingContextItem === item && (
+                                    <OverlayLinearProgress id={'se-wiki-place-progress'} />
+                                )}
                             </div>
                         </>
                     )}

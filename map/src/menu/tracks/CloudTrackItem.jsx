@@ -1,14 +1,6 @@
 import AppContext from '../../context/AppContext';
-import {
-    Alert,
-    LinearProgress,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Switch,
-    Tooltip,
-    Typography,
-} from '@mui/material';
+import { Alert, ListItemIcon, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
+import OverlayLinearProgress from '../../frame/components/progress/OverlayLinearProgress';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import TrackInfo from './TrackInfo';
 import {
@@ -162,7 +154,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                         />
                     }
                 />
-                {loadingTrack ? <LinearProgress /> : <></>}
+                {loadingTrack ? <OverlayLinearProgress /> : <></>}
                 {error !== '' && (
                     <Alert onClose={() => setError('')} severity="warning">
                         {error}

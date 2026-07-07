@@ -1,5 +1,6 @@
 import headerStyles from '../../trackfavmenu.module.css';
-import { AppBar, Box, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
 import styles from '../../settings/settings.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
@@ -83,7 +84,9 @@ export default function ExploreMenu() {
                         </span>
                     </Tooltip>
                 </Toolbar>
-                {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <LinearProgress /> : null}
+                {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
+                    <OverlayLinearProgress />
+                ) : null}
             </AppBar>
             <Box sx={{ flex: 1, overflowY: 'auto' }}>
                 {zoom > 0 && zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}

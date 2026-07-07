@@ -1,4 +1,4 @@
-import { Box, IconButton, LinearProgress, ListItemText } from '@mui/material';
+import { Box, IconButton, ListItemText } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTrack } from '../../../context/AppContext';
@@ -39,6 +39,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import ColorBlock from '../../../frame/components/other/ColorBlock';
+import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
 
 const PANEL_CONTENT_WIDTH = 320;
 const APPEARANCE_PREVIEW_SIZE = 36;
@@ -590,7 +591,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 />
             )}
             <Box className={styles.panel}>
-                {process && <LinearProgress />}
+                {process && <OverlayLinearProgress />}
                 <HeaderWithUnderline
                     title={title}
                     onClose={handleClose}
