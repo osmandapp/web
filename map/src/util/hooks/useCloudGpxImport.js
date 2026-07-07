@@ -18,7 +18,9 @@ export default function useCloudGpxImport() {
 
     const onFilesSelected = useCallback(
         (files, folder) => {
-            const occupiedFileNames = new Set();
+            const occupiedFileNames = new Set(
+                ctx.trackLoading.filter((lt) => lt.folder === folder).map((lt) => removeFileExtension(lt.name))
+            );
             const freeNames = files.map((file) => {
                 const freeName = createTrackFreeName(
                     removeFileExtension(file.name),
@@ -30,7 +32,10 @@ export default function useCloudGpxImport() {
                 occupiedFileNames.add(freeName);
                 return freeName;
             });
-            ctx.setTrackLoading(freeNames.map((freeName) => ({ name: freeName + GPX_FILE_EXT, folder })));
+            ctx.setTrackLoading((prev) => [
+                ...prev,
+                ...freeNames.map((freeName) => ({ name: freeName + GPX_FILE_EXT, folder })),
+            ]);
             return freeNames;
         },
         [ctx]

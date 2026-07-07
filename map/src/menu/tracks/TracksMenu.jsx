@@ -169,6 +169,7 @@ export default function TracksMenu() {
         ctx.shareWithMeFiles,
         ctx.visibleTracks,
         clearGpxDragTarget,
+        t,
     ]);
 
     if (openVisibleTracks) {
