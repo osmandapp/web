@@ -1,6 +1,6 @@
 import { apiGet } from '../../util/HttpApi';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL, searchCollator } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, searchCollator } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -230,7 +230,6 @@ export default function SearchLayer() {
     }, [ctx.moveToMapObj]);
 
     async function searchByWord(searchData) {
-        const spatialSearch = isSpatialSearchEnabled(ctx, searchData);
         const notifyTimeout = showProcessingNotification(ctx);
         const visible = getVisibleBboxInfo(ctx, map);
         if (!visible) {
@@ -240,7 +239,7 @@ export default function SearchLayer() {
         try {
             const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
                 apiCache: true,
-                ...(spatialSearch ? { abortControllerKey: 'spatialSearch' } : {}),
+                ...(ctx.spatialSearch ? { abortControllerKey: 'spatialSearch' } : {}),
                 params: {
                     lat: searchData.latlng.lat,
                     lon: searchData.latlng.lng,
@@ -249,7 +248,7 @@ export default function SearchLayer() {
                     text: searchData.query,
                     locale: i18n.language,
                     baseSearch: searchData.baseSearch,
-                    ...(spatialSearch ? { spatial: true } : {}),
+                    ...(ctx.spatialSearch ? { spatial: true } : {}),
                     ...getCurrentTimeParams(),
                 },
             });
@@ -479,13 +478,6 @@ function filterByVisibleLevel(features, spatialSearch, visibleLevel) {
     if (!spatialSearch) return features;
 
     return (features ?? []).filter((f) => (f?.properties?.[WEB_VISIBLE_LEVEL] ?? 0) <= visibleLevel);
-}
-
-function isSpatialSearchEnabled(ctx, searchData = ctx.searchQuery) {
-    if (searchData?.engine) {
-        return searchData.engine === SEARCH_ENGINE_SPATIAL;
-    }
-    return ctx.spatialSearch;
 }
 
 function filterByVisibleBounds(features, bounds) {
