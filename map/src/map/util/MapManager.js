@@ -70,17 +70,11 @@ export function popMapView({ map, mtx, key }) {
     if (!key) return false;
 
     const stack = mtx?.mapViewStack ?? [];
-    let index = -1;
-    for (let i = stack.length - 1; i >= 0; i--) {
-        if (stack[i].key === key) {
-            index = i;
-            break;
-        }
-    }
-    const saved = stack[index];
-    if (!saved) return false;
+    const index = stack.findLastIndex((entry) => entry.key === key);
+    if (index === -1) return false;
 
-    map.setView([saved.center.lat, saved.center.lng], saved.zoom);
+    const { center, zoom } = stack[index];
+    map.setView([center.lat, center.lng], zoom);
     mtx.setMapViewStack((prev) => prev.filter((_, i) => i !== index));
 
     return true;
