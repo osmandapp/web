@@ -1,9 +1,5 @@
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import AppContext, {
-    SEARCH_ENGINE_CLASSIC,
-    SEARCH_ENGINE_SPATIAL,
-    SPATIAL_SEARCH_STORAGE_KEY,
-} from '../../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
 import CustomInput from './CustomInput';
 import PoiManager, {
@@ -42,9 +38,9 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
+import useSpatialSearch from '../../../util/hooks/search/useSpatialSearch';
 import { useTranslation } from 'react-i18next';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
-import { useNavigate } from 'react-router-dom';
 import { useMapViewStack } from '../../../util/hooks/map/useMapViewStack';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
@@ -113,9 +109,9 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const [listContainerRef, listHeight] = useElementHeight();
     const { zoom } = useHashParams();
-    const navigate = useNavigate();
+    const { setSpatial } = useSpatialSearch();
 
-    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute, location } = useSearchNav();
+    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
     const { hasMapView, requestMapViewPop } = useMapViewStack();
 
@@ -312,14 +308,6 @@ export default function SearchResults() {
         navigateToSearchMenu();
     }
 
-    function toggleSpatialSearch(on) {
-        ctx.setSpatialSearch(on);
-        localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
-        const search = new URLSearchParams(location.search);
-        search.set('engine', on ? SEARCH_ENGINE_SPATIAL : SEARCH_ENGINE_CLASSIC);
-        navigate({ pathname: location.pathname, search: `?${search}`, hash: globalThis.location.hash });
-    }
-
     function resulNotPrepared() {
         return hasSearchParams && !ctx.processingSearch && (!result || reopenSearchResult());
     }
@@ -404,7 +392,7 @@ export default function SearchResults() {
             <SelectItemBoolean
                 title={t('search_try_spatial_search_beta')}
                 checked={!!ctx.spatialSearch}
-                onToggle={toggleSpatialSearch}
+                onToggle={setSpatial}
                 boldTitle={false}
             />
             {ctx.spatialSearch && ctx.searchResult?.info && (

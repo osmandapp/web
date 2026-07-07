@@ -6,6 +6,7 @@ import AppContext, {
     SEARCH_ENGINE_SPATIAL,
     SPATIAL_SEARCH_STORAGE_KEY,
 } from '../../../context/AppContext';
+import { engineFromSpatial } from './useSpatialSearch';
 
 const QUERY_KEY = 'query';
 const TYPE_KEY = 'type';
@@ -32,11 +33,7 @@ export default function useSearchNav() {
     const params = useMemo(() => parseParams(searchParams), [searchParams]);
 
     function updateSearchParams({ query, type } = {}) {
-        return buildSearchParams({
-            engine: ctx.spatialSearch ? SEARCH_ENGINE_SPATIAL : SEARCH_ENGINE_CLASSIC,
-            query,
-            type,
-        });
+        return buildSearchParams({ engine: engineFromSpatial(ctx.spatialSearch), query, type });
     }
 
     function navigateToSearchMenu() {
