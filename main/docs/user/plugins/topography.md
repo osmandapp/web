@@ -273,6 +273,16 @@ Terrain Shadows requires 3D Relief and automatically enables it when selected. T
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 *Modify Color Scheme feature* allows you to select a color scheme:
 
 - From a [predefined list](#default-color-scheme).
@@ -289,23 +299,6 @@ You can:
 **Note:** Hillshade uses a fixed shading algorithm and does not support custom color palettes.
 
 For advanced palette customization using palette files, see [Color Schemes](../personal/color-palette-schemes.md#palette-modify) article.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-*Modify Color Scheme feature* allows you to select a color scheme:
-
-- From a [predefined list](#default-color-scheme).
-- From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
-
-You can [edit these palettes](../personal/color-palette-schemes.md#palette-modify) to personalize the appearance of maps and routes.
-
-</TabItem>
-
-</Tabs>
 
 ### Visibility {#visibility}
 
@@ -329,7 +322,6 @@ Zoom Levels are not available for Terrain Shadows because this visualization is 
 
 **Clearing the cache** is sometimes necessary to free up space on your device or to resolve potential performance issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
-
 ### Rendering Engine (Android) {#rendering-engine-android}
 
 **Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
@@ -340,7 +332,6 @@ Zoom Levels are not available for Terrain Shadows because this visualization is 
     - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [OsmAnd development plugin](../plugins/development.md) and enable the [Use raster SQLite format for hillshade and slope](../plugins/development.md#terrain) setting.
 
     - Alternatively, you can use the [Terrain Map (3D)](../personal/maps-resources.md#paid-map-content) download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
-
 
 ### Quick Actions {#quick-actions}
 
