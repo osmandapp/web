@@ -37,6 +37,7 @@ body{
 }
 
 .container{
+    position:relative;
     max-width:1040px;
     margin:40px auto;
     background:var(--card-bg);
@@ -327,6 +328,43 @@ select:focus{border-color:var(--osmand-orange)}
     transform:translateY(-1px);
 }
 
+.quiz-expand-btn{
+    display:none;
+    position:absolute;
+    top:18px;
+    right:18px;
+    z-index:20;
+    width:42px;
+    height:42px;
+    border:1px solid var(--border-color);
+    border-radius:50%;
+    background:var(--card-bg);
+    color:var(--text-dark);
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.16);
+}
+
+.quiz-expand-btn svg{
+    width:22px;
+    height:22px;
+    stroke:currentColor;
+    stroke-width:2.4;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.quiz-expand-btn:hover{
+    border-color:var(--osmand-orange);
+    color:var(--osmand-orange);
+    transform:translateY(-1px);
+}
+
+body.quiz-collapsed .quiz-expand-btn{display:flex}
+body.quiz-expanded .quiz-expand-btn{display:none}
+
 body.quiz-expanded{
     overflow:hidden;
     background:var(--bg-main);
@@ -454,6 +492,19 @@ body.quiz-expanded.matching-question-active .feedback strong{
     <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M6 18h12"></path>
         <path d="M8 9l4 4 4-4"></path>
+    </svg>
+</button>
+
+<button class="quiz-expand-btn" type="button" onclick="expandQuizFullscreen()" aria-label="Expand quiz" title="Expand quiz">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 3H3v5"></path>
+        <path d="M3 3l7 7"></path>
+        <path d="M16 3h5v5"></path>
+        <path d="M21 3l-7 7"></path>
+        <path d="M8 21H3v-5"></path>
+        <path d="M3 21l7-7"></path>
+        <path d="M16 21h5v-5"></path>
+        <path d="M21 21l-7-7"></path>
     </svg>
 </button>
 
@@ -602,6 +653,9 @@ function notifyIframeHeightChanged(){
 
 function setQuizFullscreen(active) {
     document.body.classList.toggle("quiz-expanded", active);
+    if (active) {
+        document.body.classList.remove("quiz-collapsed");
+    }
 
     try {
         const frame = window.frameElement;
@@ -652,9 +706,18 @@ function setQuizFullscreen(active) {
 }
 
 function collapseQuizFullscreen(){
+    if (!document.body.classList.contains("quiz-expanded")) return;
+
     setQuizFullscreen(false);
+    document.body.classList.add("quiz-collapsed");
     notifyIframeHeightChanged();
     scrollToQuizSection();
+}
+
+function expandQuizFullscreen(){
+    document.body.classList.remove("quiz-collapsed");
+    setQuizFullscreen(true);
+    notifyIframeHeightChanged();
 }
 
 function exitQuizFullscreen(){
@@ -662,13 +725,14 @@ function exitQuizFullscreen(){
 }
 
 document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && document.body.classList.contains("quiz-expanded")) {
         collapseQuizFullscreen();
     }
 });
 
 function startQuiz() {
     trackQuiz("nautical/start");
+    document.body.classList.remove("quiz-collapsed");
     setQuizFullscreen(true);
     startScreen.style.display = "none";
     quizHeader.style.display = "flex";
@@ -823,6 +887,7 @@ function showFeedback(correct, text){
 
 function finishQuiz(){
     document.body.classList.remove("matching-question-active");
+    document.body.classList.remove("quiz-collapsed");
 
     trackQuiz("nautical/finish?score=" + score + "&total=" + questions.length);
 
@@ -904,6 +969,7 @@ function nextQuestion(){
 
 function restartQuiz(){
     document.body.classList.remove("matching-question-active");
+    document.body.classList.remove("quiz-collapsed");
 
     setQuizFullscreen(false);
 
