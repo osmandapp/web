@@ -41,7 +41,7 @@ import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import useSpatialSearch from '../../../util/hooks/search/useSpatialSearch';
 import { useTranslation } from 'react-i18next';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
-import { useMapViewStack } from '../../../util/hooks/map/useMapViewStack';
+import { useZoomToFit } from '../../../util/hooks/map/useZoomToFit';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -113,7 +113,7 @@ export default function SearchResults() {
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
-    const { hasMapView, requestMapViewPop } = useMapViewStack();
+    const { hasMapView, requestMapViewPop } = useZoomToFit();
 
     useEffect(() => {
         if ((params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery)) {
