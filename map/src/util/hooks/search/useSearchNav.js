@@ -1,22 +1,31 @@
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import { matchPath, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
+import AppContext, {
+    SEARCH_ENGINE_CLASSIC,
+    SEARCH_ENGINE_SPATIAL,
+    SPATIAL_SEARCH_STORAGE_KEY,
+} from '../../../context/AppContext';
+import { engineFromSpatial } from './useSpatialSearch';
 
 const QUERY_KEY = 'query';
 const TYPE_KEY = 'type';
+const ENGINE_KEY = 'engine';
 
-const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY];
+const QUERY_SEARCH_RESULT_PARAMS = [ENGINE_KEY, QUERY_KEY, TYPE_KEY];
 
 export function buildSearchParamsFromQuery(q) {
     if (!q) return '';
 
+    const engine = q.engine || getDefaultSearchEngine();
     const type = q.type;
     const query = q.query;
 
-    return buildSearchParams({ query, type }, new URLSearchParams());
+    return buildSearchParams({ engine, query, type });
 }
 
 export default function useSearchNav() {
+    const ctx = useContext(AppContext);
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,7 +33,7 @@ export default function useSearchNav() {
     const params = useMemo(() => parseParams(searchParams), [searchParams]);
 
     function updateSearchParams({ query, type } = {}) {
-        return buildSearchParams({ query, type }, searchParams);
+        return buildSearchParams({ engine: engineFromSpatial(ctx.spatialSearch), query, type });
     }
 
     function navigateToSearchMenu() {
@@ -68,11 +77,13 @@ export default function useSearchNav() {
 }
 
 function parseParams(sp) {
-    return QUERY_SEARCH_RESULT_PARAMS.reduce((acc, key) => {
+    const params = QUERY_SEARCH_RESULT_PARAMS.reduce((acc, key) => {
         const v = sp.get(key) || '';
         if (v) acc[key] = v;
         return acc;
     }, {});
+    params[ENGINE_KEY] ||= getDefaultSearchEngine();
+    return params;
 }
 
 function shallowEqualByKeys(a, b, keys) {
@@ -82,16 +93,22 @@ function shallowEqualByKeys(a, b, keys) {
     return true;
 }
 
-function buildSearchParams({ query, type } = {}, currentSearchParams) {
-    const sp = new URLSearchParams(currentSearchParams);
+function buildSearchParams({ engine, query, type } = {}) {
+    const sp = new URLSearchParams();
 
+    sp.set(ENGINE_KEY, engine || getDefaultSearchEngine());
     if (type) {
-        sp.delete(QUERY_KEY);
+        sp.set(TYPE_KEY, type);
     } else {
-        query ? sp.set(QUERY_KEY, query) : sp.delete(QUERY_KEY);
+        query && sp.set(QUERY_KEY, query);
     }
-    type ? sp.set(TYPE_KEY, type) : sp.delete(TYPE_KEY);
 
     const str = sp.toString();
     return str ? `?${str}` : '';
+}
+
+function getDefaultSearchEngine() {
+    return globalThis.localStorage?.getItem(SPATIAL_SEARCH_STORAGE_KEY) === 'yes'
+        ? SEARCH_ENGINE_SPATIAL
+        : SEARCH_ENGINE_CLASSIC;
 }

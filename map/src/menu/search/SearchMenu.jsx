@@ -2,7 +2,7 @@ import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIco
 import CustomInput from './search/CustomInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { collator, SPATIAL_SEARCH_STORAGE_KEY } from '../../context/AppContext';
+import AppContext, { collator } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
@@ -15,7 +15,7 @@ import {
     SEARCH_URL,
     liveHash,
 } from '../../manager/GlobalManager';
-import { matchPath, useLocation, useNavigate } from 'react-router-dom';
+import { matchPath, useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
     getCatPoiIconName,
@@ -35,6 +35,7 @@ import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import useSearchNav from '../../util/hooks/search/useSearchNav';
+import useSpatialSearch from '../../util/hooks/search/useSpatialSearch';
 import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import ExploreMenu from './explore/ExploreMenu';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
@@ -48,7 +49,7 @@ export default function SearchMenu() {
     const [, height] = useWindowSize();
 
     const { navigateToSearchResults } = useSearchNav();
-    const location = useLocation();
+    const { setSpatial } = useSpatialSearch();
 
     const isSearchResultRoute = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL + '*' },
@@ -239,11 +240,6 @@ export default function SearchMenu() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + liveHash());
     }
 
-    function toggleSpatialSearch(on) {
-        ctx.setSpatialSearch(on);
-        localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
-    }
-
     return (
         <>
             {ltx.isLoggedIn() ? (
@@ -277,14 +273,12 @@ export default function SearchMenu() {
                                         }
                                         setSearchValue={setSearchValue}
                                     />
-                                    {ctx.develFeatures && (
-                                        <SelectItemBoolean
-                                            title="Spatial search (dev)"
-                                            checked={!!ctx.spatialSearch}
-                                            onToggle={toggleSpatialSearch}
-                                            boldTitle={false}
-                                        />
-                                    )}
+                                    <SelectItemBoolean
+                                        title={t('search_try_spatial_search_beta')}
+                                        checked={!!ctx.spatialSearch}
+                                        onToggle={setSpatial}
+                                        boldTitle={false}
+                                    />
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />
                                         <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>

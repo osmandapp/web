@@ -12,10 +12,11 @@ import PoiManager, {
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box, Button, Typography } from '@mui/material';
+import SelectItemBoolean from '../../../frame/components/items/SelectItemBoolean';
 import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
-import { iconPathMap } from '../../../map/util/MapManager';
+import { iconPathMap, MAP_VIEW_SEARCH_RESULT } from '../../../map/util/MapManager';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
@@ -37,8 +38,10 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
+import useSpatialSearch from '../../../util/hooks/search/useSpatialSearch';
 import { useTranslation } from 'react-i18next';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
+import { useZoomToFit } from '../../../util/hooks/map/useZoomToFit';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -59,6 +62,7 @@ function getVisibleLevel(item) {
 
 export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
+        engine: searchParams.engine,
         query: searchParams.query,
         latlng: { lat: loc.lat, lng: loc.lng },
         baseSearch,
@@ -86,6 +90,7 @@ export function searchByCategory(searchParams, ctx, t) {
     }
 
     ctx.setSearchQuery({
+        engine: searchParams.engine,
         query: formattingPoiType(categoryName),
         type: searchParams.type,
         lang: lang,
@@ -104,14 +109,23 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const [listContainerRef, listHeight] = useElementHeight();
     const { zoom } = useHashParams();
+    const { setSpatial } = useSpatialSearch();
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
+    const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
+    const { hasMapView, requestMapViewPop } = useZoomToFit();
 
     useEffect(() => {
         if ((params.query || params.type) && !isSearchEqualToUrl(ctx.searchQuery)) {
             setResult(null);
         }
-    }, [params.query, params.type, ctx.searchQuery]);
+    }, [params.engine, params.query, params.type, ctx.searchQuery]);
+
+    useEffect(() => {
+        if (hasMapView(MAP_VIEW_SEARCH_RESULT)) {
+            requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
+        }
+    }, []);
 
     useEffect(() => {
         if (result === EMPTY_SEARCH_RESULT) {
@@ -132,7 +146,7 @@ export default function SearchResults() {
             }
         }
         return null;
-    }, [params.query, params.type]);
+    }, [params.engine, params.query, params.type]);
 
     usePageTitle(pageTitle);
 
@@ -222,7 +236,6 @@ export default function SearchResults() {
 
     useEffect(() => {
         if (locReady) {
-            const hasSearchParams = params.type || (params.query && params.query !== '');
             if (hasSearchParams && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
                 if (!isSearchResultRoute) {
                     return;
@@ -284,6 +297,9 @@ export default function SearchResults() {
     }, [ctx.searchResult]);
 
     function backToMainSearch() {
+        if (hasMapView(MAP_VIEW_SEARCH_RESULT)) {
+            requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
+        }
         ctx.setCurrentObjectType(null);
         ctx.setSearchResult(null);
         ctx.setSearchFavoriteGroupIds(null);
@@ -293,7 +309,7 @@ export default function SearchResults() {
     }
 
     function resulNotPrepared() {
-        return !ctx.processingSearch && (!result || reopenSearchResult());
+        return hasSearchParams && !ctx.processingSearch && (!result || reopenSearchResult());
     }
 
     function reopenSearchResult() {
@@ -373,6 +389,12 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
+            <SelectItemBoolean
+                title={t('search_try_spatial_search_beta')}
+                checked={!!ctx.spatialSearch}
+                onToggle={setSpatial}
+                boldTitle={false}
+            />
             {ctx.spatialSearch && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
@@ -381,7 +403,8 @@ export default function SearchResults() {
                 </Typography>
             )}
             {(ctx.processingSearch || resulNotPrepared() || staleResult) && <Loading />}
-            {!ctx.processingSearch &&
+            {hasSearchParams &&
+                !ctx.processingSearch &&
                 !reopenSearchResult() &&
                 !staleResult &&
                 (result === EMPTY_SEARCH_RESULT ? (
