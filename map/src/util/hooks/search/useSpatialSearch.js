@@ -31,7 +31,7 @@ export default function useSpatialSearch() {
     const setSpatial = useCallback(
         (on) => {
             ctx.setSpatialSearch(on);
-            localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
+            globalThis.localStorage?.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
             const search = new URLSearchParams(location.search);
             search.set(ENGINE_KEY, engineFromSpatial(on));
             navigate({ pathname: location.pathname, search: `?${search}`, hash: liveHash() });
