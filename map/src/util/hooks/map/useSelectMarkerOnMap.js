@@ -121,6 +121,24 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         const found = findLayerById(resolveLayers(getLayers, layersProp), selectedObjId);
         if (found) {
             applyPinForLayer(found, true);
+            return;
+        }
+
+        if (type === SEARCH_LAYER_ID) {
+            const latlng = extractLatlng(ctx.selectedWptId, type) ?? ctx.selectedWpt?.poi?.latlng ?? null;
+            if (latlng) {
+                const pin = applySelectedPin({
+                    ctx,
+                    map,
+                    layer: null,
+                    latlng,
+                    markerData: resolveHoverMarkerData(null),
+                    isSelection: true,
+                });
+                if (pin) {
+                    pin.options.idObj = selectedObjId;
+                }
+            }
         }
     }, [
         selectedObjId,
