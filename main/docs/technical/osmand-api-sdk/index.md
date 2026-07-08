@@ -16,7 +16,7 @@ Here is the list of examples how to use SDK inside your product.
 ## Android OsmAnd AIDL API {#android-osmand-aidl-api}
 Main concept behind this approach that Target application is communicated with OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) or intents api. OsmAnd has reach variety of methods supported [AIDL interface](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). There are several apps built using these approach and main concept that app contains several screens and "Go to map" button behind the scene app completely reconfigures OsmAnd and provides callback for main operations such as Navigation, GPS location acquired and also includes UI elements such as widgets / Drawer buttons, so user can navigate from the Map back to the Target API.
 
-List of APIs is pretty long and you can get acquainted with it inside [Demo App](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
+List of APIs is pretty long and you can get acquainted with it inside [Demo App](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk). For example, external apps can add widgets individually or as groups, and assign them custom icons via URI instead of relying only on OsmAnd's built-in icon set.
 
 **Pros** 
 - No License issues - available for all possible purposes
