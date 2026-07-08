@@ -1,0 +1,54 @@
+.dropOverlay {
+    position: fixed;
+    z-index: 3001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    border: 3px dashed var(--selected-color);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--selected-color) 30%, transparent);
+}
+
+.text {
+    padding: 9px 12px;
+    border-radius: 40px;
+    background: var(--selected-color);
+    color: #fff;
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+}
+
+.groupDropTarget {
+    background: color-mix(in srgb, var(--selected-color) 30%, transparent) !important;
+    outline: 3px dashed var(--selected-color) !important;
+    outline-offset: -3px !important;
+    border-radius: 12px !important;
+}
+
+.folderDropTarget {
+    position: relative !important;
+}
+
+.dropZoneContent {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tracksDropHighlight {
+    position: absolute;
+    inset: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed var(--selected-color);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--selected-color) 30%, transparent);
+    pointer-events: none;
+    z-index: 1;
+    box-sizing: border-box;
+}

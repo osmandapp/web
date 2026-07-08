@@ -15,6 +15,8 @@ import GroupHeader from '../actions/GroupHeader';
 import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
 import styles from '../trackfavmenu.module.css';
+import dropOverlayStyles from '../../frame/components/dropOverlay.module.css';
+import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
 import gStyles from '../gstylesmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
@@ -24,6 +26,7 @@ import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 import { useNavigate } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
@@ -44,6 +47,9 @@ export default function TracksMenu() {
     const [listContainerRef, listHeight] = useElementHeight();
 
     const { t } = useTranslation();
+
+    const rootDropZoneHandlers = useGpxFileDragZone('');
+    const clearGpxDragTarget = useGpxFileDragClearZone();
 
     const checkHasFiles = () =>
         ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 || !isEmpty(ctx.shareWithMeFiles?.tracks);
@@ -101,6 +107,8 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
+    const isRootDropActive = ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === '';
+
     const trackMenuRows = useMemo(() => {
         const rows = [
             <MenuItem
@@ -108,6 +116,7 @@ export default function TracksMenu() {
                 id={'se-visible-tracks-menu'}
                 divider
                 className={styles.item}
+                {...clearGpxDragTarget}
                 onClick={() => {
                     setOpenVisibleTracks(true);
                     navigate(MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL + liveHash());
@@ -142,16 +151,27 @@ export default function TracksMenu() {
                 });
         }
         if (ctx.trackLoading?.length > 0) {
-            ctx.trackLoading.forEach((lt) => {
-                rows.push(<TrackLoading key={lt} name={lt} />);
-            });
+            ctx.trackLoading
+                .filter((lt) => lt.folder === DEFAULT_GROUP_NAME)
+                .forEach((lt) => {
+                    rows.push(<TrackLoading key={lt.name} name={lt.name} />);
+                });
         }
         if (defaultGroupItems) {
             rows.push(...defaultGroupItems);
         }
 
         return rows;
-    }, [defaultGroupItems, sortGroups, ctx.tracksGroups, ctx.trackLoading, ctx.shareWithMeFiles, ctx.visibleTracks, t]);
+    }, [
+        defaultGroupItems,
+        sortGroups,
+        ctx.tracksGroups,
+        ctx.trackLoading,
+        ctx.shareWithMeFiles,
+        ctx.visibleTracks,
+        clearGpxDragTarget,
+        t,
+    ]);
 
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
@@ -194,15 +214,32 @@ export default function TracksMenu() {
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
                         >
-                            <VirtualizedList
-                                items={trackMenuRows}
-                                renderItem={(row) => row}
-                                getItemKey={(row) => row.key}
-                                height={listHeight}
-                            />
+                            <Box
+                                className={`${dropOverlayStyles.dropZoneContent} ${dropOverlayStyles.folderDropTarget}`}
+                                {...rootDropZoneHandlers}
+                            >
+                                <VirtualizedList
+                                    items={trackMenuRows}
+                                    renderItem={(row) => row}
+                                    getItemKey={(row) => row.key}
+                                    height={listHeight}
+                                    fillHeight
+                                    overlayIndex={
+                                        isRootDropActive
+                                            ? trackMenuRows.length - (defaultGroupItems?.length ?? 0)
+                                            : undefined
+                                    }
+                                    overlayContent={isRootDropActive ? <TracksDropHighlight /> : undefined}
+                                />
+                            </Box>
                         </Box>
                     ) : (
-                        <Box id={'se-track-menu'}>
+                        <Box
+                            id={'se-track-menu'}
+                            className={dropOverlayStyles.folderDropTarget}
+                            {...rootDropZoneHandlers}
+                        >
+                            {isRootDropActive && <TracksDropHighlight />}
                             <Empty
                                 title={t('empty_tracks')}
                                 text={t('empty_tracks_description')}

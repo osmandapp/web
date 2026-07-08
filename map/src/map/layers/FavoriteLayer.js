@@ -8,7 +8,7 @@ import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } fr
 import { isFavoriteFromSearch } from '../../manager/SearchManager';
 import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
-import cloneDeep from 'lodash-es/cloneDeep';
+import { cloneTrackObject } from '../../util/Utils';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
 import {
     restoreOriginalIcon,
@@ -462,7 +462,7 @@ const FavoriteLayer = () => {
             const groupWithOriginalFile = ctx.favorites.groups?.find((g) => g.id === e.sourceTarget.options.groupId);
             ctx.selectedGpxFile.file = groupWithOriginalFile.file;
 
-            ctx.selectedGpxFile.prevState = cloneDeep(selectedGpxFileRef.current);
+            ctx.selectedGpxFile.prevState = cloneTrackObject(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
                 iconHtml: e.sourceTarget.options.originalIcon?.options?.html,
