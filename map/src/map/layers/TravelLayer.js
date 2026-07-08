@@ -7,6 +7,7 @@ import L from 'leaflet';
 import { ACTIVITY_ALL, ALL_YEARS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import { clusterMarkers } from '../util/Clusterizer';
+import { decodeSimplifiedGeometry } from '../../util/decodeSimplifiedGeometry';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
@@ -56,6 +57,24 @@ function attachAutoClosePopup(layer, html, offset) {
             closeTimeout = null;
         }, 1000);
     });
+}
+
+function decodeRoutesGeometry(featureCollection) {
+    const features = featureCollection?.features;
+    if (!features) {
+        return;
+    }
+    features.forEach((route) => {
+        const props = route.properties;
+        if (props && !props.geo && props.geo_b64) {
+            try {
+                props.geo = decodeSimplifiedGeometry(props.geo_b64);
+            } catch (e) {
+                console.warn(`Failed to decode geometry for route ${props.id}`, e);
+            }
+        }
+    });
+    features.sort((a, b) => (b.properties?.date ?? '').localeCompare(a.properties?.date ?? ''));
 }
 
 function getRouteStart(route, track = null) {
@@ -445,6 +464,7 @@ export default function TravelLayer() {
         });
 
         if (response?.data) {
+            decodeRoutesGeometry(response.data);
             ctx.setSearchTravelRoutes((prev) => ({ ...prev, res: response.data }));
         } else {
             ctx.setSearchTravelRoutes((prev) => (prev.res === null ? prev : { ...prev, res: null }));
