@@ -210,7 +210,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         return 'se-search-result-item';
     })();
 
-    async function clickHandler() {
+    async function clickHandler(event) {
         if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
             const fileName = item.properties?.[CATEGORY_NAME];
             const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
@@ -261,7 +261,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi, id: itemId });
             recentSaver(POI_OBJECTS_KEY, poi);
-            ctx.setMoveToMapObj(item);
+            const pushMapViewForBackButton = Boolean(event?.ctrlKey);
+            ctx.setMoveToMapObj({ ...item, pushMapViewForBackButton });
             if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
                 navigateToPoi({ poi }, navigate);
             }
