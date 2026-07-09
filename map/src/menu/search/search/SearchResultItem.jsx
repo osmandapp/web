@@ -1,7 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Dialog, DialogTitle, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import {
+    Box,
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Typography,
+} from '@mui/material';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
+import { ReactComponent as ShowOutlinedIcon } from '../../../assets/icons/ic_action_show_outlined.svg';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import DefaultItem from '../../../frame/components/items/DefaultItem';
 import styles from '../search.module.css';
@@ -146,8 +156,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
     const [showMatched, setShowMatched] = useState(false);
+    const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
     const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
+    const showPropertiesDumpIcon = ctx.spatialSearch || ctx.develFeatures;
     function openMatchedObject(obj) {
         ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
         setShowMatched(false);
@@ -338,7 +350,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             >
                 <ListItemText>
                     <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                    {(info || type || matchedObjects.length > 1) && (
+                    {(info || type || matchedObjects.length > 1 || showPropertiesDumpIcon) && (
                         <MenuItemWithLines
                             className={styles.placeTypes}
                             name={`${addInfo()}${addType()}${addCity()}`}
@@ -365,6 +377,17 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     <InfoIcon className={styles.placeTypesIcon} />
                                 </span>
                             )}
+                            {showPropertiesDumpIcon && (
+                                <span
+                                    className={styles.matchedObjectsIcon}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowPropertiesDump(true);
+                                    }}
+                                >
+                                    <ShowOutlinedIcon className={styles.placeTypesIcon} />
+                                </span>
+                            )}
                         </MenuItemWithLines>
                     )}
                 </ListItemText>
@@ -384,6 +407,18 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                             onClick={() => openMatchedObject(obj)}
                         />
                     ))}
+                </Dialog>
+            )}
+            {showPropertiesDump && (
+                <Dialog
+                    open={true}
+                    onClose={() => setShowPropertiesDump(false)}
+                    onClick={(e) => e.stopPropagation()}
+                    fullWidth
+                >
+                    <DialogContent>
+                        <Box component="pre">{JSON.stringify(item.properties, null, 2)}</Box>
+                    </DialogContent>
                 </Dialog>
             )}
         </>
