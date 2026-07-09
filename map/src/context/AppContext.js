@@ -188,7 +188,6 @@ export const AppContextProvider = (props) => {
 
     // travel
     const [openTravel, setOpenTravel] = useState(false);
-    const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
     const [selectedTransportRoute, setSelectedTransportRoute] = useState(null);
@@ -695,8 +694,6 @@ export const AppContextProvider = (props) => {
                 setSelectedTransportRoute,
                 travelRouteIdByUrl,
                 setTravelRouteIdByUrl,
-                travelFilter,
-                setTravelFilter,
                 openProFeatures,
                 setOpenProFeatures,
                 selectedSearchMarker,

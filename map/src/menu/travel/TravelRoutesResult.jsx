@@ -8,6 +8,7 @@ import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
 import styles from '../trackfavmenu.module.css';
 import travelStyles from './travel.module.css';
 import {
@@ -19,12 +20,12 @@ import {
 } from '../settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 
-const ACTIVITY_IDS_HIDDEN = ['nospeed'];
+const ACTIVITY_IDS_HIDDEN = new Set(['nospeed']);
 
 function formatActivity(route) {
     const activity = route?.properties?.activity;
     if (!activity) return null;
-    if (ACTIVITY_IDS_HIDDEN.includes(activity)) return null;
+    if (ACTIVITY_IDS_HIDDEN.has(activity)) return null;
 
     return capitalize(activity.replace(/_/g, ' '));
 }
@@ -109,24 +110,27 @@ const TravelRoute = ({ route }) => {
     );
 };
 
-// Keep in sync with menu item (3 lines)
 const ITEM_HEIGHT = 85;
 const SECTION_HEIGHT = 750;
 
 const TravelRoutesResult = React.memo(({ routes }) => {
-    if (!routes || routes.length === 0) {
+    const [containerRef, containerHeight] = useElementHeight();
+    const itemCount = routes?.length ?? 0;
+
+    if (itemCount === 0) {
         return null;
     }
 
-    const itemCount = routes.length;
+    const listHeight = containerHeight || Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT);
 
     return (
-        <Box sx={{ overflowX: 'hidden' }}>
+        <Box ref={containerRef} sx={{ flex: 1, minHeight: 0, overflowX: 'hidden' }}>
             <FixedSizeList
-                height={Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT)}
+                height={listHeight}
                 itemCount={itemCount}
                 itemSize={ITEM_HEIGHT}
                 width={'100%'}
+                style={{ overflowX: 'hidden' }}
             >
                 {({ index, style }) => (
                     <div style={style}>

@@ -189,3 +189,45 @@
 .sliderContainer :global(.MuiSlider-valueLabel) {
     font-size: 12px !important;
 }
+
+.showButtonBox {
+    margin: 16px;
+    flex-shrink: 0;
+}
+
+.resultsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 16px 0;
+    flex-shrink: 0;
+}
+
+.filtersBody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.filtersScroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tagMatchBox {
+    margin: 16px;
+}
+
+.contentColumn {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    margin-top: -14px;
+}
+
+.resultsSpinner {
+    margin-top: 80px;
+    margin-left: 160px;
+}
