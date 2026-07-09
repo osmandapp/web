@@ -317,9 +317,9 @@ export default function TravelMenu() {
         setTravelResult(null);
         setSortByDistance(null);
         setFilters(DEFAULT_FILTERS);
+        ctx.setTravelShowStartFinish(false);
     }
 
-    // Reset only the filters that live in the secondary drawer
     function resetFilters() {
         setFilters((prev) => ({
             ...prev,
@@ -327,9 +327,11 @@ export default function TravelMenu() {
             tagMatchMode: TAG_MATCH_MODES.OR,
             ...Object.fromEntries(RANGE_FILTER_KEYS.map((key) => [key, null])),
         }));
+        ctx.setTravelShowStartFinish(false);
     }
 
-    const hasActiveFilters = filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null);
+    const hasActiveFilters =
+        filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ctx.travelShowStartFinish;
 
     const sortedRoutes = useMemo(() => {
         const features = travelResult?.features;
