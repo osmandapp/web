@@ -355,6 +355,7 @@ export const AppContextProvider = (props) => {
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
     const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
+    const [travelRoutesHidden, setTravelRoutesHidden] = useState(false); // hide other travel routes on the map
 
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
@@ -776,6 +777,8 @@ export const AppContextProvider = (props) => {
                 setProcessingStopByUrl,
                 processingTravelRouteByUrl,
                 setProcessingTravelRouteByUrl,
+                travelRoutesHidden,
+                setTravelRoutesHidden,
                 processingAnalytics,
                 setProcessingAnalytics,
                 openNavigationSettings,

@@ -24,6 +24,7 @@ import RouteTrackActionsButtons from './RouteTrackActionsButtons';
 import LocalTrackActionsButtons from './LocalTrackActionsButtons';
 import ShareTrackActionsButtons from './ShareTrackActionsButtons';
 import TravelTrackActionsButtons from './TravelTrackActionsButtons';
+import TravelFocusToggleBtn from './TravelFocusToggleBtn';
 import LocationInfoLine from '../common/LocationInfoLine';
 import { useFocusMode } from '../../../util/hooks/map/useFocusMode';
 
@@ -61,15 +62,18 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                 showBackButton={showBackButton}
                 toolbarProps={compactToolbarProps}
                 rightContent={
-                    showActionsBtn && (
-                        <ThreeDotsButton
-                            name={'action_menu_track'}
-                            tip={'shared_string_menu'}
-                            id={`se-actions-${track.name}`}
-                            setOpenActions={setOpenActions}
-                            anchorEl={anchorEl}
-                        />
-                    )
+                    <>
+                        {isTravelTrack(ctx) && track && <TravelFocusToggleBtn />}
+                        {showActionsBtn && (
+                            <ThreeDotsButton
+                                name={'action_menu_track'}
+                                tip={'shared_string_menu'}
+                                id={`se-actions-${track.name}`}
+                                setOpenActions={setOpenActions}
+                                anchorEl={anchorEl}
+                            />
+                        )}
+                    </>
                 }
             />
             <Box className={`${styles.collapsibleHeader} ${compact ? styles.collapsibleHeaderHidden : ''}`}>

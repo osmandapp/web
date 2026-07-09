@@ -420,6 +420,7 @@ export default function TravelLayer() {
     useEffect(() => {
         if (isEmpty(ctx.selectedGpxFile)) {
             removeSelectedRouteLayers();
+            ctx.setTravelRoutesHidden(false);
             travelRoutes?.getLayers().forEach((layer) => {
                 layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH, opacity: 1 });
             });
@@ -438,6 +439,18 @@ export default function TravelLayer() {
             });
         }
     }, [ctx.selectedGpxFile, travelRoutes]);
+
+    // focus toggle in the track header: hide / show the other tracks on the map
+    useEffect(() => {
+        [travelRoutes, travelPoints].forEach((group) => {
+            if (!group) return;
+            if (ctx.travelRoutesHidden) {
+                map.removeLayer(group);
+            } else if (!map.hasLayer(group)) {
+                group.addTo(map);
+            }
+        });
+    }, [ctx.travelRoutesHidden, travelRoutes, travelPoints]);
 
     // manage selected route layer
     useEffect(() => {
