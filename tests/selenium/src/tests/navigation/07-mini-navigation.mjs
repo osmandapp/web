@@ -1,8 +1,8 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
-import { waitBy } from '../../lib.mjs';
+import { assert, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { driver, url } from '../../options.mjs';
+import { driver, ROUTE_SUMMARY_SELECTOR, url } from '../../options.mjs';
 
 const routes = [
     {
@@ -10,21 +10,21 @@ const routes = [
         profile: 'bicycle',
         A: '50.49321, 30.52429',
         B: '50.49639, 30.51174',
-        hasAttributes: false,
+        distance: 1.3,
     },
     {
         type: 'osmand',
         profile: 'car',
         A: '50.49321, 30.52429',
         B: '50.49631, 30.51184',
-        hasAttributes: false,
+        distance: 1.4,
     },
 ];
 
 export default async function test() {
     await actionOpenMap();
 
-    for await (const { profile, A, B } of routes) {
+    for (const { profile, A, B, distance } of routes) {
         const newUrl =
             url.split('#')[0] +
             `navigate/?start=${encodeURIComponent(A)}&end=${encodeURIComponent(B)}&profile=${profile}#16/50.4948/30.5132`;
@@ -32,23 +32,16 @@ export default async function test() {
         await driver.get(newUrl);
 
         await waitBy(By.className('leaflet-interactive'));
-        await validateInfo();
+        await validateDistance(distance);
     }
 
     await actionFinish();
 }
 
-async function validateInfo() {
-    try {
-        const el = await waitBy(By.id('se-route-summary-info'));
-        const text = await el.getText();
+async function validateDistance(expected) {
+    const el = await waitBy(ROUTE_SUMMARY_SELECTOR);
+    const text = await el.getText();
+    const actual = Number(text.match(/(\d+(?:\.\d+)?)\s*km/)?.[1]);
 
-        // get all numbers from the text
-        const numbers = text.match(/\d+(\.\d+)?/g)?.map(Number) || [];
-
-        // check that all numbers are positive
-        return numbers.length > 0 && numbers.every((n) => n > 0);
-    } catch {
-        return false;
-    }
+    await assert(Math.abs(actual - expected) <= 0.1, `Expected route distance ${expected} km, got "${text}"`);
 }
