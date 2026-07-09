@@ -114,6 +114,8 @@ export default function ConfigureMap() {
 
     function setDefaultConfigureMap() {
         const defaultConfigureMap = defaultConfigureMapStateValues;
+        mtx.setTileURL(defaultConfigureMap.mapStyle.tileURL);
+        mtx.setRenderingType(defaultConfigureMap.mapStyle.renderingType);
         ctx.setConfigureMapState({ ...defaultConfigureMap });
         updateConfigureMapCache(defaultConfigureMap);
     }
