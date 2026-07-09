@@ -9,6 +9,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { useElementHeight } from '../../util/hooks/useElementHeight';
+import { getActivityColor } from '../../map/util/activityColors';
 import styles from '../trackfavmenu.module.css';
 import travelStyles from './travel.module.css';
 import {
@@ -85,7 +86,17 @@ const TravelRoute = ({ route }) => {
                             component="span"
                             sx={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis' }}
                         >
-                            {activity && `${activity} · `}
+                            {activity && (
+                                <>
+                                    <span
+                                        className={travelStyles.activityType}
+                                        style={{ color: getActivityColor(route.properties.activity) }}
+                                    >
+                                        {activity}
+                                    </span>
+                                    {' · '}
+                                </>
+                            )}
                             {route.properties.date?.slice(0, 10)}
                             {route.properties.id != null && route.properties.user && (
                                 <>

@@ -9,6 +9,7 @@ import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/
 import { clusterMarkers } from '../util/Clusterizer';
 import { decodeSimplifiedGeometry } from '../../util/decodeSimplifiedGeometry';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
+import { getActivityColor } from '../util/activityColors';
 import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
 
@@ -108,11 +109,11 @@ export default function TravelLayer() {
     const [selectedRouteId, setSelectedRouteId] = useState(null);
     const selectedRoutePolylineRef = useRef(null);
 
-    const ROUTE_COLOR = '#666666';
     const SELECTED_ROUTE_COLOR = '#f8931d';
     const ROUTE_WIDTH = 3;
     const OPENED_TRACK_COLOR = '#237bff';
     const OPENED_TRACK_WIDTH = 6;
+    const POINT_RADIUS = 6;
 
     useEffect(() => {
         if (!ctx.searchTravelRoutes) {
@@ -154,10 +155,12 @@ export default function TravelLayer() {
                         if (segment.length < 2) {
                             return;
                         }
+                        const color = getActivityColor(route.properties.activity);
                         const polyline = new L.Polyline(segment, {
-                            color: ROUTE_COLOR,
+                            color,
                             weight: ROUTE_WIDTH,
                             id: route.properties.id,
+                            baseColor: color,
                         });
                         const html = buildOsmPopupHtml({
                             id: route.properties.id,
@@ -217,12 +220,12 @@ export default function TravelLayer() {
 
                 const markers = [];
 
-                function createMarker(place, isMain) {
+                function createMarker(place) {
                     const [lon, lat] = place.geometry.coordinates;
-                    const radius = isMain ? 8 : 4;
                     const marker = new SimpleDotMarker(L.latLng(lat, lon), place, {
-                        radius,
+                        radius: POINT_RADIUS,
                         weight: 1,
+                        fillColor: getActivityColor(place.properties.activity),
                     }).build();
                     const id = place.properties.id;
                     const html = buildOsmPopupHtml({
@@ -230,13 +233,13 @@ export default function TravelLayer() {
                         name: place.properties.name || '',
                         user: place.properties.user,
                     });
-                    attachAutoClosePopup(marker, html, [0, -radius]);
+                    attachAutoClosePopup(marker, html, [0, -POINT_RADIUS]);
                     marker.on('click', () => openInfoBlock(id));
                     markers.push(marker);
                 }
 
-                mainMarkers.forEach((place) => createMarker(place, true));
-                secondaryMarkers.forEach((place) => createMarker(place, false));
+                mainMarkers.forEach(createMarker);
+                secondaryMarkers.forEach(createMarker);
 
                 if (markers.length > 0) {
                     const markersGroup = new L.FeatureGroup(markers);
@@ -373,7 +376,7 @@ export default function TravelLayer() {
                 selectedRoutePolylineRef.current = null;
             }
             travelRoutes?.getLayers().forEach((layer) => {
-                layer.setStyle({ color: ROUTE_COLOR, weight: ROUTE_WIDTH });
+                layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH });
             });
         } else if (ctx.selectedGpxFile?.id && travelRoutes) {
             const trackId = ctx.selectedGpxFile.id;
@@ -382,7 +385,7 @@ export default function TravelLayer() {
                     layer.setStyle({ color: OPENED_TRACK_COLOR, weight: OPENED_TRACK_WIDTH });
                     layer.bringToFront();
                 } else {
-                    layer.setStyle({ color: ROUTE_COLOR, weight: ROUTE_WIDTH });
+                    layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH });
                 }
             });
         }
@@ -401,14 +404,14 @@ export default function TravelLayer() {
             travelRoutes?.getLayers().forEach((layer) => {
                 if (layer.options.id === id) {
                     layer.setStyle({
-                        color: ctx.selectedTravelRoute.hover ? SELECTED_ROUTE_COLOR : ROUTE_COLOR,
+                        color: ctx.selectedTravelRoute.hover ? SELECTED_ROUTE_COLOR : layer.options.baseColor,
                         weight: ROUTE_WIDTH,
                     });
                     layer.bringToFront();
                     if (id !== selectedRouteId) {
                         let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === selectedRouteId);
                         if (layer) {
-                            layer.setStyle({ color: ROUTE_COLOR, weight: ROUTE_WIDTH });
+                            layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH });
                         }
                         setSelectedRouteId(id);
                     }

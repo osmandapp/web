@@ -219,6 +219,10 @@
     margin: 16px;
 }
 
+.activityType {
+    font-weight: 600;
+}
+
 .contentColumn {
     display: flex;
     flex-direction: column;
