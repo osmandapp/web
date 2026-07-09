@@ -41,7 +41,7 @@ const TravelRoute = ({ route }) => {
     function openRouteInfo(route) {
         ctx.setSelectedTravelRoute({ route, show: true });
         if (route?.properties?.id != null) {
-            updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(route.properties.id) });
+            updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(route.properties.id), replace: false });
         }
     }
 
@@ -81,10 +81,9 @@ const TravelRoute = ({ route }) => {
                         </Typography>
                         <Typography
                             variant="body2"
-                            className={styles.groupInfo}
+                            className={`${styles.groupInfo} ${travelStyles.activityLine}`}
                             noWrap
                             component="span"
-                            sx={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis' }}
                         >
                             {activity && (
                                 <>
@@ -135,7 +134,7 @@ const TravelRoutesResult = React.memo(({ routes }) => {
     const listHeight = containerHeight || Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT);
 
     return (
-        <Box ref={containerRef} sx={{ flex: 1, minHeight: 0, overflowX: 'hidden' }}>
+        <Box ref={containerRef} className={travelStyles.resultsListBox}>
             <FixedSizeList
                 height={listHeight}
                 itemCount={itemCount}

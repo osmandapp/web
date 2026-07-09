@@ -48,7 +48,6 @@ export const TAG_MATCH_MODES = {
 };
 
 const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
-const FILTER_URL_KEYS = ['activity', 'year', 'tags', 'tagMatchMode', ...RANGE_FILTER_KEYS];
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
@@ -114,23 +113,16 @@ export default function TravelMenu() {
         }
     }, [ctx.searchTravelRoutes?.res]);
 
-    // Keep the URL query in sync with the current filters
-    useEffect(() => {
-        if (!location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
+    function navigateToFilters(f) {
+        const search = createUrlParams(filtersToParams(f));
+        if (search === location.search) {
             return;
         }
-        const next = new URLSearchParams(searchParams);
-        FILTER_URL_KEYS.forEach((key) => next.delete(key));
-        Object.entries(filtersToParams(filters)).forEach(([key, value]) => next.set(key, value));
-        const params = {};
-        next.forEach((value, key) => {
-            params[key] = value;
-        });
         navigate(
-            { pathname: location.pathname, search: createUrlParams(params), hash: globalThis.location.hash || '' },
+            { pathname: location.pathname, search, hash: globalThis.location.hash || '' },
             { replace: true, preventScrollReset: true }
         );
-    }, [filters, location.pathname]);
+    }
 
     // On load with filter params in the URL, open Travel and run the search automatically.
     useEffect(() => {
@@ -317,6 +309,7 @@ export default function TravelMenu() {
     }
 
     function showRoutes() {
+        navigateToFilters(filters);
         runSearch(filters);
     }
 

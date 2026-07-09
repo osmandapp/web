@@ -223,6 +223,18 @@
     font-weight: 600;
 }
 
+.activityLine {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.resultsListBox {
+    flex: 1;
+    min-height: 0;
+    overflow-x: hidden;
+}
+
 .contentColumn {
     display: flex;
     flex-direction: column;

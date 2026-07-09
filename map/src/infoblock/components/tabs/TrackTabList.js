@@ -7,7 +7,7 @@ import TurnsTab from './TurnsTab';
 import WaypointsTab from './WaypointsTab';
 import TrackInProgressTab from './TrackInProgressTab';
 import { hasSegmentTurns } from '../../../manager/track/TracksManager';
-import { isCloudTrack, isLocalTrack, isRouteTrack } from '../../../context/AppContext';
+import { isCloudTrack, isLocalTrack, isRouteTrack, isTravelTrack } from '../../../context/AppContext';
 
 export const TRACK_TAB_IDS = {
     GENERAL: 'general',
@@ -33,11 +33,13 @@ export default class TrackTabList {
         };
 
         tabs.Overview = <GeneralInfoTab key={TRACK_TAB_IDS.GENERAL} />;
-        tabs.Track = isLocalTrack(ctx) ? (
-            <PointsTab key={TRACK_TAB_IDS.TRACK} />
-        ) : (
-            <TrackInProgressTab key={TRACK_TAB_IDS.TRACK} />
-        );
+        if (!isTravelTrack(ctx)) {
+            tabs.Track = isLocalTrack(ctx) ? (
+                <PointsTab key={TRACK_TAB_IDS.TRACK} />
+            ) : (
+                <TrackInProgressTab key={TRACK_TAB_IDS.TRACK} />
+            );
+        }
 
         tabs.Points = <WaypointsTab key={TRACK_TAB_IDS.POINTS} />;
 
