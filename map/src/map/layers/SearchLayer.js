@@ -232,7 +232,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.moveToMapObj) {
-            if (ctx.moveToMapObj.pushMapViewForBackButton) {
+            if (ctx.moveToMapObj.pushMapViewWithCtrlClick) {
                 pushMapView({ map, mtx, key: MAP_VIEW_SEARCH_RESULT });
             }
             const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;

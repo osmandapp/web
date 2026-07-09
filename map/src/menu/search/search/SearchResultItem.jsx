@@ -261,8 +261,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi, id: itemId });
             recentSaver(POI_OBJECTS_KEY, poi);
-            const pushMapViewForBackButton = Boolean(event?.ctrlKey);
-            ctx.setMoveToMapObj({ ...item, pushMapViewForBackButton });
+            const pushMapViewWithCtrlClick = Boolean(event?.ctrlKey);
+            ctx.setMoveToMapObj({ ...item, pushMapViewWithCtrlClick });
             if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
                 navigateToPoi({ poi }, navigate);
             }
