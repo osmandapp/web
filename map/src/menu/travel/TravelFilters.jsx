@@ -11,6 +11,7 @@ import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_
 import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import ColorBlock from '../../frame/components/other/ColorBlock';
 import TagFilter from './TagFilter';
 import { TAG_MATCH_MODES } from './TravelMenu';
 import styles from './travel.module.css';
@@ -188,6 +189,7 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                         onChange={() => ctx.setTravelShowStartFinish((v) => !v)}
                     />
                 </Box>
+                <ColorBlock color={'#f0f0f0'} />
             </Box>
         </SecondaryMenuDrawer>
     );

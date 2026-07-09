@@ -6,6 +6,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     isTrack,
     isCloudTrack,
+    isTravelTrack,
     isTrackAnalyzer,
     OBJECT_TYPE_STOP,
     OBJECT_TYPE_TRAVEL,
@@ -400,6 +401,10 @@ export default function InformationBlock({
                 ctx.setSelectedGpxFile({});
             }
             ctx.setSelectedLocalTrackObj(null);
+        } else if (isTravelTrack(ctx)) {
+            if (!isEmpty(ctx.selectedGpxFile)) {
+                ctx.setSelectedGpxFile({});
+            }
         }
         restoreMapView();
         clearSelectionFocus();
