@@ -389,12 +389,16 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            <SelectItemBoolean
-                title={t('search_try_spatial_search_beta')}
-                checked={!!ctx.spatialSearch}
-                onToggle={setSpatial}
-                boldTitle={false}
-            />
+            {(ctx.develFeatures || ctx.spatialSearch) &&
+                (
+                    <SelectItemBoolean
+                        title={t('search_try_spatial_search_beta')}
+                        checked={!!ctx.spatialSearch}
+                        onToggle={setSpatial}
+                        boldTitle={false}
+                    />
+                )
+            }
             {ctx.spatialSearch && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
