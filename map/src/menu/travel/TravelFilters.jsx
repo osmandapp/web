@@ -9,6 +9,7 @@ import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderli
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
+import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TagFilter from './TagFilter';
 import { TAG_MATCH_MODES } from './TravelMenu';
@@ -179,6 +180,13 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                             </React.Fragment>
                         ))}
                     </Collapse>
+                    <ThickDivider mt={0} />
+                    <SimpleItemWithSwitch
+                        id="se-travel-show-start-finish"
+                        text={t('web:show_start_finish_icons')}
+                        checked={ctx.travelShowStartFinish}
+                        onChange={() => ctx.setTravelShowStartFinish((v) => !v)}
+                    />
                 </Box>
             </Box>
         </SecondaryMenuDrawer>

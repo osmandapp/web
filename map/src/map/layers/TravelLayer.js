@@ -12,6 +12,7 @@ import TrackLayerProvider from '../util/TrackLayerProvider';
 import { clusterMarkers } from '../util/Clusterizer';
 import { decodeSimplifiedGeometry } from '../../util/decodeSimplifiedGeometry';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
+import MarkerOptions from '../markers/MarkerOptions';
 import { getActivityColor } from '../util/activityColors';
 import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
@@ -62,6 +63,17 @@ function attachAutoClosePopup(layer, html, offset) {
     });
 }
 
+function startFinishMarkers(coords) {
+    if (!coords || coords.length === 0) {
+        return [];
+    }
+    const markers = [new L.Marker(coords[0], { icon: MarkerOptions.options.trackStart })];
+    if (coords.length > 1) {
+        markers.push(new L.Marker(coords[coords.length - 1], { icon: MarkerOptions.options.trackEnd }));
+    }
+    return markers;
+}
+
 // bounds of a decoded geometry (array of segments of { latitude, longitude })
 function boundsFromGeo(geo) {
     const latlngs = [];
@@ -96,6 +108,7 @@ export default function TravelLayer() {
 
     const [travelRoutes, setTravelRoutes] = useState(null);
     const [travelPoints, setTravelPoints] = useState(null);
+    const [travelStartFinish, setTravelStartFinish] = useState(null);
     const [selectedRouteId, setSelectedRouteId] = useState(null);
     const selectedRouteLayerRef = useRef(null);
 
@@ -115,6 +128,9 @@ export default function TravelLayer() {
             if (travelPoints) {
                 map.removeLayer(travelPoints);
             }
+            if (travelStartFinish) {
+                map.removeLayer(travelStartFinish);
+            }
             return;
         }
         if (ctx.searchTravelRoutes.res) {
@@ -131,8 +147,13 @@ export default function TravelLayer() {
                 map.removeLayer(travelPoints);
                 setTravelPoints(null);
             }
+            if (travelStartFinish) {
+                map.removeLayer(travelStartFinish);
+                setTravelStartFinish(null);
+            }
 
             const routeLayers = [];
+            const startFinishLayers = [];
             const pointFeatures = [];
 
             features.forEach((route) => {
@@ -140,14 +161,14 @@ export default function TravelLayer() {
                     const segments = route.properties.geo.map((segment) =>
                         segment.map((point) => [point.latitude, point.longitude])
                     );
+                    const isOpened =
+                        ctx.selectedGpxFile?.id != null &&
+                        String(ctx.selectedGpxFile.id) === String(route.properties.id);
                     segments.forEach((segment) => {
                         if (segment.length < 2) {
                             return;
                         }
                         const color = getActivityColor(route.properties.activity);
-                        const isOpened =
-                            ctx.selectedGpxFile?.id != null &&
-                            String(ctx.selectedGpxFile.id) === String(route.properties.id);
                         const polyline = new L.Polyline(segment, {
                             color,
                             weight: isOpened ? OPENED_TRACK_WIDTH : ROUTE_WIDTH,
@@ -177,6 +198,9 @@ export default function TravelLayer() {
                         });
                         routeLayers.push(polyline);
                     });
+                    if (!isOpened) {
+                        startFinishLayers.push(...startFinishMarkers(segments.flat()));
+                    }
                 } else if (route.properties.point) {
                     pointFeatures.push(route);
                 }
@@ -190,6 +214,8 @@ export default function TravelLayer() {
                 map.removeLayer(travelRoutes);
                 setTravelRoutes(null);
             }
+
+            setTravelStartFinish(startFinishLayers.length > 0 ? new L.FeatureGroup(startFinishLayers) : null);
 
             if (pointFeatures.length > 0) {
                 const places = pointFeatures.map((route, index) => {
@@ -305,8 +331,8 @@ export default function TravelLayer() {
                     id: route.properties.id,
                 });
 
-                // the detailed line and its waypoints live in one group, added/removed together
-                const layers = [polyline];
+                // the detailed line, its start/finish and waypoints live in one group, added/removed together
+                const layers = [polyline, ...startFinishMarkers(coords)];
                 if (track.wpts?.length > 0) {
                     // waypoints as interactive markers, same as cloud tracks
                     TrackLayerProvider.parseWpt({ points: track.wpts, layers, ctx, data: track, map });
@@ -440,17 +466,21 @@ export default function TravelLayer() {
         }
     }, [ctx.selectedGpxFile, travelRoutes]);
 
-    // focus toggle in the track header: hide / show the other tracks on the map
+    // visibility of the other tracks on the map
     useEffect(() => {
-        [travelRoutes, travelPoints].forEach((group) => {
+        const setVisible = (group, visible) => {
             if (!group) return;
-            if (ctx.travelRoutesHidden) {
-                map.removeLayer(group);
-            } else if (!map.hasLayer(group)) {
+            if (visible && !map.hasLayer(group)) {
                 group.addTo(map);
+            } else if (!visible && map.hasLayer(group)) {
+                map.removeLayer(group);
             }
-        });
-    }, [ctx.travelRoutesHidden, travelRoutes, travelPoints]);
+        };
+        const showOthers = !ctx.travelRoutesHidden;
+        setVisible(travelRoutes, showOthers);
+        setVisible(travelPoints, showOthers);
+        setVisible(travelStartFinish, showOthers && ctx.travelShowStartFinish);
+    }, [ctx.travelRoutesHidden, ctx.travelShowStartFinish, travelRoutes, travelPoints, travelStartFinish]);
 
     // manage selected route layer
     useEffect(() => {

@@ -14,7 +14,7 @@ export default function SimpleItemWithSwitch({ icon, text, checked, onChange, id
 
     return (
         <MenuItem className={className || styles.item} onClick={handleMenuItemClick}>
-            <ListItemIcon className={iconClassName || styles.icon}>{icon}</ListItemIcon>
+            {icon && <ListItemIcon className={iconClassName || styles.icon}>{icon}</ListItemIcon>}
             <ListItemText>
                 <div
                     style={{
