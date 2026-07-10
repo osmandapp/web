@@ -118,6 +118,8 @@ export default function CustomInput({
         if (e.key === 'Enter') {
             e.preventDefault();
             search(e.target.value);
+            inputRef.current?.blur();
+            setIsFocused(false);
         }
     };
 
