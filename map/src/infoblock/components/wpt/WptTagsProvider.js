@@ -17,7 +17,7 @@ import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
-import { apiGet } from '../../../util/HttpApi';
+import { apiGet, apiPost } from '../../../util/HttpApi';
 import { parseTagWithLang } from '../../../manager/SearchManager';
 import { localizeWeekTokens } from '../../../util/dateFmt';
 import {
@@ -52,7 +52,6 @@ const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 export const CUISINE_PREFIX = 'cuisine_';
-const ROUTE = 'route';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';
 export const WIKIDATA = 'wikidata';
@@ -233,6 +232,7 @@ async function getWptTags(obj, type, ctx) {
         }
 
         tags = fixTagsKeys(tags);
+        tags = await filterTagsByVisibility(tags);
         for (const [key, value] of Object.entries(tags)) {
             if (!shouldSkipKey(key)) {
                 let tagObj = {};
@@ -395,6 +395,24 @@ export async function addPoiTypeTag({
     tagObj.textPrefix = value;
 
     return tagObj;
+}
+
+async function filterTagsByVisibility(tags) {
+    if (Object.keys(tags).length === 0) return tags;
+
+    try {
+        let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-tags-visibility`, tags, {
+            apiCache: true,
+        });
+
+        if (!response?.data || typeof response.data !== 'object' || Array.isArray(response.data)) {
+            return tags;
+        }
+
+        return response.data;
+    } catch {
+        return tags;
+    }
 }
 
 function fixTagsKeys(tags) {
@@ -614,14 +632,7 @@ function getWikipediaURL(key, value) {
 }
 
 function shouldSkipKey(key) {
-    return (
-        key === 'idObj' ||
-        key === 'name' ||
-        key === 'subway_region' ||
-        key === 'note' ||
-        key === 'lang_yes' ||
-        key.includes(ROUTE)
-    );
+    return key === 'idObj' || key === 'note';
 }
 
 export function openWikipediaContent(tag, setDevWikiContent) {
