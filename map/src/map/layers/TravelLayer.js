@@ -375,6 +375,7 @@ export default function TravelLayer() {
             date: props.date,
             user: props.user,
             activity: props.activity,
+            tags: props.tags,
             type: GPX,
         });
         ctx.setUpdateInfoBlock(true);
@@ -413,6 +414,7 @@ export default function TravelLayer() {
             date: props.date,
             user: props.user,
             activity: props.activity,
+            tags: props.tags,
             type: GPX,
         });
         ctx.setUpdateInfoBlock(true);

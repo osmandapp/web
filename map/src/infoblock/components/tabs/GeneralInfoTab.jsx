@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Box, Divider, Checkbox, FormControlLabel } from '@mui/material';
-import AppContext, { isLocalTrack } from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isTravelTrack } from '../../../context/AppContext';
 import GeneralInfo from '../track/GeneralInfo';
+import TravelTrackInfo from '../track/TravelTrackInfo';
 import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import GpxGraphProvider from '../../../graph/track/GpxGraphProvider';
 import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
@@ -75,6 +76,12 @@ export default function GeneralInfoTab() {
     return (
         <>
             <Box>
+                {isTravelTrack(ctx) && (
+                    <Box sx={{ mx: -3, mt: -3 }}>
+                        <TravelTrackInfo />
+                        <ThickDivider mt={'0px'} mb={'8px'} />
+                    </Box>
+                )}
                 {author && (
                     <Box sx={{ mx: -3, mt: -3 }}>
                         <AuthorCard author={author} t={t} />

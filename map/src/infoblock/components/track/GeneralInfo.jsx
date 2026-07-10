@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isRouteTrack } from '../../../context/AppContext';
+import AppContext, { isRouteTrack, isTravelTrack } from '../../../context/AppContext';
 import TracksManager, {
     hasSegments,
     applySrtmElevation,
@@ -73,7 +73,8 @@ export default function GeneralInfo({ width }) {
 
     const DESC_MAX_HEIGHT = 150;
     const ref = useRef(null);
-    const preparedDesc = prepareDesc(getDesc(ctx.selectedGpxFile));
+    // travel tracks show the description in their own info list (TravelTrackInfo), not here
+    const preparedDesc = isTravelTrack(ctx) ? null : prepareDesc(getDesc(ctx.selectedGpxFile));
 
     function getDesc(file) {
         if (file?.metaData?.desc) {
