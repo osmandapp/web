@@ -9,7 +9,7 @@ import { ReactComponent as ActivityIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as DescIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as LinkIcon } from '../../../assets/icons/ic_action_link.svg';
 import { ReactComponent as TagsIcon } from '../../../assets/icons/ic_group.svg';
-import { ReactComponent as CalendarIcon } from '../../../assets/icons/ic_action_calendar_16.svg';
+import { ReactComponent as CalendarIcon } from '../../../assets/icons/ic_action_date_start.svg';
 
 export default function TravelTrackInfo() {
     const ctx = useContext(AppContext);

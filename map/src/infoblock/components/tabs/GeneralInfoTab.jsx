@@ -76,12 +76,6 @@ export default function GeneralInfoTab() {
     return (
         <>
             <Box>
-                {isTravelTrack(ctx) && (
-                    <Box sx={{ mx: -3, mt: -3 }}>
-                        <TravelTrackInfo />
-                        <ThickDivider mt={'0px'} mb={'8px'} />
-                    </Box>
-                )}
                 {author && (
                     <Box sx={{ mx: -3, mt: -3 }}>
                         <AuthorCard author={author} t={t} />
@@ -131,6 +125,12 @@ export default function GeneralInfoTab() {
                     </>
                 )}
                 {hasSegments(ctx.selectedGpxFile) && <GpxGraphProvider width={ctx.infoBlockWidth} />}
+                {isTravelTrack(ctx) && (
+                    <Box sx={{ mx: -3 }}>
+                        <ThickDivider mt={'8px'} mb={'0px'} />
+                        <TravelTrackInfo />
+                    </Box>
+                )}
             </Box>
         </>
     );

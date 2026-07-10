@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import TabPanels from '../tabs/TabPanels';
@@ -33,7 +33,9 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
     const { setSelectionFocus, clearSelectionFocus } = useFocusMode();
 
     const anchorEl = useRef(null);
+    const collapsibleHeaderRef = useRef(null);
     const [openActions, setOpenActions] = useState(false);
+    const [collapseReserve, setCollapseReserve] = useState(0);
     const { compact, scrollAreaHandlers } = useCompactOnScroll();
 
     const { toggleVisibility, checkedSwitch } = useTrackVisibility({ file: track });
@@ -45,6 +47,13 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
 
         return () => clearSelectionFocus();
     }, [track?.name, ctx.currentObjectType]);
+
+    useLayoutEffect(() => {
+        if (collapsibleHeaderRef.current) {
+            const height = collapsibleHeaderRef.current.scrollHeight;
+            setCollapseReserve((prev) => (prev !== height ? height : prev));
+        }
+    }, [compact, track, ctx.currentObjectType]);
 
     const trackName = track ? getFileName(track) : null;
     const showActionsBtn = (isCloudTrack(ctx) || isLocalTrack(ctx) || isTravelTrack(ctx)) && track?.name;
@@ -76,7 +85,10 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                     </>
                 }
             />
-            <Box className={`${styles.collapsibleHeader} ${compact ? styles.collapsibleHeaderHidden : ''}`}>
+            <Box
+                ref={collapsibleHeaderRef}
+                className={`${styles.collapsibleHeader} ${compact ? styles.collapsibleHeaderHidden : ''}`}
+            >
                 {trackName && (
                     <Box className={styles.nameBlock}>
                         <MenuItemWithLines
@@ -104,7 +116,11 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                 {isTravelTrack(ctx) && track && <TravelTrackActionsButtons track={track} />}
             </Box>
             <Box className={styles.trackTabsColumn}>
-                <TabPanels tabsObj={tabsObj} scrollAreaHandlers={scrollAreaHandlers} />
+                <TabPanels
+                    tabsObj={tabsObj}
+                    scrollAreaHandlers={scrollAreaHandlers}
+                    scrollPaddingBottom={compact ? collapseReserve : 0}
+                />
             </Box>
             <ActionsMenu
                 open={openActions}
