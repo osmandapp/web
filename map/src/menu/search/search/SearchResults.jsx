@@ -407,7 +407,7 @@ export default function SearchResults() {
                 </Typography>
             )}
             {(ctx.processingSearch || resulNotPrepared() || staleResult) && <Loading />}
-            {hasSearchParams &&
+            {(hasSearchParams || result === EMPTY_SEARCH_RESULT) &&
                 !ctx.processingSearch &&
                 !reopenSearchResult() &&
                 !staleResult &&
