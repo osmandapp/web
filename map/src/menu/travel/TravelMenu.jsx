@@ -47,6 +47,15 @@ export const TAG_MATCH_MODES = {
     AND: 'AND',
 };
 
+export const OSM_GPX_ABORT_KEYS = {
+    routesList: 'osmgpx-get-routes-list',
+    routeInfo: 'osmgpx-get-route-info',
+    osmRoute: 'osmgpx-get-osm-route',
+    activities: 'osmgpx-activities',
+    ranges: 'osmgpx-ranges',
+    tags: 'osmgpx-tags',
+};
+
 const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
 
 export default function TravelMenu() {
@@ -135,6 +144,16 @@ export default function TravelMenu() {
         }
     }, []);
 
+    useEffect(() => {
+        ctx.setOpenTravelFilters(openFilters);
+    }, [openFilters]);
+
+    useEffect(() => {
+        if (!ctx.openTravelFilters) {
+            setOpenFilters(false);
+        }
+    }, [ctx.openTravelFilters]);
+
     const debouncedFetchRanges = useRef(
         debounce(async ({ mapBounds, year, activity }) => {
             const params = {
@@ -154,7 +173,11 @@ export default function TravelMenu() {
                 const activitiesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
                     apiCache: true,
                     params: paramsActivities,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.activities,
                 });
+                if (activitiesResponse?.aborted) {
+                    return;
+                }
 
                 if (activity && activity !== ACTIVITY_ALL) {
                     params.activityArr = activity;
@@ -163,7 +186,11 @@ export default function TravelMenu() {
                 const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
                     apiCache: true,
                     params,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.ranges,
                 });
+                if (rangesResponse?.aborted) {
+                    return;
+                }
 
                 setActivityCounts(activitiesResponse?.data || null);
 

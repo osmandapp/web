@@ -6,7 +6,7 @@ import { useMap } from 'react-leaflet';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
-import { ACTIVITY_ALL, ALL_YEARS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
+import { ACTIVITY_ALL, ALL_YEARS, OSM_GPX_ABORT_KEYS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -359,7 +359,11 @@ export default function TravelLayer() {
             const infoResp = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-route-info`, {
                 apiCache: true,
                 params: { id },
+                abortControllerKey: OSM_GPX_ABORT_KEYS.routeInfo,
             });
+            if (infoResp?.aborted) {
+                return;
+            }
             props = infoResp?.data || {};
         }
         const desc = (props.description || '').trim();
@@ -386,7 +390,11 @@ export default function TravelLayer() {
         const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-osm-route`, {
             apiCache: true,
             params: { id },
+            abortControllerKey: OSM_GPX_ABORT_KEYS.osmRoute,
         });
+        if (response?.aborted) {
+            return;
+        }
         if (!response?.data) {
             ctx.setNotification({ text: 'Failed to load route', severity: 'error' });
             return;
@@ -550,8 +558,12 @@ export default function TravelLayer() {
 
         const response = await apiPost(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, body, {
             apiCache: true,
+            abortControllerKey: OSM_GPX_ABORT_KEYS.routesList,
         });
 
+        if (response?.aborted) {
+            return;
+        }
         if (response?.data) {
             decodeRoutesGeometry(response.data);
             ctx.setSearchTravelRoutes((prev) => ({ ...prev, res: response.data }));

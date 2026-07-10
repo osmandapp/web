@@ -5,7 +5,7 @@ import AppContext from '../../context/AppContext';
 import { MAIN_URL_WITH_SLASH, TRAVEL_URL } from '../../manager/GlobalManager';
 import { apiGet } from '../../util/HttpApi';
 import styles from './travel.module.css';
-import { ACTIVITY_ALL, ALL_YEARS } from './TravelMenu';
+import { ACTIVITY_ALL, ALL_YEARS, OSM_GPX_ABORT_KEYS } from './TravelMenu';
 
 export default function TagFilter({ selectedTags, onChangeTags, selectedYear, selectedActivity }) {
     const ctx = useContext(AppContext);
@@ -61,7 +61,11 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
                 const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/tags`, {
                     apiCache: true,
                     params,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.tags,
                 });
+                if (response?.aborted) {
+                    return;
+                }
                 if (response?.data) {
                     const data = response.data;
                     const tagsArray = Array.isArray(data) ? data : data.tags || [];

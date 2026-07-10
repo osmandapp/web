@@ -363,6 +363,7 @@ export const AppContextProvider = (props) => {
 
     const [processingAnalytics, setProcessingAnalytics] = useState(false);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
+    const [openTravelFilters, setOpenTravelFilters] = useState(false);
 
     useEffect(() => {
         async function loadSort() {
@@ -786,6 +787,8 @@ export const AppContextProvider = (props) => {
                 setProcessingAnalytics,
                 openNavigationSettings,
                 setOpenNavigationSettings,
+                openTravelFilters,
+                setOpenTravelFilters,
                 navigationHistory,
                 setNavigationHistory,
                 previousRoute,
