@@ -42,6 +42,8 @@ import ThickDivider from '../../frame/components/dividers/ThickDivider';
 
 export const ALL_YEARS = 'all';
 export const ACTIVITY_ALL = 'all';
+export const ACTIVITY_GARBAGE = 'garbage';
+export const ACTIVITY_ERROR = 'error';
 export const TAG_MATCH_MODES = {
     OR: 'OR',
     AND: 'AND',
@@ -257,13 +259,13 @@ export default function TravelMenu() {
             if (act.length === 0) {
                 act.push({
                     id: ACTIVITY_ALL,
-                    label: 'All activities',
+                    label: t('web:all_activities'),
                     type: 'group',
                     icon: <ActivityAllIcon />,
                 });
                 act.push({
                     id: 'nospeed',
-                    label: 'Unidentified tracks',
+                    label: t('web:unidentified_tracks'),
                     type: 'nospeed',
                 });
             }
@@ -386,7 +388,7 @@ export default function TravelMenu() {
             {ltx.isLoggedIn() ? (
                 <>
                     <HeaderNoUnderline
-                        title="Travel"
+                        title={t('web:shared_string_travel')}
                         onClose={close}
                         titleId="se-travel-menu-name"
                         rightContent={
@@ -423,17 +425,18 @@ export default function TravelMenu() {
                     <Box className={styles.contentColumn}>
                         {updatedActivities?.length > 0 && (
                             <ActivitySelect
-                                name="Activity"
+                                name={t('web:shared_string_activity')}
                                 value={filters.activity}
                                 onChange={(value) => setFilter('activity', value)}
                                 activities={activities}
                                 updatedActivities={updatedActivities}
                                 activityCounts={activityCounts}
                                 defaultIcon={ActivityAllIcon}
+                                showInvalid={ctx.develFeatures}
                             />
                         )}
                         <CustomSelect
-                            name="Year"
+                            name={t('web:shared_string_year')}
                             value={filters.year}
                             onChange={(value) => setFilter('year', value)}
                             options={years}
@@ -459,7 +462,7 @@ export default function TravelMenu() {
                                 <>
                                     <Box className={styles.resultsHeader}>
                                         <Typography variant="body2">
-                                            Results: {travelResult?.features?.length || 0}
+                                            {t('web:shared_string_results')}: {travelResult?.features?.length || 0}
                                         </Typography>
                                         {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
                                             <ToggleButtonGroup

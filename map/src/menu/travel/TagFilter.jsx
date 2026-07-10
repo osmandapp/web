@@ -6,9 +6,11 @@ import { MAIN_URL_WITH_SLASH, TRAVEL_URL } from '../../manager/GlobalManager';
 import { apiGet } from '../../util/HttpApi';
 import styles from './travel.module.css';
 import { ACTIVITY_ALL, ALL_YEARS, OSM_GPX_ABORT_KEYS } from './TravelMenu';
+import { useTranslation } from 'react-i18next';
 
 export default function TagFilter({ selectedTags, onChangeTags, selectedYear, selectedActivity }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const location = useLocation();
 
     const [availableTags, setAvailableTags] = useState([]);
@@ -130,12 +132,12 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
 
     const getNoOptionsText = () => {
         if (loadingTags) {
-            return 'Loading tags...';
+            return t('web:loading_tags');
         }
         if (availableTags.length === 0) {
-            return 'No tags found for current filters';
+            return t('web:no_tags_for_filters');
         }
-        return 'No matching tags';
+        return t('web:no_matching_tags');
     };
 
     return (
@@ -144,7 +146,7 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
                 freeSolo
                 options={options}
                 getOptionLabel={(option) => {
-                    if (option && option.tag) {
+                    if (option?.tag) {
                         return option.tag;
                     }
                     return option ?? '';
@@ -170,7 +172,7 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
                     if (!newValue) {
                         return;
                     }
-                    const value = newValue && newValue.tag ? newValue.tag : newValue;
+                    const value = newValue?.tag ? newValue.tag : newValue;
                     addTag(value);
                     setTagInput('');
                 }}
@@ -180,7 +182,7 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
                 renderInput={(params) => (
                     <TextField
                         {...params}
-                        placeholder={noTagsAvailable ? 'No tags available' : 'Type tag to filter'}
+                        placeholder={noTagsAvailable ? t('web:no_tags_available') : t('web:type_tag_to_filter')}
                         size="small"
                     />
                 )}

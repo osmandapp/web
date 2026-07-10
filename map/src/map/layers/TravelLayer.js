@@ -397,7 +397,7 @@ export default function TravelLayer() {
             return;
         }
         if (!response?.data) {
-            ctx.setNotification({ text: 'Failed to load route', severity: 'error' });
+            // couldn't read the track (e.g. error tracks) — keep the metadata already shown, no error
             return;
         }
         const route = createRoute(response.data);

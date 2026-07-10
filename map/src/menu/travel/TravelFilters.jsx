@@ -124,7 +124,7 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
             <Box className={styles.filtersBody}>
                 <Box className={styles.filtersScroll}>
                     <SelectItemWithoutOptions
-                        title="Tag filters"
+                        title={t('web:tag_filters')}
                         onClick={() => setShowTagFilters(!showTagFilters)}
                         endIcon={
                             showTagFilters ? (
@@ -155,14 +155,14 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                                     }
                                 }}
                             >
-                                <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
-                                <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
+                                <ToggleButton value={TAG_MATCH_MODES.OR}>{t('web:matches_any_tag')}</ToggleButton>
+                                <ToggleButton value={TAG_MATCH_MODES.AND}>{t('web:contains_all_tags')}</ToggleButton>
                             </ToggleButtonGroup>
                         </Box>
                     </Collapse>
                     <ThickDivider mt={0} />
                     <SelectItemWithoutOptions
-                        title="Advanced filters"
+                        title={t('web:advanced_filters')}
                         onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
                         endIcon={
                             showAdvancedFilters ? (
