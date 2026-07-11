@@ -544,8 +544,10 @@ function paramsToFilters(searchParams) {
         parsed.activity = activity === ACTIVITY_ALL ? ACTIVITY_ALL : activity.split(',');
     }
     const year = searchParams.get('year');
-    if (year) {
-        parsed.year = year === ALL_YEARS ? ALL_YEARS : Number(year);
+    if (year === ALL_YEARS) {
+        parsed.year = ALL_YEARS;
+    } else if (year && Number.isFinite(Number(year))) {
+        parsed.year = Number(year);
     }
     const tags = searchParams.get('tags');
     if (tags) {

@@ -46,7 +46,7 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                 </div>
                 <Slider
                     value={range}
-                    onChange={(e, value) => setFilter(key, value)}
+                    onChange={(e, value) => setFilter(key, value[0] === lo && value[1] === hi ? null : value)}
                     min={lo}
                     max={hi}
                     step={step}
