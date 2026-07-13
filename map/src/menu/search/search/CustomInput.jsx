@@ -66,7 +66,7 @@ export default function CustomInput({
     }, [value]);
 
     useEffect(() => {
-        setValue(defaultSearchValue);
+        setValue((prev) => (defaultSearchValue !== EMPTY_SEARCH || prev === EMPTY_SEARCH ? defaultSearchValue : prev));
     }, [defaultSearchValue]);
 
     useEffect(() => {
