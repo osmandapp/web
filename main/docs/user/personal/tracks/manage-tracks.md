@@ -421,7 +421,8 @@ Import tool allows you to add tracks from external files for offline navigation 
     *Additional options:*
 
     - **Single-track GPX files** - import the entire track directly.
-    - **Multi-track GPX files** - choose to import the single GPX file or select specific tracks.
+    - **Multi-track GPX files** - choose to import the single GPX file or select specific tracks.  
+    When a GPX file contains multiple tracks, the Import tracks screen opens, allowing you to review all tracks in the file, select the ones you want to import, choose a destination folder, or import all tracks as a single track using the *Import as one track* option. If the file contains waypoints, you can also review and assign them before completing the import.
 
 ***NOTE:*** *Tracks manually added to the OsmAnd folder on your device are automatically imported without restarting the application.*  
 
