@@ -121,15 +121,16 @@ Issues with **Text-to-Speech (TTS)** are typically related to **Android system s
 
 1. Ensure a TTS engine is installed.
 
-    - Open *Device Settings → Language & Input → Text-to-Speech Options*.
+    - Open device *Settings → Accessibility → Text-to-speech Output*. For more information, see the official [Google guide](https://support.google.com/accessibility/android/answer/6006983).
     - Check if a **TTS engine** is installed (e.g., Google TTS, Samsung TTS, Pico).
-    - If no engine is installed, select *“Install more…”* and download a compatible one.
+    - If no TTS engine is available, install one from the Google Play Store or your device manufacturer's services.
+    - Choose your preferred TTS engine and make sure it is enabled.
     - [List of supported TTS engines and languages.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Verify TTS language settings.
 
-    - Select the language you want to use in *Android Settings → Text-to-Speech Options*.
-    - Tap *“Listen to an example”* to test if the TTS engine is working.
+    - Select the language you want to use in *Android Settings → Text-to-speech Output*.
+    - Tap *Play* (or *Listen to an example*, depending on your device) to test if the TTS engine is working.
     - If you don’t hear anything, update or reinstall the TTS engine.
 
 3. Adjust OsmAnd voice navigation settings.
