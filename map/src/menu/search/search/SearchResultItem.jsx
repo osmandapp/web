@@ -159,7 +159,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
     const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
-    const showPropertiesDumpIcon = ctx.spatialSearch || ctx.develFeatures;
+    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
     function openMatchedObject(obj) {
         ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
         setShowMatched(false);
@@ -167,6 +167,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
+    const backToSearchResultsState = { state: { backToSearchResults: true } };
 
     const itemId = getObjIdSearch(item);
 
@@ -282,9 +283,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             // click on category
             const category = item.properties['web_keyName'];
             if (category) {
-                return navigateToSearchResults({
-                    type: category,
-                });
+                return navigateToSearchResults({ type: category }, backToSearchResultsState);
             } else {
                 // search by brand
                 let brandType = item.properties[CATEGORY_NAME];
@@ -295,9 +294,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                         brandType = `${brandType}:${brandRes.lang}`;
                     }
                 }
-                return navigateToSearchResults({
-                    type: brandType,
-                });
+                return navigateToSearchResults({ type: brandType }, backToSearchResultsState);
             }
         }
     }

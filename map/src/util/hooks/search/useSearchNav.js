@@ -43,13 +43,16 @@ export default function useSearchNav() {
         });
     }
 
-    function navigateToSearchResults({ query, type }) {
+    function navigateToSearchResults({ query, type }, options) {
         const searchString = updateSearchParams({ query, type });
-        navigate({
-            pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
-            search: searchString,
-            hash: window.location.hash,
-        });
+        navigate(
+            {
+                pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
+                search: searchString,
+                hash: window.location.hash,
+            },
+            options
+        );
     }
 
     const isSearchResultRoute = matchPath(
