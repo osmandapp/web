@@ -42,6 +42,7 @@ import useSpatialSearch from '../../../util/hooks/search/useSpatialSearch';
 import { useTranslation } from 'react-i18next';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { useZoomToFit } from '../../../util/hooks/map/useZoomToFit';
+import { useNavigate } from 'react-router-dom';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -110,9 +111,11 @@ export default function SearchResults() {
     const [listContainerRef, listHeight] = useElementHeight();
     const { zoom } = useHashParams();
     const { setSpatial } = useSpatialSearch();
+    const navigate = useNavigate();
 
-    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
+    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute, location } = useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
+    const useSpatialSearchResults = !params.type && ctx.spatialSearch;
     const { hasMapView, requestMapViewPop } = useZoomToFit();
 
     useEffect(() => {
@@ -297,6 +300,10 @@ export default function SearchResults() {
     }, [ctx.searchResult]);
 
     function backToMainSearch() {
+        if (params.type && location.state?.backToSearchResults) {
+            navigate(-1);
+            return;
+        }
         if (hasMapView(MAP_VIEW_SEARCH_RESULT)) {
             requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
         }
@@ -327,8 +334,8 @@ export default function SearchResults() {
         const features =
             result?.features?.filter((item) => item?.properties && getVisibleLevel(item) <= ctx.searchVisibleLevel) ??
             [];
-        return ctx.spatialSearch && hasMore ? [...features, SHOW_MORE_ITEM] : features;
-    }, [result, ctx.searchVisibleLevel, ctx.spatialSearch, hasMore]);
+        return useSpatialSearchResults && hasMore ? [...features, SHOW_MORE_ITEM] : features;
+    }, [result, ctx.searchVisibleLevel, useSpatialSearchResults, hasMore]);
 
     const { loc: distanceLoc, isUser } = useMemo(
         () => getLoc(),
@@ -389,17 +396,15 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            {(ctx.develFeatures || ctx.spatialSearch) &&
-                (
-                    <SelectItemBoolean
-                        title={t('search_try_spatial_search_beta')}
-                        checked={!!ctx.spatialSearch}
-                        onToggle={setSpatial}
-                        boldTitle={false}
-                    />
-                )
-            }
-            {ctx.spatialSearch && ctx.searchResult?.info && (
+            {!params.type && (ctx.develFeatures || ctx.spatialSearch) && (
+                <SelectItemBoolean
+                    title={t('search_try_spatial_search_beta')}
+                    checked={!!ctx.spatialSearch}
+                    onToggle={setSpatial}
+                    boldTitle={false}
+                />
+            )}
+            {useSpatialSearchResults && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
                         .map(([k, v]) => `${k}: ${v}`)
