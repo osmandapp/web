@@ -677,6 +677,12 @@ export default function MainMenu({
     }, [ctx.currentObjectType, selectedType]);
 
     useEffect(() => {
+        if (selectedType !== OBJECT_TYPE_TRAVEL && ctx.currentObjectType !== OBJECT_TYPE_TRAVEL) {
+            ctx.setOpenTravelFilters(false);
+        }
+    }, [ctx.currentObjectType, selectedType]);
+
+    useEffect(() => {
         if (ctx.saveTrackToCloud) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
             selectMenuInfoByObjectType(OBJECT_TYPE_CLOUD_TRACK);

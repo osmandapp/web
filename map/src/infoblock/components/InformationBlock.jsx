@@ -6,6 +6,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     isTrack,
     isCloudTrack,
+    isTravelTrack,
     isTrackAnalyzer,
     OBJECT_TYPE_STOP,
     OBJECT_TYPE_TRAVEL,
@@ -77,6 +78,8 @@ export default function InformationBlock({
 
     const showWptEditPanel = !!ctx.addFavorite?.location || !!ctx.addFavorite?.editWpt;
     const showTrackContextMenu = ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem;
+    // first load of a travel route (get-osm-route): track not ready yet, show the loading page
+    const showTravelLoading = ctx.processingTravelRouteByUrl && !showTrackContextMenu;
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -398,6 +401,10 @@ export default function InformationBlock({
                 ctx.setSelectedGpxFile({});
             }
             ctx.setSelectedLocalTrackObj(null);
+        } else if (isTravelTrack(ctx)) {
+            if (!isEmpty(ctx.selectedGpxFile)) {
+                ctx.setSelectedGpxFile({});
+            }
         }
         restoreMapView();
         clearSelectionFocus();
@@ -465,7 +472,7 @@ export default function InformationBlock({
 
     return (
         <>
-            {trackUrlOpenLoading && (
+            {(trackUrlOpenLoading || showTravelLoading) && (
                 <Box
                     sx={{
                         height: '100vh',
@@ -479,6 +486,7 @@ export default function InformationBlock({
             )}
             {showInfoBlock &&
                 !trackUrlOpenLoading &&
+                !showTravelLoading &&
                 (showWptEditPanel ? (
                     <WptEditPanel key={ctx.addFavorite?.openKey} setShowInfoBlock={setShowInfoBlock} />
                 ) : openWptDetails ? (
@@ -497,7 +505,9 @@ export default function InformationBlock({
                     <ShareFile />
                 ) : (
                     <>
-                        {(ctx.loadingContextMenu || ctx.gpxLoading) && <OverlayLinearProgress />}
+                        {(ctx.loadingContextMenu || ctx.gpxLoading || ctx.processingTravelRouteByUrl) && (
+                            <OverlayLinearProgress />
+                        )}
                         {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" />}
                         {showTrackContextMenu && (
                             <TrackContextMenu

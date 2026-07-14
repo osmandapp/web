@@ -188,7 +188,6 @@ export const AppContextProvider = (props) => {
 
     // travel
     const [openTravel, setOpenTravel] = useState(false);
-    const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
     const [selectedTransportRoute, setSelectedTransportRoute] = useState(null);
@@ -356,12 +355,15 @@ export const AppContextProvider = (props) => {
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
     const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
+    const [travelRoutesHidden, setTravelRoutesHidden] = useState(false); // hide other travel routes on the map
+    const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
 
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
     const [processingAnalytics, setProcessingAnalytics] = useState(false);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
+    const [openTravelFilters, setOpenTravelFilters] = useState(false);
 
     useEffect(() => {
         async function loadSort() {
@@ -695,8 +697,6 @@ export const AppContextProvider = (props) => {
                 setSelectedTransportRoute,
                 travelRouteIdByUrl,
                 setTravelRouteIdByUrl,
-                travelFilter,
-                setTravelFilter,
                 openProFeatures,
                 setOpenProFeatures,
                 selectedSearchMarker,
@@ -779,10 +779,16 @@ export const AppContextProvider = (props) => {
                 setProcessingStopByUrl,
                 processingTravelRouteByUrl,
                 setProcessingTravelRouteByUrl,
+                travelRoutesHidden,
+                setTravelRoutesHidden,
+                travelShowStartFinish,
+                setTravelShowStartFinish,
                 processingAnalytics,
                 setProcessingAnalytics,
                 openNavigationSettings,
                 setOpenNavigationSettings,
+                openTravelFilters,
+                setOpenTravelFilters,
                 navigationHistory,
                 setNavigationHistory,
                 previousRoute,
