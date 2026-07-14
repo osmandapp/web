@@ -66,7 +66,7 @@ export default function CustomInput({
     }, [value]);
 
     useEffect(() => {
-        setValue(defaultSearchValue);
+        setValue((prev) => (defaultSearchValue !== EMPTY_SEARCH || prev === EMPTY_SEARCH ? defaultSearchValue : prev));
     }, [defaultSearchValue]);
 
     useEffect(() => {
@@ -118,6 +118,8 @@ export default function CustomInput({
         if (e.key === 'Enter') {
             e.preventDefault();
             search(e.target.value);
+            inputRef.current?.blur();
+            setIsFocused(false);
         }
     };
 
