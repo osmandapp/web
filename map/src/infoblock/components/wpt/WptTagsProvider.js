@@ -52,6 +52,7 @@ const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 export const CUISINE_PREFIX = 'cuisine_';
+const ROUTE = 'route';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';
 export const WIKIDATA = 'wikidata';
@@ -64,7 +65,6 @@ export const ICON_NAME_EXTENSION = 'icon';
 export const BACKGROUND_TYPE_EXTENSION = 'background';
 export const PROFILE_TYPE_EXTENSION = 'profile';
 export const ADDRESS_EXTENSION = 'address';
-export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
@@ -108,14 +108,9 @@ const HIDDEN_EXTENSIONS = [
     BACKGROUND_TYPE_EXTENSION,
     PROFILE_TYPE_EXTENSION,
     ADDRESS_EXTENSION,
-    AMENITY_ORIGIN_EXTENSION,
-    AMENITY_PREFIX + NAME,
-    AMENITY_PREFIX + TYPE,
-    AMENITY_PREFIX + SUBTYPE,
 ];
 
 const HIDDEN_EXTENSIONS_POI = [
-    ...HIDDEN_EXTENSIONS,
     ICON_KEY_NAME,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
@@ -231,7 +226,7 @@ async function getWptTags(obj, type, ctx) {
             }
         }
 
-        tags = fixTagsKeys(tags);
+        tags = filterWebKeys(tags);
         tags = await filterTagsByVisibility(tags);
         for (const [key, value] of Object.entries(tags)) {
             if (!shouldSkipKey(key)) {
@@ -400,38 +395,40 @@ export async function addPoiTypeTag({
 async function filterTagsByVisibility(tags) {
     if (Object.keys(tags).length === 0) return tags;
 
-    try {
-        let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-tags-visibility`, tags, {
-            apiCache: true,
-        });
+    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-tags-visibility`, tags, {
+        apiCache: true,
+    });
 
-        if (!response?.data || typeof response.data !== 'object' || Array.isArray(response.data)) {
-            return tags;
-        }
-
+    if (response?.data && typeof response.data === 'object' && !Array.isArray(response.data)) {
         return response.data;
-    } catch {
-        return tags;
     }
+
+    return fixTagsKeysFallback(tags);
 }
 
-function fixTagsKeys(tags) {
+function fixTagsKeysFallback(tags) {
     let res = {};
     for (const [key, value] of Object.entries(tags)) {
         let newKey = key;
         if (key === AMENITY_PREFIX + OPENING_HOURS) {
             newKey = key.replace(AMENITY_PREFIX, '');
-        } else if (
-            key.startsWith(AMENITY_PREFIX) ||
-            key.startsWith(ALT_NAME) ||
-            HIDDEN_EXTENSIONS.includes(key) ||
-            HIDDEN_EXTENSIONS_POI.includes(key)
-        ) {
+        } else if (key.startsWith(AMENITY_PREFIX) || HIDDEN_EXTENSIONS.includes(key)) {
             continue;
         } else {
             newKey = key.replace(OSM_PREFIX, '');
         }
         res[newKey] = value;
+    }
+    return res;
+}
+
+function filterWebKeys(tags) {
+    let res = {};
+    for (const [key, value] of Object.entries(tags)) {
+        if (key.startsWith(ALT_NAME) || HIDDEN_EXTENSIONS_POI.includes(key)) {
+            continue;
+        }
+        res[key] = value;
     }
     return res;
 }
@@ -632,7 +629,14 @@ function getWikipediaURL(key, value) {
 }
 
 function shouldSkipKey(key) {
-    return key === 'idObj' || key === 'note';
+    return (
+        key === 'idObj' ||
+        key === 'name' ||
+        key === 'subway_region' ||
+        key === 'note' ||
+        key === 'lang_yes' ||
+        key.includes(ROUTE)
+    );
 }
 
 export function openWikipediaContent(tag, setDevWikiContent) {
