@@ -156,6 +156,8 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+If a contact field (such as *Website, Phone number*, or *Email*) contains multiple values, tapping it displays a list of available entries. Select the desired entry to perform the corresponding action.
+
 Beyond the fields listed above, OsmAnd may also show extra descriptive information taken from OpenStreetMap. These attributes help you better understand the characteristics of a place and can include details such as elevation, direction, year built, surface or covering type, indoor level, payment options, delivery or takeaway availability, and many others. OsmAnd displays these attributes with clear labels and, where possible, icons, making it easier to read and recognize the information. The exact set of attributes depends on what data is available in OpenStreetMap for the selected object.
 
 
