@@ -7,18 +7,21 @@ async function waitByPoiMarker({ iconWpt, colorIcon, name }) {
     const marker = By.css(`[se-poi-name="${name}"]`);
     return await enclose(
         async () => {
-            const icons = await driver.findElements(icon);
-            if (icons?.length > 0) {
-                return icons[0];
-            }
-            const markers = await driver.findElements(marker);
-            if (markers?.length > 0) {
-                return markers[0];
+            const elements = [...(await driver.findElements(icon)), ...(await driver.findElements(marker))];
+            for (const element of elements) {
+                if ((await element.getCssValue('visibility')) !== 'hidden') {
+                    return element;
+                }
             }
             return false;
         },
         { tag: `waitByPoiMarker (${name})` }
     );
+}
+
+async function waitByPoiMarkerRemoved({ iconWpt, colorIcon, name }) {
+    await waitByRemoved(By.id(`se-poi-marker-icon-${iconWpt}-${colorIcon}-${name}`));
+    await waitByRemoved(By.css(`[se-poi-name="${name}"]`));
 }
 
 export default async function test({
@@ -33,7 +36,7 @@ export default async function test({
     if (hidden) {
         await waitByRemoved(By.id(`se-poi-marker-background-${colorShape}-${shape}`));
         if (iconWpt) {
-            await waitByRemoved(By.id(`se-poi-marker-icon-${iconWpt}-${colorIcon}-${name}`));
+            await waitByPoiMarkerRemoved({ iconWpt, colorIcon, name });
         }
         if (isSelected) {
             const colorHex = colorShape.replace(/^#/, '');
