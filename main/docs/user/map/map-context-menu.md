@@ -76,13 +76,13 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 
 <TabItem value="android" label="Android">  
 
-![Context track menu Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
