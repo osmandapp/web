@@ -167,7 +167,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
-    const backToSearchResultsState = { state: { backToSearchResults: true } };
+    const backToSearchResultsState = ctx.spatialSearch ? { state: { backToSearchResults: true } } : undefined;
 
     const itemId = getObjIdSearch(item);
 
