@@ -35,7 +35,8 @@ export default async function test() {
     await actionCheckPoi({ iconWpt: 'tourism_hotel', name: 'Maidan Palace Hotel' });
 
     // 3. Back to main search; accommodation POIs should disappear.
-    await clickBy(By.id('se-search-input-back'));
+    await clickBy(By.id('se-search-input-back')); // to query results
+    await clickBy(By.id('se-search-input-back')); // to main search
     await waitBy(By.id('se-default-search-categories'));
 
     // 4. All categories → Leisure; verify list + markers, then back and clear.
