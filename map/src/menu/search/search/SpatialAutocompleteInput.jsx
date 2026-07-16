@@ -2,23 +2,21 @@ import { Box, List, ListItemButton, Paper, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
-import { debouncer } from '../../../context/TracksRoutingCache';
-import {
-    CATEGORY_NAME,
-    POI_NAME,
-    SEPARATOR,
-    WEB_VISIBLE_LEVEL,
-} from '../../../infoblock/components/wpt/WptTagsProvider';
+import { WEB_VISIBLE_LEVEL } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { searchByWordApi } from '../../../manager/SearchApi';
+import { abortApiRequest } from '../../../util/HttpApi';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import styles from '../search.module.css';
 import { EMPTY_SEARCH, MIN_SIZE_SEARCH_VALUE, SearchInputField, useSearchInputSubmit } from './CustomInput';
+import { getPropsFromSearchResultItem } from './SearchResultItem';
+import { useTranslation } from 'react-i18next';
 
 const AUTOCOMPLETE_DEBOUNCE_MS = 500;
 const AUTOCOMPLETE_LIMIT = 8;
+const AUTOCOMPLETE_ABORT_KEY = 'spatialAutocomplete';
 
 function toAutocompleteQuery(value) {
     return value
@@ -29,18 +27,14 @@ function toAutocompleteQuery(value) {
         .join(' ');
 }
 
-function getFirstName(value) {
-    if (!value) {
-        return null;
-    }
-    return value.includes(SEPARATOR) ? value.split(SEPARATOR)[0] : value;
-}
-
-function getAutocompleteStrings(features) {
+function getAutocompleteStrings(features, ctx, t) {
     const seen = new Set();
     return (features ?? [])
         .filter((feature) => feature?.properties?.[WEB_VISIBLE_LEVEL] === 0)
-        .map((feature) => getFirstName(feature.properties[POI_NAME] || feature.properties[CATEGORY_NAME]))
+        .map(
+            (feature) =>
+                getPropsFromSearchResultItem(feature.properties, t, null, ctx.listFiles, ctx.unitsSettings).name
+        )
         .filter(Boolean)
         .map((name) => name.trim())
         .filter((name) => {
@@ -65,9 +59,9 @@ export default function SpatialAutocompleteInput({
     const mtx = useContext(MapContext);
     const { navigateToSearchResults } = useSearchNav();
     const currentLoc = useGeoLocation(ctx);
+    const { t } = useTranslation();
 
     const inputRef = useRef();
-    const autocompleteTimerRef = useRef(null);
 
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
@@ -106,10 +100,6 @@ export default function SpatialAutocompleteInput({
     }, [defaultSearchValue]);
 
     useEffect(() => {
-        return clearAutocompleteTimer;
-    }, []);
-
-    useEffect(() => {
         if (!ctx.spatialSearch) {
             clearAutocomplete();
         }
@@ -130,16 +120,8 @@ export default function SpatialAutocompleteInput({
     }, [autoFocus]);
 
     function clearAutocomplete() {
-        clearAutocompleteTimer();
         setSuggestions([]);
         setHighlightedIndex(-1);
-    }
-
-    function clearAutocompleteTimer() {
-        if (autocompleteTimerRef.current) {
-            clearTimeout(autocompleteTimerRef.current);
-            autocompleteTimerRef.current = null;
-        }
     }
 
     function getAutocompleteLoc() {
@@ -149,12 +131,14 @@ export default function SpatialAutocompleteInput({
         return getMapCenter(mtx, globalThis.location.hash);
     }
 
-    async function loadAutocomplete(nextValue) {
+    async function loadAutocomplete(nextValue, isCancelled) {
         const query = toAutocompleteQuery(nextValue);
         const loc = getAutocompleteLoc();
         const bbox = mtx.visibleBboxInfo?.bounds;
         if (!query || !loc || !bbox) {
-            setSuggestions([]);
+            if (!isCancelled()) {
+                setSuggestions([]);
+            }
             return;
         }
 
@@ -163,10 +147,13 @@ export default function SpatialAutocompleteInput({
             bbox,
             query,
             spatial: true,
-            abortControllerKey: 'spatialAutocomplete',
+            abortControllerKey: AUTOCOMPLETE_ABORT_KEY,
         });
+        if (isCancelled()) {
+            return;
+        }
         if (response?.ok) {
-            setSuggestions(getAutocompleteStrings(response.data?.features));
+            setSuggestions(getAutocompleteStrings(response.data?.features, ctx, t));
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             setSuggestions([]);
@@ -202,6 +189,21 @@ export default function SpatialAutocompleteInput({
         }
     }
 
+    useEffect(() => {
+        if (!isFocused || value.length < MIN_SIZE_SEARCH_VALUE) {
+            abortApiRequest(AUTOCOMPLETE_ABORT_KEY);
+            clearAutocomplete();
+            return;
+        }
+        let cancelled = false;
+        const timeout = setTimeout(() => loadAutocomplete(value, () => cancelled), AUTOCOMPLETE_DEBOUNCE_MS);
+        return () => {
+            cancelled = true;
+            clearTimeout(timeout);
+            abortApiRequest(AUTOCOMPLETE_ABORT_KEY);
+        };
+    }, [value, isFocused, currentLoc, mtx.visibleBboxInfo?.bounds, ctx.visibleBounds]);
+
     const showSuggestions = isFocused && suggestions.length > 0;
 
     return (
@@ -221,11 +223,6 @@ export default function SpatialAutocompleteInput({
                     const nextValue = e.target.value;
                     setValue(nextValue);
                     setHighlightedIndex(-1);
-                    if (nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
-                        debouncer(() => loadAutocomplete(nextValue), autocompleteTimerRef, AUTOCOMPLETE_DEBOUNCE_MS);
-                    } else {
-                        clearAutocomplete();
-                    }
                 }}
                 onKeyDown={handleKeyDown}
                 onClear={() => setValue(EMPTY_SEARCH)}
