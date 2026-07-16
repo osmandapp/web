@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
 import { WEB_VISIBLE_LEVEL } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { searchByWordApi } from '../../../manager/SearchApi';
@@ -17,6 +18,7 @@ import { useTranslation } from 'react-i18next';
 const AUTOCOMPLETE_DEBOUNCE_MS = 500;
 const AUTOCOMPLETE_LIMIT = 8;
 const AUTOCOMPLETE_ABORT_KEY = 'spatialAutocomplete';
+const INFO_SEPARATOR = ' · ';
 
 function toAutocompleteQuery(value) {
     return value
@@ -36,6 +38,7 @@ function getAutocompleteSuggestions(features, ctx, t) {
             return {
                 name: props.name?.trim(),
                 info: getSearchResultItemInfoText(props),
+                query: getAutocompleteSearchQuery(props) || props.name?.trim(),
             };
         })
         .filter((suggestion) => {
@@ -47,6 +50,18 @@ function getAutocompleteSuggestions(features, ctx, t) {
             return true;
         })
         .slice(0, AUTOCOMPLETE_LIMIT);
+}
+
+function getAutocompleteSearchQuery({ name, info, type, city }) {
+    const parts = [name, info, city];
+    if (
+        type &&
+        type.toLowerCase() !== searchTypeMap.STREET.toLowerCase() &&
+        type.toLowerCase() !== searchTypeMap.HOUSE.toLowerCase()
+    ) {
+        parts.push(type);
+    }
+    return parts.filter(Boolean).join(' ').replaceAll(INFO_SEPARATOR, ' ').replace(/\s+/g, ' ').trim();
 }
 
 export default function SpatialAutocompleteInput({
@@ -145,23 +160,28 @@ export default function SpatialAutocompleteInput({
             return;
         }
 
-        setAutocompleteLoading(true);
-        const response = await searchByWordApi({
-            latlng: loc,
-            bbox,
-            query,
-            spatial: true,
-            abortControllerKey: AUTOCOMPLETE_ABORT_KEY,
-        });
-        if (isCancelled()) {
-            return;
-        }
-        setAutocompleteLoading(false);
-        if (response?.ok) {
-            setSuggestions(getAutocompleteSuggestions(response.data?.features, ctx, t));
-            setHighlightedIndex(-1);
-        } else if (!response?.aborted) {
-            setSuggestions([]);
+        try {
+            setAutocompleteLoading(true);
+            const response = await searchByWordApi({
+                latlng: loc,
+                bbox,
+                query,
+                spatial: true,
+                abortControllerKey: AUTOCOMPLETE_ABORT_KEY,
+            });
+            if (isCancelled()) {
+                return;
+            }
+            if (response?.ok) {
+                setSuggestions(getAutocompleteSuggestions(response.data?.features, ctx, t));
+                setHighlightedIndex(-1);
+            } else if (!response?.aborted) {
+                setSuggestions([]);
+            }
+        } finally {
+            if (!isCancelled()) {
+                setAutocompleteLoading(false);
+            }
         }
     }
 
@@ -186,7 +206,7 @@ export default function SpatialAutocompleteInput({
         }
         if (e.key === 'Enter') {
             e.preventDefault();
-            submitSearch(highlightedIndex >= 0 ? suggestions[highlightedIndex].name : e.target.value);
+            submitSearch(highlightedIndex >= 0 ? suggestions[highlightedIndex].query : e.target.value);
             return;
         }
         if (e.key === 'Escape') {
@@ -245,7 +265,7 @@ export default function SpatialAutocompleteInput({
                                 selected={index === highlightedIndex}
                                 className={styles.autocompleteSelectItem}
                                 onMouseDown={(e) => e.preventDefault()}
-                                onClick={() => submitSearch(suggestion.name)}
+                                onClick={() => submitSearch(suggestion.query)}
                             >
                                 <Typography
                                     className={styles.autocompleteSelectText}

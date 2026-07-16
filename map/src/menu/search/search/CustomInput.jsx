@@ -79,28 +79,27 @@ export function SearchInputField({
                 },
                 className: styles.searchInput,
                 startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
-                endAdornment:
-                    loading ? (
-                        <Box className={`${styles.searchInputIcon} ${styles.searchInputProgress}`}>
-                            <CircularProgress size={24} />
-                        </Box>
-                    ) : value === '' || !isFocused ? (
-                        <IconButton
-                            id={'se-search-input-cancel'}
-                            className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
-                            onClick={onClear}
-                        >
-                            <CancelIcon />
-                        </IconButton>
-                    ) : (
-                        <IconButton
-                            id={'se-search-input-search'}
-                            className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
-                            onClick={onSearch}
-                        >
-                            <SearchIcon />
-                        </IconButton>
-                    ),
+                endAdornment: loading ? (
+                    <Box className={`${styles.searchInputIcon} ${styles.searchInputProgress}`}>
+                        <CircularProgress size={24} />
+                    </Box>
+                ) : value === '' || !isFocused ? (
+                    <IconButton
+                        id={'se-search-input-cancel'}
+                        className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
+                        onClick={onClear}
+                    >
+                        <CancelIcon />
+                    </IconButton>
+                ) : (
+                    <IconButton
+                        id={'se-search-input-search'}
+                        className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
+                        onClick={onSearch}
+                    >
+                        <SearchIcon />
+                    </IconButton>
+                ),
             }}
         />
     );
