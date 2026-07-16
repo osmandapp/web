@@ -2,7 +2,7 @@ import { Box, List, ListItemButton, Paper, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
-import { WEB_VISIBLE_LEVEL } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_TYPE, WEB_VISIBLE_LEVEL } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../../../map/layers/SearchLayer';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
@@ -38,7 +38,7 @@ function getAutocompleteSuggestions(features, ctx, t) {
             return {
                 name: props.name?.trim(),
                 info: getSearchResultItemInfoText(props),
-                query: getAutocompleteSearchQuery(props) || props.name?.trim(),
+                query: getAutocompleteSearchQuery(props, feature.properties?.[CATEGORY_TYPE]) || props.name?.trim(),
             };
         })
         .filter((suggestion) => {
@@ -52,7 +52,11 @@ function getAutocompleteSuggestions(features, ctx, t) {
         .slice(0, AUTOCOMPLETE_LIMIT);
 }
 
-function getAutocompleteSearchQuery({ name, info, type, city }) {
+function getAutocompleteSearchQuery({ name, info, type, city }, categoryType) {
+    if (categoryType === searchTypeMap.POI_TYPE) {
+        return name?.trim();
+    }
+
     const parts = [name, info, city];
     if (
         type &&
