@@ -11,7 +11,7 @@ import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import styles from '../search.module.css';
 import { EMPTY_SEARCH, MIN_SIZE_SEARCH_VALUE, SearchInputField, useSearchInputSubmit } from './CustomInput';
-import { getPropsFromSearchResultItem } from './SearchResultItem';
+import { getPropsFromSearchResultItem, getSearchResultItemInfoText } from './SearchResultItem';
 import { useTranslation } from 'react-i18next';
 
 const AUTOCOMPLETE_DEBOUNCE_MS = 500;
@@ -27,19 +27,20 @@ function toAutocompleteQuery(value) {
         .join(' ');
 }
 
-function getAutocompleteStrings(features, ctx, t) {
+function getAutocompleteSuggestions(features, ctx, t) {
     const seen = new Set();
     return (features ?? [])
         .filter((feature) => feature?.properties?.[WEB_VISIBLE_LEVEL] === 0)
-        .map(
-            (feature) =>
-                getPropsFromSearchResultItem(feature.properties, t, null, ctx.listFiles, ctx.unitsSettings).name
-        )
-        .filter(Boolean)
-        .map((name) => name.trim())
-        .filter((name) => {
-            const key = name.toLocaleLowerCase();
-            if (!name || seen.has(key)) {
+        .map((feature) => {
+            const props = getPropsFromSearchResultItem(feature.properties, t, null, ctx.listFiles, ctx.unitsSettings);
+            return {
+                name: props.name?.trim(),
+                info: getSearchResultItemInfoText(props),
+            };
+        })
+        .filter((suggestion) => {
+            const key = `${suggestion.name?.toLocaleLowerCase()}-${suggestion.info?.toLocaleLowerCase()}`;
+            if (!suggestion.name || seen.has(key)) {
                 return false;
             }
             seen.add(key);
@@ -153,7 +154,7 @@ export default function SpatialAutocompleteInput({
             return;
         }
         if (response?.ok) {
-            setSuggestions(getAutocompleteStrings(response.data?.features, ctx, t));
+            setSuggestions(getAutocompleteSuggestions(response.data?.features, ctx, t));
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             setSuggestions([]);
@@ -181,7 +182,7 @@ export default function SpatialAutocompleteInput({
         }
         if (e.key === 'Enter') {
             e.preventDefault();
-            submitSearch(highlightedIndex >= 0 ? suggestions[highlightedIndex] : e.target.value);
+            submitSearch(highlightedIndex >= 0 ? suggestions[highlightedIndex].name : e.target.value);
             return;
         }
         if (e.key === 'Escape') {
@@ -233,13 +234,21 @@ export default function SpatialAutocompleteInput({
                     <List dense disablePadding>
                         {suggestions.map((suggestion, index) => (
                             <ListItemButton
-                                key={suggestion}
+                                key={`${suggestion.name}-${suggestion.info}`}
                                 selected={index === highlightedIndex}
                                 className={styles.autocompleteSelectItem}
                                 onMouseDown={(e) => e.preventDefault()}
-                                onClick={() => submitSearch(suggestion)}
+                                onClick={() => submitSearch(suggestion.name)}
                             >
-                                <Typography className={styles.autocompleteSelectText}>{suggestion}</Typography>
+                                <Typography
+                                    className={styles.autocompleteSelectText}
+                                    title={`${suggestion.name}${suggestion.info ? ` · ${suggestion.info}` : ''}`}
+                                >
+                                    <span className={styles.autocompleteSelectName}>{suggestion.name}</span>
+                                    {suggestion.info && (
+                                        <span className={styles.autocompleteSelectInfo}> · {suggestion.info}</span>
+                                    )}
+                                </Typography>
                             </ListItemButton>
                         ))}
                     </List>

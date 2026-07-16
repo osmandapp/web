@@ -142,6 +142,18 @@ function getTrackInfo(name, listFiles, unitsSettings, t) {
     return getTrackInfoText(file, unitsSettings, t);
 }
 
+export function getSearchResultItemInfoText({ info, type, city }) {
+    const infoText = info ?? '';
+    const typeText =
+        type &&
+        type.toLowerCase() !== searchTypeMap.STREET.toLowerCase() &&
+        type.toLowerCase() !== searchTypeMap.HOUSE.toLowerCase()
+            ? `${info ? ' · ' : ''}${type}`
+            : '';
+    const cityText = city ? ` · ${city}` : '';
+    return `${infoText}${typeText}${cityText}`;
+}
+
 function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
@@ -299,26 +311,6 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         }
     }
 
-    function addInfo() {
-        return info ?? '';
-    }
-
-    function addType() {
-        if (
-            !type ||
-            type.toLowerCase() === searchTypeMap.STREET.toLowerCase() ||
-            type.toLowerCase() === searchTypeMap.HOUSE.toLowerCase()
-        ) {
-            return '';
-        }
-        return `${info ? ' · ' : ''}${type}`;
-    }
-
-    function addCity() {
-        if (!city) return '';
-        return ` · ${city}`;
-    }
-
     if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
         const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
         const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
@@ -350,7 +342,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                     {(info || type || matchedObjects.length > 1 || showPropertiesDumpIcon) && (
                         <MenuItemWithLines
                             className={styles.placeTypes}
-                            name={`${addInfo()}${addType()}${addCity()}`}
+                            name={getSearchResultItemInfoText({ info, type, city })}
                             maxLines={4}
                         >
                             {distance > 0 && (
