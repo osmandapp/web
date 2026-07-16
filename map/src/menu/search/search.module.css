@@ -353,6 +353,11 @@
     width: 56px !important;
     height: 56px !important;
 }
+.searchInputProgress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .autocompleteInputBox {
     position: relative;
 }

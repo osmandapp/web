@@ -69,6 +69,7 @@ export default function SpatialAutocompleteInput({
     const [isInitialRender, setIsInitialRender] = useState(true);
     const [suggestions, setSuggestions] = useState([]);
     const [highlightedIndex, setHighlightedIndex] = useState(-1);
+    const [autocompleteLoading, setAutocompleteLoading] = useState(false);
 
     const search = useSearchInputSubmit({ setSearchValue, type });
 
@@ -138,11 +139,13 @@ export default function SpatialAutocompleteInput({
         const bbox = mtx.visibleBboxInfo?.bounds;
         if (!query || !loc || !bbox) {
             if (!isCancelled()) {
+                setAutocompleteLoading(false);
                 setSuggestions([]);
             }
             return;
         }
 
+        setAutocompleteLoading(true);
         const response = await searchByWordApi({
             latlng: loc,
             bbox,
@@ -153,6 +156,7 @@ export default function SpatialAutocompleteInput({
         if (isCancelled()) {
             return;
         }
+        setAutocompleteLoading(false);
         if (response?.ok) {
             setSuggestions(getAutocompleteSuggestions(response.data?.features, ctx, t));
             setHighlightedIndex(-1);
@@ -193,6 +197,7 @@ export default function SpatialAutocompleteInput({
     useEffect(() => {
         if (!isFocused || value.length < MIN_SIZE_SEARCH_VALUE) {
             abortApiRequest(AUTOCOMPLETE_ABORT_KEY);
+            setAutocompleteLoading(false);
             clearAutocomplete();
             return;
         }
@@ -202,6 +207,7 @@ export default function SpatialAutocompleteInput({
             cancelled = true;
             clearTimeout(timeout);
             abortApiRequest(AUTOCOMPLETE_ABORT_KEY);
+            setAutocompleteLoading(false);
         };
     }, [value, isFocused, currentLoc, mtx.visibleBboxInfo?.bounds, ctx.visibleBounds]);
 
@@ -228,6 +234,7 @@ export default function SpatialAutocompleteInput({
                 onKeyDown={handleKeyDown}
                 onClear={() => setValue(EMPTY_SEARCH)}
                 onSearch={() => submitSearch(value)}
+                loading={autocompleteLoading}
             />
             {showSuggestions && (
                 <Paper className={styles.autocompleteSelect} elevation={4}>

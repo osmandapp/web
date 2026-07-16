@@ -1,4 +1,4 @@
-import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
+import { Box, CircularProgress, IconButton, InputAdornment, TextField } from '@mui/material';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/ic_action_cancel.svg';
 import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import React, { useContext, useEffect, useRef, useState } from 'react';
@@ -45,6 +45,7 @@ export function SearchInputField({
     onKeyDown,
     onClear,
     onSearch,
+    loading = false,
 }) {
     const { t } = useTranslation();
 
@@ -79,7 +80,11 @@ export function SearchInputField({
                 className: styles.searchInput,
                 startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
                 endAdornment:
-                    value === '' || !isFocused ? (
+                    loading ? (
+                        <Box className={`${styles.searchInputIcon} ${styles.searchInputProgress}`}>
+                            <CircularProgress size={24} />
+                        </Box>
+                    ) : value === '' || !isFocused ? (
                         <IconButton
                             id={'se-search-input-cancel'}
                             className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
