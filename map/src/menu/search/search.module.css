@@ -353,6 +353,30 @@
     width: 56px !important;
     height: 56px !important;
 }
+.autocompleteInputBox {
+    position: relative;
+}
+.autocompleteSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 2px);
+    z-index: 1300;
+    border-radius: 6px !important;
+    overflow: hidden;
+}
+.autocompleteSelectItem {
+    min-height: 42px !important;
+    padding: 8px 16px !important;
+}
+.autocompleteSelectText {
+    color: var(--text-primary) !important;
+    font-size: 15px !important;
+    line-height: 20px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .buttonShowAllExplore {
     text-transform: none !important;
     color: var(--selected-color) !important;

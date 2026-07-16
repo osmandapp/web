@@ -9,9 +9,97 @@ import AppContext from '../../../context/AppContext';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
-import { debouncer } from '../../../context/TracksRoutingCache';
 
-const SPATIAL_SEARCH_DEBOUNCE_MS = 500;
+export const EMPTY_SEARCH = '';
+export const MIN_SIZE_SEARCH_VALUE = 1;
+
+export function useSearchInputSubmit({ setSearchValue = null, type = null }) {
+    const ctx = useContext(AppContext);
+    const { navigateToSearchResults, params } = useSearchNav();
+
+    return (value) => {
+        if (setSearchValue) {
+            setSearchValue({
+                query: value,
+                type,
+            });
+            return;
+        }
+        // force a re-search only when the query text is unchanged (navigation alone won't re-trigger it);
+        // for a changed query the URL param change already triggers a single search — avoids a stale double search
+        if (value === params.query) {
+            ctx.setForceSearch(true);
+        }
+        navigateToSearchResults({ query: value });
+    };
+}
+
+export function SearchInputField({
+    menuButton = null,
+    inputRef,
+    value,
+    isFocused,
+    onFocus,
+    onBlur,
+    onChange,
+    onKeyDown,
+    onClear,
+    onSearch,
+}) {
+    const { t } = useTranslation();
+
+    return (
+        <TextField
+            inputRef={inputRef}
+            className={`${styles.searchInputField} ${styles.customAutofillFix}`}
+            sx={{
+                '& .MuiOutlinedInput-notchedOutline': {
+                    border: 'none',
+                },
+                '& .MuiOutlinedInput-root.Mui-focused': {
+                    background: '#FFF',
+                },
+                '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                    border: '2px solid var(--selected-color);',
+                },
+            }}
+            placeholder={t('shared_string_search')}
+            type="text"
+            fullWidth
+            id={'se-search-input'}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+            value={value}
+            InputProps={{
+                sx: {
+                    paddingLeft: menuButton ? '0px' : '8px',
+                },
+                className: styles.searchInput,
+                startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
+                endAdornment:
+                    value === '' || !isFocused ? (
+                        <IconButton
+                            id={'se-search-input-cancel'}
+                            className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
+                            onClick={onClear}
+                        >
+                            <CancelIcon />
+                        </IconButton>
+                    ) : (
+                        <IconButton
+                            id={'se-search-input-search'}
+                            className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
+                            onClick={onSearch}
+                        >
+                            <SearchIcon />
+                        </IconButton>
+                    ),
+            }}
+        />
+    );
+}
 
 export default function CustomInput({
     menuButton = null,
@@ -21,28 +109,19 @@ export default function CustomInput({
     autoFocus = false,
 }) {
     const ctx = useContext(AppContext);
+    const { navigateToSearchResults } = useSearchNav();
 
     const inputRef = useRef();
-    const spatialSearchTimerRef = useRef(null);
 
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
     const [isInitialRender, setIsInitialRender] = useState(true);
-    const EMPTY_SEARCH = '';
 
-    const { t } = useTranslation();
-
-    const MIN_SIZE_SEARCH_VALUE = 1;
-
-    const { navigateToSearchResults, params } = useSearchNav();
+    const search = useSearchInputSubmit({ setSearchValue, type });
 
     useEffect(() => {
         if (!isInitialRender) {
             if (value === EMPTY_SEARCH) {
-                if (spatialSearchTimerRef.current) {
-                    clearTimeout(spatialSearchTimerRef.current);
-                    spatialSearchTimerRef.current = null;
-                }
                 ctx.setSearchResult((prevResult) => {
                     return {
                         ...prevResult,
@@ -70,21 +149,6 @@ export default function CustomInput({
     }, [defaultSearchValue]);
 
     useEffect(() => {
-        return () => {
-            if (spatialSearchTimerRef.current) {
-                clearTimeout(spatialSearchTimerRef.current);
-            }
-        };
-    }, []);
-
-    useEffect(() => {
-        if (!ctx.spatialSearch && spatialSearchTimerRef.current) {
-            clearTimeout(spatialSearchTimerRef.current);
-            spatialSearchTimerRef.current = null;
-        }
-    }, [ctx.spatialSearch]);
-
-    useEffect(() => {
         const inputElement = inputRef.current;
         if (!inputElement) {
             return;
@@ -98,22 +162,6 @@ export default function CustomInput({
         setIsFocused(true);
     }, [autoFocus]);
 
-    function search(value) {
-        if (setSearchValue) {
-            setSearchValue({
-                query: value,
-                type,
-            });
-            return;
-        }
-        // force a re-search only when the query text is unchanged (navigation alone won't re-trigger it);
-        // for a changed query the URL param change already triggers a single search — avoids a stale double search
-        if (value === params.query) {
-            ctx.setForceSearch(true);
-        }
-        navigateToSearchResults({ query: value });
-    }
-
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -125,24 +173,11 @@ export default function CustomInput({
 
     return (
         <Box sx={{ mx: 2, my: 1 }}>
-            <TextField
+            <SearchInputField
                 inputRef={inputRef}
-                className={`${styles.searchInputField} ${styles.customAutofillFix}`}
-                sx={{
-                    '& .MuiOutlinedInput-notchedOutline': {
-                        border: 'none',
-                    },
-                    '& .MuiOutlinedInput-root.Mui-focused': {
-                        background: '#FFF',
-                    },
-                    '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                        border: '2px solid var(--selected-color);',
-                    },
-                }}
-                placeholder={t('shared_string_search')}
-                type="text"
-                fullWidth
-                id={'se-search-input'}
+                menuButton={menuButton}
+                value={value}
+                isFocused={isFocused}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => {
                     setTimeout(() => {
@@ -154,41 +189,11 @@ export default function CustomInput({
                     setValue(nextValue);
                     if (type === SEARCH_TYPE_CATEGORY && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
                         search(formattingPoiType(nextValue));
-                    } else if (ctx.spatialSearch && !type && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
-                        debouncer(() => search(nextValue), spatialSearchTimerRef, SPATIAL_SEARCH_DEBOUNCE_MS);
                     }
                 }}
-                onKeyDown={(e) => handleKeyPress(e)}
-                value={value}
-                InputProps={{
-                    sx: {
-                        paddingLeft: menuButton ? '0px' : '8px',
-                    },
-                    className: styles.searchInput,
-                    startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
-                    endAdornment:
-                        value === '' || !isFocused ? (
-                            <IconButton
-                                id={'se-search-input-cancel'}
-                                className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
-                                onClick={() => {
-                                    setValue(EMPTY_SEARCH);
-                                }}
-                            >
-                                <CancelIcon />
-                            </IconButton>
-                        ) : (
-                            <IconButton
-                                id={'se-search-input-search'}
-                                className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
-                                onClick={() => {
-                                    search(value);
-                                }}
-                            >
-                                <SearchIcon />
-                            </IconButton>
-                        ),
-                }}
+                onKeyDown={handleKeyPress}
+                onClear={() => setValue(EMPTY_SEARCH)}
+                onSearch={() => search(value)}
             />
         </Box>
     );

@@ -1,5 +1,6 @@
 import { Box, Button, Divider, Grid, LinearProgress, ListItemButton, ListItemIcon, Typography } from '@mui/material';
 import CustomInput from './search/CustomInput';
+import SpatialAutocompleteInput from './search/SpatialAutocompleteInput';
 import styles from './search.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { collator } from '../../context/AppContext';
@@ -266,22 +267,31 @@ export default function SearchMenu() {
                             )}
                             {!isSearchResultRoute && !isPoiCategoriesRoute && (
                                 <Box className={gStyles.scrollMainBlock}>
-                                    <CustomInput
-                                        autoFocus={isMainMenu}
-                                        menuButton={
-                                            <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
-                                        }
-                                        setSearchValue={setSearchValue}
-                                    />
-                                    {(ctx.develFeatures || ctx.spatialSearch) &&
-                                        (
-                                            <SelectItemBoolean
-                                                title={t('search_try_spatial_search_beta')}
-                                                checked={!!ctx.spatialSearch}
-                                                onToggle={setSpatial}
-                                                boldTitle={false}
-                                            />)
-                                    }
+                                    {ctx.spatialSearch ? (
+                                        <SpatialAutocompleteInput
+                                            autoFocus={isMainMenu}
+                                            menuButton={
+                                                <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
+                                            }
+                                            setSearchValue={setSearchValue}
+                                        />
+                                    ) : (
+                                        <CustomInput
+                                            autoFocus={isMainMenu}
+                                            menuButton={
+                                                <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
+                                            }
+                                            setSearchValue={setSearchValue}
+                                        />
+                                    )}
+                                    {(ctx.develFeatures || ctx.spatialSearch) && (
+                                        <SelectItemBoolean
+                                            title={t('search_try_spatial_search_beta')}
+                                            checked={!!ctx.spatialSearch}
+                                            onToggle={setSpatial}
+                                            boldTitle={false}
+                                        />
+                                    )}
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />
                                         <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>

@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useEffect, useMemo, useState } from 're
 import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
 import CustomInput from './CustomInput';
+import SpatialAutocompleteInput from './SpatialAutocompleteInput';
 import PoiManager, {
     formattingPoiType,
     getCatPoiIconName,
@@ -379,22 +380,21 @@ export default function SearchResults() {
         },
         [typeItem, currentLoc, distanceLoc, isUser, showMoreResults]
     );
+    const SearchInputComponent = useSpatialSearchResults ? SpatialAutocompleteInput : CustomInput;
+    const searchInputDefaultValue =
+        ctx.searchQuery?.query ||
+        (params?.type
+            ? (() => {
+                  const brandInfo = parseBrandType(params.type);
+                  return brandInfo ? brandInfo.brandName : getCategoryName(params.type, t, getFirstSubstring);
+              })()
+            : params?.query || '');
 
     return (
         <>
-            <CustomInput
+            <SearchInputComponent
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
-                defaultSearchValue={
-                    ctx.searchQuery?.query ||
-                    (params?.type
-                        ? (() => {
-                              const brandInfo = parseBrandType(params.type);
-                              return brandInfo
-                                  ? brandInfo.brandName
-                                  : getCategoryName(params.type, t, getFirstSubstring);
-                          })()
-                        : params?.query || '')
-                }
+                defaultSearchValue={searchInputDefaultValue}
             />
             {!params.type && (ctx.develFeatures || ctx.spatialSearch) && (
                 <SelectItemBoolean
