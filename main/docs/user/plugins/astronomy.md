@@ -15,10 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomy** is currently in **beta**.
+**Astronomy** is currently in **beta** on **Android**. 
+
+On **iOS**, the plugin is available through the **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))** program. 
 :::
 
 ## Overview {#overview}
@@ -42,7 +43,7 @@ The following settings are required to display Astronomy overlay:
 4. Adjust what is shown on the Star map using [**Configure View**](#configure-view) — for example, toggle visible objects and rendering aids.
 5. Tap the **Close (X)** button at the top of the Star map screen to exit Star map and return to the Earth map.
 
-The plugin works with both Map rendering engines but performs best in OpenGL mode.
+On Android, the plugin works with both Map rendering engines but performs best in OpenGL mode.
 
 ## Star Map Screen {#star-map-screen}
 
@@ -86,12 +87,13 @@ Quick information blocks display key observational parameters:
 - <Translate android="true" ids="shared_string_azimuth"/> – the object's direction relative to north (0°–360°).
 - <Translate android="true" ids="altitude"/> – the object's height above the horizon.
 - <Translate android="true" ids="shared_string_magnitude"/> – the brightness of the object as seen from Earth. 
+- Distance (*iOS only*) – the distance from Earth to the selected celestial object.
 
 These values update dynamically based on the selected time and the user's location.
 
 Below the quick information blocks, the menu may also include additional information and resources about the object:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
-- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article in the browser.
+- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article.
 - <Translate android="true" ids="astro_designations"/> – Shows alternative names and catalogue identifiers for the object (for example, HD, HIP, NGC). This section is available for objects that have catalog entries, such as stars and deep sky objects. If the object does not have a common name, one of these designations is used as the primary name.
 - <Translate android="true" ids="online_photos"/> – Displays available photos related to the selected celestial object.
 
@@ -178,14 +180,14 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ![AR View](@site/static/img/plugins/starwatcher/ar_view_android.png)
 
-**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Camera button* 
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR mode* 
 
 The **Astronomy** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
 
 **How AR Star Finding works:**
 - **Live camera view** shows real sky with transparent astronomical overlays aligned to horizon/compass.
 - **Move camera** to scan sky — objects highlight when they appear in your field of view.
-- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and Wikipedia link.
+- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and open the corresponding Wikipedia article.
 - **Compass calibration** required for accurate alignment (wave phone in figure-8 if needed).
 
 The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align celestial objects with the real sky.
