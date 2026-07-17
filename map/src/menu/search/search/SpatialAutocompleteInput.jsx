@@ -20,15 +20,6 @@ const AUTOCOMPLETE_LIMIT = 8;
 const AUTOCOMPLETE_ABORT_KEY = 'spatialAutocomplete';
 const INFO_SEPARATOR = ' · ';
 
-function toAutocompleteQuery(value) {
-    return value
-        .trim()
-        .split(/\s+/)
-        .filter(Boolean)
-        .map((word) => `${word}.`)
-        .join(' ');
-}
-
 function getAutocompleteSuggestions(features, ctx, t) {
     const seen = new Set();
     return (features ?? [])
@@ -153,7 +144,7 @@ export default function SpatialAutocompleteInput({
     }
 
     async function loadAutocomplete(nextValue, isCancelled) {
-        const query = toAutocompleteQuery(nextValue);
+        const query = nextValue;
         const loc = getAutocompleteLoc();
         const bbox = mtx.visibleBboxInfo?.bounds;
         if (!query || !loc || !bbox) {
