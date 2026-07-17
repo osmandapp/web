@@ -68,6 +68,8 @@ export const ADDRESS_EXTENSION = 'address';
 export const NAME = 'name';
 export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
+const ORIGINAL_ICON = 'originalIcon';
+const SVG = 'svg';
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
@@ -227,7 +229,22 @@ async function getWptTags(obj, type, ctx) {
             }
         }
 
-        tags = filterWebKeys(tags);
+        const poiNameTags = {};
+        const remainingTags = {};
+        Object.entries(tags).forEach(([key, value]) => {
+            if (key.startsWith(POI_NAME) && value) {
+                poiNameTags[key] = value;
+            } else {
+                remainingTags[key] = value;
+            }
+        });
+
+        const poiNameTagObj = await buildPoiNameTagObj(poiNameTags, ctx, subtypeTag);
+        if (poiNameTagObj) {
+            res.push(poiNameTagObj);
+        }
+
+        tags = filterWebKeys(remainingTags);
         tags = await filterTagsByVisibility(tags);
 
         const groupedTags = groupLocalizedTags(tags);
@@ -238,13 +255,7 @@ async function getWptTags(obj, type, ctx) {
             let tagObj = await buildTagObj(entry.key, entry.value, entry.lang, ctx, subtypeTag);
 
             if (entry.otherLangs?.length) {
-                tagObj.otherLangs = [];
-                for (const other of entry.otherLangs) {
-                    if (shouldSkipKey(other.key)) {
-                        continue;
-                    }
-                    tagObj.otherLangs.push(await buildTagObj(other.key, other.value, other.lang, ctx, subtypeTag));
-                }
+                tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, true);
             }
 
             if (tagObj.collapsable && tagObj.textPrefix === CUISINE) {
@@ -350,8 +361,8 @@ async function buildTagObj(key, value, lang, ctx, subtypeTag) {
         tagObj.value = localizeWeekTokens(tagObj.value);
     }
 
-    if (tagObj.key.startsWith(NAME)) {
-        tagObj.key = tagObj.key.replace(NAME, 'shared_string_name');
+    if (tagObj.key.startsWith(POI_NAME)) {
+        tagObj.key = tagObj.key.replace(POI_NAME, 'shared_string_name');
         tagObj.textPrefix = tagObj.key;
     }
 
@@ -393,6 +404,38 @@ function groupLocalizedTags(tags) {
     return result;
 }
 
+async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
+    const entries = Object.entries(poiNameTags).map(([key, value]) => {
+        const [base, lang] = key.split(':');
+        return lang ? { key: base, value, lang } : { key: base, value };
+    });
+
+    const mainEntry = entries.find((entry) => entry.lang) ?? entries[0];
+    if (!mainEntry) {
+        return null;
+    }
+
+    const tagObj = await buildTagObj(mainEntry.key, mainEntry.value, mainEntry.lang, ctx, subtypeTag);
+    const otherEntries = entries.filter((entry) => entry !== mainEntry);
+    if (otherEntries.length > 0) {
+        tagObj.otherLangs = await buildOtherLangTags(otherEntries, ctx, subtypeTag, false);
+    }
+
+    return tagObj;
+}
+
+async function buildOtherLangTags(entries, ctx, subtypeTag, filterSkipped) {
+    const otherLangs = [];
+    for (const entry of entries) {
+        if (filterSkipped && shouldSkipKey(entry.key)) {
+            continue;
+        }
+        otherLangs.push(await buildTagObj(entry.key, entry.value, entry.lang, ctx, subtypeTag));
+    }
+
+    return otherLangs;
+}
+
 export async function addPoiTypeTag({
     key,
     value,
@@ -422,7 +465,7 @@ async function filterTagsByVisibility(tags) {
     tags = Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
             key,
-            typeof typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
+            typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
         ])
     );
     let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-tags-visibility`, tags, {
@@ -455,15 +498,17 @@ function fixTagsKeysFallback(tags) {
 function filterWebKeys(tags) {
     let res = {};
     for (const [key, value] of Object.entries(tags)) {
-        let newKey = key;
-        if (key.startsWith(ALT_NAME) || HIDDEN_EXTENSIONS_POI.includes(key)) {
+        if (
+            key.startsWith(ALT_NAME) ||
+            HIDDEN_EXTENSIONS_POI.includes(key) ||
+            key.startsWith(ORIGINAL_ICON) ||
+            key === SVG
+        ) {
             continue;
         }
-        if(key.startsWith(POI_NAME)) {
-            newKey = key.replace(WEB_POI_PREFIX, '');
-        }
-        res[newKey] = value;
+        res[key] = value;
     }
+
     return res;
 }
 
@@ -665,6 +710,7 @@ function getWikipediaURL(key, value) {
 function shouldSkipKey(key) {
     return (
         key === 'idObj' ||
+        key === 'name' ||
         key === 'subway_region' ||
         key === 'note' ||
         key === 'lang_yes' ||
