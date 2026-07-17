@@ -111,6 +111,7 @@ const HIDDEN_EXTENSIONS = [
 ];
 
 const HIDDEN_EXTENSIONS_POI = [
+    ...HIDDEN_EXTENSIONS,
     ICON_KEY_NAME,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
@@ -349,8 +350,8 @@ async function buildTagObj(key, value, lang, ctx, subtypeTag) {
         tagObj.value = localizeWeekTokens(tagObj.value);
     }
 
-    if (tagObj.key.startsWith(POI_NAME)) {
-        tagObj.key = tagObj.key.replace(POI_NAME, 'shared_string_name');
+    if (tagObj.key.startsWith(NAME)) {
+        tagObj.key = tagObj.key.replace(NAME, 'shared_string_name');
         tagObj.textPrefix = tagObj.key;
     }
 
@@ -418,7 +419,12 @@ export async function addPoiTypeTag({
 
 async function filterTagsByVisibility(tags) {
     if (Object.keys(tags).length === 0) return tags;
-
+    tags = Object.fromEntries(
+        Object.entries(tags).map(([key, value]) => [
+            key,
+            typeof typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
+        ])
+    );
     let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-tags-visibility`, tags, {
         apiCache: true,
     });
@@ -449,10 +455,14 @@ function fixTagsKeysFallback(tags) {
 function filterWebKeys(tags) {
     let res = {};
     for (const [key, value] of Object.entries(tags)) {
-        if (key.startsWith(WEB_PREFIX) || key.startsWith(ALT_NAME) || HIDDEN_EXTENSIONS_POI.includes(key)) {
+        let newKey = key;
+        if (key.startsWith(ALT_NAME) || HIDDEN_EXTENSIONS_POI.includes(key)) {
             continue;
         }
-        res[key] = value;
+        if(key.startsWith(POI_NAME)) {
+            newKey = key.replace(WEB_POI_PREFIX, '');
+        }
+        res[newKey] = value;
     }
     return res;
 }
@@ -655,7 +665,6 @@ function getWikipediaURL(key, value) {
 function shouldSkipKey(key) {
     return (
         key === 'idObj' ||
-        key === 'name' ||
         key === 'subway_region' ||
         key === 'note' ||
         key === 'lang_yes' ||
