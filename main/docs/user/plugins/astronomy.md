@@ -176,7 +176,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-![AR View](@site/static/img/plugins/starwatcher/ar_view_android.png)
+![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
 
 **Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Camera button* 
 
