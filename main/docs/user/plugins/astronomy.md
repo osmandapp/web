@@ -61,7 +61,7 @@ On Android, the plugin works with both Map rendering engines but performs best i
 
 **Go to:** *Enabled plugin → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
 
-![Star map screen](@site/static/img/plugins/starwatcher/view_ios.png)
+![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
 
 </TabItem>
 
@@ -90,7 +90,7 @@ The Star map can also align with your device orientation when compass mode is en
 
 <TabItem value="ios" label="iOS">
 
-![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.png)
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
 
 </TabItem>
 
@@ -114,7 +114,7 @@ The Context Menu appears at the bottom of the screen and contains object informa
 
 <TabItem value="ios" label="iOS">
 
-![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.png)
+![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
 
 </TabItem>
 
@@ -161,7 +161,7 @@ Below the object information, the Context Menu provides several actions for inte
 
 <TabItem value="ios" label="iOS">
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.png)
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
 
 </TabItem>
 
@@ -210,7 +210,7 @@ The graph opens with the indicator positioned at the current system time. The lo
 
 <TabItem value="ios" label="iOS">
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.png)
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
 
 </TabItem>
 
@@ -250,6 +250,10 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
 
 **Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR mode* 
@@ -258,7 +262,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 <TabItem value="ios" label="iOS">
 
-![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.png)
+![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
 
 **Go to:** *Enabled plugin → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR mode*
 
@@ -294,7 +298,7 @@ The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align
 
 <TabItem value="ios" label="iOS">
 
-![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.png)
+![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
 
 </TabItem>
 
@@ -316,7 +320,7 @@ To open Configure View, tap the Configure View button in the bottom-right corner
 
 <TabItem value="ios" label="iOS">
 
-![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.png)
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
 
 </TabItem>
 
@@ -340,7 +344,7 @@ This section controls the main display modes of the Star map.
 
 <TabItem value="ios" label="iOS">
 
-![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.png)
+![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
 
 </TabItem>
 
@@ -413,7 +417,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="ios" label="iOS">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
 
 </TabItem>
 
@@ -441,7 +445,7 @@ The Categories section allows you to browse objects by type: Solar system, Const
 
 <TabItem value="ios" label="iOS">
 
-![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.png) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.png)
+![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
 
 </TabItem>
 
@@ -481,7 +485,7 @@ You can filter results by object type. Selecting specific categories automatical
 
 <TabItem value="ios" label="iOS">
 
-![My Data](@site/static/img/plugins/starwatcher/my_data_ios.png)
+![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
 
 </TabItem>
 
@@ -507,7 +511,7 @@ Selecting an item opens the object's context menu.
 
 <TabItem value="ios" label="iOS">
 
-![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.png)
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
 
 </TabItem>
 
