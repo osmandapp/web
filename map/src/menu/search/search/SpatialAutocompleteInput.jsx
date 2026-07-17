@@ -18,7 +18,6 @@ import { useTranslation } from 'react-i18next';
 const AUTOCOMPLETE_DEBOUNCE_MS = 500;
 const AUTOCOMPLETE_LIMIT = 8;
 const AUTOCOMPLETE_ABORT_KEY = 'spatialAutocomplete';
-const INFO_SEPARATOR = ' · ';
 
 function getAutocompleteSuggestions(features, ctx, t) {
     const seen = new Set();
@@ -56,7 +55,7 @@ function getAutocompleteSearchQuery({ name, info, type, city }, categoryType) {
     ) {
         parts.push(type);
     }
-    return parts.filter(Boolean).join(' ').replaceAll(INFO_SEPARATOR, ' ').replace(/\s+/g, ' ').trim();
+    return parts.filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
 }
 
 export default function SpatialAutocompleteInput({
@@ -144,10 +143,9 @@ export default function SpatialAutocompleteInput({
     }
 
     async function loadAutocomplete(nextValue, isCancelled) {
-        const query = nextValue;
         const loc = getAutocompleteLoc();
         const bbox = mtx.visibleBboxInfo?.bounds;
-        if (!query || !loc || !bbox) {
+        if (!nextValue || !loc || !bbox) {
             if (!isCancelled()) {
                 setAutocompleteLoading(false);
                 setSuggestions([]);
@@ -160,8 +158,9 @@ export default function SpatialAutocompleteInput({
             const response = await searchByWordApi({
                 latlng: loc,
                 bbox,
-                query,
+                query: nextValue,
                 spatial: true,
+                autocomplete: true,
                 abortControllerKey: AUTOCOMPLETE_ABORT_KEY,
             });
             if (isCancelled()) {

@@ -241,6 +241,8 @@ export default function SearchMenu() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + liveHash());
     }
 
+    const SearchInputComponent = ctx.spatialSearch ? SpatialAutocompleteInput : CustomInput;
+
     return (
         <>
             {ltx.isLoggedIn() ? (
@@ -267,23 +269,13 @@ export default function SearchMenu() {
                             )}
                             {!isSearchResultRoute && !isPoiCategoriesRoute && (
                                 <Box className={gStyles.scrollMainBlock}>
-                                    {ctx.spatialSearch ? (
-                                        <SpatialAutocompleteInput
-                                            autoFocus={isMainMenu}
-                                            menuButton={
-                                                <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
-                                            }
-                                            setSearchValue={setSearchValue}
-                                        />
-                                    ) : (
-                                        <CustomInput
-                                            autoFocus={isMainMenu}
-                                            menuButton={
-                                                <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
-                                            }
-                                            setSearchValue={setSearchValue}
-                                        />
-                                    )}
+                                    <SearchInputComponent
+                                        autoFocus={isMainMenu}
+                                        menuButton={
+                                            <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
+                                        }
+                                        setSearchValue={setSearchValue}
+                                    />
                                     {(ctx.develFeatures || ctx.spatialSearch) && (
                                         <SelectItemBoolean
                                             title={t('search_try_spatial_search_beta')}

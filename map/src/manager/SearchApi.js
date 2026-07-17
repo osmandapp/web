@@ -3,15 +3,16 @@ import { apiGet } from '../util/HttpApi';
 import { BBOX_COORDS_DECIMALS } from './GlobalManager';
 import { getCurrentTimeParams } from '../util/Utils';
 
-export async function searchByWordApi({
+export function searchByWordApi({
     latlng,
     bbox,
     query,
     baseSearch = false,
     spatial = false,
+    autocomplete = false,
     abortControllerKey,
 }) {
-    return await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
         apiCache: true,
         ...(abortControllerKey ? { abortControllerKey } : {}),
         params: {
@@ -23,6 +24,7 @@ export async function searchByWordApi({
             locale: i18n.language,
             baseSearch,
             ...(spatial ? { spatial: true } : {}),
+            ...(autocomplete ? { autocomplete: true } : {}),
             ...getCurrentTimeParams(),
         },
     });
