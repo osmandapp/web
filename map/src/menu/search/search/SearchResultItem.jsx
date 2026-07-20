@@ -32,6 +32,7 @@ import {
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
     MATCHED_OBJECTS,
+    POI_ID,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -52,6 +53,8 @@ import { openTrackOnMap, updateTracks } from '../../../manager/track/TracksManag
 import { getTrackInfoText } from '../../tracks/CloudTrackItem';
 import { addFavoriteToMapFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
+
+const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -159,6 +162,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
     const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
+    const matchedAmenityObjects =
+        matchedObjects.length > 1
+            ? matchedObjects.slice(1).filter((obj) => obj?.type === MATCHED_OBJECT_TYPE_AMENITY)
+            : [];
     const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
     function openMatchedObject(obj) {
         ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
@@ -170,6 +177,43 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const backToSearchResultsState = { state: { backToSearchResults: true } };
 
     const itemId = getObjIdSearch(item);
+
+    function openMatchedAmenity(event, obj) {
+        event.stopPropagation();
+        if (!Number.isFinite(obj?.lat) || !Number.isFinite(obj?.lon)) return;
+
+        const options = getMatchedAmenityOptions(obj);
+        const id = obj[POI_ID] ?? `${obj.lat},${obj.lon}`;
+        const poi = {
+            key: id,
+            options,
+            latlng: new LatLng(obj.lat, obj.lon),
+        };
+
+        ctx.setCurrentObjectType(OBJECT_SEARCH);
+        ctx.setSelectedPoiObj({ ...poi });
+        ctx.setSelectedWpt({ poi, id });
+        recentSaver(POI_OBJECTS_KEY, poi);
+        ctx.setMoveToMapObj({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [obj.lon, obj.lat] },
+            properties: options,
+        });
+        navigateToPoi({ poi }, navigate);
+    }
+
+    function getMatchedAmenityOptions(obj) {
+        return {
+            ...obj,
+            [CATEGORY_TYPE]: obj[CATEGORY_TYPE] ?? searchTypeMap.POI,
+            [POI_NAME]: obj[POI_NAME] ?? obj.name ?? '',
+            name: obj.name ?? obj[POI_NAME],
+        };
+    }
+
+    function getMatchedAmenityName(obj) {
+        return getPropsFromSearchResultItem(getMatchedAmenityOptions(obj), t).name;
+    }
 
     function handleMouseEnter() {
         if (itemId !== null) {
@@ -316,6 +360,12 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         return ` · ${city}`;
     }
 
+    const placeDetails = `${addInfo()}${addType()}${addCity()}`;
+
+    function hasTextBeforeMatchedName(index) {
+        return index > 0 || Boolean(placeDetails || distance > 0);
+    }
+
     if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
         const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
         const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
@@ -345,11 +395,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                 <ListItemText>
                     <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
                     {(info || type || matchedObjects.length > 1 || showPropertiesDumpIcon) && (
-                        <MenuItemWithLines
-                            className={styles.placeTypes}
-                            name={`${addInfo()}${addType()}${addCity()}`}
-                            maxLines={4}
-                        >
+                        <MenuItemWithLines className={styles.placeTypes} name={placeDetails} maxLines={4}>
                             {distance > 0 && (
                                 <span style={{ display: 'inline-flex' }}>
                                     <Typography className={styles.placeDistance}>{' · '}</Typography>
@@ -360,6 +406,22 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     />
                                 </span>
                             )}
+                            {matchedAmenityObjects.map((obj, i) => (
+                                <React.Fragment key={obj[POI_ID] ?? `${obj.lat}-${obj.lon}-${i}`}>
+                                    {hasTextBeforeMatchedName(i) && (
+                                        <Typography component="span" className={styles.placeDistance}>
+                                            {' · '}
+                                        </Typography>
+                                    )}
+                                    <Typography
+                                        component="span"
+                                        className={styles.matchedObjectName}
+                                        onClick={(e) => openMatchedAmenity(e, obj)}
+                                    >
+                                        {getMatchedAmenityName(obj)}
+                                    </Typography>
+                                </React.Fragment>
+                            ))}
                             {matchedObjects.length > 1 && (
                                 <span
                                     className={styles.matchedObjectsIcon}
