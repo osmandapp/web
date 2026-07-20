@@ -197,7 +197,7 @@ export default function SearchLayer() {
         if (oldPoiLayer) {
             map.removeLayer(oldPoiLayer);
         }
-        if (ctx.searchQuery) {
+        if (ctx.searchQuery?.query || ctx.searchQuery?.type) {
             ctx.setShowPoiCategories([]);
             if (ctx.searchQuery.type) {
                 searchByCategory(ctx.searchQuery);

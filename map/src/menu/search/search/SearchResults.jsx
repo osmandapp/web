@@ -385,7 +385,7 @@ export default function SearchResults() {
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 defaultSearchValue={
-                    ctx.searchQuery?.query ||
+                    ctx.searchQuery?.query ??
                     (params?.type
                         ? (() => {
                               const brandInfo = parseBrandType(params.type);

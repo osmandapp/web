@@ -39,26 +39,7 @@ export default function CustomInput({
     useEffect(() => {
         if (!isInitialRender) {
             if (value === EMPTY_SEARCH) {
-                if (spatialSearchTimerRef.current) {
-                    clearTimeout(spatialSearchTimerRef.current);
-                    spatialSearchTimerRef.current = null;
-                }
-                ctx.setSearchResult((prevResult) => {
-                    return {
-                        ...prevResult,
-                        features: [],
-                    };
-                });
-                if (setSearchValue) {
-                    setSearchValue(null);
-                } else {
-                    ctx.setSearchQuery((prev) => ({
-                        ...prev,
-                        query: '',
-                        type: null,
-                    }));
-                    navigateToSearchResults({ query: '', type: null });
-                }
+                clearSearch();
             }
         } else {
             setIsInitialRender(false);
@@ -112,6 +93,23 @@ export default function CustomInput({
             ctx.setForceSearch(true);
         }
         navigateToSearchResults({ query: value });
+    }
+
+    function clearSearch() {
+        if (spatialSearchTimerRef.current) {
+            clearTimeout(spatialSearchTimerRef.current);
+            spatialSearchTimerRef.current = null;
+        }
+        ctx.setSearchResult((prevResult) => ({
+            ...prevResult,
+            features: [],
+        }));
+        if (setSearchValue) {
+            setSearchValue(null);
+        } else {
+            ctx.setSearchQuery({ query: '', type: null });
+            navigateToSearchResults({ query: '', type: null });
+        }
     }
 
     const handleKeyPress = (e) => {
@@ -173,6 +171,7 @@ export default function CustomInput({
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
                                     setValue(EMPTY_SEARCH);
+                                    inputRef.current?.focus();
                                 }}
                             >
                                 <CancelIcon />
