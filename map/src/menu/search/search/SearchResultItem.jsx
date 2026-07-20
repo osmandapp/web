@@ -23,6 +23,7 @@ import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } f
 import {
     FAVORITE_HIT_GROUP_ID,
     getAdditionalMatchedAmenityObjects,
+    getFirstMatchedCityObject,
     getMatchedAmenityProperties,
     getObjIdSearch,
     searchTypeMap,
@@ -32,6 +33,7 @@ import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
+    BBOX_LAT_LON,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     CITY,
@@ -167,10 +169,23 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
     const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
     const matchedAmenityObjects = getAdditionalMatchedAmenityObjects(matchedObjects);
+    const matchedCityObject =
+        item.properties?.[CATEGORY_TYPE] === searchTypeMap.POI_TYPE ? getFirstMatchedCityObject(matchedObjects) : null;
+    const matchedNameObjects = [
+        ...matchedAmenityObjects.map((obj) => ({ obj, name: getMatchedAmenityName(obj), onClick: openMatchedAmenity })),
+        ...(matchedCityObject
+            ? [{ obj: matchedCityObject, name: getMatchedCityName(matchedCityObject), onClick: openMatchedObjectOnMap }]
+            : []),
+    ].filter(({ name }) => name);
     const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
     function openMatchedObject(obj) {
-        ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
+        ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon, bbox: obj[BBOX_LAT_LON] });
         setShowMatched(false);
+    }
+
+    function openMatchedObjectOnMap(event, obj) {
+        event.stopPropagation();
+        openMatchedObject(obj);
     }
 
     const { navigateToSearchResults } = useSearchNav();
@@ -205,6 +220,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
     function getMatchedAmenityName(obj) {
         return getPropsFromSearchResultItem(getMatchedAmenityProperties(obj), t).name;
+    }
+
+    function getMatchedCityName(obj) {
+        return obj?.name ?? obj?.[CATEGORY_NAME] ?? obj?.[POI_NAME];
     }
 
     function handleMouseEnter() {
@@ -316,6 +335,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             // click on category
             const category = item.properties['web_keyName'];
             if (category) {
+                moveToMatchedCity();
                 return navigateToSearchResults({ type: category }, backToSearchResultsState);
             } else {
                 // search by brand
@@ -327,8 +347,19 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                         brandType = `${brandType}:${brandRes.lang}`;
                     }
                 }
+                moveToMatchedCity();
                 return navigateToSearchResults({ type: brandType }, backToSearchResultsState);
             }
+        }
+    }
+
+    function moveToMatchedCity() {
+        if (matchedCityObject && Number.isFinite(matchedCityObject.lat) && Number.isFinite(matchedCityObject.lon)) {
+            ctx.setZoomToCoords({
+                lat: matchedCityObject.lat,
+                lon: matchedCityObject.lon,
+                bbox: matchedCityObject[BBOX_LAT_LON],
+            });
         }
     }
 
@@ -398,8 +429,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     />
                                 </span>
                             )}
-                            {matchedAmenityObjects.map((obj, i) => (
-                                <React.Fragment key={obj[POI_ID] ?? `${obj.lat}-${obj.lon}-${i}`}>
+                            {matchedNameObjects.map(({ obj, name, onClick }, i) => (
+                                <React.Fragment key={obj[POI_ID] ?? `${obj.type}-${obj.lat}-${obj.lon}-${i}`}>
                                     {hasTextBeforeMatchedName(i) && (
                                         <Typography component="span" className={styles.placeDistance}>
                                             {' · '}
@@ -408,9 +439,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     <Typography
                                         component="span"
                                         className={styles.matchedObjectName}
-                                        onClick={(e) => openMatchedAmenity(e, obj)}
+                                        onClick={(e) => onClick(e, obj)}
                                     >
-                                        {getMatchedAmenityName(obj)}
+                                        {name}
                                     </Typography>
                                 </React.Fragment>
                             ))}

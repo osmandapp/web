@@ -15,6 +15,7 @@ import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
 import {
+    BBOX_LAT_LON,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
@@ -51,6 +52,7 @@ import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
+import { fitBoundsOptions } from '../../manager/track/TracksManager';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 
@@ -62,6 +64,7 @@ export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
 
 export const ZOOM_TO_MAP = 17;
 export const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
+export const MATCHED_OBJECT_TYPE_CITY = 'City';
 
 export const searchTypeMap = {
     LOCATION: 'LOCATION',
@@ -102,6 +105,10 @@ export function getAdditionalMatchedAmenityObjects(matchedObjects) {
         : [];
 }
 
+export function getFirstMatchedCityObject(matchedObjects) {
+    return matchedObjects?.find((obj) => obj?.type === MATCHED_OBJECT_TYPE_CITY) ?? null;
+}
+
 export function getMatchedAmenityProperties(obj) {
     return {
         ...obj,
@@ -124,6 +131,28 @@ export function buildFavGroupMap(favoriteFeatures) {
         }
     });
     return result.size > 0 ? result : null;
+}
+
+function getBboxLatLngBounds(bbox) {
+    if (!bbox) return null;
+    const top = Number(bbox.top);
+    const left = Number(bbox.left);
+    const bottom = Number(bbox.bottom);
+    const right = Number(bbox.right);
+    if (![top, left, bottom, right].every(Number.isFinite)) return null;
+
+    return L.latLngBounds([
+        [bottom, left],
+        [top, right],
+    ]);
+}
+
+function fitBboxIfPresent({ map, mtx, bbox }) {
+    const bounds = getBboxLatLngBounds(bbox);
+    if (!map || !bounds?.isValid()) return false;
+
+    map.fitBounds(bounds, fitBoundsOptions(mtx));
+    return true;
 }
 
 export default function SearchLayer() {
@@ -155,7 +184,9 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToCoords) {
-            panToIfNeeded({ map, latlng: { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon }, ctx });
+            if (!fitBboxIfPresent({ map, mtx, bbox: ctx.zoomToCoords.bbox })) {
+                panToIfNeeded({ map, latlng: { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon }, ctx });
+            }
             ctx.setZoomToCoords(null);
         }
     }, [ctx.zoomToCoords]);
@@ -253,7 +284,9 @@ export default function SearchLayer() {
                 pushMapView({ map, mtx, key: MAP_VIEW_SEARCH_RESULT });
             }
             const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
-            panToIfNeeded({ map, latlng: { lat, lng }, ctx });
+            if (!fitBboxIfPresent({ map, mtx, bbox: ctx.moveToMapObj.properties?.[BBOX_LAT_LON] })) {
+                panToIfNeeded({ map, latlng: { lat, lng }, ctx });
+            }
             ctx.setMoveToMapObj(null);
         }
     }, [ctx.moveToMapObj]);
