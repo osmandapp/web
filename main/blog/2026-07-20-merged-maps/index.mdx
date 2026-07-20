@@ -1,0 +1,61 @@
+---
+slug: merged-maps
+title: Discontinued "Merged" Maps. What Changed and What to Do
+authors: 
+ - tina 
+ - eugene
+tags: [marketing,map,android, ios]
+unlisted: true
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+OsmAnd has discontinued "merged" maps — large country- or region-level files that were assembled from smaller regional maps. If you have one of these installed, it will no longer receive updates.
+
+{/*truncate*/}
+
+## What Changed
+
+Previously, some maps were built by merging a set of smaller regional maps into one large file. For example, the full map of Austria was assembled from all of its individual regions; Bavaria (Germany) was assembled from its smaller sub-regions in the same way.
+
+These merged maps are now discontinued. They won't be updated going forward — only the individual regional maps that made them up will continue to receive updates.
+
+If you have a recent version of OsmAnd installed, a warning about this will appear automatically in *Maps & Resources → Updates*.
+
+## Why This Happened
+
+As OpenStreetMap data grows more detailed, map files get larger over time. Merged maps — combining dozens of regional files into one — eventually became too large to update and use efficiently, affecting app performance and routing speed.
+
+Merging also meant duplication: users downloading a merged map and its individual regions were storing the same data twice. Discontinuing merged maps removes this overlap and keeps map updates faster and more reliable.
+
+This wasn't a sudden decision — OsmAnd has been moving toward smaller, region-based maps for some time, and this change is part of that ongoing transition.
+
+## Which Maps Are Affected
+
+**Discontinued detailed maps:**  
+Argentina, Austria, Belarus, Belgium, Canada (British Columbia, Ontario, Quebec), Chile, Democratic Republic of the Congo, Czech Republic, Denmark, Finland, France (Auvergne-Rhône-Alpes, Grand Est, Nouvelle-Aquitaine, Occitanie, Provence-Alpes-Côte d'Azur), Germany (Baden-Württemberg, Bavaria, Hesse, Lower Saxony), Iran, Japan (Chubu, Kanto), Mexico, Philippines, Russia (Far Eastern, North Caucasus, Northwestern, Siberian, Southern, Ural, Volga federal districts), South Africa, Sweden, Switzerland, Tanzania, USA (Florida, New York).
+
+**Discontinued roads-only maps:**  
+Australia & Oceania, Democratic Republic of the Congo, England (UK), Indonesia, Netherlands, Norway, Philippines, South Africa, Ukraine, USA (Florida, New York, Texas).
+
+## What To Do
+
+If you have one of the affected maps installed:
+- Check *Maps & Resources → Updates* for a warning about your installed maps.
+- Delete the discontinued merged map from your device.
+- Download the individual regional maps that cover the same area instead.
+
+Going forward, updating by region means smaller downloads and keeps your maps current without needing to re-download a large file each time.
+
+## Questions or Issues
+
+If you have questions about this change or run into issues after switching to regional maps, contact OsmAnd support at support@osmand.net, or visit the [Support page](https://osmand.net/help-online/support/) for more help options.
