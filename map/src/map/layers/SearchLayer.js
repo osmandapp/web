@@ -61,7 +61,7 @@ export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
 export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
 
 export const ZOOM_TO_MAP = 17;
-const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
+export const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
 
 export const searchTypeMap = {
     LOCATION: 'LOCATION',
@@ -94,6 +94,21 @@ export function getObjIdSearch(obj) {
         return null;
     }
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
+}
+
+export function getAdditionalMatchedAmenityObjects(matchedObjects) {
+    return matchedObjects?.length > 1
+        ? matchedObjects.slice(1).filter((obj) => obj?.type === MATCHED_OBJECT_TYPE_AMENITY)
+        : [];
+}
+
+export function getMatchedAmenityProperties(obj) {
+    return {
+        ...obj,
+        [CATEGORY_TYPE]: obj[CATEGORY_TYPE] ?? searchTypeMap.POI,
+        [POI_NAME]: obj[POI_NAME] ?? obj.name ?? '',
+        name: obj.name ?? obj[POI_NAME],
+    };
 }
 
 // Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
@@ -537,13 +552,10 @@ function createMatchedAmenityFeatures(features) {
     const featureByKey = new Map();
 
     (features ?? []).forEach((feature) => {
-        const matchedObjects = feature?.properties?.[MATCHED_OBJECTS] ?? [];
-        if (matchedObjects.length <= 1) return;
-
         const hoverIdObj = getObjIdSearch(feature);
         // The first matched object is represented by the main search result marker.
-        matchedObjects.slice(1).forEach((obj) => {
-            if (obj?.type !== MATCHED_OBJECT_TYPE_AMENITY || !Number.isFinite(obj.lat) || !Number.isFinite(obj.lon)) {
+        getAdditionalMatchedAmenityObjects(feature?.properties?.[MATCHED_OBJECTS]).forEach((obj) => {
+            if (!Number.isFinite(obj.lat) || !Number.isFinite(obj.lon)) {
                 return;
             }
 
@@ -561,10 +573,8 @@ function createMatchedAmenityFeatures(features) {
                     coordinates: [obj.lon, obj.lat],
                 },
                 properties: {
-                    ...obj,
+                    ...getMatchedAmenityProperties(obj),
                     hoverIdObjs: [hoverIdObj],
-                    [CATEGORY_TYPE]: obj[CATEGORY_TYPE] ?? searchTypeMap.POI,
-                    [POI_NAME]: obj[POI_NAME] ?? obj.name,
                 },
             });
         });

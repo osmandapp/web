@@ -20,7 +20,13 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
+import {
+    FAVORITE_HIT_GROUP_ID,
+    getAdditionalMatchedAmenityObjects,
+    getMatchedAmenityProperties,
+    getObjIdSearch,
+    searchTypeMap,
+} from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import {
@@ -53,8 +59,6 @@ import { openTrackOnMap, updateTracks } from '../../../manager/track/TracksManag
 import { getTrackInfoText } from '../../tracks/CloudTrackItem';
 import { addFavoriteToMapFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
-
-const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -162,10 +166,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
     const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
-    const matchedAmenityObjects =
-        matchedObjects.length > 1
-            ? matchedObjects.slice(1).filter((obj) => obj?.type === MATCHED_OBJECT_TYPE_AMENITY)
-            : [];
+    const matchedAmenityObjects = getAdditionalMatchedAmenityObjects(matchedObjects);
     const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
     function openMatchedObject(obj) {
         ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
@@ -182,7 +183,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         event.stopPropagation();
         if (!Number.isFinite(obj?.lat) || !Number.isFinite(obj?.lon)) return;
 
-        const options = getMatchedAmenityOptions(obj);
+        const options = getMatchedAmenityProperties(obj);
         const id = obj[POI_ID] ?? `${obj.lat},${obj.lon}`;
         const poi = {
             key: id,
@@ -202,17 +203,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         navigateToPoi({ poi }, navigate);
     }
 
-    function getMatchedAmenityOptions(obj) {
-        return {
-            ...obj,
-            [CATEGORY_TYPE]: obj[CATEGORY_TYPE] ?? searchTypeMap.POI,
-            [POI_NAME]: obj[POI_NAME] ?? obj.name ?? '',
-            name: obj.name ?? obj[POI_NAME],
-        };
-    }
-
     function getMatchedAmenityName(obj) {
-        return getPropsFromSearchResultItem(getMatchedAmenityOptions(obj), t).name;
+        return getPropsFromSearchResultItem(getMatchedAmenityProperties(obj), t).name;
     }
 
     function handleMouseEnter() {

@@ -328,17 +328,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
         if (layer) {
             const markerData = buildMarkerData(layer, false, type);
-            if (!markerData.iconHtml && layer.options?.simple) {
-                const props = ctx.selectedWptId?.obj?.properties;
-                markerData.iconHtml = iconHtmlFromIconName(
-                    props?.[FINAL_POI_ICON_NAME] ??
-                        getIconNameForPoiType({
-                            iconKeyName: props?.[ICON_KEY_NAME],
-                            typeOsmTag: props?.[TYPE_OSM_TAG],
-                            typeOsmValue: props?.[TYPE_OSM_VALUE],
-                        })
-                );
-            }
+            fillSimpleMarkerIcon(markerData, layer);
             return markerData;
         }
 
