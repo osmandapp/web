@@ -471,3 +471,104 @@
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
 }
+
+.stickyBar {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    height: 56px !important;
+    width: 912px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 250ms ease !important;
+}
+
+.stickyBarVisible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.stickyBarItem {
+    display: flex !important;
+    height: 56px !important;
+    padding: 9px 10px !important;
+    align-items: center !important;
+    gap: 9px !important;
+    flex: 1 0 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.25) !important;
+    border-radius: 13px !important;
+    background: #fff !important;
+    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.22) !important;
+    box-sizing: border-box !important;
+}
+
+.stickyBarIconFrame {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.stickyBarIconFrame svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.stickyBarInfo {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    flex: 1 !important;
+}
+
+.stickyBarName {
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+}
+
+.stickyBarPriceRow {
+    display: flex !important;
+    align-items: baseline !important;
+    flex-wrap: wrap !important;
+}
+
+.stickyBarOldPrice {
+    color: #666 !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    text-decoration: line-through !important;
+}
+
+.stickyBarNewPrice {
+    color: #237bff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 140% !important;
+}
+
+.stickyBarPricePeriod {
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+}
+
+.stickyBarBtnWrap {
+    flex-shrink: 0 !important;
+}
+
+.stickyBarBtnWrap :global(.MuiButton-root) {
+    width: auto !important;
+    align-self: auto !important;
+    padding: 12px 8px !important;
+}

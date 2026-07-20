@@ -130,3 +130,11 @@ export const purchase = {
         },
     ],
 };
+
+export function findPurchase(type, productId) {
+    return purchase[type]?.find((p) => p.id === productId);
+}
+
+export function hasOldPrice(purchaseObj) {
+    return Boolean(purchaseObj?.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice);
+}

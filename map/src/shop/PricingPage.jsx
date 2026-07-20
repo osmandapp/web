@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Link, Typography } from '@mui/material';
 import HeaderMenu from '../frame/components/header/HeaderMenu';
-import React, { Suspense, useContext, useEffect, useState } from 'react';
+import React, { Suspense, useContext, useEffect, useRef, useState } from 'react';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation, Trans } from 'react-i18next';
@@ -9,6 +9,7 @@ import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { updatePrices } from '../login/fs/FastSpringHelper';
 import { getAccountInfo } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
+import StickyBar from './StickyBar';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
@@ -25,6 +26,9 @@ export default function PricingPage() {
     const [selectedCardId, setSelectedCardId] = useState(null);
     const [show, setShow] = useState(false);
     const [updateCardPrices, setUpdateCardPrices] = useState(false);
+    const [stickyVisible, setStickyVisible] = useState(false);
+
+    const cardBoxRef = useRef(null);
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -45,6 +49,17 @@ export default function PricingPage() {
             updatePrices(setPurchasePriceMap, useTestMode);
         }
     }, [useTestMode, ltx.loginUser]);
+
+    useEffect(() => {
+        if (!show || !cardBoxRef.current) {
+            return;
+        }
+        const observer = new IntersectionObserver(([entry]) => setStickyVisible(!entry.isIntersecting), {
+            threshold: 0,
+        });
+        observer.observe(cardBoxRef.current);
+        return () => observer.disconnect();
+    }, [show]);
 
     useEffect(() => {
         if (purchasePriceMap && Object.keys(purchasePriceMap).length > 0 && currentPurchases) {
@@ -81,6 +96,12 @@ export default function PricingPage() {
     return (
         <Box>
             <HeaderMenu />
+            <StickyBar
+                visible={stickyVisible}
+                testMode={useTestMode}
+                updateCardPrices={updateCardPrices}
+                setUpdateCardPrices={setUpdateCardPrices}
+            />
             <Box sx={{ overflowY: 'auto', maxHeight: `100%` }}>
                 <Box className={styles.pricingBox}>
                     <Typography className={styles.pricingTitle} onClick={clickHandler}>
@@ -91,7 +112,7 @@ export default function PricingPage() {
                     </Typography>
                     {!show && <CircularProgress />}
                     {show && (
-                        <Box className={styles.productCardBox}>
+                        <Box ref={cardBoxRef} className={styles.productCardBox}>
                             {['osmand-start', 'osmand-maps-plus', 'osmand-pro', 'osmand-15-years'].map((id) => (
                                 <ProductCard
                                     key={id}
