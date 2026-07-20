@@ -141,6 +141,15 @@ export function restoreOriginalIcon(layer) {
     }
 }
 
+function restoreUpdatedLayers(updatedLayersRef) {
+    const current = updatedLayersRef?.current;
+    const layers = Array.isArray(current) ? current : current ? [current] : [];
+    layers.forEach(restoreOriginalIcon);
+    if (updatedLayersRef) {
+        updatedLayersRef.current = null;
+    }
+}
+
 // Shows an outline ring around a point hovered on the map
 export function applyHoverOutline({ ctx, map, layer = null, latlng = null, shape, color, size }) {
     if (!ctx || !map) {
@@ -237,10 +246,31 @@ export function resetSelectedPin({ ctx, map, force = false }) {
         }
     }
 
-    if (ctx.selectedUpdatedLayerRef?.current) {
-        restoreOriginalIcon(ctx.selectedUpdatedLayerRef.current);
-        ctx.selectedUpdatedLayerRef.current = null;
+    restoreUpdatedLayers(ctx.selectedUpdatedLayerRef);
+}
+
+export function applySelectedPins({ ctx, map, items }) {
+    if (!ctx || !map || !items?.length) return [];
+
+    restoreUpdatedLayers(ctx.selectedUpdatedLayerRef);
+    if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+        map.removeLayer(ctx.selectedCreatedLayerRef.current);
+        ctx.selectedCreatedLayerRef.current = null;
     }
+
+    const selectedLayers = [];
+    items.forEach(({ layer, markerData }) => {
+        if (!layer || !markerData || !map.hasLayer(layer)) {
+            return;
+        }
+        applySelectedWithUpdateMarker(layer, markerData);
+        selectedLayers.push(layer);
+    });
+
+    ctx.selectedUpdatedLayerRef.current = selectedLayers;
+    updateMarkerZIndex(new L.FeatureGroup(selectedLayers), SELECTED_MARKER_Z_INDEX);
+
+    return selectedLayers;
 }
 
 // Main entry point for showing a selected or hovered pin.
@@ -257,10 +287,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         ctx.selectedHiddenLayersRef.current = [];
     } else {
         // On hover: restore any previously updated icon and remove any previously created hover pin.
-        if (ctx.selectedUpdatedLayerRef?.current) {
-            restoreOriginalIcon(ctx.selectedUpdatedLayerRef.current);
-            ctx.selectedUpdatedLayerRef.current = null;
-        }
+        restoreUpdatedLayers(ctx.selectedUpdatedLayerRef);
         if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
             map.removeLayer(ctx.selectedCreatedLayerRef.current);
             ctx.selectedCreatedLayerRef.current = null;

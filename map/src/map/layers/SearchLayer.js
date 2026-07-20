@@ -534,25 +534,27 @@ function filterByVisibleLevel(features, spatialSearch, visibleLevel) {
 }
 
 function createMatchedAmenityFeatures(features) {
-    const seen = new Set();
+    const featureByKey = new Map();
 
-    return (features ?? []).flatMap((feature) => {
+    (features ?? []).forEach((feature) => {
         const matchedObjects = feature?.properties?.[MATCHED_OBJECTS] ?? [];
-        if (matchedObjects.length <= 1) return [];
+        if (matchedObjects.length <= 1) return;
 
+        const hoverIdObj = getObjIdSearch(feature);
         // The first matched object is represented by the main search result marker.
-        return matchedObjects.slice(1).reduce((res, obj) => {
+        matchedObjects.slice(1).forEach((obj) => {
             if (obj?.type !== MATCHED_OBJECT_TYPE_AMENITY || !Number.isFinite(obj.lat) || !Number.isFinite(obj.lon)) {
-                return res;
+                return;
             }
 
             const key = obj[POI_ID] ?? `${obj.lat.toFixed(6)},${obj.lon.toFixed(6)}:${obj[POI_NAME] ?? obj.name}`;
-            if (seen.has(key)) {
-                return res;
+            const existing = featureByKey.get(key);
+            if (existing) {
+                existing.properties.hoverIdObjs.push(hoverIdObj);
+                return;
             }
-            seen.add(key);
 
-            res.push({
+            featureByKey.set(key, {
                 type: 'Feature',
                 geometry: {
                     type: 'Point',
@@ -560,13 +562,15 @@ function createMatchedAmenityFeatures(features) {
                 },
                 properties: {
                     ...obj,
+                    hoverIdObjs: [hoverIdObj],
                     [CATEGORY_TYPE]: obj[CATEGORY_TYPE] ?? searchTypeMap.POI,
                     [POI_NAME]: obj[POI_NAME] ?? obj.name,
                 },
             });
-            return res;
-        }, []);
+        });
     });
+
+    return Array.from(featureByKey.values());
 }
 
 function filterByVisibleBounds(features, bounds) {

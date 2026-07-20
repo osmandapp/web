@@ -190,12 +190,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     }
 
     useEffect(() => {
-        if (ctx.selectedWptId?.id === itemId) {
-            setIsHovered(true);
-        } else {
-            setIsHovered(false);
-        }
-    }, [ctx.selectedWptId?.id]);
+        const hoverIds = ctx.selectedWptId?.ids ?? [ctx.selectedWptId?.id];
+        setIsHovered(ctx.selectedWptId?.show !== false && hoverIds.includes(itemId));
+    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.ids, ctx.selectedWptId?.show, itemId]);
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
