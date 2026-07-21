@@ -1,5 +1,3 @@
-# OsmAnd Competitor Analysis — Q2 2026
-
 ---
 title: Competitors Q2 2026
 ---
@@ -16,6 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
+# OsmAnd Competitor Analysis — Q2 2026
 **Period:** April 1 – June 30, 2026
 
 | **Competitor Name** | **Key Updates Q2 2026** | **Pricing Changes Q2 2026** |
