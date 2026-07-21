@@ -65,6 +65,7 @@ export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
 export const ZOOM_TO_MAP = 17;
 export const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
 export const MATCHED_OBJECT_TYPE_CITY = 'City';
+export const MATCHED_OBJECT_TYPE_STREET = 'Street';
 
 export const searchTypeMap = {
     LOCATION: 'LOCATION',
@@ -105,8 +106,15 @@ export function getAdditionalMatchedAmenityObjects(matchedObjects) {
         : [];
 }
 
-export function getFirstMatchedCityObject(matchedObjects) {
-    return matchedObjects?.find((obj) => obj?.type === MATCHED_OBJECT_TYPE_CITY) ?? null;
+export function getFirstMatchedPoiTypeLocationObject(matchedObjects) {
+    return (
+        matchedObjects?.find(
+            (obj) =>
+                obj?.type === MATCHED_OBJECT_TYPE_CITY ||
+                obj?.type === MATCHED_OBJECT_TYPE_STREET ||
+                obj?.type === MATCHED_OBJECT_TYPE_AMENITY
+        ) ?? null
+    );
 }
 
 export function getMatchedAmenityProperties(obj) {

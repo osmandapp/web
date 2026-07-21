@@ -23,7 +23,7 @@ import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } f
 import {
     FAVORITE_HIT_GROUP_ID,
     getAdditionalMatchedAmenityObjects,
-    getFirstMatchedCityObject,
+    getFirstMatchedPoiTypeLocationObject,
     getMatchedAmenityProperties,
     getObjIdSearch,
     searchTypeMap,
@@ -168,13 +168,19 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
     const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
-    const matchedAmenityObjects = getAdditionalMatchedAmenityObjects(matchedObjects);
-    const matchedCityObject =
-        item.properties?.[CATEGORY_TYPE] === searchTypeMap.POI_TYPE ? getFirstMatchedCityObject(matchedObjects) : null;
+    const isPoiTypeResult = item.properties?.[CATEGORY_TYPE] === searchTypeMap.POI_TYPE;
+    const matchedAmenityObjects = isPoiTypeResult ? [] : getAdditionalMatchedAmenityObjects(matchedObjects);
+    const matchedPoiTypeLocationObject = isPoiTypeResult ? getFirstMatchedPoiTypeLocationObject(matchedObjects) : null;
     const matchedNameObjects = [
         ...matchedAmenityObjects.map((obj) => ({ obj, name: getMatchedAmenityName(obj), onClick: openMatchedAmenity })),
-        ...(matchedCityObject
-            ? [{ obj: matchedCityObject, name: getMatchedCityName(matchedCityObject), onClick: openMatchedObjectOnMap }]
+        ...(matchedPoiTypeLocationObject
+            ? [
+                  {
+                      obj: matchedPoiTypeLocationObject,
+                      name: getMatchedObjectName(matchedPoiTypeLocationObject),
+                      onClick: openMatchedObjectOnMap,
+                  },
+              ]
             : []),
     ].filter(({ name }) => name);
     const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
@@ -222,7 +228,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         return getPropsFromSearchResultItem(getMatchedAmenityProperties(obj), t).name;
     }
 
-    function getMatchedCityName(obj) {
+    function getMatchedObjectName(obj) {
         return obj?.name ?? obj?.[CATEGORY_NAME] ?? obj?.[POI_NAME];
     }
 
@@ -335,7 +341,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             // click on category
             const category = item.properties['web_keyName'];
             if (category) {
-                moveToMatchedCity();
+                moveToMatchedPoiTypeLocation();
                 return navigateToSearchResults({ type: category }, backToSearchResultsState);
             } else {
                 // search by brand
@@ -347,18 +353,22 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                         brandType = `${brandType}:${brandRes.lang}`;
                     }
                 }
-                moveToMatchedCity();
+                moveToMatchedPoiTypeLocation();
                 return navigateToSearchResults({ type: brandType }, backToSearchResultsState);
             }
         }
     }
 
-    function moveToMatchedCity() {
-        if (matchedCityObject && Number.isFinite(matchedCityObject.lat) && Number.isFinite(matchedCityObject.lon)) {
+    function moveToMatchedPoiTypeLocation() {
+        if (
+            matchedPoiTypeLocationObject &&
+            Number.isFinite(matchedPoiTypeLocationObject.lat) &&
+            Number.isFinite(matchedPoiTypeLocationObject.lon)
+        ) {
             ctx.setZoomToCoords({
-                lat: matchedCityObject.lat,
-                lon: matchedCityObject.lon,
-                bbox: matchedCityObject[BBOX_LAT_LON],
+                lat: matchedPoiTypeLocationObject.lat,
+                lon: matchedPoiTypeLocationObject.lon,
+                bbox: matchedPoiTypeLocationObject[BBOX_LAT_LON],
             });
         }
     }
