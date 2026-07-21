@@ -414,6 +414,11 @@
     }
 }
 
+.categoryRow,
+.featureRow {
+    scroll-margin-top: 148px !important;
+}
+
 .featureRow .featureCell {
     position: relative;
     padding: 12px 0px 12px;
@@ -542,8 +547,8 @@
 }
 
 .stickyBarOldPrice {
-    color: #666 !important;
-    font-size: 13px !important;
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 140% !important;
     text-decoration: line-through !important;
@@ -551,8 +556,8 @@
 
 .stickyBarNewPrice {
     color: #237bff !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
     line-height: 140% !important;
 }
 
@@ -571,4 +576,63 @@
     width: auto !important;
     align-self: auto !important;
     padding: 12px 8px !important;
+}
+
+.stickyBarPaywallItem {
+    display: flex !important;
+    height: 56px !important;
+    padding: 9px 10px !important;
+    align-items: center !important;
+    gap: 32px !important;
+    flex: 1 0 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.25) !important;
+    border-radius: 13px !important;
+    background: #fff !important;
+    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.22) !important;
+    box-sizing: border-box !important;
+}
+
+.stickyBarPaywallItemContent {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex: 1 0 0 !important;
+    min-width: 0 !important;
+}
+
+.stickyBarPaywallDesc {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+}
+
+.stickyBarPaywallPrices {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-shrink: 0 !important;
+}
+
+.stickyBarPaywallPriceCol {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.stickyBarPaywallPriceLabel {
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+}
+
+.stickyBarPaywallDivider {
+    width: 1px !important;
+    align-self: stretch !important;
+    background: #e6e6e6 !important;
+}
+
+.stickyBarPaywallBtns {
+    display: flex !important;
+    gap: 10px !important;
 }

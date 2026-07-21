@@ -25,7 +25,7 @@ const STICKY_PRODUCTS = [
     },
 ];
 
-export default function StickyBar({ visible, testMode, updateCardPrices, setUpdateCardPrices }) {
+export default function StickyBarPricingPage({ visible, testMode, updateCardPrices, setUpdateCardPrices }) {
     const [purchaseObjs, setPurchaseObjs] = useState({});
 
     useEffect(() => {

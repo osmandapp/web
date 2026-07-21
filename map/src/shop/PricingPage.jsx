@@ -1,6 +1,7 @@
 import { Box, CircularProgress, Link, Typography } from '@mui/material';
 import HeaderMenu from '../frame/components/header/HeaderMenu';
 import React, { Suspense, useContext, useEffect, useRef, useState } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation, Trans } from 'react-i18next';
@@ -9,7 +10,8 @@ import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { updatePrices } from '../login/fs/FastSpringHelper';
 import { getAccountInfo } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
-import StickyBar from './StickyBar';
+import StickyBarPricingPage from './StickyBarPricingPage';
+import StickyBarPaywall from './StickyBarPaywall';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
 
@@ -17,6 +19,12 @@ export default function PricingPage() {
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
+
+    const location = useLocation();
+    const [searchParams] = useSearchParams();
+
+    const isPaywall = searchParams.get('source') === 'pro';
+    const paywallFeatureId = location.hash?.slice(1) || null;
 
     const [selectedProductType, setSelectedProductType] = useState('');
     const [purchasePriceMap, setPurchasePriceMap] = useState([]);
@@ -29,6 +37,12 @@ export default function PricingPage() {
     const [stickyVisible, setStickyVisible] = useState(false);
 
     const cardBoxRef = useRef(null);
+    const scrollContainerRef = useRef(null);
+
+    function scrollToTop() {
+        scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -96,13 +110,24 @@ export default function PricingPage() {
     return (
         <Box>
             <HeaderMenu />
-            <StickyBar
-                visible={stickyVisible}
-                testMode={useTestMode}
-                updateCardPrices={updateCardPrices}
-                setUpdateCardPrices={setUpdateCardPrices}
-            />
-            <Box sx={{ overflowY: 'auto', maxHeight: `100%` }}>
+            {isPaywall ? (
+                <StickyBarPaywall
+                    visible={stickyVisible}
+                    testMode={useTestMode}
+                    updateCardPrices={updateCardPrices}
+                    setUpdateCardPrices={setUpdateCardPrices}
+                    featureId={paywallFeatureId}
+                    onSeeAllPlans={scrollToTop}
+                />
+            ) : (
+                <StickyBarPricingPage
+                    visible={stickyVisible}
+                    testMode={useTestMode}
+                    updateCardPrices={updateCardPrices}
+                    setUpdateCardPrices={setUpdateCardPrices}
+                />
+            )}
+            <Box ref={scrollContainerRef} sx={{ overflowY: 'auto', maxHeight: `100%` }}>
                 <Box className={styles.pricingBox}>
                     <Typography className={styles.pricingTitle} onClick={clickHandler}>
                         {`${t('web:label_pricing')}${useTestMode ? ' TEST MODE' : ''}`}
