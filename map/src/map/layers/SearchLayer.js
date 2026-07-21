@@ -586,11 +586,17 @@ function createSearchMarkerFeatures(features) {
 }
 
 function getFeatureKey(feature) {
-    return feature?.properties?.[POI_ID] ?? getObjIdSearch(feature);
+    const coord = feature.geometry.coordinates;
+    const name = feature.properties?.[POI_NAME] ?? feature.properties?.name ?? feature.properties?.[CATEGORY_NAME];
+    return feature?.properties?.[POI_ID] ?? formatSearchMarkerKey(coord[1], coord[0], name);
 }
 
 function getMatchedAmenityKey(obj) {
-    return obj[POI_ID] ?? `${obj.lat.toFixed(6)},${obj.lon.toFixed(6)}:${obj[POI_NAME] ?? obj.name}`;
+    return obj[POI_ID] ?? formatSearchMarkerKey(obj.lat, obj.lon, obj[POI_NAME] ?? obj.name);
+}
+
+function formatSearchMarkerKey(lat, lon, name) {
+    return `${lat.toFixed(6)},${lon.toFixed(6)}:${name ?? ''}`;
 }
 
 function addRelatedResultId(properties, resultId) {
