@@ -53,6 +53,11 @@ import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRe
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import {
+    getAdditionalMatchedAmenityObjects,
+    getMatchedAmenityProperties,
+    hasValidMatchedObjectCoords,
+} from '../../manager/SpatialSearchMatchedObjects';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 
@@ -63,9 +68,6 @@ export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
 export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
 
 export const ZOOM_TO_MAP = 17;
-export const MATCHED_OBJECT_TYPE_AMENITY = 'Amenity';
-export const MATCHED_OBJECT_TYPE_CITY = 'City';
-export const MATCHED_OBJECT_TYPE_STREET = 'Street';
 
 export const searchTypeMap = {
     LOCATION: 'LOCATION',
@@ -100,32 +102,6 @@ export function getObjIdSearch(obj) {
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
 }
 
-export function getAdditionalMatchedAmenityObjects(matchedObjects) {
-    return matchedObjects?.length > 1
-        ? matchedObjects.slice(1).filter((obj) => obj?.type === MATCHED_OBJECT_TYPE_AMENITY)
-        : [];
-}
-
-export function getFirstMatchedPoiTypeLocationObject(matchedObjects) {
-    return (
-        matchedObjects?.find(
-            (obj) =>
-                obj?.type === MATCHED_OBJECT_TYPE_CITY ||
-                obj?.type === MATCHED_OBJECT_TYPE_STREET ||
-                obj?.type === MATCHED_OBJECT_TYPE_AMENITY
-        ) ?? null
-    );
-}
-
-export function getMatchedAmenityProperties(obj) {
-    return {
-        ...obj,
-        [CATEGORY_TYPE]: obj[CATEGORY_TYPE] ?? searchTypeMap.POI,
-        [POI_NAME]: obj[POI_NAME] ?? obj.name ?? '',
-        name: obj.name ?? obj[POI_NAME],
-    };
-}
-
 // Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
 export function buildFavGroupMap(favoriteFeatures) {
     if (!favoriteFeatures?.length) return null;
@@ -155,11 +131,14 @@ function getBboxLatLngBounds(bbox) {
     ]);
 }
 
-function fitBboxIfPresent({ map, mtx, bbox }) {
+function fitBboxIfValid({ map, mtx, bbox }) {
     const bounds = getBboxLatLngBounds(bbox);
-    if (!map || !bounds?.isValid()) return false;
+    if (!map || !bounds?.isValid()) {
+        return false;
+    }
 
     map.fitBounds(bounds, fitBoundsOptions(mtx));
+
     return true;
 }
 
@@ -192,7 +171,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToCoords) {
-            if (!fitBboxIfPresent({ map, mtx, bbox: ctx.zoomToCoords.bbox })) {
+            if (!fitBboxIfValid({ map, mtx, bbox: ctx.zoomToCoords.bbox })) {
                 panToIfNeeded({ map, latlng: { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon }, ctx });
             }
             ctx.setZoomToCoords(null);
@@ -224,7 +203,9 @@ export default function SearchLayer() {
     // When favorites change (rename, edit, delete), refresh the favorites part of search results
     useEffect(() => {
         const query = ctx.searchQuery?.query;
-        if (!query || ctx.searchQuery?.type || !ctx.searchResult) return;
+        if (!query || ctx.searchQuery?.type || !ctx.searchResult) {
+            return;
+        }
 
         const favoriteFeatures = searchFavoriteFeatures({
             favorites: ctx.favorites,
@@ -292,7 +273,7 @@ export default function SearchLayer() {
                 pushMapView({ map, mtx, key: MAP_VIEW_SEARCH_RESULT });
             }
             const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
-            if (!fitBboxIfPresent({ map, mtx, bbox: ctx.moveToMapObj.properties?.[BBOX_LAT_LON] })) {
+            if (!fitBboxIfValid({ map, mtx, bbox: ctx.moveToMapObj.properties?.[BBOX_LAT_LON] })) {
                 panToIfNeeded({ map, latlng: { lat, lng }, ctx });
             }
             ctx.setMoveToMapObj(null);
@@ -405,9 +386,9 @@ export default function SearchLayer() {
 
     async function createSearchLayer({ objList }) {
         const visibleObjList = filterByVisibleBounds(objList, getVisibleBboxInfo(ctx, map)?.bounds);
-        const matchedAmenityFeatures = createMatchedAmenityFeatures(visibleObjList);
+        const searchMarkerFeatures = createSearchMarkerFeatures(visibleObjList);
         const innerCache = await createPoiCache({
-            poiList: [...visibleObjList, ...matchedAmenityFeatures],
+            poiList: searchMarkerFeatures,
             poiIconCache: ctx.poiIconCache,
         });
         updatePoiCache(ctx, innerCache);
@@ -417,7 +398,9 @@ export default function SearchLayer() {
         const latitude = center.lat;
         // FAVORITE and GPX_TRACK are user objects rendered by their own layers — skip map markers for them.
         const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK]);
-        const mapMarkerFeatures = visibleObjList.filter((f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE]));
+        const mapMarkerFeatures = searchMarkerFeatures.filter(
+            (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
+        );
 
         const { mainMarkers, secondaryMarkers } = clusterMarkers({
             places: mapMarkerFeatures,
@@ -459,27 +442,6 @@ export default function SearchLayer() {
             })
         );
 
-        const matchedAmenityMarkerLayers = await Promise.all(
-            matchedAmenityFeatures.map(async (obj) => {
-                const finalIconName = PoiManager.getIconNameForPoiType({
-                    iconKeyName: obj.properties[ICON_KEY_NAME],
-                    typeOsmTag: obj.properties[TYPE_OSM_TAG],
-                    typeOsmValue: obj.properties[TYPE_OSM_VALUE],
-                    iconName: obj.properties[POI_ICON_NAME],
-                });
-                const icon = await getPoiIcon(obj, innerCache, finalIconName);
-                const coord = obj.geometry.coordinates;
-                return new L.Marker(new L.LatLng(coord[1], coord[0]), {
-                    ...obj.properties,
-                    idObj: getObjIdSearch(obj),
-                    title: obj.properties[POI_NAME],
-                    icon,
-                    svg: icon.options.svg,
-                    [FINAL_POI_ICON_NAME]: finalIconName,
-                });
-            })
-        );
-
         let simpleMarkersArr = new L.FeatureGroup();
 
         for (const place of secondaryMarkers) {
@@ -514,20 +476,7 @@ export default function SearchLayer() {
                 type: SEARCH_LAYER_ID,
             });
         });
-        matchedAmenityMarkerLayers.forEach((marker) => {
-            addMarkerTooltip({
-                marker,
-                setSelectedId: ctx.setSelectedWptId,
-                mainStyle: true,
-                text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
-                latlng: marker._latlng,
-                iconSize: DEFAULT_ICON_SIZE,
-                map,
-                ctx,
-                type: SEARCH_LAYER_ID,
-            });
-        });
-        const layers = [...mainMarkersLayers, ...matchedAmenityMarkerLayers, ...simpleMarkersArr.getLayers()];
+        const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
 
         if (layers.length) {
             return L.featureGroup(layers, {
@@ -589,39 +538,66 @@ function filterByVisibleLevel(features, spatialSearch, visibleLevel) {
     return (features ?? []).filter((f) => (f?.properties?.[WEB_VISIBLE_LEVEL] ?? 0) <= visibleLevel);
 }
 
-function createMatchedAmenityFeatures(features) {
+function createSearchMarkerFeatures(features) {
+    const markerFeatures = (features ?? []).map((feature) => ({
+        ...feature,
+        properties: { ...(feature.properties ?? {}) },
+    }));
     const featureByKey = new Map();
 
-    (features ?? []).forEach((feature) => {
-        const hoverIdObj = getObjIdSearch(feature);
-        // The first matched object is represented by the main search result marker.
+    markerFeatures.forEach((feature) => {
+        const key = getFeatureKey(feature);
+        if (key) {
+            featureByKey.set(key, feature);
+        }
+    });
+
+    markerFeatures.forEach((feature) => {
+        const resultId = getObjIdSearch(feature);
         getAdditionalMatchedAmenityObjects(feature?.properties?.[MATCHED_OBJECTS]).forEach((obj) => {
-            if (!Number.isFinite(obj.lat) || !Number.isFinite(obj.lon)) {
+            if (!hasValidMatchedObjectCoords(obj)) {
                 return;
             }
 
-            const key = obj[POI_ID] ?? `${obj.lat.toFixed(6)},${obj.lon.toFixed(6)}:${obj[POI_NAME] ?? obj.name}`;
+            const key = getMatchedAmenityKey(obj);
             const existing = featureByKey.get(key);
             if (existing) {
-                existing.properties.hoverIdObjs.push(hoverIdObj);
+                addRelatedResultId(existing.properties, resultId);
                 return;
             }
 
-            featureByKey.set(key, {
+            const matchedFeature = {
                 type: 'Feature',
                 geometry: {
                     type: 'Point',
                     coordinates: [obj.lon, obj.lat],
                 },
                 properties: {
-                    ...getMatchedAmenityProperties(obj),
-                    hoverIdObjs: [hoverIdObj],
+                    ...getMatchedAmenityProperties(obj, searchTypeMap.POI),
                 },
-            });
+            };
+            addRelatedResultId(matchedFeature.properties, resultId);
+            featureByKey.set(key, matchedFeature);
+            markerFeatures.push(matchedFeature);
         });
     });
 
-    return Array.from(featureByKey.values());
+    return markerFeatures;
+}
+
+function getFeatureKey(feature) {
+    return feature?.properties?.[POI_ID] ?? getObjIdSearch(feature);
+}
+
+function getMatchedAmenityKey(obj) {
+    return obj[POI_ID] ?? `${obj.lat.toFixed(6)},${obj.lon.toFixed(6)}:${obj[POI_NAME] ?? obj.name}`;
+}
+
+function addRelatedResultId(properties, resultId) {
+    if (resultId == null) return;
+    const ids = new Set(properties.relatedResultIds ?? []);
+    ids.add(resultId);
+    properties.relatedResultIds = Array.from(ids);
 }
 
 function filterByVisibleBounds(features, bounds) {

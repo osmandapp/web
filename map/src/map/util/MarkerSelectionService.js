@@ -150,6 +150,22 @@ function restoreUpdatedLayers(updatedLayersRef) {
     }
 }
 
+function clearHoverMarkers(ctx, map) {
+    restoreUpdatedLayers(ctx.selectedUpdatedLayerRef);
+    if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+        map.removeLayer(ctx.selectedCreatedLayerRef.current);
+        ctx.selectedCreatedLayerRef.current = null;
+    }
+}
+
+function applyHoverUpdateMarker(map, layer, markerData) {
+    if (!layer || !markerData || !map.hasLayer(layer)) {
+        return null;
+    }
+    applySelectedWithUpdateMarker(layer, markerData);
+    return layer;
+}
+
 // Shows an outline ring around a point hovered on the map
 export function applyHoverOutline({ ctx, map, layer = null, latlng = null, shape, color, size }) {
     if (!ctx || !map) {
@@ -233,7 +249,9 @@ export function applyDirectionPin({ ctx, map, latlng, markerData }) {
 // Removes the current selected/hover pin and restores hidden markers.
 // The created pin is kept only if its idObj still matches the current selectedWpt id.
 export function resetSelectedPin({ ctx, map, force = false }) {
-    if (!ctx || !map) return;
+    if (!ctx || !map) {
+        return;
+    }
 
     restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
 
@@ -250,22 +268,20 @@ export function resetSelectedPin({ ctx, map, force = false }) {
 }
 
 export function applySelectedPins({ ctx, map, items }) {
-    if (!ctx || !map || !items?.length) return [];
-
-    restoreUpdatedLayers(ctx.selectedUpdatedLayerRef);
-    if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
-        map.removeLayer(ctx.selectedCreatedLayerRef.current);
-        ctx.selectedCreatedLayerRef.current = null;
+    if (!ctx || !map || !items?.length) {
+        return [];
     }
 
-    const selectedLayers = [];
-    items.forEach(({ layer, markerData }) => {
-        if (!layer || !markerData || !map.hasLayer(layer)) {
-            return;
-        }
-        applySelectedWithUpdateMarker(layer, markerData);
-        selectedLayers.push(layer);
-    });
+    clearHoverMarkers(ctx, map);
+
+    const selectedLayers = items
+        .map(({ layer, markerData }) => applyHoverUpdateMarker(map, layer, markerData))
+        .filter(Boolean);
+
+    if (!selectedLayers.length) {
+        ctx.selectedUpdatedLayerRef.current = null;
+        return [];
+    }
 
     ctx.selectedUpdatedLayerRef.current = selectedLayers;
     updateMarkerZIndex(new L.FeatureGroup(selectedLayers), SELECTED_MARKER_Z_INDEX);
@@ -277,7 +293,9 @@ export function applySelectedPins({ ctx, map, items }) {
 // isSelection=true: creates a new separate pin on top of the map and hides nearby markers.
 // isSelection=false (hover): updates the existing marker icon in-place.
 export function applySelectedPin({ ctx, map, layer = null, latlng = null, markerData, isSelection = false }) {
-    if (!ctx || !map || !markerData) return null;
+    if (!ctx || !map || !markerData) {
+        return null;
+    }
 
     const ll = latlng ?? layer?.getLatLng();
     if (!ll) return null;
@@ -286,12 +304,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         resetSelectedPin({ ctx, map, force: true });
         ctx.selectedHiddenLayersRef.current = [];
     } else {
-        // On hover: restore any previously updated icon and remove any previously created hover pin.
-        restoreUpdatedLayers(ctx.selectedUpdatedLayerRef);
-        if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
-            map.removeLayer(ctx.selectedCreatedLayerRef.current);
-            ctx.selectedCreatedLayerRef.current = null;
-        }
+        clearHoverMarkers(ctx, map);
     }
 
     let selectedLayer;
@@ -304,9 +317,8 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         selectedLayer.getElement().setAttribute('id', `se-selected-marker-${layer?.options?.name}-${markerColor}`);
         hideMarkersNearPin(map, ctx);
     } else if (layer && map.hasLayer(layer)) {
-        applySelectedWithUpdateMarker(layer, markerData);
-        ctx.selectedUpdatedLayerRef.current = layer;
-        selectedLayer = layer;
+        selectedLayer = applyHoverUpdateMarker(map, layer, markerData);
+        ctx.selectedUpdatedLayerRef.current = selectedLayer;
     } else {
         // Fallback: layer is not on the map — create a new pin at the given latlng.
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);

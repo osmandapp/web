@@ -20,27 +20,18 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import {
-    FAVORITE_HIT_GROUP_ID,
-    getAdditionalMatchedAmenityObjects,
-    getFirstMatchedPoiTypeLocationObject,
-    getMatchedAmenityProperties,
-    getObjIdSearch,
-    searchTypeMap,
-} from '../../../map/layers/SearchLayer';
+import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
-    BBOX_LAT_LON,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     CITY,
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
-    MATCHED_OBJECTS,
-    POI_ID,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -146,8 +137,12 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
 }
 
 function getTrackInfo(name, listFiles, unitsSettings, t) {
-    if (!listFiles || !unitsSettings) return '';
+    if (!listFiles || !unitsSettings) {
+        return '';
+    }
+
     const file = listFiles.uniqueFiles?.find((f) => f.name === name);
+
     return getTrackInfoText(file, unitsSettings, t);
 }
 
@@ -167,70 +162,26 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const [showMatched, setShowMatched] = useState(false);
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
-    const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
-    const isPoiTypeResult = item.properties?.[CATEGORY_TYPE] === searchTypeMap.POI_TYPE;
-    const matchedAmenityObjects = isPoiTypeResult ? [] : getAdditionalMatchedAmenityObjects(matchedObjects);
-    const matchedPoiTypeLocationObject = isPoiTypeResult ? getFirstMatchedPoiTypeLocationObject(matchedObjects) : null;
-    const matchedNameObjects = [
-        ...matchedAmenityObjects.map((obj) => ({ obj, name: getMatchedAmenityName(obj), onClick: openMatchedAmenity })),
-        ...(matchedPoiTypeLocationObject
-            ? [
-                  {
-                      obj: matchedPoiTypeLocationObject,
-                      name: getMatchedObjectName(matchedPoiTypeLocationObject),
-                      onClick: openMatchedObjectOnMap,
-                  },
-              ]
-            : []),
-    ].filter(({ name }) => name);
-    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
-    function openMatchedObject(obj) {
-        ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon, bbox: obj[BBOX_LAT_LON] });
-        setShowMatched(false);
-    }
-
-    function openMatchedObjectOnMap(event, obj) {
-        event.stopPropagation();
-        openMatchedObject(obj);
-    }
-
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
     const backToSearchResultsState = { state: { backToSearchResults: true } };
+    const { matchedObjects, matchedNameObjects, matchedDialogObjects, moveToMatchedPoiTypeLocation } =
+        createSearchMatchedObjectActions({
+            item,
+            t,
+            ctx,
+            navigate,
+            recentSaver,
+            setShowMatched,
+            formatSearchResultProperties: getPropsFromSearchResultItem,
+            navigateToPoi,
+            objectSearchType: OBJECT_SEARCH,
+            poiObjectsKey: POI_OBJECTS_KEY,
+            poiTypeCategory: searchTypeMap.POI_TYPE,
+        });
+    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
 
     const itemId = getObjIdSearch(item);
-
-    function openMatchedAmenity(event, obj) {
-        event.stopPropagation();
-        if (!Number.isFinite(obj?.lat) || !Number.isFinite(obj?.lon)) return;
-
-        const options = getMatchedAmenityProperties(obj);
-        const id = obj[POI_ID] ?? `${obj.lat},${obj.lon}`;
-        const poi = {
-            key: id,
-            options,
-            latlng: new LatLng(obj.lat, obj.lon),
-        };
-
-        ctx.setCurrentObjectType(OBJECT_SEARCH);
-        ctx.setSelectedPoiObj({ ...poi });
-        ctx.setSelectedWpt({ poi, id });
-        recentSaver(POI_OBJECTS_KEY, poi);
-        ctx.setMoveToMapObj({
-            type: 'Feature',
-            geometry: { type: 'Point', coordinates: [obj.lon, obj.lat] },
-            properties: options,
-        });
-        navigateToPoi({ poi }, navigate);
-    }
-
-    function getMatchedAmenityName(obj) {
-        return getPropsFromSearchResultItem(getMatchedAmenityProperties(obj), t).name;
-    }
-
-    function getMatchedObjectName(obj) {
-        return obj?.name ?? obj?.[CATEGORY_NAME] ?? obj?.[POI_NAME];
-    }
 
     function handleMouseEnter() {
         if (itemId !== null) {
@@ -251,9 +202,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     }
 
     useEffect(() => {
-        const hoverIds = ctx.selectedWptId?.ids ?? [ctx.selectedWptId?.id];
+        const hoverIds = [ctx.selectedWptId?.id, ...(ctx.selectedWptId?.relatedResultIds ?? [])];
         setIsHovered(ctx.selectedWptId?.show !== false && hoverIds.includes(itemId));
-    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.ids, ctx.selectedWptId?.show, itemId]);
+    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.relatedResultIds, ctx.selectedWptId?.show, itemId]);
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
@@ -359,20 +310,6 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         }
     }
 
-    function moveToMatchedPoiTypeLocation() {
-        if (
-            matchedPoiTypeLocationObject &&
-            Number.isFinite(matchedPoiTypeLocationObject.lat) &&
-            Number.isFinite(matchedPoiTypeLocationObject.lon)
-        ) {
-            ctx.setZoomToCoords({
-                lat: matchedPoiTypeLocationObject.lat,
-                lon: matchedPoiTypeLocationObject.lon,
-                bbox: matchedPoiTypeLocationObject[BBOX_LAT_LON],
-            });
-        }
-    }
-
     function addInfo() {
         return info ?? '';
     }
@@ -427,7 +364,11 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             >
                 <ListItemText>
                     <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                    {(info || type || matchedObjects.length > 1 || showPropertiesDumpIcon) && (
+                    {(info ||
+                        type ||
+                        matchedNameObjects.length > 0 ||
+                        matchedObjects.length > 1 ||
+                        showPropertiesDumpIcon) && (
                         <MenuItemWithLines className={styles.placeTypes} name={placeDetails} maxLines={4}>
                             {distance > 0 && (
                                 <span style={{ display: 'inline-flex' }}>
@@ -439,8 +380,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     />
                                 </span>
                             )}
-                            {matchedNameObjects.map(({ obj, name, onClick }, i) => (
-                                <React.Fragment key={obj[POI_ID] ?? `${obj.type}-${obj.lat}-${obj.lon}-${i}`}>
+                            {matchedNameObjects.map(({ key, name, onClick, onKeyDown }, i) => (
+                                <React.Fragment key={key}>
                                     {hasTextBeforeMatchedName(i) && (
                                         <Typography component="span" className={styles.placeDistance}>
                                             {' · '}
@@ -449,7 +390,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     <Typography
                                         component="span"
                                         className={styles.matchedObjectName}
-                                        onClick={(e) => onClick(e, obj)}
+                                        role="button"
+                                        tabIndex={0}
+                                        onClick={onClick}
+                                        onKeyDown={onKeyDown}
                                     >
                                         {name}
                                     </Typography>
@@ -486,14 +430,14 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             {showMatched && (
                 <Dialog open={true} onClose={() => setShowMatched(false)} onClick={(e) => e.stopPropagation()}>
                     <DialogTitle className={dialogStyles.title}>Matched objects ({matchedObjects.length})</DialogTitle>
-                    {matchedObjects.map((obj, i) => (
+                    {matchedDialogObjects.map(({ key, obj, onClick }) => (
                         <DefaultItem
-                            key={i}
+                            key={key}
                             icon={<LocationIcon />}
                             className={styles.matchedItem}
                             name={obj.name}
                             additionalInfo={`${obj.lat?.toFixed(5)}, ${obj.lon?.toFixed(5)}`}
-                            onClick={() => openMatchedObject(obj)}
+                            onClick={onClick}
                         />
                     ))}
                 </Dialog>
