@@ -385,7 +385,15 @@ export function addMarkerTooltip({
 
     marker.on('mouseover', () => {
         removeTooltip(map, tooltipRef);
-        setSelectedId?.({ id: marker.options.idObj, show: true, type, hoverFromMap: true });
+        const relatedResultIds = (marker.options.relatedResultIds ?? []).filter((id) => id != null);
+        setSelectedId?.({
+            id: marker.options.idObj,
+            relatedResultIds,
+            show: true,
+            type,
+            hoverFromMap: true,
+            hoverLatlng: marker.getLatLng?.(),
+        });
         if (text) {
             const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
             tooltipRef.current = createTooltip(Utils.truncateText(text, TOOLTIP_MAX_LENGTH), latlng, { offset });
@@ -395,7 +403,9 @@ export function addMarkerTooltip({
 
     marker.on('mouseout', (event) => {
         if (event.originalEvent) {
-            if (!mainStyle && marker.options.selected) return;
+            if (!mainStyle && marker.options.selected) {
+                return;
+            }
             removeTooltip(map, tooltipRef);
             setSelectedId?.({ id: -1, show: false, type });
         }

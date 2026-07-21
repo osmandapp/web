@@ -20,7 +20,8 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
+import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import {
@@ -31,7 +32,6 @@ import {
     CITY,
     EN_NAME,
     MAIN_CATEGORY_KEY_NAME,
-    MATCHED_OBJECTS,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -137,8 +137,12 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
 }
 
 function getTrackInfo(name, listFiles, unitsSettings, t) {
-    if (!listFiles || !unitsSettings) return '';
+    if (!listFiles || !unitsSettings) {
+        return '';
+    }
+
     const file = listFiles.uniqueFiles?.find((f) => f.name === name);
+
     return getTrackInfoText(file, unitsSettings, t);
 }
 
@@ -158,16 +162,24 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     const [showMatched, setShowMatched] = useState(false);
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
-    const matchedObjects = item.properties?.[MATCHED_OBJECTS] ?? [];
-    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
-    function openMatchedObject(obj) {
-        ctx.setZoomToCoords({ lat: obj.lat, lon: obj.lon });
-        setShowMatched(false);
-    }
-
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
     const backToSearchResultsState = { state: { backToSearchResults: true } };
+    const { matchedObjects, matchedNameObjects, matchedDialogObjects, moveToMatchedPoiTypeLocation } =
+        createSearchMatchedObjectActions({
+            item,
+            t,
+            ctx,
+            navigate,
+            recentSaver,
+            setShowMatched,
+            formatSearchResultProperties: getPropsFromSearchResultItem,
+            navigateToPoi,
+            objectSearchType: OBJECT_SEARCH,
+            poiObjectsKey: POI_OBJECTS_KEY,
+            poiTypeCategory: searchTypeMap.POI_TYPE,
+        });
+    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
 
     const itemId = getObjIdSearch(item);
 
@@ -190,12 +202,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     }
 
     useEffect(() => {
-        if (ctx.selectedWptId?.id === itemId) {
-            setIsHovered(true);
-        } else {
-            setIsHovered(false);
-        }
-    }, [ctx.selectedWptId?.id]);
+        const hoverIds = [ctx.selectedWptId?.id, ...(ctx.selectedWptId?.relatedResultIds ?? [])];
+        setIsHovered(ctx.selectedWptId?.show !== false && hoverIds.includes(itemId));
+    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.relatedResultIds, ctx.selectedWptId?.show, itemId]);
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
@@ -283,6 +292,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             // click on category
             const category = item.properties['web_keyName'];
             if (category) {
+                moveToMatchedPoiTypeLocation();
                 return navigateToSearchResults({ type: category }, backToSearchResultsState);
             } else {
                 // search by brand
@@ -294,6 +304,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                         brandType = `${brandType}:${brandRes.lang}`;
                     }
                 }
+                moveToMatchedPoiTypeLocation();
                 return navigateToSearchResults({ type: brandType }, backToSearchResultsState);
             }
         }
@@ -317,6 +328,12 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     function addCity() {
         if (!city) return '';
         return ` · ${city}`;
+    }
+
+    const placeDetails = `${addInfo()}${addType()}${addCity()}`;
+
+    function hasTextBeforeMatchedName(index) {
+        return index > 0 || Boolean(placeDetails || distance > 0);
     }
 
     if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
@@ -347,12 +364,12 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             >
                 <ListItemText>
                     <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                    {(info || type || matchedObjects.length > 1 || showPropertiesDumpIcon) && (
-                        <MenuItemWithLines
-                            className={styles.placeTypes}
-                            name={`${addInfo()}${addType()}${addCity()}`}
-                            maxLines={4}
-                        >
+                    {(info ||
+                        type ||
+                        matchedNameObjects.length > 0 ||
+                        matchedObjects.length > 1 ||
+                        showPropertiesDumpIcon) && (
+                        <MenuItemWithLines className={styles.placeTypes} name={placeDetails} maxLines={4}>
                             {distance > 0 && (
                                 <span style={{ display: 'inline-flex' }}>
                                     <Typography className={styles.placeDistance}>{' · '}</Typography>
@@ -363,6 +380,25 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     />
                                 </span>
                             )}
+                            {matchedNameObjects.map(({ key, name, onClick, onKeyDown }, i) => (
+                                <React.Fragment key={key}>
+                                    {hasTextBeforeMatchedName(i) && (
+                                        <Typography component="span" className={styles.placeDistance}>
+                                            {' · '}
+                                        </Typography>
+                                    )}
+                                    <Typography
+                                        component="span"
+                                        className={styles.matchedObjectName}
+                                        role="button"
+                                        tabIndex={0}
+                                        onClick={onClick}
+                                        onKeyDown={onKeyDown}
+                                    >
+                                        {name}
+                                    </Typography>
+                                </React.Fragment>
+                            ))}
                             {matchedObjects.length > 1 && (
                                 <span
                                     className={styles.matchedObjectsIcon}
@@ -394,14 +430,14 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             {showMatched && (
                 <Dialog open={true} onClose={() => setShowMatched(false)} onClick={(e) => e.stopPropagation()}>
                     <DialogTitle className={dialogStyles.title}>Matched objects ({matchedObjects.length})</DialogTitle>
-                    {matchedObjects.map((obj, i) => (
+                    {matchedDialogObjects.map(({ key, obj, onClick }) => (
                         <DefaultItem
-                            key={i}
+                            key={key}
                             icon={<LocationIcon />}
                             className={styles.matchedItem}
                             name={obj.name}
                             additionalInfo={`${obj.lat?.toFixed(5)}, ${obj.lon?.toFixed(5)}`}
-                            onClick={() => openMatchedObject(obj)}
+                            onClick={onClick}
                         />
                     ))}
                 </Dialog>

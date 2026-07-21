@@ -9,6 +9,7 @@ import {
 import {
     EXPLORE_PHOTO_ICON_SIZE,
     applySelectedPin,
+    applySelectedPins,
     applyHoverOutline,
     applyDirectionPin,
     resetSelectedPin,
@@ -67,13 +68,29 @@ function resolveLayers(getLayers, layersProp) {
 }
 
 function findLayerById(layers, id) {
-    if (!layers?.length || !id) return null;
-    return (
-        layers.find((l) => {
-            const opts = l?.options ?? {};
-            return opts.idObj === id || opts[POI_ID] === id;
-        }) ?? null
-    );
+    if (!layers?.length || id == null) {
+        return null;
+    }
+
+    return layers.find((l) => layerHasIdentity(l, id)) ?? null;
+}
+
+function findLayersByRelatedResultId(layers, id) {
+    if (!layers?.length || id == null) {
+        return [];
+    }
+
+    return layers.filter((l) => layerHasIdentity(l, id) || layerHasRelatedResultId(l, id));
+}
+
+function layerHasIdentity(layer, id) {
+    const opts = layer?.options ?? {};
+
+    return opts.idObj === id || opts[POI_ID] === id;
+}
+
+function layerHasRelatedResultId(layer, id) {
+    return (layer?.options?.relatedResultIds ?? []).includes(id);
 }
 
 export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map, zoom, move }) {
@@ -86,12 +103,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         ctx.selectedWptId?.id != null
             ? ctx.selectedWptId.id
             : null;
-
     useEffect(() => {
-        if (zoom === undefined || move === undefined) return;
+        if (zoom === undefined || move === undefined) {
+            return;
+        }
 
         if (ctx.selectedWpt?.id != null) return;
-        if (ctx.selectedWptId?.type !== type || ctx.selectedWptId?.show !== true) return;
+        if (ctx.selectedWptId?.type !== type || ctx.selectedWptId?.show !== true) {
+            return;
+        }
 
         ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
     }, [type, zoom, move]);
@@ -152,7 +172,12 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
     // ========== HOVER PIN ==========
     useEffect(() => {
-        if (!map || selectedObjId) return;
+        if (!map || selectedObjId) {
+            return;
+        }
+        if (ctx.selectedWptId?.type != null && ctx.selectedWptId.type !== type) {
+            return;
+        }
 
         if (!hoverId) {
             if (isAddFavoritePreviewActive(ctx)) {
@@ -167,23 +192,17 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
-        const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
+        const layers = resolveLayers(getLayers, layersProp);
+        const found = findLayerById(layers, hoverId);
+        const relatedLayers =
+            type === SEARCH_LAYER_ID && !ctx.selectedWptId?.hoverFromMap
+                ? findLayersByRelatedResultId(layers, hoverId)
+                : [];
 
         // Hover originating on the map: show an outline ring around the point instead of
         // replacing the marker with a full selected pin. List hover keeps the pin behavior below.
         if (ctx.selectedWptId?.hoverFromMap) {
-            // Secondary (simple dot) points across all layers get no hover outline.
-            if (found?.options?.simple) {
-                resetSelectedPin({ ctx, map });
-                return;
-            }
-
-            const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
-            if (latlng) {
-                applyHoverOutline({ ctx, map, latlng, ...resolveHoverOutlineStyle(found) });
-            } else {
-                resetSelectedPin({ ctx, map });
-            }
+            applyMapHoverOutline(found);
             return;
         }
 
@@ -195,13 +214,32 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         if (found) {
-            applyPinForLayer(found, false);
+            if (relatedLayers.length > 1) {
+                applyPinsForLayers(relatedLayers);
+            } else {
+                applyPinForLayer(found, false);
+            }
         } else if (latlng) {
             applyHoverPinFallback(latlng);
         } else if (type === TRANSPORT_STOPS_LAYER_ID) {
             resetSelectedPin({ ctx, map });
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp, ctx.addFavorite?.location, ctx.addFavorite?.editWpt]);
+
+    function applyMapHoverOutline(layer) {
+        // Secondary (simple dot) points across all layers get no hover outline.
+        if (layer?.options?.simple) {
+            resetSelectedPin({ ctx, map });
+            return;
+        }
+
+        const latlng = ctx.selectedWptId?.hoverLatlng ?? layer?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
+        if (latlng) {
+            applyHoverOutline({ ctx, map, latlng, ...resolveHoverOutlineStyle(layer) });
+        } else {
+            resetSelectedPin({ ctx, map });
+        }
+    }
 
     // Resolves the outline ring shape/color/size from the hovered layer (falls back to selectedWptId markerOptions).
     function resolveHoverOutlineStyle(layer) {
@@ -234,7 +272,8 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
         // Skip if this layer is already the active pin
         const currentRef = isSelection ? ctx.selectedCreatedLayerRef?.current : ctx.selectedUpdatedLayerRef?.current;
-        if (currentRef === layer) return;
+        const currentRefs = Array.isArray(currentRef) ? currentRef : currentRef ? [currentRef] : [];
+        if (currentRefs.includes(layer)) return;
 
         const photoUrl = layer.options?.photoUrl;
         if (photoUrl) {
@@ -243,19 +282,35 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         const markerData = buildMarkerData(layer, isSelection, type);
-        if (!markerData.iconHtml && layer.options?.simple) {
-            const props = ctx.selectedWptId?.obj?.properties;
-            markerData.iconHtml = iconHtmlFromIconName(
-                props?.[FINAL_POI_ICON_NAME] ??
-                    getIconNameForPoiType({
-                        iconKeyName: props?.[ICON_KEY_NAME],
-                        typeOsmTag: props?.[TYPE_OSM_TAG],
-                        typeOsmValue: props?.[TYPE_OSM_VALUE],
-                    })
-            );
-        }
+        fillSimpleMarkerIcon(markerData, layer);
 
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
+    }
+
+    function applyPinsForLayers(layers) {
+        const items = layers
+            .filter((layer) => layer?.getLatLng?.())
+            .map((layer) => {
+                const markerData = buildMarkerData(layer, false, type);
+                fillSimpleMarkerIcon(markerData, layer);
+                return { layer, markerData };
+            });
+        applySelectedPins({ ctx, map, items });
+    }
+
+    function fillSimpleMarkerIcon(markerData, layer) {
+        if (markerData.iconHtml || !layer.options?.simple) {
+            return;
+        }
+        const props = layer.options ?? ctx.selectedWptId?.obj?.properties;
+        markerData.iconHtml = iconHtmlFromIconName(
+            props?.[FINAL_POI_ICON_NAME] ??
+                getIconNameForPoiType({
+                    iconKeyName: props?.[ICON_KEY_NAME],
+                    typeOsmTag: props?.[TYPE_OSM_TAG],
+                    typeOsmValue: props?.[TYPE_OSM_VALUE],
+                })
+        );
     }
 
     function photoIconHtml(photoUrl) {
@@ -284,17 +339,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
         if (layer) {
             const markerData = buildMarkerData(layer, false, type);
-            if (!markerData.iconHtml && layer.options?.simple) {
-                const props = ctx.selectedWptId?.obj?.properties;
-                markerData.iconHtml = iconHtmlFromIconName(
-                    props?.[FINAL_POI_ICON_NAME] ??
-                        getIconNameForPoiType({
-                            iconKeyName: props?.[ICON_KEY_NAME],
-                            typeOsmTag: props?.[TYPE_OSM_TAG],
-                            typeOsmValue: props?.[TYPE_OSM_VALUE],
-                        })
-                );
-            }
+            fillSimpleMarkerIcon(markerData, layer);
             return markerData;
         }
 
