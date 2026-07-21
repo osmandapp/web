@@ -504,11 +504,11 @@ export default function TravelLayer() {
                         color: ctx.selectedTravelRoute.hover ? SELECTED_ROUTE_COLOR : layer.options.baseColor,
                         weight: ROUTE_WIDTH,
                     });
-                    layer.bringToFront();
                     if (id !== selectedRouteId) {
-                        let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === selectedRouteId);
-                        if (layer) {
-                            layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH });
+                        layer.bringToFront();
+                        const prevLayer = travelRoutes?.getLayers().find((l) => l.options.id === selectedRouteId);
+                        if (prevLayer) {
+                            prevLayer.setStyle({ color: prevLayer.options.baseColor, weight: ROUTE_WIDTH });
                         }
                         setSelectedRouteId(id);
                     }
