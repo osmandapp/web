@@ -166,6 +166,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
     // ========== HOVER PIN ==========
     useEffect(() => {
         if (!map || selectedObjId) return;
+        if (ctx.selectedWptId?.type != null && ctx.selectedWptId.type !== type) return;
 
         if (!hoverId) {
             if (isAddFavoritePreviewActive(ctx)) {
