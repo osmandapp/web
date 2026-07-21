@@ -87,7 +87,7 @@ When adding a point from OSM data, the relevant POI information is automatically
 
 - **Name** — A unique name within the group (*Required*).
 - **Address** and **Description** (*Optional*).
-- **Group** — Select from an existing [Favorite group](#manage-favorites) or create a new one. On Android, you can also select a subfolder within a group or create a new one.
+- **Group** — Select from an existing [Favorite group](#manage-favorites) or create a new one. On Android, you can also select a subfolder within a group or create a new one. Nested folders are displayed using their full path (for example, *Travel* / *Italy* / *Rome*).
 - **Visual customization** — Icon, color, shape can either match the default [group appearance](#change-group-appearance) or be customized individually.
 
 **NOTE:** If the Favorites layer is disabled in [Configure map](../map/configure-map-menu), adding a new favorite point automatically enables the layer to make the newly added favorite visible on the map.
@@ -268,18 +268,19 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_new_2.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Use the ***Three-dot menu*** next to each folder to manage groups of favorites:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
 - **<Translate android="true" ids="pin_folder"/>** — Pin the selected folder to keep it at the top of the favorites list for quicker access.
-- **<Translate android="true" ids="add_new_folder"/>** — Create a new subfolder inside the selected folder.
 - **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
+- **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
+- **<Translate android="true" ids="shared_string_move"/>** — Move the selected folder, including all favorite points and nested subfolders, to another folder. The current folder and its subfolders cannot be selected as the destination.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Remove from map markers** — Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
 - **<Translate android="true" ids="add_to_a_track"/>** — Add all favorite points from the selected folder to a track. This opens the track selection screen where you can choose or create a track.
-- **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
 
 </TabItem>
