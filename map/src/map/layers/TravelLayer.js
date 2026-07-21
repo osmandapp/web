@@ -325,14 +325,17 @@ export default function TravelLayer() {
                     geo.push(currentSegment);
                 }
                 route.properties.geo = geo;
-                const polyline = new L.Polyline(coords, {
-                    color: getActivityColor(route.properties.activity),
-                    weight: OPENED_TRACK_WIDTH,
-                    id: route.properties.id,
-                });
+                const color = getActivityColor(route.properties.activity);
+                const polylines = geo.map(
+                    (segment) =>
+                        new L.Polyline(
+                            segment.map((point) => [point.latitude, point.longitude]),
+                            { color, weight: OPENED_TRACK_WIDTH, id: route.properties.id }
+                        )
+                );
 
                 // the detailed line, its start/finish and waypoints live in one group, added/removed together
-                const layers = [polyline, ...startFinishMarkers(coords)];
+                const layers = [...polylines, ...startFinishMarkers(coords)];
                 if (track.wpts?.length > 0) {
                     // waypoints as interactive markers, same as cloud tracks
                     TrackLayerProvider.parseWpt({ points: track.wpts, layers, ctx, data: track, map });
@@ -342,7 +345,7 @@ export default function TravelLayer() {
 
                 // fit the whole track into view; restoreMapView() (on menu close) returns to the previous bbox.
                 // Skipped when we already fitted early using the simplified geometry.
-                const bounds = polyline.getBounds();
+                const bounds = L.latLngBounds(coords);
                 if (fit && bounds?.isValid()) {
                     applyZoomToFit({ map, mtx, bounds });
                 }
