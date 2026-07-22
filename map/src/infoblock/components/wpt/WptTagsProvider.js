@@ -52,7 +52,6 @@ const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 export const CUISINE_PREFIX = 'cuisine_';
-const ROUTE = 'route';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';
 export const WIKIDATA = 'wikidata';
@@ -61,10 +60,7 @@ const INSTAGRAM = 'instagram';
 export const OSM_PREFIX = 'osm_tag_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
-export const ICON_NAME_EXTENSION = 'icon';
 export const BACKGROUND_TYPE_EXTENSION = 'background';
-export const PROFILE_TYPE_EXTENSION = 'profile';
-export const ADDRESS_EXTENSION = 'address';
 export const NAME = 'name';
 export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
@@ -104,16 +100,7 @@ export const PARAM_FIELDS = 'fields=id,geometry,compass_angle,captured_at,camera
 
 export const TITLE = 'title';
 
-const HIDDEN_EXTENSIONS = [
-    COLOR_NAME_EXTENSION,
-    ICON_NAME_EXTENSION,
-    BACKGROUND_TYPE_EXTENSION,
-    PROFILE_TYPE_EXTENSION,
-    ADDRESS_EXTENSION,
-];
-
 const HIDDEN_EXTENSIONS_POI = [
-    ...HIDDEN_EXTENSIONS,
     ICON_KEY_NAME,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
@@ -245,10 +232,9 @@ async function getWptTags(obj, type, ctx) {
         }
 
         tags = filterWebKeys(remainingTags);
-        tags = await filterTagsByVisibility(tags);
+        const tagList = await filterTagsByVisibility(tags);
 
-        const groupedTags = groupLocalizedTags(tags);
-        for (const entry of groupedTags) {
+        for (const entry of tagList) {
             if (shouldSkipKey(entry.key)) {
                 continue;
             }
@@ -378,32 +364,6 @@ async function buildTagObj(key, value, lang, ctx, subtypeTag) {
     return tagObj;
 }
 
-function groupLocalizedTags(tags) {
-    const result = [];
-
-    Object.entries(tags).forEach(([key, value]) => {
-        if (typeof value === 'string') {
-            result.push({ key, value });
-            return;
-        }
-
-        const entries = Object.entries(value.localizations || {}).map(([k, v]) => {
-            const [base, lang] = k.split(':');
-            return lang ? { key: base, value: v, lang } : { key: base, value: v };
-        });
-
-        const mainTag = entries.find((t) => t.lang);
-        if (mainTag) {
-            const otherLangs = entries.filter((t) => t !== mainTag);
-            result.push({ ...mainTag, ...(otherLangs.length > 0 && { otherLangs }) });
-        } else if (entries.length > 0) {
-            result.push(entries[0]);
-        }
-    });
-
-    return result;
-}
-
 async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
     const entries = Object.entries(poiNameTags).map(([key, value]) => {
         const [base, lang] = key.split(':');
@@ -461,7 +421,7 @@ export async function addPoiTypeTag({
 }
 
 async function filterTagsByVisibility(tags) {
-    if (Object.keys(tags).length === 0) return tags;
+    if (Object.keys(tags).length === 0) return [];
     tags = Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
             key,
@@ -472,27 +432,7 @@ async function filterTagsByVisibility(tags) {
         apiCache: true,
     });
 
-    if (response?.data && typeof response.data === 'object' && !Array.isArray(response.data)) {
-        return response.data;
-    }
-
-    return fixTagsKeysFallback(tags);
-}
-
-function fixTagsKeysFallback(tags) {
-    let res = {};
-    for (const [key, value] of Object.entries(tags)) {
-        let newKey = key;
-        if (key === AMENITY_PREFIX + OPENING_HOURS) {
-            newKey = key.replace(AMENITY_PREFIX, '');
-        } else if (key.startsWith(AMENITY_PREFIX) || HIDDEN_EXTENSIONS.includes(key)) {
-            continue;
-        } else {
-            newKey = key.replace(OSM_PREFIX, '');
-        }
-        res[newKey] = value;
-    }
-    return res;
+    return Array.isArray(response?.data) ? response.data : [];
 }
 
 function filterWebKeys(tags) {
@@ -708,14 +648,7 @@ function getWikipediaURL(key, value) {
 }
 
 function shouldSkipKey(key) {
-    return (
-        key === 'idObj' ||
-        key === 'name' ||
-        key === 'subway_region' ||
-        key === 'note' ||
-        key === 'lang_yes' ||
-        key.includes(ROUTE)
-    );
+    return key === 'idObj';
 }
 
 export function openWikipediaContent(tag, setDevWikiContent) {
