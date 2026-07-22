@@ -284,6 +284,8 @@
     "dev_issues": "Issues",
     "dev_operations": "Operations",
     "dev_search_test": "Search Test",
+    "spatial_search_timeout_descr": "The search took too long and was interrupted. Please try again.",
+    "spatial_search_busy_descr": "The search server is busy. Please try again in a moment.",
     "dev_backup_maps": "Backup Maps",
     "plan_route": "Plan route",
     "create_track": "Create track",

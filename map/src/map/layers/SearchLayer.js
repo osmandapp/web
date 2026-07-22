@@ -301,6 +301,7 @@ export default function SearchLayer() {
                     locale: i18n.language,
                     baseSearch: searchData.baseSearch,
                     ...(spatialSearch ? { spatial: true } : {}),
+                    ...(spatialSearch && searchData.autocomplete ? { autocomplete: true } : {}),
                     ...getCurrentTimeParams(),
                 },
             });

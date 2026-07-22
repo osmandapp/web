@@ -79,7 +79,12 @@ export default function CustomInput({
         setIsFocused(true);
     }, [autoFocus]);
 
-    function search(value) {
+    function search(value, { autocomplete = false } = {}) {
+        if (!autocomplete && spatialSearchTimerRef.current) {
+            clearTimeout(spatialSearchTimerRef.current);
+            spatialSearchTimerRef.current = null;
+        }
+        ctx.setSearchAutocomplete(autocomplete);
         if (setSearchValue) {
             setSearchValue({
                 query: value,
@@ -153,7 +158,11 @@ export default function CustomInput({
                     if (type === SEARCH_TYPE_CATEGORY && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
                         search(formattingPoiType(nextValue));
                     } else if (ctx.spatialSearch && !type && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
-                        debouncer(() => search(nextValue), spatialSearchTimerRef, SPATIAL_SEARCH_DEBOUNCE_MS);
+                        debouncer(
+                            () => search(nextValue, { autocomplete: true }),
+                            spatialSearchTimerRef,
+                            SPATIAL_SEARCH_DEBOUNCE_MS
+                        );
                     }
                 }}
                 onKeyDown={(e) => handleKeyPress(e)}
