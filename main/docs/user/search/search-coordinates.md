@@ -114,7 +114,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 - *Input rules*. The coordinates consist of an MGRS zone, a square, and two more digits indicating east and north offsets.
 - *Most commonly used*. The MGRS format is widely used in military navigation and communications, and can also be useful for outdoor enthusiasts and hikers.
 
-### Swiss Grid {#swiss-grid}
+### Swiss Grid (Android only) {#swiss-grid}
 
 ![Search Coordinates Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -127,8 +127,30 @@ There are several ways to enter coordinates for the search. To use each of them,
     - CH1903+ includes corrections to account for shifts in coordinates caused by changes in tectonic movements in Switzerland.
 - *Most commonly used*. The Swiss Grid (CH1903) and Swiss Grid (CH1903+) formats are used in Switzerland for geodetic measurements, cartography, geographic information systems, and construction and engineering. These formats provide a local coordinate system specific to Switzerland.
 
+### Maidenhead Locator System (Android only) {#maidenhead-locator-system}
+
+![Search Coordinates Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. This is a geocode system primarily used by amateur radio operators. It encodes geographic locations into a short sequence of letters and digits, making it convenient for identifying positions and exchanging location information. An example of coordinates in Maidenhead format is KN29AS 19CX. The first pair of letters identifies a large field, followed by digits and additional letter pairs that increase the precision of the location. You can read more about the Maidenhead Locator System [here](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+- *Input rules*. The coordinates consist of alternating pairs of letters and digits. Longer locators provide higher positional accuracy.  
+- *Most commonly used*. The Maidenhead Locator System is widely used by amateur radio operators for station location, radio communication, and contests.
 
 For each profile separately you can set a different coordinate format. To do this, go to *General settings → [Coordinate format](../personal/profiles.md#units--formats)*.
+
+
+## Customize Coordinate Format (Android only) {#customize-coordinate-format}
+
+![Search Coordinates Android](@site/static/img/search/customising_format.webp) ![Search Coordinates Android](@site/static/img/search/searching_format.webp)
+
+You can customize the list of coordinate formats available for the current profile.  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+On this screen you can:  
+- Tap the *Edit* button to set the Primary coordinate format, reorder, or remove coordinate formats.
+- Tap + to add another coordinate format.
+- Open the ⋮ menu to restore the default list of coordinate formats or copy coordinate formats from another profile.
+
+When searching by coordinates, you can select a coordinate format from the Recent list or tap *Select other format* to browse all available coordinate systems. You can also search by coordinate system name or EPSG code.
 
 
 <!--
