@@ -538,6 +538,12 @@ export default function PoiLayer() {
                             setBbox(newBbox);
                             setPrevCategories(showPoiCategories);
                             setUseLimit(res.useLimit ?? false);
+                            if (res.oldSearch) {
+                                ctx.setNotification({
+                                    text: i18n.t('web:poi_spatial_fallback_alert'),
+                                    severity: 'warning',
+                                });
+                            }
                         } else {
                             clearPoiList();
                         }
