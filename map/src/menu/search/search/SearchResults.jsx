@@ -396,7 +396,7 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            {!params.type && (ctx.develFeatures || ctx.spatialSearch) && (
+            {!params.type && (
                 <SelectItemBoolean
                     title={t('search_try_spatial_search_beta')}
                     checked={!!ctx.spatialSearch}
