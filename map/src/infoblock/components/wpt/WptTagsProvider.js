@@ -60,12 +60,14 @@ const INSTAGRAM = 'instagram';
 export const OSM_PREFIX = 'osm_tag_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
+const ICON_NAME_EXTENSION = 'icon';
 export const BACKGROUND_TYPE_EXTENSION = 'background';
 export const NAME = 'name';
 export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
 const ORIGINAL_ICON = 'originalIcon';
-const SVG = 'svg';
+const MARKER_ICON_SVG = 'svg';
+const MARKER_OBJ_ID = 'idObj';
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
@@ -100,7 +102,7 @@ export const PARAM_FIELDS = 'fields=id,geometry,compass_angle,captured_at,camera
 
 export const TITLE = 'title';
 
-const HIDDEN_EXTENSIONS_POI = [
+const WEB_TAGS_TO_SKIP = [
     ICON_KEY_NAME,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
@@ -112,6 +114,7 @@ const HIDDEN_EXTENSIONS_POI = [
     POI_NAME,
     POI_ID,
     POI_OSM_URL,
+    MARKER_OBJ_ID,
 ];
 export const SEPARATOR = ';';
 
@@ -217,12 +220,12 @@ async function getWptTags(obj, type, ctx) {
         }
 
         const poiNameTags = {};
-        const remainingTags = {};
+        const mainTags = {};
         Object.entries(tags).forEach(([key, value]) => {
             if (key.startsWith(POI_NAME) && value) {
                 poiNameTags[key] = value;
             } else {
-                remainingTags[key] = value;
+                mainTags[key] = value;
             }
         });
 
@@ -231,17 +234,14 @@ async function getWptTags(obj, type, ctx) {
             res.push(poiNameTagObj);
         }
 
-        tags = filterWebKeys(remainingTags);
-        const tagList = await filterTagsByVisibility(tags);
+        tags = filterWebKeys(mainTags);
+        const tagList = await fetchVisibleTags(tags);
 
         for (const entry of tagList) {
-            if (shouldSkipKey(entry.key)) {
-                continue;
-            }
-            let tagObj = await buildTagObj(entry.key, entry.value, entry.lang, ctx, subtypeTag);
+            let tagObj = await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag });
 
             if (entry.otherLangs?.length) {
-                tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, true);
+                tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag);
             }
 
             if (tagObj.collapsable && tagObj.textPrefix === CUISINE) {
@@ -257,7 +257,7 @@ async function getWptTags(obj, type, ctx) {
     return { res, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function buildTagObj(key, value, lang, ctx, subtypeTag) {
+async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
     let tagObj = {};
     tagObj.key = key;
     if (key.includes(WIKIPEDIA)) {
@@ -375,22 +375,19 @@ async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
         return null;
     }
 
-    const tagObj = await buildTagObj(mainEntry.key, mainEntry.value, mainEntry.lang, ctx, subtypeTag);
+    const tagObj = await buildTagObj({ key: mainEntry.key, value: mainEntry.value, lang: mainEntry.lang, ctx, subtypeTag });
     const otherEntries = entries.filter((entry) => entry !== mainEntry);
     if (otherEntries.length > 0) {
-        tagObj.otherLangs = await buildOtherLangTags(otherEntries, ctx, subtypeTag, false);
+        tagObj.otherLangs = await buildOtherLangTags(otherEntries, ctx, subtypeTag);
     }
 
     return tagObj;
 }
 
-async function buildOtherLangTags(entries, ctx, subtypeTag, filterSkipped) {
+async function buildOtherLangTags(entries, ctx, subtypeTag) {
     const otherLangs = [];
     for (const entry of entries) {
-        if (filterSkipped && shouldSkipKey(entry.key)) {
-            continue;
-        }
-        otherLangs.push(await buildTagObj(entry.key, entry.value, entry.lang, ctx, subtypeTag));
+        otherLangs.push(await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag }));
     }
 
     return otherLangs;
@@ -420,7 +417,7 @@ export async function addPoiTypeTag({
     return tagObj;
 }
 
-async function filterTagsByVisibility(tags) {
+async function fetchVisibleTags(tags) {
     if (Object.keys(tags).length === 0) return [];
     tags = Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
@@ -428,7 +425,7 @@ async function filterTagsByVisibility(tags) {
             typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
         ])
     );
-    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-tags-visibility`, tags, {
+    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-visible-tags`, tags, {
         apiCache: true,
     });
 
@@ -439,10 +436,12 @@ function filterWebKeys(tags) {
     let res = {};
     for (const [key, value] of Object.entries(tags)) {
         if (
+            key.startsWith(WEB_PREFIX) ||
             key.startsWith(ALT_NAME) ||
-            HIDDEN_EXTENSIONS_POI.includes(key) ||
+            WEB_TAGS_TO_SKIP.includes(key) ||
             key.startsWith(ORIGINAL_ICON) ||
-            key === SVG
+            key === MARKER_ICON_SVG ||
+            key === ICON_NAME_EXTENSION
         ) {
             continue;
         }
@@ -647,10 +646,6 @@ function getWikipediaURL(key, value) {
     return value;
 }
 
-function shouldSkipKey(key) {
-    return key === 'idObj';
-}
-
 export function openWikipediaContent(tag, setDevWikiContent) {
     if (tag.key === WIKIPEDIA) {
         getWikipediaContent(tag).then((data) => {
@@ -738,7 +733,7 @@ function parseUrl(url, site) {
 }
 
 export function filterTag(tag) {
-    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key) && tag.key !== 'svg' && tag.key !== 'type';
+    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key) && tag.key !== MARKER_ICON_SVG && tag.key !== 'type';
 }
 
 export const otherImgTags = (tag) => {
