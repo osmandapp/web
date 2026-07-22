@@ -1,4 +1,3 @@
-import { apiGet } from '../../util/HttpApi';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL, searchCollator } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
@@ -29,17 +28,11 @@ import {
     WEB_VISIBLE_LEVEL,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
-import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType, searchCloudTrackFeatures, searchFavoriteFeatures } from '../../manager/SearchManager';
-import {
-    BBOX_COORDS_DECIMALS,
-    POI_LAYER_ID,
-    SEARCH_LAYER_ID,
-    showProcessingNotification,
-} from '../../manager/GlobalManager';
+import { POI_LAYER_ID, SEARCH_LAYER_ID, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import {
     findFeatureGroupById,
@@ -51,7 +44,7 @@ import {
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
-import { getCurrentTimeParams } from '../../util/Utils';
+import { searchByWordApi } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import {
     getAdditionalMatchedAmenityObjects,
@@ -289,21 +282,13 @@ export default function SearchLayer() {
         }
         const bbox = visible.bounds;
         try {
-            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
-                apiCache: true,
-                ...(spatialSearch ? { abortControllerKey: 'spatialSearch' } : {}),
-                params: {
-                    lat: searchData.latlng.lat,
-                    lon: searchData.latlng.lng,
-                    northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                    southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                    text: searchData.query,
-                    locale: i18n.language,
-                    baseSearch: searchData.baseSearch,
-                    ...(spatialSearch ? { spatial: true } : {}),
-                    ...(spatialSearch && searchData.autocomplete ? { autocomplete: true } : {}),
-                    ...getCurrentTimeParams(),
-                },
+            const response = await searchByWordApi({
+                latlng: searchData.latlng,
+                bbox,
+                query: searchData.query,
+                baseSearch: searchData.baseSearch,
+                spatial: spatialSearch,
+                abortControllerKey: spatialSearch ? 'spatialSearch' : null,
             });
             if (response?.ok) {
                 const data = await response.json();

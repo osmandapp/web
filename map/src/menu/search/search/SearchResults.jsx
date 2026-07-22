@@ -61,13 +61,12 @@ function getVisibleLevel(item) {
     return item?.properties?.[WEB_VISIBLE_LEVEL] ?? 0;
 }
 
-export function searchByWord(searchParams, ctx, loc, baseSearch = false, autocomplete = false) {
+export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
         engine: searchParams.engine,
         query: searchParams.query,
         latlng: { lat: loc.lat, lng: loc.lng },
         baseSearch,
-        autocomplete,
     });
 }
 
@@ -254,10 +253,6 @@ export default function SearchResults() {
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
-                const autocomplete = ctx.searchAutocomplete;
-                if (autocomplete) {
-                    ctx.setSearchAutocomplete(false);
-                }
                 if (params.type) {
                     searchByCategory(params, ctx, t);
                 } else {
@@ -266,7 +261,7 @@ export default function SearchResults() {
                     if (zoom < MIN_SEARCH_ZOOM) {
                         performBaseSearch(params, ctx, loc);
                     } else {
-                        searchByWord(params, ctx, loc, false, autocomplete);
+                        searchByWord(params, ctx, loc);
                     }
                 }
             }

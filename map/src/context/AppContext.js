@@ -177,8 +177,6 @@ export const AppContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState(null);
     const [searchVisibleLevel, setSearchVisibleLevel] = useState(0);
     const [forceSearch, setForceSearch] = useState(false);
-    // transient: next word search is a typing suggestion (autocomplete=true, fast server path)
-    const [searchAutocomplete, setSearchAutocomplete] = useState(false);
     const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
     const [moveToMapObj, setMoveToMapObj] = useState(null);
@@ -573,8 +571,6 @@ export const AppContextProvider = (props) => {
                 setSearchQuery,
                 forceSearch,
                 setForceSearch,
-                searchAutocomplete,
-                setSearchAutocomplete,
                 favorites,
                 setFavorites,
                 addFavorite,
