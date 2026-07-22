@@ -31,7 +31,6 @@ import {
     CATEGORY_TYPE,
     CITY,
     EN_NAME,
-    MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -39,7 +38,7 @@ import {
     TYPE,
     WEB_PREFIX,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
+import { getPoiParentCategory } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../manager/GlobalManager';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -289,23 +288,11 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                 navigateToPoi({ poi }, navigate);
             }
         } else {
-            // click on category
+            // click on category: both engines provide the canonical key (incl. brands)
             const category = item.properties['web_keyName'];
             if (category) {
                 moveToMatchedPoiTypeLocation();
                 return navigateToSearchResults({ type: category }, backToSearchResultsState);
-            } else {
-                // search by brand
-                let brandType = item.properties[CATEGORY_NAME];
-                let type = item.properties[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
-                if (type) {
-                    const brandRes = parseTagWithLang(type);
-                    if (brandRes.lang) {
-                        brandType = `${brandType}:${brandRes.lang}`;
-                    }
-                }
-                moveToMatchedPoiTypeLocation();
-                return navigateToSearchResults({ type: brandType }, backToSearchResultsState);
             }
         }
     }
