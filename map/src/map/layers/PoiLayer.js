@@ -425,6 +425,7 @@ export default function PoiLayer() {
                 lat: center.lat,
                 lon: center.lng,
                 baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
+                ...(ctx.spatialSearch ? { spatial: true, zoom: map.getZoom() } : {}),
                 ...getCurrentTimeParams(),
             },
             apiCache: true,
