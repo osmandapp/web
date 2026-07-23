@@ -27,6 +27,7 @@ import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
+    CATEGORY_KEY_NAME,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     CITY,
@@ -289,7 +290,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             }
         } else {
             // click on category: both engines provide the canonical key (incl. brands)
-            const category = item.properties['web_keyName'];
+            const category = item.properties[CATEGORY_KEY_NAME];
             if (category) {
                 moveToMatchedPoiTypeLocation();
                 return navigateToSearchResults({ type: category }, backToSearchResultsState);
