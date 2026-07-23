@@ -425,7 +425,7 @@ export default function PoiLayer() {
                 lat: center.lat,
                 lon: center.lng,
                 baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
-                ...(ctx.spatialSearch ? { spatial: true, zoom: map.getZoom() } : {}),
+                zoom: map.getZoom(),
                 ...getCurrentTimeParams(),
             },
             apiCache: true,
@@ -538,12 +538,6 @@ export default function PoiLayer() {
                             setBbox(newBbox);
                             setPrevCategories(showPoiCategories);
                             setUseLimit(res.useLimit ?? false);
-                            if (res.oldSearch) {
-                                ctx.setNotification({
-                                    text: i18n.t('web:poi_spatial_fallback_alert'),
-                                    severity: 'warning',
-                                });
-                            }
                         } else {
                             clearPoiList();
                         }

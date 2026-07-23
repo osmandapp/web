@@ -286,7 +286,6 @@
     "dev_search_test": "Search Test",
     "spatial_search_timeout_descr": "The search took too long and was interrupted. Please try again.",
     "spatial_search_busy_descr": "The search server is busy. Please try again in a moment.",
-    "poi_spatial_fallback_alert": "Spatial search (beta) found nothing here, showing classic search results.",
     "dev_backup_maps": "Backup Maps",
     "plan_route": "Plan route",
     "create_track": "Create track",
