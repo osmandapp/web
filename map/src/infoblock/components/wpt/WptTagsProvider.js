@@ -221,13 +221,19 @@ async function getWptTags(obj, type, ctx) {
 
         const poiNameTags = {};
         const mainTags = {};
-        Object.entries(tags).forEach(([key, value]) => {
+        for (const [key, value] of Object.entries(tags)) {
             if (key.startsWith(POI_NAME) && value) {
                 poiNameTags[key] = value;
+            } else if (key.includes(WIKIDATA) || key.includes(WIKIPEDIA)) {
+                const tagKey = key.includes(WIKIDATA) ? WIKIDATA : WIKIPEDIA;
+                const tagObj = await buildTagObj({ key: tagKey, value: value, lang: null, ctx, subtypeTag });
+                if (tagObj) {
+                    res.push(tagObj);
+                }
             } else {
                 mainTags[key] = value;
             }
-        });
+        }
 
         const poiNameTagObj = await buildPoiNameTagObj(poiNameTags, ctx, subtypeTag);
         if (poiNameTagObj) {
