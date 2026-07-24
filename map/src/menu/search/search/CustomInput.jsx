@@ -76,7 +76,7 @@ export default function CustomInput({
         return () => {
             cancelPendingSuggestions();
         };
-    }, [value, isFocused, ctx.spatialSearch]);
+    }, [value, isFocused, ctx.spatialSearch, type, setSearchValue]);
 
     useEffect(() => {
         const inputElement = inputRef.current;
