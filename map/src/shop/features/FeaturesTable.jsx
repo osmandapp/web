@@ -15,7 +15,7 @@ export default function FeaturesTable() {
     useEffect(() => {
         const hash = globalThis.location.hash?.slice(1);
         if (!hash) return;
-        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, []);
 
     const plans = products.filter((p) => p.show).map((p) => ({ key: p.id, label: t(p.name) }));
@@ -45,7 +45,7 @@ export default function FeaturesTable() {
                             </TableRow>
                             {features.map((feat) => (
                                 <React.Fragment key={feat.id}>
-                                    <TableRow key={feat.id} className={styles.featureRow}>
+                                    <TableRow id={feat.id} key={feat.id} className={styles.featureRow}>
                                         <TableCell className={styles.featureCell}>
                                             <div className={styles.featureWrapper}>
                                                 <div className={styles.featureIcon}>{feat.icon}</div>

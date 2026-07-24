@@ -38,14 +38,20 @@ import capitalize from 'lodash-es/capitalize';
 import TerrainConfig, { getCurrentColorScheme } from './TerrainConfig';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ActionsMenu from '../actions/ActionsMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import {
+    HEADER_SIZE,
+    MAIN_URL_WITH_SLASH,
+    MENU_IDS,
+    PRICING_URL,
+    VISIBLE_TRACKS_URL,
+    liveHash,
+} from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -143,6 +149,9 @@ export default function ConfigureMap() {
         ctx.setConfigureMapState(newConfigureMap);
         setOpenMapStyleMenu(false);
     }
+
+    const openPricingPage = () =>
+        window.open(`/${PRICING_URL}?source=pro#terrain_visualization`, '_blank', 'noopener,noreferrer');
 
     function renderMapStyleSelect() {
         return (
@@ -301,7 +310,7 @@ export default function ConfigureMap() {
                                                 {t('shared_string_terrain')}
                                             </Typography>
                                             {showProButton() ? (
-                                                <ButtonPro type={<TopographyProFeatures />} />
+                                                <ButtonPro onClick={openPricingPage} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
                                                     {capitalize(getCurrentColorScheme(t, ctx))}

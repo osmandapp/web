@@ -1,5 +1,5 @@
 import { Box, Link, Radio, Typography } from '@mui/material';
-import { purchase } from './ProductManager';
+import { purchase, findPurchase, hasOldPrice } from './ProductManager';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
@@ -23,7 +23,7 @@ export default function PurchaseTypeItem({
 
     useEffect(() => {
         if (updateCardPrices) {
-            const updatedPurchaseObj = purchase[type]?.find((p) => p.id === productId);
+            const updatedPurchaseObj = findPurchase(type, productId);
             if (updatedPurchaseObj) {
                 setPurchaseObj(updatedPurchaseObj);
             }
@@ -97,7 +97,7 @@ export default function PurchaseTypeItem({
                             ml: 2,
                         }}
                     >
-                        {purchaseObj.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice && (
+                        {hasOldPrice(purchaseObj) && (
                             <Typography className={styles.purchaseTypeCardOldPrice}>
                                 {purchaseObj.oldPriceDisplay}&nbsp;
                             </Typography>
