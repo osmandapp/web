@@ -99,10 +99,10 @@ function shallowEqualByKeys(a, b, keys) {
 function buildSearchParams({ engine, query, type } = {}) {
     const sp = new URLSearchParams();
 
-    sp.set(ENGINE_KEY, engine || getDefaultSearchEngine());
     if (type) {
         sp.set(TYPE_KEY, type);
     } else {
+        sp.set(ENGINE_KEY, engine || getDefaultSearchEngine());
         query && sp.set(QUERY_KEY, query);
     }
 

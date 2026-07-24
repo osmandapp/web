@@ -67,6 +67,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
 
     useEffect(() => {
         if (searchParams.size !== 1) return;
+        if (!searchParams.has(LANG_PARAM)) return;
         const lang = searchParams.get(LANG_PARAM);
         if (lang && lang !== i18n.language && supportedLanguages.includes(lang)) {
             (async () => {

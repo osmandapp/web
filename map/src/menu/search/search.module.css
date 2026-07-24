@@ -419,3 +419,40 @@
     font-size: 16px !important;
     letter-spacing: 0.00938em !important;
 }
+
+.autocompleteInputBox {
+    position: relative;
+}
+
+.autocompleteSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 2px);
+    z-index: 1300;
+    border-radius: 6px !important;
+    overflow: hidden;
+}
+
+.autocompleteSelectItem {
+    min-height: 36px !important;
+    padding: 6px 16px !important;
+}
+
+.autocompleteSelectText {
+    color: var(--text-primary) !important;
+    font-size: 13px !important;
+    line-height: 18px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.autocompleteSelectName {
+    font-weight: 600;
+}
+
+.autocompleteSelectInfo {
+    color: var(--text-secondary);
+    font-weight: 400;
+}

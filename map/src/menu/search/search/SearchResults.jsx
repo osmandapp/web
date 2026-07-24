@@ -315,6 +315,20 @@ export default function SearchResults() {
         navigateToSearchMenu();
     }
 
+    function getSpatialIssueMessage() {
+        if (!useSpatialSearchResults) {
+            return null;
+        }
+        if (ctx.searchResult?.info?.timeout) {
+            return t('web:spatial_search_timeout_descr');
+        }
+        if (ctx.searchResult?.info?.busy) {
+            return t('web:spatial_search_busy_descr');
+        }
+
+        return null;
+    }
+
     function resulNotPrepared() {
         return hasSearchParams && !ctx.processingSearch && (!result || reopenSearchResult());
     }
@@ -417,7 +431,7 @@ export default function SearchResults() {
                 !reopenSearchResult() &&
                 !staleResult &&
                 (result === EMPTY_SEARCH_RESULT ? (
-                    <EmptySearch message={errorZoom} />
+                    <EmptySearch message={errorZoom ?? getSpatialIssueMessage()} />
                 ) : (
                     <Box id={'se-search-results'} ref={listContainerRef} className={gStyles.fillBlock}>
                         <VirtualizedList
