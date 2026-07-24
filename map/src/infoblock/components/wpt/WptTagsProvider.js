@@ -17,7 +17,7 @@ import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
-import { apiGet } from '../../../util/HttpApi';
+import { apiGet, apiPost } from '../../../util/HttpApi';
 import { parseTagWithLang } from '../../../manager/SearchManager';
 import { localizeWeekTokens } from '../../../util/dateFmt';
 import {
@@ -52,7 +52,6 @@ const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 export const CUISINE_PREFIX = 'cuisine_';
-const ROUTE = 'route';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';
 export const WIKIDATA = 'wikidata';
@@ -61,14 +60,14 @@ const INSTAGRAM = 'instagram';
 export const OSM_PREFIX = 'osm_tag_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
-export const ICON_NAME_EXTENSION = 'icon';
+const ICON_NAME_EXTENSION = 'icon';
 export const BACKGROUND_TYPE_EXTENSION = 'background';
-export const PROFILE_TYPE_EXTENSION = 'profile';
-export const ADDRESS_EXTENSION = 'address';
-export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const EN_NAME = 'en_name';
 export const ALT_NAME = 'osm_tag_alt_name';
+const ORIGINAL_ICON = 'originalIcon';
+const MARKER_ICON_SVG = 'svg';
+const MARKER_OBJ_ID = 'idObj';
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
@@ -104,20 +103,7 @@ export const PARAM_FIELDS = 'fields=id,geometry,compass_angle,captured_at,camera
 
 export const TITLE = 'title';
 
-const HIDDEN_EXTENSIONS = [
-    COLOR_NAME_EXTENSION,
-    ICON_NAME_EXTENSION,
-    BACKGROUND_TYPE_EXTENSION,
-    PROFILE_TYPE_EXTENSION,
-    ADDRESS_EXTENSION,
-    AMENITY_ORIGIN_EXTENSION,
-    AMENITY_PREFIX + NAME,
-    AMENITY_PREFIX + TYPE,
-    AMENITY_PREFIX + SUBTYPE,
-];
-
-const HIDDEN_EXTENSIONS_POI = [
-    ...HIDDEN_EXTENSIONS,
+const WEB_TAGS_TO_SKIP = [
     ICON_KEY_NAME,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
@@ -129,6 +115,7 @@ const HIDDEN_EXTENSIONS_POI = [
     POI_NAME,
     POI_ID,
     POI_OSM_URL,
+    MARKER_OBJ_ID,
 ];
 export const SEPARATOR = ';';
 
@@ -233,145 +220,186 @@ async function getWptTags(obj, type, ctx) {
             }
         }
 
-        tags = fixTagsKeys(tags);
+        const poiNameTags = {};
+        const mainTags = {};
         for (const [key, value] of Object.entries(tags)) {
-            if (!shouldSkipKey(key)) {
-                let tagObj = {};
-                tagObj.key = key;
-                if (key.includes(WIKIPEDIA)) {
-                    tagObj.value = getWikipediaURL(key, value);
-                } else {
-                    tagObj.value = value;
+            if (key.startsWith(POI_NAME) && value) {
+                poiNameTags[key] = value;
+            } else if (key.includes(WIKIDATA) || key.includes(WIKIPEDIA)) {
+                const tagKey = key.includes(WIKIDATA) ? WIKIDATA : WIKIPEDIA;
+                const tagObj = await buildTagObj({ key: tagKey, value: value, lang: null, ctx, subtypeTag });
+                if (tagObj) {
+                    res.push(tagObj);
                 }
-                tagObj.isUrl = isUrl(tagObj.value);
-                if (!tagObj.isUrl) {
-                    tagObj.socialMediaUrl = getSocialMediaUrl(key, value);
-                    if (tagObj.socialMediaUrl != null) {
-                        tagObj.isUrl = true;
-                    }
-                }
-
-                switch (key) {
-                    case WIKIPEDIA:
-                        tagObj.icon = <WikipediaIcon />;
-                        break;
-                    case CUISINE:
-                        tagObj.icon = <CuisineIcon />;
-                        break;
-                    case SERVICE_TIMES:
-                    case COLLECTION_TIMES:
-                        tagObj.icon = <TimeIcon />;
-                        tagObj.needLinks = false;
-                        tagObj.textPrefix = value;
-                        break;
-                    case OPENING_HOURS:
-                        tagObj.icon = <TimeIcon />;
-                        break;
-                    case PHONE:
-                        tagObj.icon = <CallIcon />;
-                        tagObj.isPhoneNumber = true;
-                        break;
-                    case MOBILE:
-                        tagObj.icon = <PhoneIcon />;
-                        tagObj.isPhoneNumber = true;
-                        break;
-                    case WEBSITE:
-                        tagObj.icon = <WebsiteIcon />;
-                        tagObj.isUrl = true;
-                        break;
-                    case DESCRIPTION:
-                        tagObj.icon = <DescriptionIcon />;
-                        tagObj.desc = true;
-                        break;
-                    case INSTAGRAM:
-                        tagObj.icon = <InstagramIcon />;
-                        break;
-                    case EMAIL:
-                        tagObj.isEmail = true;
-                        tagObj.icon = <EmailIcon />;
-                        break;
-                    default:
-                        if (key === 'addr:housename' || key === 'whitewater:rapid_name') {
-                            tagObj.icon = <PoiNameIcon />;
-                        } else if (key.startsWith('operator') || key.startsWith('brand')) {
-                            tagObj.icon = <BrandIcon />;
-                        } else if (key === 'internet_access_fee_yes') {
-                            tagObj.icon = <InternetIcon />;
-                        } else if (key.includes('internet_access')) {
-                            const prepValue = value.replace(TYPE, '').replace('__', '_');
-                            const svgData = await getSvgIcon({ value: prepValue, ctx });
-                            tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
-                        } else if (parseTagWithLang(key).lang) {
-                            tagObj.icon = <DisplayLanguageIcon />;
-                        } else {
-                            const svgData = await getSvgIcon({ key, value, ctx });
-                            tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
-                        }
-                }
-
-                const formattedPrefixAndText = getFormattedPrefixAndText(
-                    key,
-                    tagObj.textPrefix,
-                    value,
-                    subtypeTag,
-                    ctx
-                );
-                tagObj.textPrefix = formattedPrefixAndText[0];
-                tagObj.value = formattedPrefixAndText[1];
-
-                if (key.startsWith(COLLAPSABLE_PREFIX)) {
-                    tagObj.collapsable = true;
-                    tagObj.textPrefix = key.replace(COLLAPSABLE_PREFIX, '');
-                    if (tagObj.textPrefix === CUISINE) {
-                        tagObj.icon = <CuisineIcon />;
-                        hasCuisine = true;
-                    }
-                }
-
-                if (tagObj.key === OPENING_HOURS) {
-                    tagObj.value = localizeWeekTokens(tagObj.value);
-                }
-
-                if (tagObj.key.startsWith(POI_NAME)) {
-                    tagObj.key = tagObj.key.replace(POI_NAME, 'shared_string_name');
-                    tagObj.textPrefix = tagObj.key;
-                }
-
-                if (key.includes(WIKIDATA)) {
-                    tagObj = addWikidataTags(key, value, tagObj);
-                }
-                res.push(tagObj);
+            } else {
+                mainTags[key] = value;
             }
+        }
+
+        const poiNameTagObj = await buildPoiNameTagObj(poiNameTags, ctx, subtypeTag);
+        if (poiNameTagObj) {
+            res.push(poiNameTagObj);
+        }
+
+        tags = filterWebKeys(mainTags);
+        const tagList = await fetchVisibleTags(tags);
+
+        for (const entry of tagList) {
+            let tagObj = await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag });
+
+            if (entry.otherLangs?.length) {
+                tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag);
+            }
+
+            if (tagObj.collapsable && tagObj.textPrefix === CUISINE) {
+                hasCuisine = true;
+            }
+            res.push(tagObj);
         }
         if (hasCuisine) {
             res = res.filter((t) => t.key !== CUISINE);
         }
     }
 
-    res = res.filter((t) => !t.key.startsWith(WEB_PREFIX));
-    res = mergeTagsWithLang(res);
     return { res, id, type: typeTag, subtype: subtypeTag };
 }
 
-function mergeTagsWithLang(tags) {
-    tags.forEach((tag) => {
-        if (tag.key.includes(':')) {
-            const arr = tag.key.split(':');
-            tag.key = arr[0];
-            tag.lang = arr[1];
+async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
+    let tagObj = { key };
+    tagObj.value = key.includes(WIKIPEDIA) ? getWikipediaURL(key, value) : value;
+    tagObj.isUrl = isUrl(tagObj.value);
+    if (!tagObj.isUrl) {
+        tagObj.socialMediaUrl = getSocialMediaUrl(key, value);
+        if (tagObj.socialMediaUrl != null) {
+            tagObj.isUrl = true;
         }
-    });
-    let tagsWithLang = tags.filter((tag) => tag.lang);
-    tagsWithLang.forEach((tag) => {
-        if (tags.includes(tag)) {
-            const sameTags = tags.filter((t) => t.key === tag.key && t !== tag);
-            if (sameTags?.length > 0) {
-                tag.otherLangs = sameTags;
-                tags = tags.filter((t) => !sameTags.includes(t));
-            }
+    }
+
+    Object.assign(tagObj, await getTagIconProps({ key, value, lang, ctx }));
+
+    const [formattedPrefix, formattedValue] = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
+    tagObj.textPrefix = formattedPrefix;
+    tagObj.value = formattedValue;
+
+    applyCollapsablePrefix(tagObj, key);
+    applySharedNameTag(tagObj);
+
+    if (tagObj.key === OPENING_HOURS) {
+        tagObj.value = localizeWeekTokens(tagObj.value);
+    }
+
+    if (key.includes(WIKIDATA)) {
+        tagObj = addWikidataTags(key, value, tagObj);
+    }
+
+    if (lang) {
+        tagObj.lang = lang;
+        tagObj.textPrefix = `${tagObj.textPrefix}:${lang}`;
+    }
+
+    return tagObj;
+}
+
+async function getTagIconProps({ key, value, lang, ctx }) {
+    switch (key) {
+        case WIKIPEDIA:
+            return { icon: <WikipediaIcon /> };
+        case CUISINE:
+            return { icon: <CuisineIcon /> };
+        case SERVICE_TIMES:
+        case COLLECTION_TIMES:
+            return { icon: <TimeIcon />, needLinks: false, textPrefix: value };
+        case OPENING_HOURS:
+            return { icon: <TimeIcon /> };
+        case PHONE:
+            return { icon: <CallIcon />, isPhoneNumber: true };
+        case MOBILE:
+            return { icon: <PhoneIcon />, isPhoneNumber: true };
+        case WEBSITE:
+            return { icon: <WebsiteIcon />, isUrl: true };
+        case DESCRIPTION:
+            return { icon: <DescriptionIcon />, desc: true };
+        case INSTAGRAM:
+            return { icon: <InstagramIcon /> };
+        case EMAIL:
+            return { icon: <EmailIcon />, isEmail: true };
+        case 'addr:housename':
+        case 'whitewater:rapid_name':
+            return { icon: <PoiNameIcon /> };
+        case 'internet_access_fee_yes':
+            return { icon: <InternetIcon /> };
+        default:
+            return await getOtherTagIconProps({ key, value, lang, ctx });
+    }
+}
+
+async function getOtherTagIconProps({ key, value, lang, ctx }) {
+    if (key.startsWith('operator') || key.startsWith('brand')) {
+        return { icon: <BrandIcon /> };
+    }
+    if (key.includes('internet_access')) {
+        const prepValue = value.replace(TYPE, '').replace('__', '_');
+        const svgData = await getSvgIcon({ value: prepValue, ctx });
+        return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
+    }
+    if (lang || parseTagWithLang(key).lang) {
+        return { icon: <DisplayLanguageIcon /> };
+    }
+    const svgData = await getSvgIcon({ key, value, ctx });
+
+    return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
+}
+
+function applyCollapsablePrefix(tagObj, key) {
+    if (key.startsWith(COLLAPSABLE_PREFIX)) {
+        tagObj.collapsable = true;
+        tagObj.textPrefix = key.replace(COLLAPSABLE_PREFIX, '');
+        if (tagObj.textPrefix === CUISINE) {
+            tagObj.icon = <CuisineIcon />;
         }
+    }
+}
+
+function applySharedNameTag(tagObj) {
+    if (tagObj.key.startsWith(POI_NAME)) {
+        tagObj.key = tagObj.key.replace(POI_NAME, 'shared_string_name');
+        tagObj.textPrefix = tagObj.key;
+    }
+}
+
+async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
+    const entries = Object.entries(poiNameTags).map(([key, value]) => {
+        const [base, lang] = key.split(':');
+        return lang ? { key: base, value, lang } : { key: base, value };
     });
-    return tags;
+
+    const mainEntry = entries.find((entry) => entry.lang) ?? entries[0];
+    if (!mainEntry) {
+        return null;
+    }
+
+    const tagObj = await buildTagObj({
+        key: mainEntry.key,
+        value: mainEntry.value,
+        lang: mainEntry.lang,
+        ctx,
+        subtypeTag,
+    });
+    const otherEntries = entries.filter((entry) => entry !== mainEntry);
+    if (otherEntries.length > 0) {
+        tagObj.otherLangs = await buildOtherLangTags(otherEntries, ctx, subtypeTag);
+    }
+
+    return tagObj;
+}
+
+async function buildOtherLangTags(entries, ctx, subtypeTag) {
+    const otherLangs = [];
+    for (const entry of entries) {
+        otherLangs.push(await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag }));
+    }
+
+    return otherLangs;
 }
 
 export async function addPoiTypeTag({
@@ -398,24 +426,37 @@ export async function addPoiTypeTag({
     return tagObj;
 }
 
-function fixTagsKeys(tags) {
+async function fetchVisibleTags(tags) {
+    if (Object.keys(tags).length === 0) return [];
+    tags = Object.fromEntries(
+        Object.entries(tags).map(([key, value]) => [
+            key,
+            typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
+        ])
+    );
+    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-visible-tags`, tags, {
+        apiCache: true,
+    });
+
+    return Array.isArray(response?.data) ? response.data : [];
+}
+
+function filterWebKeys(tags) {
     let res = {};
     for (const [key, value] of Object.entries(tags)) {
-        let newKey = key;
-        if (key === AMENITY_PREFIX + OPENING_HOURS) {
-            newKey = key.replace(AMENITY_PREFIX, '');
-        } else if (
-            key.startsWith(AMENITY_PREFIX) ||
+        if (
+            key.startsWith(WEB_PREFIX) ||
             key.startsWith(ALT_NAME) ||
-            HIDDEN_EXTENSIONS.includes(key) ||
-            HIDDEN_EXTENSIONS_POI.includes(key)
+            WEB_TAGS_TO_SKIP.includes(key) ||
+            key.startsWith(ORIGINAL_ICON) ||
+            key === MARKER_ICON_SVG ||
+            key === ICON_NAME_EXTENSION
         ) {
             continue;
-        } else {
-            newKey = key.replace(OSM_PREFIX, '');
         }
-        res[newKey] = value;
+        res[key] = value;
     }
+
     return res;
 }
 
@@ -614,17 +655,6 @@ function getWikipediaURL(key, value) {
     return value;
 }
 
-function shouldSkipKey(key) {
-    return (
-        key === 'idObj' ||
-        key === 'name' ||
-        key === 'subway_region' ||
-        key === 'note' ||
-        key === 'lang_yes' ||
-        key.includes(ROUTE)
-    );
-}
-
 export function openWikipediaContent(tag, setDevWikiContent) {
     if (tag.key === WIKIPEDIA) {
         getWikipediaContent(tag).then((data) => {
@@ -712,7 +742,7 @@ function parseUrl(url, site) {
 }
 
 export function filterTag(tag) {
-    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key) && tag.key !== 'svg' && tag.key !== 'type';
+    return tag.key !== WIKIMEDIA_COMMONS && !otherImgTags(tag.key) && tag.key !== MARKER_ICON_SVG && tag.key !== 'type';
 }
 
 export const otherImgTags = (tag) => {
