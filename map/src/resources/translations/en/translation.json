@@ -5311,6 +5311,7 @@
   "contact_support_description": "If you have any questions, please contact us at %1$s.",
   "empty_tracks": "You don\\\u0027t have track files.",
   "empty_tracks_description": "You can import, create, or record track files using OsmAnd.",
+  "empty_cloud_tracks_description": "Create, edit, and sync your tracks across devices and Web with OsmAnd Pro.",
   "shared_string_hillshade": "Hillshade",
   "shared_string_none": "None",
   "menu_layers": "Map layers",
