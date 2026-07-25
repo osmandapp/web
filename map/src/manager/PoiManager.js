@@ -298,12 +298,28 @@ export function translatePoi({ key = null, value = null, ctx, t }) {
     return '';
 }
 
+// obf top-index keys ("top_index_brand_okko") are agreed with the server: SpatialPoiSearch.byKey format
+export const TOP_INDEX_PREFIX = 'top_index_';
+
+export function getTopIndexValueName(key) {
+    const rest = key.substring(TOP_INDEX_PREFIX.length);
+    const valueStart = rest.indexOf('_');
+
+    return valueStart === -1 ? rest : rest.substring(valueStart + 1);
+}
+
 /**
  * Check if type is a brand (contains ':' separator)
  * Brand format: brandName:lang
  */
 export function isBrandType(type) {
-    return type && type.includes(':') && !type.includes('name:') && !type.includes('lang:');
+    return (
+        type &&
+        type.includes(':') &&
+        !type.includes('name:') &&
+        !type.includes('lang:') &&
+        !type.startsWith(TOP_INDEX_PREFIX)
+    );
 }
 
 /**
@@ -323,6 +339,9 @@ export function parseBrandType(type) {
  * Handles special cases: name:lang and lang:lang formats
  */
 export function getCategoryName(category, t, getFirstSubstring) {
+    if (category?.startsWith(TOP_INDEX_PREFIX)) {
+        return getTopIndexValueName(category);
+    }
     if (!category) return '';
     if (category.includes('name:')) {
         const [mainPart, subPart] = category.split(':');
