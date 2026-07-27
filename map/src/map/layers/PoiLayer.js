@@ -532,7 +532,7 @@ export default function PoiLayer() {
                                 map,
                                 zoom,
                             });
-                            const nextState = { layer: newLayer, listFeatures };
+                            const nextState = { layer: newLayer, listFeatures, info: res.info ?? poiList?.info };
                             updateLayerOnMap(nextState);
                             setPoiList(nextState);
                             setBbox(newBbox);
@@ -611,6 +611,7 @@ export default function PoiLayer() {
                 const nextState = {
                     layer: newLayer,
                     listFeatures: poiList?.listFeatures,
+                    info: poiList?.info,
                 };
                 updateLayerOnMap(nextState);
                 setPoiList(nextState);
@@ -649,6 +650,7 @@ export default function PoiLayer() {
                 return {
                     ...prevResult,
                     features: !poiList ? [] : poiList?.listFeatures?.features,
+                    info: poiList?.info,
                 };
             });
         }
