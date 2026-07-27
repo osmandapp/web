@@ -235,7 +235,7 @@ The Media section allows you to attach photos, videos, audio recordings, and ima
 - **Choose from Gallery** — Select an existing image from your device.
 - **Choose from Files** — Select an image from the file system.
 
-After media is attached, it appears in the Media card in the favorite context menu.
+After media is attached, it appears in the Media card in the favorite context menu. The same Media card is also available for [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
 
 The Media card displays previews of attached items. The displayed items follow the selected sorting order. Tap *Show all* to open the complete gallery. The gallery displays all media attached to the selected favorite.
 
