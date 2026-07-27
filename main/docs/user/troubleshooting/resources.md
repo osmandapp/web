@@ -134,6 +134,9 @@ The following table lists various online map sources prepared by users, offering
 | Basemap AT WMTS | The set of maps of Austria based on [basemap.at WMTS](https://basemap.at/en/) created by mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | The set of maps provided of the French geographical institute IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | The site provides a collection of maps for country holidays, including tourist, mountain, nautical maps, and many others. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Independent OsmAnd overlay showing today’s and tomorrow’s wildfire-risk levels for the Comunitat Valenciana, Spain, using official public data. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
 
 
 
