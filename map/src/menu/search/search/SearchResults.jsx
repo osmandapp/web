@@ -418,7 +418,7 @@ export default function SearchResults() {
                     boldTitle={false}
                 />
             )}
-            {useSpatialSearchResults && ctx.searchResult?.info && (
+            {(useSpatialSearchResults || ctx.develFeatures) && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
                         .map(([k, v]) => `${k}: ${v}`)
