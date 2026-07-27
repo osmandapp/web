@@ -111,7 +111,10 @@ export default function SearchMenu() {
         const fetchCategorySearchResults = async (searchValue) => {
             if (searchValue) {
                 if (isPoiCategoriesRoute) {
-                    const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
+                    const categoriesResult = await PoiManager.searchPoiCategories(
+                        searchValue.query,
+                        ctx.visibleBounds?.getCenter()
+                    );
                     if (categoriesResult) {
                         const validCategories = Object.values(categoriesResult).filter(
                             (item) => item[CATEGORY_KEY_NAME] !== undefined
@@ -140,6 +143,8 @@ export default function SearchMenu() {
             } else {
                 navigateToSearchResults({ query: searchValue.query });
             }
+        } else {
+            fetchCategorySearchResults(null).then();
         }
 
         function getCategoriesIcons(res) {

@@ -103,12 +103,16 @@ async function getTopPoiFilters() {
     }
 }
 
-async function searchPoiCategories(search) {
+async function searchPoiCategories(search, center) {
+    if (!center) {
+        return null;
+    }
     let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi-categories`, {
         apiCache: true,
         params: {
             search: search,
-            locale: i18n.language,
+            lat: center.lat,
+            lon: center.lng,
         },
     });
     if (!isEmpty(response?.data)) {
