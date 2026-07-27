@@ -92,6 +92,43 @@ When adding a point from OSM data, the relevant POI information is automatically
 
 **NOTE:** If the Favorites layer is disabled in [Configure map](../map/configure-map-menu), adding a new favorite point automatically enables the layer to make the newly added favorite visible on the map.
 
+<!--
+### Create {#create}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+To add a favorite point:
+
+1. Select a [POI](../map/point-layers-on-map.md#points-of-interest-pois) or a structure on the map.  
+    Short tap for a POI or long tap for a general map point.
+2. Select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the map context menu.
+
+When adding a point from OSM data, the relevant POI information is automatically included. You can also create a favorite by [long-tapping](../map/map-context-menu.md#select-any-point-long-tap) any map location.
+
+***Fields for a Favorite point:***
+
+- **Name** — A unique name within the group (*Required*).
+- **Address** and **Description** (*Optional*).
+- **Group** — Select from an existing [Favorite group](#manage-favorites) or create a new one. On Android, you can also select a subfolder within a group or create a new one. Nested folders are displayed using their full path (for example, *Travel* / *Italy* / *Rome*).
+- **Visual customization** — Icon, color, shape can either match the default [group appearance](#change-group-appearance) or be customized individually.
+- **Media** (*Android only*) — Attach photos, videos, audio recordings, or images from your Gallery or Files.
+
+**NOTE:** If the Favorites layer is disabled in [Configure map](../map/configure-map-menu), adding a new favorite point automatically enables the layer to make the newly added favorite visible on the map.
+-->
 
 ### Edit / Replace / Delete {#edit--replace--delete}
 
@@ -121,6 +158,37 @@ To modify a favorite point:
 - **Edit details** — Name, icon, group, address, and description.
 - **Replace location** — Replace another point with this one. Useful for updating a specific point (e.g. *My parked car*) or creating a new one.
 - **Delete** — Remove the favorite using the delete option, accessible through the Edit menu or via the delete button on Android.
+
+<!--
+### Edit / Replace / Delete {#edit--replace--delete}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Favorite edit Android](@site/static/img/personal/favorite_edit_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+To modify a favorite point:
+
+1. [Tap](../map/map-context-menu.md#select-an-object-single-tap) the favorite on the map or go to [My Favorites](#manage-favorites).
+2. Choose **Edit favorite** from the [*map context menu*](../map/map-context-menu.md#add--edit-favorite).
+
+***Options available:***
+
+- **Edit details** — Name, icon, group, address, description, and attached media.
+- **Replace location** — Replace another point with this one. Useful for updating a specific point (e.g. *My parked car*) or creating a new one.
+- **Delete** — Remove the favorite using the delete option, accessible through the Edit menu or via the delete button on Android.
+-->
 
 
 ### Favorite Icons {#favorite-icons}
@@ -154,6 +222,25 @@ A wide range of icons for POIs and waypoints is available in OsmAnd. You can:
 ### Special Favorites (Personal) {#special-favorites-personal}
 
 The *Personal folder* contains special points like **<Translate android="true" ids="favorite_home_category"/>** and **<Translate android="true" ids="work_button"/>**, often used in [navigation](../navigation/setup/route-navigation.md#select-start-point). This folder does not have a *three-dot menu*, and its parameters cannot be changed.
+
+<!--
+### Media (Android only) {#media}
+
+![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_sorting.webp)
+
+The Media section allows you to attach photos, videos, audio recordings, and images to a favorite point. Media can be added while creating a favorite or later from the Edit favorite screen. To attach media tap *Add* in the Media section and choose one of the available options:
+- **Take a photo** — Capture a new photo with the device camera.
+- **Take a video note** — Record a new video.
+- **Take an audio note** — Record an audio note.
+- **Choose from Gallery** — Select an existing image from your device.
+- **Choose from Files** — Select an image from the file system.
+
+After media is attached, it appears in the Media card in the favorite context menu.
+
+The Media card displays previews of attached items. The displayed items follow the selected sorting order. Tap *Show all* to open the complete gallery. The gallery displays all media attached to the selected favorite.
+
+Tap any item to open it in full-screen view. Photos and videos can be viewed directly, while audio recordings include playback controls.
+-->
 
 
 ## Manage Favorites {#manage-favorites}
@@ -346,6 +433,16 @@ OsmAnd provides several methods to [back up](./import-export.md) and [restore](.
 
 - **File format** — Favorites are saved as `.gpx` files (favorites.gpx).
 
+<!--
+## Export / Import {#export--import}
+
+OsmAnd provides several methods to [back up](./import-export.md) and [restore](./import-export.md#import) favorites:
+
+- **Backup locations** — Local storage, [OsmAnd Cloud](../personal/osmand-cloud.md) (only with [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md)), or instant messaging apps.
+
+- **File format** — Favorites are saved as `.gpx` files (favorites.gpx). Use the `.osf` format to back up favorites with their attached media. Importing the backup restores both favorite points and their associated media.
+-->
+
 
 ### Free Cloud Backup {#free-cloud-backup}
 
@@ -517,7 +614,36 @@ All information about a Favourite is stored and described using tags. When creat
         </extensions>
     </wpt>
 </gpx>
+``` 
+<!-- 
+### Favorites in GPX File {#favorites-in-gpx-file}
+
+All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#favorite-point) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.
+
+Favorites can also contain references to attached media using standard GPX `<link>` elements. 
+
+
+```xml
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <wpt lat="37.5460870" lon="-77.4532843">
+        <time>2023-06-07T12:31:35Z</time>
+        <name>Test</name>
+        <type>SOTM</type>
+        <extensions>
+            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+            <osmand:icon>place_town</osmand:icon>
+            <osmand:background>circle</osmand:background>
+            <osmand:color>#ff4e4eff</osmand:color>
+            <test:country>United States</test:country>
+            <test:state>Virginia</test:state>
+            <test:telephone>(804) 828-0100</test:telephone>
+            <test:postcode>23284</test:postcode>
+            <test:start_date>Thursday, June 8, 2023</test:start_date>
+        </extensions>
+    </wpt>
+</gpx>
 ```  
+-->
 
 
 ## Related Articles {#related-articles}
