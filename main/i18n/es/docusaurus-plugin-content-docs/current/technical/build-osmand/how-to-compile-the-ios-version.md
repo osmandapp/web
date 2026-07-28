@@ -1,5 +1,5 @@
 ---
-source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
+source-hash: de56403a9eb7f5ddcc9fc2e939af2545f903d69f8212f945db5aba76b5f8c784
 sidebar_position: 6
 ---
 
@@ -22,7 +22,7 @@ sidebar_position: 6
   Para los miembros del equipo de OsmAnd: envíe su nombre de usuario de AppleID para que se le agregue a la lista de desarrolladores. Cuando reciba un correo electrónico con el mensaje de invitación, actívelo.
   Cierre Xcode.
 
-5. Instale las herramientas de línea de comandos: cmake, svn, cocoapods
+5. Instale las herramientas de línea de comandos: cmake y svn
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -36,13 +36,8 @@ sidebar_position: 6
 
   $ brew install svn
   $ brew install cmake # probado en 3.25.2, 3.19, 3.11
-
-  # para intel
-  $ sudo gem install cocoapods
-
-  # para m1
-  $ brew install cocoapods
   ```
+
 6. Descargue e instale Java jdk 17
   ```
   # para intel
@@ -83,7 +78,7 @@ org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemo
 org.gradle.parallel=true
 org.gradle.caching=true
 
-#Vie Abr 08 18:47:31 EEST 2016
+#Fri Apr 08 18:47:31 EEST 2016
 # android.useDeprecatedNdk=true {#androidusedeprecatedndktrue}
 ```
 
@@ -116,7 +111,7 @@ org.gradle.caching=true
   Solución 5: Si obtiene un error como este: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Vaya a la carpeta ```core/external/qtbase-ios/``` y elimine todas las carpetas que comienzan con ```upstream```. Y ejecute `$ ./prepare.sh` nuevamente.
 
 
-9. Abra `osmand.xcworkspace` en Xcode
+9. Abra `OsmAnd.xcworkspace` en Xcode. Si Xcode no resuelve automáticamente las dependencias de Swift Package Manager, ejecute `File → Packages → Resolve Package Versions`.
 
 10. Primera compilación.
   Establezca el objetivo de compilación en `OsmAnd Maps`. (Cerca de los botones de reproducir/detener). Seleccione como objetivo su dispositivo o uno de los simuladores de iOS. Pero no use el predeterminado 'Cualquier dispositivo iOS (arm64)'. Compile el proyecto (botón de reproducir).

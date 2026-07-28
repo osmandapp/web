@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Widgets informativos
 ---
@@ -563,7 +563,7 @@ Para añadir Widgets de Métricas del Vehículo a la pantalla del mapa, active e
 Los widgets pertenecen al [complemento Métricas del vehículo](../plugins/vehicle-metrics.md#widgets). Puede utilizarlos para ver información de un escáner OBD-II conectado, como (*14 métricas*): **Voltaje del adaptador** (*solo Android*),&nbsp; **Temperatura ambiente**,&nbsp; **Voltaje de la batería**,&nbsp; **Carga calculada del motor**,&nbsp; **Temperatura del refrigerante**,&nbsp; **Temperatura del aceite del motor**,&nbsp; **Tiempo de funcionamiento del motor**,&nbsp; **Velocidad del motor** (*gratis*),&nbsp; **Consumo de combustible**,&nbsp; **Presión del combustible**,&nbsp; **Temperatura de admisión**,&nbsp; **Combustible restante**,&nbsp; **Posición del acelerador**, y **Velocidad del vehículo** (*gratis*).  
 
 - Para añadir widgets de métricas del vehículo a la pantalla del mapa, [active](../plugins/index.md#enable--disable) el **complemento Métricas del vehículo**.
-- Puede añadir widgets aunque no haya ningún escáner OBD-II conectado.
+- Puede añadir widgets incluso si no hay ningún escáner OBD-II conectado.
 - Todos los widgets añadidos son visibles tanto si hay un escáner OBD-II conectado como si no.
 - Para editar un widget, toque el widget añadido al panel, luego toque *Ajustes*, o toque directamente el *icono de Ajustes* en el campo del widget.
 
@@ -658,8 +658,8 @@ Este es un widget del complemento Mapillary que proporciona acceso rápido a la 
 <InfoAndroidOnly />
 
 :::note
-Para añadir widgets de Notas de audio/vídeo a la pantalla del mapa, active el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
-:::
+Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
+::;
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -703,7 +703,7 @@ Este widget del complemento OsmAnd Tracker se utiliza para acceder rápidamente 
 
 :::note
 Para añadir widgets de Desarrollador a la pantalla del mapa, active el [complemento de desarrollo de OsmAnd](../plugins/development.md).
-:::
+::;
 
 Los **widgets de desarrollador** proporcionan información sobre la [velocidad de renderizado del mapa](../plugins/development.md#map-rendering-fps-widget) y los parámetros de posición de la cámara virtual, incluyendo el [nivel de zoom](../plugins/development.md#zoom-level), la [distancia](../plugins/development.md#distance-to-target) al centro del mapa, la [elevación de la cámara](../plugins/development.md#camera-elevation) y el [ángulo de inclinación](../plugins/development.md#camera-tilt).  
 
