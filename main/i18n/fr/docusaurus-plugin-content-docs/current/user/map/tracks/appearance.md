@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -24,13 +24,13 @@ La fonctionnalité **Apparence de la trace** permet aux utilisateurs de personna
 
 <TabItem value="android" label="Android">  
 
-![Aperçu de l'apparence de la trace Android](@site/static/img/map/track-appear-and-1.png)  ![Menu de la trace Apparence Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de la trace Apparence iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu de la trace Apparence iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Track menu Appearance iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track menu Appearance iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -55,14 +55,14 @@ Vous pouvez modifier l'apparence de la trace en utilisant l'une des méthodes su
 Certains paramètres ne peuvent être utilisés qu'avec *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> et <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Fonctionnalités gratuites et payantes.
 :::
 
-![Apparence](@site/static/img/map/appearance_color_andr.png) ![Menu contextuel Coloration iOS](@site/static/img/map/colorisation_ios.png)
+![Appearance](@site/static/img/map/appearance_color_andr.png) ![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
 
 Vous pouvez définir la couleur de la trace manuellement ou utiliser la **visualisation des données par couleur** (par exemple, vitesse, altitude, pente). Si une trace manque de certaines données, OsmAnd affiche les sections manquantes en gris.
 
 **Options de couleur disponibles :**
 
 - Paramètres gratuits : couleur *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si enregistrée) et *<Translate android="true" ids="altitude"/>* (si enregistrée).   
-- [Fonctionnalité Pro](../../purchases/index.md)) : *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
+- [Fonctionnalité Pro](../../purchases/index.md) : *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Sur iOS, la liste **Coloration** s'ouvre sous forme de menu contextuel. Les éléments peuvent apparaître dans trois états : 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Peut être appliqué à la trace actuelle.
@@ -73,9 +73,21 @@ Pour plus de détails sur la personnalisation de l'apparence de la ligne d'itin�
 
 ### Éditeur de palettes de couleurs {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Éditeur de palettes de couleurs](@site/static/img/map/gradient_palettes_1.png) ![Éditeur de palettes de couleurs ](@site/static/img/map/gradient_palettes_2.png) 
+<TabItem value="android" label="Android"> 
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1_ios.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Lors de la coloration d'une trace par Vitesse, Altitude ou Pente, vous pouvez utiliser vos propres palettes pour définir comment les couleurs sont appliquées le long de la trace.
 
@@ -86,7 +98,7 @@ L'écran *Toutes les couleurs* affiche les palettes disponibles. Appuyez sur le 
 - Supprimer. La suppression d'une palette nécessite une confirmation.
 
 Appuyez sur le bouton + dans l'écran Toutes les couleurs. Deux types de palettes sont disponibles :
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — les couleurs s'adaptent automatiquement en fonction des valeurs minimales et maximales de la trace.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — les couleurs s'adaptent automatiquement en fonction des valeurs minimales, moyennes et maximales de la trace.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — les couleurs sont assignées à des nombres absolus spécifiques (par exemple, 50 km/h). Les valeurs peuvent être modifiées manuellement. Les unités suivent les [paramètres système](../../personal/profiles.md#units--formats). L'échelle de couleurs ne se redimensionne pas automatiquement lors de l'application à différentes traces.
 
 :::info Pro feature
@@ -109,7 +121,7 @@ Utilisez l'icône de retour en arrière dans la barre d'application pour annuler
 
 ### Largeur {#width}
 
-![Menu de la trace Apparence Épaisseur de la trace Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Apparence de la trace](@site/static/img/map/track_appearance_width_andr.png)  
+![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
 
 Vous pouvez personnaliser l'apparence de la trace dans plusieurs menus de l'application :
 
@@ -132,12 +144,12 @@ Ajustez la largeur de la trace pour améliorer la visibilité sur la carte.
 
 <TabItem value="android" label="Android">
 
-![Menu de la trace Apparence Intervalle de division Android](@site/static/img/map/split_interval_android.png)  ![Intervalle de division Android](@site/static/img/map/split_interval_2_android.png)
+![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de la trace Apparence Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalle de division](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 </TabItem>
 
@@ -148,13 +160,13 @@ Sélectionnez si vous souhaitez diviser la trace en intervalles par **distance**
 
 ### Flèches de direction {#direction-arrows}
 
-![Menu de la trace Apparence flèches de direction Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Ajoute des **marqueurs fléchés** le long de la trace pour indiquer la direction du mouvement.
 
 ### Icônes de départ et d'arrivée {#start-and-finish-icons}
 
-![Menu de la trace Apparence icônes de départ et d'arrivée Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Permet de sélectionner si vous souhaitez afficher les **icônes de départ et d'arrivée** pour les segments de trace. Pour les traces avec un grand nombre de segments, ces icônes peuvent être automatiquement désactivées pour améliorer les performances de rendu de la carte. Dans ce cas, vous pouvez les activer manuellement si nécessaire.
 
@@ -177,13 +189,13 @@ La visualisation de trace 3D est une [fonctionnalité payante](../../purchases/i
 
 <TabItem value="android" label="Android">
 
-![Menu de la trace Apparence visualisation 3D](@site/static/img/map/3d_track_appearance_android.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de la trace Apparence visualisation 3D](@site/static/img/map/3d_track_appearance_ios.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
@@ -240,13 +252,13 @@ La fonctionnalité de trace 3D est très bénéfique pour des activités comme l
 
 <TabItem value="android" label="Android">
 
-![Apparence Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Apparence Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Modifier l'apparence](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Modifier l'apparence](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ L'onglet [Traces](../../personal/tracks/manage-tracks.md) affiche automatiquemen
 
 Modifiez l'apparence de plusieurs traces dans *Mes Lieux → Traces* :
 
-- **Modifier l'apparence par défaut** (Android uniquement) - Permet de configurer les paramètres par défaut qui seront appliqués une fois que la trace est ajoutée au [dossier](../../personal/tracks/manage-tracks.md#track-folder).
+- **Modifier l'apparence par défaut** - Permet de configurer les paramètres par défaut qui seront appliqués une fois que la trace est ajoutée au [dossier](../../personal/tracks/manage-tracks.md#track-folder).
 - **Réinitialiser à l'original** - Restaure les paramètres individuels de la trace.
 
 - [Mode de sélection](../../personal/tracks/manage-tracks.md#selection-mode) - Modifie l'apparence de traces spécifiques dans le dossier sélectionné ou de toute la liste dans l'onglet Traces.

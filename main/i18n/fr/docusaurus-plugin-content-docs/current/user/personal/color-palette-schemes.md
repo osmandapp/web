@@ -1,5 +1,5 @@
 ---
-source-hash: 1bbeb6f0c1ba01e3cfc68f72f8d19e49e6c67481fe6111180cf273ab138dd078
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
 title:  Schémas de couleurs
 ---
@@ -71,7 +71,7 @@ Allez à : *Menu → Cartes et ressources → Local → Couleurs*
 
 Les fichiers de terrain (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) définissent 3 [visualisations de terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) : *Ombrage, Pente* et *Altitude*. Pour chaque type, vous pouvez avoir plusieurs palettes, par exemple, la *pente d'avalanche* est fournie par défaut. Consultez l'article [Topographie](../plugins/topography.md#default-color-scheme) pour plus de détails.
 
-Sur Android, les palettes pour les schémas de couleurs *Pente* et *Altitude* peuvent également être créées ou modifiées directement dans l'application en utilisant l'[éditeur de palette de couleurs](../plugins/topography.md#modify-color-scheme). Il s'agit d'une fonctionnalité payante <ProFeature />.
+Les palettes pour les schémas de couleurs *Pente* et *Altitude* peuvent également être créées ou modifiées directement dans l'application en utilisant l'[éditeur de palette de couleurs](../plugins/topography.md#modify-color-scheme). Il s'agit d'une fonctionnalité payante <ProFeature />.
 
 ### Traces et itinéraires {#tracks-routes}
 
@@ -96,7 +96,7 @@ Les visualisations de dégradé de ligne utilisent des fichiers de palette (`rou
 - Pour les [itinéraires](../navigation/guidance/map-during-navigation.md#color) : *Vitesse (`route_speed_default.txt`), Pente (`route_slope_default.txt`)* et *Élévation (Altitude) (`route_elevation_default.txt`)*.
 - Pour les [traces GPX](../map/tracks/appearance#track-colors-in-gpx-files) : *Vitesse, Pente, Vitesse max (`route_maxspeed_default.txt`)* et *Élévation (Altitude)*, ou informations provenant de *capteurs externes*.
 
-Sur Android, les palettes peuvent également être créées ou modifiées directement dans l'application en utilisant l'[éditeur de palette de couleurs](../map/tracks/appearance.md#color-palette-editor). Il s'agit d'une fonctionnalité payante <ProFeature />.
+Les palettes peuvent également être créées ou modifiées directement dans l'application en utilisant l'[éditeur de palette de couleurs](../map/tracks/appearance.md#color-palette-editor). Il s'agit d'une fonctionnalité payante <ProFeature />.
 
 ### Favoris et points de cheminement {#favorites-waypoints}
 
@@ -155,7 +155,7 @@ Si vous devez modifier un fichier de palette existant à l'intérieur d'OsmAnd (
 - Exportez les données de la palette sous forme de sauvegarde .osf (voir la section [Importer / Exporter](#import--export) ci-dessous).
 - Décompressez le .osf exporté. Le fichier .osf est une archive .zip renommée. Faites une copie du fichier .osf original, puis décompressez-le à l'aide de n'importe quel outil d'archive.
 - Trouvez et modifiez le fichier TXT de la palette. Dans les dossiers extraits, localisez le fichier de palette nécessaire (par exemple : height_altitude_&lt;type_name&gt;.txt ou route_speed_&lt;type_name&gt;.txt) et modifiez ses valeurs dans un éditeur de texte.
-- Recompressez et renommez en .osf. Recompressez le contenu extrait dans une archive .zip, puis renommez-la en .osf. Conservez la même structure de dossiers.
+- Recompressez et renommez en .osf. Recompressez le contenu extrait dans une archive .zip, puis renommez-le en .osf. Conservez la même structure de dossiers.
 - Importez le .osf mis à jour dans OsmAnd (voir la section **Importer / Exporter** ci-dessous) et redémarrez l'application pour appliquer les modifications.
 
 ### Importer / Exporter {#import--export}

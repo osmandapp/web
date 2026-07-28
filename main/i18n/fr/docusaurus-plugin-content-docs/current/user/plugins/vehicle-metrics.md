@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title:  Métriques du véhicule
 ---
@@ -56,7 +56,7 @@ Pour utiliser les données d'un scanner OBD-II :
 7. [Utilisez](#trip-recording)le **plugin Enregistrement de trajet** pour enregistrer les données du véhicule.
 
 
-### Appairer le scanner OBD-II {#pair-odb-ii-scanner}
+### Appairer le scanner ODB-II {#pair-odb-ii-scanner}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,7 +93,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 <TabItem value="android" label="Android">
 
-**Android.** Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisir un panneau → <Translate android="true" ids="obd_widget_group"/>*
+**Android.** Allez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
 
 |  |  |
 |--|--|
@@ -104,7 +104,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisir un panneau → <Translate ios="true" ids="obd_plugin_name"/>*
+**iOS.** Allez à : *Menu → Plugins → Métriques du véhicule → OBD → menu à trois points*
 
 |  |  |
 |--|--|
@@ -161,7 +161,7 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 
 <TabItem value="android" label="Android">
 
-**Android.** Allez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+**Android**. Allez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
 
 | | |
 |--|--|
@@ -172,7 +172,7 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Allez à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
+**iOS**. Allez à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,obd_plugin_name"/>*
 
 | | |
 |--|--|
@@ -218,7 +218,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 | | |
 |--|--|
-|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 
