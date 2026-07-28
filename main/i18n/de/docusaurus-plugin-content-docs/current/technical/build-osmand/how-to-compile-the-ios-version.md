@@ -1,5 +1,5 @@
 ---
-source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
+source-hash: de56403a9eb7f5ddcc9fc2e939af2545f903d69f8212f945db5aba76b5f8c784
 sidebar_position: 6
 ---
 
@@ -22,7 +22,7 @@ sidebar_position: 6
   Für Mitglieder des OsmAnd‑Teams: Senden Sie Ihren Apple‑ID‑Login, damit Sie zur Entwicklerliste hinzugefügt werden. Wenn Sie eine E‑Mail mit einer Einladungsnachricht erhalten, aktivieren Sie diese.
   Schließen Sie Xcode.
 
-5. Installieren Sie die Befehlszeilentools – cmake, svn, cocoapods.
+5. Installieren Sie die Befehlszeilentools – cmake und svn.
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -36,13 +36,8 @@ sidebar_position: 6
 
   $ brew install svn
   $ brew install cmake # getestet auf 3.25.2, 3.19, 3.11
-
-  # für Intel
-  $ sudo gem install cocoapods
-
-  # für M1
-  $ brew install cocoapods
   ```
+
 6. Laden Sie Java jdk 17 herunter und installieren Sie es.
   ```
   # für Intel
@@ -116,12 +111,12 @@ org.gradle.caching=true
   Lösung 5: Wenn Sie einen Fehler wie diesen erhalten: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Gehen Sie in den Ordner ```core/external/qtbase-ios/``` und löschen Sie alle Ordner, die mit ```upstream``` beginnen. Führen Sie dann `$ ./prepare.sh` erneut aus.
 
 
-9. Öffnen Sie `osmand.xcworkspace` in Xcode.
+9. Öffnen Sie `OsmAnd.xcworkspace` in Xcode. Wenn Xcode die Swift Package Manager-Abhängigkeiten nicht automatisch auflöst, führen Sie `File → Packages → Resolve Package Versions` aus.
 
 10. Erster Build.
   Setzen Sie das Build‑Ziel auf `OsmAnd Maps`. (In der Nähe der Wiedergabe-/Stopp‑Schaltflächen). Wählen Sie als Ziel Ihr Gerät oder einen der iOS‑Simulatoren. Verwenden Sie jedoch nicht den Standardwert "Any iOS Device (arm64)". Kompilieren Sie das Projekt (Wiedergabetaste).
 
-11. XCode‑Ziele und Sandbox
+11. XCode-Ziele und Sandbox
 
  - Verwenden Sie "My Mac (Designed for iPad)" für die tägliche Entwicklung (beste Leistung).
  - Verwenden Sie iPhone/iPad‑Ziele für die UI/UX‑Entwicklung (langsam auf M‑Prozessoren).

@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title:  Navigation
 ---
@@ -122,15 +122,16 @@ Probleme mit **Text-zu-Sprache (TTS)** hängen in der Regel mit den **Android-Sy
 
 1. Stellen Sie sicher, dass eine TTS-Engine installiert ist.
 
-    - Öffnen Sie *Geräteeinstellungen → Sprache & Eingabe → Text-zu-Sprache-Optionen*.
+    - Öffnen Sie *Geräteeinstellungen → Bedienungshilfen → Text-to-Speech-Ausgabe*. Weitere Informationen finden Sie im offiziellen [Google-Leitfaden](https://support.google.com/accessibility/android/answer/6006983).
     - Überprüfen Sie, ob eine **TTS-Engine** installiert ist (z. B. Google TTS, Samsung TTS, Pico).
-    - Wenn keine Engine installiert ist, wählen Sie *„Weitere installieren…“* und laden Sie eine kompatible herunter.
+    - Wenn keine Engine installiert ist, installieren Sie eine aus dem Google Play Store oder den Diensten Ihres Geräteherstellers.
+    - Wählen Sie Ihre bevorzugte TTS-Engine aus und stellen Sie sicher, dass sie aktiviert ist.
     - [Liste der unterstützten TTS-Engines und Sprachen.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Überprüfen Sie die TTS-Spracheinstellungen.
 
-    - Wählen Sie die gewünschte Sprache in *Android-Einstellungen → Text-zu-Sprache-Optionen*.
-    - Tippen Sie auf *„Ein Beispiel anhören“*, um zu testen, ob die TTS-Engine funktioniert.
+    - Wählen Sie die gewünschte Sprache in *Android-Einstellungen → Text-to-Speech-Ausgabe*.
+    - Tippen Sie auf *Wiedergabe* (oder *Beispiel anhören*, je nach Gerät), um zu testen, ob die TTS-Engine funktioniert.
     - Wenn Sie nichts hören, aktualisieren oder installieren Sie die TTS-Engine neu.
 
 3. Passen Sie die OsmAnd-Sprachnavigationseinstellungen an.

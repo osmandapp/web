@@ -1,5 +1,5 @@
 ---
-source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
+source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
 sidebar_position: 3
 title: Intelligenter Ordner (Filter)
 ---
@@ -55,7 +55,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 
 - **Um alle** aktiven Filter zu löschen, tippen Sie auf **Alle zurücksetzen**.
 
-- **Um** den aktuellen Filtersatz as neuen **Intelligenten Ordner** zu speichern, tippen Sie auf das Speichern-Symbol in der oberen rechten Ecke des Bildschirms.
+- **Um** den aktuellen Filtersatz als neuen **Intelligenten Ordner** zu speichern, tippen Sie auf das Speichern-Symbol in der oberen rechten Ecke des Bildschirms.
 
 
 ### Verfügbare Filter {#available-filters}
@@ -210,7 +210,7 @@ Sie können auch den Ordner öffnen und auf das Symbol in der *rechten oberen Ec
 - **<Translate ios="true" ids="shared_string_select"/>** — Verwenden Sie den [Auswahlmodus](./manage-tracks.md#selection-mode) für spezifische Track-Aktionen innerhalb des Ordners.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Aktualisieren Sie den Inhalt des Ordners manuell, um sicherzustellen, dass er die neuesten Tracks enthält.
 - **<Translate ios="true" ids="edit_filter"/>** — Ändern Sie die Track-Filtereinstellungen für den aktuellen Intelligenten Ordner. Siehe [Suchfilter](#search-filter) für Details.
-- **Organize by** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Wählen Sie *None*, um alle Tracks als einzelne Liste anzuzeigen, entsprechend der Standardansicht des Intelligenten Ordners. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
+- **<Translate ios="true" ids="organize_by"/>** — Organisieren Sie Tracks im Intelligenten Ordner automatisch in Gruppen basierend auf einem ausgewählten Parameter. Wählen Sie *None*, um alle Tracks als einzelne Liste anzuzeigen, entsprechend der Standardansicht des Intelligenten Ordners. Verfügbare Gruppierungstypen umfassen *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation* und *Sensor data*. 
 
 Einige Gruppierungsparameter sind nur mit einem OsmAnd Pro-Abonnement verfügbar. Kostenlose Parameter umfassen *Activity*, *Year of creation* und *Nearest city*. Alle anderen Parameter sind mit einem <ProFeature/>-Label gekennzeichnet.
 

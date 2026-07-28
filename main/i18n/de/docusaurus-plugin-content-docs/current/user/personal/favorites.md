@@ -1,5 +1,5 @@
 ---
-source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Favoriten
 ---
@@ -88,7 +88,7 @@ Wenn ein Punkt aus OSM-Daten hinzugefügt wird, werden die relevanten POI-Inform
 
 - **Name** — Ein eindeutiger Name innerhalb der Gruppe (*Erforderlich*).
 - **Adresse** und **Beschreibung** (*Optional*).
-- **Gruppe** — Wählen Sie aus einer bestehenden [Favoritengruppe](#manage-favorites) oder erstellen Sie eine neue. Auf Android können Sie auch einen Unterordner innerhalb einer Gruppe auswählen oder einen neuen erstellen.
+- **Gruppe** — Wählen Sie aus einer bestehenden [Favoritengruppe](#manage-favorites) oder erstellen Sie eine neue. Auf Android können Sie auch einen Unterordner innerhalb einer Gruppe auswählen oder einen neuen erstellen. Verschachtelte Ordner werden mit ihrem vollständigen Pfad angezeigt (zum Beispiel *Reisen* / *Italien* / *Rom*).
 - **Visuelle Anpassung** — Symbol, Farbe und Form können entweder dem standardmäßigen [Erscheinungsbild der Gruppe](#change-group-appearance) entsprechen oder individuell angepasst werden.
 
 **HINWEIS:** Wenn die Favoritenebene in [Karte konfigurieren](../map/configure-map-menu) deaktiviert ist, wird beim Hinzufügen eines neuen Favoritenpunkts die Ebene automatisch aktiviert, damit der neu hinzugefügte Favorit auf der Karte sichtbar ist.
@@ -269,18 +269,19 @@ Das Antippen der &#8942;-Schaltfläche (**Android**) öffnet spezielle Funktione
 
 <TabItem value="android" label="Android">
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_new_2.png)
+![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Verwenden Sie das ***Drei-Punkte-Menü*** neben jedem Ordner, um Gruppen von Favoriten zu verwalten:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Auf Karte ausblenden** — Schalten Sie diese Option um, um die Favoritenpunkte aus dem Ordner auf der Karte anzuzeigen oder auszublenden.
 - **<Translate android="true" ids="pin_folder"/>** — Pinnen Sie den ausgewählten Ordner, um ihn oben in der Favoritenliste für einen schnelleren Zugriff zu halten.
-- **<Translate android="true" ids="add_new_folder"/>** — Erstellen Sie einen neuen Unterordner innerhalb des ausgewählten Ordners.
 - **<Translate android="true" ids="shared_string_rename"/>** — Verwenden Sie diese Option, um den Namen des ausgewählten Ordners zu ändern.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Passen Sie an, wie die Favoritenpunkte im Ordner auf der Karte erscheinen, indem Sie ihre Symbole, Farben oder Beschriftungen ändern.
+- **<Translate android="true" ids="shared_string_share"/>** — Teilen Sie die Favoritenpunkte im Ordner, indem Sie sie als *Favorites.gpx*-Datei exportieren, was die Übertragung oder Sicherung Ihrer Daten erleichtert.
+- **<Translate android="true" ids="shared_string_move"/>** — Verschieben Sie den ausgewählten Ordner einschließlich aller Favoritenpunkte und verschachtelter Unterordner in einen anderen Ordner. Der aktuelle Ordner und seine Unterordner können nicht als Ziel ausgewählt werden.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Von Kartenmarkierungen entfernen** — Fügen Sie alle Favoritenpunkte aus dem Ordner zur *Liste der Kartenmarkierungen* hinzu oder entfernen Sie sie bei Bedarf zur einfachen Referenz.
 - **<Translate android="true" ids="add_to_a_track"/>** — Fügen Sie alle Favoritenpunkte aus dem ausgewählten Ordner zu einem Track hinzu. Dies öffnet den Track-Auswahlbildschirm, in dem Sie einen Track auswählen oder erstellen können.
-- **<Translate android="true" ids="shared_string_share"/>** — Teilen Sie die Favoritenpunkte im Ordner, indem Sie sie als *Favorites.gpx*-Datei exportieren, was die Übertragung oder Sicherung Ihrer Daten erleichtert.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Löschen Sie den ausgewählten Favoritenordner und alle darin enthaltenen Punkte dauerhaft.
 
 </TabItem>

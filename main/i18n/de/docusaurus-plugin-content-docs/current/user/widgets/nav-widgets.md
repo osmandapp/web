@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title:  Navigations-Widgets
 ---
@@ -114,7 +114,7 @@ Wenn Sie eine Route auswählen und die **Start**-Schaltfläche drücken, öffnet
 
 ## Peilungs-Widget   {#bearing-widget}
   
-Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie z. B. einem Ziel- oder Ausgangspunkt. Eine Peilung kann *relativ* (entsprechend Ihrem Kurs) oder *magnetisch* (entsprechend dem Kompass) sein. Zum Beispiel ist eine magnetische Peilung von 180° die Richtung nach Süden, und eine relative Peilung von 180° ist direkt hinter Ihnen. Die Himmelsrichtungen sind die vier Hauptrichtungen des Kompasses. Sie sind Nord (*N* - 0° oder 360°), Ost (*E* - 90°), Süd (*S* - 180°) und West (*W* - 270°).  
+Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie z. B. einem Ziel- oder Ausgangspunkt. Eine Peilung kann *relativ* (entsprechend Ihrem Kurs) oder *magnetisch* (entsprechend dem Kompass) sein. Zum Beispiel ist eine magnetische Peilung von 180° die Richtung nach Süden, und eine relative Peilung von 180° ist direkt hinter Ihnen. Die Himmelsrichtungen sind die vier Hauptrichtungen des Kompasses. Sie sind Nord (*N* - 0° or 360°), Ost (*E* - 90°), Süd (*S* - 180°) und West (*W* - 270°).  
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
@@ -188,6 +188,7 @@ Das Widget *Routeninformationen* liefert Echtzeitdaten über die laufende Naviga
 
 - Wählen Sie eine **Standardansicht**, um einen der folgenden Werte zu priorisieren: *Voraussichtliche Ankunftszeit*, *Fahrzeit*, *Entfernung*.
 - Wählen Sie unter **Anzeigepriorität** zwischen *Ziel zuerst (Standard)* oder *Zwischenziel zuerst*, um die relevantesten Routeninformationen zu priorisieren.
+- Aktivieren oder deaktivieren Sie die Option **Schaltfläche zum Erweitern anzeigen**, um die Schaltfläche der Navigations-Benutzeroberfläche zum Erweitern anzuzeigen oder auszublenden. Diese Option ist standardmäßig aktiviert.
 
 > HINWEIS: Das Widget ist nur während der Navigation sichtbar.
 
@@ -450,7 +451,7 @@ In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der ak
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate ios="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,map_widget_config"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate ios="true" ids="map_widget_top_text"/>* |
 | Einstellungen | Wählen Sie aus, um immer **den aktuellen Straßennamen** anzuzeigen oder **den nächsten Straßennamen** anzuzeigen, wenn Sie sich dem Manöver nähern |
 | Durch Tippen | Öffnet ein Kontextmenü mit Einstellungen (Schalten Sie Informationen zur nächsten Abbiegung EIN/AUS) und Löschen |
 
