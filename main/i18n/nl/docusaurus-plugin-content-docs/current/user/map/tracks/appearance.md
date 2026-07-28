@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
@@ -73,9 +73,21 @@ Voor meer details over het aanpassen van het uiterlijk van de routelijn, zie [Ka
 
 ### Kleurenpalet-editor {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android"> 
 
 ![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1_ios.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Bij het kleuren van een track op basis van Snelheid, Hoogte of Helling, kunt u eigen paletten gebruiken om te definiëren hoe kleuren langs de track worden toegepast.
 
@@ -246,7 +258,7 @@ De 3D-trackfunctie is zeer nuttig voor activiteiten zoals paragliden, waar het v
 
 <TabItem value="ios" label="iOS">
 
-![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ Het tabblad [Tracks](../../personal/tracks/manage-tracks.md) geeft automatisch a
 
 Wijzig het uiterlijk van meerdere tracks in *Mijn Plaatsen → Tracks*:
 
-- **Standaard uiterlijk wijzigen** (alleen Android) - Maakt het mogelijk om standaardinstellingen te configureren die worden toegepast zodra een track aan de [map](../../personal/tracks/manage-tracks.md#track-folder) is toegevoegd.
+- **Standaard uiterlijk wijzigen** - Maakt het mogelijk om standaardinstellingen te configureren die worden toegepast zodra een track aan de [map](../../personal/tracks/manage-tracks.md#track-folder) is toegevoegd.
 - **Terugzetten naar origineel** - Herstelt individuele trackinstellingen.
 
 - [Selectiemodus](../../personal/tracks/manage-tracks.md#selection-mode) - Wijzigt het uiterlijk van specifieke tracks in de geselecteerde map of de hele lijst in het tabblad Tracks.

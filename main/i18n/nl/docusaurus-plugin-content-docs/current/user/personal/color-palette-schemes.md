@@ -1,5 +1,5 @@
 ---
-source-hash: 1bbeb6f0c1ba01e3cfc68f72f8d19e49e6c67481fe6111180cf273ab138dd078
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
 title:  Kleurenschema's
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Betaalde functie
 
-Kleurenschema's worden gebruikt als onderdeel van de betaalde [Maps+](../purchases/index.md) en Pro <ProFeature /> functies.  
+Kleurenschema's worden gebruikt als onderdeel van betaalde [Maps+](../purchases/index.md) en Pro <ProFeature /> functies.  
 
 :::
 
