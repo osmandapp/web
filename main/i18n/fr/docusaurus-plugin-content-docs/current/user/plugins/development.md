@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title:  Développement OsmAnd
 ---
@@ -88,7 +88,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 - **Simuler le premier démarrage de l'application**. Définit l'indicateur signalant le premier démarrage de l'application, tout en conservant tous les autres paramètres inchangés.  
 - **Tester les invites vocales**. Sélectionnez une voix et testez en lisant des annonces.
-- **Afficher les touches** (*iOS*). Met en évidence les touches de l'écran avec des indicateurs visuels.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Met en évidence les touches de l'écran avec des indicateurs visuels.
 - **Barre d'état transparente**. La carte devient visible sous la barre d'état.  
 - **Afficher la bannière de la version gratuite**. Affiche la bannière de la version gratuite même dans la version payante.  
 - **Afficher les informations de débogage**. Affiche des informations graphiques sur l'emplacement de chaque texte sur la carte.
