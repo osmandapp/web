@@ -33,13 +33,16 @@ Thanks to all our users for their feedback and suggestions. Your input is invalu
 
 - [New spatial search](#new-spatial-search) — find places and search around a place
 - [Refreshed search UI](#refreshed-search-ui): sorting, category filters, cleaner look
-- [Attach photos and media to Favorites](#attach-photos-and-media-to-favorites)z
+- [Attach photos and media to Favorites](#attach-photos-and-media-to-favorites)
 - [Favorites](#subgroups-support-and-pinnable-folders-for-favorites): subgroups support and pinnable folders
 - [New widgets appearance](#new-widgets-appearance)
+- Roof shapes and custom colorsfor 3D Buildings
 - [Coordinates](#coordinates-epsg-systems): search, map grid, and POI display now support EPSG and Maidenhead locator
-- Fixed navigation interruptions; switch between Standard and Fast routing
-- Set Android Auto map scale separately from your phone
+- [Navigation settings improvements](#navigation-settings-improvements)
+- [Android Auto updates](#android-auto-updates)
 - [Astronomy added solar & lunar eclipses](#astronomy-added-solar--lunar-eclipses)
+- [AIS improvements](#ais-improvements)
+- [Others updates and improvements](#others-updates-and-improvements)
 - [Bug fixes](#bug-fixes).
 
 
@@ -183,6 +186,27 @@ You can also **copy appearance settings** from another widget panel or another p
 
 ![Widget Appearance](./img/widgets_appearance.webp)
 
+## Updated 3D Buildings
+
+https://github.com/osmandapp/OsmAnd/issues/14864
+
+OsmAnd 5.4 brings another major update to **3D Buildings**, making cityscapes more detailed and closer to the real-world geometry stored in OpenStreetMap.
+
+Buildings can now display **different roof shapes** instead of being rendered only as simple flat-topped volumes. When the corresponding roof information is available in OpenStreetMap, OsmAnd uses it to create a more recognizable building silhouette.
+
+Rendering of **complex buildings and building parts** has also been improved. OsmAnd now handles structures divided into multiple `building:part` elements more accurately, including cases where only `building:levels` information is available instead of an explicit height.
+
+We also improved the rendering of buildings created from **relations and multipolygons**, fixing cases where individual sections or lower parts of complex structures could be missing from the 3D model.
+
+These changes make landmarks and detailed urban areas significantly more realistic when exploring the map in 3D.
+
+To enable the feature, go to:
+
+**Menu → Configure map → Topography → 3D buildings**
+
+![3D Buildings](./img/3d_buildings.webp)
+
+
 ## Coordinates EPSG systems
 
 https://github.com/osmandapp/OsmAnd/issues/17311
@@ -201,20 +225,56 @@ The **Maidenhead Locator System** is also supported on Android. It represents lo
 
 Coordinate formats can be configured separately for each OsmAnd profile. You can choose a **Primary coordinate format**, add other formats to the list, reorder them, or remove formats you do not need.
 
-## Fixed navigation interruptions; switch between Standard and Fast routing
+## Navigation settings improvements
+
+https://github.com/osmandapp/OsmAnd/issues/22987
+
+OsmAnd 5.4 improves navigation in situations where a route crosses regions with **outdated or inconsistent offline maps**.
+
+Previously, route calculation could be interrupted by several dialogs asking you to update maps or manually continue using the downloaded maps. In some cases, this could even happen during route recalculation while navigation was already active.
+
+Now, OsmAnd can handle these situations more smoothly. If the selected routing method cannot calculate the route correctly, the app can switch to an alternative calculation method and continue navigation without unnecessary interruptions.
+
+![Navigation](./img/navi.webp) ![Navigation](./img/navi_2.webp)
+
+You can also control this behaviour manually in:
+
+**Navigation settings → Route parameters → Route calculation method**
+
+Here, you can choose the preferred routing calculation method depending on your needs.
+
+![Navigation](./img/navi_3.webp)
+
+This makes route calculation more reliable when travelling across map borders or when not all downloaded maps were updated at the same time.
 
 
 ## Android Auto updates
 
-https://github.com/osmandapp/OsmAnd/issues/25068
+OsmAnd 5.4 brings several improvements to **Android Auto**, making the map, search, and navigation experience more convenient on the car display.
 
-https://github.com/osmandapp/OsmAnd/issues/24798
+### Separate Map Scale for Android Auto
 
-https://github.com/osmandapp/OsmAnd/issues/25097
+Android Auto can now use its ful because the phone and the vehicle's display can have very different screen sizes and resolutions. You can adjust the map scale specifically for Android Auto to make roads, labels, and other map elements more comfortable to read on your car screen.
 
-https://github.com/osmandapp/OsmAnd/issues/22693
+![Android Auto Map Scale](./img/mm_aa.webp)
 
-https://github.com/osmandapp/OsmAnd/issues/24770
+### More Useful Search Results
+
+Search results in Android Auto now show more information at a glance.
+
+For POIs, OsmAnd can display **opening hours in a compact format**, together with distance and address information. This makes it easier to see whether a restaurant, shop, fuel station, or another place is currently open before selecting it as your destination.
+
+Address presentation has also been simplified for nearby POIs, reducing unnecessary information on the limited Android Auto screen.
+
+![Android Auto](./img/search_aa.webp)
+
+### Improved Navigation Controls
+
+Navigation controls have also been refined. The **X button next to the ETA** now correctly stops the active navigation, making it easier to finish a trip directly from the Android Auto interface.
+
+We also fixed interface issues on the arrival screen, including the duplicated Search button that could appear after reaching a destination.
+
+Together, these changes make Android Auto cleaner and easier to use while keeping important map, search, and navigation information accessible on the road.
 
 
 ## Astronomy added solar & lunar eclipses
@@ -253,18 +313,71 @@ Together, these additions turn the Astronomy plugin into a useful tool not only 
 
 https://github.com/osmandapp/OsmAnd/issues/23512
 
+OsmAnd 5.4 brings several improvements to the **Vessel Tracker (AIS)** plugin, making it easier to configure AIS connections and monitor nearby vessels.
 
-## More updates
+The plugin settings have been reorganized into clearer sections for **Connection**, **Object visibility**, and **Collision avoidance alarms (CPA)**.
 
-- https://github.com/osmandapp/OsmAnd/issues/24608
-- https://github.com/osmandapp/OsmAnd/issues/22508
-- https://github.com/osmandapp/OsmAnd/issues/24980
-- https://github.com/osmandapp/OsmAnd/issues/25438
-- https://github.com/osmandapp/OsmAnd/issues/22987
+You can configure AIS data reception using **TCP or UDP**, with connection information and status displayed directly in the interface.
+
+New **Object visibility** settings give you more control over outdated AIS targets. You can define when a vessel should be marked as outdated and how long it should remain visible on the map after its signal is lost.
+
+The **Collision Avoidance Alarm (CPA)** settings have also been redesigned. You can configure:
+
+- **Warning time (TCPA)** — how far in advance OsmAnd should warn about a potential collision.
+- **Closest Point of Approach (CPA)** — the minimum safe distance between your vessel and another AIS target.
+
+When another vessel is predicted to come too close within the configured time, OsmAnd can highlight it as a potential collision risk.
+
+AIS visibility can also be managed as a dedicated map layer through **Configure Map**, making it easier to enable or disable vessel information when needed.
+
+
+
+
+
+## Others updates and improvements
+
+- **More track details in What's Here.** Track information now makes it easier to distinguish between tracks on the map, including identifying the folder where a track is stored.  
+  [#24608](https://github.com/osmandapp/OsmAnd/issues/24608)
+
+- **More icons for profiles.** The profile icon selection has been expanded, giving you more options to visually distinguish profiles for activities such as running and other use cases.  
+  [#22508](https://github.com/osmandapp/OsmAnd/issues/22508)
+
+- **Extended AIDL support for external apps.** External apps and plugins can now organize their OsmAnd widgets into groups and use custom widget icons, providing more flexibility for third-party integrations.  
+  [#24980](https://github.com/osmandapp/OsmAnd/issues/24980)
+
+- **Correct altitude on Android 16.** Fixed an issue where OsmAnd could display ellipsoidal altitude instead of altitude above mean sea level (MSL) on Android 16 devices.  
+  [#25438](https://github.com/osmandapp/OsmAnd/issues/25438)
+
+- **More reliable route calculation.** Routing has been improved for cases with outdated or inconsistent offline maps, reducing interruptions and allowing OsmAnd to use an alternative calculation method when needed.  
+  [#22987](https://github.com/osmandapp/OsmAnd/issues/22987)
+
+
 
 ## Bug fixes 
 
-- Fixed 
+- Fixed [multiple URLs separated by semicolons being displayed and opened as a single link](https://github.com/osmandapp/OsmAnd/issues/24971).
+- Fixed [the **Open on map** action in Travel Guides](https://github.com/osmandapp/OsmAnd/issues/25062).
+- Fixed [copying widget panels and layouts from another profile](https://github.com/osmandapp/OsmAnd/issues/25011).
+- Improved [performance when opening GPX waypoint descriptions by resolving intermittent UI freezes](https://github.com/osmandapp/OsmAnd/issues/25137).
+- Fixed [widgets disappearing from **Analyze on map** after returning to OsmAnd from another app](https://github.com/osmandapp/OsmAnd/issues/24436).
+- Fixed [imported multi-segment tracks not appearing immediately after import](https://github.com/osmandapp/OsmAnd/issues/24418).
+- Corrected [incorrectly calculated storage size for Favorites and Favorite folders](https://github.com/osmandapp/OsmAnd/issues/24795).
+- Fixed [synchronization between elevation, road type, surface, and other graphs in route details](https://github.com/osmandapp/OsmAnd/issues/24712).
+- Improved [external sensor widgets by showing the correct disconnected state and resetting values after stopping](https://github.com/osmandapp/OsmAnd/issues/24635).
+- Fixed [a visual gap between the current location marker and the route line during navigation](https://github.com/osmandapp/OsmAnd/issues/24802).
+- Fixed [Favorite folder colors being reset after an app update](https://github.com/osmandapp/OsmAnd/issues/25028).
+- Fixed [deleted Favorites unexpectedly reappearing on the map](https://github.com/osmandapp/OsmAnd/issues/25010).
+- Fixed [outdated 3D Terrain maps not appearing in the **Updates** list](https://github.com/osmandapp/OsmAnd/issues/25099).
+- Improved [sorting of Favorites by proximity to the selected map area](https://github.com/osmandapp/OsmAnd/issues/24969).
+- Fixed [the location marker being hidden or positioned outside the visible map area in Android split-screen mode](https://github.com/osmandapp/OsmAnd/issues/25127).
+- Fixed [navigation incorrectly ending after switching to another app and returning to OsmAnd](https://github.com/osmandapp/OsmAnd/issues/24880).
+- Improved [navigation stability by fixing a resource leak that could cause crashes during longer trips](https://github.com/osmandapp/OsmAnd/issues/25256).
+- Improved [pinned Favorites folder behavior so folder state is preserved correctly after restarting the app](https://github.com/osmandapp/OsmAnd/issues/24791).
+- Improved [handling of very large tracks to reduce out-of-memory crashes when working with tracks containing hundreds of thousands of points](https://github.com/osmandapp/OsmAnd/issues/24420).
+- Fixed [incorrect 3D track rendering when using **Speed** as the visualization parameter](https://github.com/osmandapp/OsmAnd/issues/24942).
+
+
+
 
 _______________________
 
