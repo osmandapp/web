@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 20763908576b5c7c3d5452b861b2dfa49d9babaafa7bb035c0a9e06233ed9895
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -139,6 +139,7 @@ At the moment, the Pro subscription has the following features:
 | [Vehicle Metrics Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Allows you to connect an OBD-II scanner to display detailed vehicle data in the OsmAnd app and store the information in track records. Vehicle speed and Engine speed info is available for OsmAnd free.  |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Modify Color Scheme](../../user/plugins/topography.md#modify-color-scheme) | Allows you to customize the map appearance by selecting or importing color palettes. You can edit built-in schemes or use your own palette files to personalize map and route colors. |
+| [Creating custom palettes](../../user/map/tracks/appearance.md#color-palette-editor) | Allows you to create and edit gradient palettes for track coloring using Relative or Fixed values. You can define color steps, assign values, and customize how data (such as speed or altitude) is displayed along the track. |
 | [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Allows organizing tracks in Smart Folders using advanced grouping parameters such as date & time, distance, duration, speed, altitude & elevation, and sensor data. These options enable more detailed track categorization and flexible analysis. |
 
 

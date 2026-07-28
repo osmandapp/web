@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -88,7 +88,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 - **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
 - **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.
-- **Show Touches** (*iOS*). Highlights screen touches with visual indicators.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
 - **Transparante statusbalk**. De kaart wordt zichtbaar onder de statusbalk.  
 - **Toon banner gratis versie**. Toon de banner van de gratis versie, zelfs in de betaalde versie.  
 - **Toon debug-informatie**. Toon grafische informatie over de plaatsing van elke tekst op de kaart.

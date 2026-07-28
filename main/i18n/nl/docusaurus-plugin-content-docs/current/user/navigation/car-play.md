@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -168,7 +168,7 @@ Volg deze stappen om een route naar een *POI* in *CarPlay* te maken:
 
 ![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
-- Om uw eindbestemming als een *Kaartmarker* te definiëren, moet u eerst het vereiste aantal markers aanmaken in de OsmAnd-app op uw apparaat voordat u het verbindt met het multimediasysteem van het voertuig.
+- Om uw eindbestemming als een *Kaartmarker* te definiëren, moet u eerst het vereiste aantal markers aanmaken in de OsmAnd-app op uw apparaat voordat u het verbindt met het multimediasysteem van uw voertuig.
 - *Markers* moeten beschikbaar zijn in de lijst *Menu → Kaartmarker*.
 - Dit wordt in meer detail beschreven in het artikel [Markers](../personal/markers.md).  
 
@@ -179,7 +179,7 @@ Volg deze stappen om een route naar een *POI* in *CarPlay* te maken:
 
 Om een route naar een bestemming te maken, kunt u een bestaande track selecteren die beschikbaar is in de OsmAnd-app. De track kan van tevoren worden [gedownload](../personal/tracks/manage-tracks.md#import), gebruikt worden als [opgenomen](../plugins/trip-recording.md) of aangemaakt worden in [Route plannen](../plan-route/create-route.md).  
 
-Selecteer uit de lijst met tracks in *Menu → Mijn Plaatsen → [Tracks](../personal/tracks/manage-tracks.md)* de gewenste track voordat u verbinding maakt met het multimediasysteem van het voertuig, en de route zal ofwel opbouwen tot het begin van de track of de huidige richting langs de track weergeven.  
+Selecteer uit de lijst met tracks in *Menu → Mijn Plaatsen → [Tracks](../personal/tracks/manage-tracks.md)* de gewenste track voordat u verbinding maakt met het multimediasysteem van uw voertuig, en de route zal ofwel opbouwen tot het begin van de track of de huidige richting langs de track weergeven.  
 
 Tracks kunnen ook rechtstreeks op het voertuigscherm in *CarPlay* worden geselecteerd. Ze zijn georganiseerd in mappen die u hebt gemaakt, en voor gemakkelijke en snelle toegang tot recent geopende tracks is er een speciale map [Laatst gewijzigd](#folder-last-modified).
 

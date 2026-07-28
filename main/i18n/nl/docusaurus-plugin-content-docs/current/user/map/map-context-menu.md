@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -77,13 +77,13 @@ Wanneer u ergens op de kaart **lang tikt**, verschijnt er een **contextmenu** me
 
 <TabItem value="android" label="Android">  
 
-![Context track menu Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -138,6 +138,7 @@ Beschikbare details zijn onder andere:
 
 - [Artikelbeschrijving](#article-description)
 - [Alternatieve namen](#alternative-names)
+- [Gerelateerd](#related)
 - [Coördinaten](#coordinates)
 - [Binnen gebieden](#polygon-information)
 - [Nabije POI's](#nearby-pois)
@@ -156,6 +157,8 @@ Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/
 - [Kosten](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Toegankelijkheid](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Breedte](https://wiki.openstreetmap.org/wiki/Key:width) / [Hoogte](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Als een contactveld (zoals *Website, Telefoonnummer* of *E-mail*) meerdere waarden bevat, wordt bij het tikken een lijst met beschikbare vermeldingen weergegeven. Selecteer de gewenste vermelding om de bijbehorende actie uit te voeren.
 
 Naast de hierboven genoemde velden kan OsmAnd ook extra beschrijvende informatie tonen die is overgenomen van OpenStreetMap. Deze attributen helpen u de kenmerken van een plaats beter te begrijpen en kunnen details bevatten zoals hoogte, richting, bouwjaar, type oppervlak of bekleding, binnenniveau, betaalopties, beschikbaarheid van bezorging of afhalen, en vele andere. OsmAnd toont deze attributen met duidelijke labels en, waar mogelijk, iconen, waardoor het eenvoudiger is om de informatie te lezen en te herkennen. Het exacte aantal attributen hangt af van de beschikbare gegevens in OpenStreetMap voor het geselecteerde object.
 
@@ -214,6 +217,29 @@ Kenmerken van de weergave van alternatieve namen:
 - Andere categorieën omvatten *regiospecifieke vertaling* of *standaardinstellingen*.
 
 - Als een specifieke vertaling *niet beschikbaar* is, gebruikt OsmAnd standaard de **lokale** naam om nauwkeurigheid en consistentie in meertalige regio's te garanderen.
+
+
+### Gerelateerd {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Related Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Related iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+De sectie **Gerelateerd** toont kaartobjecten die via een OpenStreetMap-relatie zijn gekoppeld aan de geselecteerde plaats. Deze sectie is beschikbaar voor ondersteunde POI's op basis van relaties, zoals universiteitscampussen en andere multipolygoonobjecten.
+
+Tik op een item in de lijst om het kaartcontextmenu ervan te openen. Zo kunt u snel navigeren tussen gerelateerde objecten die tot dezelfde relatie behoren.
 
 
 ### Binnen gebied {#polygon-information}

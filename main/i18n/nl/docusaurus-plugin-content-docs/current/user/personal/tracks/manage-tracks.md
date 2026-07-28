@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title:  Tracks beheren
 ---
@@ -206,7 +206,7 @@ Nadat u uw keuze heeft gemaakt, zijn de volgende stappen beschikbaar:
 
 - [Uiterlijk wijzigen](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Met deze optie kunt u het uiterlijk van geselecteerde tracks aanpassen, waardoor ze beter zichtbaar en herkenbaar worden op de kaart.
 
-- **Verwijderen** — Als de geselecteerde tracks of mappen niet langer nodig zijn, kunt u ze met de functie Verwijderen verwijderen, waarbij de app bevestigingsopties biedt om onbedoeld verwijderen te voorkomen.
+- **Verwijderen** — Als de geselecteerde tracks of mappen niet langer nodig is, kunt u ze met de functie Verwijderen verwijderen, waarbij de app bevestigingsopties biedt om onbedoeld verwijderen te voorkomen.
 
 
 ### Tracks sorteren {#sort-by}
@@ -422,7 +422,8 @@ Met de importtool kunt u tracks uit externe bestanden toevoegen voor offline nav
     *Extra opties:*
 
     - **GPX-bestanden met één track** - importeer de hele track direct.
-    - **GPX-bestanden met meerdere tracks** - kies ervoor om het enkele GPX-bestand te importeren of selecteer specifieke tracks.
+    - **GPX-bestanden met meerdere tracks** - kies ervoor om het enkele GPX-bestand te importeren of selecteer specifieke tracks.  
+    Wanneer een GPX-bestand meerdere tracks bevat, wordt het scherm Tracks importeren geopend, zodat u alle tracks in het bestand kunt bekijken, de gewenste tracks kunt selecteren, een doelmap kunt kiezen of alle tracks als één track kunt importeren met de optie *Importeren als één track*. Als het bestand waypoints bevat, kunt u deze ook bekijken en toewijzen voordat u de import voltooit.
 
 ***LET OP:*** *Tracks die handmatig aan de OsmAnd-map op uw apparaat zijn toegevoegd, worden automatisch geïmporteerd zonder de applicatie opnieuw te starten.*  
 

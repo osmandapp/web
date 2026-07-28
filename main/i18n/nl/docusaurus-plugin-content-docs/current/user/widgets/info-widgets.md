@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Overzicht {#overview}
 
@@ -226,7 +224,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 - *Optimaliseren van stijgingen en dalingen.* Het gemiddelde glijgetal stelt piloten in staat om stijgingen en dalingen te optimaliseren op basis van de huidige omstandigheden. Piloten kunnen het optimale moment kiezen voor stijgingen om de vliegtijd te maximaliseren, of voor dalingen om een doelpunt te bereiken.
 - *Reageren op veranderende omstandigheden.* De widget biedt continue updates van het glijgetal, waardoor piloten direct kunnen reageren op veranderingen in atmosferische omstandigheden of routes. Ze kunnen hun vluchtplan aanpassen om de veiligheid en efficiëntie te waarborgen.
 - *Maximaal gebruik van horizontale afstand.* Het kennen van het glijgetal stelt piloten in staat om de horizontale afstand maximaal te benutten om naar het doel te bewegen, wat vooral belangrijk is bij het plannen van lange vluchten.
-- *Risicovermindering*. De *Glijgetal naar het doel* widget helpt piloten situaties te vermijden waarin het bereiken van het doel onmogelijk wordt door een onvoldoende glijgetal. Dit helpt om risico's te verminderen en de vliegveiligheid te verbeteren.
+- *Risikovermindering*. De *Glijgetal naar het doel* widget helpt piloten situaties te vermijden waarin het bereiken van het doel onmogelijk wordt door een onvoldoende glijgetal. Dit helpt om risico's te verminderen en de vliegveiligheid te verbeteren.
 
 
 **Positieve en Negatieve Waarden:**
@@ -239,7 +237,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 
 - Waarde **≤ 0.1**:  
   - "0.05" wordt weergegeven als "0".
-- Waarde **> 0.1 en < 100**:  
+- Waarde **> 0.1 and < 100**:  
   - bijvoorbeeld, "50.7643" wordt weergegeven als "50.8:1".
 - Waarde **> 100:**  
   - "102.35" wordt weergegeven als "102:1."
@@ -689,7 +687,7 @@ Om de Tracker-widget aan het kaartscherm toe te voegen, schakelt u de OsmAnd [Tr
 
 Om de plugin en widget te laten werken, moet u [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) installeren vanuit Google Play of andere bronnen.  
 
-Deze OsmAnd Tracker-plugin widget wordt gebruikt om snel toegang te krijgen tot de OsmAnd Tracker-app en uw locatie-informatie te delen met andere gebruikers. De app stuurt *Live Locatie*-berichten naar geselecteerde chats binnen een bepaalde tijd, toont een lijst met contacten en groepen, en controleert chats op berichten met uw locatie, die vervolgens op een kaart in OsmAnd worden weergegeven.  
+Deze OsmAnd Tracker-plugin widget is gebruikt om snel toegang te krijgen tot de OsmAnd Tracker-app en uw locatie-informatie te delen met andere gebruikers. De app stuurt *Live Locatie*-berichten naar geselecteerde chats binnen een bepaalde tijd, toont een lijst met contacten en groepen, en controleert chats op berichten met uw locatie, die vervolgens op een kaart in OsmAnd worden weergegeven.  
 
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 

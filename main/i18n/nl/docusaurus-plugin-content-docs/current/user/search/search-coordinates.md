@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title:  Coördinaten zoeken
 ---
@@ -115,7 +115,7 @@ Er zijn verschillende manieren om coördinaten in te voeren voor de zoekopdracht
 - *Invoerregels*. De coördinaten bestaan uit een MGRS-zone, een vierkant en nog twee cijfers die de oostelijke en noordelijke offsets aangeven.
 - *Meest gebruikt*. Het MGRS-formaat wordt veel gebruikt in militaire navigatie en communicatie, en kan ook nuttig zijn voor outdoorliefhebbers en wandelaars.
 
-### Swiss Grid {#swiss-grid}
+### Swiss Grid (Android only) {#swiss-grid}
 
 ![Coördinaten zoeken Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -129,7 +129,30 @@ Er zijn verschillende manieren om coördinaten in te voeren voor de zoekopdracht
 - *Meest gebruikt*. De formaten Swiss Grid (CH1903) en Swiss Grid (CH1903+) worden in Zwitserland gebruikt voor geodetische metingen, cartografie, geografische informatiesystemen en bouw- en ingenieurswerken. Deze formaten bieden een lokaal coördinatensysteem dat specifiek is voor Zwitserland.
 
 
+### Maidenhead Locator System (Android only) {#maidenhead-locator-system}
+
+![Coördinaten zoeken Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Dit is een geocode-systeem dat voornamelijk wordt gebruikt door radioamateurs. Het codeert geografische locaties in een korte reeks letters en cijfers, waardoor het handig is voor het identificeren van posities en het uitwisselen van locatie-informatie. Een voorbeeld van coördinaten in Maidenhead-formaat is KN29AS 19CX. Het eerste paar letters identificeert een groot veld, gevolgd door cijfers en extra letterparen die de precisie van de locatie verhogen. U kunt hier meer lezen over het Maidenhead Locator System [hier](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+- *Invoerregels*. De coördinaten bestaan uit afwisselende paren letters en cijfers. Langere locators bieden een hogere positionele nauwkeurigheid.  
+- *Meest gebruikt*. Het Maidenhead Locator System wordt veel gebruikt door radioamateurs voor stationlocatie, radiocommunicatie en wedstrijden.
+
 Voor elk profiel kunt u afzonderlijk een ander coördinaatformaat instellen. Ga hiervoor naar *Algemene instellingen → [Coördinaatformaat](../personal/profiles.md#units--formats)*.
+
+
+## Coördinaatformaat aanpassen (Android only) {#customize-coordinate-format}
+
+![Coördinaten zoeken Android](@site/static/img/search/customising_format.webp) ![Coördinaten zoeken Android](@site/static/img/search/searching_format.webp)
+
+U kunt de lijst met coördinaatformaten die beschikbaar zijn voor het huidige profiel aanpassen.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+Op dit scherm kunt u:  
+- Tik op de knop *Bewerken* om het primaire coördinaatformaat in te stellen, coördinaatformaten opnieuw te ordenen of te verwijderen.
+- Tik op + om een ander coördinaatformaat toe te voegen.
+- Open het ⋮-menu om de standaardlijst met coördinaatformaten te herstellen of coördinaatformaten van een ander profiel te kopiëren.
+
+Wanneer u zoekt op coördinaten, kunt u een coördinaatformaat selecteren uit de lijst Recente of tikken op *Ander formaat selecteren* om alle beschikbare coördinatesystemen te bekijken. U kunt ook zoeken op naam van het coördinatesysteem of EPSG-code.
 
 
 <!--
