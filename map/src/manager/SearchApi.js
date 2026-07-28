@@ -7,6 +7,10 @@ function formatBboxCorner(corner) {
     return `${Number(corner.lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(corner.lng).toFixed(BBOX_COORDS_DECIMALS)}`;
 }
 
+export function getMapsFromUrl() {
+    return new URLSearchParams(globalThis.location.search).get('maps') || null;
+}
+
 export function searchByWordApi({
     latlng,
     bbox,
@@ -15,6 +19,7 @@ export function searchByWordApi({
     spatial = false,
     autocomplete = false,
     abortControllerKey = null,
+    maps = null,
 }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
         apiCache: true,
@@ -29,6 +34,7 @@ export function searchByWordApi({
             baseSearch,
             ...(spatial ? { spatial: true } : {}),
             ...(autocomplete ? { autocomplete: true } : {}),
+            ...(maps ? { maps } : {}),
             ...getCurrentTimeParams(),
         },
     });
