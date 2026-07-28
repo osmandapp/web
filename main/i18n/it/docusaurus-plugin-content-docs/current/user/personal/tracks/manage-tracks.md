@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title:  Gestire le Tracce
 ---
@@ -422,7 +422,8 @@ Lo strumento di importazione consente di aggiungere tracce da file esterni per l
     *Opzioni aggiuntive:*
 
     - **File GPX a traccia singola** - importa direttamente l'intera traccia.
-    - **File GPX a più tracce** - scegliere di importare il singolo file GPX o selezionare tracce specifiche.
+    - **File GPX a più tracce** - scegliere di importare il singolo file GPX o selezionare tracce specifiche.  
+    Quando un file GPX contiene più tracce, si apre la schermata Importa tracce, che consente di visualizzare tutte le tracce nel file, selezionare quelle da importare, scegliere una cartella di destinazione o importare tutte le tracce come una singola traccia utilizzando l'opzione *Importa come una traccia*. Se il file contiene waypoint, è anche possibile visualizzarli e assegnarli prima di completare l'importazione.
 
 ***NOTA:*** *Le tracce aggiunte manualmente alla cartella OsmAnd sul dispositivo vengono importate automaticamente senza riavviare l'applicazione.*  
 

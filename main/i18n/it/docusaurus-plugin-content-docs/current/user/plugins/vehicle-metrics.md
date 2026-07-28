@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title:  Metriche veicolo
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-:::info Funzionalità a pagamento
-Il plugin Metriche veicolo è una [funzionalità a pagamento](../purchases/index.md) di **OsmAnd Pro** <ProFeature />. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili gratuitamente su OsmAnd.
+:::info Funzionalità Pro
+Il plugin Metriche veicolo è una funzionalità a pagamento di [**OsmAnd Pro**](../purchases/index.md) <ProFeature />. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili gratuitamente su OsmAnd.
 :::
 
 Il **plugin Metriche veicolo** consente il monitoraggio in tempo reale dei dati del veicolo tramite il [protocollo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gli utenti possono tracciare metriche essenziali come le prestazioni del motore, l'efficienza del carburante e la velocità, consentendo una manutenzione proattiva del veicolo e la risoluzione dei problemi.  
@@ -218,7 +218,7 @@ Questi tag facilitano l'identificazione e l'utilizzo di dati specifici del veico
 
 | | |
 |--|--|
-|![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![Impostazioni OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

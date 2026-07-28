@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title:  Widget di navigazione
 ---
@@ -188,6 +188,7 @@ Il widget *Informazioni percorso* fornisce dati in tempo reale sul percorso di n
 
 - Selezionare una **Visualizzazione predefinita** per dare priorità a uno dei seguenti valori: *Orario di arrivo previsto*, *Tempo rimanente*, *Distanza*.
 - In **Priorità di visualizzazione**, selezionare tra *Prima la destinazione (predefinito)* o *Prima l'intermedio* per dare priorità alle informazioni sul percorso più pertinenti.
+- Abilitare o disabilitare l'opzione **Mostra pulsante espandi** per mostrare o nascondere il pulsante di espansione dell'interfaccia di navigazione. Questa opzione è abilitata per impostazione predefinita.
 
 > NOTA: il widget è visibile solo durante la navigazione.
 
@@ -248,7 +249,7 @@ Il widget mostra l'*Orario di arrivo* o il *Tempo rimanente* fino al primo punto
 | | |
 |:------------|:------------|
 | Abilita | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Con un tocco | Passa da *Orario di arrivo* a *Tempo rimanente* e viceversa. |
 | Tocco lungo | Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -381,7 +382,7 @@ Visualizza un widget in base alle impostazioni del tempo di avvicinamento. Il co
 
 | Colore     | ~ Tempo di attivazione | Distanza    | Tipo di indicazione |
 | :-------- | :------------- | :---------- | :---------- |
-| 🟢 Verde  | 5 secondi      | Vicino    | [Svolta ora](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟢 Green  | 5 secondi      | Vicino    | [Svolta ora](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 | 🟡 Giallo | 20 secondi     | In avvicinamento | [Svolta tra X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 -->
 
