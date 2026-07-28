@@ -1,5 +1,5 @@
 ---
-source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title:  الملفات الشخصية (الإعدادات)
 ---
@@ -217,7 +217,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ياردة / 0.62 ميل (1000 م) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 ميل بحري / 3280.84 قدم / 1000 م<br/>تنطبق وحدات الطول على قيم المسافة الأفقية (مثل مسافات القيادة/المسار ومسافات المناورة في الملاحة).|
 |  |  |  |
-| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم<br/>تنطبق وحدات الارتفاع على قيم الارتفاع/الارتفاعات والمقاييس ذات الصلة (الصعود/الهبوط، نطاق الارتفاع) في أدوات الارتفاع، ومعلومات مسار الملاحة، وإحصاءات المسار، وتسميات ارتفاع قمم الجبال على الخريطة.<br/>افتراضيًا، تتزامن وحدات الارتفاع مع وحدات الطول وتصبح مستقلة فقط بعد تغييرها يدويًا من قبل المستخدم. |
+| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم<br/>تنطبق وحدات الارتفاع على قيم الارتفاع/الارتفاعات والمقاييس ذات الصلة (الصعود/الهبوط، نطاق الارتفاع) في أدوات الارتفاع، ومعلومات مسار الملاحة، وإحصاءات المسار، وتسميات ارتفاع قمم الجبال على الخريطة.<br/>افتراضيًا، تتزامن وحدات الارتفاع مع وحدات الطول وتصبح مستقلة فقط بعد تغييرها يدويًا من المستخدم. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | مثال: 50.12333° 19.93233° (خط عرض خط طول) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | مثال: 50°7.393′ 19°55.941′ (خط عرض خط طول)  |
@@ -227,6 +227,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | مثال:  9F2X4WFJ+7W ([رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code) يمثل منطقة 9م × 14م)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (إصدار أندرويد فقط) | مثال: 2 215 227.87, 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (إصدار أندرويد فقط) | مثال: 4 215 227.87, 1 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (إصدار أندرويد فقط) | مثال: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*أندرويد*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| درجات 180° | جميع القيم الزاوية لها قراءات من 0° إلى 180° ومن 0° إلى -180°.  |
 |          | درجات 360° | جميع القيم الزاوية لها قراءات من 0° إلى 360°.  |
@@ -416,7 +417,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
