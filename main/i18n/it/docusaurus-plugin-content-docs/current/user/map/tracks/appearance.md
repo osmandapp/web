@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Aspetto della traccia
 ---
@@ -73,9 +73,21 @@ Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del perco
 
 ### Editor di palette di colori {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android"> 
 
 ![Editor di Palette di Colori](@site/static/img/map/gradient_palettes_1.png) ![Editor di Palette di Colori ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Editor di Palette di Colori](@site/static/img/map/gradient_palettes_1_ios.png) ![Editor di Palette di Colori ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Quando si colora una traccia per Velocità, Altitudine o Pendenza, è possibile utilizzare palette personalizzate per definire come i colori vengono applicati lungo la traccia.
 
@@ -86,7 +98,7 @@ La schermata *Tutti i colori* visualizza le palette disponibili. Toccare il menu
 - Rimuovere. La rimozione di una palette richiede conferma.
 
 Toccare il pulsante + nella schermata Tutti i colori. Sono disponibili due tipi di palette:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — i colori si scalano automaticamente in base ai valori minimo e massimo della traccia.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — i colori si scalano automaticamente in base ai valori minimo, medio e massimo della traccia.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — i colori sono assegnati a numeri assoluti specifici (ad esempio, 50 km/h). I valori possono essere modificati manualmente. Le unità seguono le [impostazioni di sistema](../../personal/profiles.md#units--formats). La scala dei colori non si riscala automaticamente quando applicata a tracce diverse.
 
 :::info Funzionalità Pro
@@ -246,7 +258,7 @@ La funzione di traccia 3D è molto utile per attività come il parapendio, dove 
 
 <TabItem value="ios" label="iOS">
 
-![Modifica aspetto](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Modifica aspetto](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Modifica aspetto](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Modifica aspetto](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ La scheda [Tracce](../../personal/tracks/manage-tracks.md) visualizza automatica
 
 Modifica l'aspetto di più tracce in *I miei luoghi → Tracce*:
 
-- **Cambia aspetto predefinito** (solo Android) - Consente di configurare le impostazioni predefinite che verranno applicate una volta che la traccia è aggiunta alla [cartella](../../personal/tracks/manage-tracks.md#track-folder).
+- **Cambia aspetto predefinito** - Consente di configurare le impostazioni predefinite che verranno applicate una volta che la traccia è aggiunta alla [cartella](../../personal/tracks/manage-tracks.md#track-folder).
 - **Ripristina originale** - Ripristina le impostazioni individuali della traccia.
 
 - [Modalità di selezione](../../personal/tracks/manage-tracks.md#selection-mode) - Cambia l'aspetto di tracce specifiche nella cartella selezionata o dell'intero elenco nella scheda Tracce.
