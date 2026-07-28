@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
 sidebar_position: 4
 title:  Voertuigparameters
 ---
@@ -32,7 +32,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ro
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigatie-instellingen iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ro
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigatie-instellingen iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -126,20 +126,20 @@ Limieten op voertuigparameters kunnen belangrijk zijn voor navigatie en verkeers
 
 <TabItem value="android" label="Android">
 
-![Navigatieroute Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Navigatieroute Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Navigatieroute iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Als u het motortype selecteert in de voertuigparameters, worden de [***CO2-voetafdrukgegevens***](../../navigation/setup/route-details.md#elevation-info) boven de grafiek weergegeven in [Routedetails](../setup/route-details.md).
-Beschikbare zes brandstoftypes: ***Benzine, Diesel, LPG, CNG, Elektrisch,*** en ***Hybride***.  
+Beschikbare zeven brandstoftypes: ***Benzine, Diesel, LPG, CNG, Elektrisch, Hybride*** en ***Ethanol***.  
 
 **Toepasbaarheid:**
 
@@ -158,7 +158,7 @@ De instelling **Brandstof gebruikt door motor** is alleen beschikbaar in voertui
 
 <TabItem value="ios" label="iOS">
 
-![Navigatie-instellingen iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

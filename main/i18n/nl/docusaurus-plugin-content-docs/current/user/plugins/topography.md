@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografie
 ---
@@ -274,6 +274,16 @@ Terreinschaduwen vereist 3D-reliëf en schakelt dit automatisch in wanneer gesel
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 *De Kleurenschema Wijzigen-functie* stelt u in staat een kleurenschema te selecteren:
 
 - Uit een [vooraf gedefinieerde lijst](#default-color-scheme).
@@ -290,23 +300,6 @@ U kunt:
 **Opmerking:** Schaduwreliëf gebruikt een vaste schaduwalgoritme en ondersteunt geen aangepaste kleurenpaletten.
 
 Voor geavanceerde palet-aanpassing met behulp van paletbestanden, zie het artikel [Kleurenschema's](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-*De Kleurenschema Wijzigen-functie* stelt u in staat een kleurenschema te selecteren:
-
-- Uit een [vooraf gedefinieerde lijst](#default-color-scheme).
-- Uit kleurenpaletbestanden die u op uw computer hebt gemaakt. Aangepaste bestanden kunnen aan OsmAnd worden toegevoegd met behulp van de [import/export tool](../personal/import-export.md).
-
-U kunt [deze paletten bewerken](../personal/color-palette-schemes.md#palette-modify) om het uiterlijk van kaarten en routes te personaliseren.
-
-</TabItem>
-
-</Tabs>
 
 ### Zichtbaarheid {#visibility}
 
@@ -532,7 +525,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 Als u *Schaduwreliëf* **uitschakelt** en *3D-reliëf* **inschakelt**, zullen reliëfschaduwen nog steeds zichtbaar zijn omdat *Schaduwreliëf* en *3D-reliëf* twee verschillende manieren zijn om een kaart te visualiseren. *Schaduwreliëf* creëert schaduwen op basis van het terrein en voegt deze toe aan de kaart, terwijl *3D-reliëf* 3D-elementen modelleert om de diepte en vorm van het terrein te tonen, en de schaduwen maken deel uit van de visualisatie. Deze functies kunnen parallel werken, en het uitschakelen van *Schaduwreliëf* heeft geen invloed op hoe 3D-effecten worden weergegeven.  
 
-Wanneer **Schaduwreliëf** is **ingeschakeld**, lijkt een afbeelding met reliëfschaduwen gedetailleerder, donkerder en meer getrapt dan een *3D-reliëf*-afbeelding. De verklaring is dat *Schaduwreliëf* de gradiënten en contrasten van het terrein benadrukt, waardoor een scherper en gedetailleerder beeld ontstaat. De *3D-reliëf*-functie geeft de kaart een vloeiender en gladder uiterlijk, waardoor het terrein wordt verzacht en de zichtbaarheid van sommige fijnere details mogelijk wordt verminderd.
+Wanneer **Schaduwreliëf** is **ingeschakeld**, lijkt een afbeelding met reliëfschaduwen gedetailleerder, donkerder en meer getrapt dan een *3D-reliëf*-afbeelding. De verklaring is dat *Schaduwreliëf* de gradiënten en contrasten van het terrein benadrukt, waardoor een scherper en meer gedetailleerd beeld ontstaat. De *3D-reliëf*-functie geeft de kaart een vloeiender en gladder uiterlijk, waardoor het terrein wordt verzacht en de zichtbaarheid van sommige fijnere details mogelijk wordt verminderd.
 
 
 ## Laagtypes Combineren {#combine-layer-types}

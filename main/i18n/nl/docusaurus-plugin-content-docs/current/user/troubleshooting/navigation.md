@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title:  Navigatie
 ---
@@ -122,15 +122,16 @@ Problemen met **Tekst-naar-spraak (TTS)** zijn doorgaans gerelateerd aan **Andro
 
 1. Zorg ervoor dat er een TTS-engine is geïnstalleerd.
 
-    - Open *Apparaatinstellingen → Taal & Invoer → Tekst-naar-spraakopties*.
+    - Open *Apparaatinstellingen → Toegankelijkheid → Tekst-naar-spraakuitvoer*. Zie voor meer informatie de officiële [Google-gids](https://support.google.com/accessibility/android/answer/6006983).
     - Controleer of er een **TTS-engine** is geïnstalleerd (bijv. Google TTS, Samsung TTS, Pico).
-    - Als er geen engine is geïnstalleerd, selecteer dan *“Meer installeren…”* en download een compatibele.
+    - Als er geen engine is geïnstalleerd, installeer er dan een vanuit de Google Play Store of de services van uw apparaatfabrikant.
+    - Kies uw voorkeur-TTS-engine en zorg ervoor dat deze is ingeschakeld.
     - [Lijst van ondersteunde TTS-engines en talen.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Verifieer de TTS-taalinstellingen.
 
-    - Selecteer de taal die u wilt gebruiken in *Android-instellingen → Tekst-naar-spraakopties*.
-    - Tik op *“Luister naar een voorbeeld”* om te testen of de TTS-engine werkt.
+    - Selecteer de taal die u wilt gebruiken in *Android-instellingen → Tekst-naar-spraakuitvoer*.
+    - Tik op *Afspelen* (of *Luister naar een voorbeeld*, afhankelijk van uw apparaat) om te testen of de TTS-engine werkt.
     - Als u niets hoort, update of herinstalleer dan de TTS-engine.
 
 3. Pas de instellingen voor spraaknavigatie in OsmAnd aan.

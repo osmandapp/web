@@ -1,5 +1,5 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
 sidebar_position: 1
 title:  Scherm configureren
 ---
