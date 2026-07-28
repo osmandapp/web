@@ -1,7 +1,7 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
-title:  Navigational Widgets
+title:  أدوات التنقل
 ---
 
 import Tabs from '@theme/Tabs';
@@ -188,6 +188,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 - اختر **عرض افتراضي** لتحديد أولوية إحدى القيم التالية: *وقت الوصول المتوقع*، *الوقت للذهاب*، *المسافة*.
 - في **أولوية العرض**، اختر بين *الوجهة أولاً (افتراضي)* أو *الوسيط أولاً* لتحديد أولوية المعلومات الأكثر صلة بالطريق.
+- فعّل أو عطّل خيار **إظهار زر التوسيع** لإظهار أو إخفاء زر توسيع واجهة التنقل. هذا الخيار مفعّل افتراضيًا.
 
 > ملاحظة: الأداة مرئية فقط أثناء التنقل.
 
@@ -427,7 +428,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 تعرض أداة اسم الشارع **اسم الشارع الحالي** مع سهم مستقيم، أو **اسم الشارع التالي** مع المناورة المراد أداؤها. عادةً ما يتكون اسم الشارع من درع الطريق السريع، و[اسم](https://wiki.openstreetmap.org/wiki/Key:name)، و[ref](https://wiki.openstreetmap.org/wiki/Key:ref)، و[مرجع دولي](https://wiki.openstreetmap.org/wiki/Key:int_ref)، و[وجهة](https://wiki.openstreetmap.org/wiki/Key:destination). 
 
-في الإعدادات يمكنك اختيار عرض **اسم الشارع الحالي** دائمًا واستخدامه مع أداة [**Next turn**](#next-turn). **Next turn information** مغلق افتراضيًا. إذا قمت بتفعيله، فإن التبديل بين اسم الشارع الحالي واسم الشارع التالي يحدث عندما تقترب من المكان الذي تريد أداء المناورة فيه (~٢٠ ثانية)، نفس الإرشاد الصوتي [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+في الإعدادات يمكنك اختيار عرض **اسم الشارع الحالي** دائمًا واستخدامه مع أداة [**Next turn**](#next-turn) لترى دائمًا اسم الشارع التالي أيضًا. **معلومات المنعطف التالي** مغلقة افتراضيًا. إذا قمت بتفعيلها، فإن التبديل بين اسم الشارع الحالي واسم الشارع التالي يحدث عندما تقترب من المكان الذي تريد أداء المناورة فيه (~٢٠ ثانية)، نفس الإرشاد الصوتي [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 
 <Tabs groupId="operating-systems" queryString="current-os">

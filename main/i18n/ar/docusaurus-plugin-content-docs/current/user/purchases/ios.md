@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 20763908576b5c7c3d5452b861b2dfa49d9babaafa7bb035c0a9e06233ed9895
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -57,9 +57,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -141,12 +141,13 @@ import Translate from '@site/src/components/Translate.js';
 | [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات المركبة التفصيلية في تطبيق OsmAnd وتخزين المعلومات في سجلات المسارات. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني.  |
 | [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
 | [تعديل مخطط الألوان](../../user/plugins/topography.md#modify-color-scheme) | يسمح لك بتخصيص مظهر الخريطة من خلال اختيار أو استيراد لوحات ألوان. يمكنك تحرير المخططات المدمجة أو استخدام ملفات لوحة ألوان خاصة بك لتخصيص ألوان الخريطة والمسار. |
+| [إنشاء لوحات ألوان مخصصة](../../user/map/tracks/appearance.md#color-palette-editor) | يسمح لك بإنشاء وتعديل لوحات التدرج اللوني لتلوين المسارات باستخدام قيم نسبية أو ثابتة. يمكنك تحديد خطوات الألوان، وتعيين القيم، وتخصيص كيفية عرض البيانات (مثل السرعة أو الارتفاع) على طول المسار. |
 | [المجلدات الذكية – التنظيم حسب](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | يتيح تنظيم المسارات في المجلدات الذكية باستخدام معلمات تجميع متقدمة مثل التاريخ والوقت، والمسافة، والمدة، والسرعة، والارتفاع، وبيانات المستشعرات. تتيح هذه الخيارات تصنيفًا أكثر تفصيلاً للمسارات وتحليلًا مرنًا. |
 
 
 ## كيفية الشراء {#how-to-buy}
 
-طريقة سهلة لاختيار وشراء الخطة المطلوبة من قائمة **المشتريات**. بالطبع، ستررى قائمة مقترحات للميزات المدفوعة.
+طريقة سهلة لاختيار وشراء الخطة المطلوبة من قائمة **المشتريات**. بالطبع، سترى قائمة مقترحات للميزات المدفوعة.
 
 ### شراء OsmAnd Pro {#osmand-pro-purchase}
 
