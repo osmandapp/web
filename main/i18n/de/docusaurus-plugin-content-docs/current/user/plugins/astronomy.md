@@ -1,5 +1,5 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
 sidebar_position: 3
 title:  Astronomie
 unlistead: true
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomie** befindet sich derzeit in der **Beta**-Phase.
+**Astronomie** befindet sich derzeit in der **Beta**-Phase auf **Android**. 
+
+Auf **iOS** ist das Plugin über das **iOS-Beta-Programm ([TestFlight](https://testflight.apple.com/join/7poGNCKy))** verfügbar. 
 :::
 
 ## Übersicht {#overview}
@@ -43,13 +44,29 @@ Die folgenden Einstellungen sind erforderlich, um die Astronomy-Überlagerung an
 4. Passen Sie an, was auf der Sternenkarte angezeigt wird, mit [**Ansicht konfigurieren**](#configure-view) — zum Beispiel, schalten Sie sichtbare Objekte und Rendering-Hilfen um.
 5. Tippen Sie auf die Schaltfläche **Schließen (X)** oben auf dem Sternenkarten-Bildschirm, um die Sternenkarte zu verlassen und zur Erdkarte zurückzukehren.
 
-Das Plugin funktioniert mit beiden Kartenrendering-Engines, performt aber am besten im OpenGL-Modus.
+Auf Android funktioniert das Plugin mit beiden Kartenrendering-Engines, performt aber am besten im OpenGL-Modus.
 
 ## Sternenkarten-Bildschirm {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Sternenkarten-Bildschirm](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Zum Gehen:** *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Sternenkarten-Bildschirm](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 Der dedizierte **Sternenkarten-Bildschirm** zeigt eine interaktive Himmelskuppel mit Sternen, Sternbildern, Planeten, Sonnen- und Mondbahnen. Am unteren Rand des Bildschirms haben Sie Zugriff auf die folgenden Steuerelemente: 
 - [**Suche**](#search) — öffnet den Suchbildschirm, auf dem Sie nach Himmelskörpern suchen und Himmelskataloge und Kategorien durchsuchen können. 
@@ -64,7 +81,21 @@ Die Sternenkarte kann auch mit der Geräteausrichtung ausgerichtet werden, wenn 
 
 ## Kontextmenü {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Kontextmenü](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kontextmenü](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Das **Kontextmenü** bietet detaillierte Informationen über Himmelskörper und Tools zur Beobachtung. Es öffnet sich, wenn Sie auf einen Himmelskörper auf der Sternenkarte tippen.
 
@@ -74,7 +105,21 @@ Das Kontextmenü erscheint am unteren Rand des Bildschirms und enthält Objektin
 
 ### Objektinformationen {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_new.png) ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der obere Abschnitt des Kontextmenüs zeigt den Namen und die Klassifikation des Objekts. Unter dem Namen werden der Objekttyp und sein übergeordnetes Sternbild oder Gruppe angezeigt. Zum Beispiel:  
 - **Beta Ursae Minoris** — Stern • Kleiner Bär
@@ -87,6 +132,7 @@ Schnellinformationsblöcke zeigen wichtige Beobachtungsparameter an:
 - <Translate android="true" ids="shared_string_azimuth"/> – die Richtung des Objekts relativ zum Norden (0°–360°).
 - <Translate android="true" ids="altitude"/> – die Höhe des Objekts über dem Horizont.
 - <Translate android="true" ids="shared_string_magnitude"/> – die Helligkeit des Objekts, wie sie von der Erde aus gesehen wird. 
+- Entfernung (*nur iOS*) – die Entfernung von der Erde zum ausgewählten Himmelskörper.
 
 Diese Werte werden dynamisch basierend auf der ausgewählten Zeit und dem Standort des Benutzers aktualisiert.
 
@@ -106,7 +152,21 @@ Unter den Objektinformationen bietet das Kontextmenü mehrere Aktionen zur Inter
 
 ### Sichtbarkeitsdiagramm {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Die Registerkarte **Sichtbarkeit** zeigt, wie das ausgewählte Objekt während eines 24-Stunden-Zeitraums am Himmel bewegt.
 
@@ -141,7 +201,21 @@ Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit position
 
 ### Beobachtungsplan {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Die Registerkarte **Plan** zeigt die Sichtbarkeit des ausgewählten Objekts für die aktuelle Woche. Jede Zeile stellt einen Tag dar und enthält:  
 - den Tag der Woche
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR-Sternensuche (Kamera-Modus) {#ar-star-finding}
 
-**Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Kamera-Schaltfläche* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR-Ansicht](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR-Modus* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR-Ansicht](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Zum Gehen:** *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR-Modus*
+
+</TabItem>
+
+</Tabs>
 
 Die **Astronomy**-Schicht arbeitet mit der **Gerätekamera**, um **Augmented Reality (AR) Sternenbeobachtung** zu ermöglichen. Richten Sie die Kamera Ihres Handys auf den realen Nachthimmel und sehen Sie Sterne, Planeten, Sternbilder, Sonne/Mond in Echtzeit überlagert.
 
@@ -197,7 +289,21 @@ Der AR-Modus verwendet Gerätesensoren (Gyroskop, Beschleunigungssensor und Komp
 
 ## Ansicht konfigurieren {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/half_state_new.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** ermöglicht es Ihnen, zu steuern, wie die Sternenkarte angezeigt wird, indem Sie visuelle Modi, Objekte und Rendering-Hilfen aktivieren oder deaktivieren.
 
@@ -205,7 +311,21 @@ Um Ansicht konfigurieren zu öffnen, tippen Sie auf die Schaltfläche Ansicht ko
 
 ### Modi und Aktionen {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Dieser Abschnitt steuert die Hauptanzeigemodi der Sternenkarte.
 
@@ -215,7 +335,21 @@ Dieser Abschnitt steuert die Hauptanzeigemodi der Sternenkarte.
 
 ### Sichtbare Objekte {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/solar_system.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Dieser Abschnitt ermöglicht es Ihnen, zu wählen, welche Typen von Himmelskörpern auf der Sternenkarte angezeigt werden.
 
@@ -274,9 +408,23 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Suche {#search}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Suche](@site/static/img/plugins/starwatcher/explore_screen.png)
 
-Die **Suchfunktion** im Astronomy-Plugin ermöglicht es Ihnen, Himmelskörper zu finden, Himmelskategorien zu erkunden und Beobachtungsdaten zuzugreifen. Um die Suche zu öffnen, tippen Sie auf die Suchschaltfläche auf der Sternenkarte. Dies öffnet den Suchbildschirm, der mehrere Abschnitte zur Entdeckung und Organisation von Himmelskörpern bietet. Der Suchbildschirm enthält die folgenden Abschnitte:
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Suche](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Die **Suchfunktion** (**Erkunden** auf iOS) im Astronomy-Plugin ermöglicht es Ihnen, Himmelskörper zu finden, Himmelskategorien zu erkunden und Beobachtungsdaten zuzugreifen. Um die Suche zu öffnen, tippen Sie auf die Suchschaltfläche auf der Sternenkarte. Dies öffnet den Suchbildschirm, der mehrere Abschnitte zur Entdeckung und Organisation von Himmelskörpern bietet. Der Suchbildschirm enthält die folgenden Abschnitte:
 
 **1. Jetzt beobachten**
 
@@ -288,7 +436,21 @@ Der Kategorien-Abschnitt ermöglicht es Ihnen, Objekte nach Typ zu durchsuchen: 
 
 ### Sortierung und Filter {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sortierung](@site/static/img/plugins/starwatcher/sorting.png) ![Filter](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sortierung](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filter](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Tippen Sie auf die Suchleiste, um die vollständige Suchoberfläche zu öffnen. Sie können Ergebnisse mit Sortier- und Filteroptionen verfeinern.
 
@@ -314,7 +476,21 @@ Sie können Ergebnisse nach Objekttyp filtern. Das Auswählen spezifischer Kateg
 
 ### Meine Daten {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Meine Daten](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Meine Daten](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der Abschnitt Meine Daten enthält Objekte, mit denen der Benutzer interagiert hat. Dieser Abschnitt umfasst drei Listen:
 
@@ -326,7 +502,21 @@ Das Auswählen eines Elements öffnet das Kontextmenü des Objekts.
 
 ### Kataloge {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Kataloge](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kataloge](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der Kataloge-Abschnitt bietet Zugriff auf astronomische Kataloge, die im Astronomy-Plugin verfügbar sind.
 

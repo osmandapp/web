@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografie
 ---
@@ -274,6 +274,16 @@ Geländeschatten erfordert 3D-Relief und aktiviert es automatisch bei Auswahl. D
 
 ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwählen:
 
 - Aus einer [vordefinierten Liste](#default-color-scheme).
@@ -290,23 +300,6 @@ Sie können:
 **Hinweis:** Schummerung verwendet einen festen Schattierungsalgorithmus und unterstützt keine benutzerdefinierten Gradientenpaletten.
 
 Für erweiterte Palettenanpassung mit Palettendateien siehe den Artikel [Farbschemata](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwählen:
-
-- Aus einer [vordefinierten Liste](#default-color-scheme).
-- Aus Farbpalettendateien, die Sie auf Ihrem Computer erstellt haben. Benutzerdefinierte Dateien können mit dem [Import/Export-Werkzeug](../personal/import-export.md) zu OsmAnd hinzugefügt werden.
-
-Sie können [diese Paletten bearbeiten](../personal/color-palette-schemes.md#palette-modify), um das Aussehen von Karten und Routen zu personalisieren.
-
-</TabItem>
-
-</Tabs>
 
 ### Sichtbarkeit {#visibility}
 
@@ -338,7 +331,7 @@ Zoomstufen sind für Geländeschatten nicht verfügbar, da diese Visualisierung 
 1. Wenn Sie die **Karten-Rendering-Engine Version 1** verwenden, müssen Sie das normale [Herunterladen](../start-with/download-maps.md) von Schummerungs- und Neigungs-Rasterkarten verwenden.
 
 2. Wenn Sie die **Karten-Rendering-Engine Version 2 (OpenGL)** verwenden:
-    - Sie können weiterhin den normalen Download-Typ für Schummerungs- und Neigungs-Rasterkarten verwenden. Dazu müssen Sie jedoch das [OsmAnd-Entwickler-Plugin](../plugins/development.md) aktivieren und die Einstellung [Raster-SQLite-Format für Schummerung und Neigung verwenden](../plugins/development.md#terrain) aktivieren.
+    - Sie können weiterhin den normalen Download-Typ für Schummerungs- und Neigungs-Rasterkarten verwenden. Dazu müssen Sie das [OsmAnd-Entwickler-Plugin](../plugins/development.md) aktivieren und die Einstellung [Raster-SQLite-Format für Schummerung und Neigung verwenden](../plugins/development.md#terrain) aktivieren.
 
     - Alternativ können Sie den Download [Geländekarte (3D)](../personal/maps-resources.md#paid-map-content) verwenden. Dies spart Speicherplatz auf Ihrem Gerät, und die Effekte für Schummerung, Neigung und 3D-Relief werden daraus mit Ihrem Gerät generiert.
 
@@ -381,7 +374,7 @@ Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstell
 
 3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können. Beim Zoomen und Verschieben der Karte erscheinen und verschwinden 3D-Gebäude mit einer sanften Überblendungsanimation. Wenn ein POI oder ein ausgewählter Ort (z. B. ein Kartenstift oder Navigationsziel) in einem Gebäude liegt, hebt OsmAnd das entsprechende Gebäude hervor, um es leichter auf der Karte zu identifizieren.
 
-Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Hauptschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
+Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Haupsschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
 
 Auf Android ist diese Option nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*

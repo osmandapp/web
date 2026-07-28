@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -39,6 +39,22 @@ Der Tracks-Bereich enthält alle trackbezogenen Tools und Aktionen. Die folgende
 - Tracks herunterladen und löschen.
 - Neue Ordner erstellen oder löschen.
 - Ordner als OSF- oder OBF-Sammlung herunterladen.
+
+
+## Tracks importieren {#import-tracks}
+
+Sie können GPX-Tracks auf zwei Arten in den Web-Planer importieren: über die Schaltfläche „Importieren“ oder per Drag-and-Drop direkt auf die Karte.
+
+So importieren Sie einen Track per Drag-and-Drop:
+- Öffnen Sie den Abschnitt Tracks.
+- Ziehen Sie eine oder mehrere GPX-Dateien von Ihrem Computer.
+- Legen Sie die Dateien auf der Karte oder in einem bestimmten Track-Ordner ab.
+
+Wenn eine Datei über die Karte gezogen wird, wird der verfügbare Ablagebereich hervorgehoben. Wird die Datei direkt auf die Karte abgelegt, wird sie in den Import-Ordner importiert. Wird sie in einen bestehenden Ordner abgelegt, erfolgt der Import in diesen Ordner.
+
+Nach Abschluss des Imports erscheint der Track in der Track-Liste, wird mit [OsmAnd Cloud](../personal/osmand-cloud.md) synchronisiert und steht auf allen mit demselben Konto verbundenen Geräten zur Verfügung.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Auf der Karte sichtbar {#visible-on-the-map}
