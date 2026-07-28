@@ -44,7 +44,7 @@ import {
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
-import { searchByWordApi } from '../../manager/SearchApi';
+import { searchByWordApi, getMapsFromUrl } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import {
     getAdditionalMatchedAmenityObjects,
@@ -289,6 +289,7 @@ export default function SearchLayer() {
                 baseSearch: searchData.baseSearch,
                 spatial: spatialSearch,
                 abortControllerKey: spatialSearch ? 'spatialSearch' : null,
+                maps: getMapsFromUrl(),
             });
             if (response?.ok) {
                 const data = await response.json();

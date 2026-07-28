@@ -10,7 +10,7 @@ import MapContext from '../../../context/MapContext';
 import { CATEGORY_TYPE, WEB_VISIBLE_LEVEL } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
-import { searchByWordApi } from '../../../manager/SearchApi';
+import { searchByWordApi, getMapsFromUrl } from '../../../manager/SearchApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
@@ -127,6 +127,7 @@ export default function CustomInput({
             spatial: true,
             autocomplete: true,
             abortControllerKey: SUGGESTIONS_ABORT_KEY,
+            maps: getMapsFromUrl(),
         });
         if (response?.ok) {
             const data = await response.json();
