@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title:  Widgets de navegación
 ---
@@ -188,6 +188,7 @@ El widget *Información de la ruta* proporciona datos en tiempo real sobre la ru
 
 - Seleccione una **Vista predeterminada** para priorizar uno de los siguientes valores: *Hora estimada de llegada*, *Tiempo restante*, *Distancia*.
 - En **Prioridad de visualización**, seleccione entre *Destino primero (predeterminado)* o *Intermedio primero* para priorizar la información de ruta más relevante.
+- Active o desactive la opción **Mostrar botón de expansión** para mostrar u ocultar el botón de expansión de la interfaz de navegación. Esta opción está activada por defecto.
 
 > NOTA: El widget solo es visible durante la navegación.
 
@@ -418,7 +419,7 @@ Los tipos de alerta tienen un diseño visual diferente, que depende de la **<Tra
 | *<Translate android="true" ids="show_cameras"/>* | Las [cámaras de control de tráfico](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) y las [cámaras de velocidad](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) registran infracciones de tráfico, incluyendo exceso de velocidad, pasar semáforos en rojo y otros tipos de comportamiento ilegal. <br />**NOTA:** Las alertas de cámaras de velocidad están prohibidas o son ilegales en algunos países. Para [eliminar completamente las cámaras de velocidad](../personal/global-settings.md#legal) de OsmAnd, vaya al *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* principal | ![Widgets de alerta de moderación de tráfico](@site/static/img/widgets/warnings_speed_camera.png)   |
 | *<Translate android="true" ids="traffic_warning_stop"/>* | Una [señal de stop](https://en.wikipedia.org/wiki/Stop_sign) es una señal de tráfico diseñada para notificar a los conductores que deben detenerse por completo y asegurarse de que la intersección esté libre de vehículos y peatones antes de continuar más allá de la señal.  | ![Widgets de alerta de stop](@site/static/img/widgets/warnings_stop.png) |
 | *<Translate android="true" ids="show_railway_warnings"/>* |Esta advertencia significa que hay un [cruce ferroviario](https://en.wikipedia.org/wiki/Crossbuck) más adelante. | ![Widgets de alerta de ferrocarril](@site/static/img/widgets/warnings_railways.png) ![Widgets de alerta de ferrocarril en CA](@site/static/img/widgets/warnings_railways_ca.png)  ![Widgets de alerta de ferrocarril en EE.UU.](@site/static/img/widgets/warnings_railways_us.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |Esta advertencia indica que hay un control fronterizo más adelante.| ![Widgets de alerta de control fronterizo](@site/static/img/widgets/warnings_border_control.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |Esta advertencia indica que hay un control fronterzo más adelante.| ![Widgets de alerta de control fronterizo](@site/static/img/widgets/warnings_border_control.png)  |
 | *<Translate android="true" ids="traffic_warning_border_control"/>* | Los [símbolos de peligro o símbolos de advertencia](https://en.wikipedia.org/wiki/Hazard_symbol) son símbolos reconocibles diseñados para advertir sobre materiales, lugares u objetos peligrosos, incluyendo corrientes eléctricas, venenos y radiactividad. | ![Widgets de alerta de peligro](@site/static/img/widgets/warnings_hazard.png)  ![Widgets de alerta de peligro en EE.UU.](@site/static/img/widgets/warnings_hazard_us.png) |
 | *<Translate android="true" ids="traffic_warning_payment"/>* | Esta advertencia indica que hay una cabina de peaje para una carretera de peaje más adelante.   ![Widgets de alerta de cabina de peaje](@site/static/img/widgets/ex_toll_booth.png) | ![Widgets de alerta de límite de velocidad](@site/static/img/widgets/warnings_limit.png) |
 

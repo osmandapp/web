@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title:  Gestionar Tracks
 ---
@@ -422,7 +422,8 @@ La herramienta de importación le permite añadir tracks desde archivos externos
     *Opciones adicionales:*
 
     - **Archivos GPX de un solo track** - importa todo el track directamente.
-    - **Archivos GPX de múltiples tracks** - elija importar el archivo GPX único o seleccione tracks específicos.
+    - **Archivos GPX de múltiples tracks** - elija importar el archivo GPX único o seleccione tracks específicos.  
+    Cuando un archivo GPX contiene múltiples tracks, se abre la pantalla Importar tracks, que le permite revisar todos los tracks del archivo, seleccionar los que desea importar, elegir una carpeta de destino o importar todos los tracks como un solo track mediante la opción *Importar como un solo track*. Si el archivo contiene waypoints, también puede revisarlos y asignarlos antes de completar la importación.
 
 ***NOTA:*** *Los tracks añadidos manualmente a la carpeta de OsmAnd en su dispositivo se importan automáticamente sin necesidad de reiniciar la aplicación.*  
 

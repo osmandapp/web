@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -159,7 +159,7 @@ Para construir una ruta a un *PDI* en *CarPlay*, siga estos pasos:
 
 **Favoritos** es una de las características de OsmAnd que le permite hacer una especie de notas en el mapa.
 
-- Mientras usa **CarPlay**, no puede añadir o modificar *Favoritos*, solo usar los existentes.
+- Mientras usa **CarPlay**, usted no puede añadir o modificar *Favoritos*, solo usar los existentes.
 - La lista de [Favoritos](../personal/favorites.md#manage-favorites) se puede encontrar en la aplicación OsmAnd *Menú → Mis lugares → Favoritos*.
 - Si desea usarlos para la navegación, configure todo lo que necesite antes de conectar el dispositivo al sistema multimedia de su vehículo.  
 
@@ -225,7 +225,7 @@ Además de las características básicas de la aplicación OsmAnd en *CarPlay* q
 
 La guía por voz para *CarPlay* es una de las características de navegación más útiles de OsmAnd, proporcionando guía en tiempo real y permitiendo al conductor mantenerse concentrado en la carretera. Las indicaciones de voz indican claramente los giros, las direcciones y otras instrucciones de navegación, garantizando un uso más seguro y cómodo del sistema de navegación.  
 
-Cuando se reproducen las indicaciones de voz, OsmAnd ajusta el audio de fondo según su tipo. El contenido de audio hablado, como podcasts y audiolibros, puede pausarse automáticamente durante las instrucciones de navegación. La reproducción de música continúa con volumen reducido. La opción *Pausar audio hablado* le permite controlar este comportamiento.
+Cuando se reproducen las indicaciones de voz, OsmAnd ajusta el audio de fondo según su tipo. El contenido de audio hablado, como podcasts y audiolibros, puede pausarse automáticamente durante las instrucciones de navegación. La reproducción de música continúa con volumen reducido. La opción *<Translate ios="true" ids="pause_spoken_audio"/>* le permite controlar este comportamiento.
 
 Para configurar las indicaciones de voz según el perfil seleccionado, debe hacerlo antes de iniciar una ruta en la aplicación OsmAnd en su dispositivo. Para ver los ajustes recomendados para *CarPlay*, vaya al artículo [Indicaciones de voz / Notificaciones](../navigation/guidance/voice-navigation.md).  
 
