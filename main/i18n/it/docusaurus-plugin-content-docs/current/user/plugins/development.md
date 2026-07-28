@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
@@ -88,7 +88,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 - **Simula il primo avvio dell'app**. Imposta il flag che indica il primo avvio dell'app, mantenendo invariate tutte le altre impostazioni.  
 - **Testa le istruzioni vocali**. Seleziona una voce e testala riproducendo gli annunci.  
-- **Mostra i tocchi** (*iOS*). Evidenzia i tocchi sullo schermo con indicatori visivi.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Evidenzia i tocchi sullo schermo con indicatori visivi.
 - **Barra di stato trasparente**. La mappa diventa visibile sotto la barra di stato.  
 - **Mostra il banner della versione gratuita**. Visualizza il banner della versione gratuita anche nella versione a pagamento.  
 - **Mostra informazioni di debug**. Visualizza informazioni grafiche sul posizionamento di ogni testo sulla mappa.
