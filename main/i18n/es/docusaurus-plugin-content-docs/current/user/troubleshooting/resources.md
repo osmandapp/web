@@ -1,5 +1,5 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -54,6 +54,7 @@ La siguiente lista proporciona conversores para varios tipos de datos compatible
 | iOverlander GPX a OsmAnd | Script de Python para convertir archivos *GPX* de iOverlander exportados a OsmAnd con iconos. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Mapa topográfico a imprimible| Esta es [una herramienta](https://github.com/acui/osmand_topo_map_generator) para generar un mapa topográfico imprimible utilizando capturas de pantalla de OsmAnd (https://osmand.net). El mapa utiliza la cuadrícula UTM y tiene información de declinación. Se debe usar con una brújula o un dispositivo GPS con coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar proyecta un rayo hacia el sol desde cada punto de una pista GPX y lo compara con el terreno y la vegetación (0.5 m HD LiDAR / IGN), para una fecha y hora dadas. Te indica, metro a metro, sol o sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Una herramienta autónoma que descarga datos LiDAR públicos de portales nacionales de 22 países | [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Recursos personalizados {#custom-resources}
 
@@ -134,6 +135,10 @@ La siguiente tabla enumera varias fuentes de mapas en línea preparadas por los 
 | Basemap AT WMTS | El conjunto de mapas de Austria basado en [basemap.at WMTS](https://basemap.at/en/) creado por mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | El conjunto de mapas proporcionado por el instituto geográfico francés IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | El sitio proporciona una colección de mapas para vacaciones en el campo, incluyendo mapas turísticos, de montaña, náuticos y muchos otros. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Superposición independiente de OsmAnd que muestra los niveles de riesgo de incendios forestales de hoy y mañana para la Comunitat Valenciana, España, utilizando datos públicos oficiales. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware
