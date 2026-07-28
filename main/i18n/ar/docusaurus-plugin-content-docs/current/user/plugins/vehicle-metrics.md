@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title:  مقاييس المركبة
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## نظرة عامة {#overview}
 
 :::info ميزة مدفوعة
-ملحق مقاييس المركبة هو [ميزة مدفوعة](../purchases/index.md) <ProFeature /> في تطبيق OsmAnd. معلومات سرعة المركبة وسرعة المحرك متاحة مجانًا في OsmAnd.
+ملحق مقاييس المركبة هو [ميزة **OsmAnd Pro**](../purchases/index.md) مدفوعة <ProFeature />. معلومات سرعة المركبة وسرعة المحرك متاحة مجانًا في OsmAnd.
 :::
 
 يمكّن **ملحق مقاييس المركبة** من مراقبة بيانات المركبة في الوقت الفعلي عبر [بروتوكول OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). يمكن للمستخدمين تتبع المقاييس الأساسية مثل أداء المحرك، وكفاءة استهلاك الوقود، والسرعة، مما يسمح بالصيانة الاستباقية للمركبة واستكشاف الأخطاء وإصلاحها.  
@@ -218,7 +218,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |--|--|
-|![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

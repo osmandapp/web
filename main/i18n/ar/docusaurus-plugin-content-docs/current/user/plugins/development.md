@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title:  تطوير OsmAnd
 ---
