@@ -66,7 +66,7 @@ export default function CustomInput({
 
     useEffect(() => {
         // typing suggestions work only for the main word search with the spatial engine
-        const suggestionsEnabled = ctx.spatialSearch && !type && !setSearchValue;
+        const suggestionsEnabled = ctx.spatialSearch && !type;
         if (!suggestionsEnabled || !isFocused || value.length < MIN_SIZE_SEARCH_VALUE) {
             clearSuggestions();
             return;
