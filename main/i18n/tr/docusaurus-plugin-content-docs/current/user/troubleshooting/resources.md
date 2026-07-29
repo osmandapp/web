@@ -1,5 +1,5 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -54,6 +54,7 @@ Aşağıdaki liste, OsmAnd tarafından desteklenen çeşitli veri türleri için
 | iOverlander GPX to OsmAnd | Python script to convert iOverlander *GPX* files exported to OsmAnd with icons. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| This is [a tool](https://github.com/acui/osmand_topo_map_generator) to generate a printablea tool to generate a printable topographic map by using screenshots from OsmAnd (https://osmand.net). The map uses the UTM grid and has declination information. It's to be used with a compass or a GPS device with UTM coordinates.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Özel Kaynaklar {#custom-resources}
 
@@ -66,8 +67,8 @@ Birden çok dilde mevcut olan bu kılavuzlar, genellikle resmi kılavuzlarda yer
 | Language | Description | Link |
 | :-- | :-- | :-- |
 | Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks ve el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
-| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks ve el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual ve que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas functions.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
 | Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
@@ -134,6 +135,10 @@ Aşağıdaki tablo, kullanıcılar tarafından hazırlanan çeşitli çevrimiçi
 | Basemap AT WMTS | [basemap.at WMTS](https://basemap.at/en/) temel alınarak mariush444 tarafından oluşturulan Avusturya haritaları seti |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | Fransız coğrafi enstitüsü IGN tarafından sağlanan haritalar seti. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | Site, turist, dağ, deniz haritaları ve diğerleri dahil olmak üzere ülke tatilleri için bir harita koleksiyonu sunar. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Independent OsmAnd overlay showing today’s and tomorrow’s wildfire-risk levels for the Comunitat Valenciana, Spain, using official public data. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

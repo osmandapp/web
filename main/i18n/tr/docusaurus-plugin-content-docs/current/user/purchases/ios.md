@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 9b2f56295eb193bc938a9266380e8a1e5ebfbe93185dc434f50b51acb87022a2
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -53,8 +53,6 @@ Uygulamayı bu bağlantıdan indirebilirsiniz - [Apple App Store'da OsmAnd Harit
 
 Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgiler bulunmaktadır. Diğer bölgeler için fiyatlar yerel para birimlerinde eşdeğerdir.
 
-<!--
-
 :::danger 🏖️ Summer Sale
 
 *Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
@@ -63,15 +61,15 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
+| **Fiyat (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Fiyat (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
+<!--
 
--->
 
 
 |    | OsmAnd Ücretsiz   | [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
@@ -81,7 +79,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
-
+-->
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 
@@ -118,7 +116,6 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Sesli/resimli/videolu noktalar](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Çevrimiçi GPS Takipçisi](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Uygulama profilini dışa/içe aktar](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
-| [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
 
 #### ** Harita güncellemeleri {#-map-updates}
 
@@ -140,6 +137,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanızı sağlar. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümü için mevcuttur.  |
 | [Rota çizgisini özelleştir](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Navigasyon sırasında rota çizgisinin rengini ve genişliğini değiştirme. |
 | [Renk Şemasını Değiştir](../../user/plugins/topography.md#modify-color-scheme) | Harita görünümünü seçerek veya içe aktararak renk paletleri ile özelleştirmenizi sağlar. Yerleşik şemaları düzenleyebilir veya harita ve rota renklerini kişiselleştirmek için kendi palet dosyalarınızı kullanabilirsiniz. |
+| [Özel paletler oluşturma](../../user/map/tracks/appearance.md#color-palette-editor) | İlgili veya Sabit değerleri kullanarak iz renklendirmesi için gradyan paletleri oluşturmanıza ve düzenlemenize olanak tanır. Renk adımlarını tanımlayabilir, değerler atayabilir ve iz boyunca verilerin (hız veya yükseklik gibi) nasıl görüntüleneceğini özelleştirebilirsiniz. |
 | [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
 
 
@@ -161,7 +159,7 @@ veya
 
 ### Maps+ Satın Alma {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* abonelik / uygulama içi plan. Burada [yıllık abonelik](#prices) veya [tek seferlik ödeme](#prices) seçebilirsiniz:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* abonelik / uygulama içi planı. Burada [yıllık abonelik](#prices) veya [tek seferlik ödeme](#prices) seçebilirsiniz:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Maps+ özellik listesine dokunun → Maps+ ile Devam Et*
 
