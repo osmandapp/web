@@ -1,7 +1,7 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
-title:  Color Schemes
+title:  Колірні схеми
 ---
 
 import Tabs from '@theme/Tabs';
@@ -63,7 +63,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/palette_ios.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Color palette](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 

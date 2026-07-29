@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Пошук
 title: Пошук на веб-сайті
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Меню пошуку** можна відкрити з бічної панелі або з іконки пошуку 🔍 на карті. Воно містить:
 
-- [Рядок пошуку](#search-bar). Введіть ключові слова для пошуку конкретних місць або точок інтересу.  
+- [Рядок пошуку](#search-bar). Введіть ключові слова для пошуку конкретних місць, точок інтересу, обраного чи треків.  
 - [Розділ Категорії](#categories). Переглядайте категоризовані опції для спрощення пошуку POI.  
 - [Розділ Дослідити](#explore). Переглядайте популярні POI для поточного центру карти та досліджуйте місця з фотографіями на карті.
 
@@ -35,17 +35,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Рядок пошуку {#search-bar}
 
-Використовуйте **Рядок пошуку**, щоб знайти конкретні місця або точки інтересу за назвою. Натисніть іконку пошуку, введіть запит і виберіть результат зі списку. Вибір POI відкриває [Контекстне меню POI](#poi-context-menu), де ви можете переглянути деталі та використовувати швидкі дії.
+Використовуйте **Рядок пошуку**, щоб знайти конкретні місця, точки інтересу, [обране](../web/web-favorites.md) та [треки](../web/web-tracks.md) за назвою. Натисніть іконку пошуку, введіть запит і виберіть результат зі списку. Вибір POI відкриває [Контекстне меню POI](#poi-context-menu), а вибір обраного чи треку відкриває їхні деталі, де ви можете переглянути інформацію та використовувати швидкі дії.
 
 Якщо ви шукаєте за назвою категорії, перший результат може показати відповідну категорію POI. Натисніть на категорію, щоб відкрити представлення [Пошуку за категоріями](#categories).
 
-![Опції пошуку](@site/static/img/web/search_bar.png)
+![Search Options](@site/static/img/web/search_bar.png)
 
 ### Категорії {#categories}
 
 Використовуйте **Категорії**, щоб переглядати POI за типом і відображати їх на карті. Меню показує шість популярних категорій для швидкого доступу. Якщо потрібно більше опцій, натисніть Показати всі, щоб відкрити повний список із 18 доступних категорій. Вибір категорії відображає відповідні POI на карті; вибір POI відкриває [Контекстне меню POI](#poi-context-menu).
 
-![Опції пошуку](@site/static/img/web/search_categories.png)
+![Search Options](@site/static/img/web/search_categories.png)
 
 ### Дослідити {#explore}
 
@@ -53,7 +53,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Відкрийте вкладку Пошуку, щоб отримати доступ до Дослідити — результати Дослідити відображаються на карті автоматично. Використовуйте Показати всі, щоб відкрити повний список категорій Дослідити. Ви можете уточнити те, що з'являється в списку та на карті, використовуючи Фільтр, який відкриває меню категорій Дослідити. Вибір POI зі списку або на карті відкриває [Контекстне меню POI](#poi-context-menu).
 
-![Опції пошуку](@site/static/img/web/search_explore.png) ![Опції пошуку](@site/static/img/web/explore_filters.png)
+![Search Options](@site/static/img/web/search_explore.png) ![Search Options](@site/static/img/web/explore_filters.png)
 
 ## Контекстне меню POI {#poi-context-menu}
 
@@ -72,7 +72,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **OSM ID** — ідентифікатор OpenStreetMap POI.
 - **Координати** — виберіть координати, щоб скопіювати їх.
 
-![Контекстне меню POI](@site/static/img/web/poi_context_menu_new.png)
+![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
 
 ### Дії POI {#poi-actions}
 
@@ -172,7 +172,7 @@ Clicking on an image POI opens a new context menu that includes:
 - **Інформація про ліцензію**. Деталі про права на використання фото.  
 - **Опис**. Додаткова інформація про фото.
 
-![Галерея фото](@site/static/img/web/poi_photo.png)
+![Photo Gallery](@site/static/img/web/poi_photo.png)
 
 
 ## Пов'язані статті {#related-articles}

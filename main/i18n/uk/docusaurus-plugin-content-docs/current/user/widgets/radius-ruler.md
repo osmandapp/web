@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title:  Радіусна лінійка та Лінійка
 ---
@@ -210,42 +210,44 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Кола радіуса з'являться з глибиною, що особливо корисно для планування маршруту в горбистій місцевості або міському середовищі, де важливий вертикальний контекст.
 
 
-## Відстань за дотиком {#distance-by-tap}
+<!--
+## Distance by Tap {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Відстань за дотиком Android](@site/static/img/widgets/distance_tap_android.png)
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Відстань за дотиком iOS](@site/static/img/widgets/distance_tap_ios.png)
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Інструмент **Відстань за дотиком** дозволяє вимірювати відстані між точками на карті без використання Радіусної лінійки або створення маршруту.
+The **Distance by Tap** tool allows you to measure distances between points on the map without using the Radius Ruler or creating a route.
 
-Існує два варіанти використання:
+There are two use cases:
 
-- **Відстань від вашого місцезнаходження до точки**  
-  Торкніться будь-де на карті, і з'явиться пряма лінія від вашого поточного місцезнаходження до точки дотику, разом з міткою відстані. Лінія залишається на екрані, навіть якщо ви торкнетеся в іншому місці.
+- **Distance from your location to a point**  
+  Tap anywhere on the map and a straight line will appear from your current location to the tapped point, along with a distance label. The line remains on screen even if you tap elsewhere.
 
-- **Відстань між будь-якими двома точками**  
-  Торкніться двох точок на карті одночасно (мультитач). Лінія з'єднує дві точки, і відображається виміряна відстань.
+- **Distance between any two points**  
+  Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
 
-Ви також можете налаштувати розмір тексту мітки відстані. Оберіть між *<Translate android="true" ids="shared_string_normal"/>* (за замовчуванням) і *<Translate android="true" ids="shared_string_large"/>* (у 1,5 раза більший). Коли вибрано опцію Великий, автоматично додається додатковий інтервал між лінією та міткою для кращої читабельності. Зміни застосовуються миттєво без перезапуску програми.
+You can also adjust the text size of the distance label. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
 
 | | |
 |------------|------------|
-| Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Розмір тексту | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
-| Формат одиниць | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Text size | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Відеоінструкції {#video-guides}

@@ -1,5 +1,5 @@
 ---
-source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+source-hash: 470447687509454a83c4d6eeaff5fbef4b59e351e6fffa6397d47509009df4d8
 sidebar_position: 8
 title:  Перегляд морських карт
 ---
@@ -105,7 +105,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">  
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
 ![Вигляд карт плагіна "Морські карти" в iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -210,7 +210,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Android Перейдіть до: *Меню → Налаштувати карту → Стиль карти Морський → Інші атрибути карти → Деталі вогнів*
 
-iOS Перейдіть до: *Меню → Налаштувати карту → Тип карти Морський → Деталі → Деталі вогнів*
+iOS Перейдіть до: *Меню → Налаштувати карту → Тип карти Морський → Деталі → Детали вогнів*
 
 Ця опція відображає рівень інформації для навігаційних вогнів. Ви можете обрати, наскільки детально відображатимуться характеристики вогнів біля кожного маяка чи бакена.
 

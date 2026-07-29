@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  Редагування OpenStreetMap
 ---
@@ -38,7 +38,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*
 
-![Налаштування плагіна редагування OpenStreetMap Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -47,7 +47,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![Налаштування плагіна редагування OpenStreetMap iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - **<Translate android="true" ids="offline_edition"/>**. Якщо цей параметр увімкнено, зміни спочатку зберігаються локально (кнопка *Зберегти*) і завантажуються за запитом. Якщо параметр вимкнено, зміни завантажуються негайно (кнопка *Завантажити*).
 - **<Translate android="true" ids="use_dev_url"/>** *(лише для Android)*. Дозволяє увімкнути [dev.openstreetmap.org](https://dev.openstreetmap.org/) замість [openstreetmap.org](http://openstreetmap.org/) для тестування завантаження нотаток OSM, POI або GPS-треків. Коли увімкнено, ви автоматично виходите з OpenStreetMap.org. Цей параметр доступний у списку, лише якщо увімкнено *плагін розробки OsmAnd*.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Торкніться, щоб відкрити [*Меню → Мої місця → Редагування OSM*](../personal/myplaces.md). На цій вкладці перелічені ваші невідредаговані нотатки OSM. З нотаткою доступні такі дії: *Завантажити*, *Показати на карті*, *Змінити нотатку OSM*, *Видалити*. Завантажені або видалені нотатки більше не відображаються у списку.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Торкніться, щоб відкрити [*Меню → Мої місця → Редагування OSM*](../personal/myplaces.md). На цій вкладці перелічені ваші невідредаговані нотатки OSM. З нотаткою доступні такі дії: *Завантажити*, *Показати на карті*, *Змінити нотатку OSM*, *Видалити*. Завантажені або видалені нотатки більше не відображаються у списку. На iOS також можна використовувати режим вибору, щоб одночасно вибрати кілька елементів і завантажити або видалити їх. 
 
 :::note
 Якщо у вас є підписка [OsmAnd Pro](../purchases/android.md#pro-features), зміни, внесені в OSM, з'являться на вашій карті OsmAnd протягом однієї години. Переконайтеся, що [Живі оновлення](../personal/maps-resources.md#live-updates) увімкнені.
@@ -74,13 +74,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![OsmAnd Live для маперів](@site/static/img/personal/maps/osm_authorization_andr.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd Live для маперів](@site/static/img/personal/maps/osm_authorization_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
@@ -98,13 +98,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![OsmAnd Live для маперів](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd Live для маперів](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd Live для маперів](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd Live для маперів](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
 
 </TabItem>
 
@@ -121,7 +121,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![Шар редагувань OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Шар редагувань OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
@@ -129,7 +129,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![Шар редагувань OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
@@ -137,15 +137,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Ви можете увімкнути або вимкнути як окремий шар відображення модифікацій OSM у розділі [Налаштувати карту](../map/configure-map-menu.md) *Головного меню*.  Модифікації OSM включають наступне:  
 - **Нотатки OSM (онлайн)**. Відображає публічні нотатки OpenStreetMap, створені користувачами для виділення проблем мапінгу або запиту оновлень. Нотатки показуються як інтерактивні маркери, які можна переглянути, відкрити та вирішити маперам.  
-![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
-- **Редагування OSM**. Показує ваші локальні редагування OSM, збережені на пристрої перед їх завантаженням на сервер OpenStreetMap. Цей шар допомагає переглянути геометрію та атрибути об'єктів, які ви змінили або додали.  
-![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **Редагування OSM**. Показує ваші локальні редагування OSM, збережені на пристрої перед їх завантажуванням на сервер OpenStreetMap. Цей шар допомагає переглянути геометрію та атрибути об'єктів, які ви змінили або додали.  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
 - **Теги Fixme**. Виділяє об'єкти, позначені тегом fixme=* в OSM. Ці елементи містять коментарі маперів, що вказують на неповну, невизначену інформацію або потребу в перевірці на місцевості.  
-![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
 - **Теги Note**. Відображає об'єкти, що містять теги note=* — коментарі маперів, вбудовані безпосередньо в дані OSM. Ці теги зазвичай описують тимчасові умови або додатковий контекст для майбутнього редагування.  
-![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
 - **Іконки при низьких масштабах**. Увімкнює спрощені іконкоподібні представлення об'єктів OSM за допомогою коротких абревіатур, отриманих з їх основних ключів тегів. Їх значення описані [тут](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Ця функція робить більше об'єктів видимими при низьких масштабах без перевантаження карти або накладання іконок.  
-![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## Створення / Зміна POI {#create--modify-poi}
@@ -154,8 +154,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 1. Торкніться карти, щоб розмістити новий POI, або торкніться POI, яке ще не завантажено.
 2. Торкніться [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, веб-сайт тощо. Коли ви вибираєте ще не завантажений POI, *Створити POI* змінюється на *Змінити POI*.
-4. Залежно від налаштування [Офлайн редагування](#settings), ви можете зберегти дані локально або [завантажити їх](../map/map-context-menu#-upload-poi--osm-note).
+2. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, веб-сайт тощо. Коли ви вибираєте ще не завантажений POI, *Створити POI* змінюється на *Змінити POI*.
+3. Залежно від налаштування [Офлайн редагування](#settings), ви можете зберегти дані локально або [завантажити їх](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Додавання тегів {#add-tags}
@@ -164,13 +164,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">  
 
-![Додати тег POI Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Додати тег POI Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
+![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Додати тег POI iOS](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
@@ -206,7 +206,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
-![Відкрити нотатку OSM Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Відкрити нотатку OSM Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
+![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
@@ -214,7 +214,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
-![Відкрити нотатку OSM iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
+![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
@@ -257,13 +257,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Плагін редагування OpenStreetMap GPX в OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Плагін редагування OpenStreetMap GPX в OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
 
 </TabItem>
 
