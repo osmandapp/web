@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Wygląd trasy
 ---
@@ -24,13 +24,13 @@ Funkcja **Wygląd trasy** pozwala użytkownikom dostosować sposób wyświetlani
 
 <TabItem value="android" label="Android">  
 
-![Przegląd wyglądu trasy Android](@site/static/img/map/track-appear-and-1.png)  ![Menu trasy Wygląd Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu trasy Wygląd iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu trasy Wygląd iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Track menu Appearance iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track menu Appearance iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -55,7 +55,7 @@ Możesz modyfikować wygląd trasy, korzystając z jednej z następujących meto
 Z niektórych ustawień można korzystać tylko z *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> i <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Darmowe i płatne funkcje.
 :::
 
-![Wygląd](@site/static/img/map/appearance_color_andr.png) ![Menu kontekstowe kolorowania iOS](@site/static/img/map/colorisation_ios.png)
+![Appearance](@site/static/img/map/appearance_color_andr.png) ![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
 
 Możesz ustawić kolor trasy ręcznie lub użyć **wizualizacji danych opartej na kolorach** (np. prędkość, wysokość, nachylenie). Jeśli w trasie brakuje pewnych danych, OsmAnd wyświetla brakujące odcinki na szaro.
 
@@ -73,9 +73,21 @@ Więcej szczegółów na temat dostosowywania wyglądu linii trasy można znale�
 
 ### Edytor palety kolorów {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Edytor palet kolorów](@site/static/img/map/gradient_palettes_1.png) ![Edytor palet kolorów ](@site/static/img/map/gradient_palettes_2.png) 
+<TabItem value="android" label="Android"> 
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1_ios.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Podczas kolorowania trasy według prędkości, wysokości lub nachylenia możesz użyć własnych palet, aby określić, jak kolory są stosowane wzdłuż trasy.
 
@@ -86,12 +98,12 @@ Ekran *Wszystkie kolory* wyświetla dostępne palety. Dotknij menu z trzema krop
 - Usunąć. Usunięcie palety wymaga potwierdzenia.
 
 Dotknij przycisku + na ekranie Wszystkie kolory. Dostępne są dwa typy palet:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — kolory skalują się automatycznie na podstawie minimalnych i maksymalnych wartości trasy.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — kolory skalują się automatycznie na podstawie minimalnych, średnich i maksymalnych wartości trasy.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — kolory są przypisywane do konkretnych wartości bezwzględnych (na przykład 50 km/h). Wartości można edytować ręcznie. Jednostki podążają za [ustawieniami systemowymi](../../personal/profiles.md#units--formats). Skala kolorów nie skaluje się automatycznie po zastosowaniu do różnych tras.
 
 :::info Pro feature
 Tworzenie niestandardowych palet to płatna [funkcja **OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
-:::
+::;
 
 Aby dowiedzieć się więcej o schematach palet kolorów jako formacie danych i ich użyciu w trasach i trasach, zobacz artykuł [Schematy palet kolorów](../../personal/color-palette-schemes.md#tracks-routes).
 
@@ -101,7 +113,7 @@ Podczas tworzenia lub edycji palety ekran edytora zawiera:
 - Przycisk + do dodania nowego kroku.
 - Pole Wartość.
 - Opcje wyboru koloru. Więcej informacji o plikach palet.
-- Opcję Usuń krok dla wybranej wartości.
+- Opcję Usuń krok dla wybronej wartości.
 - Przycisk Zapisz.
 
 Użyj ikony cofnij w pasku aplikacji, aby cofnąć ostatnią czynność. Dotknij Zamknij, aby wyjść z edytora. Jeśli wprowadzono zmiany, przed zamknięciem pojawi się okno dialogowe z potwierdzeniem.
@@ -109,7 +121,7 @@ Użyj ikony cofnij w pasku aplikacji, aby cofnąć ostatnią czynność. Dotknij
 
 ### Szerokość {#width}
 
-![Menu trasy Wygląd Grubość trasy Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Wygląd trasy](@site/static/img/map/track_appearance_width_andr.png)  
+![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
 
 Możesz dostosować wygląd trasy w kilku menu aplikacji:
 
@@ -132,12 +144,12 @@ Dostosuj szerokość trasy, aby poprawić jej widoczność na mapie.
 
 <TabItem value="android" label="Android">
 
-![Menu trasy Wygląd Podział interwału Android](@site/static/img/map/split_interval_android.png)  ![Podział interwału Android](@site/static/img/map/split_interval_2_android.png)
+![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu trasy Wygląd Podział interwału](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Podział interwału](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 </TabItem>
 
@@ -148,13 +160,13 @@ Wybierz, czy interwał na trasie ma być dzielony **według odległości**, **cz
 
 ### Strzałki kierunku {#direction-arrows}
 
-![Menu trasy Wygląd strzałki kierunku Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Dodaje **znaczniki w postaci strzałek** wzdłuż trasy, aby wskazać kierunek ruchu.
 
 ### Ikony startu i mety {#start-and-finish-icons}
 
-![Menu trasy Wygląd ikony startu i mety Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Pozwala wybrać, czy mają być wyświetlane **ikony startu i mety** dla segmentów trasy. W przypadku tras z dużą liczbą segmentów ikony te mogą być automatycznie wyłączone w celu poprawy wydajności renderowania mapy. W takim przypadku możesz włączyć je ręcznie, jeśli jest to potrzebne.
 
@@ -171,19 +183,19 @@ Przywraca wszystkie **ustawienia wyglądu trasy** do ich wartości domyślnych.
 
 :::tip Purchase
 Wizualizacja trasy 3D to [płatna funkcja](../../purchases/index.md).  
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Menu trasy Wygląd Wizualizacja 3D](@site/static/img/map/3d_track_appearance_android.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu trasy Wygląd Wizualizacja 3D](@site/static/img/map/3d_track_appearance_ios.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
@@ -240,13 +252,13 @@ Funkcja trasy 3D jest bardzo przydatna w takich aktywnościach jak paralotniarst
 
 <TabItem value="android" label="Android">
 
-![Wygląd Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Wygląd Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zmień wygląd](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Zmień wygląd](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,10 +268,10 @@ Zakładka [Trasy](../../personal/tracks/manage-tracks.md) automatycznie wyświet
 
 Zmodyfikuj wygląd wielu tras w *Moje miejsca → Trasy*:
 
-- **Zmień domyślny wygląd** (tylko Android) – Pozwala skonfigurować domyślne ustawienia, które zostaną zastosowane po dodaniu trasy do [folderu](../../personal/tracks/manage-tracks.md#track-folder).
+- **Zmień domyślny wygląd** – Pozwala skonfigurować domyślne ustawienia, które zostaną zastosowane po dodaniu trasy do [folderu](../../personal/tracks/manage-tracks.md#track-folder).
 - **Przywróć oryginalne** - Przywraca indywidualne ustawienia trasy.
 
-- [Tryb wyboru](../../personal/tracks/manage-tracks.md#selection-mode) - Zmienia wygląd określonych tras w wybranym folderze lub całej listy w zakładce Trasy.
+- [Tryb wyboru](../../personal/tracks/manage-tracks.md#selection-mode) - Zmienia wygląd określonych tras w wybranym folderze lub całej liście w zakładbie Trasy.
     - Wybierz *menu z trzema kropkami* w prawym górnym rogu zakładki Trasy i dotknij *Wybierz*.
     - Następnie dotknij *menu z trzema kropkami* u góry ekranu i wybierz *Zmień wygląd*.  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
+source-hash: de56403a9eb7f5ddcc9fc2e939af2545f903d69f8212f945db5aba76b5f8c784
 sidebar_position: 6
 ---
 
@@ -22,7 +22,7 @@ sidebar_position: 6
   Dla członków zespołu OsmAnd: wyślij swój login AppleID, aby zostać dodanym do listy deweloperów. Gdy otrzymasz e-mail z zaproszeniem, aktywuj je.
   Zamknij Xcode.
 
-5. Zainstaluj narzędzia wiersza poleceń - cmake, svn, cocoapods
+5. Zainstaluj narzędzia wiersza poleceń - cmake i svn
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -36,13 +36,8 @@ sidebar_position: 6
 
   $ brew install svn
   $ brew install cmake # testowane na 3.25.2, 3.19, 3.11
-
-  # dla intela
-  $ sudo gem install cocoapods
-
-  # dla m1
-  $ brew install cocoapods
   ```
+
 6. Pobierz i zainstaluj Java jdk 17
   ```
   # dla intela
@@ -116,7 +111,7 @@ org.gradle.caching=true
   Rozwiązanie 5: Jeśli otrzymasz błąd taki jak ten: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Przejdź do folderu ```core/external/qtbase-ios/``` i usuń wszystkie foldery zaczynające się od ```upstream```. I uruchom `$ ./prepare.sh` ponownie.
 
 
-9. Otwórz `osmand.xcworkspace` w Xcode
+9. Otwórz `OsmAnd.xcworkspace` w Xcode. Jeśli Xcode nie rozwiąże automatycznie zależności Swift Package Manager, uruchom `Plik → Pakiety → Rozwiąż wersje pakietów`.
 
 10. Pierwsza kompilacja.
   Ustaw cel kompilacji na `OsmAnd Maps`. (Obok przycisków odtwarzania/zatrzymywania). Wybierz jako cel swoje urządzenie lub jeden z symulatorów iOS. Ale nie używaj domyślnego 'Dowolne urządzenie iOS (arm64)'. Zbuduj projekt (przycisk odtwarzania).

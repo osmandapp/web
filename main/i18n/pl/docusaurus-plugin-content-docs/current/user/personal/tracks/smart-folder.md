@@ -1,5 +1,5 @@
 ---
-source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
+source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
 sidebar_position: 3
 title: Inteligentny folder (Filtr)
 ---
@@ -149,7 +149,7 @@ Aby utworzyć **Inteligentny folder**, wykonaj następujące kroki:
 
 3. Skonfiguruj ustawienia:
    - **Nazwij folder**. Wprowadź nazwę, aby zidentyfikować folder.
-   - Określ **parametry filtra tras**. Zastosuj wymagane filtry, korzystając z dostępnych opcji [Filtra](#available-filters).
+   - Określ **parametry filtra tras**. Zastosuj wymagane filtry, korzystąc z dostępnych opcji [Filtra](#available-filters).
 
 4. **Zapisz** ustawienia.
     - Dotknij **Pokaż**, aby wyświetlić podgląd tras.
@@ -178,7 +178,7 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 - **<Translate android="true" ids="delete_folder"/>** — Usuń inteligentny folder bez usuwania jego tras.  
     *OSTRZEŻENIE: Ta czynność jest nieodwracalna i spowoduje wyświetlenie komunikatu z prośbą o potwierdzenie.*
 
-Możesz również otworzyć folder i dotknąć ikony *menu z trzema kropkami* w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
+Możesz również otworzyć folder i dotknij ikony *menu z trzema kropkami* w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
 
 - **<Translate android="true" ids="shared_string_select"/>** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
 - **<Translate android="true" ids="organize_by"/>** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Wybierz *Brak*, aby wyświetlić wszystkie trasy jako jedną listę, odpowiadającą domyślnemu widokowi Inteligentnego folderu. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
@@ -205,12 +205,12 @@ Po wybraniu parametru grupowania trasy są wyświetlane jako grupy. Każda grupa
 - **<Translate ios="true" ids="shared_string_delete"/>** — Usuń inteligentny folder bez usuwania jego tras.  
     *OSTRZEŻENIE: Ta czynność jest nieodwracalna i spowoduje wyświetlenie komunikatu z prośbą o potwierdzenie.*
 
-Możesz również otworzyć folder i dotknąć ikony w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
+Możesz również otworzyć folder i dotknij ikony w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
 
 - **<Translate ios="true" ids="shared_string_select"/>** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze trasy.
 - **<Translate ios="true" ids="edit_filter"/>** — Zmodyfikuj ustawienia filtra tras dla bieżącego inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter), aby uzyskać szczegółowe informacje.
-- **Organizuj według** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Wybierz *Brak*, aby wyświetlić wszystkie trasy jako jedną listę, odpowiadającą domyślnemu widokowi Inteligentnego folderu. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
+- **<Translate ios="true" ids="organize_by"/>** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Wybierz *Brak*, aby wyświetlić wszystkie trasy jako jedną listę, odpowiadającą domyślnemu widokowi Inteligentnego folderu. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
 
 Niektóre parametry grupowania są dostępne tylko z subskrypcją OsmAnd Pro. Darmowe parametry obejmują *Aktywność*, *Rok utworzenia* i *Najbliższe miasto*. Wszystkie inne parametry są oznaczone etykietą <ProFeature/>.
 

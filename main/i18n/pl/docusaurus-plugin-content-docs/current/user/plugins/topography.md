@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografia
 ---
@@ -180,7 +180,7 @@ Podczas korzystania z [Silnika renderowania mapy](../personal/global-settings.md
 - *<Translate android="true" ids="show_from_zoom_level"/>*. Zdefiniuj [poziomy powiększenia](../map/interact-with-map.md#my-position-and-zoom), przy których widoczne są linie konturowe.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Wybierz kolor wyświetlania linii konturowych.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Dostosuj szerokość linii konturowych.
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gęstość linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gędze linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
 - *<Translate android="true" ids="maps_and_resources"/>*. Przeglądaj i pobieraj mapy linii konturowych dla bieżącego regionu i pobliskich obszarów.
 
 
@@ -274,6 +274,16 @@ Cienie terenu wymagają Rzeźby 3D i automatycznie ją włączają po wybraniu. 
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
 - Z [predefiniowanej listy](#default-color-scheme).
@@ -290,23 +300,6 @@ Możesz:
 **Uwaga:** Cieniowanie wzgórz wykorzystuje stały algorytm cieniowania i nie obsługuje niestandardowych palet kolorów.
 
 Aby uzyskać zaawansowaną personalizację palet za pomocą plików palet, zobacz artykuł [Schematy kolorów](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
-
-- Z [predefiniowanej listy](#default-color-scheme).
-- Z plików palet kolorów utworzonych na komputerze. Niestandardowe pliki można dodać do OsmAnd za pomocą [narzędzia importu/eksportu](../personal/import-export.md).
-
-Możesz [edytować te palety](../personal/color-palette-schemes.md#palette-modify), aby spersonalizować wygląd map i tras.
-
-</TabItem>
-
-</Tabs>
 
 ### Widoczność {#visibility}
 
@@ -574,6 +567,6 @@ OsmAnd pozwala na łączenie wielu typów warstw mapy w celu uzyskania bardziej 
 
 1. Jak przywrócić zakup wtyczki Topografia (dawniej Linie konturowe). [(sprawdź)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Linie konturowe, dane o wysokości lub rzeźba 3D nie są wyświetlane. [(sprawdź)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. Mapa automatycznie przełącza się w tryb 3D podczas nawigacji:  
-    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przyciski → Przycuki domyślne**.  
+3. Mapa automatycznie przełącza w tryb 3D podczas nawigacji:  
+    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przycuki → Przycuki domyślne**.  
     - Sprawdź, czy w **Menu → Konfiguruj mapę → Topografia** są włączone jakiekolwiek funkcje Terenu, które mogą wywoływać efekt 3D.

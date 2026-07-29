@@ -1,5 +1,5 @@
 ---
-source-hash: 4d2b414b19a5309ab189a4b85deee780fc65f5fbe7b235b81ae54779300d0e0a
+source-hash: 7e8edd0a03c797ec6fe68a32870b86c331f3e647c8104820a30525c165f679ee
 
 ---
 # OsmAnd API, SDK - Przykłady {#osmand-api-sdk---samples}
@@ -20,7 +20,7 @@ Oto lista przykładów użycia SDK w Twoim produkcie.
 ## Android OsmAnd AIDL API {#android-osmand-aidl-api}
 Główna koncepcja tego podejścia polega na tym, że aplikacja docelowa komunikuje się z OsmAnd za pośrednictwem [AIDL](https://developer.android.com/guide/components/aidl) lub API intencji. OsmAnd posiada bogatą różnorodność metod obsługiwanych przez [interfejs AIDL](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). Istnieje kilka aplikacji zbudowanych przy użyciu tych podejść, a główna koncepcja polega na tym, że aplikacja zawiera kilka ekranów i przycisk „Przejdź do mapy”, a w tle aplikacja całkowicie rekonfiguruje OsmAnd i zapewnia wywołanie zwrotne dla głównych operacji, takich jak nawigacja, pozyskiwanie lokalizacji GPS, a także zawiera elementy interfejsu użytkownika, takie jak widżety / przyciski szuflady, dzięki czemu użytkownik może nawigować z mapy z powrotem do docelowego API.
 
-Lista API jest dość długa i można się z nią zapoznać w [aplikacji demonstracyjnej](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
+Lista API jest dość długa i można się z nią zapoznać w [aplikacji demonstracyjnej](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk). Na przykład aplikacje zewnętrzne mogą dodawać widżety indywidualnie lub w grupach oraz przypisywać im niestandardowe ikony za pomocą URI zamiast polegać wyłącznie na wbudowanym zestawie ikon OsmAnd.
 
 **Zalety**
 - Brak problemów z licencją - dostępne do wszystkich możliwych celów
