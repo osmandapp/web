@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Widgets Informativos
 ---
@@ -239,7 +239,7 @@ O widget [simples](../widgets/configure-screen.md#widget-panels) *Razão de Plan
 
 - Valor **≤ 0.1**:  
   - "0.05" é exibido como "0".
-- Valor **> 0.1 e < 100**:  
+- Valor **> 0.1 and < 100**:  
   - por exemplo, "50.7643" é exibido como "50.8:1".
 - Valor **> 100:**  
   - "102.35" é exibido como "102:1."
@@ -560,7 +560,7 @@ Para adicionar Widgets de Métricas do Veículo à tela do mapa, ative o plugin 
 </Tabs>
 
 
-Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Voltagem do adaptador** (*somente Android*),&nbsp; **Temperatura ambiente**,&nbsp; **Voltagem da bateria**,&nbsp; **Carga calculada do motor**,&nbsp; **Temperatura do líquido de arrefecimento**,&nbsp; **Temperatura do óleo do motor**,&nbsp; **Tempo de funcionamento do motor**,&nbsp; **Rotação do motor** (*grátis*),&nbsp; **Consumo de combustível**,&nbsp; **Pressão do combustível**,&nbsp; **Temperatura de admissão**,&nbsp; **Combustível restante**,&nbsp; **Posição do acelerador**, e **Velocidade do veículo** (*grátis*).  
+Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Voltagem do adaptador**,&nbsp; **Temperatura ambiente**,&nbsp; **Voltagem da bateria**,&nbsp; **Carga calculada do motor**,&nbsp; **Temperatura do líquido de arrefecimento**,&nbsp; **Temperatura do óleo do motor**,&nbsp; **Tempo de funcionamento do motor**,&nbsp; **Rotação do motor** (*grátis*),&nbsp; **Consumo de combustível**,&nbsp; **Pressão do combustível**,&nbsp; **Temperatura de admissão**,&nbsp; **Combustível restante**,&nbsp; **Posição do acelerador**, e **Velocidade do veículo** (*grátis*).  
 
 - Para adicionar widgets de métricas do veículo à tela do mapa, [ative](../plugins/index.md#enable--disable) o **plugin Métricas do Veículo**.
 - Você pode adicionar widgets mesmo que nenhum scanner OBD-II esteja conectado.
