@@ -1,5 +1,5 @@
 ---
-source-hash: 4d2b414b19a5309ab189a4b85deee780fc65f5fbe7b235b81ae54779300d0e0a
+source-hash: 7e8edd0a03c797ec6fe68a32870b86c331f3e647c8104820a30525c165f679ee
 
 ---
 # OsmAnd API, SDK - Örnekler {#osmand-api-sdk---samples}
@@ -20,7 +20,7 @@ OsmAnd gücünü uygulamanızda yeniden kullanmanın 2 ana yolu vardır:
 ## Android OsmAnd AIDL API {#android-osmand-aidl-api}
 Bu yaklaşımın arkasındaki ana konsept, Hedef uygulamanın OsmAnd ile [AIDL](https://developer.android.com/guide/components/aidl) veya intent API aracılığıyla iletişim kurmasıdır. OsmAnd, [AIDL arayüzü](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl) tarafından desteklenen zengin bir yöntem çeşitliliğine sahiptir. Bu yaklaşımı kullanarak oluşturulmuş birkaç uygulama vardır ve ana konsept, uygulamanın birkaç ekran ve "Haritaya git" düğmesi içermesidir; sahne arkasında uygulama OsmAnd'ı tamamen yeniden yapılandırır ve Navigasyon, GPS konumu edinme gibi ana işlemler için geri arama sağlar ve ayrıca widget'lar / Çekmece düğmeleri gibi UI öğelerini içerir, böylece kullanıcı Haritadan Hedef API'ye geri gidebilir.
 
-API'lerin listesi oldukça uzundur ve [Demo Uygulaması](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk) içinde tanışabilirsiniz.
+API'lerin listesi oldukça uzundur ve [Demo Uygulaması](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk) içinde tanışabilirsiniz. Örneğin, harici uygulamalar widget'ları tek tek veya gruplar halinde ekleyebilir ve yalnızca OsmAnd'ın yerleşik simge setine güvenmek yerine URI aracılığıyla özel simgeler atayabilir.
 
 **Artıları**
 - Lisans sorunu yok - tüm olası amaçlar için kullanılabilir

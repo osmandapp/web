@@ -1,5 +1,5 @@
 ---
-source-hash: b72231de89708cc761d36df5e28ed3e9d25300bf49d391eefbff605bb4ce39c6
+source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
 sidebar_position: 1
 title: Android Satın Almaları
 ---
@@ -76,7 +76,7 @@ Android cihazlar için uygulamanın **Ücretsiz** ve **Ücretli** sürümlerini 
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-<!--
+
 
 :::danger 🏖️ Summer Sale
 
@@ -93,8 +93,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -103,7 +103,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
-
+-->
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 

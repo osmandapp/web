@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: İzler
 title: İzler
@@ -41,6 +41,22 @@ Bu, ücretli bir özelliktir <ProFeature/>. Kullanmak için OsmAnd Pro hesabın�
 - Klasörleri OSF veya OBF koleksiyonu olarak indirme.
 
 
+## İzleri İçe Aktar {#import-tracks}
+
+GPX izlerini Web Planlayıcısı'na İçe Aktar düğmesini kullanarak veya GPX dosyalarını doğrudan haritaya sürükleyip bırakarak aktarabilirsiniz.
+
+Sürükle ve bırak kullanarak bir izi içe aktarmak için:
+- İzler bölümünü açın.
+- Bilgisayarınızdan bir veya daha fazla GPX dosyasını sürükleyin.
+- Dosyaları haritaya veya belirli bir iz klasörüne bırakın.
+
+Bir dosya harita üzerine sürüklendiğinde, mevcut bırakma alanı vurgulanır. Dosyayı doğrudan haritaya bırakırsanız, İçe Aktar klasörüne aktarılır. Mevcut bir klasöre bırakırsanız, bunun yerine o klasöre aktarılır.
+
+İçe aktarma tamamlandıktan sonra iz, iz listesinde görünür, [OsmAnd Cloud](../personal/osmand-cloud.md) ile senkronize edilir ve aynı hesaba bağlı tüm cihazlarda kullanılabilir hale gelir.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Haritada Görünür {#visible-on-the-map}
 
 **Haritada Görünür** görünümü, şu anda haritada görüntülenen tüm izleri listeler. Herhangi bir iz, ana İzler panelinden **⋮ → İz'i görünür yap** seçeneği kullanılarak bu listeye eklenebilir.
@@ -80,7 +96,7 @@ Web'de Akıllı Klasörler, normal klasörlerden ayırt edilmelerini sağlayan b
 
 Akıllı Klasör senkronizasyonu, platforma ve senkronizasyon yapılandırmasına bağlı olarak değişebilir. En tutarlı sonuçlar için, tüm cihazlarda Cloud senkronizasyonunun etkin ve güncel olduğundan emin olun.
 
-Üç nokta menüsünde (⋮), Akıllı Klasörü OBF koleksiyonu olarak indirebilirsiniz.
+Üç nokta menüsünde (⋮), Akıllı Klasörü OBF koleksiyonu olarak indirebilir, klasörü yeniden adlandırabilir veya silebilirsiniz.
 
 ![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
