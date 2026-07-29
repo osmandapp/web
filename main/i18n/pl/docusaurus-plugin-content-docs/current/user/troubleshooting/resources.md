@@ -1,7 +1,7 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
 sidebar_position: 9
-title: Resources and Customizations
+title: Zasoby i dostosowania
 ---
 
 import Tabs from '@theme/Tabs';
@@ -54,6 +54,7 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 | iOverlander GPX do OsmAnd | Skrypt Pythona do konwersji wyeksportowanych plików *GPX* iOverlander do OsmAnd z ikonami. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Niestandardowe zasoby {#custom-resources}
 
@@ -73,7 +74,7 @@ Podręczniki te, dostępne w wielu językach, często zawierają unikalne spostr
 | włoski | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | holenderski | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
 | holenderski | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
-| holenderski | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
+| holenderski | Filmpjes są przeze mnie stworzone z krótkim i jasnym wyjaśnieniem działania Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
 | niemiecki | Osmand Anleitung: Kostenlose Karten- und Navigations App  |  [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
 | rosyjski  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
 
@@ -134,6 +135,10 @@ Poniższa tabela zawiera listę różnych źródeł map online przygotowanych pr
 | Basemap AT WMTS | Zestaw map Austrii oparty na [basemap.at WMTS](https://basemap.at/en/) stworzony przez mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | Mapy OsmAnd IGN (FR) | Zestaw map dostarczony przez francuski instytut geograficzny IGN. | [Mapy OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | Kolekcja map AnyGis | Strona zawiera kolekcję map na wakacje w kraju, w tym mapy turystyczne, górskie, morskie i wiele innych. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Independent OsmAnd overlay showing today’s and tomorrow’s wildfire-risk levels for the Comunitat Valenciana, Spain, using official public data. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

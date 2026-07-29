@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -39,6 +39,22 @@ Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne
 - Pobieranie i usuwanie tras.
 - Tworzenie nowych folderów lub usuwanie ich.
 - Pobieranie folderów jako kolekcja OSF lub OBF.
+
+
+## Import tras {#import-tracks}
+
+Możesz importować trasy GPX do Web Plannera za pomocą przycisku Import lub przeciągając i upuszczając pliki GPX bezpośrednio na mapę.
+
+Aby zaimportować trasę metodą przeciągnij i upuść:
+- Otwórz sekcję Trasy.
+- Przeciągnij jeden lub więcej plików GPX z komputera.
+- Upuść pliki na mapę lub do określonego folderu tras.
+
+Gdy plik jest przeciągany nad mapę, dostępny obszar upuszczania jest podświetlony. Jeśli upuścisz plik bezpośrednio na mapę, zostanie zaimportowany do folderu Import. Jeśli upuścisz go do istniejącego folderu, zostanie zaimportowany do tego folderu.
+
+Po zakończeniu importu trasa pojawia się na liście tras, jest synchronizowana z [OsmAnd Cloud](../personal/osmand-cloud.md) i staje się dostępna na wszystkich urządzeniach podłączonych do tego samego konta.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Widoczne na mapie {#visible-on-the-map}
