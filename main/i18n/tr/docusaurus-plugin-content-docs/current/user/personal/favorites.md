@@ -1,5 +1,5 @@
 ---
-source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Favoriler
 ---
@@ -24,13 +24,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favoriler tanıtım android](@site/static/img/personal/favorites_intro_android.png)
+![Favorites introduction android](@site/static/img/personal/favorites_intro_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriler tanıtım ios](@site/static/img/personal/favorites_intro_ios.png)
+![Favorites introduction ios](@site/static/img/personal/favorites_intro_ios.png)
 
 </TabItem>
 
@@ -88,7 +88,7 @@ OSM verilerinden bir nokta eklerken, ilgili İÇN bilgileri otomatik olarak dahi
 
 - **Ad** — Grup içinde benzersiz bir ad (*Gerekli*).
 - **Adres** ve **Açıklama** (*İsteğe bağlı*).
-- **Grup** — Mevcut bir [Favori grubundan](#manage-favorites) seçin veya yeni bir tane oluşturun. Android'de ayrıca bir grup içindeki alt klasörü seçebilir veya yeni bir tane oluşturabilirsiniz.
+- **Grup** — Mevcut bir [Favori grubundan](#manage-favorites) seçin veya yeni bir tane oluşturun. Android'de ayrıca bir grup içindeki alt klasörü seçebilir veya yeni bir tane oluşturabilirsiniz. İç içe klasörler tam yollarıyla görüntülenir (örneğin, *Seyahat* / *İtalya* / *Roma*).
 - **Görsel özelleştirme** — Simge, renk, şekil ya varsayılan [grup görünümüyle](#change-group-appearance) eşleşebilir ya da ayrı ayrı özelleştirilebilir.
 
 **NOT:** [Haritayı yapılandır](../map/configure-map-menu) bölümünde Favoriler katmanı devre dışı bırakılmışsa, yeni bir favori noktası eklemek katmanı otomatik olarak etkinleştirerek yeni eklenen favorinin haritada görünmesini sağlar.
@@ -270,18 +270,19 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_new_2.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Her klasörün yanındaki ***Üç nokta menüsünü*** kullanarak favori gruplarını yönetin:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
 - **<Translate android="true" ids="pin_folder"/>** — Seçilen klasörü favoriler listesinin en üstünde tutmak için sabitleyin, daha hızlı erişim için.
-- **<Translate android="true" ids="add_new_folder"/>** — Seçilen klasörün içinde yeni bir alt klasör oluşturun.
 - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
+- **<Translate android="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
+- **<Translate android="true" ids="shared_string_move"/>** — Seçilen klasörü, içindeki tüm favori noktaları ve iç içe alt klasörleriyle birlikte başka bir klasöre taşıyın. Geçerli klasör ve alt klasörleri hedef olarak seçilemez.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Harita işaretçilerinden kaldır** — Klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın, kolay başvuru için.
 - **<Translate android="true" ids="add_to_a_track"/>** — Seçilen klasördeki tüm favori noktaları bir ize ekleyin. Bu, iz seçme ekranını açar burada bir iz seçebilir veya oluşturabilirsiniz.
-- **<Translate android="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Seçilen favoriler klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
 
 </TabItem>

@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title:  İzleri Yönet
 ---
@@ -330,7 +330,7 @@ Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **aç�
 - **Yokuşlar** toplamı — Veriler, seçilen klasördeki tüm izlerdeki toplam dikey yükselişi gösterir.
 - **Yokuş aşağılar** toplamı — Bu parametre, seçilen klasördeki tüm izlerdeki dikey inişlerin toplamıdır.
 - **Süre** zamanı toplamı — Bu, seçilen klasördeki tüm izleri tamamlamak için geçen toplam süreyi görüntüler.
-- İndirilen dosyaların toplam **Boyutu** MB cinsinden — Megabayt cinsinden toplam indirilen dosya boyutu, seçilen klasördeki tüm izlerin cihazınızda ne kadar yer kapladığını gösterir.
+- İndirilen dosyaların toplam **Boyutu** MB cinsinde — Megabayt cinsinden toplam indirilen dosya boyutu, seçilen klasördeki tüm izlerin cihazınızda ne kadar yer kapladığını gösterir.
 
 
 ### Klasör Eylemleri {#folder-actions}
@@ -422,7 +422,8 @@ Bir klasörü içerdiği tüm izlerle birlikte silebilirsiniz. Bunu yapmak için
     *Ek seçenekler:*
 
     - **Tek izli GPX dosyaları** - tüm izi doğrudan içe aktarın.
-    - **Çok izli GPX dosyaları** - tek GPX dosyasını içe aktarmayı veya belirli izleri seçmeyi seçin.
+    - **Çok izli GPX dosyaları** - tek GPX dosyasını içe aktarmayı veya belirli izleri seçmeyi seçin.  
+    Bir GPX dosyası birden fazla iz içerdiğinde, İçe Aktar izleri ekranı açılır ve dosyadaki tüm izleri incelemenize, içe aktarmak istediklerinizi seçmenize, bir hedef klasör seçmenize veya *Tek iz olarak içe aktar* seçeneğini kullanarak tüm izleri tek bir iz olarak içe aktarmanıza olanak tanır. Dosya yol noktaları içeriyorsa, içe aktarmayı tamamlamadan önce bunları da inceleyip atayabilirsiniz.
 
 ***NOT:*** *Cihazınızdaki OsmAnd klasörüne manuel olarak eklenen izler, uygulamayı yeniden başlatmaya gerek kalmadan otomatik olarak içe aktarılır.*  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
+source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
 sidebar_position: 3
 title: Akıllı Klasör (Filtre)
 ---
@@ -210,7 +210,7 @@ Klasörü ayrıca açabilir ve *sağ üst köşedeki* simgeye dokunarak ek eylem
 - **<Translate ios="true" ids="shared_string_select"/>** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — En son parkurları içerdiğinden emin olmak için klasörün içeriğini manuel olarak güncelleyin.
 - **<Translate ios="true" ids="edit_filter"/>** — Geçerli Akıllı Klasör için parkur filtre ayarlarını değiştirin. Ayrıntılar için [Arama Filtresi](#search-filter) bölümüne bakın.
-- **Organize et** — Seçilen bir parametreye göre Akıllı Klasördeki parkurları otomatik olarak gruplara ayırın. Tek liste olarak görüntülemek için *Yok* seçeneğini belirleyin; bu, varsayılan Akıllı Klasör görünümüyle eşleşir. Mevcut gruplama türleri *Genel*, *Tarih ve saat*, *Konum*, *Hız*, *Rakım ve yükseklik* ve *Sensör verisi* içerir. 
+- **<Translate ios="true" ids="organize_by"/>** — Seçilen bir parametreye göre Akıllı Klasördeki parkurları otomatik olarak gruplara ayırın. Tek liste olarak görüntülemek için *Yok* seçeneğini belirleyin; bu, varsayılan Akıllı Klasör görünümüyle eşleşir. Mevcut gruplama türleri *Genel*, *Tarih ve saat*, *Konum*, *Hız*, *Rakım ve yükseklik* ve *Sensör verisi* içerir. 
 
 Bazı gruplama parametreleri yalnızca OsmAnd Pro aboneliği ile kullanılabilir. Ücretsiz parametreler *Etkinlik*, *Oluşturma yılı* ve *En yakın şehir* içerir. Diğer tüm parametreler <ProFeature/> etiketiyle işaretlenmiştir.
 

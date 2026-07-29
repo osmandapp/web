@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title: Navigasyon Widget'ları
 ---
@@ -49,7 +49,7 @@ OsmAnd'daki navigasyon widget'ları hem **aktif** hem de **pasif** navigasyon mo
 
 - **İşlevsellik:**  
   - GPS verilerini kullanarak takip ettiğiniz yolu belirlemeye çalışır.  
-  - [Sokak adı](#street-name), [şerit bilgileri](#lanes), [maksimum hız](#speed-limit) gibi **temel yol bilgilerini** görüntüler.
+  - [Sokak adı](#street-name), [şerit bilgileri](#lanes), [maksimum hız](#speed-limit) gibi **temel yol bilgilerini** görünteler.
 
 - **Sınırlamalar:**  
   - Belirlenmiş bir hedef olmadan bazı gelişmiş özellikler doğru çalışmayabilir.  
@@ -188,6 +188,7 @@ Yönü görüntülemek için bir **hedef nokta** seçilmelidir. Navigasyon için
 
 - Bir **Varsayılan Görünüm** seçin: *Tahmini varış süresi*, *Gitme süresi*, *Mesafe*.
 - **Görüntüleme Önceliği**'nde, *Önce hedef (varsayılan)* veya *Önce ara nokta* arasında seçim yapın.
+- **Genişlet düğmesini göster** seçeneğini etkinleştirerek veya devre dışı bırakarak Navigasyon kullanıcı arayüzü genişletme düğmesini gösterebilir veya gizleyebilirsiniz. Bu seçenek varsayılan olarak etkindir.
 
 > NOT: Widget yalnızca navigasyon sırasında görünür.
 
@@ -249,7 +250,7 @@ Widget, ilk ara noktaya *Varış zamanını* veya *Gitme süresini* gösterir. N
 |:------------|:------------|
 | Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapar. |
+| Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapır. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
 
@@ -277,7 +278,7 @@ Widget, son varış noktasına *Varış zamanını* veya *Gitme süresini* göst
 |:------------|:------------|
 | Etkinleştir |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapar. |
+| Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapır. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |  
 
 
@@ -289,7 +290,7 @@ Widget, son varış noktasına *Varış zamanını* veya *Gitme süresini* göst
 
 - Veriler [OpenStreetMap projesinden](https://wiki.openstreetmap.org/wiki/Key:maxspeed) alınmıştır.
 - Widget pasif ve aktif navigasyon modlarında çalışır.
-- Belirli bir yol veya alan için hız limiti verileri mevcut değilse, *widget görünmez*.
+- Belirtilen bir yol veya alan için hız limiti verileri mevcut değilse, *widget görünmez*.
 
 > NOT: En son hız limiti bilgilerine erişmek için [haritalarınızın güncel olduğundan](../personal/maps-resources.md#updates-menu) ve gerekli tüm bölgesel verileri indirdiğinizden emin olun.
 
@@ -474,7 +475,7 @@ Widget **Ayarları**'nda her zaman **mevcut sokak adını** görüntülemeyi se�
 
 </Tabs>
 
-**Yaklaşan İÇN'ler/Favoriler/Ara Noktalar** widget'ı [Sokak adı](#street-name) ile birleştirilmiştir ve rota boyunca yaklaşan ve geçen İlgi Çekici Noktaları, takip edilen parkurun Ara Noktalarını ve Favorileri görüntüler.  
+**Yaklaşan İÇN'ler/Favoriler/Ara Noktalar** widget'ı [Sokak adı](#street-name) ile birleştirilmiştir ve rota boyunca yaklaşan ve geçen İlgi Çekici Noktaları, takip edilen parkurun Ara Noktalarını ve Favorileri görünteler.  
 
 Adı, **noktanın simgesini** ve 2 **mesafeyi** gösterir:
 

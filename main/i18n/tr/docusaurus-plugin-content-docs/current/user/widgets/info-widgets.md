@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Bilgi Widget'ları
 ---
@@ -66,7 +66,7 @@ Bazı Android cihazlarda rakım yanlış görüntülenebilir. Bu sorunu çözmek
 ### Yükseklik: Harita Merkezi {#elevation-map-center}
 
 :::info Ücretli özellik
-&nbsp;**OsmAnd Pro** *Yükseklik: harita merkezi* widget'ını kullanmak için [OsmAnd Pro](../purchases/index.md) aboneliği edinin <ProFeature />.  
+*Yükseklik: harita merkezi* widget'ı bir [**OsmAnd Pro**](../purchases/index.md) ücretli özelliktir <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -217,7 +217,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 </Tabs>  
 
-[Basit](../widgets/configure-screen.md#widget-panels) *Süzülme Oranı* widget'ları, hava rotalarını planlarken bilinçli kararlar vermeye yardımcı olmak için değerli süzülme oranı bilgileri sağlar. OsmAnd'deki *Süzülme Oranı* widget'ı, belirli bir konuma ([harita üzerindeki işaretçi](../personal/markers.md)) giderken iniş veya çıkışınızın verimliliğini değerlendirmenize yardımcı olur. Süzülme oranını, mevcut konumunuz ile hedeflenen varış noktanız arasındaki yükseklik farkına olan mesafenin oranı olarak hesaplar. Bu konuda daha fazla bilgiyi [burada](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio) okuyabilirsiniz.
+[Basit](../widgets/configure-screen.md#widget-panels) *Süzülme Oranı* widget'ları, hava rotalarını planlarken bilinçli kararlar vermeye yardımcı olmak için değerli süzülme oranı bilgisi sağlar. OsmAnd'deki *Süzülme Oranı* widget'ı, belirli bir konuma ([harita üzerindeki işaretçi](../personal/markers.md)) giderken iniş veya çıkışınızın verimliliğini değerlendirmenize yardımcı olur. Süzülme oranını, mevcut konumunuz ile hedeflenen varış noktanız arasındaki yükseklik farkına olan mesafenin oranı olarak hesaplar. Bu konuda daha fazla bilgiyi [burada](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio) okuyabilirsiniz.
 
 
 **Widget'ların kullanımı:**
@@ -239,7 +239,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 - Değer **≤ 0.1**:  
   - "0.05" "0" olarak görüntülenir.
-- Değer **> 0.1 ve < 100**:  
+- Değer **> 0.1 and < 100**:  
   - örneğin, "50.7643" "50.8:1" olarak görüntülenir.
 - Değer **> 100:**  
   - "102.35" "102:1" olarak görüntülenir.
@@ -479,7 +479,7 @@ Daha ayrıntılı bir açıklamayı burada okuyabilirsiniz: **[<Translate androi
 
 </Tabs>
 
-Yolculuk kayıt widget'ları [<Translate android="true" ids="record_plugin_name"/> eklentisine](../plugins/trip-recording.md#widgets) atıfta bulunur. Widget'ları kullanarak rota kaydı hakkında kısa bilgileri ekranda görüntüleyebilirsiniz. Örneğin *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Maksimum Hız* ve *Ortalama Eğim*.
+Yolculuk kayıt widget'ları [<Translate android="true" ids="record_plugin_name"/> eklentine](../plugins/trip-recording.md#widgets) atıfta bulunur. Widget'ları kullanarak rota kaydı hakkında kısa bilgileri ekranda görüntüleyebilirsiniz. Örneğin *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Maksimum Hız* ve *Ortalama Eğim*.
 
 | | |
 |:------------|:------------|
@@ -511,7 +511,7 @@ Harici Sensörler widget'larını harita ekranına eklemek için OsmAnd [Harici 
 
 </Tabs>
 
-Widget'lar [Harici sensörler eklentisine](../plugins/external-sensors.md#widgets) atıfta bulunur. Harici sensörlerinizden gelen kısa bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*yalnızca Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** ve **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Ayrıca bağlı BLE sensörlerinin **pil seviyesini** doğrudan widget'ta görüntülemek için seçebilirsiniz.  
+Widget'lar [Harici sensörler eklentine](../plugins/external-sensors.md#widgets) atıfta bulunur. Harici sensörlerinizden gelen kısa bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*yalnızca Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** ve **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Ayrıca bağlı BLE sensörlerinin **pil seviyesini** doğrudan widget'ta görüntülemek için seçebilirsiniz.  
 
 - Widget eklemek için — OsmAnd Harici Sensörler eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
 
@@ -560,7 +560,7 @@ Araç Metrikleri Widget'larını harita ekranına eklemek için OsmAnd [Araç Me
 </Tabs>
 
 
-Widget'lar [Araç Metrikleri eklentisine](../plugins/vehicle-metrics.md#widgets) aittir. Bağlı bir OBD-II tarayıcısından gelen bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin (*14 metrik*): **Adaptör voltajı** (*yalnızca Android*),&nbsp; **Ortam Sıcaklığı**,&nbsp; **Pil voltajı**,&nbsp; **Hesaplanan Motor Yükü**,&nbsp; **Soğutma Suyu Sıcaklığı**,&nbsp; **Motor Yağı Sıcaklığı**,&nbsp; **Motor Çalışma Süresi**,&nbsp; **Motor Hızı** (*ücretsiz*),&nbsp; **Yakıt Tüketimi**,&nbsp; **Yakıt Basıncı**,&nbsp; **Emme Sıcaklığı**,&nbsp; **Kalan Yakıt**,&nbsp; **Gaz Kelebeği Konumu** ve **Araç Hızı** (*ücretsiz*).  
+Widget'lar [Araç Metrikleri eklentine](../plugins/vehicle-metrics.md#widgets) aittir. Bağlı bir OBD-II tarayıcısından gelen bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin (*14 metrik*): **Adaptör voltajı** (*yalnızca Android*),&nbsp; **Ortam Sıcaklığı**,&nbsp; **Pil voltajı**,&nbsp; **Hesaplanan Motor Yükü**,&nbsp; **Soğutma Suyu Sıcaklığı**,&nbsp; **Motor Yağı Sıcaklığı**,&nbsp; **Motor Çalışma Süresi**,&nbsp; **Motor Hızı** (*ücretsiz*),&nbsp; **Yakıt Tüketimi**,&nbsp; **Yakıt Basıncı**,&nbsp; **Emme Sıcaklığı**,&nbsp; **Kalan Yakıt**,&nbsp; **Gaz Kelebeği Konumu** ve **Araç Hızı** (*ücretsiz*).  
 
 - Araç metrikleri widget'larını harita ekranına eklemek için **Araç Metrikleri eklentisini** [etkinleştirin](../plugins/index.md#enable--disable).
 - OBD-II tarayıcı bağlı olmasa bile widget'ları ekleyebilirsiniz.
@@ -725,7 +725,7 @@ Geliştirici widget'larını harita ekranına eklemek için OsmAnd [OsmAnd geli�
 
 </Tabs>
 
-[Harita oluşturma FPS widget'ı](../plugins/development.md#map-rendering-fps-widget), haritanın ve öğelerinin saniyedeki kare (FPS) cinsinden oluşturma hızını gösterir. Daha yüksek bir FPS değeri, daha hızlı oluşturma ve daha akıcı görsel performans anlamına gelir.
+[Harita oluşturma FPS widget'ı](../plugins/development.md#map-rendering-fps-widget), haritanın ve öğelerinin saniyedeki kare (FPS) cinsinden oluştururma hızını gösterir. Daha yüksek bir FPS değeri, daha hızlı oluşturma ve daha akıcı görsel performans anlamına gelir.
 
 | | |
 |:------------|:------------|
