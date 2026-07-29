@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografia
 ---
@@ -274,6 +274,16 @@ Sombras do Terreno requer Relevo 3D e o ativa automaticamente quando selecionado
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
 
 - De uma [lista predefinida](#default-color-scheme).
@@ -290,23 +300,6 @@ Você pode:
 **Nota:** Hillshade usa um algoritmo de sombreamento fixo e não suporta paletas de cores personalizadas.
 
 Para personalização avançada de paleta usando arquivos de paleta, consulte o artigo [Esquemas de Cores](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
-
-- De uma [lista predefinida](#default-color-scheme).
-- De arquivos de paleta de cores que você criou em seu computador. Arquivos personalizados podem ser adicionados ao OsmAnd usando a [ferramenta de importação/exportação](../personal/import-export.md).
-
-Você pode [editar essas paletas](../personal/color-palette-schemes.md#palette-modify) para personalizar a aparência de mapas e rotas.
-
-</TabItem>
-
-</Tabs>
 
 ### Visibilidade {#visibility}
 

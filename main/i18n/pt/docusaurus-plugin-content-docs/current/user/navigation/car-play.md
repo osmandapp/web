@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
 sidebar_position: 10
 title:  CarPlay
 android: false

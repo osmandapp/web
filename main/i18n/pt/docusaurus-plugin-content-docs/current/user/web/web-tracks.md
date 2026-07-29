@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -39,6 +39,22 @@ A seção Trilhas contém todas as ferramentas e ações relacionadas às trilha
 - Baixar e excluir trilhas.
 - Criar novas pastas ou excluí-las.
 - Baixar pastas como coleção OSF ou OBF.
+
+
+## Importar Trilhas {#import-tracks}
+
+Você pode importar trilhas GPX para o Planejador Web usando o botão Importar ou arrastando e soltando arquivos GPX diretamente no mapa.
+
+Para importar uma trilha usando arrastar e soltar:
+- Abra a seção Trilhas.
+- Arraste um ou mais arquivos GPX do seu computador.
+- Solte os arquivos no mapa ou em uma pasta de trilha específica.
+
+Quando um arquivo é arrastado sobre o mapa, a área de soltura disponível é destacada. Se você soltar o arquivo diretamente no mapa, ele é importado para a pasta Importar. Se você soltá-lo em uma pasta existente, ele é importado para essa pasta.
+
+Após a importação ser concluída, a trilha aparece na lista de trilhas, é sincronizada com o [OsmAnd Cloud](../personal/osmand-cloud.md) e fica disponível em todos os dispositivos conectados à mesma conta.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Visível no Mapa {#visible-on-the-map}
