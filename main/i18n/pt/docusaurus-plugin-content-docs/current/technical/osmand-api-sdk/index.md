@@ -1,7 +1,7 @@
 ---
-source-hash: 4d2b414b19a5309ab189a4b85deee780fc65f5fbe7b235b81ae54779300d0e0a
-
+source-hash: 7e8edd0a03c797ec6fe68a32870b86c331f3e647c8104820a30525c165f679ee
 ---
+
 # API OsmAnd, SDK - Amostras {#osmand-api-sdk---samples}
 Caso você queira usar o OsmAnd como uma biblioteca para seu aplicativo, você pode considerar usá-lo via SDK ou via API. Atualmente, essas opções estão disponíveis apenas para Android.
 
@@ -20,7 +20,7 @@ Aqui está a lista de exemplos de como usar o SDK dentro do seu produto.
 ## API AIDL do Android OsmAnd {#android-osmand-aidl-api}
 O conceito principal por trás dessa abordagem é que o aplicativo de destino se comunica com o OsmAnd via [AIDL](https://developer.android.com/guide/components/aidl) ou API de intents. O OsmAnd possui uma grande variedade de métodos suportados pela [interface AIDL](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/src/net/osmand/aidl/IOsmAndAidlInterface.aidl). Existem vários aplicativos construídos usando essa abordagem e o conceito principal é que o aplicativo contém várias telas e um botão "Ir para o mapa" por trás da cena, o aplicativo reconfigura completamente o OsmAnd e fornece um retorno de chamada para operações principais, como Navegação, localização GPS adquirida e também inclui elementos de UI, como widgets / botões de gaveta, para que o usuário possa navegar do Mapa de volta para a API de Destino.
 
-A lista de APIs é bastante longa e você pode se familiarizar com ela dentro do [Aplicativo de Demonstração](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk).
+A lista de APIs é bastante longa e você pode se familiarizar com ela dentro do [Aplicativo de Demonstração](https://download.osmand.net/latest-night-build/OsmAnd-api-sample.apk). Por exemplo, aplicativos externos podem adicionar widgets individualmente ou em grupos e atribuir ícones personalizados via URI em vez de depender apenas do conjunto de ícones integrado do OsmAnd.
 
 **Prós**
 - Sem problemas de Licença - disponível para todos os propósitos possíveis

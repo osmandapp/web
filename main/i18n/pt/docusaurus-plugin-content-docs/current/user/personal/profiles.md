@@ -1,5 +1,5 @@
 ---
-source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title: Perfis (Configurações)
 ---
@@ -227,6 +227,7 @@ Na seção **Unidades e Formatos**, você pode ajustar as unidades de medida e o
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Android version only) | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (Android version only) | Example: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Graus 180° | Todos os valores angulares têm leituras de 0° a 180° e de 0° a -180°.  |
 |          | Graus 360° | Todos os valores angulares têm leituras de 0° a 360°.  |
@@ -568,7 +569,7 @@ Os plugins desbloqueiam recursos adicionais do aplicativo e podem ser [pagos ou 
 
 - **Clima**. As camadas interativas do mapa [Clima](../plugins/weather.md#weather-settings) permitem monitorar a temperatura, pressão do ar, cobertura de nuvens, velocidade do vento e precipitação em sua cidade ou em qualquer outro local em um mapa global.
 
-- **Notas de Áudio / Vídeo** (*Somente Android*). Este item abre as [configurações do plugin de áudio-vídeo](../plugins/audio-video-notes.md#plugin-settings) para o perfil selecionado. O plugin *Notas de Áudio/Vídeo* estende a funcionalidade do OsmAnd, permitindo que você crie suas notas em vários formatos, como foto, vídeo ou áudio, e as associe a uma localização geográfica ou localização atual.  
+- **Notes de Áudio / Vídeo** (*Somente Android*). Este item abre as [configurações do plugin de áudio-vídeo](../plugins/audio-video-notes.md#plugin-settings) para o perfil selecionado. O plugin *Notas de Áudio/Vídeo* estende a funcionalidade do OsmAnd, permitindo que você crie suas notas em vários formatos, como foto, vídeo ou áudio, e as associe a uma localização geográfica ou localização atual.  
 
 - **Edição OpenStreetMap**. Este item abre as [configurações do plugin de edição OpenStreetMap](../plugins/osm-editing.md#settings) para o perfil selecionado. Com o OsmAnd e o plugin de edição OSM, você pode contribuir para o OpenStreetMap.org criando ou modificando POIs, adicionando ou comentando notas e carregando trilhas GPX gravadas.
 

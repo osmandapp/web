@@ -1,11 +1,11 @@
 ---
-source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
+source-hash: de56403a9eb7f5ddcc9fc2e939af2545f903d69f8212f945db5aba76b5f8c784
 sidebar_position: 6
 ---
 
 # Como Compilar a Versão iOS {#how-to-compile-the-ios-version}
 
-1. Primeiro, configure o **[ambiente de desenvolvimento](setup-the-dev-environment.md)**.
+1. Primeiro configure o **[ambiente de desenvolvimento](setup-the-dev-environment.md)**.
 2. Instale o Xcode da AppStore (Última versão testada: 14.2)
 3. Instale as ferramentas de linha de comando do Xcode
   ```
@@ -22,33 +22,28 @@ sidebar_position: 6
   Para membros da equipe OsmAnd: envie seu login AppleID para ser adicionado à lista de desenvolvedores. Quando receber o e-mail com a mensagem de convite, ative-o.
   Feche o Xcode.
 
-5. Instale as ferramentas de linha de comando - cmake, svn, cocoapods
+5. Instale as ferramentas de linha de comando: cmake e svn
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  # para intel
+  # for intel
   $ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zshrc
   $ eval "$(/usr/local/bin/brew shellenv)"
 
-  # para m1
+  # for m1
   $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
   $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
   $ brew install svn
-  $ brew install cmake # testado em 3.25.2, 3.19, 3.11
-
-  # para intel
-  $ sudo gem install cocoapods
-
-  # para m1
-  $ brew install cocoapods
+  $ brew install cmake # tested on 3.25.2, 3.19, 3.11
   ```
+
 6. Baixe e instale o Java jdk 17
   ```
-  # para intel
+  # for intel
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
 
-  # para m1
+  # for m1
   https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
   ```
 
@@ -61,14 +56,14 @@ sidebar_position: 6
   Cole este conteúdo nele. Salve o arquivo e reinicie o computador.
 
 ```
-## Configurações do Gradle para todo o projeto. {#project-wide-gradle-settings}
+## Project-wide Gradle settings. {#project-wide-gradle-settings}
 #
-# Para mais detalhes sobre como configurar seu ambiente de compilação, visite {#for-more-details-on-how-to-configure-your-build-environment-visit}
+# For more details on how to configure your build environment visit {#for-more-details-on-how-to-configure-your-build-environment-visit}
 # http://www.gradle.org/docs/current/userguide/build_environment.html {#httpwwwgradleorgdocscurrentuserguidebuildenvironmenthtml}
 #
-# Especifica os argumentos JVM usados para o processo daemon. {#specifies-the-jvm-arguments-used-for-the-daemon-process}
-# A configuração é particularmente útil para ajustar as configurações de memória. {#the-setting-is-particularly-useful-for-tweaking-memory-settings}
-# Valor padrão: -Xmx10248m -XX:MaxMetaspaceSize=256m {#default-value--xmx10248m--xxmaxmetaspacesize256m}
+# Specifies the JVM arguments used for the daemon process. {#specifies-the-jvm-arguments-used-for-the-daemon-process}
+# The setting is particularly useful for tweaking memory settings. {#the-setting-is-particularly-useful-for-tweaking-memory-settings}
+# Default value: -Xmx10248m -XX:MaxMetaspaceSize=256m {#default-value--xmx10248m--xxmaxmetaspacesize256m}
 # org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 {#orggradlejvmargs-xmx2048m--xxmaxmetaspacesize512m--xxheapdumponoutofmemoryerror--dfileencodingutf-8}
 
 org.gradle.daemon=true
@@ -76,14 +71,14 @@ org.gradle.daemon=true
 org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 
 #
-# Quando configurado, o Gradle será executado no modo paralelo incubador. {#when-configured-gradle-will-run-in-incubating-parallel-mode}
-# Esta opção só deve ser usada com projetos desacoplados. Mais detalhes, visite {#this-option-should-only-be-used-with-decoupled-projects-more-details-visit}
+# When configured, Gradle will run in incubating parallel mode. {#when-configured-gradle-will-run-in-incubating-parallel-mode}
+# This option should only be used with decoupled projects. More details, visit {#this-option-should-only-be-used-with-decoupled-projects-more-details-visit}
 # http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects {#httpwwwgradleorgdocscurrentuserguidemultiprojectbuildshtmlsecdecoupledprojects}
 
 org.gradle.parallel=true
 org.gradle.caching=true
 
-#Sex Abr 08 18:47:31 EEST 2016
+#Fri Apr 08 18:47:31 EEST 2016
 # android.useDeprecatedNdk=true {#androidusedeprecatedndktrue}
 ```
 
@@ -116,7 +111,7 @@ org.gradle.caching=true
   Solução 5: Se você receber um erro como este: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Vá para a pasta ```core/external/qtbase-ios/``` e exclua todas as pastas que começam com ```upstream```. E execute `$ ./prepare.sh` novamente.
 
 
-9. Abra `osmand.xcworkspace` no Xcode
+9. Abra `OsmAnd.xcworkspace` no Xcode. Se o Xcode não resolver automaticamente as dependências do Swift Package Manager, execute `File → Packages → Resolve Package Versions`.
 
 10. Primeira compilação.
   Defina o destino da compilação para `OsmAnd Maps`. (Perto dos botões de reprodução/parada). Selecione seu dispositivo ou um dos simuladores iOS como destino. Mas não use o padrão 'Any iOS Device (arm64)'. Compile o projeto (botão de reprodução).

@@ -1,5 +1,5 @@
 ---
-source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
+source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
 sidebar_position: 3
 title: Pasta Inteligente (Filtro)
 ---
@@ -218,7 +218,7 @@ Para parâmetros numéricos (como distância, duração, velocidade ou altitude)
 
 Para parâmetros PRO, você pode pré-visualizar a configuração de agrupamento (por exemplo, abrir o seletor de tamanho do passo e ver como as trilhas são agrupadas), mas aplicar essas alterações requer uma assinatura ativa. Se você selecionar um parâmetro PRO ou tocar no botão Desbloquear, a tela Escolher plano será aberta. O agrupamento aplicado anteriormente permanece visível mesmo se a assinatura expirar, mas editar ou aplicar um novo agrupamento baseado em PRO requer uma assinatura ativa.
 
-Após selecionar um parâmetro de agrupamento, as trilhas são exibidas em grupos. Cada grupo mostra seu nome, ícone e o número de trilhas que contém. Toque em um grupo para abrir a lista de trilhas desse grupo. Grupos vazios não são exibidos. Os resultados agrupados podem ser ordenados alfabeticamente (A–Z ou Z–A) ou, para parâmetros numéricos, pelos valores mais altos ou mais baixos. Pressione e segure um grupo para mostrar todas as trilhas do grupo no mapa ou exportar todas as trilhas do grupo.
+Após selecionar um parâmetro de agrupamento, as trilhas são exibidas em grupos. Cada grupo mostra seu nome, ícone e o número de trilhas que contém. Toque em um grupo para abrir a lista de trilhas desse grupo. Grupos vazios não são exibidos. Os resultados agrupados podem ser ordenados alfabericamente (A–Z ou Z–A) ou, para parâmetros numéricos, pelos valores mais altos ou mais baixos. Pressione e segure um grupo para mostrar todas as trilhas do grupo no mapa ou exportar todas as trilhas do grupo.
 
 </TabItem>
 

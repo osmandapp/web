@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
 sidebar_position: 4
 title: Parâmetros do veículo
 ---
@@ -32,7 +32,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -126,20 +126,20 @@ Os limites nos parâmetros do veículo podem ser importantes para a navegação 
 
 <TabItem value="android" label="Android">
 
-![Rota de navegação Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Rota de navegação Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Rota de navegação iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Se você selecionar o tipo de motor nos parâmetros do veículo, os [***dados de pegada de CO2***](../../navigation/setup/route-details.md#elevation-info) serão exibidos acima do gráfico em [Detalhes da Rota](../setup/route-details.md).
-Estão disponíveis seis tipos de combustível: ***Gasolina, Diesel, GLP, GNV, Elétrico,*** e ***Híbrido***.  
+Disponíveis sete tipos de combustível: ***Gasolina, Diesel, GLP, GNV, Elétrico, Híbrido*** e ***Etanol***.  
 
 **Aplicabilidade:**
 
@@ -158,7 +158,7 @@ A configuração **Combustível usado pelo motor** está disponível apenas em n
 
 <TabItem value="ios" label="iOS">
 
-![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

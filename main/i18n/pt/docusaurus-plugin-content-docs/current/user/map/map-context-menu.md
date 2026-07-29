@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -77,13 +77,13 @@ Quando você **toca longamente** em qualquer lugar do mapa, um **menu de context
 
 <TabItem value="android" label="Android">  
 
-![Menu de contexto da trilha Android](@site/static/img/map/context_track_menu_Android.png)
+![Menu de contexto da trilha Android](@site/static/img/map/context_track_menu_Android.png) ![O que há aqui Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Tela de estatísticas da trilha iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Tela de estatísticas da trilha iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![O que há aqui iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -137,6 +137,7 @@ Os detalhes disponíveis incluem:
 
 - [Descrição do Artigo](#article-description)
 - [Nomes alternativos](#alternative-names)
+- [Relacionados](#related)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
 - [POIs próximos](#nearby-pois)
@@ -155,6 +156,8 @@ Além disso, o painel pode incluir [Detalhes do OpenStreetMap](https://wiki.open
 - [Taxa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Acessibilidade](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Largura](https://wiki.openstreetmap.org/wiki/Key:width) / [Altura](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Se um campo de contato (como *Site, Número de telefone* ou *E-mail*) contiver vários valores, tocá-lo exibirá uma lista de entradas disponíveis. Selecione a entrada desejada para executar a ação correspondente.
 
 Além dos campos listados acima, o OsmAnd também pode exibir informações descritivas extras obtidas do OpenStreetMap. Esses atributos ajudam você a entender melhor as características de um lugar e podem incluir detalhes como elevação, direção, ano de construção, tipo de superfície ou cobertura, nível interno, opções de pagamento, disponibilidade de entrega ou para viagem, e muitos outros. O OsmAnd exibe esses atributos com rótulos claros e, quando possível, ícones, facilitando a leitura e o reconhecimento das informações. O conjunto exato de atributos depende dos dados disponíveis no OpenStreetMap para o objeto selecionado.
 
@@ -213,6 +216,29 @@ Recursos de exibição de nomes alternativos:
 - Outras categorias incluem *tradução específica da região* ou *configurações padrão*.
 
 - Se uma tradução específica *não estiver disponível*, o OsmAnd usa o nome **local** por padrão para garantir precisão e consistência em regiões multilíngues.
+
+
+### Relacionados {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Relacionados Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Relacionados iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+A seção **Relacionados** exibe objetos do mapa associados ao local selecionado por meio de uma relação do OpenStreetMap. Esta seção está disponível para POIs baseados em relações suportadas, como campi universitários e outros objetos multipolígono.
+
+Toque em qualquer item da lista para abrir seu menu de contexto do mapa. Isso permite navegar rapidamente entre objetos relacionados que pertencem à mesma relação.
 
 
 ### Dentro da área {#polygon-information}

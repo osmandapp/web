@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title: Desenvolvimento do OsmAnd
 ---
@@ -88,7 +88,7 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 
 - **Simular primeira inicialização do aplicativo**. Define o sinalizador indicando a primeira inicialização do aplicativo, mantém todas as outras configurações inalteradas.  
 - **Testar avisos de voz**. Selecione uma voz e teste reproduzindo anúncios.
-- **Mostrar toques** (*iOS*). Destaca os toques na tela com indicadores visuais.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Destaca os toques na tela com indicadores visuais.
 - **Barra de status transparente**. O mapa fica visível sob a barra de status.  
 - **Mostrar banner da versão gratuita**. Exibe o banner da versão gratuita mesmo na versão paga.  
 - **Mostrar informações de depuração**. Exibe informações gráficas sobre o posicionamento de cada texto no mapa.
