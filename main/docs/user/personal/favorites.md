@@ -226,7 +226,7 @@ The *Personal folder* contains special points like **<Translate android="true" i
 <!--
 ### Media (Android only) {#media}
 
-![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_sorting.webp)
+![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
 
 The Media section allows you to attach photos, videos, audio recordings, and images to a favorite point. Media can be added while creating a favorite or later from the Edit favorite screen. To attach media tap *Add* in the Media section and choose one of the available options:
 - **Take a photo** — Capture a new photo with the device camera.
