@@ -43,7 +43,6 @@ import {
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
-import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
@@ -399,7 +398,6 @@ export default function PoiLayer() {
                 locale: i18n.language,
                 lat: center.lat,
                 lon: center.lng,
-                baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
                 zoom: map.getZoom(),
                 ...getCurrentTimeParams(),
             },
@@ -475,7 +473,12 @@ export default function PoiLayer() {
                 try {
                     const res = await getPoi(controller, showPoiCategories, visibleBboxInfo);
                     if (reqId !== reqIdRef.current || ignore) return;
-                    if (res) {
+                    if (res?.zoomInHint) {
+                        // category too common for this zoom
+                        updateLayerOnMap(null);
+                        setPoiList({ layer: null, listFeatures: null, info: res.info, tooMany: true });
+                        setPrevCategories(showPoiCategories);
+                    } else if (res) {
                         let features = null;
                         let listFeatures = null;
 
@@ -599,8 +602,9 @@ export default function PoiLayer() {
             ctx.setSearchResult((prevResult) => {
                 return {
                     ...prevResult,
-                    features: !poiList ? [] : poiList?.listFeatures?.features,
+                    features: poiList && !poiList.tooMany ? poiList.listFeatures?.features : [],
                     info: poiList?.info,
+                    tooMany: poiList?.tooMany ?? false,
                 };
             });
         }
