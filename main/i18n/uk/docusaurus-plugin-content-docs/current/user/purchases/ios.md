@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 9b2f56295eb193bc938a9266380e8a1e5ebfbe93185dc434f50b51acb87022a2
 sidebar_position: 2
 title:  Покупки в iOS
 ---
@@ -53,25 +53,25 @@ import Translate from '@site/src/components/Translate.js';
 
 У списку наведено інформацію про ціни на продукти OsmAnd для регіонів США та Європи. Для інших регіонів ціни є еквівалентними в місцевих валютах.
 
-<!--
 
-:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+:::danger 🏖️ Літній розпродаж
+
+*Поспішайте! Ця пропозиція доступна лише до* **17 червня (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
+| **Ціна (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Ціна (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
+<!--
 
--->
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
@@ -81,7 +81,7 @@ import Translate from '@site/src/components/Translate.js';
 | **Ціна (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Ціна (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
-
+-->
 
 ### Безплатні та платні функції {#free-and-paid-features}
 
@@ -139,6 +139,8 @@ import Translate from '@site/src/components/Translate.js';
 | [Плагін "Показники автомобіля" (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє під'єднати сканер OBD-II для відображення детальних даних про автомобіль у застосунку OsmAnd та зберігання інформації в записах треків. Інформація про швидкість автомобіля та оберти двигуна доступна для безплатної версії OsmAnd.  |
 | [Налаштування лінії маршруту](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Зміна кольору та ширини лінії маршруту під час навігації. |
 | [Зміна схеми кольорів](../../user/plugins/topography.md#modify-color-scheme) | Дозволяє налаштувати зовнішній вигляд мапи, обравши або імпортувавши палітри кольорів. Ви можете редагувати вбудовані схеми або використовувати власні файли палітрів для персоналізації кольорів мапи та маршруту. |
+| [Створення власних палітр](../../user/map/tracks/appearance.md#color-palette-editor) | Дозволяє створювати та редагувати градієнтні палітри для забарвлення треків за відносними або фіксованими значеннями. Ви можете визначати кроки кольорів, призначати значення та налаштовувати відображення даних (наприклад, швидкості чи висоти) уздовж треку. |
+| [Розумні папки – Організувати за](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Дозволяє організовувати треки в Розумних папках за допомогою розширених параметрів групування, таких як дата й час, відстань, тривалість, швидкість, висота та дані датчиків. Ці параметри забезпечують детальнішу категоризацію треків і гнучкий аналіз. |
 
 
 ## Як придбати {#how-to-buy}

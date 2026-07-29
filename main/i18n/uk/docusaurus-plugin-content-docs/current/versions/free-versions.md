@@ -1,5 +1,5 @@
 ---
-source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -32,7 +32,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - Новий редактор палітр для створення та редагування користувацьких колірних схем для візуалізації треків та рельєфу.
 - Покращена велосипедна маршрутизація з урахуванням ширини велосипеда.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### Версія 5.2 {#version-52}
 
@@ -638,7 +638,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 - Плагін OsMo.
 - Функціональність входу/виходу.
-- Автоматичне завантаження груп та пристроїв для зареєстрованих користувачів.
+- Автоматическое завантаження груп та пристроїв для зареєстрованих користувачів.
 - Краща обробка помилок.
 
 <DownloadRelease blog="osmand-1-9" release="net.osmand-1.9.5-197.apk" />

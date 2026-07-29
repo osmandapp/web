@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title:  My Places
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для впорядкування [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, що допомагає вести детальну історію ваших маршрутів і подорожей. Ви також можете керувати своїми [редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін до мапи та її оновлення. Плагін [Аудіо / Відео нотатки](#audiovideo-notes) та віджети дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до своїх подорожей.
+**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для впорядкування [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, що допомагає вести детальну історію ваших маршрутів і подорожей. Ви також можете керувати своїми [редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін до мапи та її оновлення. Плагін [Аудіо / Відео нотатки](#audiovideo-notes) та віджети дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до своїх подорожей. На iOS «Мої місця» також надають доступ до збережених [Дорожніх путівників](#travel-guides), що дозволяє впорядковувати та швидко відкривати збережений туристичний контент.
 
 ## Меню Мої місця {#my-places-menu}
 
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu"/> → Мої місця*  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
 ![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
@@ -36,9 +36,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu"/> → Мої місця*  
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_new.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
 ![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,7 +94,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> вкладка*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -98,9 +102,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> вкладка*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -238,6 +242,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **<Translate android="true" ids="shared_string_show_on_map"/>**. Відображає відповідне місцезнаходження та [Контекстне меню](../plugins/audio-video-notes#actions-in-map-context-menu) нотатки на мапі.
 - **<Translate android="true" ids="shared_string_rename"/>**. Змініть назву нотатки на більш описову або релевантну.
 - **<Translate android="true" ids="shared_string_delete"/>**. Вибрані нотатки назавжди видаляються з вашої колекції.
+-->
+
+### Дорожні путівники (iOS) {#travel-guides}
+
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+
+![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
+
+Розділ **Подорожі** містить збережені дорожні путівники та статті, збережені для офлайн-доступу. Ви можете швидко відкривати, впорядковувати та керувати збереженим туристичним контентом у «Моїх місцях». Розділ «Подорожі» відображається лише тоді, коли збережено більше одного путівника.
+
+Для детальної інформації зверніться до статті [Дорожні путівники](../plan-route/travel-guides.md).
 
 ## Пов'язані статті {#related-articles}
 
@@ -245,5 +260,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Улюблені](../personal/favorites.md)
 - [Редагування OpenStreetMap](../plugins/osm-editing.md)
 - [Аудіо/Відео нотатки](../plugins/audio-video-notes.md)
+- [Дорожні путівники](../plan-route/travel-guides.md)
 - [Історія пошуку](../search/search-history.md#export-and-share)
 - [Схеми палітри кольорів](../personal/color-palette-schemes.md)
