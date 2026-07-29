@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title:  Wyszukiwanie według współrzędnych
 ---
@@ -115,7 +115,7 @@ Istnieje kilka sposobów wprowadzania współrzędnych do wyszukiwania. Aby skor
 - *Zasady wprowadzania*. Współrzędne składają się ze strefy MGRS, kwadratu i dwóch kolejnych cyfr wskazujących przesunięcia na wschód i północ.
 - *Najczęstsze zastosowanie*. Format MGRS jest szeroko stosowany w nawigacji i komunikacji wojskowej, a także może być przydatny dla entuzjastów outdooru i turystów pieszych.
 
-### Szwajcarska siatka {#swiss-grid}
+### Siatka szwajcarska (tylko Android) {#swiss-grid}
 
 ![Wyszukiwanie według współrzędnych Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,8 +128,30 @@ Istnieje kilka sposobów wprowadzania współrzędnych do wyszukiwania. Aby skor
     - CH1903+ zawiera poprawki uwzględniające przesunięcia współrzędnych spowodowane zmianami ruchów tektonicznych w Szwajcarii.
 - *Najczęstsze zastosowanie*. Formaty Swiss Grid (CH1903) i Swiss Grid (CH1903+) są używane w Szwajcarii do pomiarów geodezyjnych, kartografii, systemów informacji geograficznej oraz w budownictwie i inżynierii. Formaty te zapewniają lokalny system współrzędnych specyficzny dla Szwajcarii.
 
+### System lokalizatora Maidenhead (tylko Android) {#maidenhead-locator-system}
+
+![Wyszukiwanie według współrzędnych Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Jest to system geokodu używany głównie przez radioamatorów. Koduje lokalizacje geograficzne w krótką sekwencję liter i cyfr, co ułatwia identyfikację pozycji i wymianę informacji o lokalizacji. Przykładowe współrzędne w formacie Maidenhead: KN29AS 19CX. Pierwsza para liter identyfikuje duży obszar, a następnie cyfry i dodatkowe pary liter zwiększają precyzję lokalizacji. Więcej o systemie lokalizatora Maidenhead można przeczytać [tutaj](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+- *Zasady wprowadzania*. Współrzędne składają się z naprzemiennych par liter i cyfr. Dłuższe lokalizatory zapewniają większą dokładność pozycyjną.  
+- *Najczęstsze zastosowanie*. System lokalizatora Maidenhead jest szeroko stosowany przez radioamatorów do określania lokalizacji stacji, łączności radiowej i zawodów.
 
 Dla każdego profilu można osobno ustawić inny format współrzędnych. Aby to zrobić, przejdź do *Ustawienia ogólne → [Format współrzędnych](../personal/profiles.md#units--formats)*.
+
+
+## Dostosuj format współrzędnych (tylko Android) {#customize-coordinate-format}
+
+![Wyszukiwanie według współrzędnych Android](@site/static/img/search/customising_format.webp) ![Wyszukiwanie według współrzędnych Android](@site/static/img/search/searching_format.webp)
+
+Można dostosować listę formatów współrzędnych dostępnych dla bieżącego profilu.  
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+Na tym ekranie można:  
+- Dotknąć przycisku *Edytuj*, aby ustawić podstawowy format współrzędnych, zmienić kolejność lub usunąć formaty współrzędnych.
+- Dotknąć +, aby dodać inny format współrzędnych.
+- Otworzyć menu ⋮, aby przywrócić domyślną listę formatów współrzędnych lub skopiować formaty współrzędnych z innego profilu.
+
+Podczas wyszukiwania według współrzędnych można wybrać format współrzędnych z listy Ostatnie lub dotknąć *Wybierz inny format*, aby przeglądać wszystkie dostępne systemy współrzędnych. Można również wyszukiwać według nazwy systemu współrzędnych lub kodu EPSG.
 
 
 <!--

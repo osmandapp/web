@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title:  Widżety nawigacyjne
 ---
@@ -188,6 +188,7 @@ Widżet *Informacje o trasie* dostarcza dane w czasie rzeczywistym o bieżącej 
 
 - Wybierz **Widok domyślny**, aby priorytetyzować jedną z następujących wartości: *Szacowany czas przybycia*, *Pozostały czas*, *Odległość*.
 - W **Priorytecie wyświetlania** wybierz między *Najpierw cel (domyślnie)* a *Najpierw punkt pośredni*, aby priorytetyzować najbardziej istotne informacje o trasie.
+- Włącz lub wyłącz opcję **Pokaż przycisk rozwijania**, aby wyświetlić lub ukryć przycisk rozwijania interfejsu nawigacji. Ta opcja jest domyślnie włączona.
 
 > UWAGA: Widżet jest widoczny tylko podczas nawigacji.
 

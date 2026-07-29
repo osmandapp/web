@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title:  Zarządzaj trasami
 ---
@@ -138,7 +138,7 @@ Menu udostępnia następujące działania:
 
 - **Zmień nazwę** — Zmień nazwę wybranej trasy dla lepszej organizacji.
 
-- **Przenieś** — Pozwala na przeniesienie wybranej trasy do innego folderu.
+- **Przenieś** — Pozwala na przeniesienie wybronej trasy do innego folderu.
 
 - **Eksportuj** (*Android*) — Przejdź do zakładki *Menu → Ustawienia → Działania*, aby wyeksportować wszystkie trasy z folderu.
 
@@ -297,7 +297,7 @@ Menu folderu tras pozwala przeglądać, zmieniać nazwy, eksportować i zarządz
 - **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Pozwala na zmianę nazwy folderu.
 - [Zmień domyślny wygląd](../../map/tracks/appearance.md) (*Android*) / **Wygląd** (*iOS*) — Zmienia wygląd wyświetlania wszystkich tras w folderze.
 - [Eksportuj](../../personal/import-export.md) — Otwiera zakładkę *Menu → Ustawienia → Działania*, aby wyeksportować wszystkie trasy w folderze jako [plik `.osf`](../../personal/import-export.md#export).
-- [Przenieś](#track-folder) — Pozwala na przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
+- [Przenieś](#track-folder) — Pozwala na przeniesienie folderu do innego istniejącego folderu lub utworzenia nowego.
 - [Usuń folder](#delete-folder) — Usuwa folder po potwierdzeniu. ***Ta akcja jest nieodwracalna.***
 
 
@@ -422,7 +422,8 @@ Narzędzie importu pozwala na dodawanie tras z zewnętrznych plików do nawigacj
     *Dodatkowe opcje:*
 
     - **Pliki GPX z jedną trasą** - importuj całą trasę bezpośrednio.
-    - **Pliki GPX z wieloma trasami** - wybierz import pojedynczego pliku GPX lub wybierz określone trasy.
+    - **Pliki GPX z wieloma trasami** - wybierz import pojedynczego pliku GPX lub wybierz określone trasy.  
+    Gdy plik GPX zawiera wiele tras, otwiera się ekran Importuj trasy, umożliwiający przegląd wszystkich tras w pliku, wybranie tych, które chcesz zaimportować, wybór folderu docelowego lub zaimportowanie wszystkich tras jako jednej trasy za pomocą opcji *Importuj jako jedną trasę*. Jeśli plik zawiera punkty trasy, możesz również je przejrzeć i przypisać przed zakończeniem importu.
 
 ***UWAGA:*** *Trasy ręcznie dodane do folderu OsmAnd na Twoim urządzeniu są automatycznie importowane bez ponownego uruchamiania aplikacji.*  
 

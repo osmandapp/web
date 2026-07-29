@@ -1,5 +1,5 @@
 ---
-source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Ulubione
 ---
@@ -88,7 +88,7 @@ Podczas dodawania punktu z danych OSM, odpowiednie informacje o POI są automaty
 
 - **Nazwa** — Unikalna nazwa w obrębie grupy (*Wymagane*).
 - **Adres** i **Opis** (*Opcjonalne*).
-- **Grupa** — Wybierz z istniejącej [Grupy ulubionych](#manage-favorites) lub utwórz nową. Na Androidzie możesz również wybrać podfolder w grupie lub utworzyć nowy.
+- **Grupa** — Wybierz z istniejącej [Grupy ulubionych](#manage-favorites) lub utwórz nową. Na Androidzie możesz również wybrać podfolder w grupie lub utworzyć nowy. Zagnieżdżone foldery są wyświetlane z pełną ścieżką (na przykład *Podróże* / *Włochy* / *Rzym*).
 - **Wizualna personalizacja** — Ikona, kolor, kształt mogą odpowiadać domyślnemu [wyglądowi grupy](#change-group-appearance) lub być dostosowane indywidualnie.
 
 **UWAGA:** Jeśli warstwa Ulubione jest wyłączona w [Konfiguruj mapę](../map/configure-map-menu), dodanie nowego punktu ulubionego automatycznie włącza warstwę, aby nowo dodany ulubiony był widoczny na mapie.
@@ -220,7 +220,7 @@ Aby zarządzać wieloma ulubionymi lub folderami, wejdź w tryb *Wybierania*. Tr
 - Dotknij *menu z trzema kropkami* w prawym górnym rogu i wybierz *Wybierz*.
 - Długo dotknij punkt ulubiony lub folder.
 
-Po włączeniu trybu Wybierania obok elementów na liście pojawiają się pola wyboru. Wybierz wymagane ulubione lub foldery, dotykając pól wyboru. Aby wybrać wszystkie elementy na liście, dotknij ikony Wybierz wszystko w prawym górnym rogu.
+Po włączeniu tryb Wybierania obok elementów na liście pojawiają się pola wyboru. Wybierz wymagane ulubione lub foldery, dotykając pól wyboru. Aby wybrać wszystkie elementy na liście, dotknij ikony Wybierz wszystko w prawym górnym rogu.
 
 Dostępne akcje zależą od typu wybranego elementu. Gdy wybrane są foldery, dostępne są następujące akcje:
 - **Udostępnij** — Eksportuj wybrane foldery jako plik GPX Ulubionych.
@@ -269,18 +269,19 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Funkcje folderu ulubionych android](@site/static/img/personal/favorites_folder_functions_new_2.png)
+![Funkcje folderu ulubionych android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Użyj ***menu z trzema kropkami*** obok każdego folderu, aby zarządzać grupami ulubionych:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć punkty ulubione z folderu na mapie.
 - **<Translate android="true" ids="pin_folder"/>** — Przypnij wybrany folder, aby utrzymać go na górze listy ulubionych dla szybszego dostępu.
-- **<Translate android="true" ids="add_new_folder"/>** — Utwórz nowy podfolder wewnątrz wybranego folderu.
 - **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Dostosuj wygląd punktów ulubionych w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
+- **<Translate android="true" ids="shared_string_share"/>** — Udostępnij punkty ulubione w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowej danych.
+- **<Translate android="true" ids="shared_string_move"/>** — Przenieś wybrany folder, w tym wszystkie punkty ulubione i zagnieżdżone podfoldery, do innego folderu. Bieżący folder i jego podfoldery nie mogą zostać wybrane jako miejsce docelowe.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Usuń ze znaczników mapy** — Dodaj wszystkie punkty ulubione z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić sobie odniesienie.
 - **<Translate android="true" ids="add_to_a_track"/>** — Dodaj wszystkie punkty ulubione z wybranego folderu do śladu. Otwiera to ekran wyboru śladu, w którym możesz wybrać lub utworzyć ślad.
-- **<Translate android="true" ids="shared_string_share"/>** — Udostępnij punkty ulubione w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowej danych.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie punkty w nim zawarte.
 
 </TabItem>
@@ -430,7 +431,7 @@ Do korzystania z funkcji *Darmowa kopia zapasowa ulubionych* potrzebne jest kont
 Możesz eksportować i importować swoje ulubione za pomocą specjalnych przycisków na dole ekranu Ulubione. [Plik .gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) można wysłać do Dropbox, e-maila, komunikatorów i innych aplikacji zainstalowanych na urządzeniu, które obsługują tę funkcję.
 
 - Przycisk **Importuj** (*Android*) / **Importuj ulubione** (*iOS*). Pozwala na importowanie ulubionych punktów (*favorites.gpx*) jako punktów trasy z pliku *GPX* (powszechny format danych GPS) z pamięci urządzenia.
-- Przycisk **Udostępnij** (*Android*) / **Eksportuj ulubione** (*iOS*). Pozwala na eksportowanie (udostępnianie) wszystkich ulubionych jako plik *favorites.gpx*.
+- Przycuch **Udostępnij** (*Android*) / **Eksportuj ulubione** (*iOS*). Pozwala na eksportowanie (udostępnianie) wszystkich ulubionych jako plik *favorites.gpx*.
 
 
 ### Grupa ulubionych {#favorite-group}

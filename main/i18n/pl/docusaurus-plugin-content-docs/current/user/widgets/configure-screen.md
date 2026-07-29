@@ -1,5 +1,5 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -50,6 +50,44 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 </TabItem>
 
 </Tabs>
+
+<!--
+## Overview {#overview}
+
+The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
+
+You can:
+
+- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
+- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
+- Organize widgets in panels (top, bottom, left, right, center).
+- Create multiple pages within side panels, choose size of widgets.
+- Choose row height and toggle widget icons.
+- On Android, customize [widget panel appearance](#widget-panel-appearance).
+
+All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+
+</TabItem>
+
+</Tabs>
+-->
 
 
 ## Panele widżetów {#widget-panels}
@@ -187,11 +225,11 @@ Każdy panel obsługuje różne zachowania układu:
 
 - [Notatki audio/wideo](../widgets/info-widgets.md#audiovideo-notes-widget).  
     Szybki dostęp do nagrywania multimediów.  
-    Zawiera 4 widżety: *Na żądanie*, *Nagraj dźwięk*, *Nagraj wideo*, *Zrób zdjęcie*.
+    Zawiera 4 widżety: *Na żądanie*, *Nagraj dźwięisko*, *Nagraj wideo*, *Zrób zdjęcie*.
 
 - [Widżety deweloperskie](../widgets/info-widgets.md#developer-widgets).  
     Wyświetla opcjonalne informacje.  
-    Zawiera 6 widżetów: *FPS renderowania mapy*, *Nachylenie kamery*, *Wysokość kamery*, *Poziom powiększenia*, *Odległość od kamery do celu*, *Dostępna pamięć RAM*.  
+    Zawiera 5 widżetów: *FPS renderowania mapy*, *Nachylenie kamery*, *Wysokość kamery*, *Poziom powiększenia*, *Odległość od kamery do celu*, *Dostępna pamięć RAM*.  
 
 - [Widżety czujników zewnętrznych](../widgets/info-widgets.md#external-sensors-widgets).  
     Zestaw pomaga śledzić dane z czujników BLE/ANT+ w czasie rzeczywistym.  
@@ -321,6 +359,8 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
 
 ![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Te ustawienia dotyczą tylko wybranego widżetu.
+
 1. **Opcje rozmiaru widżetu** (*dla wszystkich paneli*):  
     Możesz dostosować rozmiar **Prostych widżetów** w **panelach górnym, dolnym, lewym i prawym**:
 
@@ -358,6 +398,39 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
     - Dotknij ustawienia *Rozmiar* i wybierz jeden z dostępnych rozmiarów.
     - Przełącz na pozycję Wyłączone w polu *Pokaż ikonę*.
 
+
+<!--
+## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+
+1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+
+2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+
+3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+
+:::tip Purchase
+Custom widget colors is a [paid feature](../purchases/index.md).  
+:::
+
+4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+
+5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+
+6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+
+7. **Copy appearance settings:**
+
+    - Tap the ⋮ menu in the upper-right corner.
+    - Select Copy from.
+    - Choose one of the following options: *Another profile* or *One of the other panels*.
+
+-->
 
 ## Dostosowywanie paneli {#panels-customization}
 
@@ -473,7 +546,7 @@ Możesz otworzyć ustawienia układu ekranu mapy z menu Konfiguracja ekranu, bez
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
 OsmAnd obsługuje dwa tryby układu dla ekranu mapy:
-- **<Translate android="true" ids="single_layout"/>** – używa tego samego układu widżetów dla wszystkich orientacji ekranu. Ta opcja jest wybrana domyślnie.
+- **<Translate android="true" ids="single_layout"/>** – używa tego samego układu widżetów dla wszystkich orientacji ekranu. Ta opcja jest wybrona domyślnie.
 - **<Translate android="true" ids="separate_layouts"/>** – pozwala skonfigurować różne układy widżetów dla orientacji pionowej i poziomej.
 
 Gdy włączone są oddzielne układy, zmiany wprowadzone w jednej orientacji nie wpływają na drugą. Jest to przydatne, jeśli chcesz zoptymalizować ekran mapy w różny sposób dla użytku w orientacji pionowej i poziomej.
@@ -606,7 +679,7 @@ Menu z **trzema kropkami** na ekranie Przycisków domyślnych zawiera takie akcj
 
 </Tabs>
 
-Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków w interfejsie mapy. Te opcje dostosowywania są dostępne zarówno dla *Szybkiej akcji (Przyciski niestandardowe)*, jak i *Przycisków domyślnych*, zapewniając kompleksową kontrolę nad wyglądem interfejsu mapy i umożliwiając precyzyjne dostosowanie projektu przycisków.
+Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków w interfejsie mapy. Te opcje dostosowywania są dostępne zarówno dla *Szybkiej akcji (Przyciski niestandardowe)*, jak i *Przycisków domyślnych*, zapewniając kompleksową kontrolę nad wyglądem interfejsu mapy i umożliwiając precyzyjną dostosowanie projektu przycisków.
 
 ***Opcje dostosowywania***:
 
