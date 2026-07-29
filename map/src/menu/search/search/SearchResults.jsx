@@ -134,7 +134,7 @@ export default function SearchResults() {
         if (result === EMPTY_SEARCH_RESULT) {
             checkZoomError();
         }
-    }, [zoom, result]);
+    }, [zoom, result, ctx.searchResult?.tooMany]);
 
     // Calculate page title based on search params
     const pageTitle = useMemo(() => {
@@ -269,7 +269,11 @@ export default function SearchResults() {
     }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
-        setErrorZoom(zoom < MIN_SEARCH_ZOOM ? ZOOM_ERROR : null);
+        if (params.type) {
+            setErrorZoom(ctx.searchResult?.tooMany ? ZOOM_ERROR : null);
+        } else {
+            setErrorZoom(zoom < MIN_SEARCH_ZOOM ? ZOOM_ERROR : null);
+        }
     }
 
     function getLoc() {
