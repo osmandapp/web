@@ -237,6 +237,7 @@ async function fetchSvgIcon(url) {
  */
 export async function createPoiCache({ poiList = null, obj = null, poiIconCache, icon = null }) {
     const iconCache = {};
+    const missingIcons = new Set();
     const arr = icon ? [icon] : (poiList ?? [obj]);
     for (const poi of arr) {
         if (!poi) {
@@ -260,16 +261,19 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache,
             if (poiIconCache[iconWpt]) {
                 iconCache[iconWpt] = poiIconCache[iconWpt];
             } else {
-                // If the icon is not in the existing cache and not yet in the updated cache
-                if (!iconCache[iconWpt]) {
-                    const svgData = await fetchSvgIcon(getIconUrlByName(POI_ICON_TYPE, iconWpt));
-                    if (svgData) {
-                        iconCache[iconWpt] = svgData;
-                    }
-                }
+                missingIcons.add(iconWpt);
             }
         }
     }
+    await Promise.all(
+        [...missingIcons].map(async (name) => {
+            const svgData = await fetchSvgIcon(getIconUrlByName(POI_ICON_TYPE, name));
+            if (svgData) {
+                iconCache[name] = svgData;
+            }
+        })
+    );
+
     return iconCache;
 }
 
