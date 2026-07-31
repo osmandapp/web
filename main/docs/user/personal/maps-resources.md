@@ -141,7 +141,7 @@ The **Download** tab lets you download various map types from OsmAnd servers, re
 
 In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Android only*). This file contains altitude corrections to compensate for planetary curvature.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Android only*). This file contains altitude corrections used to improve altitude accuracy on devices that do not provide altitude above mean sea level (MSL), including when Android API is used as the [location source](../personal/global-settings.md#location-source) instead of Google Play Services.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
 - **World weather map**. Allows you to download a map with weather information.
 
