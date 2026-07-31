@@ -31,7 +31,9 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: Current Location   {#altitude-current-location}
   
 :::note  Download World altitude correction
-On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
+On Android 14 and later, if your device provides altitude above mean sea level (MSL), OsmAnd uses this value directly, and the World altitude correction map is not required.
+
+If MSL altitude is not available, download the World altitude correction map to improve altitude accuracy.
 
 - Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
 - For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads-menu).
