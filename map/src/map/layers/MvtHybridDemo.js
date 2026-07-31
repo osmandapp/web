@@ -32,10 +32,12 @@ function getQuadKey({ x, y, z }) {
 
 const TemplateTileLayer = L.TileLayer.extend({
     getTileUrl(coords) {
+        const subdomain = this._getSubdomain(coords);
         return L.Util.template(this._url, {
             ...coords,
             quadkey: getQuadKey(coords),
-            s: this._getSubdomain(coords),
+            s: subdomain,
+            rnd: subdomain,
         });
     },
 });
