@@ -411,7 +411,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -429,9 +429,52 @@ The **Search** feature (**Explore** on iOS) in the Astronomy plugin allows you t
 
 The Watch now section highlights celestial objects that are visible right now or tonight. This section acts as a recommendation tool, showing objects that are best suited for observation based on your current location and time.
 
-**2. Categories**
+**2. Solar and Lunar eclipses** (*Android only*)
+
+The [Solar eclipse](#solar-eclipse) and [Lunar eclipse](#lunar-eclipse) tools allow you to explore worldwide eclipse events, view their progression over time, and check eclipse visibility on the map.
+
+**3. Categories**
 
 The Categories section allows you to browse objects by type: Solar system, Constellations, Stars, Nebulas, Star clusters, and Deep sky. Each category opens a list of objects with key information: object name, type or constellation, magnitude (brightness), and rise or set time (if applicable).
+
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+The **Solar Eclipse Explorer** allows you to explore past and upcoming solar eclipses around the world. It combines the Star Map with an interactive timeline and map visualization to show how an eclipse develops at different locations.
+
+The Solar Eclipse Explorer includes the following features:
+
+- **Eclipse navigation**. Use the Previous and Next buttons to switch between available solar eclipses.
+- **Timeline**. The timeline displays the start, maximum, and end of the eclipse. Move the slider to view the eclipse at any moment during the event. All eclipse information is updated automatically for the selected time.
+- **Eclipse information**. The information panel displays: eclipse type, current date and time, eclipse obscuration, Sun altitude, and map center coordinates. The displayed information is calculated for the current map center.
+- **Eclipse path**. Tap Fit eclipse path to center the map on the eclipse path. Tap *Show map* or *Hide map* to display or hide the eclipse path on the map. The eclipse path shows where the eclipse is visible and how the Moon's shadow moves across the Earth's surface.
+
+:::warning
+
+Never look directly at the Sun without appropriate solar-viewing protection. Eclipse times are estimates.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+The **Lunar Eclipse Explorer** allows you to explore worldwide lunar eclipses and observe how the Moon passes through the Earth's shadow.
+
+The Lunar Eclipse Explorer includes the following feature:
+
+- **Eclipse navigation**. Use the Previous and Next buttons to switch between available lunar eclipses.
+- **Eclipse types**. The explorer supports: Penumbral eclipses, Partial eclipses, and Total eclipses
+- **Timeline**. The timeline displays the start, maximum, and end of the eclipse. Markers on the timeline indicate the different stages of the eclipse. Move the slider to observe the eclipse at any point during the event.
+- **Eclipse information**. The information panel displays: eclipse phase, eclipse obscuration, Moon altitude, and map center coordinates. The displayed information is calculated for the current map center.
+- **Visibility map**. Tap *Fit visibility* to center the map on the eclipse visibility area. Tap *Show map* or *Hide map* to display or hide the visibility layer. The visibility layer highlights regions where the Moon is above the horizon during the eclipse.
+
+:::warning
+
+Shadow colors and brightness are schematic and intended for visualization only.
+
+:::
 
 ### Sorting and Filters {#sorting-and-filters}
 
