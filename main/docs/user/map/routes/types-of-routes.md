@@ -23,7 +23,7 @@ You can configure the filtering of some route types in the [Configure Map](../..
 
 ## Cycle {#cycle}
 
-[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present in three types: *local* (`lcn`), *regional* (`rcn`), *national* (`ncn`), *international* (`icn`). Also, cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
+[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present in the following types: *local* (`lcn`), *regional* (`rcn`), *national* (`ncn`), *international* (`icn`), and *unclassified*. Also, cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -46,7 +46,7 @@ MTB routes have a specific mapping in [OpenStreetMap](https://wiki.openstreetmap
 
 ## Hiking / Walking {#hiking--walking}
 
-[Hiking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present in three types: *local* (`lwn`), *regional* (`rwn`), *national* (`nwn`), *international* (`iwn`). Also, walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
+[Hiking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present the following types: *local* (`lwn`), *regional* (`rwn`), *national* (`nwn`), *international* (`iwn`), and *unclassified*. Also, walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
