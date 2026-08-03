@@ -10,7 +10,7 @@ const config = {
     popupClassName: 'mvt-demo-popup',
     errorLabel: 'MVT demo layer error',
     pane: 'mvtDemoPane',
-    paneZIndex: 250,
+    paneZIndex: 190,
 };
 
 export default function MvtDemoLayer() {

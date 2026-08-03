@@ -8,7 +8,7 @@ const HYBRID_UNDERLAY_URL_KEY = 'mvtHybridUnderlayUrl';
 const HYBRID_UNDERLAY_ACTIVE_KEY = 'mvtHybridUnderlayActive';
 const HYBRID_UNDERLAY_EVENT = 'mvt-hybrid-underlay-url-changed';
 const HYBRID_UNDERLAY_PANE = 'mvtHybridUnderlayPane';
-const HYBRID_UNDERLAY_PANE_Z_INDEX = 230;
+const HYBRID_UNDERLAY_PANE_Z_INDEX = 180;
 
 function getQuadKey({ x, y, z }) {
     let quadKey = '';

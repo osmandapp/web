@@ -9,7 +9,7 @@ const config = {
     popupClassName: 'mvt-osm-popup',
     errorLabel: 'MVT OSM layer error',
     pane: 'mvtOsmPane',
-    paneZIndex: 250,
+    paneZIndex: 190,
 };
 
 export default function MvtOsmLayer() {

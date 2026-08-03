@@ -110,6 +110,7 @@ const WeatherLayer = () => {
                                     url={item.url}
                                     time={time}
                                     tms={true}
+                                    zIndex={1000}
                                     minZoom={2}
                                     opacity={item.opacity * opacityDivider}
                                     maxNativeZoom={item.maxNativeZoom}
@@ -125,6 +126,7 @@ const WeatherLayer = () => {
                                     url={item.url}
                                     time={time}
                                     tms={true}
+                                    zIndex={1000}
                                     minZoom={2}
                                     opacity={item.opacity * opacityDivider}
                                     maxNativeZoom={item.maxNativeZoom}
