@@ -35,7 +35,8 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
-import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID, MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN } from '../util/ZIndexes';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 
 export const EXPLORE_MIN_ZOOM = 6;

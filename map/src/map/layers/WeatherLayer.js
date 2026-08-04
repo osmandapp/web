@@ -4,6 +4,10 @@ import MapContext from '../../context/MapContext';
 import WeatherContext from '../../context/WeatherContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
 import { disableLayers } from '../../manager/WeatherManager';
+import { ensureLeafletPane } from './MvtHybridDemo';
+import { WEATHER_PANE_Z_INDEX, WEATHER_TILE_Z_INDEX } from '../util/ZIndexes';
+
+const WEATHER_PANE = 'weatherPane';
 
 function getWeatherTime(weatherDateObj) {
     let h = weatherDateObj.getUTCHours();
@@ -27,6 +31,15 @@ const WeatherLayer = () => {
     const mtx = useContext(MapContext);
 
     const [time, setTime] = useState(null);
+    const [paneReady, setPaneReady] = useState(false);
+
+    // pane must exist before react-leaflet creates TileLayer instances
+    useEffect(() => {
+        if (map) {
+            ensureLeafletPane(map, WEATHER_PANE, WEATHER_PANE_Z_INDEX);
+            setPaneReady(true);
+        }
+    }, [map]);
 
     useEffect(() => {
         wtx.setWeatherLayers((prev) => {
@@ -94,6 +107,10 @@ const WeatherLayer = () => {
 
     const opacityDivider = 0.6; // main+fade layers (*0.5 + *0.5) result less opacity than 1 layer *1.0
 
+    if (!paneReady) {
+        return null;
+    }
+
     return (
         <>
             <LayersControl>
@@ -110,7 +127,8 @@ const WeatherLayer = () => {
                                     url={item.url}
                                     time={time}
                                     tms={true}
-                                    zIndex={1000}
+                                    pane={WEATHER_PANE}
+                                    zIndex={WEATHER_TILE_Z_INDEX}
                                     minZoom={2}
                                     opacity={item.opacity * opacityDivider}
                                     maxNativeZoom={item.maxNativeZoom}
@@ -126,7 +144,8 @@ const WeatherLayer = () => {
                                     url={item.url}
                                     time={time}
                                     tms={true}
-                                    zIndex={1000}
+                                    pane={WEATHER_PANE}
+                                    zIndex={WEATHER_TILE_Z_INDEX}
                                     minZoom={2}
                                     opacity={item.opacity * opacityDivider}
                                     maxNativeZoom={item.maxNativeZoom}

@@ -86,6 +86,7 @@ import {
     MENU_IDS,
     liveHash,
 } from '../manager/GlobalManager';
+import { LEFT_MENU_Z_INDEX, OPEN_LEFT_MENU_Z_INDEX, OPEN_MENU_INFOBLOCK_Z_INDEX } from '../map/util/ZIndexes';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
@@ -179,10 +180,6 @@ export default function MainMenu({
     const recentSaver = useRecentDataSaver();
     const openVisibleTracks = location.pathname === MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL;
     const aloneVisibleTracks = openVisibleTracks && !ctx.openVisibleMenu.showTracks && !ctx.openVisibleMenu.showConfig;
-
-    const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
-    const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
-    const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
 
     const navigate = useNavigate();
 
@@ -961,7 +958,7 @@ export default function MainMenu({
                             mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                             height: showInstallBanner ? `${height - INSTALL_BANNER_SIZE}px` : '100%',
                             overflow: 'hidden',
-                            zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
+                            zIndex: openMainMenu ? OPEN_LEFT_MENU_Z_INDEX : LEFT_MENU_Z_INDEX,
                             borderRight:
                                 ((!menuInfo &&
                                     !ltx.openLoginMenu &&
@@ -1081,7 +1078,7 @@ export default function MainMenu({
                         ml: '64px',
                         mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                         boxShadow: 'none',
-                        zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
+                        zIndex: OPEN_MENU_INFOBLOCK_Z_INDEX,
                         overflow: 'hidden',
                     },
                 }}

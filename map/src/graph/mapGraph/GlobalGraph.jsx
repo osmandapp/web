@@ -1,4 +1,5 @@
 import { GLOBAL_GRAPH_HEIGHT_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import { GRAPH_Z_INDEX } from '../../map/util/ZIndexes';
 import { Box, Divider, Drawer, IconButton, Typography } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
@@ -26,7 +27,6 @@ import debounce from 'lodash-es/debounce';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
 
-const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;
 const INNER_GRAPH_HEIGHT = 150;
 const INFO_BLOCK_WIDTH = 200;
@@ -358,7 +358,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                         width: '100%',
                         ml: `${MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE}px`,
                         boxShadow: 'none',
-                        zIndex: Z_INDEX_GRAPH,
+                        zIndex: GRAPH_Z_INDEX,
                     },
                 }}
                 sx={{ left: 'auto !important' }}

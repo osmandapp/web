@@ -24,6 +24,7 @@ import supportedLanguages from '../../../resources/translations/supportedLanguag
 import { handleLanguageChange } from '../../../i18n';
 import { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
+import { HEADER_MENU_Z_INDEX } from '../../../map/util/ZIndexes';
 
 const pages = ({ t }) => [
     {
@@ -137,7 +138,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     return (
         <AppBar
             sx={{
-                zIndex: 1300,
+                zIndex: HEADER_MENU_Z_INDEX,
                 height: HEADER_SIZE,
                 background: '#ffffff',
                 mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
