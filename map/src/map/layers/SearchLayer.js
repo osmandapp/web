@@ -526,10 +526,15 @@ function filterByVisibleLevel(features, spatialSearch, visibleLevel) {
 }
 
 function createSearchMarkerFeatures(features) {
-    const markerFeatures = (features ?? []).map((feature) => ({
-        ...feature,
-        properties: { ...(feature.properties ?? {}) },
-    }));
+    const markerFeatures = (features ?? [])
+        .filter((f) =>
+            hasValidMatchedObjectCoords({ lat: f?.geometry?.coordinates?.[1], lon: f?.geometry?.coordinates?.[0] })
+        )
+        .map((feature) => ({
+            ...feature,
+            properties: { ...(feature.properties ?? {}) },
+        }));
+
     const featureByKey = new Map();
 
     markerFeatures.forEach((feature) => {

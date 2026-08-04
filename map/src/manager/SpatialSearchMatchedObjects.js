@@ -44,7 +44,10 @@ export function getMatchedObjectName(obj) {
 }
 
 export function hasValidMatchedObjectCoords(obj) {
-    return Number.isFinite(obj?.lat) && Number.isFinite(obj?.lon);
+    if (!Number.isFinite(obj?.lat) || !Number.isFinite(obj?.lon)) {
+        return false;
+    }
+    return obj.lat !== 0 || obj.lon !== 0;
 }
 
 export function createSearchMatchedObjectActions({
