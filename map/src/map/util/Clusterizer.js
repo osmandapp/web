@@ -18,7 +18,7 @@ import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
-import { MARKER_Z_INDEX_MAIN } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN } from './ZIndexes';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 export const EXPLORE_BIG_REAL_ICON_SIZE = 42;

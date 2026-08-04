@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import { POINT_MARKER_Z_INDEX_OFFSET } from './ZIndexes';
 import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
@@ -420,7 +421,7 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
         layers.push(
             new L.Marker(end, {
                 icon: MarkerOptions.options.trackEnd,
-                zIndexOffset: 1000,
+                zIndexOffset: POINT_MARKER_Z_INDEX_OFFSET,
             })
         );
         let currentInd = indexOf(allPoints, point);
@@ -429,7 +430,7 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
             layers.push(
                 new L.Marker(start, {
                     icon: MarkerOptions.options.trackStart,
-                    zIndexOffset: 1000,
+                    zIndexOffset: POINT_MARKER_Z_INDEX_OFFSET,
                 })
             );
         }

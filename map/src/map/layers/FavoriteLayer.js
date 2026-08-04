@@ -36,7 +36,8 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
-import { MARKER_Z_INDEX_MAIN, MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN } from '../util/ZIndexes';
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 function getAddFavoritePinLatLng(addFavorite) {

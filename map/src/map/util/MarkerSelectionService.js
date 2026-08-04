@@ -5,11 +5,11 @@ import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 import { visibleMapRectPx } from '../layers/MapStateLayer';
+import { SELECTED_MARKER_Z_INDEX } from './ZIndexes';
 
 export const SELECTED_PIN_SIZE = 70;
 export const SELECTED_ICON_SIZE = 36;
 export const SELECTED_PIN_COLOR = '#FF8800';
-export const SELECTED_MARKER_Z_INDEX = 3000;
 export const EXPLORE_PHOTO_ICON_SIZE = 43;
 
 const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;

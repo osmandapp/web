@@ -3,12 +3,12 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from './MvtLayerConfig';
+import { MVT_HYBRID_UNDERLAY_PANE_Z_INDEX } from '../util/ZIndexes';
 
 const HYBRID_UNDERLAY_URL_KEY = 'mvtHybridUnderlayUrl';
 const HYBRID_UNDERLAY_ACTIVE_KEY = 'mvtHybridUnderlayActive';
 const HYBRID_UNDERLAY_EVENT = 'mvt-hybrid-underlay-url-changed';
 const HYBRID_UNDERLAY_PANE = 'mvtHybridUnderlayPane';
-const HYBRID_UNDERLAY_PANE_Z_INDEX = 230;
 
 function getQuadKey({ x, y, z }) {
     let quadKey = '';
@@ -158,7 +158,7 @@ export default function MvtHybridDemoUnderlay() {
             return undefined;
         }
 
-        ensureLeafletPane(map, HYBRID_UNDERLAY_PANE, HYBRID_UNDERLAY_PANE_Z_INDEX);
+        ensureLeafletPane(map, HYBRID_UNDERLAY_PANE, MVT_HYBRID_UNDERLAY_PANE_Z_INDEX);
 
         const layer = new TemplateTileLayer(underlayUrl, {
             pane: HYBRID_UNDERLAY_PANE,
