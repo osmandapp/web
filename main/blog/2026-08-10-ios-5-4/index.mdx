@@ -46,17 +46,17 @@ This update brings a redesigned **My Places** interface, a rebuilt **Plan a Rout
 
 ## New "My Places" design
 
-The **My Places** screen has been redesigned with a new segmented interface, making it easier to switch between **Favorites**, **Tracks**, **OSM Edits**, and **Travel Guides**.
+The [**My Places**](../docs/user/personal/myplaces) screen has been redesigned with a new segmented interface, making it easier to switch between **Favorites**, **Tracks**, **OSM Edits**, and **Travel Guides**.
 
-* **Favorites** now use a folder-based structure with support for subfolders. Folders are organized into **Pinned**, **Visible**, and **Hidden** sections, and frequently used folders can be pinned to the top. Each folder displays useful statistics, including the number of subfolders and points, modification date, and storage size. New sorting options allow folders and points to be arranged by name, date, or distance.
+* [**Favorites**](../docs/user/personal/myplaces#favorites) now use a folder-based structure with support for subfolders. Folders are organized into **Pinned**, **Visible**, and **Hidden** sections, and frequently used folders can be pinned to the top. Each folder displays useful statistics, including the number of subfolders and points, modification date, and storage size. New sorting options allow folders and points to be arranged by name, date, or distance.
 
   Updated action menus provide quicker access to **Show on map**, **Pin or unpin**, **Rename**, **Appearance**, **Share**, **Move**, and **Delete**. Favorites and entire folders can also be added to **Map markers**, a **Track**, or **Navigation**. Selection mode makes it possible to apply actions to multiple folders and points at once.
 
-* **Tracks** provides access to saved, recorded, and imported GPX files from the same redesigned My Places interface, with search, sorting, folder management, statistics, and quick actions for working with individual tracks or multiple selected items.
+* [**Tracks**](../docs/user/personal/myplaces#tracks) provides access to saved, recorded, and imported GPX files from the same redesigned My Places interface, with search, sorting, folder management, statistics, and quick actions for working with individual tracks or multiple selected items.
 
-* **OSM Edits** keeps your OpenStreetMap edits, notes, and uploaded changes in a dedicated section. This tab is available when the **OSM Editing** plugin is enabled.
+* [**OSM Edits**](../docs/user/personal/myplaces#openstreetmap-edits) keeps your OpenStreetMap edits, notes, and uploaded changes in a dedicated section. This tab is available when the **OSM Editing** plugin is enabled.
 
-* **Travel Guides** contains bookmarked travel articles and guides, allowing saved travel content to be accessed directly from My Places. The tab appears when multiple guides have been bookmarked.
+* [**Travel Guides**](../docs/user/personal/myplaces#travel-guides) contains bookmarked travel articles and guides, allowing saved travel content to be accessed directly from My Places. The tab appears when multiple guides have been bookmarked.
 
 The new search interface also makes Favorites easier to find by displaying their folder, distance, address, and creation date directly in the results.
 
@@ -65,7 +65,7 @@ The new search interface also makes Favorites easier to find by displaying their
 
 ## Updated "Plan a Route" interface
 
-The **Plan a Route** tool has been rebuilt with a new interface for creating, editing, and analyzing routes.
+The [**Plan a Route**](../docs/user/plan-route/create-route) tool has been rebuilt with a new interface for creating, editing, and analyzing routes.
 
 Separate **Route +** and **+ POI** actions let you add route points or named waypoints and points of interest. Individual route segments can use different routing types, allowing you to combine, for example, cycling, walking, and straight-line sections within the same track.
 
@@ -75,7 +75,11 @@ The new panel includes three sections:
 * **Analyze** — view the elevation graph, uphill and downhill values, altitude range, speed statistics, and route composition by road type, steepness, surface, and smoothness.
 * **Route** — view and manage route points and segments.
 
+![Plan route ](./img/plan_route.webp)
+
 When elevation data is unavailable, it can be calculated using nearby roads or downloaded Terrain maps. The updated route summary also displays distance, estimated travel time, arrival time, elevation gain, and elevation loss.
+
+![Plan route ](./img/plan_route_2.webp)
 
 Quick actions provide access to undo and redo, change segment order, reverse the route, append it to an existing track, save a copy, clear all points, or start navigation directly along the planned track.
 
@@ -214,7 +218,19 @@ OsmAnd 5.4 also includes a range of smaller features and interface improvements:
 
 ## Bug fixes 
 
-- Fixed 
+* Fixed an [app crash on startup when managing more than 1,000 Favorites](https://github.com/osmandapp/OsmAnd-iOS/issues/2988);
+* Fixed a [UI freeze after adding a new Favorite to a folder containing many points](https://github.com/osmandapp/OsmAnd-iOS/issues/5118);
+* Fixed [incorrect headers displayed above calculated public transport routes](https://github.com/osmandapp/OsmAnd-iOS/issues/5249);
+* Fixed the [Compass button icon incorrectly following the iOS system theme instead of the selected map mode](https://github.com/osmandapp/OsmAnd-iOS/issues/5300);
+* Fixed an [app freeze when CarPlay switches between Day and Night modes](https://github.com/osmandapp/OsmAnd-iOS/issues/5389);
+* Fixed a [language mismatch between POI names displayed on the map and in the context menu](https://github.com/osmandapp/OsmAnd-iOS/issues/5382);
+* Fixed an issue where [custom Track and Favorite colors were not included in exports or synchronized through OsmAnd Cloud](https://github.com/osmandapp/OsmAnd-iOS/issues/5368);
+* Improved [map and location-marker movement during navigation to prevent periodic stuttering](https://github.com/osmandapp/OsmAnd-iOS/issues/5355);
+* Improved the [OsmAnd Cloud synchronization checking speed](https://github.com/osmandapp/OsmAnd-iOS/issues/5359);
+* Fixed [incorrect map centering after using the double-tap zoom gesture and then tapping My Location](https://github.com/osmandapp/OsmAnd-iOS/issues/5365);
+* Fixed the [position of Online Photos and Street-Level Imagery in the region context menu](https://github.com/osmandapp/OsmAnd-iOS/issues/5336);
+* Fixed [distance units being cropped in the Detailed Track Guidance settings for some languages](https://github.com/osmandapp/OsmAnd-iOS/issues/5276).
+
 
 
 _______________________
