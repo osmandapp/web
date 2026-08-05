@@ -235,10 +235,7 @@ async function getWptTags(obj, type, ctx) {
             }
         }
 
-        const poiNameTagObj = await buildPoiNameTagObj(poiNameTags, ctx, subtypeTag);
-        if (poiNameTagObj) {
-            res.push(poiNameTagObj);
-        }
+
 
         tags = filterWebKeys(mainTags);
         const tagList = await fetchVisibleTags(tags);
@@ -257,6 +254,11 @@ async function getWptTags(obj, type, ctx) {
         }
         if (hasCuisine) {
             res = res.filter((t) => t.key !== CUISINE);
+        }
+
+        const poiNameTagObj = await buildPoiNameTagObj(poiNameTags, ctx, subtypeTag);
+        if (poiNameTagObj) {
+            res.push(poiNameTagObj);
         }
     }
 
@@ -433,7 +435,7 @@ async function fetchVisibleTags(tags) {
             typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
         ])
     );
-    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-visible-tags`, tags, {
+    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/filter-visible-tags`, tags, {
         apiCache: true,
     });
 
