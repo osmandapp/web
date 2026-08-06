@@ -567,6 +567,7 @@ The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md
 - To add vehicle metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **Vehicle Metrics plugin**.
 - You can add widgets even if no OBD-II scanner is connected.
 - All added widgets are visible whether an OBD-II scanner is connected or not.
+- For accurate **Fuel consumption** values, specify the vehicle's _[Fuel tank capacity](../navigation/guidance/vehicle-parameters.md#overview)_ in the profile settings. Distance-based consumption modes also require GPS data.
 - To edit a widget, tap the widget added to the panel, then tap *Settings*, or directly tap the *Settings icon* in the widget field.
 
 | | |
