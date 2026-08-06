@@ -205,8 +205,6 @@ async function getWptTags(obj, type, ctx) {
         subtypeTag = tags[AMENITY_PREFIX + SUBTYPE] ?? tags[SUBTYPE_POI];
         id = tags[POI_ID];
 
-        let hasCuisine = false;
-
         if (type.isFav || type.isWpt || type.isWikiPoi) {
             const icon = getIconNameForPoiType({
                 iconKeyName: tags[ICON_KEY_NAME],
@@ -235,8 +233,6 @@ async function getWptTags(obj, type, ctx) {
             }
         }
 
-
-
         tags = filterWebKeys(mainTags);
         const tagList = await fetchVisibleTags(tags);
 
@@ -247,13 +243,7 @@ async function getWptTags(obj, type, ctx) {
                 tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag);
             }
 
-            if (tagObj.collapsable && tagObj.textPrefix === CUISINE) {
-                hasCuisine = true;
-            }
             res.push(tagObj);
-        }
-        if (hasCuisine) {
-            res = res.filter((t) => t.key !== CUISINE);
         }
 
         const poiNameTagObj = await buildPoiNameTagObj(poiNameTags, ctx, subtypeTag);
@@ -395,12 +385,9 @@ async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
 }
 
 async function buildOtherLangTags(entries, ctx, subtypeTag) {
-    const otherLangs = [];
-    for (const entry of entries) {
-        otherLangs.push(await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag }));
-    }
-
-    return otherLangs;
+    return Promise.all(
+        entries.map((entry) => buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag }))
+    );
 }
 
 export async function addPoiTypeTag({
@@ -435,11 +422,11 @@ async function fetchVisibleTags(tags) {
             typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
         ])
     );
-    let response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/filter-visible-tags`, tags, {
+    const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/filter-visible-tags`, tags, {
         apiCache: true,
     });
 
-    return Array.isArray(response?.data) ? response.data : [];
+    return Array.isArray(response?.data) ? response.data : tags;
 }
 
 function filterWebKeys(tags) {
