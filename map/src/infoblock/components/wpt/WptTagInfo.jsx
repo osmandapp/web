@@ -29,6 +29,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     useEffect(() => {
+        setNewTag(null);
         if (tag?.collapsable) {
             const items = tag.value.split(SEPARATOR);
             if (items.length > 1) {
