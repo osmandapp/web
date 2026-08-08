@@ -240,7 +240,7 @@ async function getWptTags(obj, type, ctx) {
             let tagObj = await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag });
 
             if (entry.otherLangs?.length) {
-                tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag);
+                tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, entry.key);
             }
 
             res.push(tagObj);
@@ -378,15 +378,15 @@ async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
     });
     const otherEntries = entries.filter((entry) => entry !== mainEntry);
     if (otherEntries.length > 0) {
-        tagObj.otherLangs = await buildOtherLangTags(otherEntries, ctx, subtypeTag);
+        tagObj.otherLangs = await buildOtherLangTags(otherEntries, ctx, subtypeTag, mainEntry.key);
     }
 
     return tagObj;
 }
 
-async function buildOtherLangTags(entries, ctx, subtypeTag) {
+async function buildOtherLangTags(entries, ctx, subtypeTag, key) {
     return Promise.all(
-        entries.map((entry) => buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag }))
+        entries.map((entry) => buildTagObj({ key, value: entry.value, lang: entry.lang, ctx, subtypeTag }))
     );
 }
 
@@ -422,11 +422,11 @@ async function fetchVisibleTags(tags) {
             typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
         ])
     );
-    const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/filter-visible-tags`, tags, {
+    const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/visible-tags`, tags, {
         apiCache: true,
     });
 
-    return Array.isArray(response?.data) ? response.data : tags;
+    return Array.isArray(response?.data) ? response.data : Object.entries(tags).map(([key, value]) => ({ key, value }));
 }
 
 function filterWebKeys(tags) {
