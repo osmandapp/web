@@ -51,7 +51,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -98,6 +98,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 - *Repeat navigation instructions*. Allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turn) on the application screen.
 - *[Announcement time](#announcement-time)*.
+- *Pause spoken audio* (*iOS only*). When enabled, podcasts, audiobooks, and other spoken audio are paused while voice prompts are played. Music playback continues at a reduced volume. When disabled, both spoken audio and music continue playing at a reduced volume.
 
 **Output** (*Android only*):
 
