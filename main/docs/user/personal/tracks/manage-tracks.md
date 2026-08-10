@@ -87,6 +87,8 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 All tracks ever recorded, created, or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 
+Each track in the list displays its parent folder name on the second line, separated by `|` (for example, `Hiking | Tracks`), making it easier to identify where a track is stored. This applies in [Search](#search), [Smart Folders](../../personal/tracks/smart-folder.md), and [Configure Map → Tracks](../../map/tracks/index.md#configure-map).
+
 
 ### Track Menu {#track-menu}
 
