@@ -224,9 +224,28 @@ In addition to the basic features of the OsmAnd app in *CarPlay* that provide co
 
 Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features, providing real-time guidance and allowing the driver to stay focused on the road. Voice prompts clearly indicate turns, directions and other navigation instructions, ensuring a safer and more comfortable use of the navigation system.
 
-When voice prompts are played, OsmAnd adjusts background audio depending on its type. Spoken audio content, such as podcasts and audiobooks, can be automatically paused during navigation instructions. Music playback continues with reduced volume. The *<Translate ios="true" ids="pause_spoken_audio"/>* option allows you to control this behavior.
+When voice prompts are played, OsmAnd adjusts background audio depending on its type. With *<Translate ios="true" ids="pause_spoken_audio"/>* enabled, spoken audio content, such as podcasts and audiobooks, is paused during navigation instructions, while music playback continues at a reduced volume. When *<Translate ios="true" ids="pause_spoken_audio"/>* is disabled, both spoken audio and music continue playing at a reduced volume.  
 
 To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
+
+### Navigation Alerts {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Helpful alerts are automatically shown before starting navigation when additional action is required to calculate the route. These alerts help you resolve routing issues before navigation starts.
+
+**Missing or outdated maps**
+
+If some offline maps required to calculate the route are missing or outdated, an alert is displayed. You can choose one of the following options:
+- **Use downloaded maps**. Calculate the route using the maps currently available on your device.
+- **View on phone**. Open the map download screen on your iPhone to download or update the required maps. After the maps are downloaded, you can start navigation again.
+- **Cancel**. Close the alert without starting navigation.
+
+**Private access warning**
+
+If the route requires using a private road to reach your destination, a warning is displayed: *Allow using a private road to reach your destination?* You can choose:
+- **Allow**. Continue with the route using the private road.
+- **Cancel**. Close the alert and return to the previous screen, where you can change the destination or continue with another action.
 
 
 ### Screen Alert Widget {#screen-alert-widget}
