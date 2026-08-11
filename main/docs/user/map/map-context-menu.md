@@ -141,7 +141,7 @@ Available details include:
 - [Within areas](#polygon-information)
 - [Nearby POIs](#nearby-pois)
 - [Nearby Popular Places](#nearby-popular-places)
-- [Guides](#guides) (Android only)
+- [Guides](#guides) 
 - [Public Transport routes for stops](#public-transport-routes)
 - [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
 - [OpenStreetMap link](#openstreetmap-link)
@@ -323,9 +323,21 @@ Tapping *Nearby [Popular Places](https://osmand.net/docs/user/plugins/wikipedia#
 
 ### Guides {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 The **Guides** section appears in the map context menu for some places and provides access to **Travel (Wikivoyage**) guides related to the selected point of interest. It shows a list of guide entries (for example, a country or region) that mention the selected place.
 
