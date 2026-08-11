@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), [CO2 footprint data](#distance--time--co2),and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
+OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), [CO2 footprint data](#distance--time--co2),and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--save-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -310,7 +310,7 @@ This information can be useful when you are planning a trip and want to estimate
 The ability **to print** or **save** turn-by-turn information **in PDF format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
 
 
-## Share / Export (Actions) {#share--export-actions}
+## Share / Save (Actions) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -322,7 +322,7 @@ The ability **to print** or **save** turn-by-turn information **in PDF format** 
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -331,8 +331,8 @@ The ability **to print** or **save** turn-by-turn information **in PDF format** 
 The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
 - [**Print**](#print). Allows you to print or save turn-by-turn route information.
-- **Export/Save**. Allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes and turn instructions. So, [navigation by this track](./gpx-navigation.md) should provide all features as navigation by the route.
-- **Share**. Shares an exported track or a link to the route which could be opened on another device with OsmAnd.
+- **Save**. Allows you to save the route information **as a new track** for later offline use. The saved track contains all information about road attributes and turn instructions. So, [navigation by this track](./gpx-navigation.md) should provide all features as navigation by the route.
+- **Share**. Allows you to share the route as a file or a link that can be opened on another device with OsmAnd.
 
 
 ## Related Articles {#related-articles}
