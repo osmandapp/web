@@ -391,13 +391,13 @@ Waypoints are one of the types of points available on the map. In general, they 
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
