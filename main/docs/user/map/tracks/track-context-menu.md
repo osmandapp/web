@@ -407,7 +407,7 @@ In this *Points* tab:
 
 - [Show track points data](#display-custom-gpx-tags) and modify your track points (waypoints and route points), [delete it and add](#points--waypoints) waypoints to a track.
 - Create and modify [Group (folder) of points](#waypoint-groups).
-- Center the map on a waypoint using the pin icon in the waypoint list without closing the list, allowing you to preview waypoints one by one.
+- Show a waypoint on the map using the pin icon in the waypoint list. The map centers on the waypoint without closing the list or changing the current zoom level.
 
 
 ### Add Waypoint to a Track {#add-waypoint-to-a-track}
