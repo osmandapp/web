@@ -364,7 +364,8 @@ async function buildPoiNameTagObj(poiNameTags, ctx, subtypeTag) {
         return lang ? { key: base, value, lang } : { key: base, value };
     });
 
-    const mainEntry = entries.find((entry) => entry.lang) ?? entries[0];
+    const mainEntry =
+        entries.find((entry) => entry.lang === i18n.language) ?? entries.find((entry) => entry.lang) ?? entries[0];
     if (!mainEntry) {
         return null;
     }
@@ -424,6 +425,7 @@ async function fetchVisibleTags(tags) {
     );
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/visible-tags`, tags, {
         apiCache: true,
+        params: { lang: i18n.language },
     });
 
     return Array.isArray(response?.data) ? response.data : Object.entries(tags).map(([key, value]) => ({ key, value }));
