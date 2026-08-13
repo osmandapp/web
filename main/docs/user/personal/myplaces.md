@@ -37,7 +37,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -63,7 +63,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -103,7 +103,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -141,7 +141,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -247,7 +247,7 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
+![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 The **Travel** section contains bookmarked travel guides and articles saved for offline access. You can quickly open, organize, and manage your saved travel content from My Places. The Travel section is displayed only when more than one travel guide has been bookmarked.
 
