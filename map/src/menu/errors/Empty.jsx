@@ -9,7 +9,8 @@ import EmptyLogin from '../../login/EmptyLogin';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
-import ButtonPro from '../../frame/pro/ButtonPro';
+import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
+import { PRICING_URL } from '../../manager/GlobalManager';
 
 export default function Empty({ title, text, folder = null, menu = null, checkLogin = true }) {
     const ltx = useContext(LoginContext);
@@ -19,9 +20,8 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
     const isFreeAccount = ltx.accountInfo?.account === FREE_ACCOUNT;
     const requiresProForTracks = !isFavoriteMenu && isFreeAccount;
     const showImportBtn = folder !== null && !requiresProForTracks;
-    const displayText = requiresProForTracks
-        ? t('empty_cloud_tracks_description')
-        : text;
+    const displayTitle = requiresProForTracks ? t('web:empty_cloud_tracks') : title;
+    const displayText = requiresProForTracks ? t('web:empty_cloud_tracks_description') : text;
     const IconComponent = requiresProForTracks ? EmptyIconCloud : EmptyIcon;
 
     function checkLoginUser() {
@@ -30,6 +30,9 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
         }
         return true;
     }
+
+    const openPricingPage = () =>
+        window.open(`/${PRICING_URL}?source=pro#osmand_cloud_backup`, '_blank', 'noopener,noreferrer');
 
     return (
         <>
@@ -40,14 +43,18 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
                     </Icon>
                     <Box className={styles.info}>
                         <ListItemText disableTypography={true} className={styles.title}>
-                            {title}
+                            {displayTitle}
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
                             {displayText}
                         </ListItemText>
                     </Box>
                     {requiresProForTracks ? (
-                        <ButtonPro />
+                        <PrimaryBtn
+                            id={'se-rwquest-pro-plan'}
+                            text={t('web:get_osmand_pro')}
+                            action={openPricingPage}
+                        />
                     ) : (
                         showImportBtn && (
                             <CloudGpxUploader folder={folder} style={styles.label}>
