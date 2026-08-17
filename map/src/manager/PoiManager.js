@@ -12,6 +12,8 @@ import {
     SEPARATOR,
     getOsmIdFromOsmUrl,
     OSM_WIKI,
+    POI_SUBTYPE,
+    POI_TYPE,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
@@ -26,7 +28,7 @@ import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
 import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
-import { getPropsFromSearchResultItem, preparedType } from '../menu/search/search/SearchResultItem';
+import { getFirstSubstring, preparedType } from '../menu/search/search/SearchResultItem';
 
 const icons = new Set(iconsRaw);
 
@@ -469,8 +471,7 @@ function getWikiPoiParams(poi, wiki) {
 
 function getPoiParams(poi) {
     const params = {};
-    const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
-    params.type = props.type;
+    params.type = getFirstSubstring(poi.options[POI_SUBTYPE] ?? poi.options[POI_TYPE]);
     params.pin = getPinParam(poi.latlng?.lat, poi.latlng?.lng);
     params.name = poi.options.amenity_name || poi.options.name;
     params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.options.web_poi_osmUrl);
