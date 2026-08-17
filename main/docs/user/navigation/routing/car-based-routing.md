@@ -34,7 +34,7 @@ Car routing is designed to help drivers find the most efficient and direct route
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Car routing settings Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Car routing settings Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -55,6 +55,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (only&nbsp;car) |  <details><summary> Roads, that are closed for goods delivery, will be avoided. </summary>![Goods delivery Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| This option applies only to vehicles carrying goods, that weigh no more than 3.5 tonnes. If your vehicle weight is more than 3.5 tonnes, you should use the [Truck profile](#route-parameters---truck).   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | To calculate a fuel-efficient route, the routing engine limits speed internally to 60 km/h, it doesn't change Estimated Time of Arrival though. So in case of 2 same start-end routes: motorway (120 km/h) and minor (60 km/h) - shorter route will be selected. For the service roads that have a speed limit < 60 km/h, faster route will be selected. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | Select the preferred route calculation method. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Route Parameters - Truck {#route-parameters---truck}
