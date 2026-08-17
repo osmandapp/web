@@ -38,7 +38,7 @@ function extractLatlng(selectedWptId, type) {
     return null;
 }
 
-function escapeHtmlAttr(value) {
+export function escapeHtmlAttr(value) {
     return String(value ?? '')
         .replace(/&/g, '&amp;')
         .replace(/"/g, '&quot;')

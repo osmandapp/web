@@ -31,7 +31,7 @@ import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLaye
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
-import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
+import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import {
     BBOX_COORDS_DECIMALS,
     MENU_INFO_OPEN_SIZE,
@@ -148,7 +148,7 @@ export async function getPoiIcon(poi, cache, finalIconName) {
         if (svgData) {
             let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
             // Add the id attribute to the coloredSvg
-            const poiName = poi.properties[POI_NAME];
+            const poiName = escapeHtmlAttr(poi.properties[POI_NAME]);
             coloredSvg = coloredSvg.replace(
                 '<svg',
                 `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
