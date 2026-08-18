@@ -6,7 +6,7 @@ import { assert, clickBy, leftClickBy, waitBy, waitByRemoved } from '../../lib.m
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 
-const STOP_1_COORDS = { lat: 50.450974, lon: 30.525448 };
+const STOP_1_COORDS = { lat: 50.450920, lon: 30.525513 };
 const STOP_2_COORDS = { lat: 50.44954, lon: 30.523281 };
 
 export default async function test() {
