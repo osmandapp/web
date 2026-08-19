@@ -138,3 +138,15 @@ export function findPurchase(type, productId) {
 export function hasOldPrice(purchaseObj) {
     return Boolean(purchaseObj?.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice);
 }
+
+export function getDiscountPercent(purchaseObj) {
+    if (!hasOldPrice(purchaseObj)) {
+        return null;
+    }
+    const oldPrice = parseFloat(purchaseObj.oldPrice);
+    const newPrice = parseFloat(purchaseObj.newPrice);
+    if (!oldPrice || !newPrice) {
+        return null;
+    }
+    return Math.round((1 - newPrice / oldPrice) * 100);
+}

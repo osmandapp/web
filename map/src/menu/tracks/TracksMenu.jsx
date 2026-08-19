@@ -25,6 +25,7 @@ import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
+import TracksProBanner from './TracksProBanner';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
 import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 import { useNavigate } from 'react-router-dom';
@@ -173,6 +174,13 @@ export default function TracksMenu() {
         t,
     ]);
 
+    const listRows = useMemo(() => {
+        if (ltx.isProAccount()) {
+            return trackMenuRows;
+        }
+        return [<TracksProBanner key={'se-tracks-pro-banner'} />, ...trackMenuRows];
+    }, [trackMenuRows, ltx]);
+
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
     }
@@ -219,14 +227,14 @@ export default function TracksMenu() {
                                 {...rootDropZoneHandlers}
                             >
                                 <VirtualizedList
-                                    items={trackMenuRows}
+                                    items={listRows}
                                     renderItem={(row) => row}
                                     getItemKey={(row) => row.key}
                                     height={listHeight}
                                     fillHeight
                                     overlayIndex={
                                         isRootDropActive
-                                            ? trackMenuRows.length - (defaultGroupItems?.length ?? 0)
+                                            ? listRows.length - (defaultGroupItems?.length ?? 0)
                                             : undefined
                                     }
                                     overlayContent={isRootDropActive ? <TracksDropHighlight /> : undefined}

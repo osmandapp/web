@@ -170,7 +170,9 @@ function VirtualizedRow({ data, index, style }) {
 
     return (
         <div style={style}>
-            <div ref={rowRef}>{renderItem(item, index)}</div>
+            <div ref={rowRef} className={styles.row}>
+                {renderItem(item, index)}
+            </div>
         </div>
     );
 }
