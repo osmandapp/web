@@ -110,7 +110,16 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is a map style by Holder Tamm that allows you to choose whether to hide certain objects or not.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [This is an OsmAnd rendering style optimized for storm chasing](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+The default `routing.xml` file can be customized to adjust routing algorithms and parameters for specific conditions.
+
+| Source Name | Description | Link |
+|:---|:---|:---|
+| Weather-aware Routing (Gh0stz0x) | Custom `routing.xml` modification that adjusts route calculation for rainy conditions, factoring in surface type (e.g., bare rock), incline, and official trail difficulty ratings (CAI/SAC scales), plus improved "Avoid Tunnels" logic. | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Offline Maps {#offline-maps}
 
