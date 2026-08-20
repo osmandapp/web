@@ -80,6 +80,9 @@ export const MENU_IDS = {
 
 export const isTravelPath = (pathname) => pathname?.includes(TRAVEL_URL);
 
+export const openPricingPage = (featureId) =>
+    window.open(`/${PRICING_URL}?source=pro#${featureId}`, '_blank', 'noopener,noreferrer');
+
 export function getUniqFileId(file) {
     return `_id_${file.name}_${file.userid}`;
 }

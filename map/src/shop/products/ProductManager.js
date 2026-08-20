@@ -130,3 +130,23 @@ export const purchase = {
         },
     ],
 };
+
+export function findPurchase(type, productId) {
+    return purchase[type]?.find((p) => p.id === productId);
+}
+
+export function hasOldPrice(purchaseObj) {
+    return Boolean(purchaseObj?.oldPrice && purchaseObj.oldPrice !== purchaseObj.newPrice);
+}
+
+export function getDiscountPercent(purchaseObj) {
+    if (!hasOldPrice(purchaseObj)) {
+        return null;
+    }
+    const oldPrice = parseFloat(purchaseObj.oldPrice);
+    const newPrice = parseFloat(purchaseObj.newPrice);
+    if (!oldPrice || !newPrice || newPrice >= oldPrice) {
+        return null;
+    }
+    return Math.round((1 - newPrice / oldPrice) * 100);
+}

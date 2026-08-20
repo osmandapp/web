@@ -238,7 +238,6 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                             <Empty
                                 title={'Empty group'}
                                 text={"This group doesn't have any wpt yet. You can add them using map."}
-                                menu={OBJECT_TYPE_FAVORITE}
                             />
                         ) : (
                             favItems || <Loading />
@@ -249,7 +248,6 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                 <Empty
                     title={"You don't have favorite files"}
                     text={'You can import or create favorite files using OsmAnd App.'}
-                    menu={OBJECT_TYPE_FAVORITE}
                 />
             )}
         </>

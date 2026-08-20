@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.row {
+    display: flow-root;
+}
+
 .overlay {
     position: absolute;
     left: 0;
