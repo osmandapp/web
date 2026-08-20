@@ -179,7 +179,7 @@ export default function TracksMenu() {
             return trackMenuRows;
         }
         return [<TracksProBanner key={'se-tracks-pro-banner'} />, ...trackMenuRows];
-    }, [trackMenuRows, ltx]);
+    }, [trackMenuRows, ltx.isProAccount()]);
 
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
