@@ -10,8 +10,8 @@ import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
 import { findPurchase } from './products/ProductManager';
 import { findFeature } from './features/FeaturesManager';
-import { HEADER_SIZE } from '../manager/GlobalManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
+import StickyBarContainer from './StickyBarContainer';
 
 export default function StickyBarPaywall({
     visible,
@@ -54,10 +54,7 @@ export default function StickyBarPaywall({
     }
 
     return (
-        <Box
-            className={`${styles.stickyBar} ${visible ? styles.stickyBarVisible : ''}`}
-            sx={{ top: `${HEADER_SIZE + 36}px`, zIndex: 1301 }}
-        >
+        <StickyBarContainer visible={visible}>
             <Box className={styles.stickyBarPaywallItem}>
                 <Box className={styles.stickyBarPaywallItemContent}>
                     <Box className={styles.stickyBarIconFrame} style={{ backgroundColor: 'rgba(87, 20, 204, 0.2)' }}>
@@ -116,6 +113,6 @@ export default function StickyBarPaywall({
                     </Box>
                 </Box>
             </Box>
-        </Box>
+        </StickyBarContainer>
     );
 }

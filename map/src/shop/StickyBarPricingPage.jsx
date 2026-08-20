@@ -9,8 +9,8 @@ import LoginContext from '../context/LoginContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
 import { findPurchase, hasOldPrice } from './products/ProductManager';
-import { HEADER_SIZE } from '../manager/GlobalManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
+import StickyBarContainer from './StickyBarContainer';
 const STICKY_PRODUCTS = [
     {
         name: 'Maps+',
@@ -45,10 +45,7 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
     }
 
     return (
-        <Box
-            className={`${styles.stickyBar} ${visible ? styles.stickyBarVisible : ''}`}
-            sx={{ top: `${HEADER_SIZE + 36}px`, zIndex: 1301 }}
-        >
+        <StickyBarContainer visible={visible}>
             {STICKY_PRODUCTS.map((product) => (
                 <StickyBarItem
                     key={product.purchaseId}
@@ -57,7 +54,7 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
                     purchaseObj={purchaseObjs[product.purchaseId]}
                 />
             ))}
-        </Box>
+        </StickyBarContainer>
     );
 }
 
