@@ -205,11 +205,7 @@ export default function FavoritesMenu() {
                         />
                     </Box>
                 ) : (
-                    <Empty
-                        title={t('web:empty_favorites')}
-                        text={t('web:empty_favorites_description')}
-                        menu={OBJECT_TYPE_FAVORITE}
-                    />
+                    <Empty title={t('web:empty_favorites')} text={t('web:empty_favorites_description')} />
                 )}
             </Box>
         </>

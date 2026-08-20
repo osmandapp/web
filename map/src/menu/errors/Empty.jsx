@@ -4,21 +4,19 @@ import { ReactComponent as EmptyIconCloud } from '../../assets/icons/ic_action_f
 import styles from './errors.module.css';
 import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import { useContext } from 'react';
-import { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import EmptyLogin from '../../login/EmptyLogin';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
-import { PRICING_URL } from '../../manager/GlobalManager';
+import { openPricingPage } from '../../manager/GlobalManager';
 
-export default function Empty({ title, text, folder = null, menu = null, checkLogin = true }) {
+export default function Empty({ title, text, folder = null, checkLogin = true }) {
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
-    const isFavoriteMenu = menu === OBJECT_TYPE_FAVORITE;
     const isFreeAccount = ltx.accountInfo?.account === FREE_ACCOUNT;
-    const requiresProForTracks = !isFavoriteMenu && isFreeAccount;
+    const requiresProForTracks = folder !== null && isFreeAccount;
     const showImportBtn = folder !== null && !requiresProForTracks;
     const displayTitle = requiresProForTracks ? t('web:empty_cloud_tracks') : title;
     const displayText = requiresProForTracks ? t('web:empty_cloud_tracks_description') : text;
@@ -30,9 +28,6 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
         }
         return true;
     }
-
-    const openPricingPage = () =>
-        window.open(`/${PRICING_URL}?source=pro#osmand_cloud_backup`, '_blank', 'noopener,noreferrer');
 
     return (
         <>
@@ -51,9 +46,9 @@ export default function Empty({ title, text, folder = null, menu = null, checkLo
                     </Box>
                     {requiresProForTracks ? (
                         <PrimaryBtn
-                            id={'se-rwquest-pro-plan'}
+                            id={'se-request-pro-plan'}
                             text={t('web:get_osmand_pro')}
-                            action={openPricingPage}
+                            action={() => openPricingPage('osmand_cloud_backup')}
                         />
                     ) : (
                         showImportBtn && (

@@ -145,7 +145,7 @@ export function getDiscountPercent(purchaseObj) {
     }
     const oldPrice = parseFloat(purchaseObj.oldPrice);
     const newPrice = parseFloat(purchaseObj.newPrice);
-    if (!oldPrice || !newPrice) {
+    if (!oldPrice || !newPrice || newPrice >= oldPrice) {
         return null;
     }
     return Math.round((1 - newPrice / oldPrice) * 100);

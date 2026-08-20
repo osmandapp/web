@@ -5,7 +5,12 @@ import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import DefaultItem from '../../frame/components/items/DefaultItem';
-import { GARMIN_URL, LOGIN_URL, MAIN_URL_WITH_SLASH, PRICING_URL } from '../../manager/GlobalManager';
+import {
+    GARMIN_URL,
+    LOGIN_URL,
+    MAIN_URL_WITH_SLASH,
+    openPricingPage as openPricingPageForFeature,
+} from '../../manager/GlobalManager';
 import { fetchGarminStatus } from './garminApi';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import styles from './garmin.module.css';
@@ -46,8 +51,7 @@ export default function GarminConnectItem() {
         }
     }, [refreshGarminStatus, isProUser]);
 
-    const openPricingPage = () =>
-        window.open(`/${PRICING_URL}?source=pro#external_integrations`, '_blank', 'noopener,noreferrer');
+    const openPricingPage = () => openPricingPageForFeature('external_integrations');
     const openGarminPage = () =>
         navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + GARMIN_URL + location.hash, {
             state: { linked: garminLinked, syncTimeMs, selectedTypes },

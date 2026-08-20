@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { findPurchase } from './products/ProductManager';
 import { findFeature } from './features/FeaturesManager';
 import { HEADER_SIZE } from '../manager/GlobalManager';
+import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 
 export default function StickyBarPaywall({
     visible,
@@ -33,16 +34,13 @@ export default function StickyBarPaywall({
         loadPrices();
     }, []);
 
-    useEffect(() => {
-        if (updateCardPrices) {
-            loadPrices();
-            setUpdateCardPrices(false);
-        }
-    }, [updateCardPrices]);
+    useCardPriceRefresh(updateCardPrices, setUpdateCardPrices, loadPrices);
 
     function loadPrices() {
-        setMonthlyPurchase(findPurchase('monthly', 'osmand-pro'));
-        setAnnualPurchase(findPurchase('annual', 'osmand-pro'));
+        const monthly = findPurchase('monthly', 'osmand-pro');
+        const annual = findPurchase('annual', 'osmand-pro');
+        setMonthlyPurchase(monthly && { ...monthly });
+        setAnnualPurchase(annual && { ...annual });
     }
 
     const feature = findFeature(featureId);

@@ -10,6 +10,7 @@ import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
 import { findPurchase, hasOldPrice } from './products/ProductManager';
 import { HEADER_SIZE } from '../manager/GlobalManager';
+import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 const STICKY_PRODUCTS = [
     {
         name: 'Maps+',
@@ -32,12 +33,7 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
         loadPrices();
     }, []);
 
-    useEffect(() => {
-        if (updateCardPrices) {
-            loadPrices();
-            setUpdateCardPrices(false);
-        }
-    }, [updateCardPrices]);
+    useCardPriceRefresh(updateCardPrices, setUpdateCardPrices, loadPrices);
 
     function loadPrices() {
         const objs = {};

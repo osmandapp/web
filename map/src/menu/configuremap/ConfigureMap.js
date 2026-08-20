@@ -48,9 +48,9 @@ import {
     HEADER_SIZE,
     MAIN_URL_WITH_SLASH,
     MENU_IDS,
-    PRICING_URL,
     VISIBLE_TRACKS_URL,
     liveHash,
+    openPricingPage,
 } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
@@ -149,9 +149,6 @@ export default function ConfigureMap() {
         ctx.setConfigureMapState(newConfigureMap);
         setOpenMapStyleMenu(false);
     }
-
-    const openPricingPage = () =>
-        window.open(`/${PRICING_URL}?source=pro#terrain_visualization`, '_blank', 'noopener,noreferrer');
 
     function renderMapStyleSelect() {
         return (
@@ -310,7 +307,7 @@ export default function ConfigureMap() {
                                                 {t('shared_string_terrain')}
                                             </Typography>
                                             {showProButton() ? (
-                                                <ButtonPro onClick={openPricingPage} />
+                                                <ButtonPro onClick={() => openPricingPage('terrain_visualization')} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
                                                     {capitalize(getCurrentColorScheme(t, ctx))}

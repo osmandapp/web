@@ -4,11 +4,9 @@ import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_p
 import BlueButtonWithIcon from '../../frame/components/btns/BlueButtonWithIcon';
 import styles from '../trackfavmenu.module.css';
 import { useTranslation } from 'react-i18next';
-import { PRICING_URL } from '../../manager/GlobalManager';
+import { openPricingPage } from '../../manager/GlobalManager';
 import { findPurchase, getDiscountPercent } from '../../shop/products/ProductManager';
-import { updatePrices } from '../../login/fs/FastSpringHelper';
-
-const TEST_MODE = false;
+import { fetchSinglePrice } from '../../login/fs/FastSpringHelper';
 
 export default function TracksProBanner() {
     const { t } = useTranslation();
@@ -18,14 +16,8 @@ export default function TracksProBanner() {
     const [discountPercent, setDiscountPercent] = useState(getDiscountPercent(annualPurchase));
 
     useEffect(() => {
-        updatePrices((priceMap) => {
-            const purchaseObj = priceMap[TEST_MODE ? `test-${annualPurchase.fsName}` : annualPurchase.fsName];
-            setDiscountPercent(getDiscountPercent(purchaseObj));
-        }, TEST_MODE);
+        fetchSinglePrice(annualPurchase?.fsName, (purchaseObj) => setDiscountPercent(getDiscountPercent(purchaseObj)));
     }, []);
-
-    const openPricingPage = () =>
-        window.open(`/${PRICING_URL}?source=pro#osmand_cloud_backup`, '_blank', 'noopener,noreferrer');
 
     return (
         <Box id="se-tracks-pro-banner" className={styles.tracksProBanner}>
@@ -42,7 +34,7 @@ export default function TracksProBanner() {
                 <BlueButtonWithIcon
                     id={'se-tracks-pro-banner-btn'}
                     text={t('web:get_osmand_pro')}
-                    action={openPricingPage}
+                    action={() => openPricingPage('osmand_cloud_backup')}
                     icon={
                         discountPercent ? (
                             <span className={styles.tracksProBannerDiscount}>{`-${discountPercent}%`}</span>

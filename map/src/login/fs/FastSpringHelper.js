@@ -73,29 +73,10 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
     document.head.appendChild(script);
 };
 
-export function updatePrices(setPurchasePriceMap, testMode = false) {
+function fetchPrices(productsList, testMode, onPriceMap) {
     const script = createFastSpringBuilder(testMode);
     script.onload = () => {
         window.fastspring.builder.reset();
-
-        const productsList = Object.values(purchase)
-            .flat()
-            .map((item) => {
-                if (testMode) {
-                    if (item.hasTestMode) {
-                        return {
-                            path: `test-${item.fsName}`,
-                            quantity: 1,
-                        };
-                    }
-                } else {
-                    return {
-                        path: item.fsName,
-                        quantity: 1,
-                    };
-                }
-            })
-            .filter(Boolean);
 
         window.fastspring.builder.push(
             {
@@ -114,10 +95,38 @@ export function updatePrices(setPurchasePriceMap, testMode = false) {
                         display: item.total,
                     };
                 });
-                setPurchasePriceMap(priceMap);
+                onPriceMap(priceMap);
             }
         );
     };
 
     document.head.appendChild(script);
+}
+
+export function fetchSinglePrice(fsName, onPrice, testMode = false) {
+    const path = testMode ? `test-${fsName}` : fsName;
+    fetchPrices([{ path, quantity: 1 }], testMode, (priceMap) => onPrice(priceMap[path]));
+}
+
+export function updatePrices(setPurchasePriceMap, testMode = false) {
+    const productsList = Object.values(purchase)
+        .flat()
+        .map((item) => {
+            if (testMode) {
+                if (item.hasTestMode) {
+                    return {
+                        path: `test-${item.fsName}`,
+                        quantity: 1,
+                    };
+                }
+            } else {
+                return {
+                    path: item.fsName,
+                    quantity: 1,
+                };
+            }
+        })
+        .filter(Boolean);
+
+    fetchPrices(productsList, testMode, setPurchasePriceMap);
 }
