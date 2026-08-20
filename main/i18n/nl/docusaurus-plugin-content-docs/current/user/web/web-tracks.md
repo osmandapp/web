@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -39,6 +39,22 @@ De Tracks-sectie bevat alle track-gerelateerde tools en acties. De volgende opti
 - Tracks downloaden en verwijderen.
 - Nieuwe mappen aanmaken of verwijderen.
 - Mappen downloaden als OSF- of OBF-verzameling.
+
+
+## Tracks importeren {#import-tracks}
+
+U kunt GPX-tracks importeren in de Web Planner door de Import-knop te gebruiken of door GPX-bestanden rechtstreeks op de kaart te slepen en neer te zetten.
+
+Een track importeren met slepen en neerzetten:
+- Open de Tracks-sectie.
+- Sleep een of meer GPX-bestanden vanaf uw computer.
+- Zet de bestanden neer op de kaart of in een specifieke trackmap.
+
+Wanneer een bestand over de kaart wordt gesleept, wordt het beschikbare neerzetgebied gemarkeerd. Als u het bestand rechtstreeks op de kaart neerzet, wordt het geïmporteerd in de Import-map. Als u het op een bestaande map neerzet, wordt het in die map geïmporteerd.
+
+Na het importeren verschijnt de track in de tracklijst, wordt deze gesynchroniseerd met [OsmAnd Cloud](../personal/osmand-cloud.md) en beschikbaar op alle apparaten die verbonden zijn met hetzelfde account.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Zichtbaar op de kaart {#visible-on-the-map}

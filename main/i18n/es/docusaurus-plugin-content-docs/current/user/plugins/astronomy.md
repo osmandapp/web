@@ -1,7 +1,7 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
 sidebar_position: 3
-title:  Astronomy
+title:  Astronomía
 unlistead: true
 ---
 
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomía** está actualmente en **beta**.
+**Astronomía** está actualmente en **beta** en **Android**. 
+
+En **iOS**, el plugin está disponible a través del programa **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
 :::
 
 ## Resumen {#overview}
@@ -43,13 +44,29 @@ Los siguientes ajustes son necesarios para mostrar la superposición de Astronom
 4. Ajuste lo que se muestra en el Mapa estelar usando [**Configurar vista**](#configure-view) — por ejemplo, active/desactive objetos visibles y ayudas de renderizado.
 5. Toque el botón **Cerrar (X)** en la parte superior de la pantalla del Mapa estelar para salir del Mapa estelar y regresar al mapa de la Tierra.
 
-El plugin funciona con ambos motores de renderizado de mapa, pero ofrece el mejor rendimiento en modo OpenGL.
+En Android, el plugin funciona con ambos motores de renderizado de mapa, pero ofrece el mejor rendimiento en modo OpenGL.
 
 ## Pantalla del mapa estelar {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Ir a:** *Plugin habilitado → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Ir a:** *Plugin habilitado → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 La pantalla dedicada del **Mapa estelar** muestra un domo celeste interactivo con estrellas, constelaciones, planetas, trayectorias del Sol y la Luna. En la parte inferior de la pantalla, puede acceder a los siguientes controles: 
 - [**Búsqueda**](#search) — abre la pantalla de Búsqueda donde puede buscar objetos celestes y explorar catálogos y categorías del cielo. 
@@ -59,12 +76,26 @@ La pantalla dedicada del **Mapa estelar** muestra un domo celeste interactivo co
 
 La pantalla renderiza el hemisferio completo del cielo sobre su ubicación, alineado con la dirección de la brújula. El Mapa estelar se puede rotar manualmente arrastrando la pantalla. La rotación manual del Mapa estelar no afecta la orientación del mapa de la Tierra. El mapa de la Tierra siempre sigue el [modo de orientación del mapa](../map/interact-with-map.md#map-orientation-modes) seleccionado en sus ajustes. Toque los objetos celestes para obtener detalles como magnitud, horas de salida/puesta o trayectorias.
 
-El Mapa estelar también puede alinearse con la orientación de su dispositivo cuando el modo brújula está habilitado. En este modo, el cielo rota según los sensores de acelerómetro y brújula del dispositivo, lo que le permite explorar el cielo moviendo físicamente su teléfono.
+El Mapa estelar también puede alinearse con la orientación de su dispositivo cuando el modo brújula está habilitado. En este modo, el cielo rota según los sensores de acelerómetro y brújosa del dispositivo, lo que le permite explorar el cielo moviendo físicamente su teléfono.
 
 
 ## Menú contextual {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 El **Menú contextual** proporciona información detallada sobre los objetos celestes y herramientas para observarlos. Se abre cuando toca un objeto celeste en el Mapa estelar.
 
@@ -74,7 +105,21 @@ El Menú contextual aparece en la parte inferior de la pantalla y contiene infor
 
 ### Información del objeto {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sección superior del Menú contextual muestra el nombre y la clasificación del objeto. Debajo del nombre, se muestra el tipo de objeto y su constelación o grupo principal. Por ejemplo:
 - **Beta Ursae Minoris** — Estrella • Osa Menor
@@ -87,6 +132,7 @@ Bloques de información rápida muestran parámetros clave de observación:
 - <Translate android="true" ids="shared_string_azimuth"/> – la dirección del objeto respecto al norte (0°–360°).
 - <Translate android="true" ids="altitude"/> – la altura del objeto por encima del horizonte.
 - <Translate android="true" ids="shared_string_magnitude"/> – el brillo del objeto tal como se ve desde la Tierra. 
+- Distancia (*solo iOS*) – la distancia desde la Tierra hasta el objeto celeste seleccionado.
 
 Estos valores se actualizan dinámicamente según la hora seleccionada y la ubicación del usuario.
 
@@ -106,7 +152,21 @@ Debajo de la información del objeto, el Menú contextual proporciona varias acc
 
 ### Gráfico de visibilidad {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La pestaña **Visibilidad** muestra cómo se mueve el objeto seleccionado a través del cielo durante un período de 24 horas.
 
@@ -130,7 +190,7 @@ El color de la trayectoria del objeto también refleja su altitud:
 - rojo – cerca del horizonte
 - púrpura – por debajo del horizonte (no visible)
 
-Un indicador móvil le permite explorar la posición del objeto en diferentes momentos. Cuando se mueve el indicador, se actualizan la hora actual, la altitud y los valores de azimut. El valor de azimut también incluye la dirección de la brújula correspondiente (por ejemplo, 354° Az (N)).
+Un indicador móvil le permite explorar la posición del objeto en diferentes momentos. Cuando se mueve el indicador, se actualizan la hora actual, la altitud y los valores de azimut. El valor de azimut también incluye la dirección de la brújosa correspondiente (por ejemplo, 354° Az (N)).
 
 Debajo del gráfico, se muestran eventos importantes de observación: 
 - **<Translate android="true" ids="astro_rise"/>** – cuando el objeto sale por encima del horizonte.
@@ -141,7 +201,21 @@ El gráfico se abre con el indicador posicionado en la hora actual del sistema. 
 
 ### Horario de observación {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La pestaña **Horario** muestra la visibilidad del objeto seleccionado para la semana actual. Cada fila representa un día e incluye:  
 - el día de la semana
@@ -177,17 +251,35 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## Búsqueda de estrellas AR (modo cámara) {#ar-star-finding}
 
-**Ir a:** *Plugin habilitado → <Translate android="true" ids="shared_string_menu,star_map"/> → Botón de cámara* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Ir a:** *Plugin habilitado → <Translate android="true" ids="shared_string_menu,star_map"/> → modo AR* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Ir a:** *Plugin habilitado → <Translate ios="true" ids="shared_string_menu,star_map"/> → modo AR*
+
+</TabItem>
+
+</Tabs>
 
 La capa de **Astronomía** funciona con la **cámara del dispositivo** para habilitar la **observación de estrellas en Realidad Aumentada (AR)**. Apunte la cámara de su teléfono al cielo nocturno real y vea estrellas, planetas, constelaciones, Sol/Luna superpuestos en tiempo real.
 
 **Cómo funciona la búsqueda de estrellas AR:**
-- La vista de **cámara en vivo** muestra el cielo real con superposiciones astronómicas transparentes alineadas al horizonte/brújula.
+- La vista de **cámara en vivo** muestra el cielo real con superposiciones astronómicas transparentes alineadas al horizonte/brújosa.
 - **Mueva la cámara** para escanear el cielo — los objetos se resaltan cuando aparecen en su campo de visión.
 - **Toque los objetos resaltados** para ver azimut, altitud, magnitud, horas de salida/puesta y enlace a Wikipedia.
-- Se requiere **calibración de brújula** para una alineación precisa (mueva el teléfono en forma de 8 si es necesario).
+- Se requiere **calibración de brújosa** para una alineación precisa (mueva el teléfono en forma de 8 si es necesario).
 
-El modo AR utiliza sensores del dispositivo (giroscopio, acelerómetro y brújula) para alinear objetos celestes con el cielo real.
+El modo AR utiliza sensores del dispositivo (giroscopio, acelerómetro y brújosa) para alinear objetos celestes con el cielo real.
 
 **Perfecto para:**
 - Identificar estrellas/planetas tenues invisibles a simple vista.
@@ -197,7 +289,21 @@ El modo AR utiliza sensores del dispositivo (giroscopio, acelerómetro y brújul
 
 ## Configurar vista {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** le permite controlar cómo se muestra el Mapa estelar habilitando o deshabilitando modos visuales, objetos y ayudas de renderizado.
 
@@ -205,7 +311,21 @@ Para abrir Configurar vista, toque el botón Configurar vista en la esquina infe
 
 ### Modos y acciones {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Esta sección controla los modos principales de visualización del Mapa estelar.
 
@@ -215,7 +335,21 @@ Esta sección controla los modos principales de visualización del Mapa estelar.
 
 ### Objetos visibles {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Esta sección le permite elegir qué tipos de objetos celestes se muestran en el Mapa estelar.
 
@@ -274,9 +408,23 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Búsqueda {#search}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
 
-La función de **Búsqueda** en el plugin de Astronomía le permite encontrar objetos celestes, explorar categorías del cielo y acceder a datos de observación. Para abrir Búsqueda, toque el botón de Búsqueda en el Mapa estelar. Esto abre la pantalla de Búsqueda, que proporciona varias secciones para descubrir y organizar objetos celestes. La pantalla de Búsqueda incluye las siguientes secciones:
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+La función de **Búsqueda** (**Explorar** en iOS) en el plugin de Astronomía le permite encontrar objetos celestes, explorar categorías del cielo y acceder a datos de observación. Para abrir Búsqueda, toque el botón de Búsqueda en el Mapa estelar. Esto abre la pantalla de Búsqueda, que proporciona varias secciones para descubrir y organizar objetos celestes. La pantalla de Búsqueda incluye las siguientes secciones:
 
 **1. Observar ahora**
 
@@ -288,7 +436,21 @@ La sección Categorías le permite explorar objetos por tipo: Sistema solar, Con
 
 ### Ordenación y filtros {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Toque la barra de búsqueda para abrir la interfaz completa de búsqueda. Puede refinar los resultados usando opciones de ordenación y filtrado.
 
@@ -314,7 +476,21 @@ Puede filtrar resultados por tipo de objeto. Seleccionar categorías específica
 
 ### Mis datos {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sección Mis datos contiene objetos con los que el usuario ha interactuado. Esta sección incluye tres listas:
 
@@ -326,7 +502,21 @@ Seleccionar un elemento abre el menú contextual del objeto.
 
 ### Catálogos {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sección Catálogos proporciona acceso a los catálogos astronómicos disponibles en el plugin de Astronomía.
 

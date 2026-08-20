@@ -18,9 +18,9 @@ import {
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
+import { POINT_MARKER_Z_INDEX_OFFSET, TURN_DOT_Z_INDEX_OFFSET } from '../util/ZIndexes';
 
 const DRAG_DEBOUNCE_MS = 10;
-const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
 function setMarkerIconHtml(marker, html) {
     const el = marker?.getElement();
@@ -510,7 +510,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={startPointRef}
                     draggable={true}
                     eventHandlers={startEventHandlers}
-                    zIndexOffset={1000}
+                    zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
                 />
             )}
             {viaPoints.map((it, ind) =>
@@ -523,7 +523,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                         icon={viaPointIcons[ind]}
                         draggable={true}
                         eventHandlers={intermediateEventHandlers}
-                        zIndexOffset={1000}
+                        zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
                     />
                 ) : null
             )}
@@ -535,7 +535,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={finishPointRef}
                     draggable={true}
                     eventHandlers={endEventHandlers}
-                    zIndexOffset={1000}
+                    zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
                 />
             )}
             {mtx.pinPoint && (

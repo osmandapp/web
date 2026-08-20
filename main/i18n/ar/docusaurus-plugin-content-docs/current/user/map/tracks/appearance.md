@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title: مظهر المسار
 ---
@@ -73,9 +73,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### محرر لوحات الألوان {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![محرر لوحات الألوان](@site/static/img/map/gradient_palettes_1.png) ![محرر لوحات الألوان](@site/static/img/map/gradient_palettes_2.png) 
+<TabItem value="android" label="Android"> 
+
+![محرر لوحات الألوان](@site/static/img/map/gradient_palettes_1.png) ![محرر لوحات الألوان ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![محرر لوحات الألوان](@site/static/img/map/gradient_palettes_1_ios.png) ![محرر لوحات الألوان ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 عند تلوين مسار حسب السرعة أو الارتفاع أو الميل، يمكنك استخدام لوحاتك الخاصة لتحديد كيفية تطبيق الألوان على طول المسار.
 
@@ -86,7 +98,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - الحذف. يتطلب حذف لوحة تأكيدًا.
 
 انقر على زر + في شاشة جميع الألوان. هناك نوعان من اللوحات المتاحة:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — تتوسع الألوان تلقائيًا بناءً على القيم الدنيا والقصوى للمسار.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — تتوسع الألوان تلقائيًا بناءً على القيم الدنيا والمتوسطة والقصوى للمسار.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — يتم تعيين الألوان إلى أرقام مطلقة محددة (على سبيل المثال، ٥٠ كم/ساعة). يمكن تعديل القيم يدويًا. تتبع الوحدات [إعدادات النظام](../../personal/profiles.md#units--formats). لا يعاد توسيع التدرج تلقائيًا عند تطبيقه على مسارات مختلفة.
 
 :::info Pro feature
@@ -247,7 +259,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![تغيير المظهر](@site/static/img/map/tracks_change_appear_3_ios.png)  ![تغيير المظهر](@site/static/img/map/tracks_change_appear_2_ios.png)
+![تغيير المظهر](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![تغيير المظهر](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -257,7 +269,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 عدّل مظهر مسارات متعددة في *أماكني ← المسارات*:
 
-- **تغيير المظهر الافتراضي** (أندرويد فقط) - يسمح بتكوين الإعدادات الافتراضية التي سيتم تطبيقها عند إضافة مسار إلى [المجلد](../../personal/tracks/manage-tracks.md#track-folder).
+- **تغيير المظهر الافتراضي** - يسمح بتكوين الإعدادات الافتراضية التي سيتم تطبيقها عند إضافة مسار إلى [المجلد](../../personal/tracks/manage-tracks.md#track-folder).
 - **إعادة التعيين إلى الأصل** - يعيد إعدادات المسار الفردية.
 
 - [وضع التحديد](../../personal/tracks/manage-tracks.md#selection-mode) - يغير مظهر مسارات محددة في المجلد المحدد أو القائمة بأكملها في تبويب المسارات.
@@ -309,7 +321,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 1. **تعيين اللون الافتراضي**:  
 
-    - عند **استيراد مسار GPX كمسار واحد** (خيار ***استيراد كمسار واحد***)، يتم تعيين **لون GPX الافتراضي** (أحمر) للمسار بأكمله.  
+    - عند **استيراد مسار GPX كمسار واحد** (خيار ***استيراد كمسار واحد***))، يتم تعيين **لون GPX الافتراضي** (أحمر) للمسار بأكمله.  
     - في OsmAnd **4.9.10 والإصدارات الأحدث**، تم حل هذه المشكلة — يتم الآن الحفاظ على ألوان المسار الفردية عند الاستيراد.
 
 2. **عرض لون واحد للمسارات المدمجة:**  

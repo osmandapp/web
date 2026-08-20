@@ -7,9 +7,9 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
-import PoiManager, { getCategoryName } from '../../../manager/PoiManager';
+import PoiManager, { getCategoryName, TOP_INDEX_PREFIX } from '../../../manager/PoiManager';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
-import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_KEY_NAME, CATEGORY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
@@ -62,7 +62,10 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                 <Box id={'se-search-categories-box'} className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
-                        const catName = getCategoryName(category, t, getFirstSubstring);
+                        const catName =
+                            category?.startsWith(TOP_INDEX_PREFIX) && item[CATEGORY_NAME]
+                                ? item[CATEGORY_NAME]
+                                : getCategoryName(category, t, getFirstSubstring);
                         const mainCatName = getPoiParentCategory(item, t);
 
                         return (

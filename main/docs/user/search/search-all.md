@@ -71,6 +71,7 @@ Important information:
 - Search POI by name and by category with additional filters.
 - Search OSM routes by name and by category with additional filters.
 - Search by most prominent peaks and volcanoes.
+- Search by Travel guide articles (requires the corresponding Travel guides file to be downloaded).
 - Search by Favorites and Waypoints.
 - Search icons by POI subcategory names.
 - Search by tracks.
@@ -140,6 +141,8 @@ You can find the required location on the map from the list of points that appea
     - Maps to download
 
 3. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
+
+4. The search results may also include a [Travel guide article](../plan-route/travel-guides.md#travel-article). Tapping it opens the article directly, rather than showing a location on the map.
 
 :::note TIGER data limitations in address searches
 OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.

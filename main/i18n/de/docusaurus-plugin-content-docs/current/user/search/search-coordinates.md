@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title:  Koordinatensuche
 ---
@@ -115,7 +115,7 @@ Es gibt mehrere Möglichkeiten, Koordinaten für die Suche einzugeben. Um jede d
 - *Eingaberegeln*. Die Koordinaten bestehen aus einer MGRS-Zone, einem Quadrat und zwei weiteren Ziffern, die den Ost- und Nord-Versatz angeben.
 - *Am häufigsten verwendet*. Das MGRS-Format wird in der militärischen Navigation und Kommunikation weit verbreitet verwendet und kann auch für Outdoor-Enthusiasten und Wanderer nützlich sein.
 
-### Schweizer Gitter {#swiss-grid}
+### Schweizer Gitter (nur Android) {#swiss-grid}
 
 ![Koordinatensuche Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,8 +128,30 @@ Es gibt mehrere Möglichkeiten, Koordinaten für die Suche einzugeben. Um jede d
     - CH1903+ enthält Korrekturen, um Verschiebungen der Koordinaten zu berücksichtigen, die durch Veränderungen der tektonischen Bewegungen in der Schweiz verursacht werden.
 - *Am häufigsten verwendet*. Die Formate Schweizer Gitter (CH1903) und Schweizer Gitter (CH1903+) werden in der Schweiz für geodätische Messungen, Kartografie, geografische Informationssysteme sowie im Bau- und Ingenieurwesen verwendet. Diese Formate bieten ein lokales Koordinatensystem, das spezifisch für die Schweiz ist.
 
+### Maidenhead Locator System (nur Android) {#maidenhead-locator-system}
+
+![Koordinatensuche Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Dies ist ein Geocode-System, das hauptsächlich von Funkamateuren verwendet wird. Es codiert geografische Standorte in eine kurze Sequenz aus Buchstaben und Ziffern, was die Identifizierung von Positionen und den Austausch von Standortinformationen erleichtert. Ein Beispiel für Koordinaten im Maidenhead-Format ist KN29AS 19CX. Das erste Buchstabenpaar kennzeichnet ein großes Feld, gefolgt von Ziffern und weiteren Buchstabenpaaren, die die Genauigkeit der Positionsangabe erhöhen. Mehr über das Maidenhead Locator System können Sie [hier](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) lesen.  
+- *Eingaberegeln*. Die Koordinaten bestehen aus abwechselnden Paaren von Buchstaben und Ziffern. Längere Locatoren bieten eine höhere Positionsgenauigkeit.  
+- *Am häufigsten verwendet*. Das Maidenhead Locator System wird von Funkamateuren häufig für die Standortbestimmung von Stationen, die Funkkommunikation und Wettbewerbe verwendet.
 
 Für jedes Profil können Sie separat ein anderes Koordinatenformat einstellen. Gehen Sie dazu zu *Allgemeine Einstellungen → [Koordinatenformat](../personal/profiles.md#units--formats)*.
+
+
+## Koordinatenformat anpassen (nur Android) {#customize-coordinate-format}
+
+![Koordinatensuche Android](@site/static/img/search/customising_format.webp) ![Koordinatensuche Android](@site/static/img/search/searching_format.webp)
+
+Sie können die Liste der für das aktuelle Profil verfügbaren Koordinatenformate anpassen.  
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+Auf diesem Bildschirm können Sie:  
+- Auf die Schaltfläche *Bearbeiten* tippen, um das primäre Koordinatenformat festzulegen, Koordinatenformate neu anzuordnen oder zu entfernen.
+- Auf + tippen, um ein weiteres Koordinatenformat hinzuzufügen.
+- Das Menü ⋮ öffnen, um die Standardliste der Koordinatenformate wiederherzustellen oder Koordinatenformate von einem anderen Profil zu kopieren.
+
+Bei der Suche nach Koordinaten können Sie ein Koordinatenformat aus der Liste „Zuletzt verwendet“ auswählen oder auf *Anderes Format auswählen* tippen, um alle verfügbaren Koordinatensysteme zu durchsuchen. Sie können auch nach dem Namen des Koordinatensystems oder dem EPSG-Code suchen.
 
 
 <!--

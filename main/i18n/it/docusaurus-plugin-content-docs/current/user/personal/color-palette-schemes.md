@@ -1,5 +1,5 @@
 ---
-source-hash: 1bbeb6f0c1ba01e3cfc68f72f8d19e49e6c67481fe6111180cf273ab138dd078
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
 title:  Schemi di colori
 ---
@@ -180,7 +180,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-È possibile importare ed esportare tutte le palette di colori predefinite e personalizzate disponibili utilizzando lo strumento di ripristino e backup di OsmAnd.
+È possibile importare ed esportare tutte le palette di colori predefinite e personalizzate disponibili utilizzando lo strumento di ripristio e backup di OsmAnd.
 
 - Aprire il *Menu* principale, *Impostazioni*, scorrere fino alla sezione **Importa/esporta** (*Android*) o **Backup locale** (*iOS*) e selezionare l'azione richiesta.
 - Selezionare uno o più elementi dall'elenco *Colori* o l'opzione *Seleziona tutto*.

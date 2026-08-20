@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -240,7 +240,7 @@ Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse*
 - Valeur **≤ 0.1** :  
   - "0.05" est affiché comme "0".
 - Valeur **> 0.1 et < 100** :  
-  - par exemple, "50.7643" est affiché comme "50.8:1".
+  - par exemple, "50.7643" is affiché comme "50.8:1".
 - Valeur **> 100 :**  
   - "102.35" est affiché comme "102:1."
 
@@ -431,7 +431,7 @@ Le widget Règle de rayon indique la distance entre votre position et le point c
 
 Le **widget Compteur de vitesse** est un affichage graphique de la vitesse actuelle du véhicule basé sur les *données reçues du GPS*. Il vous permet de surveiller en temps réel la conformité entre votre vitesse et la limite de vitesse autorisée. La limite de vitesse autorisée est fournie par les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) pour une section de route particulière et le paramètre de [tolérance de limite de vitesse](../navigation/guidance/voice-navigation.md#speed-limit) d'OsmAnd.  
 
-Lorsque votre vitesse actuelle approche la tolérance de limite de vitesse configurée, le widget change d'apparence pour fournir un avertissement précoce. Lorsque la limite de vitesse est dépassée (en tenant compte de la tolérance), le widget passe à une indication d'« excès » plus visible. L'indication d'avertissement/excès est affichée par un changement des couleurs du widget (arrière-plan, valeur de vitesse et unités). Le changement d'apparence peut être animé pour attirer l'attention lors du franchissement du seuil de tolérance ou de limite.
+Lorsque votre vitesse actuelle approche la tolérance de limite de vitesse configurée, le widget change d'apparence pour fournir un avertissement précoce. Lorsque la limite de vitesse est dépassée (en tenant compte de la tolérance), le widget passe à une indication d'« excès » plus visible. L'indication d'avertissement/excès est affichiché par un changement des couleurs du widget (arrière-plan, valeur de vitesse et unités). Le changement d'apparence peut être animé pour attirer l'attention lors du franchissement du seuil de tolérance ou de limite.
 
 ![Compteur de vitesse](@site/static/img/widgets/speed_alert.gif)
 
@@ -659,7 +659,7 @@ Il s'agit d'un widget de l'extension Mapillary qui offre un accès rapide à l'a
 
 :::note
 Pour ajouter des widgets de notes audio/vidéo à l'écran de la carte, activez l'extension [Notes audio/vidéo](../plugins/audio-video-notes.md) d'OsmAnd.
-:::
+::;
 
 ![Widget de notes audio-vidéo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -703,7 +703,7 @@ Ce widget de l'extension OsmAnd Tracker est utilisé pour accéder rapidement à
 
 :::note
 Pour ajouter des widgets pour développeurs à l'écran de la carte, activez l'extension [Développement OsmAnd](../plugins/development.md).
-:::
+::;
 
 Les **widgets pour développeurs** fournissent des informations sur la [vitesse de rendu de la carte](../plugins/development.md#map-rendering-fps-widget) et les paramètres de position de la caméra virtuelle, y compris le [niveau de zoom](../plugins/development.md#zoom-level), la [distance](../plugins/development.md#distance-to-target) au centre de la carte, l'[élévation de la caméra](../plugins/development.md#camera-elevation) et l'[angle d'inclinaison](../plugins/development.md#camera-tilt).  
 

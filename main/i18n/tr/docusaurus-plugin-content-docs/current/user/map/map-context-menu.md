@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -77,13 +77,13 @@ Harita üzerinde herhangi bir yere **uzun dokunduğunuzda**, seçilen konum hakk
 
 <TabItem value="android" label="Android">  
 
-![Bağlam izleme menüsü Android](@site/static/img/map/context_track_menu_Android.png)
+![Bağlam izleme menüsü Android](@site/static/img/map/context_track_menu_Android.png) ![Burada ne var Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![İstatistik ekranı izleme iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![İstatistik ekranı izleme iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Burada ne var iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -138,6 +138,7 @@ Mevcut ayrıntılar şunları içerir:
 
 - [Makale Açıklaması](#article-description)
 - [Alternatif adlar](#alternative-names)
+- [İlgili](#related)
 - [Koordinatlar](#coordinates)
 - [Alanlar içinde](#polygon-information)
 - [Yakındaki İÇN'ler](#nearby-pois)
@@ -155,7 +156,9 @@ Ek olarak, panel [OpenStreetMap Detaylarını](https://wiki.openstreetmap.org/wi
 - [Çalışma saatleri](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Ücret](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Erişilebilirlik](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Genişlik](https://wiki.openstreetmap.org/wiki/Key:width) / [Yükseklik](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Genişlik](https://wiki.openstreetmap.org/wiki/Key:width) / [Yükseklik](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Bir iletişim alanı (örneğin *Web sitesi, Telefon numarası* veya *E-posta*) birden fazla değer içeriyorsa, dokunulduğunda mevcut girişlerin bir listesi görüntülenir. İlgili eylemi gerçekleştirmek için istediğiniz girişi seçin.
 
 Yukarıda listelenen alanların ötesinde, OsmAnd ayrıca OpenStreetMap'ten alınan ekstra tanımlayıcı bilgileri de gösterebilir. Bu öznitelikler, bir yerin özelliklerini daha iyi anlamanıza yardımcı olur ve yükseklik, yön, yapım yılı, yüzey veya kaplama türü, iç mekan seviyesi, ödeme seçenekleri, teslimat veya paket servis kullanılabilirliği ve daha birçok detayı içerebilir. OsmAnd bu öznitelikleri net etiketler ve mümkün olduğunda simgelerle görüntüler, böylece bilgileri okumak ve tanımak daha kolay hale gelir. Tam öznitelik kümesi, seçilen nesne için OpenStreetMap'te mevcut olan verilere bağlıdır.
 
@@ -214,6 +217,29 @@ Alternatif adların görüntülenme özellikleri:
 - Diğer kategoriler arasında *bölgeye özgü çeviri*, veya *varsayılan ayarlar* bulunur.
 
 - Belirli bir çeviri *mevcut değilse*, OsmAnd, çok dilli bölgelerde doğruluk ve tutarlılık sağlamak için varsayılan olarak **yerel** adı kullanır.
+
+
+### İlgili {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![İlgili Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![İlgili iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+**İlgili** bölümü, seçilen yerle OpenStreetMap ilişkisi aracılığıyla bağlantılı harita nesnelerini gösterir. Bu bölüm, üniversite kampüsleri ve diğer çokgen nesneler gibi desteklenen ilişki tabanlı İÇN'ler için kullanılabilir.
+
+Listedeki herhangi bir öğeye dokunarak harita bağlam menüsünü açabilirsiniz. Bu, aynı ilişkiye ait ilgili nesneler arasında hızlıca gezinmenizi sağlar.
 
 
 ### Alan İçinde {#polygon-information}
@@ -312,7 +338,7 @@ Kılavuzlar bölümü, yalnızca seçilen alan için **Seyahat (Wikivoyage)** ve
 **Not:** Kılavuzlar, genel Wikipedia açıklamalarına değil, Wikivoyage içeriğine bağlıdır.
 
 
-### Toplu Taşıma Rotaları {#public-transport-routes}
+### Topulu Taşıma Rotaları {#public-transport-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -882,7 +908,7 @@ Harita üzerinde seçilen bir noktada bir medya notu kaydeder veya çeker.
 Mevcut eylem türleri:
 
 - **<Translate android="true" ids="main_actions"/>**. Bölümde yalnızca 4 düğme bulunur, bunlardan üçü özelleştirilebilir ve Eylemler değişmeden kalır.
-- **<Translate android="true" ids="additional_actions"/>**. Bu eylemlere *Eylemler* düğmesine dokunarak erişebilirsiniz.
+- **<Translate android="true" ids="additional_actions"/>**. Bu eylemlere *Eylemler* düğmesiyle erişebilirsiniz.
 - **<Translate android="true" ids="shared_string_hidden"/>**. Eylemleri bu bölüme taşımak, çalışmalarını durdurmaz. Sadece Eylemler menüsünde görünmezler.
 
 

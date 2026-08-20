@@ -460,13 +460,11 @@ Go to: *<Translate android="true" ids="shared_string_navigation,shared_string_se
 
 ## Maps Missing or Not Synchronized {#maps-missing-or-not-synchronized}
 
-To build a route all **necessary maps** need to be downloaded and have the same release date. Please note, that in some situations missing maps message could be hidden in the route preparation menu. If you pull the navigation menu up, you will see possible reasons why your route couldn't be calculated.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -476,6 +474,10 @@ To build a route all **necessary maps** need to be downloaded and have the same 
 </TabItem>
 
 </Tabs>
+
+To build a route all **necessary maps** need to be downloaded and have the same release date. On Android, if the required maps have different release dates, OsmAnd may switch to Standard routing when the [Route calculation method](../routing/car-based-routing.md#route-parameters---car) is set to Auto.
+
+Please note, that in some situations missing maps message could be hidden in the route preparation menu. If you pull the navigation menu up, you will see possible reasons why your route couldn't be calculated.
 
 ### Required Maps {#required-maps}
 

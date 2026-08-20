@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title: Araç Metrikleri
 ---
@@ -218,7 +218,7 @@ Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tan
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 
@@ -235,7 +235,7 @@ Widget'lar, bağlı OBD-II cihazınızdan hız, motor metrikleri ve yakıt tüke
 Bazı widget'lar görüntüleme modu seçenekleri sunar:
 
 - **Anlık**. Seçilen metrik için gerçek zamanlı verileri görüntüler.
-- **Ortalama**. Yapılandırılabilir bir zaman aralığında (15 saniye ila 60 dakika) ortalama değerleri görüntüler.
+- **Ortalama**. Yapılandırılabilir bir zaman aralında (15 saniye ila 60 dakika) ortalama değerleri görüntüler.
 
 Birkaç widget, *Yakıt tüketimi* dahil, görüntülenen birimleri ve bölgesel metrik formatlarını [Profil Ayarları](https://osmand.net/docs/user/personal/profiles#units--formats) temelinde uyarlar. Litre dışındaki hacim birimleri kullanıldığında, Yakıt tüketimi değerleri Mil Galon Başına (MPG) olarak gösterilmeyi destekler. Tam MPG türü, seçilen hacim birimine bağlıdır:
 

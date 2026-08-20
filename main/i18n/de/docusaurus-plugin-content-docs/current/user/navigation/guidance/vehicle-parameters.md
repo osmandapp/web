@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
 sidebar_position: 4
 title:  Fahrzeugparameter
 ---
@@ -126,20 +126,20 @@ Beschränkungen der Fahrzeugparameter können für die Navigation und die Verkeh
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Wenn Sie den Motortyp in den Fahrzeugparametern auswählen, werden die [***CO2-Fußabdruckdaten***](../../navigation/setup/route-details.md#elevation-info) über dem Diagramm in den [Routendetails](../setup/route-details.md) angezeigt.
-Verfügbar sind sechs Kraftstoffarten: ***Benzin, Diesel, LPG, CNG, Elektro*** und ***Hybrid***.  
+Verfügbar sind sieben Kraftstoffarten: ***Benzin, Diesel, LPG, CNG, Elektro, Hybrid*** und ***Ethanol***.  
 
 **Anwendbarkeit:**
 
@@ -194,7 +194,7 @@ Die Einstellung **Tankinhalt** ist nur in der fahrzeugbasierten Navigation verf�
 Die **Standardgeschwindigkeit** ist die Standardbewegungsgeschwindigkeit für dieses Verkehrsmittel ([Standardgeschwindigkeitsbegrenzungen](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Für die Profile *Gehen*, *Reiten* und *Radfahren* in kleinen Schritten von 0,1 km/h (mph) ([Einheiten & Formate](https://osmand.net/docs/user/personal/profiles#units--formats)) und für die anderen Profile in Schritten von 1 km/h (1 mph). Sie wird verwendet:
 - Zur Schätzung der [Routenzeit](../../widgets/nav-widgets.md#time-to-intermediate), wenn die Geschwindigkeit nicht aus den Straßen bestimmt werden kann, wie bei der [GPX-Navigation](../setup/gpx-navigation.md), [Skirouten](../routing/ski-routing.md), [Bootsrouten](../routing/boat-navigation.md), [Fußgänger](../routing/pedestrian-routing.md) und anderen ähnlichen Profilen.
 - Um zu bestimmen, wann [Sprachansagen](../guidance/voice-navigation.md) aktiviert werden.
-- Zur Bestimmung der Ankunftszeit für Kartenmarkierungen durch eine Luftliniennavigation, wenn die Durchschnittsgeschwindigkeit noch nicht berechnet wurde.
+- Zur Bestimmung der Ankunftszeit für Kartenmarkierungen durch eine Luftlinienavigation, wenn die Durchschnittsgeschwindigkeit noch nicht berechnet wurde.
 
 
 

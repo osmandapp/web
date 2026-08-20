@@ -1,5 +1,5 @@
 ---
-source-hash: c9005b869395d2f070b81ed3de0adc85de4d2fdefe4be46fca20c9246a0ba371
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Favoritos
 ---
@@ -88,7 +88,7 @@ Al añadir un punto a partir de datos de OSM, la información relevante del PDI 
 
 - **Nombre** — Un nombre único dentro del grupo (*Requerido*).
 - **Dirección** y **Descripción** (*Opcional*).
-- **Grupo** — Seleccione de un [grupo de Favoritos](#manage-favorites) existente o cree uno nuevo. En Android, también puede seleccionar una subcarpeta dentro de un grupo o crear una nueva.
+- **Grupo** — Seleccione de un [grupo de Favoritos](#manage-favorites) existente o cree uno nuevo. En Android, también puede seleccionar una subcarpeta dentro de un grupo o crear una nueva. Las carpetas anidadas se muestran con su ruta completa (por ejemplo, *Viajes* / *Italia* / *Roma*).
 - **Personalización visual** — El icono, color y forma pueden coincidir con la [apariencia del grupo](#change-group-appearance) por defecto o ser personalizados individualmente.
 
 **NOTA:** Si la capa de Favoritos está desactivada en [Configurar mapa](../map/configure-map-menu), al añadir un nuevo punto favorito se activa automáticamente la capa para que el favorito recién añadido sea visible en el mapa.
@@ -269,18 +269,19 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Funciones de la carpeta de favoritos android](@site/static/img/personal/favorites_folder_functions_new_2.png)
+![Funciones de la carpeta de favoritos android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Use el ***Menú de tres puntos*** junto a cada carpeta para gestionar grupos de favoritos:
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ocultar en el mapa** — Active esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
 - **<Translate android="true" ids="pin_folder"/>** — Fije la carpeta seleccionada para mantenerla en la parte superior de la lista de favoritos para un acceso más rápido.
-- **<Translate android="true" ids="add_new_folder"/>** — Cree una nueva subcarpeta dentro de la carpeta seleccionada.
 - **<Translate android="true" ids="shared_string_rename"/>** — Use esta opción para cambiar el nombre de la carpeta seleccionada.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalice cómo aparecen los puntos favoritos de la carpeta en el mapa cambiando sus iconos, colores o etiquetas.
+- **<Translate android="true" ids="shared_string_share"/>** — Comparta los puntos favoritos de la carpeta exportándolos como un archivo *Favorites.gpx*, lo que facilita la transferencia o la copia de seguridad de sus datos.
+- **<Translate android="true" ids="shared_string_move"/>** — Mueva la carpeta seleccionada, incluidos todos los puntos favoritos y las subcarpetas anidadas, a otra carpeta. La carpeta actual y sus subcarpetas no pueden seleccionarse como destino.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Eliminar de los marcadores del mapa** — Añada todos los puntos favoritos de la carpeta a la *lista de Marcadores del mapa* o elimínelos según sea necesario para una fácil referencia.
 - **<Translate android="true" ids="add_to_a_track"/>** — Añada todos los puntos favoritos de la carpeta seleccionada a una pista. Esto abre la pantalla de selección de pistas donde puede elegir o crear una pista.
-- **<Translate android="true" ids="shared_string_share"/>** — Comparta los puntos favoritos de la carpeta exportándolos como un archivo *Favorites.gpx*, lo que facilita la transferencia o la copia de seguridad de sus datos.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Elimine permanentemente la carpeta de favoritos seleccionada y todos los puntos que contiene.
 
 </TabItem>

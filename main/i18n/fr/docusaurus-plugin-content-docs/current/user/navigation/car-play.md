@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,7 +225,7 @@ En plus des fonctionnalités de base de l'application OsmAnd dans *CarPlay* qui 
 
 Le guidage vocal pour *CarPlay* est l'une des fonctionnalités de navigation les plus utiles d'OsmAnd, fournissant des indications en temps réel et permettant au conducteur de rester concentré sur la route. Les instructions vocales indiquent clairement les virages, les directions et autres instructions de navigation, garantissant une utilisation plus sûre et plus confortable du système de navigation.  
 
-Lorsque les instructions vocales sont diffusées, OsmAnd ajuste l'audio de fond en fonction de son type. Le contenu audio parlé, tel que les podcasts et les livres audio, peut être automatiquement mis en pause pendant les instructions de navigation. La lecture de musique se poursuit avec un volume réduit. L'option *Mettre en pause l'audio parlé* vous permet de contrôler ce comportement.
+Lorsque les instructions vocales sont diffusées, OsmAnd ajuste l'audio de fond en fonction de son type. Le contenu audio parlé, tel que les podcasts et les livres audio, peut être automatiquement mis en pause pendant les instructions de navigation. La lecture de musique se poursuit avec un volume réduit. L'option *<Translate ios="true" ids="pause_spoken_audio"/>* vous permet de contrôler ce comportement.
 
 Pour configurer les instructions vocales selon le profil sélectionné, vous devez le faire avant de commencer un itinéraire dans l'application OsmAnd sur votre appareil. Pour voir les paramètres recommandés pour *CarPlay*, consultez l'article [Instructions vocales / Notifications](../navigation/guidance/voice-navigation.md).  
 

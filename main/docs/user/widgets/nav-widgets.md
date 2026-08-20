@@ -187,6 +187,7 @@ The *Route Information* widget provides real-time data about the ongoing navigat
 
 - Select a **Default View** to prioritize one of the following values: *Estimated arrival time*, *Time to go*, *Distance*.
 - In **Display Priority**, select between *Destination first (default)* or *Intermediate first* to prioritize the most relevant route information.
+- Enable or disable the **Show expand button** option to show or hide the Navigation UI expand button. This option is enabled by default.
 
 > NOTE: The widget is visible only during navigation.
 

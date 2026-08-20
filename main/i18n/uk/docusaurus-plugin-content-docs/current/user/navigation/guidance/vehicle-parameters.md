@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
 sidebar_position: 4
 title:  Параметри транспортного засобу
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -56,7 +56,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -82,33 +82,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **1.** [**Обмеження <Translate android="true" ids="routing_attr_weight_name"/>**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Параметр "Вага" доступний лише для таких типів навігації, як [*Автомобіль, Вантажівка* та *Мотоцикл*](../../navigation/routing/car-based-routing.md).  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
 **2.**  [**Обмеження <Translate android="true" ids="routing_attr_height_name"/>**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Параметр "Висота" доступний лише для таких типів навігації, як *[Автомобіль, Вантажівка, Мотоцикл](../../navigation/routing/car-based-routing.md)* та *[Човен](../../navigation/routing/boat-navigation.md)*.  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
 **3.** [**Обмеження <Translate android="true" ids="routing_attr_length_name"/>**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Параметр "Довжина" доступний лише для таких типів навігації, як [*Автомобіль, Вантажівка* та *Мотоцикл*](../../navigation/routing/car-based-routing.md).  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
 **4.** [**Обмеження <Translate android="true" ids="routing_attr_width_name"/>**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Параметр "Ширина" доступний лише для таких типів навігації, як *[Автомобіль, Вантажівка, Мотоцикл](../../navigation/routing/car-based-routing.md)* та *[Човен](../../navigation/routing/boat-navigation.md)*.  
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
 На Android цей параметр також доступний для *[профілів для велосипедів](../../navigation/routing/bicycle-based-routing.md)*, щоб допомогти уникнути вузьких велосипедних доріжок.
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Обмеження максимального навантаження на вісь**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Вкажіть максимальне навантаження на вісь вашого транспортного засобу, щоб уникнути доріг та мостів з обмеженнями ваги на вісь. Цей параметр доступний лише для таких типів навігації, як [*Вантажівка*](../../navigation/routing/car-based-routing.md).  
 
-![Налаштування навігації Android](@site/static/img/navigation/max_axle_load.png)
+![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
 
 **6.** [**Максимальна вага при повному завантаженні**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Вкажіть максимальну загальну вагу вашого транспортного засобу при повному завантаженні, щоб уникнути доріг та мостів з обмеженнями загальної ваги. Цей параметр доступний лише для таких типів навігації, як [*Вантажівка*](../../navigation/routing/car-based-routing.md).  
 
-![Налаштування навігації Android](@site/static/img/navigation/max_weight_at_full_load.png)
+![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Обмеження параметрів транспортного засобу можуть бути важливими для навігації та безпеки дорожнього руху. Деякі з цих обмежень можуть включати:  
 
@@ -126,20 +126,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Маршрут навігації Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Маршрут навігації iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Якщо ви виберете тип двигуна в параметрах транспортного засобу, [***дані про вуглецевий слід CO2***](../../navigation/setup/route-details.md#elevation-info) будуть відображатися над графіком у [Деталях маршруту](../setup/route-details.md).
-Доступні шість типів пального: ***Бензин, Дизель, ЗНГ (LPG), СПГ (CNG), Електрика,*** та ***Гібрид***.  
+Доступні сім типів пального: ***Бензин, Дизель, ЗНГ (LPG), СПГ (CNG), Електрика, Гібрид*** та ***Етанол***.  
 
 **Застосовність:**
 
@@ -152,13 +152,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -179,13 +179,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Налаштування навігації](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування навігації](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Швидкості на дорогах {#road-speeds}
 
 
-![Налаштування навігації](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 Для деяких типів навігації мінімальну та максимальну допустиму швидкість можна встановити. Якщо її встановлено, то рушій маршрутизації припускає, що транспортний засіб не буде рухатися швидше за обмеження і не буде рухатися повільніше за мінімальну швидкість. 
 Наприклад, це дозволяє створити **паливно-ефективний** маршрут, де споживання пального є оптимальним при встановленій **максимальній швидкості**, і рушій знайде коротший маршрут, уникаючи довших, але швидших доріг.

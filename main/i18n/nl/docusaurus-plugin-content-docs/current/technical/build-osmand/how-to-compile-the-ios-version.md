@@ -1,5 +1,5 @@
 ---
-source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
+source-hash: de56403a9eb7f5ddcc9fc2e939af2545f903d69f8212f945db5aba76b5f8c784
 sidebar_position: 6
 ---
 
@@ -22,7 +22,7 @@ sidebar_position: 6
   Voor OsmAnd-teamleden: stuur je AppleID-login, zodat je wordt toegevoegd aan de ontwikkelaarslijst. Wanneer je een e-mail met een uitnodiging ontvangt, activeer deze dan.
   Sluit Xcode.
 
-5. Installeer command-line tools - cmake, svn, cocoapods
+5. Installeer command-line tools: cmake en svn
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -36,13 +36,8 @@ sidebar_position: 6
 
   $ brew install svn
   $ brew install cmake # getest op 3.25.2, 3.19, 3.11
-
-  # voor intel
-  $ sudo gem install cocoapods
-
-  # voor m1
-  $ brew install cocoapods
   ```
+
 6. Download en installeer Java jdk 17
   ```
   # voor intel
@@ -83,7 +78,7 @@ org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemo
 org.gradle.parallel=true
 org.gradle.caching=true
 
-#Vrij Apr 08 18:47:31 EEST 2016
+#Fri Apr 08 18:47:31 EEST 2016
 # android.useDeprecatedNdk=true {#androidusedeprecatedndktrue}
 ```
 
@@ -93,7 +88,7 @@ org.gradle.caching=true
   $ ./prepare.sh
   ```
 
-  Fout: `Xcode niet correct ingesteld. Mogelijk moet u de licentie bevestigen...`.
+  Fout: `Xcode not set up properly. You may need to confirm the license...`.
   Oplossing: schakel XcodeCommandLineTools naar de Xcode-app, bevestig de licentie en schakel terug.
   ```
   $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
@@ -116,14 +111,14 @@ org.gradle.caching=true
   Oplossing 5: Als je een fout krijgt zoals deze: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Ga naar de map ```core/external/qtbase-ios/``` en verwijder alle mappen die beginnen met ```upstream```. En voer `$ ./prepare.sh` opnieuw uit.
 
 
-9. Open `osmand.xcworkspace` in Xcode
+9. Open `OsmAnd.xcworkspace` in Xcode. Als Xcode de Swift Package Manager-afhankelijkheden niet automatisch oplost, voer dan `File → Packages → Resolve Package Versions` uit.
 
 10. Eerste build.
   Stel het builddoel in op `OsmAnd Maps`. (Bij de afspeel-/stopknoppen). Selecteer als doel je apparaat of een van de iOS-simulatoren. Maar gebruik niet de standaard 'Any iOS Device (arm64)'. Bouw het project (afspeelknop).
 
 11. XCode-bestemmingen en Sandbox
 
- - Gebruik "Mijn Mac (ontworpen voor iPad)" voor dagelijkse ontwikkeling (beste prestaties)
+ - Gebruik "My Mac (Designed for iPad)" voor dagelijkse ontwikkeling (beste prestaties)
  - Gebruik iPhone/iPad-bestemmingen voor UI/UX-ontwikkeling (langzaam op M-processors)
 
  - MacOS kan je vragen om in te loggen met Apple ID wanneer OsmAnd actief is

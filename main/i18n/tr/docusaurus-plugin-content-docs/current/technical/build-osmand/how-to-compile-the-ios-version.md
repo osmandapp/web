@@ -1,5 +1,5 @@
 ---
-source-hash: 8cfaeb188adf8c1a24d710a5caef6a5cc4eb8a7611ebe74b7f246a1173d8bdbb
+source-hash: de56403a9eb7f5ddcc9fc2e939af2545f903d69f8212f945db5aba76b5f8c784
 sidebar_position: 6
 ---
 
@@ -22,7 +22,7 @@ sidebar_position: 6
   OsmAnd ekip üyeleri için: Apple Kimliği girişinizi gönderin, böylece geliştiriciler listesine ekleneceksiniz. Davet mesajı içeren bir e-posta aldığınızda etkinleştirin.
   Xcode'u kapatın.
 
-5. Komut satırı araçlarını yükleyin - cmake, svn, cocoapods
+5. Komut satırı araçlarını yükleyin: cmake ve svn
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -36,13 +36,8 @@ sidebar_position: 6
 
   $ brew install svn
   $ brew install cmake # 3.25.2, 3.19, 3.11 üzerinde test edildi
-
-  # intel için
-  $ sudo gem install cocoapods
-
-  # m1 için
-  $ brew install cocoapods
   ```
+
 6. Java jdk 17'yi indirin ve yükleyin
   ```
   # intel için
@@ -116,7 +111,7 @@ org.gradle.caching=true
   Çözüm 5: Eğer şöyle bir hata alırsanız: ```'ios.simulator.clang.static' için 'qtbase-ios' yapılandırılamadı, iptal ediliyor...```. ```core/external/qtbase-ios/``` klasörüne gidin ve ```upstream``` ile başlayan tüm klasörleri silin. Ve `$ ./prepare.sh` komutunu tekrar çalıştırın.
 
 
-9. Xcode'da `osmand.xcworkspace` dosyasını açın
+9. Xcode'da `osmand.xcworkspace` dosyasını açın. Xcode Swift Paket Yöneticisi bağımlılıklarını otomatik olarak çözmezse, `Dosya → Paketler → Paket Sürümlerini Çöz` komutunu çalıştırın.
 
 10. İlk derleme.
   Derleme hedefini `OsmAnd Haritalar` olarak ayarlayın. (Oynat/Durdur düğmelerinin yanında). Hedef olarak cihazınızı veya iOS simülatörlerinden birini seçin. Ancak varsayılan 'Herhangi bir iOS Cihazı (arm64)' kullanmayın. Projeyi derleyin (oynat düğmesi).

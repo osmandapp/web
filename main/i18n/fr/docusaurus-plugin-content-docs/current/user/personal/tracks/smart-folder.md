@@ -1,5 +1,5 @@
 ---
-source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
+source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -210,7 +210,7 @@ Vous pouvez également ouvrir le dossier et appuyer sur l'icône dans le *coin s
 - **<Translate ios="true" ids="shared_string_select"/>** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
-- **Organize by** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Sélectionnez *None* pour afficher toutes les traces sous forme de liste unique, correspondant à la vue par défaut du Dossier intelligent. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
+- **<Translate ios="true" ids="organize_by"/>** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Sélectionnez *None* pour afficher toutes les traces sous forme de liste unique, correspondant à la vue par défaut du Dossier intelligent. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
 
 Certains paramètres de regroupement ne sont disponibles qu'avec un abonnement OsmAnd Pro. Les paramètres gratuits incluent *Activité*, *Année de création*, et *Ville la plus proche*. Tous les autres paramètres sont marqués avec une étiquette <ProFeature/>.
 

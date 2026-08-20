@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
 sidebar_position: 4
 title:  معلمات المركبة
 ---
@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
@@ -30,9 +30,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
@@ -62,9 +62,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -126,20 +126,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![مسار الملاحة iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![مسار الملاحة iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 إذا قمت بتحديد نوع المحرك في معلمات المركبة، فسيتم عرض [***بيانات البصمة الكربونية لثاني أكسيد الكربون***](../../navigation/setup/route-details.md#elevation-info) فوق الرسم البياني في [تفاصيل المسار](../setup/route-details.md).
-تتوفر ستة أنواع من الوقود: ***بنزين، ديزل، غاز البترول المسال، غاز طبيعي مضغوط، كهربائي،*** و***هجين***.  
+تتوفر سبعة أنواع من الوقود: ***بنزين، ديزل، غاز البترول المسال، غاز طبيعي مضغوط، كهربائي، هجين*** و***إيثانول***.  
 
 **قابلية التطبيق:**
 
@@ -158,7 +158,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

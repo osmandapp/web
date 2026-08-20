@@ -1,5 +1,5 @@
 ---
-source-hash: f73eef279fd6e1edf89b0ae21f1ad4a085ed951e11e56fc824bdfb9a1adae66b
+source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
 sidebar_position: 3
 title: Carpeta Inteligente (Filtro)
 ---
@@ -83,7 +83,7 @@ Ir a: *pestaña <Translate ios="true" ids="shared_string_menu,shared_string_my_p
 - **Longitud** — Establezca un rango específico en kilómetros o millas para encontrar pistas de una longitud particular.
 - **Velocidad media** — Filtrar pistas por [velocidad media](../../widgets/info-widgets.md#average-speed).
 - **Grupo de datos del sensor.**  
-    Aplicar filtros basados en datos de sensores externos, incluyendo:
+    Aplicar filtros basados en datos de sensores externos, including:
     - Velocidad del sensor, media.
     - Velocidad del sensor, máx.
     - Frecuencia cardíaca, media.

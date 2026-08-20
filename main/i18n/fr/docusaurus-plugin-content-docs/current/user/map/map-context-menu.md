@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -27,13 +27,13 @@ Le menu contextuel de la carte fournit des informations sur l'objet sélectionn�
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel Android](@site/static/img/map/map_context_menu_short_tap_android.png)
+![Context menu Android](@site/static/img/map/map_context_menu_short_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
+![Context menu iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
 
 </TabItem>
 
@@ -56,13 +56,13 @@ Vous pouvez sélectionner différents types d'objets cartographiques, tels que d
 
 <TabItem value="android" label="Android">
 
-![Menu contextuel appui long Android](@site/static/img/map/map_context_menu_long_tap_android.png)
+![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel appui long iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
+![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
 </TabItem>
 
@@ -77,13 +77,13 @@ Lorsque vous effectuez un **appui long** n'importe où sur la carte, un **menu c
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel de trace Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Écran des statistiques de la trace iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -94,7 +94,7 @@ Appuyer sur une [trace GPX](../map/tracks/index.md) sur la carte ouvre le [menu 
 
 ### Itinéraires, pistes de ski et sentiers {#routes-and-trails}
 
-![Pistes de ski et sentiers VTT](@site/static/img/map/ski_mtb.png)  ![Pistes de ski et sentiers VTT](@site/static/img/map/ski_mtb_2.png)
+![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
 
 Vous pouvez appuyer sur des éléments de la carte tels que les **pistes de ski**, les **itinéraires de VTT (vélo tout-terrain)** et les **pistes de moto tout-terrain** pour ouvrir leur menu contextuel avec des informations détaillées. Consultez l'[article sur les itinéraires](../map/routes/index.md#actions-with-routes) pour plus d'informations.
 
@@ -114,13 +114,13 @@ Pour fermer le **menu contextuel** :
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel Android](@site/static/img/map/context_menu_2_android.png)
+![Context menu Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel iOS](@site/static/img/map/context_menu_2_ios.png)
+![Context menu iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -137,6 +137,7 @@ Les détails disponibles incluent :
 
 - [Description de l'article](#article-description)
 - [Noms alternatifs](#alternative-names)
+- [Liés](#related)
 - [Coordonnées](#coordinates)
 - [Dans les zones](#polygon-information)
 - [POI à proximité](#nearby-pois)
@@ -156,6 +157,8 @@ De plus, le panneau peut inclure des [Détails OpenStreetMap](https://wiki.opens
 - [Accessibilité](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Largeur](https://wiki.openstreetmap.org/wiki/Key:width) / [Hauteur](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+Si un champ de contact (tel que *Site web, Numéro de téléphone* ou *E-mail*) contient plusieurs valeurs, appuyer dessus affiche une liste des entrées disponibles. Sélectionnez l'entrée souhaitée pour effectuer l'action correspondante.
+
 Au-delà des champs listés ci-dessus, OsmAnd peut également afficher des informations descriptives supplémentaires provenant d'OpenStreetMap. Ces attributs vous aident à mieux comprendre les caractéristiques d'un lieu et peuvent inclure des détails tels que l'altitude, la direction, l'année de construction, le type de surface ou de revêtement, le niveau intérieur, les options de paiement, la disponibilité de la livraison ou de la prise en charge, et bien d'autres. OsmAnd affiche ces attributs avec des étiquettes claires et, lorsque c'est possible, des icônes, ce qui facilite la lecture et la reconnaissance des informations. L'ensemble exact des attributs dépend des données disponibles dans OpenStreetMap pour l'objet sélectionné.
 
 
@@ -165,7 +168,7 @@ Au-delà des champs listés ci-dessus, OsmAnd peut également afficher des infor
 
 <TabItem value="android" label="Android">  
 
-![Liste de description](@site/static/img/map/description_list_new_android.png) ![Liste de description](@site/static/img/map/description_list_dialog.png)
+![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
 Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md#wikipedia-article), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
 
@@ -175,7 +178,7 @@ Si le lieu sélectionné possède un article Wikipedia, un aperçu court est aff
 
 <TabItem value="ios" label="iOS">  
 
-![Liste de description](@site/static/img/map/description_list_new_ios.png)
+![Description list](@site/static/img/map/description_list_new_ios.png)
 
 Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
 
@@ -190,13 +193,13 @@ Cette partie contient un extrait de la description d'un [article Wikipedia](../p
 
 <TabItem value="android" label="Android">  
 
-![Noms alternatifs Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Noms alternatifs Android](@site/static/img/map/alternative_names_andr.png)
+![Alternative names Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternative names Android](@site/static/img/map/alternative_names_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Noms alternatifs iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Noms alternatifs iOS](@site/static/img/map/alternative_names_2_ios_new.png)
+![Alternative names iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternative names iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -214,6 +217,28 @@ Caractéristiques de l'affichage des noms alternatifs :
 
 - Si une traduction spécifique n'est *pas disponible*, OsmAnd utilise par défaut le nom **local** pour garantir l'exactitude et la cohérence dans les régions multilingues.
 
+### Liés {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Related Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Related iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+La section **Liés** affiche les objets cartographiques associés au lieu sélectionné via une relation OpenStreetMap. Cette section est disponible pour les POI basés sur des relations prises en charge, tels que les campus universitaires et autres objets multipolygones.
+
+Appuyez sur un élément de la liste pour ouvrir son menu contextuel. Cela vous permet de naviguer rapidement entre les objets liés appartenant à la même relation.
+
 
 ### Dans la zone {#polygon-information}
 
@@ -221,13 +246,13 @@ Caractéristiques de l'affichage des noms alternatifs :
 
 <TabItem value="android" label="Android">  
 
-![Informations sur le polygone Android](@site/static/img/map/polygon_information_andr.png)
+![Polygon Information Android](@site/static/img/map/polygon_information_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Informations sur le polygone iOS](@site/static/img/map/polygon_information_ios_new.png)
+![Polygon Information Android](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -239,7 +264,7 @@ La fonction **Dans la zone** répertorie les **zones** dans lesquelles un objet 
 
 |Format des coordonnées| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Degrés décimaux simples)</li><li>DDD.DDDDD (N/S, E/O virgule)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Grille suisse CH1903 et CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Lien Web OsmAnd](https://osmand.net/map)</li><li>[Lien Web OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordonnées](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Degrés décimaux simples)</li><li>DDD.DDDDD (N/S, E/O virgule)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Grille suisse CH1903 et CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Lien Web OsmAnd](https://osmand.net/map)</li><li>[Lien Web OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png) |
 
 Dans le menu contextuel, vous pouvez trouver les [coordonnées géographiques](../search/search-coordinates.md#coordinate-format) d'un point dans différents formats ainsi que des liens partageables OsmAnd et [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (cette dernière option n'est disponible que si le [plugin d'édition OpenStreetMap](../plugins/osm-editing.md) est activé). Si vous développez la section des coordonnées et que vous appuyez longuement sur une ligne de la liste, ses valeurs seront automatiquement copiées dans le presse-papiers (**Android**) ou l'option *Copier* deviendra disponible dans le message contextuel (**iOS**).  
 
@@ -252,13 +277,13 @@ Le lien Web OsmAnd peut être automatiquement reconnu par OsmAnd (exemple : `htt
 
 <TabItem value="android" label="Android">  
 
-![POI à proximité Android](@site/static/img/map/nearby_poi_android.png)
+![Nearby POI Android](@site/static/img/map/nearby_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![POI à proximité iOS](@site/static/img/map/nearby_poi_ios.png)
+![Nearby POI IOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
@@ -275,7 +300,7 @@ Appuyer sur *POI à proximité* ouvre une liste de points. Un appui sur l'un de 
 
 <TabItem value="android" label="Android">  
 
-![Lieux à proximité Android](@site/static/img/map/nearby_places_android.png)
+![Nearby Places Android](@site/static/img/map/nearby_places_android.png)
 
 Cette section met en avant des lieux populaires qui vous aident à découvrir des destinations et des sites d'intérêt intéressants autour de votre emplacement actuel. Utilisez *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour parcourir et rechercher tous les lieux populaires. 
 
@@ -285,7 +310,7 @@ Appuyer sur *[Lieux populaires à proximité](https://osmand.net/docs/user/map/p
 
 <TabItem value="ios" label="iOS">
 
-![Lieux à proximité iOS](@site/static/img/map/nearby_places_ios.png)
+![Nearby Places IOS](@site/static/img/map/nearby_places_ios.png)
 
 Cette section met en avant des lieux populaires qui vous aident à découvrir des destinations et des sites d'intérêt intéressants autour de votre emplacement actuel. Utilisez *<Translate android="true" ids="shared_string_show_on_map"/>* et *<Translate android="true" ids="search_more"/>* pour parcourir et rechercher tous les lieux populaires. 
 
@@ -316,13 +341,13 @@ La section Guides n'est affichée que si les données **Voyage (Wikivoyage)** so
 
 <TabItem value="android" label="Android">  
 
-![Itinéraires de transport public Android](@site/static/img/map/pt_routes_android.png)
+![Public transport Routes Android](@site/static/img/map/pt_routes_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraires de transport public iOS](@site/static/img/map/pt_routes_ios.png)
+![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png)
 
 </TabItem>
 
@@ -333,7 +358,7 @@ Affiche des informations sur les itinéraires de transport public pour l'arrêt 
 
 ### Favoris / Points de trace du groupe {#favorites--track-points-from-the-group}
 
-![Liste de favoris](@site/static/img/map/favorite_list_android.png) ![Liste de favoris complète](@site/static/img/map/favorite_list_full_android.png)
+![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
 
 Ceci est une liste de tous les points d'un même groupe pour un Favori ou un Point de cheminement. En appuyant, la liste complète des points d'un groupe se déploie ; en appuyant sur un point de la liste, la carte se déplace vers le point sélectionné.
 
@@ -342,7 +367,7 @@ Ceci est une liste de tous les points d'un même groupe pour un Favori ou un Poi
 
 ### Lien OpenStreetMap {#openstreetmap-link}
 
-![Lien OSM](@site/static/img/map/context_menu_osm_link.png) ![Lien OSM](@site/static/img/map/context_menu_osm_link_1.png)
+![OSM link](@site/static/img/map/context_menu_osm_link.png) ![OSM link](@site/static/img/map/context_menu_osm_link_1.png)
 
 Le lien OpenStreetMap fournit un lien direct vers l'objet OpenStreetMap où vous pouvez trouver des informations complètes à son sujet :  
 [nœud](https://wiki.openstreetmap.org/wiki/Node) ou [chemin](https://wiki.openstreetmap.org/wiki/Way).
@@ -354,15 +379,15 @@ Le lien OpenStreetMap fournit un lien direct vers l'objet OpenStreetMap où vous
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel Photos en ligne Android](@site/static/img/map/images_nearby_1_andr.png)
-![Menu contextuel Photos en ligne Android](@site/static/img/map/gallery_menu_andr.png)
+![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel Photos en ligne iOS](@site/static/img/map/online_photo_ios_new.png)
-![Menu contextuel Photos en ligne iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios_new.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
@@ -387,13 +412,13 @@ Pour en savoir plus, voir : [Photos en ligne](https://osmand.net/docs/user/map/p
 
 <TabItem value="android" label="Android">  
 
-![Imagerie au niveau de la rue Android](@site/static/img/map/street_level_imagery_andr.png)
+![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Imagerie au niveau de la rue iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
@@ -415,7 +440,7 @@ Vous pouvez :
 
 <InfoAndroidOnly />
 
-![Liste d'images](@site/static/img/map/image_list_android.png) ![Liste de vidéos](@site/static/img/map/video_list_android.png)
+![Image list](@site/static/img/map/image_list_android.png) ![Video list](@site/static/img/map/video_list_android.png)
 
 Les informations des [notes audio/vidéo](../plugins/audio-video-notes.md) telles que la date, les coordonnées, l'aperçu et autres sont disponibles dans le menu **Détails**. Vous pouvez ouvrir les notes dans un logiciel secondaire en appuyant sur le bouton **Lire / Afficher** dans le menu contextuel de la note.
 
@@ -426,13 +451,13 @@ Les informations des [notes audio/vidéo](../plugins/audio-video-notes.md) telle
 
 <TabItem value="android" label="Android">  
 
-![Menu Actions Android](@site/static/img/map/actions_menu_android.png) ![Menu Actions supplémentaires Android](@site/static/img/map/actions_additional_menu_android.png)
+![Actions menu Android](@site/static/img/map/actions_menu_android.png) ![Actions additional menu Android](@site/static/img/map/actions_additional_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Actions iOS](@site/static/img/map/actions_menu_ios.png)  ![Menu Actions supplémentaires iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![Actions menu iOS](@site/static/img/map/actions_menu_ios.png)  ![Actions additional menu iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
@@ -447,13 +472,13 @@ C'est un ensemble de manipulations spécifiques qui peuvent être effectuées su
 
 <TabItem value="android" label="Android">  
 
-![Action Ajouter/Modifier un favori Android](@site/static/img/map/add_favorite_android.png)
+![Add Edit favorite action Android](@site/static/img/map/add_favorite_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action Ajouter/Modifier un favori iOS](@site/static/img/map/add_favorite_ios.png)
+![Add Edit favorite action iOS](@site/static/img/map/add_favorite_ios.png)
 
 </TabItem>
 
@@ -474,12 +499,12 @@ Dans le menu contextuel, il y a des options pour **ajouter** ou **modifier** le 
 
 <TabItem value="android" label="Android">  
 
-![Action Ajouter/Modifier un marqueur Android](@site/static/img/map/add_marker_android.png) ![Action Passer le marqueur Android](@site/static/img/map/action_pass_marker_android.png)
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur Android](@site/static/img/map/action_restore_marker_android.png)
+![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)  ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
@@ -503,13 +528,13 @@ En savoir plus sur les [marqueurs ici](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-![Action de partage Android](@site/static/img/map/action_share_2_andr_new.png) 
+![Share action Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action de partage iOS](@site/static/img/map/action_share_1_ios_new.png)
+![Share action iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -542,15 +567,15 @@ Exemple : `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.8582
 
 <TabItem value="android" label="Android">  
 
-![Itinéraires Android](@site/static/img/map/action_directions_android.png)
+![Directions Android](@site/static/img/map/action_directions_android.png)
 
-![Itinéraires multiples Android](@site/static/img/map/action_multiple_directions_android.png)
+![Multiple Directions Android](@site/static/img/map/action_multiple_directions_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Itinéraires iOS](@site/static/img/map/action_directions_ios.png)
+![Directions iOS](@site/static/img/map/action_directions_ios.png)
 
 </TabItem>
 
@@ -573,13 +598,13 @@ Si vous appuyez sur **Démarrer la navigation** - le point *De* sera ignoré car
 
 <TabItem value="android" label="Android">  
 
-![Action de recherche Android](@site/static/img/map/action_search_android.png)
+![Search action Android](@site/static/img/map/action_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action de recherche iOS](@site/static/img/map/action_search_ios.png)
+![Search action iOS](@site/static/img/map/action_search_ios.png)
 
 </TabItem>
 
@@ -596,13 +621,13 @@ En savoir plus sur la fonctionnalité de [recherche](../search/index.md).
 
 <TabItem value="android" label="Android">  
 
-![Éviter la route sur la carte Android](@site/static/img/map/action_avoid_android.png) ![Ignorer la route évitée Android](@site/static/img/map/action_avoid_delete_android.png)
+![Avoid road on the map Android](@site/static/img/map/action_avoid_android.png) ![Dismiss avoided road Android](@site/static/img/map/action_avoid_delete_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Éviter la route sur la carte iOS](@site/static/img/map/avoid_route_ios_1.png) ![Ignorer la route évitée iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
+![Avoid road on the map iOS](@site/static/img/map/avoid_route_ios_1.png) ![Dismiss avoided road iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
 
 </TabItem>
 
@@ -622,17 +647,17 @@ La fonction d'évitement des routes est globale et affecte tous les *[types de c
 
 <TabItem value="android" label="Android">  
 
-![Action Changer la position Android](@site/static/img/map/action_change_position_android.png)
+![Action Change position Android](@site/static/img/map/action_change_position_android.png)
 
-![Interface de l'action Changer la position Android](@site/static/img/map/action_change_position_ui_android.png)
+![Action Change position UI Android](@site/static/img/map/action_change_position_ui_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action Changer la position iOS](@site/static/img/map/action_change_position_ios.png)
+![Action Change position iOS](@site/static/img/map/action_change_position_ios.png)
 
-![Interface de l'action Changer la position iOS](@site/static/img/map/action_change_position_ui_iOS.png)
+![Action Change position UI iOS](@site/static/img/map/action_change_position_ui_iOS.png)
 
 </TabItem>
 
@@ -643,7 +668,7 @@ Presque tous les objets créés par l'utilisateur sont déplaçables, c'est-à-d
 
 ### Planifier un itinéraire {#plan-a-route}
 
-![Action Planifier un itinéraire Android](@site/static/img/map/action_plan_route_android.png)
+![Action Plan a route Android](@site/static/img/map/action_plan_route_android.png)
 
 Vous pouvez commencer la planification d'un itinéraire à partir d'un point sélectionné via le menu contextuel de l'objet.
 
@@ -656,13 +681,13 @@ En savoir plus sur l'outil [Planifier un itinéraire](../plan-route/create-route
 
 <TabItem value="android" label="Android">  
 
-![Action Télécharger une carte en ligne Android](@site/static/img/map/action_load_online_map_and.png)
+![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action Télécharger une carte en ligne iOS](@site/static/img/map/action_download_online_map_ios.png)
+![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)
 
 </TabItem>
 
@@ -682,17 +707,17 @@ Veuillez lire les [instructions complètes](../map/raster-maps.md#download--upda
 
 <TabItem value="android" label="Android">  
 
-![Action Télécharger une carte vectorielle Android](@site/static/img/map/action_download_vector_map_android.png)
+![Action Download vector map Android](@site/static/img/map/action_download_vector_map_android.png)
 
-![Sélectionner une carte vectorielle mondiale sur Android](@site/static/img/map/download_region_map_via_worldmap.png)
+![Select vector map worldwide on Android](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action Télécharger une carte vectorielle iOS](@site/static/img/map/action_download_vector_map_ios.png)
+![Action Download vector map iOS](@site/static/img/map/action_download_vector_map_ios.png)
 
-![Sélectionner une carte vectorielle sur iOS](@site/static/img/map/download_map_ios.png)
+![Select vector map on iOS](@site/static/img/map/download_map_ios.png)
 
 </TabItem>
 
@@ -717,7 +742,7 @@ Pour ajouter/supprimer des places de parking, activez le [**plugin Position de s
 
 ![Action Parking Android](@site/static/img/map/action_parking_android.png)
 
-![Action Supprimer le parking Android](@site/static/img/map/context_menu_limited_parking.png)
+![Action Delete Parking Android](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 
@@ -725,7 +750,7 @@ Pour ajouter/supprimer des places de parking, activez le [**plugin Position de s
 
 ![Action Parking iOS](@site/static/img/map/action_parking_ios.png)
 
-![Action Supprimer le parking iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
+![Action Delete Parking iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
 
@@ -744,15 +769,15 @@ Pour ajouter/modifier des points de trace, activez le [**plugin Enregistrement d
 
 <TabItem value="android" label="Android">  
 
-![Sélectionner une trace pour ajouter un point de cheminement Android](@site/static/img/map/tracks_tab_android.png) ![Ajouter un point de cheminement de trace Android](@site/static/img/map/add_waypoint_android.png)
+![Select Track to add Waypoint Android](@site/static/img/map/tracks_tab_android.png) ![Add Track Waypoint Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action Point de cheminement iOS](@site/static/img/map/action_waypoint_ios.png)
+![Action Waypoint iOS](@site/static/img/map/action_waypoint_ios.png)
 
-![Sélectionner une trace pour ajouter un point de cheminement iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
+![Select Track to add Waypoint iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
 
 </TabItem>
 
@@ -800,7 +825,7 @@ Avec le plugin d'édition OSM, vous pouvez créer et modifier la plupart des POI
 
 :::note
 Pour ouvrir une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-editing.md) d'OsmAnd.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -808,7 +833,7 @@ Pour ouvrir une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-
 
 ![Action Note Android](@site/static/img/map/action_note_android.png)
 
-![Action Ajouter une note Android](@site/static/img/map/action_add_osm_note_ui_android.png)
+![Action Add Note Android](@site/static/img/map/action_add_osm_note_ui_android.png)
 
 </TabItem>
 
@@ -816,7 +841,7 @@ Pour ouvrir une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-
 
 ![Action Note iOS](@site/static/img/map/action_note_ios.png)
 
-![Action Ajouter une note iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+![Action Add Note iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
 
 </TabItem>
 
@@ -831,7 +856,7 @@ Vous pouvez **signaler** des erreurs de données cartographiques à un emplaceme
 Pour commenter/fermer une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-editing.md) d'OsmAnd.
 :::
 
-![Commenter une note OSM Android](@site/static/img/map/action_comment_note_android.png) ![Rouvrir une note OSM Android](@site/static/img/map/action_reopen_note_android.png)
+![Comment OSM Note Android](@site/static/img/map/action_comment_note_android.png) ![Reopen OSM Note Android](@site/static/img/map/action_reopen_note_android.png)
 
 Vous pouvez [commenter](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [résoudre](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) et rouvrir
 des notes OpenStreetMap via le menu contextuel de l'objet.
@@ -843,7 +868,7 @@ des notes OpenStreetMap via le menu contextuel de l'objet.
 Pour téléverser un POI / une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-editing.md) d'OsmAnd.
 :::
 
-![Téléverser un POI Android](@site/static/img/map/action_poi_upload_android.png) ![Téléverser une note OSM Android](@site/static/img/map/action_note_upload_android.png)
+![Upload POI Android](@site/static/img/map/action_poi_upload_android.png) ![Upload OSM Note Android](@site/static/img/map/action_note_upload_android.png)
 
 Si vous utilisez le *mode hors ligne* pour ajouter / modifier un POI ou une note OSM, vous devrez téléverser les modifications sur OpenStreetMap. Par défaut, le *mode hors ligne* est activé pour éviter les modifications accidentelles de la base de données publique. Vous pouvez téléverser ou supprimer une modification via le menu contextuel de l'objet créé.
 
@@ -856,7 +881,7 @@ Si vous utilisez le *mode hors ligne* pour ajouter / modifier un POI ou une note
 Pour enregistrer des notes audio/vidéo, activez le [**plugin Notes audio/vidéo**](../plugins/audio-video-notes.md) d'OsmAnd.
 :::
 
-![Action Audio-Vidéo Android](@site/static/img/map/action_av_note_android.png)
+![Action Audio-Video Android](@site/static/img/map/action_av_note_android.png)
 
 Enregistre ou prend une note multimédia à un point sélectionné sur la carte.
 
@@ -871,7 +896,7 @@ Enregistre ou prend une note multimédia à un point sélectionné sur la carte.
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*
 
-![Personnalisation du menu contextuel de la carte](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Personnalisation du menu contextuel de la carte](@site/static/img/map/map_context_menu_customize_3.png)
+![Map context menu Customize](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_3.png)
 
 Vous pouvez modifier l'ordre ou masquer des éléments du menu *Actions* dans le *menu contextuel de la carte*. Un total de 16 actions sont proposées.  
 

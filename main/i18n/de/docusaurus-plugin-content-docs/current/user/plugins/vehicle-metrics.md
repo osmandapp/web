@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title:  Fahrzeugmetriken
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Übersicht {#overview}
 
 :::info Pro-Funktion
-Das Fahrzeugmetriken-Plugin ist eine [**OsmAnd Pro**](../purchases/index.md) <ProFeature /> bezahlte Funktion. Fahrzeuggeschwindigkeit und Motordrehzahl sind in der kostenlosen OsmAnd-Version verfügbar.
+Das Fahrzeugmetriken-Plugin ist eine [**OsmAnd Pro**](../purchases/index.md) bezahlte Funktion <ProFeature />. Fahrzeuggeschwindigkeit und Motordrehzahl sind in der kostenlosen OsmAnd-Version verfügbar.
 :::
 
 Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten in Echtzeit über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Messwerte wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.  
@@ -119,7 +119,7 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung h
 - **Umbenennen**. Ermöglicht es Ihnen, dem Sensor zur leichteren Identifizierung einen benutzerdefinierten Namen zuzuweisen.
 - **Vergessen**. Entfernt den zuvor gekoppelten OBD-II-Sensor aus der Liste, sodass bei Bedarf eine erneute Kopplung erforderlich ist.
 
-**Wiederverbindungsverhalten:** OsmAnd versucht automatisch, sich mit dem OBD-II-Adapter neu zu verbinden, wenn die Anwendung gestartet wird, wenn die Navigation gestartet wird oder wenn Android Auto / CarPlay gestartet wird. Wenn keine Verbindung verfügbar ist, zeigen die Fahrzeugmetriken-Widgets „–“. Ein einzelner Tippen auf ein beliebiges Fahrzeugmetriken-Widget versucht, sich mit dem Sensor neu zu verbinden. Wenn der Sensor bereits verbunden ist, wechselt der Tippen den Anzeigemodus des Widgets wie gewohnt.
+**Wiederverbindungsverhalten:** OsmAnd versucht automatisch, sich mit dem OBD-II-Adapter neu zu verbinden, wenn die Anwendung gestartet wird, wenn die Navigation gestartet wird oder wenn Android Auto / Car Play gestartet wird. Wenn keine Verbindung verfügbar ist, zeigen die Fahrzeugmetriken-Widgets „–“. Ein einzelner Tippen auf ein beliebiges Fahrzeugmetriken-Widget versucht, sich mit dem Sensor neu zu verbinden. Wenn der Sensor bereits verbunden ist, wechselt der Tippen den Anzeigemodus des Widgets wie gewohnt.
 
 
 ## Metrikenliste {#metrics-list}
@@ -218,7 +218,7 @@ Diese Tags erleichtern die Identifizierung und Nutzung spezifischer Fahrzeugdate
 
 | | |
 |--|--|
-|![OBD-Einstellungen](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![OBD-Einstellungen](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![OBD-Einstellungen](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![OBD-Einstellungen](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

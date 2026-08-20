@@ -10,6 +10,7 @@ import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
 import styles from '../map.module.css';
 import { isMvtTileURL } from './MvtLayerConfig';
+import { POINT_MARKER_Z_INDEX_OFFSET } from '../util/ZIndexes';
 
 export const INTERACTIVE_LAYER = 'int';
 
@@ -259,7 +260,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
                 iconAnchor: getIconPadding(),
             });
 
-            return new L.Marker(latlng, { icon, zIndexOffset: 1000 });
+            return new L.Marker(latlng, { icon, zIndexOffset: POINT_MARKER_Z_INDEX_OFFSET });
         };
 
         const markers = [];

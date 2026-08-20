@@ -1,7 +1,7 @@
 ---
-source-hash: d679bba475771978fae14e83b2daca71b5f8e8415edd4f6c54d47006063f3bee
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
-title:  Profiles (Settings)
+title:  Profile (Einstellungen)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-OsmAnd bietet eine Vielzahl von Standardprofilen, die auf verschiedene Aktivitäten zugeschnitten sind, darunter Autofahren, Radfahren, Wandern und speziellere Aktivitäten wie Skifahren und Bootfahren. Diese Profile sind darauf ausgelegt, Ihr Navigationserlebnis entsprechend der von Ihnen ausgeübten Aktivität zu verbessern. Jedes Profil enthält konfigurierbare Optionen, mit denen Sie Einstellungen anpassen und zusätzliche Plugins integrieren können, um Ihren Vorlieben gerecht zu werden.
+OsmAnd bietet eine Vielzahl von Standardprofilen, die auf verschiedene Aktivitäten zugeschnitten sind, darunter Autofahren, Radfahren, Wandern und spezielle Aktivitäten wie Skifahren und Bootfahren. Diese Profile sind darauf ausgelegt, Ihr Navigationserlebnis entsprechend der von Ihnen ausgeübten Aktivität zu verbessern. Jedes Profil enthält konfigurierbare Optionen, mit denen Sie Einstellungen anpassen und zusätzliche Plugins integrieren können, um Ihren Vorlieben gerecht zu werden.
 
 - Bestimmte Profile, wie *Skifahren* und *Boot*, verfügen über **zusätzliche Funktionen**, die erst verfügbar werden, wenn die entsprechenden Plugins aktiviert sind.
 
@@ -227,6 +227,7 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Beispiel:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) repräsentiert eine Fläche von 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Nur Android-Version) | Beispiel: 2 215 227.87, 830 915.9 ([Schweizer Koordinatensystem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Nur Android-Version) | Beispiel: 4 215 227.87, 1 830 915.9 ([Schweizer Koordinatensystem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (Nur Android-Version) | Beispiel: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Grad 180° | Alle Winkelwerte haben Messwerte von 0° bis 180° und von 0° bis -180°.  |
 |          | Grad 360° | Alle Winkelwerte haben Messwerte von 0° bis 360°.  |
@@ -416,7 +417,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profile Erscheinungsbild](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profile Erscheinungsbild](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 

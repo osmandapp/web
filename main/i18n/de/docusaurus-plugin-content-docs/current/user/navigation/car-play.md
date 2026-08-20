@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,7 +225,7 @@ Zusätzlich zu den Grundfunktionen der OsmAnd-App in *CarPlay*, die eine bequeme
 
 Die Sprachführung für *CarPlay* ist eine der nützlichsten Navigationsfunktionen von OsmAnd. Sie gibt Anweisungen in Echtzeit und ermöglicht es dem Fahrer, sich auf die Straße zu konzentrieren. Die Sprachanweisungen geben Abbiegungen, Richtungen und andere Navigationsanweisungen klar an und gewährleisten so eine sicherere und komfortablere Nutzung des Navigationssystems.  
 
-Wenn Sprachanweisungen wiedergegeben werden, passt OsmAnd den Hintergrundton je nach Typ an. Gesprochene Inhalte wie Podcasts und Hörbücher können während Navigationsanweisungen automatisch pausiert werden. Die Musikwiedergabe wird mit reduzierter Lautstärke fortgesetzt. Mit der Option *Gesprochene Audioinhalte pausieren* können Sie dieses Verhalten steuern.
+Wenn Sprachanweisungen wiedergegeben werden, passt OsmAnd den Hintergrundton je nach Typ an. Gesprochene Inhalte wie Podcasts und Hörbücher können während Navigationsanweisungen automatisch pausiert werden. Die Musikwiedergabe wird mit reduzierter Lautstärke fortgesetzt. Mit der Option *<Translate ios="true" ids="pause_spoken_audio"/>* können Sie dieses Verhalten steuern.
 
 Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).  
 

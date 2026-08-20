@@ -111,7 +111,10 @@ export default function SearchMenu() {
         const fetchCategorySearchResults = async (searchValue) => {
             if (searchValue) {
                 if (isPoiCategoriesRoute) {
-                    const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
+                    const categoriesResult = await PoiManager.searchPoiCategories(
+                        searchValue.query,
+                        ctx.visibleBounds?.getCenter()
+                    );
                     if (categoriesResult) {
                         const validCategories = Object.values(categoriesResult).filter(
                             (item) => item[CATEGORY_KEY_NAME] !== undefined
@@ -140,6 +143,8 @@ export default function SearchMenu() {
             } else {
                 navigateToSearchResults({ query: searchValue.query });
             }
+        } else {
+            fetchCategorySearchResults(null).then();
         }
 
         function getCategoriesIcons(res) {
@@ -273,14 +278,12 @@ export default function SearchMenu() {
                                         }
                                         setSearchValue={setSearchValue}
                                     />
-                                    {(ctx.develFeatures || ctx.spatialSearch) && (
-                                        <SelectItemBoolean
-                                            title={t('search_try_spatial_search_beta')}
-                                            checked={!!ctx.spatialSearch}
-                                            onToggle={setSpatial}
-                                            boldTitle={false}
-                                        />
-                                    )}
+                                    <SelectItemBoolean
+                                        title={t('search_try_spatial_search_beta')}
+                                        checked={!!ctx.spatialSearch}
+                                        onToggle={setSpatial}
+                                        boldTitle={false}
+                                    />
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />
                                         <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>

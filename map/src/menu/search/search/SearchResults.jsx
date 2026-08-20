@@ -134,7 +134,7 @@ export default function SearchResults() {
         if (result === EMPTY_SEARCH_RESULT) {
             checkZoomError();
         }
-    }, [zoom, result]);
+    }, [zoom, result, ctx.searchResult?.tooMany]);
 
     // Calculate page title based on search params
     const pageTitle = useMemo(() => {
@@ -269,7 +269,11 @@ export default function SearchResults() {
     }, [locReady, params, ctx.forceSearch, ctx.gpxLoading, ctx.processingGroups]);
 
     function checkZoomError() {
-        setErrorZoom(zoom < MIN_SEARCH_ZOOM ? ZOOM_ERROR : null);
+        if (params.type) {
+            setErrorZoom(ctx.searchResult?.tooMany ? ZOOM_ERROR : null);
+        } else {
+            setErrorZoom(zoom < MIN_SEARCH_ZOOM ? ZOOM_ERROR : null);
+        }
     }
 
     function getLoc() {
@@ -313,6 +317,20 @@ export default function SearchResults() {
         ctx.setSearchQuery(null);
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
         navigateToSearchMenu();
+    }
+
+    function getSpatialIssueMessage() {
+        if (!useSpatialSearchResults) {
+            return null;
+        }
+        if (ctx.searchResult?.info?.timeout) {
+            return t('web:spatial_search_timeout_descr');
+        }
+        if (ctx.searchResult?.info?.busy) {
+            return t('web:spatial_search_busy_descr');
+        }
+
+        return null;
     }
 
     function resulNotPrepared() {
@@ -385,7 +403,7 @@ export default function SearchResults() {
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 defaultSearchValue={
-                    ctx.searchQuery?.query ||
+                    ctx.searchQuery?.query ??
                     (params?.type
                         ? (() => {
                               const brandInfo = parseBrandType(params.type);
@@ -396,7 +414,7 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            {!params.type && (ctx.develFeatures || ctx.spatialSearch) && (
+            {!params.type && (
                 <SelectItemBoolean
                     title={t('search_try_spatial_search_beta')}
                     checked={!!ctx.spatialSearch}
@@ -404,7 +422,7 @@ export default function SearchResults() {
                     boldTitle={false}
                 />
             )}
-            {useSpatialSearchResults && ctx.searchResult?.info && (
+            {(useSpatialSearchResults || ctx.develFeatures) && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
                         .map(([k, v]) => `${k}: ${v}`)
@@ -417,7 +435,7 @@ export default function SearchResults() {
                 !reopenSearchResult() &&
                 !staleResult &&
                 (result === EMPTY_SEARCH_RESULT ? (
-                    <EmptySearch message={errorZoom} />
+                    <EmptySearch message={errorZoom ?? getSpatialIssueMessage()} />
                 ) : (
                     <Box id={'se-search-results'} ref={listContainerRef} className={gStyles.fillBlock}>
                         <VirtualizedList

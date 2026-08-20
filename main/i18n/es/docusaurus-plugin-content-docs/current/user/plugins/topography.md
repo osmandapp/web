@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografía
 ---
@@ -41,7 +41,7 @@ El complemento Topografía proporciona acceso a los siguientes tipos de mapas:
 
 | Curvas de nivel | Sombreado de relieve | Pendiente |
 |:---|:---|:---|
-| ![Curvas_de_nivel_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Sombreado_de_relieve_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Pendientes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ El complemento Topografía proporciona acceso a los siguientes tipos de mapas:
 
 | Curvas de nivel | Sombreado de relieve | Pendiente |
 |:---|:---|:---|
-| ![Curvas_de_nivel_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Sombreados_de_relieve_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Pendientes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -99,7 +99,7 @@ Para un trabajo estable y para ahorrar recursos, puedes descargar un mapa no de 
 
 Ir a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Descarga de curvas de nivel Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Descarga de curvas de nivel Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +107,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Descarga de curvas de nivel iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Descarga de curvas de nivel iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +124,13 @@ Si el mapa que se muestra en la pantalla no está descargado, entonces en *Menú
 
 <TabItem value="android" label="Android">
 
-![Diálogo de descarga de curvas de nivel Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Diálogo de descarga de curvas de nivel iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +153,7 @@ Las curvas de nivel son una [función de pago](../purchases/index.md).
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Menú de curvas de nivel Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +161,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Curvas de nivel*
 
-![Menú de curvas de nivel iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +196,7 @@ Terreno es una [función de pago](../purchases/index.md).
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menú de terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menú de terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menú de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
@@ -223,7 +223,7 @@ El menú **Terreno** incluye la selección del [esquema de color](#default-color
 
 | Sombreado de relieve | Pendiente | Altitud |
 | ------ | ------- | ------- |
-| ![Sombreado de relieve](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Sombreado de relieve** se basa en la simulación de la iluminación de la superficie utilizando datos del terreno. Este método implica la creación de sombras y luces basadas en el ángulo de la superficie con respecto a la fuente de luz. Como resultado, ves colinas, valles y otros detalles del terreno de forma natural en el mapa.  
 
@@ -242,7 +242,7 @@ Los mapas raster de **Sombreado de relieve**, **Pendiente** y **Altitud** se cre
 
 ### Sombras de terreno (iOS) {#terrain-shadows}
 
-![Sombras de terreno iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
 
 **Sombras de terreno** proporciona sombreado dinámico en tiempo real basado en la geometría del terreno 3D. A diferencia de los mapas raster de Sombreado de relieve, el efecto de sombreado se genera directamente en el dispositivo utilizando datos del terreno y sigue automáticamente la perspectiva actual del mapa.
 
@@ -253,7 +253,7 @@ Sombras de terreno requiere Relieve 3D y lo habilita automáticamente cuando se 
 
 | Sombreado de relieve | Pendiente | Altitud |
 | ------ | ------- | ------- |
-|![Sombreado de relieve](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Pendiente](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menú](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Sombreado de relieve* utiliza tonos oscuros para mostrar pendientes, picos y tierras bajas. El Sol virtual tiene un azimut (dirección) fijo de 315 grados.
 
@@ -272,7 +272,17 @@ Sombras de terreno requiere Relieve 3D y lo habilita automáticamente cuando se 
 
 <TabItem value="android" label="Android">
 
-![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
 
 La función *Modificar esquema de color* te permite seleccionar un esquema de color:
 
@@ -291,28 +301,11 @@ Puedes:
 
 Para una personalización avanzada de paletas utilizando archivos de paleta, consulta el artículo [Esquemas de color](../personal/color-palette-schemes.md#palette-modify).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-La función *Modificar esquema de color* te permite seleccionar un esquema de color:
-
-- De una [lista predefinida](#default-color-scheme).
-- De archivos de paleta de colores que hayas creado en tu ordenador. Los archivos personalizados se pueden agregar a OsmAnd utilizando la [herramienta de importación/exportación](../personal/import-export.md).
-
-Puedes [editar estas paletas](../personal/color-palette-schemes.md#palette-modify) para personalizar la apariencia de los mapas y las rutas.
-
-</TabItem>
-
-</Tabs>
-
 ### Visibilidad {#visibility}
 
 | Visibilidad 31% | Visibilidad 74% |
 | ------ | ------- |
-| ![Visibilidad ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilidad ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
 La función *Visibilidad* se utiliza para ajustar la transparencia de las sombras para el Sombreado de relieve y los colores utilizados para representar el ángulo en el parámetro de Pendiente. Para Sombras de terreno, Visibilidad controla la intensidad del efecto de sombreado del terreno.
 
@@ -345,7 +338,7 @@ Los Niveles de zoom no están disponibles para Sombras de terreno porque esta vi
 
 ### Acciones rápidas {#quick-actions}
 
-![Acción rápida para Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 Puedes usar los botones de *Acción rápida* en la pantalla del mapa para cambiar la visibilidad de las capas de [Curvas de nivel](#contour-lines), [Terreno](#terrain) y el [esquema de color del Terreno](../../user/personal/color-palette-schemes.md#quick-actions). Dependiendo de la capa seleccionada en el menú Configurar mapa, asignar una acción de *Terreno* al botón mostrará *Sombreado de relieve*, *Pendiente* o *Altitud*.  
 
@@ -363,7 +356,7 @@ La configuración principal para *Mostrar u ocultar tipos de mapa* se encuentra 
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![Edificios 3D](@site/static/img/map/3d_buildings_4_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_3_new.png)
+![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -371,7 +364,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![Edificios 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -394,13 +387,13 @@ La configuración de edificios 3D se divide en dos grupos: **Apariencia** y **Re
 
 <TabItem value="android" label="Android">  
 
-![Edificios 3D](@site/static/img/map/3d_buildings_color.png)
+![3D Buildings](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Edificios 3D](@site/static/img/map/3d_buildings_color_ios.png)
+![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -439,6 +432,20 @@ Ambas opciones de rendimiento usan un interruptor de dos posiciones directamente
 **Nota:** Usar *Alto detalle* y *Distancia de vista lejana* mejora la apariencia visual pero puede afectar el rendimiento e aumentar el consumo de batería.
 
 
+<!--
+### Sun {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+
+- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
+- Altitude — controls the height of the sun above the horizon.
+
+Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
+
+
 ## Relieve 3D {#3d-relief}
 
 :::info Función Pro
@@ -451,7 +458,7 @@ El Relieve 3D es una función de pago de [**OsmAnd Pro**](../purchases/index.md)
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -459,7 +466,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -483,7 +490,7 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 | Capa de mapa vectorial | Capa de mapa raster |
 | ------ | ------- |
-| ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -491,7 +498,7 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 | Capa de mapa vectorial | Capa de mapa raster |
 | ------ | ------- |
-| ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![Relieve 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -505,7 +512,7 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Exageración vertical*
 
-![Exageración vertical Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -513,7 +520,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Exageración vertical*
 
-![Exageración vertical iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -526,7 +533,7 @@ La *Exageración vertical* es un coeficiente especial para el *Relieve 3D*. Pued
 
 | Sombreado de relieve | Relieve 3D |
 |--------|---------|
-| ![Capas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Capas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Sombreado de relieve** es un tipo de mapa que muestra el terreno usando sombras, creando una representación visual de la pendiente y la forma de la superficie terrestre.  
 **Relieve 3D** es una función que añade efectos tridimensionales al mapa.  
@@ -542,13 +549,13 @@ Cuando **Sombreado de relieve** está **activado**, una imagen con sombras de re
 
 <TabItem value="android" label="Android">
 
-![Curvas de nivel combinadas con Sombreado de relieve](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Curvas de nivel combinadas con Pendiente](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Curvas de nivel combinadas con Sombreado de relieve en iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Curvas de nivel combinadas con Pendiente en iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 

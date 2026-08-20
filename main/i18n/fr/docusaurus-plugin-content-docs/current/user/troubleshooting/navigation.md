@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title:  Navigation
 ---
@@ -81,7 +81,7 @@ Pour identifier les problèmes d'itinéraires incorrects ou sous-optimaux, veuil
 - Si vous utilisez des cartes hors ligne, indiquez-nous le nom exact du fichier de carte où le problème de routage se produit, ainsi que sa date d'édition.
 - Indiquez si vous avez utilisé le routage hors ligne intégré d'OsmAnd, ou un fournisseur de routage en ligne comme YOURS, OpenRouteService ou OSRM.
 - Quel profil de routage est choisi dans l'application OsmAnd (voiture, vélo ou piéton) ?
-- Veuillez spécifier aussi précisément que possible les points de départ et d'arrivée de votre itinéraire. Si possible, indiquez le nom de la ville et de la rue pour chacun. Un [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) de openstreetmap.org peut également être utile.
+- Veuillez spécifier aussi précisément que possible les points de départ et d'arrivée de votre itinéraire. Si possible, indiquez le nom de la ville et de la rue pour chacun. Un [permalink](https://wiki.openstreetmap.org/wiki/Permalink) de openstreetmap.org peut également être utile.
 - Indiquez-nous l'itinéraire attendu et comment OsmAnd route.
 
 ## Informations routières {#road-information}
@@ -122,15 +122,16 @@ Les problèmes avec la **synthèse vocale (TTS)** sont généralement liés aux 
 
 1. Assurez-vous qu'un moteur TTS est installé.
 
-    - Ouvrez *Paramètres de l'appareil → Langue et saisie → Options de synthèse vocale*.
+    - Ouvrez *Paramètres de l'appareil → Accessibilité → Sortie synthèse vocale*. Pour plus d'informations, consultez le [guide officiel Google](https://support.google.com/accessibility/android/answer/6006983).
     - Vérifiez si un **moteur TTS** est installé (par exemple, Google TTS, Samsung TTS, Pico).
-    - Si aucun moteur n'est installé, sélectionnez *“Installer plus…”* et téléchargez-en un compatible.
+    - Si aucun moteur n'est installé, installez-en un depuis le Google Play Store ou les services du fabricant de votre appareil.
+    - Choisissez votre moteur TTS préféré et assurez-vous qu'il est activé.
     - [Liste des moteurs TTS et des langues pris en charge.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Vérifiez les paramètres de langue du TTS.
 
-    - Sélectionnez la langue que vous souhaitez utiliser dans *Paramètres Android → Options de synthèse vocale*.
-    - Appuyez sur *“Écouter un exemple”* pour tester si le moteur TTS fonctionne.
+    - Sélectionnez la langue que vous souhaitez utiliser dans *Paramètres Android → Sortie synthèse vocale*.
+    - Appuyez sur *Lire* (ou *Écouter un exemple*, selon votre appareil) pour tester si le moteur TTS fonctionne.
     - Si vous n'entendez rien, mettez à jour ou réinstallez le moteur TTS.
 
 3. Ajustez les paramètres de guidage vocal d'OsmAnd.

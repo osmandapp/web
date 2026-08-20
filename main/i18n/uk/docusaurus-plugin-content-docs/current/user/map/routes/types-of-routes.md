@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title: Типи маршрутів
 ---
@@ -32,17 +32,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Маршрути на карті - велосипедні мережеві вузли](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Більше інформації можна знайти у статті [Легенда карти](../../map-legend/index.md).
+Більше інформації можна знайти у статті [Легенда карти](../../map-legend/osmand.md#cycling).
 
 
-## Велосипедні стежки {#mountain-bike}
+## Велосипедні стежки MTB {#mountain-bike}
 
 Маршрути MTB мають специфічне відображення в [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) і можуть бути вибрані окремо від велосипедних маршрутів.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Показує стежки відповідно до шкали MTB. Більше інформації у статті [Легенда карти](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Показує стежки відповідно до шкали MTB. Більше інформації у статті [Легенда карти](../../map-legend/osmand.md#mtb).  
 ![Маршрути на карті - стежки MTB](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Показує стежки MTB відповідно до International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Більше інформації у статті [Легенда карти](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Показує стежки MTB відповідно до International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Більше інформації у статті [Легенда карти](../../map-legend/osmand.md#mtb).  
 ![Маршрути на карті - стежки MTB](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Пішохідні / Прогулянкові {#hiking--walking}
@@ -63,7 +63,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Маршрути на карті - Стежки для мотокросу](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-Функція **Стежки для мотокросу** дозволяє відображати на карті маршрути, специфічні для мотокросу, на основі тегу `dirtbike:scale`. Ця шкала виділяє стежки, придатні для мотокросу, з кольоровим накладенням, що показує рівні складності ([Легенда карта](../../map-legend/osmand.md#routes)).  
+Функція **Стежки для мотокросу** дозволяє відображати на карті маршрути, специфічні для мотокросу, на основі тегу `dirtbike:scale`. Ця шкала виділяє стежки, придатні для мотокросу, з кольоровим накладенням, що показує рівні складності ([Легенда карти](../../map-legend/osmand.md#dirtbike-scale)).  
 
 Ви можете активувати цю функцію в *Меню → Налаштувати карту → Маршрути → Маршрути для мотокросу*. Система функціонує подібно до шкали MTB, пропонуючи візуальне представлення маршрутів, адаптованих для мотокросу — більше про тег [`dirtbike` можна знайти тут](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
@@ -159,5 +159,5 @@ OsmAnd підтримує *зони для скелелазіння* (`climbing=
 ## Пов’язані статті {#related-articles}
 
 - [Налаштувати карту](../../map/configure-map-menu.md)
-- [Легенда карта](../../map-legend/osmand.md)
+- [Легенда карти](../../map-legend/osmand.md)
 - [Маршрути](./index.md)

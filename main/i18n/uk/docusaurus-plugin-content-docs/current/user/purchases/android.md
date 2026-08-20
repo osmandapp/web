@@ -1,5 +1,5 @@
 ---
-source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
+source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -77,11 +77,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 У списку є інформація про ціни продуктів OsmAnd для регіону США та Європи. Для інших регіонів ціни еквівалентні в місцевих валютах.
 
 
-<!--
+:::danger 🏖️ Літній розпродаж
 
-:::danger 🌱 Spring Sale
-
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Поспішайте! Ця пропозиція доступна лише до* **17 червня (23:00 CET)**.
 
 :::
 
@@ -94,8 +92,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -104,7 +102,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
-
+-->
 
 ### Безкоштовні та платні функції {#free-and-paid-features}
 

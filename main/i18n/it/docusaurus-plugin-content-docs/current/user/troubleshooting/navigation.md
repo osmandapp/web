@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title:  Navigazione
 ---
@@ -122,15 +122,16 @@ I problemi con la **Text-to-Speech (TTS)** sono tipicamente legati alle **impost
 
 1. Assicurarsi che un motore TTS sia installato.
 
-    - Aprire *Impostazioni dispositivo → Lingua e inserimento → Opzioni Sintesi vocale*.
+    - Aprire *Impostazioni dispositivo → Accessibilità → Sintesi vocale*. Per ulteriori informazioni, consultare la [guida ufficiale di Google](https://support.google.com/accessibility/android/answer/6006983).
     - Verificare se è installato un **motore TTS** (ad es. Google TTS, Samsung TTS, Pico).
-    - Se non è installato alcun motore, selezionare *“Installa altri…”* e scaricarne uno compatibile.
+    - Se non è installato alcun motore, installarne uno dal Google Play Store o dai servizi del produttore del dispositivo.
+    - Scegliere il motore TTS preferito e assicurarsi che sia abilitato.
     - [Elenco dei motori TTS e delle lingue supportate.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Verificare le impostazioni della lingua del TTS.
 
-    - Selezionare la lingua che si desidera utilizzare in *Impostazioni Android → Opzioni Sintesi vocale*.
-    - Toccare *“Ascolta un esempio”* per verificare se il motore TTS funziona.
+    - Selezionare la lingua che si desidera utilizzare in *Impostazioni Android → Sintesi vocale*.
+    - Toccare *Riproduci* (o *Ascolta un esempio*, a seconda del dispositivo) per verificare se il motore TTS funziona.
     - Se non si sente nulla, aggiornare o reinstallare il motore TTS.
 
 3. Regolare le impostazioni della navigazione vocale di OsmAnd.

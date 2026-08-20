@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title:  Navigation
 ---
@@ -122,15 +122,16 @@ Sesli Komutları ayarlama ve düzenleme hakkında ayrıntılı talimatlar için 
 
 1. Bir TTS motorunun yüklü olduğundan emin olun.
 
-    - *Cihaz Ayarları → Dil ve Giriş → Metin Okuma Seçenekleri*'ni açın.
+    - Cihaz *Ayarlar → Erişilebilirlik → Metin Okuma Çıkışı*'nı açın. Daha fazla bilgi için resmi [Google kılavuzuna](https://support.google.com/accessibility/android/answer/6006983) bakın.
     - Bir **TTS motorunun** yüklü olup olmadığını kontrol edin (örn. Google TTS, Samsung TTS, Pico).
-    - Hiçbir motor yüklü değilse, *“Daha fazla yükle…”* seçeneğini seçin ve uyumlu bir tane indirin.
+    - Hiçbir TTS motoru yoksa, Google Play Store'dan veya cihaz üreticinizin hizmetlerinden bir tane yükleyin.
+    - Tercih ettiğiniz TTS motorunu seçin ve etkin olduğundan emin olun.
     - [Desteklenen TTS motorları ve dillerinin listesi.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. TTS dil ayarlarını doğrulayın.
 
-    - *Android Ayarları → Metin Okuma Seçenekleri*'nde kullanmak istediğiniz dili seçin.
-    - TTS motorunun çalışıp çalışmadığını test etmek için *“Bir örnek dinle”*'ye dokunun.
+    - *Android Ayarları → Metin Okuma Çıkışı*'nda kullanmak istediğiniz dili seçin.
+    - TTS motorunun çalışıp çalışmadığını test etmek için *Oynat* (veya cihazınıza bağlı olarak *Bir örnek dinle*) öğesine dokunun.
     - Hiçbir şey duymuyorsanız, TTS motorunu güncelleyin veya yeniden yükleyin.
 
 3. OsmAnd sesli navigasyon ayarlarını yapın.
@@ -141,7 +142,7 @@ Sesli Komutları ayarlama ve düzenleme hakkında ayrıntılı talimatlar için 
 
 #### Ek Adımlar {#additional-steps}
 
-- *Google TTS'yi güncelleyin*. Google Play Store'u açın, **Google Metin Okuma**'yı arayın ve güncelleyin.  
+- *Google TTS'yi güncelleyin*. Google Play Store'u açın, **Google Metin Okuma**'yı arayın ve güncleyin.  
 - *Navigasyonu Simüle Et*. Sesli rehberliğin çalıp çalmadığını kontrol etmek için *Navigasyon düğmesi → Ayarlar → Navigasyonu Simüle Et*'e dokunun.  
 - *OsmAnd'ı yeniden yükleyin*:  
    - **Ayarları yedekleyin:** *Menü → Ayarlar → Dosyaya Aktar*.  

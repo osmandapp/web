@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -67,7 +67,7 @@ Auf einigen Android-Geräten kann die Höhe ungenau angezeigt werden. Um dieses 
 
 :::info Pro-Funktion
 Das Widget *Höhe: Kartenzentrum* ist eine kostenpflichtige [**OsmAnd Pro**](../purchases/index.md)-Funktion <ProFeature />.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -493,7 +493,7 @@ Reiseaufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids=
 
 :::note
 Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Plugin für externe Sensoren](../plugins/external-sensors.md).
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -540,7 +540,7 @@ Widgets beziehen sich auf das [Plugin für externe Sensoren](../plugins/external
 
 :::note
 Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md).
-:::
+::;
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -579,7 +579,7 @@ Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#w
 
 :::note
 Um Wetter-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Wetter-Plugin](../plugins/weather.md).
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -659,7 +659,7 @@ Dies ist ein Mapillary-Plugin-Widget, das schnellen Zugriff auf die Mapillary-An
 
 :::note
 Um Audio-/Videonotizen-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Audio-/Videonotizen-Plugin](../plugins/audio-video-notes.md).
-:::
+::;
 
 ![Audio-Videonotizen-Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -689,7 +689,7 @@ Um das Tracker-Widget zum Kartenbildschirm hinzuzufügen, aktivieren Sie das Osm
 
 Damit das Plugin und das Widget funktionieren, müssen Sie [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) von Google Play oder anderen Quellen installieren.  
 
-Dieses OsmAnd Tracker-Plugin-Widget wird verwendet, um schnell auf die OsmAnd Tracker-App zuzugreifen und Ihre Standortinformationen mit anderen Benutzern zu teilen. Die App sendet innerhalb einer bestimmten Zeit *Live-Standort*-Nachrichten an ausgewählte Chats, zeigt eine Liste von Kontakten und Gruppen an und prüft Chats auf Nachrichten mit Ihrem Standort, die dann auf einer Karte in OsmAnd angezeigt werden.  
+Dieses OsmAnd Tracker-Plugin-Widget ist verwendet, um schnell auf die OsmAnd Tracker-App zuzugreifen und Ihre Standortinformationen mit anderen Benutzern zu teilen. Die App sendet innerhalb einer bestimmten Zeit *Live-Standort*-Nachrichten an ausgewählte Chats, zeigt eine Liste von Kontakten und Gruppen an und prüft Chats auf Nachrichten mit Ihrem Standort, die dann auf einer Karte in OsmAnd angezeigt werden.  
 
 ![Tracker-Widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
@@ -703,7 +703,7 @@ Dieses OsmAnd Tracker-Plugin-Widget wird verwendet, um schnell auf die OsmAnd Tr
 
 :::note
 Um Entwickler-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [OsmAnd-Entwicklungs-Plugin](../plugins/development.md).
-:::
+::;
 
 **Entwickler-Widgets** liefern Informationen über die [Rendering-Geschwindigkeit](../plugins/development.md#map-rendering-fps-widget) der Karte und die Parameter der virtuellen Kameraposition, einschließlich [Zoomstufe](../plugins/development.md#zoom-level), [Entfernung](../plugins/development.md#distance-to-target) zum Kartenzentrum, [Kamerahöhe](../plugins/development.md#camera-elevation) und [Neigungswinkel](../plugins/development.md#camera-tilt).  
 

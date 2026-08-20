@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title: Gerenciar Trilhas
 ---
@@ -273,7 +273,7 @@ A opção de classificação selecionada é aplicada não apenas à subpasta atu
 
 Toque no *menu de três pontos* no campo da pasta para **abrir** o menu da pasta.
 
-![importar multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -422,7 +422,8 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
     *Opções adicionais:*
 
     - **Arquivos GPX de trilha única** - importe a trilha inteira diretamente.
-    - **Arquivos GPX de várias trilhas** - escolha importar o arquivo GPX único ou selecione trilhas específicas.
+    - **Arquivos GPX de várias trilhas** - escolha importar o arquivo GPX único ou selecione trilhas específicas.  
+    Quando um arquivo GPX contém várias trilhas, a tela Importar trilhas é aberta, permitindo que você revise todas as trilhas no arquivo, selecione as que deseja importar, escolha uma pasta de destino ou importe todas as trilhas como uma única trilha usando a opção *Importar como uma trilha*. Se o arquivo contiver pontos de passagem, você também poderá revisá-los e atribuí-los antes de concluir a importação.
 
 ***NOTA:*** *As trilhas adicionadas manualmente à pasta OsmAnd em seu dispositivo são importadas automaticamente sem reiniciar o aplicativo.*  
 
