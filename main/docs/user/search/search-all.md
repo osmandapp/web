@@ -90,6 +90,32 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Sorting Search Results {#sorting-search-results}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Search POI list Android](@site/static/img/search/search_sort_by.webp)
+
+OsmAnd automatically sorts search results by several criteria:
+
+1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
+
+2. **Relevance** — Objects whose names closely match the search query are usually shown higher in the results.
+
+3. **Object type** — Depending on the query, results may include different types of objects such as cities, streets, addresses, or POIs.
+
+4. **Distance** — When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
+
+5. **Importance** — Well-known landmarks or frequently referenced places may appear higher in the results when they closely match the search query.
+
+You can also manually change the sorting order of search results using the Sort by chip at the top of the search results list. Tap *Sort by* and select one of the following options:
+- **Relevance** — Sorts the search results by relevance to the search query.
+- **Nearest** — Sorts the search results by distance, with the closest results shown first.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 OsmAnd automatically sorts search results by several criteria:
 
 1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
@@ -109,6 +135,10 @@ OsmAnd automatically sorts search results by several criteria:
 - There is no manual setting to change the sorting order of search results.
 - The sorting process is **automatically managed** by OsmAnd, based on the criteria listed above.
 - In cases where search results are too broad, OsmAnd can **limit the displayed results** to those with the highest word match accuracy.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Full Text Search {#full-text-search}
@@ -148,6 +178,13 @@ You can find the required location on the map from the list of points that appea
 OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
 :::
 
+### Search Around (Android only) {#search-around}
+
+![Search Around](@site/static/img/search/search_around.webp)
+
+When the search is opened significantly away from your current location, the *Search around* chip allows you to choose the area used for the search. Tap the chip and select one of the following options:
+- **Map center** — Searches around the current center of the map. This option is selected by default.
+- **My location** — Searches around your current location. 
 
 ### Search on the Map {#search-on-the-map}
 
@@ -155,13 +192,13 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android_new.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android_new.png) ![Search POI Android](@site/static/img/search/poi_overlay_android_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png) ![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.webp)
 
 </TabItem>
 
@@ -171,7 +208,7 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 
 - Use [one of the ways](#how-to-use) to get to the Search tool.
 - Start typing the name or address into the search box.
-- A box with the *Show on map* button will appear below the search input field.
+- A box with the *Show on map* button will appear below the search input field. On Android, the *Show on map* Floating Action Button (FAB) appears at the bottom of the search results screen.
 - Tap this button to go to the map.
 - You can continue typing your query at the top of the screen.
 

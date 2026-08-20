@@ -117,7 +117,7 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 The default `routing.xml` file can be customized to adjust routing algorithms and parameters for specific conditions.
 
 | Source Name | Description | Link |
-|:---|:---|:---|
+| -- | -- | --|
 | Weather-aware Routing (Gh0stz0x) | Custom `routing.xml` modification that adjusts route calculation for rainy conditions, factoring in surface type (e.g., bare rock), incline, and official trail difficulty ratings (CAI/SAC scales), plus improved "Avoid Tunnels" logic. | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
 
 
