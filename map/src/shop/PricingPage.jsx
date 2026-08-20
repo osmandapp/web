@@ -23,9 +23,6 @@ export default function PricingPage() {
     const location = useLocation();
     const [searchParams] = useSearchParams();
 
-    const isPaywall = searchParams.get('source') === 'pro';
-    const paywallFeatureId = location.hash?.slice(1) || null;
-
     const [selectedProductType, setSelectedProductType] = useState('');
     const [purchasePriceMap, setPurchasePriceMap] = useState([]);
     const [currentPurchases, setCurrentPurchases] = useState(null);
@@ -38,6 +35,9 @@ export default function PricingPage() {
 
     const cardBoxRef = useRef(null);
     const scrollContainerRef = useRef(null);
+
+    const isPaywall = searchParams.get('source') === 'pro';
+    const paywallFeatureId = location.hash?.slice(1) || null;
 
     function scrollToTop() {
         scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });

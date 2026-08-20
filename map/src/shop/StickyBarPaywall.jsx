@@ -57,7 +57,7 @@ export default function StickyBarPaywall({
         <StickyBarContainer visible={visible}>
             <Box className={styles.stickyBarPaywallItem}>
                 <Box className={styles.stickyBarPaywallItemContent}>
-                    <Box className={styles.stickyBarIconFrame} style={{ backgroundColor: 'rgba(87, 20, 204, 0.2)' }}>
+                    <Box className={`${styles.stickyBarIconFrame} ${styles.stickyBarIconFramePro}`}>
                         <ProIcon />
                     </Box>
                     <Box className={styles.stickyBarInfo}>

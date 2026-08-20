@@ -185,6 +185,7 @@ export default function GroupHeader({
                                     id="se-add-folder"
                                     variant="contained"
                                     type="button"
+                                    disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                                     className={styles.appBarIcon}
                                     onClick={() => setOpenAddFolderDialog(true)}
                                 >
