@@ -6,14 +6,22 @@ import styles from '../trackfavmenu.module.css';
 import { useTranslation } from 'react-i18next';
 import { PRICING_URL } from '../../manager/GlobalManager';
 import { findPurchase, getDiscountPercent } from '../../shop/products/ProductManager';
+import { updatePrices } from '../../login/fs/FastSpringHelper';
+
+const TEST_MODE = false;
 
 export default function TracksProBanner() {
     const { t } = useTranslation();
 
-    const [discountPercent, setDiscountPercent] = useState(null);
+    const annualPurchase = findPurchase('annual', 'osmand-pro');
+
+    const [discountPercent, setDiscountPercent] = useState(getDiscountPercent(annualPurchase));
 
     useEffect(() => {
-        setDiscountPercent(getDiscountPercent(findPurchase('annual', 'osmand-pro')));
+        updatePrices((priceMap) => {
+            const purchaseObj = priceMap[TEST_MODE ? `test-${annualPurchase.fsName}` : annualPurchase.fsName];
+            setDiscountPercent(getDiscountPercent(purchaseObj));
+        }, TEST_MODE);
     }, []);
 
     const openPricingPage = () =>
