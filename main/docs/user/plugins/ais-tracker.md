@@ -154,7 +154,7 @@ AIS vessels transmit three types of data:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS settings](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -170,6 +170,7 @@ The *AIS vessel tracker* plugin offers various settings to personalize navigatio
 | IP address | Define IP of AIS data source (if TCP is used) | `192.168.200.16` |
 | TCP port   | Define TCP port number for AIS data | `4001` |
 | UDP port   | Define UDP port for OsmAnd AIS reception  | `10110` |
+| Receive AIS data even if OsmAnd is paused   | Keep the AIS message listener running if OsmAnd is paused or in the background. If disabled, no AIS messages are received when OsmAnd is in the background  | `Yes/No` |
 | | | |
 | **AIS Signal reception timeout** | |  |
 | Timeout for lost AIS objects     | Ships disappear if no signal received for a set time | `3 - 20 min` |
