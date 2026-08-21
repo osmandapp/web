@@ -197,10 +197,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 With the **Filter** function, you can select the necessary characteristics and as a result get a list containing only relevant objects. To use the filter:
 
 - Select the category you are interested in from the category list.
-- On the screen that opens, tap the icon that displays the filter. It is located below the input field, next to *Show on the map*.
+- On the screen that opens, tap the icon that displays the filter. It is located below the input field, next to the *Sort by* chip on Android and next to *Show on the map* on iOS.
 - In the filter, select the type of characteristics.
 
-![Search POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Search POI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of *21 default categories*. They are listed here:
 
@@ -324,8 +324,6 @@ Use of Online Search:
 - Useful in cities and on highways with good Internet coverage.
 - Online search is convenient to use if there are no maps of the region and if it is impossible to download them.
 - *Requires a constant and stable Internet connection.*  
-
-![Search POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
 To improve results, before using the Search tool, zoom in on the map to get closer to where you need to find a specific location. And while searching, you can **increase the search radius** to find places that are farther away from your location. When searching offline, if the required results are not available, OsmAnd suggests using the online search.  
 
