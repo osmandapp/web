@@ -231,13 +231,13 @@ To measure a distance or plan a trip, add points at the *Pointer* location one b
 You can also **Undo**/**Redo** every action you made in the plan route.
 :::
 
-### Adding POIs (iOS only) {#adding-pois}
+### Adding Waypoints (iOS only) {#adding-waypoints}
 
 ![Plan a route ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Plan a route ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
 
-The POI tab allows you to add and manage points of interest while planning a route.
+The POI tab allows you to add and manage waypoints while planning a route.
 
-To add a POI, select a location on the map and tap the *+ POI* button. The Waypoint screen opens, where you can enter a name, description, and address, select a group, and customize the POI icon, color, and shape. You can select an existing group or tap *Add a group* to create a new one.
+To add a waypoint, select a location on the map and tap the *+ POI* button. The Waypoint screen opens, where you can enter a name, description, and address, select a group, and customize the icon, color, and shape. You can select an existing group or tap *Add a group* to create a new one.
 
 The POI tab displays added points grouped by folders. Each group shows its name and the number of points it contains. For each group, tap the three-dot menu to access group actions:
 - **Rename** — change the group name.

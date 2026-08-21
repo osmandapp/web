@@ -147,7 +147,7 @@ OsmAnd automatically sorts search results by several criteria:
 
 <TabItem value="android" label="Android">
 
-![Favorite search Android](@site/static/img/search/favorite_search_android.png)
+![Favorite search Android](@site/static/img/search/favorite_search_android.webp)
 
 </TabItem>
 
