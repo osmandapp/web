@@ -24,42 +24,6 @@ You can:
 - Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
 - Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
 - Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple **pages** within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
 - Create multiple pages within side panels, choose size of widgets.
 - Choose row height and toggle widget icons.
 - On Android, customize [widget panel appearance](#widget-panel-appearance).
@@ -86,7 +50,6 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 </TabItem>
 
 </Tabs>
--->
 
 
 ## Widget Panels {#widget-panels}
@@ -278,8 +241,6 @@ Each panel supports different layout behaviors:
 
 </Tabs>
 
-
-
 The **Row mode** feature allows you to add as many rows as needed to the top and bottom panels. You can display multiple widgets per row, enhancing the amount of visible information.
 
 ***How to configure rows:***
@@ -398,7 +359,6 @@ These settings apply only to the selected widget.
     - Switch to the Off position, in the *Show icon* field.
 
 
-<!--
 ## Widget Panel Appearance (Android only) {#widget-panel-appearance}
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
@@ -429,7 +389,6 @@ Custom widget colors is a [paid feature](../purchases/index.md).
     - Select Copy from.
     - Choose one of the following options: *Another profile* or *One of the other panels*.
 
--->
 
 ## Panels Customization {#panels-customization}
 
