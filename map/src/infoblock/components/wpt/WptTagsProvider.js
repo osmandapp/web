@@ -181,6 +181,7 @@ export function getIcon(svgData, size, color) {
 async function getWptTags(obj, type, ctx) {
     let tags;
     let res = [];
+    let rawTags = {};
     let typeTag = null;
     let subtypeTag = null;
     let id = null;
@@ -219,24 +220,21 @@ async function getWptTags(obj, type, ctx) {
             }
         }
 
-        const poiNameTags = {};
-        const mainTags = {};
-        for (const [key, value] of Object.entries(tags)) {
-            if (key.startsWith(POI_NAME) && value) {
-                poiNameTags[key] = value;
-            } else if (key.includes(WIKIDATA) || key.includes(WIKIPEDIA)) {
-                const tagKey = key.includes(WIKIDATA) ? WIKIDATA : WIKIPEDIA;
-                const tagObj = await buildTagObj({ key: tagKey, value: value, lang: null, ctx, subtypeTag });
-                if (tagObj) {
-                    res.push(tagObj);
-                }
-            } else {
-                mainTags[key] = value;
+        // poiNameTags: localized web_poi_name* keys (POI name block);
+        // wikiTags: wikidata/wikipedia, bypass the server visibility filter;
+        // mainTags: everything else, filtered from web service keys.
+        const { poiNameTags, wikiTags, mainTags } = splitTags(tags);
+        rawTags = buildRawTags(wikiTags, mainTags);
+
+        for (const [key, value] of Object.entries(wikiTags)) {
+            const tagKey = key.includes(WIKIDATA) ? WIKIDATA : WIKIPEDIA;
+            const tagObj = await buildTagObj({ key: tagKey, value: value, lang: null, ctx, subtypeTag });
+            if (tagObj) {
+                res.push(tagObj);
             }
         }
 
-        tags = filterWebKeys(mainTags);
-        const tagList = await fetchVisibleTags(tags);
+        const tagList = await fetchVisibleTags(mainTags);
 
         for (const entry of tagList) {
             let tagObj = await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag });
@@ -254,7 +252,7 @@ async function getWptTags(obj, type, ctx) {
         }
     }
 
-    return { res, id, type: typeTag, subtype: subtypeTag };
+    return { res, rawTags, id, type: typeTag, subtype: subtypeTag };
 }
 
 async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
@@ -431,6 +429,32 @@ async function fetchVisibleTags(tags) {
     });
 
     return Array.isArray(response?.data) ? response.data : Object.entries(tags).map(([key, value]) => ({ key, value }));
+}
+
+function splitTags(tags) {
+    const poiNameTags = {};
+    const wikiTags = {};
+    const mainTags = {};
+    for (const [key, value] of Object.entries(tags)) {
+        if (key.startsWith(POI_NAME) && value) {
+            poiNameTags[key] = value;
+        } else if (key.includes(WIKIDATA) || key.includes(WIKIPEDIA)) {
+            wikiTags[key] = value;
+        } else {
+            mainTags[key] = value;
+        }
+    }
+    return { poiNameTags, wikiTags, mainTags: filterWebKeys(mainTags) };
+}
+
+function buildRawTags(...tagMaps) {
+    const rawTags = {};
+    for (const tags of tagMaps) {
+        for (const [key, value] of Object.entries(tags)) {
+            rawTags[key.replace(OSM_PREFIX, '')] = value;
+        }
+    }
+    return rawTags;
 }
 
 function filterWebKeys(tags) {
