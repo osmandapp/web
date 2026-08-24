@@ -363,11 +363,13 @@ If there is *no elevation information* on the route, you can add it in the follo
 
 ### Calculate Missing Elevation {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Pro feature
 [Calculate elevation offline](../../plan-route/create-route.md#get-elevation-data) is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [This feature](../../plan-route/create-route.md#get-elevation-data) allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#download-maps). *Terrain maps (3D) should be previously downloaded*.
 
@@ -376,11 +378,27 @@ If there is *no elevation information* on the route, you can add it in the follo
 
     ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. If you are creating a route with the [Plan a route](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
+3. If you are creating a route with the [Plan a route](../../plan-route/create-route.md#graph--analyze) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
     - After the calculation, you will get your route's complete Altitude/Slope graph based on terrain data.  
 
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[This feature](../../plan-route/create-route.md#get-elevation-data) allows you to calculate missing elevation data for a [planned route](../../plan-route/create-route.md#create-new-route) or an [existing GPX track](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+If you create a route using the Straight line method and elevation data is unavailable, tap *Get elevation data* in the Analyze tab and select *Use Terrain maps*. Previously downloaded [Terrain maps (3D)](../../plugins/topography.md#download-maps) are required. The elevation profile is then calculated based on the terrain data while the route geometry remains unchanged.
+
+For an existing GPX track, you can select *Use nearby roads*. OsmAnd attaches the track to the nearest allowed roads using a selected navigation profile and retrieves elevation data from the attached roads. This option may adjust the track geometry. If needed, you can also select *Use Terrain maps* to calculate elevation while keeping the track geometry unchanged.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Points / Waypoints {#points--waypoints}
