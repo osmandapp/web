@@ -684,14 +684,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     async function getPhotos(wpt) {
         let tags;
-        const objTags = wpt.tags?.res;
+        const rawTags = wpt.tags?.rawTags;
         const wikidataId = wpt.wikidata;
-        if (!objTags && wikidataId) {
+        if (!rawTags && wikidataId) {
             tags = {
                 wikidata: wikidataId,
             };
-        } else {
-            tags = Object.fromEntries(wpt.tags.res.map(({ key, value }) => [key, String(value)]));
+        } else if (rawTags) {
+            tags = Object.fromEntries(Object.entries(rawTags).map(([key, value]) => [key, String(value)]));
             if (!tags[WIKIDATA] && wikidataId) {
                 tags[WIKIDATA] = wikidataId;
             }
