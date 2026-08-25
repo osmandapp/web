@@ -247,19 +247,44 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 <InfoAndroidOnly/>
 
-![Explore search](@site/static/img/search/explore_search_android.png)
+![Explore search](@site/static/img/search/explore_search_android.webp)
 
-The **Explore** tab in the Search tool helps you quickly discover places near your current location and access recently opened items. It contains two main sections:  
-- Popular places nearby – a scrollable list of well-known landmarks and attractions near your location. Each item may include the name of the place, its category, distance and direction, and a preview image if available. Tap *Show all* to open the full list or *Show on map* to display these places on the map.
-- Recently visited – a list of places, tracks, or other objects that you have recently opened. This allows you to quickly return to previously viewed locations.
+The **Explore** tab in the Search tool helps you quickly discover places near your current location and access recently opened items. It contains two main sections: [Popular places nearby](#popular-places-nearby)
+ and [History](#history).
+
+### Popular Places Nearby {#popular-places-nearby}
+
+The **Popular places nearby** section displays a scrollable list of well-known landmarks and attractions near your location. Each item may include the name of the place, its category, distance and direction, and a preview image if available. Tap *Show all* to open the full list or *Show on map* to display these places on the map.
 
 For more details, see [here](../map/popular_places.md#explore-in-search).
 
-## Search History (iOS) {#search-history-ios}
+### History {#history}
+
+![History section](@site/static/img/search/history_section_android.webp) ![History section](@site/static/img/search/history_section_2_android.webp)
+
+The **History** section provides quick access to your recent history items. It displays up to 25 most recent items and can be expanded or collapsed. Tap *View all* to open the full History screen.
+
+On the full History screen, you can sort and filter your history items using the following options:
+
+1. **Sort by**:
+- Recent — displays the most recently added items first. When this option is selected, items are grouped by time, such as Today, Last week, and earlier periods.
+- Nearest — sorts items by their distance from your current location.
+- Nearest to map center — sorts items by their distance from the current center of the map. When either of the distance-based sorting options is selected, the time-based groups are not displayed.
+
+2. **Type** — filters history items by:
+- All — displays all available history items.
+- Search — displays items from your search history.
+- Navigation — displays items from your navigation history.
+
+3. **Category filters** — filter history items by category. The available category filters depend on the types of items available in your History. For example, you may see categories such as POI, Track, Location, Favorite, or Address.
+
+4. **Settings** — tap the gear icon in the upper-right corner to open the History settings, where you can enable or disable Search history, Navigation history, and Map markers history, back up history as a file, or clear all history.
+
+## Search History {#search-history}
 
 ![History search](@site/static/img/search/history_search_ios.png)
 
-You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again. More details can be found in the [Search History](./search-history.md) article.
+On iOS, you can access your Search History from the dedicated **History** tab in the Search tool. It allows you to search again for previously found places, addresses, or frequently visited places without entering the query again. For more information, see the iOS section of the [Search History](./search-history.md) article.
 
 
 ## Search POI {#search-poi}
