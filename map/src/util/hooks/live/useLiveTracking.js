@@ -91,52 +91,6 @@ export default function useLiveTracking(ctx, enabled = true) {
         }
     }, [ctx.liveTranslations, ctx.selectedLiveTranslation]);
 
-    // Broadcast my position into every translation I'm sharing into. Each translation has its own
-    // key, so the point is encrypted per key and addressed (translationId) — the server then routes
-    // each ciphertext to that one translation. Gated on `connected` so we don't POST during reconnect.
-    useEffect(() => {
-        const tids = ctx.myBroadcastTids;
-        if (!tids.length || !navigator.geolocation || !connected) {
-            return;
-        }
-
-        const watchId = navigator.geolocation.watchPosition(
-            (position) => {
-                const { latitude, longitude, altitude, speed, accuracy } = position.coords;
-                const locationData = {
-                    lat: latitude,
-                    lon: longitude,
-                    time: position.timestamp,
-                    ...(speed != null && { speed }),
-                    ...(altitude != null && { ele: altitude }),
-                    // Browser geolocation reports accuracy as a radius in metres (not DOP), so send it
-                    // under `acc` rather than mislabeling it as the mobile broadcaster's `hdop`.
-                    ...(accuracy != null && { acc: accuracy }),
-                };
-                for (const tid of tids) {
-                    const key = keysRef.current[tid];
-                    if (!key) continue;
-                    encryptLocation(key, locationData)
-                        .then((encData) => {
-                            apiPost(
-                                '/mapapi/translation/msg',
-                                `translationId=${encodeURIComponent(tid)}&encryptedData=${encodeURIComponent(encData)}`,
-                                { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-                            ).catch(() => {});
-                        })
-                        .catch(() => {});
-                }
-            },
-            (error) => {
-                const code = error?.code === error?.PERMISSION_DENIED ? GEO_ERROR_DENIED : GEO_ERROR_UNAVAILABLE;
-                geoErrorRef.current?.(code);
-            },
-            { enableHighAccuracy: true, maximumAge: 5000 }
-        );
-
-        return () => navigator.geolocation.clearWatch(watchId);
-    }, [ctx.myBroadcastTids, connected]);
-
     // Add a live point to a participant (newest at index 0).
     const updateParticipant = useCallback(
         (translationId, nickname, point) => {
@@ -377,6 +331,59 @@ export default function useLiveTracking(ctx, enabled = true) {
         },
         [sendCommand, ctx.setMyBroadcastTids]
     );
+
+    // Broadcast my position into every translation I'm sharing into. Each translation has its own
+    // key, so the point is encrypted per key and addressed (translationId) — the server then routes
+    // each ciphertext to that one translation. Gated on `connected` so we don't POST during reconnect.
+    useEffect(() => {
+        const tids = ctx.myBroadcastTids;
+        if (!tids.length || !navigator.geolocation || !connected) {
+            return;
+        }
+
+        const watchId = navigator.geolocation.watchPosition(
+            (position) => {
+                const { latitude, longitude, altitude, speed, accuracy } = position.coords;
+                const locationData = {
+                    lat: latitude,
+                    lon: longitude,
+                    time: position.timestamp,
+                    ...(speed != null && { speed }),
+                    ...(altitude != null && { ele: altitude }),
+                    // Browser geolocation reports accuracy as a radius in metres (not DOP), so send it
+                    // under `acc` rather than mislabeling it as the mobile broadcaster's `hdop`.
+                    ...(accuracy != null && { acc: accuracy }),
+                };
+                for (const tid of tids) {
+                    const key = keysRef.current[tid];
+                    if (!key) continue;
+                    encryptLocation(key, locationData)
+                        .then((encData) =>
+                            apiPost(
+                                '/mapapi/translation/msg',
+                                `translationId=${encodeURIComponent(tid)}&encryptedData=${encodeURIComponent(encData)}`,
+                                { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+                            )
+                        )
+                        .then((res) => {
+                            if (res.status === 410) {
+                                stopSharing(tid);
+                            } else if (!res.ok) {
+                                console.info('live track point rejected', tid, res.status);
+                            }
+                        })
+                        .catch(() => {});
+                }
+            },
+            (error) => {
+                const code = error?.code === error?.PERMISSION_DENIED ? GEO_ERROR_DENIED : GEO_ERROR_UNAVAILABLE;
+                geoErrorRef.current?.(code);
+            },
+            { enableHighAccuracy: true, maximumAge: 5000 }
+        );
+
+        return () => navigator.geolocation.clearWatch(watchId);
+    }, [ctx.myBroadcastTids, connected, stopSharing]);
 
     // Ask the owner of a translation (that I only have view access to) for permission to share.
     const requestShare = useCallback(
