@@ -1,5 +1,5 @@
 ---
-source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -33,7 +33,7 @@ Data de lançamento 04/2026:
 - Novo Editor de Paletas para criar e editar esquemas de cores personalizados para visualização de trilhas e terreno.
 - Roteamento de bicicleta aprimorado considerando a largura da bicicleta.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### Versão 5.2 {#version-52}
 

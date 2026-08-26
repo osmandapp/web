@@ -69,7 +69,7 @@ You can add tracks in OsmAnd in the following ways:
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -77,15 +77,17 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 All tracks ever recorded, created, or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
+
+Each track in the list displays its parent folder name on the second line, separated by `|` (for example, `Hiking | Tracks`), making it easier to identify where a track is stored. This applies in [Search](#search), [Smart Folders](../../personal/tracks/smart-folder.md), and [Configure Map → Tracks](../../map/tracks/index.md#configure-map).
 
 
 ### Track Menu {#track-menu}
@@ -102,9 +104,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -129,7 +131,7 @@ The menu provides the following actions:
 
 - **Share** — Enables sharing of the selected track with others.
 
-- **Upload modifications to OSM** (*iOS*) — [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
+- **Upload to OSM** (*iOS*) — [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
 
 - **Edit** (*iOS*) — Use the [Plan a route](../../plan-route/create-route.md#modify-existing-gpx-track) tool to modify tracks.
 
@@ -156,7 +158,7 @@ The menu provides the following actions:
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks seach function iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![My places tracks seach function iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -168,7 +170,7 @@ Available:
 
 - Search by track name.
 - [Sort by](#sort-by) for better search if you can't remember the title.
-- [Filter](./smart-folder.md#search-filter) (*Android only*) if you need the specific characteristics of the track.
+- [Filter](./smart-folder.md#search-filter) if you need the specific characteristics of the track.
 
 
 ### Selection Mode {#selection-mode}
@@ -183,7 +185,7 @@ Available:
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -220,7 +222,7 @@ Once you have made your choice, the following steps are provided:
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -253,7 +255,7 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -280,7 +282,7 @@ Tap the *three-dot menu* in the folder field to **open** the folder menu.
 
 > Long tap on the folder field to **open** the folder menu.
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -294,7 +296,7 @@ Track folder menu lets you view, rename, export, and manage folders.
 - **Name** — Displays the folder name, creation date, and the number of tracks it contains.
 - **Show all tracks on the map** (*Android only*) — Displays all tracks in the folder on the map. If there are many tracks, this may cause the device to freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*) — Allows you to rename the folder.
-- [Change default appearance](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*) — Changes the display appearance of all tracks in the folder.
+- [Change default appearance](../../map/tracks/appearance.md) (*Android*) / **Default appearance** (*iOS*) — Changes the display appearance of all tracks in the folder.
 - [Export](../../personal/import-export.md) — Opens the *Menu → Settings → Actions* tab to export all tracks in the folder as an [`.osf` file](../../personal/import-export.md#export).
 - [Move](#track-folder) — Allows you to move the folder to another existing folder or create a new one.
 - [Delete folder](#delete-folder) — Deletes the folder after confirmation. ***This action is irreversible.***
@@ -306,7 +308,7 @@ Track folder menu lets you view, rename, export, and manage folders.
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -314,9 +316,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -348,7 +350,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -377,7 +379,7 @@ How to open folder actions:
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
@@ -385,9 +387,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 
@@ -421,7 +423,8 @@ Import tool allows you to add tracks from external files for offline navigation 
     *Additional options:*
 
     - **Single-track GPX files** - import the entire track directly.
-    - **Multi-track GPX files** - choose to import the single GPX file or select specific tracks.
+    - **Multi-track GPX files** - choose to import the single GPX file or select specific tracks.  
+    When a GPX file contains multiple tracks, the Import tracks screen opens, allowing you to review all tracks in the file, select the ones you want to import, choose a destination folder, or import all tracks as a single track using the *Import as one track* option. If the file contains waypoints, you can also review and assign them before completing the import.
 
 ***NOTE:*** *Tracks manually added to the OsmAnd folder on your device are automatically imported without restarting the application.*  
 

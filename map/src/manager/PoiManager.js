@@ -12,11 +12,14 @@ import {
     SEPARATOR,
     getOsmIdFromOsmUrl,
     OSM_WIKI,
+    POI_SUBTYPE,
+    POI_TYPE,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
     createPoiIcon,
     getIconUrlByName,
+    POI_ICON_TYPE,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
 import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
@@ -25,7 +28,7 @@ import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './SearchManager';
 import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
-import { getPropsFromSearchResultItem, preparedType } from '../menu/search/search/SearchResultItem';
+import { getFirstSubstring, preparedType } from '../menu/search/search/SearchResultItem';
 
 const icons = new Set(iconsRaw);
 
@@ -102,12 +105,16 @@ async function getTopPoiFilters() {
     }
 }
 
-async function searchPoiCategories(search) {
+async function searchPoiCategories(search, center) {
+    if (!center) {
+        return null;
+    }
     let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi-categories`, {
         apiCache: true,
         params: {
             search: search,
-            locale: i18n.language,
+            lat: center.lat,
+            lon: center.lng,
         },
     });
     if (!isEmpty(response?.data)) {
@@ -190,6 +197,37 @@ function preparePoiFilterIcon(filter) {
     return filter;
 }
 
+// Dedupes SVG fetches by URL (including in-flight) so a batch of icon loads hits each file once,
+// which the React-state cache can't do within one Promise.all (avoids ERR_INSUFFICIENT_RESOURCES).
+const svgIconRequests = new Map();
+
+async function fetchSvgIcon(url) {
+    if (svgIconRequests.has(url)) {
+        return svgIconRequests.get(url);
+    }
+    const request = fetch(url)
+        .then((response) => {
+            if (response.ok) {
+                return response.text();
+            }
+            if (response.status >= 500 || response.status === 429) {
+                svgIconRequests.delete(url);
+            }
+            console.warn(`Search icon not found (${response.status}): ${url}`);
+
+            return null;
+        })
+        .catch((error) => {
+            console.error(`Failed to fetch SVG icon from ${url}: ${error}`);
+            svgIconRequests.delete(url);
+
+            return null;
+        });
+    svgIconRequests.set(url, request);
+
+    return request;
+}
+
 /**
  * Asynchronously creates a cache of Point of Interest (POI) icons.
  *
@@ -197,10 +235,11 @@ function preparePoiFilterIcon(filter) {
  * @param {Object} obj - An optional object representing a single POI.
  * @param {Object} poiIconCache - The existing cache of POI icons.
  * @param {String} icon - An optional icon name.
- * @returns {Object} - The updated cache of POI icons.
+ * @returns {Promise<Object>} - The updated cache of POI icons.
  */
 export async function createPoiCache({ poiList = null, obj = null, poiIconCache, icon = null }) {
     const iconCache = {};
+    const missingIcons = new Set();
     const arr = icon ? [icon] : (poiList ?? [obj]);
     for (const poi of arr) {
         if (!poi) {
@@ -224,18 +263,19 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache,
             if (poiIconCache[iconWpt]) {
                 iconCache[iconWpt] = poiIconCache[iconWpt];
             } else {
-                // If the icon is not in the existing cache and not yet in the updated cache
-                if (!iconCache[iconWpt]) {
-                    try {
-                        const response = await fetch(getIconUrlByName('poi', iconWpt));
-                        iconCache[iconWpt] = await response.text();
-                    } catch (error) {
-                        console.error(`Failed to fetch SVG for iconWpt ${iconWpt}: ${error}`);
-                    }
-                }
+                missingIcons.add(iconWpt);
             }
         }
     }
+    await Promise.all(
+        [...missingIcons].map(async (name) => {
+            const svgData = await fetchSvgIcon(getIconUrlByName(POI_ICON_TYPE, name));
+            if (svgData) {
+                iconCache[name] = svgData;
+            }
+        })
+    );
+
     return iconCache;
 }
 
@@ -268,12 +308,28 @@ export function translatePoi({ key = null, value = null, ctx, t }) {
     return '';
 }
 
+// obf top-index keys ("top_index_brand_okko") are agreed with the server: SpatialPoiSearch.byKey format
+export const TOP_INDEX_PREFIX = 'top_index_';
+
+export function getTopIndexValueName(key) {
+    const rest = key.substring(TOP_INDEX_PREFIX.length);
+    const valueStart = rest.indexOf('_');
+
+    return valueStart === -1 ? rest : rest.substring(valueStart + 1);
+}
+
 /**
  * Check if type is a brand (contains ':' separator)
  * Brand format: brandName:lang
  */
 export function isBrandType(type) {
-    return type && type.includes(':') && !type.includes('name:') && !type.includes('lang:');
+    return (
+        type &&
+        type.includes(':') &&
+        !type.includes('name:') &&
+        !type.includes('lang:') &&
+        !type.startsWith(TOP_INDEX_PREFIX)
+    );
 }
 
 /**
@@ -293,6 +349,9 @@ export function parseBrandType(type) {
  * Handles special cases: name:lang and lang:lang formats
  */
 export function getCategoryName(category, t, getFirstSubstring) {
+    if (category?.startsWith(TOP_INDEX_PREFIX)) {
+        return getTopIndexValueName(category);
+    }
     if (!category) return '';
     if (category.includes('name:')) {
         const [mainPart, subPart] = category.split(':');
@@ -327,9 +386,8 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
         if (ctx.poiIconCache?.[name]) {
             svgData = ctx.poiIconCache[name];
         } else {
-            const response = await fetch(iconUrl);
-            if (response.ok) {
-                svgData = await response.text();
+            svgData = await fetchSvgIcon(iconUrl);
+            if (svgData) {
                 ctx.setPoiIconCache((prevState) => ({
                     ...prevState,
                     [name]: svgData,
@@ -413,8 +471,7 @@ function getWikiPoiParams(poi, wiki) {
 
 function getPoiParams(poi) {
     const params = {};
-    const props = getPropsFromSearchResultItem(poi.options, i18n?.t, 'en');
-    params.type = props.type;
+    params.type = getFirstSubstring(poi.options[POI_SUBTYPE] ?? poi.options[POI_TYPE]);
     params.pin = getPinParam(poi.latlng?.lat, poi.latlng?.lng);
     params.name = poi.options.amenity_name || poi.options.name;
     params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.options.web_poi_osmUrl);

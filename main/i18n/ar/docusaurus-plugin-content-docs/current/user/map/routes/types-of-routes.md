@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title: أنواع المسارات
 ---
@@ -31,17 +31,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-يمكنك العثور على مزيد من المعلومات في مقالة [دليل الخريطة](../../map-legend/index.md).
+يمكنك العثور على مزيد من المعلومات في مقالة [دليل الخريطة](../../map-legend/osmand.md#cycling).
 
 
 ## دراجات الجبال {#mountain-bike}
 
 تحتوي مسارات الدراجات الجبلية على تعيين محدد في [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) ويمكن تحديدها بشكل منفصل عن مسارات الدراجات.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  تعرض المسارات وفقًا لمقياس MTB. المزيد من المعلومات في مقالة [دليل الخريطة](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  تعرض المسارات وفقًا لمقياس MTB. المزيد من المعلومات في مقالة [دليل الخريطة](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  تعرض مسارات MTB وفقًا للرابطة الدولية لركوب الدراجات الجبلية، [MTB IMBA](https://www.imba.com/). المزيد من المعلومات في مقالة [دليل الخريطة](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  تعرض مسارات MTB وفقًا للرابطة الدولية لركوب الدراجات الجبلية، [MTB IMBA](https://www.imba.com/). المزيد من المعلومات في مقالة [دليل الخريطة](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## المشي / التنزه {#hiking--walking}
@@ -62,7 +62,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-تتيح ميزة **مسارات دراجات الطرق الوعرة** عرض مسارات مخصصة لدراجات الطرق الوعرة على الخريطة بناءً على وسم `dirtbike:scale`. يبرز هذا المقياس المسارات المناسبة لركوب دراجات الطرق الوعرة، مع طبقة ملونة توضح مستويات الصعوبة ([دليل الخريطة](../../map-legend/osmand.md#routes)).  
+تتيح ميزة **مسارات دراجات الطرق الوعرة** عرض مسارات مخصصة لدراجات الطرق الوعرة على الخريطة بناءً على وسم `dirtbike:scale`. يبرز هذا المقياس المسارات المناسبة لركوب دراجات الطرق الوعرة، مع طبقة ملونة توضح مستويات الصعوبة ([دليل الخريطة](../../map-legend/osmand.md#dirtbike-scale)).  
 
 يمكنك تفعيل هذه الميزة من *القائمة ← تكوين الخريطة ← المسارات ← مسارات دراجات الطرق الوعرة*. تعمل هذه الوظيفة بشكل مشابه لمقياس MTB، وتوفر تمثيلاً بصريًا للمسارات المخصصة لركوب دراجات الطرق الوعرة — يمكنك معرفة المزيد عن [وسم `dirtbike` هنا](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 

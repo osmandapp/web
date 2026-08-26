@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title: Tipos de rutas
 ---
@@ -32,17 +32,17 @@ Puede configurar el filtrado de algunos tipos de rutas en el menú [Configurar m
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Puede encontrar más información en el artículo [Leyenda del mapa](../../map-legend/index.md).
+Puede encontrar más información en el artículo [Leyenda del mapa](../../map-legend/osmand.md#cycling).
 
 
 ## Bicicleta de montaña {#mountain-bike}
 
 Las rutas MTB tienen un mapeo específico en [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) y pueden seleccionarse por separado de las rutas ciclistas.
 
-- ***<Translate android="true" ids="mtb_scale"/>***.  Muestra los senderos según la escala MTB. Hay más información en el artículo [Leyenda del mapa](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Muestra los senderos según la escala MTB. Hay más información en el artículo [Leyenda del mapa](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***.  Muestra los senderos MTB según la International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Hay más información en el artículo [Leyenda del mapa](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Muestra los senderos MTB según la International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Hay más información en el artículo [Leyenda del mapa](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Senderismo / Caminata {#hiking--walking}
@@ -63,7 +63,7 @@ Las rutas MTB tienen un mapeo específico en [OpenStreetMap](https://wiki.openst
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-La función **Rutas de motocross** permite mostrar en el mapa rutas específicas para motocross basadas en la etiqueta `dirtbike:scale`. Esta escala resalta los senderos aptos para motocross, con una superposición de colores que muestra los niveles de dificultad ([Leyenda del mapa](../../map-legend/osmand.md#routes)).  
+La función **Rutas de motocross** permite mostrar en el mapa rutas específicas para motocross basadas en la etiqueta `dirtbike:scale`. Esta escala resalta los senderos aptos para motocross, con una superposición de colores que muestra los niveles de dificultad ([Leyenda del mapa](../../map-legend/osmand.md#dirtbike-scale)).  
 
 Puede activar esta función en *Menú → Configurar mapa → Rutas → Rutas de motocross*. El sistema funciona de forma similar a la escala MTB, ofreciendo una representación visual de las rutas adaptadas al motocross; más información sobre la [etiqueta `dirtbike` puede encontrarse aquí](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 

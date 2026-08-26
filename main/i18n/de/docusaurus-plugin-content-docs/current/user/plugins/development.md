@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title:  OsmAnd-Entwicklung
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Testfunktionen der App sind im OsmAnd-Entwicklungs-Plugin zusammengefasst. Die Nutzung erfolgt auf eigene Gefahr.
 
-Das OsmAnd-Entwicklungs-Plugin ermöglicht es Ihnen, neue Funktionen der App auszuprobieren oder OsmAnd für Testzwecke zu konfigurieren: Navigationsrouten simulieren, die Leistung des Bildschirm-Renderings überprüfen usw. Das Plugin ist für *Entwickler und erfahrene Benutzer* konzipiert und für den täglichen Gebrauch der Anwendung nicht erforderlich.
+Das OsmAnd-Entwicklungs-Plugin ermöglicht es Ihnen, neue Funktionen der App auszuprobieren oder OsmAnd für Testzwecke zu konfigurieren: Navigationsrouten simulieren, die Leistung des Bildschirm-Renderings überprüfen usw. Das Plugin ist für *Entwickler und erfahrene Benutzer* konzipiert und für den täglichen Gebrauch der Anwendung nicht erforderlich.  
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
@@ -53,7 +53,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 <TabItem value="ios" label="iOS">  
 
-![Entwicklungseinstellungen iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Entwicklungseinstellungen iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -87,7 +87,8 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 :::
 
 - **Ersten App-Start simulieren**. Setzt das Flag, das den ersten App-Start anzeigt, und behält alle anderen Einstellungen bei.  
-- **Sprachansagen testen**. Wählen Sie eine Stimme und testen Sie sie durch Abspielen von Ansagen.  
+- **Sprachansagen testen**. Wählen Sie eine Stimme und testen Sie sie durch Abspielen von Ansagen.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Hebt Bildschirmberührungen mit visuellen Indikatoren hervor.
 - **Transparente Statusleiste**. Die Karte wird unter der Statusleiste sichtbar.  
 - **Banner der kostenlosen Version anzeigen**. Zeigt das Banner der kostenlosen Version auch in der kostenpflichtigen Version an.  
 - **Debug-Informationen anzeigen**. Zeigt grafische Informationen über die Platzierung jedes Textes auf der Karte an.
@@ -125,7 +126,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 - **A-GPS-Info**. Gibt an, wann A-GPS-Daten zuletzt heruntergeladen wurden.  
 - **Tag/Nacht-Info**.  Gibt die heutigen Sonnenauf- und -untergangszeiten an.  
 - **Energiestatistiken (Durchschnitt 1 / 5 / 15 Minuten)**. Zeigt den Akkustand pro Minute (%) und den durchschnittlichen Energieverbrauch (mAh) über 1-, 5- und 15-Minuten-Intervalle an.  
-- **Rendering-Statistiken (Durchschnitt 1 / 5 / 15 Minuten)**. Zeigt Rendering-Statistiken an, einschließlich FPS über die letzten 1.000 Frames, CPU (Kacheln), CPU (Leerlaufzeit) und CPU (Standby) im Durchschnitt über 1-, 5- und 15-Minuten-Intervalle.  
+- **Rendering-Statistiken (Durchschnitt 1 / 5 / 15 Minuten)**. Zeigt Rendering-Statistiken an, einschließlich FPS über die letzten 1.000 Frames, CPU (Kacheln), CPU (Leerlaufzeit) und CPU (Standby) im Durchschnitt über 1-, 5- und 15-Minuten-Intervallen.  
 
 **Schaltfläche:**
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
@@ -55,7 +55,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu pobierania map iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapy regionalne iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu pobierania map iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapy regionalne iOS](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Pobieranie map do aplikacji OsmAnd jest ważnym krokiem, który decyduje o funkc
 ### Darmowa zawartość map {#free-map-content}
 
 - **Mapa standardowa**. Zapewnia przegląd obszaru na podstawie źródła [OpenStreetMap](https://www.openstreetmap.org/) i zawiera mapę, trasy, adresy, POI oraz informacje o transporcie publicznym. Dotknięcie otwiera ekran z listą regionów wybranego kraju i informacją o tym, ile miejsca te mapy zajmą na urządzeniu.  
-- **Tylko drogi** (*tylko Android*). Mapa zawiera tylko informacje o siatce dróg, aby skupić się na trasach i infrastrukturze drogowej. Dzięki usunięciu szczegółów, takich jak budynki i punkty szczególne, jest mniejsza niż standardowa mapa. Dotknięcie otwiera ekran z listą regionów w wybranym kraju i informacją o tym, ile miejsca te mapy zajmą na urządzeniu.
+- **Tylko drogi**. Mapa zawiera tylko informacje o siatce dróg, aby skupić się na trasach i infrastrukturze drogowej. Dzięki usunięciu szczegółów, takich jak budynki i punkty szczególne, jest mniejsza niż standardowa mapa. Dotknięcie otwiera ekran z listą regionów w wybranym kraju i informacją o tym, ile miejsca te mapy zajmą na urządzeniu.
 - **Mapa przeglądowa świata**. Wersje OsmAnd do 3.8 oferowały pobranie mapy świata, aby można ją było przeglądać w skali planetarnej. W nowszych wersjach OsmAnd lekka *Mini mapa świata* jest dołączona do aplikacji. Aplikacja pozwala pobrać większą, przeglądową mapę świata z bardziej szczegółowymi informacjami. 
 
 :::info comiesięczne aktualizacje map
@@ -179,7 +179,7 @@ Przeczytaj więcej w artykule [**Pakiet niestandardowy**](../plugins/custom).
 
 </Tabs>
 
-Dla krajów składających się z **wielu map regionalnych** można użyć masowego ładowania wielu map. Mapy dostępne do tego typu pobierania są wyświetlane z ikonami podwójnej strzałki pobierania i etykietą z liczbą regionów wewnątrz (np. Linie konturowe / Wszystkie regiony: 10). Możesz wybrać, ile map chcesz pobrać. Masowe ładowanie obsługuje kilka typów map, w tym Standardowe, Linie konturowe, Wikipedia i Teren.
+Dla krajów składających się z **wielu map regionalnych** można użyć masowego ładowania wielu map. Mapy dostępne do tego typu pobierania są wyświetlane z ikoną podwójnej strzałki pobierania i etykietą z liczbą regionów wewnątrz (np. Linie konturowe / Wszystkie regiony: 10). Możesz wybrać, ile map chcesz pobrać. Masowe ładowanie obsługuje kilka typów map, w tym Standardowe, Linie konturowe, Wikipedia i Teren.
 
 Po otwarciu elementu zgrupowanego dla kraju wyświetlany jest arkusz dolny z pełną listą map dla tego kraju, co umożliwia wybranie pojedynczych map lub pobranie wszystkich naraz.
 
@@ -477,6 +477,8 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download
 </Tabs>
 
 **Aktualizacje na żywo** zapewniają częste, przyrostowe aktualizacje map poprzez [subskrypcję](../purchases/index.md) lub są bezpłatne dla [współtwórców OSM](#free-for-osm-mappers). Aktualizacje pojawiają się co 15 minut na serwerach OsmAnd i można je pobierać co godzinę, codziennie lub co tydzień. Te aktualizacje zużywają minimalną ilość pamięci — około 2-4% pełnego rozmiaru mapy miesięcznie.
+
+Aktualizacje na żywo są stosowane na pobranej mapie i nie zastępują całego pliku mapy. W rezultacie data wyświetlana dla mapy w zakładce Lokalne nie odzwierciedla Aktualizacji na żywo i może pozostać niezmieniona po ich zastosowaniu. Aby pobrać nowszą wersję pełnej mapy, użyj Aktualizuj mapę lub Aktualizuj wszystko w [Menu Aktualizacje](#updates-menu).
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

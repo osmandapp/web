@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title: Navigation
 ---
@@ -19,138 +19,143 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Android*. O OsmAnd usa dois **mecanismos de roteamento offline** diferentes: um *mecanismo baseado em Java* e um *mecanismo Nativo (C++)*.
 
-- O *mecanismo baseado em Java* é usado no [Modo de Segurança](../plugins/development.md#overview), mas é aproximadamente 10 vezes mais lento que o mecanismo nativo. Ele também tem limitações de memória rigorosas, o que pode levar a erros como *Memória insuficiente para calcular*. Se você encontrar esse problema, navegue até *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#overview) e certifique-se de que esta opção esteja desativada.
-- O *mecanismo Nativo (C++)* oferece melhor desempenho, mas sua eficiência depende da memória e da capacidade do processador do seu dispositivo. Geralmente, o roteamento nativo funciona bem para rotas com menos de 300 km, com tempos de cálculo de rota variando de 15 segundos a 4 minutos. Se o processo demorar mais de 4 minutos, é aconselhável parar, pois o aplicativo pode travar.
+- O *mecanismo baseado em Java* é usado no [Modo de Segurança](../plugins/development.md#overview), but it is approximately 10 times slower than the native engine. It also has strict memory limitations, which can lead to errors such as *Not enough memory to compute*. If you encounter this issue, navigate to *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#overview) and ensure this option is disabled.
+- O *mecanismo Nativo (C++)* oferece melhor desempenho, but its efficiency depends on your device’s memory and processor capabilities. Generally, native routing performs well for routes under 300 km, with route calculation times ranging from 15 seconds to 4 minutes. If the process takes longer than 4 minutes, it is advisable to stop, as the application may crash.
+
 
 ### Rotas incorretas ou quebradas {#incorrect-or-broken-routes}
 
-Às vezes, o OsmAnd pode exibir resultados de navegação inesperados. Em vez de seguir a rede de estradas, a rota pode aparecer como uma linha pontilhada reta para um ponto não relacionado, ou a navegação pode falhar completamente. Isso geralmente indica que o roteamento para o local selecionado não é possível com a configuração atual. Problemas semelhantes foram relatados por usuários no [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) e [mais](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
+Sometimes OsmAnd may display unexpected navigation results. Instead of following the road network, the route may appear as a straight dotted line to an unrelated point, or navigation may fail entirely. This usually indicates that routing to the selected location is not possible with the current configuration. Similar issues have been reported by users on [Reddit](https://www.reddit.com/r/OsmAnd/comments/1lu45u2/navigation_problems/) and [more](https://www.reddit.com/r/OsmAnd/comments/1l9233e/navigation_bug_in_certain_countries/).
 
 **Causas:**
 
-- Mapas desatualizados ou duplicados. Mapas com datas de atualização diferentes ou duplicatas podem quebrar a conectividade (especialmente entre regiões/fronteiras).
-- Configurações de perfil danificadas. Perfis personalizados/modificados (por exemplo, Bicicleta) podem causar comportamento inconsistente.
-- Incompatibilidade de mecanismo de roteamento: Diferentes mecanismos (HH × Java vs HH × C++) podem lidar com os mesmos mapas de forma diferente.
+- Outdated or duplicated maps. Maps with different update dates or duplicates can break connectivity (especially across regions/borders).
+- Damaged profile settings. Custom/modified profiles (e.g., Bicycle) can cause inconsistent behavior.
+- Routing engine mismatch: Different engines (HH × Java vs HH × C++) may handle the same maps differently.
 
 **Soluções:**
 
-1. Redefina seu perfil.
-- Abra *Menu* → *Settings* → *App profile (Navigation Profile)*.
-- Selecione *Reset to default*.
+1. Reset your profile.
+- Open *Menu* → *Settings* → *App profile (Navigation Profile)*.
+- Select *Reset to default*.
 
-2. Remova e reinstale os mapas.
-- Abra *Menu* → *Maps & Resources* → *Local* e exclua todos os mapas para a(s) região(ões) afetada(s).
-- Em seguida, vá para *Menu* → *Maps & Resources* → *Downloads* e baixe os mapas novamente.
-- Opcionalmente, verifique *Menu* → *Maps & Resources* → *Updates* para garantir que todas as regiões compartilhem a mesma data de atualização.
+2. Remove and reinstall maps.
+- Open *Menu* → *Maps & Resources* → *Local* and delete all maps for the affected region(s).
+- Then go to *Menu* → *Maps & Resources* → *Downloads* and download the maps again.
+- Optionally check *Menu* → *Maps & Resources* → *Updates* to ensure all regions share the same update date.
 
-3. Altere o mecanismo de roteamento.
-- Ative o plugin: *Menu* → *Plugins* → *OsmAnd development*.
-- Em seguida, abra *Menu* → *Settings* → *App profile* → *Navigation settings* → *Route parameters* → *Development* → *Routing type* e alterne *HH × C++* ↔ *HH × Java* (você também pode tentar A* clássico ou A* em duas fases).
+3. Switch routing engine.
+- Enable the plugin: *Menu* → *Plugins* → *OsmAnd development*.
+- Then open *Menu* → *Settings* → *App profile* → *Navigation settings* → *Route parameters* → *Development* → *Routing type* and switch *HH × C++* ↔ *HH × Java* (you may also try A* classic or A* 2-phase).
 
-4. Como último recurso.
-- Reinstale o aplicativo e baixe os mapas novamente (ajuda quando conflitos ocultos persistem).
+4. As a last resort.
+- Reinstall the app and download maps again (helps when hidden conflicts persist).
+
 
 ### Como calcular rotas com mais de 250 km? {#how-to-calculate-routes-longer-than-250km}
 
-1. Se o aplicativo não mostrar uma rota após 7-8 minutos de tempo de cálculo, considere [colocar pontos de passagem](../navigation/setup/route-navigation.md#route-recalculation) (escolha, por exemplo, locais em autoestradas). 3-4 pontos de passagem serão suficientes para calcular rotas de até 1000 km.
+1. If the app does not show a route after 7-8 minutes of calculation time, consider [placing waypoints](../navigation/setup/route-navigation.md#route-recalculation) (pick e.g. places on motorways). 3-4 waypoints will be enough to calculate even 1000 km routes.
 
-2. Para dispositivos de ponta, você pode aumentar a memória para 512 MB ou 1024 MB - [Dispositivos com memória alocada](../plugins/development.md#memory-settings).
+2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-settings).
 
-3. Para a versão Android, você pode criar um Perfil de Navegação com roteamento Online ou de terceiros (BRouter). Leia mais sobre isso [aqui](../navigation/routing/brouter.md).
+3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/brouter.md).
 
 ### Cálculo de rotas de 50 km para pedestres {#calculation-of-50-km-routes-for-pedestrians}
 
-Se você estiver usando o perfil **Caminhada** no OsmAnd, o aplicativo pode travar ao calcular rotas com mais de 50 km. Esse problema ocorre especificamente quando o [**Roteamento Padrão A***](../navigation/guidance/navigation-settings.md#development-settings) é selecionado nas configurações de navegação. Vários fatores podem contribuir para esse problema:
+If you are using the **Walking** profile in OsmAnd, the application may crash when calculating routes over 50 km. This issue occurs specifically when the [**Standard Routing A***](../navigation/guidance/navigation-settings.md#development-settings) is selected in the navigation settings. Several factors can contribute to this problem:
 
-- O comprimento da rota excede 50 km.
-- O número de pontos diretos na rota é superior a 1 milhão.
-- Você está usando um dispositivo móvel para calcular a rota, o que não é recomendado para rotas desse comprimento. Considere usar a versão web para melhor desempenho.
+- The route length exceeds 50 km.
+- The number of direct points on the route is greater than 1 million.
+- You are using a mobile device to calculate the route, which is not recommended for routes of this length. Consider using the web version for better performance.
 
-Para evitar travamentos com rotas de distâncias semelhantes, você pode querer mudar para outros tipos de perfil, como **Bicicleta**.
+To avoid crashes with routes of similar distances, you may want to switch to other profile types like **Bicycle**.
+
 
 ## A rota calculada não parece correta {#the-calculated-route-does-not-seem-correct}
 
-Para rastrear problemas com rotas erradas ou subótimas, abra uma nova postagem em [discussões do Github](https://github.com/osmandapp/OsmAnd/discussions) ou [problema do Github](https://github.com/osmandapp/Osmand/issues) e especifique o mais detalhadamente possível as seguintes informações:
+To track down issues with wrong or sub-optimum routes, please open a new posting in [Github discussions](https://github.com/osmandapp/OsmAnd/discussions) or [Github issue](https://github.com/osmandapp/Osmand/issues) and specify as detailed as possible the following information:
 
-- Qual versão do OsmAnd você está usando, em qual dispositivo?
-- Você usa os mapas offline oferecidos no aplicativo OsmAnd para download ou mapas online (em mosaico / raster)?
-- Se você usa mapas offline, diga-nos o nome exato do arquivo do mapa onde ocorre o problema de roteamento e sua data de edição.
-- Diga-nos se você usou o roteamento offline no aplicativo do OsmAnd ou qualquer provedor de roteamento online como YOURS, OpenRouteService ou OSRM.
-- Qual perfil de roteamento é escolhido no aplicativo OsmAnd (carro, bicicleta ou pedestre)?
-- Por favor, especifique o mais exatamente possível o ponto de partida e o ponto final da sua rota. Se possível, diga-nos o nome da cidade e o nome da rua para cada um. Um [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) de openstreetmap.org também pode ser útil.
-- Diga-nos o seu roteamento esperado e como o OsmAnd roteia.
+- What version of OsmAnd are you using, on what device?
+- Do you use the offline maps offered within the OsmAnd app for download, or online (tile / raster) maps?
+- If you use offline maps, tell us the exact name of the map file where the routing issue occurs, and its edition date.
+- Tell us whether you have used OsmAnd's in-app offline routing, or any online routing provider like YOURS, OpenRouteService or OSRM.
+- What routing profile is choosen in OsmAnd app (car, bike or pedestrian)?
+- Please specify as exactly as possible the start and end point of your route. If possible, tell us city name and street name for each. Also a [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) from openstreetmap.org can be helpful.
+- Tell us your expected routing, and how OsmAnd routes.
 
 ## Informações da estrada {#road-information}
 
 ### Por que alguns avisos de radar de velocidade podem não ser acionados {#why-some-speed-camera-warnings-may-not-be-triggered}
 
-Devido aos geodados retirados do projeto OpenStreetMap, existem atualmente dois métodos de integração de radares de velocidade nos dados brutos do OSM:
+Due to the geodata taken from the OpenStreetMap project there are by now two methods how speed cameras are integrated in the raw OSM data:
 
-- Um ponto (chamado "nó" na terminologia OSM) de uma via é marcado com `highway=speed_camera`, veja a wiki OSM em [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- Um grupo de elementos de dados OSM é unido em uma chamada "relação" que contém mais elementos do que um único nó para descrever a direção coberta pelo radar de velocidade. Veja [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+- A point (called "node" in OSM terminology) of a way is tagged with `highway=speed_camera`, see OSM wiki at [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- A group of OSM data elements are joined together in a so called "relation" that contains more elements than a single node to describe the direction that is covered by the speed trap. See [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-O OsmAnd suporta ambos os métodos. Avisos de radar de velocidade podem ser acionados para câmeras mapeadas com `highway=speed_camera`, bem como para câmeras definidas por meio de uma relação `enforcement`.
+OsmAnd supports both methods. Speed camera warnings may be triggered for cameras mapped with `highway=speed_camera` as well as for cameras defined through an `enforcement` relation.
 
-Se um nó de radar de velocidade for colocado diretamente na estrada, a tag `highway=speed_camera` é suficiente para o OsmAnd detectá-lo e exibir avisos.
+If a speed camera node is placed directly on the road, the `highway=speed_camera` tag is sufficient for OsmAnd to detect it and display warnings.
 
-Se a câmera for mapeada ao lado da estrada em vez de sobre ela, ela deve ser conectada à estrada usando uma relação `enforcement`. Caso contrário, o OsmAnd pode não associar a câmera à estrada e o aviso não será acionado.
+If the camera is mapped next to the road rather than on it, it must be connected to the road using an `enforcement` relation. Otherwise, OsmAnd may not associate the camera with the road and the warning will not be triggered.
+
 
 ## Navegação por voz {#voice-navigation}
 
 ### Por que devo usar uma voz TTS em vez de uma voz gravada? {#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice}
 
-As vozes **Text-to-Speech (TTS)** geram avisos falados dinamicamente, permitindo que pronunciem nomes de ruas, nomes de lugares e números de rodovias. Em contraste, as **vozes gravadas** são limitadas a frases pré-gravadas e não podem pronunciar nomes ou números específicos.
+**Text-to-Speech (TTS)** voices generate spoken prompts dynamically, allowing them to pronounce street names, place names, and highway numbers. In contrast, **recorded voices** are limited to pre-recorded phrases and cannot pronounce specific names or numbers.
 
 *Vantagens do TTS sobre vozes gravadas:*
 
-- Pronuncia nomes de ruas e informações dinâmicas.
-- Regularmente atualizado com novos recursos.
-- Oferece melhor flexibilidade para navegação.
+- Pronounces street names and dynamic information.
+- Regularly updated with new features.
+- Offers better flexibility for navigation.
 
-Para usar o TTS no OsmAnd, seu dispositivo deve ter um **mecanismo TTS** instalado. Muitos dispositivos vêm com um mecanismo TTS pré-instalado, mas outros podem ser instalados manualmente, se necessário. [Lista de mecanismos e idiomas TTS suportados para Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+To use TTS in OsmAnd, your device must have a **TTS engine** installed. Many devices come with a pre-installed TTS engine, but additional ones can be manually installed if needed. [List of supported TTS engines and languages for Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
-Para instruções detalhadas sobre como configurar e ajustar os Avisos de Voz, consulte: [Guia de configuração de navegação por voz](../navigation/guidance/voice-navigation.md).
+For detailed instructions on setting up and adjusting Voice Prompts, refer to: [Voice Navigation Setup Guide](../navigation/guidance/voice-navigation.md).
 
 ### O TTS não funciona corretamente? Siga estas etapas para corrigi-lo {#tts-does-not-function-properly-follow-these-steps-to-fix-it}
 
-Problemas com **Text-to-Speech (TTS)** geralmente estão relacionados às **configurações do sistema Android**, e não ao próprio aplicativo OsmAnd.  
+Issues with **Text-to-Speech (TTS)** are typically related to **Android system settings**, not the OsmAnd app itself.  
 
-1. Certifique-se de que um mecanismo TTS esteja instalado.
+1. Ensure a TTS engine is installed.
 
-    - Abra *Device Settings → Language & Input → Text-to-Speech Options*.
-    - Verifique se um **mecanismo TTS** está instalado (por exemplo, Google TTS, Samsung TTS, Pico).
-    - Se nenhum mecanismo estiver instalado, selecione *“Install more…”* e baixe um compatível.
-    - [Lista de mecanismos e idiomas TTS suportados.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
+    - Open device *Settings → Accessibility → Text-to-speech Output*. For more information, see the official [Google guide](https://support.google.com/accessibility/android/answer/6006983).
+    - Check if a **TTS engine** is installed (e.g., Google TTS, Samsung TTS, Pico).
+    - If no TTS engine is available, install one from the Google Play Store or your device manufacturer's services.
+    - Choose your preferred TTS engine and make sure it is enabled.
+    - [List of supported TTS engines and languages.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
-2. Verifique as configurações de idioma do TTS.
+2. Verify TTS language settings.
 
-    - Selecione o idioma que deseja usar em *Android Settings → Text-to-Speech Options*.
-    - Toque em *“Listen to an example”* para testar se o mecanismo TTS está funcionando.
-    - Se você não ouvir nada, atualize ou reinstale o mecanismo TTS.
+    - Select the language you want to use in *Android Settings → Text-to-speech Output*.
+    - Tap *Play* (or *Listen to an example*, depending on your device) to test if the TTS engine is working.
+    - If you don’t hear anything, update or reinstall the TTS engine.
 
-3. Ajuste as configurações de navegação por voz do OsmAnd.
+3. Adjust OsmAnd voice navigation settings.
 
-    - Abra *OsmAnd → Menu → Configure Profile → Navigation Settings → Voice Prompts*.
-    - Selecione um *Language → TTS* compatível.
-    - Teste os avisos de voz navegando até *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
+    - Open *OsmAnd → Menu → Configure Profile → Navigation Settings → Voice Prompts*.
+    - Select a compatible *Language → TTS*.
+    - Test the voice prompts by navigating to *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
 
 #### Etapas adicionais {#additional-steps}
 
-- *Atualizar Google TTS*. Abra a Google Play Store, procure por **Google Text-to-Speech** e atualize-o.  
-- *Simular Navegação*. Toque no *Navigation button → Settings → Simulate Navigation* para verificar se a orientação por voz é reproduzida.  
+- *Update Google TTS*. Open Google Play Store, search for **Google Text-to-Speech**, and update it.  
+- *Simulate Navigation*. Tap *Navigation button → Settings → Simulate Navigation* to check if voice guidance plays.  
 - *Reinstalar OsmAnd*:  
-   - **Fazer backup das configurações:** *Menu → Settings → Export to File*.  
-   - Desinstale o OsmAnd e reinstale-o da loja de aplicativos.  
-   - Restaurar configurações: *Menu → Settings → Import File*.
+   - **Back up settings:** *Menu → Settings → Export to File*.  
+   - Uninstall OsmAnd, then reinstall it from the app store.  
+   - Restore settings: *Menu → Settings → Import File*.
 
-Para solução de problemas adicionais, visite:
+For additional troubleshooting, visit:
 
-- [Guia de navegação por voz](../navigation/guidance/voice-navigation.md)  
-- [Importar/Exportar configurações](../personal/import-export.md)  
+- [Voice Navigation Guide](../navigation/guidance/voice-navigation.md)  
+- [Import/Export Settings](../personal/import-export.md)  
 
 
 ## Outros {#other}
 
 ### A navegação para quando a tela está desligada {#navigation-stops-while-screen-is-off}
 
-- [O mesmo problema](../troubleshooting/track-recording-issues.md#overview) com a gravação de trilhas em segundo plano.
+- [The same issue](../troubleshooting/track-recording-issues.md#overview) with track recording in the background.

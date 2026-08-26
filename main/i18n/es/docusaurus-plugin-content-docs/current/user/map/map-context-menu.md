@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -77,20 +77,19 @@ Cuando realiza una **pulsación larga** en cualquier lugar del mapa, aparece un 
 
 <TabItem value="android" label="Android">  
 
-![Menú contextual de track Android](@site/static/img/map/context_track_menu_Android.png)
+![Menú contextual de track Android](@site/static/img/map/context_track_menu_Android.png) ![Qué hay aquí Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Pantalla de estadísticas de track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Pantalla de estadísticas de track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Qué hay aquí iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú contextual del track](../map/tracks/track-context-menu.md), donde puede acceder a opciones adicionales relacionadas con el track.
-
+Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú contextual del track](../map/tracks/track-context-menu.md), donde puede acceder a opciones adicionales relacionadas con el track. Si la ubicación seleccionada contiene varios objetos del mapa, OsmAnd puede mostrar primero la lista **Qué hay aquí**, lo que le permite elegir el objeto deseado. Para los tracks GPX, esta lista muestra información resumida como distancia, duración, número de waypoints y la carpeta donde se almacena el track.
 
 
 ### Rutas, pistas de esquí y senderos {#routes-and-trails}
@@ -138,6 +137,7 @@ Los detalles disponibles incluyen:
 
 - [Descripción del artículo](#article-description)
 - [Nombres alternativos](#alternative-names)
+- [Relacionados](#related)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
 - [PDI cercanos](#nearby-pois)
@@ -156,6 +156,8 @@ Además, el panel puede incluir [Detalles de OpenStreetMap](https://wiki.openstr
 - [Tarifa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Accesibilidad](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Ancho](https://wiki.openstreetmap.org/wiki/Key:width) / [Alto](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Si un campo de contacto (como *Sitio web, Número de teléfono* o *Correo electrónico*) contiene varios valores, al tocarlo se muestra una lista de entradas disponibles. Seleccione la entrada deseada para realizar la acción correspondiente.
 
 Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar información descriptiva adicional extraída de OpenStreetMap. Estos atributos le ayudan a comprender mejor las características de un lugar e incluyen detalles como elevación, dirección, año de construcción, tipo de superficie o cobertura, nivel interior, opciones de pago, disponibilidad de entrega o para llevar, y muchos otros. OsmAnd muestra estos atributos con etiquetas claras y, cuando es posible, iconos, lo que facilita su lectura y reconocimiento. El conjunto exacto de atributos depende de los datos disponibles en OpenStreetMap para el objeto seleccionado.
 
@@ -214,6 +216,28 @@ Características de la visualización de nombres alternativos:
 - Otras categorías incluyen *traducción específica de la región* o *configuración predeterminada*.
 
 - Si una traducción específica *no está disponible*, OsmAnd utiliza por defecto el nombre **local** para garantizar la precisión y la coherencia en las regiones multilingües.
+
+### Relacionados {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Relacionados Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Relacionados iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+La sección **Relacionados** muestra objetos del mapa asociados al lugar seleccionado mediante una relación de OpenStreetMap. Esta sección está disponible para PDI basados en relaciones compatibles, como campus universitarios y otros objetos multipolígono.
+
+Toque cualquier elemento de la lista para abrir su menú contextual del mapa. Esto le permite navegar rápidamente entre objetos relacionados que pertenecen a la misma relación.
 
 
 ### Dentro del área {#polygon-information}

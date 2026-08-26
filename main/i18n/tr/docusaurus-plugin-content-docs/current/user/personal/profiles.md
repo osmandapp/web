@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title:  Profiller (Ayarlar)
 ---
@@ -227,6 +227,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Örnek:  9F2X4WFJ+7W ([Açık Konum Kodu](https://en.wikipedia.org/wiki/Open_Location_Code) 9m x 14m alanı temsil eder)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Yalnızca Android sürümü) | Örnek: 2 215 227.87, 830 915.9 ([İsviçre koordinat sistemi](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Yalnızca Android sürümü) | Örnek: 4 215 227.87, 1 830 915.9 ([İsviçre koordinat sistemi](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (Yalnızca Android sürümü) | Örnek: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Derece 180° | Tüm açısal değerler 0° ila 180° ve 0° ila -180° arasında okumalara sahiptir.  |
 |          | Derece 360° | Tüm açısal değerler 0° ila 360° arasında okumalara sahiptir.  |
@@ -416,7 +417,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
@@ -494,7 +495,7 @@ Daha kişiselleştirilmiş bir deneyim için, OsmAnd'a **özel 3B simgeler** olu
 
 :::note Kullanılmayan eklentiler için
 Kullanılmayan [eklentilerin](../plugins/index.md#configure-plugin) tüm kontrol parametrelerini gizlemek için bunları devre dışı bırakın.
-:::
+::;
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
@@ -539,7 +540,7 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 :::caution Eklenti ayarlarına erişim
 Eklentinin ayarlarına erişmek için önce ana menünün *Eklenti bölümünde* [**eklentiyi etkinleştirmeniz**](../plugins/index.md#enable--disable) gerekir.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title:  Radiuslineal und Maßstab
 ---
@@ -110,9 +110,9 @@ Verwenden Sie dieses Widget, um die Nähe zu Sehenswürdigkeiten abzuschätzen o
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radiuslineal"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radiuslineal"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radiuslineal"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
@@ -210,42 +210,44 @@ Sie können in die **3D-Ansicht** wechseln, um Entfernungen und das umliegende G
 Die Radiuskreise werden mit Tiefe dargestellt, was besonders nützlich für die Routenplanung in hügeligen Gebieten oder städtischen Umgebungen ist, in denen der vertikale Kontext eine Rolle spielt.
 
 
-## Entfernung durch Antippen {#distance-by-tap}
+<!--
+## Distance by Tap {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Entfernung durch Antippen Android](@site/static/img/widgets/distance_tap_android.png)
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Entfernung durch Antippen iOS](@site/static/img/widgets/distance_tap_ios.png)
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Das Werkzeug **Entfernung durch Antippen** ermöglicht es Ihnen, Entfernungen zwischen Punkten auf der Karte zu messen, ohne das Radiuslineal zu verwenden oder eine Route zu erstellen.
+The **Distance by Tap** tool allows you to measure distances between points on the map without using the Radius Ruler or creating a route.
 
-Es gibt zwei Anwendungsfälle:
+There are two use cases:
 
-- **Entfernung von Ihrem Standort zu einem Punkt**  
-  Tippen Sie irgendwo auf die Karte, und eine gerade Linie erscheint von Ihrem aktuellen Standort zum angetippten Punkt, zusammen mit einer Entfernungsangabe. Die Linie bleibt auf dem Bildschirm, auch wenn Sie woanders tippen.
+- **Distance from your location to a point**  
+  Tap anywhere on the map and a straight line will appear from your current location to the tapped point, along with a distance label. The line remains on screen even if you tap elsewhere.
 
-- **Entfernung zwischen zwei beliebigen Punkten**  
-  Tippen Sie gleichzeitig auf zwei Punkte auf der Karte (Multi-Touch). Eine Linie verbindet die beiden Punkte, und die gemessene Entfernung wird angezeigt.
+- **Distance between any two points**  
+  Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
 
-Sie können auch die Textgröße der Entfernungsbeschriftung anpassen. Wählen Sie zwischen *<Translate android="true" ids="shared_string_normal"/>* (Standard) und *<Translate android="true" ids="shared_string_large"/>* (1,5× größer). Wenn die Große Option ausgewählt ist, wird automatisch zusätzlicher Abstand zwischen der Linie und der Beschriftung hinzugefügt, um die Lesbarkeit zu verbessern. Die Änderungen werden sofort angewendet, ohne dass die App neu gestartet werden muss.
+You can also adjust the text size of the distance label. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
 
 | | |
 |------------|------------|
-| Aktivieren |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Textgröße | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
-| Einheitenformat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Text size | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Videoanleitungen {#video-guides}

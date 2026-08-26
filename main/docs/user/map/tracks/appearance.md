@@ -72,9 +72,21 @@ For more details on route line appearance customization, see [Map screen during 
 
 ### Color Palette Editor {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android"> 
 
 ![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1_ios.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 When coloring a track by Speed, Altitude, or Slope,  you can use own palettes to define how colors are applied along the track.
 
@@ -85,7 +97,7 @@ The *All colors screen* displays available palettes. Tap the three-dot menu next
 - Remove. Removing a palette requires confirmation.
 
 Tap the + button on the All colors screen. Two types of palettes are available:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — colors scale automatically based on the track’s minimum and maximum values.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — colors scale automatically based on the track’s minimum, average, and maximum values.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — colors are assigned to specific absolute numbers (for example, 50 km/h). Values can be edited manually. Units follow the [system settings](../../personal/profiles.md#units--formats). The color scale does not rescale automatically when applied to different tracks.
 
 :::info Pro feature
@@ -245,7 +257,7 @@ The 3D track feature is highly beneficial for activities like paragliding, where
 
 <TabItem value="ios" label="iOS">
 
-![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -255,7 +267,7 @@ The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays 
 
 Modify multiple track appearances in *My Places → Tracks*:
 
-- **Change default appearance** (Android only) - Allows to configure default settings which will be applied once track is added to the [folder](../../personal/tracks/manage-tracks.md#track-folder).
+- **Change default appearance** - Allows to configure default settings which will be applied once track is added to the [folder](../../personal/tracks/manage-tracks.md#track-folder).
 - **Reset to original** - Restores individual track settings.
 
 - [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab.

@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Cerca
 title: Cerca sul sito web
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Il **menu Cerca** è accessibile dal pannello laterale o dall'icona di ricerca 🔍 sulla mappa. Contiene:
 
-- [Barra di ricerca](#search-bar). Inserisci parole chiave per cercare luoghi specifici o punti di interesse.  
+- [Barra di ricerca](#search-bar). Inserisci parole chiave per cercare luoghi specifici, punti di interesse, preferiti o tracce.  
 - [Sezione Categorie](#categories). Sfoglia le opzioni categorizzate per facilitare la ricerca di PDI.  
 - [Sezione Esplora](#explore). Visualizza PDI popolari per il centro della mappa attuale ed esplora luoghi con foto sulla mappa.
 
@@ -35,7 +35,7 @@ Il **menu Cerca** è accessibile dal pannello laterale o dall'icona di ricerca �
 
 ### Barra di ricerca {#search-bar}
 
-Usa la **Barra di ricerca** per trovare luoghi specifici o punti di interesse per nome. Fai clic sull'icona di ricerca, inserisci la tua query e seleziona un risultato dall'elenco. Selezionando un PDI si apre il [Menu contestuale PDI](#poi-context-menu), dove puoi visualizzare i dettagli e utilizzare azioni rapide.
+Usa la **Barra di ricerca** per trovare luoghi specifici, punti di interesse, [preferiti](../web/web-favorites.md) e [tracce](../web/web-tracks.md) per nome. Fai clic sull'icona di ricerca, inserisci la tua query e seleziona un risultato dall'elenco. Selezionando un PDI si apre il [Menu contestuale PDI](#poi-context-menu), mentre selezionando un preferito o una traccia si aprono i relativi dettagli, dove puoi visualizzare le informazioni e utilizzare azioni rapide.
 
 Se cerchi per nome di categoria, il primo risultato potrebbe mostrare la categoria PDI corrispondente. Fai clic sulla categoria per aprire la vista [Ricerca per categorie](#categories).
 

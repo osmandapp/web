@@ -52,7 +52,7 @@ Use one of the following paths to open the plugin settings:
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -86,7 +86,8 @@ Use one of the following paths to open the plugin settings:
 :::
 
 - **Simulate first app start**. Sets the flag indicating first app startup, keeps all other settings unchanged.  
-- **Test voice prompts**. Select a voice and test by playing announcements.  
+- **Test voice prompts**. Select a voice and test by playing announcements.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
 - **Transparent status bar**. The map becomes visible under the status bar.  
 - **Show free version banner**. Display the free version banner even in the paid version.  
 - **Show debug information**. Display graphical information about the placement of each text on the map.
@@ -98,7 +99,7 @@ Use one of the following paths to open the plugin settings:
 :::caution Android only
 :::
 
-- **Safe mode**. Run the app in (slower) safe mode.  
+- **Safe mode**. Runs OsmAnd without the native C++ library, using Java implementations for map rendering and route calculation instead. The app switches to this mode automatically if the native library fails during startup, allowing it to start and remain usable. Map rendering and route calculation are noticeably slower while safe mode is active.  
 
 
 ### Memory Settings {#memory-settings}

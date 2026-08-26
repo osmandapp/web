@@ -1,5 +1,5 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title:  Généralités
 ---
@@ -74,6 +74,21 @@ Pour supprimer l'historique de recherche dans OsmAnd :
 4. Appuyez sur l'icône *Corbeille* dans le coin supérieur droit pour confirmer la suppression.
 
 Pour des instructions plus détaillées sur la fonctionnalité de recherche, vous pouvez consulter [ce guide](../search/search-history.md).
+
+
+## Interface {#interface}
+
+### Pourquoi les boutons de carte, les widgets ou le texte sont-ils trop grands ? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Si les boutons de carte, les widgets ou la règle de carte apparaissent surdimensionnés après avoir ajusté la taille d'affichage dans les paramètres système d'Android, cela peut être lié à la façon dont OsmAnd adapte l'interface à la configuration actuelle de l'écran.
+
+Sur certains appareils, réduire la densité de l'écran ou modifier la taille d'affichage peut affecter la taille des éléments d'interface, en particulier sur les appareils à grand écran et les tablettes.
+
+Les versions récentes d'OsmAnd n'appliquent plus de mise à l'échelle automatique supplémentaire pour les appareils détectés comme tablettes. Les éléments d'interface suivent désormais plus étroitement les paramètres d'affichage du système Android.
+
+Si vous souhaitez ajuster manuellement la taille des boutons de carte, utilisez les paramètres [Apparence par défaut](https://osmand.net/docs/user/widgets/configure-screen#button-appearance) : *Menu → Configurer l'écran → Boutons → Boutons par défaut → menu à trois points → Apparence*. Vous pouvez y définir une Taille personnalisée, un Rayon des coins et une Opacité de l'arrière-plan pour tous les boutons par défaut à la fois.
+
+Si l'interface semble toujours plus grande que prévu, vérifiez *Paramètres système Android → Affichage → Taille d'affichage et texte* et ajustez les paramètres d'affichage si nécessaire.
 
 
 ## Autres {#other}

@@ -1,5 +1,5 @@
 ---
-source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
+source-hash: b72231de89708cc761d36df5e28ed3e9d25300bf49d391eefbff605bb4ce39c6
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -78,9 +78,9 @@ La liste contient des informations sur les prix des produits OsmAnd pour les ré
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 

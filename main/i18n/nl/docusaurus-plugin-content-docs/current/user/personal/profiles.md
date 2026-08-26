@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -140,7 +140,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*
   - *<Translate android="true" ids="rotate_map_north_opt"/>*
 
-- **<Translate android="true" ids="map_screen_orientation"/>**. Stelt de schermpositie in de OsmAnd-applicatie in en vergrendelt deze. Deze functie wordt niet ondersteund op de iPad.
+- **<Translate android="true" ids="map_screen_orientation"/>**. Stelt de schermpositie in de OsmAnd-applicatie in en vergrendert deze. Deze functie wordt niet ondersteund op de iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
   - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
@@ -227,6 +227,7 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Voorbeeld:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) vertegenwoordigt een gebied van 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Alleen Android-versie) | Voorbeeld: 2 215 227.87, 830 915.9 ([Zwitsers coördinatensysteem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Alleen Android-versie) | Voorbeeld: 4 215 227.87, 1 830 915.9 ([Zwitsers coördinatensysteem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (Alleen Android-versie) | Voorbeeld: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Graden 180° | Alle hoekwaarden hebben metingen van 0° tot 180° en van 0° tot -180°.  |
 |          | Graden 360° | Alle hoekwaarden hebben metingen van 0° tot 360°.  |
@@ -416,7 +417,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,pr
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Uiterlijk profielen](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Uiterlijk profielen](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
@@ -459,7 +460,7 @@ Gebruik **<Translate ios="true" ids="icon_size"/>** om de grootte van het Mijn L
 U kunt de visuele elementen met betrekking tot uw locatie aanpassen en ze afzonderlijk of samen toepassen voor de posities **Rustend** en **Navigatie**. Voor zowel 2D- als 3D-modi worden *Kijkhoek* en *Locatieradius* weergegeven in dezelfde kleur die is geselecteerd voor het [navigatieprofiel](#profile-appearance), direct onder het icoon [Mijn positie](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Toont een **kegelvormig** gebied dat de richting aangeeft waarin u momenteel kijkt.  
-- **<Translate android="true" ids="location_radius"/>** – Toont een **cirkelvormig gebied** rond uw icoon, dat de nauwkeurigheid van uw huidige locatie weergeeft.
+- **<Translate android="true" ids="location_radius"/>** – Toont een **cirkelvormig** gebied rond uw icoon, dat de nauwkeurigheid van uw huidige locatie weergeeft.
 
 
 ### Aangepaste 3D-iconen {#custom-3d-icons}
@@ -539,7 +540,7 @@ Met de functie voor UI-aanpassing kunt u het aantal items in acties aanpassen, z
 
 :::caution Toegang tot plug-ininstellingen
 Om toegang te krijgen tot de instellingen van de plug-in, moet u eerst de [**plug-in inschakelen**](../plugins/index.md#enable--disable) in het *Plug-ingedeelte van het hoofdmenu*.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

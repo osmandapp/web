@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title: Android Auto
 ios: false
@@ -222,6 +222,8 @@ O widget **Próxima curva** exibe a distância e o tipo da [próxima manobra de 
 
 ### Informações da Rota {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 As informações da rota consistem em:
 
 - [Tempo estimado de viagem](../widgets/nav-widgets.md#time-to-destination),
@@ -229,6 +231,8 @@ As informações da rota consistem em:
 - [Distância de viagem](../widgets/nav-widgets.md#distance-to-destination).
 
 Quando ativada, **[a configuração do widget](#eta-next-stop)** (Informações da rota) mostrará os detalhes da rota para a próxima parada ([o ponto intermediário](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Toque no botão **X** ao lado do widget de informações da rota para interromper a navegação.
 
 
 ### Alertas de Navegação {#navigation-alerts}

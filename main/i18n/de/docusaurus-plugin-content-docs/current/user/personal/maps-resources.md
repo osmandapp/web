@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -55,7 +55,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Karten-Download-Menü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionsweite Karten iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Karten-Download-Menü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionsweite Karten Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Das Herunterladen von Karten in die OsmAnd-Anwendung ist ein wichtiger Schritt, 
 ### Kostenlose Karteninhalte {#free-map-content}
 
 - **Standardkarte**. Bietet eine Übersicht über das Gebiet basierend auf der Quelle [OpenStreetMap](https://www.openstreetmap.org/) und enthält eine Karte, Routen, Adressen, POIs und Informationen zum öffentlichen Nahverkehr. Durch Antippen öffnet sich ein Bildschirm mit einer Liste der Regionen des ausgewählten Landes und Informationen darüber, wie viel Speicherplatz diese Karten auf Ihrem Gerät belegen werden.  
-- **Nur Straßen** (*Nur Android*). Die Karte enthält nur Informationen zum Straßennetz, um sich auf Routen und die Straßeninfrastruktur zu konzentrieren. Durch das Entfernen von Details wie Gebäuden und Sonderzielen ist sie kleiner als eine Standardkarte. Durch Antippen öffnet sich ein Bildschirm mit einer Liste der Regionen des ausgewählten Landes und Informationen darüber, wie viel Speicherplatz diese Karten auf Ihrem Gerät belegen werden.
+- **Nur Straßen**. Die Karte enthält nur Informationen zum Straßennetz, um sich auf Routen und die Straßeninfrastruktur zu konzentrieren. Durch das Entfernen von Details wie Gebäuden und Sonderzielen ist sie kleiner als eine Standardkarte. Durch Antippen öffnet sich ein Bildschirm mit einer Liste der Regionen des ausgewählten Landes und Informationen darüber, wie viel Speicherplatz diese Karten auf Ihrem Gerät belegen werden.
 - **Weltübersichtskarte**. Versionen von OsmAnd bis 3.8 bieten den Download einer Weltkarte an, damit Sie sie im globalen Maßstab betrachten können. In neueren Versionen von OsmAnd ist eine leichtgewichtige *Mini-Weltkarte* in der Anwendung enthalten. Die App ermöglicht es Ihnen, eine größere Übersichtsweltkarte mit detaillierteren Informationen herunterzuladen. 
 
 :::info monatliche Kartenaktualisierungen
@@ -130,7 +130,7 @@ Der Reiter **Download** ermöglicht es Ihnen, verschiedene Kartentypen von den O
 - **Kartenzähler** (***Kostenlose Version***). Zeigt an, wie viele Karten Sie noch herunterladen können.
 - [Zusätzliche Karten](#extra-maps). Zeigt die Kartendaten für das [Benutzerdefinierte Paket](../plugins/custom.md) an.
 - **Regionen**. Liste nach Kontinent und Weltregion: *Afrika, Antarktis, Asien, Australien und Ozeanien, Mittelamerika, Europa, Nordamerika, Russland und Südamerika.*
-- [Weltkarten](#world-maps). Eine Liste von Karten der ganzen Welt: *<Translate android="true" ids="index_item_world_altitude_correction"/> (Nur Android)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Weltwetterkarte*
+- [Weltkarten](#world-maps). Eine Liste von Karten der ganzen Welt: *Welt-Höhenkorrektur (nur Android)*, *Weltübersichtskarte*, *Welt (Wettervorhersage)*
 - [Seekarten](../plugins/nautical-charts.md) ([*kostenpflichtige Funktion*](../purchases/index.md)). Vektorkarten mit Höhenangaben als Punkte oder Linien.
 - [Reiseführer (Wikivoyage)](../plan-route/travel-guides.md) ([*kostenpflichtige Funktion*](../purchases/index.md)). Vektorkarten mit einer Sammlung von Artikeln im HTML-Format und zusätzlich GPX-Dateien.
 - **Andere Karten**. Karten, die nicht der aktuellen Kartenhierarchie zugeordnet werden können, weil sie nicht unterstützt werden oder in zukünftigen Versionen verfügbar sein werden.
@@ -477,6 +477,8 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 </Tabs>
 
 **Live-Updates** bieten häufige, inkrementelle Kartenaktualisierungen durch ein [Abonnement](../purchases/index.md) oder sind für [OSM-Mitwirkende](#free-for-osm-mappers) kostenlos. Updates erfolgen alle 15 Minuten auf den OsmAnd-Servern und können stündlich, täglich oder wöchentlich heruntergeladen werden. Diese Updates verbrauchen minimalen Speicherplatz – etwa 2-4% der vollen Kartengröße pro Monat.
+
+Live-Updates werden auf die heruntergeladene Karte angewendet und ersetzen nicht die vollständige Kartendatei. Daher spiegelt das Datum, das für eine Karte im Reiter Lokal angezeigt wird, keine Live-Updates wider und bleibt möglicherweise nach deren Anwendung unverändert. Um eine neuere Version der vollständigen Karte herunterzuladen, verwenden Sie *Karte aktualisieren* oder *Alle aktualisieren* im [Aktualisierungsmenü](#updates-menu).
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

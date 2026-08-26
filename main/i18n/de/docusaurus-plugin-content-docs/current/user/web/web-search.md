@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Suche
 title: Suche auf der Webseite
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Das **Suchmenü** kann über das Seitenpanel oder das **Suchsymbol 🔍** auf der Karte aufgerufen werden. Es enthält:
 
-- [Suchleiste](#search-bar). Geben Sie Schlüsselwörter ein, um nach bestimmten Orten oder POI zu suchen.  
+- [Suchleiste](#search-bar). Geben Sie Schlüsselwörter ein, um nach bestimmten Orten, POI, Favoriten oder Tracks zu suchen.  
 - [Kategorienbereich](#categories). Durchsuchen Sie kategorisierte Optionen für eine einfachere POI-Suche.  
 - [Erkunden-Bereich](#explore). Anzeigen Sie beliebte POI für das aktuelle Kartenzentrum und erkunden Sie Orte mit Fotos auf der Karte.
 
@@ -35,7 +35,7 @@ Das **Suchmenü** kann über das Seitenpanel oder das **Suchsymbol 🔍** auf de
 
 ### Suchleiste {#search-bar}
 
-Verwenden Sie die **Suchleiste**, um spezifische Orte oder POI nach Namen zu finden. Klicken Sie auf das Suchsymbol, geben Sie Ihre Abfrage ein und wählen Sie ein Ergebnis aus der Liste aus. Das Auswählen eines POI öffnet das [POI-Kontextmenü](#poi-context-menu), in dem Sie Details anzeigen und Schnellaktionen verwenden können.
+Verwenden Sie die **Suchleiste**, um bestimmte Orte, POI, [Favoriten](../web/web-favorites.md) und [Tracks](../web/web-tracks.md) nach Namen zu finden. Klicken Sie auf das Suchsymbol, geben Sie Ihre Abfrage ein und wählen Sie ein Ergebnis aus der Liste aus. Das Auswählen eines POI öffnet das [POI-Kontextmenü](#poi-context-menu), während das Auswählen eines Favoriten oder Tracks dessen Details öffnet, in denen Sie Informationen anzeigen und Schnellaktionen verwenden können.
 
 Wenn Sie nach einem Kategoriennamen suchen, zeigt das erste Ergebnis möglicherweise die entsprechende POI-Kategorie an. Klicken Sie auf die Kategorie, um die Ansicht [Kategoriensuche](#categories) zu öffnen.
 
@@ -164,7 +164,7 @@ Clicking on an image POI opens a new context menu that includes:
 
 ### Fotogalerie {#photo-gallery}
 
-Klicken Sie auf ***Alle anzeigen*** im Abschnitt **Online-Fotos** des POI-Kontextmenüs, um die *Fotogalerie* für den ausgewählten POI zu öffnen. Die Galerie ermöglicht es Ihnen, alle verfügbaren Fotos zu durchsuchen. Klicken Sie auf ein Foto, um es in einer größeren Ansicht zu öffnen (Foto-Öffnungsmodus). Verwenden Sie Zurück, um zum POI-Kontextmenü zurückzukehren.
+Klicken Sie auf ***Alle anzeigen*** im Abschnitt **Online-Fotos** des POI-Kontextmenüs, um die *Fotogalerie* für den ausgewählten POI zu öffnen. Die Galerie ermöglicht es Ihnen, alle verfügbaren Fotos zu durchsuchen. Klicken Sie auf ein Foto aus, um es in einer größeren Ansicht zu öffnen (Foto-Öffnungsmodus). Verwenden Sie Zurück, um zum POI-Kontextmenü zurückzukehren.
 
 Fotodetails umfassen:
 - **Datum**. Das Datum, an dem das Foto aufgenommen oder hochgeladen wurde.  

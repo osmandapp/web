@@ -8,7 +8,7 @@ import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } fr
 import { isFavoriteFromSearch } from '../../manager/SearchManager';
 import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
-import cloneDeep from 'lodash-es/cloneDeep';
+import { cloneTrackObject } from '../../util/Utils';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
 import {
     restoreOriginalIcon,
@@ -36,7 +36,8 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
-import { MARKER_Z_INDEX_MAIN, MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN } from '../util/ZIndexes';
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 function getAddFavoritePinLatLng(addFavorite) {
@@ -75,6 +76,7 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
     });
 
     if (isMainMarker) {
+        layer.options.simple = false;
         restoreOriginalIcon(layer);
         mainLayers.push(layer);
     }
@@ -88,6 +90,9 @@ export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMark
         });
         // Replace the marker's icon with the custom circle-like icon
         layer.setIcon(customIcon);
+        // Mark as a secondary (simple dot) marker so hover behavior matches POI:
+        // secondary markers get no hover outline. See useSelectMarkerOnMap.
+        layer.options.simple = true;
         secondaryLayers.push(layer);
     }
 }
@@ -458,7 +463,7 @@ const FavoriteLayer = () => {
             const groupWithOriginalFile = ctx.favorites.groups?.find((g) => g.id === e.sourceTarget.options.groupId);
             ctx.selectedGpxFile.file = groupWithOriginalFile.file;
 
-            ctx.selectedGpxFile.prevState = cloneDeep(selectedGpxFileRef.current);
+            ctx.selectedGpxFile.prevState = cloneTrackObject(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
                 iconHtml: e.sourceTarget.options.originalIcon?.options?.html,

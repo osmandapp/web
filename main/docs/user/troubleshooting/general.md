@@ -75,6 +75,21 @@ To remove search history in OsmAnd:
 For more detailed instructions about the search functionality, you can refer to [this guide](../search/search-history.md).
 
 
+## Interface {#interface}
+
+### Why are map buttons, widgets, or text too large? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+If map buttons, widgets, or the map ruler appear oversized after adjusting the display size in Android system settings, it may be related to how OsmAnd adapts the interface to the current screen configuration.
+
+On some devices, reducing the screen density or changing the display size can affect the size of interface elements, especially on large-screen devices and tablets.
+
+Recent OsmAnd versions no longer apply additional automatic scaling for devices detected as tablets. Interface elements now more closely follow the Android system display settings.
+
+If you want to manually adjust the size of map buttons, use the [Default Appearance](https://osmand.net/docs/user/widgets/configure-screen#button-appearance) settings: *Menu → Configure screen → Buttons → Default buttons → three-dot menu → Appearance*. There you can set a custom Size, Corner radius, and Background opacity for all default buttons at once.
+
+If the interface still appears larger than expected, check *Android System Settings → Display → Display size and text* and adjust the display settings as needed.
+
+
 ## Other {#other}
 
 ### Problem with the GPS connection (Android) {#problem-with-the-gps-connection-android}

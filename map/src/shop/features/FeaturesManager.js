@@ -251,6 +251,16 @@ export const featureCategories = [
     },
 ];
 
+export function findFeature(id) {
+    for (const category of featureCategories) {
+        const feature = category.features.find((f) => f.id === id);
+        if (feature) {
+            return feature;
+        }
+    }
+    return null;
+}
+
 export const planFeatures = {
     'osmand-start': [
         'offline_navigation',

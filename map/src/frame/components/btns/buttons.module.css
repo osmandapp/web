@@ -267,3 +267,18 @@
 .actionIconWithActive:active .iconContainer .activeIcon {
     opacity: 1 !important;
 }
+
+.iconBtn {
+    fill: var(--svg-icon-color) !important;
+    color: var(--svg-icon-color) !important;
+    &:hover {
+        fill: var(--selected-color) !important;
+        color: var(--selected-color) !important;
+        background-color: var(--buttons-background-secondary) !important;
+    }
+}
+
+.iconBtnActive {
+    fill: var(--selected-color) !important;
+    color: var(--selected-color) !important;
+}

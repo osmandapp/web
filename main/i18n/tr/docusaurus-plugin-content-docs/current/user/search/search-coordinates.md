@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title: Koordinat Arama
 ---
@@ -115,7 +115,7 @@ Arama için koordinatları girmenin birkaç yolu vardır. Her birini kullanmak i
 - *Giriş kuralları*. Koordinatlar bir MGRS bölgesinden, bir kareden ve doğu ve kuzey ofsetlerini gösteren iki rakamdan oluşur.
 - *En sık kullanılan*. MGRS formatı askeri navigasyon ve iletişimde yaygın olarak kullanılır ve açık hava meraklıları ve yürüyüşçüler için de faydalı olabilir.
 
-### İsviçre Izgarası {#swiss-grid}
+### İsviçre Izgarası (Yalnızca Android) {#swiss-grid}
 
 ![Koordinat Arama Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,8 +128,30 @@ Arama için koordinatları girmenin birkaç yolu vardır. Her birini kullanmak i
     - CH1903+, İsviçre'deki tektonik hareketlerdeki değişikliklerin neden olduğu koordinatlardaki kaymaları hesaba katmak için düzeltmeler içerir.
 - *En sık kullanılan*. İsviçre Izgarası (CH1903) ve İsviçre Izgarası (CH1903+) formatları İsviçre'de jeodezik ölçümler, kartografi, coğrafi bilgi sistemleri ve inşaat ve mühendislik için kullanılır. Bu formatlar, İsviçre'ye özgü yerel bir koordinat sistemi sağlar.
 
+### Maidenhead Konum Belirleyici Sistemi (Yalnızca Android) {#maidenhead-locator-system}
+
+![Koordinat Arama Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Bu, öncelikle amatör radyo operatörleri tarafından kullanılan bir coğrafi kod sistemidir. Coğrafi konumları kısa bir harf ve rakam dizisine kodlar, bu da konumları tanımlamayı ve konum bilgilerini değiştirmeyi kolaylaştırır. Maidenhead formatındaki koordinatlara bir örnek: KN29AS 19CX. İlk harf çifti büyük bir alanı tanımlar, ardından konumun hassasiyetini artıran rakamlar ve ek harf çiftleri gelir. Maidenhead Konum Belirleyici Sistemi hakkında daha fazla bilgiyi [buradan](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) okuyabilirsiniz.  
+- *Giriş kuralları*. Koordinatlar, harf ve rakam çiftlerinden oluşur. Daha uzun konum belirleyiciler daha yüksek konumsal doğruluk sağlar.  
+- *En sık kullanılan*. Maidenhead Konum Belirleyici Sistemi, amatör radyo operatörleri tarafından istasyon konumu, radyo iletişimi ve yarışmalar için yaygın olarak kullanılır.
 
 Her profil için ayrı ayrı farklı bir koordinat formatı ayarlayabilirsiniz. Bunu yapmak için *Genel ayarlar → [Koordinat formatı](../personal/profiles.md#units--formats)* yolunu izleyin.
+
+
+## Koordinat Formatını Özelleştir (Yalnızca Android) {#customize-coordinate-format}
+
+![Koordinat Arama Android](@site/static/img/search/customising_format.webp) ![Koordinat Arama Android](@site/static/img/search/searching_format.webp)
+
+Mevcut profil için mevcut koordinat formatları listesini özelleştirebilirsiniz.  
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+Bu ekranda şunları yapabilirsiniz:  
+- Birincil koordinat formatını ayarlamak, koordinat formatlarını yeniden sıralamak veya kaldırmak için *Düzenle* düğmesine dokunun.
+- Başka bir koordinat formatı eklemek için + öğesine dokunun.
+- Varsayılan koordinat formatları listesini geri yüklemek veya başka bir profilden koordinat formatlarını kopyalamak için ⋮ menüsünü açın.
+
+Koordinatlara göre arama yaparken, Son kullanılanlar listesinden bir koordinat formatı seçebilir veya tüm mevcut koordinat sistemlerine göz atmak için *Başka bir format seç* öğesine dokunabilirsiniz. Ayrıca koordinat sistemi adı veya EPSG koduyla arama yapabilirsiniz.
 
 
 <!--

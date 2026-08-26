@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Genel Bakış {#overview}
 
@@ -51,6 +50,44 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 
 </Tabs>
 
+<!--
+## Overview {#overview}
+
+The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
+
+You can:
+
+- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
+- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
+- Organize widgets in panels (top, bottom, left, right, center).
+- Create multiple pages within side panels, choose size of widgets.
+- Choose row height and toggle widget icons.
+- On Android, customize [widget panel appearance](#widget-panel-appearance).
+
+All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+
+</TabItem>
+
+</Tabs>
+-->
+
 
 ## Widget Panelleri {#widget-panels}
 
@@ -74,7 +111,7 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 
 </Tabs>
 
-OsmAnd, özelleştirilebilir widget panellerini kullanarak harita arayüzünü düzenlemenize olanak tanır.  
+OsmAnd, özelleştirilebilir widget panelleri kullanarak harita arayüzünü düzenlemenize olanak tanır.  
 Aşağıdaki panellerde widget'ları ekleyebilir, yeniden sıralayabilir, gruplayabilir ve kaldırabilirsiniz:
 
 - **Üst panel**
@@ -191,7 +228,7 @@ Her panel farklı düzen davranışlarını destekler:
 
 - [Geliştirici widget'ları](../widgets/info-widgets.md#developer-widgets).  
     İsteğe bağlı bilgileri görüntüler.  
-    5 widget dahildir: *Harita oluşturma FPS'si*, *Kamera eğimi*, *Kamera yüksekliği*, *Yakınlaştırma seviyesi*, *Kameradan hedefe uzaklık*, *Kullanılabilir RAM*.  
+    5 widget dahildir: *Harita oluşturma FPS'si*, *Kamera eğimi*, *Kamera yüksekliği*, *Yakınlaştırma seviyeli*, *Kameradan hedefe uzaklık*, *Kullanılabilir RAM*.  
 
 - [Harici Sensörler widget'ları](../widgets/info-widgets.md#external-sensors-widgets).  
     Set, BLE/ANT+ sensörlerinden gelen verileri gerçek zamanlı olarak izlemeye yardımcı olur.  
@@ -321,6 +358,8 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 
 ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Bu ayarlar yalnızca seçilen widget için geçerlidir.
+
 1. **Widget boyutu seçenekleri** (*tüm paneller için*):  
     **Üst, Alt, Sol ve Sağ panellerdeki** **Basit widget'ların** boyutunu özelleştirebilirsiniz:
 
@@ -358,6 +397,39 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
     - *Boyut* ayarına dokunun ve mevcut boyutlardan birini seçin.
     - *Simgeyi göster* alanında Kapalı konumuna geçin.
 
+
+<!--
+## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+
+1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+
+2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+
+3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+
+:::tip Purchase
+Custom widget colors is a [paid feature](../purchases/index.md).  
+:::
+
+4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+
+5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+
+6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+
+7. **Copy appearance settings:**
+
+    - Tap the ⋮ menu in the upper-right corner.
+    - Select Copy from.
+    - Choose one of the following options: *Another profile* or *One of the other panels*.
+
+-->
 
 ## Panelleri Özelleştirme {#panels-customization}
 
@@ -641,7 +713,7 @@ Varsayılan düğmeler ekranındaki **üç nokta menüsü** aşağıdaki eylemle
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Dokunarak mesafe](../widgets/radius-ruler.md#distance-by-tap). Konumunuzdan seçilen noktaya olan mesafeyi ölçme yeteneği verir.
+- [Dokunarak mesafe](#distance-by-tap). [⬇](#distance-by-tap)
 - [Hız göstergesi](../widgets/info-widgets.md#speedometer). GPS verilerine dayalı mevcut hızı ve [OpenStreetMap verilerine](https://wiki.openstreetmap.org/wiki/Key:maxspeed) dayalı sınırlı hızı gösterir. Görüntülenen veriler ayrıca OsmAnd'ın [Hız Sınırı Toleransı](../navigation/guidance/voice-navigation.md#speed-limit) ayarına da bağlıdır.
 
 
@@ -670,6 +742,37 @@ OsmAnd haritasında imlecin *[Konumum](../map/interact-with-map.md#my-position-a
 - **<Translate android="true" ids="position_on_map_center"/>**. İmleç her zaman ekranın ortasında konumlandırılır.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Konumum* ekranın ortasının biraz altına yerleştirilir. Bu mod, hareketinizin önünde daha fazla harita bilgisi görmenizi sağlar, bu da navigasyon sırasında kullanışlıdır.
 - **<Translate android="true" ids="shared_string_automatic"/>**. *Konumum*'u *[Harita yönü](../map/interact-with-map.md#map-orientation-modes)*'na bağlı olarak yerleştirir (*Alt* - hareket yönü için, *Merkez* - diğer tüm durumlar için).
+
+
+### Dokunarak Mesafe {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Dokunarak Mesafe Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dokunarak Mesafe IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Dokunarak Mesafe** aracı, [Yarıçap Cetveli](../widgets/radius-ruler.md#radius-ruler-widget) kullanmadan veya rota oluşturmadan haritadaki noktalar arasındaki mesafeleri ölçmenizi sağlar.
+
+İki kullanım durumu vardır:
+
+- **Konumunuzdan bir noktaya mesafe**  
+  Haritada herhangi bir yere dokunun; mevcut konumunuzdan dokunulan noktaya düz bir çizgi ve mesafe etiketi görünecektir. Çizgi, başka bir yere dokunsanız bile ekranda kalır.
+
+- **Herhangi iki nokta arasındaki mesafe**  
+  Haritada iki noktaya aynı anda (çoklu dokunma) dokunun. İki noktayı bir çizgi bağlar ve ölçülen mesafe görüntülenir.
+
+Mesafe etiketinin metin boyutunu da ayarlayabilirsiniz. Şuraya gidin: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. *<Translate android="true" ids="shared_string_normal"/>* (varsayılan) ve *<Translate android="true" ids="shared_string_large"/>* (1,5 kat daha büyük) arasında seçim yapın. Büyük seçenek seçildiğinde, daha iyi okunabilirlik için çizgi ile etiket arasına otomatik olarak ekstra boşluk eklenir. Değişiklikler uygulamayı yeniden başlatmadan anında uygulanır.
 
 
 ## Eylemler {#actions}

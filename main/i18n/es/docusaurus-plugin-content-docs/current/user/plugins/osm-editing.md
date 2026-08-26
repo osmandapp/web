@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  Edición de OpenStreetMap
 ---
@@ -47,7 +47,7 @@ Para utilizar el plugin *Edición de OpenStreetMap*, debe realizar los siguiente
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![Ajustes del plugin de edición de OpenStreetMap iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![Ajustes del plugin de edición de OpenStreetMap Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Los ajustes del plugin son globales y se aplican a todos los perfiles.
 - **<Translate android="true" ids="offline_edition"/>**. Si esta opción está activada, los cambios se guardan primero localmente (botón *Guardar*) y se suben a petición. Si la opción está desactivada, los cambios se suben inmediatamente (botón *Subir*).
 - **<Translate android="true" ids="use_dev_url"/>** *(solo Android)*. Le permite activar [dev.openstreetmap.org](https://dev.openstreetmap.org/) en lugar de [openstreetmap.org](http://openstreetmap.org/) para probar la subida de Notas OSM, PDI o tracks GPS. Cuando está activado, se cierra automáticamente la sesión de OpenStreetMap.org. Esta opción solo está disponible en la lista cuando el *plugin de desarrollo de OsmAnd* está activado.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Púlselo para abrir [*Menú → Mis lugares → Ediciones OSM*](../personal/myplaces.md). Esta pestaña enumera sus notas OSM no editadas. Las siguientes acciones están disponibles con la nota: *Subir*, *Mostrar en el mapa*, *Modificar nota OSM*, *Eliminar*. Las notas subidas o eliminadas ya no se muestran en la lista.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Púlselo para abrir [*Menú → Mis lugares → Ediciones OSM*](../personal/myplaces.md). Esta pestaña enumera sus notas OSM no editadas. Las siguientes acciones están disponibles con la nota: *Subir*, *Mostrar en el mapa*, *Modificar nota OSM*, *Eliminar*. Las notas subidas o eliminadas ya no se muestran en la lista. En iOS, también puede utilizar el modo Seleccionar para elegir varios elementos y cargarlos o eliminarlos a la vez. 
 
 :::note
 Si tiene una suscripción a [OsmAnd Pro](../purchases/android.md#pro-features), los cambios realizados en OSM aparecerán en su mapa de OsmAnd en una hora. Asegúrese de que las [Actualizaciones en vivo](../personal/maps-resources.md#live-updates) están activadas.
@@ -223,7 +223,7 @@ Para editar, comentar o cerrar notas de OSM, active su visualización en el mapa
 
 - La función Notas OSM le permite añadir notas al mapa. En estas notas, puede describir errores o escribir sobre información que falta en los datos de OpenStreetMap. Usted y otros usuarios pueden dejar comentarios en sus notas.
 - Puede ayudar a otros usuarios revisando sus preguntas o problemas, haciendo comentarios y luego cerrando las notas resueltas.
-- Lea más sobre las Notas de OpenStreetMap [aquí](https://wiki.openstreetmap.org/wiki/Notes).
+- Lea más sobre las Notes de OpenStreetMap [aquí](https://wiki.openstreetmap.org/wiki/Notes).
 
 Para crear una nota, no necesita iniciar sesión en OpenStreetMap.org, puede enviarla de forma anónima.
 

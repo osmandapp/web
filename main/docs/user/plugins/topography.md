@@ -203,19 +203,19 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*.  
+The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*. On iOS, the Visualization menu also includes *Terrain Shadows*, a real-time terrain shading mode based on 3D Relief.  
 Specific features:  
 
-- Only one option can be enabled at the same time, either Hillshade, Slope, or Altitude.
+- Only one option can be enabled at the same time, either Hillshade, Slope, Altitude, or Terrain Shadows.
 - If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
 
-The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
+The **Terrain** menu includes [color scheme](#default-color-scheme) (**visualization** on iOS) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
 
 
 ## Hillshade, Slope and Altitude Layers {#hillshade-slope-and-altitude-layers}
@@ -237,6 +237,15 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 - *Navigation.* Helps identify steep slopes, both downhill and uphill, which can be crucial for safe navigation.
 - *Plan routes.* Helps to choose the most suitable routes, considering the terrain.
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
+
+
+### Terrain Shadows (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Terrain Shadows** provides real-time dynamic shading based on 3D terrain geometry. Unlike raster Hillshade maps, the shading effect is generated directly on the device using terrain data and automatically follows the current map perspective.
+
+Terrain Shadows requires 3D Relief and automatically enables it when selected. The feature is designed to improve terrain readability while maintaining low performance impact.
 
 
 ### Default Color Scheme {#default-color-scheme}
@@ -264,6 +273,16 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 *Modify Color Scheme feature* allows you to select a color scheme:
 
 - From a [predefined list](#default-color-scheme).
@@ -281,30 +300,13 @@ You can:
 
 For advanced palette customization using palette files, see [Color Schemes](../personal/color-palette-schemes.md#palette-modify) article.
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-*Modify Color Scheme feature* allows you to select a color scheme:
-
-- From a [predefined list](#default-color-scheme).
-- From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
-
-You can [edit these palettes](../personal/color-palette-schemes.md#palette-modify) to personalize the appearance of maps and routes.
-
-</TabItem>
-
-</Tabs>
-
 ### Visibility {#visibility}
 
 | Visibility 31% | Visibility 74% |
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter.
+The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter. For Terrain Shadows, Visibility controls the strength of the terrain shading effect.
 
 ### Zoom Levels {#zoom-levels}
 
@@ -312,12 +314,13 @@ The *Visibility* function is used to adjust the transparency of the shadows for 
 
 The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
 
+Zoom Levels are not available for Terrain Shadows because this visualization is rendered dynamically and does not depend on raster layer visibility ranges.
+
 ### Cache Size {#cache-size}
 
 **Cache size** is an informational section that displays the amount of memory on your device currently used for *Terrain* data. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
 
 **Clearing the cache** is sometimes necessary to free up space on your device or to resolve potential performance issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
-
 
 ### Rendering Engine (Android) {#rendering-engine-android}
 
@@ -329,7 +332,6 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
     - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [OsmAnd development plugin](../plugins/development.md) and enable the [Use raster SQLite format for hillshade and slope](../plugins/development.md#terrain) setting.
 
     - Alternatively, you can use the [Terrain Map (3D)](../personal/maps-resources.md#paid-map-content) download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
-
 
 ### Quick Actions {#quick-actions}
 
@@ -364,7 +366,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>
 
-**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. If [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includes passages through buildings mapped with the tag `tunnel=building_passage`, OsmAnd renders visible openings in the 3D building model so that roads or pedestrian ways passing through the building are displayed correctly. 
+**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 
+
+For complex structures, OsmAnd uses `building:part` to render individual sections of a building with different heights and shapes. 
+
+If [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includes passages through buildings mapped with the tag `tunnel=building_passage`, OsmAnd renders visible openings in the 3D building model so that roads or pedestrian ways passing through the building are displayed correctly. 
+
+3D buildings can include different roof shapes based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:roof:shape). The `roof:shape` tag defines the roof geometry, while `roof:levels` and `roof:height` provide information about its height.
 
 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed. When zooming in or out and when panning the map, 3D buildings appear and disappear with a smooth fade animation. When a POI or a selected location (such as a map pin or navigation destination) is inside a building, OsmAnd highlights the corresponding building to make it easier to identify it on the map.
 

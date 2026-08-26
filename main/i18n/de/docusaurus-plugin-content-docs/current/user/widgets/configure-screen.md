@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Übersicht {#overview}
 
@@ -50,6 +49,44 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_conf
 </TabItem>
 
 </Tabs>
+
+<!--
+## Übersicht {#overview}
+
+Das Menü **Bildschirm konfigurieren** in OsmAnd ermöglicht es Ihnen, die Kartenoberfläche durch Hinzufügen und Anordnen von Widgets, Schaltflächen und Schnellaktionen auf mehreren Leisten anzupassen.
+
+Sie können:
+
+- [Informations-](../widgets/info-widgets.md), [Navigations-](../widgets/nav-widgets.md) und [markierungsbezogene](../widgets/markers.md) Widgets hinzufügen.
+- [Schnellaktionen](../widgets/quick-action.md), [benutzerdefinierte Schaltflächen](../widgets/quick-action.md#custom-buttons) und [Standard-Schaltflächen](../widgets/map-buttons.md) hinzufügen oder bearbeiten.
+- Widgets in Leisten (oben, unten, links, rechts, zentriert) organisieren.
+- Mehrere Seiten innerhalb der Seitenleisten erstellen, die Größe der Widgets wählen.
+- Zeilenhöhe wählen und Widget-Symbole umschalten.
+- Auf Android das [Erscheinungsbild der Widget-Leiste](#widget-panel-appearance) anpassen.
+
+Alle Widgets sind [profilabhängig](../personal/profiles.md) — jedes Profil hat sein eigenes Layout, seine eigene Reihenfolge, Sichtbarkeit und Einstellungen.
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview.webp)  ![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+
+</TabItem>
+
+</Tabs>
+-->
 
 
 ## Widget-Leisten {#widget-panels}
@@ -321,6 +358,8 @@ Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden.
 
 ![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Diese Einstellungen gelten nur für das ausgewählte Widget.
+
 1. **Optionen für Widget-Größe** (*für alle Leisten*):  
     Sie können die Größe von **einfachen Widgets** in der **oberen, unteren, linken und rechten Leiste** anpassen:
 
@@ -339,6 +378,13 @@ Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden.
     - In Kleiner Größe werden Beschriftungen nicht in den Linken und Rechten Leisten angezeigt. In den Oberen und Unteren Leisten kann die Beschriftung automatisch ausgeblendet werden (wenn sie auf der rechten Seite positioniert ist), um numerische Werte vollständig sichtbar zu halten.
     - Es gibt keine separate Option, um Textbeschriftungen ein- oder auszuschalten.
 
+<!--
+3. **Ausblenden von Widget-Textbeschriftungen**:
+
+    - Blendet Textbeschriftungen automatisch aus, damit numerische Informationen in kompakten Layouts vollständig sichtbar bleiben.
+    - Hilft, eine saubere und lesbare Widget-Anordnung zu erhalten, wenn der Platz begrenzt ist.  
+--> 
+
 4. **Individuelle Größe für verschiedene Zeilen** (*für alle Leisten*):
 
     - Widgets können individuell durch Anpassung der Zeilen- und Spaltengröße dimensioniert werden.
@@ -351,6 +397,39 @@ Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden.
     - Tippen Sie auf die Einstellung *Größe* und wählen Sie eine der verfügbaren Größen aus.
     - Schalten Sie im Feld *Symbol anzeigen* auf die Aus-Position.
 
+
+<!--
+## Erscheinungsbild der Widget-Leiste (nur Android) {#widget-panel-appearance}
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Erscheinungsbild der Widget-Leiste](@site/static/img/widgets/widget_appearance.webp) ![Erscheinungsbild der Widget-Leiste](@site/static/img/widgets/widget_appearance_2.webp)
+
+Mit den Erscheinungseinstellungen können Sie das Aussehen aller Widgets in der ausgewählten Leiste anpassen. Jede Leiste (*Oben*, *Unten*, *Links*, *Rechts*) hat eigene Erscheinungseinstellungen.
+
+1. **Höhe**. Steuert die Höhe der Widgets in der ausgewählten Leiste. Bei den linken und rechten Leisten ändert diese Einstellung die **Widget-Höhe**. Bei den oberen und unteren Leisten ändert sie die **Zeilenhöhe**. Verfügbare Optionen: *Original (Standard)*, *Klein*, *Mittel*, *Groß*.
+
+2. **Symbol**. Steuert die Sichtbarkeit von Symbolen. Verfügbare Optionen: *Original (Standard)*, *Ein*, *Aus*. 
+
+3. **Textfarbe**. Ändert die Farbe des primären Widget-Textes. Verfügbare Optionen: *Standard*, *Automatisch*, *Benutzerdefiniert*. Wenn **Benutzerdefiniert** ausgewählt ist, können Sie separate Farben für **Tag**- und **Nacht**-Modus festlegen. Eine Live-Vorschau zeigt die ausgewählten Farben an, bevor sie übernommen werden.
+
+:::tip Kauf
+Benutzerdefinierte Widget-Farben sind eine [kostenpflichtige Funktion](../purchases/index.md).  
+:::
+
+4. **Sekundäre Textfarbe**. Ändert die Farbe von Widget-Namen und Einheiten. Verfügbare Optionen: *Standard*, *Automatisch*, *Benutzerdefiniert*.
+
+5. **Hintergrundfarbe**. Ändert die Hintergrundfarbe der Widgets in der ausgewählten Leiste. Verfügbare Optionen: *Standard*, *Transparent*, *Benutzerdefiniert*.
+
+6. **Vorschau**. Der Vorschau-Bereich zeigt, wie die Widgets mit den aktuell ausgewählten Erscheinungseinstellungen aussehen.
+
+7. **Erscheinungseinstellungen kopieren:**
+
+    - Tippen Sie im oberen rechten Menü auf ⋮.
+    - Wählen Sie *Kopieren von*.
+    - Wählen Sie eine der folgenden Optionen: *Ein anderes Profil* oder *Eine der anderen Leisten*.
+
+-->
 
 ## Anpassung der Leisten {#panels-customization}
 
@@ -433,8 +512,6 @@ OsmAnd ermöglicht es Ihnen, mehrere Instanzen desselben Widgets zu verschiedene
 </TabItem>
 
 </Tabs>
-
-
 
 Sie können Widgets auf dem Anwendungsbildschirm im **Bearbeiten**-Modus neu anordnen oder entfernen.  
 
@@ -550,7 +627,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 </Tabs>
 
-**Standard-Schaltflächen** ermöglichen es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
+**Standard-Schaltflächen** ermöglicht es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
 
     - [3D-Modus](../widgets/map-buttons.md#3d-mode). Für iOS ist die Schaltfläche immer verfügbar. Für Android erscheint sie in der Liste und ist zur Einstellung verfügbar, wenn die Karten-Rendering-Engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) ausgewählt ist.
 
@@ -634,7 +711,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Entfernung durch Tippen](../widgets/radius-ruler.md#distance-by-tap). Gibt die Möglichkeit, die Entfernung von Ihrer Position zum ausgewählten Punkt zu messen.
+- [Entfernung durch Tippen](#distance-by-tap). [⬇](#distance-by-tap)
 - [Tachometer](../widgets/info-widgets.md#speedometer). Zeigt die aktuelle Geschwindigkeit basierend auf GPS-Daten und die Geschwindigkeitsbegrenzung basierend auf [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) an. Die angezeigten Daten hängen auch von der Einstellung [Geschwindigkeitsbegrenzungstoleranz](../navigation/guidance/voice-navigation.md#speed-limit) von OsmAnd ab.
 
 
@@ -663,6 +740,37 @@ Ermöglicht es Ihnen, die Platzierung des Cursors für *[Mein Standort](../map/i
 - **<Translate android="true" ids="position_on_map_center"/>**. Der Cursor wird immer in der Mitte des Bildschirms positioniert.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mein Standort* wird etwas unterhalb der Bildschirmmitte platziert. Dieser Modus ermöglicht es Ihnen, mehr Karteninformationen vor Ihrer Bewegung zu sehen, was während der Navigation nützlich ist.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Platziert *Mein Standort* abhängig von der *[Kartenausrichtung](../map/interact-with-map.md#map-orientation-modes)* (*Unten* - für Bewegungsrichtung, *Mitte* - für alle anderen).
+
+
+### Entfernung durch Tippen {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Entfernung durch Tippen Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Entfernung durch Tippen iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Das Werkzeug **Entfernung durch Tippen** ermöglicht es Ihnen, Entfernungen zwischen Punkten auf der Karte zu messen, ohne das [Radiuslineal](../widgets/radius-ruler.md#radius-ruler-widget) zu verwenden oder eine Route zu erstellen.
+
+Es gibt zwei Anwendungsfälle:
+
+- **Entfernung von Ihrem Standort zu einem Punkt**  
+  Tippen Sie irgendwo auf die Karte, und es erscheint eine gerade Linie von Ihrem aktuellen Standort zum angetippten Punkt, zusammen mit einer Entfernungsangabe. Die Linie bleibt auf dem Bildschirm, auch wenn Sie woanders tippen.
+
+- **Entfernung zwischen beliebigen zwei Punkten**  
+  Tippen Sie gleichzeitig auf zwei Punkte auf der Karte (Multi-Touch). Eine Linie verbindet die beiden Punkte, und die gemessene Entfernung wird angezeigt.
+
+Sie können auch die Textgröße der Entfernungsbeschriftung anpassen. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Wählen Sie zwischen *<Translate android="true" ids="shared_string_normal"/>* (Standard) und *<Translate android="true" ids="shared_string_large"/>* (1,5× größer). Wenn die Option „Groß“ ausgewählt ist, wird automatisch zusätzlicher Abstand zwischen der Linie und der Beschriftung für eine bessere Lesbarkeit hinzugefügt. Änderungen werden sofort ohne Neustart der App übernommen.
 
 
 ## Aktionen {#actions}

@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title: Meus Lugares
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão geral {#overview}
 
-**Meus Lugares** é o centro no aplicativo OsmAnd para gerenciar e personalizar todos os dados pessoais. Você pode usar esta seção para organizar [Pontos Favoritos](#favorites) marcados como importantes ou frequentemente visitados. A aba [Rotas](#tracks) permite visualizar, importar, gravar e criar arquivos GPX para ajudar a manter um histórico detalhado de suas rotas e viagens. Você também pode gerenciar suas [Edições do OpenStreetMap](#openstreetmap-edits), facilitando a contribuição para melhorias e atualizações do mapa. O plugin e os widgets [Notas de Áudio / Vídeo](#audiovideo-notes) permitem que usuários Android criem e salvem notas multimídia relacionadas a locais específicos, adicionando contexto às suas viagens.
+**Meus Lugares** é o centro no aplicativo OsmAnd para gerenciar e personalizar todos os dados pessoais. Você pode usar esta seção para organizar [Pontos Favoritos](#favorites) marcados como importantes ou frequentemente visitados. A aba [Rotas](#tracks) permite visualizar, importar, gravar e criar arquivos GPX para ajudar a manter um histórico detalhado de suas rotas e viagens. Você também pode gerenciar suas [Edições do OpenStreetMap](#openstreetmap-edits), facilitando a contribuição para melhorias e atualizações do mapa. O plugin e os widgets [Notas de Áudio / Vídeo](#audiovideo-notes) permitem que usuários Android criem e salvem notas multimídia relacionadas a locais específicos, adicionando contexto às suas viagens. No iOS, Meus Lugares também fornece acesso aos [Guias de Viagem](#travel-guides) marcados como favoritos, permitindo que você organize e abra rapidamente o conteúdo de viagem salvo.
 
 ## Menu Meus Lugares {#my-places-menu}
 
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu"/> → Meus Lugares*  
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
 ![Meus Lugares android](@site/static/img/personal/my_places_android_new.png) ![Menu Meus Lugares Android](@site/static/img/personal/my_places_menu_android_new.png)
 
@@ -36,9 +36,9 @@ Vá para: *<Translate android="true" ids="shared_string_menu"/> → Meus Lugares
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate android="true" ids="shared_string_menu"/> → Meus Lugares*  
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Meus Lugares ios](@site/static/img/personal/my_places_ios_new.png)  ![Menu Meus Lugares iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![Meus Lugares ios](@site/static/img/personal/my_places_ios_2.png)  ![Menu Meus Lugares iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ Meus Lugares é organizado por categorias. Selecione uma aba para gerenciar os d
 
 <TabItem value="android" label="Android">
 
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
 ![Menu Favoritos android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Favoritos iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Menu Favoritos iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,7 +94,7 @@ Para instruções completas, consulte o artigo [Favoritos](../personal/favorites
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> aba*
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![Meus Lugares com rotas no Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -98,9 +102,9 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> aba*
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Meus Lugares com rotas no iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![Meus Lugares com rotas no iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Compartilhar](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Compartilhar](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -240,11 +244,15 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 - **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
-### Gerenciar Armazenamento {#manage-storage}
+### Guias de Viagem (iOS) {#travel-guides}
 
-O item *Mapas e Recursos* do *Menu Principal* do aplicativo OsmAnd fornece acesso ao gerenciamento de dados da seção *Meus Lugares*. A aba [*Local*](../personal/maps-resources.md#local-menu) mostra quanto espaço é ocupado por todos os dados existentes do OsmAnd em seu dispositivo, e a seção *Meus Lugares* em particular. Você pode usá-la para obter informações detalhadas sobre seus dados e acesso para gerenciá-los. A seção só pode conter itens para os quais os dados foram baixados.  
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Verifique e gerencie seus dados. Para informações detalhadas, consulte o artigo [Mapas e Recursos](../personal/maps-resources.md).  
+![Guias de Viagem iOS](@site/static/img/plan-route/my_places_ios.png)
+
+A seção **Viagem** contém guias de viagem e artigos marcados como favoritos salvos para acesso offline. Você pode abrir, organizar e gerenciar rapidamente seu conteúdo de viagem salvo a partir de Meus Lugares. A seção Viagem é exibida apenas quando mais de um guia de viagem foi marcado como favorito.
+
+Para informações detalhadas, consulte o artigo [Guias de Viagem](../plan-route/travel-guides.md).
 
 ## Artigos Relacionados {#related-articles}
 
@@ -252,5 +260,6 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 - [Favoritos](../personal/favorites.md)
 - [Edição do OpenStreetMap](../plugins/osm-editing.md)
 - [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md)
+- [Guias de Viagem](../plan-route/travel-guides.md)
 - [Histórico de Pesquisa](../search/search-history.md#export-and-share)
 - [Esquemas de Paleta de Cores](../personal/color-palette-schemes.md)

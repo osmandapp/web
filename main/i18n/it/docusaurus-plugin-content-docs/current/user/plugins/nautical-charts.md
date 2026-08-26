@@ -1,5 +1,5 @@
 ---
-source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+source-hash: 470447687509454a83c4d6eeaff5fbef4b59e351e6fffa6397d47509009df4d8
 sidebar_position: 8
 title:  Visualizzazione Mappa Nautica
 ---
@@ -105,7 +105,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nau
 
 <TabItem value="ios" label="iOS">  
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
 ![Visualizzazione mappe plugin nautico iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -249,7 +249,7 @@ Questo stile aggiunge elementi visivi per la navigazione marittima, inclusi fana
 Nello stile Marino, i settori luminosi sono visualizzati intorno ai fari e alle boe: il bianco (mostrato in giallo sulla mappa) indica la direzione sicura per la navigazione, il rosso segna aree pericolose o ristrette, e il verde mostra direzioni ausiliarie o laterali.
 
 :::info
-Per visualizzare queste informazioni, il plugin Nautico deve essere abilitato e la mappa World Seamarks (o World_seamarks_2.obf) deve essere scaricata. Le informazioni non sono destinate all'uso ufficiale per la navigazione.
+Per visualizzare queste informazioni, il plugin Nautico deve essere abilitato e la mappa World Seamarks (or World_seamarks_2.obf) deve essere scaricata. Le informazioni non sono destinate all'uso ufficiale per la navigazione.
 :::
 
 

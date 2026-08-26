@@ -16,21 +16,45 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
-![SOTM](@site/static/img/promo/all/eurovelo.png)
+<img
+  src="https://2026.stateofthemap.org/img/logo/sotm_2026.svg"
+  alt="SOTM 2026"
+  width="300"
+/>
 
-# Get OsmAnd Pro Free for 3 Months!
+_________________
 
-As a participant of **EuroVelo & Cycling Tourism Conference Balatonfüred**, you’re eligible for a free 3-month OsmAnd Pro subscription.
+## Get OsmAnd Pro Free for 3 Months!
+
+As a participant of **State of the Map 2026**, you’re eligible for a **free 3-month OsmAnd Pro subscription**.
 
 To claim your subscription:
 
 1. Enter your email in the form below.
 
-<RegisterUserPromoBlock  promoKey='eurovelo1'/>
+<RegisterUserPromoBlock promoKey='sotm26'/>
 
-2. Submit before September 30, 2025 (offer expires).
+2. Submit the form before **September 30, 2026**. The offer expires after this date.
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
+
+_________________
+
+## Profitez d’OsmAnd Pro gratuitement pendant 3 mois !
+
+En tant que participant à **State of the Map 2026**, vous pouvez bénéficier d’un **abonnement OsmAnd Pro gratuit pendant 3 mois**.
+
+Pour profiter de votre abonnement :
+
+1. Saisissez votre adresse e-mail dans le formulaire ci-dessous.
+
+<RegisterUserPromoBlock promoKey='sotm26'/>
+
+2. Envoyez le formulaire avant le **30 septembre 2026**. L’offre expirera après cette date.
+
+Le **manuel complet** est disponible [ICI](https://osmand.net/promo/manual#version-française).
+
+___________________
 
 <SotmScreenshots />
 

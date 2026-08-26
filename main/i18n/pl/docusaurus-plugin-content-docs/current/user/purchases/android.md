@@ -1,5 +1,5 @@
 ---
-source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
+source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -76,25 +76,25 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. W innych regionach ceny są ekwiwalentne w lokalnych walutach.
 
-<!--
 
-:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+:::danger 🏖️ Summer Sale
+
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
+| **Cena (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Cena (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -103,7 +103,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Cena (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Cena (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
-
+-->
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -244,7 +244,7 @@ Aby przywrócić zakup, sprawdź, który plan OsmAnd kupiłeś.
 
 ### Inne przypadki {#other-cases}
 
-**Jeśli żadna z metod nie zadziałała:**
+**If none of the methods worked:**
 
 1. Wyczyść pamięć podręczną dla Google Play (Huawei AppGallery).
 2. Wyczyść pamięć podręczną dla OsmAnd.

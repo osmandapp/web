@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title: Mapas e Dados
 ---
@@ -111,7 +111,7 @@ Para resolver o problema de renderização lenta do mapa, especialmente ao usar 
 
 2. **Simplifique os detalhes do mapa.** Oculte elementos menos críticos, como limites, POIs, notas OSM, camadas climáticas, detalhes adicionais (*Menu → Configurar mapa → Renderização do mapa*) para otimizar a exibição do mapa e melhorar a velocidade.
 
-3. **Limite o número de POIs exibidos.** Exiba apenas os POIs principais ou limite as categorias exibidas durante a navegação, o que pode ajudar a acelerar a renderização do mapa. Acesse essas configurações em *Menu → Navegação → Configurações*.
+3. **Limite o número de POIs exibidos.** Exiba apenas os POIs principais ou limite as categorias exibidas durante a navegação, o qual pode ajudar a acelerar a renderização do mapa. Acesse essas configurações em *Menu → Navegação → Configurações*.
 
 4. **Ajuste o ampliador do mapa.** A configuração do ampliador do mapa pode ser um fator chave para desacelerar o mapa. Defina o ampliador para 100% pressionando e segurando o botão **"+"** ou **"-"** na tela do mapa para otimizar a exibição.
 
@@ -167,7 +167,7 @@ Sim, as linhas de contorno podem ser exibidas em pés em vez de metros. Antes de
 
 ### A pesquisa de endereço estruturada (cidade *→* rua *→* casa) não encontra a casa {#structured-city--street--house-address-search-doesnt-find-the-house}
 
-Se você está tentando pesquisar um local usando a estrutura *Cidade → Rua → Número da Casa* e nenhum resultado é retornado, considere as seguintes dicas e possíveis causas:
+If you're trying to search for a location using the structure *City → Street → House Number* and no results are returned, consider the following tips and potential causes:
 
 > **Dica**: Tente uma pesquisa de texto completo sem especificar a cidade, pois o endereço pode estar listado sob uma cidade diferente.
 
@@ -180,6 +180,22 @@ Se você está tentando pesquisar um local usando a estrutura *Cidade → Rua �
 - **Problema com o Nominatim**. A casa pode estar presente no OpenStreetMap, mas não encontrada via Nominatim (o mecanismo de busca usado pelo OpenStreetMap). Você pode aprender mais sobre como corrigir problemas relacionados a endereços [aqui](https://wiki.openstreetmap.org/wiki/Addresses).
 
 - **Possível Problema no OsmAnd**. Se a casa estiver presente no Nominatim, mas ainda não for encontrada no OsmAnd, o problema pode ser específico do OsmAnd. Você pode contribuir para resolver isso investigando mais a fundo. Mais detalhes podem ser encontrados neste [artigo técnico](../../technical/algorithms/trace-address-search-issues.md).
+
+### Pesquisar códigos postais do Reino Unido usando um arquivo POI personalizado {#search-uk-postcodes-using-a-custom-poi-file}
+
+Se um código postal do Reino Unido não puder ser encontrado usando *Menu → Pesquisa → Endereço*, ele pode não estar disponível no índice de pesquisa de endereços usado pelo OsmAnd.
+
+Um arquivo POI de códigos postais do Reino Unido mantido pela comunidade está disponível como um arquivo `.obf` personalizado. Ele contém códigos postais armazenados como Pontos de Interesse (POIs) com coordenadas e pode ser usado para pesquisar códigos postais diretamente.
+
+Como usá-lo:
+
+1. Baixe o arquivo `UK_postcodes_poi_europe.obf` do [repositório da comunidade](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. Se o arquivo foi baixado como um arquivo ZIP, extraia-o primeiro.
+3. Copie o arquivo `.obf` para a pasta de dados do OsmAnd, ou abra-o com um gerenciador de arquivos no seu dispositivo e escolha **OsmAnd** para importá-lo.
+4. Use a função **Pesquisa** geral (ícone de lupa) em vez da pesquisa de **Endereço**.
+5. Digite um código postal (por exemplo, CT14 8EU ou EX34 7EX) na barra de pesquisa.
+
+**NOTA:** Alguns códigos postais podem aparecer mais de uma vez nos resultados da pesquisa porque tanto os dados de mapa padrão do OsmAnd quanto o arquivo POI de código postal personalizado podem conter o mesmo código postal.
 
 
 ## Trilhas e Pontos {#tracks-and-points}

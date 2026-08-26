@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -82,7 +82,7 @@ Aby OsmAnd działał w *Android Auto*, należy [podłączyć](#connection-screen
 
 - Należy zakupić **płatną wersję** aplikacji lub wykupić [subskrypcję](../purchases/android.md#free-and-paid-features). Sprawdź swoją aktualną subskrypcję tutaj *Menu → Ustawienia → Zakupy*.  
 
-- *Android Auto* używa pierwszego [profilu Jazda OsmAnd](#profile-first) z listy Profili do nawigacji. Ustaw preferowany profil jako pierwszy, z wyjątkiem profilu *Przeglądaj mapę*, który nie jest odczytywany przez *Android Auto*. Aby to zrobić, przejdź do OsmAnd *Menu → Ustawienia → Profile aplikacji → Edytuj listę profili* → przesuń swój [**Jazda**](#profile-first) profil na pierwsze miejsce lub za profil *Przeglądaj mapę*.  
+- *Android Auto* używa pierwszego [profilu Jazda OsmAnd](#profile-first) z listy Profili do nawigacji. Ustaw preferowany profil jako pierwszy, z wyjątkiem profil *Przeglądaj mapę*, który nie jest odczytywany przez *Android Auto*. Aby to zrobić, przejdź do OsmAnd *Menu → Ustawienia → Profile aplikacji → Edytuj listę profili* → przesuń swój [**Jazda**](#profile-first) profil na pierwsze miejsce lub za profil *Przeglądaj mapę*.  
 
 - Ważne jest, aby pamiętać, że *Android Auto* to aplikacja intensywnie wykorzystująca dane, w tym dane mobilne, a jakość systemu może zależeć od jakości połączenia i szybkości dostępu do Internetu.
 
@@ -222,6 +222,8 @@ Widżet **Następny zakręt** wyświetla odległość i typ [manewru następnego
 
 ### Informacje o trasie {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Informacje o trasie składają się z:
 
 - [Szacowany czas podróży](../widgets/nav-widgets.md#time-to-destination),
@@ -229,6 +231,8 @@ Informacje o trasie składają się z:
 - [Dystans podróży](../widgets/nav-widgets.md#distance-to-destination).
 
 Po włączeniu [ustawienie widżetu](#eta-next-stop) (Informacje o trasie) pokaże szczegóły trasy do następnego przystanku ([punkt pośredni](../navigation/setup/route-navigation.md#intermediate-destinations)).
+
+Dotknij przycisku **X** obok widżetu informacji o trasie, aby zatrzymać nawigację.
 
 
 ### Ostrzeżenia nawigacyjne {#navigation-alerts}

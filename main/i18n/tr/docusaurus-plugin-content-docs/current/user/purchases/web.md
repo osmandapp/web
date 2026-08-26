@@ -1,5 +1,5 @@
 ---
-source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
+source-hash: d92c746f8a72d84ab8395bdc89390208bc81a4755169dbeefc240e0f63d57a95
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
@@ -38,11 +38,9 @@ Bu platformlardan yapılan tüm satın almalar [**çapraz platform erişimini**]
 Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer bölgelerdeki fiyatlar, ödeme platformu tarafından otomatik olarak yerel para birimine dönüştürülür.
 
 
-<!--
+:::danger 🏖️ Yaz İndirimi
 
-:::danger 🌱 Spring Sale
-
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Aceleyin! Bu teklif yalnızca* **17 Haziran (23:00 CET)** *tarihine kadar geçerlidir*.
 
 :::
 
@@ -56,22 +54,22 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+[Web sitemizden](https://osmand.net/pricing) indirimli bir abonelik satın alarak,  
+2 yıllık indirimli plan alırsınız.  
+Üçüncü yıldan itibaren tam fiyat uygulanacaktır.
 :::
 
+<!--
 
--->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |**Tek Seferlik Satın Alma** (15 Yıl Pro / Maps+ Ömür Boyu) |
-| **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
-| **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
-
+-->
 
 
 

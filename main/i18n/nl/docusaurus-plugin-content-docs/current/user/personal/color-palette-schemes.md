@@ -1,5 +1,5 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
 title:  Kleurenschema's
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Betaalde functie
 
-Kleurenschema's worden gebruikt als onderdeel van de betaalde [Maps+](../purchases/index.md) en Pro <ProFeature /> functies.  
+Kleurenschema's worden gebruikt als onderdeel van betaalde [Maps+](../purchases/index.md) en Pro <ProFeature /> functies.  
 
 :::
 
@@ -63,7 +63,7 @@ Ga naar: *Menu → Kaarten & Bronnen → Lokaal → Kleuren*
 
 <TabItem value="ios" label="iOS">
 
-![Kleurenpalet](@site/static/img/personal/color-schemes/palette_ios.png) ![Kleurenpalet](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Kleurenpalet](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Kleurenpalet](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 

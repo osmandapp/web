@@ -24,6 +24,7 @@ import supportedLanguages from '../../../resources/translations/supportedLanguag
 import { handleLanguageChange } from '../../../i18n';
 import { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
+import { HEADER_MENU_Z_INDEX } from '../../../map/util/ZIndexes';
 
 const pages = ({ t }) => [
     {
@@ -36,7 +37,9 @@ const pages = ({ t }) => [
     },
     {
         name: `💳 ${t('web:header_pricing')}`,
+        //   name: `🏖️ ${t('web:header_sale_and_pricing')}`,
         //   name: `🌱 ${t('web:header_spring_sale')}`,
+        //   name: `🏖️ ${t('web:header_summer_sale')}`,
         url: '/pricing',
     },
     {
@@ -66,6 +69,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
 
     useEffect(() => {
         if (searchParams.size !== 1) return;
+        if (!searchParams.has(LANG_PARAM)) return;
         const lang = searchParams.get(LANG_PARAM);
         if (lang && lang !== i18n.language && supportedLanguages.includes(lang)) {
             (async () => {
@@ -134,7 +138,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     return (
         <AppBar
             sx={{
-                zIndex: 1300,
+                zIndex: HEADER_MENU_Z_INDEX,
                 height: HEADER_SIZE,
                 background: '#ffffff',
                 mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,

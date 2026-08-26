@@ -1,5 +1,5 @@
 ---
-source-hash: 6c1de0b97c942fbd3df1c78e40211983860e74b071e094246c5e4d4436803e03
+source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -53,7 +53,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 <TabItem value="ios" label="iOS">  
 
-![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_2_new.png)
+![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -88,6 +88,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 - **Symuluj pierwsze uruchomienie aplikacji**. Ustawia flagę wskazującą pierwsze uruchomienie aplikacji, pozostawiając wszystkie inne ustawienia bez zmian.  
 - **Testuj komunikaty głosowe**. Wybierz głos i przetestuj, odtwarzając komunikaty.  
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Podświetla dotknięcia ekranu za pomocą wskaźników wizualnych.
 - **Przezroczysty pasek stanu**. Mapa staje się widoczna pod paskiem stanu.  
 - **Pokaż baner wersji darmowej**. Wyświetla baner wersji darmowej nawet w wersji płatnej.  
 - **Pokaż informacje debugowania**. Wyświetla informacje graficzne o umiejscowieniu każdego tekstu na mapie.
@@ -351,7 +352,7 @@ OsmAnd daje możliwość symulacji lokalizacji i ruchu urządzenia za pomocą ś
 </Tabs>  
 
 Po uruchomieniu symulacji zobaczysz na głównym ekranie aplikacji, że znacznik nawigacji porusza się zgodnie ze śladem GPX. Dotknij [przycisku mojej pozycji](../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować *Moją lokalizację* (symulowaną geolokalizację urządzenia) ze środkiem mapy.  
-Aby zatrzymać symulację ruchu urządzenia, wróć do [ustawień](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
+Aby zatrzymać symulację ruchu urządzenia, wróć do [ustawieniach](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
 
 - Dostęp do *<Translate android="true" ids="simulate_location_by_gpx"/>* można również uzyskać poprzez **[menu Szybkich akcji](../widgets/quick-action.md#navigation)**.
 - Prędkość ruchu podczas symulacji można ustawić jako równą zarejestrowanej prędkości (1) lub szybszą (x2, x3, x4).

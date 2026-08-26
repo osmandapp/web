@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title:  Ricerca Coordinate
 ---
@@ -111,11 +111,11 @@ Esistono diversi modi per inserire le coordinate per la ricerca. Per utilizzare 
 
 ![Ricerca Coordinate Android](@site/static/img/search/coordinates_search_MGRS_andr.png)  
 
-**<Translate android="true" ids="navigate_point_mgrs"/>**. Si tratta di un sistema di coordinate spesso utilizzato in applicazioni militari. Si basa sul sistema UTM ed è integrato da un'ulteriore griglia di quadrati. Un esempio di coordinate in formato MGRS per una località in Australia può essere il seguente: 55HBE1234567890. In questo esempio, "55H" rappresenta la zona MGRS e "BE" il quadrato in cui si trova la località. "123456" rappresenta lo scostamento verso est e "7890" lo scostamento verso nord all'interno di quel quadrato. Le MGRS sono ampiamente utilizzate in aree che richiedono un'elevata precisione e georeferenziazione. Sono particolarmente utili in ambienti in cui gli indirizzi possono non essere chiari o disponibili, come le operazioni militari o le spedizioni in aree remote. Potete leggere di più sul formato MGRS [qui](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
+**<Translate android="true" ids="navigate_point_mgrs"/>**. Si tratta di un sistema di coordinate spesso utilizzato in applicazioni militari. Si basa sul sistema UTM ed è integrato da un'ulteriore griglia di quadrati. Un esempio di coordinate in formato MGRS per una località in Australia può essere il seguente: 55HBE1234567890. In questo esempio, "55H" rappresenta la zona MGRS e "BE" il quadrato in cui si trova la località. "123456" rappresenta lo scostamento verso est e "7890" rappresenta lo scostamento verso nord all'interno di quel quadrato. Le MGRS sono ampiamente utilizzate in aree che richiedono un'elevata precisione e georeferenziazione. Sono particolarmente utili in ambienti in cui gli indirizzi possono non essere chiari o disponibili, come le operazioni militari o le spedizioni in aree remote. Potete leggere di più sul formato MGRS [qui](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
 - *Regole di inserimento*. Le coordinate sono costituite da una zona MGRS, un quadrato e altre due cifre che indicano gli scostamenti est e nord.
 - *Uso più comune*. Il formato MGRS è ampiamente utilizzato nella navigazione e nelle comunicazioni militari e può essere utile anche per gli appassionati di outdoor e gli escursionisti.
 
-### Griglia Svizzera {#swiss-grid}
+### Griglia Svizzera (solo Android) {#swiss-grid}
 
 ![Ricerca Coordinate Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,8 +128,30 @@ Esistono diversi modi per inserire le coordinate per la ricerca. Per utilizzare 
     - CH1903+ include correzioni per tenere conto degli spostamenti delle coordinate causati da cambiamenti nei movimenti tettonici in Svizzera.
 - *Uso più comune*. I formati Griglia Svizzera (CH1903) e Griglia Svizzera (CH1903+) sono utilizzati in Svizzera per misurazioni geodetiche, cartografia, sistemi informativi geografici, edilizia e ingegneria. Questi formati forniscono un sistema di coordinate locale specifico per la Svizzera.
 
+### Sistema Locator Maidenhead (solo Android) {#maidenhead-locator-system}
+
+![Ricerca Coordinate Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Si tratta di un sistema di geocodifica utilizzato principalmente dagli operatori radioamatori. Codifica le posizioni geografiche in una breve sequenza di lettere e cifre, rendendolo comodo per identificare le posizioni e scambiare informazioni sulla posizione. Un esempio di coordinate in formato Maidenhead è KN29AS 19CX. La prima coppia di lettere identifica un campo grande, seguita da cifre e coppie di lettere aggiuntive che aumentano la precisione della posizione. Potete leggere di più sul Maidenhead Locator System [qui](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+- *Regole di inserimento*. Le coordinate sono costituite da coppie alternate di lettere e cifre. I localizzatori più lunghi forniscono una maggiore precisione posizionale.  
+- *Uso più comune*. Il Maidenhead Locator System è ampiamente utilizzato dagli operatori radioamatori per la localizzazione delle stazioni, le comunicazioni radio e i concorsi.
 
 Per ogni profilo è possibile impostare separatamente un formato di coordinate diverso. Per fare ciò, andare su *Impostazioni generali → [Formato coordinate](../personal/profiles.md#units--formats)*.
+
+
+## Personalizza il formato delle coordinate (solo Android) {#customize-coordinate-format}
+
+![Ricerca Coordinate Android](@site/static/img/search/customising_format.webp) ![Ricerca Coordinate Android](@site/static/img/search/searching_format.webp)
+
+È possibile personalizzare l'elenco dei formati di coordinate disponibili per il profilo corrente.  
+Andare su: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+In questa schermata è possibile:  
+- Toccare il pulsante *Modifica* per impostare il formato delle coordinate primario, riordinare o rimuovere i formati di coordinate.
+- Toccare + per aggiungere un altro formato di coordinate.
+- Aprire il menu ⋮ per ripristinare l'elenco predefinito dei formati di coordinate o copiare i formati di coordinate da un altro profilo.
+
+Quando si cerca per coordinate, è possibile selezionare un formato di coordinate dall'elenco Recenti o toccare *Seleziona altro formato* per sfogliare tutti i sistemi di coordinate disponibili. È anche possibile cercare per nome del sistema di coordinate o codice EPSG.
 
 
 <!--

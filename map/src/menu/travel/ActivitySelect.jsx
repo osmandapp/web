@@ -15,10 +15,11 @@ import {
 import styles from './travel.module.css';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { ACTIVITY_ALL } from './TravelMenu';
+import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE } from './TravelMenu';
 
 const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
 
@@ -30,9 +31,16 @@ export default function ActivitySelect({
     updatedActivities,
     activityCounts = null,
     defaultIcon = null,
+    showInvalid = false,
 }) {
+    const { t } = useTranslation();
     const [, height] = useWindowSize();
     const [expandedGroups, setExpandedGroups] = useState({});
+
+    const invalidOptions = [
+        { id: ACTIVITY_GARBAGE, label: t('web:garbage_tracks') },
+        { id: ACTIVITY_ERROR, label: t('web:error_tracks') },
+    ];
 
     const getActivityCount = (activityId) => {
         if (!activityCounts || !Array.isArray(activityCounts)) return undefined;
@@ -41,14 +49,17 @@ export default function ActivitySelect({
 
     const getUpdatedActivity = (activityId) => updatedActivities?.find((a) => a.id === activityId);
 
-    const selectedActivities = Array.isArray(value) ? value : value === ACTIVITY_ALL ? [] : [value];
+    const isInvalidSelected = (id) => Array.isArray(value) && value.length === 1 && value[0] === id;
+    const selectedActivities = (Array.isArray(value) ? value : value === ACTIVITY_ALL ? [] : [value]).filter(
+        (id) => id !== ACTIVITY_GARBAGE && id !== ACTIVITY_ERROR
+    );
     const isAllSelected = value === ACTIVITY_ALL || (Array.isArray(value) && value.length === 0);
 
     const unidentified = (() => {
         const count = getActivityCount(UNIDENTIFIED_TRACKS_KEY);
         const hasCount = count != null && count > 0;
         const disabled = activityCounts != null && !hasCount;
-        const label = hasCount ? `Unidentified tracks (${count})` : 'Unidentified tracks';
+        const label = hasCount ? `${t('web:unidentified_tracks')} (${count})` : t('web:unidentified_tracks');
         return { count, hasCount, disabled, label };
     })();
 
@@ -110,7 +121,9 @@ export default function ActivitySelect({
     };
 
     const getSelectedLabel = () => {
-        if (isAllSelected) return 'All activities';
+        const invalidOption = invalidOptions.find((o) => isInvalidSelected(o.id));
+        if (invalidOption) return invalidOption.label;
+        if (isAllSelected) return t('web:all_activities');
 
         // Check if all selected activities belong to a single group
         for (const group of activities?.groups || []) {
@@ -127,16 +140,16 @@ export default function ActivitySelect({
         if (selectedActivities.length === 1) {
             const activityId = selectedActivities[0];
             if (activityId === UNIDENTIFIED_TRACKS_KEY) {
-                return 'Unidentified tracks';
+                return t('web:unidentified_tracks');
             }
             const activity = getUpdatedActivity(activityId);
             if (activity) {
                 return activity.label;
             }
-            return 'Select';
+            return t('web:shared_string_select');
         }
 
-        return `${selectedActivities.length} selected`;
+        return `${selectedActivities.length} ${t('web:shared_string_selected')}`;
     };
 
     return (
@@ -198,7 +211,7 @@ export default function ActivitySelect({
                     <MenuItem className={styles.optionItem} value="all" onClick={selectAll}>
                         <Radio checked={isAllSelected} />
                         <ListItemText>
-                            <MenuItemWithLines name="All activities" maxLines={1} />
+                            <MenuItemWithLines name={t('web:all_activities')} maxLines={1} />
                         </ListItemText>
                     </MenuItem>
                     <Divider sx={{ my: '0px !important' }} />
@@ -284,6 +297,24 @@ export default function ActivitySelect({
                             <MenuItemWithLines name={unidentified.label} maxLines={1} />
                         </ListItemText>
                     </MenuItem>
+                    {showInvalid && <Divider />}
+                    {showInvalid &&
+                        invalidOptions.map((option) => (
+                            <MenuItem
+                                key={option.id}
+                                className={styles.optionItem}
+                                value={option.id}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    onChange([option.id]);
+                                }}
+                            >
+                                <Radio checked={isInvalidSelected(option.id)} />
+                                <ListItemText>
+                                    <MenuItemWithLines name={option.label} maxLines={1} />
+                                </ListItemText>
+                            </MenuItem>
+                        ))}
                 </Select>
             </FormControl>
         </Box>

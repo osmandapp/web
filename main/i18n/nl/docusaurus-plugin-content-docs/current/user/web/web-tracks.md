@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -41,6 +41,22 @@ De Tracks-sectie bevat alle track-gerelateerde tools en acties. De volgende opti
 - Mappen downloaden als OSF- of OBF-verzameling.
 
 
+## Tracks importeren {#import-tracks}
+
+U kunt GPX-tracks importeren in de Web Planner door de Import-knop te gebruiken of door GPX-bestanden rechtstreeks op de kaart te slepen en neer te zetten.
+
+Een track importeren met slepen en neerzetten:
+- Open de Tracks-sectie.
+- Sleep een of meer GPX-bestanden vanaf uw computer.
+- Zet de bestanden neer op de kaart of in een specifieke trackmap.
+
+Wanneer een bestand over de kaart wordt gesleept, wordt het beschikbare neerzetgebied gemarkeerd. Als u het bestand rechtstreeks op de kaart neerzet, wordt het geïmporteerd in de Import-map. Als u het op een bestaande map neerzet, wordt het in die map geïmporteerd.
+
+Na het importeren verschijnt de track in de tracklijst, wordt deze gesynchroniseerd met [OsmAnd Cloud](../personal/osmand-cloud.md) en beschikbaar op alle apparaten die verbonden zijn met hetzelfde account.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Zichtbaar op de kaart {#visible-on-the-map}
 
 De weergave **Zichtbaar op de kaart** somt alle tracks op die momenteel op de kaart worden weergegeven. Elke track kan aan deze lijst worden toegevoegd vanuit het hoofd Tracks-paneel met de optie **⋮ → Track zichtbaar maken**.
@@ -80,14 +96,18 @@ Tracks worden alleen weergegeven als de configuratie van de Slimme map wordt ond
 
 De synchronisatie van Slimme mappen kan variëren afhankelijk van het platform en de synchronisatieconfiguratie. Voor de meest consistente resultaten, zorg ervoor dat Cloud-synchronisatie is ingeschakeld en up-to-date op alle apparaten.
 
-In het drie-puntenmenu (⋮) kunt u de Slimme map downloaden als een OBF-verzameling.
+Het drie-puntenmenu (⋮) biedt extra acties voor de Slimme map. U kunt de map *Downloaden als OSF*, *Downloaden als OBF-verzameling*, *Hernoemen* of *Verwijderen*.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud-tracks {#cloud-tracks}
 
 GPX-tracks die u hebt in [OsmAnd Cloud](../personal/osmand-cloud.md) zijn na inloggen beschikbaar voor weergave en bewerking. Alleen voor **Pro-gebruikers** <ProFeature/> en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gebruikers (die hun gegevens kunnen downloaden zelfs nadat hun Pro-abonnement is verlopen).
+
+Wanneer u een track selecteert, centreert de kaart automatisch en past het zoomniveau aan om de volledige track binnen het zichtbare kaartgebied weer te geven.
+
+U kunt ook de knop **Focus** gebruiken om alle andere favorieten en tracks op de kaart te verbergen, zodat u de geselecteerde track gemakkelijker kunt bekijken. Schakel de Focus-modus uit om de zichtbaarheid van andere kaartobjecten te herstellen.
 
 De volgende functies zijn beschikbaar na het kiezen van een cloud-track:
 - *Informatie* - weergeven van track-gegevens.

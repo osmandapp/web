@@ -1,4 +1,5 @@
 import headerStyles from '../menu/trackfavmenu.module.css';
+import IconBtn from '../frame/components/btns/IconBtn';
 import {
     AppBar,
     Box,
@@ -139,7 +140,7 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
             {!dialog && (
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
-                        <IconButton
+                        <IconBtn
                             id={'se-change-pwd-menu-close'}
                             variant="contained"
                             type="button"
@@ -150,7 +151,7 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
                             }}
                         >
                             <CloseIcon />
-                        </IconButton>
+                        </IconBtn>
                         <Typography id="se-change-pwd-menu-name" component="div" className={headerStyles.title}>
                             {t('web:change_reset_password')}
                         </Typography>

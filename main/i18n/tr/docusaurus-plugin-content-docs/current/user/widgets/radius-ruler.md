@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title: Yarıçap Cetveli ve Cetvel
 ---
@@ -210,6 +210,7 @@ Yarıçap Cetveli'ni kullanırken mesafeleri ve çevredeki araziyi daha iyi gör
 Yarıçap daireleri derinlikle görünecektir, bu özellikle engebeli alanlarda veya dikey bağlamın önemli olduğu kentsel ortamlarda rota planlaması için kullanışlıdır.
 
 
+<!--
 ## Dokunarak Mesafe {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -246,6 +247,7 @@ Mesafe etiketinin metin boyutunu da ayarlayabilirsiniz. *<Translate android="tru
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | Metin boyutu | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Birim Biçimi | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Video Rehberleri {#video-guides}

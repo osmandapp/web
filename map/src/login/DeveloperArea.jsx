@@ -44,6 +44,24 @@ export default function DeveloperArea() {
                 icon={<InfoIcon />}
                 onClick={() => window.open(`https://test.osmand.net/admin/issues`, '_blank')}
             />
+            <DividerWithMargin margin={'64px'} />
+            <SimpleItemWithRightInfo
+                name={t('web:dev_operations')}
+                icon={<InfoIcon />}
+                onClick={() => window.open(`https://test.osmand.net/admin/operations`, '_blank')}
+            />
+            <DividerWithMargin margin={'64px'} />
+            <SimpleItemWithRightInfo
+                name={t('web:dev_search_test')}
+                icon={<InfoIcon />}
+                onClick={() => window.open(`https://test.osmand.net/admin/search-test`, '_blank')}
+            />
+            <DividerWithMargin margin={'64px'} />
+            <SimpleItemWithRightInfo
+                name={t('web:dev_backup_maps')}
+                icon={<InfoIcon />}
+                onClick={() => window.open(`https://data.osmand.net/backup-maps/`, '_blank')}
+            />
             <ThickDivider mt={'0px'} mb={'0px'} />
         </>
     );

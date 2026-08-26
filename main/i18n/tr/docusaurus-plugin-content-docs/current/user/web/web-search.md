@@ -1,5 +1,5 @@
 ---
-source-hash: e8f044473acdc81152b6ac5081df28b86a07fd654cf5ea4de38da7f569d022b7
+source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
 sidebar_position: 10
 sidebar_label:  Arama
 title: Web Sitesinde Arama
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Arama menüsü** yan panelden veya haritadaki 🔍 Arama simgesinden erişilebilir. İçeriği:
 
-- [Arama Çubuğu](#search-bar). Belirli konumları veya ilgi çekici noktaları aramak için anahtar kelimeler girin.  
+- [Arama Çubuğu](#search-bar). Belirli konumları, ilgi çekici noktaları, favorileri veya rotaları aramak için anahtar kelimeler girin.  
 - [Kategoriler Bölümü](#categories). İÇN aramalarını kolaylaştırmak için kategorize edilmiş seçeneklere göz atın.  
 - [Keşfet Bölümü](#explore). Mevcut harita merkezi için popüler İÇN'leri görüntüleyin ve harita üzerinde fotoğraflarla yerleri keşfedin.
 
@@ -35,7 +35,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Arama Çubuğu {#search-bar}
 
-**Arama Çubuğu**nu, belirli yerleri veya ilgi çekici noktaları adıyla bulmak için kullanın. Arama simgesine tıklayın, sorgunuzu girin ve listeden bir sonuç seçin. Bir İÇN seçmek, [İÇN Bağlam Menüsünü](#poi-context-menu) açar; burada ayrıntıları görüntüleyebilir ve hızlı eylemleri kullanabilirsiniz.
+**Arama Çubuğu**nu, belirli yerleri, ilgi çekici noktaları, [favorileri](../web/web-favorites.md) ve [rotaları](../web/web-tracks.md) adıyla bulmak için kullanın. Arama simgesine tıklayın, sorgunuzu girin ve listeden bir sonuç seçin. Bir İÇN seçmek [İÇN Bağlam Menüsünü](#poi-context-menu) açar; favori veya rota seçmek ise ayrıntıları açar, burada bilgileri görüntüleyebilir ve hızlı eylemleri kullanabilirsiniz.
 
 Bir kategori adına göre arama yaparsanız, ilk sonuç ilgili İÇN kategorisini gösterebilir. Kategoriye tıklayarak [Kategoriler araması](#categories) görünümünü açın.
 
@@ -57,7 +57,7 @@ Keşfet'e erişmek için Arama sekmesini açın — Keşfet sonuçları haritada
 
 ## İÇN Bağlam Menüsü {#poi-context-menu}
 
-Hangi arama seçeneğini kullanırsanız kullanın (Arama Çubuğu, Kategoriler veya Keşfet), haritada veya sonuç listesinde bir İÇN seçmek İÇN Bağlam Menüsünü açar. Bağlam menüsü, İÇN bilgilerini görüntülemek ve yaygın eylemleri gerçekleştirmek için ana yerdir. İÇN ayrıntılarını (konum ve ilgili veriler gibi) hızlı eylemlerle (örneğin, kaydetme, paylaşma veya rota planlama ve navigasyon başlatma) birleştirir.
+Hangi arama seçeneğini kullanırsanız kullanın (Arama Çubuğu, Kategoriler veya Keşfet), haritada veya sonuç listesinde bir İÇN seçmek İÇN Bağlam Menüsünü açar. Bağlam menüsü, İÇN bilgilerini görüntülemek ve yaygın eylemleri gerçekleştirmek için ana yerdir. İÇN ayrıntılarını (konum ve ilgili veriler gibi) hızlı eylemlerle (örneğin, kaydetme, paylaşma veya navigasyon başlatma) birleştirir.
 
 ### İÇN Ayrıntıları {#poi-details}
 

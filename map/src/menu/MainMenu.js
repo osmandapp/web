@@ -87,6 +87,7 @@ import {
     MENU_IDS,
     liveHash,
 } from '../manager/GlobalManager';
+import { LEFT_MENU_Z_INDEX, OPEN_LEFT_MENU_Z_INDEX, OPEN_MENU_INFOBLOCK_Z_INDEX } from '../map/util/ZIndexes';
 import { createUrlParams, decodeString } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
@@ -101,7 +102,13 @@ import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
-import { openPoiObj, openSearchObj, navigateBackToSearchResults, isFavoriteFromSearch, isTrackFromSearch } from '../manager/SearchManager';
+import {
+    openPoiObj,
+    openSearchObj,
+    navigateBackToSearchResults,
+    isFavoriteFromSearch,
+    isTrackFromSearch,
+} from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
@@ -174,10 +181,6 @@ export default function MainMenu({
     const recentSaver = useRecentDataSaver();
     const openVisibleTracks = location.pathname === MAIN_URL_WITH_SLASH + VISIBLE_TRACKS_URL;
     const aloneVisibleTracks = openVisibleTracks && !ctx.openVisibleMenu.showTracks && !ctx.openVisibleMenu.showConfig;
-
-    const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
-    const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
-    const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
 
     const navigate = useNavigate();
 
@@ -679,6 +682,12 @@ export default function MainMenu({
     }, [ctx.currentObjectType, selectedType]);
 
     useEffect(() => {
+        if (selectedType !== OBJECT_TYPE_TRAVEL && ctx.currentObjectType !== OBJECT_TYPE_TRAVEL) {
+            ctx.setOpenTravelFilters(false);
+        }
+    }, [ctx.currentObjectType, selectedType]);
+
+    useEffect(() => {
         if (ctx.saveTrackToCloud) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
             selectMenuInfoByObjectType(OBJECT_TYPE_CLOUD_TRACK);
@@ -882,7 +891,12 @@ export default function MainMenu({
     useEffect(() => {
         // now this case only for login/logout
         if (ctx.prevPageUrl?.active) {
-            const currentMenu = items?.find((item) => item.url === ctx.prevPageUrl.url?.pathname);
+            const prev = ctx.prevPageUrl.url;
+            if (prev?.pathname?.startsWith(MAIN_URL_WITH_SLASH + SEARCH_URL)) {
+                navigate(prev.pathname + (prev.search || '') + liveHash());
+                return;
+            }
+            const currentMenu = items?.find((item) => item.url === prev?.pathname);
             if (currentMenu) {
                 navigateToUrl({ menu: currentMenu });
             } else {
@@ -952,7 +966,7 @@ export default function MainMenu({
                             mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                             height: showInstallBanner ? `${height - INSTALL_BANNER_SIZE}px` : '100%',
                             overflow: 'hidden',
-                            zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
+                            zIndex: openMainMenu ? OPEN_LEFT_MENU_Z_INDEX : LEFT_MENU_Z_INDEX,
                             borderRight:
                                 ((!menuInfo &&
                                     !ltx.openLoginMenu &&
@@ -1072,7 +1086,7 @@ export default function MainMenu({
                         ml: '64px',
                         mt: showInstallBanner && `${INSTALL_BANNER_SIZE}px`,
                         boxShadow: 'none',
-                        zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
+                        zIndex: OPEN_MENU_INFOBLOCK_Z_INDEX,
                         overflow: 'hidden',
                     },
                 }}

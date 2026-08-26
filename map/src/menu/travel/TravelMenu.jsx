@@ -1,19 +1,17 @@
 import {
     Box,
     CircularProgress,
-    Collapse,
-    Slider,
+    IconButton,
     SvgIcon,
     ToggleButton,
     ToggleButtonGroup,
     Tooltip,
     Typography,
 } from '@mui/material';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
+import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import debounce from 'lodash-es/debounce';
@@ -28,38 +26,46 @@ import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
+import TravelFilters from './TravelFilters';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
-import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import headerStyles from '../trackfavmenu.module.css';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import capitalize from 'lodash-es/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
-import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
-import TagFilter from './TagFilter';
-import {
-    convertMeters,
-    convertSpeedMS,
-    getLargeLengthUnit,
-    getSpeedUnit,
-    LARGE_UNIT,
-} from '../settings/units/UnitsConverter';
 import { apiGet } from '../../util/HttpApi';
+import { createUrlParams } from '../../util/Utils';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 
 export const ALL_YEARS = 'all';
 export const ACTIVITY_ALL = 'all';
+export const ACTIVITY_GARBAGE = 'garbage';
+export const ACTIVITY_ERROR = 'error';
 export const TAG_MATCH_MODES = {
     OR: 'OR',
     AND: 'AND',
 };
 
+export const OSM_GPX_ABORT_KEYS = {
+    routesList: 'osmgpx-get-routes-list',
+    routeInfo: 'osmgpx-get-route-info',
+    osmRoute: 'osmgpx-get-osm-route',
+    activities: 'osmgpx-activities',
+    ranges: 'osmgpx-ranges',
+    tags: 'osmgpx-tags',
+};
+
+const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
+
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const location = useLocation();
+    const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = ACTIVITY_ALL;
@@ -68,31 +74,47 @@ export default function TravelMenu() {
 
     const [, height] = useWindowSize();
 
-    const [selectedActivityTypeArr, setSelectedActivityTypeArr] = useState(DEFAULT_ACTIVITY);
-    const [selectedYear, setSelectedYear] = useState(DEFAULT_YEAR);
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
-    const [selectedTags, setSelectedTags] = useState([]);
-    const [tagMatchMode, setTagMatchMode] = useState(TAG_MATCH_MODES.OR);
     const [sortByDistance, setSortByDistance] = useState(null); // 'asc' | 'desc' | null
+    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
+    const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
 
     const DEFAULT_MAX_DISTANCE = 500000; // 500 km in meters
     const DEFAULT_MAX_SPEED = 100; // 100 km/h
+    const MAX_SPEED_DEFAULT = 300; // km/h, default upper bound for the max-speed filter
+    const MAX_DIST_BETWEEN_POINTS_DEFAULT = 1000; // 1000 m
+    const TIME_MINUTES_DEFAULT = 1440; // minutes (24h)
+    const WAYPOINTS_DEFAULT = 10000;
+    const DEFAULT_FILTERS = {
+        activity: DEFAULT_ACTIVITY,
+        year: DEFAULT_YEAR,
+        tags: [],
+        tagMatchMode: TAG_MATCH_MODES.OR,
+        distance: null,
+        speed: null,
+        maxSpeed: null,
+        maxDistBetweenPoints: null,
+        timeMinutes: null,
+        waypoints: null,
+    };
+    // Initial filters come from the URL query
+    const [filters, setFilters] = useState(() => ({
+        ...DEFAULT_FILTERS,
+        ...paramsToFilters(new URLSearchParams(globalThis.location.search)),
+    }));
+    const setFilter = (key, value) => setFilters((prev) => ({ ...prev, [key]: value }));
 
-    const [minDistance, setMinDistance] = useState(0);
-    const [maxDistance, setMaxDistance] = useState(DEFAULT_MAX_DISTANCE);
-    const [minSpeed, setMinSpeed] = useState(0);
-    const [maxSpeed, setMaxSpeed] = useState(DEFAULT_MAX_SPEED);
-
-    const [distanceRange, setDistanceRange] = useState([0, DEFAULT_MAX_DISTANCE]);
-    const [speedRange, setSpeedRange] = useState([0, DEFAULT_MAX_SPEED]);
-
-    const [distanceSliderTouched, setDistanceSliderTouched] = useState(false);
-    const [speedSliderTouched, setSpeedSliderTouched] = useState(false);
-    const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
-    const [showTagFilters, setShowTagFilters] = useState(true);
-    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
+    // Slider bounds (min/max) fetched from /ranges
+    const [bounds, setBounds] = useState({
+        distance: [0, DEFAULT_MAX_DISTANCE],
+        speed: [0, DEFAULT_MAX_SPEED],
+        maxSpeed: [0, MAX_SPEED_DEFAULT],
+        maxDistBetweenPoints: [0, MAX_DIST_BETWEEN_POINTS_DEFAULT],
+        timeMinutes: [0, TIME_MINUTES_DEFAULT],
+        waypoints: [0, WAYPOINTS_DEFAULT],
+    });
 
     useEffect(() => {
         const res = ctx.searchTravelRoutes?.res;
@@ -102,36 +124,45 @@ export default function TravelMenu() {
         }
     }, [ctx.searchTravelRoutes?.res]);
 
-    useEffect(() => {
-        ctx.setTravelFilter({
-            activity: selectedActivityTypeArr,
-            year: selectedYear,
-            tags: selectedTags,
-            tagMatchMode,
-        });
-    }, [selectedActivityTypeArr, selectedYear, selectedTags, tagMatchMode]);
+    function navigateToFilters(f) {
+        const search = createUrlParams(filtersToParams(f));
+        if (search === location.search) {
+            return;
+        }
+        navigate(
+            { pathname: location.pathname, search, hash: globalThis.location.hash || '' },
+            { replace: true, preventScrollReset: true }
+        );
+    }
 
+    // On load with filter params in the URL, open Travel and run the search automatically.
     useEffect(() => {
-        if (ctx.travelFilter) {
-            setSelectedActivityTypeArr(ctx.travelFilter.activity);
-            setSelectedYear(ctx.travelFilter.year);
-            setSelectedTags(ctx.travelFilter.tags || []);
-            setTagMatchMode(ctx.travelFilter.tagMatchMode || TAG_MATCH_MODES.OR);
+        if (!location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
+            return;
+        }
+        if (Object.keys(paramsToFilters(searchParams)).length > 0) {
+            ctx.setOpenTravel(true);
+            runSearch(filters);
         }
     }, []);
 
-    const debouncedFetchRanges = useRef(
-        debounce(async ({ bounds, year, activity, distTouched, speedTouched }) => {
-            const minLat = bounds.getSouth();
-            const maxLat = bounds.getNorth();
-            const minLon = bounds.getWest();
-            const maxLon = bounds.getEast();
+    useEffect(() => {
+        ctx.setOpenTravelFilters(openFilters);
+    }, [openFilters]);
 
+    useEffect(() => {
+        if (!ctx.openTravelFilters) {
+            setOpenFilters(false);
+        }
+    }, [ctx.openTravelFilters]);
+
+    const debouncedFetchRanges = useRef(
+        debounce(async ({ mapBounds, year, activity }) => {
             const params = {
-                minLat,
-                maxLat,
-                minLon,
-                maxLon,
+                minLat: mapBounds.getSouth(),
+                maxLat: mapBounds.getNorth(),
+                minLon: mapBounds.getWest(),
+                maxLon: mapBounds.getEast(),
             };
 
             if (year && year !== ALL_YEARS) {
@@ -144,7 +175,11 @@ export default function TravelMenu() {
                 const activitiesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
                     apiCache: true,
                     params: paramsActivities,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.activities,
                 });
+                if (activitiesResponse?.aborted) {
+                    return;
+                }
 
                 if (activity && activity !== ACTIVITY_ALL) {
                     params.activityArr = activity;
@@ -153,42 +188,39 @@ export default function TravelMenu() {
                 const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
                     apiCache: true,
                     params,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.ranges,
                 });
+                if (rangesResponse?.aborted) {
+                    return;
+                }
 
                 setActivityCounts(activitiesResponse?.data || null);
 
                 if (rangesResponse?.data) {
                     const data = rangesResponse.data;
-                    const newMinDist = data.minDist || 0;
-                    const newMaxDist = data.maxDist || DEFAULT_MAX_DISTANCE;
-                    const newMinSpeed = data.minSpeed || 0;
-                    const newMaxSpeed = data.maxSpeed || DEFAULT_MAX_SPEED;
+                    const newBounds = {
+                        distance: [data.minDist || 0, data.maxDist || DEFAULT_MAX_DISTANCE],
+                        speed: [data.minSpeed || 0, data.maxSpeed || DEFAULT_MAX_SPEED],
+                        maxSpeed: [data.maxSpeedMin || 0, data.maxSpeedMax || MAX_SPEED_DEFAULT],
+                        maxDistBetweenPoints: [
+                            data.maxDistBetweenPointsMin || 0,
+                            data.maxDistBetweenPointsMax || MAX_DIST_BETWEEN_POINTS_DEFAULT,
+                        ],
+                        timeMinutes: [data.timeMinutesMin || 0, data.timeMinutesMax || TIME_MINUTES_DEFAULT],
+                        waypoints: [data.waypointsMin || 0, data.waypointsMax || WAYPOINTS_DEFAULT],
+                    };
+                    setBounds(newBounds);
 
-                    setMinDistance(newMinDist);
-                    setMaxDistance(newMaxDist);
-                    setMinSpeed(newMinSpeed);
-                    setMaxSpeed(newMaxSpeed);
-
-                    setDistanceRange((prev) => {
-                        if (!distTouched) {
-                            return [newMinDist, newMaxDist];
-                        }
-                        // Clamp user's selection to new boundaries
-                        return [
-                            Math.max(newMinDist, Math.min(prev[0], newMaxDist)),
-                            Math.max(newMinDist, Math.min(prev[1], newMaxDist)),
-                        ];
-                    });
-
-                    setSpeedRange((prev) => {
-                        if (!speedTouched) {
-                            return [newMinSpeed, newMaxSpeed];
-                        }
-                        // Clamp user's selection to new boundaries
-                        return [
-                            Math.max(newMinSpeed, Math.min(prev[0], newMaxSpeed)),
-                            Math.max(newMinSpeed, Math.min(prev[1], newMaxSpeed)),
-                        ];
+                    const clamp = (range, [lo, hi]) => [
+                        Math.max(lo, Math.min(range[0], hi)),
+                        Math.max(lo, Math.min(range[1], hi)),
+                    ];
+                    setFilters((prev) => {
+                        const clamped = { ...prev };
+                        RANGE_FILTER_KEYS.forEach((key) => {
+                            clamped[key] = prev[key] ? clamp(prev[key], newBounds[key]) : null;
+                        });
+                        return clamped;
                     });
                 }
             } catch (error) {
@@ -204,13 +236,11 @@ export default function TravelMenu() {
         }
 
         debouncedFetchRanges({
-            bounds: ctx.visibleBounds,
-            year: selectedYear,
-            activity: selectedActivityTypeArr,
-            distTouched: distanceSliderTouched,
-            speedTouched: speedSliderTouched,
+            mapBounds: ctx.visibleBounds,
+            year: filters.year,
+            activity: filters.activity,
         });
-    }, [ctx.visibleBounds, selectedYear, selectedActivityTypeArr]);
+    }, [ctx.visibleBounds, filters.year, filters.activity]);
 
     const years = useMemo(() => {
         const currentYear = new Date().getFullYear();
@@ -229,13 +259,13 @@ export default function TravelMenu() {
             if (act.length === 0) {
                 act.push({
                     id: ACTIVITY_ALL,
-                    label: 'All activities',
+                    label: t('web:all_activities'),
                     type: 'group',
                     icon: <ActivityAllIcon />,
                 });
                 act.push({
                     id: 'nospeed',
-                    label: 'Unidentified tracks',
+                    label: t('web:unidentified_tracks'),
                     type: 'nospeed',
                 });
             }
@@ -288,43 +318,49 @@ export default function TravelMenu() {
 
     function setDefaultState() {
         setTravelResult(null);
-        setSelectedActivityTypeArr(DEFAULT_ACTIVITY);
-        setSelectedYear(DEFAULT_YEAR);
-        setSelectedTags([]);
-        setTagMatchMode(TAG_MATCH_MODES.OR);
+        setFilters(DEFAULT_FILTERS);
         ctx.setOpenTravel(false);
     }
 
     function handleYearSelect(year) {
-        setSelectedYear(year);
+        setFilter('year', year);
     }
 
-    async function showRoutes() {
+    function runSearch(f) {
         setLoadingResult(true);
         setTravelResult(null);
 
-        ctx.setSearchTravelRoutes({
-            activity: selectedActivityTypeArr,
-            year: selectedYear,
-            tags: selectedTags,
-            tagMatchMode,
-            distanceRange: distanceSliderTouched ? distanceRange : undefined,
-            speedRange: speedSliderTouched ? speedRange : undefined,
+        const body = { activity: f.activity, year: f.year, tags: f.tags, tagMatchMode: f.tagMatchMode };
+        RANGE_FILTER_KEYS.forEach((key) => {
+            body[`${key}Range`] = f[key] ?? undefined;
         });
+        ctx.setSearchTravelRoutes(body);
+    }
+
+    function showRoutes() {
+        navigateToFilters(filters);
+        runSearch(filters);
     }
 
     function resetSearch() {
         setTravelResult(null);
-        setSelectedActivityTypeArr(DEFAULT_ACTIVITY);
-        setSelectedYear(DEFAULT_YEAR);
-        setSelectedTags([]);
-        setTagMatchMode(TAG_MATCH_MODES.OR);
         setSortByDistance(null);
-        setDistanceRange([minDistance, maxDistance]);
-        setSpeedRange([minSpeed, maxSpeed]);
-        setDistanceSliderTouched(false);
-        setSpeedSliderTouched(false);
+        setFilters(DEFAULT_FILTERS);
+        ctx.setTravelShowStartFinish(false);
     }
+
+    function resetFilters() {
+        setFilters((prev) => ({
+            ...prev,
+            tags: [],
+            tagMatchMode: TAG_MATCH_MODES.OR,
+            ...Object.fromEntries(RANGE_FILTER_KEYS.map((key) => [key, null])),
+        }));
+        ctx.setTravelShowStartFinish(false);
+    }
+
+    const hasActiveFilters =
+        filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ctx.travelShowStartFinish;
 
     const sortedRoutes = useMemo(() => {
         const features = travelResult?.features;
@@ -352,244 +388,181 @@ export default function TravelMenu() {
             {ltx.isLoggedIn() ? (
                 <>
                     <HeaderNoUnderline
-                        title="Travel"
+                        title={t('web:shared_string_travel')}
                         onClose={close}
                         titleId="se-travel-menu-name"
                         rightContent={
-                            <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
-                                <span>
-                                    <ActionIconBtn id="se-travel-reset" icon={<ResetIcon />} onClick={resetSearch} />
-                                </span>
-                            </Tooltip>
+                            <>
+                                <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
+                                    <span>
+                                        <IconButton
+                                            id="se-travel-reset"
+                                            variant="contained"
+                                            type="button"
+                                            className={headerStyles.appBarIcon}
+                                            onClick={resetSearch}
+                                        >
+                                            <ResetIcon />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                                <Tooltip title={t('shared_string_filters')} arrow placement="bottom-end">
+                                    <span>
+                                        <IconButton
+                                            id="se-travel-filters"
+                                            variant="contained"
+                                            type="button"
+                                            className={headerStyles.appBarIcon}
+                                            onClick={() => setOpenFilters((prev) => !prev)}
+                                        >
+                                            <SettingsIcon />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                            </>
                         }
                     />
-                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, mt: '-14px' }}>
-                        <Box>
-                            {updatedActivities?.length > 0 && (
-                                <ActivitySelect
-                                    name="Activity"
-                                    value={selectedActivityTypeArr}
-                                    onChange={(value) => setSelectedActivityTypeArr(value)}
-                                    activities={activities}
-                                    updatedActivities={updatedActivities}
-                                    activityCounts={activityCounts}
-                                    defaultIcon={ActivityAllIcon}
-                                />
-                            )}
-                            <CustomSelect
-                                name="Year"
-                                value={selectedYear}
-                                onChange={(value) => setSelectedYear(value)}
-                                options={years}
-                                renderLabel={(option) => option?.label}
-                                handleSelect={(year) => handleYearSelect(year)}
-                                menuWidth={'auto'}
-                                hasIcons={false}
-                                defaultIcon={SortDateIcon}
-                                my={'0px'}
-                                marginLeft={'250px'}
+                    <Box className={styles.contentColumn}>
+                        {updatedActivities?.length > 0 && (
+                            <ActivitySelect
+                                name={t('web:shared_string_activity')}
+                                value={filters.activity}
+                                onChange={(value) => setFilter('activity', value)}
+                                activities={activities}
+                                updatedActivities={updatedActivities}
+                                activityCounts={activityCounts}
+                                defaultIcon={ActivityAllIcon}
+                                showInvalid={ctx.develFeatures}
                             />
-                            <ThickDivider mt={16} />
-                            <SelectItemWithoutOptions
-                                title="Tag filters"
-                                onClick={() => setShowTagFilters(!showTagFilters)}
-                                endIcon={
-                                    showTagFilters ? (
-                                        <ExpandLessIcon sx={{ color: 'var(--text-secondary)' }} />
-                                    ) : (
-                                        <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
-                                    )
-                                }
-                                showValue={false}
+                        )}
+                        <CustomSelect
+                            name={t('web:shared_string_year')}
+                            value={filters.year}
+                            onChange={(value) => setFilter('year', value)}
+                            options={years}
+                            renderLabel={(option) => option?.label}
+                            handleSelect={(year) => handleYearSelect(year)}
+                            menuWidth={'auto'}
+                            hasIcons={false}
+                            defaultIcon={SortDateIcon}
+                            my={'0px'}
+                            marginLeft={'250px'}
+                        />
+                        <ThickDivider mt={16} />
+                        <Box className={styles.showButtonBox}>
+                            <PrimaryBtn
+                                action={showRoutes}
+                                id={'se-submit-show-travel'}
+                                text={t('shared_string_show')}
                             />
-                            <Collapse in={showTagFilters}>
-                                <TagFilter
-                                    selectedTags={selectedTags}
-                                    onChangeTags={setSelectedTags}
-                                    selectedYear={selectedYear}
-                                    selectedActivity={selectedActivityTypeArr}
-                                />
-                                <Box sx={{ mx: 2, mt: 2, mb: 2 }}>
-                                    <ToggleButtonGroup
-                                        fullWidth
-                                        size="small"
-                                        className={styles.tagMatchToggleGroup}
-                                        exclusive
-                                        value={tagMatchMode}
-                                        onChange={(event, value) => {
-                                            if (value) {
-                                                setTagMatchMode(value);
-                                            }
-                                        }}
-                                    >
-                                        <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
-                                        <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
-                                    </ToggleButtonGroup>
-                                </Box>
-                            </Collapse>
-                            <ThickDivider mt={0} />
-                            <SelectItemWithoutOptions
-                                title="Advanced filters"
-                                onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
-                                endIcon={
-                                    showAdvancedFilters ? (
-                                        <ExpandLessIcon sx={{ color: 'var(--text-secondary)' }} />
-                                    ) : (
-                                        <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
-                                    )
-                                }
-                                showValue={false}
-                            />
-                            <Collapse in={showAdvancedFilters}>
-                                <Box className={styles.sliderContainer}>
-                                    <div className={styles.sliderHeader}>
-                                        <Typography className={styles.sliderTitle}>Distance</Typography>
-                                        <Typography className={styles.sliderValue}>
-                                            {convertMeters(distanceRange[0], ctx.unitsSettings.len, LARGE_UNIT).toFixed(
-                                                0
-                                            )}{' '}
-                                            -{' '}
-                                            {convertMeters(distanceRange[1], ctx.unitsSettings.len, LARGE_UNIT).toFixed(
-                                                0
-                                            )}{' '}
-                                            {t(getLargeLengthUnit(ctx))}
-                                        </Typography>
-                                    </div>
-                                    <Slider
-                                        value={distanceRange}
-                                        onChange={(e, newValue) => {
-                                            setDistanceRange(newValue);
-                                            setDistanceSliderTouched(
-                                                newValue[0] !== minDistance || newValue[1] !== maxDistance
-                                            );
-                                        }}
-                                        min={minDistance}
-                                        max={maxDistance}
-                                        step={1000}
-                                        valueLabelDisplay="off"
-                                        sx={{
-                                            '& .MuiSlider-thumb': {
-                                                opacity: distanceSliderTouched ? 1 : 0.5,
-                                            },
-                                            '& .MuiSlider-track': {
-                                                opacity: distanceSliderTouched ? 1 : 0.5,
-                                            },
-                                        }}
-                                    />
-                                    <div className={styles.sliderBounds}>
-                                        <Typography className={styles.sliderBoundValue}>
-                                            {convertMeters(minDistance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}
-                                        </Typography>
-                                        <Typography className={styles.sliderBoundValue}>
-                                            {convertMeters(maxDistance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}
-                                        </Typography>
-                                    </div>
-                                </Box>
-                                <Box className={styles.sliderContainer}>
-                                    <div className={styles.sliderHeader}>
-                                        <Typography className={styles.sliderTitle}>Speed</Typography>
-                                        <Typography className={styles.sliderValue}>
-                                            {convertSpeedMS(speedRange[0] / 3.6, ctx.unitsSettings.speed).toFixed(0)} -{' '}
-                                            {convertSpeedMS(speedRange[1] / 3.6, ctx.unitsSettings.speed).toFixed(0)}{' '}
-                                            {t(getSpeedUnit(ctx))}
-                                        </Typography>
-                                    </div>
-                                    <Slider
-                                        value={speedRange}
-                                        onChange={(e, newValue) => {
-                                            setSpeedRange(newValue);
-                                            setSpeedSliderTouched(newValue[0] !== minSpeed || newValue[1] !== maxSpeed);
-                                        }}
-                                        min={minSpeed}
-                                        max={maxSpeed}
-                                        step={1}
-                                        valueLabelDisplay="off"
-                                        sx={{
-                                            '& .MuiSlider-thumb': {
-                                                opacity: !speedSliderTouched ? 0.5 : 1,
-                                            },
-                                            '& .MuiSlider-track': {
-                                                opacity: !speedSliderTouched ? 0.5 : 1,
-                                            },
-                                        }}
-                                    />
-                                    <div className={styles.sliderBounds}>
-                                        <Typography className={styles.sliderBoundValue}>
-                                            {convertSpeedMS(minSpeed / 3.6, ctx.unitsSettings.speed).toFixed(0)}
-                                        </Typography>
-                                        <Typography className={styles.sliderBoundValue}>
-                                            {convertSpeedMS(maxSpeed / 3.6, ctx.unitsSettings.speed).toFixed(0)}
-                                        </Typography>
-                                    </div>
-                                </Box>
-                            </Collapse>
-                            <ThickDivider mt={0} />
-                            <Box sx={{ m: 2 }}>
-                                <PrimaryBtn
-                                    action={showRoutes}
-                                    id={'se-submit-show-travel'}
-                                    text={t('shared_string_show')}
-                                />
-                            </Box>
-                            {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
                         </Box>
-                        <Box sx={{ flex: 1, overflow: 'hidden' }}>
-                            {travelResult &&
-                                (travelResult?.features?.length > 0 ? (
-                                    <>
-                                        <Box
-                                            sx={{
-                                                mt: 2,
-                                                mx: 2,
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'space-between',
-                                            }}
-                                        >
-                                            <Typography variant="body2">
-                                                Results: {travelResult?.features?.length || 0}
-                                            </Typography>
-                                            {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
-                                                <ToggleButtonGroup
-                                                    size="small"
-                                                    exclusive
-                                                    value={sortByDistance}
-                                                    className={styles.distanceSortToggleGroup}
-                                                    onChange={(event, value) => {
-                                                        if (!value) {
-                                                            return;
-                                                        }
-                                                        setSortByDistance(value);
-                                                    }}
-                                                >
-                                                    <ToggleButton value="asc">
-                                                        <SvgIcon
-                                                            className={styles.distanceSortIcon}
-                                                            component={ShortToLongIcon}
-                                                            inheritViewBox
-                                                        />
-                                                    </ToggleButton>
-                                                    <ToggleButton value="desc">
-                                                        <SvgIcon
-                                                            className={styles.distanceSortIcon}
-                                                            component={LongToShortIcon}
-                                                            inheritViewBox
-                                                        />
-                                                    </ToggleButton>
-                                                </ToggleButtonGroup>
-                                            )}
-                                        </Box>
-                                        <TravelRoutesResult routes={sortedRoutes} />
-                                    </>
-                                ) : (
-                                    <EmptyTravel reset={resetSearch} />
-                                ))}
-                        </Box>
+                        {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
+                        {travelResult &&
+                            (travelResult?.features?.length > 0 ? (
+                                <>
+                                    <Box className={styles.resultsHeader}>
+                                        <Typography variant="body2">
+                                            {t('web:shared_string_results')}: {travelResult?.features?.length || 0}
+                                        </Typography>
+                                        {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
+                                            <ToggleButtonGroup
+                                                size="small"
+                                                exclusive
+                                                value={sortByDistance}
+                                                className={styles.distanceSortToggleGroup}
+                                                onChange={(event, value) => {
+                                                    if (!value) {
+                                                        return;
+                                                    }
+                                                    setSortByDistance(value);
+                                                }}
+                                            >
+                                                <ToggleButton value="asc">
+                                                    <SvgIcon
+                                                        className={styles.distanceSortIcon}
+                                                        component={ShortToLongIcon}
+                                                        inheritViewBox
+                                                    />
+                                                </ToggleButton>
+                                                <ToggleButton value="desc">
+                                                    <SvgIcon
+                                                        className={styles.distanceSortIcon}
+                                                        component={LongToShortIcon}
+                                                        inheritViewBox
+                                                    />
+                                                </ToggleButton>
+                                            </ToggleButtonGroup>
+                                        )}
+                                    </Box>
+                                    <TravelRoutesResult routes={sortedRoutes} />
+                                </>
+                            ) : (
+                                <EmptyTravel reset={resetSearch} />
+                            ))}
                     </Box>
+                    {openFilters && (
+                        <TravelFilters
+                            onClose={() => setOpenFilters(false)}
+                            onReset={resetFilters}
+                            hasActiveFilters={hasActiveFilters}
+                            filters={filters}
+                            bounds={bounds}
+                            setFilter={setFilter}
+                        />
+                    )}
                 </>
             ) : (
                 <EmptyLogin />
             )}
         </Box>
     );
+}
+
+// Serialize the current filters into URL query params
+function filtersToParams(filters) {
+    const params = {
+        activity: Array.isArray(filters.activity) ? filters.activity.join(',') : filters.activity,
+        year: String(filters.year),
+    };
+    if (filters.tags.length > 0) {
+        params.tags = filters.tags.join(',');
+        params.tagMatchMode = filters.tagMatchMode;
+    }
+    RANGE_FILTER_KEYS.forEach((key) => {
+        if (filters[key]) {
+            params[key] = `${filters[key][0]}-${filters[key][1]}`;
+        }
+    });
+    return params;
+}
+
+// Parse filter query params back into a partial filters object (merged over defaults).
+function paramsToFilters(searchParams) {
+    const parsed = {};
+    const activity = searchParams.get('activity');
+    if (activity) {
+        parsed.activity = activity === ACTIVITY_ALL ? ACTIVITY_ALL : activity.split(',');
+    }
+    const year = searchParams.get('year');
+    if (year === ALL_YEARS) {
+        parsed.year = ALL_YEARS;
+    } else if (year && Number.isFinite(Number(year))) {
+        parsed.year = Number(year);
+    }
+    const tags = searchParams.get('tags');
+    if (tags) {
+        parsed.tags = tags.split(',');
+        parsed.tagMatchMode =
+            searchParams.get('tagMatchMode') === TAG_MATCH_MODES.AND ? TAG_MATCH_MODES.AND : TAG_MATCH_MODES.OR;
+    }
+    RANGE_FILTER_KEYS.forEach((key) => {
+        const value = searchParams.get(key);
+        if (value) {
+            const [min, max] = value.split('-').map(Number);
+            if (Number.isFinite(min) && Number.isFinite(max)) {
+                parsed[key] = [min, max];
+            }
+        }
+    });
+    return parsed;
 }

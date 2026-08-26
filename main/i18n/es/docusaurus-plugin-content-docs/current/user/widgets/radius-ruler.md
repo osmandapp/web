@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title:  Regla de radio y Regla
 ---
@@ -210,42 +210,44 @@ Puedes cambiar a la **vista 3D** para visualizar mejor las distancias y el terre
 Los círculos de radio aparecerán con profundidad, lo que es particularmente útil para la planificación de rutas en zonas montañosas o entornos urbanos donde el contexto vertical es importante.
 
 
-## Distancia por toque {#distance-by-tap}
+<!--
+## Distance by Tap {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Distancia por toque Android](@site/static/img/widgets/distance_tap_android.png)
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Distancia por toque iOS](@site/static/img/widgets/distance_tap_ios.png)
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-La herramienta **Distancia por toque** te permite medir distancias entre puntos del mapa sin utilizar la Regla de radio ni crear una ruta.
+The **Distance by Tap** tool allows you to measure distances between points on the map without using the Radius Ruler or creating a route.
 
-Hay dos casos de uso:
+There are two use cases:
 
-- **Distancia desde tu ubicación a un punto**  
-  Toca en cualquier lugar del mapa y aparecerá una línea recta desde tu ubicación actual hasta el punto tocado, junto con una etiqueta de distancia. La línea permanece en la pantalla aunque toques en otro sitio.
+- **Distance from your location to a point**  
+  Tap anywhere on the map and a straight line will appear from your current location to the tapped point, along with a distance label. The line remains on screen even if you tap elsewhere.
 
-- **Distancia entre dos puntos cualesquiera**  
-  Toca dos puntos del mapa simultáneamente (multitáctil). Una línea conecta los dos puntos y se muestra la distancia medida.
+- **Distance between any two points**  
+  Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
 
-También puedes ajustar el tamaño del texto de la etiqueta de distancia. Elige entre *<Translate android="true" ids="shared_string_normal"/>* (predeterminado) y *<Translate android="true" ids="shared_string_large"/>* (1.5× más grande). Cuando se selecciona la opción Grande, se añade automáticamente un espaciado extra entre la línea y la etiqueta para una mejor legibilidad. Los cambios se aplican instantáneamente sin reiniciar la aplicación.
+You can also adjust the text size of the distance label. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
 
 | | |
 |------------|------------|
-| Activar |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| Tamaño del texto | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
-| Formato de unidades | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Text size | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Videoguías {#video-guides}

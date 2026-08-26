@@ -1,5 +1,5 @@
 ---
-source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -32,7 +32,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - محرر لوحة ألوان جديد لإنشاء وتعديل مخططات ألوان مخصصة للمسارات وتصور التضاريس.
 - تحسين توجيه الدراجات مع مراعاة عرض الدراجة.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### الإصدار 5.2 {#version-52}
 
@@ -846,3 +846,5 @@ GPX (أماكني):
 - خريطة أساسية للعالم كله مجمعة مع التطبيق
 - تعديل التنقل دون اتصال بالإنترنت (لا يزال تجريبيًا)
 - خيارات تنقل GPX
+
+<Download link="net.osmand-0.6.5%20beta-45.apk" />

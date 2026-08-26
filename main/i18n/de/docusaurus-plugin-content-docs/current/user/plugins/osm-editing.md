@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  OpenStreetMap Editing
 ---
@@ -61,7 +61,7 @@ Die Plugin-Einstellungen sind global und gelten für alle Profile.
 - **<Translate android="true" ids="offline_edition"/>**. Wenn diese Einstellung aktiviert ist, werden die Änderungen zunächst lokal gespeichert (*Speichern*-Schaltfläche) und auf Anfrage hochgeladen. Wenn die Einstellung deaktiviert ist, werden die Änderungen sofort hochgeladen (*Hochladen*-Schaltfläche).
 - **<Translate android="true" ids="use_dev_url"/>** *(Nur Android)*. Ermöglicht die Aktivierung von [dev.openstreetmap.org](https://dev.openstreetmap.org/) anstelle von [openstreetmap.org](http://openstreetmap.org/), um das Hochladen von OSM-Notizen, POIs oder GPS-Tracks zu testen. Wenn aktiviert, werden Sie automatisch von OpenStreetMap.org abgemeldet. Diese Einstellung ist in der Liste nur verfügbar, wenn das *OsmAnd-Entwicklungs-Plugin* aktiviert ist.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Tippen Sie darauf, um [*Menü → Meine Orte → OSM-Bearbeitungen*](../personal/myplaces.md) zu öffnen. In diesem Tab werden Ihre unbearbeiteten OSM-Notizen aufgelistet. Die folgenden Aktionen sind mit der Notiz verfügbar: *Hochladen*, *Auf Karte anzeigen*, *OSM-Notiz ändern*, *Löschen*. Hochgeladene oder gelöschte Notizen werden nicht mehr in der Liste angezeigt.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Tippen Sie darauf, um [*Menü → Meine Orte → OSM-Bearbeitungen*](../personal/myplaces.md) zu öffnen. In diesem Tab werden Ihre unbearbeiteten OSM-Notizen aufgelistet. Die folgenden Aktionen sind mit der Notiz verfügbar: *Hochladen*, *Auf Karte anzeigen*, *OSM-Notiz ändern*, *Löschen*. Hochgeladene oder gelöschte Notizen werden nicht mehr in der Liste angezeigt. Auf iOS können Sie auch den Auswahlmodus verwenden, um mehrere Elemente gleichzeitig auszuwählen und hochzuladen oder zu löschen.  
 
 :::note
 Wenn Sie ein [OsmAnd Pro](../purchases/android.md#pro-features)-Abonnement haben, erscheinen Änderungen an OSM innerhalb einer Stunde auf Ihrer OsmAnd-Karte. Stellen Sie sicher, dass [Live-Updates](../personal/maps-resources.md#live-updates) aktiviert sind.

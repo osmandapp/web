@@ -35,7 +35,8 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
-import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID, MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN } from '../util/ZIndexes';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 
 export const EXPLORE_MIN_ZOOM = 6;
@@ -195,7 +196,7 @@ export default function ExploreLayer() {
             filtersRef.current = settings.selectedFilters ?? null;
             removeLayers();
             debouncer(
-                () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                () => runGetData({ controller, ignore, settings, setLoadingContextMenu }),
                 timerRef,
                 GET_OBJ_DEBOUNCE_MS
             );
@@ -208,7 +209,7 @@ export default function ExploreLayer() {
                 (ctx.exploreMenu && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
                 debouncer(
-                    () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                    () => runGetData({ controller, ignore, settings, setLoadingContextMenu }),
                     timerRef,
                     GET_OBJ_DEBOUNCE_MS
                 );
@@ -276,6 +277,14 @@ export default function ExploreLayer() {
             setLoadingContextMenu(false);
             removeTooltip(map, ctx.searchTooltipRef);
         }
+    }
+
+    function runGetData(params) {
+        getData(params).catch((e) => {
+            if (!params.controller.signal.aborted) {
+                throw e;
+            }
+        });
     }
 
     function openInfo(e, feature) {
@@ -397,13 +406,13 @@ export default function ExploreLayer() {
 
                 return new Promise((resolve, reject) => {
                     if (abortController.signal.aborted) {
-                        return reject('Operation aborted');
+                        return resolve();
                     }
 
                     const image = new Image();
                     image.onload = () => {
                         if (abortController.signal.aborted) {
-                            return reject('Operation aborted');
+                            return resolve();
                         }
 
                         const icon = L.icon({
@@ -424,7 +433,7 @@ export default function ExploreLayer() {
                     };
                     image.onerror = () => {
                         if (abortController.signal.aborted) {
-                            return reject('Operation aborted');
+                            return resolve();
                         }
 
                         const circle = new SimpleDotMarker(latlng, place, {

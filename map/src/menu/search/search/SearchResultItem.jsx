@@ -1,22 +1,37 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import {
+    Box,
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Typography,
+} from '@mui/material';
+import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
+import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_marker_outlined.svg';
+import { ReactComponent as ShowOutlinedIcon } from '../../../assets/icons/ic_action_show_outlined.svg';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
+import DefaultItem from '../../../frame/components/items/DefaultItem';
 import styles from '../search.module.css';
+import dialogStyles from '../../../dialogs/dialog.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, searchTypeMap, FAVORITE_HIT_GROUP_ID } from '../../../map/layers/SearchLayer';
+import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
+import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
+    CATEGORY_KEY_NAME,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     CITY,
     EN_NAME,
-    MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -24,7 +39,7 @@ import {
     TYPE,
     WEB_PREFIX,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchManager';
+import { getPoiParentCategory } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../manager/GlobalManager';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -122,8 +137,12 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
 }
 
 function getTrackInfo(name, listFiles, unitsSettings, t) {
-    if (!listFiles || !unitsSettings) return '';
+    if (!listFiles || !unitsSettings) {
+        return '';
+    }
+
     const file = listFiles.uniqueFiles?.find((f) => f.name === name);
+
     return getTrackInfoText(file, unitsSettings, t);
 }
 
@@ -131,19 +150,36 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index, currentLoc }) {
+export default function SearchResultItem({ item, typeItem, index, currentLoc, loc = null, isUser = false }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
 
     const { t } = useTranslation();
-    const { ref, inView } = useInView();
 
     const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
+    const [showMatched, setShowMatched] = useState(false);
+    const [showPropertiesDump, setShowPropertiesDump] = useState(false);
 
     const { navigateToSearchResults } = useSearchNav();
     const recentSaver = useRecentDataSaver();
+    const backToSearchResultsState = { state: { backToSearchResults: true } };
+    const { matchedObjects, matchedNameObjects, matchedDialogObjects, moveToMatchedPoiTypeLocation } =
+        createSearchMatchedObjectActions({
+            item,
+            t,
+            ctx,
+            navigate,
+            recentSaver,
+            setShowMatched,
+            formatSearchResultProperties: getPropsFromSearchResultItem,
+            navigateToPoi,
+            objectSearchType: OBJECT_SEARCH,
+            poiObjectsKey: POI_OBJECTS_KEY,
+            poiTypeCategory: searchTypeMap.POI_TYPE,
+        });
+    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
 
     const itemId = getObjIdSearch(item);
 
@@ -166,20 +202,19 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     useEffect(() => {
-        if (ctx.selectedWptId?.id === itemId) {
-            setIsHovered(true);
-        } else {
-            setIsHovered(false);
-        }
-    }, [ctx.selectedWptId?.id]);
+        const hoverIds = [ctx.selectedWptId?.id, ...(ctx.selectedWptId?.relatedResultIds ?? [])];
+        setIsHovered(ctx.selectedWptId?.show !== false && hoverIds.includes(itemId));
+    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.relatedResultIds, ctx.selectedWptId?.show, itemId]);
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
-        const distance = item.locDist;
-        const bearing = item.bearing;
-        const isUserLocation = item.isUserLocation;
+        const lat = item.geometry?.coordinates?.[1];
+        const lon = item.geometry?.coordinates?.[0];
+        const hasCoords = loc && lat != null && lon != null && !(lat === 0 && lon === 0);
+        const distance = hasCoords ? getDistance(loc.lat, loc.lng, lat, lon) : null;
+        const bearing = hasCoords ? getBearing(loc.lat, loc.lng, lat, lon) : null;
         const icon = item.icon;
-        return { ...res, icon, distance, bearing, isUserLocation };
+        return { ...res, icon, distance, bearing, isUserLocation: isUser };
     }
 
     const id = (() => {
@@ -197,7 +232,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         return 'se-search-result-item';
     })();
 
-    async function clickHandler() {
+    async function clickHandler(event) {
         if (item.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
             const fileName = item.properties?.[CATEGORY_NAME];
             const file = ctx.listFiles?.uniqueFiles?.find((f) => f?.name === fileName);
@@ -248,30 +283,17 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi, id: itemId });
             recentSaver(POI_OBJECTS_KEY, poi);
-            ctx.setMoveToMapObj(item);
+            const pushMapViewWithCtrlClick = Boolean(event?.ctrlKey);
+            ctx.setMoveToMapObj({ ...item, pushMapViewWithCtrlClick });
             if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
                 navigateToPoi({ poi }, navigate);
             }
         } else {
-            // click on category
-            const category = item.properties['web_keyName'];
+            // click on category: both engines provide the canonical key (incl. brands)
+            const category = item.properties[CATEGORY_KEY_NAME];
             if (category) {
-                return navigateToSearchResults({
-                    type: category,
-                });
-            } else {
-                // search by brand
-                let brandType = item.properties[CATEGORY_NAME];
-                let type = item.properties[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
-                if (type) {
-                    const brandRes = parseTagWithLang(type);
-                    if (brandRes.lang) {
-                        brandType = `${brandType}:${brandRes.lang}`;
-                    }
-                }
-                return navigateToSearchResults({
-                    type: brandType,
-                });
+                moveToMatchedPoiTypeLocation();
+                return navigateToSearchResults({ type: category }, backToSearchResultsState);
             }
         }
     }
@@ -296,6 +318,12 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
         return ` · ${city}`;
     }
 
+    const placeDetails = `${addInfo()}${addType()}${addCity()}`;
+
+    function hasTextBeforeMatchedName(index) {
+        return index > 0 || Boolean(placeDetails || distance > 0);
+    }
+
     if (item.properties[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
         const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
         const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
@@ -314,44 +342,106 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc }) 
     }
 
     return (
-        <div ref={ref}>
-            {!inView ? (
-                <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
-            ) : (
-                <>
-                    <MenuItem
-                        id={id}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
-                        onClick={clickHandler}
-                    >
-                        <ListItemText>
-                            <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {(info || type) && (
-                                <MenuItemWithLines
-                                    className={styles.placeTypes}
-                                    name={`${addInfo()}${addType()}${addCity()}`}
-                                    maxLines={4}
-                                >
-                                    {distance > 0 && (
-                                        <span style={{ display: 'inline-flex' }}>
-                                            <Typography className={styles.placeDistance}>{' · '}</Typography>
-                                            <DistanceInfo
-                                                distance={distance}
-                                                bearing={bearing}
-                                                isUserLocation={isUserLocation}
-                                            />
-                                        </span>
-                                    )}
-                                </MenuItemWithLines>
+        <>
+            <MenuItem
+                id={id}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
+                onClick={clickHandler}
+            >
+                <ListItemText>
+                    <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                    {(info ||
+                        type ||
+                        matchedNameObjects.length > 0 ||
+                        matchedObjects.length > 1 ||
+                        showPropertiesDumpIcon) && (
+                        <MenuItemWithLines className={styles.placeTypes} name={placeDetails} maxLines={4}>
+                            {distance > 0 && (
+                                <span style={{ display: 'inline-flex' }}>
+                                    <Typography className={styles.placeDistance}>{' · '}</Typography>
+                                    <DistanceInfo
+                                        distance={distance}
+                                        bearing={bearing}
+                                        isUserLocation={isUserLocation}
+                                    />
+                                </span>
                             )}
-                        </ListItemText>
-                        <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
-                    </MenuItem>
-                    <DividerWithMargin margin={'16px'} />
-                </>
+                            {matchedNameObjects.map(({ key, name, onClick, onKeyDown }, i) => (
+                                <React.Fragment key={key}>
+                                    {hasTextBeforeMatchedName(i) && (
+                                        <Typography component="span" className={styles.placeDistance}>
+                                            {' · '}
+                                        </Typography>
+                                    )}
+                                    <Typography
+                                        component="span"
+                                        className={styles.matchedObjectName}
+                                        role="button"
+                                        tabIndex={0}
+                                        onClick={onClick}
+                                        onKeyDown={onKeyDown}
+                                    >
+                                        {name}
+                                    </Typography>
+                                </React.Fragment>
+                            ))}
+                            {matchedObjects.length > 1 && (
+                                <span
+                                    className={styles.matchedObjectsIcon}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowMatched(true);
+                                    }}
+                                >
+                                    <InfoIcon className={styles.placeTypesIcon} />
+                                </span>
+                            )}
+                            {showPropertiesDumpIcon && (
+                                <span
+                                    className={styles.matchedObjectsIcon}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowPropertiesDump(true);
+                                    }}
+                                >
+                                    <ShowOutlinedIcon className={styles.placeTypesIcon} />
+                                </span>
+                            )}
+                        </MenuItemWithLines>
+                    )}
+                </ListItemText>
+                <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
+            </MenuItem>
+            <DividerWithMargin margin={'16px'} />
+            {showMatched && (
+                <Dialog open={true} onClose={() => setShowMatched(false)} onClick={(e) => e.stopPropagation()}>
+                    <DialogTitle className={dialogStyles.title}>Matched objects ({matchedObjects.length})</DialogTitle>
+                    {matchedDialogObjects.map(({ key, obj, onClick }) => (
+                        <DefaultItem
+                            key={key}
+                            icon={<LocationIcon />}
+                            className={styles.matchedItem}
+                            name={obj.name}
+                            additionalInfo={`${obj.lat?.toFixed(5)}, ${obj.lon?.toFixed(5)}`}
+                            onClick={onClick}
+                        />
+                    ))}
+                </Dialog>
             )}
-        </div>
+            {showPropertiesDump && (
+                <Dialog
+                    open={true}
+                    onClose={() => setShowPropertiesDump(false)}
+                    onClick={(e) => e.stopPropagation()}
+                    fullWidth
+                >
+                    <DialogContent>
+                        <Box component="pre">{JSON.stringify(item.properties, null, 2)}</Box>
+                    </DialogContent>
+                </Dialog>
+            )}
+        </>
     );
 }

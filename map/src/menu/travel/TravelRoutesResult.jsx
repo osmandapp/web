@@ -8,6 +8,8 @@ import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import { useElementHeight } from '../../util/hooks/useElementHeight';
+import { getActivityColor } from '../../map/util/activityColors';
 import styles from '../trackfavmenu.module.css';
 import travelStyles from './travel.module.css';
 import {
@@ -19,12 +21,12 @@ import {
 } from '../settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 
-const ACTIVITY_IDS_HIDDEN = ['nospeed'];
+const ACTIVITY_IDS_HIDDEN = new Set(['nospeed']);
 
 function formatActivity(route) {
     const activity = route?.properties?.activity;
     if (!activity) return null;
-    if (ACTIVITY_IDS_HIDDEN.includes(activity)) return null;
+    if (ACTIVITY_IDS_HIDDEN.has(activity)) return null;
 
     return capitalize(activity.replace(/_/g, ' '));
 }
@@ -39,7 +41,7 @@ const TravelRoute = ({ route }) => {
     function openRouteInfo(route) {
         ctx.setSelectedTravelRoute({ route, show: true });
         if (route?.properties?.id != null) {
-            updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(route.properties.id) });
+            updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(route.properties.id), replace: false });
         }
     }
 
@@ -79,12 +81,21 @@ const TravelRoute = ({ route }) => {
                         </Typography>
                         <Typography
                             variant="body2"
-                            className={styles.groupInfo}
+                            className={`${styles.groupInfo} ${travelStyles.activityLine}`}
                             noWrap
                             component="span"
-                            sx={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis' }}
                         >
-                            {activity && `${activity} · `}
+                            {activity && (
+                                <>
+                                    <span
+                                        className={travelStyles.activityType}
+                                        style={{ color: getActivityColor(route.properties.activity) }}
+                                    >
+                                        {activity}
+                                    </span>
+                                    {' · '}
+                                </>
+                            )}
                             {route.properties.date?.slice(0, 10)}
                             {route.properties.id != null && route.properties.user && (
                                 <>
@@ -109,24 +120,27 @@ const TravelRoute = ({ route }) => {
     );
 };
 
-// Keep in sync with menu item (3 lines)
 const ITEM_HEIGHT = 85;
 const SECTION_HEIGHT = 750;
 
 const TravelRoutesResult = React.memo(({ routes }) => {
-    if (!routes || routes.length === 0) {
+    const [containerRef, containerHeight] = useElementHeight();
+    const itemCount = routes?.length ?? 0;
+
+    if (itemCount === 0) {
         return null;
     }
 
-    const itemCount = routes.length;
+    const listHeight = containerHeight || Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT);
 
     return (
-        <Box sx={{ overflowX: 'hidden' }}>
+        <Box ref={containerRef} className={travelStyles.resultsListBox}>
             <FixedSizeList
-                height={Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT)}
+                height={listHeight}
                 itemCount={itemCount}
                 itemSize={ITEM_HEIGHT}
                 width={'100%'}
+                style={{ overflowX: 'hidden' }}
             >
                 {({ index, style }) => (
                     <div style={style}>

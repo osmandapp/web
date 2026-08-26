@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title:  Profile (Ustawienia)
 ---
@@ -227,6 +227,7 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Przykład:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) reprezentuje obszar 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (tylko wersja na Androida) | Przykład: 2 215 227.87, 830 915.9 ([Szwajcarski system współrzędnych](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (tylko wersja na Androida) | Przykład: 4 215 227.87, 1 830 915.9 ([Szwajcarski system współrzędnych](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (tylko wersja na Androida) | Przykład: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Stopnie 180° | Wszystkie wartości kątowe mają odczyty od 0° do 180° i od 0° do -180°.  |
 |          | Stopnie 360° | Wszystkie wartości kątowe mają odczyty od 0° do 360°.  |
@@ -416,7 +417,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Wygląd profili](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Wygląd profili](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
@@ -447,7 +448,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 Ustawienia **Wygląd mojej pozycji** pozwalają dostosować sposób wyświetlania pozycji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
-Użyj **<Translate ios="true" ids="icon_size"/>**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij <Translate ios="true" ids="icon_size"/>, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **<Translate ios="true" ids="reset_to_default"/>**, aby wrócić do 100%.
+Użyń **<Translate ios="true" ids="icon_size"/>**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiu tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij <Translate ios="true" ids="icon_size"/>, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **<Translate ios="true" ids="reset_to_default"/>**, aby wrócić do 100%.
 
 </TabItem>
 
@@ -568,7 +569,7 @@ Wtyczki odblokowują dodatkowe funkcje aplikacji i mogą być [płatne lub bezp�
 
 - **Pogoda**. Interaktywne warstwy mapy [Pogoda](../plugins/weather.md#weather-settings) pozwalają monitorować temperaturę, ciśnienie powietrza, zachmurzenie, prędkość wiatru i opady w Twoim mieście lub w dowolnym innym miejscu na mapie globalnej.
 
-- **Notatki audio/wideo** (*tylko Android*). Ten element otwiera [ustawienia wtyczki audio-wideo](../plugins/audio-video-notes.md#plugin-settings) dla wybranego profilu. Wtyczka *Notatki audio/wideo* rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie notatek w różnych formatach, takich jak zdjęcie, wideo lub audio, i powiązanie ich z lokalizacją geograficzną lub bieżącą lokalizacją.  
+- **Notatki audio/wideo** (*tylko Android*). Ten element otwiera [ustawienia wtyczki audio-wideo](../plugins/audio-video-notes.md#plugin-settings) dla wybranego profilu. Wtyczka *Notatki audio/wideo* rozszerza funkcjonalność OsmAnd, umożliwiając tworzenie notatek w różnych formatach, takich jak zdjęto, wideo lub audio, i powiązanie ich z lokalizacją geograficzną lub bieżącą lokalizacją.  
 
 - **Edycja OpenStreetMap**. Ten element otwiera [ustawienia wtyczki edycji OpenStreetMap](../plugins/osm-editing.md#settings) dla wybranego profilu. Dzięki OsmAnd i wtyczce do edycji OSM możesz współtworzyć OpenStreetMap.org, tworząc lub modyfikując POI, dodając lub komentując notatki i przesyłając nagrane ślady GPX.
 

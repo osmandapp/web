@@ -2,6 +2,7 @@ import { Box, IconButton, Paper, SvgIcon, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../context/AppContext';
 import PanelButtons from './PanelButtons';
+import { MAP_BUTTONS_Z_INDEX } from '../../map/util/ZIndexes';
 import ChangeProfileTrackDialog from '../../dialogs/tracks/ChangeProfileTrackDialog';
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -112,15 +113,7 @@ export default function GeneralPanelButtons({
                     </Box>
                 </Paper>
             </div>
-            <div
-                style={{
-                    marginLeft: getMarginFromMenu(),
-                    marginTop: '14px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                }}
-            >
+            <div className={styles.focusToggleWrapper} style={{ marginLeft: getMarginFromMenu() }}>
                 <FocusToggleBtn />
             </div>
             <div
@@ -128,7 +121,7 @@ export default function GeneralPanelButtons({
                     left: getMarginFromMenu(),
                     top: `${HEADER_HEIGHT + 100}px`,
                     bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
-                    zIndex: 1000,
+                    zIndex: MAP_BUTTONS_Z_INDEX,
                     position: window.innerWidth > MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE ? 'absolute' : 'fixed',
                     display: 'flex',
                     height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,

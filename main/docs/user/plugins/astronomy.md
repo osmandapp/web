@@ -15,10 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomy** is currently in **beta**.
+**Astronomy** is currently in **beta** on **Android**. 
+
+On **iOS**, the plugin is available through the **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))** program. 
 :::
 
 ## Overview {#overview}
@@ -42,13 +43,29 @@ The following settings are required to display Astronomy overlay:
 4. Adjust what is shown on the Star map using [**Configure View**](#configure-view) — for example, toggle visible objects and rendering aids.
 5. Tap the **Close (X)** button at the top of the Star map screen to exit Star map and return to the Earth map.
 
-The plugin works with both Map rendering engines but performs best in OpenGL mode.
+On Android, the plugin works with both Map rendering engines but performs best in OpenGL mode.
 
 ## Star Map Screen {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Go to:** *Enabled plugin → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
 - [**Search**](#search) — opens the Search screen where you can search for celestial objects and browse sky catalogs and categories. 
@@ -63,7 +80,21 @@ The Star map can also align with your device orientation when compass mode is en
 
 ## Context Menu {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 The **Context Menu** provides detailed information about celestial objects and tools for observing them. It opens when you tap a celestial object on the Star map.
 
@@ -73,7 +104,21 @@ The Context Menu appears at the bottom of the screen and contains object informa
 
 ### Object Information {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 The top section of the Context Menu displays the object's name and classification. Below the name, the object type and its parent constellation or group are shown. For example:
 - **Beta Ursae Minoris** — Star • Ursa Minor
@@ -86,12 +131,13 @@ Quick information blocks display key observational parameters:
 - <Translate android="true" ids="shared_string_azimuth"/> – the object's direction relative to north (0°–360°).
 - <Translate android="true" ids="altitude"/> – the object's height above the horizon.
 - <Translate android="true" ids="shared_string_magnitude"/> – the brightness of the object as seen from Earth. 
+- Distance (*iOS only*) – the distance from Earth to the selected celestial object.
 
 These values update dynamically based on the selected time and the user's location.
 
 Below the quick information blocks, the menu may also include additional information and resources about the object:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
-- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article in the browser.
+- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article.
 - <Translate android="true" ids="astro_designations"/> – Shows alternative names and catalogue identifiers for the object (for example, HD, HIP, NGC). This section is available for objects that have catalog entries, such as stars and deep sky objects. If the object does not have a common name, one of these designations is used as the primary name.
 - <Translate android="true" ids="online_photos"/> – Displays available photos related to the selected celestial object.
 
@@ -105,7 +151,21 @@ Below the object information, the Context Menu provides several actions for inte
 
 ### Visibility Graph {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 The **Visibility** tab shows how the selected object moves across the sky during a 24-hour period.
 
@@ -140,7 +200,21 @@ The graph opens with the indicator positioned at the current system time. The lo
 
 ### Observation Schedule {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 The **Schedule** tab displays the visibility of the selected object for the current week. Each row represents one day and includes:  
 - the day of the week
@@ -176,14 +250,32 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Camera button* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR mode* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Go to:** *Enabled plugin → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR mode*
+
+</TabItem>
+
+</Tabs>
 
 The **Astronomy** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
 
 **How AR Star Finding works:**
 - **Live camera view** shows real sky with transparent astronomical overlays aligned to horizon/compass.
 - **Move camera** to scan sky — objects highlight when they appear in your field of view.
-- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and Wikipedia link.
+- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and open the corresponding Wikipedia article.
 - **Compass calibration** required for accurate alignment (wave phone in figure-8 if needed).
 
 The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align celestial objects with the real sky.
@@ -196,7 +288,21 @@ The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align
 
 ## Configure View {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** allows you to control how the Star map is displayed by enabling or disabling visual modes, objects, and rendering aids.
 
@@ -204,7 +310,21 @@ To open Configure View, tap the Configure View button in the bottom-right corner
 
 ### Modes and Actions {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 This section controls the main display modes of the Star map.
 
@@ -214,7 +334,21 @@ This section controls the main display modes of the Star map.
 
 ### Visible Objects {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 This section lets you choose which types of celestial objects are shown on the Star map.
 
@@ -273,21 +407,92 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Search {#search}
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-The **Search** feature in the Astronomy plugin allows you to find celestial objects, explore sky categories, and access observation data. To open Search, tap the Search button on the Star map. This opens the Search screen, which provides several sections for discovering and organizing celestial objects. The Search screen includes the following sections:
+<TabItem value="android" label="Android">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+The **Search** feature (**Explore** on iOS) in the Astronomy plugin allows you to find celestial objects, explore sky categories, and access observation data. To open Search, tap the Search button on the Star map. This opens the Search screen, which provides several sections for discovering and organizing celestial objects. The Search screen includes the following sections:
 
 **1. Watch now**
 
 The Watch now section highlights celestial objects that are visible right now or tonight. This section acts as a recommendation tool, showing objects that are best suited for observation based on your current location and time.
 
-**2. Categories**
+**2. Solar and Lunar eclipses** (*Android only*)
+
+The [Solar eclipse](#solar-eclipse) and [Lunar eclipse](#lunar-eclipse) tools allow you to explore worldwide eclipse events, view their progression over time, and check eclipse visibility on the map.
+
+**3. Categories**
 
 The Categories section allows you to browse objects by type: Solar system, Constellations, Stars, Nebulas, Star clusters, and Deep sky. Each category opens a list of objects with key information: object name, type or constellation, magnitude (brightness), and rise or set time (if applicable).
 
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+The **Solar Eclipse Explorer** allows you to explore past and upcoming solar eclipses around the world. It combines the Star Map with an interactive timeline and map visualization to show how an eclipse develops at different locations.
+
+The Solar Eclipse Explorer includes the following features:
+
+- **Eclipse navigation**. Use the Previous and Next buttons to switch between available solar eclipses.
+- **Timeline**. The timeline displays the start, maximum, and end of the eclipse. Move the slider to view the eclipse at any moment during the event. All eclipse information is updated automatically for the selected time.
+- **Eclipse information**. The information panel displays: eclipse type, current date and time, eclipse obscuration, Sun altitude, and map center coordinates. The displayed information is calculated for the current map center.
+- **Eclipse path**. Tap Fit eclipse path to center the map on the eclipse path. Tap *Show map* or *Hide map* to display or hide the eclipse path on the map. The eclipse path shows where the eclipse is visible and how the Moon's shadow moves across the Earth's surface.
+
+:::warning
+
+Never look directly at the Sun without appropriate solar-viewing protection. Eclipse times are estimates.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+The **Lunar Eclipse Explorer** allows you to explore worldwide lunar eclipses and observe how the Moon passes through the Earth's shadow.
+
+The Lunar Eclipse Explorer includes the following feature:
+
+- **Eclipse navigation**. Use the Previous and Next buttons to switch between available lunar eclipses.
+- **Eclipse types**. The explorer supports: Penumbral eclipses, Partial eclipses, and Total eclipses
+- **Timeline**. The timeline displays the start, maximum, and end of the eclipse. Markers on the timeline indicate the different stages of the eclipse. Move the slider to observe the eclipse at any point during the event.
+- **Eclipse information**. The information panel displays: eclipse phase, eclipse obscuration, Moon altitude, and map center coordinates. The displayed information is calculated for the current map center.
+- **Visibility map**. Tap *Fit visibility* to center the map on the eclipse visibility area. Tap *Show map* or *Hide map* to display or hide the visibility layer. The visibility layer highlights regions where the Moon is above the horizon during the eclipse.
+
+:::warning
+
+Shadow colors and brightness are schematic and intended for visualization only.
+
+:::
+
 ### Sorting and Filters {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Tap the search bar to open the full search interface. You can refine results using sorting and filtering options.
 
@@ -313,7 +518,21 @@ You can filter results by object type. Selecting specific categories automatical
 
 ### My Data {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 The My Data section contains objects that the user has interacted with. This section includes three lists:
 
@@ -325,7 +544,21 @@ Selecting an item opens the object's context menu.
 
 ### Catalogs {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 The Catalogs section provides access to astronomical catalogs available in the Astronomy plugin.
 

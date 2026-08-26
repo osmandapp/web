@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## نظرة عامة {#overview}
 
@@ -248,7 +246,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 تتيح ميزة *النشاط* في OsmAnd وضع علامات على مسارات GPX المسجلة بأنشطة محددة لمزيد من التحليل والتنظيم في المجلدات.
 
-- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). تتلقى المسارات المسجلة ومسارات محفوظة عبر [تخطيط مسار](../../plan-route/create-route.md) نوع نشاط تلقائيًا بناءً على الملف المستخدم لإنشائها، مما يساعد في تصنيفها وترشيحها لاحقًا. يمكنك تغيير النشاط يدويًا إذا لزم الأمر.
+- [علامات النشاط لمسارات GPX](#description-and-info). تتلقى [المسارات المسجلة](../../plugins/trip-recording.md#recording-settings) ومسارات محفوظة عبر [تخطيط مسار](../../plan-route/create-route.md) نوع نشاط تلقائيًا بناءً على الملف المستخدم لإنشائها، مما يساعد في تصنيفها وترشيحها لاحقًا. يمكنك تغيير النشاط يدويًا إذا لزم الأمر.
 - [مرشح النشاط](../../personal/tracks/smart-folder.md#search-filter). يمكنك ترشيح مسارات GPX المسجلة حسب النشاط، مما يتيح لك التركيز على العثور على أنواع معينة من التسجيلات، مثل جميع مسارات ركوب الدراجات أو المشي لمسافات طويلة.
 - [إدارة أنواع الأنشطة](../../personal/tracks/manage-tracks.md#selection-mode). يمكنك تغيير نوع النشاط للمجلدات أو المسارات المحددة باستخدام وضع التحديد في علامة تبويب المسارات في قائمة أماكني.
 - **قائمة الأنشطة**. يتم تحديد فئات ومجموعات الأنشطة في موارد OsmAnd. للمطورين والمساهمين، يتم الاحتفاظ بقائمة الأنشطة بتنسيق منظم في [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)، والذي يفصل مجموعات وأنواع الأنشطة المتاحة.
@@ -325,7 +323,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 يعرض الرسم البياني **للسرعة** مقاييس مثل:
 
 - *<Translate android="true" ids="average_speed"/>*. يشير إلى متوسط السرعة أثناء الرحلة.
-- *<Translate android="true" ids="max_speed"/>*. يعرض السرعة القصوى أثناء الرحلة.
+- *<Translate android="true" ids="max_speed"/>*. يعرض السرعة القصمى أثناء الرحلة.
 - *<Translate android="true" ids="moving_time"/>*. يعرض إجمالي الوقت أثناء الرحلة في حالة الحركة فقط.
 - *<Translate android="true" ids="distance_moving"/>*. يشير إلى المسافة المعدلة للرحلة.
 
@@ -398,7 +396,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار النقاط iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![قائمة سياق المسار النقاط iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -595,7 +593,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 | المعلمة | الوصف |
 | --- | --- |
 | `lat` | **خط العرض** هو أحد الإحداثيات الجغرافية التي يمكنك من خلالها تحديد موقع. |
-| `lon` | **خط الطول** هو إحداثي جغرافي آخر يمكنك من خلاله تحديد موقع. |
+| `lon` | **خط الطول** هو إحداثي جغرافي آخر يمكنك من خلالها تحديد موقع. |
 | `time` | **الطابع الزمني** هو التاريخ والوقت الذي تم فيه تسجيل النقطة. |
 | `name` | **الاسم** هو اسم النقطة. يُسمح بأي أحرف.  |
 | `desc` | **الوصف** يحتوي على معلومات إضافية حول النقطة. |

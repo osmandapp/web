@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -248,7 +248,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 
 De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
 
-- [Activiteitstags voor GPX-sporen](../../plugins/trip-recording.md#recording-settings). Opgenomen sporen ontvangen automatisch een activiteitstype op basis van het geselecteerde profiel, wat helpt bij het categoriseren en filteren later. U kunt de activiteit handmatig wijzigen indien nodig.
+- [Activiteitstags voor GPX-sporen](#description-and-info). [Opgenomen sporen](../../plugins/trip-recording.md#recording-settings) en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) ontvangen automatisch een activiteitstype op basis van het gebruikte profiel. Dit helpt bij het categoriseren en filteren later. U kunt de activiteit handmatig wijzigen indien nodig.
 - [Activiteitenfilter](../../personal/tracks/smart-folder.md#search-filter). U kunt de opgenomen GPX-sporen filteren op activiteit, waardoor u zich kunt concentreren op het vinden van specifieke soorten opnames, zoals alle fiets- of wandelsporen.
 - [Activiteitstypes beheren](../../personal/tracks/manage-tracks.md#selection-mode). U kunt het activiteitstype voor geselecteerde mappen of sporen wijzigen met de selectiemodus in het tabblad Sporen van het menu Mijn Plaatsen.
 - **Activiteitenlijst**. De activiteitscategorieën en -groepen zijn gedefinieerd in de bronnen van OsmAnd. Voor ontwikkelaars en bijdragers wordt de activiteitenlijst bijgehouden in een gestructureerd formaat op [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), waarin de beschikbare activiteitengroepen en -types worden gedetailleerd.
@@ -367,7 +367,7 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 <InfoAndroidOnly />
 
 :::info Pro-functie
-[Hoogte offline berekenen](../../plan-route/create-route.md#get-elevation-data) is een betaalde [**OsmAnd Pro**]-functie <ProFeature />.
+[Hoogte offline berekenen](../../plan-route/create-route.md#get-elevation-data) is een betaalde [**OsmAnd Pro**](../../purchases/index.md) functie <ProFeature />.
 :::
 
 [Deze functie](../../plan-route/create-route.md#get-elevation-data) stelt u in staat om het hoogteprofiel voor een GPX-spoor offline te berekenen voor elk terrein tussen 70 graden noorderbreedte en 70 graden zuiderbreedte, gebaseerd op [Terreinkaartgegevens](../../plugins/topography.md#download-maps). *Terreinkaarten (3D) moeten vooraf gedownload zijn*.
@@ -386,7 +386,7 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 
 ## Punten / Waypoints {#points--waypoints}
 
-Waypoints zijn een van de soorten punten die beschikbaar zijn op de kaart. Over het algemeen kunnen dit spoorpunten zijn die deel uitmaken van GPX-bestanden. Een gedetailleerde beschrijving is beschikbaar in het artikel [punten op de kaart](../../map/point-layers-on-map.md).
+Waypoints zijn een van de soorten punten die beschikbaar op de kaart. Over het algemeen kunnen dit spoorpunten zijn die deel uitmaken van GPX-bestanden. Een gedetailleerde beschrijving is beschikbaar in het artikel [punten op de kaart](../../map/point-layers-on-map.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -398,7 +398,7 @@ Waypoints zijn een van de soorten punten die beschikbaar zijn op de kaart. Over 
 
 <TabItem value="ios" label="iOS">
 
-![Contextmenu spoor Punten iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Contextmenu spoor Punten iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -408,7 +408,7 @@ In dit *Punten* tabblad:
 
 - [Toon spoorpuntgegevens](#display-custom-gpx-tags) en wijzig uw spoorpunten (waypoints en routepunten), [verwijder ze en voeg](#points--waypoints) waypoints toe aan een spoor.
 - Maak en wijzig [Groep (map) van punten](#waypoint-groups).
-- Centreer de kaart op een waypoint met behulp van het pin-icoon in de waypointlijst (*alleen Android*) zonder de lijst te sluiten, waardoor u waypoints één voor één kunt bekijken.
+- Centreer de kaart op een waypoint met behulp van het pin-icoon in de waypointlijst zonder de lijst te sluiten, waardoor u waypoints één voor één kunt bekijken.
 
 
 ### Waypoint toevoegen aan een spoor {#add-waypoint-to-a-track}
@@ -486,7 +486,7 @@ Het *drie-punten-menu* ( &#8285; ) opent het waypoint *Groepsmenu*.
 - **<Translate android="true" ids="shared_string_rename"/>** - Wijzig de naam van de groep.
 - **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Wijzig de weergaveopties voor een groep waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** of **Verwijderen** (*Alleen Android*) - Verplaats groepswaypoints naar de [Kaartmarkeringen](../../personal/markers.md) lijst.
-- **<Translate android="true" ids="add_to_favorites"/>** (*Alleen Android*) - Hiermee kunt u de geselecteerde groep Waypoints kopiëren naar [Favorieten](../../personal/favorites.md). U kunt kiezen uit twee opties: ***<Translate android="true" ids="copy_as_new_folder"/>*** of ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Hiermee kunt u de geselecteerde groep Waypoints kopiëren naar [Favorieten](../../personal/favorites.md). U kunt kiezen uit twee opties: ***<Translate android="true" ids="copy_as_new_folder"/>*** of ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Alleen Android*) - Creëert een route tussen waypoints. Het eerste en laatste punt worden het begin en einde van de route, en de rest wordt omgezet in tussenliggende punten.
 - **<Translate android="true" ids="shared_string_delete"/>** - Verwijder een groep waypoints.
 
@@ -671,12 +671,14 @@ De optie **Splitsen per tijd** verdeelt een spoor in intervallen van gelijke duu
 
 ![Tabblad spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Kaart spoor splitsen per stijging/daling](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Deze optie verdeelt een spoor in segmenten op basis van hoogteveranderingen. Elk interval wordt geclassificeerd als ***stijging***, ***daling*** of ***vlak***. De manier waarop de intervallen worden weergegeven, de statistieken die voor elk segment worden verstrekt en hoe ze op de kaart verschijnen, zijn ook hetzelfde als in de sectie [Splitsen per Afstand](#split-by-distance).
+Deze optie verdeelt een spoor in segmenten op basis van hoogteveranderingen. Elk interval wordt geclassificeerd als ***stijging***, ***daling*** of ***vlak***. De intervallen worden weergegeven in de volgorde waarin ze langs het spoor voorkomen, en elk stijgings-, dalings- of vlak segment krijgt een eigen indexnummer. De intervallijst biedt dezelfde kernstatistieken als [Splitsen per Afstand](#split-by-distance).
 
 Op de kaart worden segmenten gemarkeerd met gekleurde labels aan het begin van elk interval:
 - **Stijgingssegmenten** (rode labels) tonen een omhoog pijl, het segmentindex en de gemiddelde helling in procent (bijvoorbeeld, ↑ 11. 2%).
 - **Dalingsegmenten** (groene labels) tonen een omlaag pijl, het segmentindex en de gemiddelde helling in procent (bijvoorbeeld, ↓ 12. -2%).
 - **Vlakke segmenten** (blauwe labels) tonen de afstand van het vlakke gedeelte (bijvoorbeeld, 616 m, 411 m).
+
+Tik op een label om het detailpaneel te openen voor het geselecteerde stijgings-, dalings- of vlak segment. Het detailpaneel toont statistieken voor het geselecteerde segment, zoals afstand, duur, stijging en daling, hoogte, snelheid en tijdgerelateerde gegevens.
 
 
 ### Hartslagmetrieken {#heart-rate-metrics}
@@ -698,7 +700,7 @@ Deze optie stelt u in staat om gemiddelde, minimale en maximale hartslagwaarden 
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Dit filter stelt u in staat om uw spoorstatistieken te verbeteren door onnodige of onjuiste gegevens uit te sluiten. U kunt spoorpunten filteren die niet passen bij uw spoorparameters, en als resultaat een nauwkeurigere grafiek en visuele routelijn krijgen zonder vervorming of opnameruis. U kunt wijzigingen aanbrengen met filters zoals *Afvlakking*, *Snelheid*, *Hoogte* en *GPS-precisie*, die gefilterde punten uit het huidige spoor verbergen. Bovendien kunt u in het *Statistieken*-menu controleren hoe uw wijzigingen op de grafiek worden weergegeven voordat u ze opslaat. U kunt ook *Terugzetten naar origineel* en *Opslaan als kopie* van uw spoor in dit filter zonder het origineel op te slaan.  
+Dit filter stelt u in staat om uw spoorstatistieken te verbeteren door onnodige of onjuiste gegevens uit te sluiten. U kunt spoorpunten filteren die niet passen bij uw spoorparameters, en als resultaat een nauwkeuriger grafiek en visuele routelijn krijgen zonder vervorming of opnameruis. U kunt wijzigingen aanbrengen met filters zoals *Afvlakking*, *Snelheid*, *Hoogte* en *GPS-precisie*, die gefilterde punten uit het huidige spoor verbergen. Bovendien kunt u in het *Statistieken*-menu controleren hoe uw wijzigingen op de grafiek worden weergegeven voordat u ze opslaat. U kunt ook *Terugzetten naar origineel* en *Opslaan als kopie* van uw spoor in dit filter zonder het origineel op te slaan.  
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 

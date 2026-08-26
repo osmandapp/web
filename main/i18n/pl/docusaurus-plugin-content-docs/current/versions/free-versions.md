@@ -1,5 +1,5 @@
 ---
-source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -32,7 +32,7 @@ Data wydania 04/2026:
 - Nowy Edytor palet do tworzenia i edycji niestandardowych schematów kolorów dla wizualizacji ścieżek i terenu.
 - Ulepszono routing rowerowy z uwzględnieniem szerokości roweru.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### Wersja 5.2 {#version-52}
 
@@ -557,14 +557,14 @@ Data wydania: 03/2016
 
 ### Wersja 2.2 {#version-22}
 
-Data wydania: 11/2015
+Release date: 11/2015
 
-- Nowy, kontekstowy interfejs użytkownika do dotykania lokalizacji na mapie i na innych ekranach
-- Ekran mapy jest teraz uruchamiany bezpośrednio, chyba że wybrano opcję „Pokaż pulpit nawigacyjny przy uruchomieniu aplikacji”
-- Nowe dane Wikipedii, teraz pobierane według kraju i z znacznie bardziej kompletnymi danymi
-- Lepsze przeliczanie trasy (po wielokrotnych próbach silnik sugeruje inną trasę)
-- Wyszukiwanie POI obsługuje teraz bardziej szczegółowe zapytania
-- Struktura i interfejs pobierania danych mapy zostały przebudowane
+- New, context-sensitive UI for tapping locations on the map and on other screens
+- Map screen is now launched directly unless 'Show Dashboard on app start' is selected
+- New Wikipedia data, now downloads per country, and with much more complete data
+- Better route recalculation (after repeated attempts engine now suggests a different route)
+- POI Search now supports more specific queries
+- Map data download structure and interface reworked
 
 <DownloadRelease blog="osmand-2-2" release="net.osmand-2.2.apk" />
 
@@ -622,7 +622,7 @@ Renderowanie mapy:
 - Nowe i zaktualizowane style map, w tym OsmAnd, LightRS, UniRS
 - Więcej szczegółów i parametrów konfiguracji dla stylów map
 - Opcja wyświetlania transportu publicznego i metra
-- Opcje wyświetlania nawierzchni i gładkości drogi
+- Opcje wyświetlania nawierzchni i gładności drogi
 - Dostosowanie rozmiaru tekstu mapy niezależnie od powiększenia mapy
 
 Interfejs użytkownika i inne:

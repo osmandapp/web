@@ -31,9 +31,12 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: Current Location   {#altitude-current-location}
   
 :::note  Download World altitude correction
-On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
+On Android 14 and later, OsmAnd uses altitude above mean sea level (MSL) provided by Google Play Services when available. In this case, the World altitude correction map is not required.
+
+If you use the Android API location source or MSL altitude is not available, download the World altitude correction map to improve altitude accuracy.
 
 - Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- To change the location source, go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -559,11 +562,12 @@ To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [Vehicle Met
 </Tabs>
 
 
-The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*14 metrics*): **Adapter voltage** (*Android only*),&nbsp; **Ambient Temperature**,&nbsp; **Battery voltage**,&nbsp; **Calculated Engine Load**,&nbsp; **Coolant temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Runtime**,&nbsp; **Engine speed** (*free*),&nbsp; **Fuel consumption**,&nbsp; **Fuel pressure**,&nbsp; **Intake temperature**,&nbsp; **Remaining fuel**,&nbsp; **Throttle Position**, and **Vehicle speed** (*free*).  
+The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*14 metrics*): **Adapter voltage**,&nbsp; **Ambient Temperature**,&nbsp; **Battery voltage**,&nbsp; **Calculated Engine Load**,&nbsp; **Coolant temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Runtime**,&nbsp; **Engine speed** (*free*),&nbsp; **Fuel consumption**,&nbsp; **Fuel pressure**,&nbsp; **Intake temperature**,&nbsp; **Remaining fuel**,&nbsp; **Throttle Position**, and **Vehicle speed** (*free*).  
 
 - To add vehicle metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **Vehicle Metrics plugin**.
 - You can add widgets even if no OBD-II scanner is connected.
 - All added widgets are visible whether an OBD-II scanner is connected or not.
+- For accurate **Fuel consumption** values, specify the vehicle's _[Fuel tank capacity](../navigation/guidance/vehicle-parameters.md#overview)_ in the profile settings. Distance-based consumption modes also require GPS data.
 - To edit a widget, tap the widget added to the panel, then tap *Settings*, or directly tap the *Settings icon* in the widget field.
 
 | | |

@@ -1,4 +1,5 @@
 import headerStyles from '../menu/trackfavmenu.module.css';
+import IconBtn from '../frame/components/btns/IconBtn';
 import { AppBar, Box, IconButton, InputAdornment, Link, TextField, Toolbar, Typography } from '@mui/material';
 import styles from './login.module.css';
 import { closeLoginMenu, EMPTY_INPUT, ERROR_TOKEN, openLogin } from '../manager/LoginManager';
@@ -160,7 +161,7 @@ export default function CreateAccount({ dialog, reopenLoginDialog = null }) {
             {!dialog && (
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
-                        <IconButton
+                        <IconBtn
                             id={'se-create-account-menu-close'}
                             variant="contained"
                             type="button"
@@ -171,7 +172,7 @@ export default function CreateAccount({ dialog, reopenLoginDialog = null }) {
                             }}
                         >
                             <CloseIcon />
-                        </IconButton>
+                        </IconBtn>
                         <Typography id="se-create-account-menu-name" component="div" className={headerStyles.title}>
                             {t('register_opr_create_new_account')}
                         </Typography>

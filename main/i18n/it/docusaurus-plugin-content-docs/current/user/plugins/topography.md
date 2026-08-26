@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografia
 ---
@@ -115,7 +115,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"
 
 È necessario scaricare le mappe **Mappa del terreno (3D)** per visualizzare Ombreggiatura, Pendenza e Rilievo 3D. Dopo aver scaricato le mappe, è possibile visualizzare **Curve di livello** e **Terreno** utilizzando la sezione [Configura mappa](../map/configure-map-menu.md) del *Menu principale*.
 
-Se la mappa visualizzata sullo schermo non è stata scaricata, allora in *Menu → Configura mappa → Sezione Topografia → Terreno* in fondo all'elenco delle funzionalità verrà visualizzata la sezione *Scarica mappe* con le mappe aggiuntive suggerite.
+Se la mappa visualizzata sullo schermo non è stata scaricata, allora in *Menu → Configura mappa → Sezione Topografia → Terreno* in fondo all'elenco delle funzionalità verrà visualizzata la sezione *Scaricare mappe* con le mappe aggiuntive suggerite.
 
 
 ### Curve di livello (Metri o Piedi) {#contour-lines-meters-or-feet}
@@ -204,19 +204,19 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-L'opzione **Terreno** abilita e consente di personalizzare tre funzionalità come *Ombreggiatura*, *Pendenza* e *Altitudine*.  
+L'opzione **Terreno** abilita e consente di personalizzare tre funzionalità come *Ombreggiatura*, *Pendenza* e *Altitudine*. Su iOS, il menu Visualizzazione include anche *Ombre del terreno*, una modalità di ombreggiatura del terreno in tempo reale basata sul Rilievo 3D.  
 Caratteristiche specifiche:  
 
-- È possibile abilitare solo un'opzione alla volta, Ombreggiatura, Pendenza o Altitudine.
+- È possibile abilitare solo un'opzione alla volta, Ombreggiatura, Pendenza, Altitudine o Ombre del terreno.
 - Se non si notano cambiamenti dopo aver scaricato e abilitato la mappa corrispondente, si consiglia di riavviare l'applicazione.
 
-Il menu **Terreno** include la selezione dello [schema di colori](#default-color-scheme) con l'opzione di [modificarlo](#modify-color-scheme) (per gli [abbonati Pro](../../user/purchases/index.md)), la possibilità di cambiare la trasparenza del livello sulla mappa ([visibilità](#visibility)), e selezionare il [livello di zoom](#zoom-levels) per la sua visualizzazione, informazioni sulla dimensione dei [dati memorizzati nella cache](#cache-size), e un elenco di [mappe](../../user/personal/maps-resources.md) necessarie per visualizzare il livello.
+Il menu **Terreno** include la selezione dello [schema di colori](#default-color-scheme) (**visualizzazione** su iOS) con l'opzione di [modificarlo](#modify-color-scheme) (per gli [abbonati Pro](../../user/purchases/index.md)), la possibilità di cambiare la trasparenza del livello sulla mappa ([visibilità](#visibility)), e selezionare il [livello di zoom](#zoom-levels) per la sua visualizzazione, informazioni sulla dimensione dei [dati memorizzati nella cache](#cache-size), e un elenco di [mappe](../../user/personal/maps-resources.md) necessarie per visualizzare il livello.
 
 
 ## Livelli Ombreggiatura, Pendenza e Altitudine {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Le mappe raster di **Ombreggiatura**, **Pendenza** e **Altitudine** sono create 
 - *Navigazione.* Aiuta a identificare pendii ripidi, sia in discesa che in salita, che possono essere cruciali per una navigazione sicura.
 - *Pianificare percorsi.* Aiuta a scegliere i percorsi più adatti, considerando il terreno.
 - *Stima del terreno.* È comodo per visualizzare il paesaggio, specialmente se si cammina o si va in bicicletta.
+
+
+### Ombre del terreno (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Ombre del terreno** fornisce un'ombreggiatura dinamica in tempo reale basata sulla geometria del terreno 3D. A differenza delle mappe raster di Ombreggiatura, l'effetto di ombreggiatura viene generato direttamente sul dispositivo utilizzando i dati del terreno e segue automaticamente la prospettiva della mappa corrente.
+
+Ombre del terreno richiede il Rilievo 3D e lo abilita automaticamente quando selezionato. La funzione è progettata per migliorare la leggibilità del terreno mantenendo un basso impatto sulle prestazioni.
 
 
 ### Schema di colori predefinito {#default-color-scheme}
@@ -265,6 +274,16 @@ Le mappe raster di **Ombreggiatura**, **Pendenza** e **Altitudine** sono create 
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 La funzione *Modifica schema di colori* consente di selezionare uno schema di colori:
 
 - Da un [elenco predefinito](#default-color-scheme).
@@ -282,36 +301,21 @@ Puoi:
 
 Per una personalizzazione avanzata delle tavolozze utilizzando file di tavolozze, consulta l'articolo [Schemi di colori](../personal/color-palette-schemes.md#palette-modify).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-La funzione *Modifica schema di colori* consente di selezionare uno schema di colori:
-
-- Da un [elenco predefinito](#default-color-scheme).
-- Da file di tavolozze di colori che hai creato sul tuo computer. I file personalizzati possono essere aggiunti a OsmAnd utilizzando lo strumento di [importazione/esportazione](../personal/import-export.md).
-
-È possibile [modificare queste tavolozze](../personal/color-palette-schemes.md#palette-modify) per personalizzare l'aspetto di mappe e percorsi.
-
-</TabItem>
-
-</Tabs>
-
 ### Visibilità {#visibility}
 
 | Visibilità 31% | Visibilità 74% |
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-La funzione *Visibilità* viene utilizzata per regolare la trasparenza delle ombre per l'Ombreggiatura e i colori utilizzati per rappresentare l'angolo nel parametro Pendenza.
+La funzione *Visibilità* viene utilizzata per regolare la trasparenza delle ombre per l'Ombreggiatura e i colori utilizzati per rappresentare l'angolo nel parametro Pendenza. Per Ombre del terreno, Visibilità controlla l'intensità dell'effetto di ombreggiatura del terreno.
 
 ### Livelli di zoom {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 La funzione *Livelli di scala* consente di impostare i valori minimo e massimo dei livelli di zoom della mappa, che vanno da 4 a 19, ai quali verranno visualizzati i livelli della mappa Ombreggiatura o Pendenza.
+
+I Livelli di zoom non sono disponibili per Ombre del terreno perché questa visualizzazione viene renderizzata dinamicamente e non dipende dagli intervalli di visibilità del livello raster.
 
 ### Dimensione cache {#cache-size}
 
@@ -534,7 +538,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 **L'ombreggiatura** è un tipo di mappa che visualizza il terreno utilizzando le ombre, creando una rappresentazione visiva della pendenza e della forma della superficie terrestre.  
 **Il Rilievo 3D** è una funzione che aggiunge effetti tridimensionali alla mappa.  
 
-Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *L'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.  
+Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *l'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.  
 
 Quando **l'Ombreggiatura** è **abilitata**, un'immagine con ombre di rilievo appare più dettagliata, più scura e più a gradini rispetto a un'immagine di *Rilievo 3D*. La spiegazione è che *l'Ombreggiatura* enfatizza i gradienti e i contrasti del terreno, creando un'immagine più nitida e dettagliata. La funzione *Rilievo 3D* conferisce alla mappa un aspetto più fluido e levigato, ammorbidendo il terreno e riducendo potenzialmente la visibilità di alcuni dettagli più fini.
 

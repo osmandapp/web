@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topografia
 ---
@@ -23,7 +23,7 @@ Wtyczka Topografia jest [płatną funkcją](../purchases/index.md).
 :::
 
 Topografia jest ważną cechą kartografii, która dostarcza informacji do wizualnej oceny rzeźby terenu.
-Informacje topograficzne, takie jak [Linie konturowe](#contour-lines), [Teren](#terrain) (*Cieniowanie wzgórz* i *Nachylenie*), oraz [Rzeźba 3D](#3d-relief), pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, skrajności, stromości lub punktów o tej samej wysokości.
+Informacje topograficzne, takie jak [Linie konturowe](#contour-lines), [Teren](#terrain) (*Cieniowanie wzgórz* i *Nachylenie*) oraz [Rzeźba 3D](#3d-relief), pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, skrajności, stromości lub punktów o tej samej wysokości.
 
 Każda funkcja udostępniana przez tę wtyczkę jest niezależną warstwą mapy, która po włączeniu może być wyświetlana nad lub pod głównym źródłem mapy, w zależności od [ustawień](../map/raster-maps.md#overlay).  
 
@@ -180,7 +180,7 @@ Podczas korzystania z [Silnika renderowania mapy](../personal/global-settings.md
 - *<Translate android="true" ids="show_from_zoom_level"/>*. Zdefiniuj [poziomy powiększenia](../map/interact-with-map.md#my-position-and-zoom), przy których widoczne są linie konturowe.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Wybierz kolor wyświetlania linii konturowych.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Dostosuj szerokość linii konturowych.
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gęstość linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gędze linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
 - *<Translate android="true" ids="maps_and_resources"/>*. Przeglądaj i pobieraj mapy linii konturowych dla bieżącego regionu i pobliskich obszarów.
 
 
@@ -204,19 +204,19 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-Opcja **Teren** włącza i pozwala dostosować trzy funkcje, takie jak *Cieniowanie wzgórz*, *Nachylenie* i *Wysokość*.  
+Opcja **Teren** włącza i pozwala dostosować trzy funkcje, takie jak *Cieniowanie wzgórz*, *Nachylenie* i *Wysokość*. W systemie iOS menu Wizualizacja zawiera również *Cienie terenu*, tryb cieniowania terenu w czasie rzeczywistym oparty na Rzeźbie 3D.  
 Cechy szczególne:  
 
-- Tylko jedna opcja może być włączona w tym samym czasie: Cieniowanie wzgórz, Nachylenie lub Wysokość.
+- Tylko jedna opcja może być włączona w tym samym czasie: Cieniowanie wzgórz, Nachylenie, Wysokość lub Cienie terenu.
 - Jeśli po pobraniu i włączeniu odpowiedniej mapy nie widać żadnych zmian, zaleca się ponowne uruchomienie aplikacji.
 
-Menu **Teren** zawiera wybór [schematu kolorów](#default-color-scheme) z opcją [modyfikacji](#modify-color-scheme) (dla [subskrybentów Pro](../../user/purchases/index.md)), możliwość zmiany przezroczystości warstwy na mapie ([widoczność](#visibility)) i wyboru [poziomu powiększenia](#zoom-levels) dla jej wyświetlania, informacje o rozmiarze [danych w pamięci podręcznej](#cache-size) oraz listę [map](../../user/personal/maps-resources.md) potrzebnych do wyświetlenia warstwy.
+Menu **Teren** zawiera wybór [schematu kolorów](#default-color-scheme) (**wizualizacja** w systemie iOS) z opcją [modyfikacji](#modify-color-scheme) (dla [subskrybentów Pro](../../user/purchases/index.md)), możliwość zmiany przezroczystości warstwy na mapie ([widoczność](#visibility)) i wyboru [poziomu powiększenia](#zoom-levels) dla jej wyświetlania, informacje o rozmiarze [danych w pamięci podręcznej](#cache-size) oraz listę [map](../../user/personal/maps-resources.md) potrzebnych do wyświetlenia warstwy.
 
 
 ## Warstwy Cieniowanie wzgórz, Nachylenie i Wysokość {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 - *Nawigacja.* Pomaga zidentyfikować strome zbocza, zarówno zjazdowe, jak i podjazdowe, co może mieć kluczowe znaczenie dla bezpiecznej nawigacji.
 - *Planowanie tras.* Pomaga wybrać najbardziej odpowiednie trasy, biorąc pod uwagę ukształtowanie terenu.
 - *Ocena terenu.* Jest to wygodne do wizualizacji krajobrazu, zwłaszcza jeśli spacerujesz lub jeździsz na rowerze.
+
+
+### Cienie terenu (iOS) {#terrain-shadows}
+
+![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Cienie terenu** zapewniają dynamiczne cieniowanie w czasie rzeczywistym na podstawie geometrii terenu 3D. W przeciwieństwie do rastrowych map Cieniowania wzgórz, efekt cieniowania jest generowany bezpośrednio na urządzeniu przy użyciu danych terenowych i automatycznie dostosowuje się do bieżącej perspektywy mapy.
+
+Cienie terenu wymagają Rzeźby 3D i automatycznie ją włączają po wybraniu. Funkcja ta ma na celu poprawę czytelności terenu przy jednoczesnym zachowaniu niskiego wpływu na wydajność.
 
 
 ### Domyślny schemat kolorów {#default-color-scheme}
@@ -265,6 +274,16 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
 - Z [predefiniowanej listy](#default-color-scheme).
@@ -282,36 +301,21 @@ Możesz:
 
 Aby uzyskać zaawansowaną personalizację palet za pomocą plików palet, zobacz artykuł [Schematy kolorów](../personal/color-palette-schemes.md#palette-modify).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
-
-- Z [predefiniowanej listy](#default-color-scheme).
-- Z plików palet kolorów utworzonych na komputerze. Niestandardowe pliki można dodać do OsmAnd za pomocą [narzędzia importu/eksportu](../personal/import-export.md).
-
-Możesz [edytować te palety](../personal/color-palette-schemes.md#palette-modify), aby spersonalizować wygląd map i tras.
-
-</TabItem>
-
-</Tabs>
-
 ### Widoczność {#visibility}
 
 | Widoczność 31% | Widoczność 74% |
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-Funkcja *Widoczność* służy do regulacji przezroczystości cieni dla Cieniowania wzgórz oraz kolorów używanych do reprezentowania kąta w parametrze Nachylenie.
+Funkcja *Widoczność* służy do regulacji przezroczystości cieni dla Cieniowania wzgórz oraz kolorów używanych do reprezentowania kąta w parametrze Nachylenie. W przypadku Cieni terenu, Widoczność kontroluje siłę efektu cieniowania terenu.
 
 ### Poziomy powiększenia {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Funkcja *Poziomy powiększenia* pozwala ustawić minimalne i maksymalne wartości poziomów powiększenia mapy, w zakresie od 4 do 19, przy których będą wyświetlane warstwy mapy Cieniowanie wzgórz lub Nachylenie.
+
+Poziomy powiększenia nie są dostępne dla Cieni terenu, ponieważ ta wizualizacja jest renderowana dynamicznie i nie zależy od zakresów widoczności warstwy rastrowej.
 
 ### Rozmiar pamięci podręcznej {#cache-size}
 
@@ -340,7 +344,7 @@ Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać w
 
 Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topografia w menu Konfiguruj mapę. W artykule [Szybka akcja](../widgets/quick-action.md#configure-map) można znaleźć listę warstw dostępnych do wyświetlenia. Jeśli potrzebujesz szybkiego dostępu do tej konfiguracji mapy, użyj narzędzia *Przycisk niestandardowy*.
 
-- Przejdź do [Dodaj akcję](../widgets/quick-action.md#custom-buttons): *Menu → Konfiguruj ekran → Przyciski niestandardowe → Szybka akcja → Dodaj akcja → Konfiguruj mapę*.
+- Przejdź do [Dodaj akcję](../widgets/quick-action.md#custom-buttons): *Menu → Konfiguruj ekran → Przycuki niestandardowe → Szybka akcja → Dodaj akcja → Konfiguruj mapę*.
 - Dodaj jeden lub więcej przycisków Szybkiej akcji, aby zmienić widoczność określonej warstwy topograficznej.
 
 
@@ -368,7 +372,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), wykorzystując informacje o wysokości z tagów takich jak `height` i `building:levels`, jeśli są dostępne. Jeśli [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) obejmują przejścia przez budynki mapowane za pomocą tagu `tunnel=building_passage`, OsmAnd renderuje widoczne otwory w modelu budynku 3D, tak aby drogi lub ścieżki piesze przechodzące przez budynek były wyświetlane poprawnie. 
 
-Budynki 3D są pokazywane tylko na wyższych poziomach powiększenia (widok miasta/ulicy), gdzie można wyświetlić poszczególne budynki. Gdy POI lub wybrana lokalizacja (takiej jak pinezka na mapie lub cel nawigacji) znajduje się wewnątrz budynku, OsmAnd podświetla odpowiadający budynek, aby ułatwić jego identyfikację na mapie.
+Budynki 3D są pokazywane tylko na wyższych poziomach powiększenia (widok miasta/ulicy), gdzie można wyświetlić poszczególne budynki. Podczas powiększania lub pomniejszania oraz przesuwania mapy budynki 3D pojawiają się i znikają z płynną animacją zanikania. Gdy POI lub wybrana lokalizacja (takiej jak pinezka na mapie lub cel nawigacji) znajduje się wewnątrz budynku, OsmAnd podświetla odpowiadający budynek, aby ułatwić jego identyfikację na mapie.
 
 Użyj głównego przełącznika, aby włączyć lub wyłączyć renderowanie 3D budynków. Po włączeniu ustawienie wyświetla również bieżący [Poziom szczegółowości](#performance) (Niski lub Wysoki) pod głównym przełącznikiem (*tylko Android*). Aby zobaczyć budynki w 3D, przechyl mapę, umieszczając dwa palce na ekranie i przesuwając w górę. W tym widoku budynki mogą częściowo zasłaniać drogi lub etykiety mapy w zależności od ustawienia widoczności.
 
@@ -417,7 +421,7 @@ Elementy sterujące **<Translate android="true" ids="performance"/>** określaj�
 
 **<Translate android="true" ids="level_of_details"/>** określa złożoność geometrii budynku 3D:
 - Niski (domyślny) — prostsza geometria.
-- Wysoki — bardziej szczegółowa geometria.
+- Wysoki — bardziej szczegółowa geometria. Animacja zanikania dla budynków 3D jest dostępna tylko przy tym ustawieniu.
 
 **<Translate android="true" ids="view_distance"/>** kontroluje, jak daleko od kamery renderowane są budynki 3D:
 - Blisko (domyślny) — renderuje budynki bliżej Ciebie.
@@ -563,6 +567,6 @@ OsmAnd pozwala na łączenie wielu typów warstw mapy w celu uzyskania bardziej 
 
 1. Jak przywrócić zakup wtyczki Topografia (dawniej Linie konturowe). [(sprawdź)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Linie konturowe, dane o wysokości lub rzeźba 3D nie są wyświetlane. [(sprawdź)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. Mapa automatycznie przełącza się w tryb 3D podczas nawigacji:  
-    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przyciski → Przyciski domyślne**.  
+3. Mapa automatycznie przełącza w tryb 3D podczas nawigacji:  
+    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przycuki → Przycuki domyślne**.  
     - Sprawdź, czy w **Menu → Konfiguruj mapę → Topografia** są włączone jakiekolwiek funkcje Terenu, które mogą wywoływać efekt 3D.

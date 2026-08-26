@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -239,7 +239,7 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 - Wartość **≤ 0.1**:  
   - "0.05" jest wyświetlane jako "0".
-- Wartość **> 0.1 i < 100**:  
+- Wartość **> 0.1 and < 100**:  
   - na przykład "50.7643" jest wyświetlane jako "50.8:1".
 - Wartość **> 100:**  
   - "102.35" jest wyświetlane jako "102:1."
@@ -521,7 +521,7 @@ Widżety odnoszą się do [wtyczki Czujniki zewnętrzne](../plugins/external-sen
 
 - Dodaj widżety, nawet jeśli nie jest podłączony żaden czujnik zewnętrzny.
 
-- **Wszystkie dodane widżety są widoczne**, nawet jeśli nie jest podłączony żaden czujnik zewnętrzny.
+- **Wszystkie dodane widżety są widoczne**, nawet jeśli nie jest podłączony żany czujnik zewnętrzny.
 
 - Użyj [wtyczki Nagrywanie podróży](../plugins/trip-recording.md#recording-settings), aby rejestrować dane z czujników.
 
@@ -659,7 +659,7 @@ Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji M
 
 :::note
 Aby dodać widżety notatek audio/wideo do ekranu mapy, włącz wtyczkę OsmAnd [Notatki audio/wideo](../plugins/audio-video-notes.md).
-:::
+::;
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 

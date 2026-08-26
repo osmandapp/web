@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title:  Profili (Impostazioni)
 ---
@@ -227,6 +227,7 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Esempio:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) rappresenta un'area di 9m x 14m)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (solo versione Android) | Esempio: 2 215 227.87, 830 915.9 ([Sistema di coordinate svizzero](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (solo versione Android) | Esempio: 4 215 227.87, 1 830 915.9 ([Sistema di coordinate svizzero](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (solo versione Android) | Esempio: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Gradi 180° | Tutti i valori angolari hanno letture da 0° a 180° e da 0° a -180°.  |
 |          | Gradi 360° | Tutti i valori angolari hanno letture da 0° a 360°.  |
@@ -416,7 +417,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_profile,prof
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Aspetto Profili](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Aspetto Profili](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 

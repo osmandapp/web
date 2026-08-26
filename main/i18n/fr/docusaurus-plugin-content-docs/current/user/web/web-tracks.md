@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Traces
 title: Traces
@@ -41,6 +41,22 @@ Tracks section contains all track-related tools and actions. The following optio
 - Download folders as OSF or OBF collection.
 
 
+## Importation de traces {#import-tracks}
+
+Vous pouvez importer des traces GPX dans le Planificateur Web soit en utilisant le bouton Importer, soit en faisant glisser et déposer des fichiers GPX directement sur la carte.
+
+Pour importer une trace par glisser-déposer :
+- Ouvrez la section Traces.
+- Faites glisser un ou plusieurs fichiers GPX depuis votre ordinateur.
+- Déposez les fichiers sur la carte ou dans un dossier de traces spécifique.
+
+Lorsque vous faites glisser un fichier sur la carte, la zone de dépôt disponible est mise en surbrillance. Si vous déposez le fichier directement sur la carte, il est importé dans le dossier Import. Si vous le déposez dans un dossier existant, il est importé dans ce dossier à la place.
+
+Une fois l'importation terminée, la trace apparaît dans la liste des traces, est synchronisée avec [OsmAnd Cloud](../personal/osmand-cloud.md), et devient disponible sur tous les appareils connectés au même compte.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Visible on the Map {#visible-on-the-map}
 
 The **Visible on map** view lists all tracks that are currently displayed on the map. Any track can be added to this list from the main Tracks panel using the **⋮ → Make track visible** option.
@@ -80,14 +96,18 @@ Tracks are displayed only if the Smart Folder configuration is supported on the 
 
 Smart Folder synchronization may vary depending on the platform and sync configuration. For the most consistent results, ensure that Cloud sync is enabled and up to date on all devices.
 
-In the three-dot menu (⋮), you can download the Smart Folder as an OBF collection.
+The three-dot menu (⋮) provides additional actions for the Smart Folder. You can *Download as OSF*, *Download as OBF collection*, *Rename*, or *Delete* the folder.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud Tracks {#cloud-tracks}
 
 GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
+
+When you select a track, the map automatically centers and adjusts the zoom level to display the entire track within the visible map area.
+
+You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected track. Turn off Focus mode to restore the visibility of other map objects.
 
 The following features are available after choosin cloud track:
 - *Information* - displaying track data.

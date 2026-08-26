@@ -13,6 +13,14 @@
     z-index: 1000 !important;
 }
 
+.focusToggleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 14px;
+    padding-bottom: 8px;
+}
+
 .searchTitle {
     color: #4d4d4d !important;
     font-size: 14px !important;

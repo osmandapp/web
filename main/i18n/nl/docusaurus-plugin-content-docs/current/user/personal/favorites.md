@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Favorieten
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -43,13 +42,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favorietenlaag Android](@site/static/img/map/favorites_layer.png)
+![Favotires layer Android](@site/static/img/map/favorites_layer.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorietenlaag iOS](@site/static/img/map/favorites_layer_ios.png)
+![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
 
 </TabItem>
 
@@ -88,8 +87,10 @@ Bij het toevoegen van een punt uit OSM-gegevens wordt de relevante POI-informati
 
 - **Naam** — Een unieke naam binnen de groep (*Vereist*).
 - **Adres** en **Beschrijving** (*Optioneel*).
-- **Groep** — Selecteer uit een bestaande [Favorietengroep](#manage-favorites) of maak een nieuwe aan.
+- **Groep** — Selecteer uit een bestaande [Favorietengroep](#manage-favorites) or maak een nieuwe aan. Op Android kunt u ook een submap binnen een groep selecteren of een nieuwe aanmaken. Geneste mappen worden weergegeven met hun volledige pad (bijvoorbeeld *Reizen* / *Italië* / *Rome*).
 - **Visuele aanpassing** — Pictogram, kleur, vorm kunnen overeenkomen met het standaard [uiterlijk van de groep](#change-group-appearance) of individueel worden aangepast.
+
+**OPMERKING:** Als de Favorietenlaag is uitgeschakeld in [Kaart configureren](../map/configure-map-menu), wordt bij het toevoegen van een nieuw favorietenpunt de laag automatisch ingeschakeld zodat het nieuw toegevoegde favoriet zichtbaar is op de kaart.
 
 
 ### Bewerken / Vervangen / Verwijderen {#edit--replace--delete}
@@ -267,7 +268,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Favorietenmap functies android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
 
@@ -275,9 +276,11 @@ Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
 - **<Translate android="true" ids="pin_folder"/>** — Zet de geselecteerde map vast om deze bovenaan de favorietenlijst te houden voor snellere toegang.
 - **<Translate android="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
+- **<Translate android="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
+- **<Translate android="true" ids="shared_string_move"/>** — Verplaats de geselecteerde map, inclusief alle favorietenpunten en geneste submappen, naar een andere map. De huidige map en de bijbehorende submappen kunnen niet als bestemming worden geselecteerd.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Verwijder van kaartmarkeringen** — Voeg alle favorietenpunten uit de map toe aan de *Lijst met kaartmarkeringen* of verwijder ze indien nodig voor eenvoudige referentie.
 - **<Translate android="true" ids="add_to_a_track"/>** — Voeg alle favorietenpunten uit de geselecteerde map toe aan een track. Dit opent het trackscherm waar u een track kunt kiezen of aanmaken.
-- **<Translate android="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
 
 </TabItem>
@@ -397,12 +400,12 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Favorietenback-up* te gebruiken. Als u een account heeft in *OsmAnd Pro* of een actief account in *OsmAnd Cloud*, ziet u de promotiebanner niet.  
+U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up* te gebruiken. Als u een account heeft in *OsmAnd Pro* of een actief account in *OsmAnd Cloud acount*, ziet u de promotiebanner niet.  
 
 - *Banner Gratis Favorietenback-up*. Tik op deze banner om het back-upproces te starten.
 - *Voltooi de registratiestap* als u geen OsmAnd Cloud-account heeft door de instructies in de [registratiegids](../personal/osmand-cloud.md#login) te volgen.
 - *Navigeer naar het menu OsmAnd Aankopen* (*Menu → Instellingen → Aankopen*).
-- *[OsmAnd Start-pakket](../personal/osmand-cloud.md#osmand-start)*. Selecteer deze optie om toegang te krijgen tot de functie Gratis Favorietenback-up.
+- *[OsmAnd Start-pakket](../personal/osmand-cloud.md#osmand-start)*. Selecteer deze optie om toegang tot de functie Gratis Instellingenback-up te krijgen.
 - *Maak een back-up* van uw instellingen.
 
 
@@ -496,3 +499,29 @@ Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van 
 
 
 ```xml
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <wpt lat="37.5460870" lon="-77.4532843">
+        <time>2023-06-07T12:31:35Z</time>
+        <name>Test</name>
+        <type>SOTM</type>
+        <extensions>
+            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+            <osmand:icon>place_town</osmand:icon>
+            <osmand:background>circle</osmand:background>
+            <osmand:color>#ff4e4eff</osmand:color>
+            <test:country>United States</test:country>
+            <test:state>Virginia</test:state>
+            <test:telephone>(804) 828-0100</test:telephone>
+            <test:postcode>23284</test:postcode>
+            <test:start_date>Thursday, June 8, 2023</test:start_date>
+        </extensions>
+    </wpt>
+</gpx>
+```  
+
+
+## Gerelateerde artikelen {#related-articles}
+
+- [Tracks beheren](../personal/tracks/manage-tracks.md#import--export-track)
+- [Zoekgeschiedenis](../search/search-history.md#export-and-share)
+- [Kleurpaletschema's](../personal/color-palette-schemes.md)

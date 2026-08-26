@@ -1,5 +1,5 @@
 ---
-source-hash: aa36c334e04ef876501173f5138f9f0d2459d262e3e15975e038bcc924fcf814
+source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
 sidebar_position: 4
 title:  Kaarten & Gegevens
 ---
@@ -180,6 +180,22 @@ Als u probeert een locatie te zoeken met de structuur *Stad → Straat → Huisn
 - **Probleem met Nominatim**. Het huis kan aanwezig zijn in OpenStreetMap, maar niet worden gevonden via Nominatim (de zoekmachine die door OpenStreetMap wordt gebruikt). U kunt meer leren over hoe u adresgerelateerde problemen kunt oplossen [hier](https://wiki.openstreetmap.org/wiki/Addresses).
 
 - **Mogelijk probleem in OsmAnd**. Als het huis aanwezig is in Nominatim maar nog steeds niet wordt gevonden in OsmAnd, kan het probleem specifiek voor OsmAnd zijn. U kunt bijdragen aan het oplossen hiervan door verder onderzoek te doen. Meer details zijn te vinden in dit [technische artikel](../../technical/algorithms/trace-address-search-issues.md).
+
+### Britse postcodes zoeken met een aangepast POI-bestand {#search-uk-postcodes-using-a-custom-poi-file}
+
+Als een Britse postcode niet kan worden gevonden via *Menu → Zoeken → Adres*, is deze mogelijk niet beschikbaar via de adreszoekindex die door OsmAnd wordt gebruikt.
+
+Een door de community onderhouden Britse postcode-POI-bestand is beschikbaar als aangepast `.obf`-bestand. Het bevat postcodes die als Points of Interest (POI's) met coördinaten zijn opgeslagen en kan worden gebruikt om rechtstreeks naar postcodes te zoeken.
+
+Hoe te gebruiken:
+
+1. Download het bestand `UK_postcodes_poi_europe.obf` uit de [community-repository](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. Als het bestand als ZIP-archief is gedownload, pak het dan eerst uit.
+3. Kopieer het `.obf`-bestand naar de OsmAnd-gegevensmap, of open het met een bestandsbeheerder op uw apparaat en kies **OsmAnd** om het te importeren.
+4. Gebruik de algemene **Zoek**-functie (vergrootglas-pictogram) in plaats van **Adres** zoeken.
+5. Voer een postcode in (bijv. CT14 8EU of EX34 7EX) in de zoekbalk.
+
+**OPMERKING:** Sommige postcodes kunnen meer dan één keer in de zoekresultaten verschijnen, omdat zowel de standaard OsmAnd-kaartgegevens als het aangepaste postcode-POI-bestand dezelfde postcode kunnen bevatten.
 
 
 ## Tracks en Punten {#tracks-and-points}

@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title: Favoritos
 ---
@@ -88,8 +88,10 @@ Ao adicionar um ponto a partir de dados OSM, as informações relevantes do POI 
 
 - **Nome** — Um nome exclusivo dentro do grupo (*Obrigatório*).
 - **Endereço** e **Descrição** (*Opcional*).
-- **Grupo** — Selecione em um [Grupo de Favoritos](#manage-favorites) existente ou crie um novo.
+- **Grupo** — Selecione em um [Grupo de Favoritos](#manage-favorites) existente ou crie um novo. No Android, você também pode selecionar uma subpasta dentro de um grupo ou criar uma nova. Pastas aninhadas são exibidas usando o caminho completo (por exemplo, *Viagem* / *Itália* / *Roma*).
 - **Personalização visual** — Ícone, cor, forma podem corresponder à [aparência padrão do grupo](#change-group-appearance) ou ser personalizados individualmente.
+
+**NOTA:** Se a camada de Favoritos estiver desativada em [Configurar mapa](../map/configure-map-menu), adicionar um novo ponto favorito ativa automaticamente a camada para tornar o favorito recém-adicionado visível no mapa.
 
 
 ### Editar / Substituir / Excluir {#edit--replace--delete}
@@ -267,7 +269,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Funções da pasta de favoritos Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Funções da pasta de favoritos Android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Use o ***Menu de três pontos*** ao lado de cada pasta para gerenciar grupos de favoritos:
 
@@ -275,9 +277,11 @@ Use o ***Menu de três pontos*** ao lado de cada pasta para gerenciar grupos de 
 - **<Translate android="true" ids="pin_folder"/>** — Fixe a pasta selecionada para mantê-la no topo da lista de favoritos para acesso mais rápido.
 - **<Translate android="true" ids="shared_string_rename"/>** — Use esta opção para alterar o nome da pasta selecionada.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
+- **<Translate android="true" ids="shared_string_share"/>** — Compartilhe os pontos favoritos na pasta exportando-os como um arquivo *Favorites.gpx*, facilitando a transferência ou o backup de seus dados.
+- **<Translate android="true" ids="shared_string_move"/>** — Mova a pasta selecionada, incluindo todos os pontos favoritos e subpastas aninhadas, para outra pasta. A pasta atual e suas subpastas não podem ser selecionadas como destino.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Remover dos marcadores do mapa** — Adicione todos os pontos favoritos da pasta à *lista de marcadores do mapa* ou remova-os conforme necessário para fácil referência.
 - **<Translate android="true" ids="add_to_a_track"/>** — Adicione todos os pontos favoritos da pasta selecionada a uma trilha. Isso abre a tela de seleção de trilhas onde você pode escolher ou criar uma trilha.
-- **<Translate android="true" ids="shared_string_share"/>** — Compartilhe os pontos favoritos na pasta exportando-os como um arquivo *Favorites.gpx*, facilitando a transferência ou o backup de seus dados.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Exclua permanentemente a pasta de favoritos selecionada e todos os pontos dentro dela.
 
 </TabItem>
@@ -397,12 +401,12 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 </Tabs>
 
-Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de Favoritos*. Se você tiver uma conta no *OsmAnd Pro* ou uma conta ativa no *OsmAnd Cloud acount*, você não verá o banner de promoção.  
+Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de Configurações*. Se você tiver uma conta no *OsmAnd Pro* ou uma conta ativa no *OsmAnd Cloud acount*, você não verá o banner de promoção.  
 
 - *Banner de Backup Gratuito de Favoritos*. Toque neste banner para iniciar o processo de backup.
 - *Conclua a etapa de registro* se você não tiver uma conta OsmAnd Cloud, seguindo as instruções no [guia de registro](../personal/osmand-cloud.md#login).
 - *Navegue até o menu Compras do OsmAnd* (*Menu → Configurações → Compras*).
-- *[Pacote OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Selecione esta opção para acessar o recurso Backup Gratuito de Favoritos.
+- *[Pacote OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Selecione esta opção para acessar o recurso Backup Gratuito de Configurações.
 - *Crie um backup* de suas configurações.
 
 

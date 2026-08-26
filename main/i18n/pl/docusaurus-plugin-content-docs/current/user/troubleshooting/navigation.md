@@ -1,5 +1,5 @@
 ---
-source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
+source-hash: 4c58d782e15692dfeecf9d5e40d30dd5b5184e21f753e45ac1e269bc61bfd510
 sidebar_position: 3
 title:  Nawigacja
 ---
@@ -122,15 +122,16 @@ Problemy z **Text-to-Speech (TTS)** są zazwyczaj związane z **ustawieniami sys
 
 1. Upewnij się, że silnik TTS jest zainstalowany.
 
-    - Otwórz *Ustawienia urządzenia → Język i wprowadzanie → Opcje zamiany tekstu na mowę*.
+    - Otwórz *Ustawienia urządzenia → Dostępność → Wyjście tekst na mowę*. Więcej informacji znajdziesz w oficjalnym [przewodniku Google](https://support.google.com/accessibility/android/answer/6006983).
     - Sprawdź, czy **silnik TTS** jest zainstalowany (np. Google TTS, Samsung TTS, Pico).
-    - Jeśli żaden silnik nie jest zainstalowany, wybierz *“Zainstaluj więcej…”* i pobierz kompatybilny.
+    - Jeśli żaden silnik nie jest zainstalowany, zainstaluj go ze Sklepu Google Play lub usług producenta urządzenia.
+    - Wybierz preferowany silnik TTS i upewnij się, że jest włączony.
     - [Lista obsługiwanych silników TTS i języków.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Sprawdź ustawienia języka TTS.
 
-    - Wybierz język, którego chcesz używać w *Ustawienia Androida → Opcje zamiany tekstu na mowę*.
-    - Stuknij *“Posłuchaj przykładu”*, aby sprawdzić, czy silnik TTS działa.
+    - Wybierz język, którego chcesz używać w *Ustawienia Androida → Wyjście tekst na mowę*.
+    - Stuknij *Odtwórz* (lub *Posłuchaj przykładu*, w zależności od urządzenia), aby sprawdzić, czy silnik TTS działa.
     - Jeśli nic nie słyszysz, zaktualizuj lub ponownie zainstaluj silnik TTS.
 
 3. Dostosuj ustawienia nawigacji głosowej OsmAnd.

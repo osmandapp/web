@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Pistas
 title: Pistas
@@ -41,6 +41,22 @@ La sección de Pistas contiene todas las herramientas y acciones relacionadas co
 - Descargar carpetas como colección OSF u OBF.
 
 
+## Importar pistas {#import-tracks}
+
+Puedes importar pistas GPX al Planificador Web usando el botón Importar o arrastrando y soltando archivos GPX directamente sobre el mapa.
+
+Para importar una pista mediante arrastrar y soltar:
+- Abre la sección Pistas.
+- Arrastra uno o más archivos GPX desde tu computadora.
+- Suelta los archivos sobre el mapa o sobre una carpeta de pistas específica.
+
+Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta.
+
+Una vez completada la importación, la pista aparece en la lista de pistas, se sincroniza con [OsmAnd Cloud](../personal/osmand-cloud.md) y queda disponible en todos los dispositivos conectados a la misma cuenta.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Visible en el mapa {#visible-on-the-map}
 
 La vista **Visible en el mapa** enumera todas las pistas que se muestran actualmente en el mapa. Cualquier pista se puede agregar a esta lista desde el panel principal de Pistas usando la opción **⋮ → Hacer la pista visible**.
@@ -76,18 +92,22 @@ Las Smart Folders se almacenan actualmente como parte de la configuración globa
 
 En la web, las Smart Folders se muestran en la lista de pistas con un icono de estrella distintivo, lo que facilita distinguirlas de las carpetas normales. El nombre de la carpeta se sincroniza primero, mientras que la lista de pistas depende de cómo esté configurada la carpeta en el dispositivo.
 
-Las pistas se muestran solo si la configuración de la Smart Folder es compatible con la web. Esto incluye tanto los [ajustes de filtro](../personal/tracks/smart-folder.md#search-filter) como las [opciones de agrupación](../personal/tracks/smart-folder.md#managing-smart-folders). Si se utilizan parámetros no compatibles (por ejemplo, ciudad más cercana), la carpeta puede aparecer sin pistas. Para una mejor compatibilidad, utiliza parámetros comunes como actividad, fecha, distancia o duración.
+Las pistas se muestran solo si la configuración de la Smart Folder es compatible con la web. Esto incluye tanto los [ajustes de filtro](../personal/tracks/smart-folder.md#search-filter) como las [opciones de agrupación](../personal/tracks/smart-folder.md#managing-smart-folders). If unsupported parameters are used (for example, nearest city), the folder may appear without tracks. Para una mejor compatibilidad, utiliza parámetros comunes como actividad, fecha, distancia o duración.
 
 La sincronización de Smart Folders puede variar según la plataforma y la configuración de sincronización. Para obtener los resultados más consistentes, asegúrate de que la sincronización de Cloud esté habilitada y actualizada en todos los dispositivos.
 
-En el menú de tres puntos (⋮), puedes descargar la Smart Folder como una colección OBF.
+En el menú de tres puntos (⋮) puedes realizar acciones adicionales para la Smart Folder. Puedes *Descargar como OSF*, *Descargar como colección OBF*, *Renombrar* o *Eliminar* la carpeta.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Pistas en la nube {#cloud-tracks}
 
 Las pistas GPX que tienes en [OsmAnd Cloud](../personal/osmand-cloud.md) estarán disponibles para mostrar y editar después de iniciar sesión. Solo para usuarios **Pro** <ProFeature/> y para usuarios de [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que pueden descargar sus datos incluso después de que su suscripción Pro haya expirado).
+
+Al seleccionar una pista, el mapa centra automáticamente y ajusta el nivel de zoom para mostrar toda la pista dentro del área visible del mapa.
+
+También puedes usar el botón **Focus** para ocultar todos los demás favoritos y pistas en el mapa, lo que facilita la revisión de la pista seleccionada. Desactiva el modo Focus para restaurar la visibilidad de otros objetos del mapa.
 
 Las siguientes funciones están disponibles después de elegir una pista en la nube:
 - *Information* - mostrando los datos de la pista.

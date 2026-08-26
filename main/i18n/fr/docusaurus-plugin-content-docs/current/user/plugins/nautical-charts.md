@@ -1,5 +1,5 @@
 ---
-source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+source-hash: 470447687509454a83c4d6eeaff5fbef4b59e351e6fffa6397d47509009df4d8
 sidebar_position: 8
 title:  Vue de la carte marine
 ---
@@ -48,7 +48,7 @@ Les cartes marines sont importantes pour les marins professionnels et les amateu
 
 Tous les marins professionnels sont tenus d'avoir des cartes marines officielles à bord de leurs navires. Ces cartes sont publiées par des agences autorisées et sont assez chères. Les agences investissent massivement pour maintenir les cartes à jour. Elles publient des mises à jour régulières des cartes, mais comme la vérification des informations et le traitement des mises à jour prennent du temps, les cartes marines ne sont jamais complètement à jour.
 
-Basées sur les données d'[OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap), les cartes marines d'OsmAnd sont créées par les personnes qui les utilisent. Chaque utilisateur de la carte peut contribuer à la carte en ajoutant des informations qu'il juge importantes et utiles pour lui-même, rendant ainsi la carte plus détaillée et précise, idéale pour l'orientation ou la planification d'itinéraire.  
+Basées sur les données d'[OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap), les cartes marines d'OsmAnd sont créées par les personnes qui les utilisent. Chaque utilisateur de la carte都可以 contribuer à la carte en ajoutant des informations qu'il juge importantes et utiles pour lui-même, rendant ainsi la carte plus détaillée et précise, idéale pour l'orientation ou la planification d'itinéraire.  
 
 
 ## Paramètres de configuration requis {#required-setup-parameters}
@@ -105,7 +105,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources
 
 <TabItem value="ios" label="iOS">  
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
 ![Vue des cartes du plugin Nautique sur iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -187,7 +187,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,rend
 
 <TabItem value="ios" label="iOS">  
 
-Allez à : *Menu → Configurer la carte → Style de carte → Détails → Détail du fond marin*
+Go to: *Menu → Configure map → Map style → Details → Seabed detail*
 
 ![Détails du fond marin](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 

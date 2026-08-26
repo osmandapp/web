@@ -4,7 +4,6 @@ import {
     Box,
     Button,
     Checkbox,
-    IconButton,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -12,14 +11,14 @@ import {
     Typography,
 } from '@mui/material';
 import styles from '../configuremap/configuremap.module.css';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import gStyles from '../gstylesmenu.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import AppContext from '../../context/AppContext';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import PoiManager, { translatePoi } from '../../manager/PoiManager';
 import { changeIconSizeWpt, getPoiCategoryIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
-import { updateConfigureMapCache } from './ConfigureMap';
 
 export const CategoryIcon = ({ color, background, icon, iconSize, shieldSize }) => {
     let svgHtml = getPoiCategoryIcon({ icon, color, background }).options.html;
@@ -88,9 +87,9 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
         <Box className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" className={styles.closeIcon} onClick={() => closeCategories()}>
+                    <IconBtn variant="contained" className={styles.closeIcon} onClick={() => closeCategories()}>
                         <BackIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography component="div" className={headerStyles.title}>
                         {t('layer_poi')}
                     </Typography>

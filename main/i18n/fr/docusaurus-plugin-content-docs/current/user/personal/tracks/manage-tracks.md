@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
 sidebar_position: 2
 title:  Gérer les traces
 ---
@@ -422,7 +422,8 @@ L'outil d'importation vous permet d'ajouter des traces à partir de fichiers ext
     *Options supplémentaires :*
 
     - **Fichiers GPX à trace unique** - importez directement la trace entière.
-    - **Fichiers GPX multi-traces** - choisissez d'importer le fichier GPX unique ou de sélectionner des traces spécifiques.
+    - **Fichiers GPX multi-traces** - choisissez d'importer le fichier GPX unique ou de sélectionner des traces spécifiques.  
+    Lorsqu'un fichier GPX contient plusieurs traces, l'écran Importer les traces s'ouvre, vous permettant de consulter toutes les traces du fichier, de sélectionner celles que vous souhaitez importer, de choisir un dossier de destination ou d'importer toutes les traces comme une seule trace à l'aide de l'option *Importer comme une seule trace*. Si le fichier contient des points de cheminement, vous pouvez également les consulter et les attribuer avant de terminer l'importation.
 
 ***NOTE :*** *Les traces ajoutées manuellement au dossier OsmAnd sur votre appareil sont automatiquement importées sans redémarrer l'application.*  
 

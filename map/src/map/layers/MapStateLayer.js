@@ -6,15 +6,40 @@ import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
+import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
-import { applyZoomToFit, getZoomToFitBounds, restoreMapView } from '../util/MapManager';
+import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
     const params = calcVisibleBboxParamsPx(map, ctx);
     return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : null;
+}
+
+export function visibleMapRectPx(ctx, map) {
+    const params = calcVisibleBboxParamsPx(map, ctx);
+    if (!params) {
+        return null;
+    }
+    const tl = map.latLngToContainerPoint(params.topLeft);
+    const br = map.latLngToContainerPoint(params.bottomRight);
+
+    return { left: tl.x, top: tl.y, right: br.x, bottom: br.y, cx: params.centerPx.x, cy: params.centerPx.y };
+}
+
+export function isOutsideVisibleMap({ ctx, map, latlng }) {
+    if (!ctx || !map || !latlng) {
+        return false;
+    }
+    const rect = visibleMapRectPx(ctx, map);
+    if (!rect) {
+        return false;
+    }
+    const p = map.latLngToContainerPoint(L.latLng(latlng));
+
+    return p.x < rect.left || p.x > rect.right || p.y < rect.top || p.y > rect.bottom;
 }
 
 export function getMapCenter(mtx, hash) {
@@ -27,6 +52,19 @@ const MAP_SPIN_COLOR = '#1976d2';
 
 const TOP_PADDING = HEADER_SIZE;
 const BOTTOM_PADDING = 0;
+
+export function getVisibleMapPadding(ctx, margin = 0) {
+    const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10) || 0;
+    const bottomPx = ctx.globalGraph?.show ? ctx.globalGraph.size : 0;
+    const leftChromePx = MAIN_MENU_MIN_SIZE + infoBlockWidthPx;
+
+    return {
+        top: TOP_PADDING + margin,
+        left: leftChromePx + margin,
+        right: margin,
+        bottom: bottomPx + margin,
+    };
+}
 
 function calcVisibleCenterPx(map, infoBlockWidthPx) {
     const containerSize = map.getSize();
@@ -183,14 +221,15 @@ export default function MapStateLayer() {
         }
     }, [mtx.zoomToFitRequest, ctx.favorites?.mapObjs, ctx.gpxFiles]);
 
-    // Restore the view captured by the latest zoomToFit() call (back-navigation).
+    // Restores a saved view
     useEffect(() => {
-        if (!mtx.restoreMapViewRequest) return;
-
-        restoreMapView({ map, mtx });
-
-        mtx.setRestoreMapViewRequest(false);
-    }, [mtx.restoreMapViewRequest]);
+        const request = mtx.mapViewStackRequest;
+        if (!request) return;
+        if (request.action === 'pop') {
+            popMapView({ map, mtx, key: request.key });
+        }
+        mtx.setMapViewStackRequest(null);
+    }, [mtx.mapViewStackRequest]);
 
     useEffect(() => {
         const sync = () => {
@@ -218,7 +257,7 @@ export default function MapStateLayer() {
                 left: centerPositionPx.x,
                 top: centerPositionPx.y,
                 transform: 'translate(-50%, -50%)',
-                zIndex: 2000,
+                zIndex: MAP_CENTER_ICON_Z_INDEX,
                 pointerEvents: 'none',
                 width: CENTRE_ICON_SIZE,
                 height: CENTRE_ICON_SIZE,

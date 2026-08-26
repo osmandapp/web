@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -77,20 +77,19 @@ Quando você **toca longamente** em qualquer lugar do mapa, um **menu de context
 
 <TabItem value="android" label="Android">  
 
-![Menu de contexto da trilha Android](@site/static/img/map/context_track_menu_Android.png)
+![Menu de contexto da trilha Android](@site/static/img/map/context_track_menu_Android.png) ![O que há aqui Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Tela de estatísticas da trilha iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Tela de estatísticas da trilha iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![O que há aqui iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Tocar em uma [trilha GPX](../map/tracks/index.md) no mapa abre o [menu de contexto da trilha](../map/tracks/track-context-menu.md), onde você pode acessar opções adicionais relacionadas à trilha.
-
+Tocar em uma [trilha GPX](../map/tracks/index.md) no mapa abre o [menu de contexto da trilha](../map/tracks/track-context-menu.md), onde você pode acessar opções adicionais relacionadas à trilha. Se o local selecionado contiver vários objetos do mapa, o OsmAnd pode primeiro exibir a lista **O que há aqui**, permitindo que você escolha o objeto desejado. Para trilhas GPX, esta lista mostra informações resumidas como distância, duração, contagem de pontos de referência e a pasta onde a trilha está armazenada.
 
 
 ### Rotas, Pistas de Esqui e Trilhas {#routes-and-trails}
@@ -138,6 +137,7 @@ Os detalhes disponíveis incluem:
 
 - [Descrição do Artigo](#article-description)
 - [Nomes alternativos](#alternative-names)
+- [Relacionados](#related)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
 - [POIs próximos](#nearby-pois)
@@ -156,6 +156,8 @@ Além disso, o painel pode incluir [Detalhes do OpenStreetMap](https://wiki.open
 - [Taxa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Acessibilidade](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Largura](https://wiki.openstreetmap.org/wiki/Key:width) / [Altura](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Se um campo de contato (como *Site, Número de telefone* ou *E-mail*) contiver vários valores, tocá-lo exibirá uma lista de entradas disponíveis. Selecione a entrada desejada para executar a ação correspondente.
 
 Além dos campos listados acima, o OsmAnd também pode exibir informações descritivas extras obtidas do OpenStreetMap. Esses atributos ajudam você a entender melhor as características de um lugar e podem incluir detalhes como elevação, direção, ano de construção, tipo de superfície ou cobertura, nível interno, opções de pagamento, disponibilidade de entrega ou para viagem, e muitos outros. O OsmAnd exibe esses atributos com rótulos claros e, quando possível, ícones, facilitando a leitura e o reconhecimento das informações. O conjunto exato de atributos depende dos dados disponíveis no OpenStreetMap para o objeto selecionado.
 
@@ -214,6 +216,29 @@ Recursos de exibição de nomes alternativos:
 - Outras categorias incluem *tradução específica da região* ou *configurações padrão*.
 
 - Se uma tradução específica *não estiver disponível*, o OsmAnd usa o nome **local** por padrão para garantir precisão e consistência em regiões multilíngues.
+
+
+### Relacionados {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Relacionados Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Relacionados iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+A seção **Relacionados** exibe objetos do mapa associados ao local selecionado por meio de uma relação do OpenStreetMap. Esta seção está disponível para POIs baseados em relações suportadas, como campi universitários e outros objetos multipolígono.
+
+Toque em qualquer item da lista para abrir seu menu de contexto do mapa. Isso permite navegar rapidamente entre objetos relacionados que pertencem à mesma relação.
 
 
 ### Dentro da área {#polygon-information}
@@ -671,8 +696,8 @@ Leia mais sobre a ferramenta [Planejar uma rota](../plan-route/create-route.md).
 
 Para atualizar ou baixar mapas online (tiles) em um local específico, você pode usar o menu de contexto do objeto:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* e para *Atualizar*, vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
-- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* e *<Translate ios="true" ids="update_tile"/>*.  
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Atualizar*, vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* and *<Translate ios="true" ids="update_tile"/>*.  
 
 Por favor, leia a [instrução completa](../map/raster-maps.md#download--update-tiles).  
 

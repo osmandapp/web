@@ -5,7 +5,6 @@ import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import setView from '../../actions/setView.mjs';
 import { driver, IDLE_DELAY } from '../../options.mjs';
-import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap('#13/50.4587/30.4720');
@@ -28,7 +27,8 @@ export default async function test() {
     await waitBy(By.id('se-search-results'));
 
     // 3. Go back to main search.
-    await clickBy(By.id('se-search-input-back'));
+    await clickBy(By.id('se-search-input-back')); // to query results
+    await clickBy(By.id('se-search-input-back')); // to main search
     await waitBy(By.id('se-default-search-categories'));
 
     // 4. Search "Memorial": expect Memorial category, then Stolperstein category, then POI results.

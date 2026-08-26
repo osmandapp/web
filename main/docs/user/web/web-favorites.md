@@ -35,6 +35,10 @@ The following actions are available:
 - *Download* - download the chosen favorite folder.
 - *Delete* - delete the chosen favorite folder.
 
+When you select a favorites folder, the map automatically centers and adjusts the zoom level to display all favorite points from that folder within the visible map area.
+
+You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected folder. Turn off Focus mode to restore the visibility of other map objects.
+
 ### Share {#share}
 
 Selecting **Share** opens the sharing screen, where access to a Favorites folder can be configured. One of the following access modes can be selected:

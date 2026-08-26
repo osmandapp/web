@@ -1,5 +1,5 @@
 ---
-source-hash: ff314af4e457227e89659dd774ab1fa1bfb1ddd4123453f788f56058446e26fd
+source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
 sidebar_position: 16
 title: Topographie
 ---
@@ -204,19 +204,19 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menu Terrain iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menu Terrain iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Menu Terrain iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menu Terrain iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
 </Tabs>  
 
-L'option **Terrain** active et permet de personnaliser trois fonctionnalités telles que l' *Estompage*, la *Pente* et l' *Altitude*.  
+L'option **Terrain** active et permet de personnaliser trois fonctionnalités telles que l' *Estompage*, la *Pente* et l' *Altitude*. Sur iOS, le menu Visualisation inclut également *Ombres de terrain*, un mode d'ombrage du terrain en temps réel basé sur le Relief 3D.  
 Fonctionnalités spécifiques :  
 
-- Une seule option peut être activée à la fois, soit l'Estompage, la Pente ou l'Altitude.
+- Une seule option peut être activée à la fois, soit l'Estompage, la Pente, l'Altitude ou les Ombres de terrain.
 - Si vous ne voyez aucun changement après avoir téléchargé et activé la carte correspondante, il est recommandé de redémarrer l'application.
 
-Le menu **Terrain** inclut la sélection du [jeu de couleurs](#default-color-scheme) avec l'option de le [modifier](#modify-color-scheme) (pour les [abonnés Pro](../../user/purchases/index.md)), la possibilité de changer la transparence de la couche sur la carte ([visibilité](#visibility)), et de sélectionner le [niveau de zoom](#zoom-levels) pour son affichage, des informations sur la taille des [données en cache](#cache-size), et une liste des [cartes](../../user/personal/maps-resources.md) nécessaires pour afficher la couche.
+Le menu **Terrain** inclut la sélection du [jeu de couleurs](#default-color-scheme) (**visualisation** sur iOS) avec l'option de le [modifier](#modify-color-scheme) (pour les [abonnés Pro](../../user/purchases/index.md)), la possibilité de changer la transparence de la couche sur la carte ([visibilité](#visibility)), et de sélectionner le [niveau de zoom](#zoom-levels) pour son affichage, des informations sur la taille des [données en cache](#cache-size), et une liste des [cartes](../../user/personal/maps-resources.md) nécessaires pour afficher la couche.
 
 
 ## Couches d'estompage, de pente et d'altitude {#hillshade-slope-and-altitude-layers}
@@ -238,6 +238,15 @@ Les cartes raster d'**Estompage**, de **Pente** et d'**Altitude** sont créées 
 - *Navigation.* Aide à identifier les pentes raides, en descente comme en montée, ce qui peut être crucial pour une navigation sûre.
 - *Planifier des itinéraires.* Aide à choisir les itinéraires les plus appropriés, en tenant compte du terrain.
 - *Estimation du terrain.* C'est pratique pour visualiser le paysage, surtout si vous marchez ou faites du vélo.
+
+
+### Ombres de terrain (iOS) {#terrain-shadows}
+
+![Ombres de terrain iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+
+**Ombres de terrain** fournit un ombrage dynamique en temps réel basé sur la géométrie 3D du terrain. Contrairement aux cartes raster d'Estompage, l'effet d'ombrage est généré directement sur l'appareil à l'aide des données de terrain et suit automatiquement la perspective actuelle de la carte.
+
+Les Ombres de terrain nécessitent le Relief 3D et l'activent automatiquement lorsqu'elles sont sélectionnées. Cette fonctionnalité est conçue pour améliorer la lisibilité du terrain tout en maintenant un faible impact sur les performances.
 
 
 ### Jeu de couleurs par défaut {#default-color-scheme}
@@ -265,6 +274,16 @@ Les cartes raster d'**Estompage**, de **Pente** et d'**Altitude** sont créées 
 
 ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un jeu de couleurs :
 
 - À partir d'une [liste prédéfinie](#default-color-scheme).
@@ -282,36 +301,21 @@ Vous pouvez :
 
 Pour une personnalisation avancée des palettes à l'aide de fichiers de palettes, consultez l'article [Jeux de couleurs](../personal/color-palette-schemes.md#palette-modify).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un jeu de couleurs :
-
-- À partir d'une [liste prédéfinie](#default-color-scheme).
-- À partir de fichiers de palette de couleurs que vous avez créés sur votre ordinateur. Les fichiers personnalisés peuvent être ajoutés à OsmAnd en utilisant l'[outil d'import/export](../personal/import-export.md).
-
-Vous pouvez [modifier ces palettes](../personal/color-palette-schemes.md#palette-modify) pour personnaliser l'apparence des cartes et des itinéraires.
-
-</TabItem>
-
-</Tabs>
-
 ### Visibilité {#visibility}
 
 | Visibilité 31% | Visibilité 74% |
 | ------ | ------- |
 | ![Visibilité ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilité ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres pour l'Estompage et des couleurs utilisées pour représenter l'angle dans le paramètre Pente.
+La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres pour l'Estompage et des couleurs utilisées pour représenter l'angle dans le paramètre Pente. Pour les Ombres de terrain, Visibilité contrôle l'intensité de l'effet d'ombrage du terrain.
 
 ### Niveaux de zoom {#zoom-levels}
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimales et maximales des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Estompage ou Pente seront affichées.
+
+Les Niveaux de zoom ne sont pas disponibles pour les Ombres de terrain car cette visualisation est rendue dynamiquement et ne dépend pas des plages de visibilité des couches raster.
 
 ### Taille du cache {#cache-size}
 
@@ -426,6 +430,20 @@ Les contrôles **<Translate android="true" ids="performance"/>** déterminent la
 Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
 
 **Note :** Utiliser *Détail élevé* et *Distance de vue lointaine* améliore l'apparence visuelle mais peut impacter les performances et augmenter la consommation de batterie.
+
+
+<!--
+### Sun {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+
+- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
+- Altitude — controls the height of the sun above the horizon.
+
+Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
 
 
 ## Relief 3D {#3d-relief}

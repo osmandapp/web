@@ -1,8 +1,9 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title: Geral
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 Problemas gerais relacionados a vários recursos do OsmAnd.
 
@@ -52,7 +52,7 @@ Ao usar o OsmAnd, vários recursos podem influenciar o consumo da bateria, espec
 
 - **Gerenciamento de camadas e detalhes do mapa**. Desative recursos desnecessários do mapa, como relevo 3D, curvas de nível ou sombreamento de colinas. Você também pode reduzir o número de objetos exibidos (rótulos de POI, limites, números de casas, etc.) através do menu *Configurar Mapa*. Desativar essas camadas ajuda a reduzir a frequência de redesenho do mapa, o que diminui o consumo de energia.
 
-- **Desativando o zoom automático**. O zoom automático durante a navegação pode causar redesenhos frequentes do mapa, o que aumenta o uso da bateria. Desativar esse recurso pode ajudar a reduzir o consumo de energia. Navegue até *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>* para desativar o zoom automático. Para mais detalhes, visite [Mapa Durante a Navegação](../navigation/guidance/map-during-navigation).
+- **Desativando o zoom automático**. O zoom automático durante a navegação pode causar redesenhos frequentes do mapa, o que aumenta o uso da bateria. Desativar esse recurso pode ajudar a reduzir o consumo de energia. Navegue até *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>* para desativar o zoom automático. Para mais detalhes, visite [Mapa Durante a Navegação](../navigation/guidance/map-during-navigation.md).
 
 - **Otimizando as configurações de gravação de trilhas**. Certifique-se de ajustar a precisão do GPS e o uso da tela durante a gravação de trilhas para economizar bateria. Visite a seção [Solução de problemas de gravação de trilhas](../troubleshooting/track-recording-issues.md) para obter mais orientações.
 
@@ -72,6 +72,20 @@ Para remover o histórico de pesquisa no OsmAnd:
 4. Toque no ícone da *Lixeira* no canto superior direito para confirmar a exclusão.
 
 Para instruções mais detalhadas sobre a funcionalidade de pesquisa, você pode consultar [este guia](../search/search-history.md).
+
+## Interface {#interface}
+
+### Por que os botões do mapa, widgets ou texto estão muito grandes? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Se os botões do mapa, widgets ou a régua do mapa parecerem muito grandes após ajustar o tamanho da exibição nas configurações do sistema Android, isso pode estar relacionado à forma como o OsmAnd adapta a interface à configuração atual da tela.
+
+Em alguns dispositivos, reduzir a densidade da tela ou alterar o tamanho da exibição pode afetar o tamanho dos elementos da interface, especialmente em dispositivos de tela grande e tablets.
+
+As versões recentes do OsmAnd não aplicam mais dimensionamento automático adicional para dispositivos detectados como tablets. Os elementos da interface agora seguem mais de perto as configurações de exibição do sistema Android.
+
+Se você quiser ajustar manualmente o tamanho dos botões do mapa, use as configurações de [Aparência Padrão](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menu → Configurar tela → Botões → Botões padrão → menu de três pontos → Aparência*. Lá você pode definir um Tamanho personalizado, Raio do canto e Opacidade do plano de fundo para todos os botões padrão de uma só vez.
+
+Se a interface ainda parecer maior do que o esperado, verifique *Configurações do Sistema Android → Exibição → Tamanho da exibição e texto* e ajuste as configurações de exibição conforme necessário.
 
 ## Outros {#other}
 

@@ -4,11 +4,13 @@ import OsmAndMap from '../map/OsmAndMap';
 import MainMenu from '../menu/MainMenu';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../context/AppContext';
+import MapContext from '../context/MapContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../dialogs/GlobalConfirmationDialog';
 import HeaderMenu from './components/header/HeaderMenu';
 import {
     HEADER_SIZE,
+    INSTALL_BANNER_SIZE,
     MAIN_MENU_MIN_SIZE,
     MAIN_MENU_OPEN_SIZE,
     MAIN_PAGE_TYPE,
@@ -21,22 +23,29 @@ import {
     liveHash,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
-import GlobalAlert from './components/GlobalAlert';
 import LiveShareRequests from './components/LiveShareRequests';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import isEmpty from 'lodash-es/isEmpty';
-import { createTrackGroups, getGpxFiles, filterSmartFolders, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import {
+    createTrackGroups,
+    getGpxFiles,
+    filterSmartFolders,
+    TRACK_VISIBLE_FLAG,
+    FIT_BOUNDS_EXTRA_PADDING,
+} from '../manager/track/TracksManager';
 import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
 import { hideAllTracks } from '../manager/track/DeleteTrackManager';
 import GlobalGraph from '../graph/mapGraph/GlobalGraph';
+import TracksFileDragController from './TracksFileDragController';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
+import { useGpxFileDragRootZone } from '../util/hooks/useGpxFileDragZone';
 
 const ENCODED_COMMA = '%2C';
 const ENCODED_COLON = '%3A';
@@ -45,6 +54,9 @@ const ENCODED_SEMICOLON = '%3B';
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+    const mtx = useContext(MapContext);
+
+    const rootDragHandlers = useGpxFileDragRootZone();
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
@@ -94,6 +106,11 @@ const GlobalFrame = () => {
 
         setShowInstallBanner(isMobileDevice && !isSafari);
     }, [height, width]);
+
+    useEffect(() => {
+        const topPadding = HEADER_SIZE + (showInstallBanner ? INSTALL_BANNER_SIZE : 0);
+        mtx.mutateFitBoundsPadding((o) => (o.top = topPadding + FIT_BOUNDS_EXTRA_PADDING));
+    }, [showInstallBanner]);
 
     // URL normalization
     useEffect(() => {
@@ -406,7 +423,7 @@ const GlobalFrame = () => {
     };
 
     return (
-        <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
+        <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }} {...rootDragHandlers}>
             <InstallBanner showInstallBanner={showInstallBanner} />
             <HeaderMenu showInstallBanner={showInstallBanner} />
             <Box
@@ -416,9 +433,9 @@ const GlobalFrame = () => {
                 }}
             >
                 <GlobalConfirmationDialog />
+                <TracksFileDragController />
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
-                <GlobalAlert width={width} />
                 <LiveShareRequests />
                 <Snackbar
                     open={!!ctx.notification}

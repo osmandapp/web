@@ -2,7 +2,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, Box, IconButton, Slider, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './configuremap.module.css';
 import gStyles from '../gstylesmenu.module.css';
-import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import cloneDeep from 'lodash-es/cloneDeep';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import LoginContext from '../../context/LoginContext';
 import SelectItem from '../../frame/components/items/SelectItem';
 
@@ -55,10 +56,9 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
 
     useEffect(() => {
         if ((mtx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateOpacity())) {
-            // save selected terrain to local storage
             let newConfigureMap = cloneDeep(ctx.configureMapState);
             newConfigureMap.terrain = mtx.heightmap;
-            localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
+            updateConfigureMapCache(newConfigureMap);
             ctx.setConfigureMapState(newConfigureMap);
             // set slider value
             setValue(getOpacity(mtx.heightmap.key));
@@ -116,9 +116,9 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
         <Box className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" className={styles.closeIcon} onClick={() => closeConfig()}>
+                    <IconBtn variant="contained" className={styles.closeIcon} onClick={() => closeConfig()}>
                         <BackIcon />
-                    </IconButton>
+                    </IconBtn>
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_terrain')}
                     </Typography>

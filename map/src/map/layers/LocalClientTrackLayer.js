@@ -2,8 +2,6 @@ import React, { useCallback, useContext, useEffect, useRef, useState } from 'rea
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
-import useLocalGpxImport from '../../util/hooks/useLocalGpxImport';
-import GpxMapDropOverlay from '../components/GpxMapDropOverlay';
 import L from 'leaflet';
 import TrackLayerProvider, {
     redrawWptsOnLayer,
@@ -48,7 +46,6 @@ export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
     const map = useMap();
-    const { importGpxFiles } = useLocalGpxImport();
 
     const [registeredLayers, setRegisteredLayers] = useState({});
 
@@ -71,47 +68,7 @@ export default function LocalClientTrackLayer() {
     const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
 
-    const [isDragOver, setIsDragOver] = useState(false);
-    const dragCounterRef = useRef(0);
     const pendingZoomRef = useRef(false);
-
-    useEffect(() => {
-        const container = map.getContainer();
-        const hasFiles = (e) => e.dataTransfer?.types?.includes('Files');
-
-        const onDragEnter = (e) => {
-            e.preventDefault();
-            if (!hasFiles(e)) return;
-            dragCounterRef.current += 1;
-            setIsDragOver(true);
-        };
-        const onDragOver = (e) => {
-            e.preventDefault();
-            if (hasFiles(e)) e.dataTransfer.dropEffect = 'copy';
-        };
-        const onDragLeave = () => {
-            dragCounterRef.current = Math.max(0, dragCounterRef.current - 1);
-            if (dragCounterRef.current === 0) setIsDragOver(false);
-        };
-        const onDrop = (e) => {
-            e.preventDefault();
-            const files = Array.from(e.dataTransfer?.files || []).filter((f) => f.name.toLowerCase().endsWith('.gpx'));
-            dragCounterRef.current = 0;
-            setIsDragOver(false);
-            if (files.length > 0) importGpxFiles(files);
-        };
-
-        container.addEventListener('dragenter', onDragEnter);
-        container.addEventListener('dragover', onDragOver);
-        container.addEventListener('dragleave', onDragLeave);
-        container.addEventListener('drop', onDrop);
-        return () => {
-            container.removeEventListener('dragenter', onDragEnter);
-            container.removeEventListener('dragover', onDragOver);
-            container.removeEventListener('dragleave', onDragLeave);
-            container.removeEventListener('drop', onDrop);
-        };
-    }, [map, importGpxFiles]);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -918,14 +875,11 @@ export default function LocalClientTrackLayer() {
     }, [JSON.stringify(lastSegmentGeoProfile)]);
 
     return (
-        <>
-            <GpxMapDropOverlay active={isDragOver} />
-            {openAddRoutingToTrackDialog && (
-                <AddRoutingToTrackDialog
-                    setOpenAddRoutingToTrackDialog={setOpenAddRoutingToTrackDialog}
-                    setAddRoutingToTrack={setAddRoutingToTrack}
-                />
-            )}
-        </>
+        openAddRoutingToTrackDialog && (
+            <AddRoutingToTrackDialog
+                setOpenAddRoutingToTrackDialog={setOpenAddRoutingToTrackDialog}
+                setAddRoutingToTrack={setAddRoutingToTrack}
+            />
+        )
     );
 }

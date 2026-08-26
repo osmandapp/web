@@ -10,12 +10,8 @@ import { textToHTML } from '../../../../frame/components/editor/htmlUtils';
 
 export default function DescriptionPanel({ description, setDescription, onClose }) {
     const { t } = useTranslation();
-    const [html, setHtml] = useState(textToHTML(description));
 
-    function handleSave() {
-        setDescription(html);
-        onClose();
-    }
+    const [initialContent] = useState(() => textToHTML(description));
 
     function handleClear() {
         setDescription('');
@@ -23,10 +19,10 @@ export default function DescriptionPanel({ description, setDescription, onClose 
     }
 
     return (
-        <SecondaryMenuDrawer onClose={handleSave}>
+        <SecondaryMenuDrawer onClose={onClose}>
             <HeaderWithUnderline
                 title={t('shared_string_description')}
-                onClose={handleSave}
+                onClose={onClose}
                 showBackButton
                 appBarProps={{ id: 'se-back-description-panel' }}
                 rightContent={
@@ -41,7 +37,7 @@ export default function DescriptionPanel({ description, setDescription, onClose 
                     </Tooltip>
                 }
             />
-            <RichTextEditor content={textToHTML(description)} onChange={setHtml} editorId="se-edit-fav-dialog-desc" />
+            <RichTextEditor content={initialContent} onChange={setDescription} editorId="se-edit-fav-dialog-desc" />
         </SecondaryMenuDrawer>
     );
 }

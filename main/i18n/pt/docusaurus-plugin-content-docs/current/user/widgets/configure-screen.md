@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -50,6 +50,44 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/
 </TabItem>
 
 </Tabs>
+
+<!--
+## Overview {#overview}
+
+The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
+
+You can:
+
+- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
+- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
+- Organize widgets in panels (top, bottom, left, right, center).
+- Create multiple pages within side panels, choose size of widgets.
+- Choose row height and toggle widget icons.
+- On Android, customize [widget panel appearance](#widget-panel-appearance).
+
+All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+
+</TabItem>
+
+</Tabs>
+-->
 
 
 ## Painéis de Widgets {#widget-panels}
@@ -310,7 +348,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,ma
 
 Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. O recurso **Modo de Páginas** permite adicionar 5 páginas aos painéis esquerdo e direito.
 
-***Como configurar páginas:***
+***Como configurar linhas:***
 
 - **Adicionar uma Página**. Navegue até as configurações do Painel Esquerdo/Direito e toque em *Editar → Adicionar Página*.
 - **Organizar widgets por Página**. Este recurso é útil quando diferentes conjuntos de widgets são necessários para diferentes tarefas, como navegar versus explorar o mapa.
@@ -320,6 +358,8 @@ Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. 
 ## Configurações de Widgets {#widget-settings}
 
 ![Menu Configurar tela](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Configurar tela](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+
+Essas configurações se aplicam apenas ao widget selecionado.
 
 1. **Opções de tamanho do widget** (*para todos os painéis*):  
     Você pode personalizar o tamanho dos **widgets simples** nos **painéis superior, inferior, esquerdo e direito**:
@@ -358,6 +398,39 @@ Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. 
     - Toque na configuração *Tamanho* e selecione um dos tamanhos disponíveis.
     - Mude para a posição Desligado, no campo *Mostrar ícone*.
 
+
+<!--
+## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+
+1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+
+2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+
+3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+
+:::tip Purchase
+Custom widget colors is a [paid feature](../purchases/index.md).  
+:::
+
+4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+
+5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+
+6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+
+7. **Copy appearance settings:**
+
+    - Tap the ⋮ menu in the upper-right corner.
+    - Select Copy from.
+    - Choose one of the following options: *Another profile* or *One of the other panels*.
+
+-->
 
 ## Personalização de Painéis {#panels-customization}
 
@@ -639,7 +712,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distância por toque](../widgets/radius-ruler.md#distance-by-tap). Oferece a capacidade de medir a distância de sua posição até o ponto selecionado.
+- [Distância por toque](#distance-by-tap). [⬇](#distance-by-tap)
 - [Velocímetro](../widgets/info-widgets.md#speedometer). Mostra a velocidade atual com base nos dados do GPS e a velocidade limitada com base nos [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Os dados exibidos também dependem da configuração de [Tolerância de Limite de Velocidade](../navigation/guidance/voice-navigation.md#speed-limit) do OsmAnd.
 
 
@@ -668,6 +741,37 @@ Permite definir o posicionamento do cursor para *[Minha localização](../map/in
 - **<Translate android="true" ids="position_on_map_center"/>**. O cursor está sempre posicionado no centro da tela.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Minha localização* é colocada ligeiramente abaixo do centro da tela. Este modo permite que você veja mais informações do mapa à frente do seu movimento, o que é útil durante a navegação.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Coloca *Minha localização* dependendo da *[Orientação do mapa](../map/interact-with-map.md#map-orientation-modes)* (*Inferior* - para a direção do movimento, *Centro* - para todos os outros).
+
+
+### Distância por toque {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distância por toque Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distância por toque iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+A ferramenta **Distância por toque** permite medir distâncias entre pontos no mapa sem usar a [Régua de raio](../widgets/radius-ruler.md#radius-ruler-widget) ou criar uma rota.
+
+Existem dois casos de uso:
+
+- **Distância da sua localização até um ponto**  
+  Toque em qualquer lugar no mapa e uma linha reta aparecerá da sua localização atual até o ponto tocado, juntamente com um rótulo de distância. A linha permanece na tela mesmo se você tocar em outro lugar.
+
+- **Distância entre quaisquer dois pontos**  
+  Toque em dois pontos no mapa simultaneamente (toque múltiplo). Uma linha conecta os dois pontos e a distância medida é exibida.
+
+Você também pode ajustar o tamanho do texto do rótulo de distância. Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Escolha entre *<Translate android="true" ids="shared_string_normal"/>* (padrão) e *<Translate android="true" ids="shared_string_large"/>* (1,5× maior). Quando a opção Grande é selecionada, um espaçamento extra é adicionado automaticamente entre a linha e o rótulo para melhor legibilidade. As alterações são aplicadas instantaneamente sem reiniciar o aplicativo.
 
 
 ## Ações {#actions}

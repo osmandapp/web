@@ -1,5 +1,5 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
 title:  Schematy kolorów
 ---
@@ -63,7 +63,7 @@ Przejdź do: *Menu → Mapy i zasoby → Lokalne → Kolory*
 
 <TabItem value="ios" label="iOS">
 
-![Paleta kolorów](@site/static/img/personal/color-schemes/palette_ios.png) ![Paleta kolorów](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Paleta kolorów](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Paleta kolorów](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 

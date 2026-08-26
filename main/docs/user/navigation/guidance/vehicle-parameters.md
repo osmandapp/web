@@ -92,12 +92,12 @@ Vehicle parameters affect navigation and route construction because they determi
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
-On Android, this parameter is also available for *[Cycling profiles](../../navigation/routing/bicycle-based-routing.md)* to help avoid narrow cycle paths.
+This parameter is also available for *[Cycling profiles](../../navigation/routing/bicycle-based-routing.md)* to help avoid narrow cycle paths.
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
@@ -125,20 +125,20 @@ Limits on vehicle parameters can be important for navigation and road safety. So
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 If you select the engine type in the vehicle parameters, the [***CO2 footprint data***](../../navigation/setup/route-details.md#elevation-info) will be displayed above the graph in [Route Details](../setup/route-details.md).
-Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric,*** and ***Hybrid***.  
+Available seven fuel types: ***Petrol, Diesel, LPG, CNG, Electric, Hybrid*** and ***Ethanol***.  
 
 **Applicability:**
 

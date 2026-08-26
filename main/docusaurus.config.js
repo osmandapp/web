@@ -18,7 +18,7 @@ async function createConfig(){
     v4: {
       removeLegacyPostBuildHeadAttribute: true, // required for ssgWorkerThreads
     },
-    experimental_faster: {
+    faster: {
       ssgWorkerThreads: true, // use Worker Thread Pool implementation
       rspackBundler: useRspackBundler, // use rspack instead of webpack
       rspackPersistentCache: useRspackBundler, // enable cache for rebuilds

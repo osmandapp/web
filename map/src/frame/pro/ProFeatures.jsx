@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { AppBar, Box, Divider, IconButton, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { AppBar, Box, Divider, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as LogoProIcon } from '../../assets/ic_action_osmand_pro_logo_colored.svg';
 import styles from './pro.module.css';
 import GrayBtnWithBlueHover from '../components/btns/GrayBtnWithBlueHover';
+import IconBtn from '../components/btns/IconBtn';
 
 export default function ProFeatures() {
     const ctx = useContext(AppContext);
@@ -20,9 +21,9 @@ export default function ProFeatures() {
     return (
         <>
             <AppBar position="static" className={styles.appBar}>
-                <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
+                <IconBtn variant="contained" type="button" className={styles.closeIcon} onClick={close}>
                     <CloseIcon />
-                </IconButton>
+                </IconBtn>
             </AppBar>
             {ctx.openProFeatures && ctx.openProFeatures.type}
             <Divider />

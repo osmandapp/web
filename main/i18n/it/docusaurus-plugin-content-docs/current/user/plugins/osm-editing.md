@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  Modifica di OpenStreetMap
 ---
@@ -61,7 +61,7 @@ Le impostazioni del plugin sono globali e si applicano a tutti i profili.
 - **<Translate android="true" ids="offline_edition"/>**. Se questa impostazione è abilitata, le modifiche vengono prima salvate localmente (pulsante *Salva*) e caricate su richiesta. Se l'impostazione è disabilitata, le modifiche vengono caricate immediatamente (pulsante *Carica*).
 - **<Translate android="true" ids="use_dev_url"/>** *(solo per Android)*. Consente di abilitare [dev.openstreetmap.org](https://dev.openstreetmap.org/) invece di [openstreetmap.org](http://openstreetmap.org/) per testare il caricamento di note OSM, POI o tracce GPS. Quando è abilitato, si viene automaticamente disconnessi da OpenStreetMap.org. Questa impostazione è disponibile nell'elenco solo quando il *plugin di sviluppo OsmAnd* è abilitato.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Toccare per aprire [*Menu → I miei luoghi → Modifiche OSM*](../personal/myplaces.md). Questa scheda elenca le note OSM non modificate. Le seguenti azioni sono disponibili con la nota: *Carica*, *Mostra sulla mappa*, *Modifica nota OSM*, *Elimina*. Le note caricate o eliminate non vengono più visualizzate nell'elenco.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Toccare per aprire [*Menu → I miei luoghi → Modifiche OSM*](../personal/myplaces.md). Questa scheda elenca le note OSM non modificate. Le seguenti azioni sono disponibili con la nota: *Carica*, *Mostra sulla mappa*, *Modifica nota OSM*, *Elimina*. Le note caricate o eliminate non vengono più visualizzate nell'elenco. Su iOS, è anche possibile utilizzare la modalità Seleziona per scegliere più elementi e caricarli o eliminarli contemporaneamente. 
 
 :::note
 Se si dispone di un abbonamento [OsmAnd Pro](../purchases/android.md#pro-features), le modifiche apportate a OSM appariranno sulla mappa di OsmAnd entro un'ora. Assicurarsi che gli [Aggiornamenti Live](../personal/maps-resources.md#live-updates) siano abilitati.

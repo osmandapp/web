@@ -26,28 +26,44 @@ export function getZoomToFitBounds({ type, object, ctx }) {
     return null;
 }
 
-// fitBounds + save prev view on the first call of the chain (reset by restoreMapView),
-// so re-fires of the same selection don't overwrite the original view.
+export const MAP_VIEW_SEARCH_RESULT = 'search-result';
+export const MAP_VIEW_ZOOM_FIT = 'zoom-fit';
+
 export function applyZoomToFit({ map, mtx, bounds }) {
     if (!map) return false;
     if (!bounds?.isValid()) return false;
 
-    const center = map.getCenter();
-    const captured = { center: { lat: center.lat, lng: center.lng }, zoom: map.getZoom() };
-    mtx.setMapViewBeforeZoomFit((prev) => prev ?? captured);
+    pushMapView({ map, mtx, key: MAP_VIEW_ZOOM_FIT, once: true });
     map.fitBounds(bounds, fitBoundsOptions(mtx));
 
     return true;
 }
 
-// Restore the saved view (back-navigation) and clear it.
-export function restoreMapView({ map, mtx }) {
+export function pushMapView({ map, mtx, key, once = false }) {
     if (!map) return false;
-    const saved = mtx?.mapViewBeforeZoomFit;
-    if (!saved) return false;
+    if (!key) return false;
 
-    map.setView([saved.center.lat, saved.center.lng], saved.zoom);
-    mtx.setMapViewBeforeZoomFit(null);
+    const center = map.getCenter();
+    const entry = { key, center: { lat: center.lat, lng: center.lng }, zoom: map.getZoom() };
+    mtx.setMapViewStack((stack) => {
+        if (once && stack.some((e) => e.key === key)) return stack;
+        return [...stack, entry];
+    });
+
+    return true;
+}
+
+export function popMapView({ map, mtx, key }) {
+    if (!map) return false;
+    if (!key) return false;
+
+    const stack = mtx?.mapViewStack ?? [];
+    const index = stack.findLastIndex((entry) => entry.key === key);
+    if (index === -1) return false;
+
+    const { center, zoom } = stack[index];
+    map.setView([center.lat, center.lng], zoom);
+    mtx.setMapViewStack((prev) => prev.filter((_, i) => i !== index));
 
     return true;
 }

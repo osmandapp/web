@@ -1,69 +1,16 @@
-import React, { useContext, useEffect } from 'react';
-import AppContext from '../../context/AppContext';
-import { useMutator } from '../../util/Utils';
+import React, { useContext } from 'react';
 import { styled } from '@mui/material/styles';
-import { removeFileExtension, createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import LoginContext from '../../context/LoginContext';
-import { GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
+import useCloudGpxImport, { CLOUD_TRACK_ACCEPT } from '../../util/hooks/useCloudGpxImport';
 
-export default function CloudGpxUploader({ children, folder = null, style = null }) {
-    const ctx = useContext(AppContext);
+export default function CloudGpxUploader({ children, folder = DEFAULT_GROUP_NAME, style = null }) {
     const ltx = useContext(LoginContext);
+    const { importGpxFiles } = useCloudGpxImport();
 
-    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
-
-    function validName(name) {
-        return name !== '' && name.trim().length > 0;
-    }
-
-    useEffect(() => {
-        for (const file in uploadedFiles) {
-            let open = uploadedFiles[file].selected;
-            let fileName = uploadedFiles[file].name;
-            if (validName(fileName)) {
-                fileName = removeFileExtension(fileName);
-                fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
-                saveTrackToCloud({
-                    ctx,
-                    ltx,
-                    currentFolder: folder,
-                    fileName,
-                    type: 'GPX',
-                    uploadedFile: uploadedFiles[file],
-                    open,
-                }).then();
-                mutateUploadedFiles((o) => delete o[file]);
-                break; // process 1 file per 1 render
-            }
-        }
-    }, [uploadedFiles]);
-
-    const fileSelected = async (e) => {
-        const selected = e.target.files.length === 1;
-        ctx.setTrackLoading(Array.from(e.target.files).map((track) => removeFileExtension(track.name) + GPX_FILE_EXT));
-        Array.from(e.target.files).forEach((file) => {
-            const reader = new FileReader();
-            reader.addEventListener('load', async (e) => {
-                const data = e.target.result;
-                if (data) {
-                    mutateUploadedFiles(
-                        (o) => (o[file.name] = { file, selected, data: data, name: file.name, originalName: file.name })
-                    );
-                } else {
-                    ctx.setTrackErrorMsg({
-                        title: 'Import error',
-                        msg: `Unable to import ${file.name}`,
-                    });
-                    ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
-                }
-            });
-            if (file.name.toLowerCase().endsWith(KMZ_FILE_EXT)) {
-                reader.readAsArrayBuffer(file);
-            } else {
-                reader.readAsText(file);
-            }
-        });
+    const fileSelected = (e) => {
+        importGpxFiles(e.target.files, folder);
     };
 
     const HiddenInput = styled('input')({ display: 'none' });
@@ -73,7 +20,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
             <HiddenInput
                 disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                 id="se-upload-cloud-gpx"
-                accept=".gpx, .kmz, .kml"
+                accept={CLOUD_TRACK_ACCEPT}
                 multiple
                 type="file"
                 onChange={fileSelected}

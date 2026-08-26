@@ -3,13 +3,13 @@ import {
     Box,
     Button,
     IconButton,
-    LinearProgress,
     ListItemAvatar,
     ListItemIcon,
     ListItemText,
     MenuItem,
     Typography,
 } from '@mui/material';
+import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
 import React, { useContext, useState, useCallback } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
@@ -155,7 +155,7 @@ const PointsTab = ({ width }) => {
             {ctx.selectedGpxFile?.points && (
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Box sx={{ mt: 2 }} minWidth={width}>
-                        {loading ? <LinearProgress /> : <></>}
+                        {loading ? <OverlayLinearProgress /> : <></>}
                         <Droppable droppableId="droppable-1">
                             {(provided) => (
                                 <div ref={provided.innerRef} {...provided.droppableProps}>

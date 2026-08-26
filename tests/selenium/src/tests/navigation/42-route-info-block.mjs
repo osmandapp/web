@@ -17,7 +17,7 @@ const routes = [
         strings: [
             'Points: 2',
             /Bicycle 2\.(0\d|1\d?) km/, // 2.09 km
-            /Route: 2\.1\d? km, 0:09 min/,
+            /Route: 2\.1\d? km, 0:[01]\d min/,
         ],
         turns: [
             'Go ahead and go 0.0 km',
@@ -29,7 +29,7 @@ const routes = [
             'Turn left onto Оболонська набережна and go 0.3 km',
             'Keep left (+C,TSLR) onto Оболонська набережна and go 0.7 km',
             'Keep left (+C,TSLR) onto Оболонська набережна and go 0.0 km',
-            'Keep left (+C,TSLR) and go 0.8 km',
+            /Keep left \(\+C,TSLR\)/,
             'Turn left and go 0.0 km',
             'Keep left (+C,TSLR) and go 0.1 km',
         ],

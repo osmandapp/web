@@ -1,5 +1,5 @@
 ---
-source-hash: 3c4f98d050e446786ff89309f77e01c53e9bce7a8686c2fd897a5776378a6fe0
+source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -55,7 +55,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu de téléchargement de carte iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Cartes régionales iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu de téléchargement de carte iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Cartes régionales iOS](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,7 +66,7 @@ Le téléchargement de cartes dans l'application OsmAnd est une étape important
 ### Contenu cartographique gratuit {#free-map-content}
 
 - **Carte standard**. Fournit un aperçu de la zone basé sur la source [OpenStreetMap](https://www.openstreetmap.org/) et contient une carte, des itinéraires, des adresses, des POI et des informations sur les transports en commun. En appuyant dessus, un écran s'ouvre avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.  
-- **Routes seules** (*Android uniquement*). La carte ne contient que les informations du réseau routier pour se concentrer sur les itinéraires et l'infrastructure routière. En supprimant des détails tels que les bâtiments et les points d'intérêt, elle est plus petite qu'une carte standard. En appuyant dessus, un écran s'ouvre avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.
+- **Routes seules**. La carte ne contient que les informations du réseau routier pour se concentrer sur les itinéraires et l'infrastructure routière. En supprimant des détails tels que les bâtiments et les points d'intérêt, elle est plus petite qu'une carte standard. En appuyant dessus, un écran s'ouvre avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.
 - **Carte générale du monde**. Les versions d'OsmAnd jusqu'à la 3.8 proposent de télécharger une carte du monde pour pouvoir la visualiser à l'échelle planétaire. Dans les versions plus récentes d'OsmAnd, une *mini-carte du monde* légère est intégrée à l'application. L'application vous permet de télécharger une carte générale du monde plus grande avec des informations plus détaillées. 
 
 :::info mises à jour mensuelles des cartes
@@ -130,7 +130,7 @@ L'onglet **Télécharger** vous permet de télécharger divers types de cartes d
 - **Compteur de cartes** (***Version gratuite***). Affiche le nombre de cartes qu'il vous reste à télécharger.
 - [Cartes supplémentaires](#extra-maps). Affiche les données cartographiques pour le [paquetage personnalisé](../plugins/custom.md).
 - **Régions**. Liste par continent et région du monde : *Afrique, Antarctique, Asie, Australie et Océanie, Amérique centrale, Europe, Amérique du Nord, Russie et Amérique du Sud.*
-- [Cartes du monde](#world-maps). Une liste de cartes du monde entier : *<Translate android="true" ids="index_item_world_altitude_correction"/> (Android uniquement)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Carte météo mondiale*
+- [Cartes du monde](#world-maps). Une liste de cartes du monde entier : *Correction d'altitude mondiale (Android uniquement)*, *Carte générale du monde*, *Carte météo mondiale*
 - [Cartes marines](../plugins/nautical-charts.md) ([*fonctionnalité payante*](../purchases/index.md)). Cartes vectorielles avec des altitudes sous forme de points ou de lignes.
 - [Guides de voyage (Wikivoyage)](../plan-route/travel-guides.md) ([*fonctionnalité payante*](../purchases/index.md)). Cartes vectorielles avec une collection d'articles au format HTML et des fichiers GPX supplémentaires.
 - **Autres cartes**. Cartes qui ne peuvent pas être assignées à la hiérarchie de cartes actuelle car elles ne sont pas prises en charge ou seront disponibles dans les versions futures.
@@ -477,6 +477,8 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_t
 </Tabs>
 
 Les **Mises à jour en direct** fournissent des mises à jour de carte incrémentielles et fréquentes via un [abonnement](../purchases/index.md) ou sont gratuites pour les [contributeurs OSM](#free-for-osm-mappers). Les mises à jour ont lieu toutes les 15 minutes sur les serveurs OsmAnd et sont téléchargeables toutes les heures, tous les jours ou toutes les semaines. Ces mises à jour consomment un minimum de stockage — environ 2 à 4 % de la taille totale de la carte par mois.
+
+Les mises à jour en direct sont appliquées par-dessus la carte téléchargée et ne remplacent pas le fichier cartographique complet. Par conséquent, la date affichée pour une carte dans l'onglet Local ne reflète pas les mises à jour en direct et peut rester inchangée après leur application. Pour télécharger une version plus récente de la carte complète, utilisez Mettre à jour la carte ou Tout mettre à jour dans le [Menu Mises à jour](#updates-menu).
 
 <!--
 Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.

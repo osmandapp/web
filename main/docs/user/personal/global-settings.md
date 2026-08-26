@@ -82,16 +82,15 @@ This feature is available for the iOS version of the OsmAnd app.
 
 The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) is used when connected to your vehicle's [CarPlay software](https://support.apple.com/en-gb/HT205634) and helps you make the most of the optimized version of the OsmAnd app using the audio and video systems to display data on your phone.
 
-
-### Data Storage Folder {#data-storage-folder}
+### Data Storage {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Profiles Storage Settings Android](@site/static/img/personal/profiles/main_storage.webp) ![Profiles Storage Settings Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#local-menu) menu, where you can view and manage detailed information about your OsmAnd data.
 
@@ -107,6 +106,16 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 New storage access guidelines have been implemented in Android versions 11-12. See the [**Troubleshooting**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) section for details.
 :::
 
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+The **Media storage** setting determines where photos, videos, and audio files attached to favorites, tracks, and other OsmAnd items are stored. You can choose a storage location depending on whether you want the files to remain private or be accessible from other apps.
+- **Main storage** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Shared storage** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Camera folder** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Manually specified** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+There is also an *Always keep a local copy* switch. When enabled, OsmAnd copies media imported from the Gallery or Files into its own storage, so the attached media remains available even if the original file is deleted from the Gallery or file system.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,14 +128,11 @@ OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id
 
 Go to: *Files → On My Phone → OsmAnd Maps*
 
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
-
 ![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
 </Tabs>
-
 
 ### Map Rendering Engine {#map-rendering-engine}
 

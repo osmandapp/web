@@ -1,5 +1,5 @@
 ---
-source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
+source-hash: d92c746f8a72d84ab8395bdc89390208bc81a4755169dbeefc240e0f63d57a95
 sidebar_position: 3
 title:  Веб-покупки
 ---
@@ -38,11 +38,11 @@ import Translate from '@site/src/components/Translate.js';
 Нижче наведено ціни на продукти OsmAnd у США та ЄС. Ціни в інших регіонах автоматично конвертуються у місцеву валюту платіжною платформою.
 
 
-<!--
 
-:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+:::danger 🏖️ Summer Sale
+
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -50,9 +50,9 @@ import Translate from '@site/src/components/Translate.js';
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :-------------------  |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0| <s>€69,99</s> **€34.99**| <s>€14.99</s> **€7.49**| €2.99 / <s>€39.99</s> **€19.99**|<s>€450</s> **€299.00**|
-| **Price (USD)** | $0| <s>$69,99</s> **$34.99**| <s>$14.99</s> **$7.49**| $2.99 / <s>$39.99</s> **$19.99**|<s>$450</s> **$299.00**|
+| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічно) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |**Одноразова покупка** (15 років Pro / Довічно Maps+) |
+| **Ціна (EUR)** | €0| <s>€69,99</s> **€34.99**| <s>€14.99</s> **€7.49**| €2.99 / <s>€39.99</s> **€19.99**|<s>€450</s> **€299.00**|
+| **Ціна (USD)** | $0| <s>$69,99</s> **$34.99**| <s>$14.99</s> **$7.49**| $2.99 / <s>$39.99</s> **$19.99**|<s>$450</s> **$299.00**|
 
 
 :::note 
@@ -61,17 +61,17 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
+<!--
 
--->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічно) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |**Одноразова покупка** (15 років Pro / Довічно Maps+) |
-| **Ціна (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
-| **Ціна (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
-
+-->
 
 
 

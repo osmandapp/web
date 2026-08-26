@@ -1,8 +1,9 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title:  Algemeen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 Algemene problemen met betrekking tot de verschillende functies van OsmAnd.
 
 ## Batterijverbruik {#battery-consumption}
@@ -21,7 +21,7 @@ Algemene problemen met betrekking tot de verschillende functies van OsmAnd.
 
 Er zijn gebruikersrapporten geweest over overmatig batterijverbruik door OsmAnd, met gevallen waarin OsmAnd verantwoordelijk was voor tot 90% van het batterijgebruik. We hebben echter veel tests uitgevoerd en konden dergelijke resultaten niet reproduceren.
 
-Onder normale omstandigheden verbruikt OsmAnd alleen stroom wanneer dat nodig is voor actieve functies zoals live navigatie of het opnemen van een track. Wanneer deze diensten actief zijn, verschijnen ze in het Android-notificatiegebied. Als er geen dergelijke melding zichtbaar is, verbruikt OsmAnd geen stroom op de achtergrond.
+Onder normale omstandigheden verbruikt OsmAnd alleen stroom wanneer dat nodig voor actieve functies zoals live navigatie of het opnemen van een track. Wanneer deze diensten actief zijn, verschijnen ze in het Android-notificatiegebied. Als er geen dergelijke melding zichtbaar is, verbruikt OsmAnd geen stroom op de achtergrond.
 
 Verschillende factoren beïnvloeden het batterijverbruik: de leeftijd van het apparaat, het aantal oplaadcycli, de batterijcapaciteit, de temperatuur en meer. Hieronder staan de typische batterijverbruikscijfers, gebaseerd op tests uitgevoerd op een apparaat uit het middensegment:
 
@@ -74,6 +74,21 @@ Om de zoekgeschiedenis in OsmAnd te verwijderen:
 4. Tik op het *Prullenbak*-icoon in de rechterbovenhoek om de verwijdering te bevestigen.
 
 Voor meer gedetailleerde instructies over de zoekfunctionaliteit kunt u deze [gids](../search/search-history.md) raadplegen.
+
+
+## Interface {#interface}
+
+### Waarom zijn kaartknoppen, widgets of tekst te groot? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Als kaartknoppen, widgets of de mapliniaal te groot lijken na het aanpassen van de weergavegrootte in de Android-systeeminstellingen, kan dit verband houden met hoe OsmAnd de interface aanpast aan de huidige schermconfiguratie.
+
+Op sommige apparaten kan het verkleinen van de schermdichtheid of het wijzigen van de weergavegrootte de grootte van interface-elementen beïnvloeden, vooral op apparaten met grote schermen en tablets.
+
+Recente OsmAnd-versies passen geen extra automatische schaling meer toe voor apparaten die als tablets worden gedetecteerd. Interface-elementen volgen nu meer de Android-systeemweergave-instellingen.
+
+Als u de grootte van kaartknoppen handmatig wilt aanpassen, gebruikt u de instellingen [Standaardweergave](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menu → Scherm configureren → Knoppen → Standaardknoppen → menu met drie puntjes → Weergave*. Daar kunt u een aangepaste Grootte, Hoekradius en Achtergronddekking instellen voor alle standaardknoppen tegelijk.
+
+Als de interface nog steeds groter lijkt dan verwacht, controleer dan *Android-systeeminstellingen → Weergave → Weergavegrootte en tekst* en pas de weergave-instellingen indien nodig aan.
 
 
 ## Overig {#other}

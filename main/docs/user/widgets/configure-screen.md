@@ -24,8 +24,9 @@ You can:
 - Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
 - Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
 - Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple **pages** within side panels, choose size of widgets.
+- Create multiple pages within side panels, choose size of widgets.
 - Choose row height and toggle widget icons.
+- On Android, customize [widget panel appearance](#widget-panel-appearance).
 
 All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
 
@@ -36,7 +37,7 @@ All widgets are [profile-dependent](../personal/profiles.md) — each profile ha
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -240,8 +241,6 @@ Each panel supports different layout behaviors:
 
 </Tabs>
 
-
-
 The **Row mode** feature allows you to add as many rows as needed to the top and bottom panels. You can display multiple widgets per row, enhancing the amount of visible information.
 
 ***How to configure rows:***
@@ -320,6 +319,8 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+These settings apply only to the selected widget.
+
 1. **Widget size options** (*for all panels*):  
     You can customize the size of **Simple widgets** in the **Top, Bottom, Left, and Right panels**:
 
@@ -356,6 +357,37 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
     - Tap the *Settings* icon on the right side of the widget field.
     - Tap the *Size* setting and select one of the available sizes.
     - Switch to the Off position, in the *Show icon* field.
+
+
+## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+
+1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+
+2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+
+3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+
+:::tip Purchase
+Custom widget colors is a [paid feature](../purchases/index.md).  
+:::
+
+4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+
+5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+
+6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+
+7. **Copy appearance settings:**
+
+    - Tap the ⋮ menu in the upper-right corner.
+    - Select Copy from.
+    - Choose one of the following options: *Another profile* or *One of the other panels*.
 
 
 ## Panels Customization {#panels-customization}
@@ -638,7 +670,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distance by tap](../widgets/radius-ruler.md#distance-by-tap). Gives the ability to measure the distance from your position to the selected point.
+- [Distance by tap](#distance-by-tap). [⬇](#distance-by-tap)
 - [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
@@ -667,6 +699,36 @@ Allows you to set the placement of the cursor to *[My location](../map/interact-
 - **<Translate android="true" ids="position_on_map_center"/>**. The cursor is always positioned in the center of the screen.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is useful during navigation.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* - for movement direction, *Center* - for all others).
+
+### Distance by Tap {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+The **Distance by Tap** tool allows you to measure distances between points on the map without using the [Radius Ruler](../widgets/radius-ruler.md#radius-ruler-widget) or creating a route.
+
+There are two use cases:
+
+- **Distance from your location to a point**  
+  Tap anywhere on the map and a straight line will appear from your current location to the tapped point, along with a distance label. The line remains on screen even if you tap elsewhere.
+
+- **Distance between any two points**  
+  Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
+
+You can also adjust the text size of the distance label. Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
 
 
 ## Actions {#actions}

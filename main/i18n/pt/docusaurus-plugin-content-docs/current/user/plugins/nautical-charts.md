@@ -1,5 +1,5 @@
 ---
-source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+source-hash: 470447687509454a83c4d6eeaff5fbef4b59e351e6fffa6397d47509009df4d8
 sidebar_position: 8
 title: Vista de Mapa Náutico
 ---
@@ -105,7 +105,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 
 <TabItem value="ios" label="iOS">  
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
 ![Visualização de mapas do plugin Náutico iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 
@@ -187,7 +187,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,rende
 
 <TabItem value="ios" label="iOS">  
 
-Vá para: *Menu → Configurar mapa → Estilo do mapa → Detalhes → Detalhe do fundo do mar*
+Go to: *Menu → Configure map → Map style → Details → Seabed detail*
 
 ![Detalhes do fundo do mar](@site/static/img/plugins/nautical-charts/ios_seabed_details.png)
 
@@ -208,9 +208,9 @@ Para mais detalhes sobre a classificação dos detalhes da superfície e as opç
 
 ### Detalhe de Luz {#light-detail}
 
-Android Vá para: *Menu → Configurar mapa → Estilo do mapa Náutico → Outros atributos do mapa → Detalhe de luz*
+Android Vá para: *Menu → Configure map → Map style Nautical → Other map attributes → Light detail*
 
-iOS Vá para: *Menu → Configurar mapa → Tipo de mapa Náutico → Detalhes → Detalhe de luz*
+iOS Vá para: *Menu → Configure map → Map type Nautical → Details → Light detail*
 
 Esta opção exibe o nível de informação para luzes de navegação. Você pode escolher o quão detalhadas as características de luz aparecem perto de cada farol ou sinal.
 

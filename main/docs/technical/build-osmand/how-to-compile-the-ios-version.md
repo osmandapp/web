@@ -21,7 +21,7 @@ sidebar_position: 6
   For OsmAnd team members: send your AppleID login, so you will be added to to developers list. When you'll get email with invite message activate it.
   Close Xcode.
 
-5. Install command-line tools- cmake, svn, cocoapods
+5. Install command-line tools: cmake and svn
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -35,13 +35,8 @@ sidebar_position: 6
 
   $ brew install svn
   $ brew install cmake # tested on 3.25.2, 3.19, 3.11
-
-  # for intel
-  $ sudo gem install cocoapods
-
-  # for m1
-  $ brew install cocoapods
   ```
+
 6. Download and instal Java jdk 17
   ```
   # for intel
@@ -115,7 +110,7 @@ org.gradle.caching=true
   Solution 5: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
 
 
-9. Open `osmand.xcworkspace` in Xcode
+9. Open `OsmAnd.xcworkspace` in Xcode. If Xcode does not resolve Swift Package Manager dependencies automatically, run `File → Packages → Resolve Package Versions`.
 
 10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).

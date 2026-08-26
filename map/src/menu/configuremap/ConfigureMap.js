@@ -1,10 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import {
     MenuItem,
     IconButton,
-    FormControl,
-    InputLabel,
-    Select,
     Typography,
     ListItemText,
     ListItemIcon,
@@ -12,12 +9,16 @@ import {
     Toolbar,
     Tooltip,
     Box,
+    Button,
+    Paper,
 } from '@mui/material';
-import { Settings } from '@mui/icons-material';
-import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import { Layers } from '@mui/icons-material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AppContext, { defaultConfigureMapStateValues, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RenderingSettingsDialog from '../navigation/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -37,23 +38,30 @@ import capitalize from 'lodash-es/capitalize';
 import TerrainConfig, { getCurrentColorScheme } from './TerrainConfig';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
-import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
+import ActionsMenu from '../actions/ActionsMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
-import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import {
+    HEADER_SIZE,
+    MAIN_URL_WITH_SLASH,
+    MENU_IDS,
+    VISIBLE_TRACKS_URL,
+    liveHash,
+    openPricingPage,
+} from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { osmandTileURL } from '../../map/baseTileURL';
+import { isMvtTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
+import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
-
-export function updateConfigureMapCache(conf) {
-    localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(conf));
-}
+const DEFAULT_MAP_STYLE_OPTIONS = [osmandTileURL, mvtOsmAndURL];
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
@@ -71,6 +79,9 @@ export default function ConfigureMap() {
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
     const [openTerrainConfig, setOpenTerrainConfig] = useState(false);
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
+    const [openMapStyleMenu, setOpenMapStyleMenu] = useState(false);
+    const mapStyleAnchorRef = useRef(null);
+    const hybridUnderlayUrl = useHybridUnderlayUrl();
 
     const handleFavoritesSwitchChange = () => {
         const newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -109,6 +120,8 @@ export default function ConfigureMap() {
 
     function setDefaultConfigureMap() {
         const defaultConfigureMap = defaultConfigureMapStateValues;
+        mtx.setTileURL(defaultConfigureMap.mapStyle.tileURL);
+        mtx.setRenderingType(defaultConfigureMap.mapStyle.renderingType);
         ctx.setConfigureMapState({ ...defaultConfigureMap });
         updateConfigureMapCache(defaultConfigureMap);
     }
@@ -117,10 +130,66 @@ export default function ConfigureMap() {
         return ltx.accountInfo?.account === FREE_ACCOUNT;
     }
 
+    const mapStyleOptions = ctx.develFeatures ? Object.values(ctx.allTileURLs) : DEFAULT_MAP_STYLE_OPTIONS;
+    const mapStyleKey = mapStyleOptions.some((item) => item.key === mtx.tileURL.key) ? mtx.tileURL.key : '';
+    const mapStyleLabel = mapStyleOptions.find((item) => item.key === mapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
+    const hasRenderingSettings = Boolean(ctx.allTileURLs[mtx.tileURL.key]?.properties?.length);
+
+    function handleMapStyleSelect(selected) {
+        if (!selected) {
+            return;
+        }
+
+        mtx.setTileURL(selected);
+        const renderingType = selected.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
+        mtx.setRenderingType(renderingType);
+        const newConfigureMap = cloneDeep(ctx.configureMapState);
+        newConfigureMap.mapStyle = { tileURL: selected, renderingType };
+        updateConfigureMapCache(newConfigureMap);
+        ctx.setConfigureMapState(newConfigureMap);
+        setOpenMapStyleMenu(false);
+    }
+
+    function renderMapStyleSelect() {
+        return (
+            <>
+                <MenuItem ref={mapStyleAnchorRef} className={styles.item} onClick={() => setOpenMapStyleMenu(true)}>
+                    <ListItemIcon className={styles.iconEnabled}>
+                        <Layers />
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography variant="inherit" noWrap>
+                            {mapStyleLabel}
+                        </Typography>
+                    </ListItemText>
+                    <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
+                </MenuItem>
+                <ActionsMenu
+                    open={openMapStyleMenu}
+                    setOpen={setOpenMapStyleMenu}
+                    anchorEl={mapStyleAnchorRef}
+                    actions={
+                        <Paper>
+                            {mapStyleOptions.map((item) => (
+                                <MenuItem
+                                    key={item.key}
+                                    selected={item.key === mapStyleKey}
+                                    onClick={() => handleMapStyleSelect(item)}
+                                >
+                                    {item.uiname}
+                                </MenuItem>
+                            ))}
+                        </Paper>
+                    }
+                />
+            </>
+        );
+    }
+
     const DEFAULT_CONFIGURE = () => {
         return (
             <>
-                {!ltx.loginUser && !ctx.develFeatures ? (
+                {!ltx.loginUser ? (
                     <EmptyLogin />
                 ) : (
                     <>
@@ -216,7 +285,6 @@ export default function ConfigureMap() {
                                 />
                                 <DividerWithMargin margin={'64px'} />
                                 <MenuItem
-                                    divider
                                     className={styles.item}
                                     onClick={() => {
                                         if (!showProButton()) {
@@ -239,7 +307,7 @@ export default function ConfigureMap() {
                                                 {t('shared_string_terrain')}
                                             </Typography>
                                             {showProButton() ? (
-                                                <ButtonPro type={<TopographyProFeatures />} />
+                                                <ButtonPro onClick={() => openPricingPage('terrain_visualization')} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
                                                     {capitalize(getCurrentColorScheme(t, ctx))}
@@ -248,42 +316,28 @@ export default function ConfigureMap() {
                                         </div>
                                     </ListItemText>
                                 </MenuItem>
+                                <DividerWithMargin margin={'64px'} />
+                                {renderMapStyleSelect()}
                             </>
                         )}
                         {ctx.develFeatures && (
                             <>
-                                <SubTitleMenu text={t('shared_string_appearance')} />
-                                <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="rendering-style-selector-label">
-                                            {t('map_widget_renderer')}
-                                        </InputLabel>
-                                        <Select
-                                            labelid="rendering-style-selector-label"
-                                            label={t('map_widget_renderer')}
-                                            value={ctx.allTileURLs[mtx.tileURL.key] ? mtx.tileURL.key : ''}
-                                            onChange={(e) => {
-                                                mtx.setTileURL(ctx.allTileURLs[e.target.value]);
-                                                if (e.target.value === INTERACTIVE_LAYER) {
-                                                    mtx.setRenderingType(DYNAMIC_RENDERING);
-                                                } else if (mtx.renderingType) {
-                                                    mtx.setRenderingType(null);
-                                                }
-                                            }}
-                                        >
-                                            {Object.values(ctx.allTileURLs).map((item) => {
-                                                return (
-                                                    <MenuItem key={item.key} value={item.key}>
-                                                        {item.uiname}
-                                                    </MenuItem>
-                                                );
-                                            })}
-                                        </Select>
-                                    </FormControl>
-                                    <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
-                                        <Settings fontSize="small" />
-                                    </IconButton>
-                                </MenuItem>
+                                {hasRenderingSettings && (
+                                    <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
+                                        <Button variant="outlined" fullWidth onClick={() => setOpenSettings(true)}>
+                                            Rendering Props
+                                        </Button>
+                                    </Box>
+                                )}
+                                {isMvtTileURL(mtx.tileURL) && (
+                                    <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
+                                        <Button variant="outlined" fullWidth onClick={toggleHybridUnderlayUrl}>
+                                            {hybridUnderlayUrl
+                                                ? 'Deactivate hybrid layer'
+                                                : 'Activate hybrid MVT layer'}
+                                        </Button>
+                                    </Box>
+                                )}
                             </>
                         )}
                     </>
@@ -308,7 +362,7 @@ export default function ConfigureMap() {
                 <>
                     <AppBar position="static" className={headerStyles.appbar}>
                         <Toolbar className={headerStyles.toolbar}>
-                            <IconButton
+                            <IconBtn
                                 id={'se-configure-map-menu-close'}
                                 variant="contained"
                                 type="button"
@@ -316,7 +370,7 @@ export default function ConfigureMap() {
                                 onClick={() => closeHeader({ ctx })}
                             >
                                 <CloseIcon />
-                            </IconButton>
+                            </IconBtn>
                             <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                                 {t('configure_map')}
                             </Typography>
@@ -337,9 +391,7 @@ export default function ConfigureMap() {
                             )}
                         </Toolbar>
                     </AppBar>
-                    <Box className={gStyles.scrollActiveBlock}>
-                        <DEFAULT_CONFIGURE />
-                    </Box>
+                    <Box className={gStyles.scrollActiveBlock}>{DEFAULT_CONFIGURE()}</Box>
                 </>
             )}
         </Box>

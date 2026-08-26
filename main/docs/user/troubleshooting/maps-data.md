@@ -180,6 +180,22 @@ If you're trying to search for a location using the structure *City → Street �
 
 - **Possible Issue in OsmAnd**. If the house is present in Nominatim but still not found in OsmAnd, the problem might be specific to OsmAnd. You can contribute to solving this by investigating further. More details can be found in this [technical article](../../technical/algorithms/trace-address-search-issues.md).
 
+### Search UK postcodes using a custom POI file {#search-uk-postcodes-using-a-custom-poi-file}
+
+If a UK postcode cannot be found using *Menu → Search → Address*, it may not be available through the address search index used by OsmAnd.
+
+A community-maintained UK postcode POI file is available as a custom `.obf` file. It contains postcodes stored as Points of Interest (POIs) with coordinates and can be used to search for postcodes directly.
+
+How to use it:
+
+1. Download the `UK_postcodes_poi_europe.obf` file from the [community repository](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases/tag/202605).
+2. If the file was downloaded as a ZIP archive, extract it first.
+3. Copy the `.obf` file to the OsmAnd data folder, or open it with a file manager on your device and choose **OsmAnd** to import it.
+4. Use the general **Search** function (magnifying glass icon) instead of **Address** search.
+5. Enter a postcode (e.g., CT14 8EU or EX34 7EX) in the search bar.
+
+**NOTE:** Some postcodes may appear more than once in search results because both the default OsmAnd map data and the custom postcode POI file can contain the same postcode.
+
 
 ## Tracks and Points {#tracks-and-points}
 

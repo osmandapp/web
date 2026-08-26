@@ -26,18 +26,6 @@
     justify-content: center;
 }
 
-.arrowBtn {
-    padding: 6px !important;
-    color: var(--svg-icon-color) !important;
-    &:hover {
-        background-color: #f5f5f5 !important;
-        color: var(--selected-color) !important;
-    }
-    & svg {
-        fill: currentColor;
-    }
-}
-
 .arrowIcon {
     font-size: 24px !important;
 }
@@ -87,16 +75,11 @@
 }
 
 .addFolderInsideBtn {
-    padding: 4px !important;
     margin-right: 16px !important;
-    border-radius: 50% !important;
     & svg {
-        fill: var(--selected-color);
+        fill: var(--selected-color) !important;
         width: 24px;
         height: 24px;
-    }
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.04) !important;
     }
 }
 

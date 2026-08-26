@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -77,20 +77,19 @@ Quando si effettua un **tocco lungo** in un punto qualsiasi della mappa, appare 
 
 <TabItem value="android" label="Android">  
 
-![Menu contestuale traccia Android](@site/static/img/map/context_track_menu_Android.png)
+![Menu contestuale traccia Android](@site/static/img/map/context_track_menu_Android.png) ![Cosa c'è qui Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Schermata statistiche traccia iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Schermata statistiche traccia iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Cosa c'è qui iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Toccando una [traccia GPX](../map/tracks/index.md) sulla mappa si apre il [menu contestuale della traccia](../map/tracks/track-context-menu.md), dove è possibile accedere a opzioni aggiuntive relative alla traccia.
-
+Toccando una [traccia GPX](../map/tracks/index.md) sulla mappa si apre il [menu contestuale della traccia](../map/tracks/track-context-menu.md), dove è possibile accedere a opzioni aggiuntive relative alla traccia. Se la posizione selezionata contiene più oggetti della mappa, OsmAnd potrebbe prima visualizzare l'elenco **Cosa c'è qui**, consentendo di scegliere l'oggetto desiderato. Per le tracce GPX, questo elenco mostra informazioni di riepilogo come distanza, durata, numero di waypoint e la cartella in cui è memorizzata la traccia.
 
 
 ### Percorsi, piste da sci e sentieri {#routes-and-trails}
@@ -138,6 +137,7 @@ I dettagli disponibili includono:
 
 - [Descrizione dell'articolo](#article-description)
 - [Nomi alternativi](#alternative-names)
+- [Correlati](#related)
 - [Coordinate](#coordinates)
 - [All'interno delle aree](#polygon-information)
 - [POI nelle vicinanze](#nearby-pois)
@@ -156,6 +156,8 @@ Inoltre, il pannello può includere [Dettagli OpenStreetMap](https://wiki.openst
 - [Tariffa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Accessibilità](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Larghezza](https://wiki.openstreetmap.org/wiki/Key:width) / [Altezza](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Se un campo di contatto (come *Sito web, Numero di telefono* o *Email*) contiene più valori, toccandolo viene visualizzato un elenco delle voci disponibili. Selezionare la voce desiderata per eseguire l'azione corrispondente.
 
 Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descrittive extra prese da OpenStreetMap. Questi attributi aiutano a comprendere meglio le caratteristiche di un luogo e possono includere dettagli come elevazione, direzione, anno di costruzione, tipo di superficie o copertura, livello interno, opzioni di pagamento, disponibilità di consegna o asporto e molti altri. OsmAnd visualizza questi attributi con etichette chiare e, dove possibile, icone, rendendo più facile leggere e riconoscere le informazioni. L'insieme esatto di attributi dipende dai dati disponibili in OpenStreetMap per l'oggetto selezionato.
 
@@ -214,6 +216,28 @@ Caratteristiche della visualizzazione dei nomi alternativi:
 - Altre categorie includono la *traduzione specifica per regione* o le *impostazioni predefinite*.
 
 - Se una traduzione specifica *non è disponibile*, OsmAnd utilizza per impostazione predefinita il nome **locale** per garantire l'accuratezza e la coerenza nelle regioni multilingue.
+
+### Correlati {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Correlati Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Correlati iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+La sezione **Correlati** mostra gli oggetti della mappa associati al luogo selezionato tramite una relazione OpenStreetMap. Questa sezione è disponibile per i POI supportati basati su relazioni, come i campus universitari e altri oggetti multipoligono.
+
+Toccare qualsiasi elemento dell'elenco per aprire il relativo menu contestuale della mappa. Ciò consente di passare rapidamente tra oggetti correlati che appartengono alla stessa relazione.
 
 
 ### All'interno dell'area {#polygon-information}
@@ -670,7 +694,7 @@ Per saperne di più sullo strumento [Pianifica un percorso](../plan-route/create
 
 Per aggiornare o scaricare mappe online (tasselli) in una posizione specifica, è possibile utilizzare il menu contestuale dell'oggetto:
 
-- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* e per *Aggiorna*, andare su: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
+- **Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Aggiorna*, andare su: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
 - **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* e *<Translate ios="true" ids="update_tile"/>*.  
 
 Si prega di leggere le [istruzioni complete](../map/raster-maps.md#download--update-tiles).  
@@ -764,7 +788,7 @@ Per aggiungere/modificare punti di traccia, abilitare il [**plugin Registrazione
 - Nel *menu contestuale della mappa* che si apre, scegliere *Azioni → Aggiungi waypoint traccia*.
 - L'elenco mostra le [tracce](../map/tracks/index.md#display-tracks-on-the-map) registrate e visualizzate sulla mappa, così come la [registrazione della traccia corrente](../plugins/trip-recording.md), a cui è possibile aggiungere il waypoint selezionato (*su Android*, l'elenco è raggruppato in schede: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - È possibile aggiungere waypoint a una traccia che non è ancora attiva per la registrazione, nel qual caso la traccia inattiva passa dallo stato *Avvia* allo stato *Riprendi*.
-- [Compilare](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) i dati richiesti e salvare il waypoint.
+- [Compilare](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) i dati richiati e salvare il waypoint.
 - È possibile configurare le [Azioni rapide](../widgets/quick-action.md) aggiungendo un waypoint ad *Aggiungi waypoint traccia*.
 
 

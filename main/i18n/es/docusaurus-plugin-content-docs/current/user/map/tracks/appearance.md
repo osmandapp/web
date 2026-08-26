@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
@@ -73,9 +73,21 @@ Para más detalles sobre la personalización de la apariencia de la línea de ru
 
 ### Editor de paletas de color {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android"> 
 
 ![Editor de paletas de color](@site/static/img/map/gradient_palettes_1.png) ![Editor de paletas de color ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Editor de paletas de color](@site/static/img/map/gradient_palettes_1_ios.png) ![Editor de paletas de color ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Al colorear una pista por Velocidad, Altitud o Pendiente, puede usar paletas propias para definir cómo se aplican los colores a lo largo de la pista.
 
@@ -86,12 +98,12 @@ La pantalla *Todos los colores* muestra las paletas disponibles. Toque el menú 
 - Eliminar. Eliminar una paleta requiere confirmación.
 
 Toque el botón + en la pantalla Todos los colores. Hay dos tipos de paletas disponibles:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — los colores se escalan automáticamente en función de los valores mínimo y máximo de la pista.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — los colores se escalan automáticamente en función de los valores mínimo, medio y máximo de la pista.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — los colores se asignan a números absolutos específicos (por ejemplo, 50 km/h). Los valores se pueden editar manualmente. Las unidades siguen los [ajustes del sistema](../../personal/profiles.md#units--formats). La escala de colores no se reescala automáticamente al aplicarla a diferentes pistas.
 
 :::info Pro feature
 Crear paletas personalizadas es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
-:::
+::;
 
 Para obtener más información sobre los esquemas de paletas de color como formato de datos y su uso en pistas y rutas, consulte el artículo [Esquemas de paletas de color](../../personal/color-palette-schemes.md#tracks-routes).
 
@@ -171,7 +183,7 @@ Restaura todos los **ajustes de apariencia de la pista** a sus valores predeterm
 
 :::tip Purchase
 La visualización de **Pista 3D** es una [función de pago](../../purchases/index.md).  
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -246,7 +258,7 @@ La función de pista 3D es muy beneficiosa para actividades como el parapente, d
 
 <TabItem value="ios" label="iOS">
 
-![Cambiar apariencia](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Cambiar apariencia](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Cambiar apariencia](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Cambiar apariencia](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ La pestaña [Pistas](../../personal/tracks/manage-tracks.md) muestra automática
 
 Modifique la apariencia de varias pistas en *Mis Lugares → Pistas*:
 
-- **Cambiar apariencia predeterminada** (solo Android) - Permite configurar ajustes predeterminados que se aplicarán una vez que se añada una pista a la [carpeta](../../personal/tracks/manage-tracks.md#track-folder).
+- **Cambiar apariencia predeterminada** - Permite configurar ajustes predeterminados que se aplicarán una vez que se añada una pista a la [carpeta](../../personal/tracks/manage-tracks.md#track-folder).
 - **Restablecer al original** - Restaura los ajustes individuales de la pista.
 
 - [Modo de selección](../../personal/tracks/manage-tracks.md#selection-mode) - Cambia la apariencia de pistas específicas en la carpeta seleccionada o en toda la lista en la pestaña Pistas.

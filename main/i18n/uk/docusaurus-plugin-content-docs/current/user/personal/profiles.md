@@ -1,5 +1,5 @@
 ---
-source-hash: 4b2451ecd3d79c3149e2df5497a8586478090ad4d9a5f76c51931bf851fe6efc
+source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
 sidebar_position: 4
 title:  Профілі (Налаштування)
 ---
@@ -21,7 +21,7 @@ OsmAnd пропонує різноманітні стандартні профі
 
 - Певні профілі, такі як *Лижі* та *Човен*, мають **додаткові функції**, які стають доступними лише тоді, коли увімкнені відповідні плагіни.
 
-     - Плагіни можна активувати, перейшовши до *Меню → Плагіни → Ski map view* або *Nautical map view*.
+     - Плагіни можна активувати, перейшовши до *Меню → Плагіни → Ski map view* or *Nautical map view*.
      - Увімкнення плагінів надає профілям необхідні функції для задоволення специфічних вимог цих видів діяльності.
 
 - Важливо зазначити, що деякі профілі, такі як **Вантажівка**, **Мотоцикл**, **Мопед**, **Поїзд**, **Літак**, **Човен** та **Верхова їзда**, не активовані за замовчуванням.
@@ -33,7 +33,7 @@ OsmAnd пропонує різноманітні стандартні профі
 
 <TabItem value="android" label="Android">
 
-- *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Перегляд мапи або будь-який інший профіль)
+- *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Browse map or any other profile)
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Налаштування профілів Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
@@ -227,6 +227,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Приклад:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) представляє область 9м x 14м)  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (лише версія для Android) | Приклад: 2 215 227.87, 830 915.9 ([Швейцарська система координат](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (лише версія для Android) | Приклад: 4 215 227.87, 1 830 915.9 ([Швейцарська система координат](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (лише версія для Android) | Приклад: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Градуси 180° | Усі кутові значення мають показання від 0° до 180° та від 0° до -180°.  |
 |          | Градуси 360° | Усі кутові значення мають показання від 0° до 360°.  |
@@ -273,7 +274,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 </Tabs>
 
-Розділ **Інші** надає додаткові налаштування профілю для налаштування інтерфейсу та елементів керування введенням OsmAnd. Ці налаштування дозволяють налаштовувати зовнішні пристрої, регулювати параметри анімації та перемикати повноекранний режим.
+Розділ **Інші** надає додаткові налаштування профілю для налаштування інтерфейсу та елементів керування OsmAnd. Ці налаштування дозволяють налаштовувати зовнішні пристрої, регулювати параметри анімації та перемикати повноекранний режим.
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Підключайте зовнішні контролери, такі як *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, або *<Translate android="true" ids="sett_parrot_ext_input"/>* для керування OsmAnd за допомогою фізичних кнопок.
 
@@ -416,7 +417,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Зовнішній вигляд профілів](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Зовнішній вигляд профілів](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
@@ -494,7 +495,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 :::note Для невикористовуваних плагінів
 Щоб приховати всі параметри керування невикористовуваних [плагінів](../plugins/index.md#configure-plugin), вимкніть їх.
-:::
+::;
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
@@ -539,7 +540,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 :::caution Доступ до налаштувань плагіна
 Щоб отримати доступ до налаштувань плагіна, ви повинні спочатку [**увімкнути плагін**](../plugins/index.md#enable--disable) у *розділі "Плагіни" головного меню*.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

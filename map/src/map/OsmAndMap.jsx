@@ -26,8 +26,12 @@ import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import LiveTrackLayer from './layers/LiveTrackLayer';
+import { useGpxFileDragMapZone } from '../util/hooks/useGpxFileDragZone';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
+import MvtDemoLayer from './layers/MvtDemoLayer';
+import MvtOsmLayer from './layers/MvtOsmLayer';
+import { isMvtTileURL } from './layers/MvtLayerConfig';
 import { extractAndSaveLiveTrackKey } from '../util/livetracks/liveTrackUtils';
 
 function getInitialViewFromHash() {
@@ -43,7 +47,7 @@ function getInitialViewFromHash() {
     const lng = Number.parseFloat(lngStr);
     if (Number.isNaN(zoom) || Number.isNaN(lat) || Number.isNaN(lng)) return null;
 
-    return { center: [lat, lng], zoom };
+    return { center: [lat, L.Util.wrapNum(lng, [-180, 180], true)], zoom };
 }
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
@@ -82,6 +86,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const attributionSize = 300;
     const marginLeft = width / 2 - attributionSize + menuMargin;
 
+    const mapDragHandlers = useGpxFileDragMapZone();
+
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
@@ -101,6 +107,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     };
 
     useEffect(() => {
+        if (isMvtTileURL(mtx.tileURL)) {
+            return;
+        }
         if (tileLayer.current) {
             const leafletLayer = tileLayer.current.getLeafletLayer();
             if (leafletLayer) {
@@ -172,6 +181,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
 
     return (
         <Box
+            {...mapDragHandlers}
             sx={{
                 width: '100%',
                 height: '100%',
@@ -215,8 +225,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <MapContainer
                 zoom={initialView.zoom}
                 center={initialView.center}
-                minZoom={1}
+                minZoom={2}
                 maxZoom={20}
+                worldCopyJump={true}
                 zoomControl={false}
                 whenReady={whenReadyHandler}
                 contextmenu={true}
@@ -243,10 +254,12 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <CustomTileLayer
                     ref={tileLayer}
                     attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
-                    minZoom={1}
+                    minZoom={2}
                     maxZoom={20}
                     maxNativeZoom={19}
                 />
+                <MvtDemoLayer />
+                <MvtOsmLayer />
                 <HeightmapLayer />
                 {hoverPoint && (
                     <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />

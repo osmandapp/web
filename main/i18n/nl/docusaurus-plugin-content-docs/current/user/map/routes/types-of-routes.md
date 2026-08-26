@@ -1,5 +1,5 @@
 ---
-source-hash: 97cbadd50fbc4e3456c25be84373804b63617bf768394b167c130bfa44b414f0
+source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
 sidebar_position: 12
 title: Soorten routes
 ---
@@ -31,16 +31,16 @@ U kunt de filtering van sommige routetypes configureren in het menu [Kaart confi
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-Meer informatie vindt u in het artikel [Kaartlegenda](../../map-legend/index.md).
+Meer informatie vindt u in het artikel [Kaartlegenda](../../map-legend/osmand.md#cycling).
 
 ## Mountainbike {#mountain-bike}
 
 MTB-routes hebben een specifieke mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) en kunnen apart van fietsroutes worden geselecteerd.
 
-- ***<Translate android="true" ids="mtb_scale"/>***. Toont paden volgens de MTB-schaal. Meer informatie is te vinden in het artikel [Kaartlegenda](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***. Toont paden volgens de MTB-schaal. Meer informatie is te vinden in het artikel [Kaartlegenda](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***. Toont MTB-paden volgens de International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Meer informatie is te vinden in het artikel [Kaartlegenda](../../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***. Toont MTB-paden volgens de International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). Meer informatie is te vinden in het artikel [Kaartlegenda](../../map-legend/osmand.md#mtb).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ## Wandelen / Hiken {#hiking--walking}
@@ -60,7 +60,7 @@ MTB-routes hebben een specifieke mapping in [OpenStreetMap](https://wiki.openstr
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-De functie **Dirtbikeroutes** maakt het mogelijk om dirtbike-specifieke routes op de kaart weer te geven op basis van de tag `dirtbike:scale`. Deze schaal markeert paden die geschikt zijn voor dirt biking, met een gekleurde overlay die moeilijkheidsgraden aangeeft ([Kaartlegenda](../../map-legend/osmand.md#routes)).  
+De functie **Dirtbikeroutes** maakt het mogelijk om dirtbike-specifieke routes op de kaart weer te geven op basis van de tag `dirtbike:scale`. Deze schaal markeert paden die geschikt zijn voor dirt biking, met een gekleurde overlay die moeilijkheidsgraden aangeeft ([Kaartlegenda](../../map-legend/osmand.md#dirtbike-scale)).  
 
 U kunt deze functie activeren via *Menu → Kaart configureren → Routes → Dirtbikeroutes*. Het systeem werkt vergelijkbaar met de MTB-schaal en biedt een visuele weergave van routes die zijn afgestemd op dirt biking — meer informatie over de tag [`dirtbike`](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale) vindt u hier.
 

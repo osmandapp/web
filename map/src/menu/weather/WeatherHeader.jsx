@@ -14,6 +14,7 @@ import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_acti
 import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { useTranslation } from 'react-i18next';
 import { clearShowDetailsFlag } from '../../manager/WeatherManager';
+import IconBtn from '../../frame/components/btns/IconBtn';
 import { MAIN_URL_WITH_SLASH, WEATHER_URL, liveHash } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -40,7 +41,7 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
+                    <IconBtn
                         id="se-weather-close"
                         variant="contained"
                         type="button"
@@ -63,7 +64,7 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                         }}
                     >
                         {isDetails ? <BackIcon /> : <CloseIcon />}
-                    </IconButton>
+                    </IconBtn>
                     <Typography id="se-weather-menu-name" component="div" className={headerStyles.title}>
                         {isDetails ? t('web:forecast_details') : t('shared_string_weather')}
                     </Typography>

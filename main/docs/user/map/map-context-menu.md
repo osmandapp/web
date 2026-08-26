@@ -76,13 +76,13 @@ When you **long tap** anywhere on the map, a **context menu** appears, providing
 
 <TabItem value="android" label="Android">  
 
-![Context track menu Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -136,11 +136,12 @@ Available details include:
 
 - [Article Description](#article-description)
 - [Alternative names](#alternative-names)
+- [Related](#related)
 - [Coordinates](#coordinates)
 - [Within areas](#polygon-information)
 - [Nearby POIs](#nearby-pois)
 - [Nearby Popular Places](#nearby-popular-places)
-- [Guides](#guides) (Android only)
+- [Guides](#guides) 
 - [Public Transport routes for stops](#public-transport-routes)
 - [Favorites / Track Points from the same group](#favorites--track-points-from-the-group)
 - [OpenStreetMap link](#openstreetmap-link)
@@ -155,6 +156,8 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+If a contact field (such as *Website, Phone number*, or *Email*) contains multiple values, tapping it displays a list of available entries. Select the desired entry to perform the corresponding action.
+
 Beyond the fields listed above, OsmAnd may also show extra descriptive information taken from OpenStreetMap. These attributes help you better understand the characteristics of a place and can include details such as elevation, direction, year built, surface or covering type, indoor level, payment options, delivery or takeaway availability, and many others. OsmAnd displays these attributes with clear labels and, where possible, icons, making it easier to read and recognize the information. The exact set of attributes depends on what data is available in OpenStreetMap for the selected object.
 
 
@@ -166,21 +169,19 @@ Beyond the fields listed above, OsmAnd may also show extra descriptive informati
 
 ![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
-This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md#wikipedia-article), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
-
-If the selected place has a Wikipedia article, a short preview is shown in this section. When the full article is not available offline, the *Read on Wikipedia* button appears. Tapping it opens a dialog with options depending on the user’s access: users with a purchased plan can download the regional Wikipedia data or open the article in a browser, while free users can open the article online or proceed to the screen that offers offline access.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Description list](@site/static/img/map/description_list_new_ios.png)
-
-This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
+![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md#wikipedia-article), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
+
+If the selected place has a Wikipedia article, a short preview is shown in this section. When the full article is not available offline, the *Read on Wikipedia* button appears. Tapping it opens a dialog with options depending on the user’s access: users with a purchased plan can download the regional Wikipedia data or open the article in a browser, while free users can open the article online or proceed to the screen that offers offline access.
 
 
 ### Alternative Names {#alternative-names}
@@ -212,6 +213,28 @@ Features of alternative names display:
 - Other categories include *region-specific translation*, or *default settings*.
 
 - If a specific translation is *not available*, OsmAnd defaults to the **local** name to ensure accuracy and consistency across multilingual regions.
+
+### Related {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Related Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Related iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+The **Related** section displays map objects that are associated with the selected place through an OpenStreetMap relation. This section is available for supported relation-based POIs, such as university campuses and other multipolygon objects.
+
+Tap any item in the list to open its map context menu. This allows you to quickly navigate between related objects that belong to the same relation.
 
 
 ### Within area {#polygon-information}
@@ -298,9 +321,21 @@ Tapping *Nearby [Popular Places](https://osmand.net/docs/user/plugins/wikipedia#
 
 ### Guides {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 The **Guides** section appears in the map context menu for some places and provides access to **Travel (Wikivoyage**) guides related to the selected point of interest. It shows a list of guide entries (for example, a country or region) that mention the selected place.
 

@@ -1,4 +1,4 @@
-import Utils, { quickNaNfix, toHHMMSS } from '../../util/Utils';
+import Utils, { cloneTrackObject, quickNaNfix, toHHMMSS } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -57,7 +57,9 @@ const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000; // don't overload Auto-SRTM API with huge OSRM tracks
 const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation points (type=osmand might have up to 10%)
 export const FIT_BOUNDS_MAX_ZOOM = 17;
+export const FIT_BOUNDS_EXTRA_PADDING = 10;
 export const DEFAULT_GROUP_NAME = '';
+export const IMPORT_FOLDER_NAME = 'Import';
 
 export function fitBoundsOptions(mtx) {
     return {
@@ -76,7 +78,7 @@ export function filterRegularFolders(tracksGroups) {
 }
 
 export function prepareLocalTrack(track) {
-    const prepareTrack = cloneDeep(track);
+    const prepareTrack = cloneTrackObject(track);
     return {
         name: prepareTrack.name,
         id: prepareTrack.id,
@@ -734,9 +736,6 @@ export function isTrackExists(name, folder, folderName, tracks) {
     }
     const foundFolder = findGroupByName(tracks, folderName !== null ? folderName : (folder?.title ?? folder));
     if (foundFolder) {
-        if (foundFolder.name === DEFAULT_GROUP_NAME) {
-            return foundFolder.files.some((f) => TracksManager.prepareName(f.name) === name);
-        }
         return foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name);
     }
     return false;
@@ -1037,7 +1036,7 @@ export function validateRoutePoints(points) {
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
 
-    const cloneFile = cloneDeep(ctx.selectedGpxFile);
+    const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
     if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
         return cloneFile; // no tracks = nothing to analyze
@@ -1127,7 +1126,7 @@ function createTrack(ctx, latlng) {
     // cleanup
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
         createState.closePrev = {
-            file: cloneDeep(ctx.selectedGpxFile),
+            file: cloneTrackObject(ctx.selectedGpxFile),
         };
     }
     ctx.setCreateTrack({ ...createState });
@@ -1430,10 +1429,10 @@ export function updateLoadingTracks(ctx, group) {
     calculateLastModified(group);
     ctx.setTrackLoading([
         ...ctx.trackLoading.filter(
-            (name) =>
+            (t) =>
                 !group.some((file) => {
                     let parts = file.name.split('/');
-                    return parts[parts.length - 1] === name;
+                    return parts[parts.length - 1] === t.name;
                 })
         ),
     ]);
@@ -1505,7 +1504,7 @@ export async function openTrackOnMap({
         ctx.setCreateTrack({
             enable: false,
             closePrev: {
-                file: cloneDeep(ctx.selectedGpxFile),
+                file: cloneTrackObject(ctx.selectedGpxFile),
             },
         });
     }

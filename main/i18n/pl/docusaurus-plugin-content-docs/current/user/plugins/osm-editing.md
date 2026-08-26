@@ -1,5 +1,5 @@
 ---
-source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
 sidebar_position: 10
 title:  Edycja OpenStreetMap
 ---
@@ -61,7 +61,7 @@ Ustawienia wtyczki są globalne i dotyczą wszystkich profili.
 - **<Translate android="true" ids="offline_edition"/>**. Jeśli to ustawienie jest włączone, zmiany są najpierw zapisywane lokalnie (przycisk *Zapisz*) i przesyłane na żądanie. Jeśli ustawienie jest wyłączone, zmiany są przesyłane natychmiast (przycisk *Prześlij*).
 - **<Translate android="true" ids="use_dev_url"/>** *(tylko Android)*. Pozwala włączyć [dev.openstreetmap.org](https://dev.openstreetmap.org/) zamiast [openstreetmap.org](http://openstreetmap.org/) w celu przetestowania przesyłania notatek OSM, POI lub śladów GPS. Po włączeniu następuje automatyczne wylogowanie z OpenStreetMap.org. To ustawienie jest dostępne na liście tylko wtedy, gdy włączona jest *wtyczka deweloperska OsmAnd*.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Dotknij, aby otworzyć [*Menu → Moje miejsca → Edycje OSM*](../personal/myplaces.md). Ta karta zawiera listę nieedytowanych notatek OSM. Dostępne są następujące działania z notatką: *Prześlij*, *Pokaż na mapie*, *Modyfikuj notatkę OSM*, *Usuń*. Przesłane lub usunięte notatki nie są już wyświetlane na liście.  
+- **<Translate android="true" ids="layer_osm_edits"/>**. Dotknij, aby otworzyć [*Menu → Moje miejsca → Edycje OSM*](../personal/myplaces.md). Ta karta zawiera listę nieedytowanych notatek OSM. Dostępne są następujące działania z notatką: *Prześlij*, *Pokaż na mapie*, *Modyfikuj notatkę OSM*, *Usuń*. Przesłane lub usunięte notatki nie są już wyświetlane na liście. Na iOS możesz także użyć trybu wyboru, aby zaznaczyć wiele elementów i przesłać je lub usunąć jednocześnie. 
 
 :::note
 Jeśli masz subskrypcję [OsmAnd Pro](../purchases/android.md#pro-features), zmiany wprowadzone w OSM pojawią się na mapie OsmAnd w ciągu godziny. Upewnij się, że [Aktualizacje na żywo](../personal/maps-resources.md#live-updates) są włączone.
@@ -182,7 +182,7 @@ Możesz przeglądać, przesyłać do OSM lub usuwać POI w *Moje miejsca → Edy
 
 ### Dodaj nieobsługiwane typy POI {#add-unsupported-poi-types}
 
-W zakładce *Zaawansowane* można dodawać nieobsługiwane typy POI, które mogą być przydatne do określonego zadania. Opcja ta pozwala na ręczne wprowadzanie danych POI, rozszerzając tym samym funkcjonalność aplikacji.  
+W zakładzie *Zaawansowane* można dodawać nieobsługiwane typy POI, które mogą być przydatne do określonego zadania. Opcja ta pozwala na ręczne wprowadzanie danych POI, rozszerzając tym samym funkcjonalność aplikacji.  
 
 Jednym z przykładów nieobsługiwanych typów POI, które można dodać, jest *amenity=freeshops*. Ten typ może być przydatny, jeśli chcesz oznaczyć darmowe sklepy lub miejsca, które zapewniają darmowe produkty.
 

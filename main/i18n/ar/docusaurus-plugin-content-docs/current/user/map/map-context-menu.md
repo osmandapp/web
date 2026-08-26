@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -77,20 +77,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة سياق المسار أندرويد](@site/static/img/map/context_track_menu_Android.png)
+![قائمة سياق المسار أندرويد](@site/static/img/map/context_track_menu_Android.png) ![ما هنا أندرويد](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![شاشة إحصائيات المسار iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![شاشة إحصائيات المسار iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![ما هنا iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-يؤدي النقر على [مسار GPX](../map/tracks/index.md) على الخريطة إلى فتح [قائمة سياق المسار](../map/tracks/track-context-menu.md)، حيث يمكنك الوصول إلى خيارات إضافية متعلقة بالمسار.
-
+يؤدي النقر على [مسار GPX](../map/tracks/index.md) على الخريطة إلى فتح [قائمة سياق المسار](../map/tracks/track-context-menu.md)، حيث يمكنك الوصول إلى خيارات إضافية متعلقة بالمسار. إذا كان الموقع المحدد يحتوي على كائنات خريطة متعددة، فقد يعرض OsmAnd أولاً قائمة **ما هنا**، مما يتيح لك اختيار الكائن المطلوب. بالنسبة لمسارات GPX، تعرض هذه القائمة معلومات ملخصة مثل المسافة والمدة وعدد نقاط المسار والمجلد الذي يُخزن فيه المسار.
 
 
 ### المسارات ومنحدرات التزلج والممرات {#routes-and-trails}
@@ -103,7 +102,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إخفاء قائمة السياق {#hide-context-menu}
 
-لإغلاق **قائمة السياق**:
+لإغلاق **قائمة السياق**：
 
 - انقر على أي *منطقة فارغة* على الخريطة لتجنب إعادة فتح القائمة.
 - اسحب القائمة *لأسفل* من الأعلى.
@@ -138,6 +137,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [وصف المقال](#article-description)
 - [الأسماء البديلة](#alternative-names)
+- [ذات الصلة](#related)
 - [الإحداثيات](#coordinates)
 - [ضمن مناطق](#polygon-information)
 - [نقاط الاهتمام القريبة](#nearby-pois)
@@ -155,7 +155,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [ساعات العمل](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [الرسوم](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [إمكانية الوصول](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [العرض](https://wiki.openstreetmap.org/wiki/Key:width) / [الارتفاع](https://wiki.openstreetmap.org/wiki/Key:height)
+- [العرض](https://wiki.openstreetmap.org/wiki/Key:width) / [الارتفاع](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+إذا كان حقل جهة اتصال (مثل *الموقع الإلكتروني، رقم الهاتف*، أو *البريد الإلكتروني*) يحتوي على قيم متعددة، فإن النقر عليه يعرض قائمة بالإدخالات المتاحة. حدد الإدخال المطلوب لتنفيذ الإجراء المقابل.
 
 بالإضافة إلى الحقول المذكورة أعلاه، قد يعرض OsmAnd أيضًا معلومات وصفية إضافية مأخوذة من OpenStreetMap. تساعد هذه السمات في فهم خصائص المكان بشكل أفضل وقد تشمل تفاصيل مثل الارتفاع، والاتجاه، وسنة البناء، ونوع السطح أو الغطاء، ومستوى الداخل، وخيارات الدفع، وتوافر التوصيل أو الوجبات الخارجية، وغيرها الكثير. يعرض OsmAnd هذه السمات بتسميات واضحة، وأيقونات حيثما أمكن، مما يجعل القراءة والتعرف على المعلومات أسهل. يعتمد المجموعة الدقيقة من السمات على البيانات المتاحة في OpenStreetMap للكائن المحدد.
 
@@ -214,6 +216,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تشمل الفئات الأخرى *الترجمة الخاصة بالمنطقة*، أو *الإعدادات الافتراضية*.
 
 - إذا لم تكن ترجمة معينة *متاحة*، فإن OsmAnd يعود إلى الاسم **المحلي** لضمان الدقة والاتساق عبر المناطق متعددة اللغات.
+
+
+### ذات الصلة {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
+
+![ذات الصلة أندرويد](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![ذات الصلة iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+يعرض قسم **ذات الصلة** كائنات الخريطة المرتبطة بالمكان المحدد من خلال علاقة OpenStreetMap. يتوفر هذا القسم لنقاط الاهتمام المدعومة القائمة على العلاقات، مثل حرم الجامعات وغيرها من كائنات المضلعات المتعددة.
+
+انقر على أي عنصر في القائمة لفتح قائمة سياق الخريطة الخاصة به. يتيح لك ذلك التنقل بسرعة بين الكائنات ذات الصلة التي تنتمي إلى نفس العلاقة.
 
 
 ### ضمن منطقة {#polygon-information}
@@ -379,7 +404,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 > *في iOS، يؤدي النقر المطول على صورة إلى فتح قائمة سياق مع إجراءات سريعة.*
 
-لمزيد من المعلومات، انظر: [الصور عبر الإنترنت](https://osmand.net/docs/user/map/popular_places#online-photos) و [عرض المعرض](https://osmand.net/docs/user/map/popular_places#gallery)
+لمزيد من المعلومات، انظر: [الصور عبر الإنترآن](https://osmand.net/docs/user/map/popular_places#online-photos) و [عرض المعرض](https://osmand.net/docs/user/map/popular_places#gallery)
 
 
 ### صور على مستوى الشارع {#street-level-imagery}

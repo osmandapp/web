@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -30,20 +30,20 @@ Pour vous connecter avec d'autres utilisateurs d'OsmAnd, poser des questions et 
 | Facebook | OsmAnd users community (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*Italian*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*English*)  | Un groupe où les utilisateurs partagent des conseils, répondent aux questions et discutent des fonctionnalités d'OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
-|  Reddit | OsmAnd - discussion and support  | La communauté Reddit pour les utilisateurs d'OsmAnd. Posez des questions, partagez vos expériences ou présentez vos styles de carte personnalisés. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | OsmAnd News channel (*English*)  | Le groupe officiel d'OsmAnd pour les annonces et les mises à jour directement des développeurs. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  X (Twitter) | OsmAnd news channel  | Groupe officiel d'OsmAnd pour les discussions en direct, les annonces et les mises à jour. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
-|  Instagram | OsmAnd news channel | Une communauté où vous pouvez discuter, partager des conseils et obtenir de l'aide sur les fonctionnalités d'OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [Google Groups](https://groups.google.com/g/osmand)  |
+|  Reddit | OsmAnd - discussion and support  | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+|  Telegram | OsmAnd News channel (*English*)  | The official OsmAnd group for announcements and updates directly from the developers. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  X (Twitter) | OsmAnd news channel  | Official OsmAnd group for live discussions, announcements, and updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | A community where you can chat, share tips, and get help with OsmAnd features. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Convertisseurs {#converters}
 
 La liste ci-dessous fournit des convertisseurs pour divers types de données pris en charge par OsmAnd, permettant aux utilisateurs de transférer, modifier et intégrer différents formats de données.
 
-| Type | Description | Lien |
+| Type | Description | Link |
 |-- | -- | --|
 | GoogleMap To OSMAnd GPX | Crée un dossier de fichiers GPX de style OsmAnd à partir d'une carte Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
 | KML to OsmAnd GPX | Script Python pour convertir les fichiers *KML* au format *GPX* avec des icônes. D'autres outils sont disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
@@ -53,6 +53,8 @@ La liste ci-dessous fournit des convertisseurs pour divers types de données pri
 | GPX to KML | Outil pour convertir les fichiers *GPX* d'OsmAnd au format *KML*, en préservant les icônes. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX to OsmAnd | Script Python pour convertir les fichiers *GPX* iOverlander exportés vers OsmAnd avec des icônes. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Ceci est [un outil](https://github.com/acui/osmand_topo_map_generator) pour générer une carte topographique imprimable en utilisant des captures d'écran d'OsmAnd (https://osmand.net). La carte utilise la grille UTM et contient des informations sur la déclinaison. Elle est destinée à être utilisée avec une boussole ou un appareil GPS avec des coordonnées UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar projette un rayon vers le soleil depuis chaque point d'une trace GPX et le compare au terrain et à la végétation (LiDAR HD 0,5 m / IGN), pour une date et une heure données. Il indique, mètre par mètre, le soleil ou l'ombre. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Un outil autonome qui télécharge des données LiDAR publiques depuis les portails nationaux de 22 pays | [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Ressources personnalisées {#custom-resources}
 
@@ -109,6 +111,7 @@ Le fichier [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) est principalement basé sur UniMap et routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Ceci est un style de rendu OsmAnd optimisé pour la chasse aux tempêtes](https://github.com/pqo/stormchasing-rendering-style)  |[Style de rendu Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
 
 ### Cartes hors ligne {#offline-maps}
 
@@ -124,7 +127,7 @@ Cartes vectorielles personnalisées (fichiers OBF) générées par les utilisate
 
 Le tableau suivant répertorie diverses sources de cartes en ligne préparées par les utilisateurs, offrant un accès à des données cartographiques spécialisées de différentes régions géographiques et services.
 
-| Nom | Description | Lien|
+| Nom | Description | Link|
 | -- | -- | --|
 | Gravel Roads Seeker | Carte des routes de gravier (page web en *French*). Une carte en ligne générée en temps réel à partir de serveurs de tuiles, tels que WMTS (Web Map Tile Service) ou WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
 | OsmAnd Rendering GitHUB | Une collection de cartes en ligne, y compris des cartes topo, des orthophotos et autres, disponibles auprès de certains des principaux instituts géographiques de différents pays. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
@@ -132,6 +135,10 @@ Le tableau suivant répertorie diverses sources de cartes en ligne préparées p
 | Basemap AT WMTS | L'ensemble de cartes de l'Autriche basé sur [basemap.at WMTS](https://basemap.at/en/) créé par mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | L'ensemble de cartes fournies par l'institut géographique français IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | Le site propose une collection de cartes pour les vacances à la campagne, y compris des cartes touristiques, de montagne, nautiques et bien d'autres. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Superposition OsmAnd indépendante montrant les niveaux de risque d'incendie d'aujourd'hui et de demain pour la Comunitat Valenciana, en Espagne, en utilisant des données publiques officielles. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

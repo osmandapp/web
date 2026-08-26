@@ -71,6 +71,7 @@ Important information:
 - Search POI by name and by category with additional filters.
 - Search OSM routes by name and by category with additional filters.
 - Search by most prominent peaks and volcanoes.
+- Search by Travel guide articles (requires the corresponding Travel guides file to be downloaded).
 - Search by Favorites and Waypoints.
 - Search icons by POI subcategory names.
 - Search by tracks.
@@ -88,6 +89,32 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 -->
 
 ### Sorting Search Results {#sorting-search-results}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Search POI list Android](@site/static/img/search/search_sort_by.webp)
+
+OsmAnd automatically sorts search results by several criteria:
+
+1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
+
+2. **Relevance** — Objects whose names closely match the search query are usually shown higher in the results.
+
+3. **Object type** — Depending on the query, results may include different types of objects such as cities, streets, addresses, or POIs.
+
+4. **Distance** — When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
+
+5. **Importance** — Well-known landmarks or frequently referenced places may appear higher in the results when they closely match the search query.
+
+You can also manually change the sorting order of search results using the Sort by chip at the top of the search results list. Tap *Sort by* and select one of the following options:
+- **Relevance** — Sorts the search results by relevance to the search query.
+- **Nearest** — Sorts the search results by distance, with the closest results shown first.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 OsmAnd automatically sorts search results by several criteria:
 
@@ -109,6 +136,10 @@ OsmAnd automatically sorts search results by several criteria:
 - The sorting process is **automatically managed** by OsmAnd, based on the criteria listed above.
 - In cases where search results are too broad, OsmAnd can **limit the displayed results** to those with the highest word match accuracy.
 
+</TabItem>
+
+</Tabs>
+
 
 ### Full Text Search {#full-text-search}
 
@@ -116,7 +147,7 @@ OsmAnd automatically sorts search results by several criteria:
 
 <TabItem value="android" label="Android">
 
-![Favorite search Android](@site/static/img/search/favorite_search_android.png)
+![Favorite search Android](@site/static/img/search/favorite_search_android.webp)
 
 </TabItem>
 
@@ -139,12 +170,23 @@ You can find the required location on the map from the list of points that appea
     - Addresses
     - Maps to download
 
-3. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
+3. When searching by name on Android, OsmAnd displays POI type chips based on the types represented in the search results. Tap a chip to filter the results by the selected POI type. You can select multiple POI types. Once selected, a chip moves to the first position in the list. Tap a selected chip again to deselect it and return to the full search results.
+
+4. If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
+
+5. The search results may also include a [Travel guide article](../plan-route/travel-guides.md#travel-article). Tapping it opens the article directly, rather than showing a location on the map.
 
 :::note TIGER data limitations in address searches
 OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
 :::
 
+### Search Around (Android only) {#search-around}
+
+![Search Around](@site/static/img/search/search_around.webp)
+
+When the search is opened significantly away from your current location, the *Search around* chip allows you to choose the area used for the search. Tap the chip and select one of the following options:
+- **Map center** — Searches around the current center of the map. This option is selected by default.
+- **My location** — Searches around your current location. 
 
 ### Search on the Map {#search-on-the-map}
 
@@ -152,13 +194,13 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android_new.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android_new.png) ![Search POI Android](@site/static/img/search/poi_overlay_android_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png) ![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.webp)
 
 </TabItem>
 
@@ -168,7 +210,7 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 
 - Use [one of the ways](#how-to-use) to get to the Search tool.
 - Start typing the name or address into the search box.
-- A box with the *Show on map* button will appear below the search input field.
+- A box with the *Show on map* button will appear below the search input field. On Android, the *Show on map* Floating Action Button (FAB) appears at the bottom of the search results screen.
 - Tap this button to go to the map.
 - You can continue typing your query at the top of the screen.
 
@@ -205,19 +247,44 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 <InfoAndroidOnly/>
 
-![Explore search](@site/static/img/search/explore_search_android.png)
+![Explore search](@site/static/img/search/explore_search_android.webp)
 
-The **Explore** tab in the Search tool helps you quickly discover places near your current location and access recently opened items. It contains two main sections:  
-- Popular places nearby – a scrollable list of well-known landmarks and attractions near your location. Each item may include the name of the place, its category, distance and direction, and a preview image if available. Tap *Show all* to open the full list or *Show on map* to display these places on the map.
-- Recently visited – a list of places, tracks, or other objects that you have recently opened. This allows you to quickly return to previously viewed locations.
+The **Explore** tab in the Search tool helps you quickly discover places near your current location and access recently opened items. It contains two main sections: [Popular places nearby](#popular-places-nearby)
+ and [History](#history).
+
+### Popular Places Nearby {#popular-places-nearby}
+
+The **Popular places nearby** section displays a scrollable list of well-known landmarks and attractions near your location. Each item may include the name of the place, its category, distance and direction, and a preview image if available. Tap *Show all* to open the full list or *Show on map* to display these places on the map.
 
 For more details, see [here](../map/popular_places.md#explore-in-search).
 
-## Search History (iOS) {#search-history-ios}
+### History {#history}
+
+![History section](@site/static/img/search/history_section_android.webp) ![History section](@site/static/img/search/history_section_2_android.webp)
+
+The **History** section provides quick access to your recent history items. It displays up to 25 most recent items and can be expanded or collapsed. Tap *View all* to open the full History screen.
+
+On the full History screen, you can sort and filter your history items using the following options:
+
+1. **Sort by**:
+- Recent — displays the most recently added items first. When this option is selected, items are grouped by time, such as Today, Last week, and earlier periods.
+- Nearest — sorts items by their distance from your current location.
+- Nearest to map center — sorts items by their distance from the current center of the map. When either of the distance-based sorting options is selected, the time-based groups are not displayed.
+
+2. **Type** — filters history items by:
+- All — displays all available history items.
+- Search — displays items from your search history.
+- Navigation — displays items from your navigation history.
+
+3. **Category filters** — filter history items by category. The available category filters depend on the types of items available in your History. For example, you may see categories such as POI, Track, Location, Favorite, or Address.
+
+4. **Settings** — tap the gear icon in the upper-right corner to open the History settings, where you can enable or disable Search history, Navigation history, and Map markers history, back up history as a file, or clear all history.
+
+## Search History {#search-history}
 
 ![History search](@site/static/img/search/history_search_ios.png)
 
-You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again. More details can be found in the [Search History](./search-history.md) article.
+On iOS, you can access your Search History from the dedicated **History** tab in the Search tool. It allows you to search again for previously found places, addresses, or frequently visited places without entering the query again. For more information, see the iOS section of the [Search History](./search-history.md) article.
 
 
 ## Search POI {#search-poi}

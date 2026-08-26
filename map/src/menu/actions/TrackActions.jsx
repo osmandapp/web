@@ -10,7 +10,7 @@ import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import TracksManager, { DEFAULT_GROUP_NAME, GPX_FILE_EXT } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import DownloadTrackDialog from '../../dialogs/tracks/DownloadTrackDialog';
-import AppContext, { isLocalTrack } from '../../context/AppContext';
+import AppContext, { isLocalTrack, isTravelTrack } from '../../context/AppContext';
 import { createTrackFreeName, duplicateTrack, refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo, saveSharedFileToCloud } from '../../manager/ShareManager';
@@ -28,21 +28,25 @@ const TRACK_TYPES = {
     LOCAL: 'local',
     CLOUD: 'cloud',
     SHARE: 'share',
+    TRAVEL: 'travel',
 };
 
 const LOCAL_ACTIONS = [RENAME, DELETE];
 const CLOUD_ACTIONS = [MAKE_VISIBLE, RENAME, DUPLICATE, SHARE, DOWNLOAD, DELETE];
 const SHARE_ACTIONS = [MAKE_VISIBLE, DUPLICATE, DOWNLOAD, DELETE];
+const TRAVEL_ACTIONS = [DOWNLOAD];
 
 const TRACK_ACTION_LISTS = {
     [TRACK_TYPES.LOCAL]: LOCAL_ACTIONS,
     [TRACK_TYPES.CLOUD]: CLOUD_ACTIONS,
     [TRACK_TYPES.SHARE]: SHARE_ACTIONS,
+    [TRACK_TYPES.TRAVEL]: TRAVEL_ACTIONS,
 };
 
 function getTrackType(smartf, ctx) {
     if (smartf?.type === SHARE_TYPE) return TRACK_TYPES.SHARE;
     if (isLocalTrack(ctx)) return TRACK_TYPES.LOCAL;
+    if (isTravelTrack(ctx)) return TRACK_TYPES.TRAVEL;
     return TRACK_TYPES.CLOUD;
 }
 
@@ -57,6 +61,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
     const trackType = getTrackType(smartf, ctx);
     const actionList = TRACK_ACTION_LISTS[trackType];
     const isShared = trackType === TRACK_TYPES.SHARE;
+    const isTravel = trackType === TRACK_TYPES.TRAVEL;
 
     async function createDuplicateTrack() {
         const parts = track.name.split('/');
@@ -197,7 +202,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                 <DownloadTrackDialog
                     dialogOpen={openDownloadDialog}
                     setDialogOpen={setOpenDownloadDialog}
-                    track={track}
+                    track={isTravel ? undefined : track}
                     sharedFile={isShared}
                     setOpenActions={setOpenActions}
                 />

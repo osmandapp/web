@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Обране
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Огляд {#overview}
 
@@ -88,8 +87,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Назва** — Унікальна назва в межах групи (*Обов'язково*).
 - **Адреса** та **Опис** (*Необов'язково*).
-- **Група** — Виберіть з наявної [групи Обраного](#manage-favorites) або створіть нову.
+- **Група** — Виберіть з наявної [групи Обраного](#manage-favorites) або створіть нову. На Android ви також можете вибрати вкладену папку в межах групи або створити нову. Вкладені папки відображаються з повним шляхом (наприклад, *Подорожі* / *Італія* / *Рим*).
 - **Візуальне налаштування** — Іконка, колір, форма можуть відповідати стандартному [вигляду групи](#change-group-appearance) або бути налаштовані індивідуально.
+
+**ПРИМІТКА:** Якщо шар Обране вимкнено в [Налаштувати мапу](../map/configure-map-menu), додавання нової обраної точки автоматично вмикає шар, щоб нова обрана точка стала видимою на мапі.
 
 
 ### Редагувати / Замінити / Видалити {#edit--replace--delete}
@@ -267,7 +268,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Використовуйте ***меню з трьома крапками*** поруч з кожною папкою, щоб керувати групами обраних точок:
 
@@ -275,9 +276,11 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 - **<Translate android="true" ids="pin_folder"/>** — Закріпіть вибрану папку, щоб вона залишалася вгорі списку обраного для швидшого доступу.
 - **<Translate android="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
+- **<Translate android="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
+- **<Translate android="true" ids="shared_string_move"/>** — Перемістіть вибрану папку, включно з усіма обраними точками та вкладеними підпапками, до іншої папки. Поточну папку та її підпапки не можна вибрати як пункт призначення.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Видалити з маркерів на мапі** — Додайте всі обрані точки з папки до *Списку маркерів на мапі* або видаліть їх за потреби для зручності.
 - **<Translate android="true" ids="add_to_a_track"/>** — Додайте всі обрані точки з вибраної папки до треку. Це відкриває екран вибору треку, де ви можете вибрати або створити трек.
-- **<Translate android="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
 
 </TabItem>

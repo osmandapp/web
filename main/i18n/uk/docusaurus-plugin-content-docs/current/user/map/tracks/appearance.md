@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Зовнішній вигляд треку
 ---
@@ -73,9 +73,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Редактор палітри кольорів {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Редактор палітри кольорів](@site/static/img/map/gradient_palettes_1.png) ![Редактор палітри кольорів](@site/static/img/map/gradient_palettes_2.png) 
+<TabItem value="android" label="Android"> 
+
+![Редактор палітри кольорів](@site/static/img/map/gradient_palettes_1.png) ![Редактор палітри кольорів ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Редактор палітри кольорів](@site/static/img/map/gradient_palettes_1_ios.png) ![Редактор палітри кольорів ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Під час забарвлення треку за швидкістю, висотою або нахилом ви можете використовувати власні палітри, щоб визначити, як кольори застосовуються вздовж треку.
 
@@ -87,7 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Торкніться кнопки + на екрані Усі кольори. Доступні два типи палітр:
 - **<Translate android="true" ids="gradient_range_type_relative"/>** — кольори масштабуються автоматично на основі мінімальних і максимальних значень треку.
-- **<Translate android="true" ids="gradient_range_type_fixed"/>** — кольори призначаються конкретним абсолютним числам (наприклад, 50 км/год). Значення можна редагувати вручну. Одиниці відповідають [налаштуванням системи](../../personal/profiles.md#units--formats). Масштаб кольорів не перемасштабовується автоматично при застосуванні до різних треків.
+- **<Translate android="true" ids="gradient_range_type_fixed"/>** — кольори призначається конкретним абсолютним числам (наприклад, 50 км/год). Значення можна редагувати вручну. Одиниці відповідають [налаштуванням системи](../../personal/profiles.md#units--formats). Масштаб кольорів не перемасштабовується автоматично при застосуванні до різних треків.
 
 :::info Pro feature
 Створення власних палітр є [платною функцією *OsmAnd Pro*](../../purchases/index.md) <ProFeature />.
@@ -196,11 +208,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **Висота стіни**  
 Ви можете візуалізувати 3D-трек за висотою та іншими доступними даними в межах треку, або за фіксованою висотою.
 
-- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Висота*, &nbsp;*Швидкість*, &nbsp;*Фіксована висота*. Дані 3D-сенсора: &nbsp;*Частота серцевих скорочень*, &nbsp;*Каденс велосипеда*, &nbsp;*Потужність велосипеда*, &nbsp;*Температура*, &nbsp;*Швидкість велосипеда*.
+- **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Висота*, &nbsp;*Швидкість*, &nbsp;*Фіксована висота*. Дані 3D-сенсора: &nbsp;*Частота серцевих скорочень*, &nbsp;*Каденс велосипода*, &nbsp;*Потужність велосипеда*, &nbsp;*Температура*, &nbsp;*Швидкість велосипеда*.
 
 - **<Translate android="true" ids="vertical_exaggeration"/>**. Якщо візуалізація відбувається за *Висотою* або *Швидкістю*, ви можете масштабувати 3D-дані, щоб отримати більш виразну візуалізацію для 3D-треку в діапазоні від *Немає* до *x3.0*.
 
-- **<Translate android="true" ids="wall_height"/>**. Якщо візуалізація відбувається за *Фіксованою висотою*, встановіть фіксовану висоту для 3D-треку, визначивши його висоту на мапі в діапазоні від *Немає* до *2000 м*.
+- **<Translate android="true" ids="wall_height"/>**. Якщо візуалізація відбувається за *Фіксованою висотою*, встановіть фіксовану висоту для 3D-треку, визначаючи його висоту на мапі в діапазоні від *Немає* до *2000 м*.
 
 - Ви можете поєднати це з [3D-рельєфом](../../plugins/topography.md#3d-relief). Якщо джерелом 3D-даних є не висота, 3D-представлення буде комбінацією висоти рельєфу та вибраних даних, таких як швидкість або частота серцевих скорочень.
 
@@ -246,7 +258,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Змінити вигляд](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Змінити вигляд](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Змінити вигляд](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Змінити вигляд](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,10 +268,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Змініть зовнішній вигляд кількох треків у *Мої місця → Треки*:
 
-- **Змінити вигляд за замовчуванням** (лише Android) — Дозволяє налаштувати налаштування за замовчуванням, які будуть застосовані, коли трек додається до [теки](../../personal/tracks/manage-tracks.md#track-folder).
+- **Змінити вигляд за замовчуванням** — Дозволяє налаштувати налаштування за замовчуванням, які будуть застосовані, коли трек додається до [теки](../../personal/tracks/manage-tracks.md#track-folder).
 - **Скинути до початкових** - відновлює індивідуальні налаштування треку.
 
-- [Режим вибору](../../personal/tracks/manage-tracks.md#selection-mode) - змінює зовнішній вигляд певних треків у вибраній теці або всього списку на вкладці Треки.
+- [Режим вибору](../../personal/tracks/manage-tracks.md#selection-mode) - змінює зовнішній вигляд певних треків у вибраній теці або всього списку на вкладі Треки.
     - Виберіть *меню з трьома крапками* у верхньому правому куті вкладки Треки та торкніться *Вибрати*.
     - Потім торкніться *меню з трьома крапками* у верхній частині екрана та виберіть *Змінити вигляд*.  
 

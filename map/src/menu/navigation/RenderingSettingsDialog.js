@@ -5,7 +5,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AppContext from '../../context/AppContext';
+import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
+import MapContext from '../../context/MapContext';
 import { useTranslation } from 'react-i18next';
 import renderingAttrTrans from '../../resources/renderingAttributesTranslations.json';
 
@@ -19,36 +20,100 @@ function checkSection(newSection) {
 }
 
 const onSelect = (key, opts, setOpts) => (e) => {
-    let nopts = Object.assign({}, opts);
-    nopts[key].value = e.target.value;
+    const nopts = opts.map((opt) => (opt.attrName === key ? { ...opt, value: e.target.value } : opt));
     setOpts(nopts);
 };
 
 const onCheckBox = (key, opts, setOpts) => () => {
-    let nopts = Object.assign({}, opts);
-    if (nopts[key].group) {
-        nopts[key].value = true;
-        Object.values(nopts).forEach((oldOpt) => {
-            if (oldOpt.group === nopts[key].group && key !== oldOpt.key && oldOpt.value) {
-                oldOpt.value = false;
-            }
-        });
+    const selectedOpt = opts.find((opt) => opt.attrName === key);
+    if (!selectedOpt) {
+        return;
+    }
+
+    let nopts;
+    if (selectedOpt.group) {
+        nopts = opts.map((opt) =>
+            opt.group === selectedOpt.group ? { ...opt, value: opt.attrName === selectedOpt.attrName } : opt
+        );
     } else {
-        nopts[key].value = !nopts[key].value;
+        nopts = opts.map((opt) => (opt.attrName === key ? { ...opt, value: !opt.value } : opt));
     }
     setOpts(nopts);
 };
 
+function copyOptions(options = []) {
+    return options.map((opt) => ({ ...opt }));
+}
+
+function getRenderingParams(options) {
+    const params = new URLSearchParams();
+    copyOptions(options)
+        .sort((a, b) => a.attrName.localeCompare(b.attrName))
+        .forEach((opt) => {
+            if (opt.type === 5) {
+                if (opt.value === true) {
+                    params.set(opt.attrName, 'true');
+                }
+                return;
+            }
+            if (opt.value !== undefined && opt.value !== null && opt.value !== '') {
+                params.set(opt.attrName, opt.value);
+            }
+        });
+
+    const query = params.toString();
+    return query ? `?${query}` : '';
+}
+
+function applyRenderingParams(tileURL, options) {
+    const query = getRenderingParams(options);
+    return {
+        ...tileURL,
+        properties: copyOptions(options),
+        renderingParams: query,
+        url: `${tileURL.baseUrl ?? tileURL.url.split('?')[0]}${query}`,
+        ...(tileURL.infoUrl || tileURL.infoBaseUrl
+            ? {
+                  infoUrl: `${tileURL.infoBaseUrl ?? tileURL.infoUrl.split('?')[0]}${query}`,
+              }
+            : {}),
+    };
+}
+
 export default function RenderingSettingsDialog({ setOpenSettings }) {
     const ctx = useContext(AppContext);
+    const mtx = useContext(MapContext);
     const { i18n, t } = useTranslation();
-    const selectedStyle = 'df'; // TODO
-    const [opts, setOpts] = useState(ctx.allTileURLs[selectedStyle].properties);
+    const selectedStyle = ctx.allTileURLs[mtx.tileURL.key]?.properties ? mtx.tileURL.key : 'df';
+    const currentTileURL = mtx.tileURL.key === selectedStyle && mtx.tileURL?.properties ? mtx.tileURL : null;
+    const selectedTileURL = currentTileURL ?? ctx.allTileURLs[selectedStyle];
+    const [opts, setOpts] = useState(() => copyOptions(selectedTileURL?.properties));
     const handleClose = () => {
         setOpenSettings(false);
-        setOpts(ctx.allTileURLs[selectedStyle].properties);
+        setOpts(copyOptions(selectedTileURL?.properties));
     };
     const handleAccept = () => {
+        if (!selectedTileURL) {
+            setOpenSettings(false);
+            return;
+        }
+        const updatedTileURL = applyRenderingParams(selectedTileURL, opts);
+        ctx.setAllTileURLs((prev) => ({
+            ...prev,
+            [selectedStyle]: updatedTileURL,
+        }));
+        if (mtx.tileURL.key === selectedStyle) {
+            mtx.setTileURL(updatedTileURL);
+            const configureMap = {
+                ...ctx.configureMapState,
+                mapStyle: {
+                    tileURL: updatedTileURL,
+                    renderingType: mtx.renderingType,
+                },
+            };
+            updateConfigureMapCache(configureMap);
+            ctx.setConfigureMapState(configureMap);
+        }
         setOpenSettings(false);
     };
     section = '';
@@ -93,7 +158,7 @@ export default function RenderingSettingsDialog({ setOpenSettings }) {
                                         control={
                                             <Checkbox
                                                 key={'check_' + opt.attrName}
-                                                checked={opt.value}
+                                                checked={Boolean(opt.value)}
                                                 onChange={onCheckBox(opt.attrName, opts, setOpts)}
                                             />
                                         }
@@ -104,7 +169,7 @@ export default function RenderingSettingsDialog({ setOpenSettings }) {
                                         <Select
                                             labelId={'routing-param-' + opt.attrName}
                                             label={name}
-                                            value={opt.value ? opt.value : ''}
+                                            value={opt.value ?? ''}
                                             onChange={onSelect(opt.attrName, opts, setOpts)}
                                         >
                                             {opt.possibleValues.map((item) => (

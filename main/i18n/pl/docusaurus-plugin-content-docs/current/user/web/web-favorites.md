@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ Dostępne są następujące czynności:
 - *Udostępnij* - otwiera opcje udostępniania. Możesz wybrać, kto może uzyskać dostęp do tego folderu.
 - *Pobierz* - pobierz wybrany folder ulubionych.
 - *Usuń* - usuń wybrany folder ulubionych.
+
+Po wybraniu folderu ulubionych mapa automatycznie wyśrodkowuje się i dostosowuje poziom powiększenia, aby wyświetlić wszystkie punkty ulubionych z tego folderu w widocznym obszarze mapy.
+
+Możesz również użyć przycisku **Focus**, aby ukryć wszystkie inne ulubione i ślady na mapie, co ułatwia przeglądanie wybranego folderu. Wyłącz tryb Focus, aby przywrócić widoczność innych obiektów mapy.
 
 ### Udostępnianie {#share}
 
@@ -123,7 +127,7 @@ Podgląd wyglądu jest natychmiast aktualizowany zarówno w panelu edycji, jak i
 Oprócz edycji każdy ulubiony zapewnia kilka innych czynności, które można uzyskać z panelu Szczegóły lub z menu trzech kropek (⋮) na liście Ulubione:
 - *Usuń* - usuwa wybrane ulubione na stałe. Ta czynność jest dostępna zarówno z panelu Szczegóły, jak i z menu trzech kropek. Usunięcie wpływa na ulubione na wszystkich urządzeniach po synchronizacji.
 - *Udostępnij* - ta czynność pozwala udostępnić bezpośredni link do miejsca.
-- *Trasa z* - ustawia wybrane ulubione jako punkt startowy do planowania trasy. Panel Trasy otwiera się automatycznie, umożliwiając wybór miejsca docelowego i profilu nawigacji.
+- *Kierunki z* - ustawia wybrane ulubione jako punkt startowy do planowania trasy. Panel Trasy otwiera się automatycznie, umożliwiając wybór miejsca docelowego i profilu nawigacji.
 - *Nawigacja* - ustawia wybrane ulubione jako punkt docelowy. 
 
 

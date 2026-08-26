@@ -1,5 +1,5 @@
 ---
-source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
+source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -106,7 +106,7 @@ Wenn Sie auf Ihrem Gerät kein *Fahrprofil* ausgewählt haben, das Ihrem Fahrzeu
 
 ![Android Auto-Bildschirm](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-on-map.md#points-of-interest-pois), [Favoriten](../personal/favorites.md) oder [Markierungen](../personal/markers.md) als Zielpunkt auswählen. Es ist auch möglich, einen aufgezeichneten oder heruntergeladenen [Track](../personal/tracks/manage-tracks.md) für die Route auszuwählen, die [Suche](../search/index.md) zu verwenden, ein Ziel aus dem Routen-[Verlauf](../search/search-history.md) auszuwählen oder eine *freie Fahrt* zu unternehmen.
+Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-on-map.md#points-of-interest-pois), [Favoriten](../personal/favorites.md), oder [Markierungen](../personal/markers.md) als Zielpunkt auswählen. Es ist auch möglich, einen aufgezeichneten oder heruntergeladenen [Track](../personal/tracks/manage-tracks.md) für die Route auszuwählen, die [Suche](../search/index.md) zu verwenden, ein Ziel aus dem Routen-[Verlauf](../search/search-history.md) auszuwählen oder eine *freie Fahrt* zu unternehmen.
 
 1. Wenn Sie einen bestimmten Ort auf der Karte als Endpunkt wünschen, wählen Sie die entsprechende Kategorie von Punkten aus der Liste aus: [POIs](#poi-categories), [Favoriten](#favorites) oder [Kartenmarkierungen](#map-markers).  
   
@@ -222,6 +222,8 @@ Das Widget **Nächste Abbiegung** zeigt die Entfernung und Art des [nächsten Ab
 
 ### Routeninformationen {#route-info}
 
+![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+
 Routeninformationen bestehen aus:
 
 - [Geschätzte Reisezeit](../widgets/nav-widgets.md#time-to-destination),
@@ -229,6 +231,8 @@ Routeninformationen bestehen aus:
 - [Reiseentfernung](../widgets/nav-widgets.md#distance-to-destination).
 
 Wenn aktiviert, zeigt **[die Widget-Einstellung](#eta-next-stop)** (Routeninformationen) Routendetails für den nächsten Halt ([den Zwischenpunkt](../navigation/setup/route-navigation.md#intermediate-destinations)) an.
+
+Tippen Sie auf die Schaltfläche **X** neben dem Routeninformations-Widget, um die Navigation zu beenden.
 
 
 ### Navigationswarnungen {#navigation-alerts}

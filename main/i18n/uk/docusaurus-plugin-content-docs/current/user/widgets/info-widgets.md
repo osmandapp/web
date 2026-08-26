@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
 sidebar_position: 3
 title:  Інформаційні віджети
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Інформаційні віджети надають швидкий доступ до важливих даних. Це можуть бути дані про швидкість, погоду, місце паркування, дані із зовнішніх датчиків та багато іншого. Віджети можна налаштувати відповідно до ваших конкретних вимог, увімкнувши їх видимість на екрані програми або вимкнувши за потреби.
 
-![Інформаційні віджети](@site/static/img/widgets/informational_widgets_all.png)
+![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
 ## Віджети висоти   {#altitude-widgets}
@@ -180,7 +180,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Віджети середньої швидкості](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Віджети середньої швидкості](@site/static/img/widgets/average_speed_widget_ios_3.png)
+![Середня швидкість](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Середня швидкість](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 

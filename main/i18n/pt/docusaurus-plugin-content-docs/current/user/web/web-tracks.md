@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -41,9 +41,25 @@ A seção Trilhas contém todas as ferramentas e ações relacionadas às trilha
 - Baixar pastas como coleção OSF ou OBF.
 
 
+## Importar Trilhas {#import-tracks}
+
+Você pode importar trilhas GPX para o Planejador Web usando o botão Importar ou arrastando e soltando arquivos GPX diretamente no mapa.
+
+Para importar uma trilha usando arrastar e soltar:
+- Abra a seção Trilhas.
+- Arraste um ou mais arquivos GPX do seu computador.
+- Solte os arquivos no mapa ou em uma pasta de trilha específica.
+
+Quando um arquivo é arrastado sobre o mapa, a área de soltura disponível é destacada. Se você soltar o arquivo diretamente no mapa, ele é importado para a pasta Importar. Se você soltá-lo em uma pasta existente, ele é importado para essa pasta.
+
+Após a importação ser concluída, a trilha aparece na lista de trilhas, é sincronizada com o [OsmAnd Cloud](../personal/osmand-cloud.md) e fica disponível em todos os dispositivos conectados à mesma conta.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Visível no Mapa {#visible-on-the-map}
 
-A visualização **Visible on map** lista todas as trilhas que estão atualmente exibidas no mapa. Qualquer trilha pode ser adicionada a esta lista a partir do painel principal de Trilhas usando a opção **⋮ → Make track visible**.
+A visualização **Visible on map** lista todas as trilhas que estão atualmente exibidas no mapa. Qualquer trilha podem ser adicionada a esta lista a partir do painel principal de Trilhas usando a opção **⋮ → Make track visible**.
 
 As trilhas que estão visíveis no mapa são destacadas em azul, enquanto as trilhas atualmente ocultas aparecem em cinza. Um interruptor ao lado de cada trilha permite que você a mostre ou oculte rapidamente. O botão **Hide all** desativa todas as trilhas visíveis de uma vez.
 
@@ -80,14 +96,18 @@ As trilhas são exibidas apenas se a configuração da Pasta Inteligente for sup
 
 A sincronização de Pastas Inteligentes pode variar dependendo da plataforma e da configuração de sincronização. Para resultados mais consistentes, certifique-se de que a sincronização da Cloud esteja ativada e atualizada em todos os dispositivos.
 
-No menu de três pontos (⋮), você pode baixar a Pasta Inteligente como uma coleção OBF.
+No menu de três pontos (⋮), você pode baixar a Pasta Inteligente como uma coleção OBF, renomeá-la ou excluí-la.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Trilhas na Nuvem {#cloud-tracks}
 
 As trilhas GPX que você tem no [OsmAnd Cloud](../personal/osmand-cloud.md) estarão disponíveis para exibição e edição após o login. Apenas para usuários **Pro** <ProFeature/> e para usuários [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que podem baixar seus dados mesmo após o vencimento da assinatura Pro).
+
+Ao selecionar uma trilha, o mapa centraliza automaticamente e ajusta o nível de zoom para exibir toda a trilha na área visível do mapa.
+
+Você também pode usar o botão **Focus** para ocultar todos os outros favoritos e trilhas no mapa, facilitando a revisão da trilha selecionada. Desative o modo Focus para restaurar a visibilidade de outros objetos do mapa.
 
 Os seguintes recursos estão disponíveis após escolher uma trilha na nuvem:
 - *Information* - exibindo dados da trilha.

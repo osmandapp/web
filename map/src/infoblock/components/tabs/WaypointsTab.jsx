@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState, useRef } from 'react';
-import AppContext, { isLocalTrack } from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isTravelTrack } from '../../../context/AppContext';
 import { stripHtml } from '../../../frame/components/editor/htmlUtils';
 import {
     Box,
@@ -25,6 +25,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
 import { ReactComponent as EmptyIcon } from '../../../assets/icons/ic_action_track_disabled.svg';
 import styles from '../../../menu/errors/errors.module.css';
+import { useTranslation } from 'react-i18next';
 
 // distinct component
 const WaypointGroup = ({
@@ -256,6 +257,7 @@ const WaypointRow = ({ point, index, ctx }) => {
 
 export default function WaypointsTab() {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const hasWaypoints = !!ctx.selectedGpxFile?.wpts && !isEmpty(ctx.selectedGpxFile.wpts);
 
     function deleteAllWpts() {
@@ -415,12 +417,14 @@ export default function WaypointsTab() {
                     </Icon>
                     <Box className={styles.info}>
                         <ListItemText disableTypography={true} className={styles.title}>
-                            No waypoints yet
+                            {t('web:no_waypoints_yet')}
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
-                            {isLocalTrack(ctx)
-                                ? 'Use the context menu to add a waypoint. You can use "Plan a Route" tool to add waypoint.'
-                                : 'You can use "Plan a Route" tool to add waypoint.'}
+                            {isTravelTrack(ctx)
+                                ? t('web:travel_track_no_points')
+                                : isLocalTrack(ctx)
+                                  ? t('web:add_waypoint_local_hint')
+                                  : t('web:add_waypoint_hint')}
                         </ListItemText>
                     </Box>
                 </Box>

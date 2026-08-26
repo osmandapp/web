@@ -1,5 +1,5 @@
 ---
-source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
+source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
 sidebar_position: 5
 title:  Farbschemata
 ---
@@ -63,7 +63,7 @@ Gehen Sie zu: *Menü → Karten & Ressourcen → Lokal → Farben*
 
 <TabItem value="ios" label="iOS">
 
-![Farbpalette](@site/static/img/personal/color-schemes/palette_ios.png) ![Farbpalette](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Farbpalette](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Farbpalette](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
@@ -71,7 +71,7 @@ Gehen Sie zu: *Menü → Karten & Ressourcen → Lokal → Farben*
 
 Geländedateien (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definieren 3 [Geländedarstellungen](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schummerung, Neigung* und *Höhe*. Für jeden Typ können Sie mehrere Paletten haben, zum Beispiel wird die *Lawinenneigung* standardmäßig bereitgestellt. Weitere Details finden Sie im Artikel [Topographie](../plugins/topography.md#default-color-scheme).
 
-Auf Android können Paletten für *Neigung* und *Höhe* Farbschemata auch direkt in der App mit dem [Farbpaletten-Editor](../plugins/topography.md#modify-color-scheme) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
+Paletten für *Neigung* und *Höhe* Farbschemata können auch direkt in der App mit dem [Farbpaletten-Editor](../plugins/topography.md#modify-color-scheme) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
 
 ### Tracks & Routen {#tracks-routes}
 
@@ -96,7 +96,7 @@ Visualisierungen mit Linienverlauf verwenden Palettendateien (`route_<type_name>
 - Für [Routen](../navigation/guidance/map-during-navigation.md#color): *Geschwindigkeit (`route_speed_default.txt`), Neigung (`route_slope_default.txt`)* und *Höhe (Altitude) (`route_elevation_default.txt`)*.
 - Für [GPX-Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Geschwindigkeit, Neigung, Höchstgeschwindigkeit (`route_maxspeed_default.txt`)* und *Höhe (Altitude)* oder Informationen von *externen Sensoren*.
 
-Auf Android können Paletten auch direkt in der App mit dem [Farbpaletten-Editor](../map/tracks/appearance.md#color-palette-editor) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
+Paletten können auch direkt in der App mit dem [Farbpaletten-Editor](../map/tracks/appearance.md#color-palette-editor) erstellt oder bearbeitet werden. Dies ist eine kostenpflichtige Funktion <ProFeature />.
 
 ### Favoriten & Wegpunkte {#favorites-waypoints}
 

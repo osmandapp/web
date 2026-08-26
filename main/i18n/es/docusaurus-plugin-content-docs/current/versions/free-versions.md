@@ -1,5 +1,5 @@
 ---
-source-hash: ca73d4da43ccd9a90e0877d23a42b93aa4b645b4b92e1233e18e91c36e7c6d2d
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -33,7 +33,7 @@ Fecha de lanzamiento 04/2026:
 - Nuevo Editor de paletas para crear y editar esquemas de color personalizados para la visualización de pistas y terreno.
 - Enrutamiento de bicicleta mejorado considerando el ancho de la bicicleta.
 
-<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.8-5308.apk" />
+<DownloadRelease blog="osmand-android-5-3-released" release="net.osmand-5.3.10-5310.apk" />
 
 ### Versión 5.2 {#version-52}
 
@@ -310,7 +310,7 @@ Fecha de lanzamiento 02/2021:
 Fecha de lanzamiento 09/2020:
 
 - Función "Plan a route" actualizada: permite usar diferentes tipos de navegación por segmento y la inclusión de pistas
-- Nuevo menú "Appearance" para pistas: selecciona color, grosor, muestra flechas de dirección, iconos de inicio/fin
+- Nuevo menú "Appearance" para pistas: selecciona color, groschen, muestra flechas de dirección, iconos de inicio/fin
 - Visibilidad mejorada de los nodos de bicicleta.
 - Las pistas ahora se pueden tocar, tienen menú contextual con información básica.
 - Algoritmos de "Search" mejorados

@@ -15,7 +15,7 @@ import {
     SEARCH_URL,
     liveHash,
 } from '../../manager/GlobalManager';
-import { matchPath, useLocation, useNavigate } from 'react-router-dom';
+import { matchPath, useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
     getCatPoiIconName,
@@ -30,10 +30,12 @@ import EmptyLogin from '../../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import SelectItemBoolean from '../../frame/components/items/SelectItemBoolean';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import useSearchNav from '../../util/hooks/search/useSearchNav';
+import useSpatialSearch from '../../util/hooks/search/useSpatialSearch';
 import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import ExploreMenu from './explore/ExploreMenu';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
@@ -47,7 +49,7 @@ export default function SearchMenu() {
     const [, height] = useWindowSize();
 
     const { navigateToSearchResults } = useSearchNav();
-    const location = useLocation();
+    const { setSpatial } = useSpatialSearch();
 
     const isSearchResultRoute = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL + '*' },
@@ -109,7 +111,10 @@ export default function SearchMenu() {
         const fetchCategorySearchResults = async (searchValue) => {
             if (searchValue) {
                 if (isPoiCategoriesRoute) {
-                    const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
+                    const categoriesResult = await PoiManager.searchPoiCategories(
+                        searchValue.query,
+                        ctx.visibleBounds?.getCenter()
+                    );
                     if (categoriesResult) {
                         const validCategories = Object.values(categoriesResult).filter(
                             (item) => item[CATEGORY_KEY_NAME] !== undefined
@@ -138,6 +143,8 @@ export default function SearchMenu() {
             } else {
                 navigateToSearchResults({ query: searchValue.query });
             }
+        } else {
+            fetchCategorySearchResults(null).then();
         }
 
         function getCategoriesIcons(res) {
@@ -270,6 +277,12 @@ export default function SearchMenu() {
                                             <MenuButton needBackButton={!ctx.searchSettings.showExploreMarkers} />
                                         }
                                         setSearchValue={setSearchValue}
+                                    />
+                                    <SelectItemBoolean
+                                        title={t('search_try_spatial_search_beta')}
+                                        checked={!!ctx.spatialSearch}
+                                        onToggle={setSpatial}
+                                        boldTitle={false}
                                     />
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />

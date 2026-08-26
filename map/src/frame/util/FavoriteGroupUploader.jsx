@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
-import { useMutator } from '../../util/Utils';
+import { cloneTrackObject, useMutator } from '../../util/Utils';
 import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
@@ -14,6 +14,7 @@ import {
 import ImportFavoriteDialog from '../../dialogs/favorites/ImportFavoriteDialog';
 import ImportAsTrackDialog, { hasPoints } from '../../dialogs/favorites/ImportAsTrackDialog';
 import cloneDeep from 'lodash-es/cloneDeep';
+import { CLOUD_TRACK_ACCEPT } from '../../util/hooks/useCloudGpxImport';
 
 export default function FavoriteGroupUploader({ children }) {
     const ctx = useContext(AppContext);
@@ -27,7 +28,7 @@ export default function FavoriteGroupUploader({ children }) {
     function preparedCurrentFile(track, newGroupName) {
         let pointsGroups = cloneDeep(track.pointsGroups);
         let newGroup = pointsGroups[newGroupName];
-        let newTrack = cloneDeep(track);
+        let newTrack = cloneTrackObject(track);
         newTrack.pointsGroups = {};
         newTrack.pointsGroups[newGroupName] = newGroup;
         newTrack.wpts = newTrack.wpts.filter((w) => w.category === newGroupName);
@@ -132,7 +133,7 @@ export default function FavoriteGroupUploader({ children }) {
             <label htmlFor="se-upload-fav-group">
                 <HiddenInput
                     id="se-upload-fav-group"
-                    accept=".gpx, .kmz, .kml"
+                    accept={CLOUD_TRACK_ACCEPT}
                     multiple
                     type="file"
                     onChange={fileSelected}

@@ -1,5 +1,5 @@
 ---
-source-hash: 8c679afd97a48f42407ddc16fa889fb7a3c73c92360c54f09ee97c095a8a58df
+source-hash: 20763908576b5c7c3d5452b861b2dfa49d9babaafa7bb035c0a9e06233ed9895
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -55,9 +55,9 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -139,6 +139,8 @@ Derzeit umfasst das Pro-Abonnement die folgenden Funktionen:
 | [Fahrzeugmetrik-Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Ermöglicht den Anschluss eines OBD-II-Scanners, um detaillierte Fahrzeugdaten in der OsmAnd-App anzuzeigen und die Informationen in Track-Aufzeichnungen zu speichern. Informationen zur Fahrzeuggeschwindigkeit und Motordrehzahl sind für OsmAnd kostenlos verfügbar.  |
 | [Routenlinie anpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Ändern der Farbe und Breite der Routenlinie während der Navigation. |
 | [Farbverlauf anpassen](../../user/plugins/topography.md#modify-color-scheme) | Ermöglicht es Ihnen, das Kartenbild durch Auswählen oder Importieren von Farbverläufen anzupassen. Sie können integrierte Verläufe bearbeiten oder eigene Paletten-Dateien verwenden, um Karten- und Routenfarben zu personalisieren. |
+| [Benutzerdefinierte Paletten erstellen](../../user/map/tracks/appearance.md#color-palette-editor) | Ermöglicht das Erstellen und Bearbeiten von Farbverläufen für die Track-Färbung mit relativen oder festen Werten. Sie können Farbschritte definieren, Werte zuweisen und anpassen, wie Daten (z. B. Geschwindigkeit oder Höhe) entlang des Tracks angezeigt werden. |
+| [Smart Folders – Organisieren nach](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Ermöglicht die Organisation von Tracks in Smart Folders mithilfe erweiterter Gruppierungsparameter wie Datum & Uhrzeit, Entfernung, Dauer, Geschwindigkeit, Höhe & Elevation sowie Sensordaten. Diese Optionen ermöglichen eine detailliertere Track-Kategorisierung und flexible Analyse. |
 
 
 ## Wie man kauft {#how-to-buy}

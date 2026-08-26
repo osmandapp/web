@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title:  مسطرة نصف القطر والمسطرة
 ---
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-متاحة على جميع اللوحات: <Translate android="true" ids="top"/>، <Translate android="true" ids="position_on_map_bottom"/>، <Translate android="true" ids="shared_string_left"/>, و<Translate android="true" ids="shared_string_right"/>.
+متاحة على جميع اللوحات: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, و<Translate android="true" ids="shared_string_right"/>.
 
 ![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-متاحة على جميع اللوحات: <Translate ios="true" ids="shared_string_top"/>، <Translate ios="true" ids="position_on_map_bottom"/>, اليسار، واليمين.
+متاحة على جميع اللوحات: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, اليسار، واليمين.
 
 ![موضع العرض iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
@@ -210,42 +210,44 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ستظهر دوائر نصف القطر بعمق، وهو أمر مفيد بشكل خاص لتخطيط المسارات في المناطق الجبلية أو البيئات الحضرية حيث يكون السياق الرأسي مهمًا.
 
 
+<!--
 ## المسافة بالنقر {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![المسافة بالنقر أندرويد](@site/static/img/widgets/distance_tap_android.png)
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![المسافة بالنقر iOS](@site/static/img/widgets/distance_tap_ios.png)
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-تتيح لك أداة **المسافة بالنقر** قياس المسافات بين النقاط على الخريطة دون استخدام مسطرة نصف القطر أو إنشاء مسار.
+The **Distance by Tap** tool allows you to measure distances between points on the map without using the Radius Ruler or creating a route.
 
-هناك حالتان للاستخدام:
+There are two use cases:
 
-- **المسافة من موقعك إلى نقطة**  
-  انقر في أي مكان على الخريطة وسيظهر خط مستقيم من موقعك الحالي إلى النقطة التي تم النقر عليها، مع تسمية للمسافة. يبقى الخط على الشاشة حتى إذا نقرت في مكان آخر.
+- **Distance from your location to a point**  
+  Tap anywhere on the map and a straight line will appear from your current location to the tapped point, along with a distance label. The line remains on screen even if you tap elsewhere.
 
-- **المسافة بين أي نقطتين**  
-  انقر على نقطتين على الخريطة في وقت واحد (لمس متعدد). يربط خط بين النقطتين، ويتم عرض المسافة المقاسة.
+- **Distance between any two points**  
+  Tap two points on the map simultaneously (multi-touch). A line connects the two points, and the measured distance is displayed.
 
-يمكنك أيضًا تعديل حجم نص تسمية المسافة. اختر بين *<Translate android="true" ids="shared_string_normal"/>* (افتراضي) و*<Translate android="true" ids="shared_string_large"/>* (١٫٥× أكبر). عند اختيار الخيار الكبير، يتم إضافة مسافة إضافية تلقائيًا بين الخط والتسمية لتحسين القراءة. تُطبق التغييرات فورًا دون إعادة تشغيل التطبيق.
+You can also adjust the text size of the distance label. Choose between *<Translate android="true" ids="shared_string_normal"/>* (default) and *<Translate android="true" ids="shared_string_large"/>* (1.5× bigger). When the Large option is selected, extra spacing is automatically added between the line and the label for better readability. Changes apply instantly without restarting the app.
 
 | | |
 |------------|------------|
-| التفعيل |  **أندرويد:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
-| حجم النص | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
-| تنسيق الوحدات | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Text size | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
+| Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## أدلة الفيديو {#video-guides}

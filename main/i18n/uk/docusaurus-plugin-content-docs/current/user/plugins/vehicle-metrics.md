@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title:  Показники автомобіля
 ---
@@ -30,13 +30,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Налаштування OBD](@site/static/img/plugins/obd/obd_overview_2.png)
+![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування OBD](@site/static/img/plugins/obd/obd_overview_ios.png)
+![OBD settings](@site/static/img/plugins/obd/obd_overview_ios.png)
 
 </TabItem>
 
@@ -65,7 +65,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |  |  |
 |--|--|
-|![Підключення OBD](@site/static/img/plugins/obd/obd_connect.png)|![Підключення OBD](@site/static/img/plugins/obd/obd_connect_2.png)|
+|![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
 
 </TabItem>
 
@@ -73,7 +73,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |  |  |
 |--|--|
-|![Підключення OBD](@site/static/img/plugins/obd/obd_connect_ios.png)|![Підключення OBD](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
+|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
 </TabItem>
 
@@ -97,7 +97,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |  |  |
 |--|--|
-|![Налаштування OBD](@site/static/img/plugins/obd/obd_settings.png)|![Налаштування OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
 
 
 </TabItem>
@@ -108,7 +108,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |  |  |
 |--|--|
-|![Налаштування OBD](@site/static/img/plugins/obd/obd_settings_ios.png)|![Налаштування OBD](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
 </TabItem>
 
@@ -143,7 +143,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Тиск пального**. Показує тиск у паливній системі.
 - **Споживання пального**. Розраховує споживання пального автомобілем.
-- **Залишок пального**. Показує рівень пального в автомобілі.
+- **Залишок пального**. Показує рівень пального в автомобіля.
 
 *Інше:*
 
@@ -165,7 +165,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |--|--|
-|![Запис OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Запис OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
+|![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
 
 
 </TabItem>
@@ -176,7 +176,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |--|--|
-|![Запис OBD](@site/static/img/plugins/obd/obd_recording_ios.png)| ![Запис OBD](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
+|![OBD recording](@site/static/img/plugins/obd/obd_recording_ios.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
 
 </TabItem>
 
@@ -207,7 +207,7 @@ OsmAnd застосовує власні назви тегів для показ
 
 | | |
 |--|--|
-|![Налаштування OBD](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![Налаштування OBD](@site/static/img/plugins/obd/obd_widget.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ OsmAnd застосовує власні назви тегів для показ
 
 | | |
 |--|--|
-|![Налаштування OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Налаштування OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

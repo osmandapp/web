@@ -1,5 +1,5 @@
 ---
-source-hash: e551d15240b806ba01f6e04e289cfc8a0058caa9d1dcfeb7002e448e4522c2bf
+source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -50,6 +50,44 @@ Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 </TabItem>
 
 </Tabs>
+
+<!--
+## Overview {#overview}
+
+The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
+
+You can:
+
+- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
+- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
+- Organize widgets in panels (top, bottom, left, right, center).
+- Create multiple pages within side panels, choose size of widgets.
+- Choose row height and toggle widget icons.
+- On Android, customize [widget panel appearance](#widget-panel-appearance).
+
+All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+
+</TabItem>
+
+</Tabs>
+-->
 
 
 ## Paneles de widgets {#widget-panels}
@@ -321,6 +359,8 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
 
 ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Estos ajustes se aplican solo al widget seleccionado.
+
 1. **Opciones de tamaño de widget** (*para todos los paneles*):  
     Puede personalizar el tamaño de los **Widgets simples** en los **paneles superior, inferior, izquierdo y derecho**:
 
@@ -358,6 +398,39 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
     - Toque el ajuste *Tamaño* y seleccione uno de los tamaños disponibles.
     - Cambie a la posición de apagado, en el campo *Mostrar icono*.
 
+
+<!--
+## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+
+1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+
+2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+
+3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+
+:::tip Purchase
+Custom widget colors is a [paid feature](../purchases/index.md).  
+:::
+
+4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+
+5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+
+6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+
+7. **Copy appearance settings:**
+
+    - Tap the ⋮ menu in the upper-right corner.
+    - Select Copy from.
+    - Choose one of the following options: *Another profile* or *One of the other panels*.
+
+-->
 
 ## Personalización de paneles {#panels-customization}
 
@@ -641,7 +714,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *�
 </Tabs>
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
-- [Distancia por toque](../widgets/radius-ruler.md#distance-by-tap). Da la capacidad de medir la distancia desde su posición hasta el punto seleccionado.
+- [Distancia por toque](#distance-by-tap). [⬇](#distance-by-tap)
 - [Velocímetro](../widgets/info-widgets.md#speedometer). Muestra la velocidad actual basada en datos de GPS y la velocidad limitada basada en [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed). Los datos mostrados también dependen de la configuración de [Tolerancia de límite de velocidad](../navigation/guidance/voice-navigation.md#speed-limit) de OsmAnd.
 
 
@@ -670,6 +743,37 @@ Le permite establecer la ubicación del cursor en *[Mi ubicación](../map/intera
 - **<Translate android="true" ids="position_on_map_center"/>**. El cursor siempre se posiciona en el centro de la pantalla.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mi ubicación* se coloca ligeramente por debajo del centro de la pantalla. Este modo le permite ver más información del mapa por delante de su movimiento, lo cual es útil durante la navegación.
 - **<Translate android="true" ids="shared_string_automatic"/>**. Coloca *Mi ubicación* dependiendo de la *[Orientación del mapa](../map/interact-with-map.md#map-orientation-modes)* (*Inferior* - para la dirección del movimiento, *Centro* - para todos los demás).
+
+
+### Distancia por toque {#distance-by-tap}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Distancia por toque Android](@site/static/img/widgets/distance_tap_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Distancia por toque iOS](@site/static/img/widgets/distance_tap_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+La herramienta **Distancia por toque** le permite medir distancias entre puntos del mapa sin utilizar la [Regla de radio](../widgets/radius-ruler.md#radius-ruler-widget) ni crear una ruta.
+
+Existen dos casos de uso:
+
+- **Distancia desde su ubicación hasta un punto**  
+  Toque cualquier lugar del mapa y aparecerá una línea recta desde su ubicación actual hasta el punto tocado, junto con una etiqueta de distancia. La línea permanece en pantalla incluso si toca en otro lugar.
+
+- **Distancia entre dos puntos cualesquiera**  
+  Toque dos puntos del mapa simultáneamente (multitoque). Una línea conecta los dos puntos y se muestra la distancia medida.
+
+También puede ajustar el tamaño del texto de la etiqueta de distancia. Vaya a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>*. Elija entre *<Translate android="true" ids="shared_string_normal"/>* (predeterminado) y *<Translate android="true" ids="shared_string_large"/>* (1,5× más grande). Cuando se selecciona la opción Grande, se añade automáticamente un espacio adicional entre la línea y la etiqueta para mejorar la legibilidad. Los cambios se aplican al instante sin reiniciar la aplicación.
 
 
 ## Acciones {#actions}

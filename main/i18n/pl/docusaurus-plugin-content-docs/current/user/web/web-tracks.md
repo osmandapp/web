@@ -1,5 +1,5 @@
 ---
-source-hash: db70d151504e034314031d79cbef9cd64a6f7a15179603897056aa6b65a3d432
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -41,11 +41,27 @@ Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne
 - Pobieranie folderów jako kolekcja OSF lub OBF.
 
 
+## Import tras {#import-tracks}
+
+Możesz importować trasy GPX do Web Plannera za pomocą przycisku Import lub przeciągając i upuszczając pliki GPX bezpośrednio na mapę.
+
+Aby zaimportować trasę metodą przeciągnij i upuść:
+- Otwórz sekcję Trasy.
+- Przeciągnij jeden lub więcej plików GPX z komputera.
+- Upuść pliki na mapę lub do określonego folderu tras.
+
+Gdy plik jest przeciągany nad mapę, dostępny obszar upuszczania jest podświetlony. Jeśli upuścisz plik bezpośrednio na mapę, zostanie zaimportowany do folderu Import. Jeśli upuścisz go do istniejącego folderu, zostanie zaimportowany do tego folderu.
+
+Po zakończeniu importu trasa pojawia się na liście tras, jest synchronizowana z [OsmAnd Cloud](../personal/osmand-cloud.md) i staje się dostępna na wszystkich urządzeniach podłączonych do tego samego konta.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Widoczne na mapie {#visible-on-the-map}
 
 Widok **Widoczne na mapie** zawiera listę wszystkich tras, które są obecnie wyświetlane na mapie. Dowolną trasę można dodać do tej listy z głównego panelu Tras, korzystając z opcji **⋮ → Uczyń trasę widoczną**.
 
-Trasy widoczne na mapie są podświetlone na niebiesko, natomiast trasy obecnie ukryte pojawiają się na szaro. Przełącznik obok każdej trasy pozwala szybko ją pokazać lub ukryć. Przycierz **Ukryj wszystkie** wyłącza wszystkie widoczne trasy naraz.
+Trasy widoczne na mapie są podświetlone na niebiesko, natomiast trasy obecnie ukryte pojawiają się na szaro. Przełącznik obok każdej trasy pozwala szybko ją pokazać lub ukryć. Przycisk **Ukryj wszystkie** wyłącza wszystkie widoczne trasy naraz.
 
 Pod główną listą sekcja **Ostatnio widoczne** wyświetla trasy, które były wcześniej pokazywane na mapie. Ułatwia to ponowne włączenie trasy bez ponownego wyszukiwania jej w folderach lub w OsmAnd Cloud.
 
@@ -80,16 +96,20 @@ Trasy są wyświetlane tylko wtedy, gdy konfiguracja folderu inteligentnego jest
 
 Synchronizacja folderów inteligentnych może się różnić w zależności od platformy i konfiguracji synchronizacji. Aby uzyskać najbardziej spójne wyniki, upewnij się, że synchronizacja Chmury jest włączona i aktualna na wszystkich urządzeniach.
 
-W menu z trzema kropkami (⋮) możesz pobrać folder inteligentny jako kolekcję OBF.
+W menu z trzema kropkami (⋮) dostępne są dodatkowe działania dla folderu inteligentnego. Możesz *Pobrać jako OSF*, *Pobrać jako kolekcję OBF*, *Zmień nazwę* lub *Usuń* folder.
 
-![Smart Folders](@site/static/img/web/smart_folder.png) ![Smart Folders](@site/static/img/web/smart_folder_menu.png)
+![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Trasy w chmurze {#cloud-tracks}
 
 Trasy GPX, które masz w [OsmAnd Cloud](../personal/osmand-cloud.md), będą dostępne do wyświetlania i edycji po zalogowaniu. Tylko dla użytkowników **Pro** <ProFeature/> oraz dla użytkowników [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (którzy mogą pobrać swoje dane nawet po wygaśnięciu subskrypcji Pro).
 
-Po wybraniu trasy w chmurze dostępne są następujące funkcje:
+Po wybraniu trasy mapa automatycznie centruje się i dostosowuje poziom powiększenia, aby wyświetlić całą trasę w obszarze widocznym na mapie.
+
+Możesz również użyć przycisku **Focus**, aby ukryć wszystkie inne punkty ulubione i trasy na mapie, co ułatwia przeglądanie wybranej trasy. Wyłącz tryb Focus, aby przywrócić widoczność innych obiektów mapy.
+
+Po wybraniu trasy z chmury dostępne są następujące funkcje:
 - *Informacje* - wyświetlanie danych trasy.
 - *Wysokość* - wykres wysokości.
 - *Prędkość* - wykres prędkości.
@@ -97,7 +117,7 @@ Po wybraniu trasy w chmurze dostępne są następujące funkcje:
 - *Przelicz Wysokość (Satelita)* - przelicza wartości wysokości dla wybranej trasy i wyświetla je na wykresie wysokości.
 - *Typ drogi* - dzieli trasę na segmenty według klasyfikacji dróg.
 - *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż trasy.
-- *Gładkość* - wyświetla gładkość segmentów na podstawie tagów OSM.
+- *Gładkość* - wyświetla gładność segmentów na podstawie tagów OSM.
 
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
 

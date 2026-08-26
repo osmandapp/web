@@ -1,8 +1,9 @@
 ---
-source-hash: cab83698857aced02ef3ef257f82a8843950da7227a14609c1fd937c86c5c499
+source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
 sidebar_position: 2
 title:  General
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,12 +13,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 Problemas generales relacionados con diversas funciones de OsmAnd.
 
 ## Consumo de batería {#battery-consumption}
 
-### Parece que OsmAnd consume demasiada batería {#osmand-seems-to-use-up-too-much-battery-power}
+### OsmAnd parece consumir demasiada batería {#osmand-seems-to-use-up-too-much-battery-power}
 
 Ha habido informes de usuarios sobre un consumo excesivo de batería por parte de OsmAnd, con casos en los que OsmAnd fue responsable de hasta el 90% del uso de la batería. Sin embargo, hemos realizado muchas pruebas y no hemos podido reproducir dichos resultados.
 
@@ -73,7 +73,22 @@ Para eliminar el historial de búsqueda en OsmAnd:
 3. Seleccione los resultados que desea eliminar, o use la opción *Seleccionar todo* en la esquina superior izquierda para eliminar todos los resultados.
 4. Toque el icono de la *Papelera* en la esquina superior derecha para confirmar la eliminación.
 
-Para instrucciones más detalladas sobre la funcionalidad de búsqueda, puede consultar [esta guía](../search/search-history.md).
+Para instrucciones más detallarias sobre la funcionalidad de búsqueda, puede consultar [esta guía](../search/search-history.md).
+
+
+## Interfaz {#interface}
+
+### ¿Por qué los botones del mapa, los widgets o el texto son demasiado grandes? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+
+Si los botones del mapa, los widgets o la regla del mapa aparecen demasiado grandes después de ajustar el tamaño de visualización en los ajustes del sistema Android, puede estar relacionado con la forma en que OsmAnd adapta la interfaz a la configuración actual de la pantalla.
+
+En algunos dispositivos, reducir la densidad de pantalla o cambiar el tamaño de visualización puede afectar el tamaño de los elementos de la interfaz, especialmente en dispositivos de pantalla grande y tabletas.
+
+Las versiones recientes de OsmAnd ya no aplican escalado automático adicional para los dispositivos detectados como tabletas. Los elementos de la interfaz ahora siguen más de cerca los ajustes de visualización del sistema Android.
+
+Si desea ajustar manualmente el tamaño de los botones del mapa, utilice los ajustes de [Apariencia predeterminada](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menú → Configurar pantalla → Botones → Botones predeterminados → menú de tres puntos → Apariencia*. Allí puede establecer un Tamaño personalizado, Radio de esquina y Opacidad de fondo para todos los botones predeterminados a la vez.
+
+Si la interfaz sigue apareciendo más grande de lo esperado, consulte *Ajustes del sistema Android → Pantalla → Tamaño de pantalla y texto* y ajuste los ajustes de visualización según sea necesario.
 
 
 ## Otros {#other}

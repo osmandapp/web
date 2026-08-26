@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useContext } from 'react';
-import { Box, Divider, IconButton, List, ListItemButton, ListItemIcon, Typography } from '@mui/material';
+import { Box, IconButton, List, ListItemButton, ListItemIcon, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { ReactComponent as ArrowUpIcon } from '../../../../assets/icons/ic_action_arrow_up.svg';
+import { ReactComponent as ArrowDownIcon } from '../../../../assets/icons/ic_action_arrow_down.svg';
 import AppContext from '../../../../context/AppContext';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
@@ -12,12 +12,18 @@ import { buildGroupTree } from '../FavoriteGroupTree';
 import { ReactComponent as FolderIcon } from '../../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as FolderAddIcon } from '../../../../assets/icons/ic_action_folder_add_v2.svg';
 import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
+import DividerWithMargin from '../../../../frame/components/dividers/DividerWithMargin';
+import IconBtn from '../../../../frame/components/btns/IconBtn';
 import AddFolderDialog from '../AddFolderDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import values from 'lodash-es/values';
 import SmallRadio from '../../../../frame/components/items/SmallRadio';
 import styles from './folderSelectionPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
+
+const ROW_PADDING_LEFT = 4;
+const LEVEL_INDENT = 24;
+const ARROW_BOX_WIDTH = 36;
 
 export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTrackWpt, onSelect, onClose }) {
     const ctx = useContext(AppContext);
@@ -79,7 +85,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                 <ListItemButton
                     id={`se-fav-group-item-${folder.name}`}
                     className={styles.folderItem}
-                    style={{ paddingLeft: 4 + level * 24 }}
+                    style={{ paddingLeft: rowPaddingLeft(level) }}
                     onMouseEnter={() => setHoveredItem(folder.name)}
                     onMouseLeave={() => setHoveredItem(null)}
                     onClick={() => !isVirtual && onSelect(folder.group ?? { name: folder.name })}
@@ -87,25 +93,18 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                 >
                     <Box className={styles.arrowBox}>
                         {hasSubfolders && (
-                            <IconButton
+                            <IconBtn
                                 id={`se-fav-group-expand-${folder.name}`}
                                 size="small"
-                                className={styles.arrowBtn}
-                                sx={{
-                                    color: isOpen ? 'var(--selected-color)' : 'var(--svg-icon-color)',
-                                    '&:hover': {
-                                        color: 'var(--selected-color)',
-                                        backgroundColor: '#f5f5f5',
-                                    },
-                                }}
+                                active={isOpen}
                                 onClick={(e) => toggleExpanded(folder.name, e)}
                             >
                                 {isOpen ? (
-                                    <KeyboardArrowDownIcon className={styles.arrowIcon} />
+                                    <ArrowDownIcon className={styles.arrowIcon} />
                                 ) : (
-                                    <KeyboardArrowRightIcon className={styles.arrowIcon} />
+                                    <ArrowUpIcon className={styles.arrowIcon} />
                                 )}
-                            </IconButton>
+                            </IconBtn>
                         )}
                     </Box>
                     <ListItemIcon className={styles.folderIconBox}>
@@ -115,8 +114,9 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                         {folder.displayName}
                     </Typography>
                     {isHovered && !isTrackWpt ? (
-                        <IconButton
+                        <IconBtn
                             id={`se-add-folder-inside-${folder.name}`}
+                            size="small"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 handleAddFolder(folder.group ?? { name: folder.name });
@@ -125,7 +125,7 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                             className={styles.addFolderInsideBtn}
                         >
                             <FolderAddIcon />
-                        </IconButton>
+                        </IconBtn>
                     ) : (
                         !isVirtual &&
                         folder.size != null && <Typography className={styles.folderCount}>{folder.size}</Typography>
@@ -143,12 +143,15 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
                 </ListItemButton>
                 {hasSubfolders &&
                     isOpen &&
-                    folder.subfolders.map((subfolder, idx) => (
-                        <React.Fragment key={subfolder.name}>
-                            {idx > 0 && <Divider />}
-                            {renderFolder(subfolder, level + 1)}
-                        </React.Fragment>
-                    ))}
+                    folder.subfolders.map((subfolder, idx) => {
+                        const dividerLevel = idx === 0 ? level : level + 1;
+                        return (
+                            <React.Fragment key={subfolder.name}>
+                                <DividerWithMargin margin={`${folderIconOffset(dividerLevel)}px`} />
+                                {renderFolder(subfolder, level + 1)}
+                            </React.Fragment>
+                        );
+                    })}
             </Box>
         );
     }
@@ -201,6 +204,14 @@ export default function FolderSelectionPanel({ selectedGroup, defaultGroup, isTr
             )}
         </>
     );
+}
+
+function rowPaddingLeft(level) {
+    return ROW_PADDING_LEFT + level * LEVEL_INDENT;
+}
+
+function folderIconOffset(level) {
+    return rowPaddingLeft(level) + ARROW_BOX_WIDTH;
 }
 
 function buildTree(groups, isTrackWpt, t) {

@@ -1,5 +1,5 @@
 ---
-source-hash: 3c93a7501dbeca9b750b21bdc3ad146d7f428380acd05862b59218f040b80c36
+source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Bilgi panelinin üst kısmında, rotanın adını ve onu işaretlemek için kullanılan sembolü (*yalnızca Android*) görebilirsiniz. Rota adı, [Seçenekler menüsündeki](#options) yeniden adlandırma işlevi kullanılarak değiştirilebilir. Bazı rotalar (çoğunlukla *[Seyahat rehberleri](../../plan-route/travel-guides.md#manage-as-gpx-track)*), *Rota adı* altında kısa bir *[açıklamaya](#description-and-info)* ve (veya) bir resme sahip olabilir. Bir ok, [Konumumdan](../../map/interact-with-map.md#my-location-and-zoom) *rotanın en yakın noktasına olan yönü* gösterir.  
+Bilgi panelinin üst kısmında, rotanın adını ve onu işaretlemek için kullanılan sembolü (*yalnızca Android*) görebilirsiniz. Rota adı, [Seçenekler menüsündeki](#options) yeniden adlandırma işlevi kullanılarak değiştirilebilir. Bazı rotalar (çoğunlukla *[Seyahat rehberleri](../../plan-route/travel-guides.md#manage-as-gpx-track)*), *Rota adı* altında kısa bir *[açıklamaya](#description-and-info)* ve (veya) bir resme sahip olabilir. Bir ok, [Konumumdan](../../map/interact-with-map.md#my-position-and-zoom) *rotanın en yakın noktasına olan yönü* gösterir.  
 
 Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 
@@ -248,9 +248,9 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 
 OsmAnd'daki *Etkinlik* özelliği, daha fazla analiz ve klasörlerde düzenleme için kaydedilen GPX rotalarını belirli etkinliklerle etiketlemenize olanak tanır.
 
-- [GPX rotaları için etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Kaydedilen rotalar ve [Rota planla](../../plan-route/create-route.md) aracılığıyla kaydedilen rotalar, oluşturuldukları profile dayalı olarak otomatik olarak bir etkinlik türü alır, bu da daha sonra kategorize etmenize ve filtrelemenize yardımcı olur. Gerekirse etkinliği manuel olarak değiştirebilirsiniz.
+- [GPX rotaları için etkinlik etiketleri](#description-and-info). [Kaydedilen rotalar](../../plugins/trip-recording.md#recording-settings) ve [Rota planla](../../plan-route/create-route.md) aracılığıyla kaydedilen rotalar, oluşturuldukları profile dayalı olarak otomatik olarak bir etkinlik türü alır, bu da daha sonra kategorize etmenize ve filtrelemenize yardımcı olur. Gerekirse etkinliği manuel olarak değiştirebilirsiniz.
 - [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX rotalarını etkinliğe göre filtreleyebilirsiniz, bu da bisiklet veya yürüyüş rotaları gibi belirli kayıt türlerini bulmaya odaklanmanızı sağlar.
-- [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün Rotalar sekmesindeki seçim modunu kullanarak seçilen klasörler veya rotalar için etkinlik türünü değiştirebilirsiniz.
+- [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün Rotalar tabındaki seçim modunu kullanarak seçilen klasörler veya rotalar için etkinlik türünü değiştirebilirsiniz.
 - **Etkinlik listesi**. Etkinlik kategorileri ve grupları OsmAnd'ın kaynaklarında tanımlanmıştır. Geliştiriciler ve katkıda bulunanlar için etkinlik listesi, mevcut etkinlik gruplarını ve türlerini detaylandıran [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) adresinde yapılandırılmış bir formatta tutulur.
 
 
@@ -398,7 +398,7 @@ Yol noktaları, haritada bulunan nokta türlerinden biridir. Genel olarak, GPX d
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
 
 </TabItem>
 
@@ -700,7 +700,7 @@ Bu seçenek, rotanızın her aralığı için ortalama, minimum ve maksimum kalp
 
 Bu filtre, gereksiz veya yanlış verileri hariç tutarak rota istatistiklerinizi iyileştirmenize olanak tanır. Rota parametrelerinize uymayan rota noktalarını filtreleyebilir ve sonuç olarak bozulma veya kayıt gürültüsü olmadan daha doğru bir grafik ve görsel rota çizgisi elde edebilirsiniz. *Yumuşatma*, *Hız*, *Yükseklik* ve *GPS Hassasiyeti* gibi filtrelerle değişiklikler yapabilirsiniz, bu filtreler filtrelenmiş noktaları mevcut rotadan gizler. Ayrıca, *İstatistikler* menüsünde, değişikliklerinizin grafikte nasıl görüntülendiğini kaydetmeden önce kontrol edebilirsiniz. Ayrıca, orijinalini kaydetmeden bu filtrede rotanızın *Orijinale sıfırla* ve *Kopya olarak kaydet* seçeneklerini de kullanabilirsiniz.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

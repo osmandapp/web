@@ -1,5 +1,5 @@
 ---
-source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
+source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
 sidebar_position: 6
 title:  Moje miejsca
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Moje miejsca** to centralne miejsce w aplikacji OsmAnd do zarządzania i dostosowywania wszystkich danych osobowych. Możesz użyć tej sekcji do organizowania [punktów ulubionych](#favorites) oznaczonych jako ważne lub często odwiedzane. Zakładka [Trasy](#tracks) pozwala na przeglądanie, importowanie, nagrywanie i tworzenie plików GPX, co pomaga w prowadzeniu szczegółowej historii tras i podróży. Możesz również zarządzać swoimi [edycjami OpenStreetMap](#openstreetmap-edits), co ułatwia wnoszenie wkładu w ulepszanie i aktualizowanie map. Wtyczka [Notatki audio/wideo](#audiovideo-notes) i widżety pozwalają użytkownikom Androida na tworzenie i zapisywanie notatek multimedialnych związanych z konkretnymi lokalizacjami, dodając kontekst do ich podróży.
+**Moje miejsca** to centralne miejsce w aplikacji OsmAnd do zarządzania i dostosowywania wszystkich danych osobowych. Możesz użyć tej sekcji do organizowania [punktów ulubionych](#favorites) oznaczonych jako ważne lub często odwiedzane. Zakładka [Trasy](#tracks) pozwala na przeglądanie, importowanie, nagrywanie i tworzenie plików GPX, co pomaga w prowadzeniu szczegółowej historii tras i podróży. Możesz również zarządzać swoimi [edycjami OpenStreetMap](#openstreetmap-edits), co ułatwia wnoszenie wkładu w ulepszanie i aktualizowanie map. Wtyczka [Notatki audio/wideo](#audiovideo-notes) i widżety pozwalają użytkownikom Androida na tworzenie i zapisywanie notatek multimedialnych związanych z konkretnymi lokalizacjami, dodając kontekst do ich podróży. Na iOS Moje miejsca zapewniają również dostęp do zapisanych [Przewodników turystycznych](#travel-guides), umożliwiając organizowanie i szybkie otwieranie zapisanych treści podróżniczych.
 
 ## Menu Moje miejsca {#my-places-menu}
 
@@ -28,17 +28,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje miejsca*  
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Moje miejsca Android](@site/static/img/personal/my_places_android_new.png) ![Menu Moje miejsca Android](@site/static/img/personal/my_places_menu_android_new.png)
+![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu"/> → Moje miejsca*  
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![Moje miejsca iOS](@site/static/img/personal/my_places_ios_new.png)  ![Menu Moje miejsca iOS](@site/static/img/personal/my_places_menu_ios_new.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
 
 </TabItem>
 
@@ -54,13 +54,17 @@ Moje miejsca są zorganizowane według kategorii. Wybierz zakładkę, aby zarzą
 
 <TabItem value="android" label="Android">
 
-![Menu Ulubione Android](@site/static/img/personal/favorites_menu_android.png)
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Ulubione iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
 
 </TabItem>
 
@@ -90,17 +94,17 @@ Aby uzyskać pełne instrukcje, zapoznaj się z artykułem [Ulubione](../persona
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Moje miejsca z trasami w Androidzie](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Moje miejsca z trasami w iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
 
 </TabItem>
 
@@ -130,7 +134,7 @@ Aby uzyskać kompleksowe wskazówki, zobacz artykuł [Zarządzanie trasami](../p
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Udostępnij](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -138,7 +142,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Udostępnij](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
 
 </TabItem>
 
@@ -151,7 +155,7 @@ Zapoznaj się z [wtyczką Edycja OSM](../plugins/osm-editing.md), aby uzyskać i
 <!--
 1. ***Przyciski akcji***. Możesz użyć *przycisków akcji* na ekranie Moje miejsca, aby zarządzać listą notatek:  
 
-    ![Udostępnij](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
+    ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
 
     - **Prześlij pliki do OSM** — Wyślij swoje notatki i dane do OpenStreetMap, aby wnieść wkład w społeczność.
 
@@ -179,16 +183,16 @@ Zapoznaj się z [wtyczką Edycja OSM](../plugins/osm-editing.md), aby uzyskać i
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Menu Moje miejsca wtyczki audio-wideo Trzy akcje](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
 Wtyczka **Notatki audio/wideo** umożliwia tworzenie notatek multimedialnych powiązanych z określonymi lokalizacjami na mapie. Notatki te są przechowywane w **Moich miejscach** w zakładce **Notatki A/V**.
 
 Aby uzyskać więcej informacji, odwiedź stronę [wtyczki Notatki audio/wideo](../plugins/audio-video-notes.md).
 
 <!--
-1. ***Przyciski akcji***. Możesz użyć *przycisków akcji* na dole ekranu Moje miejsca, aby zarządzać listą notatek:  
+1. ***Przyciski akcji***. Możesz użyć *przycisków akcji* na dole ekranu Moje miejsc, aby zarządzać listą notatek:  
 
-    ![Udostępnij](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
+    ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
     - **<Translate android="true" ids="shared_string_sort"/>** — Otwiera wybór metod sortowania, *Według typu* lub *Według daty*, a po wybraniu sortuje listę odpowiednio.
 
@@ -223,13 +227,13 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 ### Udostępnij z punktami trasy GPX {#share-with-gpx-waypoints}
 
-![Udostępnij](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
+![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
 Możesz udostępnić notatki wybrane jako punkty trasy w menu *Moje miejsca*, dodając do nich [dane GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) za pomocą przycisku **Udostępnij** na dole ekranu zakładki *Notatki A/V*.
 
 ### Zarządzaj pojedynczą notatką {#manage-single-note}
 
-![Menu z trzema kropkami](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
 Możesz zarządzać określonymi notatkami audio, wideo lub zdjęciami za pomocą *menu z trzema kropkami* obok każdej notatki:
 
@@ -240,11 +244,22 @@ Możesz zarządzać określonymi notatkami audio, wideo lub zdjęciami za pomoc�
 - **<Translate android="true" ids="shared_string_delete"/>**. Wybrane notatki są trwale usuwane z kolekcji.
 -->
 
+### Przewodniki turystyczne (iOS) {#travel-guides}
+
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+
+![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
+
+Sekcja **Podróże** zawiera zapisane przewodniki turystyczne i artykuły zapisane do użytku offline. Możesz szybko otwierać, organizować i zarządzać zapisanymi treściami podróżniczymi z Moich miejsc. Sekcja Podróże jest wyświetlana tylko wtedy, gdy zapisano więcej niż jeden przewodnik turystyczny.
+
+Aby uzyskać szczegółowe informacje, zapoznaj się z artykułem [Przewodniki turystyczne](../plan-route/travel-guides.md).
+
 ## Powiązane artykuły {#related-articles}
 
 - [Zarządzanie trasami](../personal/tracks/manage-tracks.md#import--export-track)
 - [Ulubione](../personal/favorites.md)
 - [Edycja OpenStreetMap](../plugins/osm-editing.md)
 - [Notatki audio/wideo](../plugins/audio-video-notes.md)
+- [Przewodniki turystyczne](../plan-route/travel-guides.md)
 - [Historia wyszukiwania](../search/search-history.md#export-and-share)
 - [Schematy palet kolorów](../personal/color-palette-schemes.md)

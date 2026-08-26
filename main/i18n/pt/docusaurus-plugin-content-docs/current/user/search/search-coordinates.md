@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title: Pesquisar Coordenadas
 ---
@@ -115,7 +115,7 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 - *Regras de entrada*. As coordenadas consistem em uma zona MGRS, um quadrado e mais dois dígitos indicando os deslocamentos leste e norte.
 - *Mais comum*. O formato MGRS é amplamente utilizado em navegação e comunicações militares, e também pode ser útil para entusiastas de atividades ao ar livre e caminhantes.
 
-### Swiss Grid {#swiss-grid}
+### Swiss Grid (somente Android) {#swiss-grid}
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,8 +128,30 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
     - CH1903+ inclui correções para contabilizar deslocamentos nas coordenadas causados por mudanças nos movimentos tectónicos na Suíça.
 - *Mais comum*. O Swiss Grid (CH1903) e o Swiss Grid (CH1903+) são usados na Suíça para medições geodésicas, cartografia, sistemas de informações geográficas e construção e engenharia. Esses formatos fornecem um sistema de coordenadas local específico para a Suíça.
 
+### Sistema de Localizador Maidenhead (somente Android) {#maidenhead-locator-system}
+
+![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Este é um sistema de geocódigo usado principalmente por operadores de rádio amador. Codifica localizações geográficas em uma sequência curta de letras e dígitos, tornando-o conveniente para identificar posições e trocar informações de localização. Um exemplo de coordenadas no formato Maidenhead é KN29AS 19CX. O primeiro par de letras identifica um campo grande, seguido por dígitos e pares de letras adicionais que aumentam a precisão da localização. Pode ler mais sobre o Sistema de Localizador Maidenhead [aqui](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+- *Regras de entrada*. As coordenadas consistem em pares alternados de letras e dígitos. Localizadores mais longos fornecem maior precisão posicional.  
+- *Mais comum*. O Sistema de Localizador Maidenhead é amplamente utilizado por operadores de rádio amador para localização de estações, comunicação por rádio e concursos.
 
 Para cada perfil separadamente, pode definir um formato de coordenada diferente. Para fazer isso, vá para *Configurações gerais → [Formato de coordenadas](../personal/profiles.md#units--formats)*.
+
+
+## Personalizar formato de coordenadas (somente Android) {#customize-coordinate-format}
+
+![Pesquisar Coordenadas Android](@site/static/img/search/customising_format.webp) ![Pesquisar Coordenadas Android](@site/static/img/search/searching_format.webp)
+
+Pode personalizar a lista de formatos de coordenadas disponíveis para o perfil atual.  
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+Neste ecrã pode:  
+- Tocar no botão *Editar* para definir o formato de coordenadas primário, reordenar ou remover formatos de coordenadas.
+- Tocar em + para adicionar outro formato de coordenadas.
+- Abrir o menu ⋮ para restaurar a lista predefinida de formatos de coordenadas ou copiar formatos de coordenadas de outro perfil.
+
+Ao pesquisar por coordenadas, pode selecionar um formato de coordenadas na lista Recentes ou tocar em *Selecionar outro formato* para navegar por todos os sistemas de coordenadas disponíveis. Também pode pesquisar pelo nome do sistema de coordenadas ou pelo código EPSG.
 
 
 <!--

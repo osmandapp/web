@@ -40,6 +40,22 @@ Tracks section contains all track-related tools and actions. The following optio
 - Download folders as OSF or OBF collection.
 
 
+## Import Tracks {#import-tracks}
+
+You can import GPX tracks into Web Planner either by using the Import button or by dragging and dropping GPX files directly onto the map.
+
+To import a track using drag and drop:
+- Open the Tracks section.
+- Drag one or more GPX files from your computer.
+- Drop the files onto the map or onto a specific track folder.
+
+When a file is dragged over the map, the available drop area is highlighted. If you drop the file directly onto the map, it is imported into the Import folder. If you drop it onto an existing folder, it is imported into that folder instead.
+
+After the import is complete, the track appears in the track list, is synchronized with [OsmAnd Cloud](../personal/osmand-cloud.md), and becomes available on all devices connected to the same account.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Visible on the Map {#visible-on-the-map}
 
 The **Visible on map** view lists all tracks that are currently displayed on the map. Any track can be added to this list from the main Tracks panel using the **⋮ → Make track visible** option.
@@ -87,6 +103,10 @@ The three-dot menu (⋮) provides additional actions for the Smart Folder. You c
 ## Cloud Tracks {#cloud-tracks}
 
 GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
+
+When you select a track, the map automatically centers and adjusts the zoom level to display the entire track within the visible map area.
+
+You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected track. Turn off Focus mode to restore the visibility of other map objects.
 
 The following features are available after choosin cloud track:
 - *Information* - displaying track data.

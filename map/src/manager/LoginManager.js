@@ -22,6 +22,7 @@ export function openLoginMenu(ctx, ltx, navigate, location) {
     ctx.setOpenNavigationSettings(false);
     navigate({
         pathname: MAIN_URL_WITH_SLASH + LOGIN_URL,
+        search: location.search,
         hash: location.hash,
     });
     ltx.setOpenLoginMenu(true);

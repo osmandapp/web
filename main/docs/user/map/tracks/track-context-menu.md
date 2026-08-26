@@ -363,11 +363,13 @@ If there is *no elevation information* on the route, you can add it in the follo
 
 ### Calculate Missing Elevation {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Pro feature
 [Calculate elevation offline](../../plan-route/create-route.md#get-elevation-data) is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [This feature](../../plan-route/create-route.md#get-elevation-data) allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#download-maps). *Terrain maps (3D) should be previously downloaded*.
 
@@ -376,11 +378,27 @@ If there is *no elevation information* on the route, you can add it in the follo
 
     ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. If you are creating a route with the [Plan a route](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
+3. If you are creating a route with the [Plan a route](../../plan-route/create-route.md#graph--analyze) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
     - After the calculation, you will get your route's complete Altitude/Slope graph based on terrain data.  
 
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[This feature](../../plan-route/create-route.md#get-elevation-data) allows you to calculate missing elevation data for a [planned route](../../plan-route/create-route.md#create-new-route) or an [existing GPX track](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+If you create a route using the Straight line method and elevation data is unavailable, tap *Get elevation data* in the Analyze tab and select *Use Terrain maps*. Previously downloaded [Terrain maps (3D)](../../plugins/topography.md#download-maps) are required. The elevation profile is then calculated based on the terrain data while the route geometry remains unchanged.
+
+For an existing GPX track, you can select *Use nearby roads*. OsmAnd attaches the track to the nearest allowed roads using a selected navigation profile and retrieves elevation data from the attached roads. This option may adjust the track geometry. If needed, you can also select *Use Terrain maps* to calculate elevation while keeping the track geometry unchanged.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Points / Waypoints {#points--waypoints}
@@ -391,13 +409,13 @@ Waypoints are one of the types of points available on the map. In general, they 
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -407,7 +425,7 @@ In this *Points* tab:
 
 - [Show track points data](#display-custom-gpx-tags) and modify your track points (waypoints and route points), [delete it and add](#points--waypoints) waypoints to a track.
 - Create and modify [Group (folder) of points](#waypoint-groups).
-- Center the map on a waypoint using the pin icon in the waypoint list (*Android only*) without closing the list, allowing you to preview waypoints one by one.
+- Show a waypoint on the map using the pin icon in the waypoint list. The map centers on the waypoint without closing the list or changing the current zoom level.
 
 
 ### Add Waypoint to a Track {#add-waypoint-to-a-track}
@@ -670,12 +688,14 @@ The **Split by Time** option divides a track into intervals of equal duration. Y
 
 ![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. The way the intervals are displayed and the statistics provided for each segment are the same as in the [Split by Distance](#split-by-distance) section.
+This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. Intervals are displayed in the order they appear along the track, and each uphill, downhill, or flat section is assigned its own index number. The interval list provides the same core statistics as [Split by Distance](#split-by-distance).
 
 On the map, segments are marked with colored labels at the start of each interval:
 - **Uphill segments** (red labels) show an up arrow, the segment index, and the average slope in percent (for example, ↑ 11. 2%).
 - **Downhill segments** (green labels) show a down arrow, the segment index, and the average slope in percent (for example, ↓ 12. -2%).
 - **Flat segments** (blue labels) show the flat section distance (for example, 616 m, 411 m).
+
+Tap a label to open the details panel for the selected uphill, downhill, or flat segment. The details panel displays statistics for the selected segment, such as distance, duration, ascent and descent, altitude, speed, and time-related data.
 
 
 ### Heart Rate Metrics {#heart-rate-metrics}

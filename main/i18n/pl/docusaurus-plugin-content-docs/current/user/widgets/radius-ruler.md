@@ -1,5 +1,5 @@
 ---
-source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
+source-hash: abb657dd46f7e9879d3bf8eaed648f3328413fc5ed9238a0657f03a9093e4ebf
 sidebar_position: 5
 title:  Linijka promienia i Linijka
 ---
@@ -210,6 +210,7 @@ Możesz przełączyć się na **widok 3D**, aby lepiej wizualizować odległośc
 Okręgi promienia pojawią się z głębią, co jest szczególnie przydatne do planowania tras w pagórkowatych obszarach lub środowiskach miejskich, gdzie ważny jest kontekst pionowy.
 
 
+<!--
 ## Odległość przez dotknięcie {#distance-by-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -246,6 +247,7 @@ Możesz również dostosować rozmiar tekstu etykiety odległości. Wybierz mię
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | Rozmiar tekstu | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | Format jednostek | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
+-->
 
 
 ## Poradniki wideo {#video-guides}

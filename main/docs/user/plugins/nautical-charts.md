@@ -104,7 +104,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,nau
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautical"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,nautical_maps"/>*  
 
 ![Nautical plugin maps view iOS](@site/static/img/plugins/nautical-charts/plugin_nautical_view_ios.png)
 

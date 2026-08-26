@@ -73,6 +73,12 @@
     font-size: 12px !important;
     font-weight: 400 !important;
 }
+.spatialInfo {
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    padding: 6px 16px;
+}
 .explorePlaceTypes {
     color: var(--text-secondary) !important;
     font-size: 14px !important;
@@ -89,6 +95,31 @@
     max-width: 16px !important;
     fill: var(--svg-icon-color) !important;
 }
+.matchedObjectsIcon {
+    cursor: pointer;
+    margin-left: 6px;
+}
+.matchedObjectName {
+    color: inherit;
+    cursor: pointer;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    text-decoration: none;
+}
+.matchedObjectName:hover {
+    text-decoration: underline;
+}
+.matchedItem {
+    padding-left: 24px !important;
+}
+.matchedObjectsIcon svg {
+    min-width: 16px !important;
+    max-width: 16px !important;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle !important;
+    fill: var(--svg-icon-color) !important;
+}
 .placeTypesEmptyIcon {
     min-width: 24px !important;
     max-width: 24px !important;
@@ -99,6 +130,9 @@
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;
+}
+.titleText:hover {
+    text-decoration: underline;
 }
 .placeItem {
     display: flex !important;
@@ -384,4 +418,41 @@
     line-height: 1.5 !important;
     font-size: 16px !important;
     letter-spacing: 0.00938em !important;
+}
+
+.autocompleteInputBox {
+    position: relative;
+}
+
+.autocompleteSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 2px);
+    z-index: 1300;
+    border-radius: 6px !important;
+    overflow: hidden;
+}
+
+.autocompleteSelectItem {
+    min-height: 36px !important;
+    padding: 6px 16px !important;
+}
+
+.autocompleteSelectText {
+    color: var(--text-primary) !important;
+    font-size: 13px !important;
+    line-height: 18px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.autocompleteSelectName {
+    font-weight: 600;
+}
+
+.autocompleteSelectInfo {
+    color: var(--text-secondary);
+    font-weight: 400;
 }

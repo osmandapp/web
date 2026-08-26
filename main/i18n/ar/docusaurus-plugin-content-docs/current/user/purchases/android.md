@@ -1,5 +1,5 @@
 ---
-source-hash: 0032c2a2aa626dedf252b939b26ed6d30488e98afea0453930b9ae4656beceee
+source-hash: b72231de89708cc761d36df5e28ed3e9d25300bf49d391eefbff605bb4ce39c6
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -76,7 +76,25 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 في القائمة، توجد معلومات حول أسعار منتجات OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، تكون الأسعار معادلة بالعملات المحلية.
 
+<!--
 
+:::danger 🏖️ Summer Sale
+
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+
+
+-->
 
 |    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -164,7 +182,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## كيفية الشراء {#how-to-buy}
 
-طريقة سهلة لاختيار وشراء الخطة المطلوبة من خلال قائمة **المشتريات**. بالطبع، سترى قائمة مقترحات للميزات المدفوعة.
+طريقة سهلة لاختيار وشراء الخطة المطلوبة من خلال قائمة **المشتريات**. بالطبع، ستررى قائمة مقترحات للميزات المدفوعة.
 
 ### شراء OsmAnd Pro {#osmand-pro-purchase}
 

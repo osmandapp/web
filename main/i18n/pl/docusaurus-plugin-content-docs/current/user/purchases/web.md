@@ -1,5 +1,5 @@
 ---
-source-hash: e1de47f1c112cc722b8262141b3b8878a80c18694cd070820f6c9cfb2166a7bf
+source-hash: d92c746f8a72d84ab8395bdc89390208bc81a4755169dbeefc240e0f63d57a95
 sidebar_position: 3
 title:  Zakupy przez stronę internetową
 ---
@@ -38,11 +38,11 @@ Wszystkie zakupy dokonane za pośrednictwem którejkolwiek z tych platform obsł
 Poniżej znajdują się ceny produktów OsmAnd w USA i UE. Ceny w innych regionach są automatycznie przeliczane na lokalną walutę przez platformę płatniczą.
 
 
-<!--
 
-:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+:::danger 🏖️ Summer Sale
+
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -61,17 +61,17 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
+<!--
 
--->
 
-|    | OsmAnd Darmowy   | **Maps+** Jednorazowy | **Maps+** Subskrypcja | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ Dożywotnio) |
-| **Cena (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
-| **Cena (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
-
+-->
 
 
 

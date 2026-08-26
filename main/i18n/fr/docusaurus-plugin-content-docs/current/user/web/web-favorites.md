@@ -1,5 +1,5 @@
 ---
-source-hash: 6e85a9c0cfb7a2e0e5b6f8f90f9b17a7da6b19a01478b0e05bd7a83438517602
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -35,6 +35,10 @@ Les actions suivantes sont disponibles :
 - *Partager* - ouvre les options de partage. Vous pouvez choisir qui peut accéder à ce dossier.
 - *Télécharger* - télécharger le dossier de favoris choisi.
 - *Supprimer* - supprimer le dossier de favoris choisi.
+
+Lorsque vous sélectionnez un dossier de favoris, la carte se centre automatiquement et ajuste le niveau de zoom pour afficher tous les points de favoris de ce dossier dans la zone visible de la carte.
+
+Vous pouvez également utiliser le bouton **Focus** pour masquer tous les autres favoris et traces sur la carte, facilitant ainsi la consultation du dossier sélectionné. Désactivez le mode Focus pour restaurer la visibilité des autres objets de la carte.
 
 ### Partager {#share}
 

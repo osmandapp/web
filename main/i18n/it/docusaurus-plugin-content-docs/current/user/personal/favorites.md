@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
 sidebar_position: 7
 title:  Preferiti
 ---
@@ -88,8 +88,10 @@ Quando si aggiunge un punto dai dati OSM, le informazioni PDI pertinenti vengono
 
 - **Nome** — Un nome univoco all'interno del gruppo (*Obbligatorio*).
 - **Indirizzo** e **Descrizione** (*Opzionale*).
-- **Gruppo** — Selezionare da un [gruppo di Preferiti](#manage-favorites) esistente o crearne uno nuovo.
+- **Gruppo** — Selezionare da un [gruppo di Preferiti](#manage-favorites) esistente o crearne uno nuovo. Su Android è anche possibile selezionare una sottocartella all'interno di un gruppo o crearne una nuova. Le cartelle annidate vengono visualizzate con il loro percorso completo (ad esempio, *Viaggi* / *Italia* / *Roma*).
 - **Personalizzazione visiva** — Icona, colore e forma possono corrispondere all'[aspetto predefinito del gruppo](#change-group-appearance) o essere personalizzati individualmente.
+
+**NOTA:** Se il livello Preferiti è disabilitato in [Configura mappa](../map/configure-map-menu), l'aggiunta di un nuovo punto preferito abilita automaticamente il livello per rendere visibile il preferito appena aggiunto sulla mappa.
 
 
 ### Modifica / Sostituisci / Elimina {#edit--replace--delete}
@@ -229,7 +231,7 @@ Quando sono selezionati i punti preferiti, le azioni disponibili sono:
 - **Aggiungi ai segnaposto mappa** — Aggiunge i punti selezionati all'elenco Segnaposto mappa.
 - **Aggiungi alla traccia** — Aggiunge i punti selezionati a una traccia.
 - **Aggiungi alla navigazione** — Avvia la navigazione verso il punto selezionato.
-- **Elimina** — Rimuove i preferiti selezionati.
+- **Elimina** — Rimuove il preferito selezionato.
 
 </TabItem>
 
@@ -267,7 +269,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Funzioni cartella Preferiti Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
+![Funzioni cartella Preferiti Android](@site/static/img/personal/favorites_folder_functions.webp)
 
 Utilizzare il ***menu a tre punti*** accanto a ogni cartella per gestire i gruppi di preferiti:
 
@@ -275,9 +277,11 @@ Utilizzare il ***menu a tre punti*** accanto a ogni cartella per gestire i grupp
 - **<Translate android="true" ids="pin_folder"/>** — Pinna la cartella selezionata per mantenerla in cima all'elenco dei preferiti per un accesso più rapido.
 - **<Translate android="true" ids="shared_string_rename"/>** — Utilizzare questa opzione per cambiare il nome della cartella selezionata.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalizzare l'aspetto dei punti preferiti nella cartella sulla mappa, modificandone icone, colori o etichette.
+- **<Translate android="true" ids="shared_string_share"/>** — Condividere i punti preferiti nella cartella esportandoli come file *Favorites.gpx*, per facilitare il trasferimento o il backup dei dati.
+- **<Translate android="true" ids="shared_string_move"/>** — Sposta la cartella selezionata, inclusi tutti i punti preferiti e le sottocartelle annidate, in un'altra cartella. La cartella corrente e le sue sottocartelle non possono essere selezionate come destinazione.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Rimuovi dai segnaposto mappa** — Aggiungere tutti i punti preferiti della cartella all'*elenco Segnaposto mappa* o rimuoverli secondo necessità per una facile consultazione.
 - **<Translate android="true" ids="add_to_a_track"/>** — Aggiungere tutti i punti preferiti della cartella selezionata a una traccia. Questo apre la schermata di selezione della traccia dove è possibile scegliere o creare una traccia.
-- **<Translate android="true" ids="shared_string_share"/>** — Condividere i punti preferiti nella cartella esportandoli come file *Favorites.gpx*, per facilitare il trasferimento o il backup dei dati.
+
 - **<Translate android="true" ids="shared_string_delete"/>** — Eliminare definitivamente la cartella dei preferiti selezionata e tutti i punti in essa contenuti.
 
 </TabItem>
