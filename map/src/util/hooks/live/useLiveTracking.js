@@ -445,7 +445,7 @@ export default function useLiveTracking(ctx, enabled = true) {
             pendingCreateRef.current = {
                 onSuccess: (id) => {
                     const autoName = name?.trim() || `Live Track ${ctx.liveTranslations.length + 1}`;
-                    const newTranslation = { id, name: autoName, key, isOwner: true };
+                    const newTranslation = { id, name: autoName, key, isOwner: true, durationHours };
                     keysRef.current[id] = key;
                     // Brand-new translation: nothing older than now, so disable "load earlier".
                     setHistoryExhausted((prev) => ({ ...prev, [id]: true }));
@@ -494,7 +494,7 @@ export default function useLiveTracking(ctx, enabled = true) {
         ]
     );
 
-    // Regenerate the key/link for a translation I own: issue a new permanent key and
+    // Regenerate the key/link for a translation I own: issue a new key with the same duration and
     // revoke the old one (old viewers lose access, my broadcast moves to the new link).
     // onDone(newTranslation) lets the caller navigate to the new tid URL.
     const regenerateLiveTrack = useCallback(
@@ -505,7 +505,7 @@ export default function useLiveTracking(ctx, enabled = true) {
             }
             const key = await generateTranslationKey();
             const newId = await computeTranslationId(key);
-            createLiveTrack(newId, key, old.name, 0, onDone, null, null, oldId);
+            createLiveTrack(newId, key, old.name, old.durationHours ?? 0, onDone, null, null, oldId);
         },
         [ctx.liveTranslations, createLiveTrack]
     );
