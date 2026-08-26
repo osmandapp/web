@@ -143,7 +143,7 @@ export default function CreateLiveTrackDialog({ open, onClose }) {
                         fullWidth
                         variant="filled"
                         value={shareUrl}
-                        label={copied ? t('shared_string_copied') : t('web:live_track_share_link')}
+                        label={copied ? t('web:live_track_link_copied') : t('web:live_track_share_link')}
                         slotProps={{
                             input: {
                                 readOnly: true,
