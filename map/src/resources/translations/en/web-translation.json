@@ -452,7 +452,6 @@
     "keep_editing": "Keep Editing",
     "shared_string_exit": "Exit",
     "live_tracks": "Live Tracks",
-    "live_track_delete": "Delete translation",
     "live_track_empty": "No live tracks yet",
     "live_track_empty_desc": "Open a share link in the browser to follow live location sharing",
     "live_track_inactive": "Inactive",
@@ -492,7 +491,6 @@
     "live_track_geo_unavailable": "Location is unavailable on this device.",
     "live_track_geo_not_supported": "Geolocation is not supported by this browser.",
     "live_track_pause_sharing": "Pause location sharing",
-    "live_track_resume_sharing": "Resume location sharing",
     "live_track_remove_bookmark": "Remove from bookmarks",
     "live_track_delete_for_all": "Delete translation for all",
     "live_track_stop_sharing": "Stop sharing my location",
@@ -504,6 +502,5 @@
     "live_track_link_copied": "Link copied",
     "live_track_key_gen_error": "Failed to generate encryption key. Please try again.",
     "live_track_create_error": "Failed to create live track. Please try again.",
-    "shared_string_flat": "Flat",
-    "shared_string_no_data": "No data"
+    "shared_string_flat": "Flat"
 }
