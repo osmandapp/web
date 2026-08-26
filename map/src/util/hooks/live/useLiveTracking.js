@@ -19,6 +19,9 @@ const INITIAL_LOAD_WINDOW_MS = 6 * 60 * 60 * 1000;
 // Cap on points kept per participant (newest first) — bounds memory and per-render computations.
 const MAX_PARTICIPANT_POINTS = 10000;
 
+// Minimum gap between two broadcast points — same as Android's default live monitoring interval.
+const MIN_SEND_INTERVAL_MS = 5000;
+
 export default function useLiveTracking(ctx, enabled = true) {
     const clientRef = useRef(null);
     const subscribedRef = useRef(new Map()); // translationId → STOMP subscription (kept so we can unsubscribe)
@@ -29,6 +32,7 @@ export default function useLiveTracking(ctx, enabled = true) {
     const keysRef = useRef({}); // tid → AES key (hex)
     const lastTimeRef = useRef({}); // tid → newest serverReceiveTime seen; reconnect fetches the delta
     const earliestFromRef = useRef({}); // tid → oldest fromTime requested; loadEarlier steps it back
+    const lastSentTimeRef = useRef(0); // position.timestamp of the last broadcast point; throttles watchPosition
 
     const [connected, setConnected] = useState(false);
     // tid → true when no older history remains (earliest request passed creationDate). Disables "load earlier".
@@ -343,6 +347,10 @@ export default function useLiveTracking(ctx, enabled = true) {
 
         const watchId = navigator.geolocation.watchPosition(
             (position) => {
+                if (position.timestamp - lastSentTimeRef.current < MIN_SEND_INTERVAL_MS) {
+                    return;
+                }
+                lastSentTimeRef.current = position.timestamp;
                 const { latitude, longitude, altitude, speed, accuracy } = position.coords;
                 const locationData = {
                     lat: latitude,
