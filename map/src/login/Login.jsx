@@ -15,6 +15,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../frame/components/btns/BlueBtn';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import LoginContext from '../context/LoginContext';
+import { useResetApp } from '../App';
 
 export default function Login({ dialog = false }) {
     const ctx = useContext(AppContext);
@@ -24,6 +25,7 @@ export default function Login({ dialog = false }) {
     const lang = i18n.language;
     const navigate = useNavigate();
     const location = useLocation();
+    const resetApp = useResetApp();
 
     const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
     const [userPassword, setUserPassword] = useState(EMPTY_INPUT);
@@ -79,7 +81,7 @@ export default function Login({ dialog = false }) {
     }, [userPassword]);
 
     async function handleLogin() {
-        await userLogin({
+        const loggedIn = await userLogin({
             ltx,
             username: userEmail,
             pwd: userPassword,
@@ -87,6 +89,9 @@ export default function Login({ dialog = false }) {
             handleClose,
             lang,
         });
+        if (loggedIn && !dialog) {
+            resetApp();
+        }
     }
 
     const handleKeyPress = async (e) => {

@@ -10,9 +10,6 @@ export default async function test() {
 
     let url;
 
-    await waitBy(By.id('se-logout-button'));
-    await clickBy(By.id('se-logout-button'));
-
     await waitBy(By.id('se-login-menu-osmand-purchases'));
     await clickBy(By.id('se-login-menu-osmand-purchases'));
 

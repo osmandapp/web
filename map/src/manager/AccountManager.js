@@ -65,7 +65,11 @@ export async function userLogin({ ltx, username, pwd, setError, handleClose, lan
         }
         ltx.setEmailCookie(username, { days: 30, SameSite: 'Strict' }); // for next login
         handleClose();
+
+        return true;
     }
+
+    return false;
 }
 
 export async function userLogout({ ltx, username, handleClose, lang = DEFAULT_AUTH_API_LANG }) {

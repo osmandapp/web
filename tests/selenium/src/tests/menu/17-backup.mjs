@@ -8,9 +8,6 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await waitBy(By.id('se-logout-button'));
-    await clickBy(By.id('se-logout-button'));
-
     await waitBy(By.id('se-login-menu-osmand-cloud-item'));
     await clickBy(By.id('se-login-menu-osmand-cloud-item'));
 
