@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title:  Guías de viaje
 ---
@@ -106,7 +106,7 @@ Cuando abre *Guías de viaje* (*<Translate android="true" ids="shared_string_men
 
 <TabItem value="ios" label="iOS">
 
-![Pantalla principal de guías de viaje](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Pantalla principal de guías de viaje 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Pantalla principal de guías de viaje](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Pantalla principal de guías de viaje 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ Si toca el *botón Marcar*, el artículo se guardará para su posterior lectura 
 
 <TabItem value="ios" label="iOS">
 
-![Menú de búsqueda de guías de viaje](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Menú de búsqueda de guías de viaje](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 

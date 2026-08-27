@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: Tipos de rutas
 ---
@@ -24,7 +24,7 @@ Puede configurar el filtrado de algunos tipos de rutas en el menú [Configurar m
 
 ## Ciclismo {#cycle}
 
-[Las rutas ciclistas](https://wiki.openstreetmap.org/wiki/Cycle_routes) están presentes en tres tipos: *local* (`lcn`), *regional* (`rcn`), *nacional* (`ncn`), *internacional* (`icn`). Además, las rutas ciclistas pueden formar parte de [redes de nodos](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Puede elegir cómo asignar color a los segmentos de ruta:
+[Las rutas ciclistas](https://wiki.openstreetmap.org/wiki/Cycle_routes) están presentes en los siguientes tipos: *local* (`lcn`), *regional* (`rcn`), *nacional* (`ncn`), *internacional* (`icn`) y *sin clasificar*. Además, las rutas ciclistas pueden formar parte de [redes de nodos](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Puede elegir cómo asignar color a los segmentos de ruta:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -47,7 +47,7 @@ Las rutas MTB tienen un mapeo específico en [OpenStreetMap](https://wiki.openst
 
 ## Senderismo / Caminata {#hiking--walking}
 
-[Las rutas de senderismo](https://wiki.openstreetmap.org/wiki/Walking_Routes) están presentes en tres tipos: *local* (`lwn`), *regional* (`rwn`), *nacional* (`nwn`), *internacional* (`iwn`). Además, las rutas de senderismo pueden formar parte de [redes de nodos](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd no separa las rutas de senderismo y caminata y las combina en 1 grupo. Puede elegir cómo asignar color a los segmentos de ruta:
+[Las rutas de senderismo](https://wiki.openstreetmap.org/wiki/Walking_Routes) están presentes en los siguientes tipos: *local* (`lwn`), *regional* (`rwn`), *nacional* (`nwn`), *internacional* (`iwn`) y *sin clasificar*. Además, las rutas de senderismo pueden formar parte de [redes de nodos](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd no separa las rutas de senderismo y caminata y las combina en 1 grupo. Puede elegir cómo asignar color a los segmentos de ruta:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colorea las rutas según su [color local](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) individual (si está disponible en OpenStreetMap) y el símbolo del escudo turístico.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)

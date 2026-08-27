@@ -1,5 +1,5 @@
 ---
-source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Desarrollo de OsmAnd
 ---
@@ -13,8 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Vista general {#overview}
 
@@ -100,7 +98,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 :::caution Android only
 :::
 
-- **Modo seguro**. Ejecutar la aplicación en modo seguro (más lento).  
+- **Modo seguro**. Ejecuta OsmAnd sin la biblioteca nativa de C++, utilizando implementaciones en Java para el renderizado del mapa y el cálculo de rutas. La aplicación cambia automáticamente a este modo si la biblioteca nativa falla durante el inicio, permitiendo que se inicie y siga siendo utilizable. El renderizado del mapa y el cálculo de rutas son notablemente más lentos mientras el modo seguro está activo.  
 
 
 ### Ajustes de memoria {#memory-settings}

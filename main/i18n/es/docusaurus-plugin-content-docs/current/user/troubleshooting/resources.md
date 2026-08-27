@@ -1,5 +1,5 @@
 ---
-source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -45,14 +45,14 @@ La siguiente lista proporciona conversores para varios tipos de datos compatible
 
 | Tipo | Descripción | Enlace |
 |-- | -- | --|
-| GoogleMap a GPX de OSMAnd | Crea una carpeta de archivos GPX al estilo de OsmAnd a partir de un mapa de Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
-| KML a GPX de OsmAnd | Script de Python para convertir archivos *KML* a formato *GPX* con iconos. Otras herramientas disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
-| KMZ a GPX | Script de Python para convertir archivos *KMZ* a formato *GPX*, incluyendo iconos. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| GoogleMap To OSMAnd GPX | Crea una carpeta de archivos GPX al estilo de OsmAnd a partir de un mapa de Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Script de Python para convertir archivos *KML* a formato *GPX* con iconos. Otras herramientas disponibles. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Script de Python para convertir archivos *KMZ* a formato *GPX*, incluyendo iconos. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
 | Garmin | Herramienta para convertir archivos de Garmin Basecamp a OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
-| GeoPDF/Tiff, ozi a OsmAnd | Conversión de formatos de mapa geoPDF, geoTiff y ozi a OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX a KML | Herramienta para convertir archivos *GPX* de OsmAnd a formato *KML*, conservando los iconos. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX a OsmAnd | Script de Python para convertir archivos *GPX* de iOverlander exportados a OsmAnd con iconos. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Mapa topográfico a imprimible| Esta es [una herramienta](https://github.com/acui/osmand_topo_map_generator) para generar un mapa topográfico imprimible utilizando capturas de pantalla de OsmAnd (https://osmand.net). El mapa utiliza la cuadrícula UTM y tiene información de declinación. Se debe usar con una brújula o un dispositivo GPS con coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GeoPDF/Tiff, ozi to OsmAnd | Conversión de formatos de mapa geoPDF, geoTiff y ozi a OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
+| GPX to KML | Herramienta para convertir archivos *GPX* de OsmAnd a formato *KML*, conservando los iconos. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Script de Python para convertir archivos *GPX* de iOverlander exportados a OsmAnd con iconos. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topo map into printable| Esta es [una herramienta](https://github.com/acui/osmand_topo_map_generator) para generar un mapa topográfico imprimible utilizando capturas de pantalla de OsmAnd (https://osmand.net). El mapa utiliza la cuadrícula UTM y tiene información de declinación. Se debe usar con una brújula o un dispositivo GPS con coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar proyecta un rayo hacia el sol desde cada punto de una pista GPX y lo compara con el terreno y la vegetación (0.5 m HD LiDAR / IGN), para una fecha y hora dadas. Te indica, metro a metro, sol o sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | Una herramienta autónoma que descarga datos LiDAR públicos de portales nacionales de 22 países | [lidar2map](https://github.com/nico579/lidar2map)|
 
@@ -111,7 +111,16 @@ El archivo por defecto [render.xml](https://github.com/osmandapp/OsmAnd-resource
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) es un estilo de mapa de Holder Tamm que te permite elegir si ocultar ciertos objetos o no.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) se basa principalmente en UniMap y routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [This is an OsmAnd rendering style optimized for storm chasing](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Recursos personalizados definidos del proyecto OsmAnd para ajustar finamente el comportamiento de OsmAnd. Aquí se definen: estilos de renderizado de mapas utilizados en OsmAnd, voces grabadas y TTS, configuración de la generación de mapas sin conexión, parámetros de enrutamiento, repositorio de iconos  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+El archivo `routing.xml` por defecto se puede personalizar para ajustar los algoritmos y parámetros de enrutamiento según condiciones específicas.
+
+| Nombre de la fuente | Descripción | Enlace |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Modificación personalizada de `routing.xml` que ajusta el cálculo de rutas para condiciones de lluvia, teniendo en cuenta el tipo de superficie (por ejemplo, roca desnuda), la inclinación y las valoraciones oficiales de dificultad de senderos (escalas CAI/SAC), además de una lógica mejorada de «Evitar túneles». | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Mapas sin conexión {#offline-maps}
 
