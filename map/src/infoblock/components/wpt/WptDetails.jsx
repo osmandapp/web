@@ -276,7 +276,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             if (currentWpt) {
                 const newWpt = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
                 newWpt.id = ctx.selectedWpt.groupId;
-                newWpt.group = ctx.favorites.groups.find((g) => g.id === ctx.selectedWpt.groupId);
+                newWpt.group = ctx.favorites?.groups?.find((g) => g.id === ctx.selectedWpt.groupId);
                 return newWpt;
             }
         } else if (type?.isSearch || type?.isPoi) {

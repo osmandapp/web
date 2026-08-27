@@ -1087,7 +1087,11 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-4px' }} />
-                {(showDeleteOutlet || showShareOutlet) && outlet}
+                {showDeleteOutlet && outlet}
+                {showShareOutlet && (
+                    // keep ShareFile mounted (it owns the join fetch); hide the list while a shared point is open
+                    <div style={{ display: ctx.selectedGpxFile?.markerCurrent ? 'none' : 'block' }}>{outlet}</div>
+                )}
                 {aloneVisibleTracks && <VisibleTracks />}
                 {!isOpenSubMenu() && (
                     <>
