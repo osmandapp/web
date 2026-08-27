@@ -9,8 +9,8 @@
  * --- Start with a point limit (pause after 1000 points) ---
  *   const sim = await window.__liveTrackSim.start({ speed: 30, maxPoints: 1000 });
  *
- * --- Stress test: backfill 24h of history, then go live (big-data test) ---
- *   const sim = await window.__liveTrackSim.start({ backfillHours: 24 });
+ * --- Stress test: backfill 23h of history, then go live (big-data test) ---
+ *   const sim = await window.__liveTrackSim.start({ backfillHours: 23 });
  *
  * --- Join an existing translation (e.g. after page refresh or sim.stop()) ---
  *   const sim = await window.__liveTrackSim.start({ tid: 'abc123', key: '<64-hex key>' });
@@ -37,7 +37,8 @@
  *   interval   — ms between points (default: 2000)
  *   eleProfile — 'flat' | 'hilly' | 'alpine' (default: 'flat')
  *   maxPoints  — stop after N points, then call sim.resume() (default: 0 = infinite)
- *   backfillHours — send a burst of back-dated points spanning N hours before going live (default: 0 = off)
+ *   backfillHours — send a burst of back-dated points spanning N hours before going live (default: 0 = off,
+ *                   max 23: the translation lives 24h from its back-dated creation, so it must stay alive after)
  *   backfillStep  — ms between back-dated points (default: 0 = auto, fits the whole window
  *                   under the client 10k-point cap; set explicitly to stress-test the cap)
  */
@@ -81,6 +82,10 @@ function makeElevationGenerator(profile) {
     };
 }
 
+// The server caps a translation's lifetime at 24h counted from creationDate; a back-dated
+// creation must leave at least an hour of life so startSharing is not rejected as expired.
+const MAX_BACKFILL_HOURS = 23;
+
 export function start(opts = {}) {
     const options = {
         tid: opts.tid ?? null,
@@ -92,7 +97,7 @@ export function start(opts = {}) {
         interval: opts.interval ?? 2000,
         eleProfile: opts.eleProfile ?? 'flat',
         maxPoints: opts.maxPoints ?? 0,
-        backfillHours: opts.backfillHours ?? 0,
+        backfillHours: Math.min(opts.backfillHours ?? 0, MAX_BACKFILL_HOURS),
         backfillStep: opts.backfillStep ?? 0, // 0 = auto (fit the whole window under the client cap)
     };
 
