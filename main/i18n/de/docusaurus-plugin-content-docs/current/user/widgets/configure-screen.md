@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -26,42 +26,6 @@ Sie können:
 - Widgets in Leisten (oben, unten, links, rechts, zentriert) organisieren.
 - Mehrere **Seiten** innerhalb der Seitenleisten erstellen, die Größe der Widgets wählen.
 - Zeilenhöhe wählen und Widget-Symbole umschalten.
-
-Alle Widgets sind [profilabhängig](../personal/profiles.md) — jedes Profil hat sein eigenes Layout, seine eigene Reihenfolge, Sichtbarkeit und Einstellungen.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
-
-<!--
-## Übersicht {#overview}
-
-Das Menü **Bildschirm konfigurieren** in OsmAnd ermöglicht es Ihnen, die Kartenoberfläche durch Hinzufügen und Anordnen von Widgets, Schaltflächen und Schnellaktionen auf mehreren Leisten anzupassen.
-
-Sie können:
-
-- [Informations-](../widgets/info-widgets.md), [Navigations-](../widgets/nav-widgets.md) und [markierungsbezogene](../widgets/markers.md) Widgets hinzufügen.
-- [Schnellaktionen](../widgets/quick-action.md), [benutzerdefinierte Schaltflächen](../widgets/quick-action.md#custom-buttons) und [Standard-Schaltflächen](../widgets/map-buttons.md) hinzufügen oder bearbeiten.
-- Widgets in Leisten (oben, unten, links, rechts, zentriert) organisieren.
-- Mehrere Seiten innerhalb der Seitenleisten erstellen, die Größe der Widgets wählen.
-- Zeilenhöhe wählen und Widget-Symbole umschalten.
 - Auf Android das [Erscheinungsbild der Widget-Leiste](#widget-panel-appearance) anpassen.
 
 Alle Widgets sind [profilabhängig](../personal/profiles.md) — jedes Profil hat sein eigenes Layout, seine eigene Reihenfolge, Sichtbarkeit und Einstellungen.
@@ -86,7 +50,6 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_conf
 </TabItem>
 
 </Tabs>
--->
 
 
 ## Widget-Leisten {#widget-panels}
@@ -398,7 +361,6 @@ Diese Einstellungen gelten nur für das ausgewählte Widget.
     - Schalten Sie im Feld *Symbol anzeigen* auf die Aus-Position.
 
 
-<!--
 ## Erscheinungsbild der Widget-Leiste (nur Android) {#widget-panel-appearance}
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
@@ -429,7 +391,6 @@ Benutzerdefinierte Widget-Farben sind eine [kostenpflichtige Funktion](../purcha
     - Wählen Sie *Kopieren von*.
     - Wählen Sie eine der folgenden Optionen: *Ein anderes Profil* oder *Eine der anderen Leisten*.
 
--->
 
 ## Anpassung der Leisten {#panels-customization}
 

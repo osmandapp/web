@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -364,11 +364,13 @@ Wenn auf der Route *keine Höheninformationen* vorhanden sind, können Sie diese
 
 ### Fehlende Höhe berechnen {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Pro-Funktion
 [Fehlende Höhe offline berechnen](../../plan-route/create-route.md#get-elevation-data) ist eine [**OsmAnd Pro**](../../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Diese Funktion](../../plan-route/create-route.md#get-elevation-data) ermöglicht es Ihnen, das Höhenprofil für einen GPX-Track offline für jedes Gelände zwischen 70 Grad nördlicher und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) müssen zuvor heruntergeladen werden*.
 
@@ -377,11 +379,27 @@ Wenn auf der Route *keine Höheninformationen* vorhanden sind, können Sie diese
 
     ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Wenn Sie eine Route mit dem Werkzeug [Route planen](../../plan-route/create-route.md#graph) unter Verwendung der Methode *Gerade Linie* erstellen und keine Höhendaten im Diagramm vorhanden sind, müssen Sie:
+3. Wenn Sie eine Route mit dem Werkzeug [Route planen](../../plan-route/create-route.md#graph--analyze) unter Verwendung der Methode *Gerade Linie* erstellen und keine Höhendaten im Diagramm vorhanden sind, müssen Sie:
     - Tippen Sie auf *Höhendaten abrufen* und wählen Sie dann *Geländekarten verwenden*.
     - Nach der Berechnung erhalten Sie das vollständige Höhen-/Steigungsdiagramm Ihrer Route basierend auf den Geländedaten.  
 
   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track-Diagramm Höhe Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Höhendaten iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Höhendaten iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Diese Funktion](../../plan-route/create-route.md#get-elevation-data) ermöglicht es Ihnen, fehlende Höhendaten für eine [geplante Route](../../plan-route/create-route.md#create-new-route) oder einen [vorhandenen GPX-Track](../../plan-route/create-route.md#modify-existing-gpx-track) zu berechnen.
+
+Wenn Sie eine Route mit der Methode Gerade Linie erstellen und keine Höhendaten verfügbar sind, tippen Sie im Tab Analysieren auf *Höhendaten abrufen* und wählen Sie *Geländekarten verwenden*. Zuvor heruntergeladene [Geländekarten (3D)](../../plugins/topography.md#download-maps) sind erforderlich. Das Höhenprofil wird dann anhand der Geländedaten berechnet, während die Routengeometrie unverändert bleibt.
+
+Für einen vorhandenen GPX-Track können Sie *Nahegelegene Straßen verwenden* auswählen. OsmAnd verbindet den Track mit den nächstgelegenen erlaubten Straßen unter Verwendung eines ausgewählten Navigationsprofils und ruft Höhendaten von den verbundenen Straßen ab. Diese Option kann die Track-Geometrie anpassen. Bei Bedarf können Sie auch *Geländekarten verwenden* auswählen, um die Höhe zu berechnen, während die Track-Geometrie unverändert bleibt.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Punkte / Wegpunkte {#points--waypoints}
@@ -392,13 +410,13 @@ Wegpunkte sind eine der Arten von Punkten, die auf der Karte verfügbar sind. Im
 
 <TabItem value="android" label="Android">
 
-![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Kontext Track-Menü Punkte Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Kontext Track-Menü Punkte iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ In diesem *Punkte*-Tab:
 
 - [Trackpunktdaten anzeigen](#display-custom-gpx-tags) und Ihre Trackpunkte (Wegpunkte und Routenpunkte) ändern, [löschen und Wegpunkte](#points--waypoints) zu einem Track hinzufügen.
 - [Gruppe (Ordner) von Punkten](#waypoint-groups) erstellen und ändern.
-- Die Karte auf einen Wegpunkt zentrieren, indem Sie das Pin-Symbol in der Wegpunktliste verwenden (*nur Android*), ohne die Liste zu schließen, was es Ihnen ermöglicht, Wegpunkte nacheinander zu previewen.
+- Die Karte auf einen Wegpunkt zentrieren, indem Sie das Pin-Symbol in der Wegpunktliste verwenden, ohne die Liste zu schließen oder die aktuelle Zoomstufe zu ändern.
 
 
 ### Wegpunkt zu einem Track hinzufügen {#add-waypoint-to-a-track}
@@ -486,7 +504,7 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das *Gruppenmenü* des Wegpunkts.
 - **<Translate android="true" ids="shared_string_rename"/>** - Ändern Sie den Namen der Gruppe.
 - **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Ändern Sie die Anzeigeoptionen für eine Gruppe von Wegpunkten.
 - **<Translate android="true" ids="add_group_to_markers"/>** oder **Entfernen** (*Nur Android*) - Verschieben Sie Gruppenwegpunkte in die Liste der [Kartenmarkierungen](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*Nur Android*) - Ermöglicht es Ihnen, die ausgewählte Gruppe von Wegpunkten in [Favoriten](../../personal/favorites.md) zu kopieren. Sie können eine von zwei Optionen wählen: ***<Translate android="true" ids="copy_as_new_folder"/>*** oder ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Ermöglicht es Ihnen, die ausgewählte Gruppe von Wegpunkten in [Favoriten](../../personal/favorites.md) zu kopieren. Sie können eine von zwei Optionen wählen: ***<Translate android="true" ids="copy_as_new_folder"/>*** oder ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Nur Android*) - Erstellt eine Route zwischen Wegpunkten. Der erste und letzte Punkt werden zum Start und Ziel der Route, und die restlichen werden zu Zwischenpunkten.
 - **<Translate android="true" ids="shared_string_delete"/>** - Löschen Sie eine Gruppe von Wegpunkten.
 
