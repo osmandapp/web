@@ -1,5 +1,5 @@
 ---
-source-hash: b72231de89708cc761d36df5e28ed3e9d25300bf49d391eefbff605bb4ce39c6
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -134,6 +134,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [ملحق علم الفلك](../plugins/astronomy.md) — [تخطيط الملاحظة](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [ملحق علم الفلك](../plugins/astronomy.md) — [وضع الواقع المعزز التفاعلي](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [ملحق علم الفلك](../plugins/astronomy.md) — [خريطة السماء بدون اتصال](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [مستكشف الكسوف](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [ألوان الودجت المخصصة](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [الملاحة بدون اتصال وبالاتصال بالإنترنت](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
 | [بحث فوري بدون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

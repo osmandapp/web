@@ -1,5 +1,5 @@
 ---
-source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
+source-hash: 8b764b414310b00cc5eccec89e793a6549d6474b7c4951c1fb9b878f3569306f
 sidebar_position: 3
 title: الأدوات الإعلامية
 ---
@@ -32,9 +32,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### الارتفاع: الموقع الحالي   {#altitude-current-location}
   
 :::note  تنزيل تصحيح الارتفاع العالمي
-على بعض أجهزة أندرويد، قد يظهر الارتفاع بشكل غير دقيق. لحل هذه المشكلة، قم بتنزيل خريطة مع تصحيح الارتفاع.
+بدءاً من أندرويد 14، يستخدم OsmAnd الارتفاع فوق مستوى سطح البحر (MSL) المقدم من خدمات Google Play عند توفره. في هذه الحالة، لا تكون خريطة تصحيح الارتفاع العالمي مطلوبة.
+
+إذا كنت تستخدم مصدر موقع واجهة برمجة تطبيقات أندرويد أو لم يكن ارتفاع MSL متاحاً، فقم بتنزيل خريطة تصحيح الارتفاع العالمي لتحسين دقة الارتفاع.
 
 - اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- لتغيير مصدر الموقع، اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - لمزيد من التفاصيل، قم بزيارة [الخرائط والموارد](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -158,7 +161,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 3. ***أخذ التوقفات في الاعتبار.***
 
-   **مفعل** — إذا كانت السرعة المسجلة أقل من 1 وحدة في الساعة، فإنها تُتجاهل، مما يمنع الانخفاض غير الضروري في السرعة المتوسطة عند التوقف عند إشارات المرور أو أخذ فترات راحة قصيرة.  
+   **مفعل** — إذا كانت السرعة المسجلة أقل من وحدة واحدة في الساعة، فإنها تُتجاهل، مما يمنع الانخفاض غير الضروري في السرعة المتوسطة عند التوقف عند إشارات المرور أو أخذ فترات راحة قصيرة.  
 
    **معطل** — يتم تضمين التوقفات في الحساب، مما يعني أن الوقفات الطويلة ستقلل من السرعة المتوسطة الإجمالية.
 
@@ -755,7 +758,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تسمح **أدوات الكاميرا** لك بمراقبة التوافق بين خريطة OsmAnd وسطح الأرض.
 
-- [إمالة الكاميرا](../plugins/development.md#camera-tilt). تعرض زاوية إمالة الكاميرا في وضع المنظور. القيمة الافتراضية هي 90° (بدون إمالة).
+- [إمالة الكاميرا](../plugins/development.md#camera-tilt). تعرض زاوة إمالة الكاميرا في وضع المنظور. القيمة الافتراضية هي 90° (بدون إمالة).
 - [ارتفاع الكاميرا](../plugins/development.md#camera-elevation). تشير إلى ارتفاع الكاميرا فوق مستوى السطح.
 - [مستوى التكبير](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
 - [المسافة من الكاميرا إلى الهدف](../plugins/development.md#distance-to-target). تقيس المسافة بين الكاميرا وموقع الهدف على الخريطة.

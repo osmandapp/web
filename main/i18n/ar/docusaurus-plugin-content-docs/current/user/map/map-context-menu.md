@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -142,7 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [ضمن مناطق](#polygon-information)
 - [نقاط الاهتمام القريبة](#nearby-pois)
 - [الأماكن الشائعة القريبة](#nearby-popular-places)
-- [الدلائل](#guides) (أندرويد فقط)
+- [الدلائل](#guides) 
 - [مسارات النقل العام للمحطات](#public-transport-routes)
 - [المفضلة / نقاط المسار من نفس المجموعة](#favorites--track-points-from-the-group)
 - [رابط OpenStreetMap](#openstreetmap-link)
@@ -170,21 +170,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![قائمة الوصف](@site/static/img/map/description_list_new_android.png) ![قائمة الوصف](@site/static/img/map/description_list_dialog.png)
 
-يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md#wikipedia-article)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
-
-إذا كان المكان المحدد يحتوي على مقالة ويكيبيديا، يتم عرض معاينة قصيرة في هذا القسم. عندما لا تكون المقالة الكاملة متاحة دون اتصال، يظهر زر *قراءة على ويكيبيديا*. النقر عليه يفتح نافذة حوار مع خيارات تعتمد على وصول المستخدم: يمكن للمستخدمين ذوي الخطة المشتراة تنزيل بيانات ويكيبيديا الإقليمية أو فتح المقالة في المتصفح، بينما يمكن للمستخدمين المجانيين فتح المقالة عبر الإنترنت أو الانتقال إلى الشاشة التي تقدم الوصول دون اتصال.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة الوصف](@site/static/img/map/description_list_new_ios.png)
-
-يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
+![قائمة الوصف](@site/static/img/map/description_list_ios.webp) ![قائمة الوصف](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md#wikipedia-article)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
+
+إذا كان المكان المحدد يحتوي على مقالة ويكيبيديا، يتم عرض معاينة قصيرة في هذا القسم. عندما لا تكون المقالة الكاملة متاحة دون اتصال، يظهر زر *قراءة على ويكيبيديا*. النقر عليه يفتح نافذة حوار مع خيارات تعتمد على وصول المستخدم: يمكن للمستخدمين ذوي الخطة المشتراة تنزيل بيانات ويكيبيديا الإقليمية أو فتح المقالة في المتصفح، بينما يمكن للمستخدمين المجانيين فتح المقالة عبر الإنترنت أو الانتقال إلى الشاشة التي تقدم الوصول دون اتصال.
 
 
 ### الأسماء البديلة {#alternative-names}
@@ -325,9 +323,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الدلائل {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
 
 ![الدلائل أندرويد](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![الدلائل iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 يظهر قسم **الدلائل** في قائمة سياق الخريطة لبعض الأماكن ويوفر الوصول إلى **دلائل السفر (Wikivoyage)** المتعلقة بنقطة الاهتمام المحددة. يعرض قائمة بإدخالات الدليل (على سبيل المثال، بلد أو منطقة) التي تذكر المكان المحدد.
 

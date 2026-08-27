@@ -1,5 +1,5 @@
 ---
-source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -67,7 +67,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | اللغة | الوصف | الرابط |
 | :-- | :-- | :-- |
 | الإسبانية  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| الإسبانية  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener more tools for virtual navigation and that serves as a tool for geodetic works. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| الإسبانية  |  Este manual tiene el fin de explicar detalladamente todas las funciones that tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener more tools for virtual navigation and that serves as a tool for geodetic works. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | الإسبانية  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | التشيكية   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | الفرنسية  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -111,7 +111,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is a map style by Holder Tamm that allows you to choose whether to hide certain objects or not.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [This is an OsmAnd rendering style optimized for storm chasing](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### التوجيه {#routing}
+
+يمكن تخصيص ملف `routing.xml` الافتراضي لضبط خوارزميات ومعاملات التوجيه لظروف محددة.
+
+| Source Name | الوصف | الرابط |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Custom `routing.xml` modification that adjusts route calculation for rainy conditions, factoring in surface type (e.g., bare rock), incline, and official trail difficulty ratings (CAI/SAC scales), plus improved "Avoid Tunnels" logic. | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### الخرائط غير المتصلة بالإنترنت {#offline-maps}
 
@@ -149,12 +158,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 -->
 
-## تفاعل مع OsmAnd: شارك، اقترح، وتواصل {#engage-with-osmand-share-suggest-and-connect}
+## التفاعل مع OsmAnd: شارك، اقترح، وتواصل {#engage-with-osmand-share-suggest-and-connect}
 
-If you have any suggestions for new map styles, plugins, or maybe you would like to contribute with your own creations to expand OsmAnd community resources, then please contact us. We appreciate and welcome your contributions to further develop OsmAnd database.
+إذا كان لديك أي اقتراحات لأنماط خرائط جديدة أو إضافات، أو ربما ترغب في المساهمة بإبداعاتك الخاصة لتوسيع موارد مجتمع OsmAnd، فيرجى التواصل معنا. نحن نقدر ونرحب بمساهماتك لتطوير قاعدة بيانات OsmAnd بشكل أكبر.
 
-- **Follow**: <LinksSocial/>  
+- **تابع**: <LinksSocial/>  
 
-- **Join**: <LinksTelegram/>  
+- **انضم**: <LinksTelegram/>  
 
-- **Get**: <AllStores/>
+- **احصل**: <AllStores/>

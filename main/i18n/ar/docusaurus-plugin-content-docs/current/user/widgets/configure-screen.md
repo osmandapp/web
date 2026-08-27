@@ -1,7 +1,7 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
-title:  تهيئة الشاشة
+title: تهيئة الشاشة
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## نظرة عامة {#overview}
 
 تسمح لك قائمة **تهيئة الشاشة** في OsmAnd بتخصيص واجهة الخريطة عن طريق إضافة وترتيب الأدوات والأزرار والإجراءات السريعة عبر لوحات متعددة.
@@ -27,6 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تنظيم الأدوات في لوحات (علوية، سفلية، يسرى، يمنى، وسطى).
 - إنشاء **صفحات** متعددة داخل اللوحات الجانبية، واختيار حجم الأدوات.
 - اختيار ارتفاع الصف وتشغيل/إيقاف أيقونات الأدوات.
+- على أندرويد، تخصيص [مظهر لوحة الأداة](#widget-panel-appearance).
 
 جميع الأدوات [تعتمد على الملف الشخصي](../personal/profiles.md) — لكل ملف شخصي تخطيطه وترتيبه ورؤيته وإعداداته الخاصة.
 
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview.webp)  ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -50,44 +50,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple pages within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
--->
 
 
 ## لوحات الأدوات {#widget-panels}
@@ -165,7 +127,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
     تتضمن ٤ أدوات: [المسافة إلى الوجهة](../widgets/nav-widgets.md#distance-to-destination)، [المسافة إلى النقطة الوسيطة](../widgets/nav-widgets.md#distance-to-intermediate)، [الوقت إلى النقطة الوسيطة](../widgets/nav-widgets.md#time-to-intermediate)، [الوقت إلى الوجهة](../widgets/nav-widgets.md#time-to-destination).
 
 - [مناورات المسار](../widgets/nav-widgets.md#next-turn) (*فقط في اللوحة اليسرى/اليمنى*).  
-    يتم تنشيط هذه المجموعة أثناء الملاحة وتعرض المسافة والسه_f إلى المناورة التالية.  
+    يتم تنشيط هذه المجموعة أثناء الملاحة وتعرض المسافة والسهم إلى المناورة التالية.  
     تتضمن ٣ أدوات: *المنعطف التالي*، *المنعطف التالي (صغير)*، *المنعطف الثاني التالي*.
 
 - [حد السرعة](../widgets/nav-widgets.md#speed-limit).  
@@ -399,38 +361,36 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
     - قم بالتبديل إلى وضع الإيقاف، في حقل *إظهار الأيقونة*.
 
 
-<!--
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## مظهر لوحة الأداة (أندرويد فقط) {#widget-panel-appearance}
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
-![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance.webp) ![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance_2.webp)
 
-Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+تتيح لك إعدادات المظهر تخصيص مظهر جميع الأدوات في اللوحة المحددة. لكل لوحة (*علوية*، *سفلية*، *يسرى*، *يمنى*) إعدادات مظهر خاصة بها.
 
-1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+١. **الارتفاع**. يتحكم في ارتفاع الأدوات في اللوحة المحددة. بالنسبة للوحتين اليسرى واليمنى، يغير هذا الإعداد **ارتفاع الأداة**. أما بالنسبة للوحتين العلوية والسفلية، فيغير **ارتفاع الصف**. الخيارات المتاحة: *الأصلي (افتراضي)*، *صغير*، *متوسط*، *كبير*.
 
-2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+٢. **الأيقونة**. يتحكم في رؤية الأيقونة. الخيارات المتاحة: *الأصلي (افتراضي)*، *تشغيل*، *إيقاف*. 
 
-3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+٣. **لون النص**. يغير لون نص الأداة الأساسي. الخيارات المتاحة: *افتراضي*، *تلقائي*، *مخصص*. عند اختيار **مخصص**، يمكنك تكوين ألوان منفصلة لوضعي **النهار** و**الليل**. تعرض معاينة مباشرة الألوان المحددة قبل تطبيقها.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
+:::tip شراء
+ألوان الأدوات المخصصة هي [ميزة مدفوعة](../purchases/index.md).  
 :::
 
-4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+٤. **لون النص الثانوي**. يغير لون أسماء الأدوات ووحداتها. الخيارات المتاحة: *افتراضي*، *تلقائي*، *مخصص*.
 
-5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+٥. **لون الخلفية**. يغير لون خلفية الأدوات في اللوحة المحددة. الخيارات المتاحة: *افتراضي*، *شفاف*، *مخصص*.
 
-6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+٦. **المعاينة**. تعرض منطقة المعاينة كيف ستبدو الأدوات مع إعدادات المظهر المحددة حاليًا.
 
-7. **Copy appearance settings:**
+٧. **نسخ إعدادات المظهر:**
 
-    - Tap the ⋮ menu in the upper-right corner.
-    - Select Copy from.
-    - Choose one of the following options: *Another profile* or *One of the other panels*.
+    - انقر على قائمة ⋮ في الزاوية العلوية اليمنى.
+    - اختر نسخ من.
+    - اختر أحد الخيارات التالية: *ملف شخصي آخر* أو *إحدى اللوحات الأخرى*.
 
--->
 
 ## تخصيص اللوحات {#panels-customization}
 
