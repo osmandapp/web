@@ -43,7 +43,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 ## General {#general}
 
-This section contains the basic OsmAnd settings, such as selecting a [profile](#default-profile) when loading the application, selecting the [rendering engine](#map-rendering-engine) and the [folder](#data-storage-folder) where the data will be saved.  
+This section contains the basic OsmAnd settings, such as selecting a [profile](#default-profile) when loading the application, selecting the [rendering engine](#map-rendering-engine) and the [folder](#data-storage) where the data will be saved.  
 
 
 ### Default Profile {#default-profile}
