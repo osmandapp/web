@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title:  Maps & Resources
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## نظرة عامة {#overview}
 
@@ -142,7 +141,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 في قائمة تنزيل الخرائط، هناك قسم **الخرائط العالمية** يوفر الوصول لتنزيل خرائط مختلفة للعالم، مكملًا وظائف التطبيق.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*أندرويد فقط*). يحتوي هذا الملف على تصحيحات الارتفاع لتعويض انحناء الكوكب.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*أندرويد فقط*). يحتوي هذا الملف على تصحيحات الارتفاع المستخدمة لتحسين دقة الارتفاع على الأجهزة التي لا توفر ارتفاعًا فوق متوسط مستوى سطح البحر (MSL)، بما في ذلك عند استخدام واجهة برمجة تطبيقات Android كـ [مصدر الموقع](../personal/global-settings.md#location-source) بدلاً من خدمات Google Play.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. توفر نظرة عامة واسعة على سطح الأرض، مفيدة لتخطيط المسارات طويلة الأمد والاستكشاف العرضي.
 - **خريطة الطقس العالمية**. يسمح لك بتنزيل خريطة مع معلومات الطقس.
 

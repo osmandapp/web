@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  متتبع سفن AIS
 ---
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## معلمات الإعداد المطلوبة {#required-setup-parameters}
 
-يتم تفعيل القدرة على استخدام الخرائط عبر الإنترنت تلقائيًا في إصدار iOS من OsmAnd. لعرض الخرائط عبر الإنترنت في أندرويد، تحتاج إلى إجراء الإعدادات التالية:
+تُفعّل إمكانية استخدام الخرائط عبر الإنترنت تلقائيًا في إصدار iOS من OsmAnd. لعرض الخرائط عبر الإنترنت في أندرويد، تحتاج إلى إجراء الإعدادات التالية:
 
 1. [تفعيل](../plugins/index.md#enable--disable) ملحق **متتبع سفن AIS** في *القائمة الرئيسية ← الملحقات ← متتبع سفن AIS*.
 2. تكوين [إعدادات AIS](../map/raster-maps.md#layers)
@@ -155,7 +155,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![إعدادات AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![إعدادات AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | عنوان IP | حدد عنوان IP لمصدر بيانات AIS (إذا تم استخدام TCP) | `192.168.200.16` |
 | منفذ TCP   | حدد رقم منفذ TCP لبيانات AIS | `4001` |
 | منفذ UDP   | حدد منفذ UDP لاستقبال AIS في OsmAnd  | `10110` |
+| استقبال بيانات AIS حتى لو كان OsmAnd متوقفًا مؤقتًا   | استمر في تشغيل مستمع رسائل AIS إذا كان OsmAnd متوقفًا مؤقتًا أو في الخلفية. إذا تم تعطيله، فلن يتم استقبال رسائل AIS عندما يكون OsmAnd في الخلفية  | `نعم/لا` |
 | | | |
 | **مهلة استقبال إشارة AIS** | |  |
 | مهلة فقدان كائنات AIS     | تختفي السفن إذا لم يتم استقبال أي إشارة لفترة محددة | `3 - 20 min` |

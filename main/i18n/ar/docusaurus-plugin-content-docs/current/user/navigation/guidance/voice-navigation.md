@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  التوجيهات الصوتية / الإشعارات
 ---
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt_android.png)
+![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt_android.png) ![إعدادات الملاحة الصوتية في أندرويد](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *زر <Translate ios="true" ids="routing_settings"/>* *(أو <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) ← اختر الملف الشخصي ← <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![إعدادات الملاحة الصوتية في iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![إعدادات الملاحة الصوتية في iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![إعدادات الملاحة الصوتية في iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -71,9 +71,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **الإعلان**. يسمح لك بتكوين الأنواع التالية من التوجيهات [أنواع التوجيهات](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts):
 
-- *أسماء الشوارع (TTS)، أرقام المخارج، تحذيرات المرور، ممرات المشاة* و*الأنفاق*.
+- *اتجاهات المنعطفات، أسماء الشوارع (TTS)، أرقام المخارج، تحذيرات المرور، ممرات المشاة* و*الأنفاق*.
 - *[كاميرات السرعة](#speed-cameras)*.
-- قم أيضًا بتكوين **[ودجة التنبيه](../../widgets/nav-widgets.md#alert-widget)** لاستخدامها مع الإعلانات.
+- قم أيضًا بتكوين **[ودجة التنبيه](../../widgets/nav-widgets.md#alert-widget)** لاستخها مع الإعلانات.
 
 **نقاط المستخدم**:
 
@@ -99,6 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - *تكرار تعليمات الملاحة*. يسمح لك بتكرار تعليمات الملاحة على فترات منتظمة من دقيقة واحدة إلى ٣٠ دقيقة. أو يدويًا - إذا فاتتك توجيه صوتي، يمكنك الاستماع إليه مرة أخرى بمجرد النقر على [سهم المنعطف الحالي](../../widgets/nav-widgets.md#next-turn) على شاشة التطبيق.
 - *[وقت الإعلان](#announcement-time)*.
+- *إيقاف الصوت المنطوق* (*iOS فقط*). عند التمكين، يتم إيقاف البودكاست والكتب الصوتية وغيرها من الصوت المنطوق أثناء تشغيل التوجيهات الصوتية. يستمر تشغيل الموسيقى بمستوى صوت منخفض. عند التعطيل، يستمر تشغيل الصوت المنطوق والموسيقى بمستوى صوت منخفض.
 
 **الإخراج** (*أندرويد فقط*):
 
@@ -153,7 +154,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يعتمد وقت إعلان التوجيهات الصوتية المختلفة على الملف الشخصي المحدد، ونوع التوجيه، وسرعة الملاحة الحالية، وسرعة الملاحة الافتراضية. باستخدام هذا الإعداد، يمكنك تغيير المسافة قبل تفعيل التوجيهات الصوتية عن طريق تطبيق مضاعف المسافة: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0، *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5، *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5، *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
 
-في القائمة المنسدلة *الفواصل الزمنية والمسافات*، يمكنك عرض معلومات مفصلة حول تفعيل التوجيهات لمضاعفات المسافة المختلفة. لمزيد من المعلومات، راجع [تشغيل التوجيهات الصوتية للملاحة](../../../technical/algorithms/voice-prompt-triggering.md).
+في القائمة المنسدلة *الفواصل الزمنية والمسافات*، يمكن عرض معلومات مفصلة حول تفعيل التوجيهات لمضاعفات المسافة المختلفة. لمزيد من المعلومات، راجع [تشغيل التوجيهات الصوتية للملاحة](../../../technical/algorithms/voice-prompt-triggering.md).
 
 
 ### إخراج التوجيه الصوتي {#voice-guidance-output}
@@ -360,7 +361,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-بمجرد بدء المسار، يمكنك عرض المعلومات في قائمة النظام المنسدلة في قائمة الإشعارات. تحتوي إشعارات OsmAnd الصامتة على معلومات مثل التعليمات خطوة بخطوة، وأسهم اتجاهات المنعطفات، ووقت الوصول والوقت المتبقي، والسرعة الحالية والمسافة إلى الوجهة.  
+بمجرد بدء المسار، يمكن عرض المعلومات في قائمة النظام المنسدلة في قائمة الإشعارات. تحتوي إشعارات OsmAnd الصامتة على معلومات مثل التعليمات خطوة بخطوة، وأسهم اتجاهات المنعطفات، ووقت الوصول والوقت المتبقي، والسرعة الحالية والمسافة إلى الوجهة.  
 
 ![إشعار مسار الملاحة في أندرويد](@site/static/img/navigation/route/navigation_notifications_android.png)
 

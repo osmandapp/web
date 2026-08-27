@@ -1,5 +1,5 @@
 ---
-source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
+source-hash: 6d77d33fd197da161c32e4ea8defeaa4356c799cf08f389de07887f5da2f0df8
 sidebar_position: 6
 title:  أماكني
 ---
@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![أماكني iOS](@site/static/img/personal/my_places_ios_2.png)  ![قائمة أماكني iOS](@site/static/img/personal/my_places_menu_ios_2.png)
+![أماكني iOS](@site/static/img/personal/my_places_ios_2.png)  ![قائمة أماكني iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![قائمة المفضلة iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
+![قائمة المفضلة iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
+![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -142,7 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
+![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -248,7 +248,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![أدلة السفر iOS](@site/static/img/plan-route/my_places_ios.png)
+![أدلة السفر iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 يحتوي قسم **السفر** على أدلة السفر ومقالاتها المحفوظة للوصول دون اتصال بالإنترنت. يمكنك فتح محتوى السفر المحفوظ وتنظيمه وإدارته بسرعة من أماكني. يظهر قسم السفر فقط عند حفظ أكثر من دليل سفر واحد.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title: المسارات
 sidebar_position: 11
 ---
@@ -28,11 +28,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.webp)
 
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* ضمن قائمة [تهيئة الخريطة](../../map/configure-map-menu.md).
 - يمكن لـ OsmAnd تمييز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها بالنقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك متابعة الألوان والأيقونات.
-- يمكن أيضًا تصفية أنواع المسارات الرئيسية حسب الفئات والفئات الفرعية، مما يتيح عرض مجموعات محددة فقط ضمن كل نوع. على سبيل المثال، يمكن عرض مسارات المشي لمسافات طويلة بواسطة **رموز OSMC** كفئات، وبواسطة *شبكات دولية أو وطنية أو إقليمية أو محلية* كفئات فرعية، وهي متاحة حاليًا عند تمكين [ملحق تطوير OsmAnd](../../plugins/development.md).
+- يمكن أيضًا تصفية أنواع المسارات الرئيسية حسب الفئات والفئات الفرعية، مما يتيح عرض مجموعات محددة فقط ضمن كل نوع. على سبيل المثال، يمكن عرض مسارات المشي لمسافات طويلة بواسطة **رموز OSMC** كفئات، وبواسطة *شبكات دولية أو وطنية أو إقليمية أو محلية* كفئات فرعية، بالإضافة إلى *مسارات غير مصنفة*. تتوفر فلاتر تصنيف الشبكة المماثلة لمسارات ركوب الدراجات. هذه الخيارات متاحة حاليًا عند تمكين [ملحق تطوير OsmAnd](../../plugins/development.md). عند تداخل شبكات مسارات متعددة، يمكن تمكين أو تعطيل التصنيفات الفردية لعرض مستويات المسارات المطلوبة فقط.
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [خطط مسار](../../plan-route/create-route.md). 
 - عندما تمر عدة مسارات على نفس الطريق، يُعرض كل مسار كخط شبه شفاف منفصل موضوع فوق الآخرين. 
 - عند النقر على موقع تتداخل فيه عدة مسارات، تظهر قائمة سياقية تحتوي على جميع المسارات التي تمر عبر هذه النقطة. 
