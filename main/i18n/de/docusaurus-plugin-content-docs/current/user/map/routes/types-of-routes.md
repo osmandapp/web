@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title:  Routenarten
 ---
@@ -24,7 +24,7 @@ Sie können die Filterung einiger Routentypen im Menü [Karte konfigurieren](../
 
 ## Radfahren {#cycle}
 
-[Fahrradrouten](https://wiki.openstreetmap.org/wiki/Cycle_routes) sind in drei Typen vorhanden: *lokal* (`lcn`), *regional* (`rcn`), *national* (`ncn`), *international* (`icn`). Fahrradrouten können auch Teil von [Knotennetzwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) sein. Sie können auswählen, wie die Farbe den Routensegmenten zugewiesen wird:
+[Fahrradrouten](https://wiki.openstreetmap.org/wiki/Cycle_routes) sind in folgenden Typen vorhanden: *lokal* (`lcn`), *regional* (`rcn`), *national* (`ncn`), *international* (`icn`) und *unclassified*. Fahrradrouten können auch Teil von [Knotennetzwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) sein. Sie können auswählen, wie die Farbe den Routensegmenten zugewiesen wird:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -47,7 +47,7 @@ MTB-Routen haben eine spezifische Zuordnung in [OpenStreetMap](https://wiki.open
 
 ## Wandern / Gehen {#hiking--walking}
 
-[Wanderwege](https://wiki.openstreetmap.org/wiki/Walking_Routes) sind in drei Typen vorhanden: *lokal* (`lwn`), *regional* (`rwn`), *national* (`nwn`), *international* (`iwn`). Wanderwege können auch Teil von [Knotennetzwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) sein. OsmAnd trennt Wander- und Hiking-Routen nicht und fasst sie in einer Gruppe zusammen. Sie können auswählen, wie die Farbe den Routensegmenten zugewiesen wird:
+[Wanderwege](https://wiki.openstreetmap.org/wiki/Walking_Routes) sind in folgenden Typen vorhanden: *lokal* (`lwn`), *regional* (`rwn`), *national* (`nwn`), *international* (`iwn`) und *unclassified*. Wanderwege können auch Teil von [Knotennetzwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) sein. OsmAnd trennt Wander- und Hiking-Routen nicht und fasst sie in einer Gruppe zusammen. Sie können auswählen, wie die Farbe den Routensegmenten zugewiesen wird:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Färbt Routen entsprechend ihrer individuellen [lokalen Farbe](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (falls in OpenStreetMap verfügbar) und dem touristischen Schildsymbol.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)

@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  Route Preparation
 ---
@@ -74,7 +74,7 @@ Stellen Sie vor der Verwendung der Offline-Navigation sicher, dass die erforderl
 
 3. [Starten](#start--stop-navigation) Sie die Navigation oder [simulieren Sie die Navigation](#simulated-navigation) zuerst (mit dieser Funktion können Sie Ihre Route testen, bevor Sie sie tatsächlich befahren). [Auf iOS-Geräten](https://support.apple.com/en-us/121430) in EU-Ländern kann OsmAnd auch als Standard-Navigations-App in den Systemeinstellungen festgelegt werden, sodass sie automatisch für Navigationsanfragen geöffnet wird.
 
-4. Während der Fahrt können Sie die Navigation [*Pausieren/Fortsetzen*](#pause--resume-navigation) und [*Stoppen*](#start--stop-navigation).
+4. Während der Fahrt können Sie die Navigation [*Pausieren/Fortsetzen*](#pause--resume-navigation) und [*Stoppen*](#start--stop-navigation) .
 
 
 :::note
@@ -461,13 +461,11 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_navigation,shared_st
 
 ## Fehlende oder nicht synchronisierte Karten {#maps-missing-or-not-synchronized}
 
-Um eine Route zu erstellen, müssen alle **notwendigen Karten** heruntergeladen sein und dasselbe Veröffentlichungsdatum haben. Bitte beachten Sie, dass in einigen Situationen die Meldung über fehlende Karten im Routenvorbereitungsmenü ausgeblendet sein kann. Wenn Sie das Navigationsmenü nach oben ziehen, sehen Sie mögliche Gründe, warum Ihre Route nicht berechnet werden konnte.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Meldung keine Karten beim Erstellen der Navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Meldung keine Karten beim Erstellen der Navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Meldung keine Karten beim Erstellen der Navigation Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Um eine Route zu erstellen, müssen alle **notwendigen Karten** heruntergeladen 
 </TabItem>
 
 </Tabs>
+
+Um eine Route zu erstellen, müssen alle **notwendigen Karten** heruntergeladen sein und dasselbe Veröffentlichungsdatum haben. Auf Android kann OsmAnd bei unterschiedlichen Veröffentlichungsdaten der erforderlichen Karten auf das Standard-Routing umschalten, wenn die [Routenberechnungsmethode](../routing/car-based-routing.md#route-parameters---car) auf Automatisch eingestellt ist.
+
+Bitte beachten Sie, dass in einigen Situationen die Meldung über fehlende Karten im Routenvorbereitungsmenü ausgeblendet sein kann. Wenn Sie das Navigationsmenü nach oben ziehen, sehen Sie mögliche Gründe, warum Ihre Route nicht berechnet werden konnte.
 
 ### Erforderliche Karten {#required-maps}
 

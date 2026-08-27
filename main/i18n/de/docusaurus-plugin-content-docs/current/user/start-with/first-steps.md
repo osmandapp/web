@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 428826bae8ed862f0461ecab49ef7797e89e0c65221f36bbe3483a582b457628
 sidebar_position: 1
 title:  Erste Schritte
 ---
@@ -25,13 +25,13 @@ Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, die Kar
 
 <TabItem value="android" label="Android">
 
-![Offline-Navigation Android](@site/static/img/settings/google_play_screen1_android.png)
+![Offline navigation Android](@site/static/img/settings/google_play_screen1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Offline-Navigation iOS](@site/static/img/settings/itunes_screen_ios.png)
+![Offline navigationiOS](@site/static/img/settings/itunes_screen_ios.png)
 
 </TabItem>
 
@@ -42,11 +42,11 @@ Erfahren Sie, wie Sie Karten herunterladen, die Anwendung konfigurieren, die Kar
 
 OsmAnd ist eine mobile Anwendung für Karten und Navigation, die für **Android** und **iOS** verfügbar ist. Sie können sie von den beliebtesten Märkten herunterladen.
 
-**Android-Märkte**: [Google Play Store](https://play.google.com/store/apps/details?id=net.osmand) und [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+**Android-Märkte**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) und [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
 <AndroidStore/>
 
-**iOS**: [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+**iOS**: [App store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 <AppleStore/>
 
@@ -76,13 +76,13 @@ Unser Ziel ist es, eine voll funktionsfähige, kartenorientierte Anwendung zu sc
 
 <TabItem value="android" label="Android">
 
-![Genauer Standort Android](@site/static/img/steps/first_start_andr.png)
+![Precise location android](@site/static/img/steps/first_start_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Genauer Standort iOS](@site/static/img/steps/first_start_ios.png) ![Genauer Standort iOS](@site/static/img/steps/first_start_ios_1.png)
+![Precise location iOS](@site/static/img/steps/first_start_ios.png) ![Precise location iOS](@site/static/img/steps/first_start_ios_1.png)
 
 </TabItem>
 
@@ -97,13 +97,13 @@ Wir empfehlen Ihnen, OsmAnd die Berechtigung zu erteilen, Informationen über de
 
 <TabItem value="android" label="Android">
 
-![Auf der Karte anzeigen](@site/static/img/steps/start_screen_download_andr.png)
+![Show on the map](@site/static/img/steps/start_screen_download_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Auf der Karte anzeigen](@site/static/img/steps/start_screen_download_ios.png)
+![Show on the map](@site/static/img/steps/start_screen_download_ios.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Obwohl OsmAnd es Ihnen ermöglicht, Karten für alle verfügbaren Regionen herun
 
 - **OsmAnd Pro** und **Maps+** bieten **unbegrenzte Karten-Downloads**, aber Sie müssen die Karten immer noch Region für Region herunterladen.
 - **Speicherbeschränkungen.** Stellen Sie sicher, dass Ihr Gerät über genügend Speicherplatz verfügt, bevor Sie mehrere Regionen herunterladen.
-- **Automatische Updates.** Einmal heruntergeladene Karten können über *Menü → Karten & Ressourcen → Updates* aktualisiert werden.
+- **Automatische Updates.** Einmal heruntergeladene Karten können über *Menü → Karten & Ressourcen → Updates.* aktualisiert werden.
 
 
 ### Wie man die App-Sprache ändert {#how-to-change-app-language}
@@ -144,7 +144,7 @@ Auf iOS-Geräten kann die Anzeigesprache nur in den Systemeinstellungen geänder
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Anzeigesprache*
 
-![Allgemeine Einstellungen Sprache Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Allgemeine Einstellungen Sprache Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -152,7 +152,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_settings,osmand_settings
 
 Gehen Sie zu: *Einstellungen → OsmAnd Maps → Sprache*
 
-![Allgemeine Einstellungen Sprache iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
+![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
@@ -171,13 +171,13 @@ Sie können die Anwendungseinstellungen als [Globale Einstellungen](../personal/
 
 <TabItem value="android" label="Android">
 
-![Profil verwalten Android](@site/static/img/settings/manage_profile_android.png) ![Profil konfigurieren Android](@site/static/img/settings/configure_profile_android.png)
+![Manage profile Android](@site/static/img/settings/manage_profile_android.png) ![Configure profile Android](@site/static/img/settings/configure_profile_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profil verwalten iOS](@site/static/img/settings/manage_profile_ios.png) ![Profil konfigurieren iOS](@site/static/img/settings/configure_profile_ios.png)
+![Manage profile iOS](@site/static/img/settings/manage_profile_ios.png) ![Configure profile iOS](@site/static/img/settings/configure_profile_ios.png)
 
 </TabItem>
 
@@ -197,7 +197,7 @@ Sie können Plugins über [Hauptmenü](../start-with/main-menu.md) → [Plugins]
 
 <TabItem value="android" label="Android">
 
-![Plugins aktivieren Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin-Beispiel Android](@site/static/img/settings/plugin_example_android.png)
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
 Um Plugins zu aktivieren/deaktivieren, gehen Sie zu:
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Aktivieren
@@ -206,7 +206,7 @@ Um Plugins zu aktivieren/deaktivieren, gehen Sie zu:
 
 <TabItem value="ios" label="iOS">
 
-![Plugins aktivieren iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin-Beispiel iOS](@site/static/img/settings/plugin_example_ios.png)
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
 Um Plugins zu aktivieren/deaktivieren, gehen Sie zu:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
@@ -226,13 +226,13 @@ Die Karte ist ein zentrales Element von OsmAnd, und es ist wichtig zu wissen, [w
 
 <TabItem value="android" label="Android">
 
-![Karte konfigurieren Android](@site/static/img/settings/configure_map_menu_android.png) ![Beispiel für Kartenkonfiguration Android](@site/static/img/settings/configure_map_example_android.png)
+![Configure map Android](@site/static/img/settings/configure_map_menu_android.png) ![Configure map example Android](@site/static/img/settings/configure_map_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Karte konfigurieren iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Beispiel für Kartenkonfiguration iOS](@site/static/img/settings/configure_map_example_ios.png)
+![Configure map iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Configure map example iOS](@site/static/img/settings/configure_map_example_ios.png)
 
 </TabItem>
 
@@ -249,13 +249,13 @@ Die Karte ist ein zentrales Element von OsmAnd, und es ist wichtig zu wissen, [w
 
 <TabItem value="android" label="Android">
 
-![Bildschirm konfigurieren Android](@site/static/img/widgets/configure_screen_android.png) ![Beispiel für Bildschirmkonfiguration Android](@site/static/img/settings/configure_screen_example_android.png)
+![Configure screen Android](@site/static/img/widgets/configure_screen_android.png) ![Configure screen example Android](@site/static/img/settings/configure_screen_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bildschirm konfigurieren iOS](@site/static/img/settings/configure_screen_ios.png) ![Beispiel für Bildschirmkonfiguration iOS](@site/static/img/settings/configure_screen_example_ios.png)
+![Configure screen iOS](@site/static/img/settings/configure_screen_ios.png) ![Configure screen example iOS](@site/static/img/settings/configure_screen_example_ios.png)
 
 </TabItem>
 
@@ -272,13 +272,13 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 <TabItem value="android" label="Android">
 
-![Persönliche Daten hinzufügen Android](@site/static/img/settings/personal_data_android.png)
+![Add personal data Andoroid](@site/static/img/settings/personal_data_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Persönliche Daten hinzufügen iOS](@site/static/img/settings/personal_data_ios.png)
+![Add personal data iOS](@site/static/img/settings/personal_data_ios.png)
 
 </TabItem>
 
@@ -295,13 +295,13 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 <TabItem value="android" label="Android">
 
-![Mehrfachauswahl von POIs](@site/static/img/map/multiple_selection_android.png) ![POI suchen und anzeigen Android](@site/static/img/map/search_display_poi_android.png)
+![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png) ![Search and display POI Android](@site/static/img/map/search_display_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mehrfachauswahl von POIs](@site/static/img/settings/multiple_selection_iOS.png) ![POI suchen und anzeigen iOS](@site/static/img/settings/search_display_poi_iOS.png)
+![Multiple POI Selection](@site/static/img/settings/multiple_selection_iOS.png) ![Search and display POI iOS](@site/static/img/settings/search_display_poi_iOS.png)
 
 </TabItem>
 
@@ -318,13 +318,13 @@ OsmAnd ermöglicht es Ihnen, verschiedene Markierungen auf der Karte für Ihre p
 
 <TabItem value="android" label="Android">
 
-![Route planen Android](@site/static/img/settings/plan_route_android.png) ![Routengrafik Android](@site/static/img/settings/plan_route_graph_android.png)
+![Plan route Android](@site/static/img/settings/plan_route_android.png) ![Plan route graph Android](@site/static/img/settings/plan_route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route planen iOS](@site/static/img/settings/plan_route_ios.png)
+![Plan route iOS](@site/static/img/settings/plan_route_ios.png)
 
 </TabItem>
 
@@ -341,13 +341,13 @@ OsmAnd bietet viele Suchmöglichkeiten, einschließlich der Adresssuche. Standar
 
 <TabItem value="android" label="Android">
 
-![Adresssuche Android](@site/static/img/settings/address_search_android.png) ![Suchergebnis Android](@site/static/img/settings/address_search_result_android.png)
+![Address search Android](@site/static/img/settings/address_search_android.png) ![Search result Android](@site/static/img/settings/address_search_result_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Adresssuche iOS](@site/static/img/settings/address_search_ios.png) ![Suchergebnis iOS](@site/static/img/settings/address_search_result_ios.png)
+![Address search iOS](@site/static/img/settings/address_search_ios.png) ![Search result iOS](@site/static/img/settings/address_search_result_ios.png)
 
 </TabItem>
 
@@ -368,13 +368,13 @@ Die [Navigation](../navigation/index.md) bietet Ihnen eine Schritt-für-Schritt-
 
 <TabItem value="android" label="Android">
 
-![Navigation starten Android](@site/static/img/settings/start_navigation_android.png) ![Routengrafik Android](@site/static/img/settings/route_graph_android.png)
+![Start navigation Android](@site/static/img/settings/start_navigation_android.png) ![Route graph Android](@site/static/img/settings/route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation starten iOS](@site/static/img/settings/start_navigation_ios.png) ![Routengrafik iOS](@site/static/img/settings/route_graph_ios.png)
+![Start navigation iOS](@site/static/img/settings/start_navigation_ios.png) ![Route graph iOS](@site/static/img/settings/route_graph_ios.png)
 
 </TabItem>
 
@@ -395,13 +395,13 @@ Die [Reiseaufzeichnung](../plugins/trip-recording.md) ist ein spezielles Werkzeu
 
 <TabItem value="android" label="Android">
 
-![Reiseaufzeichnung Android](@site/static/img/settings/trip_recording_android.png) ![Übersicht Reiseaufzeichnung Android](@site/static/img/settings/trip_recording_overview_android.png)
+![Trip recording Android](@site/static/img/settings/trip_recording_android.png) ![Overview trip recording Android](@site/static/img/settings/trip_recording_overview_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseaufzeichnung starten iOS](@site/static/img/settings/trip_recording_start_ios.png) ![Menü Reiseaufzeichnung iOS](@site/static/img/settings/trip_recording_ios.png)
+![Start trip recording iOS](@site/static/img/settings/trip_recording_start_ios.png) ![Trip recording menu iOS](@site/static/img/settings/trip_recording_ios.png)
 
 </TabItem>
 
@@ -418,13 +418,13 @@ OsmAnd wird von [OpenStreetMap](https://www.openstreetmap.org/)-Daten angetriebe
 
 <TabItem value="android" label="Android">
 
-![OSM-Notiz Android](@site/static/img/settings/osm_note_android.png) ![POI erstellen Android](@site/static/img/settings/create_poi_menu_android.png)
+![OSM note Android](@site/static/img/settings/osm_note_android.png) ![Create POI Android](@site/static/img/settings/create_poi_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OSM-Notiz iOS](@site/static/img/settings/osm_note_ios.png) ![POI erstellen iOS](@site/static/img/settings/create_poi_ios.png)
+![OSM note iOS](@site/static/img/settings/osm_note_ios.png) ![Create POI iOS](@site/static/img/settings/create_poi_ios.png)
 
 </TabItem>
 
@@ -479,7 +479,7 @@ Möglicherweise müssen Sie die folgenden Schritte ausführen, bevor Sie dies tu
 
 Tippen Sie auf ein Aktionssymbol, um die Anwendung sofort mit der ausgewählten Aktion zu starten.
 
-![Verknüpfungen](@site/static/img/steps/shortcuts_3_andr.png) ![Verknüpfungen](@site/static/img/steps/shortcuts_4_andr.png)
+![Shortcuts](@site/static/img/steps/shortcuts_3_andr.png) ![Shortcuts](@site/static/img/steps/shortcuts_4_andr.png)
 
 
 ## Offline-Hilfe {#offline-help}
@@ -488,13 +488,13 @@ Tippen Sie auf ein Aktionssymbol, um die Anwendung sofort mit der ausgewählten 
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_help_screen_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_help_screen_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_screen_ios.png)
 
 </TabItem>
 
@@ -510,22 +510,21 @@ Im *Hilfemenü* finden Sie auch nützliche Links zu den sozialen Netzwerken von 
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_help_menu_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Absturzprotokoll senden** (*für Android*). Ermöglicht Benutzern, Berichte über App-Abstürze an Entwickler zu senden, was bei der Identifizierung und Lösung von Problemen hilft.
-- **Logcat-Protokoll senden** (*für Android*). Bietet Benutzern die Möglichkeit, detaillierte Protokolle von App-Abstürzen an Entwickler zu senden, was eine tiefere Analyse und Fehlerbehebung erleichtert.
-- **Protokoll senden** (*für iOS*). Führt eine ähnliche Funktion wie die Funktion *Absturzprotokoll senden* für Android aus und ermöglicht es Benutzern auf iOS-Geräten, App-Abstürze zu Debugging-Zwecken an Entwickler zu melden.
-- **Build-Version kopieren**. Ermöglicht Benutzern, die aktuelle Version der App schnell und genau an Entwickler zu übermitteln, wenn sie Probleme melden, was den Diagnose- und Lösungsprozess vereinfacht.
+- **Send app crashes logs**. Ermöglicht Benutzern, Absturzberichte früherer App-Abstürze zur Analyse und Fehlerbehebung an Entwickler zu senden. 
+- **Send current session logs** (Android)/**Send current app log** (iOS). Ermöglicht Benutzern, das aktuelle App-Protokoll mit den seit dem Start der App aufgezeichneten Informationen an Entwickler zur Fehlerbehebung zu senden.
+- **Copy build version**. Ermöglicht Benutzern, die aktuelle Version der App schnell und genau an Entwickler zu übermitteln, wenn sie Probleme melden, was den Diagnose- und Lösungsprozess vereinfacht.
 
 
 ### Am häufigsten angesehen {#most-viewed}
@@ -534,13 +533,13 @@ Im *Hilfemenü* finden Sie auch nützliche Links zu den sozialen Netzwerken von 
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
 
 </TabItem>
 
@@ -555,13 +554,13 @@ Die am häufigsten angesehenen Artikel unter unseren Benutzern beziehen sich auf
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/guide_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/guide_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/guide_ios.png)
+![Maps menu iOS](@site/static/img/steps/guide_ios.png)
 
 </TabItem>
 
@@ -576,13 +575,13 @@ Der Abschnitt **Benutzerhandbuch** des Hilfemenüs ist ein vollständiges Handbu
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_help_troubleshooting_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_troubleshooting_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
 
 </TabItem>
 
@@ -604,13 +603,13 @@ Lösungen und Tipps zur Behebung häufiger Probleme. Wenn Sie eine spezifische F
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_help_contact_us_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_contact_us_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
 
 </TabItem>
 
@@ -624,21 +623,21 @@ Ermöglicht es Ihnen, Fragen zu stellen oder Vorschläge zu machen.
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_help_report_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Problem auf GitHub öffnen**. [Android-Version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS-Version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): Fragen stellen, über Fehler schreiben und Funktionen vorschlagen.
-- **Absturzprotokoll senden** (*für Android*). Enthält nur Informationen über Abstürze.
-- [Logcat-Protokoll senden](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Protokoll senden](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detaillierte Protokolldatei.
+- **Send app crashes logs**. Enthält Berichte über frühere App-Abstürze.
+- **Send current session logs** (Android)/**Send current app log** (iOS). Enthält das seit dem Start der App aufgezeichnete App-Protokoll.
 
 ### Über OsmAnd {#about-osmand}
 
@@ -646,13 +645,13 @@ Ermöglicht es Ihnen, Fragen zu stellen oder Vorschläge zu machen.
 
 <TabItem value="android" label="Android">
 
-![Offline-Hilfe Android Screenshot](@site/static/img/steps/offline_about_1_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_about_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_about_ios_new.png) ![Kartenmenü iOS](@site/static/img/steps/offline_about_ios_new_2.png)
+![Maps menu iOS](@site/static/img/steps/offline_about_ios_new.png) ![Maps menu iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 

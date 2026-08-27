@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: bd81c2321c74c63107dfc284a099f5a70651f4b9ec53164117f0449dcf5774a9
 sidebar_position: 3
 title:  Globale Einstellungen
 ---
@@ -84,15 +84,15 @@ Diese Funktion ist für die iOS-Version der OsmAnd-App verfügbar.
 Das [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) wird verwendet, wenn eine Verbindung zur [CarPlay-Software](https://support.apple.com/en-gb/HT205634) Ihres Fahrzeugs besteht, und hilft Ihnen, die optimierte Version der OsmAnd-App optimal zu nutzen, indem es die Audio- und Videosysteme zur Anzeige von Daten auf Ihrem Telefon verwendet.
 
 
-### Datenspeicherordner {#data-storage-folder}
+### Datenspeicher {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Profile Speichereinstellungen Android](@site/static/img/personal/profiles/main_storage.webp) ![Profile Speichereinstellungen Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Profile Speichereinstellungen Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **Gerätespeicher** zeigt an, wie viel freier Speicherplatz auf Ihrem Gerät verbleibt. Tippen Sie auf ein Feld, um zum Menü [*Karten und Ressourcen*](../personal/maps-resources.md#local-menu) zu gelangen, wo Sie detaillierte Informationen zu Ihren OsmAnd-Daten anzeigen und verwalten können.
 
@@ -108,6 +108,16 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 In den Android-Versionen 11-12 wurden neue Richtlinien für den Speicherzugriff implementiert. Details finden Sie im Abschnitt [**Fehlerbehebung**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 :::
 
+Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+Die Einstellung **Medienspeicher** bestimmt, wo Fotos, Videos und Audiodateien gespeichert werden, die mit Favoriten, Tracks und anderen OsmAnd-Elementen verknüpft sind. Sie können einen Speicherort wählen, je nachdem, ob die Dateien privat bleiben oder von anderen Apps zugänglich sein sollen.
+- **Hauptspeicher** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Gemeinsamer Speicher** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Kameraordner** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Manuell angegeben** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Es gibt auch den Schalter *Immer eine lokale Kopie behalten*. Wenn er aktiviert ist, kopiert OsmAnd Medien, die aus der Galerie oder Dateien importiert wurden, in seinen eigenen Speicher, sodass die angehängten Medien auch dann verfügbar bleiben, wenn die Originaldatei aus der Galerie oder dem Dateisystem gelöscht wird.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +129,6 @@ Gehe zu: *iOS-Gerät → Einstellungen → Allgemein → iPhone-Speicher → Osm
 OsmAnd-Dateien sind in der Anwendung [*Dateien*](https://apps.apple.com/us/app/files/id1232058109) sichtbar. Sie können auf alle OsmAnd-Dateien zugreifen: [Tracks](../personal/tracks/manage-tracks.md), [Favoriten](../personal/favorites.md), [Karten](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Folgen Sie dazu dem folgenden Pfad:  
 
 Gehe zu: *Dateien → Auf meinem iPhone → OsmAnd Maps*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Allgemeine Einstellungen Speicher iOS](@site/static/img/personal/profiles/files-1.png) ![Allgemeine Einstellungen Speicher iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -144,7 +152,7 @@ Gehe zu: *Dateien → Auf meinem iPhone → OsmAnd Maps*
 |:---|:--- |:--- |
 | Plattformübergreifend | Wird in der iOS-Version nicht verwendet. | Passt für beide Versionen. |
 | GPU-/CPU-abhängig | Empfohlen für leistungsschwache oder veraltete Geräte. | Leistungsstarke Rendering-Engine. <br /> Nur verfügbar für [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) und spätere Versionen sowie im Testmodus für [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
-| 3D-Modus | Es ist möglich, die Karte in 2D anzuzeigen, und Sie können den Betrachtungswinkel ändern, um eine [3D-Ansicht](../widgets/map-buttons.md#3d-mode) zu erhalten. | Sie können die Karte in 2D und [3D](../widgets/map-buttons.md#3d-mode) anzeigen. |
+| 3D-Modus | Es ist möglich, die Karte in 2D anzuhaften, und Sie können den Betrachtungswinkel ändern, um eine [3D-Ansicht](../widgets/map-buttons.md#3d-mode) zu erhalten. | Sie können die Karte in 2D und [3D](../widgets/map-buttons.md#3d-mode) anzeigen. |
 | Kartenanzeige | Die gesamte Karte wird als Satz von Kacheln gerendert, und Markierungen, Linien und Text befinden sich bereits innerhalb dieser Kacheln. | Zuerst wird das gesamte Kachelpaket gerendert, und dann werden die verfügbaren Symbole [Schicht für Schicht](../../technical/algorithms/map-rendering-layers.md) auf die Karte angewendet. |
 | Transparente Symbole über/unterlagern | Unterstützt alle Einstellungen. | Unterstützt keine Rasterebene über Vektortext. |
 | [3D-Gelände](../plugins/topography.md#3d-relief) | Nicht unterstützt. | Diese Funktion visualisiert das Gelände auf der Karte, indem sie einer normalen 2D-Karte Höheninformationen hinzufügt, was einen 3D- und Tiefeneffekt erzeugt. |
@@ -241,7 +249,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 Die Anwendung zeichnet den Verlauf zuvor eingegebener Daten (Verlauf) in den folgenden Kategorien auf: [Suche](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Kartenmarkierungen](../personal/markers.md#history). Mit dem Schalter auf der entsprechenden Registerkarte können Sie die Protokollierung für bestimmte Kategorien von Einträgen *Aktivieren / Deaktivieren*. Sie können auch zuvor aufgezeichnete Daten [verwalten](#history) (anzeigen, löschen und teilen).  
 
 - ***Als Datei sichern*** (*Android*) oder ***Exportieren*** (*iOS*) wird verwendet, um [eine Sicherungsdatei](../personal/import-export.md#export) Ihres Verlaufs zu erstellen.
-- ***Gesamten Verlauf löschen*** (*Android*) oder ***Gesamten Verlauf löschen*** (*iOS*) wird verwendet, um alle bis zum Zeitpunkt des Löschens aufgezeichneten Verlaufseinträge zu löschen.
+- ***Gesamten Verlauf löschen*** (*Android*) oder ***Gesamten Verlauf löschen*** (*iOS*) wird verwendet, um alle bis zum Zeitpunkt des Löschens aufgezeichnete Verlaufseinträge zu löschen.
 
 <br/>
 
