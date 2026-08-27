@@ -253,11 +253,15 @@ The [simple](../widgets/configure-screen.md#widget-panels) *Glide Ratio* widgets
 
 <TabItem value="android" label="Android">
 
-**Glide ratio to target** shows the exact glide ratio required to reach the target point.
+- **Glide ratio to target** shows the exact glide ratio required to reach the target point.
+- **Target elevation** shows the target point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
+
+To switch between these modes, tap directly on the widget. Switching option is not available in the [widget's context menu](../widgets/configure-screen.md#widget-context-menu). 
 
 | | |
 |:------------|:------------|
 | Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
+| By tapping | Changes *Glide ratio to target* or *Target elevation*  |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
