@@ -93,7 +93,7 @@ export default function Login({ dialog = false }) {
             // leave the account url before reset, otherwise the remounted MainMenu reopens the account menu
             const prev = ctx.prevPageUrl?.url;
             const backToPrev = prev && !prev.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL);
-            navigate((backToPrev ? prev.pathname + (prev.search || '') : MAIN_URL_WITH_SLASH) + liveHash());
+            navigate(backToPrev ? prev.pathname + prev.search + prev.hash : MAIN_URL_WITH_SLASH + liveHash());
             resetApp();
         }
     }
