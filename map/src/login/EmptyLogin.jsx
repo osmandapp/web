@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createAccount, openLogin } from '../manager/LoginManager';
+import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 import OsmandLogoIcon from './OsmandLogoIcon';
@@ -14,6 +15,7 @@ export default function EmptyLogin({
     setOpenLoginDialog = null,
     setOpenCreateAccountDialog = null,
 }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
@@ -39,7 +41,7 @@ export default function EmptyLogin({
                     if (setOpenLoginDialog) {
                         setOpenLoginDialog(true);
                     } else {
-                        openLogin(ltx, navigate);
+                        openLogin({ ctx, ltx, navigate });
                     }
                 }}
                 text={t('web:login_btn')}
@@ -49,7 +51,7 @@ export default function EmptyLogin({
                     if (setOpenCreateAccountDialog) {
                         setOpenCreateAccountDialog(true);
                     } else {
-                        createAccount(ltx, navigate);
+                        createAccount({ ctx, ltx, navigate });
                     }
                 }}
                 text={t('web:create_account_btn')}

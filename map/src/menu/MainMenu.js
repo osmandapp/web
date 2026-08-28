@@ -225,7 +225,7 @@ export default function MainMenu({
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu(ctx, ltx, navigate, location);
+            openLoginMenu({ ctx, ltx, navigate, location });
         }
     }, [location.pathname]);
 
