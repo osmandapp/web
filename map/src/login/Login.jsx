@@ -89,7 +89,7 @@ export default function Login({ dialog = false }) {
             handleClose,
             lang,
         });
-        if (loggedIn && !dialog) {
+        if (loggedIn && !dialog && !ltx.wantDeleteAcc) {
             // leave the account url before reset, otherwise the remounted MainMenu reopens the account menu
             const prev = ctx.prevPageUrl?.url;
             const backToPrev = prev && !prev.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL);
