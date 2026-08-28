@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,9 +225,29 @@ Além dos recursos básicos do aplicativo OsmAnd no *CarPlay* que fornecem naveg
 
 A orientação por voz para o *CarPlay* é um dos recursos de navegação mais úteis do OsmAnd, fornecendo orientação em tempo real e permitindo que o motorista permaneça focado na estrada. Os comandos de voz indicam claramente curvas, direções e outras instruções de navegação, garantindo um uso mais seguro e confortável do sistema de navegação.  
 
-Quando os comandos de voz são reproduzidos, o OsmAnd ajusta o áudio de fundo dependendo do seu tipo. Conteúdo de áudio falado, como podcasts e audiolivros, pode ser pausado automaticamente durante as instruções de navegação. A reprodução de música continua com volume reduzido. A opção *Pausar áudio falado* permite controlar esse comportamento.
+Quando os comandos de voz são reproduzidos, o OsmAnd ajusta o áudio de fundo dependendo do seu tipo. Com *<Translate ios="true" ids="pause_spoken_audio"/>* ativado, o conteúdo de áudio falado, como podcasts e audiolivros, é pausado durante as instruções de navegação, enquanto a reprodução de música continua com volume reduzido. Quando *<Translate ios="true" ids="pause_spoken_audio"/>* está desativado, tanto o áudio falado quanto a música continuam tocando com volume reduzido.  
 
 Para configurar os comandos de voz de acordo com o perfil selecionado, você deve fazer isso antes de iniciar uma rota no aplicativo OsmAnd em seu dispositivo. Para ver as configurações recomendadas para o *CarPlay*, vá para o artigo [Comandos de voz / Notificações](../navigation/guidance/voice-navigation.md).  
+
+
+### Alertas de Navegação {#navigation-alerts}
+
+![Alerta Ausente](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Alerta Privado](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Alertas úteis são mostrados automaticamente antes de iniciar a navegação quando é necessária uma ação adicional para calcular a rota. Esses alertas ajudam a resolver problemas de roteamento antes do início da navegação.
+
+**Mapas ausentes ou desatualizados**
+
+Se alguns mapas offline necessários para calcular a rota estiverem ausentes ou desatualizados, um alerta é exibido. Você pode escolher uma das seguintes opções:
+- **Usar mapas baixados**. Calcula a rota usando os mapas atualmente disponíveis no seu dispositivo.
+- **Ver no telefone**. Abre a tela de download de mapas no seu iPhone para baixar ou atualizar os mapas necessários. Após o download dos mapas, você pode iniciar a navegação novamente.
+- **Cancelar**. Fecha o alerta sem iniciar a navegação.
+
+**Aviso de acesso privado**
+
+Se a rota exigir o uso de uma estrada privada para chegar ao seu destino, um aviso é exibido: *Permitir o uso de uma estrada privada para chegar ao seu destino?* Você pode escolher:
+- **Permitir**. Continue com a rota usando a estrada privada.
+- **Cancelar**. Feche o alerta e retorne à tela anterior, onde você pode alterar o destino ou continuar com outra ação.
 
 
 ### Widget de Alerta na Tela {#screen-alert-widget}

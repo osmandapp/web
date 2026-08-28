@@ -1,5 +1,5 @@
 ---
-source-hash: d92c746f8a72d84ab8395bdc89390208bc81a4755169dbeefc240e0f63d57a95
+source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
 sidebar_position: 3
 title: Compras na Web
 ---
@@ -40,30 +40,6 @@ Abaixo estão os preços dos produtos OsmAnd nos EUA e na UE. Os preços em outr
 
 
 
-:::danger 🏖️ Promoção de Verão
-
-*Apresse-se! Esta oferta está disponível apenas até* **17 de junho (23:00 CET)**.
-
-:::
-
-
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :-------------------  |:----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0| <s>€69,99</s> **€34.99**| <s>€14.99</s> **€7.49**| €2.99 / <s>€39.99</s> **€19.99**|<s>€450</s> **€299.00**|
-| **Price (USD)** | $0| <s>$69,99</s> **$34.99**| <s>$14.99</s> **$7.49**| $2.99 / <s>$39.99</s> **$19.99**|<s>$450</s> **$299.00**|
-
-
-:::note 
-Ao comprar uma assinatura pelo nosso [site](https://osmand.net/pricing) com desconto,  
-você recebe um plano com desconto de 2 anos.  
-A partir do terceiro ano, será aplicado o preço integral.
-:::
-
-<!--
-
-
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
@@ -71,7 +47,7 @@ A partir do terceiro ano, será aplicado o preço integral.
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
--->
+
 
 
 

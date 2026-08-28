@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title: Prompts de Voz / Notificações
 ---
@@ -52,7 +52,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> botão* *(ou <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Escolher perfil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Configurações de Navegação por Voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Configurações de Navegação por Voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Configurações de Navegação por Voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 
 - *Repetir instruções de navegação*. Permite repetir as instruções de navegação em intervalos regulares de 1 min a 30 min. Ou manualmente - se você perder um prompt de voz, pode ouvi-lo novamente simplesmente tocando [na seta de próxima curva](../../widgets/nav-widgets.md#next-turn) na tela do aplicativo.
 - *[Tempo de anúncio](#announcement-time)*.
+- *Pausar áudio falado* (*somente iOS*). Quando ativado, podcasts, audiolivros e outros áudios falados são pausados enquanto os prompts de voz são reproduzidos. A reprodução de música continua em volume reduzido. Quando desativado, tanto o áudio falado quanto a música continuam tocando em volume reduzido.
 
 **Saída** (*Somente Android*):
 
@@ -302,7 +303,7 @@ Atualmente, existem 45 idiomas no total. Nem todos os idiomas listados abaixo po
 
 | | |
 | :--- | :--- |
-| **A** | Árabe |
+| **А** | Árabe |
 | **B** | Bielorrusso, Búlgaro |
 | **C** | Catalão, Chinês, Chinês(Hong Kong), Chinês(Tradicional), Croata, Tcheco |  
 | **D** | Dinamarquês, Holandês |

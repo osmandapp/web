@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title: Preparação de Rota
 ---
@@ -79,7 +79,7 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
 
 :::note
 
-**A rota não pode ser construída quando o *[Mapa online](../../map/raster-maps.md#layers)* é selecionado como fonte do mapa.**
+**A rota não pode ser construída quando *[Mapa online](../../map/raster-maps.md#layers)* é selecionado como fonte do mapa.**
 
 :::
 
@@ -461,13 +461,11 @@ Vá para: *<Translate android="true" ids="shared_string_navigation,shared_string
 
 ## Mapas Ausentes ou Não Sincronizados {#maps-missing-or-not-synchronized}
 
-Para construir uma rota, todos os **mapas necessários** precisam ser baixados e ter a mesma data de lançamento. Observe que, em algumas situações, a mensagem de mapas ausentes pode estar oculta no menu de preparação de rota. Se você puxar o menu de navegação para cima, verá as possíveis razões pelas quais sua rota não pôde ser calculada.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Mensagem sem mapas ao construir navegação Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Mensagem sem mapas ao construir navegação Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Mensagem sem mapas ao construir navegação Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Para construir uma rota, todos os **mapas necessários** precisam ser baixados e
 </TabItem>
 
 </Tabs>
+
+Para construir uma rota, todos os **mapas necessários** precisam ser baixados e ter a mesma data de lançamento. No Android, se os mapas necessários tiverem datas de lançamento diferentes, o OsmAnd pode alternar para o roteamento Padrão quando o [Método de cálculo de rota](../routing/car-based-routing.md#route-parameters---car) estiver definido como Automático.
+
+Observe que, em algumas situações, a mensagem de mapas ausentes pode estar oculta no menu de preparação de rota. Se você puxar o menu de navegação para cima, verá as possíveis razões pelas quais sua rota não pôde ser calculada.
 
 ### Mapas Necessários {#required-maps}
 

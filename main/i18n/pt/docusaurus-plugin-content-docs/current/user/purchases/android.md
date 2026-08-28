@@ -1,5 +1,5 @@
 ---
-source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title: Compras Android
 ---
@@ -78,24 +78,6 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 
 
-:::danger 🏖️ Promoção de Verão
-
-*Apresse-se! Esta oferta está disponível apenas até* **17 de junho (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) na Aplicação | [Maps+](#install-osmand-android) Assinatura | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |
-| **Preço (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Preço (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
-
-<!--
-
-
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) na Aplicação | [Maps+](#install-osmand-android) Assinatura | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -103,7 +85,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | **Preço (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Preço (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Funcionalidades Gratuitas e Pagas {#free-and-paid-features}
 
@@ -134,6 +116,8 @@ A tabela abaixo detalha as funcionalidades incluídas nos pacotes gratuito e pag
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Planeamento de Observação](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Modo AR Interativo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Mapa do Céu Offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md) — [Explorador de Eclipses](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Personalizar cores dos widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navegação offline e online](../navigation/index.md)<br/>com instruções passo a passo | ✔ | ✔ | ✔ |
 | [Pesquisa instantânea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Gravação de viagem](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -177,7 +161,7 @@ A assinatura **Pro** atualmente tem as seguintes funcionalidades:
 | [Correção de elevação (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permite calcular um gráfico de altitude para o seu trilho ([mapa de Terreno](../plugins/topography.md#download-maps) necessário para a região escolhida). |
 | [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar cores de mapa e rota. |
 | [Criar paletas personalizadas](../../user/map/tracks/appearance.md#color-palette-editor) | Permite criar e editar paletas de gradiente para a coloração de trilhos usando valores Relativos ou Fixos. Pode definir passos de cor, atribuir valores e personalizar como os dados (como velocidade ou altitude) são exibidos ao longo do trilho. |
-| [Pastas Inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar trilhos em Pastas Inteligentes usando parâmetros de agrupamento avançados, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização de trilhos mais detalhada e uma análise flexível. |
+| [Pastas Inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar trilhos em Pastas Inteligentes usando parâmetros de agrupamento avançados, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização de trilhos mais detalhada e análise flexível. |
 
 
 ## Como Comprar {#how-to-buy}

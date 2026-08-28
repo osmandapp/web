@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title: Roteamento de carro (Caminhão, Motocicleta)
 ---
@@ -35,7 +35,7 @@ O roteamento de carro é projetado para ajudar os motoristas a encontrar as rota
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Configurações de roteamento de carro Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Configurações de roteamento de carro Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -56,6 +56,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Restrições de acesso privado serão ignoradas ao calcular a rota.  | A tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* é usada no OSM para descrever restrições no uso de rodovias e outras rotas de transporte, bem como edifícios, entradas, comodidades e entidades de lazer.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (somente&nbsp;carro) |  <details><summary> Estradas que estão fechadas para entrega de mercadorias serão evitadas. </summary>![Entrega de mercadorias Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Esta opção se aplica apenas a veículos que transportam mercadorias, que pesam no máximo 3,5 toneladas. Se o peso do seu veículo for superior a 3,5 toneladas, você deve usar o [perfil de Caminhão](#route-parameters---truck).   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Para calcular uma rota com eficiência de combustível, o motor de roteamento limita a velocidade internamente a 60 km/h, mas não altera o Tempo Estimado de Chegada. Assim, no caso de 2 rotas de início-fim iguais: autoestrada (120 km/h) e secundária (60 km/h) - a rota mais curta será selecionada. Para as estradas de serviço que têm um limite de velocidade < 60 km/h, a rota mais rápida será selecionada. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*somente Android*) | Selecione o método de cálculo de rota preferido. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Parâmetros de rota - Caminhão {#route-parameters---truck}

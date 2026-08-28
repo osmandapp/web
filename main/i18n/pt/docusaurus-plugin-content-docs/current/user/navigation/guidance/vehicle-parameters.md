@@ -1,5 +1,5 @@
 ---
-source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title: Parâmetros do veículo
 ---
@@ -98,7 +98,7 @@ Os parâmetros do veículo afetam a navegação e a construção da rota porque 
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
-No Android, este parâmetro também está disponível para *[perfis de ciclismo](../../navigation/routing/bicycle-based-routing.md)* para ajudar a evitar caminhos de ciclismo estreitos.
+Este parâmetro também está disponível para *[perfis de ciclismo](../../navigation/routing/bicycle-based-routing.md)* para ajudar a evitar caminhos de ciclismo estreitos.
 
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 

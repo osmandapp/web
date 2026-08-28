@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -248,7 +248,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 
 O recurso *Atividade* no OsmAnd permite que você marque trilhas GPX gravadas com atividades específicas para análise e organização futuras em pastas.
 
-- [Tags de atividade para trilhas GPX](#description-and-info). Trilhas gravadas e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
+- [Tags de atividade para trilhas GPX](#description-and-info). [Trilhas gravadas](../../plugins/trip-recording.md#recording-settings) e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
 - [Filtro de atividade](../../personal/tracks/smart-folder.md#search-filter). Você pode filtrar as trilhas GPX gravadas por atividade, o que permite focar na localização de tipos específicos de gravações, como todas as trilhas de ciclismo ou caminhada.
 - [Gerenciar tipos de atividade](../../personal/tracks/manage-tracks.md#selection-mode). Você pode alterar o tipo de atividade para pastas ou trilhas selecionadas usando o modo de seleção na aba Trilhas do menu Meus Locais.
 - **Lista de atividades**. As categorias e grupos de atividades são definidos nos recursos do OsmAnd. Para desenvolvedores e colaboradores, a lista de atividades é mantida em um formato estruturado em [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalha os grupos e tipos de atividades disponíveis.
@@ -364,11 +364,13 @@ Se não houver *informações de elevação* na rota, você pode adicioná-las d
 
 ### Calcular Elevação Faltante {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Recurso Pro
 [Calcular elevação offline](../../plan-route/create-route.md#get-elevation-data) é um recurso pago do [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Este recurso](../../plan-route/create-route.md#get-elevation-data) permite calcular o perfil de elevação para trilhas GPX offline para qualquer terreno entre 70 graus de latitude norte e 70 graus de latitude sul, com base nos [dados do mapa de terreno](../../plugins/topography.md#download-maps). *Os mapas de terreno (3D) devem ter sido baixados previamente*.
 
@@ -377,11 +379,27 @@ Se não houver *informações de elevação* na rota, você pode adicioná-las d
 
     ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Se você estiver criando uma rota com a ferramenta [Planejar uma rota](../../plan-route/create-route.md#graph) usando o método *Linha reta* e não houver dados de elevação no gráfico, você precisa:
+3. Se você estiver criando uma rota com a ferramenta [Planejar uma rota](../../plan-route/create-route.md#graph--analyze) usando o método *Linha reta* e não houver dados de elevação no gráfico, você precisa:
     - Tocar em *Obter dados de elevação* e, em seguida, selecionar *Usar mapas de terreno*.
     - Após o cálculo, você obterá o gráfico completo de Altitude/Inclinação da sua rota com base nos dados de terreno.  
 
   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dados de elevação iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Dados de elevação iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Este recurso](../../plan-route/create-route.md#get-elevation-data) permite calcular dados de elevação ausentes para uma [rota planejada](../../plan-route/create-route.md#create-new-route) ou uma [trilha GPX existente](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Se você criar uma rota usando o método Linha reta e os dados de elevação não estiverem disponíveis, toque em *Obter dados de elevação* na aba Analisar e selecione *Usar mapas de terreno*. Os [Mapas de terreno (3D)](../../plugins/topography.md#download-maps) baixados previamente são necessários. O perfil de elevação é então calculado com base nos dados do terreno, enquanto a geometria da rota permanece inalterada.
+
+Para uma trilha GPX existente, você pode selecionar *Usar estradas próximas*. O OsmAnd anexa a trilha às estradas permitidas mais próximas usando um perfil de navegação selecionado e recupera os dados de elevação das estradas anexadas. Esta opção pode ajustar a geometria da trilha. Se necessário, você também pode selecionar *Usar mapas de terreno* para calcular a elevação mantendo a geometria da trilha inalterada.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Pontos / Waypoints {#points--waypoints}
@@ -392,13 +410,13 @@ Waypoints são um dos tipos de pontos disponíveis no mapa. Em geral, eles podem
 
 <TabItem value="android" label="Android">
 
-![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ Nesta aba *Pontos*:
 
 - [Mostrar dados de pontos da trilha](#display-custom-gpx-tags) e modificar seus pontos da trilha (waypoints e pontos de rota), [excluí-los e adicionar](#points--waypoints) waypoints a uma trilha.
 - Criar e modificar [Grupo (pasta) de pontos](#waypoint-groups).
-- Centralizar o mapa em um waypoint usando o ícone de alfinete na lista de waypoints (*somente Android*) sem fechar a lista, permitindo que você visualize os waypoints um por um.
+- Mostrar um waypoint no mapa usando o ícone de alfinete na lista de waypoints. O mapa centraliza no waypoint sem fechar a lista ou alterar o nível de zoom atual.
 
 
 ### Adicionar Waypoint a uma Trilha {#add-waypoint-to-a-track}
@@ -679,7 +697,7 @@ No mapa, os segmentos são marcados com rótulos coloridos no início de cada in
 - **Segmentos de descida** (rótulos verdes) mostram uma seta para baixo, o índice do segmento e a inclinação média em porcentagem (por exemplo, ↓ 12. -2%).
 - **Segmentos planos** (rótulos azuis) mostram a distância da seção plana (por exemplo, 616 m, 411 m).
 
-Toque em um rótulo para abrir o painel de detalhes do segmento de subida, descida ou plano selecionado. O painel de detalhes exibe estatísticas para o segmento selecionado, como distância, duração, subida e descida, altitude, velocidade e dados relacionados ao tempo.
+Toque em um rótulo para abrir o painel de detalhes do segmento de subida, descida ou plana selecionado. O painel de detalhes exibe estatísticas para o segmento selecionado, como distância, duração, subida e descida, altitude, velocidade e dados relacionados ao tempo.
 
 
 ### Métricas de Frequência Cardíaca {#heart-rate-metrics}

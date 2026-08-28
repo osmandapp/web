@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title: Detalhes da Rota
 ---
@@ -18,20 +18,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-O OsmAnd permite que você encontre a melhor rota e explore seus detalhes. O aplicativo fornece informações detalhadas sobre a rota, como distância, [tempo de viagem](#distance--time--co2), [tipo de superfície](#road-attributes), [diferenças de elevação](#elevation-info), [dados de pegada de CO2](#distance--time--co2) e [informações de curva](#turn-by-turn-information). Você também pode [analisar](#analyze-on-map) a rota no mapa, descobrir informações sobre segmentos de trilha, [imprimir](#print) o plano da rota, [salvar](#share--export-actions) a rota e compartilhá-la com outras pessoas. Com essa funcionalidade, você sempre saberá os detalhes da rota e poderá planejar sua viagem com mais eficiência.
+O OsmAnd permite que você encontre a melhor rota e explore seus detalhes. O aplicativo fornece informações detalhadas sobre a rota, como distância, [tempo de viagem](#distance--time--co2), [tipo de superfície](#road-attributes), [diferenças de elevação](#elevation-info), [dados de pegada de CO2](#distance--time--co2) e [informações de curva](#turn-by-turn-information). Você também pode [analisar](#analyze-on-map) a rota no mapa, descobrir informações sobre segmentos de trilha, [imprimir](#print) o plano da rota, [salvar](#share--save-actions) a rota e compartilhá-la com outras pessoas. Com essa funcionalidade, você sempre saberá os detalhes da rota e poderá planejar sua viagem com mais eficiência.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Detalhes da rota Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)
+![Route details Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Detalhes da rota iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
+![Route details iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
 
 </TabItem>
 
@@ -56,13 +56,13 @@ Dependendo das [configurações de perfil](../../personal/profiles.md) seleciona
 
 <TabItem value="android" label="Android">
 
-![Detalhes da rota](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
 
 </TabItem>
 
@@ -83,13 +83,13 @@ Dependendo das [configurações de perfil](../../personal/profiles.md) seleciona
 
 <TabItem value="android" label="Android">
 
-![Detalhes da rota](@site/static/img/navigation/route/route_details_info-block_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação iOS](@site/static/img/navigation/route/route_details_info-block_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_info-block_ios.png)
 
 </TabItem>
 
@@ -122,13 +122,13 @@ Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de lat
 
 <TabItem value="android" label="Android">
 
-![Detalhes da rota](@site/static/img/navigation/route/route_details_el_graph_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_el_graph_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
 
 </TabItem>
 
@@ -147,13 +147,13 @@ Os [gráficos](../../map/tracks/track-context-menu.md#altitude--speed-graphs) ex
 
 <TabItem value="android" label="Android">
 
-![Detalhes da rota Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)
+![Route details Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Detalhes da rota iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
+![Route details iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
 
 </TabItem>
 
@@ -189,7 +189,7 @@ Se os dados estiverem presentes, você pode selecionar um dos seguintes tipos:
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
 
-![Rota de navegação Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
 </TabItem>
 
@@ -197,13 +197,13 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_navig
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
 
-![Rota de navegação iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Os atributos da estrada são acessíveis nos [Detalhes da Rota](#how-to-access) e exibem informações relacionadas ao segmento do OpenStreetMap e dados de Elevação. A indicação de cor está relacionada à forma como atributos específicos são renderizados no mapa (consulte [Legenda do mapa](../../map-legend/osmand.md#surface-smoothness)). Os gráficos de barras também são interativos, e é possível ver informações em um local específico tocando no gráfico.
+Os atributos da estrada são acessíveis nos [Detalhes da Rota](#how-to-access) e exibem informações relacionadas ao segmento do OpenStreetMap e dados de Elevação. A indicação de cor está relacionada à forma como atributos específicos são renderidos no mapa (consulte [Legenda do mapa](../../map-legend/osmand.md#surface-smoothness)). Os gráficos de barras também são interativos, e é possível ver informações em um local específico tocando no gráfico.
 
 - [**Tipo de estrada**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). O tipo de estrada é determinado com base em sua finalidade funcional e características, como o número de faixas, limites de velocidade, capacidade de carga, presença de caminhos para pedestres e bicicletas, acostamentos e outros parâmetros. Diferentes tipos de estradas podem ter diferentes restrições e regras de trânsito.  
 
@@ -234,13 +234,13 @@ Os atributos da estrada são acessíveis nos [Detalhes da Rota](#how-to-access) 
 
 <TabItem value="android" label="Android">
 
-![Rota de navegação Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
@@ -257,13 +257,13 @@ Toque em uma seção específica da rota na lista para visualizar informações 
 
 <TabItem value="android" label="Android">
 
-![Rota de navegação Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 
@@ -285,7 +285,7 @@ As instruções incluem informações sobre o movimento ao longo da rota, como:
 Este tipo de instrução atualmente *não está disponível para a versão Android* do aplicativo OsmAnd.
 :::
 
-![Indicação lateral](@site/static/img/navigation/route/side_indication.png)
+![Side indication](@site/static/img/navigation/route/side_indication.png)
 
 Na lista de instruções, o **indicador de acostamento** mostra qual direção da sua localização atual e direção de movimento para o seu ponto final é o seu destino, isso pode ser esquerda, direita e em frente.  
 
@@ -300,7 +300,7 @@ O ângulo entre o seu destino (*[Rumo](https://en.wikipedia.org/w/index.php?titl
 
 <InfoAndroidOnly/>
 
-![detalhes da rota](@site/static/img/navigation/route/route_details_print-2.png)
+![route details](@site/static/img/navigation/route/route_details_print-2.png)  
 
 O recurso **Imprimir** de uma descrição de rota curva a curva pode ser útil se você preferir ter uma cópia física da sua descrição de rota em vez de usar dispositivos eletrônicos, ou se você não tiver acesso a aplicativos de navegação ou navegadores GPS, sem acesso à Internet, ou se precisar de informações para outras pessoas que viajam com você.
 
@@ -311,19 +311,19 @@ Essas informações podem ser úteis ao planejar uma viagem e querer estimar o t
 A capacidade **de imprimir** ou **salvar** informações curva a curva **em formato PDF** é especialmente útil ao viajar longas distâncias ou em locais desconhecidos, quando você precisa ter uma ideia mais detalhada da rota e do tempo que leva para chegar lá.
 
 
-## Compartilhar / Exportar (Ações) {#share--export-actions}
+## Compartilhar / Salvar (Ações) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rota de navegação Android](@site/static/img/navigation/route/navigation_route_share_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_share_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota de navegação iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,8 +332,8 @@ A capacidade **de imprimir** ou **salvar** informações curva a curva **em form
 A seção de navegação Detalhes da Rota possui opções que permitem realizar certas ações com as informações da rota.  
 
 - [**Imprimir**](#print). Permite imprimir ou salvar informações de rota curva a curva.
-- **Exportar/Salvar**. Permite salvar as informações da rota **como uma nova trilha** para uso offline posterior. A trilha exportada contém todas as informações sobre atributos da estrada e instruções de curva. Assim, a [navegação por esta trilha](./gpx-navigation.md) deve fornecer todos os recursos como a navegação pela rota.
-- **Compartilhar**. Compartilha uma trilha exportada ou um link para a rota que pode ser aberta em outro dispositivo com OsmAnd.
+- **Salvar**. Permite salvar as informações da rota **como uma nova trilha** para uso offline posterior. A trilha salva contém todas as informações sobre atributos da estrada e instruções de curva. Assim, a [navegação por esta trilha](./gpx-navigation.md) deve fornecer todos os recursos como a navegação pela rota.
+- **Compartilhar**. Permite compartilhar a rota como um arquivo ou um link que pode ser aberto em outro dispositivo com OsmAnd.
 
 
 ## Artigos Relacionados {#related-articles}

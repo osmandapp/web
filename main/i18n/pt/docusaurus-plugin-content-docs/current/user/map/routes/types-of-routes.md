@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title:  Tipos de Rotas
 ---
@@ -24,7 +24,7 @@ Você pode configurar a filtragem de alguns tipos de rotas no menu [Configurar M
 
 ## Ciclismo {#cycle}
 
-[Rotas de ciclismo](https://wiki.openstreetmap.org/wiki/Cycle_routes) estão presentes em três tipos: *local* (`lcn`), *regional* (`rcn`), *nacional* (`ncn`), *internacional* (`icn`). Além disso, as rotas de ciclismo podem fazer parte de [Redes de nós](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Você pode escolher como atribuir cor aos segmentos da rota:
+[Rotas de ciclismo](https://wiki.openstreetmap.org/wiki/Cycle_routes) estão presentes nos seguintes tipos: *local* (`lcn`), *regional* (`rcn`), *nacional* (`ncn`), *internacional* (`icn`) e *não classificado*. Além disso, as rotas de ciclismo podem fazer parte de [Redes de nós](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Você pode escolher como atribuir cor aos segmentos da rota:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -47,7 +47,7 @@ As rotas de MTB têm um mapeamento específico no [OpenStreetMap](https://wiki.o
 
 ## Caminhada / Trilha {#hiking--walking}
 
-[Rotas de caminhada](https://wiki.openstreetmap.org/wiki/Walking_Routes) estão presentes em três tipos: *local* (`lwn`), *regional* (`rwn`), *nacional* (`nwn`), *internacional* (`iwn`). Além disso, as rotas de caminhada podem fazer parte de [Redes de nós](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). O OsmAnd não separa rotas de caminhada e trilhas e as combina em 1 grupo. Você pode escolher como atribuir cor aos segmentos da rota:
+[Rotas de caminhada](https://wiki.openstreetmap.org/wiki/Walking_Routes) estão presentes nos seguintes tipos: *local* (`lwn`), *regional* (`rwn`), *nacional* (`nwn`), *internacional* (`iwn`) e *não classificado*. Além disso, as rotas de caminhada podem fazer parte de [Redes de nós](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). O OsmAnd não separa rotas de caminhada e trilhas e as combina em 1 grupo. Você pode escolher como atribuir cor aos segmentos da rota:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colore as rotas de acordo com sua [cor local](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) individual (se disponível no OpenStreetMap) e o símbolo do escudo turístico.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)

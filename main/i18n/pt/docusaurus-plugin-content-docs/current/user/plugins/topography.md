@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografia
 ---
@@ -369,7 +369,13 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 </Tabs>
 
-O recurso **Edifícios 3D** exibe edifícios como modelos 3D volumétricos em vez de formas planas. Os edifícios são gerados a partir de [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), usando informações de altura de tags como `height` e `building:levels` quando disponíveis. Se [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluírem passagens através de edifícios mapeadas com a tag `tunnel=building_passage`, o OsmAnd renderiza aberturas visíveis no modelo de edifício 3D para que estradas ou caminhos pedestres passando pelo edifício sejam exibidos corretamente. 
+O recurso **Edifícios 3D** exibe edifícios como modelos 3D volumétricos em vez de formas planas. Os edifícios são gerados a partir de [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), usando informações de altura de tags como `height` e `building:levels` quando disponíveis. 
+
+Para estruturas complexas, o OsmAnd usa `building:part` para renderizar seções individuais de um edifício com diferentes alturas e formas. 
+
+Se [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluírem passagens através de edifícios mapeadas com a tag `tunnel=building_passage`, o OsmAnd renderiza aberturas visíveis no modelo de edifício 3D para que estradas ou caminhos pedestres passando pelo edifício sejam exibidos corretamente. 
+
+Edifícios 3D podem incluir diferentes formas de telhado com base em [dados OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). A tag `roof:shape` define a geometria do telhado, enquanto `roof:levels` e `roof:height` fornecem informações sobre sua altura.
 
 Edifícios 3D são exibidos apenas em níveis de zoom mais altos (visão da cidade/rua), onde edifícios individuais podem ser exibidos. Ao ampliar ou reduzir e ao mover o mapa, os edifícios 3D aparecem e desaparecem com uma animação de desvanecimento suave. Quando um POI ou um local selecionado (como um pino do mapa ou destino de navegação) estiver dentro de um edifício, o OsmAnd destaca o edifício correspondente para facilitar sua identificação no mapa.
 

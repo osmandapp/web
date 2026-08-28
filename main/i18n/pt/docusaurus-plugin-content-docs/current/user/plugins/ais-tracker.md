@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title: Rastreador de Embarcações AIS
 ---
@@ -37,7 +37,7 @@ A capacidade de usar mapas online é automaticamente ativada na versão iOS do O
 
 ## Embarcações no Mapa {#vessels-on-the-map}
 
-O AIS opera em *frequências VHF* (161,975 MHz e 162,025 MHz) e tem um alcance de sinal limitado devido à propagação em linha de visão.
+O AIS opera em *frequências VHF* (161.975 MHz e 162.025 MHz) e tem um alcance de sinal limitado devido à propagação em linha de visão.
 
 ***Alcance típico de recepção AIS:***
 
@@ -100,8 +100,8 @@ As embarcações AIS transmitem três tipos de dados:
     - **Taxa de Curva (ROT)** (*Velocidade de mudança de curso*)  
     - **Hora da Última Atualização**  
 
-3. Informações da Viagem (definidas manualmente pela tripulação).  
-    *Enviadas a cada **6 minutos**, definidas manualmente pela tripulação*
+3. Informações da Viagem (definidas manualmente pela tripagem).  
+    *Enviadas a cada **6 minutos**, definidas manualmente pela tripagem*
 
     - **Porto de Destino**
     - **Tempo Estimado de Chegada (ETA)**  
@@ -155,7 +155,7 @@ As embarcações AIS transmitem três tipos de dados:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Configurações AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![Configurações AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,12 +171,13 @@ O plugin *Rastreador de embarcações AIS* oferece várias configurações para 
 | Endereço IP | Defina o IP da fonte de dados AIS (se TCP for usado) | `192.168.200.16` |
 | Porta TCP   | Defina o número da porta TCP para dados AIS | `4001` |
 | Porta UDP   | Defina a porta UDP para recepção AIS do OsmAnd  | `10110` |
+| Receber dados AIS mesmo se o OsmAnd estiver pausado   | Mantenha o receptor de mensagens AIS em execução se o OsmAnd estiver pausado ou em segundo plano. Se desativado, nenhuma mensagem AIS é recebida quando o OsmAnd está em segundo plano  | `Sim/Não` |
 | | | |
 | **Tempo limite de recepção de sinal AIS** | |  |
 | Tempo limite para objetos AIS perdidos     | As embarcações desaparecem se nenhum sinal for recebido por um tempo definido | `3 - 20 min` |
 | Tempo limite para visibilidade da embarcação      | Os ícones das embarcações mudarão de estado quando nenhum sinal for recebido | `2 - 15 min / Desativado` |
 | | | |
-| **Alertas de Ponto de Aproximação Mais Próximo (CPA)** | | |
+| **Alertas de Ponto de Aproximação Mais Próxima (CPA)** | | |
 | Tempo de Aviso de CPA | A embarcação é marcada em vermelho se o tempo para o CPA estiver abaixo deste limite | `1 - 60 min / Desativado` |
 | Distância de Aviso de CPA | A embarcação é marcada em vermelho se a distância para o CPA estiver abaixo deste limite | `0.02 - 2 milhas náuticas` |
 

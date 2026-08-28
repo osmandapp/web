@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
 sidebar_position: 5
 title: Logs de Falhas
 ---
@@ -19,47 +19,61 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Os logs de falhas são ferramentas de diagnóstico valiosas que ajudam os desenvolvedores a identificar e corrigir problemas e bugs que causam o aplicativo a falhar ou se comportar de forma inesperada. É possível compartilhar logs do seu dispositivo Android com a equipe de desenvolvimento do OsmAnd. Atualmente, os usuários de iOS têm apenas um tipo de opção de log de falha para enviar.
 
 
-## Logs de Falhas e Logs do Logcat {#crash-and-logcat-logs}
+## Logs de Falhas e Logs do Aplicativo {#crash-and-app-logs}
 
 O OsmAnd permite que você envie dois tipos de dados para os desenvolvedores:
 
 - **Logs de falhas**. Gerados quando o aplicativo OsmAnd encontra um erro crítico ou exceção que o faz falhar. Esses logs fornecem informações detalhadas sobre o estado do aplicativo durante a falha, incluindo dados de compilação, rastreamentos de pilha, mensagens de erro e outros detalhes relevantes.
-- **Logs do Logcat**. Um registro do fluxo de log do OsmAnd que captura vários eventos e mensagens. Esses logs ajudam os desenvolvedores a monitorar o comportamento do aplicativo, rastrear o fluxo de execução, rastrear ações específicas e investigar problemas não relacionados a falhas. Os logs do Logcat geralmente contêm registros de atividade desde a última vez que o aplicativo foi iniciado.
+- **Logs da sessão/app atual**. Um registro do fluxo de log do OsmAnd que captura vários eventos e mensagens. Esses logs ajudam os desenvolvedores a monitorar o comportamento do aplicativo, rastrear o fluxo de execução, rastrear ações específicas e investigar problemas não relacionados a falhas. Os logs do Logcat geralmente contêm registros de atividade desde a última vez que o aplicativo foi iniciado.
 
 :::caution Suas informações privadas
-Tenha cuidado ao enviar logs do Logcat, pois eles podem conter informações privadas, como localização do dispositivo, consultas de pesquisa, resultados de construção de rotas e dados de navegação.
+Tenha cuidado ao enviar logs do aplicativo, pois eles podem conter informações privadas, como localização do dispositivo, consultas de pesquisa, resultados de construção de rotas e dados de navegação.
 :::
 
 
-### Enviar Logs do Aplicativo OsmAnd (Android) {#send-logs-from-osmand-app-android}
+### Enviar Logs do Aplicativo OsmAnd {#send-logs-from-osmand-app}
 
-1. Vá para *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Dependendo da sua situação, selecione o tipo de log apropriado. Você pode consultar a seção [Logs de Falhas e Logs do Logcat](#crash-and-logcat-logs) para obter detalhes sobre as diferenças entre os tipos de log.
-2. No menu pop-up, escolha o Gmail ou seu aplicativo de e-mail preferido. O e-mail será gerado automaticamente.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. Vá para *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* ou *<Translate android="true" ids="send_logcat_log"/>* (*Enviar log do app atual* no iOS). Dependendo da sua situação, selecione o tipo de log apropriado. Você pode consultar a seção [Logs de Falhas e Logs do Aplicativo](#crash-and-app-logs) para obter detalhes sobre as diferenças entre os tipos de log.
+2. No menu pop-up, escolha o Gmail ou seu aplicativo de e-mail preferido. Recomendamos enviar os logs para `support@osmand.net`.
 3. Toque no botão *Enviar*.
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### Enviar Logs de Dispositivos iOS {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. Os logs de dispositivos iOS podem ser enviados:
-
-    - Automaticamente.
-        - Navegue até o aplicativo OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `support@osmand.net`.
-
-    - Manualmente.
-        - Navegue até o aplicativo do sistema iOS *Arquivos → No meu iPhone (ou No meu iPad) → OsmAnd Maps → Logs*.
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-2. Envie [formato IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) de logs e dados de autorização:
-    - Em iOS 15 ou anterior: *Configurações → Análise → Dados de Análise → Arquivo OsmAnd Maps em formato ips*.
-    - Em iOS 16 ou posterior:  *Configurações → Privacidade e Segurança → Análise e Melhorias → Dados de Análise → Arquivo OsmAnd Maps em formato ips*.
-    - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `support@osmand.net`.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+-->
 
 ## Enviar Arquivos Tombstone (Android) {#send-tombstone-files-android}
 

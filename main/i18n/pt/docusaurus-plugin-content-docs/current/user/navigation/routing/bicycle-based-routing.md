@@ -1,5 +1,5 @@
 ---
-source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
+source-hash: 25c13b0161cd5e0efefe881e5446503a1ce483f3ea041fd84cfc9f4b33858e9c
 sidebar_position: 3
 title: Roteamento de bicicleta (MTB)
 ---
@@ -31,7 +31,7 @@ Os recursos de roteamento de bicicleta do OsmAnd permitem que os ciclistas insir
 
 <TabItem value="android" label="Android">  
 
-![Configurações de roteamento de bicicleta](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![Configurações de roteamento de bicicleta](@site/static/img/navigation/routing/cycling_routing_andr.webp)
 
 </TabItem>
 
@@ -50,6 +50,7 @@ Os recursos de roteamento de bicicleta do OsmAnd permitem que os ciclistas insir
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Selecione as estradas que você deseja evitar durante a navegação.  </summary>![Evitar estradas Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | Você pode [selecionar uma estrada no mapa](../../map/map-context-menu/#avoid-road) ou escolher o(s) tipo(s) de estrada da lista:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Evitar cruzar uma fronteira para outro país)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (um tipo de transporte aquático, que transporta veículos através de corpos d'água)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Evitar paralelepípedos](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (partes de uma rodovia onde um curso d'água passa por ela) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Sem calçamento](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Restrições de acesso privado serão ignoradas ao calcular a rota.  | A tag *[privado](https://wiki.openstreetmap.org/wiki/Key:access)* é usada no OSM para descrever restrições no uso de rodovias e outras rotas de transporte, bem como edifícios, entradas, comodidades e entidades de lazer.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Terreno&nbsp;preferido* (iOS) | <details><summary> Dados de elevação serão usados no cálculo da rota: [penalidades para estradas](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) com outro perfil de elevação serão definidas. </summary> ![Usar dados de elevação Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Esta preferência pode ajudar a evitar colinas íngremes ou vice-versa, preferi-las. Se você escolher a rota *montanhosa*, será dada preferência a colinas e montanhas. Se *plana* - a planícies, as colinas serão evitadas. A preferência menos montanhosa é algo entre essas duas opções. Sem dados de elevação, a rota mais rápida como em terreno plano será calculada. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | Selecione o método de cálculo de rota preferido. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Particularidades do roteamento MTB {#mtb-routing-particularities}

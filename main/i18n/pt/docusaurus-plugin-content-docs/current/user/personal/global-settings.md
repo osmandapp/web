@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Configurações Globais
 ---
@@ -44,7 +44,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 ## Geral {#general}
 
-Esta seção contém as configurações básicas do OsmAnd, como a seleção de um [perfil](#default-profile) ao carregar o aplicativo, a seleção do [motor de renderização](#map-rendering-engine) e da [pasta](#data-storage-folder) onde os dados serão salvos.  
+Esta seção contém as configurações básicas do OsmAnd, como a seleção de um [perfil](#default-profile) ao carregar o aplicativo, a seleção do [motor de renderização](#map-rendering-engine) e da [pasta](#data-storage) onde os dados serão salvos.  
 
 
 ### Perfil Padrão {#default-profile}
@@ -84,15 +84,15 @@ Este recurso está disponível para a versão iOS do aplicativo OsmAnd.
 O [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) é usado quando conectado ao [software CarPlay](https://support.apple.com/en-gb/HT205634) do seu veículo e ajuda você a aproveitar ao máximo a versão otimizada do aplicativo OsmAnd usando os sistemas de áudio e vídeo para exibir dados no seu telefone.
 
 
-### Pasta de Armazenamento de Dados {#data-storage-folder}
+### Armazenamento de Dados {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Configurações de Armazenamento de Perfis Android](@site/static/img/personal/profiles/main_storage.webp) ![Configurações de Armazenamento de Perfis Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Configurações de Armazenamento de Perfis Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. A **Memória do dispositivo** mostra quanto espaço livre resta no seu dispositivo. Toque em um campo para acessar o menu [*Mapas e Recursos*](../personal/maps-resources.md#local-menu), onde você pode visualizar e gerenciar informações detalhadas sobre seus dados do OsmAnd.
 
@@ -108,6 +108,16 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 Novas diretrizes de acesso ao armazenamento foram implementadas nas versões 11-12 do Android. Consulte a seção [**Solução de problemas**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) para obter detalhes.
 :::
 
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+A configuração **Armazenamento de mídia** determina onde as fotos, vídeos e arquivos de áudio anexados a favoritos, trilhas e outros itens do OsmAnd são armazenados. Você pode escolher um local de armazenamento dependendo se deseja que os arquivos permaneçam privados ou sejam acessíveis a partir de outros aplicativos.
+- **Armazenamento principal** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Armazenamento compartilhado** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Pasta da câmera** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Especificado manualmente** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Há também um interruptor *Sempre manter uma cópia local*. Quando ativado, o OsmAnd copia a mídia importada da Galeria ou Arquivos para seu próprio armazenamento, para que a mídia anexada permaneça disponível mesmo se o arquivo original for excluído da Galeria ou do sistema de arquivos.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +129,6 @@ Vá para: *Dispositivo iOS → Ajustes → Geral → Armazenamento do iPhone →
 Os arquivos do OsmAnd são visíveis no aplicativo [*Arquivos*](https://apps.apple.com/us/app/files/id1232058109). Você pode acessar todos os arquivos do OsmAnd: [trilhas](../personal/tracks/manage-tracks.md), [favoritos](../personal/favorites.md), [mapas](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Para fazer isso, siga o seguinte caminho:  
 
 Vá para: *Arquivos → No Meu Telefone → OsmAnd Maps*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/files-1.png) ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -309,7 +317,7 @@ A configuração **<Translate android="true" ids="dialogs_and_notifications_titl
 
 ### Fonte de Localização {#location-source}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*somente Android*)
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*somente Android)*
 
 ![Backup automático](@site/static/img/personal/profiles/location_source_andr.png)
 

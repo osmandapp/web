@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title: Primeiros Passos
 ---
@@ -510,13 +510,13 @@ No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais
 
 <TabItem value="android" label="Android">
 
-![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_menu_andr.png)
+![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de mapas iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Menu de mapas iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
@@ -624,13 +624,13 @@ Permite que você faça perguntas ou sugestões.
 
 <TabItem value="android" label="Android">
 
-![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_report_andr.png)
+![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de mapas iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Menu de mapas iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 

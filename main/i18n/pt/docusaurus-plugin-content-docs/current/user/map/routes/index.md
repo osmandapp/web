@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title: Rotas
 sidebar_position: 11
 ---
@@ -28,11 +28,11 @@ O OsmAnd possui muitos recursos avançados para exibir diferentes [rotas](./type
 
 Acesse: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Seção Rotas do Configurar Mapa](@site/static/img/map/configure_map_routes_android.png) ![Classes de Rotas](@site/static/img/map/routes_classes_android.png)
+![Seção Rotas do Configurar Mapa](@site/static/img/map/configure_map_routes_android.png) ![Classes de Rotas](@site/static/img/map/routes_classes_android.webp)
 
 - Para exibir as rotas desejadas no mapa, ative-as na *lista de Rotas* do menu [Configurar Mapa](../../map/configure-map-menu.md).
 - O OsmAnd pode destacar [rotas presentes no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Elas podem ser selecionadas tocando [no símbolo da rota](#save-as-a-track) e, se o conjunto visível de rotas estiver configurado corretamente, você poderá seguir a cor e os ícones.
-- Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo exibir apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes e por redes *internacionais, nacionais, regionais* ou *locais* como subclasses, que estão atualmente disponíveis quando o plug-in [Desenvolvimento OsmAnd](../../plugins/development.md) está ativado.
+- Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo exibir apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes e por redes *internacionais, nacionais, regionais* ou *locais*, bem como *rotas não classificadas*, como subclasses. Filtros de classificação de rede semelhantes estão disponíveis para rotas de ciclismo. Essas opções estão atualmente disponíveis quando o plug-in [Desenvolvimento OsmAnd](../../plugins/development.md) está ativado. Quando várias redes de rotas se sobrepõem, classificações individuais podem ser ativadas ou desativadas para exibir apenas os níveis de rota desejados.
 - Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../../plan-route/create-route.md).
 - Quando várias rotas seguem a mesma estrada, cada rota é exibida como uma linha semitransparente separada, colocada acima das outras.
 - Ao tocar em um local onde várias rotas se sobrepõem, é exibido um menu de contexto com todas as rotas que passam por esse ponto.

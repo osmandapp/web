@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title: Edição do OpenStreetMap
 ---
@@ -256,13 +256,13 @@ As suas trilhas serão adicionadas aos [rastros OSM](https://www.openstreetmap.o
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -278,10 +278,9 @@ Para [carregar a trilha GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_trac
 - **<Translate android="true" ids="shared_string_description"/>**. Permite adicionar uma descrição à trilha. A descrição aplica-se a todas as trilhas selecionadas. Se não inserir nada no campo, os nomes das trilhas para cada trilha separada são usados como descrições.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Este item na seção de configurações permite adicionar tags para identificar a trilha. A tag padrão é "osmand". Se a trilha foi gravada com uma atividade específica com base no perfil selecionado, esta atividade também é automaticamente adicionada como tag durante o carregamento. Para grupos de trilhas carregadas, cada trilha recebe a sua própria tag de atividade. Para alguns perfis (por exemplo, Transporte público), a tag de atividade não é adicionada. Pode inserir tags adicionais manualmente, separadas por vírgulas.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Visibilidade da trilha para utilizadores OSM:  
-   - *Público* significa que a trilha está publicamente disponível e exibida em formato bruto nas suas trilhas GPS, listas de trilhas GPS e listas de trilhas com carimbo de data/hora. Os dados transmitidos através da API não são referenciados com a sua página de trilha. Os carimbos de data/hora dos pontos de rastro não estão disponíveis através da API GPS pública e os pontos de rastro não são ordenados cronologicamente.
-   - *Identificável* significa que a trilha será exibida publicamente nos seus pontos de trilha GPS e listas de trilhas GPS públicas, o que significa que outros utilizadores poderão baixar a trilha bruta e associá-la ao seu nome de utilizador. Os dados de pontos de trilha com carimbo de data/hora públicos da API GPS passados através da API de pontos de trilha serão vinculados à sua página de trilha original.
-   - *Rastreável* significa que a trilha não é exibida em listas públicas, mas os pontos de trilha processados com carimbos de data/hora dela (que não podem ser vinculados diretamente a você) são carregados da API GPS pública.
-   - *Privado* significa que a trilha não é exibida em listas públicas, mas os pontos de trilha dela em ordem não cronológica estão disponíveis através da API GPS pública sem carimbos de data/hora.
+      - *Identificável* significa que a trilha será exibida publicamente nos seus pontos de trilha GPS e listas de trilhas GPS públicas, o que significa que outros utilizadores poderão baixar a trilha bruta e associá-la ao seu nome de utilizador. Os dados de pontos de trilha com carimbo de data/hora públicos da API GPS passados através da API de pontos de trilha serão vinculados à sua página de trilha original. Esta opção é selecionada por predefinição.
+      - *Rastreável* significa que a trilha não é exibida em listas públicas, mas os pontos de trilha processados com carimbos de data/hora dela (que não podem ser vinculados diretamente a você) são carregados da API GPS pública.
+{/* *Privado* significa que a trilha não é exibida em listas públicas, mas os pontos de trilha dela em ordem não cronológica estão disponíveis através da API GPS pública sem carimbos de data/hora. *Público* significa que a trilha está publicamente disponível e exibida em formato bruto nas suas trilhas GPS, listas de trilhas GPS e listas de trilhas com carimbo de data/hora. Os dados transmitidos através da API não são referenciados com a sua página de trilha. Os carimbos de data/hora dos pontos de rastro não estão disponíveis através da API GPS pública e os pontos de rastro não são ordenados cronologicamente.*/}
 - **<Translate android="true" ids="login_account"/>** - [Conta OSM](https://www.openstreetmap.org/login).
 
 :::info

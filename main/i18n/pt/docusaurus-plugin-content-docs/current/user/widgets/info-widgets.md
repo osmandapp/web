@@ -1,5 +1,5 @@
 ---
-source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title:  Widgets Informativos
 ---
@@ -32,9 +32,12 @@ Os widgets de altitude exibem a altura acima do nível do mar da geolocalizaçã
 ### Altitude: Localização Atual {#altitude-current-location}
   
 :::note Baixar correção de altitude mundial
-Em alguns dispositivos Android, a altitude pode ser exibida de forma imprecisa. Para resolver esse problema, baixe um mapa com correção de altitude.
+No Android 14 e posterior, o OsmAnd usa a altitude acima do nível médio do mar (MSL) fornecida pelo Google Play Services quando disponível. Nesse caso, o mapa de correção de altitude mundial não é necessário.
+
+Se você usar a fonte de localização da API do Android ou a altitude MSL não estiver disponível, baixe o mapa de correção de altitude mundial para melhorar a precisão da altitude.
 
 - Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Para alterar a fonte de localização, vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Para mais detalhes, visite [Mapas e Recursos](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -202,7 +205,7 @@ Após a redefinição, a velocidade média é recalculada a partir dos novos dad
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -247,28 +250,68 @@ O widget [simples](../widgets/configure-screen.md#widget-panels) *Razão de Plan
 
 ### Razão de Planeio para o Alvo {#glide-ratio-to-target}
 
-- A **Razão de planeio para o alvo** mostra a razão de planeio exata necessária para atingir o ponto alvo.
-- A **Elevação do alvo** mostra a elevação do ponto alvo. O [Marcador do mapa](../personal/markers.md) deve ser usado como ponto alvo.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Razão de planeio para o alvo** mostra a razão de planeio exata necessária para atingir o ponto alvo.
+- **Elevação do alvo** mostra a elevação do ponto alvo. O [Marcador do mapa](../personal/markers.md) deve ser usado como ponto alvo.
+
+Para alternar entre esses modos, toque diretamente no widget. A opção de alternância não está disponível no [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu). 
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
+| Ativar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
 | Ao tocar | Altera *Razão de planeio para o alvo* ou *Elevação do alvo*  |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- **Razão de planeio para o alvo** mostra a razão de planeio exata necessária para atingir o ponto alvo.
+- **Elevação do alvo** mostra a elevação do ponto alvo. O [Marcador do mapa](../personal/markers.md) deve ser usado como ponto alvo.
+
+| | |
+|:------------|:------------|
+| Ativar | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
+| Ao tocar | Altera *Razão de planeio para o alvo* ou *Elevação do alvo*  |
+| Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ### Razão de Planeio Média {#average-glide-ratio}
 
-- A **Razão de planeio média** mostra a razão de planeio média para um intervalo de tempo especificado.
-- A **Velocidade vertical média** indica a taxa na qual um objeto sobe ou desce ao longo do tempo. Apenas os pontos inicial e final do intervalo de tempo são considerados para avaliação. Você pode definir o intervalo de tempo para este widget de 15 segundos a 60 minutos. Você deve usar o [Marcador do mapa](../personal/markers.md) como ponto alvo.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Razão de planeio média** mostra a razão de planeio média para um intervalo de tempo especificado.
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
+| Ativar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
+| Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+- **Razão de planeio média** mostra a razão de planeio média para um intervalo de tempo especificado.
+- **Velocidade vertical média** indica a taxa na qual um objeto sobe ou desce ao longo do tempo. Apenas os pontos inicial e final do intervalo de tempo são considerados para avaliação. Você pode definir o intervalo de tempo para este widget de 15 segundos a 60 minutos. Você deve usar o [Marcador do mapa](../personal/markers.md) como ponto alvo.
+
+| | |
+|:------------|:------------|
+| Ativar | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
 | Ao tocar | Altera *Razão de planeio média* ou *Velocidade vertical média*  |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Nível da Bateria {#battery-level}
@@ -277,7 +320,7 @@ O widget [simples](../widgets/configure-screen.md#widget-panels) *Razão de Plan
 
 O widget **Nível da Bateria** exibe a porcentagem da bateria do seu dispositivo diretamente na tela do mapa e atualiza automaticamente pelo menos uma vez por minuto.
 
-- **iOS 17 e posterior** — Devido a **restrições de privacidade**, os dados de nível da bateria estão disponíveis apenas em incrementos de 5% (por exemplo, 35%, 60% ou 85%). Esta é uma limitação do sistema imposta pela Apple.
+- **iOS 17 e posterior** — Devido a **restrições de privacidade**, os dados de nível da bateria estão disponíveis apenas em incrementos de 5% (por exemplo, 35%, 60%, ou 85%). Esta é uma limitação do sistema imposta pela Apple.
 
 - Dispositivos **Android** — O widget exibe a porcentagem exata da bateria conforme relatado pelo sistema, sem arredondamento.
 
@@ -565,6 +608,7 @@ Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metric
 - Para adicionar widgets de métricas do veículo à tela do mapa, [ative](../plugins/index.md#enable--disable) o **plugin Métricas do Veículo**.
 - Você pode adicionar widgets mesmo que nenhum scanner OBD-II esteja conectado.
 - Todos os widgets adicionados são visíveis, esteja um scanner OBD-II conectado ou não.
+- Para valores precisos de **Consumo de combustível**, especifique a _[Capacidade do tanque de combustível](../navigation/guidance/vehicle-parameters.md#overview)_ do veículo nas configurações do perfil. Os modos de consumo baseados em distância também exigem dados de GPS.
 - Para editar um widget, toque no widget adicionado ao painel, depois toque em *Configurações*, ou toque diretamente no *ícone de Configurações* no campo do widget.
 
 | | |
@@ -579,7 +623,7 @@ Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metric
 
 :::note
 Para adicionar widgets de Clima à tela do mapa, ative o plugin OsmAnd [Clima](../plugins/weather.md).
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -659,7 +703,7 @@ Este é um widget do plugin Mapillary que fornece acesso rápido ao aplicativo M
 
 :::note
 Para adicionar widgets de Notas de Áudio/Vídeo à tela do mapa, ative o plugin OsmAnd [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md).
-:::
+::;
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -703,7 +747,7 @@ Este widget do plugin OsmAnd Rastreador é usado para acessar rapidamente o apli
 
 :::note
 Para adicionar widgets de Desenvolvedor à tela do mapa, ative o plugin OsmAnd [Desenvolvimento OsmAnd](../plugins/development.md).
-:::
+::;
 
 Os **widgets de desenvolvedor** fornecem informações sobre a [velocidade de renderização](../plugins/development.md#map-rendering-fps-widget) do mapa e os parâmetros de posição da câmera virtual, incluindo [nível de zoom](../plugins/development.md#zoom-level), [distância](../plugins/development.md#distance-to-target) ao centro do mapa, [elevação da câmera](../plugins/development.md#camera-elevation) e [ângulo de inclinação](../plugins/development.md#camera-tilt).  
 

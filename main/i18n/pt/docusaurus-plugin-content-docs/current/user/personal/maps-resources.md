@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title: Mapas e Recursos
 ---
@@ -142,7 +142,7 @@ A aba **Download** permite baixar vários tipos de mapas dos servidores OsmAnd, 
 
 No menu Baixar Mapas, há uma seção **Mapas Mundiais** que fornece acesso para baixar vários mapas do mundo, complementando a funcionalidade do aplicativo.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*somente Android*). Este arquivo contém correções de altitude para compensar a curvatura planetária.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*somente Android*). Este arquivo contém correções de altitude usadas para melhorar a precisão da altitude em dispositivos que não fornecem altitude acima do nível médio do mar (MSL), inclusive quando a API do Android é usada como [fonte de localização](../personal/global-settings.md#location-source) em vez dos Serviços do Google Play.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Fornece uma visão geral extensa da superfície da Terra, útil para planejamento de rotas de longo prazo e exploração casual.
 - **Mapa meteorológico mundial**. Permite baixar um mapa com informações meteorológicas.
 
