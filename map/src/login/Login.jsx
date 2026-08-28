@@ -10,7 +10,7 @@ import { userLogin } from '../manager/AccountManager';
 import i18n from 'i18next';
 import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
-import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
+import { DELETE_ACCOUNT_URL, liveHash, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../frame/components/btns/BlueBtn';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
@@ -90,6 +90,10 @@ export default function Login({ dialog = false }) {
             lang,
         });
         if (loggedIn && !dialog) {
+            // leave the account url before reset, otherwise the remounted MainMenu reopens the account menu
+            const prev = ctx.prevPageUrl?.url;
+            const backToPrev = prev && !prev.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL);
+            navigate((backToPrev ? prev.pathname + (prev.search || '') : MAIN_URL_WITH_SLASH) + liveHash());
             resetApp();
         }
     }

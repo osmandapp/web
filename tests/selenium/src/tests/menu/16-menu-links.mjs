@@ -19,6 +19,7 @@ export default async function test() {
     let url;
 
     // login
+    await clickBy(By.id('se-open-login-button'));
     url = await getUrl();
     await assert(url.includes(LOGIN_URL));
     await waitBy(By.id('se-login-menu-close'));
