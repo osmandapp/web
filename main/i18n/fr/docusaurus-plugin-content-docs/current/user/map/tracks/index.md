@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  Traces
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ Vous pouvez gérer la visibilité des traces en choisissant lesquelles afficher 
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configurer les traces sur la carte Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configurer les traces sur la carte Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,shar
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configurer les traces sur la carte iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configurer les traces sur la carte iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ L'option *Configurer la carte* vous permet de gérer rapidement l'affichage de t
 
 Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-![Mes lieux avec les traces sur Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → appui long sur la trace GPX choisie → Afficher sur la carte*
 
-![Menu contextuel d'une trace sur iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ Dans l'onglet [Mes lieux *→* Traces](../../personal/tracks/manage-tracks.md#ma
 
 <TabItem value="android" label="Android">
 
-![Aperçu du menu contextuel de la trace Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aperçu du menu contextuel de la trace iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ Lorsque vous sélectionnez une trace sur la carte ou ouvrez le [menu contextuel 
 
 Aller à : *Touchez la trace → Onglet Trace → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menu de la trace analyser sur la carte Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menu de la trace analyser sur la carte distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ Aller à : *Touchez la trace → Onglet Trace → <Translate android="true" ids=
 
 Aller à : *Touchez la trace → Onglet Trace → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menu de la trace analyser sur la carte](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menu de la trace analyser sur la carte ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -145,13 +145,13 @@ Cet outil fournit une analyse détaillée des données de la [trace](../../map/t
 
 <TabItem value="android" label="Android">
 
-![Menu de la trace analyser sur la carte 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Menu de la trace analyser sur la carte 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de la trace analyser sur la carte](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Menu de la trace analyser sur la carte ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 

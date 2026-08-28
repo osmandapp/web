@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title:  Itinéraires
 sidebar_position: 11
 ---
@@ -29,11 +29,11 @@ OsmAnd propose de nombreuses fonctionnalités puissantes pour afficher différen
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Section Itinéraires du menu Configurer la carte](@site/static/img/map/configure_map_routes_android.png) ![Classes d'itinéraires](@site/static/img/map/routes_classes_android.png)
+![Section Itinéraires du menu Configurer la carte](@site/static/img/map/configure_map_routes_android.png) ![Classes d'itinéraires](@site/static/img/map/routes_classes_android.webp)
 
 - Pour afficher les itinéraires souhaités sur la carte, activez-les dans la *liste Itinéraires* du menu [Configurer la carte](../../map/configure-map-menu.md).
 - OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#enregistrer-comme-une-trace), et si l'ensemble visible des itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
-- Les principaux types d'itinéraires peuvent également être filtrés par classes et sous-classes, ce qui permet d'afficher uniquement des groupes spécifiques au sein de chaque type. Par exemple, vous pouvez afficher les itinéraires de randonnée par **symboles OSMC** en tant que classes, et par réseaux *international, national, régional* ou *local* en tant que sous-classes, actuellement disponibles lorsque le plugin [Développement OsmAnd](../../plugins/development.md) est activé.
+- Les principaux types d'itinéraires peuvent également être filtrés par classes et sous-classes, ce qui permet d'afficher uniquement des groupes spécifiques au sein de chaque type. Par exemple, vous pouvez afficher les itinéraires de randonnée par **symboles OSMC** en tant que classes, et par réseaux *international, national, régional* ou *local*, ainsi que les *itinéraires non classés* en tant que sous-classes. Des filtres de classification de réseau similaires sont disponibles pour les itinéraires cyclables. Ces options sont actuellement disponibles lorsque le plugin [Développement OsmAnd](../../plugins/development.md) est activé. Lorsque plusieurs réseaux d'itinéraires se chevauchent, les classifications individuelles peuvent être activées ou désactivées pour n'afficher que les niveaux d'itinéraires souhaités.
 - Vous pouvez créer une trace au-dessus des itinéraires à l'aide de l'outil [Planifier un itinéraire](../../plan-route/create-route.md). 
 - Lorsque plusieurs itinéraires empruntent la même route, chaque itinéraire est affiché sous forme d'une ligne semi-transparente distincte placée au-dessus des autres. 
 - Lorsque vous appuyez sur un emplacement où plusieurs itinéraires se chevauchent, un menu contextuel avec tous les itinéraires passant par ce point s'affiche. 
@@ -97,7 +97,7 @@ Dans le **menu contextuel**, vous pouvez :
 
 ![Détails escalade](@site/static/img/map/climbing_andr.png)
 
-Lorsque vous sélectionnez une [zone ou un rocher d'escalade](./types-of-routes.md#itinéraires-d-escalade), OsmAnd fournit un résumé détaillé du site d'escalade, incluant : nom et localisation, cotation de difficulté d'escalade (UIAA, Français, YDS, etc.), type de roche, hauteur et longueur de l'itinéraire, qualité d'escalade et conditions de surface.
+Lorsque vous sélectionnez une [zone ou un rocher d'escalade](./types-of-routes.md#itinaires-d-escalade), OsmAnd fournit un résumé détaillé du site d'escalade, incluant : nom et localisation, cotation de difficulté d'escalade (UIAA, Français, YDS, etc.), type de roche, hauteur et longueur de l'itinéraire, qualité d'escalade et conditions de surface.
 
 ### Infos itinéraire et dénivelé {#infos-itineraire-et-denivele}
 

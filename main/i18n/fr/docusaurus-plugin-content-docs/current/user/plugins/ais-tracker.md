@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  Suivi des navires AIS
 ---
@@ -155,7 +155,7 @@ Les navires AIS transmettent trois types de données :
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Paramètres AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![Paramètres AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +171,7 @@ Le plugin *Suivi des navires AIS* offre divers paramètres pour personnaliser la
 | Adresse IP | Définir l'IP de la source de données AIS (si TCP est utilisé) | `192.168.200.16` |
 | Port TCP   | Définir le numéro de port TCP pour les données AIS | `4001` |
 | Port UDP   | Définir le port UDP pour la réception AIS d'OsmAnd  | `10110` |
+| Recevoir les données AIS même si OsmAnd est en pause   | Maintenir l'écoute des messages AIS active si OsmAnd est en pause ou en arrière-plan. Si désactivé, aucun message AIS n'est reçu lorsque OsmAnd est en arrière-plan  | `Oui/Non` |
 | | | |
 | **Délai d'attente de réception du signal AIS** | |  |
 | Délai d'attente pour les objets AIS perdus     | Les navires disparaissent si aucun signal n'est reçu pendant un temps défini | `3 - 20 min` |
@@ -189,7 +190,7 @@ Le plugin *Suivi des navires AIS* offre divers paramètres pour personnaliser la
 
     - [Test AIS 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
     - [Test AIS 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
-    - [Unique 3](https://github.com/user-attachments/files/18689403/333.txt)
+    - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
 2. **Charger les données AIS dans OsmAnd**  
 Ouvrez *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* et sélectionnez l'un des fichiers téléchargés.

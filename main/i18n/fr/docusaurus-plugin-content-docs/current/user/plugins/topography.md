@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topographie
 ---
@@ -370,7 +370,13 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </Tabs>
 
-La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Si les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluent des passages à travers les bâtiments cartographiés avec la balise `tunnel=building_passage`, OsmAnd rend des ouvertures visibles dans le modèle de bâtiment 3D afin que les routes ou les voies piétonnes passant à travers le bâtiment soient affichées correctement. 
+La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. 
+
+Pour les structures complexes, OsmAnd utilise `building:part` pour rendre les sections individuelles d'un bâtiment avec des hauteurs et des formes différentes. 
+
+Si les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluent des passages à travers les bâtiments cartographiés avec la balise `tunnel=building_passage`, OsmAnd rend des ouvertures visibles dans le modèle de bâtiment 3D afin que les routes ou les voies piétonnes passant à travers le bâtiment soient affichées correctement. 
+
+Les bâtiments 3D peuvent inclure différentes formes de toit basées sur les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). La balise `roof:shape` définit la géométrie du toit, tandis que `roof:levels` et `roof:height` fournissent des informations sur sa hauteur.
 
 Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés. Lorsque vous zoomez ou dézoomez et que vous faites défiler la carte, les bâtiments 3D apparaissent et disparaissent avec une animation de fondu fluide. Lorsqu'un POI ou un emplacement sélectionné (comme une épingle sur la carte ou une destination de navigation) se trouve à l'intérieur d'un bâtiment, OsmAnd met en évidence le bâtiment correspondant pour faciliter son identification sur la carte.
 

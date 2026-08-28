@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -142,7 +142,7 @@ Les détails disponibles incluent :
 - [Dans les zones](#polygon-information)
 - [POI à proximité](#nearby-pois)
 - [Lieux populaires à proximité](#nearby-popular-places)
-- [Guides](#guides) (Android uniquement)
+- [Guides](#guides) 
 - [Itinéraires de transport public pour les arrêts](#public-transport-routes)
 - [Favoris / Points de trace du même groupe](#favorites--track-points-from-the-group)
 - [Lien OpenStreetMap](#openstreetmap-link)
@@ -170,21 +170,20 @@ Au-delà des champs listés ci-dessus, OsmAnd peut également afficher des infor
 
 ![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
-Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md#wikipedia-article), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
-
-Si le lieu sélectionné possède un article Wikipedia, un aperçu court est affiché dans cette section. Lorsque l'article complet n'est pas disponible hors ligne, le bouton *Lire sur Wikipedia* apparaît. En l'appuyant, une boîte de dialogue s'ouvre avec des options en fonction de l'accès de l'utilisateur : les utilisateurs avec un abonnement payant peuvent télécharger les données régionales Wikipedia ou ouvrir l'article dans un navigateur, tandis que les utilisateurs gratuits peuvent ouvrir l'article en ligne ou passer à l'écran qui propose un accès hors ligne.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Description list](@site/static/img/map/description_list_new_ios.png)
-
-Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
+![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md#wikipedia-article), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
+
+Si le lieu sélectionné possède un article Wikipedia, un aperçu court est affiché dans cette section. Lorsque l'article complet n'est pas disponible hors ligne, le bouton *Lire sur Wikipedia* apparaît. En l'appuyant, une boîte de dialogue s'ouvre avec des options en fonction de l'accès de l'utilisateur : les utilisateurs avec un abonnement payant peuvent télécharger les données régionales Wikipedia ou ouvrir l'article dans un navigateur, tandis que les utilisateurs gratuits peuvent ouvrir l'article en ligne ou passer à l'écran qui propose un accès hors ligne.
+
 
 
 ### Noms alternatifs {#alternative-names}
@@ -205,7 +204,7 @@ Cette partie contient un extrait de la description d'un [article Wikipedia](../p
 
 </Tabs>
 
-OsmAnd affiche des **noms de POI supplémentaires** dans le *menu contextuel de la carte*, en donnant la priorité au nom dans la *langue d'affichage* ou dans la liste des langues préférées du système. Si plusieurs traductions sont disponibles, elles sont regroupées en balises catégorisées telles que *nom, marque, opérateur,* ou *POI à proximité*.  
+OsmAnd affiche des **noms de POI supplémentaires** dans le *menu contextuel de la carte*, en donnant la priorité au nom dans la *langue d'affichage* ou dans la liste des langues préférées du système. Si plusieurs traditions sont disponibles, elles sont regroupées en balises catégorisées telles que *nom, marque, opérateur,* ou *POI à proximité*.  
 
 Caractéristiques de l'affichage des noms alternatifs :
 
@@ -324,9 +323,21 @@ Appuyer sur *[Lieux populaires à proximité](https://osmand.net/docs/user/plugi
 
 ### Guides {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 La section **Guides** apparaît dans le menu contextuel de la carte pour certains lieux et fournit un accès aux guides **Voyage (Wikivoyage)** liés au point d'intérêt sélectionné. Elle affiche une liste d'entrées de guide (par exemple, un pays ou une région) qui mentionnent le lieu sélectionné.
 
@@ -797,7 +808,7 @@ Vous pouvez ajouter des points de cheminement à une trace enregistrée ou à l'
 
 :::note
 Pour créer/modifier des POI, activez le [**plugin d'édition OSM**](../plugins/osm-editing.md) d'OsmAnd.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -854,7 +865,7 @@ Vous pouvez **signaler** des erreurs de données cartographiques à un emplaceme
 
 :::note
 Pour commenter/fermer une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-editing.md) d'OsmAnd.
-:::
+::;
 
 ![Comment OSM Note Android](@site/static/img/map/action_comment_note_android.png) ![Reopen OSM Note Android](@site/static/img/map/action_reopen_note_android.png)
 
@@ -866,7 +877,7 @@ des notes OpenStreetMap via le menu contextuel de l'objet.
 
 :::note
 Pour téléverser un POI / une note OSM, activez le [**plugin d'édition OSM**](../plugins/osm-editing.md) d'OsmAnd.
-:::
+::;
 
 ![Upload POI Android](@site/static/img/map/action_poi_upload_android.png) ![Upload OSM Note Android](@site/static/img/map/action_note_upload_android.png)
 
@@ -879,7 +890,7 @@ Si vous utilisez le *mode hors ligne* pour ajouter / modifier un POI ou une note
 
 :::note
 Pour enregistrer des notes audio/vidéo, activez le [**plugin Notes audio/vidéo**](../plugins/audio-video-notes.md) d'OsmAnd.
-:::
+::;
 
 ![Action Audio-Video Android](@site/static/img/map/action_av_note_android.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -32,9 +32,12 @@ Les widgets d'altitude affichent la hauteur au-dessus du niveau de la mer de la 
 ### Altitude : Position actuelle   {#altitude-current-location}
   
 :::note  Télécharger la correction d'altitude mondiale
-Sur certains appareils Android, l'altitude peut s'afficher de manière inexacte. Pour résoudre ce problème, téléchargez une carte avec correction d'altitude.
+Sur Android 14 et versions ultérieures, OsmAnd utilise l'altitude au-dessus du niveau moyen de la mer (MSL) fournie par Google Play Services lorsqu'elle est disponible. Dans ce cas, la carte de correction d'altitude mondiale n'est pas requise.
+
+Si vous utilisez la source de localisation de l'API Android ou si l'altitude MSL n'est pas disponible, téléchargez la carte de correction d'altitude mondiale pour améliorer la précision de l'altitude.
 
 - Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Pour modifier la source de localisation, allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Pour plus de détails, visitez [Cartes et ressources](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -202,7 +205,7 @@ Après la réinitialisation, la vitesse moyenne est recalculée à partir des no
 
 |Widgets| Widgets à l'écran|
 |:--------|:---------|
-|![Finesse](@site/static/img/widgets/glide_ratio_3.png)|![Finesse](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Finesse](@site/static/img/widgets/glide_ratio_3.png)|![Finesse](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -247,28 +250,68 @@ Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse*
 
 ### Finesse vers la cible {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Finesse vers la cible** indique la finesse exacte requise pour atteindre le point cible.
+- **Élévation de la cible** indique l'élévation du point cible. Le [marqueur de carte](../personal/markers.md) doit être utilisé comme point cible.
+
+Pour basculer entre ces modes, appuyez directement sur le widget. L'option de basculement n'est pas disponible dans le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu). 
+
+| | |
+|:------------|:------------|
+| Activer | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
+| Par appui | Change *Finesse vers la cible* ou *Élévation de la cible*  |
+| Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Finesse vers la cible** indique la finesse exacte requise pour atteindre le point cible.
 - **Élévation de la cible** indique l'élévation du point cible. Le [marqueur de carte](../personal/markers.md) doit être utilisé comme point cible.
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
+| Activer | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
 | Par appui | Change *Finesse vers la cible* ou *Élévation de la cible*  |
 | Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Finesse moyenne {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
+
+| | |
+|:------------|:------------|
+| Activer | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
+| Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
 - **Vitesse verticale moyenne** indique la vitesse à laquelle un objet monte ou descend sur une période donnée. Seuls les premier et dernier points de l'intervalle de temps sont pris en compte pour l'évaluation. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes. Vous devez utiliser le [marqueur de carte](../personal/markers.md) comme point cible.
 
 | | |
 |:------------|:------------|
-| Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
+| Activer | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
 | Par appui | Change *Finesse moyenne* ou *Vitesse verticale moyenne*  |
 | Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Niveau de la batterie {#battery-level}
@@ -493,7 +536,7 @@ Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate 
 
 :::note
 Pour ajouter des widgets de capteurs externes à l'écran de la carte, activez l'extension [Capteurs externes](../plugins/external-sensors.md) d'OsmAnd.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -540,7 +583,7 @@ Les widgets se réfèrent à l'[extension Capteurs externes](../plugins/external
 
 :::note
 Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, activez l'extension [Métrique du véhicule](../plugins/vehicle-metrics.md) d'OsmAnd.
-:::
+::;
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -560,11 +603,12 @@ Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, act
 </Tabs>
 
 
-Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/vehicle-metrics.md#widgets). Vous pouvez les utiliser pour afficher des informations provenant d'un scanner OBD-II connecté, telles que (*14 métriques*) : **Tension de l'adaptateur** (*Android uniquement*),&nbsp; **Température ambiante**,&nbsp; **Tension de la batterie**,&nbsp; **Charge calculée du moteur**,&nbsp; **Température du liquide de refroidissement**,&nbsp; **Température de l'huile moteur**,&nbsp; **Durée de fonctionnement du moteur**,&nbsp; **Régime moteur** (*gratuit*),&nbsp; **Consommation de carburant**,&nbsp; **Pression du carburant**,&nbsp; **Température d'admission**,&nbsp; **Carburant restant**,&nbsp; **Position de l'accélérateur**, et **Vitesse du véhicule** (*gratuit*).  
+Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/vehicle-metrics.md#widgets). Vous pouvez les utiliser pour afficher des informations provenant d'un scanner OBD-II connecté, telles que (*14 métriques*) : **Tension de l'adaptateur**,&nbsp; **Température ambiante**,&nbsp; **Tension de la batterie**,&nbsp; **Charge calculée du moteur**,&nbsp; **Température du liquide de refroidissement**,&nbsp; **Température de l'huile moteur**,&nbsp; **Durée de fonctionnement du moteur**,&nbsp; **Régime moteur** (*gratuit*),&nbsp; **Consommation de carburant**,&nbsp; **Pression du carburant**,&nbsp; **Température d'admission**,&nbsp; **Carburant restant**,&nbsp; **Position de l'accélérateur**, et **Vitesse du véhicule** (*gratuit*).  
 
 - Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, [activez](../plugins/index.md#enable--disable) l'**extension Métriques du véhicule**.
 - Vous pouvez ajouter des widgets même si aucun scanner OBD-II n'est connecté.
 - Tous les widgets ajoutés sont visibles, qu'un scanner OBD-II soit connecté ou non.
+- Pour des valeurs précises de **consommation de carburant**, spécifiez la _[capacité du réservoir de carburant](../navigation/guidance/vehicle-parameters.md#overview)_ du véhicule dans les paramètres du profil. Les modes de consommation basés sur la distance nécessitent également des données GPS.
 - Pour modifier un widget, appuyez sur le widget ajouté au panneau, puis sur *Paramètres*, ou directement sur l'*icône Paramètres* dans le champ du widget.
 
 | | |
@@ -579,7 +623,7 @@ Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/ve
 
 :::note
 Pour ajouter des widgets Météo à l'écran de la carte, activez l'extension [Météo](../plugins/weather.md) d'OsmAnd.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

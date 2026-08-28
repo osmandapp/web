@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -55,7 +55,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu de téléchargement de carte iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Cartes régionales iOS](@site/static/img/personal/maps/map_type_2_ios_new.png)  
+![Menu de téléchargement de carte iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Cartes régionales Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -142,7 +142,7 @@ L'onglet **Télécharger** vous permet de télécharger divers types de cartes d
 
 Dans le menu Télécharger les cartes, il y a une section **Cartes du monde** qui donne accès au téléchargement de diverses cartes du monde, complétant ainsi les fonctionnalités de l'application.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Android uniquement*). Ce fichier contient des corrections d'altitude pour compenser la courbure planétaire.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Android uniquement*). Ce fichier contient des corrections d'altitude utilisées pour améliorer la précision de l'altitude sur les appareils qui ne fournissent pas l'altitude au-dessus du niveau moyen de la mer (MSL), y compris lorsque l'API Android est utilisée comme [source de localisation](../personal/global-settings.md#location-source) au lieu de Google Play Services.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Fournit un aperçu étendu de la surface de la Terre, utile pour la planification d'itinéraires à long terme et l'exploration occasionnelle.
 - **Carte météo mondiale**. Permet de télécharger une carte avec des informations météorologiques.
 
