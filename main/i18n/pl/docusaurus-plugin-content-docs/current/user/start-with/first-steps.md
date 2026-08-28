@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  Pierwsze kroki
 ---
@@ -25,13 +25,13 @@ Dowiedz się, jak pobierać mapy, konfigurować aplikację, korzystać z mapy i 
 
 <TabItem value="android" label="Android">
 
-![Nawigacja offline Android](@site/static/img/settings/google_play_screen1_android.png)
+![Offline navigation Android](@site/static/img/settings/google_play_screen1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Nawigacja offline iOS](@site/static/img/settings/itunes_screen_ios.png)
+![Offline navigationiOS](@site/static/img/settings/itunes_screen_ios.png)
 
 </TabItem>
 
@@ -76,13 +76,13 @@ Naszym celem jest stworzenie w pełni funkcjonalnej aplikacji zorientowanej na m
 
 <TabItem value="android" label="Android">
 
-![Dokładna lokalizacja Android](@site/static/img/steps/first_start_andr.png)
+![Precise location android](@site/static/img/steps/first_start_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Dokładna lokalizacja iOS](@site/static/img/steps/first_start_ios.png) ![Dokładna lokalizacja iOS](@site/static/img/steps/first_start_ios_1.png)
+![Precise location iOS](@site/static/img/steps/first_start_ios.png) ![Precise location iOS](@site/static/img/steps/first_start_ios_1.png)
 
 </TabItem>
 
@@ -97,13 +97,13 @@ Zalecamy udzielenie OsmAnd zgody na otrzymywanie informacji o dokładnej lokaliz
 
 <TabItem value="android" label="Android">
 
-![Pokaż na mapie](@site/static/img/steps/start_screen_download_andr.png)
+![Show on the map](@site/static/img/steps/start_screen_download_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pokaż na mapie](@site/static/img/steps/start_screen_download_ios.png)
+![Show on the map](@site/static/img/steps/start_screen_download_ios.png)
 
 </TabItem>
 
@@ -134,7 +134,7 @@ Opcja *Język wyświetlania* służy do zmiany języka całej aplikacji, w tym w
 
 Na urządzeniach z Androidem OsmAnd pozwala na dostosowanie języka wyświetlania bezpośrednio w aplikacji we wszystkich obsługiwanych wersjach. Domyślnie aplikacja używa języka systemowego, ale możesz ręcznie wybrać inny język, jeśli jest to potrzebne.
 
-Na Androidzie 13 i nowszych możesz zmienić język aplikacji albo w ustawieniach OsmAnd, albo w ustawieniach systemowych urządzenia. Wybrany język jest synchronizowany między aplikacją a systemem. Niektóre zmiany mogą wymagać ponownego uruchomienia aplikacji, aby w pełni zastosować wybrany język.
+Na Androidzie 13 i nowszych możesz zmienić język aplikacji albo w ustawieniach OsmAnd, albo w ustawieniach systemowych urządzenia. Wybrany język jest synchronizowany między aplikacją a systemem. Niektóre zmiany mogą wymagać ponownego uruchomienia aplikacji, aby w pełni zastosować wybrony język.
 
 Na urządzeniach z iOS język wyświetlania można zmienić tylko w ustawieniach systemowych (zobacz, jak zmienić preferencje językowe dla poszczególnych aplikacji w systemie [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
@@ -144,7 +144,7 @@ Na urządzeniach z iOS język wyświetlania można zmienić tylko w ustawieniach
 
 Przejdź do: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Język wyświetlania*
 
-![Ogólne ustawienia języka Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Ogólne ustawienia języka Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -152,14 +152,14 @@ Przejdź do: *<Translate ios="true" ids="shared_string_settings,osmand_settings"
 
 Przejdź do: *Ustawienia → OsmAnd Maps → Język*
 
-![Ogólne ustawienia języka iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
+![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note Brak opcji ustawienia języków aplikacji
-Na niektórych urządzeniach z Androidem lub wersjach systemu opcja indywidualnego ustawiania języków aplikacji w ustawieniach systemowych może być niedostępna lub ograniczona (możesz sprawdzić dyskusję na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990), aby uzyskać dodatkowe informacje). W takich przypadkach nadal możesz zmienić język aplikacji bezpośrednio w OsmAnd za pomocą ustawienia Język wyświetlania. Nawet jeśli język nie jest obsługiwany przez system Android, OsmAnd nadal zastosuje i zachowa wybrany język w aplikacji.
+Na niektórych urządzeniach z Androidem lub wersjach systemu opcja indywidualnego ustawiania języków aplikacji w ustawieniach systemowych może być niedostępna lub ograniczona (możesz sprawdzić dyskusję na [GitHubie](https://github.com/osmandapp/OsmAnd/issues/16990), aby uzyskać dodatkowe informacje). W takich przypadkach nadal możesz zmienić język aplikacji bezpośrednio w OsmAnd za pomocą ustawienia Język wyświetlania. Nawet jeśli język nie jest obsługiwany przez system Android, OsmAnd nadal zastosuje i zachowa wybrony język w aplikacji.
 :::
 
 
@@ -171,13 +171,13 @@ Możesz zarządzać ustawieniami aplikacji jako [Ustawieniami globalnymi](../per
 
 <TabItem value="android" label="Android">
 
-![Zarządzaj profilem Android](@site/static/img/settings/manage_profile_android.png) ![Konfiguruj profil Android](@site/static/img/settings/configure_profile_android.png)
+![Manage profile Android](@site/static/img/settings/manage_profile_android.png) ![Configure profile Android](@site/static/img/settings/configure_profile_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zarządzaj profilem iOS](@site/static/img/settings/manage_profile_ios.png) ![Konfiguruj profil iOS](@site/static/img/settings/configure_profile_ios.png)
+![Manage profile iOS](@site/static/img/settings/manage_profile_ios.png) ![Configure profile iOS](@site/static/img/settings/configure_profile_ios.png)
 
 </TabItem>
 
@@ -197,7 +197,7 @@ Możesz włączać/wyłączać wtyczki poprzez [Menu główne](../start-with/mai
 
 <TabItem value="android" label="Android">
 
-![Włącz wtyczki Android](@site/static/img/settings/plugins_enable_android.png) ![Przykład wtyczki Android](@site/static/img/settings/plugin_example_android.png)
+![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
 
 Aby włączyć/wyłączyć wtyczki, przejdź do:
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable
@@ -206,7 +206,7 @@ Aby włączyć/wyłączyć wtyczki, przejdź do:
 
 <TabItem value="ios" label="iOS">
 
-![Włącz wtyczki iOS](@site/static/img/settings/plugins_enable_ios.png) ![Przykład wtyczki iOS](@site/static/img/settings/plugin_example_ios.png)
+![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
 
 Aby włączyć/wyłączyć wtyczki, przejdź do:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
@@ -220,19 +220,19 @@ Aby włączyć/wyłączyć wtyczki, przejdź do:
 
 ### Jak korzystać z mapy {#how-to-use-a-map}
 
-Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak z niej korzystać](../map/interact-with-map.md) (gesty, przyciski itp.). Możesz [skonfigurować mapę](../map/configure-map-menu.md) do swoich potrzeb: [zmienić styl mapy](../map/configure-map-menu.md#map-style-parameters), skonfigurować różne [warstwy mapy](../map/configure-map-menu.md#map-layers), takie jak ulubione, POI, transport publiczny, ślady, linie konturowe, cieniowanie wzgórz i inne.
+Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak z niej korzystać](../map/interact-with-map.md) (gesty, przycyski itp.). Możesz [skonfigurować mapę](../map/configure-map-menu.md) do swoich potrzeb: [zmienić styl mapy](../map/configure-map-menu.md#map-style-parameters), skonfigurować różne [warstwy mapy](../map/configure-map-menu.md#map-layers), takie jak ulubione, POI, transport publiczny, ślady, linie konturowe, cieniowanie wzgórz i inne.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Konfiguruj mapę Android](@site/static/img/settings/configure_map_menu_android.png) ![Przykład konfiguracji mapy Android](@site/static/img/settings/configure_map_example_android.png)
+![Configure map Android](@site/static/img/settings/configure_map_menu_android.png) ![Configure map example Android](@site/static/img/settings/configure_map_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Konfiguruj mapę iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Przykład konfiguracji mapy iOS](@site/static/img/settings/configure_map_example_ios.png)
+![Configure map iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Configure map example iOS](@site/static/img/settings/configure_map_example_ios.png)
 
 </TabItem>
 
@@ -249,13 +249,13 @@ Mapa jest podstawowym elementem OsmAnd i ważne jest, aby wiedzieć, [jak z niej
 
 <TabItem value="android" label="Android">
 
-![Konfiguruj ekran Android](@site/static/img/widgets/configure_screen_android.png) ![Przykład konfiguracji ekranu Android](@site/static/img/settings/configure_screen_example_android.png)
+![Configure screen Android](@site/static/img/widgets/configure_screen_android.png) ![Configure screen example Android](@site/static/img/settings/configure_screen_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Konfiguruj ekran iOS](@site/static/img/settings/configure_screen_ios.png) ![Przykład konfiguracji ekranu iOS](@site/static/img/settings/configure_screen_example_ios.png)
+![Configure screen iOS](@site/static/img/settings/configure_screen_ios.png) ![Configure screen example iOS](@site/static/img/settings/configure_screen_example_ios.png)
 
 </TabItem>
 
@@ -272,13 +272,13 @@ OsmAnd pozwala na umieszczanie różnych oznaczeń na mapie dla własnych potrze
 
 <TabItem value="android" label="Android">
 
-![Dodaj dane osobiste Android](@site/static/img/settings/personal_data_android.png)
+![Add personal data Andoroid](@site/static/img/settings/personal_data_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Dodaj dane osobiste iOS](@site/static/img/settings/personal_data_ios.png)
+![Add personal data iOS](@site/static/img/settings/personal_data_ios.png)
 
 </TabItem>
 
@@ -295,13 +295,13 @@ OsmAnd pozwala na umieszczanie różnych oznaczeń na mapie dla własnych potrze
 
 <TabItem value="android" label="Android">
 
-![Wybór wielu POI](@site/static/img/map/multiple_selection_android.png) ![Wyszukaj i wyświetl POI Android](@site/static/img/map/search_display_poi_android.png)
+![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png) ![Search and display POI Android](@site/static/img/map/search_display_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wybór wielu POI](@site/static/img/settings/multiple_selection_iOS.png) ![Wyszukaj i wyświetl POI iOS](@site/static/img/settings/search_display_poi_iOS.png)
+![Multiple POI Selection](@site/static/img/settings/multiple_selection_iOS.png) ![Search and display POI iOS](@site/static/img/settings/search_display_poi_iOS.png)
 
 </TabItem>
 
@@ -318,13 +318,13 @@ OsmAnd pozwala na umieszczanie różnych oznaczeń na mapie dla własnych potrze
 
 <TabItem value="android" label="Android">
 
-![Planuj trasę Android](@site/static/img/settings/plan_route_android.png) ![Wykres trasy Android](@site/static/img/settings/plan_route_graph_android.png)
+![Plan route Android](@site/static/img/settings/plan_route_android.png) ![Plan route graph Android](@site/static/img/settings/plan_route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planuj trasę iOS](@site/static/img/settings/plan_route_ios.png)
+![Plan route iOS](@site/static/img/settings/plan_route_ios.png)
 
 </TabItem>
 
@@ -341,20 +341,20 @@ OsmAnd zapewnia wiele możliwości wyszukiwania, w tym wyszukiwanie adresów. Do
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie adresu Android](@site/static/img/settings/address_search_android.png) ![Wynik wyszukiwania Android](@site/static/img/settings/address_search_result_android.png)
+![Address search Android](@site/static/img/settings/address_search_android.png) ![Search result Android](@site/static/img/settings/address_search_result_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wyszukiwanie adresu iOS](@site/static/img/settings/address_search_ios.png) ![Wynik wyszukiwania iOS](@site/static/img/settings/address_search_result_ios.png)
+![Address search iOS](@site/static/img/settings/address_search_ios.png) ![Search result iOS](@site/static/img/settings/address_search_result_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-Musisz pobrać mapę przed wyszukaniem na niej adresu. Ponadto, jeśli Twoja bieżąca lokalizacja jest zbyt daleko od wyszukiwanego adresu, może być konieczne zwiększenie promienia wyszukiwania.
+Musisz pobrać mapę przed wyszukiwaniem na niej adresu. Ponadto, jeśli Twoja bieżąca lokalizacja jest zbyt daleko od wyszukiwanego adresu, może być konieczne zwiększenie promienia wyszukiwania.
 :::
 
 [Czytaj więcej](../search/search-address.md) o wyszukiwaniu adresów.
@@ -368,13 +368,13 @@ Musisz pobrać mapę przed wyszukaniem na niej adresu. Ponadto, jeśli Twoja bie
 
 <TabItem value="android" label="Android">
 
-![Rozpocznij nawigację Android](@site/static/img/settings/start_navigation_android.png) ![Wykres trasy Android](@site/static/img/settings/route_graph_android.png)
+![Start navigation Android](@site/static/img/settings/start_navigation_android.png) ![Route graph Android](@site/static/img/settings/route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rozpocznij nawigację iOS](@site/static/img/settings/start_navigation_ios.png) ![Wykres trasy iOS](@site/static/img/settings/route_graph_ios.png)
+![Start navigation iOS](@site/static/img/settings/start_navigation_ios.png) ![Route graph iOS](@site/static/img/settings/route_graph_ios.png)
 
 </TabItem>
 
@@ -395,13 +395,13 @@ Po ustawieniu OsmAnd otworzy się automatycznie dla żądań nawigacji z systemu
 
 <TabItem value="android" label="Android">
 
-![Nagrywanie podróży Android](@site/static/img/settings/trip_recording_android.png) ![Przegląd nagrywania podróży Android](@site/static/img/settings/trip_recording_overview_android.png)
+![Trip recording Android](@site/static/img/settings/trip_recording_android.png) ![Overview trip recording Android](@site/static/img/settings/trip_recording_overview_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rozpocznij nagrywanie podróży iOS](@site/static/img/settings/trip_recording_start_ios.png) ![Menu nagrywania podróży iOS](@site/static/img/settings/trip_recording_ios.png)
+![Start trip recording iOS](@site/static/img/settings/trip_recording_start_ios.png) ![Trip recording menu iOS](@site/static/img/settings/trip_recording_ios.png)
 
 </TabItem>
 
@@ -412,19 +412,19 @@ Po ustawieniu OsmAnd otworzy się automatycznie dla żądań nawigacji z systemu
 
 ### Jak edytować mapy {#how-to-edit-maps}
 
-OsmAnd jest zasilany danymi [OpenStreetMap](https://www.openstreetmap.org/). Mapy są tworzone przez wolontariuszy, więc mogą mieć więcej lub mniej szczegółów w zależności od tego, ile pracy włożono w dany fragment mapy. Każdy może zarejestrować się jako współtwórca i dodawać lub edytować mapy OSM. OsmAnd udostępnia wtyczkę do edycji, która pomaga ulepszać OpenStreetMap.
+OsmAnd jest zasilany danymi [OpenStreetMap](https://www.openstreetmap.org/). Mapy są tworzone przez wolontariuszy, więc mogą mieć więcej lub mniej szczegółów w zależności od tego, ile pracy włożono w dany fragment mapy. Każdy może zarejestrować się jako współtwórca i dodawać lub edytować mapy OSM. OsmAnd udostępnia wtyczkę do edycji OSM, która pomaga ulepszać OpenStreetMap.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Notatka OSM Android](@site/static/img/settings/osm_note_android.png) ![Utwórz POI Android](@site/static/img/settings/create_poi_menu_android.png)
+![OSM note Android](@site/static/img/settings/osm_note_android.png) ![Create POI Android](@site/static/img/settings/create_poi_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Notatka OSM iOS](@site/static/img/settings/osm_note_ios.png) ![Utwórz POI iOS](@site/static/img/settings/create_poi_ios.png)
+![OSM note iOS](@site/static/img/settings/osm_note_ios.png) ![Create POI iOS](@site/static/img/settings/create_poi_ios.png)
 
 </TabItem>
 
@@ -479,7 +479,7 @@ Może być konieczne wykonanie następujących czynności przed zamknięciem, w 
 
 Dotknij ikony akcji, aby natychmiast uruchomić aplikację z wybraną akcją.
 
-![Skróty](@site/static/img/steps/shortcuts_3_andr.png) ![Skróty](@site/static/img/steps/shortcuts_4_andr.png)
+![Shortcuts](@site/static/img/steps/shortcuts_3_andr.png) ![Shortcuts](@site/static/img/steps/shortcuts_4_andr.png)
 
 
 ## Pomoc offline {#offline-help}
@@ -488,13 +488,13 @@ Dotknij ikony akcji, aby natychmiast uruchomić aplikację z wybraną akcją.
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_help_screen_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_help_screen_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_screen_ios.png)
 
 </TabItem>
 
@@ -502,7 +502,7 @@ Dotknij ikony akcji, aby natychmiast uruchomić aplikację z wybraną akcją.
 
 W *Menu Pomocy* można znaleźć artykuły z naszej strony [www.osmand.net/docs](https://osmand.net/docs/intro/). Po pierwszym pobraniu (wymagane połączenie z internetem) artykuły pomocy są dostępne w trybie offline.  
 Pierwsza podsekcja, *Pomoc offline*, zawiera **Najczęściej oglądane** (lub popularne) artykuły wśród naszych użytkowników. Te artykuły są wyświetlane w języku ustawionym dla aplikacji, jeśli ten język jest obsługiwany na naszej stronie dokumentacji. Obecnie obsługiwane języki to: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>* oraz *<Translate android="true" ids="lang_uk"/>*. Jeśli zmienisz język aplikacji, uruchom ponownie OsmAnd, aby dokumentacja otworzyła się w wybranym języku. Gdy tłumaczenie nie jest dostępne, automatycznie wyświetlona zostanie wersja angielska strony. Sekcje **Podręcznik użytkownika** i **Rozwiązywanie problemów** mają taką samą strukturę jak na stronie internetowej.  
-W *Menu Pomocy* można również znaleźć przydatne linki do sieci społecznościowych OsmAnd, informacje o wersji aplikacji, informacje o wydaniu i kontakty do wsparcia. Za pośrednictwem Pomocy można również wysyłać [logi logcat i awarii](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+W *Menu Pomocy* można również znaleźć przydatne linki do sieci społecznościowych OsmAnd, informacje o wersji aplikacji, informacje o wydaniu i kontakty do wsparcia. Za pośrednictwem Pomocy można również wysyłać [logi logcat i awarii](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Menu {#menu}
 
@@ -510,21 +510,20 @@ W *Menu Pomocy* można również znaleźć przydatne linki do sieci społecznoś
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_help_menu_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Wyślij log awarii** (*dla Androida*). Umożliwia użytkownikom wysyłanie raportów o awariach aplikacji do deweloperów, co pomaga w identyfikacji i rozwiązywaniu problemów.
-- **Wyślij log logcat** (*dla Androida*). Zapewnia użytkownikom możliwość wysyłania szczegółowych logów awarii aplikacji do deweloperów, ułatwiając głębszą analizę i rozwiązywanie problemów.
-- **Wyślij log** (*dla iOS*). Pełni podobną funkcję do funkcji *Wyślij log awarii* dla Androida, umożliwiając użytkownikom urządzeń z systemem iOS zgłaszanie awarii aplikacji deweloperom w celach debugowania.
+- **Wyślij logi awarii aplikacji**. Umożliwia użytkownikom wysyłanie raportów o awariach aplikacji do deweloperów w celu analizy i rozwiązywania problemów. 
+- **Wyślij logi bieżącej sesji** (Android)/**Wyślij bieżący log aplikacji** (iOS). Umożliwia użytkownikom wysyłanie bieżącego logu aplikacji, zawierającego informacje zapisane od uruchomienia aplikacji, do deweloperów w celu rozwiązywania problemów.
 - **Kopiuj wersję kompilacji**. Umożliwia użytkownikom szybkie i dokładne przekazanie aktualnej wersji aplikacji deweloperom podczas zgłaszania problemów, upraszczając proces diagnostyki i rozwiązywania problemów.
 
 
@@ -534,13 +533,13 @@ W *Menu Pomocy* można również znaleźć przydatne linki do sieci społecznoś
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
 
 </TabItem>
 
@@ -555,13 +554,13 @@ Najczęściej oglądane artykuły wśród naszych użytkowników odnoszą się d
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/guide_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/guide_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/guide_ios.png)
+![Maps menu iOS](@site/static/img/steps/guide_ios.png)
 
 </TabItem>
 
@@ -576,13 +575,13 @@ Sekcja **Podręcznik użytkownika** w menu Pomocy to kompletny podręcznik, któ
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_help_troubleshooting_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_troubleshooting_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
 
 </TabItem>
 
@@ -604,13 +603,13 @@ Rozwiązania i wskazówki dotyczące rozwiązywania typowych problemów. Jeśli 
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_help_contact_us_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_contact_us_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
 
 </TabItem>
 
@@ -624,21 +623,21 @@ Umożliwia zadawanie pytań lub zgłaszanie sugestii.
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_help_report_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Otwórz zgłoszenie na GitHubie**. [Wersja Android na GitHubie](https://github.com/osmandapp/OsmAnd-Issues/issues), [wersja iOS na GitHubie](https://github.com/osmandapp/OsmAnd-iOS/issues): zadawaj pytania, pisz o błędach i proponuj funkcje.
-- **Wyślij log awarii** (*dla Androida*). Zawiera tylko informacje o awariach.
-- [Wyślij log logcat](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Wyślij log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Szczegółowy plik logu.
+- **Wyślij logi awarii aplikacji**. Zawiera raporty o poprzednich awariach aplikacji.
+- **Wyślij logi bieżącej sesji** (Android)/**Wyślij bieżący log aplikacji** (iOS). Zawiera log aplikacji zapisany od uruchomienia aplikacji.
 
 ### O OsmAnd {#about-osmand}
 
@@ -646,13 +645,13 @@ Umożliwia zadawanie pytań lub zgłaszanie sugestii.
 
 <TabItem value="android" label="Android">
 
-![Zrzut ekranu pomocy offline Android](@site/static/img/steps/offline_about_1_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_about_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_about_ios_new.png) ![Menu map iOS](@site/static/img/steps/offline_about_ios_new_2.png)
+![Maps menu iOS](@site/static/img/steps/offline_about_ios_new.png) ![Maps menu iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 

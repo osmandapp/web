@@ -1,5 +1,5 @@
 ---
-source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -100,7 +100,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 :::caution Tylko dla Androida
 :::
 
-- **Tryb awaryjny**. Uruchom aplikację w (wolniejszym) trybie awaryjnym.  
+- **Tryb awaryjny**. Uruchamia OsmAnd bez natywnej biblioteki C++, używając implementacji Java do renderowania map i obliczania tras. Aplikacja automatycznie przełącza się w ten tryb, jeśli natywna biblioteka ulegnie awarii podczas uruchamiania, umożliwiając uruchomienie i dalsze korzystanie z aplikacji. Renderowanie mapy i obliczanie tras są zauważalnie wolniejsze, gdy tryb awaryjny jest aktywny.  
 
 
 ### Ustawienia pamięci {#memory-settings}
@@ -240,7 +240,7 @@ Jednocześnie, z powodu wyimaginowanego ruchu obserwatora, zmienia się odległo
 Widżet wysokości kamery pokazuje wysokość kamery nad poziomem powierzchni. Wysokość kamery jest podawana w metrach / kilometrach.  
 
 
-### Poziom powiększenia {#zoom-level}
+### Poziem powiększenia {#zoom-level}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -352,7 +352,7 @@ OsmAnd daje możliwość symulacji lokalizacji i ruchu urządzenia za pomocą ś
 </Tabs>  
 
 Po uruchomieniu symulacji zobaczysz na głównym ekranie aplikacji, że znacznik nawigacji porusza się zgodnie ze śladem GPX. Dotknij [przycisku mojej pozycji](../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować *Moją lokalizację* (symulowaną geolokalizację urządzenia) ze środkiem mapy.  
-Aby zatrzymać symulację ruchu urządzenia, wróć do [ustawieniach](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
+Aby zatrzymać symulację ruchu urządzenia, wróń do [ustawieniach](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
 
 - Dostęp do *<Translate android="true" ids="simulate_location_by_gpx"/>* można również uzyskać poprzez **[menu Szybkich akcji](../widgets/quick-action.md#navigation)**.
 - Prędkość ruchu podczas symulacji można ustawić jako równą zarejestrowanej prędkości (1) lub szybszą (x2, x3, x4).

@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  Śledzenie statków AIS
 ---
@@ -155,7 +155,7 @@ Statki AIS przesyłają trzy rodzaje danych:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Ustawienia AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![Ustawienia AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +171,7 @@ Wtyczka *Śledzenie statków AIS* oferuje różne ustawienia do personalizacji n
 | Adres IP | Zdefiniuj adres IP źródła danych AIS (jeśli używany jest TCP) | `192.168.200.16` |
 | Port TCP   | Zdefiniuj numer portu TCP dla danych AIS | `4001` |
 | Port UDP   | Zdefiniuj port UDP dla odbioru AIS przez OsmAnd  | `10110` |
+| Odbieraj dane AIS nawet gdy OsmAnd jest wstrzymany   | Utrzymuj nasłuchiwanie komunikatów AIS, gdy OsmAnd jest wstrzymany lub w tle. Jeśli wyłączone, nie są odbierane komunikaty AIS, gdy OsmAnd jest w tle  | `Tak/Nie` |
 | | | |
 | **Limit czasu odbioru sygnału AIS** | |  |
 | Limit czasu dla utraconych obiektów AIS     | Statki znikają, jeśli sygnał nie zostanie odebrany przez określony czas | `3 - 20 min` |
