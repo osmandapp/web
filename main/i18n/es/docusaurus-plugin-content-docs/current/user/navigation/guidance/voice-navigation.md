@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Indicaciones de voz / Notificaciones
 ---
@@ -52,16 +52,16 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *botón <Translate ios="true" ids="routing_settings"/>* *(o <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Elegir perfil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 
 - *Repetir instrucciones de navegación*. Le permite repetir las instrucciones de navegación a intervalos regulares de 1 a 30 minutos. O manualmente: si se pierde una indicación de voz, puede volver a escucharla simplemente tocando [la flecha de giro actual](../../widgets/nav-widgets.md#next-turn) en la pantalla de la aplicación.
 - *[Tiempo de anuncio](#announcement-time)*.
+- *Pausar audio hablado* (*solo iOS*). Cuando está activado, los podcasts, audiolibros y otros audios hablados se pausan mientras se reproducen las indicaciones de voz. La reproducción de música continúa a volumen reducido. Cuando está desactivado, tanto el audio hablado como la música continúan reproduciéndose a volumen reducido.
 
 **Salida** (*solo Android*):
 

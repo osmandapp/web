@@ -1,5 +1,5 @@
 ---
-source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  Gestionar Tracks
 ---
@@ -70,7 +70,7 @@ Puede añadir tracks en OsmAnd de las siguientes maneras:
 
 <TabItem value="android" label="Android">
 
-Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
+Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![Mis Lugares con tracks en Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,15 +78,17 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 <TabItem value="ios" label="iOS">
 
-Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Mis Lugares con tracks en iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![Mis Lugares con tracks en iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 Todos los tracks grabados, creados o importados se muestran automáticamente en la carpeta [Mis Lugares](../../personal/myplaces.md) en la pestaña *Tracks*. Están organizados por carpetas o se muestran en una lista debajo de ellas.
+
+Cada track de la lista muestra el nombre de su carpeta principal en la segunda línea, separado por `|` (por ejemplo, `Senderismo | Tracks`), lo que facilita identificar dónde se almacena un track. Esto se aplica en [Buscar](#search), [Carpetas inteligentes](../../personal/tracks/smart-folder.md) y [Configurar mapa → Tracks](../../map/tracks/index.md#configure-map).
 
 
 ### Menú del Track {#track-menu}
@@ -103,9 +105,9 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 <TabItem value="ios" label="iOS">
 
-Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Menú contextual de un track en iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Menú contextual de un track en iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -130,7 +132,7 @@ El menú ofrece las siguientes acciones:
 
 - **Compartir** — Permite compartir el track seleccionado con otros.
 
-- **Subir modificaciones a OSM** (*iOS*) — [Suba los cambios](../../plugins/osm-editing.md#gps-track) que ha realizado en el track directamente a *OpenStreetMap*.
+- **Subir a OSM** (*iOS*) — [Suba los cambios](../../plugins/osm-editing.md#gps-track) que ha realizado en el track directamente a *OpenStreetMap*.
 
 - **Editar** (*iOS*) — Use la herramienta [Planificar una ruta](../../plan-route/create-route.md#modify-existing-gpx-track) para modificar tracks.
 
@@ -157,7 +159,7 @@ El menú ofrece las siguientes acciones:
 
 <TabItem value="ios" label="iOS">
 
-![Función de búsqueda de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Función de búsqueda de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +171,7 @@ Disponible:
 
 - Buscar por nombre de track.
 - [Ordenar por](#sort-by) para una mejor búsqueda si no recuerda el título.
-- [Filtro](./smart-folder.md#search-filter) (*solo Android*) si necesita las características específicas del track.
+- [Filtro](./smart-folder.md#search-filter) si necesita las características específicas del track.
 
 
 ### Modo de Selección {#selection-mode}
@@ -184,7 +186,7 @@ Disponible:
 
 <TabItem value="ios" label="iOS">
 
-![Tracks en Mis Lugares iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![Tracks en Mis Lugares iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -221,7 +223,7 @@ Una vez que haya hecho su elección, se proporcionan los siguientes pasos:
 
 <TabItem value="ios" label="iOS">
 
-![Función de ordenación de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Función de ordenación de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -254,7 +256,7 @@ OsmAnd ofrece una forma sencilla de ordenar sus tracks, ayudándole a gestionar 
 
 <TabItem value="ios" label="iOS">
 
-![Función de ordenación de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Función de ordenación de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -281,7 +283,7 @@ Toque el *menú de tres puntos* en el campo de la carpeta para **abrir** el men�
 
 > Mantenga pulsado el campo de la carpeta para **abrir** el menú de la carpeta.
 
-![Menú contextual de un track en iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Menú contextual de un track en iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -295,7 +297,7 @@ El menú de la carpeta de tracks le permite ver, renombrar, exportar y gestionar
 - **Nombre** — Muestra el nombre de la carpeta, la fecha de creación y el número de tracks que contiene.
 - **Mostrar todos los tracks en el mapa** (*solo Android*) — Muestra todos los tracks de la carpeta en el mapa. Si hay muchos tracks, esto puede hacer que el dispositivo se congele.
 - **Editar nombre** (*Android*) / **Renombrar** (*iOS*) — Le permite renombrar la carpeta.
-- [Cambiar apariencia predeterminada](../../map/tracks/appearance.md) (*Android*) / **Apariencia** (*iOS*) — Cambia la apariencia de visualización de todos los tracks de la carpeta.
+- [Cambiar apariencia predeterminada](../../map/tracks/appearance.md) (*Android*) / **Apariencia predeterminada** (*iOS*) — Cambia la apariencia de visualización de todos los tracks de la carpeta.
 - [Exportar](../../personal/import-export.md) — Abre la pestaña *Menú → Ajustes → Acciones* para exportar todos los tracks de la carpeta como un [archivo `.osf`](../../personal/import-export.md#export).
 - [Mover](#track-folder) — Le permite mover la carpeta a otra carpeta existente o crear una nueva.
 - [Eliminar carpeta](#delete-folder) — Elimina la carpeta después de la confirmación. ***Esta acción es irreversible.***
@@ -317,7 +319,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![Mis Lugares con tracks en iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![Mis Lugares con tracks en iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -349,7 +351,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![Tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -388,7 +390,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![Menú contextual de un track en iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Menú contextual de un track en iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 

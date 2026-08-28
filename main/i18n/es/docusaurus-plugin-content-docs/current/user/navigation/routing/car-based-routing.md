@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title:  Rutas para coche (Camión, Motocicleta)
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Resumen {#overview}
 
-La ruta para coches está diseñada para ayudar a los conductores a navegar por las carreteras de manera eficiente, segura y cómoda, proporcionando indicaciones personalizadas adaptadas a las necesidades y preferencias únicas de cada conductor. Una configuración de ruta adecuada puede ayudar a los conductores a ahorrar tiempo y combustible, y a evitar peligros en la carretera. Por defecto, se ofrece la ruta más rápida.
+El enrutamiento basado en coche está diseñado para ayudar a los conductores a navegar por las carreteras de manera eficiente, segura y cómoda, proporcionando indicaciones personalizadas adaptadas a las necesidades y preferencias únicas de cada conductor. Una configuración de ruta adecuada puede ayudar a los conductores a ahorrar tiempo y combustible, y a evitar peligros en la carretera. Por defecto, se ofrece la ruta más rápida.
 
 :::info
 El mecanismo de enrutamiento para vehículos terrestres motorizados difiere solo en algunas configuraciones. Los parámetros comunes se describen en la sección [Coche](#route-parameters---car) de este artículo. [Camión](#route-parameters---truck) y [Motocicleta](#route-parameters---motorcycle) tienen sus propias particularidades.  
@@ -35,7 +35,7 @@ La ruta para coches está diseñada para ayudar a los conductores a encontrar la
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Ajustes de ruta de coche Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Ajustes de ruta de coche Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -56,6 +56,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Las restricciones de acceso privado se ignorarán al calcular la ruta.  | La etiqueta *[private](https://wiki.openstreetmap.org/wiki/Key:access)* se utiliza en OSM para describir restricciones en el uso de carreteras y otras rutas de transporte, así como edificios, entradas, servicios y entidades de ocio.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (solo&nbsp;coche) |  <details><summary> Se evitarán las carreteras cerradas a la entrega de mercancías. </summary>![Entrega de mercancías Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Esta opción se aplica solo a vehículos que transportan mercancías que no pesan más de 3,5 toneladas. Si el peso de su vehículo es superior a 3,5 toneladas, debe utilizar el [perfil de Camión](#route-parameters---truck).   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Para calcular una ruta de bajo consumo de combustible, el motor de enrutamiento limita la velocidad internamente a 60 km/h, aunque no cambia la hora estimada de llegada. Así, en el caso de 2 rutas iguales de inicio y fin: autopista (120 km/h) y secundaria (60 km/h), se seleccionará la ruta más corta. Para las vías de servicio que tienen un límite de velocidad < 60 km/h, se seleccionará la ruta más rápida. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | Seleccione el método de cálculo de ruta preferido. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Parámetros de ruta - Camión {#route-parameters---truck}

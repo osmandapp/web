@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -27,6 +27,7 @@ Usted puede:
 - Organizar widgets en paneles (superior, inferior, izquierdo, derecho, central).
 - Crear múltiples **páginas** dentro de los paneles laterales, elegir el tamaño de los widgets.
 - Elegir la altura de la fila y alternar los iconos de los widgets.
+- En Android, personalizar la [apariencia del panel de widgets](#widget-panel-appearance).
 
 Todos los widgets son [dependientes del perfil](../personal/profiles.md) — cada perfil tiene su propio diseño, orden, visibilidad y configuración.
 
@@ -37,7 +38,7 @@ Todos los widgets son [dependientes del perfil](../personal/profiles.md) — cad
 
 Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview.webp)  ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -50,44 +51,6 @@ Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 </TabItem>
 
 </Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple pages within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
--->
 
 
 ## Paneles de widgets {#widget-panels}
@@ -348,7 +311,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_wi
 
 Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**. La función **Modo de páginas** le permite agregar 5 páginas a los paneles izquierdo y derecho.
 
-***Cómo configurar páginas:***
+***Cómo configurar filas:***
 
 - **Añadir una página**. Vaya a la configuración del panel izquierdo/derecho y toque *Editar → Añadir página*.
 - **Organizar widgets por página**. Esta función es útil cuando se necesitan diferentes conjuntos de widgets para diferentes tareas, como navegar en lugar de explorar el mapa.
@@ -399,38 +362,36 @@ Estos ajustes se aplican solo al widget seleccionado.
     - Cambie a la posición de apagado, en el campo *Mostrar icono*.
 
 
-<!--
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## Apariencia del panel de widgets (solo Android) {#widget-panel-appearance}
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
-![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+![Apariencia del panel de widgets](@site/static/img/widgets/widget_appearance.webp) ![Apariencia del panel de widgets](@site/static/img/widgets/widget_appearance_2.webp)
 
-Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+Los ajustes de apariencia le permiten personalizar el aspecto de todos los widgets en el panel seleccionado. Cada panel (*Superior*, *Inferior*, *Izquierdo*, *Derecho*) tiene sus propios ajustes de apariencia.
 
-1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+1. **Altura**. Controla la altura de los widgets en el panel seleccionado. Para los paneles Izquierdo y Derecho, este ajuste cambia la **altura del widget**. Para los paneles Superior e Inferior, cambia la **altura de la fila**. Opciones disponibles: *Original (predeterminado)*, *Pequeño*, *Mediano*, *Grande*.
 
-2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+2. **Icono**. Controla la visibilidad del icono. Opciones disponibles: *Original (predeterminado)*, *Activado*, *Desactivado*. 
 
-3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+3. **Color del texto**. Cambia el color del texto principal del widget. Opciones disponibles: *Predeterminado*, *Automático*, *Personalizado*. Cuando se selecciona **Personalizado**, puede configurar colores separados para los modos **Día** y **Noche**. Una vista previa en vivo muestra los colores seleccionados antes de aplicarlos.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
+:::tip Compra
+Los colores personalizados de widgets son una [función de pago](../purchases/index.md).  
 :::
 
-4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+4. **Color del texto secundario**. Cambia el color de los nombres y unidades de los widgets. Opciones disponibles: *Predeterminado*, *Automático*, *Personalizado*.
 
-5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+5. **Color de fondo**. Cambia el color de fondo de los widgets en el panel seleccionado. Opciones disponibles: *Predeterminado*, *Transparente*, *Personalizado*.
 
-6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+6. **Vista previa**. El área de vista previa muestra cómo se verán los widgets con los ajustes de apariencia seleccionados actualmente.
 
-7. **Copy appearance settings:**
+7. **Copiar ajustes de apariencia:**
 
-    - Tap the ⋮ menu in the upper-right corner.
-    - Select Copy from.
-    - Choose one of the following options: *Another profile* or *One of the other panels*.
+    - Toque el menú ⋮ en la esquina superior derecha.
+    - Seleccione Copiar desde.
+    - Elija una de las siguientes opciones: *Otro perfil* o *Uno de los otros paneles*.
 
--->
 
 ## Personalización de paneles {#panels-customization}
 
@@ -666,7 +627,7 @@ El **menú de tres puntos** en la pantalla de Botones predeterminados contiene a
 
 **Ir a** (para Botones personalizados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
 **Ir a** (para todos los Botones predeterminados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
-**Ir a** (para un Botón predeterminado específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleccionar un botón → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Ir a** (para un Botón predeterminado específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
 
 </TabItem>
 

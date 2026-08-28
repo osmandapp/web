@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title:  Buscar PDI
 ---
@@ -198,10 +198,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Con la función **Filtro**, puede seleccionar las características necesarias y, como resultado, obtener una lista que contenga sólo los objetos relevantes. Para utilizar el filtro:
 
 - Seleccione la categoría que le interese de la lista de categorías.
-- En la pantalla que se abre, pulse el icono que muestra el filtro. Se encuentra debajo del campo de entrada, junto a *Mostrar en el mapa*.
+- En la pantalla que se abre, pulse el icono que muestra el filtro. Se encuentra debajo del campo de entrada, junto al chip *Ordenar por* en Android y junto a *Mostrar en el mapa* en iOS.
 - En el filtro, seleccione el tipo de características.
 
-![Buscar PDI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Buscar PDI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Un filtro puede constar de un buen número de elementos, cuya presencia depende de la categoría seleccionada. Cada categoría tiene una serie de filtros específicos, organizados en carpetas por tipo. Hay un total de *21 categorías por defecto*. Algunas de ellas se enumeran aquí:
 
@@ -379,12 +379,12 @@ Para crear filtros personalizados para encontrar lugares en el mapa, seleccione 
 
 ### Categorías y sus filtros {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduñas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
-2. **Navidad**. Incluye 5 tipos de filtros:  
+2. **Сhristmas**. Incluye 5 tipos de filtros:  
     *Evento de Navidad, Mercado de Navidad, Pirámide de Navidad, Tienda de Navidad, Árbol de Navidad*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduanas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduñas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Incluye 26 tipos de filtros.  
 
