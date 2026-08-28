@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  AIS Vaartuig Volgsysteem
 ---
@@ -143,7 +143,7 @@ AIS-vaartuigen zenden drie soorten gegevens uit:
 | | |
 | **Route- en Snelheidsindicatoren** |    |
 | *Dunne Blauwe lijn*  | Geplande route |
-| *Stippellijn*     | Gevaren route |
+| *Stippellijn*     | Vorige route |
 | *Klokicoon*      | Verwachte aankomsttijd (ETA) |
 | *Golficoon*       | Snelheid door het water |
 
@@ -155,7 +155,7 @@ AIS-vaartuigen zenden drie soorten gegevens uit:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![AIS-instellingen](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS-instellingen](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +171,7 @@ De *AIS vaartuig volgsysteem* plugin biedt verschillende instellingen om de navi
 | IP-adres | Definieer IP van AIS-gegevensbron (indien TCP wordt gebruikt) | `192.168.200.16` |
 | TCP-poort   | Definieer TCP-poortnummer voor AIS-gegevens | `4001` |
 | UDP-poort   | Definieer UDP-poort voor OsmAnd AIS-ontvangst  | `10110` |
+| AIS-gegevens ontvangen ook als OsmAnd is gepauzeerd   | Houd de AIS-berichtenlistener actief als OsmAnd is gepauzeerd of op de achtergrond. Indien uitgeschakeld, worden geen AIS-berichten ontvangen wanneer OsmAnd op de achtergrond is  | `Ja/Nee` |
 | | | |
 | **Time-out voor AIS-signaalontvangst** | |  |
 | Time-out voor verloren AIS-objecten     | Schepen verdwijnen als er gedurende een ingestelde tijd geen signaal wordt ontvangen | `3 - 20 min` |

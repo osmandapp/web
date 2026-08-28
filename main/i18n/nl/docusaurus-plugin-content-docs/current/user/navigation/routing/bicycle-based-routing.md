@@ -1,5 +1,5 @@
 ---
-source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
+source-hash: 25c13b0161cd5e0efefe881e5446503a1ce483f3ea041fd84cfc9f4b33858e9c
 sidebar_position: 3
 title:  Fietsroutering (MTB)
 ---
@@ -31,7 +31,7 @@ De fietsrouteringsfuncties van OsmAnd stellen fietsers in staat om een start- en
 
 <TabItem value="android" label="Android">  
 
-![Instellingen fietsroutering](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![Instellingen fietsroutering](@site/static/img/navigation/routing/cycling_routing_andr.webp)
 
 </TabItem>
 
@@ -50,6 +50,7 @@ De fietsrouteringsfuncties van OsmAnd stellen fietsers in staat om een start- en
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Selecteer wegen die u wilt vermijden tijdens de navigatie.  </summary>![Wegen vermijden Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | U kunt ofwel [een weg op de kaart selecteren](../../map/map-context-menu/#avoid-road) of wegtype(n) uit de lijst kiezen:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Vermijd het oversteken van een grens naar een ander land)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (een type watertransport dat voertuigen over waterlichamen vervoert)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Vermijd kasseien](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (delen van een weg waar een waterweg overheen loopt) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Geen kinderkoppen](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Beperkingen voor privétoegang worden genegeerd bij het berekenen van de route.  | De tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* wordt in OSM gebruikt om beperkingen op het gebruik van snelwegen en andere transportroutes, evenals gebouwen, ingangen, voorzieningen en recreatieve entiteiten te beschrijven.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Voorkeursterrein* (iOS) | <details><summary> Hoogtegegevens worden gebruikt bij de routeberekening: er worden [straffen ingesteld voor wegen](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) met een ander hoogteprofiel. </summary> ![Hoogtegegevens gebruiken Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Deze voorkeur kan helpen om steile heuvels te vermijden of juist de voorkeur te geven. Als u een *heuvelachtige* route kiest, wordt de voorkeur gegeven aan heuvels en bergen. Als u *vlak* kiest - aan vlaktes, heuvels worden vermeden. De voorkeur voor minder heuvelachtig is een middenweg tussen deze twee opties. Zonder hoogtegegevens wordt de snelste route berekend alsof het vlak terrein is. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Alleen Android*) | Selecteer de gewenste routeberekeningsmethode. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Bijzonderheden MTB-routering {#mtb-routing-particularities}

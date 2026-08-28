@@ -1,5 +1,5 @@
 ---
-source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
+source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
 sidebar_position: 7
 title:  Favorieten
 ---
@@ -89,6 +89,7 @@ Bij het toevoegen van een punt uit OSM-gegevens wordt de relevante POI-informati
 - **Adres** en **Beschrijving** (*Optioneel*).
 - **Groep** — Selecteer uit een bestaande [Favorietengroep](#manage-favorites) or maak een nieuwe aan. Op Android kunt u ook een submap binnen een groep selecteren of een nieuwe aanmaken. Geneste mappen worden weergegeven met hun volledige pad (bijvoorbeeld *Reizen* / *Italië* / *Rome*).
 - **Visuele aanpassing** — Pictogram, kleur, vorm kunnen overeenkomen met het standaard [uiterlijk van de groep](#change-group-appearance) of individueel worden aangepast.
+- **Media** (*Alleen Android*) — Voeg foto’s, video’s, audio-opnames of afbeeldingen uit uw Galerij of Bestanden toe.
 
 **OPMERKING:** Als de Favorietenlaag is uitgeschakeld in [Kaart configureren](../map/configure-map-menu), wordt bij het toevoegen van een nieuw favorietenpunt de laag automatisch ingeschakeld zodat het nieuw toegevoegde favoriet zichtbaar is op de kaart.
 
@@ -99,7 +100,7 @@ Bij het toevoegen van een punt uit OSM-gegevens wordt de relevante POI-informati
 
 <TabItem value="android" label="Android">
 
-![Favoriet bewerken Android](@site/static/img/personal/favorite_edit_android.png)
+![Favorite edit Android](@site/static/img/personal/favorite_edit_android.webp)
 
 </TabItem>
 
@@ -118,7 +119,7 @@ Om een favorietenpunt te wijzigen:
 
 ***Beschikbare opties:***
 
-- **Details bewerken** — Naam, pictogram, groep, adres en beschrijving.
+- **Details bewerken** — Naam, pictogram, groep, adres, beschrijving en bijgevoegde media.
 - **Locatie vervangen** — Vervang een ander punt door dit punt. Handig voor het bijwerken van een specifiek punt (bijv. *Mijn geparkeerde auto*) of het aanmaken van een nieuw punt.
 - **Verwijderen** — Verwijder de favoriet met de verwijderoptie, toegankelijk via het menu Bewerken of via de verwijderknop op Android.
 
@@ -137,7 +138,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![mijn_plaatsen_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -156,6 +157,24 @@ Er is een breed scala aan pictogrammen voor POI's en waypoints beschikbaar in Os
 De map *Persoonlijk* bevat speciale punten zoals **<Translate android="true" ids="favorite_home_category"/>** en **<Translate android="true" ids="work_button"/>**, die vaak worden gebruikt bij [navigatie](../navigation/setup/route-navigation.md#select-start-point). Deze map heeft geen *drie-puntenmenu* en de parameters ervan kunnen niet worden gewijzigd.
 
 
+### Media (Alleen Android) {#media}
+
+![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
+
+De Media-sectie stelt u in staat om foto’s, video’s, audio-opnames en afbeeldingen aan een favorietenpunt toe te voegen. Media kan worden toegevoegd tijdens het aanmaken van een favoriet of later via het scherm Favoriet bewerken. Tik op *Toevoegen* in de Media-sectie en kies een van de beschikbare opties:
+- **Foto maken** — Maak een nieuwe foto met de camera van het apparaat.
+- **Video-opname maken** — Neem een nieuwe video op.
+- **Audio-opname maken** — Neem een audio-opname op.
+- **Kiezen uit Galerij** — Selecteer een bestaande afbeelding van uw apparaat.
+- **Kiezen uit Bestanden** — Selecteer een afbeelding uit het bestandssysteem.
+
+Nadat media is toegevoegd, verschijnt het in de Media-kaart in het contextmenu van de favoriet. Dezelfde Media-kaart is ook beschikbaar voor [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
+
+De Media-kaart toont voorbeelden van bijgevoegde items. De weergegeven items volgen de geselecteerde sorteervolgorde. Tik op *Alles weergeven* om de volledige galerij te openen. De galerij toont alle media die aan de geselecteerde favoriet zijn gekoppeld.
+
+Tik op een item om het in volledig scherm te bekijken. Foto’s en video’s kunnen direct worden bekeken, terwijl audio-opnames afspeelbediening bevatten.
+
+
 ## Favorieten Beheren {#manage-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -170,7 +189,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![mijn_plaatsen_ios](@site/static/img/personal/my_places_ios_new.png)
 
@@ -178,9 +197,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-De sectie **Mijn Favorieten** stelt u in staat om:
+De sectie **Favorieten** stelt u in staat om:
 
-- [Te zoeken](#order--sorting--search) naar specifieke favorieten of groepen.
+- [Te zoeken](#order--sorting--search) naar specifieke favorieten of groepen. Op iOS worden favorietengroepen (mappen) georganiseerd in drie secties: **Vastgezet**, **Zichtbaar** en **Verborgen**. Lege secties worden niet weergegeven.
 - [Bulkoperaties](#bulk-edit--delete) — Delen, verplaatsen of verwijderen van meerdere favorieten tegelijk.
 
 ### Volgorde / Sorteren / Zoeken {#order--sorting--search}
@@ -189,23 +208,19 @@ De sectie **Mijn Favorieten** stelt u in staat om:
 
 <TabItem value="android" label="Android">
 
-![Favorietenmappen android](@site/static/img/personal/favorites_folders_sorting.png)
-
-- **Sorteren** — Favorietenmappen en -punten kunnen worden gesorteerd met behulp van de beschikbare sorteeropties in het lijstmenu. De volgende opties zijn beschikbaar: *Naam A – Z*, *Naam Z – A*, *Laatst gewijzigd*, *Nieuwste datum eerst*, *Oudste datum eerst*. Standaard worden items gesorteerd op Naam A – Z. Vastgezette mappen worden altijd bovenaan de lijst weergegeven. Ze zijn visueel gescheiden van de rest van de mappen door een scheidingslijn. De [Persoonlijke map](../personal/favorites.md#special-favorites-personal) is standaard vastgezet. 
-- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart.
+![Favorites android](@site/static/img/personal/favorites_points_sorting.webp) ![Favorites android](@site/static/img/personal/favorites_folders_sorting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorietenmappen ios](@site/static/img/personal/favorites_folders_ios.png)
-
-- **Sorteren** — Favorietenmappen en -punten worden alfabetisch gesorteerd, met de [persoonlijke map](../personal/favorites.md#special-favorites-personal) bovenaan.
-- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart.
-
+![Favorites iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favorites iOS](@site/static/img/personal/favorites_folders_sorting.webp)
 </TabItem>
 
 </Tabs>
+
+- **Sorteren** — Favorietenmappen en -punten kunnen worden gesorteerd met behulp van de beschikbare sorteeropties in het lijstmenu. Voor favorietenpunten zijn de volgende opties beschikbaar: *Naam A – Z*, *Naam Z – A*, *Laatst gewijzigd*, *Dichtst bij huidige locatie*, *Dichtst bij kaartcentrum*, *Nieuwste datum eerst* en *Oudste datum eerst*. Voor favorietenmappen zijn de volgende opties beschikbaar: *Naam A – Z*, *Naam Z – A*, *Laatst gewijzigd*, *Nieuwste datum eerst* en *Oudste datum eerst*. Standaard worden items gesorteerd op Naam A – Z. Vastgezette mappen worden altijd bovenaan de lijst weergegeven. Ze zijn visueel gescheiden van de rest van de mappen door een scheidingslijn. 
+- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart. Om favorietenpunten uit de Favorietenlijst in het tabblad Mijn plaatsen te zoeken, tikt u op het pictogram *Zoeken* (vergrootglas).
 
 ### Bulk Bewerken / Verwijderen {#bulk-edit--delete}
 
@@ -236,11 +251,24 @@ Wanneer favorietenpunten zijn geselecteerd, zijn de volgende acties beschikbaar:
 
 <TabItem value="ios" label="iOS">
 
-![Favorietenacties ios](@site/static/img/personal/favorites_actions_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_actions_folders.webp) ![Favorites actions ios](@site/static/img/personal/favorites_actions_points.webp)
 
-- Om meerdere favorieten te beheren, tikt u op de **Bewerk**-knop (*potloodpictogram*).
-- Selecteer individuele favorieten of hele mappen voor bulkoperaties.
-- **Beschikbare opties** — *Delen*, *Verplaatsen naar een Favorietengroep*, *Kleur wijzigen* en *Verwijderen*.
+Om meerdere favorietenpunten of mappen te beheren, activeert u de *Selectiemodus* door op het *drie-puntmenu* in de rechterbovenhoek te tikken en *Selecteren* te kiezen. Wanneer Selectiemodus is ingeschakeld, verschijnen er selectievakjes naast de items in de lijst. Selecteer de vereiste favorietenpunten of mappen door op de selectievakjes te tikken. Om alle items in de lijst te selecteren, tik op het Selecteer alles-pictogram in de rechterbovenhoek.
+
+De beschikbare acties voor geselecteerde favorietenpunten zijn als volgt:
+
+- **Delen** — Exporteer geselecteerde punten als een Favorites.gpx-bestand.
+- **Verplaatsen** — Verplaats geselecteerde favorietenpunten naar een andere map.
+- **Uiterlijk wijzigen** — Wijzig het uiterlijk van geselecteerde favorietenpunten.
+- **Toevoegen aan kaartmarkeringen** — Voeg geselecteerde punten toe aan de lijst met kaartmarkeringen.
+- **Toevoegen aan track** — Voeg geselecteerde punten toe aan een track.
+- **Toevoegen aan navigatie** — Voeg geselecteerde punten toe aan navigatie.
+- **Verwijderen** — Verwijder de geselecteerde favorietenpunten.
+
+Voor geselecteerde mappen zijn dezelfde acties beschikbaar, met de volgende extra opties:
+
+- **Tonen op kaart** / **Verbergen op kaart** — Toon of verberg de favorietenpunten uit de geselecteerde mappen op de kaart.
+- **Vastzetten** / **Losmaken map** — Zet de geselecteerde mappen vast of maak ze los.
 
 </TabItem>
 
@@ -270,7 +298,17 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
 
-Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Op Android gebruikt u het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren. Op iOS gebruikt u ***lang tikken op de map*** om groepen favorieten te beheren: 
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
 - **<Translate android="true" ids="pin_folder"/>** — Zet de geselecteerde map vast om deze bovenaan de favorietenlijst te houden voor snellere toegang.
@@ -280,26 +318,8 @@ Gebruik het ***Drie-puntmenu*** naast elke map om groepen favorieten te beheren:
 - **<Translate android="true" ids="shared_string_move"/>** — Verplaats de geselecteerde map, inclusief alle favorietenpunten en geneste submappen, naar een andere map. De huidige map en de bijbehorende submappen kunnen niet als bestemming worden geselecteerd.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Verwijder van kaartmarkeringen** — Voeg alle favorietenpunten uit de map toe aan de *Lijst met kaartmarkeringen* of verwijder ze indien nodig voor eenvoudige referentie.
 - **<Translate android="true" ids="add_to_a_track"/>** — Voeg alle favorietenpunten uit de geselecteerde map toe aan een track. Dit opent het trackscherm waar u een track kunt kiezen of aanmaken.
-
+- **Toevoegen aan navigatie** (*Alleen iOS*) — Voeg alle favorietenpunten uit de geselecteerde map toe aan navigatie.
 - **<Translate android="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorietenacties ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
-
-Gebruik ***lang tikken op de map*** om groepen favorieten te beheren:
-
-- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Verberg op kaart** — Schakel deze optie in of uit om de favorietenpunten uit de map op de kaart weer te geven of te verbergen.
-- **<Translate ios="true" ids="shared_string_rename"/>** — Gebruik deze optie om de naam van de geselecteerde map te wijzigen.
-- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Pas aan hoe de favorietenpunten in de map op de kaart verschijnen door hun pictogrammen, kleuren of labels te wijzigen.
-- **<Translate ios="true" ids="shared_string_share"/>** — Deel de favorietenpunten in de map door ze te exporteren als een *Favorites.gpx*-bestand, waardoor het gemakkelijk is om uw gegevens over te dragen of er een back-up van te maken.
-- **<Translate ios="true" ids="shared_string_delete"/>** — Verwijder de geselecteerde favorietenmap en alle punten erin permanent.
-
-</TabItem>
-
-</Tabs>
 
 ### Uiterlijk van Groep Wijzigen {#change-group-appearance}
 
@@ -317,7 +337,7 @@ Ga naar: *Drie-puntmenu → Standaard uiterlijk wijzigen*
 
 Ga naar: *Lang tikken op map → Standaard uiterlijk*
 
-![Favorietenacties ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
 
 </TabItem>
 
@@ -344,7 +364,7 @@ OsmAnd biedt verschillende methoden om favorieten te [back-uppen](./import-expor
 
 - **Back-uplocaties** — Lokale opslag, [OsmAnd Cloud](../personal/osmand-cloud.md) (alleen met een [OsmAnd Pro of OsmAnd Start abonnement](../purchases/index.md)), of instant messaging-apps.
 
-- **Bestandsformaat** — Favorieten worden opgeslagen als `.gpx`-bestanden (favorites.gpx).
+- **Bestandsformaat** — Favorieten worden opgeslagen als `.gpx`-bestanden (favorites.gpx). Gebruik de `.osf`-indeling om favorieten met hun bijgevoegde media te back-uppen. Bij het importeren van de back-up worden zowel favorietenpunten als de bijbehorende media hersteld.
 
 
 ### Gratis Cloudback-up {#free-cloud-backup}
@@ -361,9 +381,9 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Favorietenacties ios](@site/static/img/personal/favorites_free_backup_2_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_2_ios.webp)
 
 </TabItem>
 
@@ -392,9 +412,9 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Favorietenacties ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 
@@ -408,30 +428,30 @@ U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up
 - *[OsmAnd Start-pakket](../personal/osmand-cloud.md#osmand-start)*. Selecteer deze optie om toegang tot de functie Gratis Instellingenback-up te krijgen.
 - *Maak een back-up* van uw instellingen.
 
-
-### Alle Favorieten {#all-favorites}
+<!--
+### All Favorites {#all-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Favorietenacties android](@site/static/img/personal/favorites_export_import_2_andr.png)
+![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorieten exporteren importeren ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-U kunt uw favorieten exporteren en importeren met de speciale knoppen onderaan het Favorietenscherm. Een [.gpx-bestand](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) kan worden verzonden naar Dropbox, e-mail, messengers en andere applicaties op uw apparaat die deze functie ondersteunen.
+You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
 
-- **Importeer**-knop (*Android*) / **Importeer favoriet** (*iOS*). Hiermee kunt u favorietenpunten (*favorites.gpx*) als waypoints importeren uit een *GPX*-bestand (een veelgebruikt GPS-gegevensformaat) vanuit de opslag van uw apparaat.
-- **Deel**-knop (*Android*) / **Exporteer favoriet** (*iOS*). Hiermee kunt u al uw favorieten exporteren (delen) als een *favorites.gpx*-bestand.
-
+- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
+- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
+-->
 
 ### Favorietengroep {#favorite-group}
 
@@ -439,20 +459,21 @@ U kunt uw favorieten exporteren en importeren met de speciale knoppen onderaan h
 
 <TabItem value="android" label="Android">
 
-![Favorietenmap functies android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorietenacties ios](@site/static/img/personal/favorites_actions_1_ios.png)   ![Favorietenacties ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
-
+![Favorites actions ios](@site/static/img/personal/favorites_actions_1_ios.webp) 
 </TabItem>
 
 </Tabs>
 
-- Tik op het **Drie-puntmenu** (*Android*) of de **Bewerk**-knop (*potloodpictogram op iOS*) of **tik lang** op de map (*iOS*) van de geselecteerde favorietenmap.
-- Kies de **Deel**-knop om het *Favorites.gpx*-bestand naar het geheugen van uw apparaat te sturen of te delen via messaging-apps.  
+- Om meerdere favorietenmappen te delen, activeert u de [Selectiemodus](#bulk-edit--delete), selecteert u de gewenste mappen en tikt u op *Delen*.
+- Om een enkele favorietenmap te delen, tikt u op het Drie-puntmenu (*Android*) of tikt u lang op de map (*iOS*) en kiest u *Delen* om het Favorites.gpx-bestand naar het geheugen van uw apparaat te sturen of te delen via messaging-apps. Op Android verschijnt, als de map bijgevoegde media bevat, een Deel-bladscherm. U kunt kiezen:
+    - *Alleen punten* — Deel de favorietenpunten uit de map als een GPX-bestand.
+    - *Punten en media* — Deel de favorietenpunten en bijgevoegde media als een OSF-archief.
 
 
 ### Automatische Favorietenback-up {#automatic-favorites-backup}
@@ -495,7 +516,9 @@ In de nieuwste versies van ***Android*** is de toegang tot systeemmappen beperkt
 
 ### Favorieten in GPX-bestand {#favorites-in-gpx-file}
 
-Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van tags. Bij het aanmaken van een Favorietenpunt kunt u uw eigen [beschrijving](#favorite-point) schrijven of informatie gebruiken uit de OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) gegevens waaruit uw punt is gemaakt. Favorietenpunten, POI's en Waypoints gebruiken dezelfde **tags** om informatie op te slaan en worden opgeslagen in **GPX-bestandsformaat**.  
+Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van tags. Bij het aanmaken van een Favorietenpunt kunt u uw eigen [beschrijving](#favorite-point) schrijven of informatie gebruiken uit de OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) gegevens waaruit uw punt is gemaakt. Favorietenpunten, POI's en Waypoints gebruiken dezelfde **tags** om informatie op te slaan en worden opgeslagen in **GPX-bestandsformaat**.
+
+Favorieten kunnen ook verwijzingen naar bijgevoegde media bevatten met behulp van standaard GPX `<link>`-elementen. 
 
 
 ```xml

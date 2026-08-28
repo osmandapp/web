@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -177,7 +177,7 @@ Volg deze stappen om een route naar een *POI* in *CarPlay* te maken:
 
 ![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-Om een route naar een bestemming te maken, kunt u een bestaande track selecteren die beschikbaar is in de OsmAnd-app. De track kan van tevoren worden [gedownload](../personal/tracks/manage-tracks.md#import), gebruikt worden als [opgenomen](../plugins/trip-recording.md) of aangemaakt worden in [Route plannen](../plan-route/create-route.md).  
+Om een route naar een bestemming te maken, kunt u een bestaande track selecteren die beschikbaar in de OsmAnd-app. De track kan van tevoren worden [gedownload](../personal/tracks/manage-tracks.md#import), gebruikt worden als [opgenomen](../plugins/trip-recording.md) of aangemaakt worden in [Route plannen](../plan-route/create-route.md).  
 
 Selecteer uit de lijst met tracks in *Menu → Mijn Plaatsen → [Tracks](../personal/tracks/manage-tracks.md)* de gewenste track voordat u verbinding maakt met het multimediasysteem van uw voertuig, en de route zal ofwel opbouwen tot het begin van de track of de huidige richting langs de track weergeven.  
 
@@ -225,9 +225,29 @@ Naast de basisfuncties van de OsmAnd-app in *CarPlay* die handige navigatie in u
 
 Spraakbegeleiding voor *CarPlay* is een van de meest nuttige navigatiefuncties van OsmAnd, die real-time begeleiding biedt en de bestuurder in staat stelt om gefocust te blijven op de weg. Gesproken aanwijzingen geven duidelijk bochten, richtingen en andere navigatie-instructies aan, wat zorgt voor een veiliger en comfortabeler gebruik van het navigatiesysteem.  
 
-Wanneer gesproken aanwijzingen worden afgespeeld, past OsmAnd de achtergrondaudio aan afhankelijk van het type. Gesproken audio-inhoud, zoals podcasts en audioboeken, kan automatisch worden gepauzeerd tijdens navigatie-instructies. Muziekafspeling gaat door met een lager volume. De optie *Gesproken audio pauzeren* stelt u in staat dit gedrag te beheren.
+Wanneer gesproken aanwijzingen worden afgespeeld, past OsmAnd de achtergrondaudio aan afhankelijk van het type. Met *<Translate ios="true" ids="pause_spoken_audio"/>* ingeschakeld, wordt gesproken audio-inhoud, zoals podcasts en audioboeken, gepauzeerd tijdens navigatie-instructies, terwijl muziekafspeling doorgaat met een lager volume. Wanneer *<Translate ios="true" ids="pause_spoken_audio"/>* is uitgeschakeld, blijven zowel gesproken audio als muziek afspelen met een lager volume.  
 
 Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Voor aanbevolen instellingen voor *CarPlay*, ga naar het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md).  
+
+
+### Navigatie-waarschuwingen {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Handige waarschuwingen worden automatisch weergegeven voordat de navigatie begint wanneer extra actie nodig is om de route te berekenen. Deze waarschuwingen helpen u routeringsproblemen op te lossen voordat de navigatie begint.
+
+**Ontbrekende of verouderde kaarten**
+
+Als sommige offline kaarten die nodig zijn om de route te berekenen ontbreken of verouderd zijn, wordt een waarschuwing weergegeven. U kunt kiezen uit de volgende opties:
+- **Gebruik gedownloade kaarten**. Bereken de route met de kaarten die momenteel op uw apparaat beschikbaar zijn.
+- **Bekijk op telefoon**. Open het kaartscherm op uw iPhone om de vereiste kaarten te downloaden of bij te werken. Nadat de kaarten zijn gedownload, kunt u de navigatie opnieuw starten.
+- **Annuleren**. Sluit de waarschuwing zonder de navigatie te starten.
+
+**Waarschuwing voor privétoegang**
+
+Als de route vereist dat u een privéweg gebruikt om uw bestemming te bereiken, wordt een waarschuwing weergegeven: *Toestaan dat een privéweg wordt gebruikt om uw bestemming te bereiken?* U kunt kiezen:
+- **Toestaan**. Ga door met de route via de privéweg.
+- **Annuleren**. Sluit de waarschuwing en keer terug naar het vorige scherm, waar u de bestemming kunt wijzigen of een andere actie kunt uitvoeren.
 
 
 ### Schermwaarschuwingswidget {#screen-alert-widget}
@@ -248,7 +268,7 @@ Deze informatiewidget combineert waarschuwingstypes zoals **Voetgangersoversteek
 
 De **Snelheidsmeter**-widget is een geïntegreerd interface-element dat de *huidige snelheid* weergeeft met behulp van GPS-gegevens en de *snelheidslimiet* uit de [OSM-database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) en [OsmAnd-instellingen](../navigation/guidance/voice-navigation.md#speed-limit) op het multimediasysteemscherm van het voertuig. Wanneer uw huidige snelheid de geconfigureerde snelheidslimiettolerantie nadert of de snelheidslimiet overschrijdt, verandert de widget van uiterlijk (kleuren) om een waarschuwing te geven. De verandering in uiterlijk kan geanimeerd zijn.
 
-- De **Snelheidsmeter-widget** is [*profielafhankelijk*](../personal/profiles.md), dus als u de instellingen voor één profiel wijzigt, worden ze niet toegepast op een ander.
+- De **Snelheidsmeter-widget** is [*profielafhankelijk*](../personal/profiles.md), zodat als u de instellingen voor één profiel wijzigt, ze niet worden toegepast op een ander.
 - Er is geen optie om de weergave van de *Snelheidsmeter* rechtstreeks in *CarPlay* in te stellen. U moet deze configureren voor het geselecteerde [navigatieprofiel](#carplay-profile) in de OsmAnd-applicatie voordat u de navigatie start en uw apparaat met het voertuig verbindt.
 - Voor meer informatie over hoe u de *Snelheidsmeter*-widget aan het display kunt toevoegen en configureren, lees het [artikel over informatiewidgets](../widgets/info-widgets.md#speedometer).
 

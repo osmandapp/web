@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title:  Reisgidsen
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-:::info Betaalde functie
+:::tip Aankoop
 De Reisgidsen is een [betaalde functie](../purchases/index.md).  
 :::
 
@@ -106,7 +106,7 @@ Wanneer u *Reisgidsen* opent (*<Translate android="true" ids="shared_string_menu
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ Als u op de *Bladwijzerknop* tikt, wordt het artikel opgeslagen om later te leze
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -203,7 +203,7 @@ De volgende bedieningselementen bevinden zich bovenaan het scherm:
 Onderaan het scherm bevinden zich knoppen zoals:
 
 - [Inhoud](#table-of-contents). Opent de inhoudsopgave van het artikel.
-- [Punten](#points). Toont toeristische attracties die verband houden met het artikel op een kaart.
+- [Punten](#points). Toont toeristische attracties die verband met het artikel op een kaart.
 - [Bladwijzer](#explore-and-bookmark). Hiermee kunt u een artikel aan bladwijzers toevoegen om het later te lezen.  
 
 
