@@ -225,7 +225,7 @@ export default function MainMenu({
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu(ctx, ltx, navigate, location);
+            openLoginMenu({ ctx, ltx, navigate, location });
         }
     }, [location.pathname]);
 
@@ -403,6 +403,7 @@ export default function MainMenu({
     function openShareFileByLink() {
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
         if (openShareFile) {
+            setMenuInfo(null);
             setShowInfoBlock(true);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         }
@@ -1087,7 +1088,11 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-4px' }} />
-                {(showDeleteOutlet || showShareOutlet) && outlet}
+                {showDeleteOutlet && outlet}
+                {showShareOutlet && (
+                    // keep ShareFile mounted (it owns the join fetch); hide the list while a shared point is open
+                    <div style={{ display: ctx.selectedGpxFile?.markerCurrent ? 'none' : 'block' }}>{outlet}</div>
+                )}
                 {aloneVisibleTracks && <VisibleTracks />}
                 {!isOpenSubMenu() && (
                     <>

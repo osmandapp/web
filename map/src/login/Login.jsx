@@ -10,11 +10,12 @@ import { userLogin } from '../manager/AccountManager';
 import i18n from 'i18next';
 import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
-import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
+import { DELETE_ACCOUNT_URL, liveHash, LOGIN_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../frame/components/btns/BlueBtn';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import LoginContext from '../context/LoginContext';
+import { useResetApp } from '../App';
 
 export default function Login({ dialog = false }) {
     const ctx = useContext(AppContext);
@@ -24,6 +25,7 @@ export default function Login({ dialog = false }) {
     const lang = i18n.language;
     const navigate = useNavigate();
     const location = useLocation();
+    const resetApp = useResetApp();
 
     const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
     const [userPassword, setUserPassword] = useState(EMPTY_INPUT);
@@ -79,7 +81,7 @@ export default function Login({ dialog = false }) {
     }, [userPassword]);
 
     async function handleLogin() {
-        await userLogin({
+        const loggedIn = await userLogin({
             ltx,
             username: userEmail,
             pwd: userPassword,
@@ -87,6 +89,13 @@ export default function Login({ dialog = false }) {
             handleClose,
             lang,
         });
+        if (loggedIn && !dialog && !ltx.wantDeleteAcc) {
+            // leave the account url before reset, otherwise the remounted MainMenu reopens the account menu
+            const prev = ctx.prevPageUrl?.url;
+            const backToPrev = prev && !prev.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL);
+            navigate(backToPrev ? prev.pathname + prev.search + prev.hash : MAIN_URL_WITH_SLASH + liveHash());
+            resetApp();
+        }
     }
 
     const handleKeyPress = async (e) => {
@@ -146,7 +155,7 @@ export default function Login({ dialog = false }) {
                     />
                     {emailError !== EMPTY_INPUT && (
                         <BlueBtn
-                            action={() => createAccount(ltx, navigate)}
+                            action={() => createAccount({ ctx, ltx, navigate })}
                             text={t('web:create_account_btn')}
                             additionalStyle={{ mb: 1.5, mt: 0.5 }}
                             span={true}

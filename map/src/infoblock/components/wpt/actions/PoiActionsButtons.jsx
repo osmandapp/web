@@ -6,11 +6,12 @@ import { ReactComponent as DirectionFromIcon } from '../../../../assets/icons/ic
 import { ReactComponent as NavigationIcon } from '../../../../assets/icons/ic_action_gdirections_dark.svg';
 import React, { useContext } from 'react';
 import AppContext from '../../../../context/AppContext';
+import { openLoginMenu } from '../../../../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
 import { createShareLocations, directionFrom, directionTo } from './locationActions';
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { LatLng } from 'leaflet';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH, POI_URL } from '../../../../manager/GlobalManager';
+import { POI_URL } from '../../../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 import LoginContext from '../../../../context/LoginContext';
@@ -39,7 +40,7 @@ export default function PoiActionsButtons({ wpt }) {
                 openKey: Date.now(),
             });
         } else {
-            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
+            openLoginMenu({ ctx, ltx, navigate, location });
         }
     }
 
