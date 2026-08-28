@@ -45,6 +45,8 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     const refMarkers = useRef(null);
 
+    const isSharedWithMeBaseFolder = smartf && !folder;
+
     const hash = location.hash;
 
     // debounce map move/scroll
@@ -76,7 +78,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             });
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
-        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[group.id]) {
+        if (ctx.selectedSort?.favorites?.[group.id]) {
             doSort({
                 method: ctx.selectedSort.favorites[group.id],
                 setSortFiles,
@@ -94,7 +96,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         let groups = null;
         if (sortGroups && sortGroups.length > 0) {
             groups = sortGroups;
-        } else if (smartf?.files?.length > 0) {
+        } else if (isSharedWithMeBaseFolder && smartf.files?.length > 0) {
             groups = byTime(smartf.files, true, true);
         }
         if (groups) {
@@ -119,7 +121,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         if (ctx.openedPopper) return;
         if (currentLoc !== LOCATION_UNAVAILABLE) {
             // update markers location
-            if (refMarkers.current.length > 0) {
+            if (refMarkers.current?.length > 0) {
                 const updatedMarkers = addLocDist({ location: currentLoc, markers: refMarkers.current });
                 setMarkers(updatedMarkers);
             }
@@ -209,7 +211,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                 maxWidth={ctx.infoBlockWidth}
                 style={{ height: `${height - HEADER_SIZE}px` }}
             >
-                {smartf && !folder ? (
+                {isSharedWithMeBaseFolder ? (
                     <GroupHeader
                         type="favorites"
                         smartf={smartf}

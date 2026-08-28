@@ -2,7 +2,7 @@ import L from 'leaflet';
 import Utils from '../../util/Utils';
 import styles from '../map.module.css';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
-import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
 import { getVisibleBboxInfo, panToVisibleCenter } from '../layers/MapStateLayer';
 
 export const TOOLTIP_MAX_LENGTH = 50;
@@ -19,6 +19,11 @@ export function getZoomToFitBounds({ type, object, ctx }) {
     }
     if (type === OBJECT_TYPE_CLOUD_TRACK) {
         const bounds = object?.gpx?.getBounds();
+
+        return bounds?.isValid() ? bounds : null;
+    }
+    if (type === OBJECT_TYPE_SHARE_FILE) {
+        const bounds = object.getBounds();
 
         return bounds?.isValid() ? bounds : null;
     }

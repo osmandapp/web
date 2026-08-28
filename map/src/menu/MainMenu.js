@@ -403,6 +403,7 @@ export default function MainMenu({
     function openShareFileByLink() {
         const openShareFile = location.pathname.includes(SHARE_FILE_MAIN_URL);
         if (openShareFile) {
+            setMenuInfo(null);
             setShowInfoBlock(true);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
         }
