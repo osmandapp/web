@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title:  Dettagli del percorso
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-OsmAnd consente di trovare il percorso migliore e di esplorarne i dettagli. L'app fornisce informazioni dettagliate sul percorso, come la distanza, il [tempo di percorrenza](#distance--time--co2), [i dati sull'impronta di CO2](#distance--time--co2) e le [informazioni sulle svolte](#turn-by-turn-information), il [tipo di superficie](#road-attributes), i [dislivelli](#elevation-info). È inoltre possibile [analizzare](#analyze-on-map) il percorso sulla mappa, scoprire informazioni sui segmenti della traccia, [stampare](#print) il piano del percorso, [salvare](#share--export-actions) il percorso e condividerlo con altri. Grazie a questa funzionalità, conoscerete sempre i dettagli del percorso e potrete pianificare il vostro viaggio in modo più efficiente.
+OsmAnd consente di trovare il percorso migliore ed esplorarne i dettagli. L'app fornisce informazioni dettagliate sul percorso come la distanza, [il tempo di percorrenza](#distance--time--co2), [il tipo di superficie](#road-attributes), [i dislivelli](#elevation-info), [i dati sull'impronta di CO2](#distance--time--co2) e [le informazioni sulle svolte](#turn-by-turn-information). È inoltre possibile [analizzare](#analyze-on-map) il percorso sulla mappa, scoprire informazioni sui segmenti della traccia, [stampare](#print) il piano del percorso, [salvare](#share--save-actions) il percorso e condividerlo con altri. Grazie a questa funzionalità, conoscerete sempre i dettagli del percorso e potrete pianificare il vostro viaggio in modo più efficiente.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Dettagli del percorso Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)
+![Dettagli del percorso Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
 
 </TabItem>
 
@@ -147,7 +147,7 @@ I [grafici](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visua
 
 <TabItem value="android" label="Android">
 
-![Dettagli del percorso Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)
+![Dettagli del percorso Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
 
 </TabItem>
 
@@ -178,7 +178,7 @@ Se i dati sono presenti, è possibile selezionare uno dei seguenti tipi:
 
 - *Tocca e scorri*. Toccare il grafico per visualizzare le informazioni sul punto della traccia e sul movimento lungo di essa. Il grafico evidenzia la posizione del punto sulla mappa e ne visualizza le informazioni sul righello.
 - *Scala*. Scalare il grafico con il [gesto con due dita](../../map/interact-with-map.md#gestures).
-- *Segui la mia posizione* (*solo Android*). È possibile toccare [La mia posizione](../../map/interact-with-map.md#my-location-and-zoom) per sincronizzare la visualizzazione della mappa e il grafico con la propria posizione. Man mano che ci si sposta, il grafico si sposterà da sinistra a destra, visualizzando le informazioni che precedono il percorso.  
+- *Segui la mia posizione* (*solo Android*). È possibile toccare [La mia posizione](../../map/interact-with-map.md#my-position-and-zoom) per sincronizzare la visualizzazione della mappa e il grafico con la propria posizione. Man mano che ci si sposta, il grafico si sposterà da sinistra a destra, visualizzando le informazioni che precedono il percorso.  
 
 
 ## Attributi della strada {#road-attributes}
@@ -240,7 +240,7 @@ Gli attributi della strada sono accessibili in [Dettagli del percorso](#how-to-a
 
 <TabItem value="ios" label="iOS">
 
-![Percorso di navigazione iOS](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
@@ -263,7 +263,7 @@ Toccare una sezione specifica del percorso nell'elenco per visualizzare informaz
 
 <TabItem value="ios" label="iOS">
 
-![Percorso di navigazione iOS](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 
@@ -300,7 +300,7 @@ Viene misurato l'angolo tra la destinazione (*[Rilevamento](https://en.wikipedia
 
 <InfoAndroidOnly/>
 
-![dettagli del percorso](@site/static/img/navigation/route/route_details_print-2.png)
+![dettagli del percorso](@site/static/img/navigation/route/route_details_print-2.png)  
 
 La funzione **Stampa** della descrizione di un percorso svolta per svolta può essere utile se si preferisce avere una copia fisica della descrizione del percorso invece di utilizzare dispositivi elettronici, o se non si ha accesso ad app di navigazione o a navigatori GPS, non si ha accesso a Internet o se si ha bisogno di informazioni per altre persone che viaggiano con voi.
 
@@ -311,7 +311,7 @@ Queste informazioni possono essere utili quando si pianifica un viaggio e si vuo
 La possibilità di **stampare** o **salvare** le informazioni svolta per svolta **in formato PDF** è particolarmente utile quando si viaggia per lunghe distanze o in luoghi sconosciuti, quando si ha bisogno di avere un'idea più dettagliata del percorso e del tempo necessario per raggiungerlo.
 
 
-## Condividi / Esporta (Azioni) {#share--export-actions}
+## Condividi / Salva (Azioni) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,7 +323,7 @@ La possibilità di **stampare** o **salvare** le informazioni svolta per svolta 
 
 <TabItem value="ios" label="iOS">
 
-![Percorso di navigazione iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Percorso di navigazione iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,8 +332,8 @@ La possibilità di **stampare** o **salvare** le informazioni svolta per svolta 
 La sezione di navigazione Dettagli del percorso dispone di opzioni che consentono di eseguire determinate azioni con le informazioni sul percorso.  
 
 - [**Stampa**](#print). Consente di stampare o salvare le informazioni sul percorso svolta per svolta.
-- **Esporta/Salva**. Consente di salvare le informazioni sul percorso **come nuova traccia** per un successivo utilizzo offline. La traccia esportata contiene tutte le informazioni sugli attributi della strada e le istruzioni di svolta. Pertanto, la [navigazione tramite questa traccia](./gpx-navigation.md) dovrebbe fornire tutte le funzioni della navigazione tramite il percorso.
-- **Condividi**. Condivide una traccia esportata o un link al percorso che può essere aperto su un altro dispositivo con OsmAnd.
+- **Salva**. Consente di salvare le informazioni sul percorso **come nuova traccia** per un successivo utilizzo offline. La traccia salvata contiene tutte le informazioni sugli attributi della strada e le istruzioni di svolta. Pertanto, la [navigazione tramite questa traccia](./gpx-navigation.md) dovrebbe fornire tutte le funzioni della navigazione tramite il percorso.
+- **Condividi**. Consente di condividere il percorso come file o come link che può essere aperto su un altro dispositivo con OsmAnd.
 
 
 ## Articoli correlati {#related-articles}

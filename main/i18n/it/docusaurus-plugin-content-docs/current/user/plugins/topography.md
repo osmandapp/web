@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografia
 ---
@@ -370,7 +370,13 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>
 
-La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. Se i [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includono passaggi attraverso gli edifici mappati con il tag `tunnel=building_passage`, OsmAnd rende visibili le aperture nel modello 3D dell'edificio in modo che le strade o i percorsi pedonali che passano attraverso l'edificio siano visualizzati correttamente. 
+La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. 
+
+Per strutture complesse, OsmAnd utilizza `building:part` per renderizzare sezioni individuali di un edificio con altezze e forme diverse. 
+
+Se i [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includono passaggi attraverso gli edifici mappati con il tag `tunnel=building_passage`, OsmAnd rende visibili le aperture nel modello 3D dell'edificio in modo che le strade o i percorsi pedonali che passano attraverso l'edificio siano visualizzati correttamente. 
+
+Gli edifici 3D possono includere diverse forme del tetto basate sui [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). Il tag `roof:shape` definisce la geometria del tetto, mentre `roof:levels` e `roof:height` forniscono informazioni sulla sua altezza.
 
 Gli edifici 3D vengono mostrati solo a livelli di zoom più alti (vista città/strada), dove gli edifici individuali possono essere visualizzati. Quando si esegue lo zoom avanti o indietro e si sposta la mappa, gli edifici 3D appaiono e scompaiono con un'animazione di dissolvenza fluida. Quando un POI o una posizione selezionata (come una mappa pin o una destinazione di navigazione) si trova all'interno di un edificio, OsmAnd evidenzia l'edificio corrispondente per facilitarne l'identificazione sulla mappa.
 

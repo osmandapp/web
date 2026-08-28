@@ -1,5 +1,5 @@
 ---
-source-hash: 20763908576b5c7c3d5452b861b2dfa49d9babaafa7bb035c0a9e06233ed9895
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -104,6 +104,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guide di viaggio (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Pianificazione delle osservazioni](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Modalità AR interattiva](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Mappa del cielo offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

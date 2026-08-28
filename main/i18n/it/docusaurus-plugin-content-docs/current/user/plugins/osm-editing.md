@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title:  Modifica di OpenStreetMap
 ---
@@ -256,13 +256,13 @@ Le tue tracce verranno aggiunte alle [tracce OSM](https://www.openstreetmap.org/
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -278,10 +278,9 @@ Per [caricare la traccia GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_tra
 - **<Translate android="true" ids="shared_string_description"/>**. Consente di aggiungere una descrizione alla traccia. La descrizione si applica a tutte le tracce selezionate. Se non si inserisce nulla nel campo, i nomi delle tracce per ogni singola traccia vengono utilizzati come descrizioni.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Questa voce nella sezione delle impostazioni consente di aggiungere tag per identificare la traccia. Il tag predefinito è "osmand". Se la traccia è stata registrata con un'attività specifica in base al profilo selezionato, questa attività viene anche aggiunta automaticamente come tag durante il caricamento. Per gruppi di tracce caricate, ogni traccia riceve il proprio tag di attività. Per alcuni profili (ad es. Trasporto pubblico), il tag di attività non viene aggiunto. È possibile inserire manualmente tag aggiuntivi, separati da virgole.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Visibilità della traccia per gli utenti OSM:  
-   - *Pubblica* significa che la traccia è pubblicamente disponibile e visualizzata in forma grezza nelle tue tracce GPS, negli elenchi di tracce GPS e negli elenchi di tracce con timestamp. I dati trasmessi tramite l'API non sono riferiti alla tua pagina della traccia. I timestamp dei punti della traccia non sono disponibili tramite l'API GPS pubblica e i punti della traccia non sono ordinati cronologicamente.
-   - *Identificabile* significa che la traccia sarà visualizzata pubblicamente nei tuoi punti di traccia GPS e negli elenchi pubblici di tracce GPS, il che significa che altri utenti potranno scaricare la traccia grezza e associarla al tuo nome utente. I dati pubblici dei punti di traccia con timestamp dall'API GPS passati attraverso l'API dei punti di traccia si collegheranno alla tua pagina della traccia originale.
-   - *Tracciabile* significa che la traccia non viene visualizzata negli elenchi pubblici, ma i punti della traccia elaborati con timestamp da essa (che non possono essere collegati direttamente a te) vengono caricati dall'API GPS pubblica.
-   - *Privata* significa che la traccia non viene visualizzata negli elenchi pubblici, ma i punti della traccia da essa in ordine non cronologico sono disponibili tramite l'API GPS pubblica senza timestamp.
+      - *Identificabile* significa che la traccia sarà visualizzata pubblicamente nei tuoi punti di traccia GPS e negli elenchi pubblici di tracce GPS, il che significa che altri utenti potranno scaricare la traccia grezza e associarla al tuo nome utente. I dati pubblici dei punti di traccia con timestamp dall'API GPS passati attraverso l'API dei punti di traccia si collegheranno alla tua pagina della traccia originale. Questa opzione è selezionata per impostazione predefinita.
+      - *Tracciabile* significa che la traccia non viene visualizzata negli elenchi pubblici, ma i punti della traccia elaborati con timestamp da essa (che non possono essere collegati direttamente a te) vengono caricati dall'API GPS pubblica.
+{/* *Privata* significa che la traccia non viene visualizzata negli elenchi pubblici, ma i punti della traccia da essa in ordine non cronologico sono disponibili tramite l'API GPS pubblica senza timestamp. *Pubblica* significa che la traccia è pubblicamente disponibile e visualizzata in forma grezza nelle tue tracce GPS, negli elenchi di tracce GPS e negli elenchi di tracce con timestamp. I dati trasmessi tramite l'API non sono riferiti alla tua pagina della traccia. I timestamp dei punti della traccia non sono disponibili tramite l'API GPS pubblica e i punti della traccia non sono ordinati cronologicamente.*/}
 - **<Translate android="true" ids="login_account"/>** - [Account OSM](https://www.openstreetmap.org/login).
 
 :::info

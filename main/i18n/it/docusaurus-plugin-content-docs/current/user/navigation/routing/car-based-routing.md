@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title:  Navigazione auto (Camion, Moto)
 ---
@@ -34,7 +34,7 @@ La navigazione per auto è progettata per aiutare i conducenti a trovare i perco
 
 Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Impostazioni di navigazione auto Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Impostazioni di navigazione auto Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -55,6 +55,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Le restrizioni di accesso privato verranno ignorate durante il calcolo del percorso.  | Il tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* è usato in OSM per descrivere le restrizioni sull'uso di autostrade e altre vie di trasporto, così come di edifici, ingressi, servizi ed entità ricreative.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (solo&nbsp;auto) |  <details><summary> Le strade chiuse alla consegna di merci saranno evitate. </summary>![Consegna merci Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Questa opzione si applica solo ai veicoli che trasportano merci, con un peso non superiore a 3,5 tonnellate. Se il peso del veicolo è superiore a 3,5 tonnellate, è necessario utilizzare il [profilo Camion](#route-parameters---truck).   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Per calcolare un percorso efficiente dal punto di vista del consumo di carburante, il motore di navigazione limita internamente la velocità a 60 km/h, senza però modificare il tempo stimato di arrivo. Quindi, nel caso di 2 percorsi identici per partenza e arrivo: autostrada (120 km/h) e strada secondaria (60 km/h) - verrà selezionato il percorso più breve. Per le strade di servizio che hanno un limite di velocità < 60 km/h, verrà selezionato il percorso più veloce. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*solo Android*) | Seleziona il metodo di calcolo del percorso preferito. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Parametri del percorso - Camion {#route-parameters---truck}

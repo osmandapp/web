@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  AIS Vessel Tracker
 ---
@@ -20,8 +20,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Il plugin **AIS Vessel Tracker** visualizza le posizioni dell'[Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) e le informazioni dettagliate sulle imbarcazioni vicine. I dati AIS vengono ricevuti tramite una connessione di rete da un ricevitore AIS esterno.
 
-:::caution AVVISO
-**Questo plugin è un progetto amatoriale e non è progettato per garantire affidabilità o precisione. NON fare affidamento su questo software per la navigazione o la sicurezza della vita.**
+:::caution DISCLAIMER
+**This plugin is a hobby project and is not designed for reliability or accuracy. DO NOT rely on this software for navigation or safety of life.**
 :::
 
 ## Parametri di Configurazione Richiesti {#required-setup-parameters}
@@ -48,7 +48,7 @@ L'AIS opera su *frequenze VHF* (161.975 MHz e 162.025 MHz) e ha un raggio di seg
 
 <TabItem value="android" label="Android">
 
-![Tracciatore di imbarcazioni AIS](@site/static/img/plugins/ais/ais.png)
+![AIS vessel tracker](@site/static/img/plugins/ais/ais.png)
 
 </TabItem>
 
@@ -66,8 +66,8 @@ Se configurato correttamente, le posizione delle imbarcazioni appariranno sulla 
 
 <TabItem value="android" label="Android">
 
-![Tracciatore di imbarcazioni AIS](@site/static/img/plugins/ais/ais_menu.png)  
-![Tracciatore di imbarcazioni AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png)  
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
 
 </TabItem>
 
@@ -108,7 +108,7 @@ Le imbarcazioni AIS trasmettono tre tipi di dati:
 
 ### Simboli e Legende AIS {#ais-symbols-and-legends}
 
-[Linee guida per la presentazione dei simboli AIS](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Simboli             | Descrizione   |
 |---------------------|---------------|
@@ -152,13 +152,13 @@ Le imbarcazioni AIS trasmettono tre tipi di dati:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Impostazioni AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS settings](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
 </Tabs>
 
-Il plugin *AIS vessel tracker* offre varie impostazioni per personalizzare la navigazione e l'interazione per gli utenti con disabilità. Queste impostazioni vengono applicate a tutti i [profili](../personal/profiles.md) in OsmAnd.
+The *AIS vessel tracker* plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
 
 | Impostazione |  Descrizione  | Esempio  |
 |---------|---------------|----------|
@@ -168,6 +168,7 @@ Il plugin *AIS vessel tracker* offre varie impostazioni per personalizzare la na
 | Indirizzo IP | Definisci l'IP della fonte dati AIS (se si usa TCP) | `192.168.200.16` |
 | Porta TCP   | Definisci il numero di porta TCP per i dati AIS | `4001` |
 | Porta UDP   | Definisci la porta UDP per la ricezione AIS di OsmAnd  | `10110` |
+| Receive AIS data even if OsmAnd is paused   | Keep the AIS message listener running if OsmAnd is paused or in the background. If disabled, no AIS messages are received when OsmAnd is in the background  | `Yes/No` |
 | | | |
 | **Timeout ricezione segnale AIS** | |  |
 | Timeout per oggetti AIS persi     | Le navi scompaiono se non viene ricevuto alcun segnale per un tempo impostato | `3 - 20 min` |
@@ -175,7 +176,7 @@ Il plugin *AIS vessel tracker* offre varie impostazioni per personalizzare la na
 | | | |
 | **Avvisi sul Punto di Avvicinamento Minimo (CPA)** | | |
 | Tempo di avviso CPA | L'imbarcazione è contrassegnata in rosso se il tempo al CPA è inferiore a questo limite | `1 - 60 min / Disabilitato` |
-| Distanza di avviso CPA | L'imbarcazione è contrassegnata in rosso se la distanza dal CPA è inferiore a questo limite | `0.02 - 2 miglia nautiche` |
+| Distanza di avviso CPA | L'imbarcazione è contrassegnata in rosso se la distanza dal CPA è inferiore a questo limite | `0.02 - 2 nautical miles` |
 
 ### Modalità di Simulazione AIS {#ais-simulation-mode}
 
@@ -183,9 +184,9 @@ Il plugin *AIS vessel tracker* offre varie impostazioni per personalizzare la na
 
 1. **Scarica i file di testo dei dati AIS**:
 
-    - [Test AIS 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
-    - [Test AIS 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
-    - [Singolo 3](https://github.com/user-attachments/files/18689403/333.txt)
+    - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
+    - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
+    - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
 2. **Carica i dati AIS in OsmAnd**  
 Apri *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* e seleziona uno dei file scaricati.
@@ -198,4 +199,4 @@ Le icone delle imbarcazioni appariranno in base ai dati simulati. Tocca l'icona 
 - [Interagire con la Mappa](../../user/map/interact-with-map.md)
 - [Impostazioni Globali](../../user/personal/global-settings.md)
 - [Mappe Vettoriali (Stili Mappa)](../../user/map/vector-maps.md)
-- [Plugin Nautico](../../user/plugins/nautical-charts.md)
+- [Nautical Plugin](../../user/plugins/nautical-charts.md)

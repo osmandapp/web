@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -27,42 +27,6 @@ Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfacc
 - Organizzare i widget in pannelli (superiore, inferiore, sinistro, destro, centrale).
 - Creare più **pagine** all'interno dei pannelli laterali, scegliere la dimensione dei widget.
 - Scegliere l'altezza della riga e attivare/disattivare le icone dei widget.
-
-Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md): ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
-
-<!--
-## Panoramica {#overview}
-
-Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfaccia della mappa aggiungendo e disponendo widget, pulsanti e azioni rapide su più pannelli.
-
-È possibile:
-
-- Aggiungere widget [informativi](../widgets/info-widgets.md), [di navigazione](../widgets/nav-widgets.md) e [relativi ai marker](../widgets/markers.md).
-- Aggiungere o modificare [Azioni Rapide](../widgets/quick-action.md), [Pulsanti personalizzati](../widgets/quick-action.md#custom-buttons) e [Pulsanti predefiniti](../widgets/map-buttons.md).
-- Organizzare i widget in pannelli (superiore, inferiore, sinistro, destro, centrale).
-- Creare più pagine all'interno dei pannelli laterali, scegliere la dimensione dei widget.
-- Scegliere l'altezza della riga e attivare/disattivare le icone dei widget.
 - Su Android, personalizzare [l'aspetto del pannello widget](#widget-panel-appearance).
 
 Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md): ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
@@ -87,7 +51,6 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 </TabItem>
 
 </Tabs>
--->
 
 
 ## Pannelli Widget {#widget-panels}
@@ -399,7 +362,6 @@ Queste impostazioni si applicano solo al widget selezionato.
     - Passa alla posizione Off, nel campo *Mostra icona*.
 
 
-<!--
 ## Aspetto del pannello widget (solo Android) {#widget-panel-appearance}
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
@@ -430,7 +392,6 @@ I colori personalizzati dei widget sono una [funzione a pagamento](../purchases/
     - Seleziona Copia da.
     - Scegli una delle seguenti opzioni: *Un altro profilo* o *Uno degli altri pannelli*.
 
--->
 
 ## Personalizzazione Pannelli {#panels-customization}
 
