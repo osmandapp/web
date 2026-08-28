@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -412,7 +412,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Cerca](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Cerca](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +430,52 @@ La funzione **Cerca** (**Esplora** su iOS) nel plugin Astronomy consente di trov
 
 La sezione Osserva ora evidenzia gli oggetti celesti visibili in questo momento o stanotte. Questa sezione funge da strumento di raccomandazione, mostrando gli oggetti più adatti all'osservazione in base alla posizione e all'ora correnti.
 
-**2. Categorie**
+**2. Eclissi solari e lunari** (*solo Android*)
+
+Gli strumenti [Eclissi solare](#solar-eclipse) e [Eclissi lunare](#lunar-eclipse) consentono di esplorare gli eventi di eclissi in tutto il mondo, visualizzarne la progressione nel tempo e verificare la visibilità delle eclissi sulla mappa.
+
+**3. Categorie**
 
 La sezione Categorie consente di sfogliare gli oggetti per tipo: Sistema solare, Costellazioni, Stelle, Nebulose, Ammassi stellari e Cielo profondo. Ogni categoria apre un elenco di oggetti con informazioni chiave: nome dell'oggetto, tipo o costellazione, magnitudine (luminosità) e ora di alba o tramonto (se applicabile).
+
+### Eclissi solare (solo Android) {#solar-eclipse}
+
+![Eclissi solare](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Eclissi solare](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+L'**Esploratore eclissi solare** consente di esplorare le eclissi solari passate e future in tutto il mondo. Combina la Mappa stellare con una timeline interattiva e una visualizzazione su mappa per mostrare come si sviluppa un'eclissi in diverse località.
+
+L'Esploratore eclissi solare include le seguenti funzionalità:
+
+- **Navigazione eclissi**. Usa i pulsanti Precedente e Successivo per passare tra le eclissi solari disponibili.
+- **Timeline**. La timeline mostra l'inizio, il massimo e la fine dell'eclissi. Sposta il cursore per visualizzare l'eclissi in qualsiasi momento durante l'evento. Tutte le informazioni sull'eclissi vengono aggiornate automaticamente per l'ora selezionata.
+- **Informazioni sull'eclissi**. Il pannello informazioni mostra: tipo di eclissi, data e ora corrente, oscuramento dell'eclissi, altitudine del Sole e coordinate del centro della mappa. Le informazioni visualizzate vengono calcolate per il centro della mappa corrente.
+- **Percorso dell'eclissi**. Tocca Adatta percorso eclissi per centrare la mappa sul percorso dell'eclissi. Tocca *Mostra mappa* o *Nascondi mappa* per visualizzare o nascondere il percorso dell'eclissi sulla mappa. Il percorso dell'eclissi mostra dove l'eclissi è visibile e come si muove l'ombra della Luna sulla superficie terrestre.
+
+:::warning
+
+Non guardare mai direttamente il Sole senza un'adeguata protezione per la visualizzazione solare. Gli orari delle eclissi sono stime.
+
+:::
+
+### Eclissi lunare (solo Android) {#lunar-eclipse}
+
+![Eclissi lunare](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Eclissi lunare](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+L'**Esploratore eclissi lunare** consente di esplorare le eclissi lunari in tutto il mondo e osservare come la Luna passa attraverso l'ombra della Terra.
+
+L'Esploratore eclissi lunare include le seguenti funzionalità:
+
+- **Navigazione eclissi**. Usa i pulsanti Precedente e Successivo per passare tra le eclissi lunari disponibili.
+- **Tipi di eclissi**. L'esploratore supporta: eclissi penombra, eclissi parziali ed eclissi totali
+- **Timeline**. La timeline mostra l'inizio, il massimo e la fine dell'eclissi. I marcatori sulla timeline indicano le diverse fasi dell'eclissi. Sposta il cursore per osservare l'eclissi in qualsiasi momento durante l'evento.
+- **Informazioni sull'eclissi**. Il pannello informazioni mostra: fase dell'eclissi, oscuramento dell'eclissi, altitudine della Luna e coordinate del centro della mappa. Le informazioni visualizzate vengono calcolate per il centro della mappa corrente.
+- **Mappa di visibilità**. Tocca *Adatta visibilità* per centrare la mappa sull'area di visibilità dell'eclissi. Tocca *Mostra mappa* o *Nascondi mappa* per visualizzare o nascondere il livello di visibilità. Il livello di visibilità evidenzia le regioni in cui la Luna è sopra l'orizzonte durante l'eclissi.
+
+:::warning
+
+I colori e la luminosità delle ombre sono schematici e destinati solo alla visualizzazione.
+
+:::
 
 ### Ordinamento e filtri {#sorting-and-filters}
 

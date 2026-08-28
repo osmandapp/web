@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title: Itinerari
 sidebar_position: 11
 ---
@@ -28,11 +28,11 @@ OsmAnd dispone di molte potenti funzionalità per visualizzare diversi [itinerar
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.webp)
 
 - Per visualizzare gli itinerari desiderati sulla mappa, attivali nell'*elenco Itinerari* del menu [Configura mappa](../../map/configure-map-menu.md).
 - OsmAnd può evidenziare gli [itinerari presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). È possibile selezionarli toccando [il simbolo sull'itinerario](#save-as-a-track) e, se l'insieme visibile di itinerari è configurato correttamente, è possibile seguirne il colore e le icone.
-- I tipi principali di itinerari possono anche essere filtrati per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare gli itinerari escursionistici tramite i **simboli OSMC** come classi e tramite le reti *internazionali, nazionali, regionali* o *locali* come sottoclassi, attualmente disponibili quando è abilitato il plugin [Sviluppo OsmAnd](../../plugins/development.md).
+- I tipi principali di itinerari possono anche essere filtrati per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare gli itinerari escursionistici tramite i **simboli OSMC** come classi e tramite le reti *internazionali, nazionali, regionali* o *locali*, nonché *itinerari non classificati*, come sottoclassi. Filtri di classificazione di rete analoghi sono disponibili per gli itinerari ciclabili. Queste opzioni sono attualmente disponibili quando è abilitato il plugin [Sviluppo OsmAnd](../../plugins/development.md). Quando più reti di itinerari si sovrappongono, è possibile attivare o disattivare singole classificazioni per visualizzare solo i livelli di itinerario desiderati.
 - È possibile creare una traccia sopra gli itinerari utilizzando lo strumento [Pianifica un itinerario](../../plan-route/create-route.md). 
 - Quando più itinerari percorrono la stessa strada, ciascun itinerario viene visualizzato come una linea semitrasparente separata posizionata sopra le altre. 
 - Toccando un punto in cui si sovrappongono più itinerari viene visualizzato un menu contestuale con tutti gli itinerari che passano per quel punto. 

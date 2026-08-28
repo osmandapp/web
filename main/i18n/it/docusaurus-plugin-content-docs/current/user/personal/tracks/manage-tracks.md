@@ -1,5 +1,5 @@
 ---
-source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  Gestire le Tracce
 ---
@@ -70,7 +70,7 @@ Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android=
 
 <TabItem value="android" label="Android">
 
-Andare su: *scheda <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,15 +78,17 @@ Andare su: *scheda <Translate android="true" ids="shared_string_menu,shared_stri
 
 <TabItem value="ios" label="iOS">
 
-Andare su: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 Tutte le tracce registrate, create o importate vengono visualizzate automaticamente nella cartella [I miei luoghi](../../personal/myplaces.md) nella scheda *Tracce*. Sono organizzate per cartella o visualizzate in un elenco sottostante.
+
+Ogni traccia nell'elenco mostra il nome della cartella principale sulla seconda riga, separato da `|` (ad esempio, `Escursionismo | Tracce`), rendendo più facile identificare dove è memorizzata una traccia. Questo si applica in [Cerca](#search), [Cartelle smart](../../personal/tracks/smart-folder.md) e [Configura mappa → Tracce](../../map/tracks/index.md#configure-map).
 
 
 ### Menu Traccia {#track-menu}
@@ -105,7 +107,7 @@ Andare su: *scheda <Translate android="true" ids="shared_string_menu,shared_stri
 
 Andare su: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -130,7 +132,7 @@ Il menu offre le seguenti azioni:
 
 - **Condividi** — Consente di condividere la traccia selezionata con altri.
 
-- **Carica modifiche su OSM** (*iOS*) — [Carica le modifiche](../../plugins/osm-editing.md#gps-track) apportate alla traccia direttamente su *OpenStreetMap*.
+- **Carica su OSM** (*iOS*) — [Carica le modifiche](../../plugins/osm-editing.md#gps-track) apportate alla traccia direttamente su *OpenStreetMap*.
 
 - **Modifica** (*iOS*) — Utilizza lo strumento [Pianifica un percorso](../../plan-route/create-route.md#modify-existing-gpx-track) per modificare le tracce.
 
@@ -157,7 +159,7 @@ Il menu offre le seguenti azioni:
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ricerca tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Funzione di ricerca tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +171,7 @@ Disponibile:
 
 - Ricerca per nome della traccia.
 - [Ordina per](#sort-by) per una ricerca migliore se non si ricorda il titolo.
-- [Filtro](./smart-folder.md#search-filter) (*solo Android*) se si necessita delle caratteristiche specifiche della traccia.
+- [Filtro](./smart-folder.md#search-filter) se si necessita delle caratteristiche specifiche della traccia.
 
 
 ### Modalità di selezione {#selection-mode}
@@ -184,7 +186,7 @@ Disponibile:
 
 <TabItem value="ios" label="iOS">
 
-![Tracce I miei luoghi iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![Tracce I miei luoghi iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -221,7 +223,7 @@ Una volta effettuata la scelta, vengono forniti i seguenti passaggi:
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ordinamento tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Funzione di ordinamento tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -254,7 +256,7 @@ OsmAnd offre un modo semplice per ordinare le tracce, aiutandovi a gestire una v
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ordinamento tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Funzione di ordinamento tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -281,7 +283,7 @@ Toccare il *menu con i tre puntini* nel campo della cartella per **aprire** il m
 
 > Toccare a lungo il campo della cartella per **aprire** il menu della cartella.
 
-![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -295,7 +297,7 @@ Il menu della cartella delle tracce consente di visualizzare, rinominare, esport
 - **Nome** — Visualizza il nome della cartella, la data di creazione e il numero di tracce che contiene.
 - **Mostra tutte le tracce sulla mappa** (*solo Android*) — Visualizza tutte le tracce della cartella sulla mappa. Se ci sono molte tracce, questo potrebbe causare il blocco del dispositivo.
 - **Modifica nome** (*Android*) / **Rinomina** (*iOS*) — Consente di rinominare la cartella.
-- **[Cambia aspetto predefinito](../../map/tracks/appearance.md)** (*Android*) / **Aspetto** (*iOS*) — Cambia l'aspetto di visualizzazione di tutte le tracce nella cartella.
+- **[Cambia aspetto predefinito](../../map/tracks/appearance.md)** (*Android*) / **Aspetto predefinito** (*iOS*) — Cambia l'aspetto di visualizzazione di tutte le tracce nella cartella.
 - **[Esporta](../../personal/import-export.md)** — Apre la scheda *Menu → Impostazioni → Azioni* per esportare tutte le tracce della cartella come [file `.osf`](../../personal/import-export.md#export).
 - **[Sposta](#track-folder)** — Consente di spostare la cartella in un'altra cartella esistente o di crearne una nuova.
 - **[Elimina cartella](#delete-folder)** — Elimina la cartella dopo la conferma. ***Questa azione è irreversibile.***
@@ -317,7 +319,7 @@ Andare su: *scheda <Translate android="true" ids="shared_string_menu,shared_stri
 
 Andare su: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -349,7 +351,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![Tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -388,7 +390,7 @@ Andare su: *scheda <Translate android="true" ids="shared_string_menu,shared_stri
 
 Andare su: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Menu contestuale di una traccia in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 

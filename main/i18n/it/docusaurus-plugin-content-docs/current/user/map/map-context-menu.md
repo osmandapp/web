@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -142,7 +142,7 @@ I dettagli disponibili includono:
 - [All'interno delle aree](#polygon-information)
 - [POI nelle vicinanze](#nearby-pois)
 - [Luoghi popolari nelle vicinanze](#nearby-popular-places)
-- [Guide](#guides) (solo Android)
+- [Guide](#guides) 
 - [Percorsi del trasporto pubblico per le fermate](#public-transport-routes)
 - [Preferiti / Punti traccia dello stesso gruppo](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -170,21 +170,19 @@ Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descritti
 
 ![Elenco descrizioni](@site/static/img/map/description_list_new_android.png) ![Elenco descrizioni](@site/static/img/map/description_list_dialog.png)
 
-Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md#wikipedia-article), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
-
-Se il luogo selezionato ha un articolo di Wikipedia, viene mostrato un'anteprima breve in questa sezione. Quando l'articolo completo non è disponibile offline, appare il pulsante *Leggi su Wikipedia*. Toccandolo si apre una finestra di dialogo con opzioni a seconda dell'accesso dell'utente: gli utenti con un piano acquistato possono scaricare i dati regionali di Wikipedia o aprire l'articolo in un browser, mentre gli utenti gratuiti possono aprire l'articolo online o procedere alla schermata che offre l'accesso offline.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Elenco descrizioni](@site/static/img/map/description_list_new_ios.png)
-
-Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
+![Elenco descrizioni](@site/static/img/map/description_list_ios.webp) ![Elenco descrizioni](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md#wikipedia-article), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
+
+Se il luogo selezionato ha un articolo di Wikipedia, viene mostrato un'anteprima breve in questa sezione. Quando l'articolo completo non è disponibile offline, appare il pulsante *Leggi su Wikipedia*. Toccandolo si apre una finestra di dialogo con opzioni a seconda dell'accesso dell'utente: gli utenti con un piano acquistato possono scaricare i dati regionali di Wikipedia o aprire l'articolo in un browser, mentre gli utenti gratuiti possono aprire l'articolo online o procedere alla schermata che offre l'accesso offline.
 
 
 ### Nomi alternativi {#alternative-names}
@@ -324,9 +322,21 @@ Toccando *Luoghi popolari nelle vicinanze [Popular Places](https://osmand.net/do
 
 ### Guide {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guide Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guide iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sezione **Guide** appare nel menu contestuale della mappa per alcuni luoghi e fornisce accesso alle guide **Travel (Wikivoyage)** relative al punto di interesse selezionato. Mostra un elenco di voci della guida (ad esempio, un paese o una regione) che menzionano il luogo selezionato.
 

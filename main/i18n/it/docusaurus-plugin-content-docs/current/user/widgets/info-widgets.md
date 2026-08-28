@@ -1,5 +1,5 @@
 ---
-source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title: Widget informativi
 ---
@@ -32,9 +32,12 @@ I widget di altitudine visualizzano l'altezza sul livello del mare della geoloca
 ### Altitudine: Posizione attuale {#altitude-current-location}
   
 :::note  Scarica la correzione dell'altitudine mondiale
-Su alcuni dispositivi Android, l'altitudine potrebbe essere visualizzata in modo impreciso. Per risolvere questo problema, scarica una mappa con la correzione dell'altitudine.
+Su Android 14 e versioni successive, OsmAnd utilizza l'altitudine sul livello medio del mare (MSL) fornita da Google Play Services quando disponibile. In questo caso, la mappa di correzione dell'altitudine mondiale non è necessaria.
+
+Se si utilizza la fonte di posizione API Android o l'altitudine MSL non è disponibile, scaricare la mappa di correzione dell'altitudine mondiale per migliorare la precisione dell'altitudine.
 
 - Vai a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Per modificare la fonte di posizione, vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Per maggiori dettagli, visita [Maps & Resources](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -202,7 +205,7 @@ Dopo il ripristino, la velocità media viene ricalcolata a partire dai nuovi dat
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -247,28 +250,68 @@ I widget [semplici](../widgets/configure-screen.md#widget-panels) *Rapporto di p
 
 ### Rapporto di planata verso l'obiettivo {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Rapporto di planata verso l'obiettivo** mostra l'esatto rapporto di planata richiesto per raggiungere il punto di destinazione.
+- **Elevazione obiettivo** mostra l'elevazione del punto di destinazione. Il [Marcatore mappa](../personal/markers.md) dovrebbe essere usato come punto di destinazione.
+
+Per passare da una modalità all'altra, tocca direttamente il widget. L'opzione di passaggio non è disponibile nel [menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu). 
+
+| | |
+|:------------|:------------|
+| Abilita | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
+| Con un tocco | Cambia *Rapporto di planata verso l'obiettivo* o *Elevazione obiettivo*  |
+| Tocco lungo | Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Rapporto di planata verso l'obiettivo** mostra l'esatto rapporto di planata richiesto per raggiungere il punto di destinazione.
 - **Elevazione obiettivo** mostra l'elevazione del punto di destinazione. Il [Marcatore mappa](../personal/markers.md) dovrebbe essere usato come punto di destinazione.
 
 | | |
 |:------------|:------------|
-| Abilita | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
+| Abilita | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
 | Con un tocco | Cambia *Rapporto di planata verso l'obiettivo* o *Elevazione obiettivo*  |
 | Tocco lungo | Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Rapporto di planata medio {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Rapporto di planata medio** mostra il rapporto di planata medio per un intervallo di tempo specificato.
+
+| | |
+|:------------|:------------|
+| Abilita | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
+| Tocco lungo | Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Rapporto di planata medio** mostra il rapporto di planata medio per un intervallo di tempo specificato.
 - **Velocità verticale media** indica la velocità con cui un oggetto sale o scende in un certo periodo. Per la valutazione vengono considerati solo il primo e l'ultimo punto dell'intervallo di tempo. È possibile impostare l'intervallo di tempo per questo widget da 15 secondi a 60 minuti. È necessario utilizzare il [Marcatore mappa](../personal/markers.md) come punto di destinazione.
 
 | | |
 |:------------|:------------|
-| Abilita | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
+| Abilita | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget → Glide ratio* |
 | Con un tocco | Cambia *Rapporto di planata medio* o *Velocità verticale media*  |
 | Tocco lungo | Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Livello batteria {#battery-level}
@@ -560,11 +603,12 @@ Per aggiungere i widget Metriche veicolo alla schermata della mappa, abilita il 
 </Tabs>
 
 
-I widget appartengono al [plugin Metriche veicolo](../plugins/vehicle-metrics.md#widgets). È possibile utilizzarli per visualizzare le informazioni di uno scanner OBD-II collegato, come (*14 metriche*): **Tensione adattatore** (*solo Android*),&nbsp; **Temperatura ambiente**,&nbsp; **Tensione batteria**,&nbsp; **Carico motore calcolato**,&nbsp; **Temperatura del liquido di raffreddamento**,&nbsp; **Temperatura dell'olio motore**,&nbsp; **Tempo di funzionamento del motore**,&nbsp; **Velocità del motore** (*gratuito*),&nbsp; **Consumo di carburante**,&nbsp; **Pressione del carburante**,&nbsp; **Temperatura di aspirazione**,&nbsp; **Carburante rimanente**,&nbsp; **Posizione dell'acceleratore**, e **Velocità del veicolo** (*gratuito*).  
+I widget appartengono al [plugin Metriche veicolo](../plugins/vehicle-metrics.md#widgets). È possibile utilizzarli per visualizzare le informazioni di uno scanner OBD-II collegato, come (*14 metriche*): **Tensione adattatore**,&nbsp; **Temperatura ambiente**,&nbsp; **Tensione batteria**,&nbsp; **Carico motore calcolato**,&nbsp; **Temperatura del liquido di raffreddamento**,&nbsp; **Temperatura dell'olio motore**,&nbsp; **Tempo di funzionamento del motore**,&nbsp; **Velocità del motore** (*gratuito*),&nbsp; **Consumo di carburante**,&nbsp; **Pressione del carburante**,&nbsp; **Temperatura di aspirazione**,&nbsp; **Carburante rimanente**,&nbsp; **Posizione dell'acceleratore**, e **Velocità del veicolo** (*gratuito*).  
 
 - Per aggiungere i widget delle metriche del veicolo alla schermata della mappa, [abilita](../plugins/index.md#enable--disable) il **plugin Metriche veicolo**.
 - È possibile aggiungere widget anche se non è collegato alcuno scanner OBD-II.
 - Tutti i widget aggiunti sono visibili sia che uno scanner OBD-II sia collegato o meno.
+- Per valori accurati del **Consumo di carburante**, specifica la _[Capacità del serbatoio carburante](../navigation/guidance/vehicle-parameters.md#overview)_ del veicolo nelle impostazioni del profilo. Le modalità di consumo basate sulla distanza richiedono anche dati GPS.
 - Per modificare un widget, tocca il widget aggiunto al pannello, quindi tocca *Impostazioni*, oppure tocca direttamente l'icona *Impostazioni* nel campo del widget.
 
 | | |

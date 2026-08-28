@@ -1,5 +1,5 @@
 ---
-source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
@@ -100,7 +100,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 :::caution Solo Android
 :::
 
-- **Modalità provvisoria**. Esegui l'app in modalità provvisoria (più lenta).  
+- **Modalità provvisoria**. Esegue OsmAnd senza la libreria C++ nativa, utilizzando implementazioni Java per il rendering della mappa e il calcolo del percorso. L'app passa automaticamente a questa modalità se la libreria nativa non si avvia correttamente, consentendo comunque l'avvio e l'uso dell'applicazione. Il rendering della mappa e il calcolo del percorso risultano notevolmente più lenti mentre la modalità provvisoria è attiva.  
 
 
 ### Impostazioni di memoria {#memory-settings}

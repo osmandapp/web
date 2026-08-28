@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title:  Guide di viaggio
 ---
@@ -106,7 +106,7 @@ Quando si aprono le *Guide di viaggio* (*<Translate android="true" ids="shared_s
 
 <TabItem value="ios" label="iOS">
 
-![Schermata principale delle guide di viaggio](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Schermata principale delle guide di viaggio 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Schermata principale delle guide di viaggio](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Schermata principale delle guide di viaggio 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ Se si tocca il pulsante *Segnalibro*, l'articolo verrà salvato per una lettura 
 
 <TabItem value="ios" label="iOS">
 
-![Menu di ricerca delle guide di viaggio](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Menu di ricerca delle guide di viaggio](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 

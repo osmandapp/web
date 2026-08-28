@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Istruzioni vocali / Notifiche
 ---
@@ -52,7 +52,7 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> button* *(o <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Scegli profilo → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 
 - *Ripeti istruzioni di navigazione*. Consente di ripetere le istruzioni di navigazione a intervalli regolari da 1 a 30 minuti. Oppure manualmente: se si perde un'istruzione vocale, è possibile riascoltarla semplicemente toccando [la freccia della svolta corrente](../../widgets/nav-widgets.md#next-turn) sulla schermata dell'applicazione.
 - *[Tempo di annuncio](#announcement-time)*.
+- *Metti in pausa l'audio parlato* (*solo iOS*). Se abilitato, podcast, audiolibri e altri audio parlati vengono messi in pausa durante la riproduzione delle istruzioni vocali. La riproduzione musicale continua a volume ridotto. Se disabilitato, sia l'audio parlato che la musica continuano a un volume ridotto.
 
 **Uscita** (*solo Android*):
 
