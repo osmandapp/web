@@ -1,5 +1,5 @@
 ---
-source-hash: c3c5e0130694f29e6de5468d2ca41c493bf6bc1951cbd2b579086e452b3870dd
+source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
 sidebar_position: 7
 title:  Favoris
 ---
@@ -90,6 +90,7 @@ Lors de l'ajout d'un point à partir des données OSM, les informations pertinen
 - **Adresse** et **Description** (*Optionnel*).
 - **Groupe** — Sélectionnez un [groupe de favoris](#manage-favorites) existant ou créez-en un nouveau. Sur Android, vous pouvez également sélectionner un sous-dossier dans un groupe ou créer un nouveau. Les dossiers imbriqués sont affichés avec leur chemin complet (par exemple, *Voyage* / *Italie* / *Rome*).
 - **Personnalisation visuelle** — L'icône, la couleur et la forme peuvent soit correspondre à l'[apparence par défaut du groupe](#change-group-appearance), soit être personnalisées individuellement.
+- **Média** (*Android uniquement*) — Joignez des photos, des vidéos, des enregistrements audio ou des images depuis votre Galerie ou vos Fichiers.
 
 **NOTE :** Si la couche Favoris est désactivée dans [Configurer la carte](../map/configure-map-menu), l'ajout d'un nouveau point favori active automatiquement la couche pour rendre le favori nouvellement ajouté visible sur la carte.
 
@@ -100,7 +101,7 @@ Lors de l'ajout d'un point à partir des données OSM, les informations pertinen
 
 <TabItem value="android" label="Android">
 
-![Modifier un favori Android](@site/static/img/personal/favorite_edit_android.png)
+![Modifier un favori Android](@site/static/img/personal/favorite_edit_android.webp)
 
 </TabItem>
 
@@ -119,7 +120,7 @@ Pour modifier un point favori :
 
 ***Options disponibles :***
 
-- **Modifier les détails** — Nom, icône, groupe, adresse et description.
+- **Modifier les détails** — Nom, icône, groupe, adresse, description et médias joints.
 - **Remplacer l'emplacement** — Remplacez un autre point par celui-ci. Utile pour mettre à jour un point spécifique (par ex. *Ma voiture garée*) ou en créer un nouveau.
 - **Supprimer** — Supprimez le favori en utilisant l'option de suppression, accessible via le menu Modifier ou via le bouton de suppression sur Android.
 
@@ -138,7 +139,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![Mes lieux iOS](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -157,6 +158,24 @@ Une large gamme d'icônes pour les POI et les points de cheminement est disponib
 Le *dossier Personnel* contient des points spéciaux comme **<Translate android="true" ids="favorite_home_category"/>** et **<Translate android="true" ids="work_button"/>**, souvent utilisés pour la [navigation](../navigation/setup/route-navigation.md#select-start-point). Ce dossier n'a pas de *menu à trois points*, et ses paramètres ne peuvent pas être modifiés.
 
 
+### Médias (Android uniquement) {#media}
+
+![Médias](@site/static/img/personal/media_actions.webp) ![Médias](@site/static/img/personal/media_menu.webp)
+
+La section Médias vous permet de joindre des photos, des vidéos, des enregistrements audio et des images à un point favori. Les médias peuvent être ajoutés lors de la création d'un favori ou ultérieurement depuis l'écran Modifier le favori. Pour joindre des médias, appuyez sur *Ajouter* dans la section Médias et choisissez l'une des options disponibles :
+- **Prendre une photo** — Capturez une nouvelle photo avec l'appareil photo de l'appareil.
+- **Prendre une note vidéo** — Enregistrez une nouvelle vidéo.
+- **Prendre une note audio** — Enregistrez une note audio.
+- **Choisir dans la Galerie** — Sélectionnez une image existante sur votre appareil.
+- **Choisir dans les Fichiers** — Sélectionnez une image dans le système de fichiers.
+
+Une fois le média joint, il apparaît dans la carte Médias du menu contextuel du favori. La même carte Médias est également disponible pour les [Points de cheminement](../map/tracks/track-context-menu.md#points--waypoints).
+
+La carte Médias affiche les aperçus des éléments joints. Les éléments affichés suivent l'ordre de tri sélectionné. Appuyez sur *Afficher tout* pour ouvrir la galerie complète. La galerie affiche tous les médias joints au favori sélectionné.
+
+Appuyez sur n'importe quel élément pour l'ouvrir en vue plein écran. Les photos et vidéos peuvent être visualisées directement, tandis que les enregistrements audio incluent des commandes de lecture.
+
+
 ## Gérer les favoris {#manage-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -171,7 +190,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![Mes lieux iOS](@site/static/img/personal/my_places_ios_new.png)
 
@@ -179,9 +198,9 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-La section **Mes favoris** vous permet de :
+La section **Favoris** vous permet de :
 
-- [Rechercher](#order--sorting--search) des favoris ou des groupes spécifiques.
+- [Rechercher](#order--sorting--search) des favoris ou des groupes spécifiques. Sur iOS, les groupes de favoris (dossiers) sont organisés en trois sections : **Épinglés**, **Visibles** et **Masqués**. Les sections vides ne sont pas affichées.
 - [Opérations en masse](#bulk-edit--delete) — Partager, déplacer ou supprimer plusieurs favoris à la fois.
 
 ### Ordre / Tri / Recherche {#order--sorting--search}
@@ -190,23 +209,19 @@ La section **Mes favoris** vous permet de :
 
 <TabItem value="android" label="Android">
 
-![Dossiers de favoris Android](@site/static/img/personal/favorites_folders_sorting.png)
-
-- **Tri** — Les dossiers et points favoris peuvent être triés en utilisant les options de tri disponibles dans le menu de la liste. Les options suivantes sont disponibles : *Nom A – Z*, *Nom Z – A*, *Dernière modification*, *Date la plus récente en premier*, *Date la plus ancienne en premier*. Par défaut, les éléments sont triés par Nom A – Z. Les dossiers épinglés sont toujours affichés en haut de la liste. Ils sont visuellement séparés du reste des dossiers par un séparateur. Le [dossier personnel](../personal/favorites.md#special-favorites-personal) est épinglé par défaut. 
-- **Recherche** — Utilisez la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Les favoris sont triés par distance par rapport au centre de la carte.
+![Favoris Android](@site/static/img/personal/favorites_points_sorting.webp) ![Favoris Android](@site/static/img/personal/favorites_folders_sorting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Dossiers de favoris iOS](@site/static/img/personal/favorites_folders_ios.png)
-
-- **Tri** — Les dossiers et points favoris sont triés par ordre alphabétique, avec le [dossier personnel](../personal/favorites.md#special-favorites-personal) en haut.
-- **Recherche** — Utilisez la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Les favoris sont triés par distance par rapport au centre de la carte.
-
+![Favoris iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favoris iOS](@site/static/img/personal/favorites_folders_sorting.webp)
 </TabItem>
 
 </Tabs>
+
+- **Tri** — Les dossiers et points favoris peuvent être triés en utilisant les options de tri disponibles dans le menu de la liste. Pour les points favoris, les options suivantes sont disponibles : *Nom A – Z*, *Nom Z – A*, *Dernière modification*, *Le plus proche de l'emplacement actuel*, *Le plus proche du centre de la carte*, *Date la plus récente en premier* et *Date la plus ancienne en premier*. Pour les dossiers de favoris, les options suivantes sont disponibles : *Nom A – Z*, *Nom Z – A*, *Dernière modification*, *Date la plus récente en premier* et *Date la plus ancienne en premier*. Par défaut, les éléments sont triés par Nom A – Z. Les dossiers épinglés sont toujours affichés en haut de la liste. Ils sont visuellement séparés du reste des dossiers par un séparateur. 
+- **Recherche** — Utilisez la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Les favoris sont triés par distance par rapport au centre de la carte. Pour rechercher des points favoris depuis la liste des Favoris dans l'onglet Mes lieux, appuyez sur l'icône *Rechercher* (loupe).
 
 ### Modification / Suppression en masse {#bulk-edit--delete}
 
@@ -237,11 +252,24 @@ Lorsque des points favoris sont sélectionnés, les actions suivantes sont dispo
 
 <TabItem value="ios" label="iOS">
 
-![Actions sur les favoris iOS](@site/static/img/personal/favorites_actions_ios.png)
+![Actions sur les favoris iOS](@site/static/img/personal/favorites_actions_folders.webp) ![Actions sur les favoris iOS](@site/static/img/personal/favorites_actions_points.webp)
 
-- Pour gérer plusieurs favoris, appuyez sur le bouton **Modifier** (*icône de crayon*).
-- Sélectionnez des favoris individuels ou des dossiers entiers pour les opérations en masse.
-- **Options disponibles** — *Partager*, *Déplacer vers un groupe de favoris*, *Changer la couleur* et *Supprimer*.
+Pour gérer plusieurs points favoris ou dossiers, entrez en *Mode de sélection* en appuyant sur le *menu à trois points* dans le coin supérieur droit et en choisissant *Sélectionner*. Lorsque le mode de sélection est activé, des cases à cocher apparaissent à côté des éléments de la liste. Sélectionnez les points favoris ou dossiers requis en appuyant sur les cases à cocher. Pour sélectionner tous les éléments de la liste, appuyez sur l'icône Sélectionner tout dans le coin supérieur droit.
+
+Les actions disponibles pour les points favoris sélectionnés sont les suivantes :
+
+- **Partager** — Exporter les points sélectionnés sous forme de fichier Favorites.gpx.
+- **Déplacer** — Déplacer les points favoris sélectionnés vers un autre dossier.
+- **Changer l'apparence** — Modifier l'apparence des points favoris sélectionnés.
+- **Ajouter aux marqueurs de carte** — Ajouter les points sélectionnés à la liste des marqueurs de carte.
+- **Ajouter à une trace** — Ajouter les points sélectionnés à une trace.
+- **Ajouter à la navigation** — Ajouter les points sélectionnés à la navigation.
+- **Supprimer** — Supprimer les points favoris sélectionnés.
+
+Pour les dossiers sélectionnés, les mêmes actions sont disponibles, avec les options supplémentaires suivantes :
+
+- **Afficher sur la carte** / **Masquer sur la carte** — Afficher ou masquer les points favoris des dossiers sélectionnés sur la carte.
+- **Épingler** / **Désépingler le dossier** — Épingler ou désépingler les dossiers sélectionnés.
 
 </TabItem>
 
@@ -271,7 +299,17 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 ![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions.webp)
 
-Utilisez le ***menu à trois points*** à côté de chaque dossier pour gérer les groupes de favoris :
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Sur Android, utilisez le ***menu à trois points*** à côté de chaque dossier pour gérer les groupes de favoris. Sur iOS, utilisez l'***appui long*** sur le dossier pour gérer les groupes de favoris : 
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
 - **<Translate android="true" ids="pin_folder"/>** — Épinglez le dossier sélectionné pour le garder en haut de la liste des favoris pour un accès plus rapide.
@@ -281,26 +319,8 @@ Utilisez le ***menu à trois points*** à côté de chaque dossier pour gérer l
 - **<Translate android="true" ids="shared_string_move"/>** — Déplacez le dossier sélectionné, y compris tous les points favoris et les sous-dossiers imbriqués, vers un autre dossier. Le dossier actuel et ses sous-dossiers ne peuvent pas être sélectionnés comme destination.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Retirer des marqueurs de carte** — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou retirez-les selon vos besoins pour une référence facile.
 - **<Translate android="true" ids="add_to_a_track"/>** — Ajoutez tous les points favoris du dossier sélectionné à une trace. Cela ouvre l'écran de sélection de trace où vous pouvez choisir ou créer une trace.
-
+- **Ajouter à la navigation** (*iOS uniquement*) — Ajoutez tous les points favoris du dossier sélectionné à la navigation.
 - **<Translate android="true" ids="shared_string_delete"/>** — Supprimez définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
-
-Utilisez l'***appui long*** sur le dossier pour gérer les groupes de favoris :
-
-- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
-- **<Translate ios="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
-- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
-- **<Translate ios="true" ids="shared_string_share"/>** — Partagez les points favoris du dossier en les exportant sous forme de fichier *Favorites.gpx*, ce qui facilite le transfert ou la sauvegarde de vos données.
-- **<Translate ios="true" ids="shared_string_delete"/>** — Supprimez définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
-
-</TabItem>
-
-</Tabs>
 
 ### Modifier l'apparence du groupe {#change-group-appearance}
 
@@ -318,7 +338,7 @@ Aller à : *Menu à trois points → Modifier l'apparence par défaut*
 
 Aller à : *Appui long sur le dossier → Apparence par défaut*
 
-![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_3_ios.png)
+![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
 
 </TabItem>
 
@@ -345,7 +365,7 @@ OsmAnd propose plusieurs méthodes pour [sauvegarder](./import-export.md) et [re
 
 - **Emplacements de sauvegarde** — Stockage local, [OsmAnd Cloud](../personal/osmand-cloud.md) (uniquement avec un [abonnement OsmAnd Pro ou OsmAnd Start](../purchases/index.md)), ou applications de messagerie instantanée.
 
-- **Format de fichier** — Les favoris sont enregistrés sous forme de fichiers `.gpx` (favorites.gpx).
+- **Format de fichier** — Les favoris sont enregistrés sous forme de fichiers `.gpx` (favorites.gpx). Utilisez le format `.osf` pour sauvegarder les favoris avec leurs médias joints. L'importation de la sauvegarde restaure à la fois les points favoris et leurs médias associés.
 
 
 ### Sauvegarde gratuite sur le cloud {#free-cloud-backup}
@@ -362,9 +382,9 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Actions sur les favoris iOS](@site/static/img/personal/favorites_free_backup_2_ios.png)
+![Actions sur les favoris iOS](@site/static/img/personal/favorites_free_backup_2_ios.webp)
 
 </TabItem>
 
@@ -393,7 +413,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![Actions sur les favoris iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
@@ -409,30 +429,30 @@ Vous avez besoin d'un compte OsmAnd Cloud pour utiliser la fonction *Sauvegarde 
 - *[Forfait OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Sélectionnez cette option pour accéder à la fonction de sauvegarde gratuite des paramètres.
 - *Créez une sauvegarde* de vos paramètres.
 
-
-### Tous les favoris {#all-favorites}
+<!--
+### All Favorites {#all-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Actions sur les favoris Android](@site/static/img/personal/favorites_export_import_2_andr.png)
+![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Exportation et importation de favoris iOS](@site/static/img/personal/favorites_export_import_3_ios.png)  
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Vous pouvez exporter et importer vos favoris en utilisant les boutons spéciaux en bas de l'écran des Favoris. Un fichier [.gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) peut être envoyé à Dropbox, par e-mail, via des messageries et d'autres applications installées sur votre appareil qui prennent en charge cette fonctionnalité.
+You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
 
-- Bouton **Importer** (*Android*) / **Importer un favori** (*iOS*). Permet d'importer des points favoris (*favorites.gpx*) en tant que points de cheminement à partir d'un fichier *GPX* (un format de données GPS courant) depuis le stockage de votre appareil.
-- Bouton **Partager** (*Android*) / **Exporter un favori** (*iOS*). Permet d'exporter (partager) tous vos favoris sous forme de fichier *favorites.gpx*.
-
+- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
+- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
+-->
 
 ### Groupe de favoris {#favorite-group}
 
@@ -440,20 +460,21 @@ Vous pouvez exporter et importer vos favoris en utilisant les boutons spéciaux 
 
 <TabItem value="android" label="Android">
 
-![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Actions sur les favoris iOS](@site/static/img/personal/favorites_actions_1_ios.png)   ![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
-
+![Actions sur les favoris iOS](@site/static/img/personal/favorites_actions_1_ios.webp) 
 </TabItem>
 
 </Tabs>
 
-- Appuyez sur le **menu à trois points** (*Android*) ou sur le bouton **Modifier** (*icône de crayon sur iOS*) ou faites un **appui long** sur le dossier (*iOS*) du dossier de favoris sélectionné.
-- Choisissez le bouton **Partager** pour envoyer le fichier *Favorites.gpx* dans la mémoire de votre appareil ou le partager via des applications de messagerie.  
+- Pour partager plusieurs dossiers de favoris, entrez en [Mode de sélection](#bulk-edit--delete), sélectionnez les dossiers requis et appuyez sur *Partager*.
+- Pour partager un seul dossier de favoris, appuyez sur le menu à trois points (*Android*) ou faites un appui long sur le dossier (*iOS*), sélectionnez *Partager* pour envoyer le fichier Favorites.gpx dans la mémoire de votre appareil ou le partager via des applications de messagerie. Sur Android, si le dossier contient des médias joints, une feuille de partage apparaît. Vous pouvez choisir :
+    - *Points uniquement* — Partagez les points favoris du dossier sous forme de fichier GPX.
+    - *Points et médias* — Partagez les points favoris et les médias joints sous forme d'archive OSF.
 
 
 ### Sauvegarde automatique des favoris {#automatic-favorites-backup}
@@ -497,6 +518,8 @@ Dans les dernières versions d'***Android***, l'accès aux répertoires système
 ### Favoris dans un fichier GPX {#favorites-in-gpx-file}
 
 Toutes les informations sur un favori sont stockées et décrites à l'aide de balises. Lors de la création d'un point favori, vous pouvez écrire votre propre [description](#favorite-point) ou utiliser les informations des données du [point d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM à partir duquel votre point a été créé. Les points favoris, les POI et les points de cheminement utilisent les mêmes **balises** pour stocker les informations et sont enregistrés au **format de fichier GPX**.  
+
+Les favoris peuvent également contenir des références aux médias joints à l'aide d'éléments GPX `<link>` standard. 
 
 
 ```xml

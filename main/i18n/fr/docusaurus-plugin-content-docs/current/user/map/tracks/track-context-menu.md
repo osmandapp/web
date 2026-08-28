@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -364,11 +364,13 @@ S'il n'y a *aucune information d'altitude* sur l'itinéraire, vous pouvez l'ajou
 
 ### Calculer l'altitude manquante {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Fonctionnalité Pro
 [Calculer l'altitude hors ligne](../../plan-route/create-route.md#get-elevation-data) est une fonctionnalité payante [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Cette fonctionnalité](../../plan-route/create-route.md#get-elevation-data) vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en se basant sur les [données des cartes de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
 
@@ -377,11 +379,27 @@ S'il n'y a *aucune information d'altitude* sur l'itinéraire, vous pouvez l'ajou
 
     ![Graphique d'altitude de la trace Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Graphique d'altitude de la trace Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Si vous créez un itinéraire avec l'outil [Planifier un itinéraire](../../plan-route/create-route.md#graph) en utilisant la méthode *Ligne droite* et qu'il n'y a pas de données d'altitude sur le graphique, vous devez :
+3. Si vous créez un itinéraire avec l'outil [Planifier un itinéraire](../../plan-route/create-route.md#graph--analyze) en utilisant la méthode *Ligne droite* et qu'il n'y a pas de données d'altitude sur le graphique, vous devez :
     - Appuyez sur *Obtenir les données d'altitude*, puis sélectionnez *Utiliser les cartes de terrain*.
     - Après le calcul, vous obtiendrez le graphique complet Altitude/Pente de votre itinéraire basé sur les données du terrain.  
 
   ![Graphique d'altitude de la trace Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Graphique d'altitude de la trace Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Données d'altitude iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Données d'altitude iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Cette fonctionnalité](../../plan-route/create-route.md#get-elevation-data) vous permet de calculer les données d'altitude manquantes pour un [itinéraire planifié](../../plan-route/create-route.md#create-new-route) ou une [trace GPX existante](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Si vous créez un itinéraire en utilisant la méthode Ligne droite et que les données d'altitude ne sont pas disponibles, appuyez sur *Obtenir les données d'altitude* dans l'onglet Analyser et sélectionnez *Utiliser les cartes de terrain*. Les [Cartes de terrain (3D)](../../plugins/topography.md#download-maps) précédemment téléchargées sont requises. Le profil d'altitude est ensuite calculé à partir des données du terrain tandis que la géométrie de l'itinéraire reste inchangée.
+
+Pour une trace GPX existante, vous pouvez sélectionner *Utiliser les routes à proximité*. OsmAnd rattache la trace aux routes autorisées les plus proches à l'aide d'un profil de navigation sélectionné et récupère les données d'altitude des routes rattachées. Cette option peut ajuster la géométrie de la trace. Si nécessaire, vous pouvez également sélectionner *Utiliser les cartes de terrain* pour calculer l'altitude tout en conservant la géométrie de la trace.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Points / Waypoints {#points--waypoints}
@@ -392,13 +410,13 @@ Les waypoints sont l'un des types de points disponibles sur la carte. En génér
 
 <TabItem value="android" label="Android">
 
-![Points du menu contextuel de la trace Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Points du menu contextuel de la trace Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Points du menu contextuel de la trace Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Points du menu contextuel de la trace iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Points du menu contextuel de la trace iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Points du menu contextuel de la trace iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -487,7 +505,7 @@ Le *menu à trois points* ( &#8285; ) ouvre le *menu du groupe* de waypoints.
 - **<Translate android="true" ids="shared_string_rename"/>** - Changer le nom du groupe.
 - **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Changer les options d'affichage pour un groupe de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** ou **Supprimer** (*Android uniquement*) - Déplacer les waypoints du groupe vers la liste des [Marqueurs de carte](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*Android uniquement*) - Permet de copier le groupe de waypoints sélectionné dans les [Favoris](../../personal/favorites.md). Vous pouvez choisir l'une des deux options : ***<Translate android="true" ids="copy_as_new_folder"/>*** ou ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Permet de copier le groupe de waypoints sélectionné dans les [Favoris](../../personal/favorites.md). Vous pouvez choisir l'une des deux options : ***<Translate android="true" ids="copy_as_new_folder"/>*** ou ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Android uniquement*) - Crée un itinéraire entre les waypoints. Les premier et dernier points deviennent le départ et l'arrivée de l'itinéraire, et les autres sont convertis en points intermédiaires.
 - **<Translate android="true" ids="shared_string_delete"/>** - Supprimer un groupe de waypoints.
 

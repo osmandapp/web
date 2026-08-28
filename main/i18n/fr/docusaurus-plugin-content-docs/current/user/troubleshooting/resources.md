@@ -1,5 +1,5 @@
 ---
-source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -111,7 +111,16 @@ Le fichier [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) est principalement basé sur UniMap et routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Ceci est un style de rendu OsmAnd optimisé pour la chasse aux tempêtes](https://github.com/pqo/stormchasing-rendering-style)  |[Style de rendu Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Itinéraires
+
+Le fichier `routing.xml` par défaut peut être personnalisé pour ajuster les algorithmes et paramètres d'itinéraire pour des conditions spécifiques.
+
+| Nom de la source | Description | Lien |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Modification personnalisée de `routing.xml` qui ajuste le calcul d'itinéraire pour les conditions pluvieuses, en tenant compte du type de surface (par ex. roche nue), de la pente et des classements officiels de difficulté des sentiers (échelles CAI/SAC), ainsi qu'une logique améliorée « Éviter les tunnels ». | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Cartes hors ligne {#offline-maps}
 

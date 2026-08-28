@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  Préparation de l'itinéraire
 ---
@@ -70,11 +70,11 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
     - Ajoutez des [destinations intermédiaires](#intermediate-destinations) (facultatif).
     - Vous pouvez également changer le point de départ de la [position actuelle](../../map/interact-with-map.md#my-position-and-zoom) à celui souhaité.
 
-2. Des [*Paramètres de navigation*](#settings) supplémentaires peuvent être utilisés en fonction de vos objectifs (vous pouvez configurer les routes à éviter ou à préférer, économiser du carburant ou choisir l'itinéraire le plus rapide, etc.).
+2. Des [*Paramètres de navigation*](#settings) supplémentaires peuvent être utilisés en fonction de vos objectifs (vous pouvez configurer les routes à éviter ou à préférer, économiser du carburat ou choisir l'itinéraire le plus rapide, etc.).
 
 3. [Démarrer](#start--stop-navigation) la navigation ou d'abord [simuler la navigation](#simulated-navigation) (avec cette fonction, vous pouvez tester votre itinéraire avant de le parcourir réellement). [Sur les appareils iOS](https://support.apple.com/en-us/121430) dans les pays de l'UE, OsmAnd peut également être défini comme application de navigation par défaut dans les paramètres système, ce qui lui permet de s'ouvrir automatiquement pour les demandes de navigation.
 
-4. Pendant le trajet, vous pouvez [*Mettre en pause/Reprendre*](#pause--resume-navigation) la navigation et l'[*Arrêter*](#start--stop-navigation).
+4. Pendant le trajet, vous pouvez [*Mettre en pause/Reprendre*](#pause--resume-navigation) la navigation et l'[*Arrêter*](#start--stop-navigation) it.
 
 
 :::note
@@ -461,13 +461,11 @@ Allez à : *<Translate android="true" ids="shared_string_navigation,shared_strin
 
 ## Cartes manquantes ou non synchronisées {#maps-missing-or-not-synchronized}
 
-Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être téléchargées et avoir la même date de publication. Veuillez noter que dans certaines situations, le message de cartes manquantes peut être caché dans le menu de préparation de l'itinéraire. Si vous tirez le menu de navigation vers le haut, vous verrez les raisons possibles pour lesquelles votre itinéraire n'a pas pu être calculé.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Message pas de cartes lors de la construction de la navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Message pas de cartes lors de la construction de la navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Message pas de cartes lors de la construction de la navigation Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être
 </TabItem>
 
 </Tabs>
+
+Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être téléchargées et avoir la même date de publication. Sur Android, si les cartes requises ont des dates de publication différentes, OsmAnd peut passer au routage standard lorsque la [méthode de calcul d'itinéraire](../routing/car-based-routing.md#route-parameters---car) est définie sur Auto.
+
+Veuillez noter que dans certaines situations, le message de cartes manquantes peut être caché dans le menu de préparation de l'itinéraire. Si vous tirez le menu de navigation vers le haut, vous verrez les raisons possibles pour lesquelles votre itinéraire n'a pas pu être calculé.
 
 ### Cartes requises {#required-maps}
 

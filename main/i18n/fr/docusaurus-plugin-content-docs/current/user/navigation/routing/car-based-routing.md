@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title:  Itinéraire voiture (Camion, Moto)
 ---
@@ -35,7 +35,7 @@ Le calcul d'itinéraire pour voiture est conçu pour aider les conducteurs à tr
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Paramètres d'itinéraire voiture Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Paramètres d'itinéraire voiture Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -56,6 +56,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Les restrictions d'accès privé seront ignorées lors du calcul de l'itinéraire.  | La balise *[private](https://wiki.openstreetmap.org/wiki/Key:access)* est utilisée dans OSM pour décrire les restrictions d'utilisation des autoroutes et autres voies de transport, ainsi que des bâtiments, entrées, commodités et entités de loisirs.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (voiture&nbsp;uniquement) |  <details><summary> Les routes fermées à la livraison de marchandises seront évitées. </summary>![Livraison de marchandises Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Cette option s'applique uniquement aux véhicules transportant des marchandises ne pesant pas plus de 3,5 tonnes. Si le poids de votre véhicule est supérieur à 3,5 tonnes, vous devez utiliser le [profil Camion](#route-parameters---truck).   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Pour calculer un itinéraire économe en carburant, le moteur de routage limite la vitesse en interne à 60 km/h, sans pour autant modifier l'heure d'arrivée estimée. Ainsi, dans le cas de 2 itinéraires identiques départ-arrivée : autoroute (120 km/h) et route secondaire (60 km/h) - l'itinéraire le plus court sera sélectionné. Pour les routes de service qui ont une limitation de vitesse < 60 km/h, l'itinéraire le plus rapide sera sélectionné. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android uniquement*) | Sélectionnez la méthode de calcul d'itinéraire préférée. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Paramètres d'itinéraire - Camion {#route-parameters---truck}

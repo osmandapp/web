@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,9 +225,29 @@ En plus des fonctionnalités de base de l'application OsmAnd dans *CarPlay* qui 
 
 Le guidage vocal pour *CarPlay* est l'une des fonctionnalités de navigation les plus utiles d'OsmAnd, fournissant des indications en temps réel et permettant au conducteur de rester concentré sur la route. Les instructions vocales indiquent clairement les virages, les directions et autres instructions de navigation, garantissant une utilisation plus sûre et plus confortable du système de navigation.  
 
-Lorsque les instructions vocales sont diffusées, OsmAnd ajuste l'audio de fond en fonction de son type. Le contenu audio parlé, tel que les podcasts et les livres audio, peut être automatiquement mis en pause pendant les instructions de navigation. La lecture de musique se poursuit avec un volume réduit. L'option *<Translate ios="true" ids="pause_spoken_audio"/>* vous permet de contrôler ce comportement.
+Lorsque les instructions vocales sont diffusées, OsmAnd ajuste l'audio de fond en fonction de son type. Avec l'option *<Translate ios="true" ids="pause_spoken_audio"/>* activée, le contenu audio parlé, tel que les podcasts et les livres audio, est mis en pause pendant les instructions de navigation, tandis que la lecture de musique se poursuit avec un volume réduit. Lorsque l'option *<Translate ios="true" ids="pause_spoken_audio"/>* est désactivée, le contenu audio parlé et la musique continuent de jouer avec un volume réduit.  
 
 Pour configurer les instructions vocales selon le profil sélectionné, vous devez le faire avant de commencer un itinéraire dans l'application OsmAnd sur votre appareil. Pour voir les paramètres recommandés pour *CarPlay*, consultez l'article [Instructions vocales / Notifications](../navigation/guidance/voice-navigation.md).  
+
+
+### Alertes de navigation {#navigation-alerts}
+
+![Alerte manquante](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Alerte privée](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Des alertes utiles sont automatiquement affichées avant le démarrage de la navigation lorsqu'une action supplémentaire est requise pour calculer l'itinéraire. Ces alertes vous aident à résoudre les problèmes d'itinéraire avant le début de la navigation.
+
+**Cartes manquantes ou obsolètes**
+
+Si certaines cartes hors ligne requises pour calculer l'itinéraire sont manquantes ou obsolètes, une alerte s'affiche. Vous pouvez choisir l'une des options suivantes :
+- **Utiliser les cartes téléchargées**. Calculez l'itinéraire en utilisant les cartes actuellement disponibles sur votre appareil.
+- **Afficher sur le téléphone**. Ouvrez l'écran de téléchargement de cartes sur votre iPhone pour télécharger ou mettre à jour les cartes requises. Une fois les cartes téléchargées, vous pouvez relancer la navigation.
+- **Annuler**. Fermez l'alerte sans démarrer la navigation.
+
+**Avertissement d'accès privé**
+
+Si l'itinéraire nécessite l'utilisation d'une route privée pour atteindre votre destination, un avertissement s'affiche : *Autoriser l'utilisation d'une route privée pour atteindre votre destination ?* Vous pouvez choisir :
+- **Autoriser**. Poursuivre l'itinéraire en utilisant la route privée.
+- **Annuler**. Fermez l'alerte et revenez à l'écran précédent, où vous pouvez modifier la destination ou poursuivre une autre action.
 
 
 ### Widget d'alerte à l'écran {#screen-alert-widget}
