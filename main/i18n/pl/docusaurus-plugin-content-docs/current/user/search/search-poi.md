@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title:  Wyszukiwanie POI
 ---
@@ -198,10 +198,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Dzięki funkcji **Filtruj** możesz wybrać niezbędne cechy i w rezultacie otrzymać listę zawierającą tylko odpowiednie obiekty. Aby użyć filtra:
 
 - Wybierz interesującą Cię kategorię z listy kategorii.
-- Na ekranie, który się otworzy, dotknij ikony wyświetlającej filtr. Znajduje się ona pod polem wprowadzania, obok *Pokaż na mapie*.
+- Na ekranie, który się otworzy, dotknij ikony wyświetlającej filtr. Znajduje się ona pod polem wprowadzania, obok *Sortuj według* na Androidzie i obok *Pokaż na mapie* na iOS.
 - W filtrze wybierz typ cech.
 
-![Wyszukiwanie POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Wyszukiwanie POI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Filtr może składać się z dość dużej liczby pozycji, których obecność zależy od wybranej kategorii. Każda kategoria ma szereg specyficznych dla niej filtrów, uporządkowanych w folderach według typu. W sumie istnieją *21 domyślne kategorie*. Są one wymienione tutaj:
 
@@ -325,8 +325,6 @@ Korzystanie z wyszukiwania online:
 - Przydatne w miastach i na autostradach z dobrym zasięgiem internetu.
 - Wyszukiwanie online jest wygodne w użyciu, jeśli nie ma map regionu i nie można ich pobrać.
 - *Wymaga stałego i stabilnego połączenia z internetem.*  
-
-![Wyszukiwanie POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
 Aby poprawić wyniki, przed użyciem narzędzia Wyszukaj, powiększ mapę, aby zbliżyć się do miejsca, w którym chcesz znaleźć określoną lokalizację. A podczas wyszukiwania możesz **zwiększyć promień wyszukiwania**, aby znaleźć miejsca, które są dalej od Twojej lokalizacji. Podczas wyszukiwania offline, jeśli wymagane wyniki nie są dostępne, OsmAnd sugeruje użycie wyszukiwania online.  
 
@@ -508,7 +506,7 @@ Można usuwać tylko kategorie, które zostały utworzone za pomocą filtrów lu
 
 - Przejdź do zakładki [Kategorie](#poi-search-by-categories) i wybierz wymaganą.
 - W polu obok *Pokaż na mapie* dotknij ikony reprezentującej *filtr*.
-- W menu *Filtry* dotknij *menu z trzema kropkami* ( &#8285; ) znajdującego się w prawym górnym rogu ekranu.
+- W menu *Filtry* dotknij *menu z trzemi kropkami* ( &#8285; ) znajdującego się w prawym górnym rogu ekranu.
 - Wybierz **Usuń filtr**.
 - ***Nie można cofnąć usunięcia.***
 

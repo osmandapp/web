@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -27,6 +27,7 @@ Możesz:
 - Organizować widżety w panelach (górnym, dolnym, lewym, prawym, środkowym).
 - Tworzyć wiele **stron** w panelach bocznych, wybierać rozmiar widżetów.
 - Wybierać wysokość wiersza i przełączać ikony widżetów.
+- Na Androidzie dostosowywać [wygląd panelu widżetów](#widget-panel-appearance).
 
 Wszystkie widżety są [zależne od profilu](../personal/profiles.md) — każdy profil ma swój własny układ, kolejność, widoczność i ustawienia.
 
@@ -37,7 +38,7 @@ Wszystkie widżety są [zależne od profilu](../personal/profiles.md) — każdy
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -45,49 +46,11 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple pages within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
 
 </TabItem>
 
 </Tabs>
--->
 
 
 ## Panele widżetów {#widget-panels}
@@ -98,7 +61,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Konfiguracja ekranu](@site/static/img/widgets/configure_screen_andr.png)
+![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
 
 </TabItem>
 
@@ -106,7 +69,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Konfiguracja ekranu](@site/static/img/widgets/configure_screen_ios.png)
+![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
 
 </TabItem>
 
@@ -132,13 +95,13 @@ Każdy panel obsługuje różne zachowania układu:
 
 <TabItem value="android" label="Android">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
 
 </TabItem>
 
@@ -267,19 +230,17 @@ Każdy panel obsługuje różne zachowania układu:
 
 <TabItem value="android" label="Android">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
 
 </TabItem>
 
 </Tabs>
-
-
 
 Funkcja **Tryb wierszy** pozwala na dodanie dowolnej liczby wierszy do paneli górnego i dolnego. Możesz wyświetlać wiele widżetów w jednym wierszu, zwiększając ilość widocznych informacji.
 
@@ -311,13 +272,13 @@ Tryb ten pozwala na dodanie **więcej niż jednego widżetu w jednym wierszu** n
 
 <TabItem value="android" label="Android">  
 
-![Obramowanie widżetu Android](@site/static/img/widgets/simple_widgets_andr.png) 
+![Widget stroke Android](@site/static/img/widgets/simple_widgets_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Obramowanie widżetu iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+![Widget stroke IOS](@site/static/img/widgets/simple_widgets_ios.png) 
 
 </TabItem>
 
@@ -332,7 +293,7 @@ Tryb ten pozwala na dodanie **więcej niż jednego widżetu w jednym wierszu** n
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edytuj → Dodaj stronę*  
 
-![Strona widżetu](@site/static/img/widgets/widget_page_1_andr.png) ![Strona widżetu](@site/static/img/widgets/widget_page_2_andr.png)
+![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)
 
 </TabItem>
 
@@ -340,7 +301,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edytuj → Dodaj stronę*
 
-![Strona widżetu](@site/static/img/widgets/widget_page_1_ios.png) ![Strona widżetu](@site/static/img/widgets/widget_page_2_ios.png)  
+![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
 </TabItem>
 
@@ -357,7 +318,7 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
 
 ## Ustawienia widżetu {#widget-settings}
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
 Te ustawienia dotyczą tylko wybranego widżetu.
 
@@ -399,38 +360,36 @@ Te ustawienia dotyczą tylko wybranego widżetu.
     - Przełącz na pozycję Wyłączone w polu *Pokaż ikonę*.
 
 
-<!--
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## Wygląd panelu widżetów (tylko Android) {#widget-panel-appearance}
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
 
-Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+Ustawienia wyglądu pozwalają dostosować wygląd wszystkich widżetów w wybranym panelu. Każdy panel (*Górny*, *Dolny*, *Lewy*, *Prawy*) ma własne ustawienia wyglądu.
 
-1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+1. **Wysokość**. Kontroluje wysokość widżetów w wybranym panelu. Dla paneli Lewy i Prawy to ustawienie zmienia **Wysokość widżetu**. Dla paneli Górny i Dolny zmienia **Wysokość wiersza**. Dostępne opcje: *Oryginalna (domyślna)*, *Mała*, *Średnia*, *Duża*.
 
-2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+2. **Ikona**. Kontroluje widoczność ikony. Dostępne opcje: *Oryginalna (domyślna)*, *Włączona*, *Wyłączona*. 
 
-3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+3. **Kolor tekstu**. Zmienia kolor głównego tekstu widżetu. Dostępne opcje: *Domyślny*, *Automatyczny*, *Niestandardowy*. Gdy wybrano **Niestandardowy**, możesz skonfigurować oddzielne kolory dla trybów **Dzień** i **Noc**. Podgląd na żywo wyświetla wybrane kolory przed ich zastosowaniem.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
+:::tip Zakup
+Niestandardowe kolory widżetów to [funkcja płatna](../purchases/index.md).  
 :::
 
-4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+4. **Kolor tekstu dodatkowego**. Zmienia kolor nazw widżetów i jednostek. Dostępne opcje: *Domyślny*, *Automatyczny*, *Niestandardowy*.
 
-5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+5. **Kolor tła**. Zmienia kolor tła widżetów w wybranym panelu. Dostępne opcje: *Domyślny*, *Przezroczysty*, *Niestandardowy*.
 
-6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+6. **Podgląd**. Obszar podglądu pokazuje, jak będą wyglądać widżety z aktualnie wybranymi ustawieniami wyglądu.
 
-7. **Copy appearance settings:**
+7. **Kopiowanie ustawień wyglądu:**
 
-    - Tap the ⋮ menu in the upper-right corner.
-    - Select Copy from.
-    - Choose one of the following options: *Another profile* or *One of the other panels*.
+    - Dotknij menu ⋮ w prawym górnym rogu.
+    - Wybierz Kopiuj z.
+    - Wybierz jedną z następujących opcji: *Inny profil* lub *Jeden z pozostałych paneli*.
 
--->
 
 ## Dostosowywanie paneli {#panels-customization}
 
@@ -440,13 +399,13 @@ Custom widget colors is a [paid feature](../purchases/index.md).
 
 <TabItem value="android" label="Android">  
 
-![Menu kontekstowe widżetu](@site/static/img/widgets/widget_context_menu_andr_new.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu kontekstowe widżetu](@site/static/img/widgets/widget_context_menu_ios_new.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -483,7 +442,7 @@ Custom widget colors is a [paid feature](../purchases/index.md).
 
 *Menu OsmAnd → Konfiguracja ekranu → Widżety → Panel*  
 
-![Duplikat widżetu](@site/static/img/widgets/widget_dublicate.png)  
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
 OsmAnd pozwala na dodawanie wielu instancji tego samego widżetu do różnych paneli lub stron. Ta funkcja jest szczególnie przydatna, gdy potrzebujesz spójnych informacji w różnych widokach lub profilach.  
 
@@ -502,13 +461,13 @@ OsmAnd pozwala na dodawanie wielu instancji tego samego widżetu do różnych pa
 
 <TabItem value="android" label="Android">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_remove_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_remove_ios.png) 
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_ios.png) 
 
 </TabItem>
 
@@ -533,7 +492,7 @@ Możesz zmieniać układ lub usuwać widżety z ekranu aplikacji za pomocą tryb
 
 <InfoAndroidOnly/>
 
-![Układ ekranu mapy](@site/static/img/widgets/map_screen_layout_1.png) ![Układ ekranu mapy](@site/static/img/widgets/map_screen_layout_2.png)
+![Map Screen Layout](@site/static/img/widgets/map_screen_layout_1.png) ![Map Screen Layout](@site/static/img/widgets/map_screen_layout_2.png)
 
 Ustawienie **Układ ekranu mapy** pozwala kontrolować, jak panele widżetów są rozmieszczone na ekranie mapy. Pomaga zapobiegać nakładaniu się widżetów i przycisków oraz poprawia wykorzystanie przestrzeni na ekranie, zwłaszcza podczas przełączania między orientacjami pionową a poziomą.
 
@@ -541,7 +500,7 @@ Możesz otworzyć ustawienia układu ekranu mapy z menu Konfiguracja ekranu, bez
 
 ### Pojedynczy i oddzielne układy {#single-and-separate-layouts}
 
-![Układ ekranu mapy](@site/static/img/widgets/screen_layout_single.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_separate.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
 
@@ -553,7 +512,7 @@ Gdy włączone są oddzielne układy, zmiany wprowadzone w jednej orientacji nie
 
 ### Zakładki pionowa i pozioma {#portrait-and-landscape-tabs}
 
-![Układ ekranu mapy](@site/static/img/widgets/screen_layout_tabs.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_tabs.png)
 
 Gdy włączone są oddzielne układy, w menu Konfiguracja ekranu dostępne stają się dwie zakładki: **Pionowa** i **Pozioma**. Każda zakładka reprezentuje niezależny układ dla odpowiadającej orientacji ekranu. Możesz przełączać się między zakładkami, dotykając ich.
 
@@ -563,11 +522,11 @@ Możesz kopizować układ między orientacjami. Aby uzyskać dostęp do tych akc
 
 Kopiowana jest tylko lista widżetów, a operacja dotyczy tego samego profilu.
 
-![Układ ekranu mapy](@site/static/img/widgets/screen_layout_portrait.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_landscape.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_portrait.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_landscape.png)
 
 ### Układ paneli {#panels-layout}
 
-![Układ ekranu mapy](@site/static/img/widgets/screen_layout_wide.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_compact.png)
+![Map Screen Layout](@site/static/img/widgets/screen_layout_wide.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_compact.png)
 
 Ustawienie **Układ paneli** kontroluje, jak wyświetlane są panele widżetów górny i dolny. 
 
@@ -590,7 +549,7 @@ Układ paneli można skonfigurować niezależnie dla orientacji pionowej i pozio
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_buttons_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
 </TabItem>
 
@@ -598,7 +557,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
 </TabItem>
 
@@ -614,7 +573,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -622,7 +581,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
 </TabItem>
 
@@ -660,7 +619,7 @@ Menu z **trzema kropkami** na ekranie Przycisków domyślnych zawiera takie akcj
 
 <TabItem value="android" label="Android">  
 
-![Wygląd przycisku](@site/static/img/widgets/button_appearance_settings_andr.png)
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
 **Przejdź do** (dla przycisków niestandardowych): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu z trzema kropkami → *<Translate android="true" ids="shared_string_appearance"/>*  
 **Przejdź do** (dla wszystkich przycisków domyślnych): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu z trzema kropkami → *<Translate android="true" ids="shared_string_appearance"/>*  
@@ -670,7 +629,7 @@ Menu z **trzema kropkami** na ekranie Przycisków domyślnych zawiera takie akcj
 
 <TabItem value="ios" label="iOS">  
 
-![Wygląd przycisku](@site/static/img/widgets/button_appearance_settings_ios.png)
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_ios.png)
 
 **Przejdź do** (dla przycisków niestandardowych): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu z trzema kropkami → *<Translate ios="true" ids="shared_string_appearance"/>*
 **Przejdź do** (dla konkretnego przycisku domyślnego): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → wybierz przycisk → *<Translate ios="true" ids="shared_string_appearance"/>*
@@ -697,7 +656,7 @@ Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków 
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_other_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
 
 </TabItem>
 
@@ -705,7 +664,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Inne*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_other_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_other_ios.png)
 
 </TabItem>
 
@@ -722,13 +681,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 <TabItem value="android" label="Android">  
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_display_position_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_display_position_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_display_position_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png)
 
 </TabItem>
 
@@ -749,13 +708,13 @@ Pozwala ustawić umiejscowienie kursora *[Moja lokalizacja](../map/interact-with
 
 <TabItem value="android" label="Android">
 
-![Odległość po dotknięciu Android](@site/static/img/widgets/distance_tap_android.png)
+![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Odległość po dotknięciu iOS](@site/static/img/widgets/distance_tap_ios.png)
+![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
 
 </TabItem>
 
@@ -782,7 +741,7 @@ Możesz również dostosować rozmiar tekstu etykiety odległości. Przejdź do:
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
-![Strona widżetu](@site/static/img/widgets/widget_actions_andr.png)
+![Widget page](@site/static/img/widgets/widget_actions_andr.png)
 
 </TabItem>
 
@@ -790,7 +749,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Dowolny panel*
 
-![Strona widżetu](@site/static/img/widgets/widget_actions_ios.png)  
+![Widget page](@site/static/img/widgets/widget_actions_ios.png)  
 
 </TabItem>
 
@@ -813,13 +772,13 @@ Dostępne akcje:
 
 <TabItem value="android" label="Android">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_switch_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu Konfiguracja ekranu](@site/static/img/widgets/configure_screen_switch_ios.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_ios.png)
 
 </TabItem>
 

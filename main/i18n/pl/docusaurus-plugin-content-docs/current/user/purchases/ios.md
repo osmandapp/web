@@ -1,5 +1,5 @@
 ---
-source-hash: 9b2f56295eb193bc938a9266380e8a1e5ebfbe93185dc434f50b51acb87022a2
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -55,25 +55,6 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 
 
-:::danger 🏖️ Summer Sale
-
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
-
-<!--
-
-
-
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -81,7 +62,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -104,6 +85,9 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Obsługa czujników zewnętrznych](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Planowanie obserwacji](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Interaktywny tryb AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Mapy nieba offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręt | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
