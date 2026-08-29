@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -55,7 +55,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Download kaartmenu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regio-brede kaarten iOS](@site/static/img/personal/maps/map_type_2_ios_new.png)  
+![Download kaartmenu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regio-brede kaarten Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -290,7 +290,7 @@ Voor online kaarten worden alleen het type en de grootte van de gecachte gegeven
 Elk item in de lijst [Kaartbron](../map/raster-maps.md) biedt instellingen voor het beheren van online rasterkaarten die op uw apparaat zijn opgeslagen. Open het *driepuntenmenu* om toegang te krijgen tot de beschikbare acties:
 
 - **Info**. Toont algemene details over de geselecteerde kaartbron, inclusief formaat en laatste updatedatum.  
-- **Grootte berekenen**. Schat de opslagruimte die wordt ingenomen door de gecachte tegels van deze kaartbron. Als de cache groter is dan *50MB*, kan de grootte worden weergegeven als *≥50MB* in plaats van een exact getal.
+- **Grootte berekenen**. Schat de opslagruimte die wordt ingenomen door de gecachte tegels van deze kaartbron. Als de cache groter dan *50MB*, kan de grootte worden weergegeven als *≥50MB* in plaats van een exact getal.
 - **Alle tegels wissen**. Verwijdert alle gecachte tegels voor de geselecteerde kaartbron, waardoor opslagruimte wordt vrijgemaakt terwijl de kaartbron beschikbaar blijft voor toekomstig gebruik.  
 - **Exporteren**. Slaat de geselecteerde kaartbronconfiguratie op voor back-up of delen.
 - **Verwijderen**. Verwijdert de geselecteerde kaartbron. Deze actie heeft geen invloed op gedownloade offline kaarten, maar wist de bijbehorende cache.
@@ -509,7 +509,7 @@ Belangrijkste kenmerken:
 ### Beperkingen van Live Updates {#limitations-of-live-updates}
 
 Adreswijzigingen worden alleen ondersteund via maandelijkse updates.
-Bijgewerkte wegen missen hoogtegegevens, wat invloed heeft op hellingsgrafieken.
+Bijgewerkte wegen missen hoogtegegevens, wat invloed op hellingsgrafieken.
 Verwijderde of gewijzigde routeverwijzingen kunnen nog steeds onjuist worden weergegeven.
 
 

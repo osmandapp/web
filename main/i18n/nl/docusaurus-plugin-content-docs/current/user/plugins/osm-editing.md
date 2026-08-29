@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title:  OpenStreetMap Bewerken
 ---
@@ -257,13 +257,13 @@ Uw tracks worden binnen een uur toegevoegd aan [OSM-sporen](https://www.openstre
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -279,10 +279,9 @@ Volg de onderstaande stappen om de [GPS-track te uploaden](https://wiki.openstre
 - **<Translate android="true" ids="shared_string_description"/>**. Hiermee kunt u een beschrijving aan de track toevoegen. De beschrijving is van toepassing op alle geselecteerde tracks. Als u niets in het veld invoert, worden de tracknamen voor elke afzonderlijke track als beschrijving gebruikt.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Met dit item in de instellingensectie kunt u tags toevoegen om de track te identificeren. De standaardtag is "osmand". Als de track is opgenomen met een specifieke activiteit op basis van het geselecteerde profiel, wordt deze activiteit ook automatisch toegevoegd als tag tijdens het uploaden. Voor geüploade groepen tracks ontvangt elke track zijn eigen activiteitstag. Voor sommige profielen (bijv. Openbaar vervoer) wordt de activiteitstag niet toegevoegd. U kunt extra tags handmatig invoeren, gescheiden door komma's.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Zichtbaarheid van de track voor OSM-gebruikers:  
-   - *Openbaar* betekent dat de track openbaar beschikbaar is en in onbewerkte vorm wordt weergegeven in uw GPS-tracks, GPS-tracklijsten en tracklijsten met tijdstempel. De gegevens die via de API worden verzonden, worden niet gekoppeld aan uw trackpagina. Tijdstempels van spoorpunten zijn niet beschikbaar via de openbare GPS-API en spoorpunten zijn niet chronologisch geordend.
-   - *Identificeerbaar* betekent dat de track openbaar wordt weergegeven in uw GPS-spoorpunten en openbare GPS-tracklijsten, wat betekent dat andere gebruikers de onbewerkte track kunnen downloaden en deze aan uw gebruikersnaam kunnen koppelen. Openbare gegevens van spoorpunten met tijdstempel van de GPS-API die via de spoorpunten-API worden doorgegeven, linken naar uw oorspronkelijke trackpagina.
-   - *Traceerbaar* betekent dat de track niet wordt weergegeven in openbare lijsten, maar de verwerkte spoorpunten met tijdstempels ervan (die niet direct aan u kunnen worden gekoppeld) worden geladen vanuit de openbare GPS-API.
-   - *Privé* betekent dat de track niet wordt weergegeven in openbare lijsten, maar de spoorpunten ervan in niet-chronologische volgorde zijn beschikbaar via de openbare GPS-API zonder tijdstempels.
+      - *Identificeerbaar* betekent dat de track openbaar wordt weergegeven in uw GPS-spoorpunten en openbare GPS-tracklijsten, wat betekent dat andere gebruikers de onbewerkte track kunnen downloaden en deze aan uw gebruikersnaam kunnen koppelen. Openbare gegevens van spoorpunten met tijdstempel van de GPS-API die via de spoorpunten-API worden doorgegeven, linken naar uw oorspronkelijke trackpagina. Deze optie is standaard geselecteerd.
+      - *Traceerbaar* betekent dat de track niet wordt weergegeven in openbare lijsten, maar de verwerkte spoorpunten met tijdstempels ervan (die niet direct aan u kunnen worden gekoppeld) worden geladen vanuit de openbare GPS-API.
+{/* *Privé* betekent dat de track niet wordt weergegeven in openbare lijsten, maar de spoorpunten ervan in niet-chronologische volgorde zijn beschikbaar via de openbare GPS-API zonder tijdstempels. *Openbaar* betekent dat de track openbaar beschikbaar is en in onbewerkte vorm wordt weergegeven in uw GPS-tracks, GPS-tracklijsten en tracklijsten met tijdstempel. De gegevens die via de API worden verzonden, worden niet gekoppeld aan uw trackpagina. Tijdstempels van spoorpunten zijn niet beschikbaar via de openbare GPS-API en spoorpunten zijn niet chronologisch geordend.*/}
 - **<Translate android="true" ids="login_account"/>** - [OSM-account](https://www.openstreetmap.org/login).
 
 :::info

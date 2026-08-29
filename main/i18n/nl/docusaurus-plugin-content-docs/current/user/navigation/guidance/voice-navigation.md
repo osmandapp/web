@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Stembediening / Meldingen
 ---
@@ -52,7 +52,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> knop* *(of <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Kies profiel → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 
 - *Navigatie-instructies herhalen*. Hiermee kunt u de navigatie-instructies met regelmatige tussenpozen van 1 min tot 30 min herhalen. Of handmatig - als u een stembericht mist, kunt u het opnieuw beluisteren door simpelweg op [de pijl voor de huidige afslag](../../widgets/nav-widgets.md#next-turn) op het applicatiescherm te tikken.
 - *[Aankondigingstijd](#announcement-time)*.
+- *Gesproken audio pauzeren* (*alleen iOS*). Indien ingeschakeld, worden podcasts, audioboeken en andere gesproken audio gepauzeerd terwijl stemberichten worden afgespeeld. Muziekafspelen gaat door op een lager volume. Indien uitgeschakeld, blijven zowel gesproken audio als muziek op een lager volume afspelen.
 
 **Uitvoer** (*alleen Android*):
 

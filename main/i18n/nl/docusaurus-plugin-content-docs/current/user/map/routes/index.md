@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title: Routes
 sidebar_position: 11
 ---
@@ -19,6 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd heeft veel krachtige functies voor het weergeven van verschillende [routes](./types-of-routes.md) op de kaart. Standaard maken deze routes deel uit van [vector-kaarten](../../map/vector-maps.md#routes) (OpenStreetMap-gegevens), maar vergelijkbare functionaliteit wordt geboden door [tracks](../../map/tracks/index.md) die kunnen worden gemaakt met [Plan een route](../../plan-route/create-route.md), geïmporteerd als [GPX-tracks](#save-as-a-track) of opgenomen met de [Ritopname-plug-in](../../plugins/trip-recording.md). Routes Map Legend is [hier](../../map-legend/osmand.md#routes).
 
+
 ## Routes op de kaart weergeven {#display-routes-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -27,11 +28,11 @@ OsmAnd heeft veel krachtige functies voor het weergeven van verschillende [route
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.webp)
 
 - Om de gewenste routes op de kaart weer te geven, schakelt u ze in in de *Routes-lijst* van het menu [Kaart configureren](../../map/configure-map-menu.md).
 - OsmAnd kan [routes die aanwezig zijn op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
-- De belangrijkste routetypen kunnen ook worden gefilterd op klassen en subklassen, zodat u alleen specifieke groepen binnen elk type kunt weergeven. U kunt bijvoorbeeld wandelroutes weergeven op **OSMC-symbolen** als klassen en op *internationale, nationale, regionale* of *lokale netwerken* als subklassen, die momenteel beschikbaar zijn wanneer de plug-in [OsmAnd Development](../../plugins/development.md) is ingeschakeld.
+- De belangrijkste routetypen kunnen ook worden gefilterd op klassen en subklassen, zodat u alleen specifieke groepen binnen elk type kunt weergeven. U kunt bijvoorbeeld wandelroutes weergeven op **OSMC-symbolen** als klassen en op *internationale, nationale, regionale* of *lokale netwerken*, evenals *niet-geclassificeerde routes*, als subklassen. Vergelijkbare netwerkclassificatiefilters zijn beschikbaar voor fietsroutes. Deze opties zijn momenteel beschikbaar wanneer de plug-in [OsmAnd Development](../../plugins/development.md) is ingeschakeld. Wanneer meerdere routenetwerken overlappen, kunnen individuele classificaties worden in- of uitgeschakeld om alleen de gewenste routeniveaus weer te geven.
 - U kunt een track boven op de routes maken met de tool [Plan een route](../../plan-route/create-route.md).
 - Wanneer meerdere routes over dezelfde weg lopen, wordt elke route weergegeven als een afzonderlijke semi-transparante lijn die boven de andere ligt.
 - Wanneer u op een locatie tikt waar meerdere routes elkaar overlappen, wordt een contextmenu met alle routes die door dit punt lopen weergegeven.
@@ -57,6 +58,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 </TabItem>
 
 </Tabs>
+
 
 ## Acties met routes {#actions-with-routes}
 

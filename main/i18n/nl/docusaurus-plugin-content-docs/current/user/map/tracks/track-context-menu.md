@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -364,11 +364,13 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 
 ### Bereken Ontbrekende Hoogte {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Pro-functie
 [Hoogte offline berekenen](../../plan-route/create-route.md#get-elevation-data) is een betaalde [**OsmAnd Pro**](../../purchases/index.md) functie <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Deze functie](../../plan-route/create-route.md#get-elevation-data) stelt u in staat om het hoogteprofiel voor een GPX-spoor offline te berekenen voor elk terrein tussen 70 graden noorderbreedte en 70 graden zuiderbreedte, gebaseerd op [Terreinkaartgegevens](../../plugins/topography.md#download-maps). *Terreinkaarten (3D) moeten vooraf gedownload zijn*.
 
@@ -377,11 +379,27 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 
     ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Als u een route aanmaakt met de [Route plannen](../../plan-route/create-route.md#graph) tool met de methode *Rechte lijn* en er geen hoogtegegevens op de grafiek staan, moet u:
+3. Als u een route aanmaakt met de [Route plannen](../../plan-route/create-route.md#graph--analyze) tool met de methode *Rechte lijn* en er geen hoogtegegevens op de grafiek staan, moet u:
     - Tik op *Hoogtegegevens ophalen* en selecteer vervolgens *Gebruik Terreinkaarten*.
     - Na de berekening krijgt u de volledige Hoogte/Helling-grafiek van uw route, gebaseerd op terreingegevens.  
 
   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Spoorgrafiek hoogte Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Hoogtegegevens iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Hoogtegegevens iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Deze functie](../../plan-route/create-route.md#get-elevation-data) stelt u in staat om ontbrekende hoogtegegevens te berekenen voor een [geplande route](../../plan-route/create-route.md#create-new-route) of een [bestaand GPX-spoor](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Als u een route maakt met de Rechte lijn-methode en er geen hoogtegegevens beschikbaar zijn, tik dan op *Hoogtegegevens ophalen* in het tabblad Analyseren en selecteer *Gebruik Terreinkaarten*. Eerder gedownloade [Terreinkaarten (3D)](../../plugins/topography.md#download-maps) zijn vereist. Het hoogteprofiel wordt vervolgens berekend op basis van de terreingegevens terwijl de routegeometrie ongewijzigd blijft.
+
+Voor een bestaand GPX-spoor kunt u *Gebruik nabijgelegen wegen* selecteren. OsmAnd koppelt het spoor aan de dichtstbijzijnde toegestane wegen met behulp van een geselecteerd navigatieprofiel en haalt hoogtegegevens op uit de gekoppelde wegen. Deze optie kan de geometrie van het spoor aanpassen. Indien nodig kunt u ook *Gebruik Terreinkaarten* selecteren om de hoogte te berekenen terwijl de geometrie van het spoor ongewijzigd blijft.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Punten / Waypoints {#points--waypoints}
@@ -392,13 +410,13 @@ Waypoints zijn een van de soorten punten die beschikbaar op de kaart. Over het a
 
 <TabItem value="android" label="Android">
 
-![Contextmenu spoor Punten Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Contextmenu spoor Punten Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Contextmenu spoor Punten Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Contextmenu spoor Punten iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Contextmenu spoor Punten iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Contextmenu spoor Punten iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ In dit *Punten* tabblad:
 
 - [Toon spoorpuntgegevens](#display-custom-gpx-tags) en wijzig uw spoorpunten (waypoints en routepunten), [verwijder ze en voeg](#points--waypoints) waypoints toe aan een spoor.
 - Maak en wijzig [Groep (map) van punten](#waypoint-groups).
-- Centreer de kaart op een waypoint met behulp van het pin-icoon in de waypointlijst zonder de lijst te sluiten, waardoor u waypoints één voor één kunt bekijken.
+- Toon een waypoint op de kaart met behulp van het pin-icoon in de waypointlijst. De kaart centreert op het waypoint zonder de lijst te sluiten of het huidige zoomniveau te wijzigen.
 
 
 ### Waypoint toevoegen aan een spoor {#add-waypoint-to-a-track}

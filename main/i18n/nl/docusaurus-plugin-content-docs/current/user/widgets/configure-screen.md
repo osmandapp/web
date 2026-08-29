@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Scherm configureren
 ---
@@ -27,6 +27,7 @@ U kunt:
 - Widgets organiseren in panelen (boven, onder, links, rechts, midden).
 - Meerdere **pagina's** aanmaken binnen zijpanelen, de grootte van widgets kiezen.
 - Rijhoogte kiezen en widgetpictogrammen in- of uitschakelen.
+- Op Android de [weergave van widgetpanelen](#widget-panel-appearance) aanpassen.
 
 Alle widgets zijn [profielafhankelijk](../personal/profiles.md) — elk profiel heeft zijn eigen lay-out, volgorde, zichtbaarheid en instellingen.
 
@@ -37,7 +38,7 @@ Alle widgets zijn [profielafhankelijk](../personal/profiles.md) — elk profiel 
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Scherm configureren](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Scherm configureren](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Menu Scherm configureren](@site/static/img/widgets/configure_screen_overview.webp)  ![Menu Scherm configureren](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -321,6 +322,8 @@ Widgets in de rechter- en linkerpanelen kunnen worden gegroepeerd in **Pagina's*
 
 ![Menu Scherm configureren](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Scherm configureren](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Deze instellingen gelden alleen voor de geselecteerde widget.
+
 1. **Widgetgrootte-opties** (*voor alle panelen*):  
     U kunt de grootte van **Eenvoudige widgets** aanpassen in de **Boven-, Onder-, Linker- en Rechterpanelen**:
 
@@ -357,6 +360,37 @@ Widgets in de rechter- en linkerpanelen kunnen worden gegroepeerd in **Pagina's*
     - Tik op het *Instellingen*-pictogram aan de rechterkant van het widgetveld.
     - Tik op de instelling *Grootte* en selecteer een van de beschikbare groottes.
     - Schakel naar de Uit-positie in het veld *Pictogram tonen*.
+
+
+## Weergave van widgetpanelen (alleen Android) {#widget-panel-appearance}
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Weergave van widgetpanelen](@site/static/img/widgets/widget_appearance.webp) ![Weergave van widgetpanelen](@site/static/img/widgets/widget_appearance_2.webp)
+
+Met de weergave-instellingen kunt u het uiterlijk van alle widgets in het geselecteerde paneel aanpassen. Elk paneel (*Boven*, *Onder*, *Links*, *Rechts*) heeft eigen weergave-instellingen.
+
+1. **Hoogte**. Bepaalt de hoogte van widgets in het geselecteerde paneel. Voor de linker- en rechterpanelen wijzigt deze instelling de **widgethoogte**. Voor de boven- en onderpanelen wijzigt deze instelling de **rijhoogte**. Beschikbare opties: *Origineel (standaard)*, *Klein*, *Middel*, *Groot*.
+
+2. **Pictogram**. Bepaalt de zichtbaarheid van pictogrammen. Beschikbare opties: *Origineel (standaard)*, *Aan*, *Uit*. 
+
+3. **Tekstkleur**. Wijzigt de kleur van de primaire widgettekst. Beschikbare opties: *Standaard*, *Automatisch*, *Aangepast*. Wanneer **Aangepast** is geselecteerd, kunt u afzonderlijke kleuren configureren voor **Dag**- en **Nacht**-modus. Een live voorbeeld toont de geselecteerde kleuren voordat ze worden toegepast.
+
+:::tip Aankoop
+Aangepaste widgetkleuren is een [betaalde functie](../purchases/index.md).  
+:::
+
+4. **Secundaire tekstkleur**. Wijzigt de kleur van widgetnamen en eenheden. Beschikbare opties: *Standaard*, *Automatisch*, *Aangepast*.
+
+5. **Achtergrondkleur**. Wijzigt de achtergrondkleur van widgets in het geselecteerde paneel. Beschikbare opties: *Standaard*, *Transparant*, *Aangepast*.
+
+6. **Voorbeeld**. Het voorbeeldgebied toont hoe widgets eruitzien met de momenteel geselecteerde weergave-instellingen.
+
+7. **Weergave-instellingen kopiëren:**
+
+    - Tik op het ⋮-menu in de rechterbovenhoek.
+    - Selecteer Kopiëren van.
+    - Kies een van de volgende opties: *Ander profiel* of *Een van de andere panelen*.
 
 
 ## Aanpassing van panelen {#panels-customization}
@@ -613,7 +647,7 @@ De functie *Knopuiterlijk* stelt u in staat om het uiterlijk van knoppen op uw k
 - **Pictogram**. Selecteer uit een lijst met pictogrammen die acties vertegenwoordigen die u al hebt toegevoegd, waardoor het gemakkelijk is om functies in één oogopslag te identificeren.
 - **Hoekstraal**. Pas deze instelling aan om de vorm van de knop te wijzigen, variërend van scherpe, vierkante hoeken tot gladde, afgeronde randen.
 - **Grootte**. Kies de knopgrootte die het beste past bij uw scherm en opvalt zoals nodig. 
-- **Achtergrondondoorzichtigheid** (Android) / **Achtergrond** (iOS) . Beheer de zichtbaarheid van de achtergrond van de knop. U kunt deze instellen op volledig zichtbaar of gedeeltelijk transparant, of alleen de frameschaduw en het pictogram weergeven.
+- **Achtergrondondoorzichtigheid** (Android) / **Achtergrond** (iOS) . Beheer de zichtbaarheid van de achtergrond van de knop. U kunt deze instelling op volledig zichtbaar of gedeeltelijk transparant, of alleen de frameschaduw en het pictogram weergeven.
 
 
 ## Overig {#other}

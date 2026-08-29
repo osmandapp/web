@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title:  Autoroutering (Vrachtwagen, Motorfiets)
 ---
@@ -34,7 +34,7 @@ Autoroutering is ontworpen om bestuurders te helpen de meest efficiënte en dire
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Auto routeringsinstellingen Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Auto routeringsinstellingen Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -55,6 +55,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Beperkingen voor privétoegang worden genegeerd bij het berekenen van de route.  | De tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* wordt in OSM gebruikt om beperkingen te beschrijven op het gebruik van snelwegen en andere transportroutes, evenals gebouwen, ingangen, voorzieningen en vrijetijdsentiteiten.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (alleen&nbsp;auto) |  <details><summary> Wegen die gesloten zijn voor goederenlevering worden vermeden. </summary>![Goederenlevering Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Deze optie is alleen van toepassing op voertuigen die goederen vervoeren met een gewicht van maximaal 3,5 ton. Als uw voertuig meer dan 3,5 ton weegt, dient u het [Vrachtwagenprofiel](#route-parameters---truck) te gebruiken.   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Om een brandstofefficiënte route te berekenen, beperkt de routeringsengine de snelheid intern tot 60 km/u, maar dit verandert de geschatte aankomsttijd niet. Dus in het geval van 2 identieke start-eindroutes: snelweg (120 km/u) en secundaire weg (60 km/u) - wordt de kortere route geselecteerd. Voor de dienstwegen met een snelheidslimiet < 60 km/u wordt de snellere route geselecteerd. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*alleen Android*) | Selecteer de gewenste methode voor routeberekening. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Routeparameters - Vrachtwagen {#route-parameters---truck}
