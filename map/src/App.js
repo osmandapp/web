@@ -5,6 +5,7 @@ import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
 import { WeatherContextProvider } from './context/WeatherContext';
 import { MapContextProvider } from './context/MapContext';
+import { LiveTrackingProvider } from './context/LiveTrackingContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
@@ -20,6 +21,7 @@ import {
     PLANROUTE_URL,
     SETTINGS_URL,
     TRACKS_URL,
+    LIVE_TRACKS_URL,
     VISIBLE_TRACKS_URL,
     WEATHER_URL,
     EXPLORE_URL,
@@ -114,11 +116,11 @@ const App = () => {
                     {
                         path: '/',
                         element: (
-                            <>
+                            <LiveTrackingProvider>
                                 <AppServices />
                                 <NavigateGlobal />
                                 <Outlet />
-                            </>
+                            </LiveTrackingProvider>
                         ),
                         children: [
                             {
@@ -167,6 +169,7 @@ const App = () => {
                                             },
                                         ],
                                     },
+                                    { path: LIVE_TRACKS_URL, element: <TracksMenu /> },
                                     { path: VISIBLE_TRACKS_URL, element: <VisibleTracks /> },
                                     {
                                         path: FAVORITES_URL,

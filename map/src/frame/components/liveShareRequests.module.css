@@ -1,0 +1,19 @@
+.container {
+    position: fixed;
+    top: 68px; /* HEADER_SIZE (60) + 8 */
+    right: 16px;
+    z-index: 1400;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 360px;
+}
+.approveIcon {
+    width: 18px;
+    height: 18px;
+}
+.denyIcon {
+    width: 18px;
+    height: 18px;
+    fill: #ff595e !important;
+}
