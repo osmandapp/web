@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Глобальні налаштування
 ---
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Загальні {#general}
 
-Цей розділ містить основні налаштування OsmAnd, такі як вибір [профілю](#default-profile) при завантаженні програми, вибір [рушія рендерингу мапи](#map-rendering-engine) та [папки](#data-storage-folder), де будуть зберігатися дані.  
+Цей розділ містить основні налаштування OsmAnd, такі як вибір [профілю](#default-profile) при завантаженні програми, вибір [рушія рендерингу мапи](#map-rendering-engine) та [папки](#data-storage), де будуть зберігатися дані.  
 
 
 ### Профіль за замовчуванням {#default-profile}
@@ -84,15 +84,15 @@ OsmAnd використовує профіль за замовчуванням, 
 [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) використовується при підключенні до [програмного забезпечення CarPlay](https://support.apple.com/en-gb/HT205634) вашого автомобіля і допомагає вам максимально використовувати оптимізовану версію програми OsmAnd, використовуючи аудіо- та відеосистеми для відображення даних на вашому телефоні.
 
 
-### Папка для зберігання даних {#data-storage-folder}
+### Папка для зберігання даних {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Налаштування сховища профілів Android](@site/static/img/personal/profiles/main_storage.webp) ![Налаштування сховища профілів Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Налаштування сховища профілів Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **Пам'ять пристрою** показує, скільки вільного місця залишилося на вашому пристрої. Торкніться поля, щоб отримати доступ до меню [*Мапи та ресурси*](../personal/maps-resources.md#local-menu), де ви можете переглянути та керувати детальною інформацією про ваші дані OsmAnd.
 
@@ -108,6 +108,16 @@ OsmAnd використовує профіль за замовчуванням, 
 Нові правила доступу до сховища були впроваджені у версіях Android 11-12. Детальніше дивіться у розділі [**Вирішення проблем**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 :::
 
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+Налаштування **Медіасховище** визначає, де зберігатимуться фотографії, відео та аудіофайли, прикріплені до обраного, треків та інших елементів OsmAnd. Ви можете вибрати місце зберігання залежно від того, чи хочете, щоб файли залишалися приватними чи були доступними з інших програм.
+- **Основне сховище** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Спільне сховище** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Папка камери** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Вказано вручну** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Також є перемикач *Завжди зберігати локальну копію*. Якщо його увімкнено, OsmAnd копіює медіафайли, імпортовані з Галереї або Файлів, у власне сховище, щоб прикріплені медіафайли залишалися доступними, навіть якщо оригінальний файл видалено з Галереї або файлової системи.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +129,6 @@ OsmAnd використовує профіль за замовчуванням, 
 Файли OsmAnd видимі в додатку [*Файли*](https://apps.apple.com/us/app/files/id1232058109). Ви можете отримати доступ до всіх файлів OsmAnd: [треків](../personal/tracks/manage-tracks.md), [обраних місць](../personal/favorites.md), [мап](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Для цього дотримуйтесь наступного шляху:  
 
 Перейдіть до: *Файли → На моєму iPhone → OsmAnd Maps*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Загальні налаштування сховища iOS](@site/static/img/personal/profiles/files-1.png) ![Загальні налаштування сховища iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -200,7 +208,7 @@ OsmAnd дозволяє вам вибирати, чи *[ділитися ваш�
 Дані про ваше місцезнаходження або місця, які ви переглядаєте на мапі, не збираються.
 :::  
 
-### Ідентифікатори {#identifiers}
+### Ідентифікatori {#identifiers}
 
 <InfoAndroidOnly />
 

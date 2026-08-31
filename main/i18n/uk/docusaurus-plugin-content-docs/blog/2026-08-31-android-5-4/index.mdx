@@ -26,59 +26,48 @@ At this release, we focused on improving the search experience, making it easier
 
 Thanks to all our users for their feedback and suggestions. Your input is invaluable in helping us improve OsmAnd and make it the best navigation app for Android.
 
+![OsmAnd 5.4 for Android](./img/5-4-preview.webp)
+
+
 {/*truncate*/}
 
 
 ## What's new
 
-- [New spatial search](#new-spatial-search) — find places and search around a place
 - [Refreshed search UI](#refreshed-search-ui): sorting, category filters, cleaner look
 - [Attach photos and media to Favorites](#attach-photos-and-media-to-favorites)
 - [Favorites](#subgroups-support-and-pinnable-folders-for-favorites): subgroups support and pinnable folders
 - [New widgets appearance](#new-widgets-appearance)
-- Roof shapes and custom colorsfor 3D Buildings
+- [Roof shapes for 3D Buildings](#updated-3d-buildings)
 - [Coordinates](#coordinates-epsg-systems): search, map grid, and POI display now support EPSG and Maidenhead locator
 - [Navigation settings improvements](#navigation-settings-improvements)
 - [Android Auto updates](#android-auto-updates)
 - [Astronomy added solar & lunar eclipses](#astronomy-added-solar--lunar-eclipses)
 - [AIS improvements](#ais-improvements)
+- [New spatial search](#new-spatial-search) — find places and search around a place
 - [Others updates and improvements](#others-updates-and-improvements)
 - [Bug fixes](#bug-fixes).
 
-
-## New spatial search
-
-https://github.com/osmandapp/OsmAnd/issues/25485
-
-https://github.com/osmandapp/OsmAnd/issues/25331
-
-
-
-Search in OsmAnd 5.4 has received a major upgrade. A new **spatial search algorithm** makes it easier to find places and discover objects around a specific location.
-
-Previously, search was largely tied to your current location and the way individual words in a query were interpreted. The new approach takes geographical context into account, making combinations such as a **place name + POI**, category, street, or address much easier to understand.
-
-For example, you can find a city or another place first and then search for **cafés, restaurants, hotels, shops, fuel stations, or other POIs around that location**. This is especially useful when planning a trip somewhere else instead of searching only near your current position.
-
-The new search engine also improves how OsmAnd handles more complex queries, including combinations such as **"Hotel Berlin"**, a POI together with a street or city, different street-name formats, translated category names, and other location-based searches.
-
-Under the hood, this is more than an interface update. Our backend team introduced a new search architecture called **Spatial Search by Name**, designed to provide more relevant results and resolve many limitations of the previous search system. Search by supported POI categories has also been optimized for faster results.
 
 
 
 ## Refreshed search UI
 
+
+{/*
 https://github.com/osmandapp/OsmAnd/issues/8613
+*/}
 
 
-
-We introduced a refreshed **Search interface** designed to make finding places faster and easier.
+We introduced a refreshed [**Search interface**](https://osmand.net/docs/user/search/search-all#search-explore) designed to make finding places faster and easier.
 
 You can now quickly choose **where to search** — around the **Map Center** or **My Location** — and select how results should be sorted: by **Nearest** or **Relevance**.
 
 It is also easier to narrow down the results by selecting one or multiple **POI categories**, so you can focus only on the places you are interested in.
 
-![UI Search](./img/search_ui.webp) ![UI Search](./img/search_ui_2.webp)
+|| |
+|:--------|:---------|
+|![UI Search](./img/search_ui.webp)| ![UI Search](./img/search_ui_2.webp) |
 
 The updated interface makes Search more flexible, easier to understand, and faster to use.
 
@@ -112,39 +101,44 @@ An additional **Type** filter lets you display:
 
 The **History settings** menu also includes an option to **back up your history**, helping you preserve your previous searches and navigation activity, make back up as file or clear all history.
 
-
-![UI Search](./img/search_history.webp) ![UI Search](./img/search_history_2.webp)
+|| |
+|:--------|:---------|
+|![UI Search](./img/search_history.webp)| ![UI Search](./img/search_history_2.webp) |
 
 
 ## Attach photos and media to Favorites
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/7125
 
-https://github.com/osmandapp/OsmAnd/issues/14829
+https://github.com/osmandapp/OsmAnd/issues/14829  Partially implemented
 
 https://github.com/osmandapp/OsmAnd/issues/24313
+*/}
 
 
+We've made **[Favorites](https://osmand.net/docs/user/personal/favorites) and [Waypoints](https://osmand.net/docs/user/navigation/setup/gpx-navigation#waypoints) more informative** by allowing you to attach media files directly to them.
 
-We've made **Favorites and Waypoints more informative** by allowing you to attach media files directly to them.
-
-Similar to the **Audio/Video Notes** feature, you can now add photos, videos, and audio notes to a saved Favorite or GPX Waypoint. You can take a new photo, record a video or audio note, or choose existing media from your device.
+Similar to the [**Audio/Video Notes**](https://osmand.net/docs/user/plugins/audio-video-notes) feature, you can now add photos, videos, and audio notes to a saved Favorite or GPX Waypoint. You can take a new photo, record a video or audio note, or choose existing media from your device.
 
 Attached files are displayed in a new **Media** section directly in the Favorite or Waypoint context menu, so photos and recordings connected to a place are easy to access when you need them.
 
 This makes Favorites and Waypoints useful not only for saving a location, but also for keeping additional visual or audio information connected to that place.
 
+|| |
+|:--------|:---------|
+|![Media](./img/media.webp)| ![Media](./img/media_2.webp) |
 
-![Media](./img/media.webp) ![Media](./img/media_2.webp)
 
 ## Subgroups support and pinnable folders for Favorites
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/9967
-
+*/}
 
 Managing large collections of **Favorites** is now much easier.
 
-Favorites can now be organized using **folders and subfolders**, similar to the folder structure already available for Tracks. This allows you to create a clear hierarchy instead of keeping all Favorite groups at the same level.
+Favorites can now be organized using [**folders and subfolders**](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete), similar to the folder structure already available for Tracks. This allows you to create a clear hierarchy instead of keeping all Favorite groups at the same level.
 
 For example, you can organize places like this:
 
@@ -165,9 +159,12 @@ The new hierarchy is supported when moving and exporting Favorites and works wit
 
 ## New widgets appearance
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/25018
+*/}
 
-We introduce new **appearance settings for map widgets**, giving you more control over how information is displayed on the map.
+
+We introduce new [**appearance settings for map widgets**](https://osmand.net/docs/user/widgets/configure-screen#widget-panels), giving you more control over how information is displayed on the map.
 
 Instead of configuring widgets only individually, you can now customize the appearance of each widget panel — **Left, Right, Top, and Bottom** — from a dedicated **Appearance** screen.
 
@@ -188,9 +185,11 @@ You can also **copy appearance settings** from another widget panel or another p
 
 ## Updated 3D Buildings
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/14864
+*/}
 
-OsmAnd 5.4 brings another major update to **3D Buildings**, making cityscapes more detailed and closer to the real-world geometry stored in OpenStreetMap.
+OsmAnd 5.4 brings another major update to [**3D Buildings**](https://osmand.net/docs/user/plugins/topography#3d-buildings), making cityscapes more detailed and closer to the real-world geometry stored in OpenStreetMap.
 
 Buildings can now display **different roof shapes** instead of being rendered only as simple flat-topped volumes. When the corresponding roof information is available in OpenStreetMap, OsmAnd uses it to create a more recognizable building silhouette.
 
@@ -209,7 +208,9 @@ To enable the feature, go to:
 
 ## Coordinates EPSG systems
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/17311
+*/}
 
 We expand support for **coordinate systems**, making the app more useful for professional mapping, field work, surveying, amateur radio, and other activities that rely on specific coordinate formats.
 
@@ -219,7 +220,7 @@ You can now use **EPSG coordinate systems** and the **Maidenhead Locator System*
 - **Map Grid**
 - **POI and map context information**
 
-In **Coordinate Search**, you can select recently used formats or browse the full list of available coordinate systems. You can also quickly find the required system by searching for its **name or EPSG code**.
+In [**Coordinate Search**](https://osmand.net/docs/user/search/search-address#coordinates-search), you can select recently used formats or browse the full list of available coordinate systems. You can also quickly find the required system by searching for its **name or EPSG code**.
 
 The **Maidenhead Locator System** is also supported on Android. It represents locations using a compact combination of letters and numbers and is commonly used by amateur radio operators.
 
@@ -227,15 +228,19 @@ Coordinate formats can be configured separately for each OsmAnd profile. You can
 
 ## Navigation settings improvements
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/22987
+*/}
 
 OsmAnd 5.4 improves navigation in situations where a route crosses regions with **outdated or inconsistent offline maps**.
 
-Previously, route calculation could be interrupted by several dialogs asking you to update maps or manually continue using the downloaded maps. In some cases, this could even happen during route recalculation while navigation was already active.
+Previously, [route calculation](https://osmand.net/docs/user/navigation/setup/route-navigation) could be interrupted by several dialogs asking you to update maps or manually continue using the downloaded maps. In some cases, this could even happen during route recalculation while navigation was already active.
 
-Now, OsmAnd can handle these situations more smoothly. If the selected routing method cannot calculate the route correctly, the app can switch to an alternative calculation method and continue navigation without unnecessary interruptions.
+Now, OsmAnd can handle these situations more smoothly. If the selected routing method cannot calculate the route correctly, the app can switch to an alternative [calculation method](https://osmand.net/docs/user/navigation/routing/car-based-routing#route-parameters---car) and continue navigation without unnecessary interruptions.
 
-![Navigation](./img/navi.webp) ![Navigation](./img/navi_2.webp)
+|| |
+|:--------|:---------|
+|![Navigation](./img/navi.webp)| ![Navigation](./img/navi_2.webp) |
 
 You can also control this behaviour manually in:
 
@@ -250,13 +255,7 @@ This makes route calculation more reliable when travelling across map borders or
 
 ## Android Auto updates
 
-OsmAnd 5.4 brings several improvements to **Android Auto**, making the map, search, and navigation experience more convenient on the car display.
-
-### Separate Map Scale for Android Auto
-
-Android Auto can now use its ful because the phone and the vehicle's display can have very different screen sizes and resolutions. You can adjust the map scale specifically for Android Auto to make roads, labels, and other map elements more comfortable to read on your car screen.
-
-![Android Auto Map Scale](./img/mm_aa.webp)
+OsmAnd 5.4 brings several improvements to [**Android Auto**](https://osmand.net/docs/user/navigation/auto-car), making the search, and navigation experience more convenient on the car display.
 
 ### More Useful Search Results
 
@@ -279,23 +278,28 @@ Together, these changes make Android Auto cleaner and easier to use while keepin
 
 ## Astronomy added solar & lunar eclipses
 
+{/*
 https://github.com/osmandapp/OsmAnd-Issues/issues/3279
+*/}
 
-The **Astronomy plugin** continues to grow in OsmAnd 5.4 with new tools for exploring **solar and lunar eclipses** directly on the Star Map.
+The [**Astronomy plugin**](https://osmand.net/docs/user/plugins/astronomy#search) continues to grow in OsmAnd 5.4 with new tools for exploring **solar and lunar eclipses** directly on the Star Map.
 
 ### Solar Eclipses
 
 You can now explore solar eclipses around the world and see how an eclipse develops over time.
 
-The new **Solar Eclipse Explorer** shows the eclipse shadow on the map and provides a timeline that you can move through to see how the event changes. Information is calculated for the selected location, making it possible to check whether and how the eclipse will be visible there.
+The new [**Solar Eclipse Explorer**](https://osmand.net/docs/user/plugins/astronomy#solar-eclipse) shows the eclipse shadow on the map and provides a timeline that you can move through to see how the event changes. Information is calculated for the selected location, making it possible to check whether and how the eclipse will be visible there.
 
 You can also quickly switch between **previous and next solar eclipses** and explore their paths in different parts of the world.
 
-![Eclipses](./img/eclipse.webp) ![Eclipses](./img/eclipse_2.webp) 
+|| |
+|:--------|:---------|
+|![Eclipses](./img/eclipse.webp)| ![Eclipses](./img/eclipse_2.webp) |
+
 
 ### Lunar Eclipses
 
-The Star Map now also includes a dedicated **Lunar Eclipse Explorer**, supporting:
+The Star Map now also includes a dedicated [**Lunar Eclipse Explorer**](https://osmand.net/docs/user/plugins/astronomy#lunar-eclipse), supporting:
 
 - **Penumbral eclipses**
 - **Partial eclipses**
@@ -307,13 +311,18 @@ You can check the current eclipse phase, obscuration, Moon altitude, and where t
 
 Together, these additions turn the Astronomy plugin into a useful tool not only for exploring stars and planets, but also for **planning and observing upcoming eclipses**.
 
-![Eclipses](./img/eclipse_lunar.webp) ![Eclipses](./img/eclipse_lunar_2.webp) 
+|| |
+|:--------|:---------|
+|![Eclipses](./img/eclipse_lunar.webp)| ![Eclipses](./img/eclipse_lunar_2.webp) |
+
 
 ## AIS improvements
 
+{/*
 https://github.com/osmandapp/OsmAnd/issues/23512
+*/}
 
-OsmAnd 5.4 brings several improvements to the **Vessel Tracker (AIS)** plugin, making it easier to configure AIS connections and monitor nearby vessels.
+OsmAnd 5.4 brings several improvements to the [**Vessel Tracker (AIS)**](https://osmand.net/docs/user/plugins/ais-tracker) plugin, making it easier to configure AIS connections and monitor nearby vessels.
 
 The plugin settings have been reorganized into clearer sections for **Connection**, **Object visibility**, and **Collision avoidance alarms (CPA)**.
 
@@ -331,26 +340,40 @@ When another vessel is predicted to come too close within the configured time, O
 AIS visibility can also be managed as a dedicated map layer through **Configure Map**, making it easier to enable or disable vessel information when needed.
 
 
+## New spatial search
 
+{/*
+https://github.com/osmandapp/OsmAnd/issues/25485
+
+https://github.com/osmandapp/OsmAnd/issues/25331
+*/}
+
+> **Experimental feature:** In OsmAnd 5.4, the new spatial search algorithm is available only when the [**OsmAnd Development plugin**](https://osmand.net/docs/user/plugins/development) is enabled. This allows us to collect feedback and continue improving the feature before enabling it by default in a future release.
+
+Search in OsmAnd 5.4 has received a major upgrade. A new **spatial search algorithm** makes it easier to find places and discover objects around a specific location.
+
+Previously, search was largely tied to your current location and the way individual words in a query were interpreted. The new approach takes geographical context into account, making combinations such as a **place name + POI**, category, street, or address much easier to understand.
+
+For example, you can find a city or another place first and then search for **cafés, restaurants, hotels, shops, fuel stations, or other POIs around that location**. This is especially useful when planning a trip somewhere else instead of searching only near your current position.
+
+The new search engine also improves how OsmAnd handles more complex queries, including combinations such as **"Hotel Berlin"**, a POI together with a street or city, different street-name formats, translated category names, and other location-based searches.
+
+Under the hood, this is more than an interface update. Our backend team introduced a new search architecture called **Spatial Search by Name**, designed to provide more relevant results and resolve many limitations of the previous search system. Search by supported POI categories has also been optimized for faster results.
 
 
 ## Others updates and improvements
 
-- **More track details in What's Here.** Track information now makes it easier to distinguish between tracks on the map, including identifying the folder where a track is stored.  
-  [#24608](https://github.com/osmandapp/OsmAnd/issues/24608)
+- **More track details in [What's Here](https://osmand.net/docs/user/map/map-context-menu#select-gpx-route).** Track information now makes it easier to distinguish between tracks on the map, including identifying the folder where a track is stored.  
+  {/*[#24608](https://github.com/osmandapp/OsmAnd/issues/24608)*/}
 
-- **More icons for profiles.** The profile icon selection has been expanded, giving you more options to visually distinguish profiles for activities such as running and other use cases.  
-  [#22508](https://github.com/osmandapp/OsmAnd/issues/22508)
+- **[More icons for profiles.](https://osmand.net/docs/user/personal/profiles#profile-appearance)** The profile icon selection has been expanded, giving you more options to visually distinguish profiles for activities such as running and other use cases.  
+  {/*[#22508](https://github.com/osmandapp/OsmAnd/issues/22508)*/}
 
-- **Extended AIDL support for external apps.** External apps and plugins can now organize their OsmAnd widgets into groups and use custom widget icons, providing more flexibility for third-party integrations.  
-  [#24980](https://github.com/osmandapp/OsmAnd/issues/24980)
+- [**Extended AIDL support for external apps.**](https://osmand.net/docs/technical/osmand-api-sdk/#android-osmand-aidl-api) External apps and plugins can now organize their OsmAnd widgets into groups and use custom widget icons, providing more flexibility for third-party integrations.  
+  {/*[#24980](https://github.com/osmandapp/OsmAnd/issues/24980)*/}
 
-- **Correct altitude on Android 16.** Fixed an issue where OsmAnd could display ellipsoidal altitude instead of altitude above mean sea level (MSL) on Android 16 devices.  
-  [#25438](https://github.com/osmandapp/OsmAnd/issues/25438)
-
-- **More reliable route calculation.** Routing has been improved for cases with outdated or inconsistent offline maps, reducing interruptions and allowing OsmAnd to use an alternative calculation method when needed.  
-  [#22987](https://github.com/osmandapp/OsmAnd/issues/22987)
-
+- [**Correct altitude on Android 16.**](https://osmand.net/docs/user/personal/maps-resources#world-maps) Fixed an issue where OsmAnd could display ellipsoidal altitude instead of altitude above mean sea level (MSL) on Android 16 devices.  
+  {/*[#25438](https://github.com/osmandapp/OsmAnd/issues/25438)*/}
 
 
 ## Bug fixes 
