@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title: AIS Gemi Takipçisi
 ---
@@ -13,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -111,7 +110,7 @@ AIS gemileri üç tür veri iletir:
 
 ### AIS Sembolleri ve Lejantları {#ais-symbols-and-legends}
 
-[AIS Sembol Sunumu İçin Yönergeler](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Semboller             | Açıklama   |
 |---------------------|---------------|
@@ -155,7 +154,7 @@ AIS gemileri üç tür veri iletir:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![AIS settings](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS settings](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +170,7 @@ AIS gemileri üç tür veri iletir:
 | IP adresi | AIS veri kaynağının IP'sini tanımlayın (TCP kullanılıyorsa) | `192.168.200.16` |
 | TCP bağlantı noktası   | AIS verileri için TCP bağlantı noktası numarasını tanımlayın | `4001` |
 | UDP bağlantı noktası | OsmAnd AIS alımı için UDP bağlantı noktasını tanımlayın  | `10110` |
+| OsmAnd duraklatıldığında bile AIS verilerini al   | OsmAnd duraklatıldığında veya arka planda çalışırken AIS ileti dinleyicisini çalışır durumda tutun. Devre dışı bırakılırsa, OsmAnd arka plandayken AIS iletileri alınmaz  | `Evet/Hayır` |
 | | | |
 | **AIS Sinyal alım zaman aşımı** | |  |
 | Kayıp AIS nesneleri için zaman aşımı     | Belirli bir süre boyunca sinyal alınmazsa gemiler kaybolur | `3 - 20 dk` |
@@ -189,7 +189,7 @@ AIS gemileri üç tür veri iletir:
 
     - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
     - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
-    - [Tek 3](https://github.com/user-attachments/files/18689403/333.txt)
+    - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
 2. **AIS verilerini OsmAnd'a yükleyin**  
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* öğesini açın ve indirilen dosyalardan birini seçin.

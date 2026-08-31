@@ -1,5 +1,5 @@
 ---
-source-hash: 9733cd1ca47bb2ca3b865f18ec57c43cd2e5747d128678d62046a2f87a8a0cbb
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title: Araç parametreleri
 ---

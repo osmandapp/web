@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title: Rota Hazırlığı
 ---
@@ -271,7 +271,7 @@ Bu menüde, varış noktalarını yönetmek için ek seçenekler bulabilirsiniz:
 
 </Tabs>
 
-[Navigasyon Geçmişi](../../personal/global-settings.md#history) kaydı etkinleştirilmişse, navigasyon için geçmiş listesindeki önceki rotaları veya varış noktalarını kullanabilirsiniz. Bu seçenek, sık kullanılan rotalara hızlı erişim için faydalı olabilir. Geçmiş listesindeki öğeler, en yeni olandan başlayarak en son kullanıma göre sıralanır.  
+[Navigasyon Geçmişi](../../personal/global-settings.md#history) kaydı etkinleştirilmişse, navigasyon için geçmiş listesindeki önceki rotaları veya varış noktalarını kullanabilirsiniz. Bu seçenek, sık kullanılan rotalara hızlı erişim için faygalı olabilir. Geçmiş listesindeki öğeler, en yeni olandan başlayarak en son kullanıma göre sıralanır.  
 
 :::note
 
@@ -461,22 +461,24 @@ Bir navigasyon rotası oluşturulduğunda, **<Translate android="true" ids="simu
 
 ## Haritalar Eksik veya Senkronize Değil {#maps-missing-or-not-synchronized}
 
-Bir rota oluşturmak için tüm **gerekli haritaların** indirilmiş ve aynı yayın tarihine sahip olması gerekir. Bazı durumlarda eksik haritalar mesajının rota hazırlık menüsünde gizlenebileceğini lütfen unutmayın. Navigasyon menüsünü yukarı çekerseniz, rotanızın neden hesaplanamadığına dair olası nedenleri göreceksiniz.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Navigasyon Android oluşturulurken harita yok mesajı 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon iOS oluşturulurken harita yok mesajı](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
+![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>
+
+Bir rota oluşturmak için tüm **gerekli haritaların** indirilmiş ve aynı yayın tarihine sahip olması gerekir. Android'de, gerekli haritaların farklı yayın tarihleri varsa, OsmAnd [Rota hesaplama yöntemi](../routing/car-based-routing.md#route-parameters---car) *Otomatik* olarak ayarlandığında Standart rotalamaya geçebilir.
+
+Lütfen unutmayın, bazı durumlarda eksik haritalar mesajının rota hazırlık menüsünde gizlenebileceğini unutmayın. Navigasyon menüsünü yukarı çekerseniz, rotanızın neden hesaplanamadığına dair olası nedenleri göreceksiniz.
 
 ### Gerekli Haritalar {#required-maps}
 

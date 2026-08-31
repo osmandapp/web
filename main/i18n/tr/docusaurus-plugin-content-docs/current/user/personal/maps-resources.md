@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -142,7 +142,7 @@ Aktif bir abonelik olmadan, bu harita türleri İndir yerine bir *Satın Al* dü
 
 Harita İndir menüsünde, uygulamanın işlevselliğini tamamlayan çeşitli dünya haritalarını indirmeye erişim sağlayan bir **Dünya Haritaları** bölümü bulunmaktadır.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Yalnızca Android*). Bu dosya, gezegensel eğriliği telafi etmek için rakım düzeltmelerini içerir.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Yalnızca Android*). Bu dosya, ortalama deniz seviyesinin üzerindeki rakımı sağlamayan cihazlarda rakım doğruluğunu iyileştirmek için kullanılan rakım düzeltmelerini içerir; bu, konum kaynağı olarak Google Play Hizmetleri yerine Android API kullanıldığında da geçerlidir.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Uzun vadeli rota planlaması ve gündelik keşifler için faydalı olan dünya yüzeyinin kapsamlı bir genel görünümünü sağlar.
 - **Dünya hava durumu haritası**. Hava durumu bilgileriyle bir harita indirmenize olanak tanır.
 

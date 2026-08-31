@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografya
 ---
@@ -274,30 +274,17 @@ Arazi Gölgeleri, 3B Rölyef gerektirir ve seçildiğinde otomatik olarak etkinl
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
-*Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
-
-- [Önceden tanımlanmış bir listeden](#default-color-scheme).
-- Bilgisayarınızda oluşturduğunuz renk paleti dosyalarından. Özel dosyalar, [içe/dışa aktarma aracı](../personal/import-export.md) kullanılarak OsmAnd'a eklenebilir.
-- Uygulamada doğrudan oluşturulan veya düzenlenen paletlerden.
-
-Özel paletler, *Rakım* veya *Eğim* gibi arazi verilerinin belirli bir değerine karşılık gelen renk ölçeklerine dayanır.  
-Yapabileceğiniz işlemler:
-
-- değer adımlarını (rakım seviyeleri veya eğim yüzdeleri) tanımlayın;
-- her adıma renkler atayın;
-- renk ölçeklerini ayarlamak için adımları ekleyin veya kaldırın.
-
-**Not:** Gölgelendirme, sabit bir gölgelendirme algoritması kullanır ve özel renk paletlerini desteklemez.
-
-Palet dosyalarını kullanarak gelişmiş palet özelleştirmesi için [Renk Şemaları](../personal/color-palette-schemes.md#palette-modify) makalesine bakın.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
 
-*Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
+</TabItem>
+
+</Tabs>
+
+*Modify Color Scheme feature* allows you to select a color scheme:
 
 - [Önceden tanımlanmış bir listeden](#default-color-scheme).
 - Bilgisayarınızda oluşturduğunuz renk paleti dosyalarından. Özel dosyalar, [içe/dışa aktarma aracı](../personal/import-export.md) kullanılarak OsmAnd'a eklenebilir.
@@ -313,10 +300,6 @@ Yapabileceğiniz işlemler:
 **Not:** Gölgelendirme, sabit bir gölgelendirme algoritması kullanır ve özel renk paletlerini desteklemez.
 
 Palet dosyalarını kullanarak gelişmiş palet özelleştirmesi için [Renk Şemaları](../personal/color-palette-schemes.md#palette-modify) makalesine bakın.
-
-</TabItem>
-
-</Tabs>
 
 ### Görünürlük {#visibility}
 
@@ -387,7 +370,13 @@ Arazi Gölgeleri için Yakınlaştırma Seviyeleri mevcut değildir çünkü bu 
 
 </Tabs>
 
-**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. [OpenStreetMap verileri](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage), binalardan geçen geçitleri `tunnel=building_passage` etiketiyle haritalanmışsa, OsmAnd 3B bina modelinde görünür açıklıkları oluşturur böylece binadan geçen yollar veya yaya yolları doğru şekilde görüntülenir. 
+**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. 
+
+Karmaşık yapılar için OsmAnd, farklı yükseklik ve şekillere sahip bir binanın ayrı bölümlerini işlemek üzere `building:part` kullanır. 
+
+Eğer [OpenStreetMap verileri](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) `tunnel=building_passage` etiketiyle haritalanmış binalardan geçen geçitleri içeriyorsa, OsmAnd 3B bina modelinde görünür açıklıkları oluşturur böylece binadan geçen yollar veya yaya yolları doğru şekilde görüntülenir. 
+
+3B binalar, [OpenStreetMap verilerine](https://wiki.openstreetmap.org/wiki/Key:roof:shape) dayalı farklı çatı şekillerini içerebilir. `roof:shape` etiketi çatı geometrisini tanımlar, `roof:levels` ve `roof:height` ise yüksekliği hakkında bilgi sağlar.
 
 3B binalar yalnızca daha yüksek yakınlaştırma seviyelerinde (şehir/sokak görünümü) gösterilir. Yakınlaştırma veya kaydırma sırasında 3B binalar yumuşak bir solma animasyonuyla belirir ve kaybolur. Bir POI veya seçili konum (örneğin bir harita pimi veya navigasyon hedefi) bir binanın içindeyse, OsmAnd ilgili binayı haritada tanımlamayı kolaylaştırmak için vurgular.
 
@@ -519,7 +508,6 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 </TabItem>
 
 </Tabs>
-
 
 ### Dikey Abartı {#vertical-exaggeration}
 
