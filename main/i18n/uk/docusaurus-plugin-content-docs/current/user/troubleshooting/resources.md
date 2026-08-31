@@ -1,5 +1,5 @@
 ---
-source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
@@ -67,7 +67,7 @@ OsmAnd — це потужний застосунок із широкою баз
 | Мова | Опис | Посилання |
 | :-- | :-- | :-- |
 | Іспанська  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Іспанська  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener more herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Іспанська  |  Este manual tiene el fin de explicar detalladamente todas las functions que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener more herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Іспанська  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Чеська   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | Французька  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -111,7 +111,16 @@ OsmAnd — це потужний застосунок із широкою баз
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) — це стиль карти від Holder Tamm, який дозволяє вам обирати, приховувати певні об'єкти чи ні.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Стиль рендерингу ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) переважно базується на UniMap та routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Це стиль рендерингу OsmAnd, оптимізований для полювання за штормами](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Користувацькі ресурси проєкту OsmAnd для точного налаштування поведінки OsmAnd. Тут визначено: стилі рендерингу карт, що використовуються в OsmAnd, записані та TTS-голоси, конфігурація генерації офлайн-карт, параметри маршрутизації, репозиторій іконок  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Маршрутизація
+
+Стандартний файл `routing.xml` можна налаштувати для коригування алгоритмів маршрутизації та параметрів для конкретних умов.
+
+| Назва джерела | Опис | Посилання |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Кастомна модифікація `routing.xml`, яка коригує розрахунок маршруту для дощових умов, враховуючи тип поверхні (наприклад, гола скеля), нахил та офіційні рейтинги складності стежок (шкали CAI/SAC), а також покращену логіку "Уникати тунелів". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Офлайн-карти {#offline-maps}
 
