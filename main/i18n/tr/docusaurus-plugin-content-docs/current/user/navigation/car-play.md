@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,9 +225,29 @@ CarPlay arama özelliği, **adres ararken** sokaklara ve bina numaralarına önc
 
 *CarPlay* için sesli rehberlik, OsmAnd'ın en kullanışlı navigasyon özelliklerinden biridir, gerçek zamanlı rehberlik sağlar ve sürücünün yola odaklanmasını sağlar. Sesli komutlar, dönüşleri, yönleri ve diğer navigasyon talimatlarını açıkça belirtir, navigasyon sisteminin daha güvenli ve konforlu kullanılmasını sağlar.  
 
-Sesli komutlar çalındığında OsmAnd, arka plan sesini türüne göre ayarlar. Podcast'ler ve sesli kitaplar gibi konuşma içeren ses içerikleri, navigasyon talimatları sırasında otomatik olarak duraklatılabilir. Müzik çalma sesi kısık olarak devam eder. *Konuşma sesini duraklat* seçeneği bu davranışı kontrol etmenizi sağlar.
+Sesli komutlar çalındığında OsmAnd, arka plan sesini türüne göre ayarlar. *<Translate ios="true" ids="pause_spoken_audio"/>* etkinleştirildiğinde podcast'ler ve sesli kitaplar gibi konuşma içeren ses içerikleri, navigasyon talimatları sırasında otomatik olarak duraklatılırken müzik çalma sesi kısık olarak devam eder. *<Translate ios="true" ids="pause_spoken_audio"/>* devre dışı bırakıldığında hem konuşma sesi hem de müzik azaltılmış ses seviyesinde çalmaya devam eder.  
 
 Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin.  
+
+
+### Navigasyon Uyarıları {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Navigasyona başlamadan önce ek işlem gerektiğinde yardımcı uyarılar otomatik olarak gösterilir. Bu uyarılar, navigasyon başlamadan önce yönlendirme sorunlarını çözmenize yardımcı olur.
+
+**Eksik veya güncel olmayan haritalar**
+
+Rotayı hesaplamak için gereken çevrimdışı haritalardan bazıları eksik veya güncel değilse bir uyarı görüntülenir. Aşağıdaki seçeneklerden birini seçebilirsiniz:
+- **İndirilen haritaları kullan**. Cihazınızda şu anda bulunan haritaları kullanarak rotayı hesaplayın.
+- **Telefonda görüntüle**. Gerekli haritaları indirmek veya güncellemek için iPhone'unuzda harita indirme ekranını açın. Haritalar indirildikten sonra navigasyona yeniden başlayabilirsiniz.
+- **İptal**. Navigasyonu başlatmadan uyarıyı kapatın.
+
+**Özel erişim uyarısı**
+
+Hedefinize ulaşmak için rotanın özel bir yol kullanmasını gerektiriyorsa bir uyarı görüntülenir: *Hedefinize ulaşmak için özel bir yol kullanılmasına izin verilsin mi?* Seçenekleriniz:
+- **İzin ver**. Özel yolu kullanarak rotaya devam edin.
+- **İptal**. Uyarıyı kapatın ve önceki ekrana dönün; burada hedefi değiştirebilir veya başka bir işlem yapabilirsiniz.
 
 
 ### Ekran Uyarısı Widget'ı {#screen-alert-widget}

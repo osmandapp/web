@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title: Rota Detayları
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd, en iyi rotayı bulmanızı ve detaylarını keşfetmenizi sağlar. Uygulama, mesafe, [seyahat süresi](#distance--time--co2), [yüzey tipi](#road-attributes), [yükseklik farkları](#elevation-info), [CO2 ayak izi verileri](#distance--time--co2) ve [dönüş bilgileri](#turn-by-turn-information) gibi rota hakkında detaylı bilgi sağlar. Ayrıca rotayı harita üzerinde [analiz edebilir](#analyze-on-map), parkur segmentleri hakkında bilgi edinebilir, rota planını [yazdırabilir](#print), rotayı [kaydedebilir](#share--export-actions) ve başkalarıyla paylaşabilirsiniz. Bu işlevsellik sayesinde rota detaylarını her zaman bilecek ve seyahatinizi daha verimli planlayabileceksiniz.  
+OsmAnd, en iyi rotayı bulmanızı ve detaylarını keşfetmenizi sağlar. Uygulama, mesafe, [seyahat süresi](#distance--time--co2), [yüzey tipi](#road-attributes), [yükseklik farkları](#elevation-info), [CO2 ayak izi verileri](#distance--time--co2) ve [dönüş bilgileri](#turn-by-turn-information) gibi rota hakkında detaylı bilgi sağlar. Ayrıca rotayı harita üzerinde [analiz edebilir](#analyze-on-map), parkur segmentleri hakkında bilgi edinebilir, rota planını [yazdırabilir](#print), rotayı [kaydedebilir](#share--save-actions) ve başkalarıyla paylaşabilirsiniz. Bu işlevsellik sayesinde rota detaylarını her zaman bilecek ve seyahatinizi daha verimli planlayabileceksiniz.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -95,7 +95,7 @@ Seçilen [profil ayarlarına](../../personal/profiles.md) ve seçilen [rota tür
 
 </Tabs>
 
-**Yükseklik bilgisi**, [Düz çizgi navigasyonu](../routing/straight-line-routing.md) kullanan profiller hariç, tüm OsmAnd çevrimdışı rota profillerinde sağlanır. Yükseklik verileri OsmAnd Çevrimdışı Haritalarının bir parçasıdır ve [Genel SRTM kaynaklarına](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) göre hesaplanır.
+**Yükseklik bilgisi**, [Düz çizgi navigasyonu](../routing/straight-line-routing.md) kullayan profiller hariç, tüm OsmAnd çevrimdışı rota profillerinde sağlanır. Yükseklik verileri OsmAnd Çevrimdışı Haritalarının bir parçasıdır ve [Genel SRTM kaynaklarına](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) göre hesaplanır.
 
 - *Rakım aralığı*. Rotadaki minimum / maksimum yüksekliği gösterir.
 - *Ortalama rakım*. Rotadaki ağırlıklı ortalama yüksekliği gösterir.
@@ -311,7 +311,7 @@ Bu bilgiler, bir gezi planlarken ve rotadaki farklı noktalar arasındaki sürey
 Adım adım bilgileri **PDF formatında yazdırma** veya **kaydetme** yeteneği, özellikle uzun mesafeler kat ederken veya bilmediğiniz yerlerde, rota ve oraya ulaşmak için gereken süre hakkında daha ayrıntılı bir fikre sahip olmanız gerektiğinde kullanışlıdır.
 
 
-## Paylaş / Dışa Aktar (Eylemler) {#share--export-actions}
+## Paylaş / Kaydet (Eylemler) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,7 +323,7 @@ Adım adım bilgileri **PDF formatında yazdırma** veya **kaydetme** yeteneği,
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon rotası iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Navigasyon rotası iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,7 +332,7 @@ Adım adım bilgileri **PDF formatında yazdırma** veya **kaydetme** yeteneği,
 Rota Detayları navigasyon bölümünde, rota bilgileriyle belirli eylemleri gerçekleştirmenizi sağlayan seçenekler bulunur.  
 
 - [**Yazdır**](#print). Adım adım rota bilgilerini yazdırmanıza veya kaydetmenize olanak tanır.
-- **Dışa Aktar/Kaydet**. Rota bilgilerini daha sonra çevrimdışı kullanım için **yeni bir parkur olarak** kaydetmenize olanak tanır. Dışa aktarılan parkur, yol özellikleri ve dönüş talimatları hakkında tüm bilgileri içerir. Bu nedenle, [bu parkurla navigasyon](./gpx-navigation.md), rotayla navigasyon gibi tüm özellikleri sağlamalıdır.
+- **Kaydet**. Rota bilgilerini daha sonra çevrimdışı kullanım için **yeni bir parkur olarak** kaydetmenize olanak tanır. Kaydedilen parkur, yol özellikleri ve dönüş talimatları hakkında tüm bilgileri içerir. Bu nedenle, [bu parkurla navigasyon](./gpx-navigation.md), rotayla navigasyon gibi tüm özellikleri sağlamalıdır.
 - **Paylaş**. Dışa aktarılan bir parkuru veya OsmAnd ile başka bir cihazda açılabilecek rota bağlantısını paylaşır.
 
 

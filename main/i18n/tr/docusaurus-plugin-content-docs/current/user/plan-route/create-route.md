@@ -1,5 +1,5 @@
 ---
-source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
+source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
 sidebar_position: 1
 title: Rota Planla
 ---
@@ -31,7 +31,7 @@ Bir rota, belirtilen noktalar arasındaki bir dizi segmentten oluşur. Segmentle
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios](@site/static/img/plan-route/plan_route_overview_ios.png)
+![Rota planla ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -63,7 +63,7 @@ Bir rota, belirtilen noktalar arasındaki bir dizi segmentten oluşur. Segmentle
 
 ### Yeni Rota Oluştur {#create-new-route}
 
-GPX formatında yeni bir iz oluşturmak için *Rota Planla* aracının ana işlevini kullanın. Bir rotayı önceden oluşturmanın, *[Yolculuk kaydı eklentisi](../plugins/trip-recording.md)* ile mevcut izi kaydetmeye kıyasla birçok avantajı vardır. Rotaya istediğiniz kadar nokta [ekleyebilir](#adding-points), [silebilir ve taşıyabilir](#point-context-menu), [segmentlere](#route-between-points) göre rota türlerini değiştirebilir ve rota hakkında [ayrıntılı bilgi](#graph) alabilirsiniz.  
+GPX formatında yeni bir iz oluşturmak için *Rota Planla* aracının ana işlevini kullanın. Bir rotayı önceden oluşturmanın, *[Yolculuk kaydı eklentisi](../plugins/trip-recording.md)* ile mevcut izi kaydetmeye kıyasla birçok avantajı vardır. Rotaya istediğiniz kadar nokta [ekleyebilir](#adding-points), [silebilir ve taşıyabilir](#point-context-menu), [segmentlere](#route-between-points) göre rota türlerini değiştirebilir ve rota hakkında [ayrıntılı bilgi](#graph--analyze) alabilirsiniz.  
 
 Varsayılan olarak, yönlendirme türü daha önce seçilen profille eşleşecektir, uygulamanın noktaları bağlamak için segmenti nasıl hesaplaması gerektiğini seçmek için yönlendirme simgesine dokunun. Mevcut profil [ayrıca yapılandırılmalıdır](../navigation/routing/osmand-routing.md#routing-types).  
 
@@ -93,7 +93,21 @@ Bir iz oluştururken veya düzenlerken noktaları kolayca yerleştirmek için **
 
 ### Mesafe Ölçümü {#distance-measurement}
 
-![Rota planla android](@site/static/img/plan-route/plan_route_lines_andr.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Rota planla android](@site/static/img/plan-route/plan_route_lines_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Rota planla iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 *Rota Planla*, noktalar arasındaki mesafeyi ölçmenin hızlı ve kolay bir yoludur.
 
@@ -108,9 +122,21 @@ Bir iz oluştururken veya düzenlerken noktaları kolayca yerleştirmek için **
 
 ### Yükseklik Verilerini Al {#get-elevation-data}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Rota planla android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+<TabItem value="android" label="Android">
+
+![Rota planla android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Rota planla iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Mevcut bir izde [Yükseklik verileri](../map/tracks/track-context-menu.md#calculate-missing-elevation) eksikse, aşağıdaki araçları kullanarak eklemek mümkündür:
 
@@ -131,13 +157,13 @@ Bunun yerine çevrimdışı seçenekleri kullanın: yollara bağla veya Arazi ha
 
 <TabItem value="android" label="Android">
 
-![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Rota planla snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -194,9 +220,9 @@ Ayrıca, bir POI veya Favoriye dokunarak bağlam menüsünü açıp ardından *N
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
+![Rota planla ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Bir mesafeyi ölçmek veya bir gezi planlamak için, *İşaretçi* konumuna tek tek noktalar ekleyin ve *Nokta Ekle* düğmesine dokunun. Aşağıdaki **noktalar listesine** erişerek noktaları yeniden sıralayabilir, silebilir veya belirli bir [nokta bağlam menüsüne](#point-context-menu) erişebilirsiniz.
+Bir mesafeyi ölçmek veya bir gezi planlamak için, *İşaretçi* konumuna tek tek noktalar ekleyin ve *Rota +* düğmesine dokunun. Aşağıdaki **noktalar listesine** erişerek noktaları yeniden sıralayabilir, silebilir veya belirli bir [nokta bağlam menüsüne](#point-context-menu) erişebilirsiniz.
 
 </TabItem>
 
@@ -206,13 +232,27 @@ Bir mesafeyi ölçmek veya bir gezi planlamak için, *İşaretçi* konumuna tek 
 Rota planında yaptığınız her eylemi **Geri Al**/**Yinele** de yapabilirsiniz.
 :::
   
+### Ara Noktalar Ekleme (yalnızca iOS) {#adding-waypoints}
+
+![Rota planla ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Rota planla ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+
+POI sekmesi, rota planlarken ara noktaları eklemenize ve yönetmenize olanak tanır.
+
+Bir ara nokta eklemek için haritada bir konum seçin ve *+ POI* düğmesine dokunun. Ara nokta ekranı açılır; burada ad, açıklama ve adres girebilir, bir grup seçebilir ve simge, renk ve şekli özelleştirebilirsiniz. Mevcut bir grubu seçebilir veya yeni bir grup oluşturmak için *Grup ekle* öğesine dokunabilirsiniz.
+
+POI sekmesi, klasörlere göre gruplandırılmış eklenen noktaları görüntüler. Her grup adını ve içerdiği nokta sayısını gösterir. Her grup için üç nokta menüsüne dokunarak grup eylemlerine erişebilirsiniz:
+- **Yeniden adlandır** — grup adını değiştirin.
+- **Görünümü değiştir** — grubun görünümünü değiştirin.
+- **Sırala** — gruptaki noktaların sırasını değiştirin.
+- **Sil** — grubu silin.
+
+Sırala menüsü şu seçenekleri sağlar: *Son değiştirilme*, *Ad A–Z*, *Ad Z–A*, *Yeni tarih önce* ve *Eski tarih önce*.
+
+Bir gruptaki bir noktaya dokunarak bağlam menüsünü açabilirsiniz. Şunları yapabilirsiniz:
+- **Düzenle** — Ara nokta düzenleme ekranını açın.
+- **Sil** — noktayı gruptan kaldırın.
+  
 ### Noktalar Arası Rota {#route-between-points}
-
-Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profilin noktaları arasında bir rota olarak bağlanabilir. *Noktalar arası rota* birkaç şekilde erişilebilir:
-
-1. *Seçenekler* menüsünden *→* *Noktalar arası rota*.
-2. Harita ekranının sol alt köşesindeki *profil simgesine* dokunun. Üstteki simgeye değil, Haritayı Yapılandır menüsünü açacaktır.
-3. *[Nokta Bağlam menüsünde](#point-context-menu) → Önce/sonra rota türünü değiştir*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -220,15 +260,11 @@ Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profil
 
 ![Rota planla android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Rota planla android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
-</TabItem>
+Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profilin noktaları arasında bir rota olarak bağlanabilir. *Noktalar arası rota* birkaç şekilde erişilebilir:
 
-<TabItem value="ios" label="iOS">
-
-![Rota planla ios](@site/static/img/plan-route/plan_route_between_points_ios.png) ![Rota planla ios](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
-
-</TabItem>
-
-</Tabs>
+1. *Seçenekler* menüsünden *→* *Noktalar arası rota*.
+2. Harita ekranının sol alt köşesindeki *profil simgesine* dokunun. Üstteki simgeye değil, Haritayı Yapılandır menüsünü açacaktır.
+3. *[Nokta Bağlam menüsünde](#point-context-menu) → Önce/sonra rota türünü değiştir*.  
 
 2 belirli nokta veya birden fazla nokta arasındaki rotayı değiştirebilirsiniz:
 
@@ -237,12 +273,72 @@ Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profil
 - *Noktadan Önce/Sonra Rota Türünü Değiştir*. *Nokta bağlam menüsünde*, rotanın bu noktadan en yakın veya kenar noktaya kadar olan bölümü için nasıl hesaplandığını değiştirebilirsiniz. Ayar, bu noktadan rotanın başlangıcına veya sonuna veya bir sonraki/önceki noktaya olan mesafe hakkında bilgi sağlar.
 - *Rotayı yeniden hesapla*. Profil türünü değiştirmeden rota yeniden hesaplamayı kullanabilirsiniz. Araçta planlanan rotada gösterilen profil simgesi değişmeyecek, ancak rota türü seçilenle eşleşecektir. Alternatif rotalar bulmak için buna ihtiyacınız olabilir.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Rota planla ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Rota planla ios](@site/static/img/plan-route/settings_tab_ios.webp)
+
+Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profilin noktaları arasında bir rota olarak bağlanabilir. *Noktalar arası rota* menüsü, rota segmentleri ve bölümleri için yönlendirme türünü ve ayarlarını görüntülemenize ve değiştirmenize olanak tanır.
+
+*Noktalar arası rota* öğesine, geçerli seçili yönlendirme profilinin simgesini gösteren *Noktalar arası rota* düğmesine dokunarak veya bir [Segment](#segments) ya da Bölüm menüsünden açabilirsiniz.
+
+Rota türü sekmesinde, seçilen segment veya bölüm için bir yönlendirme profili seçebilirsiniz. Düz çizgi ilk seçenek olarak sunulur, ardından mevcut yönlendirme profilleri gelir.
+
+Bir rotada yalnızca tek bir yönlendirme türü olduğunda basit *Noktalar arası rota* görünümü gösterilir. Bir rotada birden fazla yönlendirme türü olduğunda karmaşık görünüm tüm segmentleri ve bölümleri gösterir ve rotanın hangi kısmını değiştireceğinizi seçmenize olanak tanır.
+
+Ayrıca şunları yapabilirsiniz:
+- **Yeni segment başlat** — yeni bir segment oluşturun ve rota noktaları eklemeye devam edin. Yeni segment geçerliyle aynı rota türünü kullanır.
+- **Tüm iz için değiştir** — tüm ize uygulanacak bir yönlendirme türü seçin.
+
+Ayarlar sekmesinde, seçilen rota türü için önceden tanımlanmış yönlendirme ayarlarını seçebilirsiniz.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Segmentler {#segments}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Bir iz segmenti, **boşluklar** olmadan birbirine bağlı bir nokta koleksiyonudur. Bir rota planlama aracında şunlar mümkündür:
 
 - Segmentleri birleştirmek: [Segmentleri birleştir](#point-context-menu) seçeneği, daha önce ayrılmış segmentlere olan boşluğu kaldırır.
 - Bir izi bölmek veya yeni, bağlantısız bölümler oluşturmak. Bir tane oluşturmak için [Yeni segment başlat](#point-context-menu) seçeneğini kullanın veya Nokta bağlam menüsünden [Böl](#point-context-menu) özelliğini seçin.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Rota planla ios](@site/static/img/plan-route/segment_menu.webp) ![Rota planla ios](@site/static/img/plan-route/section_menu.webp)
+
+Bir rotada bir veya daha fazla segment bulunabilir. Bir segment tek bir rota türü kullanabilir veya farklı rota türlerine sahip birden fazla bölüm içerebilir.
+
+Rota sekmesinde her segment, rota türü ve mesafesiyle birlikte görüntülenir. Bir segment birden fazla bölüm içerdiğinde her bölüm kendi rota türünü ve mesafesini gösterir.
+
+Bir segmenti üç nokta menüsünü kullanarak yönetebilirsiniz:
+- **Rota türünü değiştir** — tek rota türüne sahip bir segment için kullanılabilir. Farklı bir rota türü seçebileceğiniz *Noktalar arası rota* öğesini açar.
+- **Tek rota türü ayarla** — bir segment farklı rota türlerine sahip birden fazla bölüm içerdiğinde kullanılabilir. Segment için tek bir rota türü uygulayabileceğiniz *Noktalar arası rota* öğesini açar.
+- **Sırala** — rota noktalarını el ile yeniden sıralayın veya toplam seyahat mesafesini en aza indirmek için Kapıdan kapıya sırala seçeneğini kullanın.
+- **Farklı kaydet** — segmenti ayrı bir dosya olarak kaydedin.
+- **Segmenti sil** — segmenti silin.
+
+Yeni bağlantısız bir segment oluşturmak için Rota sekmesinin altındaki *Yeni segment başlat* öğesine dokunun.
+
+Bir segment, farklı bölümlerinde farklı rota türleri kullanıldığında [bölümlere](#multimodal-routes) ayrılabilir. Her bölüm kendi rota türünü ve mesafesini gösterir.
+
+Bir bölümün üç nokta menüsüne dokunarak şunları yapabilirsiniz:
+- **Rota türünü değiştir** — *Noktalar arası rota* öğesini açın ve başka bir rota türü seçin.
+- **Sırala** — mevcut sıralama seçeneklerine erişin.
+- **Bölümü sil** — bölümü kaldırın.
+
+</TabItem>
+
+</Tabs>
+
 
 ### Nokta Bağlam Menüsü {#point-context-menu}
 
@@ -256,7 +352,7 @@ Bir iz segmenti, **boşluklar** olmadan birbirine bağlı bir nokta koleksiyonud
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios](@site/static/img/plan-route/plan_route_points_menu_ios.png)
+![Rota planla ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -264,7 +360,7 @@ Bir iz segmenti, **boşluklar** olmadan birbirine bağlı bir nokta koleksiyonud
 
 Rotanızdaki her noktanın kendi bağlam menüsü vardır. Noktanın *sıra numarasını*, *rotanın başlangıcından olan mesafeyi*, harita üzerinde hareket ettirme ve kaldırma işlevini ve bu noktadan önceki ve sonraki rota bölümleriyle ilgili bir dizi eylemi gösterir. Düzenlemek için, [noktalar listesindeki](#adding-points) veya doğrudan haritadaki gerekli noktaya dokunun.
 
-- ***Nokta hakkında bilgi***. Listedeki nokta sayısı. İlk noktaya olan mesafe, ayarlanan yönlendirme türüne göre belirlenir, *Noktalar arası rota* parametresi değiştirilirse yeni türe yeniden hesaplandığında mesafe değişebilir.  
+- ***Nokta hakkında bilgi***. Listedeki nokta sayısı. İlk noktaya olan mesafe, ayarlanan yönendirme türüne göre belirlenir, *Noktalar arası rota* parametresi değiştirilirse yeni türe yeniden hesaplandığında mesafe değişebilir.  
 
 - ***<Translate ios="true" ids="move_point"/>***. Bir noktanın harita üzerindeki konumunu değiştirmenizi sağlar. Noktanın konumunu değiştirmek için haritayı hareket ettirin. Nokta göstergesi, haritanın görünür kısmının merkezinde olacaktır.  
 
@@ -300,7 +396,7 @@ Rotanızdaki her noktanın kendi bağlam menüsü vardır. Noktanın *sıra numa
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Rota planla ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -319,22 +415,11 @@ Rotanızdaki her noktanın kendi bağlam menüsü vardır. Noktanın *sıra numa
 
 ![Rota planla android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Rota planla ios](@site/static/img/plan-route/plan_route_save_changes_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-
 Haritaya en az bir nokta [ekledikten](#adding-points) sonra kaydetme seçeneğini kullanabilirsiniz. *Rota Planla*'da kaydedilen tüm izler ana *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)* bölümünde bulunabilir.  
 
 Kaydetmenin dört yolu vardır:
 
-- ***Hızlı kaydetme***. Sağ üstteki ***Bitti*** / ***Kaydet*** (mevcut izler için) düğmesi, değişiklikleri hızlı bir şekilde kaydetmenizi ve *Rota Planla* aracından çıkmanızı sağlar. Ad, geçerli tarihe göre oluşturulur.
+- ***Hızlı kaydetme***. Sağ üstteki ***Bitti*** (mevcut izler için) düğmesi, değişiklikleri hızlı bir şekilde kaydetmenizi ve *Rota Planla* aracından çıkmanızı sağlar. Ad, geçerli tarihe göre oluşturulur.
 - [Seçenekler menüsündeki](#options) ***Değişiklikleri kaydet***, değişiklikleri bir dosyaya kaydetmenizi ve rotayı planlamaya devam etmenizi sağlar.
 - [Seçenekler menüsündeki](#options) ***Yeni iz olarak kaydet***, izinin adını ve rotanın kaydedileceği klasörü belirttiğiniz bir iletişim kutusu açar.
 - ***Değişiklikleri bir ize ekle***. Oluşturulan bir izi, başka bir mevcut ize [ayrı bir segment](#segments) olarak ekler. Seçilen bir izdeki değişiklikler *geri alınamaz*.
@@ -345,6 +430,28 @@ Kaydetme sırasında, iz planlama için kullanılan yönlendirme profilinin akti
 Yeni bir iz kaydederken, izi diğer üçüncü taraf uygulamalarla uyumlu hale getirmek için ***Basitleştirilmiş*** iz seçeneğini seçebilirsiniz. Teknik olarak, iz, yalnızca geometrik bir iz olarak rota talimatları olmadan kaydedilecektir.
 :::
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Rota planla ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+
+Haritaya en az bir nokta [ekledikten](#adding-points) sonra kaydetme seçeneğini kullanabilirsiniz. *Rota Planla*'da kaydedilen tüm izler ana *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)* bölümünde bulunabilir.
+
+Yeni bir rota için geçerli izi kaydetmek üzere üst araç çubuğundaki *Kaydet* öğesine dokunun. Ayrıca Seçenekler menüsünden *Farklı kaydet…* seçeneğini kullanarak dosya adı girip rotayı kaydedebilirsiniz.
+
+Mevcut bir izi düzenlerken *Kaydet*, geçerli değişiklikleri kaydeder. Ayrıca şu seçenekleri kullanabilirsiniz:
+- **Farklı kaydet…** — izi yeni bir dosya adıyla kaydeder.
+- **Kopya olarak kaydet** — izin bir kopyasını kaydeder.
+- **Mevcut bir ize ekle** — planlanan izi ayrı bir segment olarak mevcut bir ize ekler.
+
+Kaydetme sırasında, iz planlama için kullanılan yönlendirme profilinin aktivite türünü miras alır. Aktivite, iz meta verilerinde kaydedilir ve GPX dosyasını dışa aktarma veya içe aktarma sonrasında korunur.
+
+</TabItem>
+
+</Tabs>  
+
+
 ### Seçenekler {#options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -352,16 +459,6 @@ Yeni bir iz kaydederken, izi diğer üçüncü taraf uygulamalarla uyumlu hale g
 <TabItem value="android" label="Android">
 
 ![Rota planla android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Rota planla ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Seçilen uygulama profilini gösterir (varsayılan düz bir çizgidir). Bu eyleme dokunmak, uygulama [profil menüsünü](../personal/profiles.md) açan *Profil* düğmesine dokunmakla aynıdır.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) veya **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Önceki segmente bağlanmayan yeni rota segmentleri çizer.
@@ -371,11 +468,32 @@ Yeni bir iz kaydederken, izi diğer üçüncü taraf uygulamalarla uyumlu hale g
 - [<Translate android="true" ids="shared_string_navigation"/>](../navigation/setup/gpx-navigation.md). Konumunuzdan bitiş noktasına çizilen bir rota kullanarak navigasyonu başlatır.
 - **<Translate android="true" ids="reverse_route"/>**. Rotanın *Başlangıç* noktasını ve son eklenen noktayı değiştirirsiniz. Tersine çevirme uygulandığında rota segmenti ayarları değişmez.
 - [<Translate android="true" ids="attach_to_the_roads"/>](#attach-track-to-roads). Yaklaşık bir rota oluşturur. İz üzerindeki her nokta, seçilen profile ve eşik mesafesine göre haritadaki en yakın izin verilen yola eşleştirilir.
-- [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) (Yalnızca Android). Seçilen yönlendirme türüyle eşleşmeyen rota noktalarını filtreleyebilir, gereksiz verileri silebilir veya yanlış verileri düzeltebilirsiniz. GPS filtresi yalnızca yönlendirme türü *Düz Çizgi* olarak belirtilmişse çalışır. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
+- [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) (Yalnızca Android). Seçilen yönlendirme türüyle eşleşmeyen rota noktalarını filtreleyebilir, gereksiz verileri silebilir veya yanlış verileri düzeltebilirsiniz. GPS filtresi yalnızca yönendirme türü *Düz Çizgi* olarak belirtilmişse çalışır. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*Yalnızca Android*). Bu seçenek, menüde yalnızca yükseklik verileri mevcut değilse görüntülenir. Bu [seçenekle](#get-elevation-data), *Arazi harita verilerini* kullanarak rakımı hesaplayabilir veya *yakındaki yolları* bulmak için indirilen haritalardaki verileri kullanabilirsiniz.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. Tüm eylemlerinizi tamamen arşivler. Haritada bir "yapaylık" kalır - yeni temizlenen rotanın noktalı çizgileri. Bir sonraki, yeni noktalar eklenirken kaybolur. Tümünü Temizle işlevini Geri Dön Eylemi düğmesiyle iptal edebilirsiniz. Özellik, araçta açılan rotaların değişmeyen kısımlarını etkilemez.
 
-### Grafik {#graph}
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Rota planla ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+
+Üst araç çubuğundaki üç nokta menüsüne dokunarak *Seçenekler* menüsünü açın. Kullanılabilir eylemler, yeni bir rota oluşturup oluşturmadığınıza veya mevcut bir izi düzenleyip düzenlemediğinize bağlıdır.
+
+- **Farklı kaydet…** — rotayı yeni bir dosya adıyla kaydedin. Hem yeni rotalar hem de düzenlenmiş izler için kullanılabilir.
+- **Kopya olarak kaydet** — mevcut bir izin kopyasını kaydedin. Mevcut bir iz düzenlenirken kullanılabilir.
+- **Mevcut bir ize ekle** — planlanan rotayı ayrı bir segment olarak mevcut bir ize ekleyin.
+- **Segment sırasını değiştir** — rota segmentlerinin sırasını değiştirin.
+- **Rotayı ters çevir** — rotanın yönünü ters çevirin.
+- **Navigasyon** — Planla rotayı kapatın ve planlanan rotayı kullanarak navigasyonu başlatın.
+- **Tüm noktaları temizle** — planlanan rotadaki tüm noktaları kaldırın.
+
+</TabItem>
+
+</Tabs>
+
+
+### Grafik / Analiz Et {#graph--analyze}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -383,22 +501,27 @@ Yeni bir iz kaydederken, izi diğer üçüncü taraf uygulamalarla uyumlu hale g
 
 ![Rota planla android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
+Rota planlaması sırasında, [grafik](../navigation/setup/route-details.md#elevation-graph) rota yüksekliği ve eğim yüzdesi bilgilerini görüntüler, ayrıca belirli verilerle bir işaretçi görüntülemek için grafiğin herhangi bir yerine dokunabilirsiniz.  
+
+Grafik, bir iz oluştururken veya açarken ve *Rota Planla* kullanarak [Navigasyon](../navigation/setup/gpx-navigation.md) yaparken *Grafik* sekmesinde görüntülenir.
+
+*Rota Planla*'da navigasyon için bir rota hesaplarken, [Yükseklik bilgisi](../navigation/setup/route-details.md#elevation-info) ve [Yol özellikleri](../navigation/setup/route-details.md#road-attributes) gibi ek iz bilgilerini bulabilir ve [Haritada analiz et](../navigation/setup/route-details.md#analyze-on-map) aracını kullanabilirsiniz. Grafiğin altındaki *Ayrıntılar* düğmesine dokunun.  
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Rota planla snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+
+Genel bakış bölümü, seçilen eksene göre bir grafik görüntüler. Grafikte görüntülenen verileri seçmek için eksen seçim kontrollerini kullanın. *Yükseklik verilerini yeniden hesapla*, gerektiğinde yükseklik verilerini yeniden hesaplamanıza olanak tanır. Yükseklik verileri mevcut değilse, Analiz sekmesi Yükseklik verisi yok mesajını gösterir. Mesaj, OsmAnd'ın yükseklik verilerini yakındaki yollardan veya arazi haritalarından alabileceğini açıklar. Yükseklik verilerini hesaplamak için *Yükseklik verilerini al* öğesine dokunun. Daha fazla bilgi için [Yükseklik Verilerini Al](#get-elevation-data) bölümüne bakın.
+
+Genel bakış İstatistikler bölümü *Tırmanış*, *İniş*, *Rakım aralığı*, *Ortalama hız*, *Maks. hız* ve *Hareket süresi* değerlerini gösterir. Veri mevcut olmadığında tire `–` görüntülenir. Örneğin, hız ve hareket süresi planlanan rotalar için kullanılamayabilir.
+
+Yol Türleri, Eğim, Yüzey ve Pürüzsüzlük bölümleri ilgili rota özelliklerini gösterir. Ayrıntılı bilgileri açıklamalarda görmek için bir bölüme dokunun.
 
 </TabItem>
 
 </Tabs>
-
-Rota planlaması sırasında, [grafik](../navigation/setup/route-details.md#elevation-graph) rota yüksekliği ve eğim yüzdesi bilgilerini görüntüler, ayrıca belirli verilerle bir işaretçi görüntülemek için grafiğin herhangi bir yerine dokunabilirsiniz.  
-
-- **Android** için grafik, bir iz oluştururken veya açarken ve *Rota Planla* kullanarak [Navigasyon](../navigation/setup/gpx-navigation.md) yaparken *Grafik* sekmesinde görüntülenir.
-- **iOS** için grafik, yalnızca *[Seçenekler](#options) → Navigasyon* menüsü aracılığıyla kullanılabilir.
-
-*Rota Planla*'da navigasyon için bir rota hesaplarken, [Yükseklik bilgisi](../navigation/setup/route-details.md#elevation-info) ve [Yol özellikleri](../navigation/setup/route-details.md#road-attributes) gibi ek iz bilgilerini bulabilir ve [Haritada analiz et](../navigation/setup/route-details.md#analyze-on-map) aracını kullanabilirsiniz. Grafiğin altındaki *Ayrıntılar* düğmesine dokunun.  
 
 
 ## İlgili Makaleler {#related-articles}

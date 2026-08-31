@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Sesli Komutlar / Bildirimler
 ---
@@ -52,7 +52,7 @@ Sesli komutların nasıl ve ne zaman tetiklendiği hakkında daha fazla bilgi i�
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Sesli Navigasyon ayarları Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Sesli Navigasyon ayarları Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Sesli Navigasyon ayarları Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Sesli komutların nasıl ve ne zaman tetiklendiği hakkında daha fazla bilgi i�
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> düğmesi* *(veya <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil Seç → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Sesli Navigasyon ayarları iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Sesli Navigasyon ayarları iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Sesli Navigasyon ayarları iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Sesli komutların nasıl ve ne zaman tetiklendiği hakkında daha fazla bilgi i�
 
 - *Navigasyon talimatlarını tekrarla*. Navigasyon talimatlarını 1 dakikadan 30 dakikaya kadar düzenli aralıklarla tekrarlamanıza olanak tanır. Veya manuel olarak - bir sesli komutu kaçırırsanız, uygulama ekranındaki [mevcut dönüş okuna](../../widgets/nav-widgets.md#next-turn) dokunarak tekrar dinleyebilirsiniz.
 - *[Duyuru zamanı](#announcement-time)*.
+- *Konuşma sesini duraklat* (*Yalnızca iOS*). Etkinleştirildiğinde, sesli komutlar çalınırken podcast'ler, sesli kitaplar ve diğer konuşma sesleri duraklatılır. Müzik çalma azaltılmış ses düzeyinde devam eder. Devre dışı bırakıldığında, hem konuşma sesi hem de müzik azaltılmış ses düzeyinde çalmaya devam eder.
 
 **Çıkış** (*Yalnızca Android*):
 
@@ -196,7 +197,7 @@ Ek sorun giderme adımları için [navigasyon sorun giderme kılavuzuna](../../t
 
 ## TTS (Metin Okuma) {#tts-text-to-speech}
 
-OsmAnd, dönüş talimatları, sokak adları ve İÇN duyuruları dahil olmak üzere dinamik ve ayrıntılı sesli rehberlik sağlayan **Metin Okuma (TTS)** seslerini destekler. TTS sesleri uygulamaya dahildir ancak cihazda yüklü bir [Metin okuma motoru](https://en.wikipedia.org/wiki/Speech_synthesis) gerektirir.  
+OsmAnd, dönüş talimatları, sokak adları ve İÇN duyuruları dahil olmak üzere dinamik ve ayrıntılı sesli rehberlik sağlayan **Metin Okuma (TTS)** seslerini destekler. TTS sesleri uygulamaya dahildir ancak cihazta yüklü bir [Metin okuma motoru](https://en.wikipedia.org/wiki/Speech_synthesis) gerektirir.  
 
 Çoğu modern Android ve iOS cihazı varsayılan bir TTS motoru içerir, ancak ek motorlar ve diller ayrı olarak yüklenebilir.  
 
@@ -266,7 +267,7 @@ OsmAnd iki tür sesli komut sağlar:
 - **<Translate android="true" ids="tts_title"/>**
     - Sesli komutları dinamik olarak oluşturmak için cihazın TTS motorunu kullanır.
     - Sokak adlarını, dönüş talimatlarını, İÇN adlarını ve diğer ayrıntıları okur.
-    - Birden çok dili ve telaffuz ayarını destekler.
+    - Birden çok dili ve telaffuz ayarlarını destekler.
     - Konuşma hızı, tonu ve telaffuz ayarlarıyla özelleştirilebilir.
 
 - **<Translate android="true" ids="shared_string_recorded"/>** (*Yalnızca Android*)

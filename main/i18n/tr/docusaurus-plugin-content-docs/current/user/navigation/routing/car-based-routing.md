@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title: Araç rotalama (Kamyon, Motosiklet)
 ---
@@ -35,7 +35,7 @@ Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rota
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![Araç rotalama ayarları Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![Araç rotalama ayarları Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -56,6 +56,7 @@ Araç rotalama, sürücülerin varış noktalarına en verimli ve doğrudan rota
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Rota hesaplanırken özel erişim kısıtlamaları göz ardı edilecektir.  | *[private](https://wiki.openstreetmap.org/wiki/Key:access)* etiketi OSM'de otoyolların ve diğer ulaşım yollarının, binaların, girişlerin, olanakların ve eğlence varlıklarının kullanımındaki kısıtlamaları tanımlamak için kullanılır.   |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (yalnızca&nbsp;araç) |  <details><summary> Mal teslimatına kapalı yollardan kaçınılacaktır. </summary>![Mal teslimatı Android](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| Bu seçenek yalnızca 3,5 tondan fazla olmayan malları taşıyan araçlar için geçerlidir. Aracınızın ağırlığı 3,5 tondan fazlaysa, [Kamyon profili](#route-parameters---truck) kullanmalısınız.   |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | Yakıt verimli bir rota hesaplamak için, rotalama motoru hızı dahili olarak 60 km/s ile sınırlar, ancak Tahmini Varış Süresi değişmez. Bu nedenle, aynı başlangıç-bitiş rotalarının 2'si durumunda: otoyol (120 km/s) ve tali (60 km/s) - daha kısa rota seçilecektir. Hız sınırı < 60 km/s olan servis yolları için daha hızlı rota seçilecektir. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Yalnızca Android*) | Tercih edilen rota hesaplama yöntemini seçin. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Rota Parametreleri - Kamyon {#route-parameters---truck}

@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title: OpenStreetMap Düzenleme
 ---
@@ -38,7 +38,7 @@ OsmAnd ve OSM düzenleme eklentisi ile OpenStreetMap.org'a kendi bilgilerinizi k
 - *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*
 
-![OpenStreetMap düzenleme eklentisi Ayarları Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -47,7 +47,7 @@ OsmAnd ve OSM düzenleme eklentisi ile OpenStreetMap.org'a kendi bilgilerinizi k
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![OpenStreetMap düzenleme eklentisi Ayarları iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
@@ -74,13 +74,13 @@ Bir [OsmAnd Pro](../purchases/android.md#pro-features) aboneliğiniz varsa, OSM'
 
 <TabItem value="android" label="Android">
 
-![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/osm_authorization_andr.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/osm_authorization_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
@@ -98,13 +98,13 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 <TabItem value="android" label="Android">
 
-![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
 
 </TabItem>
 
@@ -121,7 +121,7 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![OSM düzenleme katmanı Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM düzenleme katmanı Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
@@ -129,7 +129,7 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![OSM düzenleme katmanı iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
@@ -137,15 +137,15 @@ Değişiklikleri ve GPX dosyalarını katkıda bulunmak için giriş yapın.
 
 *Ana Menü*'nün [Haritayı Yapılandır](../map/configure-map-menu.md) bölümünde OSM değişikliklerinin görüntülenmesini ayrı bir katman olarak etkinleştirebilir veya devre dışı bırakabilirsiniz.  OSM değişiklikleri şunları içerir:  
 - **OSM Notları (çevrimiçi)**. Kullanıcılar tarafından haritalama sorunlarını vurgulamak veya güncellemeleri talep etmek için oluşturulan genel OpenStreetMap notlarını görüntüler. Notlar, haritacılar tarafından incelenebilen, açılabilen ve çözülebilen etkileşimli işaretler olarak gösterilir.  
-![OSM düzenleme katmanı](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
 - **OSM Düzenlemeleri**. OpenStreetMap sunucusuna yüklenmeden önce cihazda depolanan kendi yerel OSM düzenlemelerinizi gösterir. Bu katman, değiştirdiğiniz veya eklediğiniz nesnelerin geometrisini ve özniteliklerini incelemeye yardımcı olur.  
-![OSM düzenleme katmanı](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
 - **Fixme Etiketleri**. OSM'de fixme=* ile etiketlenmiş nesneleri vurgular. Bu öğeler, bilginin eksik, belirsiz veya saha doğrulaması gerektirdiğini belirten haritacı yorumlarını içerir.  
-![OSM düzenleme katmanı](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
 - **Not Etiketleri**. note=* etiketlerini içeren nesneleri görüntüler — OSM verilerine doğrudan gömülü haritacı yorumları. Bu etiketler genellikle geçici koşulları veya gelecekteki düzenlemeler için ek bağlamı tanımlar.  
-![OSM düzenleme katmanı](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
 - **Düşük Yakınlaştırmalarda Simgeler**. Birincil etiket anahtarlarından türetilen kısa kısaltmalar kullanarak OSM nesnelerinin basitleştirilmiş simge benzeri temsillerini etkinleştirir. Anlamları [burada](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-) açıklanmıştır. Bu özellik, haritayı aşırı yüklemeden veya simge örtüşmesine neden olmadan düşük yakınlaştırma seviyelerinde daha fazla nesneyi görünür kılar.  
-![OSM düzenleme katmanı](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## İÇN Oluştur / Değiştir {#create--modify-poi}
@@ -163,13 +163,13 @@ OpenStreetMap düzenleme eklentisi, haritada [ilgi çekici noktalar veya İÇN'l
 
 <TabItem value="android" label="Android">  
 
-![İÇN etiketi ekle Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![İÇN etiketi ekle Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
+![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İÇN etiketi ekle iOS](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
@@ -205,7 +205,7 @@ Desteklenmeyen İÇN türlerini eklerken, uygulamanın doğru çalışmasını v
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
-![OSM Notu Aç Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![OSM Notu Aç Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
+![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
@@ -213,7 +213,7 @@ Desteklenmeyen İÇN türlerini eklerken, uygulamanın doğru çalışmasını v
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
-![OSM Notu Aç iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
+![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
@@ -244,7 +244,7 @@ Kaydettiğiniz GPS izleri şunlar için kullanışlıdır:
 - **Navigasyon**. Yüklediğiniz GPX dosya verilerine dayanarak, navigasyon uygulamaları ve özel cihazlar izleri hesaplayabilir.
 - [OpenStreetMap tabanlı haritalarda](https://wiki.openstreetmap.org/wiki/Track_drawing_websites) kaydettiğiniz izler ve rotalar hakkındaki **bilgileri paylaşmak**.  
 
-:::info NOT
+:::info NOTE
 İzleriniz bir saat içinde [OSM izlerine](https://www.openstreetmap.org/traces) eklenecek ve burada sizin ve başkalarının görüntülemesi, araması ve kullanması için hazır olacaktır.
 :::  
 
@@ -256,13 +256,13 @@ Kaydettiğiniz GPS izleri şunlar için kullanışlıdır:
 
 <TabItem value="android" label="Android">
 
-![OpenStreetMap düzenleme eklentisi GPX'ten OSM'ye Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStreetMap düzenleme eklentisi GPX'ten OSM'ye iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -278,10 +278,9 @@ Kaydettiğiniz GPS izleri şunlar için kullanışlıdır:
 - **<Translate android="true" ids="shared_string_description"/>**. İze bir açıklama eklemenizi sağlar. Açıklama, seçilen tüm izler için geçerlidir. Alana hiçbir şey girmezseniz, her ayrı iz için iz adları açıklama olarak kullanılır.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Ayarlar bölümündeki bu öğe, izi tanımlamak için etiketler eklemenizi sağlar. Varsayılan etiket "osmand"dır. Seçilen profile dayalı belirli bir aktivite ile kaydedilen iz için, bu aktivite yükleme sırasında otomatik olarak etiket olarak eklenir. Yüklenen iz grupları için her iz kendi aktivite etiketini alır. Bazı profiller (ör. Toplu taşıma) için aktivite etiketi eklenmez. Virgülle ayrılmış ek etiketleri manuel olarak girebilirsiniz.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. OSM kullanıcıları için iz görünürlüğü:  
-   - *Herkese açık*, izin herkese açık olduğu ve GPS izlerinizde, GPS iz listelerinizde ve zaman damgalı iz listelerinizde ham biçimde görüntülendiği anlamına gelir. API aracılığıyla iletilen veriler iz sayfanızla referans alınmaz. Genel GPS API aracılığıyla iz noktası zaman damgaları kullanılamaz ve iz noktaları kronolojik olarak sıralanmaz.
-   - *Tanımlanabilir*, izin GPS iz noktalarınızda ve genel GPS iz listelerinizde herkese açık olarak görüntüleneceği anlamına gelir, bu da diğer kullanıcıların ham izi indirip kullanıcı adınızla ilişkilendirebileceği anlamına gelir. GPS API'sinden iz noktaları API'si aracılığıyla geçen genel zaman damgalı iz noktaları verileri orijinal iz sayfanıza bağlanacaktır.
-   - *İzlenebilir*, izin genel listelerde görüntülenmediği, ancak ondan gelen zaman damgalı işlenmiş iz noktalarının (doğrudan sizinle ilişkilendirilemeyen) genel GPS API aracılığıyla yüklendiği anlamına gelir.
-   - *Özel*, izin genel listelerde görüntülenmediği, ancak ondan gelen kronolojik olmayan sıradaki iz noktalarının zaman damgaları olmadan genel GPS API aracılığıyla kullanılabileceği anlamına gelir.
+      - *Identifiable*, izin GPS iz noktalarınızda ve genel GPS iz listelerinizde herkese açık olarak görüntüleneceği anlamına gelir, bu da diğer kullanıcıların ham izi indirip kullanıcı adınızla ilişkilendirebileceği anlamına gelir. GPS API'sinden iz noktaları API'si aracılığıyla geçen genel zaman damgalı iz noktaları verileri orijinal iz sayfanıza bağlanacaktır. Bu seçenek varsayılan olarak seçilidir.
+      - *Trackable*, izin genel listelerde görüntülenmediği, ancak ondan gelen zaman damgalı işlenmiş iz noktalarının (doğrudan sizinle ilişkilendirilemeyen) genel GPS API aracılığıyla yüklendiği anlamına gelir.
+      {/* *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps. *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are unavailable through the public GPS API and track points are not ordered chronologically.*/}
 - **<Translate android="true" ids="login_account"/>** - [OSM hesabı](https://www.openstreetmap.org/login).
 
 :::info
