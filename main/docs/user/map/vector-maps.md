@@ -511,7 +511,7 @@ The **Coordinates Grid** feature overlays a reference grid on the map, allowing 
 
 You can configure the following options:
 - **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
-- **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
+- **Labels position:** choose between *Edges* (default) or *Center* for grid labels.
 - **Grid color:** available separately for Day/Night mode. 
 - **Coordinate format:** select from several available formats (see list below).
 
@@ -542,7 +542,7 @@ The **Coordinates Grid** feature overlays a reference grid on the map, allowing 
 
 You can configure the following options:
 - **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
-- **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
+- **Labels position:** choose between *Edges* (default) or *Center* for grid labels.
 - **Grid color:** available separately for Day/Night mode. 
 - **Coordinate format:** select from several available formats (see list below).
 
