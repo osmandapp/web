@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -58,7 +58,7 @@ export default async function test() {
     await deleteTrack(renamedTrackName);
 
     await submitSearchQuery(trackName);
-    await assertSearchResultAbsent(renamedTrackResultId);
+    await assertSearchResultAbsent(By.id(renamedTrackResultId));
 
     // --- Search: favorite appears, then disappears after group delete ---
     const favGroupName = 'favorites-shops';
@@ -75,6 +75,23 @@ export default async function test() {
     await actionsUploadFavorites({ files: path });
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
+    // --- Search: tokens match word starts, more matched tokens rank first ---
+    await submitSearchQuery('Amsterdam 99');
+    await waitBy(By.id('se-search-results'));
+    await enclose(
+        async () => {
+            const ids = await enumerateIds('se-search-result-fav-');
+            return ids.length === 4 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
+        },
+        { tag: 'validateFavSearchRanking' }
+    );
+
+    // "dam" is inside "Amsterdam" but no name token starts with it
+    await clickBy(By.id('se-show-menu-search'));
+    await submitSearchQuery('dam');
+    await assertSearchResultAbsent(By.css('[id^="se-search-result-fav-"]'));
+
+    await clickBy(By.id('se-show-menu-search'));
     await submitSearchQuery(wptName);
 
     await waitBy(By.id('se-search-results'));
@@ -132,14 +149,14 @@ export default async function test() {
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
     await submitSearchQuery(wptName2);
-    await assertSearchResultAbsent(favResultId2);
+    await assertSearchResultAbsent(By.id(favResultId2));
 
     await clickBy(By.id('se-show-menu-favorites'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     await actionDeleteFavGroup(shortFavGroupName);
 
     await submitSearchQuery(wptName);
-    await assertSearchResultAbsent(favResultId);
+    await assertSearchResultAbsent(By.id(favResultId));
     await actionFinish();
 }
 
@@ -150,11 +167,11 @@ async function deleteOpenedFavorite() {
     await waitByRemoved(By.id('se-delete-fav-dialog'));
 }
 
-async function assertSearchResultAbsent(resultId) {
+async function assertSearchResultAbsent(resultBy) {
     const emptySearch = await waitBy(By.id('se-empty-search'), { optional: true });
     if (!emptySearch) {
         await waitBy(By.id('se-search-results'));
-        await waitByRemoved(By.id(resultId));
+        await waitByRemoved(resultBy);
     }
 }
 
