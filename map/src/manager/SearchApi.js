@@ -39,3 +39,10 @@ export function searchByWordApi({
         },
     });
 }
+
+export function searchUserDataApi(query) {
+    return apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/search-user-data`, {
+        params: { query },
+        abortControllerKey: 'userDataSearch',
+    });
+}

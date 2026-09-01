@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL, searchCollator } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import LoginContext from '../../context/LoginContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -31,7 +32,7 @@ import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/Ma
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getIconByType, searchCloudTrackFeatures, searchFavoriteFeatures } from '../../manager/SearchManager';
+import { buildFavoriteFeatures, buildTrackFeatures, getIconByType } from '../../manager/SearchManager';
 import { POI_LAYER_ID, SEARCH_LAYER_ID, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import {
@@ -44,7 +45,7 @@ import {
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
-import { searchByWordApi, getMapsFromUrl } from '../../manager/SearchApi';
+import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import {
     getAdditionalMatchedAmenityObjects,
@@ -138,6 +139,7 @@ function fitBboxIfValid({ map, mtx, bbox }) {
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const ltx = useContext(LoginContext);
     const map = useMap();
 
     const navigate = useNavigate();
@@ -193,35 +195,27 @@ export default function SearchLayer() {
         }
     }, [ctx.searchQuery]);
 
-    // When favorites change (rename, edit, delete), refresh the favorites part of search results
+    // When tracks or favorites change (rename, edit, delete), refresh their part of open search results
     useEffect(() => {
         const query = ctx.searchQuery?.query;
         if (!query || ctx.searchQuery?.type || !ctx.searchResult) {
             return;
         }
-
-        const favoriteFeatures = searchFavoriteFeatures({
-            favorites: ctx.favorites,
-            query,
-            collator: searchCollator,
+        searchUserData(query).then((userData) => {
+            const trackFeatures = buildTrackFeatures(userData?.tracks ?? []);
+            const favoriteFeatures = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
+            ctx.setSearchResult((prev) => {
+                if (!prev) return prev;
+                const serverFeatures = (prev.features ?? []).filter(
+                    (f) =>
+                        f.properties?.[CATEGORY_TYPE] !== searchTypeMap.FAVORITE &&
+                        f.properties?.[CATEGORY_TYPE] !== searchTypeMap.GPX_TRACK
+                );
+                return { ...prev, features: [...trackFeatures, ...favoriteFeatures, ...serverFeatures] };
+            });
+            ctx.setSearchFavoriteGroupIds(buildFavGroupMap(favoriteFeatures));
         });
-
-        const favGroupMap = buildFavGroupMap(favoriteFeatures);
-
-        ctx.setSearchResult((prev) => {
-            if (!prev) return prev;
-            const trackFeatures = (prev.features ?? []).filter(
-                (f) => f.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK
-            );
-            const serverFeatures = (prev.features ?? []).filter(
-                (f) =>
-                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.FAVORITE &&
-                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.GPX_TRACK
-            );
-            return { ...prev, features: [...trackFeatures, ...favoriteFeatures, ...serverFeatures] };
-        });
-        ctx.setSearchFavoriteGroupIds(favGroupMap);
-    }, [ctx.favorites]);
+    }, [ctx.favorites, ctx.listFiles]);
 
     useEffect(() => {
         let cancelled = false;
@@ -282,6 +276,7 @@ export default function SearchLayer() {
         }
         const bbox = visible.bounds;
         try {
+            const userDataPromise = searchUserData(searchData.query);
             const response = await searchByWordApi({
                 latlng: searchData.latlng,
                 bbox,
@@ -293,16 +288,9 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                const trackFeatures = searchCloudTrackFeatures({
-                    listFiles: ctx.listFiles,
-                    query: searchData.query,
-                    collator: searchCollator,
-                });
-                const favoriteFeatures = searchFavoriteFeatures({
-                    favorites: ctx.favorites,
-                    query: searchData.query,
-                    collator: searchCollator,
-                });
+                const userData = await userDataPromise;
+                const trackFeatures = buildTrackFeatures(userData?.tracks ?? []);
+                const favoriteFeatures = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
                 const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
                 const favGroupMap = buildFavGroupMap(favoriteFeatures);
                 ctx.setSearchFavoriteGroupIds(favGroupMap);
@@ -320,6 +308,15 @@ export default function SearchLayer() {
             clearTimeout(notifyTimeout);
             ctx.setProcessingSearch(false);
         }
+    }
+
+    // Server indexes tracks/favorites on list-files and returns ranked, limited ids
+    async function searchUserData(query) {
+        if (!ltx.loginUser) {
+            return null;
+        }
+        const response = await searchUserDataApi(query);
+        return response?.ok ? await response.json() : null;
     }
 
     function removeOldSearchLayer() {

@@ -29,10 +29,6 @@ import supportedLanguages from '../resources/translations/supportedLanguages.jso
 import { normalizeLang } from '../util/lang';
 
 export const collator = new Intl.Collator(supportedLanguages.map(normalizeLang), { numeric: true });
-export const searchCollator = new Intl.Collator(supportedLanguages.map(normalizeLang), {
-    usage: 'search',
-    sensitivity: 'base',
-});
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
