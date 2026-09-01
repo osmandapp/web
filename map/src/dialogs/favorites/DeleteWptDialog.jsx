@@ -12,6 +12,7 @@ import PointManager from '../../manager/PointManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { MENU_INFO_CLOSE_SIZE, FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
+import { isFavoriteFromSearch } from '../../manager/SearchManager';
 
 export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null, setOpenActions = null }) {
     const ctx = useContext(AppContext);
@@ -60,6 +61,9 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
 
             deleteFavorite().then(() => {
                 setTimeout(() => {
+                    if (isDeletedFavoriteFromSearch()) {
+                        ctx.setSelectedSearchObj(null);
+                    }
                     ctx.setSelectedWpt(null);
                     ctx.setSelectedWptId(null);
                     ctx.setSelectedFavoriteObj(null);
@@ -72,6 +76,14 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
                 }, 0);
             });
         }
+    }
+
+    // the favorite opened from search results is the one being deleted
+    function isDeletedFavoriteFromSearch() {
+        const opened = ctx.selectedSearchObj?.object?.markerCurrent;
+        const name = useSelected ? ctx.selectedGpxFile.markerCurrent.name : wpt.name;
+        const groupId = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
+        return isFavoriteFromSearch(ctx) && opened?.name === name && opened?.groupId === groupId;
     }
 
     function closeDialog() {
