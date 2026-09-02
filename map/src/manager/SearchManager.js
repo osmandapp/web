@@ -20,11 +20,18 @@ import {
     SEARCH_ICON_MAP_LOCATION,
     searchTypeMap,
     typeIconMap,
+    WPT_TRACK_FILE,
 } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
-import { OBJECT_TYPE_POI, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../context/AppContext';
-import { openFavoriteObj } from './FavoritesManager';
-import { openTrackOnMap, updateTracks } from './track/TracksManager';
+import {
+    OBJECT_SEARCH,
+    OBJECT_TYPE_POI,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_TRACK_WPT,
+} from '../context/AppContext';
+import { openFavoriteObj, resolveWptAppearance } from './FavoritesManager';
+import { getResolvedPointsGroups, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
 import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL, liveHash } from './GlobalManager';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 
@@ -70,6 +77,29 @@ export function buildFavoriteFeatures(favorites, points) {
                 ...(wpt.address ? { address: wpt.address } : {}),
             },
         }));
+}
+
+// waypoints of tracks opened on the map: { file, shared, name } -> feature with the point's own icon and coordinates
+export function buildWptFeatures(ctx, wpts) {
+    return wpts.flatMap((item) => {
+        const file = (item.shared ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles)?.[item.file];
+        const wpt = file?.wpts?.find((w) => w.name === item.name);
+        if (!wpt) return [];
+        const appearance = resolveWptAppearance(wpt, getResolvedPointsGroups(file));
+        return {
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [Number(wpt.lon), Number(wpt.lat)] },
+            properties: {
+                [CATEGORY_TYPE]: searchTypeMap.WPT,
+                [CATEGORY_NAME]: prepareName(file.name, true),
+                [POI_NAME]: wpt.name,
+                [WPT_TRACK_FILE]: file.name,
+                [ICON_KEY_NAME]: appearance.icon,
+                [COLOR_NAME_EXTENSION]: appearance.color,
+                [BACKGROUND_TYPE_EXTENSION]: appearance.background,
+            },
+        };
+    });
 }
 
 export function buildTrackFeatures(tracks) {
@@ -217,6 +247,8 @@ export async function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}
             fromSearch: true,
         });
         updateTracks(ctx, null, newTracks);
+    } else if (selectedSearchObj.type === OBJECT_TYPE_TRACK_WPT) {
+        openTrackWptFromSearch(ctx, selectedSearchObj.object);
     }
 }
 
@@ -230,6 +262,20 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
         hash: liveHash(),
     });
     return true;
+}
+
+// open waypoint details of an opened track from search results (like a favorite from search)
+export function openTrackWptFromSearch(ctx, { file, name }) {
+    const trackData = ctx.gpxFiles?.[file] ?? ctx.shareWithMeFiles?.tracks?.[file];
+    const wpt = trackData?.wpts?.find((w) => w.name === name);
+    if (!wpt) return;
+    ctx.setCurrentObjectType(OBJECT_SEARCH);
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_TRACK_WPT, object: { file, name } });
+    ctx.setSelectedWpt({ trackWpt: true, mapObj: false, trackData, ...wpt });
+}
+
+export function isWptFromSearch(ctx) {
+    return ctx.selectedSearchObj?.type === OBJECT_TYPE_TRACK_WPT;
 }
 
 export function isFavoriteFromSearch(ctx) {

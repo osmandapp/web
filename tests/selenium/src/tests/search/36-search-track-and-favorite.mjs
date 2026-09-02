@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, enclose, enumerateIds, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { checkElementByCss, clickBy, enclose, enumerateIds, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -39,6 +39,27 @@ export default async function test() {
     await waitBy(By.id('se-search-results'));
     await waitBy(By.id(trackResultId));
 
+    // --- Search: waypoint of the visible track is found and opens its details ---
+    const trackWptName = 'FIREWORK';
+    const trackWptResultId = `se-search-result-wpt-${trackWptName}`;
+
+    // back from search hides the track, waypoints are searched only in visible tracks - show it on the map
+    await clickBy(By.id('se-show-menu-tracks'));
+    await waitBy(By.id(`se-cloud-track-${trackName}`));
+    await clickBy(By.id(`se-actions-${trackName}`));
+    await waitBy(By.id('se-track-actions'));
+    await clickBy(By.id('se-show-track-action'));
+    await checkElementByCss('img[src*="point_finish"]');
+
+    await submitSearchQuery(trackWptName);
+    await waitBy(By.id('se-search-results'));
+    await clickBy(By.id(trackWptResultId));
+    await waitBy(By.id(`se-wpt-item-info-${trackWptName}`));
+
+    await clickBy(By.id('se-back-wpt-details'));
+    await waitBy(By.id('se-search-results'));
+    await waitBy(By.id(trackWptResultId));
+
     // --- Search: renamed track is found by the new name only ---
     const suffix = '-renamed';
     const renamedTrackName = `${trackName}${suffix}`;
@@ -59,6 +80,11 @@ export default async function test() {
 
     await submitSearchQuery(trackName);
     await assertSearchResultAbsent(By.id(renamedTrackResultId));
+
+    // waypoints of the deleted track are not searchable anymore
+    await clickBy(By.id('se-show-menu-search'));
+    await submitSearchQuery(trackWptName);
+    await assertSearchResultAbsent(By.id(trackWptResultId));
 
     // --- Search: favorite appears, then disappears after group delete ---
     const favGroupName = 'favorites-shops';

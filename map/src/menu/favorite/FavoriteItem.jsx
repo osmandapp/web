@@ -29,11 +29,16 @@ export const CustomIcon = ({ marker }) => {
 function FavInfo({ marker, currentLoc, unitsSettings }) {
     const { t } = useTranslation();
 
-    const comma = marker.locDist > 0 && marker?.layer?.options?.address ? ', ' : '';
-    const address = marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
+    const address = marker?.layer?.options?.address ?? '';
+    const separator = marker.locDist > 0 && address ? ' · ' : '';
 
     return (
         <div style={{ display: 'flex', alignItems: 'centre' }}>
+            {address && (
+                <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
+                    {`${address}${separator}`}
+                </Typography>
+            )}
             {marker.locDist > 0 && (
                 <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
                     <DirectionIcon />
@@ -48,9 +53,6 @@ function FavInfo({ marker, currentLoc, unitsSettings }) {
                     {`${convertMeters(marker.locDist, unitsSettings.len, LARGE_UNIT).toFixed(0)} ${t(getLargeLengthUnit({ unitsSettings }))}`}
                 </Typography>
             )}
-            <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
-                {address}
-            </Typography>
         </div>
     );
 }

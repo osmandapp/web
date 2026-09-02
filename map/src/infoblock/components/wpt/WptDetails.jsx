@@ -25,6 +25,7 @@ import AppContext, {
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as TrackIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
 import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
@@ -76,7 +77,7 @@ import {
 } from '../../../map/layers/TransportStopsLayer';
 import TransportStopsRoutes from './transport/TransportStopsRoutes';
 import capitalize from 'lodash-es/capitalize';
-import { getResolvedPointsGroups } from '../../../manager/track/TracksManager';
+import { getResolvedPointsGroups, prepareName } from '../../../manager/track/TracksManager';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
@@ -93,7 +94,7 @@ import {
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
-import { isFavoriteFromSearch, navigateBackToSearchResults } from '../../../manager/SearchManager';
+import { isFavoriteFromSearch, isWptFromSearch, navigateBackToSearchResults } from '../../../manager/SearchManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
@@ -547,7 +548,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
             isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi && !wpt?.wikidata,
             isWikiPoi: wpt?.wikidata,
-            isWpt: isTrack(ctx) && wpt?.trackWpt,
+            isWpt: (isTrack(ctx) || isWptFromSearch(ctx)) && wpt?.trackWpt,
             isFav:
                 (ctx.currentObjectType === OBJECT_TYPE_FAVORITE ||
                     ctx.selectedSearchObj?.type === OBJECT_TYPE_FAVORITE) &&
@@ -585,7 +586,13 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 closeObjectFromMap();
             }
         } else if (type.isWpt) {
-            !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
+            if (isWptFromSearch(ctx)) {
+                ctx.setSelectedSearchObj(null);
+                setShowInfoBlock(false);
+                navigateBackToSearchResults(navigate, ctx, location);
+            } else {
+                !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
+            }
         } else if (type.isWikiPoi) {
             if (ctx.selectedWptId) {
                 ctx.setSelectedWptId((prev) => {
@@ -667,6 +674,9 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     function getId() {
         if (wpt.type?.isFav) {
             return 'se-fav-item-info-' + wpt.name;
+        }
+        if (wpt.type?.isWpt) {
+            return 'se-wpt-item-info-' + wpt.name;
         }
         if (wpt.type?.isPoi) {
             return 'se-poi-infoblock-' + wpt.name;
@@ -835,6 +845,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             groupStr += ` (${groupLength})`;
         }
         return groupStr;
+    }
+
+    function getWptTrackName(wpt) {
+        return wpt.type?.isWpt && wpt.trackData?.name ? prepareName(wpt.trackData.name, true) : null;
     }
 
     const WikiVoyageLinks = ({ wvLinks }) => {
@@ -1039,6 +1053,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             icon: <FolderIcon />,
                                             name: t('folder'),
                                             value: wpt.category,
+                                        }}
+                                    />
+                                )}
+                                {getWptTrackName(wpt) && (
+                                    <WptTagInfo
+                                        key={'track'}
+                                        baseTag={{
+                                            icon: <TrackIcon />,
+                                            name: t('shared_string_gpx_track'),
+                                            value: getWptTrackName(wpt),
                                         }}
                                     />
                                 )}

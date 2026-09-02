@@ -32,7 +32,12 @@ import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/Ma
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { buildFavoriteFeatures, buildTrackFeatures, getIconByType } from '../../manager/SearchManager';
+import {
+    buildFavoriteFeatures,
+    buildTrackFeatures,
+    buildWptFeatures,
+    getIconByType,
+} from '../../manager/SearchManager';
 import { POI_LAYER_ID, SEARCH_LAYER_ID, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import {
@@ -75,7 +80,11 @@ export const searchTypeMap = {
     VILLAGE: 'VILLAGE',
     GPX_TRACK: 'GPX_TRACK',
     FAVORITE: 'FAVORITE',
+    WPT: 'WPT',
 };
+
+export const WPT_TRACK_FILE = 'wptTrackFile';
+export const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK, searchTypeMap.WPT]);
 
 export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
 
@@ -202,20 +211,17 @@ export default function SearchLayer() {
             return;
         }
         searchUserData(query).then((userData) => {
-            const trackFeatures = buildTrackFeatures(userData?.tracks ?? []);
-            const favoriteFeatures = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
+            const userFeatures = buildUserDataFeatures(userData);
             ctx.setSearchResult((prev) => {
                 if (!prev) return prev;
                 const serverFeatures = (prev.features ?? []).filter(
-                    (f) =>
-                        f.properties?.[CATEGORY_TYPE] !== searchTypeMap.FAVORITE &&
-                        f.properties?.[CATEGORY_TYPE] !== searchTypeMap.GPX_TRACK
+                    (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
                 );
-                return { ...prev, features: [...trackFeatures, ...favoriteFeatures, ...serverFeatures] };
+                return { ...prev, features: [...userFeatures.all, ...serverFeatures] };
             });
-            ctx.setSearchFavoriteGroupIds(buildFavGroupMap(favoriteFeatures));
+            ctx.setSearchFavoriteGroupIds(buildFavGroupMap(userFeatures.favorites));
         });
-    }, [ctx.favorites, ctx.listFiles]);
+    }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles]);
 
     useEffect(() => {
         let cancelled = false;
@@ -288,11 +294,9 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                const userData = await userDataPromise;
-                const trackFeatures = buildTrackFeatures(userData?.tracks ?? []);
-                const favoriteFeatures = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
-                const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
-                const favGroupMap = buildFavGroupMap(favoriteFeatures);
+                const userFeatures = buildUserDataFeatures(await userDataPromise);
+                const features = [...userFeatures.all, ...(data?.features ?? [])];
+                const favGroupMap = buildFavGroupMap(userFeatures.favorites);
                 ctx.setSearchFavoriteGroupIds(favGroupMap);
                 ctx.setSearchVisibleLevel(0);
                 ctx.setSearchResult({ ...data, features });
@@ -310,13 +314,31 @@ export default function SearchLayer() {
         }
     }
 
-    // Server indexes tracks/favorites on list-files and returns ranked, limited ids
+    // Server matches, ranks and limits tracks, favorites and waypoints of opened tracks
     async function searchUserData(query) {
         if (!ltx.loginUser) {
             return null;
         }
-        const response = await searchUserDataApi(query);
+        const visibleTracksWithWpts = (files, shared) =>
+            Object.values(files ?? {})
+                .filter((file) => file.url && file.wpts?.length)
+                .map((file) => ({ file: file.name, shared }));
+        const openedTracks = [
+            ...visibleTracksWithWpts(ctx.gpxFiles, false),
+            ...visibleTracksWithWpts(ctx.shareWithMeFiles?.tracks, true),
+        ];
+        const response = await searchUserDataApi({ query, openedTracks });
         return response?.ok ? await response.json() : null;
+    }
+
+    function buildUserDataFeatures(userData) {
+        const favorites = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
+        const all = [
+            ...buildTrackFeatures(userData?.tracks ?? []),
+            ...favorites,
+            ...buildWptFeatures(ctx, userData?.wpts ?? []),
+        ];
+        return { all, favorites };
     }
 
     function removeOldSearchLayer() {
@@ -380,8 +402,7 @@ export default function SearchLayer() {
         const center = map.getCenter();
         const zoom = map.getZoom();
         const latitude = center.lat;
-        // FAVORITE and GPX_TRACK are user objects rendered by their own layers — skip map markers for them.
-        const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK]);
+        // user objects are rendered by their own layers — skip map markers for them
         const mapMarkerFeatures = searchMarkerFeatures.filter(
             (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
         );

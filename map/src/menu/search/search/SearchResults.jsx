@@ -166,7 +166,7 @@ export default function SearchResults() {
             if (f.icon) return;
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
-            if (type === searchTypeMap.FAVORITE) {
+            if (type === searchTypeMap.FAVORITE || type === searchTypeMap.WPT) {
                 return;
             }
             if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
