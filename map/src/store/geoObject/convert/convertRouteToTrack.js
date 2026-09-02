@@ -1,4 +1,4 @@
-import { getDistance } from '../../../util/Utils';
+import { LINE_STRING, getDistance } from '../../../util/Utils';
 import { isNonZeroEle, NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager';
 
 export const defaultPointExtras = {
@@ -14,10 +14,7 @@ function getRouteGeometry(route) {
     route.features
         // alternatives are drawn on the map only, they are not part of the route being edited
         .filter(
-            (f) =>
-                f.geometry?.type === 'LineString' &&
-                f.geometry?.coordinates?.length > 0 &&
-                !f.properties?.alternative
+            (f) => f.geometry?.type === LINE_STRING && f.geometry?.coordinates?.length > 0 && !f.properties?.alternative
         )
         .forEach((f) =>
             // LineString has [[ll], [ll], ...]

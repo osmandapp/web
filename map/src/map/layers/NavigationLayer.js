@@ -25,6 +25,7 @@ import {
     ALTERNATIVE_ROUTE_OPACITY,
     isAlternativeFeature,
 } from '../../store/geoRouter/legacy/calculateRoute';
+import { LINE_STRING } from '../../util/Utils';
 
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
@@ -396,17 +397,13 @@ const NavigationLayer = ({ geocodingData, region }) => {
         return `${t('web:alt_route_label', { n: props.alternative })}. ` + parts.join(', ');
     };
 
-    // Show the picked alternative in place of the route on the left: its line moves to the front of
-    // the collection (the summary is read from the first feature) and the two routes swap the
-    // "alternative" number. The number is carried by the turn descriptions as well, so a whole route
-    // changes hands - otherwise the map and the Turns tab would keep the directions of the route
-    // that was just replaced.
+    // the picked route moves to the front and the two routes swap the "alternative" number (lines and turns)
     const selectAlternative = (feature) => {
         const route = routeObject.getRoute();
         const number = feature.properties?.alternative;
         // matched by the number rather than by object identity - the layer may hold a copy
         const index = (route?.features ?? []).findIndex(
-            (f) => f.geometry?.type === 'LineString' && f.properties?.alternative === number
+            (f) => f.geometry?.type === LINE_STRING && f.properties?.alternative === number
         );
         if (index <= 0) {
             return;
@@ -421,12 +418,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
             } else {
                 return f;
             }
-            const style =
-                f.geometry?.type === 'LineString'
-                    ? properties.alternative
-                        ? alternativeRouteStyle(color)
-                        : (route.mainRouteStyle ?? { color })
-                    : f.style;
+            let style = f.style;
+            if (f.geometry?.type === LINE_STRING) {
+                style = properties.alternative ? alternativeRouteStyle(color) : (route.mainRouteStyle ?? { color });
+            }
 
             return { ...f, properties, style };
         });
@@ -533,13 +528,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const routeLayer = routeLayerRef.current;
     const altLayerRef = useRef(null);
 
-    // Alternatives are drawn by their own layer, mounted before the route so that its paths come
-    // first in the shared SVG and the route stays on top. Keeping them in the route layer and
-    // calling bringToBack() instead dropped them below every other overlay, visible tracks included,
-    // and their geometry widened the bounds that "zoom to route" fits.
+    // own layer mounted before the route: the route stays on top, and zoom-to-route ignores alternatives
     const routeFeatures = routeObject.getRoute()?.features ?? [];
     const shownRoute = routeFeatures.filter((f) => !isAlternativeFeature(f));
-    const alternativeRoutes = routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === 'LineString');
+    const alternativeRoutes = routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
 
     const viaLayersRef = useRef([]);
 
@@ -584,7 +576,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // pass geojson.features.style to set colors/etc
     const passStyle = (f) => {
-        if (!f.style && f.geometry?.type === 'LineString') {
+        if (!f.style && f.geometry?.type === LINE_STRING) {
             const color = routeObject.getColor();
             f.style = f.properties?.alternative ? alternativeRouteStyle(color) : { color };
         }

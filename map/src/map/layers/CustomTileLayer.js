@@ -11,6 +11,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import styles from '../map.module.css';
 import { isMvtTileURL } from './MvtLayerConfig';
 import { POINT_MARKER_Z_INDEX_OFFSET } from '../util/ZIndexes';
+import { LINE_STRING } from '../../util/Utils';
 
 export const INTERACTIVE_LAYER = 'int';
 
@@ -101,7 +102,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
 
     function getPolyline(obj) {
         if (obj?.iconX && obj?.iconY) {
-            const type = obj.mainIcon !== '' || obj.shield !== '' || obj.shieldRes !== '' ? 'Point' : 'LineString';
+            const type = obj.mainIcon !== '' || obj.shield !== '' || obj.shieldRes !== '' ? 'Point' : LINE_STRING;
             if (type === 'Point') {
                 return {
                     type: 'Feature',
@@ -111,7 +112,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
                         coordinates: [obj.iconX, obj.iconY],
                     },
                 };
-            } else if (type === 'LineString') {
+            } else if (type === LINE_STRING) {
                 return {
                     type: 'Feature',
                     properties: getProperties(obj),

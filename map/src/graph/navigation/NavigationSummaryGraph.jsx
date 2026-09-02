@@ -12,7 +12,7 @@ import {
     LARGE_UNIT,
     SMALL_UNIT,
 } from '../../menu/settings/units/UnitsConverter';
-import { getDistance } from '../../util/Utils';
+import { LINE_STRING, getDistance } from '../../util/Utils';
 import styles from './../graph.module.css';
 import GraphManager, { calculateSlopes, ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
 import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
@@ -48,7 +48,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
         const coordinates = [];
         route.features.forEach((feature) => {
             if (
-                feature.geometry?.type === 'LineString' &&
+                feature.geometry?.type === LINE_STRING &&
                 Array.isArray(feature.geometry.coordinates) &&
                 !feature.properties?.alternative
             ) {
