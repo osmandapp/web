@@ -21,8 +21,9 @@ export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
 export const ROUTE_ALTERNATIVES = 2;
 
 // Alternatives are drawn under the main route, translucent so that the map stays readable,
-// and thick enough to be comfortable to click.
-export const ALTERNATIVE_ROUTE_STYLE = { color: '#5c6b7a', opacity: 0.45, weight: 7 };
+// and thick enough to be comfortable to click. The colour is deliberately one the OSM base map
+// does not use for roads - grey blends into the map and the lines stop reading as routes.
+export const ALTERNATIVE_ROUTE_STYLE = { color: '#6f5bd6', opacity: 0.5, weight: 8 };
 
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
