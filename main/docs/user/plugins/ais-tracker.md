@@ -195,7 +195,7 @@ The *AIS vessel tracker* plugin offers various settings to personalize navigatio
 | Use NMEA as location source (*iOS only*)   | Use GPS positions from RMC/GGA NMEA messages as My location  | `On/Off` |
 | | | |
 | **AIS Signal reception timeout** | |  |
-| Ship outdated timeout      | Set timeout for ship outdeted visibility: after this time without signal reception, the ship symbol will be crossed out | `2 - 15 min / Disabled` |
+| Ship outdated timeout      | Set timeout for ship outdated visibility: after this time without signal reception, the ship symbol will be crossed out | `2 - 15 min / Disabled` |
 | Timeout for visibility when ship is lost     | Set a timeout for AIS object visibility: If no signal is received within the specified duration, the object will be automatically removed from the display | `3 - 20 min` |
 | | | |
 | **Closest Point of Approach (CPA) Alerts** | | |
