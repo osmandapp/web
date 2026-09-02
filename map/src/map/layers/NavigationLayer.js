@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useContext, useCallback, useMemo } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
+import { useTranslation } from 'react-i18next';
 import L from 'leaflet';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
@@ -70,6 +71,7 @@ function moveableMarker(routeObject, map, marker) {
 const NavigationLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const mtx = useContext(MapContext);
 
     const makeDotIcon = useCallback((color = '#ff7800', opacity = 0.9, size = 16, border = '#000', strokeWidth = 1) => {
@@ -365,25 +367,28 @@ const NavigationLayer = ({ geocodingData, region }) => {
             if (!base) return '';
             const d = value - base;
             const shown = digits ? Math.abs(d).toFixed(digits) : Math.round(Math.abs(d));
-            if (parseFloat(shown) === 0) return '';
-            return ` (${shown} ${unit} ${d > 0 ? 'longer' : 'shorter'})`;
+            if (Number.parseFloat(shown) === 0) return '';
+            const key = d > 0 ? 'web:alt_route_longer' : 'web:alt_route_shorter';
+            return ` (${t(key, { value: shown, unit })})`;
         };
 
         const parts = [];
         if (alt.distance) {
+            const km = t('km');
             parts.push(
-                `${(alt.distance / 1000).toFixed(1)} km` + diff(alt.distance / 1000, main.distance / 1000, 'km', 1)
+                `${(alt.distance / 1000).toFixed(1)} ${km}` + diff(alt.distance / 1000, main.distance / 1000, km, 1)
             );
         }
         if (alt.time) {
-            parts.push(`${Math.round(alt.time / 60)} min` + diff(alt.time / 60, main.time / 60, 'min', 0));
+            const min = t('shared_string_minute_lowercase');
+            parts.push(`${Math.round(alt.time / 60)} ${min}` + diff(alt.time / 60, main.time / 60, min, 0));
         }
         if (ctx.develFeatures && alt.routingTime) {
             const d = Math.round(alt.routingTime - (main.routingTime ?? 0));
             const delta = main.routingTime ? ` (${d > 0 ? '+' : ''}${d})` : '';
             parts.push(`${Math.round(alt.routingTime)} cost${delta}`);
         }
-        return `Route ${props.alternative}. ` + parts.join(', ');
+        return `${t('web:alt_route_label', { n: props.alternative })}. ` + parts.join(', ');
     };
 
     // Show the picked alternative in place of the route on the left: it moves to the front of the
