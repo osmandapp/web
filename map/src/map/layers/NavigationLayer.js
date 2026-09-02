@@ -439,6 +439,12 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const onEachAlternative = (feature, layer) => {
         // translucent so the shown route stays readable, but thick enough to click
         layer.bindTooltip(describeAlternative(feature.properties), { sticky: true });
+        // the tooltip makes the path focusable and a click would draw the browser focus frame
+        layer.on('add', () => {
+            const el = layer.getElement();
+            el?.removeAttribute('tabindex');
+            el?.style.setProperty('outline', 'none');
+        });
         layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
         layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_OPACITY }));
         layer.on('click', () => selectAlternative(feature));
