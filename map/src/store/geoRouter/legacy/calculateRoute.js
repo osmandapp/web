@@ -177,6 +177,8 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
                 }
             });
         }
+        // the style of the displayed route, needed when an alternative is picked on the map
+        data.mainRouteStyle = style;
         const { route } = this.putRoute({ route: data });
         changeRouteText(false, this.getRouteProps(route));
     } else {

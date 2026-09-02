@@ -22,6 +22,7 @@ import { ALTERNATIVE_ROUTE_STYLE } from '../../store/geoRouter/legacy/calculateR
 
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
+const DEVEL_FEATURES = process.env.REACT_APP_DEVEL_FEATURES === 'yes';
 const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
 function setMarkerIconHtml(marker, html) {
@@ -355,27 +356,69 @@ const NavigationLayer = ({ geocodingData, region }) => {
         fillOpacity: 0.8,
     };
 
+    // "Route 2. 27.5 km (5.1 km shorter), 35 min (7 min longer), 1800 cost (+500)"
+    // Everything is compared against the route currently shown on the left.
     const describeAlternative = (props) => {
-        const km = props.distance ? (props.distance / 1000).toFixed(1) : null;
-        const min = props.time ? Math.round(props.time / 60) : null;
-        const delta = props.deltaTime;
-        const parts = [`Alternative ${props.alternative}`];
-        if (km !== null && min !== null) {
-            parts.push(`${km} km, ${min} min`);
+        const alt = props.overall ?? {};
+        const main = routeObject.getRoute()?.features?.[0]?.properties?.overall ?? {};
+
+        const diff = (value, base, unit, digits) => {
+            if (!base) return '';
+            const d = value - base;
+            const shown = digits ? Math.abs(d).toFixed(digits) : Math.round(Math.abs(d));
+            if (parseFloat(shown) === 0) return '';
+            return ` (${shown} ${unit} ${d > 0 ? 'longer' : 'shorter'})`;
+        };
+
+        const parts = [];
+        if (alt.distance) {
+            parts.push(
+                `${(alt.distance / 1000).toFixed(1)} km` + diff(alt.distance / 1000, main.distance / 1000, 'km', 1)
+            );
         }
-        if (delta !== undefined && delta !== null) {
-            parts.push(`${delta > 0 ? '+' : ''}${delta}% vs main route`);
+        if (alt.time) {
+            parts.push(`${Math.round(alt.time / 60)} min` + diff(alt.time / 60, main.time / 60, 'min', 0));
         }
-        return parts.join('<br/>');
+        if (DEVEL_FEATURES && alt.routingTime) {
+            const d = Math.round(alt.routingTime - (main.routingTime ?? 0));
+            const delta = main.routingTime ? ` (${d > 0 ? '+' : ''}${d})` : '';
+            parts.push(`${Math.round(alt.routingTime)} cost${delta}`);
+        }
+        return `Route ${props.alternative}. ` + parts.join(', ');
+    };
+
+    // Show the picked alternative in place of the route on the left: it moves to the front of the
+    // collection (the summary is read from the first feature) and the two swap markers and styles.
+    const selectAlternative = (feature) => {
+        const route = routeObject.getRoute();
+        // matched by the marker rather than by object identity - the layer may hold a copy
+        const index = (route?.features ?? []).findIndex(
+            (f) => f.geometry?.type === 'LineString' && f.properties?.alternative === feature.properties.alternative
+        );
+        if (index <= 0) {
+            return;
+        }
+        const features = [...route.features];
+        const picked = { ...features[index] };
+        const current = { ...features[0] };
+        current.properties = { ...current.properties, alternative: picked.properties.alternative };
+        picked.properties = { ...picked.properties };
+        delete picked.properties.alternative;
+        current.style = { ...ALTERNATIVE_ROUTE_STYLE };
+        picked.style = route.mainRouteStyle ?? { color: routeObject.getColor() };
+        features[0] = picked;
+        features[index] = current;
+        routeObject.putRoute({ route: { ...route, features } });
     };
 
     const onEachFeature = ({ feature, layer, id = null }) => {
         if (feature.properties?.alternative) {
             // translucent so the main route stays readable, but thick enough to click
-            layer.bindPopup(describeAlternative(feature.properties));
+            layer.bindTooltip(describeAlternative(feature.properties), { sticky: true });
             layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
             layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_STYLE.opacity }));
             layer.on('add', () => layer.bringToBack());
+            layer.on('click', () => selectAlternative(feature));
             return;
         }
         if (feature.properties?.description) {
