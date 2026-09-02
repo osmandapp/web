@@ -166,8 +166,8 @@ export default function TurnsTab() {
     const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
     const routeHasTurns =
         route &&
-        route.features &&
-        route.features.some(
+        !route.turnsStale &&
+        route.features?.some(
             (f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates
         );
     const routeTurnItems = useMemo(

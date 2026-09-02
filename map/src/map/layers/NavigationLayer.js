@@ -401,13 +401,16 @@ const NavigationLayer = ({ geocodingData, region }) => {
         const picked = { ...features[index] };
         const current = { ...features[0] };
         current.properties = { ...current.properties, alternative: picked.properties.alternative };
+        if (!route.turnsStale) {
+            current.properties.mainTurns = true;
+        }
         picked.properties = { ...picked.properties };
         delete picked.properties.alternative;
         current.style = { ...ALTERNATIVE_ROUTE_STYLE };
         picked.style = route.mainRouteStyle ?? { color: routeObject.getColor() };
         features[0] = picked;
         features[index] = current;
-        routeObject.putRoute({ route: { ...route, features } });
+        routeObject.putRoute({ route: { ...route, features, turnsStale: !picked.properties.mainTurns } });
     };
 
     const onEachFeature = ({ feature, layer, id = null }) => {
@@ -456,7 +459,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
+        const stale = routeObject.getRoute()?.turnsStale === true;
+        const hide = routeObject.getOption('route.map.hidePoints') === true || stale;
+        return !(feature?.geometry?.type === 'Point' && hide);
     };
 
     const pointToLayer = (feature, latlng) => {
