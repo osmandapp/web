@@ -19,11 +19,11 @@ export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
 // How many alternative routes to ask the router for. Only HH routing returns them, other
 // engines ignore the parameter. 0 turns them off.
 export const ROUTE_ALTERNATIVES = 2;
+export const ALTERNATIVE_ROUTE_OPACITY = 0.5;
 
-// Alternatives are drawn under the main route, translucent so that the map stays readable,
-// and thick enough to be comfortable to click. The colour is deliberately one the OSM base map
-// does not use for roads - grey blends into the map and the lines stop reading as routes.
-export const ALTERNATIVE_ROUTE_STYLE = { color: '#6f5bd6', opacity: 0.5, weight: 8 };
+export function alternativeRouteStyle(color) {
+    return { color, opacity: ALTERNATIVE_ROUTE_OPACITY, weight: 8 };
+}
 
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
@@ -173,7 +173,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         if (data.features.length > 0) {
             data.features.forEach((f) => {
                 if (f.geometry?.type === 'LineString') {
-                    f.style = f.properties?.alternative ? { ...ALTERNATIVE_ROUTE_STYLE } : style;
+                    f.style = f.properties?.alternative ? alternativeRouteStyle(style.color) : style;
                 }
             });
         }

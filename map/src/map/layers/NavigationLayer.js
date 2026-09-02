@@ -19,7 +19,7 @@ import {
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
-import { ALTERNATIVE_ROUTE_STYLE } from '../../store/geoRouter/legacy/calculateRoute';
+import { alternativeRouteStyle, ALTERNATIVE_ROUTE_OPACITY } from '../../store/geoRouter/legacy/calculateRoute';
 
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
@@ -411,7 +411,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
         }
         picked.properties = { ...picked.properties };
         delete picked.properties.alternative;
-        current.style = { ...ALTERNATIVE_ROUTE_STYLE };
+        current.style = alternativeRouteStyle(route.mainRouteStyle?.color ?? routeObject.getColor());
         picked.style = route.mainRouteStyle ?? { color: routeObject.getColor() };
         features[0] = picked;
         features[index] = current;
@@ -423,7 +423,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             // translucent so the main route stays readable, but thick enough to click
             layer.bindTooltip(describeAlternative(feature.properties), { sticky: true });
             layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
-            layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_STYLE.opacity }));
+            layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_OPACITY }));
             layer.on('add', () => layer.bringToBack());
             layer.on('click', () => selectAlternative(feature));
             return;
@@ -552,7 +552,8 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // pass geojson.features.style to set colors/etc
     const passStyle = (f) => {
         if (!f.style && f.geometry?.type === 'LineString') {
-            f.style = f.properties?.alternative ? { ...ALTERNATIVE_ROUTE_STYLE } : { color: routeObject.getColor() };
+            const color = routeObject.getColor();
+            f.style = f.properties?.alternative ? alternativeRouteStyle(color) : { color };
         }
         return f.style;
     };
