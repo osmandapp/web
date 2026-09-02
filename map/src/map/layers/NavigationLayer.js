@@ -20,7 +20,11 @@ import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
 import { POINT_MARKER_Z_INDEX_OFFSET } from '../util/ZIndexes';
-import { alternativeRouteStyle, ALTERNATIVE_ROUTE_OPACITY } from '../../store/geoRouter/legacy/calculateRoute';
+import {
+    alternativeRouteStyle,
+    ALTERNATIVE_ROUTE_OPACITY,
+    isAlternativeFeature,
+} from '../../store/geoRouter/legacy/calculateRoute';
 
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
@@ -392,43 +396,55 @@ const NavigationLayer = ({ geocodingData, region }) => {
         return `${t('web:alt_route_label', { n: props.alternative })}. ` + parts.join(', ');
     };
 
-    // Show the picked alternative in place of the route on the left: it moves to the front of the
-    // collection (the summary is read from the first feature) and the two swap markers and styles.
+    // Show the picked alternative in place of the route on the left: its line moves to the front of
+    // the collection (the summary is read from the first feature) and the two routes swap the
+    // "alternative" number. The number is carried by the turn descriptions as well, so a whole route
+    // changes hands - otherwise the map and the Turns tab would keep the directions of the route
+    // that was just replaced.
     const selectAlternative = (feature) => {
         const route = routeObject.getRoute();
-        // matched by the marker rather than by object identity - the layer may hold a copy
+        const number = feature.properties?.alternative;
+        // matched by the number rather than by object identity - the layer may hold a copy
         const index = (route?.features ?? []).findIndex(
-            (f) => f.geometry?.type === 'LineString' && f.properties?.alternative === feature.properties.alternative
+            (f) => f.geometry?.type === 'LineString' && f.properties?.alternative === number
         );
         if (index <= 0) {
             return;
         }
-        const features = [...route.features];
-        const picked = { ...features[index] };
-        const current = { ...features[0] };
-        current.properties = { ...current.properties, alternative: picked.properties.alternative };
-        if (!route.turnsStale) {
-            current.properties.mainTurns = true;
-        }
-        picked.properties = { ...picked.properties };
-        delete picked.properties.alternative;
-        current.style = alternativeRouteStyle(route.mainRouteStyle?.color ?? routeObject.getColor());
-        picked.style = route.mainRouteStyle ?? { color: routeObject.getColor() };
+        const color = route.mainRouteStyle?.color ?? routeObject.getColor();
+        const features = route.features.map((f) => {
+            const properties = { ...f.properties };
+            if (f.properties?.alternative === number) {
+                delete properties.alternative;
+            } else if (!isAlternativeFeature(f)) {
+                properties.alternative = number;
+            } else {
+                return f;
+            }
+            const style =
+                f.geometry?.type === 'LineString'
+                    ? properties.alternative
+                        ? alternativeRouteStyle(color)
+                        : (route.mainRouteStyle ?? { color })
+                    : f.style;
+
+            return { ...f, properties, style };
+        });
+        const picked = features[index];
+        features[index] = features[0];
         features[0] = picked;
-        features[index] = current;
-        routeObject.putRoute({ route: { ...route, features, turnsStale: !picked.properties.mainTurns } });
+        routeObject.putRoute({ route: { ...route, features } });
+    };
+
+    const onEachAlternative = (feature, layer) => {
+        // translucent so the shown route stays readable, but thick enough to click
+        layer.bindTooltip(describeAlternative(feature.properties), { sticky: true });
+        layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
+        layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_OPACITY }));
+        layer.on('click', () => selectAlternative(feature));
     };
 
     const onEachFeature = ({ feature, layer, id = null }) => {
-        if (feature.properties?.alternative) {
-            // translucent so the main route stays readable, but thick enough to click
-            layer.bindTooltip(describeAlternative(feature.properties), { sticky: true });
-            layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
-            layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_OPACITY }));
-            layer.on('add', () => layer.bringToBack());
-            layer.on('click', () => selectAlternative(feature));
-            return;
-        }
         if (feature.properties?.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
@@ -465,9 +481,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        const stale = routeObject.getRoute()?.turnsStale === true;
-        const hide = routeObject.getOption('route.map.hidePoints') === true || stale;
-        return !(feature?.geometry?.type === 'Point' && hide);
+        return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
     };
 
     const pointToLayer = (feature, latlng) => {
@@ -511,6 +525,15 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     const routeLayerRef = useRef(null);
     const routeLayer = routeLayerRef.current;
+    const altLayerRef = useRef(null);
+
+    // Alternatives are drawn by their own layer, mounted before the route so that its paths come
+    // first in the shared SVG and the route stays on top. Keeping them in the route layer and
+    // calling bringToBack() instead dropped them below every other overlay, visible tracks included,
+    // and their geometry widened the bounds that "zoom to route" fits.
+    const routeFeatures = routeObject.getRoute()?.features ?? [];
+    const shownRoute = routeFeatures.filter((f) => !isAlternativeFeature(f));
+    const alternativeRoutes = routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === 'LineString');
 
     const viaLayersRef = useRef([]);
 
@@ -538,6 +561,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
             // avoid conceal if zoom is requested
             if (routeZoom === false) {
                 map.removeLayer(routeLayer);
+                if (altLayerRef.current) {
+                    map.removeLayer(altLayerRef.current);
+                }
 
                 // remove start, finish
                 map.removeLayer(startPointRef.current);
@@ -561,11 +587,20 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     return (
         <>
+            {alternativeRoutes.length > 0 && (
+                <GeoJSON
+                    ref={altLayerRef}
+                    key={'alt-' + routeDataKey}
+                    data={{ type: 'FeatureCollection', features: alternativeRoutes }}
+                    style={passStyle}
+                    onEachFeature={onEachAlternative}
+                />
+            )}
             {routeObject.getRoute() && (
                 <GeoJSON
                     ref={routeLayerRef}
                     key={routeDataKey}
-                    data={routeObject.getRoute()}
+                    data={{ ...routeObject.getRoute(), features: shownRoute }}
                     style={passStyle}
                     pointToLayer={pointToLayer}
                     onEachFeature={(feature, layer) => onEachFeature({ feature, layer })}

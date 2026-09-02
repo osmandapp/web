@@ -21,6 +21,10 @@ export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
 export const ROUTE_ALTERNATIVES = 2;
 export const ALTERNATIVE_ROUTE_OPACITY = 0.5;
 
+// The server marks an alternative's line and its own turn descriptions with the same "alternative"
+// number. Anything carrying it belongs to a route that is offered but not the one being shown.
+export const isAlternativeFeature = (f) => !!f?.properties?.alternative;
+
 export function alternativeRouteStyle(color) {
     return { color, opacity: ALTERNATIVE_ROUTE_OPACITY, weight: 8 };
 }
