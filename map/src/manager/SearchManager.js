@@ -271,7 +271,8 @@ export function openTrackWptFromSearch(ctx, { file, name }) {
     if (!wpt) return;
     ctx.setCurrentObjectType(OBJECT_SEARCH);
     ctx.setSelectedSearchObj({ type: OBJECT_TYPE_TRACK_WPT, object: { file, name } });
-    ctx.setSelectedWpt({ trackWpt: true, mapObj: false, trackData, ...wpt });
+    const id = `fav:${Number.parseFloat(wpt.lat)}:${Number.parseFloat(wpt.lon)}`;
+    ctx.setSelectedWpt({ trackWpt: true, mapObj: false, trackData, id, ...wpt });
 }
 
 export function isWptFromSearch(ctx) {
