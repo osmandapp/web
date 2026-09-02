@@ -4,11 +4,12 @@ import { apiGet } from '../../../util/HttpApi';
 import TracksManager from '../../../manager/track/TracksManager';
 import TrackLayerProvider from '../../../map/util/TrackLayerProvider';
 import {
-    ROUTE_POINTS_START,
-    ROUTE_POINTS_FINISH,
-    ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_VIA,
 } from '../profileConstants';
+import { LINE_STRING } from '../../../util/Utils';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
@@ -21,8 +22,7 @@ export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
 export const ROUTE_ALTERNATIVES = 2;
 export const ALTERNATIVE_ROUTE_OPACITY = 0.5;
 
-// The server marks an alternative's line and its own turn descriptions with the same "alternative"
-// number. Anything carrying it belongs to a route that is offered but not the one being shown.
+// the server marks an alternative's line and its own turn descriptions with the same "alternative" number
 export const isAlternativeFeature = (f) => !!f?.properties?.alternative;
 
 export function alternativeRouteStyle(color) {
@@ -32,8 +32,7 @@ export function alternativeRouteStyle(color) {
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
-    const waitingStyle = LINE_WAITING_STYLE;
-    const waitingLines = makeLineFeatureCollection.call(this, { style: waitingStyle });
+    const waitingLines = makeLineFeatureCollection.call(this, { style: LINE_WAITING_STYLE });
     this.putRoute({ route: waitingLines.geojson, skipConversion: true });
 
     // don't show anything more than Line
@@ -176,7 +175,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         }
         if (data.features.length > 0) {
             data.features.forEach((f) => {
-                if (f.geometry?.type === 'LineString') {
+                if (f.geometry?.type === LINE_STRING) {
                     f.style = f.properties?.alternative ? alternativeRouteStyle(style.color) : style;
                 }
             });
@@ -242,7 +241,7 @@ function makeLineFeatureCollection({ style = {} } = {}) {
                 {
                     type: 'Feature',
                     geometry: {
-                        type: 'LineString',
+                        type: LINE_STRING,
                         coordinates,
                     },
                     properties: {
