@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useCallback, useMemo } from 'reac
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import { useTranslation } from 'react-i18next';
 import L from 'leaflet';
-import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
+import AppContext, { isRouteTrack, isTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import MarkerOptions from '../markers/MarkerOptions';
 import { getStartPointIconSvg } from '../markers/StartPointMarker';
@@ -481,6 +481,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
+        // alternatives make sense on the route map only, not in details or any track editing
+        if (feature?.properties?.alternative && isTrack(ctx)) {
+            return false;
+        }
         return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
     };
 
@@ -520,7 +524,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // GeoJSON requires dynamic key to refresh/refilter
     // used to redraw layer(s) killed after Local Track Editor
-    const refreshKey = isRouteTrack(ctx).toString();
+    const refreshKey = isRouteTrack(ctx).toString() + isTrack(ctx).toString();
     const routeDataKey = routeObject.getRouteKey() + refreshKey;
 
     const routeLayerRef = useRef(null);
