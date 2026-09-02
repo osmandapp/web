@@ -91,7 +91,7 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
     const coordinates = points.join(';');
 
     setRoutingErrorMsg(null);
-    changeRouteText(true, null);
+    changeRouteText(true);
 
     const response = await apiGet(url + coordinates + tail, {
         apiCache: true,
@@ -99,16 +99,16 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
         abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
     });
     if (!response || reponse.aborted) {
-        changeRouteText(false, null);
+        changeRouteText(false);
         return;
     }
     if (response.ok) {
         const osrm = await response.json();
-        const { route } = this.putRouteOsrm({ osrm, style });
-        changeRouteText(false, this.getRouteProps(route));
+        this.putRouteOsrm({ osrm, style });
+        changeRouteText(false);
     } else {
         this.resetRoute();
-        changeRouteText(false, null);
+        changeRouteText(false);
         try {
             const json = JSON.parse(response.data);
             if (json.message) {
@@ -144,7 +144,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     if (avoidRoadsUrl !== '') {
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
-    changeRouteText(true, null);
+    changeRouteText(true);
     const maxDist = '&maxDist=100'; // compatibility-only
     const alternatives = ROUTE_ALTERNATIVES > 0 ? `&alternatives=${ROUTE_ALTERNATIVES}` : '';
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
@@ -159,7 +159,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         }
     );
     if (!response || response.aborted) {
-        changeRouteText(false, null);
+        changeRouteText(false);
         return;
     }
     if (response.ok && response.data?.features) {
@@ -179,19 +179,19 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         }
         // the style of the displayed route, needed when an alternative is picked on the map
         data.mainRouteStyle = style;
-        const { route } = this.putRoute({ route: data });
-        changeRouteText(false, this.getRouteProps(route));
+        this.putRoute({ route: data });
+        changeRouteText(false);
     } else {
         this.resetRoute();
-        changeRouteText(false, null);
+        changeRouteText(false);
         setRoutingErrorMsg('Router error.');
     }
 }
 
 async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }) {
     const draft = makeLineFeatureCollection.call(this, { style });
-    const { route } = this.putRoute({ route: draft.geojson });
-    changeRouteText(false, this.getRouteProps(route));
+    this.putRoute({ route: draft.geojson });
+    changeRouteText(false);
     setRoutingErrorMsg(null);
     return draft;
 }
