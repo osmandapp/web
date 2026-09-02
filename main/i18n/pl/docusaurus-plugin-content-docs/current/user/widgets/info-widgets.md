@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -32,9 +32,12 @@ Widżety wysokości wyświetlają wysokość bieżącej geolokalizacji nad pozio
 ### Wysokość: Bieżąca lokalizacja   {#altitude-current-location}
   
 :::note  Pobierz korektę wysokości dla świata
-Na niektórych urządzeniach z systemem Android wysokość może być wyświetlana niedokładnie. Aby rozwiązać ten problem, pobierz mapę z korektą wysokości.
+Od wersji Android 14 OsmAnd korzysta z wysokości nad poziomem morza (MSL) dostarczanej przez Google Play Services, jeśli jest dostępna. W takim przypadku mapa korekty wysokości dla świata nie jest wymagana.
+
+Jeśli korzystasz ze źródła lokalizacji Android API lub wysokość MSL jest niedostępna, pobierz mapę korekty wysokości dla świata, aby poprawić dokładność wysokości.
 
 - Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Aby zmienić źródło lokalizacji, przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Aby uzyskać więcej informacji, odwiedź [Mapy i zasoby](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -202,7 +205,7 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -239,7 +242,7 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 - Wartość **≤ 0.1**:  
   - "0.05" jest wyświetlane jako "0".
-- Wartość **> 0.1 i < 100**:  
+- Wartość **> 0.1 and < 100**:  
   - na przykład "50.7643" jest wyświetlane jako "50.8:1".
 - Wartość **> 100:**  
   - "102.35" jest wyświetlane jako "102:1."
@@ -247,35 +250,75 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 ### Współczynnik schodzenia do celu {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Współczynnik schodzenia do celu** pokazuje dokładny współczynnik schodzenia wymagany do osiągnięcia punktu docelowego.
+- **Wysokość celu** pokazuje wysokość punktu docelowego. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
+
+Aby przełączać między tymi trybami, dotknij bezpośrednio widżetu. Opcja przełączania nie jest dostępna w [menu kontekstowym widżetu](../widgets/configure-screen.md#widget-context-menu). 
+
+| | |
+|:------------|:------------|
+| Włącz | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
+| Poprzez dotknięcie | Zmienia *Współczynnik schodzenia do celu* lub *Wysokość celu*  |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Współczynnik schodzenia do celu** pokazuje dokładny współczynnik schodzenia wymagany do osiągnięcia punktu docelowego.
 - **Wysokość celu** pokazuje wysokość punktu docelowego. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
 
 | | |
 |:------------|:------------|
-| Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
+| Włącz | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
 | Poprzez dotknięcie | Zmienia *Współczynnik schodzenia do celu* lub *Wysokość celu*  |
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Średni współczynnik schodzenia {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Średni współczynnik schodzenia** pokazuje średni współczynnik schodzenia dla określonego przedziału czasowego.
+
+| | |
+|:------------|:------------|
+| Włącz | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
+| Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Średni współczynnik schodzenia** pokazuje średni współczynnik schodzenia dla określonego przedziału czasowego.
 - **Średnia prędkość pionowa** wskazuje tempo, w jakim obiekt wznosi się lub opada w określonym czasie. Do oceny brane są pod uwagę tylko pierwszy i ostatni punkt przedziału czasowego. Można ustawić przedział czasowy dla tego widżetu od 15 sekund do 60 minut. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
 
 | | |
 |:------------|:------------|
-| Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
+| Włącz | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
 | Poprzez dotknięcie | Zmienia *Średni współczynnik schodzenia* lub *Średnia prędkość pionowa*  |
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Poziom baterii {#battery-level}
 
 ![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
 
-Widżet **Poziom baterii** wyświetla procent naładowania baterii urządzenia bezpośrednio na ekranie mapy i aktualizuje się automatycznie co najmniej raz na minutę.
+Widżet **Poziem baterii** wyświetla procent naładowania baterii urządzenia bezpośrednio na ekranie mapy i aktualizuje się automatycznie co najmniej raz na minutę.
 
 - **iOS 17 i nowsze** — Ze względu na **ograniczenia prywatności**, dane o poziomie naładowania baterii są dostępne tylko w 5% przyrostach (np. 35%, 60% lub 85%). Jest to ograniczenie systemowe nałożone przez Apple.
 
@@ -560,11 +603,12 @@ Aby dodać widżety metryk pojazdu do ekranu mapy, włącz wtyczkę OsmAnd [Metr
 </Tabs>
 
 
-Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#widgets). Możesz ich używać do przeglądania informacji z podłączonego skanera OBD-II, takich jak (*14 metryk*): **Napięcie adaptera** (*tylko Android*),&nbsp; **Temperatura otoczenia**,&nbsp; **Napięcie baterii**,&nbsp; **Obliczone obciążenie silnika**,&nbsp; **Temperatura płynu chłodzącego**,&nbsp; **Temperatura oleju silnikowego**,&nbsp; **Czas pracy silnika**,&nbsp; **Prędkość obrotowa silnika** (*bezpłatne*),&nbsp; **Zużycie paliwa**,&nbsp; **Ciśnienie paliwa**,&nbsp; **Temperatura wlotu**,&nbsp; **Pozostałe paliwo**,&nbsp; **Pozycja przepustnicy** i **Prędkość pojazdu** (*bezpłatne*).  
+Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#widgets). Możesz ich używać do przeglądania informacji z podłączonego skanera OBD-II, takich jak (*14 metryk*): **Napięcie adaptera**,&nbsp; **Temperatura otoczenia**,&nbsp; **Napięcie baterii**,&nbsp; **Obliczone obciążenie silnika**,&nbsp; **Temperatura płynu chłodzącego**,&nbsp; **Temperatura oleju silnikowego**,&nbsp; **Czas pracy silnika**,&nbsp; **Prędkość obrotowa silnika** (*bezpłatne*),&nbsp; **Zużycie paliwa**,&nbsp; **Ciśnienie paliwa**,&nbsp; **Temperatura wlotu**,&nbsp; **Pozostałe paliwo**,&nbsp; **Pozycja przepustnicy** i **Prędkość pojazdu** (*bezpłatne*).  
 
 - Aby dodać widżety metryk pojazdu do ekranu mapy, [włącz](../plugins/index.md#enable--disable) **wtyczkę Metryki pojazdu**.
-- Możesz dodawać widżety, nawet jeśli nie jest podłączony żaden skaner OBD-II.
+- Możesz dodawać widżety, nawet jeśli nie jest podłączony żaden skanera OBD-II.
 - Wszystkie dodane widżety są widoczne, niezależnie od tego, czy skaner OBD-II jest podłączony, czy nie.
+- Aby uzyskać dokładne wartości **Zużycia paliwa**, określ pojemność zbiornika paliwa pojazdu w ustawieniach profilu. Tryby zużycia na odległość wymagają również danych GPS.
 - Aby edytować widżet, dotknij widżetu dodanego do panelu, a następnie dotknij *Ustawienia* lub bezpośrednio dotknij *ikony Ustawienia* w polu widżetu.
 
 | | |
@@ -659,7 +703,7 @@ Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji M
 
 :::note
 Aby dodać widżety notatek audio/wideo do ekranu mapy, włącz wtyczkę OsmAnd [Notatki audio/wideo](../plugins/audio-video-notes.md).
-:::
+::;
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -764,7 +808,7 @@ Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [wtycz
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="developer_widgets"/>* |
-| Poprzez dotknięcie | Przełącza między trybami (*Poziom powiększenia*)  / Bez zmian (*Inne*) |
+| Poprzez dotknięcie | Przełącza między trybami (*Poziem powiększenia*)  / Bez zmian (*Inne*) |
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 

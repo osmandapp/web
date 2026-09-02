@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  Przygotowanie trasy
 ---
@@ -461,13 +461,11 @@ Przejdź do: *<Translate android="true" ids="shared_string_navigation,shared_str
 
 ## Brakujące lub niezsynchronizowane mapy {#maps-missing-or-not-synchronized}
 
-Aby zbudować trasę, wszystkie **niezbędne mapy** muszą być pobrane i mieć tę samą datę wydania. Należy pamiętać, że w niektórych sytuacjach komunikat o brakujących mapach może być ukryty w menu przygotowania trasy. Jeśli pociągniesz menu nawigacji w górę, zobaczysz możliwe przyczyny, dla których trasa nie mogła zostać obliczona.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Komunikat o braku map podczas budowania nawigacji Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Komunikat o braku map podczas budowania nawigacji Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Komunikat o braku map podczas budowania nawigacji Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Aby zbudować trasę, wszystkie **niezbędne mapy** muszą być pobrane i mieć 
 </TabItem>
 
 </Tabs>
+
+Aby zbudować trasę, wszystkie **niezbędne mapy** muszą być pobrane i mieć tę samą datę wydania. Na Androidzie, jeśli wymagane mapy mają różne daty wydania, OsmAnd może przełączyć się na routing standardowy, gdy [Metoda obliczania trasy](../routing/car-based-routing.md#route-parameters---car) jest ustawiona na Auto.
+
+Należy pamiętać, że w niektórych sytuacjach komunikat o brakujących mapach może być ukryty w menu przygotowania trasy. Jeśli pociągniesz menu nawigacji w górę, zobaczysz możliwe przyczyny, dla których trasa nie mogła zostać obliczona.
 
 ### Wymagane mapy {#required-maps}
 

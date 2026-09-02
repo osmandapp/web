@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title:  Widgets de navigation
 ---
@@ -188,6 +188,7 @@ Le widget *Informations sur l'itinéraire* fournit des données en temps réel s
 
 - Sélectionnez une **Vue par défaut** pour prioriser l'une des valeurs suivantes : *Heure d'arrivée estimée*, *Temps à parcourir*, *Distance*.
 - Dans **Priorité d'affichage**, sélectionnez entre *Destination en premier (par défaut)* ou *Intermédiaire en premier* pour prioriser les informations d'itinéraire les plus pertinentes.
+- Activez ou désactivez l'option **Afficher le bouton d'extension** pour afficher ou masquer le bouton d'extension de l'interface de navigation. Cette option est activée par défaut.
 
 > NOTE : Le widget n'est visible que pendant la navigation.
 
@@ -248,7 +249,7 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps à parcourir* jusqu'au premi
 | | |
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Par appui | Bascule entre *Heure d'arrivée* et *Temps à parcourir* et inversement. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 

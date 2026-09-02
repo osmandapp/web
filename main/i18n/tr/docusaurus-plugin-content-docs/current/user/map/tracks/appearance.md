@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  İz Görünümü
 ---
@@ -73,9 +73,21 @@ Rota çizgisi görünümünü özelleştirme hakkında daha fazla bilgi için [N
 
 ### Renk Paleti Düzenleyici {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android"> 
 
 ![Renk Paletleri Düzenleyici](@site/static/img/map/gradient_palettes_1.png) ![Renk Paletleri Düzenleyici ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Renk Paletleri Düzenleyici](@site/static/img/map/gradient_palettes_1_ios.png) ![Renk Paletleri Düzenleyici ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Hız, Rakım veya Eğim'e göre bir iz renklendirirken, renklerin iz boyunca nasıl uygulandığını tanımlamak için kendi paletlerinizi kullanabilirsiniz.
 
@@ -86,7 +98,7 @@ Hız, Rakım veya Eğim'e göre bir iz renklendirirken, renklerin iz boyunca nas
 - Kaldırın. Bir paleti kaldırmak onay gerektirir.
 
 Tüm renkler ekranındaki + düğmesine dokunun. İki tür palet mevcuttur:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — renkler izin minimum ve maksimum değerlerine göre otomatik olarak ölçeklenir.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — renkler izin minimum, ortalama ve maksimum değerlerine göre otomatik olarak ölçeklenir.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — renkler belirli mutlak sayılara atanır (örneğin, 50 km/s). Değerler manuel olarak düzenlenebilir. Birimler [sistem ayarlarını](../../personal/profiles.md#units--formats) takip eder. Renk ölçeği farklı izlere uygulandığında otomatik olarak yeniden ölçeklenmez.
 
 :::info Pro feature
@@ -222,7 +234,7 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 1. **Hız ile 3B Görselleştirme**.  
     Yaygın bir kullanım durumu, hız varyasyonlarını görselleştirmek için 3B izleri kullanmaktır. Bu, yavaşladığınız veya hızlandığınız izin belirli bölümlerini belirlemenizi sağlar.  
 
-    Eğime dayalı Duvar Rengi ile, arazinin, özellikle tepelerin ve eğimlerin hızınızı nasıl etkilediğini gözlemleyebilirsiniz. Hız ve eğim görselleştirmesinin bu kombinasyonu, aktivite boyunca performansın ayrıntılı bir şekilde anlaşılmasını sağlar.
+    Eğime dayalı Duvar Rengi ile, arazinin, özellikle tepilerin ve eğimlerin hızınızı nasıl etkilediğini gözlemleyebilirsiniz. Hız ve eğim görselleştirmesinin bu kombinasyonu, aktivite boyunca performansın ayrıntılı bir şekilde anlaşılmasını sağlar.
 
 2. **Kalp sensörü ile 3B Rölyef ile Görselleştirme**.  
     Başka bir bilgilendirici uygulama, kalp atış hızı sensör verilerini 3B rölyef haritalarıyla birleştirmektir. Bu, kalp atış hızı dalgalanmalarını doğrudan araziye eşlemenizi sağlayarak, rakım değişikliklerinin fiziksel çabanızı nasıl etkilemiş olabileceğine dair kapsamlı bir görünüm sunar.  
@@ -246,7 +258,7 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 
 <TabItem value="ios" label="iOS">
 
-![Görünümü Değiştir](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Görünümü Değiştir](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Görünümü Değiştir](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Görünümü Değiştir](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 
 *Yerlerim → İzler*'de birden fazla izin görünümünü değiştirin:
 
-- **Varsayılan görünümü değiştir** (yalnızca Android) - Bir [klasöre](../../personal/tracks/manage-tracks.md#track-folder) iz eklendiğinde uygulanacak varsayılan ayarları yapılandırmanıza olanak tanır.
+- **Varsayılan görünümü değiştir** - Bir [klasöre](../../personal/tracks/manage-tracks.md#track-folder) iz eklendiğinde uygulanacak varsayılan ayarları yapılandırmanıza olanak tanır.
 - **Orijinale sıfırla** - Bireysel iz ayarlarını geri yükler.
 
 - [Seçim modu](../../personal/tracks/manage-tracks.md#selection-mode) - Seçilen klasördeki veya İzler sekmesindeki tüm listedeki belirli izlerin görünümünü değiştirir.

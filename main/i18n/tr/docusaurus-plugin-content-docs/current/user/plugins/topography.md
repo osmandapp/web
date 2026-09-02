@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografya
 ---
@@ -274,7 +274,17 @@ Arazi Gölgeleri, 3B Rölyef gerektirir ve seçildiğinde otomatik olarak etkinl
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
-*Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
+*Modify Color Scheme feature* allows you to select a color scheme:
 
 - [Önceden tanımlanmış bir listeden](#default-color-scheme).
 - Bilgisayarınızda oluşturduğunuz renk paleti dosyalarından. Özel dosyalar, [içe/dışa aktarma aracı](../personal/import-export.md) kullanılarak OsmAnd'a eklenebilir.
@@ -290,24 +300,6 @@ Yapabileceğiniz işlemler:
 **Not:** Gölgelendirme, sabit bir gölgelendirme algoritması kullanır ve özel renk paletlerini desteklemez.
 
 Palet dosyalarını kullanarak gelişmiş palet özelleştirmesi için [Renk Şemaları](../personal/color-palette-schemes.md#palette-modify) makalesine bakın.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-*Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
-
-- [Önceden tanımlanmış bir listeden](#default-color-scheme).
-- Bilgisayarınızda oluşturduğunuz renk paleti dosyalarından. Özel dosyalar, [içe/dışa aktarma aracı](../personal/import-export.md) kullanılarak OsmAnd'a eklenebilir.
-
-Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletleri düzenleyebilirsiniz](../personal/color-palette-schemes.md#palette-modify).
-
-
-</TabItem>
-
-</Tabs>
 
 ### Görünürlük {#visibility}
 
@@ -378,11 +370,17 @@ Arazi Gölgeleri için Yakınlaştırma Seviyeleri mevcut değildir çünkü bu 
 
 </Tabs>
 
-**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. [OpenStreetMap verileri](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage), binalardan geçen geçitleri `tunnel=building_passage` etiketiyle haritalanmışsa, OsmAnd 3B bina modelinde görünür açıklıkları oluşturur böylece binadan geçen yollar veya yaya yolları doğru şekilde görüntülenir. 
+**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. 
+
+Karmaşık yapılar için OsmAnd, farklı yükseklik ve şekillere sahip bir binanın ayrı bölümlerini işlemek üzere `building:part` kullanır. 
+
+Eğer [OpenStreetMap verileri](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) `tunnel=building_passage` etiketiyle haritalanmış binalardan geçen geçitleri içeriyorsa, OsmAnd 3B bina modelinde görünür açıklıkları oluşturur böylece binadan geçen yollar veya yaya yolları doğru şekilde görüntülenir. 
+
+3B binalar, [OpenStreetMap verilerine](https://wiki.openstreetmap.org/wiki/Key:roof:shape) dayalı farklı çatı şekillerini içerebilir. `roof:shape` etiketi çatı geometrisini tanımlar, `roof:levels` ve `roof:height` ise yüksekliği hakkında bilgi sağlar.
 
 3B binalar yalnızca daha yüksek yakınlaştırma seviyelerinde (şehir/sokak görünümü) gösterilir. Yakınlaştırma veya kaydırma sırasında 3B binalar yumuşak bir solma animasyonuyla belirir ve kaybolur. Bir POI veya seçili konum (örneğin bir harita pimi veya navigasyon hedefi) bir binanın içindeyse, OsmAnd ilgili binayı haritada tanımlamayı kolaylaştırmak için vurgular.
 
-3B binaların oluşturma işlemini etkinleştirmek veya devre dışı bırakmak için ana geçişi kullanın. Etkinleştirildiğinde, ayar ayrıca ana geçişin altında mevcut [Detay seviyesi](#performance) (Düşük veya Yüksek) değerini de görüntüler (*Yalnızca Android*). Binaları 3B olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı doğru kaydırarak haritayı eğin. Bu görünümde, binalar görünürlük ayarına bağlı olarak yolları veya harita etiketlerini kısmen kaplayabilir.
+3B binaların oluşturma işlemini etkinleştirmek veya devre dışı bırakmak için ana geçişi kullanın. Etkinleştirildiğinde, ayar ayrıca ana geçişin altında mevcut [Detay seviyesi](#performance) (Düşük veya Yüksek) değerini de görünteler (*Yalnızca Android*). Binaları 3B olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı doğru kaydırarak haritayı eğin. Bu görünümde, binalar görünürlük ayarına bağlı olarak yolları veya harita etiketlerini kısmen kaplayabilir.
 
 Android'de bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabilir.  
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
@@ -429,7 +427,7 @@ Android'de bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kul
 
 **<Translate android="true" ids="level_of_details"/>**, 3B bina geometrisinin karmaşıklığını belirler:
 - Düşük (varsayılan) — daha basit geometri.
-- Yüksek — daha detaylı geometri.
+- Yüksek — daha detaylı geometri. 3B binalar için solma animasyonu yalnızca bu ayarla kullanılabilir.
 
 **<Translate android="true" ids="view_distance"/>**, 3B binaların kameradan ne kadar uzakta oluşturulduğunu kontrol eder:
 - Yakın (varsayılan) — size daha yakın binaları oluşturur.
@@ -446,7 +444,7 @@ Her iki performans seçeneği de 3B binalar ayar ekranında doğrudan iki konuml
 
 **Güneş** ayarı, 3B binaların oluşturma işlemi için kullanılan aydınlatma yönünü kontrol eder. 3B görünümde binalar üzerindeki ışık ve gölgelerin nasıl göründüğünü etkiler. Güneş'e dokunduğunuzda, iki kaydırıcı kullanarak aydınlatmayı ayarlayabileceğiniz bir önizleme ekranı açar:
 
-- Azimut — ışık kaynağının yatay yönünü kontrol eder (güneşin pusula yönü).
+- Azimut — ışık kaynağının yatay yönünü kontrol eder (güneşin pusla yönü).
 - İrtifa — ufuk çizgisi üzerindeki güneş yüksekliğini kontrol eder.
 
 Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştüğünü değiştirir ve 3B görünümde bina şekillerinin görsel algısını iyileştirebilir. Seçilen aydınlatma parametrelerini onaylamak için Uygula'ya dokunun.
@@ -510,7 +508,6 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 </TabItem>
 
 </Tabs>
-
 
 ### Dikey Abartı {#vertical-exaggeration}
 

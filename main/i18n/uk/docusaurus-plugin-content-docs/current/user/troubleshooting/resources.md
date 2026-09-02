@@ -1,5 +1,5 @@
 ---
-source-hash: 9a2fb1a0db12fdd1a955c780e6afda563c99eab31eaea9b3acb8454dc6b366c7
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
@@ -53,6 +53,8 @@ OsmAnd — це потужний застосунок із широкою баз
 | GPX у KML | Інструмент для конвертації файлів *GPX* з OsmAnd у формат *KML* зі збереженням іконок. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX в OsmAnd | Скрипт Python для конвертації експортованих файлів iOverlander *GPX* для OsmAnd з іконками. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Топографічна карта для друку| Це [інструмент](https://github.com/acui/osmand_topo_map_generator) для створення топографічної карти для друку за допомогою знімків екрана з OsmAnd (https://osmand.net). Карта використовує сітку UTM і містить інформацію про схилення. Її слід використовувати з компасом або GPS-пристроєм з координатами UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar проєктує промінь до сонця з кожної точки треку GPX і перевіряє його відносно рельєфу та рослинності (0,5 м HD LiDAR / IGN) для заданої дати й часу. Він показує вам метр за метром — сонце чи тінь. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Автономний інструмент, який завантажує публічні дані LiDAR з національних порталів у 22 країнах | [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Користувацькі ресурси {#custom-resources}
 
@@ -65,7 +67,7 @@ OsmAnd — це потужний застосунок із широкою баз
 | Мова | Опис | Посилання |
 | :-- | :-- | :-- |
 | Іспанська  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Іспанська  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Іспанська  |  Este manual tiene el fin de explicar detalladamente todas las functions que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener more herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Іспанська  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Чеська   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | Французька  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -110,6 +112,16 @@ OsmAnd — це потужний застосунок із широкою баз
 | ExplorerRS | [Стиль рендерингу ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) переважно базується на UniMap та routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Це стиль рендерингу OsmAnd, оптимізований для полювання за штормами](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
+
+### Маршрутизація
+
+Стандартний файл `routing.xml` можна налаштувати для коригування алгоритмів маршрутизації та параметрів для конкретних умов.
+
+| Назва джерела | Опис | Посилання |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Кастомна модифікація `routing.xml`, яка коригує розрахунок маршруту для дощових умов, враховуючи тип поверхні (наприклад, гола скеля), нахил та офіційні рейтинги складності стежок (шкали CAI/SAC), а також покращену логіку "Уникати тунелів". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
+
 ### Офлайн-карти {#offline-maps}
 
 Користувацькі векторні карти (файли OBF), створені користувачами.
@@ -132,6 +144,10 @@ OsmAnd — це потужний застосунок із широкою баз
 | Basemap AT WMTS | Набір карт Австрії на основі [basemap.at WMTS](https://basemap.at/en/) створений mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | Набір карт, наданий французьким географічним інститутом IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | Сайт надає колекцію карт для заміського відпочинку, включаючи туристичні, гірські, морські та багато інших. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Незалежний оверлей OsmAnd, що показує сьогоднішній та завтрашній рівні ризику лісових пожеж для Comunitat Valenciana, Іспанія, з використанням офіційних публічних даних. | [Проєкт та встановлення](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Прямий пакет `.osf`](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

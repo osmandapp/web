@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -56,13 +56,13 @@ Puede seleccionar varios tipos de objetos del mapa, como *PDI*, *favoritos*, *pa
 
 <TabItem value="android" label="Android">
 
-![Menú contextual pulsación larga Android](@site/static/img/map/map_context_menu_long_tap_android.png)
+![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menú contextual pulsación larga iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
+![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
 </TabItem>
 
@@ -77,13 +77,13 @@ Cuando realiza una **pulsación larga** en cualquier lugar del mapa, aparece un 
 
 <TabItem value="android" label="Android">  
 
-![Menú contextual de track Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Pantalla de estadísticas de track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -94,7 +94,7 @@ Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú con
 
 ### Rutas, pistas de esquí y senderos {#routes-and-trails}
 
-![Pistas de esquí y senderos de BTT](@site/static/img/map/ski_mtb.png)  ![Pistas de esquí y senderos de BTT](@site/static/img/map/ski_mtb_2.png)
+![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
 
 Puede tocar elementos del mapa como **pistas de esquí**, **rutas de bicicleta de montaña (BTT)** y **senderos de motocross** para abrir su menú contextual con información detallada. Consulte el [artículo de Rutas](../map/routes/index.md#actions-with-routes) para obtener más información.
 
@@ -137,11 +137,12 @@ Los detalles disponibles incluyen:
 
 - [Descripción del artículo](#article-description)
 - [Nombres alternativos](#alternative-names)
+- [Relacionados](#related)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
 - [PDI cercanos](#nearby-pois)
 - [Lugares populares cercanos](#nearby-popular-places)
-- [Guías](#guides) (solo Android)
+- [Guías](#guides) 
 - [Rutas de transporte público para paradas](#public-transport-routes)
 - [Favoritos / Puntos de track del mismo grupo](#favorites--track-points-from-the-group)
 - [Enlace de OpenStreetMap](#openstreetmap-link)
@@ -156,6 +157,8 @@ Además, el panel puede incluir [Detalles de OpenStreetMap](https://wiki.openstr
 - [Accesibilidad](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Ancho](https://wiki.openstreetmap.org/wiki/Key:width) / [Alto](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+Si un campo de contacto (como *Sitio web, Número de teléfono* o *Correo electrónico*) contiene varios valores, al tocarlo se muestra una lista de entradas disponibles. Seleccione la entrada deseada para realizar la acción correspondiente.
+
 Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar información descriptiva adicional extraída de OpenStreetMap. Estos atributos le ayudan a comprender mejor las características de un lugar e incluyen detalles como elevación, dirección, año de construcción, tipo de superficie o cobertura, nivel interior, opciones de pago, disponibilidad de entrega o para llevar, y muchos otros. OsmAnd muestra estos atributos con etiquetas claras y, cuando es posible, iconos, lo que facilita su lectura y reconocimiento. El conjunto exacto de atributos depende de los datos disponibles en OpenStreetMap para el objeto seleccionado.
 
 
@@ -165,23 +168,21 @@ Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar
 
 <TabItem value="android" label="Android">  
 
-![Lista de descripción](@site/static/img/map/description_list_new_android.png) ![Lista de descripción](@site/static/img/map/description_list_dialog.png)
-
-Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](../plugins/wikipedia.md#wikipedia-article), una descripción de un [Favorito](../personal/favorites.md) o un Waypoint; al tocar puede abrir la descripción completa.
-
-Si el lugar seleccionado tiene un artículo de Wikipedia, se muestra una vista previa corta en esta sección. Cuando el artículo completo no está disponible sin conexión, aparece el botón *Leer en Wikipedia*. Al tocarlo, se abre un diálogo con opciones dependiendo del acceso del usuario: los usuarios con un plan comprado pueden descargar los datos regionales de Wikipedia o abrir el artículo en un navegador, mientras que los usuarios gratuitos pueden abrir el artículo en línea o proceder a la pantalla que ofrece acceso sin conexión.
+![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Lista de descripción](@site/static/img/map/description_list_new_ios.png)
-
-Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](../plugins/wikipedia.md), una descripción de un [Favorito](../personal/favorites.md) o un Waypoint; al tocar puede abrir la descripción completa.
+![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](../plugins/wikipedia.md#wikipedia-article), una descripción de un [Favorito](../personal/favorites.md) o un Waypoint; al tocar puede abrir la descripción completa.
+
+Si el lugar seleccionado tiene un artículo de Wikipedia, se muestra una vista previa corta en esta sección. Cuando el artículo completo no está disponible sin conexión, aparece el botón *Leer en Wikipedia*. Al tocarlo, se abre un diálogo con opciones dependiendo del acceso del usuario: los usuarios con un plan comprado pueden descargar los datos regionales de Wikipedia o abrir el artículo en un navegador, mientras que los usuarios gratuitos pueden abrir el artículo en línea o proceder a la pantalla que ofrece acceso sin conexión.
 
 
 ### Nombres alternativos {#alternative-names}
@@ -214,6 +215,28 @@ Características de la visualización de nombres alternativos:
 
 - Si una traducción específica *no está disponible*, OsmAnd utiliza por defecto el nombre **local** para garantizar la precisión y la coherencia en las regiones multilingües.
 
+### Relacionados {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Relacionados Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Relacionados iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+La sección **Relacionados** muestra objetos del mapa asociados al lugar seleccionado mediante una relación de OpenStreetMap. Esta sección está disponible para PDI basados en relaciones compatibles, como campus universitarios y otros objetos multipolígono.
+
+Toque cualquier elemento de la lista para abrir su menú contextual del mapa. Esto le permite navegar rápidamente entre objetos relacionados que pertenecen a la misma relación.
+
 
 ### Dentro del área {#polygon-information}
 
@@ -227,7 +250,7 @@ Características de la visualización de nombres alternativos:
 
 <TabItem value="ios" label="iOS">
 
-![Información de polígono iOS](@site/static/img/map/polygon_information_ios_new.png)
+![Polygon Information Android](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -258,7 +281,7 @@ El enlace web de OsmAnd puede ser reconocido automáticamente por OsmAnd (ejempl
 
 <TabItem value="ios" label="iOS">
 
-![PDI cercanos iOS](@site/static/img/map/nearby_poi_ios.png)
+![Nearby POI IOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
@@ -275,7 +298,7 @@ Al tocar *PDI cercanos* se abre una lista de puntos. Un toque en uno de estos pu
 
 <TabItem value="android" label="Android">  
 
-![Lugares cercanos Android](@site/static/img/map/nearby_places_android.png)
+![Nearby Places Android](@site/static/img/map/nearby_places_android.png)
 
 Esta sección resalta lugares populares que le ayudan a descubrir destinos interesantes y puntos de referencia alrededor de su ubicación actual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* y *<Translate android="true" ids="search_more"/>* para navegar y buscar todos los lugares populares. 
 
@@ -285,7 +308,7 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 
 <TabItem value="ios" label="iOS">
 
-![Lugares cercanos iOS](@site/static/img/map/nearby_places_ios.png)
+![Nearby Places IOS](@site/static/img/map/nearby_places_ios.png)
 
 Esta sección resalta lugares populares que le ayudan a descubrir destinos interesantes y puntos de referencia alrededor de su ubicación actual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* y *<Translate android="true" ids="search_more"/>* para navegar y buscar todos los lugares populares. 
 
@@ -299,13 +322,25 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 
 ### Guías {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Guías Android](@site/static/img/map/details_guides.png)
+<TabItem value="android" label="Android">  
+
+![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sección **Guías** aparece en el menú contextual del mapa para algunos lugares y proporciona acceso a guías de **Travel (Wikivoyage)** relacionadas con el punto de interés seleccionado. Muestra una lista de entradas de guías (por ejemplo, un país o región) que mencionan el lugar seleccionado.
 
-La sección de Guías se muestra solo si se han descargado datos de **Travel (Wikivoyage)** para el área seleccionada.
+La sección de Guías se muestra solo si se han descargado datos de **Travel (Wikivoyage)** para la área seleccionada.
 
 **Nota:** Las guías están vinculadas al contenido de Wikivoyage, no a descripciones generales de Wikipedia.
 
@@ -354,15 +389,15 @@ El enlace de OpenStreetMap proporciona un enlace directo al objeto de OpenStreet
 
 <TabItem value="android" label="Android">  
 
-![Menú contextual de Fotos en línea Android](@site/static/img/map/images_nearby_1_andr.png)
-![Menú contextual de Fotos en línea Android](@site/static/img/map/gallery_menu_andr.png)
+![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menú contextual de Fotos en línea iOS](@site/static/img/map/online_photo_ios_new.png)
-![Menú contextual de Fotos en línea iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios_new.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
@@ -387,13 +422,13 @@ Para más información, consulte: [Fotos en línea](https://osmand.net/docs/user
 
 <TabItem value="android" label="Android">  
 
-![Imágenes a nivel de calle Android](@site/static/img/map/street_level_imagery_andr.png)
+![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Imágenes a nivel de calle iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
@@ -522,7 +557,7 @@ Opciones disponibles para compartir la ubicación:
 - ***Enviar***. Envía texto a través de las aplicaciones disponibles en su dispositivo. Incluye toda la información sobre la ubicación: el nombre de Mi ubicación o el nombre del PDI seleccionado, la dirección, las coordenadas y la geolocalización como un enlace.
 - ***Copiar enlace***. Copia un enlace a la ubicación seleccionada al portapapeles.  
 Ejemplo: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
-- ***Copiar***. Copia toda la información de la ubicación (nombre de Mi ubicación o nombre del PDI seleccionado, dirección, coordenadas y geolocalización como un enlace) al portapapeles.  
+- ***Copiar***. Copia toda la información de la ubicación (nombre de Mi ubicación o nombre del PDI seleccionado, la dirección, las coordenadas y la geolocalización como un enlace) al portapapeles.  
 - ***Copiar dirección***. Copia solo la información de la dirección al portapapeles.
 - ***Copiar nombre del PDI***. Copia solo el nombre del PDI o la dirección si no hay nombre al portapapeles.
 - ***Copiar coordenadas***. Copia solo la información de las coordenadas al portapapeles.

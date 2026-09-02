@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -77,13 +76,13 @@ Wanneer u ergens op de kaart **lang tikt**, verschijnt er een **contextmenu** me
 
 <TabItem value="android" label="Android">  
 
-![Context track menu Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -138,11 +137,12 @@ Beschikbare details zijn onder andere:
 
 - [Artikelbeschrijving](#article-description)
 - [Alternatieve namen](#alternative-names)
+- [Gerelateerd](#related)
 - [Coördinaten](#coordinates)
 - [Binnen gebieden](#polygon-information)
 - [Nabije POI's](#nearby-pois)
 - [Nabije populaire plaatsen](#nearby-popular-places)
-- [Gidsen](#guides) (alleen Android)
+- [Gidsen](#guides)
 - [Openbaarvervoerroutes voor haltes](#public-transport-routes)
 - [Favorieten / Trackpunten uit dezelfde groep](#favorites--track-points-from-the-group)
 - [OpenStreetMap-link](#openstreetmap-link)
@@ -157,6 +157,8 @@ Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/
 - [Toegankelijkheid](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Breedte](https://wiki.openstreetmap.org/wiki/Key:width) / [Hoogte](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+Als een contactveld (zoals *Website, Telefoonnummer* of *E-mail*) meerdere waarden bevat, wordt bij het tikken een lijst met beschikbare vermeldingen weergegeven. Selecteer de gewenste vermelding om de bijbehorende actie uit te voeren.
+
 Naast de hierboven genoemde velden kan OsmAnd ook extra beschrijvende informatie tonen die is overgenomen van OpenStreetMap. Deze attributen helpen u de kenmerken van een plaats beter te begrijpen en kunnen details bevatten zoals hoogte, richting, bouwjaar, type oppervlak of bekleding, binnenniveau, betaalopties, beschikbaarheid van bezorging of afhalen, en vele andere. OsmAnd toont deze attributen met duidelijke labels en, waar mogelijk, iconen, waardoor het eenvoudiger is om de informatie te lezen en te herkennen. Het exacte aantal attributen hangt af van de beschikbare gegevens in OpenStreetMap voor het geselecteerde object.
 
 
@@ -168,21 +170,20 @@ Naast de hierboven genoemde velden kan OsmAnd ook extra beschrijvende informatie
 
 ![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
-Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md#wikipedia-article), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
-
-Als de geselecteerde plaats een Wikipedia-artikel heeft, wordt een korte preview weergegeven in deze sectie. Wanneer het volledige artikel niet offline beschikbaar is, verschijnt de knop *Lezen op Wikipedia*. Door erop te tikken, opent zich een dialoog met opties afhankelijk van de toegang van de gebruiker: gebruikers met een gekocht abonnement kunnen de regionale Wikipedia-gegevens downloaden of het artikel in een browser openen, terwijl gratis gebruikers het artikel online kunnen openen of naar het scherm kunnen gaan dat offline toegang aanbiedt.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Description list](@site/static/img/map/description_list_new_ios.png)
-
-Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
+![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md#wikipedia-article), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
+
+Als de geselecteerde plaats een Wikipedia-artikel heeft, wordt een korte preview weergegeven in deze sectie. Wanneer het volledige artikel niet offline beschikbaar is, verschijnt de knop *Lezen op Wikipedia*. Door erop te tikken, opent zich een dialoog met opties afhankelijk van de toegang van de gebruiker: gebruikers met een gekocht abonnement kunnen de regionale Wikipedia-gegevens downloaden of het artikel in een browser openen, terwijl gratis gebruikers het artikel online kunnen openen of naar het scherm kunnen gaan dat offline toegang aanbiedt.
+
 
 
 ### Alternatieve namen {#alternative-names}
@@ -214,6 +215,29 @@ Kenmerken van de weergave van alternatieve namen:
 - Andere categorieën omvatten *regiospecifieke vertaling* of *standaardinstellingen*.
 
 - Als een specifieke vertaling *niet beschikbaar* is, gebruikt OsmAnd standaard de **lokale** naam om nauwkeurigheid en consistentie in meertalige regio's te garanderen.
+
+
+### Gerelateerd {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Related Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Related iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+De sectie **Gerelateerd** toont kaartobjecten die via een OpenStreetMap-relatie zijn gekoppeld aan de geselecteerde plaats. Deze sectie is beschikbaar voor ondersteunde POI's op basis van relaties, zoals universiteitscampussen en andere multipolygoonobjecten.
+
+Tik op een item in de lijst om het kaartcontextmenu ervan te openen. Zo kunt u snel navigeren tussen gerelateerde objecten die tot dezelfde relatie behoren.
 
 
 ### Binnen gebied {#polygon-information}
@@ -300,9 +324,21 @@ Tik op *Nabije [Populaire plaatsen](https://osmand.net/docs/user/plugins/wikiped
 
 ### Gidsen {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 De **Gidsen**-sectie verschijnt in het kaartcontextmenu voor sommige plaatsen en biedt toegang tot **Reis (Wikivoyage)**-gidsen die gerelateerd zijn aan het geselecteerde punt van interesse. Het toont een lijst van gidsvermeldingen (bijvoorbeeld een land of regio) die de geselecteerde plaats vermelden.
 

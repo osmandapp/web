@@ -1,5 +1,5 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -27,6 +27,7 @@ Usted puede:
 - Organizar widgets en paneles (superior, inferior, izquierdo, derecho, central).
 - Crear múltiples **páginas** dentro de los paneles laterales, elegir el tamaño de los widgets.
 - Elegir la altura de la fila y alternar los iconos de los widgets.
+- En Android, personalizar la [apariencia del panel de widgets](#widget-panel-appearance).
 
 Todos los widgets son [dependientes del perfil](../personal/profiles.md) — cada perfil tiene su propio diseño, orden, visibilidad y configuración.
 
@@ -37,7 +38,7 @@ Todos los widgets son [dependientes del perfil](../personal/profiles.md) — cad
 
 Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview.webp)  ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -310,7 +311,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_wi
 
 Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**. La función **Modo de páginas** le permite agregar 5 páginas a los paneles izquierdo y derecho.
 
-***Cómo configurar páginas:***
+***Cómo configurar filas:***
 
 - **Añadir una página**. Vaya a la configuración del panel izquierdo/derecho y toque *Editar → Añadir página*.
 - **Organizar widgets por página**. Esta función es útil cuando se necesitan diferentes conjuntos de widgets para diferentes tareas, como navegar en lugar de explorar el mapa.
@@ -320,6 +321,8 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
 ## Ajustes de widget {#widget-settings}
 
 ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menú Configurar pantalla](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+
+Estos ajustes se aplican solo al widget seleccionado.
 
 1. **Opciones de tamaño de widget** (*para todos los paneles*):  
     Puede personalizar el tamaño de los **Widgets simples** en los **paneles superior, inferior, izquierdo y derecho**:
@@ -357,6 +360,37 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
     - Toque el icono de *Ajustes* en el lado derecho del campo del widget.
     - Toque el ajuste *Tamaño* y seleccione uno de los tamaños disponibles.
     - Cambie a la posición de apagado, en el campo *Mostrar icono*.
+
+
+## Apariencia del panel de widgets (solo Android) {#widget-panel-appearance}
+
+Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Apariencia del panel de widgets](@site/static/img/widgets/widget_appearance.webp) ![Apariencia del panel de widgets](@site/static/img/widgets/widget_appearance_2.webp)
+
+Los ajustes de apariencia le permiten personalizar el aspecto de todos los widgets en el panel seleccionado. Cada panel (*Superior*, *Inferior*, *Izquierdo*, *Derecho*) tiene sus propios ajustes de apariencia.
+
+1. **Altura**. Controla la altura de los widgets en el panel seleccionado. Para los paneles Izquierdo y Derecho, este ajuste cambia la **altura del widget**. Para los paneles Superior e Inferior, cambia la **altura de la fila**. Opciones disponibles: *Original (predeterminado)*, *Pequeño*, *Mediano*, *Grande*.
+
+2. **Icono**. Controla la visibilidad del icono. Opciones disponibles: *Original (predeterminado)*, *Activado*, *Desactivado*. 
+
+3. **Color del texto**. Cambia el color del texto principal del widget. Opciones disponibles: *Predeterminado*, *Automático*, *Personalizado*. Cuando se selecciona **Personalizado**, puede configurar colores separados para los modos **Día** y **Noche**. Una vista previa en vivo muestra los colores seleccionados antes de aplicarlos.
+
+:::tip Compra
+Los colores personalizados de widgets son una [función de pago](../purchases/index.md).  
+:::
+
+4. **Color del texto secundario**. Cambia el color de los nombres y unidades de los widgets. Opciones disponibles: *Predeterminado*, *Automático*, *Personalizado*.
+
+5. **Color de fondo**. Cambia el color de fondo de los widgets en el panel seleccionado. Opciones disponibles: *Predeterminado*, *Transparente*, *Personalizado*.
+
+6. **Vista previa**. El área de vista previa muestra cómo se verán los widgets con los ajustes de apariencia seleccionados actualmente.
+
+7. **Copiar ajustes de apariencia:**
+
+    - Toque el menú ⋮ en la esquina superior derecha.
+    - Seleccione Copiar desde.
+    - Elija una de las siguientes opciones: *Otro perfil* o *Uno de los otros paneles*.
 
 
 ## Personalización de paneles {#panels-customization}
@@ -593,7 +627,7 @@ El **menú de tres puntos** en la pantalla de Botones predeterminados contiene a
 
 **Ir a** (para Botones personalizados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
 **Ir a** (para todos los Botones predeterminados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
-**Ir a** (para un Botón predeterminado específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleccionar un botón → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Ir a** (para un Botón predeterminado específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
 
 </TabItem>
 

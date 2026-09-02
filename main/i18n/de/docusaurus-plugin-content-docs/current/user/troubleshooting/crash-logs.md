@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
 sidebar_position: 5
 title:  Crash Logs
 ---
@@ -19,47 +19,61 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Absturzprotokolle sind wertvolle Diagnosewerkzeuge, die Entwicklern helfen, Probleme und Fehler zu identifizieren und zu beheben, die dazu führen, dass die Anwendung abstürzt oder sich unerwartet verhält. Es ist möglich, Protokolle von Ihrem Android-Gerät mit dem OsmAnd-Entwicklungsteam zu teilen. Derzeit haben iOS-Benutzer nur eine Art von Absturzprotokolloption zum Senden.
 
 
-## Absturz- und Logcat-Protokolle {#crash-and-logcat-logs}
+## Absturz- und App-Protokolle {#crash-and-app-logs}
 
 OsmAnd ermöglicht Ihnen das Senden von zwei Arten von Daten an Entwickler:
 
 - **Absturzprotokolle**. Werden generiert, wenn die OsmAnd-App auf einen kritischen Fehler oder eine Ausnahme stößt, die zum Absturz führt. Diese Protokolle liefern detaillierte Informationen über den Zustand der Anwendung während des Fehlers, einschließlich Build-Daten, Stack-Traces, Fehlermeldungen und andere relevante Details.
-- **Logcat-Protokolle**. Eine Aufzeichnung des OsmAnd-Protokollstreams, der verschiedene Ereignisse und Nachrichten erfasst. Diese Protokolle helfen Entwicklern, das App-Verhalten zu überwachen, den Ausführungsfluss zu verfolgen, spezifische Aktionen zu verfolgen und Probleme zu untersuchen, die nicht mit Abstürzen zusammenhängen. Logcat-Protokolle enthalten normalerweise Aufzeichnungen der Aktivität ab dem letzten Start der App.
+- **Aktuelle Sitzungs-/App-Protokolle**. Eine Aufzeichnung des OsmAnd-Protokollstreams, der verschiedene Ereignisse und Nachrichten erfasst. Diese Protokolle helfen Entwicklern, das App-Verhalten zu überwachen, den Ausführungsfluss zu verfolgen, spezifische Aktionen zu verfolgen und Probleme zu untersuchen, die nicht mit Abstürzen zusammenhängen. Logcat-Protokolle enthalten normalerweise Aufzeichnungen der Aktivität ab dem letzten Start der App.
 
 :::caution Ihre privaten Informationen
-Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Informationen wie Gerätestandort, Suchanfragen, Routenbauergebnisse und Navigationsdaten enthalten können.
+Seien Sie vorsichtig beim Senden von App-Protokollen, da diese private Informationen wie Gerätestandort, Suchanfragen, Routenbauergebnisse und Navigationsdaten enthalten können.
 :::
 
 
-### Protokolle aus der OsmAnd-App senden (Android) {#send-logs-from-osmand-app-android}
+### Protokolle aus der OsmAnd-App senden {#send-logs-from-osmand-app}
 
-1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Sie können sich auf den Abschnitt [Absturz- und Logcat-Protokolle](#crash-and-logcat-logs) für Details zu den Unterschieden zwischen den Protokolltypen beziehen.
-2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Die E-Mail wird automatisch generiert.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* oder *<Translate android="true" ids="send_logcat_log"/>* (*Send current app log* auf iOS). Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Sie können sich auf den Abschnitt [Absturz- und App-Protokolle](#crash-and-app-logs) für Details zu den Unterschieden zwischen den Protokolltypen beziehen.
+2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Wir empfehlen, die Protokolle an `support@osmand.net` zu senden.
 3. Tippen Sie auf die Schaltfläche *Senden*.
 
-![Absturzprotokolle von Android senden 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Absturzprotokolle von Android senden 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### Protokolle von iOS-Geräten senden {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. Protokolle von iOS-Geräten können gesendet werden:
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
-    - Automatisch.
-        - Navigieren Sie zur OsmAnd-App *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `support@osmand.net` zu senden.
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-    - Manuell.
-        - Navigieren Sie zur iOS-System-App *Dateien → Auf meinem iPhone (oder Auf meinem iPad) → OsmAnd Maps → Protokolle*.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-    ![Absturzprotokolle iOS senden 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Absturzprotokolle iOS senden 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
-
-2. Senden Sie [IPS-Format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) von Protokollen und Autorisierungsdaten:
-    - Auf iOS 15 oder älter: *Einstellungen → Analyse → Analysedaten → OsmAnd Maps ips-Format-Datei*.
-    - Auf iOS 16 oder neuer:  *Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen → Analysedaten → OsmAnd Maps ips-Format-Datei*.
-    - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `support@osmand.net` zu senden.
-
-    ![Absturzprotokolle iOS senden 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Absturzprotokolle iOS senden 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+-->
 
 ## Tombstone-Dateien senden (Android) {#send-tombstone-files-android}
 
@@ -84,7 +98,7 @@ Um Tombstone-Dateien zu exportieren, müssen Sie einen Fehlerbericht über die A
   
 Nachdem der Fehlerbericht fertig ist, erhalten Sie eine Benachrichtigung. Tippen Sie auf das Benachrichtigungsfeld, um den Bericht auf Ihr Gerät herunterzuladen. Entpacken Sie die Datei und senden Sie die Tombstone-Dateien an das OsmAnd-Entwicklerteam (E-Mail: `support@osmand.net`).
 
-![Absturzprotokolle von Android senden 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Absturzprotokolle von Android senden 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Bitte beachten Sie, dass Fehlerberichte private Daten enthalten können, einschließlich App-Nutzung oder Standort.

@@ -1,5 +1,5 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -27,6 +27,7 @@ Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfacc
 - Organizzare i widget in pannelli (superiore, inferiore, sinistro, destro, centrale).
 - Creare più **pagine** all'interno dei pannelli laterali, scegliere la dimensione dei widget.
 - Scegliere l'altezza della riga e attivare/disattivare le icone dei widget.
+- Su Android, personalizzare [l'aspetto del pannello widget](#widget-panel-appearance).
 
 Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md): ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
 
@@ -37,7 +38,7 @@ Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md): ogni prof
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview.webp)  ![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -321,6 +322,8 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
 
 ![Menu Configura schermata](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Menu Configura schermata](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Queste impostazioni si applicano solo al widget selezionato.
+
 1. **Opzioni di dimensione del widget** (*per tutti i pannelli*):  
     È possibile personalizzare la dimensione dei **Widget semplici** nei **pannelli Superiore, Inferiore, Sinistro e Destro**:
 
@@ -339,6 +342,13 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
     - Nella dimensione Piccola, le etichette non vengono mostrate nei pannelli Sinistro e Destro. Nei pannelli Superiore e Inferiore, l'etichetta potrebbe essere nascosta automaticamente (quando posizionata sul lato destro) per mantenere i valori numerici completamente visibili.
     - Non esiste un'opzione separata per attivare o disattivare le etichette di testo.
 
+<!--
+3. **Nascondere le etichette di testo dei widget**:
+
+    - Nasconde automaticamente le etichette di testo per mantenere le informazioni numeriche completamente visibili nei layout compatti.
+    - Aiuta a mantenere una disposizione dei widget pulita e leggibile quando lo spazio è limitato.  
+--> 
+
 4. **Dimensione individuale per righe diverse** (*per tutti i pannelli*):
 
     - I widget possono essere dimensionati individualmente regolando la dimensione della riga e della colonna.
@@ -350,6 +360,37 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
     - Tocca l'icona *Impostazioni* sul lato destro del campo del widget.
     - Tocca l'impostazione *Dimensione* e seleziona una delle dimensioni disponibili.
     - Passa alla posizione Off, nel campo *Mostra icona*.
+
+
+## Aspetto del pannello widget (solo Android) {#widget-panel-appearance}
+
+Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Aspetto del pannello widget](@site/static/img/widgets/widget_appearance.webp) ![Aspetto del pannello widget](@site/static/img/widgets/widget_appearance_2.webp)
+
+Le impostazioni di aspetto consentono di personalizzare l'aspetto di tutti i widget nel pannello selezionato. Ogni pannello (*Superiore*, *Inferiore*, *Sinistro*, *Destro*) ha le proprie impostazioni di aspetto.
+
+1. **Altezza**. Controlla l'altezza dei widget nel pannello selezionato. Per i pannelli Sinistro e Destro, questa impostazione modifica **l'altezza del widget**. Per i pannelli Superiore e Inferiore, modifica **l'altezza della riga**. Opzioni disponibili: *Originale (predefinita)*, *Piccola*, *Media*, *Grande*.
+
+2. **Icona**. Controlla la visibilità dell'icona. Opzioni disponibili: *Originale (predefinita)*, *Attiva*, *Disattiva*. 
+
+3. **Colore del testo**. Modifica il colore del testo principale del widget. Opzioni disponibili: *Predefinito*, *Automatico*, *Personalizzato*. Quando è selezionato **Personalizzato**, è possibile configurare colori separati per le modalità **Giorno** e **Notte**. Un'anteprima live mostra i colori selezionati prima che vengano applicati.
+
+:::tip Acquisto
+I colori personalizzati dei widget sono una [funzione a pagamento](../purchases/index.md).  
+:::
+
+4. **Colore del testo secondario**. Modifica il colore dei nomi e delle unità dei widget. Opzioni disponibili: *Predefinito*, *Automatico*, *Personalizzato*.
+
+5. **Colore di sfondo**. Modifica il colore di sfondo dei widget nel pannello selezionato. Opzioni disponibili: *Predefinito*, *Trasparente*, *Personalizzato*.
+
+6. **Anteprima**. L'area di anteprima mostra come appariranno i widget con le impostazioni di aspetto attualmente selezionate.
+
+7. **Copia impostazioni di aspetto:**
+
+    - Tocca il menu ⋮ nell'angolo in alto a destra.
+    - Seleziona Copia da.
+    - Scegli una delle seguenti opzioni: *Un altro profilo* o *Uno degli altri pannelli*.
 
 
 ## Personalizzazione Pannelli {#panels-customization}

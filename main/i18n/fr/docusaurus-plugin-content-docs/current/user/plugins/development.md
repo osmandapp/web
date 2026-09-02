@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Développement OsmAnd
 ---
@@ -74,7 +74,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Affiche les performances de rendu et de navigation.
 - **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Affiche les informations de débogage de la rasterisation des tuiles.
 - **Désactiver les couches de carte** (*Android*). Désactive toutes les couches de carte sur la carte vectorielle (redémarrage requis).
-- **Tampon Logcat** (*Android*). Vérifiez et partagez les journaux détaillés de l'application.  
+- **Tampon Logcat** (*Android*). Vérifiez et partage les journaux détaillés de l'application.  
 - **Afficher un toast sur la touche pressée** (*Android*). Affiche un message sur la touche.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Le relèvement est la direction de la boussole depuis votre position actuelle jusqu'à votre destination prévue. Affecte l'*[enregistrement de trace](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Le cap est la direction de la boussole depuis votre position actuelle vers le nord vrai. Cette option est activée par défaut. Affecte l'*[enregistrement de trace](../plugins/trip-recording.md)*.
@@ -88,7 +88,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 - **Simuler le premier démarrage de l'application**. Définit l'indicateur signalant le premier démarrage de l'application, tout en conservant tous les autres paramètres inchangés.  
 - **Tester les invites vocales**. Sélectionnez une voix et testez en lisant des annonces.
-- **Afficher les touches** (*iOS*). Met en évidence les touches de l'écran avec des indicateurs visuels.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Met en évidence les touches de l'écran avec des indicateurs visuels.
 - **Barre d'état transparente**. La carte devient visible sous la barre d'état.  
 - **Afficher la bannière de la version gratuite**. Affiche la bannière de la version gratuite même dans la version payante.  
 - **Afficher les informations de débogage**. Affiche des informations graphiques sur l'emplacement de chaque texte sur la carte.
@@ -100,7 +100,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 :::caution Android uniquement
 :::
 
-- **Mode sans échec**. Exécutez l'application en mode sans échec (plus lent).  
+- **Mode sans échec**. Exécute OsmAnd sans la bibliothèque C++ native, en utilisant des implémentations Java pour le rendu de la carte et le calcul d'itinéraire à la place. L'application passe automatiquement en mode sans échec si la bibliothèque native échoue au démarrage, ce qui lui permet de démarrer et de rester utilisable. Le rendu de la carte et le calcul d'itinéraire sont nettement plus lents lorsque le mode sans échec est actif.  
 
 
 ### Paramètres de mémoire {#memory-settings}

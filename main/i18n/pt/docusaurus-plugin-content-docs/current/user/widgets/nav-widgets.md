@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title: Widgets de Navegação
 ---
@@ -188,6 +188,7 @@ O widget *Informações da Rota* fornece dados em tempo real sobre a rota de nav
 
 - Selecione uma **Visualização Padrão** para priorizar um dos seguintes valores: *Tempo estimado de chegada*, *Tempo para ir*, *Distância*.
 - Em **Prioridade de Exibição**, selecione entre *Destino primeiro (padrão)* ou *Intermediário primeiro* para priorizar as informações de rota mais relevantes.
+- Habilite ou desabilite a opção **Mostrar botão de expansão** para mostrar ou ocultar o botão de expansão da UI de Navegação. Esta opção está habilitada por padrão.
 
 > NOTA: O widget é visível apenas durante a navegação.
 

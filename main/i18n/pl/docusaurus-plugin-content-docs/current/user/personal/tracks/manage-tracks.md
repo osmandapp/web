@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  Zarządzaj trasami
 ---
@@ -70,7 +70,7 @@ Możesz dodawać trasy w OsmAnd w następujący sposób:
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![Moje miejsca z trasami w systemie Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,15 +78,17 @@ Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Moje miejsca z trasami w systemie iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![Moje miejsca z trasami w systemie iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 Wszystkie kiedykolwiek nagrane, utworzone lub zaimportowane trasy są automatycznie wyświetlane w folderze [Moje miejsca](../../personal/myplaces.md) w zakładce *Trasy*. Są one uporządkowane według folderów lub wyświetlane na liście pod nimi.
+
+Każda trasa na liście wyświetla nazwę folderu nadrzędnego w drugim wierszu, oddzieloną znakiem `|` (na przykład `Wędrówki | Trasy`), co ułatwia identyfikację miejsca przechowywania trasy. Dotyczy to [Wyszukiwania](#search), [Folderów inteligentnych](../../personal/tracks/smart-folder.md) oraz [Konfiguruj mapę → Trasy](../../map/tracks/index.md#configure-map).
 
 
 ### Menu trasy {#track-menu}
@@ -105,7 +107,7 @@ Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared
 
 Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Menu kontekstowe trasy w systemie iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Menu kontekstowe trasy w systemie iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -128,9 +130,9 @@ Menu udostępnia następujące działania:
 
 - **Analizuj na mapie** (*Android*) / **Analizuj** (*iOS*) — Otwiera narzędzie [Analizuj na mapie](../../navigation/setup/route-details.md#analyze-on-map) w Szczegółach trasy w celu dalszej analizy.
 
-- **Udostępnij** — Umożliwia udostępnianie wybranej trasy innym.
+- **Udostępnij** — Umożliwia udostępnianie wybronej trasy innym.
 
-- **Prześlij modyfikacje do OSM** (*iOS*) — [Prześlij zmiany](../../plugins/osm-editing.md#gps-track), które wprowadziłeś w trasie, bezpośrednio do *OpenStreetMap*.
+- **Prześlij do OSM** (*iOS*) — [Prześlij zmiany](../../plugins/osm-editing.md#gps-track), które wprowadziłeś w trasie, bezpośrednio do *OpenStreetMap*.
 
 - **Edytuj** (*iOS*) — Użyj narzędzia [Zaplanuj trasę](../../plan-route/create-route.md#modify-existing-gpx-track), aby modyfikować trasy.
 
@@ -138,7 +140,7 @@ Menu udostępnia następujące działania:
 
 - **Zmień nazwę** — Zmień nazwę wybranej trasy dla lepszej organizacji.
 
-- **Przenieś** — Pozwala na przeniesienie wybranej trasy do innego folderu.
+- **Przenieś** — Pozwala na przeniesienie wybronej trasy do innego folderu.
 
 - **Eksportuj** (*Android*) — Przejdź do zakładki *Menu → Ustawienia → Działania*, aby wyeksportować wszystkie trasy z folderu.
 
@@ -157,7 +159,7 @@ Menu udostępnia następujące działania:
 
 <TabItem value="ios" label="iOS">
 
-![Funkcja wyszukiwania tras w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Funkcja wyszukiwania tras w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +171,7 @@ Dostępne:
 
 - Wyszukiwanie według nazwy trasy.
 - [Sortuj według](#sort-by) dla lepszego wyszukiwania, jeśli nie pamiętasz tytułu.
-- [Filtruj](./smart-folder.md#search-filter) (*tylko Android*), jeśli potrzebujesz określonych cech trasy.
+- [Filtruj](./smart-folder.md#search-filter) jeśli potrzebujesz określonych cech trasy.
 
 
 ### Tryb wyboru {#selection-mode}
@@ -184,7 +186,7 @@ Dostępne:
 
 <TabItem value="ios" label="iOS">
 
-![Trasy w Moich miejscach iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![Trasy w Moich miejscach iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -221,7 +223,7 @@ Po dokonaniu wyboru dostępne są następujące kroki:
 
 <TabItem value="ios" label="iOS">
 
-![Funkcja sortowania tras w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Funkcja sortowania tras w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -254,7 +256,7 @@ OsmAnd oferuje łatwy sposób sortowania tras, pomagając w zarządzaniu dużą 
 
 <TabItem value="ios" label="iOS">
 
-![Funkcja sortowania tras w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Funkcja sortowania tras w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -281,7 +283,7 @@ Dotknij *menu z trzema kropkami* w polu folderu, aby **otworzyć** menu folderu.
 
 > Długo naciśnij pole folderu, aby **otworzyć** menu folderu.
 
-![Menu kontekstowe trasy w systemie iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Menu kontekstowe trasy w systemie iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -295,9 +297,9 @@ Menu folderu tras pozwala przeglądać, zmieniać nazwy, eksportować i zarządz
 - **Nazwa** — Wyświetla nazwę folderu, datę utworzenia i liczbę tras, które zawiera.
 - **Pokaż wszystkie trasy na mapie** (*tylko Android*) — Wyświetla wszystkie trasy w folderze na mapie. Jeśli jest wiele tras, może to spowodować zawieszenie się urządzenia.
 - **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Pozwala na zmianę nazwy folderu.
-- [Zmień domyślny wygląd](../../map/tracks/appearance.md) (*Android*) / **Wygląd** (*iOS*) — Zmienia wygląd wyświetlania wszystkich tras w folderze.
+- [Zmień domyślny wygląd](../../map/tracks/appearance.md) (*Android*) / **Domyślny wygląd** (*iOS*) — Zmienia wygląd wyświetlania wszystkich tras w folderze.
 - [Eksportuj](../../personal/import-export.md) — Otwiera zakładkę *Menu → Ustawienia → Działania*, aby wyeksportować wszystkie trasy w folderze jako [plik `.osf`](../../personal/import-export.md#export).
-- [Przenieś](#track-folder) — Pozwala na przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
+- [Przenieś](#track-folder) — Pozwala na przeniesienie folderu do innego istniejącego folderu lub utworzenia nowego.
 - [Usuń folder](#delete-folder) — Usuwa folder po potwierdzeniu. ***Ta akcja jest nieodwracalna.***
 
 
@@ -317,7 +319,7 @@ Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared
 
 Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Moje miejsca z trasami w systemie iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![Moje miejsca z trasami w systemie iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -349,7 +351,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Trasy w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![Trasy w Moich miejscach iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -388,7 +390,7 @@ Przejdź do: *zakładka <Translate android="true" ids="shared_string_menu,shared
 
 Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Menu kontekstowe trasy w systemie iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Menu kontekstowe trasy w systemie iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 
@@ -422,7 +424,8 @@ Narzędzie importu pozwala na dodawanie tras z zewnętrznych plików do nawigacj
     *Dodatkowe opcje:*
 
     - **Pliki GPX z jedną trasą** - importuj całą trasę bezpośrednio.
-    - **Pliki GPX z wieloma trasami** - wybierz import pojedynczego pliku GPX lub wybierz określone trasy.
+    - **Pliki GPX z wieloma trasami** - wybierz import pojedynczego pliku GPX lub wybierz określone trasy.  
+    Gdy plik GPX zawiera wiele tras, otwiera się ekran Importuj trasy, umożliwiający przegląd wszystkich tras w pliku, wybranie tych, które chcesz zaimportować, wybór folderu docelowego lub zaimportowanie wszystkich tras jako jednej trasy za pomocą opcji *Importuj jako jedną trasę*. Jeśli plik zawiera punkty trasy, możesz również je przejrzeć i przypisać przed zakończeniem importu.
 
 ***UWAGA:*** *Trasy ręcznie dodane do folderu OsmAnd na Twoim urządzeniu są automatycznie importowane bez ponownego uruchamiania aplikacji.*  
 

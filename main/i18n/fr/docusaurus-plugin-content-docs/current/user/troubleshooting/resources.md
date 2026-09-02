@@ -1,5 +1,5 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -54,6 +54,7 @@ La liste ci-dessous fournit des convertisseurs pour divers types de données pri
 | iOverlander GPX to OsmAnd | Script Python pour convertir les fichiers *GPX* iOverlander exportés vers OsmAnd avec des icônes. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Ceci est [un outil](https://github.com/acui/osmand_topo_map_generator) pour générer une carte topographique imprimable en utilisant des captures d'écran d'OsmAnd (https://osmand.net). La carte utilise la grille UTM et contient des informations sur la déclinaison. Elle est destinée à être utilisée avec une boussole ou un appareil GPS avec des coordonnées UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar projette un rayon vers le soleil depuis chaque point d'une trace GPX et le compare au terrain et à la végétation (LiDAR HD 0,5 m / IGN), pour une date et une heure données. Il indique, mètre par mètre, le soleil ou l'ombre. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Un outil autonome qui télécharge des données LiDAR publiques depuis les portails nationaux de 22 pays | [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Ressources personnalisées {#custom-resources}
 
@@ -110,7 +111,16 @@ Le fichier [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) est principalement basé sur UniMap et routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Ceci est un style de rendu OsmAnd optimisé pour la chasse aux tempêtes](https://github.com/pqo/stormchasing-rendering-style)  |[Style de rendu Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Itinéraires
+
+Le fichier `routing.xml` par défaut peut être personnalisé pour ajuster les algorithmes et paramètres d'itinéraire pour des conditions spécifiques.
+
+| Nom de la source | Description | Lien |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Modification personnalisée de `routing.xml` qui ajuste le calcul d'itinéraire pour les conditions pluvieuses, en tenant compte du type de surface (par ex. roche nue), de la pente et des classements officiels de difficulté des sentiers (échelles CAI/SAC), ainsi qu'une logique améliorée « Éviter les tunnels ». | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Cartes hors ligne {#offline-maps}
 
@@ -126,7 +136,7 @@ Cartes vectorielles personnalisées (fichiers OBF) générées par les utilisate
 
 Le tableau suivant répertorie diverses sources de cartes en ligne préparées par les utilisateurs, offrant un accès à des données cartographiques spécialisées de différentes régions géographiques et services.
 
-| Nom | Description | Lien|
+| Nom | Description | Link|
 | -- | -- | --|
 | Gravel Roads Seeker | Carte des routes de gravier (page web en *French*). Une carte en ligne générée en temps réel à partir de serveurs de tuiles, tels que WMTS (Web Map Tile Service) ou WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
 | OsmAnd Rendering GitHUB | Une collection de cartes en ligne, y compris des cartes topo, des orthophotos et autres, disponibles auprès de certains des principaux instituts géographiques de différents pays. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
@@ -134,6 +144,10 @@ Le tableau suivant répertorie diverses sources de cartes en ligne préparées p
 | Basemap AT WMTS | L'ensemble de cartes de l'Autriche basé sur [basemap.at WMTS](https://basemap.at/en/) créé par mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | L'ensemble de cartes fournies par l'institut géographique français IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | Le site propose une collection de cartes pour les vacances à la campagne, y compris des cartes touristiques, de montagne, nautiques et bien d'autres. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Superposition OsmAnd indépendante montrant les niveaux de risque d'incendie d'aujourd'hui et de demain pour la Comunitat Valenciana, en Espagne, en utilisant des données publiques officielles. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

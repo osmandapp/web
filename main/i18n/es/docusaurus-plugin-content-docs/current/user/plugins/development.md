@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Desarrollo de OsmAnd
 ---
@@ -13,8 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Vista general {#overview}
 
@@ -88,7 +86,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 - **Simular el primer inicio de la aplicación**. Establece el indicador que señala el primer inicio de la aplicación, manteniendo todos los demás ajustes sin cambios.  
 - **Probar indicaciones de voz**. Seleccione una voz y pruébela reproduciendo anuncios.  
-- **Mostrar toques** (*iOS*). Resalta los toques en pantalla con indicadores visuales.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Resalta los toques en pantalla con indicadores visuales.
 - **Barra de estado transparente**. El mapa se vuelve visible debajo de la barra de estado.  
 - **Mostrar banner de la versión gratuita**. Muestra el banner de la versión gratuita incluso en la versión de pago.  
 - **Mostrar información de depuración**. Muestra información gráfica sobre la ubicación de cada texto en el mapa.
@@ -100,7 +98,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 :::caution Android only
 :::
 
-- **Modo seguro**. Ejecutar la aplicación en modo seguro (más lento).  
+- **Modo seguro**. Ejecuta OsmAnd sin la biblioteca nativa de C++, utilizando implementaciones en Java para el renderizado del mapa y el cálculo de rutas. La aplicación cambia automáticamente a este modo si la biblioteca nativa falla durante el inicio, permitiendo que se inicie y siga siendo utilizable. El renderizado del mapa y el cálculo de rutas son notablemente más lentos mientras el modo seguro está activo.  
 
 
 ### Ajustes de memoria {#memory-settings}

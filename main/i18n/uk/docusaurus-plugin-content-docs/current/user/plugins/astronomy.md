@@ -1,5 +1,5 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
 sidebar_position: 3
 title: Астрономія
 unlistead: true
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Астрономія** наразі перебуває в **беті**.
+**Астрономія** зараз перебуває в **бета-версії** на **Android**. 
+
+На **iOS** плагін доступний через програму **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
 :::
 
 ## Overview {#overview}
@@ -43,13 +44,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 4. Налаштуйте, що відображається на Зоряній карті, за допомогою [**Налаштувати вигляд**](#configure-view) — наприклад, увімкніть/вимкніть видимі об’єкти та засоби рендерингу.
 5. Натисніть кнопку **Закрити (X)** у верхній частині екрана Зоряної карти, щоб вийти з Зоряної карти та повернутися до карти Землі.
 
-Плагін працює з обома двигунами рендерингу карти, але найкраще функціонує в режимі OpenGL.
+На Android плагін працює з обома двигунами рендерингу карти, але найкраще функціонує в режимі OpenGL.
 
 ## Star Map Screen {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Go to:** *Enabled plugin → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 Спеціальний екран **Зоряної карти** відображає інтерактивний небесний купол із зірками, сузір’ями, планетами, траєкторіями Сонця та Місяця. У нижній частині екрана доступні такі елементи керування: 
 - [**Пошук**](#search) — відкриває екран Пошуку, де ви можете шукати небесні об’єкти та переглядати каталоги неба та категорії. 
@@ -64,7 +81,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Context Menu {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 **Контекстне меню** надає детальну інформацію про небесні об’єкти та інструменти для їхнього спостереження. Воно відкривається, коли ви торкаєтеся небесного об’єкта на Зоряній карті.
 
@@ -74,7 +105,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Object Information {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Верхня секція Контекстного меню відображає назву об’єкта та його класифікацію. Під назвою показується тип об’єкта та його батьківське сузір’я або група. Наприклад:  
 - **Beta Ursae Minoris** — Зірка • Мала Ведмедиця
@@ -87,13 +132,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - <Translate android="true" ids="shared_string_azimuth"/> – напрямок об’єкта відносно півночі (0°–360°).
 - <Translate android="true" ids="altitude"/> – висота об’єкта над горизонтом.
 - <Translate android="true" ids="shared_string_magnitude"/> – яскравість об’єкта, як видно з Землі. 
+- Відстань (*лише iOS*) – відстань від Землі до вибраного небесного об’єкта.
 
 Ці значення динамічно оновлюються на основі вибраного часу та розташування користувача.
 
 Під блоками швидкої інформації меню може також містити додаткову інформацію та ресурси про об’єкт:  
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Дозволяє завантажити розширену базу даних із статтями Вікіпедії та каталогами глибокого неба для офлайн-використання. Після завантаження детальну інформацію про небесні об’єкти можна переглядати безпосередньо в додатку без підключення до інтернету.
-- <Translate android="true" ids="read_on_wiki"/> – Відкриває статтю об’єкта у Вікіпедії в браузері.
-- <Translate android="true" ids="astro_designations"/> – Показує альтернативні назви та ідентифікатори каталогів для об’єкта (наприклад, HD, HIP, NGC). Цей розділ доступний для об’єктів, які мають записи в каталогах, таких як зірки та об’єкти глибокого неба. Якщо об’єкт не має загальної назви, одне з цих позначень використовується як основна назва.
+- <Translate android="true" ids="read_on_wiki"/> – Відкриває статтю об’єкта у Вікіпедії.
+- <Translate android="true" ids="astro_designations"/> – Показує альтернативні назви та ідентифікатори каталогів для об’єкта (наприклад, HD, HIP, NGC). Цей роздід доступний для об’єктів, які мають записи в каталогах, таких як зірки та об’єкти глибокого неба. Якщо об’єкт не має загальної назви, одне з цих позначень використовується як основна назва.
 - <Translate android="true" ids="online_photos"/> – Відображає доступні фото, пов’язані з вибраним небесним об’єктом.
 
 ### Actions {#actions}
@@ -106,7 +152,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Visibility Graph {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Вкладка **Видимість** показує, як вибраний об’єкт рухається по небу протягом 24-годинного періоду.
 
@@ -141,7 +201,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Observation Schedule {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Вкладка **Розклад** відображає видимість вибраного об’єкта на поточний тиждень. Кожен рядок представляє один день і включає:  
 - день тижня
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Camera button* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Go to:** *Enabled plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR mode* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Go to:** *Enabled plugin → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR mode*
+
+</TabItem>
+
+</Tabs>
 
 Шар **Астрономії** працює з **камерою пристрою**, щоб увімкнути **доповнену реальність (AR) для спостереження зірок**. Спрямуйте камеру телефону на реальне нічне небо та побачте зірки, планети, сузір’я, накладені на Сонце/Місяць у реальному часі.
 
@@ -197,7 +289,21 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## Configure View {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** дозволяє контролювати, як відображається Зоряна карта, увімкненням або вимкненням візуальних режимів, об’єктів та засобів рендерингу.
 
@@ -205,7 +311,21 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ### Modes and Actions {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Цей розділ контролює основні режими відображення Зоряної карти.
 
@@ -215,7 +335,21 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ### Visible Objects {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Цей розділ дозволяє вибрати, які типи небесних об’єктів відображаються на Зоряній карті.
 
@@ -274,9 +408,23 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Search {#search}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
 
-Функція **Пошуку** у плагіні Астрономія дозволяє знаходити небесні об’єкти, досліджувати категорії неба та отримувати дані спостережень. Щоб відкрити Пошук, натисніть кнопку Пошуку на Зоряній карті. Це відкриває екран Пошуку, який надає кілька секцій для відкриття та організації небесних об’єктів. Екран Пошуку включає такі секції:
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Функція **Пошуку** (**Explore** на iOS) у плагіні Астрономія дозволяє знаходити небесні об’єкти, досліджувати категорії неба та отримувати дані спостережень. Щоб відкрити Пошук, натисніть кнопку Пошуку на Зоряній карті. Це відкриває екран Пошуку, який надає кілька секцій для відкриття та організації небесних об’єктів. Екран Пошуку включає такі секції:
 
 **1. Watch now**
 
@@ -288,7 +436,21 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### Sorting and Filters {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Натисніть на рядок пошуку, щоб відкрити повний інтерфейс пошуку. Ви можете уточнювати результати за допомогою опцій сортування та фільтрації.
 
@@ -314,7 +476,21 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### My Data {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Секція My Data містить об’єкти, з якими взаємодіяв користувач. Ця секція включає три списки:
 
@@ -326,7 +502,21 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### Catalogs {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Секція Catalogs надає доступ до астрономічних каталогів, доступних у плагіні Астрономія.
 

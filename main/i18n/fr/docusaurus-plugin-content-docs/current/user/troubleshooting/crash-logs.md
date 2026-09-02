@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
 sidebar_position: 5
 title:  Journaux de plantage
 ---
@@ -16,50 +16,64 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Aperçu {#overview}
 
-Les journaux de plantage sont des outils de diagnostic précieux qui aident les développeurs à identifier et à corriger les problèmes et les bogues qui provoquent le plantage ou le comportement inattendu de l'application. Il est possible de partager les journaux de votre appareil Android avec l'équipe de développement d'OsmAnd. Actuellement, les utilisateurs d'iOS n'ont qu'une seule option de journal de plantage à envoyer.
+Les journaux de plantage sont des outils de diagnostic précieux qui aident les développeurs à identifier et à corriger les problèmes et les bogues qui provoquent le plantage ou le comportement inattendu de l'application. Il est possible de partager les journaux de votre appareil Android avec l'équipe de développement d'OsmAnd. Actuellement, les utilisateurs iOS n'ont qu'un seul type de journal de plantage à envoyer.
 
 
-## Journaux de plantage et Logcat {#crash-and-logcat-logs}
+## Journaux de plantage et journaux d'application {#crash-and-app-logs}
 
 OsmAnd vous permet d'envoyer deux types de données aux développeurs :
 
 - **Journaux de plantage**. Générés lorsque l'application OsmAnd rencontre une erreur critique ou une exception qui la fait planter. Ces journaux fournissent des informations détaillées sur l'état de l'application pendant l'échec, y compris les données de build, les traces de pile, les messages d'erreur et d'autres détails pertinents.
-- **Journaux Logcat**. Un enregistrement du flux de journaux OsmAnd capturant divers événements et messages. Ces journaux aident les développeurs à surveiller le comportement de l'application, à suivre le flux d'exécution, à tracer des actions spécifiques et à enquêter sur les problèmes non liés aux plantages. Les journaux Logcat contiennent généralement des enregistrements d'activité depuis le dernier démarrage de l'application.
+- **Journaux de session/application en cours**. Un enregistrement du flux de journaux OsmAnd capturant divers événements et messages. Ces journaux aident les développeurs à surveiller le comportement de l'application, à suivre le flux d'exécution, à tracer des actions spécifiques et à enquêter sur les problèmes non liés aux plantages. Les journaux Logcat contiennent généralement des enregistrements d'activité depuis le dernier démarrage de l'application.
 
 :::caution Vos informations privées
-Soyez prudent lorsque vous envoyez des journaux Logcat, car ils peuvent contenir des informations privées telles que la localisation de l'appareil, les requêtes de recherche, les résultats de construction d'itinéraire et les données de navigation.
+Soyez prudent lorsque vous envoyez des journaux d'application, car ils peuvent contenir des informations privées telles que la localisation de l'appareil, les requêtes de recherche, les résultats de construction d'itinéraire et les données de navigation.
 :::
 
 
-### Envoyer des journaux depuis l'application OsmAnd (Android) {#send-logs-from-osmand-app-android}
+### Envoyer des journaux depuis l'application OsmAnd {#send-logs-from-osmand-app}
 
-1. Allez dans *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Selon votre situation, sélectionnez le type de journal approprié. Vous pouvez vous référer à la section [Journaux de plantage et Logcat](#crash-and-logcat-logs) pour plus de détails sur les différences entre les types de journaux.
-2. Dans le menu contextuel, choisissez Gmail ou votre application de messagerie préférée. L'e-mail sera généré automatiquement.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Envoyer les journaux de plantage depuis Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Envoyer les journaux de plantage depuis Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Envoyer les journaux de plantage depuis iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. Allez dans *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* ou *<Translate android="true" ids="send_logcat_log"/>* (*Envoyer le journal d'application en cours* sur iOS). Selon votre situation, sélectionnez le type de journal approprié. Vous pouvez vous référer à la section [Journaux de plantage et journaux d'application](#crash-and-app-logs) pour plus de détails sur les différences entre les types de journaux.
+2. Dans le menu contextuel, choisissez Gmail ou votre application de messagerie préférée. Nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
 3. Appuyez sur le bouton *Envoyer*.
 
-![Envoyer les journaux de plantage depuis Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Envoyer les journaux de plantage depuis Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### Envoyer des journaux depuis les appareils iOS {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. Les journaux des appareils iOS peuvent être envoyés :
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
-    - Automatiquement.
-        - Naviguez dans l'application OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-    - Manuellement.
-        - Naviguez dans l'application système iOS *Fichiers → Sur mon iPhone (ou Sur mon iPad) → OsmAnd Maps → Journaux*.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-    ![Envoyer les journaux de plantage iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Envoyer les journaux de plantage iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
-
-2. Envoyez les journaux et les données d'autorisation au [format IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) :
-    - Sur iOS 15 ou antérieur : *Réglages → Analyse → Données d'analyse → Fichier au format ips OsmAnd Maps*.
-    - Sur iOS 16 ou ultérieur : *Réglages → Confidentialité et sécurité → Analyse et améliorations → Données d'analyse → Fichier au format ips OsmAnd Maps*.
-    - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
-
-    ![Envoyer les journaux de plantage iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Envoyer les journaux de plantage iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+-->
 
 ## Envoyer des fichiers Tombstone (Android) {#send-tombstone-files-android}
 
@@ -92,7 +106,7 @@ Veuillez noter que les rapports de bogue peuvent contenir des données privées,
 
 ### Utilisation d'ADB {#using-adb}
 
-L'Android Debugging Bridge (ADB) est un outil en ligne de commande qui permet aux développeurs de déboguer leurs applications. Pour utiliser ADB pour exporter les fichiers tombstone, vous devrez d'abord le télécharger et l'installer. Suivez les instructions fournies sur le [site officiel des développeurs Android](https://developer.android.com/tools/releases/platform-tools).
+L'Android Debugging Bridge (ADB) est un outil en ligne de commande qui permet aux développeurs de déboguer leurs applications. Pour utiliser ADB pour exporter les fichiers tombstone, vous devez d'abord le télécharger et l'installer. Suivez les instructions fournies sur le [site officiel des développeurs Android](https://developer.android.com/tools/releases/platform-tools).
 
 #### Préparer votre appareil {#prepare-your-device}
 

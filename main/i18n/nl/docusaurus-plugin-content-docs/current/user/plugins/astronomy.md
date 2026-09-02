@@ -1,8 +1,8 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title: Astronomie
-unlisted: true
+unlistead: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomie** bevindt zich momenteel in **beta**.
+**Astronomie** bevindt zich momenteel in **beta** op **Android**. 
+
+Op **iOS** is de plugin beschikbaar via het **iOS-beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**-programma. 
 :::
 
 ## Overzicht {#overview}
@@ -43,13 +44,29 @@ De volgende instellingen zijn vereist om de Astronomie-overlay weer te geven:
 4. Pas aan wat er op de Sterrenkaart wordt weergegeven met behulp van [**Weergave configureren**](#configure-view) — bijvoorbeeld, schakel zichtbare objecten en weergavehulpmiddelen in of uit.
 5. Tik op de knop **Sluiten (X)** bovenaan het Sterrenkaart-scherm om de Sterrenkaart te verlaten en terug te keren naar de Aardekaart.
 
-De plugin werkt met beide kaartweergavemotoren, maar presteert het beste in OpenGL-modus.
+Op Android werkt de plugin met beide kaartweergavemotoren, maar presteert het beste in OpenGL-modus.
 
 ## Sterrenkaart-scherm {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Ga naar:** *Geactiveerde plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Ga naar:** *Geactiveerde plugin → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 Het speciale **Sterrenkaart-scherm** toont een interactieve hemelkoepel met sterren, sterrenbeelden, planeten, Zon- en Maanbanen. Onderaan het scherm kun je toegang krijgen tot de volgende regelaars: 
 - [**Zoeken**](#search) — opent het Zoekscherm waar je naar hemellichamen kunt zoeken en hemelcatalogi en categorieën kunt doorbladeren. 
@@ -64,7 +81,21 @@ De Sterrenkaart kan ook afgestemd zijn op de oriëntatie van je apparaat wanneer
 
 ## Contextmenu {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Het **Contextmenu** biedt gedetailleerde informatie over hemellichamen en hulpmiddelen voor het observeren ervan. Het opent wanneer je op een hemellichaam tikt op de Sterrenkaart.
 
@@ -74,7 +105,21 @@ Het Contextmenu verschijnt onderaan het scherm en bevat objectinformatie, snelle
 
 ### Objectinformatie {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Het bovenste gedeelte van het Contextmenu toont de naam en classificatie van het object. Onder de naam worden het objecttype en het bovenliggende sterrenbeeld of de groep weergegeven. Bijvoorbeeld:  
 - **Beta Ursae Minoris** — Ster • Ursa Minor
@@ -87,12 +132,13 @@ Snelle informatieblokken tonen belangrijke waarnemingsparameters:
 - <Translate android="true" ids="shared_string_azimuth"/> – de richting van het object ten opzichte van het noorden (0°–360°).
 - <Translate android="true" ids="altitude"/> – de hoogte van het object boven de horizon.
 - <Translate android="true" ids="shared_string_magnitude"/> – de helderheid van het object zoals gezien vanaf de aarde. 
+- Afstand (*alleen iOS*) – de afstand van de aarde tot het geselecteerde hemellichaam.
 
 Deze waarden worden dynamisch bijgewerkt op basis van de geselecteerde tijd en de locatie van de gebruiker.
 
 Onder de snelle informatieblokken kan het menu ook aanvullende informatie en bronnen over het object bevatten:  
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Maakt het mogelijk om een uitgebreide database met Wikipedia-artikelen en deep-sky-catalogi te downloaden voor offline gebruik. Na het downloaden kunnen gedetailleerde informatie over hemellichamen direct in de app worden bekeken zonder internetverbinding.
-- <Translate android="true" ids="read_on_wiki"/> – Opent het Wikipedia-artikel over het object in de browser.
+- <Translate android="true" ids="read_on_wiki"/> – Opent het Wikipedia-artikel over het object.
 - <Translate android="true" ids="astro_designations"/> – Toont alternatieve namen en catalogusidentificaties voor het object (bijvoorbeeld HD, HIP, NGC). Deze sectie is beschikbaar voor objecten met catalogusvermeldingen, zoals sterren en deep-sky-objecten. Als het object geen algemene naam heeft, wordt een van deze aanduidingen gebruikt als primaire naam.
 - <Translate android="true" ids="online_photos"/> – Toont beschikbare foto's met betrekking tot het geselecteerde hemellichaam.
 
@@ -106,7 +152,21 @@ Onder de objectinformatie biedt het Contextmenu verschillende acties voor intera
 
 ### Zichtbaarheidsgrafiek {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Het tabblad **Zichtbaarheid** toont hoe het geselecteerde object over de hemel beweegt tijdens een periode van 24 uur.
 
@@ -141,7 +201,21 @@ De grafiek opent met de indicator gepositioneerd op de huidige systeemtijd. De l
 
 ### Waarnemingsschema {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Het tabblad **Schema** toont de zichtbaarheid van het geselecteerde object voor de huidige week. Elke rij vertegenwoordigt één dag en bevat:  
 - de dag van de week
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR-ster vinden (Camera-modus) {#ar-star-finding}
 
-**Ga naar:** *Geactiveerde plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Cameraknop* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Ga naar:** *Geactiveerde plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR-modus* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Ga naar:** *Geactiveerde plugin → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR-modus*
+
+</TabItem>
+
+</Tabs>
 
 De **Astronomie**-laag werkt met de **camera van je apparaat** om **Augmented Reality (AR) sterrenkijken** mogelijk te maken. Richt de camera van je telefoon op de echte nachtelijke hemel en zie sterren, planeten, sterrenbeelden, Zon/Maan overlegd in real-time.
 
@@ -197,7 +289,21 @@ De AR-modus gebruikt apparaatssensoren (gyroscoop, accelerometer en kompas) om h
 
 ## Weergave configureren {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** stelt je in staat om te bepalen hoe de Sterrenkaart wordt weergegeven door visuele modi, objecten en weergavehulpmiddelen in of uit te schakelen.
 
@@ -205,7 +311,21 @@ Om Weergave configureren te openen, tik je op de knop Weergave configureren in d
 
 ### Modi en acties {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Dit gedeelte regelt de belangrijkste weergavemodi van de Sterrenkaart.
 
@@ -215,12 +335,26 @@ Dit gedeelte regelt de belangrijkste weergavemodi van de Sterrenkaart.
 
 ### Zichtbare objecten {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Dit gedeelte stelt je in staat om te kiezen welke typen hemellichamen op de Sterrenkaart worden weergegeven.
 
 | Object | Beschrijving |
-|--------|-------------|
+|-------|-------------|
 | <Translate android="true" ids="astro_solar_system"/> | Toont de Zon, Maan en zichtbare planeten. |
 | <Translate android="true" ids="astro_constellations"/> | Toont sterrenbeeldlijnen en patronen gevormd door sterren. |
 | <Translate android="true" ids="astro_stars"/> | Toont individuele sterren die zichtbaar zijn op de Sterrenkaart. |
@@ -274,21 +408,92 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Zoeken {#search}
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-De **Zoek**-functie in de Astronomie-plugin stelt je in staat om hemellichamen te vinden, hemelcategorieën te verkennen en waarnemingsgegevens te openen. Om Zoeken te openen, tik je op de Zoekknop op de Sterrenkaart. Dit opent het Zoekscherm, dat verschillende secties biedt voor het ontdekken en organiseren van hemellichamen. Het Zoekscherm bevat de volgende secties:
+<TabItem value="android" label="Android">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+De **Zoek**-functie (**Verkennen** op iOS) in de Astronomie-plugin stelt je in staat om hemellichamen te vinden, hemelcategorieën te verkennen en waarnemingsgegevens te openen. Om Zoeken te openen, tik je op de Zoekknop op de Sterrenkaart. Dit opent het Zoekscherm, dat verschillende secties biedt voor het ontdekken en organiseren van hemellichamen. Het Zoekscherm bevat de volgende secties:
 
 **1. Nu kijken**
 
 De sectie Nu kijken markeert hemellichamen die nu of vanavond zichtbaar zijn. Deze sectie fungeert als een aanbevelingshulpmiddel en toont objecten die het beste geschikt voor waarneming op basis van je huidige locatie en tijd.
 
-**2. Categorieën**
+**2. Zonne- en maansverduisteringen** (*alleen Android*)
+
+De hulpmiddelen [Zonsverduistering](#solar-eclipse) en [Maansverduistering](#lunar-eclipse) stellen je in staat om wereldwijde verduisteringsgebeurtenissen te verkennen, hun verloop in de tijd te bekijken en de zichtbaarheid van verduisteringen op de kaart te controleren.
+
+**3. Categorieën**
 
 De sectie Categorieën stelt je in staat om objecten te doorbladeren op type: Zonnestelsel, Sterrenbeelden, Sterren, Nevels, Sterrenhopen en Deep sky. Elke categorie opent een lijst met objecten met belangrijke informatie: objectnaam, type of sterrenbeeld, grootte (helderheid) en opkomst- of ondergangstijd (indien van toepassing).
 
+### Zonsverduistering (alleen Android) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+De **Zonsverduistering-verkenner** stelt je in staat om voorbije en komende zonsverduisteringen over de hele wereld te verkennen. Het combineert de Sterrenkaart met een interactieve tijdlijn en kaartvisualisatie om te laten zien hoe een verduistering zich op verschillende locaties ontwikkelt.
+
+De Zonsverduistering-verkenner bevat de volgende functies:
+
+- **Verduisteringsnavigatie**. Gebruik de knoppen Vorige en Volgende om tussen beschikbare zonsverduisteringen te schakelen.
+- **Tijdlijn**. De tijdlijn toont het begin, het maximum en het einde van de verduistering. Verplaats de schuifregelaar om de verduistering op elk moment tijdens de gebeurtenis te bekijken. Alle verduisteringsinformatie wordt automatisch bijgewerkt voor de geselecteerde tijd.
+- **Verduisteringsinformatie**. Het informatiepaneel toont: type verduistering, huidige datum en tijd, verduisteringsverduistering, hoogte van de Zon en coördinaten van het kaartcentrum. De weergegeven informatie wordt berekend voor het huidige kaartcentrum.
+- **Verduisteringspad**. Tik op Pas verduisteringspad aan om de kaart op het verduisteringspad te centreren. Tik op *Kaart tonen* of *Kaart verbergen* om het verduisteringspad op de kaart weer te geven of te verbergen. Het verduisteringspad toont waar de verduistering zichtbaar is en hoe de schaduw van de Maan over het aardoppervlak beweegt.
+
+:::warning
+
+Kijk nooit rechtstreeks naar de Zon zonder geschikte bescherming voor het bekijken van de zon. Verduisteringstijden zijn schattingen.
+
+:::
+
+### Maansverduistering (alleen Android) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+De **Maansverduistering-verkenner** stelt je in staat om wereldwijde maansverduisteringen te verkennen en te observeren hoe de Maan door de schaduw van de aarde beweegt.
+
+De Maansverduistering-verkenner bevat de volgende functie:
+
+- **Verduisteringsnavigatie**. Gebruik de knoppen Vorige en Volgende om tussen beschikbare maansverduisteringen te schakelen.
+- **Verduisteringstypen**. De verkenner ondersteunt: halfschaduwverduisteringen, gedeeltelijke verduisteringen en totale verduisteringen
+- **Tijdlijn**. De tijdlijn toont het begin, het maximum en het einde van de verduistering. Markeringen op de tijdlijn geven de verschillende fasen van de verduistering aan. Verplaats de schuifregelaar om de verduistering op elk punt tijdens de gebeurtenis te observeren.
+- **Verduisteringsinformatie**. Het informatiepaneel toont: verduisteringsfase, verduisteringsverduistering, hoogte van de Maan en coördinaten van het kaartcentrum. De weergegeven informatie wordt berekend voor het huidige kaartcentrum.
+- **Zichtbaarheidskaart**. Tik op *Pas zichtbaarheid aan* om de kaart op het zichtbaarheidsgebied van de verduistering te centreren. Tik op *Kaart tonen* of *Kaart verbergen* om de zichtbaarheidslaag weer te geven of te verbergen. De zichtbaarheidslaag markeert regio's waar de Maan tijdens de verduistering boven de horizon staat.
+
+:::warning
+
+Schaduwkleuren en -helderheid zijn schematisch en alleen bedoeld voor visualisatie.
+
+:::
+
 ### Sorteren en filters {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Tik op de zoekbalk om de volledige zoekinterface te openen. Je kunt resultaten verfijnen met sorteer- en filteropties.
 
@@ -314,7 +519,21 @@ Je kunt resultaten filteren op objecttype. Het selecteren van specifieke categor
 
 ### Mijn gegevens {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 De sectie Mijn gegevens bevat objecten waarmee de gebruiker heeft geïnteracteerd. Deze sectie bevat drie lijsten:
 
@@ -326,7 +545,21 @@ Het selecteren van een item opent het contextmenu van het object.
 
 ### Catalogi {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 De sectie Catalogi biedt toegang tot astronomische catalogi die beschikbaar zijn in de Astronomie-plugin.
 

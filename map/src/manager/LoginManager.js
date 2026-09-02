@@ -11,14 +11,23 @@ export const EMPTY_INPUT = '';
 
 export async function getAccountInfo(setAccountInfo) {
     const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
-    if (resp.data && resp.data.info) {
+    if (resp.data?.info) {
         setAccountInfo(resp.data.info);
         return resp.data.info;
     }
 }
 
-export function openLoginMenu(ctx, ltx, navigate, location) {
-    ctx.setPrevPageUrl({ url: location, active: false });
+// saves the page the login was opened from, to return there after login
+function savePrevPageUrl(ctx) {
+    const { pathname, search, hash } = globalThis.location;
+    if (pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL)) {
+        return; // already on the login page, keep the stored source page
+    }
+    ctx.setPrevPageUrl({ url: { pathname, search, hash }, active: false });
+}
+
+export function openLoginMenu({ ctx, ltx, navigate, location }) {
+    savePrevPageUrl(ctx);
     ctx.setOpenNavigationSettings(false);
     navigate({
         pathname: MAIN_URL_WITH_SLASH + LOGIN_URL,
@@ -34,16 +43,18 @@ export function closeLoginMenu(ltx) {
     ltx.setLoginError(null);
 }
 
-export const openLogin = (ltx, navigate, reopenLoginDialog = null) => {
+export const openLogin = ({ ctx, ltx, navigate, reopenLoginDialog = null }) => {
     if (reopenLoginDialog) {
         reopenLoginDialog();
         return;
     }
+    savePrevPageUrl(ctx);
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     ltx.setLoginState({ login: true });
 };
 
-export function createAccount(ltx, navigate) {
+export function createAccount({ ctx, ltx, navigate }) {
+    savePrevPageUrl(ctx);
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     ltx.setLoginState({ create: true });
 }

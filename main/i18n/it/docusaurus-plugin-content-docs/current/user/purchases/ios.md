@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -104,6 +104,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guide di viaggio (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Pianificazione delle osservazioni](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Modalità AR interattiva](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Mappa del cielo offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -139,6 +142,7 @@ Al momento, l'abbonamento Pro include le seguenti funzionalità:
 | [Plugin Metriche veicolo (OBD-II)](../plugins/vehicle-metrics.md) | Permette di collegare uno scanner OBD-II per visualizzare dati dettagliati del veicolo nell'app OsmAnd e memorizzare le informazioni nelle registrazioni delle tracce. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili per OsmAnd gratuito.  |
 | [Personalizza linea del percorso](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modifica del colore e della larghezza della linea del percorso durante la navigazione. |
 | [Modifica schema colori](../../user/plugins/topography.md#modify-color-scheme) | Consente di personalizzare l'aspetto della mappa selezionando o importando palette di colori. È possibile modificare gli schemi integrati o utilizzare i propri file di palette per personalizzare i colori della mappa e del percorso. |
+| [Creazione di palette personalizzate](../../user/map/tracks/appearance.md#color-palette-editor) | Consente di creare e modificare palette di gradiente per la colorazione delle tracce utilizzando valori relativi o fissi. È possibile definire i passaggi di colore, assegnare valori e personalizzare la visualizzazione dei dati (come velocità o altitudine) lungo la traccia. |
 | [Cartelle Smart – Organizza per](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Consente di organizzare le tracce nelle Cartelle Smart utilizzando parametri di raggruppamento avanzati come data e ora, distanza, durata, velocità, altitudine ed elevazione e dati dei sensori. Queste opzioni consentono una categorizzazione più dettagliata delle tracce e un'analisi flessibile. |
 
 

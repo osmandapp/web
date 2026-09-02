@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title:  Parametry pojazdu
 ---
@@ -32,7 +32,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -126,20 +126,20 @@ Ograniczenia parametrów pojazdu mogą być ważne dla nawigacji i bezpieczeńst
 
 <TabItem value="android" label="Android">
 
-![Trasa nawigacyjna Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Trasa nawigacyjna Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Trasa nawigacyjna iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Trasa nawigacyjna iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Jeśli w parametrach pojazdu wybierzesz typ silnika, [***dane o śladzie węglowym CO2***](../../navigation/setup/route-details.md#elevation-info) zostaną wyświetlone nad wykresem w [Szczegółach trasy](../setup/route-details.md).
-Dostępnych jest sześć rodzajów paliwa: ***Benzyna, Olej napędowy, LPG, CNG, Elektryczny,*** i ***Hybrydowy***.  
+Dostępnych jest siedem rodzajów paliwa: ***Benzyna, Olej napędowy, LPG, CNG, Elektryczny, Hybrydowy*** i ***Etanol***.  
 
 **Zastosowanie:**
 
@@ -158,7 +158,7 @@ Ustawienie **Paliwo używane przez silnik** jest dostępne tylko w nawigacji opa
 
 <TabItem value="ios" label="iOS">
 
-![Ustawienia nawigacji iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -169,7 +169,7 @@ Parametr **Pojemność zbiornika paliwa** pozwala dokładniej śledzić [poziom 
 
 **Zastosowanie:**
 
-Ustawienie **Pojemność zbiornika paliwa** jest dostępne tylko w nawigacji opartej na pojazdach. W przypadku typów nawigacji, takich jak *Rower*, *Jazda konna*, *Pieszo* i *Narty*, ten parametr nie jest wyświetlany w Parametrach pojazdu.
+Ustawienie **Pojemność zbiornika paliwa** jest dostępna tylko w nawigacji opartej na pojazdach. W przypadku typów nawigacji, takich jak *Rower*, *Jazda konna*, *Pieszo* i *Narty*, ten parametr nie jest wyświetlany w Parametrach pojazdu.
 
 ## Parametry prędkości
 

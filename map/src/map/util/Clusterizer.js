@@ -7,6 +7,7 @@ import {
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
+    POI_ELO,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
@@ -17,11 +18,13 @@ import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
-import { MARKER_Z_INDEX_MAIN } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN } from './ZIndexes';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 export const EXPLORE_BIG_REAL_ICON_SIZE = 42;
 export const SIMPLE_ICON_SIZE = 10;
+const POI_MAIN_RADIUS_PX = 64; // gap between big markers
+const POI_SECONDARY_RADIUS_PX = 12; // min gap between small dots
 
 // Cluster markers based on zoom and coordinates
 export function clusterMarkers({
@@ -61,6 +64,10 @@ export function clusterMarkers({
             maxMainPlaces,
             maxSecondaryPlaces,
         });
+    }
+
+    if (isPoi) {
+        return createPoiMarkersArr({ places, latitude, zoom });
     }
 
     // Sort clusters by size
@@ -137,6 +144,39 @@ function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance
         mainMarkers,
         secondaryMarkers,
     };
+}
+
+// POI clustering by screen-pixel radius: big markers take the most popular (elo) place
+// first, greedily kept POI_MAIN_RADIUS_PX apart; the rest become small dots kept POI_SECONDARY_RADIUS_PX
+// apart. Both passes prevent overlap.
+function createPoiMarkersArr({ places, latitude, zoom }) {
+    const mpp = metersPerPixel(latitude, zoom);
+    const mainMinDistance = POI_MAIN_RADIUS_PX * mpp;
+    const valid = (places ?? []).filter(Boolean);
+
+    const mainMarkers = [];
+    for (const place of [...valid].sort((a, b) => getPoiElo(b) - getPoiElo(a))) {
+        if (canPlaceMarker({ place, existingPlaces: mainMarkers, minDistance: mainMinDistance })) {
+            mainMarkers.push(place);
+        }
+    }
+    const mainSet = new Set(mainMarkers);
+
+    const secondaryMinDistance = POI_SECONDARY_RADIUS_PX * mpp;
+    const secondaryMarkers = [];
+    const placed = [...mainMarkers];
+    for (const place of valid) {
+        if (mainSet.has(place)) continue;
+        if (canPlaceMarker({ place, existingPlaces: placed, minDistance: secondaryMinDistance })) {
+            placed.push(place);
+            secondaryMarkers.push(place);
+        }
+    }
+    return { mainMarkers, secondaryMarkers };
+}
+
+function getPoiElo(place) {
+    return Number(place?.properties?.[POI_ELO]) || 0;
 }
 
 function getMaxMainPlaces(zoom, isPoi, isExplore) {
@@ -385,7 +425,15 @@ export function addMarkerTooltip({
 
     marker.on('mouseover', () => {
         removeTooltip(map, tooltipRef);
-        setSelectedId?.({ id: marker.options.idObj, show: true, type, hoverFromMap: true });
+        const relatedResultIds = (marker.options.relatedResultIds ?? []).filter((id) => id != null);
+        setSelectedId?.({
+            id: marker.options.idObj,
+            relatedResultIds,
+            show: true,
+            type,
+            hoverFromMap: true,
+            hoverLatlng: marker.getLatLng?.(),
+        });
         if (text) {
             const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
             tooltipRef.current = createTooltip(Utils.truncateText(text, TOOLTIP_MAX_LENGTH), latlng, { offset });
@@ -395,7 +443,9 @@ export function addMarkerTooltip({
 
     marker.on('mouseout', (event) => {
         if (event.originalEvent) {
-            if (!mainStyle && marker.options.selected) return;
+            if (!mainStyle && marker.options.selected) {
+                return;
+            }
             removeTooltip(map, tooltipRef);
             setSelectedId?.({ id: -1, show: false, type });
         }

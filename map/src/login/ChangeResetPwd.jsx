@@ -294,7 +294,7 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
                             <Button
                                 className={errorStyles.button}
                                 component="span"
-                                onClick={() => openLogin(ltx, navigate, reopenLoginDialog)}
+                                onClick={() => openLogin({ ctx, ltx, navigate, reopenLoginDialog })}
                             >
                                 {t('web:login_btn')}
                             </Button>

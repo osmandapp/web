@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografia
 ---
@@ -115,7 +115,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"
 
 È necessario scaricare le mappe **Mappa del terreno (3D)** per visualizzare Ombreggiatura, Pendenza e Rilievo 3D. Dopo aver scaricato le mappe, è possibile visualizzare **Curve di livello** e **Terreno** utilizzando la sezione [Configura mappa](../map/configure-map-menu.md) del *Menu principale*.
 
-Se la mappa visualizzata sullo schermo non è stata scaricata, allora in *Menu → Configura mappa → Sezione Topografia → Terreno* in fondo all'elenco delle funzionalità verrà visualizzata la sezione *Scarica mappe* con le mappe aggiuntive suggerite.
+Se la mappa visualizzata sullo schermo non è stata scaricata, allora in *Menu → Configura mappa → Sezione Topografia → Terreno* in fondo all'elenco delle funzionalità verrà visualizzata la sezione *Scaricare mappe* con le mappe aggiuntive suggerite.
 
 
 ### Curve di livello (Metri o Piedi) {#contour-lines-meters-or-feet}
@@ -274,6 +274,16 @@ Ombre del terreno richiede il Rilievo 3D e lo abilita automaticamente quando sel
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 La funzione *Modifica schema di colori* consente di selezionare uno schema di colori:
 
 - Da un [elenco predefinito](#default-color-scheme).
@@ -290,23 +300,6 @@ Puoi:
 **Nota:** L'ombreggiatura utilizza un algoritmo di ombreggiatura fisso e non supporta tavolozze di colori personalizzate.
 
 Per una personalizzazione avanzata delle tavolozze utilizzando file di tavolozze, consulta l'articolo [Schemi di colori](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-La funzione *Modifica schema di colori* consente di selezionare uno schema di colori:
-
-- Da un [elenco predefinito](#default-color-scheme).
-- Da file di tavolozze di colori che hai creato sul tuo computer. I file personalizzati possono essere aggiunti a OsmAnd utilizzando lo strumento di [importazione/esportazione](../personal/import-export.md).
-
-È possibile [modificare queste tavolozze](../personal/color-palette-schemes.md#palette-modify) per personalizzare l'aspetto di mappe e percorsi.
-
-</TabItem>
-
-</Tabs>
 
 ### Visibilità {#visibility}
 
@@ -377,7 +370,13 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>
 
-La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. Se i [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includono passaggi attraverso gli edifici mappati con il tag `tunnel=building_passage`, OsmAnd rende visibili le aperture nel modello 3D dell'edificio in modo che le strade o i percorsi pedonali che passano attraverso l'edificio siano visualizzati correttamente. 
+La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. 
+
+Per strutture complesse, OsmAnd utilizza `building:part` per renderizzare sezioni individuali di un edificio con altezze e forme diverse. 
+
+Se i [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) includono passaggi attraverso gli edifici mappati con il tag `tunnel=building_passage`, OsmAnd rende visibili le aperture nel modello 3D dell'edificio in modo che le strade o i percorsi pedonali che passano attraverso l'edificio siano visualizzati correttamente. 
+
+Gli edifici 3D possono includere diverse forme del tetto basate sui [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). Il tag `roof:shape` definisce la geometria del tetto, mentre `roof:levels` e `roof:height` forniscono informazioni sulla sua altezza.
 
 Gli edifici 3D vengono mostrati solo a livelli di zoom più alti (vista città/strada), dove gli edifici individuali possono essere visualizzati. Quando si esegue lo zoom avanti o indietro e si sposta la mappa, gli edifici 3D appaiono e scompaiono con un'animazione di dissolvenza fluida. Quando un POI o una posizione selezionata (come una mappa pin o una destinazione di navigazione) si trova all'interno di un edificio, OsmAnd evidenzia l'edificio corrispondente per facilitarne l'identificazione sulla mappa.
 
@@ -545,7 +544,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 **L'ombreggiatura** è un tipo di mappa che visualizza il terreno utilizzando le ombre, creando una rappresentazione visiva della pendenza e della forma della superficie terrestre.  
 **Il Rilievo 3D** è una funzione che aggiunge effetti tridimensionali alla mappa.  
 
-Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *L'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.  
+Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *l'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.  
 
 Quando **l'Ombreggiatura** è **abilitata**, un'immagine con ombre di rilievo appare più dettagliata, più scura e più a gradini rispetto a un'immagine di *Rilievo 3D*. La spiegazione è che *l'Ombreggiatura* enfatizza i gradienti e i contrasti del terreno, creando un'immagine più nitida e dettagliata. La funzione *Rilievo 3D* conferisce alla mappa un aspetto più fluido e levigato, ammorbidendo il terreno e riducendo potenzialmente la visibilità di alcuni dettagli più fini.
 

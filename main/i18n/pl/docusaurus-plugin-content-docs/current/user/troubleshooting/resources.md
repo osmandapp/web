@@ -1,7 +1,7 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
-title: Resources and Customizations
+title: Zasoby i dostosowania
 ---
 
 import Tabs from '@theme/Tabs';
@@ -45,15 +45,16 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 
 | Typ | Opis | Link |
 |-- | -- | --|
-| GoogleMap do GPX OsmAnd | Tworzy folder plików GPX w stylu OsmAnd z mapy Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
-| KML do GPX OsmAnd | Skrypt Pythona do konwersji plików *KML* do formatu *GPX* z ikonami. Dostępne są również inne narzędzia. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
-| KMZ do GPX | Skrypt Pythona do konwersji plików *KMZ* do formatu *GPX*, w tym ikon. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| GoogleMap To OSMAnd GPX | Tworzy folder plików GPX w stylu OsmAnd z mapy Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Skrypt Pythona do konwersji plików *KML* do formatu *GPX* z ikonami. Dostępne są również inne narzędzia. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Skrypt Pythona do konwersji plików *KMZ* do formatu *GPX*, w tym ikon. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
 | Garmin | Narzędzie do konwersji plików Garmin Basecamp do OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi do OsmAnd | Konwersja formatów map geoPDF, geoTiff i ozi do OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX do KML | Narzędzie do konwersji plików *GPX* z OsmAnd do formatu *KML* z zachowaniem ikon. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX do OsmAnd | Skrypt Pythona do konwersji wyeksportowanych plików *GPX* iOverlander do OsmAnd z ikonami. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| GPX to KML | Narzędzie do konwersji plików *GPX* z OsmAnd do formatu *KML* z zachowaniem ikon. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Skrypt Pythona do konwersji wyeksportowanych plików *GPX* iOverlander do OsmAnd z ikonami. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Niestandardowe zasoby {#custom-resources}
 
@@ -73,7 +74,7 @@ Podręczniki te, dostępne w wielu językach, często zawierają unikalne spostr
 | włoski | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | holenderski | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
 | holenderski | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
-| holenderski | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
+| holenderski | Filmpjes są przeze mnie stworzone z krótkim i jasnym wyjaśnieniem działania Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
 | niemiecki | Osmand Anleitung: Kostenlose Karten- und Navigations App  |  [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
 | rosyjski  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
 
@@ -110,13 +111,22 @@ Domyślny plik [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/m
 | Styl mapy „Wybór” | [Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA) to styl mapy autorstwa Holdera Tamma, który pozwala wybrać, czy ukryć określone obiekty, czy nie.  |[Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Styl renderowania ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) jest głównie oparty na UniMap i routes.addon.render.xml  |[Styl mapy „ExplorerRS”](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [To jest styl renderowania OsmAnd zoptymalizowany do polowań na burze](https://github.com/pqo/stormchasing-rendering-style)  |[Styl renderowania Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+The default `routing.xml` file can be customized to adjust routing algorithms and parameters for specific conditions.
+
+| Source Name | Description | Link |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Custom `routing.xml` modification that adjusts route calculation for rainy conditions, factoring in surface type (e.g., bare rock), incline, and official trail difficulty ratings (CAI/SAC scales), plus improved "Avoid Tunnels" logic. | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Mapy offline {#offline-maps}
 
 Niestandardowe mapy wektorowe (pliki OBF) generowane przez użytkowników.
 
-| Nazwa źródła | Opis | Link|
+| Source Name | Description | Link|
 | -- | -- | --|
 | OpenSuperMaps | Mapy generowane przez [pnoll1](https://github.com/pnoll1), oferujące szczegółowe mapy wektorowe. |[OpenSuperMap](https://opensupermaps.com/)|
 | UMP PL | [UMP-pcPL](https://ump.waw.pl/) - alternatywna mapa Polski. |[Wtyczka UMP-PL](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
@@ -134,6 +144,10 @@ Poniższa tabela zawiera listę różnych źródeł map online przygotowanych pr
 | Basemap AT WMTS | Zestaw map Austrii oparty na [basemap.at WMTS](https://basemap.at/en/) stworzony przez mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | Mapy OsmAnd IGN (FR) | Zestaw map dostarczony przez francuski instytut geograficzny IGN. | [Mapy OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | Kolekcja map AnyGis | Strona zawiera kolekcję map na wakacje w kraju, w tym mapy turystyczne, górskie, morskie i wiele innych. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Independent OsmAnd overlay showing today’s and tomorrow’s wildfire-risk levels for the Comunitat Valenciana, Spain, using official public data. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

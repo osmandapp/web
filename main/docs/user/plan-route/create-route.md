@@ -30,7 +30,7 @@ A route consists of a set of segments between specified points. The segments can
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -62,7 +62,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
 ### Create New Route {#create-new-route}
 
-To create a new track in GPX format, use the main function of the *Plan a route* tool. Pre-creating a route has many advantages, unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*. You can [add](#adding-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#route-between-points), and get [detailed information about the route](#graph).  
+To create a new track in GPX format, use the main function of the *Plan a route* tool. Pre-creating a route has many advantages, unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*. You can [add](#adding-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#route-between-points), and get [detailed information about the route](#graph--analyze).  
 
 By default, the routing type will match the previously selected profile, tap the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured [separately](../navigation/routing/osmand-routing.md#routing-types).  
 
@@ -92,7 +92,21 @@ Go to: *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open
 
 ### Distance Measurement {#distance-measurement}
 
-![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 *Plan a route* is a quick and easy way to measure the distance between points.
 
@@ -107,9 +121,21 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 ### Get Elevation Data {#get-elevation-data}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 If [Elevation data](../map/tracks/track-context-menu.md#calculate-missing-elevation) is missing in an existing track, it's possible to add it using the following tools:
 
@@ -130,13 +156,13 @@ Use offline options instead: attach to roads or Terrain maps (Pro).
 
 <TabItem value="android" label="Android">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -193,9 +219,9 @@ You can also add a via point directly from the map by tapping a POI or Favorite 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Add point* button. By accessing the **points list** below, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
+To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Route +* button. By accessing the **points list** below, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
 
 </TabItem>
 
@@ -204,14 +230,28 @@ To measure a distance or plan a trip, add points at the *Pointer* location one b
 :::note
 You can also **Undo**/**Redo** every action you made in the plan route.
 :::
+
+### Adding Waypoints (iOS only) {#adding-waypoints}
+
+![Plan a route ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Plan a route ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+
+The POI tab allows you to add and manage waypoints while planning a route.
+
+To add a waypoint, select a location on the map and tap the *+ POI* button. The Waypoint screen opens, where you can enter a name, description, and address, select a group, and customize the icon, color, and shape. You can select an existing group or tap *Add a group* to create a new one.
+
+The POI tab displays added points grouped by folders. Each group shows its name and the number of points it contains. For each group, tap the three-dot menu to access group actions:
+- **Rename** — change the group name.
+- **Change appearance** — change the group's appearance.
+- **Sort** — change the order of points in the group.
+- **Delete** — delete the group.
+
+The Sort menu provides the following options: *Last modified*, *Name A–Z*, *Name Z–A*, *Newest date first*, and *Oldest date first*.
+
+Tap a point in a group to open its context menu. You can:
+- **Edit** — open the Edit Waypoint screen.
+- **Delete** — remove the point from the group.
   
 ### Route Between Points {#route-between-points}
-
-Added points in the editor could be connected as a straight line or as a route between points of a selected profile. *Route between points* can be accessed in several ways:
-
-1. From the *Options* menu *→* *Route between points*.
-2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, will open the Configure Map menu.
-3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -219,15 +259,11 @@ Added points in the editor could be connected as a straight line or as a route b
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
-</TabItem>
+Added points in the editor could be connected as a straight line or as a route between points of a selected profile. *Route between points* can be accessed in several ways:
 
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png) ![Plan a route ios](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
-
-</TabItem>
-
-</Tabs>
+1. From the *Options* menu *→* *Route between points*.
+2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, will open the Configure Map menu.
+3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
 You can change route between 2 specific points or between multiple points:
 
@@ -236,12 +272,72 @@ You can change route between 2 specific points or between multiple points:
 - *Change the Route Type Before/After Point*. In the *point context menu*, you can change the way the route is calculated for the section from this point to the nearest or to the edge point. The setting provides information about the distance from this point to the beginning or the end of the route, or to the next/previous point.
 - *Recalculate routes*. You can use route recalculation without changing the profile type. The profile icon shown on the planned route in the tool will not change, but the route type will match the selected one. You may need this to find alternative routes.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+
+Added points can be connected with a straight line or a route calculated using a selected routing profile. The Route between points menu allows you to view and change the routing type and settings for route segments and sections.
+
+You can open Route between points by tapping the *Route between points* button, which displays the icon of the currently selected routing profile, or from a [Segment](#segments) or Section menu.
+
+In the Route type tab, you can select a routing profile for the selected segment or section. Straight line is available as the first option, followed by the available routing profiles.
+
+When a route contains only one routing type, the simple Route between points view is displayed. When a route contains multiple routing types, the complex view shows all segments and sections, allowing you to select which part of the route to modify.
+
+You can also:
+- **Start new segment** — create a new segment and continue adding route points. The new segment uses the same route type as the current one.
+- **Change for whole track** — select a routing type to apply to the entire track.
+
+In the Settings tab, you can select predefined routing settings for the selected route type.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Segments {#segments}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 A track segment is a collection of points connected without **gaps**. In a plan route tool, it's possible:
 
 - To merge segments: [Join segments](#point-context-menu) option removes the gap to previously separated segments.
 - To split or create new, unconnected sections of a track. To create one, use the [Start new segment](#point-context-menu) option or select the [Split](#point-context-menu) feature from the Point context menu.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+
+A route can contain one or more segments. A segment can use a single route type or contain multiple sections with different route types.
+
+In the Route tab, each segment is displayed with its route type and distance. When a segment contains multiple sections, each section displays its route type and distance.
+
+You can manage a segment using its three-dot menu:
+- **Change route type** — available for a segment with a single route type. Opens Route between points, where you can select a different route type.
+- **Set single route type** — available when a segment contains multiple sections with different route types. Opens Route between points, where you can apply one route type to the segment.
+- **Sort** — reorder route points manually or use Sort door-to-door to reorder them to minimize the total travel distance.
+- **Save as…** — save the segment as a separate file.
+- **Delete segment** — delete the segment.
+
+To create a new unconnected segment, tap *Start new segment* at the bottom of the Route tab.
+
+A segment can be divided into [sections](#multimodal-routes) when different route types are used for different parts of the segment. Each section displays its route type and distance.
+
+Tap the three-dot menu for a section to:
+- **Change route type** — open Route between points and select another route type.
+- **Sort** — access the available sorting options.
+- **Delete section** — remove the section.
+
+</TabItem>
+
+</Tabs>
+
 
 ### Point Context Menu {#point-context-menu}
 
@@ -255,7 +351,7 @@ A track segment is a collection of points connected without **gaps**. In a plan 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -299,7 +395,7 @@ Each point on your route has its context menu. It shows the *sequence number* of
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -318,22 +414,11 @@ Using the *Plan a Route* tool and the [Route between points](#route-between-poin
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios](@site/static/img/plan-route/plan_route_save_changes_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-
 After [you have added](#adding-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
 There are four ways to save:
 
-- ***Quick save***. The upper right ***Done*** / ***Save*** (for existing tracks) button allows quick saving of changes and exiting the *Plan a Route* tool. The name is generated based on the current date.
+- ***Quick save***. The upper right ***Done*** (for existing tracks) button allows quick saving of changes and exiting the *Plan a Route* tool. The name is generated based on the current date.
 - ***Save changes*** in [Options menu](#options) allows you to save changes to a file and continue planning the route.
 - ***Save as new track*** in the [Options menu](#options) opens a dialog where you specify the name of the track and the folder where the route will be saved.
 - ***Add changes to a track***. Attaches a created track as a [separate segment](#segments) to another existing track. Changes to a selected track *cannot be undone*.
@@ -344,6 +429,28 @@ When saving, the track inherits the activity type of the routing profile used fo
 When saving a new track, you can select the ***Simplified*** track option to make the track compatible with other third-party applications. Technically, the track will be saved without route instructions as a purely geometric track.
 :::
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+
+After [you have added](#adding-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
+
+For a new route, tap *Save* in the top toolbar to save the current track. You can also use *Save as…* from the Options menu to enter a file name and save the route.
+
+When editing an existing track, *Save* saves the current changes. You can also use the following options:
+- **Save as…** — saves the track with a new file name.
+- **Save as copy** — saves a duplicate of the track.
+- **Append to existing track** — adds the planned track as a separate segment to an existing track.
+
+When saving, the track inherits the activity type of the routing profile used for planning. The activity is saved in the track metadata and is preserved after exporting or importing the GPX file.
+
+</TabItem>
+
+</Tabs>  
+
+
 ### Options {#options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -351,16 +458,6 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 <TabItem value="android" label="Android">
 
 ![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Shows the selected application profile (default is a straight line). Tapping this action is the same as tapping the *Profile* button, which opens the application [profile menu](../personal/profiles.md).
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) or **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Draws new route segments that do not connect to the previous segment.
@@ -374,7 +471,28 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*Android only*). This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next, adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.
 
-### Graph {#graph}
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+
+Tap the three-dot menu in the top toolbar to open the *Options* menu. The available actions depend on whether you are creating a new route or editing an existing track.
+
+- **Save as…** — save the route with a new file name. Available for both new routes and edited tracks.
+- **Save as copy** — save a duplicate of an existing track. Available when editing an existing track.
+- **Append to existing track** — add the planned route as a separate segment to an existing track.
+- **Change segment order** — change the order of route segments.
+- **Reverse route** — reverse the direction of the route.
+- **Navigation** — close Plan a route and start navigation using the planned route.
+- **Clear all points** — remove all points from the planned route.
+
+</TabItem>
+
+</Tabs>
+
+
+### Graph / Analyze {#graph--analyze}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -382,22 +500,27 @@ When saving a new track, you can select the ***Simplified*** track option to mak
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
+During route planning, the [graph](../navigation/setup/route-details.md#elevation-graph) displays route altitude and slope percentage information, plus you can tap anywhere on the graph to display a pointer with particular data.  
+
+The graph is displayed in the *Graph* tab when creating or opening a track, and when [Navigation](../navigation/setup/gpx-navigation.md) using *Plan a route*.
+
+When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyze-on-map) tool. Tap the *Details* button below the graph.  
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+
+The Overview section displays a graph based on the selected axis. Use the axis selection controls to choose the data displayed on the graph. *Recalculate elevation* allows you to recalculate elevation data when needed. If elevation data is unavailable, the Analyze tab displays No elevation data. The message explains that OsmAnd can retrieve elevation data from nearby roads or terrain maps. Tap *Get elevation data* to calculate elevation data. For more information, see [Get Elevation Data](#get-elevation-data) section.
+
+The Overview Statistics section displays *Uphill*, *Downhill*, *Altitude range*, *Average speed*, *Max. speed*, and *Time in motion*. A dash `–` is displayed when data is unavailable. For example, speed and time in motion may be unavailable for planned routes.
+
+The Road Types, Steepness, Surface, and Smoothness sections show the corresponding route characteristics. Tap a section to expand it and view detailed information in the legend.
 
 </TabItem>
 
 </Tabs>
-
-During route planning, the [graph](../navigation/setup/route-details.md#elevation-graph) displays route altitude and slope percentage information, plus you can tap anywhere on the graph to display a pointer with particular data.  
-
-- For **Android**, the graph is displayed in the *Graph* tab when creating or opening a track, and when [Navigation](../navigation/setup/gpx-navigation.md) using *Plan a route*.
-- For **iOS**, the graph is only available through the *[Options](#options) → Navigation* menu.
-
-When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [Elevation info](../navigation/setup/route-details.md#elevation-info) and [Road attributes](../navigation/setup/route-details.md#road-attributes), and use the [Analyze on map](../navigation/setup/route-details.md#analyze-on-map) tool. Tap the *Details* button below the graph.  
 
 
 ## Related Articles {#related-articles}

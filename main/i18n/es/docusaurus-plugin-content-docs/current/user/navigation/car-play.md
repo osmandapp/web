@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -159,7 +159,7 @@ Para construir una ruta a un *PDI* en *CarPlay*, siga estos pasos:
 
 **Favoritos** es una de las características de OsmAnd que le permite hacer una especie de notas en el mapa.
 
-- Mientras usa **CarPlay**, no puede añadir o modificar *Favoritos*, solo usar los existentes.
+- Mientras usa **CarPlay**, usted no puede añadir o modificar *Favoritos*, solo usar los existentes.
 - La lista de [Favoritos](../personal/favorites.md#manage-favorites) se puede encontrar en la aplicación OsmAnd *Menú → Mis lugares → Favoritos*.
 - Si desea usarlos para la navegación, configure todo lo que necesite antes de conectar el dispositivo al sistema multimedia de su vehículo.  
 
@@ -225,9 +225,29 @@ Además de las características básicas de la aplicación OsmAnd en *CarPlay* q
 
 La guía por voz para *CarPlay* es una de las características de navegación más útiles de OsmAnd, proporcionando guía en tiempo real y permitiendo al conductor mantenerse concentrado en la carretera. Las indicaciones de voz indican claramente los giros, las direcciones y otras instrucciones de navegación, garantizando un uso más seguro y cómodo del sistema de navegación.  
 
-Cuando se reproducen las indicaciones de voz, OsmAnd ajusta el audio de fondo según su tipo. El contenido de audio hablado, como podcasts y audiolibros, puede pausarse automáticamente durante las instrucciones de navegación. La reproducción de música continúa con volumen reducido. La opción *Pausar audio hablado* le permite controlar este comportamiento.
+Cuando se reproducen las indicaciones de voz, OsmAnd ajusta el audio de fondo según su tipo. Con la opción *<Translate ios="true" ids="pause_spoken_audio"/>* activada, el contenido de audio hablado, como podcasts y audiolibros, se pausa durante las instrucciones de navegación, mientras que la reproducción de música continúa con volumen reducido. Cuando la opción *<Translate ios="true" ids="pause_spoken_audio"/>* está desactivada, tanto el audio hablado como la música continúan reproduciéndose con volumen reducido.  
 
 Para configurar las indicaciones de voz según el perfil seleccionado, debe hacerlo antes de iniciar una ruta en la aplicación OsmAnd en su dispositivo. Para ver los ajustes recomendados para *CarPlay*, vaya al artículo [Indicaciones de voz / Notificaciones](../navigation/guidance/voice-navigation.md).  
+
+
+### Alertas de navegación {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Las alertas útiles se muestran automáticamente antes de iniciar la navegación cuando se requiere una acción adicional para calcular la ruta. Estas alertas le ayudan a resolver problemas de enrutamiento antes de que comience la navegación.
+
+**Mapas faltantes o desactualizados**
+
+Si faltan o están desactualizados algunos mapas sin conexión necesarios para calcular la ruta, se muestra una alerta. Puede elegir una de las siguientes opciones:
+- **Usar mapas descargados**. Calcula la ruta utilizando los mapas actualmente disponibles en su dispositivo.
+- **Ver en el teléfono**. Abre la pantalla de descarga de mapas en su iPhone para descargar o actualizar los mapas necesarios. Después de descargar los mapas, puede volver a iniciar la navegación.
+- **Cancelar**. Cierra la alerta sin iniciar la navegación.
+
+**Advertencia de acceso privado**
+
+Si la ruta requiere usar una carretera privada para llegar a su destino, se muestra una advertencia: *¿Permitir el uso de una carretera privada para llegar a su destino?* Puede elegir:
+- **Permitir**. Continuar con la ruta utilizando la carretera privada.
+- **Cancelar**. Cierra la alerta y vuelve a la pantalla anterior, donde puede cambiar el destino o continuar con otra acción.
 
 
 ### Widget de alerta en pantalla {#screen-alert-widget}

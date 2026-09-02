@@ -92,12 +92,12 @@ Vehicle parameters affect navigation and route construction because they determi
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
-**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is only available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
+**4.** [**<Translate android="true" ids="routing_attr_width_name"/> limit**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> The Width parameter is available in navigation types such as *[Car, Truck, Motorcycle](../../navigation/routing/car-based-routing.md)*, and *[Boat](../../navigation/routing/boat-navigation.md)*.  
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
-On Android, this parameter is also available for *[Cycling profiles](../../navigation/routing/bicycle-based-routing.md)* to help avoid narrow cycle paths.
+This parameter is also available for *[Cycling profiles](../../navigation/routing/bicycle-based-routing.md)* to help avoid narrow cycle paths.
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 

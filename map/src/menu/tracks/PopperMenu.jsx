@@ -1,6 +1,7 @@
 import { ClickAwayListener, MenuList, Paper, Popper } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
+import { POPPER_MENU_Z_INDEX } from '../../map/util/ZIndexes';
 
 export default function PopperMenu({ anchorEl, open, setOpen, Buttons }) {
     const ctx = useContext(AppContext);
@@ -21,7 +22,7 @@ export default function PopperMenu({ anchorEl, open, setOpen, Buttons }) {
             anchorEl={anchorEl?.current}
             transition
             style={{
-                zIndex: 100,
+                zIndex: POPPER_MENU_Z_INDEX,
                 left: `${anchorEl?.current?.offsetLeft}`,
                 top: `${anchorEl?.current?.offsetTop}`,
             }}

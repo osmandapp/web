@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -104,6 +104,9 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guías de viaje (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Plugin de Astronomía](../plugins/astronomy.md) — [Planificación de observación](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin de Astronomía](../plugins/astronomy.md) — [Modo AR interactivo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin de Astronomía](../plugins/astronomy.md) — [Mapa del cielo sin conexión](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navegación sin conexión y en línea](../navigation/index.md)<br/>con indicaciones giro a giro | ✔ | ✔ | ✔ |
 | [Búsqueda instantánea sin conexión](../search/index.md) | ✔ | ✔ | ✔ |
 | [Grabación de viaje](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -118,7 +121,6 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [Puntos de audio/foto/vídeo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Exportar/importar perfil de la aplicación](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
-| [Carpetas inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | **-** | **-** | ✔ |
 
 #### ** Actualizaciones de mapas {#-map-updates}
 
@@ -140,6 +142,7 @@ Por el momento, la suscripción Pro tiene las siguientes características:
 | [Plugin de métricas del vehículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar un escáner OBD-II para mostrar datos detallados del vehículo en la aplicación OsmAnd y almacenar la información en los registros de los tracks. La información sobre la velocidad del vehículo y la velocidad del motor está disponible para OsmAnd gratis.  |
 | [Personalizar la línea de ruta](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Cambiar el color y el ancho de la línea de ruta durante la navegación. |
 | [Modificar esquema de color](../../user/plugins/topography.md#modify-color-scheme) | Te permite personalizar la apariencia del mapa seleccionando o importando paletas de colores. Puedes editar esquemas integrados o usar tus propios archivos de paleta para personalizar los colores del mapa y de la ruta. |
+| [Crear paletas personalizadas](../../user/map/tracks/appearance.md#color-palette-editor) | Te permite crear y editar paletas de degradado para la coloración de tracks usando valores Relativos o Fijos. Puedes definir pasos de color, asignar valores y personalizar cómo se muestran los datos (como velocidad o altitud) a lo largo del track. |
 | [Carpetas inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar tracks en Carpetas inteligentes mediante parámetros de agrupación avanzados como fecha y hora, distancia, duración, velocidad, altitud y elevación, y datos de sensores. Estas opciones permiten una categorización más detallada de los tracks y un análisis flexible. |
 
 

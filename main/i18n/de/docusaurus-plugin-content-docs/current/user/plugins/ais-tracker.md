@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  AIS-Schiffs-Tracker
 ---
@@ -155,7 +155,7 @@ AIS-Schiffe senden drei Arten von Daten:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![AIS-Einstellungen](@site/static/img/plugins/ais/ais_settings_2.png)  
+![AIS-Einstellungen](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +171,7 @@ Das Plugin *AIS-Schiffs-Tracker* bietet verschiedene Einstellungen zur Personali
 | IP-Adresse | Definieren Sie die IP der AIS-Datenquelle (wenn TCP verwendet wird) | `192.168.200.16` |
 | TCP-Port   | Definieren Sie die TCP-Portnummer für AIS-Daten | `4001` |
 | UDP-Port   | Definieren Sie den UDP-Port für den OsmAnd-AIS-Empfang  | `10110` |
+| AIS-Daten auch bei pausiertem OsmAnd empfangen   | Den AIS-Nachrichten-Listener weiterlaufen lassen, wenn OsmAnd pausiert oder im Hintergrund ist. Wenn deaktiviert, werden keine AIS-Nachrichten empfangen, wenn OsmAnd im Hintergrund ist  | `Ja/Nein` |
 | | | |
 | **Zeitüberschreitung für AIS-Signalempfang** | |  |
 | Zeitüberschreitung für verlorene AIS-Objekte     | Schiffe verschwinden, wenn für eine festgelegte Zeit kein Signal empfangen wird | `3 - 20 min` |

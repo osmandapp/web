@@ -1,6 +1,6 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import { clickBy, getTextBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { assert, clickBy, getTextBy, getUrl, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import actionCheckDisabled from '../../actions/actionCheckDisabled.mjs';
@@ -23,6 +23,7 @@ export default async function test() {
     const favorites = getFiles({ folder: 'favorites' });
     const favNameShort = 'shops';
     const favName2Short = 'food';
+    const favWptName = 'Test wpt';
 
     const userName = 'osmandtest2';
 
@@ -145,6 +146,19 @@ export default async function test() {
     await clickBy(By.id('se-login-button'));
     await actionLogIn();
     await clickBy(By.id('se-show-main-menu'), { optional: true });
+
+    // make favorites share public
+    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenShare(favNameShort, 'favorite-folder');
+    linkFav1 = await setPublicShareType(favNameShort);
+    await clickBy(By.id('se-close-share-menu'));
+
+    // check anonymous user can open public favorites and favorite details
+    await actionLogOut();
+    await checkAnonymousPublicFavorites(linkFav1, favWptName);
+
+    await actionLogIn();
+    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     await deleteTrack(trackName);
@@ -183,6 +197,47 @@ async function createShareFile(name) {
 
     let link = await getTextBy(By.id('se-generated-link'));
     return link.split('/map/')[1];
+}
+
+async function setPublicShareType(name) {
+    await waitBy(By.id('se-share-file-menu'));
+    await waitBy(By.id(`se-share-file-item-${name}`));
+    await waitBy(By.id('se-share-type-Request Only'));
+
+    await clickBy(By.id('se-share-type'));
+
+    await actionIdleWait();
+    await waitBy(By.id('se-actions-share-type'));
+    await clickBy(By.id('se-share-type-Anyone'));
+    await waitByRemoved(By.id('se-actions-share-type'));
+    await actionIdleWait();
+
+    await waitBy(By.id('se-share-type-Anyone'));
+    await waitByRemoved(By.id('se-user-access-list'));
+    await waitBy(By.id('se-public-access-list'));
+    await waitBy(By.id('se-copy-link'));
+
+    let link = await getTextBy(By.id('se-generated-link'));
+    return link.split('/map/')[1];
+}
+
+async function checkAnonymousPublicFavorites(link, wptName) {
+    await actionOpenMap(link);
+    await waitBy(By.id('se-share-file'));
+    await waitBy(By.id(`se-fav-item-name-${wptName}`));
+
+    await actionIdleWait();
+    await waitBy(By.id('se-login-button'));
+    await assert((await getUrl()).includes(link), 'anonymous user was redirected from share link');
+
+    await clickBy(By.id(`se-fav-item-name-${wptName}`));
+    await waitBy(By.id('se-back-wpt-details'));
+    await waitByRemoved(By.id('se-share-file'), true);
+
+    await clickBy(By.id('se-back-wpt-details'));
+    await waitByRemoved(By.id('se-back-wpt-details'));
+    await waitBy(By.id('se-share-file'));
+    await waitBy(By.id(`se-fav-item-name-${wptName}`));
 }
 
 async function approveAccessTrack(name, userName) {

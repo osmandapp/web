@@ -1,5 +1,5 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomi** şu anda **beta** sürümünde.
+**Astronomi** şu anda **Android**'de **beta** sürümünde. 
+
+**iOS**'ta eklenti **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))** programı aracılığıyla kullanılabilir. 
 :::
 
 ## Overview {#overview}
@@ -43,13 +44,29 @@ Astronomi katmanını görüntülemek için aşağıdaki ayarlar gereklidir:
 4. Yıldız haritasında gösterilenleri [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) kullanarak ayarlayın — örneğin, görünür nesneleri ve render yardımcısını açıp kapatın.
 5. Yıldız haritası ekranının üst kısmındaki **Kapat (X)** düğmesine dokunarak Yıldız haritasından çıkın ve Dünya haritasına dönün.
 
-Eklenti her iki Harita render motoruyla da çalışır ancak OpenGL modunda en iyi performansı sağlar.
+Android'de eklenti her iki Harita render motoruyla da çalışır ancak OpenGL modunda en iyi performansı sağlar.
 
 ## Star Map Screen {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Git:** *Etkinleştirilmiş eklenti → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Git:** *Etkinleştirilmiş eklenti → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 Özel **Yıldız haritası ekranı**, yıldızlar, takımyıldızlar, gezegenler, Güneş ve Ay yollarıyla etkileşimli göksel kubbe gösterir. Ekranın alt kısmında şu kontroller bulunur: 
 - [**Arama**](#search) — göksel nesneleri aramanıza ve gökyüzü kataloglarını ve kategorilerini taramanıza olanak tanıyan Arama ekranını açar. 
@@ -64,7 +81,21 @@ Yıldız haritası ayrıca pusula modu etkinleştirildiğinde cihaz yöneliminiz
 
 ## Context Menu {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 **Bağlam Menüsü**, göksel nesneler hakkında ayrıntılı bilgi ve onları gözlemlemek için araçlar sağlar. Yıldız haritasında bir göksel nesneye dokunduğunuzda açılır.
 
@@ -74,7 +105,21 @@ Bağlam Menüsü ekranın alt kısmında görünür ve nesne bilgisi, hızlı ey
 
 ### Object Information {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Bağlam Menüsü'nün üst bölümü nesnenin adını ve sınıflandırmasını görüntüler. Adın altında, nesne tipi ve üst takımyıldızı veya grubu gösterilir. Örneğin:  
 - **Beta Ursae Minoris** — Yıldız • Küçük Ayı
@@ -87,6 +132,7 @@ Hızlı bilgi blokları ana gözlem parametrelerini görüntüler:
 - <Translate android="true" ids="shared_string_azimuth"/> – kuzeye göre nesnenin yönü (0°–360°).
 - <Translate android="true" ids="altitude"/> – ufuk üzerindeki nesnenin yüksekliği.
 - <Translate android="true" ids="shared_string_magnitude"/> – Dünya'dan görülen nesnenin parlaklığı. 
+- Mesafe (*yalnızca iOS*) – Dünya'dan seçilen göksel nesneye olan uzaklık.
 
 Bu değerler, seçilen zamana ve kullanıcının konumuna göre dinamik olarak güncellenir.
 
@@ -106,7 +152,21 @@ Nesne bilgisinin altında, Bağlam Menüsü seçilen göksel nesneyle etkileşim
 
 ### Visibility Graph {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **Görünürlük** sekmesi, seçilen nesnenin 24 saatlik bir dönem boyunca gökyüzünde nasıl hareket ettiğini gösterir.
 
@@ -141,7 +201,21 @@ Grafik, gösterge mevcut sistem zamanında konumlandırılmış olarak açılır
 
 ### Observation Schedule {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **Program** sekmesi, seçilen nesnenin mevcut hafta için görünürlüğünü görüntüler. Her satır bir günü temsil eder ve şunları içerir:  
 - haftanın günü
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
-**Git:** *Etkinleştirilmiş eklenti → <Translate android="true" ids="shared_string_menu,star_map"/> → Kamera düğmesi* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Git:** *Etkinleştirilmiş eklenti → <Translate android="true" ids="shared_string_menu,star_map"/> → AR modu* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Git:** *Etkinleştirilmiş eklenti → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR modu*
+
+</TabItem>
+
+</Tabs>
 
 **Astronomi** katmanı, **cihaz kameranız** ile çalışarak **Artırılmış Gerçeklik (AR) yıldız gözlemi**'ni etkinleştirir. Telefon kameranızı gerçek gece gökyüzüne yönlendirin ve yıldızlar, gezegenler, takımyıldızlar, Güneş/Ay gerçek zamanlı olarak katmanlı olarak görüntüleyin.
 
@@ -197,7 +289,21 @@ AR modu, göksel nesneleri gerçek gökyüzüyle hizalamak için cihaz sensörle
 
 ## Configure View {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>**, Yıldız haritasının nasıl görüntüleneceğini, görsel modları, nesneleri ve render yardımcılarını etkinleştirerek veya devre dışı bırakarak kontrol etmenize olanak tanır.
 
@@ -205,7 +311,21 @@ Görünümü Yapılandırmak için, Yıldız haritası ekranının sağ alt kö�
 
 ### Modes and Actions {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Bu bölüm, Yıldız haritasının ana görüntüleme modlarını kontrol eder.
 
@@ -215,7 +335,21 @@ Bu bölüm, Yıldız haritasının ana görüntüleme modlarını kontrol eder.
 
 ### Visible Objects {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Bu bölüm, Yıldız haritasında hangi tür göksel nesnelerin gösterileceğini seçmenize olanak tanır.
 
@@ -274,21 +408,92 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Search {#search}
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Astronomi eklentisindeki **Arama** özelliği, göksel nesneleri bulmanıza, gökyüzü kategorilerini keşfetmenize ve gözlem verilerine erişmenize olanak tanır. Arama'yı açmak için Yıldız haritasındaki Arama düğmesine dokunun. Bu, göksel nesneleri keşfetmek ve düzenlemek için birkaç bölüm sağlayan Arama ekranını açar. Arama ekranı şu bölümleri içerir:
+<TabItem value="android" label="Android">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Astronomi eklentisindeki **Arama** özelliği (**iOS'ta Keşfet**), göksel nesneleri bulmanıza, gökyüzü kategorilerini keşfetmenize ve gözlem verilerine erişmenize olanak tanır. Arama'yı açmak için Yıldız haritasındaki Arama düğmesine dokunun. Bu, göksel nesneleri keşfetmek ve düzenlemek için birkaç bölüm sağlayan Arama ekranını açar. Arama ekranı şu bölümleri içerir:
 
 **1. Şimdi İzle**
 
 Şimdi İzle bölümü, şu anda veya bu gece görünür olan göksel nesneleri vurgular. Bu bölüm, mevcut konumunuza ve zamanınıza göre gözlem için en uygun nesneleri gösteren bir öneri aracı olarak çalışır.
 
-**2. Kategoriler**
+**2. Güneş ve Ay tutulmaları** (*yalnızca Android*)
+
+[Güneş tutulması](#solar-eclipse) ve [Ay tutulması](#lunar-eclipse) araçları, dünya çapındaki tutulma olaylarını keşfetmenize, zaman içindeki ilerlemelerini görüntülemenize ve harita üzerinde tutulma görünürlüğünü kontrol etmenize olanak tanır.
+
+**3. Kategoriler**
 
 Kategoriler bölümü, nesneleri tipe göre taramanıza olanak tanır: Güneş sistemi, Takımyıldızlar, Yıldızlar, Bulutsular, Yıldız kümeleri ve Derin gökyüzü. Her kategori, ana bilgiyle nesne listesini açar: nesne adı, tip veya takımyıldız, büyüklük (parlaklık) ve doğuş veya batış zamanı (uygulanırsa).
 
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+**Güneş Tutulması Gezgini**, dünya çapındaki geçmiş ve yaklaşan güneş tutulmalarını keşfetmenize olanak tanır. Yıldız Haritası'nı etkileşimli bir zaman çizelgesi ve harita görselleştirmesiyle birleştirerek tutulmanın farklı konumlarda nasıl geliştiğini gösterir.
+
+Güneş Tutulması Gezgini aşağıdaki özellikleri içerir:
+
+- **Tutulma navigasyonu**. Mevcut güneş tutulmaları arasında geçiş yapmak için Önceki ve Sonraki düğmelerini kullanın.
+- **Zaman çizelgesi**. Zaman çizelgesi, tutulmanın başlangıcını, maksimumunu ve sonunu gösterir. Tutulmayı olay sırasında herhangi bir anda görüntülemek için kaydırıcıyı hareket ettirin. Tüm tutulma bilgileri seçilen zamana göre otomatik olarak güncellenir.
+- **Tutulma bilgileri**. Bilgi paneli şunları görüntüler: tutulma türü, geçerli tarih ve saat, tutulma örtülmesi, Güneş irtifası ve harita merkezi koordinatları. Görüntülenen bilgiler harita merkezine göre hesaplanır.
+- **Tutulma yolu**. Tutulma yolunu harita üzerinde ortalamak için Tutulma yoluna sığdır'a dokunun. Tutulma yolunu harita üzerinde göstermek veya gizlemek için *Haritayı göster* veya *Haritayı gizle* seçeneğine dokunun. Tutulma yolu, tutulmanın nerede göründüğünü ve Ay'ın gölgesinin Dünya yüzeyi boyunca nasıl hareket ettiğini gösterir.
+
+:::warning
+
+Uygun güneş görüntüleme koruması olmadan doğrudan Güneş'e bakmayın. Tutulma zamanları tahmindir.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+**Ay Tutulması Gezgini**, dünya çapındaki ay tutulmalarını keşfetmenize ve Ay'ın Dünya'nın gölgesinden nasıl geçtiğini gözlemlemenize olanak tanır.
+
+Ay Tutulması Gezgini aşağıdaki özelliği içerir:
+
+- **Tutulma navigasyonu**. Mevcut ay tutulmaları arasında geçiş yapmak için Önceki ve Sonraki düğmelerini kullanın.
+- **Tutulma türleri**. Gezginde şunlar desteklenir: Yarı gölge tutulmaları, Kısmi tutulmalar ve Tam tutulmalar
+- **Zaman çizelgesi**. Zaman çizelgesi, tutulmanın başlangıcını, maksimumunu ve sonunu gösterir. Zaman çizelgesindeki işaretçiler tutulmanın farklı aşamalarını belirtir. Tutulmayı olay sırasında herhangi bir noktada gözlemlemek için kaydırıcıyı hareket ettirin.
+- **Tutulma bilgileri**. Bilgi paneli şunları görüntüler: tutulma evresi, tutulma örtülmesi, Ay irtifası ve harita merkezi koordinatları. Görüntülenen bilgiler harita merkezine göre hesaplanır.
+- **Görünürlük haritası**. Tutulma görünürlük alanını harita üzerinde ortalamak için *Görünürlüğe sığdır* seçeneğine dokunun. Görünürlük katmanını göstermek veya gizlemek için *Haritayı göster* veya *Haritayı gizle* seçeneğine dokunun. Görünürlük katmanı, tutulma sırasında Ay'ın ufuk üzerinde olduğu bölgeleri vurgular.
+
+:::warning
+
+Gölge renkleri ve parlaklığı şematiktir ve yalnızca görselleştirme amaçlıdır.
+
+:::
+
 ### Sorting and Filters {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Tam arama arayüzünü açmak için arama çubuğuna dokunun. Sonuçları sıralama ve filtreleme seçenekleriyle daraltabilirsiniz.
 
@@ -314,7 +519,21 @@ Sonuçları nesne tipine göre filtreleyebilirsiniz. Belirli kategorileri seçme
 
 ### My Data {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Verilerim bölümü, kullanıcının etkileşimde bulunduğu nesneleri içerir. Bu bölüm üç liste içerir:
 
@@ -326,7 +545,21 @@ Bir öğeyi seçmek, nesnenin bağlam menüsünü açar.
 
 ### Catalogs {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Kataloglar bölümü, Astronomi eklentisinde mevcut astronomik kataloglara erişim sağlar.
 

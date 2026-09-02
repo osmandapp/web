@@ -1,5 +1,5 @@
 ---
-source-hash: ff5806c001a29e51d33c726e47f6c1fdf5ba4b409526b6bca2b1c2a9894324bc
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Контекстне меню карти
 ---
@@ -18,33 +18,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-Контекстне меню карти надає інформацію про вибраний об'єкт на карті. Ви також можете використовувати його для створення маршруту до вибраного місця. Щоб відкрити контекстне меню, спочатку знайдіть потрібне місце на карті, а потім виберіть об'єкт коротким або довгим дотиком, якщо потрібно вибрати будь-яку точну точку на карті.
+Контекстне меню карти надає інформацію про вибраний об’єкт на карті. Ви також можете використовувати його для створення маршруту до вибраного місця. Щоб відкрити контекстне меню, спочатку знайдіть потрібне місце на карті, а потім виберіть об’єкт коротким або довгим дотиком, якщо потрібно вибрати будь-яку точну точку на карті.
 
 
-### Вибір об'єкта (один дотик) {#select-an-object-single-tap}
+### Вибір об’єкта (один дотик) {#select-an-object-single-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню Android](@site/static/img/map/map_context_menu_short_tap_android.png)
+![Context menu Android](@site/static/img/map/map_context_menu_short_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
+![Context menu iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**Контекстне меню** з'являється, коли ви **один раз торкаєтеся** позначеного об'єкта на карті. Це контекстне меню відображає важливу інформацію про вибраний об'єкт, включаючи його *назву*, *іконку* (як вона представлена на карті), *адресу, відстань*, *межі* та *напрямок* від вашого поточного місцезнаходження.  
+**Контекстне меню** з’являється, коли ви **один раз торкаєтеся** позначеного об’єкта на карті. Це контекстне меню відображає важливу інформацію про вибраний об’єкт, включаючи його *назву*, *іконку* (як вона представлена на карті), *адресу, відстань*, *межі* та *напрямок* від вашого поточного місцезнаходження.  
 
-Ви можете вибирати різні типи об'єктів на карті, такі як *POI*, *Улюблені*, *зупинки транспорту*, *маркери*, *гірські вершини* або інші *об'єкти карти*.
+Ви можете вибирати різні типи об’єктів на карті, такі як *POI*, *Улюблені*, *зупинки транспорту*, *маркери*, *гірські вершини* або інші *об’єкти карти*.
 
 :::note
-- Вибрані об'єкти карти та їхні межі відповідають [**вузлам (nodes)**](https://wiki.openstreetmap.org/wiki/Node) або [**шляхам (ways)**](https://wiki.openstreetmap.org/wiki/Way) OpenStreetMap.
+- Вибрані об’єкти карти та їхні межі відповідають OpenStreetMap [**вузлам (nodes)**](https://wiki.openstreetmap.org/wiki/Node) або [**шляхам (ways)**](https://wiki.openstreetmap.org/wiki/Way).
 - *Висота гірських вершин відображається в метрах або футах залежно від [одиниць довжини](../personal/profiles.md#units--formats), вибраних у налаштуваннях профілю.*
 :::
 
@@ -56,19 +56,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Контекстне меню довгий дотик Android](@site/static/img/map/map_context_menu_long_tap_android.png)
+![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню довгий дотик iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
+![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Коли ви робите **довгий дотик** будь-де на карті, з'являється **контекстне меню**, що надає інформацію про вибране місце. Це включає адресу, відстань та напрямок від вашого поточного місцезнаходження.
+Коли ви робите **довгий дотик** будь-де на карті, з’являється **контекстне меню**, що надає інформацію про вибране місце. Це включає адресу, відстань та напрямок від вашого поточного місцезнаходження.
 
 
 ### Вибір GPX-маршруту {#select-gpx-route}
@@ -77,25 +77,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню треку Android](@site/static/img/map/context_track_menu_Android.png)
+![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Екран статистики треку iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Дотик до [GPX-треку](../map/tracks/index.md) на карті відкриває [контекстне меню треку](../map/tracks/track-context-menu.md), де ви можете отримати доступ до додаткових опцій, пов'язаних з треком.
-
+Дотик до [GPX-треку](../map/tracks/index.md) на карті відкриває [контекстне меню треку](../map/tracks/track-context-menu.md), де ви можете отримати доступ до додаткових опцій, пов’язаних з треком. Якщо вибране місце містить кілька об’єктів карти, OsmAnd може спочатку показати список **What's here**, дозволяючи вибрати потрібний об’єкт. Для GPX-треків у цьому списку відображається зведена інформація, така як відстань, тривалість, кількість шляхових точок та папка, де зберігається трек.
 
 
 ### Маршрути, гірськолижні схили та стежки {#routes-and-trails}
 
-![Гірськолижні схили та MTB-стежки](@site/static/img/map/ski_mtb.png)  ![Гірськолижні схили та MTB-стежки](@site/static/img/map/ski_mtb_2.png)
+![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
 
 Ви можете торкатися елементів карти, таких як **гірськолижні схили**, **маршрути для гірських велосипедів (MTB)** та **стежки для дертбайків**, щоб відкрити їхнє контекстне меню з детальною інформацією. Перегляньте статтю [Маршрути](../map/routes/index.md#actions-with-routes) для отримання додаткової інформації.
 
@@ -115,34 +114,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню Android](@site/static/img/map/context_menu_2_android.png)
+![Context menu Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню iOS](@site/static/img/map/context_menu_2_ios.png)
+![Context menu iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Для отримання більш детальної інформації про об'єкт, торкніться кнопки **Деталі** в контекстному меню або проведіть пальцем по панелі вгору, щоб розгорнути її.
+Для отримання більш детальної інформації про об’єкт, торкніться кнопки **Деталі** в контекстному меню або проведіть пальцем по панелі вгору, щоб розгорнути її.
 
 
-### Інформація про об'єкт {#object-info}
+### Інформація про об’єкт {#object-info}
 
-Панель **Інформація про об'єкт** надає додаткові відомості про вибраний об'єкт. Ви можете торкнутися будь-якого запису, щоб скопіювати інформацію в буфер обміну.  
+Панель **Інформація про об’єкт** надає додаткові відомості про вибраний об’єкт. Ви можете торкнутися будь-якого запису, щоб скопіювати інформацію в буфер обміну.  
 
 Доступні деталі включають:
 
 - [Опис статті](#article-description)
 - [Альтернативні назви](#alternative-names)
+- [Пов’язані](#related)
 - [Координати](#coordinates)
 - [В межах областей](#polygon-information)
 - [Найближчі POI](#nearby-pois)
 - [Найближчі популярні місця](#nearby-popular-places)
-- [Гіди](#guides) (лише Android)
+- [Гіди](#guides) 
 - [Маршрути громадського транспорту для зупинок](#public-transport-routes)
 - [Улюблені / Шляхові точки з тієї ж групи](#favorites--track-points-from-the-group)
 - [Посилання на OpenStreetMap](#openstreetmap-link)
@@ -157,7 +157,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Доступність](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Ширина](https://wiki.openstreetmap.org/wiki/Key:width) / [Висота](https://wiki.openstreetmap.org/wiki/Key:height) 
 
-Окрім перелічених вище полів, OsmAnd також може відображати додаткову описову інформацію, взяту з OpenStreetMap. Ці атрибути допомагають краще зрозуміти характеристики місця та можуть включати деталі, такі як висота, напрямок, рік будівництва, тип поверхні або покриття, рівень у приміщенні, варіанти оплати, доступність доставки чи на винос та багато інших. OsmAnd відображає ці атрибути з чіткими мітками та, де можливо, іконками, що полегшує читання та розпізнавання інформації. Точний набір атрибутів залежить від даних, доступних в OpenStreetMap для вибраного об'єкта.
+Якщо поле контакту (наприклад, *Вебсайт*, *Номер телефону* або *Електронна пошта*) містить кілька значень, торкання його відображає список доступних записів. Виберіть потрібний запис, щоб виконати відповідну дію.
+
+Окрім перелічених вище полів, OsmAnd також може відображати додаткову описову інформацію, взяту з OpenStreetMap. Ці атрибути допомагають краще зрозуміти характеристики місця та можуть включати деталі, такі як висота, напрямок, рік будівництва, тип поверхні або покриття, рівень у приміщенні, варіанти оплати, доступність доставки чи на винос та багато інших. OsmAnd відображає ці атрибути з чіткими мітками та, де можливо, іконками, що полегшує читання та розпізнавання інформації. Точний набір атрибутів залежить від даних, доступних в OpenStreetMap для вибраного об’єкта.
 
 
 ### Опис статті {#article-description}
@@ -166,23 +168,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Список описів](@site/static/img/map/description_list_new_android.png) ![Список описів](@site/static/img/map/description_list_dialog.png)
-
-Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md#wikipedia-article), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
-
-Если вибране місце має статтю Wikipedia, у цьому розділі відображається короткий попередній перегляд. Коли повна стаття недоступна в офлайн-режимі, з'являється кнопка *Читати на Wikipedia*. Торкання її відкриває діалог з опціями залежно від доступу користувача: користувачі з купленим планом можуть завантажити регіональні дані Wikipedia або відкрити статтю в браузері, тоді як безкоштовні користувачі можуть відкрити статтю онлайн або перейти на екран, що пропонує офлайн-доступ.
+![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Список описів](@site/static/img/map/description_list_new_ios.png)
-
-Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
+![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md#wikipedia-article), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
+
+Якщо вибране місце має статтю Wikipedia, у цьому розділі відображається короткий попередній перегляд. Коли повна стаття недоступна в офлайн-режимі, з’являється кнопка *Читати на Wikipedia*. Торкання її відкриває діалог з опціями залежно від доступу користувача: користувачі з купленим планом можуть завантажити регіональні дані Wikipedia або відкрити статтю в браузері, тоді як безкоштовні користувачі можуть відкрити статтю онлайн або перейти на екран, що пропонує офлайн-доступ.
 
 
 ### Альтернативні назви {#alternative-names}
@@ -191,13 +191,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Альтернативні назви Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Альтернативні назви Android](@site/static/img/map/alternative_names_andr.png)
+![Alternative names Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternative names Android](@site/static/img/map/alternative_names_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Альтернативні назви iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Альтернативні назви iOS](@site/static/img/map/alternative_names_2_ios_new.png)
+![Alternative names iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternative names iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -215,6 +215,28 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 - Якщо певний переклад *недоступний*, OsmAnd за замовчуванням використовує **місцеву** назву для забезпечення точності та узгодженості в багатомовних регіонах.
 
+### Пов’язані {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Related Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Related iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+Розділ **Пов’язані** відображає об’єкти карти, пов’язані з вибраним місцем через зв’язок OpenStreetMap. Цей розділ доступний для підтримуваних POI на основі зв’язків, таких як університетські містечка та інші багатополігональні об’єкти.
+
+Торкніться будь-якого елемента в списку, щоб відкрити його контекстне меню карти. Це дозволяє швидко переміщатися між пов’язаними об’єктами, що належать до одного зв’язку.
+
 
 ### В межах області {#polygon-information}
 
@@ -222,27 +244,27 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="android" label="Android">  
 
-![Інформація про полігон Android](@site/static/img/map/polygon_information_andr.png)
+![Polygon Information Android](@site/static/img/map/polygon_information_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Інформація про полігон iOS](@site/static/img/map/polygon_information_ios_new.png)
+![Polygon Information Android](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
-Функція **В межах області** перелічує **області**, в яких знаходиться об'єкт. Це включає географічні об'єкти, адміністративні межі, зони землекористування, природні об'єкти та інші категоризовані області. *Список навколишніх полігонів* відсортований *від найменшого до найбільшого* за розміром площі.
+Функція **В межах області** перелічує **області**, в яких знаходиться об’єкт. Це включає географічні об’єкти, адміністративні межі, зони землекористування, природні об’єкти та інші категоризовані області. *Список навколишніх полігонів* відсортований *від найменшого до найбільшого* за розміром площі.
 
 ### Координати {#coordinates}
 
 |Формат координат| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Прості десяткові градуси)</li><li>DDD.DDDDD (N/S, E/W через кому)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Стандарт UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Швейцарська сітка CH1903 та CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Веб-посилання OsmAnd](https://osmand.net/map)</li><li>[Веб-посилання OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Координати](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Прості десяткові градуси)</li><li>DDD.DDDDD (N/S, E/W через кому)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Стандарт UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Швейцарська сітка CH1903 та CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Веб-посилання OsmAnd](https://osmand.net/map)</li><li>[Веб-посилання OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-У контекстному меню ви можете знайти [географічні координати](../search/search-coordinates.md#coordinate-format) точки в різних форматах, а також посилання OsmAnd та [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link), якими можна поділитися (остання опція доступна лише при увімкненому [плагіні редагування OpenStreetMap](../plugins/osm-editing.md)). Якщо ви розгорнете розділ координат і зробите довгий дотик на будь-якому рядку зі списку, його значення будуть автоматично скопійовані в буфер обміну (**Android**) або опція *Копіювати* стане доступною у спливаючому повідомленні (**iOS**).  
+У контекстному меню ви можете знайти [географічні координати](../search/search-coordinates.md#coordinate-format) точки в різних форматах, а також посилання OsmAnd та [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link), якими можна поділитися (остання опція доступна лише при увімкненому [плагіні редагування OpenStreetMap](../plugins/osm-editing.md)). Якщо ви розгорнете розділ координат і зробите довгий дотик на будь-якому рядку зі списку, його значення будуть автоматично скопійовані в буфер обміну (**Android**) або опція *Копіювати* стане доступною у спливаючому повідомленні (**iOS**).  
 
 Веб-посилання OsmAnd може бути автоматично розпізнане OsmAnd (приклад: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Посилання OsmAnd та [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) відкриваються на відповідних сайтах з позначкою на місці інтересу.  
 
@@ -253,19 +275,19 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="android" label="Android">  
 
-![Найближчі POI Android](@site/static/img/map/nearby_poi_android.png)
+![Nearby POI Android](@site/static/img/map/nearby_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Найближчі POI iOS](@site/static/img/map/nearby_poi_ios.png)
+![Nearby POI IOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Цей розділ відображає найближчі [Об'єкти інтересу](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI в тій самій категорії.
+Цей розділ відображає найближчі [Об’єкти інтересу](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI в тій самій категорії.
 
 Дотик до *Найближчі POI* відкриває список точок. Дотик до однієї з цих точок зі списку переміщує карту до цієї точки з відкриттям контекстного меню точки на карті.
 
@@ -276,9 +298,9 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="android" label="Android">  
 
-![Найближчі місця Android](@site/static/img/map/nearby_places_android.png)
+![Nearby Places Android](@site/static/img/map/nearby_places_android.png)
 
-Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам'ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
+Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам’ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
 
 Дотик до *Найближчі [Популярні місця](https://osmand.net/docs/user/map/popular_places)* відкриває список найближчих локацій. Вибір будь-якого елемента центрує карту на цьому місці та відкриває його контекстне меню, де ви можете прочитати короткий опис або торкнутися ***Читати повну статтю***, щоб переглянути повний посібник.
 
@@ -286,13 +308,13 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="ios" label="iOS">
 
-![Найближчі місця iOS](@site/static/img/map/nearby_places_ios.png)
+![Nearby Places IOS](@site/static/img/map/nearby_places_ios.png)
 
-Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам'ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
+Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам’ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
 
 Дотик до *Найближчі [Популярні місця](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* відкриває список найближчих локацій. Вибір будь-якого елемента центрує карту на цьому місці та відкриває його контекстне меню, де ви можете прочитати короткий опис або торкнутися ***Читати повну статтю***, щоб переглянути повний посібник.
 
-> **ПРИМІТКА**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) з'явиться лише якщо ви попередньо завантажили спеціальні карти зі [статтями Wikipedia для цієї області](../plugins/wikipedia.md#download-wikipedia-packages)*.
+> **ПРИМІТКА**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) з’явиться лише якщо ви попередньо завантажили спеціальні карти зі [статтями Wikipedia для цієї області](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
 </TabItem>
 
@@ -300,15 +322,27 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Гіди {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Гіди Android](@site/static/img/map/details_guides.png)
+<TabItem value="android" label="Android">  
 
-Розділ **Гіди** з'являється в контекстному меню карти для деяких місць і надає доступ до **подорожніх (Wikivoyage)** гайдів, пов'язаних із вибраною точкою інтересу. Він показує список записів гайдів (наприклад, країна чи регіон), які згадують вибране місце.
+![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
+
+Розділ **Гіди** з’являється в контекстному меню карти для деяких місць і надає доступ до **подорожніх (Wikivoyage)** гайдів, пов’язаних із вибраною точкою інтересу. Він показує список записів гайдів (наприклад, країна чи регіон), які згадують вибране місце.
 
 Розділ Гіди відображається лише якщо дані **Travel (Wikivoyage)** завантажено для вибраної області.
 
-**Примітка:** Гіди пов'язані з вмістом Wikivoyage, а не з загальними описами Wikipedia.
+**Примітка:** Гіди пов’язані з вмістом Wikivoyage, а не з загальними описами Wikipedia.
 
 
 ### Маршрути громадського транспорту {#public-transport-routes}
@@ -317,13 +351,13 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="android" label="Android">  
 
-![Маршрути громадського транспорту Android](@site/static/img/map/pt_routes_android.png)
+![Public transport Routes Android](@site/static/img/map/pt_routes_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Маршрути громадського транспорту iOS](@site/static/img/map/pt_routes_ios.png)
+![Public transport Routes iOS](@site/static/img/map/pt_routes_ios.png)
 
 </TabItem>
 
@@ -334,7 +368,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Улюблені / Шляхові точки з групи {#favorites--track-points-from-the-group}
 
-![Список улюблених](@site/static/img/map/favorite_list_android.png) ![Повний список улюблених](@site/static/img/map/favorite_list_full_android.png)
+![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
 
 Це список усіх точок в одній групі для Улюбленого або Шляхової точки. При дотику розгортається весь список точок однієї групи, при дотику до точки зі списку карта переміщується до вибраної точки.
 
@@ -343,10 +377,10 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 ### Посилання на OpenStreetMap {#openstreetmap-link}
 
-![Посилання OSM](@site/static/img/map/context_menu_osm_link.png) ![Посилання OSM](@site/static/img/map/context_menu_osm_link_1.png)
+![OSM link](@site/static/img/map/context_menu_osm_link.png) ![OSM link](@site/static/img/map/context_menu_osm_link_1.png)
 
-Посилання на OpenStreetMap надає пряме посилання на об'єкт OpenStreetMap, де ви можете знайти повну інформацію про нього:  
-[вузол (node)](https://wiki.openstreetmap.org/wiki/Node) або [шлях (way)](https://wiki.openstreetmap.org/wiki/Way).
+Посилання на OpenStreetMap надає пряме посилання на об’єкт OpenStreetMap, де ви можете знайти повну інформацію про нього:  
+[node](https://wiki.openstreetmap.org/wiki/Node) або [way](https://wiki.openstreetmap.org/wiki/Way).
 
 
 ### Онлайн-фотографії {#online-photos}
@@ -355,15 +389,15 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню онлайн-фотографій Android](@site/static/img/map/images_nearby_1_andr.png)
-![Контекстне меню онлайн-фотографій Android](@site/static/img/map/gallery_menu_andr.png)
+![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)
+![Online Photos context menu Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/online_photo_ios_new.png)
-![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios_new.png)
+![Online Photos context menu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
@@ -388,13 +422,13 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="android" label="Android">  
 
-![Зображення на рівні вулиць Android](@site/static/img/map/street_level_imagery_andr.png)
+![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Зображення на рівні вулиць iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
@@ -402,7 +436,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapillary.com/), глобальною платформою для краудсорсингових зображень на рівні вулиць. Ця функція дозволяє переглядати та досліджувати послідовності фотографій реального світу безпосередньо на карті.
 
-Зображення Mapillary з'являються у вигляді іконок фотографій з напрямком, вирівняних з дорогою або стежкою, де вони були зроблені. Це може допомогти вам краще зрозуміти оточення, особливо в незнайомих місцях.
+Зображення Mapillary з’являються у вигляді іконок фотографій з напрямком, вирівняних з дорогою або стежкою, де вони були зроблені. Це може допомогти вам краще зрозуміти оточення, особливо в незнайомих місцях.
 
 Ви можете:
 
@@ -416,7 +450,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <InfoAndroidOnly />
 
-![Список зображень](@site/static/img/map/image_list_android.png) ![Список відео](@site/static/img/map/video_list_android.png)
+![Image list](@site/static/img/map/image_list_android.png) ![Video list](@site/static/img/map/video_list_android.png)
 
 Інформація про [Аудіо/відео нотатки](../plugins/audio-video-notes.md), така як дата, координати, попередній перегляд та інше, доступна в меню **Деталі**. Ви можете відкрити нотатки у сторонньому програмному забезпеченні, торкнувшись кнопки **Відтворити / Показати** в контекстному меню нотатки.
 
@@ -427,19 +461,19 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Меню дій Android](@site/static/img/map/actions_menu_android.png) ![Додаткове меню дій Android](@site/static/img/map/actions_additional_menu_android.png)
+![Actions menu Android](@site/static/img/map/actions_menu_android.png) ![Actions additional menu Android](@site/static/img/map/actions_additional_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Меню дій iOS](@site/static/img/map/actions_menu_ios.png)  ![Додаткове меню дій iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![Actions menu iOS](@site/static/img/map/actions_menu_ios.png)  ![Actions additional menu iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Це набір специфічних маніпуляцій, які можна виконати з точкою або об'єктом. Це меню розділене на дві частини: видима секція складається максимум з 3 дій, а інші дії доступні за кнопкою *Дії*. Ви можете налаштувати (*Android*) порядок дій у [Загальних налаштуваннях](#customize).
+Це набір специфічних маніпуляцій, які можна виконати з точкою або об’єктом. Це меню розділене на дві частини: видима секція складається максимум з 3 дій, а інші дії доступні за кнопкою *Дії*. Ви можете налаштувати (*Android*) порядок дій у [Загальних налаштуваннях](#customize).
 
 
 ### Додати / Редагувати Улюблене {#add--edit-favorite}
@@ -448,23 +482,23 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Додати/Редагувати улюблене Android](@site/static/img/map/add_favorite_android.png)
+![Add Edit favorite action Android](@site/static/img/map/add_favorite_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Додати/Редагувати улюблене iOS](@site/static/img/map/add_favorite_ios.png)
+![Add Edit favorite action iOS](@site/static/img/map/add_favorite_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-У контекстному меню є опції **додати** або **редагувати** вибрану точку / об'єкт до [списку улюблених](../personal/myplaces.md).
+У контекстному меню є опції **додати** або **редагувати** вибрану точку / об’єкт до [списку улюблених](../personal/myplaces.md).
 
-- Щоб **Додати**, вам потрібно вибрати точку / об'єкт, торкнутися іконки *Зірочка* (з підписом Додати) та ввести всю необхідну інформацію.  
+- Щоб **Додати**, вам потрібно вибрати точку / об’єкт, торкнутися іконки *Зірочка* (з підписом Додати) та ввести всю необхідну інформацію.  
 
-- Щоб **Редагувати** інформацію про улюблену точку, вам потрібно увімкнути *Показати на карті* (*Меню → Мої місця → Улюблені*), потім натиснути на неї, і в контекстному меню замість іконки *Зірочка* з'явиться іконка *Олівець* (з підписом Редагувати).
+- Щоб **Редагувати** інформацію про улюблену точку, вам потрібно увімкнути *Показати на карті* (*Меню → Мої місця → Улюблені*), потім натиснути на неї, і в контекстному меню замість іконки *Зірочка* з’явиться іконка *Олівець* (з підписом Редагувати).
 
 - [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - додає вибрану точку до списку улюблених.
 
@@ -475,18 +509,18 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Додати/Редагувати маркер Android](@site/static/img/map/add_marker_android.png) ![Дія Пропустити маркер Android](@site/static/img/map/action_pass_marker_android.png)
+![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Додати/Редагувати маркер iOS](@site/static/img/map/add_marker_ios.png)  ![Дія Відновити маркер Android](@site/static/img/map/action_restore_marker_android.png)
+![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)  ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Можна позначити точку або об'єкт, щоб полегшити планування навігації. Вам просто потрібно торкнутися іконки **прапорця** в меню (*Android*), **стрілки** (*iOS*) - відображає напрямок і відстань до вибраної точки від вашого поточного місцезнаходження.
+Можна позначити точку або об’єкт, щоб полегшити планування навігації. Вам просто потрібно торкнутися іконки **прапорця** в меню (*Android*), **стрілки** (*iOS*) - відображає напрямок і відстань до вибраної точки від вашого поточного місцезнаходження.
 
 Дії:
 
@@ -504,13 +538,13 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Поділитися Android](@site/static/img/map/action_share_2_andr_new.png) 
+![Share action Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Поділитися iOS](@site/static/img/map/action_share_1_ios_new.png)
+![Share action iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -543,15 +577,15 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Маршрути Android](@site/static/img/map/action_directions_android.png)
+![Directions Android](@site/static/img/map/action_directions_android.png)
 
-![Кілька маршрутів Android](@site/static/img/map/action_multiple_directions_android.png)
+![Multiple Directions Android](@site/static/img/map/action_multiple_directions_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Маршрути iOS](@site/static/img/map/action_directions_ios.png)
+![Directions iOS](@site/static/img/map/action_directions_ios.png)
 
 </TabItem>
 
@@ -574,13 +608,13 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Пошук Android](@site/static/img/map/action_search_android.png)
+![Search action Android](@site/static/img/map/action_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Пошук iOS](@site/static/img/map/action_search_ios.png)
+![Search action iOS](@site/static/img/map/action_search_ios.png)
 
 </TabItem>
 
@@ -597,13 +631,13 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Уникати дороги на карті Android](@site/static/img/map/action_avoid_android.png) ![Скасувати уникнення дороги Android](@site/static/img/map/action_avoid_delete_android.png)
+![Avoid road on the map Android](@site/static/img/map/action_avoid_android.png) ![Dismiss avoided road Android](@site/static/img/map/action_avoid_delete_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Уникати дороги на карті iOS](@site/static/img/map/avoid_route_ios_1.png) ![Скасувати уникнення дороги iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
+![Avoid road on the map iOS](@site/static/img/map/avoid_route_ios_1.png) ![Dismiss avoided road iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
 
 </TabItem>
 
@@ -617,36 +651,36 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 :::
 
 
-### Змінити положення об'єкта {#change-object-position}
+### Змінити положення об’єкта {#change-object-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Дія Змінити положення Android](@site/static/img/map/action_change_position_android.png)
+![Action Change position Android](@site/static/img/map/action_change_position_android.png)
 
-![Інтерфейс зміни положення Android](@site/static/img/map/action_change_position_ui_android.png)
+![Action Change position UI Android](@site/static/img/map/action_change_position_ui_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Змінити положення iOS](@site/static/img/map/action_change_position_ios.png)
+![Action Change position iOS](@site/static/img/map/action_change_position_ios.png)
 
-![Інтерфейс зміни положення iOS](@site/static/img/map/action_change_position_ui_iOS.png)
+![Action Change position UI iOS](@site/static/img/map/action_change_position_ui_iOS.png)
 
 </TabItem>
 
 </Tabs>  
 
-Майже кожен створений користувачем об'єкт можна переміщувати, тобто Маркер, Улюблене, Створений POI, Аудіо/Відео нотатка або Шляхова точка треку. Спочатку виберіть об'єкт на карті, а потім скористайтеся меню *<Translate android="true" ids="change_markers_position"/>*, щоб перемістити його в нове місце.
+Майже кожен створений користувачем об’єкт можна переміщувати, тобто Маркер, Улюблене, Створений POI, Аудіо/Відео нотатка або Шляхова точка треку. Спочатку виберіть об’єкт на карті, а потім скористайтеся меню *<Translate android="true" ids="change_markers_position"/>*, щоб перемістити його в нове місце.
 
 
 ### Планувати маршрут {#plan-a-route}
 
-![Дія Планувати маршрут Android](@site/static/img/map/action_plan_route_android.png)
+![Action Plan a route Android](@site/static/img/map/action_plan_route_android.png)
 
-Ви можете розпочати планування маршруту з вибраної точки через контекстне меню об'єкта.
+Ви можете розпочати планування маршруту з вибраної точки через контекстне меню об’єкта.
 
 Детальніше про інструмент [Планувати маршрут](../plan-route/create-route.md).
 
@@ -657,19 +691,19 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Завантажити онлайн-карту Android](@site/static/img/map/action_load_online_map_and.png)
+![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Завантажити онлайн-карту iOS](@site/static/img/map/action_download_online_map_ios.png)
+![Action Download online map iOS](@site/static/img/map/action_download_online_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Щоб оновити або завантажити онлайн-карти (тайли) в певному місці, ви можете використовувати контекстне меню об'єкта:
+Щоб оновити або завантажити онлайн-карти (тайли) в певному місці, ви можете використовувати контекстне меню об’єкта:
 
 - **Android**: *<Translate android="true" ids="shared_string_download_map"/>* і для *Оновлення*, перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
 - **iOS**: *<Translate ios="true" ids="shared_string_download_map"/>* та *<Translate ios="true" ids="update_tile"/>*.  
@@ -683,23 +717,23 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Завантажити векторну карту Android](@site/static/img/map/action_download_vector_map_android.png)
+![Action Download vector map Android](@site/static/img/map/action_download_vector_map_android.png)
 
-![Вибір векторної карти світу на Android](@site/static/img/map/download_region_map_via_worldmap.png)
+![Select vector map worldwide on Android](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Завантажити векторну карту iOS](@site/static/img/map/action_download_vector_map_ios.png)
+![Action Download vector map iOS](@site/static/img/map/action_download_vector_map_ios.png)
 
-![Вибір векторної карти на iOS](@site/static/img/map/download_map_ios.png)
+![Select vector map on iOS](@site/static/img/map/download_map_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Якщо в обраному місці немає офлайн-карти, наприклад, меню об'єкта карти було відкрито через Пошук або через певне Улюблене, то буде запропоновано [завантажити](../start-with/download-maps.md#select-on-the-map) найменшу можливу офлайн-карту.  
+Якщо в обраному місці немає офлайн-карти, наприклад, меню об’єкта карти було відкрито через Пошук або через певне Улюблене, то буде запропоновано [завантажити](../start-with/download-maps.md#select-on-the-map) найменшу можливу офлайн-карту.  
 
 **iOS**. Якщо у вас вже є [завантажені](../map/map-context-menu.md) карти OsmAnd (векторні або рельєфні), їх можна оновити через контекстне меню. Вам потрібно буде спочатку вибрати регіон на карті - торкніться будь-якого місця на світовому масштабі 3-7.  
 
@@ -716,23 +750,23 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Паркування Android](@site/static/img/map/action_parking_android.png)
+![Action Parking Android](@site/static/img/map/action_parking_android.png)
 
-![Дія Видалити паркування Android](@site/static/img/map/context_menu_limited_parking.png)
+![Action Delete Parking Android](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Паркування iOS](@site/static/img/map/action_parking_ios.png)
+![Action Parking iOS](@site/static/img/map/action_parking_ios.png)
 
-![Дія Видалити паркування iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
+![Action Delete Parking iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Будь-яке вибране місце на карті може бути позначене як [місце паркування](../plugins/parking.md). Щоб видалити місце паркування, ви можете відкрити контекстне меню, пов'язане з місцем паркування.
+Будь-яке вибране місце на карті може бути позначене як [місце паркування](../plugins/parking.md). Щоб видалити місце паркування, ви можете відкрити контекстне меню, пов’язане з місцем паркування.
 
 
 ### * Додати / Редагувати шляхова точка треку {#-add--edit-track-waypoint}
@@ -745,15 +779,15 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Вибір треку для додавання шляхової точки Android](@site/static/img/map/tracks_tab_android.png) ![Дія Додати шляхова точка треку Android](@site/static/img/map/add_waypoint_android.png)
+![Select Track to add Waypoint Android](@site/static/img/map/tracks_tab_android.png) ![Add Track Waypoint Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Шляхова точка iOS](@site/static/img/map/action_waypoint_ios.png)
+![Action Waypoint iOS](@site/static/img/map/action_waypoint_ios.png)
 
-![Вибір треку для додавання шляхової точки iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
+![Select Track to add Waypoint iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
 
 </TabItem>
 
@@ -763,7 +797,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 - Виберіть місце на карті [довгим дотиком](../map/map-context-menu.md#select-any-point-long-tap).
 - У *контекстному меню карти*, що відкриється, виберіть *Дії → Додати шляхову точку треку*.
-- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на карті, а також [поточний запис треку](../plugins/trip-recording.md), до якого ви можете додати вибрану шляхову точку (*на Android* список згруповано у вклади: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
+- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на карті, а також [поточний запис треку](../plugins/trip-recording.md), до якого ви можете додати вибрану шляхову точку (*на Android* список згруповано у вкладки: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Ви можете додавати шляхові точки до треку, який ще не активний для запису, у цьому випадку неактивний трек переходить зі стану *Старт* у стан *Продовжити*.
 - [Заповніть](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) необхідні дані та збережіть шляхову точку.
 - Ви можете налаштувати [Швидкі дії](../widgets/quick-action.md), додавши шляхову точку до *Додати шляхову точку треку*.
@@ -779,13 +813,13 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія POI Android](@site/static/img/map/action_poi_android.png)
+![Action POI Android](@site/static/img/map/action_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія POI iOS](@site/static/img/map/action_poi_ios.png)
+![Action POI iOS](@site/static/img/map/action_poi_ios.png)
 
 </TabItem>
 
@@ -807,17 +841,17 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Примітка Android](@site/static/img/map/action_note_android.png)
+![Action Note Android](@site/static/img/map/action_note_android.png)
 
-![Дія Додати примітку Android](@site/static/img/map/action_add_osm_note_ui_android.png)
+![Action Add Note Android](@site/static/img/map/action_add_osm_note_ui_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Дія Примітка iOS](@site/static/img/map/action_note_ios.png)
+![Action Note iOS](@site/static/img/map/action_note_ios.png)
 
-![Дія Додати примітку iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+![Action Add Note iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
 
 </TabItem>
 
@@ -832,10 +866,10 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб коментувати/закривати примітки OSM, увімкніть [**плагін "Редагування OSM"**](../plugins/osm-editing.md).
 :::
 
-![Коментувати примітку OSM Android](@site/static/img/map/action_comment_note_android.png) ![Повторно відкрити примітку OSM Android](@site/static/img/map/action_reopen_note_android.png)
+![Comment OSM Note Android](@site/static/img/map/action_comment_note_android.png) ![Reopen OSM Note Android](@site/static/img/map/action_reopen_note_android.png)
 
 Ви можете [коментувати](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes), [вирішувати](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) та повторно відкривати
-примітки OpenStreetMap через контекстне меню об'єкта.
+примітки OpenStreetMap через контекстне меню об’єкта.
 
 
 ### * Завантажити POI / Примітку OSM {#-upload-poi--osm-note}
@@ -844,9 +878,9 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб завантажити POI / примітку OSM, увімкніть [**плагін "Редагування OSM"**](../plugins/osm-editing.md).
 :::
 
-![Завантажити POI Android](@site/static/img/map/action_poi_upload_android.png) ![Завантажити примітку OSM Android](@site/static/img/map/action_note_upload_android.png)
+![Upload POI Android](@site/static/img/map/action_poi_upload_android.png) ![Upload OSM Note Android](@site/static/img/map/action_note_upload_android.png)
 
-Якщо ви використовуєте *Офлайн-режим* для додавання / редагування POI або примітки OSM, вам потрібно буде завантажити зміни до OpenStreetMap. За замовчуванням *Офлайн-режим* увімкнено, щоб уникнути випадкових змін у публічній базі даних. Ви можете завантажити або видалити зміни через контекстне меню створеного об'єкта.
+Якщо ви використовуєте *Офлайн-режим* для додавання / редагування POI або примітки OSM, вам потрібно буде завантажити зміни до OpenStreetMap. За замовчуванням *Офлайн-режим* увімкнено, щоб уникнути випадкових змін у публічній базі даних. Ви можете завантажити або видалити зміни через контекстное меню створеного об’єкта.
 
 
 ### * Записати аудіо/відео нотатку {#-record-av-note}
@@ -857,7 +891,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 Щоб записувати аудіо/відео нотатки, увімкніть [**плагін "Аудіо/відео нотатки"**](../plugins/audio-video-notes.md).
 :::
 
-![Дія Аудіо-Відео Android](@site/static/img/map/action_av_note_android.png)
+![Action Audio-Video Android](@site/static/img/map/action_av_note_android.png)
 
 Записує або робить медіа-нотатку у вибраній точці на карті.
 
@@ -872,7 +906,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,context_menu_actions"/>*
 
-![Налаштування контекстного меню карти](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Налаштування контекстного меню карти](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Налаштування контекстного меню карти](@site/static/img/map/map_context_menu_customize_3.png)
+![Map context menu Customize](@site/static/img/map/map_context_menu_customize_1.png)  <!-- ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_2.png) -->  ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_3.png)
 
 Ви можете змінити порядок або приховати елементи з меню *Дії* в *контекстному меню карти*. Загалом пропонується 16 дій.  
 
@@ -883,10 +917,10 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 - **<Translate android="true" ids="main_actions"/>**. Розділ має лише 4 кнопки, три з яких можна налаштувати, а кнопка "Дії" залишається незмінною.  
 - **<Translate android="true" ids="additional_actions"/>**. Ви можете отримати доступ до цих дій, торкнувшись кнопки *Дії*.  
-- **<Translate android="true" ids="shared_string_hidden"/>**. Переміщення дій до цього розділу не зупиняє їх роботу. Вони просто не з'являються в меню "Дії".  
+- **<Translate android="true" ids="shared_string_hidden"/>**. Переміщення дій до цього розділу не зупиняє їх роботу. Вони просто не з’являються в меню "Дії".  
 
 
-## Пов'язані статті {#related-articles}
+## Пов’язані статті {#related-articles}
 
 - [Векторні карти (Стилі карти)](./vector-maps.md)
 - [Растрові карти (Онлайн / Офлайн)](./raster-maps.md)

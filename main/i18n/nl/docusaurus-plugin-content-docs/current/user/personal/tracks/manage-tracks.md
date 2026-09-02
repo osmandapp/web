@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  Tracks beheren
 ---
@@ -15,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## Overzicht {#overview}
 
 Alle tracks in OsmAnd worden opgeslagen in een tabblad in *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd verwerkt het trackbestand in [GPX-formaat](https://en.wikipedia.org/wiki/GPS_Exchange_Format), maar [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) kunnen worden geïmporteerd en geconverteerd naar GPX. Lees meer over verschillende soorten tracks in het artikel [Tracks op kaart](../../map/tracks/index.md#types-of-tracks).
@@ -24,13 +23,13 @@ Alle tracks in OsmAnd worden opgeslagen in een tabblad in *<Translate android="t
 
 <TabItem value="android" label="Android">
 
-![Overzicht tracks beheren Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Manage track Overview Android](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Overzicht tracks beheren iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Manage track Overview iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -43,13 +42,13 @@ Alle tracks in OsmAnd worden opgeslagen in een tabblad in *<Translate android="t
 
 <TabItem value="android" label="Android">
 
-![Een route plannen track-wijzigen-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen track-wijzigen-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
@@ -70,23 +69,25 @@ U kunt tracks toevoegen in OsmAnd op de volgende manieren:
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tabblad*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Mijn plaatsen met tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 Alle tracks die ooit zijn opgenomen, aangemaakt of geïmporteerd, worden automatisch weergegeven in de map [Mijn plaatsen](../../personal/myplaces.md) in het tabblad *Tracks*. Ze zijn georganiseerd per map of worden weergegeven in een lijst eronder.
+
+Elke track in de lijst toont de naam van de bovenliggende map op de tweede regel, gescheiden door `|` (bijvoorbeeld `Wandelen | Tracks`), zodat u gemakkelijker kunt zien waar een track is opgeslagen. Dit geldt in [Zoeken](#search), [Slimme mappen](../../personal/tracks/smart-folder.md) en [Kaart configureren → Tracks](../../map/tracks/index.md#configure-map).
 
 
 ### Trackmenu {#track-menu}
@@ -103,9 +104,9 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Contextmenu van een track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Contextmenu van een track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -151,13 +152,13 @@ Het menu biedt de volgende acties:
 
 <TabItem value="android" label="Android">
 
-![Zoekfunctie tracks Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![My places tracks seach function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zoekfunctie tracks Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![My places tracks seach function iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +170,7 @@ Beschikbaar:
 
 - Zoeken op tracknaam.
 - [Sorteer op](#sort-by) voor beter zoeken als u de titel niet meer weet.
-- [Filter](./smart-folder.md#search-filter) (*alleen Android*) als u de specifieke kenmerken van de track nodig heeft.
+- [Filter](./smart-folder.md#search-filter) als u de specifieke kenmerken van de track nodig heeft.
 
 
 ### Selectiemodus {#selection-mode}
@@ -178,13 +179,13 @@ Beschikbaar:
 
 <TabItem value="android" label="Android">
 
-![Sorteerfunctie tracks Mijn plaatsen Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![My places tracks sort function Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tracks Mijn plaatsen iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -206,7 +207,7 @@ Nadat u uw keuze heeft gemaakt, zijn de volgende stappen beschikbaar:
 
 - [Uiterlijk wijzigen](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Met deze optie kunt u het uiterlijk van geselecteerde tracks aanpassen, waardoor ze beter zichtbaar en herkenbaar worden op de kaart.
 
-- **Verwijderen** — Als de geselecteerde tracks of mappen niet langer nodig zijn, kunt u ze met de functie Verwijderen verwijderen, waarbij de app bevestigingsopties biedt om onbedoeld verwijderen te voorkomen.
+- **Verwijderen** — Als de geselecteerde tracks of mappen niet langer nodig is, kunt u ze met de functie Verwijderen verwijderen, waarbij de app bevestigingsopties biedt om onbedoeld verwijderen te voorkomen.
 
 
 ### Tracks sorteren {#sort-by}
@@ -215,13 +216,13 @@ Nadat u uw keuze heeft gemaakt, zijn de volgende stappen beschikbaar:
 
 <TabItem value="android" label="Android">
 
-![Sorteerfunctie tracks Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sorteerfunctie tracks Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -248,13 +249,13 @@ OsmAnd biedt een eenvoudige manier om uw tracks te sorteren, zodat u een grote v
 
 <TabItem value="android" label="Android">
 
-![Sorteerfunctie tracks Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sorteerfunctie tracks Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -281,7 +282,7 @@ Tik op het *drie-puntenmenu* in het mapveld om het mapmenu te **openen**.
 
 > Tik lang op het mapveld om het mapmenu te **openen**.
 
-![Contextmenu van een track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Contextmenu van een track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -295,7 +296,7 @@ Met het trackmapmenu kunt u mappen bekijken, hernoemen, exporteren en beheren.
 - **Naam** — Toont de mapnaam, aanmaakdatum en het aantal tracks dat de map bevat.
 - **Toon alle tracks op de kaart** (*alleen Android*) — Toont alle tracks in de map op de kaart. Als er veel tracks zijn, kan dit ervoor zorgen dat het apparaat vastloopt.
 - **Naam bewerken** (*Android*) / **Hernoemen** (*iOS*) — Hiermee kunt u de map hernoemen.
-- [Standaard uiterlijk wijzigen](../../map/tracks/appearance.md) (*Android*) / **Uiterlijk** (*iOS*) — Wijzigt het uiterlijk van alle tracks in de map.
+- [Standaard uiterlijk wijzigen](../../map/tracks/appearance.md) (*Android*) / **Standaard uiterlijk** (*iOS*) — Wijzigt het uiterlijk van alle tracks in de map.
 - [Exporteren](../../personal/import-export.md) — Opent het tabblad *Menu → Instellingen → Acties* om alle tracks in de map te exporteren als een [`.osf`-bestand](../../personal/import-export.md#export).
 - [Verplaatsen](#track-folder) — Hiermee kunt u de map verplaatsen naar een andere bestaande map of een nieuwe aanmaken.
 - [Map verwijderen](#delete-folder) — Verwijdert de map na bevestiging. ***Deze actie is onomkeerbaar.***
@@ -307,7 +308,7 @@ Met het trackmapmenu kunt u mappen bekijken, hernoemen, exporteren en beheren.
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tabblad*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
 ![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -315,9 +316,9 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Mijn plaatsen met tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![Mijn plaatsen met tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -341,7 +342,7 @@ Onderaan de lijst in het tabblad *Tracks*, en onder de lijst met tracks **in elk
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Sorteerfunctie tracks Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -349,7 +350,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Tracks Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -386,9 +387,9 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Contextmenu van een track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Contextmenu van een track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 
@@ -422,7 +423,8 @@ Met de importtool kunt u tracks uit externe bestanden toevoegen voor offline nav
     *Extra opties:*
 
     - **GPX-bestanden met één track** - importeer de hele track direct.
-    - **GPX-bestanden met meerdere tracks** - kies ervoor om het enkele GPX-bestand te importeren of selecteer specifieke tracks.
+    - **GPX-bestanden met meerdere tracks** - kies ervoor om het enkele GPX-bestand te importeren of selecteer specifieke tracks.  
+    Wanneer een GPX-bestand meerdere tracks bevat, wordt het scherm Tracks importeren geopend, zodat u alle tracks in het bestand kunt bekijken, de gewenste tracks kunt selecteren, een doelmap kunt kiezen of alle tracks als één track kunt importeren met de optie *Importeren als één track*. Als het bestand waypoints bevat, kunt u deze ook bekijken en toewijzen voordat u de import voltooit.
 
 ***LET OP:*** *Tracks die handmatig aan de OsmAnd-map op uw apparaat zijn toegevoegd, worden automatisch geïmporteerd zonder de applicatie opnieuw te starten.*  
 

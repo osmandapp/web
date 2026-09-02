@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -104,6 +104,9 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [Nautische Tiefen](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Reiseführer (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Unterstützung für externe Sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Astronomie-Plugin](../plugins/astronomy.md) — [Beobachtungsplanung](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomie-Plugin](../plugins/astronomy.md) — [Interaktiver AR-Modus](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomie-Plugin](../plugins/astronomy.md) — [Offline-Himmelskarte](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Offline- und Online-Navigation](../navigation/index.md)<br/>mit Abbiegehinweisen | ✔ | ✔ | ✔ |
 | [Offline-Sofortsuche](../search/index.md) | ✔ | ✔ | ✔ |
 | [Routenaufzeichnung](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -139,6 +142,7 @@ Derzeit umfasst das Pro-Abonnement die folgenden Funktionen:
 | [Fahrzeugmetrik-Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Ermöglicht den Anschluss eines OBD-II-Scanners, um detaillierte Fahrzeugdaten in der OsmAnd-App anzuzeigen und die Informationen in Track-Aufzeichnungen zu speichern. Informationen zur Fahrzeuggeschwindigkeit und Motordrehzahl sind für OsmAnd kostenlos verfügbar.  |
 | [Routenlinie anpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Ändern der Farbe und Breite der Routenlinie während der Navigation. |
 | [Farbverlauf anpassen](../../user/plugins/topography.md#modify-color-scheme) | Ermöglicht es Ihnen, das Kartenbild durch Auswählen oder Importieren von Farbverläufen anzupassen. Sie können integrierte Verläufe bearbeiten oder eigene Paletten-Dateien verwenden, um Karten- und Routenfarben zu personalisieren. |
+| [Benutzerdefinierte Paletten erstellen](../../user/map/tracks/appearance.md#color-palette-editor) | Ermöglicht das Erstellen und Bearbeiten von Farbverläufen für die Track-Färbung mit relativen oder festen Werten. Sie können Farbschritte definieren, Werte zuweisen und anpassen, wie Daten (z. B. Geschwindigkeit oder Höhe) entlang des Tracks angezeigt werden. |
 | [Smart Folders – Organisieren nach](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Ermöglicht die Organisation von Tracks in Smart Folders mithilfe erweiterter Gruppierungsparameter wie Datum & Uhrzeit, Entfernung, Dauer, Geschwindigkeit, Höhe & Elevation sowie Sensordaten. Diese Optionen ermöglichen eine detailliertere Track-Kategorisierung und flexible Analyse. |
 
 

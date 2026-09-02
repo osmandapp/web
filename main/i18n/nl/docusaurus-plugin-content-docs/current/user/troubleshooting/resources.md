@@ -1,5 +1,5 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -54,6 +54,7 @@ De onderstaande lijst bevat converters voor verschillende gegevenstypen die door
 | iOverlander GPX naar OsmAnd | Python-script om geëxporteerde iOverlander *GPX*-bestanden naar OsmAnd te converteren met pictogrammen. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topografische kaart naar afdrukbaar| Dit is [een tool](https://github.com/acui/osmand_topo_map_generator) om een afdrukbare topografische kaart te genereren met behulp van schermafbeeldingen van OsmAnd (https://osmand.net). De kaart gebruikt het UTM-raster en bevat declinatie-informatie. Het is bedoeld voor gebruik met een kompas of een GPS-apparaat met UTM-coördinaten.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar werpt vanuit elk punt van een GPX-track een straal naar de zon en test deze tegen het terrein en de vegetatie (0,5 m HD LiDAR / IGN), voor een bepaalde datum en tijd. Meter voor meter vertelt het je of het zon of schaduw is. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Een zelfstandige tool die openbare LiDAR-gegevens downloadt van nationale portals in 22 landen | [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Aangepaste Hulpbronnen {#custom-resources}
 
@@ -66,7 +67,7 @@ Deze handleidingen, beschikbaar in meerdere talen, bieden vaak unieke inzichten,
 | Taal | Beschrijving | Link |
 | :-- | :-- | :-- |
 | Spaans  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spaans  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks en het Go to. Todo ello con de intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spaans  |  Este manual tiene el fin de explicar detalladamente todas las functies die heeft deze app, waaronder uitleg over de werking van waypoints, tracks en Go to. Dit alles met de bedoeling meer tools te bieden voor virtuele navigatie en als hulpmiddel voor geodetisch werk. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Spaans  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Tsjechisch   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | Frans  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -90,7 +91,7 @@ Hieronder volgt een lijst van [aangepaste plugins](../plugins/custom.md) die zij
 | AnyGIS Online Maps Collection | Gegevens van [AnyGIS web page](https://anygis.ru/index_en). Een verzameling van verschillende online kaartbronnen, waaronder satelliet-, toeristische en historische kaarten, onder andere.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Offline Map Legend | Dit pakket voegt een offline kaartlegenda toe (versie 1.01; 03-04-2024), toegankelijk via *Menu → Mijn Plaatsen → Favorieten → Kaartlegenda*. De kaartlegenda is ook beschikbaar op [deze locatie](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Offline Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
 | 🇺🇸US Lands & Trails | Een verzameling van gespecialiseerde Amerikaanse kaarten, geconverteerd naar OsmAnd OBF-formaat, met:<ul><li>[USGS Openbare gronden en beschermde gebieden (PAD-US 3.0), per staat](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[USFS Paden en Wegen, landelijk](https://www.fs.usda.gov/visit/maps),</li><li>[BLM Wegen en Paden, landelijk](https://www.blm.gov/maps),</li><li>[BLM Recreatieactiviteit POI's, landelijk](https://www.blm.gov/maps),</li><li>[Privégronden (perceelgegevens), voor sommige staten](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Meer info op [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸US Lands & Trails](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) dekt het grootste deel van Polen met een doorlopende ontwikkelingsinspanning. Lange tijd werd de naam UMP-pcPL (mapą prawie całej Polski) gebruikt. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) dekt het grootste deel van Polen met een doorlopende ontwikkelingsinspanning. Lange tijd werd de naam UMP-pcPL (mapą prawie gehele Polski) gebruikt. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Deze plugin bevat een lichtgewicht kaartstijl die de zichtbaarheid van onverharde wegen en paden in OsmAnd verbetert.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
@@ -110,7 +111,16 @@ Het standaard [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/ma
 | Selectie Kaartstijl | ["Selectie" Kaartstijl](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is een kaartstijl van Holder Tamm waarmee u kunt kiezen of u bepaalde objecten wilt verbergen of niet.  |["Selectie" Kaartstijl](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [De ExplorerRS-weergavestijl](https://github.com/sykoram/OsmAnd-ExplorerRS) is voornamelijk gebaseerd op UniMap en routes.addon.render.xml  |["ExplorerRS" Kaartstijl](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Dit is een OsmAnd-weergavestijl geoptimaliseerd voor stormjagen](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing weergavestijl](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Aangepaste gedefinieerde bronnen van het OsmAnd-project om het gedrag van OsmAnd fijn af te stemmen. Hier worden gedefinieerd: kaartweergavestijlen die in OsmAnd worden gebruikt, opgenomen en TTS-stemmen, configuratie van de offline kaartgeneratie, routeringsparameters, pictogrammenopslagplaats  |[Stormchasing weergavestijl](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+Het standaard `routing.xml`-bestand kan worden aangepast om routeringsalgoritmen en -parameters voor specifieke omstandigheden aan te passen.
+
+| Bronnaam | Beschrijving | Link |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Aangepaste `routing.xml`-aanpassing die de routeberekening aanpast aan regenachtige omstandigheden, rekening houdend met wegdektype (bijv. kale rots), helling en officiële trail-moeilijkheidsgraden (CAI/SAC-schalen), plus verbeterde "Vermijd tunnels"-logica. | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Offline Kaarten {#offline-maps}
 
@@ -134,6 +144,10 @@ De volgende tabel toont verschillende online kaartbronnen die door gebruikers zi
 | Basemap AT WMTS | De set kaarten van Oostenrijk gebaseerd op [basemap.at WMTS](https://basemap.at/en/) gemaakt door mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd kaarten IGN (FR) | De set kaarten aangeboden door het Franse geografische instituut IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis kaartenverzameling | De site biedt een verzameling kaarten voor plattelandsvakanties, inclusief toeristische, berg-, nautische kaarten en vele andere. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Onafhankelijke OsmAnd-overlay die het huidige en morgen verwachte risico op bosbranden toont voor de Comunitat Valenciana, Spanje, met behulp van officiële openbare gegevens. | [Project en installatie](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` pakket](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

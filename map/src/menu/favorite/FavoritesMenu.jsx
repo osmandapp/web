@@ -17,6 +17,7 @@ import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
+import { SHARE_TYPE } from '../share/shareConstants';
 import PinnedFavoriteGroups from './PinnedFavoriteGroups';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { FAVORITES_URL, HEADER_SIZE, INFO_MENU_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
@@ -147,7 +148,12 @@ export default function FavoritesMenu() {
                 </Box>
             );
         }
-        return <FavoriteGroupFolder folder={openGroup} />;
+        return (
+            <FavoriteGroupFolder
+                folder={openGroup}
+                smartf={openGroup.sharedWithMe ? { files: sharedFiles, type: SHARE_TYPE } : null}
+            />
+        );
     }
 
     if (openSharedFolder) {
@@ -205,11 +211,7 @@ export default function FavoritesMenu() {
                         />
                     </Box>
                 ) : (
-                    <Empty
-                        title={t('web:empty_favorites')}
-                        text={t('web:empty_favorites_description')}
-                        menu={OBJECT_TYPE_FAVORITE}
-                    />
+                    <Empty title={t('web:empty_favorites')} text={t('web:empty_favorites_description')} />
                 )}
             </Box>
         </>

@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Overzicht {#overview}
 
@@ -32,9 +30,12 @@ Hoogtewidgets tonen de hoogte boven zeeniveau van de huidige geolocatie en de ve
 ### Hoogte: Huidige Locatie   {#altitude-current-location}
   
 :::note  Wereldhoogtecorrectie downloaden
-Op sommige Android-apparaten kan de hoogte onnauwkeurig worden weergegeven. Om dit probleem op te lossen, downloadt u een kaart met hoogtecorrectie.
+Op Android 14 en later gebruikt OsmAnd de hoogte boven gemiddeld zeeniveau (MSL) die door Google Play Services wordt geleverd, indien beschikbaar. In dat geval is de Wereldhoogtecorrectiekaart niet vereist.
+
+Als u de Android API-locatiebron gebruikt of als MSL-hoogte niet beschikbaar is, downloadt u de Wereldhoogtecorrectiekaart om de hoogteprecisie te verbeteren.
 
 - Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Om de locatiebron te wijzigen, ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Voor meer details, bezoek [Kaarten & Bronnen](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -202,7 +203,7 @@ Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de ni
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glijgetal](@site/static/img/widgets/glide_ratio_3.png)|![Glijgetal](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glijgetal](@site/static/img/widgets/glide_ratio_3.png)|![Glijgetal](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -226,7 +227,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 - *Optimaliseren van stijgingen en dalingen.* Het gemiddelde glijgetal stelt piloten in staat om stijgingen en dalingen te optimaliseren op basis van de huidige omstandigheden. Piloten kunnen het optimale moment kiezen voor stijgingen om de vliegtijd te maximaliseren, of voor dalingen om een doelpunt te bereiken.
 - *Reageren op veranderende omstandigheden.* De widget biedt continue updates van het glijgetal, waardoor piloten direct kunnen reageren op veranderingen in atmosferische omstandigheden of routes. Ze kunnen hun vluchtplan aanpassen om de veiligheid en efficiëntie te waarborgen.
 - *Maximaal gebruik van horizontale afstand.* Het kennen van het glijgetal stelt piloten in staat om de horizontale afstand maximaal te benutten om naar het doel te bewegen, wat vooral belangrijk is bij het plannen van lange vluchten.
-- *Risicovermindering*. De *Glijgetal naar het doel* widget helpt piloten situaties te vermijden waarin het bereiken van het doel onmogelijk wordt door een onvoldoende glijgetal. Dit helpt om risico's te verminderen en de vliegveiligheid te verbeteren.
+- *Risikovermindering*. De *Glijgetal naar het doel* widget helpt piloten situaties te vermijden waarin het bereiken van het doel onmogelijk wordt door een onvoldoende glijgetal. Dit helpt om risico's te verminderen en de vliegveiligheid te verbeteren.
 
 
 **Positieve en Negatieve Waarden:**
@@ -239,7 +240,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 
 - Waarde **≤ 0.1**:  
   - "0.05" wordt weergegeven als "0".
-- Waarde **> 0.1 en < 100**:  
+- Waarde **> 0.1 and < 100**:  
   - bijvoorbeeld, "50.7643" wordt weergegeven als "50.8:1".
 - Waarde **> 100:**  
   - "102.35" wordt weergegeven als "102:1."
@@ -247,28 +248,68 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 
 ### Glijgetal naar Doel {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Glijgetal naar doel** toont het exacte glijgetal dat nodig is om het doelpunt te bereiken.
+- **Doelverhoging** toont de verhoging van het doelpunt. De [Kaartmarkering](../personal/markers.md) moet als doelpunt worden gebruikt.
+
+Tik rechtstreeks op de widget om tussen deze modi te schakelen. De schakeloptie is niet beschikbaar in het [contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu). 
+
+| | |
+|:------------|:------------|
+| Inschakelen | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
+| Door te tikken | Wijzigt *Glijgetal naar doel* of *Doelverhoging*  |
+| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Glijgetal naar doel** toont het exacte glijgetal dat nodig is om het doelpunt te bereiken.
 - **Doelverhoging** toont de verhoging van het doelpunt. De [Kaartmarkering](../personal/markers.md) moet als doelpunt worden gebruikt.
 
 | | |
 |:------------|:------------|
-| Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
+| Inschakelen | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
 | Door te tikken | Wijzigt *Glijgetal naar doel* of *Doelverhoging*  |
 | Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Gemiddeld Glijgetal {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Gemiddeld glijgetal** toont het gemiddelde glijgetal voor een gespecificeerd tijdsinterval.
+
+| | |
+|:------------|:------------|
+| Inschakelen | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
+| Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Gemiddeld glijgetal** toont het gemiddelde glijgetal voor een gespecificeerd tijdsinterval.
 - **Gemiddelde verticale snelheid** geeft de snelheid aan waarmee een object stijgt of daalt gedurende een bepaalde tijd. Alleen het eerste en laatste punt van het tijdsinterval worden in overweging genomen voor de evaluatie. U kunt het tijdsinterval voor deze widget instellen van 15 seconden tot 60 minuten. U moet de [Kaartmarkering](../personal/markers.md) als doelpunt gebruiken.
 
 | | |
 |:------------|:------------|
-| Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
+| Inschakelen | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
 | Door te tikken | Wijzigt *Gemiddeld glijgetal* of *Gemiddelde verticale snelheid*  |
 | Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Batterijniveau {#battery-level}
@@ -560,11 +601,12 @@ Om Voertuigstatistieken Widgets aan het kaartscherm toe te voegen, schakelt u de
 </Tabs>
 
 
-De widgets behoren tot de [Voertuigstatistieken plugin](../plugins/vehicle-metrics.md#widgets). U kunt ze gebruiken om informatie van een aangesloten OBD-II scanner te bekijken, zoals (*14 statistieken*): **Adapterspanning** (*alleen Android*),&nbsp; **Omgevingstemperatuur**,&nbsp; **Batterijspanning**,&nbsp; **Berekende motorbelasting**,&nbsp; **Koelvloeistoftemperatuur**,&nbsp; **Motorolietemperatuur**,&nbsp; **Motorlooptijd**,&nbsp; **Motortoerental** (*gratis*),&nbsp; **Brandstofverbruik**,&nbsp; **Brandstofdruk**,&nbsp; **Inlaattemperatuur**,&nbsp; **Resterende brandstof**,&nbsp; **Gaskleppositie**, en **Voertuigsnelheid** (*gratis*).  
+De widgets behoren tot de [Voertuigstatistieken plugin](../plugins/vehicle-metrics.md#widgets). U kunt ze gebruiken om informatie van een aangesloten OBD-II scanner te bekijken, zoals (*14 statistieken*): **Adapterspanning**,&nbsp; **Omgevingstemperatuur**,&nbsp; **Batterijspanning**,&nbsp; **Berekende motorbelasting**,&nbsp; **Koelvloeistoftemperatuur**,&nbsp; **Motorolietemperatuur**,&nbsp; **Motorlooptijd**,&nbsp; **Motortoerental** (*gratis*),&nbsp; **Brandstofverbruik**,&nbsp; **Brandstofdruk**,&nbsp; **Inlaattemperatuur**,&nbsp; **Resterende brandstof**,&nbsp; **Gaskleppositie**, en **Voertuigsnelheid** (*gratis*).  
 
 - Om voertuigstatistieken widgets aan het kaartscherm toe te voegen, [schakel](../plugins/index.md#enable--disable) de **Voertuigstatistieken plugin** in.
 - U kunt widgets toevoegen, zelfs als er geen OBD-II scanner is aangesloten.
 - Alle toegevoegde widgets zijn zichtbaar, ongeacht of er een OBD-II scanner is aangesloten of niet.
+- Voor nauwkeurige **Brandstofverbruik** waarden, specificeert u de _[Brandstoftankcapaciteit](../navigation/guidance/vehicle-parameters.md#overview)_ van het voertuig in de profielinstellingen. Verbruiksmodi op basis van afstand vereisen ook GPS-gegevens.
 - Om een widget te bewerken, tikt u op de widget die aan het paneel is toegevoegd, tikt u vervolgens op *Instellingen*, of tikt u direct op het *Instellingen-icoon* in het widgetveld.
 
 | | |
@@ -689,7 +731,7 @@ Om de Tracker-widget aan het kaartscherm toe te voegen, schakelt u de OsmAnd [Tr
 
 Om de plugin en widget te laten werken, moet u [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) installeren vanuit Google Play of andere bronnen.  
 
-Deze OsmAnd Tracker-plugin widget wordt gebruikt om snel toegang te krijgen tot de OsmAnd Tracker-app en uw locatie-informatie te delen met andere gebruikers. De app stuurt *Live Locatie*-berichten naar geselecteerde chats binnen een bepaalde tijd, toont een lijst met contacten en groepen, en controleert chats op berichten met uw locatie, die vervolgens op een kaart in OsmAnd worden weergegeven.  
+Deze OsmAnd Tracker-plugin widget is gebruikt om snel toegang te krijgen tot de OsmAnd Tracker-app en uw locatie-informatie te delen met andere gebruikers. De app stuurt *Live Locatie*-berichten naar geselecteerde chats binnen een bepaalde tijd, toont een lijst met contacten en groepen, en controleert chats op berichten met uw locatie, die vervolgens op een kaart in OsmAnd worden weergegeven.  
 
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 

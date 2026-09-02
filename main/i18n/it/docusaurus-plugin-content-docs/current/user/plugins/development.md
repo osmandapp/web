@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
@@ -88,7 +88,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 - **Simula il primo avvio dell'app**. Imposta il flag che indica il primo avvio dell'app, mantenendo invariate tutte le altre impostazioni.  
 - **Testa le istruzioni vocali**. Seleziona una voce e testala riproducendo gli annunci.  
-- **Mostra i tocchi** (*iOS*). Evidenzia i tocchi sullo schermo con indicatori visivi.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Evidenzia i tocchi sullo schermo con indicatori visivi.
 - **Barra di stato trasparente**. La mappa diventa visibile sotto la barra di stato.  
 - **Mostra il banner della versione gratuita**. Visualizza il banner della versione gratuita anche nella versione a pagamento.  
 - **Mostra informazioni di debug**. Visualizza informazioni grafiche sul posizionamento di ogni testo sulla mappa.
@@ -100,7 +100,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 :::caution Solo Android
 :::
 
-- **Modalità provvisoria**. Esegui l'app in modalità provvisoria (più lenta).  
+- **Modalità provvisoria**. Esegue OsmAnd senza la libreria C++ nativa, utilizzando implementazioni Java per il rendering della mappa e il calcolo del percorso. L'app passa automaticamente a questa modalità se la libreria nativa non si avvia correttamente, consentendo comunque l'avvio e l'uso dell'applicazione. Il rendering della mappa e il calcolo del percorso risultano notevolmente più lenti mentre la modalità provvisoria è attiva.  
 
 
 ### Impostazioni di memoria {#memory-settings}

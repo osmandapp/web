@@ -105,7 +105,7 @@ When you open *Travel Guides* (*<Translate android="true" ids="shared_string_men
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -130,7 +130,7 @@ If you tap the *Bookmark button*, the article will be saved for later reading an
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  İzleri Yönet
 ---
@@ -24,13 +24,13 @@ OsmAnd'deki tüm izler *<Translate android="true" ids="shared_string_menu"/> →
 
 <TabItem value="android" label="Android">
 
-![İz Yönetimine Genel Bakış Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Manage track Overview Android](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![İz Yönetimine Genel Bakış iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Manage track Overview iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -43,13 +43,13 @@ OsmAnd'deki tüm izler *<Translate android="true" ids="shared_string_menu"/> →
 
 <TabItem value="android" label="Android">
 
-![Bir rota planla izi değiştir android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Bir rota planla izi değiştir ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
@@ -70,23 +70,25 @@ OsmAnd'e aşağıdaki yollarla iz ekleyebilirsiniz:
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> sekmesi*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![Android'de izleri olan Yerlerim](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![iOS'ta izleri olan Yerlerim](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 Kaydedilen, oluşturulan veya içe aktarılan tüm izler, *İzler* sekmesindeki [Yerlerim](../../personal/myplaces.md) klasöründe otomatik olarak görüntülenir. Bunlar klasöre göre düzenlenir veya altlarında bir listede görüntülenir.
+
+Listedeki her iz, ikinci satırda üst klasör adını `|` ile ayrılmış şekilde görüntüler (örneğin, `Hiking | Tracks`), böylece izin nerede saklandığını belirlemek daha kolay olur. Bu, [Arama](#search), [Akıllı Klasörler](../../personal/tracks/smart-folder.md) ve [Haritayı Yapılandır → İzler](../../map/tracks/index.md#configure-map) içinde geçerlidir.
 
 
 ### İz Menüsü {#track-menu}
@@ -97,15 +99,15 @@ Kaydedilen, oluşturulan veya içe aktarılan tüm izler, *İzler* sekmesindeki 
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
 
-![Android'de izleri olan Yerlerim](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![iOS'ta bir izin bağlam menüsü](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -151,13 +153,13 @@ Menü aşağıdaki eylemleri sağlar:
 
 <TabItem value="android" label="Android">
 
-![Yerlerim izleri arama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![My places tracks seach function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim izleri arama fonksiyonu iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![My places tracks seach function iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +171,7 @@ Mevcut:
 
 - İz adına göre ara.
 - Başlığı hatırlayamıyorsanız daha iyi arama için [Sırala](#sort-by).
-- İzin belirli özelliklerine ihtiyacınız varsa [Filtrele](./smart-folder.md#search-filter) (*Yalnızca Android*).
+- İzin belirli özelliklerine ihtiyacınız varsa [Filtrele](./smart-folder.md#search-filter).
 
 
 ### Seçim Modu {#selection-mode}
@@ -178,13 +180,13 @@ Mevcut:
 
 <TabItem value="android" label="Android">
 
-![Yerlerim izleri sıralama fonksiyonu Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![My places tracks sort function Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim izleri iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -215,13 +217,13 @@ Seçiminizi yaptıktan sonra aşağıdaki adımlar sağlanır:
 
 <TabItem value="android" label="Android">
 
-![Yerlerim izleri sıralama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim izleri sıralama fonksiyonu iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -248,13 +250,13 @@ OsmAnd, izlerinizi sıralamanın kolay bir yolunu sunarak, geniş bir koleksiyon
 
 <TabItem value="android" label="Android">
 
-![Yerlerim izleri sıralama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yerlerim izleri sıralama fonksiyonu iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -273,7 +275,7 @@ Seçilen sıralama seçeneği yalnızca mevcut alt klasöre değil, aynı zamand
 
 Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **açın**.
 
-![çoklu izi içe aktar](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -281,7 +283,7 @@ Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **aç�
 
 > Klasör menüsünü **açmak** için klasör alanına uzun dokunun.
 
-![iOS'ta bir izin bağlam menüsü](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -309,15 +311,15 @@ Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **aç�
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> sekmesi*
 
-![Android'de izleri olan Yerlerim](@site/static/img/personal/tracks/dashboard_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![iOS'ta izleri olan Yerlerim](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -330,7 +332,7 @@ Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **aç�
 - **Yokuşlar** toplamı — Veriler, seçilen klasördeki tüm izlerdeki toplam dikey yükselişi gösterir.
 - **Yokuş aşağılar** toplamı — Bu parametre, seçilen klasördeki tüm izlerdeki dikey inişlerin toplamıdır.
 - **Süre** zamanı toplamı — Bu, seçilen klasördeki tüm izleri tamamlamak için geçen toplam süreyi görüntüler.
-- İndirilen dosyaların toplam **Boyutu** MB cinsinden — Megabayt cinsinden toplam indirilen dosya boyutu, seçilen klasördeki tüm izlerin cihazınızda ne kadar yer kapladığını gösterir.
+- İndirilen dosyaların toplam **Boyutu** MB cinsinde — Megabayt cinsinden toplam indirilen dosya boyutu, seçilen klasördeki tüm izlerin cihazınızda ne kadar yer kapladığını gösterir.
 
 
 ### Klasör Eylemleri {#folder-actions}
@@ -341,7 +343,7 @@ Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **aç�
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Yerlerim izleri sıralama fonksiyonu Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -349,7 +351,7 @@ Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **aç�
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Yerlerim izleri iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -361,7 +363,7 @@ Klasör eylemleri nasıl açılır:
 
 - Yerlerim'deki İzler sekmesini açın.
 - Yönetmek istediğiniz klasöre gidin.
-- Klasör eylemleri menüsünü açmak için sağ üst köşedeki *üç nokta menüsüne* dokunun.
+- Klasör eylemleri menüsünü açmak için sağ üst köşeki *üç nokta menüsüne* dokunun.
 
 ***Klasör menüsündeki eylemler:***
 
@@ -378,17 +380,17 @@ Klasör eylemleri nasıl açılır:
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Android'de izleri olan Yerlerim](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> sekmesi*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![iOS'ta bir izin bağlam menüsü](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 
@@ -422,7 +424,8 @@ Bir klasörü içerdiği tüm izlerle birlikte silebilirsiniz. Bunu yapmak için
     *Ek seçenekler:*
 
     - **Tek izli GPX dosyaları** - tüm izi doğrudan içe aktarın.
-    - **Çok izli GPX dosyaları** - tek GPX dosyasını içe aktarmayı veya belirli izleri seçmeyi seçin.
+    - **Çok izli GPX dosyaları** - tek GPX dosyasını içe aktarmayı veya belirli izleri seçmeyi seçin.  
+    Bir GPX dosyası birden fazla iz içerdiğinde, İçe Aktar izleri ekranı açılır ve dosyadaki tüm izleri incelemenize, içe aktarmak istediklerinizi seçmenize, bir hedef klasör seçmenize veya *Tek iz olarak içe aktar* seçeneğini kullanarak tüm izleri tek bir iz olarak içe aktarmanıza olanak tanır. Dosya yol noktaları içeriyorsa, içe aktarmayı tamamlamadan önce bunları da inceleyip atayabilirsiniz.
 
 ***NOT:*** *Cihazınızdaki OsmAnd klasörüne manuel olarak eklenen izler, uygulamayı yeniden başlatmaya gerek kalmadan otomatik olarak içe aktarılır.*  
 
@@ -433,7 +436,7 @@ Bir klasörü içerdiği tüm izlerle birlikte silebilirsiniz. Bunu yapmak için
 
 <TabItem value="android" label="Android">
 
-![çoklu izi içe aktar](@site/static/img/personal/tracks/import_multitrack.png) ![çoklu izi içe aktar](@site/static/img/personal/tracks/import_multitrack_1.png)
+![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -441,7 +444,7 @@ Bir klasörü içerdiği tüm izlerle birlikte silebilirsiniz. Bunu yapmak için
 
 | Dışa Aktar | İçe Aktar |
 |:------------|:---------------|
-| ![çoklu izi içe aktar](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Dışa Aktar </summary> ![çoklu izi içe aktar](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![çoklu izi içe aktar](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Dışa Aktar </summary> ![çoklu izi içe aktar](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Dışa Aktar </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Dışa Aktar </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

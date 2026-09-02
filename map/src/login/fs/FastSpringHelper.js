@@ -2,6 +2,10 @@ import { getAccountInfo } from '../../manager/LoginManager';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../../manager/GlobalManager';
 import { purchase } from '../../shop/products/ProductManager';
 
+export function testPath(fsName, testMode) {
+    return testMode ? `test-${fsName}` : fsName;
+}
+
 function createFastSpringBuilder(testMode) {
     // remove old script if exists
     const old = document.getElementById('fsc-api');
@@ -27,7 +31,7 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
 
     const products = [
         {
-            path: `${testMode ? 'test-' : ''}${selectedProduct}`,
+            path: testPath(selectedProduct, testMode),
             quantity: 1,
         },
     ];
@@ -73,29 +77,10 @@ export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navig
     document.head.appendChild(script);
 };
 
-export function updatePrices(setPurchasePriceMap, testMode = false) {
+function fetchPrices(productsList, testMode, onPriceMap) {
     const script = createFastSpringBuilder(testMode);
     script.onload = () => {
         window.fastspring.builder.reset();
-
-        const productsList = Object.values(purchase)
-            .flat()
-            .map((item) => {
-                if (testMode) {
-                    if (item.hasTestMode) {
-                        return {
-                            path: `test-${item.fsName}`,
-                            quantity: 1,
-                        };
-                    }
-                } else {
-                    return {
-                        path: item.fsName,
-                        quantity: 1,
-                    };
-                }
-            })
-            .filter(Boolean);
 
         window.fastspring.builder.push(
             {
@@ -114,10 +99,24 @@ export function updatePrices(setPurchasePriceMap, testMode = false) {
                         display: item.total,
                     };
                 });
-                setPurchasePriceMap(priceMap);
+                onPriceMap(priceMap);
             }
         );
     };
 
     document.head.appendChild(script);
+}
+
+export function fetchSinglePrice(fsName, onPrice, testMode = false) {
+    const path = testPath(fsName, testMode);
+    fetchPrices([{ path, quantity: 1 }], testMode, (priceMap) => onPrice(priceMap[path]));
+}
+
+export function updatePrices(setPurchasePriceMap, testMode = false) {
+    const productsList = Object.values(purchase)
+        .flat()
+        .filter((item) => !testMode || item.hasTestMode)
+        .map((item) => ({ path: testPath(item.fsName, testMode), quantity: 1 }));
+
+    fetchPrices(productsList, testMode, setPurchasePriceMap);
 }

@@ -110,7 +110,16 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is a map style by Holder Tamm that allows you to choose whether to hide certain objects or not.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [This is an OsmAnd rendering style optimized for storm chasing](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Custom defined resources of the OsmAnd project to fine tune OsmAnd behavior. Defined here are: map rendering styles used in OsmAnd, recorded and TTS voices, configuration of the offline map generation, routing parameters, icon repository  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+The default `routing.xml` file can be customized to adjust routing algorithms and parameters for specific conditions.
+
+| Source Name | Description | Link |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Custom `routing.xml` modification that adjusts route calculation for rainy conditions, factoring in surface type (e.g., bare rock), incline, and official trail difficulty ratings (CAI/SAC scales), plus improved "Avoid Tunnels" logic. | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Offline Maps {#offline-maps}
 
@@ -134,6 +143,9 @@ The following table lists various online map sources prepared by users, offering
 | Basemap AT WMTS | The set of maps of Austria based on [basemap.at WMTS](https://basemap.at/en/) created by mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd maps IGN (FR) | The set of maps provided of the French geographical institute IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | AnyGis maps collection | The site provides a collection of maps for country holidays, including tourist, mountain, nautical maps, and many others. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Independent OsmAnd overlay showing today’s and tomorrow’s wildfire-risk levels for the Comunitat Valenciana, Spain, using official public data. | [Project and installation](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Direct `.osf` package](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
 
 
 

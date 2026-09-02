@@ -31,7 +31,7 @@ import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLaye
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
-import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
+import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import {
     BBOX_COORDS_DECIMALS,
     MENU_INFO_OPEN_SIZE,
@@ -43,11 +43,13 @@ import {
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
-import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
 import { getCurrentTimeParams } from '../../util/Utils';
+
+const SPINNER_DELAY_MS = 500;
+const GET_POI_DEBOUNCE_MS = 500;
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -146,7 +148,7 @@ export async function getPoiIcon(poi, cache, finalIconName) {
         if (svgData) {
             let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
             // Add the id attribute to the coloredSvg
-            const poiName = poi.properties[POI_NAME];
+            const poiName = escapeHtmlAttr(poi.properties[POI_NAME]);
             coloredSvg = coloredSvg.replace(
                 '<svg',
                 `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
@@ -185,8 +187,6 @@ export default function PoiLayer() {
     });
 
     const [prevController, setPrevController] = useState(false);
-    const [useLimit, setUseLimit] = useState(false);
-    const [bbox, setBbox] = useState(null);
     const [prevCategories, setPrevCategories] = useState(null);
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
@@ -386,45 +386,22 @@ export default function PoiLayer() {
         }
     }
 
-    async function getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox, prevCategories) {
+    async function getPoi(controller, showPoiCategories, visibleBboxInfo) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
             return null;
         }
-        //add fields for restoring the previous search result
-        let prevSearchRes;
-        let prevSearchCategory;
-        showPoiCategories.forEach((obj) => {
-            if (obj.key) {
-                if (!prevSearchRes && !prevSearchCategory) {
-                    prevSearchRes = obj.key;
-                    prevSearchCategory = obj.category;
-                } else {
-                    console.warn('Only one category can be searched at a time');
-                }
-            }
-        });
-
         const { bounds, center } = visibleBboxInfo;
         const searchData = {
             categories: showPoiCategories,
             northWest: `${Number(bounds.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bounds.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
             southEast: `${Number(bounds.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bounds.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-            savedNorthWest: savedBbox
-                ? `${Number(savedBbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(savedBbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`
-                : null,
-            savedSouthEast: savedBbox
-                ? `${Number(savedBbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(savedBbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`
-                : null,
-            prevCategoriesCount: prevCategories ? prevCategories.length : 0,
-            prevSearchRes: prevSearchRes,
-            prevSearchCategory: prevSearchCategory,
         };
         const response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
             params: {
                 locale: i18n.language,
                 lat: center.lat,
                 lon: center.lng,
-                baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
+                zoom: map.getZoom(),
                 ...getCurrentTimeParams(),
             },
             apiCache: true,
@@ -488,71 +465,69 @@ export default function PoiLayer() {
             hideMarkersNearPin(map, ctx);
         }
 
-        const debouncedGetPoi = debounce(
-            async ({
-                controller,
-                ignore,
-                poiList,
-                showPoiCategories,
-                savedBbox,
-                prevCategories,
-                poiIconCache,
-                zoom,
-                reqId,
-                visibleBboxInfo,
-            }) => {
-                map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx));
-                if (!visibleBboxInfo) {
-                    map.spin(false);
-                    return;
-                }
-                const newBbox = visibleBboxInfo.bounds;
-                const notifyTimeout = showProcessingNotification(ctx);
-                try {
-                    const res = await getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox, prevCategories);
-                    if (reqId !== reqIdRef.current || ignore) return;
-                    if (res) {
-                        let features = null;
-                        let listFeatures = null;
+        const getPoiTask = async ({
+            controller,
+            ignore,
+            poiList,
+            showPoiCategories,
+            poiIconCache,
+            zoom,
+            reqId,
+            visibleBboxInfo,
+        }) => {
+            if (!visibleBboxInfo) {
+                return;
+            }
+            const spinTimeout = setTimeout(
+                () => map.spin(true, mapSpinOptionsForVisibleBbox(map, ctx)),
+                SPINNER_DELAY_MS
+            );
+            const notifyTimeout = showProcessingNotification(ctx);
+            try {
+                const res = await getPoi(controller, showPoiCategories, visibleBboxInfo);
+                if (reqId !== reqIdRef.current || ignore) return;
+                if (res?.zoomInHint) {
+                    // category too common for this zoom
+                    updateLayerOnMap(null);
+                    setPoiList({ layer: null, listFeatures: null, info: res.info, tooMany: true });
+                    setPrevCategories(showPoiCategories);
+                } else if (res) {
+                    let features = null;
+                    let listFeatures = null;
 
-                        if (res.features?.features?.length > 0) {
-                            features = res.features.features;
-                            listFeatures = res.features;
-                        } else if (res.alreadyFound && poiList?.listFeatures?.features?.length > 0) {
-                            features = poiList.listFeatures.features;
-                            listFeatures = poiList.listFeatures;
-                        }
+                    if (res.features?.features?.length > 0) {
+                        features = res.features.features;
+                        listFeatures = res.features;
+                    }
 
-                        if (features?.length && listFeatures) {
-                            const newLayer = await createPoiLayer({
-                                ctx,
-                                poiList: features,
-                                globalPoiIconCache: poiIconCache,
-                                map,
-                                zoom,
-                            });
-                            const nextState = { layer: newLayer, listFeatures };
-                            updateLayerOnMap(nextState);
-                            setPoiList(nextState);
-                            setBbox(newBbox);
-                            setPrevCategories(showPoiCategories);
-                            setUseLimit(res.useLimit ?? false);
-                        } else {
-                            clearPoiList();
-                        }
+                    if (features?.length && listFeatures) {
+                        const newLayer = await createPoiLayer({
+                            ctx,
+                            poiList: features,
+                            globalPoiIconCache: poiIconCache,
+                            map,
+                            zoom,
+                        });
+                        const nextState = { layer: newLayer, listFeatures, info: res.info ?? poiList?.info };
+                        updateLayerOnMap(nextState);
+                        setPoiList(nextState);
+                        setPrevCategories(showPoiCategories);
                     } else {
                         clearPoiList();
                     }
-                } catch (e) {
-                    if (e?.name !== 'AbortError') throw e;
-                } finally {
-                    map.spin(false);
-                    clearTimeout(notifyTimeout);
-                    ctx.setProcessingSearch(false);
+                } else {
+                    clearPoiList();
                 }
-            },
-            1000
-        );
+            } catch (e) {
+                if (e?.name !== 'AbortError') throw e;
+            } finally {
+                clearTimeout(spinTimeout);
+                map.spin(false);
+                clearTimeout(notifyTimeout);
+                ctx.setProcessingSearch(false);
+            }
+        };
+        const debouncedGetPoi = debounce(getPoiTask, GET_POI_DEBOUNCE_MS);
 
         hideMarkersNearPin(map, ctx);
 
@@ -562,11 +537,7 @@ export default function PoiLayer() {
                 !prevCategories ||
                 JSON.stringify(prevCategories.map((c) => c.category).sort()) !==
                     JSON.stringify(ctx.showPoiCategories.map((c) => c.category).sort());
-            if (
-                (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
-                move ||
-                isTypeChange
-            ) {
+            if ((!isEmpty(ctx.showPoiCategories) && zoom !== prevZoom) || move || isTypeChange) {
                 if (prevController) {
                     prevController.abort();
                 }
@@ -574,17 +545,15 @@ export default function PoiLayer() {
                 setPrevZoom(zoom);
                 if (ctx.showPoiCategories.length > 0) {
                     if (categoriesChanged) {
-                        setBbox(null);
                         setPrevCategories(null);
                     }
                     reqIdRef.current += 1;
-                    debouncedGetPoi({
+                    const runGetPoi = categoriesChanged || isTypeChange ? getPoiTask : debouncedGetPoi;
+                    runGetPoi({
                         controller,
                         ignore,
                         poiList: categoriesChanged ? null : poiList,
                         showPoiCategories: ctx.showPoiCategories,
-                        savedBbox: categoriesChanged ? null : bbox,
-                        prevCategories: categoriesChanged ? null : prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                         reqId: reqIdRef.current,
@@ -593,13 +562,12 @@ export default function PoiLayer() {
                 }
             } else if (isEmpty(ctx.showPoiCategories)) {
                 // if categories are cleared, then clear the list and related states
-                setBbox(null);
                 setPrevCategories(null);
                 if (poiList) {
                     clearPoiList();
                 }
             } else if (poiList?.listFeatures?.features?.length > 0) {
-                // if categories are the same, but zoom level changed from low to high, then show all pois without requesting again
+                // same categories, no zoom/move change: re-render the existing pois without a new request
                 const newLayer = await createPoiLayer({
                     ctx,
                     poiList: poiList.listFeatures.features,
@@ -610,6 +578,7 @@ export default function PoiLayer() {
                 const nextState = {
                     layer: newLayer,
                     listFeatures: poiList?.listFeatures,
+                    info: poiList?.info,
                 };
                 updateLayerOnMap(nextState);
                 setPoiList(nextState);
@@ -647,14 +616,12 @@ export default function PoiLayer() {
             ctx.setSearchResult((prevResult) => {
                 return {
                     ...prevResult,
-                    features: !poiList ? [] : poiList?.listFeatures?.features,
+                    features: poiList && !poiList.tooMany ? poiList.listFeatures?.features : [],
+                    info: poiList?.info,
+                    tooMany: poiList?.tooMany ?? false,
                 };
             });
         }
-    }
-
-    function allPoiFound(zoom, prevZoom) {
-        return prevZoom && zoom > prevZoom && !useLimit;
     }
 
     function onClick(e) {

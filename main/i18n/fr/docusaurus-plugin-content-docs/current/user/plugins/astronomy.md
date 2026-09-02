@@ -1,5 +1,5 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomie** est actuellement en **bêta**.
+**Astronomy** est actuellement en **bêta** sur **Android**. 
+
+Sur **iOS**, le plugin est disponible via le programme **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
 :::
 
 ## Aperçu {#overview}
@@ -43,13 +44,29 @@ Les paramètres suivants sont requis pour afficher la superposition Astronomie :
 4. Ajustez ce qui est affiché sur la Carte des étoiles en utilisant [**Configurer la vue**](#configure-view) — par exemple, activez/désactivez les objets visibles et les aides à la visualisation.
 5. Appuyez sur le bouton **Fermer (X)** en haut de l'écran de la Carte des étoiles pour quitter la Carte des étoiles et revenir à la carte de la Terre.
 
-Le plugin fonctionne avec les deux moteurs de rendu de carte, mais offre les meilleures performances en mode OpenGL.
+Sur Android, le plugin fonctionne avec les deux moteurs de rendu de carte, mais offre les meilleures performances en mode OpenGL.
 
 ## Écran Carte des étoiles {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Accéder à :** *Plugin activé → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Écran Carte des étoiles](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Accéder à :** *Plugin activé → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Écran Carte des étoiles](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 L'écran dédié **Carte des étoiles** affiche un dôme céleste interactif avec des étoiles, des constellations, des planètes, des trajectoires du Soleil et de la Lune. En bas de l'écran, vous pouvez accéder aux contrôles suivants : 
 - [**Recherche**](#search) — ouvre l'écran de Recherche où vous pouvez rechercher des objets célestes et parcourir les catalogues et catégories du ciel. 
@@ -64,7 +81,21 @@ La Carte des étoiles peut également s'aligner sur l'orientation de votre appar
 
 ## Menu contextuel {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Menu contextuel](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu contextuel](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Le **Menu contextuel** fournit des informations détaillées sur les objets célestes et des outils pour les observer. Il s'ouvre lorsque vous appuyez sur un objet céleste sur la Carte des étoiles.
 
@@ -74,7 +105,21 @@ Le Menu contextuel apparaît en bas de l'écran et contient des informations sur
 
 ### Informations sur l'objet {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Informations sur l'objet](@site/static/img/plugins/starwatcher/object_view_new.png) ![Informations sur l'objet](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Informations sur l'objet](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Informations sur l'objet](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La section supérieure du Menu contextuel affiche le nom et la classification de l'objet. Sous le nom, le type d'objet et sa constellation ou son groupe parent sont indiqués. Par exemple :
 - **Beta Ursae Minoris** — Étoile • Ursa Minor
@@ -87,6 +132,7 @@ Des blocs d'informations rapides affichent les paramètres d'observation clés :
 - <Translate android="true" ids="shared_string_azimuth"/> – la direction de l'objet par rapport au nord (0°–360°).
 - <Translate android="true" ids="altitude"/> – la hauteur de l'objet au-dessus de l'horizon.
 - <Translate android="true" ids="shared_string_magnitude"/> – la luminosité de l'objet telle que vue depuis la Terre. 
+- Distance (*iOS uniquement*) – la distance de la Terre à l'objet céleste sélectionné.
 
 Ces valeurs se mettent à jour dynamiquement en fonction de l'heure sélectionnée et de l'emplacement de l'utilisateur.
 
@@ -106,7 +152,21 @@ Sous les informations sur l'objet, le Menu contextuel fournit plusieurs actions 
 
 ### Graphique de visibilité {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 L'onglet **Visibilité** montre comment l'objet sélectionné se déplace à travers le ciel pendant une période de 24 heures.
 
@@ -141,7 +201,21 @@ Le graphique s'ouvre avec l'indicateur positionné à l'heure système actuelle.
 
 ### Calendrier d'observation {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Calendrier d'observation](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Calendrier d'observation](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 L'onglet **Calendrier** affiche la visibilité de l'objet sélectionné pour la semaine en cours. Chaque ligne représente un jour et inclut :  
 - le jour de la semaine
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## Recherche d'étoiles en RA (Mode Caméra) {#ar-star-finding}
 
-**Accéder à :** *Plugin activé → <Translate android="true" ids="shared_string_menu,star_map"/> → Bouton Caméra* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Vue RA](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Accéder à :** *Plugin activé → <Translate android="true" ids="shared_string_menu,star_map"/> → Mode RA* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Vue RA](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Accéder à :** *Plugin activé → <Translate ios="true" ids="shared_string_menu,star_map"/> → Mode RA*
+
+</TabItem>
+
+</Tabs>
 
 La couche **Astronomie** fonctionne avec la **caméra de votre appareil** pour activer la **réalité augmentée (RA) pour l'observation des étoiles**. Pointez la caméra de votre téléphone vers le vrai ciel nocturne et voyez des étoiles, des planètes, des constellations, le Soleil/Lune superposés en temps réel.
 
@@ -197,7 +289,21 @@ Le mode RA utilise les capteurs de l'appareil (gyroscope, accéléromètre et bo
 
 ## Configurer la vue {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configurer la vue](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configurer la vue](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configurer la vue](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configurer la vue](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** vous permet de contrôler l'affichage de la Carte des étoiles en activant ou désactivant les modes visuels, les objets et les aides à la visualisation.
 
@@ -205,7 +311,21 @@ Pour ouvrir Configurer la vue, appuyez sur le bouton Configurer la vue dans le c
 
 ### Modes et actions {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configurer la vue](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configurer la vue](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configurer la vue](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configurer la vue](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Cette section contrôle les modes d'affichage principaux de la Carte des étoiles.
 
@@ -215,7 +335,21 @@ Cette section contrôle les modes d'affichage principaux de la Carte des étoile
 
 ### Objets visibles {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configurer la vue](@site/static/img/plugins/starwatcher/solar_system.png) ![Configurer la vue](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configurer la vue](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configurer la vue](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Cette section vous permet de choisir quels types d'objets célestes sont affichés sur la Carte des étoiles.
 
@@ -274,21 +408,92 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Recherche {#search}
 
-![Recherche](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-La fonctionnalité **Recherche** dans le plugin Astronomie vous permet de trouver des objets célestes, d'explorer les catégories du ciel et d'accéder aux données d'observation. Pour ouvrir la Recherche, appuyez sur le bouton Recherche sur la Carte des étoiles. Cela ouvre l'écran de Recherche, qui fournit plusieurs sections pour découvrir et organiser les objets célestes. L'écran de Recherche inclut les sections suivantes :
+<TabItem value="android" label="Android">
+
+![Recherche](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Recherche](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+La fonctionnalité **Recherche** (**Explorer** sur iOS) dans le plugin Astronomie vous permet de trouver des objets célestes, d'explorer les catégories du ciel et d'accéder aux données d'observation. Pour ouvrir la Recherche, appuyez sur le bouton Recherche sur la Carte des étoiles. Cela ouvre l'écran de Recherche, qui fournit plusieurs sections pour découvrir et organiser les objets célestes. L'écran de Recherche inclut les sections suivantes :
 
 **1. Observer maintenant**
 
 La section Observer maintenant met en évidence les objets célestes qui sont visibles en ce moment ou ce soir. Cette section agit comme un outil de recommandation, affichant les objets les mieux adaptés à l'observation en fonction de votre emplacement et de votre heure actuels.
 
-**2. Catégories**
+**2. Éclipses solaires et lunaires** (*Android uniquement*)
+
+Les outils [Éclipse solaire](#solar-eclipse) et [Éclipse lunaire](#lunar-eclipse) permettent d'explorer les événements d'éclipse dans le monde entier, d'observer leur progression au fil du temps et de vérifier la visibilité des éclipses sur la carte.
+
+**3. Catégories**
 
 La section Catégories vous permet de parcourir les objets par type : Système solaire, Constellations, Étoiles, Nébuleuses, Amas d'étoiles et Ciel profond. Chaque catégorie ouvre une liste d'objets avec des informations clés : nom de l'objet, type ou constellation, magnitude (luminosité) et heure de lever ou de coucher (si applicable).
 
+### Éclipse solaire (Android uniquement) {#solar-eclipse}
+
+![Éclipse solaire](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Éclipse solaire](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+L'**Explorateur d'éclipses solaires** vous permet d'explorer les éclipses solaires passées et à venir dans le monde entier. Il combine la Carte des étoiles avec une chronologie interactive et une visualisation cartographique pour montrer comment une éclipse se développe à différents endroits.
+
+L'Explorateur d'éclipses solaires comprend les fonctionnalités suivantes :
+
+- **Navigation des éclipses**. Utilisez les boutons Précédent et Suivant pour basculer entre les éclipses solaires disponibles.
+- **Chronologie**. La chronologie affiche le début, le maximum et la fin de l'éclipse. Déplacez le curseur pour voir l'éclipse à tout moment pendant l'événement. Toutes les informations sur l'éclipse sont mises à jour automatiquement pour l'heure sélectionnée.
+- **Informations sur l'éclipse**. Le panneau d'informations affiche : le type d'éclipse, la date et l'heure actuelles, l'obscuration de l'éclipse, l'altitude du Soleil et les coordonnées du centre de la carte. Les informations affichées sont calculées pour le centre actuel de la carte.
+- **Trajectoire de l'éclipse**. Appuyez sur Ajuster la trajectoire de l'éclipse pour centrer la carte sur la trajectoire de l'éclipse. Appuyez sur *Afficher la carte* ou *Masquer la carte* pour afficher ou masquer la trajectoire de l'éclipse sur la carte. La trajectoire de l'éclipse montre où l'éclipse est visible et comment l'ombre de la Lune se déplace à travers la surface de la Terre.
+
+:::warning
+
+Ne regardez jamais directement le Soleil sans protection appropriée pour l'observation solaire. Les heures d'éclipse sont des estimations.
+
+:::
+
+### Éclipse lunaire (Android uniquement) {#lunar-eclipse}
+
+![Éclipse lunaire](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Éclipse lunaire](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+L'**Explorateur d'éclipses lunaires** vous permet d'explorer les éclipses lunaires dans le monde entier et d'observer comment la Lune passe à travers l'ombre de la Terre.
+
+L'Explorateur d'éclipses lunaires comprend les fonctionnalités suivantes :
+
+- **Navigation des éclipses**. Utilisez les boutons Précédent et Suivant pour basculer entre les éclipses lunaires disponibles.
+- **Types d'éclipses**. L'explorateur prend en charge : les éclipses pénombrales, les éclipses partielles et les éclipses totales
+- **Chronologie**. La chronologie affiche le début, le maximum et la fin de l'éclipse. Des marqueurs sur la chronologie indiquent les différentes phases de l'éclipse. Déplacez le curseur pour observer l'éclipse à tout moment pendant l'événement.
+- **Informations sur l'éclipse**. Le panneau d'informations affiche : la phase de l'éclipse, l'obscuration de l'éclipse, l'altitude de la Lune et les coordonnées du centre de la carte. Les informations affichées sont calculées pour le centre actuel de la carte.
+- **Carte de visibilité**. Appuyez sur *Ajuster la visibilité* pour centrer la carte sur la zone de visibilité de l'éclipse. Appuyez sur *Afficher la carte* ou *Masquer la carte* pour afficher ou masquer la couche de visibilité. La couche de visibilité met en évidence les régions où la Lune est au-dessus de l'horizon pendant l'éclipse.
+
+:::warning
+
+Les couleurs et la luminosité des ombres sont schématiques et destinées uniquement à la visualisation.
+
+:::
+
 ### Tri et filtres {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Tri](@site/static/img/plugins/starwatcher/sorting.png) ![Filtres](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Tri](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filtres](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Appuyez sur la barre de recherche pour ouvrir l'interface de recherche complète. Vous pouvez affiner les résultats en utilisant les options de tri et de filtrage.
 
@@ -314,7 +519,21 @@ Vous pouvez filtrer les résultats par type d'objet. Sélectionner des catégori
 
 ### Mes données {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Mes données](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Mes données](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La section Mes données contient les objets avec lesquels l'utilisateur a interagi. Cette section inclut trois listes :
 
@@ -326,7 +545,21 @@ Sélectionner un élément ouvre le menu contextuel de l'objet.
 
 ### Catalogues {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Catalogues](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Catalogues](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La section Catalogues fournit un accès aux catalogues astronomiques disponibles dans le plugin Astronomie.
 

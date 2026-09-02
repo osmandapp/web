@@ -1,7 +1,7 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
-title: Astronomy
+title:  Astronomy
 unlistead: true
 ---
 
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomy** è attualmente in **beta**.
+**Astronomy** è attualmente in **beta** su **Android**. 
+
+Su **iOS**, il plugin è disponibile tramite il programma **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
 :::
 
 ## Panoramica {#overview}
@@ -43,13 +44,29 @@ Le seguenti impostazioni sono necessarie per visualizzare l'overlay di Astronomy
 4. Regola ciò che viene mostrato sulla Mappa stellare usando [**Configura vista**](#configure-view) — ad esempio, attiva/disattiva gli oggetti visibili e gli ausili di rendering.
 5. Tocca il pulsante **Chiudi (X)** in alto nella schermata Mappa stellare per uscire dalla Mappa stellare e tornare alla mappa terrestre.
 
-Il plugin funziona con entrambi i motori di rendering della mappa, ma offre le migliori prestazioni in modalità OpenGL.
+Su Android, il plugin funziona con entrambi i motori di rendering della mappa, ma offre le migliori prestazioni in modalità OpenGL.
 
 ## Schermata Mappa stellare {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Vai a:** *Plugin abilitato → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Schermata mappa stellare](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Vai a:** *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Schermata mappa stellare](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 La **schermata Mappa stellare** dedicata mostra una cupola celeste interattiva con stelle, costellazioni, pianeti, percorsi del Sole e della Luna. Nella parte inferiore della schermata è possibile accedere ai seguenti controlli: 
 - [**Cerca**](#search) — apre la schermata di ricerca in cui è possibile cercare oggetti celesti e sfogliare cataloghi e categorie del cielo. 
@@ -64,7 +81,21 @@ La Mappa stellare può anche allinearsi con l'orientamento del dispositivo quand
 
 ## Menu contestuale {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Menu contestuale](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu contestuale](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Il **Menu contestuale** fornisce informazioni dettagliate sugli oggetti celesti e strumenti per osservarli. Si apre toccando un oggetto celeste sulla Mappa stellare.
 
@@ -74,7 +105,21 @@ Il Menu contestuale appare nella parte inferiore della schermata e contiene le i
 
 ### Informazioni sull'oggetto {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Informazioni sull'oggetto](@site/static/img/plugins/starwatcher/object_view_new.png) ![Informazioni sull'oggetto](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Informazioni sull'oggetto](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Informazioni sull'oggetto](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sezione superiore del Menu contestuale mostra il nome e la classificazione dell'oggetto. Sotto il nome vengono indicati il tipo di oggetto e la sua costellazione o gruppo di appartenenza. Ad esempio:
 - **Beta Ursae Minoris** — Stella • Orsa Minore
@@ -87,6 +132,7 @@ I blocchi di informazioni rapide mostrano i parametri osservativi chiave:
 - <Translate android="true" ids="shared_string_azimuth"/> – la direzione dell'oggetto rispetto al nord (0°–360°).
 - <Translate android="true" ids="altitude"/> – l'altezza dell'oggetto sopra l'orizzonte.
 - <Translate android="true" ids="shared_string_magnitude"/> – la luminosità dell'oggetto vista dalla Terra. 
+- Distanza (*solo iOS*) – la distanza dalla Terra all'oggetto celeste selezionato.
 
 Questi valori si aggiornano dinamicamente in base all'ora selezionata e alla posizione dell'utente.
 
@@ -106,7 +152,21 @@ Sotto le informazioni sull'oggetto, il Menu contestuale fornisce diverse azioni 
 
 ### Grafico di visibilità {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Grafico di visibilità](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Grafico di visibilità](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La scheda **Visibilità** mostra come l'oggetto selezionato si muove nel cielo durante un periodo di 24 ore.
 
@@ -141,7 +201,21 @@ Il grafico si apre con l'indicatore posizionato all'ora di sistema corrente. La 
 
 ### Programma di osservazione {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Programma di osservazione](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Programma di osservazione](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La scheda **Programma** mostra la visibilità dell'oggetto selezionato per la settimana corrente. Ogni riga rappresenta un giorno e include:  
 - il giorno della settimana
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## Ricerca stelle in AR (Modalità fotocamera) {#ar-star-finding}
 
-**Vai a:** *Plugin abilitato → <Translate android="true" ids="shared_string_menu,star_map"/> → Pulsante fotocamera* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Vista AR](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Vai a:** *Plugin abilitato → <Translate android="true" ids="shared_string_menu,star_map"/> → Modalità AR* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Vista AR](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Vai a:** *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,star_map"/> → Modalità AR*
+
+</TabItem>
+
+</Tabs>
 
 Il livello **Astronomy** funziona con la **fotocamera del dispositivo** per abilitare l'**osservazione delle stelle in Realtà Aumentata (AR)**. Punta la fotocamera del telefono verso il cielo notturno reale e visualizza in tempo reale stelle, pianeti, costellazioni, Sole/Luna sovrapposti.
 
@@ -197,7 +289,21 @@ La modalità AR utilizza i sensori del dispositivo (giroscopio, accelerometro e 
 
 ## Configura vista {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configura vista](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configura vista](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configura vista](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configura vista](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** consente di controllare come viene visualizzata la Mappa stellare abilitando o disabilitando modalità visive, oggetti e ausili di rendering.
 
@@ -205,7 +311,21 @@ Per aprire Configura vista, tocca il pulsante Configura vista nell'angolo in bas
 
 ### Modalità e azioni {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configura vista](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configura vista](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configura vista](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configura vista](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Questa sezione controlla le principali modalità di visualizzazione della Mappa stellare.
 
@@ -215,7 +335,21 @@ Questa sezione controlla le principali modalità di visualizzazione della Mappa 
 
 ### Oggetti visibili {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Configura vista](@site/static/img/plugins/starwatcher/solar_system.png) ![Configura vista](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Configura vista](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configura vista](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Questa sezione consente di scegliere quali tipi di oggetti celesti vengono mostrati sulla Mappa stellare.
 
@@ -272,23 +406,94 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 -->
 
-## Cerca {#search}
+## Ricerca {#search}
 
-![Cerca](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-La funzione **Cerca** nel plugin Astronomy consente di trovare oggetti celesti, esplorare le categorie del cielo e accedere ai dati di osservazione. Per aprire Cerca, tocca il pulsante Cerca sulla Mappa stellare. Si apre la schermata di ricerca, che fornisce diverse sezioni per scoprire e organizzare gli oggetti celesti. La schermata di ricerca include le seguenti sezioni:
+<TabItem value="android" label="Android">
+
+![Cerca](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Cerca](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+La funzione **Cerca** (**Esplora** su iOS) nel plugin Astronomy consente di trovare oggetti celesti, esplorare le categorie del cielo e accedere ai dati di osservazione. Per aprire Cerca, tocca il pulsante Cerca sulla Mappa stellare. Si apre la schermata di ricerca, che fornisce diverse sezioni per scoprire e organizzare gli oggetti celesti. La schermata di ricerca include le seguenti sezioni:
 
 **1. Osserva ora**
 
 La sezione Osserva ora evidenzia gli oggetti celesti visibili in questo momento o stanotte. Questa sezione funge da strumento di raccomandazione, mostrando gli oggetti più adatti all'osservazione in base alla posizione e all'ora correnti.
 
-**2. Categorie**
+**2. Eclissi solari e lunari** (*solo Android*)
+
+Gli strumenti [Eclissi solare](#solar-eclipse) e [Eclissi lunare](#lunar-eclipse) consentono di esplorare gli eventi di eclissi in tutto il mondo, visualizzarne la progressione nel tempo e verificare la visibilità delle eclissi sulla mappa.
+
+**3. Categorie**
 
 La sezione Categorie consente di sfogliare gli oggetti per tipo: Sistema solare, Costellazioni, Stelle, Nebulose, Ammassi stellari e Cielo profondo. Ogni categoria apre un elenco di oggetti con informazioni chiave: nome dell'oggetto, tipo o costellazione, magnitudine (luminosità) e ora di alba o tramonto (se applicabile).
 
+### Eclissi solare (solo Android) {#solar-eclipse}
+
+![Eclissi solare](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Eclissi solare](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+L'**Esploratore eclissi solare** consente di esplorare le eclissi solari passate e future in tutto il mondo. Combina la Mappa stellare con una timeline interattiva e una visualizzazione su mappa per mostrare come si sviluppa un'eclissi in diverse località.
+
+L'Esploratore eclissi solare include le seguenti funzionalità:
+
+- **Navigazione eclissi**. Usa i pulsanti Precedente e Successivo per passare tra le eclissi solari disponibili.
+- **Timeline**. La timeline mostra l'inizio, il massimo e la fine dell'eclissi. Sposta il cursore per visualizzare l'eclissi in qualsiasi momento durante l'evento. Tutte le informazioni sull'eclissi vengono aggiornate automaticamente per l'ora selezionata.
+- **Informazioni sull'eclissi**. Il pannello informazioni mostra: tipo di eclissi, data e ora corrente, oscuramento dell'eclissi, altitudine del Sole e coordinate del centro della mappa. Le informazioni visualizzate vengono calcolate per il centro della mappa corrente.
+- **Percorso dell'eclissi**. Tocca Adatta percorso eclissi per centrare la mappa sul percorso dell'eclissi. Tocca *Mostra mappa* o *Nascondi mappa* per visualizzare o nascondere il percorso dell'eclissi sulla mappa. Il percorso dell'eclissi mostra dove l'eclissi è visibile e come si muove l'ombra della Luna sulla superficie terrestre.
+
+:::warning
+
+Non guardare mai direttamente il Sole senza un'adeguata protezione per la visualizzazione solare. Gli orari delle eclissi sono stime.
+
+:::
+
+### Eclissi lunare (solo Android) {#lunar-eclipse}
+
+![Eclissi lunare](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Eclissi lunare](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+L'**Esploratore eclissi lunare** consente di esplorare le eclissi lunari in tutto il mondo e osservare come la Luna passa attraverso l'ombra della Terra.
+
+L'Esploratore eclissi lunare include le seguenti funzionalità:
+
+- **Navigazione eclissi**. Usa i pulsanti Precedente e Successivo per passare tra le eclissi lunari disponibili.
+- **Tipi di eclissi**. L'esploratore supporta: eclissi penombra, eclissi parziali ed eclissi totali
+- **Timeline**. La timeline mostra l'inizio, il massimo e la fine dell'eclissi. I marcatori sulla timeline indicano le diverse fasi dell'eclissi. Sposta il cursore per osservare l'eclissi in qualsiasi momento durante l'evento.
+- **Informazioni sull'eclissi**. Il pannello informazioni mostra: fase dell'eclissi, oscuramento dell'eclissi, altitudine della Luna e coordinate del centro della mappa. Le informazioni visualizzate vengono calcolate per il centro della mappa corrente.
+- **Mappa di visibilità**. Tocca *Adatta visibilità* per centrare la mappa sull'area di visibilità dell'eclissi. Tocca *Mostra mappa* o *Nascondi mappa* per visualizzare o nascondere il livello di visibilità. Il livello di visibilità evidenzia le regioni in cui la Luna è sopra l'orizzonte durante l'eclissi.
+
+:::warning
+
+I colori e la luminosità delle ombre sono schematici e destinati solo alla visualizzazione.
+
+:::
+
 ### Ordinamento e filtri {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ordinamento](@site/static/img/plugins/starwatcher/sorting.png) ![Filtri](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ordinamento](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filtri](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Tocca la barra di ricerca per aprire l'interfaccia di ricerca completa. Puoi perfezionare i risultati utilizzando le opzioni di ordinamento e filtro.
 
@@ -314,7 +519,21 @@ Puoi filtrare i risultati per tipo di oggetto. Selezionando categorie specifiche
 
 ### I miei dati {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![I miei dati](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![I miei dati](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sezione I miei dati contiene gli oggetti con cui l'utente ha interagito. Questa sezione include tre elenchi:
 
@@ -326,7 +545,21 @@ Selezionando un elemento si apre il menu contestuale dell'oggetto.
 
 ### Cataloghi {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Cataloghi](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Cataloghi](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sezione Cataloghi fornisce l'accesso ai cataloghi astronomici disponibili nel plugin Astronomy.
 

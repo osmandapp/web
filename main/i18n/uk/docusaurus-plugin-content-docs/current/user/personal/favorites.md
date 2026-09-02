@@ -1,5 +1,5 @@
 ---
-source-hash: b3046455a33c88c91c843c00de8598ff3bb2b1b3426fd1ff62812a4146a9f53c
+source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
 sidebar_position: 7
 title:  Обране
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Огляд {#overview}
 
@@ -88,8 +87,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Назва** — Унікальна назва в межах групи (*Обов'язково*).
 - **Адреса** та **Опис** (*Необов'язково*).
-- **Група** — Виберіть з наявної [групи Обраного](#manage-favorites) або створіть нову.
+- **Група** — Виберіть з наявної [групи Обраного](#manage-favorites) або створіть нову. На Android ви також можете вибрати вкладену папку в межах групи або створити нову. Вкладені папки відображаються з повним шляхом (наприклад, *Подорожі* / *Італія* / *Рим*).
 - **Візуальне налаштування** — Іконка, колір, форма можуть відповідати стандартному [вигляду групи](#change-group-appearance) або бути налаштовані індивідуально.
+- **Медіа** (*лише Android*) — Додайте фото, відео, аудіозаписи або зображення з Галереї чи Файлів.
+
+**ПРИМІТКА:** Якщо шар Обране вимкнено в [Налаштувати мапу](../map/configure-map-menu), додавання нової обраної точки автоматично вмикає шар, щоб нова обрана точка стала видимою на мапі.
 
 
 ### Редагувати / Замінити / Видалити {#edit--replace--delete}
@@ -98,7 +100,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Редагування Обраного Android](@site/static/img/personal/favorite_edit_android.png)
+![Редагування Обраного Android](@site/static/img/personal/favorite_edit_android.webp)
 
 </TabItem>
 
@@ -117,7 +119,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ***Доступні опції:***
 
-- **Редагувати деталі** — Назва, іконка, група, адреса та опис.
+- **Редагувати деталі** — Назва, іконка, група, адреса, опис і прикріплені медіа.
 - **Замінити місце** — Замінити іншу точку цією. Корисно для оновлення певної точки (наприклад, *Моя припаркована машина*) або створення нової.
 - **Видалити** — Видалити обрану точку за допомогою опції видалення, доступної через меню "Редагувати" або через кнопку видалення на Android.
 
@@ -136,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![мої_місця_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -155,6 +157,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Папка *Особисті* містить спеціальні точки, такі як **<Translate android="true" ids="favorite_home_category"/>** та **<Translate android="true" ids="work_button"/>**, які часто використовуються в [навігації](../navigation/setup/route-navigation.md#select-start-point). Ця папка не має *меню з трьома крапками*, і її параметри не можна змінити.
 
 
+### Медіа (лише Android) {#media}
+
+![Медіа](@site/static/img/personal/media_actions.webp) ![Медіа](@site/static/img/personal/media_menu.webp)
+
+Розділ **Медіа** дозволяє прикріплювати до обраної точки фото, відео, аудіозаписи та зображення. Медіа можна додати під час створення обраного або пізніше на екрані редагування. Щоб прикріпити медіа, торкніться *Додати* в розділі Медіа та виберіть один із доступних варіантів:
+- **Зробити фото** — Зробіть нове фото за допомогою камери пристрою.
+- **Записати відеопримітку** — Запишіть нове відео.
+- **Записати аудіопримітку** — Запишіть аудіопримітку.
+- **Вибрати з Галереї** — Виберіть наявне зображення з пристрою.
+- **Вибрати з Файлів** — Виберіть зображення з файлової системи.
+
+Після прикріплення медіа з’являється в картці Медіа в контекстному меню обраного. Така сама картка Медіа доступна для [Шляхових точок](../map/tracks/track-context-menu.md#points--waypoints).
+
+Картка Медіа показує попередній перегляд прикріплених елементів. Відображення елементів відповідає вибраному порядку сортування. Торкніться *Показати все*, щоб відкрити повну галерею. У галереї відображаються всі медіа, прикріплені до вибраного обраного.
+
+Торкніться будь-якого елемента, щоб відкрити його на весь екран. Фото та відео можна переглядати безпосередньо, а аудіозаписи містять елементи керування відтворенням.
+
+
 ## Керування Обраним {#manage-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -169,7 +189,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![мої_місця_ios](@site/static/img/personal/my_places_ios_new.png)
 
@@ -177,9 +197,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Розділ **Мої обрані місця** дозволяє:
+Розділ **Обране** дозволяє:
 
-- [Шукати](#order--sorting--search) конкретні обрані точки або групи.
+- [Шукати](#order--sorting--search) конкретні обрані точки або групи. На iOS групи обраного (папки) організовані в три розділи: **Закріплені**, **Видимі** та **Приховані**. Порожні розділи не відображаються.
 - [Групові операції](#bulk-edit--delete) — Поділитися, перемістити або видалити кілька обраних точок одночасно.
 
 ### Порядок / Сортування / Пошук {#order--sorting--search}
@@ -188,23 +208,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Папки Обраного android](@site/static/img/personal/favorites_folders_sorting.png)
-
-- **Сортування** — Папки та точки "Обране" можна сортувати за допомогою доступних опцій сортування в меню списку. Доступні такі опції: *Назва A – Z*, *Назва Z – A*, *Останні зміни*, *Спочатку новіша дата*, *Спочатку старіша дата*. За замовчуванням елементи сортуються за Назва A – Z. Закріплені папки завжди відображаються вгорі списку. Вони візуально відокремлені від решти папок горизонтальною лінією. [Особиста папка](../personal/favorites.md#special-favorites-personal) закріплена за замовчуванням. 
-- **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Обрані точки сортуються за відстанню від центру мапи.
+![Обране android](@site/static/img/personal/favorites_points_sorting.webp) ![Обране android](@site/static/img/personal/favorites_folders_sorting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Папки Обраного ios](@site/static/img/personal/favorites_folders_ios.png)
-
-- **Сортування** — Папки та точки "Обране" сортуються за алфавітом, причому [особиста папка](../personal/favorites.md#special-favorites-personal) знаходиться вгорі.
-- **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Обрані точки сортуються за відстанню від центру мапи.
-
+![Обране iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Обране iOS](@site/static/img/personal/favorites_folders_sorting.webp)
 </TabItem>
 
 </Tabs>
+
+- **Сортування** — Папки та точки "Обране" можна сортувати за допомогою доступних опцій сортування в меню списку. Для точок обраного доступні такі опції: *Назва A – Z*, *Назва Z – A*, *Останні зміни*, *Найближчі до поточного розташування*, *Найближчі до центру мапи*, *Спочатку новіша дата* та *Спочатку старіша дата*. Для папок обраного доступні такі опції: *Назва A – Z*, *Назва Z – A*, *Останні зміни*, *Спочатку новіша дата* та *Спочатку старіша дата*. За замовчуванням елементи сортуються за Назва A – Z. Закріплені папки завжди відображаються вгорі списку. Вони візуально відокремлені від решти папок роздільником. 
+- **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Обрані точки сортуються за відстанню від центру мапи. Щоб знайти обрані точки зі списку Обране на вкладці Мої місця, торкніться піктограми *Пошук* (лупа).
 
 ### Групове редагування / видалення {#bulk-edit--delete}
 
@@ -235,11 +251,22 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Дії з Обраним ios](@site/static/img/personal/favorites_actions_ios.png)
+![Дії з Обраним ios](@site/static/img/personal/favorites_actions_folders.webp) ![Дії з Обраним ios](@site/static/img/personal/favorites_actions_points.webp)
 
-- Щоб керувати кількома обраними точками, торкніться кнопки **Редагувати** (*іконка олівця*).
-- Виберіть окремі обрані точки або цілі папки для групових операцій.
-- **Доступні опції** — *Поділитися*, *Перемістити до групи Обраного*, *Змінити колір* та *Видалити*.
+Щоб керувати кількома обраними точками або папками, увійдіть у *Режим вибору*, торкнувшись *меню з трьома крапками* у правому верхньому куті та вибравши *Вибрати*. Коли режим вибору активовано, поруч з елементами списку з'являються прапорці. Виберіть необхідні обрані точки або папки, торкнувшись прапорців. Щоб вибрати всі елементи в списку, торкніться іконки "Вибрати все" у правому верхньому куті.
+
+Доступні дії для вибраних точок обраного:
+- **Поділитися** — Експортувати вибрані точки як файл Favorites.gpx.
+- **Перемістити** — Перемістити вибрані обрані точки до іншої папки.
+- **Змінити вигляд** — Змінити вигляд вибраних обраних точок.
+- **Додати до маркерів на мапі** — Додати вибрані точки до списку маркерів на мапі.
+- **Додати до треку** — Додати вибрані точки до треку.
+- **Додати до навігації** — Додати вибрані точки до навігації.
+- **Видалити** — Видалити вибрані обрані точки.
+
+Для вибраних папок доступні ті самі дії, а також додаткові опції:
+- **Показати на мапі** / **Приховати на мапі** — Показати або приховати обрані точки з вибраних папок на мапі.
+- **Закріпити** / **Відкріпити папку** — Закріпити або відкріпити вибрані папки.
 
 </TabItem>
 
@@ -267,36 +294,30 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
-
-Використовуйте ***меню з трьома крапками*** поруч з кожною папкою, щоб керувати групами обраних точок:
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
-- **<Translate android="true" ids="pin_folder"/>** — Закріпіть вибрану папку, щоб вона залишалася вгорі списку обраного для швидшого доступу.
-- **<Translate android="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Видалити з маркерів на мапі** — Додайте всі обрані точки з папки до *Списку маркерів на мапі* або видаліть їх за потреби для зручності.
-- **<Translate android="true" ids="add_to_a_track"/>** — Додайте всі обрані точки з вибраної папки до треку. Це відкриває екран вибору треку, де ви можете вибрати або створити трек.
-- **<Translate android="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
-- **<Translate android="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
+![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
-
-Використовуйте ***довгий дотик*** до папки, щоб керувати групами обраних точок:
-
-- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
-- **<Translate ios="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
-- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
-- **<Translate ios="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
-- **<Translate ios="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
+![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
 
 </TabItem>
 
 </Tabs>
+
+На Android використовуйте ***меню з трьома крапками*** поруч з кожною папкою, щоб керувати групами обраних точок. На iOS використовуйте ***довгий дотик*** до папки, щоб керувати групами обраних точок: 
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
+- **<Translate android="true" ids="pin_folder"/>** — Закріпіть вибрану папку, щоб вона залишалася вгорі списку обраного для швидшого доступу.
+- **<Translate android="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
+- **<Translate android="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
+- **<Translate android="true" ids="shared_string_move"/>** — Перемістіть вибрану папку, включно з усіма обраними точками та вкладеними підпапками, до іншої папки. Поточну папку та її підпапки не можна вибрати як пункт призначення.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Видалити з маркерів на мапі** — Додайте всі обрані точки з папки до *Списку маркерів на мапі* або видаліть їх за потреби для зручності.
+- **<Translate android="true" ids="add_to_a_track"/>** — Додайте всі обрані точки з вибраної папки до треку. Це відкриває екран вибору треку, де ви можете вибрати або створити трек.
+- **Додати до навігації** (*лише iOS*) — Додайте всі обрані точки з вибраної папки до навігації.
+- **<Translate android="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
 
 ### Змінити вигляд групи {#change-group-appearance}
 
@@ -314,7 +335,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 Перейдіть до: *Довгий дотик до папки → Вигляд за замовчуванням*
 
-![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
+![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
 
 </TabItem>
 
@@ -341,7 +362,7 @@ OsmAnd надає кілька методів для [резервного ко�
 
 - **Місця для резервного копіювання** — Локальне сховище, [OsmAnd Cloud](../personal/osmand-cloud.md) (лише з [підпискою OsmAnd Pro або OsmAnd Start](../purchases/index.md)), або месенджери.
 
-- **Формат файлу** — Обрані точки зберігаються у файлах `.gpx` (favorites.gpx).
+- **Формат файлу** — Обрані точки зберігаються у файлах `.gpx` (favorites.gpx). Використовуйте формат `.osf`, щоб створити резервну копію обраних точок разом із прикріпленими медіа. Імпорт резервної копії відновлює як обрані точки, так і пов’язані з ними медіа.
 
 
 ### Безкоштовне хмарне резервне копіювання {#free-cloud-backup}
@@ -358,9 +379,9 @@ OsmAnd надає кілька методів для [резервного ко�
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Дії з Обраним ios](@site/static/img/personal/favorites_free_backup_2_ios.png)
+![Дії з Обраним ios](@site/static/img/personal/favorites_free_backup_2_ios.webp)
 
 </TabItem>
 
@@ -389,7 +410,7 @@ OsmAnd надає кілька методів для [резервного ко�
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![Дії з Обраним ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
@@ -401,34 +422,34 @@ OsmAnd надає кілька методів для [резервного ко�
 
 - *Банер безкоштовного резервного копіювання Обраного*. Торкніться цього банера, щоб розпочати процес резервного копіювання.
 - *Завершіть крок реєстрації*, якщо у вас немає облікового запису OsmAnd Cloud, дотримуючись інструкцій у [посібнику з реєстрації](../personal/osmand-cloud.md#login).
-- *Перейдіть до меню Покупки OsmAnd* (*Меню → Налаштування → Покупки*).
+- *Перейдіть до меню Покупки OsmAnd* (*Меню → Налаштування → Покупи*).
 - *[Пакет OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Виберіть цю опцію, щоб отримати доступ до функції безкоштовного резервного копіювання налаштувань.
 - *Створіть резервну копію* ваших налаштувань.
 
-
-### Усі обрані точки {#all-favorites}
+<!--
+### All Favorites {#all-favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Дії з Обраним android](@site/static/img/personal/favorites_export_import_2_andr.png)
+![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Експорт імпорт Обраного ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Ви можете експортувати та імпортувати свої обрані точки за допомогою спеціальних кнопок внизу екрана "Обране". Файл [.gpx](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) можна надіслати в Dropbox, електронною поштою, через месенджери та інші програми, встановлені на вашому пристрої, які підтримують цю функцію.
+You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
 
-- Кнопка **Імпорт** (*Android*) / **Імпортувати обране** (*iOS*). Дозволяє імпортувати обрані точки (*favorites.gpx*) як шляхові точки з файлу *GPX* (поширений формат даних GPS) зі сховища вашого пристрою.
-- Кнопка **Поділитися** (*Android*) / **Експортувати обране** (*iOS*). Дозволяє експортувати (поділитися) всіма вашими обраними точками у вигляді файлу *favorites.gpx*.
-
+- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
+- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
+-->
 
 ### Група Обраного {#favorite-group}
 
@@ -436,20 +457,21 @@ OsmAnd надає кілька методів для [резервного ко�
 
 <TabItem value="android" label="Android">
 
-![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Дії з Обраним ios](@site/static/img/personal/favorites_actions_1_ios.png)   ![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
-
+![Дії з Обраним ios](@site/static/img/personal/favorites_actions_1_ios.webp) 
 </TabItem>
 
 </Tabs>
 
-- Торкніться **меню з трьома крапками** (*Android*), кнопки **Редагувати** (*іконка олівця на iOS*) або **довго торкніться** папки (*iOS*) вибраної папки обраних точок.
-- Натисніть кнопку **Поділитися**, щоб надіслати файл *Favorites.gpx* у пам'ять пристрою або поділитися ним через месенджери.  
+- Щоб поділитися кількома папками обраного, увійдіть у [Режим вибору](#bulk-edit--delete), виберіть потрібні папки та торкніться *Поділитися*.
+- Щоб поділитися однією папкою обраного, торкніться меню з трьома крапками (*Android*) або довго торкніться папки (*iOS*), виберіть *Поділитися*, щоб надіслати файл Favorites.gpx у пам’ять пристрою або поділитися ним через месенджери. На Android, якщо папка містить прикріплені медіа, з’явиться нижній аркуш «Поділитися». Ви можете вибрати:
+    - *Лише точки* — Поділитися обраними точками з папки як файлом GPX.
+    - *Точки та медіа* — Поділитися обраними точками та прикріпленими медіа як архівом OSF.
 
 
 ### Автоматичне резервне копіювання Обраного {#automatic-favorites-backup}
@@ -492,7 +514,9 @@ OsmAnd створює **файл резервної копії** щоразу, �
 
 ### Обрані точки у файлі GPX {#favorites-in-gpx-file}
 
-Вся інформація про Обрану точку зберігається та описується за допомогою тегів. Створюючи Обрану точку, ви можете написати власний [опис](#favorite-point) або використати інформацію з даних [цікавого об'єкта (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM, з яких була створена ваша точка. Обрані точки, POI та шляхові точки використовують однакові **теги** для зберігання інформації та зберігаються у **форматі файлу GPX**.  
+Вся інформація про Обрану точку зберігається та описується за допомогою тегів. Створюючи Обрану точку, ви можете написати власний [опис](#favorite-point) або використати інформацію з даних [цікавого об'єкта (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM, з яких була створена ваша точка. Обрані точки, POI та шляхові точки використовують однакові **теги** для зберігання інформації та зберігаються у **форматі файлу GPX**.
+
+Обрані точки також можуть містити посилання на прикріплені медіа за допомогою стандартних елементів GPX `<link>`. 
 
 
 ```xml

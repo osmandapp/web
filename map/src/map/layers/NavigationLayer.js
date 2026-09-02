@@ -19,6 +19,7 @@ import {
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
+import { POINT_MARKER_Z_INDEX_OFFSET } from '../util/ZIndexes';
 import { alternativeRouteStyle, ALTERNATIVE_ROUTE_OPACITY } from '../../store/geoRouter/legacy/calculateRoute';
 
 const DRAG_DEBOUNCE_MS = 10;
@@ -587,7 +588,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={startPointRef}
                     draggable={true}
                     eventHandlers={startEventHandlers}
-                    zIndexOffset={1000}
+                    zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
                 />
             )}
             {viaPoints.map((it, ind) =>
@@ -600,7 +601,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                         icon={viaPointIcons[ind]}
                         draggable={true}
                         eventHandlers={intermediateEventHandlers}
-                        zIndexOffset={1000}
+                        zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
                     />
                 ) : null
             )}
@@ -612,7 +613,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     ref={finishPointRef}
                     draggable={true}
                     eventHandlers={endEventHandlers}
-                    zIndexOffset={1000}
+                    zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
                 />
             )}
             {mtx.pinPoint && (

@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
@@ -73,9 +73,21 @@ Para mais detalhes sobre a personalização da aparência da linha da rota, cons
 
 ### Editor de Paleta de Cores {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android"> 
 
 ![Editor de Paletas de Cores](@site/static/img/map/gradient_palettes_1.png) ![Editor de Paletas de Cores ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Editor de Paletas de Cores](@site/static/img/map/gradient_palettes_1_ios.png) ![Editor de Paletas de Cores ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Ao colorir uma trilha por Velocidade, Altitude ou Inclinação, você pode usar paletas próprias para definir como as cores são aplicadas ao longo da trilha.
 
@@ -86,7 +98,7 @@ A tela *Todas as cores* exibe as paletas disponíveis. Toque no menu de três po
 - Remover. A remoção de uma paleta requer confirmação.
 
 Toque no botão + na tela Todas as cores. Dois tipos de paletas estão disponíveis:
-- **<Translate android="true" ids="gradient_range_type_relative"/>** — as cores escalam automaticamente com base nos valores mínimo e máximo da trilha.
+- **<Translate android="true" ids="gradient_range_type_relative"/>** — as cores escalam automaticamente com base nos valores mínimo, médio e máximo da trilha.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — as cores são atribuídas a números absolutos específicos (por exemplo, 50 km/h). Os valores podem ser editados manualmente. As unidades seguem as [configurações do sistema](../../personal/profiles.md#units--formats). A escala de cores não é redimensionada automaticamente quando aplicada a diferentes trilhas.
 
 :::info Recurso Pro
@@ -217,7 +229,7 @@ As opções incluem: *Superior*, &nbsp;*Inferior*, &nbsp;*Superior e inferior*.
 
 ### Casos de Uso {#use-cases}
 
-O recurso de trilha 3D é altamente benéfico para atividades como parapente, onde a visualização do seu caminho de voo pode oferecer insights mais profundos. Ao renderizar a trilha em 3D, você pode aproveitar recursos como **Altura da Parede** e **Cor da Parede** para extrair informações visuais valiosas para análise.
+O recurso de trilha 3D é altamente benéfico para atividades como parapente, onde a visualização do seu caminho de voo pode oferecer insights mais profundos. Ao renderizar a trilha em 3D, você pode aproveitar recursos como **Altura da Parela** e **Cor da Parede** para extrair informações visuais valiosas para análise.
 
 1. **Visualizar por Velocidade com 3D**.  
     Um caso de uso comum é utilizar trilhas 3D para visualizar variações de velocidade. Isso permite identificar seções específicas da trilha onde você diminuiu ou aumentou a velocidade.  
@@ -246,7 +258,7 @@ O recurso de trilha 3D é altamente benéfico para atividades como parapente, on
 
 <TabItem value="ios" label="iOS">
 
-![Alterar Aparência](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Alterar Aparência](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Alterar Aparência](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Alterar Aparência](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ A aba [Trilhas](../../personal/tracks/manage-tracks.md) exibe automaticamente to
 
 Modifique a aparência de várias trilhas em *Meus Locais → Trilhas*:
 
-- **Alterar aparência padrão** (apenas Android) - Permite configurar configurações padrão que serão aplicadas quando a trilha for adicionada à [pasta](../../personal/tracks/manage-tracks.md#track-folder).
+- **Alterar aparência padrão** - Permite configurar configurações padrão que serão aplicadas quando a trilha for adicionada à [pasta](../../personal/tracks/manage-tracks.md#track-folder).
 - **Redefinir para o original** - Restaura as configurações de trilhas individuais.
 
 - [Modo de seleção](../../personal/tracks/manage-tracks.md#selection-mode) - Altera a aparência de trilhas específicas na pasta selecionada ou na lista inteira na aba Trilhas.

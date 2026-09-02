@@ -1,5 +1,5 @@
 ---
-source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
+source-hash: d92c746f8a72d84ab8395bdc89390208bc81a4755169dbeefc240e0f63d57a95
 sidebar_position: 3
 title: Compras na Web
 ---
@@ -38,11 +38,11 @@ Todas as compras feitas através de qualquer uma dessas plataformas suportam [**
 Abaixo estão os preços dos produtos OsmAnd nos EUA e na UE. Os preços em outras regiões são automaticamente convertidos para a moeda local pela plataforma de pagamento.
 
 
-<!--
 
-:::danger 🌱 Spring Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+:::danger 🏖️ Promoção de Verão
+
+*Apresse-se! Esta oferta está disponível apenas até* **17 de junho (23:00 CET)**.
 
 :::
 
@@ -56,13 +56,13 @@ Abaixo estão os preços dos produtos OsmAnd nos EUA e na UE. Os preços em outr
 
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+Ao comprar uma assinatura pelo nosso [site](https://osmand.net/pricing) com desconto,  
+você recebe um plano com desconto de 2 anos.  
+A partir do terceiro ano, será aplicado o preço integral.
 :::
 
+<!--
 
--->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -71,7 +71,7 @@ Starting from the third year, the full price will apply.
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
-
+-->
 
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title:  Vehicle parameters
 ---
@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Resumen
+## Descripción general
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -32,7 +32,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ajustes de Navegación iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -56,7 +56,7 @@ La configuración correcta de los parámetros en la aplicación OsmAnd le ayudar
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ajustes de Navegación iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -82,33 +82,33 @@ Los parámetros del vehículo afectan a la navegación y a la construcción de l
 
 **1.** [**<Translate android="true" ids="routing_attr_weight_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> El parámetro Peso sólo está disponible en tipos de navegación como [*Coche, Camión* y *Motocicleta*](../../navigation/routing/car-based-routing.md).  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
 **2.**  [**<Translate android="true" ids="routing_attr_height_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> El parámetro Altura sólo está disponible en tipos de navegación como *[Coche, Camión, Motocicleta](../../navigation/routing/car-based-routing.md)* y *[Barco](../../navigation/routing/boat-navigation.md)*.  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
 **3.** [**<Translate android="true" ids="routing_attr_length_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> El parámetro Longitud sólo está disponible en tipos de navegación como [*Coche, Camión* y *Motocicleta*](../../navigation/routing/car-based-routing.md).  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
 **4.** [**<Translate android="true" ids="routing_attr_width_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> El parámetro Anchura sólo está disponible en tipos de navegación como *[Coche, Camión, Motocicleta](../../navigation/routing/car-based-routing.md)* y *[Barco](../../navigation/routing/boat-navigation.md)*.  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
 En Android, este parámetro también está disponible para *[Perfiles de ciclismo](../../navigation/routing/bicycle-based-routing.md)* para ayudar a evitar caminos ciclistas estrechos.
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Límite de carga máxima por eje**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Proporcione la carga máxima por eje de su vehículo para evitar carreteras y puentes con restricciones de peso por eje. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/max_axle_load.png)
+![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
 
 **6.** [**Peso máximo con carga completa**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Proporcione el peso total máximo de su vehículo cuando está completamente cargado para evitar carreteras y puentes con restricciones de peso general. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/max_weight_at_full_load.png)
+![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Los límites de los parámetros del vehículo pueden ser importantes para la navegación y la seguridad vial. Algunas de estas restricciones pueden ser:  
 
@@ -126,20 +126,20 @@ Los límites de los parámetros del vehículo pueden ser importantes para la nav
 
 <TabItem value="android" label="Android">
 
-![Ruta de navegación Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ruta de navegación iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Si selecciona el tipo de motor en los parámetros del vehículo, los [***datos de la huella de CO2***](../../navigation/setup/route-details.md#elevation-info) se mostrarán encima del gráfico en [Detalles de la ruta](../setup/route-details.md).
-Hay seis tipos de combustible disponibles: ***Gasolina, Diésel, GLP, GNC, Eléctrico*** e ***Híbrido***.  
+Hay siete tipos de combustible disponibles: ***Gasolina, Diésel, GLP, GNC, Eléctrico, Híbrido*** y ***Etanol***.  
 
 **Aplicabilidad:**
 
@@ -152,13 +152,13 @@ El ajuste **Combustible utilizado por el motor** sólo está disponible en la na
 
 <TabItem value="android" label="Android">
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ajustes de Navegación iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -179,13 +179,13 @@ El ajuste **Capacidad del depósito de combustible** sólo está disponible en l
 
 <TabItem value="android" label="Android">
 
-![Ajustes de Navegación](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ajustes de Navegación](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ La **Velocidad por defecto** es la velocidad de movimiento por defecto para este
 ### Velocidades en carretera {#road-speeds}
 
 
-![Ajustes de Navegación](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 Para algunos tipos de navegación se puede establecer la velocidad mínima y máxima permitida. Si se establece, el motor de enrutamiento asume que el vehículo o el modo de transporte no se moverá más rápido que el límite y no se moverá más lento que la velocidad mínima. 
 Por ejemplo, permite crear una ruta **eficiente en combustible** en la que el consumo de combustible es óptimo a la **velocidad máxima** establecida y el motor encontrará una ruta más corta evitando carreteras más largas pero más rápidas.

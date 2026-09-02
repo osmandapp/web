@@ -127,7 +127,8 @@ export async function waitByRemoved(by, allowHidden = false) {
                         const element = found[0];
                         return (
                             (await element.getCssValue('display')) === 'none' ||
-                            (await element.getCssValue('visibility')) === 'hidden'
+                            (await element.getCssValue('visibility')) === 'hidden' ||
+                            !(await element.isDisplayed()) // hidden by ancestor
                         );
                     }
                     return false;

@@ -1,5 +1,5 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -27,6 +27,7 @@ Vous pouvez :
 - Organiser les widgets dans des panneaux (supérieur, inférieur, gauche, droit, central).
 - Créer plusieurs **pages** dans les panneaux latéraux, choisir la taille des widgets.
 - Choisir la hauteur des lignes et activer/désactiver les icônes des widgets.
+- Sur Android, personnaliser [l'apparence du panneau de widgets](#widget-panel-appearance).
 
 Tous les widgets sont [dépendants du profil](../personal/profiles.md) — chaque profil a sa propre disposition, son ordre, sa visibilité et ses paramètres.
 
@@ -37,7 +38,7 @@ Tous les widgets sont [dépendants du profil](../personal/profiles.md) — chaqu
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -321,6 +322,8 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Ces paramètres s'appliquent uniquement au widget sélectionné.
+
 1. **Options de taille des widgets** (*pour tous les panneaux*) :  
     Vous pouvez personnaliser la taille des **widgets simples** dans les **panneaux supérieur, inférieur, gauche et droit** :
 
@@ -340,10 +343,10 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
     - Il n'y a pas d'option séparée pour activer ou désactiver les étiquettes de texte.
 
 <!--
-3. **Masquer les étiquettes de texte des widgets** :
+3. **Hiding widget text labels**:
 
-    - Masque automatiquement les étiquettes de texte pour garder les informations numériques entièrement visibles dans les mises en page compactes.
-    - Aide à maintenir un agencement de widgets propre et lisible lorsque l'espace est limité.  
+    - Automatically hides text labels to keep numeric information fully visible in compact layouts.
+    - Helps maintain a clean and readable widget arrangement when space is limited.  
 --> 
 
 4. **Taille individuelle pour différentes lignes** (*pour tous les panneaux*) :
@@ -357,6 +360,37 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
     - Appuyez sur l'icône *Paramètres* sur le côté droit du champ du widget.
     - Appuyez sur le paramètre *Taille* et sélectionnez l'une des tailles disponibles.
     - Basculez sur la position Off, dans le champ *Afficher l'icône*.
+
+
+## Apparence du panneau de widgets (Android uniquement) {#widget-panel-appearance}
+
+Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+Les paramètres d'apparence vous permettent de personnaliser l'apparence de tous les widgets du panneau sélectionné. Chaque panneau (*Supérieur*, *Inférieur*, *Gauche*, *Droit*) possède ses propres paramètres d'apparence.
+
+1. **Hauteur**. Contrôle la hauteur des widgets dans le panneau sélectionné. Pour les panneaux Gauche et Droit, ce paramètre modifie la **hauteur du widget**. Pour les panneaux Supérieur et Inférieur, il modifie la **hauteur de la ligne**. Options disponibles : *Original (par défaut)*, *Petit*, *Moyen*, *Grand*.
+
+2. **Icône**. Contrôle la visibilité des icônes. Options disponibles : *Original (par défaut)*, *Activé*, *Désactivé*. 
+
+3. **Couleur du texte**. Modifie la couleur du texte principal du widget. Options disponibles : *Par défaut*, *Automatique*, *Personnalisé*. Lorsque **Personnalisé** est sélectionné, vous pouvez configurer des couleurs distinctes pour les modes **Jour** et **Nuit**. Un aperçu en direct affiche les couleurs sélectionnées avant leur application.
+
+:::tip Achat
+Les couleurs personnalisées des widgets sont une [fonction payante](../purchases/index.md).  
+:::
+
+4. **Couleur du texte secondaire**. Modifie la couleur des noms et des unités des widgets. Options disponibles : *Par défaut*, *Automatique*, *Personnalisé*.
+
+5. **Couleur d'arrière-plan**. Modifie la couleur d'arrière-plan des widgets dans le panneau sélectionné. Options disponibles : *Par défaut*, *Transparent*, *Personnalisé*.
+
+6. **Aperçu**. La zone d'aperçu affiche l'apparence des widgets avec les paramètres d'apparence actuellement sélectionnés.
+
+7. **Copier les paramètres d'apparence :**
+
+    - Appuyez sur le menu ⋮ dans le coin supérieur droit.
+    - Sélectionnez Copier depuis.
+    - Choisissez l'une des options suivantes : *Un autre profil* ou *L'un des autres panneaux*.
 
 
 ## Personnalisation des panneaux {#panels-customization}

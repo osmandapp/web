@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  OsmAnd-Entwicklung
 ---
@@ -76,7 +76,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 - **Kartenebenen deaktivieren** (*Android*). Deaktiviert alle Kartenebenen über der Vektorkarte (Neustart erforderlich).
 - **Logcat-Puffer** (*Android*). Überprüfen und teilen Sie detaillierte Protokolle der App.  
 - **Toast über gedrückte Taste anzeigen** (*Android*). Zeigt eine Meldung über die Taste an.
-- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Die Peilung是 die Kompassrichtung von Ihrer aktuellen Position zu Ihrem beabsichtigten Ziel. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.  
+- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Die Peilung ist die Kompassrichtung von Ihrer aktuellen Position zu Ihrem beabsichtigten Ziel. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Die Kursrichtung ist die Kompassrichtung von Ihrer aktuellen Position in Richtung geografisch Nord. Diese Option ist standardmäßig aktiviert. Beeinflusst die *[Aufzeichnung von Tracks](../plugins/trip-recording.md)*.
 - **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Aktiviert Multisample-Anti-Aliasing, um das Karten-Rendering zu glätten. Verbessert die visuelle Qualität des [„Mein Standort“-Symbols](../personal/profiles.md#my-location-appearance) und der Routenlinie, indem pixelige Kanten reduziert werden. Auf Android wirkt sich diese Option auf das Karten-Rendering auf dem Gerät und bei der Verwendung von [Android Auto](../navigation/auto-car.md) aus. Auf iOS gilt sie nur für [CarPlay](../navigation/car-play.md).
 
@@ -88,7 +88,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 - **Ersten App-Start simulieren**. Setzt das Flag, das den ersten App-Start anzeigt, und behält alle anderen Einstellungen bei.  
 - **Sprachansagen testen**. Wählen Sie eine Stimme und testen Sie sie durch Abspielen von Ansagen.
-- **Berührungen anzeigen** (*iOS*). Hebt Bildschirmberührungen mit visuellen Indikatoren hervor.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Hebt Bildschirmberührungen mit visuellen Indikatoren hervor.
 - **Transparente Statusleiste**. Die Karte wird unter der Statusleiste sichtbar.  
 - **Banner der kostenlosen Version anzeigen**. Zeigt das Banner der kostenlosen Version auch in der kostenpflichtigen Version an.  
 - **Debug-Informationen anzeigen**. Zeigt grafische Informationen über die Platzierung jedes Textes auf der Karte an.
@@ -100,7 +100,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 :::caution Android only
 :::
 
-- **Sicherer Modus**. Führen Sie die App im (langsameren) sicheren Modus aus.  
+- **Sicherer Modus**. Führt OsmAnd ohne die native C++-Bibliothek aus und verwendet stattdessen Java-Implementierungen für das Karten-Rendering und die Routenberechnung. Die App wechselt automatisch in diesen Modus, wenn die native Bibliothek beim Start fehlschlägt, sodass sie gestartet werden und nutzbar bleiben kann. Das Karten-Rendering und die Routenberechnung sind im sicheren Modus deutlich langsamer.  
 
 
 ### Speichereinstellungen {#memory-settings}

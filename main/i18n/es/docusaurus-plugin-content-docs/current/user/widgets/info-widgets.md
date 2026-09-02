@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 2f452a1d8b316f905b1ea409998af97c7fd5afd3e4e38098246912c444d71c63
 sidebar_position: 3
 title:  Widgets informativos
 ---
@@ -32,9 +32,12 @@ Los widgets de altitud muestran la altura sobre el nivel del mar de la geolocali
 ### Altitud: Ubicación actual   {#altitude-current-location}
   
 :::note  Descargar corrección de altitud mundial
-En algunos dispositivos Android, la altitud puede mostrarse de forma imprecisa. Para resolver este problema, descargue un mapa con corrección de altitud.
+En Android 14 y versiones posteriores, OsmAnd utiliza la altitud sobre el nivel medio del mar (MSL) proporcionada por Google Play Services cuando está disponible. En este caso, no se requiere el mapa de corrección de altitud mundial.
+
+Si utiliza la fuente de ubicación de la API de Android o la altitud MSL no está disponible, descargue el mapa de corrección de altitud mundial para mejorar la precisión de la altitud.
 
 - Vaya a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Para cambiar la fuente de ubicación, vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Para más detalles, visite [Mapas y Recursos](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -202,7 +205,7 @@ Tras el restablecimiento, la velocidad media se recalcula a partir de los nuevos
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -239,7 +242,7 @@ Los widgets [simples](../widgets/configure-screen.md#widget-panels) de *Ratio de
 
 - Valor **≤ 0.1**:  
   - "0.05" se muestra como "0".
-- Valor **> 0.1 y < 100**:  
+- Valor **> 0.1 and < 100**:  
   - por ejemplo, "50.7643" se muestra como "50.8:1".
 - Valor **> 100:**  
   - "102.35" se muestra como "102:1."
@@ -247,28 +250,64 @@ Los widgets [simples](../widgets/configure-screen.md#widget-panels) de *Ratio de
 
 ### Ratio de planeo al objetivo {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Ratio de planeo al objetivo** muestra el ratio de planeo exacto requerido para alcanzar el punto objetivo.
+
+| | |
+|:------------|:------------|
+| Activar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Ratio de planeo al objetivo** muestra el ratio de planeo exacto requerido para alcanzar el punto objetivo.
 - **Elevación del objetivo** muestra la elevación del punto objetivo. El [Marcador de mapa](../personal/markers.md) debe utilizarse como punto objetivo.
 
 | | |
 |:------------|:------------|
-| Activar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Activar | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → Ratio de planeo* |
 | Al tocar | Cambia *Ratio de planeo al objetivo* o *Elevación del objetivo*  |
 | Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Ratio de planeo medio {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
+
+| | |
+|:------------|:------------|
+| Activar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
 - **Velocidad vertical media** indica la velocidad a la que un objeto asciende o desciende durante un tiempo. Para la evaluación sólo se consideran el primer y el último punto del intervalo de tiempo. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos. Debe utilizar el [Marcador de mapa](../personal/markers.md) como punto objetivo.
 
 | | |
 |:------------|:------------|
-| Activar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Activar | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → Ratio de planeo* |
 | Al tocar | Cambia *Ratio de planeo medio* o *Velocidad vertical media*  |
 | Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Nivel de batería {#battery-level}
@@ -560,11 +599,12 @@ Para añadir Widgets de Métricas del Vehículo a la pantalla del mapa, active e
 </Tabs>
 
 
-Los widgets pertenecen al [complemento Métricas del vehículo](../plugins/vehicle-metrics.md#widgets). Puede utilizarlos para ver información de un escáner OBD-II conectado, como (*14 métricas*): **Voltaje del adaptador** (*solo Android*),&nbsp; **Temperatura ambiente**,&nbsp; **Voltaje de la batería**,&nbsp; **Carga calculada del motor**,&nbsp; **Temperatura del refrigerante**,&nbsp; **Temperatura del aceite del motor**,&nbsp; **Tiempo de funcionamiento del motor**,&nbsp; **Velocidad del motor** (*gratis*),&nbsp; **Consumo de combustible**,&nbsp; **Presión del combustible**,&nbsp; **Temperatura de admisión**,&nbsp; **Combustible restante**,&nbsp; **Posición del acelerador**, y **Velocidad del vehículo** (*gratis*).  
+Los widgets pertenecen al [complemento Métricas del vehículo](../plugins/vehicle-metrics.md#widgets). Puede utilizarlos para ver información de un escáner OBD-II conectado, como (*14 métricas*): **Voltaje del adaptador**,&nbsp; **Temperatura ambiente**,&nbsp; **Voltaje de la batería**,&nbsp; **Carga calculada del motor**,&nbsp; **Temperatura del refrigerante**,&nbsp; **Temperatura del aceite del motor**,&nbsp; **Tiempo de funcionamiento del motor**,&nbsp; **Velocidad del motor** (*gratis*),&nbsp; **Consumo de combustible**,&nbsp; **Presión del combustible**,&nbsp; **Temperatura de admisión**,&nbsp; **Combustible restante**,&nbsp; **Posición del acelerador**, y **Velocidad del vehículo** (*gratis*).  
 
 - Para añadir widgets de métricas del vehículo a la pantalla del mapa, [active](../plugins/index.md#enable--disable) el **complemento Métricas del vehículo**.
-- Puede añadir widgets aunque no haya ningún escáner OBD-II conectado.
+- Puede añadir widgets incluso si no hay ningún escáner OBD-II conectado.
 - Todos los widgets añadidos son visibles tanto si hay un escáner OBD-II conectado como si no.
+- Para obtener valores precisos de **Consumo de combustible**, especifique la _[capacidad del depósito de combustible](../navigation/guidance/vehicle-parameters.md#overview)_ del vehículo en los ajustes del perfil. Los modos de consumo basados en la distancia también requieren datos GPS.
 - Para editar un widget, toque el widget añadido al panel, luego toque *Ajustes*, o toque directamente el *icono de Ajustes* en el campo del widget.
 
 | | |
@@ -658,8 +698,8 @@ Este es un widget del complemento Mapillary que proporciona acceso rápido a la 
 <InfoAndroidOnly />
 
 :::note
-Para añadir widgets de Notas de audio/vídeo a la pantalla del mapa, active el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
-:::
+Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
+::;
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -703,7 +743,7 @@ Este widget del complemento OsmAnd Tracker se utiliza para acceder rápidamente 
 
 :::note
 Para añadir widgets de Desarrollador a la pantalla del mapa, active el [complemento de desarrollo de OsmAnd](../plugins/development.md).
-:::
+::;
 
 Los **widgets de desarrollador** proporcionan información sobre la [velocidad de renderizado del mapa](../plugins/development.md#map-rendering-fps-widget) y los parámetros de posición de la cámara virtual, incluyendo el [nivel de zoom](../plugins/development.md#zoom-level), la [distancia](../plugins/development.md#distance-to-target) al centro del mapa, la [elevación de la cámara](../plugins/development.md#camera-elevation) y el [ángulo de inclinación](../plugins/development.md#camera-tilt).  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title: İlk Adımlar
 ---
@@ -502,7 +502,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 *Yardım menüsünde* sitemizdeki [www.osmand.net/docs](https://osmand.net/docs/intro/) makalelerini bulabilirsiniz. İlk indirmeden sonra (İnternet bağlantısı gereklidir), yardım makaleleri çevrimdışı olarak kullanılabilir.  
 İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. Bu makaleler, uygulama için ayarlanan dilde görüntülenir, eğer bu dil belgemiz web sitesinde destekleniyorsa. Şu anda desteklenen diller: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, ve *<Translate android="true" ids="lang_uk"/>*. Uygulama dilini değiştirdiğinizde, belgelerin seçilen dilde açılması için lütfen OsmAnd'ı yeniden başlatın. Bir çeviri mevcut olmadığında, sayfanın İngilizce sürümü otomatik olarak görüntülenir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.  
-*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-logcat-logs) de gönderebilirsiniz.  
+*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-app-logs) de gönderebilirsiniz.  
 
 ### Menü {#menu}
 
@@ -510,21 +510,20 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 <TabItem value="android" label="Android">
 
-![Çevrimdışı yardım Android ekran görüntüsü](@site/static/img/steps/offline_help_menu_andr.png)
+![Çevrimdışı yardım Android ekran görüntüsü](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Haritalar menüsü iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Haritalar menüsü iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Çökme günlüğü gönder** (*Android için*). Kullanıcıların uygulama çökmeleriyle ilgili raporları geliştiricilere göndermesine olanak tanır, bu da sorunların belirlenmesine ve çözülmesine yardımcı olur.
-- **Logcat günlüğü gönder** (*Android için*). Kullanıcılara uygulama çökmelerinin ayrıntılı günlüklerini geliştiricilere gönderme yeteneği sağlar, bu da daha derinlemesine analiz ve sorun gidermeyi kolaylaştırır.
-- **Günlük gönder** (*iOS için*). Android için *Çökme günlüğü gönder* özelliğine benzer bir işlev görür, iOS cihazlardaki kullanıcıların hata ayıklama amacıyla uygulama çökmelerini geliştiricilere bildirmesini sağlar.
+- **Uygulama çökme günlüklerini gönder**. Kullanıcıların önceki uygulama çökmelerinden kaydedilen çökme raporlarını geliştiricilere analiz ve sorun giderme için göndermesini sağlar. 
+- **Geçerli oturum günlüklerini gönder** (Android)/**Geçerli uygulama günlüğünü gönder** (iOS). Kullanıcıların uygulamanın başlatılmasından bu yana kaydedilen geçerli uygulama günlüğünü geliştiricilere sorun giderme için göndermesini sağlar.
 - **Yapı sürümünü kopyala**. Kullanıcıların sorunları bildirirken uygulamanın mevcut sürümünü geliştiricilere hızlı ve doğru bir şekilde iletmesini sağlar, bu da teşhis ve çözüm sürecini basitleştirir.
 
 
@@ -624,21 +623,21 @@ Soru sormanıza veya önerilerde bulunmanıza olanak tanır.
 
 <TabItem value="android" label="Android">
 
-![Çevrimdışı yardım Android ekran görüntüsü](@site/static/img/steps/offline_help_report_andr.png)
+![Çevrimdışı yardım Android ekran görüntüsü](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Haritalar menüsü iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Haritalar menüsü iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **GitHub'da sorun aç**. [Android sürümü GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS sürümü GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): sorular sorun, hatalar hakkında yazın ve özellikler önerin.
-- **Çökme günlüğü gönder** (*Android için*). Yalnızca çökmeler hakkında bilgi içerir.
-- [Logcat günlüğü gönder](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Günlük gönder](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Ayrıntılı günlük dosyası.
+- **Uygulama çökme günlüklerini gönder**. Önceki uygulama çökmelerine ilişkin raporlar içerir.
+- **Geçerli oturum günlüklerini gönder** (Android)/**Geçerli uygulama günlüğünü gönder** (iOS). Uygulamanın başlatılmasından bu yana kaydedilen uygulama günlüğünü içerir.
 
 ### OsmAnd Hakkında {#about-osmand}
 

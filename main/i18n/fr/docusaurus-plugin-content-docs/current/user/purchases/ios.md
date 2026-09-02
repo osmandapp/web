@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -104,6 +104,9 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guides de voyage (Wikipédia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md) — [Planification d'observation](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md) — [Mode AR interactif](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md) — [Carte du ciel hors ligne](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec instructions détaillées | ✔ | ✔ | ✔ |
 | [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
 | [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -139,6 +142,7 @@ Pour le moment, l'abonnement Pro inclut les fonctionnalités suivantes :
 | [Plugin Métriques du véhicule (OBD-II)](../plugins/vehicle-metrics.md) | Permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et de stocker les informations dans les enregistrements de trace. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles pour OsmAnd gratuit.  |
 | [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
 | [Modifier le schéma de couleurs](../../user/plugins/topography.md#modify-color-scheme) | Vous permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palettes pour personnaliser les couleurs de la carte et de l'itinéraire. |
+| [Création de palettes personnalisées](../../user/map/tracks/appearance.md#color-palette-editor) | Permet de créer et modifier des palettes de dégradés pour la coloration des traces en utilisant des valeurs relatives ou fixes. Vous pouvez définir des étapes de couleur, attribuer des valeurs et personnaliser la façon dont les données (telles que la vitesse ou l'altitude) sont affichées le long de la trace. |
 | [Dossiers intelligents – Organiser par](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permet d'organiser les traces dans les Dossiers intelligents en utilisant des paramètres de regroupement avancés tels que la date et l'heure, la distance, la durée, la vitesse, l'altitude et les données des capteurs. Ces options permettent une catégorisation plus détaillée des traces et une analyse flexible. |
 
 

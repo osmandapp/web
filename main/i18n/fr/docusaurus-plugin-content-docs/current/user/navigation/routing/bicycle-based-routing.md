@@ -1,5 +1,5 @@
 ---
-source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
+source-hash: 25c13b0161cd5e0efefe881e5446503a1ce483f3ea041fd84cfc9f4b33858e9c
 sidebar_position: 3
 title:  Itinéraire vélo (VTT)
 ---
@@ -31,7 +31,7 @@ Les fonctionnalités de calcul d'itinéraire à vélo d'OsmAnd permettent aux cy
 
 <TabItem value="android" label="Android">  
 
-![Paramètres d'itinéraire vélo](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![Paramètres d'itinéraire vélo](@site/static/img/navigation/routing/cycling_routing_andr.webp)
 
 </TabItem>
 
@@ -50,6 +50,7 @@ Les fonctionnalités de calcul d'itinéraire à vélo d'OsmAnd permettent aux cy
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Sélectionnez les routes que vous souhaitez éviter pendant la navigation.  </summary>![Éviter les routes Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | Vous pouvez soit [sélectionner une route sur la carte](../../map/map-context-menu/#avoid-road) soit choisir un ou plusieurs types de routes dans la liste :  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Éviter de traverser une frontière vers un autre pays)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (un type de transport par eau, qui transporte des véhicules à travers des étendues d'eau)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Éviter les pavés](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (parties d'une route où un cours d'eau la traverse) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Pas de pavés autobloquants](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Les restrictions d'accès privé seront ignorées lors du calcul de l'itinéraire.  | La balise *[private](https://wiki.openstreetmap.org/wiki/Key:access)* est utilisée dans OSM pour décrire les restrictions d'utilisation des routes et autres voies de transport, ainsi que des bâtiments, des entrées, des commodités et des entités de loisirs.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Terrain&nbsp;préféré* (iOS) | <details><summary> Les données d'altitude seront utilisées dans le calcul de l'itinéraire : des [pénalités pour les routes](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) avec un autre profil d'altitude seront définies. </summary> ![Utiliser les données d'altitude Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Cette préférence peut aider à éviter les pentes raides ou, au contraire, à les préférer. Si vous choisissez un itinéraire *vallonné*, la préférence sera donnée aux collines et aux montagnes. Si *plat* - aux plaines, les collines seront évitées. La préférence moins vallonnée est un compromis entre ces deux options. Sans données d'altitude, l'itinéraire le plus rapide comme sur un terrain plat sera calculé. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | Sélectionnez la méthode de calcul d'itinéraire préférée. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Particularités de l'itinéraire VTT {#mtb-routing-particularities}

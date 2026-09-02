@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title:  Detalles de la ruta
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-OsmAnd le permite encontrar la mejor ruta y explorar sus detalles. La aplicación proporciona información detallada sobre la ruta, como la distancia, el [tiempo de viaje](#distance--time--co2), el [tipo de superficie](#road-attributes), las [diferencias de elevación](#elevation-info), los [datos de la huella de CO2](#distance--time--co2) y la [información de giros](#turn-by-turn-information). También puede [analizar](#analyze-on-map) la ruta en el mapa, obtener información sobre los segmentos del track, [imprimir](#print) el plan de ruta, [guardar](#share--export-actions) la ruta y compartirla con otros. Con esta funcionalidad, siempre conocerá los detalles de la ruta y podrá planificar su viaje de manera más eficiente.  
+OsmAnd le permite encontrar la mejor ruta y explorar sus detalles. La aplicación proporciona información detallada sobre la ruta, como la distancia, el [tiempo de viaje](#distance--time--co2), el [tipo de superficie](#road-attributes), las [diferencias de elevación](#elevation-info), los [datos de la huella de CO2](#distance--time--co2) y la [información de giros](#turn-by-turn-information). También puede [analizar](#analyze-on-map) la ruta en el mapa, obtener información sobre los segmentos del track, [imprimir](#print) el plan de ruta, [guardar](#share--save-actions) la ruta y compartirla con otros. Con esta funcionalidad, siempre conocerá los detalles de la ruta y podrá planificar su viaje de manera más eficiente.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -178,7 +178,7 @@ Si hay datos presentes, puede seleccionar uno de los siguientes tipos:
 
 - *Tocar y deslizar*. Toque el gráfico para mostrar información sobre el punto del track y el movimiento a lo largo de él. El gráfico resalta la ubicación del punto en el mapa y muestra información sobre él en la regla.
 - *Escalar*. Escale el gráfico mediante un [gesto con dos dedos](../../map/interact-with-map.md#gestures).
-- *Seguir mi ubicación* (*Solo Android*). Puede tocar [Mi posición](../../map/interact-with-map.md#my-location-and-zoom) para sincronizar la vista del mapa y el gráfico con su ubicación. A medida que se mueva, el gráfico se desplazará de izquierda a derecha, mostrando información por delante de su camino.  
+- *Seguir mi ubicación* (*Solo Android*). Puede tocar [Mi posición](../../map/interact-with-map.md#my-position-and-zoom) para sincronizar la vista del mapa y el gráfico con su ubicación. A medida que se mueva, el gráfico se desplazará de izquierda a derecha, mostrando información por delante de su camino.  
 
 
 ## Atributos de la carretera {#road-attributes}
@@ -311,7 +311,7 @@ Esta información puede ser útil cuando está planeando un viaje y desea estima
 La capacidad de **imprimir** o **guardar** información giro a giro **en formato PDF** es especialmente útil cuando se viaja largas distancias o en lugares desconocidos cuando se necesita tener una idea más detallada de la ruta y el tiempo que se tarda en llegar.
 
 
-## Compartir / Exportar (Acciones) {#share--export-actions}
+## Compartir / Guardar (Acciones) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,7 +323,7 @@ La capacidad de **imprimir** o **guardar** información giro a giro **en formato
 
 <TabItem value="ios" label="iOS">
 
-![Ruta de navegación iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Ruta de navegación iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,8 +332,8 @@ La capacidad de **imprimir** o **guardar** información giro a giro **en formato
 La sección de navegación Detalles de la ruta tiene opciones que le permiten realizar ciertas acciones con la información de la ruta.  
 
 - [**Imprimir**](#print). Le permite imprimir o guardar información de la ruta giro a giro.
-- **Exportar/Guardar**. Le permite guardar la información de la ruta **como un nuevo track** para su uso posterior sin conexión. El track exportado contiene toda la información sobre los atributos de la carretera y las instrucciones de giro. Por lo tanto, la [navegación por este track](./gpx-navigation.md) debería proporcionar todas las características como la navegación por la ruta.
-- **Compartir**. Comparte un track exportado o un enlace a la ruta que podría abrirse en otro dispositivo con OsmAnd.
+- **Guardar**. Le permite guardar la información de la ruta **como un nuevo track** para su uso posterior sin conexión. El track guardado contiene toda la información sobre los atributos de la carretera y las instrucciones de giro. Por lo tanto, la [navegación por este track](./gpx-navigation.md) debería proporcionar todas las características como la navegación por la ruta.
+- **Compartir**. Permite compartir la ruta como un archivo o un enlace que puede abrirse en otro dispositivo con OsmAnd.
 
 
 ## Artículos relacionados {#related-articles}

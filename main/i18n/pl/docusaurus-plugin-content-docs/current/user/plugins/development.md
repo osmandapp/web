@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -88,7 +88,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 - **Symuluj pierwsze uruchomienie aplikacji**. Ustawia flagę wskazującą pierwsze uruchomienie aplikacji, pozostawiając wszystkie inne ustawienia bez zmian.  
 - **Testuj komunikaty głosowe**. Wybierz głos i przetestuj, odtwarzając komunikaty.  
-- **Pokaż dotknięcia** (*iOS*). Podświetla dotknięcia ekranu za pomocą wskaźników wizualnych.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Podświetla dotknięcia ekranu za pomocą wskaźników wizualnych.
 - **Przezroczysty pasek stanu**. Mapa staje się widoczna pod paskiem stanu.  
 - **Pokaż baner wersji darmowej**. Wyświetla baner wersji darmowej nawet w wersji płatnej.  
 - **Pokaż informacje debugowania**. Wyświetla informacje graficzne o umiejscowieniu każdego tekstu na mapie.
@@ -100,7 +100,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 :::caution Tylko dla Androida
 :::
 
-- **Tryb awaryjny**. Uruchom aplikację w (wolniejszym) trybie awaryjnym.  
+- **Tryb awaryjny**. Uruchamia OsmAnd bez natywnej biblioteki C++, używając implementacji Java do renderowania map i obliczania tras. Aplikacja automatycznie przełącza się w ten tryb, jeśli natywna biblioteka ulegnie awarii podczas uruchamiania, umożliwiając uruchomienie i dalsze korzystanie z aplikacji. Renderowanie mapy i obliczanie tras są zauważalnie wolniejsze, gdy tryb awaryjny jest aktywny.  
 
 
 ### Ustawienia pamięci {#memory-settings}
@@ -352,7 +352,7 @@ OsmAnd daje możliwość symulacji lokalizacji i ruchu urządzenia za pomocą ś
 </Tabs>  
 
 Po uruchomieniu symulacji zobaczysz na głównym ekranie aplikacji, że znacznik nawigacji porusza się zgodnie ze śladem GPX. Dotknij [przycisku mojej pozycji](../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować *Moją lokalizację* (symulowaną geolokalizację urządzenia) ze środkiem mapy.  
-Aby zatrzymać symulację ruchu urządzenia, wróć do [ustawień](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
+Aby zatrzymać symulację ruchu urządzenia, wróń do [ustawieniach](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
 
 - Dostęp do *<Translate android="true" ids="simulate_location_by_gpx"/>* można również uzyskać poprzez **[menu Szybkich akcji](../widgets/quick-action.md#navigation)**.
 - Prędkość ruchu podczas symulacji można ustawić jako równą zarejestrowanej prędkości (1) lub szybszą (x2, x3, x4).

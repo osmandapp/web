@@ -1,5 +1,5 @@
 ---
-source-hash: 7d0f73e21832bb5bb74cfe0ea3f7979cec84190aed6f45d68cdd90e6f52f833e
+source-hash: e2d2a90589896b184dc1927313c6823155c2343ca6c4f4fc7075704916696a51
 sidebar_position: 5
 title:  Track Appearance
 ---
@@ -24,13 +24,13 @@ Die Funktion **Track Appearance** ermöglicht es Benutzern, anzupassen, wie Trac
 
 <TabItem value="android" label="Android">  
 
-![Übersicht Track-Darstellung Android](@site/static/img/map/track-appear-and-1.png)  ![Track-Menü Darstellung Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Darstellung iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track-Menü Darstellung iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Track menu Appearance iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track menu Appearance iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -51,11 +51,11 @@ Sie können die Track-Darstellung mit einer der folgenden Methoden ändern:
 
 ### Farbe {#color}
 
-:::tip Käufe
+:::tip purchases
 Einige Einstellungen können nur mit *OsmAnd Pro* verwendet werden. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> und <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Kostenlose und kostenpflichtige Funktionen.
 :::
 
-![Darstellung](@site/static/img/map/appearance_color_andr.png) ![Färbung Kontextmenü iOS](@site/static/img/map/colorisation_ios.png)
+![Appearance](@site/static/img/map/appearance_color_andr.png) ![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
 
 Sie können die Track-Farbe manuell einstellen oder eine **farbbasierte Datenvisualisierung** verwenden (z. B. nach Geschwindigkeit, Höhe, Steigung). Wenn einem Track bestimmte Daten fehlen, zeigt OsmAnd die fehlenden Abschnitte in Grau an.
 
@@ -73,9 +73,21 @@ Weitere Details zur Anpassung der Routenliniendarstellung finden Sie unter [Kart
 
 ### Editor für Farbpaletten {#color-palette-editor}
 
-<InfoAndroidOnly/> 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Editor für Farbpaletten](@site/static/img/map/gradient_palettes_1.png) ![Editor für Farbpaletten](@site/static/img/map/gradient_palettes_2.png) 
+<TabItem value="android" label="Android"> 
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1_ios.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Beim Einfärben eines Tracks nach Geschwindigkeit, Höhe oder Steigung können Sie eigene Paletten verwenden, um zu definieren, wie Farben entlang des Tracks angewendet werden.
 
@@ -89,7 +101,7 @@ Tippen Sie auf die + Schaltfläche auf dem Bildschirm *Alle Farben*. Zwei Arten 
 - **<Translate android="true" ids="gradient_range_type_relative"/>** — Farben skalieren automatisch basierend auf den Mindest- und Höchstwerten des Tracks.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — Farben werden spezifischen absoluten Zahlen zugewiesen (z. B. 50 km/h). Werte können manuell bearbeitet werden. Die Einheiten folgen den [Systemeinstellungen](../../personal/profiles.md#units--formats). Der Verlauf skaliert nicht automatisch, wenn er auf verschiedene Tracks angewendet wird.
 
-:::info Pro-Funktion
+:::info Pro feature
 Das Erstellen benutzerdefinierter Paletten ist eine [**OsmAnd Pro**](../../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
 
@@ -109,7 +121,7 @@ Verwenden Sie das Rückgängig-Symbol in der App-Leiste, um die letzte Aktion r�
 
 ### Breite {#width}
 
-![Track-Menü Darstellung Track-Dicke Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track-Darstellung](@site/static/img/map/track_appearance_width_andr.png)  
+![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
 
 Sie können die Darstellung des Tracks in mehreren Menüs der Anwendung anpassen:
 
@@ -132,12 +144,12 @@ Passen Sie die Track-Breite an, um die Sichtbarkeit auf der Karte zu verbessern.
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Darstellung Teilungsintervall Android](@site/static/img/map/split_interval_android.png)  ![Teilungsintervall Android](@site/static/img/map/split_interval_2_android.png)
+![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Darstellung Teilungsintervall](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Teilungsintervall](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 </TabItem>
 
@@ -148,13 +160,13 @@ Wählen Sie, ob das Intervall auf dem Track **nach Entfernung**, **nach Zeit** o
 
 ### Richtungspfeile {#direction-arrows}
 
-![Track-Menü Darstellung Richtungspfeile Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Fügt **Pfeilmarkierungen** entlang des Tracks hinzu, um die Bewegungsrichtung anzuzeigen.
 
 ### Start- und Ziel-Symbole {#start-and-finish-icons}
 
-![Track-Menü Darstellung Start- und Ziel-Symbole Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Ermöglicht die Auswahl, ob die **Start- und Ziel-Symbole** für Track-Segmente angezeigt werden sollen. Bei Tracks mit einer großen Anzahl von Segmenten können diese Symbole automatisch deaktiviert werden, um die Kartenrendering-Leistung zu verbessern. In diesem Fall können Sie sie manuell aktivieren, falls erforderlich.
 
@@ -169,7 +181,7 @@ Stellt alle **Einstellungen zur Track-Darstellung** auf ihre Standardwerte zurü
 
 ## 3D-Track {#3d-track}
 
-:::tip Käufe
+:::tip Purchase
 3D-Track-Visualisierung ist eine [bezahlte Funktion](../../purchases/index.md).  
 :::
 
@@ -177,13 +189,13 @@ Stellt alle **Einstellungen zur Track-Darstellung** auf ihre Standardwerte zurü
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Darstellung 3D-Visualisierung](@site/static/img/map/3d_track_appearance_android.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Darstellung 3D-Visualisierung](@site/static/img/map/3d_track_appearance_ios.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
@@ -240,13 +252,13 @@ Die 3D-Track-Funktion ist besonders nützlich für Aktivitäten wie Paragliding,
 
 <TabItem value="android" label="Android">
 
-![Darstellung Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Darstellung Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Darstellung ändern](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Darstellung ändern](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios_new.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_default.png)
 
 </TabItem>
 
@@ -256,7 +268,7 @@ Der Tab [Tracks](../../personal/tracks/manage-tracks.md) zeigt automatisch alle 
 
 Ändern Sie die Darstellung mehrerer Tracks unter *Meine Orte → Tracks*:
 
-- **Standarddarstellung ändern** (nur Android) - Ermöglicht die Konfiguration von Standardeinstellungen, die angewendet werden, sobald ein Track zu dem [Ordner](../../personal/tracks/manage-tracks.md#track-folder) hinzugefügt wird.
+- **Standarddarstellung ändern** - Ermöglicht die Konfiguration von Standardeinstellungen, die angewendet werden, sobald ein Track zu dem [Ordner](../../personal/tracks/manage-tracks.md#track-folder) hinzugefügt wird.
 - **Auf Original zurücksetzen** - Stellt die individuellen Track-Einstellungen wieder her.
 
 - [Auswahlmodus](../../personal/tracks/manage-tracks.md#selection-mode) - Ändert die Darstellung bestimmter Tracks im ausgewählten Ordner oder der gesamten Liste im Tab "Tracks".

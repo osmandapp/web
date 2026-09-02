@@ -501,7 +501,7 @@ Tap an action icon to immediately start the application with the selected action
 
 In the *Help menu* you can find articles from our site [www.osmand.net/docs](https://osmand.net/docs/intro/). After initial download (Internet connection required), help articles are available offline.  
 The first subsection, *Offline Help* contains the **Most viewed** (or popular) articles among our users. These articles are displayed in the language set for the application, if this language is supported on our documentation website. Supported languages currently include: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, and *<Translate android="true" ids="lang_uk"/>*. If you change the application language, please restart OsmAnd for the documentation to open in the selected language. When a translation is not available, the English version of the page will be displayed automatically. **User guide** and **Troubleshooting** sections have the same structure as on the website.  
-In the *Help menu*, you can also find useful links to OsmAnd social networks, version information about your application, release notes, and support contacts. Through Help, you can also send [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+In the *Help menu*, you can also find useful links to OsmAnd social networks, version information about your application, release notes, and support contacts. Through Help, you can also send [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Menu {#menu}
 
@@ -509,21 +509,20 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_menu_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Send crash log** (*for Android*). Allows users to send reports of app crashes to developers, aiding in the identification and resolution of issues.
-- **Send logcat log** (*for Android*). Provides users with the ability to send detailed logs of app crashes to developers, facilitating deeper analysis and troubleshooting.
-- **Send log** (*for iOS*). Performs a similar function to the *Send crash log* feature for Android, enabling users on iOS devices to report app crashes to developers for debugging purposes.
+- **Send app crashes logs**. Allows users to send crash reports recorded from previous app crashes to developers for analysis and troubleshooting. 
+- **Send current session logs** (Android)/**Send current app log** (iOS). Allows users to send the current app log, containing information recorded since the app was started, to developers for troubleshooting.
 - **Copy build version**. Enables users to quickly and accurately communicate the current version of the app to developers when reporting issues, simplifying the diagnostic and resolution process.
 
 
@@ -623,21 +622,21 @@ Allows you to ask questions or make suggestions.
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_report_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Open issue on GitHub**. [Android version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): ask questions, write about bugs and propose features.
-- **Send crash log** (*for Android*). Contains only information about crashes.
-- [Send logcat log](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Send log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
+- **Send app crashes logs**. Contains reports of previous app crashes.
+- **Send current session logs** (Android)/**Send current app log** (iOS). Contains the app log recorded since the app was started.
 
 ### About OsmAnd {#about-osmand}
 

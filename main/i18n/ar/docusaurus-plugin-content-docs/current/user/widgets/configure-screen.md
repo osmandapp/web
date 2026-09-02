@@ -1,7 +1,7 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
-title:  تهيئة الشاشة
+title: تهيئة الشاشة
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## نظرة عامة {#overview}
 
 تسمح لك قائمة **تهيئة الشاشة** في OsmAnd بتخصيص واجهة الخريطة عن طريق إضافة وترتيب الأدوات والأزرار والإجراءات السريعة عبر لوحات متعددة.
@@ -27,6 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تنظيم الأدوات في لوحات (علوية، سفلية، يسرى، يمنى، وسطى).
 - إنشاء **صفحات** متعددة داخل اللوحات الجانبية، واختيار حجم الأدوات.
 - اختيار ارتفاع الصف وتشغيل/إيقاف أيقونات الأدوات.
+- على أندرويد، تخصيص [مظهر لوحة الأداة](#widget-panel-appearance).
 
 جميع الأدوات [تعتمد على الملف الشخصي](../personal/profiles.md) — لكل ملف شخصي تخطيطه وترتيبه ورؤيته وإعداداته الخاصة.
 
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview.webp)  ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -321,6 +321,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+تنطبق هذه الإعدادات فقط على الأداة المحددة.
+
 ١. **خيارات حجم الأداة** (*لجميع اللوحات*):  
     يمكنك تخصيص حجم **الأدوات البسيطة** في **اللوحات العلوية والسفلية واليسرى واليمنى**:
 
@@ -340,10 +342,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - لا يوجد خيار منفصل لتشغيل أو إيقاف تسميات النص.
 
 <!--
-٣. **إخفاء تسميات نص الأداة**:
+3. **Hiding widget text labels**:
 
-    - يخفي تلقائيًا تسميات النص للحفاظ على رؤية المعلومات الرقمية بالكامل في التخطيطات المدمجة.
-    - يساعد في الحفاظ على ترتيب أداة نظيف وقابل للقراءة عندما تكون المساحة محدودة.  
+    - Automatically hides text labels to keep numeric information fully visible in compact layouts.
+    - Helps maintain a clean and readable widget arrangement when space is limited.  
 --> 
 
 ٤. **حجم فردي لصفوف مختلفة** (*لجميع اللوحات*):
@@ -357,6 +359,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - انقر على أيقونة *الإعدادات* على الجانب الأيمن من حقل الأداة.
     - انقر على إعداد *الحجم* وحدد أحد الأحجام المتاحة.
     - قم بالتبديل إلى وضع الإيقاف، في حقل *إظهار الأيقونة*.
+
+
+## مظهر لوحة الأداة (أندرويد فقط) {#widget-panel-appearance}
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance.webp) ![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance_2.webp)
+
+تتيح لك إعدادات المظهر تخصيص مظهر جميع الأدوات في اللوحة المحددة. لكل لوحة (*علوية*، *سفلية*، *يسرى*، *يمنى*) إعدادات مظهر خاصة بها.
+
+١. **الارتفاع**. يتحكم في ارتفاع الأدوات في اللوحة المحددة. بالنسبة للوحتين اليسرى واليمنى، يغير هذا الإعداد **ارتفاع الأداة**. أما بالنسبة للوحتين العلوية والسفلية، فيغير **ارتفاع الصف**. الخيارات المتاحة: *الأصلي (افتراضي)*، *صغير*، *متوسط*، *كبير*.
+
+٢. **الأيقونة**. يتحكم في رؤية الأيقونة. الخيارات المتاحة: *الأصلي (افتراضي)*، *تشغيل*، *إيقاف*. 
+
+٣. **لون النص**. يغير لون نص الأداة الأساسي. الخيارات المتاحة: *افتراضي*، *تلقائي*، *مخصص*. عند اختيار **مخصص**، يمكنك تكوين ألوان منفصلة لوضعي **النهار** و**الليل**. تعرض معاينة مباشرة الألوان المحددة قبل تطبيقها.
+
+:::tip شراء
+ألوان الأدوات المخصصة هي [ميزة مدفوعة](../purchases/index.md).  
+:::
+
+٤. **لون النص الثانوي**. يغير لون أسماء الأدوات ووحداتها. الخيارات المتاحة: *افتراضي*، *تلقائي*، *مخصص*.
+
+٥. **لون الخلفية**. يغير لون خلفية الأدوات في اللوحة المحددة. الخيارات المتاحة: *افتراضي*، *شفاف*، *مخصص*.
+
+٦. **المعاينة**. تعرض منطقة المعاينة كيف ستبدو الأدوات مع إعدادات المظهر المحددة حاليًا.
+
+٧. **نسخ إعدادات المظهر:**
+
+    - انقر على قائمة ⋮ في الزاوية العلوية اليمنى.
+    - اختر نسخ من.
+    - اختر أحد الخيارات التالية: *ملف شخصي آخر* أو *إحدى اللوحات الأخرى*.
 
 
 ## تخصيص اللوحات {#panels-customization}
@@ -440,8 +473,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
-
-
 
 يمكنك إعادة ترتيب أو إزالة الأدوات من شاشة التطبيق باستخدام وضع **التعديل**.  
 

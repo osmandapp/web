@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title:  Paramètres du véhicule
 ---
@@ -126,20 +126,20 @@ Les limites sur les paramètres du véhicule peuvent être importantes pour la n
 
 <TabItem value="android" label="Android">
 
-![Paramètres de navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Paramètres de navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres de navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Paramètres de navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Si vous sélectionnez le type de moteur dans les paramètres du véhicule, les [***données sur l'empreinte CO2***](../../navigation/setup/route-details.md#elevation-info) seront affichées au-dessus du graphique dans les [Détails de l'itinéraire](../setup/route-details.md).
-Six types de carburant sont disponibles : ***Essence, Diesel, GPL, GNC, Électrique,*** et ***Hybride***.  
+Sept types de carburant sont disponibles : ***Essence, Diesel, GPL, GNC, Électrique, Hybride*** et ***Éthanol***.  
 
 **Applicabilité :**
 

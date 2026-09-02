@@ -1,5 +1,5 @@
 ---
-source-hash: d6db601872e8f40279d75439a18f1520dac00baae833282247bbcd23cc8196c9
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -45,8 +45,8 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 
 | Tipo | Descrizione | Link |
 |-- | -- | --|
-| GoogleMap in GPX per OsmAnd | Crea una cartella di file GPX in stile OsmAnd da una mappa Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
-| KML in GPX per OsmAnd | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| GoogleMap To OSMAnd GPX | Crea una cartella di file GPX in stile OsmAnd da una mappa Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ to GPX | Script Python per convertire file *KMZ* in formato *GPX*, incluse le icone. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
 | Garmin | Strumento per convertire i file di Garmin Basecamp per OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi to OsmAnd | Conversione dei formati di mappa geoPDF, geoTiff e ozi per OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
@@ -54,6 +54,7 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 | iOverlander GPX to OsmAnd | Script Python per convertire i file *GPX* di iOverlander esportati per OsmAnd con le icone. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 | Topo map into printable| Questo è [uno strumento](https://github.com/acui/osmand_topo_map_generator) per generare una mappa topografica stampabile utilizzando screenshot da OsmAnd (https://osmand.net). La mappa utilizza la griglia UTM e contiene informazioni sulla declinazione. Deve essere utilizzata con una bussola o un dispositivo GPS con coordinate UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar proietta un raggio verso il sole da ogni punto di una traccia GPX e lo confronta con il terreno e la vegetazione (LiDAR HD 0,5 m / IGN), per una data e un'ora specificate. Indica, metro per metro, sole o ombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Uno strumento autonomo che scarica dati LiDAR pubblici dai portali nazionali di 22 paesi | [lidar2map](https://github.com/nico579/lidar2map)|
 
 ## Risorse personalizzate {#custom-resources}
 
@@ -110,7 +111,16 @@ Il file predefinito [render.xml](https://github.com/osmandapp/OsmAnd-resources/b
 | Stile di mappa Selection | Lo ["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) è uno stile di mappa di Holder Tamm che consente di scegliere se nascondere o meno determinati oggetti.  |["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Lo stile di rendering ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) si basa principalmente su UniMap e routes.addon.render.xml  |["Stile di mappa ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Si tratta di uno stile di rendering OsmAnd ottimizzato per l'inseguimento di tempeste](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Risorse personalizzate definite del progetto OsmAnd per ottimizzare il comportamento di OsmAnd. Qui sono definiti: stili di rendering della mappa utilizzati in OsmAnd, voci registrate e TTS, configurazione della generazione di mappe offline, parametri di instradamento, repository di icone  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+Il file predefinito `routing.xml` può essere personalizzato per regolare gli algoritmi e i parametri di instradamento per condizioni specifiche.
+
+| Nome della fonte | Descrizione | Link |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Modifica personalizzata di `routing.xml` che regola il calcolo del percorso in condizioni di pioggia, tenendo conto del tipo di superficie (ad es. roccia nuda), della pendenza e delle classificazioni ufficiali di difficoltà dei sentieri (scale CAI/SAC), oltre a una logica migliorata per "Evita gallerie". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Mappe offline {#offline-maps}
 
@@ -134,6 +144,10 @@ La tabella seguente elenca varie fonti di mappe online preparate dagli utenti, c
 | Basemap AT WMTS | Il set di mappe dell'Austria basato su [basemap.at WMTS](https://basemap.at/en/) creato da mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | Mappe OsmAnd IGN (FR) | Il set di mappe fornite dall'istituto geografico francese IGN. | [Mappe OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 | Collezione di mappe AnyGis | Il sito fornisce una raccolta di mappe per le vacanze in campagna, tra cui mappe turistiche, di montagna, nautiche e molte altre. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| PREVIFOC Wildfire Risk (ES) | Overlay OsmAnd indipendente che mostra i livelli di rischio di incendio boschivo di oggi e di domani per la Comunitat Valenciana, Spagna, utilizzando dati pubblici ufficiali. | [Progetto e installazione](https://previfoc.davidramosweb.com) · [GitHub](https://github.com/davidramosweb/OsmAnd-incendios) · [Pacchetto `.osf` diretto](https://previfoc.davidramosweb.com/previfoc.osf) |
+
+
+
 
 
 <!-- Hardware

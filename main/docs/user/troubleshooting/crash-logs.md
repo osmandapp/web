@@ -18,27 +18,41 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Crash logs are valuable diagnostic tools that help developers identify and fix issues and bugs causing the application to crash or behave unexpectedly. Sharing logs from your Android device with the OsmAnd development team is possible. Currently, iOS users only have one type of crash log option to send.
 
 
-## Crash and Logcat Logs {#crash-and-logcat-logs}
+## Crash and App Logs {#crash-and-app-logs}
 
 OsmAnd allows you to send two types of data to developers:
 
 - **Crash logs**. Generated when the OsmAnd app encounters a critical error or exception causing it to crash. These logs provide detailed information about the application's state during the failure, including build data, stack traces, error messages, and other relevant details.
-- **Logcat logs**. A record of the OsmAnd log stream capturing various events and messages. These logs help developers monitor app behavior, track execution flow, trace specific actions, and investigate non-crash-related issues. Logcat logs usually contain records of activity from the time the app was last started.
+- **Current session/app logs**. A record of the OsmAnd log stream capturing various events and messages. These logs help developers monitor app behavior, track execution flow, trace specific actions, and investigate non-crash-related issues. Logcat logs usually contain records of activity from the time the app was last started.
 
 :::caution Your private information
-Be cautious when sending logcat logs, as they may contain private information such as device location, search queries, route-building results, and navigation data.
+Be cautious when sending app logs, as they may contain private information such as device location, search queries, route-building results, and navigation data.
 :::
 
 
-### Send Logs from OsmAnd App (Android) {#send-logs-from-osmand-app-android}
+### Send Logs from OsmAnd App {#send-logs-from-osmand-app}
 
-1. Go to *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Depending on your situation, select the appropriate type of log. You can refer to the section [Crash and Logcat Logs](#crash-and-logcat-logs) for details on the differences between the log types.
-2. In the pop-up menu, choose Gmail or your preferred email app. The email will be generated automatically.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. Go to *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* or *<Translate android="true" ids="send_logcat_log"/>* (*Send current app log* on iOS). Depending on your situation, select the appropriate type of log. You can refer to the section [Crash and App Logs](#crash-and-app-logs) for details on the differences between the log types.
+2. In the pop-up menu, choose Gmail or your preferred email app. We recommend sending the logs to `support@osmand.net`.
 3. Tap the *Send* button.
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
-
-
+<!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
 1. Logs from iOS devices can be sent:
@@ -58,7 +72,7 @@ Be cautious when sending logcat logs, as they may contain private information su
     - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+-->
 
 ## Send Tombstone Files (Android) {#send-tombstone-files-android}
 

@@ -6,6 +6,7 @@ import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
+import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
 import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
@@ -256,7 +257,7 @@ export default function MapStateLayer() {
                 left: centerPositionPx.x,
                 top: centerPositionPx.y,
                 transform: 'translate(-50%, -50%)',
-                zIndex: 2000,
+                zIndex: MAP_CENTER_ICON_Z_INDEX,
                 pointerEvents: 'none',
                 width: CENTRE_ICON_SIZE,
                 height: CENTRE_ICON_SIZE,

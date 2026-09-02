@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topographie
 ---
@@ -274,6 +274,16 @@ Les Ombres de terrain nécessitent le Relief 3D et l'activent automatiquement lo
 
 ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un jeu de couleurs :
 
 - À partir d'une [liste prédéfinie](#default-color-scheme).
@@ -290,23 +300,6 @@ Vous pouvez :
 **Note :** L'Estompage utilise un algorithme d'ombrage fixe et ne prend pas en charge les palettes de couleurs personnalisées.
 
 Pour une personnalisation avancée des palettes à l'aide de fichiers de palettes, consultez l'article [Jeux de couleurs](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un jeu de couleurs :
-
-- À partir d'une [liste prédéfinie](#default-color-scheme).
-- À partir de fichiers de palette de couleurs que vous avez créés sur votre ordinateur. Les fichiers personnalisés peuvent être ajoutés à OsmAnd en utilisant l'[outil d'import/export](../personal/import-export.md).
-
-Vous pouvez [modifier ces palettes](../personal/color-palette-schemes.md#palette-modify) pour personnaliser l'apparence des cartes et des itinéraires.
-
-</TabItem>
-
-</Tabs>
 
 ### Visibilité {#visibility}
 
@@ -377,7 +370,13 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </Tabs>
 
-La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Si les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluent des passages à travers les bâtiments cartographiés avec la balise `tunnel=building_passage`, OsmAnd rend des ouvertures visibles dans le modèle de bâtiment 3D afin que les routes ou les voies piétonnes passant à travers le bâtiment soient affichées correctement. 
+La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. 
+
+Pour les structures complexes, OsmAnd utilise `building:part` pour rendre les sections individuelles d'un bâtiment avec des hauteurs et des formes différentes. 
+
+Si les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluent des passages à travers les bâtiments cartographiés avec la balise `tunnel=building_passage`, OsmAnd rend des ouvertures visibles dans le modèle de bâtiment 3D afin que les routes ou les voies piétonnes passant à travers le bâtiment soient affichées correctement. 
+
+Les bâtiments 3D peuvent inclure différentes formes de toit basées sur les [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). La balise `roof:shape` définit la géométrie du toit, tandis que `roof:levels` et `roof:height` fournissent des informations sur sa hauteur.
 
 Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés. Lorsque vous zoomez ou dézoomez et que vous faites défiler la carte, les bâtiments 3D apparaissent et disparaissent avec une animation de fondu fluide. Lorsqu'un POI ou un emplacement sélectionné (comme une épingle sur la carte ou une destination de navigation) se trouve à l'intérieur d'un bâtiment, OsmAnd met en évidence le bâtiment correspondant pour faciliter son identification sur la carte.
 
@@ -437,6 +436,20 @@ Les contrôles **<Translate android="true" ids="performance"/>** déterminent la
 Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
 
 **Note :** Utiliser *Détail élevé* et *Distance de vue lointaine* améliore l'apparence visuelle mais peut impacter les performances et augmenter la consommation de batterie.
+
+
+<!--
+### Sun {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+
+- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
+- Altitude — controls the height of the sun above the horizon.
+
+Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
 
 
 ## Relief 3D {#3d-relief}

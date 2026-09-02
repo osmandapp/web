@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title:  Parametri del veicolo
 ---
@@ -32,7 +32,7 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -126,20 +126,20 @@ I limiti sui parametri del veicolo possono essere importanti per la navigazione 
 
 <TabItem value="android" label="Android">
 
-![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Percorso di navigazione iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Percorso di navigazione iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Se si seleziona il tipo di motore nei parametri del veicolo, i dati sull '[***impronta di CO2***](../../navigation/setup/route-details.md#elevation-info) verranno visualizzati sopra il grafico nei [Dettagli del percorso](../setup/route-details.md).
-Sono disponibili sei tipi di carburante: ***Benzina, Diesel, GPL, Metano, Elettrico,*** e ***Ibrido***.  
+Sono disponibili sette tipi di carburante: ***Benzina, Diesel, GPL, Metano, Elettrico, Ibrido*** e ***Etanolo***.  
 
 **Applicabilità:**
 
@@ -158,7 +158,7 @@ L'impostazione **Carburante utilizzato dal motore** è disponibile solo nella na
 
 <TabItem value="ios" label="iOS">
 
-![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

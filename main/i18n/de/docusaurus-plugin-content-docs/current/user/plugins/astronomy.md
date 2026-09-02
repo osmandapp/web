@@ -1,5 +1,5 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomie
 unlistead: true
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**Astronomie** befindet sich derzeit in der **Beta**-Phase.
+**Astronomie** befindet sich derzeit in der **Beta**-Phase auf **Android**. 
+
+Auf **iOS** ist das Plugin über das **iOS-Beta-Programm ([TestFlight](https://testflight.apple.com/join/7poGNCKy))** verfügbar. 
 :::
 
 ## Übersicht {#overview}
@@ -43,13 +44,29 @@ Die folgenden Einstellungen sind erforderlich, um die Astronomy-Überlagerung an
 4. Passen Sie an, was auf der Sternenkarte angezeigt wird, mit [**Ansicht konfigurieren**](#configure-view) — zum Beispiel, schalten Sie sichtbare Objekte und Rendering-Hilfen um.
 5. Tippen Sie auf die Schaltfläche **Schließen (X)** oben auf dem Sternenkarten-Bildschirm, um die Sternenkarte zu verlassen und zur Erdkarte zurückzukehren.
 
-Das Plugin funktioniert mit beiden Kartenrendering-Engines, performt aber am besten im OpenGL-Modus.
+Auf Android funktioniert das Plugin mit beiden Kartenrendering-Engines, performt aber am besten im OpenGL-Modus.
 
 ## Sternenkarten-Bildschirm {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![Sternenkarten-Bildschirm](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**Zum Gehen:** *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![Sternenkarten-Bildschirm](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 Der dedizierte **Sternenkarten-Bildschirm** zeigt eine interaktive Himmelskuppel mit Sternen, Sternbildern, Planeten, Sonnen- und Mondbahnen. Am unteren Rand des Bildschirms haben Sie Zugriff auf die folgenden Steuerelemente: 
 - [**Suche**](#search) — öffnet den Suchbildschirm, auf dem Sie nach Himmelskörpern suchen und Himmelskataloge und Kategorien durchsuchen können. 
@@ -64,7 +81,21 @@ Die Sternenkarte kann auch mit der Geräteausrichtung ausgerichtet werden, wenn 
 
 ## Kontextmenü {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Kontextmenü](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kontextmenü](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Das **Kontextmenü** bietet detaillierte Informationen über Himmelskörper und Tools zur Beobachtung. Es öffnet sich, wenn Sie auf einen Himmelskörper auf der Sternenkarte tippen.
 
@@ -74,7 +105,21 @@ Das Kontextmenü erscheint am unteren Rand des Bildschirms und enthält Objektin
 
 ### Objektinformationen {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_new.png) ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Objektinformationen](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der obere Abschnitt des Kontextmenüs zeigt den Namen und die Klassifikation des Objekts. Unter dem Namen werden der Objekttyp und sein übergeordnetes Sternbild oder Gruppe angezeigt. Zum Beispiel:  
 - **Beta Ursae Minoris** — Stern • Kleiner Bär
@@ -87,6 +132,7 @@ Schnellinformationsblöcke zeigen wichtige Beobachtungsparameter an:
 - <Translate android="true" ids="shared_string_azimuth"/> – die Richtung des Objekts relativ zum Norden (0°–360°).
 - <Translate android="true" ids="altitude"/> – die Höhe des Objekts über dem Horizont.
 - <Translate android="true" ids="shared_string_magnitude"/> – die Helligkeit des Objekts, wie sie von der Erde aus gesehen wird. 
+- Entfernung (*nur iOS*) – die Entfernung von der Erde zum ausgewählten Himmelskörper.
 
 Diese Werte werden dynamisch basierend auf der ausgewählten Zeit und dem Standort des Benutzers aktualisiert.
 
@@ -94,7 +140,7 @@ Unter den Schnellinformationsblöcken kann das Menü auch zusätzliche Informati
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Ermöglicht es Ihnen, eine erweiterte Datenbank mit Wikipedia-Artikeln und Deep-Sky-Katalogen für die Offline-Nutzung herunterzuladen. Nach dem Herunterladen können detaillierte Informationen über Himmelskörper direkt in der App ohne Internetverbindung angezeigt werden.
 - <Translate android="true" ids="read_on_wiki"/> – Öffnet den Wikipedia-Artikel des Objekts im Browser.
 - <Translate android="true" ids="astro_designations"/> – Zeigt alternative Namen und Katalog-Identifikatoren für das Objekt (z. B. HD, HIP, NGC). Dieser Abschnitt ist für Objekte mit Katalogeinträgen verfügbar, wie Sterne und Deep-Sky-Objekte. Wenn das Objekt keinen gängigen Namen hat, wird einer dieser Bezeichnungen als primärer Name verwendet.
-- <Translate android="true" ids="online_photos"/> – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper an.
+- <Translate android="true" ids="online_photos"/> – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper.
 
 ### Aktionen {#actions}
 
@@ -106,7 +152,21 @@ Unter den Objektinformationen bietet das Kontextmenü mehrere Aktionen zur Inter
 
 ### Sichtbarkeitsdiagramm {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Die Registerkarte **Sichtbarkeit** zeigt, wie das ausgewählte Objekt während eines 24-Stunden-Zeitraums am Himmel bewegt.
 
@@ -141,7 +201,21 @@ Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit position
 
 ### Beobachtungsplan {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Die Registerkarte **Plan** zeigt die Sichtbarkeit des ausgewählten Objekts für die aktuelle Woche. Jede Zeile stellt einen Tag dar und enthält:  
 - den Tag der Woche
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## AR-Sternensuche (Kamera-Modus) {#ar-star-finding}
 
-**Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → Kamera-Schaltfläche* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![AR-Ansicht](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**Zum Gehen:** *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,star_map"/> → AR-Modus* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![AR-Ansicht](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**Zum Gehen:** *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,star_map"/> → AR-Modus*
+
+</TabItem>
+
+</Tabs>
 
 Die **Astronomy**-Schicht arbeitet mit der **Gerätekamera**, um **Augmented Reality (AR) Sternenbeobachtung** zu ermöglichen. Richten Sie die Kamera Ihres Handys auf den realen Nachthimmel und sehen Sie Sterne, Planeten, Sternbilder, Sonne/Mond in Echtzeit überlagert.
 
@@ -197,7 +289,21 @@ Der AR-Modus verwendet Gerätesensoren (Gyroskop, Beschleunigungssensor und Komp
 
 ## Ansicht konfigurieren {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/half_state_new.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 **<Translate android="true" ids="astro_configure_view"/>** ermöglicht es Ihnen, zu steuern, wie die Sternenkarte angezeigt wird, indem Sie visuelle Modi, Objekte und Rendering-Hilfen aktivieren oder deaktivieren.
 
@@ -205,7 +311,21 @@ Um Ansicht konfigurieren zu öffnen, tippen Sie auf die Schaltfläche Ansicht ko
 
 ### Modi und Aktionen {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Dieser Abschnitt steuert die Hauptanzeigemodi der Sternenkarte.
 
@@ -215,7 +335,21 @@ Dieser Abschnitt steuert die Hauptanzeigemodi der Sternenkarte.
 
 ### Sichtbare Objekte {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/solar_system.png) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Ansicht konfigurieren](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Dieser Abschnitt ermöglicht es Ihnen, zu wählen, welche Typen von Himmelskörpern auf der Sternenkarte angezeigt werden.
 
@@ -274,21 +408,92 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## Suche {#search}
 
-![Suche](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Die **Suchfunktion** im Astronomy-Plugin ermöglicht es Ihnen, Himmelskörper zu finden, Himmelskategorien zu erkunden und Beobachtungsdaten zuzugreifen. Um die Suche zu öffnen, tippen Sie auf die Suchschaltfläche auf der Sternenkarte. Dies öffnet den Suchbildschirm, der mehrere Abschnitte zur Entdeckung und Organisation von Himmelskörpern bietet. Der Suchbildschirm enthält die folgenden Abschnitte:
+<TabItem value="android" label="Android">
+
+![Suche](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Suche](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Die **Suchfunktion** (**Erkunden** auf iOS) im Astronomy-Plugin ermöglicht es Ihnen, Himmelskörper zu finden, Himmelskategorien zu erkunden und Beobachtungsdaten zuzugreifen. Um die Suche zu öffnen, tippen Sie auf die Suchschaltfläche auf der Sternenkarte. Dies öffnet den Suchbildschirm, der mehrere Abschnitte zur Entdeckung und Organisation von Himmelskörpern bietet. Der Suchbildschirm enthält die folgenden Abschnitte:
 
 **1. Jetzt beobachten**
 
 Der Abschnitt Jetzt beobachten hebt Himmelskörper hervor, die jetzt oder heute Nacht sichtbar sind. Dieser Abschnitt dient als Empfehlungstool und zeigt Objekte, die am besten für die Beobachtung geeignet sind, basierend auf Ihrem aktuellen Standort und der Zeit.
 
-**2. Kategorien**
+**2. Sonnen- und Mondfinsternisse** (*nur Android*)
+
+Die Tools [Sonnenfinsternis](#solar-eclipse) und [Mondfinsternis](#lunar-eclipse) ermöglichen es Ihnen, weltweite Finsternisereignisse zu erkunden, ihren Verlauf über die Zeit anzuzeigen und die Sichtbarkeit der Finsternis auf der Karte zu prüfen.
+
+**3. Kategorien**
 
 Der Kategorien-Abschnitt ermöglicht es Ihnen, Objekte nach Typ zu durchsuchen: Sonnensystem, Sternbilder, Sterne, Nebel, Sternhaufen und Deep Sky. Jede Kategorie öffnet eine Liste von Objekten mit wichtigen Informationen: Objektname, Typ oder Sternbild, Magnitude (Helligkeit) und Auf- oder Untergangszeit (falls zutreffend).
 
+### Sonnenfinsternis (nur Android) {#solar-eclipse}
+
+![Sonnenfinsternis](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Sonnenfinsternis](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+Der **Sonnenfinsternis-Explorer** ermöglicht es Ihnen, vergangene und bevorstehende Sonnenfinsternisse weltweit zu erkunden. Er kombiniert die Sternenkarte mit einer interaktiven Zeitleiste und Kartenvisualisierung, um zu zeigen, wie sich eine Finsternis an verschiedenen Orten entwickelt.
+
+Der Sonnenfinsternis-Explorer umfasst die folgenden Funktionen:
+
+- **Finsternis-Navigation**. Verwenden Sie die Schaltflächen „Vorherige“ und „Nächste“, um zwischen verfügbaren Sonnenfinsternissen zu wechseln.
+- **Zeitleiste**. Die Zeitleiste zeigt Beginn, Maximum und Ende der Finsternis an. Bewegen Sie den Schieberegler, um die Finsternis zu jedem beliebigen Zeitpunkt während des Ereignisses anzuzeigen. Alle Finsternisinformationen werden automatisch für die ausgewählte Zeit aktualisiert.
+- **Finsternisinformationen**. Das Informationspanel zeigt an: Finsternistyp, aktuelles Datum und Uhrzeit, Finsternisverdeckung, Sonnenhöhe und Koordinaten der Kartenmitte. Die angezeigten Informationen werden für die aktuelle Kartenmitte berechnet.
+- **Finsternispfad**. Tippen Sie auf „Finsternispfad anpassen“, um die Karte auf den Finsternispfad zu zentrieren. Tippen Sie auf *Karte anzeigen* oder *Karte ausblenden*, um den Finsternispfad auf der Karte anzuzeigen oder auszublenden. Der Finsternispfad zeigt, wo die Finsternis sichtbar ist und wie sich der Schatten des Mondes über die Erdoberfläche bewegt.
+
+:::warning
+
+Schauen Sie niemals direkt in die Sonne, ohne geeigneten Sonnenschutz. Finsterniszeiten sind Schätzungen.
+
+:::
+
+### Mondfinsternis (nur Android) {#lunar-eclipse}
+
+![Mondfinsternis](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Mondfinsternis](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+Der **Mondfinsternis-Explorer** ermöglicht es Ihnen, weltweite Mondfinsternisse zu erkunden und zu beobachten, wie der Mond durch den Schatten der Erde wandert.
+
+Der Mondfinsternis-Explorer umfasst die folgende Funktion:
+
+- **Finsternis-Navigation**. Verwenden Sie die Schaltflächen „Vorherige“ und „Nächste“, um zwischen verfügbaren Mondfinsternissen zu wechseln.
+- **Finsternistypen**. Der Explorer unterstützt: Halbschattenfinsternisse, partielle Finsternisse und totale Finsternisse
+- **Zeitleiste**. Die Zeitleiste zeigt Beginn, Maximum und Ende der Finsternis an. Markierungen auf der Zeitleiste zeigen die verschiedenen Phasen der Finsternis an. Bewegen Sie den Schieberegler, um die Finsternis zu jedem beliebigen Zeitpunkt während des Ereignisses zu beobachten.
+- **Finsternisinformationen**. Das Informationspanel zeigt an: Finsternisphase, Finsternisverdeckung, Mondhöhe und Koordinaten der Kartenmitte. Die angezeigten Informationen werden für die aktuelle Kartenmitte berechnet.
+- **Sichtbarkeitskarte**. Tippen Sie auf *Sichtbarkeit anpassen*, um die Karte auf den Sichtbarkeitsbereich der Finsternis zu zentrieren. Tippen Sie auf *Karte anzeigen* oder *Karte ausblenden*, um die Sichtbarkeitsschicht anzuzeigen oder auszublenden. Die Sichtbarkeitsschicht hebt Regionen hervor, in denen der Mond während der Finsternis über dem Horizont steht.
+
+:::warning
+
+Schattenfarben und -helligkeit sind schematisch und dienen nur der Visualisierung.
+
+:::
+
 ### Sortierung und Filter {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Sortierung](@site/static/img/plugins/starwatcher/sorting.png) ![Filter](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Sortierung](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filter](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Tippen Sie auf die Suchleiste, um die vollständige Suchoberfläche zu öffnen. Sie können Ergebnisse mit Sortier- und Filteroptionen verfeinern.
 
@@ -314,7 +519,21 @@ Sie können Ergebnisse nach Objekttyp filtern. Das Auswählen spezifischer Kateg
 
 ### Meine Daten {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Meine Daten](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Meine Daten](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der Abschnitt Meine Daten enthält Objekte, mit denen der Benutzer interagiert hat. Dieser Abschnitt umfasst drei Listen:
 
@@ -326,7 +545,21 @@ Das Auswählen eines Elements öffnet das Kontextmenü des Objekts.
 
 ### Kataloge {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Kataloge](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kataloge](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der Kataloge-Abschnitt bietet Zugriff auf astronomische Kataloge, die im Astronomy-Plugin verfügbar sind.
 

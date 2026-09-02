@@ -1,5 +1,5 @@
 ---
-source-hash: 9ba4729ca286e34fdb20e15ca2c215a62dbbad2e5adc8d7696c39a618e9021e5
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -88,7 +88,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 - **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
 - **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.
-- **Show Touches** (*iOS*). Highlights screen touches with visual indicators.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
 - **Transparante statusbalk**. De kaart wordt zichtbaar onder de statusbalk.  
 - **Toon banner gratis versie**. Toon de banner van de gratis versie, zelfs in de betaalde versie.  
 - **Toon debug-informatie**. Toon grafische informatie over de plaatsing van elke tekst op de kaart.
@@ -100,7 +100,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::caution Android only
 :::
 
-- **Veilige modus**. Voer de app uit in de (langzamere) veilige modus.  
+- **Safe mode**. Voert OsmAnd uit zonder de native C++-bibliotheek, met Java-implementaties voor kaartweergave en routeberekening in plaats daarvan. De app schakelt automatisch over naar deze modus als de native bibliotheek tijdens het opstarten faalt, zodat de app kan starten en bruikbaar blijft. Kaartweergave en routeberekening zijn merkbaar langzamer terwijl de veilige modus actief is.  
 
 
 ### Geheugeninstellingen {#memory-settings}

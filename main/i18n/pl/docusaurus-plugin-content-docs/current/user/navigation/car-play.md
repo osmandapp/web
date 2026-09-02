@@ -1,5 +1,5 @@
 ---
-source-hash: 4ee16dd5345f3ed2dd9232a1a31013cf4e55340594169820823e6419ed1a8af0
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -45,7 +45,7 @@ Gdy urządzenie jest podłączone do *CarPlay*, mapa na ekranie aplikacji jest z
 
 ### Interakcja z mapą {#interaction-with-the-map}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
 *CarPlay* wyświetla interfejs OsmAnd dostosowany do ekranu systemu multimedialnego pojazdu. Interakcja z mapą jest ograniczona do:  
 
@@ -55,7 +55,7 @@ Gdy urządzenie jest podłączone do *CarPlay*, mapa na ekranie aplikacji jest z
 
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
 - Najpierw musisz wybrać i skonfigurować profil, który będzie używany podczas łączenia z *CarPlay*. O tym, jak skonfigurować profil, możesz przeczytać w artykule [Profile (Ustawienia)](../personal/profiles).  
     - Wygodnym profilem do korzystania z *CarPlay* może być *Jazda samochodem*, a typem wyznaczania trasy może być [Nawigacja samochodowa](../navigation/routing/car-based-routing.md).
@@ -71,7 +71,7 @@ Do korzystania z OsmAnd w *CarPlay* może być potrzebne połączenie z Internet
 
 ### Rozpocznij nawigację {#start-navigation}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-start(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
 Aby korzystać z wersji OsmAnd na iOS w *CarPlay*, musisz kupić [płatną wersję aplikacji lub subskrypcję](../purchases/ios#free-and-paid-features).  
 
@@ -79,7 +79,7 @@ Aby korzystać z wersji OsmAnd na iOS w *CarPlay*, musisz kupić [płatną wersj
 2. Możesz używać [komunikatów głosowych](#voice-prompts), aby słuchać wskazówek lub komunikatów o problemach na drodze.  
 3. Po wybraniu lokalizacji naciśnij **Start**, aby podążać trasą.
 4. Podczas jazdy na ekranie pojazdu będą wyświetlane informacje OsmAnd o Twojej bieżącej lokalizacji na mapie, wskazówki dojazdu, odległość do następnego zakrętu, pasy ruchu, czas przybycia i odległość do celu.
-    ![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_navmode.png)  
+    ![CarPlay screen](@site/static/img/navigation/auto-car/car_play_navmode.png)  
 5. Jeśli chcesz zmienić trasę lub wybrać inną lokalizację, możesz nacisnąć odpowiedni przycisk na ekranie.
 6. Po zakończeniu trasy możesz dezaktywować *CarPlay*, odłączając urządzenie od systemu multimedialnego pojazdu.
 
@@ -125,7 +125,7 @@ Podczas jazdy wybrane punkty mogą być [ogłaszane](#voice-prompts) głosowo, g
 
 ### Historia {#history}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_history.png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car_play_history.png)  
 
 W **kategorii Historia** możesz wybrać cel z listy punktów końcowych.
 
@@ -138,8 +138,8 @@ W **kategorii Historia** możesz wybrać cel z listy punktów końcowych.
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/car_play_poi_1.png').default} alt="Ekran CarPlay"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/car_play_poi.png').default} alt="Ekran CarPlay"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/car_play_poi_1.png').default} alt="CP"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/car_play_poi.png').default} alt="CP"/></td>
     </tr>
 </table>
 
@@ -149,13 +149,13 @@ Aby wyznaczyć trasę do *POI* w *CarPlay*, wykonaj następujące kroki:
 
 1. Wybierz potrzebny *POI* z listy dostępnych kategorii lub wprowadź nazwę POI za pomocą [Wyszukiwania](#search).
 2. OsmAnd oblicza trasę i wyświetla ją na *ekranie CarPlay*. Dotknij przycisku **Start**, aby rozpocząć nawigację do tej lokalizacji.
-3. W zależności od ustawień aplikacji OsmAnd i Twojego pojazdu, możesz otrzymywać [komunikaty głosowe](#voice-prompts), które poprowadzą Cię do celu.
+3. W zależności od ustawień aplikacji OsmAnd i Twojego pojazdu, możesz otrzymywać [komunikatów głosowych](#voice-prompts), które poprowadzą Cię do celu.
 4. Po dotarciu na miejsce aplikacja powiadomi Cię, że dotarłeś do *POI*.
 
 
 ### Ulubione {#favorites}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
 **Ulubione** to jedna z funkcji OsmAnd, która pozwala na tworzenie swego rodzaju notatek na mapie.
 
@@ -166,7 +166,7 @@ Aby wyznaczyć trasę do *POI* w *CarPlay*, wykonaj następujące kroki:
 
 ### Znaczniki mapy {#map-markers}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 - Aby zdefiniować swój ostateczny cel jako *Znacznik mapy*, musisz najpierw utworzyć wymaganą liczbę znaczników w aplikacji OsmAnd na swoim urządzeniu przed podłączeniem go do systemu multimedialnego pojazdu.
 - *Znaczniki* muszą być dostępne na liście *Menu → Znacznik mapy*.
@@ -175,7 +175,7 @@ Aby wyznaczyć trasę do *POI* w *CarPlay*, wykonaj następujące kroki:
 
 ### Trasy {#tracks}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
 Aby wyznaczyć trasę do celu, możesz wybrać istniejącą trasę dostępną w aplikacji OsmAnd. Trasa może być [pobrana](../personal/tracks/manage-tracks.md#import) z wyprzedzeniem, użyta jako [zarejestrowana](../plugins/trip-recording.md) lub utworzona w [Zaplanuj trasę](../plan-route/create-route.md).  
 
@@ -186,7 +186,7 @@ Trasy można również wybierać bezpośrednio na ekranie pojazdu w *CarPlay*. S
 
 ### Wyszukiwanie {#search}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-search(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
 Przejście do **Wyszukiwania** daje szybki dostęp do listy ostatniej [historii celów](#history). Podobnie jak w [menu Nawigacji](../navigation/setup/route-navigation.md#navigation-menu), gdzie zebrane są wszystkie metody wyznaczania celu w OsmAnd, takie jak adres, POI czy współrzędne.  
 
@@ -211,7 +211,7 @@ Funkcja wyszukiwania w CarPlay priorytetowo traktuje ulice i numery budynków po
 
 ### Folder Ostatnio zmodyfikowane {#folder-last-modified}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_last_modified.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car_play_last_modified.png)
 
 Kategorie *Ulubione* i *Trasy* mają specjalny folder **Ostatnio zmodyfikowane**. Ponieważ lista w tych kategoriach może być bardzo duża, ponieważ zawiera wszystkie istniejące ulubione lub trasy, ten folder jest niezbędny do łatwego i szybkiego dostępu do najnowszych celów.
 
@@ -225,14 +225,34 @@ Oprócz podstawowych funkcji aplikacji OsmAnd w *CarPlay*, które zapewniają wy
 
 Wskazówki głosowe dla *CarPlay* to jedna z najbardziej użytecznych funkcji nawigacyjnych OsmAnd, zapewniająca wskazówki w czasie rzeczywistym i pozwalająca kierowcy skupić się na drodze. Komunikaty głosowe wyraźnie wskazują zakręty, kierunki i inne instrukcje nawigacyjne, zapewniając bezpieczniejsze i bardziej komfortowe korzystanie z systemu nawigacji.  
 
-Gdy odtwarzane są komunikaty głosowe, OsmAnd dostosowuje dźwięk tła w zależności od jego typu. Treści audio mówione, takie jak podcasty i audiobooki, mogą być automatycznie wstrzymywane podczas instrukcji nawigacyjnych. Odtwarzanie muzyki jest kontynuowane z obniżoną głośnością. Opcja *Wstrzymaj dźwięk mówiony* pozwala kontrolować to zachowanie.
+Gdy odtwarzane są komunikaty głosowe, OsmAnd dostosowuje dźwięk tła w zależności od jego typu. Dzięki włączonej opcji *<Translate ios="true" ids="pause_spoken_audio"/>* treści audio mówione, takie jak podcasty i audiobooki, są wstrzymywane podczas instrukcji nawigacyjnych, a odtwarzanie muzyki jest kontynuowane z obniżoną głośnością. Gdy opcja *<Translate ios="true" ids="pause_spoken_audio"/>* jest wyłączona, zarówno treści mówione, jak i muzyka są odtwarzane z obniżoną głośnością.  
 
 Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).  
 
 
+### Alerty nawigacyjne {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Przydatne alerty są automatycznie wyświetlane przed rozpoczęciem nawigacji, gdy wymagane jest dodatkowe działanie w celu obliczenia trasy. Alerty te pomagają rozwiązać problemy z wyznaczaniem trasy przed rozpoczęciem nawigacji.
+
+**Brakujące lub nieaktualne mapy**
+
+Jeśli niektóre mapy offline wymagane do obliczenia trasy są brakujące lub nieaktualne, wyświetlany jest alert. Możesz wybrać jedną z następujących opcji:
+- **Użyj pobranych map**. Oblicz trasę przy użyciu map aktualnie dostępnych na urządzeniu.
+- **Wyświetl na telefonie**. Otwórz ekran pobierania map na iPhonie, aby pobrać lub zaktualizować wymagane mapy. Po pobraniu map możesz ponownie rozpocząć nawigację.
+- **Anuluj**. Zamknij alert bez rozpoczynania nawigacji.
+
+**Ostrzeżenie o dostępie prywatnym**
+
+Jeśli trasa wymaga użycia drogi prywatnej, aby dotrzeć do celu, wyświetlane jest ostrzeżenie: *Zezwolić na korzystanie z drogi prywatnej, aby dotrzeć do celu?* Możesz wybrać:
+- **Zezwól**. Kontynuuj trasę korzystając z drogi prywatnej.
+- **Anuluj**. Zamknij alert i wróć do poprzedniego ekranu, gdzie możesz zmienić cel lub wykonać inną czynność.
+
+
 ### Widżet alertów ekranowych {#screen-alert-widget}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 Ten widżet informacyjny łączy typy alertów, takie jak **Przejścia dla pieszych** i **Ograniczenie prędkości**.
 
@@ -244,7 +264,7 @@ Ten widżet informacyjny łączy typy alertów, takie jak **Przejścia dla piesz
 
 ### Prędkościomierz {#speedometer}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
 Widżet **Prędkościomierz** to zintegrowany element interfejsu, który wyświetla *bieżącą prędkość* na podstawie danych GPS oraz *ograniczenie prędkości* z [bazy danych OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) i [ustawień OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na ekranie systemu multimedialnego pojazdu. Gdy Twoja bieżąca prędkość zbliża się do skonfigurowanej tolerancji ograniczenia prędkości lub przekracza ograniczenie prędkości, widżet zmienia swój wygląd (kolory), aby ostrzec. Zmiana wyglądu może być animowana.
 
@@ -255,7 +275,7 @@ Widżet **Prędkościomierz** to zintegrowany element interfejsu, który wyświe
 
 ### Wygląd mapy (3D) {#map-appearance-3d}
 
-![CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
+![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
 
 Aplikacja OsmAnd umożliwia korzystanie z widoku mapy 3D na *ekranie CarPlay* w celu wyświetlania trasy i nawigacji.
 
@@ -265,7 +285,7 @@ Aplikacja OsmAnd umożliwia korzystanie z widoku mapy 3D na *ekranie CarPlay* w 
 
 ### Wielofunkcyjny pulpit {#multifunction-dashboard}
 
-![CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
+![Car Play](@site/static/img/navigation/auto-car/car_play_4.png)
 
 Aplikacja OsmAnd może być otwierana i używana do nawigacji w *CarPlay* na ekranie systemu multimedialnego pojazdu jednocześnie z aplikacjami do muzyki, wiadomości lub innych powiadomień.
 

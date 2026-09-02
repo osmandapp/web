@@ -1,5 +1,5 @@
 ---
-source-hash: ff26b60a97bb085d98c5e13555df437805be3dbb645b602061c2a71d46aab298
+source-hash: 2f452a1d8b316f905b1ea409998af97c7fd5afd3e4e38098246912c444d71c63
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -32,11 +32,14 @@ Höhen-Widgets zeigen die Höhe über dem Meeresspiegel des aktuellen geografisc
 ### Höhe: Aktueller Standort   {#altitude-current-location}
   
 :::note  Weltweite Höhenkorrektur herunterladen
-Auf einigen Android-Geräten kann die Höhe ungenau angezeigt werden. Um dieses Problem zu lösen, laden Sie eine Karte mit Höhenkorrektur herunter.
+Ab Android 14 verwendet OsmAnd, sofern verfügbar, die von Google Play Services bereitgestellte Höhe über dem Meeresspiegel (MSL). In diesem Fall ist die Weltweite Höhenkorrekturkarte nicht erforderlich.
+
+Wenn Sie die Android-API als Positionsquelle verwenden oder die MSL-Höhe nicht verfügbar ist, laden Sie die Weltweite Höhenkorrekturkarte herunter, um die Höhenangabe zu verbessern.
 
 - Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Um die Positionsquelle zu ändern, gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads-menu).
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -67,7 +70,7 @@ Auf einigen Android-Geräten kann die Höhe ungenau angezeigt werden. Um dieses 
 
 :::info Pro-Funktion
 Das Widget *Höhe: Kartenzentrum* ist eine kostenpflichtige [**OsmAnd Pro**](../purchases/index.md)-Funktion <ProFeature />.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -202,7 +205,7 @@ Nach dem Zurücksetzen wird die Durchschnittsgeschwindigkeit aus den neuen GPS-D
 
 |Widgets| Widgets auf dem Bildschirm|
 |:--------|:---------|
-|![Gleitverhältnis](@site/static/img/widgets/glide_ratio_3.png)|![Gleitverhältnis](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Gleitverhältnis](@site/static/img/widgets/glide_ratio_3.png)|![Gleitverhältnis](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -247,28 +250,64 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 
 ### Gleitverhältnis zum Ziel {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
+
+| | |
+|:------------|:------------|
+| Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
 - **Zielhöhe** zeigt die Höhe des Zielpunkts an. Der [Kartenmarker](../personal/markers.md) sollte als Zielpunkt verwendet werden.
 
 | | |
 |:------------|:------------|
-| Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Aktivieren | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
 | Durch Tippen | Wechselt zwischen *Gleitverhältnis zum Ziel* und *Zielhöhe*  |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Durchschnittliches Gleitverhältnis {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
+
+| | |
+|:------------|:------------|
+| Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
 - **Durchschnittliche Vertikalgeschwindigkeit** gibt die Rate an, mit der ein Objekt über eine Weile auf- oder absteigt. Nur der erste und letzte Punkt des Zeitintervalls werden zur Bewertung herangezogen. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen. Sie sollten den [Kartenmarker](../personal/markers.md) als Zielpunkt verwenden.
 
 | | |
 |:------------|:------------|
-| Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Aktivieren | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
 | Durch Tippen | Wechselt zwischen *Durchschnittliches Gleitverhältnis* und *Durchschnittliche Vertikalgeschwindigkeit*  |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Batteriestand {#battery-level}
@@ -493,7 +532,7 @@ Reiseaufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids=
 
 :::note
 Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Plugin für externe Sensoren](../plugins/external-sensors.md).
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -540,7 +579,7 @@ Widgets beziehen sich auf das [Plugin für externe Sensoren](../plugins/external
 
 :::note
 Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md).
-:::
+::;
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -560,11 +599,12 @@ Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das
 </Tabs>
 
 
-Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#widgets). Sie können sie verwenden, um Informationen von einem angeschlossenen OBD-II-Scanner anzuzeigen, wie z.B. (*14 Metriken*): **Adapter-Spannung** (*nur Android*),&nbsp; **Umgebungstemperatur**,&nbsp; **Batteriespannung**,&nbsp; **Berechnete Motorlast**,&nbsp; **Kühlmitteltemperatur**,&nbsp; **Motoröltemperatur**,&nbsp; **Motorlaufzeit**,&nbsp; **Motordrehzahl** (*kostenlos*),&nbsp; **Kraftstoffverbrauch**,&nbsp; **Kraftstoffdruck**,&nbsp; **Ansaugtemperatur**,&nbsp; **Verbleibender Kraftstoff**,&nbsp; **Drosselklappenstellung**, und **Fahrzeuggeschwindigkeit** (*kostenlos*).  
+Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#widgets). Sie können sie verwenden, um Informationen von einem angeschlossenen OBD-II-Scanner anzuzeigen, wie z.B. (*14 Metriken*): **Adapter-Spannung**,&nbsp; **Umgebungstemperatur**,&nbsp; **Batteriespannung**,&nbsp; **Berechnete Motorlast**,&nbsp; **Kühlmitteltemperatur**,&nbsp; **Motoröltemperatur**,&nbsp; **Motorlaufzeit**,&nbsp; **Motordrehzahl** (*kostenlos*),&nbsp; **Kraftstoffverbrauch**,&nbsp; **Kraftstoffdruck**,&nbsp; **Ansaugtemperatur**,&nbsp; **Verbleibender Kraftstoff**,&nbsp; **Drosselklappenstellung**, und **Fahrzeuggeschwindigkeit** (*kostenlos*).  
 
 - Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, [aktivieren](../plugins/index.md#enable--disable) Sie das **Fahrzeugmetrik-Plugin**.
 - Sie können Widgets hinzufügen, auch wenn kein OBD-II-Scanner angeschlossen ist.
 - Alle hinzugefügten Widgets sind sichtbar, unabhängig davon, ob ein OBD-II-Scanner angeschlossen ist oder nicht.
+- Für genaue **Kraftstoffverbrauch**-Werte geben Sie die _[Kraftstofftankkapazität](../navigation/guidance/vehicle-parameters.md#overview)_ des Fahrzeugs in den Profileinstellungen an. Verbrauchsmodi auf Distanzbasis erfordern außerdem GPS-Daten.
 - Um ein Widget zu bearbeiten, tippen Sie auf das zum Panel hinzugefügte Widget, dann auf *Einstellungen*, oder tippen Sie direkt auf das *Einstellungssymbol* im Widget-Feld.
 
 | | |
@@ -579,7 +619,7 @@ Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#w
 
 :::note
 Um Wetter-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Wetter-Plugin](../plugins/weather.md).
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -659,7 +699,7 @@ Dies ist ein Mapillary-Plugin-Widget, das schnellen Zugriff auf die Mapillary-An
 
 :::note
 Um Audio-/Videonotizen-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Audio-/Videonotizen-Plugin](../plugins/audio-video-notes.md).
-:::
+::;
 
 ![Audio-Videonotizen-Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -689,7 +729,7 @@ Um das Tracker-Widget zum Kartenbildschirm hinzuzufügen, aktivieren Sie das Osm
 
 Damit das Plugin und das Widget funktionieren, müssen Sie [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) von Google Play oder anderen Quellen installieren.  
 
-Dieses OsmAnd Tracker-Plugin-Widget wird verwendet, um schnell auf die OsmAnd Tracker-App zuzugreifen und Ihre Standortinformationen mit anderen Benutzern zu teilen. Die App sendet innerhalb einer bestimmten Zeit *Live-Standort*-Nachrichten an ausgewählte Chats, zeigt eine Liste von Kontakten und Gruppen an und prüft Chats auf Nachrichten mit Ihrem Standort, die dann auf einer Karte in OsmAnd angezeigt werden.  
+Dieses OsmAnd Tracker-Plugin-Widget ist verwendet, um schnell auf die OsmAnd Tracker-App zuzugreifen und Ihre Standortinformationen mit anderen Benutzern zu teilen. Die App sendet innerhalb einer bestimmten Zeit *Live-Standort*-Nachrichten an ausgewählte Chats, zeigt eine Liste von Kontakten und Gruppen an und prüft Chats auf Nachrichten mit Ihrem Standort, die dann auf einer Karte in OsmAnd angezeigt werden.  
 
 ![Tracker-Widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
@@ -703,7 +743,7 @@ Dieses OsmAnd Tracker-Plugin-Widget wird verwendet, um schnell auf die OsmAnd Tr
 
 :::note
 Um Entwickler-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [OsmAnd-Entwicklungs-Plugin](../plugins/development.md).
-:::
+::;
 
 **Entwickler-Widgets** liefern Informationen über die [Rendering-Geschwindigkeit](../plugins/development.md#map-rendering-fps-widget) der Karte und die Parameter der virtuellen Kameraposition, einschließlich [Zoomstufe](../plugins/development.md#zoom-level), [Entfernung](../plugins/development.md#distance-to-target) zum Kartenzentrum, [Kamerahöhe](../plugins/development.md#camera-elevation) und [Neigungswinkel](../plugins/development.md#camera-tilt).  
 

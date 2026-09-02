@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -57,9 +57,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger 🌱 Spring Sale
+:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **May 05 (23:00 CET)**.
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -106,6 +106,9 @@ import Translate from '@site/src/components/Translate.js';
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [أدلة السفر (ويكيبيديا)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [تخطيط المراقبة](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [وضع الواقع المعزز التفاعلي](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [خريطة السماء دون اتصال](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [الملاحة عبر الإنترنت وغير متصل](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
 | [بحث فوري دون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -141,6 +144,7 @@ import Translate from '@site/src/components/Translate.js';
 | [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات المركبة التفصيلية في تطبيق OsmAnd وتخزين المعلومات في سجلات المسارات. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني.  |
 | [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
 | [تعديل مخطط الألوان](../../user/plugins/topography.md#modify-color-scheme) | يسمح لك بتخصيص مظهر الخريطة من خلال اختيار أو استيراد لوحات ألوان. يمكنك تحرير المخططات المدمجة أو استخدام ملفات لوحة ألوان خاصة بك لتخصيص ألوان الخريطة والمسار. |
+| [إنشاء لوحات ألوان مخصصة](../../user/map/tracks/appearance.md#color-palette-editor) | يسمح لك بإنشاء وتعديل لوحات التدرج اللوني لتلوين المسارات باستخدام قيم نسبية أو ثابتة. يمكنك تحديد خطوات الألوان، وتعيين القيم، وتخصيص كيفية عرض البيانات (مثل السرعة أو الارتفاع) على طول المسار. |
 | [المجلدات الذكية – التنظيم حسب](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | يتيح تنظيم المسارات في المجلدات الذكية باستخدام معلمات تجميع متقدمة مثل التاريخ والوقت، والمسافة، والمدة، والسرعة، والارتفاع، وبيانات المستشعرات. تتيح هذه الخيارات تصنيفًا أكثر تفصيلاً للمسارات وتحليلًا مرنًا. |
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -44,7 +44,7 @@ Menu kontekstowe mapy dostarcza informacji o wybranym obiekcie na mapie. Można 
 Możesz wybierać różne typy obiektów na mapie, takie jak *POI*, *ulubione*, *przystanki transportu*, *znaczniki*, *szczyty górskie* lub inne *obiekty mapy*.
 
 :::note
-- Wybrane obiekty mapy i ich granice odpowiadają [**węzłom (nodes)**](https://wiki.openstreetmap.org/wiki/Node) lub [**drogom (ways)**](https://wiki.openstreetmap.org/wiki/Way) OpenStreetMap.
+- Wybrane obiekty mapy i ich granice odpowiadają OpenStreetMap [**węzłom (nodes)**](https://wiki.openstreetmap.org/wiki/Node) lub [**drogo (ways)**](https://wiki.openstreetmap.org/wiki/Way).
 - *Wysokość szczytów górskich jest wyświetlana w metrach lub stopach w zależności od [jednostek długości](../personal/profiles.md#units--formats) wybranych w ustawieniach profilu.*
 :::
 
@@ -77,13 +77,13 @@ Gdy **długo dotkniesz** dowolnego miejsca na mapie, pojawi się **menu kontekst
 
 <TabItem value="android" label="Android">  
 
-![Menu kontekstowe śladu Android](@site/static/img/map/context_track_menu_Android.png)
+![Menu kontekstowe śladu Android](@site/static/img/map/context_track_menu_Android.png) ![Co tu jest Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Ekran statystyk śladu iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Ekran statystyk śladu iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Co tu jest iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -137,11 +137,12 @@ Dostępne szczegóły obejmują:
 
 - [Opis artykułu](#article-description)
 - [Alternatywne nazwy](#alternative-names)
+- [Powiązane](#related)
 - [Współrzędne](#coordinates)
 - [W obszarach](#polygon-information)
 - [Pobliskie POI](#nearby-pois)
 - [Pobliskie popularne miejsca](#nearby-popular-places)
-- [Przewodniki](#guides) (tylko Android)
+- [Przewodniki](#guides) 
 - [Trasy transportu publicznego dla przystanków](#public-transport-routes)
 - [Ulubione / Punkty trasy z tej samej grupy](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -156,6 +157,8 @@ Dodatkowo panel może zawierać [Szczegóły OpenStreetMap](https://wiki.openstr
 - [Dostępność](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Szerokość](https://wiki.openstreetmap.org/wiki/Key:width) / [Wysokość](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+Jeśli pole kontaktowe (takie jak *Strona internetowa, Numer telefonu* lub *Adres e-mail*) zawiera wiele wartości, dotknięcie go wyświetla listę dostępnych wpisów. Wybierz żądany wpis, aby wykonać odpowiednią czynność.
+
 Poza polami wymienionymi powyżej, OsmAnd może również wyświetlać dodatkowe opisowe informacje pobrane z OpenStreetMap. Te atrybuty pomagają lepiej zrozumieć cechy miejsca i mogą obejmować szczegóły takie jak wysokość, kierunek, rok budowy, typ nawierzchni lub pokrycia, poziom wewnątrz budynku, opcje płatności, dostępność dostawy lub na wynos oraz wiele innych. OsmAnd wyświetla te atrybuty z wyraźnymi etykietami i, jeśli to możliwe, ikonami, co ułatwia ich odczytywanie i rozpoznawanie. Dokładny zestaw atrybutów zależy od danych dostępnych w OpenStreetMap dla wybranego obiektu.
 
 
@@ -167,21 +170,19 @@ Poza polami wymienionymi powyżej, OsmAnd może również wyświetlać dodatkowe
 
 ![Lista opisów](@site/static/img/map/description_list_new_android.png) ![Lista opisów](@site/static/img/map/description_list_dialog.png)
 
-Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md#wikipedia-article), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
-
-Jeśli wybrane miejsce ma artykuł na Wikipedii, w tej sekcji wyświetlany jest krótki podgląd. Gdy pełny artykuł nie jest dostępny offline, pojawia się przycisk *Przeczytaj na Wikipedii*. Dotknięcie go otwiera okno dialogowe z opcjami w zależności od dostępu użytkownika: użytkownicy z zakupionym planem mogą pobrać regionalne dane Wikipedii lub otworzyć artykuł w przeglądarce, podczas gdy darmowi użytkownicy mogą otworzyć artykuł online lub przejść do ekranu oferującego dostęp offline.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Lista opisów](@site/static/img/map/description_list_new_ios.png)
-
-Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
+![Lista opisów](@site/static/img/map/description_list_ios.webp) ![Lista opisów](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md#wikipedia-article), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
+
+Jeśli wybrane miejsce ma artykuł na Wikipedii, w tej sekcji wyświetlany jest krótki podgląd. Gdy pełny artykuł nie jest dostępny offline, pojawia się przycisk *Przeczytaj na Wikipedii*. Dotknięcie go otwiera okno dialogowe z opcjami w zależności od dostępu użytkownika: użytkownicy z zakupionym planem mogą pobrać regionalne dane Wikipedii lub otworzyć artykuł w przeglądarce, podczas gdy darmowi użytkownicy mogą otworzyć artykuł online lub przejść do ekranu oferującego dostęp offline.
 
 
 ### Alternatywne nazwy {#alternative-names}
@@ -190,7 +191,7 @@ Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.
 
 <TabItem value="android" label="Android">  
 
-![Alternatywne nazwy Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternatywne nazwy Android](@site/static/img/map/alternative_names_andr.png)
+![Alternatywne nazwy Android 1](@site/static/img/map/alternative_names_andr_1.png) ![Alternatywne nazmy Android](@site/static/img/map/alternative_names_andr.png)
 
 </TabItem>
 
@@ -213,6 +214,28 @@ Cechy wyświetlania alternatywnych nazw:
 - Inne kategorie obejmują *tłumaczenie specyficzne dla regionu* lub *ustawienia domyślne*.
 
 - Jeśli określone tłumaczenie *nie jest dostępne*, OsmAnd domyślnie używa nazwy **lokalnej**, aby zapewnić dokładność i spójność w regionach wielojęzycznych.
+
+### Powiązane {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Powiązane Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Powiązane iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+Sekcja **Powiązane** wyświetla obiekty mapy powiązane z wybranym miejscem poprzez relację OpenStreetMap. Sekcja ta jest dostępna dla obsługiwanych POI opartych na relacjach, takich jak kampusy uniwersyteckie i inne obiekty wielopoligonowe.
+
+Dotknij dowolnego elementu na liście, aby otworzyć jego menu kontekstowe mapy. Pozwala to szybko przełączać się między powiązanymi obiektami należącymi do tej samej relacji.
 
 
 ### W obszarze {#polygon-information}
@@ -289,7 +312,7 @@ Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/map/popu
 
 Ta sekcja podkreśla popularne miejsca, które pomagają odkrywać interesujące miejsca docelowe i punkty orientacyjne wokół bieżącej lokalizacji. Użyj *<Translate android="true" ids="shared_string_show_on_map"/>* i *<Translate android="true" ids="search_more"/>* , aby przeglądać i wyszukiwać wszystkie popularne miejsca. 
 
-Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* otwiera listę pobliskich lokalizacji. Wybranie dowolnego elementu centruje mapę na tym miejscu i otwiera jego menu kontekstowe, gdzie możesz przeczytać krótki opis lub dotknąć ***Przeczytaj pełny artykuł***, aby zobaczyć kompletny przewodnik.
+Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* otwiera listę pobliskich lokalizacji. Wybranie dowolnego elementu centruze mapę na tym miejscu i otwiera jego menu kontekstowe, gdzie możesz przeczytać krótki opis lub dotknąć ***Przeczytaj pełny artykuł***, aby zobaczyć kompletny przewodnik.
 
 > **UWAGA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) pojawi się tylko wtedy, gdy wcześniej pobrałeś specjalne mapy z [artykułami z Wikipedii dla tego obszaru](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
@@ -299,9 +322,21 @@ Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/
 
 ### Przewodniki {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Przewodniki Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Przewodniki iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 Sekcja **Przewodniki** pojawia się w menu kontekstowym mapy dla niektórych miejsc i zapewnia dostęp do przewodników **Podróże (Wikivoyage)** związanych z wybranym punktem użyteczności. Wyświetla listę wpisów przewodnika (na przykład, kraj lub region), które wspominają o wybranym miejscu.
 
@@ -463,7 +498,7 @@ W menu kontekstowym znajdują się opcje **dodawania** lub **edycji** wybranego 
 
 - Aby **Dodać**, musisz wybrać punkt / obiekt, dotknąć ikony *Gwiazdki* (z podpisem Dodaj) i wprowadzić wszystkie niezbędne informacje.  
 
-- Aby **Edytować** informacje o ulubionym punkcie, musisz włączyć *Pokaż na mapie* (*Menu → Moje miejsca → Ulubione*), a następnie nacisnąć na niego, a w menu kontekstowym zamiast ikony *Gwiazdki* pojawi się ikona *Ołówka* (z podpisem Edytuj).
+- Aby **Edytować** informacje o ulubionym punkcie, musisz włączyć *Pokaż na mapie* (*Menu → Moje miejsca → Ulubione*), a następnie nacisnąć na niego, a w menu kontekstowym zamiast ikony *Gwiazdki* pojawi się ikona *Ołówca* (z podpisem Edytuj).
 
 - [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md) - dodaje wybrony punkt do listy ulubionych.
 

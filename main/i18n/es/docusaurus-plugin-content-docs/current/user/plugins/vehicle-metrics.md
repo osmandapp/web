@@ -1,5 +1,5 @@
 ---
-source-hash: ff1dce3c60299dd5d1767a0f3f562960e6570d043c40a312d18e90a6fd1dd333
+source-hash: 3d0f21335c9451dab0d40239638af909241f74d4761e840d189cf0a2cddd2361
 sidebar_position: 18
 title:  Métricas del vehículo
 ---
@@ -218,7 +218,7 @@ Estas etiquetas facilitan la identificación y utilización de datos específico
 
 | | |
 |--|--|
-|![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios_1_neww.png)| ![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 370fdef6a9cb8e8b8b3f83a87d5c5bd067f3fd883fa1ee5bff404bc310e22d02
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -15,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## Genel Bakış {#overview}
 
 OsmAnd'daki **Ekranı Yapılandır** menüsü, birden çok panelde widget'lar, düğmeler ve hızlı eylemler ekleyerek ve düzenleyerek harita arayüzünü özelleştirmenize olanak tanır.
@@ -27,6 +26,7 @@ OsmAnd'daki **Ekranı Yapılandır** menüsü, birden çok panelde widget'lar, d
 - Widget'ları panellerde (üst, alt, sol, sağ, orta) düzenleyin.
 - Yan panellerde birden çok **sayfa** oluşturun, widget'ların boyutunu seçin.
 - Satır yüksekliğini seçin ve widget simgelerini açıp kapatın.
+- Android'de [widget paneli görünümünü](#widget-panel-appearance) özelleştirin.
 
 Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profilin kendi düzeni, sırası, görünürlüğü ve ayarları vardır.
 
@@ -37,7 +37,7 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview.webp)  ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -321,6 +321,8 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 
 ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
+Bu ayarlar yalnızca seçilen widget için geçerlidir.
+
 1. **Widget boyutu seçenekleri** (*tüm paneller için*):  
     **Üst, Alt, Sol ve Sağ panellerdeki** **Basit widget'ların** boyutunu özelleştirebilirsiniz:
 
@@ -357,6 +359,37 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
     - Widget alanının sağ tarafındaki *Ayarlar* simgesine dokunun.
     - *Boyut* ayarına dokunun ve mevcut boyutlardan birini seçin.
     - *Simgeyi göster* alanında Kapalı konumuna geçin.
+
+
+## Widget Paneli Görünümü (Yalnızca Android) {#widget-panel-appearance}
+
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+
+![Widget Paneli Görünümü](@site/static/img/widgets/widget_appearance.webp) ![Widget Paneli Görünümü](@site/static/img/widgets/widget_appearance_2.webp)
+
+Görünüm ayarları, seçilen paneldeki tüm widget'ların görünümünü özelleştirmenize olanak tanır. Her panelin (*Üst*, *Alt*, *Sol*, *Sağ*) kendi görünüm ayarları vardır.
+
+1. **Yükseklik**. Seçilen paneldeki widget'ların yüksekliğini kontrol eder. Sol ve Sağ paneller için bu ayar **Widget yüksekliğini** değiştirir. Üst ve Alt paneller için **Satır yüksekliğini** değiştirir. Kullanılabilir seçenekler: *Orijinal (varsayılan)*, *Küçük*, *Orta*, *Büyük*.
+
+2. **Simge**. Simge görünürlüğünü kontrol eder. Kullanılabilir seçenekler: *Orijinal (varsayılan)*, *Açık*, *Kapalı*. 
+
+3. **Metin rengi**. Birincil widget metninin rengini değiştirir. Kullanılabilir seçenekler: *Varsayılan*, *Otomatik*, *Özel*. **Özel** seçildiğinde, **Gündüz** ve **Gece** modları için ayrı renkler yapılandırabilirsiniz. Seçilen renklerin uygulanmadan önce canlı bir önizlemesi görüntülenir.
+
+:::tip Satın alma
+Özel widget renkleri [ücretli bir özelliktir](../purchases/index.md).  
+:::
+
+4. **İkincil metin rengi**. Widget adlarının ve birimlerinin rengini değiştirir. Kullanılabilir seçenekler: *Varsayılan*, *Otomatik*, *Özel*.
+
+5. **Arka plan rengi**. Seçilen paneldeki widget'ların arka plan rengini değiştirir. Kullanılabilir seçenekler: *Varsayılan*, *Saydam*, *Özel*.
+
+6. **Önizleme**. Önizleme alanı, widget'ların şu anda seçilen görünüm ayarlarıyla nasıl görüneceğini gösterir.
+
+7. **Görünüm ayarlarını kopyala:**
+
+    - Sağ üst köşedeki ⋮ menüsüne dokunun.
+    - Kopyala öğesini seçin.
+    - Aşağıdaki seçeneklerden birini seçin: *Başka bir profil* veya *Diğer panellerden biri*.
 
 
 ## Panelleri Özelleştirme {#panels-customization}

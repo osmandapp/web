@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -77,13 +77,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة سياق المسار أندرويد](@site/static/img/map/context_track_menu_Android.png)
+![قائمة سياق المسار أندرويد](@site/static/img/map/context_track_menu_Android.png) ![ما هنا أندرويد](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![شاشة إحصائيات المسار iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![شاشة إحصائيات المسار iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![ما هنا iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -102,7 +102,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إخفاء قائمة السياق {#hide-context-menu}
 
-لإغلاق **قائمة السياق**:
+لإغلاق **قائمة السياق**：
 
 - انقر على أي *منطقة فارغة* على الخريطة لتجنب إعادة فتح القائمة.
 - اسحب القائمة *لأسفل* من الأعلى.
@@ -137,11 +137,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [وصف المقال](#article-description)
 - [الأسماء البديلة](#alternative-names)
+- [ذات الصلة](#related)
 - [الإحداثيات](#coordinates)
 - [ضمن مناطق](#polygon-information)
 - [نقاط الاهتمام القريبة](#nearby-pois)
 - [الأماكن الشائعة القريبة](#nearby-popular-places)
-- [الدلائل](#guides) (أندرويد فقط)
+- [الدلائل](#guides) 
 - [مسارات النقل العام للمحطات](#public-transport-routes)
 - [المفضلة / نقاط المسار من نفس المجموعة](#favorites--track-points-from-the-group)
 - [رابط OpenStreetMap](#openstreetmap-link)
@@ -154,7 +155,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [ساعات العمل](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [الرسوم](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [إمكانية الوصول](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [العرض](https://wiki.openstreetmap.org/wiki/Key:width) / [الارتفاع](https://wiki.openstreetmap.org/wiki/Key:height)
+- [العرض](https://wiki.openstreetmap.org/wiki/Key:width) / [الارتفاع](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+إذا كان حقل جهة اتصال (مثل *الموقع الإلكتروني، رقم الهاتف*، أو *البريد الإلكتروني*) يحتوي على قيم متعددة، فإن النقر عليه يعرض قائمة بالإدخالات المتاحة. حدد الإدخال المطلوب لتنفيذ الإجراء المقابل.
 
 بالإضافة إلى الحقول المذكورة أعلاه، قد يعرض OsmAnd أيضًا معلومات وصفية إضافية مأخوذة من OpenStreetMap. تساعد هذه السمات في فهم خصائص المكان بشكل أفضل وقد تشمل تفاصيل مثل الارتفاع، والاتجاه، وسنة البناء، ونوع السطح أو الغطاء، ومستوى الداخل، وخيارات الدفع، وتوافر التوصيل أو الوجبات الخارجية، وغيرها الكثير. يعرض OsmAnd هذه السمات بتسميات واضحة، وأيقونات حيثما أمكن، مما يجعل القراءة والتعرف على المعلومات أسهل. يعتمد المجموعة الدقيقة من السمات على البيانات المتاحة في OpenStreetMap للكائن المحدد.
 
@@ -167,21 +170,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![قائمة الوصف](@site/static/img/map/description_list_new_android.png) ![قائمة الوصف](@site/static/img/map/description_list_dialog.png)
 
-يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md#wikipedia-article)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
-
-إذا كان المكان المحدد يحتوي على مقالة ويكيبيديا، يتم عرض معاينة قصيرة في هذا القسم. عندما لا تكون المقالة الكاملة متاحة دون اتصال، يظهر زر *قراءة على ويكيبيديا*. النقر عليه يفتح نافذة حوار مع خيارات تعتمد على وصول المستخدم: يمكن للمستخدمين ذوي الخطة المشتراة تنزيل بيانات ويكيبيديا الإقليمية أو فتح المقالة في المتصفح، بينما يمكن للمستخدمين المجانيين فتح المقالة عبر الإنترنت أو الانتقال إلى الشاشة التي تقدم الوصول دون اتصال.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة الوصف](@site/static/img/map/description_list_new_ios.png)
-
-يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
+![قائمة الوصف](@site/static/img/map/description_list_ios.webp) ![قائمة الوصف](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md#wikipedia-article)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
+
+إذا كان المكان المحدد يحتوي على مقالة ويكيبيديا، يتم عرض معاينة قصيرة في هذا القسم. عندما لا تكون المقالة الكاملة متاحة دون اتصال، يظهر زر *قراءة على ويكيبيديا*. النقر عليه يفتح نافذة حوار مع خيارات تعتمد على وصول المستخدم: يمكن للمستخدمين ذوي الخطة المشتراة تنزيل بيانات ويكيبيديا الإقليمية أو فتح المقالة في المتصفح، بينما يمكن للمستخدمين المجانيين فتح المقالة عبر الإنترنت أو الانتقال إلى الشاشة التي تقدم الوصول دون اتصال.
 
 
 ### الأسماء البديلة {#alternative-names}
@@ -213,6 +214,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تشمل الفئات الأخرى *الترجمة الخاصة بالمنطقة*، أو *الإعدادات الافتراضية*.
 
 - إذا لم تكن ترجمة معينة *متاحة*، فإن OsmAnd يعود إلى الاسم **المحلي** لضمان الدقة والاتساق عبر المناطق متعددة اللغات.
+
+
+### ذات الصلة {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
+
+![ذات الصلة أندرويد](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![ذات الصلة iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+يعرض قسم **ذات الصلة** كائنات الخريطة المرتبطة بالمكان المحدد من خلال علاقة OpenStreetMap. يتوفر هذا القسم لنقاط الاهتمام المدعومة القائمة على العلاقات، مثل حرم الجامعات وغيرها من كائنات المضلعات المتعددة.
+
+انقر على أي عنصر في القائمة لفتح قائمة سياق الخريطة الخاصة به. يتيح لك ذلك التنقل بسرعة بين الكائنات ذات الصلة التي تنتمي إلى نفس العلاقة.
 
 
 ### ضمن منطقة {#polygon-information}
@@ -299,9 +323,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الدلائل {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
 
 ![الدلائل أندرويد](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![الدلائل iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 يظهر قسم **الدلائل** في قائمة سياق الخريطة لبعض الأماكن ويوفر الوصول إلى **دلائل السفر (Wikivoyage)** المتعلقة بنقطة الاهتمام المحددة. يعرض قائمة بإدخالات الدليل (على سبيل المثال، بلد أو منطقة) التي تذكر المكان المحدد.
 

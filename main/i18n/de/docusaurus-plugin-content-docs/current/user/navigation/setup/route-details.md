@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title:  Routendetails
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Mit OsmAnd können Sie die beste Route finden und deren Details erkunden. Die App bietet detaillierte Informationen über die Route wie Entfernung, [Reisezeit](#distance--time--co2), [Oberflächenart](#road-attributes), [Höhenunterschiede](#elevation-info), [CO2-Fußabdruck-Daten](#distance--time--co2) und [Abbiegehinweise](#turn-by-turn-information). Sie können die Route auch auf der Karte [analysieren](#analyze-on-map), Informationen über Track-Abschnitte herausfinden, den Routenplan [drucken](#print), die Route [speichern](#share--export-actions) und mit anderen teilen. Mit dieser Funktionalität kennen Sie immer die Routendetails und können Ihre Reise effizienter planen.  
+Mit OsmAnd können Sie die beste Route finden und deren Details erkunden. Die App bietet detaillierte Informationen über die Route wie Entfernung, [Reisezeit](#distance--time--co2), [Oberflächenart](#road-attributes), [Höhenunterschiede](#elevation-info), [CO2-Fußabdruck-Daten](#distance--time--co2) und [Abbiegehinweise](#turn-by-turn-information). Sie können die Route auch auf der Karte [analysieren](#analyze-on-map), Informationen über Track-Abschnitte herausfinden, den Routenplan [drucken](#print), die Route [speichern](#share--save-actions) und mit anderen teilen. Mit dieser Funktionalität kennen Sie immer die Routendetails und können Ihre Reise effizienter planen.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -178,7 +178,7 @@ Wenn Daten vorhanden sind, können Sie einen der folgenden Typen auswählen:
 
 - *Tippen und Schieben*. Tippen Sie auf das Diagramm, um Informationen über den Trackpunkt und die Bewegung entlang des Tracks anzuzeigen. Das Diagramm hebt die Position des Punktes auf der Karte hervor und zeigt Informationen darüber auf dem Lineal an.
 - *Skalieren*. Skalieren Sie das Diagramm mit einer [Zwei-Finger-Geste](../../map/interact-with-map.md#gestures).
-- *Meinem Standort folgen* (*nur Android*). Sie können auf [Meine Position](../../map/interact-with-map.md#my-location-and-zoom) tippen, um die Kartenansicht und das Diagramm mit Ihrem Standort zu synchronisieren. Während Sie sich bewegen, verschiebt sich das Diagramm von links nach rechts und zeigt Informationen vor Ihrem Weg an.  
+- *Meinem Standort folgen* (*nur Android*). Sie können auf [Meine Position](../../map/interact-with-map.md#my-position-and-zoom) tippen, um die Kartenansicht und das Diagramm mit Ihrem Standort zu synchronisieren. Während Sie sich bewegen, verschiebt sich das Diagramm von links nach rechts und zeigt Informationen vor Ihrem Weg an.  
 
 
 ## Straßenattribute {#road-attributes}
@@ -207,7 +207,7 @@ Straßenattribute sind in den [Routendetails](#how-to-access) zugänglich und ze
 
 - [**Straßentyp**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Der Straßentyp wird auf der Grundlage seines funktionalen Zwecks und seiner Merkmale bestimmt, wie z. B. der Anzahl der Fahrspuren, Geschwindigkeitsbegrenzungen, Tragfähigkeit, dem Vorhandensein von Fußgänger- und Radwegen, Straßenrändern und anderen Parametern. Verschiedene Straßentypen können unterschiedliche Einschränkungen und Verkehrsregeln haben.  
 
-   Zum Beispiel haben Haupt-[Autobahnen](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) in der Regel eine hohe Geschwindigkeitsbegrenzung und können in Fahrspuren unterteilt sein, und [lokale Straßen](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) können eine niedrige Geschwindigkeitsbegrenzung und eine Fahrspur in jede Richtung haben.  
+   Zum Beispiel haben Haupt-[Autobahnen](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) in der Regel eine hohe Geschwindigkeitsbegrenzung und können in Fahrspalten unterteilt sein, und [lokale Straßen](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) können eine niedrige Geschwindigkeitsbegrenzung und eine Fahrspur in jede Richtung haben.  
 
 - [**Oberfläche**](https://wiki.openstreetmap.org/wiki/Key:surface). Straßenoberflächen sind die oberste Schicht des Belags, die mit den Rädern von Fahrzeugen in Kontakt kommt. Sie können je nach ihren Eigenschaften und ihrem funktionalen Zweck unterschiedliche Typen haben.  
 
@@ -311,7 +311,7 @@ Diese Informationen können nützlich sein, wenn Sie eine Reise planen und die Z
 Die Möglichkeit, Abbiege-für-Abbiege-Informationen **zu drucken** oder **im PDF-Format zu speichern**, ist besonders nützlich, wenn Sie lange Strecken oder an unbekannten Orten reisen und eine detailliertere Vorstellung von der Route und der dafür benötigten Zeit haben müssen.
 
 
-## Teilen / Exportieren (Aktionen) {#share--export-actions}
+## Teilen / Speichern (Aktionen) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,7 +323,7 @@ Die Möglichkeit, Abbiege-für-Abbiege-Informationen **zu drucken** oder **im PD
 
 <TabItem value="ios" label="iOS">
 
-![Navigationsroute iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Navigationsroute iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,8 +332,8 @@ Die Möglichkeit, Abbiege-für-Abbiege-Informationen **zu drucken** oder **im PD
 Der Navigationsabschnitt "Routendetails" verfügt über Optionen, mit denen Sie bestimmte Aktionen mit den Routeninformationen durchführen können.  
 
 - [**Drucken**](#print). Ermöglicht das Drucken oder Speichern von Abbiege-für-Abbiege-Routeninformationen.
-- **Exportieren/Speichern**. Ermöglicht das Speichern der Routeninformationen **als neuen Track** zur späteren Offline-Verwendung. Der exportierte Track enthält alle Informationen über Straßenattribute und Abbiegehinweise. Daher sollte die [Navigation nach diesem Track](./gpx-navigation.md) alle Funktionen wie die Navigation nach der Route bieten.
-- **Teilen**. Teilt einen exportierten Track oder einen Link zur Route, der auf einem anderen Gerät mit OsmAnd geöffnet werden kann.
+- **Speichern**. Ermöglicht das Speichern der Routeninformationen **als neuen Track** zur späteren Offline-Verwendung. Der gespeicherte Track enthält alle Informationen über Straßenattribute und Abbiegehinweise. Daher sollte die [Navigation nach diesem Track](./gpx-navigation.md) alle Funktionen wie die Navigation nach der Route bieten.
+- **Teilen**. Ermöglicht das Teilen der Route als Datei oder als Link, der auf einem anderen Gerät mit OsmAnd geöffnet werden kann.
 
 
 ## Verwandte Artikel {#related-articles}

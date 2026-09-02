@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Paramètres généraux
 ---
@@ -44,7 +44,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 ## Général {#general}
 
-Cette section contient les paramètres de base d'OsmAnd, tels que la sélection d'un [profil](#default-profile) lors du chargement de l'application, la sélection du [moteur de rendu](#map-rendering-engine) et du [dossier](#data-storage-folder) où les données seront enregistrées.  
+Cette section contient les paramètres de base d'OsmAnd, tels que la sélection d'un [profil](#default-profile) lors du chargement de l'application, la sélection du [moteur de rendu](#map-rendering-engine) et du [dossier](#data-storage) où les données seront enregistrées.  
 
 
 ### Profil par défaut {#default-profile}
@@ -59,7 +59,7 @@ Cette section contient les paramètres de base d'OsmAnd, tels que la sélection 
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres généraux Profil par défaut iOS](@site/static/img/personal/profiles/default_profile_ios.png)
+![Paramètres généraux Profil par défaut Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -79,20 +79,19 @@ Cette fonctionnalité est disponible pour la version iOS de l'application OsmAnd
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Paramètres généraux Profil CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Paramètres généraux Profil par défaut Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 Le [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) est utilisé lors de la connexion au [logiciel CarPlay](https://support.apple.com/en-gb/HT205634) de votre véhicule et vous aide à tirer le meilleur parti de la version optimisée de l'application OsmAnd en utilisant les systèmes audio et vidéo pour afficher les données sur votre téléphone.
 
-
-### Dossier de stockage des données {#data-storage-folder}
+### Stockage des données {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Paramètres de stockage des profils Android](@site/static/img/personal/profiles/main_storage.webp) ![Paramètres de stockage des profils Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Paramètres de stockage des profils Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **La mémoire de l'appareil** indique l'espace libre restant sur votre appareil. Appuyez sur un champ pour accéder au menu [*Cartes et ressources*](../personal/maps-resources.md#local-menu), où vous pouvez afficher et gérer des informations détaillées sur vos données OsmAnd.
 
@@ -108,6 +107,16 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 De nouvelles directives d'accès au stockage ont été mises en œuvre dans les versions 11-12 d'Android. Consultez la section [**Dépannage**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) pour plus de détails.
 :::
 
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+Le paramètre **Stockage des médias** détermine où sont stockées les photos, vidéos et fichiers audio joints aux favoris, traces et autres éléments OsmAnd. Vous pouvez choisir un emplacement de stockage selon que vous souhaitez que les fichiers restent privés ou soient accessibles depuis d'autres applications.
+- **Stockage principal** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Stockage partagé** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Dossier de l'appareil photo** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Spécifié manuellement** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Il existe également un commutateur *Toujours conserver une copie locale*. Lorsqu'il est activé, OsmAnd copie les médias importés depuis la Galerie ou les Fichiers dans son propre stockage, afin que les médias joints restent disponibles même si le fichier d'origine est supprimé de la Galerie ou du système de fichiers.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -116,18 +125,15 @@ Allez à : *Appareil iOS → Réglages → Général → Stockage de l'iPhone �
 
 ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-Les fichiers OsmAnd sont visibles dans l'application [*Fichiers*](https://apps.apple.com/us/app/files/id1232058109). Vous pouvez accéder à tous les fichiers OsmAnd : [traces](../personal/tracks/manage-tracks.md), [favoris](../personal/favorites.md), [cartes](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xml](../../technical/build-osmand/routing.md). Pour ce faire, suivez le chemin suivant :  
+Les fichiers OsmAnd sont visibles dans l'application [*Fichiers*](https://apps.apple.com/us/app/files/id1232058109). Vous pouvez accéder à tous les fichiers OsmAnd : [traces](../personal/tracks/manage-tracks.md), [favoris](../personal/favorites.md), [cartes](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Pour ce faire, suivez le chemin suivant :  
 
 Allez à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/files-1.png) ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/files-2.png)
 
 </TabItem>
 
 </Tabs>
-
 
 ### Moteur de rendu de la carte {#map-rendering-engine}
 
@@ -311,7 +317,7 @@ Le paramètre **<Translate android="true" ids="dialogs_and_notifications_title"/
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*Android uniquement*)
 
-![Source de localisation Android](@site/static/img/personal/profiles/location_source_andr.png)
+![Sauvegarde automatique](@site/static/img/personal/profiles/location_source_andr.png)
 
 OsmAnd vous offre un choix de services pour déterminer votre position. Il est recommandé de lire plus d'informations sur l'[autorisation de localisation](../start-with/first-steps.md#permission-to-access-the-location) et le [Dépannage](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) pour cette section.
 
@@ -331,7 +337,7 @@ OsmAnd vous offre un choix de services pour déterminer votre position. Il est r
 
 <InfoAndroidOnly />
 
-![Sauvegarde automatique Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
+![Paramètres généraux notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
 - Android ou OsmAnd Cloud peuvent enregistrer vos données et les paramètres de l'application.
 

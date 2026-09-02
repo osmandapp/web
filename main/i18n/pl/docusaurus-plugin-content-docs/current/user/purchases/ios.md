@@ -1,5 +1,5 @@
 ---
-source-hash: 9464de992b541a40de82ee906cf9e875dfd27054de590a9b3cba8ca0d283a5a1
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -53,33 +53,14 @@ Aplikację można pobrać, korzystając z tego linku - [OsmAnd Maps w Apple App 
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. W innych regionach ceny są ekwiwalentem w lokalnych walutach.
 
-<!--
-
-:::danger 🏖️ Summer Sale
-
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
-
-
--->
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
-| **Cena (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
-| **Cena (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 
@@ -104,6 +85,9 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Obsługa czujników zewnętrznych](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Planowanie obserwacji](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Interaktywny tryb AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Mapy nieba offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręt | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -139,6 +123,7 @@ W chwili obecnej subskrypcja Pro obejmuje następujące funkcje:
 | [Wtyczka Metryki pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Umożliwia podłączenie skanera OBD-II w celu wyświetlania szczegółowych danych pojazdu w aplikacji OsmAnd i przechowywania informacji w zapisach tras. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne w darmowej wersji OsmAnd.  |
 | [Dostosuj linię trasy](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Zmiana koloru i szerokości linii trasy podczas nawigacji. |
 | [Modyfikuj schemat kolorów](../../user/plugins/topography.md#modify-color-scheme) | Pozwala dostosować wygląd mapy poprzez wybór lub import palet kolorów. Możesz edytować wbudowane schematy lub używać własnych plików palet, aby spersonalizować kolory mapy i trasy. |
+| [Tworzenie niestandardowych palet](../../user/map/tracks/appearance.md#color-palette-editor) | Pozwala tworzyć i edytować palety gradientowe do kolorowania tras przy użyciu wartości względnych lub stałych. Możesz zdefiniować kroki kolorów, przypisać wartości i dostosować sposób wyświetlania danych (takich jak prędkość lub wysokość) wzdłuż trasy. |
 | [Foldery inteligentne – Organizuj według](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Pozwala organizować trasy w folderach inteligentnych przy użyciu zaawansowanych parametrów grupowania, takich jak data i godzina, odległość, czas trwania, prędkość, wysokość i dane z czujników. Opcje te umożliwiają bardziej szczegółową kategoryzację tras i elastyczną analizę. |
 
 

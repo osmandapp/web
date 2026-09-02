@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Pistas
 title: Pistas
@@ -41,6 +41,22 @@ La sección de Pistas contiene todas las herramientas y acciones relacionadas co
 - Descargar carpetas como colección OSF u OBF.
 
 
+## Importar pistas {#import-tracks}
+
+Puedes importar pistas GPX al Planificador Web usando el botón Importar o arrastrando y soltando archivos GPX directamente sobre el mapa.
+
+Para importar una pista mediante arrastrar y soltar:
+- Abre la sección Pistas.
+- Arrastra uno o más archivos GPX desde tu computadora.
+- Suelta los archivos sobre el mapa o sobre una carpeta de pistas específica.
+
+Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta.
+
+Una vez completada la importación, la pista aparece en la lista de pistas, se sincroniza con [OsmAnd Cloud](../personal/osmand-cloud.md) y queda disponible en todos los dispositivos conectados a la misma cuenta.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
+
+
 ## Visible en el mapa {#visible-on-the-map}
 
 La vista **Visible en el mapa** enumera todas las pistas que se muestran actualmente en el mapa. Cualquier pista se puede agregar a esta lista desde el panel principal de Pistas usando la opción **⋮ → Hacer la pista visible**.
@@ -80,7 +96,7 @@ Las pistas se muestran solo si la configuración de la Smart Folder es compatibl
 
 La sincronización de Smart Folders puede variar según la plataforma y la configuración de sincronización. Para obtener los resultados más consistentes, asegúrate de que la sincronización de Cloud esté habilitada y actualizada en todos los dispositivos.
 
-En el menú de tres puntos (⋮), puedes descargar la Smart Folder como una colección OBF.
+En el menú de tres puntos (⋮) puedes realizar acciones adicionales para la Smart Folder. Puedes *Descargar como OSF*, *Descargar como colección OBF*, *Renombrar* o *Eliminar* la carpeta.
 
 ![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
 

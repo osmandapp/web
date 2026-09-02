@@ -1,5 +1,5 @@
 ---
-source-hash: b80174a5f1a001efd4636fc6fd6e060794982b6eedf9b33fb15fbb57be056bfd
+source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
 sidebar_position: 6
 title:  Recherche par coordonnées
 ---
@@ -115,7 +115,7 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
 - *Règles de saisie*. Les coordonnées se composent d'une zone MGRS, d'un carré et de deux autres chiffres indiquant les décalages est et nord.
 - *Utilisation la plus courante*. Le format MGRS est largement utilisé dans la navigation et les communications militaires, et peut également être utile pour les amateurs de plein air et les randonneurs.
 
-### Grille suisse {#swiss-grid}
+### Grille suisse (Android uniquement) {#swiss-grid}
 
 ![Recherche de coordonnées Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,8 +128,30 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
     - Le CH1903+ inclut des corrections pour tenir compte des décalages de coordonnées causés par les changements des mouvements tectoniques en Suisse.
 - *Utilisation la plus courante*. Les formats Grille suisse (CH1903) et Grille suisse (CH1903+) sont utilisés en Suisse pour les mesures géodésiques, la cartographie, les systèmes d'information géographique, ainsi que la construction et l'ingénierie. Ces formats fournissent un système de coordonnées local spécifique à la Suisse.
 
+### Système de localisateur Maidenhead (Android uniquement) {#maidenhead-locator-system}
+
+![Recherche de coordonnées Android](@site/static/img/search/coordinates_search_maidenhead.webp)
+
+**Maidenhead**. Il s'agit d'un système de géocodage principalement utilisé par les radioamateurs. Il encode les emplacements géographiques en une courte séquence de lettres et de chiffres, ce qui facilite l'identification des positions et l'échange d'informations de localisation. Un exemple de coordonnées au format Maidenhead est KN29AS 19CX. La première paire de lettres identifie un grand champ, suivie de chiffres et de paires de lettres supplémentaires qui augmentent la précision de l'emplacement. Vous pouvez en savoir plus sur le système de localisateur Maidenhead [ici](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+- *Règles de saisie*. Les coordonnées sont composées de paires alternées de lettres et de chiffres. Les localisateurs plus longs offrent une précision de position plus élevée.  
+- *Utilisation la plus courante*. Le système de localisateur Maidenhead est largement utilisé par les radioamateurs pour la localisation des stations, les communications radio et les concours.
 
 Pour chaque profil séparément, vous pouvez définir un format de coordonnées différent. Pour ce faire, allez dans *Paramètres généraux → [Format des coordonnées](../personal/profiles.md#units--formats)*.
+
+
+## Personnaliser le format des coordonnées (Android uniquement) {#customize-coordinate-format}
+
+![Recherche de coordonnées Android](@site/static/img/search/customising_format.webp) ![Recherche de coordonnées Android](@site/static/img/search/searching_format.webp)
+
+Vous pouvez personnaliser la liste des formats de coordonnées disponibles pour le profil actuel.  
+Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
+
+Sur cet écran, vous pouvez :  
+- Appuyer sur le bouton *Modifier* pour définir le format de coordonnées principal, réorganiser ou supprimer des formats de coordonnées.
+- Appuyer sur + pour ajouter un autre format de coordonnées.
+- Ouvrir le menu ⋮ pour restaurer la liste par défaut des formats de coordonnées ou copier les formats de coordonnées d'un autre profil.
+
+Lorsque vous recherchez par coordonnées, vous pouvez sélectionner un format de coordonnées dans la liste Récent ou appuyer sur *Sélectionner un autre format* pour parcourir tous les systèmes de coordonnées disponibles. Vous pouvez également rechercher par nom de système de coordonnées ou par code EPSG.
 
 
 <!--

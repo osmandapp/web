@@ -1,5 +1,5 @@
 ---
-source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
+source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
 sidebar_position: 4
 title:  Navigatiewidgets
 ---
@@ -188,6 +188,7 @@ De widget *Route-informatie* biedt realtime gegevens over de lopende navigatiero
 
 - Selecteer een **Standaardweergave** om een van de volgende waarden prioriteit te geven: *Geschatte aankomsttijd*, *Tijd tot vertrek*, *Afstand*.
 - Selecteer in **Weergaveprioriteit** tussen *Bestemming eerst (standaard)* of *Tussenpunt eerst* om de meest relevante route-informatie prioriteit te geven.
+- Schakel de optie **Uitvouwknop weergeven** in of uit om de navigatie-UI-uitvouwknop weer te geven of te verbergen. Deze optie is standaard ingeschakeld.
 
 > OPMERKING: De widget is alleen zichtbaar tijdens navigatie.
 
@@ -248,7 +249,7 @@ De widget toont de *Aankomsttijd* of *Tijd tot vertrek* tot het eerste tussenpun
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Door te tikken | Wisselt tussen *Aankomsttijd* en *Tijd tot vertrek* en omgekeerd. |
 | Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -427,9 +428,8 @@ Waarschuwingstypes hebben een verschillend visueel ontwerp, dat afhangt van de *
 
 De Straatnaam-widget toont **de huidige straatnaam** met een rechte pijl, of **de volgende straatnaam** met de uit te voeren manoeuvre. De straatnaam bestaat meestal uit een wegschild, een [naam](https://wiki.openstreetmap.org/wiki/Key:name), een [ref](https://wiki.openstreetmap.org/wiki/Key:ref), een [internationale ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), en een [bestemming](https://wiki.openstreetmap.org/wiki/Key:destination). 
 
-In de **Instellingen** van de widget kunt u selecteren om altijd **de huidige straatnaam** weer te geven en deze te gebruiken met de [**Volgende afslag**](#next-turn) widget. **Informatie volgende afslag** is standaard UIT. Als u het inschakelt, gebeurt het wisselen tussen de huidige straatnaam en de volgende straatnaam wanneer u de plaats nadert waar u de manoeuvre wilt uitvoeren (~20 seconden), vergelijkbaar met de spraakprompt [Sla af over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+In de **Instellingen** van de widget kunt u selecteren om altijd **de huidige straatnaam** weer te geven en deze te gebruiken met de [**Volgende afslag**](#next-turn) widget om altijd ook de volgende straatnaam te zien. **Informatie volgende afslag** staat standaard UIT. Als u het inschakelt, gebeurt het wisselen tussen de huidige straatnaam en de volgende straatnaam wanneer u de plaats nadert waar u de manoeuvre wilt uitvoeren (~20 seconden), vergelijkbaar met de spraakprompt [Sla af over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
-- Wanneer u langs een straat of snelweg rijdt, toont de widget de naam of aanduiding van de huidige straat (weg) met een blauwe pijl.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Traces
 title: Traces
@@ -39,6 +39,22 @@ Tracks section contains all track-related tools and actions. The following optio
 - Download and delete tracks.
 - Create new folders or delete it.
 - Download folders as OSF or OBF collection.
+
+
+## Importation de traces {#import-tracks}
+
+Vous pouvez importer des traces GPX dans le Planificateur Web soit en utilisant le bouton Importer, soit en faisant glisser et déposer des fichiers GPX directement sur la carte.
+
+Pour importer une trace par glisser-déposer :
+- Ouvrez la section Traces.
+- Faites glisser un ou plusieurs fichiers GPX depuis votre ordinateur.
+- Déposez les fichiers sur la carte ou dans un dossier de traces spécifique.
+
+Lorsque vous faites glisser un fichier sur la carte, la zone de dépôt disponible est mise en surbrillance. Si vous déposez le fichier directement sur la carte, il est importé dans le dossier Import. Si vous le déposez dans un dossier existant, il est importé dans ce dossier à la place.
+
+Une fois l'importation terminée, la trace apparaît dans la liste des traces, est synchronisée avec [OsmAnd Cloud](../personal/osmand-cloud.md), et devient disponible sur tous les appareils connectés au même compte.
+
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Visible on the Map {#visible-on-the-map}

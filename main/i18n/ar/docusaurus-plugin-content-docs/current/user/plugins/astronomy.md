@@ -1,5 +1,5 @@
 ---
-source-hash: 97e9a342bf78770a793c6914a8b243b2d5b515ca46e61160b3da4e3e167ed8cb
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -16,10 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoAndroidOnly/>
+:::info 
 
-:::info
-**الفلك** في الوقت الحالي في **مرحلة بيتا**.
+**الفلك** حاليًا في **المرحلة التجريبية** على **أندرويد**. 
+
+على **iOS**، الإضافة متاحة من خلال **برنامج iOS التجريبي ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
 :::
 
 ## نظرة عامة {#overview}
@@ -37,19 +38,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
   
 الإعدادات التالية مطلوبة لعرض طبقة الفلك:
 
-1. تمكين إضافة [**الفلك**](../plugins/index.md#enable--disable) من قسم *الإضافات* في *القائمة الرئيسية*
+1. تمكين [**إضافة الفلك**](../plugins/index.md#enable--disable) من قسم *الإضافات* في *القائمة الرئيسية*
 2. استخدم **القائمة → خريطة النجوم** لفتح شاشة مخصصة مع سماء النجوم والإعدادات وأدوات التحكم في الوقت.
 3. حدد **الوقت والتاريخ** باستخدام الأدوات على شاشة خريطة النجوم.
 4. قم بتعديل ما يُعرض على خريطة النجوم باستخدام [**تكوين العرض**](#configure-view) — على سبيل المثال، تبديل الأجسام المرئية وأدوات العرض.
 5. اضغط على زر **الإغلاق (X)** في أعلى شاشة خريطة النجوم للخروج من خريطة النجوم والعودة إلى خريطة الأرض.
 
-تعمل الإضافة مع محركي عرض الخريطة، لكنها تؤدي بشكل أفضل في وضع OpenGL.
+على أندرويد، تعمل الإضافة مع محركي عرض الخريطة، لكنها تؤدي بشكل أفضل في وضع OpenGL.
 
 ## شاشة خريطة النجوم {#star-map-screen}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 **الذهاب إلى:** *إضافة مفعلة → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
 ![شاشة خريطة النجوم](@site/static/img/plugins/starwatcher/view_new_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+**الذهاب إلى:** *إضافة مفعلة → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
+
+![شاشة خريطة النجوم](@site/static/img/plugins/starwatcher/view_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 تعرض **شاشة خريطة النجوم** المخصصة قبة سماوية تفاعلية مع النجوم والكوكبات والكواكب ومسارات الشمس والقمر. في أسفل الشاشة، يمكنك الوصول إلى الأدوات التالية: 
 - [**البحث**](#search) — يفتح شاشة البحث حيث يمكنك البحث عن الأجسام السماوية وتصفح كتالوجات السماء والفئات. 
@@ -64,7 +81,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## قائمة السياق {#context-menu}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![قائمة السياق](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![قائمة السياق](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 توفر **قائمة السياق** معلومات مفصلة عن الأجسام السماوية وأدوات لمراقبتها. تفتح عندما تضغط على جسم سماوي على خريطة النجوم.
 
@@ -74,7 +105,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### معلومات الجسم {#object-information}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![معلومات الجسم](@site/static/img/plugins/starwatcher/object_view_new.png) ![معلومات الجسم](@site/static/img/plugins/starwatcher/object_view_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![معلومات الجسم](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![معلومات الجسم](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 يعرض القسم العلوي من قائمة السياق اسم الجسم وتصنيفه. أسفل الاسم، يُظهر نوع الجسم وكوكبته الأم أو مجموعته. على سبيل المثال:
 - **بيتا دب الأصغر** — نجم • دب الأصغر
@@ -87,13 +132,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - <Translate android="true" ids="shared_string_azimuth"/> – اتجاه الجسم بالنسبة للشمال (0°–360°).
 - <Translate android="true" ids="altitude"/> – ارتفاع الجسم فوق الأفق.
 - <Translate android="true" ids="shared_string_magnitude"/> – سطوع الجسم كما يُرى من الأرض. 
+- المسافة (*iOS فقط*) – المسافة من الأرض إلى الجسم السماوي المحدد.
 
 تُحدث هذه القيم ديناميكيًا بناءً على الوقت المحدد وموقع المستخدم.
 
 أسفل كتل المعلومات السريعة، قد تشمل القائمة أيضًا معلومات إضافية وموارد عن الجسم:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – يسمح لك بتحميل قاعدة بيانات موسعة مع مقالات ويكيبيديا وكتالوجات السماء العميقة للاستخدام غير المتصل. بعد التحميل، يمكن عرض معلومات مفصلة عن الأجسام السماوية مباشرة في التطبيق بدون اتصال بالإنترنت.
 - <Translate android="true" ids="read_on_wiki"/> – يفتح مقالة ويكيبيديا للجسم في المتصفح.
-- <Translate android="true" ids="astro_designations"/> – يعرض أسماء بديلة ومعرفات الكتالوج للجسم (على سبيل المثال، HD، HIP، NGC). هذا القسم متاح للأجسام التي لها إدخالات في الكتالوج، مثل النجوم والأجسام السماوية العميقة. إذا لم يكن للجسم اسم شائع، يُستخدم أحد هذه التصنيفات كاسم أساسي.
+- <Translate android="true" ids="astro_designations"/> – يعرض أسماء بديلة ومعرفات الكتالوج للجسم (على سبيل المثال، HD،HIP، NGC). هذا القسم متاح للأجسام التي لها إدخالات في الكتالوج، مثل النجوم والأجسام السماوية العميقة. إذا لم يكن للجسم اسم شائع، يُستخدم أحد هذه التصنيفات كاسم أساسي.
 - <Translate android="true" ids="online_photos"/> – يعرض الصور المتاحة المتعلقة بالجسم السماوي المحدد.
 
 ### الإجراءات {#actions}
@@ -106,7 +152,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### رسم بياني للرؤية {#visibility-graph}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![رسم بياني للرؤية](@site/static/img/plugins/starwatcher/visibility_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![رسم بياني للرؤية](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 تعرض تبويب **الرؤية** كيفية حركة الجسم المحدد عبر السماء خلال فترة 24 ساعة.
 
@@ -141,7 +201,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### جدول الملاحظة {#observation-schedule}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![جدول الملاحظة](@site/static/img/plugins/starwatcher/schedule_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![جدول الملاحظة](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 تعرض تبويب **الجدول** رؤية الجسم المحدد للأسبوع الحالي. تمثل كل سطر يومًا واحدًا وتشمل:  
 - يوم الأسبوع
@@ -177,7 +251,25 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## العثور على النجوم بتقنية الواقع المعزز (وضع الكاميرا) {#ar-star-finding}
 
-**الذهاب إلى:** *إضافة مفعلة → <Translate android="true" ids="shared_string_menu,star_map"/> → زر الكاميرا* 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![عرض AR](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+
+**الذهاب إلى:** *إضافة مفعلة → <Translate android="true" ids="shared_string_menu,star_map"/> → وضع AR* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![عرض AR](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+
+**الذهاب إلى:** *إضافة مفعلة → <Translate ios="true" ids="shared_string_menu,star_map"/> → وضع AR*
+
+</TabItem>
+
+</Tabs>
 
 تعمل طبقة **الفلك** مع **كاميرا الجهاز** لتمكين **مراقبة النجوم بتقنية الواقع المعزز (AR)**. وجه كاميرا هاتفك نحو سماء الليل الحقيقية ورؤية النجوم والكواكب والكوكبات والشمس/القمر مرسومة في الوقت الفعلي.
 
@@ -197,7 +289,21 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ## تكوين العرض {#configure-view}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![تكوين العرض](@site/static/img/plugins/starwatcher/half_state_new.png) ![تكوين العرض](@site/static/img/plugins/starwatcher/full_state.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![تكوين العرض](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![تكوين العرض](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 يسمح **<Translate android="true" ids="astro_configure_view"/>** بالتحكم في كيفية عرض خريطة النجوم من خلال تمكين أو تعطيل أوضاع العرض البصرية والأجسام وأدوات العرض.
 
@@ -205,7 +311,21 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ### الأوضاع والإجراءات {#modes-and-actions}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![تكوين العرض](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![تكوين العرض](@site/static/img/plugins/starwatcher/red_filter_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![تكوين العرض](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![تكوين العرض](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 يتحكم هذا القسم في أوضاع العرض الرئيسية لخريطة النجوم.
 
@@ -215,7 +335,21 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 ### الأجسام المرئية {#visible-objects}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![تكوين العرض](@site/static/img/plugins/starwatcher/solar_system.png) ![تكوين العرض](@site/static/img/plugins/starwatcher/constellations.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![تكوين العرض](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![تكوين العرض](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 يسمح هذا القسم لك باختيار أنواع الأجسام السماوية التي تُعرض على خريطة النجوم.
 
@@ -274,21 +408,92 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ## البحث {#search}
 
-![البحث](@site/static/img/plugins/starwatcher/explore_screen.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-تسمح ميزة **البحث** في إضافة الفلك بالعثور على الأجسام السماوية واستكشاف فئات السماء والوصول إلى بيانات الملاحظة. لفتح البحث، اضغط على زر البحث على خريطة النجوم. هذا يفتح شاشة البحث، التي توفر عدة أقسام لاكتشاف وتنظيم الأجسام السماوية. تشمل شاشة البحث الأقسام التالية:
+<TabItem value="android" label="Android">
+
+![البحث](@site/static/img/plugins/starwatcher/explore_screen.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![البحث](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+تسمح ميزة **البحث** (**استكشاف** على iOS) في إضافة الفلك بالعثور على الأجسام السماوية واستكشاف فئات السماء والوصول إلى بيانات الملاحظة. لفتح البحث، اضغط على زر البحث على خريطة النجوم. هذا يفتح شاشة البحث، التي توفر عدة أقسام لاكتشاف وتنظيم الأجسام السماوية. تشمل شاشة البحث الأقسام التالية:
 
 **1. شاهد الآن**
 
 يُبرز قسم شاهد الآن الأجسام السماوية التي مرئية الآن أو الليلة. يعمل هذا القسم كأداة توصية، يعرض الأجسام التي تناسب الملاحظة بشكل أفضل بناءً على موقعك الحالي ووقتك.
 
-**2. الفئات**
+**2. كسوف الشمس والقمر** (*أندرويد فقط*)
+
+تتيح أدوات [كسوف الشمس](#solar-eclipse) و[كسوف القمر](#lunar-eclipse) استكشاف أحداث الكسوف حول العالم، وعرض تقدمها عبر الزمن، والتحقق من رؤية الكسوف على الخريطة.
+
+**3. الفئات**
 
 يسمح قسم الفئات بتصفح الأجسام حسب النوع: النظام الشمسي، الكوكبات، النجوم، السدم، مجموعات النجوم، والسماء العميقة. تفتح كل فئة قائمة بالأجسام مع معلومات رئيسية: اسم الجسم، النوع أو الكوكبة، السطوع (السطوع)، ووقت الشروق أو الغروب (إذا كان ذلك مناسبًا).
 
+### كسوف الشمس (أندرويد فقط) {#solar-eclipse}
+
+![كسوف الشمس](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![كسوف الشمس](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+يسمح **مستكشف كسوف الشمس** باستكشاف كسوفات الشمس السابقة والقادمة حول العالم. يجمع بين خريطة النجوم وجدول زمني تفاعلي وتصور على الخريطة لإظهار كيفية تطور الكسوف في مواقع مختلفة.
+
+يتضمن مستكشف كسوف الشمس الميزات التالية:
+
+- **التنقل بين الكسوفات**. استخدم زري السابق والتالي للتبديل بين كسوفات الشمس المتاحة.
+- **الجدول الزمني**. يعرض الجدول الزمني بداية الكسوف وذروته ونهايته. حرّك الشريط المنزلق لعرض الكسوف في أي لحظة أثناء الحدث. تُحدث جميع معلومات الكسوف تلقائيًا للوقت المحدد.
+- **معلومات الكسوف**. تعرض لوحة المعلومات: نوع الكسوف، التاريخ والوقت الحالي، نسبة التغطية، ارتفاع الشمس، وإحداثيات مركز الخريطة. تُحسب المعلومات المعروضة لمركز الخريطة الحالي.
+- **مسار الكسوف**. اضغط على «ملاءمة مسار الكسوف» لتوسيط الخريطة على مسار الكسوف. اضغط على *إظهار الخريطة* أو *إخفاء الخريطة* لعرض أو إخفاء مسار الكسوف على الخريطة. يُظهر مسار الكسوف مكان رؤية الكسوف وكيفية تحرك ظل القمر عبر سطح الأرض.
+
+:::warning
+
+لا تنظر مباشرة إلى الشمس بدون حماية مناسبة لمشاهدة الشمس. أوقات الكسوف تقريبية.
+
+:::
+
+### كسوف القمر (أندرويد فقط) {#lunar-eclipse}
+
+![كسوف القمر](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![كسوف القمر](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+يسمح **مستكشف كسوف القمر** باستكشاف كسوفات القمر حول العالم ومراقبة كيفية مرور القمر عبر ظل الأرض.
+
+يتضمن مستكشف كسوف القمر الميزة التالية:
+
+- **التنقل بين الكسوفات**. استخدم زري السابق والتالي للتبديل بين كسوفات القمر المتاحة.
+- **أنواع الكسوف**. يدعم المستكشف: كسوفات شبه الظل، والكسوفات الجزئية، والكسوفات الكلية.
+- **الجدول الزمني**. يعرض الجدول الزمني بداية الكسوف وذروته ونهايته. تشير العلامات على الجدول الزمني إلى المراحل المختلفة للكسوف. حرّك الشريط المنزلق لمراقبة الكسوف في أي نقطة أثناء الحدث.
+- **معلومات الكسوف**. تعرض لوحة المعلومات: مرحلة الكسوف، نسبة التغطية، ارتفاع القمر، وإحداثيات مركز الخريطة. تُحسب المعلومات المعروضة لمركز الخريطة الحالي.
+- **خريطة الرؤية**. اضغط على *ملاءمة الرؤية* لتوسيط الخريطة على منطقة رؤية الكسوف. اضغط على *إظهار الخريطة* أو *إخفاء الخريطة* لعرض أو إخفاء طبقة الرؤية. تُبرز طبقة الرؤية المناطق التي يكون فيها القمر فوق الأفق أثناء الكسوف.
+
+:::warning
+
+ألوان الظل وسطوعه تخطيطية ومخصصة للتصور فقط.
+
+:::
+
 ### الترتيب والمرشحات {#sorting-and-filters}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![الترتيب](@site/static/img/plugins/starwatcher/sorting.png) ![المرشحات](@site/static/img/plugins/starwatcher/filters.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![الترتيب](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![المرشحات](@site/static/img/plugins/starwatcher/filters_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 اضغط على شريط البحث لفتح واجهة البحث الكاملة. يمكنك تهيئة النتائج باستخدام خيارات الترتيب والتصفية.
 
@@ -314,7 +519,21 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### بياناتي {#my-data}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![بياناتي](@site/static/img/plugins/starwatcher/my_data_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![بياناتي](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 يحتوي قسم بياناتي على الأجسام التي تفاعل معها المستخدم. يشمل هذا القسم ثلاث قوائم:
 
@@ -326,7 +545,21 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ### الكتالوجات {#catalogs}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![الكتالوجات](@site/static/img/plugins/starwatcher/catalogs_new.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![الكتالوجات](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 يوفر قسم الكتالوجات الوصول إلى الكتالوجات الفلكية المتاحة في إضافة الفلك.
 

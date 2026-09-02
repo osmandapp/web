@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2da04b9fb150c2b952067bc055c902a59f045bf4f357803361cc55a3be1856
+source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -39,6 +39,22 @@ La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce.
 - Scarica ed elimina tracce.
 - Crea nuove cartelle o eliminale.
 - Scarica cartelle come collezione OSF o OBF.
+
+
+## Importa tracce {#import-tracks}
+
+Puoi importare tracce GPX nel Pianificatore Web utilizzando il pulsante Importa o trascinando e rilasciando i file GPX direttamente sulla mappa.
+
+Per importare una traccia tramite trascinamento:
+- Apri la sezione Tracce.
+- Trascina uno o più file GPX dal tuo computer.
+- Rilascia i file sulla mappa o su una cartella traccia specifica.
+
+Quando un file viene trascinato sulla mappa, l'area di rilascio disponibile viene evidenziata. Se rilasci il file direttamente sulla mappa, viene importato nella cartella Import. Se lo rilasci su una cartella esistente, viene importato in quella cartella.
+
+Al termine dell'importazione, la traccia appare nell'elenco delle tracce, viene sincronizzata con [OsmAnd Cloud](../personal/osmand-cloud.md) e diventa disponibile su tutti i dispositivi collegati allo stesso account.
+
+![Trascina e rilascia](@site/static/img/web/drag_and_drop.png)
 
 
 ## Visibile sulla mappa {#visible-on-the-map}

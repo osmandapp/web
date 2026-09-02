@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -77,13 +77,13 @@ Wenn Sie irgendwo auf der Karte **lange antippen**, erscheint ein **Kontextmenü
 
 <TabItem value="android" label="Android">  
 
-![Kontext-Track-Menü Android](@site/static/img/map/context_track_menu_Android.png)
+![Kontext-Track-Menü Android](@site/static/img/map/context_track_menu_Android.png) ![Was ist hier Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Statistikbildschirm Track iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Statistikbildschirm Track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Was ist hier iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -137,11 +137,12 @@ Verfügbare Details umfassen:
 
 - [Artikelbeschreibung](#article-description)
 - [Alternative Namen](#alternative-names)
+- [Verwandt](#related)
 - [Koordinaten](#coordinates)
 - [Innerhalb von Gebieten](#polygon-information)
 - [Nahegelegene POIs](#nearby-pois)
 - [Nahegelegene beliebte Orte](#nearby-popular-places)
-- [Reiseführer](#guides) (nur Android)
+- [Reiseführer](#guides) 
 - [ÖPNV-Routen für Haltestellen](#public-transport-routes)
 - [Favoriten / Trackpunkte aus derselben Gruppe](#favorites--track-points-from-the-group)
 - [OpenStreetMap-Link](#openstreetmap-link)
@@ -156,6 +157,8 @@ Zusätzlich kann das Panel [OpenStreetMap-Details](https://wiki.openstreetmap.or
 - [Barrierefreiheit](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Breite](https://wiki.openstreetmap.org/wiki/Key:width) / [Höhe](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+Falls ein Kontaktfeld (z. B. *Webseite, Telefonnummer* oder *E-Mail*) mehrere Werte enthält, wird beim Antippen eine Liste der verfügbaren Einträge angezeigt. Wählen Sie den gewünschten Eintrag aus, um die entsprechende Aktion auszuführen.
+
 Über die oben genannten Felder hinaus kann OsmAnd auch zusätzliche beschreibende Informationen aus OpenStreetMap anzeigen. Diese Attribute helfen Ihnen, die Merkmale eines Ortes besser zu verstehen, und können Details wie Höhe, Richtung, Baujahr, Oberflächen- oder Bedeckungstyp, Innenraumebene, Zahlungsoptionen, Verfügbarkeit von Lieferung oder Abholung und viele andere enthalten. OsmAnd zeigt diese Attribute mit klaren Beschriftungen und, wo möglich, Symbolen an, um das Lesen und Erkennen der Informationen zu erleichtern. Der genaue Satz der Attribute hängt von den in OpenStreetMap für das ausgewählte Objekt verfügbaren Daten ab.
 
 
@@ -167,21 +170,19 @@ Zusätzlich kann das Panel [OpenStreetMap-Details](https://wiki.openstreetmap.or
 
 ![Beschreibungsliste](@site/static/img/map/description_list_new_android.png) ![Beschreibungsliste](@site/static/img/map/description_list_dialog.png)
 
-Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md#wikipedia-article), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
-
-Falls der ausgewählte Ort einen Wikipedia-Artikel hat, wird eine kurze Vorschau in diesem Abschnitt angezeigt. Wenn der vollständige Artikel offline nicht verfügbar ist, erscheint die Schaltfläche *Auf Wikipedia lesen*. Ein Antippen darauf öffnet einen Dialog mit Optionen je nach Benutzerzugriff: Nutzer mit einem gekauften Plan können die regionalen Wikipedia-Daten herunterladen oder den Artikel im Browser öffnen, während kostenlose Nutzer den Artikel online öffnen oder zum Bildschirm weitergeleitet werden, der Offline-Zugriff anbietet.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Beschreibungsliste](@site/static/img/map/description_list_new_ios.png)
-
-Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
+![Beschreibungsliste](@site/static/img/map/description_list_ios.webp) ![Beschreibungsliste](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md#wikipedia-article), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
+
+Falls der ausgewählte Ort einen Wikipedia-Artikel hat, wird eine kurze Vorschau in diesem Abschnitt angezeigt. Wenn der vollständige Artikel offline nicht verfügbar ist, erscheint die Schaltfläche *Auf Wikipedia lesen*. Ein Antippen darauf öffnet einen Dialog mit Optionen je nach Benutzerzugriff: Nutzer mit einem gekauften Plan können die regionalen Wikipedia-Daten herunterladen oder den Artikel im Browser öffnen, während kostenlose Nutzer den Artikel online öffnen oder zum Bildschirm weitergeleitet werden, der Offline-Zugriff anbietet.
 
 
 ### Alternative Namen {#alternative-names}
@@ -213,6 +214,28 @@ Merkmale der Anzeige alternativer Namen:
 - Andere Kategorien umfassen *regionsspezifische Übersetzung* oder *Standardeinstellungen*.
 
 - Wenn eine bestimmte Übersetzung *nicht verfügbar* ist, greift OsmAnd auf den **lokalen** Namen zurück, um Genauigkeit und Konsistenz in mehrsprachigen Regionen zu gewährleisten.
+
+### Verwandt {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Verwandt Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Verwandt iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+Der Abschnitt **Verwandt** zeigt Kartenobjekte an, die über eine OpenStreetMap-Relation mit dem ausgewählten Ort verknüpft sind. Dieser Abschnitt ist für unterstützte relationsbasierte POIs verfügbar, z. B. Universitätsgelände und andere Multipolygon-Objekte.
+
+Tippen Sie auf einen beliebigen Eintrag in der Liste, um dessen Kartenkontextmenü zu öffnen. So können Sie schnell zwischen verwandten Objekten derselben Relation navigieren.
 
 
 ### Innerhalb von Gebieten {#polygon-information}
@@ -299,9 +322,21 @@ Ein Tippen auf *Nahegelegene [Beliebte Orte](https://osmand.net/docs/user/plugin
 
 ### Reiseführer {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Reiseführer Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Reiseführer iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der Abschnitt **Reiseführer** erscheint im Kartenkontextmenü für einige Orte und bietet Zugriff auf **Reise (Wikivoyage)**-Führer im Zusammenhang mit dem ausgewählten Punkt von Interesse. Er zeigt eine Liste von Führereinträgen (z. B. ein Land oder eine Region) an, die den ausgewählten Ort erwähnen.
 

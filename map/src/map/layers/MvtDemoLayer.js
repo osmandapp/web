@@ -2,6 +2,7 @@ import MvtLayer from './MvtLayer';
 import MvtHybridDemoUnderlay from './MvtHybridDemo';
 import defaultStyle from '../../resources/mvt/default.mvt.json';
 import { isOsmAndTileURL, MVT_OSMAND_URL } from './MvtLayerConfig';
+import { MVT_PANE_Z_INDEX } from '../util/ZIndexes';
 
 const config = {
     style: defaultStyle,
@@ -10,7 +11,7 @@ const config = {
     popupClassName: 'mvt-demo-popup',
     errorLabel: 'MVT demo layer error',
     pane: 'mvtDemoPane',
-    paneZIndex: 250,
+    paneZIndex: MVT_PANE_Z_INDEX,
 };
 
 export default function MvtDemoLayer() {

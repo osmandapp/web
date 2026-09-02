@@ -1,5 +1,5 @@
 ---
-source-hash: 47ecb42990d8c8a97e7489a58b21b17e90878cd603b324f2f94c03d6ee89f2ee
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografia
 ---
@@ -180,7 +180,7 @@ Podczas korzystania z [Silnika renderowania mapy](../personal/global-settings.md
 - *<Translate android="true" ids="show_from_zoom_level"/>*. Zdefiniuj [poziomy powiększenia](../map/interact-with-map.md#my-position-and-zoom), przy których widoczne są linie konturowe.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Wybierz kolor wyświetlania linii konturowych.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Dostosuj szerokość linii konturowych.
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gęstość linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gędze linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
 - *<Translate android="true" ids="maps_and_resources"/>*. Przeglądaj i pobieraj mapy linii konturowych dla bieżącego regionu i pobliskich obszarów.
 
 
@@ -274,6 +274,16 @@ Cienie terenu wymagają Rzeźby 3D i automatycznie ją włączają po wybraniu. 
 
 ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
 - Z [predefiniowanej listy](#default-color-scheme).
@@ -290,23 +300,6 @@ Możesz:
 **Uwaga:** Cieniowanie wzgórz wykorzystuje stały algorytm cieniowania i nie obsługuje niestandardowych palet kolorów.
 
 Aby uzyskać zaawansowaną personalizację palet za pomocą plików palet, zobacz artykuł [Schematy kolorów](../personal/color-palette-schemes.md#palette-modify).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_neww.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
-
-Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
-
-- Z [predefiniowanej listy](#default-color-scheme).
-- Z plików palet kolorów utworzonych na komputerze. Niestandardowe pliki można dodać do OsmAnd za pomocą [narzędzia importu/eksportu](../personal/import-export.md).
-
-Możesz [edytować te palety](../personal/color-palette-schemes.md#palette-modify), aby spersonalizować wygląd map i tras.
-
-</TabItem>
-
-</Tabs>
 
 ### Widoczność {#visibility}
 
@@ -338,7 +331,7 @@ Poziomy powiększenia nie są dostępne dla Cieni terenu, ponieważ ta wizualiza
 1. Jeśli używasz **Silnika renderowania mapy w wersji 1**, musisz użyć normalnego [pobierania](../start-with/download-maps.md) map rastrowych Cieniowania wzgórz i Nachylenia.
 
 2. Jeśli używasz **Silnika renderowania mapy w wersji 2 (OpenGL)**:
-    - Możesz nadal używać normalnego typu pobierania map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
+    - Możesz nadal używać normalnego [pobierania](../start-with/download-maps.md) map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
 
     - Alternatywnie możesz użyć pobierania [Mapy terenu (3D)](../personal/maps-resources.md#paid-map-content). Oszczędza to miejsce w pamięci urządzenia, a efekty Cieniowania wzgórz, Nachylenia i Rzeźby 3D będą generowane na podstawie tych danych przez Twoje urządzenie.
 
@@ -377,7 +370,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>
 
-Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), wykorzystując informacje o wysokości z tagów takich jak `height` i `building:levels`, jeśli są dostępne. Jeśli [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) obejmują przejścia przez budynki mapowane za pomocą tagu `tunnel=building_passage`, OsmAnd renderuje widoczne otwory w modelu budynku 3D, tak aby drogi lub ścieżki piesze przechodzące przez budynek były wyświetlane poprawnie. 
+Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), wykorzystując informacje o wysokości z tagów takich jak `height` i `building:levels`, jeśli są dostępne.  
+
+W przypadku złożonych konstrukcji OsmAnd używa `building:part` do renderowania poszczególnych części budynku o różnych wysokościach i kształtach.  
+
+Jeśli [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) obejmują przejścia przez budynki mapowane za pomocą tagu `tunnel=building_passage`, OsmAnd renderuje widoczne otwory w modelu budynku 3D, tak aby drogi lub ścieżki piesze przechodzące przez budynek były wyświetlane poprawnie.  
+
+Budynki 3D mogą mieć różne kształty dachów na podstawie [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). Tag `roof:shape` definiuje geometrię dachu, natomiast `roof:levels` i `roof:height` dostarczają informacji o jego wysokości.
 
 Budynki 3D są pokazywane tylko na wyższych poziomach powiększenia (widok miasta/ulicy), gdzie można wyświetlić poszczególne budynki. Podczas powiększania lub pomniejszania oraz przesuwania mapy budynki 3D pojawiają się i znikają z płynną animacją zanikania. Gdy POI lub wybrana lokalizacja (takiej jak pinezka na mapie lub cel nawigacji) znajduje się wewnątrz budynku, OsmAnd podświetla odpowiadający budynek, aby ułatwić jego identyfikację na mapie.
 
@@ -439,6 +438,20 @@ Obie opcje wydajności używają dwupozycyjnego przełącznika bezpośrednio na 
 **Uwaga:** Używanie *Wysokiego szczegółu* i *Dalekiej odległości widoku* poprawia wygląd wizualny, ale może wpłynąć na wydajność i zwiększyć zużycie baterii.
 
 
+<!--
+### Sun {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+
+- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
+- Altitude — controls the height of the sun above the horizon.
+
+Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
+
+
 ## Rzeźba 3D {#3d-relief}
 
 :::info Funkcja Pro
@@ -496,7 +509,6 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 </TabItem>
 
 </Tabs>
-
 
 ### Przewyższenie pionowe {#vertical-exaggeration}
 
@@ -574,6 +586,6 @@ OsmAnd pozwala na łączenie wielu typów warstw mapy w celu uzyskania bardziej 
 
 1. Jak przywrócić zakup wtyczki Topografia (dawniej Linie konturowe). [(sprawdź)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Linie konturowe, dane o wysokości lub rzeźba 3D nie są wyświetlane. [(sprawdź)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. Mapa automatycznie przełącza się w tryb 3D podczas nawigacji:  
-    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przyciski → Przycuki domyślne**.  
+3. Mapa automatycznie przełącza w tryb 3D podczas nawigacji:  
+    - Upewnij się, że przycisk **Tryb 3D** jest wyłączony w **Menu → Konfiguruj ekran → Przycuki → Przycuki domyślne**.  
     - Sprawdź, czy w **Menu → Konfiguruj mapę → Topografia** są włączone jakiekolwiek funkcje Terenu, które mogą wywoływać efekt 3D.

@@ -1,5 +1,5 @@
 ---
-source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
+source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
 sidebar_position: 4
 title: Araç parametreleri
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -56,7 +56,7 @@ OsmAnd uygulamasındaki parametreleri doğru bir şekilde ayarlamak, bir rotada 
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ OsmAnd uygulamasındaki parametreleri doğru bir şekilde ayarlamak, bir rotada 
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -82,33 +82,33 @@ Araç parametreleri, yolların, köprülerin, feribotların, barajların ve diğ
 
 **1.** [**<Translate android="true" ids="routing_attr_weight_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Ağırlık parametresi yalnızca [*Araba, Kamyon* ve *Motosiklet*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
 **2.**  [**<Translate android="true" ids="routing_attr_height_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Yükseklik parametresi yalnızca *[Araba, Kamyon, Motosiklet](../../navigation/routing/car-based-routing.md)* ve *[Tekne](../../navigation/routing/boat-navigation.md)* gibi navigasyon türlerinde mevcuttur.  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
 **3.** [**<Translate android="true" ids="routing_attr_length_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Uzunluk parametresi yalnızca [*Araba, Kamyon* ve *Motosiklet*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
 **4.** [**<Translate android="true" ids="routing_attr_width_name"/> sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Genişlik parametresi yalnızca *[Araba, Kamyon, Motosiklet](../../navigation/routing/car-based-routing.md)* ve *[Tekne](../../navigation/routing/boat-navigation.md)* gibi navigasyon türlerinde mevcuttur.  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
 Android'de, bu parametre dar bisiklet yollarından kaçınmaya yardımcı olmak için *[Bisiklet profilleri](../../navigation/routing/bicycle-based-routing.md)* için de mevcuttur.
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Maksimum aks yükü sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Araç aks ağırlığı kısıtlamalarına sahip yollar ve köprülerden kaçınmak için aracınızın maksimum aks yükünü belirtin. Bu parametre yalnızca [*Kamyon*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/max_axle_load.png)
+![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
 
 **6.** [**Tam yüklü maksimum ağırlık**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Genel ağırlık kısıtlamalarına sahip yollar ve köprülerden kaçınmak için tam yüklü aracınızın maksimum toplam ağırlığını belirtin. Bu parametre yalnızca [*Kamyon*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/max_weight_at_full_load.png)
+![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Araç parametrelerindeki sınırlar, navigasyon ve yol güvenliği için önemli olabilir. Bu kısıtlamalardan bazıları şunları içerebilir:  
 
@@ -126,20 +126,20 @@ Araç parametrelerindeki sınırlar, navigasyon ve yol güvenliği için önemli
 
 <TabItem value="android" label="Android">
 
-![Navigasyon rotası Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon rotası iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
 Araç parametrelerinde motor tipini seçerseniz, [Rota Detayları](../setup/route-details.md) bölümündeki grafiğin üzerinde [***CO2 ayak izi verileri***](../../navigation/setup/route-details.md#elevation-info) görüntülenecektir.
-Mevcut altı yakıt tipi: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit***.  
+Mevcut yedi yakıt tipi: ***Benzin, Dizel, LPG, CNG, Elektrik, Hibrit*** ve ***Etanol***.  
 
 **Uygulanabilirlik:**
 
@@ -152,13 +152,13 @@ Mevcut altı yakıt tipi: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit*
 
 <TabItem value="android" label="Android">
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -179,13 +179,13 @@ Mevcut altı yakıt tipi: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit*
 
 <TabItem value="android" label="Android">
 
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
 </TabItem>
 
@@ -194,7 +194,7 @@ Mevcut altı yakıt tipi: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit*
 **Varsayılan hız**, bu ulaşım modu için varsayılan hareket hızıdır ([Varsayılan hız limitleri](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). *Yürüme*, *At binme* ve *Bisiklet* profilleri için 0,1 km/saat (mph) ([Birimler ve formatlar](https://osmand.net/docs/user/personal/profiles#units--formats)) eşdeğeri küçük artışlarla, diğer profiller için ise 1 km/saat (1 mph) eşdeğeri artışlarla. Kullanılır:
 - [GPX Navigasyonu](../setup/gpx-navigation.md), [Kayak rotaları](../routing/ski-routing.md), [Tekne rotaları](../routing/boat-navigation.md), [Yaya](../routing/pedestrian-routing.md) ve diğer benzer profiller gibi yollardan hız belirlenemediğinde [rota süresini](../../widgets/nav-widgets.md#time-to-intermediate) tahmin etmek için.
 - [Sesli anonsların](../guidance/voice-navigation.md) ne zaman etkinleştirileceğini belirlemek için.
-- Ortalama hız henüz hesaplanmadıysa, düz çizgi navigasyonu ile Harita işaretleyicileri için tahmini varış zamanını belirlemek için.
+- Ortalama hız henüz hesaplanmadıysa, düz çizgi navigasyonu ile Harita işaretleyileri için tahmini varış zamanını belirlemek için.
 
 
 
@@ -204,7 +204,7 @@ Varış zamanını hesaplamak ve uygulamanın tipik olarak kabul ettiği hareket
 ### Yol Hızları {#road-speeds}
 
 
-![Navigasyon Ayarları](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 Bazı navigasyon türleri için minimum ve maksimum izin verilen hız ayarlanabilir. Ayarlanırsa, rota motoru aracın veya ulaşım modunun limitten daha hızlı hareket etmeyeceğini ve minimum hızdan daha yavaş hareket etmeyeceğini varsayar.
 Örneğin, yakıt tüketiminin ayarlanan **maksimum hızda** optimal olduğu ve motorun daha uzun ama daha hızlı yollardan kaçınarak daha kısa bir rota bulacağı **yakıt verimli** bir rota oluşturmaya olanak tanır.

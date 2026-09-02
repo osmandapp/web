@@ -1,5 +1,5 @@
 ---
-source-hash: 99fc16678204768044a7ea88c3e2af0e6b580e62ce291c417fdb087b07de9432
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -77,13 +77,13 @@ Quando si effettua un **tocco lungo** in un punto qualsiasi della mappa, appare 
 
 <TabItem value="android" label="Android">  
 
-![Menu contestuale traccia Android](@site/static/img/map/context_track_menu_Android.png)
+![Menu contestuale traccia Android](@site/static/img/map/context_track_menu_Android.png) ![Cosa c'è qui Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Schermata statistiche traccia iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![Schermata statistiche traccia iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Cosa c'è qui iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -137,11 +137,12 @@ I dettagli disponibili includono:
 
 - [Descrizione dell'articolo](#article-description)
 - [Nomi alternativi](#alternative-names)
+- [Correlati](#related)
 - [Coordinate](#coordinates)
 - [All'interno delle aree](#polygon-information)
 - [POI nelle vicinanze](#nearby-pois)
 - [Luoghi popolari nelle vicinanze](#nearby-popular-places)
-- [Guide](#guides) (solo Android)
+- [Guide](#guides) 
 - [Percorsi del trasporto pubblico per le fermate](#public-transport-routes)
 - [Preferiti / Punti traccia dello stesso gruppo](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -156,6 +157,8 @@ Inoltre, il pannello può includere [Dettagli OpenStreetMap](https://wiki.openst
 - [Accessibilità](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Larghezza](https://wiki.openstreetmap.org/wiki/Key:width) / [Altezza](https://wiki.openstreetmap.org/wiki/Key:height) 
 
+Se un campo di contatto (come *Sito web, Numero di telefono* o *Email*) contiene più valori, toccandolo viene visualizzato un elenco delle voci disponibili. Selezionare la voce desiderata per eseguire l'azione corrispondente.
+
 Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descrittive extra prese da OpenStreetMap. Questi attributi aiutano a comprendere meglio le caratteristiche di un luogo e possono includere dettagli come elevazione, direzione, anno di costruzione, tipo di superficie o copertura, livello interno, opzioni di pagamento, disponibilità di consegna o asporto e molti altri. OsmAnd visualizza questi attributi con etichette chiare e, dove possibile, icone, rendendo più facile leggere e riconoscere le informazioni. L'insieme esatto di attributi dipende dai dati disponibili in OpenStreetMap per l'oggetto selezionato.
 
 
@@ -167,21 +170,19 @@ Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descritti
 
 ![Elenco descrizioni](@site/static/img/map/description_list_new_android.png) ![Elenco descrizioni](@site/static/img/map/description_list_dialog.png)
 
-Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md#wikipedia-article), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
-
-Se il luogo selezionato ha un articolo di Wikipedia, viene mostrato un'anteprima breve in questa sezione. Quando l'articolo completo non è disponibile offline, appare il pulsante *Leggi su Wikipedia*. Toccandolo si apre una finestra di dialogo con opzioni a seconda dell'accesso dell'utente: gli utenti con un piano acquistato possono scaricare i dati regionali di Wikipedia o aprire l'articolo in un browser, mentre gli utenti gratuiti possono aprire l'articolo online o procedere alla schermata che offre l'accesso offline.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Elenco descrizioni](@site/static/img/map/description_list_new_ios.png)
-
-Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
+![Elenco descrizioni](@site/static/img/map/description_list_ios.webp) ![Elenco descrizioni](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md#wikipedia-article), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
+
+Se il luogo selezionato ha un articolo di Wikipedia, viene mostrato un'anteprima breve in questa sezione. Quando l'articolo completo non è disponibile offline, appare il pulsante *Leggi su Wikipedia*. Toccandolo si apre una finestra di dialogo con opzioni a seconda dell'accesso dell'utente: gli utenti con un piano acquistato possono scaricare i dati regionali di Wikipedia o aprire l'articolo in un browser, mentre gli utenti gratuiti possono aprire l'articolo online o procedere alla schermata che offre l'accesso offline.
 
 
 ### Nomi alternativi {#alternative-names}
@@ -213,6 +214,28 @@ Caratteristiche della visualizzazione dei nomi alternativi:
 - Altre categorie includono la *traduzione specifica per regione* o le *impostazioni predefinite*.
 
 - Se una traduzione specifica *non è disponibile*, OsmAnd utilizza per impostazione predefinita il nome **locale** per garantire l'accuratezza e la coerenza nelle regioni multilingue.
+
+### Correlati {#related}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Correlati Android](@site/static/img/map/related_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Correlati iOS](@site/static/img/map/related_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+La sezione **Correlati** mostra gli oggetti della mappa associati al luogo selezionato tramite una relazione OpenStreetMap. Questa sezione è disponibile per i POI supportati basati su relazioni, come i campus universitari e altri oggetti multipoligono.
+
+Toccare qualsiasi elemento dell'elenco per aprire il relativo menu contestuale della mappa. Ciò consente di passare rapidamente tra oggetti correlati che appartengono alla stessa relazione.
 
 
 ### All'interno dell'area {#polygon-information}
@@ -299,9 +322,21 @@ Toccando *Luoghi popolari nelle vicinanze [Popular Places](https://osmand.net/do
 
 ### Guide {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guide Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guide iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 La sezione **Guide** appare nel menu contestuale della mappa per alcuni luoghi e fornisce accesso alle guide **Travel (Wikivoyage)** relative al punto di interesse selezionato. Mostra un elenco di voci della guida (ad esempio, un paese o una regione) che menzionano il luogo selezionato.
 
@@ -763,7 +798,7 @@ Per aggiungere/modificare punti di traccia, abilitare il [**plugin Registrazione
 - Nel *menu contestuale della mappa* che si apre, scegliere *Azioni → Aggiungi waypoint traccia*.
 - L'elenco mostra le [tracce](../map/tracks/index.md#display-tracks-on-the-map) registrate e visualizzate sulla mappa, così come la [registrazione della traccia corrente](../plugins/trip-recording.md), a cui è possibile aggiungere il waypoint selezionato (*su Android*, l'elenco è raggruppato in schede: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - È possibile aggiungere waypoint a una traccia che non è ancora attiva per la registrazione, nel qual caso la traccia inattiva passa dallo stato *Avvia* allo stato *Riprendi*.
-- [Compilare](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) i dati richiesti e salvare il waypoint.
+- [Compilare](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) i dati richiati e salvare il waypoint.
 - È possibile configurare le [Azioni rapide](../widgets/quick-action.md) aggiungendo un waypoint ad *Aggiungi waypoint traccia*.
 
 

@@ -505,7 +505,32 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 
 <TabItem value="android" label="Android">  
 
-![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png)
+![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png) ![Coordinates grid menu](@site/static/img/map/coordinates_grid_format_andr.webp)
+
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
+
+You can configure the following options:
+- **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
+- **Labels position:** choose between *Edges* (default) or *Center* for grid labels.
+- **Grid color:** available separately for Day/Night mode. 
+- **Coordinate format:** select from several available formats (see list below).
+
+***Available coordinate formats:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
+- **OLC** (Open Location Code, also known as Plus Code)
+- **MGRS** (Military Grid Reference System)
+- **Swiss coordinate system** - Swiss Grid (CH1903) and Swiss Grid (CH1903+)
+- **Maidenhead** (Maidenhead Locator System)
+
+The **Recent** section shows recently used coordinate systems. To add another supported coordinate system, tap *Select other format*. You can search by coordinate system name or EPSG code, then tap *+* to add it to the list.
+
+By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
+
+[Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
 
 </TabItem>
 
@@ -513,15 +538,11 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 
 ![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
 
 You can configure the following options:
 - **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
-- **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
+- **Labels position:** choose between *Edges* (default) or *Center* for grid labels.
 - **Grid color:** available separately for Day/Night mode. 
 - **Coordinate format:** select from several available formats (see list below).
 
@@ -536,6 +557,10 @@ You can configure the following options:
 By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
 
 [Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
+
+</TabItem>
+
+</Tabs>
 
 <!--
 | | | |

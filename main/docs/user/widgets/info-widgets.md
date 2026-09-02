@@ -31,9 +31,12 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: Current Location   {#altitude-current-location}
   
 :::note  Download World altitude correction
-On some Android devices, the altitude can display inaccurately. To solve this problem, download a map with altitude correction.
+On Android 14 and later, OsmAnd uses altitude above mean sea level (MSL) provided by Google Play Services when available. In this case, the World altitude correction map is not required.
+
+If you use the Android API location source or MSL altitude is not available, download the World altitude correction map to improve altitude accuracy.
 
 - Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- To change the location source, go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - For more details, visit [Maps & Resources](../personal/maps-resources.md#downloads-menu).
 :::
 
@@ -201,7 +204,7 @@ After reset, the average speed is recalculated from the new GPS data. This featu
 
 |Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -246,28 +249,68 @@ The [simple](../widgets/configure-screen.md#widget-panels) *Glide Ratio* widgets
 
 ### Glide Ratio to Target {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Glide ratio to target** shows the exact glide ratio required to reach the target point.
+- **Target elevation** shows the target point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
+
+To switch between these modes, tap directly on the widget. Switching option is not available in the [widget's context menu](../widgets/configure-screen.md#widget-context-menu). 
+
+| | |
+|:------------|:------------|
+| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
+| By tapping | Changes *Glide ratio to target* or *Target elevation*  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Glide ratio to target** shows the exact glide ratio required to reach the target point.
 - **Target elevation** shows the target point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → Glide ratio* |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → Glide ratio* |
 | By tapping | Changes *Glide ratio to target* or *Target elevation*  |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Average Glide Ratio {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Average glide ratio** shows the average glide ratio for a specified time interval.
+
+| | |
+|:------------|:------------|
+| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Average glide ratio** shows the average glide ratio for a specified time interval.
 - **Average vertical speed** indicates the rate at which an object ascends or descends over a while. Only the first and last points of the time interval are considered for evaluation. You can set the time interval for this widget from 15 seconds to 60 minutes. You should use the [Map marker](../personal/markers.md) as the target point.
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → Glide ratio* |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → Glide ratio* |
 | By tapping | Changes *Average glide ratio* or *Average vertical speed*  |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Battery Level {#battery-level}
@@ -564,6 +607,7 @@ The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md
 - To add vehicle metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **Vehicle Metrics plugin**.
 - You can add widgets even if no OBD-II scanner is connected.
 - All added widgets are visible whether an OBD-II scanner is connected or not.
+- For accurate **Fuel consumption** values, specify the vehicle's _[Fuel tank capacity](../navigation/guidance/vehicle-parameters.md#overview)_ in the profile settings. Distance-based consumption modes also require GPS data.
 - To edit a widget, tap the widget added to the panel, then tap *Settings*, or directly tap the *Settings icon* in the widget field.
 
 | | |
