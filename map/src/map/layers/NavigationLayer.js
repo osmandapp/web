@@ -481,10 +481,6 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        // alternatives make sense on the route map only, not in details or any track editing
-        if (feature?.properties?.alternative && isTrack(ctx)) {
-            return false;
-        }
         return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
     };
 
@@ -591,7 +587,8 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     return (
         <>
-            {alternativeRoutes.length > 0 && (
+            {/* alternatives make sense on the route map only, not in details or any track editing */}
+            {alternativeRoutes.length > 0 && !isTrack(ctx) && (
                 <GeoJSON
                     ref={altLayerRef}
                     key={'alt-' + routeDataKey}
