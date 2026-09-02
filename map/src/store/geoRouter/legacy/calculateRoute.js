@@ -16,6 +16,14 @@ const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
 
 export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
 
+// How many alternative routes to ask the router for. Only HH routing returns them, other
+// engines ignore the parameter. 0 turns them off.
+export const ROUTE_ALTERNATIVES = 2;
+
+// Alternatives are drawn under the main route, translucent so that the map stays readable,
+// and thick enough to be comfortable to click.
+export const ALTERNATIVE_ROUTE_STYLE = { color: '#5c6b7a', opacity: 0.45, weight: 7 };
+
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
@@ -137,10 +145,11 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     }
     changeRouteText(true, null);
     const maxDist = '&maxDist=100'; // compatibility-only
+    const alternatives = ROUTE_ALTERNATIVES > 0 ? `&alternatives=${ROUTE_ALTERNATIVES}` : '';
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
-            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}`,
+            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${alternatives}`,
         {
             apiCache: true,
             method: 'GET',
@@ -163,7 +172,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         if (data.features.length > 0) {
             data.features.forEach((f) => {
                 if (f.geometry?.type === 'LineString') {
-                    f.style = style;
+                    f.style = f.properties?.alternative ? { ...ALTERNATIVE_ROUTE_STYLE } : style;
                 }
             });
         }

@@ -18,8 +18,10 @@ import {
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
+import { ALTERNATIVE_ROUTE_STYLE } from '../../store/geoRouter/legacy/calculateRoute';
 
 const DRAG_DEBOUNCE_MS = 10;
+const ALTERNATIVE_HOVER_OPACITY = 0.9;
 const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
 function setMarkerIconHtml(marker, html) {
@@ -353,7 +355,29 @@ const NavigationLayer = ({ geocodingData, region }) => {
         fillOpacity: 0.8,
     };
 
+    const describeAlternative = (props) => {
+        const km = props.distance ? (props.distance / 1000).toFixed(1) : null;
+        const min = props.time ? Math.round(props.time / 60) : null;
+        const delta = props.deltaTime;
+        const parts = [`Alternative ${props.alternative}`];
+        if (km !== null && min !== null) {
+            parts.push(`${km} km, ${min} min`);
+        }
+        if (delta !== undefined && delta !== null) {
+            parts.push(`${delta > 0 ? '+' : ''}${delta}% vs main route`);
+        }
+        return parts.join('<br/>');
+    };
+
     const onEachFeature = ({ feature, layer, id = null }) => {
+        if (feature.properties?.alternative) {
+            // translucent so the main route stays readable, but thick enough to click
+            layer.bindPopup(describeAlternative(feature.properties));
+            layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
+            layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_STYLE.opacity }));
+            layer.on('add', () => layer.bringToBack());
+            return;
+        }
         if (feature.properties?.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
@@ -476,7 +500,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // pass geojson.features.style to set colors/etc
     const passStyle = (f) => {
         if (!f.style && f.geometry?.type === 'LineString') {
-            f.style = { color: routeObject.getColor() };
+            f.style = f.properties?.alternative ? { ...ALTERNATIVE_ROUTE_STYLE } : { color: routeObject.getColor() };
         }
         return f.style;
     };
