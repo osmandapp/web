@@ -22,7 +22,6 @@ import { ALTERNATIVE_ROUTE_STYLE } from '../../store/geoRouter/legacy/calculateR
 
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
-const DEVEL_FEATURES = process.env.REACT_APP_DEVEL_FEATURES === 'yes';
 const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
 function setMarkerIconHtml(marker, html) {
@@ -379,7 +378,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
         if (alt.time) {
             parts.push(`${Math.round(alt.time / 60)} min` + diff(alt.time / 60, main.time / 60, 'min', 0));
         }
-        if (DEVEL_FEATURES && alt.routingTime) {
+        if (ctx.develFeatures && alt.routingTime) {
             const d = Math.round(alt.routingTime - (main.routingTime ?? 0));
             const delta = main.routingTime ? ` (${d > 0 ? '+' : ''}${d})` : '';
             parts.push(`${Math.round(alt.routingTime)} cost${delta}`);
