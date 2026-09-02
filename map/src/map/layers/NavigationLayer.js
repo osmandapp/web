@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useContext, useCallback, useMemo } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
+import { useTranslation } from 'react-i18next';
 import L from 'leaflet';
-import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
+import AppContext, { isRouteTrack, isTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import MarkerOptions from '../markers/MarkerOptions';
 import { getStartPointIconSvg } from '../markers/StartPointMarker';
@@ -18,9 +19,16 @@ import {
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
-import { POINT_MARKER_Z_INDEX_OFFSET, TURN_DOT_Z_INDEX_OFFSET } from '../util/ZIndexes';
+import { POINT_MARKER_Z_INDEX_OFFSET } from '../util/ZIndexes';
+import {
+    alternativeRouteStyle,
+    ALTERNATIVE_ROUTE_OPACITY,
+    isAlternativeFeature,
+} from '../../store/geoRouter/legacy/calculateRoute';
 
 const DRAG_DEBOUNCE_MS = 10;
+const ALTERNATIVE_HOVER_OPACITY = 0.9;
+const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
 function setMarkerIconHtml(marker, html) {
     const el = marker?.getElement();
@@ -68,6 +76,7 @@ function moveableMarker(routeObject, map, marker) {
 const NavigationLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const mtx = useContext(MapContext);
 
     const makeDotIcon = useCallback((color = '#ff7800', opacity = 0.9, size = 16, border = '#000', strokeWidth = 1) => {
@@ -353,6 +362,94 @@ const NavigationLayer = ({ geocodingData, region }) => {
         fillOpacity: 0.8,
     };
 
+    // "Route 2. 27.5 km (5.1 km shorter), 35 min (7 min longer), 1800 cost (+500)"
+    // Everything is compared against the route currently shown on the left.
+    const describeAlternative = (props) => {
+        const alt = props.overall ?? {};
+        const main = routeObject.getRoute()?.features?.[0]?.properties?.overall ?? {};
+
+        const diff = (value, base, unit, digits) => {
+            if (!base) return '';
+            const d = value - base;
+            const shown = digits ? Math.abs(d).toFixed(digits) : Math.round(Math.abs(d));
+            if (Number.parseFloat(shown) === 0) return '';
+            const key = d > 0 ? 'web:alt_route_longer' : 'web:alt_route_shorter';
+            return ` (${t(key, { value: shown, unit })})`;
+        };
+
+        const parts = [];
+        if (alt.distance) {
+            const km = t('km');
+            parts.push(
+                `${(alt.distance / 1000).toFixed(1)} ${km}` + diff(alt.distance / 1000, main.distance / 1000, km, 1)
+            );
+        }
+        if (alt.time) {
+            const min = t('shared_string_minute_lowercase');
+            parts.push(`${Math.round(alt.time / 60)} ${min}` + diff(alt.time / 60, main.time / 60, min, 0));
+        }
+        if (ctx.develFeatures && alt.routingTime) {
+            const d = Math.round(alt.routingTime - (main.routingTime ?? 0));
+            const delta = main.routingTime ? ` (${d > 0 ? '+' : ''}${d})` : '';
+            parts.push(`${Math.round(alt.routingTime)} cost${delta}`);
+        }
+        return `${t('web:alt_route_label', { n: props.alternative })}. ` + parts.join(', ');
+    };
+
+    // Show the picked alternative in place of the route on the left: its line moves to the front of
+    // the collection (the summary is read from the first feature) and the two routes swap the
+    // "alternative" number. The number is carried by the turn descriptions as well, so a whole route
+    // changes hands - otherwise the map and the Turns tab would keep the directions of the route
+    // that was just replaced.
+    const selectAlternative = (feature) => {
+        const route = routeObject.getRoute();
+        const number = feature.properties?.alternative;
+        // matched by the number rather than by object identity - the layer may hold a copy
+        const index = (route?.features ?? []).findIndex(
+            (f) => f.geometry?.type === 'LineString' && f.properties?.alternative === number
+        );
+        if (index <= 0) {
+            return;
+        }
+        const color = route.mainRouteStyle?.color ?? routeObject.getColor();
+        const features = route.features.map((f) => {
+            const properties = { ...f.properties };
+            if (f.properties?.alternative === number) {
+                delete properties.alternative;
+            } else if (!isAlternativeFeature(f)) {
+                properties.alternative = number;
+            } else {
+                return f;
+            }
+            const style =
+                f.geometry?.type === 'LineString'
+                    ? properties.alternative
+                        ? alternativeRouteStyle(color)
+                        : (route.mainRouteStyle ?? { color })
+                    : f.style;
+
+            return { ...f, properties, style };
+        });
+        const picked = features[index];
+        features[index] = features[0];
+        features[0] = picked;
+        routeObject.putRoute({ route: { ...route, features } });
+    };
+
+    const onEachAlternative = (feature, layer) => {
+        // translucent so the shown route stays readable, but thick enough to click
+        layer.bindTooltip(describeAlternative(feature.properties), { sticky: true });
+        // the tooltip makes the path focusable and a click would draw the browser focus frame
+        layer.on('add', () => {
+            const el = layer.getElement();
+            el?.removeAttribute('tabindex');
+            el?.style.setProperty('outline', 'none');
+        });
+        layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
+        layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_OPACITY }));
+        layer.on('click', () => selectAlternative(feature));
+    };
+
     const onEachFeature = ({ feature, layer, id = null }) => {
         if (feature.properties?.description) {
             let desc = feature.properties.description;
@@ -429,11 +526,20 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // GeoJSON requires dynamic key to refresh/refilter
     // used to redraw layer(s) killed after Local Track Editor
-    const refreshKey = isRouteTrack(ctx).toString();
+    const refreshKey = isRouteTrack(ctx).toString() + isTrack(ctx).toString();
     const routeDataKey = routeObject.getRouteKey() + refreshKey;
 
     const routeLayerRef = useRef(null);
     const routeLayer = routeLayerRef.current;
+    const altLayerRef = useRef(null);
+
+    // Alternatives are drawn by their own layer, mounted before the route so that its paths come
+    // first in the shared SVG and the route stays on top. Keeping them in the route layer and
+    // calling bringToBack() instead dropped them below every other overlay, visible tracks included,
+    // and their geometry widened the bounds that "zoom to route" fits.
+    const routeFeatures = routeObject.getRoute()?.features ?? [];
+    const shownRoute = routeFeatures.filter((f) => !isAlternativeFeature(f));
+    const alternativeRoutes = routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === 'LineString');
 
     const viaLayersRef = useRef([]);
 
@@ -461,6 +567,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
             // avoid conceal if zoom is requested
             if (routeZoom === false) {
                 map.removeLayer(routeLayer);
+                if (altLayerRef.current) {
+                    map.removeLayer(altLayerRef.current);
+                }
 
                 // remove start, finish
                 map.removeLayer(startPointRef.current);
@@ -476,18 +585,29 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // pass geojson.features.style to set colors/etc
     const passStyle = (f) => {
         if (!f.style && f.geometry?.type === 'LineString') {
-            f.style = { color: routeObject.getColor() };
+            const color = routeObject.getColor();
+            f.style = f.properties?.alternative ? alternativeRouteStyle(color) : { color };
         }
         return f.style;
     };
 
     return (
         <>
+            {/* alternatives make sense on the route map only, not in details or any track editing */}
+            {alternativeRoutes.length > 0 && !isTrack(ctx) && (
+                <GeoJSON
+                    ref={altLayerRef}
+                    key={'alt-' + routeDataKey}
+                    data={{ type: 'FeatureCollection', features: alternativeRoutes }}
+                    style={passStyle}
+                    onEachFeature={onEachAlternative}
+                />
+            )}
             {routeObject.getRoute() && (
                 <GeoJSON
                     ref={routeLayerRef}
                     key={routeDataKey}
-                    data={routeObject.getRoute()}
+                    data={{ ...routeObject.getRoute(), features: shownRoute }}
                     style={passStyle}
                     pointToLayer={pointToLayer}
                     onEachFeature={(feature, layer) => onEachFeature({ feature, layer })}

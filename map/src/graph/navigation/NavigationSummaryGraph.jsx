@@ -47,7 +47,11 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
         // Extract all coordinates from route features
         const coordinates = [];
         route.features.forEach((feature) => {
-            if (feature.geometry?.type === 'LineString' && Array.isArray(feature.geometry.coordinates)) {
+            if (
+                feature.geometry?.type === 'LineString' &&
+                Array.isArray(feature.geometry.coordinates) &&
+                !feature.properties?.alternative
+            ) {
                 coordinates.push(...feature.geometry.coordinates);
             }
         });

@@ -12,7 +12,13 @@ const llRoundedKey = ({ lat, lng }) => Number(lat).toFixed(5) + ',' + Number(lng
 function getRouteGeometry(route) {
     const geometry = [];
     route.features
-        .filter((f) => f.geometry?.type === 'LineString' && f.geometry?.coordinates?.length > 0)
+        // alternatives are drawn on the map only, they are not part of the route being edited
+        .filter(
+            (f) =>
+                f.geometry?.type === 'LineString' &&
+                f.geometry?.coordinates?.length > 0 &&
+                !f.properties?.alternative
+        )
         .forEach((f) =>
             // LineString has [[ll], [ll], ...]
             f.geometry.coordinates.forEach((c, index) => {

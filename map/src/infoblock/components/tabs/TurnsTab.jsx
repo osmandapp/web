@@ -23,6 +23,7 @@ import UTurnLeft from '@mui/icons-material/UTurnLeftOutlined';
 
 import KeepRight from '@mui/icons-material/RampRightOutlined';
 import KeepLeft from '@mui/icons-material/RampLeftOutlined';
+import { isAlternativeFeature } from '../../../store/geoRouter/legacy/calculateRoute';
 
 const DoubleSwitch = styled(Switch)(() => ({
     width: 68,
@@ -166,9 +167,12 @@ export default function TurnsTab() {
     const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
     const routeHasTurns =
         route &&
-        route.features &&
-        route.features.some(
-            (f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates
+        route.features?.some(
+            (f) =>
+                f.geometry?.type === 'Point' &&
+                f.properties?.description &&
+                f.geometry?.coordinates &&
+                !isAlternativeFeature(f)
         );
     const routeTurnItems = useMemo(
         () => (routeHasTurns ? getRouteTurnItems({ route }) : null),
@@ -218,7 +222,14 @@ export default function TurnsTab() {
 
     function getRouteTurnItems({ route }) {
         const items = route.features
-            .filter((f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates)
+            // an alternative brings its own turns; only the route being shown belongs in the list
+            .filter(
+                (f) =>
+                    f.geometry?.type === 'Point' &&
+                    f.properties?.description &&
+                    f.geometry?.coordinates &&
+                    !isAlternativeFeature(f)
+            )
             .map((f, i, all) => {
                 const [lng, lat] = f.geometry.coordinates;
                 const description = f.properties.description;

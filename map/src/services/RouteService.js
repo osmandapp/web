@@ -28,7 +28,6 @@ export function RouteService() {
     const routeTrack = routeObject.getTrack();
     const routeTrackFile = ctx.routeTrackFile;
 
-    const setHeaderText = ctx.setHeaderText;
     const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
     const setNavigationRoutingInProgress = ctx.setNavigationRoutingInProgress;
 
@@ -40,22 +39,8 @@ export function RouteService() {
         }
     }, [routeObject.getRouteEffectDeps()]);
 
-    function changeRouteText(processRoute, props) {
-        let resultText = '';
-        if (processRoute) {
-            setNavigationRoutingInProgress(true);
-        } else {
-            setNavigationRoutingInProgress(false);
-            if (props) {
-                const { name } = routeObject.getProfile();
-                const dist = props.overall?.distance ? props.overall?.distance : props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${name} is found.`;
-            }
-        }
-        setHeaderText((prevState) => ({
-            ...prevState,
-            route: { text: resultText },
-        }));
+    function changeRouteText(processRoute) {
+        setNavigationRoutingInProgress(processRoute === true);
     }
 
     const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
@@ -194,10 +179,6 @@ export function RouteService() {
             });
         } else if (!routeTrackFile) {
             setNavigationRoutingInProgress(false);
-            setHeaderText((prevState) => ({
-                ...prevState,
-                route: { text: '' },
-            }));
         }
     }, [routeObject.getEffectDeps(), routeObject.getRouteEffectDeps(), routeTrackFile]);
 
