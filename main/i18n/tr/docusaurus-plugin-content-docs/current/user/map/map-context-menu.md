@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -143,7 +143,7 @@ Mevcut ayrıntılar şunları içerir:
 - [Alanlar içinde](#polygon-information)
 - [Yakındaki İÇN'ler](#nearby-pois)
 - [Yakındaki Popüler Yerler](#nearby-popular-places)
-- [Kılavuzlar](#guides) (yalnızca Android)
+- [Kılavuzlar](#guides) 
 - [Duraklar için Toplu Taşıma rotaları](#public-transport-routes)
 - [Aynı gruptan Favoriler / İz Noktaları](#favorites--track-points-from-the-group)
 - [OpenStreetMap bağlantısı](#openstreetmap-link)
@@ -179,9 +179,9 @@ Seçilen yerin bir Wikipedia makalesi varsa, bu bölümde kısa bir önizleme g�
 
 <TabItem value="ios" label="iOS">  
 
-![Açıklama listesi](@site/static/img/map/description_list_new_ios.png)
+![Açıklama listesi](@site/static/img/map/description_list_ios.webp) ![Açıklama listesi](@site/static/img/map/description_list_dialog.webp)
 
-Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md), [Favori](../personal/favorites.md) veya Yol Noktası açıklamasından bir açıklama bölümü içerir, dokunarak tam açıklamayı açabilirsiniz.
+Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md#wikipedia-article), [Favori](../personal/favorites.md) veya Yol Noktası açıklamasından bir açıklama bölümü içerir, dokunarak tam açıklamayı açabilirsiniz.
 
 </TabItem>
 
@@ -248,13 +248,13 @@ Listedeki herhangi bir öğeye dokunarak harita bağlam menüsünü açabilirsin
 
 <TabItem value="android" label="Android">  
 
-![Çokgen Bilgisi Android](@site/static/img/map/polygon_information_andr.png)
+![Çevrimiçi Harita İndir Android](@site/static/img/map/polygon_information_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Çokgen Bilgisi iOS](@site/static/img/map/polygon_information_ios_new.png)
+![Çevrimiçi Harita İndir iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -327,9 +327,21 @@ Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeler
 
 ### Kılavuzlar {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Kılavuzlar Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kılavuzlar iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 **Kılavuzlar** bölümü, harita bağlam menüsünde bazı yerler için görünür ve seçilen ilgi çekici nokta ile ilgili **Seyahat (Wikivoyage)** kılavuzlarına erişim sağlar. Seçilen yeri bahseden kılavuz girişlerinin (örneğin, bir ülke veya bölge) bir listesini gösterir.
 
@@ -338,7 +350,7 @@ Kılavuzlar bölümü, yalnızca seçilen alan için **Seyahat (Wikivoyage)** ve
 **Not:** Kılavuzlar, genel Wikipedia açıklamalarına değil, Wikivoyage içeriğine bağlıdır.
 
 
-### Topulu Taşıma Rotaları {#public-transport-routes}
+### Toplu Taşıma Rotaları {#public-transport-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

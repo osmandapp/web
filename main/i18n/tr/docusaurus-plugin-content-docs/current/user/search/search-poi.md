@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title: POI Ara
 ---
@@ -198,10 +198,10 @@ Listedeki seçilen POI'ye dokunmak, POI'nin [Harita Bağlam menüsünü](../map/
 **Filtre** işleviyle gerekli özellikleri seçebilir ve sonuç olarak yalnızca ilgili nesneleri içeren bir liste elde edebilirsiniz. Filtreyi kullanmak için:
 
 - Kategori listesinden ilgilendiğiniz kategoriyi seçin.
-- Açılan ekranda filtreyi gösteren simgeye dokunun. Giriş alanının altında, *Haritada göster*'in yanında bulunur.
+- Açılan ekranda filtreyi gösteren simgeye dokunun. Giriş alanının altında, Android'de *Sırala* çipinin yanında ve iOS'ta *Haritada göster* yanında bulunur.
 - Filtrede özellik türünü seçin.
 
-![POI Ara Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![POI Ara Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Bir filtre, seçilen kategoriye bağlı olarak oldukça fazla sayıda öğeden oluşabilir. Her kategorinin, türe göre klasörler halinde düzenlenmiş, kendisine özgü bir dizi filtresi vardır. Toplamda *21 varsayılan kategori* vardır. Bazıları burada listelenmiştir:
 
@@ -378,12 +378,12 @@ Haritada yerleri bulmak için özel filtreler oluşturmak üzere, ilgili kategor
 
 ### Kategoriler ve Filtreleri {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. 25 tür içerir: *Parseller, Mercan adası, İlçe, Şehir, Şehir bloğu, Ülke, Adliye, Gümrük, Diplomatik ofis, Çiftlik, Hükümet, Mezra, Ada, Adacık, İzole edilmiş konut, Yerleşim yeri, Mahalle, Polis, Cezaevi, Mahalle, Yerleşim alanı, Banliyö, Kasaba, Belediye binası, Köy*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. 25 tür içerir: *Parseller, Mercan adası, İlçe, Şehir, Şehir bloğu, Ülke, Adliye, Gümrü, Diplomatik ofis, Çiftlik, Hükümet, Mezra, Ada, Adacık, İzole edilmiş konut, Yerleşim yeri, Mahalle, Polis, Cezaevi, Mahalle, Yerleşim alanı, Banliyö, Kasaba, Belediye binası, Köy*.  
 
 2. **Noel**. 5 tür filtre içerir:  
     *Noel etkinliği, Noel pazarı, Noel piramidi, Noel mağazası, Noel ağacı*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. 16 tür içerir: *Parseller, Mercan adası, İlçe, Şehir, Şehir bloğu, Ülke, Adliye, Gümrük, Diplomatik ofis, Çiftlik, Hükümet, Mezra, Ada, Adacık, İzole edilmiş konut, Yerleşim yeri, Mahalle, Polis, Cezaevi, Mahalle, Yerleşim alanı, Banliyö, Kasaba, Belediye binası, Köy*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. 16 tür içerir: *Parseller, Mercan adası, İlçe, Şehir, Şehir bloğu, Ülke, Adliye, Gümrü, Diplomatik ofis, Çiftlik, Hükümet, Mezra, Ada, Adacık, İzole edilmiş konut, Yerleşim yeri, Mahalle, Polis, Cezaevi, Mahalle, Yerleşim alanı, Banliyö, Kasaba, Belediye binası, Köy*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. 26 tür filtre içerir.  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -412,7 +412,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +430,52 @@ Astronomi eklentisindeki **Arama** özelliği (**iOS'ta Keşfet**), göksel nesn
 
 Şimdi İzle bölümü, şu anda veya bu gece görünür olan göksel nesneleri vurgular. Bu bölüm, mevcut konumunuza ve zamanınıza göre gözlem için en uygun nesneleri gösteren bir öneri aracı olarak çalışır.
 
-**2. Kategoriler**
+**2. Güneş ve Ay tutulmaları** (*yalnızca Android*)
+
+[Güneş tutulması](#solar-eclipse) ve [Ay tutulması](#lunar-eclipse) araçları, dünya çapındaki tutulma olaylarını keşfetmenize, zaman içindeki ilerlemelerini görüntülemenize ve harita üzerinde tutulma görünürlüğünü kontrol etmenize olanak tanır.
+
+**3. Kategoriler**
 
 Kategoriler bölümü, nesneleri tipe göre taramanıza olanak tanır: Güneş sistemi, Takımyıldızlar, Yıldızlar, Bulutsular, Yıldız kümeleri ve Derin gökyüzü. Her kategori, ana bilgiyle nesne listesini açar: nesne adı, tip veya takımyıldız, büyüklük (parlaklık) ve doğuş veya batış zamanı (uygulanırsa).
+
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+**Güneş Tutulması Gezgini**, dünya çapındaki geçmiş ve yaklaşan güneş tutulmalarını keşfetmenize olanak tanır. Yıldız Haritası'nı etkileşimli bir zaman çizelgesi ve harita görselleştirmesiyle birleştirerek tutulmanın farklı konumlarda nasıl geliştiğini gösterir.
+
+Güneş Tutulması Gezgini aşağıdaki özellikleri içerir:
+
+- **Tutulma navigasyonu**. Mevcut güneş tutulmaları arasında geçiş yapmak için Önceki ve Sonraki düğmelerini kullanın.
+- **Zaman çizelgesi**. Zaman çizelgesi, tutulmanın başlangıcını, maksimumunu ve sonunu gösterir. Tutulmayı olay sırasında herhangi bir anda görüntülemek için kaydırıcıyı hareket ettirin. Tüm tutulma bilgileri seçilen zamana göre otomatik olarak güncellenir.
+- **Tutulma bilgileri**. Bilgi paneli şunları görüntüler: tutulma türü, geçerli tarih ve saat, tutulma örtülmesi, Güneş irtifası ve harita merkezi koordinatları. Görüntülenen bilgiler harita merkezine göre hesaplanır.
+- **Tutulma yolu**. Tutulma yolunu harita üzerinde ortalamak için Tutulma yoluna sığdır'a dokunun. Tutulma yolunu harita üzerinde göstermek veya gizlemek için *Haritayı göster* veya *Haritayı gizle* seçeneğine dokunun. Tutulma yolu, tutulmanın nerede göründüğünü ve Ay'ın gölgesinin Dünya yüzeyi boyunca nasıl hareket ettiğini gösterir.
+
+:::warning
+
+Uygun güneş görüntüleme koruması olmadan doğrudan Güneş'e bakmayın. Tutulma zamanları tahmindir.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+**Ay Tutulması Gezgini**, dünya çapındaki ay tutulmalarını keşfetmenize ve Ay'ın Dünya'nın gölgesinden nasıl geçtiğini gözlemlemenize olanak tanır.
+
+Ay Tutulması Gezgini aşağıdaki özelliği içerir:
+
+- **Tutulma navigasyonu**. Mevcut ay tutulmaları arasında geçiş yapmak için Önceki ve Sonraki düğmelerini kullanın.
+- **Tutulma türleri**. Gezginde şunlar desteklenir: Yarı gölge tutulmaları, Kısmi tutulmalar ve Tam tutulmalar
+- **Zaman çizelgesi**. Zaman çizelgesi, tutulmanın başlangıcını, maksimumunu ve sonunu gösterir. Zaman çizelgesindeki işaretçiler tutulmanın farklı aşamalarını belirtir. Tutulmayı olay sırasında herhangi bir noktada gözlemlemek için kaydırıcıyı hareket ettirin.
+- **Tutulma bilgileri**. Bilgi paneli şunları görüntüler: tutulma evresi, tutulma örtülmesi, Ay irtifası ve harita merkezi koordinatları. Görüntülenen bilgiler harita merkezine göre hesaplanır.
+- **Görünürlük haritası**. Tutulma görünürlük alanını harita üzerinde ortalamak için *Görünürlüğe sığdır* seçeneğine dokunun. Görünürlük katmanını göstermek veya gizlemek için *Haritayı göster* veya *Haritayı gizle* seçeneğine dokunun. Görünürlük katmanı, tutulma sırasında Ay'ın ufuk üzerinde olduğu bölgeleri vurgular.
+
+:::warning
+
+Gölge renkleri ve parlaklığı şematiktir ve yalnızca görselleştirme amaçlıdır.
+
+:::
 
 ### Sorting and Filters {#sorting-and-filters}
 

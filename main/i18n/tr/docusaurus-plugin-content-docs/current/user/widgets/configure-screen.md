@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -26,6 +26,7 @@ OsmAnd'daki **Ekranı Yapılandır** menüsü, birden çok panelde widget'lar, d
 - Widget'ları panellerde (üst, alt, sol, sağ, orta) düzenleyin.
 - Yan panellerde birden çok **sayfa** oluşturun, widget'ların boyutunu seçin.
 - Satır yüksekliğini seçin ve widget simgelerini açıp kapatın.
+- Android'de [widget paneli görünümünü](#widget-panel-appearance) özelleştirin.
 
 Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profilin kendi düzeni, sırası, görünürlüğü ve ayarları vardır.
 
@@ -36,7 +37,7 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview.webp)  ![Ekranı yapılandır menüsü](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -49,44 +50,6 @@ Tüm widget'lar [profile bağımlıdır](../personal/profiles.md) — her profil
 </TabItem>
 
 </Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple pages within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
--->
 
 
 ## Widget Panelleri {#widget-panels}
@@ -398,38 +361,36 @@ Bu ayarlar yalnızca seçilen widget için geçerlidir.
     - *Simgeyi göster* alanında Kapalı konumuna geçin.
 
 
-<!--
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## Widget Paneli Görünümü (Yalnızca Android) {#widget-panel-appearance}
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
-![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+![Widget Paneli Görünümü](@site/static/img/widgets/widget_appearance.webp) ![Widget Paneli Görünümü](@site/static/img/widgets/widget_appearance_2.webp)
 
-Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+Görünüm ayarları, seçilen paneldeki tüm widget'ların görünümünü özelleştirmenize olanak tanır. Her panelin (*Üst*, *Alt*, *Sol*, *Sağ*) kendi görünüm ayarları vardır.
 
-1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+1. **Yükseklik**. Seçilen paneldeki widget'ların yüksekliğini kontrol eder. Sol ve Sağ paneller için bu ayar **Widget yüksekliğini** değiştirir. Üst ve Alt paneller için **Satır yüksekliğini** değiştirir. Kullanılabilir seçenekler: *Orijinal (varsayılan)*, *Küçük*, *Orta*, *Büyük*.
 
-2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+2. **Simge**. Simge görünürlüğünü kontrol eder. Kullanılabilir seçenekler: *Orijinal (varsayılan)*, *Açık*, *Kapalı*. 
 
-3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+3. **Metin rengi**. Birincil widget metninin rengini değiştirir. Kullanılabilir seçenekler: *Varsayılan*, *Otomatik*, *Özel*. **Özel** seçildiğinde, **Gündüz** ve **Gece** modları için ayrı renkler yapılandırabilirsiniz. Seçilen renklerin uygulanmadan önce canlı bir önizlemesi görüntülenir.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
+:::tip Satın alma
+Özel widget renkleri [ücretli bir özelliktir](../purchases/index.md).  
 :::
 
-4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+4. **İkincil metin rengi**. Widget adlarının ve birimlerinin rengini değiştirir. Kullanılabilir seçenekler: *Varsayılan*, *Otomatik*, *Özel*.
 
-5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+5. **Arka plan rengi**. Seçilen paneldeki widget'ların arka plan rengini değiştirir. Kullanılabilir seçenekler: *Varsayılan*, *Saydam*, *Özel*.
 
-6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+6. **Önizleme**. Önizleme alanı, widget'ların şu anda seçilen görünüm ayarlarıyla nasıl görüneceğini gösterir.
 
-7. **Copy appearance settings:**
+7. **Görünüm ayarlarını kopyala:**
 
-    - Tap the ⋮ menu in the upper-right corner.
-    - Select Copy from.
-    - Choose one of the following options: *Another profile* or *One of the other panels*.
+    - Sağ üst köşedeki ⋮ menüsüne dokunun.
+    - Kopyala öğesini seçin.
+    - Aşağıdaki seçeneklerden birini seçin: *Başka bir profil* veya *Diğer panellerden biri*.
 
--->
 
 ## Panelleri Özelleştirme {#panels-customization}
 

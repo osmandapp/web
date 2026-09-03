@@ -14,11 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly />
-
 ## Overview {#overview}
 
 The **AIS Vessel Tracker** plugin displays [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) positions and detailed information about nearby vessels. The AIS data is received via a network connection from an external AIS receiver.
+
+The plugin can receive NMEA data through a network connection using TCP or UDP. GPS positions received from RMC/GGA NMEA messages can also be used as My location in OsmAnd.
 
 :::caution DISCLAIMER
 **This plugin is a hobby project and is not designed for reliability or accuracy. DO NOT rely on this software for navigation or safety of life.**
@@ -27,12 +27,14 @@ The **AIS Vessel Tracker** plugin displays [Automatic Identification System (AIS
 
 ## Required Setup Parameters {#required-setup-parameters}
 
-The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
+To use the AIS Vessel Tracker plugin, you need to enable the plugin and configure a network connection to an external AIS/NMEA data source:
 
 1. [Enable](../plugins/index.md#enable--disable) **AIS vessel tracker** plugin in the *Main Menu → Plugins → AIS vessel tracker*.
 2. Configure the [AIS settings](../map/raster-maps.md#layers)
-3. Configure an **AIS server connection** or connect an **external AIS receiver**.
+3. Configure the connection to your **AIS/NMEA data source** using **TCP** or **UDP**.
 4. Check that vessels are displayed on the OsmAnd map.
+
+On iOS, you can additionally enable *Use NMEA as location source* to use GPS positions from RMC/GGA NMEA messages as your current location in OsmAnd.
 
 ## Vessels on the Map {#vessels-on-the-map}
 
@@ -53,6 +55,12 @@ AIS operates on *VHF frequencies* (161.975 MHz and 162.025 MHz) and has a limite
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![AIS vessel tracker](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 When correctly set up, vessel positions will appear on the map. Key features:
@@ -68,8 +76,13 @@ When correctly set up, vessel positions will appear on the map. Key features:
 
 <TabItem value="android" label="Android">
 
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png)  
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -158,6 +171,14 @@ AIS vessels transmit three types of data:
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *AIS vessel tracker* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_settings_ios.webp)
+
+</TabItem>
+
 </Tabs>
 
 The *AIS vessel tracker* plugin offers various settings to personalize navigation and interaction for users with disabilities. These settings are applied for all [profiles](../personal/profiles.md) in OsmAnd.
@@ -170,11 +191,12 @@ The *AIS vessel tracker* plugin offers various settings to personalize navigatio
 | IP address | Define IP of AIS data source (if TCP is used) | `192.168.200.16` |
 | TCP port   | Define TCP port number for AIS data | `4001` |
 | UDP port   | Define UDP port for OsmAnd AIS reception  | `10110` |
-| Receive AIS data even if OsmAnd is paused   | Keep the AIS message listener running if OsmAnd is paused or in the background. If disabled, no AIS messages are received when OsmAnd is in the background  | `Yes/No` |
+| Receive AIS data even if OsmAnd is paused (*Android only*)   | Keep the AIS message listener running if OsmAnd is paused or in the background. If disabled, no AIS messages are received when OsmAnd is in the background  | `Yes/No` |
+| Use NMEA as location source (*iOS only*)   | Use GPS positions from RMC/GGA NMEA messages as My location  | `On/Off` |
 | | | |
 | **AIS Signal reception timeout** | |  |
-| Timeout for lost AIS objects     | Ships disappear if no signal received for a set time | `3 - 20 min` |
-| Timeout for ship visibility      | Ship icons will change state when no signal is received | `2 - 15 min / Disabled` |
+| Ship outdated timeout      | Set timeout for ship outdated visibility: after this time without signal reception, the ship symbol will be crossed out | `2 - 15 min / Disabled` |
+| Timeout for visibility when ship is lost     | Set a timeout for AIS object visibility: If no signal is received within the specified duration, the object will be automatically removed from the display | `3 - 20 min` |
 | | | |
 | **Closest Point of Approach (CPA) Alerts** | | |
 | CPA Warning Time | Vessel is marked red if time to CPA is below this limit | `1 - 60 min / Disabled` |

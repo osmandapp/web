@@ -38,6 +38,12 @@ module.exports = function (app) {
         fs = testProxy;
     }
 
+    // USE_LOCAL_ROUTING=yes yarn start - everything from test.osmand.net, routing from localhost:8080
+    // (handy when only the router is being changed and the tiles are wanted as usual)
+    if (process.env.USE_LOCAL_ROUTING) {
+        routing = localProxy;
+    }
+
     // yarn start:fallback (prod)
     if (process.env.USE_MAIN_API) {
         gpx = maptileProxy;

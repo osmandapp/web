@@ -1,5 +1,5 @@
 ---
-source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
+source-hash: 25c13b0161cd5e0efefe881e5446503a1ce483f3ea041fd84cfc9f4b33858e9c
 sidebar_position: 3
 title: Bisiklet rotası (MTB)
 ---
@@ -31,7 +31,7 @@ OsmAnd'ın bisiklet rotası özellikleri, bisikletçilerin bir başlangıç ve b
 
 <TabItem value="android" label="Android">  
 
-![Bisiklet rotası ayarları](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![Bisiklet rotası ayarları](@site/static/img/navigation/routing/cycling_routing_andr.webp)
 
 </TabItem>
 
@@ -50,6 +50,7 @@ OsmAnd'ın bisiklet rotası özellikleri, bisikletçilerin bir başlangıç ve b
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Navigasyon sırasında kaçınmak istediğiniz yolları seçin.  </summary>![Yollardan kaçın Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | Haritada bir yol [seçebilirsiniz](../../map/map-context-menu/#avoid-road) veya listeden yol türü(nü) seçebilirsiniz:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Başka bir ülkeye sınırı geçmekten kaçının)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (su kütleleri üzerinden araç taşıyan bir su taşımacılığı türü)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Arnavut kaldırımı yolundan kaçının](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (bir su yolunun üzerinden geçtiği otoyolun kısımları) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Kaldırım taşı yok](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Rota hesaplanırken özel erişim kısıtlamaları göz ardı edilecektir.  | *[private](https://wiki.openstreetmap.org/wiki/Key:access)* etiketi, OSM'de otoyolların ve diğer ulaşım yollarının, binaların, girişlerin, olanakların ve eğlence varlıklarının kullanımındaki kısıtlamaları tanımlamak için kullanılır.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Tercih edilen&nbsp;arazi* (iOS) | <details><summary> Rota hesaplamasında yükseklik verileri kullanılacaktır: farklı yükseklik profiline sahip yollar için [cezalar](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) belirlenecektir. </summary> ![Yükseklik verilerini kullan Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Bu tercih, dik tepelerden kaçınmaya veya tam tersi, onları tercih etmeye yardımcı olabilir. *Engebeli* rota seçerseniz, tepeler ve dağlar tercih edilecektir. *Düz* ise, düzlükler tercih edilecek, tepelerden kaçınılacaktır. Daha az engebeli tercih, bu iki seçenek arasında bir yerdedir. Yükseklik verileri olmadan, düz arazideki en hızlı rota hesaplanacaktır. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | Tercih edilen rota hesaplama yöntemini seçin. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## MTB rotası özellikleri {#mtb-routing-particularities}

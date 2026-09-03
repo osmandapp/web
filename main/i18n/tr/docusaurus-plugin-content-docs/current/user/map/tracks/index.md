@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  İzler
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ Hangi izleri görüntüleyip gizleyeceğinizi seçerek iz görünürlüğünü y
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Harita izlerini yapılandır Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Harita izlerini yapılandır Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Harita izlerini yapılandır Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Harita izlerini yapılandır Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Hangi izleri görüntüleyip gizleyeceğinizi seçerek iz görünürlüğünü y
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Harita izlerini yapılandır iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Harita izlerini yapılandır iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Harita izlerini yapılandır iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Harita izlerini yapılandır iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 

@@ -233,13 +233,6 @@ export const AppContextProvider = (props) => {
         showConfig: false,
     });
     const [currentObjectType, setCurrentObjectType] = useState(null);
-    const [headerText, setHeaderText] = useState({
-        search: { text: '' },
-        weather: { text: '' },
-        tracks: { text: '' },
-        route: { text: '' },
-        welcome: { text: process.env.REACT_APP_WEBSITE_NAME },
-    });
     const [createTrack, setCreateTrack] = useState(null);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
     const [loadingContextItem, setLoadingContextItem] = useState(null);
@@ -578,8 +571,6 @@ export const AppContextProvider = (props) => {
                 setLocalTracks,
                 currentObjectType,
                 setCurrentObjectType,
-                headerText,
-                setHeaderText,
                 tracksGroups,
                 setTracksGroups,
                 createTrack,
