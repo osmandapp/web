@@ -537,35 +537,33 @@ export default function PoiLayer() {
                 !prevCategories ||
                 JSON.stringify(prevCategories.map((c) => c.category).sort()) !==
                     JSON.stringify(ctx.showPoiCategories.map((c) => c.category).sort());
-            if ((!isEmpty(ctx.showPoiCategories) && zoom !== prevZoom) || move || isTypeChange) {
-                if (prevController) {
-                    prevController.abort();
-                }
-                setPrevController(controller);
-                setPrevZoom(zoom);
-                if (ctx.showPoiCategories.length > 0) {
-                    if (categoriesChanged) {
-                        setPrevCategories(null);
-                    }
-                    reqIdRef.current += 1;
-                    const runGetPoi = categoriesChanged || isTypeChange ? getPoiTask : debouncedGetPoi;
-                    runGetPoi({
-                        controller,
-                        ignore,
-                        poiList: categoriesChanged ? null : poiList,
-                        showPoiCategories: ctx.showPoiCategories,
-                        poiIconCache: ctx.poiIconCache,
-                        zoom,
-                        reqId: reqIdRef.current,
-                        visibleBboxInfo: getVisibleBboxInfo(ctx, map),
-                    });
-                }
-            } else if (isEmpty(ctx.showPoiCategories)) {
+            if (isEmpty(ctx.showPoiCategories)) {
                 // if categories are cleared, then clear the list and related states
                 setPrevCategories(null);
                 if (poiList) {
                     clearPoiList();
                 }
+            } else if (zoom !== prevZoom || move || isTypeChange) {
+                if (prevController) {
+                    prevController.abort();
+                }
+                setPrevController(controller);
+                setPrevZoom(zoom);
+                if (categoriesChanged) {
+                    setPrevCategories(null);
+                }
+                reqIdRef.current += 1;
+                const runGetPoi = categoriesChanged || isTypeChange ? getPoiTask : debouncedGetPoi;
+                runGetPoi({
+                    controller,
+                    ignore,
+                    poiList: categoriesChanged ? null : poiList,
+                    showPoiCategories: ctx.showPoiCategories,
+                    poiIconCache: ctx.poiIconCache,
+                    zoom,
+                    reqId: reqIdRef.current,
+                    visibleBboxInfo: getVisibleBboxInfo(ctx, map),
+                });
             } else if (poiList?.listFeatures?.features?.length > 0) {
                 // same categories, no zoom/move change: re-render the existing pois without a new request
                 const newLayer = await createPoiLayer({
