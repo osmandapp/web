@@ -82,7 +82,9 @@ export function buildFavoriteFeatures(favorites, points) {
 export function buildWptFeatures(ctx, wpts) {
     return wpts.flatMap((item) => {
         const file = (item.shared ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles)?.[item.file];
-        const wpt = file?.wpts?.find((w) => w.name === item.name);
+        const wpt = file?.wpts?.find(
+            (w) => w.name === item.name && Number(w.lat) === item.lat && Number(w.lon) === item.lon
+        );
         if (!wpt) return [];
         const appearance = resolveWptAppearance(wpt, getResolvedPointsGroups(file));
         return {
@@ -264,14 +266,14 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
 }
 
 // open waypoint details of an opened track from search results (like a favorite from search)
-export function openTrackWptFromSearch(ctx, { file, name }) {
+export function openTrackWptFromSearch(ctx, { file, name, lat, lon }) {
     const trackData = ctx.gpxFiles?.[file] ?? ctx.shareWithMeFiles?.tracks?.[file];
-    const wpt = trackData?.wpts?.find((w) => w.name === name);
+    const wpt = trackData?.wpts?.find((w) => w.name === name && Number(w.lat) === lat && Number(w.lon) === lon);
     if (!wpt) return;
     // same context as opening a waypoint from the track tab: marker selection needs selectedGpxFile.gpx layers
     ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
     ctx.setSelectedGpxFile(trackData);
-    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_TRACK_WPT, object: { file, name } });
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_TRACK_WPT, object: { file, name, lat, lon } });
     // id matches the marker's idObj so useSelectMarkerOnMap selects it
     const id = favoriteIdFromLatLng(wpt.lat, wpt.lon);
     ctx.setSelectedWpt({ trackWpt: true, mapObj: false, trackData, id, ...wpt });

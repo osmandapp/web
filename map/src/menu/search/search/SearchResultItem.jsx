@@ -365,6 +365,8 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                     openTrackWptFromSearch(ctx, {
                         file: item.properties[WPT_TRACK_FILE],
                         name: item.properties[POI_NAME],
+                        lat: item.geometry.coordinates[1],
+                        lon: item.geometry.coordinates[0],
                     });
                     ctx.setMoveToMapObj({ ...item });
                 }}
