@@ -5,7 +5,7 @@ description: Write or extend Selenium e2e tests for OsmAnd Web Map (tests/seleni
 
 # Selenium tests for OsmAnd Web Map
 
-Tests live in `tests/selenium/src/tests/<category>/NN-name.mjs` (categories: base, tracks, navigation, favorites, weather, search, map, purchases, plan-route; see `tests/selenium/TESTS_STRUCTURE.md`). A test is `export default async function test()` that runs top to bottom; any thrown error fails it. Numbers define run order and are used for selection (`yarn test 70-75`).
+Tests live in `tests/selenium/src/tests/<category>/NN-name.mjs` (categories: base, tracks, navigation, favorites, weather, search, map, menu, purchases; see `tests/selenium/TESTS_STRUCTURE.md`). A test is `export default async function test()` that runs top to bottom; any thrown error fails it. Numbers define run order and are used for selection (`yarn test 70-75`).
 
 ## Before writing
 

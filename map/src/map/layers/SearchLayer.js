@@ -220,7 +220,7 @@ export default function SearchLayer() {
                 return { ...prev, features: [...userFeatures, ...serverFeatures] };
             });
         });
-    }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles]);
+    }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles, ctx.shareWithMeFiles?.tracks]);
 
     useEffect(() => {
         let cancelled = false;
