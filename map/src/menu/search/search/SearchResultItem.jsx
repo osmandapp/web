@@ -20,7 +20,7 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap, WPT_TRACK_FILE } from '../../../map/layers/SearchLayer';
+import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap, WPT_TRACK_FILE, WPT_TRACK_SHARED } from '../../../map/layers/SearchLayer';
 import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
@@ -364,6 +364,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                 onOpen={() => {
                     openTrackWptFromSearch(ctx, {
                         file: item.properties[WPT_TRACK_FILE],
+                        shared: item.properties[WPT_TRACK_SHARED],
                         name: item.properties[POI_NAME],
                         lat: item.geometry.coordinates[1],
                         lon: item.geometry.coordinates[0],

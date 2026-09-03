@@ -84,6 +84,7 @@ export const searchTypeMap = {
 };
 
 export const WPT_TRACK_FILE = 'wptTrackFile';
+export const WPT_TRACK_SHARED = 'wptTrackShared';
 export const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK, searchTypeMap.WPT]);
 
 export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
