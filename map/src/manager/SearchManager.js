@@ -24,13 +24,12 @@ import {
 } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 import {
-    OBJECT_SEARCH,
     OBJECT_TYPE_POI,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_TRACK_WPT,
 } from '../context/AppContext';
-import { openFavoriteObj, resolveWptAppearance } from './FavoritesManager';
+import { favoriteIdFromLatLng, openFavoriteObj, resolveWptAppearance } from './FavoritesManager';
 import { getResolvedPointsGroups, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
 import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL, liveHash } from './GlobalManager';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
@@ -269,9 +268,12 @@ export function openTrackWptFromSearch(ctx, { file, name }) {
     const trackData = ctx.gpxFiles?.[file] ?? ctx.shareWithMeFiles?.tracks?.[file];
     const wpt = trackData?.wpts?.find((w) => w.name === name);
     if (!wpt) return;
-    ctx.setCurrentObjectType(OBJECT_SEARCH);
+    // same context as opening a waypoint from the track tab: marker selection needs selectedGpxFile.gpx layers
+    ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+    ctx.setSelectedGpxFile(trackData);
     ctx.setSelectedSearchObj({ type: OBJECT_TYPE_TRACK_WPT, object: { file, name } });
-    const id = `fav:${Number.parseFloat(wpt.lat)}:${Number.parseFloat(wpt.lon)}`;
+    // id matches the marker's idObj so useSelectMarkerOnMap selects it
+    const id = favoriteIdFromLatLng(wpt.lat, wpt.lon);
     ctx.setSelectedWpt({ trackWpt: true, mapObj: false, trackData, id, ...wpt });
 }
 

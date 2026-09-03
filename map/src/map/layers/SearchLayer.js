@@ -211,15 +211,14 @@ export default function SearchLayer() {
             return;
         }
         searchUserData(query).then((userData) => {
-            const userFeatures = buildUserDataFeatures(userData);
+            const userFeatures = applyUserDataFeatures(userData);
             ctx.setSearchResult((prev) => {
                 if (!prev) return prev;
                 const serverFeatures = (prev.features ?? []).filter(
                     (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
                 );
-                return { ...prev, features: [...userFeatures.all, ...serverFeatures] };
+                return { ...prev, features: [...userFeatures, ...serverFeatures] };
             });
-            ctx.setSearchFavoriteGroupIds(buildFavGroupMap(userFeatures.favorites));
         });
     }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles]);
 
@@ -294,12 +293,9 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                const userFeatures = buildUserDataFeatures(await userDataPromise);
-                const features = [...userFeatures.all, ...(data?.features ?? [])];
-                const favGroupMap = buildFavGroupMap(userFeatures.favorites);
-                ctx.setSearchFavoriteGroupIds(favGroupMap);
+                const userFeatures = applyUserDataFeatures(await userDataPromise);
                 ctx.setSearchVisibleLevel(0);
-                ctx.setSearchResult({ ...data, features });
+                ctx.setSearchResult({ ...data, features: [...userFeatures, ...(data?.features ?? [])] });
             } else if (!response?.aborted) {
                 ctx.setSearchFavoriteGroupIds(null);
                 ctx.setSearchVisibleLevel(0);
@@ -331,14 +327,16 @@ export default function SearchLayer() {
         return response?.ok ? await response.json() : null;
     }
 
-    function buildUserDataFeatures(userData) {
+    // builds user data features (shown before server results) and updates favorite group ids
+    function applyUserDataFeatures(userData) {
         const favorites = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
-        const all = [
+        ctx.setSearchFavoriteGroupIds(buildFavGroupMap(favorites));
+
+        return [
             ...buildTrackFeatures(userData?.tracks ?? []),
             ...favorites,
             ...buildWptFeatures(ctx, userData?.wpts ?? []),
         ];
-        return { all, favorites };
     }
 
     function removeOldSearchLayer() {

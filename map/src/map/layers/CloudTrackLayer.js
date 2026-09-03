@@ -174,9 +174,11 @@ const CloudTrackLayer = () => {
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
     const getCloudWptLayers = useCallback(() => {
-        if (!isCloudTrack(ctx)) return null;
-        return ctx.selectedGpxFile?.gpx?.getLayers?.() ?? null;
-    }, [ctx.selectedGpxFile?.gpx, ctx.currentObjectType]);
+        const layers = Object.values(ctx.gpxFiles ?? {})
+            .filter((file) => file.url && file.gpx)
+            .flatMap((file) => file.gpx.getLayers?.() ?? []);
+        return layers.length > 0 ? layers : null;
+    }, [ctx.gpxFiles]);
 
     useSelectMarkerOnMap({ ctx, getLayers: getCloudWptLayers, type: OBJECT_TYPE_CLOUD_TRACK, map, zoom, move });
 

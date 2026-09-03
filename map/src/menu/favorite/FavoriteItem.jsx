@@ -67,6 +67,7 @@ export default function FavoriteItem({
     onOpen = null,
     hideActions = false,
     id = null,
+    hoverType = FAVORITE_FILE_TYPE,
 }) {
     const ctx = useContext(AppContext);
     const [searchParams] = useSearchParams();
@@ -98,7 +99,7 @@ export default function FavoriteItem({
                 ctx.setSelectedWptId({
                     id: favId,
                     show: true,
-                    type: FAVORITE_FILE_TYPE,
+                    type: hoverType,
                     obj: marker.layer,
                     markerOptions: {
                         color: marker.layer.options?.color,
@@ -108,7 +109,7 @@ export default function FavoriteItem({
                 });
             } else {
                 ctx.setSelectedWptId((prev) =>
-                    prev?.id === favId && prev?.type === FAVORITE_FILE_TYPE ? { ...prev, show: false } : prev
+                    prev?.id === favId && prev?.type === hoverType ? { ...prev, show: false } : prev
                 );
             }
             if (menuItemRef.current) {

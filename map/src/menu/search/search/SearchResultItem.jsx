@@ -355,35 +355,21 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     }
 
     if (item.properties[CATEGORY_TYPE] === searchTypeMap.WPT) {
-        const props = item.properties;
-        const marker = {
-            name,
-            icon: getFavoriteMenuIconHtml({
-                icon: props[ICON_KEY_NAME],
-                color: props[COLOR_NAME_EXTENSION],
-                background: props[BACKGROUND_TYPE_EXTENSION],
-            }),
-            locDist: distance,
-            layer: {
-                options: {
-                    address: props[CATEGORY_NAME],
-                    color: props[COLOR_NAME_EXTENSION],
-                    background: props[BACKGROUND_TYPE_EXTENSION],
-                },
-                getLatLng: () => ({ lat: item.geometry.coordinates[1], lng: item.geometry.coordinates[0] }),
-            },
-        };
         return (
             <FavoriteItem
                 id={id}
-                marker={marker}
-                group={{ id: props[WPT_TRACK_FILE], name: props[CATEGORY_NAME] }}
+                marker={buildWptMarker(item, name, distance)}
+                group={{ id: item.properties[WPT_TRACK_FILE], name: item.properties[CATEGORY_NAME] }}
                 currentLoc={currentLoc}
                 onOpen={() => {
-                    openTrackWptFromSearch(ctx, { file: props[WPT_TRACK_FILE], name: props[POI_NAME] });
+                    openTrackWptFromSearch(ctx, {
+                        file: item.properties[WPT_TRACK_FILE],
+                        name: item.properties[POI_NAME],
+                    });
                     ctx.setMoveToMapObj({ ...item });
                 }}
                 hideActions
+                hoverType={OBJECT_TYPE_CLOUD_TRACK}
             />
         );
     }
@@ -491,4 +477,28 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             )}
         </>
     );
+}
+
+// FavoriteItem marker for a waypoint search result; the fake layer feeds the
+// second line (address slot) and getFavoriteId (getLatLng)
+function buildWptMarker(item, name, distance) {
+    const properties = item.properties;
+
+    return {
+        name,
+        icon: getFavoriteMenuIconHtml({
+            icon: properties[ICON_KEY_NAME],
+            color: properties[COLOR_NAME_EXTENSION],
+            background: properties[BACKGROUND_TYPE_EXTENSION],
+        }),
+        locDist: distance,
+        layer: {
+            options: {
+                address: properties[CATEGORY_NAME],
+                color: properties[COLOR_NAME_EXTENSION],
+                background: properties[BACKGROUND_TYPE_EXTENSION],
+            },
+            getLatLng: () => ({ lat: item.geometry.coordinates[1], lng: item.geometry.coordinates[0] }),
+        },
+    };
 }

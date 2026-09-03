@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState, useRef } from 'react';
-import AppContext, { isLocalTrack, isTravelTrack } from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isTravelTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../../context/AppContext';
 import { stripHtml } from '../../../frame/components/editor/htmlUtils';
 import {
     Box,
@@ -20,7 +20,7 @@ import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../.
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
-import { resolveWptAppearance } from '../../../manager/FavoritesManager';
+import { favoriteIdFromLatLng, resolveWptAppearance } from '../../../manager/FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
 import { ReactComponent as EmptyIcon } from '../../../assets/icons/ic_action_track_disabled.svg';
@@ -184,10 +184,22 @@ const WaypointRow = ({ point, index, ctx }) => {
                 </Box>
             );
         const lines = [];
-        lines.push(line({ key: 'name', font: 1.0, str: point.wpt.name ?? 'unknown' }));
-        lines.push(line({ key: 'desc', font: 0.75, str: stripHtml(point.wpt.desc) }));
-        lines.push(line({ key: 'addr', font: 0.75, str: point.wpt.address }));
+        lines.push(
+            line({ key: 'name', font: 1.0, str: point.wpt.name ?? 'unknown' }),
+            line({ key: 'desc', font: 0.75, str: stripHtml(point.wpt.desc) }),
+            line({ key: 'addr', font: 0.75, str: point.wpt.address })
+        );
         return lines;
+    }
+
+    function setHoverPoint(show) {
+        const id = favoriteIdFromLatLng(point.wpt.lat, point.wpt.lon);
+        ctx.setSelectedWptId((prev) => {
+            if (show) {
+                return { id, show: true, type: OBJECT_TYPE_CLOUD_TRACK };
+            }
+            return prev?.id === id && prev?.type === OBJECT_TYPE_CLOUD_TRACK ? { ...prev, show: false } : prev;
+        });
     }
 
     function pointTooltip(point) {
@@ -220,6 +232,8 @@ const WaypointRow = ({ point, index, ctx }) => {
                 divider
                 sx={{ px: 1, py: 1 }}
                 onClick={() => showPoint(point)}
+                onMouseEnter={() => setHoverPoint(true)}
+                onMouseLeave={() => setHoverPoint(false)}
             >
                 <Grid container alignItems="center" warp="nowrap">
                     <Tooltip

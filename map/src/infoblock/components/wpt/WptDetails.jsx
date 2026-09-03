@@ -588,6 +588,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isWpt) {
             if (isWptFromSearch(ctx)) {
                 ctx.setSelectedSearchObj(null);
+                ctx.setCurrentObjectType(null);
+                ctx.setSelectedGpxFile({});
                 setShowInfoBlock(false);
                 navigateBackToSearchResults(navigate, ctx, location);
             } else {
