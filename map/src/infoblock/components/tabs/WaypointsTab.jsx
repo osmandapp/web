@@ -196,7 +196,12 @@ const WaypointRow = ({ point, index, ctx }) => {
         const id = favoriteIdFromLatLng(point.wpt.lat, point.wpt.lon);
         ctx.setSelectedWptId((prev) => {
             if (show) {
-                return { id, show: true, type: OBJECT_TYPE_CLOUD_TRACK };
+                return {
+                    id,
+                    show: true,
+                    type: OBJECT_TYPE_CLOUD_TRACK,
+                    obj: { geometry: { coordinates: [Number(point.wpt.lon), Number(point.wpt.lat)] } },
+                };
             }
             return prev?.id === id && prev?.type === OBJECT_TYPE_CLOUD_TRACK ? { ...prev, show: false } : prev;
         });
