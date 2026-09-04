@@ -140,7 +140,7 @@ export function getFileName(currentFile) {
 }
 
 export function removeGpxExtension(name) {
-    return name.replace(/\.gpx$/, '');
+    return name.replace(/\.gpx$/i, '');
 }
 
 export function prepareName(name, local = false) {

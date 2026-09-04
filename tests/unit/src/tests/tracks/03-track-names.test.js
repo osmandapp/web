@@ -32,6 +32,11 @@ describe('prepareName', () => {
         expect(prepareName('Folder/Nested/Track.gpx')).toBe('Track');
     });
 
+    test('the extension is cut whatever its case is, as getGpxFiles accepts it', () => {
+        expect(prepareName('Track.GPX')).toBe('Track');
+        expect(prepareName('Folder/Track.Gpx')).toBe('Track');
+    });
+
     test('gpx inside the name is not an extension', () => {
         expect(prepareName('my gpx track.gpx')).toBe('my gpx track');
         expect(prepareName('Trackgpx')).toBe('Trackgpx');
