@@ -20,9 +20,9 @@ export function sanitizePointsGroups(pointsGroups = {}) {
 function buildGpxTrackInfo(gpxFileInfo, cloudName) {
     return {
         type: GPX_FILE_TYPE,
-        file: TRACKS_PREFIX + cloudName,
         subtype: GPX_FILE_TYPE.toLowerCase(),
         ...gpxFileInfo,
+        file: TRACKS_PREFIX + cloudName,
     };
 }
 

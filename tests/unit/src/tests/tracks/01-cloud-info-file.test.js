@@ -68,6 +68,21 @@ test('existing .info: updatetime is sent and previous fields are kept', async ()
     expect(infoFile.updatetimems).toBe(UPDATE_TIME);
 });
 
+test('saved under another cloud name: file is not inherited from the old .info', async () => {
+    const track = createTrack({
+        name: NEW_TRACK_NAME,
+        info: { type: 'GPX', file: '/tracks/OldFolder/Old.gpx', subtype: 'gpx', color: 'blue' },
+    });
+    track.infoChanged = true;
+    const ctx = createCtx({ track });
+
+    await syncCloudTrackInfo(ctx, CLOUD_TRACK_NAME);
+
+    const { info } = await readUploadedInfo(apiPost);
+    expect(info.file).toBe('/tracks/' + CLOUD_TRACK_NAME);
+    expect(info.color).toBe('blue');
+});
+
 test('nothing changed: .info is not uploaded again', async () => {
     const ctx = createCtx({ track: createTrack({ name: NEW_TRACK_NAME }), uniqueFiles: [createInfoFile()] });
 
