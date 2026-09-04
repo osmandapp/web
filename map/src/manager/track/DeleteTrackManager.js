@@ -278,22 +278,23 @@ function deleteTracksFromGroups(trackName, ctx) {
         const pathToGroup = parts.slice(0, -1).join('/');
         const group = findGroupByName(ctx.tracksGroups, pathToGroup);
         if (group) {
-            const fileWithoutGroup = parts[parts.length - 1];
-            const fileIndexInGroupFiles = group.groupFiles.findIndex((file) => file.name === fileWithoutGroup);
+            const fileIndexInGroupFiles = group.groupFiles.findIndex((file) => file.name === trackName);
             if (fileIndexInGroupFiles !== -1) {
                 group.groupFiles.splice(fileIndexInGroupFiles, 1);
                 group.realSize--;
             }
-            const fileIndexInFiles = group.files.findIndex((file) => file.name === fileWithoutGroup);
+            const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
             if (fileIndexInFiles !== -1) {
                 group.files.splice(fileIndexInFiles, 1);
             }
         }
     } else {
         const group = findGroupByName(ctx.tracksGroups, '');
-        const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
-        if (fileIndexInFiles !== -1) {
-            group.files.splice(fileIndexInFiles, 1);
+        if (group) {
+            const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
+            if (fileIndexInFiles !== -1) {
+                group.files.splice(fileIndexInFiles, 1);
+            }
         }
     }
     ctx.setTracksGroups([...ctx.tracksGroups]);

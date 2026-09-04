@@ -21,6 +21,8 @@ export function createTrack({ name, pointsGroups = createPointsGroups(), info = 
 }
 
 export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
+    // the app calls the setters both with a value and with an updater, as react does
+    const setter = (key) => jest.fn((update) => (ctx[key] = typeof update === 'function' ? update(ctx[key]) : update));
     const ctx = {
         currentObjectType: cloud ? OBJECT_TYPE_CLOUD_TRACK : OBJECT_TYPE_LOCAL_TRACK,
         selectedGpxFile: track,
@@ -30,15 +32,19 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         gpxFiles: {},
         tracksGroups: [],
         mutateGpxFiles: jest.fn(),
-        setTracksGroups: jest.fn((groups) => (ctx.tracksGroups = groups)),
+        setTracksGroups: setter('tracksGroups'),
         setCreateTrack: jest.fn(),
-        setListFiles: jest.fn((listFiles) => (ctx.listFiles = listFiles)),
-        setGpxFiles: jest.fn((gpxFiles) => (ctx.gpxFiles = gpxFiles)),
+        setListFiles: setter('listFiles'),
+        setGpxFiles: setter('gpxFiles'),
         setUpdateFiles: jest.fn(),
         setSelectedSort: jest.fn(),
-        setSelectedGpxFile: (update) => {
-            ctx.selectedGpxFile = typeof update === 'function' ? update(ctx.selectedGpxFile) : update;
-        },
+        setSmartFoldersCache: jest.fn(),
+        setShareWithMeFiles: jest.fn(),
+        setVisibleTracks: jest.fn(),
+        setCurrentObjectType: jest.fn(),
+        openGroups: [],
+        setOpenGroups: jest.fn(),
+        setSelectedGpxFile: setter('selectedGpxFile'),
         setTrackErrorMsg: jest.fn(),
     };
 
