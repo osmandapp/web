@@ -15,6 +15,7 @@ module.exports = {
     testMatch: ['<rootDir>/src/tests/**/*.test.js'],
     setupFiles: ['<rootDir>/src/util/setup.js'],
     clearMocks: true,
+    restoreMocks: true,
     transform: {
         '^.+\\.[mc]?jsx?$': ['babel-jest', { configFile: path.resolve(__dirname, 'babel.config.js') }],
     },

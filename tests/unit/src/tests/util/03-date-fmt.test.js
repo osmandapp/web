@@ -88,6 +88,29 @@ describe('fmt', () => {
     test('date and time together', () => {
         withLanguage('en-US', () => {
             expect(fmt.dateTimeShort(new Date(2025, 8, 4, 18, 30))).toBe('Sep 4, 2025 – 18:30');
+            expect(fmt.wkLongTime(new Date(2025, 8, 4, 18, 30))).toBe('Thursday, 18:30');
+        });
+    });
+
+    test('long month, with and without the year', () => {
+        withLanguage('en-US', () => {
+            expect(fmt.dMMMMY(SEP_4_2025)).toBe('September 4, 2025');
+            expect(fmt.dMMMM(SEP_4_2025)).toBe('September 4');
+        });
+        // the day comes first in most locales, the format follows the locale rather than the name
+        withLanguage('en-GB', () => {
+            expect(fmt.dMMMMY(SEP_4_2025)).toBe('4 September 2025');
+            expect(fmt.dMMMM(SEP_4_2025)).toBe('4 September');
+        });
+    });
+
+    test('month always before the day, whatever the locale order is', () => {
+        withLanguage('en-US', () => {
+            expect(fmt.monthShortDay(SEP_4_2025)).toBe('Sep 4');
+        });
+        // uk puts the day first in its own formats, this one keeps the month first
+        withLanguage('uk', () => {
+            expect(fmt.monthShortDay(SEP_4_2025)).toBe('вер. 4');
         });
     });
 });

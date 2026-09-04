@@ -204,7 +204,8 @@ describe('isToday / isYesterday', () => {
     });
 
     test('yesterday', () => {
-        const yesterday = new Date(Date.now() - DAY_MS);
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1); // a calendar day, not 24 hours - dst days are shorter or longer
         expect(isYesterday(yesterday)).toBe(true);
         expect(isToday(yesterday)).toBe(false);
     });

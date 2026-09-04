@@ -2,6 +2,22 @@ import { compressFromJSON, compressFromString, decompressToJSON, decompressToStr
 import { compressJSONToBlob, compressStringToBlob } from '@map/util/GzipCompression';
 import { gunzipSync } from 'node:zlib';
 
+// deterministic noise: gzip must not be able to compress it away
+function noisyAscii(length) {
+    let seed = 0x2f6e2b1;
+    let out = '';
+    for (let i = 0; i < length; i++) {
+        seed ^= seed << 13;
+        seed |= 0;
+        seed ^= seed >>> 17;
+        seed ^= seed << 5;
+        seed |= 0;
+        out += String.fromCharCode(33 + (Math.abs(seed) % 90));
+    }
+
+    return out;
+}
+
 // jsdom Blob has no arrayBuffer()
 function readBlob(blob) {
     return new Promise((resolve, reject) => {
@@ -19,9 +35,13 @@ describe('GzipBase64', () => {
         }
     });
 
-    test('a string longer than the 0x8000 chunk of u8toBytes', async () => {
-        const value = Array.from({ length: 100000 }, (unused, i) => String.fromCharCode(33 + (i % 90))).join('');
-        expect(await decompressToString(await compressFromString(value))).toBe(value);
+    test('a payload that takes more than one chunk of u8toBytes', async () => {
+        const value = noisyAscii(50000);
+        const packed = await compressFromString(value);
+
+        // u8toBytes walks the compressed bytes in 0x8000 chunks, so the payload has to cross that
+        expect(Buffer.from(packed, 'base64').length).toBeGreaterThan(0x8000);
+        expect(await decompressToString(packed)).toBe(value);
     });
 
     test('json round-trip', async () => {
