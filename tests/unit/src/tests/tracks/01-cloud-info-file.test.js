@@ -109,3 +109,29 @@ test('local track: group hidden before the upload keeps the cloud path', async (
     expect(info.file).toBe('/tracks/Folder/Track.gpx');
     expect(info.pointsGroups[WPT_GROUP].hidden).toBe(true);
 });
+
+describe('cloud track: hiding a waypoint group', () => {
+    function cloudCtx() {
+        const ctx = createCtx({ track: createTrack({ name: CLOUD_TRACK_NAME }) });
+        ctx.gpxFiles = { [CLOUD_TRACK_NAME]: { name: CLOUD_TRACK_NAME, info: { pointsGroups: {} } } };
+        return ctx;
+    }
+
+    test('the loaded track is updated at once, the map layer is rebuilt from it', () => {
+        const ctx = cloudCtx();
+
+        updateGroupsVisibility(ctx, [WPT_GROUP], true, { current: null });
+
+        expect(ctx.gpxFiles[CLOUD_TRACK_NAME].info.pointsGroups[WPT_GROUP].hidden).toBe(true);
+        expect(ctx.selectedGpxFile.info.pointsGroups[WPT_GROUP].hidden).toBe(true);
+    });
+
+    test('a track that is not loaded on the map is skipped', () => {
+        const ctx = cloudCtx();
+        ctx.gpxFiles = {};
+
+        updateGroupsVisibility(ctx, [WPT_GROUP], true, { current: null });
+
+        expect(ctx.gpxFiles).toEqual({});
+    });
+});

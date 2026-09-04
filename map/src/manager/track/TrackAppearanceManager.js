@@ -144,6 +144,11 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
         }
 
         if (isCloudTrack(ctx)) {
+            ctx.mutateGpxFiles((files) => {
+                if (files[updatedGpxFile.name]) {
+                    files[updatedGpxFile.name].info = updatedGpxFile.info;
+                }
+            });
             const infoFile = findInfoFile(ctx, updatedGpxFile.name);
             if (debouncerTimer.current) {
                 clearTimeout(debouncerTimer.current);

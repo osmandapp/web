@@ -16,7 +16,9 @@ import TracksManager, {
     GPX_FILE_EXT,
     KMZ_FILE_EXT,
     prepareName,
+    renameLastFolderSegment,
     updateMetadata,
+    calculateLastModified,
 } from './TracksManager';
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -327,7 +329,7 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
 }
 
 export async function renameFolder(folder, newName, ctx) {
-    const newFolderName = folder.fullName.replace(folder.name, newName);
+    const newFolderName = renameLastFolderSegment(folder.fullName, newName);
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
         params: {
             folderName: folder.fullName,
@@ -460,31 +462,19 @@ function updateTrackGroups(listFiles, ctx) {
 }
 
 function updateUpdatetimemsInGroups(groups, fileName, newUpdatetimems) {
-    return groups.map((group) => {
-        if (group.subfolders.length > 0) {
-            const updatedSubfolders = updateUpdatetimemsInGroups(group.subfolders, fileName, newUpdatetimems);
+    const updateFile = (file) =>
+        file.name === fileName ? { ...file, updatetimems: newUpdatetimems, updatetime: newUpdatetimems } : file;
 
-            return {
-                ...group,
-                subfolders: updatedSubfolders,
-                groupFiles: group.groupFiles.map((file) =>
-                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
-                ),
-                files: group.files.map((file) =>
-                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
-                ),
-            };
-        } else {
-            return {
-                ...group,
-                groupFiles: group.groupFiles.map((file) =>
-                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
-                ),
-                files: group.files.map((file) =>
-                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
-                ),
-            };
-        }
+    return groups.map((group) => {
+        const updatedGroup = {
+            ...group,
+            subfolders: updateUpdatetimemsInGroups(group.subfolders, fileName, newUpdatetimems),
+            groupFiles: group.groupFiles.map(updateFile),
+            files: group.files.map(updateFile),
+        };
+        calculateLastModified(updatedGroup);
+
+        return updatedGroup;
     });
 }
 

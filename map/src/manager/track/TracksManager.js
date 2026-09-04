@@ -143,6 +143,13 @@ export function removeGpxExtension(name) {
     return name.replace(/\.gpx$/i, '');
 }
 
+export function renameLastFolderSegment(fullName, newName) {
+    const parts = fullName.split('/');
+    parts[parts.length - 1] = newName;
+
+    return parts.join('/');
+}
+
 export function prepareName(name, local = false) {
     if (typeof name !== 'string') {
         return '';
@@ -652,7 +659,8 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
         groups: trackGroups,
     });
 
-    return sorted.groups;
+    // doSort returns nothing when there is nothing to sort, but the callers expect a list
+    return sorted.groups ?? [];
 }
 
 function addFilesAndCalculateLastModified(groups) {
@@ -671,7 +679,13 @@ function addFilesAndCalculateLastModified(groups) {
                 );
             });
 
-            group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
+            group.subfolders.forEach((subfolder) => {
+                subfolder.files.forEach((file) => {
+                    if (!group.files.some((groupFile) => groupFile.name === file.name)) {
+                        group.files.push(file);
+                    }
+                });
+            });
         }
         group.groupFiles.forEach((file) => {
             if (!group.files.some((groupFile) => groupFile.name === file.name)) {
@@ -693,7 +707,7 @@ function addFilesAndCalculateLastModified(groups) {
     });
 }
 
-function calculateLastModified(group) {
+export function calculateLastModified(group) {
     if (group.type === SMART_TYPE) {
         return;
     }
