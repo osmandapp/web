@@ -1,6 +1,8 @@
 import { decodeSimplifiedGeometry } from '@map/util/decodeSimplifiedGeometry';
 import { distance, encodeGeometry } from '../../util/fixtures/geometry';
 
+// the encoder used here is a copy of the server one - see the note in fixtures/geometry.js
+
 // the z18+8 storage grid is about 0.6 m, so a decoded point must land within a couple of cells
 const GRID_TOLERANCE_M = 2;
 

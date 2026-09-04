@@ -1,5 +1,10 @@
-// Mirrors the server-side encoder net.osmand.server.osmgpx.TrackSimplifyEncoder,
-// so the decoder under test is checked against an independent implementation.
+// Test input for the geometry decoder: a copy of the server-side encoder
+// net.osmand.server.osmgpx.TrackSimplifyEncoder, so that many cases (negative deltas, multi-byte
+// varints, the edges of the mercator grid) can be generated instead of hand-writing bytes.
+//
+// This is a snapshot of the format, not a contract test: it lives in this repository, so a change
+// of the format on the server would not fail anything here. That guarantee belongs to a test on
+// TrackSimplifyEncoder itself.
 
 const STORE_ZOOM = 18;
 const STORE_SHIFT = 31 - (STORE_ZOOM + 8); // = 5
