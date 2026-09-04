@@ -45,6 +45,9 @@ suffix-based (`FavoritesManager$`, not the full path).
 
 ## Running
 
+Both packages must be installed: `map` provides the app dependencies (the tests import `map/src`
+directly), `tests/unit` provides jest.
+
 ```bash
 yarn test                # all
 yarn test tracks         # category

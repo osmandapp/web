@@ -5,7 +5,7 @@ description: Write or extend tests for OsmAnd Web Map - jest unit tests (tests/u
 
 # Tests for OsmAnd Web Map
 
-Two suites, each a separate yarn package with its own `node_modules` (run `yarn` in it once).
+Two suites, each a separate yarn package with its own `node_modules` (run `yarn` in it once; `tests/unit` also needs `map` installed, since it imports `map/src` directly).
 
 - `tests/unit` - jest over `map/src`, no browser and no network. Logic: what the app sends to the API, data transforms, name and path building, pure helpers.
 - `tests/selenium` - real browser against a running site. UI flows: clicks, menus, dialogs, what the user sees.

@@ -6,18 +6,21 @@ unlike [../selenium](../selenium), which drives a real page.
 ## Quick Start
 
 ```bash
-yarn                     # install once
+(cd ../../map && yarn)   # app dependencies - tests import map/src, which loads react, pako, lodash-es
+yarn                     # test dependencies
 yarn test                # run all tests
 ```
 
 ## Test Organization
 
-Tests live in `src/tests/<category>/NN-name.test.js`. See [TESTS_STRUCTURE.md](./TESTS_STRUCTURE.md).
+Tests live in `src/tests/<category>/NN-name.test.js`, where the category mirrors the app layout —
+a test for `map/src/<area>/…` goes to `src/tests/<area>/`. See [TESTS_STRUCTURE.md](./TESTS_STRUCTURE.md).
 
 ```
 src/
 ├── tests/
-│   └── tracks/          # track managers (.info file, descriptions, …)
+│   ├── tracks/          # map/src/manager/track/*
+│   └── util/            # map/src/util/*
 └── util/
     ├── fixtures/        # test data builders (tracks, ctx, cloud files)
     ├── stubs/           # module stubs wired via jest.config.js
