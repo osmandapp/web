@@ -15,6 +15,7 @@ module.exports = {
     testMatch: ['<rootDir>/src/tests/**/*.test.js'],
     setupFiles: ['<rootDir>/src/util/setup.js'],
     clearMocks: true,
+    restoreMocks: true,
     transform: {
         '^.+\\.[mc]?jsx?$': ['babel-jest', { configFile: path.resolve(__dirname, 'babel.config.js') }],
     },
@@ -36,7 +37,6 @@ module.exports = {
         FavoritesManager$: `${STUBS}/empty.js`,
         MarkerOptions$: `${STUBS}/empty.js`,
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
-        'GzipBase64\\.mjs$': `${STUBS}/empty.js`,
         '/i18n$': `${STUBS}/empty.js`,
         useInitialFilesLoad$: `${STUBS}/empty.js`,
         // app sources
