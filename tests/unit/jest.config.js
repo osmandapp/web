@@ -15,6 +15,11 @@ module.exports = {
     testMatch: ['<rootDir>/src/tests/**/*.test.js'],
     setupFiles: ['<rootDir>/src/util/setup.js'],
     clearMocks: true,
+    // REPORTER=junit writes test-results/results.xml for the jenkins junit plugin, as the selenium job does
+    reporters:
+        process.env.REPORTER === 'junit'
+            ? ['default', ['jest-junit', { outputDirectory: 'test-results', outputName: 'results.xml' }]]
+            : ['default'],
     restoreMocks: true,
     transform: {
         '^.+\\.[mc]?jsx?$': ['babel-jest', { configFile: path.resolve(__dirname, 'babel.config.js') }],
