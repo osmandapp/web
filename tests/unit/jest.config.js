@@ -36,7 +36,6 @@ module.exports = {
         FavoritesManager$: `${STUBS}/empty.js`,
         MarkerOptions$: `${STUBS}/empty.js`,
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
-        'GzipBase64\\.mjs$': `${STUBS}/empty.js`,
         '/i18n$': `${STUBS}/empty.js`,
         useInitialFilesLoad$: `${STUBS}/empty.js`,
         // app sources
