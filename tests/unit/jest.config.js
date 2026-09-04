@@ -38,6 +38,8 @@ module.exports = {
         '^leaflet$': `${STUBS}/empty.js`,
         // sorting is plain logic that createTrackGroups depends on, keep it real
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
+        // plain constants shared by the managers
+        'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
@@ -45,7 +47,6 @@ module.exports = {
         MarkerOptions$: `${STUBS}/empty.js`,
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
         '/i18n$': `${STUBS}/empty.js`,
-        useInitialFilesLoad$: `${STUBS}/empty.js`,
         // app sources
         '^@map/(.*)$': path.join(MAP_DIR, 'src/$1'),
     },

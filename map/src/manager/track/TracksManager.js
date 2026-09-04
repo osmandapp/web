@@ -701,7 +701,7 @@ function addFilesAndCalculateLastModified(groups) {
     });
 }
 
-function calculateLastModified(group) {
+export function calculateLastModified(group) {
     if (group.type === SMART_TYPE) {
         return;
     }
