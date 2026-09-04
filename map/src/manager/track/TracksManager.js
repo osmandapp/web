@@ -139,17 +139,21 @@ export function getFileName(currentFile) {
     return prepareName(currentFile.name, currentFile.local);
 }
 
+export function removeGpxExtension(name) {
+    return name.replace(/\.gpx$/i, '');
+}
+
 export function prepareName(name, local = false) {
     if (typeof name !== 'string') {
         return '';
     }
-    const result = name.replace(/.gpx/, '');
+    const result = removeGpxExtension(name);
     if (result === '') {
         return createName();
     }
     if (result.includes('/')) {
         const groups = result.split('/');
-        return groups[groups.length - 1];
+        return groups.at(-1);
     } else if (local && result.includes(':')) {
         return result.split(':')[1];
     } else {
@@ -158,7 +162,7 @@ export function prepareName(name, local = false) {
 }
 
 function getGroup(name, local) {
-    const result = name.replace(/.gpx/, '');
+    const result = removeGpxExtension(name);
     if (result.includes('/')) {
         const groups = result.split('/');
         //remove name
