@@ -333,19 +333,6 @@ You can choose one of the following appearance modes:
 
 **Note:** The Map mode setting in CarPlay only affects the map appearance in CarPlay. It does not change the Map mode on your phone screen.
 
-<!--
-### Map Theme {#map-theme}
-
-![Map Theme](@site/static/img/navigation/auto-car/map_theme_carplay.png)
-
-CarPlay allows you to configure the map appearance for better visibility in different driving conditions. You can choose one of the following appearance modes:
-
-- *Automatic*. The map appearance changes automatically depending on the system settings, time of day, or vehicle conditions.
-- *Always Dark*. CarPlay uses the dark map theme.
-
-When the *Always Show Dark Maps* option is enabled, the map always remains in Dark Mode regardless of the vehicle headlight status or the time of day.
--->
-
 ### Location Position in CarPlay {#location-position-in-carplay}
 
 The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
