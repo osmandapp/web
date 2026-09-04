@@ -319,6 +319,21 @@ You can change the notification settings for the OsmAnd app in the system settin
 
 You can also enable or disable Announce messages directly in *CarPlay*. Read about how notification management is implemented on [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) and [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
+### Map Mode {#map-mode}
+
+![Map Mode](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Map Mode](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
+
+OsmAnd allows you to configure the map appearance for CarPlay independently from the map mode on your phone. To open this setting, tap the *Settings* button in the CarPlay navigation bar, then select *Map mode*. The current mode is shown as the row's detail text.
+
+You can choose one of the following appearance modes:
+- **Vehicle appearance** — The map appearance follows the vehicle's own display style, based on the CarPlay Appearance setting on your iPhone (*Automatic* or *Always Dark*) and the time of day. When *Always Show Dark Maps* is enabled in that setting, the map always remains in Dark Mode regardless of the vehicle headlight status or the time of day.
+- **Day** — The map always uses the light theme in CarPlay, regardless of the vehicle's appearance settings.
+- **Night** — The map always uses the dark theme in CarPlay, regardless of the vehicle's appearance settings.
+- **Sunrise/sunset** — The map switches between light and dark themes automatically based on the calculated sunrise and sunset times for your current location.
+
+**Note:** The Map mode setting in CarPlay only affects the map appearance in CarPlay. It does not change the Map mode on your phone screen.
+
+<!--
 ### Map Theme {#map-theme}
 
 ![Map Theme](@site/static/img/navigation/auto-car/map_theme_carplay.png)
@@ -329,6 +344,7 @@ CarPlay allows you to configure the map appearance for better visibility in diff
 - *Always Dark*. CarPlay uses the dark map theme.
 
 When the *Always Show Dark Maps* option is enabled, the map always remains in Dark Mode regardless of the vehicle headlight status or the time of day.
+-->
 
 ### Location Position in CarPlay {#location-position-in-carplay}
 
