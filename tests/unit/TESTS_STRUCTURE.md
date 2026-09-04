@@ -4,10 +4,11 @@
 
 ```
 src/tests/
-└── tracks/         # track managers: cloud .info file, track description, …
+├── tracks/         # map/src/manager/track/*
+└── util/           # map/src/util/*
 ```
 
-Add a new category by creating a directory under `src/tests/` — no config change is needed.
+Categories mirror the app layout: a test for `map/src/<area>/…` goes to `src/tests/<area>/`. Add a new category by creating a directory under `src/tests/` — no config change is needed.
 
 ## File Naming
 
