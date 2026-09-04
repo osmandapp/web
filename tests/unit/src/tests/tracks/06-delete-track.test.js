@@ -63,8 +63,8 @@ describe('deleteTrack', () => {
 });
 
 describe('deleteTrack: track groups', () => {
-    function ctxWithGroups(names) {
-        const files = names.map((name) => ({ name, updatetimems: 1000 }));
+    function ctxWithGroups(names, updatetimems = () => 1000) {
+        const files = names.map((name) => ({ name, updatetimems: updatetimems(name) }));
         const ctx = createCtx({ uniqueFiles: files });
         ctx.tracksGroups = createTrackGroups({ files, ctx });
         return ctx;
@@ -98,6 +98,40 @@ describe('deleteTrack: track groups', () => {
 
         const defaultGroup = findGroupByName(ctx.tracksGroups, '');
         expect(defaultGroup.files.map((f) => f.name)).toEqual(['Second.gpx']);
+    });
+
+    test('a root track is removed from the default group that owns folders', async () => {
+        const ctx = ctxWithGroups(['Track.gpx', 'Folder/Inside.gpx']);
+
+        await deleteTrack({ file: { name: 'Track.gpx' }, ctx, ltx: LOGGED_IN });
+
+        const defaultGroup = findGroupByName(ctx.tracksGroups, '');
+        expect(defaultGroup.groupFiles).toEqual([]);
+        expect(defaultGroup.files.map((f) => f.name)).toEqual(['Folder/Inside.gpx']);
+        expect(defaultGroup.realSize).toBe(1);
+    });
+
+    test('the groups above the track are updated too', async () => {
+        const ctx = ctxWithGroups(['Root.gpx', 'Folder/Nested/Deep.gpx']);
+
+        await deleteTrack({ file: { name: 'Folder/Nested/Deep.gpx' }, ctx, ltx: LOGGED_IN });
+
+        const folder = findGroupByName(ctx.tracksGroups, 'Folder');
+        expect(folder.files).toEqual([]);
+        expect(folder.realSize).toBe(0);
+        const defaultGroup = findGroupByName(ctx.tracksGroups, '');
+        expect(defaultGroup.files.map((f) => f.name)).toEqual(['Root.gpx']);
+        expect(defaultGroup.realSize).toBe(1);
+    });
+
+    test('the folder date follows the deleted track', async () => {
+        const ctx = ctxWithGroups(['Folder/Old.gpx', 'Folder/New.gpx'], (name) =>
+            name.endsWith('New.gpx') ? 5000 : 1000
+        );
+
+        await deleteTrack({ file: { name: 'Folder/New.gpx' }, ctx, ltx: LOGGED_IN });
+
+        expect(findGroupByName(ctx.tracksGroups, 'Folder').lastModifiedMs).toBe(1000);
     });
 
     test('a track is deleted even when the groups are not loaded yet', async () => {

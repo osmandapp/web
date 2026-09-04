@@ -51,6 +51,13 @@ describe('createTrackGroups', () => {
         expect(folder.subfolders[0].realSize).toBe(1);
     });
 
+    test('a file of a nested folder is listed once in every group above it', () => {
+        const groups = build([file('Root.gpx'), file('Folder/Nested/Deep.gpx')]);
+
+        expect(findGroupByName(groups, 'Folder').files.map((f) => f.name)).toEqual(['Folder/Nested/Deep.gpx']);
+        expect(findGroupByName(groups, '').files.map((f) => f.name)).toEqual(['Root.gpx', 'Folder/Nested/Deep.gpx']);
+    });
+
     test('folders and loose files live together', () => {
         const groups = build([file('Track.gpx'), file('Folder/Inside.gpx')]);
 

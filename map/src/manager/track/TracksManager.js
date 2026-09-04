@@ -679,7 +679,13 @@ function addFilesAndCalculateLastModified(groups) {
                 );
             });
 
-            group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
+            group.subfolders.forEach((subfolder) => {
+                subfolder.files.forEach((file) => {
+                    if (!group.files.some((groupFile) => groupFile.name === file.name)) {
+                        group.files.push(file);
+                    }
+                });
+            });
         }
         group.groupFiles.forEach((file) => {
             if (!group.files.some((groupFile) => groupFile.name === file.name)) {

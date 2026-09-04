@@ -2,7 +2,7 @@ import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/
 import { loadShareFiles } from '../../util/hooks/useInitialFilesLoad';
 import { loadSmartFolders } from '../SmartFoldersManager';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import { findGroupByName, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
+import { calculateLastModified, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -272,31 +272,31 @@ export async function showAllVisibleTracks(ctx) {
     ctx.setGpxLoading(false);
 }
 
-function deleteTracksFromGroups(trackName, ctx) {
-    const parts = trackName.split('/');
-    if (parts.length > 1) {
-        const pathToGroup = parts.slice(0, -1).join('/');
-        const group = findGroupByName(ctx.tracksGroups, pathToGroup);
-        if (group) {
-            const fileIndexInGroupFiles = group.groupFiles.findIndex((file) => file.name === trackName);
-            if (fileIndexInGroupFiles !== -1) {
-                group.groupFiles.splice(fileIndexInGroupFiles, 1);
-                group.realSize--;
-            }
-            const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
-            if (fileIndexInFiles !== -1) {
-                group.files.splice(fileIndexInFiles, 1);
-            }
-        }
-    } else {
-        const group = findGroupByName(ctx.tracksGroups, '');
-        if (group) {
-            const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
-            if (fileIndexInFiles !== -1) {
-                group.files.splice(fileIndexInFiles, 1);
-            }
-        }
+function removeTrackByName(files, trackName) {
+    const index = files?.findIndex((file) => file.name === trackName) ?? -1;
+    if (index === -1) {
+        return false;
     }
+    files.splice(index, 1);
+
+    return true;
+}
+
+// the track is listed in the group that owns it and in the files of every group above it
+function removeTrackFromGroups(groups, trackName) {
+    groups?.forEach((group) => {
+        removeTrackFromGroups(group.subfolders, trackName);
+        const removedFromGroupFiles = removeTrackByName(group.groupFiles, trackName);
+        const removedFromFiles = removeTrackByName(group.files, trackName);
+        if (removedFromGroupFiles || removedFromFiles) {
+            group.realSize = Math.max(0, (group.realSize ?? 0) - 1);
+            calculateLastModified(group);
+        }
+    });
+}
+
+function deleteTracksFromGroups(trackName, ctx) {
+    removeTrackFromGroups(ctx.tracksGroups, trackName);
     ctx.setTracksGroups([...ctx.tracksGroups]);
 }
 
