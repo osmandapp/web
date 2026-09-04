@@ -1,39 +1,4 @@
-import { prepareDesc } from '../manager/track/TracksManager';
-
-jest.mock('../util/Utils', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
-
-jest.mock('../manager/FavoritesManager', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
-
-jest.mock('../util/HttpApi', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
-
-jest.mock('../store/geoRouter/geoRouter', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
-
-jest.mock('../util/GzipBase64.mjs', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
-
-jest.mock('leaflet', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
-
-jest.mock('../map/markers/MarkerOptions', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
+import { prepareDesc } from '@map/manager/track/TracksManager';
 
 const testData = [
     '        1 test\n' + '        2 test\n' + '        3 test\n' + '        www.osmand.net',
