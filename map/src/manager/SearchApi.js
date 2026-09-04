@@ -1,5 +1,5 @@
 import i18n from '../i18n';
-import { apiGet } from '../util/HttpApi';
+import { apiGet, apiPost } from '../util/HttpApi';
 import { BBOX_COORDS_DECIMALS } from './GlobalManager';
 import { getCurrentTimeParams } from '../util/Utils';
 
@@ -37,5 +37,12 @@ export function searchByWordApi({
             ...(maps ? { maps } : {}),
             ...getCurrentTimeParams(),
         },
+    });
+}
+
+export function searchUserDataApi({ query, openedTracks }) {
+    return apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/search-user-data`, openedTracks, {
+        params: { query },
+        abortControllerKey: 'userDataSearch',
     });
 }

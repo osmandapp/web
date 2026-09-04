@@ -811,7 +811,12 @@ export function addShareFavoriteToMap(marker, ctx) {
 
 export function getFavoriteId(layer) {
     const { lat, lng } = layer.getLatLng();
-    return `fav:${lat}:${lng}`;
+
+    return favoriteIdFromLatLng(lat, lng);
+}
+
+export function favoriteIdFromLatLng(lat, lng) {
+    return `fav:${Number.parseFloat(lat)}:${Number.parseFloat(lng)}`;
 }
 
 export function getSelectedFavoriteObj({

@@ -1,6 +1,6 @@
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { isFavoriteFromSearch } from '../../manager/SearchManager';
+import { isFavoriteFromSearch, isWptFromSearch } from '../../manager/SearchManager';
 
 export function closeHeader({ ctx, setShowInfoBlock = null }) {
     if (setShowInfoBlock) {
@@ -12,7 +12,7 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
         ctx.setSelectedGpxFile({});
         ctx.setSelectedFavoriteObj(null);
     }
-    if (isFavoriteFromSearch(ctx)) {
+    if (isFavoriteFromSearch(ctx) || isWptFromSearch(ctx)) {
         ctx.setSelectedSearchObj(null);
     }
     if (ctx.poiByUrl?.layer) {

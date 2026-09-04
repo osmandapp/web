@@ -173,12 +173,21 @@ const CloudTrackLayer = () => {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
-    const getCloudWptLayers = useCallback(() => {
-        if (!isCloudTrack(ctx)) return null;
-        return ctx.selectedGpxFile?.gpx?.getLayers?.() ?? null;
-    }, [ctx.selectedGpxFile?.gpx, ctx.currentObjectType]);
+    const getRenderedTracksWptLayers = useCallback(() => {
+        const layers = [...Object.values(ctx.gpxFiles ?? {}), ...Object.values(ctx.shareWithMeFiles?.tracks ?? {})]
+            .filter(isTrackRenderedOnMap)
+            .flatMap((file) => file.gpx.getLayers?.() ?? []);
+        return layers.length > 0 ? layers : null;
+    }, [ctx.gpxFiles, ctx.shareWithMeFiles?.tracks]);
 
-    useSelectMarkerOnMap({ ctx, getLayers: getCloudWptLayers, type: OBJECT_TYPE_CLOUD_TRACK, map, zoom, move });
+    useSelectMarkerOnMap({
+        ctx,
+        getLayers: getRenderedTracksWptLayers,
+        type: OBJECT_TYPE_CLOUD_TRACK,
+        map,
+        zoom,
+        move,
+    });
 
     const recentSaver = useRecentDataSaver();
 
@@ -188,7 +197,7 @@ const CloudTrackLayer = () => {
         if (needUpdate) {
             const newGpxFiles = { ...ctx.gpxFiles } ?? {};
             Object.values(newGpxFiles).forEach((file) => {
-                if (file.url && file.gpx) {
+                if (isTrackRenderedOnMap(file)) {
                     if (file.wpts.length >= WPT_SIMPLIFY_THRESHOLD) {
                         const layer = simplifyLayer({
                             layerGroup: file.gpx,
@@ -241,7 +250,7 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         for (const l in ctx.gpxFiles) {
             const file = ctx.gpxFiles[l];
-            if (file?.url && file.gpx && map.hasLayer(file.gpx)) {
+            if (isTrackRenderedOnMap(file) && map.hasLayer(file.gpx)) {
                 file.gpx.off('click');
                 file.gpx.on('click', () => clickHandler({ ctx, file, navigate, recentSaver }));
             }
@@ -351,11 +360,7 @@ const CloudTrackLayer = () => {
     }, [ctx.shareWithMeFiles?.tracks]);
 
     useEffect(() => {
-        if (
-            ctx.fitBoundsShareTracks &&
-            ctx.fitBoundsShareTracks.type === SHARE_FILE_TYPE &&
-            !isEmpty(ctx.shareWithMeFiles?.tracks)
-        ) {
+        if (ctx.fitBoundsShareTracks?.type === SHARE_FILE_TYPE && !isEmpty(ctx.shareWithMeFiles?.tracks)) {
             const bounds = getTracksArrBounds(Object.values(ctx.shareWithMeFiles.tracks));
             if (bounds.length > 0) {
                 map.fitBounds(bounds, fitBoundsOptions(mtx));
@@ -364,5 +369,9 @@ const CloudTrackLayer = () => {
         }
     }, [ctx.fitBoundsShareTracks]);
 };
+
+function isTrackRenderedOnMap(file) {
+    return !!(file?.url && file.gpx);
+}
 
 export default CloudTrackLayer;
