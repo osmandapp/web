@@ -38,6 +38,8 @@ module.exports = {
         '^leaflet$': `${STUBS}/empty.js`,
         // sorting is plain logic that createTrackGroups depends on, keep it real
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
+        // the visible-tracks cache is plain localStorage logic used by the managers
+        'visibletracks/VisibleTracks$': path.join(MAP_DIR, 'src/menu/visibletracks/VisibleTracks.jsx'),
         // plain constants shared by the managers
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
         // UI layers - unit tests cover managers, not components
