@@ -20,11 +20,18 @@ import {
     SEARCH_ICON_MAP_LOCATION,
     searchTypeMap,
     typeIconMap,
+    WPT_TRACK_FILE,
+    WPT_TRACK_SHARED,
 } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
-import { OBJECT_TYPE_POI, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../context/AppContext';
-import { openFavoriteObj } from './FavoritesManager';
-import { EMPTY_FILE_NAME, getGpxFiles, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
+import {
+    OBJECT_TYPE_POI,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_TRACK_WPT,
+} from '../context/AppContext';
+import { favoriteIdFromLatLng, openFavoriteObj, resolveWptAppearance } from './FavoritesManager';
+import { getResolvedPointsGroups, openTrackOnMap, prepareName, updateTracks } from './track/TracksManager';
 import { MAIN_URL_WITH_SLASH, SEARCH_URL, SEARCH_RESULT_URL, liveHash } from './GlobalManager';
 import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 
@@ -38,82 +45,75 @@ export function getIconByType(type) {
     return typeIconMap[type] ?? SEARCH_ICON_MAP_LOCATION;
 }
 
-function searchIncludes(text, query, collator) {
-    const textChars = [...String(text ?? '')];
-    const queryStr = String(query ?? '');
-
-    if (!queryStr) {
-        return true;
-    }
-
-    const queryLength = [...queryStr].length;
-
-    for (let i = 0; i <= textChars.length - queryLength; i++) {
-        const candidate = textChars.slice(i, i + queryLength).join('');
-
-        if (collator.compare(candidate, queryStr) === 0) {
-            return true;
-        }
-    }
-
-    return false;
+function favoriteSearchId(fileName, shared, wptName) {
+    return `${shared ? 'shared:' : ''}${fileName}:${wptName}`;
 }
 
-export function searchFavoriteFeatures({ favorites, query, collator }) {
-    const q = String(query ?? '').trim();
-    if (!q || !favorites?.groups?.length || !favorites.mapObjs) {
-        return [];
-    }
-
-    return favorites.groups
-        .filter((group) => group?.id)
-        .flatMap((group) => {
-            const wpts = favorites.mapObjs[group.id]?.wpts;
-            if (!wpts?.length) return [];
-
-            return wpts
-                .filter(
-                    (wpt) =>
-                        wpt?.name &&
-                        wpt.lat != null &&
-                        wpt.lon != null &&
-                        (searchIncludes(wpt.name, q, collator) || searchIncludes(wpt.desc ?? '', q, collator))
-                )
-                .map((wpt) => ({
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [0, 0],
-                    },
-                    properties: {
-                        [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
-                        [CATEGORY_NAME]: wpt.category,
-                        [POI_NAME]: wpt.name,
-                        [FAVORITE_HIT_GROUP_ID]: group.id,
-                        [ICON_KEY_NAME]: wpt.icon,
-                        [COLOR_NAME_EXTENSION]: wpt.color,
-                        [BACKGROUND_TYPE_EXTENSION]: wpt.background,
-                        [FINAL_POI_ICON_NAME]: wpt.icon,
-                        ...(wpt.address ? { address: wpt.address } : {}),
-                    },
-                }));
+// points come from the server as { file, shared, name }
+export function buildFavoriteFeatures(favorites, points) {
+    const favoritesById = new Map();
+    favorites?.groups?.forEach((group) => {
+        favorites.mapObjs?.[group.id]?.wpts?.forEach((wpt) => {
+            if (wpt?.name && wpt.lat != null && wpt.lon != null) {
+                favoritesById.set(favoriteSearchId(group.file?.name, !!group.sharedWithMe, wpt.name), { group, wpt });
+            }
         });
-}
-
-export function searchCloudTrackFeatures({ listFiles, query, collator }) {
-    const q = String(query ?? '').trim();
-    if (!q || !listFiles?.uniqueFiles) return [];
-
-    return getGpxFiles(listFiles)
-        .filter((f) => !f.name.endsWith(EMPTY_FILE_NAME) && searchIncludes(prepareName(f.name, true), q, collator))
-        .map((f) => ({
+    });
+    return points
+        .map((point) => favoritesById.get(favoriteSearchId(point.file, point.shared, point.name)))
+        .filter(Boolean)
+        .map(({ group, wpt }) => ({
             type: 'Feature',
             geometry: { type: 'Point', coordinates: [0, 0] },
             properties: {
-                [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK,
-                [CATEGORY_NAME]: f.name,
+                [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
+                [CATEGORY_NAME]: wpt.category,
+                [POI_NAME]: wpt.name,
+                [FAVORITE_HIT_GROUP_ID]: group.id,
+                [ICON_KEY_NAME]: wpt.icon,
+                [COLOR_NAME_EXTENSION]: wpt.color,
+                [BACKGROUND_TYPE_EXTENSION]: wpt.background,
+                [FINAL_POI_ICON_NAME]: wpt.icon,
+                ...(wpt.address ? { address: wpt.address } : {}),
             },
         }));
+}
+
+// waypoints of tracks opened on the map: { file, shared, name } -> feature with the point's own icon and coordinates
+export function buildWptFeatures(ctx, wpts) {
+    return wpts.flatMap((item) => {
+        const file = (item.shared ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles)?.[item.file];
+        const wpt = file?.wpts?.find(
+            (w) => w.name === item.name && Number(w.lat) === item.lat && Number(w.lon) === item.lon
+        );
+        if (!wpt) return [];
+        const appearance = resolveWptAppearance(wpt, getResolvedPointsGroups(file));
+        return {
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [Number(wpt.lon), Number(wpt.lat)] },
+            properties: {
+                [CATEGORY_TYPE]: searchTypeMap.WPT,
+                [CATEGORY_NAME]: prepareName(file.name, true),
+                [POI_NAME]: wpt.name,
+                [WPT_TRACK_FILE]: file.name,
+                [WPT_TRACK_SHARED]: item.shared,
+                [ICON_KEY_NAME]: appearance.icon,
+                [COLOR_NAME_EXTENSION]: appearance.color,
+                [BACKGROUND_TYPE_EXTENSION]: appearance.background,
+            },
+        };
+    });
+}
+
+export function buildTrackFeatures(tracks) {
+    return tracks.map((track) => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [0, 0] },
+        properties: {
+            [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK,
+            [CATEGORY_NAME]: track.file,
+        },
+    }));
 }
 
 /**
@@ -250,6 +250,8 @@ export async function openSearchObj(ctx, selectedSearchObj, { recentSaver } = {}
             fromSearch: true,
         });
         updateTracks(ctx, null, newTracks);
+    } else if (selectedSearchObj.type === OBJECT_TYPE_TRACK_WPT) {
+        openTrackWptFromSearch(ctx, selectedSearchObj.object);
     }
 }
 
@@ -263,6 +265,24 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
         hash: liveHash(),
     });
     return true;
+}
+
+// open waypoint details of an opened track from search results (like a favorite from search)
+export function openTrackWptFromSearch(ctx, { file, shared, name, lat, lon }) {
+    const trackData = (shared ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles)?.[file];
+    const wpt = trackData?.wpts?.find((w) => w.name === name && Number(w.lat) === lat && Number(w.lon) === lon);
+    if (!wpt) return;
+    // same context as opening a waypoint from the track tab: marker selection needs selectedGpxFile.gpx layers
+    ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+    ctx.setSelectedGpxFile(trackData);
+    ctx.setSelectedSearchObj({ type: OBJECT_TYPE_TRACK_WPT, object: { file, shared, name, lat, lon } });
+    // id matches the marker's idObj so useSelectMarkerOnMap selects it
+    const id = favoriteIdFromLatLng(wpt.lat, wpt.lon);
+    ctx.setSelectedWpt({ trackWpt: true, mapObj: false, trackData, id, ...wpt });
+}
+
+export function isWptFromSearch(ctx) {
+    return ctx.selectedSearchObj?.type === OBJECT_TYPE_TRACK_WPT;
 }
 
 export function isFavoriteFromSearch(ctx) {

@@ -20,18 +20,21 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap, WPT_TRACK_FILE, WPT_TRACK_SHARED } from '../../../map/layers/SearchLayer';
 import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
+    BACKGROUND_TYPE_EXTENSION,
     CATEGORY_KEY_NAME,
     CATEGORY_NAME,
     CATEGORY_TYPE,
     CITY,
+    COLOR_NAME_EXTENSION,
     EN_NAME,
+    ICON_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -39,7 +42,7 @@ import {
     TYPE,
     WEB_PREFIX,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getPoiParentCategory } from '../../../manager/SearchManager';
+import { getPoiParentCategory, openTrackWptFromSearch } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../manager/GlobalManager';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -50,7 +53,11 @@ import i18n from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import { openTrackOnMap, updateTracks } from '../../../manager/track/TracksManager';
 import { getTrackInfoText } from '../../tracks/CloudTrackItem';
-import { addFavoriteToMapFromSearch, resolveFavoriteMarkerForSearch } from '../../../manager/FavoritesManager';
+import {
+    addFavoriteToMapFromSearch,
+    getFavoriteMenuIconHtml,
+    resolveFavoriteMarkerForSearch,
+} from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
 
 export function getFirstSubstring(inputString) {
@@ -97,6 +104,9 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
         type = t ? t('shared_string_my_favorites') : '';
     } else if (props[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK) {
         name = props[CATEGORY_NAME];
+    } else if (props[CATEGORY_TYPE] === searchTypeMap.WPT) {
+        name = props[POI_NAME];
+        type = props[CATEGORY_NAME];
     } else {
         name = props[CATEGORY_NAME];
         if (props[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
@@ -226,6 +236,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         if (categoryType === searchTypeMap.FAVORITE) {
             return `se-search-result-fav-${name}`;
         }
+        if (categoryType === searchTypeMap.WPT) {
+            return `se-search-result-wpt-${name}`;
+        }
         if (categoryType === searchTypeMap.POI_TYPE || categoryType === searchTypeMap.GPX_TRACK) {
             return `se-search-result-${item.properties[CATEGORY_NAME]}`;
         }
@@ -341,6 +354,29 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         );
     }
 
+    if (item.properties[CATEGORY_TYPE] === searchTypeMap.WPT) {
+        return (
+            <FavoriteItem
+                id={id}
+                marker={buildWptMarker(item, name, distance)}
+                group={{ id: item.properties[WPT_TRACK_FILE], name: item.properties[CATEGORY_NAME] }}
+                currentLoc={currentLoc}
+                onOpen={() => {
+                    openTrackWptFromSearch(ctx, {
+                        file: item.properties[WPT_TRACK_FILE],
+                        shared: item.properties[WPT_TRACK_SHARED],
+                        name: item.properties[POI_NAME],
+                        lat: item.geometry.coordinates[1],
+                        lon: item.geometry.coordinates[0],
+                    });
+                    ctx.setMoveToMapObj({ ...item });
+                }}
+                hideActions
+                hoverType={OBJECT_TYPE_CLOUD_TRACK}
+            />
+        );
+    }
+
     return (
         <>
             <MenuItem
@@ -444,4 +480,28 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             )}
         </>
     );
+}
+
+// FavoriteItem marker for a waypoint search result; the fake layer feeds the
+// second line (address slot) and getFavoriteId (getLatLng)
+function buildWptMarker(item, name, distance) {
+    const properties = item.properties;
+
+    return {
+        name,
+        icon: getFavoriteMenuIconHtml({
+            icon: properties[ICON_KEY_NAME],
+            color: properties[COLOR_NAME_EXTENSION],
+            background: properties[BACKGROUND_TYPE_EXTENSION],
+        }),
+        locDist: distance,
+        layer: {
+            options: {
+                address: properties[CATEGORY_NAME],
+                color: properties[COLOR_NAME_EXTENSION],
+                background: properties[BACKGROUND_TYPE_EXTENSION],
+            },
+            getLatLng: () => ({ lat: item.geometry.coordinates[1], lng: item.geometry.coordinates[0] }),
+        },
+    };
 }

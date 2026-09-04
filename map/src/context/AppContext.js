@@ -29,14 +29,11 @@ import supportedLanguages from '../resources/translations/supportedLanguages.jso
 import { normalizeLang } from '../util/lang';
 
 export const collator = new Intl.Collator(supportedLanguages.map(normalizeLang), { numeric: true });
-export const searchCollator = new Intl.Collator(supportedLanguages.map(normalizeLang), {
-    usage: 'search',
-    sensitivity: 'base',
-});
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
 
+export const OBJECT_TYPE_TRACK_WPT = 'track_wpt'; // waypoint of an opened track (from search)
 export const OBJECT_TYPE_NAVIGATION_TRACK = 'route_track'; // track converted from Navigation result
 export const OBJECT_TYPE_NAVIGATION_ALONE = 'navigation'; // special case of OBJECT_TYPE_NAVIGATION_TRACK (Navigation w/o InfoBlock)
 
