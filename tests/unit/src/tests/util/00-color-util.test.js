@@ -29,9 +29,23 @@ describe('parseColorToRgba', () => {
         expect(parseColorToRgba('#804caf50')).toEqual({ r: 76, g: 175, b: 80, a: 128 });
     });
 
+    test('short #rgb is expanded, like on Android', () => {
+        expect(parseColorToRgba('#f00')).toEqual({ r: 255, g: 0, b: 0, a: 255 });
+        expect(parseColorToRgba('4a5')).toEqual({ r: 68, g: 170, b: 85, a: 255 });
+    });
+
     test('empty value is opaque black', () => {
         expect(parseColorToRgba(null)).toEqual({ r: 0, g: 0, b: 0, a: 255 });
         expect(parseColorToRgba('')).toEqual({ r: 0, g: 0, b: 0, a: 255 });
+    });
+
+    test('anything but a 3, 6 or 8 char hex is not a color', () => {
+        expect(parseColorToRgba('red')).toBeNull();
+        expect(parseColorToRgba('rgb(255, 0, 0)')).toBeNull();
+        expect(parseColorToRgba('#1234')).toBeNull();
+        expect(parseColorToRgba('#12345')).toBeNull();
+        expect(parseColorToRgba('#4caf50ff00')).toBeNull();
+        expect(parseColorToRgba('#nothex')).toBeNull();
     });
 });
 
@@ -63,6 +77,7 @@ describe('hasAlpha', () => {
         expect(hasAlpha('#804caf50')).toBe(true);
         expect(hasAlpha('#ff4caf50')).toBe(false);
         expect(hasAlpha('#4caf50')).toBe(false);
+        expect(hasAlpha('red')).toBe(false);
         expect(hasAlpha(null)).toBe(false);
         expect(hasAlpha('')).toBe(false);
     });
@@ -77,6 +92,15 @@ describe('hexToRgba', () => {
     test('transparent color carries alpha as percent', () => {
         expect(hexToRgba('#804caf50')).toBe('rgb(76 175 80 / 50.2%)');
         expect(hexToRgba('#004caf50')).toBe('rgb(76 175 80 / 0%)');
+    });
+
+    test('short hex from a foreign gpx', () => {
+        expect(hexToRgba('#f00')).toBe('rgb(255 0 0)');
+    });
+
+    test('what we cannot parse is left for css', () => {
+        expect(hexToRgba('red')).toBe('red');
+        expect(hexToRgba('rgb(255 0 0)')).toBe('rgb(255 0 0)');
     });
 });
 
@@ -161,6 +185,18 @@ describe('parseCssRgb', () => {
     test('alpha as percent, with a slash separator', () => {
         expect(parseCssRgb('rgba(255,128,0,50%)')).toEqual({ r: 255, g: 128, b: 0, a: 128 });
         expect(parseCssRgb('rgb(255,128,0 / 50%)')).toEqual({ r: 255, g: 128, b: 0, a: 128 });
+    });
+
+    test('channels separated by spaces, the form toCssRgb produces', () => {
+        expect(parseCssRgb('rgb(76 175 80)')).toEqual({ r: 76, g: 175, b: 80, a: 255 });
+        expect(parseCssRgb('rgb(76 175 80 / 50.2%)')).toEqual({ r: 76, g: 175, b: 80, a: 128 });
+    });
+
+    test('round-trip with hexToRgba', () => {
+        for (const color of ['#4caf50', '#804caf50']) {
+            const { r, g, b, a } = parseColorToRgba(color);
+            expect(parseCssRgb(hexToRgba(color))).toEqual({ r, g, b, a });
+        }
     });
 
     test('not a css color', () => {
