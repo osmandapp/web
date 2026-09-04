@@ -652,7 +652,8 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
         groups: trackGroups,
     });
 
-    return sorted.groups;
+    // doSort returns nothing when there is nothing to sort, but the callers expect a list
+    return sorted.groups ?? [];
 }
 
 function addFilesAndCalculateLastModified(groups) {

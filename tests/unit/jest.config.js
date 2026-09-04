@@ -36,6 +36,8 @@ module.exports = {
         'context/AppContext$': `${STUBS}/appContext.js`,
         // modules pulling map layers / routing / i18n - not exercised by unit tests
         '^leaflet$': `${STUBS}/empty.js`,
+        // sorting is plain logic that createTrackGroups depends on, keep it real
+        'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
