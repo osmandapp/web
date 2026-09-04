@@ -65,7 +65,6 @@
         "start:fallback": "yarn generate-resources && USE_MAIN_API=yes react-scripts start",
         "build": "yarn generate-resources && react-scripts build",
         "build:staging": "yarn generate-resources && env-cmd -f .env.staging react-scripts build",
-        "test": "jest",
         "eject": "react-scripts eject",
         "postinstall": "patch-package",
         "generate-resources": "node src/resources/scripts/generate-resources.mjs",
@@ -89,28 +88,17 @@
     "devDependencies": {
         "@babel/eslint-parser": "^7.25.9",
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-        "@babel/preset-env": "^7.22.15",
-        "@babel/preset-react": "^7.25.9",
         "@eslint/eslintrc": "^3.2.0",
         "@mui/lab": "^5.0.0-alpha.85",
-        "babel-jest": "^29.7.0",
         "eslint": "^9.15.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^5.0.0",
         "eslint-plugin-react": "^7.37.2",
         "eslint-plugin-react-compiler": "beta",
         "eslint-plugin-react-hooks": "^5.0.0",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
         "prettier": "^3.0.0",
         "react-devtools": "^4.28.0",
-        "react-test-renderer": "^18.2.0",
         "yarn-upgrade-all": "^0.7.1"
-    },
-    "jest": {
-        "transformIgnorePatterns": [
-            "!node_modules/"
-        ]
     },
     "packageManager": "yarn@3.2.1"
 }
