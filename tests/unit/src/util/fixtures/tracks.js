@@ -31,7 +31,12 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         listFiles: { uniqueFiles },
         gpxFiles: {},
         tracksGroups: [],
-        mutateGpxFiles: jest.fn(),
+        // useMutator: the callback gets a shallow copy of the previous state and mutates it
+        mutateGpxFiles: jest.fn((update) => {
+            const next = { ...ctx.gpxFiles };
+            update(next);
+            ctx.gpxFiles = next;
+        }),
         setTracksGroups: setter('tracksGroups'),
         setCreateTrack: jest.fn(),
         setListFiles: setter('listFiles'),

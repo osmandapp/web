@@ -29,8 +29,8 @@ export function applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelect
         let next = null;
         for (const [gpxName, file] of Object.entries(prev)) {
             const infoRow = infoFilesFromRefresh.find((r) => r.name === gpxName + INFO_FILE_EXT);
-            if (!infoRow) continue;
-            const data = infoRow.details?.data ?? {};
+            const data = infoRow?.details?.data;
+            if (data == null) continue;
             next = next ?? { ...prev };
             next[gpxName] = {
                 ...file,
