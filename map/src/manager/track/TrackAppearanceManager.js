@@ -17,19 +17,19 @@ export function sanitizePointsGroups(pointsGroups = {}) {
     return result;
 }
 
-function buildGpxTrackInfo(gpxFileInfo, name) {
+function buildGpxTrackInfo(gpxFileInfo, cloudName) {
     return {
-        type: gpxFileInfo?.type ?? GPX_FILE_TYPE,
-        file: gpxFileInfo?.file ?? TRACKS_PREFIX + name,
-        subtype: gpxFileInfo?.subtype ?? GPX_FILE_TYPE.toLowerCase(),
+        type: GPX_FILE_TYPE,
+        subtype: GPX_FILE_TYPE.toLowerCase(),
         ...gpxFileInfo,
+        file: TRACKS_PREFIX + cloudName,
     };
 }
 
 /** Build the canonical `.info` payload for a track (pointsGroups + future fields). */
-export function buildInfoPayload(gpxFile) {
+export function buildInfoPayload(gpxFile, cloudName = gpxFile?.name) {
     const pointsGroups = getResolvedPointsGroups(gpxFile);
-    const info = buildGpxTrackInfo(gpxFile?.info, gpxFile?.name);
+    const info = buildGpxTrackInfo(gpxFile?.info, cloudName);
     return {
         ...info,
         pointsGroups: isEmpty(pointsGroups) ? {} : sanitizePointsGroups(pointsGroups),
@@ -93,7 +93,7 @@ export async function syncCloudTrackInfo(ctx, cloudGpxName) {
 
     if (infoFile && !selectedFile.infoChanged) return;
 
-    const payload = buildInfoPayload(selectedFile);
+    const payload = buildInfoPayload(selectedFile, cloudGpxName);
 
     if (!infoFile && isEmpty(payload.pointsGroups)) return;
 
@@ -122,7 +122,7 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
             updatedPointsGroups[name] = { ...group, hidden };
         });
 
-        const info = buildGpxTrackInfo(prevFile.info, prevFile.name);
+        const info = isCloudTrack(ctx) ? buildGpxTrackInfo(prevFile.info, prevFile.name) : prevFile.info;
         const updatedGpxFile = {
             ...prevFile,
             infoChanged: true,

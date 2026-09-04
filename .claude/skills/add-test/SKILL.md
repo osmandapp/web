@@ -1,9 +1,75 @@
 ---
 name: add-test
-description: Write or extend Selenium e2e tests for OsmAnd Web Map (tests/selenium). Use when asked to add a test, cover a fix with a test, or fix a failing selenium test.
+description: Write or extend tests for OsmAnd Web Map - jest unit tests (tests/unit) and Selenium e2e tests (tests/selenium). Use when asked to add a test, cover a fix with a test, or fix a failing test.
 ---
 
-# Selenium tests for OsmAnd Web Map
+# Tests for OsmAnd Web Map
+
+Two suites, each a separate yarn package with its own `node_modules` (run `yarn` in it once; `tests/unit` also needs `map` installed, since it imports `map/src` directly).
+
+- `tests/unit` - jest over `map/src`, no browser and no network. Logic: what the app sends to the API, data transforms, name and path building, pure helpers.
+- `tests/selenium` - real browser against a running site. UI flows: clicks, menus, dialogs, what the user sees.
+
+Cover a fix with a unit test whenever the broken logic is reachable without the UI - it is faster, it pins the exact payload, and it does not need an account. Fall back to selenium only for behaviour that lives in components.
+
+# Unit tests (tests/unit)
+
+Tests live in `tests/unit/src/tests/<category>/NN-name.test.js` (see `tests/unit/TESTS_STRUCTURE.md`). Numbers are used for selection (`yarn test 01`), shared code is in `src/util/`.
+
+## Rules
+
+1. Import app code through the `@map` alias: `import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';`
+2. No `jest.mock` in a test. Stubs are wired once in `tests/unit/jest.config.js` (`moduleNameMapper`). If a new import drags in UI or ESM (`Unexpected token 'export'`, react-leaflet, `.svg`), add a pattern there - patterns are matched against the import string as written, so they are suffix-based (`FavoritesManager$`, not the full path).
+3. Mock the boundary, never the subject. `apiGet` / `apiPost` are already `jest.fn()` in every test - assert on their arguments instead of stubbing the function you are testing.
+4. Build data with `src/util/fixtures/*` and extend the existing builders instead of assembling objects inline.
+5. Read what the app really sent with `src/util/` helpers: `findRequest(apiPost, '/mapapi/upload-file')`, `readUploadedInfo(apiPost)` (FormData -> gunzip -> JSON).
+6. Assert a whole payload with `toEqual`, not field by field - that also catches fields nobody meant to send.
+
+## Skeleton
+
+```js
+import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';
+import { apiPost } from '@map/util/HttpApi';
+import { findRequest } from '../../util/requests';
+import { createCtx, createTrack } from '../../util/fixtures/tracks';
+
+beforeEach(() => {
+    // one endpoint: apiPost.mockResolvedValue({ data: { status: 'ok' } })
+    // several: route by url
+    apiPost.mockImplementation(async (url) => {
+        if (url.endsWith('/mapapi/upload-file')) {
+            return { data: { status: 'ok' } };
+        }
+
+        return null;
+    });
+});
+
+test('what the app sends for <case>', async () => {
+    const ctx = createCtx({ track: createTrack({ name: 'Track' }) });
+
+    await saveTrackToCloud({ ctx, ltx: { loginUser: 'osmand@grr.la' }, currentFolder: 'Folder', fileName: 'Track', type: 'GPX', open: false });
+
+    const { options } = findRequest(apiPost, '/mapapi/upload-file');
+    expect(options.params).toEqual({ type: 'GPX', name: 'Folder/Track.gpx' });
+});
+```
+
+## Prove the test is real
+
+Revert the fix (or break the line under test), run the suite - the new test must fail. Restore and run again. A test that stays green with the bug reintroduced is worthless.
+
+## Run and check
+
+```bash
+cd tests/unit
+yarn test tracks/NN-name   # one file
+yarn test tracks           # category
+yarn test                  # all
+yarn lint                  # eslint + prettier
+```
+
+# Selenium tests (tests/selenium)
 
 Tests live in `tests/selenium/src/tests/<category>/NN-name.mjs` (categories: base, tracks, navigation, favorites, weather, search, map, menu, purchases; see `tests/selenium/TESTS_STRUCTURE.md`). A test is `export default async function test()` that runs top to bottom; any thrown error fails it. Numbers define run order and are used for selection (`yarn test 70-75`).
 
