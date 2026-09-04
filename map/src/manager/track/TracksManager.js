@@ -143,6 +143,13 @@ export function removeGpxExtension(name) {
     return name.replace(/\.gpx$/i, '');
 }
 
+export function renameLastFolderSegment(fullName, newName) {
+    const parts = fullName.split('/');
+    parts[parts.length - 1] = newName;
+
+    return parts.join('/');
+}
+
 export function prepareName(name, local = false) {
     if (typeof name !== 'string') {
         return '';

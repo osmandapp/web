@@ -16,6 +16,7 @@ import TracksManager, {
     GPX_FILE_EXT,
     KMZ_FILE_EXT,
     prepareName,
+    renameLastFolderSegment,
     updateMetadata,
 } from './TracksManager';
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
@@ -327,7 +328,7 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
 }
 
 export async function renameFolder(folder, newName, ctx) {
-    const newFolderName = folder.fullName.replace(folder.name, newName);
+    const newFolderName = renameLastFolderSegment(folder.fullName, newName);
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
         params: {
             folderName: folder.fullName,

@@ -30,8 +30,12 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         gpxFiles: {},
         tracksGroups: [],
         mutateGpxFiles: jest.fn(),
-        setTracksGroups: jest.fn(),
+        setTracksGroups: jest.fn((groups) => (ctx.tracksGroups = groups)),
         setCreateTrack: jest.fn(),
+        setListFiles: jest.fn((listFiles) => (ctx.listFiles = listFiles)),
+        setGpxFiles: jest.fn((gpxFiles) => (ctx.gpxFiles = gpxFiles)),
+        setUpdateFiles: jest.fn(),
+        setSelectedSort: jest.fn(),
         setSelectedGpxFile: (update) => {
             ctx.selectedGpxFile = typeof update === 'function' ? update(ctx.selectedGpxFile) : update;
         },
