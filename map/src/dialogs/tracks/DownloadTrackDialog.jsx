@@ -53,7 +53,7 @@ export default function DownloadTrackDialog({
                 simplified,
             });
         } else if (track) {
-            await downloadOriginalGpxFromCloud({ track: trackSource, sharedFile, simplified });
+            await downloadOriginalGpxFromCloud({ track: trackSource, sharedFile, simplified, ctx });
         } else if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
             await downloadCurrentLocalGpx({
                 selectedGpxFile: trackSource,
@@ -62,9 +62,9 @@ export default function DownloadTrackDialog({
                 simplified,
             });
         } else if (isTravelTrack(ctx)) {
-            await downloadTravelGpx(trackSource);
+            await downloadTravelGpx(trackSource, ctx);
         } else {
-            await downloadOriginalGpxFromCloud({ track: trackSource, simplified });
+            await downloadOriginalGpxFromCloud({ track: trackSource, simplified, ctx });
         }
         setDialogOpen(false);
         if (setOpenActions) {

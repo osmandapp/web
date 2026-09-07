@@ -23,7 +23,7 @@ const TrashActions = forwardRef(({ item, setOpenActions, changes, setChanges }, 
                         className={styles.action}
                         disabled={isFileRestrictedForDownload(item.file)}
                         onClick={() => {
-                            downloadFile(item.file).then();
+                            downloadFile(item.file, ctx).then();
                             setOpenActions(false);
                         }}
                     >

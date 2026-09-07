@@ -83,9 +83,9 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                 group.file.type
             )}&name=${encodeURIComponent(group.file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
         }
-        let f = await Utils.getFileData(group);
+        const f = await Utils.getFileData(group);
+        setProcessDownload(false);
         if (f) {
-            setProcessDownload(false);
             const favoriteFile = new File([f], group.file.name, {
                 type: 'text/plain',
             });
@@ -93,6 +93,11 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
             url.href = URL.createObjectURL(new Blob([favoriteFile]));
             url.download = group.file.name;
             url.click();
+        } else {
+            ctx.setTrackErrorMsg({
+                title: t('web:download_error_title'),
+                msg: t('web:download_error_msg', { name: group.file.name }),
+            });
         }
     };
 
