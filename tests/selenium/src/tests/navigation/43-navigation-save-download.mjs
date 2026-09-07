@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 
-import { clickBy, waitBy, waitByRemoved, sendKeysBy, assert } from '../../lib.mjs';
+import { clickBy, waitBy, waitByRemoved, sendKeysBy, assert, enclose, enumerateIds } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
@@ -11,6 +11,11 @@ import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
 const START_COORDS = '50.45010, 30.52340';
 const FINISH_COORDS = '50.45466, 30.51660';
+const ROUTE_TRACK_ACTION_BUTTONS = [
+    'se-route-track-actions-edit',
+    'se-route-track-actions-save-to-cloud',
+    'se-route-track-actions-download',
+];
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
@@ -19,14 +24,28 @@ export default async function test() {
 
     await buildRoute();
 
-    const trackName = await saveRouteToCloud();
+    const trackName = await saveRouteToCloud('se-route-save-to-cloud');
     await verifyTrackInCloud(trackName);
 
     await returnToNavigation();
-    await verifyDownloadDialog();
+    await verifyDownloadDialog('se-route-download-track');
 
     await navigateToTracks();
     await deleteTrack(trackName);
+
+    await returnToNavigation();
+    await openRouteInfoBlock();
+    await verifyDownloadDialog('se-route-track-actions-download');
+    const infoBlockTrackName = await saveRouteToCloud('se-route-track-actions-save-to-cloud');
+    // save from InfoBlock opens the cloud track, go back to the list
+    await waitBy(By.id('se-track-actions-edit'));
+    await clickBy(By.id('se-button-back'));
+    await verifyCloudTrackInfo(infoBlockTrackName);
+    await deleteTrack(infoBlockTrackName);
+
+    await returnToNavigation();
+    await openRouteInfoBlock();
+    await verifyEditOpensLocalTrack();
 
     await actionFinish();
 }
@@ -44,15 +63,32 @@ async function buildRoute() {
     await waitBy(ROUTE_SUMMARY_SELECTOR);
 }
 
-async function verifyDownloadDialog() {
-    await clickBy(By.id('se-route-download-track'));
+async function openRouteInfoBlock() {
+    await clickBy(By.id('se-route-more-information'));
+    await enclose(
+        async () => {
+            const actual = await enumerateIds('se-route-track-actions-');
+            return JSON.stringify(actual) === JSON.stringify(ROUTE_TRACK_ACTION_BUTTONS);
+        },
+        { tag: 'openRouteInfoBlock' }
+    );
+}
+
+async function verifyEditOpensLocalTrack() {
+    await clickBy(By.id('se-route-track-actions-edit'));
+    await waitByRemoved(By.id('se-route-track-actions-edit'));
+    await waitBy(By.id('se-local-track-actions-save-to-cloud'));
+}
+
+async function verifyDownloadDialog(buttonId) {
+    await clickBy(By.id(buttonId));
     await waitBy(By.id('se-download-track-full'));
     await clickBy(By.id('se-close-download-dialog'));
     await waitByRemoved(By.id('se-download-track-full'));
 }
 
-async function saveRouteToCloud() {
-    await clickBy(By.id('se-route-save-to-cloud'));
+async function saveRouteToCloud(buttonId) {
+    await clickBy(By.id(buttonId));
     await waitBy(By.id('se-save-track-dialog'));
 
     const nameInput = await waitBy(By.id('se-save-track-name'));
@@ -65,6 +101,10 @@ async function saveRouteToCloud() {
 
 async function verifyTrackInCloud(routeName) {
     await navigateToTracks();
+    await verifyCloudTrackInfo(routeName);
+}
+
+async function verifyCloudTrackInfo(routeName) {
     await waitBy(By.id(`se-${routeName}`));
     const infoElement = await waitBy(By.id(`se-cloud-t-info-${routeName}`));
     const infoText = await infoElement.getText();
