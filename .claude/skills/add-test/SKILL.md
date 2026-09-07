@@ -19,11 +19,12 @@ Tests live in `tests/unit/src/tests/<category>/NN-name.test.js` (see `tests/unit
 ## Rules
 
 1. Import app code through the `@map` alias: `import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';`
-2. No `jest.mock` in a test. Stubs are wired once in `tests/unit/jest.config.js` (`moduleNameMapper`). If a new import drags in UI or ESM (`Unexpected token 'export'`, react-leaflet, `.svg`), add a pattern there - patterns are matched against the import string as written, so they are suffix-based (`FavoritesManager$`, not the full path).
+2. No `jest.mock` in a test. Stubs are wired once in `tests/unit/jest.config.js` (`moduleNameMapper`). If a new import drags in UI or ESM (`Unexpected token 'export'`, react-leaflet, `.svg`), add a pattern there - patterns are matched against the import string as written, so they are suffix-based (`FavoritesManager$`, not the full path). The first matching pattern wins: a mapping to the real file must come BEFORE the broad UI stubs.
 3. Mock the boundary, never the subject. `apiGet` / `apiPost` are already `jest.fn()` in every test - assert on their arguments instead of stubbing the function you are testing.
-4. Build data with `src/util/fixtures/*` and extend the existing builders instead of assembling objects inline.
-5. Read what the app really sent with `src/util/` helpers: `findRequest(apiPost, '/mapapi/upload-file')`, `readUploadedInfo(apiPost)` (FormData -> gunzip -> JSON).
-6. Assert a whole payload with `toEqual`, not field by field - that also catches fields nobody meant to send.
+4. Never assert against a stub. If the module under test compares with a constant of a stubbed module (`searchTypeMap.POI`) or takes defaults from one (`MarkerOptions.DEFAULT_WPT_COLOR`), both sides are `undefined` and the test proves nothing. Map that module to the real file, or move the plain constants out of the heavy module into a constants file of their own.
+5. Build data with `src/util/fixtures/*` and extend the existing builders instead of assembling objects inline.
+6. Read what the app really sent with `src/util/` helpers: `findRequest(apiPost, '/mapapi/upload-file')`, `readUploadedInfo(apiPost)` (FormData -> gunzip -> JSON).
+7. Assert a whole payload with `toEqual`, not field by field - that also catches fields nobody meant to send. `toMatchObject` only when the object carries more fields than the test is about.
 
 ## Skeleton
 
@@ -55,9 +56,30 @@ test('what the app sends for <case>', async () => {
 });
 ```
 
+## Keep the suite small
+
+A test earns its place only if the behaviour can break silently and the user would notice it. Few dense tests, not many thin ones.
+
+- One test per behaviour, not per assertion. All the cases of one function belong together: the plain, the `name:` and the `lang:` format of a category name read better as one test than as three.
+- Group the branches of a function into one test with a few `expect`s - six kinds of search result, four fallbacks of an icon path, three formats of a wikipedia tag.
+- Do not test one-line guards (`if (!x) return null`), getters, constants, or the content of a generated resource file.
+- Do not test that a mock was called - test what the app decided.
+- Do not test behaviour that is unreachable from the app: check the callers first, an unguarded read is not a bug when every caller guards it.
+- The name says the behaviour, not the function: `a shared file is not confused with an own file of the same path`.
+
+A manager or a formatting module is 10-15 tests, not 30.
+
+## Look for bugs while writing
+
+Writing the test is the review. Report the bugs first, before describing the tests, and never write a test that blesses broken behaviour.
+
+- A red new test is a finding: decide whether the code or the expectation is wrong, and check the real callers before calling it a bug.
+- Usual suspects: a value read from another module at module level (breaks inside an import cycle), a regex without an anchor or a word boundary, a lookup key built differently on the write and on the read side, an optional chain on one access and not on the next.
+- A real defect that is out of scope goes to `KNOWN_ISSUES.md` with the file, the line and the mechanism.
+
 ## Prove the test is real
 
-Revert the fix (or break the line under test), run the suite - the new test must fail. Restore and run again. A test that stays green with the bug reintroduced is worthless.
+Revert the fix (or break the line under test), run the suite - the new test must fail. Restore and run again. A test that stays green with the bug reintroduced is worthless. After merging tests together, run the check again: every fix must still fail its test.
 
 ## Run and check
 

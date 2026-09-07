@@ -1,5 +1,6 @@
 import { apiGet } from '../util/HttpApi';
 import iconsRaw from '../resources/generated/poiicons.json';
+import capitalize from 'lodash-es/capitalize';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     CATEGORY_ICON,
@@ -26,9 +27,8 @@ import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
 import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
-import { SEARCH_BRAND } from './SearchManager';
+import { SEARCH_BRAND } from './searchConstants';
 import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
-import { getFirstSubstring, preparedType } from '../menu/search/search/SearchResultItem';
 
 const icons = new Set(iconsRaw);
 
@@ -180,6 +180,42 @@ function formattingPoiFilter(type, rename) {
         }
     }
     return type;
+}
+
+// the first value of a list the server sends as "value1;value2"
+export function getFirstSubstring(inputString) {
+    if (inputString?.includes(SEPARATOR)) {
+        return inputString.split(SEPARATOR)[0];
+    }
+
+    return inputString;
+}
+
+// tag of a poi type with the language it is written in: "brand:de"
+export function parseTagWithLang(tag) {
+    if (typeof tag !== 'string' || !tag.includes(':')) {
+        return { key: tag, lang: null };
+    }
+    const [key, lang] = tag.split(':');
+
+    return { key, lang };
+}
+
+// name of a poi type as it is shown to the user, optionally in another language
+export function preparedType(type, t, lang = null) {
+    let restoreLang;
+    if (t && lang) {
+        restoreLang = i18n.language;
+        i18n.changeLanguage(lang);
+    }
+
+    const res = capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
+
+    if (restoreLang) {
+        i18n.changeLanguage(restoreLang);
+    }
+
+    return res;
 }
 
 export function formattingPoiType(type) {
@@ -348,7 +384,7 @@ export function parseBrandType(type) {
  * Get category name from category type and translation function
  * Handles special cases: name:lang and lang:lang formats
  */
-export function getCategoryName(category, t, getFirstSubstring) {
+export function getCategoryName(category, t) {
     if (category?.startsWith(TOP_INDEX_PREFIX)) {
         return getTopIndexValueName(category);
     }

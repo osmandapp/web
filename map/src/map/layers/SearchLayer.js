@@ -52,59 +52,15 @@ import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRe
 import { useNavigate } from 'react-router-dom';
 import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import { FAVORITE_HIT_GROUP_ID, searchTypeMap, USER_OBJECT_TYPES } from '../../manager/searchConstants';
+import { getObjIdSearch } from '../../manager/SearchManager';
 import {
     getAdditionalMatchedAmenityObjects,
     getMatchedAmenityProperties,
     hasValidMatchedObjectCoords,
 } from '../../manager/SpatialSearchMatchedObjects';
 
-export const SEARCH_TYPE_CATEGORY = 'category';
-
-export const SEARCH_ICON_MAP_LOCATION = 'location';
-export const SEARCH_ICON_MAP_BUILDING = 'house';
-export const SEARCH_ICON_MAP_STREET = 'street';
-export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
-export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
-
 export const ZOOM_TO_MAP = 17;
-
-export const searchTypeMap = {
-    LOCATION: 'LOCATION',
-    INTERSECTION: 'STREET_INTERSECTION',
-    HOUSE: 'HOUSE',
-    STREET: 'STREET',
-    POI: 'POI',
-    POI_TYPE: 'POI_TYPE',
-    CITY: 'CITY',
-    TOWN: 'TOWN',
-    VILLAGE: 'VILLAGE',
-    GPX_TRACK: 'GPX_TRACK',
-    FAVORITE: 'FAVORITE',
-    WPT: 'WPT',
-};
-
-export const WPT_TRACK_FILE = 'wptTrackFile';
-export const WPT_TRACK_SHARED = 'wptTrackShared';
-export const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK, searchTypeMap.WPT]);
-
-export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
-
-export const typeIconMap = {
-    [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_LOCATION,
-    [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
-    [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
-    [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
-    [searchTypeMap.GPX_TRACK]: SEARCH_ICON_MAP_GPX_TRACK,
-};
-
-export function getObjIdSearch(obj) {
-    if (obj.properties[POI_ID]) {
-        return obj.properties[POI_ID];
-    } else if (obj.geometry.coordinates[0] === 0 && obj.geometry.coordinates[1] === 0) {
-        return null;
-    }
-    return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
-}
 
 // Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
 export function buildFavGroupMap(favoriteFeatures) {

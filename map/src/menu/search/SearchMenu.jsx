@@ -38,7 +38,7 @@ import useSearchNav from '../../util/hooks/search/useSearchNav';
 import useSpatialSearch from '../../util/hooks/search/useSpatialSearch';
 import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import ExploreMenu from './explore/ExploreMenu';
-import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
+import { SEARCH_TYPE_CATEGORY } from '../../manager/searchConstants';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
 

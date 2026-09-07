@@ -4,7 +4,7 @@ import { ReactComponent as AddIcon } from '../../../../assets/icons/ic_action_ad
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../../context/AppContext';
 import LoginContext from '../../../../context/LoginContext';
-import MarkerOptions from '../../../../map/markers/MarkerOptions';
+import MarkerOptions, { BACKGROUND_WPT_SHAPE_CIRCLE } from '../../../../map/markers/MarkerOptions';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 import ThickDivider from '../../../../frame/components/dividers/ThickDivider';
@@ -27,7 +27,7 @@ import { ReactComponent as RemoveIcon } from '../../../../assets/icons/ic_action
 import styles from '../wptEditPanel.module.css';
 import menuStyles from '../../../../menu/trackfavmenu.module.css';
 
-const CIRCLE = MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE;
+const CIRCLE = BACKGROUND_WPT_SHAPE_CIRCLE;
 const COLOR_ITEM_SIZE = 36;
 const COLOR_ITEM_CONTAINER = 48;
 

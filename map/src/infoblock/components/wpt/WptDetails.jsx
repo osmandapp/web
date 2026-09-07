@@ -31,7 +31,13 @@ import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_opens
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import {
+    cleanHtml,
+    DEFAULT_ICON_COLOR,
+    DEFAULT_POI_COLOR,
+    DEFAULT_POI_SHAPE,
+    getFirstSubstring,
+} from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { navigateToFavoritesMenu, resolveWptAppearance } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
@@ -67,9 +73,9 @@ import parse from 'html-react-parser';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
+import { getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { iconPathMap, getIconFromMap } from '../../../map/util/MapManager';
-import { SEARCH_ICON_MAP_LOCATION } from '../../../map/layers/SearchLayer';
+import { SEARCH_ICON_MAP_LOCATION } from '../../../manager/searchConstants';
 import {
     TRANSPORT_STOP_SHIELD_COLOR,
     TRANSPORT_STOP_BACKGROUND,

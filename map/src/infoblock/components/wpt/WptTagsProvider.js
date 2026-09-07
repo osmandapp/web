@@ -15,10 +15,10 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, getIconNameForPoiType, parseTagWithLang, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
-import { parseTagWithLang } from '../../../manager/SearchManager';
+
 import { localizeWeekTokens } from '../../../util/dateFmt';
 import {
     convertMeters,
@@ -257,9 +257,12 @@ async function getWptTags(obj, type, ctx) {
 
 async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
     let tagObj = { key };
-    tagObj.value = key.includes(WIKIPEDIA) ? getWikipediaURL(key, value) : value;
-    tagObj.isUrl = isUrl(tagObj.value);
-    if (!tagObj.isUrl) {
+    tagObj.value = value;
+    tagObj.isUrl = isUrl(value);
+    if (key.includes(WIKIPEDIA)) {
+        tagObj.url = getWikiParams(key, value).url;
+        tagObj.isUrl = true;
+    } else if (!tagObj.isUrl) {
         tagObj.socialMediaUrl = getSocialMediaUrl(key, value);
         if (tagObj.socialMediaUrl != null) {
             tagObj.isUrl = true;
@@ -551,12 +554,14 @@ function getSocialMediaUrl(key, value) {
     if (trimmedValue.charAt(0) === '/') {
         trimmedValue = trimmedValue.substring(1);
     }
-    if (trimmedValue.charAt(trimmedValue.length - 1) === '/') {
+    if (trimmedValue.endsWith('/')) {
         trimmedValue = trimmedValue.substring(0, trimmedValue.length - 1);
     }
 
-    // It cannot be username
     if (isUrl(trimmedValue)) {
+        return trimmedValue;
+    }
+    if (trimmedValue.includes('/')) {
         return 'https://' + trimmedValue;
     }
 
@@ -571,21 +576,11 @@ function getSocialMediaUrl(key, value) {
         youtube: 'https://youtube.com/channel/%s',
     };
 
-    if (Object.prototype.hasOwnProperty.call(urls, key)) {
+    if (Object.hasOwn(urls, key)) {
         return urls[key].replace('%s', trimmedValue);
     } else {
         return null;
     }
-}
-
-function addWikipediaTags(key, value, tagObj) {
-    let wikiParams = getWikiParams(key, value);
-    tagObj.value = wikiParams.text;
-    tagObj.socialMediaUrl = wikiParams.url;
-    tagObj.isUrl = true;
-    tagObj.textPrefix = wikiParams.prefix;
-
-    return tagObj;
 }
 
 export function addWikidataTags(key, value, tagObj) {
@@ -637,38 +632,16 @@ function getWikiParams(key, value) {
         let formattedTitle = title.replace(/ /g, '_');
         url = 'https://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
     }
-    let text = title !== null ? title : value;
-    const arr = key.split('_-_');
-    const prefix =
-        arr.length > 1
-            ? i18n.t('shared_string_wikipedia') + ' (' + i18n.t(`lang_${arr[1]}`) + ')'
-            : i18n.t('shared_string_wikipedia');
-
-    return { text, url, prefix };
+    return { text: title !== null ? title : value, url };
 }
 
 function isUrl(value) {
     try {
-        new URL(value);
-        return true;
+        const { protocol } = new URL(value);
+        return protocol === 'http:' || protocol === 'https:';
     } catch (_) {
         return false;
     }
-}
-
-function getWikipediaURL(key, value) {
-    if (value) {
-        value = value.replace(/ /g, '_');
-        if (!value.startsWith('http://') && !value.startsWith('https://')) {
-            const keyArr = key.split('_-_');
-            if (keyArr.length === 1) {
-                value = 'https://en.wikipedia.org/wiki/' + value;
-            } else {
-                value = 'https://' + keyArr[1] + '.wikipedia.org/wiki/' + value;
-            }
-        }
-    }
-    return value;
 }
 
 export function openWikipediaContent(tag, setDevWikiContent) {
@@ -704,7 +677,7 @@ function fixWikiUrl(text) {
 }
 
 async function getWikipediaContent(tag) {
-    const wikiData = parseUrl(tag.value, WIKIPEDIA);
+    const wikiData = parseUrl(tag.url ?? tag.value, WIKIPEDIA);
     if (!wikiData) {
         return null;
     }
@@ -715,7 +688,7 @@ async function getWikipediaContent(tag) {
             lang: wikiData.lang,
         },
     });
-    if (response && response.data) {
+    if (response?.data) {
         return response.data;
     } else {
         return null;
@@ -734,7 +707,7 @@ async function getWikivoyageContent(link) {
             lang: wikivoyageData.lang,
         },
     });
-    if (response && response.data) {
+    if (response?.data) {
         return response.data;
     } else {
         return null;
@@ -742,7 +715,8 @@ async function getWikivoyageContent(link) {
 }
 
 function parseUrl(url, site) {
-    const regex = new RegExp(`https?://([a-z]+)\\.${site}\\.org/wiki/(.+)`);
+    // a language code may hold a dash or a digit: be-tarask, zh-min-nan, nds-nl
+    const regex = new RegExp(`https?://([a-z0-9-]+)\\.${site}\\.org/wiki/(.+)`);
     const match = url.match(regex);
 
     if (match) {

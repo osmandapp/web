@@ -113,7 +113,7 @@ import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
-import { searchTypeMap } from '../map/layers/SearchLayer';
+import { searchTypeMap } from '../manager/searchConstants';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);

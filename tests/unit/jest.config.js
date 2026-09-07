@@ -35,20 +35,30 @@ module.exports = {
         // AppContext pulls in the whole app - only the track-type helpers are needed
         'context/AppContext$': `${STUBS}/appContext.js`,
         // modules pulling map layers / routing / i18n - not exercised by unit tests
-        '^leaflet$': `${STUBS}/empty.js`,
+        // leaflet itself works in jsdom, the map layers around it do not
+        '^leaflet$': path.join(MAP_DIR, 'node_modules/leaflet/dist/leaflet-src.js'),
         // sorting is plain logic that createTrackGroups depends on, keep it real
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
         // the visible-tracks cache is plain localStorage logic used by the managers
         'visibletracks/VisibleTracks$': path.join(MAP_DIR, 'src/menu/visibletracks/VisibleTracks.jsx'),
+        // poi tag names and formatting are plain logic shared by the poi menus
+        'wpt/WptTagsProvider$': path.join(MAP_DIR, 'src/infoblock/components/wpt/WptTagsProvider.js'),
+        // the row of a search result and the query it builds are plain logic
+        'search/SearchResults$': path.join(MAP_DIR, 'src/menu/search/search/SearchResults.jsx'),
+        'search/SearchResultItem$': path.join(MAP_DIR, 'src/menu/search/search/SearchResultItem.jsx'),
         // plain constants shared by the managers
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
+        // unit conversion is plain math used by the poi tags
+        'units/UnitsConverter$': path.join(MAP_DIR, 'src/menu/settings/units/UnitsConverter.js'),
+        // icons and marker shapes are plain svg logic
+        'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
-        FavoritesManager$: `${STUBS}/empty.js`,
-        MarkerOptions$: `${STUBS}/empty.js`,
+        FavoritesManager$: path.join(MAP_DIR, 'src/manager/FavoritesManager.js'),
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
-        '/i18n$': `${STUBS}/empty.js`,
+        // the app i18n module boots the whole translation setup, i18next itself stays real
+        '/i18n$': `${STUBS}/i18n.js`,
         // app sources
         '^@map/(.*)$': path.join(MAP_DIR, 'src/$1'),
     },

@@ -1,4 +1,7 @@
 import MarkerOptions, {
+    BACKGROUND_WPT_SHAPE_CIRCLE,
+    BACKGROUND_WPT_SHAPE_OCTAGON,
+    BACKGROUND_WPT_SHAPE_SQUARE,
     changeIconSizeWpt,
     createPoiIcon,
     getBackground,
@@ -47,11 +50,10 @@ const colors = [
     '#d00d0d',
     '#a71de1',
 ];
-const shapes = [
-    MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
-    MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON,
-    MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE,
-];
+// read on call, not on import: MarkerOptions imports this file back through the poi managers
+function getShapes() {
+    return [BACKGROUND_WPT_SHAPE_CIRCLE, BACKGROUND_WPT_SHAPE_OCTAGON, BACKGROUND_WPT_SHAPE_SQUARE];
+}
 
 function GroupResult(clienttimems, updatetimems, data) {
     this.clienttimems = clienttimems;
@@ -64,7 +66,7 @@ function getShapesSvg(color) {
     // Convert OsmAnd color formats (#rrggbb / #aarrggbb) to a CSS color string
     // so SVG `fill="..."` honours alpha for transparent palette entries.
     const svgColor = hexToRgba(color);
-    shapes.forEach((shape) => {
+    getShapes().forEach((shape) => {
         res[shape] = getBackground(svgColor, shape);
     });
     return res;
@@ -912,7 +914,6 @@ const FavoritesManager = {
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
     colors: colors,
-    shapes: shapes,
 };
 
 export default FavoritesManager;

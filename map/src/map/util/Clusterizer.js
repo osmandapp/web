@@ -2,7 +2,8 @@ import L from 'leaflet';
 import Utils from '../../util/Utils';
 import { getPointLatLon } from './TrackLayerProvider';
 import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
-import { getObjIdSearch, searchTypeMap } from '../layers/SearchLayer';
+import { getObjIdSearch } from '../../manager/SearchManager';
+import { searchTypeMap } from '../../manager/searchConstants';
 import {
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
