@@ -303,7 +303,8 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
         }
         if (num !== undefined) {
             const n = Number.parseFloat(num);
-            if (arcN >= 4 && arcN <= 5 && (n === 0 || n === 1)) {
+            // 3rd is the x-axis rotation, 4th and 5th are flags: none of them is a size
+            if (arcN === 3 || (arcN >= 4 && arcN <= 5 && (n === 0 || n === 1))) {
                 arcN = arcN === 5 ? 0 : arcN + 1;
                 return num;
             }
@@ -320,8 +321,9 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
 export function changeIconSizeWpt(svgHtml, iconSize, shapeSize, shape = null) {
     // Update the sizes inside viewBox and for <image>, <circle>, <path>, <rect>
     const viewBoxPattern = /viewBox="0 0 (\d+) (\d+)"/;
-    const widthPattern = /width="(\d+)"/;
-    const heightPattern = /height="(\d+)"/;
+    // the space keeps stroke-width out: it is scaled below, not set to the size of the shape
+    const widthPattern = /(\s)width="(\d+)"/;
+    const heightPattern = /(\s)height="(\d+)"/;
     const circlePattern = /<circle ([^>]*)cx="(\d+\.?\d*)" ([^>]*)cy="(\d+\.?\d*)" ([^>]*)r="(\d+\.?\d*)" ([^>]*)\/>/;
     const pathPattern = /<path\s[^>]*d="([^"]+)"[^>]*>/g;
     const rectPattern =
@@ -345,14 +347,14 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize, shape = null) {
         return imageMatch ? imageMatch[0] : match;
     });
 
-    svgHtml = svgHtml.replace(widthPattern, () => {
+    svgHtml = svgHtml.replace(widthPattern, (match, before) => {
         // Update width
-        return `width="${shapeSize}"`;
+        return `${before}width="${shapeSize}"`;
     });
 
-    svgHtml = svgHtml.replace(heightPattern, () => {
+    svgHtml = svgHtml.replace(heightPattern, (match, before) => {
         // Update height
-        return `height="${shapeSize}"`;
+        return `${before}height="${shapeSize}"`;
     });
 
     // Update the sizes inside <circle>, <path>, <rect>

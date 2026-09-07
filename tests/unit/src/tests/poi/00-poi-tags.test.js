@@ -1,9 +1,7 @@
 import WptTagsProvider, {
-    filterTag,
     getOsmIdFromOsmUrl,
     openWikipediaContent,
     WIKIPEDIA,
-    WIKIMEDIA_COMMONS,
 } from '@map/infoblock/components/wpt/WptTagsProvider';
 import { apiGet } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
