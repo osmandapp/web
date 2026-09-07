@@ -677,7 +677,7 @@ function fixWikiUrl(text) {
 }
 
 async function getWikipediaContent(tag) {
-    const wikiData = parseUrl(tag.value, WIKIPEDIA);
+    const wikiData = parseUrl(tag.url ?? tag.value, WIKIPEDIA);
     if (!wikiData) {
         return null;
     }
@@ -688,7 +688,7 @@ async function getWikipediaContent(tag) {
             lang: wikiData.lang,
         },
     });
-    if (response && response.data) {
+    if (response?.data) {
         return response.data;
     } else {
         return null;

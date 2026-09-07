@@ -29,6 +29,31 @@ describe('openWikipediaContent', () => {
         expect(findRequest(apiGet, '/search/get-wiki-content').options.params.lang).toBe('be-tarask');
     });
 
+    test('the article of a tag of the recommended format is opened by its link', async () => {
+        apiGet.mockResolvedValue({ data: '<div>article</div>' });
+        const { res } = await WptTagsProvider.getWptTags(
+            { options: { wikipedia: 'de:München' } },
+            { isPoi: true },
+            {
+                poiIconCache: {},
+                setPoiIconCache: jest.fn(),
+                unitsSettings: { len: 'si_km_m' },
+            }
+        );
+        apiGet.mockClear();
+
+        openWikipediaContent(
+            res.find((tag) => tag.key === WIKIPEDIA),
+            jest.fn()
+        );
+        await Promise.resolve();
+
+        expect(findRequest(apiGet, '/search/get-wiki-content').options.params).toEqual({
+            lang: 'de',
+            title: 'München',
+        });
+    });
+
     test('a link that is not an article is not requested', async () => {
         openArticle('https://example.com/Munich');
         await Promise.resolve();
