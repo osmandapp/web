@@ -30,10 +30,10 @@ function favorites({ shared = false, wpts = [WPT] } = {}) {
 }
 
 describe('buildFavoriteFeatures', () => {
-    test('a point found by the server is shown with its own appearance', () => {
-        const points = [{ file: 'favorites/favorites.gpx', shared: false, name: 'Home' }];
+    const POINTS = [{ file: 'favorites/favorites.gpx', shared: false, name: 'Home' }];
 
-        const [feature] = buildFavoriteFeatures(favorites(), points);
+    test('a point found by the server is shown with its own appearance', () => {
+        const [feature] = buildFavoriteFeatures(favorites(), POINTS);
 
         expect(feature.properties).toMatchObject({
             [CATEGORY_TYPE]: searchTypeMap.FAVORITE,
@@ -46,46 +46,36 @@ describe('buildFavoriteFeatures', () => {
     });
 
     test('a shared file is not confused with an own file of the same path', () => {
-        const ownPoint = [{ file: 'favorites/favorites.gpx', shared: false, name: 'Home' }];
         const sharedPoint = [{ file: 'favorites/favorites.gpx', shared: true, name: 'Home' }];
 
         expect(buildFavoriteFeatures(favorites({ shared: false }), sharedPoint)).toEqual([]);
-        expect(buildFavoriteFeatures(favorites({ shared: true }), ownPoint)).toEqual([]);
+        expect(buildFavoriteFeatures(favorites({ shared: true }), POINTS)).toEqual([]);
         expect(buildFavoriteFeatures(favorites({ shared: true }), sharedPoint)).toHaveLength(1);
     });
 
-    test('a point that is not loaded is skipped', () => {
-        const points = [{ file: 'favorites/favorites.gpx', shared: false, name: 'Not loaded' }];
+    test('a point that is not loaded or has no coordinates is skipped', () => {
+        const notLoaded = [{ file: 'favorites/favorites.gpx', shared: false, name: 'Not loaded' }];
 
-        expect(buildFavoriteFeatures(favorites(), points)).toEqual([]);
-    });
-
-    test('a point without coordinates is not searchable', () => {
-        const wpts = [{ ...WPT, lat: null }];
-        const points = [{ file: 'favorites/favorites.gpx', shared: false, name: 'Home' }];
-
-        expect(buildFavoriteFeatures(favorites({ wpts }), points)).toEqual([]);
-    });
-
-    test('nothing is loaded yet', () => {
-        expect(buildFavoriteFeatures(null, [{ file: 'f.gpx', shared: false, name: 'Home' }])).toEqual([]);
+        expect(buildFavoriteFeatures(favorites(), notLoaded)).toEqual([]);
+        expect(buildFavoriteFeatures(favorites({ wpts: [{ ...WPT, lat: null }] }), POINTS)).toEqual([]);
+        expect(buildFavoriteFeatures(null, POINTS)).toEqual([]);
     });
 });
 
 describe('buildWptFeatures', () => {
     const TRACK_WPT = { name: 'Camp', lat: '50.45', lon: '30.52' };
+    const POINT = { file: 'Folder/Track.gpx', shared: false, name: 'Camp', lat: 50.45, lon: 30.52 };
 
     function ctx({ shared = false, wpts = [TRACK_WPT], pointsGroups } = {}) {
         const file = { name: 'Folder/Track.gpx', wpts, info: pointsGroups ? { pointsGroups } : undefined };
+
         return shared
             ? { shareWithMeFiles: { tracks: { 'Folder/Track.gpx': file } } }
             : { gpxFiles: { 'Folder/Track.gpx': file } };
     }
 
-    test('a waypoint of an opened track keeps its coordinates and track', () => {
-        const points = [{ file: 'Folder/Track.gpx', shared: false, name: 'Camp', lat: 50.45, lon: 30.52 }];
-
-        const [feature] = buildWptFeatures(ctx(), points);
+    test('a waypoint of an opened track keeps its coordinates and its track', () => {
+        const [feature] = buildWptFeatures(ctx(), [POINT]);
 
         expect(feature.geometry.coordinates).toEqual([30.52, 50.45]);
         expect(feature.properties).toMatchObject({
@@ -99,9 +89,8 @@ describe('buildWptFeatures', () => {
     test('the appearance of the waypoint group is used', () => {
         const wpts = [{ ...TRACK_WPT, category: 'Camps' }];
         const pointsGroups = { Camps: { color: '#00ff00', iconName: 'tent' } };
-        const points = [{ file: 'Folder/Track.gpx', shared: false, name: 'Camp', lat: 50.45, lon: 30.52 }];
 
-        const [feature] = buildWptFeatures(ctx({ wpts, pointsGroups }), points);
+        const [feature] = buildWptFeatures(ctx({ wpts, pointsGroups }), [POINT]);
 
         expect(feature.properties[COLOR_NAME_EXTENSION]).toBe('#00ff00');
         expect(feature.properties[ICON_KEY_NAME]).toBe('tent');
@@ -109,27 +98,27 @@ describe('buildWptFeatures', () => {
     });
 
     test('a waypoint of a shared track is read from the shared files', () => {
-        const points = [{ file: 'Folder/Track.gpx', shared: true, name: 'Camp', lat: 50.45, lon: 30.52 }];
-
-        const [feature] = buildWptFeatures(ctx({ shared: true }), points);
+        const [feature] = buildWptFeatures(ctx({ shared: true }), [{ ...POINT, shared: true }]);
 
         expect(feature.properties[WPT_TRACK_SHARED]).toBe(true);
     });
 
-    test('a waypoint of a track that is not opened is skipped', () => {
-        const points = [{ file: 'Other.gpx', shared: false, name: 'Camp', lat: 50.45, lon: 30.52 }];
-
-        expect(buildWptFeatures(ctx(), points)).toEqual([]);
-    });
-
-    test('a waypoint that moved is not the same waypoint', () => {
-        const points = [{ file: 'Folder/Track.gpx', shared: false, name: 'Camp', lat: 50.46, lon: 30.52 }];
-
-        expect(buildWptFeatures(ctx(), points)).toEqual([]);
+    test('a waypoint of a track that is not opened, or one that moved, is skipped', () => {
+        expect(buildWptFeatures(ctx(), [{ ...POINT, file: 'Other.gpx' }])).toEqual([]);
+        expect(buildWptFeatures(ctx(), [{ ...POINT, lat: 50.46 }])).toEqual([]);
     });
 });
 
-describe('buildTrackFeatures', () => {
+describe('the id of a result', () => {
+    test('the id of the server is used, otherwise the coordinates', () => {
+        expect(getObjIdSearch({ properties: { [POI_ID]: 123 }, geometry: { coordinates: [30.52, 50.45] } })).toBe(123);
+        expect(getObjIdSearch({ properties: {}, geometry: { coordinates: [30.52, 50.45] } })).toBe('50.45,30.52');
+    });
+
+    test('a result of the user own data has no place on the map', () => {
+        expect(getObjIdSearch({ properties: {}, geometry: { coordinates: [0, 0] } })).toBeNull();
+    });
+
     test('a track is shown by its file name', () => {
         const [feature] = buildTrackFeatures([{ file: 'Folder/Track.gpx' }]);
 
@@ -140,51 +129,17 @@ describe('buildTrackFeatures', () => {
     });
 });
 
-describe('getObjIdSearch', () => {
-    test('the id of the server is used when there is one', () => {
-        const obj = { properties: { [POI_ID]: 123 }, geometry: { coordinates: [30.52, 50.45] } };
-
-        expect(getObjIdSearch(obj)).toBe(123);
-    });
-
-    test('a result without an id is addressed by its coordinates', () => {
-        const obj = { properties: {}, geometry: { coordinates: [30.52, 50.45] } };
-
-        expect(getObjIdSearch(obj)).toBe('50.45,30.52');
-    });
-
-    test('a result of the user own data has no place on the map', () => {
-        const obj = { properties: {}, geometry: { coordinates: [0, 0] } };
-
-        expect(getObjIdSearch(obj)).toBeNull();
-    });
-});
-
-describe('parseTagWithLang', () => {
-    test('the language is taken after the colon', () => {
+describe('tags and photos of a result', () => {
+    test('the language of a tag is taken after the colon', () => {
         expect(parseTagWithLang('brand:de')).toEqual({ key: 'brand', lang: 'de' });
-    });
-
-    test('a tag without a language is left as it is', () => {
         expect(parseTagWithLang('brand')).toEqual({ key: 'brand', lang: null });
         expect(parseTagWithLang(undefined)).toEqual({ key: undefined, lang: null });
     });
-});
 
-describe('getPhotoTitle', () => {
-    test('the file name is taken from a wikimedia link', () => {
+    test('the file name of a photo is taken from its link', () => {
         expect(getPhotoTitle(COMMONS_WIKI_BASE_URL + 'Kyiv.jpg')).toBe('Kyiv.jpg');
-    });
-
-    test('the file name is taken from an osmand link', () => {
         expect(getPhotoTitle(OSMAND_WIKI_BASE_URL + 'a/b/Kyiv.jpg')).toBe('Kyiv.jpg');
-    });
-
-    test('an unknown link is shown as it is', () => {
         expect(getPhotoTitle('https://example.com/photo.jpg')).toBe('https://example.com/photo.jpg');
-    });
-
-    test('a photo of the gallery is read by its title', () => {
         expect(getPhotoTitle({ properties: { imageTitle: COMMONS_WIKI_BASE_URL + 'Kyiv.jpg' } })).toBe('Kyiv.jpg');
     });
 });

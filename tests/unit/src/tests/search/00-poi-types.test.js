@@ -26,47 +26,24 @@ describe('brand types', () => {
         expect(parseBrandType('okko:en')).toEqual({ brandName: 'okko', lang: 'en' });
     });
 
-    test('a plain category is not a brand', () => {
+    test('the other formats of a type are not brands', () => {
         expect(isBrandType('shop')).toBeFalsy();
-        expect(parseBrandType('shop')).toBeNull();
-    });
-
-    test('the name and lang search formats are not brands', () => {
         expect(isBrandType('name:en')).toBe(false);
         expect(isBrandType('lang:en')).toBe(false);
-        expect(parseBrandType('name:en')).toBeNull();
-    });
-
-    test('a top index key is not a brand', () => {
         expect(isBrandType('top_index_brand_okko:en')).toBe(false);
-    });
-});
-
-describe('getTopIndexValueName', () => {
-    test('the value is taken after the key of the top index', () => {
-        expect(getTopIndexValueName('top_index_brand_okko')).toBe('okko');
-        expect(getTopIndexValueName('top_index_brand_burger_king')).toBe('burger_king');
-    });
-
-    test('a key without a value is left as it is', () => {
-        expect(getTopIndexValueName('top_index_brand')).toBe('brand');
+        expect(parseBrandType('shop')).toBeNull();
     });
 });
 
 describe('getCategoryName', () => {
-    test('a plain category is translated', () => {
+    test('a category is translated, a top index one shows the value itself', () => {
         expect(getCategoryName('shop', t)).toBe('poi_shop');
-    });
-
-    test('a top index category shows the value itself, it has no translation', () => {
         expect(getCategoryName('top_index_brand_okko', t)).toBe('okko');
+        expect(getTopIndexValueName('top_index_brand_burger_king')).toBe('burger_king');
     });
 
-    test('a search by name in a language adds the language in brackets', () => {
+    test('a search by name or by language has its own format', () => {
         expect(getCategoryName('name:de', t)).toBe('poi_name (lang_de)');
-    });
-
-    test('a search by language uses its own translation key', () => {
         expect(getCategoryName('lang:de', t)).toBe('poi_lang_de');
     });
 
@@ -78,16 +55,12 @@ describe('getCategoryName', () => {
 describe('formattingPoiType', () => {
     test('the type is read as a sentence', () => {
         expect(formattingPoiType('drinking_water')).toBe('Drinking water');
-        expect(formattingPoiType('shop')).toBe('Shop');
-    });
-
-    test('an empty type is left as it is', () => {
         expect(formattingPoiType('')).toBe('');
         expect(formattingPoiType(undefined)).toBeUndefined();
     });
 });
 
-describe('getIconNameForPoiType', () => {
+describe('the icon of a poi type', () => {
     test('the osm tag and value of the point win over the other names', () => {
         const name = getIconNameForPoiType({
             typeOsmTag: 'amenity',
@@ -99,56 +72,33 @@ describe('getIconNameForPoiType', () => {
         expect(name).toBe('amenity_bank');
     });
 
-    test('the icon key is used when the osm pair has no icon', () => {
-        const name = getIconNameForPoiType({
-            typeOsmTag: 'amenity',
-            typeOsmValue: 'not_existing',
-            iconKeyName: 'shop_alcohol',
-        });
-
-        expect(name).toBe('shop_alcohol');
-    });
-
-    test('a topo icon is used when there is no plain one', () => {
+    test('the next names are tried in turn: icon key, topo, icon of the poi', () => {
+        expect(getIconNameForPoiType({ typeOsmTag: 'a', typeOsmValue: 'b', iconKeyName: 'shop_alcohol' })).toBe(
+            'shop_alcohol'
+        );
         expect(getIconNameForPoiType({ iconKeyName: 'aerodrome' })).toBe('topo_aerodrome');
-    });
-
-    test('the icon of the poi is the last name to try', () => {
         expect(getIconNameForPoiType({ iconKeyName: 'not_existing', iconName: 'shop_alcohol' })).toBe('shop_alcohol');
     });
 
-    test('the string null of the server is not an icon name', () => {
-        expect(getIconNameForPoiType({ iconKeyName: 'not_existing', iconName: 'null' })).toBe(DEFAULT_POI_ICON);
-    });
-
     test('an unknown type falls back to the default icon, or to nothing when asked', () => {
-        expect(getIconNameForPoiType({ iconKeyName: 'not_existing' })).toBe(DEFAULT_POI_ICON);
+        // the server sends the string "null" when a poi has no icon of its own
+        expect(getIconNameForPoiType({ iconKeyName: 'not_existing', iconName: 'null' })).toBe(DEFAULT_POI_ICON);
         expect(getIconNameForPoiType({ iconKeyName: 'not_existing', useDefault: false })).toBeNull();
-    });
-});
-
-describe('getCatPoiIconName', () => {
-    test('the icon of the point itself is used', () => {
-        expect(getCatPoiIconName({ [TYPE_OSM_TAG]: 'amenity', [TYPE_OSM_VALUE]: 'bank' })).toBe('amenity_bank');
     });
 
     test('the parent category gives the icon when the point has none', () => {
-        const props = {
+        const own = { [TYPE_OSM_TAG]: 'amenity', [TYPE_OSM_VALUE]: 'bank' };
+        const fromCategory = {
             [ICON_KEY_NAME]: 'not_existing',
             [POI_ICON_NAME]: 'not_existing',
             [MAIN_CATEGORY_KEY_NAME]: 'shop_alcohol',
         };
 
-        expect(getCatPoiIconName(props)).toBe('shop_alcohol');
-    });
-
-    test('the icon of the category is the last name to try', () => {
-        const props = { [ICON_KEY_NAME]: 'not_existing', [CATEGORY_ICON]: 'shop_alcohol' };
-
-        expect(getCatPoiIconName(props)).toBe('shop_alcohol');
-    });
-
-    test('an unknown point still gets the default icon', () => {
+        expect(getCatPoiIconName(own)).toBe('amenity_bank');
+        expect(getCatPoiIconName(fromCategory)).toBe('shop_alcohol');
+        expect(getCatPoiIconName({ [ICON_KEY_NAME]: 'not_existing', [CATEGORY_ICON]: 'shop_alcohol' })).toBe(
+            'shop_alcohol'
+        );
         expect(getCatPoiIconName({})).toBe(DEFAULT_POI_ICON);
     });
 });

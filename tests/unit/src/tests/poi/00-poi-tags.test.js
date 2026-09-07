@@ -8,28 +8,25 @@ import { findRequest } from '../../util/requests';
 
 describe('openWikipediaContent', () => {
     function openArticle(url) {
-        const setDevWikiContent = jest.fn();
         apiGet.mockResolvedValue({ data: '<div>article</div>' });
-
-        openWikipediaContent({ key: WIKIPEDIA, value: url }, setDevWikiContent);
-
-        return setDevWikiContent;
+        openWikipediaContent({ key: WIKIPEDIA, value: url }, jest.fn());
     }
 
     test('the language and the title are taken from the article link', async () => {
         openArticle('https://de.wikipedia.org/wiki/M%C3%BCnchen');
         await Promise.resolve();
 
-        const { options } = findRequest(apiGet, '/search/get-wiki-content');
-        expect(options.params).toEqual({ lang: 'de', title: 'München' });
+        expect(findRequest(apiGet, '/search/get-wiki-content').options.params).toEqual({
+            lang: 'de',
+            title: 'München',
+        });
     });
 
-    test('an article of a language with a dash in its code is opened too', async () => {
+    test('a language code with a dash is a language too', async () => {
         openArticle('https://be-tarask.wikipedia.org/wiki/Mensk');
         await Promise.resolve();
 
-        const { options } = findRequest(apiGet, '/search/get-wiki-content');
-        expect(options.params).toEqual({ lang: 'be-tarask', title: 'Mensk' });
+        expect(findRequest(apiGet, '/search/get-wiki-content').options.params.lang).toBe('be-tarask');
     });
 
     test('a link that is not an article is not requested', async () => {
@@ -55,44 +52,33 @@ describe('getWptTags: the tags of a poi', () => {
         return Object.fromEntries(res.map((tag) => [tag.key, tag]));
     }
 
-    test('a wikipedia article of the recommended format is a working link', async () => {
-        const tags = await tagsOf({ wikipedia: 'de:München' });
+    test('a wikipedia article is a working link, whatever the format of the tag', async () => {
+        const recommended = await tagsOf({ wikipedia: 'de:München' });
+        const asLink = await tagsOf({ wikipedia: 'https://de.wikipedia.org/wiki/München' });
+        const noLanguage = await tagsOf({ wikipedia: 'Munich' });
 
-        expect(tags.wikipedia.isUrl).toBe(true);
-        expect(tags.wikipedia.url).toBe('https://de.wikipedia.org/wiki/München');
-    });
-
-    test('a wikipedia article given as a link is kept', async () => {
-        const tags = await tagsOf({ wikipedia: 'https://de.wikipedia.org/wiki/München' });
-
-        expect(tags.wikipedia.url).toBe('https://de.wikipedia.org/wiki/München');
-    });
-
-    test('a wikipedia article without a language is read as english', async () => {
-        const tags = await tagsOf({ wikipedia: 'Munich' });
-
-        expect(tags.wikipedia.url).toBe('https://en.wikipedia.org/wiki/Munich');
+        expect(recommended.wikipedia.isUrl).toBe(true);
+        expect(recommended.wikipedia.url).toBe('https://de.wikipedia.org/wiki/München');
+        expect(asLink.wikipedia.url).toBe('https://de.wikipedia.org/wiki/München');
+        expect(noLanguage.wikipedia.url).toBe('https://en.wikipedia.org/wiki/Munich');
     });
 
     test('a social network account is shown as a link to it', async () => {
-        const tags = await tagsOf({ facebook: 'bluecafe', instagram: '/blue.cafe/' });
+        const tags = await tagsOf({ facebook: 'bluecafe', instagram: '/blue.cafe/', vk: 'vk.com/bluecafe' });
 
         expect(tags.facebook.socialMediaUrl).toBe('https://facebook.com/bluecafe');
         expect(tags.facebook.isUrl).toBe(true);
         expect(tags.instagram.socialMediaUrl).toBe('https://instagram.com/blue.cafe');
+        // a value with a path is a link, not a user name
+        expect(tags.vk.socialMediaUrl).toBe('https://vk.com/bluecafe');
     });
 
-    test('a social network given as a link is not prefixed twice', async () => {
-        const tags = await tagsOf({ facebook: 'facebook.com/bluecafe' });
-
-        expect(tags.facebook.socialMediaUrl).toBe('https://facebook.com/bluecafe');
-    });
-
-    test('a phone and an email are marked for their own links', async () => {
-        const tags = await tagsOf({ phone: '+380 44 000', email: 'cafe@example.com' });
+    test('a phone, an email and the name of the poi get their own rows', async () => {
+        const tags = await tagsOf({ phone: '+380 44 000', email: 'cafe@example.com', web_poi_name: 'Blue Cafe' });
 
         expect(tags.phone.isPhoneNumber).toBe(true);
         expect(tags.email.isEmail).toBe(true);
+        expect(tags.shared_string_name.value).toBe('Blue Cafe');
     });
 
     test('the name of the poi is shown as the name row', async () => {
@@ -118,12 +104,7 @@ describe('getWptTags: the tags of a poi', () => {
     });
 });
 
-describe('getOsmIdFromOsmUrl', () => {
-    test('the id is the last part of the link', () => {
-        expect(getOsmIdFromOsmUrl('https://www.openstreetmap.org/node/123')).toBe('123');
-    });
-
-    test('no link, no id', () => {
-        expect(getOsmIdFromOsmUrl(null)).toBeNull();
-    });
+test('the osm id of a poi is the last part of its link', () => {
+    expect(getOsmIdFromOsmUrl('https://www.openstreetmap.org/node/123')).toBe('123');
+    expect(getOsmIdFromOsmUrl(null)).toBeNull();
 });

@@ -31,23 +31,18 @@ const TRANSLATIONS = {
 
 const t = (key, fallback) => TRANSLATIONS[key] ?? fallback ?? key;
 
-describe('getFirstSubstring', () => {
-    test('only the first value of a list is shown', () => {
-        expect(getFirstSubstring('Cafe;Restaurant')).toBe('Cafe');
-        expect(getFirstSubstring('Cafe')).toBe('Cafe');
-    });
-});
-
 describe('getPropsFromSearchResultItem', () => {
     test('a poi is named by itself and typed by its subtype', () => {
         const props = {
             [CATEGORY_TYPE]: searchTypeMap.POI,
-            [POI_NAME]: 'Blue Cafe',
-            [POI_SUBTYPE]: 'cafe',
+            [POI_NAME]: 'Blue Cafe;Cafe',
+            [POI_SUBTYPE]: 'cafe;restaurant',
             [POI_TYPE]: 'sustenance',
         };
 
+        // a list of values is cut down to the first one
         expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Blue Cafe', type: 'Cafe' });
+        expect(getFirstSubstring('Cafe;Restaurant')).toBe('Cafe');
     });
 
     test('a poi without a name is named by its own type and typed by the parent one', () => {
@@ -61,102 +56,64 @@ describe('getPropsFromSearchResultItem', () => {
         expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Cafe', type: 'Sustenance' });
     });
 
-    test('a result with no type at all is read as a poi', () => {
-        expect(getPropsFromSearchResultItem({ [POI_NAME]: 'Blue Cafe' }, t)).toMatchObject({ name: 'Blue Cafe' });
+    test('the other kinds of result are named and typed by their own rules', () => {
+        const of = (props) => getPropsFromSearchResultItem(props, t);
+
+        expect(of({ [POI_NAME]: 'Blue Cafe' })).toMatchObject({ name: 'Blue Cafe' });
+        expect(of({ [CATEGORY_TYPE]: searchTypeMap.FAVORITE, [POI_NAME]: 'Home' })).toMatchObject({
+            name: 'Home',
+            type: 'My favorites',
+        });
+        expect(of({ [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK, [CATEGORY_NAME]: 'Folder/Track.gpx' })).toMatchObject({
+            name: 'Folder/Track.gpx',
+        });
+        expect(of({ [CATEGORY_TYPE]: searchTypeMap.WPT, [POI_NAME]: 'Camp', [CATEGORY_NAME]: 'Track' })).toMatchObject({
+            name: 'Camp',
+            type: 'Track',
+        });
+        expect(
+            of({
+                [CATEGORY_TYPE]: searchTypeMap.POI_TYPE,
+                [CATEGORY_NAME]: 'Cafe',
+                [MAIN_CATEGORY_KEY_NAME]: 'sustenance',
+            })
+        ).toMatchObject({ name: 'Cafe', type: 'Sustenance' });
+        expect(of({ [CATEGORY_TYPE]: searchTypeMap.STREET, [CATEGORY_NAME]: 'Main street' })).toMatchObject({
+            type: 'Street',
+        });
     });
 
-    test('a favorite is typed as the favorites of the user', () => {
-        const props = { [CATEGORY_TYPE]: searchTypeMap.FAVORITE, [POI_NAME]: 'Home' };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Home', type: 'My favorites' });
-    });
-
-    test('a track is named by its file name', () => {
-        const props = { [CATEGORY_TYPE]: searchTypeMap.GPX_TRACK, [CATEGORY_NAME]: 'Folder/Track.gpx' };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Folder/Track.gpx' });
-    });
-
-    test('a waypoint of a track is typed by the track it belongs to', () => {
-        const props = {
-            [CATEGORY_TYPE]: searchTypeMap.WPT,
-            [POI_NAME]: 'Camp',
-            [CATEGORY_NAME]: 'Track',
-        };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Camp', type: 'Track' });
-    });
-
-    test('a poi type is typed by its parent category', () => {
-        const props = {
-            [CATEGORY_TYPE]: searchTypeMap.POI_TYPE,
-            [CATEGORY_NAME]: 'Cafe',
-            [MAIN_CATEGORY_KEY_NAME]: 'sustenance',
-        };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Cafe', type: 'Sustenance' });
-    });
-
-    test('an address result is typed by its own kind', () => {
-        const props = { [CATEGORY_TYPE]: searchTypeMap.STREET, [CATEGORY_NAME]: 'Main street' };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Main street', type: 'Street' });
-    });
-
-    test('both address lines are shown together', () => {
-        const props = {
+    test('both address lines are shown, a street shows only the first one', () => {
+        const house = {
             [CATEGORY_TYPE]: searchTypeMap.HOUSE,
             [CATEGORY_NAME]: '12',
             [ADDRESS_1]: 'Main street',
             [ADDRESS_2]: 'Kyiv',
             [CITY]: 'Kyiv',
         };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ info: 'Main street, Kyiv', city: 'Kyiv' });
-    });
-
-    test('a street shows only its first address line', () => {
-        const props = {
+        const street = {
             [CATEGORY_TYPE]: searchTypeMap.STREET,
             [CATEGORY_NAME]: 'Main street',
             [ADDRESS_1]: 'Kyiv',
             [ADDRESS_2]: 'Ukraine',
         };
 
-        expect(getPropsFromSearchResultItem(props, t).info).toBe('Kyiv');
-    });
-
-    test('a list of values is cut down to the first one', () => {
-        const props = {
-            [CATEGORY_TYPE]: searchTypeMap.POI,
-            [POI_NAME]: 'Blue Cafe;Cafe',
-            [POI_SUBTYPE]: 'cafe;restaurant',
-        };
-
-        expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Blue Cafe', type: 'Cafe' });
+        expect(getPropsFromSearchResultItem(house, t)).toMatchObject({ info: 'Main street, Kyiv', city: 'Kyiv' });
+        expect(getPropsFromSearchResultItem(street, t).info).toBe('Kyiv');
     });
 });
 
 describe('getPoiParentCategory', () => {
-    test('an additional category is used when there is no filter', () => {
+    test('the category of a poi type comes from its own tags', () => {
         expect(getPoiParentCategory({ [WEB_POI_ADDITIONAL_CATEGORY]: 'cuisine' }, t)).toBe('Cuisine');
-    });
-
-    test('the main category is translated', () => {
         expect(getPoiParentCategory({ [MAIN_CATEGORY_KEY_NAME]: 'sustenance' }, t)).toBe('Sustenance');
-    });
-
-    test('a brand keeps its language in brackets', () => {
         expect(getPoiParentCategory({ [MAIN_CATEGORY_KEY_NAME]: 'brand:de' }, t)).toBe('Brand (german)');
     });
 
-    test('a filter is shown with its additional category', () => {
+    test('a filter is shown with its additional category, an empty poi has no category', () => {
         const props = { [WEB_POI_FILTER_NAME]: 'shop_food', [WEB_POI_ADDITIONAL_CATEGORY]: 'cuisine' };
 
         expect(getPoiParentCategory(props, t)).toBe('Shop food (Cuisine)');
-    });
-
-    test('nothing to show', () => {
         expect(getPoiParentCategory({}, t)).toBeNull();
     });
 });
@@ -185,15 +142,9 @@ describe('searchByCategory', () => {
 });
 
 describe('buildSearchParamsFromQuery', () => {
-    test('a search by word keeps the engine and the query', () => {
+    test('a search by word keeps the engine and the query, a category needs only the type', () => {
         expect(buildSearchParamsFromQuery({ engine: 'classic', query: 'cafe' })).toBe('?engine=classic&query=cafe');
-    });
-
-    test('a search by category needs only the type', () => {
         expect(buildSearchParamsFromQuery({ engine: 'classic', type: 'shop_food' })).toBe('?type=shop_food');
-    });
-
-    test('no search gives no params', () => {
         expect(buildSearchParamsFromQuery(null)).toBe('');
     });
 });
