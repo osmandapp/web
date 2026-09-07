@@ -532,18 +532,20 @@ export default function PoiLayer() {
         hideMarkersNearPin(map, ctx);
 
         async function getPoiList() {
-            const isTypeChange = typesChanged();
-            const categoriesChanged =
-                !prevCategories ||
-                JSON.stringify(prevCategories.map((c) => c.category).sort()) !==
-                    JSON.stringify(ctx.showPoiCategories.map((c) => c.category).sort());
             if (isEmpty(ctx.showPoiCategories)) {
                 // if categories are cleared, then clear the list and related states
                 setPrevCategories(null);
                 if (poiList) {
                     clearPoiList();
                 }
-            } else if (zoom !== prevZoom || move || isTypeChange) {
+                return;
+            }
+            const isTypeChange = typesChanged();
+            const categoriesChanged =
+                !prevCategories ||
+                JSON.stringify(prevCategories.map((c) => c.category).sort()) !==
+                    JSON.stringify(ctx.showPoiCategories.map((c) => c.category).sort());
+            if (zoom !== prevZoom || move || isTypeChange) {
                 if (prevController) {
                     prevController.abort();
                 }

@@ -19,7 +19,19 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-configuremap'));
     await waitBy(By.id('se-configure-map-menu-name'));
 
-    // open POI categories
+    // enable POI overlay
+    await togglePoiCategory(category);
+    await actionCheckPoi({ iconWpt, name: poiName });
+
+    // disable POI overlay: markers must disappear without page reload
+    await togglePoiCategory(category);
+    await actionCheckPoi({ iconWpt, name: poiName, hidden: true });
+
+    await actionFinish();
+}
+
+// open POI categories from the opened configure map, switch the category over and apply
+async function togglePoiCategory(category) {
     await waitBy(By.id('se-configure-map-menu-poi-categories'));
     await clickBy(By.id('se-configure-map-menu-poi-categories'));
 
@@ -27,7 +39,5 @@ export default async function test() {
     await clickBy(By.id(`se-poi-category-${category}`));
     await clickBy(By.id('se-select-categories'));
 
-    await actionCheckPoi({ iconWpt, name: poiName });
-
-    await actionFinish();
+    await waitBy(By.id('se-configure-map-menu-name'));
 }
