@@ -40,6 +40,8 @@ module.exports = {
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
         // the visible-tracks cache is plain localStorage logic used by the managers
         'visibletracks/VisibleTracks$': path.join(MAP_DIR, 'src/menu/visibletracks/VisibleTracks.jsx'),
+        // poi tag names and formatting are plain logic shared by the poi menus
+        'wpt/WptTagsProvider$': path.join(MAP_DIR, 'src/infoblock/components/wpt/WptTagsProvider.js'),
         // plain constants shared by the managers
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
         // UI layers - unit tests cover managers, not components
