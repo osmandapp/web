@@ -467,7 +467,6 @@ export default function PoiLayer() {
 
         const getPoiTask = async ({
             controller,
-            ignore,
             poiList,
             showPoiCategories,
             poiIconCache,
@@ -508,6 +507,7 @@ export default function PoiLayer() {
                             map,
                             zoom,
                         });
+                        if (reqId !== reqIdRef.current || ignore) return;
                         const nextState = { layer: newLayer, listFeatures, info: res.info ?? poiList?.info };
                         updateLayerOnMap(nextState);
                         setPoiList(nextState);
@@ -534,6 +534,7 @@ export default function PoiLayer() {
         async function getPoiList() {
             if (isEmpty(ctx.showPoiCategories)) {
                 // if categories are cleared, then clear the list and related states
+                reqIdRef.current += 1;
                 setPrevCategories(null);
                 if (poiList) {
                     clearPoiList();
@@ -558,7 +559,6 @@ export default function PoiLayer() {
                 const runGetPoi = categoriesChanged || isTypeChange ? getPoiTask : debouncedGetPoi;
                 runGetPoi({
                     controller,
-                    ignore,
                     poiList: categoriesChanged ? null : poiList,
                     showPoiCategories: ctx.showPoiCategories,
                     poiIconCache: ctx.poiIconCache,
