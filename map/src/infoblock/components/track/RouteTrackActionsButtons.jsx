@@ -6,6 +6,7 @@ import BlueBtn from '../../../frame/components/btns/BlueBtn';
 import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../manager/track/TracksManager';
 import DownloadTrackDialog from '../../../dialogs/tracks/DownloadTrackDialog';
+import SaveTrackDialog from '../../../dialogs/tracks/SaveTrackDialog';
 import { ReactComponent as EditIcon } from '../../../assets/icons/ic_action_edit_track.svg';
 import { ReactComponent as CloudIcon } from '../../../assets/icons/ic_action_cloud.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
@@ -63,8 +64,13 @@ export default function RouteTrackActionsButtons({ track }) {
                 />
             </Box>
             {openDownloadDialog && (
-                <DownloadTrackDialog dialogOpen={openDownloadDialog} setDialogOpen={setOpenDownloadDialog} />
+                <DownloadTrackDialog
+                    dialogOpen={openDownloadDialog}
+                    setDialogOpen={setOpenDownloadDialog}
+                    navTrack={track}
+                />
             )}
+            {ctx.selectedGpxFile?.save && <SaveTrackDialog />}
             <UnavailableActionAlert open={openUnavailableDialog} onClose={() => setOpenUnavailableDialog(false)} />
         </>
     );
