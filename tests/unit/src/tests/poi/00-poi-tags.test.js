@@ -38,7 +38,7 @@ describe('openWikipediaContent', () => {
 });
 
 describe('getWptTags: the tags of a poi', () => {
-    const CTX = { poiIconCache: {}, setPoiIconCache: jest.fn() };
+    const CTX = { poiIconCache: {}, setPoiIconCache: jest.fn(), unitsSettings: { len: 'si_km_m' } };
 
     beforeEach(() => {
         apiGet.mockResolvedValue({ data: '' });
@@ -81,16 +81,45 @@ describe('getWptTags: the tags of a poi', () => {
         expect(tags.shared_string_name.value).toBe('Blue Cafe');
     });
 
-    test('the name of the poi is shown as the name row', async () => {
-        const tags = await tagsOf({ web_poi_name: 'Blue Cafe' });
-
-        expect(tags.shared_string_name.value).toBe('Blue Cafe');
-    });
-
     test('the days of the opening hours are localized', async () => {
         const tags = await tagsOf({ opening_hours: 'Mo-Fr 09:00-18:00' });
 
         expect(tags.opening_hours.value).toBe('Mon-Fri 09:00-18:00');
+    });
+
+    test('a measure is shown in the units of the user', async () => {
+        const tags = await tagsOf({ ele: '1234', distance: '5000', maxweight: '3.25' });
+        const inFeet = await WptTagsProvider.getWptTags(
+            { options: { ele: '1234' } },
+            { isPoi: true },
+            { ...CTX, unitsSettings: { len: 'si_mi_feet' } }
+        );
+
+        expect(tags.ele.value).toBe('1234 m');
+        expect(tags.distance.value).toBe('5 km');
+        expect(tags.maxweight.value).toBe('3.3 metric_ton');
+        expect(inFeet.res.find((tag) => tag.key === 'ele').value).toBe('4048.6 foot');
+    });
+
+    test('a measure that is not a number is left as it is', async () => {
+        const tags = await tagsOf({ ele: 'high' });
+
+        expect(tags.ele.value).toBe('high');
+    });
+
+    test('the tags of the web itself are not shown', async () => {
+        const tags = await tagsOf({ web_poi_iconName: 'cafe', osm_tag_alt_name: 'Cafe', phone: '+380 44 000' });
+
+        expect(Object.keys(tags)).toEqual(['phone']);
+    });
+
+    test('the tags of a favorite are read from its extensions', async () => {
+        const favorite = { ext: { extensions: { amenity_type: 'shop', phone: '+380 44 000' } } };
+
+        const { res, type } = await WptTagsProvider.getWptTags(favorite, { isFav: true }, CTX);
+
+        expect(type).toBe('shop');
+        expect(res.find((tag) => tag.key === 'phone').isPhoneNumber).toBe(true);
     });
 
     test('the id and the type of the poi are read from the tags', async () => {

@@ -48,6 +48,8 @@ module.exports = {
         'search/SearchResultItem$': path.join(MAP_DIR, 'src/menu/search/search/SearchResultItem.jsx'),
         // plain constants shared by the managers
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
+        // unit conversion is plain math used by the poi tags
+        'units/UnitsConverter$': path.join(MAP_DIR, 'src/menu/settings/units/UnitsConverter.js'),
         // icons and marker shapes are plain svg logic
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // UI layers - unit tests cover managers, not components
