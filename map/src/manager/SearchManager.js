@@ -16,13 +16,12 @@ import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import {
     FAVORITE_HIT_GROUP_ID,
-    getObjIdSearch,
     SEARCH_ICON_MAP_LOCATION,
     searchTypeMap,
     typeIconMap,
     WPT_TRACK_FILE,
     WPT_TRACK_SHARED,
-} from '../map/layers/SearchLayer';
+} from './searchConstants';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 import {
     OBJECT_TYPE_POI,
@@ -40,6 +39,17 @@ export const OSMAND_WIKI_BASE_URL = 'https://data.osmand.net/wikimedia/images-12
 export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 
 export const SEARCH_BRAND = 'brand';
+
+// id of a search result: the poi id when the server sent one, the coordinates otherwise
+export function getObjIdSearch(obj) {
+    if (obj.properties[POI_ID]) {
+        return obj.properties[POI_ID];
+    } else if (obj.geometry.coordinates[0] === 0 && obj.geometry.coordinates[1] === 0) {
+        return null;
+    }
+
+    return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
+}
 
 export function getIconByType(type) {
     return typeIconMap[type] ?? SEARCH_ICON_MAP_LOCATION;

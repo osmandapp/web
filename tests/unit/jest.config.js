@@ -42,6 +42,9 @@ module.exports = {
         'visibletracks/VisibleTracks$': path.join(MAP_DIR, 'src/menu/visibletracks/VisibleTracks.jsx'),
         // poi tag names and formatting are plain logic shared by the poi menus
         'wpt/WptTagsProvider$': path.join(MAP_DIR, 'src/infoblock/components/wpt/WptTagsProvider.js'),
+        // the row of a search result and the query it builds are plain logic
+        'search/SearchResults$': path.join(MAP_DIR, 'src/menu/search/search/SearchResults.jsx'),
+        'search/SearchResultItem$': path.join(MAP_DIR, 'src/menu/search/search/SearchResultItem.jsx'),
         // plain constants shared by the managers
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
         // UI layers - unit tests cover managers, not components

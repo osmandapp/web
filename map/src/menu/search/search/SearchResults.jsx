@@ -17,7 +17,7 @@ import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import { iconPathMap, MAP_VIEW_SEARCH_RESULT } from '../../../map/util/MapManager';
-import { searchTypeMap } from '../../../map/layers/SearchLayer';
+import { searchTypeMap } from '../../../manager/searchConstants';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { useElementHeight } from '../../../util/hooks/useElementHeight';

@@ -69,7 +69,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { iconPathMap, getIconFromMap } from '../../../map/util/MapManager';
-import { SEARCH_ICON_MAP_LOCATION } from '../../../map/layers/SearchLayer';
+import { SEARCH_ICON_MAP_LOCATION } from '../../../manager/searchConstants';
 import {
     TRANSPORT_STOP_SHIELD_COLOR,
     TRANSPORT_STOP_BACKGROUND,

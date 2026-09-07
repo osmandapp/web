@@ -20,7 +20,12 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { FAVORITE_HIT_GROUP_ID, getObjIdSearch, searchTypeMap, WPT_TRACK_FILE, WPT_TRACK_SHARED } from '../../../map/layers/SearchLayer';
+import {
+    FAVORITE_HIT_GROUP_ID,
+    searchTypeMap,
+    WPT_TRACK_FILE,
+    WPT_TRACK_SHARED,
+} from '../../../manager/searchConstants';
 import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
@@ -42,7 +47,7 @@ import {
     TYPE,
     WEB_PREFIX,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getPoiParentCategory, openTrackWptFromSearch } from '../../../manager/SearchManager';
+import { getObjIdSearch, getPoiParentCategory, openTrackWptFromSearch } from '../../../manager/SearchManager';
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../manager/GlobalManager';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';

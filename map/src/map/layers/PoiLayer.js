@@ -28,7 +28,8 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
-import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, searchTypeMap } from './SearchLayer';
+import { getObjIdSearch } from '../../manager/SearchManager';
+import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';

@@ -13,7 +13,7 @@ import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { searchByWordApi, getMapsFromUrl } from '../../../manager/SearchApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
-import { SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../manager/searchConstants';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { abortApiRequest } from '../../../util/HttpApi';
 import { debouncer } from '../../../context/TracksRoutingCache';

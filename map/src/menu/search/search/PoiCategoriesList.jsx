@@ -15,7 +15,7 @@ import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext, { collator } from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
-import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { SEARCH_TYPE_CATEGORY } from '../../../manager/searchConstants';
 
 export default function PoiCategoriesList({ categories, setSearchValue, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
