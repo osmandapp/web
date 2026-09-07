@@ -16,11 +16,12 @@ function response(body) {
     return { ok: true, json: async () => body, text: async () => JSON.stringify(body) };
 }
 
-/** get-shared-with-me answers with UserFilesResults, the same shape as list-files. */
+/** get-shared-with-me answers with UserFilesResults, the same shape as list-files. A null stands for a failed request. */
 function sharedWithMe({ tracks = { uniqueFiles: [] }, favorites = { uniqueFiles: [] } } = {}) {
     apiGet.mockImplementation(async (url, options) => {
         if (url.endsWith('/share/get-shared-with-me')) {
-            return response(options.params.type === 'GPX' ? tracks : favorites);
+            const files = options.params.type === 'GPX' ? tracks : favorites;
+            return files === null ? { ok: false } : response(files);
         }
 
         return response({});
@@ -88,13 +89,25 @@ describe('loadShareFiles', () => {
         expect(favorites).toEqual([]);
     });
 
-    test('a failed request does not break the load of the other files', async () => {
-        apiGet.mockImplementation(async () => ({ ok: false }));
+    test('a failed tracks request keeps the shared favorites', async () => {
+        sharedWithMe({ tracks: null, favorites: { uniqueFiles: [{ name: 'favorites/fav.gpx' }] } });
         const setShareWithMeFiles = jest.fn((update) => update({}));
 
         const favorites = await loadShareFiles(setShareWithMeFiles);
 
         expect(setShareWithMeFiles.mock.results[0].value.tracks).toEqual({});
+        expect(favorites.map((f) => f.name)).toEqual(['favorites/fav.gpx']);
+    });
+
+    test('a failed favorites request keeps the shared tracks', async () => {
+        sharedWithMe({ tracks: { uniqueFiles: [{ name: 'Shared.gpx', type: 'GPX' }] }, favorites: null });
+        const setShareWithMeFiles = jest.fn((update) => update({}));
+
+        const favorites = await loadShareFiles(setShareWithMeFiles);
+
+        const stored = setShareWithMeFiles.mock.results[0].value;
+        expect(Object.keys(stored.tracks)).toEqual(['Shared.gpx']);
+        expect(stored.favorites).toEqual([]);
         expect(favorites).toEqual([]);
     });
 });
@@ -117,7 +130,7 @@ describe('getShareFileInfo', () => {
         await getShareFileInfo({ file, ctx });
 
         const { options } = findRequest(apiGet, '/share/get-share-file-info');
-        expect(options.params).toMatchObject({ fileName: file.name, fileType: 'GPX', createIfNotExists: true });
+        expect(options.params).toEqual({ fileName: file.name, fileType: 'GPX', createIfNotExists: true });
         expect(ctx.shareFile.sharedObj).toEqual({ file: { id: 7 } });
     });
 });
@@ -130,7 +143,12 @@ describe('changeShareTypeFile', () => {
         await changeShareTypeFile({ file: TRACK, shareType: 'public', ctx });
 
         const { options } = findRequest(apiGet, '/share/change-share-type');
-        expect(options.params).toMatchObject({ filePath: TRACK.name, fileType: 'GPX', shareType: 'public' });
+        expect(options.params).toEqual({
+            filePath: TRACK.name,
+            fileType: 'GPX',
+            shareType: 'public',
+            createIfNotExists: true,
+        });
         expect(ctx.shareFile.sharedObj.file).toEqual({ id: 7, shareType: 'public' });
     });
 
