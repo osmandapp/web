@@ -55,7 +55,8 @@ module.exports = {
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
         FavoritesManager$: path.join(MAP_DIR, 'src/manager/FavoritesManager.js'),
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
-        '/i18n$': `${STUBS}/empty.js`,
+        // the app i18n module boots the whole translation setup, i18next itself stays real
+        '/i18n$': `${STUBS}/i18n.js`,
         // app sources
         '^@map/(.*)$': path.join(MAP_DIR, 'src/$1'),
     },
