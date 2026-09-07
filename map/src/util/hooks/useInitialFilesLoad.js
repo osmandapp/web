@@ -77,20 +77,18 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
 export async function loadShareFiles(setShareWithMeFiles) {
     const tracks = await getShareWithMe({ type: GPX });
     const favorites = await getShareWithMe({ type: FAVOURITES });
-    const preparedTracks =
-        tracks.length === 0
-            ? {}
-            : Object.fromEntries(
-                  getGpxFiles(tracks).map((t) => {
-                      return [t.name, { ...t, sharedWithMe: true }];
-                  })
-              );
+    const preparedTracks = Object.fromEntries(
+        getGpxFiles(tracks).map((t) => {
+            return [t.name, { ...t, sharedWithMe: true }];
+        })
+    );
     setShareWithMeFiles((prev) => ({
         ...prev,
         tracks: preparedTracks,
-        favorites: favorites?.uniqueFiles,
+        favorites: favorites?.uniqueFiles ?? [],
     }));
-    return favorites?.uniqueFiles.map((f) => {
+
+    return (favorites?.uniqueFiles ?? []).map((f) => {
         return {
             ...f,
             sharedWithMe: true,
