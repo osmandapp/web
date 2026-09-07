@@ -79,6 +79,7 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
     try {
         return await driver.wait(
             new Condition('waitBy' + by.value, async () => {
+                await failOnErrorDialog();
                 const found = await driver.findElements(by);
                 if (found && found.length > 0) {
                     for (let i = 0; i < found.length; i++) {
@@ -96,7 +97,6 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
                         return element; // found - success
                     }
                 }
-                await failOnErrorDialog();
                 return false;
             }),
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
