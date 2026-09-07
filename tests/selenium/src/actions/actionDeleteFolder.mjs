@@ -10,5 +10,5 @@ export default async function test(name) {
     await clickBy(By.id('se-delete-folder-submit'));
 
     await waitByRemoved(By.id('se-delete-folder-dialog'));
-    await waitByRemoved(By.id(`se-menu-cloud-${name}`));
+    await waitByRemoved(By.id(`se-menu-cloud-${name}`), false, { failOnError: true });
 }

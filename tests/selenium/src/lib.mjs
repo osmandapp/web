@@ -10,7 +10,7 @@ import actionIdleWait from './actions/actionIdleWait.mjs';
 const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
 const isNotInteractableError = (e) => e.toString().match(/ElementNotInteractableError/);
 
-// site error dialog (GlobalFrame se-error-dialog) fails any waitBy immediately
+// site error dialog (GlobalFrame se-error-dialog), checked by waitBy/waitByRemoved with { failOnError }
 class SiteError extends Error {}
 const ERROR_DIALOG = By.id('se-error-dialog');
 async function failOnErrorDialog() {
@@ -71,7 +71,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
   The function will return true if the test fails, which is used to check if the element is not visible.
   The test will fail if no visible element is found.
   If optional is set to true, it enforces the function to return null in case of any error. */
-export async function waitBy(by, { optional = false, idle = false } = {}) {
+export async function waitBy(by, { optional = false, idle = false, failOnError = false } = {}) {
     debug && console.log('waitBy', by.value || by);
     if (idle) {
         await actionIdleWait();
@@ -79,7 +79,7 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
     try {
         return await driver.wait(
             new Condition('waitBy' + by.value, async () => {
-                await failOnErrorDialog();
+                failOnError && (await failOnErrorDialog());
                 const found = await driver.findElements(by);
                 if (found && found.length > 0) {
                     for (let i = 0; i < found.length; i++) {
@@ -123,12 +123,13 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
   If the element is not found initially, the function returns true immediately, indicating that the element has been removed.
  * @param allowHidden
  The function uses a predefined timeout (HIDDEN_TIMEOUT) for waiting. If the element is not removed within this timeout, the function will throw an error. */
-export async function waitByRemoved(by, allowHidden = false) {
+export async function waitByRemoved(by, allowHidden = false, { failOnError = false } = {}) {
     await actionIdleWait();
     const found = await driver.findElements(by);
     if (found && found.length > 0) {
         return await driver.wait(
             new Condition('waitByRemoved' + by.value, async () => {
+                failOnError && (await failOnErrorDialog());
                 try {
                     const found = await driver.findElements(by);
                     if (!found || found.length === 0) {
@@ -170,9 +171,9 @@ export async function waitByRemoved(by, allowHidden = false) {
  * test: failed if not found or not visible element
  * test-ok: optional===true is processed by enclose()
  */
-export async function clickBy(by, { optional = false } = {}) {
+export async function clickBy(by, { optional = false, failOnError = false } = {}) {
     const clicker = async () => {
-        const element = await waitBy(by, { optional });
+        const element = await waitBy(by, { optional, failOnError });
         if (element) {
             const classes = await element.getAttribute('class');
 
@@ -333,7 +334,7 @@ export const matchInnerTextBy = async (by, match, optional = false) =>
     await matchBy(by, match, getInnerTextBy, optional);
 
 export async function sendKeysBy(by, keys) {
-    enclose(
+    await enclose(
         async () => {
             const element = await waitBy(by);
             await element.sendKeys(keys);

@@ -18,7 +18,7 @@ export default async function test(tracks, trackName = null, newName = trackName
 
     while (retries < maxRetries) {
         await actionUploadCloudTracks({ files: path });
-        await clickBy(By.id('se-button-back'));
+        await clickBy(By.id('se-button-back'), { failOnError: true });
         await waitBy(By.id(`se-cloud-track-${newName}`));
 
         const elems = await driver.findElements(By.css(`[id^="se-cloud-track-${newName}"]`));
