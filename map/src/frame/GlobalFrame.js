@@ -467,7 +467,7 @@ const GlobalFrame = () => {
                 setClearState={setClearState}
                 showInstallBanner={showInstallBanner}
             />
-            <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
+            <Dialog id={'se-error-dialog'} open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
                 <DialogTitle className={dialogStyles.title}>{ctx.trackErrorMsg?.title}</DialogTitle>
                 <DialogContent className={dialogStyles.content}>{ctx.trackErrorMsg?.msg}</DialogContent>
                 <DialogActions>

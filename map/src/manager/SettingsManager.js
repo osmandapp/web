@@ -55,7 +55,7 @@ export function getItemIcon(file) {
     }
 }
 
-export const downloadFile = async (file) => {
+export const downloadFile = async (file, ctx) => {
     let urlFile;
     if (file.zipSize <= 0) {
         // download previous version
@@ -90,6 +90,11 @@ export const downloadFile = async (file) => {
         url.href = URL.createObjectURL(new Blob([data]));
         url.download = name + type;
         url.click();
+    } else {
+        ctx.setTrackErrorMsg({
+            title: i18n.t('web:download_error_title'),
+            msg: i18n.t('web:download_error_msg', { name: file.name }),
+        });
     }
 };
 

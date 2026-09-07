@@ -26,6 +26,7 @@ import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
+import i18n from '../../i18n';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -180,6 +181,12 @@ function getGroup(name, local) {
     } else {
         return DEFAULT_GROUP_NAME;
     }
+}
+
+// download cloud gpx by file.url and parse it, null on any failure
+async function loadTrackData(file) {
+    const data = await Utils.getFileData(file);
+    return data ? await getTrackData(new File([data], file.name, { type: 'text/plain' })) : null;
 }
 
 async function getTrackData(file) {
@@ -505,7 +512,14 @@ export async function getGpxFileFromTrackData(file, routeTypes, simplified = fal
     });
 }
 
-export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified }) => {
+function showDownloadError(ctx, name) {
+    ctx.setTrackErrorMsg({
+        title: i18n.t('web:download_error_title'),
+        msg: i18n.t('web:download_error_msg', { name }),
+    });
+}
+
+export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified, ctx }) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}&simplified=${simplified ? 'true' : 'false'}`;
     const oneGpxFile = {
@@ -521,10 +535,12 @@ export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, s
         url.href = URL.createObjectURL(new Blob([data]));
         url.download = `${TracksManager.prepareName(track.name)}.gpx`;
         url.click();
+    } else {
+        showDownloadError(ctx, track.name);
     }
 };
 
-export const downloadTravelGpx = async (track) => {
+export const downloadTravelGpx = async (track, ctx) => {
     const urlFile = `${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-original-file`;
     const qs = `?id=${track.id}`;
     const oneGpxFile = {
@@ -538,6 +554,8 @@ export const downloadTravelGpx = async (track) => {
         url.href = URL.createObjectURL(new Blob([data]));
         url.download = `${TracksManager.prepareName(track.name)}.gpx`;
         url.click();
+    } else {
+        showDownloadError(ctx, track.name);
     }
 };
 
@@ -1558,17 +1576,18 @@ export async function openTrackOnMap({
             setProgressVisible(true);
         }
         const oneGpxFile = preparedGpxFile({ file, sharedFile });
-        const f = await Utils.getFileData(oneGpxFile);
-        const gpxfile = new File([f], file.name, {
-            type: 'text/plain',
-        });
-        const track = await TracksManager.getTrackData(gpxfile);
+        const track = await TracksManager.loadTrackData(oneGpxFile);
         if (setProgressVisible) {
             setProgressVisible(false);
         }
         if (!track) {
             if (setError) {
                 setError('Something went wrong!');
+            } else {
+                ctx.setTrackErrorMsg({
+                    title: i18n.t('web:open_error_title'),
+                    msg: i18n.t('web:open_track_error_msg', { name: file.name }),
+                });
             }
         } else if (isEmptyTrack(track) === false) {
             const infoFile = findInfoFile(ctx, file.name);
@@ -1777,6 +1796,7 @@ export function clearZoomToTrackForOtherFiles({ currentFileName, storage }) {
 const TracksManager = {
     prepareName,
     getTrackData,
+    loadTrackData,
     handleEditCloudTrack,
     getTrackPoints,
     getEditablePoints,

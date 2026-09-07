@@ -24,7 +24,7 @@ import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { getFilesForUpdateDetails } from '../../util/hooks/useInitialFilesLoad';
-import Utils, { cloneTrackObject, sanitizedFileName } from '../../util/Utils';
+import { cloneTrackObject, sanitizedFileName } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
@@ -253,11 +253,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                 if (file.name === newFileName) {
                     newGpxFiles[file.name] = preparedGpxFile({ file, oldFile: ctx.gpxFiles[oldName] });
                     if (newGpxFiles[file.name].url) {
-                        let f = await Utils.getFileData(newGpxFiles[file.name]);
-                        const gpxfile = new File([f], file.name, {
-                            type: 'text/plain',
-                        });
-                        const track = await TracksManager.getTrackData(gpxfile);
+                        const track = await TracksManager.loadTrackData(newGpxFiles[file.name]);
                         if (track) {
                             track.name = file.name;
                             const infoFile = findInfoFile(ctx, file.name);
@@ -267,6 +263,14 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                             });
                             newGpxFiles[oldName].url = null;
                             ctx.setGpxFiles({ ...newGpxFiles });
+                        } else {
+                            newGpxFiles[oldName].url = null;
+                            newGpxFiles[file.name].url = null;
+                            ctx.setGpxFiles({ ...newGpxFiles });
+                            ctx.setTrackErrorMsg({
+                                title: i18n.t('web:open_error_title'),
+                                msg: i18n.t('web:open_track_error_msg', { name: file.name }),
+                            });
                         }
                     } else {
                         newGpxFiles[oldName].url = null;
@@ -369,6 +373,11 @@ export async function saveEmptyTrack(folderName, ctx) {
         refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
         return true;
     }
+    ctx.setTrackErrorMsg({
+        title: i18n.t('web:create_folder_error_title'),
+        msg: i18n.t('web:create_folder_error_msg', { name: folderName }),
+    });
+    return false;
 }
 
 export async function refreshGlobalFiles({
@@ -423,11 +432,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
 
     newGpxFiles[file.name] = preparedGpxFile({ file });
 
-    const f = await Utils.getFileData(newGpxFiles[file.name]);
-    const gpxfile = new File([f], file.name, {
-        type: 'text/plain',
-    });
-    const track = await TracksManager.getTrackData(gpxfile);
+    const track = await TracksManager.loadTrackData(newGpxFiles[file.name]);
     if (isEmptyTrack(track) === false) {
         const type = OBJECT_TYPE_CLOUD_TRACK;
         ctx.setUpdateInfoBlock(true);
@@ -446,8 +451,13 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
         }
         ctx.setGpxFiles(newGpxFiles);
         ctx.setSelectedGpxFile({ ...newGpxFiles[file.name] });
-        ctx.setProcessingSaveTrack(false);
+    } else {
+        ctx.setTrackErrorMsg({
+            title: i18n.t('web:open_error_title'),
+            msg: i18n.t('web:open_error_msg', { name: file.name }),
+        });
     }
+    ctx.setProcessingSaveTrack(false);
 }
 
 function updateTrackGroups(listFiles, ctx) {
