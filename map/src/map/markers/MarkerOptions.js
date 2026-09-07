@@ -291,7 +291,9 @@ function parseSvgSize(svgHtml) {
 
 function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
     const scaleFactor = shapeSize / oldShapeSize;
-    let arcN = 0; // 1..7 inside A/a (4th and 5th are flags, must stay 0 or 1)
+    // 1..7 inside A/a: 1-2 radii, 3 x-axis rotation, 4-5 flags, 6-7 the point. Only the radii and
+    // the point are sizes. One A may carry several sets of them, the 8th number starts a new set.
+    let arcN = 0;
     const newPathData = pathData.replace(/([Aa])|([MLHVCSQTZmlhvcsqtz])|([-+]?\d*\.?\d+)/g, (m, isArc, isCmd, num) => {
         if (isArc) {
             arcN = 1;
@@ -302,14 +304,14 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
             return m;
         }
         if (num !== undefined) {
-            const n = Number.parseFloat(num);
-            // 3rd is the x-axis rotation, 4th and 5th are flags: none of them is a size
-            if (arcN === 3 || (arcN >= 4 && arcN <= 5 && (n === 0 || n === 1))) {
-                arcN = arcN === 5 ? 0 : arcN + 1;
+            const keepAsIs = arcN >= 3 && arcN <= 5;
+            if (arcN >= 1) {
+                arcN = arcN === 7 ? 1 : arcN + 1;
+            }
+            if (keepAsIs) {
                 return num;
             }
-            if (arcN >= 1) arcN = arcN >= 7 ? 0 : arcN + 1;
-            const scaled = n * scaleFactor;
+            const scaled = Number.parseFloat(num) * scaleFactor;
             return String(Math.round(scaled * 100) / 100);
         }
         return m;

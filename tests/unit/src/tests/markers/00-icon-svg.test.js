@@ -68,10 +68,10 @@ describe('changeIconSizeWpt', () => {
         expect(res).toContain('fill-rule="evenodd"');
     });
 
-    test('the rotation and the flags of an arc are not sizes', () => {
-        const svg = '<svg viewBox="0 0 24 24"><path d="M2 2A4 4 45 1 0 8 8"/></svg>';
+    test('the rotation and the flags of an arc are not sizes, in every set of one arc', () => {
+        const svg = '<svg viewBox="0 0 24 24"><path d="M2 2A4 4 45 1 0 8 8 6 6 30 0 1 10 10"/></svg>';
 
-        expect(resize(svg)).toContain('d="M3 3A6 6 45 1 0 12 12"');
+        expect(resize(svg)).toContain('d="M3 3A6 6 45 1 0 12 12 9 9 30 0 1 15 15"');
     });
 
     test('a stroke is scaled with the icon and never disappears', () => {
