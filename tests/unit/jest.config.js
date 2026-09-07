@@ -35,7 +35,8 @@ module.exports = {
         // AppContext pulls in the whole app - only the track-type helpers are needed
         'context/AppContext$': `${STUBS}/appContext.js`,
         // modules pulling map layers / routing / i18n - not exercised by unit tests
-        '^leaflet$': `${STUBS}/empty.js`,
+        // leaflet itself works in jsdom, the map layers around it do not
+        '^leaflet$': path.join(MAP_DIR, 'node_modules/leaflet/dist/leaflet-src.js'),
         // sorting is plain logic that createTrackGroups depends on, keep it real
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
         // the visible-tracks cache is plain localStorage logic used by the managers
@@ -47,11 +48,12 @@ module.exports = {
         'search/SearchResultItem$': path.join(MAP_DIR, 'src/menu/search/search/SearchResultItem.jsx'),
         // plain constants shared by the managers
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
+        // icons and marker shapes are plain svg logic
+        'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
-        FavoritesManager$: `${STUBS}/empty.js`,
-        MarkerOptions$: `${STUBS}/empty.js`,
+        FavoritesManager$: path.join(MAP_DIR, 'src/manager/FavoritesManager.js'),
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
         '/i18n$': `${STUBS}/empty.js`,
         // app sources

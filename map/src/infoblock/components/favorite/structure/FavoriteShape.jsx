@@ -2,7 +2,11 @@ import React from 'react';
 import { Box, ListItemText, MenuItem } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
-import MarkerOptions from '../../../../map/markers/MarkerOptions';
+import {
+    BACKGROUND_WPT_SHAPE_CIRCLE,
+    BACKGROUND_WPT_SHAPE_OCTAGON,
+    BACKGROUND_WPT_SHAPE_SQUARE,
+} from '../../../../map/markers/MarkerOptions';
 import { ReactComponent as CircleIcon } from '../../../../assets/icons/ic_action_bg_shape_circle.svg';
 import { ReactComponent as SquareIcon } from '../../../../assets/icons/ic_action_bg_shape_square.svg';
 import { ReactComponent as OctagonIcon } from '../../../../assets/icons/ic_action_bg_shape_octagon.svg';
@@ -11,17 +15,17 @@ import styles from '../wptEditPanel.module.css';
 
 const SHAPES = [
     {
-        value: MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+        value: BACKGROUND_WPT_SHAPE_CIRCLE,
         Icon: CircleIcon,
         id: 'se-favorite-shape-0',
     },
     {
-        value: MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON,
+        value: BACKGROUND_WPT_SHAPE_OCTAGON,
         Icon: OctagonIcon,
         id: 'se-favorite-shape-1',
     },
     {
-        value: MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE,
+        value: BACKGROUND_WPT_SHAPE_SQUARE,
         Icon: SquareIcon,
         id: 'se-favorite-shape-2',
     },

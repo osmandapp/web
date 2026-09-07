@@ -1,4 +1,5 @@
-import { getFirstSubstring, getPropsFromSearchResultItem } from '@map/menu/search/search/SearchResultItem';
+import { getPropsFromSearchResultItem } from '@map/menu/search/search/SearchResultItem';
+import { getFirstSubstring } from '@map/manager/PoiManager';
 import { getPoiParentCategory } from '@map/manager/SearchManager';
 import { searchByCategory } from '@map/menu/search/search/SearchResults';
 import { buildSearchParamsFromQuery } from '@map/util/hooks/search/useSearchNav';

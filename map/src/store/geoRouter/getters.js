@@ -1,9 +1,7 @@
 import { copyObj } from '../../util/Utils';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import BusAlertIcon from '@mui/icons-material/BusAlert';
-import TracksManager from '../../manager/track/TracksManager';
-
-const PROFILE_LINE = TracksManager.PROFILE_LINE;
+import { PROFILE_LINE } from '../../manager/track/TracksManager';
 
 /**
  * Return this Router status:

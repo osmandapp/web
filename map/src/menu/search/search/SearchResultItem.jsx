@@ -18,7 +18,7 @@ import styles from '../search.module.css';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
-import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
+import { formattingPoiType, getFirstSubstring, navigateToPoi, preparedType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import {
     FAVORITE_HIT_GROUP_ID,
@@ -64,28 +64,6 @@ import {
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
-
-export function getFirstSubstring(inputString) {
-    if (inputString?.includes(SEPARATOR)) {
-        return inputString.split(SEPARATOR)[0];
-    }
-    return inputString;
-}
-
-export function preparedType(type, t, lang = null) {
-    let restoreLang;
-    if (t && lang) {
-        restoreLang = i18n.language;
-        i18n.changeLanguage(lang);
-    }
-
-    const res = capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
-
-    if (restoreLang) {
-        i18n.changeLanguage(restoreLang);
-    }
-    return res;
-}
 
 export function getPropsFromSearchResultItem(props, t = null, lang = null, listFiles = null, unitsSettings = null) {
     let restoreLang;

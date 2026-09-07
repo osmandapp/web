@@ -15,10 +15,10 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, getIconNameForPoiType, parseTagWithLang, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
-import { parseTagWithLang } from '../../../manager/SearchManager';
+
 import { localizeWeekTokens } from '../../../util/dateFmt';
 import {
     convertMeters,

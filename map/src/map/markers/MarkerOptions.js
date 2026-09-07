@@ -19,9 +19,9 @@ const poiTypeFallbackMap = Object.fromEntries(
     poiTypes.filter((pt) => pt.tag && pt.value).map((pt) => [pt.name, `${pt.tag}_${pt.value}`])
 );
 
-const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
-const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
-const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
+export const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
+export const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
+export const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
 export const DEFAULT_WPT_COLOR = '#eecc22';
 export const DEFAULT_POI_COLOR = '#fe8800';

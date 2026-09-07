@@ -19,7 +19,6 @@ import {
 
 /** Translation stub: returns the key, so the tests read the key the ui would ask for. */
 const t = (key) => key;
-const firstSubstring = (s) => s;
 
 describe('brand types', () => {
     test('a brand is a type with a language after the colon', () => {
@@ -56,23 +55,23 @@ describe('getTopIndexValueName', () => {
 
 describe('getCategoryName', () => {
     test('a plain category is translated', () => {
-        expect(getCategoryName('shop', t, firstSubstring)).toBe('poi_shop');
+        expect(getCategoryName('shop', t)).toBe('poi_shop');
     });
 
     test('a top index category shows the value itself, it has no translation', () => {
-        expect(getCategoryName('top_index_brand_okko', t, firstSubstring)).toBe('okko');
+        expect(getCategoryName('top_index_brand_okko', t)).toBe('okko');
     });
 
     test('a search by name in a language adds the language in brackets', () => {
-        expect(getCategoryName('name:de', t, firstSubstring)).toBe('poi_name (lang_de)');
+        expect(getCategoryName('name:de', t)).toBe('poi_name (lang_de)');
     });
 
     test('a search by language uses its own translation key', () => {
-        expect(getCategoryName('lang:de', t, firstSubstring)).toBe('poi_lang_de');
+        expect(getCategoryName('lang:de', t)).toBe('poi_lang_de');
     });
 
     test('no category gives an empty name', () => {
-        expect(getCategoryName(null, t, firstSubstring)).toBe('');
+        expect(getCategoryName(null, t)).toBe('');
     });
 });
 

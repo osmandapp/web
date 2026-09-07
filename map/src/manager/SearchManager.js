@@ -12,10 +12,10 @@ import {
     WEB_POI_FILTER_NAME,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import capitalize from 'lodash-es/capitalize';
-import { formattingPoiType } from './PoiManager';
-import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
+import { formattingPoiType, getFirstSubstring, parseTagWithLang } from './PoiManager';
 import {
     FAVORITE_HIT_GROUP_ID,
+    SEARCH_BRAND,
     SEARCH_ICON_MAP_LOCATION,
     searchTypeMap,
     typeIconMap,
@@ -37,8 +37,6 @@ import { buildSearchParamsFromQuery } from '../util/hooks/search/useSearchNav';
 export const USE_OSMAND_SERVER = true;
 export const OSMAND_WIKI_BASE_URL = 'https://data.osmand.net/wikimedia/images-1280/';
 export const COMMONS_WIKI_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
-
-export const SEARCH_BRAND = 'brand';
 
 // id of a search result: the poi id when the server sent one, the coordinates otherwise
 export function getObjIdSearch(obj) {
@@ -211,14 +209,6 @@ export function getPoiParentCategory(props, t) {
         return `${filterName}${addCategoryName ? ' (' + addCategoryName + ')' : ''}`;
     }
     return null;
-}
-
-export function parseTagWithLang(tag) {
-    if (typeof tag !== 'string' || !tag.includes(':')) {
-        return { key: tag, lang: null };
-    }
-    const [key, lang] = tag?.split(':');
-    return { key, lang };
 }
 
 export function getPhotoTitle(photo) {

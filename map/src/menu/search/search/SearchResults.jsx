@@ -9,7 +9,7 @@ import PoiManager, {
     getCategoryName,
     parseBrandType,
 } from '../../../manager/PoiManager';
-import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
+import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box, Button, Typography } from '@mui/material';
 import SelectItemBoolean from '../../../frame/components/items/SelectItemBoolean';
@@ -36,7 +36,9 @@ import {
     TYPE_OSM_VALUE,
     WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
+import { getIconByType } from '../../../manager/SearchManager';
+import { SEARCH_BRAND } from '../../../manager/searchConstants';
+import { parseTagWithLang } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import useSpatialSearch from '../../../util/hooks/search/useSpatialSearch';
 import { useTranslation } from 'react-i18next';
@@ -86,7 +88,7 @@ export function searchByCategory(searchParams, ctx, t) {
             lang = brandInfo.lang;
         } else {
             // Category search: translate category name
-            categoryName = getCategoryName(searchParams.type, t, getFirstSubstring);
+            categoryName = getCategoryName(searchParams.type, t);
         }
     }
 
@@ -145,7 +147,7 @@ export default function SearchResults() {
             if (brandInfo) {
                 return brandInfo.brandName;
             } else {
-                return getCategoryName(params.type, t, getFirstSubstring);
+                return getCategoryName(params.type, t);
             }
         }
         return null;
@@ -407,9 +409,7 @@ export default function SearchResults() {
                     (params?.type
                         ? (() => {
                               const brandInfo = parseBrandType(params.type);
-                              return brandInfo
-                                  ? brandInfo.brandName
-                                  : getCategoryName(params.type, t, getFirstSubstring);
+                              return brandInfo ? brandInfo.brandName : getCategoryName(params.type, t);
                           })()
                         : params?.query || '')
                 }

@@ -1,8 +1,8 @@
 import md5 from 'blueimp-md5';
 import Utils from '../../../util/Utils';
 import { apiGet } from '../../../util/HttpApi';
-import TracksManager from '../../../manager/track/TracksManager';
-import TrackLayerProvider from '../../../map/util/TrackLayerProvider';
+import TracksManager, { PROFILE_LINE } from '../../../manager/track/TracksManager';
+import { TEMP_LINE_STYLE } from '../../../map/util/TrackLayerProvider';
 import {
     ROUTE_POINTS_AVOID_ROADS,
     ROUTE_POINTS_FINISH,
@@ -10,10 +10,6 @@ import {
     ROUTE_POINTS_VIA,
 } from '../profileConstants';
 import { LINE_STRING } from '../../../util/Utils';
-
-const PROFILE_LINE = TracksManager.PROFILE_LINE;
-
-const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
 
 export const NAVIGATION_ROUTE_ABORT_KEY = 'navigation-route-request';
 
@@ -32,7 +28,7 @@ export function alternativeRouteStyle(color) {
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
-    const waitingLines = makeLineFeatureCollection.call(this, { style: LINE_WAITING_STYLE });
+    const waitingLines = makeLineFeatureCollection.call(this, { style: TEMP_LINE_STYLE });
     this.putRoute({ route: waitingLines.geojson, skipConversion: true });
 
     // don't show anything more than Line

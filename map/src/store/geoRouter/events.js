@@ -1,7 +1,5 @@
-import TracksManager from '../../manager/track/TracksManager';
+import { PROFILE_LINE } from '../../manager/track/TracksManager';
 import { prepareParams } from './getters';
-
-const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 export function onOpenSettings() {
     this.flushState((o) => (o.preview = true));

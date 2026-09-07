@@ -2,6 +2,7 @@
 // the managers and menus reading them do not depend on leaflet.
 
 export const SEARCH_TYPE_CATEGORY = 'category';
+export const SEARCH_BRAND = 'brand';
 
 export const SEARCH_ICON_MAP_LOCATION = 'location';
 export const SEARCH_ICON_MAP_BUILDING = 'house';
