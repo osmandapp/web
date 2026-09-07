@@ -263,6 +263,14 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                             });
                             newGpxFiles[oldName].url = null;
                             ctx.setGpxFiles({ ...newGpxFiles });
+                        } else {
+                            newGpxFiles[oldName].url = null;
+                            newGpxFiles[file.name].url = null;
+                            ctx.setGpxFiles({ ...newGpxFiles });
+                            ctx.setTrackErrorMsg({
+                                title: i18n.t('web:open_error_title'),
+                                msg: i18n.t('web:open_track_error_msg', { name: file.name }),
+                            });
                         }
                     } else {
                         newGpxFiles[oldName].url = null;

@@ -1583,6 +1583,11 @@ export async function openTrackOnMap({
         if (!track) {
             if (setError) {
                 setError('Something went wrong!');
+            } else {
+                ctx.setTrackErrorMsg({
+                    title: i18n.t('web:open_error_title'),
+                    msg: i18n.t('web:open_track_error_msg', { name: file.name }),
+                });
             }
         } else if (isEmptyTrack(track) === false) {
             const infoFile = findInfoFile(ctx, file.name);

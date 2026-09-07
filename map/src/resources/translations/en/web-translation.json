@@ -300,6 +300,7 @@
     "import_error_msg": "Unable to import {{name}}",
     "open_error_title": "Open error",
     "open_error_msg": "{{name}} is saved but could not be opened",
+    "open_track_error_msg": "Unable to open {{name}}",
     "delete_error_title": "Delete error",
     "delete_error_msg": "Unable to delete {{name}}",
     "create_folder_error_title": "Folder error",

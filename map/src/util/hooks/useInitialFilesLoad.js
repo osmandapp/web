@@ -248,7 +248,10 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, l
         oneGpxFile.showOnMap = true;
         newGpxFiles[file.name] = oneGpxFile;
         const f = await Utils.getFileData(newGpxFiles[file.name]);
-        if (!f) continue;
+        if (!f) {
+            delete newGpxFiles[file.name];
+            continue;
+        }
         const gpxfile = new File([f], file.name, {
             type: 'text/plain',
         });
