@@ -2,6 +2,7 @@ import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/
 import { loadShareFiles } from '../../util/hooks/useInitialFilesLoad';
 import { loadSmartFolders } from '../SmartFoldersManager';
 import { apiGet, apiPost } from '../../util/HttpApi';
+import i18n from '../../i18n';
 import { calculateLastModified, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
@@ -90,6 +91,11 @@ async function deleteCloudFile(name, type, ctx) {
 
             await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
         }
+    } else {
+        ctx.setTrackErrorMsg({
+            title: i18n.t('web:delete_error_title'),
+            msg: i18n.t('web:delete_error_msg', { name }),
+        });
     }
 }
 

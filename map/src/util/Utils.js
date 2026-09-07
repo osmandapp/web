@@ -79,7 +79,7 @@ async function getFileData(file) {
         if (response.ok) {
             trackData = await response.text();
         } else {
-            trackData = '<gpx version="1.1" />';
+            trackData = null;
         }
     }
     return trackData;

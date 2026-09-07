@@ -10,6 +10,16 @@ import actionIdleWait from './actions/actionIdleWait.mjs';
 const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
 const isNotInteractableError = (e) => e.toString().match(/ElementNotInteractableError/);
 
+// site error dialog (GlobalFrame se-error-dialog) fails any waitBy immediately
+class SiteError extends Error {}
+const ERROR_DIALOG = By.id('se-error-dialog');
+async function failOnErrorDialog() {
+    const dialog = await driver.findElements(ERROR_DIALOG);
+    if (dialog.length > 0) {
+        throw new SiteError(`Site error: ${await dialog[0].getText()}`);
+    }
+}
+
 /**
  * Lib: enclose(callback, { tag, optional })
  *
@@ -86,12 +96,13 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
                         return element; // found - success
                     }
                 }
+                await failOnErrorDialog();
                 return false;
             }),
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
-        if (optional === true) {
+        if (optional === true && !(error instanceof SiteError)) {
             return null;
         }
         verbose && (await logBrowserAndNetworkErrors(driver));

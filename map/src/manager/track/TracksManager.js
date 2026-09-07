@@ -182,6 +182,12 @@ function getGroup(name, local) {
     }
 }
 
+// download cloud gpx by file.url and parse it, null on any failure
+async function loadTrackData(file) {
+    const data = await Utils.getFileData(file);
+    return data ? await getTrackData(new File([data], file.name, { type: 'text/plain' })) : null;
+}
+
 async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
@@ -1558,11 +1564,7 @@ export async function openTrackOnMap({
             setProgressVisible(true);
         }
         const oneGpxFile = preparedGpxFile({ file, sharedFile });
-        const f = await Utils.getFileData(oneGpxFile);
-        const gpxfile = new File([f], file.name, {
-            type: 'text/plain',
-        });
-        const track = await TracksManager.getTrackData(gpxfile);
+        const track = await TracksManager.loadTrackData(oneGpxFile);
         if (setProgressVisible) {
             setProgressVisible(false);
         }
@@ -1777,6 +1779,7 @@ export function clearZoomToTrackForOtherFiles({ currentFileName, storage }) {
 const TracksManager = {
     prepareName,
     getTrackData,
+    loadTrackData,
     handleEditCloudTrack,
     getTrackPoints,
     getEditablePoints,

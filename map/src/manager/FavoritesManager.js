@@ -8,6 +8,7 @@ import Utils, { getDistance, quickNaNfix } from '../util/Utils';
 import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
+import i18n from '../i18n';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
@@ -378,7 +379,12 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
             });
             return refreshed?.groups?.find((g) => g.file?.name === res.name) ?? FavoritesManager.createGroup(res);
         }
+        ctx.setTrackErrorMsg({
+            title: i18n.t('web:create_folder_error_title'),
+            msg: i18n.t('web:create_folder_error_msg', { name: groupName }),
+        });
     }
+    return null;
 }
 
 export function createFavGroupFreeName(name, groups) {
