@@ -366,7 +366,6 @@ export default function SearchLayer() {
             places: mapMarkerFeatures,
             zoom,
             latitude,
-            iconSize: DEFAULT_ICON_SIZE,
             isPoi: true,
         });
 

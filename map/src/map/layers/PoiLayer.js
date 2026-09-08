@@ -64,7 +64,6 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
         places: poiList,
         zoom,
         latitude,
-        iconSize: DEFAULT_ICON_SIZE,
         isPoi: true,
     });
 

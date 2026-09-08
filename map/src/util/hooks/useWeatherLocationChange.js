@@ -1,4 +1,5 @@
 import {
+    dayFormatter,
     fetchDayForecast,
     fetchWeekForecast,
     LOCAL_STORAGE_WEATHER_FORECAST_DAY,
@@ -146,12 +147,6 @@ export const useWeatherLocationChange = ({
                 }
             }
             return false;
-        }
-
-        function dayFormatter(date) {
-            const isoString = date.toISOString();
-            const parts = isoString.split('T')[0].split('-');
-            return parts[1] + parts[2];
         }
 
         let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);

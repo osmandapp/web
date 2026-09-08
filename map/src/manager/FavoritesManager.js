@@ -409,14 +409,14 @@ export function createFavGroupFreeName(name, groups) {
 }
 
 export function isFavGroupExists(name, groups) {
-    return groups && groups.some((g) => g.name === name);
+    return groups?.some((g) => g.name === name);
 }
 
 function isHidden(pointsGroups, name) {
     let group = pointsGroups[name];
-    if (group && group.points) {
+    if (group?.points) {
         for (let point of group.points) {
-            if (point.ext.extensions.hidden === 'true') {
+            if (point.ext?.extensions?.hidden === 'true') {
                 return true;
             }
         }

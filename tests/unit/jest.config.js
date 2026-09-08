@@ -29,9 +29,8 @@ module.exports = {
         // static assets
         '\\.(css|less|sass|scss)$': `${STUBS}/style.js`,
         '\\.(svg|png|jpe?g|gif|webp|avif|ico|bmp|woff2?|eot|ttf|otf|mp3|mp4|wav)$': `${STUBS}/file.js`,
-        // no unit test is allowed to reach the network or IndexedDB
+        // no unit test is allowed to reach the network
         HttpApi$: `${STUBS}/httpApi.js`,
-        LocalTrackStorage$: `${STUBS}/localTrackStorage.js`,
         // AppContext pulls in the whole app - only the track-type helpers are needed
         'context/AppContext$': `${STUBS}/appContext.js`,
         // modules pulling map layers / routing / i18n - not exercised by unit tests
@@ -50,8 +49,17 @@ module.exports = {
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
         // unit conversion is plain math used by the poi tags
         'units/UnitsConverter$': path.join(MAP_DIR, 'src/menu/settings/units/UnitsConverter.js'),
+        // the router profiles and their params are plain logic over the loaded providers
+        'geoRouter/geoRouter$': path.join(MAP_DIR, 'src/store/geoRouter/geoRouter.js'),
         // icons and marker shapes are plain svg logic
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
+        // marker clustering is plain geometry over the places, no map is involved
+        'map/util/Clusterizer$': path.join(MAP_DIR, 'src/map/util/Clusterizer.js'),
+        // map layers and the tooltip helper reach react-leaflet, the clustering geometry does not
+        '/MapManager$': `${STUBS}/empty.js`,
+        'layers/(FavoriteLayer|ExploreLayer)$': `${STUBS}/empty.js`,
+        // rebuilding the favorite groups after a change is plain logic over the server response
+        'favorite/FavoriteHelper$': path.join(MAP_DIR, 'src/infoblock/components/favorite/FavoriteHelper.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
