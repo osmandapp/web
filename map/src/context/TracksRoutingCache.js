@@ -11,7 +11,7 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
         return false;
     }
 
-    if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
+    if (startedRouterJobs >= MAX_STARTED_ROUTER_JOBS) {
         console.debug('Too many startedRouterJobs', startedRouterJobs);
         return false;
     }
