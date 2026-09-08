@@ -135,7 +135,7 @@ export async function deleteFile({ file, changes, setChanges }) {
         },
     });
     if (response.status === 200) {
-        changes = changes.filter((f) => f.id !== file.id);
+        changes = deleteVersionsFromMenu({ changes, id: file.id });
         setChanges(changes);
     }
 }
@@ -204,14 +204,10 @@ function deleteVersionsFromMenu({ changes, name = null, id = null }) {
         }
         return true;
     });
-    changes = changes.filter((f, index) => {
-        if (f.type === 'month') {
-            const nextFileIndex = changes.slice(index + 1).findIndex((f) => f.type === 'file');
-            return nextFileIndex !== -1;
-        }
-        return true;
-    });
-    return changes;
+    // a month header stays only while a file of that month follows it
+    changes = changes.filter((f, index) => f.type !== 'month' || changes[index + 1]?.type === 'file');
+    // the last row of a month has no divider below it
+    return changes.map((f, index) => (f.type === 'file' ? { ...f, isLast: changes[index + 1]?.type !== 'file' } : f));
 }
 
 export function formatString(templateString, replacements) {
