@@ -43,7 +43,7 @@ test('the route is cut into segments at its points, the alternatives are left ou
     expect(track.analysis).toEqual({
         minElevation: 100,
         maxElevation: 130,
-        avgElevation: 116,
+        avgElevation: 115, // (100 + 110 + 120 + 130) / 4: the via point is in both segments but counts once
         hasElevationData: true,
         diffElevationUp: 30,
         diffElevationDown: 0,

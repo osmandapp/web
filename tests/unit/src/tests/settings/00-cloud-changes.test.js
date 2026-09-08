@@ -41,6 +41,11 @@ test('a deleted version leaves the list together with the month it was alone in'
         updatetime: 3000,
     });
     expect(ids(state)).toEqual(['month-Aug', AUG_NEW.id, AUG_OLD.id]);
+
+    await deleteFileVersion({ file: AUG_OLD, ...state });
+
+    // the row that became the last of its month loses the divider below it
+    expect(state.changes).toEqual([month('Aug'), row(AUG_NEW, true)]);
 });
 
 test('all versions of a file go at once, a single file is deleted by its id', async () => {
@@ -61,7 +66,7 @@ test('all versions of a file go at once, a single file is deleted by its id', as
     await deleteFile({ file: SEP, ...state });
 
     expect(findRequest(apiPost, '/mapapi/delete-file').options.params).toEqual({ name: 'Sep.gpx', type: 'GPX' });
-    expect(ids(state)).toEqual(['month-Sep']);
+    expect(state.changes).toEqual([]);
 });
 
 test('a restored version appears on top of the list, a file restored from the trash leaves it', async () => {

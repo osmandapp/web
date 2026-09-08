@@ -73,7 +73,7 @@ A manager or a formatting module is 10-15 tests, not 30.
 
 The expected value comes from the contract, never from running the code and copying the result. Before pinning a value, find where it is decided and check there:
 
-- a file name, a key, a format shared with the phone or the server - read the Android code (`~/osmand/android`, e.g. `FavouritesFileHelper`) or the server (`~/osmand/tools`, e.g. `WebGpxParser`, `MapApiController`) and expect what they produce; a test that pins the web's own encoding proves nothing when the other side disagrees;
+- a file name, a key, a format shared with the phone or the server - read the Android code (osmandapp/android, e.g. `FavouritesFileHelper`) or the server (osmandapp/tools, e.g. `WebGpxParser`, `MapApiController`) and expect what they produce; a test that pins the web's own encoding proves nothing when the other side disagrees;
 - a value shown to the user - ask whether a person would call it right (a date order, a name with the extension, a lowercase language);
 - a limit - check what it is measured against (255 bytes of the name, or of the name with the prefix and the extension on the phone).
 
