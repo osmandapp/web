@@ -60,6 +60,8 @@ module.exports = {
         // map layers and the tooltip helper reach react-leaflet, the clustering geometry does not
         '/MapManager$': `${STUBS}/empty.js`,
         'layers/(FavoriteLayer|ExploreLayer)$': `${STUBS}/empty.js`,
+        // rebuilding the favorite groups after a change is plain logic over the server response
+        'favorite/FavoriteHelper$': path.join(MAP_DIR, 'src/infoblock/components/favorite/FavoriteHelper.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
