@@ -4,7 +4,7 @@ import {
     loadLocalTracksFromStorage,
     saveTrackToLocalStorage,
 } from '@map/context/LocalTrackStorage';
-import { fakeTracksDb, removeIndexedDb } from '../../util/indexedDb';
+import { fakeIndexedDbStore, removeIndexedDb } from '../../util/indexedDb';
 
 /** ctx as the local tracks menu keeps it: the list itself plus its setter. */
 function createCtx(localTracks = []) {
@@ -29,7 +29,7 @@ const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
 let db;
 
 beforeEach(() => {
-    db = fakeTracksDb();
+    db = fakeIndexedDbStore();
 });
 
 afterEach(() => {

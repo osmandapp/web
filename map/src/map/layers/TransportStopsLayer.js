@@ -6,7 +6,7 @@ import { apiGet } from '../../util/HttpApi';
 import { findFeatureGroupById, bindTooltipToMarker, createTooltip, TOOLTIP_MAX_LENGTH } from '../util/MapManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import L from 'leaflet';
-import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
 import { clusterMarkers, removeTooltip } from '../util/Clusterizer';
 import Utils from '../../util/Utils';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
@@ -88,7 +88,6 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick, c
         places: stopsList,
         zoom,
         latitude,
-        iconSize: DEFAULT_ICON_SIZE,
         isPoi: true,
     });
 

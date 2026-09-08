@@ -31,8 +31,6 @@ module.exports = {
         '\\.(svg|png|jpe?g|gif|webp|avif|ico|bmp|woff2?|eot|ttf|otf|mp3|mp4|wav)$': `${STUBS}/file.js`,
         // no unit test is allowed to reach the network
         HttpApi$: `${STUBS}/httpApi.js`,
-        // the local tracks storage is real: setup.js gives every suite an in-memory indexedDB fake
-        'context/LocalTrackStorage$': path.join(MAP_DIR, 'src/context/LocalTrackStorage.js'),
         // AppContext pulls in the whole app - only the track-type helpers are needed
         'context/AppContext$': `${STUBS}/appContext.js`,
         // modules pulling map layers / routing / i18n - not exercised by unit tests

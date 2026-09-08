@@ -218,6 +218,7 @@ export function deleteLocalTracksByIndexes(ctx, indexes = []) {
                     }
                 }
 
+                // the ids past the new length are free after the tracks left were saved over the first ones
                 for (let id = next.length; id < prev.length; id++) {
                     await deleteTrackFromDB(id);
                 }

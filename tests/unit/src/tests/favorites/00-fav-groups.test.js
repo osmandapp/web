@@ -10,7 +10,7 @@ import FavoritesManager, {
     normalizeFavoritePointsGroupName,
     normalizeGroupNameForFile,
 } from '@map/manager/FavoritesManager';
-import { fakeTracksDb } from '../../util/indexedDb';
+import { fakeIndexedDbStore } from '../../util/indexedDb';
 
 const t = (key) => key;
 
@@ -56,7 +56,7 @@ describe('groups restored from the cache', () => {
                 { name: groups[i].name, pointsGroups: { [groups[i].name]: groups[i].pointsGroup } },
             ])
         );
-        fakeTracksDb(records);
+        fakeIndexedDbStore(records);
 
         return favGroups;
     }

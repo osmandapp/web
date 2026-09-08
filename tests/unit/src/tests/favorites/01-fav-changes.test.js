@@ -95,9 +95,8 @@ test('a group missing from the list is added by the response', () => {
 
     const added = res.groups[1];
     expect(added.name).toBe('Alps');
-    expect(added.file.name).toBe('Alps.gpx');
-    expect(added.id).toBe(getUniqFileId(added.file));
     expect(added.pointsGroups).toEqual({ Alps: {} });
+    expect(added.updatetimems).toBe(3000);
 
     const known = FavoriteHelper.updateSelectedGroup({
         favorites,

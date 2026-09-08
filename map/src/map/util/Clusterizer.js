@@ -19,12 +19,6 @@ import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { MARKER_Z_INDEX_MAIN } from './ZIndexes';
 
-function getPointLatLon(point) {
-    const lat = point.lat ?? point.ext?.lat;
-    const lon = point.lon ?? point.ext?.lon;
-    return lat != null && lon != null ? { lat: lat, lon: lon } : null;
-}
-
 export const EXPLORE_BIG_ICON_SIZE = 36;
 export const EXPLORE_BIG_REAL_ICON_SIZE = 42;
 export const SIMPLE_ICON_SIZE = 10;
@@ -144,7 +138,7 @@ function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance
 }
 
 // POI clustering by screen-pixel radius: big markers take the most popular (elo) place
-// first, greedily kept POI_MAIN_RADIUS_PX apart; the rest become small dots kept POI_SECONDARY_RADIUS_PX
+// first, greedily kept mainRadiusPx apart; the rest become small dots kept secondaryRadiusPx
 // apart. Both passes prevent overlap.
 function createPoiMarkersArr({ places, latitude, zoom, mainRadiusPx, secondaryRadiusPx }) {
     const mpp = metersPerPixel(latitude, zoom);
@@ -210,6 +204,12 @@ const metersPerPixel = (latitude, zoomLevel) => {
     // 256 pixels per tile
     return (earthCircumference * Math.cos(latitudeRad)) / (256 * scale);
 };
+
+function getPointLatLon(point) {
+    const lat = point.lat ?? point.ext?.lat;
+    const lon = point.lon ?? point.ext?.lon;
+    return lat != null && lon != null ? { lat: lat, lon: lon } : null;
+}
 
 // Function to check if a place can be added without overlapping
 const canPlaceMarker = ({ place, existingPlaces, minDistance, isFav = false }) => {

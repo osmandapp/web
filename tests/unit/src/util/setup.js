@@ -10,7 +10,7 @@ global.TextDecoder = global.TextDecoder ?? TextDecoder;
 process.env.REACT_APP_USER_API_SITE = 'https://api.test';
 
 // the local tracks storage is real in tests: give every suite an empty in-memory indexedDB,
-// the tests of the storage itself install their own records with fakeTracksDb()
-const { fakeTracksDb } = require('./indexedDb');
+// the tests of the storage itself install their own records with fakeIndexedDbStore()
+const { fakeIndexedDbStore } = require('./indexedDb');
 
-fakeTracksDb();
+fakeIndexedDbStore();

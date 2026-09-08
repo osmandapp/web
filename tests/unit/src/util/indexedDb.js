@@ -16,10 +16,11 @@ export function fakeIndexedDb() {
 }
 
 /**
- * indexedDB fake with one working object store, enough for the local tracks storage.
- * Returns the store itself as a Map of id -> record, to set it up and to read it back.
+ * indexedDB fake with one working object store, enough for the local tracks and the favorites cache.
+ * The name of the database is ignored. Returns the store itself as a Map of id -> record,
+ * to set it up and to read it back.
  */
-export function fakeTracksDb(records = new Map()) {
+export function fakeIndexedDbStore(records = new Map()) {
     // the callers read the result either from the request itself or from the event
     const request = (result) => {
         const req = { result };
