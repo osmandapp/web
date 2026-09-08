@@ -300,13 +300,16 @@ export function getTrackPoints(track) {
     const processTrackPoints = (trackPoints) => {
         if (!Array.isArray(trackPoints) || trackPoints.length === 0) return [];
 
-        const subPoints = getAllPoints(trackPoints);
-        if (subPoints.length === 0) return [];
+        const allPoints = getAllPoints(trackPoints);
+        if (allPoints.length === 0) return [];
 
-        subPoints.forEach((point) => (point.distanceTotal += distanceOffset));
+        const subPoints =
+            distanceOffset === 0
+                ? allPoints
+                : allPoints.map((point) => ({ ...point, distanceTotal: point.distanceTotal + distanceOffset }));
 
         // Update the distance offset based on the last point
-        distanceOffset = subPoints[subPoints.length - 1]?.distanceTotal ?? distanceOffset;
+        distanceOffset = subPoints.at(-1)?.distanceTotal ?? distanceOffset;
         return subPoints;
     };
 
