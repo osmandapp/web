@@ -181,10 +181,7 @@ export function deleteLocalTrack(ctx, index = -1) {
     const currentTrackIndex =
         index !== -1 ? index : ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
     if (currentTrackIndex !== -1) {
-        deleteTrackFromDB(currentTrackIndex).then(() => {
-            ctx.localTracks.splice(currentTrackIndex, 1);
-            ctx.setLocalTracks([...ctx.localTracks]);
-        });
+        deleteLocalTracksByIndexes(ctx, [currentTrackIndex]);
     }
 }
 
@@ -221,12 +218,8 @@ export function deleteLocalTracksByIndexes(ctx, indexes = []) {
                     }
                 }
 
-                // collect all ids to remove: deleted + moved-from
-                const idsToRemove = new Set([...toDelete, ...moves.map(({ oldId }) => oldId)]);
-
-                // delete old ids
-                for (const oldId of idsToRemove) {
-                    await deleteTrackFromDB(oldId);
+                for (let id = next.length; id < prev.length; id++) {
+                    await deleteTrackFromDB(id);
                 }
             } catch (e) {
                 DEBUG && console.error('Failed to delete selected local tracks', e);
