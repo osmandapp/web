@@ -50,6 +50,8 @@ module.exports = {
         'menu/share/shareConstants$': path.join(MAP_DIR, 'src/menu/share/shareConstants.js'),
         // unit conversion is plain math used by the poi tags
         'units/UnitsConverter$': path.join(MAP_DIR, 'src/menu/settings/units/UnitsConverter.js'),
+        // the router profiles and their params are plain logic over the loaded providers
+        'geoRouter/geoRouter$': path.join(MAP_DIR, 'src/store/geoRouter/geoRouter.js'),
         // icons and marker shapes are plain svg logic
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // UI layers - unit tests cover managers, not components
