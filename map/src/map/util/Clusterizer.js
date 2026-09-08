@@ -1,7 +1,7 @@
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
-import { getObjIdSearch } from '../../manager/SearchManager';
+import { getObjIdSearch, getIconByType } from '../../manager/SearchManager';
 import { searchTypeMap } from '../../manager/searchConstants';
 import {
     CATEGORY_TYPE,
@@ -13,14 +13,13 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import PoiManager from '../../manager/PoiManager';
-import { getIconByType } from '../../manager/SearchManager';
 import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { MARKER_Z_INDEX_MAIN } from './ZIndexes';
 
-export function getPointLatLon(point) {
+function getPointLatLon(point) {
     const lat = point.lat ?? point.ext?.lat;
     const lon = point.lon ?? point.ext?.lon;
     return lat != null && lon != null ? { lat: lat, lon: lon } : null;
@@ -45,24 +44,18 @@ export function clusterMarkers({
     mainRadiusPx = POI_MAIN_RADIUS_PX,
     secondaryRadiusPx = POI_SECONDARY_RADIUS_PX,
 }) {
-    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi, isExplore);
+    if (isPoi) {
+        return createPoiMarkersArr({ places, latitude, zoom, mainRadiusPx, secondaryRadiusPx });
+    }
+
+    const maxMainPlaces = getMaxMainPlaces(isExplore);
     const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom, isExplore);
-    const useUniformMarkerPlacement = getUseUniformMarkerPlacement(zoom, isPoi, isFavorites);
+    const useUniformMarkerPlacement = getUseUniformMarkerPlacement(zoom, isFavorites);
 
     // Minimum distances between markers in meters
-    const mainMinDistance = calculateDistance({
-        iconSize,
-        latitude,
-        zoom,
-        isPoi,
-    });
+    const mainMinDistance = calculateDistance({ iconSize, latitude, zoom });
 
-    const secondaryMinDistance = calculateDistance({
-        iconSize: secondaryIconSize,
-        latitude,
-        zoom,
-        isPoi,
-    });
+    const secondaryMinDistance = calculateDistance({ iconSize: secondaryIconSize, latitude, zoom });
 
     if (isExplore) {
         return createExploreMarkersArr({
@@ -72,10 +65,6 @@ export function clusterMarkers({
             maxMainPlaces,
             maxSecondaryPlaces,
         });
-    }
-
-    if (isPoi) {
-        return createPoiMarkersArr({ places, latitude, zoom, mainRadiusPx, secondaryRadiusPx });
     }
 
     // Sort clusters by size
@@ -96,7 +85,7 @@ export function clusterMarkers({
         };
     }
 
-    const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites, isPoi);
+    const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites);
 
     const secondaryMarkers = createOtherMarkersArr({
         clusters,
@@ -187,13 +176,8 @@ function getPoiElo(place) {
     return Number(place?.properties?.[POI_ELO]) || 0;
 }
 
-function getMaxMainPlaces(zoom, isPoi, isExplore) {
-    if (isPoi) {
-        return 2000;
-    } else if (isExplore) {
-        return 20;
-    }
-    return 50;
+function getMaxMainPlaces(isExplore) {
+    return isExplore ? 20 : 50;
 }
 
 function getMaxSecondaryPlaces(zoom, isExplore) {
@@ -206,18 +190,15 @@ function getMaxSecondaryPlaces(zoom, isExplore) {
     return 900;
 }
 
-function getUseUniformMarkerPlacement(zoom, isPoi, isFavorites) {
-    if (isPoi || isFavorites) {
+function getUseUniformMarkerPlacement(zoom, isFavorites) {
+    if (isFavorites) {
         return true;
     }
     return zoom <= 10 || zoom >= 16;
 }
 
-function calculateDistance({ iconSize, latitude, zoom, isPoi = false }) {
+function calculateDistance({ iconSize, latitude, zoom }) {
     const baseDistance = iconSize * metersPerPixel(latitude, zoom);
-    if (isPoi) {
-        return baseDistance;
-    }
     return zoom > 12 ? baseDistance * 1.5 : baseDistance * 2;
 }
 
@@ -277,10 +258,10 @@ function clusterPlaces(places, zoom, isFavorites) {
     return clustered;
 }
 
-function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites, isPoi) {
+function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites) {
     const mainMarkers = [];
     if (useUniformMarkerPlacement) {
-        if (!isPoi && !isFavorites) {
+        if (!isFavorites) {
             // Remove images from clusters without icon
             clusters = clusters.map((cluster) => cluster.filter((item) => getImgByProps(item.properties)));
             // Remove empty clusters
