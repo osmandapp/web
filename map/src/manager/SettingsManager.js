@@ -204,13 +204,8 @@ function deleteVersionsFromMenu({ changes, name = null, id = null }) {
         }
         return true;
     });
-    changes = changes.filter((f, index) => {
-        if (f.type === 'month') {
-            const nextFileIndex = changes.slice(index + 1).findIndex((f) => f.type === 'file');
-            return nextFileIndex !== -1;
-        }
-        return true;
-    });
+    // a month header stays only while a file of that month follows it
+    changes = changes.filter((f, index) => f.type !== 'month' || changes[index + 1]?.type === 'file');
     return changes;
 }
 
