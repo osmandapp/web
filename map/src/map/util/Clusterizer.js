@@ -1,6 +1,5 @@
 import L from 'leaflet';
 import Utils from '../../util/Utils';
-import { getPointLatLon } from './TrackLayerProvider';
 import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
 import { getObjIdSearch } from '../../manager/SearchManager';
 import { searchTypeMap } from '../../manager/searchConstants';
@@ -21,6 +20,12 @@ import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { MARKER_Z_INDEX_MAIN } from './ZIndexes';
 
+export function getPointLatLon(point) {
+    const lat = point.lat ?? point.ext?.lat;
+    const lon = point.lon ?? point.ext?.lon;
+    return lat != null && lon != null ? { lat: lat, lon: lon } : null;
+}
+
 export const EXPLORE_BIG_ICON_SIZE = 36;
 export const EXPLORE_BIG_REAL_ICON_SIZE = 42;
 export const SIMPLE_ICON_SIZE = 10;
@@ -37,6 +42,8 @@ export function clusterMarkers({
     isPoi = false,
     isFavorites = false,
     isExplore = false,
+    mainRadiusPx = POI_MAIN_RADIUS_PX,
+    secondaryRadiusPx = POI_SECONDARY_RADIUS_PX,
 }) {
     const maxMainPlaces = getMaxMainPlaces(zoom, isPoi, isExplore);
     const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom, isExplore);
@@ -68,7 +75,7 @@ export function clusterMarkers({
     }
 
     if (isPoi) {
-        return createPoiMarkersArr({ places, latitude, zoom });
+        return createPoiMarkersArr({ places, latitude, zoom, mainRadiusPx, secondaryRadiusPx });
     }
 
     // Sort clusters by size
@@ -107,12 +114,12 @@ export function clusterMarkers({
 }
 
 function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance, maxMainPlaces, maxSecondaryPlaces }) {
-    places.sort((a, b) => (a.properties.rowNum ?? 0) - (b.properties.rowNum ?? 0));
+    const sorted = [...places].sort((a, b) => (a.properties.rowNum ?? 0) - (b.properties.rowNum ?? 0));
 
     const mainMarkers = [];
-    for (const place of places) {
+    for (const place of sorted) {
         if (
-            mainMarkers.length <= maxMainPlaces &&
+            mainMarkers.length < maxMainPlaces &&
             place.properties.rowNum < 100 &&
             canPlaceMarker({
                 place,
@@ -126,7 +133,7 @@ function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance
     }
 
     const secondaryMarkers = [];
-    for (const place of places) {
+    for (const place of sorted) {
         if (secondaryMarkers.length >= maxSecondaryPlaces || mainMarkers.includes(place)) continue;
 
         if (
@@ -150,9 +157,9 @@ function createExploreMarkersArr({ places, mainMinDistance, secondaryMinDistance
 // POI clustering by screen-pixel radius: big markers take the most popular (elo) place
 // first, greedily kept POI_MAIN_RADIUS_PX apart; the rest become small dots kept POI_SECONDARY_RADIUS_PX
 // apart. Both passes prevent overlap.
-function createPoiMarkersArr({ places, latitude, zoom }) {
+function createPoiMarkersArr({ places, latitude, zoom, mainRadiusPx, secondaryRadiusPx }) {
     const mpp = metersPerPixel(latitude, zoom);
-    const mainMinDistance = POI_MAIN_RADIUS_PX * mpp;
+    const mainMinDistance = mainRadiusPx * mpp;
     const valid = (places ?? []).filter(Boolean);
 
     const mainMarkers = [];
@@ -163,7 +170,7 @@ function createPoiMarkersArr({ places, latitude, zoom }) {
     }
     const mainSet = new Set(mainMarkers);
 
-    const secondaryMinDistance = POI_SECONDARY_RADIUS_PX * mpp;
+    const secondaryMinDistance = secondaryRadiusPx * mpp;
     const secondaryMarkers = [];
     const placed = [...mainMarkers];
     for (const place of valid) {

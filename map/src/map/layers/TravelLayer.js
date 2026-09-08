@@ -239,8 +239,8 @@ export default function TravelLayer() {
                     places,
                     zoom,
                     latitude: center.lat,
-                    iconSize: 8,
-                    secondaryIconSize: 4,
+                    mainRadiusPx: 8,
+                    secondaryRadiusPx: 4,
                     isPoi: true,
                 });
 

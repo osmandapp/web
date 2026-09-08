@@ -450,12 +450,6 @@ function getPointGeoProfile(point, points) {
     }
 }
 
-export function getPointLatLon(point) {
-    const lat = point.lat ?? point.ext?.lat;
-    const lon = point.lon ?? point.ext?.lon;
-    return lat != null && lon != null ? { lat: lat, lon: lon } : null;
-}
-
 // WARNING: Do not use the 'title' field in marker layers on the map
 // When the 'title' attribute is set on a marker, Leaflet automatically creates a default tooltip
 // displaying the 'title' content. This tooltip is hardcoded and cannot be removed or modified
