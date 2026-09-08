@@ -6,34 +6,19 @@ import TracksRoutingCache, {
 } from '@map/context/TracksRoutingCache';
 import TracksManager from '@map/manager/track/TracksManager';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
+import { createEditorCtx, createEditorPoint } from '../../util/fixtures/tracks';
 
-const geoRouter = {
-    getGeoProfile: (point) => ({ profile: point.profile, cacheKey: `key-${point.profile}` }),
-    getColor: () => '#0000ff',
-};
-
-const point = (lat, profile = 'car') => ({ lat, lng: 30, profile });
+const point = (i, profile) => createEditorPoint(i, { profile });
 const line = () => ({ setStyle: jest.fn(), setLatLngs: jest.fn(), removeFrom: jest.fn(), options: {} });
 const flush = () => new Promise((resolve) => setTimeout(resolve, 0));
-
-function createCtx(points = []) {
-    const ctx = {
-        routingCache: {},
-        mutateRoutingCache: (update) => update(ctx.routingCache),
-        selectedGpxFile: { points, layers: {} },
-        setSelectedGpxFile: jest.fn(),
-        setProcessRouting: jest.fn(),
-        trackRouter: { ...geoRouter, updateRouteBetweenPoints: jest.fn() },
-    };
-
-    return ctx;
-}
+const createCtx = (points) => createEditorCtx({ points });
+const geoRouter = createEditorCtx().trackRouter;
 
 const entries = (ctx) => Object.values(ctx.routingCache);
 
 test('a segment is cached by its points and profile, a protected one is not cached', () => {
     const ctx = createCtx();
-    const [a, b] = [point(50), point(51)];
+    const [a, b] = [point(0), point(1)];
 
     TracksRoutingCache.addRoutingToCache(a, b, null, ctx);
     expect(entries(ctx)).toEqual([]);
@@ -45,8 +30,8 @@ test('a segment is cached by its points and profile, a protected one is not cach
     expect(entries(ctx)[0].startPoint.lat).toBe(50);
 
     entries(ctx)[0].geometry = ['routed'];
-    TracksRoutingCache.addRoutingToCache(point(50), b, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(point(50, 'bike'), b, line(), ctx);
+    TracksRoutingCache.addRoutingToCache(point(0), b, line(), ctx);
+    TracksRoutingCache.addRoutingToCache(point(0, 'bike'), b, line(), ctx);
     expect(entries(ctx).map((e) => e.geometry)).toEqual([['routed'], null]);
 });
 
@@ -79,7 +64,7 @@ test('a failed request is not repeated', async () => {
     const ctx = createCtx();
     ctx.trackRouter.updateRouteBetweenPoints.mockRejectedValue(new Error('router down'));
     jest.spyOn(console, 'error').mockImplementation(() => {});
-    TracksRoutingCache.addRoutingToCache(point(50), point(51), line(), ctx);
+    TracksRoutingCache.addRoutingToCache(point(0), point(1), line(), ctx);
 
     effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
     await flush();
@@ -90,7 +75,7 @@ test('a failed request is not repeated', async () => {
 });
 
 test('a routed segment goes into the track once, the segments that are gone leave the cache', () => {
-    const [a, b, gap, c, d] = [point(50), point(51), point(52, TracksManager.PROFILE_GAP), point(53), point(54)];
+    const [a, b, gap, c, d] = [point(0), point(1), point(2, TracksManager.PROFILE_GAP), point(3), point(4)];
     const ctx = createCtx([a, b, gap, c, d]);
     const saveChanges = jest.fn();
     EditablePolyline.mockImplementation(function () {
@@ -100,8 +85,8 @@ test('a routed segment goes into the track once, the segments that are gone leav
     TracksRoutingCache.addRoutingToCache(a, b, ab, ctx);
     TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
     TracksRoutingCache.addRoutingToCache(c, d, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(point(60), point(61), old, ctx);
-    TracksRoutingCache.addRoutingToCache(point(62), point(63), null, ctx);
+    TracksRoutingCache.addRoutingToCache(point(10), point(11), old, ctx);
+    TracksRoutingCache.addRoutingToCache(point(12), point(13), null, ctx);
     const [abEntry, gapEntry, cdEntry, oldEntry] = entries(ctx);
     abEntry.geometry = gapEntry.geometry = oldEntry.geometry = ['routed'];
 
@@ -124,7 +109,7 @@ test('a routed segment goes into the track once, the segments that are gone leav
 
 test('undo restores the geometry of every segment from the cache and drops the unfinished ones', () => {
     jest.useFakeTimers();
-    const [a, b, gap, c, d] = [point(50), point(51), point(52, TracksManager.PROFILE_GAP), point(53), point(54)];
+    const [a, b, gap, c, d] = [point(0), point(1), point(2, TracksManager.PROFILE_GAP), point(3), point(4)];
     const ctx = createCtx([a, b, gap, c, d]);
     const pending = line();
     TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);

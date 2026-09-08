@@ -60,3 +60,40 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
 export function createInfoFile({ name = CLOUD_TRACK_NAME, updatetimems = 1700000000000, data = {} } = {}) {
     return { name: name + '.info', updatetimems, details: { data } };
 }
+
+/** Point of the track editor `i` hundredths of a degree north of 50, optionally with the geometry leading to it. */
+export function createEditorPoint(i, { profile = 'car', geometry } = {}) {
+    return { lat: 50 + i / 100, lng: 30, profile, ...(geometry && { geometry }) };
+}
+
+/** Routed track of the editor: every point but the first carries the geometry of the segment leading to it. */
+export function createRoutedPoints(n) {
+    return Array.from({ length: n }, (_, i) =>
+        createEditorPoint(i, { geometry: i === 0 ? [] : [createEditorPoint(i - 1), createEditorPoint(i)] })
+    );
+}
+
+/**
+ * ctx of the track editor: a local track open on the map, the routing cache and a router that answers
+ * with a straight line. `geoRouter` is what the layers pass around separately from ctx.
+ */
+export function createEditorCtx({ points = [] } = {}) {
+    const track = { name: 'Local', points, layers: { addLayer: jest.fn(), getLayers: () => [] } };
+    const ctx = createCtx({ track, cloud: false });
+    ctx.createTrack = { enable: false };
+    ctx.trackState = {};
+    ctx.routingCache = {};
+    ctx.mutateRoutingCache = (update) => update(ctx.routingCache);
+    ctx.trackRouter = {
+        getGeoProfile: (point) => ({ profile: point.profile, cacheKey: `key-${point.profile}` }),
+        getColor: () => '#0000ff',
+        updateRouteBetweenPoints: jest.fn(async (ctx, start, end) => ({ points: [start, end] })),
+    };
+    ctx.setTrackState = jest.fn();
+    ctx.setProcessRouting = jest.fn();
+    ctx.setUpdateInfoBlock = jest.fn();
+    ctx.setLoadingContextMenu = jest.fn();
+    ctx.setUnverifiedGpxFile = jest.fn();
+
+    return ctx;
+}

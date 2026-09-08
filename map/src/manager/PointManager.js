@@ -70,6 +70,7 @@ async function insertPoint(points, index, point, lengthSum, ctx) {
         if (i + lengthSum === index && point) {
             if (firstPoint) {
                 if (points[i + 1].geometry) {
+                    point.geometry = []; // nothing leads to the first point
                     let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
                     if (newGeometryFromNewPoint) {
                         points[i + 1].geometry = newGeometryFromNewPoint.points || [];

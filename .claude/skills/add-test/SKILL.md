@@ -69,6 +69,16 @@ A test earns its place only if the behaviour can break silently and the user wou
 
 A manager or a formatting module is 10-15 tests, not 30.
 
+## Expect what the app should do, not what it does
+
+The expected value comes from the contract, never from running the code and copying the result. Before pinning a value, find where it is decided and check there:
+
+- a file name, a key, a format shared with the phone or the server - read the Android code (`~/osmand/android`, e.g. `FavouritesFileHelper`) or the server (`~/osmand/tools`, e.g. `WebGpxParser`, `MapApiController`) and expect what they produce; a test that pins the web's own encoding proves nothing when the other side disagrees;
+- a value shown to the user - ask whether a person would call it right (a date order, a name with the extension, a lowercase language);
+- a limit - check what it is measured against (255 bytes of the name, or of the name with the prefix and the extension on the phone).
+
+If a suspected bug's test passes on the first run, suspect the test: it compares live references with themselves (snapshot the numbers before the second call), or the fixture is not what the app really holds (`favorites/favorites.gpx` is not a favorite file name). Write down the reason a value is expected when it is not obvious from the name of the test.
+
 ## Look for bugs while writing
 
 Writing the test is the review. Report the bugs first, before describing the tests, and never write a test that blesses broken behaviour.
