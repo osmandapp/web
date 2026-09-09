@@ -144,6 +144,16 @@ export function getIconNameForPoiType({
     }
 }
 
+// icon of a POI feature from the server (web_* props)
+export function getFinalPoiIconName(properties) {
+    return getIconNameForPoiType({
+        iconKeyName: properties[ICON_KEY_NAME],
+        typeOsmTag: properties[TYPE_OSM_TAG],
+        typeOsmValue: properties[TYPE_OSM_VALUE],
+        iconName: properties[POI_ICON_NAME],
+    });
+}
+
 export function getCatPoiIconName(props) {
     let iconName = getIconNameForPoiType({
         iconKeyName: props[ICON_KEY_NAME],
@@ -287,12 +297,7 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache,
         } else if (obj) {
             iconWpt = getIconName(obj);
         } else {
-            iconWpt = getIconNameForPoiType({
-                iconKeyName: poi.properties[ICON_KEY_NAME],
-                typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                iconName: poi.properties[POI_ICON_NAME],
-            });
+            iconWpt = getFinalPoiIconName(poi.properties);
         }
         if (iconWpt) {
             // If the icon is already in the existing cache, copy it to the updated cache
@@ -461,7 +466,7 @@ export function translateWithSplit(t, string) {
     return translatedString;
 }
 
-export function navigateToPoi(obj, navigate, isWiki = false) {
+export function navigateToPoi(obj, navigate, isWiki = false, options = undefined) {
     if (!obj) return;
 
     const params = {};
@@ -483,11 +488,14 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
             search.append(key, v);
         }
     }
-    navigate({
-        pathname: MAIN_URL_WITH_SLASH + POI_URL,
-        search: search.size ? `?${search}` : '',
-        hash: globalThis.location.hash,
-    });
+    navigate(
+        {
+            pathname: MAIN_URL_WITH_SLASH + POI_URL,
+            search: search.size ? `?${search}` : '',
+            hash: globalThis.location.hash,
+        },
+        options
+    );
 }
 
 function getWikiPoiParams(poi, wiki) {
@@ -527,7 +535,7 @@ function getWikiPoiType(props) {
 const PoiManager = {
     getPoiCategories,
     searchPoiCategories,
-    getIconNameForPoiType,
+    getFinalPoiIconName,
     getTopPoiFilters,
     formattingPoiType,
     formattingPoiFilter,

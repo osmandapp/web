@@ -17,16 +17,7 @@ import PoiManager, {
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import {
-    CATEGORY_TYPE,
-    FINAL_POI_ICON_NAME,
-    ICON_KEY_NAME,
-    POI_ID,
-    POI_ICON_NAME,
-    POI_NAME,
-    TYPE_OSM_TAG,
-    TYPE_OSM_VALUE,
-} from '../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_TYPE, FINAL_POI_ICON_NAME, POI_ID, POI_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
 import { getObjIdSearch } from '../../manager/SearchManager';
 import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
@@ -69,14 +60,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
 
     const mainMarkersLayers = await Promise.all(
         mainMarkers?.map(async (poi) => {
-            const finalIconName =
-                poi.properties[FINAL_POI_ICON_NAME] ??
-                PoiManager.getIconNameForPoiType({
-                    iconKeyName: poi.properties[ICON_KEY_NAME],
-                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                    iconName: poi.properties[POI_ICON_NAME],
-                });
+            const finalIconName = poi.properties[FINAL_POI_ICON_NAME] ?? PoiManager.getFinalPoiIconName(poi.properties);
             const icon = await getPoiIcon(poi, innerCache, finalIconName);
             const coord = poi.geometry.coordinates;
             const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
@@ -303,12 +287,7 @@ export default function PoiLayer() {
                 data.properties[POI_ID] = objId;
             }
 
-            data.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
-                iconKeyName: data.properties[ICON_KEY_NAME],
-                typeOsmTag: data.properties[TYPE_OSM_TAG],
-                typeOsmValue: data.properties[TYPE_OSM_VALUE],
-                iconName: data.properties[POI_ICON_NAME],
-            });
+            data.properties[FINAL_POI_ICON_NAME] = PoiManager.getFinalPoiIconName(data.properties);
             // if it has poiTags, then it has info from both wiki and osm
             const poiTags = data.properties.poiTags;
 

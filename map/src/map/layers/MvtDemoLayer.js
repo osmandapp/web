@@ -8,7 +8,7 @@ const config = {
     style: defaultStyle,
     tileUrl: MVT_OSMAND_URL,
     isActive: isOsmAndTileURL,
-    popupClassName: 'mvt-demo-popup',
+    clickable: true,
     errorLabel: 'MVT demo layer error',
     pane: 'mvtDemoPane',
     paneZIndex: MVT_PANE_Z_INDEX,

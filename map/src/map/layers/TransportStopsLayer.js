@@ -14,6 +14,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import debounce from 'lodash-es/debounce';
 import { BBOX_COORDS_DECIMALS, MENU_INFO_OPEN_SIZE, MAIN_URL_WITH_SLASH, STOP_URL } from '../../manager/GlobalManager';
+import { getTransportStopApi } from '../../manager/SearchApi';
 
 export const TRANSPORT_STOPS_LAYER_ID = 'transport-stops-layer';
 
@@ -184,7 +185,7 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick, c
     }
 }
 
-export function navigateToStop(stop, navigate) {
+export function navigateToStop(stop, navigate, options = undefined) {
     if (!stop?.options || !stop.latlng) return;
 
     const stopId = stop.options.id;
@@ -198,11 +199,14 @@ export function navigateToStop(stop, navigate) {
     search.append('id', stopId.toString());
     search.append('pin', pin);
 
-    navigate({
-        pathname: MAIN_URL_WITH_SLASH + STOP_URL,
-        search: `?${search}`,
-        hash: globalThis.location.hash,
-    });
+    navigate(
+        {
+            pathname: MAIN_URL_WITH_SLASH + STOP_URL,
+            search: `?${search}`,
+            hash: globalThis.location.hash,
+        },
+        options
+    );
 }
 
 const TransportStopsLayer = () => {
@@ -298,17 +302,7 @@ const TransportStopsLayer = () => {
         if (Number.isNaN(lat) || Number.isNaN(lon)) {
             return;
         }
-        const params = {
-            lat,
-            lon,
-            stopId: id,
-        };
-        const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
-
-        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-stop`, {
-            params: cleanParams,
-            apiCache: true,
-        });
+        const response = await getTransportStopApi({ lat, lon, stopId: id });
 
         if (response?.data) {
             const data = response.data;
@@ -331,9 +325,11 @@ const TransportStopsLayer = () => {
 
     useEffect(() => {
         if (ctx.stopByUrl?.params) {
+            // stop clicked on the map is already shown, the marker is for a stop opened by URL
+            const alreadySelected = String(ctx.selectedWpt?.stop?.options?.id) === ctx.stopByUrl.params.id;
             openStopByUrl().then(async (res) => {
                 let stopLayer = null;
-                if (res) {
+                if (res && !alreadySelected) {
                     stopLayer = await createStopMarker(res);
                     // remove old stop marker
                     if (ctx.stopByUrl.layer) {

@@ -40,6 +40,22 @@ export function searchByWordApi({
     });
 }
 
+export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal = undefined }) {
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-osmid`, {
+        apiCache: true,
+        signal,
+        params: { lat, lon, osmid, type, ...getCurrentTimeParams() },
+    });
+}
+
+export function getTransportStopApi({ lat, lon, stopId, signal = undefined }) {
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-stop`, {
+        apiCache: true,
+        signal,
+        params: { lat, lon, stopId },
+    });
+}
+
 export function searchUserDataApi({ query, openedTracks }) {
     return apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/search-user-data`, openedTracks, {
         params: { query },
