@@ -36,7 +36,6 @@ export default async function test() {
     await actionOpenMap('#14/50.4432/30.4995');
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
     await waitBy(By.id('se-search-input'));
 

@@ -6,12 +6,12 @@ import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.
 import { deleteTrack, getFiles } from '../../util.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     const tracks = getFiles({ folder: 'gpx' });
@@ -39,6 +39,7 @@ export default async function test() {
     await clickBy(By.id(`se-cloud-changes-actions-${trackName}`));
     await waitBy(By.id('se-changes-actions'));
     await clickBy(By.id('se-changes-actions-delete'));
+    await actionIdleWait(); // leaving settings refreshes the list, let the server apply the change first
 
     // check track
     await clickBy(By.id('se-show-menu-tracks'));
@@ -52,6 +53,7 @@ export default async function test() {
     await clickBy(By.id(`se-cloud-changes-actions-${trackName}`));
     await waitBy(By.id('se-changes-actions'));
     await clickBy(By.id('se-changes-actions-restore'));
+    await actionIdleWait();
 
     // check track
     await clickBy(By.id('se-show-menu-tracks'));

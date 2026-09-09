@@ -175,10 +175,13 @@ export async function clickBy(by, { optional = false, failOnError = false } = {}
     const clicker = async () => {
         const element = await waitBy(by, { optional, failOnError });
         if (element) {
+            const { width, height } = await element.getRect();
+            if (width === 0 || height === 0) {
+                return false; // not laid out yet (menu panels are always mounted and display:none until shown)
+            }
             const classes = await element.getAttribute('class');
 
-            await classDelay(classes, delaysBeforeClick); // class-based delay
-            await transitionDelay(element); // wait for CSS transition finish <Collapse>
+            await transitionDelay(); // wait for layout transitions (Menu / Collapse / Dialog) to finish
 
             try {
                 await element.click(); // the best way to click
@@ -192,60 +195,39 @@ export async function clickBy(by, { optional = false, failOnError = false } = {}
                 }
             }
 
-            await classDelay(classes, delaysAfterClick);
+            if (classes?.match(/MuiSelect-select|MuiMenuItem-root/)) {
+                await driver.sleep(60); // let Menu/Select close-transition start
+                await transitionDelay();
+            }
             return element;
         }
         return true; // enclose needs truthy
     };
     debug && console.log('clickBy', by.value || by);
-    return await enclose(clicker, { tag: 'clickBy', optional });
+    return await enclose(clicker, { tag: 'clickBy ' + (by.value || by), optional });
 }
 
-const delaysBeforeClick = {
-    'MuiSelect-select': 550, // <Select> close-transition (after previous click inside Select)
-    'MuiMenuItem-root': 550, // <MenuItem> might be located inside <Collapse> but w/o transition css
-};
+const TRANSITION_DELAY_MAX = 600; // ms
 
-const delaysAfterClick = {
-    'MuiSelect-select': 550, // <Select> open-transition (before next click inside Select)
-    'MuiMenuItem-root': 550, // <MenuItem> might be located inside <Collapse> but w/o transition css
-};
+// count running CSS transitions/animations that move or reveal elements (color-like transitions, ripple and endless spinners are ignored)
+const RUNNING_LAYOUT_ANIMATIONS = `
+    const layoutProps = /^(transform|opacity|height|width|max-height|max-width|top|left|right|bottom|margin|padding)/;
+    return document.getAnimations().filter((a) => {
+        if (a.playState !== 'running') return false;
+        if (a.effect?.getTiming().iterations === Infinity) return false;
+        if (a.transitionProperty) return layoutProps.test(a.transitionProperty);
+        return !a.effect?.target?.className?.toString().includes('MuiTouchRipple');
+    }).length;
+`;
 
-// sleep by max(element-class in delays{})
-async function classDelay(classes, delays) {
-    let delayMs = 0;
-    if (classes) {
-        classes.split(' ').forEach((c) => delays[c] > 0 && delays[c] > delayMs && (delayMs = delays[c]));
-        if (delayMs > 0) {
-            await driver.actions().pause(delayMs).perform();
+// wait until layout transitions (Menu, Collapse, Dialog, Popover) are finished
+async function transitionDelay() {
+    const started = Date.now();
+    while ((await driver.executeScript(RUNNING_LAYOUT_ANIMATIONS)) > 0) {
+        if (Date.now() - started > TRANSITION_DELAY_MAX) {
+            return;
         }
-    }
-}
-
-// sleep by max(CSS-transition-delay) before click
-async function transitionDelay(element) {
-    let delayMs = 0;
-    const extend = 1.15; // +15% to finish transition
-    const transition = await element.getCssValue('transition');
-    if (transition) {
-        transition.split(',').forEach((t) => {
-            // background-color 0.25s cubic-bezier(0.4 ...
-            if (t.trim().match(/^(color|background-color|border-color|box-shadow)/)) {
-                let ms = 0;
-                const [, delay] = t.trim().split(' '); // '... 0.25s' -> '0.25s'
-                if (delay.includes('ms')) {
-                    ms = delay.replace('ms', ''); // 150ms -> 150
-                } else if (delay.includes('s')) {
-                    ms = delay.replace('s', '') * 1000; // '0.25s' -> 250
-                }
-                ms > 0 && ms > delayMs && (delayMs = ms); // max
-            }
-        });
-    }
-    // validate and sleep
-    if (delayMs > 0 && delayMs < 10000) {
-        const delay = Math.trunc(delayMs * extend);
-        await driver.actions().pause(delay).perform();
+        await driver.sleep(40);
     }
 }
 

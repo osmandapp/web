@@ -7,6 +7,7 @@ import { driver } from '../../options.mjs';
 
 import { deleteTrack } from '../../util.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
+import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 const TRACK_NAME = 'se-test-create-track';
 
@@ -16,6 +17,11 @@ const strings4 = [/Points: 4/, /Distance: [1-9]\.[0-9]+ km/];
 export default async function test() {
     await actionOpenMap('#15/50.4946/30.5220');
     await actionLogIn();
+
+    // remove the track left by a previous failed run, otherwise save asks to update it
+    await clickBy(By.id('se-show-menu-tracks'));
+    await actionDeleteTracksByPattern(TRACK_NAME);
+    await clickBy(By.id('se-show-menu-tracks'));
 
     // Create local track with 3 points
     await rightClickBy(50.492409, 30.525041);

@@ -36,7 +36,6 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     // prepared tracks
@@ -57,7 +56,6 @@ export default async function test() {
     await waitBy(By.id('se-share-file'));
     await clickBy(By.id('se-close-share-file'));
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     await waitBy(By.id(`se-cloud-track-${trackName}`));
@@ -109,7 +107,6 @@ export default async function test() {
     // approve access
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
     await approveAccessTrack(trackName, userName);
     await approveAccessTrack(trackName2, userName);
@@ -145,7 +142,6 @@ export default async function test() {
     await actionLogOut();
     await clickBy(By.id('se-login-button'));
     await actionLogIn();
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
 
     // make favorites share public
     await clickBy(By.id('se-show-menu-favorites'));
@@ -158,7 +154,6 @@ export default async function test() {
     await checkAnonymousPublicFavorites(linkFav1, favWptName);
 
     await actionLogIn();
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     await deleteTrack(trackName);

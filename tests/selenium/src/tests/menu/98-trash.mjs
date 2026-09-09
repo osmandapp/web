@@ -16,7 +16,6 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
     const tracks = getFiles({ folder: 'gpx' });
     const trackName = 'test-routed-osrm';
