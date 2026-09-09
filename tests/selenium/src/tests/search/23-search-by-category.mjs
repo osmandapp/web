@@ -13,7 +13,6 @@ export default async function test() {
     const leisure = 'Leisure';
 
     // 1. Search home category grid: pick Accommodation, check list + map markers.
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
     await waitBy(By.id('se-default-search-categories'));
     await clickBy(By.id(`se-default-search-categories-item-${accommodation}`));

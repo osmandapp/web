@@ -23,7 +23,6 @@ export default async function test() {
 
     const trackName = 'test-routed-osrm';
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     for (const track of getFiles({ folder: 'gpx' })) {

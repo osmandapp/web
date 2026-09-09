@@ -4,7 +4,7 @@ import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
 import actionAddOneTrack from '../../actions/tracks/actionAddOneTrack.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
-import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
+import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteTrack, getFiles } from '../../util.mjs';
@@ -16,9 +16,7 @@ export default async function test() {
 
     const trackName = 'test-routed-osrm';
     const favoriteName = 'TrackFavTest';
-    const favGroupName = 'favorites';
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
     for (const track of getFiles({ folder: 'gpx' })) {
@@ -53,11 +51,7 @@ export default async function test() {
     await deleteTrack(trackName);
 
     await actionOpenFavorites();
-    const favGroupExists = await waitBy(By.id(`se-menu-fav-${favGroupName}`), { optional: true, idle: true });
-    if (favGroupExists) {
-        await actionDeleteFavGroup(favGroupName);
-        await waitBy(By.id('se-empty-page'));
-    }
+    await actionDeleteAllFavorites([]); // the leftover loop removes any group, incl. those left by other tests
 
     await actionFinish();
 }

@@ -12,7 +12,6 @@ export default async function test() {
 
     const searchWord = 'food';
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
 
     await waitBy(By.id('se-search-input'));

@@ -29,7 +29,7 @@ export default async function test() {
     // match coordinates of start/finish points
     await enclose(
         async () => {
-            await clickBy(By.id('se-button-back'), { optional: true });
+            await clickBy(By.id('se-button-back'), { optional: true, now: true });
             return (
                 (await matchValueBy(By.id('se-route-start-point'), CHECK_START)) &&
                 (await matchValueBy(By.id('se-route-finish-point'), CHECK_END))

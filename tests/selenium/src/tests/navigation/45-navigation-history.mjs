@@ -22,7 +22,6 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-navigation'));
 
     // Create route with start point to populate history

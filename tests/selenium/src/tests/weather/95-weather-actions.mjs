@@ -6,7 +6,6 @@ import actionFinish from '../../actions/actionFinish.mjs';
 export default async function test() {
     await actionOpenMap();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-weather'));
 
     await waitBy(By.id('se-forecast_source'));
