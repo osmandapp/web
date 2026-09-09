@@ -66,39 +66,44 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
  @param {Object} options - An object with optional parameters.
  @param {boolean} options.optional - If true, the function will return null if the element is not found. If false, the function will throw an error when the element is not found.
  @param {boolean} options.idle - If true, the function will wait for all ongoing actions to complete before proceeding with the search for the element. This is useful in situations where the element might not be immediately available due to ongoing processes or animations.
+ @param {boolean} options.now - With optional: check once instead of polling for TIMEOUT_OPTIONAL. Implied by idle (the page is settled, the element is either there or not).
 
   Note:
   The function will return true if the test fails, which is used to check if the element is not visible.
   The test will fail if no visible element is found.
   If optional is set to true, it enforces the function to return null in case of any error. */
-export async function waitBy(by, { optional = false, idle = false, failOnError = false } = {}) {
+export async function waitBy(by, { optional = false, idle = false, now = idle, failOnError = false } = {}) {
     debug && console.log('waitBy', by.value || by);
     if (idle) {
         await actionIdleWait();
     }
-    try {
-        return await driver.wait(
-            new Condition('waitBy' + by.value, async () => {
-                failOnError && (await failOnErrorDialog());
-                const found = await driver.findElements(by);
-                if (found && found.length > 0) {
-                    for (let i = 0; i < found.length; i++) {
-                        const element = found[i];
-                        try {
-                            // don't check with element.isDisplayed() = wrong result
-                            if ((await element.getCssValue('visibility')) === 'hidden') {
-                                continue; // hidden - continue
-                            }
-                        } catch (e) {
-                            if (isStaleError(e)) {
-                                continue; // stale - continue
-                            }
-                        }
-                        return element; // found - success
+    const findVisible = async () => {
+        failOnError && (await failOnErrorDialog());
+        const found = await driver.findElements(by);
+        if (found && found.length > 0) {
+            for (let i = 0; i < found.length; i++) {
+                const element = found[i];
+                try {
+                    // don't check with element.isDisplayed() = wrong result
+                    if ((await element.getCssValue('visibility')) === 'hidden') {
+                        continue; // hidden - continue
+                    }
+                } catch (e) {
+                    if (isStaleError(e)) {
+                        continue; // stale - continue
                     }
                 }
-                return false;
-            }),
+                return element; // found - success
+            }
+        }
+        return false;
+    };
+    try {
+        if (optional && now) {
+            return (await findVisible()) || null;
+        }
+        return await driver.wait(
+            new Condition('waitBy' + by.value, findVisible),
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
@@ -171,9 +176,9 @@ export async function waitByRemoved(by, allowHidden = false, { failOnError = fal
  * test: failed if not found or not visible element
  * test-ok: optional===true is processed by enclose()
  */
-export async function clickBy(by, { optional = false, failOnError = false } = {}) {
+export async function clickBy(by, { optional = false, now = false, failOnError = false } = {}) {
     const clicker = async () => {
-        const element = await waitBy(by, { optional, failOnError });
+        const element = await waitBy(by, { optional, now, failOnError });
         if (element) {
             const { width, height } = await element.getRect();
             if (width === 0 || height === 0) {
@@ -484,7 +489,7 @@ async function getMapCoords(lat, lon) {
  */
 export async function rightClickBy(lat, lon, { optional = false } = {}) {
     const fn = async () => {
-        await actionIdleWait();
+        await actionIdleWait({ tiles: true });
 
         const { container, xAbs, yAbs } = await getMapCoords(lat, lon);
 
@@ -513,7 +518,7 @@ export async function rightClickBy(lat, lon, { optional = false } = {}) {
  */
 export async function leftClickBy(lat, lon, { optional = false } = {}) {
     const fn = async () => {
-        await actionIdleWait();
+        await actionIdleWait({ tiles: true });
 
         const { container, xAbs, yAbs } = await getMapCoords(lat, lon);
 
@@ -542,7 +547,7 @@ export async function leftClickBy(lat, lon, { optional = false } = {}) {
  */
 export async function getMarker(lat, lon, { optional = false } = {}) {
     const fn = async () => {
-        await actionIdleWait();
+        await actionIdleWait({ tiles: true });
         const layersInfo = await driver.executeScript(`
       return Object.values(window.__leafletMap._layers)
         .filter(layer => typeof layer.getLatLng === 'function')
@@ -605,7 +610,7 @@ export async function zoomMap(direction) {
  */
 export async function setMapCenter(lat, lon) {
     await driver.executeScript('window.__leafletMap.setView([arguments[0], arguments[1]]);', lat, lon);
-    await actionIdleWait();
+    await actionIdleWait({ tiles: true });
 }
 
 /**

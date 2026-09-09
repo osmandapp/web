@@ -12,5 +12,5 @@ import actionIdleWait from './actionIdleWait.mjs';
  */
 export default async function test() {
     mobile && (await clickBy(By.id('se-hide-main-menu'), { optional: true })); // nice screenshot
-    await actionIdleWait({ idle: FINAL_DELAY });
+    await actionIdleWait({ idle: FINAL_DELAY, tiles: true });
 }
