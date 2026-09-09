@@ -202,10 +202,9 @@ async function assertSearchResultAbsent(resultBy) {
 }
 
 async function submitSearchQuery(query) {
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
     await waitBy(By.id('se-search-input'));
-    await clickBy(By.id('se-search-input-cancel'), { optional: true });
+    await clickBy(By.id('se-search-input-cancel'), { optional: true, now: true });
     await sendKeysBy(By.id('se-search-input'), `${query}\n`);
     await waitByRemoved(By.id('se-loading-page'), { optional: true });
 }

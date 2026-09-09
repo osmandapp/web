@@ -12,13 +12,13 @@ export const TEST_PASSWORD = '0xDEADBEEF';
 export const TEST_LOGIN2 = 'osmandtest2@gmail.com';
 export const TEST_PASSWORD2 = 'osmandTest2osmandTest2';
 
-export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
+export const TIMEOUT_OPTIONAL = 1000; // optional element timeout (1s)
 export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)
 export const LONG_TIMEOUT = 300 * 1000; // used with --longtimeout to prolong default TIMEOUT_REQUIRED (300s)
 export const HIDDEN_TIMEOUT = 10000; // hidden timeout (waitBy) (10s)
 
 export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1s)
-export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3s)
+export const FINAL_DELAY = 1000; // final idle delay before screenshot (1s)
 
 export const ROUTE_SUMMARY_SELECTOR = By.id('se-route-summary-info');
 
@@ -201,7 +201,7 @@ export async function prepareDriver() {
 
     options.setLoggingPrefs({
         browser: 'ALL',
-        performance: 'ALL',
+        ...(verbose && { performance: 'ALL' }), // performance log is read only with --verbose
     });
 
     options.setUserPreferences({
@@ -216,5 +216,5 @@ export async function prepareDriver() {
     // setRect might cause unknown error: failed to change window state to 'normal'
     useLocalHomeBinary || (await driver.manage().window().setRect({ width, height }));
 
-    await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
+    await driver.manage().setTimeouts({ implicit: 0 }); // explicit waits only (waitBy / enclose)
 }

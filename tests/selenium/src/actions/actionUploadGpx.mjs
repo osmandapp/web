@@ -32,7 +32,6 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
             }
         });
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-planroute'), { optional: true });
 
     if (multiple) {
@@ -40,7 +39,7 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
         await uploadTracks({ files });
     } else {
         for (let i = 0; i < tracks.length; i++) {
-            await clickBy(By.id('se-button-back'), { optional: true });
+            await clickBy(By.id('se-button-back'), { optional: true, now: true });
             const { name, path } = tracks[i];
             await uploadTracks({ files: path });
             await waitForNameTrack({ name });
@@ -48,7 +47,7 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
         }
     }
 
-    await clickBy(By.id('se-button-back'), { optional: true });
+    await clickBy(By.id('se-button-back'), { optional: true, now: true });
 
     // finally, all files should be loaded
     for (let i = 0; i < tracks.length; i++) {

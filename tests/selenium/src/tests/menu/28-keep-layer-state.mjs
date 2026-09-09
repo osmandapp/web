@@ -25,7 +25,6 @@ export default async function test() {
     let url;
 
     // Step 1: Open search menu and select category
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
     await waitBy(By.id('se-default-search-categories'));
     await clickBy(By.id(`se-default-search-categories-item-${searchCategory}`));

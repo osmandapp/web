@@ -10,7 +10,6 @@ export default async function test() {
     await actionOpenMap();
 
     // open favorites menu without login
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-favorites'));
     await waitBy(By.css(`${FAVORITES_MENU_BLOCK} #se-empty-login-page`));
 

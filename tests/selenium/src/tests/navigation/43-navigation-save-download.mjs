@@ -1,6 +1,7 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
+import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 import { clickBy, waitBy, waitByRemoved, sendKeysBy, assert, enclose, enumerateIds } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
@@ -39,6 +40,7 @@ export default async function test() {
     const infoBlockTrackName = await saveRouteToCloud('se-route-track-actions-save-to-cloud');
     // save from InfoBlock opens the cloud track, go back to the list
     await waitBy(By.id('se-track-actions-edit'));
+    await actionIdleWait(); // let save-to-cloud finish refreshing the list before leaving the track
     await clickBy(By.id('se-button-back'));
     await verifyCloudTrackInfo(infoBlockTrackName);
     await deleteTrack(infoBlockTrackName);
@@ -116,11 +118,9 @@ async function verifyCloudTrackInfo(routeName) {
 }
 
 async function returnToNavigation() {
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-navigation'));
 }
 
 async function navigateToTracks() {
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 }

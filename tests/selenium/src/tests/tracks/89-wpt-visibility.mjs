@@ -128,7 +128,6 @@ export default async function test() {
 
     // Close track and cleanup
     await clickBy(By.id('se-button-close'));
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
     await deleteTrack(trackName);
 }

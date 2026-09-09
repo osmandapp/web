@@ -12,7 +12,6 @@ const CLOUD = /^([0-9]|[1-9][0-9]|100)(\.\d{1,2})$/; // 0..100% with optional de
 export default async function test() {
     await actionOpenMap();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-weather'));
     await waitByRemoved(By.id('se-loading-weather-data'));
 
