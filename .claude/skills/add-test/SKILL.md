@@ -110,6 +110,7 @@ Tests live in `tests/selenium/src/tests/<category>/NN-name.mjs` (categories: bas
 1. Read 2–3 existing tests of the same category and the actions they use — copy their patterns, do not invent new helpers.
 2. Find element ids in `map/src`: every testable element has `id="se-..."`. Grep for the id before using it; never guess. Ids with names use the raw name (`se-actions-${wptName}`, spaces and brackets included).
 3. Prefer an existing action from `src/actions/**` over inline steps (see the folder — login, upload, open/delete/rename actions per category). Add a new action only if the same steps appear in more than one test.
+4. Read `map/AGENTS.md`: menu panels are always mounted and hidden with `display:none`, the app navigates on its own after login and after save-to-cloud, InfoBlock header ids are shared. These facts decide what a test must wait for.
 
 ## Skeleton
 
@@ -132,13 +133,24 @@ export default async function test() {
 
 ## Helpers (`src/lib.mjs`)
 
-- `waitBy(by, { optional, idle })` — waits for a visible element (45s), throws otherwise; `optional: true` returns null after 1s; `idle: true` waits for app idle (`window.seActivityTimestamp`) first — use before clicking items in freshly rendered lists.
-- `waitByRemoved(by)` — waits until no such element exists.
-- `clickBy(by, { optional })` — waits, then clicks (falls back to move+click for non-interactable).
+- `waitBy(by, { optional, idle, now })` — waits for a visible element (45s), throws otherwise. `optional: true` returns null after 1s of polling; `idle: true` waits for app idle first (`window.seActivityTimestamp`, 1s without context renders or API calls) and then checks once; `now: true` checks once without idle — for `optional` lookups of elements that are either there or not (a back button, a cancel icon), never for elements that are still being rendered. `waitBy` filters only `visibility:hidden`: an element of a hidden menu panel (display:none) is still "found", so wait for the panel's own id before touching its content.
+- `waitByRemoved(by)` — idle, then waits until no such element exists.
+- `clickBy(by, { optional, now })` — waits, retries until the element has a size (not laid out = hidden panel), waits for running layout transitions (Menu, Collapse, Dialog), clicks. There are no fixed sleeps before or after a click any more: whatever the click races with has to be waited for explicitly.
 - `sendKeysBy(by, keys)`, `matchTextBy`, `enumerateIds('se-prefix-')` (visible ids in DOM order — use for order/count checks), `enclose(cb, { tag })` (retry a condition until truthy — use for assertions that need time), `getUrl()`.
-- `actionIdleWait()` after heavy actions (upload, delete).
+- `actionIdleWait({ idle, tiles })` — the one settle primitive: 1s without app activity. `tiles: true` also waits for map tiles — only for map interaction and screenshots (`leftClickBy`, `rightClickBy`, `getMarker`, `setMapCenter`, `actionFinish` do it themselves).
 
 Assert with waits, not with plain `assert`: expected element → `waitBy`, expected absence → `waitByRemoved`, order/count → `enclose(() => enumerateIds(...))`.
+
+## Races the app has — wait for the state, not for time
+
+`sleep`, `driver.actions().pause()` and `actionIdleWait({ idle: 3000 })` stacks are not fixes: they hide a race until the machine is slower. Each of these was found by removing fixed delays; the wait named here is the one that works.
+
+- After login the app `navigate()`s on its own (return to the previous page). `actionLogIn` ends with `actionIdleWait()`; do not remove it, and do not click a menu icon before it.
+- Header ids `se-button-back` / `se-button-close` are shared by every panel. Before clicking back, wait for the id of the panel you expect to be open (`se-track-context-menu`, `se-edit-fav-dialog`), otherwise the click lands on the previous panel's back button while the new panel is still opening.
+- Save to cloud (`se-submit-save-to-cloud`) and a single-file cloud upload open the resulting cloud track and refresh the list afterwards (`refreshGlobalFiles`). Wait for `se-track-actions-edit` / `se-track-context-menu`, then `actionIdleWait()`, then back — otherwise the track re-opens over the list.
+- Leaving Cloud settings / Changes triggers `list-files` (`closeCloudSettings`). `deleteFileVersion` / `restoreFile` do not refresh the list themselves, so `actionIdleWait()` after the action before switching menus, or the list comes back stale. Change entries (`se-cloud_change-<name>-Deleted`) accumulate across runs and are not unique — never wait on them.
+- The unsaved-changes guard (`useExitGuard`, `useBlocker`) registers after the render that follows typing: `actionIdleWait()` after `sendKeysBy` before the action that must be intercepted.
+- Optional checks of the form "if it exists, click it" belong after idle (`{ optional: true, idle: true }`) or with `now: true`; a plain `{ optional: true }` polls for a full second on every miss.
 
 ## UI rules
 
@@ -151,15 +163,17 @@ Assert with waits, not with plain `assert`: expected element → `waitBy`, expec
 ## Data and cleanup
 
 - Test files: `tests/selenium/gpx/*.gpx`, `tests/selenium/favorites/*.gpx` via `getFiles({ folder })` from `src/util.mjs`. Check the file content before relying on names inside it.
-- Everything the test creates or renames must be deleted at the end AND at the start (a previous run may have failed mid-way). Cleanup by name prefix so renamed items are covered too.
+- Everything the test creates or renames must be deleted at the end AND at the start (a previous run may have failed mid-way). Cleanup by name prefix so renamed items are covered too. A test that asserts an empty list (`se-empty-page`) must remove everything there (`actionDeleteAllFavorites`, `actionDeleteTracksByPattern` for each test gpx), not only its own items — one leftover from a failed test otherwise fails every later test that expects an empty page or gets an "update the track?" dialog instead of a save.
+- One shared account (`osmand@grr.la`): two runs at the same time (local + CI, local + agent) delete each other's data and fail randomly. `TEST_LOGIN2` is a fixture account for 09 (smart folders) and the second user of 99 — never clean it.
 
 ## Run and check
 
 ```bash
 cd tests/selenium
-yarn test <category>/<NN-name>.mjs   # one test against localhost:3000
+yarn test NN-name                    # one test against localhost:3000 (mask matches the file name, not the path)
 yarn test <category> --headless      # category
+yarn test --verbose                  # browser console + network log on failure
 yarn lint                            # eslint + prettier
 ```
 
-Failed runs leave screenshots in `tests/selenium/screenshots/failed/`. The failure message names the locator that timed out — read the app code for that step before changing the test.
+Failed runs leave screenshots in `tests/selenium/screenshots/failed/`. The failure message names the locator that timed out (`Waiting clickBy <locator>`, `Waiting waitBy<locator>`) — read the app code for that step before changing the test: `element not interactable ... has no size` means the element belongs to a panel that is not shown, a `waitBy` timeout right after a click usually means the click raced an app-side navigation or refresh. Screenshot comparison is inactive (`screenshots/trusted` is empty), `screenshots/latest` is for looking only.
