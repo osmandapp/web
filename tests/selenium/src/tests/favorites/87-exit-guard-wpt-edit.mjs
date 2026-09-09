@@ -103,8 +103,8 @@ export default async function test() {
     // click wptName2 map marker → guard fires, edit panel stays open
     await clickBy(By.id(`se-fav-map-marker-${wptName2}`));
     await waitBy(By.id('se-exit-dialog-exit'));
-    await clickBy(By.id('se-exit-dialog-exit'), { optional: true }); // map pan to the marker may dismiss the dialog
-    if (await waitBy(By.id('se-edit-fav-dialog'), { optional: true })) {
+    await clickBy(By.id('se-exit-dialog-exit'), { optional: true, now: true }); // map pan to the marker may dismiss the dialog
+    if (await waitBy(By.id('se-edit-fav-dialog'), { optional: true, idle: true })) {
         // dialog was dismissed by the pan, trigger the guard again
         await clickBy(By.id(`se-fav-map-marker-${wptName2}`));
         await clickBy(By.id('se-exit-dialog-exit'));

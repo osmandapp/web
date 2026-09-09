@@ -51,7 +51,7 @@ export default async function test() {
     await deleteTrack(trackName);
 
     await actionOpenFavorites();
-    await actionDeleteAllFavorites(getFiles({ folder: 'favorites' })); // also removes groups left by other tests
+    await actionDeleteAllFavorites([]); // the leftover loop removes any group, incl. those left by other tests
 
     await actionFinish();
 }

@@ -57,22 +57,24 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
 }
 
 /**
- Function: waitBy(by, { optional, idle })
+ Function: waitBy(by, { optional, idle, now, failOnError })
 
  This function waits for a visible element on the page.
- Returns: the element if found.
 
  @param {By} by - An object that describes the locator strategy for the element.
  @param {Object} options - An object with optional parameters.
  @param {boolean} options.optional - If true, the function will return null if the element is not found. If false, the function will throw an error when the element is not found.
  @param {boolean} options.idle - If true, the function will wait for all ongoing actions to complete before proceeding with the search for the element. This is useful in situations where the element might not be immediately available due to ongoing processes or animations.
  @param {boolean} options.now - With optional: check once instead of polling for TIMEOUT_OPTIONAL. Implied by idle (the page is settled, the element is either there or not).
+ @param {boolean} options.sized - Skip matches without layout (0x0, e.g. inside a hidden menu panel). Used by clickBy; off by default, hidden file inputs are found for sendKeys.
 
-  Note:
-  The function will return true if the test fails, which is used to check if the element is not visible.
-  The test will fail if no visible element is found.
-  If optional is set to true, it enforces the function to return null in case of any error. */
-export async function waitBy(by, { optional = false, idle = false, now = idle, failOnError = false } = {}) {
+  Returns the first visible matching element.
+  With optional: true returns null when nothing is found within TIMEOUT_OPTIONAL (at once with now: true).
+  Otherwise throws on timeout; with failOnError throws SiteError (also when optional). */
+export async function waitBy(
+    by,
+    { optional = false, idle = false, now = idle, sized = false, failOnError = false } = {}
+) {
     debug && console.log('waitBy', by.value || by);
     if (idle) {
         await actionIdleWait();
@@ -87,6 +89,12 @@ export async function waitBy(by, { optional = false, idle = false, now = idle, f
                     // don't check with element.isDisplayed() = wrong result
                     if ((await element.getCssValue('visibility')) === 'hidden') {
                         continue; // hidden - continue
+                    }
+                    if (sized) {
+                        const { width, height } = await element.getRect();
+                        if (width === 0 || height === 0) {
+                            continue; // not laid out - continue
+                        }
                     }
                 } catch (e) {
                     if (isStaleError(e)) {
@@ -167,9 +175,10 @@ export async function waitByRemoved(by, allowHidden = false, { failOnError = fal
 }
 
 /**
- * Lib: clickBy(by, { optional })
+ * Lib: clickBy(by, { optional, now, failOnError })
  *
- * Find (by), check visible, delay until transition, click.
+ * Find (by) a visible and laid out element, wait for layout transitions, click.
+ * now: with optional, check once instead of polling (see waitBy).
  * Works with non-interactive elements such as MenuItem.
  * Return: element
  *
@@ -178,12 +187,8 @@ export async function waitByRemoved(by, allowHidden = false, { failOnError = fal
  */
 export async function clickBy(by, { optional = false, now = false, failOnError = false } = {}) {
     const clicker = async () => {
-        const element = await waitBy(by, { optional, now, failOnError });
+        const element = await waitBy(by, { optional, now, sized: true, failOnError });
         if (element) {
-            const { width, height } = await element.getRect();
-            if (width === 0 || height === 0) {
-                return false; // not laid out yet (menu panels are always mounted and display:none until shown)
-            }
             const classes = await element.getAttribute('class');
 
             await transitionDelay(); // wait for layout transitions (Menu / Collapse / Dialog) to finish
