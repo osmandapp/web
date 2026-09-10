@@ -48,9 +48,9 @@ export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal }) {
     });
 }
 
-// POI built from the tags of a vector tile object (not in the POI index), id is the map object id of the tile feature
-export function getPoiByTagsApi({ lat, lon, id, tags, signal }) {
-    return apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-tags`, tags, {
+// POI of a vector tile object: id is the map object id of the tile feature, tags are used when it is not in the POI index
+export function getPoiByMapObjectApi({ lat, lon, id, tags, signal }) {
+    return apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-map-object`, tags, {
         apiCache: true,
         signal,
         params: { lat, lon, id, ...getCurrentTimeParams() },

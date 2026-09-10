@@ -116,7 +116,7 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
-import { getPoiByOsmIdApi, getPoiByTagsApi, getTransportStopApi } from '../../../manager/SearchApi';
+import { getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -1188,11 +1188,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     );
 }
 
-// object clicked on the MVT layer: full POI (same as in search results), for a public transport POI its stop with
-// routes (as Android AmenityMenuController), else a POI from the tags of the map object (none for an address)
+// object clicked on the MVT layer: full POI (same as in search results, from the tags when not in the POI index),
+// for a public transport POI its stop with routes (as Android AmenityMenuController)
 async function loadMvtObject({ mvt, poi }, signal) {
-    const fullPoi =
-        (await getPoiByOsmId(mvt.osmId, poi.latlng, signal)) ?? (await getPoiByTags(mvt, poi.latlng, signal));
+    const fullPoi = await getPoiByMapObject(mvt, poi.latlng, signal);
     const stopId = fullPoi?.options[TRANSPORT_STOP_ID];
     const stop = stopId ? await getTransportStop(stopId, fullPoi.latlng, signal) : null;
 
@@ -1205,21 +1204,12 @@ async function getTransportStop(stopId, latlng, signal) {
     return createMapObject(response?.data);
 }
 
-async function getPoiByOsmId(osmid, latlng, signal) {
-    const response = await getPoiByOsmIdApi({ lat: latlng.lat, lon: latlng.lng, osmid, signal });
-
-    return createPoiObject(response?.data);
-}
-
-async function getPoiByTags({ mapObjectId, tags }, latlng, signal) {
-    if (!tags) {
-        return null;
-    }
-    const response = await getPoiByTagsApi({
+async function getPoiByMapObject({ mapObjectId, tags }, latlng, signal) {
+    const response = await getPoiByMapObjectApi({
         lat: latlng.lat,
         lon: latlng.lng,
         id: mapObjectId,
-        tags: stringifyTagValues(tags),
+        tags: stringifyTagValues(tags ?? {}),
         signal,
     });
 

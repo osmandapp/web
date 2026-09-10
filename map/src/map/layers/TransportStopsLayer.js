@@ -336,8 +336,6 @@ const TransportStopsLayer = () => {
         if (ctx.stopByUrl?.params) {
             // stop clicked on the map (layer marker or MVT symbol) is already selected: no request, no marker
             if (String(ctx.selectedWpt?.stop?.options?.id) === ctx.stopByUrl.params.id) {
-                ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
-                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
                 finishStopByUrl(null);
                 return;
             }
@@ -387,6 +385,9 @@ const TransportStopsLayer = () => {
                 }
             }
 
+            // the object type is set before the stop: WptDetails builds the details from both
+            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             ctx.setSelectedWpt({ stop });
 
             navigateToStop(stop, navigate);

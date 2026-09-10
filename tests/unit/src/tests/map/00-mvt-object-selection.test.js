@@ -18,69 +18,42 @@ function feature({
     return { id, layer, geometry, properties: { osm_id: 100, ...properties } };
 }
 
-describe('pickClickableFeature', () => {
-    test('only a rendered symbol with an osm id is clickable, the topmost one wins', () => {
-        const fill = feature({ layer: { type: 'fill' }, name: 'Park' });
-        const line = feature({ layer: { type: 'line' }, name: 'Road' });
-        const cafe = feature({ name: 'Cafe' });
-        const shop = feature({ name: 'Shop' });
+test('a click opens the topmost rendered symbol with an osm id, not areas, lines, captions along a path', () => {
+    const fill = feature({ layer: { type: 'fill' }, name: 'Park' });
+    const line = feature({ layer: { type: 'line' }, name: 'Road' });
+    const roadLabel = feature({ layer: { type: 'symbol', layout: { 'symbol-placement': 'line' } }, name: 'Road' });
+    const noId = feature({ name: 'Cafe' });
+    delete noId.properties.osm_id;
+    const cafe = feature({ layer: { type: 'symbol', layout: { 'symbol-placement': 'point' } }, name: 'Cafe' });
+    const shop = feature({ name: 'Shop' });
 
-        expect(pickClickableFeature([fill, line, cafe, shop])).toBe(cafe);
-        expect(pickClickableFeature([fill, line])).toBeUndefined();
-    });
-
-    test('captions drawn along a path and features without an osm id are not clickable', () => {
-        const roadLabel = feature({ layer: { type: 'symbol', layout: { 'symbol-placement': 'line' } }, name: 'Road' });
-        const noId = feature({ name: 'Cafe' });
-        delete noId.properties.osm_id;
-        const pointLabel = feature({
-            layer: { type: 'symbol', layout: { 'symbol-placement': 'point' } },
-            name: 'Park',
-        });
-
-        expect(pickClickableFeature([roadLabel, noId, pointLabel])).toBe(pointLabel);
-    });
+    expect(pickClickableFeature([fill, line, roadLabel, noId, cafe, shop])).toBe(cafe);
+    expect(pickClickableFeature([fill, line, roadLabel, noId])).toBeUndefined();
 });
 
-describe('createMvtObject', () => {
-    test('a named point: preview with the plain name at the symbol location, the tags for the details', () => {
-        const cafe = feature({ id: 200, name: 'Cafe', 'name:en': 'Cafe EN', amenity: 'cafe' });
+test('the preview of a clicked object: plain name at the symbol, address for a house number, tags for the details', () => {
+    const cafe = feature({ id: 200, name: 'Cafe', 'name:en': 'Cafe EN', amenity: 'cafe' });
+    const park = feature({ geometry: { type: 'Polygon', coordinates: [] }, name: 'Park' });
+    const house = feature({ building: '', 'addr:housenumber': '42' });
+    const namedHouse = feature({ building: '', 'addr:housenumber': '42', name: 'Mall' });
 
-        expect(createMvtObject(cafe, CLICK)).toEqual({
-            poi: {
-                key: 100,
-                options: { [POI_NAME]: 'Cafe' },
-                latlng: { lat: 50.4, lng: 30.5 },
-                mapObj: true,
+    // the name is the plain one, as the server returns it, so the header does not change on load
+    expect(createMvtObject(cafe, CLICK)).toEqual({
+        poi: { key: 100, options: { [POI_NAME]: 'Cafe' }, latlng: { lat: 50.4, lng: 30.5 }, mapObj: true },
+        mvt: { osmId: 100, mapObjectId: 200, tags: cafe.properties },
+    });
+    // a polygon has no symbol coordinate, the click point is used
+    expect(createMvtObject(park, CLICK).poi.latlng).toEqual(CLICK);
+    // same as the HOUSE search result: number, house icon, no tags
+    expect(createMvtObject(house, CLICK)).toMatchObject({
+        poi: {
+            options: {
+                [CATEGORY_TYPE]: searchTypeMap.HOUSE,
+                [CATEGORY_NAME]: '42',
+                [FINAL_POI_ICON_NAME]: SEARCH_ICON_MAP_BUILDING,
             },
-            mvt: { osmId: 100, mapObjectId: 200, tags: cafe.properties },
-        });
+        },
+        mvt: { tags: null },
     });
-
-    test('a polygon is located at the click point', () => {
-        const park = feature({ geometry: { type: 'Polygon', coordinates: [] }, name: 'Park' });
-
-        expect(createMvtObject(park, CLICK).poi.latlng).toEqual(CLICK);
-    });
-
-    test('a house number without a name is an address, same as the HOUSE search result, without tags', () => {
-        const house = feature({ building: '', 'addr:housenumber': '42' });
-
-        expect(createMvtObject(house, CLICK)).toMatchObject({
-            poi: {
-                options: {
-                    [CATEGORY_TYPE]: searchTypeMap.HOUSE,
-                    [CATEGORY_NAME]: '42',
-                    [FINAL_POI_ICON_NAME]: SEARCH_ICON_MAP_BUILDING,
-                },
-            },
-            mvt: { tags: null },
-        });
-    });
-
-    test('a named building with a house number is a poi', () => {
-        const named = feature({ building: '', 'addr:housenumber': '42', name: 'Mall' });
-
-        expect(createMvtObject(named, CLICK).poi.options).toEqual({ [POI_NAME]: 'Mall' });
-    });
+    expect(createMvtObject(namedHouse, CLICK).poi.options).toEqual({ [POI_NAME]: 'Mall' });
 });

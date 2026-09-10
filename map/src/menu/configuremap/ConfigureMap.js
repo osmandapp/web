@@ -153,7 +153,12 @@ export default function ConfigureMap() {
     function renderMapStyleSelect() {
         return (
             <>
-                <MenuItem ref={mapStyleAnchorRef} className={styles.item} onClick={() => setOpenMapStyleMenu(true)}>
+                <MenuItem
+                    id="se-configure-map-style"
+                    ref={mapStyleAnchorRef}
+                    className={styles.item}
+                    onClick={() => setOpenMapStyleMenu(true)}
+                >
                     <ListItemIcon className={styles.iconEnabled}>
                         <Layers />
                     </ListItemIcon>
@@ -173,6 +178,7 @@ export default function ConfigureMap() {
                             {mapStyleOptions.map((item) => (
                                 <MenuItem
                                     key={item.key}
+                                    id={`se-configure-map-style-${item.key}`}
                                     selected={item.key === mapStyleKey}
                                     onClick={() => handleMapStyleSelect(item)}
                                 >

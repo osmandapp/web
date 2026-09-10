@@ -162,7 +162,10 @@ export default function MvtLayer({ config }) {
         };
 
         const handleIdle = () => {
-            window.seIsTilesLoaded = true;
+            // the first idle comes before the tiles of the view are loaded
+            if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
+                window.seIsTilesLoaded = true;
+            }
         };
 
         const handleError = (event) => {

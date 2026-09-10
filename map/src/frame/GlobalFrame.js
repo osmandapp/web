@@ -436,6 +436,7 @@ const GlobalFrame = () => {
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'} menuInfoWidth={MENU_INFO_SIZE} />
                 {ctx.globalGraph?.show && <GlobalGraph type={ctx.globalGraph.type} />}
                 <Snackbar
+                    id="se-notification"
                     open={!!ctx.notification}
                     autoHideDuration={3000}
                     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
