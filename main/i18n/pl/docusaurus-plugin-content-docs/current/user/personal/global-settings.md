@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Ustawienia globalne
 ---
@@ -44,7 +44,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ## Ogólne {#general}
 
-Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#default-profile) podczas ładowania aplikacji, wybór [silnika renderowania](#map-rendering-engine) i [folderu](#data-storage-folder), w którym będą zapisywane dane.  
+Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#default-profile) podczas ładowania aplikacji, wybór [silnika renderowania](#map-rendering-engine) i [folderu](#data-storage), w którym będą zapisywane dane.  
 
 
 ### Domyślny profil {#default-profile}
@@ -59,7 +59,7 @@ Ta sekcja zawiera podstawowe ustawienia OsmAnd, takie jak wybór [profilu](#defa
 
 <TabItem value="ios" label="iOS">
 
-![Ustawienia ogólne Domyślny profil iOS](@site/static/img/personal/profiles/default_profile_ios.png)
+![Ustawienia ogólne Domyślny profil Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -84,15 +84,15 @@ Ta funkcja jest dostępna dla wersji aplikacji OsmAnd na iOS.
 [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) jest używany po podłączeniu do [oprogramowania CarPlay](https://support.apple.com/en-gb/HT205634) w pojeździe i pomaga w pełni wykorzystać zoptymalizowaną wersję aplikacji OsmAnd, używając systemów audio i wideo do wyświetlania danych z telefonu.
 
 
-### Folder przechowywania danych {#data-storage-folder}
+### Przechowywanie danych {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Ustawienia przechowywania profili Android](@site/static/img/personal/profiles/main_storage.webp) ![Ustawienia przechowywania profili Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Ustawienia przechowywania profili Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **Pamięć urządzenia** pokazuje, ile wolnego miejsca pozostało na urządzeniu. Dotknij pola, aby uzyskać dostęp do menu [*Mapy i zasoby*](../personal/maps-resources.md#local-menu), w którym można przeglądać szczegółowe informacje o danych OsmAnd i zarządzać nimi.
 
@@ -108,6 +108,16 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 W wersjach Androida 11-12 wdrożono nowe wytyczne dotyczące dostępu do pamięci masowej. Szczegółowe informacje można znaleźć w sekcji [**Rozwiązywanie problemów**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 :::
 
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+Ustawienie **Przechowywanie multimediów** określa, gdzie są przechowywane zdjęcia, filmy i pliki audio dołączone do ulubionych, tras i innych elementów OsmAnd. Możesz wybrać lokalizację przechowywania w zależności od tego, czy chcesz, aby pliki pozostały prywatne, czy były dostępne z innych aplikacji.
+- **Główne przechowywanie** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Pamięć współdzielona** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Folder aparatu** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Określone ręcznie** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Dostępny jest również przełącznik *Zawsze zachowuj lokalną kopię*. Po włączeniu OsmAnd kopiuje multimedia zaimportowane z Galerii lub Plików do własnego magazynu, dzięki czemu dołączone multimedia pozostają dostępne nawet po usunięciu oryginalnego pliku z Galerii lub systemu plików.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +129,6 @@ Przejdź do: *Urządzenie iOS → Ustawienia → Ogólne → Pamięć iPhone'a �
 Pliki OsmAnd są widoczne w aplikacji [*Pliki*](https://apps.apple.com/us/app/files/id1232058109). Możesz uzyskać dostęp do wszystkich plików OsmAnd: [tras](../personal/tracks/manage-tracks.md), [ulubionych](../personal/favorites.md), [map](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Aby to zrobić, postępuj zgodnie z następującą ścieżką:  
 
 Przejdź do: *Pliki → Na moim iPhonie → OsmAnd Maps*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Ustawienia ogólne przechowywanie iOS](@site/static/img/personal/profiles/files-1.png) ![Ustawienia ogólne przechowywanie iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -389,4 +397,4 @@ Przeczytaj o alertach dotyczących fotoradarów na trasie w artykule Widżety na
 
 - **Android 12+ (zmiana folderu przechowywania)**. W wersjach Androida 11-12 wdrożono nowe wytyczne dotyczące dostępu do pamięci masowej. Zmiany te w szczególności wpływają na przechowywanie map na kartach SD, co skutkuje znacznie wolniejszą wydajnością dostępu do plików i bardziej rygorystycznymi ograniczeniami dostępu do folderów na kartach SD w systemach Android 11 i 12. Informacje o tym, jak rozwiązać ten problem, można znaleźć w sekcji [**Rozwiązywanie problemów**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
-- **Źródło lokalizacji dla problemów z wysokością**. Google Play zmieniło swoją politykę i aby zachować zgodność, OsmAnd, począwszy od wersji 3.9, musi używać Usług Google Play do uzyskiwania poprawek lokalizacji podczas pracy w tle. Przeczytaj więcej informacji w sekcji [Rozwiązywanie problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).
+- **Źródło lokalizacji dla problemów z wysokością**. Google Play zmieniło swoją politykę, i aby zachować zgodność, OsmAnd, począwszy od wersji 3.9, musi używać Usług Google Play do uzyskiwania poprawek lokalizacji podczas pracy w tle. Przeczytaj więcej informacji w sekcji [Rozwiązywanie problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).

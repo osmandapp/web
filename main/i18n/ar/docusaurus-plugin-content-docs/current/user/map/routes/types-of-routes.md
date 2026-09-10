@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: أنواع المسارات
 ---
@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## الدراجات {#cycle}
 
-تتواجد [مسارات الدراجات](https://wiki.openstreetmap.org/wiki/Cycle_routes) بثلاثة أنواع: *محلية* (`lcn`)، *إقليمية* (`rcn`)، *وطنية* (`ncn`)، *دولية* (`icn`). كما يمكن أن تكون مسارات الدراجات جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). يمكنك اختيار كيفية تعيين اللون لأجزاء المسار:
+تتواجد [مسارات الدراجات](https://wiki.openstreetmap.org/wiki/Cycle_routes) بثلاثة أنواع: *محلية* (`lcn`)، *إقليمية* (`rcn`)، *وطنية* (`ncn`)، *دولية* (`icn`)، و*غير مصنفة*. كما يمكن أن تكون مسارات الدراجات جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). يمكنك اختيار كيفية تعيين اللون لأجزاء المسار:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -46,7 +46,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## المشي / التنزه {#hiking--walking}
 
-تتواجد [مسارات المشي](https://wiki.openstreetmap.org/wiki/Walking_Routes) بثلاثة أنواع: *محلية* (`lwn`)، *إقليمية* (`rwn`)، *وطنية* (`nwn`)، *دولية* (`iwn`). كما يمكن أن تكون مسارات المشي جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). لا يفصل OsmAnd بين مسارات المشي والتنزه ويدمجها في مجموعة واحدة. يمكنك اختيار كيفية تعيين اللون لأجزاء المسار:
+تتواجد [مسارات المشي](https://wiki.openstreetmap.org/wiki/Walking_Routes) بثلاثة أنواع: *محلية* (`lwn`)، *إقليمية* (`rwn`)، *وطنية* (`nwn`)، *دولية* (`iwn`)، و*غير مصنفة*. كما يمكن أن تكون مسارات المشي جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). لا يفصل OsmAnd بين مسارات المشي والتنزه ويدمجها في مجموعة واحدة. يمكنك اختيار كيفية تعيين اللون لأجزاء المسار:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  تلوّن المسارات وفقًا لـ[لونها المحلي](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (إن وجد في OpenStreetMap) ورمز الدرع السياحي.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
-قد تكون بعض أجزاء الطرق جزءًا من مسارات متعددة، لكن يمكن تلوينها بشكل فردي لتمثيل صعوبة الجزء في المناطق الجبلية. يدعم OsmAnd حاليًا التصنيفات الإيطالية والسويسرية، ولكل منها قائمة محددة بمتطلبات المعدات للوصول إلى هذا الجزء.  
+قد تكون بعض أجزاء الطرق جزءًا من مسارات متعددة، لكن يمكن تلوينها بشكل فردي لتمثيل صعوبة الجزء في المناطق الجبلية. يدعم OsmAnd حاليًا التصنيفات الإيطالية والسويزرية، ولكل منها قائمة محددة بمتطلبات المعدات للوصول إلى هذا الجزء.  
 
 1. [مقياس SAC](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [مقياس CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  

@@ -1,7 +1,7 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
-title:  Routedetails
+title:  Route details
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,20 +18,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Met OsmAnd kunt u de beste route vinden en de details ervan bekijken. De app geeft gedetailleerde informatie over de route, zoals afstand, [reistijd](#distance--time--co2), [wegdektype](#road-attributes), [hoogteverschillen](#elevation-info), [CO2-voetafdrukgegevens](#distance--time--co2) en [afslaginformatie](#turn-by-turn-information). U kunt de route ook [analyseren](#analyze-on-map) op de kaart, informatie vinden over tracksegmenten, het routeplan [afdrukken](#print), de route [opslaan](#share--export-actions) en delen met anderen. Met deze functionaliteit kent u altijd de routedetails en kunt u uw reis efficiënter plannen.  
+Met OsmAnd kunt u de beste route vinden en de details ervan bekijken. De app geeft gedetailleerde informatie over de route, zoals afstand, [reistijd](#distance--time--co2), [wegdektype](#road-attributes), [hoogteverschillen](#elevation-info), [CO2-voetafdrukgegevens](#distance--time--co2) en [afslaginformatie](#turn-by-turn-information). U kunt de route ook [analyseren](#analyze-on-map) op de kaart, informatie vinden over tracksegmenten, het routeplan [afdrukken](#print), de route [opslaan](#share--save-actions) en delen met anderen. Met deze functionaliteit kent u altijd de routedetails en kunt u uw reis efficiënter plannen.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routedetails Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
+![Route details Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routedetails iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
+![Route details iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
 
 </TabItem>
 
@@ -41,7 +41,7 @@ Met OsmAnd kunt u de beste route vinden en de details ervan bekijken. De app gee
 ### Hoe te openen {#how-to-access}
 
 Na het berekenen van een route in het [Navigatiemenu](./route-navigation.md#start--stop-navigation), heeft u toegang tot "Details" over die route. Deze informatie is handig om te gebruiken voordat u een reis begint om de routeplanning te verbeteren of om tijdens het rijden informatie over de weg voor u te controleren.  
-Er zijn drie manieren om het menu *Routedetails* te openen.  
+Er zijn drie manieren om het menu *Route details* te openen.  
 
 1. Ga naar het hoofdmenu *Menu → Navigatie*, stel de route in en tik op de knop *Details*.
 2. Tik op het *Navigatie*-icoon op het kaartscherm, stel de route in en tik op de knop *Details*.
@@ -56,7 +56,7 @@ Afhankelijk van de geselecteerde [profielinstellingen](../../personal/profiles.m
 
 <TabItem value="android" label="Android">
 
-![Routedetails](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
 
 </TabItem>
 
@@ -83,7 +83,7 @@ Afhankelijk van de geselecteerde [profielinstellingen](../../personal/profiles.m
 
 <TabItem value="android" label="Android">
 
-![Routedetails](@site/static/img/navigation/route/route_details_info-block_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png)
 
 </TabItem>
 
@@ -122,7 +122,7 @@ De hoogtegegevens op de kaart (tussen 70 graden noorderbreedte en 70 graden zuid
 
 <TabItem value="android" label="Android">
 
-![Routedetails](@site/static/img/navigation/route/route_details_el_graph_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_el_graph_andr.png)
 
 </TabItem>
 
@@ -147,13 +147,13 @@ De [grafieken](../../map/tracks/track-context-menu.md#altitude--speed-graphs) ge
 
 <TabItem value="android" label="Android">
 
-![Routedetails Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
+![Route details Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routedetails iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
+![Route details iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
 
 </TabItem>
 
@@ -203,7 +203,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation
 
 </Tabs>
 
-Wegkenmerken zijn toegankelijk in de [Routedetails](#how-to-access) en geven segmentgerelateerde informatie weer uit OpenStreetMap en hoogtegegevens. De kleurindicatie is gerelateerd aan hoe specifieke kenmerken op de kaart worden weergegeven (zie [Kaartlegenda](../../map-legend/osmand.md#surface-smoothness)). De staafdiagrammen zijn ook interactief en het is mogelijk om informatie op een specifieke locatie te zien door op de grafiek te tikken.
+Wegkenmerken zijn toegankelijk in de [Route details](#how-to-access) en geven segmentgerelateerde informatie weer uit OpenStreetMap en hoogtegegevens. De kleurindicatie is gerelateerd aan hoe specifieke kenmerken op de kaart worden weergegeven (zie [Kaartlegenda](../../map-legend/osmand.md#surface-smoothness)). De staafdiagrammen zijn ook interactief en het is mogelijk om informatie op een specifieke locatie te zien door op de grafiek te tikken.
 
 - [**Wegtype**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Het type weg wordt bepaald op basis van zijn functionele doel en kenmerken, zoals het aantal rijstroken, snelheidslimieten, laadvermogen, de aanwezigheid van voet- en fietspaden, bermen en andere parameters. Verschillende soorten wegen kunnen verschillende beperkingen en verkeersregels hebben.  
 
@@ -240,7 +240,7 @@ Wegkenmerken zijn toegankelijk in de [Routedetails](#how-to-access) en geven seg
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute iOS](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+![Navigatieroute Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
@@ -263,7 +263,7 @@ Tik op een specifiek gedeelte van de route in de lijst om gedetailleerde informa
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute iOS](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Navigatieroute Android](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 
@@ -311,7 +311,7 @@ Deze informatie kan handig zijn wanneer u een reis plant en de tijd en afstand t
 De mogelijkheid om afslag-voor-afslag informatie **af te drukken** of **op te slaan in PDF-formaat** is vooral handig bij het reizen over lange afstanden of op onbekende plaatsen wanneer u een meer gedetailleerd idee van de route en de tijd die het kost om er te komen nodig heeft.
 
 
-## Delen / Exporteren (Acties) {#share--export-actions}
+## Delen / Opslaan (Acties) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,17 +323,17 @@ De mogelijkheid om afslag-voor-afslag informatie **af te drukken** of **op te sl
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Navigatieroute iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-De navigatiesectie Routedetails heeft opties waarmee u bepaalde acties met de route-informatie kunt uitvoeren.  
+De navigatiesectie Route details heeft opties waarmee u bepaalde acties met de route-informatie kunt uitvoeren.  
 
 - [**Afdrukken**](#print). Hiermee kunt u afslag-voor-afslag route-informatie afdrukken of opslaan.
-- **Exporteren/Opslaan**. Hiermee kunt u de route-informatie opslaan **als een nieuwe track** voor later offline gebruik. De geëxporteerde track bevat alle informatie over wegkenmerken en afslaginstructies. Dus, [navigatie op basis van deze track](./gpx-navigation.md) zou alle functies moeten bieden als navigatie op basis van de route.
-- **Delen**. Deelt een geëxporteerde track of een link naar de route die op een ander apparaat met OsmAnd kan worden geopend.
+- **Opslaan**. Hiermee kunt u de route-informatie opslaan **als een nieuwe track** voor later offline gebruik. De opgeslagen track bevat alle informatie over wegkenmerken en afslaginstructies. Dus, [navigatie op basis van deze track](./gpx-navigation.md) zou alle functies moeten bieden als navigatie op basis van de route.
+- **Delen**. Hiermee kunt u de route delen als een bestand of een link die op een ander apparaat met OsmAnd kan worden geopend.
 
 
 ## Gerelateerde artikelen {#related-articles}

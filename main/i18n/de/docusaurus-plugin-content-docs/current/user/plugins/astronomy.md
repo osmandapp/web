@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomie
 unlistead: true
@@ -140,7 +140,7 @@ Unter den Schnellinformationsblöcken kann das Menü auch zusätzliche Informati
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Ermöglicht es Ihnen, eine erweiterte Datenbank mit Wikipedia-Artikeln und Deep-Sky-Katalogen für die Offline-Nutzung herunterzuladen. Nach dem Herunterladen können detaillierte Informationen über Himmelskörper direkt in der App ohne Internetverbindung angezeigt werden.
 - <Translate android="true" ids="read_on_wiki"/> – Öffnet den Wikipedia-Artikel des Objekts im Browser.
 - <Translate android="true" ids="astro_designations"/> – Zeigt alternative Namen und Katalog-Identifikatoren für das Objekt (z. B. HD, HIP, NGC). Dieser Abschnitt ist für Objekte mit Katalogeinträgen verfügbar, wie Sterne und Deep-Sky-Objekte. Wenn das Objekt keinen gängigen Namen hat, wird einer dieser Bezeichnungen als primärer Name verwendet.
-- <Translate android="true" ids="online_photos"/> – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper an.
+- <Translate android="true" ids="online_photos"/> – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper.
 
 ### Aktionen {#actions}
 
@@ -412,7 +412,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Suche](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Suche](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +430,52 @@ Die **Suchfunktion** (**Erkunden** auf iOS) im Astronomy-Plugin ermöglicht es I
 
 Der Abschnitt Jetzt beobachten hebt Himmelskörper hervor, die jetzt oder heute Nacht sichtbar sind. Dieser Abschnitt dient als Empfehlungstool und zeigt Objekte, die am besten für die Beobachtung geeignet sind, basierend auf Ihrem aktuellen Standort und der Zeit.
 
-**2. Kategorien**
+**2. Sonnen- und Mondfinsternisse** (*nur Android*)
+
+Die Tools [Sonnenfinsternis](#solar-eclipse) und [Mondfinsternis](#lunar-eclipse) ermöglichen es Ihnen, weltweite Finsternisereignisse zu erkunden, ihren Verlauf über die Zeit anzuzeigen und die Sichtbarkeit der Finsternis auf der Karte zu prüfen.
+
+**3. Kategorien**
 
 Der Kategorien-Abschnitt ermöglicht es Ihnen, Objekte nach Typ zu durchsuchen: Sonnensystem, Sternbilder, Sterne, Nebel, Sternhaufen und Deep Sky. Jede Kategorie öffnet eine Liste von Objekten mit wichtigen Informationen: Objektname, Typ oder Sternbild, Magnitude (Helligkeit) und Auf- oder Untergangszeit (falls zutreffend).
+
+### Sonnenfinsternis (nur Android) {#solar-eclipse}
+
+![Sonnenfinsternis](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Sonnenfinsternis](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+Der **Sonnenfinsternis-Explorer** ermöglicht es Ihnen, vergangene und bevorstehende Sonnenfinsternisse weltweit zu erkunden. Er kombiniert die Sternenkarte mit einer interaktiven Zeitleiste und Kartenvisualisierung, um zu zeigen, wie sich eine Finsternis an verschiedenen Orten entwickelt.
+
+Der Sonnenfinsternis-Explorer umfasst die folgenden Funktionen:
+
+- **Finsternis-Navigation**. Verwenden Sie die Schaltflächen „Vorherige“ und „Nächste“, um zwischen verfügbaren Sonnenfinsternissen zu wechseln.
+- **Zeitleiste**. Die Zeitleiste zeigt Beginn, Maximum und Ende der Finsternis an. Bewegen Sie den Schieberegler, um die Finsternis zu jedem beliebigen Zeitpunkt während des Ereignisses anzuzeigen. Alle Finsternisinformationen werden automatisch für die ausgewählte Zeit aktualisiert.
+- **Finsternisinformationen**. Das Informationspanel zeigt an: Finsternistyp, aktuelles Datum und Uhrzeit, Finsternisverdeckung, Sonnenhöhe und Koordinaten der Kartenmitte. Die angezeigten Informationen werden für die aktuelle Kartenmitte berechnet.
+- **Finsternispfad**. Tippen Sie auf „Finsternispfad anpassen“, um die Karte auf den Finsternispfad zu zentrieren. Tippen Sie auf *Karte anzeigen* oder *Karte ausblenden*, um den Finsternispfad auf der Karte anzuzeigen oder auszublenden. Der Finsternispfad zeigt, wo die Finsternis sichtbar ist und wie sich der Schatten des Mondes über die Erdoberfläche bewegt.
+
+:::warning
+
+Schauen Sie niemals direkt in die Sonne, ohne geeigneten Sonnenschutz. Finsterniszeiten sind Schätzungen.
+
+:::
+
+### Mondfinsternis (nur Android) {#lunar-eclipse}
+
+![Mondfinsternis](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Mondfinsternis](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+Der **Mondfinsternis-Explorer** ermöglicht es Ihnen, weltweite Mondfinsternisse zu erkunden und zu beobachten, wie der Mond durch den Schatten der Erde wandert.
+
+Der Mondfinsternis-Explorer umfasst die folgende Funktion:
+
+- **Finsternis-Navigation**. Verwenden Sie die Schaltflächen „Vorherige“ und „Nächste“, um zwischen verfügbaren Mondfinsternissen zu wechseln.
+- **Finsternistypen**. Der Explorer unterstützt: Halbschattenfinsternisse, partielle Finsternisse und totale Finsternisse
+- **Zeitleiste**. Die Zeitleiste zeigt Beginn, Maximum und Ende der Finsternis an. Markierungen auf der Zeitleiste zeigen die verschiedenen Phasen der Finsternis an. Bewegen Sie den Schieberegler, um die Finsternis zu jedem beliebigen Zeitpunkt während des Ereignisses zu beobachten.
+- **Finsternisinformationen**. Das Informationspanel zeigt an: Finsternisphase, Finsternisverdeckung, Mondhöhe und Koordinaten der Kartenmitte. Die angezeigten Informationen werden für die aktuelle Kartenmitte berechnet.
+- **Sichtbarkeitskarte**. Tippen Sie auf *Sichtbarkeit anpassen*, um die Karte auf den Sichtbarkeitsbereich der Finsternis zu zentrieren. Tippen Sie auf *Karte anzeigen* oder *Karte ausblenden*, um die Sichtbarkeitsschicht anzuzeigen oder auszublenden. Die Sichtbarkeitsschicht hebt Regionen hervor, in denen der Mond während der Finsternis über dem Horizont steht.
+
+:::warning
+
+Schattenfarben und -helligkeit sind schematisch und dienen nur der Visualisierung.
+
+:::
 
 ### Sortierung und Filter {#sorting-and-filters}
 

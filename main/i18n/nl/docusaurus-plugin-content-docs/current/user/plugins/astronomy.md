@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title: Astronomie
 unlistead: true
@@ -412,7 +412,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +430,52 @@ De **Zoek**-functie (**Verkennen** op iOS) in de Astronomie-plugin stelt je in s
 
 De sectie Nu kijken markeert hemellichamen die nu of vanavond zichtbaar zijn. Deze sectie fungeert als een aanbevelingshulpmiddel en toont objecten die het beste geschikt voor waarneming op basis van je huidige locatie en tijd.
 
-**2. Categorieën**
+**2. Zonne- en maansverduisteringen** (*alleen Android*)
+
+De hulpmiddelen [Zonsverduistering](#solar-eclipse) en [Maansverduistering](#lunar-eclipse) stellen je in staat om wereldwijde verduisteringsgebeurtenissen te verkennen, hun verloop in de tijd te bekijken en de zichtbaarheid van verduisteringen op de kaart te controleren.
+
+**3. Categorieën**
 
 De sectie Categorieën stelt je in staat om objecten te doorbladeren op type: Zonnestelsel, Sterrenbeelden, Sterren, Nevels, Sterrenhopen en Deep sky. Elke categorie opent een lijst met objecten met belangrijke informatie: objectnaam, type of sterrenbeeld, grootte (helderheid) en opkomst- of ondergangstijd (indien van toepassing).
+
+### Zonsverduistering (alleen Android) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+De **Zonsverduistering-verkenner** stelt je in staat om voorbije en komende zonsverduisteringen over de hele wereld te verkennen. Het combineert de Sterrenkaart met een interactieve tijdlijn en kaartvisualisatie om te laten zien hoe een verduistering zich op verschillende locaties ontwikkelt.
+
+De Zonsverduistering-verkenner bevat de volgende functies:
+
+- **Verduisteringsnavigatie**. Gebruik de knoppen Vorige en Volgende om tussen beschikbare zonsverduisteringen te schakelen.
+- **Tijdlijn**. De tijdlijn toont het begin, het maximum en het einde van de verduistering. Verplaats de schuifregelaar om de verduistering op elk moment tijdens de gebeurtenis te bekijken. Alle verduisteringsinformatie wordt automatisch bijgewerkt voor de geselecteerde tijd.
+- **Verduisteringsinformatie**. Het informatiepaneel toont: type verduistering, huidige datum en tijd, verduisteringsverduistering, hoogte van de Zon en coördinaten van het kaartcentrum. De weergegeven informatie wordt berekend voor het huidige kaartcentrum.
+- **Verduisteringspad**. Tik op Pas verduisteringspad aan om de kaart op het verduisteringspad te centreren. Tik op *Kaart tonen* of *Kaart verbergen* om het verduisteringspad op de kaart weer te geven of te verbergen. Het verduisteringspad toont waar de verduistering zichtbaar is en hoe de schaduw van de Maan over het aardoppervlak beweegt.
+
+:::warning
+
+Kijk nooit rechtstreeks naar de Zon zonder geschikte bescherming voor het bekijken van de zon. Verduisteringstijden zijn schattingen.
+
+:::
+
+### Maansverduistering (alleen Android) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+De **Maansverduistering-verkenner** stelt je in staat om wereldwijde maansverduisteringen te verkennen en te observeren hoe de Maan door de schaduw van de aarde beweegt.
+
+De Maansverduistering-verkenner bevat de volgende functie:
+
+- **Verduisteringsnavigatie**. Gebruik de knoppen Vorige en Volgende om tussen beschikbare maansverduisteringen te schakelen.
+- **Verduisteringstypen**. De verkenner ondersteunt: halfschaduwverduisteringen, gedeeltelijke verduisteringen en totale verduisteringen
+- **Tijdlijn**. De tijdlijn toont het begin, het maximum en het einde van de verduistering. Markeringen op de tijdlijn geven de verschillende fasen van de verduistering aan. Verplaats de schuifregelaar om de verduistering op elk punt tijdens de gebeurtenis te observeren.
+- **Verduisteringsinformatie**. Het informatiepaneel toont: verduisteringsfase, verduisteringsverduistering, hoogte van de Maan en coördinaten van het kaartcentrum. De weergegeven informatie wordt berekend voor het huidige kaartcentrum.
+- **Zichtbaarheidskaart**. Tik op *Pas zichtbaarheid aan* om de kaart op het zichtbaarheidsgebied van de verduistering te centreren. Tik op *Kaart tonen* of *Kaart verbergen* om de zichtbaarheidslaag weer te geven of te verbergen. De zichtbaarheidslaag markeert regio's waar de Maan tijdens de verduistering boven de horizon staat.
+
+:::warning
+
+Schaduwkleuren en -helderheid zijn schematisch en alleen bedoeld voor visualisatie.
+
+:::
 
 ### Sorteren en filters {#sorting-and-filters}
 

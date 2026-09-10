@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title:  Rutas
 sidebar_position: 11
 ---
@@ -29,11 +29,11 @@ OsmAnd tiene muchas funciones potentes para mostrar diferentes [rutas](./types-o
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.webp)
 
 - Para mostrar las rutas necesarias en el mapa, actívelas en la *lista de Rutas* del menú [Configurar mapa](../../map/configure-map-menu.md).
 - OsmAnd puede resaltar [rutas presentes en OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Se pueden seleccionar tocando [el símbolo de la ruta](#save-as-a-track) y, si el conjunto visible de rutas está configurado correctamente, podrá seguir el color y los iconos.
-- Los tipos principales de rutas también se pueden filtrar por clases y subclases, lo que permite mostrar solo grupos específicos dentro de cada tipo. Por ejemplo, puede mostrar rutas de senderismo por **símbolos OSMC** como clases y por redes *internacionales, nacionales, regionales* o *locales* como subclases, que están disponibles actualmente cuando el complemento [Desarrollo de OsmAnd](../../plugins/development.md) está activado.
+- Los tipos principales de rutas también se pueden filtrar por clases y subclases, lo que permite mostrar solo grupos específicos dentro de cada tipo. Por ejemplo, puede mostrar rutas de senderismo por **símbolos OSMC** como clases y por redes *internacionales, nacionales, regionales* o *locales*, así como *rutas sin clasificar*, como subclases. Filtros de clasificación de red similares están disponibles para rutas ciclistas. Estas opciones están disponibles actualmente cuando el complemento [Desarrollo de OsmAnd](../../plugins/development.md) está activado. Cuando se solapan varias redes de rutas, las clasificaciones individuales se pueden activar o desactivar para mostrar solo los niveles de ruta deseados.
 - Puede crear una pista sobre las rutas con la herramienta [Planificar una ruta](../../plan-route/create-route.md).
 - Cuando varias rutas discurren por la misma carretera, cada ruta se muestra como una línea semitransparente independiente colocada encima de las demás.
 - Al tocar un lugar donde se solapan varias rutas, se muestra un menú contextual con todas las rutas que pasan por ese punto.

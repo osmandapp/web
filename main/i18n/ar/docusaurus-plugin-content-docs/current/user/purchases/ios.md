@@ -1,5 +1,5 @@
 ---
-source-hash: 20763908576b5c7c3d5452b861b2dfa49d9babaafa7bb035c0a9e06233ed9895
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -106,6 +106,9 @@ import Translate from '@site/src/components/Translate.js';
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [أدلة السفر (ويكيبيديا)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [تخطيط المراقبة](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [وضع الواقع المعزز التفاعلي](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md) — [خريطة السماء دون اتصال](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [الملاحة عبر الإنترنت وغير متصل](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
 | [بحث فوري دون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -147,7 +150,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## كيفية الشراء {#how-to-buy}
 
-طريقة سهلة لاختيار وشراء الخطة المطلوبة من قائمة **المشتريات**. بالطبع، سترى قائمة مقترحات للميزات المدفوعة.
+طريقة سهلة لاختيار وشراء الخطة المطلوبة من قائمة **المشتريات**. بالطبع، ستررى قائمة مقترحات للميزات المدفوعة.
 
 ### شراء OsmAnd Pro {#osmand-pro-purchase}
 

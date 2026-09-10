@@ -35,7 +35,7 @@ export default function ColorPickerDialog({ open, initialColor, onApply, onClose
     // Initialise all state when dialog opens.
     useEffect(() => {
         if (open && initialColor) {
-            const { r, g, b, a } = parseColorToRgba(initialColor);
+            const { r, g, b, a } = parseColorToRgba(initialColor) ?? { r: 0, g: 0, b: 0, a: 255 };
             const { h, s, v } = rgbToHsv(r, g, b);
             setHue(h);
             setSaturation(s);

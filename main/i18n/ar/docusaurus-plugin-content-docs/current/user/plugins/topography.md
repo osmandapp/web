@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: التضاريس
 ---
@@ -370,7 +370,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-ميزة **المباني ثلاثية الأبعاد** تعرض المباني كنماذج ثلاثية الأبعاد حجمية بدلاً من الأشكال المسطحة. يتم إنشاء المباني من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings)، باستخدام معلومات الارتفاع من العلامات مثل `height` و`building:levels` عند توفرها. إذا كانت [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) تشمل ممرات عبر المباني المرسومة بعلامة `tunnel=building_passage`، فإن OsmAnd يعرض فتحات مرئية في نموذج المبنى ثلاثي الأبعاد بحيث يتم عرض الطرق أو الطرق المشاة التي تمر عبر المبنى بشكل صحيح. 
+ميزة **المباني ثلاثية الأبعاد** تعرض المباني كنماذج ثلاثية الأبعاد حجمية بدلاً من الأشكال المسطحة. يتم إنشاء المباني من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings)، باستخدام معلومات الارتفاع من العلامات مثل `height` و`building:levels` عند توفرها. 
+
+بالنسبة للهياكل المعقدة، يستخدم OsmAnd `building:part` لعرض أقسام فردية من المبنى بارتفاعات وأشكال مختلفة. 
+
+إذا كانت [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) تشمل ممرات عبر المباني المرسومة بعلامة `tunnel=building_passage`، فإن OsmAnd يعرض فتحات مرئية في نموذج المبنى ثلاثي الأبعاد بحيث يتم عرض الطرق أو الطرق المشاة التي تمر عبر المبنى بشكل صحيح. 
+
+يمكن أن تشمل المباني ثلاثية الأبعاد أشكال أسقف مختلفة بناءً على [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). تحدد علامة `roof:shape` هندسة السقف، بينما توفر `roof:levels` و`roof:height` معلومات حول ارتفاعه.
 
 تُظهر المباني ثلاثية الأبعاد فقط عند مستويات تقريب أعلى (عرض المدينة/الشارع)، حيث يمكن عرض المباني الفردية. عند التكبير أو التصغير وعند تحريك الخريطة، تظهر المباني ثلاثية الأبعاد وتختفي بتأثير تلاشي سلس. عندما يكون POI أو موقع محدد (مثل دبوس الخريطة أو وجهة الملاحة) داخل مبنى، يبرز OsmAnd المبنى المقابل لتسهيل تحديده على الخريطة.
 

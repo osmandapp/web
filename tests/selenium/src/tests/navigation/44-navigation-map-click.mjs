@@ -30,7 +30,6 @@ export default async function test() {
     await actionIdleWait();
     await assertNoStartInUrl();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
     await waitBy(By.id('se-close-folder-button-tracks'));
 
@@ -38,7 +37,6 @@ export default async function test() {
     await actionIdleWait();
     await assertNoStartInUrl();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-navigation'));
 
     await leftClickBy(START_LATLNG.lat, START_LATLNG.lon);

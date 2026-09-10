@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -364,11 +364,13 @@ Se non ci sono *informazioni sull'altitudine* sul percorso, è possibile aggiung
 
 ### Calcola Altitudine Mancante {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Funzionalità Pro
 [Calcola altitudine offline](../../plan-route/create-route.md#get-elevation-data) è una funzionalità a pagamento di [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Questa funzione](../../plan-route/create-route.md#get-elevation-data) consente di calcolare il profilo altimetrico per una traccia GPX offline per qualsiasi terreno tra 70 gradi di latitudine nord e 70 gradi di latitudine sud, basandosi sui [dati delle mappe del terreno](../../plugins/topography.md#download-maps). *Le mappe del terreno (3D) devono essere state scaricate in precedenza*.
 
@@ -377,11 +379,27 @@ Se non ci sono *informazioni sull'altitudine* sul percorso, è possibile aggiung
 
     ![Grafico traccia altitudine Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Grafico traccia altitudine Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Se stai creando un percorso con lo strumento [Pianifica un percorso](../../plan-route/create-route.md#graph) utilizzando il metodo *Linea retta* e non ci sono dati di altitudine sul grafico, devi:
+3. Se stai creando un percorso con lo strumento [Pianifica un percorso](../../plan-route/create-route.md#graph--analyze) utilizzando il metodo *Linea retta* e non ci sono dati di altitudine sul grafico, devi:
     - Tocca *Ottieni dati di altitudine*, quindi seleziona *Usa mappe del terreno*.
     - Dopo il calcolo, otterrai il grafico completo Altitudine/Pendenza del tuo percorso basato sui dati del terreno.  
 
   ![Grafico traccia altitudine Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Grafico traccia altitudine Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dati altitudine iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Dati altitudine iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Questa funzione](../../plan-route/create-route.md#get-elevation-data) consente di calcolare i dati di altitudine mancanti per un [percorso pianificato](../../plan-route/create-route.md#create-new-route) o una [traccia GPX esistente](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Se crei un percorso utilizzando il metodo Linea retta e i dati di altitudine non sono disponibili, tocca *Ottieni dati di altitudine* nella scheda Analizza e seleziona *Usa mappe del terreno*. È necessario aver precedentemente scaricato le [Mappe del terreno (3D)](../../plugins/topography.md#download-maps). Il profilo altimetrico viene quindi calcolato in base ai dati del terreno, mentre la geometria del percorso rimane invariata.
+
+Per una traccia GPX esistente, puoi selezionare *Usa strade vicine*. OsmAnd collega la traccia alle strade consentite più vicine utilizzando un profilo di navigazione selezionato e recupera i dati di altitudine dalle strade collegate. Questa opzione può modificare la geometria della traccia. Se necessario, puoi anche selezionare *Usa mappe del terreno* per calcolare l'altitudine mantenendo invariata la geometria della traccia.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Punti / Waypoint {#points--waypoints}
@@ -392,13 +410,13 @@ I waypoint sono uno dei tipi di punti disponibili sulla mappa. In generale, poss
 
 <TabItem value="android" label="Android">
 
-![Menu contestuale traccia Punti Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Menu contestuale traccia Punti Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Menu contestuale traccia Punti Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu contestuale traccia Punti iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Menu contestuale traccia Punti iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Menu contestuale traccia Punti iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ In questa scheda *Punti*:
 
 - [Mostra i dati dei punti della traccia](#display-custom-gpx-tags) e modifica i punti della traccia (waypoint e punti del percorso), [eliminali e aggiungi](#points--waypoints) waypoint a una traccia.
 - Crea e modifica [Gruppo (cartella) di punti](#waypoint-groups).
-- Centra la mappa su un waypoint utilizzando l'icona della spilla nell'elenco dei waypoint senza chiudere l'elenco, consentendo di visualizzare in anteprima i waypoint uno per uno.
+- Mostra un waypoint sulla mappa utilizzando l'icona della spilla nell'elenco dei waypoint. La mappa si centra sul waypoint senza chiudere l'elenco o modificare il livello di zoom corrente.
 
 
 ### Aggiungi Waypoint a una Traccia {#add-waypoint-to-a-track}

@@ -1,5 +1,5 @@
 ---
-source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
+source-hash: 25c13b0161cd5e0efefe881e5446503a1ce483f3ea041fd84cfc9f4b33858e9c
 sidebar_position: 3
 title:  توجيه الدراجات (MTB)
 ---
@@ -31,7 +31,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![إعدادات توجيه الدراجات](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![إعدادات توجيه الدراجات](@site/static/img/navigation/routing/cycling_routing_andr.webp)
 
 </TabItem>
 
@@ -50,6 +50,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> حدد الطرق التي تريد تجنبها أثناء الملاحة.  </summary>![تجنب الطرق أندرويد](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | يمكنك إما [تحديد طريق على الخريطة](../../map/map-context-menu/#avoid-road) أو اختيار نوع (أنواع) الطرق من القائمة:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (تجنب عبور الحدود إلى بلد آخر)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (نوع من النقل المائي، يحمل المركبات عبر المسطحات المائية)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[تجنب الحصى](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (أجزاء من الطريق حيث يمر مجرى مائي فوقه) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [لا للأحجار المرصوفة](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  سيتم تجاهل قيود الوصول الخاصة عند حساب المسار.  | يستخدم الوسم *[private](https://wiki.openstreetmap.org/wiki/Key:access)* في OSM لوصف القيود على استخدام الطرق السريعة وطرق النقل الأخرى، بالإضافة إلى المباني والمداخل والمرافق والكيانات الترفيهية.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Preferred&nbsp;terrain* (iOS) | <details><summary> سيتم استخدام بيانات الارتفاع في حساب المسار: سيتم تعيين [عقوبات للطرق](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) ذات ملف تعريف ارتفاع مختلف. </summary> ![استخدام بيانات الارتفاع أندرويد](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | يمكن أن يساعد هذا التفضيل في تجنب التلال شديدة الانحدار أو العكس، تفضيلها. إذا اخترت مسارًا *جبليًا*، فسيتم إعطاء الأفضلية للتلال والجبال. إذا كان *مسطحًا* - فسيتم تفضيل السهول، وستُتجنب التلال. تفضيل التلال الأقل هو شيء بين هذين الخيارين. بدون بيانات الارتفاع، سيتم حساب أسرع مسار كما هو الحال في التضاريس السهلية. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | حدد طريقة حساب المسار المفضلة. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## خصوصيات توجيه الدراجات الجبلية (MTB) {#mtb-routing-particularities}

@@ -1,5 +1,5 @@
 ---
-source-hash: d92c746f8a72d84ab8395bdc89390208bc81a4755169dbeefc240e0f63d57a95
+source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
@@ -38,9 +38,11 @@ Bu platformlardan yapılan tüm satın almalar [**çapraz platform erişimini**]
 Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer bölgelerdeki fiyatlar, ödeme platformu tarafından otomatik olarak yerel para birimine dönüştürülür.
 
 
-:::danger 🏖️ Yaz İndirimi
+<!--
 
-*Aceleyin! Bu teklif yalnızca* **17 Haziran (23:00 CET)** *tarihine kadar geçerlidir*.
+:::danger 🏖️ Summer Sale
+
+*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
 
 :::
 
@@ -54,13 +56,13 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 
 
 :::note 
-[Web sitemizden](https://osmand.net/pricing) indirimli bir abonelik satın alarak,  
-2 yıllık indirimli plan alırsınız.  
-Üçüncü yıldan itibaren tam fiyat uygulanacaktır.
+By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
+you receive a 2-year discounted plan.  
+Starting from the third year, the full price will apply.
 :::
 
-<!--
 
+-->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -69,7 +71,7 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
--->
+
 
 
 

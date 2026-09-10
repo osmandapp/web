@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title:  أدلة السفر
 ---
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تصفح [المقالات](#browse-articles) حول بلد أو منطقة أو مدينة أو معلم سياحي.
     - بدلاً من ذلك، [اعرض مقالات أدلة السفر و/أو النقاط على الخريطة](#travel-routes) باستخدام قائمة "إعداد الخريطة".
     - تصفح المعالم السياحية على الخريطة، وأضفها إلى *[علامات الخريطة](../personal/markers.md#add--edit-markers)* أو *[المفضلة](../personal/favorites.md#favorite-group-actions)*.
-    - باستخدام زر *[قراءة المقال كاملاً](#manage-as-gpx-track)*، انتقل إلى *[المقال](#travel-article) داخل *أدلة السفر*.
+    - باستخدام *[قراءة المقال كاملاً](#manage-as-gpx-track)*، انتقل إلى *[المقال](#travel-article) داخل *أدلة السفر*.
 - [أضف إشارة مرجعية](#explore-and-bookmark) للمقالات لقراءتها لاحقًا.
 - اختر [نقاطًا](#points) من المقالات لزيارتها وأضفها إلى خريطة OsmAnd.
 - احصل على مزيد من المعلومات حول الأماكن التي يمكن زيارتها من [مقالات ويكيبيديا](#combine-with-wikipedia) المتاحة دون اتصال بالإنترنت.
@@ -106,7 +106,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![الشاشة الرئيسية لأدلة السفر](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![الشاشة الرئيسية لأدلة السفر ٢](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![الشاشة الرئيسية لأدلة السفر](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![الشاشة الرئيسية لأدلة السفر ٢](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![قائمة بحث أدلة السفر](@site/static/img/guides/travel_guides_search_1_ios.png)
+![قائمة بحث أدلة السفر](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -283,7 +283,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::note
 تشير النقاط في *مقالات السفر* إلى نقاط الطريق على مسار GPX.  
-يمكنك أيضًا *[إضافة نقاط إلى الخريطة](#travel-routes)* في قائمة *إعداد الخريطة*. يمكنك عرضها جميعًا أو تحديد فئة معينة.  
+يمكنك أيضًا *[إضافة نقاط إلى الخريطة](#travel-routes)* في قائمة *إعداد الخريطة*. يمكن عرضها جميعًا أو تحديد فئة معينة.  
 :::
 
 

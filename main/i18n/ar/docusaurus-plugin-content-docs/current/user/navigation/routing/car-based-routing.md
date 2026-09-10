@@ -1,5 +1,5 @@
 ---
-source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
+source-hash: fd573498a0ab70236af92fa2e9807288d67e65420970611c32ac6e2aefaf7d87
 sidebar_position: 2
 title:  توجيه السيارة (الشاحنة، الدراجة النارية)
 ---
@@ -33,7 +33,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
-![إعدادات توجيه السيارة على أندرويد](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
+![إعدادات توجيه السيارة على أندرويد](@site/static/img/navigation/routing/routing_car_settings_andr_2.webp)
 
 </TabItem>
 
@@ -54,6 +54,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* | سيتم تجاهل قيود الوصول الخاصة عند حساب المسار. | يُستخدم الوسم *[private](https://wiki.openstreetmap.org/wiki/Key:access)* في OSM لوصف القيود المفروضة على استخدام الطرق السريعة وغيرها من طرق النقل، بالإضافة إلى المباني والمداخل والمرافق والكيانات الترفيهية. |
 | *<Translate android="true" ids="routing_attr_goods_restrictions_name"/>* (للسيارة&nbsp;فقط) | <details><summary> سيتم تجنب الطرق المغلقة لتسليم البضائع. </summary>![تسليم البضائع على أندرويد](@site/static/img/navigation/routing/goods_delivery_andr.png) </details>| ينطبق هذا الخيار فقط على المركبات التي تنقل بضائع ولا يزيد وزنها عن ٣.٥ طن. إذا كان وزن مركبتك يزيد عن ٣.٥ طن، يجب عليك استخدام [ملف تعريف الشاحنة](#route-parameters---truck). |
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | لحساب مسار موفر للوقود، يحد محرك التوجيه السرعة داخليًا إلى ٦٠ كم/ساعة، ولكنه لا يغير الوقت المقدر للوصول. لذلك في حالة وجود مسارين متطابقين من البداية إلى النهاية: طريق سريع (١٢٠ كم/ساعة) وطريق فرعي (٦٠ كم/ساعة) - سيتم اختيار المسار الأقصر. بالنسبة لطرق الخدمة التي لها حد سرعة < ٦٠ كم/ساعة، سيتم اختيار المسار الأسرع. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Android only*) | Select the preferred route calculation method. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
+
 
 ## معلمات المسار - الشاحنة {#route-parameters---truck}
 

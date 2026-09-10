@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: Typy tras
 ---
@@ -23,7 +23,7 @@ Możesz skonfigurować filtrowanie niektórych typów tras w menu [Konfiguruj ma
 
 ## Rower {#cycle}
 
-[Trasy rowerowe](https://wiki.openstreetmap.org/wiki/Cycle_routes) występują w trzech typach: *lokalne* (`lcn`), *regionalne* (`rcn`), *krajowe* (`ncn`), *międzynarodowe* (`icn`). Trasy rowerowe mogą też być częścią [sieci węzłowych](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Możesz wybrać sposób przypisywania koloru do odcinków trasy:
+[Trasy rowerowe](https://wiki.openstreetmap.org/wiki/Cycle_routes) występują w następujących typach: *lokalne* (`lcn`), *regionalne* (`rcn`), *krajowe* (`ncn`), *międzynarodowe* (`icn`) i *nieklasyfikowane*. Trasy rowerowe mogą też być częścią [sieci węzłowych](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Możesz wybrać sposób przypisywania koloru do odcinków trasy:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -46,7 +46,7 @@ Trasy MTB mają specjalne oznaczenie w [OpenStreetMap](https://wiki.openstreetma
 
 ## Turystyka piesza / Spacer {#hiking--walking}
 
-[Trasy piesze](https://wiki.openstreetmap.org/wiki/Walking_Routes) występują w trzech typach: *lokalne* (`lwn`), *regionalne* (`rwn`), *krajowe* (`nwn`), *międzynarodowe* (`iwn`). Trasy piesze mogą też być częścią [sieci węzłowych](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd nie rozróżnia tras spacerowych i turystycznych, łącząc je w jedną grupę. Możesz wybrać sposób przypisywania koloru do odcinków trasy:
+[Trasy piesze](https://wiki.openstreetmap.org/wiki/Walking_Routes) występują w następujących typach: *lokalne* (`lwn`), *regionalne* (`rwn`), *krajowe* (`nwn`), *międzynarodowe* (`iwn`) i *nieklasyfikowane*. Trasy piesze mogą też być częścią [sieci węzłowych](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd nie rozróżnia tras spacerowych i turystycznych, łącząc je w jedną grupę. Możesz wybrać sposób przypisywania koloru do odcinków trasy:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Koloruje trasy według ich indywidualnego [koloru lokalnego](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (jeśli jest dostępny w OpenStreetMap) oraz symbolu tarczy turystycznej.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)

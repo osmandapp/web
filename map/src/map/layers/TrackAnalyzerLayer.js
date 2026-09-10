@@ -3,7 +3,7 @@ import AppContext, { OBJECT_TRACK_ANALYZER } from '../../context/AppContext';
 import { Marker, GeoJSON, useMap } from 'react-leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
-import { getDistance } from '../../util/Utils';
+import { LINE_STRING, getDistance } from '../../util/Utils';
 import isEmpty from 'lodash-es/isEmpty';
 import { TYPE_ANALYZER } from '../../graph/mapGraph/GlobalGraph';
 
@@ -71,7 +71,7 @@ export default function TrackAnalyzerLayer() {
                             points: segment.points,
                         },
                         geometry: {
-                            type: 'LineString',
+                            type: LINE_STRING,
                             coordinates: segment.points.map((point) => [point.lon, point.lat]),
                         },
                     }));

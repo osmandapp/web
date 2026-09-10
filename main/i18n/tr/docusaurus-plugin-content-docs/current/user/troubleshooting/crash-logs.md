@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
 sidebar_position: 5
 title:  Kilitlenme Günlükleri
 ---
@@ -19,47 +19,61 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Kilitlenme günlükleri, geliştiricilerin uygulamanın çökmesine veya beklenmedik şekilde davranmasına neden olan sorunları ve hataları belirlemesine ve düzeltmesine yardımcı olan değerli tanılama araçlarıdır. Android cihazınızdan OsmAnd geliştirme ekibiyle günlükleri paylaşmak mümkündür. Şu anda, iOS kullanıcıları göndermek için yalnızca bir tür kilitlenme günlüğü seçeneğine sahiptir.
 
 
-## Kilitlenme ve Logcat Günlükleri {#crash-and-logcat-logs}
+## Kilitlenme ve Uygulama Günlükleri {#crash-and-app-logs}
 
 OsmAnd, geliştiricilere iki tür veri göndermenize olanak tanır:
 
 - **Kilitlenme günlükleri**. OsmAnd uygulaması çökmeye neden olan kritik bir hata veya istisna ile karşılaştığında oluşturulur. Bu günlükler, derleme verileri, yığın izlemeleri, hata mesajları ve diğer ilgili ayrıntılar dahil olmak üzere arıza sırasındaki uygulamanın durumu hakkında ayrıntılı bilgi sağlar.
-- **Logcat günlükleri**. Çeşitli olayları ve mesajları yakalayan OsmAnd günlük akışının bir kaydı. Bu günlükler, geliştiricilerin uygulama davranışını izlemesine, yürütme akışını izlemesine, belirli eylemleri izlemesine ve kilitlenmeyle ilgili olmayan sorunları araştırmasına yardımcı olur. Logcat günlükleri genellikle uygulamanın en son başlatıldığı zamandan itibaren etkinlik kayıtlarını içerir.
+- **Geçerli oturum/uygulama günlükleri**. Çeşitli olayları ve mesajları yakalayan OsmAnd günlük akışının bir kaydı. Bu günlükler, geliştiricilerin uygulama davranışını izlemesine, yürütme akışını izlemesine, belirli eylemleri izlemesine ve kilitlenmeyle ilgili olmayan sorunları araştırmasına yardımcı olur. Logcat günlükleri genellikle uygulamanın en son başlatıldığı zamandan itibaren etkinlik kayıtlarını içerir.
 
 :::caution Özel bilgileriniz
-Cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verileri gibi özel bilgiler içerebileceğinden logcat günlüklerini gönderirken dikkatli olun.
+Uygulama günlüklerini gönderirken dikkatli olun, çünkü cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verileri gibi özel bilgiler içerebilir.
 :::
 
 
-### OsmAnd Uygulamasından Günlük Gönderme (Android) {#send-logs-from-osmand-app-android}
+### OsmAnd Uygulamasından Günlük Gönderme {#send-logs-from-osmand-app}
 
-1. *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)* bölümüne gidin. Durumunuza bağlı olarak uygun günlük türünü seçin. Günlük türleri arasındaki farklar için [Kilitlenme ve Logcat Günlükleri](#crash-and-logcat-logs) bölümüne başvurabilirsiniz.
-2. Açılır menüde Gmail'i veya tercih ettiğiniz e-posta uygulamasını seçin. E-posta otomatik olarak oluşturulacaktır.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Android'den kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Android'den kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![iOS'tan kilitlenme günlükleri gönder](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* veya *<Translate android="true" ids="send_logcat_log"/>* bölümüne gidin (*iOS'ta Geçerli uygulama günlüğünü gönder*). Durumunuza bağlı olarak uygun günlük türünü seçin. Günlük türleri arasındaki farklar için [Kilitlenme ve Uygulama Günlükleri](#crash-and-app-logs) bölümüne başvurabilirsiniz.
+2. Açılır menüde Gmail'i veya tercih ettiğiniz e-posta uygulamasını seçin. Günlükleri `support@osmand.net` adresine göndermenizi öneririz.
 3. *Gönder* düğmesine dokunun.
 
-![Android'den kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Android'den kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### iOS Cihazlardan Günlük Gönderme {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. iOS cihazlardan günlükler gönderilebilir:
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
-    - Otomatik olarak.
-        - OsmAnd uygulaması *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)* bölümüne gidin.  
-        - Ardından, e-posta uygulamanızı kullanarak günlükleri `support@osmand.net` adresine göndermenizi öneririz.
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-    - Manuel olarak.
-        - iOS sistem uygulaması *Dosyalar → iPhone'umda (veya iPad'imde) → OsmAnd Maps → Logs* bölümüne gidin.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-    ![iOS kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![iOS kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
-
-2. Günlüklerin ve yetkilendirme verilerinin [IPS formatını](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) gönderin:
-    - iOS 15 veya daha eski sürümlerde: *Ayarlar → Analiz → Analiz Verileri → OsmAnd Maps ips-format dosyası*.
-    - iOS 16 veya daha yeni sürümlerde:  *Ayarlar → Gizlilik ve Güvenlik → Analiz ve İyileştirmeler → Analiz Verileri → OsmAnd Maps ips-format dosyası*.
-    - Ardından, e-posta uygulamanızı kullanarak günlükleri `support@osmand.net` adresine göndermenizi öneririz.
-
-    ![iOS kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_log_ios.png)  ![iOS kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+-->
 
 ## Tombstone Dosyaları Gönderme (Android) {#send-tombstone-files-android}
 

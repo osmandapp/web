@@ -79,11 +79,13 @@ async function getFileData(file) {
         if (response.ok) {
             trackData = await response.text();
         } else {
-            trackData = '<gpx version="1.1" />';
+            trackData = null;
         }
     }
     return trackData;
 }
+
+export const LINE_STRING = 'LineString'; // GeoJSON geometry type
 
 export const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6372.8; // for haversine use R = 6372.8 km instead of 6371 km
@@ -190,9 +192,17 @@ export function cloneTrackObject(track) {
 // Used ONLY when creating a new file
 export function sanitizedFileName(filename, isFavoriteGroup = false) {
     const truncate = (sanitized, length) => {
-        const uint8Array = new TextEncoder().encode(sanitized);
-        const truncated = uint8Array.slice(0, length);
-        return new TextDecoder().decode(truncated);
+        const bytes = new TextEncoder().encode(sanitized);
+        if (bytes.length <= length) {
+            return sanitized;
+        }
+        // step back over the continuation bytes, so a multi-byte character is never cut in half
+        let end = length;
+        while (end > 0 && (bytes[end] & 0xc0) === 0x80) {
+            end--;
+        }
+
+        return new TextDecoder().decode(bytes.slice(0, end));
     };
 
     const newlineRe = /\n/g;
@@ -299,7 +309,7 @@ export function createUrlParams(params) {
         .replaceAll('%2C', ',')
         .replaceAll('%3A', ':')
         .replaceAll('%3B', ';');
-    if (Object.keys(pretty).length > 0) {
+    if (pretty.length > 0) {
         pretty = '?' + pretty;
     }
     return pretty;

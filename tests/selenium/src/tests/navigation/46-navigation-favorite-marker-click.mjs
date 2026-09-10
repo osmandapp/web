@@ -34,7 +34,6 @@ export default async function test() {
     await actionIdleWait();
 
     // Open navigation menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-navigation'));
     await waitBy(By.id('se-route-start-point'));
 

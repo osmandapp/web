@@ -32,7 +32,7 @@ export function stringifyPalette(items) {
     const lines = [PALETTE_HEADER];
     const total = items.length;
     items.forEach(({ value }, index) => {
-        const { r, g, b, a } = parseColorToRgba(value);
+        const { r, g, b, a } = parseColorToRgba(value) ?? { r: 0, g: 0, b: 0, a: 255 };
         lines.push(`${total - index}.0,${r},${g},${b},${a}`);
     });
     return lines.join('\n') + '\n';

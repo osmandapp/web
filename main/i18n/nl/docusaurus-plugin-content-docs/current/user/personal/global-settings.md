@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Algemene instellingen
 ---
@@ -44,7 +44,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 ## Algemeen {#general}
 
-Deze sectie bevat de basisinstellingen van OsmAnd, zoals het selecteren van een [profiel](#default-profile) bij het laden van de applicatie, het selecteren van de [weergave-engine](#map-rendering-engine) en de [map](#data-storage-folder) waarin de gegevens worden opgeslagen.  
+Deze sectie bevat de basisinstellingen van OsmAnd, zoals het selecteren van een [profiel](#default-profile) bij het laden van de applicatie, het selecteren van de [weergave-engine](#map-rendering-engine) en de [map](#data-storage) waarin de gegevens worden opgeslagen.  
 
 
 ### Standaardprofiel {#default-profile}
@@ -84,15 +84,15 @@ Deze functie is beschikbaar voor de iOS-versie van de OsmAnd-app.
 Het [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) wordt gebruikt wanneer u verbonden bent met de [CarPlay-software](https://support.apple.com/en-gb/HT205634) van uw voertuig en helpt u het meeste uit de geoptimaliseerde versie van de OsmAnd-app te halen door de audio- en videosystemen te gebruiken om gegevens op uw telefoon weer te geven.
 
 
-### Map voor gegevensopslag {#data-storage-folder}
+### Map voor gegevensopslag {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Profielen Opslaginstellingen Android](@site/static/img/personal/profiles/main_storage.webp) ![Profielen Opslaginstellingen Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Profielen Opslaginstellingen Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **Apparaatgeheugen** toont hoeveel vrije ruimte er nog op uw apparaat is. Tik op een veld om naar het menu [*Kaarten en bronnen*](../personal/maps-resources.md#local-menu) te gaan, waar u gedetailleerde informatie over uw OsmAnd-gegevens kunt bekijken en beheren.
 
@@ -108,6 +108,16 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 Nieuwe richtlijnen voor opslagtoegang zijn geïmplementeerd in Android-versies 11-12. Zie de sectie [**Probleemoplossing**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) voor details.
 :::
 
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+De instelling **Media-opslag** bepaalt waar foto's, video's en audiobestanden die zijn gekoppeld aan favorieten, tracks en andere OsmAnd-items worden opgeslagen. U kunt een opslaglocatie kiezen afhankelijk van of u wilt dat de bestanden privé blijven of toegankelijk zijn vanuit andere apps.
+- **Hoofdopslag** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Gedeelde opslag** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Cameramap** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Handmatig opgegeven** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Er is ook een schakelaar *Altijd een lokale kopie bewaren*. Wanneer ingeschakeld, kopieert OsmAnd media die uit de Galerij of Bestanden zijn geïmporteerd naar zijn eigen opslag, zodat de gekoppelde media beschikbaar blijft, zelfs als het originele bestand uit de Galerij of het bestandssysteem wordt verwijderd.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +129,6 @@ Ga naar: *iOS-apparaat → Instellingen → Algemeen → iPhone-opslag → OsmAn
 OsmAnd-bestanden zijn zichtbaar in de applicatie [*Bestanden*](https://apps.apple.com/us/app/files/id1232058109). U hebt toegang tot alle OsmAnd-bestanden: [tracks](../personal/tracks/manage-tracks.md), [favorieten](../personal/favorites.md), [kaarten](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Volg hiervoor het volgende pad:  
 
 Ga naar: *Bestanden → Op mijn iPhone → OsmAnd Kaarten*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Algemene Instellingen opslag iOS](@site/static/img/personal/profiles/files-1.png) ![Algemene Instellingen opslag iOS](@site/static/img/personal/profiles/files-2.png)
 

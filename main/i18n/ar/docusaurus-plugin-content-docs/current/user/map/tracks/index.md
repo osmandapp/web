@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  المسارات
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 

@@ -39,6 +39,7 @@ export default async function test() {
     await clickBy(By.id('se-edit-fav-item'));
     await waitBy(By.id('se-edit-fav-dialog'));
     await sendKeysBy(By.id('se-fav-name-input'), ' edited');
+    await actionIdleWait(); // guard is re-registered in context after typing, let it settle
     // click tracks menu → navigates to tracks URL → guard intercepts → dialog appears
     await clickBy(By.id('se-show-menu-tracks'));
     await waitBy(By.id('se-exit-dialog-keep-editing'));
@@ -59,6 +60,7 @@ export default async function test() {
     await clickBy(By.id('se-add-favorite-action'));
     await waitBy(By.id('se-add-fav-dialog'));
     await sendKeysBy(By.id('se-fav-name-input'), 'My New Favorite');
+    await actionIdleWait();
     await actionOpenContextMenu();
     await clickBy(By.id('se-add-favorite-action'));
     await waitBy(By.id('se-exit-dialog-exit'));
@@ -97,16 +99,16 @@ export default async function test() {
     await clickBy(By.id('se-edit-fav-item'));
     await waitBy(By.id('se-edit-fav-dialog'));
     await sendKeysBy(By.id('se-fav-name-input'), ' changed');
+    await actionIdleWait();
     // click wptName2 map marker → guard fires, edit panel stays open
     await clickBy(By.id(`se-fav-map-marker-${wptName2}`));
-
-    // temp fix for tests (closing dialog after pan to marker)
-    await actionIdleWait({ idle: 3000 });
-    await actionIdleWait({ idle: 3000 });
-    await actionIdleWait({ idle: 3000 });
-    await clickBy(By.id(`se-fav-map-marker-${wptName2}`));
-
-    await clickBy(By.id('se-exit-dialog-exit'));
+    await waitBy(By.id('se-exit-dialog-exit'));
+    await clickBy(By.id('se-exit-dialog-exit'), { optional: true, now: true }); // map pan to the marker may dismiss the dialog
+    if (await waitBy(By.id('se-edit-fav-dialog'), { optional: true, idle: true })) {
+        // dialog was dismissed by the pan, trigger the guard again
+        await clickBy(By.id(`se-fav-map-marker-${wptName2}`));
+        await clickBy(By.id('se-exit-dialog-exit'));
+    }
     await waitByRemoved(By.id('se-edit-fav-dialog'));
     // after exit wptName2 details open
     await waitBy(By.id(`se-fav-item-info-${wptName2}`));

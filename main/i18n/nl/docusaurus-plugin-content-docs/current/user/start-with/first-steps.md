@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  Eerste Stappen
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Welkom bij OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
-Ontdek hoe u kaarten kunt downloaden, de applicatie kunt configureren, de kaart kunt gebruiken en een route kunt uitstippelen, hoe u de navigatie start en hoe u nuttige plaatsen zoekt. Maak kennis met de belangrijkste punten van het privacybeleid van OsmAnd en de vereiste toestemmingen.
+Ontdek hoe u kaarten kunt downloaden, hoe u de applicatie kunt configureren, hoe u de kaart kunt gebruiken en een route kunt uitstippelen, hoe u de navigatie start en hoe u nuttige plaatsen zoekt. Maak kennis met de belangrijkste punten van het privacybeleid van OsmAnd en de vereiste toestemmingen.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -159,7 +159,7 @@ Ga naar: *Instellingen → OsmAnd Kaarten → Taal*
 </Tabs>
 
 :::note Geen optie om app-talen in te stellen
-Op sommige Android-apparaten of systeerversies is de optie om app-talen individueel in te stellen in de systeeminstellingen mogelijk niet beschikbaar of beperkt (u kunt de discussie op [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) bekijken voor aanvullende informatie). In dergelijke gevallen kunt u de app-taal nog steeds rechtstreeks in OsmAnd wijzigen met de Weergavetaalinstelling. Zelfs als een taal niet wordt ondersteund door uw Android-systeem, zal OsmAnd de geselecteerde taal binnen de app nog steeds toepassen en behouden.
+Op sommige Android-apparaten of systeerversies is de optie om app-talen individueel in de systeeminstellingen mogelijk niet beschikbaar of beperkt (u kunt de discussie op [GitHub](https://github.com/osmandapp/OsmAnd/issues/16990) bekijken voor aanvullende informatie). In dergelijke gevallen kunt u de app-taal nog steeds rechtstreeks in OsmAnd wijzigen met de Weergavetaalinstelling. Zelfs als een taal niet wordt ondersteund door uw Android-systeem, zal OsmAnd de geselecteerde taal binnen de app nog steeds toepassen en behouden.
 :::
 
 
@@ -510,22 +510,21 @@ In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAn
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_menu_andr.png)
+![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kaartenmenu iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Kaartenmenu iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Crashlog verzenden** (*voor Android*). Stelt gebruikers in staat om rapporten van app-crashes naar ontwikkelaars te sturen, wat helpt bij het identificeren en oplossen van problemen.
-- **Logcat-log verzenden** (*voor Android*). Biedt gebruikers de mogelijkheid om gedetailleerde logs van app-crashes naar ontwikkelaars te sturen, wat diepere analyse en probleemoplossing vergemakkelijkt.
-- **Log verzenden** (*voor iOS*). Voert een vergelijkbare functie uit als de *Crashlog verzenden*-functie voor Android, waardoor gebruikers op iOS-apparaten app-crashes kunnen rapporteren aan ontwikkelaars voor foutopsporingsdoeleinden.
-- **Buildversie kopiëren**. Stelt gebruikers in staat om snel en nauwkeurig de huidige versie van de app aan ontwikkelaars door te geven bij het melden van problemen, wat het diagnose- en oplossingsproces vereenvoudigt.
+- **Crashlog verzenden**. Hiermee kunnen gebruikers crashrapporten van eerdere app-crashes naar ontwikkelaars sturen voor analyse en probleemoplossing.
+- **Huidige sessielogs verzenden** (Android) / **Huidige applog verzenden** (iOS). Hiermee kunnen gebruikers de huidige applog, met informatie sinds het starten van de app, naar ontwikkelaars sturen voor probleemoplossing.
+- **Buildversie kopiëren**. Hiermee kunnen gebruikers de huidige versie van de app snel en nauwkeurig aan ontwikkelaars doorgeven bij het melden van problemen, wat het diagnose- en oplossingsproces vereenvoudigt.
 
 
 ### Meest bekeken {#most-viewed}
@@ -624,21 +623,21 @@ Hiermee kunt u vragen stellen of suggesties doen.
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_report_andr.png)
+![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kaartenmenu iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Kaartenmenu iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Open een issue op GitHub**. [Android-versie GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS-versie GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): stel vragen, schrijf over bugs en stel functies voor.
-- **Crashlog verzenden** (*voor Android*). Bevat alleen informatie over crashes.
-- [Logcat-log verzenden](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Log verzenden](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Gedetailleerd logbestand.
+- **Crashlog verzenden**. Bevat rapporten van eerdere app-crashes.
+- **Huidige sessielogs verzenden** (Android) / **Huidige applog verzenden** (iOS). Bevat de applog die is vastgelegd sinds het starten van de app.
 
 ### Over OsmAnd {#about-osmand}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title:  Przewodniki turystyczne
 ---
@@ -30,13 +30,13 @@ Informacje z Wikivoyage obejmują główne fakty o danym miejscu, transport, atr
 
 <TabItem value="android" label="Android">
 
-![Widok ogólny przewodników turystycznych](@site/static/img/guides/travel_guides_view_android.png)
+![Travel guides view General](@site/static/img/guides/travel_guides_view_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Mapy iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
+![Maps menu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ Artykuły *Przewodników turystycznych* są przechowywane w OsmAnd jako ślady G
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
-![Menu pobierania przewodników turystycznych](@site/static/img/guides/travel_guides_download.png)
+![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_tr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
-![Menu Mapy iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
+![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ Po otwarciu *Przewodników turystycznych* (*<Translate android="true" ids="share
 
 <TabItem value="android" label="Android">
 
-![Główny ekran przewodników turystycznych](@site/static/img/guides/travel_guides_main_screen_1.png) ![Główny ekran przewodników turystycznych 2](@site/static/img/guides/travel_guides_main_screen_2.png)
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1.png) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Główny ekran przewodników turystycznych](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Główny ekran przewodników turystycznych 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -125,13 +125,13 @@ Jeśli dotkniesz przycisku *Zakładka*, artykuł zostanie zapisany do późniejs
 
 <TabItem value="android" label="Android">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_search_android.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -155,13 +155,13 @@ Obok każdego wyniku wyszukiwania wymienione są 3 najczęściej używane język
 
 <TabItem value="android" label="Android">
 
-![Menu opcji przewodników turystycznych](@site/static/img/guides/travel_guides_options_android.png)
+![Travel guides options menu](@site/static/img/guides/travel_guides_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_options_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
@@ -180,13 +180,13 @@ W menu Opcje można wybrać, czy zapisywać obrazy w przeglądanych artykułach,
 
 <TabItem value="android" label="Android">
 
-![Artykuł przewodnika turystycznego](@site/static/img/guides/travel_guides_article.png)
+![Travel guides article](@site/static/img/guides/travel_guides_article.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_article_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
@@ -213,13 +213,13 @@ Na dole ekranu znajdują się przyciski takie jak:
 
 <TabItem value="android" label="Android">
 
-![Menu spisu treści przewodników turystycznych](@site/static/img/guides/travel_guides_navigation_menu.png)
+![Travel guides contents menu](@site/static/img/guides/travel_guides_navigation_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
@@ -235,13 +235,13 @@ Jeśli dotkniesz strzałki w lewym górnym rogu ekranu, przejdziesz bezpośredni
 
 <TabItem value="android" label="Android">
 
-![Menu spisu treści przewodników turystycznych](@site/static/img/guides/travel_guides_contents_menu_android.png)
+![Travel guides contents menu](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
@@ -254,7 +254,7 @@ Większość *Artykułów przewodników turystycznych* ma tę samą strukturę t
 - &nbsp;*Zobacz*. Lista atrakcji (muzea, miejsca historyczne itp.) z pełnymi opisami: ceny biletów, godziny otwarcia, przydatne linki i numery telefonów.
 - &nbsp;*Zrób*. Miejsca do spędzania czasu.
 - &nbsp;*Kup*. Miejsca na zakupy.
-- &nbsp;*Jedz*. Obiekty gastronomiczne (podzielone według budżetu: tanio, średnio, drogo).
+- &nbsp;*Jedz*. Obiekty gastronomyczne (podzielone według budżetu: tanio, średnio, drogo).
 - &nbsp;*Pij*. Bary i kawiarnie.
 - &nbsp;*Śpij*. Noclegi podzielone według budżetu (tanio, średnio, drogo).
 - &nbsp;*Dalej*. Najbliższe miejsca z Wikivoyage.
@@ -265,13 +265,13 @@ Większość *Artykułów przewodników turystycznych* ma tę samą strukturę t
 
 <TabItem value="android" label="Android">
 
-![Menu punktów przewodników turystycznych](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Menu punktów przewodników turystycznych](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
@@ -279,7 +279,7 @@ Większość *Artykułów przewodników turystycznych* ma tę samą strukturę t
 
 *Artykuły przewodników turystycznych* często zawierają atrakcje turystyczne pogrupowane tematycznie. Po jednokrotnym dotknięciu przycisku *Punkty* na dole *[Artykułu](#travel-article)*, wszystkie atrakcje związane z tematem (miejsca do jedzenia, opcje zakwaterowania, lotniska, sklepy, zabytki historyczne itp.) zostaną dodane do mapy i można nimi *[zarządzać jako śladem](#manage-as-gpx-track)*.  
 
-Domyślnie grupy atrakcji są oznaczone określonymi ikonami: kategorie *Jedz i Pij* nożem i widelcem w czerwonym kółku, *Zrób i Zobacz* aparatem w zielonym kółku i inne. Możesz zarządzać grupami punktów za pomocą &#8942; jak *[folderem punktów trasy](../map/tracks/track-context-menu.md#points--waypoints)*.  
+Domyślnie grupy atrakcji są oznaczone określonymi ikonami: kategorie *Jedz i Pij* nożem i widelcem w czerwonym kółcu, *Zrób i Zobacz* aparatem w zielonym kółcu i inne. Możesz zarządzać grupami punktów za pomocą &#8942; jak *[folderem punktów trasy](../map/tracks/track-context-menu.md#points--waypoints)*.  
 
 :::note
 Punkty w *Artykułach podróżniczych* odnoszą się do punktów trasy na śladzie GPX.  
@@ -293,12 +293,12 @@ Możesz również *[dodać punkty do mapy](#travel-routes)* w menu *Konfiguruj m
 
 Alternatywnym sposobem przeglądania *Przewodników turystycznych* jest wyświetlanie ich na mapie za pomocą menu *Konfiguruj mapę*. Ta funkcja nie dotyczy możliwości oferowanej przez OsmAnd do korzystania z Wikivoyage, dotyczy ona tylko śladów. Więcej można przeczytać na naszym [blogu](https://osmand.net/blog/routes#generated-travel-routes).
 
-![Menu punktów przewodników turystycznych](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Menu punktów przewodników turystycznych](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Trasy podróży i artykuły na mapie {#travel-routes-and-articles-on-the-map}
 
-![Menu punktów przewodników turystycznych](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Menu punktów przewodników turystycznych](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
 Po włączeniu wyświetlania *Tras podróży* w menu *Konfiguruj mapę*, na mapie pojawią się okręgi w różnych kolorach. Pomarańczowe reprezentują ślady tras, artykuły o trasach i niektóre punkty trasy. Dotknij określonej trasy, artykułu lub punktu, a następnie dotknij przycisku *Pobierz* (&#9047;), a będziesz mógł [zarządzać nimi jako śladem](#manage-as-gpx-track).
 
@@ -315,7 +315,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Zarządzaj jako ślad GPX {#manage-as-gpx-track}
 
-![Menu punktów przewodników turystycznych 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Menu punktów przewodników turystycznych 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
 Po dodaniu *Przewodników turystycznych* do mapy, *Artykuły podróżnicze* można zapisać jako ślad GPX i zarządzać nimi za pomocą menu *[Moje miejsca](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Można je wyświetlać na mapie, udostępniać, zmieniać nazwę, umieszczać w innym folderze, eksportować lub usuwać.  
 
@@ -335,13 +335,13 @@ W *[menu kontekstowym śladu](../map/tracks/track-context-menu.md)* pliku GPX mo
 
 <TabItem value="android" label="Android">
 
-![Połączenie przewodników turystycznych z Wikipedią 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Połączenie przewodników turystycznych z Wikipedią 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
+![Travel guides combine with Wikipedia 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Travel guides combine with Wikipedia 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Menu wyszukiwania przewodników turystycznych](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
@@ -351,7 +351,7 @@ W *Artykułach przewodników turystycznych* można znaleźć przydatne informacj
 
 W niektórych przypadkach, *[zakładka Zakładki](#explore-and-bookmark)* OsmAnd zaproponuje pobranie [warstwy mapy Wikipedii](../plugins/wikipedia.md#download-wikipedia-packages), aby przeglądać powiązane artykuły w trybie offline.
 
-![Pobieranie Wikipedii dla przewodników turystycznych](@site/static/img/guides/travel_guides_wikipedia_download.png)
+![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info UWAGA
 [Wtyczka Wikipedia](../plugins/wikipedia.md) jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd.

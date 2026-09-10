@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  Preparación de la ruta
 ---
@@ -461,13 +461,11 @@ Vaya a: *<Translate android="true" ids="shared_string_navigation,shared_string_s
 
 ## Mapas faltantes o no sincronizados {#maps-missing-or-not-synchronized}
 
-Para construir una ruta, todos los **mapas necesarios** deben estar descargados y tener la misma fecha de lanzamiento. Tenga en cuenta que, en algunas situaciones, el mensaje de mapas faltantes podría estar oculto en el menú de preparación de la ruta. Si despliega el menú de navegación hacia arriba, verá las posibles razones por las que no se pudo calcular su ruta.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Mensaje de mapas faltantes al construir la navegación Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Mensaje de mapas faltantes al construir la navegación Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Mensaje de mapas faltantes al construir la navegación Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Para construir una ruta, todos los **mapas necesarios** deben estar descargados 
 </TabItem>
 
 </Tabs>
+
+Para construir una ruta, todos los **mapas necesarios** deben estar descargados y tener la misma fecha de lanzamiento. En Android, si los mapas requeridos tienen fechas de lanzamiento diferentes, OsmAnd puede cambiar a enrutamiento estándar cuando el [método de cálculo de ruta](../routing/car-based-routing.md#route-parameters---car) está configurado en Automático.
+
+Tenga en cuenta que, en algunas situaciones, el mensaje de mapas faltantes podría estar oculto en el menú de preparación de la ruta. Si despliega el menú de navegación hacia arriba, verá las posibles razones por las que no se pudo calcular su ruta.
 
 ### Mapas requeridos {#required-maps}
 

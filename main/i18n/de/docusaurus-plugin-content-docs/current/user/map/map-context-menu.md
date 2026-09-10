@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -142,7 +142,7 @@ Verfügbare Details umfassen:
 - [Innerhalb von Gebieten](#polygon-information)
 - [Nahegelegene POIs](#nearby-pois)
 - [Nahegelegene beliebte Orte](#nearby-popular-places)
-- [Reiseführer](#guides) (nur Android)
+- [Reiseführer](#guides) 
 - [ÖPNV-Routen für Haltestellen](#public-transport-routes)
 - [Favoriten / Trackpunkte aus derselben Gruppe](#favorites--track-points-from-the-group)
 - [OpenStreetMap-Link](#openstreetmap-link)
@@ -170,21 +170,19 @@ Falls ein Kontaktfeld (z. B. *Webseite, Telefonnummer* oder *E-Mail*) mehrere We
 
 ![Beschreibungsliste](@site/static/img/map/description_list_new_android.png) ![Beschreibungsliste](@site/static/img/map/description_list_dialog.png)
 
-Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md#wikipedia-article), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
-
-Falls der ausgewählte Ort einen Wikipedia-Artikel hat, wird eine kurze Vorschau in diesem Abschnitt angezeigt. Wenn der vollständige Artikel offline nicht verfügbar ist, erscheint die Schaltfläche *Auf Wikipedia lesen*. Ein Antippen darauf öffnet einen Dialog mit Optionen je nach Benutzerzugriff: Nutzer mit einem gekauften Plan können die regionalen Wikipedia-Daten herunterladen oder den Artikel im Browser öffnen, während kostenlose Nutzer den Artikel online öffnen oder zum Bildschirm weitergeleitet werden, der Offline-Zugriff anbietet.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Beschreibungsliste](@site/static/img/map/description_list_new_ios.png)
-
-Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
+![Beschreibungsliste](@site/static/img/map/description_list_ios.webp) ![Beschreibungsliste](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md#wikipedia-article), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
+
+Falls der ausgewählte Ort einen Wikipedia-Artikel hat, wird eine kurze Vorschau in diesem Abschnitt angezeigt. Wenn der vollständige Artikel offline nicht verfügbar ist, erscheint die Schaltfläche *Auf Wikipedia lesen*. Ein Antippen darauf öffnet einen Dialog mit Optionen je nach Benutzerzugriff: Nutzer mit einem gekauften Plan können die regionalen Wikipedia-Daten herunterladen oder den Artikel im Browser öffnen, während kostenlose Nutzer den Artikel online öffnen oder zum Bildschirm weitergeleitet werden, der Offline-Zugriff anbietet.
 
 
 ### Alternative Namen {#alternative-names}
@@ -324,9 +322,21 @@ Ein Tippen auf *Nahegelegene [Beliebte Orte](https://osmand.net/docs/user/plugin
 
 ### Reiseführer {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Reiseführer Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Reiseführer iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 Der Abschnitt **Reiseführer** erscheint im Kartenkontextmenü für einige Orte und bietet Zugriff auf **Reise (Wikivoyage)**-Führer im Zusammenhang mit dem ausgewählten Punkt von Interesse. Er zeigt eine Liste von Führereinträgen (z. B. ein Land oder eine Region) an, die den ausgewählten Ort erwähnen.
 

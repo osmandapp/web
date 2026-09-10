@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  Tracks
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ Sie können die Sichtbarkeit von Tracks verwalten, indem Sie auswählen, welche 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Karte konfigurieren Tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Karte konfigurieren Tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Karte konfigurieren Tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Karte konfigurieren Tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -67,15 +67,15 @@ Die Option *Karte konfigurieren* ermöglicht es Ihnen, die Anzeige aller zuletzt
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → langes Tippen auf den ausgewählten GPX-Track → Auf Karte anzeigen*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*
 
-![Kontextmenü eines Tracks in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ Im [Meine Orte *→* Tracks-Tab](../../personal/tracks/manage-tracks.md#manage-t
 
 <TabItem value="android" label="Android">
 
-![Track-Kontextmenü Übersicht Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Kontextmenü Übersicht iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ Wenn Sie einen Track auf der Karte auswählen oder das [Track-Kontextmenü](./tr
 
 Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track-Menü auf Karte analysieren Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track-Menü auf Karte analysieren Distanz Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate android="
 
 Gehen Sie zu: *Tippen Sie auf den Track → Tab "Track" → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track-Menü auf Karte analysieren](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track-Menü auf Karte analysieren ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -145,13 +145,13 @@ Dieses Werkzeug bietet eine detaillierte Analyse von [Track](../../map/tracks/tr
 
 <TabItem value="android" label="Android">
 
-![Track-Menü auf Karte analysieren 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track-Menü auf Karte analysieren 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü auf Karte analysieren](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track-Menü auf Karte analysieren ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 

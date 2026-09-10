@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title:  Rastreador de embarcaciones AIS
 ---
@@ -155,7 +155,7 @@ Las embarcaciones AIS transmiten tres tipos de datos:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Ajustes de AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![Ajustes de AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
 
 </TabItem>
 
@@ -171,6 +171,7 @@ El complemento *Rastreador de embarcaciones AIS* ofrece varios ajustes para pers
 | Dirección IP | Defina la IP de la fuente de datos AIS (si se usa TCP) | `192.168.200.16` |
 | Puerto TCP   | Defina el número de puerto TCP para los datos AIS | `4001` |
 | Puerto UDP   | Defina el puerto UDP para la recepción de AIS en OsmAnd  | `10110` |
+| Recibir datos AIS incluso si OsmAnd está en pausa   | Mantener el receptor de mensajes AIS activo si OsmAnd está en pausa o en segundo plano. Si está desactivado, no se reciben mensajes AIS cuando OsmAnd está en segundo plano  | `Sí/No` |
 | | | |
 | **Tiempo de espera de recepción de señal AIS** | |  |
 | Tiempo de espera para objetos AIS perdidos     | Las embarcaciones desaparecen si no se recibe señal durante un tiempo determinado | `3 - 20 min` |

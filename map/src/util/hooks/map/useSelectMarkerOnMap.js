@@ -21,16 +21,18 @@ import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 import { TRANSPORT_STOPS_LAYER_ID } from '../../../map/layers/TransportStopsLayer';
 import { SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
+import { OBJECT_TYPE_CLOUD_TRACK } from '../../../context/AppContext';
 
 const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
 const HOVER_OUTLINE_GAP = 6;
 
-function extractLatlng(selectedWptId, type) {
+// obj is either a marker layer (getLatLng) or a GeoJSON feature (geometry)
+function extractLatlng(selectedWptId) {
     const obj = selectedWptId?.obj;
     if (!obj) return null;
 
-    if (type === FAVORITE_FILE_TYPE) return obj.getLatLng() ?? null;
-    if (type === TRANSPORT_STOPS_LAYER_ID) return obj.getLatLng?.() ?? null;
+    const latlng = obj.getLatLng?.();
+    if (latlng) return latlng;
 
     const coords = obj.geometry?.coordinates;
     if (coords?.length >= 2) return { lat: coords[1], lng: coords[0] };
@@ -93,6 +95,11 @@ function layerHasRelatedResultId(layer, id) {
     return (layer?.options?.relatedResultIds ?? []).includes(id);
 }
 
+// hover on an offscreen point shows a direction pin at the map edge for these list types
+function showsDirectionPinOnHover(type) {
+    return type === SEARCH_LAYER_ID || type === FAVORITE_FILE_TYPE || type === OBJECT_TYPE_CLOUD_TRACK;
+}
+
 export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map, zoom, move }) {
     const selectedObjId = ctx.selectedWpt?.id ?? null;
 
@@ -145,7 +152,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         if (type === SEARCH_LAYER_ID) {
-            const latlng = extractLatlng(ctx.selectedWptId, type) ?? ctx.selectedWpt?.poi?.latlng ?? null;
+            const latlng = extractLatlng(ctx.selectedWptId) ?? ctx.selectedWpt?.poi?.latlng ?? null;
             if (latlng) {
                 const pin = applySelectedPin({
                     ctx,
@@ -206,9 +213,9 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
-        const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
+        const latlng = found?.getLatLng() ?? extractLatlng(ctx.selectedWptId);
 
-        if (type === SEARCH_LAYER_ID && latlng && isOutsideVisibleMap({ ctx, map, latlng })) {
+        if (showsDirectionPinOnHover(type) && latlng && isOutsideVisibleMap({ ctx, map, latlng })) {
             applyDirectionPin({ ctx, map, latlng, markerData: resolveHoverMarkerData(found) });
             return;
         }
@@ -233,7 +240,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
-        const latlng = ctx.selectedWptId?.hoverLatlng ?? layer?.getLatLng() ?? extractLatlng(ctx.selectedWptId, type);
+        const latlng = ctx.selectedWptId?.hoverLatlng ?? layer?.getLatLng() ?? extractLatlng(ctx.selectedWptId);
         if (latlng) {
             applyHoverOutline({ ctx, map, latlng, ...resolveHoverOutlineStyle(layer) });
         } else {

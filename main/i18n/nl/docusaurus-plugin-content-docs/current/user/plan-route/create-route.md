@@ -1,5 +1,5 @@
 ---
-source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
+source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
 sidebar_position: 1
 title:  Een route plannen
 ---
@@ -19,19 +19,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 De tool **Een route plannen** (*Menu → Een route plannen*) is een krachtige functie van de OsmAnd-applicatie waarmee u [nieuwe routes kunt aanmaken](#create-new-route) als GPX-tracks, [reeds opgeslagen tracks kunt bewerken en er nieuwe segmenten aan kunt toevoegen](#segments), [afstanden kunt meten](#distance-measurement) op de kaart en [tracksegmenten kunt koppelen](#attach-track-to-roads) aan de dichtstbijzijnde beschikbare weg met behulp van verschillende navigatieprofielen. De functie is ontworpen om in *offline modus* te werken.
 
-Een route bestaat uit een reeks segmenten tussen gespecificeerde punten. De segmenten kunnen rechte lijnen zijn of routes die zijn aangepast aan het geselecteerde profiel. De route kan worden opgeslagen als GPX om later te importeren, te bewerken en voor [navigatie](../navigation/setup/gpx-navigation.md).
+Een route bestaat uit een reeks segmenten tussen gespecificeerde punten. De segmenten kunnen rechte lijnen zijn或 routes die zijn aangepast aan het geselecteerde profiel. De route kan worden opgeslagen als GPX om later te importeren, te bewerken en voor [navigatie](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen ios](@site/static/img/plan-route/plan_route_overview_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ Een route bestaat uit een reeks segmenten tussen gespecificeerde punten. De segm
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Een route plannen android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Een route plannen ios](@site/static/img/plan-route/plan-route-menu-ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
@@ -63,7 +63,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
 ### Nieuwe route aanmaken {#create-new-route}
 
-Om een nieuwe track in GPX-formaat aan te maken, gebruikt u de hoofdfunctie van de tool *Een route plannen*. Het vooraf aanmaken van een route heeft veel voordelen, in tegenstelling tot het opnemen van de huidige track met de *[Plugin voor ritregistratie](../plugins/trip-recording.md)*. U kunt [zoveel punten als u wilt toevoegen](#adding-points) aan de route, [ze verwijderen en verplaatsen](#point-context-menu), routetypes per [segment](#route-between-points) wijzigen en [gedetailleerde informatie over de route](#graph) krijgen.  
+Om een nieuwe track in GPX-formaat aan te maken, gebruikt u de hoofdfunctie van de tool *Een route plannen*. Het vooraf aanmaken van een route heeft veel voordelen, in tegenstelling tot het opnemen van de huidige track met de *[Plugin voor ritregistratie](../plugins/trip-recording.md)*. U kunt [zoveel punten als u wilt toevoegen](#adding-points) aan de route, [ze verwijderen en verplaatsen](#point-context-menu), routetypes per [segment](#route-between-points) wijzigen en [gedetailleerde informatie over de route](#graph--analyze) krijgen.  
 
 Standaard komt het routeringstype overeen met het eerder geselecteerde profiel. Tik op het routeringspictogram om te selecteren hoe de applicatie het segment moet berekenen om punten te verbinden. Het beschikbare profiel moet [afzonderlijk](../navigation/routing/osmand-routing.md#routing-types) worden geconfigureerd.  
 
@@ -93,7 +93,21 @@ De tool *Een route plannen* maakt het mogelijk om zowel een bestaande GPX-track 
 
 ### Afstand meten {#distance-measurement}
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_lines_andr.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 *Een route plannen* is een snelle en eenvoudige manier om de afstand tussen punten te meten.
 
@@ -108,9 +122,21 @@ De *Rechte lijn* is nodig en zal worden gebruikt voor gebieden die niet worden g
 
 ### Hoogtegegevens ophalen {#get-elevation-data}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Als [Hoogtegegevens](../map/tracks/track-context-menu.md#calculate-missing-elevation) ontbreken in een bestaande track, is het mogelijk om deze toe te voegen met de volgende tools:
 
@@ -131,13 +157,13 @@ Gebruik in plaats daarvan offline opties: koppelen aan wegen of terreinkaarten (
 
 <TabItem value="android" label="Android">
 
-![Een route plannen snap-road-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -184,7 +210,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Een route plannen Favorieten android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Plan a route Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Toevoegen*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
 
@@ -194,9 +220,9 @@ U kunt ook een via-punt direct vanaf de kaart toevoegen door op een POI of Favor
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Punt toevoegen*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
+Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Route +*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
 
 </TabItem>
 
@@ -205,30 +231,40 @@ Om een afstand te meten of een reis te plannen, voegt u één voor één punten 
 :::note
 U kunt ook elke actie die u in de routeplanner hebt uitgevoerd **Ongedaan maken**/**Opnieuw uitvoeren**.
 :::
+
+### Waypoints toevoegen (alleen iOS) {#adding-waypoints}
+
+![Plan a route ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Plan a route ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+
+Het tabblad POI stelt u in staat om waypoints toe te voegen en te beheren tijdens het plannen van een route.
+
+Om een waypoint toe te voegen, selecteert u een locatie op de kaart en tikt u op de knop *+ POI*. Het Waypoint-scherm wordt geopend, waar u een naam, beschrijving en adres kunt invoeren, een groep kunt selecteren en het pictogram, de kleur en de vorm kunt aanpassen. U kunt een bestaande groep selecteren of op *Groep toevoegen* tikken om een nieuwe groep aan te maken.
+
+Het tabblad POI toont toegevoegde punten gegroepeerd per map. Elke groep toont de naam en het aantal punten dat het bevat. Tik voor elke groep op het menu met drie puntjes om groepsacties te openen:
+- **Hernoemen** — wijzig de groepsnaam.
+- **Uiterlijk wijzigen** — wijzig het uiterlijk van de groep.
+- **Sorteren** — wijzig de volgorde van de punten in de groep.
+- **Verwijderen** — verwijder de groep.
+
+Het sorteermenu biedt de volgende opties: *Laatst gewijzigd*, *Naam A–Z*, *Naam Z–A*, *Nieuwste datum eerst* en *Oudste datum eerst*.
+
+Tik op een punt in een groep om het contextmenu te openen. U kunt:
+- **Bewerken** — open het scherm Waypoint bewerken.
+- **Verwijderen** — verwijder het punt uit de groep.
   
 ### Route tussen punten {#route-between-points}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 Toegevoegde punten in de editor kunnen worden verbonden als een rechte lijn of als een route tussen punten van een geselecteerd profiel. *Route tussen punten* is op verschillende manieren toegankelijk:
 
 1. Vanuit het menu *Opties* *→* *Route tussen punten*.
 2. Tik op het *profielpictogram* in de linkerbenedenhoek van het kaartscherm. Niet op het bovenste pictogram, dat opent het menu Kaart configureren.
 3. In het *[Contextmenu voor punten](#point-context-menu) → Wijzig routetype voor/na*.  
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Een route plannen android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Een route plannen android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Een route plannen ios](@site/static/img/plan-route/plan_route_between_points_ios.png) ![Een route plannen ios](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 U kunt de route wijzigen tussen 2 specifieke punten of tussen meerdere punten:
 
@@ -237,12 +273,72 @@ U kunt de route wijzigen tussen 2 specifieke punten of tussen meerdere punten:
 - *Wijzig het routetype voor/na punt*. In het *contextmenu voor punten* kunt u de manier wijzigen waarop de route wordt berekend voor het gedeelte van dit punt tot het dichtstbijzijnde of tot het eindpunt. De instelling geeft informatie over de afstand van dit punt tot het begin of het einde van de route, of tot het volgende/vorige punt.
 - *Routes herberekenen*. U kunt routeherberekening gebruiken zonder het profieltype te wijzigen. Het profielpictogram dat op de geplande route in de tool wordt weergegeven, verandert niet, maar het routetype komt overeen met het geselecteerde. Mogelijk hebt u dit nodig om alternatieve routes te vinden.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+
+Toegevoegde punten kunnen worden verbonden met een rechte lijn of een route die is berekend met een geselecteerd routeringsprofiel. Het menu Route tussen punten stelt u in staat om het routeringstype en de instellingen voor routesegmenten en -secties te bekijken en te wijzigen.
+
+U kunt Route tussen punten openen door op de knop *Route tussen punten* te tikken, die het pictogram van het momenteel geselecteerde routeringsprofiel weergeeft, of vanuit een [Segment](#segments) of Sectiemenu.
+
+In het tabblad Routetype kunt u een routeringsprofiel selecteren voor het geselecteerde segment of de geselecteerde sectie. Rechte lijn is beschikbaar als eerste optie, gevolgd door de beschikbare routeringsprofielen.
+
+Wanneer een route slechts één routeringstype bevat, wordt de eenvoudige weergave van Route tussen punten getoond. Wanneer een route meerdere routeringstypes bevat, toont de complexe weergave alle segmenten en secties, zodat u kunt selecteren welk deel van de route u wilt wijzigen.
+
+U kunt ook:
+- **Nieuw segment starten** — maak een nieuw segment en ga door met het toevoegen van routepunten. Het nieuwe segment gebruikt hetzelfde routetype als het huidige.
+- **Wijzigen voor hele track** — selecteer een routeringstype om toe te passen op de gehele track.
+
+In het tabblad Instellingen kunt u vooraf gedefinieerde routeringsinstellingen selecteren voor het geselecteerde routetype.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Segmenten {#segments}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Een tracksegment is een verzameling punten die zonder **onderbrekingen** met elkaar zijn verbonden. In de tool voor het plannen van een route is het mogelijk:
 
 - Segmenten samenvoegen: de optie [Segmenten samenvoegen](#point-context-menu) verwijdert de onderbreking naar eerder gescheiden segmenten.
 - Nieuwe, niet-verbonden delen van een track splitsen of aanmaken. Om er een aan te maken, gebruikt u de optie [Nieuw segment starten](#point-context-menu) of selecteert u de functie [Splitsen](#point-context-menu) in het contextmenu voor punten.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+
+Een route kan één of meer segmenten bevatten. Een segment kan één routetype gebruiken of meerdere secties met verschillende routetypes bevatten.
+
+In het tabblad Route wordt elk segment weergegeven met zijn routetype en afstand. Wanneer een segment meerdere secties bevat, toont elke sectie zijn routetype en afstand.
+
+U kunt een segment beheren via het menu met drie puntjes:
+- **Routetype wijzigen** — beschikbaar voor een segment met één routetype. Opent Route tussen punten, waar u een ander routetype kunt selecteren.
+- **Enkelvoudig routetype instellen** — beschikbaar wanneer een segment meerdere secties met verschillende routetypes bevat. Opent Route tussen punten, waar u één routetype kunt toepassen op het segment.
+- **Sorteren** — routepunten handmatig herschikken of Sorteer deur-tot-deur gebruiken om ze te herschikken zodat de totale reisafstand wordt geminimaliseerd.
+- **Opslaan als…** — sla het segment op als een apart bestand.
+- **Segment verwijderen** — verwijder het segment.
+
+Om een nieuw niet-verbonden segment aan te maken, tikt u op *Nieuw segment starten* onderaan het tabblad Route.
+
+Een segment kan worden verdeeld in [secties](#multimodal-routes) wanneer verschillende routetypes worden gebruikt voor verschillende delen van het segment. Elke sectie toont zijn routetype en afstand.
+
+Tik op het menu met drie puntjes voor een sectie om:
+- **Routetype wijzigen** — open Route tussen punten en selecteer een ander routetype.
+- **Sorteren** — toegang tot de beschikbare sorteeropties.
+- **Sectie verwijderen** — verwijder de sectie.
+
+</TabItem>
+
+</Tabs>
+
 
 ### Contextmenu voor punten {#point-context-menu}
 
@@ -250,13 +346,13 @@ Een tracksegment is een verzameling punten die zonder **onderbrekingen** met elk
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen ios](@site/static/img/plan-route/plan_route_points_menu_ios.png)
+![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -294,13 +390,13 @@ Elk punt op uw route heeft een eigen contextmenu. Het toont het *volgnummer* van
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen ios-scherm](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -317,18 +413,7 @@ Met de tool *Een route plannen* en de optie [Route tussen punten](#route-between
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Een route plannen ios](@site/static/img/plan-route/plan_route_save_changes_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
+![Plan a route android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 Nadat u ten minste één punt [hebt toegevoegd](#adding-points) aan de kaart, kunt u de opslagoptie gebruiken. Alle tracks die zijn opgeslagen in *Een route plannen* zijn te vinden in het hoofdmenu *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
@@ -345,23 +430,35 @@ Bij het opslaan erft de track het activiteitstype van het routeringsprofiel dat 
 Bij het opslaan van een nieuwe track kunt u de optie ***Vereenvoudigde*** track selecteren om de track compatibel te maken met andere applicaties van derden. Technisch gezien wordt de track opgeslagen zonder route-instructies als een puur geometrische track.
 :::
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+
+Nadat u ten minste één punt [hebt toegevoegd](#adding-points) aan de kaart, kunt u de opslagoptie gebruiken. Alle tracks die zijn opgeslagen in *Een route plannen* zijn te vinden in het hoofdmenu *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
+
+Voor een nieuwe route tikt u op *Opslaan* in de bovenste werkbalk om de huidige track op te slaan. U kunt ook *Opslaan als…* gebruiken vanuit het menu Opties om een bestandsnaam in te voeren en de route op te slaan.
+
+Bij het bewerken van een bestaande track slaat *Opslaan* de huidige wijzigingen op. U kunt ook de volgende opties gebruiken:
+- **Opslaan als…** — slaat de track op met een nieuwe bestandsnaam.
+- **Opslaan als kopie** — slaat een duplicaat van de track op.
+- **Toevoegen aan bestaande track** — voegt de geplande track als een apart segment toe aan een bestaande track.
+
+Bij het opslaan erft de track het activiteitstype van het routeringsprofiel dat is gebruikt voor de planning. De activiteit wordt opgeslagen in de trackmetadata en blijft behouden na het exporteren of importeren van het GPX-bestand.
+
+</TabItem>
+
+</Tabs>  
+
+
 ### Opties {#options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android-opties](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Een route plannen ios-opties](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Toont het geselecteerde applicatieprofiel (standaard is een rechte lijn). Tikken op deze actie is hetzelfde als tikken op de knop *Profiel*, die het [profielmenu](../personal/profiles.md) van de applicatie opent.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) of **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Tekent nieuwe routesegmenten die niet aansluiten op het vorige segment.
@@ -375,30 +472,56 @@ Bij het opslaan van een nieuwe track kunt u de optie ***Vereenvoudigde*** track 
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*alleen Android*). Deze optie wordt alleen in het menu weergegeven als er geen hoogtegegevens beschikbaar zijn. Met deze [optie](#get-elevation-data) kunt u de hoogte berekenen met behulp van *Terreinkaartgegevens* of gegevens van gedownloade kaarten gebruiken om de *nabijgelegen wegen* te vinden.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. Het wist volledig al uw acties. Er blijft een "artefact" op de kaart achter - de stippellijnen van de zojuist gewiste route. Het verdwijnt bij de volgende toevoeging van nieuwe punten. U kunt de functie Alles wissen annuleren met de knop Actie terugdraaien. De functie heeft geen invloed op de ongewijzigde delen van de routes die in de tool zijn geopend.
 
-### Grafiek {#graph}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Een route plannen android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+
+Tik op het menu met drie puntjes in de bovenste werkbalk om het menu *Opties* te openen. De beschikbare acties zijn afhankelijk van of u een nieuwe route aanmaakt of een bestaande track bewerkt.
+
+- **Opslaan als…** — sla de route op met een nieuwe bestandsnaam. Beschikbaar voor zowel nieuwe routes als bewerkte tracks.
+- **Opslaan als kopie** — sla een duplicaat van een bestaande track op. Beschikbaar bij het bewerken van een bestaande track.
+- **Toevoegen aan bestaande track** — voeg de geplande route als een apart segment toe aan een bestaande track.
+- **Volgorde van segmenten wijzigen** — wijzig de volgorde van routesegmenten.
+- **Route omkeren** — keer de richting van de route om.
+- **Navigatie** — sluit Een route plannen en start navigatie met de geplande route.
+- **Alle punten wissen** — verwijder alle punten uit de geplande route.
 
 </TabItem>
 
 </Tabs>
 
+
+### Grafiek / Analyseren {#graph--analyze}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+
 Tijdens het plannen van de route toont de [grafiek](../navigation/setup/route-details.md#elevation-graph) informatie over de hoogte van de route en het hellingspercentage, plus u kunt overal op de grafiek tikken om een aanwijzer met specifieke gegevens weer te geven.  
 
-- Voor **Android** wordt de grafiek weergegeven in het tabblad *Grafiek* bij het aanmaken of openen van een track, en bij [Navigatie](../navigation/setup/gpx-navigation.md) met *Een route plannen*.
-- Voor **iOS** is de grafiek alleen beschikbaar via het menu *[Opties](#options) → Navigatie*.
+De grafiek wordt weergegeven in het tabblad *Grafiek* bij het aanmaken of openen van een track, en bij [Navigatie](../navigation/setup/gpx-navigation.md) met *Een route plannen*.
 
 Bij het berekenen van een route voor navigatie in *Een route plannen*, kunt u aanvullende trackinformatie vinden zoals [Hoogte-info](../navigation/setup/route-details.md#elevation-info) en [Wegkenmerken](../navigation/setup/route-details.md#road-attributes), en de tool [Analyseren op kaart](../navigation/setup/route-details.md#analyze-on-map) gebruiken. Tik op de knop *Details* onder de grafiek.  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+
+De sectie Overzicht toont een grafiek op basis van de geselecteerde as. Gebruik de bedieningselementen voor asselectie om de gegevens te kiezen die op de grafiek worden weergegeven. *Hoogte herberekenen* stelt u in staat om hoogtegegevens indien nodig opnieuw te berekenen. Als hoogtegegevens niet beschikbaar zijn, toont het tabblad Analyseren de melding Geen hoogtegegevens. De melding legt uit dat OsmAnd hoogtegegevens kan ophalen van nabijgelegen wegen of terreinkaarten. Tik op *Hoogtegegevens ophalen* om hoogtegegevens te berekenen. Zie voor meer informatie de sectie [Hoogtegegevens ophalen](#get-elevation-data).
+
+De sectie Overzicht Statistieken toont *Stijging*, *Daling*, *Hoogtebereik*, *Gemiddelde snelheid*, *Max. snelheid* en *Tijd in beweging*. Een streepje `–` wordt weergegeven wanneer gegevens niet beschikbaar zijn. Bijvoorbeeld, snelheid en tijd in beweging kunnen niet beschikbaar zijn voor geplande routes.
+
+De secties Wegtypen, Steilheid, Ondergrond en Gladheid tonen de bijbehorende routekenmerken. Tik op een sectie om deze uit te vouwen en gedetailleerde informatie in de legenda te bekijken.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Gerelateerde artikelen {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
+source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -100,7 +100,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::caution Android only
 :::
 
-- **Veilige modus**. Voer de app uit in de (langzamere) veilige modus.  
+- **Safe mode**. Voert OsmAnd uit zonder de native C++-bibliotheek, met Java-implementaties voor kaartweergave en routeberekening in plaats daarvan. De app schakelt automatisch over naar deze modus als de native bibliotheek tijdens het opstarten faalt, zodat de app kan starten en bruikbaar blijft. Kaartweergave en routeberekening zijn merkbaar langzamer terwijl de veilige modus actief is.  
 
 
 ### Geheugeninstellingen {#memory-settings}

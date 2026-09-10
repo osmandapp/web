@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title:  Tipi di percorsi
 ---
@@ -24,7 +24,7 @@ Puoi configurare il filtraggio di alcuni tipi di percorsi nel menu [Configura ma
 
 ## Ciclismo {#cycle}
 
-[Percorsi ciclabili](https://wiki.openstreetmap.org/wiki/Cycle_routes) sono presenti in tre tipi: *locali* (`lcn`), *regionali* (`rcn`), *nazionali* (`ncn`), *internazionali* (`icn`). Inoltre, i percorsi ciclabili potrebbero far parte di [Reti di nodi](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Puoi scegliere come assegnare il colore ai segmenti del percorso:
+[Percorsi ciclabili](https://wiki.openstreetmap.org/wiki/Cycle_routes) sono presenti nei seguenti tipi: *locali* (`lcn`), *regionali* (`rcn`), *nazionali* (`ncn`), *internazionali* (`icn`) e *non classificati*. Inoltre, i percorsi ciclabili potrebbero far parte di [Reti di nodi](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Puoi scegliere come assegnare il colore ai segmenti del percorso:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -47,7 +47,7 @@ I percorsi MTB hanno una mappatura specifica in [OpenStreetMap](https://wiki.ope
 
 ## Escursionismo / Camminata {#hiking--walking}
 
-[Percorsi escursionistici](https://wiki.openstreetmap.org/wiki/Walking_Routes) sono presenti in tre tipi: *locali* (`lwn`), *regionali* (`rwn`), *nazionali* (`nwn`), *internazionali* (`iwn`). Inoltre, i percorsi pedonali potrebbero far parte di [Reti di nodi](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd non separa i percorsi pedonali e quelli escursionistici e li combina in un unico gruppo. Puoi scegliere come assegnare il colore ai segmenti del percorso:
+[Percorsi escursionistici](https://wiki.openstreetmap.org/wiki/Walking_Routes) sono presenti nei seguenti tipi: *locali* (`lwn`), *regionali* (`rwn`), *nazionali* (`nwn`), *internazionali* (`iwn`) e *non classificati*. Inoltre, i percorsi pedonali potrebbero far parte di [Reti di nodi](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd non separa i percorsi pedonali e quelli escursionistici e li combina in un unico gruppo. Puoi scegliere come assegnare il colore ai segmenti del percorso:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colora i percorsi in base al loro [colore locale](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) individuale (se disponibile in OpenStreetMap) e al simbolo dello scudo turistico.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)

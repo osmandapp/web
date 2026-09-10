@@ -41,7 +41,7 @@ export async function createFolder(name) {
     const input = await waitBy(By.id('se-add-folder-input'));
     await input.sendKeys(`${name}`);
     await clickBy(By.id('se-add-folder-submit'));
-    await waitBy(By.id(`se-menu-cloud-${name}`));
+    await waitBy(By.id(`se-menu-cloud-${name}`), { failOnError: true });
 }
 
 export async function deleteTrack(name) {
@@ -50,6 +50,6 @@ export async function deleteTrack(name) {
     await clickBy(By.id(`se-actions-${name}`));
     await clickBy(By.id('se-delete-cloud-track'));
     await clickBy(By.id('se-delete-track-dialog'));
-    await waitByRemoved(By.id(`se-actions-${name}`));
+    await waitByRemoved(By.id(`se-actions-${name}`), false, { failOnError: true });
     await actionIdleWait();
 }

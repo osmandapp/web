@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografía
 ---
@@ -370,7 +370,13 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_n
 
 </Tabs>
 
-La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando información de altura de etiquetas como `height` y `building:levels` cuando está disponible. Si [los datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluyen pasajes a través de edificios mapeados con la etiqueta `tunnel=building_passage`, OsmAnd renderiza aberturas visibles en el modelo de edificio 3D para que las carreteras o caminos peatonales que pasan a través del edificio se muestren correctamente. 
+La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando información de altura de etiquetas como `height` y `building:levels` cuando está disponible. 
+
+Para estructuras complejas, OsmAnd utiliza `building:part` para renderizar secciones individuales de un edificio con diferentes alturas y formas. 
+
+Si [los datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) incluyen pasajes a través de edificios mapeados con la etiqueta `tunnel=building_passage`, OsmAnd renderiza aberturas visibles en el modelo de edificio 3D para que las carreteras o caminos peatonales que pasan a través del edificio se muestren correctamente. 
+
+Los edificios 3D pueden incluir diferentes formas de techo basadas en [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). La etiqueta `roof:shape` define la geometría del techo, mientras que `roof:levels` y `roof:height` proporcionan información sobre su altura.
 
 Los edificios 3D solo se muestran en niveles de zoom más altos (vista de ciudad/calle), donde se pueden mostrar edificios individuales. Al hacer zoom o desplazar el mapa, los edificios 3D aparecen y desaparecen con una animación de fundido suave. Cuando un POI o una ubicación seleccionada (como un pin del mapa o un destino de navegación) está dentro de un edificio, OsmAnd resalta el edificio correspondiente para facilitar su identificación en el mapa.
 

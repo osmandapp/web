@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografie
 ---
@@ -370,11 +370,17 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 
 </Tabs>
 
-Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstelle von flachen Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert und verwenden Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. Wenn [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) Durchgänge durch Gebäude mit dem Tag `tunnel=building_passage` enthalten, rendert OsmAnd sichtbare Öffnungen im 3D-Gebäudemodell, sodass Straßen oder Fußwege, die durch das Gebäude führen, korrekt angezeigt werden. 
+Die Funktion **3D-Gebäude** zeigt Gebäude als volumetrische 3D-Modelle anstelle von flachen Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert und verwenden Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. 
+
+Für komplexe Strukturen verwendet OsmAnd `building:part`, um einzelne Gebäudeteile mit unterschiedlichen Höhen und Formen darzustellen. 
+
+Wenn [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) Durchgänge durch Gebäude mit dem Tag `tunnel=building_passage` enthalten, rendert OsmAnd sichtbare Öffnungen im 3D-Gebäudemodell, sodass Straßen oder Fußwege, die durch das Gebäude führen, korrekt angezeigt werden. 
+
+3D-Gebäude können unterschiedliche Dachformen enthalten, basierend auf [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:roof:shape). Das Tag `roof:shape` definiert die Dachgeometrie, während `roof:levels` und `roof:height` Informationen über seine Höhe liefern.
 
 3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können. Beim Zoomen und Verschieben der Karte erscheinen und verschwinden 3D-Gebäude mit einer sanften Überblendungsanimation. Wenn ein POI oder ein ausgewählter Ort (z. B. ein Kartenstift oder Navigationsziel) in einem Gebäude liegt, hebt OsmAnd das entsprechende Gebäude hervor, um es leichter auf der Karte zu identifizieren.
 
-Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Haupsschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
+Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Haupsschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängend von der Sichtbarkeitseinstellung.
 
 Auf Android ist diese Option nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
@@ -430,6 +436,20 @@ Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude g
 Beide Leistungseinstellungen verwenden einen Zweipositionsschalter direkt im 3D-Gebäude-Einstellungsbildschirm.
 
 **Hinweis:** Die Verwendung von *Hohem Detail* und *Fern-Sichtweite* verbessert das visuelle Erscheinungsbild, kann jedoch die Leistung beeinträchtigen und den Akkuverbrauch erhöhen.
+
+
+<!--
+### Sonne {#sun}
+
+![3D-Gebäude](@site/static/img/map/sun_setting.png)
+
+Die **Sonne**-Einstellung steuert die Beleuchtungsrichtung, die zum Rendern von 3D-Gebäuden verwendet wird. Sie beeinflusst, wie Licht und Schatten auf Gebäuden in der 3D-Ansicht erscheinen. Wenn Sie auf Sonne tippen, öffnet OsmAnd einen Vorschirm, auf dem Sie die Beleuchtung mit zwei Schiebereglern anpassen können:
+
+- Azimut — steuert die horizontale Richtung der Lichtquelle (die Kompassrichtung der Sonne).
+- Höhe — steuert die Höhe der Sonne über dem Horizont.
+
+Das Ändern dieser Parameter verändert, wie Schatten auf Gebäude fallen, und kann die visuelle Wahrnehmung der Gebäudeforment in der 3D-Ansicht verbessern. Tippen Sie auf Anwenden, um die ausgewählten Beleuchtungsparameter zu bestätigen.
+-->
 
 
 ## 3D-Relief {#3d-relief}

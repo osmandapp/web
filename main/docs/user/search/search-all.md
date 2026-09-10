@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. The [Explore](#search-explore) tab highlights popular places nearby and provides quick access to recently visited locations. Search [History](#search-history-ios) saves past searches. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
+**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. The [Explore](#search-explore) tab highlights popular places nearby and provides quick access to recently visited locations. Search [History](#search-history) saves past searches. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
 
 
 ## How to Use {#how-to-use}

@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title: Seyahat Rehberleri
 ---
@@ -106,7 +106,7 @@ UNESCO Küresel Jeoparklar Ağı listesi veya dünyanın en büyük ve en karma�
 
 <TabItem value="ios" label="iOS">
 
-![Seyahat rehberleri ana ekranı](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Seyahat rehberleri ana ekranı 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Seyahat rehberleri ana ekranı](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Seyahat rehberleri ana ekranı 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ UNESCO Küresel Jeoparklar Ağı listesi veya dünyanın en büyük ve en karma�
 
 <TabItem value="ios" label="iOS">
 
-![Seyahat rehberleri arama menüsü](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Seyahat rehberleri arama menüsü](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -325,7 +325,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 - &nbsp;*[Seçenek](../map/tracks/track-context-menu.md#options)* düğmesi, normal izdekiyle aynı işlevleri yerine getirir.
 
 :::info
-*Noktalar*, bir [GPX dosyasına](../../technical/osmand-file-formats/osmand-gpx.md) (izler için yaygın olarak kullanılan bir format) [Yol Noktaları](../map/point-layers-on-map.md#track-waypoints) olarak kaydedilir. İzdeki nokta (yol noktası) sayısı, iz alanındaki &#128681; simgesinin yanında işaretlenir.  
+*Noktalar*, bir [GPX dosyasına](../../technical/osmand-file-formats/osmand-gpx.md) (izler için yaygın olarak kullanılan bir format) [Yol Noktaları](../map/point-layers-on-map.md#track-waypoints) olarak kaydedilir. İzteki nokta (yol noktası) sayısı, iz alanındaki &#128681; simgesinin yanında işaretlenir.  
 GPX dosyasının *[iz bağlam menüsünde](../map/tracks/track-context-menu.md)*, bu izin ait olduğu makale hakkında genel bilgiler bulabilirsiniz.  
 :::
 

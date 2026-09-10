@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  Primeros Pasos
 ---
@@ -312,7 +312,7 @@ Los [Puntos de interés (PDI)](../map/point-layers-on-map.md#points-of-interest-
 
 ### Cómo planificar una ruta {#how-to-plan-a-route}
 
-[Planificar ruta](../plan-route/create-route.md) es una potente herramienta que le permite crear un viaje, editar una traza existente y medir la distancia sobre la marcha. Puede colocar rápidamente puntos intermedios y conectarlos mediante varias líneas de navegación (bicicleta, peatón, línea recta, etc.). Los resultados se pueden guardar en un archivo GPX, para que pueda ser [compartido](../personal/tracks/index.md) o [utilizado para la navegación](../navigation/setup/gpx-navigation.md) más tarde.
+[Planificar ruta](../plan-route/create-route.md) es una potente herramienta que le permite crear un viaje, editar una traza existente y medir la distancia sobre la marcha. Puede colocar rápidamente puntos intermedios y conectarlos mediante varias líneas de navegación (bicicleta, peatonal, línea recta, etc.). Los resultados se pueden guardar en un archivo GPX, para que pueda ser [compartido](../personal/tracks/index.md) o [utilizado para la navegación](../navigation/setup/gpx-navigation.md) más tarde.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -502,7 +502,7 @@ Toque un icono de acción para iniciar inmediatamente la aplicación con la acci
 
 En el *Menú de Ayuda* puede encontrar artículos de nuestro sitio [www.osmand.net/docs](https://osmand.net/docs/intro/). Después de la descarga inicial (se requiere conexión a Internet), los artículos de ayuda están disponibles sin conexión.  
 La primera subsección, *Ayuda sin conexión* contiene los artículos **Más vistos** (o populares) entre nuestros usuarios. Estos artículos se muestran en el idioma configurado para la aplicación, si este idioma está soportado en nuestro sitio web de documentación. Los idiomas soportados actualmente incluyen: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, y *<Translate android="true" ids="lang_uk"/>*. Si cambia el idioma de la aplicación, reinicie OsmAnd para que la documentación se abra en el idioma seleccionado. Cuando no hay una traducción disponible, se mostrará automáticamente la versión en inglés de la página. Las secciones **Guía de usuario** y **Solución de problemas** tienen la misma estructura que en el sitio web.  
-En el *Menú de Ayuda*, también puede encontrar enlaces útiles a las redes sociales de OsmAnd, información sobre la versión de su aplicación, notas de la versión y contactos de soporte. A través de Ayuda, también puede enviar [registros de logcat y de fallos](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+En el *Menú de Ayuda*, también puede encontrar enlaces útiles a las redes sociales de OsmAnd, información sobre la versión de su aplicación, notas de la versión y contactos de soporte. A través de Ayuda, también puede enviar [registros de logcat y de fallos](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Menú {#menu}
 
@@ -510,21 +510,20 @@ En el *Menú de Ayuda*, también puede encontrar enlaces útiles a las redes soc
 
 <TabItem value="android" label="Android">
 
-![Captura de pantalla de ayuda sin conexión Android](@site/static/img/steps/offline_help_menu_andr.png)
+![Captura de pantalla de ayuda sin conexión Android](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menú de mapas iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Menú de mapas iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Enviar registro de fallos** (*para Android*). Permite a los usuarios enviar informes de fallos de la aplicación a los desarrolladores, ayudando en la identificación y resolución de problemas.
-- **Enviar registro de logcat** (*para Android*). Proporciona a los usuarios la capacidad de enviar registros detallados de fallos de la aplicación a los desarrolladores, facilitando un análisis y solución de problemas más profundos.
-- **Enviar registro** (*para iOS*). Realiza una función similar a la característica *Enviar registro de fallos* para Android, permitiendo a los usuarios de dispositivos iOS informar de fallos de la aplicación a los desarrolladores para fines de depuración.
+- **Enviar registro de fallos de la aplicación**. Permite a los usuarios enviar informes de fallos de la aplicación registrados en fallos anteriores a los desarrolladores para su análisis y resolución de problemas. 
+- **Enviar registros de la sesión actual** (Android)/**Enviar registro de la aplicación actual** (iOS). Permite a los usuarios enviar el registro de la aplicación actual, que contiene información registrada desde que se inició la aplicación, a los desarrolladores para la resolución de problemas.
 - **Copiar versión de compilación**. Permite a los usuarios comunicar de forma rápida y precisa la versión actual de la aplicación a los desarrolladores al informar problemas, simplificando el proceso de diagnóstico y resolución.
 
 
@@ -624,21 +623,21 @@ Le permite hacer preguntas o sugerencias.
 
 <TabItem value="android" label="Android">
 
-![Captura de pantalla de ayuda sin conexión Android](@site/static/img/steps/offline_help_report_andr.png)
+![Captura de pantalla de ayuda sin conexión Android](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menú de mapas iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Menú de mapas iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Abrir incidencia en GitHub**. [Versión de Android en GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [versión de iOS en GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): haga preguntas, escriba sobre errores y proponga características.
-- **Enviar registro de fallos** (*para Android*). Contiene solo información sobre fallos.
-- [Enviar registro de logcat](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Enviar registro](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Archivo de registro detallado.
+- **Enviar registro de fallos de la aplicación**. Contiene informes de fallos de la aplicación anteriores.
+- **Enviar registros de la sesión actual** (Android)/**Enviar registro de la aplicación actual** (iOS). Contiene el registro de la aplicación registrado desde que se inició la aplicación.
 
 ### Acerca de OsmAnd {#about-osmand}
 

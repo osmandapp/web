@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: Rota Türleri
 ---
@@ -24,7 +24,7 @@ Bazı rota türlerinin filtrelenmesini [Haritayı Yapılandır](../../map/config
 
 ## Bisiklet {#cycle}
 
-[Bisiklet rotaları](https://wiki.openstreetmap.org/wiki/Cycle_routes) üç türde bulunur: *yerel* (`lcn`), *bölgesel* (`rcn`), *ulusal* (`ncn`), *uluslararası* (`icn`). Ayrıca bisiklet rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) parçası olabilir. Rota segmentlerine renk atamasını nasıl yapacağınızı seçebilirsiniz:
+[Bisiklet rotaları](https://wiki.openstreetmap.org/wiki/Cycle_routes) şu türlerde bulunur: *yerel* (`lcn`), *bölgesel* (`rcn`), *ulusal* (`ncn`), *uluslararası* (`icn`) ve *sınıflandırılmamış*. Ayrıca bisiklet rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) parçası olabilir. Rota segmentlerine renk atamasını nasıl yapacağınızı seçebilirsiniz:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -47,7 +47,7 @@ MTB rotaları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmt
 
 ## Yürüyüş / Yürüyüş {#hiking--walking}
 
-[Yürüyüş rotaları](https://wiki.openstreetmap.org/wiki/Walking_Routes) üç türde bulunur: *yerel* (`lwn`), *bölgesel* (`rwn`), *ulusal* (`nwn`), *uluslararası* (`iwn`). Ayrıca yürüyüş rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) parçası olabilir. OsmAnd yürüyüş ve hiking rotalarını ayırmaz ve bunları 1 grupta birleştirir. Rota segmentlerine renk atamasını nasıl yapacağınızı seçebilirsiniz:
+[Yürüyüş rotaları](https://wiki.openstreetmap.org/wiki/Walking_Routes) şu türlerde bulunur: *yerel* (`lwn`), *bölgesel* (`rwn`), *ulusal* (`nwn`), *uluslararası* (`iwn`) ve *sınıflandırılmamış*. Ayrıca yürüyüş rotaları [Düğüm ağlarının](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network) parçası olabilir. OsmAnd yürüyüş ve hiking rotalarını ayırmaz ve bunları 1 grupta birleştirir. Rota segmentlerine renk atamasını nasıl yapacağınızı seçebilirsiniz:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Rotaları kendi [yerel renklerine](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (OpenStreetMap'te mevcutsa) ve turist kalkanı sembolüne göre renklendirir.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)

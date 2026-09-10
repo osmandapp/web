@@ -12,6 +12,7 @@ import useHashParams from '../../util/hooks/useHashParams';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { addShareFavoriteToMap } from '../../manager/FavoritesManager';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
 
 export default function ShareFileLayer() {
     const ctx = useContext(AppContext);
@@ -24,6 +25,7 @@ export default function ShareFileLayer() {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
+    const { zoomToFit } = useZoomToFit();
 
     const [currentShareFile, setCurrentShareFile] = useState(null);
 
@@ -48,6 +50,7 @@ export default function ShareFileLayer() {
                         const layers = addMarkersToMap(markers, ctx.selectedGpxFile);
                         setCurrentShareFile(layers);
                         ctx.setShareFileMarkers(markers);
+                        zoomToFit({ type: OBJECT_TYPE_SHARE_FILE, object: markers });
                     }
                 }
             }

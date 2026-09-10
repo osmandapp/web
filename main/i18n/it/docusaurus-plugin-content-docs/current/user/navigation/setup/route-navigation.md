@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  Preparazione del percorso
 ---
@@ -65,7 +65,7 @@ Prima di utilizzare la navigazione offline, assicurarsi che le [mappe richieste 
 1. Aprire il [*Menu di navigazione*](#navigation-menu):
 
     - Specificare il [punto di destinazione](#set-target-point).
-    - Attendere il calcolo del percorso. Successivamente, sarà possibile ottenere informazioni aggiuntive sul percorso nella sezione *[Dettagli](../setup/route-details.md#overview)*.
+    - Attendere il calcolo del percorso. Successivamente, sarà possibile ottenere informazioni aggiuntive sul percorso nella sezione *[Dettagli](./route-details.md#overview)*.
     - È possibile passare da un [tipo di percorso](./../routing/osmand-routing.md#routing-types) (profilo) all'altro per ottenere il risultato migliore.
     - Aggiungere [destinazioni intermedie](#intermediate-destinations) (opzionale).
     - È anche possibile cambiare il punto di partenza dalla [posizione corrente](../../map/interact-with-map.md#my-position-and-zoom) a quella desiderata.
@@ -461,13 +461,11 @@ Vai a: *<Translate android="true" ids="shared_string_navigation,shared_string_se
 
 ## Mappe mancanti o non sincronizzate {#maps-missing-or-not-synchronized}
 
-Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate e avere la stessa data di rilascio. Si noti che in alcune situazioni il messaggio di mappe mancanti potrebbe essere nascosto nel menu di preparazione del percorso. Se si trascina verso l'alto il menu di navigazione, si vedranno le possibili ragioni per cui il percorso non ha potuto essere calcolato.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Messaggio nessuna mappa durante la costruzione della navigazione Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Messaggio nessuna mappa durante la costruzione della navigazione Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Messaggio nessuna mappa durante la costruzione della navigazione Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate
 </TabItem>
 
 </Tabs>
+
+Per costruire un percorso, tutte le **mappe necessarie** devono essere scaricate e avere la stessa data di rilascio. Su Android, se le mappe richieste hanno date di rilascio diverse, OsmAnd può passare al routing Standard quando il [Metodo di calcolo del percorso](../routing/car-based-routing.md#route-parameters---car) è impostato su Automatico.
+
+Si noti che in alcune situazioni il messaggio di mappe mancanti potrebbe essere nascosto nel menu di preparazione del percorso. Se si trascina verso l'alto il menu di navigazione, si vedranno le possibili ragioni per cui il percorso non ha potuto essere calcolato.
 
 ### Mappe richieste {#required-maps}
 

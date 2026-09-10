@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Komunikaty głosowe / Powiadomienia
 ---
@@ -43,7 +43,7 @@ OsmAnd oferuje różne opcje sterowania komunikatami głosowymi, dzięki czemu m
 Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można znaleźć w dokumentacji [Wyzwalanie komunikatów głosowych nawigacji](../../../technical/algorithms/voice-prompt-triggering.md).  
 
 
-### Ustawienia głosu {#voice-settings}
+### Ustawienia głosowe {#voice-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -52,7 +52,7 @@ Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Ustawienia nawigacji głosowej Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *przycisk <Translate ios="true" ids="routing_settings"/>* *(lub <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Wybierz profil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Ustawienia nawigacji głosowej iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Ustawienia nawigacji głosowej iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Ustawienia nawigacji głosowej iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można 
 
 - *Powtarzaj instrukcje nawigacyjne*. Umożliwia powtarzanie instrukcji nawigacyjnych w regularnych odstępach czasu od 1 min do 30 min. Lub ręcznie - jeśli przegapisz komunikat głosowy, możesz go ponownie odsłuchać, dotykając [strzałkę bieżącego zakrętu](../../widgets/nav-widgets.md#next-turn) na ekranie aplikacji.
 - *[Czas ogłoszenia](#announcement-time)*.
+- *Wstrzymaj odtwarzany dźwięk* (*tylko iOS*). Po włączeniu podcasty, audiobooki i inne odtwarzane dźwięki są wstrzymywane podczas odtwarzania komunikatów głosowych. Odtwarzanie muzyki jest kontynuowane z zmniejszoną głośnością. Po wyłączeniu zarówno dźwięk, jak i muzyka są odtwarzane z zmniejszoną głośnością.
 
 **Wyjście** (*Tylko Android*):
 
@@ -395,7 +396,7 @@ Możesz kontrolować ekran swojego urządzenia, aby oszczędzać energię. Ten t
 
     ![Systemowe wygaszanie ekranu Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Jeśli opcja *Utrzymuj ekran włączony* jest włączona, ekran urządzenia nie stosuje limitu czasu po wybudzeniu. Jeśli jest wyłączona, możesz ustawić czas, po którym ekran urządzenia wyłączy się, jeśli nie będziesz z nim wchodzić w interakcję, od 5 do 60 sekund.  
+2. **<Translate android="true" ids="wake_time"/>**. Jeśli opcja *Utrzymaj ekran włączony* jest włączona, ekran urządzenia nie stosuje limitu czasu po wybudzeniu. Jeśli jest wyłączona, możesz ustawić czas, po którym ekran urządzenia wyłączy się, jeśli nie będziesz z nim wchodzić w interakcję, od 5 do 60 sekund.  
 
     ![Wygaszanie po wybudzeniu Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Wygaszanie po wybudzeniu Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 

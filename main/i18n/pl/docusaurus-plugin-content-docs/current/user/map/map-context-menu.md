@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -142,7 +142,7 @@ Dostępne szczegóły obejmują:
 - [W obszarach](#polygon-information)
 - [Pobliskie POI](#nearby-pois)
 - [Pobliskie popularne miejsca](#nearby-popular-places)
-- [Przewodniki](#guides) (tylko Android)
+- [Przewodniki](#guides) 
 - [Trasy transportu publicznego dla przystanków](#public-transport-routes)
 - [Ulubione / Punkty trasy z tej samej grupy](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -170,21 +170,19 @@ Poza polami wymienionymi powyżej, OsmAnd może również wyświetlać dodatkowe
 
 ![Lista opisów](@site/static/img/map/description_list_new_android.png) ![Lista opisów](@site/static/img/map/description_list_dialog.png)
 
-Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md#wikipedia-article), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
-
-Jeśli wybrane miejsce ma artykuł na Wikipedii, w tej sekcji wyświetlany jest krótki podgląd. Gdy pełny artykuł nie jest dostępny offline, pojawia się przycisk *Przeczytaj na Wikipedii*. Dotknięcie go otwiera okno dialogowe z opcjami w zależności od dostępu użytkownika: użytkownicy z zakupionym planem mogą pobrać regionalne dane Wikipedii lub otworzyć artykuł w przeglądarce, podczas gdy darmowi użytkownicy mogą otworzyć artykuł online lub przejść do ekranu oferującego dostęp offline.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Lista opisów](@site/static/img/map/description_list_new_ios.png)
-
-Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
+![Lista opisów](@site/static/img/map/description_list_ios.webp) ![Lista opisów](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md#wikipedia-article), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
+
+Jeśli wybrane miejsce ma artykuł na Wikipedii, w tej sekcji wyświetlany jest krótki podgląd. Gdy pełny artykuł nie jest dostępny offline, pojawia się przycisk *Przeczytaj na Wikipedii*. Dotknięcie go otwiera okno dialogowe z opcjami w zależności od dostępu użytkownika: użytkownicy z zakupionym planem mogą pobrać regionalne dane Wikipedii lub otworzyć artykuł w przeglądarce, podczas gdy darmowi użytkownicy mogą otworzyć artykuł online lub przejść do ekranu oferującego dostęp offline.
 
 
 ### Alternatywne nazwy {#alternative-names}
@@ -314,7 +312,7 @@ Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/map/popu
 
 Ta sekcja podkreśla popularne miejsca, które pomagają odkrywać interesujące miejsca docelowe i punkty orientacyjne wokół bieżącej lokalizacji. Użyj *<Translate android="true" ids="shared_string_show_on_map"/>* i *<Translate android="true" ids="search_more"/>* , aby przeglądać i wyszukiwać wszystkie popularne miejsca. 
 
-Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* otwiera listę pobliskich lokalizacji. Wybranie dowolnego elementu centruje mapę na tym miejscu i otwiera jego menu kontekstowe, gdzie możesz przeczytać krótki opis lub dotknąć ***Przeczytaj pełny artykuł***, aby zobaczyć kompletny przewodnik.
+Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* otwiera listę pobliskich lokalizacji. Wybranie dowolnego elementu centruze mapę na tym miejscu i otwiera jego menu kontekstowe, gdzie możesz przeczytać krótki opis lub dotknąć ***Przeczytaj pełny artykuł***, aby zobaczyć kompletny przewodnik.
 
 > **UWAGA**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) pojawi się tylko wtedy, gdy wcześniej pobrałeś specjalne mapy z [artykułami z Wikipedii dla tego obszaru](../plugins/wikipedia.md#download-wikipedia-packages)*.
 
@@ -324,9 +322,21 @@ Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/
 
 ### Przewodniki {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Przewodniki Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Przewodniki iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 Sekcja **Przewodniki** pojawia się w menu kontekstowym mapy dla niektórych miejsc i zapewnia dostęp do przewodników **Podróże (Wikivoyage)** związanych z wybranym punktem użyteczności. Wyświetla listę wpisów przewodnika (na przykład, kraj lub region), które wspominają o wybranym miejscu.
 

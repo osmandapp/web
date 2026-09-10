@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
 sidebar_position: 5
 title:  سجلات الأعطال
 ---
@@ -19,47 +19,61 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 تُعد سجلات الأعطال أدوات تشخيصية قيّمة تساعد المطورين على تحديد وإصلاح المشكلات والأخطاء التي تتسبب في تعطل التطبيق أو سلوكه بشكل غير متوقع. من الممكن مشاركة السجلات من جهاز Android الخاص بك مع فريق تطوير OsmAnd. حاليًا، يتوفر لمستخدمي iOS خيار واحد فقط من نوع سجل الأعطال لإرساله.
 
 
-## سجلات الأعطال وLogcat {#crash-and-logcat-logs}
+## سجلات الأعطال وسجلات التطبيق {#crash-and-app-logs}
 
 يتيح لك OsmAnd إرسال نوعين من البيانات إلى المطورين:
 
 - **سجلات الأعطال**. يتم إنشاؤها عندما يواجه تطبيق OsmAnd خطأً حرجًا أو استثناءً يتسبب في تعطله. توفر هذه السجلات معلومات مفصلة حول حالة التطبيق أثناء الفشل، بما في ذلك بيانات البناء، وتتبع المكدس، ورسائل الخطأ، وتفاصيل أخرى ذات صلة.
-- **سجلات Logcat**. سجل لتدفق سجل OsmAnd يلتقط أحداثًا ورسائل مختلفة. تساعد هذه السجلات المطورين على مراقبة سلوك التطبيق، وتتبع تدفق التنفيذ، وتتبع إجراءات محددة، والتحقيق في المشكلات غير المتعلقة بالتعطل. تحتوي سجلات Logcat عادةً على سجلات للنشاط من وقت آخر بدء للتطبيق.
+- **سجلات الجلسة/التطبيق الحالية**. سجل لتدفق سجل OsmAnd يلتقط أحداثًا ورسائل مختلفة. تساعد هذه السجلات المطورين على مراقبة سلوك التطبيق، وتتبع تدفق التنفيذ، وتتبع إجراءات محددة، والتحقيق في المشكلات غير المتعلقة بالتعطل. تحتوي سجلات Logcat عادةً على سجلات للنشاط من وقت آخر بدء للتطبيق.
 
 :::caution معلوماتك الخاصة
-كن حذرًا عند إرسال سجلات Logcat، حيث قد تحتوي على معلومات خاصة مثل موقع الجهاز، واستعلامات البحث، ونتائج بناء المسار، وبيانات التنقل.
+كن حذرًا عند إرسال سجلات التطبيق، حيث قد تحتوي على معلومات خاصة مثل موقع الجهاز، واستعلامات البحث، ونتائج بناء المسار، وبيانات التنقل.
 :::
 
 
-### إرسال السجلات من تطبيق OsmAnd (أندرويد) {#send-logs-from-osmand-app-android}
+### إرسال السجلات من تطبيق OsmAnd {#send-logs-from-osmand-app}
 
-1. انتقل إلى *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. بناءً على حالتك، حدد نوع السجل المناسب. يمكنك الرجوع إلى قسم [سجلات الأعطال وLogcat](#crash-and-logcat-logs) للحصول على تفاصيل حول الاختلافات بين أنواع السجلات.
-2. في القائمة المنبثقة، اختر Gmail أو تطبيق البريد الإلكتروني المفضل لديك. سيتم إنشاء البريد الإلكتروني تلقائيًا.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![إرسال سجلات الأعطال من أندرويد 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![إرسال سجلات الأعطال من أندرويد 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![إرسال سجلات الأعطال من iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. انتقل إلى *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* أو *<Translate android="true" ids="send_logcat_log"/>* (*إرسال سجل التطبيق الحالي* على iOS). بناءً على حالتك، حدد نوع السجل المناسب. يمكنك الرجوع إلى قسم [سجلات الأعطال وسجلات التطبيق](#crash-and-app-logs) للحصول على تفاصيل حول الاختلافات بين أنواع السجلات.
+2. في القائمة المنبثقة، اختر Gmail أو تطبيق البريد الإلكتروني المفضل لديك. نوصي بإرسال السجلات إلى `support@osmand.net`.
 3. اضغط على زر *إرسال*.
 
-![إرسال سجلات الأعطال من أندرويد 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![إرسال سجلات الأعطال من أندرويد 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### إرسال السجلات من أجهزة iOS {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. يمكن إرسال السجلات من أجهزة iOS:
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
-    - تلقائيًا.
-        - انتقل إلى تطبيق OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - ثم، باستخدام تطبيق البريد الإلكتروني الخاص بك، نوصي بإرسال السجلات إلى `support@osmand.net`.
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-    - يدويًا.
-        - انتقل إلى تطبيق نظام iOS *الملفات → على جهاز iPhone الخاص بي (أو على جهاز iPad الخاص بي) → خرائط OsmAnd → السجلات*.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-    ![إرسال سجلات الأعطال iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![إرسال سجلات الأعطال iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
-
-2. أرسل سجلات بتنسيق [IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) وبيانات التفويض:
-    - على iOS 15 أو أقدم: *الإعدادات → التحليلات → بيانات التحليلات → ملف OsmAnd Maps بتنسيق ips*.
-    - على iOS 16 أو أحدث:  *الإعدادات → الخصوصية والأمان → التحليلات والتحسينات → بيانات التحليلات → ملف OsmAnd Maps بتنسيق ips*.
-    - ثم، باستخدام تطبيق البريد الإلكتروني الخاص بك، نوصي بإرسال السجلات إلى `support@osmand.net`.
-
-    ![إرسال سجلات الأعطال iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![إرسال سجلات الأعطال iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+-->
 
 ## إرسال ملفات Tombstone (أندرويد) {#send-tombstone-files-android}
 

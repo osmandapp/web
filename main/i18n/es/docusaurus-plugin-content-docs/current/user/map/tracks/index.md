@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  Pistas
 sidebar_position: 2
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Resumen {#overview}
-OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las rutas se pueden construir como parte de la [Navegación](../../navigation/index.md), crearse a través de [Planificar ruta](../../plan-route/index.md), importarse como pistas GPX, grabarse a través del [plugin de Grabación de viaje](../../plugins/trip-recording.md), o explorar y seleccionar a partir de los datos de OpenStreetMap.
+OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las rutas se pueden construir como parte de la Navegación, crearse a través de Planificar ruta, importarse como pistas GPX, grabarse a través del plugin de Grabación de viaje o explorarse y seleccionarse a partir de los datos de OpenStreetMap.
 
 
 ## Tipos de Pistas {#types-of-tracks}
@@ -43,7 +43,7 @@ Puede gestionar la visibilidad de las pistas eligiendo cuáles mostrar u ocultar
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configurar mapa de pistas Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configurar mapa de pistas Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,shared_st
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configurar mapa de pistas iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configurar mapa de pistas iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ La opción *Configurar mapa* le permite gestionar rápidamente la visualización
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-![Mis Lugares con pistas en Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → pulsación larga en la pista GPX elegida → Mostrar en el mapa*
 
-![Menú contextual de una pista en iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ En [Mis Lugares *→* pestaña Pistas](../../personal/tracks/manage-tracks.md#ma
 
 <TabItem value="android" label="Android">
 
-![Resumen del menú contextual de pista Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Resumen del menú contextual de pista iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ Cuando selecciona una pista en el mapa o abre el [menú contextual de pista](./t
 
 Ir a: *Tocar la pista → Pestaña Pista → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menú de pista analizar en el mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menú de pista analizar en el mapa distancia Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ Ir a: *Tocar la pista → Pestaña Pista → <Translate android="true" ids="anal
 
 Ir a: *Tocar la pista → Pestaña Pista → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Menú de pista analizar en el mapa](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Menú de pista analizar en el mapa ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -145,13 +145,13 @@ Esta herramienta proporciona un análisis detallado de los datos de la [pista](.
 
 <TabItem value="android" label="Android">
 
-![Menú de pista analizar en el mapa 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Menú de pista analizar en el mapa 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menú de pista analizar en el mapa](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Menú de pista analizar en el mapa ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 

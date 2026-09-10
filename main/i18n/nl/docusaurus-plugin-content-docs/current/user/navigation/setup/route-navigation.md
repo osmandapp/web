@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  Routevoorbereiding
 ---
@@ -305,7 +305,7 @@ Zodra de start- en eindpunten zijn geselecteerd, zal de app een route tussen hen
 - [Pauzeer](#pause--resume-navigation) de navigatie wanneer u een pauze neemt. (*Alleen Android*)
 - **Stop** de navigatie door **Stop** (*Android*) of **Annuleren** (*iOS*) te selecteren.
 
-:::note Routedetails
+:::note Routegegevens
 Aanvullende informatie over de gemaakte route, zoals hoogte, stapsgewijze instructies, analyse-tool en andere, is te vinden in de sectie [**Details**](../setup/route-details.md).
 :::
 
@@ -461,13 +461,11 @@ Ga naar: *<Translate android="true" ids="shared_string_navigation,shared_string_
 
 ## Kaarten ontbreken of zijn niet gesynchroniseerd {#maps-missing-or-not-synchronized}
 
-Om een route te bouwen moeten alle **noodzakelijke kaarten** gedownload zijn en dezelfde releasedatum hebben. Let op, in sommige situaties kan het bericht over ontbrekende kaarten verborgen zijn in het routevoorbereidingsmenu. Als u het navigatiemenu omhoog trekt, ziet u mogelijke redenen waarom uw route niet berekend kon worden.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Bericht geen kaarten bij het bouwen van navigatie Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![Bericht geen kaarten bij het bouwen van navigatie Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![Bericht geen kaarten bij het bouwen van navigatie Android 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ Om een route te bouwen moeten alle **noodzakelijke kaarten** gedownload zijn en 
 </TabItem>
 
 </Tabs>
+
+Om een route te bouwen moeten alle **noodzakelijke kaarten** gedownload zijn en dezelfde releasedatum hebben. Op Android kan OsmAnd, als de vereiste kaarten verschillende releasedatums hebben, overschakelen naar Standaardroutering wanneer de [Routeberekeningsmethode](../routing/car-based-routing.md#route-parameters---car) is ingesteld op Auto.
+
+Let op, in sommige situaties kan het bericht over ontbrekende kaarten verborgen zijn in het routevoorbereidingsmenu. Als u het navigatiemenu omhoog trekt, ziet u mogelijke redenen waarom uw route niet berekend kon worden.
 
 ### Vereiste kaarten {#required-maps}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -45,8 +45,8 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 
 | Tipo | Descrizione | Link |
 |-- | -- | --|
-| GoogleMap in GPX per OsmAnd | Crea una cartella di file GPX in stile OsmAnd da una mappa Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
-| KML in GPX per OsmAnd | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| GoogleMap To OSMAnd GPX | Crea una cartella di file GPX in stile OsmAnd da una mappa Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | KMZ to GPX | Script Python per convertire file *KMZ* in formato *GPX*, incluse le icone. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
 | Garmin | Strumento per convertire i file di Garmin Basecamp per OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi to OsmAnd | Conversione dei formati di mappa geoPDF, geoTiff e ozi per OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
@@ -111,7 +111,16 @@ Il file predefinito [render.xml](https://github.com/osmandapp/OsmAnd-resources/b
 | Stile di mappa Selection | Lo ["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) è uno stile di mappa di Holder Tamm che consente di scegliere se nascondere o meno determinati oggetti.  |["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Lo stile di rendering ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) si basa principalmente su UniMap e routes.addon.render.xml  |["Stile di mappa ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Si tratta di uno stile di rendering OsmAnd ottimizzato per l'inseguimento di tempeste](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Risorse personalizzate definite del progetto OsmAnd per ottimizzare il comportamento di OsmAnd. Qui sono definiti: stili di rendering della mappa utilizzati in OsmAnd, voci registrate e TTS, configurazione della generazione di mappe offline, parametri di instradamento, repository di icone  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Routing
+
+Il file predefinito `routing.xml` può essere personalizzato per regolare gli algoritmi e i parametri di instradamento per condizioni specifiche.
+
+| Nome della fonte | Descrizione | Link |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Modifica personalizzata di `routing.xml` che regola il calcolo del percorso in condizioni di pioggia, tenendo conto del tipo di superficie (ad es. roccia nuda), della pendenza e delle classificazioni ufficiali di difficoltà dei sentieri (scale CAI/SAC), oltre a una logica migliorata per "Evita gallerie". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Mappe offline {#offline-maps}
 

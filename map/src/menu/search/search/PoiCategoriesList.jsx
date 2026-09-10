@@ -10,12 +10,11 @@ import Loading from '../../errors/Loading';
 import PoiManager, { getCategoryName, TOP_INDEX_PREFIX } from '../../../manager/PoiManager';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { CATEGORY_KEY_NAME, CATEGORY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext, { collator } from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
-import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { SEARCH_TYPE_CATEGORY } from '../../../manager/searchConstants';
 
 export default function PoiCategoriesList({ categories, setSearchValue, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
@@ -65,7 +64,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                         const catName =
                             category?.startsWith(TOP_INDEX_PREFIX) && item[CATEGORY_NAME]
                                 ? item[CATEGORY_NAME]
-                                : getCategoryName(category, t, getFirstSubstring);
+                                : getCategoryName(category, t);
                         const mainCatName = getPoiParentCategory(item, t);
 
                         return (

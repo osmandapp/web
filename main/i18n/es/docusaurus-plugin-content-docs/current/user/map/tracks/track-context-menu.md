@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -364,11 +364,13 @@ Si no hay *información de elevación* en la ruta, puedes añadirla de las sigui
 
 ### Calcular elevación faltante {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Función Pro
 [Calcular elevación sin conexión](../../plan-route/create-route.md#get-elevation-data) es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Esta función](../../plan-route/create-route.md#get-elevation-data) te permite calcular el perfil de elevación para un track GPX sin conexión para cualquier terreno entre 70 grados de latitud norte y 70 grados de latitud sur, basándose en los [datos del mapa de terreno](../../plugins/topography.md#download-maps). *Los mapas de terreno (3D) deben haber sido descargados previamente*.
 
@@ -377,11 +379,27 @@ Si no hay *información de elevación* en la ruta, puedes añadirla de las sigui
 
     ![Gráfico del track altitud en Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Gráfico del track altitud en Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Gráfico del track altitud en Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Gráfico del track altitud en Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Si estás creando una ruta con la herramienta [Planificar una ruta](../../plan-route/create-route.md#graph) usando el método *Línea recta* y no hay datos de elevación en el gráfico, necesitas:
+3. Si estás creando una ruta con la herramienta [Planificar una ruta](../../plan-route/create-route.md#graph--analyze) usando el método *Línea recta* y no hay datos de elevación en el gráfico, necesitas:
     - Tocar *Obtener datos de elevación*, luego seleccionar *Usar mapas de terreno*.
     - Después del cálculo, obtendrás el gráfico completo de Altitud/Pendiente de tu ruta basado en los datos del terreno.  
 
   ![Gráfico del track altitud en Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Gráfico del track altitud en Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Datos de elevación iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Datos de elevación iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Esta función](../../plan-route/create-route.md#get-elevation-data) te permite calcular los datos de elevación faltantes para una [ruta planificada](../../plan-route/create-route.md#create-new-route) o un [track GPX existente](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Si creas una ruta utilizando el método Línea recta y no hay datos de elevación disponibles, toca *Obtener datos de elevación* en la pestaña Analizar y selecciona *Usar mapas de terreno*. Es necesario haber descargado previamente los [Mapas de terreno (3D)](../../plugins/topography.md#download-maps). El perfil de elevación se calcula entonces basándose en los datos del terreno, mientras que la geometría de la ruta permanece sin cambios.
+
+Para un track GPX existente, puedes seleccionar *Usar carreteras cercanas*. OsmAnd adjunta el track a las carreteras permitidas más cercanas utilizando un perfil de navegación seleccionado y recupera los datos de elevación de las carreteras adjuntas. Esta opción puede ajustar la geometría del track. Si es necesario, también puedes seleccionar *Usar mapas de terreno* para calcular la elevación manteniendo la geometría del track sin cambios.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Puntos / Waypoints {#points--waypoints}
@@ -392,13 +410,13 @@ Los waypoints son uno de los tipos de puntos disponibles en el mapa. En general,
 
 <TabItem value="android" label="Android">
 
-![Menú contextual del track Puntos en Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Menú contextual del track Puntos en Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Menú contextual del track Puntos en Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menú contextual del track Puntos en iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Menú contextual del track Puntos en iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Menú contextual del track Puntos en iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ En esta pestaña *Puntos*:
 
 - [Mostrar datos de los puntos del track](#display-custom-gpx-tags) y modificar los puntos de tu track (waypoints y puntos de ruta), [eliminarlos y añadir](#points--waypoints) waypoints a un track.
 - Crear y modificar [Grupo (carpeta) de puntos](#waypoint-groups).
-- Centrar el mapa en un waypoint usando el icono de pin en la lista de waypoints sin cerrar la lista, lo que te permite previsualizar los waypoints uno por uno.
+- Mostrar un waypoint en el mapa usando el icono de pin en la lista de waypoints. El mapa se centra en el waypoint sin cerrar la lista ni cambiar el nivel de zoom actual.
 
 
 ### Añadir Waypoint a un Track {#add-waypoint-to-a-track}
@@ -700,7 +718,7 @@ Esta opción te permite ver los valores promedio, mínimos y máximos de frecuen
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Este filtro te permite mejorar las estadísticas de tu track excluyendo datos innecesarios o incorrectos. Puedes filtrar los puntos del track que no se ajustan a los parámetros de tu track y, como resultado, obtener un gráfico más preciso y una línea de ruta visual sin distorsiones ni ruido de grabación. Puedes realizar cambios con filtros como *Suavizado*, *Velocidad*, *Altitud* y *Precisión GPS*, que ocultan los puntos filtrados del track actual. Además, en el menú *Estadísticas*, puedes comprobar cómo se muestran tus cambios en el gráfico antes de guardarlos. También puedes *Restablecer al original* y *Guardar como una copia* de tu track en este filtro sin guardar el original.  
+Este filtro te permite mejorar las estadísticas de tu track excluyendo datos innecesarios o incorrectos. Puedes filtrar los puntos del track que no se ajustan a los parámetros de tu track y, como resultado, obtener un gráfico más preciso y una línea de ruta visual sin distorsiones ni ruido de grabación. Puedes realizar cambios con filtros como *Suavizado*, *Velocidad*, *Altitud* y *Precisión GPS*, que ocultan los puntos filtrados del track actual. Además, en el menú *Estadísticas*, puedes comprobar cómo se muestran tus cambios en el gráfico antes de guardarlos. Puedes también *Restablecer al original* y *Guardar como una copia* de tu track en este filtro sin guardar el original.  
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 

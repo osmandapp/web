@@ -1,10 +1,15 @@
 // Generic color helpers shared across the app. Anything specific to the
 // user color palette stays in `manager/ColorPaletteManager.js`.
 
-// '#rrggbb' (opaque) / '#aarrggbb' (OsmAnd alpha-first) → {r,g,b,a}.
+// '#rgb' / '#rrggbb' / '#aarrggbb' (OsmAnd alpha-first) → {r,g,b,a}, the same set of formats
+// as KAlgorithms.parseColor on Android. Returns null for anything else (css names, rgb(), garbage).
 export function parseColorToRgba(color) {
     if (!color) return { r: 0, g: 0, b: 0, a: 255 };
     const clean = color.replace(/^#/, '');
+    if (!/^[0-9a-fA-F]+$/.test(clean)) return null;
+    if (clean.length === 3) {
+        return parseShortHex(clean);
+    }
     if (clean.length === 8) {
         return {
             a: Number.parseInt(clean.substring(0, 2), 16),
@@ -13,12 +18,16 @@ export function parseColorToRgba(color) {
             b: Number.parseInt(clean.substring(6, 8), 16),
         };
     }
-    return {
-        r: Number.parseInt(clean.substring(0, 2), 16),
-        g: Number.parseInt(clean.substring(2, 4), 16),
-        b: Number.parseInt(clean.substring(4, 6), 16),
-        a: 255,
-    };
+    if (clean.length === 6) {
+        return {
+            r: Number.parseInt(clean.substring(0, 2), 16),
+            g: Number.parseInt(clean.substring(2, 4), 16),
+            b: Number.parseInt(clean.substring(4, 6), 16),
+            a: 255,
+        };
+    }
+
+    return null;
 }
 
 // Channel quartet → '#rrggbb' (opaque) / '#aarrggbb' (OsmAnd alpha-first).
@@ -28,14 +37,17 @@ export function toColorString(r, g, b, a = 255) {
 }
 
 export function hasAlpha(color) {
-    return !!color && parseColorToRgba(color).a < 255;
+    return !!color && parseColorToRgba(color)?.a < 255;
 }
 
+// Not our hex format (css name, rgb(...)) is passed through - css understands it, we do not.
 export function hexToRgba(hex) {
-    return toCssRgb(parseColorToRgba(hex));
+    const rgba = parseColorToRgba(hex);
+
+    return rgba ? toCssRgb(rgba) : hex;
 }
 
-// Packed ARGB integer → CSS `rgb(...)`.
+// Packed ARGB integer → CSS `rgb(...)`. Written by OsmAnd Android before 2025-04-30.
 export function numberToRgba(argb) {
     return toCssRgb(parseArgbInt(argb));
 }
@@ -98,7 +110,10 @@ export function hsvToRgb(h, s, v) {
 // CSS 'rgb(r, g, b)' / 'rgba(r, g, b, a)' string → {r,g,b,a} or null if not matched.
 // Alpha can be 0–1 float, 0–255 integer, or percentage.
 export function parseCssRgb(text) {
-    const m = text.trim().match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)$/i);
+    // channels are separated by commas or spaces - the space form is what toCssRgb produces
+    const m = text
+        .trim()
+        .match(/^rgba?\(\s*(\d+)(?:\s*,\s*|\s+)(\d+)(?:\s*,\s*|\s+)(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)$/i);
     if (!m) return null;
     const r = Number.parseInt(m[1], 10);
     const g = Number.parseInt(m[2], 10);

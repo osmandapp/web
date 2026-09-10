@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  Primi Passi
 ---
@@ -679,4 +679,4 @@ OsmAnd non ha permessi obbligatori nella versione iOS / Android.
 
 **Opzionali**:
 
-- **Fotocamera/Registrazione vocale** (*Android*). Utilizzato solo dalle [Note audio/video](../plugins/audio-video-notes.md). Questa funzione è confezionata come un plugin e disabilitata per impostazione predefinita. Consente di creare rapidamente note audio/video relative alla posizione durante un viaggio.
+- **Fotocamera/Registrazione vocale** (*Android*). Utilizzato solo dalle [Note audio/video](../plugins/audio-video-notes.md). Questa funzione è confezionato come un plugin e disabilitata per impostazione predefinita. Consente di creare rapidamente note audio/video relative alla posizione durante un viaggio.

@@ -27,7 +27,7 @@ export default function LoginButton({ openMainMenu, setMenuInfo, setShowInfoBloc
                 hash: location.hash,
             });
         } else {
-            openLoginMenu(ctx, ltx, navigate, location);
+            openLoginMenu({ ctx, ltx, navigate, location });
             closeSubPages({ ctx, ltx, closeLogin: false });
             setMenuInfo(null);
             setShowInfoBlock(false);

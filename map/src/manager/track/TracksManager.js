@@ -26,6 +26,7 @@ import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
+import i18n from '../../i18n';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -139,17 +140,28 @@ export function getFileName(currentFile) {
     return prepareName(currentFile.name, currentFile.local);
 }
 
+export function removeGpxExtension(name) {
+    return name.replace(/\.gpx$/i, '');
+}
+
+export function renameLastFolderSegment(fullName, newName) {
+    const parts = fullName.split('/');
+    parts[parts.length - 1] = newName;
+
+    return parts.join('/');
+}
+
 export function prepareName(name, local = false) {
     if (typeof name !== 'string') {
         return '';
     }
-    const result = name.replace(/.gpx/, '');
+    const result = removeGpxExtension(name);
     if (result === '') {
         return createName();
     }
     if (result.includes('/')) {
         const groups = result.split('/');
-        return groups[groups.length - 1];
+        return groups.at(-1);
     } else if (local && result.includes(':')) {
         return result.split(':')[1];
     } else {
@@ -158,7 +170,7 @@ export function prepareName(name, local = false) {
 }
 
 function getGroup(name, local) {
-    const result = name.replace(/.gpx/, '');
+    const result = removeGpxExtension(name);
     if (result.includes('/')) {
         const groups = result.split('/');
         //remove name
@@ -169,6 +181,12 @@ function getGroup(name, local) {
     } else {
         return DEFAULT_GROUP_NAME;
     }
+}
+
+// download cloud gpx by file.url and parse it, null on any failure
+async function loadTrackData(file) {
+    const data = await Utils.getFileData(file);
+    return data ? await getTrackData(new File([data], file.name, { type: 'text/plain' })) : null;
 }
 
 async function getTrackData(file) {
@@ -282,13 +300,16 @@ export function getTrackPoints(track) {
     const processTrackPoints = (trackPoints) => {
         if (!Array.isArray(trackPoints) || trackPoints.length === 0) return [];
 
-        const subPoints = getAllPoints(trackPoints);
-        if (subPoints.length === 0) return [];
+        const allPoints = getAllPoints(trackPoints);
+        if (allPoints.length === 0) return [];
 
-        subPoints.forEach((point) => (point.distanceTotal += distanceOffset));
+        const subPoints =
+            distanceOffset === 0
+                ? allPoints
+                : allPoints.map((point) => ({ ...point, distanceTotal: point.distanceTotal + distanceOffset }));
 
         // Update the distance offset based on the last point
-        distanceOffset = subPoints[subPoints.length - 1]?.distanceTotal ?? distanceOffset;
+        distanceOffset = subPoints.at(-1)?.distanceTotal ?? distanceOffset;
         return subPoints;
     };
 
@@ -494,7 +515,14 @@ export async function getGpxFileFromTrackData(file, routeTypes, simplified = fal
     });
 }
 
-export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified }) => {
+function showDownloadError(ctx, name) {
+    ctx.setTrackErrorMsg({
+        title: i18n.t('web:download_error_title'),
+        msg: i18n.t('web:download_error_msg', { name }),
+    });
+}
+
+export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified, ctx }) => {
     const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}&shared=${sharedFile ? 'true' : 'false'}&simplified=${simplified ? 'true' : 'false'}`;
     const oneGpxFile = {
@@ -510,10 +538,12 @@ export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, s
         url.href = URL.createObjectURL(new Blob([data]));
         url.download = `${TracksManager.prepareName(track.name)}.gpx`;
         url.click();
+    } else {
+        showDownloadError(ctx, track.name);
     }
 };
 
-export const downloadTravelGpx = async (track) => {
+export const downloadTravelGpx = async (track, ctx) => {
     const urlFile = `${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-original-file`;
     const qs = `?id=${track.id}`;
     const oneGpxFile = {
@@ -527,6 +557,8 @@ export const downloadTravelGpx = async (track) => {
         url.href = URL.createObjectURL(new Blob([data]));
         url.download = `${TracksManager.prepareName(track.name)}.gpx`;
         url.click();
+    } else {
+        showDownloadError(ctx, track.name);
     }
 };
 
@@ -648,7 +680,8 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
         groups: trackGroups,
     });
 
-    return sorted.groups;
+    // doSort returns nothing when there is nothing to sort, but the callers expect a list
+    return sorted.groups ?? [];
 }
 
 function addFilesAndCalculateLastModified(groups) {
@@ -667,7 +700,13 @@ function addFilesAndCalculateLastModified(groups) {
                 );
             });
 
-            group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
+            group.subfolders.forEach((subfolder) => {
+                subfolder.files.forEach((file) => {
+                    if (!group.files.some((groupFile) => groupFile.name === file.name)) {
+                        group.files.push(file);
+                    }
+                });
+            });
         }
         group.groupFiles.forEach((file) => {
             if (!group.files.some((groupFile) => groupFile.name === file.name)) {
@@ -689,7 +728,7 @@ function addFilesAndCalculateLastModified(groups) {
     });
 }
 
-function calculateLastModified(group) {
+export function calculateLastModified(group) {
     if (group.type === SMART_TYPE) {
         return;
     }
@@ -1540,17 +1579,18 @@ export async function openTrackOnMap({
             setProgressVisible(true);
         }
         const oneGpxFile = preparedGpxFile({ file, sharedFile });
-        const f = await Utils.getFileData(oneGpxFile);
-        const gpxfile = new File([f], file.name, {
-            type: 'text/plain',
-        });
-        const track = await TracksManager.getTrackData(gpxfile);
+        const track = await TracksManager.loadTrackData(oneGpxFile);
         if (setProgressVisible) {
             setProgressVisible(false);
         }
         if (!track) {
             if (setError) {
                 setError('Something went wrong!');
+            } else {
+                ctx.setTrackErrorMsg({
+                    title: i18n.t('web:open_error_title'),
+                    msg: i18n.t('web:open_track_error_msg', { name: file.name }),
+                });
             }
         } else if (isEmptyTrack(track) === false) {
             const infoFile = findInfoFile(ctx, file.name);
@@ -1759,6 +1799,7 @@ export function clearZoomToTrackForOtherFiles({ currentFileName, storage }) {
 const TracksManager = {
     prepareName,
     getTrackData,
+    loadTrackData,
     handleEditCloudTrack,
     getTrackPoints,
     getEditablePoints,

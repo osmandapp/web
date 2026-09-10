@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
 sidebar_position: 5
 title:  Журнали збоїв
 ---
@@ -19,47 +19,61 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Журнали збоїв є цінними діагностичними інструментами, які допомагають розробникам виявляти та виправляти проблеми та помилки, що спричиняють збій програми або її несподівану поведінку. Можна ділитися журналами зі свого пристрою Android з командою розробників OsmAnd. Наразі користувачі iOS мають лише один тип журналу збоїв для надсилання.
 
 
-## Журнали збоїв та Logcat {#crash-and-logcat-logs}
+## Журнали збоїв та журнали застосунку {#crash-and-app-logs}
 
 OsmAnd дозволяє надсилати розробникам два типи даних:
 
 - **Журнали збоїв**. Генеруються, коли програма OsmAnd стикається з критичною помилкою або винятком, що спричиняє її збій. Ці журнали надають детальну інформацію про стан програми під час збою, включаючи дані збірки, трасування стека, повідомлення про помилки та інші відповідні деталі.
-- **Журнали Logcat**. Запис потоку журналів OsmAnd, що фіксує різні події та повідомлення. Ці журнали допомагають розробникам відстежувати поведінку програми, відстежувати потік виконання, трасувати конкретні дії та досліджувати проблеми, не пов'язані зі збоями. Журнали Logcat зазвичай містять записи активності з моменту останнього запуску програми.
+- **Журнали поточного сеансу/застосунку**. Запис потоку журналів OsmAnd, що фіксує різні події та повідомлення. Ці журнали допомагають розробникам відстежувати поведінку програми, відстежувати потік виконання, трасувати конкретні дії та досліджувати проблеми, не пов'язані зі збоями. Журнали Logcat зазвичай містять записи активності з моменту останнього запуску програми.
 
 :::caution Ваша приватна інформація
-Будьте обережні під час надсилання журналів logcat, оскільки вони можуть містити приватну інформацію, таку як місцезнаходження пристрою, пошукові запити, результати побудови маршруту та навігаційні дані.
+Будьте обережні під час надсилання журналів застосунку, оскільки вони можуть містити приватну інформацію, таку як місцезнаходження пристрою, пошукові запити, результати побудови маршруту та навігаційні дані.
 :::
 
 
-### Надсилання журналів з програми OsmAnd (Android) {#send-logs-from-osmand-app-android}
+### Надсилання журналів з програми OsmAnd {#send-logs-from-osmand-app}
 
-1. Перейдіть до *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Залежно від вашої ситуації, виберіть відповідний тип журналу. Ви можете звернутися до розділу [Журнали збоїв та Logcat](#crash-and-logcat-logs) для отримання детальної інформації про відмінності між типами журналів.
-2. У спливаючому меню виберіть Gmail або бажану програму електронної пошти. Електронний лист буде згенеровано автоматично.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. Перейдіть до *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* або *<Translate android="true" ids="send_logcat_log"/>* (*Надіслати поточний журнал застосунку* на iOS). Залежно від вашої ситуації, виберіть відповідний тип журналу. Ви можете звернутися до розділу [Журнали збоїв та журнали застосунку](#crash-and-app-logs) для отримання детальної інформації про відмінності між типами журналів.
+2. У спливаючому меню виберіть Gmail або бажану програму електронної пошти. Ми рекомендуємо надсилати журнали на адресу `support@osmand.net`.
 3. Натисніть кнопку *Надіслати*.
 
-![Надсилання журналів збоїв з Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Надсилання журналів збоїв з Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### Надсилання журналів з пристроїв iOS {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. Журнали з пристроїв iOS можна надсилати:
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
-    - Автоматично.
-        - Перейдіть до програми OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Потім, використовуючи свою програму електронної пошти, ми рекомендуємо надсилати журнали на адресу `support@osmand.net`.
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-    - Вручну.
-        - Перейдіть до системної програми iOS *Файли → На моєму iPhone (або На моєму iPad) → OsmAnd Maps → Журнали*.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-    ![Надсилання журналів збоїв iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Надсилання журналів збоїв iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
-
-2. Надішліть [IPS-формат](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) журналів та дані авторизації:
-    - На iOS 15 або старіших: *Налаштування → Аналітика → Дані аналітики → Файл OsmAnd Maps у форматі ips*.
-    - На iOS 16 або новіших:  *Налаштування → Конфіденційність та безпека → Аналітика та вдосконалення → Дані аналітики → Файл OsmAnd Maps у форматі ips*.
-    - Потім, використовуючи свою програму електронної пошти, ми рекомендуємо надсилати журнали на адресу `support@osmand.net`.
-
-    ![Надсилання журналів збоїв iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Надсилання журналів збоїв iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
-
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+-->
 
 ## Надсилання файлів Tombstone (Android) {#send-tombstone-files-android}
 
@@ -84,7 +98,7 @@ OsmAnd дозволяє надсилати розробникам два тип�
   
 Після того, як звіт про помилку буде готовий, ви отримаєте сповіщення. Натисніть на поле сповіщення, щоб завантажити звіт на свій пристрій. Розпакуйте файл і надішліть файли tombstone команді розробників OsmAnd (електронна пошта: `support@osmand.net`).
 
-![Надсилання журналів збоїв з Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Надсилання журналів збоїв з Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Зверніть увагу, що звіти про помилки можуть містити приватні дані, включаючи використання програми або місцезнаходження.
@@ -113,7 +127,7 @@ Android Debugging Bridge (ADB) — це інструмент командног�
    - На Windows: ```adb.exe bugreport```
 4. Зачекайте кілька хвилин, поки звіт буде згенеровано. Отриманий файл буде збережено в папці platform tools.
 5. Розпакуйте файл.
-6. Знайдіть папку *tombstones* з файлами, такими як *tombstone_00*, *tombstone_01* тощо.
+6. Знайдіть паперу *tombstones* з файлами, такими як *tombstone_00*, *tombstone_01* тощо.
 7. Надішліть файли tombstone на адресу `support@osmand.net`.
 
 <!--

@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title: Rotalar
 sidebar_position: 11
 ---
@@ -28,11 +28,11 @@ OsmAnd'ın haritada farklı [rotaları](./types-of-routes.md) görüntülemek i�
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Haritayı Yapılandır Rotalar bölümü](@site/static/img/map/configure_map_routes_android.png) ![Rota Sınıfları](@site/static/img/map/routes_classes_android.png)
+![Haritayı Yapılandır Rotalar bölümü](@site/static/img/map/configure_map_routes_android.png) ![Rota Sınıfları](@site/static/img/map/routes_classes_android.webp)
 
 - Haritada gerekli rotaları görüntülemek için bunları [Haritayı Yapılandır](../../map/configure-map-menu.md) menüsündeki *Rotalar listesi*nden etkinleştirin.
 - OsmAnd, [OpenStreetMap'te bulunan rotaları](https://wiki.openstreetmap.org/wiki/Relation:route) vurgulayabilir. Bunlar [rotadaki sembole](#save-as-a-track) dokunularak seçilebilir ve görünür rota kümesi doğru yapılandırılmışsa renk ve simgeleri takip edebilirsiniz.
-- Ana rota türleri ayrıca sınıflara ve alt sınıflara göre filtrelenebilir, böylece her tür içinde yalnızca belirli grupları görüntüleyebilirsiniz. Örneğin, yürüyüş rotalarını **OSMC sembolleri** ile sınıflar olarak ve *uluslararası, ulusal, bölgesel* veya *yerel ağlar* olarak alt sınıflar halinde gösterebilirsiniz; bunlar şu anda [OsmAnd Geliştirme](../../plugins/development.md) eklentisi etkinleştirildiğinde kullanılabilir.
+- Ana rota türleri ayrıca sınıflara ve alt sınıflara göre filtrelenebilir, böylece her tür içinde yalnızca belirli grupları görüntüleyebilirsiniz. Örneğin, yürüyüş rotalarını **OSMC sembolleri** ile sınıflar olarak ve *uluslararası, ulusal, bölgesel* veya *yerel ağlar* olarak alt sınıflar halinde gösterebilirsiniz; bisiklet rotaları için de benzer ağ sınıflandırma filtreleri mevcuttur. Bu seçenekler şu anda [OsmAnd Geliştirme](../../plugins/development.md) eklentisi etkinleştirildiğinde kullanılabilir. Birden fazla rota ağı çakıştığında, istenen rota düzeylerini yalnızca görüntülemek için ayrı sınıflandırmalar etkinleştirilebilir veya devre dışı bırakılabilir.
 - [Rota Planla](../../plan-route/create-route.md) aracıyla rotaların üzerine bir iz oluşturabilirsiniz.
 - Birden fazla rota aynı yol boyunca ilerlediğinde, her rota diğerlerinin üzerine yerleştirilmiş ayrı yarı saydam bir çizgi olarak görüntülenir.
 - Birden fazla rotanın çakıştığı bir konuma dokunulduğunda, bu noktadan geçen tüm rotaları içeren bir bağlam menüsü gösterilir.

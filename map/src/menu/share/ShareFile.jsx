@@ -69,7 +69,7 @@ export default function ShareFile() {
     }, [ltx.accountInfo]);
 
     useEffect(() => {
-        if (!uuid) {
+        if (!uuid || ltx.loginUser === INIT_LOGIN_STATE) {
             return;
         }
 
@@ -111,9 +111,11 @@ export default function ShareFile() {
         }
         fetchFile().then(() => {
             setProcessingAccess(false);
-            refreshGlobalFiles({ ctx }).then();
+            if (ltx.isLoggedIn()) {
+                refreshGlobalFiles({ ctx }).then();
+            }
         });
-    }, [uuid]);
+    }, [uuid, ltx.loginUser]);
 
     useEffect(() => {
         if (!fileRes) return;

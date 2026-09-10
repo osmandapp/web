@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title:  OpenStreetMap Editing
 ---
@@ -191,7 +191,7 @@ Um nicht unterstützte POI-Typen hinzuzufügen, führen Sie die folgenden Schrit
 
 1. Öffnen Sie die Registerkarte *Erweitert*.
 2. Tippen Sie auf *POI-Typ*.
-3. Geben Sie den Schlüssel *amenity* und den Wert *freeshops* in die entsprechenden Felder ein.
+3. Geben Sie den Schlüssel *amenity* und den Wert *freeshops* in die entsprechenden Feldern ein.
 4. Füllen Sie die restlichen erforderlichen Daten für diesen POI aus.
 5. Tippen Sie auf *Tag hinzufügen*, um den neuen POI zu Ihrer Datenbank hinzuzufügen.
 
@@ -257,13 +257,13 @@ Ihre Tracks werden innerhalb einer Stunde zu den [OSM-Spuren](https://www.openst
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -279,10 +279,9 @@ Um den [GPS-Track hochzuladen](https://wiki.openstreetmap.org/wiki/Upload_GPS_tr
 - **<Translate android="true" ids="shared_string_description"/>**. Ermöglicht das Hinzufügen einer Beschreibung zum Track. Die Beschreibung gilt für alle ausgewählten Tracks. Wenn Sie nichts in das Feld eingeben, werden die Tracknamen für jeden einzelnen Track als Beschreibungen verwendet.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Dieser Punkt im Einstellungsbereich ermöglicht das Hinzufügen von Tags zur Identifizierung des Tracks. Das Standard-Tag ist "osmand". Wenn der Track mit einer spezifischen Aktivität basierend auf dem ausgewählten Profil aufgezeichnet wurde, wird diese Aktivität auch automatisch als Tag während des Hochladens hinzugefügt. Für hochgeladene Gruppen von Tracks erhält jeder Track sein eigenes Aktivitätstag. Für einige Profile (z. B. Öffentlicher Nahverkehr) wird das Aktivitätstag nicht hinzugefügt. Sie können zusätzliche Tags manuell eingeben, durch Kommas getrennt.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Sichtbarkeit des Tracks für OSM-Benutzer:  
-   - *Öffentlich* bedeutet, dass der Track öffentlich verfügbar ist und in Rohform in Ihren GPS-Tracks, GPS-Tracklisten und zeitgestempelten Tracklisten angezeigt wird. Die über die API übertragenen Daten werden nicht mit Ihrer Track-Seite verknüpft. Zeitstempel von Spurenpunkten sind über die öffentliche GPS-API nicht verfügbar und Spurenpunkte sind nicht chronologisch geordnet.
-   - *Identifizierbar* bedeutet, dass der Track öffentlich in Ihren GPS-Spurenpunkten und öffentlichen GPS-Tracklisten angezeigt wird, was bedeutet, dass andere Benutzer den rohen Track herunterladen und mit Ihrem Benutzernamen verknüpfen können. Öffentliche zeitgestempelte Spurenpunktdaten aus der GPS-API, die über die Spurenpunkt-API weitergegeben werden, verlinken auf Ihre ursprüngliche Track-Seite.
-   - *Nachverfolgbar* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die verarbeiteten Spurenpunkte mit Zeitstempeln daraus (die nicht direkt mit Ihnen verknüpft werden können) von der öffentlichen GPS-API geladen werden.
-   - *Privat* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die Spurenpunkte daraus in nicht-chronologischer Reihenfolge über die öffentliche GPS-API ohne Zeitstempel verfügbar sind.
+      - *Identifizierbar* bedeutet, dass der Track öffentlich in Ihren GPS-Spurenpunkten und öffentlichen GPS-Tracklisten angezeigt wird, was bedeutet, dass andere Benutzer den rohen Track herunterladen und mit Ihrem Benutzernamen verknüpfen können. Öffentliche zeitgestempelte Spurenpunktdaten aus der GPS-API, die über die Spurenpunkt-API weitergegeben werden, verlinken auf Ihre ursprüngliche Track-Seite. Diese Option ist standardmäßig ausgewählt.
+      - *Nachverfolgbar* bedeutet, dass der Track nicht in öffentlichen Listen angezeigt wird, aber die verarbeiteten Spurenpunkte mit Zeitstempeln daraus (die nicht direkt mit Ihnen verknüpft werden können) von der öffentlichen GPS-API geladen werden.
+      {/* *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps. *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are unavailable through the public GPS API and track points are not ordered chronologically.*/}
 - **<Translate android="true" ids="login_account"/>** - [OSM-Konto](https://www.openstreetmap.org/login).
 
 :::info

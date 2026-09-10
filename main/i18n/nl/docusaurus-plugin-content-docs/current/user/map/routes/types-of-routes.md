@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: Soorten routes
 ---
@@ -23,7 +23,7 @@ U kunt de filtering van sommige routetypes configureren in het menu [Kaart confi
 
 ## Fiets {#cycle}
 
-[Fietsroutes](https://wiki.openstreetmap.org/wiki/Cycle_routes) zijn aanwezig in drie typen: *lokaal* (`lcn`), *regionaal* (`rcn`), *nationaal* (`ncn`), *internationaal* (`icn`). Fietsroutes kunnen ook deel uitmaken van [Knooppuntnetwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). U kunt kiezen hoe kleur aan de routesegmenten wordt toegekend:
+[Fietsroutes](https://wiki.openstreetmap.org/wiki/Cycle_routes) zijn aanwezig in de volgende typen: *lokaal* (`lcn`), *regionaal* (`rcn`), *nationaal* (`ncn`), *internationaal* (`icn`) en *niet geclassificeerd*. Fietsroutes kunnen ook deel uitmaken van [Knooppuntnetwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). U kunt kiezen hoe kleur aan de routesegmenten wordt toegekend:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
@@ -45,7 +45,7 @@ MTB-routes hebben een specifieke mapping in [OpenStreetMap](https://wiki.openstr
 
 ## Wandelen / Hiken {#hiking--walking}
 
-[Wandelroutes](https://wiki.openstreetmap.org/wiki/Walking_Routes) zijn aanwezig in drie typen: *lokaal* (`lwn`), *regionaal* (`rwn`), *nationaal* (`nwn`), *internationaal* (`iwn`). Wandelroutes kunnen ook deel uitmaken van [Knooppuntnetwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd maakt geen onderscheid tussen wandel- en hike-routes en combineert ze in 1 groep. U kunt kiezen hoe kleur aan de routesegmenten wordt toegekend:
+[Wandelroutes](https://wiki.openstreetmap.org/wiki/Walking_Routes) zijn aanwezig in de volgende typen: *lokaal* (`lwn`), *regionaal* (`rwn`), *nationaal* (`nwn`), *internationaal* (`iwn`) en *niet geclassificeerd*. Wandelroutes kunnen ook deel uitmaken van [Knooppuntnetwerken](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd maakt geen onderscheid tussen wandel- en hike-routes en combineert ze in 1 groep. U kunt kiezen hoe kleur aan de routesegmenten wordt toegekend:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***. Kleurt routes volgens hun individuele [lokale kleur](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (indien beschikbaar in OpenStreetMap) en het toeristische schildsymbool.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
@@ -72,7 +72,7 @@ OsmAnd ondersteunt *klimgebieden* (`climbing=area`) en *klimrotsen* (`climbing=c
 
 - **Klimgebieden** vertegenwoordigen **grotere zones** waar meerdere klimroutes aanwezig zijn.
 
-- **Klimrotsen** verwijzen naar **specifieke rotsformaties** of wanden die geschikt zijn voor klimmen.
+- **Klimrotsen** verwijzen naar **specifieke rotsformaties** of wanden die geschikt voor klimmen zijn.
 
 - Deze locaties bevatten **gedetailleerde kenmerken** zoals:
 

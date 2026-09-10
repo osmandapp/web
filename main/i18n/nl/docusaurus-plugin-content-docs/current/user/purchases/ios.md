@@ -1,5 +1,5 @@
 ---
-source-hash: 20763908576b5c7c3d5452b861b2dfa49d9babaafa7bb035c0a9e06233ed9895
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -104,6 +104,9 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Travel guides (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Observation Planning](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Interactive AR Mode](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Offline Sky Map](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

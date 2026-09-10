@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title:  Détails de l'itinéraire
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-OsmAnd vous permet de trouver le meilleur itinéraire et d'explorer ses détails. L'application fournit des informations détaillées sur l'itinéraire telles que la distance, [le temps de trajet](#distance--time--co2), [le type de surface](#road-attributes), [les dénivelés](#elevation-info), [les données sur l'empreinte CO2](#distance--time--co2), et [les informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de la trace, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--export-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.  
+OsmAnd vous permet de trouver le meilleur itinéraire et d'explorer ses détails. L'application fournit des informations détaillées sur l'itinéraire telles que la distance, [le temps de trajet](#distance--time--co2), [le type de surface](#road-attributes), [les dénivelés](#elevation-info), [les données sur l'empreinte CO2](#distance--time--co2), et [les informations sur les virages](#turn-by-turn-information). Vous pouvez également [analyser](#analyze-on-map) l'itinéraire sur la carte, obtenir des informations sur les segments de la trace, [imprimer](#print) le plan de l'itinéraire, [enregistrer](#share--save-actions) l'itinéraire et le partager avec d'autres. Grâce à cette fonctionnalité, vous connaîtrez toujours les détails de l'itinéraire et pourrez planifier votre voyage plus efficacement.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -178,7 +178,7 @@ Si des données sont présentes, vous pouvez sélectionner l'un des types suivan
 
 - *Appuyer et glisser*. Appuyez sur le graphique pour afficher des informations sur le point de la trace et le mouvement le long de celle-ci. Le graphique met en évidence l'emplacement du point sur la carte et affiche des informations à son sujet sur la règle.
 - *Mise à l'échelle*. Mettez le graphique à l'échelle avec un [geste à deux doigts](../../map/interact-with-map.md#gestures).
-- *Suivre ma position* (*Android uniquement*). Vous pouvez appuyer sur [Ma position](../../map/interact-with-map.md#my-location-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position. Au fur et à mesure de votre déplacement, le graphique se décalera de gauche à droite, affichant les informations en avant de votre chemin.  
+- *Suivre ma position* (*Android uniquement*). Vous pouvez appuyer sur [Ma position](../../map/interact-with-map.md#my-position-and-zoom) pour synchroniser la vue de la carte et le graphique avec votre position. Au fur et à mesure de votre déplacement, le graphique se décalera de gauche à droite, affichant les informations en avant de votre chemin.  
 
 
 ## Attributs de la route {#road-attributes}
@@ -205,7 +205,7 @@ Allez à l'onglet : *<Translate ios="true" ids="shared_string_menu,shared_string
 
 Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](#how-to-access) et affichent des informations relatives aux segments provenant d'OpenStreetMap et des données d'altitude. L'indication par couleur est liée à la manière dont des attributs spécifiques sont rendus sur la carte (voir [Légende de la carte](../../map-legend/osmand.md#surface-smoothness)). Les graphiques à barres sont également interactifs, et il est possible de voir des informations à un emplacement spécifique en appuyant sur le graphique.
 
-- [**Type de route**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Le type de route est déterminé en fonction de son objectif fonctionnel et de ses caractéristiques, telles que le nombre de voies, les limitations de vitesse, la capacité de charge, la présence de pistes piétonnes et cyclables, les accotements et d'autres paramètres. Différents types de routes peuvent avoir des restrictions et des règles de circulation différentes.  
+- [**Type de route**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Le type de route est déterminé en fonction de son objectif fonctionnel et de ses caractéristiques, telles que le nombre de voies, les limitations de vitesse, la capacité de charge, la présence de pistes piétonnes et cyclaires, les accotements et d'autres paramètres. Différents types de routes peuvent avoir des restrictions et des règles de circulation différentes.  
 
    Par exemple, les [autoroutes](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) principales ont généralement une limite de vitesse élevée et peuvent être divisées en voies, et les [routes locales](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) peuvent avoir une faible limite de vitesse et une seule voie dans chaque direction.  
 
@@ -311,7 +311,7 @@ Ces informations peuvent être utiles lorsque vous planifiez un voyage et que vo
 La possibilité d'**imprimer** ou de **sauvegarder** les informations virage par virage **au format PDF** est particulièrement utile lors de longs trajets ou dans des endroits inconnus lorsque vous avez besoin d'avoir une idée plus détaillée de l'itinéraire et du temps nécessaire pour s'y rendre.
 
 
-## Partager / Exporter (Actions) {#share--export-actions}
+## Partager / Enregistrer (Actions) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,7 +323,7 @@ La possibilité d'**imprimer** ou de **sauvegarder** les informations virage par
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,8 +332,8 @@ La possibilité d'**imprimer** ou de **sauvegarder** les informations virage par
 La section de navigation Détails de l'itinéraire dispose d'options qui vous permettent d'effectuer certaines actions avec les informations de l'itinéraire.  
 
 - [**Imprimer**](#print). Permet d'imprimer ou de sauvegarder les informations de l'itinéraire virage par virage.
-- **Exporter/Enregistrer**. Permet de sauvegarder les informations de l'itinéraire **en tant que nouvelle trace** pour une utilisation hors ligne ultérieure. La trace exportée contient toutes les informations sur les attributs de la route et les instructions de virage. Ainsi, la [navigation par cette trace](./gpx-navigation.md) devrait fournir toutes les fonctionnalités comme la navigation par l'itinéraire.
-- **Partager**. Partage une trace exportée ou un lien vers l'itinéraire qui peut être ouvert sur un autre appareil avec OsmAnd.
+- **Enregistrer**. Permet de sauvegarder les informations de l'itinéraire **en tant que nouvelle trace** pour une utilisation hors ligne ultérieure. La trace enregistrée contient toutes les informations sur les attributs de la route et les instructions de virage. Ainsi, la [navigation par cette trace](./gpx-navigation.md) devrait fournir toutes les fonctionnalités comme la navigation par l'itinéraire.
+- **Partager**. Permet de partager l'itinéraire sous forme de fichier ou de lien qui peut être ouvert sur un autre appareil avec OsmAnd.
 
 
 ## Articles connexes {#related-articles}

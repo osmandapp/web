@@ -1,5 +1,5 @@
 ---
-source-hash: b72231de89708cc761d36df5e28ed3e9d25300bf49d391eefbff605bb4ce39c6
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -135,6 +135,8 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Plugin Astronomia](../plugins/astronomy.md) — [Pianificazione osservazioni](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin Astronomia](../plugins/astronomy.md) — [Modalità AR interattiva](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin Astronomia](../plugins/astronomy.md) — [Mappa del cielo offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md) — [Esploratore eclissi](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Colori widget personalizzati](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

@@ -1,10 +1,8 @@
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Utils, { quickNaNfix } from '../../../util/Utils';
-import TracksManager from '../../../manager/track/TracksManager';
+import TracksManager, { PROFILE_LINE } from '../../../manager/track/TracksManager';
 import { defaultPointExtras } from '../../geoObject/convert/convertRouteToTrack';
 import { showProcessingNotification } from '../../../manager/GlobalManager';
-
-const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 /**
  * Calculates route between two points using selected router (OSRM, OsmAnd, or Line)

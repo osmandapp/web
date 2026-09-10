@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  Premiers Pas
 ---
@@ -502,7 +502,7 @@ Appuyez sur une icône d'action pour démarrer immédiatement l'application avec
 
 Dans le *menu Aide*, vous pouvez trouver des articles de notre site [www.osmand.net/docs](https://osmand.net/docs/intro/). Après le téléchargement initial (connexion Internet requise), les articles d'aide sont disponibles hors ligne.  
 La première sous-section, *Aide hors ligne*, contient les **articles les plus consultés** (ou populaires) parmi nos utilisateurs. Ces articles sont affichés dans la langue définie pour l'application, si cette langue est prise en charge sur notre site de documentation. Les langues prises en charge incluent actuellement : *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, et *<Translate android="true" ids="lang_uk"/>*. Si vous changez la langue de l'application, veuillez redémarrer OsmAnd pour que la documentation s'ouvre dans la langue sélectionnée. Lorsque une traduction n'est pas disponible, la version anglaise de la page sera affichée automatiquement. Les sections **Guide de l'utilisateur** et **Dépannage** ont la même structure que sur le site web.  
-Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les réseaux sociaux d'OsmAnd, des informations sur la version de votre application, les notes de version et les contacts du support. Via l'Aide, vous pouvez également envoyer des [journaux logcat et de crash](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les réseaux sociaux d'OsmAnd, des informations sur la version de votre application, les notes de version et les contacts du support. Via l'Aide, vous pouvez également envoyer des [journaux logcat et de crash](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Menu {#menu}
 
@@ -510,21 +510,20 @@ Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les r�
 
 <TabItem value="android" label="Android">
 
-![Capture d'écran du menu d'aide hors ligne Android](@site/static/img/steps/offline_help_menu_andr.png)
+![Capture d'écran du menu d'aide hors ligne Android](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Cartes iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Menu Cartes iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Envoyer le journal de crash** (*pour Android*). Permet aux utilisateurs d'envoyer des rapports de plantage de l'application aux développeurs, aidant à l'identification et à la résolution des problèmes.
-- **Envoyer le journal logcat** (*pour Android*). Donne aux utilisateurs la possibilité d'envoyer des journaux détaillés des plantages de l'application aux développeurs, facilitant une analyse et un dépannage plus approfondis.
-- **Envoyer le journal** (*pour iOS*). Remplit une fonction similaire à la fonctionnalité *Envoyer le journal de crash* pour Android, permettant aux utilisateurs sur les appareils iOS de signaler les plantages de l'application aux développeurs à des fins de débogage.
+- **Envoyer les journaux de plantage de l'application**. Permet aux utilisateurs d'envoyer aux développeurs des rapports de plantage enregistrés lors des plantages précédents de l'application pour analyse et dépannage. 
+- **Envoyer les journaux de la session en cours** (Android) / **Envoyer le journal actuel de l'application** (iOS). Permet aux utilisateurs d'envoyer aux développeurs le journal actuel de l'application, contenant les informations enregistrées depuis le démarrage de l'application, pour le dépannage.
 - **Copier la version de la build**. Permet aux utilisateurs de communiquer rapidement et précisément la version actuelle de l'application aux développeurs lors du signalement de problèmes, simplifiant le processus de diagnostic et de résolution.
 
 
@@ -624,21 +623,21 @@ Vous permet de poser des questions ou de faire des suggestions.
 
 <TabItem value="android" label="Android">
 
-![Capture d'écran de l'aide hors ligne Android](@site/static/img/steps/offline_help_report_andr.png)
+![Capture d'écran de l'aide hors ligne Android](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu Cartes iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Menu Cartes iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Ouvrir un ticket sur GitHub**. [GitHub de la version Android](https://github.com/osmandapp/OsmAnd-Issues/issues), [GitHub de la version iOS](https://github.com/osmandapp/OsmAnd-iOS/issues) : posez des questions, signalez des bogues et proposez des fonctionnalités.
-- **Envoyer le journal de crash** (*pour Android*). Contient uniquement des informations sur les plantages.
-- [Envoyer le journal logcat](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Envoyer le journal](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Fichier journal détaillé.
+- **Envoyer les journaux de plantage de l'application**. Contient les rapports des plantages précédents de l'application.
+- **Envoyer les journaux de la session en cours** (Android) / **Envoyer le journal actuel de l'application** (iOS). Contient le journal de l'application enregistré depuis le démarrage de l'application.
 
 ### À propos d'OsmAnd {#about-osmand}
 
@@ -675,7 +674,7 @@ OsmAnd n'a aucune autorisation requise sur la version iOS / Android.
 **Essentielles** :
 
 - **Internet**. Téléchargement initial / mise à jour des cartes hors ligne. Peut également être nécessaire pour accéder à des fonctionnalités en ligne telles que l'[imagerie au niveau de la rue](../map/point-layers-on-map.md#-street-level-imagery), les [photos en ligne](../map/map-context-menu.md#online-photos) ou les [cartes en ligne](../map/raster-maps.md).
-- **GPS** / **Réseau GSM**. Déterminer votre position, vous suivre en mode navigation et enregistrer votre trajet (facultatif). Cette autorisation est demandée lorsque vous cliquez sur le [bouton Ma position](../widgets/map-buttons.md#my-location-and-zoom) ou lorsque vous [démarrez la navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **Réseau GSM**. Déterminer votre position, vous suivre en mode navigation et enregistrer votre trajet (facultatif). Cette autorisation est demandée lorsque vous cliquez sur le [bouton Ma position](../widgets/map-buttons.md#my-position-and-zoom) ou lorsque vous [démarrez la navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Facultatives** :
 

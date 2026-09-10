@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -249,7 +249,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 OsmAnd'daki *Etkinlik* özelliği, daha fazla analiz ve klasörlerde düzenleme için kaydedilen GPX rotalarını belirli etkinliklerle etiketlemenize olanak tanır.
 
 - [GPX rotaları için etkinlik etiketleri](#description-and-info). [Kaydedilen rotalar](../../plugins/trip-recording.md#recording-settings) ve [Rota planla](../../plan-route/create-route.md) aracılığıyla kaydedilen rotalar, oluşturuldukları profile dayalı olarak otomatik olarak bir etkinlik türü alır, bu da daha sonra kategorize etmenize ve filtrelemenize yardımcı olur. Gerekirse etkinliği manuel olarak değiştirebilirsiniz.
-- [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX rotalarını etkinliğe göre filtreleyebilirsiniz, bu da bisiklet veya yürüyüş rotaları gibi belirli kayıt türlerini bulmaya odaklanmanızı sağlar.
+- [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX rotalarını etkinliğe göre filtreleyebilirsiniz, bu da bisiklet veya yürüyüş rotaları gibi belirli kayıt türlerini bulmaya odaklanmanıza sağlar.
 - [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün Rotalar tabındaki seçim modunu kullanarak seçilen klasörler veya rotalar için etkinlik türünü değiştirebilirsiniz.
 - **Etkinlik listesi**. Etkinlik kategorileri ve grupları OsmAnd'ın kaynaklarında tanımlanmıştır. Geliştiriciler ve katkıda bulunanlar için etkinlik listesi, mevcut etkinlik gruplarını ve türlerini detaylandıran [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) adresinde yapılandırılmış bir formatta tutulur.
 
@@ -364,11 +364,13 @@ Rota üzerinde *yükseklik bilgisi yoksa*, aşağıdaki yollarla ekleyebilirsini
 
 ### Eksik Yüksekliği Hesapla {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Pro özelliği
 [Yükseklik çevrimdışı hesapla](../../plan-route/create-route.md#get-elevation-data), [**OsmAnd Pro**](../../purchases/index.md) ücretli bir özelliktir <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Bu özellik](../../plan-route/create-route.md#get-elevation-data), 70 derece kuzey enlemi ile 70 derece güney enlemi arasındaki herhangi bir arazi için GPX rotasının yükseklik profilini çevrimdışı olarak hesaplamanıza olanak tanır, [Arazi haritası verilerine](../../plugins/topography.md#download-maps) dayanarak. *Arazi haritaları (3D) daha önce indirilmiş olmalıdır*.
 
@@ -377,11 +379,27 @@ Rota üzerinde *yükseklik bilgisi yoksa*, aşağıdaki yollarla ekleyebilirsini
 
     ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. *Düz çizgi* yöntemini kullanarak [Rota planla](../../plan-route/create-route.md#graph) aracıyla bir rota oluşturuyorsanız ve grafikte yükseklik verisi yoksa, şunları yapmanız gerekir:
+3. *Düz çizgi* yöntemini kullanarak [Rota planla](../../plan-route/create-route.md#graph--analyze) aracıyla bir rota oluşturuyorsanız ve grafikte yükseklik verisi yoksa, şunları yapmanız gerekir:
     - *Yükseklik verilerini al*'a dokunun, ardından *Arazi haritalarını kullan*'ı seçin.
     - Hesaplamadan sonra, arazi verilerine dayalı rotanızın tam Yükseklik/Eğim grafiğini elde edeceksiniz.  
 
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Bu özellik](../../plan-route/create-route.md#get-elevation-data), [planlanmış bir rota](../../plan-route/create-route.md#create-new-route) veya [mevcut bir GPX rotası](../../plan-route/create-route.md#modify-existing-gpx-track) için eksik yükseklik verilerini hesaplamanıza olanak tanır.
+
+Düz çizgi yöntemini kullanarak bir rota oluşturuyorsanız ve yükseklik verisi yoksa, Analiz sekmesinde *Yükseklik verilerini al* öğesine dokunun ve *Arazi haritalarını kullan* seçeneğini belirleyin. Daha önce indirilmiş [Arazi haritaları (3D)](../../plugins/topography.md#download-maps) gereklidir. Yükseklik profili, rota geometrisi değişmeden kalırken arazi verilerine göre hesaplanır.
+
+Mevcut bir GPX rotası için *Yakındaki yolları kullan* seçeneğini belirleyebilirsiniz. OsmAnd, seçilen navigasyon profilini kullanarak rotayı en yakın izin verilen yollara bağlar ve bağlı yollardan yükseklik verilerini alır. Bu seçenek rota geometrisini değiştirebilir. Gerekirse, rota geometrisini değiştirmeden yükseklik hesaplamak için *Arazi haritalarını kullan* seçeneğini de belirleyebilirsiniz.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Noktalar / Yol Noktaları {#points--waypoints}
@@ -392,13 +410,13 @@ Yol noktaları, haritada bulunan nokta türlerinden biridir. Genel olarak, GPX d
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ Bu *Noktalar* sekmesinde:
 
 - [Rota noktaları verilerini göster](#display-custom-gpx-tags) ve rota noktalarınızı (yol noktaları ve rota noktaları) değiştirin, [silin ve](#points--waypoints) rotaya yol noktaları ekleyin.
 - [Nokta grubu (klasörü)](#waypoint-groups) oluşturun ve değiştirin.
-- Yol noktası listesindeki iğne simgesini kullanarak (*yalnızca Android*) haritayı bir yol noktasının üzerine merkezleyin, listeyi kapatmadan yol noktalarını tek tek önizlemenize olanak tanır.
+- Yol noktası listesindeki iğne simgesini kullanarak haritayı bir yol noktasının üzerine merkezleyin; liste kapanmadan ve geçerli yakınlaştırma düzeyi değişmeden yol noktalarını tek tek önizlemenize olanak tanır.
 
 
 ### Rotaya Yol Noktası Ekle {#add-waypoint-to-a-track}
@@ -678,6 +696,8 @@ Haritada, segmentler her aralığın başında renkli etiketlerle işaretlenir:
 - **Yokuş aşağı segmentler** (yeşil etiketler) aşağı ok, segment indeksi ve yüzde olarak ortalama eğimi gösterir (örneğin, ↓ 12. -2%).
 - **Düz segmentler** (mavi etiketler) düz bölüm mesafesini gösterir (örneğin, 616 m, 411 m).
 
+Bir etikete dokunarak seçilen yokuş yukarı, yokuş aşağı veya düz segment için ayrıntılar panelini açın. Ayrıntılar paneli, mesafe, süre, tırmanış ve iniş, yükseklik, hız ve zamanla ilgili veriler gibi seçilen segment için istatistikleri görüntüler.
+
 
 ### Kalp Atış Hızı Metrikleri {#heart-rate-metrics}
 
@@ -722,7 +742,7 @@ Bu menüde, filtreleri kullanarak *Yumuşatma*, *Hız*, *Yükseklik* veya *GPS h
 |Bu kısım, filtrelemeden sonraki nokta sayısını ve filtreler kullanılmadan önce seçilen rotadaki toplam nokta sayısını gösterir.|
 |![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Eylemler*** |
-|*Yumuşatma*. Noktalar arasındaki eşik mesafeyi ayarlar. Rota noktaları, son görünür noktadan en az bu mesafede olanlar gizlenir. Filtre tarafından seçilen mesafeden daha az mesafede olan rotadaki tüm noktalar gizlenecektir. Rota noktaları son görünür noktadan sayılır. Yüksek eşiklerin rota geometrisini aşırı basitleştirebileceğini unutmayın.|
+|*Yumuşatma*. Noktalar arasındaki eşik mesafeyi ayarlar. Rota noktaları, son görünür noktadan en az bu mesafede olanlar gizlenir. Filtre tarafından seçilen mesafeden daha az mesafede olan rotadaki tüm noktalar gizilenecektir. Rota noktaları son görünür noktadan sayılır. Yüksek eşiklerin rota geometrisini aşırı basitleştirebileceğini unutmayın.|
 |![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
 |*Hız*. Yalnızca seçilen hız aralığına karşılık gelen rota noktaları grafikte ve haritada görüntülenir, diğerleri gizlenir.|
 |![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |

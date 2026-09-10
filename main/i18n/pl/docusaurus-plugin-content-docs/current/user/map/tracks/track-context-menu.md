@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -135,7 +135,7 @@ Menu **Opcje** pozwala zarządzać i modyfikować wybrany ślad za pomocą róż
 <br/>
 
 - **<Translate android="true" ids="shared_string_share"/>** – Eksportuje wybrany ślad w formacie GPX za pomocą menu Udostępnianie systemu.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Przesyła](../../plugins/osm-editing.md#upload-gps-track) wybrany ślad do OpenStreetMap.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Przesyła](../../plugins/osm-editing.md#upload-gps-track) wybrony ślad do OpenStreetMap.
 
 <br/>
 
@@ -248,7 +248,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 Funkcja *Aktywność* w OsmAnd pozwala na oznaczanie zarejestrowanych śladów GPX określonymi aktywnościami w celu dalszej analizy i organizacji w folderach.
 
-- [Tagi aktywności dla śladów GPX](#description-and-info). Zarejestrowane ślady i ślady zapisane za pomocą [Planowanie trasy](../../plan-route/create-route.md) automatycznie otrzymują typ aktywności na podstawie profilu użytego do ich utworzenia. To pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
+- [Tagi aktywności dla śladów GPX](#description-and-info). [Zarejestrowane ślady](../../plugins/trip-recording.md#recording-settings) i ślady zapisane za pomocą [Planowanie trasy](../../plan-route/create-route.md) automatycznie otrzymują typ aktywności na podstawie profilu użytego do ich utworzenia. To pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
 - [Filtr aktywności](../../personal/tracks/smart-folder.md#search-filter). Możesz filtrować zarejestrowane ślady GPX według aktywności, co pozwala skupić się na wyszukiwaniu określonych typów nagrań, takich jak wszystkie ślady rowerowe lub piesze.
 - [Zarządzaj typami aktywności](../../personal/tracks/manage-tracks.md#selection-mode). Możesz zmienić typ aktywności dla wybranych folderów lub śladów za pomocą trybu wyboru w zakładce Ślady w menu Moje miejsca.
 - **Lista aktywności**. Kategorie i grupy aktywności są zdefiniowane w zasobach OsmAnd. Dla deweloperów i współtwórców lista aktywności jest utrzymywana w ustrukturyzowanym formacie w pliku [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), który szczegółowo opisuje dostępne grupy i typy aktywności.
@@ -364,11 +364,13 @@ Jeśli na trasie *nie ma informacji o wysokości*, można je dodać w następuj�
 
 ### Oblicz brakującą wysokość {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Funkcja Pro
 [Obliczanie wysokości offline](../../plan-route/create-route.md#get-elevation-data) to płatna funkcja [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Ta funkcja](../../plan-route/create-route.md#get-elevation-data) pozwala na obliczenie profilu wysokościowego dla śladu GPX w trybie offline dla dowolnego terenu między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej, na podstawie [danych mapy terenu](../../plugins/topography.md#download-maps). *Mapy terenu (3D) powinny być wcześniej pobrane*.
 
@@ -377,11 +379,27 @@ Jeśli na trasie *nie ma informacji o wysokości*, można je dodać w następuj�
 
     ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Jeśli tworzysz trasę za pomocą narzędzia [Planowanie trasy](../../plan-route/create-route.md#graph) metodą *Linia prosta* i na wykresie nie ma danych o wysokości, musisz:
+3. Jeśli tworzysz trasę za pomocą narzędzia [Planowanie trasy](../../plan-route/create-route.md#graph--analyze) metodą *Linia prosta* i na wykresie nie ma danych o wysokości, musisz:
     - Dotknąć *Uzyskaj dane o wysokości*, a następnie wybrać *Użyj map terenu*.
     - Po obliczeniu otrzymasz kompletny wykres wysokości/nachylenia trasy oparty na danych terenu.  
 
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Ta funkcja](../../plan-route/create-route.md#get-elevation-data) pozwala na obliczenie brakujących danych o wysokości dla [planowanej trasy](../../plan-route/create-route.md#create-new-route) lub [istniejącego śladu GPX](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Jeśli tworzysz trasę metodą Linia prosta i dane o wysokości są niedostępne, dotknij *Uzyskaj dane o wysokości* w zakładce Analizuj i wybierz *Użyj map terenu*. Wymagane są wcześniej pobrane [Mapy terenu (3D)](../../plugins/topography.md#download-maps). Profil wysokości jest następnie obliczany na podstawie danych terenu, a geometria trasy pozostaje niezmieniona.
+
+Dla istniejącego śladu GPX możesz wybrać *Użyj pobliskich dróg*. OsmAnd dołącza ślad do najbliższych dozwolonych dróg przy użyciu wybranego profilu nawigacji i pobiera dane o wysokości z dołączonych dróg. Ta opcja może zmienić geometrię śladu. W razie potrzeby możesz również wybrać *Użyj map terenu*, aby obliczyć wysokość przy zachowaniu geometrii śladu.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Punkty / Waypointy {#points--waypoints}
@@ -392,13 +410,13 @@ Waypointy to jeden z typów punktów dostępnych na mapie. Ogólnie rzecz biorą
 
 <TabItem value="android" label="Android">
 
-![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +426,7 @@ W tej zakładce *Punkty*:
 
 - [Wyświetlaj dane punktów śladu](#display-custom-gpx-tags) i modyfikuj swoje punkty śladu (waypointy i punkty trasy), [usuwaj je i dodawaj](#points--waypoints) waypointy do śladu.
 - Twórz i modyfikuj [Grupę (folder) punktów](#waypoint-groups).
-- Wyśrodkuj mapę na waypoincie za pomocą ikony pinezki w liście waypointów (*tylko Android*), bez zamykania listy, co pozwala na podgląd waypointów jeden po drugim.
+- Wyśrodkuj mapę na waypoincie za pomocą ikony pinezki w liście waypointów. Mapa centruje się na waypoincie bez zamykania listy ani zmiany bieżącego poziomu powiększenia.
 
 
 ### Dodaj waypoint do śladu {#add-waypoint-to-a-track}

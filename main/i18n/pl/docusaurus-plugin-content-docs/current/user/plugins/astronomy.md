@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -412,7 +412,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +430,52 @@ Funkcja **Wyszukiwania** (**Explore** na iOS) w wtyczce Astronomia pozwala na zn
 
 Sekcja Obserwuj teraz podświetla obiekty niebieskie, które są widoczne teraz lub dzisiejszej nocy. Ta sekcja działa jako narzędzie rekomendacji, pokazując obiekty najlepiej nadające się do obserwacji na podstawie twojej bieżącej lokalizacji i czasu.
 
-**2. Categories**
+**2. Solar and Lunar eclipses** (*Android only*)
+
+Narzędzia [Zaćmienie Słońca](#solar-eclipse) i [Zaćmienie Księżyca](#lunar-eclipse) umożliwiają eksplorację zaćmień na całym świecie, obserwację ich przebiegu w czasie oraz sprawdzenie widoczności zaćmienia na mapie.
+
+**3. Categories**
 
 Sekcja Kategorie pozwala na przeglądanie obiektów według typu: Układ słoneczny, Gwiazdozbiory, Gwiazdy, Mgławice, Gromady gwiazd i Głębokie niebo. Każda kategoria otwiera listę obiektów z kluczowymi informacjami: nazwa obiektu, typ lub gwiazdozbiór, jasność (brightness) oraz czas wschodu lub zachodu (jeśli dotyczy).
+
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+**Solar Eclipse Explorer** umożliwia eksplorację minionych i nadchodzących zaćmień Słońca na całym świecie. Łączy Mapę gwiazdową z interaktywną osią czasu i wizualizacją na mapie, pokazując, jak rozwija się zaćmienie w różnych lokalizacjach.
+
+Solar Eclipse Explorer zawiera następujące funkcje:
+
+- **Nawigacja po zaćmieniach**. Użyj przycisków Previous i Next, aby przełączać się między dostępnymi zaćmieniami Słońca.
+- **Oś czasu**. Oś czasu pokazuje początek, maksimum i koniec zaćmienia. Przesuń suwak, aby zobaczyć zaćmienie w dowolnym momencie podczas wydarzenia. Wszystkie informacje o zaćmieniu są automatycznie aktualizowane dla wybranego czasu.
+- **Informacje o zaćmieniu**. Panel informacyjny wyświetla: typ zaćmienia, bieżącą datę i godzinę, obscurację zaćmienia, wysokość Słońca oraz współrzędne środka mapy. Wyświetlane informacje są obliczane dla bieżącego środka mapy.
+- **Ścieżka zaćmienia**. Dotknij Fit eclipse path, aby wyśrodkować mapę na ścieżce zaćmienia. Dotknij *Show map* lub *Hide map*, aby wyświetlić lub ukryć ścieżkę zaćmienia na mapie. Ścieżka zaćmienia pokazuje, gdzie zaćmienie jest widoczne i jak cień Księżyca przemieszcza się po powierzchni Ziemi.
+
+:::warning
+
+Nigdy nie patrz bezpośrednio na Słońce bez odpowiedniej ochrony do obserwacji Słońca. Czasy zaćmień są szacunkowe.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+**Lunar Eclipse Explorer** umożliwia eksplorację zaćmień Księżyca na całym świecie i obserwację, jak Księżyc przechodzi przez cień Ziemi.
+
+Lunar Eclipse Explorer zawiera następującą funkcję:
+
+- **Nawigacja po zaćmieniach**. Użyj przycisków Previous i Next, aby przełączać się między dostępnymi zaćmieniami Księżyca.
+- **Typy zaćmień**. Eksplorator obsługuje: zaćmienia półcieniowe, zaćmienia częściowe i zaćmienia całkowite
+- **Oś czasu**. Oś czasu pokazuje początek, maksimum i koniec zaćmienia. Znaczniki na osi czasu wskazują różne etapy zaćmienia. Przesuń suwak, aby obserwować zaćmienie w dowolnym momencie podczas wydarzenia.
+- **Informacje o zaćmieniu**. Panel informacyjny wyświetla: fazę zaćmienia, obscurację zaćmienia, wysokość Księżyca oraz współrzędne środka mapy. Wyświetlane informacje są obliczane dla bieżącego środka mapy.
+- **Mapa widoczności**. Dotknij *Fit visibility*, aby wyśrodkować mapę na obszarze widoczności zaćmienia. Dotknij *Show map* lub *Hide map*, aby wyświetlić lub ukryć warstwę widoczności. Warstwa widoczności wyróżnia regiony, w których Księżyc znajduje się nad horyzontem podczas zaćmienia.
+
+:::warning
+
+Kolory i jasność cienia są schematyczne i przeznaczone wyłącznie do wizualizacji.
+
+:::
 
 ### Sorting and Filters {#sorting-and-filters}
 

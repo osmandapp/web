@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: Types d'itinéraires
 ---
@@ -23,7 +23,7 @@ Vous pouvez configurer le filtrage de certains types d'itinéraires dans le menu
 
 ## Cyclisme {#cycle}
 
-[Les itinéraires cyclables](https://wiki.openstreetmap.org/wiki/Cycle_routes) sont présents en trois types : *local* (`lcn`), *régional* (`rcn`), *national* (`ncn`), *international* (`icn`). Les itinéraires cyclables peuvent également faire partie de [réseaux de nœuds](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Vous pouvez choisir comment attribuer une couleur aux segments d'itinéraire :
+[Les itinéraires cyclables](https://wiki.openstreetmap.org/wiki/Cycle_routes) sont présents en trois types : *local* (`lcn`), *régional* (`rcn`), *national* (`ncn`), *international* (`icn`), et *non classé*. Les itinéraires cyclables peuvent également faire partie de [réseaux de nœuds](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Vous pouvez choisir comment attribuer une couleur aux segments d'itinéraire :
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Itinéraires sur la carte - itinéraires cyclables](@site/static/img/map/map-routes-cycle-routes.png)
@@ -46,7 +46,7 @@ Les itinéraires VTT ont un mappage spécifique dans [OpenStreetMap](https://wik
 
 ## Randonnée / Marche {#hiking--walking}
 
-[Les itinéraires de randonnée](https://wiki.openstreetmap.org/wiki/Walking_Routes) sont présents en trois types : *local* (`lwn`), *régional* (`rwn`), *national* (`nwn`), *international* (`iwn`). Les itinéraires de marche peuvent également faire partie de [réseaux de nœuds](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd ne sépare pas les itinéraires de marche et de randonnée et les combine en 1 groupe. Vous pouvez choisir comment attribuer une couleur aux segments d'itinéraire :
+[Les itinéraires de randonnée](https://wiki.openstreetmap.org/wiki/Walking_Routes) sont présents en trois types : *local* (`lwn`), *régional* (`rwn`), *national* (`nwn`), *international* (`iwn`), et *non classé*. Les itinéraires de marche peuvent également faire partie de [réseaux de nœuds](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd ne sépare pas les itinéraires de marche et de randonnée et les combine en 1 groupe. Vous pouvez choisir comment attribuer une couleur aux segments d'itinéraire :
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colore les itinéraires selon leur [couleur locale](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) individuelle (si disponible dans OpenStreetMap) et le symbole du bouclier touristique.  
 ![Itinéraires sur la carte - randonnée osmc](@site/static/img/map/map-routes-hiking-osmc.png)

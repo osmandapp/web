@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import { useContext, useState, useRef, useMemo } from 'react';
-import { Box, Grid, IconButton, Typography, MenuItem, Switch } from '@mui/material';
+import { useContext, useMemo, useRef, useState } from 'react';
+import { Box, Grid, IconButton, MenuItem, Switch, Typography } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
 import { hasSegmentTurns } from '../../../manager/track/TracksManager';
 import { formatMeters } from '../../../util/Utils';
@@ -23,6 +23,7 @@ import UTurnLeft from '@mui/icons-material/UTurnLeftOutlined';
 
 import KeepRight from '@mui/icons-material/RampRightOutlined';
 import KeepLeft from '@mui/icons-material/RampLeftOutlined';
+import { isAlternativeFeature } from '../../../store/geoRouter/legacy/calculateRoute';
 
 const DoubleSwitch = styled(Switch)(() => ({
     width: 68,
@@ -144,12 +145,19 @@ function getIconByTurnDescription({ description, finish }) {
 function reformatDescription(description) {
     const d = description.trim().replace(MUTE + ' ', '');
     const found = d.match(/and go ([\d.]+) meters/);
-    const meters = (found && found[1]) ?? 0;
+    const meters = found?.[1] ?? 0;
     if (meters > 0) {
         return d.replace(found[0], `and go ${formatMeters(meters)}`);
     } else {
         return d;
     }
+}
+
+// an alternative brings its own turns; only the route being shown belongs in the list
+function isRouteTurn(f) {
+    return (
+        f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates && !isAlternativeFeature(f)
+    );
 }
 
 export default function TurnsTab() {
@@ -164,12 +172,7 @@ export default function TurnsTab() {
     const hidePointOnMap = () => (hideTimerRef.current = setTimeout(() => ctx.mapMarkerListener(null), 500));
 
     const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
-    const routeHasTurns =
-        route &&
-        route.features &&
-        route.features.some(
-            (f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates
-        );
+    const routeHasTurns = route?.features?.some(isRouteTurn);
     const routeTurnItems = useMemo(
         () => (routeHasTurns ? getRouteTurnItems({ route }) : null),
         [routeHasTurns, ctx.routeObject.getTrack()]
@@ -195,36 +198,26 @@ export default function TurnsTab() {
                     }
                 });
             });
-            const items = turns.map((t, i, all) => {
+            return turns.map((t, i, all) => {
                 const { lat, lng, description } = t;
                 return turnItem({ n: i + 1, max: all.length, description, lat, lng });
             });
-            return items;
         }
-        if (track && track.points && track.points.length > 0) {
+        if (track?.points && track.points.length > 0) {
             return getPointsGeometrySegments(track.points);
         }
-        if (
-            track &&
-            track.tracks &&
-            track.tracks.length > 0 &&
-            track.tracks[0].points &&
-            track.tracks[0].points.length > 0
-        ) {
+        if (track?.tracks && track.tracks.length > 0 && track.tracks[0].points && track.tracks[0].points.length > 0) {
             return getPointsGeometrySegments(track.tracks[0].points);
         }
         return null;
     }
 
     function getRouteTurnItems({ route }) {
-        const items = route.features
-            .filter((f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates)
-            .map((f, i, all) => {
-                const [lng, lat] = f.geometry.coordinates;
-                const description = f.properties.description;
-                return turnItem({ n: i + 1, max: all.length, description, lat, lng });
-            });
-        return items;
+        return route.features.filter(isRouteTurn).map((f, i, all) => {
+            const [lng, lat] = f.geometry.coordinates;
+            const description = f.properties.description;
+            return turnItem({ n: i + 1, max: all.length, description, lat, lng });
+        });
     }
 
     function turnItem({ n, max, lat, lng, description }) {

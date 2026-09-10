@@ -5,10 +5,12 @@ import { ReactComponent as AccessIcon } from '../../../assets/icons/ic_action_sa
 import { useTranslation } from 'react-i18next';
 import { createAccount } from '../../../manager/LoginManager';
 import BlueBtn from '../../../frame/components/btns/BlueBtn';
+import AppContext from '../../../context/AppContext';
 import LoginContext from '../../../context/LoginContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function PendingAccessError() {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -29,7 +31,7 @@ export default function PendingAccessError() {
                 </Box>
             </Box>
             <BlueBtn
-                action={() => createAccount(ltx, navigate)}
+                action={() => createAccount({ ctx, ltx, navigate })}
                 text={t('web:access_requested_btn')}
                 additionalStyle={{ color: '#727272 !important', mt: '-15px' }}
                 span={true}

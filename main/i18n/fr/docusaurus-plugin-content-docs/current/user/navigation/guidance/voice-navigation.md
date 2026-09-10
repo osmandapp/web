@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Guidage vocal / Notifications
 ---
@@ -52,16 +52,16 @@ Pour plus d'informations sur comment et quand les invites vocales sont déclench
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Paramètres de navigation vocale Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *bouton <Translate ios="true" ids="routing_settings"/>* *(ou <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choisir le profil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(ou <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choisir le profil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Paramètres de navigation vocale iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Paramètres de navigation vocale iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Paramètres de navigation vocale iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Pour plus d'informations sur comment et quand les invites vocales sont déclench
 
 - *Répéter les instructions de navigation*. Permet de répéter les instructions de navigation à des intervalles réguliers de 1 min à 30 min. Ou manuellement - si vous manquez une invite vocale, vous pouvez l'écouter à nouveau en appuyant simplement sur [la flèche du virage actuel](../../widgets/nav-widgets.md#next-turn) sur l'écran de l'application.
 - *[Temps d'annonce](#announcement-time)*.
+- *Mettre en pause l'audio parlé* (*iOS uniquement*). Lorsqu'elle est activée, les podcasts, les livres audio et autres contenus audio parlés sont mis en pause pendant la lecture des invites vocales. La lecture de musique se poursuit à volume réduit. Lorsqu'elle est désactivée, l'audio parlé et la musique continuent de jouer à volume réduit.
 
 **Sortie** (*Android uniquement*) :
 

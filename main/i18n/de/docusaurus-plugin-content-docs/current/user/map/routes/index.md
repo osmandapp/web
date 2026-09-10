@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title: Routen
 sidebar_position: 11
 ---
@@ -19,6 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener [Routen](./types-of-routes.md) auf der Karte. Standardmäßig sind diese Routen Teil von [Vektorkarten](../../map/vector-maps.md#routes) (OpenStreetMap-Daten), jedoch wird eine ähnliche Funktionalität durch [Tracks](../../map/tracks/index.md) bereitgestellt, die mit [Route planen](../../plan-route/create-route.md) erstellt, als [GPX-Tracks](#save-as-a-track) importiert oder mit dem [Reiseaufzeichnungs-Plugin](../../plugins/trip-recording.md) aufgezeichnet werden können. Die Routen-Kartenlegende finden Sie [hier](../../map-legend/osmand.md#routes).
 
+
 ## Routen auf der Karte anzeigen {#display-routes-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -27,11 +28,11 @@ OsmAnd verfügt über viele leistungsstarke Funktionen zur Anzeige verschiedener
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Routen-Abschnitt „Karte konfigurieren“](@site/static/img/map/configure_map_routes_android.png) ![Routenklassen](@site/static/img/map/routes_classes_android.png)
+![Routen-Abschnitt „Karte konfigurieren“](@site/static/img/map/configure_map_routes_android.png) ![Routenklassen](@site/static/img/map/routes_classes_android.webp)
 
 - Um die gewünschten Routen auf der Karte anzuzeigen, aktivieren Sie diese in der *Routenliste* des Menüs [Karte konfigurieren](../../map/configure-map-menu.md).
 - OsmAnd kann [Routen hervorheben, die in OpenStreetMap vorhanden sind](https://wiki.openstreetmap.org/wiki/Relation:route). Diese können durch Tippen auf [das Symbol auf der Route](#save-as-a-track) ausgewählt werden, und wenn die sichtbare Routenmenge korrekt konfiguriert ist, können Sie der Farbe und den Symbolen folgen.
-- Die wichtigsten Routentypen können auch nach Klassen und Unterklassen gefiltert werden, sodass Sie nur bestimmte Gruppen innerhalb jedes Typs anzeigen können. Sie können beispielsweise Wanderwege nach **OSMC-Symbolen** als Klassen und nach *internationalen, nationalen, regionalen* oder *lokalen Netzwerken* als Unterklassen anzeigen, die derzeit verfügbar sind, wenn das Plugin [OsmAnd-Entwicklung](../../plugins/development.md) aktiviert ist.
+- Die wichtigsten Routentypen können auch nach Klassen und Unterklassen gefiltert werden, sodass Sie nur bestimmte Gruppen innerhalb jedes Typs anzeigen können. So können Sie beispielsweise Wanderwege nach **OSMC-Symbolen** als Klassen und nach *internationalen, nationalen, regionalen* oder *lokalen Netzwerken* sowie *nicht klassifizierten Routen* als Unterklassen anzeigen. Ähnliche Netzwerkklassifizierungsfilter sind für Radtouren verfügbar. Diese Optionen sind derzeit verfügbar, wenn das Plugin [OsmAnd-Entwicklung](../../plugins/development.md) aktiviert ist. Wenn mehrere Routennetze überlappen, können einzelne Klassifizierungen aktiviert oder deaktiviert werden, um nur die gewünschten Routenebenen anzuzeigen.
 - Sie können mit dem Tool [Route planen](../../plan-route/create-route.md) einen Track über den Routen erstellen.
 - Wenn mehrere Routen entlang derselben Straße verlaufen, wird jede Route als separate halbtransparente Linie über den anderen angezeigt.
 - Wenn Sie auf eine Stelle tippen, an der mehrere Routen überlappen, wird ein Kontextmenü mit allen Routen angezeigt, die durch diesen Punkt verlaufen.
@@ -217,7 +218,7 @@ Navigieren Sie zu *<Translate android="true" ids="search_button,search_categorie
 
 </Tabs>
 
-Tippen Sie in den Routensuchergebnissen in der oberen rechten Ecke auf die Schaltfläche **Filter**, um die Liste einzugrenzen. Der Filterbildschirm enthält ein Feld **Nach Namen filtern**; einen Block **Typ** mit *Büro*, *Postfiliale* und *Postpartner*; und **zusätzliche Kriterien**, die von der ausgewählten Routenkategorie oder Aktivität abhängen, da jede Kategorie ihre eigenen Merkmale und Filterwerte anzeigen kann.
+Tippen Sie in den Routensuchergebnissen in der oberen rechten Ecke auf die Schaltfläche **Filter**, um die Liste einzugrenzen. Der Filterbildschirm enthält ein Feld **Nach Namen filtern**; einen Block **Typ** mit *Bureau*, *Postfiliale* und *Postpartner*; und **zusätzliche Kriterien**, die von der ausgewählten Routenkategorie oder Aktivität abhängen, da jede Kategorie ihre eigenen Merkmale und Filterwerte anzeigen kann.
 
 Sie können Filter mithilfe der Schalter aktivieren oder deaktivieren, und einige Abschnitte enthalten *Alle anzeigen*, um zusätzliche Werte anzuzeigen.
 

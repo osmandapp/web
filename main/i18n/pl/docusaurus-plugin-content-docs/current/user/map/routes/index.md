@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
 title:  Trasy
 sidebar_position: 11
 ---
@@ -29,11 +29,11 @@ OsmAnd ma wiele zaawansowanych funkcji do wyświetlania różnych [tras](./types
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.webp)
 
 - Aby wyświetlić wymagane trasy na mapie, włącz je na *liście Tras* w menu [Konfiguruj mapę](../../map/configure-map-menu.md).
 - OsmAnd może wyróżniać [trasy obecne w OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Można je wybrać, dotykając [symbolu na trasie](#save-as-a-track), a jeśli widoczny zestaw tras jest poprawnie skonfigurowany, można podążać za kolorem i ikonami.
-- Główne typy tras można również filtrować według klas i podklas, co pozwala wyświetlać tylko określone grupy w ramach każdego typu. Na przykład można wyświetlać trasy piesze według **symboli OSMC** jako klas oraz według sieci *międzynarodowych, krajowych, regionalnych* lub *lokalnych* jako podklas, które są obecnie dostępne po włączeniu wtyczki [OsmAnd Development](../../plugins/development.md).
+- Główne typy tras można również filtrować według klas i podklas, co pozwala wyświetlać tylko określone grupy w ramach każdego typu. Na przykład można wyświetlać trasy piesze według **symboli OSMC** jako klas oraz według sieci *międzynarodowych, krajowych, regionalnych* lub *lokalnych*, a także *tras niesklasyfikowanych* jako podklas. Podobne filtry klasyfikacji sieci są dostępne dla tras rowerowych. Te opcje są obecnie dostępne po włączeniu wtyczki [OsmAnd Development](../../plugins/development.md). Gdy wiele sieci tras nakłada się, można włączać lub wyłączać poszczególne klasyfikacje, aby wyświetlać tylko wybrane poziomy tras.
 - Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Zaplanuj trasę](../../plan-route/create-route.md). 
 - Gdy kilka tras przebiega tą samą drogą, każda trasa jest wyświetlana jako oddzielna półprzezroczysta linia umieszczona nad innymi. 
 - Po dotknięciu miejsca, w którym nakładają się liczne trasy, wyświetlane jest menu kontekstowe ze wszystkimi trasami przechodzącymi przez ten punkt. 

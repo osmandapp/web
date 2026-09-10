@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title:  POI-Suche
 ---

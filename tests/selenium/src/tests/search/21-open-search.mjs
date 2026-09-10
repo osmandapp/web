@@ -9,7 +9,6 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
 
     await waitBy(By.id('se-search-input'));

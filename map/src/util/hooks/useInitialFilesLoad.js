@@ -29,8 +29,8 @@ export function applyRefreshedInfoFilesToGpx(updatedData, setGpxFiles, setSelect
         let next = null;
         for (const [gpxName, file] of Object.entries(prev)) {
             const infoRow = infoFilesFromRefresh.find((r) => r.name === gpxName + INFO_FILE_EXT);
-            if (!infoRow) continue;
-            const data = infoRow.details?.data ?? {};
+            const data = infoRow?.details?.data;
+            if (data == null) continue;
             next = next ?? { ...prev };
             next[gpxName] = {
                 ...file,
@@ -77,20 +77,18 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
 export async function loadShareFiles(setShareWithMeFiles) {
     const tracks = await getShareWithMe({ type: GPX });
     const favorites = await getShareWithMe({ type: FAVOURITES });
-    const preparedTracks =
-        tracks.length === 0
-            ? {}
-            : Object.fromEntries(
-                  getGpxFiles(tracks).map((t) => {
-                      return [t.name, { ...t, sharedWithMe: true }];
-                  })
-              );
+    const preparedTracks = Object.fromEntries(
+        getGpxFiles(tracks).map((t) => {
+            return [t.name, { ...t, sharedWithMe: true }];
+        })
+    );
     setShareWithMeFiles((prev) => ({
         ...prev,
         tracks: preparedTracks,
-        favorites: favorites?.uniqueFiles,
+        favorites: favorites?.uniqueFiles ?? [],
     }));
-    return favorites?.uniqueFiles.map((f) => {
+
+    return (favorites?.uniqueFiles ?? []).map((f) => {
         return {
             ...f,
             sharedWithMe: true,
@@ -247,7 +245,11 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, l
         let oneGpxFile = preparedGpxFile({ file });
         oneGpxFile.showOnMap = true;
         newGpxFiles[file.name] = oneGpxFile;
-        let f = await Utils.getFileData(newGpxFiles[file.name]);
+        const f = await Utils.getFileData(newGpxFiles[file.name]);
+        if (!f) {
+            delete newGpxFiles[file.name];
+            continue;
+        }
         const gpxfile = new File([f], file.name, {
             type: 'text/plain',
         });

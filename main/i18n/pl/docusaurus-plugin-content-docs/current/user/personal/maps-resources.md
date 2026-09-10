@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
@@ -142,7 +142,7 @@ Zakładka **Pobrane** umożliwia pobieranie różnych typów map z serwerów Osm
 
 W menu Pobierz mapy znajduje się sekcja **Mapy świata**, która zapewnia dostęp do pobierania różnych map świata, uzupełniając funkcjonalność aplikacji.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*tylko Android*). Ten plik zawiera korekty wysokości w celu skompensowania krzywizny planety.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*tylko Android*). Ten plik zawiera korekty wysokości używane do poprawy dokładności wysokości na urządzeniach, które nie podają wysokości nad średnim poziomem morza (MSL), w tym gdy interfejs API Androida jest używany jako [źródło lokalizacji](../personal/global-settings.md#location-source) zamiast Google Play Services.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Zapewnia rozległy przegląd powierzchni ziemi, przydatny do długoterminowego planowania tras i swobodnej eksploracji.
 - **Mapa pogody świata**. Umożliwia pobranie mapy z informacjami o pogodzie.
 
@@ -414,7 +414,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 Zakładka **Aktualizacje** umożliwia odświeżenie map i zasobów OsmAnd. Mapy standardowe i tylko z drogami są wydawane raz w miesiącu, zwykle między 2 a 5 dniem, i zawierają dane OpenStreetMap do ostatniego dnia poprzedniego miesiąca (na przykład wydanie październikowe zawiera dane do 30 września). Inne dane, takie jak Wikipedia, mapy terenu lub mapy morskie, mogą mieć inne, nieregularne harmonogramy aktualizacji. Prognoza pogody ma swój własny regularny cykl aktualizacji. Aby uzyskać szczegółowe informacje, zobacz [Pobierz prognozę](../plugins/weather.md#download-forecast). 
 
-Jeśli kilka map tego samego kraju wymaga aktualizacji, OsmAnd grupuje je w pojedynczy element na liście Aktualizacje. Zgrupowany element pokazuje nazwę kraju i liczbę zawartych map. Po dotknięciu otwiera się arkusz dolny *Aktualizuj mapy*, wyświetlający wszystkie mapy wymagające aktualizacji. 
+Jeśli kilka map tego samego kraju wymaga aktualizacji, OsmAnd grupuje je w pojedynczy element na liście Aktualizacje. Zgrupowany element pokazuje nazwę kraju i liczbę zawartych map. Po dotknięciu otwiera się arkusz dolny *Aktualizuj mapy*, wyświetlający wszystkie mapy wymagujące aktualizacji. 
 
 Użyj przycisku *Aktualizuj wszystko*, aby zaktualizować wszystkie mapy jednocześnie, lub aktualizuj poszczególne mapy w razie potrzeby. Aby uzyskać cogodzinne aktualizacje, sprawdź status subskrypcji [Aktualizacji na żywo](#live-updates). Jeśli jest włączona, sekcja **Aktualizacje na żywo** pojawi się na górze zakładki, pod wskaźnikiem pamięci urządzenia.
 

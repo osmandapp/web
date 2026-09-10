@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title:  Édition OpenStreetMap
 ---
@@ -256,13 +256,13 @@ Vos traces seront ajoutées aux [traces OSM](https://www.openstreetmap.org/trace
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -270,18 +270,17 @@ Vos traces seront ajoutées aux [traces OSM](https://www.openstreetmap.org/trace
 
 Pour [téléverser la trace GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), suivez les étapes ci-dessous :  
 
-- Trouvez la trace requise dans l'onglet [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*](../personal/tracks/manage-tracks.md).  
+- Trouvez la trace requise dans l'ongtab [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*](../personal/tracks/manage-tracks.md).  
 - Appuyez sur le *menu à trois points* à côté du nom de la trace et sélectionnez *Exporter*.
 
 **Paramètres :**
 
 - **<Translate android="true" ids="shared_string_description"/>**. Permet d'ajouter une description à la trace. La description s'applique à toutes les traces sélectionnées. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Cet élément dans la section des paramètres vous permet d'ajouter des étiquettes pour identifier la trace. L'étiquette par défaut est "osmand". Si la trace a été enregistrée avec une activité spécifique basée sur le profil sélectionné, cette activité est également ajoutée automatiquement en tant qu'étiquette lors du téléversement. Pour les groupes de traces téléversées, chaque trace reçoit sa propre étiquette d'activité. Pour certains profils (par exemple, Transport public), l'étiquette d'activité n'est pas ajoutée. Vous pouvez saisir manuellement des étiquettes supplémentaires, séparées par des virgules.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Cet élément dans la section des paramètres vous permet d'ajouter des étiquettes pour identifier la trace. L'étiquette par défaut est "osmand". Si la trace a été enregistrée avec une activité spécifique basée sur le profil sélectionné, cette activité est également ajoutée automatiquement en tant qu'étiquette lors du téléversement. Pour les groupes de traces téléversées, chaque trace reçoit sa propre étiquette d'activité. Pour certains profils (par exemple, Transport public), l'étiquette d'activité n'est pas ajoutée. Vous pouvez saisir manuellement des étiquettes supplémentaires, séparées par des virgues.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Visibilité de la trace pour les utilisateurs d'OSM :  
-   - *Publique* signifie que la trace est publiquement disponible et affichée sous forme brute dans vos traces GPS, listes de traces GPS et listes de traces horodatées. Les données transmises via l'API ne sont pas référencées avec votre page de trace. Les horodatages des points de trace ne sont pas disponibles via l'API GPS publique et les points de trace ne sont pas ordonnés chronologiquement.
-   - *Identifiable* signifie que la trace sera affichée publiquement dans vos points de trace GPS et vos listes de traces GPS publiques, ce qui signifie que d'autres utilisateurs pourront télécharger la trace brute et l'associer à votre nom d'utilisateur. Les données de points de trace horodatés publics de l'API GPS transmises via l'API des points de trace seront liées à votre page de trace d'origine.
-   - *Traçable* signifie que la trace n'est pas affichée dans les listes publiques, mais les points de trace traités avec horodatages (qui ne peuvent pas être liés directement à vous) sont chargés depuis l'API GPS publique.
-   - *Privée* signifie que la trace n'est pas affichée dans les listes publiques, mais les points de trace de celle-ci dans un ordre non chronologique sont disponibles via l'API GPS publique sans horodatages.
+      - *Identifiable* signifie que la trace sera affichée publiquement dans vos points de trace GPS et vos listes de traces GPS publiques, ce qui signifie que d'autres utilisateurs pourront télécharger la trace brute et l'associer à votre nom d'utilisateur. Les données de points de trace horodatés publics de l'API GPS transmises via l'API des points de trace seront liées à votre page de trace d'origine. Cette option est sélectionnée par défaut.
+      - *Trackable* signifie que la trace n'est pas affichée dans les listes publiques, mais les points de trace traités avec horodatages (qui ne peuvent pas être liés directement à vous) sont chargés depuis l'API GPS publique.
+      {/* *Private* signifie que la trace n'est pas affichée dans les listes publiques, mais les points de trace de celle-ci dans un ordre non chronologique sont disponibles via l'API GPS publique sans horodatages. *Public* signifie que la trace est publiquement disponible et affichée sous forme brute dans vos traces GPS, listes de traces GPS et listes de traces horodatées. Les données transmises via l'API ne sont pas référencées avec votre page de trace. Les horodatages des points de trace ne sont pas disponibles via l'API GPS publique et les points de trace ne sont pas ordonnés chronologiquement.*/}
 - **<Translate android="true" ids="login_account"/>** - [Compte OSM](https://www.openstreetmap.org/login).
 
 :::info

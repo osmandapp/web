@@ -1,5 +1,5 @@
 ---
-source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
+source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
 sidebar_position: 4
 title:  Szczegóły trasy
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-OsmAnd pozwala znaleźć najlepszą trasę i poznać jej szczegóły. Aplikacja dostarcza szczegółowych informacji o trasie, takich jak dystans, [czas podróży](#distance--time--co2), [rodzaj nawierzchni](#road-attributes), [różnice wzniesień](#elevation-info), [dane o śladzie węglowym](#distance--time--co2) oraz [informacje o zakrętach](#turn-by-turn-information). Możesz także [analizować](#analyze-on-map) trasę na mapie, znajdować informacje o segmentach śladu, [drukować](#print) plan trasy, [zapisywać](#share--export-actions) trasę i udostępniać ją innym. Dzięki tej funkcjonalności zawsze będziesz znać szczegóły trasy i będziesz mógł efektywniej planować swoją podróż.  
+OsmAnd pozwala znaleźć najlepszą trasę i poznać jej szczegóły. Aplikacja dostarcza szczegółowych informacji o trasie, takich jak dystans, [czas podróży](#distance--time--co2), [rodzaj nawierzchni](#road-attributes), [różnice wzniesień](#elevation-info), [dane o śladzie węglowym](#distance--time--co2), oraz [informacje o zakrętach](#turn-by-turn-information). Możesz także [analizować](#analyze-on-map) trasę na mapie, znajdować informacje o segmentach śladu, [drukować](#print) plan trasy, [zapisywać](#share--save-actions) trasę i udostępniać ją innym. Dzięki tej funkcjonalności zawsze będziesz znać szczegóły trasy i będziesz mógł efektywniej planować swoją podróż.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -246,7 +246,7 @@ Atrybuty drogi są dostępne w [Szczegółach trasy](#how-to-access) i wyświetl
 
 </Tabs>
 
-Informacje o zakrętach dostarczają szczegółowych [instrukcji](#instructions) dotyczących nawigacji po trasie. Oprócz menu *Szczegóły*, są one również wyświetlane w widżetach [*Manewry na trasie*](../../widgets/nav-widgets.md#route-guidance) i [*Pasy ruchu*](../../widgets/nav-widgets.md#lanes). Informacje te pomagają lepiej nawigować po trasie i pozwalają planować z wyprzedzeniem.
+Informacje o zakrętach dostarczają szczegółowych [instrukcji](#instructions) dotyczących nawigacji po trasie. Oprócz menu *Szczegóły*, są one również wyświetlane w widżetach [*Manewry na trasie*](../../widgets/nav-widgets.md#route-guidance) i [*Pasy ruchu*](../../widgets/nav-widgets.md#lanes). Informacje te pomagają lepiej nawigować po trasie i pozwalają planować z wyprzedaniem.
 
 Dotknij określonego odcinka trasy na liście, aby wyświetlić szczegółowe informacje lub wprowadzić wymagane zmiany. Mapa powiększa się i otwiera się [Menu kontekstowe](../../map/map-context-menu.md).
 
@@ -281,7 +281,7 @@ Instrukcje zawierają informacje o poruszaniu się po trasie, takie jak:
 
 ### Wskaźnik strony drogi {#roadside-indicator}
 
-:::caution Tylko iOS
+:::caution iOS only
 Ten typ instrukcji jest obecnie *niedostępny dla wersji Android* aplikacji OsmAnd.
 :::
 
@@ -311,7 +311,7 @@ Informacje te mogą być przydatne podczas planowania podróży i chęci oszacow
 Możliwość **drukowania** lub **zapisywania** informacji zakręt po zakręcie **w formacie PDF** jest szczególnie przydatna podczas podróży na duże odległości lub w nieznanych miejscach, gdy trzeba mieć bardziej szczegółowe pojęcie o trasie i czasie potrzebnym na jej pokonanie.
 
 
-## Udostępnij / Eksportuj (Akcje) {#share--export-actions}
+## Udostępnij / Zapisz (Akcje) {#share--save-actions}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -323,7 +323,7 @@ Możliwość **drukowania** lub **zapisywania** informacji zakręt po zakręcie 
 
 <TabItem value="ios" label="iOS">
 
-![Trasa nawigacji iOS](@site/static/img/navigation/route/navigation_route_share_ios.png)
+![Trasa nawigacji iOS](@site/static/img/navigation/route/navigation_route_share_ios.webp)
 
 </TabItem>
 
@@ -332,8 +332,8 @@ Możliwość **drukowania** lub **zapisywania** informacji zakręt po zakręcie 
 Sekcja nawigacji Szczegóły trasy ma opcje, które pozwalają na wykonanie określonych działań z informacjami o trasie.  
 
 - [**Drukuj**](#print). Pozwala na wydrukowanie lub zapisanie informacji o trasie zakręt po zakręcie.
-- **Eksportuj/Zapisz**. Pozwala zapisać informacje o trasie **jako nowy ślad** do późniejszego użytku offline. Wyeksportowany ślad zawiera wszystkie informacje o atrybutach drogi i instrukcjach zakrętów. Tak więc [nawigacja po tym śladzie](./gpx-navigation.md) powinna zapewniać wszystkie funkcje, jak nawigacja po trasie.
-- **Udostępnij**. Udostępnia wyeksportowany ślad lub link do trasy, który można otworzyć na innym urządzeniu z OsmAnd.
+- **Zapisz**. Pozwala zapisać informacje o trasie **jako nowy ślad** do późniejszego użytku offline. Zapisany ślad zawiera wszystkie informacje o atrybutach drogi i instrukcjach zakrętów. Tak więc [nawigacja po tym śladzie](./gpx-navigation.md) powinna zapewniać wszystkie funkcje, jak nawigacja po trasie.
+- **Udostępnij**. Pozwala udostępnić trasę jako plik lub link, który można otworzyć na innym urządzeniu z OsmAnd.
 
 
 ## Powiązane artykuły {#related-articles}

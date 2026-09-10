@@ -58,14 +58,12 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                 id={'se-menu-fav-' + group.name}
                 onClick={(e) => {
                     if (e.target !== 'path') {
-                        if (!sharedFile) {
-                            updateQueryParam({
-                                key: FAVORITES_URL_PARAM_FOLDER,
-                                value: group.name,
-                                expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
-                                replace: false,
-                            });
-                        }
+                        updateQueryParam({
+                            key: FAVORITES_URL_PARAM_FOLDER,
+                            value: group.name,
+                            expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                            replace: false,
+                        });
                         zoomToFit({ type: OBJECT_TYPE_FAVORITE, object: group });
                     }
                 }}

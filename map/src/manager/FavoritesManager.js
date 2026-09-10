@@ -1,4 +1,7 @@
 import MarkerOptions, {
+    BACKGROUND_WPT_SHAPE_CIRCLE,
+    BACKGROUND_WPT_SHAPE_OCTAGON,
+    BACKGROUND_WPT_SHAPE_SQUARE,
     changeIconSizeWpt,
     createPoiIcon,
     getBackground,
@@ -8,6 +11,7 @@ import Utils, { getDistance, quickNaNfix } from '../util/Utils';
 import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
+import i18n from '../i18n';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
@@ -46,11 +50,10 @@ const colors = [
     '#d00d0d',
     '#a71de1',
 ];
-const shapes = [
-    MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
-    MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON,
-    MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE,
-];
+// read on call, not on import: MarkerOptions imports this file back through the poi managers
+function getShapes() {
+    return [BACKGROUND_WPT_SHAPE_CIRCLE, BACKGROUND_WPT_SHAPE_OCTAGON, BACKGROUND_WPT_SHAPE_SQUARE];
+}
 
 function GroupResult(clienttimems, updatetimems, data) {
     this.clienttimems = clienttimems;
@@ -63,7 +66,7 @@ function getShapesSvg(color) {
     // Convert OsmAnd color formats (#rrggbb / #aarrggbb) to a CSS color string
     // so SVG `fill="..."` honours alpha for transparent palette entries.
     const svgColor = hexToRgba(color);
-    shapes.forEach((shape) => {
+    getShapes().forEach((shape) => {
         res[shape] = getBackground(svgColor, shape);
     });
     return res;
@@ -378,7 +381,12 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
             });
             return refreshed?.groups?.find((g) => g.file?.name === res.name) ?? FavoritesManager.createGroup(res);
         }
+        ctx.setTrackErrorMsg({
+            title: i18n.t('web:create_folder_error_title'),
+            msg: i18n.t('web:create_folder_error_msg', { name: groupName }),
+        });
     }
+    return null;
 }
 
 export function createFavGroupFreeName(name, groups) {
@@ -401,14 +409,14 @@ export function createFavGroupFreeName(name, groups) {
 }
 
 export function isFavGroupExists(name, groups) {
-    return groups && groups.some((g) => g.name === name);
+    return groups?.some((g) => g.name === name);
 }
 
 function isHidden(pointsGroups, name) {
     let group = pointsGroups[name];
-    if (group && group.points) {
+    if (group?.points) {
         for (let point of group.points) {
-            if (point.ext.extensions.hidden === 'true') {
+            if (point.ext?.extensions?.hidden === 'true') {
                 return true;
             }
         }
@@ -811,7 +819,12 @@ export function addShareFavoriteToMap(marker, ctx) {
 
 export function getFavoriteId(layer) {
     const { lat, lng } = layer.getLatLng();
-    return `fav:${lat}:${lng}`;
+
+    return favoriteIdFromLatLng(lat, lng);
+}
+
+export function favoriteIdFromLatLng(lat, lng) {
+    return `fav:${Number.parseFloat(lat)}:${Number.parseFloat(lng)}`;
 }
 
 export function getSelectedFavoriteObj({
@@ -901,7 +914,6 @@ const FavoritesManager = {
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
     colors: colors,
-    shapes: shapes,
 };
 
 export default FavoritesManager;

@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,9 +225,29 @@ Oltre alle funzioni di base dell'app OsmAnd in *CarPlay* che forniscono una como
 
 La guida vocale per *CarPlay* è una delle funzioni di navigazione più utili di OsmAnd, che fornisce una guida in tempo reale e consente al conducente di rimanere concentrato sulla strada. Le istruzioni vocali indicano chiaramente le svolte, le direzioni e altre istruzioni di navigazione, garantendo un uso più sicuro e confortevole del sistema di navigazione.  
 
-Quando vengono riprodotte le istruzioni vocali, OsmAnd regola l'audio di sottofondo in base al suo tipo. I contenuti audio parlati, come podcast e audiolibri, possono essere messi in pausa automaticamente durante le istruzioni di navigazione. La riproduzione musicale continua a volume ridotto. L'opzione *<Translate ios="true" ids="pause_spoken_audio"/>* consente di controllare questo comportamento.
+Quando vengono riprodotte le istruzioni vocali, OsmAnd regola l'audio di sottofondo in base al suo tipo. Con l'opzione *<Translate ios="true" ids="pause_spoken_audio"/>* abilitata, i contenuti audio parlati, come podcast e audiolibri, vengono messi in pausa durante le istruzioni di navigazione, mentre la riproduzione musicale continua a volume ridotto. Quando *<Translate ios="true" ids="pause_spoken_audio"/>* è disabilitata, sia l'audio parlato che la musica continuano a essere riprodotti a volume ridotto.  
 
 Per configurare le istruzioni vocali in base al profilo selezionato, è necessario farlo prima di avviare un percorso nell'app OsmAnd sul dispositivo. Per visualizzare le impostazioni consigliate per *CarPlay*, consultare l'articolo [Istruzioni vocali / Notifiche](../navigation/guidance/voice-navigation.md).  
+
+
+### Avvisi di navigazione {#navigation-alerts}
+
+![Avviso mancante](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Avviso privato](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Prima dell'avvio della navigazione vengono mostrati automaticamente avvisi utili quando è necessaria un'azione aggiuntiva per calcolare il percorso. Questi avvisi aiutano a risolvere i problemi di instradamento prima dell'inizio della navigazione.
+
+**Mappe mancanti o non aggiornate**
+
+Se alcune mappe offline necessarie per calcolare il percorso sono mancanti o non aggiornate, viene visualizzato un avviso. È possibile scegliere una delle seguenti opzioni:
+- **Usa mappe scaricate**. Calcola il percorso utilizzando le mappe attualmente disponibili sul dispositivo.
+- **Visualizza sul telefono**. Apri la schermata di download delle mappe sull'iPhone per scaricare o aggiornare le mappe richieste. Dopo il download delle mappe, è possibile riavviare la navigazione.
+- **Annulla**. Chiudi l'avviso senza avviare la navigazione.
+
+**Avviso di accesso privato**
+
+Se il percorso richiede l'uso di una strada privata per raggiungere la destinazione, viene visualizzato un avviso: *Consentire l'uso di una strada privata per raggiungere la destinazione?* È possibile scegliere:
+- **Consenti**. Continua con il percorso utilizzando la strada privata.
+- **Annulla**. Chiudi l'avviso e torna alla schermata precedente, dove è possibile modificare la destinazione o continuare con un'altra azione.
 
 
 ### Widget di avviso su schermo {#screen-alert-widget}

@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title:  POI zoeken
 ---
@@ -198,10 +198,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Met de **Filter**-functie kunt u de nodige kenmerken selecteren en als resultaat een lijst krijgen met alleen relevante objecten. Om het filter te gebruiken:
 
 - Selecteer de categorie waarin u geïnteresseerd bent uit de categorielijst.
-- Op het scherm dat wordt geopend, tikt u op het pictogram dat het filter weergeeft. Het bevindt zich onder het invoerveld, naast *Toon op de kaart*.
+- Op het scherm dat wordt geopend, tikt u op het pictogram dat het filter weergeeft. Het bevindt zich onder het invoerveld, naast de *Sorteren op*-chip op Android en naast *Toon op de kaart* op iOS.
 - Selecteer in het filter het type kenmerken.
 
-![POI zoeken Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![POI zoeken Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhangt van de geselecteerde categorie. Elke categorie heeft een aantal specifieke filters, georganiseerd in mappen per type. Er zijn in totaal *21 standaardcategorieën*. Enkele daarvan worden hier vermeld:
 
@@ -383,7 +383,7 @@ Om aangepaste filters te maken voor het vinden van plaatsen op de kaart, selecte
 2. **Kerstmis**. Bevat 5 soorten filters:  
     *Kerstevenement, Kerstmarkt, Kerstpiramide, Kerstwinkel, Kerstboom*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Bevat 16 types: *Volkstuinen, Atol, Stadsdeel, Stad, Stadsblok, Land, Gerechtsgebouw, Douane, Diplomatiek kantoor, Boerderij, Overheid, Gehucht, Eiland, Eilandje, Geïsoleerde woning, Plaats, Wijk, Politie, Gevangenis, Kwartier, Woonwijk, Voorstad, Stad, Stadhuis, Dorp*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Bevat 16 types: *Volkstuinen, Atol, Stadsdeel, Stad, Stadsblok, Land, Gerechtsgebouw, Doume, Diplomatiek kantoor, Boerderij, Overheid, Gehucht, Eiland, Eilandje, Geïsoleerde woning, Plaats, Wijk, Politie, Gevangenis, Kwartier, Woonwijk, Voorstad, Stad, Stadhuis, Dorp*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Bevat 26 soorten filters.  
 

@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL, searchCollator } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, SEARCH_ENGINE_SPATIAL } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import LoginContext from '../../context/LoginContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -31,7 +32,12 @@ import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/Ma
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getIconByType, searchCloudTrackFeatures, searchFavoriteFeatures } from '../../manager/SearchManager';
+import {
+    buildFavoriteFeatures,
+    buildTrackFeatures,
+    buildWptFeatures,
+    getIconByType,
+} from '../../manager/SearchManager';
 import { POI_LAYER_ID, SEARCH_LAYER_ID, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import {
@@ -44,56 +50,17 @@ import {
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
-import { searchByWordApi, getMapsFromUrl } from '../../manager/SearchApi';
+import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import { FAVORITE_HIT_GROUP_ID, searchTypeMap, USER_OBJECT_TYPES } from '../../manager/searchConstants';
+import { getObjIdSearch } from '../../manager/SearchManager';
 import {
     getAdditionalMatchedAmenityObjects,
     getMatchedAmenityProperties,
     hasValidMatchedObjectCoords,
 } from '../../manager/SpatialSearchMatchedObjects';
 
-export const SEARCH_TYPE_CATEGORY = 'category';
-
-export const SEARCH_ICON_MAP_LOCATION = 'location';
-export const SEARCH_ICON_MAP_BUILDING = 'house';
-export const SEARCH_ICON_MAP_STREET = 'street';
-export const SEARCH_ICON_MAP_INTERSECTION = 'intersection';
-export const SEARCH_ICON_MAP_GPX_TRACK = 'gpx_track';
-
 export const ZOOM_TO_MAP = 17;
-
-export const searchTypeMap = {
-    LOCATION: 'LOCATION',
-    INTERSECTION: 'STREET_INTERSECTION',
-    HOUSE: 'HOUSE',
-    STREET: 'STREET',
-    POI: 'POI',
-    POI_TYPE: 'POI_TYPE',
-    CITY: 'CITY',
-    TOWN: 'TOWN',
-    VILLAGE: 'VILLAGE',
-    GPX_TRACK: 'GPX_TRACK',
-    FAVORITE: 'FAVORITE',
-};
-
-export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
-
-export const typeIconMap = {
-    [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_LOCATION,
-    [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
-    [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
-    [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
-    [searchTypeMap.GPX_TRACK]: SEARCH_ICON_MAP_GPX_TRACK,
-};
-
-export function getObjIdSearch(obj) {
-    if (obj.properties[POI_ID]) {
-        return obj.properties[POI_ID];
-    } else if (obj.geometry.coordinates[0] === 0 && obj.geometry.coordinates[1] === 0) {
-        return null;
-    }
-    return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
-}
 
 // Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
 export function buildFavGroupMap(favoriteFeatures) {
@@ -138,6 +105,7 @@ function fitBboxIfValid({ map, mtx, bbox }) {
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const ltx = useContext(LoginContext);
     const map = useMap();
 
     const navigate = useNavigate();
@@ -193,35 +161,23 @@ export default function SearchLayer() {
         }
     }, [ctx.searchQuery]);
 
-    // When favorites change (rename, edit, delete), refresh the favorites part of search results
+    // When tracks or favorites change (rename, edit, delete), refresh their part of open search results
     useEffect(() => {
         const query = ctx.searchQuery?.query;
         if (!query || ctx.searchQuery?.type || !ctx.searchResult) {
             return;
         }
-
-        const favoriteFeatures = searchFavoriteFeatures({
-            favorites: ctx.favorites,
-            query,
-            collator: searchCollator,
+        searchUserData(query).then((userData) => {
+            const userFeatures = applyUserDataFeatures(userData);
+            ctx.setSearchResult((prev) => {
+                if (!prev) return prev;
+                const serverFeatures = (prev.features ?? []).filter(
+                    (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
+                );
+                return { ...prev, features: [...userFeatures, ...serverFeatures] };
+            });
         });
-
-        const favGroupMap = buildFavGroupMap(favoriteFeatures);
-
-        ctx.setSearchResult((prev) => {
-            if (!prev) return prev;
-            const trackFeatures = (prev.features ?? []).filter(
-                (f) => f.properties?.[CATEGORY_TYPE] === searchTypeMap.GPX_TRACK
-            );
-            const serverFeatures = (prev.features ?? []).filter(
-                (f) =>
-                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.FAVORITE &&
-                    f.properties?.[CATEGORY_TYPE] !== searchTypeMap.GPX_TRACK
-            );
-            return { ...prev, features: [...trackFeatures, ...favoriteFeatures, ...serverFeatures] };
-        });
-        ctx.setSearchFavoriteGroupIds(favGroupMap);
-    }, [ctx.favorites]);
+    }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles, ctx.shareWithMeFiles?.tracks]);
 
     useEffect(() => {
         let cancelled = false;
@@ -282,6 +238,7 @@ export default function SearchLayer() {
         }
         const bbox = visible.bounds;
         try {
+            const userDataPromise = searchUserData(searchData.query);
             const response = await searchByWordApi({
                 latlng: searchData.latlng,
                 bbox,
@@ -293,21 +250,9 @@ export default function SearchLayer() {
             });
             if (response?.ok) {
                 const data = await response.json();
-                const trackFeatures = searchCloudTrackFeatures({
-                    listFiles: ctx.listFiles,
-                    query: searchData.query,
-                    collator: searchCollator,
-                });
-                const favoriteFeatures = searchFavoriteFeatures({
-                    favorites: ctx.favorites,
-                    query: searchData.query,
-                    collator: searchCollator,
-                });
-                const features = [...trackFeatures, ...favoriteFeatures, ...(data?.features ?? [])];
-                const favGroupMap = buildFavGroupMap(favoriteFeatures);
-                ctx.setSearchFavoriteGroupIds(favGroupMap);
+                const userFeatures = applyUserDataFeatures(await userDataPromise);
                 ctx.setSearchVisibleLevel(0);
-                ctx.setSearchResult({ ...data, features });
+                ctx.setSearchResult({ ...data, features: [...userFeatures, ...(data?.features ?? [])] });
             } else if (!response?.aborted) {
                 ctx.setSearchFavoriteGroupIds(null);
                 ctx.setSearchVisibleLevel(0);
@@ -320,6 +265,35 @@ export default function SearchLayer() {
             clearTimeout(notifyTimeout);
             ctx.setProcessingSearch(false);
         }
+    }
+
+    // Server matches, ranks and limits tracks, favorites and waypoints of opened tracks
+    async function searchUserData(query) {
+        if (!ltx.loginUser) {
+            return null;
+        }
+        const visibleTracksWithWpts = (files, shared) =>
+            Object.values(files ?? {})
+                .filter((file) => file.url && file.wpts?.length)
+                .map((file) => ({ file: file.name, shared }));
+        const openedTracks = [
+            ...visibleTracksWithWpts(ctx.gpxFiles, false),
+            ...visibleTracksWithWpts(ctx.shareWithMeFiles?.tracks, true),
+        ];
+        const response = await searchUserDataApi({ query, openedTracks });
+        return response?.ok ? await response.json() : null;
+    }
+
+    // builds user data features (shown before server results) and updates favorite group ids
+    function applyUserDataFeatures(userData) {
+        const favorites = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
+        ctx.setSearchFavoriteGroupIds(buildFavGroupMap(favorites));
+
+        return [
+            ...buildTrackFeatures(userData?.tracks ?? []),
+            ...favorites,
+            ...buildWptFeatures(ctx, userData?.wpts ?? []),
+        ];
     }
 
     function removeOldSearchLayer() {
@@ -383,8 +357,7 @@ export default function SearchLayer() {
         const center = map.getCenter();
         const zoom = map.getZoom();
         const latitude = center.lat;
-        // FAVORITE and GPX_TRACK are user objects rendered by their own layers — skip map markers for them.
-        const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.GPX_TRACK]);
+        // user objects are rendered by their own layers — skip map markers for them
         const mapMarkerFeatures = searchMarkerFeatures.filter(
             (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
         );
@@ -393,7 +366,6 @@ export default function SearchLayer() {
             places: mapMarkerFeatures,
             zoom,
             latitude,
-            iconSize: DEFAULT_ICON_SIZE,
             isPoi: true,
         });
 

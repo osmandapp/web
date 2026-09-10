@@ -1,5 +1,5 @@
 ---
-source-hash: b2c5dfbea6f0e570ad2619f831603d7dd15b8c490c1e9d25c7456d9a87d8c06d
+source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -143,7 +142,7 @@ Beschikbare details zijn onder andere:
 - [Binnen gebieden](#polygon-information)
 - [Nabije POI's](#nearby-pois)
 - [Nabije populaire plaatsen](#nearby-popular-places)
-- [Gidsen](#guides) (alleen Android)
+- [Gidsen](#guides)
 - [Openbaarvervoerroutes voor haltes](#public-transport-routes)
 - [Favorieten / Trackpunten uit dezelfde groep](#favorites--track-points-from-the-group)
 - [OpenStreetMap-link](#openstreetmap-link)
@@ -171,21 +170,20 @@ Naast de hierboven genoemde velden kan OsmAnd ook extra beschrijvende informatie
 
 ![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
-Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md#wikipedia-article), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
-
-Als de geselecteerde plaats een Wikipedia-artikel heeft, wordt een korte preview weergegeven in deze sectie. Wanneer het volledige artikel niet offline beschikbaar is, verschijnt de knop *Lezen op Wikipedia*. Door erop te tikken, opent zich een dialoog met opties afhankelijk van de toegang van de gebruiker: gebruikers met een gekocht abonnement kunnen de regionale Wikipedia-gegevens downloaden of het artikel in een browser openen, terwijl gratis gebruikers het artikel online kunnen openen of naar het scherm kunnen gaan dat offline toegang aanbiedt.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Description list](@site/static/img/map/description_list_new_ios.png)
-
-Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
+![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
 </Tabs>
+
+Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md#wikipedia-article), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
+
+Als de geselecteerde plaats een Wikipedia-artikel heeft, wordt een korte preview weergegeven in deze sectie. Wanneer het volledige artikel niet offline beschikbaar is, verschijnt de knop *Lezen op Wikipedia*. Door erop te tikken, opent zich een dialoog met opties afhankelijk van de toegang van de gebruiker: gebruikers met een gekocht abonnement kunnen de regionale Wikipedia-gegevens downloaden of het artikel in een browser openen, terwijl gratis gebruikers het artikel online kunnen openen of naar het scherm kunnen gaan dat offline toegang aanbiedt.
+
 
 
 ### Alternatieve namen {#alternative-names}
@@ -326,9 +324,21 @@ Tik op *Nabije [Populaire plaatsen](https://osmand.net/docs/user/plugins/wikiped
 
 ### Gidsen {#guides}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Guides Android](@site/static/img/map/details_guides.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Guides iOS](@site/static/img/map/details_guides.webp)
+
+</TabItem>
+
+</Tabs>
 
 De **Gidsen**-sectie verschijnt in het kaartcontextmenu voor sommige plaatsen en biedt toegang tot **Reis (Wikivoyage)**-gidsen die gerelateerd zijn aan het geselecteerde punt van interesse. Het toont een lijst van gidsvermeldingen (bijvoorbeeld een land of regio) die de geselecteerde plaats vermelden.
 

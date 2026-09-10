@@ -1,5 +1,5 @@
 import { apiGet } from '../util/HttpApi';
-import { filterRegularFolders } from './track/TracksManager';
+import { filterRegularFolders, renameLastFolderSegment } from './track/TracksManager';
 import { updateSortList } from '../menu/actions/SortActions';
 import { SMART_TYPE } from '../menu/share/shareConstants';
 
@@ -80,7 +80,7 @@ export async function deleteSmartFolder(folder, ctx) {
 }
 
 export async function renameSmartFolder(folder, newName, ctx) {
-    const newFolderName = folder.fullName.replace(folder.name, newName);
+    const newFolderName = renameLastFolderSegment(folder.fullName, newName);
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-smart-folder`, {
         params: {
             folderName: folder.fullName,

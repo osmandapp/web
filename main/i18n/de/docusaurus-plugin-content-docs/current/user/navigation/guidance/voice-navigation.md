@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
 sidebar_position: 3
 title:  Sprachansagen / Benachrichtigungen
 ---
@@ -52,7 +52,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Sprachnavigationseinstellungen Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Sprachnavigationseinstellungen Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Sprachnavigationseinstellungen Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> button* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Sprachnavigationseinstellungen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Sprachnavigationseinstellungen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Sprachnavigationseinstellungen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 
 - *Navigationsanweisungen wiederholen*. Ermöglicht die Wiederholung der Navigationsanweisungen in regelmäßigen Abständen von 1 Minute bis 30 Minuten. Oder manuell - wenn Sie eine Sprachansage verpasst haben, können Sie sie erneut anhören, indem Sie einfach auf den [aktuellen Abbiegepfeil](../../widgets/nav-widgets.md#next-turn) auf dem Anwendungsbildschirm tippen.
 - *[Zeitpunkt der Ansagen](#announcement-time)*.
+- *Gesprochene Audioinhalte pausieren* (*nur iOS*). Bei Aktivierung werden Podcasts, Hörbücher und andere gesprochene Inhalte während der Sprachansagen pausiert. Die Musikwiedergabe läuft mit reduzierter Lautstärke weiter. Bei Deaktivierung werden sowohl gesprochene Inhalte als auch Musik mit reduzierter Lautstärke wiedergegeben.
 
 **Ausgabe** (*nur Android*):
 

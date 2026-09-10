@@ -1,5 +1,5 @@
 ---
-source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  إدارة المسارات
 ---
@@ -80,13 +80,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 تُعرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد [أماكني](../../personal/myplaces.md) في تبويب *المسارات*. وهي منظمة حسب المجلد أو معروضة في قائمة أسفلها.
+
+يعرض كل مسار في القائمة اسم المجلد الأصلي في السطر الثاني مفصولاً بـ `|` (على سبيل المثال، `Hiking | Tracks`)، مما يسهل تحديد مكان تخزين المسار. ينطبق هذا في [البحث](#search) و[المجلدات الذكية](../../personal/tracks/smart-folder.md) و[تكوين الخريطة ← المسارات](../../map/tracks/index.md#configure-map).
 
 
 ### قائمة المسار {#track-menu}
@@ -105,7 +107,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -157,7 +159,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة البحث عن المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![وظيفة البحث عن المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - البحث حسب اسم المسار.
 - [الفرز حسب](#sort-by) لبحث أفضل إذا كنت لا تتذكر العنوان.
-- [تصفية](./smart-folder.md#search-filter) (*أندرويد فقط*) إذا كنت بحاجة إلى خصائص محددة للمسار.
+- [تصفية](./smart-folder.md#search-filter) إذا كنت بحاجة إلى خصائص محددة للمسار.
 
 
 ### وضع التحديد {#selection-mode}
@@ -184,7 +186,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![مسارات أماكني في iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![مسارات أماكني في iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -221,7 +223,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -254,7 +256,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -281,7 +283,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 > انقر مطولاً على حقل المجلد **لفتح** قائمة المجلد.
 
-![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -295,7 +297,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **الاسم** — يعرض اسم المجلد وتاريخ الإنشاء وعدد المسارات التي يحتوي عليها.
 - **إظهار جميع المسارات على الخريطة** (*أندرويد فقط*) — يعرض جميع المسارات في المجلد على الخريطة. إذا كان هناك العديد من المسارات، فقد يتسبب ذلك في تجميد الجهاز.
 - **تعديل الاسم** (*أندرويد*) / **إعادة تسمية** (*iOS*) — يسمح لك بإعادة تسمية المجلد.
-- [تغيير المظهر الافتراضي](../../map/tracks/appearance.md) (*أندرويد*) / **المظهر** (*iOS*) — يغير مظهر عرض جميع المسارات في المجلد.
+- [تغيير المظهر الافتراضي](../../map/tracks/appearance.md) (*أندرويد*) / **المظهر الافتراضي** (*iOS*) — يغير مظهر عرض جميع المسارات في المجلد.
 - [تصدير](../../personal/import-export.md) — يفتح تبويب *القائمة ← الإعدادات ← الإجراءات* لتصدير جميع المسارات في المجلد كملف [`.osf`](../../personal/import-export.md#export).
 - [نقل](#track-folder) — يسمح لك بنقل المجلد إلى مجلد آخر موجود أو إنشاء مجلد جديد.
 - [حذف المجلد](#delete-folder) — يحذف المجلد بعد التأكيد. ***هذا الإجراء لا يمكن التراجع عنه.***
@@ -317,7 +319,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -349,7 +351,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![مسارات أماكني في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![مسارات أماكني في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -388,7 +390,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *تبويب <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![القائمة السياقية لمسار في iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -412,7 +412,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Recherche](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Recherche](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +430,52 @@ La fonctionnalité **Recherche** (**Explorer** sur iOS) dans le plugin Astronomi
 
 La section Observer maintenant met en évidence les objets célestes qui sont visibles en ce moment ou ce soir. Cette section agit comme un outil de recommandation, affichant les objets les mieux adaptés à l'observation en fonction de votre emplacement et de votre heure actuels.
 
-**2. Catégories**
+**2. Éclipses solaires et lunaires** (*Android uniquement*)
+
+Les outils [Éclipse solaire](#solar-eclipse) et [Éclipse lunaire](#lunar-eclipse) permettent d'explorer les événements d'éclipse dans le monde entier, d'observer leur progression au fil du temps et de vérifier la visibilité des éclipses sur la carte.
+
+**3. Catégories**
 
 La section Catégories vous permet de parcourir les objets par type : Système solaire, Constellations, Étoiles, Nébuleuses, Amas d'étoiles et Ciel profond. Chaque catégorie ouvre une liste d'objets avec des informations clés : nom de l'objet, type ou constellation, magnitude (luminosité) et heure de lever ou de coucher (si applicable).
+
+### Éclipse solaire (Android uniquement) {#solar-eclipse}
+
+![Éclipse solaire](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Éclipse solaire](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+L'**Explorateur d'éclipses solaires** vous permet d'explorer les éclipses solaires passées et à venir dans le monde entier. Il combine la Carte des étoiles avec une chronologie interactive et une visualisation cartographique pour montrer comment une éclipse se développe à différents endroits.
+
+L'Explorateur d'éclipses solaires comprend les fonctionnalités suivantes :
+
+- **Navigation des éclipses**. Utilisez les boutons Précédent et Suivant pour basculer entre les éclipses solaires disponibles.
+- **Chronologie**. La chronologie affiche le début, le maximum et la fin de l'éclipse. Déplacez le curseur pour voir l'éclipse à tout moment pendant l'événement. Toutes les informations sur l'éclipse sont mises à jour automatiquement pour l'heure sélectionnée.
+- **Informations sur l'éclipse**. Le panneau d'informations affiche : le type d'éclipse, la date et l'heure actuelles, l'obscuration de l'éclipse, l'altitude du Soleil et les coordonnées du centre de la carte. Les informations affichées sont calculées pour le centre actuel de la carte.
+- **Trajectoire de l'éclipse**. Appuyez sur Ajuster la trajectoire de l'éclipse pour centrer la carte sur la trajectoire de l'éclipse. Appuyez sur *Afficher la carte* ou *Masquer la carte* pour afficher ou masquer la trajectoire de l'éclipse sur la carte. La trajectoire de l'éclipse montre où l'éclipse est visible et comment l'ombre de la Lune se déplace à travers la surface de la Terre.
+
+:::warning
+
+Ne regardez jamais directement le Soleil sans protection appropriée pour l'observation solaire. Les heures d'éclipse sont des estimations.
+
+:::
+
+### Éclipse lunaire (Android uniquement) {#lunar-eclipse}
+
+![Éclipse lunaire](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Éclipse lunaire](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+L'**Explorateur d'éclipses lunaires** vous permet d'explorer les éclipses lunaires dans le monde entier et d'observer comment la Lune passe à travers l'ombre de la Terre.
+
+L'Explorateur d'éclipses lunaires comprend les fonctionnalités suivantes :
+
+- **Navigation des éclipses**. Utilisez les boutons Précédent et Suivant pour basculer entre les éclipses lunaires disponibles.
+- **Types d'éclipses**. L'explorateur prend en charge : les éclipses pénombrales, les éclipses partielles et les éclipses totales
+- **Chronologie**. La chronologie affiche le début, le maximum et la fin de l'éclipse. Des marqueurs sur la chronologie indiquent les différentes phases de l'éclipse. Déplacez le curseur pour observer l'éclipse à tout moment pendant l'événement.
+- **Informations sur l'éclipse**. Le panneau d'informations affiche : la phase de l'éclipse, l'obscuration de l'éclipse, l'altitude de la Lune et les coordonnées du centre de la carte. Les informations affichées sont calculées pour le centre actuel de la carte.
+- **Carte de visibilité**. Appuyez sur *Ajuster la visibilité* pour centrer la carte sur la zone de visibilité de l'éclipse. Appuyez sur *Afficher la carte* ou *Masquer la carte* pour afficher ou masquer la couche de visibilité. La couche de visibilité met en évidence les régions où la Lune est au-dessus de l'horizon pendant l'éclipse.
+
+:::warning
+
+Les couleurs et la luminosité des ombres sont schématiques et destinées uniquement à la visualisation.
+
+:::
 
 ### Tri et filtres {#sorting-and-filters}
 

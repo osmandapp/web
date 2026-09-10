@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografie
 ---
@@ -369,7 +369,13 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 </Tabs>
 
-**3D-gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. Als [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) doorgangen door gebouwen bevat die zijn gemarkeerd met de tag `tunnel=building_passage`, renderen OsmAnd zichtbare openingen in het 3D-gebouwenmodel zodat wegen of voetgangerswegen die door het gebouw lopen correct worden weergegeven. 
+**3D-gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. 
+
+Voor complexe structuren gebruikt OsmAnd `building:part` om afzonderlijke delen van een gebouw met verschillende hoogtes en vormen weer te geven. 
+
+Als [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) doorgangen door gebouwen bevat die zijn gemarkeerd met de tag `tunnel=building_passage`, renderen OsmAnd zichtbare openingen in het 3D-gebouwenmodel zodat wegen of voetgangerswegen die door het gebouw lopen correct worden weergegeven. 
+
+3D-gebouwen kunnen verschillende dakvormen bevatten op basis van [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Key:roof:shape). De tag `roof:shape` definieert de dakgeometrie, terwijl `roof:levels` en `roof:height` informatie geven over de hoogte ervan.
 
 3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven. Wanneer u in- of uitzoomt en wanneer u de kaart verschuift, verschijnen en verdwijnen 3D-gebouwen met een vloeiende vervagingsanimatie. Wanneer een POI of een geselecteerde locatie (zoals een kaartpin of navigatiebestemming) zich binnen een gebouw bevindt, markeert OsmAnd het bijbehorende gebouw om het gemakkelijker te identificeren op de kaart.
 

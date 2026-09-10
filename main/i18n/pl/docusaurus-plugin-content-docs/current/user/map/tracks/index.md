@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  Ślady
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ Możesz zarządzać widocznością śladów, wybierając, które z nich mają by
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Konfiguracja mapy śladów Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Konfiguracja mapy śladów Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Konfiguracja mapy śladów Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Konfiguracja mapy śladów Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sh
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Konfiguracja mapy śladów iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Konfiguracja mapy śladów iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Konfiguracja mapy śladów iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Konfiguracja mapy śladów iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 

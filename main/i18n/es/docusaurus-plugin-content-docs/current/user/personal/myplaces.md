@@ -1,5 +1,5 @@
 ---
-source-hash: cd1409ef4efe33692ba77c372851417a07f87fabc97da46cbce8bb317de4b410
+source-hash: 6d77d33fd197da161c32e4ea8defeaa4356c799cf08f389de07887f5da2f0df8
 sidebar_position: 6
 title:  Mis lugares
 ---
@@ -38,7 +38,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_2.png)
+![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios_new.png)
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios_new.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -142,7 +142,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios_new.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -248,7 +248,7 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/my_places_ios.png)
+![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 La sección **Viajes** contiene guías de viaje y artículos marcados como favoritos guardados para acceso sin conexión. Puede abrir, organizar y gestionar rápidamente su contenido de viaje guardado desde Mis lugares. La sección Viajes solo se muestra cuando se ha marcado como favorito más de una guía de viaje.
 

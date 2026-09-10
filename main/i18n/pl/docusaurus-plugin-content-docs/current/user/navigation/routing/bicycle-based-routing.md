@@ -1,5 +1,5 @@
 ---
-source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
+source-hash: 25c13b0161cd5e0efefe881e5446503a1ce483f3ea041fd84cfc9f4b33858e9c
 sidebar_position: 3
 title:  Wyznaczanie trasy dla roweru (MTB)
 ---
@@ -31,7 +31,7 @@ Funkcje wyznaczania tras rowerowych w OsmAnd pozwalają rowerzystom wprowadzić 
 
 <TabItem value="android" label="Android">  
 
-![Ustawienia wyznaczania trasy dla roweru](@site/static/img/navigation/routing/cycling_routing_andr.png)
+![Ustawienia wyznaczania trasy dla roweru](@site/static/img/navigation/routing/cycling_routing_andr.webp)
 
 </TabItem>
 
@@ -50,6 +50,7 @@ Funkcje wyznaczania tras rowerowych w OsmAnd pozwalają rowerzystom wprowadzić 
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Wybierz drogi, których chcesz unikać podczas nawigacji.  </summary>![Unikaj dróg Android](@site/static/img/navigation/routing/avoid_cycling_andr.png) </details>  | Możesz [wybrać drogę na mapie](../../map/map-context-menu/#avoid-road) lub wybrać typ(y) dróg z listy:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_unpaved_name"/>](https://wiki.openstreetmap.org/wiki/Key:surface)</li><li>[<Translate android="true" ids="routing_attr_avoid_borders_name"/>](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dborder_control) (Unikaj przekraczania granicy do innego kraju)</li><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (rodzaj transportu wodnego, który przewozi pojazdy przez zbiorniki wodne)</li><li>[<Translate android="true" ids="routing_attr_avoid_stairs_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps)</li><li>[Unikaj bruku](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcobblestone)</li><li> [<Translate android="true" ids="routing_attr_avoid_fords_name"/>](https://wiki.openstreetmap.org/wiki/Tag:ford%3Dyes) (części drogi, przez które przepływa ciek wodny) </li><li> [<Translate android="true" ids="routing_attr_avoid_tunnels_name"/>](https://wiki.openstreetmap.org/wiki/Key:tunnel) </li><li> [Bez kostki kamiennej](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsett)</li><li> [<Translate android="true" ids="routing_attr_avoid_footways_name"/>](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) </li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Ograniczenia dostępu prywatnego będą ignorowane podczas obliczania trasy.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* jest używany w OSM do opisywania ograniczeń w korzystaniu z dróg i innych szlaków transportowych, a także budynków, wejść, udogodnień i obiektów rekreacyjnych.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* (Android) *Preferowany&nbsp;teren* (iOS) | <details><summary> Dane o wysokości będą używane przy obliczaniu trasy: zostaną ustawione [kary dla dróg](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) o innym profilu wysokościowym. </summary> ![Użyj danych o wysokości Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | Ta preferencja może pomóc unikać stromych wzniesień lub odwrotnie, preferować je. Jeśli wybierzesz trasę *pagórkowatą*, pierwszeństwo będą miały wzgórza i góry. Jeśli *płaską* - tereny płaskie, a wzgórza będą omijane. Mniej pagórkowata preferencja jest czymś pośrednim między tymi dwiema opcjami. Bez danych o wysokości zostanie obliczona najszybsza trasa jak na płaskim terenie. |
+| *<Translate android="true" ids="route_calculation_method"/>* (*Tylko Android*) | Wybierz preferowaną metodę obliczania trasy. | <ul><li><Translate android="true" ids="route_calculation_method_auto"/> — <Translate android="true" ids="route_calculation_method_auto_desc"/></li><li><Translate android="true" ids="route_calculation_method_standard_only"/> — <Translate android="true" ids="route_calculation_method_standard_only_desc"/></li><li><Translate android="true" ids="route_calculation_method_fast_only"/> — <Translate android="true" ids="route_calculation_method_fast_only_desc"/></li></ul> |
 
 
 ## Specyfika wyznaczania tras MTB {#mtb-routing-particularities}

@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -142,7 +142,7 @@ Der Reiter **Download** ermöglicht es Ihnen, verschiedene Kartentypen von den O
 
 Im Menü Karten herunterladen gibt es einen Abschnitt **Weltkarten**, der den Zugriff auf den Download verschiedener Weltkarten ermöglicht und die Funktionalität der App ergänzt.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Nur Android*). Diese Datei enthält Höhenkorrekturen, um die Krümmung des Planeten auszugleichen.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Nur Android*). Diese Datei enthält Höhenkorrekturen, um die Genauigkeit der Höhe auf Geräten zu verbessern, die keine Höhe über dem mittleren Meeresspiegel (MSL) liefern, einschließlich wenn die Android-API als [Positionsquelle](../personal/global-settings.md#location-source) anstelle von Google Play Services verwendet wird.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Bietet eine umfassende Übersicht über die Erdoberfläche, nützlich für die langfristige Routenplanung und gelegentliche Erkundungen.
 - **Weltwetterkarte**. Ermöglicht das Herunterladen einer Karte mit Wetterinformationen.
 
@@ -219,7 +219,7 @@ Der Reiter 'Lokal' bietet eine Übersicht über die Speichernutzung für Karten-
 - ***Orange***. Teil des genutzten Speichers, der von OsmAnd-Downloads belegt wird.
 - ***Grau***. Freier Speicherplatz auf dem Gerät.
 
-Unter der Speicherleiste wird eine Liste aller heruntergeladenen OsmAnd-Karten und -Ressourcen angezeigt, einschließlich ihres Typs und ihrer Dateigröße. Online-Karten werden in der Speicherleiste nicht gezählt, da sie gestreamt und nur vorübergehend zwischengesichert werden.
+Unter der Speicherleiste wird eine Liste aller heruntergeladenen OsmAnd-Karten und -Ressourcen angezeigt, einschließlich ihres Typs und ihrer Dateigröße. Online-Karten werden in der Speicherleiste nicht gezählt, da sie gestreamt und nur vorübergehend zwischengespeichert werden.
 
 </TabItem>
 

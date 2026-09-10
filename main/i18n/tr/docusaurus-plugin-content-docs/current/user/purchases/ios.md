@@ -1,5 +1,5 @@
 ---
-source-hash: 9b2f56295eb193bc938a9266380e8a1e5ebfbe93185dc434f50b51acb87022a2
+source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -53,23 +53,6 @@ Uygulamayı bu bağlantıdan indirebilirsiniz - [Apple App Store'da OsmAnd Harit
 
 Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgiler bulunmaktadır. Diğer bölgeler için fiyatlar yerel para birimlerinde eşdeğerdir.
 
-:::danger 🏖️ Summer Sale
-
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
-| **Fiyat (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Fiyat (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
-
-<!--
-
 
 
 |    | OsmAnd Ücretsiz   | [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
@@ -79,7 +62,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 
@@ -102,6 +85,9 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Seyahat rehberleri (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Harici sensör desteği](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md) — [Gözlem Planlaması](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md) — [Etkileşimli AR Modu](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md) — [Çevrimdışı Gökyüzü Haritası](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Çevrimdışı ve çevrimiçi navigasyon](../navigation/index.md)<br/>adım adım yol tarifleriyle | ✔ | ✔ | ✔ |
 | [Çevrimdışı anında arama](../search/index.md) | ✔ | ✔ | ✔ |
 | [Gezi kaydı](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

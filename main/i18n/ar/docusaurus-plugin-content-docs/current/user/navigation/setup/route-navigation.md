@@ -1,5 +1,5 @@
 ---
-source-hash: a6af6462444e2e099c738ac5ce5bb4b582702806c249cbe5b921d90b11cc492b
+source-hash: a0e664d9019f9bb0ffdaf6b9ff9e93af1d9adfce16dee1876bc0696803ea64e7
 sidebar_position: 1
 title:  إعداد المسار
 ---
@@ -455,19 +455,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **<Translate android="true" ids="simulation_constant_mode_title"/>** - يعمل بسرعة ثابتة.
 - **<Translate android="true" ids="simulation_real_mode_title"/>**:
     - **في الأجزاء المستقيمة** من الطريق، ستكون السرعة قريبة من السرعة القصوى المسموح بها.
-    - **عند التقاطعات**، سيقوم المحاكي بتقليل السرعة.
+    - **عند التقاطعات**، سيقوم المحاكم بتقليل السرعة.
     - **سيتم تطبيق عقوبات إضافية** عند إشارات المرور، وعلامات التوقف، والعقبات المماثلة الأخرى.
 
 
 ## الخرائط مفقودة أو غير متزامنة {#maps-missing-or-not-synchronized}
 
-لإنشاء مسار، يجب تنزيل جميع **الخرائط اللازمة** وأن يكون لها نفس تاريخ الإصدار. يرجى ملاحظة أنه في بعض الحالات قد تكون رسالة الخرائط المفقودة مخفية في قائمة إعداد المسار. إذا قمت بسحب قائمة الملاحة لأعلى، فسترى الأسباب المحتملة لعدم إمكانية حساب مسارك.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![رسالة لا توجد خرائط عند إنشاء الملاحة أندرويد 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
+![رسالة لا توجد خرائط عند إنشاء الملاحة أندرويد 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.webp) ![رسالة لا توجد خرائط عند إنشاء الملاحة أندرويد 5](@site/static/img/navigation/route/navigation_by_route_outdates_maps.webp)
 
 </TabItem>
 
@@ -477,6 +475,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
+
+لإنشاء مسار، يجب تنزيل جميع **الخرائط اللازمة** وأن يكون لها نفس تاريخ الإصدار. على أندرويد، إذا كانت الخرائط المطلوبة لها تواريخ إصدار مختلفة، قد يتحول OsmAnd إلى التوجيه القياسي عند ضبط [طريقة حساب المسار](../routing/car-based-routing.md#route-parameters---car) على تلقائي.
+
+يرجى ملاحظة أنه في بعض الحالات قد تكون رسالة الخرائط المفقودة مخفية في قائمة إعداد المسار. إذا قمت بسحب قائمة الملاحة لأعلى، فسترى الأسباب المحتملة لعدم إمكانية حساب مسارك.
 
 ### الخرائط المطلوبة {#required-maps}
 

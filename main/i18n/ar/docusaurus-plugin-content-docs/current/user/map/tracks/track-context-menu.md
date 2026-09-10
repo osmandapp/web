@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -362,11 +362,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### حساب الارتفاع المفقود {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info ميزة مدفوعة
 [حساب الارتفاع دون اتصال بالإنترنت](../../plan-route/create-route.md#get-elevation-data) هي ميزة مدفوعة [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
 
 [تتيح لك هذه الميزة](../../plan-route/create-route.md#get-elevation-data) حساب ملف تعريف الارتفاع لمسار GPX دون اتصال بالإنترنت لأي تضاريس بين خط عرض ٧٠ درجة شمالًا و ٧٠ درجة جنوبًا، بناءً على [بيانات خرائط التضاريس](../../plugins/topography.md#download-maps). *يجب تنزيل خرائط التضاريس (ثلاثية الأبعاد) مسبقًا*.
 
@@ -381,6 +383,22 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
   ![الرسم البياني لارتفاع المسار في أندرويد](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![الرسم البياني لارتفاع المسار في أندرويد](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Elevation data iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[تتيح لك هذه الميزة](../../plan-route/create-route.md#get-elevation-data) حساب بيانات الارتفاع المفقودة لـ[مسار مخطط](../../plan-route/create-route.md#create-new-route) أو [مسار GPX موجود](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+إذا أنشأت مسارًا باستخدام طريقة الخط المستقيم ولم تتوفر بيانات الارتفاع، فانقر على *الحصول على بيانات الارتفاع* في علامة التبويب تحليل وحدد *استخدام خرائط التضاريس*. يلزم تنزيل [خرائط التضاريس (ثلاثية الأبعاد)](../../plugins/topography.md#download-maps) مسبقًا. يُحسب ملف تعريف الارتفاع بعد ذلك بناءً على بيانات التضاريس مع بقاء هندسة المسار دون تغيير.
+
+بالنسبة لمسار GPX موجود، يمكنك تحديد *استخدام الطرق القريبة*. يربط OsmAnd المسار بأقرب الطرق المسموح بها باستخدام ملف ملاحة محدد ويسترجع بيانات الارتفاع من الطرق المرفقة. قد يعدل هذا الخيار هندسة المسار. إذا لزم الأمر، يمكنك أيضًا تحديد *استخدام خرائط التضاريس* لحساب الارتفاع مع الحفاظ على هندسة المسار دون تغيير.
+
+</TabItem>
+
+</Tabs>
+
 
 ## النقاط / نقاط الطريق {#points--waypoints}
 
@@ -390,13 +408,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة سياق المسار النقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![قائمة سياق المسار النقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android.webp) ![قائمة سياق المسار النقاط أندرويد](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار النقاط iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![قائمة سياق المسار النقاط iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![قائمة سياق المسار النقاط iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -404,7 +422,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 في علامة التبويب *النقاط* هذه:
 
-- [عرض بيانات نقاط المسار](#display-custom-gpx-tags) وتعديل نقاط المسار الخاصة بك (نقاط الطريق ونقاط المسار)، [حذفها وإضافة](#points--waypoints) نقاط طريق إلى مسار.
+- [عرض بيانات نقاط المسار](#display-custom-gpx-tags) وتعديل نقاط المسار الخاصة بك (نقاط الطريق ونقاط المسار)، [حذفها وإضاف](#points--waypoints) نقاط طريق إلى مسار.
 - إنشاء وتعديل [مجموعة (مجلد) من النقاط](#waypoint-groups).
 - توسيط الخريطة على نقطة طريق باستخدام أيقونة الدبوس في قائمة نقاط الطريق (*أندرويد فقط*) دون إغلاق القائمة، مما يتيح لك معاينة نقاط الطريق واحدة تلو الأخرى.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,9 +225,29 @@ Zusätzlich zu den Grundfunktionen der OsmAnd-App in *CarPlay*, die eine bequeme
 
 Die Sprachführung für *CarPlay* ist eine der nützlichsten Navigationsfunktionen von OsmAnd. Sie gibt Anweisungen in Echtzeit und ermöglicht es dem Fahrer, sich auf die Straße zu konzentrieren. Die Sprachanweisungen geben Abbiegungen, Richtungen und andere Navigationsanweisungen klar an und gewährleisten so eine sicherere und komfortablere Nutzung des Navigationssystems.  
 
-Wenn Sprachanweisungen wiedergegeben werden, passt OsmAnd den Hintergrundton je nach Typ an. Gesprochene Inhalte wie Podcasts und Hörbücher können während Navigationsanweisungen automatisch pausiert werden. Die Musikwiedergabe wird mit reduzierter Lautstärke fortgesetzt. Mit der Option *<Translate ios="true" ids="pause_spoken_audio"/>* können Sie dieses Verhalten steuern.
+Wenn Sprachanweisungen wiedergegeben werden, passt OsmAnd den Hintergrundton je nach Typ an. Mit aktiviertem *<Translate ios="true" ids="pause_spoken_audio"/>* wird gesprochener Audioinhalt wie Podcasts und Hörbücher während Navigationsanweisungen pausiert, während die Musikwiedergabe mit reduzierter Lautstärke fortgesetzt wird. Wenn *<Translate ios="true" ids="pause_spoken_audio"/>* deaktiviert ist, werden sowohl gesprochener Audioinhalt als auch Musik mit reduzierter Lautstärke fortgesetzt.  
 
 Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).  
+
+
+### Navigationswarnungen {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Hilfreiche Warnungen werden automatisch vor dem Start der Navigation angezeigt, wenn zusätzliche Maßnahmen zur Berechnung der Route erforderlich sind. Diese Warnungen helfen Ihnen, Routing-Probleme vor Beginn der Navigation zu lösen.
+
+**Fehlende oder veraltete Karten**
+
+Wenn einige Offline-Karten, die zur Berechnung der Route erforderlich sind, fehlen oder veraltet sind, wird eine Warnung angezeigt. Sie können eine der folgenden Optionen wählen:
+- **Heruntergeladene Karten verwenden**. Berechnet die Route mit den aktuell auf Ihrem Gerät verfügbaren Karten.
+- **Auf dem Telefon anzeigen**. Öffnet den Karten-Download-Bildschirm auf Ihrem iPhone, um die erforderlichen Karten herunterzuladen oder zu aktualisieren. Nach dem Herunterladen der Karten können Sie die Navigation erneut starten.
+- **Abbrechen**. Schließt die Warnung, ohne die Navigation zu starten.
+
+**Warnung vor privatem Zugang**
+
+Wenn die Route die Nutzung einer privaten Straße zum Erreichen Ihres Ziels erfordert, wird eine Warnung angezeigt: *Darf eine private Straße zum Erreichen Ihres Ziels genutzt werden?* Sie können wählen:
+- **Zulassen**. Fahren Sie mit der Route über die private Straße fort.
+- **Abbrechen**. Schließt die Warnung und kehrt zum vorherigen Bildschirm zurück, auf dem Sie das Ziel ändern oder eine andere Aktion fortsetzen können.
 
 
 ### Bildschirm-Warnhinweis-Widget {#screen-alert-widget}

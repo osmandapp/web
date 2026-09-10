@@ -1,5 +1,5 @@
 ---
-source-hash: b72231de89708cc761d36df5e28ed3e9d25300bf49d391eefbff605bb4ce39c6
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -134,6 +134,8 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Plugin de astronomía](../plugins/astronomy.md) — [Planificación de observaciones](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin de astronomía](../plugins/astronomy.md) — [Modo AR interactivo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin de astronomía](../plugins/astronomy.md) — [Mapa del cielo sin conexión](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Plugin de astronomía](../plugins/astronomy.md) — [Explorador de eclipses](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Colores personalizados de widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navegación con y sin conexión](../navigation/index.md)<br/>con indicaciones giro a giro | ✔ | ✔ | ✔ |
 | [Búsqueda instantánea sin conexión](../search/index.md) | ✔ | ✔ | ✔ |
 | [Grabación de viaje](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

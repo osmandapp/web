@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title:  Recherche de POI
 ---
@@ -82,7 +82,7 @@ Les résultats de recherche peuvent inclure des informations de localisation sup
 
 
 :::note
-Pour accomplir certaines de ces tâches (localiser des adresses, des POI), vous devrez disposer du fichier de carte vectorielle hors ligne. Initialement, la recherche est basée sur les données situées sur la carte dans la zone visible de l'écran de l'appareil. If you find nothing, OsmAnd proposes to increase the search radius.
+Pour accomplir certaines de ces tâches (localiser des adresses, des POI), vous devrez disposer du fichier de carte vectorielle hors ligne. Initialement, la recherche est basée sur les données situées sur la carte dans la zone visible de l'écran de l'appareil. Si vous ne trouvez rien, OsmAnd propose d'augmenter le rayon de recherche.
 :::  
 
 ### Astuces de recherche {#search-tips}
@@ -198,10 +198,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Avec la fonction **Filtre**, vous pouvez sélectionner les caractéristiques nécessaires et obtenir en résultat une liste ne contenant que des objets pertinents. Pour utiliser le filtre :
 
 - Sélectionnez la catégorie qui vous intéresse dans la liste des catégories.
-- Sur l'écran qui s'ouvre, appuyez sur l'icône qui affiche le filtre. Elle est située sous le champ de saisie, à côté de *Afficher sur la carte*.
+- Sur l'écran qui s'ouvre, appuyez sur l'icône qui affiche le filtre. Elle est située sous le champ de saisie, à côté de la puce *Trier par* sur Android et à côté de *Afficher sur la carte* sur iOS.
 - Dans le filtre, sélectionnez le type de caractéristiques.
 
-![Recherche POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Recherche POI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Un filtre peut comporter un grand nombre d'éléments, dont la présence dépend de la catégorie sélectionnée. Chaque catégorie dispose d'un certain nombre de filtres qui lui sont propres, organisés en dossiers par type. Il y a un total de *21 catégories par défaut*. Elles sont listées ici :
 
@@ -395,7 +395,7 @@ Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sél
 
 6. **Alimentation**. Comprend 12 types de filtres.  
 
-7. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondation, Risque nucléaire, Route glissante*. La catégorie Danger inclut à la fois les POI avec des étiquettes hazard=* sur les nœuds et les segments de route ou de chemin (ways) marqués avec la même étiquette, s'ils sont exportés en tant qu'objets recherchables. Pour un aperçu visuel de toutes les icônes de danger utilisées sur la carte, consultez la section [Danger](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondage, Risque nucléaire, Route glissante*. La catégorie Danger inclut à la fois les POI avec des étiquettes hazard=* sur les nœuds et les segments de route ou de chemin (ways) marqués avec la même étiquette, s'ils sont exportés en tant qu'objets recherchables. Pour un aperçu visuel de toutes les icônes de danger utilisées sur la carte, consultez la section [Danger](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Comprend 31 types de filtres.
 

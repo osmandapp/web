@@ -9,7 +9,7 @@ import PoiManager, {
     getCategoryName,
     parseBrandType,
 } from '../../../manager/PoiManager';
-import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
+import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box, Button, Typography } from '@mui/material';
 import SelectItemBoolean from '../../../frame/components/items/SelectItemBoolean';
@@ -17,7 +17,7 @@ import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import { iconPathMap, MAP_VIEW_SEARCH_RESULT } from '../../../map/util/MapManager';
-import { searchTypeMap } from '../../../map/layers/SearchLayer';
+import { searchTypeMap } from '../../../manager/searchConstants';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { useElementHeight } from '../../../util/hooks/useElementHeight';
@@ -36,7 +36,9 @@ import {
     TYPE_OSM_VALUE,
     WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
+import { getIconByType } from '../../../manager/SearchManager';
+import { SEARCH_BRAND } from '../../../manager/searchConstants';
+import { parseTagWithLang } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import useSpatialSearch from '../../../util/hooks/search/useSpatialSearch';
 import { useTranslation } from 'react-i18next';
@@ -86,7 +88,7 @@ export function searchByCategory(searchParams, ctx, t) {
             lang = brandInfo.lang;
         } else {
             // Category search: translate category name
-            categoryName = getCategoryName(searchParams.type, t, getFirstSubstring);
+            categoryName = getCategoryName(searchParams.type, t);
         }
     }
 
@@ -145,7 +147,7 @@ export default function SearchResults() {
             if (brandInfo) {
                 return brandInfo.brandName;
             } else {
-                return getCategoryName(params.type, t, getFirstSubstring);
+                return getCategoryName(params.type, t);
             }
         }
         return null;
@@ -166,7 +168,7 @@ export default function SearchResults() {
             if (f.icon) return;
             const props = f.properties;
             const type = props[CATEGORY_TYPE];
-            if (type === searchTypeMap.FAVORITE) {
+            if (type === searchTypeMap.FAVORITE || type === searchTypeMap.WPT) {
                 return;
             }
             if (type === searchTypeMap.POI_TYPE || type === searchTypeMap.POI) {
@@ -407,9 +409,7 @@ export default function SearchResults() {
                     (params?.type
                         ? (() => {
                               const brandInfo = parseBrandType(params.type);
-                              return brandInfo
-                                  ? brandInfo.brandName
-                                  : getCategoryName(params.type, t, getFirstSubstring);
+                              return brandInfo ? brandInfo.brandName : getCategoryName(params.type, t);
                           })()
                         : params?.query || '')
                 }

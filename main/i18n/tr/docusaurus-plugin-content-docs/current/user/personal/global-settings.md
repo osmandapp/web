@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Küresel Ayarlar
 ---
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel {#general}
 
-Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [harita oluşturma motorunu](#map-rendering-engine) ve verilerin kaydedileceği [klasörü](#data-storage-folder) seçme gibi temel OsmAnd ayarlarını içerir.  
+Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [harita oluşturma motorunu](#map-rendering-engine) ve verilerin kaydedileceği [klasörü](#data-storage) seçme gibi temel OsmAnd ayarlarını içerir.  
 
 
 ### Varsayılan Profil {#default-profile}
@@ -84,15 +84,15 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
 [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md), aracınızın [CarPlay yazılımına](https://support.apple.com/en-gb/HT205634) bağlandığında kullanılır ve telefonunuzdaki verileri görüntülemek için ses ve video sistemlerini kullanarak OsmAnd uygulamasının optimize edilmiş sürümünden en iyi şekilde yararlanmanıza yardımcı olur.
 
 
-### Veri Depolama Klasörü {#data-storage-folder}
+### Veri Depolama {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Profiller Depolama Ayarları Android](@site/static/img/personal/profiles/main_storage.webp) ![Profiller Depolama Ayarları Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Profiller Depolama Ayarları Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **Cihaz belleği**, cihazınızda ne kadar boş alan kaldığını gösterir. OsmAnd verileriniz hakkında ayrıntılı bilgileri görüntüleyebileceğiniz ve yönetebileceğiniz [*Haritalar ve Kaynaklar*](../personal/maps-resources.md#local-menu) menüsüne erişmek için bir alana dokunun.
 
@@ -108,6 +108,16 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
 Android 11-12 sürümlerinde yeni depolama erişim yönergeleri uygulanmıştır. Ayrıntılar için [**Sorun Giderme**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) bölümüne bakın.
 :::
 
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+**Medya depolama** ayarı, favorilere, izlere ve diğer OsmAnd öğelerine eklenen fotoğrafların, videoların ve ses dosyalarının nerede saklanacağını belirler. Dosyaların özel kalmasını veya diğer uygulamalardan erişilebilir olmasını isteyip istemediğinize bağlı olarak bir depolama konumu seçebilirsiniz.
+- **Ana depolama** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Paylaşılan depolama** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Kamera klasörü** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Manuel olarak belirtildi** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Ayrıca *Her zaman yerel bir kopya tut* anahtarı vardır. Etkinleştirildiğinde, OsmAnd Galeri veya Dosyalar'dan içe aktarılan medyayı kendi depolama alanına kopyalar, böylece orijinal dosya Galeri veya dosya sisteminden silinse bile eklenen medya kullanılabilir kalır.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +129,6 @@ Android 11-12 sürümlerinde yeni depolama erişim yönergeleri uygulanmıştır
 OsmAnd dosyaları [*Dosyalar*](https://apps.apple.com/us/app/files/id1232058109) uygulamasında görünür. Tüm OsmAnd dosyalarına erişebilirsiniz: [izler](../personal/tracks/manage-tracks.md), [favoriler](../personal/favorites.md), [haritalar](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Bunu yapmak için aşağıdaki yolu izleyin:  
 
 Şuraya git: *Dosyalar → Telefonumda → OsmAnd Haritaları*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Genel Ayarlar depolama iOS](@site/static/img/personal/profiles/files-1.png) ![Genel Ayarlar depolama iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -157,9 +165,9 @@ Haritanın 3B görünümü için görüntü döşeme döşeme yüklenir, ardınd
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="oluşturma"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="oluşturma"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="oluşturma"/></td>
     </tr>
 </table>
 

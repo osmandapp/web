@@ -1,5 +1,5 @@
 ---
-source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -78,24 +78,6 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 
 
-:::danger 🏖️ Summer Sale
-
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
-| **Cena (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Cena (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
-
-<!--
-
-
 |    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -103,7 +85,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Cena (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Cena (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -134,6 +116,8 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Wtyczka Astronomia](../plugins/astronomy.md) — [Planowanie obserwacji](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Wtyczka Astronomia](../plugins/astronomy.md) — [Interaktywny tryb AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Wtyczka Astronomia](../plugins/astronomy.md) — [Mapa nieba offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Wtyczka Astronomia](../plugins/astronomy.md) — [Eksplorator zaćmień](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Niestandardowe kolory widżetów](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Nawigacja offline i online](../navigation/index.md)<br/>ze wskazówkami zakręt po zakręt | ✔ | ✔ | ✔ |
 | [Błyskawiczne wyszukiwanie offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Nagrywanie podróży](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

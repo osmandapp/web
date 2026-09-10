@@ -1,5 +1,5 @@
 ---
-source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
+source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
 sidebar_position: 1
 title:  Planowanie trasy
 ---
@@ -25,13 +25,13 @@ Trasa składa się z zestawu segmentów pomiędzy określonymi punktami. Segment
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_overview_ios.png)
+![Planowanie trasy ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ Trasa składa się z zestawu segmentów pomiędzy określonymi punktami. Segment
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Planowanie trasy android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Planowanie trasy iOS](@site/static/img/plan-route/plan-route-menu-ios.png)
+![Planowanie trasy ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
@@ -63,7 +63,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
 ### Tworzenie nowej trasy {#create-new-route}
 
-Aby utworzyć nowy ślad w formacie GPX, użyj głównej funkcji narzędzia *Planowanie trasy*. Wstępne tworzenie trasy ma wiele zalet w porównaniu z nagrywaniem bieżącego śladu za pomocą *[wtyczki Nagrywanie trasy](../plugins/trip-recording.md)*. Możesz [dodać](#adding-points) dowolną liczbę punktów do trasy, [usuwać je i przesuwać](#point-context-menu), zmieniać typy tras według [segmentów](#route-between-points) oraz uzyskiwać [szczegółowe informacje o trasie](#graph).  
+Aby utworzyć nowy ślad w formacie GPX, użyj głównej funkcji narzędzia *Planowanie trasy*. Wstępne tworzenie trasy ma wiele zalet w porównaniu z nagrywaniem bieżącego śladu za pomocą *[wtyczki Nagrywanie trasy](../plugins/trip-recording.md)*. Możesz [dodać](#adding-points) dowolną liczbę punktów do trasy, [usuwać je i przesuwać](#point-context-menu), zmieniać typy tras według [segmentów](#route-between-points) oraz uzyskiwać [szczegółowe informacje o trasie](#graph--analyze).  
 
 Domyślnie typ wyznaczania trasy będzie odpowiadał wcześniej wybranemu profilowi. Dotknij ikony wyznaczania trasy, aby wybrać, w jaki sposób aplikacja ma obliczać segment łączący punkty. Dostępny profil należy skonfigurować [osobno](../navigation/routing/osmand-routing.md#routing-types).  
 
@@ -93,7 +93,21 @@ Narzędzie *Planowanie trasy* pozwala na modyfikację istniejącego śladu GPX, 
 
 ### Pomiar odległości {#distance-measurement}
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_lines_andr.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_lines_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 *Planowanie trasy* to szybki i łatwy sposób na zmierzenie odległości między punktami.
 
@@ -108,9 +122,21 @@ Opcja *Linia prosta* jest potrzebna i będzie używana na obszarach nieobjętych
 
 ### Uzyskiwanie danych o wysokości {#get-elevation-data}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+<TabItem value="android" label="Android">
+
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+
+</TabItem>
+
+</Tabs> 
 
 Jeśli w istniejącym śladzie brakuje [danych o wysokości](../map/tracks/track-context-menu.md#calculate-missing-elevation), można je dodać za pomocą następujących narzędzi:
 
@@ -131,13 +157,13 @@ Używaj zamiast tego opcji offline: dołącz do dróg lub mapy terenu (Pro).
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy przyciąganie do drogi Android](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Planowanie trasy snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy przyciąganie do drogi iOS](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Planowanie trasy snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Planowanie trasy snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -154,7 +180,7 @@ Ustawienie **Dołącz do dróg** pozwala na dołączenie zarejestrowanego lub za
 
 Gdy ślad jest dołączany do dróg, następujące parametry mogą ulec zmianie, ponieważ geometria i wysokość śladu są przeliczane: *Odległość, Wzniesienie / Zejście, Średnia prędkość (i wykres prędkości), Maksymalna prędkość, Czas w ruchu* oraz *Czas trwania*. Te wartości mogą różnić się od oryginalnego śladu GPX, jeśli przeliczona wysokość oparta na drogach lub geometria znacznie odbiegają od zarejestrowanych danych GPS.
 
-Można wybrać [wartość progową](../navigation/setup/gpx-navigation.md#attach-to-the-roads) dla odległości, w jakiej uproszczone punkty śladu mogą znajdować się od oryginalnych punktów śladu.
+Możesz wybrać [wartość progową](../navigation/setup/gpx-navigation.md#attach-to-the-roads) dla odległości, w jakiej uproszczone punkty śladu mogą znajdować się od oryginalnych punktów śladu.
 
 :::note Ikona nieokreślonego profilu
 Jeśli wybierzesz ślad i obok ikony *Ustawienia* wyświetli się ikona ***nieokreślonego*** profilu ("?"), dotknij jej, aby wybrać, czy dołączyć ślad do dróg, czy po prostu połączyć punkty linią prostą i potraktować go jako zarejestrowany ślad.
@@ -184,7 +210,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Planowanie trasy Ulubione Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Planowanie trasy Ulubione android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacji *Wskaźnika* jeden po drugim i dotykaj przycisku *Dodaj*. Uzyskując dostęp do **listy punktów** poniżej, możesz zmieniać kolejność punktów, usuwać je lub uzyskać dostęp do [menu kontekstowego](#point-context-menu) danego punktu.
 
@@ -194,9 +220,9 @@ Możesz także dodać punkt pośredni bezpośrednio z mapy, dotykając POI lub U
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
+![Planowanie trasy ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacji *Wskaźnika* jeden po drugim i dotykaj przycisku *Dodaj punkt*. Uzyskując dostęp do **listy punktów** poniżej, możesz zmieniać kolejność punktów, usuwać je lub uzyskać dostęp do [menu kontekstowego](#point-context-menu) danego punktu.
+Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacji *Wskaźnika* jeden po drugim i dotykaj przycisku *Route +*. Uzyskując dostęp do **listy punktów** poniżej, możesz zmieniać kolejność punktów, usuwać je lub uzyskać dostęp do [menu kontekstowego](#point-context-menu) danego punktu.
 
 </TabItem>
 
@@ -205,30 +231,40 @@ Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacj
 :::note
 Możesz także **Cofnąć**/**Ponowić** każdą czynność wykonaną w planowaniu trasy.
 :::
+
+### Dodawanie punktów trasy (tylko iOS) {#adding-waypoints}
+
+![Planowanie trasy ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Planowanie trasy ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+
+Zakładka POI umożliwia dodawanie i zarządzanie punktami trasy podczas planowania trasy.
+
+Aby dodać punkt trasy, wybierz lokalizację na mapie i dotknij przycisku *+ POI*. Otworzy się ekran Punktu trasy, w którym możesz wprowadzić nazwę, opis i adres, wybrać grupę oraz dostosować ikonę, kolor i kształt. Możesz wybrać istniejącą grupę lub dotknąć *Dodaj grupę*, aby utworzyć nową.
+
+Zakładka POI wyświetla dodane punkty pogrupowane według folderów. Każda grupa pokazuje swoją nazwę i liczbę punktów, które zawiera. Dla każdej grupy dotknij menu z trzema kropkami, aby uzyskać dostęp do działań grupowych:
+- **Zmień nazwę** — zmień nazwę grupy.
+- **Zmień wygląd** — zmień wygląd grupy.
+- **Sortuj** — zmień kolejność punktów w grupie.
+- **Usuń** — usuń grupę.
+
+Menu sortowania udostępnia następujące opcje: *Ostatnio zmodyfikowane*, *Nazwa A–Z*, *Nazwa Z–A*, *Najnowsza data pierwsza* i *Najstarsza data pierwsza*.
+
+Dotknij punktu w grupie, aby otworzyć jego menu kontekstowe. Możesz:
+- **Edytuj** — otwórz ekran Edytuj punkt trasy.
+- **Usuń** — usuń punkt z grupy.
   
 ### Trasa między punktami {#route-between-points}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Planowanie trasy android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 Dodane w edytorze punkty mogą być połączone linią prostą lub jako trasa między punktami wybranego profilu. Dostęp do opcji *Trasa między punktami* można uzyskać na kilka sposobów:
 
 1. Z menu *Opcje* *→* *Trasa między punktami*.
 2. Dotknij *ikony profilu* w lewym dolnym rogu ekranu mapy. Nie górnej ikony, która otworzy menu Konfiguruj mapę.
 3. W *[Menu kontekstowym punktu](#point-context-menu) → Zmień typ trasy przed/po*.  
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Planowanie trasy Android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_between_points_ios.png) ![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 Możesz zmienić trasę między 2 konkretnymi punktami lub między wieloma punktami:
 
@@ -237,12 +273,72 @@ Możesz zmienić trasę między 2 konkretnymi punktami lub między wieloma punkt
 - *Zmień typ trasy przed/po punkcie*. W *menu kontekstowym punktu* można zmienić sposób obliczania trasy dla odcinka od tego punktu do najbliższego lub do punktu krańcowego. Ustawienie to dostarcza informacji o odległości od tego punktu do początku lub końca trasy, lub do następnego/poprzedniego punktu.
 - *Przelicz trasy*. Możesz użyć przeliczania trasy bez zmiany typu profilu. Ikona profilu pokazana na planowanej trasie w narzędziu nie zmieni się, ale typ trasy będzie odpowiadał wybranemu. Może to być potrzebne do znalezienia alternatywnych tras.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Planowanie trasy ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Planowanie trasy ios](@site/static/img/plan-route/settings_tab_ios.webp)
+
+Dodane punkty mogą być połączone linią prostą lub trasą obliczoną przy użyciu wybranego profilu nawigacyjnego. Menu Trasa między punktami umożliwia przeglądanie i zmianę typu nawigacji oraz ustawień dla segmentów i odcinków trasy.
+
+Możesz otworzyć Trasa między punktami, dotykając przycisku *Trasa między punktami*, który wyświetla ikonę aktualnie wybranego profilu nawigacyjnego, lub z menu [Segment](#segments) lub Sekcja.
+
+W zakładce Typ trasy możesz wybrać profil nawigacyjny dla wybranego segmentu lub sekcji. Linia prosta jest dostępna jako pierwsza opcja, a następnie dostępne profile nawigacyjne.
+
+Gdy trasa zawiera tylko jeden typ nawigacji, wyświetlane jest proste menu Trasa między punktami. Gdy trasa zawiera wiele typów nawigacji, widok złożony pokazuje wszystkie segmenty i sekcje, umożliwiając wybór części trasy do modyfikacji.
+
+Możesz także:
+- **Rozpocznij nowy segment** — utwórz nowy segment i kontynuuj dodawanie punktów trasy. Nowy segment używa tego samego typu trasy co bieżący.
+- **Zmień dla całego śladu** — wybierz typ nawigacji do zastosowania dla całego śladu.
+
+W zakładce Ustawienia możesz wybrać wstępnie zdefiniowane ustawienia nawigacji dla wybranego typu trasy.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Segmenty {#segments}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Segment śladu to zbiór punktów połączonych bez **przerw**. W narzędziu do planowania trasy możliwe jest:
 
 - Łączenie segmentów: opcja [Połącz segmenty](#point-context-menu) usuwa przerwę do wcześniej oddzielonych segmentów.
 - Dzielenie lub tworzenie nowych, niepołączonych odcinków śladu. Aby to zrobić, użyj opcji [Rozpocznij nowy segment](#point-context-menu) lub wybierz funkcję [Podziel](#point-context-menu) z menu kontekstowego punktu.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Planowanie trasy ios](@site/static/img/plan-route/segment_menu.webp) ![Planowanie trasy ios](@site/static/img/plan-route/section_menu.webp)
+
+Trasa może zawierać jeden lub więcej segmentów. Segment może używać jednego typu trasy lub zawierać wiele sekcji z różnymi typami trasy.
+
+W zakładce Trasa każdy segment jest wyświetlany wraz z jego typem trasy i odległością. Gdy segment zawiera wiele sekcji, każda sekcja wyświetla swój typ trasy i odległość.
+
+Możesz zarządzać segmentem za pomocą menu z trzema kropkami:
+- **Zmień typ trasy** — dostępne dla segmentu z jednym typem trasy. Otwiera Trasa między punktami, w którym możesz wybrać inny typ trasy.
+- **Ustaw pojedynczy typ trasy** — dostępne, gdy segment zawiera wiele sekcji z różnymi typami trasy. Otwiera Trasa między punktami, w którym możesz zastosować jeden typ trasy do segmentu.
+- **Sortuj** — ręcznie zmień kolejność punktów trasy lub użyj Sortuj door-to-door, aby zmienić ich kolejność w celu zminimalizowania całkowitej odległości podróży.
+- **Zapisz jako…** — zapisz segment jako osobny plik.
+- **Usuń segment** — usuń segment.
+
+Aby utworzyć nowy, niepołączony segment, dotknij *Rozpocznij nowy segment* u dołu zakładki Trasa.
+
+Segment można podzielić na [sekcje](#multimodal-routes), gdy dla różnych części segmentu używane są różne typy trasy. Każda sekcja wyświetla swój typ trasy i odległość.
+
+Dotknij menu z trzema kropkami dla sekcji, aby:
+- **Zmień typ trasy** — otwórz Trasa między punktami i wybierz inny typ trasy.
+- **Sortuj** — uzyskaj dostęp do dostępnych opcji sortowania.
+- **Usuń sekcję** — usuń sekcję.
+
+</TabItem>
+
+</Tabs>
+
 
 ### Menu kontekstowe punktu {#point-context-menu}
 
@@ -250,13 +346,13 @@ Segment śladu to zbiór punktów połączonych bez **przerw**. W narzędziu do 
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_points_menu_ios.png)
+![Planowanie trasy ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -294,13 +390,13 @@ Każdy punkt na trasie ma swoje menu kontekstowe. Pokazuje ono *numer porządkow
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy linia trasy Android](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Planowanie trasy android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy ekran iOS](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Planowanie trasy ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -317,18 +413,7 @@ Korzystając z narzędzia *Planowanie trasy* i opcji [Trasa między punktami](#r
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_save_changes_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 Po [dodaniu](#adding-points) co najmniej jednego punktu na mapie, można użyć opcji zapisu. Wszystkie ślady zapisane w *Planowaniu trasy* można znaleźć w głównym menu *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
@@ -345,23 +430,35 @@ Podczas zapisywania ślad dziedziczy typ aktywności profilu wyznaczania trasy u
 Podczas zapisywania nowego śladu można wybrać opcję ***Uproszczony*** ślad, aby ślad był kompatybilny z innymi aplikacjami firm trzecich. Technicznie rzecz biorąc, ślad zostanie zapisany bez instrukcji nawigacyjnych jako czysto geometryczny ślad.
 :::
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Planowanie trasy ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+
+Po [dodaniu](#adding-points) co najmniej jednego punktu na mapie, można użyć opcji zapisu. Wszystkie ślady zapisane w *Planowaniu trasy* można znaleźć w głównym menu *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
+
+W przypadku nowej trasy dotknij *Zapisz* na górnym pasku narzędzi, aby zapisać bieżący ślad. Możesz także użyć opcji *Zapisz jako…* z menu Opcje, aby wprowadzić nazwę pliku i zapisać trasę.
+
+Podczas edycji istniejącego śladu opcja *Zapisz* zapisuje bieżące zmiany. Możesz także skorzystać z następujących opcji:
+- **Zapisz jako…** — zapisuje ślad z nową nazwą pliku.
+- **Zapisz jako kopię** — zapisuje duplikat śladu.
+- **Dołącz do istniejącego śladu** — dodaje planowany ślad jako osobny segment do istniejącego śladu.
+
+Podczas zapisywania ślad dziedziczy typ aktywności profilu wyznaczania trasy użytego do planowania. Aktywność jest zapisywana w metadanych śladu i jest zachowywana po eksportowaniu lub importowaniu pliku GPX.
+
+</TabItem>
+
+</Tabs>  
+
+
 ### Opcje {#options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy opcje Android](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Planowanie trasy opcje iOS](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Planowanie trasy android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Pokazuje wybrany profil aplikacji (domyślnie jest to linia prosta). Dotknięcie tej akcji jest równoznaczne z dotknięciem przycisku *Profil*, co otwiera menu [profili aplikacji](../personal/profiles.md).
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) lub **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Rysuje nowe segmenty trasy, które nie łączą się z poprzednim segmentem.
@@ -375,30 +472,56 @@ Podczas zapisywania nowego śladu można wybrać opcję ***Uproszczony*** ślad,
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*tylko Android*). Ta opcja jest wyświetlana w menu tylko wtedy, gdy dane o wysokości nie są dostępne. Za pomocą tej [opcji](#get-elevation-data) można obliczyć wysokość, korzystając z *danych mapy terenu* lub użyć danych z pobranych map, aby znaleźć *pobliskie drogi*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. Całkowicie archiwizuje wszystkie działania. Na mapie pozostaje "artefakt" - przerywane linie właśnie wyczyszczonej trasy. Znika on przy następnym dodaniu nowych punktów. Funkcję Wyczyść wszystko można anulować za pomocą przycisku Cofnij. Funkcja ta nie wpływa na niezmienione części tras otwartych w narzędziu.
 
-### Wykres {#graph}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy przyciąganie do drogi iOS](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Planowanie trasy ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+
+Dotknij menu z trzema kropkami na górnym pasku narzędzi, aby otworzyć menu *Opcje*. Dostępne działania zależą od tego, czy tworzysz nową trasę, czy edytujesz istniejący ślad.
+
+- **Zapisz jako…** — zapisz trasę z nową nazwą pliku. Dostępne zarówno dla nowych tras, jak i edytowanych śladów.
+- **Zapisz jako kopię** — zapisz duplikat istniejącego śladu. Dostępne podczas edycji istniejącego śladu.
+- **Dołącz do istniejącego śladu** — dodaj planowaną trasę jako osobny segment do istniejącego śladu.
+- **Zmień kolejność segmentów** — zmień kolejność segmentów trasy.
+- **Odwróć trasę** — odwróć kierunek trasy.
+- **Nawigacja** — zamknij Planowanie trasy i rozpocznij nawigację przy użyciu zaplanowanej trasy.
+- **Wyczyść wszystkie punkty** — usuń wszystkie punkty z zaplanowanej trasy.
 
 </TabItem>
 
 </Tabs>
 
+
+### Wykres / Analiza {#graph--analyze}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Planowanie trasy android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+
 Podczas planowania trasy [wykres](../navigation/setup/route-details.md#elevation-graph) wyświetla informacje o wysokości trasy i procentowym nachyleniu, a ponadto można dotknąć dowolnego miejsca na wykresie, aby wyświetlić wskaźnik z określonymi danymi.  
 
-- W systemie **Android** wykres jest wyświetlany w zakładce *Wykres* podczas tworzenia lub otwierania śladu oraz podczas [nawigacji](../navigation/setup/gpx-navigation.md) z użyciem *Planowania trasy*.
-- W systemie **iOS** wykres jest dostępny tylko poprzez menu *[Opcje](#options) → Nawigacja*.
+Wykres jest wyświetlany w zakładce *Wykres* podczas tworzenia lub otwierania śladu oraz podczas [nawigacji](../navigation/setup/gpx-navigation.md) z użyciem *Planowania trasy*.
 
 Podczas obliczania trasy do nawigacji w *Planowaniu trasy* można znaleźć dodatkowe informacje o śladzie, takie jak [informacje o wysokości](../navigation/setup/route-details.md#elevation-info) i [atrybuty drogi](../navigation/setup/route-details.md#road-attributes), a także skorzystać z narzędzia [Analizuj na mapie](../navigation/setup/route-details.md#analyze-on-map). Dotknij przycisku *Szczegóły* pod wykresem.  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Planowanie trasy snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Planowanie trasy snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+
+Sekcja Przegląd wyświetla wykres na podstawie wybranej osi. Użyj elementów sterujących wyboru osi, aby wybrać dane wyświetlane na wykresie. *Przelicz wysokość* umożliwia ponowne przeliczenie danych wysokości, gdy jest to konieczne. Jeśli dane wysokości są niedostępne, zakładka Analiza wyświetla komunikat Brak danych wysokości. Komunikat wyjaśnia, że OsmAnd może pobrać dane wysokości z pobliskich dróg lub map terenu. Dotknij *Pobierz dane wysokości*, aby obliczyć dane wysokości. Więcej informacji znajdziesz w sekcji [Uzyskiwanie danych o wysokości](#get-elevation-data).
+
+Sekcja Statystyki przeglądu wyświetla *Wzniesienie*, *Zejście*, *Zakres wysokości*, *Średnia prędkość*, *Maks. prędkość* i *Czas w ruchu*. Myślnik `–` jest wyświetlany, gdy dane są niedostępne. Na przykład prędkość i czas w ruchu mogą być niedostępne dla zaplanowanych tras.
+
+Sekcje Typy dróg, Nachylenie, Nawierzchnia i Gładkość pokazują odpowiednie cechy trasy. Dotknij sekcji, aby ją rozwinąć i wyświetlić szczegółowe informacje w legendzie.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Powiązane artykuły {#related-articles}

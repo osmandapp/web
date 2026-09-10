@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title:  Ricerca PDI
 ---
@@ -198,10 +198,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Con la funzione **Filtro**, è possibile selezionare le caratteristiche necessarie e ottenere di conseguenza un elenco contenente solo gli oggetti pertinenti. Per utilizzare il filtro:
 
 - Selezionare la categoria di interesse dall'elenco delle categorie.
-- Nella schermata che si apre, toccare l'icona che visualizza il filtro. Si trova sotto il campo di immissione, accanto a *Mostra sulla mappa*.
+- Nella schermata che si apre, toccare l'icona che visualizza il filtro. Si trova sotto il campo di immissione, accanto al chip *Ordina per* su Android e accanto a *Mostra sulla mappa* su iOS.
 - Nel filtro, selezionare il tipo di caratteristiche.
 
-![Ricerca PDI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Ricerca PDI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Un filtro può essere composto da un numero piuttosto elevato di elementi, la cui presenza dipende dalla categoria selezionata. Ogni categoria ha un numero di filtri specifici, organizzati in cartelle per tipo. In totale ci sono *21 categorie predefinite*. Alcune di esse sono elencate qui:
 

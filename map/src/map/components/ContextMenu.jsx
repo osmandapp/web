@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import AppContext, { OBJECT_TRACK_ANALYZER, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
+import { openLoginMenu } from '../../manager/LoginManager';
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -25,13 +26,7 @@ import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as CopyIcon } from '../../assets/icons/ic_action_copy.svg';
 import { useTranslation } from 'react-i18next';
-import {
-    GLOBAL_GRAPH_HEIGHT_SIZE,
-    LOGIN_URL,
-    MAIN_URL_WITH_SLASH,
-    MENU_IDS,
-    POI_URL,
-} from '../../manager/GlobalManager';
+import { GLOBAL_GRAPH_HEIGHT_SIZE, MENU_IDS, POI_URL } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
 import { isMvtTileURL } from '../layers/MvtLayerConfig';
 import { getMvtTileDownloads } from '../layers/MvtLayer';
@@ -80,7 +75,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     };
 
     const openLogin = () => {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
+        openLoginMenu({ ctx, ltx, navigate, location });
     };
 
     const routeObject = ctx.routeObject;

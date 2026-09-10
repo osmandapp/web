@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: bd81c2321c74c63107dfc284a099f5a70651f4b9ec53164117f0449dcf5774a9
 sidebar_position: 3
 title:  Global Settings
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## نظرة عامة {#overview}
 
@@ -81,18 +79,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إعدادات ملف CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصوى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
+يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصصى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
 
 
-### مجلد تخزين البيانات {#data-storage-folder}
+### تخزين البيانات {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![إعدادات تخزين الملفات الشخصية أندرويد](@site/static/img/personal/profiles/main_storage.webp) ![إعدادات تخزين الملفات الشخصية أندرويد](@site/static/img/personal/profiles/media_storage.webp)
 
-![إعدادات تخزين الملفات الشخصية أندرويد](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. **ذاكرة الجهاز** تظهر كمية المساحة الحرة المتبقية على جهازك. اضغط على الحقل للوصول إلى قائمة [*الخرائط والموارد*](../personal/maps-resources.md#local-menu)، حيث يمكنك عرض وإدارة معلومات مفصلة عن بيانات OsmAnd الخاصة بك.
 
@@ -108,6 +106,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) للحصول على التفاصيل.
 :::
 
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+يحدد إعداد **تخزين الوسائط** مكان تخزين الصور ومقاطع الفيديو والملفات الصوتية المرفقة بالمفضلات والمسارات وعناصر OsmAnd الأخرى. يمكنك اختيار موقع تخزين حسب ما إذا كنت تريد أن تظل الملفات خاصة أو يمكن الوصول إليها من تطبيقات أخرى.
+- **التخزين الرئيسي** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **التخزين المشترك** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **مجلد الكاميرا** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **محدد يدويًا** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+يوجد أيضًا مفتاح *الاحتفاظ دائمًا بنسخة محلية*. عند تفعيله، ينسخ OsmAnd الوسائط المستوردة من المعرض أو الملفات إلى تخزينه الخاص، بحيث تظل الوسائط المرفقة متاحة حتى لو تم حذف الملف الأصلي من المعرض أو نظام الملفات.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -119,8 +127,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ملفات OsmAnd مرئية في تطبيق [*الملفات*](https://apps.apple.com/us/app/files/id1232058109). يمكنك الوصول إلى جميع ملفات OsmAnd: [المسارات](../personal/tracks/manage-tracks.md)، [المفضلات](../personal/favorites.md)، [الخرائط](../personal/maps-resources.md)، [rendering.xml](../../technical/build-osmand/rendering.md)، [routing.xmlustom](../../technical/build-osmand/routing.md). للقيام بذلك، اتبع المسار التالي:  
 
 اذهب إلى: *الملفات → على هاتفي → خرائط OsmAnd*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![إعدادات عامة تخزين iOS](@site/static/img/personal/profiles/files-1.png) ![إعدادات عامة تخزين iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -387,6 +393,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### استكشاف الأخطاء وإصلاحها {#troubleshooting}
 
-- **أندرويد 12+ (تغيير مجلد التخزين)**. تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. تؤثر هذه التغييرات بشكل خاص على تخزين الخرائط على بطاقات SD، مما يؤدي إلى أداء وصول أبطأ بشكل كبير للملفات وقيود أكثر صرامة على الوصول إلى مجلدات بطاقة SD في أندرويد 11 و12. لمعرفة كيفية حل هذه المشكلة، راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
+- **أندرويد 12+ (تغيير مجلد التخزين)**. تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. تؤثر هذه التغييرات بشكل خاص على تخزين الخرائط على بطاقات SD، مما يؤدي إلى أداء وصول أبطأ بشكل كبير للملفات وقيود أكثر صراحة على الوصول إلى مجلدات بطاقة SD في أندرويد 11 و12. لمعرفة كيفية حل هذه المشكلة، راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card).
 
 - **مصدر الموقع لمشكلات الارتفاع**. غيّر Google Play سياسته، وللامتثال، يجب على OsmAnd، بدءًا من الإصدار 3.9، استخدام خدمات Google Play للحصول على تحديدات الموقع أثناء التشغيل في الخلفية. اقرأ مزيدًا من المعلومات في قسم [استكشاف الأخطاء وإصلاحها](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services).

@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  Tracks
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ U kunt de zichtbaarheid van tracks beheren door te kiezen welke u wilt weergeven
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -130,7 +130,7 @@ Ga naar: *Tik op de track → Tabblad Track → <Translate ios="true" ids="analy
 
 </Tabs>
 
-Deze tool biedt een gedetailleerde analyse van [trackgegevens](../../map/tracks/track-context-menu.md#options) met behulp van grafieken en kaarten.
+Deze tool biedt een gedetailleerde analyse van [track](../../map/tracks/track-context-menu.md#options) gegevens met behulp van grafieken en kaarten.
 
 - **Grafiekgegevens (Y-as)** toont: *Hoogte*, *Helling*, *Snelheid*, [*Externe sensorgegevens*](../../plugins/external-sensors.md), en combinaties van maximaal twee opties indien aanwezig in de trackgegevens. Voor auto-tracks opgenomen met OBD-II-gegevens biedt de Y-as additioneel voertuigmetrics, zoals motortoerental, koelvloeistoftemperatuur, en meer.
 - **Grafiekdimensie (X-as)** vertegenwoordigt: *Afstand*, *Tijd*, en *Tijdstip van de dag*.

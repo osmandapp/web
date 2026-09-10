@@ -74,9 +74,9 @@ export default async function test() {
         await clickBy(By.id('se-local-track-' + name));
         await actionIdleWait({ idle: 3000 });
         await waitByRemoved(By.id(`se-loadingSrtm`));
-        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true, now: true });
         await actionIdleWait({ idle: 3000 });
-        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true, now: true });
         await validateInfoBlockStrings(strings, gpx);
         await validateInfoBlockButtons(localTrackButtons);
         await clickBy(By.id('se-button-back'));
@@ -85,9 +85,9 @@ export default async function test() {
         await clickBy(By.id('se-cloud-track-' + name));
         await actionIdleWait({ idle: 3000 });
         await waitByRemoved(By.id(`se-loadingSrtm`));
-        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true, now: true });
         await actionIdleWait({ idle: 3000 });
-        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true, now: true });
         await validateInfoBlockStrings(strings, gpx);
         await validateInfoBlockButtons(cloudTrackButtons);
         await clickBy(By.id('se-button-back'));

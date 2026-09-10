@@ -1,5 +1,5 @@
 ---
-source-hash: 1f64c0e5594d22e30ada2df00bb653e7d32dcef49bc9d8510e0ceeb8ff72dc8e
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title:  Bilgi Widget'ları
 ---
@@ -32,9 +32,12 @@ Rakım widget'ları, mevcut coğrafi konumun deniz seviyesinden yüksekliğini v
 ### Rakım: Mevcut Konum   {#altitude-current-location}
   
 :::note  Dünya rakım düzeltmesini indirin
-Bazı Android cihazlarda rakım yanlış görüntülenebilir. Bu sorunu çözmek için rakım düzeltmeli bir harita indirin.
+Android 14 ve sonraki sürümlerde OsmAnd, mevcut olduğunda Google Play Services tarafından sağlanan ortalama deniz seviyesi (MSL) üzerindeki rakımı kullanır. Bu durumda Dünya rakım düzeltme haritası gerekli değildir.
+
+Android API konum kaynağını kullanıyorsanız veya MSL rakımı mevcut değilse, rakım doğruluğunu artırmak için Dünya rakım düzeltme haritasını indirin.
 
 - Şuraya gidin: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
+- Konum kaynağını değiştirmek için şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Daha fazla ayrıntı için [Haritalar ve Kaynaklar](../personal/maps-resources.md#downloads-menu) bölümünü ziyaret edin.
 :::
 
@@ -202,7 +205,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 |Widget'lar| Ekrandaki widget'lar|
 |:--------|:---------|
-|![Süzülme oranı](@site/static/img/widgets/glide_ratio_3.png)|![Süzülme oranı](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Süzülme oranı](@site/static/img/widgets/glide_ratio_3.png)|![Süzülme oranı](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
@@ -247,28 +250,68 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 ### Hedefe Süzülme Oranı {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **Hedefe süzülme oranı**, hedef noktaya ulaşmak için gereken tam süzülme oranını gösterir.
+- **Hedef yükseklik**, hedef noktanın yüksekliğini gösterir. [Harita işaretçisi](../personal/markers.md) hedef nokta olarak kullanılmalıdır.
+
+Widget modları arasında doğrudan widget'a dokunarak geçiş yapabilirsiniz. Geçiş seçeneği [widget'ın bağlam menüsünde](../widgets/configure-screen.md#widget-context-menu) mevcut değildir. 
+
+| | |
+|:------------|:------------|
+| Etkinleştir | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
+| Dokunarak | *Hedefe süzülme oranı* veya *Hedef yükseklik* değiştirir  |
+| Uzun dokunuş | [Widget'ın Bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **Hedefe süzülme oranı**, hedef noktaya ulaşmak için gereken tam süzülme oranını gösterir.
 - **Hedef yükseklik**, hedef noktanın yüksekliğini gösterir. [Harita işaretçisi](../personal/markers.md) hedef nokta olarak kullanılmalıdır.
 
 | | |
 |:------------|:------------|
-| Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
+| Etkinleştir | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
 | Dokunarak | *Hedefe süzülme oranı* veya *Hedef yükseklik* değiştirir  |
 | Uzun dokunuş | [Widget'ın Bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### Ortalama Süzülme Oranı {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**Ortalama süzülme oranı**, belirtilen bir zaman aralığı için ortalama süzülme oranını gösterir.
+
+| | |
+|:------------|:------------|
+| Etkinleştir | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
+| Uzun dokunuş | [Widget'ın Bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Ortalama süzülme oranı**, belirtilen bir zaman aralığı için ortalama süzülme oranını gösterir.
 - **Ortalama dikey hız**, bir nesnenin belirli bir süre boyunca yükselme veya alçalma hızını gösterir. Değerlendirme için yalnızca zaman aralığının ilk ve son noktaları dikkate alınır. Bu widget için zaman aralığını 15 saniyeden 60 dakikaya kadar ayarlayabilirsiniz. Hedef nokta olarak [Harita işaretçisini](../personal/markers.md) kullanmalısınız.
 
 | | |
 |:------------|:------------|
-| Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
+| Etkinleştir | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
 | Dokunarak | *Ortalama süzülme oranı* veya *Ortalama dikey hız* değiştirir  |
 | Uzun dokunuş | [Widget'ın Bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## Pil Seviyesi {#battery-level}
@@ -301,7 +344,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 
 <TabItem value="ios" label="iOS">
 
-![Koordinatlar widget'ı iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Koordinatlar widget'ı Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -505,7 +548,7 @@ Harici Sensörler widget'larını harita ekranına eklemek için OsmAnd [Harici 
 
 <TabItem value="ios" label="iOS">
 
-![Harici sensör widget'ları iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -553,18 +596,19 @@ Araç Metrikleri Widget'larını harita ekranına eklemek için OsmAnd [Araç Me
 
 <TabItem value="ios" label="iOS">
 
-![Araç metrikleri widget'ları iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Araç metrikleri widget'ları Android](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Widget'lar [Araç Metrikleri eklentine](../plugins/vehicle-metrics.md#widgets) aittir. Bağlı bir OBD-II tarayıcısından gelen bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin (*14 metrik*): **Adaptör voltajı** (*yalnızca Android*),&nbsp; **Ortam Sıcaklığı**,&nbsp; **Pil voltajı**,&nbsp; **Hesaplanan Motor Yükü**,&nbsp; **Soğutma Suyu Sıcaklığı**,&nbsp; **Motor Yağı Sıcaklığı**,&nbsp; **Motor Çalışma Süresi**,&nbsp; **Motor Hızı** (*ücretsiz*),&nbsp; **Yakıt Tüketimi**,&nbsp; **Yakıt Basıncı**,&nbsp; **Emme Sıcaklığı**,&nbsp; **Kalan Yakıt**,&nbsp; **Gaz Kelebeği Konumu** ve **Araç Hızı** (*ücretsiz*).  
+Widget'lar [Araç Metrikleri eklentine](../plugins/vehicle-metrics.md#widgets) aittir. Bağlı bir OBD-II tarayıcısından gelen bilgileri görüntülemek için bunları kullanabilirsiniz, örneğin (*14 metrik*): **Adaptör voltajı**,&nbsp; **Ortam Sıcaklığı**,&nbsp; **Pil voltajı**,&nbsp; **Hesaplanan Motor Yükü**,&nbsp; **Soğutma Suyu Sıcaklığı**,&nbsp; **Motor Yağı Sıcaklığı**,&nbsp; **Motor Çalışma Süresi**,&nbsp; **Motor Hızı** (*ücretsiz*),&nbsp; **Yakıt Tüketimi**,&nbsp; **Yakıt Basıncı**,&nbsp; **Emme Sıcaklığı**,&nbsp; **Kalan Yakıt**,&nbsp; **Gaz Kelebeği Konumu** ve **Araç Hızı** (*ücretsiz*).  
 
 - Araç metrikleri widget'larını harita ekranına eklemek için **Araç Metrikleri eklentisini** [etkinleştirin](../plugins/index.md#enable--disable).
 - OBD-II tarayıcı bağlı olmasa bile widget'ları ekleyebilirsiniz.
 - Tüm eklenen widget'lar, OBD-II tarayıcı bağlı olsun veya olmasın görünürdür.
+- Doğru **Yakıt tüketimi** değerleri için profil ayarlarında aracın _[Yakıt deposu kapasitesini](../navigation/guidance/vehicle-parameters.md#overview)_ belirtin. Mesafeye dayalı tüketim modları ayrıca GPS verisi gerektirir.
 - Bir widget'ı düzenlemek için panele eklenen widget'a dokunun, ardından *Ayarlar*'a dokunun veya doğrudan widget alanındaki *Ayarlar simgesine* dokunun.
 
 | | |
@@ -597,7 +641,7 @@ Hava Durumu widget'larını harita ekranına eklemek için OsmAnd [Hava Durumu e
 
 </Tabs>  
 
-Hava durumu widget'ları, harita üzerindeki merkezi bir nokta için mevcut hava durumu bilgilerini gösterir. Eklentiyle birlikte görüntülendiğinde (*Menü → Hava Durumu*) ekranda otomatik olarak etkinleştirilirler ve günlük kullanım için ana ekrana hangilerini koyacağınızı seçebilirsiniz (*Menü → Ekranı Özelleştir*). Bu konuda daha fazla bilgiyi [Hava Durumu eklentisi](../plugins/weather.md) makalesinde okuyabilirsiniz.
+Hava durumu widget'ları, harita üzerindeki merkezi bir nokta için mevcut hava durumu bilgilerini gösterir. Eklentiyle birlikte görüntülendiğinde (*Menü → Hava Durumu*) ekrında otomatik olarak etkinleştirilirler ve günlük kullanım için ana ekrana hangilerini koyacağınızı seçebilirsiniz (*Menü → Ekranı Özelleştir*). Bu konuda daha fazla bilgiyi [Hava Durumu eklentisi](../plugins/weather.md) makalesinde okuyabilirsiniz.
 
 - **Sıcaklık**. <Translate android="true" ids="temperature_widget_desc"/>
 - **Hava Basıncı**. <Translate android="true" ids="air_pressure_widget_desc"/>
@@ -659,7 +703,7 @@ Bu, Mapillary uygulamasına hızlı erişim sağlayan bir Mapillary eklentisi wi
 
 :::note
 Ses/Video Notları widget'larını harita ekranına eklemek için OsmAnd [Ses/Video Notları eklentisini](../plugins/audio-video-notes.md) etkinleştirin.
-:::
+::;
 
 ![Ses-video notları widget'ı](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -703,7 +747,7 @@ Bu OsmAnd İzleyici eklentisi widget'ı, OsmAnd İzleyici uygulamasına hızlı 
 
 :::note
 Geliştirici widget'larını harita ekranına eklemek için OsmAnd [OsmAnd geliştirme eklentisini](../plugins/development.md) etkinleştirin.
-:::
+::;
 
 **Geliştirici widget'ları**, harita [oluşturma hızı](../plugins/development.md#map-rendering-fps-widget) ve sanal kamera konumu parametreleri hakkında bilgi sağlar; bunlar arasında [yakınlaştırma seviyesi](../plugins/development.md#zoom-level), harita merkezine olan [mesafe](../plugins/development.md#distance-to-target), [kamera yüksekliği](../plugins/development.md#camera-elevation) ve [eğim açısı](../plugins/development.md#camera-tilt) bulunur.  
 

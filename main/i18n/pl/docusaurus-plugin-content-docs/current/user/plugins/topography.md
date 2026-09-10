@@ -1,5 +1,5 @@
 ---
-source-hash: a567598d00efc0f9ac2500652d9a4750b3a4fe946303568a4f21366ac64c6fb3
+source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
 sidebar_position: 16
 title: Topografia
 ---
@@ -331,7 +331,7 @@ Poziomy powiększenia nie są dostępne dla Cieni terenu, ponieważ ta wizualiza
 1. Jeśli używasz **Silnika renderowania mapy w wersji 1**, musisz użyć normalnego [pobierania](../start-with/download-maps.md) map rastrowych Cieniowania wzgórz i Nachylenia.
 
 2. Jeśli używasz **Silnika renderowania mapy w wersji 2 (OpenGL)**:
-    - Możesz nadal używać normalnego typu pobierania map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
+    - Możesz nadal używać normalnego [pobierania](../start-with/download-maps.md) map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
 
     - Alternatywnie możesz użyć pobierania [Mapy terenu (3D)](../personal/maps-resources.md#paid-map-content). Oszczędza to miejsce w pamięci urządzenia, a efekty Cieniowania wzgórz, Nachylenia i Rzeźby 3D będą generowane na podstawie tych danych przez Twoje urządzenie.
 
@@ -370,7 +370,13 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>
 
-Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), wykorzystując informacje o wysokości z tagów takich jak `height` i `building:levels`, jeśli są dostępne. Jeśli [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) obejmują przejścia przez budynki mapowane za pomocą tagu `tunnel=building_passage`, OsmAnd renderuje widoczne otwory w modelu budynku 3D, tak aby drogi lub ścieżki piesze przechodzące przez budynek były wyświetlane poprawnie. 
+Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), wykorzystując informacje o wysokości z tagów takich jak `height` i `building:levels`, jeśli są dostępne.  
+
+W przypadku złożonych konstrukcji OsmAnd używa `building:part` do renderowania poszczególnych części budynku o różnych wysokościach i kształtach.  
+
+Jeśli [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuilding_passage) obejmują przejścia przez budynki mapowane za pomocą tagu `tunnel=building_passage`, OsmAnd renderuje widoczne otwory w modelu budynku 3D, tak aby drogi lub ścieżki piesze przechodzące przez budynek były wyświetlane poprawnie.  
+
+Budynki 3D mogą mieć różne kształty dachów na podstawie [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:roof:shape). Tag `roof:shape` definiuje geometrię dachu, natomiast `roof:levels` i `roof:height` dostarczają informacji o jego wysokości.
 
 Budynki 3D są pokazywane tylko na wyższych poziomach powiększenia (widok miasta/ulicy), gdzie można wyświetlić poszczególne budynki. Podczas powiększania lub pomniejszania oraz przesuwania mapy budynki 3D pojawiają się i znikają z płynną animacją zanikania. Gdy POI lub wybrana lokalizacja (takiej jak pinezka na mapie lub cel nawigacji) znajduje się wewnątrz budynku, OsmAnd podświetla odpowiadający budynek, aby ułatwić jego identyfikację na mapie.
 
@@ -432,6 +438,20 @@ Obie opcje wydajności używają dwupozycyjnego przełącznika bezpośrednio na 
 **Uwaga:** Używanie *Wysokiego szczegółu* i *Dalekiej odległości widoku* poprawia wygląd wizualny, ale może wpłynąć na wydajność i zwiększyć zużycie baterii.
 
 
+<!--
+### Sun {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+
+- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
+- Altitude — controls the height of the sun above the horizon.
+
+Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
+
+
 ## Rzeźba 3D {#3d-relief}
 
 :::info Funkcja Pro
@@ -489,7 +509,6 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 </TabItem>
 
 </Tabs>
-
 
 ### Przewyższenie pionowe {#vertical-exaggeration}
 

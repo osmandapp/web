@@ -14,7 +14,6 @@ import { hideAllTracks, showAllVisibleTracks } from '../../manager/track/DeleteT
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
-import LoginContext from '../../context/LoginContext';
 import Loading from '../errors/Loading';
 import {
     CONFIGURE_URL,
@@ -34,18 +33,22 @@ export function getCountVisibleTracks(visibleTracks) {
     return visibleTracks?.new?.length || 0;
 }
 
+// shared files are always kept in the visible cache with the SHARE_TYPE prefix
+function visibleCacheName(file, shared) {
+    return shared ? VISIBLE_SHARE_MARKER + file.name : file.name;
+}
+
 export function isVisibleTrack(file) {
-    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
-    return !!savedVisible?.open?.includes(file.name);
+    const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
+    return !!savedVisible?.open?.includes(visibleCacheName(file, file.sharedWithMe));
 }
 
 export function updateVisibleCache({ visible, file, smartf = null }) {
-    let savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
-    if (savedVisible && !savedVisible.open) {
+    const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG)) ?? { old: [], new: [] };
+    if (!savedVisible.open) {
         savedVisible.open = [];
     }
-    // always mark shared files in visible cache with SHARE_TYPE prefix
-    const fileName = smartf?.type === SHARE_TYPE ? VISIBLE_SHARE_MARKER + file.name : file.name;
+    const fileName = visibleCacheName(file, smartf?.type === SHARE_TYPE);
 
     if (visible) {
         savedVisible.open.push(fileName);
@@ -60,17 +63,19 @@ export function updateVisibleCache({ visible, file, smartf = null }) {
 
 export function hideAllVisTracks() {
     const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
-    if (savedVisible) {
-        savedVisible.open = [];
+    if (!savedVisible) {
+        return;
     }
+    savedVisible.open = [];
     localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
 
 export function showAllVisTracks() {
     const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
-    if (savedVisible) {
-        savedVisible.open = [...(savedVisible.old || []), ...(savedVisible.new || [])];
+    if (!savedVisible) {
+        return;
     }
+    savedVisible.open = [...(savedVisible.old || []), ...(savedVisible.new || [])];
     localStorage.setItem(TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
 
@@ -91,8 +96,8 @@ export function addCloseTracksToRecently(ctx) {
         ctx.visibleTracks.new?.forEach((t) => {
             const sharedFile = t.sharedWithMe;
 
-            const fileName = sharedFile ? VISIBLE_SHARE_MARKER + t.name : t.name;
-            if (savedVisible.open && savedVisible.open.includes(fileName)) {
+            const fileName = visibleCacheName(t, sharedFile);
+            if (savedVisible.open?.includes(fileName)) {
                 newVisFiles.new.push(t);
                 newVisFilesNames.new.push(fileName);
                 newVisFilesNames.open.push(fileName);

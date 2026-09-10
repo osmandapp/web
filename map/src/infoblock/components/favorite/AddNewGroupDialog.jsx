@@ -55,9 +55,9 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
             pointsGroups: createGroup(),
         };
         const group = await saveFavoriteGroup(data, groupName, ctx);
+        setProcess(false);
         if (group) {
             setFavoriteGroup(group);
-            setProcess(false);
             setDialogOpen(false);
         }
     }

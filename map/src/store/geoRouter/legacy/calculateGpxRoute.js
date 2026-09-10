@@ -20,7 +20,7 @@ export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRo
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
 
     setRoutingErrorMsg(null);
-    changeRouteText(true, null);
+    changeRouteText(true);
 
     let formData = new FormData();
     formData.append('file', routeTrackFile);
@@ -35,7 +35,7 @@ export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRo
     );
 
     if (!response) {
-        changeRouteText(false, null);
+        changeRouteText(false);
         return;
     }
 
@@ -50,21 +50,21 @@ export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRo
                 this.setOption(ROUTE_POINTS_START, start);
                 this.setOption(ROUTE_POINTS_FINISH, finish);
                 this.setOption(ROUTE_POINTS_VIA, []);
-                const { route } = this.putRoute({ route: data });
-                changeRouteText(false, this.getRouteProps(route));
+                this.putRoute({ route: data });
+                changeRouteText(false);
             } else {
-                changeRouteText(false, null);
+                changeRouteText(false);
                 setRoutingErrorMsg('gpx-approximate no start/finish');
             }
         } else {
             this.resetRoute();
-            changeRouteText(false, null);
+            changeRouteText(false);
             setRoutingErrorMsg('gpx-approximate empty result');
         }
     } else {
         const message = await response.text();
         this.resetRoute();
-        changeRouteText(false, null);
+        changeRouteText(false);
         setRoutingErrorMsg(message);
     }
 }

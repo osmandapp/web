@@ -1,4 +1,4 @@
-import { getDistance } from '../../../util/Utils';
+import { LINE_STRING, getDistance } from '../../../util/Utils';
 import { isNonZeroEle, NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager';
 
 export const defaultPointExtras = {
@@ -12,7 +12,10 @@ const llRoundedKey = ({ lat, lng }) => Number(lat).toFixed(5) + ',' + Number(lng
 function getRouteGeometry(route) {
     const geometry = [];
     route.features
-        .filter((f) => f.geometry?.type === 'LineString' && f.geometry?.coordinates?.length > 0)
+        // alternatives are drawn on the map only, they are not part of the route being edited
+        .filter(
+            (f) => f.geometry?.type === LINE_STRING && f.geometry?.coordinates?.length > 0 && !f.properties?.alternative
+        )
         .forEach((f) =>
             // LineString has [[ll], [ll], ...]
             f.geometry.coordinates.forEach((c, index) => {
@@ -124,10 +127,16 @@ function createAnalysisFromRoute(points, route) {
     let avgElevation = Number.NaN;
     let minElevation = Number.POSITIVE_INFINITY;
     let maxElevation = Number.NEGATIVE_INFINITY;
+    let firstSegment = true;
     points &&
         points.length > 0 &&
-        points.forEach((p) =>
-            p.geometry?.forEach((g) => {
+        points.forEach((p) => {
+            const geometry = p.geometry ?? [];
+            // a segment starts where the previous one ended, count that point once
+            geometry.forEach((g, index) => {
+                if (index === 0 && !firstSegment) {
+                    return;
+                }
                 if (isNonZeroEle(g?.ele) || isNonZeroEle(g?.ext?.ele)) {
                     const ele = isNonZeroEle(g?.ele) ? g.ele : g.ext.ele;
                     minElevation = Math.min(minElevation, ele);
@@ -136,8 +145,11 @@ function createAnalysisFromRoute(points, route) {
                     elevationSum += ele;
                     avgElevation = elevationSum / elevationPoints;
                 }
-            })
-        );
+            });
+            if (geometry.length > 0) {
+                firstSegment = false;
+            }
+        });
     if (elevationPoints > 0) {
         const props = route.features[0].properties;
         return {

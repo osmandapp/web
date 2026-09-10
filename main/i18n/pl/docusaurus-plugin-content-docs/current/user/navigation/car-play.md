@@ -1,5 +1,5 @@
 ---
-source-hash: aa4a07f21fb366d5719e225edbda95bea105a4e326a33f2d1517100703b57332
+source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -225,9 +225,29 @@ Oprócz podstawowych funkcji aplikacji OsmAnd w *CarPlay*, które zapewniają wy
 
 Wskazówki głosowe dla *CarPlay* to jedna z najbardziej użytecznych funkcji nawigacyjnych OsmAnd, zapewniająca wskazówki w czasie rzeczywistym i pozwalająca kierowcy skupić się na drodze. Komunikaty głosowe wyraźnie wskazują zakręty, kierunki i inne instrukcje nawigacyjne, zapewniając bezpieczniejsze i bardziej komfortowe korzystanie z systemu nawigacji.  
 
-Gdy odtwarzane są komunikaty głosowe, OsmAnd dostosowuje dźwięk tła w zależności od jego typu. Treści audio mówione, takie jak podcasty i audiobooki, mogą być automatycznie wstrzymywane podczas instrukcji nawigacyjnych. Odtwarzanie muzyki jest kontynuowane z obniżoną głośnością. Opcja *<Translate ios="true" ids="pause_spoken_audio"/>* pozwala kontrolować to zachowanie.
+Gdy odtwarzane są komunikaty głosowe, OsmAnd dostosowuje dźwięk tła w zależności od jego typu. Dzięki włączonej opcji *<Translate ios="true" ids="pause_spoken_audio"/>* treści audio mówione, takie jak podcasty i audiobooki, są wstrzymywane podczas instrukcji nawigacyjnych, a odtwarzanie muzyki jest kontynuowane z obniżoną głośnością. Gdy opcja *<Translate ios="true" ids="pause_spoken_audio"/>* jest wyłączona, zarówno treści mówione, jak i muzyka są odtwarzane z obniżoną głośnością.  
 
 Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).  
+
+
+### Alerty nawigacyjne {#navigation-alerts}
+
+![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+
+Przydatne alerty są automatycznie wyświetlane przed rozpoczęciem nawigacji, gdy wymagane jest dodatkowe działanie w celu obliczenia trasy. Alerty te pomagają rozwiązać problemy z wyznaczaniem trasy przed rozpoczęciem nawigacji.
+
+**Brakujące lub nieaktualne mapy**
+
+Jeśli niektóre mapy offline wymagane do obliczenia trasy są brakujące lub nieaktualne, wyświetlany jest alert. Możesz wybrać jedną z następujących opcji:
+- **Użyj pobranych map**. Oblicz trasę przy użyciu map aktualnie dostępnych na urządzeniu.
+- **Wyświetl na telefonie**. Otwórz ekran pobierania map na iPhonie, aby pobrać lub zaktualizować wymagane mapy. Po pobraniu map możesz ponownie rozpocząć nawigację.
+- **Anuluj**. Zamknij alert bez rozpoczynania nawigacji.
+
+**Ostrzeżenie o dostępie prywatnym**
+
+Jeśli trasa wymaga użycia drogi prywatnej, aby dotrzeć do celu, wyświetlane jest ostrzeżenie: *Zezwolić na korzystanie z drogi prywatnej, aby dotrzeć do celu?* Możesz wybrać:
+- **Zezwól**. Kontynuuj trasę korzystając z drogi prywatnej.
+- **Anuluj**. Zamknij alert i wróć do poprzedniego ekranu, gdzie możesz zmienić cel lub wykonać inną czynność.
 
 
 ### Widżet alertów ekranowych {#screen-alert-widget}

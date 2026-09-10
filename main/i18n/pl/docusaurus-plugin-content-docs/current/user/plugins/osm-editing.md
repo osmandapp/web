@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title:  Edycja OpenStreetMap
 ---
@@ -38,7 +38,7 @@ Aby korzystać z wtyczki *Edycja OpenStreetMap*, należy dokonać następującyc
 - *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*
 
-![Ustawienia wtyczki edycji OpenStreetMap Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -47,7 +47,7 @@ Aby korzystać z wtyczki *Edycja OpenStreetMap*, należy dokonać następującyc
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![Ustawienia wtyczki edycji OpenStreetMap iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
@@ -74,13 +74,13 @@ Jeśli masz subskrypcję [OsmAnd Pro](../purchases/android.md#pro-features), zmi
 
 <TabItem value="android" label="Android">
 
-![OsmAnd Live dla maperów](@site/static/img/personal/maps/osm_authorization_andr.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd Live dla maperów](@site/static/img/personal/maps/osm_authorization_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
@@ -98,13 +98,13 @@ Zaloguj się, aby wnosić zmiany i pliki GPX.
 
 <TabItem value="android" label="Android">
 
-![OsmAnd Live dla maperów](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd Live dla maperów](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd Live dla maperów](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd Live dla maperów](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
 
 </TabItem>
 
@@ -121,7 +121,7 @@ Ustawienie <Translate android="true" ids="map_updates_for_mappers"/> pozwala wł
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![Warstwa edycji OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Warstwa edycji OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
+![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
@@ -129,7 +129,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sh
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![Warstwa edycji OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
+![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
@@ -137,15 +137,15 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,shared
 
 Możesz włączyć lub wyłączyć jako osobną warstwę wyświetlanie modyfikacji OSM w sekcji [Konfiguracja mapy](../map/configure-map-menu.md) w *Menu głównym*. Modyfikacje OSM obejmują następujące elementy:  
 - **Notatki OSM (online)**. Wyświetla publiczne notatki OpenStreetMap utworzone przez użytkowników w celu podkreślenia problemów z mapowaniem lub zgłoszenia prośby o aktualizacje. Notatki są pokazywane jako interaktywne znaczniki, które można przeglądać, otwierać i rozwiązywać przez maperów.  
-![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
 - **Edycje OSM**. Pokazuje Twoje własne lokalne edycje OSM przechowywane na urządzeniu przed przesłaniem ich na serwer OpenStreetMap. Ta warstwa pomaga w przeglądaniu geometrii i atrybutów obiektów, które zostały zmodyfikowane lub dodane.  
-![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
 - **Tagi Fixme**. Podkreśla obiekty oznaczone tagiem fixme=* w OSM. Te elementy zawierają komentarze maperów wskazujące, że informacje są niekompletne, niepewne lub wymagają weryfikacji w terenie.  
-![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
 - **Tagi Note**. Wyświetla obiekty zawierające tagi note=* — komentarze maperów osadzone bezpośrednio w danych OSM. Te tagi zazwyczaj opisują tymczasowe warunki lub dodatkowy kontekst dla przyszłych edycji.  
-![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
 - **Ikony przy niskim powiększeniu**. Włącza uproszczone, ikona-podobne reprezentacje obiektów OSM za pomocą krótkich skrótów pochodzących z ich głównych kluczy tagów. Ich znaczenie jest opisane [tutaj](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Ta funkcja sprawia, że więcej obiektów jest widocznych przy niskim poziomie powiększenia bez przeciążania mapy lub nakładania się ikon.  
-![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
+![OSM editing layer](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## Tworzenie / Modyfikacja POI {#create--modify-poi}
@@ -163,13 +163,13 @@ Wtyczka do edycji OpenStreetMap umożliwia tworzenie na mapie nowych obiektów z
 
 <TabItem value="android" label="Android">  
 
-![Dodaj tag POI Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Dodaj tag POI Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
+![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Dodaj tag POI iOS](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
@@ -205,7 +205,7 @@ Pamiętaj, że dodając nieobsługiwane typy POI, należy upewnić się, że dan
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
-![Otwórz notatkę OSM Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Otwórz notatkę OSM Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
+![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
@@ -213,7 +213,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,la
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
-![Otwórz notatkę OSM iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
+![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
@@ -256,13 +256,13 @@ Twoje ślady zostaną dodane do [śladów OSM](https://www.openstreetmap.org/tra
 
 <TabItem value="android" label="Android">
 
-![Wtyczka edycji OpenStreetMap GPX do OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wtyczka edycji OpenStreetMap GPX do OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -275,13 +275,12 @@ Aby [przesłać ślad GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks
 
 **Ustawienia:**
 
-- **<Translate android="true" ids="shared_string_description"/>**. Umożliwia dodanie opisu do śladu. Opis dotyczy wszystkich wybranych śladów. Jeśli nic nie wpiszesz w tym polu, jako opisy zostaną użyte nazwy poszczególnych śladów.  
+- **<Translate android="true" ids="shared_string_description"/>**. Umożliwia dodanie opisu do śladu. Opis dotyczy wszystkich wybronych śladów. Jeśli nic nie wpiszesz w tym polu, jako opisy zostaną użyte nazwy poszczególnych śladów.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Ta pozycja w sekcji ustawień pozwala na dodanie tagów w celu identyfikacji śladu. Domyślnym tagiem jest "osmand". Jeśli ślad został zarejestrowany z określoną aktywnością na podstawie wybranego profilu, ta aktywność jest również automatycznie dodawana jako tag podczas przesyłania. Dla przesyłanych grup śladów każdy ślad otrzymuje swój własny tag aktywności. Dla niektórych profili (np. Transport publiczny) tag aktywności nie jest dodawany. Możesz wprowadzić dodatkowe tagi ręcznie, oddzielone przecinkami.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Widoczność śladu dla użytkowników OSM:  
-   - *Publiczny* oznacza, że ślad jest publicznie dostępny i wyświetlany w surowej formie w Twoich śladach GPS, listach śladów GPS i listach śladów ze znacznikami czasu. Dane przesyłane przez API nie są powiązane z Twoją stroną śladu. Znaczniki czasu punktów śladu są niedostępne przez publiczne API GPS, a punkty śladu nie są uporządkowane chronologicznie.
-   - *Identyfikowalny* oznacza, że ślad będzie publicznie wyświetlany w Twoich punktach śladów GPS i publicznych listach śladów GPS, co oznacza, że inni użytkownicy będą mogli pobrać surowy ślad i powiązać go z Twoją nazwą użytkownika. Publiczne dane punktów śladu ze znacznikami czasu z API GPS przekazywane przez API punktów śladu będą prowadzić do Twojej oryginalnej strony śladu.
-   - *Śledzony* oznacza, że ślad nie jest wyświetlany na publicznych listach, ale przetworzone punkty śladu ze znacznikami czasu (które nie mogą być bezpośrednio z Tobą powiązane) są ładowane z publicznego API GPS.
-   - *Prywatny* oznacza, że ślad nie jest wyświetlany na publicznych listach, ale punkty śladu w niechronologicznej kolejności są dostępne przez publiczne API GPS bez znaczników czasu.
+      - *Identifiable* oznacza, że ślad będzie publicznie wyświetlany w Twoich punktach śladów GPS i publicznych listach śladów GPS, co oznacza, że inni użytkownicy będą mogli pobrać surowy ślad i powiązać go z Twoją nazwą użytkownika. Publiczne dane punktów śladu ze znacznikami czasu z API GPS przekazywane przez API punktów śladu będą prowadzić do Twojej oryginalnej strony śladu. Ta opcja jest domyślna.
+      - *Trackable* oznacza, że ślad nie jest wyświetlany na publicznych listach, ale przetworzone punkty śladu ze znacznikami czasu (które nie mogą być bezpośrednio z Tobą powiązane) są ładowane z publicznego API GPS.
+      {/* *Private* oznacza that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps. *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are unavailable through the public GPS API and track points are not ordered chronologically.*/}
 - **<Translate android="true" ids="login_account"/>** - [Konto OSM](https://www.openstreetmap.org/login).
 
 :::info
