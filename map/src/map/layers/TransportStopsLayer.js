@@ -15,6 +15,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import debounce from 'lodash-es/debounce';
 import { BBOX_COORDS_DECIMALS, MENU_INFO_OPEN_SIZE, MAIN_URL_WITH_SLASH, STOP_URL } from '../../manager/GlobalManager';
 import { getTransportStopApi } from '../../manager/SearchApi';
+import { createMapObject } from '../../manager/SearchManager';
 
 export const TRANSPORT_STOPS_LAYER_ID = 'transport-stops-layer';
 
@@ -306,15 +307,7 @@ const TransportStopsLayer = () => {
 
         if (response?.data) {
             const data = response.data;
-            const stop = {
-                mapObj: true,
-                options: { ...data.properties },
-                latlng: {
-                    lat: data.geometry.coordinates[1],
-                    lng: data.geometry.coordinates[0],
-                },
-            };
-
+            const stop = createMapObject(data);
             ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             ctx.setSelectedWpt({ stop });
@@ -323,28 +316,33 @@ const TransportStopsLayer = () => {
         return null;
     }
 
+    function finishStopByUrl(stopLayer) {
+        // remove old stop marker
+        if (ctx.stopByUrl.layer) {
+            map.removeLayer(ctx.stopByUrl.layer);
+        }
+        if (stopLayer) {
+            map.addLayer(stopLayer);
+        }
+        ctx.setStopByUrl({
+            params: null,
+            layer: stopLayer,
+            open: true,
+        });
+        ctx.setProcessingStopByUrl(false);
+    }
+
     useEffect(() => {
         if (ctx.stopByUrl?.params) {
-            // stop clicked on the map is already shown, the marker is for a stop opened by URL
-            const alreadySelected = String(ctx.selectedWpt?.stop?.options?.id) === ctx.stopByUrl.params.id;
+            // stop clicked on the map (layer marker or MVT symbol) is already selected: no request, no marker
+            if (String(ctx.selectedWpt?.stop?.options?.id) === ctx.stopByUrl.params.id) {
+                ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                finishStopByUrl(null);
+                return;
+            }
             openStopByUrl().then(async (res) => {
-                let stopLayer = null;
-                if (res && !alreadySelected) {
-                    stopLayer = await createStopMarker(res);
-                    // remove old stop marker
-                    if (ctx.stopByUrl.layer) {
-                        map.removeLayer(ctx.stopByUrl.layer);
-                    }
-                    if (stopLayer) {
-                        map.addLayer(stopLayer);
-                    }
-                }
-                ctx.setStopByUrl({
-                    params: null,
-                    layer: stopLayer,
-                    open: true,
-                });
-                ctx.setProcessingStopByUrl(false);
+                finishStopByUrl(res ? await createStopMarker(res) : null);
             });
         } else if (ctx.stopByUrl?.layer && !ctx.stopByUrl?.open) {
             map.removeLayer(ctx.stopByUrl.layer);

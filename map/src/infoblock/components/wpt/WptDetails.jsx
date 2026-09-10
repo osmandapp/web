@@ -62,6 +62,8 @@ import WptTagsProvider, {
     addWikidataTags,
     getOsmIdFromOsmUrl,
     POI_ID,
+    TRANSPORT_STOP_ID,
+    stringifyTagValues,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -102,13 +104,19 @@ import {
     liveHash,
 } from '../../../manager/GlobalManager';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
+import { useDelayedFlag } from '../../../util/hooks/useDelayedFlag';
 import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
-import { isFavoriteFromSearch, isWptFromSearch, navigateBackToSearchResults } from '../../../manager/SearchManager';
+import {
+    createMapObject,
+    isFavoriteFromSearch,
+    isWptFromSearch,
+    navigateBackToSearchResults,
+} from '../../../manager/SearchManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
-import { getPoiByOsmIdApi, getTransportStopApi } from '../../../manager/SearchApi';
+import { getPoiByOsmIdApi, getPoiByTagsApi, getTransportStopApi } from '../../../manager/SearchApi';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -172,9 +180,10 @@ export function getObjType(wpt, t) {
 export const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 export const TYPE_NOT_FOUND = 'No type';
 export const EMPTY_STRING = '';
-const ADDRESS_TAG_PREFIX = 'addr:';
 // keeps the header layout of an MVT preview until the type and icon are loaded
 const TYPE_PLACEHOLDER = '\u00A0';
+// loading indicators are shown only for a long loading, not to flicker
+const LOADING_DELAY_MS = 1000;
 
 export async function getAddressByLatLon(lat, lon) {
     if (lat == null || lon == null) return null;
@@ -213,6 +222,9 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     const [isAddressAdded, setIsAddressAdded] = useState(false);
     const [isPhotosAdded, setIsPhotosAdded] = useState(false);
+
+    const showLoading = useDelayedFlag(loading, LOADING_DELAY_MS);
+    const showPendingLoading = useDelayedFlag(Boolean(wpt?.pending), LOADING_DELAY_MS);
 
     const renderedTags = useMemo(() => {
         const tags = wpt?.tags?.res;
@@ -392,7 +404,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setWpt({ ...newWpt });
             setIsAddressAdded(false);
             setIsPhotosAdded(false);
-            loadMvtObject(ctx.selectedWpt, type, ctx, controller.signal).then((obj) => {
+            loadMvtObject(ctx.selectedWpt, controller.signal).then((obj) => {
                 if (controller.signal.aborted) {
                     return;
                 }
@@ -407,7 +419,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     // replaces the preview URL set by MvtLayer
                     navigateToPoi(obj, navigate, false, { replace: true });
                 } else {
-                    setWpt((prev) => (prev?.pending ? { ...prev, tags: obj.tags, pending: false } : prev));
+                    setWpt((prev) => (prev?.pending ? { ...prev, pending: false } : prev));
                 }
             });
             return () => controller.abort();
@@ -573,7 +585,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }, [wpt?.id, isAddressAdded]);
 
     useEffect(() => {
-        if (!wpt || !objWithPhotos(wpt) || isPhotosAdded || wpt.pending) return;
+        if (!wpt || !objWithPhotos(wpt) || isPhotosAdded) return;
 
         setIsPhotosAdded(true);
         getPhotos(wpt).then((photosData) => {
@@ -582,7 +594,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 return { ...prev, photos: photosData || [] };
             });
         });
-    }, [wpt?.id, wpt?.pending]);
+    }, [wpt?.id]);
 
     function getWptType(wpt) {
         return {
@@ -972,7 +984,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     return (
         <>
-            {loading ? (
+            {showLoading ? (
                 <Loading />
             ) : (
                 <Box
@@ -1112,7 +1124,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                     />
                                 )}
                                 {wpt.pending ? (
-                                    <Loading />
+                                    showPendingLoading && <Loading />
                                 ) : (
                                     <>
                                         {renderedTags
@@ -1176,24 +1188,15 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     );
 }
 
-// object clicked on the MVT layer: transport stop with routes, full POI (same as in search results),
-// else the tags of the map object as Android does (none for an address)
-async function loadMvtObject({ mvt, poi }, type, ctx, signal) {
-    const stop = mvt.stopId ? await getTransportStop(mvt.stopId, poi.latlng, signal) : null;
-    if (stop) {
-        return { stop };
-    }
-    const fullPoi = await getPoiByOsmId(mvt, poi.latlng, signal);
-    if (fullPoi) {
-        return { poi: fullPoi };
-    }
-    if (!mvt.tags) {
-        return { tags: null };
-    }
-    // addr:* is already shown by LocationInfoLine
-    const options = Object.fromEntries(Object.entries(mvt.tags).filter(([key]) => !key.startsWith(ADDRESS_TAG_PREFIX)));
+// object clicked on the MVT layer: full POI (same as in search results), for a public transport POI its stop with
+// routes (as Android AmenityMenuController), else a POI from the tags of the map object (none for an address)
+async function loadMvtObject({ mvt, poi }, signal) {
+    const fullPoi =
+        (await getPoiByOsmId(mvt.osmId, poi.latlng, signal)) ?? (await getPoiByTags(mvt, poi.latlng, signal));
+    const stopId = fullPoi?.options[TRANSPORT_STOP_ID];
+    const stop = stopId ? await getTransportStop(stopId, fullPoi.latlng, signal) : null;
 
-    return { tags: await WptTagsProvider.getWptTags({ options }, { ...type, isPoi: true }, ctx) };
+    return stop ? { stop } : { poi: fullPoi };
 }
 
 async function getTransportStop(stopId, latlng, signal) {
@@ -1202,25 +1205,31 @@ async function getTransportStop(stopId, latlng, signal) {
     return createMapObject(response?.data);
 }
 
-async function getPoiByOsmId({ osmId, osmType }, latlng, signal) {
-    const response = await getPoiByOsmIdApi({ lat: latlng.lat, lon: latlng.lng, osmid: osmId, type: osmType, signal });
-    const data = response?.data;
+async function getPoiByOsmId(osmid, latlng, signal) {
+    const response = await getPoiByOsmIdApi({ lat: latlng.lat, lon: latlng.lng, osmid, signal });
+
+    return createPoiObject(response?.data);
+}
+
+async function getPoiByTags({ mapObjectId, tags }, latlng, signal) {
+    if (!tags) {
+        return null;
+    }
+    const response = await getPoiByTagsApi({
+        lat: latlng.lat,
+        lon: latlng.lng,
+        id: mapObjectId,
+        tags: stringifyTagValues(tags),
+        signal,
+    });
+
+    return createPoiObject(response?.data);
+}
+
+function createPoiObject(data) {
     if (data) {
         data.properties[FINAL_POI_ICON_NAME] = getFinalPoiIconName(data.properties);
     }
 
     return createMapObject(data);
-}
-
-// selectedWpt poi / stop from a server Feature, as in PoiLayer.openPoiByUrl and TransportStopsLayer.openStopByUrl
-function createMapObject(data) {
-    if (!data) {
-        return null;
-    }
-
-    return {
-        options: { ...data.properties },
-        latlng: { lat: data.geometry.coordinates[1], lng: data.geometry.coordinates[0] },
-        mapObj: true,
-    };
 }

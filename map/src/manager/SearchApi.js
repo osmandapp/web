@@ -40,7 +40,7 @@ export function searchByWordApi({
     });
 }
 
-export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal = undefined }) {
+export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-osmid`, {
         apiCache: true,
         signal,
@@ -48,7 +48,16 @@ export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal = undefined }) 
     });
 }
 
-export function getTransportStopApi({ lat, lon, stopId, signal = undefined }) {
+// POI built from the tags of a vector tile object (not in the POI index), id is the map object id of the tile feature
+export function getPoiByTagsApi({ lat, lon, id, tags, signal }) {
+    return apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-tags`, tags, {
+        apiCache: true,
+        signal,
+        params: { lat, lon, id, ...getCurrentTimeParams() },
+    });
+}
+
+export function getTransportStopApi({ lat, lon, stopId, signal }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-stop`, {
         apiCache: true,
         signal,

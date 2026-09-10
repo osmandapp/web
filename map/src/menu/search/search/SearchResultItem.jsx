@@ -81,7 +81,9 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
             name = preparedType(type, t);
             type = poiType;
         }
-        type = type ? preparedType(type, t) : type;
+        if (type) {
+            type = preparedType(type, t);
+        }
     } else if (props[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
         name = props[POI_NAME] ?? props[CATEGORY_NAME];
         type = t ? t('shared_string_my_favorites') : '';

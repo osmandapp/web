@@ -19,7 +19,7 @@ import 'leaflet.markercluster';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import { CATEGORY_TYPE, FINAL_POI_ICON_NAME, POI_ID, POI_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
-import { getObjIdSearch } from '../../manager/SearchManager';
+import { createMapObject, createSearchObjectOptions, getObjIdSearch } from '../../manager/SearchManager';
 import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
@@ -312,16 +312,7 @@ export default function PoiLayer() {
             } else {
                 // open normal poi
                 ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-
-                const poi = {
-                    options: { ...data.properties },
-                    latlng: {
-                        lat: data.geometry.coordinates[1],
-                        lng: data.geometry.coordinates[0],
-                    },
-                    mapObj: true,
-                };
-
+                const poi = createMapObject(data);
                 ctx.setSelectedWpt({ poi, id: getObjIdSearch(data) });
                 recentSaver(POI_OBJECTS_KEY, poi);
             }
@@ -338,11 +329,10 @@ export default function PoiLayer() {
                     ctx.setCurrentObjectType(OBJECT_TYPE_POI);
                     const poi = {
                         key: `${lng}-${lat}`,
-                        options: {
-                            web_type: searchTypeMap.LOCATION,
-                            web_name: `${lat.toFixed(5)}, ${lng.toFixed(5)}`,
-                            web_poi_finalIconName: SEARCH_ICON_MAP_LOCATION,
-                        },
+                        options: createSearchObjectOptions(
+                            searchTypeMap.LOCATION,
+                            `${lat.toFixed(5)}, ${lng.toFixed(5)}`
+                        ),
                         latlng: { lat, lng },
                         mapObj: true,
                     };
