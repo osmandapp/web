@@ -1,4 +1,3 @@
-import i18n from '../../i18n';
 import { searchTypeMap } from '../../manager/searchConstants';
 import { createSearchObjectOptions } from '../../manager/SearchManager';
 import { POI_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
@@ -23,7 +22,8 @@ export function pickClickableFeature(features) {
 export function createMvtObject(feature, clickLatlng) {
     const { properties, geometry } = feature;
     const osmId = properties[OSM_ID_TAG];
-    const name = properties[`${NAME_TAG}:${i18n.language}`] ?? properties[NAME_TAG] ?? '';
+    // plain name, as the server returns it (amenity.getName), so the preview does not change on load
+    const name = properties[NAME_TAG] ?? '';
     const isHouse = !name && Boolean(properties[HOUSE_NUMBER_TAG]);
     const [lng, lat] = geometry?.type === 'Point' ? geometry.coordinates : [clickLatlng.lng, clickLatlng.lat];
 
