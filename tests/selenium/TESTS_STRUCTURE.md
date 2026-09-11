@@ -94,9 +94,10 @@ yarn test --help                     # Show help
 - POI display
 - Wikipedia photos
 
-### map/ (2 tests)
+### map/ (3 tests)
 - Context menu
 - Marker selection
+- Vector tiles (MVT) object context menu
 
 ### purchases/ (1 test)
 - Purchase flow

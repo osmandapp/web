@@ -40,6 +40,31 @@ export function searchByWordApi({
     });
 }
 
+export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal }) {
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-osmid`, {
+        apiCache: true,
+        signal,
+        params: { lat, lon, osmid, type, ...getCurrentTimeParams() },
+    });
+}
+
+// POI of a vector tile object: id is the map object id of the tile feature, tags are used when it is not in the POI index
+export function getPoiByMapObjectApi({ lat, lon, id, tags, signal }) {
+    return apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-map-object`, tags, {
+        apiCache: true,
+        signal,
+        params: { lat, lon, id, ...getCurrentTimeParams() },
+    });
+}
+
+export function getTransportStopApi({ lat, lon, stopId, signal }) {
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-stop`, {
+        apiCache: true,
+        signal,
+        params: { lat, lon, stopId },
+    });
+}
+
 export function searchUserDataApi({ query, openedTracks }) {
     return apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/search-user-data`, openedTracks, {
         params: { query },

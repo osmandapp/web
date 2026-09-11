@@ -193,7 +193,9 @@ export async function prepareDriver() {
 
     mobile && options.setMobileEmulation({ deviceName });
     // headless && options.headless().windowSize({ width, height }); // use --window-size
-    headless && options.addArguments('--headless', '--disable-gpu', '--no-sandbox', `--window-size=${width},${height}`);
+    headless && options.addArguments('--headless', '--no-sandbox', `--window-size=${width},${height}`);
+    // software WebGL for the MVT (MapLibre) layer
+    headless && options.addArguments('--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader');
 
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
     const useLocalHomeBinary = existsSync(tryHomeBinary);

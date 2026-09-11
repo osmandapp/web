@@ -19,13 +19,9 @@ import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
-    ICON_KEY_NAME,
     MATCHED_OBJECTS,
-    POI_ICON_NAME,
     POI_ID,
     POI_NAME,
-    TYPE_OSM_TAG,
-    TYPE_OSM_VALUE,
     WEB_VISIBLE_LEVEL,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
@@ -37,6 +33,7 @@ import {
     buildTrackFeatures,
     buildWptFeatures,
     getIconByType,
+    getObjIdSearch,
 } from '../../manager/SearchManager';
 import { POI_LAYER_ID, SEARCH_LAYER_ID, showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
@@ -53,7 +50,6 @@ import { useNavigate } from 'react-router-dom';
 import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import { FAVORITE_HIT_GROUP_ID, searchTypeMap, USER_OBJECT_TYPES } from '../../manager/searchConstants';
-import { getObjIdSearch } from '../../manager/SearchManager';
 import {
     getAdditionalMatchedAmenityObjects,
     getMatchedAmenityProperties,
@@ -376,14 +372,7 @@ export default function SearchLayer() {
                 let finalIconName = obj.properties[FINAL_POI_ICON_NAME] ?? null;
                 let icon;
                 if (objType === searchTypeMap.POI) {
-                    finalIconName =
-                        finalIconName ??
-                        PoiManager.getIconNameForPoiType({
-                            iconKeyName: obj.properties[ICON_KEY_NAME],
-                            typeOsmTag: obj.properties[TYPE_OSM_TAG],
-                            typeOsmValue: obj.properties[TYPE_OSM_VALUE],
-                            iconName: obj.properties[POI_ICON_NAME],
-                        });
+                    finalIconName = finalIconName ?? PoiManager.getFinalPoiIconName(obj.properties);
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else {
                     finalIconName = getIconByType(objType);

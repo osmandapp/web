@@ -20,7 +20,7 @@ src/tests/
 ├── favorites/      # Favorites and waypoints (10 tests)
 ├── weather/        # Weather functionality (4 tests)
 ├── search/         # Search and POI (8 tests)
-├── map/            # Map operations (2 tests)
+├── map/            # Map operations (3 tests)
 ├── purchases/      # Purchases (1 test)
 └── plan-route/     # Route planning (1 test)
 ```
