@@ -26,9 +26,21 @@ import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
 import TracksProBanner from './TracksProBanner';
-import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL, liveHash } from '../../manager/GlobalManager';
+import LiveTrackGroup from './liveTrack/LiveTrackGroup';
+import LiveTrackFolder from './liveTrack/LiveTrackFolder';
+import LiveTrackContextMenu from './liveTrack/LiveTrackContextMenu';
+import LiveTrackingContext from '../../context/LiveTrackingContext';
+import { TID_PARAM } from '../../util/livetracks/liveTrackUtils';
+import {
+    HEADER_SIZE,
+    LOGIN_URL,
+    MAIN_URL_WITH_SLASH,
+    MENU_IDS,
+    VISIBLE_TRACKS_URL,
+    liveHash,
+} from '../../manager/GlobalManager';
 import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 export const DEFAULT_SORT_METHOD = 'time';
 
@@ -43,11 +55,15 @@ export default function TracksMenu() {
     const [openVisibleTracks, setOpenVisibleTracks] = useState(false);
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const [searchParams] = useSearchParams();
 
     const [, height] = useWindowSize();
     const [listContainerRef, listHeight] = useElementHeight();
 
     const { t } = useTranslation();
+
+    const { openLiveTracks, selectedLiveTranslation } = useContext(LiveTrackingContext);
 
     const rootDropZoneHandlers = useGpxFileDragZone('');
     const clearGpxDragTarget = useGpxFileDragClearZone();
@@ -108,6 +124,13 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.groupFiles]);
 
+    const needLiveLogin = openLiveTracks && !ltx.loginUser && !searchParams.get(TID_PARAM);
+    useEffect(() => {
+        if (needLiveLogin) {
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash, { replace: true });
+        }
+    }, [needLiveLogin, navigate, location.search, location.hash]);
+
     const isRootDropActive = ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === '';
 
     const trackMenuRows = useMemo(() => {
@@ -140,6 +163,7 @@ export default function TracksMenu() {
                     </Typography>
                 </ListItemText>
             </MenuItem>,
+            <LiveTrackGroup key={'se-live-tracks-group'} />,
         ];
         if (!isEmpty(ctx.shareWithMeFiles?.tracks)) {
             rows.push(<SharedFolder key={'shared-folder'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />);
@@ -183,6 +207,17 @@ export default function TracksMenu() {
 
     if (openVisibleTracks) {
         return <VisibleTracks source={MENU_IDS.tracks} open={setOpenVisibleTracks} />;
+    }
+
+    if (needLiveLogin) {
+        return null;
+    }
+
+    if (openLiveTracks) {
+        if (selectedLiveTranslation) {
+            return <LiveTrackContextMenu />;
+        }
+        return <LiveTrackFolder />;
     }
 
     // open folders
