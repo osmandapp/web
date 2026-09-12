@@ -1,5 +1,24 @@
 # OsmAnd Web — Agent Guide
 
+## Commands
+
+Run from `map/` unless stated otherwise.
+
+| Command | Purpose |
+|---|---|
+| `yarn start` | dev server; `start:local`, `start:local-routing`, `start:fallback` switch the backend |
+| `yarn build` | production build; `build:staging` for staging |
+| `yarn lint` | eslint over `src` |
+| `yarn format` | prettier — rewrites files |
+| `yarn test` | jest unit tests, delegates to `tests/unit` |
+
+Tests live outside `map/`:
+
+- `tests/unit` — jest: `yarn test`, `test:watch`, `test:coverage`.
+- `tests/selenium` — e2e against a running app: `yarn test` (localhost:3000), `test:main` (osmand.net), `test:test` (test.osmand.net).
+
+Both have their own `README.md` and `TESTS_STRUCTURE.md`.
+
 ## Project architecture
 
 The app has two independent parts: **left menu** and **map**. They share state only via React context — menu components must never call Leaflet directly, and map layers must never render menu UI.
