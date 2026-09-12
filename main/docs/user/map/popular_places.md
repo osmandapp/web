@@ -88,8 +88,7 @@ There are two main ways to access this feature:
 
 Go to: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
