@@ -39,7 +39,7 @@ export default function ShareType({ selectedShareType, setSelectedShareType, sha
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Typography
-                                id={`se-share-type-${selectedShareType.name}`}
+                                id={`se-selected-share-type-${selectedShareType.name}`}
                                 variant="body2"
                                 className={styles.shareType}
                                 noWrap

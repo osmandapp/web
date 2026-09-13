@@ -168,7 +168,7 @@ export default async function test() {
 async function createShareFile(name) {
     await waitBy(By.id('se-share-file-menu'));
     await waitBy(By.id(`se-share-file-item-${name}`));
-    await waitBy(By.id('se-share-type-Private'));
+    await waitBy(By.id('se-selected-share-type-Private'));
     await waitBy(By.id('se-private-access-list'));
     await waitByRemoved(By.id('se-public-access-list'));
     await waitByRemoved(By.id('se-user-access-list'));
@@ -182,7 +182,7 @@ async function createShareFile(name) {
     await waitByRemoved(By.id('se-actions-share-type'));
     await actionIdleWait();
 
-    await waitBy(By.id('se-share-type-Request Only'));
+    await waitBy(By.id('se-selected-share-type-Request Only'));
     await waitByRemoved(By.id('se-private-access-list'));
     await waitByRemoved(By.id('se-public-access-list'));
     await waitBy(By.id('se-user-access-list'));
@@ -197,7 +197,7 @@ async function createShareFile(name) {
 async function setPublicShareType(name) {
     await waitBy(By.id('se-share-file-menu'));
     await waitBy(By.id(`se-share-file-item-${name}`));
-    await waitBy(By.id('se-share-type-Request Only'));
+    await waitBy(By.id('se-selected-share-type-Request Only'));
 
     await clickBy(By.id('se-share-type'));
 
@@ -207,7 +207,7 @@ async function setPublicShareType(name) {
     await waitByRemoved(By.id('se-actions-share-type'));
     await actionIdleWait();
 
-    await waitBy(By.id('se-share-type-Anyone'));
+    await waitBy(By.id('se-selected-share-type-Anyone'));
     await waitByRemoved(By.id('se-user-access-list'));
     await waitBy(By.id('se-public-access-list'));
     await waitBy(By.id('se-copy-link'));
