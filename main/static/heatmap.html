@@ -744,12 +744,13 @@ function buildTree() {
     if (!kids.length) continue;
     const total = kids.reduce((s, a) => s + a.count, 0);
     const det = document.createElement('details'), sum = document.createElement('summary');
-    sum.innerHTML = `<input type="checkbox" class="grp" data-g="${g.id}" checked aria-label="${esc(g.label)}"> <b>${esc(g.label)}</b><span class="n">${total.toLocaleString()}</span>`;
+    const on = g.id === 'ignored' ? '' : 'checked'; // short, sparse and unreadable tracks are opt-in
+    sum.innerHTML = `<input type="checkbox" class="grp" data-g="${g.id}" ${on} aria-label="${esc(g.label)}"> <b>${esc(g.label)}</b><span class="n">${total.toLocaleString()}</span>`;
     det.appendChild(sum);
     const box = document.createElement('div'); box.className = 'kids';
     for (const a of kids) {
       const lab = document.createElement('label');
-      lab.innerHTML = `<input type="checkbox" class="act" data-i="${a.i}" data-g="${g.id}" checked> ${esc(a.label)}<span class="n">${a.count.toLocaleString()}</span>`;
+      lab.innerHTML = `<input type="checkbox" class="act" data-i="${a.i}" data-g="${g.id}" ${on}> ${esc(a.label)}<span class="n">${a.count.toLocaleString()}</span>`;
       box.appendChild(lab);
     }
     det.appendChild(box); tree.appendChild(det);
@@ -1146,10 +1147,10 @@ for (const id of ['secView', 'secData', 'secSource']) { // remember which sectio
 const mergeLabel = () => { $('mergeN').textContent = `${$('merge').value} m`; };
 mergeLabel();
 for (const id of ['width', 'glow', 'merge']) $(id).addEventListener('input', () => { mergeLabel(); clearTimeout(widthTimer); widthTimer = setTimeout(() => { repaint(); savePrefs(); }, 60); });
-$('all').addEventListener('click', () => setActs(() => true));
+$('all').addEventListener('click', () => setActs((a) => a.group !== 'ignored'));
 $('none').addEventListener('click', () => setActs(() => false));
 $('human').addEventListener('click', () => setActs((a) => a.group === 'foot' || a.group === 'cycling'));
-$('nomotor').addEventListener('click', () => setActs((a) => !['driving', 'motorcycling', 'air_sports', 'unknown'].includes(a.group)));
+$('nomotor').addEventListener('click', () => setActs((a) => !['driving', 'motorcycling', 'air_sports', 'unknown', 'ignored'].includes(a.group)));
 heat.on('load', () => updateAutoScale());
 map.on('moveend', () => setTimeout(updateAutoScale, 0));
 
@@ -1187,7 +1188,8 @@ map.on('moveend', () => setTimeout(updateAutoScale, 0));
     $('from').value = meta.monthMin; $('to').value = meta.monthMax;
     const cap = meta.userCap ? `, each OSM user at most ${meta.userCap} track${meta.userCap > 1 ? 's' : ''} per cell, activity and month` : '';
     $('note').textContent = meta.viewerNote || `Colour: tracks per cell for the selected activities and months${cap}. `
-      + 'Activities are the stored labels (Unknown: no label or reliable timing); dates are OSM upload dates.';
+      + 'Activities are the stored labels (Unknown: no label or reliable timing); dates are OSM upload dates. '
+      + 'Ignored, off by default: too short, too few points, or an unreadable GPX drawn at its start point.';
     heat.addTo(map);
     update();
     $('loading').remove();
