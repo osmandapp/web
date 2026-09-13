@@ -39,7 +39,9 @@
 <!-- Does not work -->
 <!--   <tile_source name="Relief" url_template="http://www.maps-for-free.com/layer/relief/z{0}/row{2}/{0}_{1}-{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="12" tile_size="256" img_density="32" avg_img_size="24000"/>-->
 
-   <tile_source name="🚒 Fire Hydrants" url_template="http://openfiremap.org/hytiles/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="2000"/> 
+   <tile_source name="🚒 Fire Hydrants" url_template="http://openfiremap.org/hytiles/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="2000"/>
+
+   <tile_source name="🌌 Light Pollution Map" url_template="https://api.lightpollutionmap.app/api/lightpollution/image-tiles/2025/{0}/{1}/{2}.png?v=v6-20260724" ext=".png" min_zoom="1" max_zoom="22" tile_size="256" img_density="16" avg_img_size="18000"/>
 
 
    <!-- Yandex maps -->
