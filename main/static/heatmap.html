@@ -1188,8 +1188,8 @@ map.on('moveend', () => setTimeout(updateAutoScale, 0));
     $('from').value = meta.monthMin; $('to').value = meta.monthMax;
     const cap = meta.userCap ? `, each OSM user at most ${meta.userCap} track${meta.userCap > 1 ? 's' : ''} per cell, activity and month` : '';
     $('note').textContent = meta.viewerNote || `Colour: tracks per cell for the selected activities and months${cap}. `
-      + 'Activities are the stored labels (Unknown: no label or reliable timing); dates are OSM upload dates. '
-      + 'Ignored, off by default: too short, too few points, or an unreadable GPX drawn at its start point.';
+      + 'Activities are the stored labels; dates are OSM upload dates. '
+      + 'Ignored, off by default: too short, too few points, an unreadable GPX drawn at its start point, or no label and no reliable timing.';
     heat.addTo(map);
     update();
     $('loading').remove();
