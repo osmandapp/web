@@ -20,6 +20,8 @@ export default async function test() {
     // --- Search: track appears, then disappears after delete ---
     const trackName = 'test-track-mixed';
 
+    // the cloud list is rendered only after the tracks menu was opened
+    await clickBy(By.id('se-show-menu-tracks'));
     await actionDeleteTracksByPattern(trackName);
 
     await actionUploadGpx({ mask: `${trackName}.gpx` });
@@ -69,7 +71,7 @@ export default async function test() {
     await waitBy(By.id(`se-cloud-track-${trackName}`));
     await actionRenameTrack(trackName, suffix);
 
-    await submitSearchQuery(renamedTrackName);
+    await submitSearchQueryUntilFound(renamedTrackName, By.id(renamedTrackResultId));
     await waitBy(By.id('se-search-results'));
     await waitBy(By.id(renamedTrackResultId));
     await waitByRemoved(By.id(trackResultId));
@@ -101,15 +103,27 @@ export default async function test() {
     await actionsUploadFavorites({ files: path });
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
-    // --- Search: tokens match word starts, more matched tokens rank first ---
-    await submitSearchQuery('Amsterdam 99');
+    // --- Search: one token matches every name with a word starting with it, ordered by name ---
+    await submitSearchQuery('Amsterdam');
     await waitBy(By.id('se-search-results'));
     await enclose(
         async () => {
             const ids = await enumerateIds('se-search-result-fav-');
             return ids.length === 4 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
         },
-        { tag: 'validateFavSearchRanking' }
+        { tag: 'validateFavSearchOneToken' }
+    );
+
+    // --- Search: every query token has to match, so a second token narrows the result ---
+    await clickBy(By.id('se-show-menu-search'));
+    await submitSearchQuery('Amsterdam 99');
+    await waitBy(By.id('se-search-results'));
+    await enclose(
+        async () => {
+            const ids = await enumerateIds('se-search-result-fav-');
+            return ids.length === 1 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
+        },
+        { tag: 'validateFavSearchAllTokens' }
     );
 
     // "dam" is inside "Amsterdam" but no name token starts with it
@@ -199,6 +213,22 @@ async function assertSearchResultAbsent(resultBy) {
         await waitBy(By.id('se-search-results'));
         await waitByRemoved(resultBy);
     }
+}
+
+// the server rebuilds its search index on its own schedule, so a fresh name is not found at once
+async function submitSearchQueryUntilFound(query, resultBy) {
+    await enclose(
+        async () => {
+            await submitSearchQuery(query);
+            const found = await waitBy(resultBy, { optional: true });
+            if (found) {
+                return true;
+            }
+            await clickBy(By.id('se-show-menu-search'));
+            return false;
+        },
+        { tag: `searchUntilFound-${query}` }
+    );
 }
 
 async function submitSearchQuery(query) {

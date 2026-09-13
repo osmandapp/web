@@ -97,6 +97,8 @@ async function saveRouteToCloud(buttonId) {
     const trackName = await nameInput.getAttribute('value');
 
     await clickBy(By.id('se-submit-save-to-cloud'));
+    // the name is generated from the date, so a track left by a failed run asks to be updated
+    await clickBy(By.id('se-overwrite-cloud-track'), { optional: true });
     await waitByRemoved(By.id('se-save-track-dialog'));
     return trackName;
 }
@@ -108,12 +110,17 @@ async function verifyTrackInCloud(routeName) {
 
 async function verifyCloudTrackInfo(routeName) {
     await waitBy(By.id(`se-${routeName}`));
-    const infoElement = await waitBy(By.id(`se-cloud-t-info-${routeName}`));
-    const infoText = await infoElement.getText();
+    let infoText;
+    await enclose(
+        async () => {
+            const infoElement = await waitBy(By.id(`se-cloud-t-info-${routeName}`));
+            infoText = await infoElement.getText();
+            return /([\d.,]+)\s*km/.test(infoText);
+        },
+        { tag: `cloudTrackInfo-${routeName}` }
+    );
 
-    const distanceMatch = infoText.match(/([\d.,]+)\s*km/);
-    await assert(distanceMatch !== null, `Cloud track info missing distance: ${infoText}`);
-    const distance = parseFloat(distanceMatch[1].replace(',', '.'));
+    const distance = parseFloat(infoText.match(/([\d.,]+)\s*km/)[1].replace(',', '.'));
     await assert(distance > 0, `Cloud track distance is zero: ${infoText}`);
 }
 

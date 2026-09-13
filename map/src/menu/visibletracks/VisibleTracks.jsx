@@ -51,7 +51,9 @@ export function updateVisibleCache({ visible, file, smartf = null }) {
     const fileName = visibleCacheName(file, smartf?.type === SHARE_TYPE);
 
     if (visible) {
-        savedVisible.open.push(fileName);
+        if (!savedVisible.open.includes(fileName)) {
+            savedVisible.open.push(fileName);
+        }
     } else {
         const ind = savedVisible.open.findIndex((n) => n === fileName);
         if (ind !== -1) {

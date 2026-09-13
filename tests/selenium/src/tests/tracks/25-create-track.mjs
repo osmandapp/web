@@ -69,6 +69,8 @@ async function saveLocalToCloud({ name = null, overwrite = false } = {}) {
         await clickBy(By.id('se-submit-save-to-cloud'));
     }
     await waitBy(By.id('se-track-actions-edit'));
+    // saving to cloud reopens the track and refreshes the list
+    await actionIdleWait();
 }
 
 async function validateInfoBlockStrings(strings) {

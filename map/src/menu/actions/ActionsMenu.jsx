@@ -5,8 +5,10 @@ import AppContext from '../../context/AppContext';
 export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false, setShowMenu = null, actions = null }) {
     const ctx = useContext(AppContext);
 
+    // a Popover left mounted while closed swallows the clicks on the panel under it
     return (
-        actions && (
+        actions &&
+        open && (
             <Popover
                 anchorOrigin={{
                     vertical: 'top',
