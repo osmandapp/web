@@ -48,6 +48,7 @@ input[type=range] { width: 100%; }
 .section > summary::-webkit-details-marker { display: none; }
 .section > summary::before { content: "▸"; color: var(--muted); display: inline-block; transition: transform .15s; }
 .section[open] > summary::before { transform: rotate(90deg); }
+.section > summary .count { margin-left: auto; font: 400 .74rem "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); }
 .section > .body { display: grid; gap: 14px; margin-top: 12px; }
 .summary { display: grid; gap: 12px; }
 .summary h2 { font: 500 .72rem/1 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
@@ -58,7 +59,7 @@ input[type=range] { width: 100%; }
 .summary td.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
 .review .list { display: grid; gap: 2px; max-height: 260px; overflow-y: auto; }
 .review .item { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; padding: 4px 6px; border: 1px solid transparent; border-radius: 4px; cursor: pointer; font-size: .82rem; }
-.review .item:hover, .review .item.sel { border-color: var(--rule); background: #f7f8f6; }
+.review .item:hover, .review .item.hover, .review .item.sel { border-color: var(--rule); background: #f7f8f6; }
 .review .item .sub { grid-column: 1 / -1; color: var(--muted); font: 400 .74rem "IBM Plex Mono", ui-monospace, monospace; }
 .review .badge { font: 500 .7rem "IBM Plex Mono", ui-monospace, monospace; padding: 0 5px; border-radius: 3px; align-self: start; }
 .review .badge.ok { background: #dff1e4; color: #1e6b3a; }
@@ -80,7 +81,6 @@ input[type=range] { width: 100%; }
     <h1>OsmGpx Heatmap</h1>
     <div class="hint">Every OSM GPX trace in the OsmGpx database, counted per map cell by activity and month. Tiles load as you move; the filter is applied in your browser.</div>
   </div>
-  <div><span class="label">Go to</span><select id="goto"></select></div>
   <details class="section" id="secView" open>
   <summary>Display</summary>
   <div class="body">
@@ -135,9 +135,8 @@ input[type=range] { width: 100%; }
     <div class="list" id="revList"></div>
     <div id="revDetail" hidden>
       <div id="revInfo" class="hint"></div>
-      <textarea id="revComment" placeholder="Comment (optional), sent with the button you press" aria-label="Comment"></textarea>
-      <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity…</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
-      <label class="row" id="revActRow" hidden>Right activity <select id="revAct"></select><button type="button" id="revSave">Send</button></label>
+      <textarea id="revComment" placeholder="Comment (optional), e.g. the right activity; sent with the button you press" aria-label="Comment"></textarea>
+      <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
       <div class="row"><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
     </div>
     <a id="revExport" target="_blank" rel="noopener">Download reviewed tracks (.csv.gz)</a>
@@ -147,9 +146,14 @@ input[type=range] { width: 100%; }
     <div class="legend" aria-hidden="true"></div>
     <div class="legend-labels"><span id="legendMin">1</span><span id="legendMid"></span><span id="legendMax">max</span></div>
   </div>
+  <details class="section" id="secSource">
+  <summary>Data source <span class="count" id="matchN"></span></summary>
+  <div class="body">
   <div id="stats" class="stats"></div>
   <div id="note" class="hint"></div>
   <div id="summary" class="summary" hidden></div>
+  </div>
+  </details>
 </aside>
 <div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div></div>
 </div>
@@ -161,12 +165,6 @@ const params = new URLSearchParams(location.search);
 // test.osmand.net and builder.osmand.net serve the tiles and the tracks API themselves; other hosts (osmand.net, a local copy) use test.osmand.net
 const HOME = /^(test|builder)\.osmand\.net$/.test(location.hostname) ? location.origin : 'https://test.osmand.net';
 const BASE = ((d) => (d.endsWith('/') ? d : d + '/'))(params.get('data') || `${HOME}/basemap/osmgpx/heat/`);
-const PLACES = [
-  ['Europe', 50, 10, 5], ['Munich', 48.14, 11.58, 12], ['Amsterdam', 52.37, 4.9, 12], ['Berlin', 52.52, 13.4, 11], ['London', 51.51, -0.12, 11],
-  ['Paris', 48.86, 2.35, 11], ['Innsbruck and Tyrol', 47.26, 11.39, 11], ['Chamonix', 45.92, 6.87, 12], ['Dolomites', 46.55, 11.85, 11],
-  ['Lake District', 54.5, -3.1, 11], ['Barcelona', 41.39, 2.17, 12], ['Moscow', 55.75, 37.62, 11], ['New York', 40.73, -73.99, 11],
-  ['San Francisco', 37.77, -122.42, 11], ['Tokyo', 35.68, 139.76, 11], ['World', 30, 0, 2],
-];
 const MONTH_BITS = 9, CACHE_FILES = 320;
 let meta, levelsDesc = [], binMask = new Uint8Array(65536), filterEpoch = 0, paintEpoch = 0;
 let COMBO = false; // personal builds: bin = index into meta.binTable [folder, activity, month]
@@ -255,12 +253,6 @@ async function findArchives() {
       if (m.levelStats && Object.keys(m.levelStats).length) { meta.levelStats = meta.levelStats || {}; meta.levelStats[L] = meta.levelStats[L] || m.levelStats; }
     } catch (e) { delete archives[L]; }
   }));
-}
-
-function levelLine(l) {
-  const st = meta.levelStats && meta.levelStats[l], a = archives[l];
-  const tiles = st && st.files != null ? st.files : a && a.tiles, bytes = a ? a.bytes : st && st.bytes;
-  return `c${l}: ${tiles != null ? `${tiles.toLocaleString()} tiles, ` : ''}${bytes != null ? `${(bytes / 1048576).toFixed(1)} MB` : ''}${a ? ' (pmtiles)' : ''}`;
 }
 
 function loadFile(L, x, y) {
@@ -818,9 +810,15 @@ function update() {
     for (const [a, m, c] of meta.hist) if (s.act[a] && m >= s.from && m <= s.to) n += c;
   }
   filterEpoch++;
-  $('stats').textContent = `${n.toLocaleString()} of ${meta.tracks.toLocaleString()} tracks match`
-    + `\nbuilt ${meta.created}, levels ${[...levelsDesc].reverse().map((l) => 'c' + l).join(' ')}`
-    + `\n${[...levelsDesc].reverse().map(levelLine).join('\n')}`
+  $('matchN').textContent = `${n.toLocaleString()} of ${meta.tracks.toLocaleString()} tracks`;
+  const lv = [...levelsDesc].reverse();
+  let tiles = 0, bytes = 0;
+  for (const l of lv) {
+    const st = meta.levelStats?.[l], a = archives[l];
+    tiles += (st?.files ?? a?.tiles) || 0;
+    bytes += (a ? a.bytes : st?.bytes) || 0;
+  }
+  $('stats').textContent = `built ${meta.created}\nlevels c${lv[0]}–c${lv[lv.length - 1]}: ${tiles.toLocaleString()} tiles, ${(bytes / 1073741824).toFixed(1)} GB`
     + (meta.vector ? `\nvector lines from z${meta.vector.zoom}: ${meta.vector.files.toLocaleString()} files, ${(meta.vector.bytes / 1048576).toFixed(1)} MB` : '');
   for (const k in norms) delete norms[k];
   if (!updateAutoScale()) repaint();
@@ -830,8 +828,7 @@ function update() {
 map.on('click', (ev) => {
   const z = map.getZoom(), L_ = levelFor(z); if (!meta || L_ === null) return;
   if (z >= REVIEW_ZOOM) { // close enough to tell tracks apart: list the ones under the click instead of the cell
-    fillActivitySelect();
-    const pxM = 40075016 * Math.cos(ev.latlng.lat * Math.PI / 180) / Math.pow(2, z + 8);
+    const pxM =40075016 * Math.cos(ev.latlng.lat * Math.PI / 180) / Math.pow(2, z + 8);
     tracksHere(ev.latlng.lat, ev.latlng.lng, Math.min(50, Math.max(10, 12 * pxM)));
     return;
   }
@@ -921,14 +918,6 @@ function actIndexOf(activity) {
   return speed >= 0 ? speed : meta.acts.findIndex((a) => a.key === 'unknown');
 }
 
-function fillActivitySelect() {
-  if ($('revAct').options.length) return;
-  $('revAct').innerHTML = '<option value="">Choose…</option>' + meta.groups.filter((g) => g.id !== 'unknown').map((g) => `<optgroup label="${esc(g.label)}">`
-    + `<option value="${esc(g.id)}">${esc(g.label)}, no subtype</option>`
-    + meta.acts.filter((a) => a.group === g.id && !a.key.includes('~') && a.key !== 'unknown').map((a) => `<option value="${esc(a.key)}">${esc(a.label)}</option>`).join('')
-    + '</optgroup>').join('');
-}
-
 async function tracksHere(lat, lon, cellM) {
   const r = Math.max(10, Math.min(cellM, 300)), dLat = r / 110540, dLon = r / (111320 * Math.cos(lat * Math.PI / 180));
   map.closePopup();
@@ -1012,7 +1001,12 @@ function renderReviewList() {
       + `<span class="sub">${t.id} · ${t.dist ? (t.dist / 1000).toFixed(1) + ' km · ' : ''}${esc(String(t.date || '').slice(0, 10))} · ${Math.round(t.distM)} m away</span></div>`;
   }).join('');
   reviewTracks.forEach((t, i) => {
-    t.line = L.polyline(t.segs, { color: '#16201b', weight: 2, opacity: 0.35, bubblingMouseEvents: false })
+    t.line = L.polyline(t.segs, { color: '#16201b', weight: 2, opacity: 0.35, interactive: false }).addTo(reviewLayer);
+  });
+  // a wide invisible stroke over every line: hover and click find a track without hitting its 2 px line exactly
+  reviewTracks.forEach((t, i) => {
+    L.polyline(t.segs, { color: '#000', weight: 16, opacity: 0, bubblingMouseEvents: false })
+      .on('mouseover', () => hoverTrack(i, true)).on('mouseout', () => hoverTrack(i, false))
       .on('click', () => selectTrack(i, false)).addTo(reviewLayer);
   });
   if (reviewSel !== null) highlight(reviewSel, true);
@@ -1023,6 +1017,12 @@ function highlight(i, on) {
   if (!t?.line) return;
   t.line.setStyle(on ? { color: '#b35600', weight: 5, opacity: 0.95 } : { color: '#16201b', weight: 2, opacity: 0.35 });
   if (on) t.line.bringToFront();
+}
+
+// hover on the map or in the list: the line and its list row light up together; the selected track stays lit
+function hoverTrack(i, on) {
+  if (i !== reviewSel) highlight(i, on);
+  $('revList').querySelector(`.item[data-i="${i}"]`)?.classList.toggle('hover', on);
 }
 
 function selectTrack(i, fit = true) {
@@ -1038,7 +1038,6 @@ function selectTrack(i, fit = true) {
     + (t.description ? `<br>${esc(String(t.description).slice(0, 200))}` : '');
   const mine = t.review?.mine;
   reviewVerdict = mine?.verdict || null;
-  $('revAct').value = mine?.activity || '';
   $('revComment').value = mine?.comment || '';
   const comments = [t.review?.admin, ...(t.review?.users || [])].filter((r) => r?.comment && r !== mine).map((r) => `“${r.comment}”`);
   $('revInfo').insertAdjacentHTML('beforeend', (t.review ? `<br>reviews: ${esc(reviewSummary(t.review))}` : '<br>no reviews yet')
@@ -1054,7 +1053,6 @@ function syncVerdicts() {
     b.setAttribute('aria-pressed', String(b.dataset.v === reviewVerdict));
     b.disabled = !reviewLoggedIn; // everyone sees the tracks and reviews, signed-in people send
   });
-  $('revActRow').hidden = reviewVerdict !== 'wrong_activity' || !reviewLoggedIn;
   $('revClear').disabled = !reviewLoggedIn;
   $('revComment').disabled = !reviewLoggedIn;
 }
@@ -1062,11 +1060,10 @@ function syncVerdicts() {
 async function saveReview(verdict) {
   const t = reviewTracks[reviewSel];
   if (!t) return;
-  if (verdict === 'wrong_activity' && !$('revAct').value) { $('revStatus').textContent = 'Choose the right activity.'; return; }
   $('revStatus').textContent = 'Saving…';
   try {
     const res = await fetch(`${API}/api/pubtracks/review`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: t.id, verdict: verdict || '', activity: verdict === 'wrong_activity' ? $('revAct').value : '', comment: verdict ? $('revComment').value : '' }) });
+      body: JSON.stringify({ id: t.id, verdict: verdict || '', comment: verdict ? $('revComment').value : '' }) });
     if (!res.ok) {
       $('revStatus').textContent = res.status === 401 ? `Not saved: sign in on ${SIGN_IN}.` : `Not saved: HTTP ${res.status}`;
       return;
@@ -1083,36 +1080,21 @@ async function saveReview(verdict) {
 document.addEventListener('click', (e) => {
   const b = e.target.closest('.tracksHere');
   if (!b) return;
-  fillActivitySelect();
   tracksHere(+b.dataset.lat, +b.dataset.lon, +b.dataset.m);
 });
-$('revList').addEventListener('mouseover', (e) => { const it = e.target.closest('.item'); if (it) highlight(+it.dataset.i, true); });
-$('revList').addEventListener('mouseout', (e) => {
-  const it = e.target.closest('.item');
-  if (it && +it.dataset.i !== reviewSel) highlight(+it.dataset.i, false);
-});
+$('revList').addEventListener('mouseover', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, true); });
+$('revList').addEventListener('mouseout', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, false); });
 $('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) selectTrack(+it.dataset.i); });
 $('revVerdicts').addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b || b.disabled) return;
   reviewVerdict = b.dataset.v;
   syncVerdicts();
-  if (reviewVerdict !== 'wrong_activity') {
-    saveReview(reviewVerdict); // a quick action: one press sends it with the comment
-  } else {
-    $('revStatus').textContent = 'Choose the right activity and press Send.';
-  }
+  saveReview(reviewVerdict); // a quick action: one press sends it with the comment
 });
-$('revSave').addEventListener('click', () => saveReview('wrong_activity'));
 $('revClear').addEventListener('click', () => { reviewVerdict = null; syncVerdicts(); saveReview(null); });
 
 // ---------- wiring
-function fillGoto() { $('goto').innerHTML = '<option value="">Choose a place…</option>' + PLACES.map((p, i) => `<option value="${i}">${esc(p[0])}</option>`).join(''); }
-fillGoto();
-$('goto').addEventListener('change', (e) => {
-  const p = e.target.value === '' ? null : PLACES[+e.target.value]; if (!p) return;
-  if (p.length === 1) map.fitBounds(meta.bounds); else map.setView([p[1], p[2]], p[3]);
-});
 $('undated').addEventListener('change', update);
 $('fAll').addEventListener('click', () => { $('ftree').querySelectorAll('.fold').forEach((c) => { c.checked = true; }); update(); });
 $('fNone').addEventListener('click', () => { $('ftree').querySelectorAll('.fold').forEach((c) => { c.checked = false; }); update(); });
@@ -1156,7 +1138,7 @@ $('palette').addEventListener('change', () => { setPalette($('palette').value); 
 $('scaleMode').addEventListener('change', () => { repaint(); savePrefs(); });
 $('style').addEventListener('change', () => { $('lineRow').hidden = $('style').value === 'cells'; $('mergeRow').hidden = $('style').value !== 'vector'; heat.redraw(); updateLegend(); savePrefs(); });
 let widthTimer = 0;
-for (const id of ['secView', 'secData']) { // remember which sections are collapsed
+for (const id of ['secView', 'secData', 'secSource']) { // remember which sections are collapsed
   const el = $(id);
   try { const v = localStorage.getItem(`heatmap_${id}`); if (v !== null) el.open = v === '1'; } catch (e) { /* storage blocked */ }
   el.addEventListener('toggle', () => { try { localStorage.setItem(`heatmap_${id}`, el.open ? '1' : '0'); } catch (e) { /* storage blocked */ } });
@@ -1193,7 +1175,7 @@ map.on('moveend', () => setTimeout(updateAutoScale, 0));
     buildTree();
     if (COMBO) { buildFolders(); $('folderBox').hidden = false; }
     if (meta.undatedTracks) { $('undatedRow').hidden = false; $('undatedN').textContent = meta.undatedTracks.toLocaleString(); }
-    if (meta.bounds) { PLACES.unshift(['All tracks']); fillGoto(); if (!start.length) map.fitBounds(meta.bounds); }
+    if (meta.bounds && !start.length) map.fitBounds(meta.bounds);
     if (meta.summary) {
       const cell = (v) => `<td class="${typeof v === 'number' ? 'num' : ''}">${esc(typeof v === 'number' ? v.toLocaleString() : v)}</td>`;
       $('summary').innerHTML = meta.summary.filter((t) => t.rows.length).map((t) => `<section><h2>${esc(t.title)}</h2><div class="scroll"><table>`
@@ -1203,9 +1185,9 @@ map.on('moveend', () => setTimeout(updateAutoScale, 0));
     }
     for (const el of [$('from'), $('to')]) { el.min = meta.monthMin; el.max = meta.monthMax; }
     $('from').value = meta.monthMin; $('to').value = meta.monthMax;
-    const cap = meta.userCap ? `Each OSM user adds at most ${meta.userCap} track${meta.userCap > 1 ? 's' : ''} per cell, activity and month.` : 'No per-user cap.';
-    $('note').textContent = meta.viewerNote || `Colour: tracks per cell for the selected activities and months. ${cap} Cell size: 1 px at zoom ${levelsDesc[0] - 8}, scaled up above it. `
-      + 'Activities are the stored labels; tracks without a label or reliable timing are under Unknown activity. Dates are OSM upload dates. Click a cell for its activities.';
+    const cap = meta.userCap ? `, each OSM user at most ${meta.userCap} track${meta.userCap > 1 ? 's' : ''} per cell, activity and month` : '';
+    $('note').textContent = meta.viewerNote || `Colour: tracks per cell for the selected activities and months${cap}. `
+      + 'Activities are the stored labels (Unknown: no label or reliable timing); dates are OSM upload dates.';
     heat.addTo(map);
     update();
     $('loading').remove();
