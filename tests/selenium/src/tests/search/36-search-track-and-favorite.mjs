@@ -101,15 +101,27 @@ export default async function test() {
     await actionsUploadFavorites({ files: path });
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
-    // --- Search: tokens match word starts, more matched tokens rank first ---
-    await submitSearchQuery('Amsterdam 99');
+    // --- Search: one token matches every name with a word starting with it, ordered by name ---
+    await submitSearchQuery('Amsterdam');
     await waitBy(By.id('se-search-results'));
     await enclose(
         async () => {
             const ids = await enumerateIds('se-search-result-fav-');
             return ids.length === 4 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
         },
-        { tag: 'validateFavSearchRanking' }
+        { tag: 'validateFavSearchOneToken' }
+    );
+
+    // --- Search: every query token has to match, so a second token narrows the result ---
+    await clickBy(By.id('se-show-menu-search'));
+    await submitSearchQuery('Amsterdam 99');
+    await waitBy(By.id('se-search-results'));
+    await enclose(
+        async () => {
+            const ids = await enumerateIds('se-search-result-fav-');
+            return ids.length === 1 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
+        },
+        { tag: 'validateFavSearchAllTokens' }
     );
 
     // "dam" is inside "Amsterdam" but no name token starts with it
