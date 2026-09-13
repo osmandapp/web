@@ -3,6 +3,7 @@
 import { By } from 'selenium-webdriver';
 
 import { enclose, waitBy, clickBy, enumerateIds } from '../../lib.mjs';
+import actionIdleWait from '../actionIdleWait.mjs';
 
 /**
  * Action: actionLocalToCloud({mask = '*'})
@@ -26,6 +27,8 @@ export async function saveToCloud(name) {
     await clickBy(By.id('se-submit-save-to-cloud'));
     await clickBy(By.id('se-overwrite-cloud-track'), { optional: true });
     await waitBy(By.id('se-track-actions-edit'));
+    // the save dialog is still closing, and a track behind it counts as visible
+    await actionIdleWait();
 
     await clickBy(By.id('se-button-back'));
 
