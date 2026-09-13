@@ -26,6 +26,8 @@ export default async function test() {
     for (const track of getFiles({ folder: 'gpx' })) {
         await actionDeleteTracksByPattern(track.name);
     }
+    // the track this test saves is named by the date, so the loop above never reaches it
+    await actionDeleteTracksByPattern(trackName);
 
     await clickBy(By.id('se-create-new-route'));
 

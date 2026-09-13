@@ -20,6 +20,8 @@ export default async function test() {
     // --- Search: track appears, then disappears after delete ---
     const trackName = 'test-track-mixed';
 
+    // the cloud list is rendered only after the tracks menu was opened
+    await clickBy(By.id('se-show-menu-tracks'));
     await actionDeleteTracksByPattern(trackName);
 
     await actionUploadGpx({ mask: `${trackName}.gpx` });
