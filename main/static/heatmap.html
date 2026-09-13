@@ -941,13 +941,22 @@ async function tracksHere(lat, lon, cellM) {
   try {
     const res = await fetch(`${API}/osmgpx/get-routes-list`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ minLat: String(lat - dLat), maxLat: String(lat + dLat), minLon: String(lon - dLon), maxLon: String(lon + dLon) }) });
+    // nginx answers any server error with its own HTML page (502), so never parse a failed response
+    if (!res.ok) throw new Error(`HTTP ${res.status}${res.status >= 500 ? ', the server failed or is restarting, try again' : ''}`);
     fc = await res.json();
   } catch (e) {
     $('revHint').textContent = `Could not load tracks from ${API}: ${e.message}`;
     return;
   }
+  const features = fc.features || [];
+  if (features.length && !features.some((f) => f.properties.geo_b64)) { // over 5000 tracks: the server sends them without lines
+    reviewTracks = [];
+    renderReviewList();
+    $('revHint').textContent = `${features.length.toLocaleString()} tracks cross this spot, too many for the server to send their lines, so none can be listed here.`;
+    return;
+  }
   const s = selected();
-  reviewTracks = (fc.features || []).map((f) => f.properties).filter((p) => p.geo_b64).map((p) => {
+  reviewTracks = features.map((f) => f.properties).filter((p) => p.geo_b64).map((p) => {
     const segs = decodeGeometry(p.geo_b64);
     return { ...p, segs, distM: distToTrackM(segs, lat, lon), act: actIndexOf(p.activity) };
   }).filter((t) => t.distM <= r && (t.act < 0 || s.act[t.act])).sort((a, b) => a.distM - b.distM).slice(0, 60);
@@ -962,9 +971,12 @@ async function tracksHere(lat, lon, cellM) {
 async function loadReviews() {
   try {
     if (reviewLoggedIn === null) {
-      const me = await (await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' })).json();
-      reviewLoggedIn = !!me.signedIn;
-      reviewAdmin = !!me.admin;
+      const meRes = await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' });
+      if (meRes.ok) {
+        const me = await meRes.json();
+        reviewLoggedIn = !!me.signedIn;
+        reviewAdmin = !!me.admin;
+      }
     }
     if (!reviewTracks.length) return;
     const res = await fetch(`${API}/api/pubtracks/reviews?ids=${reviewTracks.map((t) => t.id).join(',')}`, { credentials: 'include' });
@@ -972,7 +984,7 @@ async function loadReviews() {
     const reviews = await res.json();
     for (const t of reviewTracks) t.review = reviews[t.id] || null;
   } catch (e) {
-    reviewLoggedIn = false;
+    // sign-in state stays unknown (null, buttons off) and /me is asked again on the next click
   }
 }
 
