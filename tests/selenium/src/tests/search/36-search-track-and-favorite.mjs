@@ -71,7 +71,7 @@ export default async function test() {
     await waitBy(By.id(`se-cloud-track-${trackName}`));
     await actionRenameTrack(trackName, suffix);
 
-    await submitSearchQuery(renamedTrackName);
+    await submitSearchQueryUntilFound(renamedTrackName, By.id(renamedTrackResultId));
     await waitBy(By.id('se-search-results'));
     await waitBy(By.id(renamedTrackResultId));
     await waitByRemoved(By.id(trackResultId));
@@ -213,6 +213,22 @@ async function assertSearchResultAbsent(resultBy) {
         await waitBy(By.id('se-search-results'));
         await waitByRemoved(resultBy);
     }
+}
+
+// the server rebuilds its search index on its own schedule, so a fresh name is not found at once
+async function submitSearchQueryUntilFound(query, resultBy) {
+    await enclose(
+        async () => {
+            await submitSearchQuery(query);
+            const found = await waitBy(resultBy, { optional: true });
+            if (found) {
+                return true;
+            }
+            await clickBy(By.id('se-show-menu-search'));
+            return false;
+        },
+        { tag: `searchUntilFound-${query}` }
+    );
 }
 
 async function submitSearchQuery(query) {

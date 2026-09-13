@@ -108,6 +108,7 @@ async function clearTrash() {
     await waitBy(By.id('se-delete-trash-dialog'));
     await clickBy(By.id('se-delete-trash-dialog-delete'));
     await actionIdleWait();
-    await waitByRemoved(By.id('se-delete-trash-dialog'));
+    // emptying the trash on the server can outlast the 10s of waitByRemoved
     await waitBy(By.id('se-empty-trash-page'));
+    await waitByRemoved(By.id('se-delete-trash-dialog'));
 }
