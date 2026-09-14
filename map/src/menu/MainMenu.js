@@ -239,7 +239,12 @@ export default function MainMenu({
     useEffect(() => {
         // Wait until .info details are loaded (updateFiles == null) before auto-opening the
         // track, so processDisplayTrack reads pointsGroups visibility from the refreshed listFiles.
-        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && !ctx.updateFiles) {
+        if (
+            location.pathname.includes(INFO_MENU_URL) &&
+            ctx.listFiles?.uniqueFiles &&
+            !ctx.updateFiles &&
+            !trackUrlOpenLoading
+        ) {
             if (isEmpty(ctx.selectedGpxFile)) {
                 if (filename) {
                     const decodeFilename = decodeString(filename);
