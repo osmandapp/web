@@ -226,7 +226,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-The **Gallery Menu** can display up to **100 images** related to the selected point of interest. To view these images, tap **Show All** (Android) / **View All** (iOS). You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Description (up to two lines, Android only)*, *Name*, *Date added*, *Author*, *License*.
+The **Gallery Menu** can display up to **100 images** related to the selected point of interest. To view these images, tap **Show All** (Android) / **View All** (iOS). You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Description (up to two lines on Android)*, *Name*, *Date added*, *Author*, *License*.
 
 On iOS, iPadOS, and macOS, you can navigate photos using keyboard keys (←/→ to move between images, Enter/Space to open).
 

@@ -216,8 +216,6 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 **Globe View** allows you to display the map as a spherical Earth instead of a flat projection. This mode changes the geometry of the map surface and adapts map interaction to spherical navigation.  
 
 Globe View is currently available only when:
-- The [Development plugin](../plugins/development.md) is enabled.  
-Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - The [Topography plugin](../plugins/topography.md) is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - The [Map rendering engine](../personal/global-settings.md#map-rendering-engine) is set to Version 2 (OpenGL).  
