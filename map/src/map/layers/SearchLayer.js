@@ -62,6 +62,9 @@ import {
 
 export const ZOOM_TO_MAP = 17;
 
+// one channel for both engines: a new query cancels the previous one
+const SEARCH_ABORT_KEY = 'searchByWord';
+
 // Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
 export function buildFavGroupMap(favoriteFeatures) {
     if (!favoriteFeatures?.length) return null;
@@ -236,11 +239,12 @@ export default function SearchLayer() {
 
     async function searchByWord(searchData, isCancelled) {
         const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
-        const notifyTimeout = showProcessingNotification(ctx);
         const visible = getVisibleBboxInfo(ctx, map);
         if (!visible) {
+            ctx.setProcessingSearch(false);
             return;
         }
+        const notifyTimeout = showProcessingNotification(ctx);
         const bbox = visible.bounds;
         ctx.setSearchFavoriteGroupIds(null);
         ctx.setSearchResult(null);
@@ -252,7 +256,7 @@ export default function SearchLayer() {
                 query: searchData.query,
                 baseSearch: searchData.baseSearch,
                 spatial: spatialSearch,
-                abortControllerKey: spatialSearch ? 'spatialSearch' : null,
+                abortControllerKey: SEARCH_ABORT_KEY,
                 maps: getMapsFromUrl(),
             });
             if (isCancelled()) {
@@ -316,6 +320,7 @@ export default function SearchLayer() {
     }
 
     useEffect(() => {
+        let cancelled = false;
         const addAsyncLayers = async () => {
             if (!ctx.searchResult) {
                 removeOldSearchLayer();
@@ -332,6 +337,9 @@ export default function SearchLayer() {
                             ctx.searchVisibleLevel
                         ),
                     });
+                    if (cancelled) {
+                        return;
+                    }
                     removeOldSearchLayer();
                     searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
@@ -340,6 +348,10 @@ export default function SearchLayer() {
         };
 
         addAsyncLayers().then();
+
+        return () => {
+            cancelled = true;
+        };
     }, [ctx.searchResult, ctx.searchVisibleLevel]);
 
     function onClick(e) {
