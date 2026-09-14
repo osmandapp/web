@@ -409,13 +409,15 @@ Use sorting options to organize map data:
 
 Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. Weather forecast has its own regular update cycle. For details, see the [Download Forecast](../plugins/weather.md#download-forecast). 
 
 If several maps of the same country require updating, OsmAnd groups them into a single item in the Updates list. The grouped item shows the country name and the number of maps included. When you tap it, an *Update maps* bottom sheet opens, showing all maps that need to be updated. 
 
 Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
+
+The **Updates** tab may also show an **<Translate android="true" ids="unsupported_maps"/>** item. It appears when you have maps that are no longer supported and have been replaced by smaller regions. Tap Unsupported maps to review the list, remove outdated maps, and download the new region versions instead. On the Unsupported maps screen, you can view all unsupported maps and use Delete all to remove them at once (a confirmation prompt is shown before deletion).
 
 You can also manage maps directly from the Updates tab using a long-press gesture on any listed map. This opens a context menu that provides several options:
 - **Info** — view details about the selected map
