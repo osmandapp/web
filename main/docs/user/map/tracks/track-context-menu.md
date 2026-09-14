@@ -226,7 +226,7 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
 </details>
 
 
-### Track Activity Type {#ttrack-activity-type}
+### Track Activity Type {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

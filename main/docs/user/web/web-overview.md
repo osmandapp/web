@@ -29,9 +29,6 @@ OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables s
 
 > **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./web-navigation.md), [Route Planner](./planner.md), [Weather overlays](./web-weather.md#), and [Settings](./web-map.md#settings).
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 ## Key Features {#key-features}
 
@@ -39,7 +36,7 @@ Web Portal offers the following main capabilities for working with maps and pers
 
 - [Map](./web-map.md) with global coverage and high-quality vector data.
 - [Route planning](./planner.md) using foot, car, bicycle, and other profiles.
-- [Navigation](./planner.md) preview with turn-by-turn instructions.
+- [Navigation](./web-navigation.md) preview with turn-by-turn instructions.
 - [Search](./web-search.md) and [explore](./web-search.md#explore) nearby popular places.
 - Display of [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks), and [POIs](./web-map.md#poi-overlay) on the map.
 - [Weather overlays](./web-weather.md): wind, temperature, and pressure.
@@ -62,7 +59,7 @@ Web Map Portal supports several access levels: without login, with OsmAnd Start,
 
 | Feature | Available In |
 |--------|--------------|
-| [Navigation Route](./planner.md) | Without Login |
+| [Navigation Route](./web-navigation.md) | Without Login |
 | [Route Planner](./planner.md) | Without Login |
 | [Weather Overlays](./web-weather.md) | Without Login |
 | [Settings](./web-map.md#settings) | Without Login |
