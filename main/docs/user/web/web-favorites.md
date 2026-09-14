@@ -25,7 +25,7 @@ Favorites in the Web Planner let you save and manage important places directly o
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), your Favorites in the Web Planner are organized into folders. Each folder groups saved places and provides a set of actions available from the Favorites menu. 
+After signing in to an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) or [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account, your Favorites in the Web Planner are organized into folders. Each folder groups saved places and provides a set of actions available from the Favorites menu. 
 The following actions are available:
 
 - *Show on map* - show favorites points from the chosen folder on the map.
@@ -99,7 +99,7 @@ The dialog also includes an Advanced section, where default appearance settings 
 
 ### Appearance {#appearance}
 
-The **Appearance** section allows customizing how the favorite is displayed on the map. The following properties are available: icon, color, shape, and icon. 
+The **Appearance** section allows customizing how the favorite is displayed on the map. The following properties are available: icon, color, and shape. 
 
 Selecting **Icon** opens a secondary panel with categorized icon groups.
 
