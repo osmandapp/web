@@ -126,6 +126,7 @@ export async function apiGet(url, options = null) {
 
     if (cacheKey && cache[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
+        abortApiRequest(options?.abortControllerKey); // a cached answer still replaces the request in flight
         return cache[cacheKey]; // TODO think about cloneDeep() here
     }
 
