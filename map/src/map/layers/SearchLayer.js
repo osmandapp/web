@@ -181,13 +181,14 @@ export default function SearchLayer() {
             return;
         }
         searchUserData(query).then((userData) => {
-            const userFeatures = applyUserDataFeatures(userData);
+            const { features, favoriteGroupIds } = buildUserDataFeatures(userData);
+            ctx.setSearchFavoriteGroupIds(favoriteGroupIds);
             ctx.setSearchResult((prev) => {
                 if (!prev) return prev;
                 const serverFeatures = (prev.features ?? []).filter(
                     (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
                 );
-                return { ...prev, features: [...userFeatures, ...serverFeatures] };
+                return { ...prev, features: [...features, ...serverFeatures] };
             });
         });
     }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles, ctx.shareWithMeFiles?.tracks]);
@@ -243,7 +244,6 @@ export default function SearchLayer() {
     }, [ctx.moveToMapObj]);
 
     async function searchByWord(searchData, isCancelled) {
-        const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
         ctx.setSearchFavoriteGroupIds(null);
         ctx.setSearchResult(null);
         const visible = getVisibleBboxInfo(ctx, map);
@@ -252,31 +252,12 @@ export default function SearchLayer() {
             return;
         }
         const notifyTimeout = showProcessingNotification(ctx);
-        const bbox = visible.bounds;
         try {
-            const userDataPromise = searchUserData(searchData.query);
-            const response = await searchByWordApi({
-                latlng: searchData.latlng,
-                bbox,
-                query: searchData.query,
-                baseSearch: searchData.baseSearch,
-                spatial: spatialSearch,
-                abortControllerKey: SEARCH_ABORT_KEY,
-                maps: getMapsFromUrl(),
-            });
+            const result = await fetchSearchResult({ searchData, bbox: visible.bounds });
             if (isCancelled()) {
                 return;
             }
-            if (response?.ok) {
-                const data = await response.json();
-                const userFeatures = applyUserDataFeatures(await userDataPromise);
-                ctx.setSearchVisibleLevel(0);
-                ctx.setSearchResult({ ...data, features: [...userFeatures, ...(data?.features ?? [])] });
-            } else if (!response?.aborted) {
-                ctx.setSearchFavoriteGroupIds(null);
-                ctx.setSearchVisibleLevel(0);
-                ctx.setSearchResult(null);
-            }
+            applySearchResult(result);
         } catch (e) {
             if (e?.name !== 'AbortError') throw e;
             // AbortError: search was cancelled by a newer request — ignore silently
@@ -286,6 +267,46 @@ export default function SearchLayer() {
                 ctx.setProcessingSearch(false);
             }
         }
+    }
+
+    // collects everything a word search shows, without touching the context
+    async function fetchSearchResult({ searchData, bbox }) {
+        const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
+        const userDataPromise = searchUserData(searchData.query);
+        const response = await searchByWordApi({
+            latlng: searchData.latlng,
+            bbox,
+            query: searchData.query,
+            baseSearch: searchData.baseSearch,
+            spatial: spatialSearch,
+            abortControllerKey: SEARCH_ABORT_KEY,
+            maps: getMapsFromUrl(),
+        });
+        if (response?.aborted) {
+            return { aborted: true };
+        }
+        if (!response?.ok) {
+            return { failed: true };
+        }
+        const data = await response.json();
+
+        return { data, userData: await userDataPromise };
+    }
+
+    // the only place where the result of a word search reaches the context
+    function applySearchResult(result) {
+        if (result.aborted) {
+            return;
+        }
+        ctx.setSearchVisibleLevel(0);
+        if (result.failed) {
+            ctx.setSearchFavoriteGroupIds(null);
+            ctx.setSearchResult(null);
+            return;
+        }
+        const { features, favoriteGroupIds } = buildUserDataFeatures(result.userData);
+        ctx.setSearchFavoriteGroupIds(favoriteGroupIds);
+        ctx.setSearchResult({ ...result.data, features: [...features, ...(result.data?.features ?? [])] });
     }
 
     // Server matches, ranks and limits tracks, favorites and waypoints of opened tracks
@@ -305,16 +326,18 @@ export default function SearchLayer() {
         return response?.ok ? await response.json() : null;
     }
 
-    // builds user data features (shown before server results) and updates favorite group ids
-    function applyUserDataFeatures(userData) {
+    // user data features are shown before the server results
+    function buildUserDataFeatures(userData) {
         const favorites = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
-        ctx.setSearchFavoriteGroupIds(buildFavGroupMap(favorites));
 
-        return [
-            ...buildTrackFeatures(userData?.tracks ?? []),
-            ...favorites,
-            ...buildWptFeatures(ctx, userData?.wpts ?? []),
-        ];
+        return {
+            features: [
+                ...buildTrackFeatures(userData?.tracks ?? []),
+                ...favorites,
+                ...buildWptFeatures(ctx, userData?.wpts ?? []),
+            ],
+            favoriteGroupIds: buildFavGroupMap(favorites),
+        };
     }
 
     function removeOldSearchLayer() {
