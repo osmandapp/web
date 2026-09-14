@@ -580,10 +580,10 @@ export default function MainMenu({
             }
         }
 
-        ctx.setSearchSettings({
-            ...ctx.searchSettings,
+        ctx.setSearchSettings((prev) => ({
+            ...prev,
             showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult && !isSearchResultRoute : false,
-        });
+        }));
 
         if (selectedType === OBJECT_SEARCH) {
             if (ctx.selectedPoiObj) {

@@ -149,6 +149,11 @@ export default function SearchLayer() {
         if (oldPoiLayer) {
             map.removeLayer(oldPoiLayer);
         }
+        // a category search is finished by PoiLayer, anything else that starts no search must release the spinner
+        const startedSearch = ctx.searchQuery?.type || (ctx.searchQuery?.query && ctx.searchQuery?.latlng);
+        if (!startedSearch) {
+            ctx.setProcessingSearch(false);
+        }
         if (ctx.searchQuery?.query || ctx.searchQuery?.type) {
             ctx.setShowPoiCategories([]);
             if (ctx.searchQuery.type) {
@@ -239,6 +244,8 @@ export default function SearchLayer() {
 
     async function searchByWord(searchData, isCancelled) {
         const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
+        ctx.setSearchFavoriteGroupIds(null);
+        ctx.setSearchResult(null);
         const visible = getVisibleBboxInfo(ctx, map);
         if (!visible) {
             ctx.setProcessingSearch(false);
@@ -246,8 +253,6 @@ export default function SearchLayer() {
         }
         const notifyTimeout = showProcessingNotification(ctx);
         const bbox = visible.bounds;
-        ctx.setSearchFavoriteGroupIds(null);
-        ctx.setSearchResult(null);
         try {
             const userDataPromise = searchUserData(searchData.query);
             const response = await searchByWordApi({

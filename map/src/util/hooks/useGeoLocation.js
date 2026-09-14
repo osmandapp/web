@@ -35,8 +35,11 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
                             : Math.round(position.coords.longitude * 1000) / 1000;
                         resolve({ lat: latitude, lng: longitude });
                     },
-                    () => {
-                        ctx.setStopUseGeoLocation(true);
+                    (error) => {
+                        // a timeout is not a denial - the next consumer may still get a position
+                        if (error.code !== error.TIMEOUT) {
+                            ctx.setStopUseGeoLocation(true);
+                        }
                         resolve(LOCATION_UNAVAILABLE);
                     },
                     { enableHighAccuracy: true, timeout: POSITION_TIMEOUT_MS }

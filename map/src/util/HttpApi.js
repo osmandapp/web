@@ -77,6 +77,7 @@ import { quickNaNfix, seleniumUpdateActivity } from './Utils';
     Cache:
 
         option { apiCache: true } will cache successful responses by key: md5(url+options+body)
+        option { abortOnCacheHit: true } will abort the pending request of abortControllerKey on a cache hit
 
     Return:
 
@@ -126,7 +127,9 @@ export async function apiGet(url, options = null) {
 
     if (cacheKey && cache[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
-        abortApiRequest(options?.abortControllerKey); // a cached answer still replaces the request in flight
+        if (options?.abortOnCacheHit) {
+            abortApiRequest(options.abortControllerKey); // a cached answer still replaces the request in flight
+        }
         return cache[cacheKey]; // TODO think about cloneDeep() here
     }
 
