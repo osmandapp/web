@@ -47,6 +47,7 @@ export const WEATHER_URL = 'weather/';
 export const WEATHER_FORECAST_URL = 'forecast/';
 
 export const TRACKS_URL = 'mydata/tracks/';
+export const LIVE_TRACKS_URL = 'live/';
 export const VISIBLE_TRACKS_URL = 'visible-tracks/';
 
 export const FAVORITES_URL = 'mydata/favorites/';

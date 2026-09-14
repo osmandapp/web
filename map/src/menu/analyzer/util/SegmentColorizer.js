@@ -7,7 +7,7 @@
  * @param {number} total - The total number of items (used for generating HSL colors).
  * @returns {string} A color in HEX or HSL format.
  */
-function getColorByIndex(index, total) {
+export function getColorByIndex(index, total) {
     const basePalette = [
         '#FF0000', // Red
         '#00FF00', // Green
