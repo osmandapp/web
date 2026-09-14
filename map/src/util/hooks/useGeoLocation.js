@@ -10,7 +10,7 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
         if (ctx.stopUseGeoLocation === false) {
             const fetchData = async () => {
                 // the browser keeps silent until the prompt is answered - the map center is used meanwhile
-                if (await isPermissionPrompt()) {
+                if (await needsLocationFallback()) {
                     setLoc(LOCATION_UNAVAILABLE);
                 }
                 const coord = await getCoordinates();
@@ -53,10 +53,11 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
     return loc;
 }
 
-async function isPermissionPrompt() {
+// only a granted permission is answered without a prompt; an unknown state is treated as a prompt
+async function needsLocationFallback() {
     try {
-        return (await navigator.permissions?.query({ name: 'geolocation' }))?.state === 'prompt';
+        return (await navigator.permissions?.query({ name: 'geolocation' }))?.state !== 'granted';
     } catch {
-        return false;
+        return true;
     }
 }
