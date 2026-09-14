@@ -111,6 +111,7 @@ import {
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
+import useSearchNav from '../util/hooks/search/useSearchNav';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
@@ -152,6 +153,7 @@ export default function MainMenu({
     const { t } = useTranslation();
     const location = useLocation();
     const currentLoc = useGeoLocation(ctx);
+    const { isSearchResultRoute } = useSearchNav();
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
@@ -580,7 +582,7 @@ export default function MainMenu({
 
         ctx.setSearchSettings({
             ...ctx.searchSettings,
-            showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult : false,
+            showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult && !isSearchResultRoute : false,
         });
 
         if (selectedType === OBJECT_SEARCH) {
