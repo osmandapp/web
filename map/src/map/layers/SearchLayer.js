@@ -140,6 +140,7 @@ export default function SearchLayer() {
     }, [ctx.zoomToCoords]);
 
     useEffect(() => {
+        let cancelled = false;
         removeOldSearchLayer();
         const oldPoiLayer = findFeatureGroupById(map, POI_LAYER_ID);
         if (oldPoiLayer) {
@@ -150,7 +151,7 @@ export default function SearchLayer() {
             if (ctx.searchQuery.type) {
                 searchByCategory(ctx.searchQuery);
             } else if (ctx.searchQuery.latlng) {
-                searchByWord(ctx.searchQuery).then();
+                searchByWord(ctx.searchQuery, () => cancelled).then();
             } else {
                 console.debug('SearchLayer: search query without latlng');
             }
@@ -159,6 +160,10 @@ export default function SearchLayer() {
         } else {
             ctx.setShowPoiCategories([]);
         }
+
+        return () => {
+            cancelled = true;
+        };
     }, [ctx.searchQuery]);
 
     // When tracks or favorites change (rename, edit, delete), refresh their part of open search results
@@ -229,7 +234,7 @@ export default function SearchLayer() {
         }
     }, [ctx.moveToMapObj]);
 
-    async function searchByWord(searchData) {
+    async function searchByWord(searchData, isCancelled) {
         const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
         const notifyTimeout = showProcessingNotification(ctx);
         const visible = getVisibleBboxInfo(ctx, map);
@@ -237,6 +242,8 @@ export default function SearchLayer() {
             return;
         }
         const bbox = visible.bounds;
+        ctx.setSearchFavoriteGroupIds(null);
+        ctx.setSearchResult(null);
         try {
             const userDataPromise = searchUserData(searchData.query);
             const response = await searchByWordApi({
@@ -248,6 +255,9 @@ export default function SearchLayer() {
                 abortControllerKey: spatialSearch ? 'spatialSearch' : null,
                 maps: getMapsFromUrl(),
             });
+            if (isCancelled()) {
+                return;
+            }
             if (response?.ok) {
                 const data = await response.json();
                 const userFeatures = applyUserDataFeatures(await userDataPromise);
@@ -263,7 +273,9 @@ export default function SearchLayer() {
             // AbortError: search was cancelled by a newer request — ignore silently
         } finally {
             clearTimeout(notifyTimeout);
-            ctx.setProcessingSearch(false);
+            if (!isCancelled()) {
+                ctx.setProcessingSearch(false);
+            }
         }
     }
 
