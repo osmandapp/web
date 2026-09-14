@@ -413,7 +413,7 @@ Some Trip Recording widgets support multiple display modes. Modes let you switch
 |-------|-------------|
 | Average Slope | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
 | Average Speed *(Android only)* | Trip average (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
-| Distance (Start-Stop) | Trip average (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distance (Start-Stop) | Total distance (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
 | Downhill | Total (default); <Translate android="true" ids="shared_string_last_downhill"/> |
 | Max Speed | Total (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
 | Moving Time | Total (default); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |

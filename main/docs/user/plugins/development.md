@@ -82,16 +82,13 @@ Use one of the following paths to open the plugin settings:
 
 ### Application Testing {#application-testing}
 
-:::caution Android only
-:::
-
-- **Simulate first app start**. Sets the flag indicating first app startup, keeps all other settings unchanged.  
-- **Test voice prompts**. Select a voice and test by playing announcements.
+- **Simulate first app start** (*Android*). Sets the flag indicating first app startup, keeps all other settings unchanged.  
+- **Test voice prompts** (*Android*). Select a voice and test by playing announcements.
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
-- **Transparent status bar**. The map becomes visible under the status bar.  
-- **Show free version banner**. Display the free version banner even in the paid version.  
-- **Show debug information**. Display graphical information about the placement of each text on the map.
-- **Allow display on top**. Allows map texts to be displayed on top of each other.
+- **Transparent status bar** (*Android*). The map becomes visible under the status bar.  
+- **Show free version banner** (*Android*). Display the free version banner even in the paid version.  
+- **Show debug information** (*Android*). Display graphical information about the placement of each text on the map.
+- **Allow display on top** (*Android*). Allows map texts to be displayed on top of each other.
 
 
 ### Internal Algorithms {#internal-algorithms}

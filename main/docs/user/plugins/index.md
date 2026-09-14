@@ -73,7 +73,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#recording-settings) |
 | [Topography](#topography) | [Map layer](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [3D Relief](#topography) 🤖  | [Map layer](../plugins/topography.md#3d-relief) |
+| [3D Relief](#topography) | [Map layer](../plugins/topography.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#weather-forecast-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-profile)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
@@ -81,13 +81,13 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 |[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[External Sensors](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[External Sensors](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |[Vehicle Metrics](#vehicle-metrics)  | [Custom Settings](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Astronomy](#astronomy)  | [Screen](../plugins/astronomy.md#star-map-screen), [Context Menu](../plugins/astronomy.md#context-menu) |
 |[Accessibility](#accessibility) 🤖  | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
+|[AIS vessel tracker](#ais-vessel-tracker) |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin Settings {#plugin-settings}
