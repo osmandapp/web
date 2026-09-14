@@ -196,23 +196,22 @@ export default function SearchLayer() {
     useEffect(() => {
         let cancelled = false;
         const updateAsyncLayers = async () => {
-            if (searchLayers.current) {
-                const newLayers = await createSearchLayer({
-                    objList: filterByVisibleLevel(
-                        ctx.searchResult?.features,
-                        ctx.spatialSearch,
-                        ctx.searchVisibleLevel
-                    ),
-                });
-                if (cancelled) {
-                    return;
-                }
-                searchLayers.current.clearLayers();
-                newLayers.eachLayer((l) => {
-                    searchLayers.current.addLayer(l);
-                });
-                hideMarkersNearPin(map, ctx);
+            const layers = searchLayers.current;
+            if (!layers) {
+                return;
             }
+            const newLayers = await createSearchLayer({
+                objList: filterByVisibleLevel(ctx.searchResult?.features, ctx.spatialSearch, ctx.searchVisibleLevel),
+            });
+            // a result that arrived meanwhile is drawn by its own layer group - this one is outdated
+            if (cancelled || searchLayers.current !== layers) {
+                return;
+            }
+            layers.clearLayers();
+            newLayers.eachLayer((l) => {
+                layers.addLayer(l);
+            });
+            hideMarkersNearPin(map, ctx);
         };
 
         if (ctx.searchResult?.features && ctx.searchQuery && !ctx.searchQuery.type) {
