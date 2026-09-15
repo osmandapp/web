@@ -15,13 +15,11 @@ function getInitialHeightmap() {
     }
 }
 
-function getInitialPinPoint() {
+export function getPinPointFromUrl() {
     try {
         const searchParams = new URLSearchParams(globalThis.location.search);
         const pin = searchParams.get('pin');
         if (!pin) return null;
-        if (globalThis.location.pathname.includes(POI_URL)) return null;
-        if (globalThis.location.pathname.includes(STOP_URL)) return null;
         const arr = pin.split(',');
         const lat = Number.parseFloat(arr[0]);
         const lng = Number.parseFloat(arr[1]);
@@ -32,6 +30,13 @@ function getInitialPinPoint() {
         // ignore
     }
     return null;
+}
+
+function getInitialPinPoint() {
+    if (globalThis.location.pathname.includes(POI_URL)) return null;
+    if (globalThis.location.pathname.includes(STOP_URL)) return null;
+
+    return getPinPointFromUrl();
 }
 
 export const MapContextProvider = ({ children }) => {
