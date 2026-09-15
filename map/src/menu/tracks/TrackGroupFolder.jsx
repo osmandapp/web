@@ -26,10 +26,12 @@ import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
 import { useGpxFileDragClearZone, useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
 import dropOverlayStyles from '../../frame/components/dropOverlay.module.css';
+import { useTranslation } from 'react-i18next';
 import TracksDropHighlight from '../../frame/components/TracksDropHighlight';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const folderDragHandlers = useGpxFileDragZone(
         folder != null && folder.type !== SMART_TYPE && !smartf ? folder.fullName : null
     );
@@ -153,6 +155,9 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const isDropTarget = !!group && group.type !== SMART_TYPE && !smartf;
     const isFolderDropActive =
         isDropTarget && ctx.gpxFileDrag?.active && ctx.gpxFileDrag?.hoverFolder === group.fullName;
+    const dropZoneClass = isDropTarget
+        ? `${dropOverlayStyles.dropZoneContent} ${dropOverlayStyles.folderDropTarget}`
+        : dropOverlayStyles.dropZoneContent;
 
     const folderRows = useMemo(
         () => [
@@ -166,6 +171,8 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
         ],
         [groupItems, trackItems, ctx.trackLoading, group?.fullName]
     );
+
+    const showEmptyFolder = isEmptyFolder() && folderRows.length === 0;
 
     return (
         <>
@@ -186,37 +193,38 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                         setSortFiles={setSortFiles}
                     />
                 )}
-                <Box
-                    ref={listContainerRef}
-                    className={gStyles.scrollMainBlock}
-                    minWidth={ctx.infoBlockWidth}
-                    maxWidth={ctx.infoBlockWidth}
-                >
-                    <Box
-                        className={`${dropOverlayStyles.dropZoneContent}${isDropTarget ? ` ${dropOverlayStyles.folderDropTarget}` : ''}`}
-                        {...(isDropTarget ? folderDragHandlers : {})}
-                    >
-                        <VirtualizedList
-                            items={folderRows}
-                            renderItem={(row) => row}
-                            getItemKey={(row) => row.key}
-                            height={listHeight}
-                            fillHeight
-                            overlayIndex={
-                                isFolderDropActive ? folderRows.length - (trackItems?.length ?? 0) : undefined
-                            }
-                            overlayContent={isFolderDropActive ? <TracksDropHighlight /> : undefined}
+                {showEmptyFolder ? (
+                    <Box className={dropZoneClass} {...(isDropTarget ? folderDragHandlers : {})}>
+                        {isFolderDropActive && <TracksDropHighlight />}
+                        <Empty
+                            title={t('web:tracks_empty_folder')}
+                            text={t('web:tracks_empty_folder_description')}
+                            folder={group?.fullName}
                         />
                     </Box>
-                </Box>
+                ) : (
+                    <Box
+                        ref={listContainerRef}
+                        className={gStyles.scrollMainBlock}
+                        minWidth={ctx.infoBlockWidth}
+                        maxWidth={ctx.infoBlockWidth}
+                    >
+                        <Box className={dropZoneClass} {...(isDropTarget ? folderDragHandlers : {})}>
+                            <VirtualizedList
+                                items={folderRows}
+                                renderItem={(row) => row}
+                                getItemKey={(row) => row.key}
+                                height={listHeight}
+                                fillHeight
+                                overlayIndex={
+                                    isFolderDropActive ? folderRows.length - (trackItems?.length ?? 0) : undefined
+                                }
+                                overlayContent={isFolderDropActive ? <TracksDropHighlight /> : undefined}
+                            />
+                        </Box>
+                    </Box>
+                )}
             </Box>
-            {isEmptyFolder() && (
-                <Empty
-                    title={'Empty folder'}
-                    text={"This folder doesn't have any track yet"}
-                    folder={group?.fullName}
-                />
-            )}
             {processingGroup && <Loading />}
         </>
     );
