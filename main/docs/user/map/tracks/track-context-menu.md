@@ -41,9 +41,6 @@ The *Track context menu* provides information about the *[Track](../../personal/
 
 When you tap a track, the first screen opens of the *Track context menu* - *Overview tab*. On this tab, you can find a summary about the chosen track (*[Info panel](#info-panel)*) and make the most common actions with the track using *[Track actions menu](#track-actions)*. You can see [description and service information](#description-and-info) about your track if you pull the Overview tab up.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Info Panel {#info-panel}
 
@@ -129,7 +126,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 
 - **<Translate android="true" ids="join_segments"/>** (*Android only*) – Merges track segments to fill gaps.
 - **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map) tool to inspect the track’s elevation, speed, distance, and any additional data contained in the track (such as external sensor or vehicle metrics data).
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time or distance [intervals](./track-context-menu.md#analyze-by-intervals).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time, distance, or uphill/downhill [intervals](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
 
@@ -691,8 +688,8 @@ The **Split by Time** option divides a track into intervals of equal duration. Y
 This option divides a track into segments based on elevation changes. Each interval is classified as ***uphill***, ***downhill***, or ***flat***. Intervals are displayed in the order they appear along the track, and each uphill, downhill, or flat section is assigned its own index number. The interval list provides the same core statistics as [Split by Distance](#split-by-distance).
 
 On the map, segments are marked with colored labels at the start of each interval:
-- **Uphill segments** (red labels) show an up arrow, the segment index, and the average slope in percent (for example, ↑ 11. 2%).
-- **Downhill segments** (green labels) show a down arrow, the segment index, and the average slope in percent (for example, ↓ 12. -2%).
+- **Uphill segments** (red labels) show an up arrow, the segment index, and the average slope in percent (for example, ↑ index 11, slope 2%).
+- **Downhill segments** (green labels) show a down arrow, the segment index, and the average slope in percent (for example, ↓ index 12, slope −2%).
 - **Flat segments** (blue labels) show the flat section distance (for example, 616 m, 411 m).
 
 Tap a label to open the details panel for the selected uphill, downhill, or flat segment. The details panel displays statistics for the selected segment, such as distance, duration, ascent and descent, altitude, speed, and time-related data.
@@ -718,12 +715,6 @@ This option allows you to view average, minimum, and maximum heart rate values (
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
 This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude*, and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu, you can check how your changes are displayed on the graph before you save them. You can also *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
-
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
-
-- "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
-- "&#8634;" button allows you to reset the track to the original.
-- "My track location" button allows you to move the map to your track.-->
 
 The Android GPS Filter app page includes the following:  
 
