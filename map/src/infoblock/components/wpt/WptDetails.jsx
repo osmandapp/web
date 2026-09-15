@@ -181,7 +181,7 @@ export const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 export const TYPE_NOT_FOUND = 'No type';
 export const EMPTY_STRING = '';
 // keeps the header layout of an MVT preview until the type and icon are loaded
-const TYPE_PLACEHOLDER = '\u00A0';
+const TYPE_PLACEHOLDER = '\u00A0'; // Non-breaking space
 // loading indicators are shown only for a long loading, not to flicker
 const LOADING_DELAY_MS = 1000;
 
