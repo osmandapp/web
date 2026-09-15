@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SelectItem from '../../frame/components/items/SelectItem';
 import { ROUTE_ROUND_TRIP } from '../../store/geoRouter/profileConstants';
+import RoundTripVariants, { directionLabel } from './RoundTripVariants';
 
 const LENGTH_TYPES = ['distance', 'time'];
 const DIRECTIONS = ['any', '0', '45', '90', '135', '180', '225', '270', '315'];
@@ -61,7 +62,7 @@ export default function RoundTripSettings() {
                 value={roundTrip.direction === null ? 'any' : String(roundTrip.direction)}
                 options={DIRECTIONS}
                 getOptionValue={(o) => o}
-                getOptionLabel={(o) => (o === 'any' ? t('web:round_trip_direction_any') : `${o}°`)}
+                getOptionLabel={(o) => (o === 'any' ? t('web:round_trip_direction_any') : directionLabel(t, Number(o)))}
                 onSelect={(value) => update({ direction: value === 'any' ? null : Number(value) })}
             />
             <SelectItem
@@ -78,6 +79,8 @@ export default function RoundTripSettings() {
                     {t('web:round_trip_another')}
                 </Button>
             </Box>
+            {/* the loops overlap on the map, so they are picked from a list instead */}
+            <RoundTripVariants />
         </Box>
     );
 }
