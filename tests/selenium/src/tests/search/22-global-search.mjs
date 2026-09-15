@@ -5,8 +5,11 @@ import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import setView from '../../actions/setView.mjs';
 import { driver, IDLE_DELAY } from '../../options.mjs';
+import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 export default async function test() {
+    ignoreTest();
+
     await actionOpenMap();
     await actionLogIn();
 

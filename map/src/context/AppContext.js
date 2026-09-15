@@ -309,7 +309,12 @@ export const AppContextProvider = (props) => {
         if (engine) {
             return engine === SEARCH_ENGINE_SPATIAL;
         }
-        return localStorage.getItem(SPATIAL_SEARCH_STORAGE_KEY) === 'yes';
+        // the toggle is dev-only, so outside dev reset a previously saved choice to spatial
+        if (!develFeatures) {
+            localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, 'yes');
+            return true;
+        }
+        return localStorage.getItem(SPATIAL_SEARCH_STORAGE_KEY) !== 'no';
     });
     const [infoBlockWidth, setInfoBlockWidth] = useState('0');
 
