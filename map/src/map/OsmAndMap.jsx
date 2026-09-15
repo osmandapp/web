@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
-import MapContext from '../context/MapContext';
+import MapContext, { getPinPointFromUrl } from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
 import 'leaflet-hash';
@@ -15,7 +15,7 @@ import MarkerOptions from './markers/MarkerOptions';
 import ContextMenu from './components/ContextMenu';
 import PoiLayer from './layers/PoiLayer';
 import GraphLayer from './layers/GraphLayer';
-import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './components/LocationControl';
+import { initialZoom, initialPosition, flyZoom, detectGeoByIp, LocationControl } from './components/LocationControl';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
@@ -44,6 +44,20 @@ function getInitialViewFromHash() {
     return { center: [lat, L.Util.wrapNum(lng, [-180, 180], true)], zoom };
 }
 
+function getInitialView() {
+    const fromHash = getInitialViewFromHash();
+    const pin = getPinPointFromUrl();
+    if (!pin) {
+        return fromHash ?? { center: initialPosition, zoom: initialZoom };
+    }
+
+    const zoom = fromHash?.zoom ?? flyZoom;
+    // leaflet-hash and detectGeoByIp read the hash as soon as the map is ready
+    window.history.replaceState(null, '', `#${zoom}/${pin.lat}/${pin.lng}`);
+
+    return { center: [pin.lat, L.Util.wrapNum(pin.lng, [-180, 180], true)], zoom };
+}
+
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
         if (hoverPointRef.current) {
@@ -63,10 +77,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
 
-    const [initialView] = useState(() => {
-        const fromHash = getInitialViewFromHash();
-        return fromHash ?? { center: initialPosition, zoom: initialZoom };
-    });
+    const [initialView] = useState(getInitialView);
 
     const [geocodingData, setGeocodingData] = useState(null);
     const [regionData, setRegionData] = useState(null);

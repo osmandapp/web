@@ -12,7 +12,7 @@ import styles from '../map.module.css';
 import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
 import AppContext from '../../context/AppContext';
 
-const flyZoom = 9;
+export const flyZoom = 9;
 const locationZoom = 17;
 
 export const initialZoom = 5;
