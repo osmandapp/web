@@ -29,6 +29,10 @@ module.exports = {
         // static assets
         '\\.(css|less|sass|scss)$': `${STUBS}/style.js`,
         '\\.(svg|png|jpe?g|gif|webp|avif|ico|bmp|woff2?|eot|ttf|otf|mp3|mp4|wav)$': `${STUBS}/file.js`,
+        // the caching and aborting of the http layer is plain logic - the only import that reaches the real module
+        '^@httpapi$': path.join(MAP_DIR, 'src/util/HttpApi.js'),
+        // the real http layer redirects through the router of App, no unit test renders the app
+        '/App$': `${STUBS}/empty.js`,
         // no unit test is allowed to reach the network
         HttpApi$: `${STUBS}/httpApi.js`,
         // AppContext pulls in the whole app - only the track-type helpers are needed
@@ -55,6 +59,8 @@ module.exports = {
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // marker clustering is plain geometry over the places, no map is involved
         'map/util/Clusterizer$': path.join(MAP_DIR, 'src/map/util/Clusterizer.js'),
+        // the initial map view is plain url logic over leaflet, no map is involved
+        'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
         // which vector tile feature a click opens is plain logic over the rendered features
         'map/util/MvtObjectSelection$': path.join(MAP_DIR, 'src/map/util/MvtObjectSelection.js'),
         // map layers and the tooltip helper reach react-leaflet, the clustering geometry does not

@@ -58,6 +58,9 @@ import {
 
 export const ZOOM_TO_MAP = 17;
 
+// one channel for both engines: a new query cancels the previous one
+const SEARCH_ABORT_KEY = 'searchByWord';
+
 // Build Map<groupId, Set<wptName>> from favorite features for FavoriteLayer visibility control.
 export function buildFavGroupMap(favoriteFeatures) {
     if (!favoriteFeatures?.length) return null;
@@ -136,17 +139,23 @@ export default function SearchLayer() {
     }, [ctx.zoomToCoords]);
 
     useEffect(() => {
+        let cancelled = false;
         removeOldSearchLayer();
         const oldPoiLayer = findFeatureGroupById(map, POI_LAYER_ID);
         if (oldPoiLayer) {
             map.removeLayer(oldPoiLayer);
+        }
+        // a category search is finished by PoiLayer, anything else that starts no search must release the spinner
+        const startedSearch = ctx.searchQuery?.type || (ctx.searchQuery?.query && ctx.searchQuery?.latlng);
+        if (!startedSearch) {
+            ctx.setProcessingSearch(false);
         }
         if (ctx.searchQuery?.query || ctx.searchQuery?.type) {
             ctx.setShowPoiCategories([]);
             if (ctx.searchQuery.type) {
                 searchByCategory(ctx.searchQuery);
             } else if (ctx.searchQuery.latlng) {
-                searchByWord(ctx.searchQuery).then();
+                searchByWord(ctx.searchQuery, () => cancelled).then();
             } else {
                 console.debug('SearchLayer: search query without latlng');
             }
@@ -155,6 +164,10 @@ export default function SearchLayer() {
         } else {
             ctx.setShowPoiCategories([]);
         }
+
+        return () => {
+            cancelled = true;
+        };
     }, [ctx.searchQuery]);
 
     // When tracks or favorites change (rename, edit, delete), refresh their part of open search results
@@ -164,13 +177,14 @@ export default function SearchLayer() {
             return;
         }
         searchUserData(query).then((userData) => {
-            const userFeatures = applyUserDataFeatures(userData);
+            const { features, favoriteGroupIds } = buildUserDataFeatures(userData);
+            ctx.setSearchFavoriteGroupIds(favoriteGroupIds);
             ctx.setSearchResult((prev) => {
                 if (!prev) return prev;
                 const serverFeatures = (prev.features ?? []).filter(
                     (f) => !USER_OBJECT_TYPES.has(f.properties?.[CATEGORY_TYPE])
                 );
-                return { ...prev, features: [...userFeatures, ...serverFeatures] };
+                return { ...prev, features: [...features, ...serverFeatures] };
             });
         });
     }, [ctx.favorites, ctx.listFiles, ctx.gpxFiles, ctx.shareWithMeFiles?.tracks]);
@@ -178,23 +192,22 @@ export default function SearchLayer() {
     useEffect(() => {
         let cancelled = false;
         const updateAsyncLayers = async () => {
-            if (searchLayers.current) {
-                const newLayers = await createSearchLayer({
-                    objList: filterByVisibleLevel(
-                        ctx.searchResult?.features,
-                        ctx.spatialSearch,
-                        ctx.searchVisibleLevel
-                    ),
-                });
-                if (cancelled) {
-                    return;
-                }
-                searchLayers.current.clearLayers();
-                newLayers.eachLayer((l) => {
-                    searchLayers.current.addLayer(l);
-                });
-                hideMarkersNearPin(map, ctx);
+            const layers = searchLayers.current;
+            if (!layers) {
+                return;
             }
+            const newLayers = await createSearchLayer({
+                objList: filterByVisibleLevel(ctx.searchResult?.features, ctx.spatialSearch, ctx.searchVisibleLevel),
+            });
+            // a result that arrived meanwhile is drawn by its own layer group - this one is outdated
+            if (cancelled || searchLayers.current !== layers) {
+                return;
+            }
+            layers.clearLayers();
+            newLayers.eachLayer((l) => {
+                layers.addLayer(l);
+            });
+            hideMarkersNearPin(map, ctx);
         };
 
         if (ctx.searchResult?.features && ctx.searchQuery && !ctx.searchQuery.type) {
@@ -225,42 +238,70 @@ export default function SearchLayer() {
         }
     }, [ctx.moveToMapObj]);
 
-    async function searchByWord(searchData) {
-        const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
-        const notifyTimeout = showProcessingNotification(ctx);
+    async function searchByWord(searchData, isCancelled) {
+        ctx.setSearchFavoriteGroupIds(null);
+        ctx.setSearchResult(null);
         const visible = getVisibleBboxInfo(ctx, map);
         if (!visible) {
+            ctx.setProcessingSearch(false);
             return;
         }
-        const bbox = visible.bounds;
+        const notifyTimeout = showProcessingNotification(ctx);
         try {
-            const userDataPromise = searchUserData(searchData.query);
-            const response = await searchByWordApi({
-                latlng: searchData.latlng,
-                bbox,
-                query: searchData.query,
-                baseSearch: searchData.baseSearch,
-                spatial: spatialSearch,
-                abortControllerKey: spatialSearch ? 'spatialSearch' : null,
-                maps: getMapsFromUrl(),
-            });
-            if (response?.ok) {
-                const data = await response.json();
-                const userFeatures = applyUserDataFeatures(await userDataPromise);
-                ctx.setSearchVisibleLevel(0);
-                ctx.setSearchResult({ ...data, features: [...userFeatures, ...(data?.features ?? [])] });
-            } else if (!response?.aborted) {
-                ctx.setSearchFavoriteGroupIds(null);
-                ctx.setSearchVisibleLevel(0);
-                ctx.setSearchResult(null);
+            const result = await fetchSearchResult({ searchData, bbox: visible.bounds });
+            if (isCancelled()) {
+                return;
             }
+            applySearchResult(result);
         } catch (e) {
             if (e?.name !== 'AbortError') throw e;
             // AbortError: search was cancelled by a newer request — ignore silently
         } finally {
             clearTimeout(notifyTimeout);
-            ctx.setProcessingSearch(false);
+            if (!isCancelled()) {
+                ctx.setProcessingSearch(false);
+            }
         }
+    }
+
+    // collects everything a word search shows, without touching the context
+    async function fetchSearchResult({ searchData, bbox }) {
+        const spatialSearch = searchData.engine ? searchData.engine === SEARCH_ENGINE_SPATIAL : ctx.spatialSearch;
+        const userDataPromise = searchUserData(searchData.query);
+        const response = await searchByWordApi({
+            latlng: searchData.latlng,
+            bbox,
+            query: searchData.query,
+            baseSearch: searchData.baseSearch,
+            spatial: spatialSearch,
+            abortControllerKey: SEARCH_ABORT_KEY,
+            maps: getMapsFromUrl(),
+        });
+        if (response?.aborted) {
+            return { aborted: true };
+        }
+        if (!response?.ok) {
+            return { failed: true };
+        }
+        const data = await response.json();
+
+        return { data, userData: await userDataPromise };
+    }
+
+    // the only place where the result of a word search reaches the context
+    function applySearchResult(result) {
+        if (result.aborted) {
+            return;
+        }
+        ctx.setSearchVisibleLevel(0);
+        if (result.failed) {
+            ctx.setSearchFavoriteGroupIds(null);
+            ctx.setSearchResult(null);
+            return;
+        }
+        const { features, favoriteGroupIds } = buildUserDataFeatures(result.userData);
+        ctx.setSearchFavoriteGroupIds(favoriteGroupIds);
+        ctx.setSearchResult({ ...result.data, features: [...features, ...(result.data?.features ?? [])] });
     }
 
     // Server matches, ranks and limits tracks, favorites and waypoints of opened tracks
@@ -280,16 +321,18 @@ export default function SearchLayer() {
         return response?.ok ? await response.json() : null;
     }
 
-    // builds user data features (shown before server results) and updates favorite group ids
-    function applyUserDataFeatures(userData) {
+    // user data features are shown before the server results
+    function buildUserDataFeatures(userData) {
         const favorites = buildFavoriteFeatures(ctx.favorites, userData?.favorites ?? []);
-        ctx.setSearchFavoriteGroupIds(buildFavGroupMap(favorites));
 
-        return [
-            ...buildTrackFeatures(userData?.tracks ?? []),
-            ...favorites,
-            ...buildWptFeatures(ctx, userData?.wpts ?? []),
-        ];
+        return {
+            features: [
+                ...buildTrackFeatures(userData?.tracks ?? []),
+                ...favorites,
+                ...buildWptFeatures(ctx, userData?.wpts ?? []),
+            ],
+            favoriteGroupIds: buildFavGroupMap(favorites),
+        };
     }
 
     function removeOldSearchLayer() {
@@ -300,6 +343,7 @@ export default function SearchLayer() {
     }
 
     useEffect(() => {
+        let cancelled = false;
         const addAsyncLayers = async () => {
             if (!ctx.searchResult) {
                 removeOldSearchLayer();
@@ -316,6 +360,9 @@ export default function SearchLayer() {
                             ctx.searchVisibleLevel
                         ),
                     });
+                    if (cancelled) {
+                        return;
+                    }
                     removeOldSearchLayer();
                     searchLayers.current = layers;
                     layers.addTo(map).on('click', onClick);
@@ -324,6 +371,10 @@ export default function SearchLayer() {
         };
 
         addAsyncLayers().then();
+
+        return () => {
+            cancelled = true;
+        };
     }, [ctx.searchResult, ctx.searchVisibleLevel]);
 
     function onClick(e) {

@@ -33,7 +33,7 @@ Tracks section contains all track-related tools and actions. The following optio
 
 - Show tracks from [OsmAnd Cloud](#cloud-tracks).
 - Adding tracks on the map (**Visible on map** folder).
-- Looking all tracks info and graph
+- Viewing track information and graphs.
 - Modify tracks and add it to Cloud.
 - Download and delete tracks.
 - Create new folders or delete it.
@@ -102,13 +102,13 @@ The three-dot menu (⋮) provides additional actions for the Smart Folder. You c
 
 ## Cloud Tracks {#cloud-tracks}
 
-GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
+GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only **Pro users** <ProFeature/> can access them. [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users can download their Cloud data even after their Pro subscription expires.
 
 When you select a track, the map automatically centers and adjusts the zoom level to display the entire track within the visible map area.
 
 You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected track. Turn off Focus mode to restore the visibility of other map objects.
 
-The following features are available after choosin cloud track:
+The following features are available after choosing cloud track:
 - *Information* - displaying track data.
 - *Elevation* - graph of elevation.
 - *Speed* - speed graph.

@@ -3,6 +3,7 @@ import { useMutator } from '../util/Utils';
 import { POI_URL, STOP_URL } from '../manager/GlobalManager';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
 import { osmandTileURL } from '../map/baseTileURL';
+import { getPinPointFromUrl } from '../map/util/initialMapView';
 
 const MapContext = React.createContext();
 
@@ -16,22 +17,10 @@ function getInitialHeightmap() {
 }
 
 function getInitialPinPoint() {
-    try {
-        const searchParams = new URLSearchParams(globalThis.location.search);
-        const pin = searchParams.get('pin');
-        if (!pin) return null;
-        if (globalThis.location.pathname.includes(POI_URL)) return null;
-        if (globalThis.location.pathname.includes(STOP_URL)) return null;
-        const arr = pin.split(',');
-        const lat = Number.parseFloat(arr[0]);
-        const lng = Number.parseFloat(arr[1]);
-        if (arr.length === 2 && !Number.isNaN(lat) && !Number.isNaN(lng)) {
-            return { lat, lng };
-        }
-    } catch {
-        // ignore
-    }
-    return null;
+    if (globalThis.location.pathname.includes(POI_URL)) return null;
+    if (globalThis.location.pathname.includes(STOP_URL)) return null;
+
+    return getPinPointFromUrl();
 }
 
 export const MapContextProvider = ({ children }) => {

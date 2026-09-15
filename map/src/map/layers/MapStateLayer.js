@@ -8,7 +8,7 @@ import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
-import { initialPosition, initialZoom } from '../components/LocationControl';
+import { initialPosition, initialZoom } from '../util/initialMapView';
 import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 

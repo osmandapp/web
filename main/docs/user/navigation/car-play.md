@@ -226,7 +226,7 @@ Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features,
 
 When voice prompts are played, OsmAnd adjusts background audio depending on its type. With *<Translate ios="true" ids="pause_spoken_audio"/>* enabled, spoken audio content, such as podcasts and audiobooks, is paused during navigation instructions, while music playback continues at a reduced volume. When *<Translate ios="true" ids="pause_spoken_audio"/>* is disabled, both spoken audio and music continue playing at a reduced volume.  
 
-To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
+To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device, see the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md#voice-prompts) article. For example, to enable Pause spoken audio go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 ### Navigation Alerts {#navigation-alerts}
 

@@ -221,7 +221,7 @@ Navigate to *<Translate android="true" ids="search_button,search_categories,poi_
 
 </Tabs>
 
-In Routes search results, tap the **Filters** button in the top-right corner to narrow down the list. The Filters screen includes a **Filter by name** field; a **Type** block with *Bureau*, *Post annex*, and *Post partner*; and **extra criteria** that depend on the selected route category or activity, as each category can expose its own characteristics and filter values.
+In Routes search results, tap the **Filters** button in the top-right corner to narrow down the list. The Filters screen includes a **Filter by name** field and **extra criteria** that depend on the selected route category or activity, as each category can expose its own characteristics and filter values.
 
 You can enable or disable filters using the switches, and some sections include *Show all* to display additional values.
 

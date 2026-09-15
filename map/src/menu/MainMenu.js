@@ -111,6 +111,7 @@ import {
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
+import useSearchNav from '../util/hooks/search/useSearchNav';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
@@ -152,6 +153,7 @@ export default function MainMenu({
     const { t } = useTranslation();
     const location = useLocation();
     const currentLoc = useGeoLocation(ctx);
+    const { isSearchResultRoute } = useSearchNav();
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
@@ -239,7 +241,12 @@ export default function MainMenu({
     useEffect(() => {
         // Wait until .info details are loaded (updateFiles == null) before auto-opening the
         // track, so processDisplayTrack reads pointsGroups visibility from the refreshed listFiles.
-        if (location.pathname.includes(INFO_MENU_URL) && ctx.listFiles?.uniqueFiles && !ctx.updateFiles) {
+        if (
+            location.pathname.includes(INFO_MENU_URL) &&
+            ctx.listFiles?.uniqueFiles &&
+            !ctx.updateFiles &&
+            !trackUrlOpenLoading
+        ) {
             if (isEmpty(ctx.selectedGpxFile)) {
                 if (filename) {
                     const decodeFilename = decodeString(filename);
@@ -573,10 +580,10 @@ export default function MainMenu({
             }
         }
 
-        ctx.setSearchSettings({
-            ...ctx.searchSettings,
-            showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult : false,
-        });
+        ctx.setSearchSettings((prev) => ({
+            ...prev,
+            showExploreMarkers: selectedType === OBJECT_SEARCH ? !ctx.searchResult && !isSearchResultRoute : false,
+        }));
 
         if (selectedType === OBJECT_SEARCH) {
             if (ctx.selectedPoiObj) {

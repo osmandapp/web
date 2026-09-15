@@ -98,7 +98,7 @@ For more information on how and when voice prompts are triggered, consult the [N
 
 - *Repeat navigation instructions*. Allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turn) on the application screen.
 - *[Announcement time](#announcement-time)*.
-- *Pause spoken audio* (*iOS only*). When enabled, podcasts, audiobooks, and other spoken audio are paused while voice prompts are played. Music playback continues at a reduced volume. When disabled, both spoken audio and music continue playing at a reduced volume.
+- *Pause spoken audio* (*iOS only, including CarPlay*). When enabled, podcasts, audiobooks, and other spoken audio are paused while voice prompts are played, whether playing through the device or through CarPlay. Music playback continues at a reduced volume. When disabled, both spoken audio and music continue playing at a reduced volume.
 
 **Output** (*Android only*):
 

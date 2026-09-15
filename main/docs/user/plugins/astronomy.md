@@ -15,12 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-:::info 
-
-**Astronomy** is currently in **beta** on **Android**. 
-
-On **iOS**, the plugin is available through the **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))** program. 
-:::
 
 ## Overview {#overview}
 

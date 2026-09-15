@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OsmGpx Heatmap</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root { --ground: #f3f5f2; --surface: #fff; --ink: #16201b; --muted: #58655f; --rule: #d8ded9; --accent: #b35600; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; height: 100%; font: 14px/1.45 "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: var(--ground); }
+.app { display: grid; grid-template-columns: 340px 1fr; height: 100%; }
+aside { overflow-y: auto; border-right: 1px solid var(--rule); background: var(--surface); padding: 14px 16px; display: grid; gap: 14px; align-content: start; }
+#map { height: 100%; }
+h1 { font-size: 1.15rem; margin: 0; }
+.label { font: 500 .72rem/1 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: block; }
+select, input[type=number], button { font: inherit; padding: 4px 8px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); color: var(--ink); }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tree { display: grid; gap: 2px; }
+.tree details summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 6px; padding: 2px 0; }
+.tree details summary::-webkit-details-marker { display: none; }
+.tree .kids { padding-left: 22px; display: grid; gap: 1px; }
+.tree label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+.tree .n { margin-left: auto; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+input[type=range] { width: 100%; }
+.stats { font: 400 .78rem/1.5 "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); white-space: pre-line; }
+.hint { color: var(--muted); font-size: .85rem; }
+.legend { height: 10px; border-radius: 3px; background: linear-gradient(90deg, rgba(128,0,0,.5), #f00, #ff8000, #ff0, #fff); }
+.legend-labels { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); }
+.greybase .leaflet-tile-pane .osmand-base { filter: grayscale(1) contrast(.85) brightness(1.08); }
+.darkbase .leaflet-tile-pane .osmand-base { filter: invert(1) grayscale(1) brightness(.8) contrast(1.1); }
+.darkbase #map { background: #1b1d1f; }
+.legend-labels span:nth-child(2) { text-align: center; }
+#status { position: absolute; right: 10px; bottom: 22px; z-index: 1000; background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; }
+#progress { position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 1000; background: rgba(0,0,0,.08); pointer-events: none; }
+#progressBar { height: 100%; width: 0; background: var(--accent); transition: width .15s; }
+#loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(243,245,242,.92); z-index: 2000; font-size: 1rem; padding: 16px; text-align: center; }
+.cellpop table { border-collapse: collapse; font-size: .8rem; }
+.cellpop td { padding: 1px 6px 1px 0; }
+.cellpop td.n { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.cellpop .off { color: #999; }
+.section { border-top: 1px solid var(--rule); padding-top: 10px; }
+.section > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.section > summary::-webkit-details-marker { display: none; }
+.section > summary::before { content: "▸"; color: var(--muted); display: inline-block; transition: transform .15s; }
+.section[open] > summary::before { transform: rotate(90deg); }
+.section > summary .count { margin-left: auto; font: 400 .74rem "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); }
+.section > .body { display: grid; gap: 14px; margin-top: 12px; }
+.summary { display: grid; gap: 12px; }
+.summary h2 { font: 500 .72rem/1 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+.summary .scroll { overflow-x: auto; }
+.summary table { border-collapse: collapse; font-size: .8rem; width: 100%; }
+.summary th { text-align: left; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 2px 6px 2px 0; }
+.summary td { padding: 2px 6px 2px 0; border-bottom: 1px solid #eef1ee; vertical-align: top; }
+.summary td.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
+.review .list { display: grid; gap: 2px; max-height: 260px; overflow-y: auto; }
+.review .item { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; padding: 4px 6px; border: 1px solid transparent; border-radius: 4px; cursor: pointer; font-size: .82rem; }
+.review .item:hover, .review .item.hover, .review .item.sel { border-color: var(--rule); background: #f7f8f6; }
+.review .item .sub { grid-column: 1 / -1; color: var(--muted); font: 400 .74rem "IBM Plex Mono", ui-monospace, monospace; }
+.review .badge { font: 500 .7rem "IBM Plex Mono", ui-monospace, monospace; padding: 0 5px; border-radius: 3px; align-self: start; }
+.review .badge.ok { background: #dff1e4; color: #1e6b3a; }
+.review .badge.bad { background: #fde3d3; color: #8a3a00; }
+.review .verdicts { display: flex; flex-wrap: wrap; gap: 6px; }
+.review .verdicts button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.review button:disabled, .review textarea:disabled { opacity: .45; cursor: not-allowed; }
+.review textarea { font: inherit; width: 100%; min-height: 48px; border: 1px solid var(--rule); border-radius: 4px; padding: 4px 6px; }
+.cellpop .tracksHere { margin-top: 6px; }
+.mapToggle { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; font: 500 .78rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; cursor: pointer; }
+@media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } }
+</style>
+</head>
+<body>
+<div id="loading">Loading meta.json…</div>
+<div class="app">
+<aside>
+  <div>
+    <h1>OsmGpx Heatmap</h1>
+    <div class="hint">Every OSM GPX trace in the OsmGpx database, counted per map cell by activity and month. Tiles load as you move; the filter is applied in your browser.</div>
+  </div>
+  <details class="section" id="secView" open>
+  <summary>Display</summary>
+  <div class="body">
+  <div class="row">
+    <label>Algorithm <select id="style"></select></label>
+    <label>Colours <select id="palette"></select></label>
+  </div>
+  <div class="row" id="lineRow">
+    <label>Width <input id="width" type="range" min="0.5" max="10" step="0.25" value="3" style="width:90px"></label>
+    <label>Glow <input id="glow" type="range" min="0" max="1" step="0.05" value="0.6" style="width:80px"></label>
+    <label id="mergeRow" title="Tracks closer than this merge into one corridor; the colour counts them">Merge <input id="merge" type="range" min="0" max="30" step="1" value="10" style="width:90px"> <span id="mergeN">10 m</span></label>
+  </div>
+  <div class="row">
+    <label>Scale <select id="scaleMode"><option value="cdf">Equalized</option><option value="log">Log</option></select></label>
+    <label><input id="auto" type="checkbox" checked> Auto</label>
+    <label>max <input id="scaleMax" type="number" min="1" style="width:5em"></label>
+  </div>
+  <div class="row">
+    <label>Opacity <input id="opacity" type="range" min="0.2" max="1" step="0.05" value="0.9" style="width:100px"></label>
+    <label>Map <select id="basemap"><option value="grey">Grey</option><option value="dark">Dark</option><option value="colour">Colour</option></select></label>
+  </div>
+  </div>
+  </details>
+  <details class="section" id="secData" open>
+  <summary>Data filter</summary>
+  <div class="body">
+  <div>
+    <span class="label" id="monthTitle">OSM upload month</span>
+    <div class="row"><span id="fromLabel"></span>—<span id="toLabel"></span></div>
+    <input id="from" type="range" aria-label="From month"><input id="to" type="range" aria-label="To month">
+    <label id="undatedRow" class="row" hidden><input id="undated" type="checkbox" checked> Include tracks without a date<span id="undatedN" class="n" style="margin-left:auto"></span></label>
+  </div>
+  <div id="folderBox" hidden>
+    <span class="label">Folders</span>
+    <div class="row" style="margin-bottom:6px"><button id="fAll" type="button">All</button><button id="fNone" type="button">None</button></div>
+    <div id="ftree" class="tree"></div>
+  </div>
+  <div class="row">
+    <label>Hide cells under <input id="minTracks" type="number" min="1" value="1" style="width:4.5em"> tracks</label>
+  </div>
+  <div>
+    <span class="label">Activities</span>
+    <div class="row" style="margin-bottom:6px"><button id="all" type="button">All</button><button id="none" type="button">None</button><button id="human" type="button">Foot + cycling</button><button id="nomotor" type="button">No motor</button></div>
+    <div id="tree" class="tree"></div>
+  </div>
+  </div>
+  </details>
+  <details class="section" id="secReview">
+  <summary>Review tracks</summary>
+  <div class="body review">
+    <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in on <span id="revSignIn">test.osmand.net/map</span>.</div>
+    <div class="list" id="revList"></div>
+    <div id="revDetail" hidden>
+      <div id="revInfo" class="hint"></div>
+      <textarea id="revComment" placeholder="Comment (optional), e.g. the right activity; sent with the button you press" aria-label="Comment"></textarea>
+      <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
+      <div class="row"><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
+    </div>
+    <a id="revExport" target="_blank" rel="noopener">Download reviewed tracks (.csv.gz)</a>
+  </div>
+  </details>
+  <div>
+    <div class="legend" aria-hidden="true"></div>
+    <div class="legend-labels"><span id="legendMin">1</span><span id="legendMid"></span><span id="legendMax">max</span></div>
+  </div>
+  <details class="section" id="secSource">
+  <summary>Data source <span class="count" id="matchN"></span></summary>
+  <div class="body">
+  <div id="stats" class="stats"></div>
+  <div id="note" class="hint"></div>
+  <div id="summary" class="summary" hidden></div>
+  </div>
+  </details>
+</aside>
+<div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pmtiles@4.5.0/dist/pmtiles.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const params = new URLSearchParams(location.search);
+// test.osmand.net and builder.osmand.net serve the tiles and the tracks API themselves; other hosts (osmand.net, a local copy) use test.osmand.net
+const HOME = /^(test|builder)\.osmand\.net$/.test(location.hostname) ? location.origin : 'https://test.osmand.net';
+const BASE = ((d) => (d.endsWith('/') ? d : d + '/'))(params.get('data') || `${HOME}/basemap/osmgpx/heat/`);
+const MONTH_BITS = 9, CACHE_FILES = 320;
+let meta, levelsDesc = [], binMask = new Uint8Array(65536), filterEpoch = 0, paintEpoch = 0;
+let COMBO = false; // personal builds: bin = index into meta.binTable [folder, activity, month]
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const norms = {}, CDF_MAX = 1024; // per level: p99.5 top, lowest count and mid-rank CDF of the visible cells
+const files = new Map(); let clock = 0, inflight = 0, styleEpoch = 0;
+const PALETTES = {
+  vivid: ['Vivid (light map)', [[0, '#2b6cff'], [0.35, '#9b30d9'], [0.7, '#e8114a'], [1, '#6e0016']]],
+  turbo: ['Turbo', [[0, '#3b4cc0'], [0.2, '#1f9ede'], [0.4, '#2fd18a'], [0.6, '#e2c62a'], [0.8, '#f7881e'], [1, '#c3121d']]],
+  hot: ['Hot (dark map)', [[0, '#9b0000'], [0.35, '#ff2a00'], [0.65, '#ff9a00'], [0.85, '#ffe100'], [1, '#fff6b0']]],
+  blue: ['Blue (dark map)', [[0, '#1b3a9e'], [0.45, '#2f7bff'], [0.8, '#6fd0ff'], [1, '#e8fbff']]],
+};
+const LUT = new Uint8ClampedArray(768);
+
+// ---------- map
+const start = (location.hash.match(/^#(\d+)\/(-?[\d.]+)\/(-?[\d.]+)/) || []).slice(1).map(Number);
+const map = L.map('map', { zoomControl: true, worldCopyJump: true }).setView(start.length ? [start[1], start[2]] : [50, 10], start.length ? start[0] : 5);
+L.tileLayer('https://tile.osmand.net/hd/{z}/{x}/{y}.png', { tileSize: 512, zoomOffset: -1, maxZoom: 19, className: 'osmand-base', attribution: '© OpenStreetMap contributors, OsmAnd' }).addTo(map);
+document.body.classList.add('greybase');
+map.createPane('heat'); map.getPane('heat').style.zIndex = 350;
+map.on('moveend', () => {
+  const c = map.getCenter();
+  history.replaceState(null, '', `${location.pathname}${location.search}#${map.getZoom()}/${c.lat.toFixed(4)}/${c.lng.toFixed(4)}`);
+});
+
+// ---------- tiles
+function levelFor(z) { for (const L of levelsDesc) if (L <= z + 8) return L; return null; }
+
+// progress of the current burst of work: files fetched and tiles drawn; "no tracks in this area" once idle and empty
+const prog = { fTotal: 0, fDone: 0, pTotal: 0, pDone: 0 };
+let statusTimer = 0;
+function setStatus() {
+  const s = $('status'), bar = $('progress'), jobs = typeof paintJobs === 'undefined' ? 0 : paintJobs.size;
+  clearTimeout(statusTimer);
+  if (inflight > 0 || jobs > 0) {
+    bar.hidden = false;
+    $('progressBar').style.width = `${Math.round(100 * (prog.fDone + prog.pDone) / Math.max(1, prog.fTotal + prog.pTotal))}%`;
+    s.hidden = false;
+    s.textContent = [inflight ? `loading ${prog.fDone}/${prog.fTotal} files` : '', jobs ? `drawing ${prog.pDone}/${prog.pTotal} tiles` : ''].filter(Boolean).join(' · ');
+    return;
+  }
+  prog.fTotal = prog.fDone = prog.pTotal = prog.pDone = 0;
+  bar.hidden = true;
+  statusTimer = setTimeout(() => {
+    const cur = Object.values(heat._tiles).filter((t) => t.coords.z === map.getZoom());
+    const empty = !!meta && cur.length > 0 && cur.every((t) => t.el.__drawn === false);
+    s.hidden = !empty;
+    if (empty) s.textContent = 'no tracks in this area';
+  }, 300);
+}
+
+async function gunzipIfNeeded(buf) {
+  if (buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b) {
+    return new Uint8Array(await new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+  }
+  return buf;
+}
+
+function parseTile(buf) {
+  if (buf.length < 12 || String.fromCharCode(buf[0], buf[1], buf[2], buf[3]) !== 'THT1') return null; // 404 pages served as 200
+  const dv = new DataView(buf.buffer, buf.byteOffset, buf.byteLength);
+  const nc = dv.getUint32(4, true), nb = dv.getUint32(8, true);
+  const ab = buf.buffer.slice(buf.byteOffset + 12, buf.byteOffset + 12 + 4 * nc + 4 * nb);
+  const n = new Uint16Array(ab, 2 * nc, nc), off = new Uint32Array(nc + 1);
+  for (let i = 0; i < nc; i++) off[i + 1] = off[i] + n[i];
+  return { nc, cell: new Uint16Array(ab, 0, nc), off, bin: new Uint16Array(ab, 4 * nc, nb), cnt: new Uint16Array(ab, 4 * nc + 2 * nb, nb), sums: null, sumsEpoch: -1, canvas: null, canvasKey: '' };
+}
+
+// per-level PMTiles archives c<L>.pmtiles next to meta.json: found through the folder listing (so adding or deleting a
+// level file is picked up on reload), or through meta.levels when the server has no listing
+const archives = {};
+async function findArchives() {
+  if (typeof pmtiles === 'undefined') return;
+  let names = [];
+  try { const r = await fetch(BASE); if (r.ok) names = [...(await r.text()).matchAll(/href="(?:\.\/)?c(\d+)\.pmtiles"/g)].map((m) => +m[1]); } catch (e) { /* no listing */ }
+  if (!names.length) names = meta.archives ? Object.keys(meta.archives).map(Number) : [];
+  await Promise.all([...new Set(names)].filter((L) => L >= 8 && L <= 24).map(async (L) => {
+    const url = `${BASE}c${L}.pmtiles`;
+    try {
+      const r = await fetch(url, { headers: { Range: 'bytes=0-6' } });
+      if (r.status !== 206) { if (r.body) r.body.cancel(); if (r.status === 200) console.warn(`${url}: the server ignores Range requests`); return; }
+      if (new TextDecoder().decode(await r.arrayBuffer()) !== 'PMTiles') return;
+      archives[L] = { pm: new pmtiles.PMTiles(url), bytes: +((r.headers.get('Content-Range') || '').split('/')[1] || 0) };
+      const m = await archives[L].pm.getMetadata();
+      archives[L].tiles = m.tiles;
+      if (m.levelStats && Object.keys(m.levelStats).length) { meta.levelStats = meta.levelStats || {}; meta.levelStats[L] = meta.levelStats[L] || m.levelStats; }
+    } catch (e) { delete archives[L]; }
+  }));
+}
+
+function loadFile(L, x, y) {
+  const key = `${L}/${x}/${y}`;
+  let e = files.get(key);
+  if (e) { e.used = ++clock; return e.promise; }
+  e = { used: ++clock, data: null };
+  inflight++; prog.fTotal++; setStatus();
+  const arc = archives[L];
+  e.promise = (arc
+    ? arc.pm.getZxy(L - 8, x, y).then((t) => (t ? new Uint8Array(t.data) : null))
+    : fetch(`${BASE}c${L}/${x}/${y}.bin`).then(async (r) => (r.ok ? new Uint8Array(await r.arrayBuffer()) : null)))
+    .then(async (buf) => (buf ? parseTile(await gunzipIfNeeded(buf)) : null))
+    .catch(() => null)
+    .then((d) => { e.data = d; inflight--; prog.fDone++; setStatus(); return d; });
+  files.set(key, e);
+  if (files.size > CACHE_FILES) {
+    const old = [...files.entries()].sort((a, b) => a[1].used - b[1].used).slice(0, files.size - CACHE_FILES);
+    for (const [k] of old) files.delete(k);
+  }
+  return e.promise;
+}
+
+function sums(f) {
+  if (f.sumsEpoch === filterEpoch) return f.sums;
+  const s = f.sums || new Uint32Array(f.nc);
+  for (let i = 0; i < f.nc; i++) { let v = 0; for (let j = f.off[i]; j < f.off[i + 1]; j++) if (binMask[f.bin[j]]) v += f.cnt[j]; s[i] = v; }
+  f.sums = s; f.sumsEpoch = filterEpoch;
+  return s;
+}
+
+// ---------- colours and scale
+function setPalette(name) {
+  const stops = (PALETTES[name] || PALETTES.vivid)[1], hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  for (let i = 0; i < 256; i++) {
+    const t = i / 255; let k = 1; while (k < stops.length - 1 && stops[k][0] < t) k++;
+    const [t0, c0] = stops[k - 1], [t1, c1] = stops[k], a = hex(c0), b = hex(c1), f = Math.min(1, Math.max(0, (t - t0) / (t1 - t0)));
+    for (let j = 0; j < 3; j++) LUT[i * 3 + j] = a[j] + (b[j] - a[j]) * f;
+  }
+  document.querySelector('.legend').style.background = `linear-gradient(90deg, ${stops.map(([t, c]) => `${c} ${t * 100}%`).join(', ')})`;
+}
+
+// count -> 0..1. Equalized: mid-rank CDF of the visible cells, so 1, 2, 3 tracks get distinct colours even when
+// almost every cell holds one track; lowest visible count = palette start, p99.5 = palette end.
+// scale key: 'v' for vector lines (counts per line pixel), else the cell level
+function normKey(z) { return meta.vector && z >= meta.vector.zoom && $('style').value === 'vector' ? 'v' : levelFor(z); }
+
+function normFor(L) {
+  const n = norms[L], auto = $('auto').checked;
+  if (auto && $('scaleMode').value === 'cdf' && n) {
+    const lo = n.cdf[n.vmin], span = n.cdf[Math.min(n.top, CDF_MAX)] - lo, lt = Math.log(n.top / n.vmin);
+    if (span <= 0 || lt <= 0) return () => 0;
+    // half rank (separates the common low counts), half log (keeps the busy end apart)
+    return (v) => Math.min(1, Math.max(0, 0.5 * ((v <= CDF_MAX ? n.cdf[v] : 1) - lo) / span + 0.5 * Math.log(v / n.vmin) / lt));
+  }
+  const top = auto ? (n ? n.top : (meta.levelStats[L] && meta.levelStats[L].p995) || 10) : Math.max(1, +$('scaleMax').value || 1);
+  const lt = Math.log(Math.max(2, top));
+  return (v) => Math.min(1, Math.log(v) / lt);
+}
+
+function fileCanvas(f, L) {
+  const minT = Math.max(1, +$('minTracks').value || 1), key = `${filterEpoch}|${styleEpoch}|${minT}`;
+  if (f.canvasKey === key) return f.canvas;
+  if (!f.canvas) { f.canvas = document.createElement('canvas'); f.canvas.width = f.canvas.height = 256; }
+  const ctx = f.canvas.getContext('2d'), img = ctx.createImageData(256, 256), px = img.data, s = sums(f), tf = normFor(L);
+  for (let i = 0; i < f.nc; i++) {
+    const v = s[i]; if (v < minT) continue;
+    const c = Math.round(tf(v) * 255) * 3, k = f.cell[i] * 4;
+    px[k] = LUT[c]; px[k + 1] = LUT[c + 1]; px[k + 2] = LUT[c + 2]; px[k + 3] = 255;
+  }
+  ctx.putImageData(img, 0, 0);
+  f.canvasKey = key;
+  return f.canvas;
+}
+
+// ---------- smooth lines: every cell is splatted with a Gaussian; neighbouring cells of a track add up to a
+// continuous ribbon (sigma >= half a cell hides the staircase), the coverage threshold gives the width, the tail the glow
+const kernels = new Map();
+function kernelFor(cellPx) {
+  const width = +$('width').value, glow = +$('glow').value, sigma = Math.max(width / 3.2, cellPx * 0.55);
+  const key = `${cellPx}|${sigma}|${glow > 0}`;
+  let k = kernels.get(key); if (k) return k;
+  const R = Math.min(160, Math.ceil(sigma * (glow > 0 ? 3 : 2))), size = 2 * R + 1, w = new Float32Array(size * size);
+  const shift = cellPx === 1 ? 0 : 0.5, norm = cellPx / (sigma * Math.sqrt(2 * Math.PI)); // a straight run of cells peaks at ~1
+  for (let ky = -R; ky <= R; ky++) for (let kx = -R; kx <= R; kx++) {
+    const dx = kx + shift, dy = ky + shift;
+    w[(ky + R) * size + kx + R] = Math.exp(-(dx * dx + dy * dy) / (2 * sigma * sigma)) * norm;
+  }
+  k = { R, size, w, half: cellPx >> 1 };
+  kernels.set(key, k); if (kernels.size > 24) kernels.delete(kernels.keys().next().value);
+  return k;
+}
+
+function tileGeom(coords) {
+  const L = levelFor(coords.z); if (L === null) return null;
+  const dz = coords.z - (L - 8), cellPx = 1 << dz, span = 256 >> dz, cx0 = coords.x * span, cy0 = coords.y * span;
+  const m = $('style').value !== 'cells' ? Math.ceil(kernelFor(cellPx).R / cellPx) : 0;
+  return { L, dz, cellPx, span, m, cx0, cy0, fx0: Math.floor((cx0 - m) / 256), fx1: Math.floor((cx0 + span - 1 + m) / 256), fy0: Math.floor((cy0 - m) / 256), fy1: Math.floor((cy0 + span - 1 + m) / 256) };
+}
+
+async function drawTile(canvas, coords) {
+  const vg = meta && vectorGeom(coords);
+  if (vg) { // vector lines; the cell file of the tile is still needed for the colour scale and the click popup
+    const dzc = coords.z - (vg.L - 8), need = [loadFile(vg.L, coords.x >> dzc, coords.y >> dzc)];
+    for (let fx = vg.fx0; fx <= vg.fx1; fx++) for (let fy = vg.fy0; fy <= vg.fy1; fy++) need.push(loadVector(fx, fy));
+    await Promise.all(need);
+    await schedulePaint(canvas, coords);
+    return;
+  }
+  const g = meta && tileGeom(coords);
+  if (g) {
+    const n = 1 << (g.L - 8), need = [];
+    for (let fx = Math.max(0, g.fx0); fx <= Math.min(n - 1, g.fx1); fx++) for (let fy = Math.max(0, g.fy0); fy <= Math.min(n - 1, g.fy1); fy++) need.push(loadFile(g.L, fx, fy));
+    await Promise.all(need);
+  }
+  await schedulePaint(canvas, coords);
+}
+
+function paintTile(canvas, coords) {
+  const ctx = canvas.getContext('2d'), g = meta && tileGeom(coords);
+  if (!g) { ctx.clearRect(0, 0, 256, 256); canvas.__drawn = false; return; }
+  if ($('style').value !== 'cells') { const vg = vectorGeom(coords); if (vg) paintVector(canvas, ctx, vg); else paintLines(canvas, ctx, g); return; }
+  ctx.clearRect(0, 0, 256, 256);
+  const fx = Math.floor(g.cx0 / 256), fy = Math.floor(g.cy0 / 256), e = files.get(`${g.L}/${fx}/${fy}`);
+  canvas.__drawn = !!(e && e.data && e.data.nc);
+  if (!e || !e.data) return;
+  ctx.imageSmoothingEnabled = g.dz > 0;
+  ctx.drawImage(fileCanvas(e.data, g.L), g.cx0 - fx * 256, g.cy0 - fy * 256, g.span, g.span, 0, 0, 256, 256);
+}
+
+function lowerBound(a, n, x) { let lo = 0, hi = n; while (lo < hi) { const mid = (lo + hi) >> 1; if (a[mid] < x) lo = mid + 1; else hi = mid; } return lo; }
+function smoothstep(e0, e1, x) { const t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); }
+
+// tent of half-width h >= one cell: neighbouring tents add up to bilinear occupancy, so at low zoom a line of cells is
+// a crisp band `width` px wide and an empty cell stays empty
+function tentFor(cellPx) {
+  const h = Math.max(cellPx, (+$('width').value + cellPx) / 2), key = `t|${cellPx}|${h}`;
+  let k = kernels.get(key); if (k) return k;
+  const R = Math.ceil(h), size = 2 * R + 1, w = new Float32Array(size * size), shift = cellPx === 1 ? 0 : 0.5;
+  for (let ky = -R; ky <= R; ky++) for (let kx = -R; kx <= R; kx++) {
+    w[(ky + R) * size + kx + R] = Math.max(0, 1 - Math.abs(kx + shift) / h) * Math.max(0, 1 - Math.abs(ky + shift) / h);
+  }
+  k = { R, size, w, half: cellPx >> 1, h };
+  kernels.set(key, k); if (kernels.size > 24) kernels.delete(kernels.keys().next().value);
+  return k;
+}
+
+// smoothed cells: W = splatted Gaussian weight (coverage), V = weight x track count; cached per tile, so colour and
+// scale changes only recolour (colour from the weighted mean count). "Lines" on cell data takes the line core from a
+// tent (T) while a cell is at most 2 px, glow and colour still from the Gaussian; "Smoothed cells" is Gaussian only.
+function paintLines(canvas, ctx, g) {
+  const minT = Math.max(1, +$('minTracks').value || 1), glow = +$('glow').value, width = +$('width').value;
+  const tent = $('style').value === 'hybrid' && g.cellPx <= 2;
+  const key = `${g.L}|${g.dz}|${g.cx0}|${g.cy0}|${width}|${glow > 0}|${filterEpoch}|${minT}|${tent}`;
+  let F = canvas.__splat;
+  if (!F || F.key !== key) {
+    const K = kernelFor(g.cellPx), KT = tent ? tentFor(g.cellPx) : null, W = new Float32Array(65536), V = new Float32Array(65536);
+    const T = KT ? new Float32Array(65536) : null;
+    let any = false;
+    for (let fx = g.fx0; fx <= g.fx1; fx++) for (let fy = g.fy0; fy <= g.fy1; fy++) {
+      const e = files.get(`${g.L}/${fx}/${fy}`), f = e && e.data; if (!f) continue;
+      const ly0 = Math.max(0, g.cy0 - g.m - fy * 256), ly1 = Math.min(255, g.cy0 + g.span - 1 + g.m - fy * 256);
+      const lx0 = g.cx0 - g.m - fx * 256, lx1 = g.cx0 + g.span - 1 + g.m - fx * 256;
+      if (ly0 > ly1 || lx1 < 0 || lx0 > 255) continue;
+      const s = sums(f), i1 = lowerBound(f.cell, f.nc, (ly1 + 1) * 256);
+      for (let i = lowerBound(f.cell, f.nc, ly0 * 256); i < i1; i++) {
+        const v = s[i]; if (v < minT) continue;
+        const cx = f.cell[i] & 255; if (cx < lx0 || cx > lx1) continue;
+        const bx = (fx * 256 + cx - g.cx0) * g.cellPx + K.half, by = (fy * 256 + (f.cell[i] >> 8) - g.cy0) * g.cellPx + K.half;
+        const ky0 = Math.max(-K.R, -by), ky1 = Math.min(K.R, 255 - by), kx0 = Math.max(-K.R, -bx), kx1 = Math.min(K.R, 255 - bx);
+        for (let ky = ky0; ky <= ky1; ky++) {
+          const row = (by + ky) * 256 + bx, krow = (ky + K.R) * K.size + K.R;
+          for (let kx = kx0; kx <= kx1; kx++) { const w = K.w[krow + kx]; W[row + kx] += w; V[row + kx] += w * v; }
+        }
+        if (KT) {
+          const ty0 = Math.max(-KT.R, -by), ty1 = Math.min(KT.R, 255 - by), tx0 = Math.max(-KT.R, -bx), tx1 = Math.min(KT.R, 255 - bx);
+          for (let ky = ty0; ky <= ty1; ky++) {
+            const row = (by + ky) * 256 + bx, krow = (ky + KT.R) * KT.size + KT.R;
+            for (let kx = tx0; kx <= tx1; kx++) T[row + kx] += KT.w[krow + kx];
+          }
+        }
+        any = true;
+      }
+    }
+    F = canvas.__splat = { key, W, V, T, h: KT ? KT.h : 0, any };
+  }
+  ctx.clearRect(0, 0, 256, 256);
+  canvas.__drawn = F.any;
+  if (!F.any) return;
+  const tf = normFor(g.L), colour = new Int32Array(CDF_MAX + 2).fill(-1), { W, V, T } = F, e = T ? Math.min(0.15, 0.75 / F.h) : 0;
+  const thin = Math.min(1, width); // below 1 px a line gets fainter instead of narrower
+  const img = ctx.createImageData(256, 256), px = img.data;
+  for (let p = 0; p < 65536; p++) {
+    const w = W[p]; if (w < 0.004) continue;
+    const core = (T ? smoothstep(0.5 - e, 0.5 + e, T[p]) : smoothstep(0.12, 0.42, w)) * thin;
+    const a = Math.max(core, glow * 0.55 * smoothstep(0.004, 0.12, w)); if (a <= 0) continue;
+    const n = Math.min(CDF_MAX + 1, Math.max(1, Math.round(V[p] / w)));
+    let c = colour[n]; if (c < 0) c = colour[n] = Math.round(tf(n) * 255) * 3;
+    const k = p * 4;
+    px[k] = LUT[c]; px[k + 1] = LUT[c + 1]; px[k + 2] = LUT[c + 2]; px[k + 3] = a * 255;
+  }
+  ctx.putImageData(img, 0, 0);
+}
+
+// ---------- vector lines (personal builds, meta.vector): track geometry from meta.vector.zoom. Per tile, on a grid
+// of g px: every track is rasterized once (max coverage) twice over: the thin line (union A, blurred by the merge
+// distance = corridor shape) and the line widened by the merge distance (summed C = distinct tracks nearby = colour).
+// The fields are cached on the tile, so colour and scale changes only recolour.
+const vfiles = new Map(), VCHUNK = 32;
+function parseVector(buf) {
+  if (buf.length < 12 || String.fromCharCode(buf[0], buf[1], buf[2], buf[3]) !== 'THV1') return null;
+  const dv = new DataView(buf.buffer, buf.byteOffset, buf.byteLength), n = dv.getUint32(4, true), S = dv.getUint32(8, true);
+  const tid = new Uint32Array(n), bin = new Uint16Array(n), start = new Uint32Array(n + 1);
+  let o = 12;
+  for (let i = 0; i < n; i++) { tid[i] = dv.getUint32(o, true); bin[i] = dv.getUint16(o + 4, true); const np = dv.getUint16(o + 6, true); start[i + 1] = start[i] + np; o += 8 + 4 * np; }
+  const xy = new Float32Array(2 * start[n]);
+  o = 12;
+  for (let i = 0; i < n; i++) {
+    o += 8; let x = 0, y = 0;
+    for (let j = start[i]; j < start[i + 1]; j++) { x += dv.getInt16(o, true); y += dv.getInt16(o + 2, true); o += 4; xy[2 * j] = x / S; xy[2 * j + 1] = y / S; }
+  }
+  // chunks of up to VCHUNK steps with a bounding box, so a tile skips the parts of the file it does not touch
+  const cs = [], cb = [];
+  for (let i = 0; i < n; i++) {
+    const s1 = start[i + 1] - 1;
+    for (let s = start[i]; ; s += VCHUNK) {
+      const e = Math.min(s1, s + VCHUNK);
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      for (let j = s; j <= e; j++) { const x = xy[2 * j], y = xy[2 * j + 1]; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+      cs.push(i, s, e); cb.push(x0, y0, x1, y1);
+      if (e >= s1) break;
+    }
+  }
+  return { n, tid, bin, start, xy, chunks: Int32Array.from(cs), boxes: Float32Array.from(cb) };
+}
+
+function loadVector(x, y) {
+  const key = `${x}/${y}`;
+  let e = vfiles.get(key);
+  if (e) { e.used = ++clock; return e.promise; }
+  e = { used: ++clock, data: null };
+  inflight++; prog.fTotal++; setStatus();
+  e.promise = fetch(`${BASE}v${meta.vector.zoom}/${x}/${y}.bin`)
+    .then(async (r) => (r.ok ? parseVector(await gunzipIfNeeded(new Uint8Array(await r.arrayBuffer()))) : null))
+    .catch(() => null)
+    .then((d) => { e.data = d; inflight--; prog.fDone++; setStatus(); return d; });
+  vfiles.set(key, e);
+  if (vfiles.size > 240) {
+    const old = [...vfiles.entries()].sort((a, b) => a[1].used - b[1].used).slice(0, vfiles.size - 240);
+    for (const [k] of old) vfiles.delete(k);
+  }
+  return e.promise;
+}
+
+function vectorGeom(coords) {
+  if (!meta || !meta.vector || coords.z < meta.vector.zoom || $('style').value !== 'vector') return null;
+  const vz = meta.vector.zoom, z = coords.z, tsz = 256 * Math.pow(2, z - vz), k = tsz / (meta.vector.cells || 256);
+  const width = +$('width').value, glow = +$('glow').value, merge = +$('merge').value;
+  const lat = Math.atan(Math.sinh(Math.PI * (1 - 2 * (coords.y + 0.5) / Math.pow(2, z))));
+  const dpx = merge / (40075016.686 * Math.cos(lat) / (256 * Math.pow(2, z))); // merge distance in px
+  const sb = Math.max(0.6, dpx / 2.5), g = Math.max(1, Math.min(8, Math.floor(sb / 1.5))); // corridor blur sigma, grid step
+  const M = Math.ceil(width / 2 + dpx + 3 * sb + (glow > 0 ? 1.5 * width + 2 * sb : 0)) + 2, S = 256 + 2 * M;
+  const ox = coords.x * 256 - M, oy = coords.y * 256 - M, n = 1 << vz;
+  return { L: levelFor(z), k, tsz, width, glow, dpx, sb, g, M, S, Sg: Math.ceil(S / g), ox, oy, key: `${z}|${width}|${merge}|${glow > 0}|${filterEpoch}`,
+    fx0: Math.max(0, Math.floor(ox / tsz)), fx1: Math.min(n - 1, Math.floor((ox + S - 1) / tsz)),
+    fy0: Math.max(0, Math.floor(oy / tsz)), fy1: Math.min(n - 1, Math.floor((oy + S - 1) / tsz)) };
+}
+
+function boxBlur(src, dst, tmp, S, r, passes) { // box passes each way, zero outside
+  const w = 1 / (2 * r + 1);
+  let a = src;
+  for (let it = 0; it < passes; it++) {
+    for (let y = 0; y < S; y++) {
+      const o = y * S; let s = 0;
+      for (let x = 0; x <= r && x < S; x++) s += a[o + x];
+      for (let x = 0; x < S; x++) { tmp[o + x] = s * w; if (x + r + 1 < S) s += a[o + x + r + 1]; if (x - r >= 0) s -= a[o + x - r]; }
+    }
+    for (let x = 0; x < S; x++) {
+      let s = 0;
+      for (let y = 0; y <= r && y < S; y++) s += tmp[y * S + x];
+      for (let y = 0; y < S; y++) { dst[y * S + x] = s * w; if (y + r + 1 < S) s += tmp[(y + r + 1) * S + x]; if (y - r >= 0) s -= tmp[(y - r) * S + x]; }
+    }
+    a = dst;
+  }
+}
+
+// peak of a rasterized line (coverage radius rc) after the box passes, to normalise the blurred field to ~1 on a line
+const respCache = new Map();
+function lineResponse(rc, rb, passes) {
+  const key = `${rc}|${rb}|${passes}`;
+  if (respCache.has(key)) return respCache.get(key);
+  const L = 2 * (Math.ceil(rc) + passes * rb + 3) + 1, c = (L - 1) / 2;
+  let a = new Float32Array(L), b = new Float32Array(L);
+  for (let i = 0; i < L; i++) a[i] = Math.min(1, Math.max(0, rc - Math.abs(i - c)));
+  for (let it = 0; it < passes && rb > 0; it++) {
+    for (let i = 0; i < L; i++) { let s = 0; for (let j = Math.max(0, i - rb); j <= Math.min(L - 1, i + rb); j++) s += a[j]; b[i] = s / (2 * rb + 1); }
+    [a, b] = [b, a];
+  }
+  const p = Math.max(...a);
+  respCache.set(key, p);
+  return p;
+}
+
+let scratch = null;
+function computeField(g) {
+  const Sg = g.Sg, N = Sg * Sg, inv = 1 / g.g, kk = g.k * inv;
+  if (!scratch || scratch.N < N) scratch = { N, A: new Float32Array(N), T: new Float32Array(N), tmp: new Float32Array(N), touched: new Int32Array(N) };
+  const { A, T, touched } = scratch, C = new Float32Array(N);
+  A.fill(0, 0, N);
+  const rThin = Math.max(0.5, g.width / 2 * inv) + 0.5, rThick = rThin + g.dpx * inv, pad = rThick + 1;
+  const list = [];
+  for (let fx = g.fx0; fx <= g.fx1; fx++) for (let fy = g.fy0; fy <= g.fy1; fy++) {
+    const e = vfiles.get(`${fx}/${fy}`), f = e && e.data; if (!f) continue;
+    const bx = (fx * g.tsz - g.ox) * inv, by = (fy * g.tsz - g.oy) * inv, nc = f.chunks.length / 3;
+    for (let c = 0; c < nc; c++) {
+      const piece = f.chunks[3 * c]; if (!binMask[f.bin[piece]]) continue;
+      const b = 4 * c;
+      if (bx + f.boxes[b + 2] * kk < -pad || bx + f.boxes[b] * kk > Sg + pad || by + f.boxes[b + 3] * kk < -pad || by + f.boxes[b + 1] * kk > Sg + pad) continue;
+      list.push({ tid: f.tid[piece], f, c, bx, by });
+    }
+  }
+  list.sort((a, b) => a.tid - b.tid);
+  let cur = -1, nt = 0;
+  const flush = () => { for (let q = 0; q < nt; q++) { const p = touched[q]; C[p] += T[p]; T[p] = 0; } nt = 0; };
+  for (const { tid, f, c, bx, by } of list) {
+    if (tid !== cur) { flush(); cur = tid; }
+    const s = f.chunks[3 * c + 1], e = f.chunks[3 * c + 2], xy = f.xy;
+    let x0 = bx + xy[2 * s] * kk, y0 = by + xy[2 * s + 1] * kk;
+    for (let j = e > s ? s + 1 : s; j <= e; j++) {
+      const x1 = bx + xy[2 * j] * kk, y1 = by + xy[2 * j + 1] * kk;
+      const minx = Math.max(0, Math.floor(Math.min(x0, x1) - rThick)), maxx = Math.min(Sg - 1, Math.floor(Math.max(x0, x1) + rThick));
+      const miny = Math.max(0, Math.floor(Math.min(y0, y1) - rThick)), maxy = Math.min(Sg - 1, Math.floor(Math.max(y0, y1) + rThick));
+      if (minx <= maxx && miny <= maxy) {
+        const dx = x1 - x0, dy = y1 - y0, l2 = dx * dx + dy * dy, half = Math.abs(dy) > 1e-9 ? rThick * Math.sqrt(l2) / Math.abs(dy) : 0;
+        for (let py = miny; py <= maxy; py++) {
+          const cy = py + 0.5, row = py * Sg;
+          let xa = minx, xb = maxx;
+          if (half) { const xc = x0 + (cy - y0) * dx / dy; xa = Math.max(minx, Math.floor(xc - half)); xb = Math.min(maxx, Math.ceil(xc + half)); }
+          for (let px = xa; px <= xb; px++) {
+            const cx = px + 0.5;
+            let t = l2 > 0 ? ((cx - x0) * dx + (cy - y0) * dy) / l2 : 0;
+            if (t < 0) t = 0; else if (t > 1) t = 1;
+            const ex = x0 + t * dx - cx, ey = y0 + t * dy - cy, d = Math.sqrt(ex * ex + ey * ey), ck = rThick - d;
+            if (ck <= 0) continue;
+            const p = row + px, vk = ck > 1 ? 1 : ck, cn = rThin - d;
+            if (T[p] === 0) touched[nt++] = p;
+            if (vk > T[p]) T[p] = vk;
+            if (cn > 0) { const vn = cn > 1 ? 1 : cn; if (vn > A[p]) A[p] = vn; }
+          }
+        }
+      }
+      x0 = x1; y0 = y1;
+    }
+  }
+  flush();
+  const passes = 3, rb = Math.round((Math.sqrt(4 * (g.sb * inv) ** 2 + 1) - 1) / 2), Ab = new Float32Array(N);
+  if (rb > 0) boxBlur(A, Ab, scratch.tmp, Sg, rb, passes); else Ab.set(A.subarray(0, N));
+  const p = lineResponse(rThin, rb, passes);
+  let G = null;
+  if (g.glow > 0) { G = new Float32Array(N); boxBlur(Ab, G, scratch.tmp, Sg, Math.max(1, Math.round((1.5 * g.width + 2 * g.sb) * inv / 2)), 2); }
+  const hist = new Float64Array(CDF_MAX + 2), w2 = g.g * g.g; // tracks nearby per line pixel, for the colour scale
+  for (let q = 0; q < N; q++) if (Ab[q] >= 0.5 * p && C[q] >= 0.5) hist[Math.min(CDF_MAX + 1, Math.round(C[q]))] += w2;
+  return { key: g.key, Sg, g: g.g, M: g.M, Ab, C, G, p, hist };
+}
+
+function paintVector(canvas, ctx, g) {
+  let F = canvas.__field;
+  if (!F || F.key !== g.key) F = canvas.__field = computeField(g);
+  const tf = normFor('v'), minT = Math.max(1, +$('minTracks').value || 1), { Sg, Ab, C, G, p } = F, inv = 1 / F.g, glow = g.glow;
+  const colour = new Int32Array(CDF_MAX + 2).fill(-1);
+  const img = ctx.createImageData(256, 256), px = img.data;
+  let any = false;
+  for (let y = 0; y < 256; y++) {
+    const fy = (y + F.M + 0.5) * inv - 0.5, iy = Math.max(0, Math.min(Sg - 2, Math.floor(fy))), wy = Math.min(1, Math.max(0, fy - iy));
+    for (let x = 0; x < 256; x++) {
+      const fx = (x + F.M + 0.5) * inv - 0.5, ix = Math.max(0, Math.min(Sg - 2, Math.floor(fx))), wx = Math.min(1, Math.max(0, fx - ix));
+      const i00 = iy * Sg + ix, i10 = i00 + Sg, w00 = (1 - wx) * (1 - wy), w01 = wx * (1 - wy), w10 = (1 - wx) * wy, w11 = wx * wy;
+      const cnt = C[i00] * w00 + C[i00 + 1] * w01 + C[i10] * w10 + C[i10 + 1] * w11, n = cnt >= 0.5 ? Math.min(CDF_MAX + 1, Math.round(cnt)) : 1;
+      if (n < minT) continue;
+      let c = colour[n]; if (c < 0) c = colour[n] = Math.round(tf(n) * 255) * 3;
+      const t = c / 765, tau = 0.45 - 0.2 * t; // busier corridors are drawn wider
+      let alpha = smoothstep(tau - 0.15, tau + 0.15, (Ab[i00] * w00 + Ab[i00 + 1] * w01 + Ab[i10] * w10 + Ab[i10 + 1] * w11) / p) * (g.width < 1 ? g.width : 1);
+      if (G) { const a2 = glow * 0.6 * (1 - t) * smoothstep(0.015, 0.3, (G[i00] * w00 + G[i00 + 1] * w01 + G[i10] * w10 + G[i10 + 1] * w11) / p); if (a2 > alpha) alpha = a2; } // glow mostly on thin lines
+      if (alpha < 0.01) continue;
+      const q = (y * 256 + x) * 4;
+      px[q] = LUT[c]; px[q + 1] = LUT[c + 1]; px[q + 2] = LUT[c + 2]; px[q + 3] = alpha * 255;
+      any = true;
+    }
+  }
+  ctx.clearRect(0, 0, 256, 256);
+  if (any) ctx.putImageData(img, 0, 0);
+  canvas.__drawn = any;
+}
+
+// paint tiles a few at a time, nearest to the map centre first, so panning and zooming stay responsive
+// (a MessageChannel yields without the timer clamping and background-tab throttling of setTimeout chains)
+const paintJobs = new Map(), paintChannel = new MessageChannel();
+let paintTimer = 0;
+paintChannel.port1.onmessage = () => runPaints();
+function schedulePaint(canvas, coords) {
+  return new Promise((resolve) => {
+    const j = paintJobs.get(canvas);
+    if (j) { j.coords = coords; j.resolves.push(resolve); } else { paintJobs.set(canvas, { coords, resolves: [resolve] }); prog.pTotal++; }
+    if (!paintTimer) { paintTimer = 1; paintChannel.port2.postMessage(0); }
+  });
+}
+function runPaints() {
+  paintTimer = 0;
+  const t0 = performance.now(), z = map.getZoom(), c = map.project(map.getCenter(), z);
+  const dist = (co) => (co.z === z ? Math.hypot((co.x + 0.5) * 256 - c.x, (co.y + 0.5) * 256 - c.y) : 1e9);
+  const jobs = [...paintJobs.entries()].sort((a, b) => dist(a[1].coords) - dist(b[1].coords));
+  for (const [canvas, j] of jobs) {
+    if (performance.now() - t0 > 12) break;
+    paintJobs.delete(canvas);
+    if (canvas.isConnected) paintTile(canvas, j.coords);
+    prog.pDone++;
+    for (const r of j.resolves) r();
+  }
+  if (paintJobs.size) { paintTimer = 1; paintChannel.port2.postMessage(0); }
+  setStatus();
+}
+
+const HeatLayer = L.GridLayer.extend({
+  createTile(coords, done) {
+    const tile = document.createElement('canvas'); tile.width = tile.height = 256;
+    if (!meta || levelFor(coords.z) === null) { setTimeout(() => done(null, tile)); return tile; }
+    drawTile(tile, coords).then(() => done(null, tile));
+    return tile;
+  },
+});
+const heat = new HeatLayer({ pane: 'heat', opacity: 0.9, maxZoom: 20, updateWhenZooming: false, keepBuffer: 2 });
+
+function repaint() {
+  paintEpoch++; styleEpoch++;
+  for (const key in heat._tiles) { const t = heat._tiles[key]; drawTile(t.el, t.coords); }
+  updateLegend();
+}
+
+function updateLegend() {
+  if (!meta) return; const L_ = levelFor(map.getZoom()); if (L_ === null) return;
+  const key = normKey(map.getZoom()), tf = normFor(key), n = norms[key], lo = $('auto').checked && $('scaleMode').value === 'cdf' && n ? n.vmin : 1;
+  let mid = 0, hi = 0;
+  for (let v = lo; v <= 65535; v = v < 100 ? v + 1 : Math.ceil(v * 1.05)) { const t = tf(v); if (!mid && t >= 0.5) mid = v; if (t >= 0.999) { hi = v; break; } }
+  $('legendMin').textContent = lo; $('legendMid').textContent = mid && mid !== lo && mid !== hi ? mid : ''; $('legendMax').textContent = `${hi || '…'} tracks`;
+}
+
+// histogram of the visible cells, recomputed after moves and filter changes; repaints (and returns true) only when the scale moved
+function updateAutoScale() {
+  const z = map.getZoom(), L_ = levelFor(z); if (!meta || L_ === null) return false;
+  const b = map.getPixelBounds(), s = 256 * Math.pow(2, z - (L_ - 8)), minT = Math.max(1, +$('minTracks').value || 1);
+  const key = normKey(z), hist = new Float64Array(CDF_MAX + 2); let n = 0;
+  if (key === 'v') {
+    for (const t of Object.values(heat._tiles)) {
+      const h = t.coords.z === z && t.el.__field && t.el.__field.hist; if (!h) continue;
+      for (let v = 1; v <= CDF_MAX + 1; v++) if (h[v]) { hist[v] += h[v]; n += h[v]; }
+    }
+  } else {
+    for (let fx = Math.floor(b.min.x / s); fx <= Math.floor(b.max.x / s); fx++) {
+      for (let fy = Math.floor(b.min.y / s); fy <= Math.floor(b.max.y / s); fy++) {
+        const e = files.get(`${L_}/${fx}/${fy}`); if (!e || !e.data) continue;
+        const v = sums(e.data);
+        for (let i = 0; i < v.length; i++) if (v[i] >= minT) { hist[Math.min(CDF_MAX + 1, v[i])]++; n++; }
+      }
+    }
+  }
+  if (!n) return false;
+  let acc = 0, top = 0, vmin = 0;
+  for (let v = 1; v <= CDF_MAX + 1; v++) { if (!vmin && hist[v]) vmin = v; acc += hist[v]; if (!top && acc >= n * 0.995) top = v; }
+  top = Math.max(vmin + 1, top);
+  const cdf = new Float32Array(CDF_MAX + 1); acc = 0;
+  for (let v = 1; v <= CDF_MAX; v++) { const below = acc; acc += hist[v]; cdf[v] = (below + acc) / 2 / n; }
+  const probe = [vmin, vmin + 1, vmin + 2, vmin + 4, vmin + 9].map((v) => cdf[Math.min(v, CDF_MAX)]);
+  if ($('auto').checked) $('scaleMax').value = top;
+  const old = norms[key];
+  norms[key] = { top, vmin: Math.min(vmin, CDF_MAX), cdf, probe };
+  const moved = !old || old.vmin !== vmin || Math.abs(Math.log(top / old.top)) > 0.2 || probe.some((p, i) => Math.abs(p - old.probe[i]) > 0.05);
+  if (moved && $('auto').checked) { repaint(); return true; }
+  if (!moved) norms[key] = old; // keep the scale the tiles were painted with
+  return false;
+}
+
+// ---------- filter UI
+function monthLabel(m) { return `${meta.monthsBase + Math.floor(m / 12)}-${String(m % 12 + 1).padStart(2, '0')}`; }
+
+function buildTree() {
+  const tree = $('tree'); tree.innerHTML = '';
+  for (const g of meta.groups) {
+    const kids = meta.acts.map((a, i) => ({ ...a, i })).filter((a) => a.group === g.id && a.count > 0).sort((a, b) => b.count - a.count);
+    if (!kids.length) continue;
+    const total = kids.reduce((s, a) => s + a.count, 0);
+    const det = document.createElement('details'), sum = document.createElement('summary');
+    const on = g.id === 'ignored' ? '' : 'checked'; // short, sparse and unreadable tracks are opt-in
+    sum.innerHTML = `<input type="checkbox" class="grp" data-g="${g.id}" ${on} aria-label="${esc(g.label)}"> <b>${esc(g.label)}</b><span class="n">${total.toLocaleString()}</span>`;
+    det.appendChild(sum);
+    const box = document.createElement('div'); box.className = 'kids';
+    for (const a of kids) {
+      const lab = document.createElement('label');
+      lab.innerHTML = `<input type="checkbox" class="act" data-i="${a.i}" data-g="${g.id}" ${on}> ${esc(a.label)}<span class="n">${a.count.toLocaleString()}</span>`;
+      box.appendChild(lab);
+    }
+    det.appendChild(box); tree.appendChild(det);
+  }
+  tree.querySelectorAll('.grp').forEach((el) => {
+    el.addEventListener('click', (e) => e.stopPropagation());
+    el.addEventListener('change', () => { tree.querySelectorAll(`.act[data-g="${el.dataset.g}"]`).forEach((c) => { c.checked = el.checked; }); update(); });
+  });
+  tree.querySelectorAll('.act').forEach((el) => el.addEventListener('change', () => { syncGroups(); update(); }));
+}
+
+function syncGroups() {
+  $('tree').querySelectorAll('.grp').forEach((g) => {
+    const kids = [...$('tree').querySelectorAll(`.act[data-g="${g.dataset.g}"]`)], on = kids.filter((k) => k.checked).length;
+    g.checked = on === kids.length; g.indeterminate = on > 0 && on < kids.length;
+  });
+}
+
+function setActs(pred) { $('tree').querySelectorAll('.act').forEach((el) => { el.checked = pred(meta.acts[+el.dataset.i]); }); syncGroups(); update(); }
+
+function selected() {
+  const act = new Uint8Array(meta.acts.length);
+  $('tree').querySelectorAll('.act').forEach((el) => { if (el.checked) act[+el.dataset.i] = 1; });
+  const from = Math.min(+$('from').value, +$('to').value), to = Math.max(+$('from').value, +$('to').value);
+  const fold = new Uint8Array(COMBO ? meta.folders.length : 0);
+  $('ftree').querySelectorAll('.fold').forEach((el) => { if (el.checked) fold[+el.dataset.i] = 1; });
+  return { act, from, to, fold, undated: $('undated').checked };
+}
+
+// bin -> [folder, activity, month]; month -1 = no date
+function binParts(b) { return COMBO ? meta.binTable[b] : [0, b >> MONTH_BITS, b & ((1 << MONTH_BITS) - 1)]; }
+function binOn(s, f, a, m) { return !!s.act[a] && (!COMBO || !!s.fold[f]) && (m < 0 ? s.undated : m >= s.from && m <= s.to); }
+
+function buildFolders() {
+  const box = $('ftree'); box.innerHTML = '';
+  meta.folders.forEach((f, i) => {
+    const parts = f.path.split('/'), lab = document.createElement('label');
+    lab.style.paddingLeft = `${(parts.length - 1) * 16}px`; lab.title = f.path;
+    lab.innerHTML = `<input type="checkbox" class="fold" data-i="${i}" checked> ${esc(parts[parts.length - 1])}<span class="n">${f.total.toLocaleString()}</span>`;
+    box.appendChild(lab);
+  });
+  box.querySelectorAll('.fold').forEach((el) => el.addEventListener('change', () => {
+    const p = meta.folders[+el.dataset.i].path + '/';
+    box.querySelectorAll('.fold').forEach((c) => { if (meta.folders[+c.dataset.i].path.startsWith(p)) c.checked = el.checked; });
+    update();
+  }));
+}
+
+function update() {
+  const s = selected();
+  $('fromLabel').textContent = monthLabel(s.from); $('toLabel').textContent = monthLabel(s.to);
+  binMask = new Uint8Array(65536);
+  let n = 0;
+  if (COMBO) {
+    meta.binTable.forEach(([f, a, m], i) => { if (binOn(s, f, a, m)) { binMask[i] = 1; n += meta.binTracks[i]; } });
+  } else {
+    for (let a = 0; a < s.act.length; a++) if (s.act[a]) for (let m = s.from; m <= s.to; m++) binMask[(a << MONTH_BITS) | m] = 1;
+    for (const [a, m, c] of meta.hist) if (s.act[a] && m >= s.from && m <= s.to) n += c;
+  }
+  filterEpoch++;
+  $('matchN').textContent = `${n.toLocaleString()} of ${meta.tracks.toLocaleString()} tracks`;
+  const lv = [...levelsDesc].reverse();
+  let tiles = 0, bytes = 0;
+  for (const l of lv) {
+    const st = meta.levelStats?.[l], a = archives[l];
+    tiles += (st?.files ?? a?.tiles) || 0;
+    bytes += (a ? a.bytes : st?.bytes) || 0;
+  }
+  $('stats').textContent = `built ${meta.created}\nlevels c${lv[0]}–c${lv[lv.length - 1]}: ${tiles.toLocaleString()} tiles, ${(bytes / 1073741824).toFixed(1)} GB`
+    + (meta.vector ? `\nvector lines from z${meta.vector.zoom}: ${meta.vector.files.toLocaleString()} files, ${(meta.vector.bytes / 1048576).toFixed(1)} MB` : '');
+  for (const k in norms) delete norms[k];
+  if (!updateAutoScale()) repaint();
+}
+
+// ---------- click: what is in this cell
+map.on('click', (ev) => {
+  const z = map.getZoom(), L_ = levelFor(z); if (!meta || L_ === null) return;
+  if (z >= REVIEW_ZOOM) { // close enough to tell tracks apart: list the ones under the click instead of the cell
+    const pxM =40075016 * Math.cos(ev.latlng.lat * Math.PI / 180) / Math.pow(2, z + 8);
+    tracksHere(ev.latlng.lat, ev.latlng.lng, Math.min(50, Math.max(10, 12 * pxM)));
+    return;
+  }
+  const p = map.project(ev.latlng, L_ - 8), x = Math.floor(p.x), y = Math.floor(p.y);
+  const e = files.get(`${L_}/${x >> 8}/${y >> 8}`), f = e && e.data;
+  const local = ((y & 255) << 8) | (x & 255);
+  let lo = 0, hi = f ? f.nc : 0; while (lo < hi) { const mid = (lo + hi) >> 1; if (f.cell[mid] < local) lo = mid + 1; else hi = mid; }
+  const cellM = Math.round(40075016 * Math.cos(ev.latlng.lat * Math.PI / 180) / Math.pow(2, L_));
+  let html = `<div class="cellpop"><b>Cell c${L_}</b>, about ${cellM} m<br>`;
+  const tracksHereButton = `<button type="button" class="tracksHere" data-lat="${ev.latlng.lat}" data-lon="${ev.latlng.lng}" data-m="${cellM}">Tracks here</button>`;
+  if (!f || lo >= f.nc || f.cell[lo] !== local) { // small cells miss a line a few metres away, so the button stays
+    html += `no tracks<br>${tracksHereButton}</div>`;
+    L.popup().setLatLng(ev.latlng).setContent(html).openOn(map);
+    return;
+  }
+  const s = selected(), per = new Map(), perF = new Map();
+  let inMonths = 0, on = 0;
+  for (let j = f.off[lo]; j < f.off[lo + 1]; j++) {
+    const [fo, a, m] = binParts(f.bin[j]);
+    if (m < 0 ? !s.undated : m < s.from || m > s.to) continue;
+    per.set(a, (per.get(a) || 0) + f.cnt[j]); inMonths += f.cnt[j];
+    if (COMBO) perF.set(fo, (perF.get(fo) || 0) + f.cnt[j]);
+    if (binOn(s, fo, a, m)) on += f.cnt[j];
+  }
+  const table = (m, label, isOn) => '<table>' + [...m.entries()].sort((x, y) => y[1] - x[1]).slice(0, 12)
+    .map(([k, c]) => `<tr class="${isOn(k) ? '' : 'off'}"><td>${esc(label(k))}</td><td class="n">${c.toLocaleString()}</td></tr>`).join('') + '</table>';
+  html += `${inMonths.toLocaleString()} tracks in the selected months, ${on.toLocaleString()} match the filter`
+    + table(per, (a) => meta.acts[a].label, (a) => s.act[a]);
+  if (COMBO) html += '<b>Folders</b>' + table(perF, (fo) => meta.folders[fo].path, (fo) => s.fold[fo]);
+  html += tracksHereButton + '</div>';
+  L.popup().setLatLng(ev.latlng).setContent(html).openOn(map);
+});
+
+// ---------- review: the tracks under a click, one verdict per track saved through /api/pubtracks (signed-in users)
+const API = (params.get('api') || HOME).replace(/\/$/, '');
+const SIGN_IN = `${new URL(API).host}/map`; // the web app on the API host holds the login session
+$('revSignIn').textContent = SIGN_IN;
+const REVIEW_ZOOM = 16; // from this zoom a click lists the single tracks under it
+const VERDICT_LABEL = { ok: 'correct', wrong_activity: 'wrong activity', bad_quality: 'bad quality', bad_line: 'wrong line', simulated: 'simulated',
+  garbage: 'not a track' };
+const reviewLayer = L.layerGroup().addTo(map);
+let reviewTracks = [], reviewSel = null, reviewVerdict = null, reviewLoggedIn = null;
+$('revExport').href = `${API}/api/pubtracks/reviews.csv.gz`;
+let reviewAdmin = false;
+
+// simplified_geometry as TrackSimplifyEncoder writes it: varint segments, per segment varint points and zigzag dx, dy on the z26 grid
+function decodeGeometry(b64) {
+  const bin = atob(b64), data = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) data[i] = bin.charCodeAt(i);
+  let pos = 0;
+  const varint = () => { let r = 0, sh = 0, b; do { b = data[pos++]; r += (b & 0x7f) * 2 ** sh; sh += 7; } while (b & 0x80); return r; };
+  const unzigzag = (v) => (v % 2 === 0 ? v / 2 : -(v + 1) / 2);
+  const segs = [];
+  for (let s = varint(); s > 0; s--) {
+    let px = 0, py = 0;
+    const seg = [];
+    for (let n = varint(); n > 0; n--) {
+      px += unzigzag(varint());
+      py += unzigzag(varint());
+      seg.push([Math.atan(Math.sinh(Math.PI * (1 - (2 * py * 32) / 2 ** 31))) * 180 / Math.PI, ((px * 32) / 2 ** 31) * 360 - 180]);
+    }
+    if (seg.length) segs.push(seg);
+  }
+  return segs;
+}
+
+function distToTrackM(segs, lat, lon) {
+  const kx = 111320 * Math.cos(lat * Math.PI / 180), ky = 110540;
+  let best = Infinity;
+  for (const seg of segs) {
+    for (let i = 0; i < seg.length; i++) {
+      const ax = (seg[i][1] - lon) * kx, ay = (seg[i][0] - lat) * ky;
+      if (i === 0) { best = Math.min(best, Math.hypot(ax, ay)); continue; }
+      const bx = (seg[i - 1][1] - lon) * kx, by = (seg[i - 1][0] - lat) * ky, dx = ax - bx, dy = ay - by, len2 = dx * dx + dy * dy;
+      const u = len2 ? Math.max(0, Math.min(1, -(bx * dx + by * dy) / len2)) : 0;
+      best = Math.min(best, Math.hypot(bx + u * dx, by + u * dy));
+    }
+  }
+  return best;
+}
+
+// the heatmap activity a stored label is counted under, as heat_build.py does it
+function actIndexOf(activity) {
+  const real = meta.acts.findIndex((a) => a.key === activity && !a.key.includes('~') && a.key !== 'unknown');
+  if (real >= 0) return real;
+  const speed = meta.acts.findIndex((a) => a.key === `${activity}~speed`);
+  return speed >= 0 ? speed : meta.acts.findIndex((a) => a.key === 'unknown');
+}
+
+async function tracksHere(lat, lon, cellM) {
+  const r = Math.max(10, Math.min(cellM, 300)), dLat = r / 110540, dLon = r / (111320 * Math.cos(lat * Math.PI / 180));
+  map.closePopup();
+  $('secReview').open = true;
+  $('secReview').scrollIntoView({ block: 'start', behavior: 'smooth' });
+  $('revHint').textContent = 'Loading tracks…';
+  $('revDetail').hidden = true;
+  reviewSel = null;
+  let fc;
+  try {
+    const res = await fetch(`${API}/osmgpx/get-routes-list`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ minLat: String(lat - dLat), maxLat: String(lat + dLat), minLon: String(lon - dLon), maxLon: String(lon + dLon) }) });
+    // nginx answers any server error with its own HTML page (502), so never parse a failed response
+    if (!res.ok) throw new Error(`HTTP ${res.status}${res.status >= 500 ? ', the server failed or is restarting, try again' : ''}`);
+    fc = await res.json();
+  } catch (e) {
+    $('revHint').textContent = `Could not load tracks from ${API}: ${e.message}`;
+    return;
+  }
+  const features = fc.features || [];
+  if (features.length && !features.some((f) => f.properties.geo_b64)) { // over 5000 tracks: the server sends them without lines
+    reviewTracks = [];
+    renderReviewList();
+    $('revHint').textContent = `${features.length.toLocaleString()} tracks cross this spot, too many for the server to send their lines, so none can be listed here.`;
+    return;
+  }
+  const s = selected();
+  reviewTracks = features.map((f) => f.properties).filter((p) => p.geo_b64).map((p) => {
+    const segs = decodeGeometry(p.geo_b64);
+    return { ...p, segs, distM: distToTrackM(segs, lat, lon), act: actIndexOf(p.activity) };
+  }).filter((t) => t.distM <= r && (t.act < 0 || s.act[t.act])).sort((a, b) => a.distM - b.distM).slice(0, 60);
+  await loadReviews();
+  $('revHint').textContent = `${reviewTracks.length} tracks within ${Math.round(r)} m that match the filter. Hover to see a track, click it here or on the map.`
+    + (reviewLoggedIn ? '' : ` Sign in on ${SIGN_IN} to send a review.`);
+  renderReviewList();
+  if (reviewTracks.length === 1) selectTrack(0, false); // one track under the click: open it right away
+}
+
+// public reviews of the listed tracks; "mine" and the send buttons only for a signed-in caller
+async function loadReviews() {
+  try {
+    if (reviewLoggedIn === null) {
+      const meRes = await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' });
+      if (meRes.ok) {
+        const me = await meRes.json();
+        reviewLoggedIn = !!me.signedIn;
+        reviewAdmin = !!me.admin;
+      }
+    }
+    if (!reviewTracks.length) return;
+    const res = await fetch(`${API}/api/pubtracks/reviews?ids=${reviewTracks.map((t) => t.id).join(',')}`, { credentials: 'include' });
+    if (!res.ok) return;
+    const reviews = await res.json();
+    for (const t of reviewTracks) t.review = reviews[t.id] || null;
+  } catch (e) {
+    // sign-in state stays unknown (null, buttons off) and /me is asked again on the next click
+  }
+}
+
+// "admin: wrong line" or "3 users: bad quality 2, correct 1"
+function reviewSummary(r) {
+  if (!r) return '';
+  const parts = [];
+  if (r.admin) parts.push(`admin: ${VERDICT_LABEL[r.admin.verdict] || r.admin.verdict}`);
+  if (r.users?.length) {
+    const counts = {};
+    for (const u of r.users) counts[u.verdict] = (counts[u.verdict] || 0) + 1;
+    parts.push(`${r.users.length} user${r.users.length > 1 ? 's' : ''}: ` + Object.entries(counts).sort((a, b) => b[1] - a[1])
+      .map(([v, n]) => `${VERDICT_LABEL[v] || v} ${n}`).join(', '));
+  }
+  return parts.join(' · ');
+}
+
+function renderReviewList() {
+  reviewLayer.clearLayers();
+  $('revList').innerHTML = reviewTracks.map((t, i) => {
+    const label = t.act >= 0 ? meta.acts[t.act].label : (t.activity || 'no activity');
+    const top = t.review?.admin?.verdict || t.review?.users?.[0]?.verdict;
+    const badge = top ? `<span class="badge ${top === 'ok' ? 'ok' : 'bad'}">${esc(reviewSummary(t.review))}</span>` : '';
+    return `<div class="item${reviewSel === i ? ' sel' : ''}" data-i="${i}" tabindex="0"><span>${esc(label)} · ${esc(t.name || 'no name')}</span>${badge}`
+      + `<span class="sub">${t.id} · ${t.dist ? (t.dist / 1000).toFixed(1) + ' km · ' : ''}${esc(String(t.date || '').slice(0, 10))} · ${Math.round(t.distM)} m away</span></div>`;
+  }).join('');
+  reviewTracks.forEach((t, i) => {
+    t.line = L.polyline(t.segs, { color: '#16201b', weight: 2, opacity: 0.35, interactive: false }).addTo(reviewLayer);
+  });
+  // a wide invisible stroke over every line: hover and click find a track without hitting its 2 px line exactly
+  reviewTracks.forEach((t, i) => {
+    L.polyline(t.segs, { color: '#000', weight: 16, opacity: 0, bubblingMouseEvents: false })
+      .on('mouseover', () => hoverTrack(i, true)).on('mouseout', () => hoverTrack(i, false))
+      .on('click', () => selectTrack(i, false)).addTo(reviewLayer);
+  });
+  if (reviewSel !== null) highlight(reviewSel, true);
+}
+
+function highlight(i, on) {
+  const t = reviewTracks[i];
+  if (!t?.line) return;
+  t.line.setStyle(on ? { color: '#b35600', weight: 5, opacity: 0.95 } : { color: '#16201b', weight: 2, opacity: 0.35 });
+  if (on) t.line.bringToFront();
+}
+
+// hover on the map or in the list: the line and its list row light up together; the selected track stays lit
+function hoverTrack(i, on) {
+  if (i !== reviewSel) highlight(i, on);
+  $('revList').querySelector(`.item[data-i="${i}"]`)?.classList.toggle('hover', on);
+}
+
+function selectTrack(i, fit = true) {
+  if (reviewSel !== null) highlight(reviewSel, false);
+  reviewSel = i;
+  const t = reviewTracks[i];
+  highlight(i, true);
+  if (fit) map.fitBounds(t.line.getBounds(), { padding: [30, 30], maxZoom: 16 });
+  $('revList').querySelectorAll('.item').forEach((el) => el.classList.toggle('sel', +el.dataset.i === i));
+  const trace = t.user ? `https://www.openstreetmap.org/user/${encodeURIComponent(t.user)}/traces/${t.id}` : null;
+  $('revInfo').innerHTML = `<b>${esc(t.name || 'no name')}</b><br>${trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : t.id}`
+    + ` · stored activity: ${esc(t.activity || 'none')}` + (t.tags?.length ? `<br>tags: ${esc(t.tags.join(', '))}` : '')
+    + (t.description ? `<br>${esc(String(t.description).slice(0, 200))}` : '');
+  const mine = t.review?.mine;
+  reviewVerdict = mine?.verdict || null;
+  $('revComment').value = mine?.comment || '';
+  const comments = [t.review?.admin, ...(t.review?.users || [])].filter((r) => r?.comment && r !== mine).map((r) => `“${r.comment}”`);
+  $('revInfo').insertAdjacentHTML('beforeend', (t.review ? `<br>reviews: ${esc(reviewSummary(t.review))}` : '<br>no reviews yet')
+    + (comments.length ? `<br>${esc(comments.slice(0, 3).join(' '))}` : ''));
+  $('revStatus').textContent = !reviewLoggedIn ? `Sign in on ${SIGN_IN} to send a review.`
+    : mine ? `your verdict${reviewAdmin ? ' (admin)' : ''}: ${VERDICT_LABEL[mine.verdict] || mine.verdict}` : reviewAdmin ? 'you review as admin' : '';
+  syncVerdicts();
+  $('revDetail').hidden = false;
+}
+
+function syncVerdicts() {
+  $('revVerdicts').querySelectorAll('button').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.v === reviewVerdict));
+    b.disabled = !reviewLoggedIn; // everyone sees the tracks and reviews, signed-in people send
+  });
+  $('revClear').disabled = !reviewLoggedIn;
+  $('revComment').disabled = !reviewLoggedIn;
+}
+
+async function saveReview(verdict) {
+  const t = reviewTracks[reviewSel];
+  if (!t) return;
+  $('revStatus').textContent = 'Saving…';
+  try {
+    const res = await fetch(`${API}/api/pubtracks/review`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: t.id, verdict: verdict || '', comment: verdict ? $('revComment').value : '' }) });
+    if (!res.ok) {
+      $('revStatus').textContent = res.status === 401 ? `Not saved: sign in on ${SIGN_IN}.` : `Not saved: HTTP ${res.status}`;
+      return;
+    }
+    const saved = await res.json();
+    t.review = saved.admin || saved.users?.length ? saved : null;
+    renderReviewList();
+    $('revStatus').textContent = verdict ? 'Saved' : 'Verdict cleared';
+  } catch (e) {
+    $('revStatus').textContent = `Not saved: ${e.message}`;
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('.tracksHere');
+  if (!b) return;
+  tracksHere(+b.dataset.lat, +b.dataset.lon, +b.dataset.m);
+});
+$('revList').addEventListener('mouseover', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, true); });
+$('revList').addEventListener('mouseout', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, false); });
+$('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) selectTrack(+it.dataset.i); });
+$('revVerdicts').addEventListener('click', (e) => {
+  const b = e.target.closest('button');
+  if (!b || b.disabled) return;
+  reviewVerdict = b.dataset.v;
+  syncVerdicts();
+  saveReview(reviewVerdict); // a quick action: one press sends it with the comment
+});
+$('revClear').addEventListener('click', () => { reviewVerdict = null; syncVerdicts(); saveReview(null); });
+
+// ---------- wiring
+$('undated').addEventListener('change', update);
+$('fAll').addEventListener('click', () => { $('ftree').querySelectorAll('.fold').forEach((c) => { c.checked = true; }); update(); });
+$('fNone').addEventListener('click', () => { $('ftree').querySelectorAll('.fold').forEach((c) => { c.checked = false; }); update(); });
+$('from').addEventListener('input', update); $('to').addEventListener('input', update);
+const rescale = () => { for (const k in norms) delete norms[k]; if (!updateAutoScale()) repaint(); };
+$('minTracks').addEventListener('change', rescale);
+$('auto').addEventListener('change', rescale);
+$('scaleMax').addEventListener('change', () => { $('auto').checked = false; repaint(); });
+// view settings are remembered per browser
+const PREF_IDS = ['palette', 'width', 'glow', 'merge', 'scaleMode', 'basemap', 'opacity']; // not 'style': a remembered comparison mode would hide the vector lines
+function savePrefs() { try { localStorage.setItem('heatmapPrefs', JSON.stringify(Object.fromEntries(PREF_IDS.map((id) => [id, $(id).value])))); } catch (e) { /* storage blocked */ } }
+function applyBasemap() { const v = $('basemap').value; document.body.classList.toggle('greybase', v === 'grey'); document.body.classList.toggle('darkbase', v === 'dark'); }
+$('palette').innerHTML = Object.entries(PALETTES).map(([k, [label]]) => `<option value="${k}">${esc(label)}</option>`).join('');
+try { const p = JSON.parse(localStorage.getItem('heatmapPrefs') || '{}'); for (const id of PREF_IDS) if (p[id] !== undefined) $(id).value = p[id]; } catch (e) { /* no prefs */ }
+for (const id of PREF_IDS) { const el = $(id); if (el.tagName === 'SELECT' && el.selectedIndex < 0) el.selectedIndex = 0; }
+setPalette($('palette').value); applyBasemap();
+$('lineRow').hidden = $('style').value === 'cells';
+heat.setOpacity(+$('opacity').value);
+$('opacity').addEventListener('input', (e) => { heat.setOpacity(+e.target.value); savePrefs(); });
+$('basemap').addEventListener('change', () => { applyBasemap(); savePrefs(); });
+// one click between the grey and the colour map, without opening Display
+const MapToggle = L.Control.extend({
+  options: { position: 'topright' },
+  onAdd() {
+    const b = L.DomUtil.create('button', 'mapToggle');
+    b.type = 'button';
+    b.title = 'Switch between the grey and the colour map';
+    const label = () => { b.textContent = $('basemap').value === 'colour' ? 'Grey map' : 'Colour map'; };
+    label();
+    L.DomEvent.disableClickPropagation(b);
+    b.addEventListener('click', () => {
+      $('basemap').value = $('basemap').value === 'colour' ? 'grey' : 'colour';
+      $('basemap').dispatchEvent(new Event('change'));
+    });
+    $('basemap').addEventListener('change', label);
+    return b;
+  },
+});
+new MapToggle().addTo(map);
+$('palette').addEventListener('change', () => { setPalette($('palette').value); repaint(); savePrefs(); });
+$('scaleMode').addEventListener('change', () => { repaint(); savePrefs(); });
+$('style').addEventListener('change', () => { $('lineRow').hidden = $('style').value === 'cells'; $('mergeRow').hidden = $('style').value !== 'vector'; heat.redraw(); updateLegend(); savePrefs(); });
+let widthTimer = 0;
+for (const id of ['secView', 'secData', 'secSource']) { // remember which sections are collapsed
+  const el = $(id);
+  try { const v = localStorage.getItem(`heatmap_${id}`); if (v !== null) el.open = v === '1'; } catch (e) { /* storage blocked */ }
+  el.addEventListener('toggle', () => { try { localStorage.setItem(`heatmap_${id}`, el.open ? '1' : '0'); } catch (e) { /* storage blocked */ } });
+}
+const mergeLabel = () => { $('mergeN').textContent = `${$('merge').value} m`; };
+mergeLabel();
+for (const id of ['width', 'glow', 'merge']) $(id).addEventListener('input', () => { mergeLabel(); clearTimeout(widthTimer); widthTimer = setTimeout(() => { repaint(); savePrefs(); }, 60); });
+$('all').addEventListener('click', () => setActs((a) => a.group !== 'ignored'));
+$('none').addEventListener('click', () => setActs(() => false));
+$('human').addEventListener('click', () => setActs((a) => a.group === 'foot' || a.group === 'cycling'));
+$('nomotor').addEventListener('click', () => setActs((a) => !['driving', 'motorcycling', 'air_sports', 'unknown', 'ignored'].includes(a.group)));
+heat.on('load', () => updateAutoScale());
+map.on('moveend', () => setTimeout(updateAutoScale, 0));
+
+(async () => {
+  try {
+    const r = await fetch(`${BASE}meta.json`);
+    if (!r.ok) throw new Error(`Could not load ${BASE}meta.json: HTTP ${r.status}`);
+    meta = await r.json();
+    COMBO = Array.isArray(meta.binTable);
+    // drawing algorithms this data supports; vector tracks only exist in personal builds
+    const algos = [['gauss', 'Smooth (Gaussian)'], ['hybrid', 'Sharp thin lines (low zoom)'], ['cells', 'Raw cells']];
+    if (meta.vector) algos.unshift(['vector', `Vector tracks (zoom ${meta.vector.zoom}+)`]);
+    $('style').innerHTML = algos.map(([v, label]) => `<option value="${v}">${esc(label)}</option>`).join('');
+    $('style').value = algos[0][0];
+    $('lineRow').hidden = $('style').value === 'cells';
+    $('mergeRow').hidden = $('style').value !== 'vector'; // merging applies to vector tracks only
+    await findArchives();
+    levelsDesc = (Object.keys(archives).length ? Object.keys(archives).map(Number) : [...meta.levels]).sort((a, b) => b - a);
+    heat.options.minZoom = Math.max(0, levelsDesc[levelsDesc.length - 1] - 8);
+    if (meta.title) { document.title = meta.title; document.querySelector('h1').textContent = meta.title; }
+    if (meta.description) document.querySelector('aside .hint').textContent = meta.description;
+    if (meta.monthTitle) $('monthTitle').textContent = meta.monthTitle;
+    buildTree();
+    if (COMBO) { buildFolders(); $('folderBox').hidden = false; }
+    if (meta.undatedTracks) { $('undatedRow').hidden = false; $('undatedN').textContent = meta.undatedTracks.toLocaleString(); }
+    if (meta.bounds && !start.length) map.fitBounds(meta.bounds);
+    if (meta.summary) {
+      const cell = (v) => `<td class="${typeof v === 'number' ? 'num' : ''}">${esc(typeof v === 'number' ? v.toLocaleString() : v)}</td>`;
+      $('summary').innerHTML = meta.summary.filter((t) => t.rows.length).map((t) => `<section><h2>${esc(t.title)}</h2><div class="scroll"><table>`
+        + `<thead><tr>${t.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>`
+        + `<tbody>${t.rows.map((row) => `<tr>${row.map(cell).join('')}</tr>`).join('')}</tbody></table></div></section>`).join('');
+      $('summary').hidden = false;
+    }
+    for (const el of [$('from'), $('to')]) { el.min = meta.monthMin; el.max = meta.monthMax; }
+    $('from').value = meta.monthMin; $('to').value = meta.monthMax;
+    const cap = meta.userCap ? `, each OSM user at most ${meta.userCap} track${meta.userCap > 1 ? 's' : ''} per cell, activity and month` : '';
+    $('note').textContent = meta.viewerNote || `Colour: tracks per cell for the selected activities and months${cap}. `
+      + 'Activities are the stored labels; dates are OSM upload dates. '
+      + 'Ignored, off by default: too short, too few points, an unreadable GPX drawn at its start point, or no label and no reliable timing.';
+    heat.addTo(map);
+    update();
+    $('loading').remove();
+  } catch (e) {
+    $('loading').textContent = e.message;
+  }
+})();
+</script>
+</body>
+</html>

@@ -184,11 +184,11 @@ export function buildTrackFeatures(tracks) {
 
 export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFilters = null) {
     const defaultFilters = selectedFilters ?? DEFAULT_EXPLORE_POITYPES;
-    ctx.setSearchSettings({
-        ...ctx.searchSettings,
+    ctx.setSearchSettings((prev) => ({
+        ...prev,
         selectedFilters: new Set(defaultFilters),
         useWikiImages: false,
-    });
+    }));
 }
 
 export function getPoiParentCategory(props, t) {
