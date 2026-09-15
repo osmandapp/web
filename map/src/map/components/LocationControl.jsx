@@ -21,6 +21,7 @@ export async function detectGeoByIp({ map, hash }) {
     if (!map) return;
     if (hash) {
         const [zoom, lat, lon] = (hash.lastHash ?? window.location.hash ?? '').split('/');
+        // use != instead of !== to compare coordinates
         if (
             zoom &&
             lat &&

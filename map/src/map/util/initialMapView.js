@@ -3,7 +3,7 @@ import L from 'leaflet';
 export const flyZoom = 9;
 
 export const initialZoom = 5;
-export const initialPosition = [50, 5]; // use != instead of !== to compare coordinates
+export const initialPosition = [50, 5];
 
 export function getPinPointFromUrl() {
     try {
