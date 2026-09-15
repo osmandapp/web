@@ -13,9 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Overview {#overview}
 
@@ -182,29 +179,6 @@ This is a section within the [POI context menu](./map-context-menu.md) that disp
 
 Images viewed online are automatically cached for offline access. Cached photos display a small offline badge in the corner. The preview grid adapts to the screen size on iPadOS and macOS, ensuring comfortable image layout on larger displays. OsmAnd also avoids triggering repeated network requests when the Online Photos section is closed, and cancels previous requests when switching quickly between different POIs.
 
-<!-- 
-Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
-
-
-When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
-
-- Tap any photo to view it in fullscreen.  
-- Swipe to browse more images.
-
-For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
-
-
-### Actions {#actions}
-
-In the Map Context menu How to access:
-
-- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
-
-- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
-  **Share**, **Details**, **Open in browser**, and **Download**.
-
--->
-
 ### Gallery {#gallery}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -247,54 +221,6 @@ You can also perform the following actions on each photo:
 
 **Note:** Download saves the image to the device’s storage for permanent offline use, while cached photos are stored automatically and available offline only within the app.
 
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-The Android version does not include an additional menu for photo actions.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
-
-On **iOS**, long-pressing a photo opens a context menu with additional actions:
-
-- **Details**  
-- **Open in browser**  
-- **Download**
-
-**Buttons**:
-
-- The **Share** button lets you quickly share the selected image.  
-- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
-
-</TabItem>
-
-</Tabs>
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
-
-</TabItem>
-
-</Tabs>
-
-The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
--->
-
 
 ## Related Articles {#related-articles}
 
@@ -307,99 +233,3 @@ The **Details** screen provides full metadata for the selected photo, including:
 
 
 
-<!--
-### Online Photos 2
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-#### Actions With Photos
-
-How to access:
-
-- Tap the **Show All**(Android) / **View All**(iOS) button to open [the gallery](#gallery-menu) in full screen mode. There you can swipe through all the images related to the selected location.
-
-- Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
-
-- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
-
-In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap.
-
-#### Gallery Menu 2
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png)   ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
-
-</TabItem>
-
-</Tabs>
-
-
-The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-
-On iOS, long tapping on any photo opens an additional menu with actions such as *Details*, *Open in browser*, and *Download*.
-
-Buttons:
-
-- The **Share** button allows you to share the selected item.  
-- The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
-
--->

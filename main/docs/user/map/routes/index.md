@@ -197,7 +197,7 @@ You can customize whether routes are switched on or off using the [Quick Action]
 
 </Tabs>  
 
-Find routes using the [Search function](../../search/index.md) by name or by selecting "Routes" in the [Categories section](../../search/search-poi.md#).
+Find routes using the [Search function](../../search/index.md) by name or by selecting "Routes" in the [Categories section](../../search/search-poi.md#poi-search-by-categories).
 
 To search, go to the *<Translate android="true" ids="search_button"/>* menu or *<Translate android="true" ids="search_button,search_categories"/>* and enter your activity.
 
@@ -234,6 +234,6 @@ You can enable or disable filters using the switches, and some sections include 
 - [Tracks Context menu](../../map/tracks/track-context-menu.md)
 - [Public transport](../public-transport.md)
 - [Navigation route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [Search POI](../../search/search-poi.md#)
+- [Search POI](../../search/search-poi.md)
 - [Types of Routes](./types-of-routes.md)
 

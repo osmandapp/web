@@ -15,9 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Overview {#overview}
 
@@ -27,7 +24,7 @@ Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Po
 
 OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables syncing favorites, tracks, and backups across devices and platforms. Users with **OsmAnd Start** (free) or **OsmAnd Pro** (paid) accounts can take full advantage of this ecosystem by syncing data between mobile and web. You can find a detailed comparison of *Start* and *Pro* features in the [Subscription Access](#subscription-accesses) section below.
 
-> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./web-navigation.md), [Route Planner](./planner.md), [Weather overlays](./web-weather.md#), and [Settings](./web-map.md#settings).
+> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./web-navigation.md), [Route Planner](./planner.md), [Weather overlays](./web-weather.md), and [Settings](./web-map.md#settings).
 
 
 ## Key Features {#key-features}
@@ -45,11 +42,6 @@ Web Portal offers the following main capabilities for working with maps and pers
 - Full access to synced data via [OsmAnd Cloud](./web-cloud#cloud-sync).
 - File import/export support (GPX: tracks, favorites).
 - Seamless integration with **OsmAnd Pro** and **OsmAnd Start**.
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
-
 
 ### Subscription Access {#subscription-accesses}
 
@@ -69,10 +61,6 @@ Web Map Portal supports several access levels: without login, with OsmAnd Start,
 | [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [Tracks folders and Layer](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
-
 
 ## How to Start {#how-to-start}
 
@@ -86,61 +74,6 @@ To access the full features of the OsmAnd Web Portal, you need to log in with an
    - **Create account**: Register for a free OsmAnd Start account. For a detailed step-by-step guide to creating a new account, see the [OsmAnd Account](./web-cloud) article.
 
 ![Web Account](@site/static/img/web/web_account.png)
-
-<!--
-
-## Settings {#settings}
-
-### Language {#language}
-
-To switch the interface language:
-
-*Go to: Menu → ⚙ Settings → Display language*
-
-![Web Language](@site/static/img/web/web_language.png)
-
-### Units {#units}
-
-*Go to: Menu → ⚙ Settings → Units of length*  
-*Go to: Menu → ⚙ Settings → Unit of speed*
-
-You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
-
-The **Units of length** option defines how horizontal distance and elevation are shown:
-- Kilometers/meters.
-- Miles/feet.
-- Miles/meters.
-- Miles/yards.
-- Nautical miles/meters.
-- Nautical miles/feet. 
-
-For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
-
-The **Unit of speed** option controls how current speed and speed limits are displayed:
-- Kilometers per hour.
-- Miles per hour.
-- Meters per second.
-- Minutes per mile.
-- Minutes per kilometer.
-- Nautical miles per hour (knots). 
-
-For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
-
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
-
-### OsmAnd Cloud {#osmand-cloud}
-
-![Web Cloud](@site/static/img/web/web_without_acc.png) ![Web Cloud](@site/static/img/web/web_with_acc.png)
-
-In the Web Map Portal, the *General settings* (Display language, Units of length, Unit of speed) are available for all users, whether you are signed in or not. Once you log in with your OsmAnd account, an additional OsmAnd Cloud section appears in the Settings panel. [OsmAnd Cloud](./web-cloud) connects the web map with your cloud backups so that you can manage data synchronized from your Android or iOS devices directly in the browser.
-
-**Changes** option shows a chronological list of files stored in your OsmAnd Cloud account. Items are grouped by month and include the file name, the type of change (for example, added, modified or deleted), the time of the last update and the device that created it. For each entry, you can open the three-dot menu and choose *Download* to save the selected file to your computer, or *Delete*.
-
-**Trash** option contains files that were deleted from OsmAnd Cloud. The list is also grouped by month and shows when each file was removed and from which device. Use the three-dot menu next to a file to *Download* a copy, *Restore from trash* (return the file to OsmAnd Cloud so it becomes available again in your data), or *Delete immediately* to remove it permanently. This helps prevent accidental data loss while still letting you free up cloud storage when you are sure a file is no longer needed. You can also clear all deleted items at once by clicking the Trash icon in the Trash panel header. This opens the **Empty trash** dialog, where you confirm deletion to permanently remove all files from Trash.
-
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
-
--->
 
 
 ## Related Articles {#related-articles}
