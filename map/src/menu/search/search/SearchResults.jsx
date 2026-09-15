@@ -414,7 +414,7 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            {!params.type && (
+            {ctx.develFeatures && !params.type && (
                 <SelectItemBoolean
                     title={t('search_try_spatial_search_beta')}
                     checked={!!ctx.spatialSearch}
@@ -422,7 +422,7 @@ export default function SearchResults() {
                     boldTitle={false}
                 />
             )}
-            {(useSpatialSearchResults || ctx.develFeatures) && ctx.searchResult?.info && (
+            {ctx.develFeatures && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
                         .map(([k, v]) => `${k}: ${v}`)
