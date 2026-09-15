@@ -23,7 +23,7 @@ export function searchByWordApi({
 }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
         apiCache: true,
-        ...(abortControllerKey ? { abortControllerKey } : {}),
+        ...(abortControllerKey ? { abortControllerKey, abortOnCacheHit: true } : {}),
         params: {
             lat: latlng.lat,
             lon: latlng.lng,
