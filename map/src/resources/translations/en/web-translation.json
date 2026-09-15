@@ -462,5 +462,7 @@
     "exit_without_saving": "Exit without saving?",
     "all_changes_will_be_lost": "All changes will be lost.",
     "keep_editing": "Keep Editing",
-    "shared_string_exit": "Exit"
+    "shared_string_exit": "Exit",
+    "tracks_empty_folder": "Empty folder",
+    "tracks_empty_folder_description": "This folder doesn't have any track yet."
 }
