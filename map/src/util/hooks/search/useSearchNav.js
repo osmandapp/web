@@ -111,7 +111,7 @@ function buildSearchParams({ engine, query, type } = {}) {
 }
 
 function getDefaultSearchEngine() {
-    return globalThis.localStorage?.getItem(SPATIAL_SEARCH_STORAGE_KEY) === 'yes'
+    return globalThis.localStorage?.getItem(SPATIAL_SEARCH_STORAGE_KEY) !== 'no'
         ? SEARCH_ENGINE_SPATIAL
         : SEARCH_ENGINE_CLASSIC;
 }
