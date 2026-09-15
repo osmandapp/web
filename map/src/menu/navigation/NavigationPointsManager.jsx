@@ -8,7 +8,12 @@ import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
-import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_ROUND_TRIP_ENABLED,
+} from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
@@ -82,6 +87,7 @@ export default function NavigationPointsManager() {
     const startPoint = navObject.getOption(ROUTE_POINTS_START);
     const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
     const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
+    const roundTrip = navObject.getOption(ROUTE_ROUND_TRIP_ENABLED);
 
     const [start, setStart] = useState('');
     const [finish, setFinish] = useState('');
@@ -436,7 +442,7 @@ export default function NavigationPointsManager() {
                 onBlur={handleStartBlur}
                 onKeyDown={(e) => handleKeyPress(e, handleStartBlur)}
                 type={START_POINT}
-                onSwap={handleSwap}
+                onSwap={roundTrip ? null : handleSwap}
                 onDragStart={handleDragStart(0)}
                 onDragOver={handleDragOver(0)}
                 onDrop={handleDrop(0)}
@@ -450,60 +456,64 @@ export default function NavigationPointsManager() {
             />
 
             {/* Intermediate Points */}
-            {intermediates.map((value, index) => (
-                <React.Fragment key={`intermediate-point-${index}`}>
-                    {/* Drop indicator */}
-                    {dropTargetIndex === index + 1 && draggedIndex !== index + 1 && (
+            {!roundTrip &&
+                intermediates.map((value, index) => (
+                    <React.Fragment key={`intermediate-point-${index}`}>
+                        {/* Drop indicator */}
+                        {dropTargetIndex === index + 1 && draggedIndex !== index + 1 && (
+                            <Box className={styles.dropIndicator} />
+                        )}
+                        <NavigationInputRow
+                            inputId={`se-route-via-point-${index}`}
+                            value={value}
+                            placeholder={`${t('web:set_via_point')} ${index + 1}`}
+                            onChange={(val) => handleIntermediateChange(index, val)}
+                            onBlur={(val) => handleIntermediateBlur(index, val)}
+                            onKeyDown={(e) => handleKeyPress(e, (val) => handleIntermediateBlur(index, val))}
+                            type={INTERMEDIATE_POINT}
+                            onRemove={() => handleRemoveIntermediate(index)}
+                            onDragStart={handleDragStart(index + 1)}
+                            onDragOver={handleDragOver(index + 1)}
+                            onDrop={handleDrop(index + 1)}
+                            onDragEnd={handleDragEnd}
+                            history={history}
+                            onHistorySelect={(item) => handleIntermediateHistorySelect(index, item)}
+                            onClearHistory={clearHistory}
+                            isDragging={draggedIndex === index + 1}
+                            isFirstIntermediate={index === 0}
+                        />
+                    </React.Fragment>
+                ))}
+
+            {/* Finish Point - a round trip has none, it returns to the start */}
+            {!roundTrip && (
+                <>
+                    {/* Drop indicator before finish */}
+                    {dropTargetIndex === intermediates.length + 1 && draggedIndex !== intermediates.length + 1 && (
                         <Box className={styles.dropIndicator} />
                     )}
                     <NavigationInputRow
-                        inputId={`se-route-via-point-${index}`}
-                        value={value}
-                        placeholder={`${t('web:set_via_point')} ${index + 1}`}
-                        onChange={(val) => handleIntermediateChange(index, val)}
-                        onBlur={(val) => handleIntermediateBlur(index, val)}
-                        onKeyDown={(e) => handleKeyPress(e, (val) => handleIntermediateBlur(index, val))}
-                        type={INTERMEDIATE_POINT}
-                        onRemove={() => handleRemoveIntermediate(index)}
-                        onDragStart={handleDragStart(index + 1)}
-                        onDragOver={handleDragOver(index + 1)}
-                        onDrop={handleDrop(index + 1)}
+                        key="finish-point"
+                        inputId="se-route-finish-point"
+                        value={finish}
+                        placeholder={t('web:set_destination')}
+                        onChange={handleFinishChange}
+                        onBlur={handleFinishBlur}
+                        onKeyDown={(e) => handleKeyPress(e, handleFinishBlur)}
+                        type={FINISH_POINT}
+                        onAdd={handleAddIntermediate}
+                        onDragStart={handleDragStart(intermediates.length + 1)}
+                        onDragOver={handleDragOver(intermediates.length + 1)}
+                        onDrop={handleDrop(intermediates.length + 1)}
                         onDragEnd={handleDragEnd}
+                        inputRef={finishInputRef}
                         history={history}
-                        onHistorySelect={(item) => handleIntermediateHistorySelect(index, item)}
+                        onHistorySelect={handleFinishHistorySelect}
                         onClearHistory={clearHistory}
-                        isDragging={draggedIndex === index + 1}
-                        isFirstIntermediate={index === 0}
+                        isDragging={draggedIndex === intermediates.length + 1}
                     />
-                </React.Fragment>
-            ))}
-
-            {/* Drop indicator before finish */}
-            {dropTargetIndex === intermediates.length + 1 && draggedIndex !== intermediates.length + 1 && (
-                <Box className={styles.dropIndicator} />
+                </>
             )}
-
-            {/* Finish Point */}
-            <NavigationInputRow
-                key="finish-point"
-                inputId="se-route-finish-point"
-                value={finish}
-                placeholder={t('web:set_destination')}
-                onChange={handleFinishChange}
-                onBlur={handleFinishBlur}
-                onKeyDown={(e) => handleKeyPress(e, handleFinishBlur)}
-                type={FINISH_POINT}
-                onAdd={handleAddIntermediate}
-                onDragStart={handleDragStart(intermediates.length + 1)}
-                onDragOver={handleDragOver(intermediates.length + 1)}
-                onDrop={handleDrop(intermediates.length + 1)}
-                onDragEnd={handleDragEnd}
-                inputRef={finishInputRef}
-                history={history}
-                onHistorySelect={handleFinishHistorySelect}
-                onClearHistory={clearHistory}
-                isDragging={draggedIndex === intermediates.length + 1}
-            />
 
             {/* Drop indicator after finish (to move item to the end) */}
             {dropTargetIndex === intermediates.length + 2 && <Box className={styles.dropIndicator} />}

@@ -8,6 +8,8 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_START,
     ROUTE_POINTS_VIA,
+    ROUTE_ROUND_TRIP,
+    ROUTE_ROUND_TRIP_ENABLED,
 } from '../profileConstants';
 import { LINE_STRING } from '../../../util/Utils';
 
@@ -80,7 +82,7 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
     const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
 
     const startPoint = this.getOption(ROUTE_POINTS_START);
-    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH) ?? startPoint;
     const viaPoints = this.getOption(ROUTE_POINTS_VIA);
 
     points.push(geo(startPoint));
@@ -123,7 +125,8 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     setRoutingErrorMsg(null);
 
     const startPoint = this.getOption(ROUTE_POINTS_START);
-    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    // a round trip has no finish, it comes back to the start
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH) ?? startPoint;
     const viaPoints = this.getOption(ROUTE_POINTS_VIA);
     const avoidRoads = this.getOption(ROUTE_POINTS_AVOID_ROADS);
 
@@ -147,16 +150,16 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     const maxDist = '&maxDist=100'; // compatibility-only
     const alternatives = ROUTE_ALTERNATIVES > 0 ? `&alternatives=${ROUTE_ALTERNATIVES}` : '';
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
-    const response = await apiGet(
-        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
-            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${alternatives}`,
-        {
-            apiCache: true,
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-            abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
-        }
-    );
+    const url = this.getOption(ROUTE_ROUND_TRIP_ENABLED)
+        ? roundTripUrl({ roundTrip: this.getOption(ROUTE_ROUND_TRIP), startPoint, routeModeStr })
+        : `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
+          `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${alternatives}`;
+    const response = await apiGet(url, {
+        apiCache: true,
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
+    });
     if (!response || response.aborted) {
         changeRouteText(false);
         return;
@@ -195,9 +198,21 @@ async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }
     return draft;
 }
 
+/** Round trips are asked for by their length, the loop itself is built by the server */
+function roundTripUrl({ roundTrip, startPoint, routeModeStr }) {
+    const length = roundTrip.lengthType === 'time' ? `&time=${roundTrip.time}` : `&distance=${roundTrip.distance}`;
+    const direction = roundTrip.direction === null ? '' : `&direction=${roundTrip.direction}`;
+
+    return (
+        `${process.env.REACT_APP_ROUTING_API_SITE}/routing/roundtrip?routeMode=${routeModeStr}` +
+        `&point=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}${length}` +
+        `&variants=${roundTrip.variants}${direction}&seed=${roundTrip.seed}`
+    );
+}
+
 function makeLineFeatureCollection({ style = {} } = {}) {
     const startPoint = this.getOption(ROUTE_POINTS_START);
-    const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
+    const finishPoint = this.getOption(ROUTE_POINTS_FINISH) ?? startPoint;
     // viaPoints may contain null placeholders for empty intermediate inputs – ignore them in geometry
     const viaPoints = (this.getOption(ROUTE_POINTS_VIA) || []).filter((p) => p != null);
 
