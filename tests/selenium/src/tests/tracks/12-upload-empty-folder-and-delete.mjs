@@ -2,13 +2,14 @@
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { clickBy } from '../../lib.mjs';
+import { clickBy, waitBy } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionDeleteFolder from '../../actions/actionDeleteFolder.mjs';
 import actionCreateNewFolder from '../../actions/actionCreateNewFolder.mjs';
 import { getFiles } from '../../util.mjs';
 import actionUploadCloudTracks from '../../actions/tracks/actionUploadCloudTracks.mjs';
+import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 export default async function test() {
     const folder = 'new';
@@ -24,6 +25,8 @@ export default async function test() {
     await clickBy(By.id('se-import-first-track'));
     const { path } = getFiles({ folder: 'gpx' }).find((t) => t.name === 'test-routed-osrm');
     await actionUploadCloudTracks({ files: path });
+    await waitBy(By.id('se-track-context-menu')); // single upload opens the track
+    await actionIdleWait(); // upload also refreshes the list and re-opens the track, leave only after that
     await clickBy(By.id('se-button-back'));
     await clickBy(By.id('se-back-folder-button-tracks'));
 
