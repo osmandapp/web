@@ -11,12 +11,9 @@ import { apiGet } from '../../util/HttpApi';
 import styles from '../map.module.css';
 import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
 import AppContext from '../../context/AppContext';
+import { flyZoom, initialPosition, initialZoom } from '../util/initialMapView';
 
-const flyZoom = 9;
 const locationZoom = 17;
-
-export const initialZoom = 5;
-export const initialPosition = [50, 5]; // use != instead of !== to compare coordinates
 
 const XYZ_HASH_SYNC = 'hash'; // use Alt/Ctrl+click on LocationControl to save/restore map x/y/z
 
@@ -24,6 +21,7 @@ export async function detectGeoByIp({ map, hash }) {
     if (!map) return;
     if (hash) {
         const [zoom, lat, lon] = (hash.lastHash ?? window.location.hash ?? '').split('/');
+        // use != instead of !== to compare coordinates
         if (
             zoom &&
             lat &&
