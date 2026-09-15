@@ -450,6 +450,6 @@ Raster maps can be used as they already exist if the tiles are already mapped. I
 - [Quick Action (Custom button)](../widgets/quick-action.md)
 - [Online Maps](../plugins/online-map.md)
 - [Topography](../plugins/topography.md)
-- [Create Offline Raster & Vector Maps](technical/map-creation/create-offline-maps-yourself.md)
+- [Create Offline Raster & Vector Maps](../../technical/map-creation/create-offline-maps-yourself.md)
 
 
