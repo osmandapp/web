@@ -52,7 +52,6 @@ export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
-export const SPATIAL_SEARCH_STORAGE_KEY = 'spatialSearch';
 export const SEARCH_ENGINE_CLASSIC = 'classic';
 export const SEARCH_ENGINE_SPATIAL = 'spatial';
 export const OBJECT_TYPE_TRAVEL = 'travel';
@@ -303,18 +302,10 @@ export const AppContextProvider = (props) => {
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
 
-    // dev-only: use new SpatialTextSearch on the backend (passes spatial=true to /search/search)
+    // SpatialTextSearch on the backend (passes spatial=true to /search/search) is the default engine
     const [spatialSearch, setSpatialSearch] = useState(() => {
         const engine = new URLSearchParams(globalThis.location?.search).get('engine');
-        if (engine) {
-            return engine === SEARCH_ENGINE_SPATIAL;
-        }
-        // the toggle is dev-only, so outside dev reset a previously saved choice to spatial
-        if (!develFeatures) {
-            localStorage.setItem(SPATIAL_SEARCH_STORAGE_KEY, 'yes');
-            return true;
-        }
-        return localStorage.getItem(SPATIAL_SEARCH_STORAGE_KEY) !== 'no';
+        return engine ? engine === SEARCH_ENGINE_SPATIAL : true;
     });
     const [infoBlockWidth, setInfoBlockWidth] = useState('0');
 

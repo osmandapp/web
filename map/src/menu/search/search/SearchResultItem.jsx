@@ -172,8 +172,6 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             poiObjectsKey: POI_OBJECTS_KEY,
             poiTypeCategory: searchTypeMap.POI_TYPE,
         });
-    const showPropertiesDumpIcon = (!ctx.searchQuery?.type && ctx.spatialSearch) || ctx.develFeatures;
-
     const itemId = getObjIdSearch(item);
 
     function handleMouseEnter() {
@@ -375,7 +373,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                         type ||
                         matchedNameObjects.length > 0 ||
                         matchedObjects.length > 1 ||
-                        showPropertiesDumpIcon) && (
+                        ctx.develFeatures) && (
                         <MenuItemWithLines className={styles.placeTypes} name={placeDetails} maxLines={4}>
                             {distance > 0 && (
                                 <span style={{ display: 'inline-flex' }}>
@@ -417,7 +415,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                                     <InfoIcon className={styles.placeTypesIcon} />
                                 </span>
                             )}
-                            {showPropertiesDumpIcon && (
+                            {ctx.develFeatures && (
                                 <span
                                     className={styles.matchedObjectsIcon}
                                     onClick={(e) => {

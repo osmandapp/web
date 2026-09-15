@@ -1,11 +1,7 @@
 import { useContext, useMemo } from 'react';
 import { matchPath, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
-import AppContext, {
-    SEARCH_ENGINE_CLASSIC,
-    SEARCH_ENGINE_SPATIAL,
-    SPATIAL_SEARCH_STORAGE_KEY,
-} from '../../../context/AppContext';
+import AppContext, { SEARCH_ENGINE_SPATIAL } from '../../../context/AppContext';
 import { engineFromSpatial } from './useSpatialSearch';
 
 const QUERY_KEY = 'query';
@@ -17,7 +13,7 @@ const QUERY_SEARCH_RESULT_PARAMS = [ENGINE_KEY, QUERY_KEY, TYPE_KEY];
 export function buildSearchParamsFromQuery(q) {
     if (!q) return '';
 
-    const engine = q.engine || getDefaultSearchEngine();
+    const engine = q.engine || SEARCH_ENGINE_SPATIAL;
     const type = q.type;
     const query = q.query;
 
@@ -85,7 +81,7 @@ function parseParams(sp) {
         if (v) acc[key] = v;
         return acc;
     }, {});
-    params[ENGINE_KEY] ||= getDefaultSearchEngine();
+    params[ENGINE_KEY] ||= SEARCH_ENGINE_SPATIAL;
     return params;
 }
 
@@ -102,16 +98,10 @@ function buildSearchParams({ engine, query, type } = {}) {
     if (type) {
         sp.set(TYPE_KEY, type);
     } else {
-        sp.set(ENGINE_KEY, engine || getDefaultSearchEngine());
+        sp.set(ENGINE_KEY, engine || SEARCH_ENGINE_SPATIAL);
         query && sp.set(QUERY_KEY, query);
     }
 
     const str = sp.toString();
     return str ? `?${str}` : '';
-}
-
-function getDefaultSearchEngine() {
-    return globalThis.localStorage?.getItem(SPATIAL_SEARCH_STORAGE_KEY) !== 'no'
-        ? SEARCH_ENGINE_SPATIAL
-        : SEARCH_ENGINE_CLASSIC;
 }
