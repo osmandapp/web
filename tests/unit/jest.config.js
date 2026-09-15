@@ -59,6 +59,8 @@ module.exports = {
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // marker clustering is plain geometry over the places, no map is involved
         'map/util/Clusterizer$': path.join(MAP_DIR, 'src/map/util/Clusterizer.js'),
+        // the initial map view is plain url logic over leaflet, no map is involved
+        'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
         // map layers and the tooltip helper reach react-leaflet, the clustering geometry does not
         '/MapManager$': `${STUBS}/empty.js`,
         'layers/(FavoriteLayer|ExploreLayer)$': `${STUBS}/empty.js`,
