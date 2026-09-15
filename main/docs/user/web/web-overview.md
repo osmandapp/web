@@ -27,7 +27,7 @@ Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Po
 
 OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables syncing favorites, tracks, and backups across devices and platforms. Users with **OsmAnd Start** (free) or **OsmAnd Pro** (paid) accounts can take full advantage of this ecosystem by syncing data between mobile and web. You can find a detailed comparison of *Start* and *Pro* features in the [Subscription Access](#subscription-accesses) section below.
 
-> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./web-navigation.md), [Route Planner](./planner.md), [Weather overlays](./web-weather.md#), and [Settings](./web-map.md#settings).
+> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./web-navigation.md), [Route Planner](./planner.md), [Weather overlays](./web-weather.md), and [Settings](./web-map.md#settings).
 
 
 ## Key Features {#key-features}
