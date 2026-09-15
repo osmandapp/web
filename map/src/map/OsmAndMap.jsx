@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
-import MapContext, { getPinPointFromUrl } from '../context/MapContext';
+import MapContext from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
 import 'leaflet-hash';
@@ -15,7 +15,8 @@ import MarkerOptions from './markers/MarkerOptions';
 import ContextMenu from './components/ContextMenu';
 import PoiLayer from './layers/PoiLayer';
 import GraphLayer from './layers/GraphLayer';
-import { initialZoom, initialPosition, flyZoom, detectGeoByIp, LocationControl } from './components/LocationControl';
+import { detectGeoByIp, LocationControl } from './components/LocationControl';
+import { getInitialView, getPinPointFromUrl } from './util/initialMapView';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
@@ -31,32 +32,6 @@ import TransportStopsLayer from './layers/TransportStopsLayer';
 import MvtDemoLayer from './layers/MvtDemoLayer';
 import MvtOsmLayer from './layers/MvtOsmLayer';
 import { isMvtTileURL } from './layers/MvtLayerConfig';
-
-function getInitialViewFromHash() {
-    const hash = window.location.hash;
-    if (!hash || hash.length < 2) return null;
-    const [zoomStr, latStr, lngStr] = hash.slice(1).split('/');
-    const zoom = Number.parseInt(zoomStr, 10);
-    const lat = Number.parseFloat(latStr);
-    const lng = Number.parseFloat(lngStr);
-    if (Number.isNaN(zoom) || Number.isNaN(lat) || Number.isNaN(lng)) return null;
-
-    return { center: [lat, L.Util.wrapNum(lng, [-180, 180], true)], zoom };
-}
-
-function getInitialView() {
-    const fromHash = getInitialViewFromHash();
-    const pin = getPinPointFromUrl();
-    if (!pin) {
-        return fromHash ?? { center: initialPosition, zoom: initialZoom };
-    }
-
-    const zoom = fromHash?.zoom ?? flyZoom;
-    // leaflet-hash and detectGeoByIp read the hash as soon as the map is ready
-    window.history.replaceState(null, '', `#${zoom}/${pin.lat}/${pin.lng}`);
-
-    return { center: [pin.lat, L.Util.wrapNum(pin.lng, [-180, 180], true)], zoom };
-}
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -96,6 +71,10 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
+            if (getPinPointFromUrl()) {
+                // leaflet-hash and detectGeoByIp read the hash right here, the view is already set by the pin
+                window.history.replaceState(window.history.state, '', L.Hash.formatHash(map));
+            }
             const hash = new L.Hash(map);
 
             window.__leafletMap = map;
