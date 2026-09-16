@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import { selectAlternativeRoute } from '../../store/geoRouter/legacy/selectAlternativeRoute';
 import { LINE_STRING } from '../../util/Utils';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import styles from '../../frame/components/items/items.module.css';
 
 const COMPASS_KEYS = [
     'round_trip_north',
@@ -43,6 +45,7 @@ export default function RoundTripVariants() {
 
     return (
         <Box>
+            <ThickDivider mt={0} mb={0} />
             {loops.map((f) => {
                 const props = f.properties;
                 const roundTrip = props.roundTrip ?? {};
@@ -60,8 +63,10 @@ export default function RoundTripVariants() {
                         onClick={() => !shown && selectAlternativeRoute(navObject, props.alternative)}
                     >
                         <Box>
-                            <Typography>{directionLabel(t, roundTrip.heading)}</Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography sx={{ color: 'var(--text-primary)' }}>
+                                {directionLabel(t, roundTrip.heading)}
+                            </Typography>
+                            <Typography variant="body2" className={styles.addInfo}>
                                 {summary}
                             </Typography>
                         </Box>

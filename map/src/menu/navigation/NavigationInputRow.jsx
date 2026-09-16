@@ -44,7 +44,8 @@ export default function NavigationInputRow({
 
     const containerRef = useRef(null);
 
-    const showSwap = type === START_POINT;
+    // no swap without a finish, e.g. for a round trip
+    const showSwap = type === START_POINT && !!onSwap;
     const showRemove = type === INTERMEDIATE_POINT;
     const showAdd = type === FINISH_POINT;
 

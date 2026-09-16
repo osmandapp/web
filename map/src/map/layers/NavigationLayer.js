@@ -453,7 +453,14 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
+        if (feature?.geometry?.type !== 'Point') {
+            return true;
+        }
+        // a round trip is a loop to look at, not a list of instructions - its turn dots only hide the line
+        if (routeObject.getOption(ROUTE_ROUND_TRIP_ENABLED)) {
+            return false;
+        }
+        return routeObject.getOption('route.map.hidePoints') !== true;
     };
 
     const pointToLayer = (feature, latlng) => {

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Button, Slider, Typography } from '@mui/material';
+import { Box, Slider, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SelectItem from '../../frame/components/items/SelectItem';
+import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import { ROUTE_ROUND_TRIP, PROFILE_PEDESTRIAN } from '../../store/geoRouter/profileConstants';
 import RoundTripVariants, { directionLabel } from './RoundTripVariants';
 
@@ -71,7 +72,7 @@ export default function RoundTripSettings() {
                 getOptionLabel={(o) => (o === 'time' ? t('web:round_trip_by_time') : t('web:round_trip_by_distance'))}
                 onSelect={(value) => update({ lengthType: value })}
             />
-            <Box sx={{ px: 2 }}>
+            <Box sx={{ px: 2, pt: 1 }}>
                 <Typography variant="body2">
                     {byTime ? `${length} ${t('shared_string_minute_lowercase')}` : `${length} ${t('km')}`}
                 </Typography>
@@ -81,6 +82,7 @@ export default function RoundTripSettings() {
                     min={0}
                     max={SLIDER_STEPS}
                     step={1}
+                    sx={{ color: 'var(--active-color-primary-light)' }}
                     onChange={(e, position) => setLength(sliderToValue(position, min, max, round))}
                     onChangeCommitted={(e, position) => {
                         const value = sliderToValue(position, min, max, round);
@@ -104,11 +106,14 @@ export default function RoundTripSettings() {
                 getOptionLabel={(o) => o}
                 onSelect={(value) => update({ variants: Number(value) })}
             />
-            <Box sx={{ px: 2, pb: 2 }}>
-                {/* the same settings give the same loops, another seed asks for other directions */}
-                <Button id="se-round-trip-another" onClick={() => update({ seed: roundTrip.seed + 1 })}>
-                    {t('web:round_trip_another')}
-                </Button>
+            {/* the same settings give the same loops, another seed asks for other directions */}
+            {/* the gray button is width: 100% !important, so the side padding lives on a wrapper */}
+            <Box sx={{ px: 2, pt: 1, pb: 2 }}>
+                <GrayBtnWithBlueHover
+                    id="se-round-trip-another"
+                    action={() => update({ seed: roundTrip.seed + 1 })}
+                    text={t('web:round_trip_another')}
+                />
             </Box>
             {/* the loops overlap on the map, so they are picked from a list instead */}
             <RoundTripVariants />
