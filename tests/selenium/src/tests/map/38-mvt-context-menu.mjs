@@ -19,7 +19,13 @@ import { By } from 'selenium-webdriver';
 const MVT_STYLE_KEY = 'mvt-osmand';
 
 const NOVUS = { hash: '#17/50.45146/30.52493', lat: 50.450943, lon: 30.522257, name: 'NOVUS', osmId: '1420181775' };
-const STOP = { hash: '#17/50.45115/30.51999', lat: 50.451286, lon: 30.521606, id: '4477679190' };
+const STOP = {
+    hash: '#17/50.45115/30.51999',
+    lat: 50.451286,
+    lon: 30.521606,
+    name: 'Майдан Незалежності',
+    pin: '50.451286,30.521624',
+};
 const HOUSE = { hash: '#18/50.45094/30.52170', lat: 50.451394, lon: 30.523673, number: '2' };
 
 async function openMvtObject({ hash, lat, lon }) {
@@ -83,10 +89,11 @@ export default async function test() {
     await matchValueBy(By.id('se-route-finish-point'), NOVUS.name);
     await clickBy(By.id('se-button-close'));
 
-    // transport stop: routes
+    // transport stop: the object keeps its own menu, the stop gives it routes
     await openMvtObject(STOP);
+    await matchTextBy(By.id('se-wpt-name'), STOP.name);
     await waitBy(By.css("[id^='se-transport-route-']"));
-    await waitUrlIncludes(`stop/?id=${STOP.id}`);
+    await waitUrlIncludes(`type=public_transport_platform&pin=${STOP.pin}`);
 
     // house: number, type, icon
     await openMvtObject(HOUSE);
@@ -94,7 +101,7 @@ export default async function test() {
     await waitBy(By.id('se-House'));
     await waitBy(By.css('#se-wpt-details svg'));
     await waitBy(By.id('se-wpt-address'));
-    await waitUrlIncludes('poi/?pin=');
+    await waitUrlIncludes('obj/?pin=');
 
     await actionFinish();
 }
