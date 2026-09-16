@@ -3,6 +3,7 @@ const i18n = {
     language: 'en',
     changeLanguage: jest.fn(),
     t: (key, fallback) => fallback ?? key,
+    exists: () => true,
 };
 
 module.exports = { __esModule: true, default: i18n, ...i18n };

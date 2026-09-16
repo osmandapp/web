@@ -211,6 +211,10 @@ export function parseTagWithLang(tag) {
     return { key, lang };
 }
 
+export function hasTypeTranslation(type) {
+    return i18n.exists(`amenity_type_${type}`) || i18n.exists(`poi_${type}`);
+}
+
 // name of a poi type as it is shown to the user, optionally in another language
 export function preparedType(type, t, lang = null) {
     let restoreLang;
