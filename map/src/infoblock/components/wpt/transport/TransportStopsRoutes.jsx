@@ -188,7 +188,7 @@ export default function TransportStopsRoutes({ wpt }) {
     useEffect(() => {
         const lat = wpt?.latlon?.lat;
         const lon = wpt?.latlon?.lon;
-        const stopId = wpt?.id;
+        const stopId = wpt?.stopId;
         if (lat == null || lon == null || stopId == null) {
             setNearbyRoutes(null);
             return;
@@ -206,7 +206,7 @@ export default function TransportStopsRoutes({ wpt }) {
             })
             .catch(() => setNearbyRoutes([]));
         return () => controller.abort();
-    }, [wpt?.id, wpt?.latlon?.lat, wpt?.latlon?.lon]);
+    }, [wpt?.stopId, wpt?.latlon?.lat, wpt?.latlon?.lon]);
 
     const filterRoutes = useMemo(() => [...(wpt?.routes ?? []), ...(nearbyRoutes ?? [])], [wpt?.routes, nearbyRoutes]);
 

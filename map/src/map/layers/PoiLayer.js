@@ -17,18 +17,9 @@ import PoiManager, {
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import {
-    CATEGORY_TYPE,
-    FINAL_POI_ICON_NAME,
-    ICON_KEY_NAME,
-    POI_ID,
-    POI_ICON_NAME,
-    POI_NAME,
-    TYPE_OSM_TAG,
-    TYPE_OSM_VALUE,
-} from '../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_TYPE, FINAL_POI_ICON_NAME, POI_ID, POI_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
-import { getObjIdSearch } from '../../manager/SearchManager';
+import { createMapObject, createSearchObjectOptions, getObjIdSearch } from '../../manager/SearchManager';
 import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
@@ -47,7 +38,9 @@ import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/Map
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import { getCurrentTimeParams } from '../../util/Utils';
+import { getPoiApi } from '../../manager/SearchApi';
 
 const SPINNER_DELAY_MS = 500;
 const GET_POI_DEBOUNCE_MS = 500;
@@ -69,14 +62,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
 
     const mainMarkersLayers = await Promise.all(
         mainMarkers?.map(async (poi) => {
-            const finalIconName =
-                poi.properties[FINAL_POI_ICON_NAME] ??
-                PoiManager.getIconNameForPoiType({
-                    iconKeyName: poi.properties[ICON_KEY_NAME],
-                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                    iconName: poi.properties[POI_ICON_NAME],
-                });
+            const finalIconName = poi.properties[FINAL_POI_ICON_NAME] ?? PoiManager.getFinalPoiIconName(poi.properties);
             const icon = await getPoiIcon(poi, innerCache, finalIconName);
             const coord = poi.geometry.coordinates;
             const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
@@ -206,6 +192,10 @@ export default function PoiLayer() {
     });
 
     useEffect(() => {
+        // the login check closes an open object menu, so open the object only after it
+        if (ltx.loginUser === INIT_LOGIN_STATE) {
+            return;
+        }
         if (ctx.poiByUrl?.params) {
             openPoiByUrl()
                 .then(async (res) => {
@@ -256,7 +246,7 @@ export default function PoiLayer() {
             ctx.setPoiByUrl(null);
             ctx.setProcessingPoiByUrl(false);
         }
-    }, [ctx.poiByUrl]);
+    }, [ctx.poiByUrl, ltx.loginUser]);
 
     useEffect(() => {
         ctx.setShowPoiCategories((prev) => {
@@ -280,21 +270,7 @@ export default function PoiLayer() {
     async function openPoiByUrl() {
         const { pin, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
 
-        const params = {
-            pin,
-            name,
-            type,
-            osmId,
-            wikidataId,
-            lang,
-            ...getCurrentTimeParams(),
-        };
-        const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
-
-        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
-            params: cleanParams,
-            apiCache: true,
-        });
+        const response = type ? await getPoiApi({ pin, name, type, osmId, wikidataId, lang }) : null;
         if (response?.data) {
             const data = response.data;
 
@@ -303,12 +279,7 @@ export default function PoiLayer() {
                 data.properties[POI_ID] = objId;
             }
 
-            data.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
-                iconKeyName: data.properties[ICON_KEY_NAME],
-                typeOsmTag: data.properties[TYPE_OSM_TAG],
-                typeOsmValue: data.properties[TYPE_OSM_VALUE],
-                iconName: data.properties[POI_ICON_NAME],
-            });
+            data.properties[FINAL_POI_ICON_NAME] = PoiManager.getFinalPoiIconName(data.properties);
             // if it has poiTags, then it has info from both wiki and osm
             const poiTags = data.properties.poiTags;
 
@@ -333,16 +304,7 @@ export default function PoiLayer() {
             } else {
                 // open normal poi
                 ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-
-                const poi = {
-                    options: { ...data.properties },
-                    latlng: {
-                        lat: data.geometry.coordinates[1],
-                        lng: data.geometry.coordinates[0],
-                    },
-                    mapObj: true,
-                };
-
+                const poi = createMapObject(data);
                 ctx.setSelectedWpt({ poi, id: getObjIdSearch(data) });
                 recentSaver(POI_OBJECTS_KEY, poi);
             }
@@ -359,11 +321,10 @@ export default function PoiLayer() {
                     ctx.setCurrentObjectType(OBJECT_TYPE_POI);
                     const poi = {
                         key: `${lng}-${lat}`,
-                        options: {
-                            web_type: searchTypeMap.LOCATION,
-                            web_name: `${lat.toFixed(5)}, ${lng.toFixed(5)}`,
-                            web_poi_finalIconName: SEARCH_ICON_MAP_LOCATION,
-                        },
+                        options: createSearchObjectOptions(
+                            searchTypeMap.LOCATION,
+                            `${lat.toFixed(5)}, ${lng.toFixed(5)}`
+                        ),
                         latlng: { lat, lng },
                         mapObj: true,
                     };

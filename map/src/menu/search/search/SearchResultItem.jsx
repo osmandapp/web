@@ -18,7 +18,13 @@ import styles from '../search.module.css';
 import dialogStyles from '../../../dialogs/dialog.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
-import { formattingPoiType, getFirstSubstring, navigateToPoi, preparedType } from '../../../manager/PoiManager';
+import {
+    formattingPoiType,
+    getFirstSubstring,
+    hasTypeTranslation,
+    navigateToPoi,
+    preparedType,
+} from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import {
     FAVORITE_HIT_GROUP_ID,
@@ -77,11 +83,12 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
         const poiSubType = getFirstSubstring(props[POI_SUBTYPE]);
         const poiType = getFirstSubstring(props[POI_TYPE]);
         type = poiSubType ?? poiType;
-        if (name === '') {
+        if (name === '' && type) {
             name = preparedType(type, t);
             type = poiType;
         }
-        type = preparedType(type, t);
+        // an untranslated type would be rendered as its own key
+        type = type && hasTypeTranslation(type) ? preparedType(type, t) : undefined;
     } else if (props[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
         name = props[POI_NAME] ?? props[CATEGORY_NAME];
         type = t ? t('shared_string_my_favorites') : '';

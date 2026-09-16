@@ -3,15 +3,7 @@ import Utils from '../../util/Utils';
 import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
 import { getObjIdSearch, getIconByType } from '../../manager/SearchManager';
 import { searchTypeMap } from '../../manager/searchConstants';
-import {
-    CATEGORY_TYPE,
-    FINAL_POI_ICON_NAME,
-    ICON_KEY_NAME,
-    POI_ELO,
-    POI_ICON_NAME,
-    TYPE_OSM_TAG,
-    TYPE_OSM_VALUE,
-} from '../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_TYPE, FINAL_POI_ICON_NAME, POI_ELO } from '../../infoblock/components/wpt/WptTagsProvider';
 import PoiManager from '../../manager/PoiManager';
 import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
@@ -374,12 +366,7 @@ export function createSecondaryMarker(obj) {
     let finalIconName = obj.properties[FINAL_POI_ICON_NAME];
     if (!finalIconName) {
         if (searchTypeMap.POI === obj.properties[CATEGORY_TYPE]) {
-            finalIconName = PoiManager.getIconNameForPoiType({
-                iconKeyName: obj.properties[ICON_KEY_NAME],
-                typeOsmTag: obj.properties[TYPE_OSM_TAG],
-                typeOsmValue: obj.properties[TYPE_OSM_VALUE],
-                iconName: obj.properties[POI_ICON_NAME],
-            });
+            finalIconName = PoiManager.getFinalPoiIconName(obj.properties);
         } else {
             finalIconName = getIconByType(obj.properties[CATEGORY_TYPE]);
         }

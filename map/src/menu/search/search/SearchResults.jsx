@@ -30,10 +30,6 @@ import {
     CATEGORY_ICON,
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
-    ICON_KEY_NAME,
-    POI_ICON_NAME,
-    TYPE_OSM_TAG,
-    TYPE_OSM_VALUE,
     WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType } from '../../../manager/SearchManager';
@@ -179,12 +175,7 @@ export default function SearchResults() {
                 }
                 const iconName = getCatPoiIconName(props);
                 f.icon = await getSearchResultIcon({ result: iconName, ctx });
-                f.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
-                    iconKeyName: f.properties[ICON_KEY_NAME],
-                    typeOsmTag: f.properties[TYPE_OSM_TAG],
-                    typeOsmValue: f.properties[TYPE_OSM_VALUE],
-                    iconName: f.properties[POI_ICON_NAME],
-                });
+                f.properties[FINAL_POI_ICON_NAME] = PoiManager.getFinalPoiIconName(f.properties);
             } else {
                 const finalIconName = getIconByType(type);
                 f.icon = await getSearchResultIcon({
