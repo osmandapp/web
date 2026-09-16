@@ -32,48 +32,88 @@ import { LINE_STRING } from '../../util/Utils';
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
 const TURN_DOT_Z_INDEX_OFFSET = 1100;
+const LOOP_ARROW_CLASS = 'nav-loop-arrow';
+const LOOP_ARROW_STEP_PX = 160; // the line stays thin, so arrows are sparse and sit in a circle
+const LOOP_ARROW_RADIUS_PX = 8;
 
-function setMarkerIconHtml(marker, html) {
-    const el = marker?.getElement();
-    if (el && html) el.innerHTML = html;
-}
+// Direction of a round trip loop: a circle in the line color with a white chevron, like in the app.
+// An arrow is only put on a straight stretch - on a bend its direction reads wrong - so a position that
+// falls on a corner is moved along the line to the nearest straight piece.
+const LOOP_ARROW_WINDOW_PX = 10; // the direction is taken over this distance on both sides
+const LOOP_ARROW_MAX_TURN_DEG = 30;
+const LOOP_ARROW_MAX_SHIFT_PX = 50;
 
-function getMarkerIndex(marker) {
-    return marker?.options?.['data-index'];
-}
-
-function moveableMarker(routeObject, map, marker) {
-    let startPx = null;
-    let startLL = null; // LatLng
-
-    function trackCursor(evt) {
-        marker.setLatLng(evt.latlng);
+function drawLoopArrows(polyline, map) {
+    const svg = polyline._renderer?._container;
+    if (!svg) {
+        return;
     }
-
-    marker.on('mousedown', () => {
-        startLL = marker.getLatLng();
-        startPx = map.latLngToLayerPoint(startLL);
-        map.dragging.disable();
-        map.on('mousemove', trackCursor);
-    });
-
-    marker.on('mouseup', () => {
-        map.dragging.enable();
-        map.off('mousemove', trackCursor);
-
-        if (!startPx) return;
-        const endPx = map.latLngToLayerPoint(marker.getLatLng());
-        const moved = Math.abs(endPx.x - startPx.x) + Math.abs(endPx.y - startPx.y);
-
-        if (moved > 10) {
-            routeObject.routeAddViaPoint({ ll: marker.getLatLng(), old: startLL });
+    svg.querySelectorAll('.' + LOOP_ARROW_CLASS).forEach((el) => el.remove());
+    const points = polyline
+        .getLatLngs()
+        .flat()
+        .map((ll) => map.latLngToLayerPoint(ll));
+    const cumulative = [0];
+    for (let i = 1; i < points.length; i++) {
+        cumulative.push(cumulative[i - 1] + points[i].distanceTo(points[i - 1]));
+    }
+    const total = cumulative.at(-1) ?? 0;
+    const pointAt = (d) => {
+        const dist = Math.max(0, Math.min(total, d));
+        let k = 1;
+        while (k < cumulative.length - 1 && cumulative[k] < dist) {
+            k++;
         }
+        const seg = cumulative[k] - cumulative[k - 1];
+        const t = seg > 0 ? (dist - cumulative[k - 1]) / seg : 0;
+        return L.point(
+            points[k - 1].x + (points[k].x - points[k - 1].x) * t,
+            points[k - 1].y + (points[k].y - points[k - 1].y) * t
+        );
+    };
+    const angleOf = (a, b) => Math.atan2(b.y - a.y, b.x - a.x);
+    const turnAt = (d) => {
+        const before = angleOf(pointAt(d - LOOP_ARROW_WINDOW_PX), pointAt(d));
+        const after = angleOf(pointAt(d), pointAt(d + LOOP_ARROW_WINDOW_PX));
+        const diff = Math.abs(((after - before + 3 * Math.PI) % (2 * Math.PI)) - Math.PI);
 
-        startPx = null;
-        startLL = null;
-    });
-
-    return marker;
+        return (diff * 180) / Math.PI;
+    };
+    for (let d = LOOP_ARROW_STEP_PX / 2; d < total - LOOP_ARROW_WINDOW_PX; d += LOOP_ARROW_STEP_PX) {
+        let best = d;
+        let bestTurn = turnAt(d);
+        for (let shift = 4; bestTurn > LOOP_ARROW_MAX_TURN_DEG && shift <= LOOP_ARROW_MAX_SHIFT_PX; shift += 4) {
+            for (const candidate of [d + shift, d - shift]) {
+                const turn = turnAt(candidate);
+                if (turn < bestTurn) {
+                    best = candidate;
+                    bestTurn = turn;
+                }
+            }
+        }
+        const center = pointAt(best);
+        const angle =
+            (angleOf(pointAt(best - LOOP_ARROW_WINDOW_PX), pointAt(best + LOOP_ARROW_WINDOW_PX)) * 180) / Math.PI;
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.setAttribute('class', LOOP_ARROW_CLASS);
+        g.setAttribute('pointer-events', 'none');
+        g.setAttribute('transform', `translate(${center.x}, ${center.y}) rotate(${angle})`);
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', LOOP_ARROW_RADIUS_PX);
+        circle.setAttribute('fill', polyline.options.color);
+        circle.setAttribute('stroke', 'white');
+        circle.setAttribute('stroke-width', '1.5');
+        const chevron = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        chevron.setAttribute('d', 'M -2.5 -4 L 2 0 L -2.5 4');
+        chevron.setAttribute('fill', 'none');
+        chevron.setAttribute('stroke', 'white');
+        chevron.setAttribute('stroke-width', '2');
+        chevron.setAttribute('stroke-linecap', 'round');
+        chevron.setAttribute('stroke-linejoin', 'round');
+        g.appendChild(circle);
+        g.appendChild(chevron);
+        svg.appendChild(g);
+    }
 }
 
 const NavigationLayer = ({ geocodingData, region }) => {
@@ -515,6 +555,29 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const alternativeRoutes = roundTrip
         ? []
         : routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
+
+    // a loop has no destination that tells which way it goes, so its direction is drawn on the line
+    useEffect(() => {
+        if (!routeLayer || !roundTrip) {
+            return;
+        }
+        const lines = [];
+        routeLayer.eachLayer((layer) => {
+            if (layer instanceof L.Polyline && !(layer instanceof L.Polygon)) {
+                lines.push(layer);
+            }
+        });
+        const draw = () => lines.forEach((polyline) => drawLoopArrows(polyline, map));
+        draw();
+        map.on('zoomend moveend', draw);
+
+        return () => {
+            map.off('zoomend moveend', draw);
+            lines.forEach((polyline) =>
+                polyline._renderer?._container?.querySelectorAll('.' + LOOP_ARROW_CLASS).forEach((el) => el.remove())
+            );
+        };
+    }, [routeLayer, roundTrip, routeDataKey]);
 
     const viaLayersRef = useRef([]);
 
