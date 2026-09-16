@@ -9,7 +9,7 @@ import { Box, IconButton, Modal, Table, TableBody, TableCell, TableRow } from '@
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
-import { areSetsEqual, getCurrentTimeParams } from '../../util/Utils';
+import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import {
     clusterMarkers,
@@ -28,6 +28,7 @@ import { panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
+import { getPoiByOsmIdApi } from '../../manager/SearchApi';
 import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
@@ -137,15 +138,11 @@ export default function ExploreLayer() {
     useEffect(() => {
         const item = ctx.searchSettings.getPoi;
         async function getWikiPoi() {
-            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-osmid`, {
-                apiCache: true,
-                params: {
-                    lat: item.geometry.coordinates[1],
-                    lon: item.geometry.coordinates[0],
-                    osmid: item.properties?.osmid,
-                    type: item.properties?.osmtype,
-                    ...getCurrentTimeParams(),
-                },
+            const response = await getPoiByOsmIdApi({
+                lat: item.geometry.coordinates[1],
+                lon: item.geometry.coordinates[0],
+                osmid: item.properties?.osmid,
+                type: item.properties?.osmtype,
             });
             const key = item.properties?.osmid ?? item.geometry.coordinates[1] + item.geometry.coordinates[0];
             const poi = response?.data ?? null;

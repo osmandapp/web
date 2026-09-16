@@ -77,11 +77,13 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
         const poiSubType = getFirstSubstring(props[POI_SUBTYPE]);
         const poiType = getFirstSubstring(props[POI_TYPE]);
         type = poiSubType ?? poiType;
-        if (name === '') {
+        if (name === '' && type) {
             name = preparedType(type, t);
             type = poiType;
         }
-        type = preparedType(type, t);
+        if (type) {
+            type = preparedType(type, t);
+        }
     } else if (props[CATEGORY_TYPE] === searchTypeMap.FAVORITE) {
         name = props[POI_NAME] ?? props[CATEGORY_NAME];
         type = t ? t('shared_string_my_favorites') : '';
