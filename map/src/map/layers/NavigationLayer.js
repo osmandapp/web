@@ -117,6 +117,49 @@ function drawLoopArrows(polyline, map) {
     }
 }
 
+function setMarkerIconHtml(marker, html) {
+    const el = marker?.getElement();
+    if (el && html) el.innerHTML = html;
+}
+
+function getMarkerIndex(marker) {
+    return marker?.options?.['data-index'];
+}
+
+function moveableMarker(routeObject, map, marker) {
+    let startPx = null;
+    let startLL = null; // LatLng
+
+    function trackCursor(evt) {
+        marker.setLatLng(evt.latlng);
+    }
+
+    marker.on('mousedown', () => {
+        startLL = marker.getLatLng();
+        startPx = map.latLngToLayerPoint(startLL);
+        map.dragging.disable();
+        map.on('mousemove', trackCursor);
+    });
+
+    marker.on('mouseup', () => {
+        map.dragging.enable();
+        map.off('mousemove', trackCursor);
+
+        if (!startPx) return;
+        const endPx = map.latLngToLayerPoint(marker.getLatLng());
+        const moved = Math.abs(endPx.x - startPx.x) + Math.abs(endPx.y - startPx.y);
+
+        if (moved > 10) {
+            routeObject.routeAddViaPoint({ ll: marker.getLatLng(), old: startLL });
+        }
+
+        startPx = null;
+        startLL = null;
+    });
+
+    return marker;
+}
+
 const NavigationLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
