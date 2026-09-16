@@ -13,11 +13,8 @@ import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFav
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { deleteTrack, getFiles } from '../../util.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionLogIn();
     // --- Search: track appears, then disappears after delete ---
@@ -169,7 +166,7 @@ export default async function test() {
     await waitBy(By.id(`se-fav-item-info-${renamedWptName}`));
     await deleteOpenedFavorite();
 
-    await waitBy(By.id('se-empty-search'));
+    await assertSearchResultAbsent(By.id(renamedFavResultId));
 
     // --- Search: delete favorite from favorites menu -> disappears from search ---
     const wptName2 = 'Michael Kors';
