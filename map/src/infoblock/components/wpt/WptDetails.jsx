@@ -892,7 +892,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 )}
                 <ActionIconBtn
                     id="se-next-map-object"
-                    className={styles.mapObjectNavBtn}
                     icon={<ArrowForwardIcon />}
                     aria-label={t('shared_string_next')}
                     disabled={index === objects.length - 1}
