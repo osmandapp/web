@@ -269,3 +269,7 @@
 .navigationSettingsItem {
     max-height: 48px !important;
 }
+
+.roundTripIcon {
+    fill: var(--svg-icon-color) !important;
+}

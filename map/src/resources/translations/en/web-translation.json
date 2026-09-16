@@ -332,7 +332,6 @@
     "round_trip_by_time": "Time",
     "round_trip_direction": "Direction",
     "round_trip_direction_any": "Any",
-    "round_trip_variants": "Variants",
     "round_trip_another": "Other loops",
     "round_trip_repeated": "{{value}}% repeated roads",
     "round_trip_north": "North",

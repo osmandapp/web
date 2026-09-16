@@ -42,7 +42,6 @@ import {
     PROFILE_LINE,
     PROFILE_RESCUETRACK,
 } from '../../store/geoRouter/profileConstants';
-import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import RoundTripSettings from './RoundTripSettings';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -353,12 +352,6 @@ export default function NavigationMenu() {
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager />
-                <SimpleItemWithSwitch
-                    id="se-round-trip-switch"
-                    text={t('web:round_trip')}
-                    checked={roundTrip}
-                    onChange={() => navObject.setOption(ROUTE_ROUND_TRIP_ENABLED, !roundTrip)}
-                />
                 {roundTrip && <RoundTripSettings />}
                 {ctx.routingErrorMsg &&
                     navObject.getOption(ROUTE_POINTS_START) &&

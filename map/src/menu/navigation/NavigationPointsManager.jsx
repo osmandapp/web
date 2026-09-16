@@ -20,6 +20,7 @@ import { navigationObject } from '../../store/navigationObject/navigationObject'
 import { apiGet } from '../../util/HttpApi';
 import { parseCoordinates } from '../analyzer/util/PointsManager';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
+import { ReactComponent as RoundTripIcon } from '../../assets/icons/ic_action_round_trip.svg';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -485,7 +486,25 @@ export default function NavigationPointsManager() {
                     </React.Fragment>
                 ))}
 
-            {/* Finish Point - a round trip has none, it returns to the start */}
+            {/* Round trip takes the place of the destination: the route returns to the start */}
+            {roundTrip && (
+                <NavigationInputRow
+                    key="round-trip-point"
+                    inputId="se-route-round-trip"
+                    value={t('web:round_trip')}
+                    type={FINISH_POINT}
+                    icon={<RoundTripIcon className={styles.roundTripIcon} />}
+                    readOnly={true}
+                    onChange={() => {}}
+                    onBlur={(value) => {
+                        if (!value) {
+                            // back to a destination: the loops must not stay on the map
+                            navObject.setOption(ROUTE_ROUND_TRIP_ENABLED, false);
+                            navObject.resetRoute();
+                        }
+                    }}
+                />
+            )}
             {!roundTrip && (
                 <>
                     {/* Drop indicator before finish */}
@@ -511,6 +530,11 @@ export default function NavigationPointsManager() {
                         onHistorySelect={handleFinishHistorySelect}
                         onClearHistory={clearHistory}
                         isDragging={draggedIndex === intermediates.length + 1}
+                        onRoundTrip={() => {
+                            // the loop replaces the destination
+                            navObject.setOption(ROUTE_POINTS_FINISH, null);
+                            navObject.setOption(ROUTE_ROUND_TRIP_ENABLED, true);
+                        }}
                     />
                 </>
             )}

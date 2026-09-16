@@ -9,7 +9,6 @@ import RoundTripVariants, { directionLabel } from './RoundTripVariants';
 
 const LENGTH_TYPES = ['distance', 'time'];
 const DIRECTIONS = ['any', '0', '45', '90', '135', '180', '225', '270', '315'];
-const VARIANTS = ['1', '2', '3', '4', '5'];
 
 const MIN_DISTANCE = 2;
 const MAX_DISTANCE = 200;
@@ -97,14 +96,6 @@ export default function RoundTripSettings() {
                 getOptionValue={(o) => o}
                 getOptionLabel={(o) => (o === 'any' ? t('web:round_trip_direction_any') : directionLabel(t, Number(o)))}
                 onSelect={(value) => update({ direction: value === 'any' ? null : Number(value) })}
-            />
-            <SelectItem
-                title={t('web:round_trip_variants')}
-                value={String(roundTrip.variants)}
-                options={VARIANTS}
-                getOptionValue={(o) => o}
-                getOptionLabel={(o) => o}
-                onSelect={(value) => update({ variants: Number(value) })}
             />
             {/* the same settings give the same loops, another seed asks for other directions */}
             {/* the gray button is width: 100% !important, so the side padding lives on a wrapper */}

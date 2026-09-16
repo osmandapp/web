@@ -33,7 +33,7 @@ export class geoObject extends geoRouter {
                 lengthType: 'distance', // distance (km) | time (min)
                 distance: 20,
                 time: 60,
-                variants: 3,
+                variants: 3, // always three loops to pick from
                 direction: null, // degrees, null - any
                 seed: 0, // another seed gives other loops for the same settings
             },

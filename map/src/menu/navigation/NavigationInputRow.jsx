@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { Box } from '@mui/material';
+import { Box, Menu, MenuItem } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import NavigationInput from './NavigationInput';
 import NavigationHistoryDropdown from './NavigationHistoryDropdown';
 import { ReactComponent as StartIcon } from '../../assets/icons/list_startpoint.svg';
@@ -38,7 +39,14 @@ export default function NavigationInputRow({
     isDragging = false,
     hasIntermediates = false,
     isFirstIntermediate = false,
+    icon = null,
+    readOnly = false,
+    emptyAction = null,
+    onRoundTrip = null,
 }) {
+    const { t } = useTranslation();
+    // with a round trip on offer "+" asks what to add instead of adding an intermediate at once
+    const [addMenuAnchor, setAddMenuAnchor] = useState(null);
     const [isDraggable, setIsDraggable] = useState(false);
     const [showHistory, setShowHistory] = useState(false);
 
@@ -47,7 +55,7 @@ export default function NavigationInputRow({
     // no swap without a finish, e.g. for a round trip
     const showSwap = type === START_POINT && !!onSwap;
     const showRemove = type === INTERMEDIATE_POINT;
-    const showAdd = type === FINISH_POINT;
+    const showAdd = type === FINISH_POINT && !!onAdd;
 
     const getIcon = () => {
         switch (type) {
@@ -109,12 +117,14 @@ export default function NavigationInputRow({
                     inputId={inputId}
                     value={value}
                     placeholder={placeholder}
-                    icon={getIcon()}
+                    icon={icon ?? getIcon()}
                     onChange={onChange}
                     onBlur={handleInputBlur}
                     onKeyDown={onKeyDown}
                     focused={focused}
-                    showDragHandle={true}
+                    showDragHandle={!readOnly}
+                    readOnly={readOnly}
+                    emptyAction={emptyAction}
                     onDragHandleMouseDown={handleDragHandleMouseDown}
                     type={type}
                     hasIntermediates={hasIntermediates}
@@ -135,6 +145,7 @@ export default function NavigationInputRow({
                         onClearHistory={onClearHistory}
                         inputId={inputId}
                         inputRef={inputRef}
+                        onRoundTrip={onRoundTrip}
                     />
                 )}
             </Box>
@@ -161,9 +172,31 @@ export default function NavigationInputRow({
                         id={`${inputId}-add`}
                         icon={<AddIcon />}
                         activeIcon={<AddActiveIcon />}
-                        onClick={onAdd}
+                        onClick={onRoundTrip ? (e) => setAddMenuAnchor(e.currentTarget) : onAdd}
                         iconColor={COLOR_BTN_BLUE}
                     />
+                )}
+                {onRoundTrip && (
+                    <Menu anchorEl={addMenuAnchor} open={!!addMenuAnchor} onClose={() => setAddMenuAnchor(null)}>
+                        <MenuItem
+                            id={`${inputId}-add-intermediate`}
+                            onClick={() => {
+                                setAddMenuAnchor(null);
+                                onAdd();
+                            }}
+                        >
+                            {t('web:set_via_point')}
+                        </MenuItem>
+                        <MenuItem
+                            id={`${inputId}-add-round-trip`}
+                            onClick={() => {
+                                setAddMenuAnchor(null);
+                                onRoundTrip();
+                            }}
+                        >
+                            {t('web:round_trip')}
+                        </MenuItem>
+                    </Menu>
                 )}
             </Box>
         </Box>
