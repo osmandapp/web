@@ -15,7 +15,9 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    ROUTE_ROUND_TRIP_ENABLED,
 } from '../../store/geoRouter/profileConstants';
+import { selectAlternativeRoute } from '../../store/geoRouter/legacy/selectAlternativeRoute';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
@@ -398,38 +400,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
     };
 
     // the picked route moves to the front and the two routes swap the "alternative" number (lines and turns)
-    const selectAlternative = (feature) => {
-        const route = routeObject.getRoute();
-        const number = feature.properties?.alternative;
-        // matched by the number rather than by object identity - the layer may hold a copy
-        const index = (route?.features ?? []).findIndex(
-            (f) => f.geometry?.type === LINE_STRING && f.properties?.alternative === number
-        );
-        if (index <= 0) {
-            return;
-        }
-        const color = route.mainRouteStyle?.color ?? routeObject.getColor();
-        const features = route.features.map((f) => {
-            const properties = { ...f.properties };
-            if (f.properties?.alternative === number) {
-                delete properties.alternative;
-            } else if (!isAlternativeFeature(f)) {
-                properties.alternative = number;
-            } else {
-                return f;
-            }
-            let style = f.style;
-            if (f.geometry?.type === LINE_STRING) {
-                style = properties.alternative ? alternativeRouteStyle(color) : (route.mainRouteStyle ?? { color });
-            }
-
-            return { ...f, properties, style };
-        });
-        const picked = features[index];
-        features[index] = features[0];
-        features[0] = picked;
-        routeObject.putRoute({ route: { ...route, features } });
-    };
+    const selectAlternative = (feature) => selectAlternativeRoute(routeObject, feature.properties?.alternative);
 
     const onEachAlternative = (feature, layer) => {
         // translucent so the shown route stays readable, but thick enough to click
@@ -531,7 +502,12 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // own layer mounted before the route: the route stays on top, and zoom-to-route ignores alternatives
     const routeFeatures = routeObject.getRoute()?.features ?? [];
     const shownRoute = routeFeatures.filter((f) => !isAlternativeFeature(f));
-    const alternativeRoutes = routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
+    // round trip loops start at the same point and overlap, which is unreadable on the map -
+    // only the picked one is drawn, the others are picked from the list in the menu
+    const roundTrip = routeObject.getOption(ROUTE_ROUND_TRIP_ENABLED);
+    const alternativeRoutes = roundTrip
+        ? []
+        : routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
 
     const viaLayersRef = useRef([]);
 
