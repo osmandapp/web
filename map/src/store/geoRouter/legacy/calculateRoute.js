@@ -10,6 +10,7 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_ROUND_TRIP,
     ROUTE_ROUND_TRIP_ENABLED,
+    PROFILE_PEDESTRIAN,
 } from '../profileConstants';
 import { LINE_STRING } from '../../../util/Utils';
 
@@ -202,11 +203,14 @@ async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }
 function roundTripUrl({ roundTrip, startPoint, routeModeStr }) {
     const length = roundTrip.lengthType === 'time' ? `&time=${roundTrip.time}` : `&distance=${roundTrip.distance}`;
     const direction = roundTrip.direction === null ? '' : `&direction=${roundTrip.direction}`;
+    // the maps carry no HH data for walking, so those loops are built with A* - measured 1 s for
+    // 10 km and 4 s for 20 km, which walking distances keep affordable
+    const astar = routeModeStr.startsWith(PROFILE_PEDESTRIAN) ? '&astar=true' : '';
 
     return (
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/roundtrip?routeMode=${routeModeStr}` +
         `&point=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}${length}` +
-        `&variants=${roundTrip.variants}${direction}&seed=${roundTrip.seed}`
+        `&variants=${roundTrip.variants}${direction}&seed=${roundTrip.seed}${astar}`
     );
 }
 
