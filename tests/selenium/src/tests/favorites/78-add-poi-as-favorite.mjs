@@ -37,9 +37,10 @@ export default async function test() {
     // add POI to favorites
     await clickBy(By.id('se-add-poi-to-fav-item'));
     await waitBy(By.id('se-add-fav-dialog'));
+    // the field is pre-filled with the POI's own name; the search result nearest to "silpo" isn't fixed
+    // (real OSM data), so read it instead of assuming a specific name
+    const poiName = await (await waitBy(By.id('se-fav-name-input'))).getAttribute('value');
     await sendKeysBy(By.id('se-fav-name-input'), favoriteName);
-    // the input is prefilled with the poi name, which depends on the search data
-    const savedName = await driver.findElement(By.id('se-fav-name-input')).getAttribute('value');
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
 
@@ -51,7 +52,7 @@ export default async function test() {
     await actionOpenFavorites();
     await clickBy(By.id('se-menu-fav-favorites'));
     await waitBy(By.id('se-opened-fav-group-favorites'));
-    await waitBy(By.id(`se-fav-item-name-${savedName}`));
+    await waitBy(By.id(`se-fav-item-name-${poiName}${favoriteName}`));
 
     // clean up
     await clickBy(By.id('se-back-folder-button-favorites'));
