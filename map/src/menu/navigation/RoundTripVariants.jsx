@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import { Box, MenuItem, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import { selectAlternativeRoute } from '../../store/geoRouter/legacy/selectAlternativeRoute';
 import { LINE_STRING } from '../../util/Utils';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
-import styles from '../../frame/components/items/items.module.css';
+import RouteSummaryCard from './RouteSummaryCard';
+import itemStyles from '../../frame/components/items/items.module.css';
+import styles from './routemenu.module.css';
 
 const COMPASS_KEYS = [
     'round_trip_north',
@@ -29,48 +31,57 @@ export function directionLabel(t, heading) {
     return t('web:' + directionKey(heading));
 }
 
-export default function RoundTripVariants() {
+/**
+ * One summary card per loop, in the place of the single route summary: the picked loop shows its graph
+ * and details, the others are compact and a click picks them. Cards are ordered by direction, so a card
+ * does not jump when it is picked (picking moves the loop to the front of the route features).
+ */
+export default function RoundTripVariants({ onDetails }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
 
     const navObject = ctx.navigationObject;
-    const loops = (navObject.getRoute()?.features ?? []).filter(
-        (f) => f.geometry?.type === LINE_STRING && f.properties?.overall
-    );
+    const loops = (navObject.getRoute()?.features ?? [])
+        .filter((f) => f.geometry?.type === LINE_STRING && f.properties?.overall && f.properties?.roundTrip)
+        .sort((a, b) => (a.properties.roundTrip.heading ?? 0) - (b.properties.roundTrip.heading ?? 0));
 
-    if (loops.length < 2) {
+    if (loops.length === 0) {
         return null;
     }
 
     return (
         <Box>
-            <ThickDivider mt={0} mb={0} />
-            {loops.map((f) => {
+            {loops.map((f, index) => {
                 const props = f.properties;
-                const roundTrip = props.roundTrip ?? {};
                 const shown = !props.alternative;
-                const summary =
-                    `${(props.overall.distance / 1000).toFixed(1)} ${t('km')} · ` +
-                    `${Math.round(props.overall.time / 60)} ${t('shared_string_minute_lowercase')} · ` +
-                    t('web:round_trip_repeated', { value: Math.round(100 * (roundTrip.overlap ?? 0)) });
+                const header = (
+                    <Box className={styles.roundTripCardHeader}>
+                        <Typography sx={{ fontWeight: 500, color: 'var(--text-primary)' }}>
+                            {directionLabel(t, props.roundTrip.heading)}
+                        </Typography>
+                        <Typography variant="body2" className={itemStyles.addInfo}>
+                            {t('web:round_trip_repeated', { value: Math.round(100 * (props.roundTrip.overlap ?? 0)) })}
+                        </Typography>
+                    </Box>
+                );
 
                 return (
-                    <MenuItem
-                        key={props.alternative ?? 0}
-                        id={`se-round-trip-variant-${props.alternative ?? 0}`}
-                        selected={shown}
-                        onClick={() => !shown && selectAlternativeRoute(navObject, props.alternative)}
-                    >
-                        <Box>
-                            <Typography sx={{ color: 'var(--text-primary)' }}>
-                                {directionLabel(t, roundTrip.heading)}
-                            </Typography>
-                            <Typography variant="body2" className={styles.addInfo}>
-                                {summary}
-                            </Typography>
+                    <React.Fragment key={props.roundTrip.heading}>
+                        {index > 0 && <ThickDivider mt={0} mb={0} />}
+                        <Box
+                            id={`se-round-trip-variant-${index}`}
+                            className={`${styles.roundTripCard} ${shown ? styles.roundTripCardShown : ''}`}
+                            onClick={() => !shown && selectAlternativeRoute(navObject, props.alternative)}
+                        >
+                            <RouteSummaryCard
+                                routeProps={props}
+                                onDetails={onDetails}
+                                header={header}
+                                compact={!shown}
+                            />
                         </Box>
-                    </MenuItem>
+                    </React.Fragment>
                 );
             })}
         </Box>

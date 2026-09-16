@@ -43,6 +43,7 @@ import {
     PROFILE_RESCUETRACK,
 } from '../../store/geoRouter/profileConstants';
 import RoundTripSettings from './RoundTripSettings';
+import RoundTripVariants from './RoundTripVariants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
@@ -401,11 +402,15 @@ export default function NavigationMenu() {
                 {showRouteSummary() && (
                     <>
                         <ThickDivider />
-                        <RouteSummaryCard
-                            key={navObject.getProfile()?.profile}
-                            routeProps={navObject.getRouteProps()}
-                            onDetails={openInfoBlock}
-                        />
+                        {roundTrip ? (
+                            <RoundTripVariants onDetails={openInfoBlock} />
+                        ) : (
+                            <RouteSummaryCard
+                                key={navObject.getProfile()?.profile}
+                                routeProps={navObject.getRouteProps()}
+                                onDetails={openInfoBlock}
+                            />
+                        )}
                         <ThickDivider />
                     </>
                 )}

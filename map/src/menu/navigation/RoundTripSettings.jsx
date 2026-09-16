@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Slider, Typography } from '@mui/material';
+import { Box, Slider, Tooltip, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
-import SelectItem from '../../frame/components/items/SelectItem';
-import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
+import SquareTextBtn from '../../frame/components/btns/SquareTextBtn';
 import { ROUTE_ROUND_TRIP, PROFILE_PEDESTRIAN } from '../../store/geoRouter/profileConstants';
-import RoundTripVariants, { directionLabel } from './RoundTripVariants';
+import { directionLabel } from './RoundTripVariants';
+import styles from './routemenu.module.css';
 
-const LENGTH_TYPES = ['distance', 'time'];
-const DIRECTIONS = ['any', '0', '45', '90', '135', '180', '225', '270', '315'];
+// the server fans candidate loops around the asked direction (up to 90 degrees each way),
+// so four compass points are enough and fit one row
+const DIRECTIONS = [0, 90, 180, 270];
+const DIRECTION_SHORT_KEYS = { 0: 'round_trip_n', 90: 'round_trip_e', 180: 'round_trip_s', 270: 'round_trip_w' };
 
 const MIN_DISTANCE = 2;
 const MAX_DISTANCE = 200;
@@ -62,52 +64,59 @@ export default function RoundTripSettings() {
     const update = (patch) => navObject.setOption(ROUTE_ROUND_TRIP, { ...roundTrip, ...patch });
 
     return (
-        <Box>
-            <SelectItem
-                title={t('web:round_trip_length')}
-                value={roundTrip.lengthType}
-                options={LENGTH_TYPES}
-                getOptionValue={(o) => o}
-                getOptionLabel={(o) => (o === 'time' ? t('web:round_trip_by_time') : t('web:round_trip_by_distance'))}
-                onSelect={(value) => update({ lengthType: value })}
-            />
-            <Box sx={{ px: 2, pt: 1 }}>
-                <Typography variant="body2">
+        <Box className={styles.roundTripSettings}>
+            <Box className={styles.roundTripRow}>
+                <Box className={styles.roundTripPills}>
+                    <SquareTextBtn
+                        id="se-round-trip-by-distance"
+                        text={t('web:round_trip_by_distance')}
+                        selected={!byTime}
+                        onClick={() => update({ lengthType: 'distance' })}
+                    />
+                    <SquareTextBtn
+                        id="se-round-trip-by-time"
+                        text={t('web:round_trip_by_time')}
+                        selected={byTime}
+                        onClick={() => update({ lengthType: 'time' })}
+                    />
+                </Box>
+                <Typography className={styles.roundTripValue}>
                     {byTime ? `${length} ${t('shared_string_minute_lowercase')}` : `${length} ${t('km')}`}
                 </Typography>
-                <Slider
-                    id="se-round-trip-length"
-                    value={valueToSlider(length, min, max)}
-                    min={0}
-                    max={SLIDER_STEPS}
-                    step={1}
-                    sx={{ color: 'var(--active-color-primary-light)' }}
-                    onChange={(e, position) => setLength(sliderToValue(position, min, max, round))}
-                    onChangeCommitted={(e, position) => {
-                        const value = sliderToValue(position, min, max, round);
-                        update(byTime ? { time: value } : { distance: value });
-                    }}
-                />
             </Box>
-            <SelectItem
-                title={t('web:round_trip_direction')}
-                value={roundTrip.direction === null ? 'any' : String(roundTrip.direction)}
-                options={DIRECTIONS}
-                getOptionValue={(o) => o}
-                getOptionLabel={(o) => (o === 'any' ? t('web:round_trip_direction_any') : directionLabel(t, Number(o)))}
-                onSelect={(value) => update({ direction: value === 'any' ? null : Number(value) })}
+            <Slider
+                id="se-round-trip-length"
+                size="small"
+                value={valueToSlider(length, min, max)}
+                min={0}
+                max={SLIDER_STEPS}
+                step={1}
+                valueLabelDisplay="off"
+                sx={{ color: '#237BFF' }}
+                onChange={(e, position) => setLength(sliderToValue(position, min, max, round))}
+                onChangeCommitted={(e, position) => {
+                    const value = sliderToValue(position, min, max, round);
+                    update(byTime ? { time: value } : { distance: value });
+                }}
             />
-            {/* the same settings give the same loops, another seed asks for other directions */}
-            {/* the gray button is width: 100% !important, so the side padding lives on a wrapper */}
-            <Box sx={{ px: 2, pt: 1, pb: 2 }}>
-                <GrayBtnWithBlueHover
-                    id="se-round-trip-another"
-                    action={() => update({ seed: roundTrip.seed + 1 })}
-                    text={t('web:round_trip_another')}
-                />
+            <Box className={styles.roundTripRow}>
+                <Typography className={styles.roundTripLabel}>{t('web:round_trip_direction')}</Typography>
+                <Box className={styles.roundTripPills}>
+                    {DIRECTIONS.map((deg) => (
+                        <Tooltip key={deg} title={directionLabel(t, deg)} arrow>
+                            <span>
+                                <SquareTextBtn
+                                    id={`se-round-trip-direction-${deg}`}
+                                    text={t('web:' + DIRECTION_SHORT_KEYS[deg])}
+                                    selected={roundTrip.direction === deg}
+                                    // no "Any" pill (it did not fit): clicking the picked direction again clears it
+                                    onClick={() => update({ direction: roundTrip.direction === deg ? null : deg })}
+                                />
+                            </span>
+                        </Tooltip>
+                    ))}
+                </Box>
             </Box>
-            {/* the loops overlap on the map, so they are picked from a list instead */}
-            <RoundTripVariants />
         </Box>
     );
 }

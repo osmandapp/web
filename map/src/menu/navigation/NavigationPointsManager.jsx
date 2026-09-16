@@ -12,6 +12,7 @@ import {
     ROUTE_POINTS_START,
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
+    ROUTE_ROUND_TRIP,
     ROUTE_ROUND_TRIP_ENABLED,
 } from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
@@ -21,6 +22,9 @@ import { apiGet } from '../../util/HttpApi';
 import { parseCoordinates } from '../analyzer/util/PointsManager';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { ReactComponent as RoundTripIcon } from '../../assets/icons/ic_action_round_trip.svg';
+import { Tooltip } from '@mui/material';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import { COLOR_BTN_BLUE } from './NavigationMenu';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -493,7 +497,25 @@ export default function NavigationPointsManager() {
                     inputId="se-route-round-trip"
                     value={t('web:round_trip')}
                     type={FINISH_POINT}
-                    icon={<RoundTripIcon className={styles.roundTripIcon} />}
+                    icon={
+                        // the same settings give the same loops; the icon asks for other ones
+                        <Tooltip title={t('web:round_trip_another')} arrow>
+                            {/* a button is 12 px wider than a plain icon: pull it back so the icon and
+                                the text line up with the start row */}
+                            <span style={{ display: 'inline-flex', margin: '0 -6px' }}>
+                                <ActionIconBtn
+                                    id="se-route-round-trip-refresh"
+                                    icon={<RoundTripIcon />}
+                                    iconColor={COLOR_BTN_BLUE}
+                                    onMouseDown={(e) => e.preventDefault()}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        navObject.setOption(ROUTE_ROUND_TRIP + '.seed', (seed) => seed + 1);
+                                    }}
+                                />
+                            </span>
+                        </Tooltip>
+                    }
                     readOnly={true}
                     onChange={() => {}}
                     onBlur={(value) => {

@@ -509,8 +509,8 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // own layer mounted before the route: the route stays on top, and zoom-to-route ignores alternatives
     const routeFeatures = routeObject.getRoute()?.features ?? [];
     const shownRoute = routeFeatures.filter((f) => !isAlternativeFeature(f));
-    // round trip loops start at the same point and overlap, which is unreadable on the map -
-    // only the picked one is drawn, the others are picked from the list in the menu
+    // round trip loops start at the same point and overlap, which is unreadable even translucent -
+    // only the picked one is drawn, the others are picked from their cards in the menu
     const roundTrip = routeObject.getOption(ROUTE_ROUND_TRIP_ENABLED);
     const alternativeRoutes = roundTrip
         ? []
