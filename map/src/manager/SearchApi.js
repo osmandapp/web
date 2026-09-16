@@ -57,6 +57,16 @@ export function getPoiByMapObjectApi({ lat, lon, id, tags, signal }) {
     });
 }
 
+export function getPoiApi({ pin, name, type, osmId, wikidataId, lang, signal }) {
+    const params = { pin, name, type, osmId, wikidataId, lang, ...getCurrentTimeParams() };
+
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
+        apiCache: true,
+        signal,
+        params: Object.fromEntries(Object.entries(params).filter(([, value]) => value != null)),
+    });
+}
+
 export function getTransportStopApi({ lat, lon, stopId, signal }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-stop`, {
         apiCache: true,

@@ -40,7 +40,10 @@ import {
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
     getFirstSubstring,
+    findTranslatedTag,
     getFinalPoiIconName,
+    hasTypeTranslation,
+    navigateToPin,
     navigateToPoi,
 } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
@@ -64,7 +67,10 @@ import WptTagsProvider, {
     WIKIPEDIA,
     addWikidataTags,
     getOsmIdFromOsmUrl,
+    ICON_KEY_NAME,
+    POI_FROM_TAGS,
     POI_ID,
+    POI_SUBTYPE,
     TRANSPORT_STOP_ID,
     stringifyTagValues,
 } from './WptTagsProvider';
@@ -84,7 +90,6 @@ import { getPropsFromSearchResultItem } from '../../../menu/search/search/Search
 import { iconPathMap, getIconFromMap } from '../../../map/util/MapManager';
 import { SEARCH_ICON_MAP_LOCATION } from '../../../manager/searchConstants';
 import {
-    navigateToStop,
     TRANSPORT_STOP_SHIELD_COLOR,
     TRANSPORT_STOP_BACKGROUND,
     TRANSPORT_STOP_ICON_NAME,
@@ -119,7 +124,7 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
-import { getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
+import { getPoiApi, getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -328,6 +333,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 openingHours: getOpeningHours(objOptions[AMENITY_PREFIX + OPENING_HOURS_INFO]),
                 mapObj,
                 pending: Boolean(ctx.selectedWpt.mvt),
+                stopId: objOptions[TRANSPORT_STOP_ID],
+                routes: ctx.selectedWpt.routes,
             };
         } else if (type?.isStop) {
             const currentStop = ctx.selectedWpt.stop;
@@ -340,6 +347,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 background: TRANSPORT_STOP_BACKGROUND,
                 color: TRANSPORT_STOP_SHIELD_COLOR,
                 icon: TRANSPORT_STOP_ICON_NAME,
+                stopId: objOptions.id,
                 routes: objOptions.routes,
                 mapObj,
             };
@@ -376,13 +384,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 const lon = stop?.latlng?.lng;
                 const name = stop?.options?.name ?? '';
                 if (lat != null && lon != null) {
-                    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
-                        params: {
-                            pin: `${Number(lat).toFixed(6)},${Number(lon).toFixed(6)}`,
-                            name,
-                            type: 'transportation',
-                        },
-                        apiCache: true,
+                    const response = await getPoiApi({
+                        pin: `${Number(lat).toFixed(6)},${Number(lon).toFixed(6)}`,
+                        name,
+                        type: 'transportation',
                         signal: controller.signal,
                     });
                     if (response?.data) {
@@ -573,7 +578,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     useEffect(() => {
-        if (!wpt || wpt.address || isAddressAdded) return;
+        // the address of an MVT preview is asked at the click point, the loaded object has its own one
+        if (!wpt || wpt.address || wpt.pending || isAddressAdded) return;
 
         setIsAddressAdded(true);
         getPoiAddress(wpt).then((addressData) => {
@@ -582,7 +588,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 return { ...prev, address: addressData || ADDRESS_NOT_FOUND };
             });
         });
-    }, [wpt?.id, isAddressAdded]);
+    }, [wpt?.id, wpt?.pending, isAddressAdded]);
 
     useEffect(() => {
         if (!wpt || !objWithPhotos(wpt) || isPhotosAdded) return;
@@ -694,16 +700,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     function showMvtObject(objects, index) {
         const obj = { ...objects[index], mvtObjects: objects, mvtIndex: index };
-        if (obj.stop) {
-            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
-            ctx.setSelectedWpt(obj);
-            navigateToStop(obj.stop, navigate);
-        } else {
-            recentSaver(POI_OBJECTS_KEY, obj.poi);
-            ctx.setSelectedWptId({ id: obj.poi.options[POI_ID], show: false, type: POI_LAYER_ID });
-            ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-            ctx.setSelectedWpt(obj);
+        recentSaver(POI_OBJECTS_KEY, obj.poi);
+        ctx.setSelectedWptId({ id: obj.poi.options[POI_ID], show: false, type: POI_LAYER_ID });
+        ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+        ctx.setSelectedWpt(obj);
+        if (obj.inPoiIndex) {
             navigateToPoi(obj, navigate);
+        } else {
+            navigateToPin(obj.poi.latlng, navigate);
         }
     }
 
@@ -1074,7 +1078,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                                 {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                                 {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
-                                {wpt?.type?.isStop && <TransportStopsRoutes wpt={wpt} />}
+                                {(wpt?.type?.isStop || wpt?.stopId) && <TransportStopsRoutes wpt={wpt} />}
                                 {wpt?.wikiDesc && (
                                     <>
                                         <Divider />
@@ -1241,12 +1245,12 @@ async function loadMvtObjects(previews, signal) {
         const loaded = await getPoiByMapObject(preview.mvt, preview.poi.latlng, signal);
         failed = failed || loaded.failed;
         if (loaded.pois.length === 0 && !preview.mvt.tags) {
-            objects.push({ poi: preview.poi });
+            objects.push({ poi: preview.poi, inPoiIndex: false });
         }
         for (const poi of loaded.pois) {
             const stopId = poi.options[TRANSPORT_STOP_ID];
             const stop = stopId ? await getTransportStop(stopId, poi.latlng, signal) : null;
-            objects.push(stop ? { stop } : { poi });
+            objects.push({ poi, routes: stop?.options?.routes, inPoiIndex: !poi.options[POI_FROM_TAGS] });
         }
     }
 
@@ -1269,13 +1273,21 @@ async function getPoiByMapObject({ mapObjectId, tags }, latlng, signal) {
     });
 
     return {
-        pois: (response?.data?.features ?? []).map(createPoiObject),
+        pois: (response?.data?.features ?? []).map((feature) => createPoiObject(feature, tags)),
         failed: response?.ok === false && !response.aborted,
     };
 }
 
-function createPoiObject(feature) {
-    feature.properties[FINAL_POI_ICON_NAME] = getFinalPoiIconName(feature.properties);
+function createPoiObject(feature, tags) {
+    const props = feature.properties;
+    if (props[POI_FROM_TAGS] && !hasTypeTranslation(getFirstSubstring(props[POI_SUBTYPE]))) {
+        const tagType = findTranslatedTag(tags);
+        if (tagType) {
+            props[POI_SUBTYPE] = tagType;
+            props[ICON_KEY_NAME] = tagType;
+        }
+    }
+    props[FINAL_POI_ICON_NAME] = getFinalPoiIconName(props);
 
     return createMapObject(feature);
 }

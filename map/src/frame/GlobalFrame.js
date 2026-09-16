@@ -17,6 +17,7 @@ import {
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
+    MAP_OBJ_URL,
     POI_URL,
     STOP_URL,
     isTravelPath,
@@ -207,7 +208,8 @@ const GlobalFrame = () => {
     }, [ctx.shareWithMeFiles]);
 
     useEffect(() => {
-        if (location.pathname.includes(POI_URL) && (!ctx.selectedWptId || ctx.selectedWptId?.id === -1)) {
+        const objectUrl = location.pathname.includes(POI_URL) || location.pathname.includes(MAP_OBJ_URL);
+        if (objectUrl && (!ctx.selectedWptId || ctx.selectedWptId?.id === -1)) {
             ctx.setProcessingPoiByUrl(true);
             const params = {};
             Object.keys(poiUrlParams).forEach((key) => {

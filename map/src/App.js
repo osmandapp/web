@@ -34,6 +34,7 @@ import {
     WEATHER_FORECAST_URL,
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
+    MAP_OBJ_URL,
     POI_URL,
     STOP_URL,
 } from './manager/GlobalManager';
@@ -190,6 +191,7 @@ const App = () => {
                                     { path: TRACK_ANALYZER_URL, element: <TrackAnalyzerMenu /> },
                                     { path: POI_URL, element: <WptDetails /> },
                                     { path: STOP_URL, element: <WptDetails /> },
+                                    { path: MAP_OBJ_URL, element: <WptDetails /> },
                                 ],
                             },
                             { path: PRICING_URL, element: <PricingPage /> },

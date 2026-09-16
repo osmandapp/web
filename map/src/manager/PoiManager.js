@@ -28,7 +28,7 @@ import React from 'react';
 import i18n from '../i18n';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './searchConstants';
-import { MAIN_URL_WITH_SLASH, POI_URL } from './GlobalManager';
+import { MAIN_URL_WITH_SLASH, MAP_OBJ_URL, POI_URL } from './GlobalManager';
 
 const icons = new Set(iconsRaw);
 
@@ -213,6 +213,20 @@ export function parseTagWithLang(tag) {
 
 export function hasTypeTranslation(type) {
     return i18n.exists(`amenity_type_${type}`) || i18n.exists(`poi_${type}`);
+}
+
+// a map object without a poi type (building=yes, ...): the type is the tag that has a translation, as in Android
+export function findTranslatedTag(tags) {
+    for (const [key, value] of Object.entries(tags ?? {})) {
+        const tag = key.replaceAll(':', '_');
+        const translated = [`${tag}_${value}`, value, tag].find(
+            (candidate) => candidate && hasTypeTranslation(candidate)
+        );
+        if (translated) {
+            return translated;
+        }
+    }
+    return null;
 }
 
 // name of a poi type as it is shown to the user, optionally in another language
@@ -525,7 +539,17 @@ function getPoiParams(poi) {
 }
 
 function getPinParam(lat, lon) {
-    return Number.isFinite(lat) && Number.isFinite(lon) ? `${lat},${lon}` : null;
+    return Number.isFinite(lat) && Number.isFinite(lon) ? `${lat.toFixed(6)},${lon.toFixed(6)}` : null;
+}
+
+// an object outside the poi index cannot be reopened by its url, so the url keeps only the pin
+export function navigateToPin(latlng, navigate) {
+    const pin = getPinParam(latlng?.lat, latlng?.lng);
+    navigate({
+        pathname: MAIN_URL_WITH_SLASH + MAP_OBJ_URL,
+        search: pin ? `?${new URLSearchParams({ pin })}` : '',
+        hash: globalThis.location.hash,
+    });
 }
 
 function getWikiPoiType(props) {
