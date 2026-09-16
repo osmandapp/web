@@ -38,6 +38,8 @@ export default async function test() {
     await clickBy(By.id('se-add-poi-to-fav-item'));
     await waitBy(By.id('se-add-fav-dialog'));
     await sendKeysBy(By.id('se-fav-name-input'), favoriteName);
+    // the input is prefilled with the poi name, which depends on the search data
+    const savedName = await driver.findElement(By.id('se-fav-name-input')).getAttribute('value');
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
 
@@ -49,7 +51,7 @@ export default async function test() {
     await actionOpenFavorites();
     await clickBy(By.id('se-menu-fav-favorites'));
     await waitBy(By.id('se-opened-fav-group-favorites'));
-    await waitBy(By.id(`se-fav-item-name-Silpo${favoriteName}`));
+    await waitBy(By.id(`se-fav-item-name-${savedName}`));
 
     // clean up
     await clickBy(By.id('se-back-folder-button-favorites'));
