@@ -510,7 +510,11 @@ export default function NavigationPointsManager() {
                                     onMouseDown={(e) => e.preventDefault()}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        navObject.setOption(ROUTE_ROUND_TRIP + '.seed', (seed) => seed + 1);
+                                        navObject.setOption(ROUTE_ROUND_TRIP, (rt) => ({
+                                            ...rt,
+                                            seed: rt.seed + 1,
+                                            waypoints: null,
+                                        }));
                                     }}
                                 />
                             </span>

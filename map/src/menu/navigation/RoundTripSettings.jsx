@@ -15,17 +15,14 @@ const DIRECTION_SHORT_KEYS = { 0: 'round_trip_n', 90: 'round_trip_e', 180: 'roun
 const MIN_DISTANCE = 2;
 const MAX_DISTANCE = 200;
 const MAX_WALKING_DISTANCE = 40;
-const MIN_TIME = 15;
-const MAX_TIME = 600;
-const TIME_ROUND = 5;
 const SLIDER_STEPS = 100;
 
 // A linear slider spends most of its travel on lengths nobody asks for: half of it would be above
 // 100 km. The position is squared, so short loops get half the slider and long ones stay reachable.
-function sliderToValue(position, min, max, round) {
+function sliderToValue(position, min, max) {
     const share = position / SLIDER_STEPS;
 
-    return Math.round((min + (max - min) * share * share) / round) * round;
+    return Math.round(min + (max - min) * share * share);
 }
 
 function valueToSlider(value, min, max) {
@@ -41,48 +38,28 @@ export default function RoundTripSettings() {
 
     const navObject = ctx.navigationObject;
     const roundTrip = navObject.getOption(ROUTE_ROUND_TRIP);
-    const byTime = roundTrip.lengthType === 'time';
 
     // nobody walks a 200 km loop, and the slider is easier to use when its range fits the profile
     const profile = navObject.getProfile()?.profile;
-    const min = byTime ? MIN_TIME : MIN_DISTANCE;
-    const max = byTime ? MAX_TIME : profile === PROFILE_PEDESTRIAN ? MAX_WALKING_DISTANCE : MAX_DISTANCE;
-    const round = byTime ? TIME_ROUND : 1;
+    const min = MIN_DISTANCE;
+    const max = profile === PROFILE_PEDESTRIAN ? MAX_WALKING_DISTANCE : MAX_DISTANCE;
 
-    const [length, setLength] = useState(byTime ? roundTrip.time : roundTrip.distance);
-
-    useEffect(() => {
-        setLength(byTime ? roundTrip.time : roundTrip.distance);
-    }, [byTime]);
+    const [length, setLength] = useState(roundTrip.distance);
 
     useEffect(() => {
-        if (!byTime && roundTrip.distance > max) {
+        if (roundTrip.distance > max) {
             update({ distance: max });
         }
     }, [max]);
 
-    const update = (patch) => navObject.setOption(ROUTE_ROUND_TRIP, { ...roundTrip, ...patch });
+    // any setting asks for new loops, so points the user moved are dropped
+    const update = (patch) => navObject.setOption(ROUTE_ROUND_TRIP, { ...roundTrip, waypoints: null, ...patch });
 
     return (
         <Box className={styles.roundTripSettings}>
             <Box className={styles.roundTripRow}>
-                <Box className={styles.roundTripPills}>
-                    <SquareTextBtn
-                        id="se-round-trip-by-distance"
-                        text={t('web:round_trip_by_distance')}
-                        selected={!byTime}
-                        onClick={() => update({ lengthType: 'distance' })}
-                    />
-                    <SquareTextBtn
-                        id="se-round-trip-by-time"
-                        text={t('web:round_trip_by_time')}
-                        selected={byTime}
-                        onClick={() => update({ lengthType: 'time' })}
-                    />
-                </Box>
-                <Typography className={styles.roundTripValue}>
-                    {byTime ? `${length} ${t('shared_string_minute_lowercase')}` : `${length} ${t('km')}`}
-                </Typography>
+                <Typography className={styles.roundTripLabel}>{t('web:round_trip_length')}</Typography>
+                <Typography className={styles.roundTripValue}>{`${length} ${t('km')}`}</Typography>
             </Box>
             <Slider
                 id="se-round-trip-length"
@@ -93,10 +70,9 @@ export default function RoundTripSettings() {
                 step={1}
                 valueLabelDisplay="off"
                 sx={{ color: '#237BFF' }}
-                onChange={(e, position) => setLength(sliderToValue(position, min, max, round))}
+                onChange={(e, position) => setLength(sliderToValue(position, min, max))}
                 onChangeCommitted={(e, position) => {
-                    const value = sliderToValue(position, min, max, round);
-                    update(byTime ? { time: value } : { distance: value });
+                    update({ distance: sliderToValue(position, min, max) });
                 }}
             />
             <Box className={styles.roundTripRow}>

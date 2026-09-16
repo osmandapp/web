@@ -328,8 +328,6 @@
     "round_trip": "Round trip",
     "round_trip_tips": "Click on the map to set the <strong>Start</strong> point. The loop comes back to it.",
     "round_trip_length": "Loop length",
-    "round_trip_by_distance": "Distance",
-    "round_trip_by_time": "Time",
     "round_trip_direction": "Direction",
     "round_trip_direction_any": "Any",
     "round_trip_another": "Other loops",

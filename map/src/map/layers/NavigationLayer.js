@@ -15,6 +15,7 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    ROUTE_ROUND_TRIP,
     ROUTE_ROUND_TRIP_ENABLED,
 } from '../../store/geoRouter/profileConstants';
 import { selectAlternativeRoute } from '../../store/geoRouter/legacy/selectAlternativeRoute';
@@ -147,15 +148,22 @@ const NavigationLayer = ({ geocodingData, region }) => {
         viaInputsCountRef.current = ctx.viaInputsCount;
     }, [routeObject, ctx.viaInputsCount]);
 
+    // points of the loop on the map, read by the click handler which is bound once
+    const loopPointsRef = useRef([]);
+
     const updateCursor = useCallback(() => {
         const container = map.getContainer();
         if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
             container.style.cursor = '';
             return;
         }
-        container.style.cursor = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0)
-            ? 'crosshair'
-            : '';
+        const addsLoopPoint =
+            routeObjectRef.current.getOption(ROUTE_ROUND_TRIP_ENABLED) &&
+            routeObjectRef.current.getOption(ROUTE_POINTS_START);
+        container.style.cursor =
+            addsLoopPoint || pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0)
+                ? 'crosshair'
+                : '';
     }, []);
 
     const handleMapClick = useCallback(
@@ -171,6 +179,35 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 return;
             }
             const wpt = event.detail?.wpt;
+
+            // A click on a round trip adds a point to the loop, where it makes the smallest detour
+            const routeObj = routeObjectRef.current;
+            const loopStart = routeObj.getOption(ROUTE_POINTS_START);
+            if (routeObj.getOption(ROUTE_ROUND_TRIP_ENABLED) && loopStart && loopPointsRef.current.length > 0) {
+                if (event.preventDefault) {
+                    event.preventDefault();
+                }
+                const start = L.latLng(loopStart.lat, loopStart.lng);
+                const added = L.latLng(coords.lat, coords.lng);
+                const stops = [start, ...loopPointsRef.current, start];
+                let bestIndex = 0;
+                let bestDetour = Infinity;
+                for (let i = 0; i < stops.length - 1; i++) {
+                    const detour =
+                        stops[i].distanceTo(added) + added.distanceTo(stops[i + 1]) - stops[i].distanceTo(stops[i + 1]);
+                    if (detour < bestDetour) {
+                        bestDetour = detour;
+                        bestIndex = i;
+                    }
+                }
+                const points = loopPointsRef.current.map((p) => [p.lat, p.lng]);
+                points.splice(bestIndex, 0, [added.lat, added.lng]);
+                routeObj.setOption(ROUTE_ROUND_TRIP + '.waypoints', points);
+                if (event?.originalEvent) {
+                    event.originalEvent.navigationHandled = true;
+                }
+                return;
+            }
 
             // Find first empty input from top to bottom (start -> intermediates -> finish)
             const target = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0);
@@ -552,6 +589,51 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // round trip loops start at the same point and overlap, which is unreadable even translucent -
     // only the picked one is drawn, the others are picked from their cards in the menu
     const roundTrip = routeObject.getOption(ROUTE_ROUND_TRIP_ENABLED);
+    const editedLoopPoints = routeObject.getOption(ROUTE_ROUND_TRIP + '.waypoints');
+
+    // The points a loop was built through, shown like intermediate points so they can be moved.
+    // A generated loop reports its circle points, which may lie in a river or a park: each one is shown
+    // at the nearest point of the loop itself. Once moved, the points are kept as the user left them.
+    const loopPoints = useMemo(() => {
+        if (!roundTrip) {
+            return [];
+        }
+        if (editedLoopPoints?.length > 0) {
+            return editedLoopPoints.map(([lat, lon]) => L.latLng(lat, lon));
+        }
+        const shown = routeFeatures.find(
+            (f) => f.geometry?.type === LINE_STRING && f.properties?.roundTrip && !isAlternativeFeature(f)
+        );
+        const coords = shown?.geometry?.coordinates ?? [];
+        if (coords.length === 0) {
+            return [];
+        }
+        return (shown.properties.roundTrip.waypoints ?? []).map(([lat, lon]) => {
+            const target = L.latLng(lat, lon);
+            let best = coords[0];
+            let bestDist = Infinity;
+            for (const c of coords) {
+                const d = target.distanceTo(L.latLng(c[1], c[0]));
+                if (d < bestDist) {
+                    bestDist = d;
+                    best = c;
+                }
+            }
+            return L.latLng(best[1], best[0]);
+        });
+    }, [roundTrip, editedLoopPoints, routeObject.getRoute()]);
+
+    useEffect(() => {
+        loopPointsRef.current = loopPoints;
+    }, [loopPoints]);
+
+    const loopPointHandlers = (ind) => ({
+        dragend(e) {
+            const moved = e.target.getLatLng();
+            const points = loopPoints.map((p, i) => (i === ind ? [moved.lat, moved.lng] : [p.lat, p.lng]));
+            routeObject.setOption(ROUTE_ROUND_TRIP + '.waypoints', points);
+        },
+    });
     const alternativeRoutes = roundTrip
         ? []
         : routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
@@ -685,6 +767,17 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     />
                 ) : null
             )}
+            {loopPoints.map((it, ind) => (
+                <Marker
+                    ref={(m) => m && viaLayersRef.current.push(m)}
+                    key={'mark-loop' + ind + refreshKey}
+                    position={it}
+                    icon={getIntermediatePointIcon(ind)}
+                    draggable={true}
+                    eventHandlers={loopPointHandlers(ind)}
+                    zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
+                />
+            ))}
             {finishPoint && (
                 <Marker
                     key={'mark-finish' + refreshKey}

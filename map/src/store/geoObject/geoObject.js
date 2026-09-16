@@ -30,12 +30,11 @@ export class geoObject extends geoRouter {
             // prototype: the route starts and ends at the start point, its length is given instead of a finish
             roundTrip: {
                 enabled: false,
-                lengthType: 'distance', // distance (km) | time (min)
-                distance: 20,
-                time: 60,
+                distance: 20, // km
                 variants: 3, // always three loops to pick from
                 direction: null, // degrees, null - any
                 seed: 0, // another seed gives other loops for the same settings
+                waypoints: null, // [[lat, lon]] once the user moved a loop point: the loop is then fixed
             },
         },
     };

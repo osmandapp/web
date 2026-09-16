@@ -151,10 +151,23 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     const maxDist = '&maxDist=100'; // compatibility-only
     const alternatives = ROUTE_ALTERNATIVES > 0 ? `&alternatives=${ROUTE_ALTERNATIVES}` : '';
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
-    const url = this.getOption(ROUTE_ROUND_TRIP_ENABLED)
-        ? roundTripUrl({ roundTrip: this.getOption(ROUTE_ROUND_TRIP), startPoint, routeModeStr })
-        : `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
-          `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${alternatives}`;
+    const roundTrip = this.getOption(ROUTE_ROUND_TRIP);
+    let url;
+    if (roundTrip.enabled && roundTrip.waypoints?.length > 0) {
+        // an edited loop is no longer generated: it is an ordinary route through its points and back
+        const loopPoints = roundTrip.waypoints
+            .map(([lat, lon]) => `&points=${lat.toFixed(6)},${lon.toFixed(6)}`)
+            .join('');
+        url =
+            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
+            `routeMode=${routeModeStr}&${starturl}${loopPoints}&${starturl}${avoidRoadsUrl}${maxDist}`;
+    } else if (roundTrip.enabled) {
+        url = roundTripUrl({ roundTrip, startPoint, routeModeStr });
+    } else {
+        url =
+            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
+            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${alternatives}`;
+    }
     const response = await apiGet(url, {
         apiCache: true,
         method: 'GET',
@@ -201,7 +214,6 @@ async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }
 
 /** Round trips are asked for by their length, the loop itself is built by the server */
 function roundTripUrl({ roundTrip, startPoint, routeModeStr }) {
-    const length = roundTrip.lengthType === 'time' ? `&time=${roundTrip.time}` : `&distance=${roundTrip.distance}`;
     const direction = roundTrip.direction === null ? '' : `&direction=${roundTrip.direction}`;
     // the maps carry no HH data for walking, so those loops are built with A* - measured 1 s for
     // 10 km and 4 s for 20 km, which walking distances keep affordable
@@ -209,7 +221,7 @@ function roundTripUrl({ roundTrip, startPoint, routeModeStr }) {
 
     return (
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/roundtrip?routeMode=${routeModeStr}` +
-        `&point=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}${length}` +
+        `&point=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}&distance=${roundTrip.distance}` +
         `&variants=${roundTrip.variants}${direction}&seed=${roundTrip.seed}${astar}`
     );
 }

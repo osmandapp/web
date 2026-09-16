@@ -47,7 +47,10 @@ export default function RoundTripVariants({ onDetails }) {
         .sort((a, b) => (a.properties.roundTrip.heading ?? 0) - (b.properties.roundTrip.heading ?? 0));
 
     if (loops.length === 0) {
-        return null;
+        // an edited loop is a single ordinary route
+        return navObject.getRoute() ? (
+            <RouteSummaryCard routeProps={navObject.getRouteProps()} onDetails={onDetails} />
+        ) : null;
     }
 
     return (
