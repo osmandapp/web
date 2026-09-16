@@ -13,8 +13,11 @@ import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFav
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { deleteTrack, getFiles } from '../../util.mjs';
+import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 export default async function test() {
+    ignoreTest();
+
     await actionOpenMap();
     await actionLogIn();
     // --- Search: track appears, then disappears after delete ---

@@ -1,10 +1,6 @@
 import { useCallback, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import AppContext, {
-    SEARCH_ENGINE_CLASSIC,
-    SEARCH_ENGINE_SPATIAL,
-    SPATIAL_SEARCH_STORAGE_KEY,
-} from '../../../context/AppContext';
+import AppContext, { SEARCH_ENGINE_CLASSIC, SEARCH_ENGINE_SPATIAL } from '../../../context/AppContext';
 import { liveHash } from '../../../manager/GlobalManager';
 
 const ENGINE_KEY = 'engine';
@@ -28,16 +24,15 @@ export default function useSpatialSearch() {
         }
     }, [urlEngine]);
 
-    const setSpatial = useCallback(
+    const setClassicSearch = useCallback(
         (on) => {
-            ctx.setSpatialSearch(on);
-            globalThis.localStorage?.setItem(SPATIAL_SEARCH_STORAGE_KEY, on ? 'yes' : 'no');
+            ctx.setSpatialSearch(!on);
             const search = new URLSearchParams(location.search);
-            search.set(ENGINE_KEY, engineFromSpatial(on));
+            search.set(ENGINE_KEY, engineFromSpatial(!on));
             navigate({ pathname: location.pathname, search: `?${search}`, hash: liveHash() });
         },
         [ctx, location, navigate]
     );
 
-    return { spatial: ctx.spatialSearch, setSpatial };
+    return { classicSearch: !ctx.spatialSearch, setClassicSearch };
 }

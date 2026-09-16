@@ -49,7 +49,7 @@ export default function SearchMenu() {
     const [, height] = useWindowSize();
 
     const { navigateToSearchResults } = useSearchNav();
-    const { setSpatial } = useSpatialSearch();
+    const { classicSearch, setClassicSearch } = useSpatialSearch();
 
     const isSearchResultRoute = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL + '*' },
@@ -278,12 +278,14 @@ export default function SearchMenu() {
                                         }
                                         setSearchValue={setSearchValue}
                                     />
-                                    <SelectItemBoolean
-                                        title={t('search_try_spatial_search_beta')}
-                                        checked={!!ctx.spatialSearch}
-                                        onToggle={setSpatial}
-                                        boldTitle={false}
-                                    />
+                                    {ctx.develFeatures && (
+                                        <SelectItemBoolean
+                                            title={t('web:dev_use_old_search')}
+                                            checked={classicSearch}
+                                            onToggle={setClassicSearch}
+                                            boldTitle={false}
+                                        />
+                                    )}
                                     <Box className={gStyles.scrollActiveBlock}>
                                         <SubTitleMenu text={t('search_categories')} />
                                         <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>

@@ -108,7 +108,7 @@ export default function SearchResults() {
     const currentLoc = useGeoLocation(ctx);
     const [listContainerRef, listHeight] = useElementHeight();
     const { zoom } = useHashParams();
-    const { setSpatial } = useSpatialSearch();
+    const { classicSearch, setClassicSearch } = useSpatialSearch();
     const navigate = useNavigate();
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute, location } = useSearchNav();
@@ -405,15 +405,15 @@ export default function SearchResults() {
                         : params?.query || '')
                 }
             />
-            {!params.type && (
+            {ctx.develFeatures && !params.type && (
                 <SelectItemBoolean
-                    title={t('search_try_spatial_search_beta')}
-                    checked={!!ctx.spatialSearch}
-                    onToggle={setSpatial}
+                    title={t('web:dev_use_old_search')}
+                    checked={classicSearch}
+                    onToggle={setClassicSearch}
                     boldTitle={false}
                 />
             )}
-            {(useSpatialSearchResults || ctx.develFeatures) && ctx.searchResult?.info && (
+            {ctx.develFeatures && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
                         .map(([k, v]) => `${k}: ${v}`)
