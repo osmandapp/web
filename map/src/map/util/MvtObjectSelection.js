@@ -8,14 +8,19 @@ const OSM_ID_TAG = 'osm_id';
 const NAME_TAG = 'name';
 const HOUSE_NUMBER_TAG = 'addr:housenumber';
 
-// as in Android MapSelectionHelper: only rendered symbols (icons, captions) are clickable, captions drawn along a path are not
-export function pickClickableFeature(features) {
-    return features.find(
-        (feature) =>
+export function pickClickableFeatures(features) {
+    const byOsmId = new Map();
+    features.forEach((feature) => {
+        const clickable =
             feature.layer?.type === SYMBOL_LAYER_TYPE &&
             feature.layer.layout?.['symbol-placement'] !== ON_PATH_SYMBOL_PLACEMENT &&
-            feature.properties?.[OSM_ID_TAG] != null
-    );
+            feature.properties?.[OSM_ID_TAG] != null;
+        if (clickable && !byOsmId.has(feature.properties[OSM_ID_TAG])) {
+            byOsmId.set(feature.properties[OSM_ID_TAG], feature);
+        }
+    });
+
+    return [...byOsmId.values()];
 }
 
 // preview for WptDetails (name only, type and icon come from the server) + what is needed to load the details

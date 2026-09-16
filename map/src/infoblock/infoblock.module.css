@@ -22,6 +22,11 @@
     font-style: normal !important;
     font-weight: 400 !important;
 }
+/* as .stopsNavButton does: the icon follows the button color, MUI dims it when disabled */
+.mapObjectNavBtn:disabled svg,
+.mapObjectNavBtn:disabled path {
+    fill: currentColor !important;
+}
 .iconPlaceholder {
     width: 48px;
     height: 48px;

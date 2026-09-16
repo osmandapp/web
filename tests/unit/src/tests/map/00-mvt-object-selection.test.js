@@ -1,4 +1,4 @@
-import { createMvtObject, pickClickableFeature } from '@map/map/util/MvtObjectSelection';
+import { createMvtObject, pickClickableFeatures } from '@map/map/util/MvtObjectSelection';
 import { searchTypeMap, SEARCH_ICON_MAP_BUILDING } from '@map/manager/searchConstants';
 import {
     CATEGORY_NAME,
@@ -18,17 +18,19 @@ function feature({
     return { id, layer, geometry, properties: { osm_id: 100, ...properties } };
 }
 
-test('a click opens the topmost rendered symbol with an osm id, not areas, lines, captions along a path', () => {
+test('a click collects the rendered symbols with an osm id, not areas, lines, captions along a path', () => {
     const fill = feature({ layer: { type: 'fill' }, name: 'Park' });
     const line = feature({ layer: { type: 'line' }, name: 'Road' });
     const roadLabel = feature({ layer: { type: 'symbol', layout: { 'symbol-placement': 'line' } }, name: 'Road' });
     const noId = feature({ name: 'Cafe' });
     delete noId.properties.osm_id;
     const cafe = feature({ layer: { type: 'symbol', layout: { 'symbol-placement': 'point' } }, name: 'Cafe' });
-    const shop = feature({ name: 'Shop' });
+    const shop = feature({ osm_id: 101, name: 'Shop' });
+    const cafeCaption = feature({ name: 'Cafe caption' });
 
-    expect(pickClickableFeature([fill, line, roadLabel, noId, cafe, shop])).toBe(cafe);
-    expect(pickClickableFeature([fill, line, roadLabel, noId])).toBeUndefined();
+    // every clicked object once, in the order the symbols are rendered
+    expect(pickClickableFeatures([fill, line, roadLabel, noId, cafe, shop, cafeCaption])).toEqual([cafe, shop]);
+    expect(pickClickableFeatures([fill, line, roadLabel, noId])).toEqual([]);
 });
 
 test('the preview of a clicked object: plain name at the symbol, address for a house number, tags for the details', () => {

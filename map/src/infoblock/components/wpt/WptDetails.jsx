@@ -12,6 +12,9 @@ import {
     Typography,
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
+import { ReactComponent as ArrowBackIcon } from '../../../assets/icons/ic_action_back.svg';
+import { ReactComponent as ArrowForwardIcon } from '../../../assets/icons/ic_arrow_forward.svg';
+import ActionIconBtn from '../../../frame/components/btns/ActionIconBtn';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, {
     isTrack,
@@ -404,20 +407,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setWpt({ ...newWpt });
             setIsAddressAdded(false);
             setIsPhotosAdded(false);
-            loadMvtObject(ctx.selectedWpt, controller.signal).then((obj) => {
+            const previews = ctx.selectedWpt.mvtPreviews ?? [ctx.selectedWpt];
+            loadMvtObjects(previews, controller.signal).then(({ objects, failed }) => {
                 if (controller.signal.aborted) {
                     return;
                 }
-                if (obj.stop) {
-                    ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
-                    ctx.setSelectedWpt(obj);
-                    navigateToStop(obj.stop, navigate);
-                } else if (obj.poi) {
-                    recentSaver(POI_OBJECTS_KEY, obj.poi);
-                    ctx.setSelectedWptId({ id: obj.poi.options[POI_ID], show: false, type: POI_LAYER_ID });
-                    ctx.setSelectedWpt(obj);
-                    navigateToPoi(obj, navigate);
-                } else if (obj.failed && ctx.selectedWpt.mvt.tags) {
+                if (objects.length > 0) {
+                    showMvtObject(objects, 0);
+                } else if (failed && ctx.selectedWpt.mvt.tags) {
                     // a house is opened by its address, the server has no tags to build an object from
                     ctx.setNotification({ text: 'Failed to load the object', severity: 'error' });
                     closeObjectFromMap();
@@ -695,6 +692,21 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     }
 
+    function showMvtObject(objects, index) {
+        const obj = { ...objects[index], mvtObjects: objects, mvtIndex: index };
+        if (obj.stop) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
+            ctx.setSelectedWpt(obj);
+            navigateToStop(obj.stop, navigate);
+        } else {
+            recentSaver(POI_OBJECTS_KEY, obj.poi);
+            ctx.setSelectedWptId({ id: obj.poi.options[POI_ID], show: false, type: POI_LAYER_ID });
+            ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+            ctx.setSelectedWpt(obj);
+            navigateToPoi(obj, navigate);
+        }
+    }
+
     function closeObjectFromMap() {
         ctx.setCurrentObjectType(null);
         ctx.setSelectedWpt(null);
@@ -861,12 +873,42 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return wpt?.type?.isStop;
     }
 
+    // several objects under one click on the map: the menu shows them one by one
+    const MapObjectsNav = () => {
+        const objects = ctx.selectedWpt?.mvtObjects;
+        if (!objects || objects.length < 2) {
+            return null;
+        }
+        const index = ctx.selectedWpt.mvtIndex;
+        return (
+            <>
+                {index > 0 && (
+                    <ActionIconBtn
+                        id="se-prev-map-object"
+                        icon={<ArrowBackIcon />}
+                        aria-label={t('shared_string_previous')}
+                        onClick={() => showMvtObject(objects, index - 1)}
+                    />
+                )}
+                <ActionIconBtn
+                    id="se-next-map-object"
+                    className={styles.mapObjectNavBtn}
+                    icon={<ArrowForwardIcon />}
+                    aria-label={t('shared_string_next')}
+                    disabled={index === objects.length - 1}
+                    onClick={() => showMvtObject(objects, index + 1)}
+                />
+            </>
+        );
+    };
+
     const Header = () => {
         return (
             <HeaderWithUnderline
                 onClose={() => closeDetails()}
                 showBackButton={!wpt?.mapObj}
                 appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+                rightContent={<MapObjectsNav />}
             />
         );
     };
@@ -1191,14 +1233,25 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     );
 }
 
-// object clicked on the MVT layer: full POI (same as in search results, from the tags when not in the POI index),
+// objects clicked on the MVT layer: full POI (same as in search results, from the tags when not in the POI index),
 // for a public transport POI its stop with routes (as Android AmenityMenuController)
-async function loadMvtObject({ mvt, poi }, signal) {
-    const { poi: fullPoi, failed } = await getPoiByMapObject(mvt, poi.latlng, signal);
-    const stopId = fullPoi?.options[TRANSPORT_STOP_ID];
-    const stop = stopId ? await getTransportStop(stopId, fullPoi.latlng, signal) : null;
+async function loadMvtObjects(previews, signal) {
+    const objects = [];
+    let failed = false;
+    for (const preview of previews) {
+        const loaded = await getPoiByMapObject(preview.mvt, preview.poi.latlng, signal);
+        failed = failed || loaded.failed;
+        if (loaded.pois.length === 0 && !preview.mvt.tags) {
+            objects.push({ poi: preview.poi });
+        }
+        for (const poi of loaded.pois) {
+            const stopId = poi.options[TRANSPORT_STOP_ID];
+            const stop = stopId ? await getTransportStop(stopId, poi.latlng, signal) : null;
+            objects.push(stop ? { stop } : { poi });
+        }
+    }
 
-    return stop ? { stop } : { poi: fullPoi, failed };
+    return { objects, failed };
 }
 
 async function getTransportStop(stopId, latlng, signal) {
@@ -1216,13 +1269,14 @@ async function getPoiByMapObject({ mapObjectId, tags }, latlng, signal) {
         signal,
     });
 
-    return { poi: createPoiObject(response?.data), failed: response?.ok === false && !response.aborted };
+    return {
+        pois: (response?.data?.features ?? []).map(createPoiObject),
+        failed: response?.ok === false && !response.aborted,
+    };
 }
 
-function createPoiObject(data) {
-    if (data) {
-        data.properties[FINAL_POI_ICON_NAME] = getFinalPoiIconName(data.properties);
-    }
+function createPoiObject(feature) {
+    feature.properties[FINAL_POI_ICON_NAME] = getFinalPoiIconName(feature.properties);
 
-    return createMapObject(data);
+    return createMapObject(feature);
 }

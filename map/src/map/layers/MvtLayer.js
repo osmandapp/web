@@ -8,7 +8,7 @@ import MapContext from '../../context/MapContext';
 import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
-import { createMvtObject, pickClickableFeature } from '../util/MvtObjectSelection';
+import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -169,7 +169,7 @@ export default function MvtLayer({ config }) {
             console.warn(errorLabel, event?.error ?? event);
         };
 
-        const getClickableFeature = (mouseEvent) => {
+        const getClickableFeatures = (mouseEvent) => {
             const canvas = glLayer.getCanvas();
             const rect = canvas.getBoundingClientRect();
             const x = mouseEvent.clientX - rect.left;
@@ -179,16 +179,16 @@ export default function MvtLayer({ config }) {
                 [x + CLICK_TOLERANCE_PX, y + CLICK_TOLERANCE_PX],
             ];
             try {
-                return pickClickableFeature(maplibreMap.queryRenderedFeatures(box));
+                return pickClickableFeatures(maplibreMap.queryRenderedFeatures(box));
             } catch (error) {
-                return null;
+                return [];
             }
         };
 
         // DOM listener runs after Leaflet map handlers (NavigationLayer resets the cursor on map mousemove)
         const handleMouseMove = (mouseEvent) => {
             const container = map.getContainer();
-            if (getClickableFeature(mouseEvent)) {
+            if (getClickableFeatures(mouseEvent).length > 0) {
                 container.style.cursor = POINTER_CURSOR;
             } else {
                 resetPointerCursor(container);
@@ -196,11 +196,13 @@ export default function MvtLayer({ config }) {
         };
 
         const handleMapClick = (event) => {
-            const feature = getClickableFeature(event.originalEvent);
-            if (!feature) {
+            const features = getClickableFeatures(event.originalEvent);
+            if (features.length === 0) {
                 return;
             }
-            const obj = createMvtObject(feature, event.latlng);
+            // all objects under the click, the menu shows them one by one
+            const objects = features.map((feature) => createMvtObject(feature, event.latlng));
+            const obj = { ...objects[0], mvtPreviews: objects };
             ctx.setCurrentObjectType(OBJECT_TYPE_POI);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             // as after a marker hover: keeps GlobalFrame from opening the POI by its url
