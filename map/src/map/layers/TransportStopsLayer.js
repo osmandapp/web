@@ -186,7 +186,7 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick, c
     }
 }
 
-export function navigateToStop(stop, navigate, options = undefined) {
+export function navigateToStop(stop, navigate) {
     if (!stop?.options || !stop.latlng) return;
 
     const stopId = stop.options.id;
@@ -200,14 +200,11 @@ export function navigateToStop(stop, navigate, options = undefined) {
     search.append('id', stopId.toString());
     search.append('pin', pin);
 
-    navigate(
-        {
-            pathname: MAIN_URL_WITH_SLASH + STOP_URL,
-            search: `?${search}`,
-            hash: globalThis.location.hash,
-        },
-        options
-    );
+    navigate({
+        pathname: MAIN_URL_WITH_SLASH + STOP_URL,
+        search: `?${search}`,
+        hash: globalThis.location.hash,
+    });
 }
 
 const TransportStopsLayer = () => {

@@ -411,13 +411,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 if (obj.stop) {
                     ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
                     ctx.setSelectedWpt(obj);
-                    navigateToStop(obj.stop, navigate, { replace: true });
+                    navigateToStop(obj.stop, navigate);
                 } else if (obj.poi) {
                     recentSaver(POI_OBJECTS_KEY, obj.poi);
                     ctx.setSelectedWptId({ id: obj.poi.options[POI_ID], show: false, type: POI_LAYER_ID });
                     ctx.setSelectedWpt(obj);
-                    // replaces the preview URL set by MvtLayer
-                    navigateToPoi(obj, navigate, false, { replace: true });
+                    navigateToPoi(obj, navigate);
+                } else if (obj.failed && ctx.selectedWpt.mvt.tags) {
+                    // a house is opened by its address, the server has no tags to build an object from
+                    ctx.setNotification({ text: 'Failed to load the object', severity: 'error' });
+                    closeObjectFromMap();
                 } else {
                     setWpt((prev) => (prev?.pending ? { ...prev, pending: false } : prev));
                 }
@@ -1191,11 +1194,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 // object clicked on the MVT layer: full POI (same as in search results, from the tags when not in the POI index),
 // for a public transport POI its stop with routes (as Android AmenityMenuController)
 async function loadMvtObject({ mvt, poi }, signal) {
-    const fullPoi = await getPoiByMapObject(mvt, poi.latlng, signal);
+    const { poi: fullPoi, failed } = await getPoiByMapObject(mvt, poi.latlng, signal);
     const stopId = fullPoi?.options[TRANSPORT_STOP_ID];
     const stop = stopId ? await getTransportStop(stopId, fullPoi.latlng, signal) : null;
 
-    return stop ? { stop } : { poi: fullPoi };
+    return stop ? { stop } : { poi: fullPoi, failed };
 }
 
 async function getTransportStop(stopId, latlng, signal) {
@@ -1213,7 +1216,7 @@ async function getPoiByMapObject({ mapObjectId, tags }, latlng, signal) {
         signal,
     });
 
-    return createPoiObject(response?.data);
+    return { poi: createPoiObject(response?.data), failed: response?.ok === false && !response.aborted };
 }
 
 function createPoiObject(data) {

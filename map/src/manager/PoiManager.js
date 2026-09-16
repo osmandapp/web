@@ -470,7 +470,7 @@ export function translateWithSplit(t, string) {
     return translatedString;
 }
 
-export function navigateToPoi(obj, navigate, isWiki = false, options = undefined) {
+export function navigateToPoi(obj, navigate, isWiki = false) {
     if (!obj) return;
 
     const params = {};
@@ -492,14 +492,11 @@ export function navigateToPoi(obj, navigate, isWiki = false, options = undefined
             search.append(key, v);
         }
     }
-    navigate(
-        {
-            pathname: MAIN_URL_WITH_SLASH + POI_URL,
-            search: search.size ? `?${search}` : '',
-            hash: globalThis.location.hash,
-        },
-        options
-    );
+    navigate({
+        pathname: MAIN_URL_WITH_SLASH + POI_URL,
+        search: search.size ? `?${search}` : '',
+        hash: globalThis.location.hash,
+    });
 }
 
 function getWikiPoiParams(poi, wiki) {

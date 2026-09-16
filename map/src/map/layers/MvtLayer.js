@@ -1,6 +1,5 @@
 import { useContext, useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
-import { useNavigate } from 'react-router-dom';
 import L from 'leaflet';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
@@ -9,7 +8,6 @@ import MapContext from '../../context/MapContext';
 import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
-import { navigateToPoi } from '../../manager/PoiManager';
 import { createMvtObject, pickClickableFeature } from '../util/MvtObjectSelection';
 import {
     ensureLeafletPane,
@@ -101,7 +99,6 @@ export default function MvtLayer({ config }) {
     const map = useMap();
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
-    const navigate = useNavigate();
     const hybridUnderlayUrl = useHybridUnderlayUrl();
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
@@ -206,11 +203,10 @@ export default function MvtLayer({ config }) {
             const obj = createMvtObject(feature, event.latlng);
             ctx.setCurrentObjectType(OBJECT_TYPE_POI);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-            // as after a marker hover: keeps GlobalFrame from opening the POI by the URL below
+            // as after a marker hover: keeps GlobalFrame from opening the POI by its url
             ctx.setSelectedWptId({ id: obj.mvt.osmId, show: false, type: POI_LAYER_ID });
             // no selectedWpt.id: SearchLayer (useSelectMarkerOnMap) would draw a selected pin for it
             ctx.setSelectedWpt(obj);
-            navigateToPoi(obj, navigate);
         };
 
         if (clickable) {
