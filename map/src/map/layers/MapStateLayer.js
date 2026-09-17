@@ -47,6 +47,9 @@ export function getMapCenter(mtx, hash) {
 }
 
 const CENTRE_ICON_SIZE = 24;
+// wheelZoomRate of MapLibre: 450 px of wheel per zoom level
+const WHEEL_PX_PER_ZOOM = 450;
+const WHEEL_ZOOM_EASING = 0.3;
 
 const MAP_SPIN_COLOR = '#1976d2';
 
@@ -210,6 +213,64 @@ export default function MapStateLayer() {
             map.zoomOut = origZoomOut;
         };
     }, [ctx.infoBlockWidth]);
+
+    useEffect(() => {
+        const container = map.getContainer();
+        let targetZoom = map.getZoom();
+        let anchor = null;
+        let frame = null;
+
+        function zoomAroundAnchor(zoom) {
+            const viewHalf = map.getSize().divideBy(2);
+            const centerOffset = anchor.subtract(viewHalf).multiplyBy(1 - 1 / map.getZoomScale(zoom));
+
+            return map.containerPointToLatLng(viewHalf.add(centerOffset));
+        }
+
+        function step() {
+            const zoom = map.getZoom();
+            if (Math.abs(targetZoom - zoom) < 0.005) {
+                frame = null;
+                // no setView: its viewreset drops the GridLayer tiles
+                map._move(zoomAroundAnchor(targetZoom), targetZoom);
+                map._moveEnd(true);
+                return;
+            }
+            const next = zoom + (targetZoom - zoom) * WHEEL_ZOOM_EASING;
+            // pinch: zoom event without moveend, as Leaflet TouchZoom
+            map._move(zoomAroundAnchor(next), next, { pinch: true, round: false });
+            frame = L.Util.requestAnimFrame(step);
+        }
+
+        function onWheel(event) {
+            L.DomEvent.stop(event);
+            if (map._animatingZoom) {
+                return;
+            }
+            anchor = map.mouseEventToContainerPoint(event);
+            if (frame === null) {
+                targetZoom = map.getZoom();
+            }
+            // getWheelDelta divides deltaY by 3 on Mac
+            const delta = event.deltaMode === 0 ? -event.deltaY : L.DomEvent.getWheelDelta(event);
+            targetZoom = map._limitZoom(targetZoom + delta / WHEEL_PX_PER_ZOOM);
+            if (frame === null && targetZoom !== map.getZoom()) {
+                map._stop();
+                map._moveStart(true, false);
+                frame = L.Util.requestAnimFrame(step);
+            }
+        }
+
+        L.DomEvent.on(container, 'wheel', onWheel);
+
+        return () => {
+            L.DomEvent.off(container, 'wheel', onWheel);
+            if (frame !== null) {
+                L.Util.cancelAnimFrame(frame);
+                map._moveEnd(true);
+            }
+        };
+    }, [map]);
 
     // Central zoom-to-fit handler driven by useZoomToFit.
     useEffect(() => {

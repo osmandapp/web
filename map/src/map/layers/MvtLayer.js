@@ -137,7 +137,6 @@ export default function MvtLayer({ config }) {
                 hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
             }),
             interactive: false,
-            fadeDuration: 0,
             ...(paneName ? { pane: paneName } : {}),
         }).addTo(map);
 
