@@ -790,6 +790,7 @@ export default function MainMenu({
             ctx.setSelectedPoiObj(null);
             ctx.setPoiCatMenu(false);
             ctx.setExploreMenu(false);
+            ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
         }
         if (type === OBJECT_TYPE_FAVORITE) {
             ctx.setSelectedFavoriteObj(null);
@@ -831,7 +832,7 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(null);
             }
             ctx.setOpenNavigationSettings(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
+            ctx.setSearchSettings((prev) => ({ ...prev, showExploreMarkers: false }));
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;

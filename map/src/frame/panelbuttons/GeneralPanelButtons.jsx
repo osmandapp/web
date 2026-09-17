@@ -1,5 +1,5 @@
 import { Box, IconButton, Paper, SvgIcon, Typography } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import isEmpty from 'lodash-es/isEmpty';
 import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../context/AppContext';
@@ -11,8 +11,8 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import styles from '../../map/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import FocusToggleBtn from '../../frame/components/btns/FocusToggleBtn';
+import CloseMenuBtn from '../../frame/components/btns/CloseMenuBtn';
 import ConfigureMap from '../../menu/configuremap/ConfigureMap';
 import {
     FAVORITES_URL,
@@ -27,9 +27,9 @@ import {
 } from '../../manager/GlobalManager';
 import SearchMenu from '../../menu/search/SearchMenu';
 import { closeHeader } from '../../menu/actions/HeaderHelper';
+import useSearchNav from '../../util/hooks/search/useSearchNav';
 
 const CLOSE_MENU_URLS = [SEARCH_URL, POI_URL, TRACKS_URL, FAVORITES_URL].map((url) => MAIN_URL_WITH_SLASH + url);
-const ESC_IGNORE_TARGETS = 'input, textarea, [contenteditable="true"], [role="dialog"], [role="presentation"]';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -44,23 +44,9 @@ export default function GeneralPanelButtons({
 
     const [width, height] = useWindowSize();
     const location = useLocation();
+    const { isSearchResultRoute } = useSearchNav();
 
-    const showCloseMenu = showInfoBlock && canCloseMenu(ctx, location.pathname);
-
-    // close the menu by Esc
-    useEffect(() => {
-        if (!showCloseMenu) return;
-        const closeMenuByEsc = (e) => {
-            if (e.key !== 'Escape') return;
-            if (e.defaultPrevented) return;
-            if (ctx.pointContextMenu.element) return;
-            if (e.target.closest?.(ESC_IGNORE_TARGETS)) return;
-            ctx.setCloseMenu(true);
-        };
-        window.addEventListener('keydown', closeMenuByEsc);
-
-        return () => window.removeEventListener('keydown', closeMenuByEsc);
-    }, [showCloseMenu, ctx.pointContextMenu]);
+    const showCloseMenu = canCloseMenu({ ctx, pathname: location.pathname, showInfoBlock, isSearchResultRoute });
 
     const orientation = getButtonOrientation();
     const tooltipOrientation = getTooltipOrientation();
@@ -127,13 +113,7 @@ export default function GeneralPanelButtons({
                     paddingBottom: '2px',
                 }}
             >
-                {showCloseMenu && (
-                    <Paper className={`${styles.button} ${styles.closeMenuButton}`}>
-                        <IconButton id="se-close-menu-button" onClick={() => ctx.setCloseMenu(true)}>
-                            <SvgIcon className={styles.customIconPath} component={CloseIcon} inheritViewBox />
-                        </IconButton>
-                    </Paper>
-                )}
+                {showCloseMenu && <CloseMenuBtn />}
                 <Paper sx={{ mr: '8px' }} className={styles.button}>
                     <IconButton onClick={openMapStyle}>
                         <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
@@ -190,13 +170,17 @@ export default function GeneralPanelButtons({
     );
 }
 
-// Close is available only for an object opened from the menu list (the object menu has the Back button)
-function canCloseMenu(ctx, pathname) {
+// Close is available for the search results and for an object opened from the menu list
+// (in both cases the menu has the Back button)
+function canCloseMenu({ ctx, pathname, showInfoBlock, isSearchResultRoute }) {
     if (!CLOSE_MENU_URLS.some((url) => pathname.startsWith(url))) return false;
     if (ctx.shareFile) return false;
     if (ctx.photoGallery) return false;
     if (ctx.addFavorite?.location) return false;
     if (ctx.addFavorite?.editWpt) return false;
+    if (!showInfoBlock) {
+        return !!isSearchResultRoute;
+    }
     if (ctx.selectedWpt) {
         return !ctx.selectedWpt.mapObj && !ctx.selectedWpt.poi?.mapObj && !ctx.selectedWpt.stop?.mapObj;
     }

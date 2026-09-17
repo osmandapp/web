@@ -1,5 +1,16 @@
 import { By, Key } from 'selenium-webdriver';
-import { assert, clickBy, expectInputExactBy, getMapHash, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import {
+    assert,
+    clickBy,
+    enclose,
+    enumerateIds,
+    expectInputExactBy,
+    getMapHash,
+    leftClickBy,
+    sendKeysBy,
+    waitBy,
+    waitByRemoved,
+} from '../../lib.mjs';
 import { driver } from '../../options.mjs';
 import { getFiles } from '../../util.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
@@ -10,9 +21,17 @@ import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionsUploadFavorites from '../../actions/favorites/actionsUploadFavorites.mjs';
+import actionCreateNewFolder from '../../actions/actionCreateNewFolder.mjs';
+import actionDeleteFolder from '../../actions/actionDeleteFolder.mjs';
+import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import setView from '../../actions/setView.mjs';
 
 const CLOSE_MENU_BUTTON = By.id('se-close-menu-button');
+
+// a street is shown on the map as a search marker, not as a POI (a POI opens its own URL)
+const STREET_VIEW = { lat: 52.3745, lon: 4.8963, zoom: 16 };
+const STREET_QUERY = 'Damrak';
+const STREET_TYPE = 'STREET';
 
 export default async function test() {
     await actionOpenMap();
@@ -21,6 +40,8 @@ export default async function test() {
     const favGroupName = 'favorites-shops';
     const shortFavGroupName = 'shops';
     const wptName = 'Test wpt';
+    const trackFolder = 'close menu button';
+    const trackName = 'test-routed-osrm';
 
     const favorites = getFiles({ folder: 'favorites' });
 
@@ -37,20 +58,8 @@ export default async function test() {
 
     // --- My Places: Close closes the favorite and the menu, keeps the map, resets the opened folder ---
     await openFavoriteFromGroup(shortFavGroupName, wptName);
-    await actionIdleWait();
-    const hashBeforeClose = await getMapHash();
-
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
+    await closeMenuKeepingMap(By.id(`se-fav-item-info-${wptName}`));
     await waitByRemoved(By.id(`se-opened-fav-group-${shortFavGroupName}`));
-
-    await actionIdleWait();
-    const hashAfterClose = await getMapHash();
-    await assert(
-        hashAfterClose === hashBeforeClose,
-        `Close should not move the map (before: ${hashBeforeClose}, after: ${hashAfterClose})`
-    );
 
     // the next opening starts from the list of folders, not from the opened folder or favorite
     await actionOpenFavorites();
@@ -65,29 +74,141 @@ export default async function test() {
     await waitByRemoved(CLOSE_MENU_BUTTON);
 
     // --- Search: Close resets the query and the results ---
+    // Close is shown for the search results without a selected result
     await clickBy(By.id('se-show-menu-search'));
-    await waitBy(By.id('se-search-input'));
-    await sendKeysBy(By.id('se-search-input'), `${wptName}\n`);
-    await waitByRemoved(By.id('se-loading-page'), { optional: true });
-    await waitBy(By.id('se-search-results'));
+    await submitSearchQuery(wptName);
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(By.id('se-search-results'));
+    await waitByRemoved(CLOSE_MENU_BUTTON);
+    await clickBy(By.id('se-show-menu-search'));
+    await expectCleanSearch();
+
+    // Close of a result opened from the search results
+    await submitSearchQuery(wptName);
     await clickBy(By.id(`se-search-result-fav-${wptName}`));
     await waitBy(By.id(`se-fav-item-info-${wptName}`));
 
     await clickBy(CLOSE_MENU_BUTTON);
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
     await waitByRemoved(CLOSE_MENU_BUTTON);
+    await clickBy(By.id('se-show-menu-search'));
+    await expectCleanSearch();
+
+    // --- Search: no Close for an object opened from the map over the search results ---
+    // the object has its own X, Close and Esc would drop the whole search
+    await setView(STREET_VIEW);
+    await actionIdleWait({ tiles: true });
+    await submitSearchQuery(STREET_QUERY);
+    const street = await findSearchMarker(STREET_TYPE);
+    await leftClickBy(street.lat, street.lng);
+    await waitBy(By.id('se-close-wpt-details'));
+    await waitByRemoved(CLOSE_MENU_BUTTON);
+
+    await driver.actions().sendKeys(Key.ESCAPE).perform();
+    await waitBy(By.id('se-close-wpt-details'), { idle: true });
+
+    // X returns to the search results, where Close is available again
+    await clickBy(By.id('se-close-wpt-details'));
+    await waitBy(By.id('se-search-results'));
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(By.id('se-search-results'));
+    await waitByRemoved(CLOSE_MENU_BUTTON);
+
+    // --- Search: a wiki place closed by Close opens again ---
+    await clickBy(By.id('se-show-menu-search'));
+    await waitByRemoved(By.id('se-wiki-place-progress'));
+    await waitBy(By.id('se-wiki-places-items'));
+    const [wikiPlaceId] = await enumerateIds('se-wiki-place-');
+    await openWikiPlace(wikiPlaceId);
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(By.id('se-wpt-details'));
+    await waitByRemoved(CLOSE_MENU_BUTTON);
 
     await clickBy(By.id('se-show-menu-search'));
-    await waitBy(By.id('se-default-search-categories'));
-    await waitByRemoved(By.id('se-search-results'));
-    await expectInputExactBy(By.id('se-search-input'), '');
+    await openWikiPlace(wikiPlaceId);
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(By.id('se-wpt-details'));
+
+    // --- Tracks: Close closes the track and the menu, keeps the map, resets the opened folder ---
+    await clickBy(By.id('se-show-menu-tracks'));
+    await actionCreateNewFolder(trackFolder);
+    await clickBy(By.id(`se-menu-cloud-${trackFolder}`));
+    await waitBy(By.id('se-back-folder-button-tracks'));
+    await clickBy(By.id('se-import-cloud-track'));
+    await actionImportCloudTrack(getFiles({ folder: 'gpx' }), trackName);
+
+    await clickBy(By.id(`se-cloud-track-${trackName}`));
+    await waitBy(By.id('se-track-context-menu'));
+    await waitBy(CLOSE_MENU_BUTTON);
+    await closeMenuKeepingMap(By.id('se-track-context-menu'));
+
+    // the next opening starts from the list of folders, not from the opened folder
+    await clickBy(By.id('se-show-menu-tracks'));
+    await waitBy(By.id(`se-menu-cloud-${trackFolder}`));
+    await waitByRemoved(By.id('se-back-folder-button-tracks'));
 
     // cleanup
+    await actionDeleteFolder(trackFolder);
     await actionOpenFavorites();
     await actionDeleteFavGroup(shortFavGroupName);
     await waitBy(By.id('se-empty-page'));
 
     await actionFinish();
+}
+
+// the search menu must be open
+async function submitSearchQuery(query) {
+    await waitBy(By.id('se-search-input'));
+    await sendKeysBy(By.id('se-search-input'), `${query}\n`);
+    await waitByRemoved(By.id('se-loading-page'));
+    await waitBy(By.id('se-search-results'));
+    await waitBy(CLOSE_MENU_BUTTON);
+}
+
+// Close closes the opened object and the menu, the map stays where it is
+async function closeMenuKeepingMap(openedObject) {
+    await actionIdleWait();
+    const hashBeforeClose = await getMapHash();
+
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(openedObject);
+    await waitByRemoved(CLOSE_MENU_BUTTON);
+
+    await actionIdleWait();
+    const hashAfterClose = await getMapHash();
+    await assert(
+        hashAfterClose === hashBeforeClose,
+        `Close should not move the map (before: ${hashBeforeClose}, after: ${hashAfterClose})`
+    );
+}
+
+// the search opens without the previous query and results
+async function expectCleanSearch() {
+    await waitBy(By.id('se-default-search-categories'));
+    await waitByRemoved(By.id('se-search-results'));
+    await expectInputExactBy(By.id('se-search-input'), '');
+}
+
+// the first map marker of the search results of the given type
+async function findSearchMarker(type) {
+    return await enclose(
+        async () =>
+            await driver.executeScript(
+                `const layer = Object.values(window.__leafletMap._layers || {}).find(
+                    (l) => typeof l.getLatLng === 'function' && l.options?.web_type === arguments[0]
+                );
+                return layer ? { lat: layer.getLatLng().lat, lng: layer.getLatLng().lng } : null;`,
+                type
+            ),
+        { tag: 'findSearchMarker' }
+    );
+}
+
+// the search menu with the wiki places must be open
+async function openWikiPlace(id) {
+    await clickBy(By.id(id));
+    await waitBy(By.id('se-wpt-details'));
+    await waitBy(CLOSE_MENU_BUTTON);
 }
 
 async function openFavoriteFromGroup(groupName, wptName) {
