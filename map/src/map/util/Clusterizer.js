@@ -381,6 +381,34 @@ export function createSecondaryMarker(obj) {
     }).build();
 }
 
+function getMarkerTooltipState(map) {
+    if (map._markerTooltipState) return map._markerTooltipState;
+
+    const state = (map._markerTooltipState = { zooming: false, hovered: null, frame: null });
+    const cancelCheck = () => {
+        L.Util.cancelAnimFrame(state.frame);
+        state.frame = null;
+    };
+    map.on('zoomstart', () => {
+        cancelCheck();
+        state.zooming = true;
+    });
+    map.on('zoomend', () => {
+        cancelCheck();
+        // Keep hover locked until the browser has processed the final marker positions.
+        state.frame = L.Util.requestAnimFrame(() => {
+            state.frame = null;
+            state.zooming = false;
+            const hovered = state.hovered;
+            if (hovered && !hovered.marker.getElement()?.matches(':hover')) {
+                hovered.close();
+            }
+        });
+    });
+    map.once('unload', cancelCheck);
+    return state;
+}
+
 export function addMarkerTooltip({
     marker,
     setSelectedId = null,
@@ -393,13 +421,15 @@ export function addMarkerTooltip({
     type = null,
 }) {
     const tooltipRef = ctx.searchTooltipRef;
+    const state = getMarkerTooltipState(map);
 
-    if (!map._sharedZoomEndHandler) {
-        map._sharedZoomEndHandler = () => removeTooltip(map, ctx.searchTooltipRef);
-        map.on('zoomend', map._sharedZoomEndHandler);
+    function closeTooltip() {
+        removeTooltip(map, tooltipRef);
+        setSelectedId?.({ id: -1, show: false, type });
     }
 
     marker.on('mouseover', () => {
+        if (state.zooming || state.hovered?.marker === marker) return;
         removeTooltip(map, tooltipRef);
         const relatedResultIds = (marker.options.relatedResultIds ?? []).filter((id) => id != null);
         setSelectedId?.({
@@ -415,20 +445,30 @@ export function addMarkerTooltip({
             tooltipRef.current = createTooltip(Utils.truncateText(text, TOOLTIP_MAX_LENGTH), latlng, { offset });
             map.addLayer(tooltipRef.current);
         }
+        state.hovered = { marker, tooltip: tooltipRef.current, close: closeTooltip };
     });
 
     marker.on('mouseout', (event) => {
+        if (state.zooming || state.hovered?.marker !== marker) return;
         if (event.originalEvent) {
             if (!mainStyle && marker.options.selected) {
                 return;
             }
-            removeTooltip(map, tooltipRef);
-            setSelectedId?.({ id: -1, show: false, type });
+            closeTooltip();
+        }
+    });
+    marker.on('remove', () => {
+        if (!state.zooming && state.hovered?.marker === marker) {
+            closeTooltip();
         }
     });
 }
 
 export function removeTooltip(map, tooltipRef) {
+    const state = map._markerTooltipState;
+    if (state && state.hovered?.tooltip === tooltipRef.current) {
+        state.hovered = null;
+    }
     if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
         map.removeLayer(tooltipRef.current);
         tooltipRef.current = null;
