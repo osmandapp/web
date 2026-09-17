@@ -49,7 +49,7 @@ export function getMapCenter(mtx, hash) {
 const CENTRE_ICON_SIZE = 24;
 // wheelZoomRate of MapLibre: 450 px of wheel per zoom level
 const WHEEL_PX_PER_ZOOM = 450;
-const WHEEL_ZOOM_EASING = 0.3;
+const ZOOM_EASING = 0.3;
 
 const MAP_SPIN_COLOR = '#1976d2';
 
@@ -175,48 +175,12 @@ export default function MapStateLayer() {
         };
     }, []);
 
-    // Override map.zoomIn / map.zoomOut so zoom buttons use the visible-bbox center
-    useEffect(() => {
-        const origZoomIn = map.zoomIn.bind(map);
-        const origZoomOut = map.zoomOut.bind(map);
-
-        function visibleCenterPoint() {
-            const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10);
-            const center = calcVisibleCenterPx(map, infoBlockWidthPx);
-            return center ? L.point(center.x, center.y) : null;
-        }
-
-        map.zoomIn = (delta, options) => {
-            const pt = visibleCenterPoint();
-            const dz = delta ?? map.options.zoomDelta ?? 1;
-            if (pt) {
-                map.setZoomAround(pt, map.getZoom() + dz, options);
-            } else {
-                origZoomIn(delta, options);
-            }
-            return map;
-        };
-
-        map.zoomOut = (delta, options) => {
-            const pt = visibleCenterPoint();
-            const dz = delta ?? map.options.zoomDelta ?? 1;
-            if (pt) {
-                map.setZoomAround(pt, map.getZoom() - dz, options);
-            } else {
-                origZoomOut(delta, options);
-            }
-            return map;
-        };
-
-        return () => {
-            map.zoomIn = origZoomIn;
-            map.zoomOut = origZoomOut;
-        };
-    }, [ctx.infoBlockWidth]);
-
+    // Wheel and buttons share frame-by-frame zoom instead of CSS-scaling the MVT canvas.
     useEffect(() => {
         const container = map.getContainer();
         const originalStop = map._stop;
+        const originalZoomIn = map.zoomIn;
+        const originalZoomOut = map.zoomOut;
         let targetZoom = map.getZoom();
         let anchor = null;
         let anchorLatLng = null;
@@ -237,13 +201,13 @@ export default function MapStateLayer() {
                 map._moveEnd(true);
                 return;
             }
-            const next = zoom + (snappedTarget - zoom) * WHEEL_ZOOM_EASING;
+            const next = zoom + (snappedTarget - zoom) * ZOOM_EASING;
             frame = L.Util.requestAnimFrame(step);
             // pinch: zoom event without moveend, as Leaflet TouchZoom
             map._move(zoomAroundAnchor(next), next, { pinch: true });
         }
 
-        function stopWheelZoom() {
+        function stopZoom() {
             if (frame !== null) {
                 L.Util.cancelAnimFrame(frame);
                 frame = null;
@@ -256,16 +220,14 @@ export default function MapStateLayer() {
 
         // Leaflet stops here before setView, flyTo, dragging and touch zoom.
         map._stop = function () {
-            stopWheelZoom();
+            stopZoom();
             return originalStop.call(this);
         };
 
-        function onWheel(event) {
-            L.DomEvent.stop(event);
+        function zoomBy(delta, nextAnchor) {
             if (map._animatingZoom) {
                 return;
             }
-            const nextAnchor = map.mouseEventToContainerPoint(event);
             if (frame === null) {
                 anchorLatLng = map.containerPointToLatLng(nextAnchor);
             } else if (!nextAnchor.equals(anchor)) {
@@ -276,10 +238,8 @@ export default function MapStateLayer() {
             if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
                 targetZoom = map.getZoom();
             }
-            // getWheelDelta divides deltaY by 3 on Mac
-            const delta = event.deltaMode === 0 ? -event.deltaY : L.DomEvent.getWheelDelta(event);
             // Preserve sub-snap deltas between wheel events, including after an animation finishes.
-            targetZoom = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), targetZoom + delta / WHEEL_PX_PER_ZOOM));
+            targetZoom = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), targetZoom + delta));
             if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
                 originalStop.call(map);
                 frame = L.Util.requestAnimFrame(step);
@@ -287,14 +247,36 @@ export default function MapStateLayer() {
             }
         }
 
+        function onWheel(event) {
+            L.DomEvent.stop(event);
+            // getWheelDelta divides deltaY by 3 on Mac
+            const delta = event.deltaMode === 0 ? -event.deltaY : L.DomEvent.getWheelDelta(event);
+            zoomBy(delta / WHEEL_PX_PER_ZOOM, map.mouseEventToContainerPoint(event));
+        }
+
+        function zoomFromButton(delta, options) {
+            const center = calcVisibleCenterPx(map, Number.parseInt(String(ctx.infoBlockWidth), 10));
+            const point = center ? L.point(center.x, center.y) : map.getSize().divideBy(2);
+            if (options?.animate === false) {
+                map.setZoomAround(point, map.getZoom() + delta, options);
+            } else {
+                zoomBy(delta, point);
+            }
+            return map;
+        }
+
+        map.zoomIn = (delta, options) => zoomFromButton(delta ?? map.options.zoomDelta ?? 1, options);
+        map.zoomOut = (delta, options) => zoomFromButton(-(delta ?? map.options.zoomDelta ?? 1), options);
         L.DomEvent.on(container, 'wheel', onWheel);
 
         return () => {
             L.DomEvent.off(container, 'wheel', onWheel);
             map._stop = originalStop;
-            stopWheelZoom();
+            map.zoomIn = originalZoomIn;
+            map.zoomOut = originalZoomOut;
+            stopZoom();
         };
-    }, [map]);
+    }, [map, ctx.infoBlockWidth]);
 
     // Central zoom-to-fit handler driven by useZoomToFit.
     useEffect(() => {
