@@ -227,7 +227,7 @@ const canPlaceMarker = ({ place, existingPlaces, minDistance, isFav = false }) =
 
 function clusterPlaces(places, zoom, isFavorites) {
     const clustered = {};
-    let shift = 1;
+    const shift = 31 - (Math.floor(zoom) + 1);
 
     for (const place of places) {
         if (!place) {
@@ -240,7 +240,7 @@ function clusterPlaces(places, zoom, isFavorites) {
             ((1 - Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) / Math.PI) / 2) *
                 (1 << 31)
         );
-        const key = ((x31 >> (31 - (zoom + shift))) & 0xffff) | (((y31 >> (31 - (zoom + shift))) & 0xffff) << 16);
+        const key = ((x31 >> shift) & 0xffff) | (((y31 >> shift) & 0xffff) << 16);
 
         if (!clustered[key]) {
             clustered[key] = [];

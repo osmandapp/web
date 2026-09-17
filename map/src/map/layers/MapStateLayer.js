@@ -216,6 +216,7 @@ export default function MapStateLayer() {
 
     useEffect(() => {
         const container = map.getContainer();
+        const originalStop = map._stop;
         let targetZoom = map.getZoom();
         let anchor = null;
         let frame = null;
@@ -229,18 +230,36 @@ export default function MapStateLayer() {
 
         function step() {
             const zoom = map.getZoom();
-            if (Math.abs(targetZoom - zoom) < 0.005) {
+            const snappedTarget = map._limitZoom(targetZoom);
+            if (Math.abs(snappedTarget - zoom) < 0.005) {
                 frame = null;
                 // no setView: its viewreset drops the GridLayer tiles
-                map._move(zoomAroundAnchor(targetZoom), targetZoom);
+                map._move(zoomAroundAnchor(snappedTarget), snappedTarget);
                 map._moveEnd(true);
                 return;
             }
-            const next = zoom + (targetZoom - zoom) * WHEEL_ZOOM_EASING;
+            const next = zoom + (snappedTarget - zoom) * WHEEL_ZOOM_EASING;
+            frame = L.Util.requestAnimFrame(step);
             // pinch: zoom event without moveend, as Leaflet TouchZoom
             map._move(zoomAroundAnchor(next), next, { pinch: true, round: false });
-            frame = L.Util.requestAnimFrame(step);
         }
+
+        function stopWheelZoom() {
+            if (frame !== null) {
+                L.Util.cancelAnimFrame(frame);
+                frame = null;
+                const zoom = map._limitZoom(map.getZoom());
+                map._move(zoomAroundAnchor(zoom), zoom);
+                map._moveEnd(true);
+            }
+            targetZoom = map.getZoom();
+        }
+
+        // Leaflet stops here before setView, flyTo, dragging and touch zoom.
+        map._stop = function () {
+            stopWheelZoom();
+            return originalStop.call(this);
+        };
 
         function onWheel(event) {
             L.DomEvent.stop(event);
@@ -248,16 +267,17 @@ export default function MapStateLayer() {
                 return;
             }
             anchor = map.mouseEventToContainerPoint(event);
-            if (frame === null) {
+            if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
                 targetZoom = map.getZoom();
             }
             // getWheelDelta divides deltaY by 3 on Mac
             const delta = event.deltaMode === 0 ? -event.deltaY : L.DomEvent.getWheelDelta(event);
-            targetZoom = map._limitZoom(targetZoom + delta / WHEEL_PX_PER_ZOOM);
-            if (frame === null && targetZoom !== map.getZoom()) {
-                map._stop();
-                map._moveStart(true, false);
+            // Preserve sub-snap deltas between wheel events, including after an animation finishes.
+            targetZoom = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), targetZoom + delta / WHEEL_PX_PER_ZOOM));
+            if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
+                originalStop.call(map);
                 frame = L.Util.requestAnimFrame(step);
+                map._moveStart(true, false);
             }
         }
 
@@ -265,10 +285,8 @@ export default function MapStateLayer() {
 
         return () => {
             L.DomEvent.off(container, 'wheel', onWheel);
-            if (frame !== null) {
-                L.Util.cancelAnimFrame(frame);
-                map._moveEnd(true);
-            }
+            map._stop = originalStop;
+            stopWheelZoom();
         };
     }, [map]);
 
