@@ -70,6 +70,16 @@ input[type=range] { width: 100%; }
 .review textarea { font: inherit; width: 100%; min-height: 48px; border: 1px solid var(--rule); border-radius: 4px; padding: 4px 6px; }
 .cellpop .tracksHere { margin-top: 6px; }
 .mapToggle { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; font: 500 .78rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; cursor: pointer; }
+.mapButtons { display: flex; gap: 8px; align-items: stretch; }
+.mapButtons .mapToggle { padding: 7px 12px; font-size: .92rem; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+.mapButtons .feedbackBtn { background: var(--accent); color: #fff; border-color: var(--accent); }
+.mapButtons .feedbackBtn:hover { background: #8f4400; }
+.feedback { width: min(480px, calc(100vw - 32px)); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; color: var(--ink); background: var(--surface); }
+.feedback::backdrop { background: rgba(22,32,27,.35); }
+.feedback form { display: grid; gap: 10px; }
+.feedback h2 { font-size: 1rem; margin: 0; }
+.feedback textarea, .feedback input[type=email] { font: inherit; width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; }
+.feedback textarea { min-height: 120px; resize: vertical; }
 @media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } }
 </style>
 </head>
@@ -157,6 +167,15 @@ input[type=range] { width: 100%; }
 </aside>
 <div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div></div>
 </div>
+<dialog id="fbDialog" class="feedback">
+  <form id="fbForm">
+    <h2>Give us your feedback</h2>
+    <div class="hint">What is wrong, missing or confusing on this page? The current map view and filter are sent with your message.</div>
+    <textarea id="fbText" maxlength="5000" required placeholder="Your feedback" aria-label="Feedback"></textarea>
+    <label>E-mail, optional, if you want an answer <input id="fbEmail" type="email" maxlength="200" autocomplete="email"></label>
+    <div class="row"><button type="submit" id="fbSend">Send</button><button type="button" id="fbCancel">Cancel</button><span id="fbStatus" class="hint"></span></div>
+  </form>
+</dialog>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/pmtiles@4.5.0/dist/pmtiles.js"></script>
 <script>
@@ -1116,25 +1135,68 @@ $('lineRow').hidden = $('style').value === 'cells';
 heat.setOpacity(+$('opacity').value);
 $('opacity').addEventListener('input', (e) => { heat.setOpacity(+e.target.value); savePrefs(); });
 $('basemap').addEventListener('change', () => { applyBasemap(); savePrefs(); });
-// one click between the grey and the colour map, without opening Display
-const MapToggle = L.Control.extend({
+// one click between the grey and the colour map, without opening Display, and the feedback button next to it
+const MapButtons = L.Control.extend({
   options: { position: 'topright' },
   onAdd() {
-    const b = L.DomUtil.create('button', 'mapToggle');
-    b.type = 'button';
-    b.title = 'Switch between the grey and the colour map';
-    const label = () => { b.textContent = $('basemap').value === 'colour' ? 'Grey map' : 'Colour map'; };
+    const box = L.DomUtil.create('div', 'mapButtons');
+    L.DomEvent.disableClickPropagation(box);
+    const toggle = L.DomUtil.create('button', 'mapToggle', box);
+    toggle.type = 'button';
+    toggle.title = 'Switch between the grey and the colour map';
+    const label = () => { toggle.textContent = $('basemap').value === 'colour' ? 'Grey map' : 'Colour map'; };
     label();
-    L.DomEvent.disableClickPropagation(b);
-    b.addEventListener('click', () => {
+    toggle.addEventListener('click', () => {
       $('basemap').value = $('basemap').value === 'colour' ? 'grey' : 'colour';
       $('basemap').dispatchEvent(new Event('change'));
     });
     $('basemap').addEventListener('change', label);
-    return b;
+    const feedback = L.DomUtil.create('button', 'mapToggle feedbackBtn', box);
+    feedback.type = 'button';
+    feedback.textContent = 'Give us your feedback';
+    feedback.addEventListener('click', openFeedback);
+    return box;
   },
 });
-new MapToggle().addTo(map);
+new MapButtons().addTo(map);
+
+// ---------- feedback: a free-form message with the map view and the filter it was written at, saved through /api/pubtracks/feedback
+function openFeedback() {
+  $('fbStatus').textContent = '';
+  $('fbDialog').showModal();
+}
+
+function filterSnapshot() {
+  if (!meta) return null;
+  const s = selected();
+  const f = { activities: meta.acts.filter((a, i) => s.act[i]).map((a) => a.key), from: monthLabel(s.from), to: monthLabel(s.to), undated: s.undated,
+    minTracks: Math.max(1, +$('minTracks').value || 1) };
+  if (COMBO) f.folders = meta.folders.filter((fo, i) => s.fold[i]).map((fo) => fo.path);
+  return f;
+}
+
+$('fbCancel').addEventListener('click', () => $('fbDialog').close());
+$('fbForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const text = $('fbText').value.trim();
+  if (!text) return;
+  const c = map.getCenter();
+  const body = { text, email: $('fbEmail').value.trim(), url: location.href,
+    view: { zoom: map.getZoom(), lat: +c.lat.toFixed(5), lon: +c.lng.toFixed(5) }, filters: filterSnapshot() };
+  $('fbSend').disabled = true;
+  $('fbStatus').textContent = 'Sending…';
+  try {
+    const res = await fetch(`${API}/api/pubtracks/feedback`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body) });
+    if (!res.ok) throw new Error(res.status === 429 ? 'too many messages from your address today' : `HTTP ${res.status}`);
+    $('fbText').value = '';
+    $('fbStatus').textContent = 'Sent, thank you!';
+  } catch (err) {
+    $('fbStatus').textContent = `Not sent: ${err.message}`;
+  } finally {
+    $('fbSend').disabled = false;
+  }
+});
 $('palette').addEventListener('change', () => { setPalette($('palette').value); repaint(); savePrefs(); });
 $('scaleMode').addEventListener('change', () => { repaint(); savePrefs(); });
 $('style').addEventListener('change', () => { $('lineRow').hidden = $('style').value === 'cells'; $('mergeRow').hidden = $('style').value !== 'vector'; heat.redraw(); updateLegend(); savePrefs(); });
