@@ -22,10 +22,8 @@ const CustomTileLayer = forwardRef((props, ref) => {
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);
     const renderingTypeRef = useRef(mtx.renderingType);
-    const zoomLevelRef = useRef(map.getZoom());
 
     const tileLayerCache = useRef(new Map());
-    const tileOnMapCache = useRef(new Set());
 
     useImperativeHandle(ref, () => ({
         getLeafletLayer: () => rasterTileLayerRef.current,
@@ -34,27 +32,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
     useEffect(() => {
         renderingTypeRef.current = mtx.renderingType;
     }, [mtx.renderingType]);
-
-    useEffect(() => {
-        const handleZoomEnd = () => {
-            const currentZoom = map.getZoom();
-            if (zoomLevelRef.current !== currentZoom) {
-                zoomLevelRef.current = currentZoom;
-            }
-        };
-
-        const handleZoomStart = () => {
-            tileOnMapCache.current.clear();
-        };
-
-        map.on('zoomstart', handleZoomStart);
-        map.on('zoomend', handleZoomEnd);
-
-        return () => {
-            map.off('zoomstart', handleZoomStart);
-            map.off('zoomend', handleZoomEnd);
-        };
-    }, [map]);
 
     function generateTileKey(z, x, y) {
         return `${z}-${x}-${y}`;
@@ -301,12 +278,8 @@ const CustomTileLayer = forwardRef((props, ref) => {
         return `#${red}${green}${blue}${alpha}`;
     }
 
-    function addGeoJsonLayer(geoJsonData, z, x, y) {
-        const key = generateTileKey(z, x, y);
-        if (!geoJsonData) {
-            return null;
-        }
-        const newLayer = L.geoJson(geoJsonData, {
+    function createGeoJsonLayer(geoJsonData) {
+        return L.geoJson(geoJsonData, {
             pointToLayer: function (feature, latlng) {
                 const layers = [];
 
@@ -328,11 +301,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
                 return L.layerGroup(layers);
             },
         });
-        if (zoomLevelRef.current === z) {
-            newLayer.addTo(map);
-        }
-        tileLayerCache.current.set(key, newLayer);
-        return newLayer;
     }
 
     function createShieldLayerGroup(feature, latlng) {
@@ -365,7 +333,6 @@ const CustomTileLayer = forwardRef((props, ref) => {
 
     useEffect(() => {
         tileLayerCache.current.clear();
-        tileOnMapCache.current.clear();
         if (dataLayersRef.current?.layers?.length > 0) {
             removeDataLayers(dataLayersRef.current.layers);
         }
@@ -388,70 +355,84 @@ const CustomTileLayer = forwardRef((props, ref) => {
             }
         }
 
-        const tileChanged =
-            dataLayersRef.current && dataLayersRef.current.rasterTileLayer !== rasterTileLayerRef.current;
-        const noDataLayers = !renderingTypeRef.current && dataLayersRef?.current?.layers.length > 0;
-
-        //if raster tile changed or no data layers, remove data layers
-        if (tileChanged || noDataLayers) {
-            removeDataLayers(dataLayersRef.current.layers);
-            dataLayersRef.current = { layers: [] };
-        }
+        const rasterLayer = rasterTileLayerRef.current;
+        const loadingTiles = new Set();
+        let disposed = false;
+        let zooming = false;
 
         const handleZoomStart = () => {
-            if (dataLayersRef.current) {
-                removeDataLayers(dataLayersRef.current.layers);
-                dataLayersRef.current = { layers: [] };
+            zooming = true;
+            removeDataLayers(dataLayersRef.current.layers);
+            dataLayersRef.current = { layers: [] };
+        };
+
+        function addDataLayer(coords, layer) {
+            const tile = rasterLayer._tiles[rasterLayer._tileCoordsToKey(coords)];
+            if (
+                disposed ||
+                zooming ||
+                coords.z !== rasterLayer._tileZoom ||
+                !tile?.current ||
+                !map.hasLayer(rasterLayer) ||
+                renderingTypeRef.current !== DYNAMIC_RENDERING ||
+                map.hasLayer(layer)
+            ) {
+                return;
+            }
+            layer.addTo(map);
+            dataLayersRef.current.layers.push(layer);
+        }
+
+        const handleTileLoad = async ({ coords }) => {
+            if (disposed || mtx.tileURL.infoUrl === undefined || renderingTypeRef.current !== DYNAMIC_RENDERING) return;
+
+            const { z, x, y } = coords;
+            const key = generateTileKey(z, x, y);
+
+            if (tileLayerCache.current.has(key)) {
+                addDataLayer(coords, tileLayerCache.current.get(key));
+                return;
+            }
+            if (loadingTiles.has(key)) return;
+            loadingTiles.add(key);
+
+            try {
+                const geoJsonUrl = mtx.tileURL.infoUrl.replace('{z}', z).replace('{x}', x).replace('{y}', y);
+                const response = await apiGet(geoJsonUrl, { apiCache: true });
+                if (!response.ok || disposed) return;
+                const geoJsonData = await response.json();
+                const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);
+                if (!disposed && preparedGeoJsonData) {
+                    const layer = createGeoJsonLayer(preparedGeoJsonData);
+                    tileLayerCache.current.set(key, layer);
+                    addDataLayer(coords, layer);
+                }
+            } finally {
+                loadingTiles.delete(key);
             }
         };
 
-        const handleTileLoad = async (e) => {
-            if (mtx.tileURL.infoUrl === undefined || !renderingTypeRef.current) return;
-
-            const { z, x, y } = e.coords;
-            const key = generateTileKey(z, x, y);
-
-            // check if tile is already on map
-            if (tileOnMapCache.current.has(key)) {
-                return;
-            }
-            tileOnMapCache.current.add(key);
-
-            // check if tile data is already in cache
-            if (tileLayerCache.current.has(key)) {
-                const cachedLayer = tileLayerCache.current.get(key);
-                cachedLayer.addTo(map);
-                dataLayersRef.current.layers.push(cachedLayer);
-                dataLayersRef.current.rasterTileLayer = rasterTileLayerRef.current;
-                return;
-            }
-
-            const geoJsonUrl = mtx.tileURL.infoUrl.replace('{z}', z).replace('{x}', x).replace('{y}', y);
-            const response = await apiGet(geoJsonUrl, {
-                apiCache: true,
-            });
-            if (response.ok) {
-                const geoJsonData = await response.json();
-                const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);
-                if (preparedGeoJsonData && renderingTypeRef.current === DYNAMIC_RENDERING) {
-                    if (!dataLayersRef.current) {
-                        dataLayersRef.current = {
-                            layers: [],
-                        };
-                    }
-                    dataLayersRef.current.layers.push(addGeoJsonLayer(preparedGeoJsonData, z, x, y));
-                    dataLayersRef.current.rasterTileLayer = rasterTileLayerRef.current;
+        const restoreDataLayers = () => {
+            zooming = false;
+            // Reused raster tiles do not emit tileload after a fractional zoom.
+            Object.values(rasterLayer._tiles).forEach((tile) => {
+                if (tile.current && tile.loaded && tile.coords.z === rasterLayer._tileZoom) {
+                    handleTileLoad(tile);
                 }
-            }
+            });
         };
 
         map.on('zoomstart', handleZoomStart);
-        rasterTileLayerRef.current.on('tileload', handleTileLoad);
+        map.on('zoomend moveend', restoreDataLayers);
+        rasterLayer.on('tileload', handleTileLoad);
         map.on('click', onMapClick);
+        restoreDataLayers();
 
         return () => {
+            disposed = true;
             map.off('zoomstart', handleZoomStart);
-            rasterTileLayerRef.current?.off('tileload', handleTileLoad);
+            map.off('zoomend moveend', restoreDataLayers);
+            rasterLayer.off('tileload', handleTileLoad);
             map.off('click', onMapClick);
         };
     }, [mtx.tileURL.url, mtx.tileURL.infoUrl, props, mtx.renderingType]);
