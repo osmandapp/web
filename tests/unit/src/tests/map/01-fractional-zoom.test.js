@@ -85,7 +85,7 @@ afterEach(() => {
     L.Browser.any3d = any3d;
 });
 
-function mountLayers({ raster = false } = {}) {
+function mountLayers({ raster = false, infoBlockWidth = 0 } = {}) {
     const context = {
         setVisibleBboxInfo: jest.fn(),
         renderingType: DYNAMIC_RENDERING,
@@ -95,7 +95,7 @@ function mountLayers({ raster = false } = {}) {
         root.render(
             React.createElement(
                 AppContext.Provider,
-                { value: { infoBlockWidth: 0 } },
+                { value: { infoBlockWidth } },
                 React.createElement(
                     MapContext.Provider,
                     { value: context },
@@ -171,6 +171,103 @@ describe('fractional wheel zoom', () => {
 
         expect(map.getZoom()).toBe(15);
         expect(map.getCenter().equals([1, 1])).toBe(true);
+    });
+});
+
+describe('zoom button animation regression (89f4884fe)', () => {
+    // Baseline: 344d7c96a (89f4884fe^). Exercise the existing ZoomControl API;
+    // the old implementation emits zoomanim and CSS-scales the MVT canvas.
+    beforeEach(() => {
+        jest.useFakeTimers();
+        map.setView([50.4501, 30.5234], 13.65);
+        // Enable Leaflet's real CSS animation path despite the default test setup.
+        map.options.zoomAnimation = true;
+        map._zoomAnimated = true;
+        map._createAnimProxy();
+        L.control.zoom({ position: 'bottomright' }).addTo(map);
+        mountLayers({ infoBlockWidth: 320 });
+    });
+
+    afterEach(() => {
+        jest.clearAllTimers();
+        jest.useRealTimers();
+    });
+
+    function clickZoom(direction) {
+        act(() => {
+            container
+                .querySelector(`.leaflet-control-zoom-${direction}`)
+                .dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+        });
+    }
+
+    async function advanceButtonFrame() {
+        nextFrame();
+        // Leaflet's bundled code captures its own RAF, bypassing the L.Util spy.
+        // Wait for that frame too, so the pre-fix CSS animation actually starts.
+        await act(async () => {
+            await new Promise((resolve) => {
+                L.Util.requestFn.call(window, resolve);
+                // Also support Leaflet's setTimeout fallback for RAF.
+                jest.advanceTimersByTime(20);
+            });
+        });
+    }
+
+    test.each([
+        ['in', 1],
+        ['out', -1],
+    ])('zoom %s changes the view over multiple frames without CSS zoom animation', async (direction, delta) => {
+        const initialZoom = map.getZoom();
+        // 800x600 viewport, 64px menu + 320px info block on the left, 60px header.
+        const anchor = L.point(592, 330);
+        const anchorLatLng = map.containerPointToLatLng(anchor);
+        const zoomanim = jest.fn();
+        const zoomend = jest.fn();
+        const viewreset = jest.fn();
+        const zooms = [];
+        map.on({ zoomanim, zoomend, viewreset, zoom: () => zooms.push(map.getZoom()) });
+
+        function expectAnchor() {
+            const position = map.project(anchorLatLng).subtract(map.project(map.getCenter())).add([400, 300]);
+            expect(position.x).toBeCloseTo(anchor.x, 6);
+            expect(position.y).toBeCloseTo(anchor.y, 6);
+        }
+
+        clickZoom(direction);
+        expect(map.getZoom()).toBe(initialZoom);
+        await advanceButtonFrame();
+
+        expect(zoomanim).not.toHaveBeenCalled();
+        expect((map.getZoom() - initialZoom) * delta).toBeGreaterThan(0);
+        expect((map.getZoom() - initialZoom) * delta).toBeLessThan(1);
+        expectAnchor();
+        finishZoom(expectAnchor);
+
+        expect(map.getZoom()).toBeCloseTo(initialZoom + delta);
+        expect(zooms.length).toBeGreaterThan(1);
+        expect(zoomanim).not.toHaveBeenCalled();
+        expect(zoomend).toHaveBeenCalledTimes(1);
+        expect(viewreset).not.toHaveBeenCalled();
+    });
+
+    test.each([
+        ['in', 1],
+        ['out', -1],
+    ])('a second zoom %s click during animation adds another full level', async (direction, delta) => {
+        const initialZoom = map.getZoom();
+        const zoomanim = jest.fn();
+        const zoomend = jest.fn();
+        map.on({ zoomanim, zoomend });
+
+        clickZoom(direction);
+        await advanceButtonFrame();
+        clickZoom(direction);
+        finishZoom();
+
+        expect(map.getZoom()).toBeCloseTo(initialZoom + 2 * delta);
+        expect(zoomanim).not.toHaveBeenCalled();
+        expect(zoomend).toHaveBeenCalledTimes(1);
     });
 });
 
