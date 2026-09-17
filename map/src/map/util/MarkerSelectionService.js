@@ -31,7 +31,7 @@ export function getSelectedMarkerHideRadiusM(zoom) {
         return SELECTED_MARKER_HIDE_MIN_RADIUS_M;
     }
     const d = SELECTED_MARKER_HIDE_MAX_ZOOM - zoom;
-    return SELECTED_MARKER_HIDE_RADIUS_COEFF * d * d;
+    return Math.max(SELECTED_MARKER_HIDE_MIN_RADIUS_M, SELECTED_MARKER_HIDE_RADIUS_COEFF * d * d);
 }
 
 function collectMarkerLayers(layerOrGroup, out = []) {
