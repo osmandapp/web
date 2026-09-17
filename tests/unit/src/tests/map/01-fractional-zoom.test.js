@@ -7,7 +7,8 @@ import MapContext from '@map/context/MapContext';
 import MapStateLayer from '@map/map/layers/MapStateLayer';
 import CustomTileLayer from '@map/map/layers/CustomTileLayer';
 import { createPoiLayer } from '@map/map/layers/PoiLayer';
-import { clusterMarkers } from '@map/map/util/Clusterizer';
+import { addMarkerTooltip, clusterMarkers } from '@map/map/util/Clusterizer';
+import { createTooltip } from '@map/map/util/MapManager';
 import { getSelectedMarkerHideRadiusM } from '@map/map/util/MarkerSelectionService';
 import { DEFAULT_POI_ICON } from '@map/manager/PoiManager';
 import { FINAL_POI_ICON_NAME, POI_ELO, POI_ID, POI_NAME } from '@map/infoblock/components/wpt/WptTagsProvider';
@@ -268,6 +269,125 @@ describe('zoom button animation regression (89f4884fe)', () => {
         expect(map.getZoom()).toBeCloseTo(initialZoom + 2 * delta);
         expect(zoomanim).not.toHaveBeenCalled();
         expect(zoomend).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('POI tooltip zoom regression (3e5a98110)', () => {
+    // Baseline: 11732bdcc (3e5a98110^). Use the existing addMarkerTooltip API:
+    // the old handlers remove/recreate the tooltip on hover and close it on zoomend.
+    let tooltipRef;
+    let setSelectedId;
+    let hoveredMarker;
+    let tooltipopen;
+    let tooltipclose;
+
+    beforeEach(() => {
+        // MapManager is stubbed by Jest; use real Leaflet tooltip layers for these tests.
+        createTooltip.mockImplementation((text, latlng, options) =>
+            L.tooltip({ permanent: true, direction: 'bottom', ...options })
+                .setContent(text)
+                .setLatLng(latlng)
+        );
+        tooltipRef = { current: null };
+        setSelectedId = jest.fn();
+        hoveredMarker = null;
+        tooltipopen = jest.fn();
+        tooltipclose = jest.fn();
+        map.on({ tooltipopen, tooltipclose });
+    });
+
+    afterEach(() => createTooltip.mockReset());
+
+    function addPoi(id, latlng = [0, 0]) {
+        const marker = L.marker(latlng, { icon: L.divIcon(), idObj: id }).addTo(map);
+        const element = marker.getElement();
+        const matches = element.matches.bind(element);
+        // jsdom cannot hit-test the cursor against moving marker elements.
+        jest.spyOn(element, 'matches').mockImplementation((selector) =>
+            selector === ':hover' ? hoveredMarker === marker : matches(selector)
+        );
+        addMarkerTooltip({ marker, text: id, latlng, map, ctx: { searchTooltipRef: tooltipRef }, setSelectedId });
+        return marker;
+    }
+
+    function enter(marker) {
+        hoveredMarker = marker;
+        marker.fire('mouseover', { originalEvent: new MouseEvent('mouseover') });
+    }
+
+    function leave(marker) {
+        hoveredMarker = null;
+        marker.fire('mouseout', { originalEvent: new MouseEvent('mouseout') });
+    }
+
+    function expectTooltipUnchanged(tooltip) {
+        expect(tooltipRef.current).toBe(tooltip);
+        expect(map.hasLayer(tooltip)).toBe(true);
+        expect(tooltip.getElement().isConnected).toBe(true);
+        expect(tooltipopen).toHaveBeenCalledTimes(1);
+        expect(tooltipclose).not.toHaveBeenCalled();
+        expect(setSelectedId).toHaveBeenCalledTimes(1);
+    }
+
+    test('hover events during zoom keep the same tooltip without switching to another POI', () => {
+        const owner = addPoi('POI 1');
+        const other = addPoi('POI 2', [0.001, 0.001]);
+        enter(owner);
+        const tooltip = tooltipRef.current;
+
+        map.fire('zoomstart');
+        for (let i = 0; i < 3; i++) {
+            leave(owner);
+            expectTooltipUnchanged(tooltip);
+            enter(other);
+            expectTooltipUnchanged(tooltip);
+            leave(other);
+            enter(owner);
+            expectTooltipUnchanged(tooltip);
+        }
+        map.fire('zoomend');
+        nextFrame();
+        expectTooltipUnchanged(tooltip);
+
+        // Normal hover switching must resume after the animation.
+        leave(owner);
+        enter(other);
+        expect(map.hasLayer(tooltip)).toBe(false);
+        expect(tooltipRef.current.getContent()).toBe('POI 2');
+        expect(tooltipopen).toHaveBeenCalledTimes(2);
+        expect(tooltipclose).toHaveBeenCalledTimes(1);
+    });
+
+    test('zoomend keeps the tooltip when the cursor is still over its marker', () => {
+        enter(addPoi('POI 1'));
+        const tooltip = tooltipRef.current;
+
+        map.fire('zoomstart');
+        map.fire('zoomend');
+        nextFrame();
+
+        expectTooltipUnchanged(tooltip);
+    });
+
+    test('leaving the marker during zoom closes its tooltip only after the final frame', () => {
+        const owner = addPoi('POI 1');
+        enter(owner);
+        const tooltip = tooltipRef.current;
+
+        map.fire('zoomstart');
+        leave(owner);
+        expectTooltipUnchanged(tooltip);
+        map.fire('zoomend');
+        expectTooltipUnchanged(tooltip);
+        nextFrame();
+
+        expect(tooltipRef.current).toBeNull();
+        expect(map.hasLayer(tooltip)).toBe(false);
+        expect(tooltip.getElement().isConnected).toBe(false);
+        expect(tooltipopen).toHaveBeenCalledTimes(1);
+        expect(tooltipclose).toHaveBeenCalledTimes(1);
+        expect(setSelectedId).toHaveBeenCalledTimes(2);
+        expect(setSelectedId).toHaveBeenLastCalledWith({ id: -1, show: false, type: null });
     });
 });
 
