@@ -219,13 +219,12 @@ export default function MapStateLayer() {
         const originalStop = map._stop;
         let targetZoom = map.getZoom();
         let anchor = null;
+        let anchorLatLng = null;
         let frame = null;
 
         function zoomAroundAnchor(zoom) {
-            const viewHalf = map.getSize().divideBy(2);
-            const centerOffset = anchor.subtract(viewHalf).multiplyBy(1 - 1 / map.getZoomScale(zoom));
-
-            return map.containerPointToLatLng(viewHalf.add(centerOffset));
+            const offset = anchor.subtract(map.getSize().divideBy(2));
+            return map.unproject(map.project(anchorLatLng, zoom).subtract(offset), zoom);
         }
 
         function step() {
@@ -241,7 +240,7 @@ export default function MapStateLayer() {
             const next = zoom + (snappedTarget - zoom) * WHEEL_ZOOM_EASING;
             frame = L.Util.requestAnimFrame(step);
             // pinch: zoom event without moveend, as Leaflet TouchZoom
-            map._move(zoomAroundAnchor(next), next, { pinch: true, round: false });
+            map._move(zoomAroundAnchor(next), next, { pinch: true });
         }
 
         function stopWheelZoom() {
@@ -266,7 +265,14 @@ export default function MapStateLayer() {
             if (map._animatingZoom) {
                 return;
             }
-            anchor = map.mouseEventToContainerPoint(event);
+            const nextAnchor = map.mouseEventToContainerPoint(event);
+            if (frame === null) {
+                anchorLatLng = map.containerPointToLatLng(nextAnchor);
+            } else if (!nextAnchor.equals(anchor)) {
+                anchorLatLng = map.unproject(map.project(anchorLatLng).add(nextAnchor.subtract(anchor)));
+            }
+            // Keep the geographic anchor between frames instead of feeding rounded pixel origins back into the center.
+            anchor = nextAnchor;
             if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
                 targetZoom = map.getZoom();
             }

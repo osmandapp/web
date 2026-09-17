@@ -6,6 +6,7 @@ import { apiGet } from '../../util/HttpApi';
 import { findFeatureGroupById, bindTooltipToMarker, createTooltip, TOOLTIP_MAX_LENGTH } from '../util/MapManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import L from 'leaflet';
+import { SubpixelMarker } from '../markers/SubpixelMarker';
 import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
 import { clusterMarkers, removeTooltip } from '../util/Clusterizer';
 import Utils from '../../util/Utils';
@@ -117,7 +118,7 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick, c
             const coord = stop.geometry.coordinates;
             const stopName = stop.properties.name;
 
-            const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
+            const marker = new SubpixelMarker(new L.LatLng(coord[1], coord[0]), {
                 ...stop.properties,
                 idObj: stop.properties.id,
                 name: stopName,
