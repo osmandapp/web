@@ -362,7 +362,7 @@ export default function PoiLayer() {
                 locale: i18n.language,
                 lat: center.lat,
                 lon: center.lng,
-                zoom: map.getZoom(),
+                zoom: Math.round(map.getZoom()),
                 ...getCurrentTimeParams(),
             },
             apiCache: true,

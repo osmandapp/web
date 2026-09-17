@@ -4,7 +4,7 @@ import AppContext from '../context/AppContext';
 import MapContext from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
-import 'leaflet-hash';
+import { createMapHash, formatMapHash } from './util/mapHash';
 import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
@@ -73,9 +73,9 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
         if (map) {
             if (getPinPointFromUrl()) {
                 // leaflet-hash and detectGeoByIp read the hash right here, the view is already set by the pin
-                window.history.replaceState(window.history.state, '', L.Hash.formatHash(map));
+                window.history.replaceState(window.history.state, '', formatMapHash(map));
             }
-            const hash = new L.Hash(map);
+            const hash = createMapHash(map);
 
             window.__leafletMap = map;
             window.__leafletHash = hash;
@@ -211,6 +211,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 center={initialView.center}
                 minZoom={2}
                 maxZoom={20}
+                zoomSnap={0.01}
+                scrollWheelZoom={false}
                 worldCopyJump={true}
                 zoomControl={false}
                 whenReady={whenReadyHandler}
@@ -240,6 +242,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                     minZoom={2}
                     maxZoom={20}
                     maxNativeZoom={19}
+                    updateWhenZooming={false}
                 />
                 <MvtDemoLayer />
                 <MvtOsmLayer />
