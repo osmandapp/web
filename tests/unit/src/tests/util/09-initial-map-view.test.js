@@ -31,6 +31,10 @@ test('the pin defines the center, the hash only the zoom', () => {
     openUrl('', hashView);
     expectView([50.4584, 30.531], 12);
 
+    // the wheel zoom is fractional, the hash keeps it to hundredths
+    openUrl('', '#13.65/50.4584/30.5310');
+    expectView([50.4584, 30.531], 13.65);
+
     openUrl('');
     expectView(initialPosition, initialZoom);
 });
