@@ -6,14 +6,19 @@ import AppContext from '@map/context/AppContext';
 import MapContext from '@map/context/MapContext';
 import MapStateLayer from '@map/map/layers/MapStateLayer';
 import CustomTileLayer from '@map/map/layers/CustomTileLayer';
+import { createPoiLayer } from '@map/map/layers/PoiLayer';
 import { clusterMarkers } from '@map/map/util/Clusterizer';
 import { getSelectedMarkerHideRadiusM } from '@map/map/util/MarkerSelectionService';
+import { DEFAULT_POI_ICON } from '@map/manager/PoiManager';
+import { FINAL_POI_ICON_NAME, POI_ELO, POI_ID, POI_NAME } from '@map/infoblock/components/wpt/WptTagsProvider';
 import { DYNAMIC_RENDERING } from '@map/menu/configuremap/ConfigureMap';
 import { apiGet } from '@map/util/HttpApi';
 
 jest.mock('react-leaflet', () => ({ useMap: jest.fn() }));
 jest.mock('react-router-dom', () => ({ useLocation: () => ({ pathname: '/map' }) }));
 jest.mock('leaflet.vectorgrid', () => ({}));
+jest.mock('leaflet-spin', () => ({}));
+jest.mock('leaflet.markercluster', () => ({}));
 jest.mock('@map/context/AppContext', () => ({
     ...jest.requireActual('@map/context/AppContext'),
     default: require('react').createContext(null),
@@ -108,9 +113,9 @@ function mountLayers({ raster = false } = {}) {
     });
 }
 
-function wheel(deltaY) {
+function wheel(deltaY, point = L.point(400, 300)) {
     container.dispatchEvent(
-        new WheelEvent('wheel', { deltaY, deltaMode: 0, clientX: 400, clientY: 300, cancelable: true })
+        new WheelEvent('wheel', { deltaY, deltaMode: 0, clientX: point.x, clientY: point.y, cancelable: true })
     );
 }
 
@@ -120,8 +125,11 @@ function nextFrame() {
     act(() => pending.forEach((callback) => callback()));
 }
 
-function finishZoom() {
-    for (let i = 0; frames.size && i < 100; i++) nextFrame();
+function finishZoom(checkFrame = () => {}) {
+    for (let i = 0; frames.size && i < 100; i++) {
+        nextFrame();
+        checkFrame();
+    }
     expect(frames.size).toBe(0);
 }
 
@@ -163,6 +171,107 @@ describe('fractional wheel zoom', () => {
 
         expect(map.getZoom()).toBe(15);
         expect(map.getCenter().equals([1, 1])).toBe(true);
+    });
+});
+
+describe('POI wheel jitter regression (b6981228)', () => {
+    // Use the API that exists in b6981228^, so the same tests can fail on coordinates
+    // before the fix, without importing a marker class introduced by the fix.
+    async function addPois(points) {
+        const poiList = points.map((point, i) => {
+            const { lat, lng } = map.containerPointToLatLng(point);
+            return {
+                type: 'Feature',
+                geometry: { type: 'Point', coordinates: [lng, lat] },
+                properties: {
+                    [POI_ID]: `poi-${i}`,
+                    [POI_NAME]: `POI ${i}`,
+                    [POI_ELO]: points.length - i,
+                    [FINAL_POI_ICON_NAME]: DEFAULT_POI_ICON,
+                },
+            };
+        });
+        const cache = {
+            [DEFAULT_POI_ICON]: '<svg width="24" height="24"><path fill="#000" d="M0 0L24 24"/></svg>',
+        };
+        const layer = await createPoiLayer({
+            ctx: { poiIconCache: cache, setPoiIconCache: jest.fn(), searchTooltipRef: { current: null } },
+            poiList,
+            globalPoiIconCache: cache,
+            type: 'poi',
+            map,
+            zoom: map.getZoom(),
+        });
+        layer.addTo(map);
+        const markers = layer.getLayers();
+        expect(markers).toHaveLength(points.length);
+        return points.map((_, i) => markers.find((marker) => marker.options[POI_ID] === `poi-${i}`));
+    }
+
+    function markerPosition(marker) {
+        // Inspect the rendered position: latLngToContainerPoint itself rounds coordinates.
+        return L.DomUtil.getPosition(marker.getElement()).add(L.DomUtil.getPosition(map.getPane('mapPane')));
+    }
+
+    function expectPosition(marker, expected) {
+        const actual = markerPosition(marker);
+        expect(actual.x).toBeCloseTo(expected.x, 6);
+        expect(actual.y).toBeCloseTo(expected.y, 6);
+    }
+
+    beforeEach(() => {
+        // Avoid the projection origin, where rounding errors can be hidden.
+        map.setView([50.4501, 30.5234], 13.65);
+    });
+
+    test.each([
+        { deltaY: -100, panned: false },
+        { deltaY: 100, panned: false },
+        { deltaY: -100, panned: true },
+        { deltaY: 100, panned: true },
+    ])(
+        'POI icons and dots follow the cursor anchor on every frame (deltaY=$deltaY, panned=$panned)',
+        async ({ deltaY, panned }) => {
+            if (panned) map.panBy([73, -41], { animate: false });
+            mountLayers();
+            const anchor = L.point(637, 219);
+            // More than 64 px gives another main icon; between 12 and 64 px gives a dot.
+            const offsets = [L.point(0, 0), L.point(-93.25, 87.375), L.point(25.25, -18.375)];
+            const markers = await addPois(offsets.map((offset) => anchor.add(offset)));
+            expect(markers.map((marker) => !!marker.options.simple)).toEqual([false, false, true]);
+            const initialZoom = map.getZoom();
+            let checkedFrames = 0;
+
+            wheel(deltaY, anchor);
+            finishZoom(() => {
+                // The POI under the cursor stays fixed; distances to other POIs scale with zoom.
+                const scale = 2 ** (map.getZoom() - initialZoom);
+                markers.forEach((marker, i) => expectPosition(marker, anchor.add(offsets[i].multiplyBy(scale))));
+                checkedFrames++;
+            });
+
+            expect(checkedFrames).toBeGreaterThan(1);
+            expect(map.getZoom()).not.toBe(initialZoom);
+        }
+    );
+
+    test('moving the cursor during a wheel gesture preserves the displayed POI position', async () => {
+        mountLayers();
+        const anchor = L.point(637, 219);
+        const [marker] = await addPois([anchor]);
+        wheel(-100, anchor);
+        nextFrame();
+
+        const position = markerPosition(marker);
+        const zoom = map.getZoom();
+        const nextAnchor = L.point(481, 327);
+        wheel(-100, nextAnchor);
+        expectPosition(marker, position);
+
+        finishZoom(() => {
+            const scale = 2 ** (map.getZoom() - zoom);
+            expectPosition(marker, nextAnchor.add(position.subtract(nextAnchor).multiplyBy(scale)));
+        });
     });
 });
 

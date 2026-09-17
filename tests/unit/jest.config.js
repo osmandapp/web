@@ -63,6 +63,7 @@ module.exports = {
         // only direct test imports load these layers; other suites keep their UI stubs
         '^@map/map/layers/MapStateLayer$': path.join(MAP_DIR, 'src/map/layers/MapStateLayer.js'),
         '^@map/map/layers/CustomTileLayer$': path.join(MAP_DIR, 'src/map/layers/CustomTileLayer.js'),
+        '^@map/map/layers/PoiLayer$': path.join(MAP_DIR, 'src/map/layers/PoiLayer.js'),
         '^@map/map/util/MarkerSelectionService$': path.join(MAP_DIR, 'src/map/util/MarkerSelectionService.js'),
         // the initial map view is plain url logic over leaflet, no map is involved
         'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
