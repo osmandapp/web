@@ -10,6 +10,7 @@ import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../util/initialMapView';
 import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
+import { applySubpixelMarkerPosition } from '../markers/subpixelMarkerPosition';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
@@ -45,6 +46,8 @@ export function isOutsideVisibleMap({ ctx, map, latlng }) {
 export function getMapCenter(mtx, hash) {
     return mtx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
 }
+
+applySubpixelMarkerPosition();
 
 const CENTRE_ICON_SIZE = 24;
 // wheelZoomRate of MapLibre: 450 px of wheel per zoom level
