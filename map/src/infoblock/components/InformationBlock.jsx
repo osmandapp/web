@@ -274,6 +274,7 @@ export default function InformationBlock({
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.updateInfoBlock]);
 
     useEffect(() => {
+        ctx.setPhotoGallery(null);
         if (ctx.selectedWpt) {
             setShowInfoBlock(true);
             setOpenWptDetails(true);
