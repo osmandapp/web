@@ -227,6 +227,7 @@ const canPlaceMarker = ({ place, existingPlaces, minDistance, isFav = false }) =
 
 function clusterPlaces(places, zoom, isFavorites) {
     const clustered = {};
+    // the grid of the integer zoom level, the wheel zoom is fractional
     const shift = 31 - (Math.floor(zoom) + 1);
 
     for (const place of places) {
@@ -381,6 +382,7 @@ export function createSecondaryMarker(obj) {
     }).build();
 }
 
+// The wheel zoom ends in zoomend on every notch: the hovered tooltip must survive it.
 function getMarkerTooltipState(map) {
     if (map._markerTooltipState) return map._markerTooltipState;
 
@@ -429,6 +431,7 @@ export function addMarkerTooltip({
     }
 
     marker.on('mouseover', () => {
+        // markers move under the cursor while zooming, those events are spurious
         if (state.zooming || state.hovered?.marker === marker) return;
         removeTooltip(map, tooltipRef);
         const relatedResultIds = (marker.options.relatedResultIds ?? []).filter((id) => id != null);
@@ -457,6 +460,7 @@ export function addMarkerTooltip({
             closeTooltip();
         }
     });
+    // layers are rebuilt on moveend, the tooltip must not outlive its marker
     marker.on('remove', () => {
         if (!state.zooming && state.hovered?.marker === marker) {
             closeTooltip();
