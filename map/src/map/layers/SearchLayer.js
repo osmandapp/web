@@ -14,7 +14,6 @@ import PoiManager, {
 import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
-import { SubpixelMarker } from '../markers/SubpixelMarker';
 import {
     BBOX_LAT_LON,
     CATEGORY_NAME,
@@ -431,7 +430,7 @@ export default function SearchLayer() {
                     icon = await getSearchIcon(obj, innerCache, finalIconName);
                 }
                 const coord = obj.geometry.coordinates;
-                return new SubpixelMarker(new L.LatLng(coord[1], coord[0]), {
+                return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                     ...obj.properties,
                     idObj: getObjIdSearch(obj),
                     title: title,
