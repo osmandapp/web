@@ -156,7 +156,8 @@ input[type=range] { width: 100%; }
   <details class="section" id="secReview" open>
   <summary>Review tracks</summary>
   <div class="body review">
-    <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in on <span id="revSignIn">test.osmand.net/map</span>.</div>
+    <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in.</div>
+    <div class="row" id="revSignInRow" hidden><button type="button" id="revSignIn" class="primary">Sign in</button><span class="hint">opens the OsmAnd account page in a new tab; come back here after</span></div>
     <div class="list" id="revList"></div>
     <div id="revDetail" class="card" hidden>
       <div id="revInfo"></div>
@@ -203,9 +204,10 @@ input[type=range] { width: 100%; }
 <script>
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
-// test.osmand.net and builder.osmand.net serve the tiles and the tracks API themselves; other hosts (osmand.net, a local copy) use test.osmand.net
-const HOME = /^(test|builder)\.osmand\.net$/.test(location.hostname) ? location.origin : 'https://test.osmand.net';
-const BASE = ((d) => (d.endsWith('/') ? d : d + '/'))(params.get('data') || `${HOME}/basemap/osmgpx/heat/`);
+// the tracks API and the sign-in session are those of the host the page is opened on; the tiles too, unless they are missing there
+const HOME = location.origin;
+const TILES_FALLBACK = 'https://test.osmand.net/basemap/osmgpx/heat/';
+let BASE = ((d) => (d.endsWith('/') ? d : d + '/'))(params.get('data') || `${HOME}/basemap/osmgpx/heat/`);
 const MONTH_BITS = 9, CACHE_FILES = 320;
 let meta, levelsDesc = [], binMask = new Uint8Array(65536), filterEpoch = 0, paintEpoch = 0;
 let COMBO = false; // personal builds: bin = index into meta.binTable [folder, activity, month]
@@ -915,8 +917,8 @@ map.on('click', (ev) => {
 
 // ---------- review: the tracks under a click, one verdict per track saved through /api/pubtracks (signed-in users)
 const API = (params.get('api') || HOME).replace(/\/$/, '');
-const SIGN_IN = `${new URL(API).host}/map`; // the web app on the API host holds the login session
-$('revSignIn').textContent = SIGN_IN;
+const SIGN_IN = `${API}/map/account/`; // the web app on the same host holds the sign-in session
+$('revSignIn').addEventListener('click', () => window.open(SIGN_IN, '_blank', 'noopener'));
 const REVIEW_ZOOM = 16; // from this zoom a click lists the single tracks under it
 const VERDICT_LABEL = { ok: 'correct', wrong_activity: 'wrong activity', bad_quality: 'bad quality', bad_line: 'wrong line', simulated: 'simulated',
   garbage: 'not a track' };
@@ -1000,8 +1002,7 @@ async function tracksHere(lat, lon, cellM) {
     return { ...p, segs, distM: distToTrackM(segs, lat, lon), act: actIndexOf(p.activity) };
   }).filter((t) => t.distM <= r && (t.act < 0 || s.act[t.act])).sort((a, b) => a.distM - b.distM).slice(0, 60);
   await loadReviews();
-  $('revHint').textContent = `${reviewTracks.length} tracks within ${Math.round(r)} m that match the filter. Hover to see a track, click it here or on the map.`
-    + (reviewLoggedIn ? '' : ` Sign in on ${SIGN_IN} to send a review.`);
+  $('revHint').textContent = `${reviewTracks.length} tracks within ${Math.round(r)} m that match the filter. Hover to see a track, click it here or on the map.`;
   renderReviewList();
 }
 
@@ -1017,7 +1018,15 @@ async function whoAmI() {
     }
   } catch (e) { /* offline or blocked */ }
   $('admin').hidden = !reviewAdmin;
+  $('revSignInRow').hidden = reviewLoggedIn !== false;
 }
+// signed in on /map in another tab: ask again when this one gets the focus back, so the send buttons come alive
+window.addEventListener('focus', async () => {
+  if (reviewLoggedIn !== false) return;
+  reviewLoggedIn = null;
+  await whoAmI();
+  if (reviewLoggedIn && reviewSel !== null) selectTrack(reviewSel, false);
+});
 
 // public reviews of the listed tracks; "mine" and the send buttons only for a signed-in caller
 async function loadReviews() {
@@ -1136,7 +1145,7 @@ function selectTrack(i, fit = true) {
     + (t.description ? `<div class="desc">${esc(String(t.description).slice(0, 200))}</div>` : '')
     + `<div class="meta">${t.review ? `reviews: ${esc(reviewSummary(t.review))}` : 'no reviews yet'}${comments.length ? ` · ${esc(comments.slice(0, 3).join(' '))}` : ''}</div>`;
   $('revDownloadStatus').textContent = '';
-  $('revStatus').textContent = !reviewLoggedIn ? `Sign in on ${SIGN_IN} to send a review.`
+  $('revStatus').textContent = !reviewLoggedIn ? 'Sign in to send a review.'
     : mine ? `your verdict${reviewAdmin ? ' (admin)' : ''}: ${VERDICT_LABEL[mine.verdict] || mine.verdict}` : reviewAdmin ? 'you review as admin' : '';
   syncVerdicts();
   $('revDetail').hidden = false;
@@ -1193,7 +1202,7 @@ async function saveReview(verdict) {
     const res = await fetch(`${API}/api/pubtracks/review`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: t.id, verdict: verdict || '', activity: verdict ? $('revActivity').value : '', comment: verdict ? $('revComment').value : '' }) });
     if (!res.ok) {
-      $('revStatus').textContent = res.status === 401 ? `Not saved: sign in on ${SIGN_IN}.` : `Not saved: HTTP ${res.status}`;
+      $('revStatus').textContent = res.status === 401 ? 'Not saved: sign in first.' : `Not saved: HTTP ${res.status}`;
       return;
     }
     const saved = await res.json();
@@ -1303,7 +1312,11 @@ map.on('moveend', () => setTimeout(updateAutoScale, 0));
 
 (async () => {
   try {
-    const r = await fetch(`${BASE}meta.json`);
+    let r = await fetch(`${BASE}meta.json`);
+    if (r.status === 404 && !params.get('data') && BASE !== TILES_FALLBACK) { // this host has no tiles yet
+      BASE = TILES_FALLBACK;
+      r = await fetch(`${BASE}meta.json`);
+    }
     if (!r.ok) throw new Error(`Could not load ${BASE}meta.json: HTTP ${r.status}`);
     meta = await r.json();
     COMBO = Array.isArray(meta.binTable);
