@@ -34,10 +34,9 @@ export const MapContextProvider = ({ children }) => {
     const [selectionFocus, setSelectionFocus] = useState(null);
     const [focusModeOn, setFocusModeOn] = useState(false);
 
-    // map tile and rendering — seeded from the single source of truth (configureMap in AppContext)
+    // map tile — seeded from the single source of truth (configureMap in AppContext)
     const { configureMapState } = useContext(AppContext);
     const [tileURL, setTileURL] = useState(() => configureMapState.mapStyle?.tileURL ?? osmandTileURL);
-    const [renderingType, setRenderingType] = useState(() => configureMapState.mapStyle?.renderingType ?? null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
@@ -62,8 +61,6 @@ export const MapContextProvider = ({ children }) => {
                 setFocusModeOn,
                 tileURL,
                 setTileURL,
-                renderingType,
-                setRenderingType,
                 heightmap,
                 setHeightmap,
                 processHeightmaps,
