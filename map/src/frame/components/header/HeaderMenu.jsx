@@ -54,7 +54,7 @@ const pages = ({ t, develFeatures }) => [
         ? [
               {
                   name: '🔥 Heatmap', // a prototype, not translated
-                  url: '/heatmap.html',
+                  url: '/map/prototypes/heatmap.html',
                   target: '_blank',
               },
           ]
