@@ -53,7 +53,7 @@ const pages = ({ t, develFeatures }) => [
     ...(develFeatures
         ? [
               {
-                  name: `🔥 ${t('web:header_heatmap')}`,
+                  name: '🔥 Heatmap', // a prototype, not translated
                   url: '/heatmap.html',
                   target: '_blank',
               },
