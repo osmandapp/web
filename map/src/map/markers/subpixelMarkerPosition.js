@@ -18,7 +18,7 @@ function getPixelOrigin(map, event) {
     return cached?.origin === origin ? cached.position : origin;
 }
 
-export const SubpixelMarker = L.Marker.extend({
+const subpixelPosition = {
     update(event) {
         if (this._icon && this._map) {
             this._setPos(this._map.project(this._latlng).subtract(getPixelOrigin(this._map, event)));
@@ -36,4 +36,11 @@ export const SubpixelMarker = L.Marker.extend({
             this._icon.style.zIndex = Math.round(this._zIndex + offset);
         }
     },
-});
+};
+
+// Every marker jitters on the fractional wheel zoom, not only the ones our own layers draw.
+// Called at module scope: Leaflet keeps the reference to update() from the moment a marker is added,
+// and "sideEffects": false drops an import without a used export.
+export function applySubpixelMarkerPosition() {
+    L.Marker.include(subpixelPosition);
+}

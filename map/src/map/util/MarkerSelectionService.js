@@ -1,7 +1,6 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import { createLayeredPinIcon, createHoverOutlineIcon, createDirectionPinIcon } from '../markers/SelectedPinMarker';
 import L from 'leaflet';
-import { SubpixelMarker } from '../markers/SubpixelMarker';
 import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
@@ -125,7 +124,7 @@ function applySelectedWithUpdateMarker(layer, marker) {
 // Creates a new pin marker and adds it directly to the map (used for selection)
 function applySelectedWithCreateMarker(map, latlng, marker, layerOptions = {}) {
     const latlngObj = latlng.lat !== undefined && latlng.lng !== undefined ? L.latLng(latlng.lat, latlng.lng) : latlng;
-    const layer = new SubpixelMarker(latlngObj, {
+    const layer = L.marker(latlngObj, {
         icon: buildSelectedIcon(marker, layerOptions),
         interactive: false,
         zIndexOffset: SELECTED_MARKER_Z_INDEX,
@@ -181,7 +180,7 @@ export function applyHoverOutline({ ctx, map, layer = null, latlng = null, shape
     }
     const latlngObj = ll.lat !== undefined && ll.lng !== undefined ? L.latLng(ll.lat, ll.lng) : ll;
 
-    const outline = new SubpixelMarker(latlngObj, {
+    const outline = L.marker(latlngObj, {
         icon: createHoverOutlineIcon({
             shape: shape ?? DEFAULT_POI_SHAPE,
             color: toColor(color ?? DEFAULT_POI_COLOR),

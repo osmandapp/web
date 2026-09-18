@@ -4,7 +4,6 @@ import { useMap } from 'react-leaflet';
 import debounce from 'lodash-es/debounce';
 import isEmpty from 'lodash-es/isEmpty';
 import L from 'leaflet';
-import { SubpixelMarker } from '../markers/SubpixelMarker';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { applySelectedPin, hideMarkersNearPin } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
@@ -66,7 +65,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             const finalIconName = poi.properties[FINAL_POI_ICON_NAME] ?? PoiManager.getFinalPoiIconName(poi.properties);
             const icon = await getPoiIcon(poi, innerCache, finalIconName);
             const coord = poi.geometry.coordinates;
-            const marker = new SubpixelMarker(new L.LatLng(coord[1], coord[0]), {
+            const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
                 ...poi.properties,
                 idObj: getObjIdSearch(poi),
                 name: poi.properties[POI_NAME],

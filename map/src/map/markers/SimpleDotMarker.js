@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import { SubpixelMarker } from './SubpixelMarker';
 import { MARKER_Z_INDEX_SECONDARY, POI_SECONDARY_PANE_Z_INDEX } from '../util/ZIndexes';
 
 export class SimpleDotMarker {
@@ -57,7 +56,7 @@ export class SimpleDotMarker {
             iconAnchor: [radius, radius],
         });
 
-        this.marker = new SubpixelMarker(this.latlng, {
+        this.marker = L.marker(this.latlng, {
             icon,
             ...this.options,
             zIndexOffset: this.options.zIndexOffset ?? this.options.zIndex ?? 0,
