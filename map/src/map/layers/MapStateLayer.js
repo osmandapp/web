@@ -185,6 +185,7 @@ export default function MapStateLayer() {
         const originalZoomIn = map.zoomIn;
         const originalZoomOut = map.zoomOut;
         const originalSetZoom = map.setZoom;
+        const originalSetZoomAround = map.setZoomAround;
         let targetZoom = map.getZoom();
         let anchor = null;
         let anchorLatLng = null;
@@ -276,6 +277,14 @@ export default function MapStateLayer() {
             options?.animate === false
                 ? originalSetZoom.call(map, zoom, options)
                 : zoomFromButton(zoom - map.getZoom(), options);
+        // double click zooms through setZoomAround
+        map.setZoomAround = (latlng, zoom, options) => {
+            if (options?.animate === false) {
+                return originalSetZoomAround.call(map, latlng, zoom, options);
+            }
+            zoomBy(zoom - map.getZoom(), latlng instanceof L.Point ? latlng : map.latLngToContainerPoint(latlng));
+            return map;
+        };
         L.DomEvent.on(container, 'wheel', onWheel);
 
         return () => {
@@ -284,6 +293,7 @@ export default function MapStateLayer() {
             map.zoomIn = originalZoomIn;
             map.zoomOut = originalZoomOut;
             map.setZoom = originalSetZoom;
+            map.setZoomAround = originalSetZoomAround;
             stopZoom();
         };
     }, [map, ctx.infoBlockWidth]);
