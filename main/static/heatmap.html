@@ -69,6 +69,12 @@ input[type=range] { width: 100%; }
 .review .badge { font: 500 .7rem "IBM Plex Mono", ui-monospace, monospace; padding: 0 5px; border-radius: 3px; align-self: start; }
 .review .badge.ok { background: #dff1e4; color: #1e6b3a; }
 .review .badge.bad { background: #fde3d3; color: #8a3a00; }
+.review .card { display: grid; gap: 6px; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 4px; box-shadow: inset 3px 0 0 var(--accent); background: #fbf1ea; }
+.review .card h3 { font-size: .92rem; margin: 0; overflow-wrap: anywhere; }
+.review .card .meta { font: 400 .74rem/1.5 "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); overflow-wrap: anywhere; }
+.review .card .desc { font-size: .82rem; color: var(--ink); overflow-wrap: anywhere; }
+.review .card .actions { display: flex; gap: 8px; align-items: center; margin-top: 2px; }
+.review .card .actions button { display: inline-flex; gap: 6px; align-items: center; font-weight: 500; }
 .review .verdicts { display: flex; flex-wrap: wrap; gap: 6px; }
 .review .verdicts button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
 .review button:disabled, .review textarea:disabled { opacity: .45; cursor: not-allowed; }
@@ -149,7 +155,10 @@ input[type=range] { width: 100%; }
     <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in on <span id="revSignIn">test.osmand.net/map</span>.</div>
     <div class="list" id="revList"></div>
     <div id="revDetail" hidden>
-      <div id="revInfo" class="hint"></div>
+      <div class="card">
+        <div id="revInfo"></div>
+        <div class="actions"><button type="button" id="revDownload" title="The original file from OSM, with time and elevation">⤓ Download GPX</button><span id="revDownloadStatus" class="hint"></span></div>
+      </div>
       <textarea id="revComment" placeholder="Comment (optional), e.g. the right activity; sent with the button you press" aria-label="Comment"></textarea>
       <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
       <div class="row"><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
@@ -851,6 +860,7 @@ function update() {
 
 // ---------- click: what is in this cell
 map.on('click', (ev) => {
+  deselectTrack();
   const z = map.getZoom(), L_ = levelFor(z); if (!meta || L_ === null) return;
   if (z >= REVIEW_ZOOM) { // close enough to tell tracks apart: list the ones under the click instead of the cell
     const pxM =40075016 * Math.cos(ev.latlng.lat * Math.PI / 180) / Math.pow(2, z + 8);
@@ -949,9 +959,7 @@ async function tracksHere(lat, lon, cellM) {
   $('secReview').open = true;
   $('secReview').scrollIntoView({ block: 'start', behavior: 'smooth' });
   $('revHint').textContent = 'Loading tracks…';
-  $('revDetail').hidden = true;
-  $('selChip').hidden = true;
-  reviewSel = null;
+  deselectTrack();
   let fc;
   try {
     const res = await fetch(`${API}/osmgpx/get-routes-list`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -979,7 +987,6 @@ async function tracksHere(lat, lon, cellM) {
   $('revHint').textContent = `${reviewTracks.length} tracks within ${Math.round(r)} m that match the filter. Hover to see a track, click it here or on the map.`
     + (reviewLoggedIn ? '' : ` Sign in on ${SIGN_IN} to send a review.`);
   renderReviewList();
-  if (reviewTracks.length === 1) selectTrack(0, false); // one track under the click: open it right away
 }
 
 // public reviews of the listed tracks; "mine" and the send buttons only for a signed-in caller
@@ -1027,13 +1034,14 @@ function renderReviewList() {
       + `<span class="sub">${t.id} · ${t.dist ? (t.dist / 1000).toFixed(1) + ' km · ' : ''}${esc(String(t.date || '').slice(0, 10))} · ${Math.round(t.distM)} m away</span></div>`;
   }).join('');
   reviewTracks.forEach((t, i) => {
+    t.casing = L.polyline(t.segs, { color: '#fff', weight: 11, opacity: 0, interactive: false }).addTo(reviewLayer); // white halo under the lit line
     t.line = L.polyline(t.segs, { color: '#16201b', weight: 2, opacity: 0.35, interactive: false }).addTo(reviewLayer);
   });
   // a wide invisible stroke over every line: hover and click find a track without hitting its 2 px line exactly
   reviewTracks.forEach((t, i) => {
     L.polyline(t.segs, { color: '#000', weight: 16, opacity: 0, bubblingMouseEvents: false })
       .on('mouseover', () => hoverTrack(i, true)).on('mouseout', () => hoverTrack(i, false))
-      .on('click', () => selectTrack(i, false)).addTo(reviewLayer);
+      .on('click', () => toggleTrack(i, false)).addTo(reviewLayer);
   });
   if (reviewSel !== null) highlight(reviewSel, true);
 }
@@ -1041,8 +1049,31 @@ function renderReviewList() {
 function highlight(i, on) {
   const t = reviewTracks[i];
   if (!t?.line) return;
-  t.line.setStyle(on ? { color: '#b35600', weight: 5, opacity: 0.95 } : { color: '#16201b', weight: 2, opacity: 0.35 });
-  if (on) t.line.bringToFront();
+  t.line.setStyle(on ? { color: '#b35600', weight: 5, opacity: 1 } : { color: '#16201b', weight: 2, opacity: 0.35 });
+  t.casing.setStyle({ opacity: on ? 0.9 : 0 });
+  if (on) { t.casing.bringToFront(); t.line.bringToFront(); }
+  if (t.ends) { t.ends.remove(); t.ends = null; }
+  if (on && t.segs.length) t.ends = trackEnds(t).addTo(map);
+}
+
+// start and finish of the selected track: a green and a dark dot
+function trackEnds(t) {
+  const first = t.segs[0][0], last = t.segs[t.segs.length - 1].slice(-1)[0];
+  const dot = (p, color) => L.circleMarker(p, { radius: 7, color: '#fff', weight: 2, fillColor: color, fillOpacity: 1, interactive: false });
+  return L.layerGroup([dot(last, '#16201b'), dot(first, '#1e6b3a')]);
+}
+
+// the heat steps back a little while a track is selected; the slider value stays the reference
+function dimHeat(on) { heat.setOpacity(+$('opacity').value * (on ? 0.5 : 1)); }
+
+// a click anywhere on the map that is not a track drops the selection
+function deselectTrack() {
+  if (reviewSel !== null) highlight(reviewSel, false);
+  reviewSel = null;
+  $('revList').querySelectorAll('.item.sel').forEach((el) => el.classList.remove('sel'));
+  $('revDetail').hidden = true;
+  $('selChip').hidden = true;
+  dimHeat(false);
 }
 
 // hover on the map or in the list: the line and its list row light up together; the selected track stays lit
@@ -1051,32 +1082,65 @@ function hoverTrack(i, on) {
   $('revList').querySelector(`.item[data-i="${i}"]`)?.classList.toggle('hover', on);
 }
 
+// a second click on the selected card or line drops the selection
+function toggleTrack(i, fromList) {
+  if (i === reviewSel) deselectTrack();
+  else selectTrack(i, fromList);
+}
+
 function selectTrack(i, fit = true) {
   if (reviewSel !== null) highlight(reviewSel, false);
   reviewSel = i;
   const t = reviewTracks[i];
   highlight(i, true);
+  dimHeat(true);
   if (fit) map.fitBounds(t.line.getBounds(), { padding: [30, 30], maxZoom: 16 });
   $('revList').querySelectorAll('.item').forEach((el) => el.classList.toggle('sel', +el.dataset.i === i));
   $('revList').querySelector('.item.sel')?.scrollIntoView({ block: 'nearest' });
   $('selChip').textContent = `Selected: ${t.name || 'no name'}${t.dist ? ` · ${(t.dist / 1000).toFixed(1)} km` : ''} ›`;
   $('selChip').hidden = false;
   const trace = t.user ? `https://www.openstreetmap.org/user/${encodeURIComponent(t.user)}/traces/${t.id}` : null;
-  $('revInfo').innerHTML = `<b>${esc(t.name || 'no name')}</b><br>${trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : t.id}`
-    + ` · stored activity: ${esc(t.activity || 'none')}` + (t.tags?.length ? `<br>tags: ${esc(t.tags.join(', '))}` : '')
-    + (t.description ? `<br>${esc(String(t.description).slice(0, 200))}` : '');
   const mine = t.review?.mine;
   reviewVerdict = mine?.verdict || null;
   $('revComment').value = mine?.comment || '';
   const comments = [t.review?.admin, ...(t.review?.users || [])].filter((r) => r?.comment && r !== mine).map((r) => `“${r.comment}”`);
-  $('revInfo').insertAdjacentHTML('beforeend', (t.review ? `<br>reviews: ${esc(reviewSummary(t.review))}` : '<br>no reviews yet')
-    + (comments.length ? `<br>${esc(comments.slice(0, 3).join(' '))}` : ''));
+  const facts = [trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : `id ${t.id}`, `activity: ${esc(t.activity || 'none')}`,
+    t.dist ? `${(t.dist / 1000).toFixed(1)} km` : '', esc(String(t.date || '').slice(0, 10))].filter(Boolean);
+  $('revInfo').innerHTML = `<h3>${esc(t.name || 'no name')}</h3><div class="meta">${facts.join(' · ')}</div>`
+    + (t.tags?.length ? `<div class="meta">tags: ${esc(t.tags.join(', '))}</div>` : '')
+    + (t.description ? `<div class="desc">${esc(String(t.description).slice(0, 200))}</div>` : '')
+    + `<div class="meta">${t.review ? `reviews: ${esc(reviewSummary(t.review))}` : 'no reviews yet'}${comments.length ? ` · ${esc(comments.slice(0, 3).join(' '))}` : ''}</div>`;
+  $('revDownloadStatus').textContent = '';
   $('revStatus').textContent = !reviewLoggedIn ? `Sign in on ${SIGN_IN} to send a review.`
     : mine ? `your verdict${reviewAdmin ? ' (admin)' : ''}: ${VERDICT_LABEL[mine.verdict] || mine.verdict}` : reviewAdmin ? 'you review as admin' : '';
   syncVerdicts();
   $('revDetail').hidden = false;
   $('revDetail').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); // the phone panel is short: keep the verdict buttons in view
 }
+
+// the original file, with time and elevation, as OSM has it; the page only holds the simplified line
+$('revDownload').addEventListener('click', async () => {
+  const t = reviewTracks[reviewSel];
+  if (!t) return;
+  const b = $('revDownload');
+  b.disabled = true;
+  $('revDownloadStatus').textContent = 'Downloading…';
+  try {
+    const res = await fetch(`${API}/osmgpx/get-original-file?id=${t.id}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const url = URL.createObjectURL(await res.blob());
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${String(t.name || 'track').replace(/\.gpx$/i, '').replace(/[^\w.-]+/g, '_')}-${t.id}.gpx`;
+    a.click();
+    URL.revokeObjectURL(url);
+    $('revDownloadStatus').textContent = '';
+  } catch (e) {
+    $('revDownloadStatus').textContent = `Not downloaded: ${e.message}`;
+  } finally {
+    b.disabled = false;
+  }
+});
 
 // the chip over the map names the selected track and leads to its card, which the short phone panel may hide
 L.DomEvent.disableClickPropagation($('selChip'));
@@ -1121,7 +1185,8 @@ document.addEventListener('click', (e) => {
 });
 $('revList').addEventListener('mouseover', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, true); });
 $('revList').addEventListener('mouseout', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, false); });
-$('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) selectTrack(+it.dataset.i); });
+$('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) toggleTrack(+it.dataset.i, true); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && reviewSel !== null && !$('fbDialog').open) deselectTrack(); });
 $('revVerdicts').addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b || b.disabled) return;
@@ -1150,7 +1215,7 @@ for (const id of PREF_IDS) { const el = $(id); if (el.tagName === 'SELECT' && el
 setPalette($('palette').value); applyBasemap();
 $('lineRow').hidden = $('style').value === 'cells';
 heat.setOpacity(+$('opacity').value);
-$('opacity').addEventListener('input', (e) => { heat.setOpacity(+e.target.value); savePrefs(); });
+$('opacity').addEventListener('input', () => { dimHeat(reviewSel !== null); savePrefs(); });
 $('basemap').addEventListener('change', () => { applyBasemap(); savePrefs(); });
 // one click between the grey and the colour map, without opening Display, and the feedback button next to it
 const MapButtons = L.Control.extend({
