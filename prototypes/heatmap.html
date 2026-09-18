@@ -35,7 +35,15 @@ input[type=range] { width: 100%; }
 .darkbase .leaflet-tile-pane .osmand-base { filter: invert(1) grayscale(1) brightness(.8) contrast(1.1); }
 .darkbase #map { background: #1b1d1f; }
 .legend-labels span:nth-child(2) { text-align: center; }
-#status { position: absolute; right: 10px; bottom: 22px; z-index: 1000; background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; }
+#footbar { position: absolute; left: 10px; bottom: 22px; z-index: 1000; display: flex; gap: 8px; align-items: center; max-width: calc(100% - 20px); }
+#status { background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
+#selChip { max-width: min(60vw, 420px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgba(255,255,255,.95); border: 1px solid var(--accent); border-left-width: 4px; border-radius: 4px; padding: 4px 10px; font: 500 .8rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; }
+.adminPanel { position: absolute; right: 10px; bottom: 22px; z-index: 1000; max-width: calc(100% - 20px); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,.2); }
+.adminHead { display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; border: 0; border-radius: 6px; background: none; font: 600 .85rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; text-align: left; }
+.adminBody { padding: 8px 12px 12px; border-top: 1px solid var(--rule); }
+.adminBody .row { flex-wrap: nowrap; }
+.adminPanel .btn { display: inline-block; padding: 4px 8px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); color: var(--ink); font-size: .82rem; text-decoration: none; }
+.adminPanel .btn:hover { border-color: var(--accent); }
 #progress { position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 1000; background: rgba(0,0,0,.08); pointer-events: none; }
 #progressBar { height: 100%; width: 0; background: var(--accent); transition: width .15s; }
 #loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(243,245,242,.92); z-index: 2000; font-size: 1rem; padding: 16px; text-align: center; }
@@ -57,17 +65,34 @@ input[type=range] { width: 100%; }
 .summary th { text-align: left; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 2px 6px 2px 0; }
 .summary td { padding: 2px 6px 2px 0; border-bottom: 1px solid #eef1ee; vertical-align: top; }
 .summary td.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
-.review .list { display: grid; gap: 2px; max-height: 260px; overflow-y: auto; }
-.review .item { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; padding: 4px 6px; border: 1px solid transparent; border-radius: 4px; cursor: pointer; font-size: .82rem; }
-.review .item:hover, .review .item.hover, .review .item.sel { border-color: var(--rule); background: #f7f8f6; }
+.review .list { display: grid; gap: 4px; max-height: 260px; overflow-y: auto; overflow-x: hidden; }
+.review .item { display: grid; grid-template-columns: 1fr auto auto; gap: 1px 8px; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; font-size: .82rem; background: var(--surface); }
+.review .item > span { min-width: 0; overflow-wrap: anywhere; }
+.review .item::after { content: "›"; grid-row: 1; grid-column: 3; align-self: center; color: var(--muted); font-size: 1.1rem; line-height: 1; }
+.review .item:hover, .review .item.hover { border-color: var(--accent); background: #f7f8f6; }
+.review .item:hover::after, .review .item.hover::after, .review .item.sel::after { color: var(--accent); }
+.review .item.sel { border-color: var(--accent); background: #fbf1ea; box-shadow: inset 3px 0 0 var(--accent); }
+.review .item.sel > span:first-child { font-weight: 600; }
 .review .item .sub { grid-column: 1 / -1; color: var(--muted); font: 400 .74rem "IBM Plex Mono", ui-monospace, monospace; }
 .review .badge { font: 500 .7rem "IBM Plex Mono", ui-monospace, monospace; padding: 0 5px; border-radius: 3px; align-self: start; }
 .review .badge.ok { background: #dff1e4; color: #1e6b3a; }
 .review .badge.bad { background: #fde3d3; color: #8a3a00; }
+.review .card { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.review .card h3 { font-size: 1rem; margin: 0; overflow-wrap: anywhere; }
+.review .card .meta { font: 400 .74rem/1.5 "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); overflow-wrap: anywhere; }
+.review .card .desc { font-size: .82rem; color: var(--ink); overflow-wrap: anywhere; }
+.review .card .actions { display: flex; gap: 8px; align-items: center; margin-top: 2px; }
+.review .card .actions button { display: inline-flex; gap: 6px; align-items: center; font-weight: 500; }
 .review .verdicts { display: flex; flex-wrap: wrap; gap: 6px; }
 .review .verdicts button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.review .primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 500; }
 .review button:disabled, .review textarea:disabled { opacity: .45; cursor: not-allowed; }
-.review textarea { font: inherit; width: 100%; min-height: 48px; border: 1px solid var(--rule); border-radius: 4px; padding: 4px 6px; }
+.review select, .review textarea { font: inherit; width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; background: var(--surface); color: var(--ink); }
+.review textarea { min-height: 56px; resize: vertical; }
+.review .form { display: grid; gap: 6px; padding-top: 10px; margin-top: 4px; border-top: 1px solid var(--rule); }
+.review .form .label { margin: 6px 0 0; }
+.review .form .label:first-child { margin-top: 0; }
+.review .form .row { margin-top: 4px; }
 .cellpop .tracksHere { margin-top: 6px; }
 .mapToggle { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; font: 500 .78rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; cursor: pointer; }
 @media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } }
@@ -81,7 +106,7 @@ input[type=range] { width: 100%; }
     <h1>OsmGpx Heatmap</h1>
     <div class="hint">Every OSM GPX trace in the OsmGpx database, counted per map cell by activity and month. Tiles load as you move; the filter is applied in your browser.</div>
   </div>
-  <details class="section" id="secView" open>
+  <details class="section" id="secView">
   <summary>Display</summary>
   <div class="body">
   <div class="row">
@@ -128,16 +153,24 @@ input[type=range] { width: 100%; }
   </div>
   </div>
   </details>
-  <details class="section" id="secReview">
+  <details class="section" id="secReview" open>
   <summary>Review tracks</summary>
   <div class="body review">
-    <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in on <span id="revSignIn">test.osmand.net/map</span>.</div>
+    <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in.</div>
+    <div class="row" id="revSignInRow" hidden><button type="button" id="revSignIn" class="primary">Sign in</button><span class="hint">opens the OsmAnd account page in a new tab; come back here after</span></div>
     <div class="list" id="revList"></div>
-    <div id="revDetail" hidden>
-      <div id="revInfo" class="hint"></div>
-      <textarea id="revComment" placeholder="Comment (optional), e.g. the right activity; sent with the button you press" aria-label="Comment"></textarea>
-      <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
-      <div class="row"><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
+    <div id="revDetail" class="card" hidden>
+      <div id="revInfo"></div>
+      <div class="actions"><button type="button" id="revDownload" title="The original file from OSM, with time and elevation">⤓ Download GPX</button><span id="revDownloadStatus" class="hint"></span></div>
+      <div class="form">
+        <span class="label">Your verdict</span>
+        <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
+        <label class="label" for="revActivity">Correct activity</label>
+        <select id="revActivity"><option value="">not specified</option></select>
+        <label class="label" for="revComment">Comment</label>
+        <textarea id="revComment" placeholder="Optional"></textarea>
+        <div class="row"><button type="button" id="revSend" class="primary">Send review</button><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
+      </div>
     </div>
     <a id="revExport" target="_blank" rel="noopener">Download reviewed tracks (.csv.gz)</a>
   </div>
@@ -155,16 +188,26 @@ input[type=range] { width: 100%; }
   </div>
   </details>
 </aside>
-<div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div></div>
+<div id="map">
+  <div id="progress" hidden><div id="progressBar"></div></div>
+  <div id="footbar"><button type="button" id="selChip" title="Show the selected track in the list" hidden></button><div id="status" hidden></div></div>
+  <div id="admin" class="adminPanel" hidden>
+    <button type="button" id="adminToggle" class="adminHead">Admin <span id="adminArrow">▴</span></button>
+    <div id="adminBody" class="adminBody" hidden>
+      <div class="row"><label>Reviews <select id="adminPeriod"><option value="24">last 24 h</option><option value="168">last 7 days</option><option value="720">last 30 days</option><option value="">all</option></select></label><a id="adminReviews" class="btn">⤓ Download (.csv.gz)</a></div>
+    </div>
+  </div>
+</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/pmtiles@4.5.0/dist/pmtiles.js"></script>
 <script>
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
-// test.osmand.net and builder.osmand.net serve the tiles and the tracks API themselves; other hosts (osmand.net, a local copy) use test.osmand.net
-const HOME = /^(test|builder)\.osmand\.net$/.test(location.hostname) ? location.origin : 'https://test.osmand.net';
-const BASE = ((d) => (d.endsWith('/') ? d : d + '/'))(params.get('data') || `${HOME}/basemap/osmgpx/heat/`);
+// the tracks API and the sign-in session are those of the host the page is opened on; the tiles too, unless they are missing there
+const HOME = location.origin;
+const TILES_FALLBACK = 'https://test.osmand.net/basemap/osmgpx/heat/';
+let BASE = ((d) => (d.endsWith('/') ? d : d + '/'))(params.get('data') || `${HOME}/basemap/osmgpx/heat/`);
 const MONTH_BITS = 9, CACHE_FILES = 320;
 let meta, levelsDesc = [], binMask = new Uint8Array(65536), filterEpoch = 0, paintEpoch = 0;
 let COMBO = false; // personal builds: bin = index into meta.binTable [folder, activity, month]
@@ -739,6 +782,14 @@ function monthLabel(m) { return `${meta.monthsBase + Math.floor(m / 12)}-${Strin
 
 function buildTree() {
   const tree = $('tree'); tree.innerHTML = '';
+  const sel = $('revActivity');
+  for (const g of meta.groups) {
+    const kids = meta.acts.filter((a) => a.group === g.id && !a.key.includes('~') && a.key !== 'unknown');
+    if (!kids.length) continue;
+    const og = document.createElement('optgroup'); og.label = g.label;
+    for (const a of kids) og.appendChild(new Option(a.label, a.key));
+    sel.appendChild(og);
+  }
   for (const g of meta.groups) {
     const kids = meta.acts.map((a, i) => ({ ...a, i })).filter((a) => a.group === g.id && a.count > 0).sort((a, b) => b.count - a.count);
     if (!kids.length) continue;
@@ -827,6 +878,7 @@ function update() {
 
 // ---------- click: what is in this cell
 map.on('click', (ev) => {
+  deselectTrack();
   const z = map.getZoom(), L_ = levelFor(z); if (!meta || L_ === null) return;
   if (z >= REVIEW_ZOOM) { // close enough to tell tracks apart: list the ones under the click instead of the cell
     const pxM =40075016 * Math.cos(ev.latlng.lat * Math.PI / 180) / Math.pow(2, z + 8);
@@ -865,8 +917,8 @@ map.on('click', (ev) => {
 
 // ---------- review: the tracks under a click, one verdict per track saved through /api/pubtracks (signed-in users)
 const API = (params.get('api') || HOME).replace(/\/$/, '');
-const SIGN_IN = `${new URL(API).host}/map`; // the web app on the API host holds the login session
-$('revSignIn').textContent = SIGN_IN;
+const SIGN_IN = `${API}/map/account/`; // the web app on the same host holds the sign-in session
+$('revSignIn').addEventListener('click', () => window.open(SIGN_IN, '_blank', 'noopener'));
 const REVIEW_ZOOM = 16; // from this zoom a click lists the single tracks under it
 const VERDICT_LABEL = { ok: 'correct', wrong_activity: 'wrong activity', bad_quality: 'bad quality', bad_line: 'wrong line', simulated: 'simulated',
   garbage: 'not a track' };
@@ -925,8 +977,7 @@ async function tracksHere(lat, lon, cellM) {
   $('secReview').open = true;
   $('secReview').scrollIntoView({ block: 'start', behavior: 'smooth' });
   $('revHint').textContent = 'Loading tracks…';
-  $('revDetail').hidden = true;
-  reviewSel = null;
+  deselectTrack();
   let fc;
   try {
     const res = await fetch(`${API}/osmgpx/get-routes-list`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -951,23 +1002,36 @@ async function tracksHere(lat, lon, cellM) {
     return { ...p, segs, distM: distToTrackM(segs, lat, lon), act: actIndexOf(p.activity) };
   }).filter((t) => t.distM <= r && (t.act < 0 || s.act[t.act])).sort((a, b) => a.distM - b.distM).slice(0, 60);
   await loadReviews();
-  $('revHint').textContent = `${reviewTracks.length} tracks within ${Math.round(r)} m that match the filter. Hover to see a track, click it here or on the map.`
-    + (reviewLoggedIn ? '' : ` Sign in on ${SIGN_IN} to send a review.`);
+  $('revHint').textContent = `${reviewTracks.length} tracks within ${Math.round(r)} m that match the filter. Hover to see a track, click it here or on the map.`;
   renderReviewList();
-  if (reviewTracks.length === 1) selectTrack(0, false); // one track under the click: open it right away
 }
+
+// asked once at load and again on the next click if it failed (sign-in state stays null, send buttons off)
+async function whoAmI() {
+  if (reviewLoggedIn !== null) return;
+  try {
+    const meRes = await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' });
+    if (meRes.ok) {
+      const me = await meRes.json();
+      reviewLoggedIn = !!me.signedIn;
+      reviewAdmin = !!me.admin;
+    }
+  } catch (e) { /* offline or blocked */ }
+  $('admin').hidden = !reviewAdmin;
+  $('revSignInRow').hidden = reviewLoggedIn !== false;
+}
+// signed in on /map in another tab: ask again when this one gets the focus back, so the send buttons come alive
+window.addEventListener('focus', async () => {
+  if (reviewLoggedIn !== false) return;
+  reviewLoggedIn = null;
+  await whoAmI();
+  if (reviewLoggedIn && reviewSel !== null) selectTrack(reviewSel, false);
+});
 
 // public reviews of the listed tracks; "mine" and the send buttons only for a signed-in caller
 async function loadReviews() {
+  await whoAmI();
   try {
-    if (reviewLoggedIn === null) {
-      const meRes = await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' });
-      if (meRes.ok) {
-        const me = await meRes.json();
-        reviewLoggedIn = !!me.signedIn;
-        reviewAdmin = !!me.admin;
-      }
-    }
     if (!reviewTracks.length) return;
     const res = await fetch(`${API}/api/pubtracks/reviews?ids=${reviewTracks.map((t) => t.id).join(',')}`, { credentials: 'include' });
     if (!res.ok) return;
@@ -982,12 +1046,13 @@ async function loadReviews() {
 function reviewSummary(r) {
   if (!r) return '';
   const parts = [];
-  if (r.admin) parts.push(`admin: ${VERDICT_LABEL[r.admin.verdict] || r.admin.verdict}`);
+  const label = (v) => `${VERDICT_LABEL[v.verdict] || v.verdict}${v.activity ? ` → ${v.activity}` : ''}`;
+  if (r.admin) parts.push(`admin: ${label(r.admin)}`);
   if (r.users?.length) {
     const counts = {};
-    for (const u of r.users) counts[u.verdict] = (counts[u.verdict] || 0) + 1;
+    for (const u of r.users) counts[label(u)] = (counts[label(u)] || 0) + 1;
     parts.push(`${r.users.length} user${r.users.length > 1 ? 's' : ''}: ` + Object.entries(counts).sort((a, b) => b[1] - a[1])
-      .map(([v, n]) => `${VERDICT_LABEL[v] || v} ${n}`).join(', '));
+      .map(([v, n]) => `${v} ${n}`).join(', '));
   }
   return parts.join(' · ');
 }
@@ -1002,13 +1067,14 @@ function renderReviewList() {
       + `<span class="sub">${t.id} · ${t.dist ? (t.dist / 1000).toFixed(1) + ' km · ' : ''}${esc(String(t.date || '').slice(0, 10))} · ${Math.round(t.distM)} m away</span></div>`;
   }).join('');
   reviewTracks.forEach((t, i) => {
+    t.casing = L.polyline(t.segs, { color: '#fff', weight: 11, opacity: 0, interactive: false }).addTo(reviewLayer); // white halo under the lit line
     t.line = L.polyline(t.segs, { color: '#16201b', weight: 2, opacity: 0.35, interactive: false }).addTo(reviewLayer);
   });
   // a wide invisible stroke over every line: hover and click find a track without hitting its 2 px line exactly
   reviewTracks.forEach((t, i) => {
     L.polyline(t.segs, { color: '#000', weight: 16, opacity: 0, bubblingMouseEvents: false })
       .on('mouseover', () => hoverTrack(i, true)).on('mouseout', () => hoverTrack(i, false))
-      .on('click', () => selectTrack(i, false)).addTo(reviewLayer);
+      .on('click', () => toggleTrack(i, false)).addTo(reviewLayer);
   });
   if (reviewSel !== null) highlight(reviewSel, true);
 }
@@ -1016,8 +1082,31 @@ function renderReviewList() {
 function highlight(i, on) {
   const t = reviewTracks[i];
   if (!t?.line) return;
-  t.line.setStyle(on ? { color: '#b35600', weight: 5, opacity: 0.95 } : { color: '#16201b', weight: 2, opacity: 0.35 });
-  if (on) t.line.bringToFront();
+  t.line.setStyle(on ? { color: '#b35600', weight: 5, opacity: 1 } : { color: '#16201b', weight: 2, opacity: 0.35 });
+  t.casing.setStyle({ opacity: on ? 0.9 : 0 });
+  if (on) { t.casing.bringToFront(); t.line.bringToFront(); }
+  if (t.ends) { t.ends.remove(); t.ends = null; }
+  if (on && t.segs.length) t.ends = trackEnds(t).addTo(map);
+}
+
+// start and finish of the selected track: a green and a dark dot
+function trackEnds(t) {
+  const first = t.segs[0][0], last = t.segs[t.segs.length - 1].slice(-1)[0];
+  const dot = (p, color) => L.circleMarker(p, { radius: 7, color: '#fff', weight: 2, fillColor: color, fillOpacity: 1, interactive: false });
+  return L.layerGroup([dot(last, '#16201b'), dot(first, '#1e6b3a')]);
+}
+
+// the heat steps back a little while a track is selected; the slider value stays the reference
+function dimHeat(on) { heat.setOpacity(+$('opacity').value * (on ? 0.5 : 1)); }
+
+// a click anywhere on the map that is not a track drops the selection
+function deselectTrack() {
+  if (reviewSel !== null) highlight(reviewSel, false);
+  reviewSel = null;
+  $('revList').querySelectorAll('.item.sel').forEach((el) => el.classList.remove('sel'));
+  $('revDetail').hidden = true;
+  $('selChip').hidden = true;
+  dimHeat(false);
 }
 
 // hover on the map or in the list: the line and its list row light up together; the selected track stays lit
@@ -1026,36 +1115,83 @@ function hoverTrack(i, on) {
   $('revList').querySelector(`.item[data-i="${i}"]`)?.classList.toggle('hover', on);
 }
 
+// a second click on the selected card or line drops the selection
+function toggleTrack(i, fromList) {
+  if (i === reviewSel) deselectTrack();
+  else selectTrack(i, fromList);
+}
+
 function selectTrack(i, fit = true) {
   if (reviewSel !== null) highlight(reviewSel, false);
   reviewSel = i;
   const t = reviewTracks[i];
   highlight(i, true);
+  dimHeat(true);
   if (fit) map.fitBounds(t.line.getBounds(), { padding: [30, 30], maxZoom: 16 });
   $('revList').querySelectorAll('.item').forEach((el) => el.classList.toggle('sel', +el.dataset.i === i));
+  $('revList').querySelector('.item.sel')?.scrollIntoView({ block: 'nearest' });
+  $('selChip').textContent = `Selected: ${t.name || 'no name'}${t.dist ? ` · ${(t.dist / 1000).toFixed(1)} km` : ''} ›`;
+  $('selChip').hidden = false;
   const trace = t.user ? `https://www.openstreetmap.org/user/${encodeURIComponent(t.user)}/traces/${t.id}` : null;
-  $('revInfo').innerHTML = `<b>${esc(t.name || 'no name')}</b><br>${trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : t.id}`
-    + ` · stored activity: ${esc(t.activity || 'none')}` + (t.tags?.length ? `<br>tags: ${esc(t.tags.join(', '))}` : '')
-    + (t.description ? `<br>${esc(String(t.description).slice(0, 200))}` : '');
   const mine = t.review?.mine;
   reviewVerdict = mine?.verdict || null;
+  $('revActivity').value = mine?.activity || '';
   $('revComment').value = mine?.comment || '';
   const comments = [t.review?.admin, ...(t.review?.users || [])].filter((r) => r?.comment && r !== mine).map((r) => `“${r.comment}”`);
-  $('revInfo').insertAdjacentHTML('beforeend', (t.review ? `<br>reviews: ${esc(reviewSummary(t.review))}` : '<br>no reviews yet')
-    + (comments.length ? `<br>${esc(comments.slice(0, 3).join(' '))}` : ''));
-  $('revStatus').textContent = !reviewLoggedIn ? `Sign in on ${SIGN_IN} to send a review.`
+  const facts = [trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : `id ${t.id}`, `activity: ${esc(t.activity || 'none')}`,
+    t.dist ? `${(t.dist / 1000).toFixed(1)} km` : '', esc(String(t.date || '').slice(0, 10))].filter(Boolean);
+  $('revInfo').innerHTML = `<h3>${esc(t.name || 'no name')}</h3><div class="meta">${facts.join(' · ')}</div>`
+    + (t.tags?.length ? `<div class="meta">tags: ${esc(t.tags.join(', '))}</div>` : '')
+    + (t.description ? `<div class="desc">${esc(String(t.description).slice(0, 200))}</div>` : '')
+    + `<div class="meta">${t.review ? `reviews: ${esc(reviewSummary(t.review))}` : 'no reviews yet'}${comments.length ? ` · ${esc(comments.slice(0, 3).join(' '))}` : ''}</div>`;
+  $('revDownloadStatus').textContent = '';
+  $('revStatus').textContent = !reviewLoggedIn ? 'Sign in to send a review.'
     : mine ? `your verdict${reviewAdmin ? ' (admin)' : ''}: ${VERDICT_LABEL[mine.verdict] || mine.verdict}` : reviewAdmin ? 'you review as admin' : '';
   syncVerdicts();
   $('revDetail').hidden = false;
+  $('revDetail').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); // the phone panel is short: keep the verdict buttons in view
 }
+
+// the original file, with time and elevation, as OSM has it; the page only holds the simplified line
+$('revDownload').addEventListener('click', async () => {
+  const t = reviewTracks[reviewSel];
+  if (!t) return;
+  const b = $('revDownload');
+  b.disabled = true;
+  $('revDownloadStatus').textContent = 'Downloading…';
+  try {
+    const res = await fetch(`${API}/osmgpx/get-original-file?id=${t.id}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const url = URL.createObjectURL(await res.blob());
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${String(t.name || 'track').replace(/\.gpx$/i, '').replace(/[^\w.-]+/g, '_')}-${t.id}.gpx`;
+    a.click();
+    URL.revokeObjectURL(url);
+    $('revDownloadStatus').textContent = '';
+  } catch (e) {
+    $('revDownloadStatus').textContent = `Not downloaded: ${e.message}`;
+  } finally {
+    b.disabled = false;
+  }
+});
+
+// the chip over the map names the selected track and leads to its card, which the short phone panel may hide
+L.DomEvent.disableClickPropagation($('footbar'));
+$('selChip').addEventListener('click', () => {
+  $('secReview').open = true;
+  $('revDetail').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
 
 function syncVerdicts() {
   $('revVerdicts').querySelectorAll('button').forEach((b) => {
     b.setAttribute('aria-pressed', String(b.dataset.v === reviewVerdict));
     b.disabled = !reviewLoggedIn; // everyone sees the tracks and reviews, signed-in people send
   });
-  $('revClear').disabled = !reviewLoggedIn;
+  $('revSend').disabled = !reviewLoggedIn || !reviewVerdict; // nothing to send without a verdict
+  $('revClear').disabled = !reviewLoggedIn || !reviewTracks[reviewSel]?.review?.mine;
   $('revComment').disabled = !reviewLoggedIn;
+  $('revActivity').disabled = !reviewLoggedIn;
 }
 
 async function saveReview(verdict) {
@@ -1064,14 +1200,15 @@ async function saveReview(verdict) {
   $('revStatus').textContent = 'Saving…';
   try {
     const res = await fetch(`${API}/api/pubtracks/review`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: t.id, verdict: verdict || '', comment: verdict ? $('revComment').value : '' }) });
+      body: JSON.stringify({ id: t.id, verdict: verdict || '', activity: verdict ? $('revActivity').value : '', comment: verdict ? $('revComment').value : '' }) });
     if (!res.ok) {
-      $('revStatus').textContent = res.status === 401 ? `Not saved: sign in on ${SIGN_IN}.` : `Not saved: HTTP ${res.status}`;
+      $('revStatus').textContent = res.status === 401 ? 'Not saved: sign in first.' : `Not saved: HTTP ${res.status}`;
       return;
     }
     const saved = await res.json();
     t.review = saved.admin || saved.users?.length ? saved : null;
     renderReviewList();
+    syncVerdicts();
     $('revStatus').textContent = verdict ? 'Saved' : 'Verdict cleared';
   } catch (e) {
     $('revStatus').textContent = `Not saved: ${e.message}`;
@@ -1085,15 +1222,33 @@ document.addEventListener('click', (e) => {
 });
 $('revList').addEventListener('mouseover', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, true); });
 $('revList').addEventListener('mouseout', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, false); });
-$('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) selectTrack(+it.dataset.i); });
+$('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) toggleTrack(+it.dataset.i, true); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && reviewSel !== null) deselectTrack(); });
 $('revVerdicts').addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b || b.disabled) return;
   reviewVerdict = b.dataset.v;
+  $('revStatus').textContent = '';
   syncVerdicts();
-  saveReview(reviewVerdict); // a quick action: one press sends it with the comment
 });
+$('revSend').addEventListener('click', () => saveReview(reviewVerdict));
 $('revClear').addEventListener('click', () => { reviewVerdict = null; syncVerdicts(); saveReview(null); });
+
+// ---------- admin panel: the reviews download for a period
+function adminLinks() {
+  const h = +$('adminPeriod').value, q = h ? `?since=${encodeURIComponent(new Date(Date.now() - h * 3600e3).toISOString())}` : '';
+  $('adminReviews').href = `${API}/api/pubtracks/reviews.csv.gz${q}`;
+}
+function setAdminOpen(on) {
+  $('adminBody').hidden = !on;
+  $('adminArrow').textContent = on ? '▾' : '▴';
+  try { localStorage.setItem('heatmap_admin', on ? '1' : '0'); } catch (e) { /* storage blocked */ }
+  if (on) adminLinks();
+}
+L.DomEvent.disableClickPropagation($('admin'));
+$('adminToggle').addEventListener('click', () => setAdminOpen($('adminBody').hidden));
+$('adminPeriod').addEventListener('change', adminLinks);
+whoAmI().then(() => { try { if (reviewAdmin && localStorage.getItem('heatmap_admin') === '1') setAdminOpen(true); } catch (e) { /* storage blocked */ } });
 
 // ---------- wiring
 $('undated').addEventListener('change', update);
@@ -1114,7 +1269,7 @@ for (const id of PREF_IDS) { const el = $(id); if (el.tagName === 'SELECT' && el
 setPalette($('palette').value); applyBasemap();
 $('lineRow').hidden = $('style').value === 'cells';
 heat.setOpacity(+$('opacity').value);
-$('opacity').addEventListener('input', (e) => { heat.setOpacity(+e.target.value); savePrefs(); });
+$('opacity').addEventListener('input', () => { dimHeat(reviewSel !== null); savePrefs(); });
 $('basemap').addEventListener('change', () => { applyBasemap(); savePrefs(); });
 // one click between the grey and the colour map, without opening Display
 const MapToggle = L.Control.extend({
@@ -1135,6 +1290,7 @@ const MapToggle = L.Control.extend({
   },
 });
 new MapToggle().addTo(map);
+
 $('palette').addEventListener('change', () => { setPalette($('palette').value); repaint(); savePrefs(); });
 $('scaleMode').addEventListener('change', () => { repaint(); savePrefs(); });
 $('style').addEventListener('change', () => { $('lineRow').hidden = $('style').value === 'cells'; $('mergeRow').hidden = $('style').value !== 'vector'; heat.redraw(); updateLegend(); savePrefs(); });
@@ -1156,7 +1312,11 @@ map.on('moveend', () => setTimeout(updateAutoScale, 0));
 
 (async () => {
   try {
-    const r = await fetch(`${BASE}meta.json`);
+    let r = await fetch(`${BASE}meta.json`);
+    if (r.status === 404 && !params.get('data') && BASE !== TILES_FALLBACK) { // this host has no tiles yet
+      BASE = TILES_FALLBACK;
+      r = await fetch(`${BASE}meta.json`);
+    }
     if (!r.ok) throw new Error(`Could not load ${BASE}meta.json: HTTP ${r.status}`);
     meta = await r.json();
     COMBO = Array.isArray(meta.binTable);
