@@ -26,7 +26,7 @@ import AppContext, { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_MENU_Z_INDEX } from '../../../map/util/ZIndexes';
 
-const pages = ({ t }) => [
+const pages = ({ t, develFeatures }) => [
     {
         name: t('web:header_docs'),
         url: '/docs/intro',
@@ -50,12 +50,15 @@ const pages = ({ t }) => [
         name: `🚵‍ ${t('web:header_join_us')}`,
         url: '/docs/hiring',
     },
-    {
-        name: `🔥 ${t('web:header_heatmap')}`,
-        url: '/heatmap.html',
-        target: '_blank',
-        devOnly: true,
-    },
+    ...(develFeatures
+        ? [
+              {
+                  name: `🔥 ${t('web:header_heatmap')}`,
+                  url: '/heatmap.html',
+                  target: '_blank',
+              },
+          ]
+        : []),
 ];
 
 export const DEFAULT_LANG = 'en';
@@ -163,24 +166,22 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     OsmAnd
                 </IconButton>
                 <Box className={styles.menu}>
-                    {pages({ t })
-                        .filter((page) => !page.devOnly || ctx.develFeatures)
-                        .map((page) => (
-                            <Button
-                                component="a"
-                                href={page.url}
-                                target={page.target}
-                                key={page.name}
-                                className={styles.menuItem}
-                                sx={
-                                    page.url.startsWith(location.pathname)
-                                        ? { color: '#237bff !important' }
-                                        : { color: '#1c1e21 !important' }
-                                }
-                            >
-                                {page.name}
-                            </Button>
-                        ))}
+                    {pages({ t, develFeatures: ctx.develFeatures }).map((page) => (
+                        <Button
+                            component="a"
+                            href={page.url}
+                            target={page.target}
+                            key={page.name}
+                            className={styles.menuItem}
+                            sx={
+                                page.url.startsWith(location.pathname)
+                                    ? { color: '#237bff !important' }
+                                    : { color: '#1c1e21 !important' }
+                            }
+                        >
+                            {page.name}
+                        </Button>
+                    ))}
                 </Box>
                 <Box sx={{ flexGrow: 1 }} />
                 {(location.pathname === '/pricing' || location.pathname === '/pricing/') && (
