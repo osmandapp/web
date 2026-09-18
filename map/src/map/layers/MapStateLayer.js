@@ -296,7 +296,7 @@ export default function MapStateLayer() {
             map.setZoomAround = originalSetZoomAround;
             stopZoom();
         };
-    }, [map, ctx.infoBlockWidth]);
+    }, [ctx.infoBlockWidth]);
 
     // Central zoom-to-fit handler driven by useZoomToFit.
     useEffect(() => {
