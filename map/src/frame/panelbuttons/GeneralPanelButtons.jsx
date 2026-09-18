@@ -44,9 +44,15 @@ export default function GeneralPanelButtons({
 
     const [width, height] = useWindowSize();
     const location = useLocation();
-    const { isSearchResultRoute } = useSearchNav();
+    const { isSearchResultRoute, isExploreRoute } = useSearchNav();
 
-    const showCloseMenu = canCloseMenu({ ctx, pathname: location.pathname, showInfoBlock, isSearchResultRoute });
+    const showCloseMenu = canCloseMenu({
+        ctx,
+        pathname: location.pathname,
+        showInfoBlock,
+        isSearchResultRoute,
+        isExploreRoute,
+    });
 
     const orientation = getButtonOrientation();
     const tooltipOrientation = getTooltipOrientation();
@@ -170,16 +176,16 @@ export default function GeneralPanelButtons({
     );
 }
 
-// Close is available for the search results and for an object opened from the menu list
-// (in both cases the menu has the Back button)
-function canCloseMenu({ ctx, pathname, showInfoBlock, isSearchResultRoute }) {
+// Close is available for the search results, for the Explore list and for an object opened from the menu list
+// (in all cases the menu has the Back button)
+function canCloseMenu({ ctx, pathname, showInfoBlock, isSearchResultRoute, isExploreRoute }) {
     if (!CLOSE_MENU_URLS.some((url) => pathname.startsWith(url))) return false;
     if (ctx.shareFile) return false;
     if (ctx.photoGallery) return false;
     if (ctx.addFavorite?.location) return false;
     if (ctx.addFavorite?.editWpt) return false;
     if (!showInfoBlock) {
-        return !!isSearchResultRoute;
+        return !!isSearchResultRoute || !!isExploreRoute;
     }
     if (ctx.selectedWpt) {
         return !ctx.selectedWpt.mapObj && !ctx.selectedWpt.poi?.mapObj && !ctx.selectedWpt.stop?.mapObj;

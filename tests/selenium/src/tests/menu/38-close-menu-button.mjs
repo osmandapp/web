@@ -129,6 +129,20 @@ export default async function test() {
     await clickBy(CLOSE_MENU_BUTTON);
     await waitByRemoved(By.id('se-wpt-details'));
 
+    // --- Search: Close on the Explore list, without a selected place ---
+    await clickBy(By.id('se-show-menu-search'));
+    await waitBy(By.id('se-wiki-places-items'));
+    await clickBy(By.id('se-show-all-wiki-place'));
+    await waitBy(By.id('se-explore-menu-name'));
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(By.id('se-explore-menu-name'));
+    await waitByRemoved(CLOSE_MENU_BUTTON);
+
+    // the next opening starts from the search screen, not from the Explore list
+    // (se-default-search-categories inside expectCleanSearch cannot coexist with the Explore list)
+    await clickBy(By.id('se-show-menu-search'));
+    await expectCleanSearch();
+
     // --- Tracks: Close closes the track and the menu, keeps the map, resets the opened folder ---
     await clickBy(By.id('se-show-menu-tracks'));
     await actionCreateNewFolder(trackFolder);
