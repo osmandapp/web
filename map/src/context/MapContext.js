@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useMutator } from '../util/Utils';
-import { POI_URL, STOP_URL } from '../manager/GlobalManager';
+import { MAP_OBJ_URL, POI_URL, STOP_URL } from '../manager/GlobalManager';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from './AppContext';
 import { osmandTileURL } from '../map/baseTileURL';
 import { getPinPointFromUrl } from '../map/util/initialMapView';
@@ -19,6 +19,7 @@ function getInitialHeightmap() {
 function getInitialPinPoint() {
     if (globalThis.location.pathname.includes(POI_URL)) return null;
     if (globalThis.location.pathname.includes(STOP_URL)) return null;
+    if (globalThis.location.pathname.includes(MAP_OBJ_URL)) return null;
 
     return getPinPointFromUrl();
 }

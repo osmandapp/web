@@ -40,6 +40,7 @@ import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import ColorBlock from '../../../frame/components/other/ColorBlock';
 import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
+import { getIconNameForPoiType } from '../../../manager/PoiManager';
 
 const PANEL_CONTENT_WIDTH = 320;
 const APPEARANCE_PREVIEW_SIZE = 36;
@@ -71,8 +72,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
     const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color'
     const [favoriteGroup, setFavoriteGroup] = useState(null);
+    // search icons (house, location) have no mx_*.svg for a favorite marker
     const [favoriteIcon, setFavoriteIcon] = useState(
-        editWpt?.icon ?? poi?.options?.[FINAL_POI_ICON_NAME] ?? MarkerOptions.DEFAULT_WPT_ICON
+        editWpt?.icon ??
+            getIconNameForPoiType({ iconName: poi?.options?.[FINAL_POI_ICON_NAME], useDefault: false }) ??
+            MarkerOptions.DEFAULT_WPT_ICON
     );
     const [favoriteColor, setFavoriteColor] = useState(editWpt?.color ?? MarkerOptions.DEFAULT_WPT_COLOR);
     const [favoriteShape, setFavoriteShape] = useState(

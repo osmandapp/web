@@ -22,6 +22,11 @@
     font-style: normal !important;
     font-weight: 400 !important;
 }
+.iconPlaceholder {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
 .descTitle {
     display: flex !important;
     width: 360px !important;

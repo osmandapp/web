@@ -77,6 +77,7 @@ export const POI_ICON_NAME = WEB_POI_PREFIX + 'iconName';
 export const FINAL_POI_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
 export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';
 export const POI_ID = WEB_POI_PREFIX + 'id';
+export const POI_FROM_TAGS = WEB_POI_PREFIX + 'from_tags';
 
 // from PoiType object
 export const CATEGORY_NAME = WEB_PREFIX + 'name';
@@ -96,6 +97,7 @@ export const WEB_POI_FILTER_NAME = WEB_PREFIX + 'poiFilterName';
 export const WEB_POI_ADDITIONAL_CATEGORY = WEB_PREFIX + 'poiAdditionalCategory';
 export const WEB_VISIBLE_LEVEL = WEB_PREFIX + 'visible_level';
 export const POI_ELO = WEB_PREFIX + 'poi_elo';
+export const TRANSPORT_STOP_ID = WEB_PREFIX + 'transport_stop_id';
 
 export const MAPILLARY_ACCESS_TOKEN = 'MLY|4444816185556934|29475a355616c979409a5adc377a00fa';
 export const GRAPH_URL_ENDPOINT = 'https://graph.mapillary.com/';
@@ -418,14 +420,18 @@ export async function addPoiTypeTag({
     return tagObj;
 }
 
-async function fetchVisibleTags(tags) {
-    if (Object.keys(tags).length === 0) return [];
-    tags = Object.fromEntries(
+export function stringifyTagValues(tags) {
+    return Object.fromEntries(
         Object.entries(tags).map(([key, value]) => [
             key,
             typeof value === 'number' || typeof value === 'boolean' ? String(value) : value,
         ])
     );
+}
+
+async function fetchVisibleTags(tags) {
+    if (Object.keys(tags).length === 0) return [];
+    tags = stringifyTagValues(tags);
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/visible-tags`, tags, {
         apiCache: true,
         params: { lang: i18n.language },

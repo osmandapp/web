@@ -49,8 +49,30 @@ export function getObjIdSearch(obj) {
     return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
 }
 
+// selectedWpt poi / stop from a server Feature
+export function createMapObject(feature) {
+    if (!feature) {
+        return null;
+    }
+
+    return {
+        options: { ...feature.properties },
+        latlng: { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] },
+        mapObj: true,
+    };
+}
+
 export function getIconByType(type) {
     return typeIconMap[type] ?? SEARCH_ICON_MAP_LOCATION;
+}
+
+// options of a non-POI search object (location, house, ...) built on the client
+export function createSearchObjectOptions(type, name) {
+    return {
+        [CATEGORY_TYPE]: type,
+        [CATEGORY_NAME]: name,
+        [FINAL_POI_ICON_NAME]: getIconByType(type),
+    };
 }
 
 function favoriteSearchId(fileName, shared, wptName) {

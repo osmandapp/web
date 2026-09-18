@@ -217,6 +217,11 @@
     }
 }
 
+.actionIcon:disabled svg,
+.actionIcon:disabled path {
+    fill: currentColor !important;
+}
+
 .actionIcon .MuiTouchRipple-root {
     display: none !important;
 }

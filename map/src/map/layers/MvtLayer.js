@@ -3,10 +3,12 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
-import AppContext, { updateConfigureMapCache } from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_POI, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from './MvtLayerConfig';
+import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
+import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -14,9 +16,11 @@ import {
     useHybridUnderlayUrl,
 } from './MvtHybridDemo';
 
-const POPUP_MAX_HEIGHT = 220;
 const SHOW_TILE_BOUNDARIES = true;
 const TILE_SOURCES_KEY = '__osmandMvtTileSources';
+const POINTER_CURSOR = 'pointer';
+// as in Android MapSelectionHelper (20 px on touch screens)
+const CLICK_TOLERANCE_PX = 5;
 
 function getPublicAssetPath(path) {
     const publicUrl = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
@@ -28,7 +32,7 @@ function getPublicAssetUrl(path) {
 }
 
 function createStyle(baseStyle, tileUrl, options = {}) {
-    const style = JSON.parse(JSON.stringify(baseStyle));
+    const style = structuredClone(baseStyle);
     style.sources = {
         ...style.sources,
         osm: {
@@ -85,51 +89,10 @@ export function getMvtTileDownloads(map, latlng) {
     });
 }
 
-function formatPopupValue(value) {
-    if (value === undefined || value === null) {
-        return 'N/A';
+function resetPointerCursor(container) {
+    if (container.style.cursor === POINTER_CURSOR) {
+        container.style.cursor = '';
     }
-    if (typeof value === 'object') {
-        return JSON.stringify(value);
-    }
-    return value.toString();
-}
-
-function createTagsPopupContent(properties, popupClassName) {
-    const wrapper = L.DomUtil.create('div', popupClassName);
-    wrapper.style.maxHeight = `${POPUP_MAX_HEIGHT}px`;
-    wrapper.style.overflowY = 'auto';
-
-    const entries = Object.entries(properties || {}).sort(([a], [b]) => a.localeCompare(b));
-
-    if (entries.length === 0) {
-        const empty = L.DomUtil.create('div', '', wrapper);
-        empty.textContent = 'No tags';
-        return wrapper;
-    }
-
-    const table = L.DomUtil.create('table', '', wrapper);
-    table.style.borderCollapse = 'collapse';
-    table.style.width = '100%';
-
-    entries.forEach(([key, value]) => {
-        const row = L.DomUtil.create('tr', '', table);
-        const keyCell = L.DomUtil.create('td', '', row);
-        const valueCell = L.DomUtil.create('td', '', row);
-
-        keyCell.textContent = key || 'N/A';
-        valueCell.textContent = formatPopupValue(value);
-
-        keyCell.style.fontWeight = '600';
-        keyCell.style.padding = '3px 8px 3px 0';
-        keyCell.style.verticalAlign = 'top';
-        valueCell.style.padding = '3px 0';
-        valueCell.style.textAlign = 'right';
-        valueCell.style.verticalAlign = 'top';
-        valueCell.style.wordBreak = 'break-word';
-    });
-
-    return wrapper;
 }
 
 export default function MvtLayer({ config }) {
@@ -143,7 +106,7 @@ export default function MvtLayer({ config }) {
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
     useEffect(() => {
-        const { style, tileUrl, isActive, popupClassName, errorLabel, pane: paneName, paneZIndex } = config;
+        const { style, tileUrl, isActive, clickable, errorLabel, pane: paneName, paneZIndex } = config;
 
         if (!isActive(mtx.tileURL)) {
             return undefined;
@@ -191,60 +154,66 @@ export default function MvtLayer({ config }) {
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
 
-        let activePopup = null;
-
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
         };
 
         const handleIdle = () => {
-            window.seIsTilesLoaded = true;
+            // the first idle comes before the tiles of the view are loaded
+            if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
+                window.seIsTilesLoaded = true;
+            }
         };
 
         const handleError = (event) => {
             console.warn(errorLabel, event?.error ?? event);
         };
 
-        const handleMapClick = (event) => {
+        const getClickableFeatures = (mouseEvent) => {
             const canvas = glLayer.getCanvas();
             const rect = canvas.getBoundingClientRect();
-            const point = [event.originalEvent.clientX - rect.left, event.originalEvent.clientY - rect.top];
-            let features = [];
+            const x = mouseEvent.clientX - rect.left;
+            const y = mouseEvent.clientY - rect.top;
+            const box = [
+                [x - CLICK_TOLERANCE_PX, y - CLICK_TOLERANCE_PX],
+                [x + CLICK_TOLERANCE_PX, y + CLICK_TOLERANCE_PX],
+            ];
             try {
-                features = maplibreMap.queryRenderedFeatures(point);
+                return pickClickableFeatures(maplibreMap.queryRenderedFeatures(box));
             } catch (error) {
-                return;
+                return [];
             }
+        };
+
+        // DOM listener runs after Leaflet map handlers (NavigationLayer resets the cursor on map mousemove)
+        const handleMouseMove = (mouseEvent) => {
+            const container = map.getContainer();
+            if (getClickableFeatures(mouseEvent).length > 0) {
+                container.style.cursor = POINTER_CURSOR;
+            } else {
+                resetPointerCursor(container);
+            }
+        };
+
+        const handleMapClick = (event) => {
+            const features = getClickableFeatures(event.originalEvent);
             if (features.length === 0) {
-                // Only close our own popup, not unrelated ones (POI, tracks, …).
-                if (activePopup) {
-                    map.closePopup(activePopup);
-                    activePopup = null;
-                }
                 return;
             }
-
-            const feature = features.find((item) => Object.keys(item.properties || {}).length > 0) || features[0];
-            activePopup = L.popup({
-                closeButton: true,
-                autoClose: true,
-                closeOnClick: false,
-                maxWidth: 360,
-            })
-                .setLatLng(event.latlng)
-                .setContent(createTagsPopupContent(feature.properties, popupClassName))
-                .openOn(map);
+            // all objects under the click, the menu shows them one by one
+            const objects = features.map((feature) => createMvtObject(feature, event.latlng));
+            const obj = { ...objects[0], mvtPreviews: objects };
+            ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            // as after a marker hover: keeps GlobalFrame from opening the POI by its url
+            ctx.setSelectedWptId({ id: obj.mvt.osmId, show: false, type: POI_LAYER_ID });
+            // no selectedWpt.id: SearchLayer (useSelectMarkerOnMap) would draw a selected pin for it
+            ctx.setSelectedWpt(obj);
         };
 
-        const handlePopupClose = (event) => {
-            if (event.popup === activePopup) {
-                activePopup = null;
-            }
-        };
-
-        if (ctx.develFeatures === true) {
+        if (clickable) {
             map.on('click', handleMapClick);
-            map.on('popupclose', handlePopupClose);
+            L.DomEvent.on(map.getContainer(), 'mousemove', handleMouseMove);
         }
         maplibreMap.on('dataloading', handleLoading);
         maplibreMap.on('idle', handleIdle);
@@ -252,17 +221,14 @@ export default function MvtLayer({ config }) {
 
         return () => {
             window.seIsTilesLoaded = true;
-            if (ctx.develFeatures === true) {
+            if (clickable) {
                 map.off('click', handleMapClick);
-                map.off('popupclose', handlePopupClose);
+                L.DomEvent.off(map.getContainer(), 'mousemove', handleMouseMove);
+                resetPointerCursor(map.getContainer());
             }
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
-            if (activePopup) {
-                map.closePopup(activePopup);
-                activePopup = null;
-            }
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );

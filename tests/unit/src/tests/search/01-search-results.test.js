@@ -56,6 +56,13 @@ describe('getPropsFromSearchResultItem', () => {
         expect(getPropsFromSearchResultItem(props, t)).toMatchObject({ name: 'Cafe', type: 'Sustenance' });
     });
 
+    test('a poi without a type (mvt preview before the server answer) keeps its name and has no type', () => {
+        const of = (props) => getPropsFromSearchResultItem(props, t);
+
+        expect(of({ [POI_NAME]: 'Blue Cafe' })).toMatchObject({ name: 'Blue Cafe', type: undefined });
+        expect(of({ [POI_NAME]: '' })).toMatchObject({ name: '', type: undefined });
+    });
+
     test('the other kinds of result are named and typed by their own rules', () => {
         const of = (props) => getPropsFromSearchResultItem(props, t);
 

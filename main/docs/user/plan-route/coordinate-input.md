@@ -24,11 +24,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## How to use {#how-to-use}
 
-You can create waypoints from *[Map markers](../personal/markers.md#actions)* menu or from [My places](../personal/myplaces.md) (see screenshots). Please, follow these paths to reach the coordinate input option:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+You can create waypoints from *[Map markers](../personal/markers.md#actions)* menu. Go to: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Coordinate input how to find](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Coordinate input how to find](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png) 
+![Coordinate input how to find](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) 
 
 After you have opened the coordinate input screen:
 
@@ -101,7 +99,7 @@ When you tap a point, it becomes possible to change its coordinates. Tap the *Ap
 
 To save your points as a track, tap *Back* ( &#8592; ) button or use *[Options](#options)* menu.
 
-![Coordinate input save point Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Coordinate input save point Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Coordinate input save point Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Coordinate input save point Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 In the pop-up menu, you can enter your own track name or save it by default. Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
 You will find your track in [My places menu](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).
