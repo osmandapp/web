@@ -130,7 +130,7 @@ To modify a favorite point:
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites,favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Choose favorite* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -138,7 +138,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites,ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Choose favorite* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![my_places_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -406,7 +406,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 </Tabs>
 
-You need an OsmAnd Cloud account to use the *Free Favorites Backup* feature. If you have an account in *OsmAnd Pro* or an active account in *OsmAnd Cloud acсount*, you will not see the promotion banner.  
+You need an OsmAnd Cloud account to use the *Free Favorites Backup* feature. If you have an account in *OsmAnd Pro* or an active account in *OsmAnd Cloud account*, you will not see the promotion banner.  
 
 - *Free Favorites Backup banner*. Tap this banner to start the backup process.
 - *Complete the registration step* if you do not have an OsmAnd Cloud account by following the instructions in the [registration guide](../personal/osmand-cloud.md#login).
