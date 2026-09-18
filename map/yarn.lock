@@ -5711,7 +5711,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:2, commander@npm:^2.20.0":
+"commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -8925,13 +8925,6 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.1.12":
-  version: 1.2.1
-  resolution: "ieee754@npm:1.2.1"
-  checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
-  languageName: node
-  linkType: hard
-
 "ignore@npm:^5.2.0":
   version: 5.3.2
   resolution: "ignore@npm:5.3.2"
@@ -10490,20 +10483,6 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
-"leaflet.vectorgrid@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "leaflet.vectorgrid@npm:1.3.0"
-  dependencies:
-    pbf: ^3.0.2
-    topojson-client: ^2.1.0
-    vector-tile: ^1.3.0
-    whatwg-fetch: ^2.0.3
-  peerDependencies:
-    leaflet: ^1.0.2
-  checksum: 79a848cf92c47c3cb867d9be24203b6d9d79165301e8ec7b90961becdae0921b51426595df3df9daad1a67a3240f726c2dc80d80797aeb290e8271abdc018eaf
-  languageName: node
-  linkType: hard
-
 "leaflet@npm:^1.6.0, leaflet@npm:^1.9.3":
   version: 1.9.4
   resolution: "leaflet@npm:1.9.4"
@@ -11661,7 +11640,6 @@ eslint-plugin-react-compiler@beta:
     leaflet-geometryutil: ^0.10.1
     leaflet-hash: ^0.2.1
     leaflet-spin: ^1.1.2
-    leaflet.vectorgrid: ^1.3.0
     lodash-es: ^4.17.21
     maplibre-gl: 5.24.0
     pako: ^2.0.4
@@ -11937,18 +11915,6 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
-"pbf@npm:^3.0.2":
-  version: 3.3.0
-  resolution: "pbf@npm:3.3.0"
-  dependencies:
-    ieee754: ^1.1.12
-    resolve-protobuf-schema: ^2.1.0
-  bin:
-    pbf: bin/pbf
-  checksum: bb5ad5e40c0c3a72d23453b03064a040c76363ba76fe086bb7789501c3f8c1565ecba72f62ab608d02b2645d21ff74ff6494413a39aba2aa0c4157886a2a658c
-  languageName: node
-  linkType: hard
-
 "pbf@npm:^4.0.1":
   version: 4.0.2
   resolution: "pbf@npm:4.0.2"
@@ -12038,13 +12004,6 @@ eslint-plugin-react-compiler@beta:
   dependencies:
     find-up: ^3.0.0
   checksum: 5bac346b7c7c903613c057ae3ab722f320716199d753f4a7d053d38f2b5955460f3e6ab73b4762c62fd3e947f58e04f1343e92089e7bb6091c90877406fcd8c8
-  languageName: node
-  linkType: hard
-
-"point-geometry@npm:0.0.0":
-  version: 0.0.0
-  resolution: "point-geometry@npm:0.0.0"
-  checksum: 7862f5abd7c7faf7e23fb1aad3c513dd83423800b71cdb6b445a16f2e43162507d4723d6e2a1ede70efe8eb23dfb54706122f077038b4c3bf4ca404e26a60993
   languageName: node
   linkType: hard
 
@@ -15552,19 +15511,6 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
-"topojson-client@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "topojson-client@npm:2.1.0"
-  dependencies:
-    commander: 2
-  bin:
-    topo2geo: bin/topo2geo
-    topomerge: bin/topomerge
-    topoquantize: bin/topoquantize
-  checksum: ed21f44f18e2d99f7f849762682a2eb794ae5580f90fbfe3a8a5c7db612a0d74bf5ff1c33923ee0c259ef8702aea545b591e363c703e74f81ae0a3a1497b1eba
-  languageName: node
-  linkType: hard
-
 "tough-cookie@npm:^4.0.0":
   version: 4.1.4
   resolution: "tough-cookie@npm:4.1.4"
@@ -16047,15 +15993,6 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
-"vector-tile@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "vector-tile@npm:1.3.0"
-  dependencies:
-    point-geometry: 0.0.0
-  checksum: b3242b64da3b843c083a1739b39ef606329e142edbcb55ec4089eb79607ffc6155264abb1775731f4965f99ebd270398b5b696e44a48f28b45ddfd9e267aada4
-  languageName: node
-  linkType: hard
-
 "void-elements@npm:3.1.0":
   version: 3.1.0
   resolution: "void-elements@npm:3.1.0"
@@ -16313,13 +16250,6 @@ eslint-plugin-react-compiler@beta:
   dependencies:
     iconv-lite: 0.4.24
   checksum: 5be4efe111dce29ddee3448d3915477fcc3b28f991d9cf1300b4e50d6d189010d47bca2f51140a844cf9b726e8f066f4aee72a04d687bfe4f2ee2767b2f5b1e6
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:^2.0.3":
-  version: 2.0.4
-  resolution: "whatwg-fetch@npm:2.0.4"
-  checksum: de7c65a68d7d62e2f144a6b30293370b3ad82b65ebcd68f2ac8e8bbe7ede90febd98ba9486b78c1cbc950e0e8838fa5c2727f939899ab3fc7b71a04be52d33a5
   languageName: node
   linkType: hard
 

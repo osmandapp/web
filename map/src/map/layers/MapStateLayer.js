@@ -10,6 +10,7 @@ import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../util/initialMapView';
 import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
+import { applySubpixelMarkerPosition } from '../markers/subpixelMarkerPosition';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
@@ -46,7 +47,13 @@ export function getMapCenter(mtx, hash) {
     return mtx.visibleBboxInfo?.center ?? getCenterMapLocByHash(hash);
 }
 
+applySubpixelMarkerPosition();
+
 const CENTRE_ICON_SIZE = 24;
+// wheelZoomRate of MapLibre: 450 px of wheel per zoom level
+const WHEEL_PX_PER_ZOOM = 450;
+// the part of the remaining zoom distance passed per frame
+const ZOOM_EASING = 0.3;
 
 const MAP_SPIN_COLOR = '#1976d2';
 
@@ -172,42 +179,130 @@ export default function MapStateLayer() {
         };
     }, []);
 
-    // Override map.zoomIn / map.zoomOut so zoom buttons use the visible-bbox center
+    // Leaflet's zoom animation CSS-scales the MapLibre canvas as a bitmap for 250 ms, then MapLibre redraws: the map
+    // and its markers jump. Moving the map by a fraction of a zoom level per frame lets MapLibre render every step.
     useEffect(() => {
-        const origZoomIn = map.zoomIn.bind(map);
-        const origZoomOut = map.zoomOut.bind(map);
+        const container = map.getContainer();
+        const originalStop = map._stop;
+        const originalZoomIn = map.zoomIn;
+        const originalZoomOut = map.zoomOut;
+        const originalSetZoom = map.setZoom;
+        const originalSetZoomAround = map.setZoomAround;
+        let targetZoom = map.getZoom();
+        let anchor = null;
+        let anchorLatLng = null;
+        let frame = null;
 
-        function visibleCenterPoint() {
-            const infoBlockWidthPx = Number.parseInt(String(ctx.infoBlockWidth), 10);
-            const center = calcVisibleCenterPx(map, infoBlockWidthPx);
-            return center ? L.point(center.x, center.y) : null;
+        // the point under the cursor stays where it is
+        function zoomAroundAnchor(zoom) {
+            const offset = anchor.subtract(map.getSize().divideBy(2));
+            return map.unproject(map.project(anchorLatLng, zoom).subtract(offset), zoom);
         }
 
-        map.zoomIn = (delta, options) => {
-            const pt = visibleCenterPoint();
-            const dz = delta ?? map.options.zoomDelta ?? 1;
-            if (pt) {
-                map.setZoomAround(pt, map.getZoom() + dz, options);
-            } else {
-                origZoomIn(delta, options);
+        // one animation frame: ease towards targetZoom, finish with a single zoomend
+        function step() {
+            const zoom = map.getZoom();
+            const snappedTarget = map._limitZoom(targetZoom);
+            if (Math.abs(snappedTarget - zoom) < 0.005) {
+                frame = null;
+                // no setView: its viewreset drops the GridLayer tiles
+                map._move(zoomAroundAnchor(snappedTarget), snappedTarget);
+                map._moveEnd(true);
+                return;
             }
-            return map;
+            const next = zoom + (snappedTarget - zoom) * ZOOM_EASING;
+            frame = L.Util.requestAnimFrame(step);
+            // pinch: zoom event without moveend, as Leaflet TouchZoom
+            map._move(zoomAroundAnchor(next), next, { pinch: true });
+        }
+
+        // ends the animation at the current zoom so another map movement can take over
+        function stopZoom() {
+            if (frame !== null) {
+                L.Util.cancelAnimFrame(frame);
+                frame = null;
+                const zoom = map._limitZoom(map.getZoom());
+                map._move(zoomAroundAnchor(zoom), zoom);
+                map._moveEnd(true);
+            }
+            targetZoom = map.getZoom();
+        }
+
+        // Leaflet stops here before setView, flyTo, dragging and touch zoom.
+        map._stop = function () {
+            stopZoom();
+            return originalStop.call(this);
         };
 
-        map.zoomOut = (delta, options) => {
-            const pt = visibleCenterPoint();
-            const dz = delta ?? map.options.zoomDelta ?? 1;
-            if (pt) {
-                map.setZoomAround(pt, map.getZoom() - dz, options);
+        // accumulates the target: wheel notches during the animation add up instead of restarting it
+        function zoomBy(delta, nextAnchor) {
+            if (map._animatingZoom) {
+                return;
+            }
+            if (frame === null) {
+                anchorLatLng = map.containerPointToLatLng(nextAnchor);
+            } else if (!nextAnchor.equals(anchor)) {
+                anchorLatLng = map.unproject(map.project(anchorLatLng).add(nextAnchor.subtract(anchor)));
+            }
+            // Keep the geographic anchor between frames instead of feeding rounded pixel origins back into the center.
+            anchor = nextAnchor;
+            if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
+                targetZoom = map.getZoom();
+            }
+            // Preserve sub-snap deltas between wheel events, including after an animation finishes.
+            targetZoom = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), targetZoom + delta));
+            if (frame === null && map._limitZoom(targetZoom) !== map.getZoom()) {
+                originalStop.call(map);
+                frame = L.Util.requestAnimFrame(step);
+                map._moveStart(true, false);
+            }
+        }
+
+        // replaces Leaflet's scrollWheelZoom, disabled in OsmAndMap
+        function onWheel(event) {
+            L.DomEvent.stop(event);
+            // getWheelDelta divides deltaY by 3 on Mac
+            const delta = event.deltaMode === 0 ? -event.deltaY : L.DomEvent.getWheelDelta(event);
+            zoomBy(delta / WHEEL_PX_PER_ZOOM, map.mouseEventToContainerPoint(event));
+        }
+
+        // the +/- buttons zoom around the center of the map part not covered by the side panel
+        function zoomFromButton(delta, options) {
+            const center = calcVisibleCenterPx(map, Number.parseInt(String(ctx.infoBlockWidth), 10));
+            const point = center ? L.point(center.x, center.y) : map.getSize().divideBy(2);
+            if (options?.animate === false) {
+                map.setZoomAround(point, map.getZoom() + delta, options);
             } else {
-                origZoomOut(delta, options);
+                zoomBy(delta, point);
             }
             return map;
+        }
+
+        map.zoomIn = (delta, options) => zoomFromButton(delta ?? map.options.zoomDelta ?? 1, options);
+        map.zoomOut = (delta, options) => zoomFromButton(-(delta ?? map.options.zoomDelta ?? 1), options);
+        // keyboard +/- zooms through setZoom
+        map.setZoom = (zoom, options) =>
+            options?.animate === false
+                ? originalSetZoom.call(map, zoom, options)
+                : zoomFromButton(zoom - map.getZoom(), options);
+        // double click zooms through setZoomAround
+        map.setZoomAround = (latlng, zoom, options) => {
+            if (options?.animate === false) {
+                return originalSetZoomAround.call(map, latlng, zoom, options);
+            }
+            zoomBy(zoom - map.getZoom(), latlng instanceof L.Point ? latlng : map.latLngToContainerPoint(latlng));
+            return map;
         };
+        L.DomEvent.on(container, 'wheel', onWheel);
 
         return () => {
-            map.zoomIn = origZoomIn;
-            map.zoomOut = origZoomOut;
+            L.DomEvent.off(container, 'wheel', onWheel);
+            map._stop = originalStop;
+            map.zoomIn = originalZoomIn;
+            map.zoomOut = originalZoomOut;
+            map.setZoom = originalSetZoom;
+            map.setZoomAround = originalSetZoomAround;
+            stopZoom();
         };
     }, [ctx.infoBlockWidth]);
 

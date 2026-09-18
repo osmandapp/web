@@ -12,6 +12,7 @@ module.exports = {
     rootDir: __dirname,
     roots: ['<rootDir>/src'],
     testEnvironment: 'jsdom',
+    modulePaths: [path.join(MAP_DIR, 'node_modules')],
     testMatch: ['<rootDir>/src/tests/**/*.test.js'],
     setupFiles: ['<rootDir>/src/util/setup.js'],
     clearMocks: true,
@@ -59,8 +60,14 @@ module.exports = {
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // marker clustering is plain geometry over the places, no map is involved
         'map/util/Clusterizer$': path.join(MAP_DIR, 'src/map/util/Clusterizer.js'),
+        // only direct test imports load these layers; other suites keep their UI stubs
+        '^@map/map/layers/MapStateLayer$': path.join(MAP_DIR, 'src/map/layers/MapStateLayer.js'),
+        '^@map/map/layers/PoiLayer$': path.join(MAP_DIR, 'src/map/layers/PoiLayer.js'),
+        '^@map/map/util/MarkerSelectionService$': path.join(MAP_DIR, 'src/map/util/MarkerSelectionService.js'),
         // the initial map view is plain url logic over leaflet, no map is involved
         'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
+        // the url hash format is plain logic over leaflet-hash, no map is involved
+        'map/util/mapHash$': path.join(MAP_DIR, 'src/map/util/mapHash.js'),
         // which vector tile feature a click opens is plain logic over the rendered features
         'map/util/MvtObjectSelection$': path.join(MAP_DIR, 'src/map/util/MvtObjectSelection.js'),
         // map layers and the tooltip helper reach react-leaflet, the clustering geometry does not

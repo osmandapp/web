@@ -26,13 +26,6 @@ generate({
     validate: (json) => json.some((x) => x === 'c_mx_building_map.svg'),
 });
 
-// 2. Shaders icons array based on list of svg-files
-generate({
-    file: 'src/resources/generated/shadersicons.json',
-    json: ls('public/images/map-shaders-svg'),
-    validate: (json) => json.some((x) => x === 'c_h_arrow.svg'),
-});
-
 // 3. WPT icons array based on list of svg-files
 generateSvgMap({
     file: 'src/resources/generated/poiBackgroundIcons.json',
