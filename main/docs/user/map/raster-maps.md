@@ -16,7 +16,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Overview {#overview}
 
-Raster maps are significant and useful additions to OsmAnd vector maps. They allow you to combine various map sources with vector maps. For example, information about hills and slopes is displayed as a raster layer. You can display an overlay of hiking trails, rain maps, real-time traffic data, and an overlay of satellite imagery on a translucent base vector map. You can also switch the default maps to raster tiles on the web.
+Raster maps are significant and useful additions to OsmAnd vector maps. They allow you to combine various map sources with vector maps. For example, information about hills and slopes is displayed as a raster layer. You can display an overlay of hiking trails, rain maps, real-time traffic data, and an overlay of satellite imagery on a translucent base vector map. You can also switch the default map source from offline vector maps to online raster tiles.
 
 Raster maps in OsmAnd are typically delivered as a set of small images (tiles) arranged in a grid. Unlike vector maps, which store objects such as roads, points, and polygons as data, raster tiles are pre-rendered images and can appear pixelated at high zoom levels because each pixel has a fixed value.
 
@@ -84,7 +84,7 @@ You can also change [the main source](#main) of maps from vector maps to online 
 
 In OsmAnd, raster maps can serve as an additional map source alongside the default vector maps, which are optimized for offline use.  
 
-You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector* or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can have OsmAnd's offline vector map as the Main base, overlay it with a satellite view, and place a bike path map as the Underlay for added detail.
+You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can use satellite imagery as the Underlay, OsmAnd's offline vector map as the Main layer with increased transparency, and a bike path map as the Overlay on top.
 
 >[Vector maps](./vector-maps.md) are available **only** in the [Main](#main) layer (and are the default there). Raster maps can be used in all three layers: Main, Underlay, and Overlay.
 
@@ -116,7 +116,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 </Tabs>
 
-By default, the main map is set to [Offline vector maps](./vector-maps.md) (OsmAnd maps), optimized for offline use. You can choose a different map source from the list (_Add more_(Android) or _Instal more_ (iOS)) or [add](#add-new-online-source) your own.
+By default, the main map is set to [Offline vector maps](./vector-maps.md) (OsmAnd maps), optimized for offline use. You can choose a different map source from the list (_Add more_ (Android) or _Install more_ (iOS)) or [add](#add-new-online-source) your own.
 
 ### Overlay {#overlay}
 
@@ -140,7 +140,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 </Tabs>
 
-1. *Switch on/off* the Underlay map layer.
+1. *Switch on/off* the Overlay map layer.
 2. *Overlay transparency* (*Android*)/ *Transparency* of the Overlay map (*iOS*).
 3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
 4. *Overlay map source* (*Android*) / *Available layers* (*iOS*). Select an online tile map from the list to add it directly as your Overlay layer.
@@ -204,7 +204,7 @@ More advanced terrain features, including 3D relief (only Pro) and additional te
 
 There are multiple ways how to add a new raster map, copy it from another device, prepare it on a PC, and pre-download tiles to be used offline. For example, you can create your map package on a PC using special software such as [MOBAC, OsmAndMapCreator, etc](../../technical/map-creation/index.md). Typically raster maps are distributed as files with `.sqlitedb` extension.
 
-Here are the main methods how for adding a new raster map source which is not defined in OsmAnd yet:
+Here are the main methods for adding a new raster map source which is not defined in OsmAnd yet:
 
 - Open ready to use `.sqlitedb` file with OsmAnd.
 - Import package with prepared online maps from another OsmAnd application as a special `.osf` **package** via [Import / export functionality](../personal/import-export.md).
@@ -267,9 +267,9 @@ You find an added Online map in the list of the [Main / Underlay / Overlay layer
 
 ## Manage Map Data {#manage-map-data}
 
-Raster maps can take up a significant amount of disk space, so you might need to regularly check it. For large datasets, it's recommended to use *SQLite raster source* cause it will store all tiles in 1 large file (SQLite database).
+Raster maps can take up a significant amount of disk space, so you might need to regularly check it. For large datasets, it's recommended to use *SQLite raster source* because it will store all tiles in 1 large file (SQLite database).
 
-- [**SQ Lite format**](../../technical/osmand-file-formats/osmand-sqlite.md)
+- [**SQLite format**](../../technical/osmand-file-formats/osmand-sqlite.md)
 - [**Metainfo format**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 To change tile format, you can choose <Translate android="true" ids="storage_format"/> in the edit menu of online maps:
@@ -301,7 +301,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_l
 
 </Tabs>
 
-Tiles are stored in the cache when using Online raster maps as a Main / Overlay / Underlay layer. You can see the size of your SQ Lite file under your Online map name in the list. Sometimes regular cleansing is required to speed up the display of the tiles or to update the data.  
+Tiles are stored in the cache when using Online raster maps as a Main / Overlay / Underlay layer. You can see the size of your SQLite file under your Online map name in the list. Sometimes regular cleansing is required to speed up the display of the tiles or to update the data.  
 
 ### Download / Update Tiles {#download--update-tiles}
 
@@ -357,13 +357,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_l
 
 </Tabs>
 
-Raster maps can be used as they already exist if the tiles are already mapped. If the raster maps are provided online, there is always a base URL that needs to be configured. There are a few more basic parameters that can be changed for raster maps, you can read about that in [this section](#add-new-online-source) of the article. More complex parameters are encoded in the internal components of the [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).
+Raster maps can be used as they already exist if the tiles are already mapped. If the raster maps are provided online, there is always a base URL that needs to be configured. There are a few more basic parameters that can be changed for raster maps, you can read about that in [this section](#add-new-online-source) of the article. More complex parameters are encoded in the internal components of the [SQLite format](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
 ## Related Articles {#related-articles}
 
 - [Import / Export](../personal/import-export.md)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
 - [Quick Action (Custom button)](../widgets/quick-action.md)
 - [Online Maps](../plugins/online-map.md)
 - [Topography](../plugins/topography.md)
